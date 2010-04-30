@@ -60,7 +60,7 @@ public class NamedTuples_Test extends TestCase {
   }
 
   public void test_assignToIndexedTupleType() throws Exception {
-    Tuples._2<String, String> itpl = MultiTuple.<String, String>empty2().assign(this.getData());
+    Tuples._2<String, String> itpl = this.getData();
     Assert.assertEquals("ABC", itpl._0());
     Assert.assertEquals("XYZ", itpl._1());
   }

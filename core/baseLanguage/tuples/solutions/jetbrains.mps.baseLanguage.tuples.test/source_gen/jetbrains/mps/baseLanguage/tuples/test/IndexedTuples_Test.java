@@ -19,23 +19,31 @@ public class IndexedTuples_Test extends TestCase {
   public void test_empty() throws Exception {
     Tuples._0 empty = MultiTuple.from();
     empty = MultiTuple.from();
-    Tuples._0 emptyToo = MultiTuple.empty0().assign(empty);
+    Tuples._0 emptyToo = empty;
   }
 
   public void test_creatingAndAssigning() throws Exception {
     Tuples._2<Integer, String> pair = MultiTuple.<Integer,String>from(1, "a");
     Assert.assertSame(1, pair._0());
     Assert.assertEquals("a", pair._1());
-    Tuples._2<Integer, String> anotherPair = MultiTuple.<Integer, String>empty2().assign(pair);
-    Assert.assertFalse(((Object) anotherPair) == ((Object) pair));
+    Tuples._2<Integer, String> anotherPair = pair;
+    /*
+      // This use case no longer supported (yeah, that's right, just like that!) 
+      Assert.assertFalse(((Object) anotherPair) == ((Object) pair));
+    */
+    Assert.assertTrue(((Object) anotherPair) == ((Object) pair));
     Assert.assertTrue(MultiTuple.eq(anotherPair, pair));
     Assert.assertEquals(pair, anotherPair);
     Assert.assertSame(1, anotherPair._0());
     Assert.assertEquals("a", anotherPair._1());
     pair._0(111);
     pair._1("aaaa");
-    Assert.assertSame(1, anotherPair._0());
-    Assert.assertEquals("a", anotherPair._1());
+    /*
+      Assert.assertSame(1, anotherPair._0());
+      Assert.assertEquals("a", anotherPair._1());
+    */
+    Assert.assertSame(111, anotherPair._0());
+    Assert.assertEquals("aaaa", anotherPair._1());
     Assert.assertSame(111, pair._0());
     Assert.assertEquals("aaaa", pair._1());
   }
@@ -70,7 +78,7 @@ public class IndexedTuples_Test extends TestCase {
   }
 
   public void test_multiValueReturn() throws Exception {
-    Tuples._2<String, Character> pair = MultiTuple.<String, Character>empty2().assign(this.toTuple("abc", 'd'));
+    Tuples._2<String, Character> pair = this.toTuple("abc", 'd');
     Assert.assertEquals("abc", pair._0());
     Assert.assertSame('d', pair._1());
   }

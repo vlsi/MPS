@@ -903,27 +903,32 @@
       <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="1239699344950">
         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1239699344951">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241206497411">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241206497412">
-              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression:3" id="1241206497413">
-                <node role="pattern:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1241206497414">
-                  <property name="name:3" value="indexedTupleType" />
-                  <link role="concept:3" targetNodeId="1.1238852151516:2" resolveInfo="IndexedTupleType" />
-                </node>
-                <node role="nodeToCoerce:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241206497415">
-                  <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1241206497416">
-                    <property name="asCast:16" value="true" />
-                    <link role="concept:16" targetNodeId="2v.1068431474542:3" resolveInfo="VariableDeclaration" />
-                    <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241206497417">
-                      <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1241206497418" />
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="1241206497419" />
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="5844390696996868584">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="5844390696996871000">
+                <property name="value:3" value="false" />
+              </node>
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241206497412">
+                <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression:3" id="1241206497413">
+                  <node role="pattern:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1241206497414">
+                    <property name="name:3" value="indexedTupleType" />
+                    <link role="concept:3" targetNodeId="1.1238852151516:2" resolveInfo="IndexedTupleType" />
+                  </node>
+                  <node role="nodeToCoerce:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241206497415">
+                    <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1241206497416">
+                      <property name="asCast:16" value="true" />
+                      <link role="concept:16" targetNodeId="2v.1068431474542:3" resolveInfo="VariableDeclaration" />
+                      <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241206497417">
+                        <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1241206497418" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="1241206497419" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1241206497420">
+                      <link role="link:16" targetNodeId="2v.5680397130376446158:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1241206497420">
-                    <link role="link:16" targetNodeId="2v.5680397130376446158:3" />
-                  </node>
                 </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="1241206497421" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="1241206497421" />
             </node>
           </node>
         </node>

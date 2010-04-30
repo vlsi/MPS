@@ -149,24 +149,55 @@
               </node>
             </node>
           </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" id="1239724293560">
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1239724308041">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1239724313064">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1239724310541">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1239724317547">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock:3" id="5844390696996894937">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="5844390696996894939">
+              <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="5844390696996894941">
+                <property name="text:3" value="This use case no longer supported (yeah, that's right, just like that!)" />
+              </node>
+            </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" id="1239724293560">
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1239724308041">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1239724313064">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1239724310541">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1239724317547">
+                      <link role="variableDeclaration:3" targetNodeId="1238952487460" resolveInfo="pair" />
+                    </node>
+                    <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1239724315225">
+                      <link role="classifier:3" targetNodeId="1.~Object" resolveInfo="Object" />
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1239724298767">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1239724296025">
+                    <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1239724302328">
+                      <link role="classifier:3" targetNodeId="1.~Object" resolveInfo="Object" />
+                    </node>
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1239724306528">
+                      <link role="variableDeclaration:3" targetNodeId="1238952528966" resolveInfo="anotherPair" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="5844390696996896664">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="5844390696996896666">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="5844390696996896667">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="5844390696996896668">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5844390696996896669">
                     <link role="variableDeclaration:3" targetNodeId="1238952487460" resolveInfo="pair" />
                   </node>
-                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1239724315225">
+                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5844390696996896670">
                     <link role="classifier:3" targetNodeId="1.~Object" resolveInfo="Object" />
                   </node>
                 </node>
               </node>
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1239724298767">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1239724296025">
-                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1239724302328">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="5844390696996896671">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="5844390696996896672">
+                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5844390696996896673">
                     <link role="classifier:3" targetNodeId="1.~Object" resolveInfo="Object" />
                   </node>
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1239724306528">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5844390696996896674">
                     <link role="variableDeclaration:3" targetNodeId="1238952528966" resolveInfo="anotherPair" />
                   </node>
                 </node>
@@ -247,28 +278,56 @@
               </node>
             </node>
           </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="1238952790193">
-            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1238952790688">
-              <property name="value:3" value="1" />
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock:3" id="5844390696996896675">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="1238952790193">
+              <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1238952790688">
+                <property name="value:3" value="1" />
+              </node>
+              <node role="actual" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="1238952794573">
+                <node role="tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1238952794574">
+                  <link role="variableDeclaration:3" targetNodeId="1238952528966" resolveInfo="anotherPair" />
+                </node>
+                <node role="index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1238952794575">
+                  <property name="value:3" value="0" />
+                </node>
+              </node>
             </node>
-            <node role="actual" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="1238952794573">
-              <node role="tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1238952794574">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1238952582943">
+              <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1238952582944">
+                <property name="value:3" value="a" />
+              </node>
+              <node role="actual" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="1238952582945">
+                <node role="index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1238952582946">
+                  <property name="value:3" value="1" />
+                </node>
+                <node role="tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1238952582947">
+                  <link role="variableDeclaration:3" targetNodeId="1238952528966" resolveInfo="anotherPair" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="5844390696996896677">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5844390696996896678">
+              <property name="value:3" value="111" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="5844390696996896679">
+              <node role="tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5844390696996896680">
                 <link role="variableDeclaration:3" targetNodeId="1238952528966" resolveInfo="anotherPair" />
               </node>
-              <node role="index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1238952794575">
+              <node role="index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5844390696996896681">
                 <property name="value:3" value="0" />
               </node>
             </node>
           </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1238952582943">
-            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1238952582944">
-              <property name="value:3" value="a" />
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="5844390696996896682">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5844390696996896683">
+              <property name="value:3" value="aaaa" />
             </node>
-            <node role="actual" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="1238952582945">
-              <node role="index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1238952582946">
+            <node role="actual" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="5844390696996896684">
+              <node role="index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5844390696996896685">
                 <property name="value:3" value="1" />
               </node>
-              <node role="tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1238952582947">
+              <node role="tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5844390696996896686">
                 <link role="variableDeclaration:3" targetNodeId="1238952528966" resolveInfo="anotherPair" />
               </node>
             </node>
