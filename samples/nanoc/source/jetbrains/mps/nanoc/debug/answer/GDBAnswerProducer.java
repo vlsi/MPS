@@ -65,7 +65,6 @@ public class GDBAnswerProducer {
   }
 
   private Long readToken() {
-    long l = 0;
     StringBuilder sb = new StringBuilder();
     while (Character.isDigit(currentChar())) {
       sb.append(currentChar());
@@ -76,11 +75,14 @@ public class GDBAnswerProducer {
 
   private GDBAnswer readAnswer() {
     char c = currentChar();
-    myOffset++;
     Long token = null;
     if (Character.isDigit(c)) {
       token = readToken();
+      c = currentChar();
+    } else {
+      myOffset++;
     }
+
 
     if (c == '*' || c == '+' || c == '=') {
       //async
