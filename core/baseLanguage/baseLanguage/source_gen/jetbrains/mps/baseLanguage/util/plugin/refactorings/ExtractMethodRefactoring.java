@@ -104,19 +104,21 @@ public abstract class ExtractMethodRefactoring {
   }
 
   protected void replaceInputVariablesByParameters(SNode body, Map<SNode, SNode> variableDeclarationToParameter, Map<SNode, SNode> mapping) {
-    for (Instruction instruction : SetSequence.fromSet(this.myAnalyzer.getInstructions())) {
-      if (instruction instanceof ReadInstruction) {
-        ReadInstruction readInstruction = (ReadInstruction) instruction;
-        SNode variable = ((SNode) readInstruction.getVariable());
-        if (SNodeOperations.isInstanceOf(((SNode) instruction.getSource()), "jetbrains.mps.baseLanguage.structure.AbstractCreator")) {
-          continue;
-        }
-        SNode variableReference = MapSequence.fromMap(mapping).get(((SNode) instruction.getSource()));
-        if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(variable) && variableReference != null) {
-          SNodeOperations.replaceWithAnother(variableReference, this.createReference(MapSequence.fromMap(variableDeclarationToParameter).get(variable)));
+    /*
+      for (Instruction instruction : SetSequence.fromSet(this.myAnalyzer.getInstructions())) {
+        if (instruction instanceof ReadInstruction) {
+          ReadInstruction readInstruction = (ReadInstruction) instruction;
+          SNode variable = ((SNode) readInstruction.getVariable());
+          if (SNodeOperations.isInstanceOf(((SNode) instruction.getSource()), "jetbrains.mps.baseLanguage.structure.AbstractCreator")) {
+            continue;
+          }
+          SNode variableReference = MapSequence.fromMap(mapping).get(((SNode) instruction.getSource()));
+          if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(variable) && variableReference != null) {
+            SNodeOperations.replaceWithAnother(variableReference, this.createReference(MapSequence.fromMap(variableDeclarationToParameter).get(variable)));
+          }
         }
       }
-    }
+    */
     for (SNode variableReference : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
       if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(SLinkOperations.getTarget(variableReference, "variableDeclaration", false))) {
         SNodeOperations.replaceWithAnother(variableReference, this.createReference(MapSequence.fromMap(variableDeclarationToParameter).get(SLinkOperations.getTarget(variableReference, "variableDeclaration", false))));
