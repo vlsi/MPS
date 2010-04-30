@@ -15,9 +15,10 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
-import jetbrains.mps.nanoc.debug.answer.GDBAnswer;
-import jetbrains.mps.nanoc.debug.answer.GDBEventsHandler;
-import jetbrains.mps.nanoc.debug.answer.GDBEventsListener;
+import jetbrains.mps.nanoc.debug.answer.*;
+import jetbrains.mps.nanoc.debug.events.GDBEventsAdapter;
+import jetbrains.mps.nanoc.debug.events.GDBEventsHandler;
+import jetbrains.mps.nanoc.debug.requests.BreakpointRequestor;
 import jetbrains.mps.nanoc.debug.util.ProcessUtil;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.debug.info.StacktraceUtil;
@@ -81,11 +82,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
       };
       myDebugSession = new CppDebugSession();
       myDebugSession.setProcessHandler(processHandler);
-      myDebugSession.getGDBEventsHandler().addEventListener(new GDBEventsListener() {
-        @Override
-        public void breakpointHit(GDBAnswer answer) {
-        }
-
+      myDebugSession.getGDBEventsHandler().addEventListener(new GDBEventsAdapter() {
         @Override
         public void processTerminated(SimpleConsoleProcessHandler gdbProcess) {
           gdbProcess.inputWithFlush("-gdb-exit\n");
@@ -117,20 +114,22 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
           String workingDir = dir.getAbsolutePath();
           gdbProcess.inputWithFlush("-environment-cd " + workingDir + "\n");
           gdbProcess.inputWithFlush("-file-exec-and-symbols " + myCommand.replace(File.separatorChar, '/') + "\n");
-          gdbProcess.inputWithFlush("-break-insert main\n");
+        //  gdbProcess.inputWithFlush("-break-insert main\n");
        //   gdbProcess.inputWithFlush("-gdb-set new-console off\n");
+          myDebugSession.getGDBRequestManager().createRequest(new BreakpointRequestor("main") {
+            @Override
+            public void onRequestFulfilled(ResultAnswer answer) {
+              System.err.println("WOW!");
+            }
+          });
           gdbProcess.inputWithFlush("-exec-run\n");
           
           final GDBEventsHandler eventsHandler = myDebugSession.getGDBEventsHandler();
-          eventsHandler.addEventListener(new GDBEventsListener() {
+          eventsHandler.addEventListener(new GDBEventsAdapter() {
             @Override
-            public void breakpointHit(GDBAnswer answer) {
+            public void breakpointHit(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess) {
               eventsHandler.removeEventListener(this);
               connectedToDebuggee(gdbProcess);
-            }
-
-            @Override
-            public void processTerminated(SimpleConsoleProcessHandler gdbProcess) {
             }
           });
         }

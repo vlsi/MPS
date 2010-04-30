@@ -10,7 +10,7 @@ package jetbrains.mps.nanoc.debug.answer;
 public abstract class StructuralAnswer extends GDBAnswer {
   protected String myAnswerClass;
   protected RecordValue myResults;
-  protected String myDigitalToken;
+  protected Long myDigitalToken;
 
   public StructuralAnswer(char tokenChar, String answerClass, RecordValue results) {
     super(tokenChar);
@@ -26,11 +26,11 @@ public abstract class StructuralAnswer extends GDBAnswer {
     return myResults;
   }
 
-  public String getDigitalToken() {
+  public Long getDigitalToken() {
     return myDigitalToken;
   }
 
-  public void setDigitalToken(String digitalToken) {
+  public void setDigitalToken(Long digitalToken) {
     myDigitalToken = digitalToken;
   }
 }

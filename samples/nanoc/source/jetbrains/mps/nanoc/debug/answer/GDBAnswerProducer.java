@@ -64,16 +64,32 @@ public class GDBAnswerProducer {
     }
   }
 
+  private Long readToken() {
+    long l = 0;
+    StringBuilder sb = new StringBuilder();
+    while (Character.isDigit(currentChar())) {
+      sb.append(currentChar());
+      myOffset++;
+    }
+    return Long.parseLong(sb.toString());
+  }
+
   private GDBAnswer readAnswer() {
     char c = currentChar();
     myOffset++;
+    Long token = null;
+    if (Character.isDigit(c)) {
+      token = readToken();
+    }
 
     if (c == '*' || c == '+' || c == '=') {
       //async
       String asyncClass = readClass();
       RecordValue value = readResultList();
       readEOL();
-      return new AsyncAnswer(c, asyncClass, value);
+      AsyncAnswer asyncAnswer = new AsyncAnswer(c, asyncClass, value);
+      asyncAnswer.setDigitalToken(token);
+      return asyncAnswer;
     } else if (c == '~' || c == '@' || c == '&') {
       //stream
       StringValue value = readString();
@@ -84,7 +100,9 @@ public class GDBAnswerProducer {
       String resultClass = readClass();
       RecordValue value = readResultList();
       readEOL();
-      return new ResultAnswer(c, resultClass, value);
+      ResultAnswer resultAnswer = new ResultAnswer(c, resultClass, value);
+      resultAnswer.setDigitalToken(token);
+      return resultAnswer;
     } else {
       error("");
       return null;

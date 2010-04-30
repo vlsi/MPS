@@ -1,9 +1,10 @@
-package jetbrains.mps.nanoc.debug.answer;
+package jetbrains.mps.nanoc.debug.events;
 
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
+import jetbrains.mps.nanoc.debug.answer.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +51,12 @@ public class GDBEventsHandler {
             //todo other events
           }
         }
+
+        if (gdbAnswer instanceof ResultAnswer) {
+          ResultAnswer resultAnswer = (ResultAnswer) gdbAnswer;
+          fireResultReceived(resultAnswer);
+          return;
+        }
       }
 
       @Override
@@ -65,9 +72,15 @@ public class GDBEventsHandler {
     }
   }
 
-  private void fireBreakpointHit(GDBAnswer gdbAnswer) {
+  private void fireBreakpointHit(AsyncAnswer gdbAnswer) {
     for (GDBEventsListener listener : getEventsListeners()) {
-      listener.breakpointHit(gdbAnswer);
+      listener.breakpointHit(gdbAnswer, myProcessHandler);
+    }
+  }
+
+  private void fireResultReceived(ResultAnswer gdbAnswer) {
+    for (GDBEventsListener listener : getEventsListeners()) {
+      listener.resultReceived(gdbAnswer, myProcessHandler);
     }
   }
 
@@ -81,5 +94,9 @@ public class GDBEventsHandler {
 
   public void removeEventListener(GDBEventsListener listener) {
     myEventsListeners.remove(listener);
+  }
+
+  public SimpleConsoleProcessHandler getGDBProcessHandler() {
+    return myProcessHandler;
   }
 }

@@ -2,8 +2,9 @@ package jetbrains.mps.nanoc.debug;
 
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.nanoc.debug.answer.GDBEventsHandler;
+import jetbrains.mps.nanoc.debug.events.GDBEventsHandler;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
+import jetbrains.mps.nanoc.debug.requests.GDBRequestManager;
 import jetbrains.mps.smodel.IOperationContext;
 
 /**
@@ -15,6 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
  */
 public class CppDebugSession extends AbstractDebugSession<CppUiState> {
   private GDBEventsHandler myEventsHandler;
+  private GDBRequestManager myRequestManager;
 
   @Override
   protected CppUiState createUiState() {
@@ -58,9 +60,14 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
   public void setProcessHandler(ProcessHandler processHandler) {
     super.setProcessHandler(processHandler);
     myEventsHandler = new GDBEventsHandler((SimpleConsoleProcessHandler) processHandler);
+    myRequestManager = new GDBRequestManager(myEventsHandler);
   }
 
   public GDBEventsHandler getGDBEventsHandler() {
     return myEventsHandler;
+  }
+
+  public GDBRequestManager getGDBRequestManager() {
+    return myRequestManager;
   }
 }
