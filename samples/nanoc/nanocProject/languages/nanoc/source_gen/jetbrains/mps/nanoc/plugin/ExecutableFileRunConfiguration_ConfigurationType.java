@@ -16,7 +16,7 @@ import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 
 public class ExecutableFileRunConfiguration_ConfigurationType implements ConfigurationType {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/executable.png", "jetbrains.mps.debug.cpp"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/executable.png", "jetbrains.mps.nanoc"), true);
 
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());

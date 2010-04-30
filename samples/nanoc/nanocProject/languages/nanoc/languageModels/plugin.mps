@@ -32,7 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="19" />
+  <maxImportIndex value="20" />
   <import index="2" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="5" modelUID="r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)" version="-1" />
@@ -49,7 +49,7 @@
   <import index="16" modelUID="f:java_stub#com.intellij.execution(com.intellij.execution@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.debug.executable(jetbrains.mps.debug.executable@java_stub)" version="-1" />
   <import index="18" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="19" modelUID="f:java_stub#jetbrains.mps.nanoc(jetbrains.mps.nanoc.debug@java_stub)" version="-1" />
+  <import index="19" modelUID="f:java_stub#jetbrains.mps.nanoc.debug(jetbrains.mps.nanoc.debug@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration:23" id="8325829821233548499">
     <property name="name:23" value="ExecutableFileRunConfiguration" />
     <property name="caption:23" value="Executable File" />
