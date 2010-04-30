@@ -445,6 +445,7 @@ public class GenerationSession {
     if (myLoggingHandler == null) {
       myLoggingHandler = new LoggingHandlerAdapter() {
         public void addLogEntry(LogEntry e) {
+          if(mySessionContext == null) return;
           Object o = e.getHintObject();
           if (o instanceof SNode) {
             mySessionContext.addTransientModelToKeep(((SNode) o).getModel());
