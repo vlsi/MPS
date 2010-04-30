@@ -92,7 +92,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
 
         @Override
         public void processTerminated(SimpleConsoleProcessHandler gdbProcess) {
-          gdbProcess.inputWithFlushToQuit("-gdb-exit\n");
+          gdbProcess.inputWithFlush("-gdb-exit\n");
         }
       });
       return new DefaultExecutionResult(executionConsole, processHandler, consoleView.createConsoleActions());
@@ -104,7 +104,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
 
   private void connectedToDebuggee(SimpleConsoleProcessHandler gdbProcess) {
     //here we get some info about debuggee process and then resume it
-    gdbProcess.inputWithFlush("info program\n");
+ //   gdbProcess.inputWithFlush("info program\n");
     gdbProcess.inputWithFlush("-exec-continue\n");
   }
 
@@ -122,15 +122,9 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
           gdbProcess.inputWithFlush("-environment-cd " + workingDir + "\n");
           gdbProcess.inputWithFlush("-file-exec-and-symbols " + myCommand.replace(File.separatorChar, '/') + "\n");
           gdbProcess.inputWithFlush("-break-insert main\n");
+       //   gdbProcess.inputWithFlush("-gdb-set new-console off\n");
           gdbProcess.inputWithFlush("-exec-run\n");
-       /*   try {
-            ProcessBuilder pb = new ProcessBuilder();
-            pb.command(myCommand);
-            pb.directory(dir);
-            pb.start();
-          } catch (Throwable t) {
-            
-          }*/
+          
           final GDBEventsHandler eventsHandler = myDebugSession.getGDBEventsHandler();
           eventsHandler.addEventListener(new GDBEventsListener() {
             @Override

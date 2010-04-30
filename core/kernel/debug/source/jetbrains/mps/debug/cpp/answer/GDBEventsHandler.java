@@ -55,7 +55,7 @@ public class GDBEventsHandler {
 
       @Override
       public void processTerminated(ProcessEvent event) {
-         fireProcessTerminated();
+        // fireProcessTerminated();
       }
     });
   }

@@ -64,19 +64,6 @@ public class SimpleConsoleProcessHandler extends OSProcessHandler {
     }
   }
 
-  public void inputWithFlushToQuit(String s) {
-    try {
-      getProcessInputWriter().append(s);
-      try {
-        getProcessInputWriter().flush();
-      } catch (IOException ignored) {
-        //at least on Vista an exception is thrown here when process is said to quit, however process quits normally.
-      }
-    } catch (IOException ex) {
-      LOG.error(ex);
-    }
-  }
-
   private OutputStreamWriter getProcessInputWriter() {
     if (myOutputStreamWriter == null) {
       myOutputStreamWriter = new OutputStreamWriter(getProcessInput());
