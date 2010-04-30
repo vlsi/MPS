@@ -1,14 +1,8 @@
-package jetbrains.mps.debug.cpp;
+package jetbrains.mps.nanoc.debug;
 
-import com.intellij.execution.process.ProcessAdapter;
-import com.intellij.execution.process.ProcessEvent;
 import com.intellij.execution.process.ProcessHandler;
-import com.intellij.openapi.util.Key;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debug.api.AbstractUiState;
-import jetbrains.mps.debug.cpp.answer.GDBAnswer;
-import jetbrains.mps.debug.cpp.answer.GDBAnswerProducer;
-import jetbrains.mps.debug.cpp.answer.GDBEventsHandler;
+import jetbrains.mps.nanoc.debug.answer.GDBEventsHandler;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.smodel.IOperationContext;
 

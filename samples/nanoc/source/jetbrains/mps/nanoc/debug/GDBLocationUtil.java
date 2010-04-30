@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.cpp;
+package jetbrains.mps.nanoc.debug;
 
 /**
  * Created by IntelliJ IDEA.

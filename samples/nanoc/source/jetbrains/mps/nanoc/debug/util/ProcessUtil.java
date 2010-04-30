@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.cpp.util;
+package jetbrains.mps.nanoc.debug.util;
 
 import java.lang.reflect.Field;
 

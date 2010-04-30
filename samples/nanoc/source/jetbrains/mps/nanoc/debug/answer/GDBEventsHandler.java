@@ -1,8 +1,7 @@
-package jetbrains.mps.debug.cpp.answer;
+package jetbrains.mps.nanoc.debug.answer;
 
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
-import com.intellij.execution.process.ProcessHandler;
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 

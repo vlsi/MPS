@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.cpp.answer;
+package jetbrains.mps.nanoc.debug.answer;
 
 /**
  * Created by IntelliJ IDEA.

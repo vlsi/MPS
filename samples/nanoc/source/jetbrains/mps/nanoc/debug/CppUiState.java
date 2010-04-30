@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.cpp;
+package jetbrains.mps.nanoc.debug;
 
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractUiState;

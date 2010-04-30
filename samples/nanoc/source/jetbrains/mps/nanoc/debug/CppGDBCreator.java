@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.cpp;
+package jetbrains.mps.nanoc.debug;
 
 import com.intellij.execution.DefaultExecutionResult;
 import com.intellij.execution.ExecutionException;
@@ -8,8 +8,6 @@ import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
-import com.intellij.execution.process.ProcessHandler;
-import com.intellij.execution.process.ProcessListener;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.openapi.project.Project;
@@ -17,14 +15,12 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
-import jetbrains.mps.debug.cpp.answer.GDBAnswer;
-import jetbrains.mps.debug.cpp.answer.GDBEventsHandler;
-import jetbrains.mps.debug.cpp.answer.GDBEventsListener;
-import jetbrains.mps.debug.cpp.plugin.GDBLocationComponent_GDBLocation_PreferencesPage;
-import jetbrains.mps.debug.cpp.util.ProcessUtil;
+import jetbrains.mps.nanoc.debug.answer.GDBAnswer;
+import jetbrains.mps.nanoc.debug.answer.GDBEventsHandler;
+import jetbrains.mps.nanoc.debug.answer.GDBEventsListener;
+import jetbrains.mps.nanoc.debug.util.ProcessUtil;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.debug.info.StacktraceUtil;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 import javax.swing.JComponent;
 import java.io.File;

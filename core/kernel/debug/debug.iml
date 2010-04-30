@@ -11,7 +11,6 @@
       <sourceFolder url="file://$MODULE_DIR$/debugProject/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/debugProject/solutions/jetbrains.mps.debug.run.sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/debugProject/languages/cpp/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/classes" />
       <excludeFolder url="file://$MODULE_DIR$/debugProject/solutions/jetbrains.mps.debug.run.sandbox/classes_gen" />
     </content>
