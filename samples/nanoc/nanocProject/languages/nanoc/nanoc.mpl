@@ -5,7 +5,9 @@
   </models>
   <accessoryModels />
   <generators />
-  <classPath />
+  <classPath>
+    <entry path="${samples_home}/nanoc/classes" include="false" />
+  </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
   <dependencies>
