@@ -19,12 +19,14 @@ public class MethodDuplicatesFinder {
   private List<SNode> myNodesToFind;
   private final Map<SNode, SNode> myMapping;
   private final List<SNode> myParameterOrder;
+  private Set<SNode> myOutputRefs;
   private Set<SNode> myUsedNodes = SetSequence.fromSet(new HashSet<SNode>());
 
-  public MethodDuplicatesFinder(List<SNode> nodesToFind, Map<SNode, SNode> mapping, List<SNode> parametersOrder) {
+  public MethodDuplicatesFinder(List<SNode> nodesToFind, Map<SNode, SNode> mapping, List<SNode> parametersOrder, Set<SNode> outputReferences) {
     this.myNodesToFind = nodesToFind;
     this.myMapping = mapping;
     this.myParameterOrder = parametersOrder;
+    myOutputRefs = outputReferences;
     SetSequence.fromSet(this.myUsedNodes).addSequence(ListSequence.fromList(this.myNodesToFind));
   }
 
@@ -50,7 +52,7 @@ public class MethodDuplicatesFinder {
       if (hasNoErrors) {
         MethodMatch resultMatch = modifier.getMatch();
         resultMatch.createRefactoring();
-        if (resultMatch.checkMapping()) {
+        if (resultMatch.checkMatch()) {
           for (SNode resultNode : ListSequence.fromList(resultMatch.getNodes())) {
             SetSequence.fromSet(this.myUsedNodes).addElement(resultNode);
           }
@@ -72,6 +74,9 @@ public class MethodDuplicatesFinder {
     }
 
     public boolean accept(SNode candidate, SNode original) {
+      if (SetSequence.fromSet(myOutputRefs).contains(original)) {
+        this.myMatch.putOutputReference(candidate);
+      }
       if (MapSequence.fromMap(MethodDuplicatesFinder.this.myMapping).containsKey(original)) {
         return true;
       }

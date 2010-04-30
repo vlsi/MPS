@@ -5,17 +5,17 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
+import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -24,10 +24,12 @@ public class MethodMatch {
   private List<SNode> myParametersOrder;
   private Map<SNode, List<SNode>> myParamsToNodes;
   private ExtractMethodRefactoring myRefactoring = null;
+  private Set<SNode> myOutputRefs;
 
   public MethodMatch(List<SNode> parametersOrder) {
     this.myParamsToNodes = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     this.myNodes = new ArrayList<SNode>();
+    myOutputRefs = SetSequence.fromSet(new HashSet<SNode>());
     this.myParametersOrder = parametersOrder;
   }
 
@@ -40,6 +42,10 @@ public class MethodMatch {
 
   public void putNode(SNode node) {
     ListSequence.fromList(this.myNodes).addElement(node);
+  }
+
+  public void putOutputReference(SNode node) {
+    SetSequence.fromSet(myOutputRefs).addElement(node);
   }
 
   public List<SNode> getNodes() {
@@ -58,7 +64,13 @@ public class MethodMatch {
     this.myRefactoring = ExtractMethodFactory.createRefactoring(ExtractMethodFactory.createParameters(this.myNodes));
   }
 
-  public boolean checkMapping() {
+  public boolean checkMatch() {
+    boolean good = checkMapping();
+    good &= checkOutputReferencies();
+    return good;
+  }
+
+  private boolean checkMapping() {
     for (SNode parameter : SetSequence.fromSet(MapSequence.fromMap(this.myParamsToNodes).keySet())) {
       if (!(this.checkParameter(parameter))) {
         return false;
@@ -83,11 +95,21 @@ public class MethodMatch {
     return true;
   }
 
+  private boolean checkOutputReferencies() {
+    Set<SNode> computedOutputRefs = myRefactoring.getOutputReferences();
+    for (SNode computedRef : SetSequence.fromSet(computedOutputRefs)) {
+      if (!(SetSequence.fromSet(myOutputRefs).contains(computedRef))) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public List<SNode> getCallParameters() {
     List<SNode> callActualParams = new ArrayList<SNode>();
     for (SNode parameter : ListSequence.fromList(this.myParametersOrder)) {
       if (ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).isEmpty()) {
-        ListSequence.fromList(callActualParams).addElement(new MethodMatch.QuotationClass_5zfyci_a0a0a0a0b0i().createNode());
+        ListSequence.fromList(callActualParams).addElement(new MethodMatch.QuotationClass_5zfyci_a0a0a0a0b0l().createNode());
       } else {
         ListSequence.fromList(callActualParams).addElement(SNodeOperations.cast(SNodeOperations.copyNode(ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).getElement(0)), "jetbrains.mps.baseLanguage.structure.Expression"));
       }
@@ -95,8 +117,8 @@ public class MethodMatch {
     return callActualParams;
   }
 
-  public static class QuotationClass_5zfyci_a0a0a0a0b0i {
-    public QuotationClass_5zfyci_a0a0a0a0b0i() {
+  public static class QuotationClass_5zfyci_a0a0a0a0b0l {
+    public QuotationClass_5zfyci_a0a0a0a0b0l() {
     }
 
     public SNode createNode() {

@@ -216,8 +216,25 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
+  public Set<SNode> getOutputReferences() {
+    Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
+    List<SNode> outputVariables = myParameters.getAnalyzer().getOutputVariables();
+    for (SNode node : ListSequence.fromList(myParameters.getNodesToRefactor())) {
+      for (SNode varReference : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
+        if (ListSequence.fromList(outputVariables).contains(SLinkOperations.getTarget(varReference, "variableDeclaration", false))) {
+          SetSequence.fromSet(result).addElement(varReference);
+        }
+      }
+    }
+    return result;
+  }
+
   public List<MethodMatch> getMatches() {
     return this.myMatches;
+  }
+
+  public ExtractMethodRefactoringAnalyzer getAnalyzer() {
+    return myParameters.getAnalyzer();
   }
 
   public abstract SNode getMethodType();
