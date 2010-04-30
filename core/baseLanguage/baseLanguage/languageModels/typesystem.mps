@@ -23794,8 +23794,8 @@
           </node>
         </node>
         <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8578055449698165505">
-          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8578055449698165506">
-            <link role="variableDeclaration:3" targetNodeId="8578055449698165467" resolveInfo="methodClassifier" />
+          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1126608406759242109">
+            <link role="variableDeclaration:3" targetNodeId="8578055449698353781" resolveInfo="currentClassifier" />
           </node>
           <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="8578055449698165507">
             <link role="link:16" targetNodeId="1.1109279881614:3" />

@@ -38,7 +38,7 @@ public class typeof_LocalInstanceMethodCall_InferenceRule extends AbstractInfere
       currentClassifier = SNodeOperations.getAncestor(currentClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     }
     SNode constructedType = new typeof_LocalInstanceMethodCall_InferenceRule.QuotationClass_h4n2qb_a0a6a0().createNode(currentClassifier, typeCheckingContext);
-    for (SNode tvd : SLinkOperations.getTargets(methodClassifier, "typeVariableDeclaration", true)) {
+    for (SNode tvd : SLinkOperations.getTargets(currentClassifier, "typeVariableDeclaration", true)) {
       SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
       SLinkOperations.setTarget(tvr, "typeVariableDeclaration", tvd, false);
       ListSequence.fromList(SLinkOperations.getTargets(constructedType, "parameter", true)).addElement(tvr);
