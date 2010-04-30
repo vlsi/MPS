@@ -85,12 +85,7 @@ public class TextGenerationUtil {
     }
 
     public boolean hasDependencies() {
-      for(List<String> val : myDependencies.values()) {
-        if(!val.isEmpty()) {
-          return true;
-        }
-      }
-      return false;
+      return true;
     }
   }
 
