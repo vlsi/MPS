@@ -721,7 +721,7 @@
         <property name="vertical:32" value="false" />
         <link role="relationDeclaration:32" targetNodeId="17.1178616825527:3" />
         <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1178616865558">
-          <property name="nullText:32" value="&lt;&lt;inner classifiers&gt;&gt;" />
+          <property name="nullText:32" value="&lt;&lt;nested classifiers&gt;&gt;" />
           <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="1214579834105">
             <property name="flag:32" value="true" />
           </node>
@@ -4620,7 +4620,7 @@
         <property name="vertical:32" value="false" />
         <link role="relationDeclaration:32" targetNodeId="17.1178616825527:3" />
         <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1578358025114233726">
-          <property name="nullText:32" value="&lt;&lt;inner classifiers&gt;&gt;" />
+          <property name="nullText:32" value="&lt;&lt;nested classifiers&gt;&gt;" />
           <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="1578358025114233727">
             <property name="flag:32" value="true" />
           </node>

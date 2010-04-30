@@ -23802,7 +23802,6 @@
           </node>
         </node>
       </node>
-      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="8578055449698285822" />
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8578055449698165508">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8578055449698165509">
           <property name="name:3" value="mmap" />
@@ -23880,6 +23879,62 @@
           <link role="baseMethodDeclaration:3" targetNodeId="1203452762080" resolveInfo="inference_equateMatchingTypeVariables" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8578055449698165537">
             <link role="variableDeclaration:3" targetNodeId="8578055449698165509" resolveInfo="mmap" />
+          </node>
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1126608406759386577">
+        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1126608406759386578">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1126608406759386586">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1126608406759386588">
+              <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1126608406759386587">
+                <link role="variableDeclaration:3" targetNodeId="8578055449698353781" resolveInfo="currentClassifier" />
+              </node>
+              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1126608406759386591">
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="1126608406759386592">
+                  <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1126608406759386593">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1126608406759386594">
+                      <link role="conceptDeclaration:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
+                    </node>
+                  </node>
+                </node>
+                <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1126608406759386595">
+                  <link role="applicableNode:3" targetNodeId="4940013265625385409" resolveInfo="methodCall" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1126608406759386582">
+          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1126608406759386585" />
+          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1126608406759386581">
+            <link role="variableDeclaration:3" targetNodeId="8578055449698353781" resolveInfo="currentClassifier" />
+          </node>
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="1126608406759381109">
+        <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="1126608406759381110" />
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1126608406759381111">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1126608406759381112">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1126608406759381113">
+              <node role="referenceAntiquotation$link_attribute$classifier:3" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="1126608406759381114">
+                <property name="label:0" value="ClassifierType" />
+                <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1126608406759381115">
+                  <link role="variableDeclaration:3" targetNodeId="8578055449698165467" resolveInfo="methodClassifier" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1126608406759381116">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1126608406759381117">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1126608406759381118">
+              <node role="referenceAntiquotation$link_attribute$classifier:3" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="1126608406759381119">
+                <property name="label:0" value="ClassifierType" />
+                <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1126608406759381120">
+                  <link role="variableDeclaration:3" targetNodeId="8578055449698353781" resolveInfo="currentClassifier" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

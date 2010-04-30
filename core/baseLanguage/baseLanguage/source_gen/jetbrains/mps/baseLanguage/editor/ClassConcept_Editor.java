@@ -1230,7 +1230,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.EDITABLE, true);
       }
-      editorCell.setDefaultText("<<inner classifiers>>");
+      editorCell.setDefaultText("<<nested classifiers>>");
       return editorCell;
     }
   }
