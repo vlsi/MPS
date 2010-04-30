@@ -20,6 +20,10 @@ public final class PackagesAndClassesStorage extends PreifxStringStorage {
     return obj.getChildStrings();
   }
 
+  public StringObject getParent(StringObject obj){
+    return obj.getParent();
+  }
+
   public void addClasses(String pack, Set<String> names){
     StringObject node = get(pack);
     for (String name:names){
