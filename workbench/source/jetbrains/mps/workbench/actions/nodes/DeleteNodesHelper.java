@@ -76,6 +76,7 @@ public class                       DeleteNodesHelper {
 
   private void deleteSingle(ProjectPane projectPane, boolean fromProjectPane, SNode node) {
     MPSTreeNode nextNode = null;
+    fromProjectPane = fromProjectPane && projectPane.getTree() != null;
     if (fromProjectPane) {
       nextNode = projectPane.findNextTreeNode(node);
     }
