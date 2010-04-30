@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
+import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
@@ -85,7 +86,7 @@ public class JavaStubs extends BaseStubModelRootManager {
   }
 
   private IClassPathItem createClassPathItem(StubLocation location) {
-    return StubClassPathCache.getInstance().get(location);
+    return ClassPathFactory.getInstance().createFromPath(location.getPath());
   }
 
   private void getModelDescriptorsInternal(StubLocation location, Set<BaseStubModelDescriptor> result) {

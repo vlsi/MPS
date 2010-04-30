@@ -18,7 +18,7 @@ package jetbrains.mps.javaParser;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.reloading.AbstractClassPathItem;
+import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.PathManager;
@@ -32,7 +32,6 @@ import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -219,7 +218,7 @@ public class ClasspathSelectionTree extends JTree {
 
     private IClassPathItem classpathChosen() {
       try {
-        return AbstractClassPathItem.createFromPath(myFile.getAbsolutePath());
+        return ClassPathFactory.getInstance().createFromPath(myFile.getAbsolutePath());
       } catch (Throwable ex) {
         LOG.error(ex);
         return null;

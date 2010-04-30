@@ -28,10 +28,7 @@ import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.reloading.AbstractClassPathItem;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.*;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -816,7 +813,7 @@ public abstract class AbstractModule implements IModule {
         if (!EqualUtil.equals(path.getManager().getClassName(), JavaStubs.class.getName())) continue;
 
         try {
-          IClassPathItem pathItem = AbstractClassPathItem.createFromPath(path.getPath(), this);
+          IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path.getPath(), this);
           myCachedClassPathItem.add(pathItem);
         } catch (IOException e) {
           LOG.error(e.getMessage());

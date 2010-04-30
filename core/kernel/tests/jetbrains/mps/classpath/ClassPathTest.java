@@ -32,7 +32,7 @@ import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.reloading.AbstractClassPathItem;
+import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -42,7 +42,6 @@ import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
-import javax.swing.SwingUtilities;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -110,7 +109,7 @@ public class ClassPathTest extends BaseMPSTest {
             String path = classPath.getPath();
             IClassPathItem pathItem = null;
             try {
-              pathItem = AbstractClassPathItem.createFromPath(path, null);
+              pathItem = ClassPathFactory.getInstance().createFromPath(path, null);
             } catch (IOException e) {
               LOG.error(e.getMessage());
               continue;

@@ -34,10 +34,7 @@ import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
-import jetbrains.mps.reloading.AbstractClassPathItem;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
@@ -845,7 +842,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
           continue;
         }
 
-        result.add(AbstractClassPathItem.createFromPath(s, this));
+        result.add(ClassPathFactory.getInstance().createFromPath(s, this));
       } catch (IOException e) {
         LOG.error(e.getMessage());
       }

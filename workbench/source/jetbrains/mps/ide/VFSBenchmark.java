@@ -19,7 +19,7 @@ import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.reloading.AbstractClassPathItem;
+import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
@@ -75,7 +75,7 @@ public class VFSBenchmark {
     System.out.println("JarFileCPItem " + measure(new Runnable() {
       public void run() {
         try {
-          JarFileClassPathItem pathItem = (JarFileClassPathItem) AbstractClassPathItem.createFromPath(jarPath);
+          JarFileClassPathItem pathItem = (JarFileClassPathItem) ClassPathFactory.getInstance().createFromPath(jarPath);
           for (int i = 0; i < COUNT; i++) {
             scan(pathItem, "", new StringBuffer());
           }

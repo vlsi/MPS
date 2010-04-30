@@ -41,7 +41,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.reloading.AbstractClassPathItem;
+import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.ide.embeddableEditor.GenerationResult;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.ValueProxy;
@@ -165,7 +165,7 @@ public class EvaluationDialog extends BaseDialog {
         classpaths.add(item);
       }
       String path = PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.tools.") + "tools.jar";
-      classpaths.add(AbstractClassPathItem.createFromPath(path));
+      classpaths.add(ClassPathFactory.getInstance().createFromPath(path));
       final GenerationResult generationResult = this.myEditor.generate(classpaths);
       if (generationResult.isSuccessful()) {
         String fqName = generationResult.getModelDescriptor().getLongName() + ".EvaluatorInstance";

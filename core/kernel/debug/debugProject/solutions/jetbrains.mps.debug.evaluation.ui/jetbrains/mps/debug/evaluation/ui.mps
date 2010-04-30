@@ -1648,11 +1648,16 @@
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2714803958285745917">
                   <link role="baseMethodDeclaration:3" targetNodeId="11.~Set.add(java.lang.Object):boolean" resolveInfo="add" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5402382667449242346">
-                    <link role="baseMethodDeclaration:3" targetNodeId="20.~AbstractClassPathItem.createFromPath(java.lang.String,jetbrains.mps.project.IModule):jetbrains.mps.reloading.IClassPathItem" resolveInfo="createFromPath" />
-                    <link role="classConcept:3" targetNodeId="20.~AbstractClassPathItem" resolveInfo="AbstractClassPathItem" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5402382667449242347">
-                      <link role="variableDeclaration:3" targetNodeId="5402382667449239840" resolveInfo="path" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1249780529026042109">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1249780529026042107">
+                      <link role="baseMethodDeclaration:3" targetNodeId="20.~ClassPathFactory.getInstance():jetbrains.mps.reloading.ClassPathFactory" resolveInfo="getInstance" />
+                      <link role="classConcept:3" targetNodeId="20.~ClassPathFactory" resolveInfo="ClassPathFactory" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1249780529026042113">
+                      <link role="baseMethodDeclaration:3" targetNodeId="20.~ClassPathFactory.createFromPath(java.lang.String):jetbrains.mps.reloading.IClassPathItem" resolveInfo="createFromPath" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1249780529026042114">
+                        <link role="variableDeclaration:3" targetNodeId="5402382667449239840" resolveInfo="path" />
+                      </node>
                     </node>
                   </node>
                 </node>

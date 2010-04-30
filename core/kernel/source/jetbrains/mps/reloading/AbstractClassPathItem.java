@@ -60,31 +60,4 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
   protected abstract void collectSubpackages(Set<String> subpackages, String namespace);
 
   protected abstract void collectAvailableClasses(Set<String> classes, String namespace);
-
-  public static IClassPathItem createFromPath(String path) {
-    try {
-      return createFromPath(path, null);
-    } catch (IOException e) {
-      throw new RuntimeException(e);
-    }
-  }
-
-  public static IClassPathItem createFromPath(String path, @Nullable IModule module) throws IOException {
-    IFile file = FileSystem.getFile(path);
-
-    if (!file.exists()) {
-      String moduleString = module == null ? "" : (" in " + module.toString());
-      String message = "Can't load class path item " + path + moduleString + "." + (file.isDirectory() ? " Execute make in IDEA." : "");
-      throw new IOException(message);
-    }
-
-    IClassPathItem currentItem;
-    if (file.isDirectory()) {
-      currentItem = new FileClassPathItem(path);
-    } else {
-      currentItem = new JarFileClassPathItem(path);
-    }
-
-    return currentItem;
-  }
 }
