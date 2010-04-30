@@ -618,6 +618,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void goToNextErrorCell(boolean backwards) {
+    if (getSelectedCell() == null) {
+      return;
+    }
     new CellNavigator(this) {
       boolean isSuitableCell(EditorCell cell) {
         if (cell.hasErrorMessages()) {
@@ -630,6 +633,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void goToNextHighlightedCell(boolean backwards) {
+    if (getSelectedCell() == null) {
+      return;
+    }
     new CellNavigator(this) {
       boolean isSuitableCell(EditorCell cell) {
         for (EditorMessage m : getHighlightManager().getMessagesFor(cell.getSNode())) {

@@ -25,10 +25,10 @@ abstract class CellNavigator {
   private EditorComponent myEditor;
   private EditorCell mySelectedCell;
 
-
   protected CellNavigator(EditorComponent editor) {
     myEditor = editor;
     mySelectedCell = editor.getSelectedCell();
+    assert mySelectedCell != null;
   }
 
   abstract boolean isSuitableCell(EditorCell cell);
@@ -81,15 +81,4 @@ abstract class CellNavigator {
     }
     return null;
   }
-
-
-  
-
-
-
-
-  
-
-
-
 }
