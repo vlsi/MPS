@@ -21,6 +21,7 @@ import jetbrains.mps.debug.cpp.answer.GDBAnswer;
 import jetbrains.mps.debug.cpp.answer.GDBEventsHandler;
 import jetbrains.mps.debug.cpp.answer.GDBEventsListener;
 import jetbrains.mps.debug.cpp.plugin.GDBLocationComponent_GDBLocation_PreferencesPage;
+import jetbrains.mps.debug.cpp.util.ProcessUtil;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.debug.info.StacktraceUtil;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
@@ -63,6 +64,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
       processBuilder.command(gdbFile.getAbsolutePath(), "-quiet", "--interpreter=mi");
       Process process = processBuilder.start();
       final ConsoleViewImpl consoleView = StacktraceUtil.createConsoleView(project);
+      String s = ProcessUtil.getProcessId(process);
       SimpleConsoleProcessHandler processHandler = new SimpleConsoleProcessHandler(consoleView, process, gdbFile.getAbsolutePath());
       processHandler.addProcessListener(new MyProcessListener());
       ExecutionConsole executionConsole = new ExecutionConsole() {
@@ -121,6 +123,14 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
           gdbProcess.inputWithFlush("-file-exec-and-symbols " + myCommand.replace(File.separatorChar, '/') + "\n");
           gdbProcess.inputWithFlush("-break-insert main\n");
           gdbProcess.inputWithFlush("-exec-run\n");
+       /*   try {
+            ProcessBuilder pb = new ProcessBuilder();
+            pb.command(myCommand);
+            pb.directory(dir);
+            pb.start();
+          } catch (Throwable t) {
+            
+          }*/
           final GDBEventsHandler eventsHandler = myDebugSession.getGDBEventsHandler();
           eventsHandler.addEventListener(new GDBEventsListener() {
             @Override
