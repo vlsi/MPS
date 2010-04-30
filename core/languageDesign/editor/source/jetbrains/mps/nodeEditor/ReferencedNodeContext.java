@@ -22,10 +22,10 @@ import jetbrains.mps.util.EqualUtil;
 import java.util.Stack;
 
 public class ReferencedNodeContext {
-  private Stack<SNode> myContextRefererNodes = new Stack<SNode>();
+  private Stack<SNode> myContextRefererNodes = null;
   private SNode myNodePointer = null;
-  private Stack<String> myContextRoles = new Stack<String>();
-  private Stack<SNode> myAttributesStack = new Stack<SNode>();
+  private Stack<String> myContextRoles = null;
+  private Stack<SNode> myAttributesStack = null;
 
   private ReferencedNodeContext(SNode node) {
     assert node != null;
@@ -34,8 +34,14 @@ public class ReferencedNodeContext {
 
   private ReferencedNodeContext(SNode node, ReferencedNodeContext prototype) {
     this(node);
-    myContextRoles.addAll(prototype.myContextRoles);
-    myContextRefererNodes.addAll(prototype.myContextRefererNodes);
+    if (prototype.myContextRoles != null) {
+      myContextRoles = new Stack<String>();
+      myContextRoles.addAll(prototype.myContextRoles);
+    }
+    if (prototype.myContextRefererNodes != null) {
+      myContextRefererNodes = new Stack<SNode>();
+      myContextRefererNodes.addAll(prototype.myContextRefererNodes);
+    }
   }
 
   public static ReferencedNodeContext createNodeContext(SNode node) {
@@ -48,17 +54,20 @@ public class ReferencedNodeContext {
 
   public ReferencedNodeContext contextWithOneMoreReference(SNode node, SNode contextRefererNode, String contextRole) {
     ReferencedNodeContext result = new ReferencedNodeContext(node, this);
-    result.myContextRoles.push(contextRole);
-    result.myContextRefererNodes.push(contextRefererNode);
+    result.addContextRole(contextRole);
+    result.addContextRefererNode(contextRefererNode);
     return saveAsUserObject(result);
   }
 
   public boolean hasRoles() {
-    return !myContextRoles.isEmpty();
+    return myContextRoles != null;
   }
 
   public ReferencedNodeContext contextWithOneMoreAttribute(SNode attribute) {
     ReferencedNodeContext result = new ReferencedNodeContext(getNode(), this);
+    if (myAttributesStack == null) {
+      myAttributesStack = new Stack<SNode>();
+    }
     result.myAttributesStack.push(attribute);
     return saveAsUserObject(result);
   }
@@ -69,6 +78,20 @@ public class ReferencedNodeContext {
 
   public SNode getNode() {
     return myNodePointer;
+  }
+
+  private void addContextRole(String contextRole) {
+    if (myContextRoles == null) {
+      myContextRoles = new Stack<String>();
+    }
+    myContextRoles.push(contextRole);
+  }
+
+  private void addContextRefererNode(SNode contextRefererNode) {
+    if (myContextRefererNodes == null) {
+      myContextRefererNodes = new Stack<SNode>();
+    }
+    myContextRefererNodes.push(contextRefererNode);
   }
 
   /**
@@ -82,21 +105,20 @@ public class ReferencedNodeContext {
   }
 
   public int hashCode() {
-    return EqualUtil.hashCode(myContextRefererNodes)
-      + EqualUtil.hashCode(myNodePointer)
-      + EqualUtil.hashCode(myContextRoles)
-      + EqualUtil.hashCode(myAttributesStack);
+    return EqualUtil.hashCode(myNodePointer) +
+      31 * (EqualUtil.hashCode(myContextRefererNodes) +
+        31 * (EqualUtil.hashCode(myContextRoles) +
+          31 * EqualUtil.hashCode(myAttributesStack)));
   }
-
 
   public boolean equals(Object obj) {
     if (obj == this) return true;
     if (obj instanceof ReferencedNodeContext) {
       ReferencedNodeContext o = (ReferencedNodeContext) obj;
-      return EqualUtil.equals(myContextRoles, o.myContextRoles)
+      return EqualUtil.equals(myNodePointer, o.myNodePointer)
+        && EqualUtil.equals(myContextRoles, o.myContextRoles)
         && EqualUtil.equals(myContextRefererNodes, o.myContextRefererNodes)
-        && EqualUtil.equals(myAttributesStack, o.myAttributesStack)
-        && EqualUtil.equals(myNodePointer, o.myNodePointer);
+        && EqualUtil.equals(myAttributesStack, o.myAttributesStack);
     } else {
       return false;
     }
