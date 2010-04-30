@@ -377,6 +377,38 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return result;
   }
 
+  private void invalidateReferencesInCopiedNode(SNode node) {
+    for (SReference reference : node.getReferencesIterable()) {
+      SNode targetNode = reference.getTargetNode();
+      if (targetNode == null) {
+        showErrorMessage(node, "broken reference '" + reference.getRole() + "' in copied node: " + node.getDebugText());
+        continue;
+      }
+      if (targetNode.getModel().equals(myInputModel)) {
+        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
+          reference.getRole(),
+          node,
+          reference.getSourceNode(),
+          targetNode);
+        PostponedReference newReference = new PostponedReference(
+          refInfo,
+          this
+        );
+        node.replaceReference(reference, newReference);
+      }
+    }
+    for (SNode childNode : node.getChildrenIterable()) {
+      invalidateReferencesInCopiedNode(childNode);
+    }
+  }
+
+  SNode copyNodeFromExternalNode(SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
+    SNode target = CopyUtil.copy(inputNode);
+    // replace all references to input model => output model
+    invalidateReferencesInCopiedNode(target);
+    return target;
+  }
+
   List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode, ReductionBlockingContext blockingContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
     myGenerationTracer.pushInputNode(inputNode);
     try {
