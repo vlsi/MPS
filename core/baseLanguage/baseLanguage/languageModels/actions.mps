@@ -6327,6 +6327,31 @@
         </node>
       </node>
     </node>
+    <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="6739323897478615611">
+      <link role="applicableConcept:23" targetNodeId="1.1081236700938:3" resolveInfo="StaticMethodDeclaration" />
+      <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="6739323897478624909">
+        <link role="concept:23" targetNodeId="1.1081236700938:3" resolveInfo="StaticMethodDeclaration" />
+        <node role="part:23" type="jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart:23" id="6739323897478624911">
+          <node role="handler:23" type="jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler:23" id="6739323897478624912">
+            <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6739323897478624913">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6739323897478624916">
+                <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="6739323897478624917">
+                  <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="6739323897478624919">
+                    <property name="name:3" value="main" />
+                    <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6739323897478624920" />
+                    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6739323897478624921" />
+                    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6739323897478624922" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText:23" type="jetbrains.mps.lang.actions.structure.Substitute_SimpleString:23" id="6739323897478624915">
+            <property name="text:23" value="psvm" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1212710885020">
     <property name="name:23" value="creators" />
