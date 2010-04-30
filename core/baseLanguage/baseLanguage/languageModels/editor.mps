@@ -1418,32 +1418,17 @@
         <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="1208703059009">
           <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1208703059010">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1208703059011">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="4898614932449671025">
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="4898614932449671031">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4898614932449672034">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4898614932449671034">
-                      <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="4898614932449671033" />
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="4898614932449672033" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="4898614932449672038">
-                      <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="4898614932449672040">
-                        <link role="conceptDeclaration:16" targetNodeId="17.1107796713796:3" resolveInfo="Interface" />
-                      </node>
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="4898614932449671031">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4898614932449672034">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4898614932449671034">
+                    <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="4898614932449671033" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="4898614932449672033" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="4898614932449672038">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="4898614932449672040">
+                      <link role="conceptDeclaration:16" targetNodeId="17.1107796713796:3" resolveInfo="Interface" />
                     </node>
                   </node>
-                </node>
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1208703059012">
-                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1208703059014">
-                    <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1208703059015" />
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="1208703059016">
-                      <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1208703059017">
-                        <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1208703059018">
-                          <link role="conceptDeclaration:16" targetNodeId="17.1170345865475:3" resolveInfo="AnonymousClass" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1208703059013" />
                 </node>
               </node>
             </node>

@@ -449,7 +449,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_359zr8_a41a(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false) == null && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface"));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface"));
   }
 
   private static class annotationListHandler_359zr8_a1a extends RefNodeListHandler {
