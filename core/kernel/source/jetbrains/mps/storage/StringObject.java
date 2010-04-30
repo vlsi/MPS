@@ -1,7 +1,9 @@
 package jetbrains.mps.storage;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 public class StringObject {
   private StringObject myParent;
@@ -29,6 +31,10 @@ public class StringObject {
     newObj.myParent = this;
 
     return newObj;
+  }
+
+  Collection<String> getChildStrings(){
+    return myChildren.keySet();
   }
 
   StringObject getParent() {

@@ -14,7 +14,7 @@ public class PreifxStringStorage {
   public StringObject get(String s) {
     StringTokenizer st = new StringTokenizer(s, "" + mySeparatorChar);
     StringObject node = myRoot;
-    while (st.hasMoreTokens()){
+    while (st.hasMoreTokens()) {
       node = node.getChild(st.nextToken());
     }
     return node;
@@ -29,12 +29,12 @@ public class PreifxStringStorage {
       obj = obj.getParent();
     } while (obj != null);
 
-    for (int i = stack.size() - 1; i >= 0; i--){
+    for (int i = stack.size() - 1; i >= 0; i--) {
       String str = stack.get(i).getString();
-      if (str==null) continue;
+      if (str == null) continue;
       sb.append(str).append(mySeparatorChar);
     }
-    sb.deleteCharAt(sb.length());
+    sb.deleteCharAt(sb.length() - 1);
 
     return sb.toString();
   }
