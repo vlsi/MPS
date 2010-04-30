@@ -35,7 +35,6 @@ public class ChangeMethodParametersForStatement_Test extends BaseTransformationT
       {
         SNode c_ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
         SLinkOperations.setTarget(c_ref, "variableDeclaration", SNodeOperations.cast(this.getNodeById("1230052406612"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false);
-        SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("1230052406630"), "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression"), c_ref);
         ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406572"), "jetbrains.mps.baseLanguage.structure.ReturnStatement")));
         ListSequence.fromList(params.getParameters()).getElement(0).setSelected(false);
         MethodParameter p2 = ListSequence.fromList(params.getParameters()).getElement(1);

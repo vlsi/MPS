@@ -33,9 +33,9 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
     Map<SNode, SNode> inputToParams = this.createInputParameters(body, params);
     Map<SNode, SNode> inputMapping = this.createInputVaryablesMapping(inputToParams);
     this.myMatches = new MethodDuplicatesFinder(this.myParameters.getNodesToRefactor(), inputMapping, params).findDuplicates(SNodeOperations.getAncestor(ListSequence.fromList(this.myParameters.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
+    this.replaceInputVariablesByParameters(body, inputToParams, mapping);
     SNode newMethod = this.createNewMethod(type, params, body);
     this.addMethod(newMethod);
-    this.replaceInputVariablesByParameters(body, inputToParams, mapping);
     MethodMatch exactMatch = this.createMatch(this.myParameters.getNodesToRefactor(), inputMapping, params);
     this.replaceMatch(exactMatch, newMethod);
     MethodOptimizer.optimize(body);

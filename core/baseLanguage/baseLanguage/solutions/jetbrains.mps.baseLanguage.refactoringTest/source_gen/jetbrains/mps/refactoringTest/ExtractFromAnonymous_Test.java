@@ -29,7 +29,7 @@ public class ExtractFromAnonymous_Test extends BaseTransformationTest {
     public void test_ExtractFromAnonymous() throws Exception {
       this.addNodeById("1230052406963");
       this.addNodeById("1230052406990");
-      ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406982"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
+      ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406982"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), SNodeOperations.cast(this.getNodeById("6195342755327931780"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
       params.setName("foo");
       ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
       ref.doRefactor();

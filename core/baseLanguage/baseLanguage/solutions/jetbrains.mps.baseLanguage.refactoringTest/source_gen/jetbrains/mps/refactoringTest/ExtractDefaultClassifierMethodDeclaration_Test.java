@@ -36,7 +36,7 @@ public class ExtractDefaultClassifierMethodDeclaration_Test extends BaseTransfor
       this.addNodeById("1230052509259");
       this.addNodeById("1230052509277");
       this.addNodeById("1230052509301");
-      ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509264"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
+      ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509264"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), SNodeOperations.cast(this.getNodeById("6195342755327949995"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
       params.setName("bar");
       ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
       ref.doRefactor();
