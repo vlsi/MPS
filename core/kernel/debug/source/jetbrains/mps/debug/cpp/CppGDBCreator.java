@@ -102,7 +102,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
 
   private void connectedToDebuggee(SimpleConsoleProcessHandler gdbProcess) {
     //here we get some info about debuggee process and then resume it
-    gdbProcess.inputWithFlush("info terminal\n");
+    gdbProcess.inputWithFlush("info program\n");
     gdbProcess.inputWithFlush("-exec-continue\n");
   }
 
