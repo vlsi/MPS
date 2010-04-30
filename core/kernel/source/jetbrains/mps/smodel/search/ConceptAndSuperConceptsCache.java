@@ -21,12 +21,14 @@ import jetbrains.mps.cache.CachesManager.CacheCreator;
 import jetbrains.mps.cache.DataSet;
 import jetbrains.mps.cache.KeyProducer;
 import jetbrains.mps.lang.structure.structure.*;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
 
@@ -51,7 +53,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     Set<SModelDescriptor> dependsOnModel = new HashSet<SModelDescriptor>();
     for (AbstractConceptDeclaration concept : getConcepts()) {
       // http://youtrack.jetbrains.net/issue/MPS-8362
-      assert concept.getModel().getModelDescriptor() != null : "Model descriptor is null";
+      assert concept.getModel().getModelDescriptor() != null : "Model descriptor is null for concept: " + concept + " same concept from SModelUtil_new: " + SModelUtil_new.findConceptDeclaration(NameUtil.nodeFQName(concept), GlobalScope.getInstance());
       dependsOnModel.add(concept.getModel().getModelDescriptor());
     }
     return dependsOnModel;
