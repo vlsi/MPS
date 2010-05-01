@@ -9,7 +9,7 @@ import jetbrains.mps.nanoc.debug.answer.ResultAnswer;
  * Time: 21:35:08
  * To change this template use File | Settings | File Templates.
  */
-public class BreakpointRequestor extends GDBRequestor {
+public abstract class BreakpointRequestor extends GDBRequestor {
   private String mySourceFile;
   private String myFunction;
   private int myLineNumber;
@@ -32,8 +32,4 @@ public class BreakpointRequestor extends GDBRequestor {
     }
   }
 
-  @Override
-  public void onRequestFulfilled(ResultAnswer answer) {
-    //todo
-  }
 }

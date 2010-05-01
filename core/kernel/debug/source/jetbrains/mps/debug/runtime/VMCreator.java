@@ -73,7 +73,7 @@ public class VMCreator extends AbstractDebugSessionCreator {
   public VMCreator(Project p) {
     myDebugVMEventsProcessor = new DebugVMEventsProcessor(p, this);
     myDebuggerManagerThread = new DebuggerManagerThread(); //thread started!
-    myDebuggerSession = new DebugSession(myDebugVMEventsProcessor);
+    myDebuggerSession = new DebugSession(myDebugVMEventsProcessor, p);
   }
 
   private DebugConnectionSettings createLocalConnectionSettings(RunProfileState state) {

@@ -1,11 +1,16 @@
 package jetbrains.mps.nanoc.debug;
 
 import com.intellij.execution.process.ProcessHandler;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.nanoc.debug.events.GDBEventsHandler;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.nanoc.debug.requests.GDBRequestManager;
 import jetbrains.mps.smodel.IOperationContext;
+
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,6 +22,10 @@ import jetbrains.mps.smodel.IOperationContext;
 public class CppDebugSession extends AbstractDebugSession<CppUiState> {
   private GDBEventsHandler myEventsHandler;
   private GDBRequestManager myRequestManager;
+
+  public CppDebugSession(Project p) {
+    super(p);
+  }
 
   @Override
   protected CppUiState createUiState() {
@@ -60,7 +69,7 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
   public void setProcessHandler(ProcessHandler processHandler) {
     super.setProcessHandler(processHandler);
     myEventsHandler = new GDBEventsHandler((SimpleConsoleProcessHandler) processHandler);
-    myRequestManager = new GDBRequestManager(myEventsHandler);
+    myRequestManager = new GDBRequestManager(myEventsHandler, getProject().getComponent(BreakpointManagerComponent.class));
   }
 
   public GDBEventsHandler getGDBEventsHandler() {
@@ -69,5 +78,19 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
 
   public GDBRequestManager getGDBRequestManager() {
     return myRequestManager;
+  }
+
+  public static void performAllSessionsAction(Project p, DebugSessionAction action) {
+     DebugSessionManagerComponent debugSessionManager = DebugSessionManagerComponent.getInstance(p);
+    Set<AbstractDebugSession> debugSessions = debugSessionManager.getDebugSessions();
+    for (AbstractDebugSession session : debugSessions) {
+      if (session instanceof CppDebugSession) {
+         action.run((CppDebugSession) session);
+      }
+    }
+  }
+
+  public static interface DebugSessionAction {
+    public void run(CppDebugSession debugSession);
   }
 }

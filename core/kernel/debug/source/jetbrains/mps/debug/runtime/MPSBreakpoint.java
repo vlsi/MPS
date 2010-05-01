@@ -20,6 +20,7 @@ import com.intellij.openapi.util.Computable;
 import com.sun.jdi.*;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.BreakpointRequest;
+import jetbrains.mps.debug.api.StacktraceUtil2;
 import jetbrains.mps.debug.info.StacktraceUtil;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
@@ -70,17 +71,11 @@ public class MPSBreakpoint extends AbstractMPSBreakpoint implements ClassPrepare
 
   protected void createOrWaitPrepare(final DebugVMEventsProcessor debugProcess) {
 
-    String className = ModelAccess.instance().runReadAction(new Computable<String>() {
-      @Override
-      public String compute() {
-        SNode node = getSNode();
-        String fileName = StacktraceUtil.getGeneratedFileName(node);
-        if (fileName.endsWith(".java")) {
-          fileName = fileName.substring(0, fileName.length() - ".java".length());
-        }
-        return fileName;
-      }
-    });
+    String fileName = getFileName();
+    if (fileName.endsWith(".java")) {
+      fileName = fileName.substring(0, fileName.length() - ".java".length());
+    }
+    String className = myNodePointer.getModelReference().getLongName() + "." + fileName;
 
 
     //add requests for not prepared classes

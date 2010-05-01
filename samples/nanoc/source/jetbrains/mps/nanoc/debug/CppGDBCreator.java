@@ -19,6 +19,8 @@ import jetbrains.mps.nanoc.debug.answer.*;
 import jetbrains.mps.nanoc.debug.events.GDBEventsAdapter;
 import jetbrains.mps.nanoc.debug.events.GDBEventsHandler;
 import jetbrains.mps.nanoc.debug.requests.BreakpointRequestor;
+import jetbrains.mps.nanoc.debug.requests.GDBRequestManager;
+import jetbrains.mps.nanoc.debug.requests.GDBRequestor;
 import jetbrains.mps.nanoc.debug.util.ProcessUtil;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.debug.info.StacktraceUtil;
@@ -80,7 +82,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
           Disposer.dispose(consoleView);
         }
       };
-      myDebugSession = new CppDebugSession();
+      myDebugSession = new CppDebugSession(project);
       myDebugSession.setProcessHandler(processHandler);
       myDebugSession.getGDBEventsHandler().addEventListener(new GDBEventsAdapter() {
         @Override
@@ -97,7 +99,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
 
   private void connectedToDebuggee(SimpleConsoleProcessHandler gdbProcess) {
     //here we get some info about debuggee process and then resume it
- //   gdbProcess.inputWithFlush("info program\n");
+    myDebugSession.getGDBRequestManager().createBreakpointRequests();
     gdbProcess.inputWithFlush("-exec-continue\n");
   }
 
@@ -114,22 +116,19 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
           String workingDir = dir.getAbsolutePath();
           gdbProcess.inputWithFlush("-environment-cd " + workingDir + "\n");
           gdbProcess.inputWithFlush("-file-exec-and-symbols " + myCommand.replace(File.separatorChar, '/') + "\n");
-        //  gdbProcess.inputWithFlush("-break-insert main\n");
-       //   gdbProcess.inputWithFlush("-gdb-set new-console off\n");
+          //   gdbProcess.inputWithFlush("-gdb-set new-console off\n");
           myDebugSession.getGDBRequestManager().createRequest(new BreakpointRequestor("main") {
             @Override
             public void onRequestFulfilled(ResultAnswer answer) {
-              System.err.println("WOW!");
-            }
-          });
-          gdbProcess.inputWithFlush("-exec-run\n");
-          
-          final GDBEventsHandler eventsHandler = myDebugSession.getGDBEventsHandler();
-          eventsHandler.addEventListener(new GDBEventsAdapter() {
-            @Override
-            public void breakpointHit(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess) {
-              eventsHandler.removeEventListener(this);
-              connectedToDebuggee(gdbProcess);
+              final GDBEventsHandler eventsHandler = myDebugSession.getGDBEventsHandler();
+              eventsHandler.addEventListener(new GDBEventsAdapter() {
+                @Override
+                public void breakpointHit(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess) {
+                  eventsHandler.removeEventListener(this);
+                  connectedToDebuggee(gdbProcess);
+                }
+              });
+              gdbProcess.inputWithFlush("-exec-run\n");
             }
           });
         }

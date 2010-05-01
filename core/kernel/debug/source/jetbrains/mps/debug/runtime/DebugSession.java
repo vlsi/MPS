@@ -1,6 +1,7 @@
 package jetbrains.mps.debug.runtime;
 
 import com.intellij.execution.process.ProcessOutputTypes;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.evaluation.ui.EvaluationDialog;
@@ -15,7 +16,8 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
   private static final Logger LOG = Logger.getLogger(DebugSession.class);
   private final DebugVMEventsProcessor myEventsProcessor;
 
-  public DebugSession(DebugVMEventsProcessor eventsProcessor) {
+  public DebugSession(DebugVMEventsProcessor eventsProcessor, Project p) {
+    super(p);
     myEventsProcessor = eventsProcessor;
     eventsProcessor.getMulticaster().addListener(new MyDebugProcessAdapter());
   }
