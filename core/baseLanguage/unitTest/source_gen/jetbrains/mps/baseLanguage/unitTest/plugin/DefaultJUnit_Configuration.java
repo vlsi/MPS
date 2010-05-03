@@ -160,7 +160,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             }.invoke()));
 
             // create console component 
-            final Tuples._2<JComponent, _FunctionTypes._void_P0_E0> component = MultiTuple.<JComponent, _FunctionTypes._void_P0_E0>empty2().assign((Tuples._2<JComponent, _FunctionTypes._void_P0_E0>) (new _FunctionTypes._return_P0_E0<Tuples._2<JComponent, _FunctionTypes._void_P0_E0>>() {
+            final Tuples._2<JComponent, _FunctionTypes._void_P0_E0> component = (Tuples._2<JComponent, _FunctionTypes._void_P0_E0>) (new _FunctionTypes._return_P0_E0<Tuples._2<JComponent, _FunctionTypes._void_P0_E0>>() {
               public Tuples._2<JComponent, _FunctionTypes._void_P0_E0> invoke() {
                 final UnitTestViewComponent runComponent = new UnitTestViewComponent(project, operationContext, consoleView_22042010, parameter);
                 return MultiTuple.<JComponent,_FunctionTypes._void_P0_E0>from((JComponent) runComponent, new _FunctionTypes._void_P0_E0() {
@@ -169,7 +169,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                   }
                 });
               }
-            }.invoke()));
+            }.invoke());
             consoleComponent_22042010 = component._0();
             consoleDispose_22042010 = new Runnable() {
               public void run() {
