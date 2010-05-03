@@ -65,10 +65,7 @@ public class ReferencedNodeContext {
 
   public ReferencedNodeContext contextWithOneMoreAttribute(SNode attribute) {
     ReferencedNodeContext result = new ReferencedNodeContext(getNode(), this);
-    if (myAttributesStack == null) {
-      myAttributesStack = new Stack<SNode>();
-    }
-    result.myAttributesStack.push(attribute);
+    result.addAttribute(attribute);
     return saveAsUserObject(result);
   }
 
@@ -92,6 +89,13 @@ public class ReferencedNodeContext {
       myContextRefererNodes = new Stack<SNode>();
     }
     myContextRefererNodes.push(contextRefererNode);
+  }
+
+  private void addAttribute(SNode attribute) {
+    if (myAttributesStack == null) {
+      myAttributesStack = new Stack<SNode>();
+    }
+    myAttributesStack.push(attribute);
   }
 
   /**
