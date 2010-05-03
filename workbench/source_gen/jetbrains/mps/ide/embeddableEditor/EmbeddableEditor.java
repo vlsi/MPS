@@ -16,47 +16,53 @@ import javax.swing.JComponent;
 import java.awt.Color;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import java.util.Set;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import java.util.Set;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.project.IModule;
 
 public class EmbeddableEditor {
   private MPSFileNodeEditor myFileNodeEditor;
   private EmbeddableEditorPanel myPanel;
-  private IOperationContext myContext;
-  private SModelDescriptor myModel;
-  private ModelOwner myOwner;
+  private final IOperationContext myContext;
+  private final SModelDescriptor myModel;
+  private final ModelOwner myOwner;
   private SNode myNode;
-  private boolean myIsEditable;
+  private SNode myRootNode;
+  private final boolean myIsEditable;
 
   public EmbeddableEditor(IOperationContext context, ModelOwner owner, SNode node) {
     this(context, owner, node, true);
   }
 
   public EmbeddableEditor(IOperationContext context, ModelOwner owner, SNode node, boolean editable) {
+    this(context, owner, node, node, editable);
+  }
+
+  public EmbeddableEditor(IOperationContext context, ModelOwner owner, SNode rootNode, SNode targetNode, boolean editable) {
     this.myOwner = owner;
     this.myContext = context;
     this.myIsEditable = editable;
     this.myModel = ProjectModels.createDescriptorFor(this.myOwner);
     this.myModel.getSModel().addDevKit(LanguageDesign_DevKit.get());
-    this.setNode(node);
+    this.setNode(rootNode, targetNode);
   }
 
-  public void setNode(SNode node) {
-    this.myNode = node;
+  private void setNode(SNode rootNode, SNode targetNode) {
+    this.myRootNode = rootNode;
+    this.myNode = targetNode;
     this.myModel.getSModel().runLoadingAction(new Runnable() {
       public void run() {
-        EmbeddableEditor.this.myModel.getSModel().addRoot(EmbeddableEditor.this.myNode);
+        EmbeddableEditor.this.myModel.getSModel().addRoot(EmbeddableEditor.this.myRootNode);
       }
     });
     this.myFileNodeEditor = new MPSFileNodeEditor(this.myContext, MPSNodesVirtualFileSystem.getInstance().getFileFor(this.myNode));
@@ -70,6 +76,10 @@ public class EmbeddableEditor {
     } else {
       this.myPanel.setEditor(this.myFileNodeEditor);
     }
+  }
+
+  public void setNode(SNode node) {
+    this.setNode(node, node);
   }
 
   public JComponent getComponenet() {
@@ -96,32 +106,25 @@ public class EmbeddableEditor {
     this.myFileNodeEditor.getNodeEditor().selectNode(node);
   }
 
-  public GenerationResult generate(final Set<IClassPathItem> additionalClasspath) {
-    if (this.myNode == null) {
+  public GenerationResult generate(InMemoryJavaGenerationHandler handler) {
+    if (this.myRootNode == null) {
       return null;
     }
-    InMemoryJavaGenerationHandler handler = new InMemoryJavaGenerationHandler(false) {
-      @Override
-      public boolean canHandle(SModelDescriptor inputModel) {
-        return inputModel != null;
-      }
-
-      @Override
-      protected CompositeClassPathItem getClassPath(Set<IModule> contextModules) {
-        CompositeClassPathItem result = super.getClassPath(contextModules);
-        for (IClassPathItem item : additionalClasspath) {
-          result.add(item);
-        }
-        return result;
-      }
-    };
-    GeneratorManager manager = new GeneratorManager(this.myContext.getProject(), new GenerationSettings()) {
+    GeneratorManager manager = new GeneratorManager(EmbeddableEditor.this.myContext.getProject(), new GenerationSettings()) {
       protected boolean generateRequirements() {
         return false;
       }
     };
     boolean successful = manager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), this.myModel), this.myContext, handler, false);
-    return new GenerationResult(this.myNode, this.myContext, this.myModel, handler, successful);
+    return new GenerationResult(this.myRootNode, this.myContext, this.myModel, handler, successful);
+  }
+
+  public GenerationResult generate(final Set<IClassPathItem> additionalClasspath) {
+    return this.generate(createHandler(additionalClasspath, false));
+  }
+
+  public SModelDescriptor getModel() {
+    return this.myModel;
   }
 
   public void addLanguageStructureModel(final Language language) {
@@ -155,5 +158,23 @@ public class EmbeddableEditor {
 
   protected IOperationContext createOperationContext() {
     return this.myContext;
+  }
+
+  public static InMemoryJavaGenerationHandler createHandler(final Set<IClassPathItem> additionalClasspath, boolean keepSources) {
+    return new InMemoryJavaGenerationHandler(false, keepSources) {
+      @Override
+      public boolean canHandle(SModelDescriptor inputModel) {
+        return inputModel != null;
+      }
+
+      @Override
+      protected CompositeClassPathItem getClassPath(Set<IModule> contextModules) {
+        CompositeClassPathItem result = super.getClassPath(contextModules);
+        for (IClassPathItem item : additionalClasspath) {
+          result.add(item);
+        }
+        return result;
+      }
+    };
   }
 }

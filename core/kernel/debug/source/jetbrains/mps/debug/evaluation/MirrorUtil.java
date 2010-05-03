@@ -42,7 +42,7 @@ public class MirrorUtil {
 
   public static Object getJavaValue(Value jdiValue) {
     if (jdiValue instanceof StringReference) {
-      return ((StringReference)jdiValue).value();
+      return ((StringReference) jdiValue).value();
     }
     if (jdiValue instanceof PrimitiveValue) {
       PrimitiveValue primitiveValue = (PrimitiveValue) jdiValue;
@@ -79,14 +79,16 @@ public class MirrorUtil {
     return getValueProxy(v, threadReference);
   }
 
-  public static ValueProxy getValueProxy(Value v, ThreadReference threadReference) {
-    if (v == null) {
+  public static ValueProxy getValueProxy(Value value, ThreadReference threadReference) {
+    if (value == null) {
       return new NullValueProxy(threadReference);
     }
-    if (v instanceof ObjectReference) {
-      return new ObjectValueProxy((ObjectReference) v, threadReference);
-    } else if (v instanceof PrimitiveValue) {
-      return new PrimitiveValueProxy((PrimitiveValue) v, threadReference);
+    if (value instanceof ArrayReference) {
+      return new ArrayValueProxy((ArrayReference) value, threadReference);
+    } else if (value instanceof ObjectReference) {
+      return new ObjectValueProxy((ObjectReference) value, threadReference);
+    } else if (value instanceof PrimitiveValue) {
+      return new PrimitiveValueProxy((PrimitiveValue) value, threadReference);
     } else {
       throw new UnsupportedOperationException();
     }
@@ -97,7 +99,7 @@ public class MirrorUtil {
     for (Object arg : args) {
       Value v;
       if (arg instanceof ValueProxy) {
-        v = ((ValueProxy)arg).getJDIValue();
+        v = ((ValueProxy) arg).getJDIValue();
       } else {
         v = MirrorUtil.getJDIValueFromRaw(arg, threadReference.virtualMachine());
       }

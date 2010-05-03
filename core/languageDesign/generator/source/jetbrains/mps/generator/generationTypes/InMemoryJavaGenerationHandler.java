@@ -182,7 +182,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     return myResult;
   }
 
-  protected Map<String, String> getSources() {
+  public Map<String, String> getSources() {
     return mySources;
   }
 

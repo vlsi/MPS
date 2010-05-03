@@ -1,7 +1,10 @@
 package jetbrains.mps.debug.evaluation;
 
+import com.sun.jdi.Method;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.Value;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,7 +13,7 @@ import com.sun.jdi.Value;
  * Time: 16:39:52
  * To change this template use File | Settings | File Templates.
  */
-public class ValueProxy {
+public abstract class ValueProxy {
   protected Value myValue;
   protected ThreadReference myThreadReference;
 
@@ -27,4 +30,6 @@ public class ValueProxy {
   public Object getJavaValue() {
     throw new UnsupportedOperationException();
   }
+
+  public abstract ValueProxy invokeMethod(String name, String jniSignature, Object... args);
 }

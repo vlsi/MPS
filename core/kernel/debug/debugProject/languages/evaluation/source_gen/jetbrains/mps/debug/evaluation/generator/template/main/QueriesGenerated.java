@@ -14,23 +14,23 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1620955434532456787(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return GenUtil.isToProcess(SLinkOperations.getTarget(_context.getNode(), "creator", true)) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator");
+    return GenUtil.isToProcess(SLinkOperations.getTarget(_context.getNode(), "creator", true)) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator") && false;
   }
 
   public static boolean baseMappingRule_Condition_1620955434532446091(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return GenUtil.isToProcess(SLinkOperations.getTarget(_context.getNode(), "operation", true)) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
+    return GenUtil.isToProcess(SLinkOperations.getTarget(_context.getNode(), "operation", true)) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") && false;
   }
 
   public static boolean baseMappingRule_Condition_5147977527584458797(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return GenUtil.isToProcess(SLinkOperations.getTarget(_context.getNode(), "operation", true)) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation");
+    return GenUtil.isToProcess(SLinkOperations.getTarget(_context.getNode(), "operation", true)) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation") && false;
   }
 
   public static Object propertyMacro_GetPropertyValue_1620955434532292093(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -61,20 +61,16 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", false), "name");
   }
 
-  public static SNode sourceNodeQuery_2714803958284765457(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "evaluatedExpression", true);
-  }
-
   public static SNode sourceNodeQuery_1620955434532292087(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
   }
 
-  public static SNode sourceNodeQuery_1707366700950546819(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "operand", true);
-  }
-
   public static SNode sourceNodeQuery_1620955434532452494(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
+  }
+
+  public static SNode sourceNodeQuery_3580153239052857434(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1304595503654233231(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -83,6 +79,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1707366700950546807(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
+  }
+
+  public static Iterable sourceNodesQuery_3860041348574372624(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "evaluatedExpression", true), "statement", true);
   }
 
   public static Iterable sourceNodesQuery_1620955434532292076(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -95,14 +95,6 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1304595503654233227(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "actualArgument", true);
-  }
-
-  public static SNode mapSrcMacro_mapper_2714803958284922156(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    return _context.getNode();
-  }
-
-  public static void mapSrcMacro_post_mapper_2714803958284767722(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    GenUtil.postProcessResult(_context.getNode(), _context.getOutputNode());
   }
 
   public static void mapSrcMacro_post_mapper_1707366700950549907(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
@@ -148,6 +140,13 @@ public class QueriesGenerated {
       if (GenUtil.needsCallToString(node)) {
         SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("needsCallToString"), "jetbrains.mps.debug.evaluation.structure.NeedsCallToString");
       }
+    }
+  }
+
+  public static void mappingScript_CodeBlock_6851930645646735514(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for (SNode evaluator : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept"))) {
+      SLinkOperations.setNewChild(evaluator, "evaluatedExpression", "jetbrains.mps.baseLanguage.structure.StatementList");
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(evaluator, "evaluatedExpression", true), "statement", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(evaluator, "evaluatedStatement", false), "statements", true), "statement", true)));
     }
   }
 }

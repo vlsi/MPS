@@ -98,11 +98,8 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="6036237525966243753">
-        <link role="relationDeclaration:32" targetNodeId="1.6036237525966243738" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem:32" id="6036237525966243754">
-          <property name="flag:32" value="true" />
-        </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="3580153239052498629">
+        <link role="relationDeclaration:32" targetNodeId="1.6851930645646735510" />
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="6036237525966243744" />
     </node>

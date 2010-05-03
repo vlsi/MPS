@@ -23,4 +23,9 @@ public class PrimitiveValueProxy extends ValueProxy {
   public Object getJavaValue() {
     return MirrorUtil.getJavaValue(myValue);
   }
+
+  @Override
+  public ValueProxy invokeMethod(String name, String jniSignature, Object... args) {
+    throw new UnsupportedOperationException("Methods invocation is unsupported in primitives.");
+  }
 }

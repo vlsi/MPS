@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class DebugCollections {
   public static void main(String[] args) {
     List<String> strings = ListSequence.fromList(new ArrayList<String>());
+    int[] i = {1 ,2};
     int k = 0;
     ListSequence.fromList(strings).addElement("alpha");
     ListSequence.fromList(strings).addElement("beta");
@@ -18,5 +19,6 @@ public class DebugCollections {
     System.out.println(args);
     System.out.println(text);
     System.out.println(strings);
+    System.out.println(i);
   }
 }

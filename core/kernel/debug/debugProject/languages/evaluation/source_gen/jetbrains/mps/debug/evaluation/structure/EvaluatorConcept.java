@@ -4,8 +4,9 @@ package jetbrains.mps.debug.evaluation.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.BlockStatement;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
-import jetbrains.mps.baseLanguage.structure.Expression;
+import jetbrains.mps.baseLanguage.structure.StatementList;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
@@ -15,6 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 public class EvaluatorConcept extends BaseConcept {
   public static final String concept = "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept";
   public static final String IS_RUNTIME = "isRuntime";
+  public static final String EVALUATED_STATEMENT = "evaluatedStatement";
   public static final String THIS_TYPE = "thisType";
   public static final String EVALUATED_EXPRESSION = "evaluatedExpression";
   public static final String VARIABLES = "variables";
@@ -31,6 +33,14 @@ public class EvaluatorConcept extends BaseConcept {
     this.setBooleanProperty(EvaluatorConcept.IS_RUNTIME, value);
   }
 
+  public BlockStatement getEvaluatedStatement() {
+    return (BlockStatement) this.getReferent(BlockStatement.class, EvaluatorConcept.EVALUATED_STATEMENT);
+  }
+
+  public void setEvaluatedStatement(BlockStatement node) {
+    super.setReferent(EvaluatorConcept.EVALUATED_STATEMENT, node);
+  }
+
   public ClassifierType getThisType() {
     return (ClassifierType) this.getChild(ClassifierType.class, EvaluatorConcept.THIS_TYPE);
   }
@@ -39,11 +49,11 @@ public class EvaluatorConcept extends BaseConcept {
     super.setChild(EvaluatorConcept.THIS_TYPE, node);
   }
 
-  public Expression getEvaluatedExpression() {
-    return (Expression) this.getChild(Expression.class, EvaluatorConcept.EVALUATED_EXPRESSION);
+  public StatementList getEvaluatedExpression() {
+    return (StatementList) this.getChild(StatementList.class, EvaluatorConcept.EVALUATED_EXPRESSION);
   }
 
-  public void setEvaluatedExpression(Expression node) {
+  public void setEvaluatedExpression(StatementList node) {
     super.setChild(EvaluatorConcept.EVALUATED_EXPRESSION, node);
   }
 

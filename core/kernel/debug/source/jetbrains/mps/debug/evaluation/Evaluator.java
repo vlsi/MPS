@@ -4,6 +4,9 @@ import com.sun.jdi.*;
 import jetbrains.mps.debug.api.programState.IThread;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.java.programState.JavaThread;
+import jetbrains.mps.logging.Logger;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,6 +16,7 @@ import jetbrains.mps.debug.runtime.java.programState.JavaThread;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Evaluator {
+  private static final Logger LOG = Logger.getLogger(Evaluator.class);
   private JavaUiState myUiState;
   private ObjectValueProxy myThisObject;
 
@@ -52,5 +56,30 @@ public abstract class Evaluator {
     return myUiState.getThread().getThread().virtualMachine();
   }
 
-  public abstract ValueProxy evaluate();
+  public ValueProxy invokeStatic(String className, String name, String jniSignature, Object ... args) {
+    List<ReferenceType> classes = getVM().classesByName(className);
+    if (classes.size() == 0){
+      LOG.error("could not find class " + className);
+      return null;
+    }
+    ClassType referenceType = (ClassType) classes.get(0);
+    List<Method> methods = referenceType.methodsByName(name, jniSignature);
+    if (methods.size() == 0) {
+      LOG.error("could not find method " + name + " with signature " + jniSignature + " in " + className);
+      return null;
+    }
+    Method method = methods.get(0);
+    
+    List<Value> argValues = MirrorUtil.getValues(getThreadReference(), args);
+    Value result;
+    try {
+      result = referenceType.invokeMethod(getThreadReference(), method, argValues, 0);
+    } catch (Throwable t) {
+      LOG.error("method invocation failed", t);
+      return null;
+    }
+    return MirrorUtil.getValueProxy(result, getThreadReference());
+  }
+
+  public abstract ValueProxy evaluate() throws EvaluationException;
 }

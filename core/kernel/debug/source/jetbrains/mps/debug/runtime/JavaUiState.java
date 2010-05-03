@@ -195,10 +195,12 @@ public class JavaUiState extends AbstractUiState {
     return false;
   }
 
+  @Nullable
   public JavaThread getThread() {
     return (JavaThread) myThread;
   }
 
+  @Nullable
   public JavaStackFrame getStackFrame() {
     return (JavaStackFrame) myStackFrame;
   }

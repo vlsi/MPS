@@ -24,4 +24,9 @@ public class NullValueProxy extends ValueProxy {
   public Object getJavaValue() {
     return null;
   }
+
+  @Override
+  public ValueProxy invokeMethod(String name, String jniSignature, Object... args) {
+    throw new NullPointerException("NPE!");
+  }
 }

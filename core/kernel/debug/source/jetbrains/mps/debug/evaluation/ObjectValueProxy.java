@@ -32,6 +32,7 @@ public class ObjectValueProxy extends ValueProxy {
     return MirrorUtil.getValueProxy(result, myThreadReference);
   }
 
+  @Override
   public ValueProxy invokeMethod(String name, String jniSignature, Object... args) {
     ClassType classType = (ClassType) myReferenceType;
     int options = 0;
@@ -42,7 +43,7 @@ public class ObjectValueProxy extends ValueProxy {
     ClassType classType = myReferenceType;
     ClassType superclass = classType.superclass();
     if (superclass == null) {
-      LOG.error("can't invoke super method: class has no superclasses");
+      LOG.error("Can't invoke super method: class has no superclasses.");
     }
     int options = ObjectReference.INVOKE_NONVIRTUAL;
     return invoke(name, jniSignature, superclass, options, args);
@@ -51,15 +52,15 @@ public class ObjectValueProxy extends ValueProxy {
   private ValueProxy invoke(String name, String jniSignature, ClassType classType, int options, Object[] args) {
     Method method = classType.concreteMethodByName(name, jniSignature);
     if (method == null) {
-      LOG.error("method not found");
-      return null;
+      LOG.error("Concrete method " + name + " with signature " + jniSignature +  " not found in " + classType + ".");
+      return null; // TODO throw exception, please
     }
     List<Value> argValues = MirrorUtil.getValues(myThreadReference, args);
     Value result;
     try {
       result = getObjectValue().invokeMethod(myThreadReference, method, argValues, options);
     } catch (Throwable t) {
-      LOG.error("method invocation failed", t);
+      LOG.error("Method invocation failed.", t);
       return null;
     }
     return MirrorUtil.getValueProxy(result, myThreadReference);
