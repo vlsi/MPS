@@ -1112,16 +1112,7 @@
     <property name="name:3" value="stuff_ClosureAdapter" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1152740872170">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="1152740872171" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1152740872172">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1216046750218">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216046750954">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1216046750219" />
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1216046752691">
-              <link role="property:16" targetNodeId="18.1156235010670:0" resolveInfo="alias" />
-            </node>
-          </node>
-        </node>
-      </node>
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1152740872172" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1152740878891">
         <property name="name:3" value="enclosingClass" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1152740878892">
