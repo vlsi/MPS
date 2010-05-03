@@ -81,7 +81,7 @@ public class TextGenerationUtil {
     }
 
     public List<String> getDependencies(String value) {
-      return myDependencies.get(value);
+      return myDependencies != null ? myDependencies.get(value) : null;
     }
 
     public boolean hasDependencies() {
