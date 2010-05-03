@@ -412,15 +412,11 @@ public class GenerationSession {
   }
 
   private void printGenerationStepData(SModel inputModel) {
-    List<ModuleReference> references = GenerationPartitioningUtil.getUsedLanguageNamespaces(inputModel, false);
-    Collections.sort(references, new Comparator<ModuleReference>() {
-      public int compare(ModuleReference o1, ModuleReference o2) {
-        return ("" + o1.getModuleFqName()).compareTo("" + o2.getModuleFqName());
-      }
-    });
+    List<String> references = GenerationPartitioningUtil.getUsedLanguageNamespaces(inputModel, false);
+    Collections.sort(references);
     myLogger.info("languages used:");
-    for (ModuleReference reference : references) {
-      myLogger.info("    " + reference.getModuleFqName());
+    for (String reference : references) {
+      myLogger.info("    " + reference);
     }
 //    List<Generator> generators = stepController.getGenerators();
 //    Collections.sort(generators, new Comparator<Generator>() {

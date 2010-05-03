@@ -87,12 +87,15 @@ public class GenerationPartitioningUtil {
 
 
   private static List<Language> getUsedLanguages(SModel model, boolean excludeTLBase, IScope scope) {
-    Set<jetbrains.mps.project.structure.modules.ModuleReference> namespaces = new HashSet<jetbrains.mps.project.structure.modules.ModuleReference>(model.getEngagedOnGenerationLanguages());
+    Set<String> namespaces = new HashSet<String>();
+    for(jetbrains.mps.project.structure.modules.ModuleReference ref: model.getEngagedOnGenerationLanguages()) {
+      namespaces.add(ref.getModuleFqName());
+    }
     for (SNode root : model.getRoots()) {
       collectLanguageNamespaces(root, namespaces, excludeTLBase);
     }
     List<Language> result = new ArrayList<Language>();
-    for (jetbrains.mps.project.structure.modules.ModuleReference namespace : namespaces) {
+    for (String namespace : namespaces) {
       Language language = scope.getLanguage(namespace);
       if (language != null) {
         result.add(language);
@@ -103,18 +106,21 @@ public class GenerationPartitioningUtil {
     return result;
   }
 
-  public static List<jetbrains.mps.project.structure.modules.ModuleReference> getUsedLanguageNamespaces(SModel model, boolean excludeTLBase) {
-    Set<jetbrains.mps.project.structure.modules.ModuleReference> namespaces = new HashSet<jetbrains.mps.project.structure.modules.ModuleReference>(model.getEngagedOnGenerationLanguages());
+  public static List<String> getUsedLanguageNamespaces(SModel model, boolean excludeTLBase) {
+    Set<String> namespaces = new HashSet<String>();
+    for(jetbrains.mps.project.structure.modules.ModuleReference ref: model.getEngagedOnGenerationLanguages()) {
+      namespaces.add(ref.getModuleFqName());
+    }
     for (SNode root : model.getRoots()) {
       collectLanguageNamespaces(root, namespaces, excludeTLBase);
     }
     return CollectionUtil.asList(namespaces);
   }
 
-  private static void collectLanguageNamespaces(SNode node, Set<jetbrains.mps.project.structure.modules.ModuleReference> namespaces, boolean excludeTLBase) {
-    jetbrains.mps.project.structure.modules.ModuleReference namespace = node.getConceptLanguage();
-    if (!namespace.getModuleFqName().equals("jetbrains.mps.lang.generator")) {
-      namespaces.add(namespace);
+  private static void collectLanguageNamespaces(SNode node, Set<String> namespaces, boolean excludeTLBase) {
+    String namespace1 = node.getLanguageNamespace();
+    if (!namespace1.equals("jetbrains.mps.lang.generator")) {
+      namespaces.add(namespace1);
       for (SNode child : node.getChildren()) {
         collectLanguageNamespaces(child, namespaces, excludeTLBase);
       }
@@ -128,7 +134,7 @@ public class GenerationPartitioningUtil {
           }
         }
       } else {
-        namespaces.add(namespace);
+        namespaces.add(namespace1);
         // todo: committed because this way we don't look into code inside macros (while we need to generate this code!)
 //        // look into any node except 'content' in template declartions
 //        if (!(node.getAdapter() instanceof TemplateDeclaration)) {
