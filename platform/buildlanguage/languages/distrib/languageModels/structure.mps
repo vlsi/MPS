@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="SimpleClassPathItem" conceptFQName="jetbrains.mps.build.distrib.structure.SimpleClassPathItem" featureKind="CONCEPT" />
@@ -15,6 +16,7 @@
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="UnixConfig" conceptFQName="jetbrains.mps.build.distrib.structure.UnixConfig" featureKind="CONCEPT" />
@@ -291,7 +293,6 @@
     <property name="package:0" value="systemSpecific.windows" />
     <property name="name:0" value="DigitalSignatureWindowsConfiguration" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="5274998544330616019" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1231859196186">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="pathToExecutable" />

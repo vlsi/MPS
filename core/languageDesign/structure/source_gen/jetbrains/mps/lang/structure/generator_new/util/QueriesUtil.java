@@ -15,6 +15,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class QueriesUtil {
   public static boolean propertyDataType_isString(SNode property) {
@@ -172,5 +174,133 @@ public class QueriesUtil {
 
   public static Language getInputLanguage(SModel inputModel) {
     return Language.getLanguageFor(inputModel.getModelDescriptor());
+  }
+
+  public static int getPropertyIndex(SNode property) {
+    if (SPropertyOperations.getBoolean(property, "doNotGenerate")) {
+      return -1;
+    }
+    SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
+    if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
+      SNode pdtd = SNodeOperations.cast(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration");
+      if (PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(pdtd)) {
+        return 0;
+      }
+      if (PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(pdtd)) {
+        return 1;
+      }
+      if (PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(pdtd)) {
+        return 2;
+      }
+    }
+    if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration")) {
+      return 0;
+    }
+    if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
+      return 3;
+    }
+    return 4;
+  }
+
+  public static int getInterfacePropertyIndex(SNode property) {
+    if (SPropertyOperations.getBoolean(property, "doNotGenerate")) {
+      return 4;
+    }
+    SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
+    if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
+      SNode pdtd = SNodeOperations.cast(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration");
+      if (PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(pdtd)) {
+        return 0;
+      }
+      if (PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(pdtd)) {
+        return 1;
+      }
+      if (PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(pdtd)) {
+        return 2;
+      }
+    }
+    if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration")) {
+      return 0;
+    }
+    if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
+      return 3;
+    }
+    return 5;
+  }
+
+  public static Iterable<SNode> sortedProperties(Iterable<SNode> r) {
+    return Sequence.fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return getPropertyIndex(it);
+      }
+    }, true);
+  }
+
+  public static Iterable<SNode> sortedPropertiesForInterface(Iterable<SNode> r) {
+    return Sequence.fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return getPropertyIndex(it);
+      }
+    }, true);
+  }
+
+  public static int getLinkIndex(SNode link) {
+    if (SPropertyOperations.getBoolean(link, "doNotGenerate")) {
+      return -1;
+    }
+    if (isRefLink_card_1_nospec(link)) {
+      return 0;
+    }
+    if (isRefLink_card_1_spec(link)) {
+      return 1;
+    }
+    if (isAggLink_card_1_nospec(link)) {
+      return 2;
+    }
+    if (isAggLink_card_1_spec(link)) {
+      return 3;
+    }
+    if (isAggLink_card_n_nospec(link)) {
+      return 4;
+    }
+    return 5;
+  }
+
+  public static int getInterfaceLinkIndex(SNode link) {
+    if (SPropertyOperations.getBoolean(link, "doNotGenerate")) {
+      return -1;
+    }
+    if (isAggLink_card_1_nospec(link)) {
+      return 1;
+    }
+    if (isAggLink_card_1_spec(link)) {
+      return 2;
+    }
+    if (isAggLink_card_n_nospec(link)) {
+      return 3;
+    }
+    if (isRefLink_card_1_nospec(link)) {
+      return 4;
+    }
+    if (isRefLink_card_1_spec(link)) {
+      return 5;
+    }
+    return 5;
+  }
+
+  public static Iterable<SNode> sortedLinks(Iterable<SNode> r) {
+    return Sequence.fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return getLinkIndex(it);
+      }
+    }, true);
+  }
+
+  public static Iterable<SNode> sortedLinksForInterface(Iterable<SNode> r) {
+    return Sequence.fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return getInterfaceLinkIndex(it);
+      }
+    }, true);
   }
 }
