@@ -16,6 +16,14 @@ public class AttributeConcept extends BaseConcept {
     super(node);
   }
 
+  public BaseConcept getAttributedNode() {
+    return (BaseConcept) this.getReferent(BaseConcept.class, AttributeConcept.ATTRIBUTED_NODE);
+  }
+
+  public void setAttributedNode(BaseConcept node) {
+    super.setReferent(AttributeConcept.ATTRIBUTED_NODE, node);
+  }
+
   public BaseConcept getAttributedNode_internal() {
     return (BaseConcept) this.getParent();
   }
@@ -25,14 +33,6 @@ public class AttributeConcept extends BaseConcept {
       return this.getAttributedNode_internal();
     } else
     return (BaseConcept) super.getReferent(role);
-  }
-
-  public BaseConcept getAttributedNode() {
-    return (BaseConcept) this.getReferent(BaseConcept.class, AttributeConcept.ATTRIBUTED_NODE);
-  }
-
-  public void setAttributedNode(BaseConcept node) {
-    super.setReferent(AttributeConcept.ATTRIBUTED_NODE, node);
   }
 
   public static AttributeConcept newInstance(SModel sm, boolean init) {
