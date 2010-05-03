@@ -9882,6 +9882,50 @@
             <property name="text:23" value="&gt;" />
           </node>
         </node>
+        <node role="part:23" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart:23" id="3465412349223906208">
+          <node role="handler:23" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler:23" id="3465412349223906209">
+            <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3465412349223906210">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3465412349223906215">
+                <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3465412349223906216">
+                  <property name="name:3" value="method" />
+                  <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3465412349223906217">
+                    <link role="concept:16" targetNodeId="1.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
+                  </node>
+                  <node role="initializer:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="3465412349223906218">
+                    <link role="concept:16" targetNodeId="1.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
+                    <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3465412349223906219">
+                      <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode:23" id="3465412349223906220" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="3465412349223906221" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3465412349223906222">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3465412349223906223">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3465412349223906224">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3465412349223906225">
+                      <link role="variableDeclaration:3" targetNodeId="3465412349223906216" resolveInfo="method" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="3465412349223906226">
+                      <link role="link:16" targetNodeId="1.1109279881614:3" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation:16" id="3465412349223906227">
+                    <link role="concept:16" targetNodeId="1.1109279763828:3" resolveInfo="TypeVariableDeclaration" />
+                  </node>
+                </node>
+              </node>
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3465412349223906228">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3465412349223906229">
+                  <link role="variableDeclaration:3" targetNodeId="3465412349223906216" resolveInfo="method" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText:23" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString:23" id="3465412349223906213">
+            <property name="text:23" value="&lt;" />
+          </node>
+        </node>
       </node>
       <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction:23" id="1233156475695">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1233156475696">
