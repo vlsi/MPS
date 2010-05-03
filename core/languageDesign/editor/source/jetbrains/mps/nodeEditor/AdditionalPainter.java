@@ -29,8 +29,10 @@ import java.awt.Rectangle;
  * To change this template use File | Settings | File Templates.
  */
 public interface AdditionalPainter<Item> {
-  public void paint(Graphics g, EditorComponent editorComponent);
   public boolean paintsAbove();
+  public void paint(Graphics g, EditorComponent editorComponent);
+  public boolean paintsBackground();
+  public void paintBackground(Graphics g, EditorComponent editorComponent);
 
   //returns an item which this painter paints. if it paints itself then just return this
   public Item getItem();

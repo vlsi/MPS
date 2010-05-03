@@ -140,7 +140,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private boolean myDisposed = false;
 
-  private List<AdditionalPainter> myAdditionalPainters = new ArrayList<AdditionalPainter>();
+  private Set<AdditionalPainter> myAdditionalPainters = new HashSet<AdditionalPainter>();
   private Map<Object, AdditionalPainter> myItemsToAdditionalPainters = new HashMap<Object, AdditionalPainter>();
 
   private List<LeftMarginMouseListener> myLeftMarginPressListeners = new ArrayList<LeftMarginMouseListener>(0);
@@ -2013,10 +2013,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
     }
 
-    List<AdditionalPainter> additionalPainters;
-    synchronized (myAdditionalPaintersLock) {
-      additionalPainters = new ArrayList<AdditionalPainter>(myAdditionalPainters);
-    }
+    List<AdditionalPainter> additionalPainters = getAdditionalPainters();
     Collections.sort(additionalPainters, new Comparator<AdditionalPainter>() {
       @Override
       public int compare(AdditionalPainter o1, AdditionalPainter o2) {
@@ -2026,8 +2023,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     });
     for (AdditionalPainter additionalPainter : additionalPainters) {
-      if (!additionalPainter.paintsAbove()) {
-        additionalPainter.paint(g, this);
+      if (additionalPainter.paintsBackground()) {
+        additionalPainter.paintBackground(g, this);
       }
     }
 

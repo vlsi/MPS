@@ -98,7 +98,6 @@ public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
     }
   }
 
-
   @Override
   public void paint(Graphics g, EditorComponent editorComponent) {
     paint((Graphics2D) g, editorComponent.getSize());
@@ -107,6 +106,15 @@ public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
   @Override
   public boolean paintsAbove() {
     return true;
+  }
+
+  @Override
+  public boolean paintsBackground() {
+    return false;
+  }
+
+  @Override
+  public void paintBackground(Graphics g, EditorComponent editorComponent) {
   }
 
   @Override
