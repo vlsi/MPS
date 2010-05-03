@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -94,6 +96,9 @@ public class InspectorTool extends BaseProjectTool {
     public Object getData(@NonNls String dataId) {
       if (MPSDataKeys.FILE_EDITOR.getName().equals(dataId)) {
         return myFileEditor;
+      }
+      if (PlatformDataKeys.VIRTUAL_FILE.getName().equals(dataId) && myFileEditor != null) {
+        return DataManager.getInstance().getDataContext(myFileEditor.getComponent()).getData(dataId);
       }
       return null;
     }
