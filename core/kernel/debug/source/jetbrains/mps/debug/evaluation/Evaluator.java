@@ -1,10 +1,13 @@
 package jetbrains.mps.debug.evaluation;
 
+import com.sun.istack.internal.Nullable;
 import com.sun.jdi.*;
 import jetbrains.mps.debug.api.programState.IThread;
+import jetbrains.mps.debug.info.StacktraceUtil;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.java.programState.JavaThread;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SNode;
 
 import java.util.List;
 
@@ -79,6 +82,12 @@ public abstract class Evaluator {
       return null;
     }
     return MirrorUtil.getValueProxy(result, getThreadReference());
+  }
+
+  @Nullable
+  protected String getThisFQName() {
+    Location location = this.myUiState.getStackFrame().getLocation().getLocation();
+    return location.declaringType().name();
   }
 
   public abstract ValueProxy evaluate() throws EvaluationException;
