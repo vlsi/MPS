@@ -21,6 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -103,13 +104,22 @@ public class Message {
 
   private Object myHintObject;
 
-  public void setHintObject(Object hintObject) {
-  //  if (hintObject instanceof SNode || hintObject instanceof SModel || hintObject instanceof IModule) {
-  //    LOG.error("Adding a message with " + hintObject.getClass().getSimpleName() + " hint object. This can lead to memleaks. Ignoring hint object.", new Throwable());
-  //    return;
-  //  }
+  public void setHintObject(Object obj) {
+    boolean error = true;
+    if (obj instanceof SNode){
+      myHintObject = new SNodePointer(((SNode) obj));
+    } else if (obj instanceof SModel){
+      myHintObject = ((SModel) obj).getSModelReference();
+    } else if (obj instanceof IModule){
+      myHintObject = ((IModule) obj).getModuleReference();
+    } else{
+      myHintObject = obj;
+      error = false;
+    }
 
-    myHintObject = hintObject;
+    //if (error) {
+    //  LOG.error("Adding a message with " + obj.getClass().getSimpleName() + " hint object. This can lead to memleaks. Changing hint object to a reference.", new Throwable());
+    //}
   }
 
   public boolean canNavigate() {
