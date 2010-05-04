@@ -8,7 +8,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.messages.FileWithPosition;
-import jetbrains.mps.ide.messages.INavigationHandler;
 
 import java.io.File;
 

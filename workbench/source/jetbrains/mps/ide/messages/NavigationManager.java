@@ -37,10 +37,10 @@ public class NavigationManager {
   private Map<Class, INavigationHandler> myHandlers = new HashMap<Class, INavigationHandler>();
 
   public NavigationManager() {
-    myHandlers.put(NodeWithContext.class, new NodeWithContextINavigationHandler(this));
-    myHandlers.put(SNode.class, new SNodeINavigationHandler(this));
+    myHandlers.put(NodeWithContext.class, new NodeWithContextINavigationHandler());
+    myHandlers.put(SNode.class, new SNodeINavigationHandler());
     myHandlers.put(IModule.class, new IModuleINavigationHandler());
-    myHandlers.put(INodeAdapter.class, new INodeAdapterINavigationHandler(this));
+    myHandlers.put(INodeAdapter.class, new INodeAdapterINavigationHandler());
     myHandlers.put(FileWithPosition.class, new FileWithPositionINavigationHandler());
   }
 

@@ -1,20 +1,12 @@
 package jetbrains.mps.ide.messages.navigation;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.messages.INavigationHandler;
-import jetbrains.mps.ide.messages.NavigationManager;
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class NodeWithContextINavigationHandler implements INavigationHandler<NodeWithContext> {
-  private NavigationManager myNavigationManager;
-
-  public NodeWithContextINavigationHandler(NavigationManager navigationManager) {
-    myNavigationManager = navigationManager;
-  }
-
   public void navigate(Project project, NodeWithContext object, boolean focus, boolean select) {
     SNode node = object.getNode();
     if (node == null) return;
