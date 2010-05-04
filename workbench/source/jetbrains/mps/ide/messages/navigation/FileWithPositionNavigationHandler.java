@@ -11,7 +11,7 @@ import jetbrains.mps.ide.messages.FileWithPosition;
 
 import java.io.File;
 
-public class FileWithPositionINavigationHandler implements INavigationHandler<FileWithPosition> {
+public class FileWithPositionNavigationHandler implements INavigationHandler<FileWithPosition> {
   public void navigate(Project project, FileWithPosition pos, boolean focus, boolean select) {
     File ioFile = pos.getFile().toFile();
     VirtualFile vf = LocalFileSystem.getInstance().refreshAndFindFileByIoFile(ioFile);

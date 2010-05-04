@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
-public class NodeWithContextINavigationHandler implements INavigationHandler<NodeWithContext> {
+public class NodeWithContextNavigationHandler implements INavigationHandler<NodeWithContext> {
   public void navigate(Project project, NodeWithContext object, boolean focus, boolean select) {
     SNode node = object.getNode();
     if (node == null) return;

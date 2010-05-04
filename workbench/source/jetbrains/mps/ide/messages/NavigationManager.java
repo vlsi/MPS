@@ -21,8 +21,10 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.messages.navigation.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,11 +39,14 @@ public class NavigationManager {
   private Map<Class, INavigationHandler> myHandlers = new HashMap<Class, INavigationHandler>();
 
   public NavigationManager() {
-    myHandlers.put(NodeWithContext.class, new NodeWithContextINavigationHandler());
-    myHandlers.put(SNode.class, new SNodeINavigationHandler());
-    myHandlers.put(IModule.class, new IModuleINavigationHandler());
-    myHandlers.put(INodeAdapter.class, new INodeAdapterINavigationHandler());
-    myHandlers.put(FileWithPosition.class, new FileWithPositionINavigationHandler());
+    myHandlers.put(NodeWithContext.class, new NodeWithContextNavigationHandler());
+    myHandlers.put(FileWithPosition.class, new FileWithPositionNavigationHandler());
+    myHandlers.put(SNodePointer.class, new NodePointerNavigationHandler());
+    myHandlers.put(ModuleReference.class,new ModuleReferenceNavigationHandler());
+
+    myHandlers.put(SNode.class, new NodeNavigationHandler());
+    myHandlers.put(INodeAdapter.class, new NodeAdapterNavigationHandler());
+    myHandlers.put(IModule.class, new ModuleNavigationHandler());
   }
 
   public void navigateTo(Project project, Object o, boolean focus, boolean select) {

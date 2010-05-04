@@ -15,6 +15,12 @@
  */
 package jetbrains.mps.ide.messages;
 
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -24,10 +30,11 @@ import java.util.Date;
  * @author Kostik
  */
 public class Message {
+  private static final Logger LOG = Logger.getLogger(Message.class);
+
   private String mySender;
   private MessageKind myKind;
   private String myText;
-  private Object myHintObject;
   private Throwable myException;
   private String myHelpUrl;
   private long myCreationTime = System.currentTimeMillis();
@@ -54,20 +61,12 @@ public class Message {
     myHelpUrl = helpUrl;
   }
 
-  public void setHintObject(Object hintObject) {
-    myHintObject = hintObject;
-  }
-
   public void setException(Throwable exception) {
     myException = exception;
   }
 
   public MessageKind getKind() {
     return myKind;
-  }
-
-  public Object getHintObject() {
-    return myHintObject;
   }
 
   public Throwable getException() {
@@ -80,10 +79,6 @@ public class Message {
 
   public String getSender() {
     return mySender;
-  }
-
-  public boolean hasHintObject(){
-    return getHintObject()!=null;
   }
 
   public String toString() {
@@ -102,5 +97,31 @@ public class Message {
       s = "0" + s;
     }
     return s;
+  }
+
+  //----------navigation------------
+
+  private Object myHintObject;
+
+  public void setHintObject(Object hintObject) {
+    if (hintObject instanceof SNode || hintObject instanceof SModel || hintObject instanceof IModule) {
+      LOG.error("Adding a message with " + hintObject.getClass().getSimpleName() + " hint object. This can lead to memleaks. Ignoring hint object.", new Throwable());
+      return;
+    }
+
+    myHintObject = hintObject;
+  }
+
+  public boolean canNavigate() {
+    return myHintObject != null;
+  }
+
+  public void navigate(final Project project) {
+    /* temp hack: write action instead of read, TODO remove lock, hintObject should be SNodePointer */
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        NavigationManager.getInstance().navigateTo(project, myHintObject, true, true);
+      }
+    });
   }
 }
