@@ -70,6 +70,9 @@ public class LeftEditorHighlighter extends JComponent {
   private NavigableSet<AbstractFoldingAreaPainter> myFoldingAreaPainters = new TreeSet<AbstractFoldingAreaPainter>(new Comparator<AbstractFoldingAreaPainter>() {
     @Override
     public int compare(AbstractFoldingAreaPainter afap1, AbstractFoldingAreaPainter afap2) {
+      if (afap1.getWeight() == afap2.getWeight() && !afap1.equals(afap2)) {
+        return System.identityHashCode(afap1) - System.identityHashCode(afap2);
+      }
       return afap1.getWeight() - afap2.getWeight();
     }
   });

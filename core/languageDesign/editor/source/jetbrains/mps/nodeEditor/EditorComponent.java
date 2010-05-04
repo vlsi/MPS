@@ -140,7 +140,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private boolean myDisposed = false;
 
-  private Set<AdditionalPainter> myAdditionalPainters = new HashSet<AdditionalPainter>();
+  private Set<AdditionalPainter> myAdditionalPainters = new TreeSet<AdditionalPainter>(new Comparator<AdditionalPainter>() {
+    @Override
+    public int compare(AdditionalPainter o1, AdditionalPainter o2) {
+      if (o1.isAbove(o2, EditorComponent.this)) {
+        return 1;
+      }
+      if (o2.isAbove(o1, EditorComponent.this)) {
+        return -1;
+      }
+      return o1.equals(o2) ? 0 : Integer.signum(System.identityHashCode(o1) - System.identityHashCode(o2));
+    }
+  });
   private Map<Object, AdditionalPainter> myItemsToAdditionalPainters = new HashMap<Object, AdditionalPainter>();
 
   private List<LeftMarginMouseListener> myLeftMarginPressListeners = new ArrayList<LeftMarginMouseListener>(0);
@@ -2014,14 +2025,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     List<AdditionalPainter> additionalPainters = getAdditionalPainters();
-    Collections.sort(additionalPainters, new Comparator<AdditionalPainter>() {
-      @Override
-      public int compare(AdditionalPainter o1, AdditionalPainter o2) {
-        if (o1.isAbove(o2, EditorComponent.this)) return 1;
-        if (o2.isAbove(o1, EditorComponent.this)) return -1;
-        return 0;
-      }
-    });
     for (AdditionalPainter additionalPainter : additionalPainters) {
       if (additionalPainter.paintsBackground()) {
         additionalPainter.paintBackground(g, this);
