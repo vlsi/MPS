@@ -633,6 +633,26 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4060685206781456017">
     <property name="name:3" value="C" />
+    <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="7474628078187305917">
+      <property name="name:3" value="myStatic239" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="7474628078187305918" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7474628078187305920">
+        <link role="classifier:3" targetNodeId="2v.~Integer" resolveInfo="Integer" />
+      </node>
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="7474628078187305922">
+        <property name="value:3" value="239" />
+      </node>
+    </node>
+    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="7474628078187305911">
+      <property name="name:3" value="my239" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="7474628078187305912" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7474628078187305914">
+        <link role="classifier:3" targetNodeId="2v.~Integer" resolveInfo="Integer" />
+      </node>
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="7474628078187305916">
+        <property name="value:3" value="239" />
+      </node>
+    </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5661655420496807167">
       <property name="name:3" value="getZero" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="5661655420496807171" />
@@ -701,9 +721,7 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4060685206781456037">
         <property name="name:3" value="args" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ArrayType:3" id="4060685206781456039">
-          <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4060685206781456038">
-            <link role="classifier:3" targetNodeId="2v.~String" resolveInfo="String" />
-          </node>
+          <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="7474628078187242788" />
         </node>
       </node>
     </node>
