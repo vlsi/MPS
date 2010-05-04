@@ -15,10 +15,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
-import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
-import jetbrains.mps.baseLanguage.behavior.IParameter_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.IParameter_Behavior;
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IStaticContainerForMethods_Behavior;
 import java.util.Set;
@@ -132,44 +130,10 @@ public abstract class ExtractMethodRefactoring {
     return result;
   }
 
-  protected void replaceInputVariablesByParameters(SNode body, Map<SNode, SNode> variableDeclarationToParameter, Map<SNode, SNode> mapping) {
-    /*
-      for (Instruction instruction : SetSequence.fromSet(this.myAnalyzer.getInstructions())) {
-        if (instruction instanceof ReadInstruction) {
-          ReadInstruction readInstruction = (ReadInstruction) instruction;
-          SNode variable = ((SNode) readInstruction.getVariable());
-          if (SNodeOperations.isInstanceOf(((SNode) instruction.getSource()), "jetbrains.mps.baseLanguage.structure.AbstractCreator")) {
-            continue;
-          }
-          SNode variableReference = MapSequence.fromMap(mapping).get(((SNode) instruction.getSource()));
-          if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(variable) && variableReference != null) {
-            SNodeOperations.replaceWithAnother(variableReference, this.createReference(MapSequence.fromMap(variableDeclarationToParameter).get(variable)));
-          }
-        }
-      }
-      for (SNode variableReference : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
-        if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(SLinkOperations.getTarget(variableReference, "variableDeclaration", false))) {
-          SNodeOperations.replaceWithAnother(variableReference, this.createReference(MapSequence.fromMap(variableDeclarationToParameter).get(SLinkOperations.getTarget(variableReference, "variableDeclaration", false))));
-        }
-      }
-      for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.IParameter", false, new String[]{}))) {
-        if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(IParameter_Behavior.call_getDeclaration_1225282371351(parameter))) {
-          SNodeOperations.replaceWithAnother(parameter, this.createReference(MapSequence.fromMap(variableDeclarationToParameter).get(IParameter_Behavior.call_getDeclaration_1225282371351(parameter))));
-        }
-      }
-    */
-    for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
-      if (MoveRefactoringUtils.isReference(reference)) {
-        SNode target = Sequence.fromIterable(SNodeOperations.getReferences(reference)).first().getTargetNode();
-        if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(target)) {
-          SNodeOperations.replaceWithAnother(reference, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0b0a0b0j().createNode(MapSequence.fromMap(variableDeclarationToParameter).get(target)));
-        }
-      }
-    }
-    for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.IParameter", false, new String[]{}))) {
-      if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(IParameter_Behavior.call_getDeclaration_1225282371351(parameter))) {
-        SNodeOperations.replaceWithAnother(parameter, this.createReference(MapSequence.fromMap(variableDeclarationToParameter).get(IParameter_Behavior.call_getDeclaration_1225282371351(parameter))));
-      }
+  public void ReplaceInputVariablesByParameters(List<SNode> nodes, Map<SNode, SNode> mapping) {
+    Map<SNode, SNode> anotherMap = this.createInputVaryablesMapping(mapping, nodes);
+    for (SNode node : SetSequence.fromSet(MapSequence.fromMap(anotherMap).keySet())) {
+      SNodeOperations.replaceWithAnother(node, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0b0j().createNode(MapSequence.fromMap(anotherMap).get(node)));
     }
   }
 
@@ -337,8 +301,8 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
-  public static class QuotationClass_jq3ovj_a0a0a0b0a0b0j {
-    public QuotationClass_jq3ovj_a0a0a0b0a0b0j() {
+  public static class QuotationClass_jq3ovj_a0a0a0b0j {
+    public QuotationClass_jq3ovj_a0a0a0b0j() {
     }
 
     public SNode createNode(Object parameter_3) {
