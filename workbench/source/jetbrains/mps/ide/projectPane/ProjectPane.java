@@ -365,10 +365,10 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     }
 
     public void selectIn(final SelectInContext context, boolean requestFocus) {
+      activate(requestFocus);
       SNode toSelect = getNode(context);
       if (toSelect == null) return;
       selectNode(toSelect);
-      activate(requestFocus);
     }
 
     public String getToolWindowId() {
