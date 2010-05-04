@@ -1,5 +1,6 @@
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -10,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ClassPathFactory {
+  private static final Logger LOG = Logger.getLogger(ClassPathFactory.class);
   private static final ClassPathFactory ourInstance = new ClassPathFactory();
 
   private ClassPathFactory() {
@@ -46,7 +48,8 @@ public class ClassPathFactory {
     try {
       return createFromPath(path, null);
     } catch (IOException e) {
-      throw new RuntimeException(e);
+      LOG.error("Can't find classpath " + path);
+      return null;
     }
   }
 
