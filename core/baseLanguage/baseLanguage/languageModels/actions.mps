@@ -6338,6 +6338,12 @@
                 <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="6739323897478624917">
                   <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="6739323897478624919">
                     <property name="name:3" value="main" />
+                    <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1545467747164561831">
+                      <property name="name:3" value="args" />
+                      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ArrayType:3" id="1545467747164562159">
+                        <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1545467747164562158" />
+                      </node>
+                    </node>
                     <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6739323897478624920" />
                     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6739323897478624921" />
                     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6739323897478624922" />
