@@ -9,162 +9,60 @@ import java.awt.BorderLayout;
 import javax.swing.JTabbedPane;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
-import java.util.Set;
-import jetbrains.mps.smodel.Language;
-import java.util.HashSet;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugSession;
-import java.util.Map;
-import java.util.List;
-import com.sun.jdi.LocalVariable;
-import java.util.HashMap;
 import java.awt.Dimension;
-import jetbrains.mps.debug.runtime.java.programState.JavaStackFrame;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import com.sun.jdi.StackFrame;
-import com.sun.jdi.Location;
-import jetbrains.mps.debug.info.StacktraceUtil;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.ModuleContext;
-import com.sun.jdi.AbsentInformationException;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.Language;
 import javax.swing.JScrollPane;
 import javax.swing.JComponent;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import com.sun.jdi.ObjectReference;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.reloading.ClassPathFactory;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.GenerationSettings;
-import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
-import jetbrains.mps.ide.messages.DefaultMessageHandler;
-import jetbrains.mps.smodel.SModelDescriptor;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.ValueProxy;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.debug.api.integration.ui.WatchableNode;
 import jetbrains.mps.debug.runtime.java.programState.CalculatedValue;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
-import jetbrains.mps.smodel.SModel;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class EvaluationDialog extends BaseDialog {
   private static final Logger LOG = Logger.getLogger(EvaluationDialog.class);
-  private static final String EVALUATOR_NAME = "EvaluatorInstance";
 
   private JPanel myPanel = new JPanel(new BorderLayout());
   private JTabbedPane myTabbedPane = new JTabbedPane();
   private final IOperationContext myContext;
-  private EvaluationAuxModule myAuxModule;
   private EvaluationDialog.MyTree myTree;
   private EmbeddableEditor myEditor;
   private EmbeddableEditor myResultEditor;
-  private final Set<Language> myLanguages = new HashSet<Language>();
-  private SNode myNode;
-  private JavaUiState myUiState;
-  private DebugSession myDebugSession;
-  private final Map<SNode, List<LocalVariable>> myNodesToVarsMap = new HashMap<SNode, List<LocalVariable>>();
-  private SNode myLocationRootCopy;
+  private final EvaluationData myEvaluationData;
 
   public EvaluationDialog(final IOperationContext context, JavaUiState uiState, DebugSession debugSession) {
     super(context.getMainFrame(), "Evaluate");
     this.myContext = context;
-    this.myUiState = uiState;
-    this.myDebugSession = debugSession;
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
-    JavaStackFrame javaStackFrame = uiState.getStackFrame();
-    final Wrappers._T<SNode> locationNode = new Wrappers._T<SNode>(null);
-    if (javaStackFrame != null) {
-      StackFrame stackFrame = javaStackFrame.getStackFrame();
-      if (stackFrame != null) {
-        try {
-          Location location = stackFrame.location();
-          locationNode.value = StacktraceUtil.getNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
-          for (LocalVariable localVariable : stackFrame.visibleVariables()) {
-            SNode snode = StacktraceUtil.getNodeOrVar(location.declaringType().name(), location.sourceName(), location.lineNumber(), localVariable.name());
-            if (snode != null) {
-              List<LocalVariable> varsList = this.myNodesToVarsMap.get(snode);
-              if (varsList == null) {
-                varsList = new ArrayList<LocalVariable>();
-                this.myNodesToVarsMap.put(snode, varsList);
-              }
-              varsList.add(localVariable);
-            }
-          }
-        } catch (Throwable t) {
-          LOG.error(t);
-          // todo show bubble or dialog 
-          return;
-        }
+
+    this.myEvaluationData = new EvaluationData(context, uiState, debugSession);
+    myEvaluationData.addGenerationListener(new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode result) {
+        EvaluationDialog.this.updateGenerationResultTab(result);
       }
-    }
+    });
+
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        SNode evaluatorConcept = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", null);
-        SPropertyOperations.set(evaluatorConcept, "isRuntime", "" + true);
-        EvaluationDialog.this.myNode = evaluatorConcept;
+        EvaluationDialog.this.myEditor = new EmbeddableEditor(new ModuleContext(EvaluationDialog.this.myEvaluationData.getModule(), EvaluationDialog.this.myEvaluationData.getModule().getMPSProject()), EvaluationDialog.this.myEvaluationData.getModule(), EvaluationDialog.this.myEvaluationData.getRootToShow(), myEvaluationData.getNodeToShow(), true);
+        myEvaluationData.setModel(myEditor.getModel());
 
-        SNode mainNode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
-
-        EvaluationDialog.this.myAuxModule = new EvaluationAuxModule(EvaluationDialog.this.myContext.getProject());
-        EvaluationDialog.this.myAuxModule.setInvocationContext(EvaluationDialog.this.myContext.getModule());
-
-        SNode locationRoot = SNodeOperations.getAncestor(locationNode.value, null, false, true);
-        EvaluationDialog.this.myLocationRootCopy = SNodeOperations.copyNode(locationRoot);
-        SNode locationNodeCopy = EvaluationDialog.this.findNodesCopy(locationRoot, EvaluationDialog.this.myLocationRootCopy, locationNode.value);
-
-        SNodeOperations.insertNextSiblingChild(locationNodeCopy, mainNode);
-        SLinkOperations.setTarget(evaluatorConcept, "evaluatedStatement", mainNode, false);
-
-        EvaluationDialog.this.myEditor = new EmbeddableEditor(new ModuleContext(EvaluationDialog.this.myAuxModule, EvaluationDialog.this.myAuxModule.getMPSProject()), EvaluationDialog.this.myAuxModule, EvaluationDialog.this.myLocationRootCopy, mainNode, true);
-        EvaluationDialog.this.myEditor.getModel().getSModel().addRoot(EvaluationDialog.this.myNode);
-
-        try {
-          SNode thisType = EvaluationDialog.this.createThisClassifierType();
-          SLinkOperations.setTarget(evaluatorConcept, "thisType", thisType, true);
-        } catch (AbsentInformationException ex) {
-          LOG.error(ex);
-        }
-        for (SNode varNode : SetSequence.fromSet(EvaluationDialog.this.myNodesToVarsMap.keySet())) {
-          SNode varNodeCopy = (SNode) varNode;
-          SNode highLevelVariable = SLinkOperations.addNewChild(evaluatorConcept, "variables", "jetbrains.mps.debug.evaluation.structure.HighLevelVariable");
-          SLinkOperations.setTarget(highLevelVariable, "variable", SNodeOperations.copyNode(varNodeCopy), true);
-          SLinkOperations.setTarget(highLevelVariable, "deducedType", SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(varNodeCopy)), true);
-          Language language = varNodeCopy.getNodeLanguage();
-          EvaluationDialog.this.myLanguages.add(language);
-        }
-
-        Language evalLang = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation");
-        EvaluationDialog.this.myLanguages.add(evalLang);
-
-        for (Language language : EvaluationDialog.this.myLanguages) {
+        for (Language language : EvaluationDialog.this.myEvaluationData.getRequiredLanguages()) {
           EvaluationDialog.this.myEditor.addLanguage(language);
         }
       }
     });
+
     this.myPanel.add(this.myEditor.getComponenet(), BorderLayout.NORTH);
     this.myTree = new EvaluationDialog.MyTree();
     this.myPanel.add(new JScrollPane(this.myTree), BorderLayout.CENTER);
@@ -175,88 +73,49 @@ public class EvaluationDialog extends BaseDialog {
     return this.myTabbedPane;
   }
 
-  private SNode findNodesCopy(SNode root, SNode rootCopy, final SNode originalNodeToFind) {
-    if (originalNodeToFind == root) {
-      return rootCopy;
-    }
-    SNode parentsCopy = this.findNodesCopy(root, rootCopy, SNodeOperations.getParent(originalNodeToFind));
-    return ListSequence.fromList(SNodeOperations.getChildren(parentsCopy)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.getContainingLinkRole(it).equals(SNodeOperations.getContainingLinkRole(originalNodeToFind));
-      }
-    }).skip(SNodeOperations.getIndexInParent(originalNodeToFind)).first();
-  }
-
-  public SNode createThisClassifierType() throws AbsentInformationException {
-    ObjectReference thisObject = this.myUiState.getThisObject();
-    if (thisObject == null) {
-      return null;
-    }
-    Location location = this.myUiState.getStackFrame().getLocation().getLocation();
-    SNode node = StacktraceUtil.getNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
-    if (node == null) {
-      return null;
-    }
-    SNode classConcept = ClassConcept_Behavior.getContextClass_8008512149545173402(node);
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-    SLinkOperations.setTarget(result, "classifier", classConcept, false);
-    for (SNode typeVariableDeclaration : SLinkOperations.getTargets(classConcept, "typeVariableDeclaration", true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(result, "parameter", true)).addElement(new EvaluationDialog.QuotationClass_3tf46a_a0a0a0i0c().createNode(typeVariableDeclaration));
-    }
-    return result;
-  }
-
   @BaseDialog.Button(position = 0, name = "Evaluate", mnemonic = 'E', defaultButton = true)
   public void buttonEvaluate() {
     try {
-      final Set<IClassPathItem> classpaths = new HashSet<IClassPathItem>();
-      for (Language language : this.myLanguages) {
-        IClassPathItem item = language.getClassPathItem();
-        classpaths.add(item);
-      }
-      String path = PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.tools.") + "tools.jar";
-      classpaths.add(ClassPathFactory.getInstance().createFromPath(path));
-
-      GeneratorManager manager = new GeneratorManager(EvaluationDialog.this.myContext.getProject(), new GenerationSettings()) {
-        protected boolean generateRequirements() {
-          return false;
-        }
-      };
-
-      InMemoryJavaGenerationHandler handler = new EvaluationDialog.MyInMemoryJavaGenerationHandler(false, true, classpaths);
-      DefaultMessageHandler messageHandler = new DefaultMessageHandler(this.myAuxModule.getMPSProject().getProject());
-      boolean successful = manager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), this.myEditor.getModel()), this.myContext, handler, new EmptyProgressIndicator(), messageHandler, true);
-
-      String fullClassName = this.myEditor.getModel().getLongName() + "." + EVALUATOR_NAME;
-      String source = handler.getSources().get(fullClassName);
-
-      if (successful || StringUtils.isNotEmpty(source)) {
-        System.err.println(source);
-        try {
-          ClassLoader loader = handler.getCompiler().getClassLoader(this.myUiState.getClass().getClassLoader());
-          Class clazz = Class.forName(fullClassName, true, loader);
-          Evaluator evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
-          ValueProxy value = evaluator.evaluate();
-          this.myUiState = this.myDebugSession.refresh();
-          this.myTree.setResultProxy(value);
-        } catch (Throwable t) {
-          myTree.setUnsuccessful(t.getMessage());
-        }
+      ValueProxy evaluatedValue = myEvaluationData.evaluate();
+      if (evaluatedValue != null) {
+        myTree.setResultProxy(evaluatedValue);
       } else {
-        this.myTree.setUnsuccessful("Errors during generation.");
+        myTree.setUnsuccessful("Evaluation returned null.");
       }
-
-      this.myTree.rebuildNow();
-    } catch (Throwable t) {
-      LOG.error(t);
+    } catch (BaseEvaluationException e) {
+      myTree.setUnsuccessful(e.getMessage());
+      LOG.error(e);
     }
+    myTree.rebuildLater();
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C', defaultButton = false)
   public void buttonCancel() {
     this.myEditor.disposeEditor();
-    this.myAuxModule.dispose();
+    this.myEvaluationData.getModule().dispose();
     this.dispose();
+  }
+
+  public void updateGenerationResultTab(final SNode generatedResult) {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        if (EvaluationDialog.this.myResultEditor == null) {
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              EvaluationDialog.this.myResultEditor = new EmbeddableEditor(new ModuleContext(myEvaluationData.getModule(), myEvaluationData.getModule().getMPSProject()), myEvaluationData.getModule(), generatedResult, generatedResult, false);
+            }
+          });
+          EvaluationDialog.this.myTabbedPane.add("Generated Result", EvaluationDialog.this.myResultEditor.getComponenet());
+          EvaluationDialog.this.myTabbedPane.validate();
+        } else {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              EvaluationDialog.this.myResultEditor.setNode(generatedResult);
+            }
+          });
+        }
+      }
+    }, ModalityState.NON_MODAL);
   }
 
   private static class MyTree extends MPSTree {
@@ -294,90 +153,6 @@ public class EvaluationDialog extends BaseDialog {
       this.setRootVisible(false);
       this.setShowsRootHandles(true);
       return rootTreeNode;
-    }
-  }
-
-  private class MyInMemoryJavaGenerationHandler extends InMemoryJavaGenerationHandler {
-    private final Set<IClassPathItem> myClasspaths;
-
-    public MyInMemoryJavaGenerationHandler(boolean reloadClasses, boolean keepSources, Set<IClassPathItem> classpaths) {
-      super(reloadClasses, keepSources);
-      this.myClasspaths = classpaths;
-    }
-
-    @Override
-    public boolean canHandle(SModelDescriptor inputModel) {
-      return inputModel != null;
-    }
-
-    @Override
-    protected CompositeClassPathItem getClassPath(Set<IModule> contextModules) {
-      CompositeClassPathItem result = super.getClassPath(contextModules);
-      for (IClassPathItem item : this.myClasspaths) {
-        result.add(item);
-      }
-      return result;
-    }
-
-    @Override
-    public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, ITaskProgressHelper helper) {
-      // TODO: clen up this mess, move all logic somewhere else 
-      // EvaluationDialog class should really be only about UI 
-      SModel model = status.getOutputModel();
-      if (model != null) {
-        final SNode evaluator = model.getRootByName(EvaluationDialog.EVALUATOR_NAME);
-
-        if (evaluator != null) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              try {
-                TransformationUtil.transform(evaluator);
-              } catch (Throwable t) {
-                EvaluationDialog.LOG.error(t);
-              }
-            }
-          });
-
-          ApplicationManager.getApplication().invokeLater(new Runnable() {
-            public void run() {
-              if (EvaluationDialog.this.myResultEditor == null) {
-                ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                  public void run() {
-                    EvaluationDialog.this.myResultEditor = new EmbeddableEditor(new ModuleContext(EvaluationDialog.this.myAuxModule, EvaluationDialog.this.myAuxModule.getMPSProject()), EvaluationDialog.this.myAuxModule, evaluator, evaluator, false);
-                  }
-                });
-                EvaluationDialog.this.myTabbedPane.add("Generated Result", EvaluationDialog.this.myResultEditor.getComponenet());
-                EvaluationDialog.this.myTabbedPane.validate();
-              } else {
-                ModelAccess.instance().runReadAction(new Runnable() {
-                  public void run() {
-                    EvaluationDialog.this.myResultEditor.setNode(evaluator);
-                  }
-                });
-              }
-            }
-          }, ModalityState.NON_MODAL);
-        }
-      }
-      return super.handleOutput(module, inputModel, status, context, helper);
-    }
-  }
-
-  public static class QuotationClass_3tf46a_a0a0a0i0c {
-    public QuotationClass_3tf46a_a0a0a0i0c() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
     }
   }
 }

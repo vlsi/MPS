@@ -673,6 +673,13 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="764466270606311785">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression:3" id="764466270606374823">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="764466270606374824">
+              <link role="variableDeclaration:3" targetNodeId="4060685206781456042" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4060685206781456057">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="4060685206781456059">
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="4060685206781456062">
