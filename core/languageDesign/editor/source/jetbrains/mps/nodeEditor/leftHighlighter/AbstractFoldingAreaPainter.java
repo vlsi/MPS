@@ -88,10 +88,12 @@ public abstract class AbstractFoldingAreaPainter {
   public void dispose() {
   }
 
+  @NotNull
   protected LeftEditorHighlighter getLeftHighlighter() {
     return myLeftHighlighter;
   }
 
+  @NotNull
   protected EditorComponent getEditorComponent() {
     return getLeftHighlighter().getEditorComponent();
   }

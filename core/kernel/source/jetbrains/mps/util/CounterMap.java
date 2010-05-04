@@ -13,8 +13,8 @@ import java.util.Map;
  */
 public class CounterMap<K> {
   public interface CounterMapHandler<K> {
-    void counterZero(K key);
-    void counterNonZero(K key);
+    void counterZero(@NotNull K key);
+    void counterNonZero(@NotNull K key);
   }
 
   private Map<K, Integer> myMap = new HashMap<K, Integer>();
@@ -27,11 +27,11 @@ public class CounterMap<K> {
   public CounterMap() {
     this(new CounterMapHandler<K>() {
       @Override
-      public void counterZero(K key) {
+      public void counterZero(@NotNull K key) {
       }
 
       @Override
-      public void counterNonZero(K key) {
+      public void counterNonZero(@NotNull K key) {
       }
     });
   }

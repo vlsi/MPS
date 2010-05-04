@@ -97,7 +97,7 @@ public class LeftEditorHighlighter extends JComponent {
   private int myWidth;
   private int myHeight;
   
-  public LeftEditorHighlighter(EditorComponent editorComponent) {
+  public LeftEditorHighlighter(@NotNull EditorComponent editorComponent) {
     setBackground(Color.white);
     myEditorComponent = editorComponent;
     addMouseListener(new MouseAdapter() {
@@ -167,6 +167,7 @@ public class LeftEditorHighlighter extends JComponent {
     myFoldingAreaPainters.add(new FoldingButtonsPainter(this));
   }
 
+  @NotNull
   public EditorComponent getEditorComponent() {
     return myEditorComponent;
   }

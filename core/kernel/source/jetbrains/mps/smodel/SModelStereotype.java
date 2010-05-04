@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Igor Alshannikov
  * Jul 20, 2005
@@ -42,11 +44,11 @@ public class SModelStereotype {
 
   public static final String[] values = new String[]{NONE, GENERATOR, TESTS};
 
-  public static boolean isUserModel(SModel model) {
+  public static boolean isUserModel(@NotNull SModel model) {
     return isUserModelStereotype(model.getStereotype());
   }
 
-  public static boolean isUserModel(SModelDescriptor model) {
+  public static boolean isUserModel(@NotNull SModelDescriptor model) {
     return isUserModelStereotype(model.getStereotype());
   }
 

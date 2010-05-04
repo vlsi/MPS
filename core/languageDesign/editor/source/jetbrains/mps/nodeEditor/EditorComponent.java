@@ -855,10 +855,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return result;
   }
 
+  @NotNull
   public MessagesGutter getMessagesGutter() {
     return myMessagesGutter;
   }
 
+  @NotNull
   public LeftEditorHighlighter getLeftEditorHighlighter() {
     return myLeftHighlighter;
   }
@@ -1208,6 +1210,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myRootCell;
   }
 
+  @NotNull
   public NodeHighlightManager getHighlightManager() {
     return myHighlightManager;
   }
