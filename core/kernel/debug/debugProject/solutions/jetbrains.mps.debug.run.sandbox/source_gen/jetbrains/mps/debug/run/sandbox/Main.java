@@ -8,6 +8,7 @@ public class Main {
   public int myI;
 
   public Main() {
+    System.err.println();
   }
 
   public void foo() {
@@ -16,6 +17,7 @@ public class Main {
   }
 
   public static void main(String[] args) {
+    new Main();
     new Thread(new Runnable() {
       public void run() {
         int i = 0;
