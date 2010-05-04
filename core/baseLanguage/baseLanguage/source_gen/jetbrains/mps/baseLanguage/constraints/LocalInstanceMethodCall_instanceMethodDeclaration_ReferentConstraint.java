@@ -41,8 +41,10 @@ public class LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstrain
       for (SNode method : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, _context.getEnclosingNode(), constraint)) {
         if (!(SetSequence.fromSet(names).contains(SPropertyOperations.getString(method, "name")))) {
           ListSequence.fromList(result).addElement(method);
-          SetSequence.fromSet(names).addElement(SPropertyOperations.getString(method, "name"));
         }
+      }
+      for (SNode method : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, _context.getEnclosingNode(), constraint)) {
+        SetSequence.fromSet(names).addElement(SPropertyOperations.getString(method, "name"));
       }
       classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     }
