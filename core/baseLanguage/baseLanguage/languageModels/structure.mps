@@ -3712,5 +3712,21 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="3262277503800813725">
     <property name="name:0" value="ILocalReference" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5205855332950442198">
+    <property name="package:0" value="array" />
+    <property name="name:0" value="ArrayCloneOperation" />
+    <link role="extends:0" targetNodeId="4.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5205855332950442222">
+      <property name="value:0" value="clone()" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5205855332950442224">
+      <property name="value:0" value="special public method of array" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5205855332950442220">
+      <link role="intfc:0" targetNodeId="1197027803184:3" resolveInfo="IOperation" />
+    </node>
+  </node>
 </model>
 

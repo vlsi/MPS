@@ -23944,5 +23944,42 @@
       <link role="concept:3" targetNodeId="1.3066917033203108594:3" resolveInfo="LocalInstanceMethodCall" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="5205855332950452916">
+    <property name="name:3" value="typeof_ArrayCloneOperation" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5205855332950452917">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="5205855332950462115">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5205855332950462129">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="5205855332950472833">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5205855332950472834">
+              <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="5205855332950472835">
+                <property name="asCast:16" value="true" />
+                <link role="concept:16" targetNodeId="1.1197027756228:3" resolveInfo="DotExpression" />
+                <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5205855332950472836">
+                  <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="5205855332950472837">
+                    <link role="applicableNode:3" targetNodeId="5205855332950452918" resolveInfo="arrayCloneOperation" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="5205855332950472838" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5205855332950472839">
+                <link role="link:16" targetNodeId="1.1197027771414:3" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5205855332950462118">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="5205855332950462112">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="5205855332950462114">
+              <link role="applicableNode:3" targetNodeId="5205855332950452918" resolveInfo="arrayCloneOperation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="5205855332950452918">
+      <property name="name:3" value="arrayCloneOperation" />
+      <link role="concept:3" targetNodeId="1.5205855332950442198:3" resolveInfo="ArrayCloneOperation" />
+    </node>
+  </node>
 </model>
 

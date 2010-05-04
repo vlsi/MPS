@@ -16542,5 +16542,36 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="7785501532031731650" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5205855332950442225">
+    <link role="conceptDeclaration:32" targetNodeId="17.5205855332950442198:3" resolveInfo="ArrayCloneOperation" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5205855332950450125">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5205855332950450131">
+        <property name="text:32" value="clone" />
+        <link role="styleClass:32" targetNodeId="1198596382979" resolveInfo="InstanceMethod" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="5205855332950450145" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5205855332950450139">
+        <property name="text:32" value="(" />
+        <link role="styleClass:32" targetNodeId="1234958090348" resolveInfo="LeftParenAfterName" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="6834727283947618267">
+        <property name="text:32" value="" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="6834727283947618268">
+          <property name="flag:32" value="true" />
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="6834727283947618270">
+          <property name="flag:32" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5205855332950450142">
+        <property name="text:32" value=")" />
+        <link role="styleClass:32" targetNodeId="1215088010675" resolveInfo="RightParen" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="6992387664018722162">
+          <property name="flag:32" value="true" />
+        </node>
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="5205855332950450127" />
+    </node>
+  </node>
 </model>
 

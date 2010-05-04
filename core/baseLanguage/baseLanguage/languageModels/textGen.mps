@@ -11528,5 +11528,18 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="5205855332950472840">
+    <property name="package:11" value="array" />
+    <link role="conceptDeclaration:11" targetNodeId="1.5205855332950442198:3" resolveInfo="ArrayCloneOperation" />
+    <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="5205855332950472841">
+      <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5205855332950472842">
+        <node role="statement:3" type="jetbrains.mps.lang.textGen.structure.AppendOperation:11" id="5205855332950472843">
+          <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart:11" id="5205855332950472844">
+            <property name="value:11" value="clone()" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
