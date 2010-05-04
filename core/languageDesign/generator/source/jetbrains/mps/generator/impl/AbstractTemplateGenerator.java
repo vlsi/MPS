@@ -52,7 +52,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myLogger = logger;
     myInputModel = inputModel;
     myOutputModel = outputModel;
-    myMappings = new GeneratorMappings();
+    myMappings = new GeneratorMappings(inputModel.getSize());
     myExecutor = generationContext.getTracingMode() >= GenerationProcessContext.TRACE_LANGS
       ? new TraceableQueryExecutor(this, tracer)
       : new QueryExecutor(this);

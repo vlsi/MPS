@@ -1168,6 +1168,10 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  public int getSize() {
+    return myIdToNodeMap.size();
+  }
+
   public static class ImportElement {
     private SModelReference myModelDescriptor;
     private int myReferenceID;
