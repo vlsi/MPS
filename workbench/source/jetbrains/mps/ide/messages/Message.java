@@ -106,20 +106,21 @@ public class Message {
 
   public void setHintObject(Object obj) {
     boolean error = true;
-    if (obj instanceof SNode){
+    if (obj instanceof SNode) {
       myHintObject = new SNodePointer(((SNode) obj));
-    } else if (obj instanceof SModel){
+    } else if (obj instanceof SModel) {
       myHintObject = ((SModel) obj).getSModelReference();
-    } else if (obj instanceof IModule){
+    } else if (obj instanceof IModule) {
       myHintObject = ((IModule) obj).getModuleReference();
-    } else{
+    } else {
       myHintObject = obj;
       error = false;
     }
 
-    //if (error) {
-    //  LOG.error("Adding a message with " + obj.getClass().getSimpleName() + " hint object. This can lead to memleaks. Changing hint object to a reference.", new Throwable());
-    //}
+    if (error) {
+      //can't enable it because of LogEnrty's hint object
+      //  LOG.error("Adding a message with " + obj.getClass().getSimpleName() + " hint object. This can lead to memleaks. Changing hint object to a reference.", new Throwable());
+    }
   }
 
   public boolean canNavigate() {
