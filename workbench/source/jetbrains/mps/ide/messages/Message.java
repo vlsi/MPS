@@ -104,10 +104,10 @@ public class Message {
   private Object myHintObject;
 
   public void setHintObject(Object hintObject) {
-    if (hintObject instanceof SNode || hintObject instanceof SModel || hintObject instanceof IModule) {
-      LOG.error("Adding a message with " + hintObject.getClass().getSimpleName() + " hint object. This can lead to memleaks. Ignoring hint object.", new Throwable());
-      return;
-    }
+  //  if (hintObject instanceof SNode || hintObject instanceof SModel || hintObject instanceof IModule) {
+  //    LOG.error("Adding a message with " + hintObject.getClass().getSimpleName() + " hint object. This can lead to memleaks. Ignoring hint object.", new Throwable());
+  //    return;
+  //  }
 
     myHintObject = hintObject;
   }
