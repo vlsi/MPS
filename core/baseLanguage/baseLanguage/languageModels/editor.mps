@@ -15309,6 +15309,7 @@
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="6329021646629175142">
       <link role="relationDeclaration:32" targetNodeId="17.6329021646629104958:3" resolveInfo="text" />
       <link role="styleClass:32" targetNodeId="1198594875276" resolveInfo="Comment" />
+      <link role="keyMap:32" targetNodeId="6277919470776558529" resolveInfo="LastCommentPart" />
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="7236590470026154854">
         <property name="style:32" value="ITALIC" />
       </node>
@@ -16540,6 +16541,63 @@
         </node>
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="7785501532031731650" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration:32" id="6277919470776558529">
+    <property name="name:32" value="LastCommentPart" />
+    <link role="applicableConcept:32" targetNodeId="17.6329021646629104955:3" resolveInfo="CommentPart" />
+    <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellKeyMapItem:32" id="6277919470776558530">
+      <property name="caretPolicy:32" value="caret_at_last_position" />
+      <node role="keystroke:32" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke:32" id="6277919470776558531">
+        <property name="keycode:32" value="VK_ENTER" />
+      </node>
+      <node role="executeFunction:32" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction:32" id="6277919470776558532">
+        <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6277919470776558533">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6277919470776558558">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6277919470776558585">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6277919470776558561">
+                <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode:32" id="6277919470776558559" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="6277919470776558565" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation:16" id="6277919470776558607">
+                <node role="insertedNode:16" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6277919470776558628">
+                  <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="6277919470776558629">
+                    <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="6277919470776558630">
+                      <link role="concept:16" targetNodeId="17.1068580123157:3" resolveInfo="Statement" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="isApplicableFunction:32" type="jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction:32" id="6277919470776558566">
+        <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6277919470776558567">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6277919470776558568">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="6277919470776662740">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="6277919470776666850">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="6277919470776666853" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6277919470776666841">
+                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode:32" id="6277919470776666840" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation:16" id="6277919470776666845" />
+                </node>
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6277919470776558575">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6277919470776558570">
+                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode:32" id="6277919470776558569" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="6277919470776558574" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="6277919470776558579">
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="6277919470776558581">
+                    <link role="conceptDeclaration:16" targetNodeId="17.6329021646629104954:3" resolveInfo="SingleLineComment" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5205855332950442225">

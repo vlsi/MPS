@@ -45,6 +45,7 @@ public class TextCommentPart_Editor extends DefaultNodeEditor {
         }
       });
     }
+    editorCell.addKeyMap(new LastCommentPart());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
