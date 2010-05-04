@@ -43,12 +43,10 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     myHandleWarnings = logger.myHandleWarnings;
   }
 
-  @Override
   public boolean needsInfo() {
     return myHandleInfo;
   }
 
-  @Override
   public boolean needsWarnings() {
     return myHandleWarnings;
   }
@@ -57,7 +55,6 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     myOperationContext = operationContext;
   }
 
-  @Override
   public void info(SNode node, String message) {
     if(!myHandleInfo) {
       return;
@@ -65,7 +62,6 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     report(MessageKind.INFORMATION, message, node);
   }
 
-  @Override
   public void info(String message) {
     if(!myHandleInfo) {
       return;
@@ -73,7 +69,6 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     report(MessageKind.INFORMATION, message, null);
   }
 
-  @Override
   public void warning(String message) {
     if(!myHandleWarnings) {
       return;
@@ -82,7 +77,6 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     report(MessageKind.WARNING, message, null);
   }
 
-  @Override
   public void warning(SNode node, String message) {
     if(!myHandleWarnings) {
       return;
@@ -91,7 +85,6 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     report(MessageKind.WARNING, message, node);
   }
 
-  @Override
   public void describeWarning(SNode node, String message) {
     if(!myHandleWarnings) {
       return;
@@ -99,24 +92,20 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     report(MessageKind.WARNING, "-- " + message, node);
   }
 
-  @Override
   public void error(SNode node, String message) {
     myErrorsCount++;
     report(MessageKind.ERROR, message, node);
   }
 
-  @Override
   public void describeError(SNode node, String message) {
     report(MessageKind.ERROR, "-- " + message, node);
   }
 
-  @Override
   public void error(String message) {
     myErrorsCount++;
     report(MessageKind.ERROR, message, null);
   }
 
-  @Override
   public void handleException(Throwable t) {
     Message message = new Message(MessageKind.ERROR, t.getMessage());
     message.setException(t);
