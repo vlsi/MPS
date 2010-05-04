@@ -200,7 +200,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
           item = (Message) myModel.getElementAt(index);
         }
 
-        if (item != null && item.getHintObject() != null && myAutoscrollToSourceAction.isSelected(null)) {
+        if (item != null && item.hasHintObject() && myAutoscrollToSourceAction.isSelected(null)) {
           myList.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         } else {
           myList.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
@@ -382,7 +382,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
   private void openCurrentMessageNodeIfPossible() {
     final Message selectedMessage = (Message) myList.getSelectedValue();
-    if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
+    if (selectedMessage == null || !selectedMessage.hasHintObject()) return;
 
     /* temp hack: write action instead of read, TODO remove lock, hintObject should be SNodePointer */
     ModelAccess.instance().runWriteAction(new Runnable() {
@@ -494,7 +494,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         if (m.getKind() == MessageKind.INFORMATION) {
           myInfos += delta;
         }
-        if (m.getHintObject() != null) {
+        if (m.hasHintObject()) {
           myHintObjects += delta;
         }
       }
@@ -568,7 +568,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
       public boolean tryNavigate(int index) {
         Message msg = ((Message) myModel.getElementAt(index));
-        if (msg.getHintObject() == null) return false;
+        if (!msg.hasHintObject()) return false;
         myList.setSelectedIndex(index);
         myList.ensureIndexIsVisible(index);
         openCurrentMessageNodeIfPossible();

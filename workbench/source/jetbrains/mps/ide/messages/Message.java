@@ -82,6 +82,10 @@ public class Message {
     return mySender;
   }
 
+  public boolean hasHintObject(){
+    return getHintObject()!=null;
+  }
+
   public String toString() {
     String prefix = ((mySender == null) ? "" : "[" + mySender + "] ");
     return prefix + getText();
