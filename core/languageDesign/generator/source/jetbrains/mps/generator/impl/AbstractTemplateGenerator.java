@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.template.IQueryExecutor;
 import jetbrains.mps.generator.template.ITemplateGenerator;
@@ -53,7 +54,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myInputModel = inputModel;
     myOutputModel = outputModel;
     myMappings = new GeneratorMappings(inputModel.getSize());
-    myExecutor = generationContext.getTracingMode() >= GenerationProcessContext.TRACE_LANGS
+    myExecutor = generationContext.getTracingMode() >= GenerationSettings.TRACE_LANGS
       ? new TraceableQueryExecutor(this, tracer)
       : new QueryExecutor(this);
   }

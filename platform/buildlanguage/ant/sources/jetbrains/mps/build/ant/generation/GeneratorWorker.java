@@ -56,7 +56,7 @@ public class GeneratorWorker extends MpsWorker {
   private void setGenerationProperties() {
     if (myWhatToDo.getProperty(GenerateTask.PER_ROOT_GENERATION) != null) {
       boolean perRootGeneration = Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.PER_ROOT_GENERATION));
-      GenerationSettings.getInstance().setUseNewGenerator(perRootGeneration);
+      GenerationSettings.getInstance().setParallelGenerator(perRootGeneration);
       GenerationSettings.getInstance().setStrictMode(perRootGeneration);
       info("Per-root generation set to " + perRootGeneration);
     }

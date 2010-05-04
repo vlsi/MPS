@@ -43,6 +43,11 @@ import javax.swing.JComponent;
 )
 public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent, SearchableConfigurable {
 
+  public static final int TRACE_OFF = 0;
+  public static final int TRACE_STEPS = 1;
+  public static final int TRACE_LANGS = 2;
+  public static final int TRACE_TYPES = 3;
+
   public static GenerationSettings getInstance() {
     return ApplicationManager.getApplication().getComponent(GenerationSettings.class);
   }
@@ -155,12 +160,12 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myCheckModelsBeforeGeneration = checkModelsBeforeGeneration;
   }
 
-  public boolean isUseNewGenerator() {
-    return myState.myUseNewGenerator;
+  public boolean isParallelGenerator() {
+    return myState.myParallelGenerator;
   }
 
-  public void setUseNewGenerator(boolean useNewGenerator) {
-    myState.myUseNewGenerator = useNewGenerator;
+  public void setParallelGenerator(boolean useNewGenerator) {
+    myState.myParallelGenerator = useNewGenerator;
   }
 
   public boolean isStrictMode() {
@@ -171,13 +176,31 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myStrictMode = strictMode;
   }
 
+  public int getNumberOfParallelThreads() {
+    return myState.myNumberOfParallelThreads;
+  }
+
+  public void setNumberOfParallelThreads(int coreNumber) {
+    myState.myNumberOfParallelThreads = coreNumber;
+  }
+
+  public int getPerformanceTracingLevel() {
+    return myState.myPerformanceTracingLevel;
+  }
+
+  public void setPerformanceTracingLevel(int performanceTracingLevel) {
+    myState.myPerformanceTracingLevel = performanceTracingLevel;
+  }
+
   public static class MyState {
     private boolean mySaveTransientModels;
     private boolean myShowErrorsOnly;
     private boolean myGenerateRequirements = true;
     private boolean myCheckModelsBeforeGeneration = true;
-    private boolean myUseNewGenerator = false;
+    private boolean myParallelGenerator = false;
     private boolean myStrictMode = false;
+    private int myNumberOfParallelThreads = 2;
+    private int myPerformanceTracingLevel = TRACE_OFF;
 
     public boolean isSaveTransientModels() {
       return mySaveTransientModels;
@@ -211,12 +234,12 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
       myCheckModelsBeforeGeneration = checkModelsBeforeGeneration;
     }
 
-    public boolean isUseNewGenerator() {
-      return myUseNewGenerator;
+    public boolean isParallelGenerator() {
+      return myParallelGenerator;
     }
 
-    public void setUseNewGenerator(boolean useNewGenerator) {
-      myUseNewGenerator = useNewGenerator;
+    public void setParallelGenerator(boolean parallelGenerator) {
+      myParallelGenerator = parallelGenerator;
     }
 
     public boolean isStrictMode() {
@@ -225,6 +248,22 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
     public void setStrictMode(boolean strictMode) {
       myStrictMode = strictMode;
+    }
+
+    public int getNumberOfParallelThreads() {
+      return myNumberOfParallelThreads;
+    }
+
+    public void setNumberOfParallelThreads(int numberOfParallelThreads) {
+      myNumberOfParallelThreads = numberOfParallelThreads;
+    }
+
+    public int getPerformanceTracingLevel() {
+      return myPerformanceTracingLevel;
+    }
+
+    public void setPerformanceTracingLevel(int performanceTracingLevel) {
+      myPerformanceTracingLevel = performanceTracingLevel;
     }
   }
 }

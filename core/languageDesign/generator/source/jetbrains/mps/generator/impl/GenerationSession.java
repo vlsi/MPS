@@ -321,6 +321,7 @@ public class GenerationSession {
       }
     }
 
+    boolean preProcessed = false;
     for (MappingScript preMappingScript : preMappingScripts) {
       if (preMappingScript.getScriptKind() != MappingScriptKind.pre_process_input_model) {
         myLogger.warning(preMappingScript.getNode(), "skip script '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ") - wrong script kind");
@@ -331,6 +332,10 @@ public class GenerationSession {
       }
       ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentInputModel, myGenerationContext, ttrace);
       templateGenerator.getExecutor().executeMappingScript(preMappingScript, currentInputModel);
+      preProcessed = true;
+    }
+    if(myLogger.needsInfo() && preProcessed) {
+      myLogger.info("pre-processing finished");
     }
     return currentInputModel;
   }

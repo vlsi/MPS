@@ -85,7 +85,7 @@ public class TextGenerationUtil {
     }
 
     public boolean hasDependencies() {
-      return true;
+      return myDependencies != null;
     }
   }
 

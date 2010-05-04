@@ -91,7 +91,7 @@ public class ParallelPoolTest extends TestCase {
     System.out.println("Work amount: " + amountFor2secs + " ticks");
 
     long start = System.currentTimeMillis();
-    GenerationTaskPool pool = new GenerationTaskPool(new EmptyProgressIndicator());
+    GenerationTaskPool pool = new GenerationTaskPool(new EmptyProgressIndicator(), 4);
     final CustomTask[] generationTasks = createTasks(amountFor2secs, 4);
     for(GenerationTask t : generationTasks) {
       pool.addTask(t);
@@ -130,7 +130,7 @@ public class ParallelPoolTest extends TestCase {
       public boolean isCanceled() {
         return true;
       }
-    });
+    }, 4);
     final CustomTask[] generationTasks = createTasks(amountFor2secs*4, 4);
     for(GenerationTask t : generationTasks) {
       pool.addTask(t);
@@ -171,7 +171,7 @@ public class ParallelPoolTest extends TestCase {
       public boolean isCanceled() {
         return (System.currentTimeMillis() - start > 1600);
       }
-    });
+    }, 4);
     final CustomTask[] generationTasks = createTasks(amountFor2secs*4, 4);
     for(GenerationTask t : generationTasks) {
       pool.addTask(t);

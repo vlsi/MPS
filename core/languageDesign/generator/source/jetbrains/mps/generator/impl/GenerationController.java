@@ -36,7 +36,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -76,7 +75,9 @@ public class GenerationController {
     myGenerationHandler = generationHandler;
     myProgress = progress;
     myLogger = new GeneratorLoggerAdapter(messages, !settings.isShowErrorsOnly(), !settings.isShowErrorsOnly());
-    myGenerationContext = new GenerationProcessContext(saveTransientModels, settings.isUseNewGenerator(), settings.isStrictMode(), settings.isShowErrorsOnly(), progress, generationTracer);
+    myGenerationContext = new GenerationProcessContext(
+      saveTransientModels, settings.isParallelGenerator(), settings.isStrictMode(), settings.isShowErrorsOnly(),
+      progress, generationTracer, settings.getNumberOfParallelThreads(), settings.getPerformanceTracingLevel());
   }
 
   private void initMaps() {
@@ -113,7 +114,7 @@ public class GenerationController {
         myGenerationContext.cleanup();
       }
       if (generationOK) {
-        if(myLogger.needsInfo()) {
+        if (myLogger.needsInfo()) {
           myLogger.info("generation completed successfully in " + (System.currentTimeMillis() - startJobTime) + " ms");
         }
       } else {
@@ -158,11 +159,11 @@ public class GenerationController {
       }
 
       for (SModelDescriptor inputModel : inputModels) {
-        IPerformanceTracer ttrace = myGenerationContext.getTracingMode() != GenerationProcessContext.TRACE_OFF
+        IPerformanceTracer ttrace = myGenerationContext.getTracingMode() != GenerationSettings.TRACE_OFF
           ? new PerformanceTracer("model " + NameUtil.shortNameFromLongName(inputModel.getLongName()))
           : new NullPerformanceTracer();
 
-        boolean traceTypes = myGenerationContext.getTracingMode() == GenerationProcessContext.TRACE_TYPES;
+        boolean traceTypes = myGenerationContext.getTracingMode() == GenerationSettings.TRACE_TYPES;
         TypeChecker.getInstance().setIsGeneration(true, traceTypes ? ttrace : null);
 
         GenerationSession generationSession = new GenerationSession(
@@ -175,10 +176,18 @@ public class GenerationController {
             continue;
           }
 
-          myLogger.info("");
+          if(myLogger.needsInfo()) {
+            myLogger.info("");
+          }
           String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
           progressHelper.setText2("model " + inputModel.getSModelFqName());
           progressHelper.startLeafTask(taskName);
+          if (myLogger.needsInfo()) {
+            myLogger.info("model " + inputModel.getSModelFqName() +
+              (myGenerationContext.isGenerateInParallel()
+                ? ", using " + myGenerationContext.getNumberOfThreads() + " threads"
+                : ""));
+          }
 
           GenerationStatus status = generationSession.generateModel();
           status.setOriginalInputModel(inputModel);

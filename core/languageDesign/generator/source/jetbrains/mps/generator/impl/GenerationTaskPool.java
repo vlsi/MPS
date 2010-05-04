@@ -84,12 +84,9 @@ public class GenerationTaskPool implements IGenerationTaskPool {
   private final ProgressIndicator progressMonitor;
   private volatile boolean isCancelled = false;
 
-  public GenerationTaskPool(ProgressIndicator progressMonitor) {
+  public GenerationTaskPool(ProgressIndicator progressMonitor, int numberOfThreads) {
     this.progressMonitor = progressMonitor;
-  }
-
-  final BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>();
-  ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(4, 4, 10, TimeUnit.SECONDS, queue, new ModelReadThreadFactory()) {
+    myExecutor = new ThreadPoolExecutor(numberOfThreads, numberOfThreads, 10, TimeUnit.SECONDS, queue, new ModelReadThreadFactory()) {
     @Override
     protected void afterExecute(Runnable r, Throwable t) {
       long tasksLeft = tasksInQueue.decrementAndGet();
@@ -100,6 +97,10 @@ public class GenerationTaskPool implements IGenerationTaskPool {
       }
     }
   };
+  }
+
+  final BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>();
+  ThreadPoolExecutor myExecutor;
 
   final AtomicLong tasksInQueue = new AtomicLong();
   final Object objectLock = new Object();

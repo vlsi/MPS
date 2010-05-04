@@ -1,6 +1,7 @@
 package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 
@@ -10,29 +11,27 @@ import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 public class GenerationProcessContext {
 
   public static /*final*/ boolean USE_PARALLEL_POOL = true;
-  public static /*final*/ boolean USE_TRACING = false;
-
-  public static final int TRACE_OFF = 0;
-  public static final int TRACE_STEPS = 1;
-  public static final int TRACE_LANGS = 2;
-  public static final int TRACE_TYPES = 3;
 
   boolean mySaveTransientModels;
-  boolean myGenerateInParallel;
   boolean myStrictMode;
   boolean myShowErrorsOnly;
+  boolean myGenerateInParallel;
+  int myNumberOfThreads;
+  int myTracingMode;
 
   ProgressIndicator myProgressIndicator;
   IGenerationTracer myGenerationTracer;
   IGenerationTaskPool myParallelTaskPool;
 
-  public GenerationProcessContext(boolean saveTransientModels, boolean generateInParallel, boolean strictMode, boolean showErrorsOnly, ProgressIndicator progressIndicator, IGenerationTracer generationTracer) {
+  public GenerationProcessContext(boolean saveTransientModels, boolean generateInParallel, boolean strictMode, boolean showErrorsOnly, ProgressIndicator progressIndicator, IGenerationTracer generationTracer, int numberOfThreads, int tracingMode) {
     mySaveTransientModels = saveTransientModels;
     myGenerateInParallel = generateInParallel;
     myStrictMode = strictMode;
     myShowErrorsOnly = showErrorsOnly;
     myGenerationTracer = generationTracer;
     myProgressIndicator = progressIndicator;
+    myNumberOfThreads = numberOfThreads;
+    myTracingMode = tracingMode;
   }
 
   public boolean isSaveTransientModels() {
@@ -59,18 +58,26 @@ public class GenerationProcessContext {
     return myGenerationTracer;
   }
 
+  public int getNumberOfThreads() {
+    return myNumberOfThreads;
+  }
+
   public int getTracingMode() {
-    if(!USE_TRACING)
-      return 0;
-    return myStrictMode ? (myGenerateInParallel ? TRACE_STEPS : TRACE_TYPES) : 0;
+    if(!myStrictMode) {
+      return GenerationSettings.TRACE_OFF;
+    }
+    if(isGenerateInParallel() && myTracingMode > GenerationSettings.TRACE_STEPS) {
+      return GenerationSettings.TRACE_STEPS;
+    }
+    return myTracingMode;
   }
 
   public IGenerationTaskPool getTaskPool() {
-    if(myParallelTaskPool != null) {
+    if(myParallelTaskPool != null || !isGenerateInParallel()) {
       return myParallelTaskPool;
     }
     myParallelTaskPool = USE_PARALLEL_POOL
-        ? new GenerationTaskPool(myProgressIndicator)
+        ? new GenerationTaskPool(myProgressIndicator, myNumberOfThreads)
         : new SimpleGenerationTaskPool();
     return myParallelTaskPool;
   }
