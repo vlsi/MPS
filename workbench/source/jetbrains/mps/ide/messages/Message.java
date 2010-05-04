@@ -128,7 +128,7 @@ public class Message {
   }
 
   public void navigate(final Project project) {
-    /* temp hack: write action instead of read, TODO remove lock, hintObject should be SNodePointer */
+    /* temp hack: write action instead of read, TODO remove lock*/
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         NavigationManager.getInstance().navigateTo(project, myHintObject, true, true);
