@@ -63,7 +63,7 @@ public class PartitioningHelper {
       List<Pair<MappingPriorityRule, String>> strings = GenerationPartitioningUtil.toStrings(rules, true);
       for (Pair<MappingPriorityRule, String> string : strings) {
         Message msg = new Message(MessageKind.INFORMATION, " " + string.second);
-        msg.setHintObject(generator);
+        msg.setHintObject(generator.getModuleReference());
         messagesView.add(msg);
       }
     }
@@ -76,8 +76,7 @@ public class PartitioningHelper {
       for (Pair<MappingPriorityRule, String> message : messagesFull) {
         Message msg = new Message(MessageKind.ERROR, PartitioningHelper.class, message.second);
         GeneratorDescriptor generatorDescriptor = myRule2Generator.get(message.first);
-        Generator generatorModule = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorDescriptor.getGeneratorUID());
-        msg.setHintObject(generatorModule);
+        msg.setHintObject(generatorDescriptor.getModuleReference());
         messagesView.add(msg);
       }
       messagesView.add(new Message(MessageKind.INFORMATION, "================================="));

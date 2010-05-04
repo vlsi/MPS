@@ -22,6 +22,7 @@ import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 /**
  * Igor Alshannikov
@@ -56,21 +57,21 @@ public class GenerationSessionLogger implements IGeneratorLogger {
   }
 
   public void info(SNode node, String message) {
-    if(!myHandleInfo) {
+    if (!myHandleInfo) {
       return;
     }
     report(MessageKind.INFORMATION, message, node);
   }
 
   public void info(String message) {
-    if(!myHandleInfo) {
+    if (!myHandleInfo) {
       return;
     }
     report(MessageKind.INFORMATION, message, null);
   }
 
   public void warning(String message) {
-    if(!myHandleWarnings) {
+    if (!myHandleWarnings) {
       return;
     }
     myWarningsCount++;
@@ -78,7 +79,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
   }
 
   public void warning(SNode node, String message) {
-    if(!myHandleWarnings) {
+    if (!myHandleWarnings) {
       return;
     }
     myWarningsCount++;
@@ -86,12 +87,13 @@ public class GenerationSessionLogger implements IGeneratorLogger {
   }
 
   public void describeWarning(SNode node, String message) {
-    if(!myHandleWarnings) {
+    if (!myHandleWarnings) {
       return;
     }
     report(MessageKind.WARNING, "-- " + message, node);
   }
 
+  @Override
   public void error(SNode node, String message) {
     myErrorsCount++;
     report(MessageKind.ERROR, message, node);
@@ -114,31 +116,24 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     }
   }
 
-  private void report(MessageKind kind, String text, Object hintObject) {
-    if(hintObject instanceof SNode && myOperationContext != null) {
-      hintObject = new NodeWithContext((SNode) hintObject, myOperationContext);
-    }
-
+  private void report(MessageKind kind, String text, SNode node) {
     Message message = new Message(kind, text);
-    if(hintObject != null) {
-      message.setHintObject(hintObject);
 
-      if(myOperationContext != null) {
-        if (hintObject instanceof SNode) {
-          myOperationContext.addTransientModelToKeep(((SNode) hintObject).getModel());
-        } else if (hintObject instanceof NodeWithContext) {
-          SNode node = ((NodeWithContext) hintObject).getNode();
-          if (node != null) {
-            myOperationContext.addTransientModelToKeep(node.getModel());
-          }
-        }
+    if (node != null) {
+      if (myOperationContext != null) {
+        NodeWithContext context = new NodeWithContext(node, myOperationContext);
+        message.setHintObject(context);
+        myOperationContext.addTransientModelToKeep(node.getModel());
+      } else {
+        message.setHintObject(new SNodePointer(node));
       }
     }
+
     synchronized (myMessageHandler) {
       myMessageHandler.handle(message);
     }
   }
-  
+
   public int getErrorCount() {
     return myErrorsCount;
   }

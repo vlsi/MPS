@@ -5,6 +5,7 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 /**
  * Evgeny Gryaznov, Feb 23, 2010
@@ -101,10 +102,10 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     }
   }
 
-  protected void report(MessageKind kind, String text, Object hintObject) {
+  protected void report(MessageKind kind, String text, SNode node) {
     Message message = new Message(kind, text);
-    if(hintObject != null) {
-      message.setHintObject(hintObject);
+    if(node != null) {
+      message.setHintObject(new SNodePointer(node));
     }
     synchronized (myMessageHandler) {
       myMessageHandler.handle(message);
