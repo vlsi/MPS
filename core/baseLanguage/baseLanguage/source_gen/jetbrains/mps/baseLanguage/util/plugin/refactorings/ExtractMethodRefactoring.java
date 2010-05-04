@@ -5,14 +5,14 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
+import java.util.ArrayList;
 import java.util.Map;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -39,7 +39,22 @@ public abstract class ExtractMethodRefactoring {
   }
 
   @NotNull
-  public abstract SNode doRefactor();
+  public SNode doRefactor() {
+    SNode body = createMethodBody();
+    List<SNode> params = new ArrayList<SNode>();
+    Map<SNode, SNode> inputToParams = this.createInputParameters(body, params);
+    Map<SNode, SNode> inputMapping = this.createInputVaryablesMapping(inputToParams, this.myParameters.getNodesToRefactor());
+    this.myMatches = new MethodDuplicatesFinder(this.myParameters.getNodesToRefactor(), inputMapping, params, this.getOutputReferences()).findDuplicates(SNodeOperations.getAncestor(ListSequence.fromList(this.myParameters.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
+    this.replaceInputVariablesByParameters(SLinkOperations.getTargets(body, "statement", true), inputToParams);
+    SNode newMethod = this.createNewMethod(SNodeOperations.copyNode(this.getMethodType()), params, body);
+    this.addMethod(newMethod);
+    MethodMatch exactMatch = this.createMatch(this.myParameters.getNodesToRefactor(), inputMapping, params);
+    this.replaceMatch(exactMatch, newMethod);
+    MethodOptimizer.optimize(body);
+    return newMethod;
+  }
+
+  protected abstract SNode createMethodBody();
 
   public abstract void replaceMatch(MethodMatch match, SNode methodDeclaration);
 
@@ -83,10 +98,10 @@ public abstract class ExtractMethodRefactoring {
       }
     }
     for (SNode declaration : SetSequence.fromSet(MapSequence.fromMap(mapping).keySet())) {
-      SNode newDeclaration = new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a2a5().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, "type", true)), SPropertyOperations.getString(declaration, "name"));
-      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).first(), new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0b0c0f().createNode(newDeclaration));
+      SNode newDeclaration = new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a2a6().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, "type", true)), SPropertyOperations.getString(declaration, "name"));
+      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).first(), new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0b0c0g().createNode(newDeclaration));
       for (SNode reference : ListSequence.fromList(MapSequence.fromMap(mapping).get(declaration))) {
-        SNodeOperations.replaceWithAnother(reference, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0c0c0f().createNode(newDeclaration));
+        SNodeOperations.replaceWithAnother(reference, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0c0c0g().createNode(newDeclaration));
       }
     }
   }
@@ -130,10 +145,10 @@ public abstract class ExtractMethodRefactoring {
     return result;
   }
 
-  public void ReplaceInputVariablesByParameters(List<SNode> nodes, Map<SNode, SNode> mapping) {
+  public void replaceInputVariablesByParameters(List<SNode> nodes, Map<SNode, SNode> mapping) {
     Map<SNode, SNode> anotherMap = this.createInputVaryablesMapping(mapping, nodes);
     for (SNode node : SetSequence.fromSet(MapSequence.fromMap(anotherMap).keySet())) {
-      SNodeOperations.replaceWithAnother(node, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0b0j().createNode(MapSequence.fromMap(anotherMap).get(node)));
+      SNodeOperations.replaceWithAnother(node, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0b0k().createNode(MapSequence.fromMap(anotherMap).get(node)));
     }
   }
 
@@ -219,8 +234,8 @@ public abstract class ExtractMethodRefactoring {
 
   public abstract SNode getMethodType();
 
-  public static class QuotationClass_jq3ovj_a0a0a2a5 {
-    public QuotationClass_jq3ovj_a0a0a2a5() {
+  public static class QuotationClass_jq3ovj_a0a0a2a6 {
+    public QuotationClass_jq3ovj_a0a0a2a6() {
     }
 
     public SNode createNode(Object parameter_5, Object parameter_6) {
@@ -251,8 +266,8 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
-  public static class QuotationClass_jq3ovj_a0a0b0c0f {
-    public QuotationClass_jq3ovj_a0a0b0c0f() {
+  public static class QuotationClass_jq3ovj_a0a0b0c0g {
+    public QuotationClass_jq3ovj_a0a0b0c0g() {
     }
 
     public SNode createNode(Object parameter_6) {
@@ -283,8 +298,8 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
-  public static class QuotationClass_jq3ovj_a0a0a0c0c0f {
-    public QuotationClass_jq3ovj_a0a0a0c0c0f() {
+  public static class QuotationClass_jq3ovj_a0a0a0c0c0g {
+    public QuotationClass_jq3ovj_a0a0a0c0c0g() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -301,8 +316,8 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
-  public static class QuotationClass_jq3ovj_a0a0a0b0j {
-    public QuotationClass_jq3ovj_a0a0a0b0j() {
+  public static class QuotationClass_jq3ovj_a0a0a0b0k {
+    public QuotationClass_jq3ovj_a0a0a0b0k() {
     }
 
     public SNode createNode(Object parameter_3) {

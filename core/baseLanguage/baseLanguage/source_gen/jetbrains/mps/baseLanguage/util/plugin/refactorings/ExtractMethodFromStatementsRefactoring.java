@@ -7,13 +7,10 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefactoring {
   protected List<SNode> myStatements = new ArrayList<SNode>();
@@ -23,23 +20,11 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
     ListSequence.fromList(this.myStatements).addSequence(ListSequence.fromList(((List<SNode>) params.getNodesToRefactor())));
   }
 
-  public SNode doRefactor() {
-    SNode type = this.getMethodType();
+  protected SNode createMethodBody() {
     SNode body = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
     this.modifyPartToExtract();
-    Map<SNode, SNode> mapping = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addSequence(ListSequence.fromList(CopyUtil.copy(this.myStatements, mapping)));
-    List<SNode> params = new ArrayList<SNode>();
-    Map<SNode, SNode> inputToParams = this.createInputParameters(body, params);
-    Map<SNode, SNode> inputMapping = this.createInputVaryablesMapping(inputToParams, this.myParameters.getNodesToRefactor());
-    this.myMatches = new MethodDuplicatesFinder(this.myParameters.getNodesToRefactor(), inputMapping, params, this.getOutputReferences()).findDuplicates(SNodeOperations.getAncestor(ListSequence.fromList(this.myParameters.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
-    this.ReplaceInputVariablesByParameters(SLinkOperations.getTargets(body, "statement", true), inputToParams);
-    SNode newMethod = this.createNewMethod(type, params, body);
-    this.addMethod(newMethod);
-    MethodMatch exactMatch = this.createMatch(this.myParameters.getNodesToRefactor(), inputMapping, params);
-    this.replaceMatch(exactMatch, newMethod);
-    MethodOptimizer.optimize(body);
-    return newMethod;
+    ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addSequence(ListSequence.fromList(CopyUtil.copy(this.myStatements)));
+    return body;
   }
 
   public void replaceMatch(final MethodMatch match, final SNode methodDeclaration) {
