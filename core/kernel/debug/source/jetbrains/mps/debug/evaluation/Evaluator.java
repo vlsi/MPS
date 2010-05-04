@@ -1,6 +1,5 @@
 package jetbrains.mps.debug.evaluation;
 
-import com.sun.istack.internal.Nullable;
 import com.sun.jdi.*;
 import jetbrains.mps.debug.api.programState.IThread;
 import jetbrains.mps.debug.info.StacktraceUtil;
@@ -8,6 +7,7 @@ import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.java.programState.JavaThread;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
