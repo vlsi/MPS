@@ -42,7 +42,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
     }
     List<SNode> params = new ArrayList<SNode>();
     Map<SNode, SNode> inputToParams = this.createInputParameters(body, params);
-    Map<SNode, SNode> inputMapping = this.createInputVaryablesMapping(inputToParams);
+    Map<SNode, SNode> inputMapping = this.createInputVaryablesMapping(inputToParams, this.myParameters.getNodesToRefactor());
     this.myMatches = new MethodDuplicatesFinder(this.myParameters.getNodesToRefactor(), inputMapping, params, this.getOutputReferences()).findDuplicates(SNodeOperations.getAncestor(ListSequence.fromList(this.myParameters.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
     this.replaceInputVariablesByParameters(body, inputToParams, mapping);
     SNode newMethod = this.createNewMethod(typeNode, params, body);

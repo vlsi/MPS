@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.baseLanguage.behavior.IParameter_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IStaticContainerForMethods_Behavior;
 import java.util.Set;
@@ -146,10 +147,23 @@ public abstract class ExtractMethodRefactoring {
           }
         }
       }
+      for (SNode variableReference : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
+        if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(SLinkOperations.getTarget(variableReference, "variableDeclaration", false))) {
+          SNodeOperations.replaceWithAnother(variableReference, this.createReference(MapSequence.fromMap(variableDeclarationToParameter).get(SLinkOperations.getTarget(variableReference, "variableDeclaration", false))));
+        }
+      }
+      for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.IParameter", false, new String[]{}))) {
+        if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(IParameter_Behavior.call_getDeclaration_1225282371351(parameter))) {
+          SNodeOperations.replaceWithAnother(parameter, this.createReference(MapSequence.fromMap(variableDeclarationToParameter).get(IParameter_Behavior.call_getDeclaration_1225282371351(parameter))));
+        }
+      }
     */
-    for (SNode variableReference : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
-      if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(SLinkOperations.getTarget(variableReference, "variableDeclaration", false))) {
-        SNodeOperations.replaceWithAnother(variableReference, this.createReference(MapSequence.fromMap(variableDeclarationToParameter).get(SLinkOperations.getTarget(variableReference, "variableDeclaration", false))));
+    for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
+      if (MoveRefactoringUtils.isReference(reference)) {
+        SNode target = Sequence.fromIterable(SNodeOperations.getReferences(reference)).first().getTargetNode();
+        if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(target)) {
+          SNodeOperations.replaceWithAnother(reference, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0b0a0b0j().createNode(MapSequence.fromMap(variableDeclarationToParameter).get(target)));
+        }
       }
     }
     for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.IParameter", false, new String[]{}))) {
@@ -159,13 +173,15 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
-  public Map<SNode, SNode> createInputVaryablesMapping(Map<SNode, SNode> variableDeclarationToParameter) {
+  public Map<SNode, SNode> createInputVaryablesMapping(Map<SNode, SNode> variableDeclarationToParameter, List<SNode> nodes) {
     Map<SNode, SNode> mapping = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    for (SNode node : ListSequence.fromList(this.myParameters.getNodesToRefactor())) {
-      for (SNode varReference : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
-        SNode varDeclaration = SLinkOperations.getTarget(varReference, "variableDeclaration", false);
-        if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(varDeclaration)) {
-          MapSequence.fromMap(mapping).put(varReference, MapSequence.fromMap(variableDeclarationToParameter).get(varDeclaration));
+    for (SNode node : ListSequence.fromList(nodes)) {
+      for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
+        if (MoveRefactoringUtils.isReference(reference)) {
+          SNode target = Sequence.fromIterable(SNodeOperations.getReferences(reference)).first().getTargetNode();
+          if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(target)) {
+            MapSequence.fromMap(mapping).put(reference, MapSequence.fromMap(variableDeclarationToParameter).get(target));
+          }
         }
       }
       for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IParameter", false, new String[]{}))) {
@@ -313,6 +329,24 @@ public abstract class ExtractMethodRefactoring {
       SNode quotedNode_1 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_jq3ovj_a0a0a0b0a0b0j {
+    public QuotationClass_jq3ovj_a0a0a0b0a0b0j() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
