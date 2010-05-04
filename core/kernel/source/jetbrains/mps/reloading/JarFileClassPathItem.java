@@ -16,6 +16,8 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.storage.PackagesAndClassesStorage;
+import jetbrains.mps.storage.StringObject;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -41,8 +43,8 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   private String myPrefix;
   private File myFile;
 
-  private Map<String, Set<String>> myClasses = new HashMap<String, Set<String>>();
-  private Map<String, Set<String>> mySubpackages = new HashMap<String, Set<String>>();
+  private Map<StringObject, Set<String>> myClasses = new HashMap<StringObject, Set<String>>();
+  private Map<StringObject, Set<StringObject>> mySubpackages = new HashMap<StringObject, Set<StringObject>>();
   private Map<String, ZipEntry> myEntries = new HashMap<String, ZipEntry>();
 
   protected JarFileClassPathItem(String path) {
@@ -99,12 +101,16 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
 
   public void collectAvailableClasses(Set<String> classes, String namespace) {
     ensureInitialized();
-    classes.addAll(getClassesSetFor(namespace));
+    classes.addAll(getClassesSetFor(toStringObject(namespace)));
   }
 
   public void collectSubpackages(Set<String> subpackages, String namespace) {
     ensureInitialized();
-    subpackages.addAll(getSubpackagesSetFor(namespace));
+    Set<StringObject> subpacks = getSubpackagesSetFor(toStringObject(namespace));
+
+    for (StringObject obj : subpacks) {
+      subpackages.add(PackagesAndClassesStorage.getInstance().getString(obj));
+    }
   }
 
   public long getClassesTimestamp(String namespace) {
@@ -134,7 +140,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     return "jar file class path item : " + myIFile;
   }
 
-  private void ensureInitialized(){
+  private void ensureInitialized() {
     if (myIsInitialized) return;
 
     myIsInitialized = true;
@@ -155,20 +161,6 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     return entry.getTime();
   }
 
-  private Set<String> getClassesSetFor(String pack) {
-    if (!myClasses.containsKey(pack)) {
-      myClasses.put(pack, new HashSet<String>());
-    }
-    return myClasses.get(pack);
-  }
-
-  private Set<String> getSubpackagesSetFor(String pack) {
-    if (!mySubpackages.containsKey(pack)) {
-      mySubpackages.put(pack, new HashSet<String>());
-    }
-    return mySubpackages.get(pack);
-  }
-
   private void buildCaches() {
     Iterable<? extends ZipEntry> entries = CollectionUtil.asIterable(myZipFile.entries());
 
@@ -179,12 +171,12 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
           name = name.substring(0, name.length() - 1);
         }
 
-        //directry having a '.' in its name can't contain classes.
+        // directory having a '.' in its name can't contain classes.
         // See http://youtrack.jetbrains.net/issue/MPS-7012 for details 
         if (name.contains(".")) continue;
 
         String pack = name.replace('/', '.');
-        buildPackageCaches(pack);
+        buildPackageCaches(toStringObject(pack));
       } else {
         String name = entry.getName();
 
@@ -198,11 +190,15 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
           className = name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length());
         } else {
           pack = packEnd > 0 ? name.substring(0, packEnd).replace('/', '.') : name;
-          className = name.substring(packEnd + 1, name.length() - ".class".length());
+
+          //this is due to mem consumption
+          //noinspection RedundantStringConstructorCall
+          className = new String(name.substring(packEnd + 1, name.length() - ".class".length()));
         }
 
-        buildPackageCaches(pack);
-        getClassesSetFor(pack).add(className);
+        StringObject packObj = toStringObject(pack);
+        buildPackageCaches(packObj);
+        getClassesSetFor(packObj).add(className);
 
         if (pack.length() > 0) {
           myEntries.put(pack + "." + className, entry);
@@ -213,17 +209,33 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     }
   }
 
-  private void buildPackageCaches(String namespace) {
-    String parent = getParentPackage(namespace);
-    if (parent.equals(namespace)) return;
-    getSubpackagesSetFor(parent).add(namespace);
+  private Set<String> getClassesSetFor(StringObject pack) {
+    if (!myClasses.containsKey(pack)) {
+      myClasses.put(pack, new HashSet<String>());
+    }
+    return myClasses.get(pack);
+  }
+
+  private Set<StringObject> getSubpackagesSetFor(StringObject pack) {
+    if (!mySubpackages.containsKey(pack)) {
+      mySubpackages.put(pack, new HashSet<StringObject>(4));
+    }
+    return mySubpackages.get(pack);
+  }
+
+  private void buildPackageCaches(StringObject pack) {
+    StringObject parent = getParentPackage(pack);
+    if (parent == null) return;
+    getSubpackagesSetFor(parent).add(pack);
     buildPackageCaches(parent);
   }
 
-  private String getParentPackage(String pack) {
-    int lastDot = pack.lastIndexOf(".");
-    if (lastDot == -1) return "";
-    return pack.substring(0, lastDot);
+  private StringObject getParentPackage(StringObject pack) {
+    return PackagesAndClassesStorage.getInstance().getParent(pack);
+  }
+
+  private StringObject toStringObject(String s) {
+    return PackagesAndClassesStorage.getInstance().get(s);
   }
 
   private static File transformFile(IFile f) throws IOException {
