@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.library.LanguageDesign_DevKit;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
@@ -57,7 +58,7 @@ public class EmbeddableEditor {
     this.setNode(rootNode, targetNode);
   }
 
-  private void setNode(SNode rootNode, SNode targetNode) {
+  private void setNode(@NotNull SNode rootNode, @NotNull SNode targetNode) {
     this.myRootNode = rootNode;
     this.myNode = targetNode;
     this.myModel.getSModel().runLoadingAction(new Runnable() {
@@ -78,7 +79,7 @@ public class EmbeddableEditor {
     }
   }
 
-  public void setNode(SNode node) {
+  public void setNode(@NotNull SNode node) {
     this.setNode(node, node);
   }
 
