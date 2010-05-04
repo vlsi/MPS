@@ -205,10 +205,12 @@ public class SearchPanel extends AbstractSearchPanel {
     int index = 0;
     boolean needChangeSelection, selected = false;
     while (matcher.find()) {
-      while (index < startCellPosition.size()
-        && !((startCellPosition.get(index) <= matcher.start())
-        && (endCellPosition.get(index) > matcher.start()))) {
+      while (index < endCellPosition.size() && endCellPosition.get(index) <= matcher.start()) {
         index++;
+      }
+      if (startCellPosition.get(index) > matcher.start()) {
+        // found text does not belong to any cell. Looking for next entry.
+        continue;
       }
       if (index >= startCellPosition.size()) {
         break;
