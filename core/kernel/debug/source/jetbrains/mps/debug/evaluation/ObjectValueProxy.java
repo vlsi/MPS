@@ -2,6 +2,7 @@ package jetbrains.mps.debug.evaluation;
 
 import com.sun.jdi.*;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -25,9 +26,15 @@ public class ObjectValueProxy extends ValueProxy {
     return (ObjectReference) myValue;
   }
 
+  @Nullable
   public ValueProxy getFieldValue(String fieldName) {
     ObjectReference value = getObjectValue();
     Field f = myReferenceType.fieldByName(fieldName);
+    if (f == null) {
+      // TODO we should really throw an exception
+      LOG.error("Could not find field " + fieldName + " in " + myReferenceType);
+      return null;
+    }
     Value result = value.getValue(f);
     return MirrorUtil.getValueProxy(result, myThreadReference);
   }

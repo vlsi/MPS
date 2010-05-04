@@ -1,12 +1,8 @@
 package jetbrains.mps.debug.evaluation;
 
 import com.sun.jdi.*;
-import jetbrains.mps.debug.api.programState.IThread;
-import jetbrains.mps.debug.info.StacktraceUtil;
 import jetbrains.mps.debug.runtime.JavaUiState;
-import jetbrains.mps.debug.runtime.java.programState.JavaThread;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -59,9 +55,10 @@ public abstract class Evaluator {
     return myUiState.getThread().getThread().virtualMachine();
   }
 
-  public ValueProxy invokeStatic(String className, String name, String jniSignature, Object ... args) {
+  @Nullable
+  public ValueProxy invokeStatic(String className, String name, String jniSignature, Object... args) {
     List<ReferenceType> classes = getVM().classesByName(className);
-    if (classes.size() == 0){
+    if (classes.size() == 0) {
       LOG.error("could not find class " + className);
       return null;
     }
@@ -72,7 +69,7 @@ public abstract class Evaluator {
       return null;
     }
     Method method = methods.get(0);
-    
+
     List<Value> argValues = MirrorUtil.getValues(getThreadReference(), args);
     Value result;
     try {
@@ -81,6 +78,23 @@ public abstract class Evaluator {
       LOG.error("method invocation failed", t);
       return null;
     }
+    return MirrorUtil.getValueProxy(result, getThreadReference());
+  }
+
+  @Nullable
+  public ValueProxy getStaticFieldValue(String className, String fieldName) {
+    List<ReferenceType> classes = getVM().classesByName(className);
+    if (classes.size() == 0) {
+      LOG.error("Could not find class " + className);
+      return null;
+    }
+    ClassType referenceType = (ClassType) classes.get(0);
+    Field field = referenceType.fieldByName(fieldName);
+    if (field == null) {
+      LOG.error("Could not find field " + fieldName + " in " + className);
+      return null;
+    }
+    Value result = referenceType.getValue(field);
     return MirrorUtil.getValueProxy(result, getThreadReference());
   }
 
