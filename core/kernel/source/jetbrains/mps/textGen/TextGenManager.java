@@ -121,7 +121,9 @@ public class TextGenManager {
         scopePositionInfo.fillFrom(info);
         List<SNode> vars = DebugInfoManager.getInstance().getVarsInScope(node);
         for (SNode var : vars) {
-          scopePositionInfo.addVarInfo(var);
+          if (var != null) {
+            scopePositionInfo.addVarInfo(var);
+          }
         }
         myScopePositions.put(node, scopePositionInfo);
       }
