@@ -118,7 +118,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
 
   @Nullable
   public JComponent getPreferredFocusedComponent() {
-    return myNodeEditor.getCurrentEditorComponent();
+    return myNodeEditor != null ? myNodeEditor.getCurrentEditorComponent() : null;
   }
 
   @NonNls
