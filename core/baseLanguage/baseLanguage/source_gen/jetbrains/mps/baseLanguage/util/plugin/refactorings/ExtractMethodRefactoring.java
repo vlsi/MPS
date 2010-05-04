@@ -12,6 +12,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.baseLanguage.behavior.Statement_Behavior;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -47,6 +49,7 @@ public abstract class ExtractMethodRefactoring {
     this.myMatches = new MethodDuplicatesFinder(this.myParameters.getNodesToRefactor(), inputMapping, params, this.getOutputReferences()).findDuplicates(SNodeOperations.getAncestor(ListSequence.fromList(this.myParameters.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
     this.replaceInputVariablesByParameters(SLinkOperations.getTargets(body, "statement", true), inputToParams);
     SNode newMethod = this.createNewMethod(SNodeOperations.copyNode(this.getMethodType()), params, body);
+
     this.addMethod(newMethod);
     MethodMatch exactMatch = this.createMatch(this.myParameters.getNodesToRefactor(), inputMapping, params);
     this.replaceMatch(exactMatch, newMethod);
@@ -83,7 +86,20 @@ public abstract class ExtractMethodRefactoring {
     }
     this.fillBaseMethodDeclaration(myMethod, returnType, params, body);
     this.createNewDeclarations(myMethod);
+    this.correctThrowsList(myMethod);
     return myMethod;
+  }
+
+  private void correctThrowsList(SNode method) {
+    List<SNode> throwables = new ArrayList<SNode>();
+    for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true))) {
+      ListSequence.fromList(throwables).addSequence(SetSequence.fromSet(Statement_Behavior.call_uncaughtThrowables_5412515780383108857(statement, false)));
+    }
+    ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.fromList(throwables).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0a0a2a6().createNode(it);
+      }
+    }));
   }
 
   protected void createNewDeclarations(SNode method) {
@@ -98,10 +114,10 @@ public abstract class ExtractMethodRefactoring {
       }
     }
     for (SNode declaration : SetSequence.fromSet(MapSequence.fromMap(mapping).keySet())) {
-      SNode newDeclaration = new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a2a6().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, "type", true)), SPropertyOperations.getString(declaration, "name"));
-      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).first(), new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0b0c0g().createNode(newDeclaration));
+      SNode newDeclaration = new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a2a7().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, "type", true)), SPropertyOperations.getString(declaration, "name"));
+      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).first(), new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0b0c0h().createNode(newDeclaration));
       for (SNode reference : ListSequence.fromList(MapSequence.fromMap(mapping).get(declaration))) {
-        SNodeOperations.replaceWithAnother(reference, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0c0c0g().createNode(newDeclaration));
+        SNodeOperations.replaceWithAnother(reference, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0c0c0h().createNode(newDeclaration));
       }
     }
   }
@@ -148,7 +164,7 @@ public abstract class ExtractMethodRefactoring {
   public void replaceInputVariablesByParameters(List<SNode> nodes, Map<SNode, SNode> mapping) {
     Map<SNode, SNode> anotherMap = this.createInputVaryablesMapping(mapping, nodes);
     for (SNode node : SetSequence.fromSet(MapSequence.fromMap(anotherMap).keySet())) {
-      SNodeOperations.replaceWithAnother(node, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0b0k().createNode(MapSequence.fromMap(anotherMap).get(node)));
+      SNodeOperations.replaceWithAnother(node, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0b0l().createNode(MapSequence.fromMap(anotherMap).get(node)));
     }
   }
 
@@ -234,8 +250,26 @@ public abstract class ExtractMethodRefactoring {
 
   public abstract SNode getMethodType();
 
-  public static class QuotationClass_jq3ovj_a0a0a2a6 {
-    public QuotationClass_jq3ovj_a0a0a2a6() {
+  public static class QuotationClass_jq3ovj_a0a0a0a0a2a6 {
+    public QuotationClass_jq3ovj_a0a0a0a0a2a6() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_jq3ovj_a0a0a2a7 {
+    public QuotationClass_jq3ovj_a0a0a2a7() {
     }
 
     public SNode createNode(Object parameter_5, Object parameter_6) {
@@ -266,8 +300,8 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
-  public static class QuotationClass_jq3ovj_a0a0b0c0g {
-    public QuotationClass_jq3ovj_a0a0b0c0g() {
+  public static class QuotationClass_jq3ovj_a0a0b0c0h {
+    public QuotationClass_jq3ovj_a0a0b0c0h() {
     }
 
     public SNode createNode(Object parameter_6) {
@@ -298,8 +332,8 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
-  public static class QuotationClass_jq3ovj_a0a0a0c0c0g {
-    public QuotationClass_jq3ovj_a0a0a0c0c0g() {
+  public static class QuotationClass_jq3ovj_a0a0a0c0c0h {
+    public QuotationClass_jq3ovj_a0a0a0c0c0h() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -316,8 +350,8 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
-  public static class QuotationClass_jq3ovj_a0a0a0b0k {
-    public QuotationClass_jq3ovj_a0a0a0b0k() {
+  public static class QuotationClass_jq3ovj_a0a0a0b0l {
+    public QuotationClass_jq3ovj_a0a0a0b0l() {
     }
 
     public SNode createNode(Object parameter_3) {

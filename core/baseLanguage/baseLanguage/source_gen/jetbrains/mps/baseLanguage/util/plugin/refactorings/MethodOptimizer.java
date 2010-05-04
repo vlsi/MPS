@@ -31,7 +31,7 @@ public class MethodOptimizer {
         public boolean accept(SNode it) {
           return SLinkOperations.getTarget(it, "variableDeclaration", false) == declaration;
         }
-      }).isEmpty()) {
+      }).isEmpty() && SNodeOperations.isInstanceOf(SNodeOperations.getParent(declaration), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
         SNodeOperations.deleteNode(SNodeOperations.getParent(declaration));
       }
     }
