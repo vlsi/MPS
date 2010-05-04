@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.storage.PackagesAndClassesStorage;
-import jetbrains.mps.storage.StringObject;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -35,8 +33,8 @@ import java.util.*;
  */
 public class FileClassPathItem extends AbstractClassPathItem {
   private String myClassPath;
-  private Map<StringObject, Set<StringObject>> mySubpackagesCache = new HashMap<StringObject, Set<StringObject>>();
-  private Map<StringObject, Set<String>> myAvailableClassesCache = new HashMap<StringObject, Set<String>>();
+  private Map<String, Set<String>> mySubpackagesCache = new HashMap<String, Set<String>>();
+  private Map<String, Set<String>> myAvailableClassesCache = new HashMap<String, Set<String>>();
 
   protected FileClassPathItem(String classPath) {
     myClassPath = classPath;
@@ -50,14 +48,15 @@ public class FileClassPathItem extends AbstractClassPathItem {
     String namespace = NameUtil.namespaceFromLongName(name);
     String shortname = NameUtil.shortNameFromLongName(name);
 
-    StringObject nsKey = toStringObject(namespace);
-    if (!myAvailableClassesCache.containsKey(nsKey)) {
+    if (!myAvailableClassesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
     }
 
-    Set<String> classes = myAvailableClassesCache.get(nsKey);
-    if (classes == null) return null;
-    if (!classes.contains(shortname)) return null;
+    Set<String> classes = myAvailableClassesCache.get(namespace);
+    if (classes == null
+      || !classes.contains(shortname)) {
+      return null;
+    }
 
     String path = myClassPath + File.separatorChar + name.replace('.', File.separatorChar) + MPSExtentions.DOT_CLASSFILE;
     IFile file = FileSystem.getFile(path);
@@ -90,32 +89,29 @@ public class FileClassPathItem extends AbstractClassPathItem {
   }
 
   public void collectAvailableClasses(Set<String> classes, String namespace) {
-    StringObject nsKey = toStringObject(namespace);
-    if (!myAvailableClassesCache.containsKey(nsKey)) {
+    if (!myAvailableClassesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
     }
 
-    Set<String> result = myAvailableClassesCache.get(nsKey);
-    if (result == null) return;
-    classes.addAll(result);
+    Set<String> result = myAvailableClassesCache.get(namespace);
+    if (result != null) {
+      classes.addAll(result);
+    }
   }
 
   public void collectSubpackages(Set<String> subpackages, String namespace) {
-    StringObject nsKey = toStringObject(namespace);
-    if (!mySubpackagesCache.containsKey(nsKey)) {
+    if (!mySubpackagesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
     }
 
-    Set<StringObject> result = mySubpackagesCache.get(nsKey);
-    if (result == null) return;
-
-    for (StringObject so:result){
-      subpackages.add(PackagesAndClassesStorage.getInstance().getString(so));
+    Set<String> result = mySubpackagesCache.get(namespace);
+    if (result != null) {
+      subpackages.addAll(result);
     }
   }
 
   private void buildCacheFor(String namespace) {
-    Set<StringObject> subpacks = null;
+    Set<String> subpacks = null;
     Set<String> classes = null;
     IFile dir = getModelDir(namespace);
 
@@ -127,27 +123,20 @@ public class FileClassPathItem extends AbstractClassPathItem {
           if (classes == null) {
             classes = new HashSet<String>(files.size());
           }
-
-          //this is not to store 
-          @SuppressWarnings({"RedundantStringConstructorCall"})
-          String className = new String(name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length()));
-
-          classes.add(className);
+          classes.add(name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length()));
         } else {
           if (file.isDirectory()) {
             if (subpacks == null) {
-              subpacks = new HashSet<StringObject>();
+              subpacks = new HashSet<String>();
             }
-            subpacks.add(toStringObject(namespace.length() > 0 ? namespace + "." + name : name));
+            subpacks.add(namespace.length() > 0 ? namespace + "." + name : name);
           }
         }
       }
     }
 
-    StringObject nsKey = toStringObject(namespace);
-
-    mySubpackagesCache.put(nsKey, subpacks);
-    myAvailableClassesCache.put(nsKey, classes);
+    mySubpackagesCache.put(namespace, subpacks);
+    myAvailableClassesCache.put(namespace, classes);
   }
 
   public long getClassesTimestamp(String namespace) {
@@ -179,11 +168,8 @@ public class FileClassPathItem extends AbstractClassPathItem {
     return FileSystem.getFile(myClassPath + File.separatorChar + namespace.replace('.', File.separatorChar));
   }
 
+
   public String toString() {
     return "file class path item " + myClassPath;
-  }
-
-  private StringObject toStringObject(String namespace) {
-    return PackagesAndClassesStorage.getInstance().get(namespace);
   }
 }
