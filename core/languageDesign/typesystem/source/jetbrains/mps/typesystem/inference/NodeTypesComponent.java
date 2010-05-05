@@ -1145,6 +1145,11 @@ public class NodeTypesComponent implements EditorMessageOwner {
       references.addAll(child.getReferences());
       for (SNode descendant : child.getDescendants()) {
         references.addAll(descendant.getReferences());
+        if (event.isRemoved()) {
+          //invalidate nodes which are removed
+          markDependentNodesForInvalidation(descendant, true);
+          markDependentNodesForInvalidation(descendant, false);
+        }
       }
       for (SReference reference : references) {
         SNode targetNode = reference.getTargetNode();
