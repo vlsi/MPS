@@ -32,7 +32,7 @@ public class ExportThreads_Action extends GeneratedAction {
   public ExportThreads_Action() {
     super("Export Threads", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull
