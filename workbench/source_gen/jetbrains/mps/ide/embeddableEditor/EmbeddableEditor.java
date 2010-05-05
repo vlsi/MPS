@@ -17,19 +17,19 @@ import javax.swing.JComponent;
 import java.awt.Color;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import java.util.Set;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.Set;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.project.IModule;
 
 public class EmbeddableEditor {
   private MPSFileNodeEditor myFileNodeEditor;
@@ -107,10 +107,25 @@ public class EmbeddableEditor {
     this.myFileNodeEditor.getNodeEditor().selectNode(node);
   }
 
-  public GenerationResult generate(InMemoryJavaGenerationHandler handler) {
+  public GenerationResult generate(final Set<IClassPathItem> additionalClasspath) {
     if (this.myRootNode == null) {
       return null;
     }
+    InMemoryJavaGenerationHandler handler = new InMemoryJavaGenerationHandler(false, false) {
+      @Override
+      public boolean canHandle(SModelDescriptor inputModel) {
+        return inputModel != null;
+      }
+
+      @Override
+      protected CompositeClassPathItem getClassPath(Set<IModule> contextModules) {
+        CompositeClassPathItem result = super.getClassPath(contextModules);
+        for (IClassPathItem item : additionalClasspath) {
+          result.add(item);
+        }
+        return result;
+      }
+    };
     GeneratorManager manager = new GeneratorManager(EmbeddableEditor.this.myContext.getProject(), new GenerationSettings()) {
       protected boolean generateRequirements() {
         return false;
@@ -118,10 +133,6 @@ public class EmbeddableEditor {
     };
     boolean successful = manager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), this.myModel), this.myContext, handler, false);
     return new GenerationResult(this.myRootNode, this.myContext, this.myModel, handler, successful);
-  }
-
-  public GenerationResult generate(final Set<IClassPathItem> additionalClasspath) {
-    return this.generate(createHandler(additionalClasspath, false));
   }
 
   public SModelDescriptor getModel() {
@@ -159,23 +170,5 @@ public class EmbeddableEditor {
 
   protected IOperationContext createOperationContext() {
     return this.myContext;
-  }
-
-  public static InMemoryJavaGenerationHandler createHandler(final Set<IClassPathItem> additionalClasspath, boolean keepSources) {
-    return new InMemoryJavaGenerationHandler(false, keepSources) {
-      @Override
-      public boolean canHandle(SModelDescriptor inputModel) {
-        return inputModel != null;
-      }
-
-      @Override
-      protected CompositeClassPathItem getClassPath(Set<IModule> contextModules) {
-        CompositeClassPathItem result = super.getClassPath(contextModules);
-        for (IClassPathItem item : additionalClasspath) {
-          result.add(item);
-        }
-        return result;
-      }
-    };
   }
 }
