@@ -12,6 +12,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import java.util.List;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
 import java.util.HashSet;
@@ -222,7 +226,25 @@ public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.structure.ThisExpression") && SLinkOperations.getTarget(SNodeOperations.cast(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.structure.ThisExpression"), "classConcept", false) == null;
+        if (!(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
+          return false;
+        }
+        if (SLinkOperations.getTarget(SNodeOperations.cast(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.structure.ThisExpression"), "classConcept", false) == null) {
+          return true;
+        }
+        SNode declaration = SLinkOperations.getTarget(node, "baseMethodDeclaration", false);
+        SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(node);
+        SNode declarationClassifier = SNodeOperations.getAncestor(declaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+        int constraint = IClassifiersSearchScope.INSTANCE_METHOD;
+        while (classifier != declarationClassifier) {
+          for (SNode method : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, node, constraint)) {
+            if (SPropertyOperations.getString(method, "name").equals(SPropertyOperations.getString(declaration, "name"))) {
+              return false;
+            }
+          }
+          classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+        }
+        return true;
       }
 
       public void doUpdateInstanceNode(SNode node) {
