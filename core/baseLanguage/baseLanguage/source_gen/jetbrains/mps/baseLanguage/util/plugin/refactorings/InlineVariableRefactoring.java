@@ -4,14 +4,14 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import java.awt.Frame;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import java.util.Set;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachingReadsAnalyzer;
@@ -23,8 +23,7 @@ public abstract class InlineVariableRefactoring {
   public abstract SNode doRefactoring();
 
   public void optimizeDeclaration(SNode variable) {
-    SNode method = SNodeOperations.getAncestor(variable, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    Program program = DataFlowManager.getInstance().buildProgramFor(SLinkOperations.getTarget(method, "body", true));
+    Program program = DataFlowManager.getInstance().buildProgramFor(getBaseStatementList(variable));
     for (Instruction instruction : ListSequence.fromList(program.getInstructions())) {
       if (instruction instanceof ReadInstruction) {
         ReadInstruction read = (ReadInstruction) instruction;
@@ -63,7 +62,7 @@ public abstract class InlineVariableRefactoring {
 
   public SNode getBaseStatementList(SNode node) {
     SNode current = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
-    while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.Statement")) {
+    while ((SNodeOperations.getAncestor(current, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) != null)) {
       current = SNodeOperations.getAncestor(current, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     }
     return current;
