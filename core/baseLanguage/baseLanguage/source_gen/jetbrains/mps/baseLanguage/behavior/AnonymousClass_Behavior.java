@@ -7,6 +7,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -30,6 +33,29 @@ public class AnonymousClass_Behavior {
     } else {
       return SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Object"), "constructor", true);
     }
+  }
+
+  public static String call_getJavaName_2977939203456914071(SNode thisNode) {
+    SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, true);
+    if ((ancestor == null)) {
+      return INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
+    }
+    return INamedConcept_Behavior.call_getFqName_1213877404258(ancestor) + "$" + AnonymousClass_Behavior.call_getIndexInContainingClass_4164197659856373643(thisNode);
+  }
+
+  public static int call_getIndexInContainingClass_4164197659856373643(SNode thisNode) {
+    final SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    int index;
+    if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+      index = AnonymousClass_Behavior.call_getIndexInContainingClass_4164197659856373643(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) + 1;
+    } else {
+      index = ListSequence.fromList(SNodeOperations.getDescendants(ancestor, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, new String[]{})).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == ancestor;
+        }
+      }).indexOf(thisNode) + 1;
+    }
+    return index;
   }
 
   public static class QuotationClass_mhnjwj_a0a0b {

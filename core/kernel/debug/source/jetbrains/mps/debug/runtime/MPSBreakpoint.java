@@ -20,12 +20,14 @@ import com.intellij.openapi.util.Computable;
 import com.sun.jdi.*;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.BreakpointRequest;
-import jetbrains.mps.debug.api.StacktraceUtil2;
-import jetbrains.mps.debug.info.StacktraceUtil;
+import jetbrains.mps.baseLanguage.behavior.AnonymousClass_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
 import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -71,12 +73,33 @@ public class MPSBreakpoint extends AbstractMPSBreakpoint implements ClassPrepare
 
   protected void createOrWaitPrepare(final DebugVMEventsProcessor debugProcess) {
 
-    String fileName = getFileName();
-    if (fileName.endsWith(".java")) {
-      fileName = fileName.substring(0, fileName.length() - ".java".length());
-    }
-    String className = myNodePointer.getModelReference().getLongName() + "." + fileName;
+    // this code was written in order to fix MPS-8208 ("Breakpoints inside an anonymous class do not work")
+    // however, the problem is also actual for everything that generates anonymous classes
+    // issue MPS-8617 was created for that problem
+    String className = ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
+      public String compute() {
+        List<SNode> list = SNodeOperations.getAncestors(myNodePointer.getNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false);
+        if (list.isEmpty()) {
+          return null;
+        }
+        SNode enclosingClassNode = list.get(0);
+        String anonymousConceptFqName = "jetbrains.mps.baseLanguage.structure.AnonymousClass";
+        if (enclosingClassNode.isInstanceOfConcept(anonymousConceptFqName)) {
+          return AnonymousClass_Behavior.call_getJavaName_2977939203456914071(enclosingClassNode);          
+        } else {
+          return Classifier_Behavior.virtual_getFqName_1213877404258(enclosingClassNode);
+        }
+      }
+    });
 
+    if (className == null) {
+      String fileName = getFileName();
+      if (fileName.endsWith(".java")) {
+        fileName = fileName.substring(0, fileName.length() - ".java".length());
+      }
+      className = myNodePointer.getModelReference().getLongName() + "." + fileName;
+    }
 
     //add requests for not prepared classes
     System.err.println("BP creating prepare request for class " + className);

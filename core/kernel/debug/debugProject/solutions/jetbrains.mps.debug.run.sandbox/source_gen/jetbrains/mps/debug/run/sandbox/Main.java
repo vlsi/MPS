@@ -17,15 +17,28 @@ public class Main {
   }
 
   public static void main(String[] args) {
-    new Main();
+    new Main() {
+      public void foo() {
+      }
+    };
     new Thread(new Runnable() {
       public void run() {
         int i = 0;
+        Runnable runnable = new Runnable() {
+          public void run() {
+            System.err.print("blah");
+          }
+        };
         while (true) {
           i++;
+          runnable.run();
         }
       }
     }).start();
+    new Main() {
+      public void foo() {
+      }
+    };
     System.err.println("hello");
     for (int i = 0; i < 2; i++) {
       doSomething();
