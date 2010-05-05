@@ -19,6 +19,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
   public DebugSession(DebugVMEventsProcessor eventsProcessor, Project p) {
     super(p);
     myEventsProcessor = eventsProcessor;
+    myEventsProcessor.setDebuggableFramesSelector(getDebuggableFramesSelector());
     eventsProcessor.getMulticaster().addListener(new MyDebugProcessAdapter());
   }
 

@@ -5,6 +5,7 @@ package jetbrains.mps.debug.run.sandbox;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import junit.framework.Assert;
 
 public class DebugCollections {
   public static void main(String[] args) {
@@ -20,5 +21,6 @@ public class DebugCollections {
     System.out.println(text);
     System.out.println(strings);
     System.out.println(i);
+    Assert.assertEquals(true, true);
   }
 }

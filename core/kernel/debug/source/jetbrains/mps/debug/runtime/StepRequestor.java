@@ -1,10 +1,8 @@
 package jetbrains.mps.debug.runtime;
 
-import com.sun.jdi.IncompatibleThreadStateException;
-import com.sun.jdi.Location;
-import com.sun.jdi.StackFrame;
-import com.sun.jdi.ThreadReference;
+import com.sun.jdi.*;
 import com.sun.jdi.request.StepRequest;
+import jetbrains.mps.debug.api.IDebuggableFramesSelector;
 import jetbrains.mps.debug.runtime.requests.Requestor;
 import jetbrains.mps.logging.Logger;
 
@@ -19,8 +17,11 @@ public class StepRequestor implements Requestor {
   private int myLineNumber;
   private int myFrameCount;
 
-  public StepRequestor(SuspendContext context, int stepType) {
+  private final IDebuggableFramesSelector myFramesSelector;
+
+  public StepRequestor(SuspendContext context, int stepType, IDebuggableFramesSelector framesSelector) {
     myStepType = stepType;
+    myFramesSelector = framesSelector;
     try {
       ThreadReference thread = context.getThread();
       if (thread != null) {
@@ -44,10 +45,18 @@ public class StepRequestor implements Requestor {
       if (frame == null || thread == null) return myStepType;
       int frameCount = -1;
       Location location = frame.location();
+      String sourceName = "";
       try {
         frameCount = thread.frameCount();
+        sourceName = location.sourceName();
       } catch (IncompatibleThreadStateException e) {
         LOG.error(e);
+      } catch (AbsentInformationException e) {
+        LOG.error(e);
+      }
+      // if we are not in debuggable position we step again
+      if (!sourceName.isEmpty() && !myFramesSelector.isDebuggablePosition(location.declaringType().name(), sourceName, location.lineNumber())) {
+        return myStepType;
       }
       boolean filesEqual = myDeclaringType.equals(location.declaringType().name());
       // if we are on the same place we should step again

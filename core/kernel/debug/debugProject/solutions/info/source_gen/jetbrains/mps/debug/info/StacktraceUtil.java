@@ -63,7 +63,7 @@ public class StacktraceUtil {
     return getNodeOrVar(className, file, position, null);
   }
 
-  public static SNode getNodeOrVar(String className, final String file, final int position, final String varName) {
+  public static SNode getNodeOrVar(final String className, final String file, final int position, final String varName) {
     int lastDot = className.lastIndexOf(".");
     String pkg = (lastDot == -1 ?
       "" :
@@ -95,6 +95,8 @@ public class StacktraceUtil {
         return nodeToShow.value;
       }
     }
+
+    // <node> 
 
     return null;
   }

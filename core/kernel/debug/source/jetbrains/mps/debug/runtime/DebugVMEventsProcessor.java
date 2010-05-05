@@ -23,6 +23,7 @@ import com.sun.jdi.VirtualMachine;
 import com.sun.jdi.event.*;
 import com.sun.jdi.request.EventRequest;
 import com.sun.jdi.request.StepRequest;
+import jetbrains.mps.debug.api.IDebuggableFramesSelector;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.api.runtime.execution.IDebuggerManagerThread;
@@ -60,6 +61,7 @@ public class DebugVMEventsProcessor {
   protected static final int STATE_DETACHING = 2;
   protected static final int STATE_DETACHED = 3;
   protected final AtomicInteger myState = new AtomicInteger(STATE_INITIAL);
+  private IDebuggableFramesSelector myFramesSelector;
 
   public DebugVMEventsProcessor(Project p, VMCreator vmCreator) {
     myProject = p;
@@ -103,6 +105,10 @@ public class DebugVMEventsProcessor {
 
   public String getConnectionString() {
     return myVMCreator.getConnectionSettings().getPresentation();
+  }
+
+  public void setDebuggableFramesSelector(IDebuggableFramesSelector framesSelector) {
+    myFramesSelector = framesSelector;
   }
 
   private class DebuggerEventThread implements Runnable {
@@ -476,7 +482,7 @@ public class DebugVMEventsProcessor {
     @Override
     protected void action() throws Exception {
       SuspendContext suspendContext = getSuspendContext();
-      addNewStepRequest(suspendContext, suspendContext.getThread(), new StepRequestor(suspendContext, getStepType()), getStepType());
+      addNewStepRequest(suspendContext, suspendContext.getThread(), new StepRequestor(suspendContext, getStepType(), myFramesSelector), getStepType());
       super.action();
     }
 
