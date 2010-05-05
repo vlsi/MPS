@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.workbench.action;
 
-import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.DumbAware;
 import jetbrains.mps.smodel.ModelAccess;
@@ -107,25 +106,34 @@ public abstract class BaseAction extends AnAction implements DumbAware {
           disable(e.getPresentation());
           return;
         }
-        if (!collectActionData(e)) {
-          disable(e.getPresentation());
-          return;
+        try {
+          if (!collectActionData(e)) {
+            disable(e.getPresentation());
+            return;
+          }
+          doUpdate(e);
+        } finally {
+          cleanup();
         }
-        doUpdate(e);
       }
     });
   }
 
   public final void actionPerformed(final AnActionEvent e) {
-    final ModelAccess access = ModelAccess.instance();
-    if (myExecuteOutsideCommand) {
-      doExecute(e);
-    } else {
-      access.runWriteActionInCommand(new Runnable() {
-        public void run() {
-          doExecute(e);
-        }
-      });
+    try {
+      collectActionData(e);
+      final ModelAccess access = ModelAccess.instance();
+      if (myExecuteOutsideCommand) {
+        doExecute(e);
+      } else {
+        access.runWriteActionInCommand(new Runnable() {
+          public void run() {
+            doExecute(e);
+          }
+        });
+      }
+    } finally {
+      cleanup();
     }
   }
 
@@ -140,6 +148,7 @@ public abstract class BaseAction extends AnAction implements DumbAware {
   }
 
   //made public just to use in MPS classifiers, workaround on MPS-3472
+
   public void setEnabledState(Presentation p, boolean state) {
     if (state) enable(p);
     else disable(p);
@@ -165,6 +174,10 @@ public abstract class BaseAction extends AnAction implements DumbAware {
    */
   protected boolean collectActionData(AnActionEvent e) {
     return true;
+  }
+
+  protected void cleanup() {
+
   }
 
   /**
