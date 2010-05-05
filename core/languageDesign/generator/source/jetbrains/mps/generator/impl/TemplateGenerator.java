@@ -52,6 +52,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private final RuleManager myRuleManager;
   private final DelayedChanges myDelayedChanges;
   private final Map<SNode, SNode> myNewToOldRoot = new HashMap<SNode, SNode>();
+  protected final ArrayList<SNode> myOutputRoots;
 
   private final boolean myIsStrict;
   private boolean myAreMappingsReady = false;
@@ -71,6 +72,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myIsStrict = generationContext.isStrictMode();
     myDelayedChanges = new DelayedChanges(this);
     ttrace = performance;
+    myOutputRoots = new ArrayList<SNode>();
   }
 
   public boolean apply(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
@@ -82,6 +84,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     ttrace.pop();
 
     myAreMappingsReady = true;
+
+    // publish roots
+    for(SNode outputRoot : myOutputRoots) {
+      myOutputModel.addRoot(outputRoot);
+    }
 
     // weaving
     ttrace.push("weavings", false);
@@ -194,7 +201,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       List<SNode> outputNodes = new TemplateProcessor(this, null).processTemplateNode(mappingName, templateNode, new TemplateContext(inputNode));
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, inputNode, templateNode, false);
-        setChanged(true);
+        setChanged();
       }
     } catch (DismissTopMappingRuleException e) {
       // it's ok, just continue
@@ -221,7 +228,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       SNode root = copyNodeFromInputNode_internal(null, inputRootNode, null, changed);
       registerRoot(root, inputRootNode, null, true);
       if (changed[0]) {
-        setChanged(true);
+        setChanged();
       }
     } finally {
       myGenerationTracer.closeInputNode(inputRootNode);
@@ -595,8 +602,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myIsStrict;
   }
 
-  void setChanged(boolean b) {
-    myChanged = b;
+  void setChanged() {
+    myChanged = true;
   }
 
   private void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNode templateNode, boolean isCopied) {
@@ -610,7 +617,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   protected void registerInModel(SNode outputRoot, SNode inputNode, SNode templateNode) {
-    myOutputModel.addRoot(outputRoot);
+    myOutputRoots.add(outputRoot);
   }
 
   SNode getOriginalRootByGenerated(SNode root) {

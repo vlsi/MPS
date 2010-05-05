@@ -39,7 +39,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     super.applyReductions(isPrimary);
     myPool.waitForCompletion();
     for(RootGenerationTask task : myTasks) {
-      task.registerRootsInModel();
+      task.registerGeneratedRoot();
     }
   }
 
@@ -111,12 +111,12 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       }
     }
 
-    public void registerRootsInModel() {
+    public void registerGeneratedRoot() {
       if(generated == null) {
         return;
       }
       for(SNode root : generated) {
-        myOutputModel.addRoot(root);
+        myOutputRoots.add(root);
       }
     }
   }

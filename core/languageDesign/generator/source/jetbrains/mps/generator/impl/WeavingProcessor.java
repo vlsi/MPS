@@ -143,7 +143,7 @@ public class WeavingProcessor {
         if (!checkContext(rule, applicableNode, outputContextNode)) {
           continue;
         }
-        myGenerator.setChanged(true);
+        myGenerator.setChanged();
 
         boolean someOutputGenerated = true;
         myGenerationTracer.pushInputNode(applicableNode);

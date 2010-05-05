@@ -100,6 +100,11 @@ public class RuleManager {
     return myWeaving_MappingRules;
   }
 
+  public boolean hasWeavings() {
+    // todo: optimize
+    return myWeaving_MappingRules.iterator().hasNext(); 
+  }
+
   public FlattenIterable<DropRootRule> getDropRootRules() {
     return myDropRootRules;
   }
