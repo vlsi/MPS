@@ -183,10 +183,10 @@ public class GenerationController {
           progressHelper.setText2("model " + inputModel.getSModelFqName());
           progressHelper.startLeafTask(taskName);
           if (myLogger.needsInfo()) {
-            myLogger.info("model " + inputModel.getSModelFqName() +
+            myLogger.info("[model " + inputModel.getSModelFqName() +
               (myGenerationContext.isGenerateInParallel()
-                ? ", using " + myGenerationContext.getNumberOfThreads() + " threads"
-                : ""));
+                ? ", using " + myGenerationContext.getNumberOfThreads() + " threads]"
+                : "]"));
           }
 
           GenerationStatus status = generationSession.generateModel();

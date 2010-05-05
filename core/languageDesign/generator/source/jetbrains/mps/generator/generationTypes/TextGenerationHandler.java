@@ -60,7 +60,9 @@ public class TextGenerationHandler extends GenerationHandlerBase {
 
   @Override
   public void startModule(IModule module, List<SModelDescriptor> inputModels, IProjectHandler projectHandler, ITaskProgressHelper progressHelper) {
-    progressHelper.setText2("module " + module);
+    String message = "module " + module;
+    progressHelper.setText2(message);
+    info(message);
   }
 
   @Override

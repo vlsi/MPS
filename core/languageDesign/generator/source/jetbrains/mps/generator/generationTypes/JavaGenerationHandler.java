@@ -66,11 +66,15 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     String targetDir = module.getOutputFor(inputModel);
 
     if (status.getOutputModel() != null) {
+      long startJobTime = System.currentTimeMillis();
       boolean result = FileGenerationManager.getInstance().handleOutput(invocationContext, status, new File(targetDir));
 
       if (!result) {
         info("there were errors.");
         return false;
+      }
+      if (myLogger.needsInfo()) {
+        myLogger.info("output generated in " + (System.currentTimeMillis() - startJobTime) + " ms");
       }
     } else if (!(status.isCanceled() || status.isError())) {
       FileGenerationManager.getInstance().handleEmptyOutput(invocationContext, status, new File(targetDir));
@@ -89,7 +93,9 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
       prepareOutputFolder(projectHandler, testsOutputFolder);
     }
 
-    info("    target root folder: \"" + outputFolder + "\"");
+    if(myLogger.needsInfo()) {
+      myLogger.info("module " + module + "; folder = " + outputFolder + "");
+    }
   }
 
   @Override

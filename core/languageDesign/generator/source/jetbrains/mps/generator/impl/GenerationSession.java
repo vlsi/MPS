@@ -202,6 +202,9 @@ public class GenerationSession {
     // primary mapping
     // -----------------------
     currentInputModel.setLoading(false);
+    if (myLogger.needsInfo()) {
+      myLogger.info("generating model '" + currentInputModel.getSModelFqName() + "' --> '" + currentOutputModel.getSModelFqName() + "'");
+    }
     boolean somethingHasBeenGenerated = applyRules(currentInputModel, currentOutputModel, true, ruleManager);
     if (!somethingHasBeenGenerated) {
       currentOutputModel.validateLanguagesAndImports();
@@ -217,9 +220,6 @@ public class GenerationSession {
       currentOutputModel.validateLanguagesAndImports();
 
       // apply mapping to the output model
-      if (myLogger.needsInfo()) {
-        myLogger.info("generating model '" + currentOutputModel.getSModelFqName() + "'");
-      }
       mySessionContext.clearTransientObjects();
       // probably we can forget about former input model here
       recycleWasteModel(currentInputModel);
@@ -228,15 +228,18 @@ public class GenerationSession {
       currentInputModel.disposeFastNodeFinder();
 
       SModel transientModel = createTransientModel();
+      if (myLogger.needsInfo()) {
+        myLogger.info("next minor step '" + currentInputModel.getSModelFqName().getStereotype() + "' --> '" + transientModel.getSModelFqName().getStereotype() + "'");
+      }
       tracer.startTracing(currentInputModel, transientModel);
       if (!applyRules(currentInputModel, transientModel, false, ruleManager)) {
         // nothing has been generated
         tracer.discardTracing(currentInputModel, transientModel);
-        if (myLogger.needsInfo()) {
-          myLogger.info("remove empty model '" + transientModel.getSModelFqName() + "'");
-        }
         SModelRepository.getInstance().removeModelDescriptor(transientModel.getModelDescriptor());
         myTransientModelsCount--;
+        if (myLogger.needsInfo()) {
+          myLogger.info("unchanged, empty model '" + transientModel.getSModelFqName().getStereotype() + "' removed");
+        }
         break;
       }
 
@@ -378,7 +381,7 @@ public class GenerationSession {
 
   private SModel createTransientModel() {
     String longName = myOriginalInputModel.getLongName();
-    String stereotype = myMajorStep + "_" + myTransientModelsCount;
+    String stereotype = Integer.toString(myMajorStep+1) + "_" + myTransientModelsCount;
     while (SModelRepository.getInstance().getModelDescriptor(new SModelFqName(longName, stereotype)) != null) {
       stereotype += "_";
     }
@@ -393,9 +396,7 @@ public class GenerationSession {
     if (model instanceof TransientSModel) {
       ttrace.push("recycling", false);
       if (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model)) {
-        if (myLogger.needsInfo()) {
-          myLogger.info("remove spent model '" + model.getSModelFqName() + "'");
-        }
+//        myLogger.info("remove spent model '" + model.getSModelFqName() + "'");
         SModelRepository.getInstance().removeModelDescriptor(md);
       }
       model.disposeFastNodeFinder();
