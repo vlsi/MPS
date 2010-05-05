@@ -203,11 +203,13 @@ public class DefaultCustomMpsApplication_Configuration extends BaseRunConfig {
               throw ex.value;
             }
           }
-        } catch (ExecutionException e) {
-          throw e;
         } catch (Throwable t) {
-          Logger.getLogger(DefaultCustomMpsApplication_Configuration.class).error(t);
-          throw new ExecutionException("Execution code threw an exception: " + t.getMessage(), t);
+          if (t instanceof ExecutionException) {
+            throw (ExecutionException) t;
+          } else {
+            Logger.getLogger(DefaultCustomMpsApplication_Configuration.class).error(t);
+            throw new ExecutionException("Execution code threw an exception: " + t.getMessage(), t);
+          }
         }
 
         final JComponent finalConsoleComponent = consoleComponent_22042010;

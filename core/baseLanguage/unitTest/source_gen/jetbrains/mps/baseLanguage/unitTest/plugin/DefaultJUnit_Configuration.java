@@ -193,11 +193,13 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
               throw ex.value;
             }
           }
-        } catch (ExecutionException e) {
-          throw e;
         } catch (Throwable t) {
-          Logger.getLogger(DefaultJUnit_Configuration.class).error(t);
-          throw new ExecutionException("Execution code threw an exception: " + t.getMessage(), t);
+          if (t instanceof ExecutionException) {
+            throw (ExecutionException) t;
+          } else {
+            Logger.getLogger(DefaultJUnit_Configuration.class).error(t);
+            throw new ExecutionException("Execution code threw an exception: " + t.getMessage(), t);
+          }
         }
 
         final JComponent finalConsoleComponent = consoleComponent_22042010;
