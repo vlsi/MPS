@@ -37,7 +37,7 @@ public abstract class InlineVariableRefactoring {
       if (instruction instanceof WriteInstruction) {
         WriteInstruction write = (WriteInstruction) instruction;
         if (write.getSource() != variable && write.getVariable() == variable) {
-          SNodeOperations.detachNode(SLinkOperations.getTarget(variable, "initializer", true));
+          SNodeOperations.deleteNode(SLinkOperations.getTarget(variable, "initializer", true));
           return;
         }
       }
