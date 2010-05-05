@@ -640,6 +640,16 @@ with_anc:
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(t1, t2) || TypeChecker.getInstance().getSubtypingManager().isSubtype(t2, t1) || SNodeOperations.isInstanceOf(t1, "jetbrains.mps.baseLanguage.structure.Interface") || SNodeOperations.isInstanceOf(t2, "jetbrains.mps.baseLanguage.structure.Interface");
   }
 
+  public static SNode getVariableDeclaration(SNode node) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
+    }
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), "jetbrains.mps.baseLanguage.structure.ThisExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", false);
+    }
+    return null;
+  }
+
   public static class QuotationClass_5ahx9e_a0a0a0a {
     public QuotationClass_5ahx9e_a0a0a0a() {
     }
