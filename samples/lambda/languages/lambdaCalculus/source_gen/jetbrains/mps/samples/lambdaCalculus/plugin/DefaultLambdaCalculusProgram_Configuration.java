@@ -37,10 +37,10 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.lang.plugin.run.DefaultProcessHandler;
 import jetbrains.mps.baseLanguage.util.plugin.run.ClassRunner;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.plugin.run.DefaultProcessHandler;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
@@ -152,8 +152,8 @@ public class DefaultLambdaCalculusProgram_Configuration extends BaseRunConfig {
 
             final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
             // create process handler 
-            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E0<Object>() {
-              public Object invoke() {
+            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E0<DefaultProcessHandler>() {
+              public DefaultProcessHandler invoke() {
                 try {
                   ClassRunner classRunner = new ClassRunner(javaRunParameters);
                   final Wrappers._T<String> className = new Wrappers._T<String>();
@@ -174,11 +174,13 @@ public class DefaultLambdaCalculusProgram_Configuration extends BaseRunConfig {
               throw ex.value;
             }
           }
-        } catch (ExecutionException e) {
-          throw e;
         } catch (Throwable t) {
-          Logger.getLogger(DefaultLambdaCalculusProgram_Configuration.class).error(t);
-          throw new ExecutionException("Execution code threw an exception: " + t.getMessage(), t);
+          if (t instanceof ExecutionException) {
+            throw (ExecutionException) t;
+          } else {
+            Logger.getLogger(DefaultLambdaCalculusProgram_Configuration.class).error(t);
+            throw new ExecutionException("Execution code threw an exception: " + t.getMessage(), t);
+          }
         }
 
         final JComponent finalConsoleComponent = consoleComponent_22042010;
