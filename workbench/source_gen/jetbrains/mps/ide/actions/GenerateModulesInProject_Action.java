@@ -40,12 +40,15 @@ public class GenerateModulesInProject_Action extends GeneratedAction {
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
     }
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

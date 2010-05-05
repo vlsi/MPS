@@ -62,7 +62,6 @@ public class GenerateModel_Action extends GeneratedAction {
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -78,6 +77,14 @@ public class GenerateModel_Action extends GeneratedAction {
     this.models = event.getData(MPSDataKeys.MODELS);
     this.model = event.getData(MPSDataKeys.CONTEXT_MODEL);
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
+    this.project = null;
+    this.context = null;
+    this.models = null;
+    this.model = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

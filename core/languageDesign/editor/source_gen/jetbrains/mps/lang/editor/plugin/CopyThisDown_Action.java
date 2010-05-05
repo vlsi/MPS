@@ -54,7 +54,6 @@ public class CopyThisDown_Action extends GeneratedAction {
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -78,6 +77,12 @@ public class CopyThisDown_Action extends GeneratedAction {
       return false;
     }
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
+    this.inputNodes = null;
+    this.editor = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

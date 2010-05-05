@@ -68,7 +68,6 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -99,6 +98,15 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
       return false;
     }
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
+    this.selectedNode = null;
+    this.editorComponent = null;
+    this.editorContext = null;
+    this.operationContext = null;
+    this.project = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

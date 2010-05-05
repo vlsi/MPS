@@ -50,7 +50,6 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -68,6 +67,13 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
       return false;
     }
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
+    this.selectedFile = null;
+    this.project = null;
+    this.frame = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

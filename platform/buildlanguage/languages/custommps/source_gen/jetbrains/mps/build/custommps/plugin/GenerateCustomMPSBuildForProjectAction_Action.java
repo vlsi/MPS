@@ -41,7 +41,6 @@ public class GenerateCustomMPSBuildForProjectAction_Action extends GeneratedActi
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -55,6 +54,12 @@ public class GenerateCustomMPSBuildForProjectAction_Action extends GeneratedActi
       return false;
     }
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
+    this.mpsProject = null;
+    this.project = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

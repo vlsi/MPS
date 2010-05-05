@@ -49,7 +49,6 @@ public class ShowDefaultHelp_Action extends GeneratedAction {
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -63,6 +62,13 @@ public class ShowDefaultHelp_Action extends GeneratedAction {
     this.module = event.getData(MPSDataKeys.CONTEXT_MODULE);
     this.model = event.getData(MPSDataKeys.CONTEXT_MODEL);
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
+    this.node = null;
+    this.module = null;
+    this.model = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

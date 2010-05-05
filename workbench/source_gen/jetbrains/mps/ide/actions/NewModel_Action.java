@@ -72,7 +72,6 @@ public class NewModel_Action extends GeneratedAction {
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -98,6 +97,15 @@ public class NewModel_Action extends GeneratedAction {
       return false;
     }
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
+    this.frame = null;
+    this.project = null;
+    this.context = null;
+    this.module = null;
+    this.treeNode = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

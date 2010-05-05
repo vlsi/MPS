@@ -54,7 +54,6 @@ public class IntroduceField_Action extends GeneratedAction {
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -81,6 +80,14 @@ public class IntroduceField_Action extends GeneratedAction {
       return false;
     }
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
+    this.node = null;
+    this.component = null;
+    this.context = null;
+    this.frame = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

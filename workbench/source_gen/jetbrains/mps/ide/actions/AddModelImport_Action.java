@@ -51,7 +51,6 @@ public class AddModelImport_Action extends GeneratedAction {
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -69,6 +68,13 @@ public class AddModelImport_Action extends GeneratedAction {
       return false;
     }
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
+    this.project = null;
+    this.module = null;
+    this.model = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

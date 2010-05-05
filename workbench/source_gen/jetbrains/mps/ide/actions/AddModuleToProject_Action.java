@@ -59,7 +59,6 @@ public class AddModuleToProject_Action extends GeneratedAction {
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -73,6 +72,12 @@ public class AddModuleToProject_Action extends GeneratedAction {
       return false;
     }
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
+    this.modules = null;
+    this.mpsProject = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

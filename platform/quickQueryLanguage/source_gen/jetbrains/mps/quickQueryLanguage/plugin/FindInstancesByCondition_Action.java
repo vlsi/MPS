@@ -39,7 +39,6 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -53,6 +52,12 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
       return false;
     }
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
+    this.context = null;
+    this.langModule = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

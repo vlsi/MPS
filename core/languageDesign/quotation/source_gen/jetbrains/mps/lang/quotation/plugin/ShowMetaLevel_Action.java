@@ -41,7 +41,6 @@ public class ShowMetaLevel_Action extends GeneratedAction {
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -63,6 +62,12 @@ public class ShowMetaLevel_Action extends GeneratedAction {
       return false;
     }
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
+    this.currentNode = null;
+    this.component = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

@@ -60,7 +60,6 @@ public class FastFindNodeUsages_Action extends GeneratedAction {
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -80,6 +79,13 @@ public class FastFindNodeUsages_Action extends GeneratedAction {
     }
     this.cell = event.getData(MPSDataKeys.EDITOR_CELL);
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
+    this.node = null;
+    this.context = null;
+    this.cell = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

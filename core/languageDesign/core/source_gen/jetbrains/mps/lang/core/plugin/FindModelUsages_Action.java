@@ -49,7 +49,6 @@ public class FindModelUsages_Action extends GeneratedAction {
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -67,6 +66,13 @@ public class FindModelUsages_Action extends GeneratedAction {
       return false;
     }
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
+    this.scope = null;
+    this.context = null;
+    this.model = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
