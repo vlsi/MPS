@@ -524,30 +524,41 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public void paintSelection(Graphics g, Color c, boolean drawBorder) {
-    List<Rectangle> selection = myCellLayout.getSelectionBounds(this);
-
     Rectangle clip = g.getClipBounds();
     Rectangle bound = getBounds();
 
     Rectangle intersection = clip.intersection(bound);
+    if (intersection.isEmpty()) {
+      return;
+    }
 
     BufferedImage image = new BufferedImage(intersection.width + 2, intersection.height + 2, BufferedImage.TYPE_INT_ARGB);
     Graphics gr = image.getGraphics();
+    gr.setClip(0, 0, image.getWidth(), image.getHeight());
 
     int x0 = intersection.x;
     int y0 = intersection.y;
-
-    gr.setColor(c);
-    for (Rectangle part : selection) {
-      gr.fillRect(part.x - x0 + 1, part.y - y0 + 1, part.width, part.height);
+    
+    List<? extends EditorCell> selectionCells = myCellLayout instanceof CellLayoutExt ? ((CellLayoutExt) myCellLayout).getSelectionCells(this) : null;
+    if (selectionCells != null) {
+      gr.translate(1 - x0, 1 - y0);
+      for (EditorCell cell : selectionCells) {
+        cell.paintSelection(gr, c, false);
+      }
+    } else {
+      List<Rectangle> selection = myCellLayout.getSelectionBounds(this);
+      gr.setColor(c);
+      for (Rectangle part : selection) {
+        gr.fillRect(part.x - x0 + 1, part.y - y0 + 1, part.width, part.height);
+      }
     }
+
     if (drawBorder) {
       Color darkerColor = c.darker();
-      gr.setColor(darkerColor);
+      WritableRaster raster = image.getRaster();
       int[] color = {darkerColor.getRed(), darkerColor.getGreen(), darkerColor.getBlue(), 255};
       for (int x = 1; x < image.getWidth() - 1; x++) {
         for (int y = 1; y < image.getHeight() - 1; y++) {
-          WritableRaster raster = image.getRaster();
           int[] curPix = raster.getPixel(x, y, (int[]) null);
 
           if (curPix[3] == 0) continue;
@@ -584,6 +595,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     }
   }
 
+  /**
+   * looks like not used
+   */
   public void paintSelectionAsIfNotCollection(Graphics g, Color c) {
     super.paintSelection(g, c, true);
   }

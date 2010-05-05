@@ -106,6 +106,9 @@ public class EditorCell_Component extends EditorCell_Basic {
     return false;
   }
 
+  /**
+   * looks like not used
+   */
   public void paintSelection(Graphics g) {
     paintSelection(g, getSelectionColor(), true);
   }

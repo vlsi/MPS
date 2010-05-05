@@ -289,7 +289,17 @@ public class CellLayout_Flow extends AbstractCellLayout {
     }
 
   } //--FlowLayouter
- 
+
+  @Override
+  public List<? extends EditorCell> getSelectionCells(EditorCell_Collection editorCells) {
+    LOG.assertLog(getFlowLayout(editorCells) == this);
+    List<EditorCell> result = new ArrayList<EditorCell>();
+    for (EditorCell cell : editorCells) {
+      result.add(cell);
+    }
+    return result;
+  }
+
   public List<Rectangle> getSelectionBounds(EditorCell_Collection editorCells) {
     LOG.assertLog(getFlowLayout(editorCells) == this);
     List<Rectangle> result = new ArrayList<Rectangle>();

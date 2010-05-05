@@ -126,6 +126,11 @@ public class CellLayout_Indent extends AbstractCellLayout {
   }
 
   @Override
+  public List<? extends EditorCell> getSelectionCells(EditorCell_Collection editorCells) {
+    return getIndentLeafs(editorCells);
+  }
+
+  @Override
   public List<Rectangle> getSelectionBounds(EditorCell_Collection editorCells) {
     List<Rectangle> result = new ArrayList<Rectangle>();
     List<EditorCell> indentLeafs = getIndentLeafs(editorCells);

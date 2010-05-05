@@ -15,16 +15,14 @@
  */
 package jetbrains.mps.nodeEditor.cellLayout;
 
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
 import java.awt.Rectangle;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class AbstractCellLayout implements CellLayout {
+public abstract class AbstractCellLayout implements CellLayout, CellLayoutExt {
   public int getAscent(EditorCell_Collection editorCells) {
     int ascent = 0;
     for (EditorCell cell : editorCells.getCells()) {
@@ -35,6 +33,11 @@ public abstract class AbstractCellLayout implements CellLayout {
 
   public int getDescent(EditorCell_Collection editorCells) {
     return editorCells.getHeight() - getAscent(editorCells);
+  }
+
+  @Override
+  public List<? extends EditorCell> getSelectionCells(EditorCell_Collection editorCells) {
+    return null;
   }
 
   public List<Rectangle> getSelectionBounds(EditorCell_Collection editorCells) {
