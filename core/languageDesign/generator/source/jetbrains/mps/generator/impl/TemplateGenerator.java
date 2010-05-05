@@ -85,6 +85,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     myAreMappingsReady = true;
 
+    // optimization: no changes? quit
+    if(!isPrimary && !myChanged && myDelayedChanges.isEmpty() && !myRuleManager.hasWeavings()) {
+      return false;
+    }
+
     // publish roots
     for(SNode outputRoot : myOutputRoots) {
       myOutputModel.addRoot(outputRoot);
@@ -95,19 +100,26 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     applyWeaving_MappingRules();
     ttrace.pop();
 
+    // optimization: no changes? quit
+    if(!isPrimary && !myChanged && myDelayedChanges.isEmpty()) {
+      return false;
+    }
+
     // execute mapper in all $MAP_SRC$/$MAP_SRCL$
     ttrace.push("delayed mappings", false);
     myDelayedChanges.doAllChanges();
     ttrace.pop();
 
-    // new unresolved references could appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
-    ttrace.push("restoring references", false);
-    revalidateAllReferences();
-    ttrace.pop();
-    checkMonitorCanceled();
+    if(myChanged || isPrimary) {
+      // new unresolved references could appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
+      ttrace.push("restoring references", false);
+      revalidateAllReferences();
+      ttrace.pop();
+      checkMonitorCanceled();
 
-    // advance blocked reduction data
-    getBlockedReductionsData().advanceStep();
+      // advance blocked reduction data
+      getBlockedReductionsData().advanceStep();
+    }
     return myChanged;
   }
 

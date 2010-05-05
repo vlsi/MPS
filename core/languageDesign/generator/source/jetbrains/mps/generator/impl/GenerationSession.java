@@ -221,12 +221,13 @@ public class GenerationSession {
         myLogger.info("generating model '" + currentOutputModel.getSModelFqName() + "'");
       }
       mySessionContext.clearTransientObjects();
-      SModel transientModel = createTransientModel();
       // probably we can forget about former input model here
       recycleWasteModel(currentInputModel);
       currentInputModel = currentOutputModel;
       currentInputModel.setLoading(false);
       currentInputModel.disposeFastNodeFinder();
+
+      SModel transientModel = createTransientModel();
       tracer.startTracing(currentInputModel, transientModel);
       if (!applyRules(currentInputModel, transientModel, false, ruleManager)) {
         // nothing has been generated
@@ -343,17 +344,19 @@ public class GenerationSession {
   private SModel postProcessModel(RuleManager ruleManager, SModel currentOutputModel) throws GenerationFailureException {
     List<MappingScript> postMappingScripts = ruleManager.getPostMappingScripts();
     if (!postMappingScripts.isEmpty() && !myDiscardTransients) {  // clone model - needed for tracing
+      ttrace.push("model clone", false);
       SModel currentOutputModel_clone = createTransientModel();
       if (myLogger.needsInfo()) {
         myLogger.info("clone model '" + currentOutputModel.getSModelFqName() + "' --> '" + currentOutputModel_clone.getSModelFqName() + "'");
       }
       CloneUtil.cloneModel(currentOutputModel, currentOutputModel_clone, false);
+      ttrace.pop();
 
       mySessionContext.getGenerationTracer().registerPostMappingScripts(currentOutputModel, currentOutputModel_clone, postMappingScripts);
       currentOutputModel = currentOutputModel_clone;
     }
 
-
+    boolean postProcessed = false;
     for (MappingScript postMappingScript : postMappingScripts) {
       if (postMappingScript.getScriptKind() != MappingScriptKind.post_process_output_model) {
         myLogger.warning(postMappingScript.getNode(), "skip script '" + postMappingScript + "' (" + postMappingScript.getModel().getSModelFqName() + ") - wrong script kind");
@@ -364,6 +367,10 @@ public class GenerationSession {
       }
       ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentOutputModel, currentOutputModel, myGenerationContext, ttrace);
       templateGenerator.getExecutor().executeMappingScript(postMappingScript, currentOutputModel);
+      postProcessed = true;
+    }
+    if(myLogger.needsInfo() && postProcessed) {
+      myLogger.info("post-processing finished");
     }
     return currentOutputModel;
   }
