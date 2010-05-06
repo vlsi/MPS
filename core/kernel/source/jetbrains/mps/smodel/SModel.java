@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.annotation.UseCarefully;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -585,8 +584,10 @@ public class SModel implements Iterable<SNode> {
   }
 
   public List<DevKit> getDevkits(@NotNull IScope scope) {
+    ModelAccess.assertLegalRead();
+
     List<DevKit> result = new ArrayList<DevKit>();
-    for (ModuleReference dk : getDevKitRefs()) {
+    for (ModuleReference dk : myDevKits) {
       DevKit devKit = scope.getDevKit(dk);
       if (devKit != null) {
         //addDevkitModelsVersions(dk, devKit);
@@ -599,9 +600,11 @@ public class SModel implements Iterable<SNode> {
   }
 
   @NotNull
-  public List<ModuleReference> getLanguageRefs(IScope scope) {
-    ArrayList<ModuleReference> result = new ArrayList<ModuleReference>(myLanguages);
-    for (ModuleReference dk : getDevKitRefs()) {
+  public Set<ModuleReference> getLanguageRefs(IScope scope) {
+    ModelAccess.assertLegalRead();
+
+    Set<ModuleReference> result = new HashSet<ModuleReference>(myLanguages.size() + myDevKits.size() * 8);
+    for (ModuleReference dk : myDevKits) {
       DevKit devKit = scope.getDevKit(dk);
       if (devKit != null) {
         //addDevkitModelsVersions(dk, devKit);
@@ -996,7 +999,7 @@ public class SModel implements Iterable<SNode> {
     ModelChange.assertLegalChange(this);
     
     GlobalScope scope = GlobalScope.getInstance();
-    Set<ModuleReference> usedLanguages = new HashSet<ModuleReference>(getLanguageRefs(scope));
+    Set<ModuleReference> usedLanguages = getLanguageRefs(scope);
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
     for (SModelDescriptor sm : allImportedModels(scope)) {
       importedModels.add(sm.getSModelReference());
@@ -1168,8 +1171,26 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  public int getSize() {
+  public int size() {
     return myIdToNodeMap.size();
+  }
+
+  void validateLanguages(SNode node) {
+    Collection<ModuleReference> allrefs = getLanguageRefs(GlobalScope.getInstance());
+    Set<String> available = new HashSet<String>(allrefs.size());
+    for(ModuleReference ref : allrefs) {
+      available.add(ref.getModuleFqName());
+    }
+    for(SNode n : node.getDescendantsIterable(null, true)) {
+      String namespace = n.getLanguageNamespace();
+      if (!available.contains(namespace)) {
+        available.add(namespace);
+        Language lang = GlobalScope.getInstance().getLanguage(namespace);
+        if (lang != null) {
+          addLanguage_internal(lang.getModuleReference());
+        }
+      }
+    }
   }
 
   public static class ImportElement {
@@ -1233,10 +1254,11 @@ public class SModel implements Iterable<SNode> {
   @NotNull
   public List<SNode> allNodes() {
     SModel model = this;
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = new ArrayList<SNode>(this.size());
     for (SNode root : model.getRoots()) {
-      result.add(root);
-      result.addAll(root.getDescendants());
+      for(SNode i : root.getDescendantsIterable(null, true)) {
+        result.add(i);
+      }
     }
 
     return result;
@@ -1251,10 +1273,9 @@ public class SModel implements Iterable<SNode> {
     List<SNode> resultNodes = new ArrayList<SNode>();
 
     for (SNode node : getRoots()) {
-      if (condition.met(node)) {
-        resultNodes.add(node);
+      for(SNode i : node.getDescendantsIterable(condition, true)) {
+        resultNodes.add(i);
       }
-      resultNodes.addAll(node.getDescendants(condition));
     }
 
     return resultNodes;

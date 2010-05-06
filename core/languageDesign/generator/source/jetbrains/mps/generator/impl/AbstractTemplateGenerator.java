@@ -24,7 +24,6 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.generator.template.QueryExecutor.TraceableQueryExecutor;
 import jetbrains.mps.util.performance.IPerformanceTracer;
-import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.smodel.*;
 
 import java.util.HashSet;
@@ -53,7 +52,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myLogger = logger;
     myInputModel = inputModel;
     myOutputModel = outputModel;
-    myMappings = new GeneratorMappings(inputModel.getSize());
+    myMappings = new GeneratorMappings(inputModel.size());
     myExecutor = generationContext.getTracingMode() >= GenerationSettings.TRACE_LANGS
       ? new TraceableQueryExecutor(this, tracer)
       : new QueryExecutor(this);

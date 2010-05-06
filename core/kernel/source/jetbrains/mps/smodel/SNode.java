@@ -1094,7 +1094,15 @@ public final class SNode {
     }
   }
 
-  /*package*/ void registerInModel(SModel model) {
+  void registerInModel(SModel model) {
+    registerInModel_internal(model);
+
+    // add language because helgins needs it to invalidate/revalidate its caches
+    //todo this is a hack
+    model.validateLanguages(this);
+  }
+
+  private void registerInModel_internal(SModel model) {
     if (myRegisteredInModelFlag) {
       if (model != myModel) {
         LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
@@ -1117,16 +1125,7 @@ public final class SNode {
       ModelChangedCaster.getInstance().fireModelChanged(this, wasModel);
     }
     for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      child.registerInModel(model);
-    }
-
-    // add language because helgins needs it to invalidate/revalidate its caches
-    //todo this is a hack
-    if (!myModel.hasLanguage(getLanguageNamespace())) {
-      Language lang = GlobalScope.getInstance().getLanguage(getLanguageNamespace());
-      if (lang != null) {
-        myModel.addLanguage_internal(lang.getModuleReference());
-      }
+      child.registerInModel_internal(model);
     }
   }
 
@@ -1521,45 +1520,12 @@ public final class SNode {
     return getDescendants(null);
   }
 
-  public Iterator<SNode> descendantsIterator(final Condition<SNode> condition) {
-    return new Iterator<SNode>() {
-      private SNode current = myFirstChild.myFirstChild;
+  public Iterable<SNode> getDescendantsIterable() {
+    return getDescendantsIterable(null, false);
+  }
 
-      @Override
-      public boolean hasNext() {
-        return current != null;
-      }
-
-      @Override
-      public SNode next() {
-        SNode result = current;
-        do {
-          current = nextInternal(current);
-        } while(current != null && condition != null && !condition.met(current));
-        return result;
-      }
-
-      private SNode nextInternal(SNode current) {
-        if(current == null) {
-          return null;
-        }
-        if(current.myFirstChild != null) {
-          return current.myFirstChild;
-        }
-        do {
-          if(current.myNextSibling != null) {
-            return current.myNextSibling;
-          }
-          current = current.myParent;
-        } while(current != myFirstChild);
-        return null;
-      }
-
-      @Override
-      public void remove() {
-        throw new UnsupportedOperationException();
-      }
-    };
+  public Iterable<SNode> getDescendantsIterable(final Condition<SNode> condition, final boolean includeFirst) {
+    return new DescendantsIterable(this, includeFirst ? this : myFirstChild, condition);
   }
 
   public List<SNode> getDescendants(Condition<SNode> condition) {
@@ -2062,6 +2028,64 @@ public final class SNode {
     @Override
     protected Set<Pair<SNode, String>> initialValue() {
       return new HashSet<Pair<SNode, String>>();
+    }
+  }
+
+  private static class DescendantsIterable implements Iterator<SNode>, Iterable<SNode> {
+    private SNode original;
+    private SNode current;
+    private Condition<SNode> condition;
+
+    DescendantsIterable(SNode original, SNode first, Condition<SNode> condition) {
+      this.original = original;
+      this.current = first;
+      this.condition = condition;
+      while(current != null && condition != null && !condition.met(current)) {
+        current = nextInternal(current);
+      }
+    }
+
+    @Override
+    public boolean hasNext() {
+      return current != null;
+    }
+
+    @Override
+    public SNode next() {
+      SNode result = current;
+      do {
+        current = nextInternal(current);
+      } while(current != null && condition != null && !condition.met(current));
+      return result;
+    }
+
+    private SNode nextInternal(SNode curr) {
+      if(curr == null) {
+        return null;
+      }
+      if(curr.myFirstChild != null) {
+        return curr.myFirstChild;
+      }
+      if(curr == original) {
+        return null;
+      }
+      do {
+        if(curr.myNextSibling != null) {
+          return curr.myNextSibling;
+        }
+        curr = curr.myParent;
+      } while(curr != original);
+      return null;
+    }
+
+    @Override
+    public void remove() {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public Iterator<SNode> iterator() {
+      return this;
     }
   }
 }
