@@ -16607,6 +16607,9 @@
         <property name="text:32" value="clone" />
         <link role="styleClass:32" targetNodeId="1198596382979" resolveInfo="InstanceMethod" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="5205855332950450145" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="3059484524439324807">
+          <property name="flag:32" value="true" />
+        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5205855332950450139">
         <property name="text:32" value="(" />
