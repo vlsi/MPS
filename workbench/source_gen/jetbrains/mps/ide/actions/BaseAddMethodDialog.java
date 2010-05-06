@@ -38,6 +38,7 @@ import java.awt.BorderLayout;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.tree.TreePath;
 import java.util.Arrays;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.icons.IconManager;
 
@@ -154,7 +155,7 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         List<TreePath> paths = new ArrayList<TreePath>(Arrays.asList(BaseAddMethodDialog.this.myTree.getSelectionPaths()));
-        List<BaseAddMethodDialog.MethodTreeNode> methodNodes = new ArrayList<BaseAddMethodDialog.MethodTreeNode>();
+        List<BaseAddMethodDialog.MethodTreeNode> methodNodes = ListSequence.fromList(new ArrayList<BaseAddMethodDialog.MethodTreeNode>());
         for (TreePath path : paths) {
           if (path.getLastPathComponent() instanceof BaseAddMethodDialog.MethodTreeNode) {
             methodNodes.add((BaseAddMethodDialog.MethodTreeNode) path.getLastPathComponent());
@@ -165,7 +166,7 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
             return BaseAddMethodDialog.this.compareMethods(m1.getMethod(), m2.getMethod());
           }
         });
-        List<BaseMethodDeclaration> methods = BaseAddMethodDialog.this.doAddMethods(methodNodes);
+        List<BaseMethodDeclaration> methods = BaseAddMethodDialog.this.doAddMethods(ListSequence.fromList(methodNodes).reversedList());
         if (methods.isEmpty()) {
           return;
         }
