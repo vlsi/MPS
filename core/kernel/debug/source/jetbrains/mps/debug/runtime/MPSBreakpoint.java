@@ -73,25 +73,7 @@ public class MPSBreakpoint extends AbstractMPSBreakpoint implements ClassPrepare
 
   protected void createOrWaitPrepare(final DebugVMEventsProcessor debugProcess) {
 
-    // this code was written in order to fix MPS-8208 ("Breakpoints inside an anonymous class do not work")
-    // however, the problem is also actual for everything that generates anonymous classes
-    // issue MPS-8617 was created for that problem
-    String className = ModelAccess.instance().runReadAction(new Computable<String>() {
-      @Override
-      public String compute() {
-        List<SNode> list = SNodeOperations.getAncestors(myNodePointer.getNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false);
-        if (list.isEmpty()) {
-          return null;
-        }
-        SNode enclosingClassNode = list.get(0);
-        String anonymousConceptFqName = "jetbrains.mps.baseLanguage.structure.AnonymousClass";
-        if (enclosingClassNode.isInstanceOfConcept(anonymousConceptFqName)) {
-          return AnonymousClass_Behavior.call_getJavaName_2977939203456914071(enclosingClassNode);          
-        } else {
-          return Classifier_Behavior.virtual_getFqName_1213877404258(enclosingClassNode);
-        }
-      }
-    });
+    String className = getTargetUnitName();
 
     if (className == null) {
       String fileName = getFileName();

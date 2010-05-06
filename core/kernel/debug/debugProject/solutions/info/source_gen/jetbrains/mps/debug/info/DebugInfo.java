@@ -267,7 +267,7 @@ public class DebugInfo {
     return null;
   }
 
-  public String getUnitNameForLine(String file, int line, SModel model) {
+  public String getUnitNameForLine(String file, int line) {
     // TODO duplication! 
     List<UnitPositionInfo> resultList = ListSequence.fromList(new ArrayList<UnitPositionInfo>());
     for (Set<UnitPositionInfo> val : MapSequence.fromMap(this.myRootToUnitPositions).values()) {
@@ -306,7 +306,7 @@ public class DebugInfo {
       public Comparable<?> select(UnitPositionInfo it) {
         return it;
       }
-    }, true);
+    }, false);
     UnitPositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
     return model.getNodeById(firstPositionInfo.getNodeId());
   }
