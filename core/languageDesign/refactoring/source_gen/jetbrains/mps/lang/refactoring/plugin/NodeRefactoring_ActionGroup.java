@@ -21,6 +21,7 @@ public class NodeRefactoring_ActionGroup extends GeneratedActionGroup {
   public NodeRefactoring_ActionGroup() {
     super("Refactoring", ID);
     this.setIsInternal(false);
+    this.setMnemonic("r".charAt(0));
     this.setPopup(true);
     try {
 outer:

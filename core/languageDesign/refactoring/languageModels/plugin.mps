@@ -41,6 +41,7 @@
     <property name="isPopup:23" value="true" />
     <property name="caption:23" value="Refactoring" />
     <property name="isInvisibleWhenDisabled:23" value="false" />
+    <property name="mnemonic:23" value="r" />
     <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="1229259747550">
       <link role="modifiedGroup:23" targetNodeId="2v.1204991215587" resolveInfo="NodeActions" />
     </node>
