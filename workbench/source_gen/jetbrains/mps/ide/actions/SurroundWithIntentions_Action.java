@@ -143,11 +143,7 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
     for (final Pair<Intention, SNode> pair : groupItems) {
       BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), SurroundWithIntentions_Action.this.editorContext)) {
         protected void doExecute(AnActionEvent p0) {
-          ModelAccess.instance().runCommandInEDT(new Runnable() {
-            public void run() {
-              pair.getFirst().execute(pair.getSecond(), SurroundWithIntentions_Action.this.editorContext);
-            }
-          });
+          pair.getFirst().execute(pair.getSecond(), SurroundWithIntentions_Action.this.editorContext);
         }
       };
       action.setExecuteOutsideCommand(true);
