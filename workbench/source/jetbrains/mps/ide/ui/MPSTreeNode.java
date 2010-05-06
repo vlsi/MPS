@@ -309,26 +309,28 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   protected void updatePresentation() {
     setColor(Color.BLACK);
     doUpdatePresentation();
-    if (myTreeMessages != null) {
-      Color c = null;
-      int maxColorPriority = Integer.MIN_VALUE;
-      String additionalText = null;
-      int maxAdditionalTextPriority = Integer.MIN_VALUE;
-      for (TreeMessage message : myTreeMessages) {
-        if (maxColorPriority < message.getPriority() && message.alternatesColor()) {
-          c = message.getColor();
+    synchronized (myTreeMessagesLock) {
+      if (myTreeMessages != null) {
+        Color c = null;
+        int maxColorPriority = Integer.MIN_VALUE;
+        String additionalText = null;
+        int maxAdditionalTextPriority = Integer.MIN_VALUE;
+        for (TreeMessage message : myTreeMessages) {
+          if (maxColorPriority < message.getPriority() && message.alternatesColor()) {
+            c = message.getColor();
+          }
+          if (maxAdditionalTextPriority < message.getPriority() && message.hasAdditionalText()) {
+            additionalText = message.getAdditionalText();
+          }
         }
-        if (maxAdditionalTextPriority < message.getPriority() && message.hasAdditionalText()) {
-          additionalText = message.getAdditionalText();
+        if (c != null) {
+          setColor(c);
         }
-      }
-      if (c != null) {
-        setColor(c);
-      }
-      if (additionalText != null) {
-     //   String oldText = getAdditionalText();
-     //   oldText = oldText == null ? "" : oldText + " ";
-        setAdditionalText(/*oldText +*/ additionalText);
+        if (additionalText != null) {
+          //   String oldText = getAdditionalText();
+          //   oldText = oldText == null ? "" : oldText + " ";
+          setAdditionalText(/*oldText +*/ additionalText);
+        }
       }
     }
   }
@@ -378,9 +380,9 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
   }
 
-   public void removeTreeMessage(TreeMessage message) {
-     removeTreeMessage(message, true);
-   }
+  public void removeTreeMessage(TreeMessage message) {
+    removeTreeMessage(message, true);
+  }
 
   public void removeTreeMessage(TreeMessage message, boolean updatePresentation) {
     synchronized (myTreeMessagesLock) {
