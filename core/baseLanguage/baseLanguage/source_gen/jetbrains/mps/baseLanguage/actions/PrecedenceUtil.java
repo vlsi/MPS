@@ -9,9 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 
 public class PrecedenceUtil {
   public static SNode getTargetForLeftTransform(SNode contextNode, SNode resultConcept) {
-    int contextNodePriority = getPriority(SNodeOperations.getConceptDeclaration(contextNode)).ordinal();
+    int resultingExpressionPriority = getPriority(resultConcept).ordinal();
     SNode targetNode = contextNode;
-    for (SNode parentNode = SNodeOperations.getParent(targetNode); parentNode != null && SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.Expression") && getPriority(SNodeOperations.getConceptDeclaration(parentNode)).ordinal() < contextNodePriority; parentNode = SNodeOperations.getParent(targetNode)) {
+    for (SNode parentNode = SNodeOperations.getParent(targetNode); parentNode != null && SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.Expression") && getPriority(SNodeOperations.getConceptDeclaration(parentNode)).ordinal() <= resultingExpressionPriority; parentNode = SNodeOperations.getParent(targetNode)) {
       if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
         // if parent expression is IMethodCall then targetNode is either actualArgument 
         // or typeArgument (parameters of method call), so we should not go upper 
@@ -61,7 +61,7 @@ public class PrecedenceUtil {
       }
     }
 
-    if (SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.DotExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.VariableReference") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression")) {
+    if (SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.DotExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.VariableReference") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.collections.structure.MapElement")) {
       return PrecedenceUtil.Precedence.J_1;
     }
     if (SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.UnaryMinus") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.NotExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.BitwiseNotExpression")) {
