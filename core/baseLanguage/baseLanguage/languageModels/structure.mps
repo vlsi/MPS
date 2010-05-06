@@ -2771,6 +2771,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1206629501431">
     <property name="name:0" value="InstanceInitializer" />
     <property name="package:0" value="classifier" />
+    <property name="iconPath:0" value="${language_descriptor}/icons/classInitializer.png" />
     <link role="extends:0" targetNodeId="4.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1206629521979">
       <property name="metaClass:0" value="aggregation" />
