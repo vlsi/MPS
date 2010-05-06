@@ -121,7 +121,11 @@ public abstract class BaseAction extends AnAction implements DumbAware {
 
   public final void actionPerformed(final AnActionEvent e) {
     try {
-      collectActionData(e);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          collectActionData(e);
+        }
+      });
       final ModelAccess access = ModelAccess.instance();
       if (myExecuteOutsideCommand) {
         doExecute(e);
