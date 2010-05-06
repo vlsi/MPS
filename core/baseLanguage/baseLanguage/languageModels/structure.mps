@@ -672,6 +672,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1070462154015">
     <property name="name:0" value="StaticFieldDeclaration" />
+    <property name="iconPath:0" value="${language_descriptor}/icons/fieldNew.png" />
     <link role="extends:0" targetNodeId="1068431474542:3" resolveInfo="VariableDeclaration" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1178291753349">
       <link role="intfc:0" targetNodeId="1178285077437:3" resolveInfo="ClassifierMember" />
