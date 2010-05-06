@@ -27,16 +27,18 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
+import org.jetbrains.annotations.Nullable;
 
 public class DebugInfoManager implements ApplicationComponent {
   public static DebugInfoManager getInstance() {
     return ApplicationManager.getApplication().getComponent(DebugInfoManager.class);
   }
 
-  private Map<String, Mapper2<SNode, Project, AbstractMPSBreakpoint>> myDebuggableConcepts =
+  private final Map<String, Mapper2<SNode, Project, AbstractMPSBreakpoint>> myDebuggableConcepts =
     new HashMap<String, Mapper2<SNode, Project, AbstractMPSBreakpoint>>();
-  private Map<String, Mapper<SNode, List<SNode>>> myScopeConceptsAndGetters =
+  private final Map<String, Mapper<SNode, List<SNode>>> myScopeConceptsAndGetters =
     new HashMap<String, Mapper<SNode, List<SNode>>>();
+  private final Map<String, Mapper<SNode, String>> myUnitConceptsToUnitNameGetters = new LinkedHashMap<String, Mapper<SNode, String>>(); 
 
   @NotNull
   public String getComponentName() {
@@ -64,6 +66,14 @@ public class DebugInfoManager implements ApplicationComponent {
     myScopeConceptsAndGetters.remove(fqName);
   }
 
+  public void addUnitConcept(String fqName, Mapper<SNode, String> nameGetter) {
+    myUnitConceptsToUnitNameGetters.put(fqName, nameGetter);
+  }
+
+  public void removeUnitConcept(String fqName) {
+    myUnitConceptsToUnitNameGetters.remove(fqName);
+  }
+
   public boolean isDebuggableNode(SNode node) {
     for (String concept : myDebuggableConcepts.keySet()) {
       if (SNodeOperations.isInstanceOf(node, concept)) return true;
@@ -80,6 +90,15 @@ public class DebugInfoManager implements ApplicationComponent {
     return false;
   }
 
+  public boolean isUnitNode(SNode node) {
+    for (String concept : myUnitConceptsToUnitNameGetters.keySet()) {
+      if (SNodeOperations.isInstanceOf(node, concept)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   public List<SNode> getVarsInScope(SNode scopeNode) {
     for (String concept : myScopeConceptsAndGetters.keySet()) {
       if (SNodeOperations.isInstanceOf(scopeNode, concept)) {
@@ -89,12 +108,25 @@ public class DebugInfoManager implements ApplicationComponent {
     return new ArrayList<SNode>(0);
   }
 
+  @Nullable
   public AbstractMPSBreakpoint createBreakpoint(SNode debuggableNode, Project project) {
     for (String concept : myDebuggableConcepts.keySet()) {
       if (SNodeOperations.isInstanceOf(debuggableNode, concept)) {
         Mapper2<SNode, Project, AbstractMPSBreakpoint> mapper2 = myDebuggableConcepts.get(concept);
-        if (mapper2 == null) return null;
+        if (mapper2 == null) return null; //TODO wtf? how about telling someone something is wrong?
         return mapper2.value(debuggableNode, project);
+      }
+    }
+    return null;
+  }
+
+  @Nullable
+  public String getUnitName(SNode unitNode) {
+    for (String concept: myUnitConceptsToUnitNameGetters.keySet()) {
+      if (SNodeOperations.isInstanceOf(unitNode, concept)) {
+        Mapper<SNode, String> mapper = myUnitConceptsToUnitNameGetters.get(concept);
+        if (mapper == null) return null;
+        return mapper.value(unitNode);
       }
     }
     return null;

@@ -31,6 +31,7 @@ public class DebugInfo {
   private static final String NODE_INFO = "nodeInfo";
   private static final String VAR_INFO = "varInfo";
   private static final String SCOPE_INFO = "scopeInfo";
+  private static final String UNIT_INFO = "unitInfo";
   private static final String ROOT = "root";
   private static final String ROOT_ID_ATTR = "nodeId";
   private static final String UNSPECIFIED_ROOT = "";
@@ -38,6 +39,7 @@ public class DebugInfo {
 
   private Map<String, Set<PositionInfo>> myRootToPositions = MapSequence.fromMap(new LinkedHashMap<String, Set<PositionInfo>>(16, (float) 0.75, false));
   private Map<String, Set<ScopePositionInfo>> myRootToScopePositions = MapSequence.fromMap(new LinkedHashMap<String, Set<ScopePositionInfo>>(16, (float) 0.75, false));
+  private Map<String, Set<UnitPositionInfo>> myRootToUnitPositions = MapSequence.fromMap(new LinkedHashMap<String, Set<UnitPositionInfo>>(16, (float) 0.75, false));
   private SModel myModel;
 
   public DebugInfo() {
@@ -49,6 +51,10 @@ public class DebugInfo {
 
   public void addScopePosition(ScopePositionInfo positionInfo) {
     this.addScopePosition(positionInfo, UNSPECIFIED_ROOT);
+  }
+
+  public void addUnitPosition(UnitPositionInfo unitPosition) {
+    this.addUnitPosition(unitPosition, UNSPECIFIED_ROOT);
   }
 
   public void addPosition(PositionInfo position, String rootNodeId) {
@@ -75,6 +81,18 @@ public class DebugInfo {
     SetSequence.fromSet(info).addElement(position);
   }
 
+  public void addUnitPosition(UnitPositionInfo unitPoistion, String rootNodeId) {
+    if (rootNodeId == null) {
+      rootNodeId = UNSPECIFIED_ROOT;
+    }
+    Set<UnitPositionInfo> info = MapSequence.fromMap(this.myRootToUnitPositions).get(rootNodeId);
+    if (info == null) {
+      info = SetSequence.fromSet(new TreeSet<UnitPositionInfo>());
+      MapSequence.fromMap(this.myRootToUnitPositions).put(rootNodeId, info);
+    }
+    SetSequence.fromSet(info).addElement(unitPoistion);
+  }
+
   public Element toXml() {
     Element root = new Element(DEBUG_INFO);
 
@@ -90,6 +108,14 @@ public class DebugInfo {
     if (noRootScopes != null) {
       for (ScopePositionInfo position : noRootScopes) {
         Element e = new Element(SCOPE_INFO);
+        position.saveTo(e);
+        root.addContent(e);
+      }
+    }
+    Set<UnitPositionInfo> noRootUnits = MapSequence.fromMap(this.myRootToUnitPositions).get(UNSPECIFIED_ROOT);
+    if (noRootUnits != null) {
+      for (UnitPositionInfo position : noRootUnits) {
+        Element e = new Element(UNIT_INFO);
         position.saveTo(e);
         root.addContent(e);
       }
@@ -132,6 +158,25 @@ public class DebugInfo {
       root.addContent(re);
       for (ScopePositionInfo position : MapSequence.fromMap(this.myRootToScopePositions).get(rootId)) {
         Element e = new Element(SCOPE_INFO);
+        position.saveTo(e);
+        re.addContent(e);
+      }
+    }
+    for (String rootId : SetSequence.fromSet(MapSequence.fromMap(this.myRootToUnitPositions).keySet()).where(new IWhereFilter<String>() {
+      public boolean accept(String it) {
+        return !(ObjectUtils.equals(it, UNSPECIFIED_ROOT));
+      }
+    }).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true)) {
+      Element re = new Element(ROOT);
+      re.setAttribute(ROOT_ID_ATTR, rootId);
+      MapSequence.fromMap(rootsToElements).put(rootId, re);
+      root.addContent(re);
+      for (UnitPositionInfo position : MapSequence.fromMap(this.myRootToUnitPositions).get(rootId)) {
+        Element e = new Element(NODE_INFO);
         position.saveTo(e);
         re.addContent(e);
       }
@@ -222,6 +267,50 @@ public class DebugInfo {
     return null;
   }
 
+  public String getUnitNameForLine(String file, int line, SModel model) {
+    // TODO duplication! 
+    List<UnitPositionInfo> resultList = ListSequence.fromList(new ArrayList<UnitPositionInfo>());
+    for (Set<UnitPositionInfo> val : MapSequence.fromMap(this.myRootToUnitPositions).values()) {
+      for (UnitPositionInfo element : val) {
+        if (ObjectUtils.equals(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
+          ListSequence.fromList(resultList).addElement(element);
+        }
+      }
+    }
+    if (ListSequence.fromList(resultList).isEmpty()) {
+      return null;
+    }
+    Iterable<UnitPositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
+      public Comparable<?> select(UnitPositionInfo it) {
+        return it;
+      }
+    }, true);
+    UnitPositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
+    return firstPositionInfo.getUnitName();
+  }
+
+  public SNode getUnitNodeForLine(String file, int line, SModel model) {
+    // TODO second duplication! 
+    List<UnitPositionInfo> resultList = ListSequence.fromList(new ArrayList<UnitPositionInfo>());
+    for (Set<UnitPositionInfo> val : MapSequence.fromMap(this.myRootToUnitPositions).values()) {
+      for (UnitPositionInfo element : val) {
+        if (ObjectUtils.equals(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
+          ListSequence.fromList(resultList).addElement(element);
+        }
+      }
+    }
+    if (ListSequence.fromList(resultList).isEmpty()) {
+      return null;
+    }
+    Iterable<UnitPositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
+      public Comparable<?> select(UnitPositionInfo it) {
+        return it;
+      }
+    }, true);
+    UnitPositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
+    return model.getNodeById(firstPositionInfo.getNodeId());
+  }
+
   public List<String> getRoots() {
     return SetSequence.fromSet(MapSequence.fromMap(this.myRootToPositions).keySet()).toListSequence();
   }
@@ -259,6 +348,9 @@ public class DebugInfo {
       for (Element e : ((List<Element>) root.getChildren(SCOPE_INFO))) {
         result.addScopePosition(new ScopePositionInfo(e));
       }
+      for (Element e : ((List<Element>) root.getChildren(DebugInfo.UNIT_INFO))) {
+        result.addUnitPosition(new UnitPositionInfo(e));
+      }
       for (Element re : ((List<Element>) root.getChildren(ROOT))) {
         String rootId = re.getAttributeValue(ROOT_ID_ATTR);
         for (Element e : ((List<Element>) re.getChildren(NODE_INFO))) {
@@ -266,6 +358,9 @@ public class DebugInfo {
         }
         for (Element e : ((List<Element>) re.getChildren(SCOPE_INFO))) {
           result.addScopePosition(new ScopePositionInfo(e), rootId);
+        }
+        for (Element e : ((List<Element>) re.getChildren(UNIT_INFO))) {
+          result.addUnitPosition(new UnitPositionInfo(e), rootId);
         }
       }
     } catch (DataConversionException e) {

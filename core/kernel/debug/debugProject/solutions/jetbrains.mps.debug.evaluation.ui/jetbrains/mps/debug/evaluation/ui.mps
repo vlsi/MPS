@@ -3940,7 +3940,7 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2960002797019070860">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="2960002797019070861">
           <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="2960002797019070862">
-            <property name="text:3" value="TODO in some cases, we might actually support anonimous classes creation" />
+            <property name="text:3" value="TODO in some cases, we might actually support anonymous classes creation" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2960002797019070863">

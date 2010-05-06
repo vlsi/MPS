@@ -59,6 +59,72 @@ public class StacktraceUtil {
     });
   }
 
+  public static SNode getUnitNode(String className, final String file, final int position) {
+    // TODO duplication 
+    int lastDot = className.lastIndexOf(".");
+    String pkg = (lastDot == -1 ?
+      "" :
+      className.substring(0, lastDot)
+    );
+    List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptorsByModelName(pkg);
+    for (final SModelDescriptor descriptor : ListSequence.fromList(list)) {
+      if (SModelStereotype.isStubModelStereotype(descriptor.getStereotype())) {
+        continue;
+      }
+
+      final DebugInfo result = BLDebugInfoCache.getInstance().get(descriptor);
+      if (result == null) {
+        continue;
+      }
+
+      final Wrappers._T<SNode> nodeToShow = new Wrappers._T<SNode>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          nodeToShow.value = result.getUnitNodeForLine(file, position, descriptor.getSModel());
+        }
+      });
+
+      if (nodeToShow.value != null) {
+        return nodeToShow.value;
+      }
+    }
+
+    return null;
+  }
+
+  public static String getUnitName(String className, final String file, final int position) {
+    // TODO duplication 
+    int lastDot = className.lastIndexOf(".");
+    String pkg = (lastDot == -1 ?
+      "" :
+      className.substring(0, lastDot)
+    );
+    List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptorsByModelName(pkg);
+    for (final SModelDescriptor descriptor : ListSequence.fromList(list)) {
+      if (SModelStereotype.isStubModelStereotype(descriptor.getStereotype())) {
+        continue;
+      }
+
+      final DebugInfo result = BLDebugInfoCache.getInstance().get(descriptor);
+      if (result == null) {
+        continue;
+      }
+
+      final Wrappers._T<String> unitName = new Wrappers._T<String>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          unitName.value = result.getUnitNameForLine(file, position, descriptor.getSModel());
+        }
+      });
+
+      if (unitName.value != null) {
+        return unitName.value;
+      }
+    }
+
+    return null;
+  }
+
   public static SNode getNode(String className, String file, int position) {
     return getNodeOrVar(className, file, position, null);
   }

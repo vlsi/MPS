@@ -6723,6 +6723,36 @@
         </node>
       </node>
     </node>
+    <node role="unitConcepts:23" type="jetbrains.mps.lang.plugin.structure.UnitNodeItem:23" id="4089570349960765075">
+      <link role="unitConcept:23" targetNodeId="1.1170345865475:3" resolveInfo="AnonymousClass" />
+      <node role="getUnitName:23" type="jetbrains.mps.lang.plugin.structure.ConceptFunction_GetUnitName:23" id="4089570349960765076">
+        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4089570349960765077">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4089570349960765078">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4089570349960765080">
+              <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_UnitNode:23" id="4089570349960765079" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4089570349960820758">
+                <link role="baseMethodDeclaration:16" targetNodeId="69.2977939203456914071" resolveInfo="getJavaName" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="unitConcepts:23" type="jetbrains.mps.lang.plugin.structure.UnitNodeItem:23" id="4089570349960820759">
+      <link role="unitConcept:23" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
+      <node role="getUnitName:23" type="jetbrains.mps.lang.plugin.structure.ConceptFunction_GetUnitName:23" id="4089570349960820760">
+        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4089570349960820761">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4089570349960821032">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4089570349960821034">
+              <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_UnitNode:23" id="4089570349960821033" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4089570349960821038">
+                <link role="baseMethodDeclaration:16" targetNodeId="48.1213877404258" resolveInfo="getFqName" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="6049742529940611647">
     <property name="package:23" value="Actions" />

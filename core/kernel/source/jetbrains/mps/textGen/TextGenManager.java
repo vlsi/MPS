@@ -18,6 +18,7 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.debug.DebugInfoManager;
 import jetbrains.mps.debug.info.PositionInfo;
 import jetbrains.mps.debug.info.ScopePositionInfo;
+import jetbrains.mps.debug.info.UnitPositionInfo;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
@@ -56,11 +57,13 @@ public class TextGenManager {
 
   private HashMap<SNode, PositionInfo> myPositions;
   private HashMap<SNode, ScopePositionInfo> myScopePositions;
+  private Map<SNode, UnitPositionInfo> myUnitPositions;
   private Map<String, Class<SNodeTextGen>> myClassesCache;
 
   public TextGenerationResult generateText(IOperationContext context, SNode node) {
     myPositions = new HashMap<SNode, PositionInfo>();
     myScopePositions = new HashMap<SNode, ScopePositionInfo>();
+    myUnitPositions = new HashMap<SNode, UnitPositionInfo>();
     myClassesCache = new HashMap<String,Class<SNodeTextGen>>();
 
     TextGenBuffer buffer = new TextGenBuffer();
@@ -76,9 +79,13 @@ public class TextGenManager {
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
     }
+    for (PositionInfo position : myUnitPositions.values()) {
+      position.setStartLine(position.getStartLine() + topLength);
+      position.setEndLine(position.getEndLine() + topLength);
+    }
     List<String> dependencies = getUserObjectCollection(DEPENDENCY, node, buffer, (Set<String>) buffer.getUserObject(EXTENDS));
     List<String> extend = getUserObjectCollection(EXTENDS, node, buffer, null);
-    return new TextGenerationResult(buffer.getText(), buffer.hasErrors(), myPositions, myScopePositions, dependencies, extend);
+    return new TextGenerationResult(buffer.getText(), buffer.hasErrors(), myPositions, myScopePositions, myUnitPositions, dependencies, extend);
   }
 
   public boolean canGenerateTextFor(SNode node) {
@@ -130,6 +137,12 @@ public class TextGenManager {
           }
         }
         myScopePositions.put(node, scopePositionInfo);
+      }
+      if (DebugInfoManager.getInstance().isUnitNode(node)){
+        UnitPositionInfo unitPositionInfo = new UnitPositionInfo();
+        unitPositionInfo.fillFrom(info);
+        unitPositionInfo.setUnitName(DebugInfoManager.getInstance().getUnitName(node));
+        myUnitPositions.put(node, unitPositionInfo);
       }
     } catch (Exception e) {
       buffer.foundError();
@@ -203,20 +216,22 @@ public class TextGenManager {
   public static class TextGenerationResult {
     private String myText;
     private boolean myContainErrors;
-    private HashMap<SNode, PositionInfo> myPositions;
-    private HashMap<SNode, ScopePositionInfo> myScopePositions;
+    private final HashMap<SNode, PositionInfo> myPositions;
+    private final HashMap<SNode, ScopePositionInfo> myScopePositions;
+    private final Map<SNode, UnitPositionInfo> myUnitPositions;
     private Map<String, List<String>> myDependencies;
 
     private TextGenerationResult(String text,
                                  boolean containErrors,
                                  HashMap<SNode, PositionInfo> positions,
                                  HashMap<SNode, ScopePositionInfo> scopePositions,
-                                 List<String> dependencies,
+                                 Map<SNode, UnitPositionInfo> unitPositions, List<String> dependencies,
                                  List<String> extend) {
       myText = text;
       myContainErrors = containErrors;
       myPositions = positions;
       myScopePositions = scopePositions;
+      myUnitPositions = unitPositions;
       myDependencies = new HashMap<String, List<String>>(2);
       myDependencies.put(DEPENDENCY, dependencies);
       myDependencies.put(EXTENDS, extend);
@@ -236,6 +251,10 @@ public class TextGenManager {
 
     public Map<SNode, ScopePositionInfo> getScopePositions() {
       return myScopePositions;
+    }
+
+    public Map<SNode, UnitPositionInfo> getUnitPositions() {
+      return myUnitPositions;
     }
 
     public Map<String, List<String>> getDependencies() {

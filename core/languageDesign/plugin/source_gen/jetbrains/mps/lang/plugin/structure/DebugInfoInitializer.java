@@ -14,6 +14,7 @@ public class DebugInfoInitializer extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.DebugInfoInitializer";
   public static final String CONCEPTS_TO_DEBUG = "conceptsToDebug";
   public static final String SCOPE_CONCEPTS = "scopeConcepts";
+  public static final String UNIT_CONCEPTS = "unitConcepts";
 
   public DebugInfoInitializer(SNode node) {
     super(node);
@@ -57,6 +58,26 @@ public class DebugInfoInitializer extends BaseConcept {
 
   public void insertScopeConcepts(ScopeNodeItem prev, ScopeNodeItem node) {
     this.insertChild(prev, DebugInfoInitializer.SCOPE_CONCEPTS, node);
+  }
+
+  public int getUnitConceptsesCount() {
+    return this.getChildCount(DebugInfoInitializer.UNIT_CONCEPTS);
+  }
+
+  public Iterator<UnitNodeItem> unitConceptses() {
+    return this.children(UnitNodeItem.class, DebugInfoInitializer.UNIT_CONCEPTS);
+  }
+
+  public List<UnitNodeItem> getUnitConceptses() {
+    return this.getChildren(UnitNodeItem.class, DebugInfoInitializer.UNIT_CONCEPTS);
+  }
+
+  public void addUnitConcepts(UnitNodeItem node) {
+    this.addChild(DebugInfoInitializer.UNIT_CONCEPTS, node);
+  }
+
+  public void insertUnitConcepts(UnitNodeItem prev, UnitNodeItem node) {
+    this.insertChild(prev, DebugInfoInitializer.UNIT_CONCEPTS, node);
   }
 
   public static DebugInfoInitializer newInstance(SModel sm, boolean init) {

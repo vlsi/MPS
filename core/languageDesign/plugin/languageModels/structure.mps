@@ -3738,6 +3738,12 @@
       <property name="sourceCardinality:0" value="0..n" />
       <link role="target:0" targetNodeId="936299881288560358:23" resolveInfo="ScopeNodeItem" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4089570349960659790">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="unitConcepts" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="4089570349960658154:23" resolveInfo="UnitNodeItem" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="485694842828664424">
     <property name="package:0" value="Tool.Operations" />
@@ -4363,6 +4369,49 @@
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8255351389869160281">
       <property name="value:0" value="project" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4089570349960658154">
+    <property name="package:0" value="Custom.DebugInfo" />
+    <property name="name:0" value="UnitNodeItem" />
+    <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4089570349960658155">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="unitConcept" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="8.1071489090640:0" resolveInfo="ConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4089570349960676040">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="getUnitName" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="4089570349960659791:23" resolveInfo="ConceptFunction_GetUnitName" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4089570349960659791">
+    <property name="package:0" value="Custom.DebugInfo" />
+    <property name="name:0" value="ConceptFunction_GetUnitName" />
+    <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="4089570349960659802">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="4089570349960659796:23" resolveInfo="ConceptFunctionParameter_UnitNode" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="4089570349960659804">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4089570349960676039" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4089570349960659793">
+      <property name="value:0" value="getUnitName" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4089570349960659796">
+    <property name="package:0" value="Custom.DebugInfo" />
+    <property name="name:0" value="ConceptFunctionParameter_UnitNode" />
+    <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4089570349960659798">
+      <property name="value:0" value="unitNode" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>

@@ -55,9 +55,9 @@ public class JavaLocalVariable implements IWatchable {
   @Override
   public SNode getNode() {
     try {
-    Location location = myStackFrame.location();
-    SNode snode = StacktraceUtil.getNodeOrVar(location.declaringType().name(),
-      location.sourceName(), location.lineNumber(), myLocalVariable.name());
+      Location location = myStackFrame.location();
+      SNode snode = StacktraceUtil.getNodeOrVar(location.declaringType().name(),
+        location.sourceName(), location.lineNumber(), myLocalVariable.name());
       return snode;
     } catch (AbsentInformationException ex) {
       LOG.error(ex);

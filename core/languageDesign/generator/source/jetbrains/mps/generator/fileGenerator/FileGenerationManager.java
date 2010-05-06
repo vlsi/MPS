@@ -25,10 +25,7 @@ import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
-import jetbrains.mps.debug.info.DebugInfo;
-import jetbrains.mps.debug.info.PositionInfo;
-import jetbrains.mps.debug.info.ScopePositionInfo;
-import jetbrains.mps.debug.info.VarInfo;
+import jetbrains.mps.debug.info.*;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
@@ -214,6 +211,7 @@ public class FileGenerationManager implements ApplicationComponent {
   private void fillDebugInfo(DebugInfo info, String rootNodeId, SNode outputNode, TextGenerationResult result) {
     Map<SNode, PositionInfo> positions = result.getPositions();
     Map<SNode, ScopePositionInfo> scopePositions = result.getScopePositions();
+    Map<SNode, UnitPositionInfo> unitPositions = result.getUnitPositions();
     if (positions == null && scopePositions == null) {
       return;
     }
@@ -253,6 +251,20 @@ public class FileGenerationManager implements ApplicationComponent {
           }
           //    positionInfo.clearTempVarInfoMap();
           info.addScopePosition(positionInfo, rootNodeId);
+        }
+      }
+    }
+    if (unitPositions != null) {
+      for (SNode out : unitPositions.keySet()) {
+        SNode input = out;
+        input = getOriginalInputNode(input);
+        if (input != null && !(input.isDisposed())) {
+          UnitPositionInfo positionInfo = result.getUnitPositions().get(out);
+          positionInfo.setNodeId(input.getId());
+          info.setModel(input.getModel());
+          positionInfo.setFileName(fileName);
+
+          info.addUnitPosition(positionInfo, rootNodeId);
         }
       }
     }

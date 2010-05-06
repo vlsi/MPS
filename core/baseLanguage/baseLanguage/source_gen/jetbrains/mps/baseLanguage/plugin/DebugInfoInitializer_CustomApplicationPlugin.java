@@ -16,6 +16,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.behavior.AnonymousClass_Behavior;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 
 public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
@@ -72,6 +74,16 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
         return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(scopeNode, "variable", true));
       }
     });
+    manager.addUnitConcept("jetbrains.mps.baseLanguage.structure.AnonymousClass", new Mapper<SNode, String>() {
+      public String value(SNode unitNode) {
+        return AnonymousClass_Behavior.call_getJavaName_2977939203456914071(unitNode);
+      }
+    });
+    manager.addUnitConcept("jetbrains.mps.baseLanguage.structure.ClassConcept", new Mapper<SNode, String>() {
+      public String value(SNode unitNode) {
+        return INamedConcept_Behavior.call_getFqName_1213877404258(unitNode);
+      }
+    });
     BreakpointManagerComponent.notifyDebuggableConceptsAdded();
   }
 
@@ -85,5 +97,7 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
     manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.StatementList");
     manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ForeachStatement");
     manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ForStatement");
+    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.AnonymousClass");
+    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
 }

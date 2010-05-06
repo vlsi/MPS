@@ -1,9 +1,13 @@
 package jetbrains.mps.debug.runtime.java.programState;
 
+import com.sun.jdi.AbsentInformationException;
+import com.sun.jdi.Location;
 import com.sun.jdi.ObjectReference;
+import com.sun.jdi.StackFrame;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
+import jetbrains.mps.debug.info.StacktraceUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 
@@ -20,9 +24,11 @@ public class JavaThisObject implements IWatchable {
   private static Logger LOG = Logger.getLogger(JavaLocalVariable.class);
 
   private final ObjectReference myThisObject;
+  private final StackFrame myStackFrame;
 
-  public JavaThisObject(ObjectReference objectReference) {
+  public JavaThisObject(ObjectReference objectReference, StackFrame stackFrame) {
     myThisObject = objectReference;
+    myStackFrame = stackFrame;
   }
 
   public ObjectReference getThisObject() {
@@ -46,7 +52,15 @@ public class JavaThisObject implements IWatchable {
 
   @Override
   public SNode getNode() {
-    return null;
+    try {
+      Location location = myStackFrame.location();
+      SNode snode = StacktraceUtil.getUnitNode(location.declaringType().name(),
+        location.sourceName(), location.lineNumber());
+      return snode;
+    } catch (AbsentInformationException ex) {
+      LOG.error(ex);
+      return null;
+    }
   }
 
   @Override

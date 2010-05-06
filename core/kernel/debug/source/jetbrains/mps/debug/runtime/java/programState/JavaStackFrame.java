@@ -47,7 +47,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
       }
       ObjectReference thisObject = myStackFrame.thisObject();
       if (thisObject != null) {
-        JavaThisObject object = new JavaThisObject(thisObject);
+        JavaThisObject object = new JavaThisObject(thisObject, myStackFrame);
         result.put(object, object.getValue());
       }
       return result;
@@ -66,7 +66,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
       }
       ObjectReference thisObject = myStackFrame.thisObject();
       if (thisObject != null) {
-        result.add(new JavaThisObject(thisObject));
+        result.add(new JavaThisObject(thisObject, myStackFrame));
       }
       return result;
     } catch (AbsentInformationException ex) {

@@ -17,6 +17,7 @@ package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.debug.info.PositionInfo;
 import jetbrains.mps.debug.info.ScopePositionInfo;
+import jetbrains.mps.debug.info.UnitPositionInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
@@ -31,6 +32,7 @@ public class TextGenerationUtil {
     boolean containsErrors = false;
     Map<SNode, PositionInfo> positions = null;
     Map<SNode, ScopePositionInfo> scopePositions = null;
+    Map<SNode, UnitPositionInfo> unitPositions = null;
     Map<String, List<String>> dependencies = null;
     if (TextGenManager.instance().canGenerateTextFor(node)) {
       TextGenManager.TextGenerationResult generationResult = TextGenManager.instance().generateText(context, node);
@@ -38,11 +40,12 @@ public class TextGenerationUtil {
       nodeText = generationResult.getText();
       positions = generationResult.getPositions();
       scopePositions = generationResult.getScopePositions();
+      unitPositions = generationResult.getUnitPositions();
       dependencies = generationResult.getDependencies();
     } else {
       nodeText = "Can't generate text from " + node;
     }
-    return new TextGenerationResult(nodeText, containsErrors, positions, scopePositions, dependencies);
+    return new TextGenerationResult(nodeText, containsErrors, positions, scopePositions, unitPositions, dependencies);
   }
 
   public static class TextGenerationResult {
@@ -50,17 +53,20 @@ public class TextGenerationUtil {
     private String myText;
     private Map<SNode, PositionInfo> myPositions;
     private Map<SNode, ScopePositionInfo> myScopePositions;
+    private Map<SNode, UnitPositionInfo> myUnitPositions;
     private Map<String, List<String>> myDependencies;
 
     public TextGenerationResult(String text,
                                 boolean containsErrors,
                                 Map<SNode, PositionInfo> positions,
                                 Map<SNode, ScopePositionInfo> scopePositions,
+                                Map<SNode, UnitPositionInfo> unitPositions,
                                 Map<String, List<String>> dependencies) {
       myContainsErrors = containsErrors;
       myText = text;
       myPositions = positions;
       myScopePositions = scopePositions;
+      myUnitPositions = unitPositions;
       myDependencies = dependencies;
     }
 
@@ -78,6 +84,10 @@ public class TextGenerationUtil {
 
     public Map<SNode, ScopePositionInfo> getScopePositions() {
       return myScopePositions;
+    }
+
+    public Map<SNode, UnitPositionInfo> getUnitPositions() {
+      return myUnitPositions;
     }
 
     public List<String> getDependencies(String value) {
