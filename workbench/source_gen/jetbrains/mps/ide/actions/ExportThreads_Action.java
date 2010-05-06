@@ -54,7 +54,6 @@ public class ExportThreads_Action extends GeneratedAction {
     }
   }
 
-  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -68,6 +67,12 @@ public class ExportThreads_Action extends GeneratedAction {
       return false;
     }
     return true;
+  }
+
+  protected void cleanup() {
+    super.cleanup();
+    this.project = null;
+    this.context = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
