@@ -26,8 +26,15 @@ import jetbrains.mps.workbench.action.ActionUtils;
 public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   private IModule myTransientModule;
 
-  public TransientModelsTreeNode(Project project) {
-    super(new ModuleContext(project.getComponent(TransientModelsModule.class), project));
+  public TransientModelsTreeNode(final Project project) {
+    //sometimes (when opening another project after first project) module repository does not contain transient module
+    //temp fix
+    super(new ModuleContext(project.getComponent(TransientModelsModule.class), project) {
+      @Override
+      public IModule getModule() {
+        return project.getComponent(TransientModelsModule.class);
+      }
+    });
     myTransientModule = project.getComponent(TransientModelsModule.class);
     populate();
     updatePresentation();
