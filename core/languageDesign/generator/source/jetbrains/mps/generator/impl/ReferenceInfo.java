@@ -29,6 +29,9 @@ public abstract class ReferenceInfo {
   private String myReferenceRole;
   private SNode myInputNode;
 
+  /**
+   * @param referenceRole should be interned
+   */
   protected ReferenceInfo(SNode outputSourceNode, String referenceRole, @Nullable SNode inputNode) {
     myOutputSourceNode = outputSourceNode;
     myReferenceRole = referenceRole;

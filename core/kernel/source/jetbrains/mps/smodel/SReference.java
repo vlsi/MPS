@@ -36,10 +36,10 @@ public abstract class SReference {
   private volatile String myResolveInfo;
 
   /**
-   * role must be "genuine"
+   * role must be "genuine", interned
    */
   protected SReference(String role, SNode sourceNode) {
-    myRole = InternUtil.intern(role);
+    myRole = role;
     mySourceNode = sourceNode;
   }
 

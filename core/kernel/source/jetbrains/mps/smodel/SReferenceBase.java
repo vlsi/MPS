@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -28,7 +29,7 @@ abstract class SReferenceBase extends SReference {
   private volatile SModelReference myTargetModelReference;  // mature
 
   protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelReference targetModelReference, SNode immatureTargetNode) {
-    super(role, sourceNode);
+    super(InternUtil.intern(role), sourceNode);
 
     // if ref is 'mature' then 'targetModelRefernce' is either NOT NULL, or it is broken external reference.
     myTargetModelReference = targetModelReference;

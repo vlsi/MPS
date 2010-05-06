@@ -30,7 +30,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
 
   /**
-   * @param role
+   * @param role             should be interned
    * @param outputSourceNode reference source in output model
    * @param inputNode        node from input mode (ofter refernce source in input model)
    * @param inputTargetNode  reference target in input model

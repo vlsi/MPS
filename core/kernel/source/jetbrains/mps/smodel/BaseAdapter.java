@@ -445,15 +445,15 @@ public abstract class BaseAdapter implements INodeAdapter {
 
 
   public static <T extends INodeAdapter> List<T> toAdapters(List<? extends SNode> list) {
-    List<T> result = new ArrayList<T>();
-    for (SNode node : list.toArray(new SNode[list.size()])) {
+    List<T> result = new ArrayList<T>(list.size());
+    for (SNode node : list) {
       result.add((T) node.getAdapter());
     }
     return result;
   }
 
   public static <T extends INodeAdapter> Set<T> toAdapters(Set<? extends SNode> list) {
-    Set<T> result = new HashSet<T>();
+    Set<T> result = new HashSet<T>(list.size());
     for (SNode node : list) {
       if (node != null) {
         result.add((T) node.getAdapter());
@@ -463,7 +463,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   public static <T extends INodeAdapter> List<T> toAdapters(Class<T> cls, List<? extends SNode> list) {
-    List<T> result = new ArrayList<T>();
+    List<T> result = new ArrayList<T>(list.size());
     for (SNode node : list) {
       result.add((T) node.getAdapter());
     }
@@ -471,7 +471,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   public static <T extends INodeAdapter> Set<T> toAdapters(Class<T> cls, Set<? extends SNode> list) {
-    Set<T> result = new HashSet<T>();
+    Set<T> result = new HashSet<T>(list.size());
     for (SNode node : list) {
       result.add((T) node.getAdapter());
     }
@@ -480,7 +480,7 @@ public abstract class BaseAdapter implements INodeAdapter {
 
 
   public static List<SNode> toNodes(List<? extends INodeAdapter> list) {
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = new ArrayList<SNode>(list.size());
     for (INodeAdapter ba : list) {
       result.add(ba.getNode());
     }
@@ -488,7 +488,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   public static Set<SNode> toNodes(Set<? extends INodeAdapter> list) {
-    Set<SNode> result = new HashSet<SNode>();
+    Set<SNode> result = new HashSet<SNode>(list.size());
     for (INodeAdapter ba : list) {
       result.add(ba.getNode());
     }

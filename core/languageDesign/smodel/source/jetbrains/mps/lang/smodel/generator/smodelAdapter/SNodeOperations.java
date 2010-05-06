@@ -246,11 +246,6 @@ public class SNodeOperations {
     }
   }
 
-  private static void _populateListOfDescendants(List<SNode> list, SNode node, Condition<SNode> condition) {
-    _populateListOfDescendants(list, node, condition, Condition.FALSE_CONDITION);
-  }
-
-
   private static boolean _isInstanceOf(SNode node, String[] conceptFqNames) {
     for (String conceptFqName : conceptFqNames) {
       if (conceptFqName == null) continue;

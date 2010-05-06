@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
+import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
@@ -41,7 +42,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private SModelReference myExternalTargetModelReference;
 
   public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro macro, SNode templateReferenceNode, TemplateContext context) {
-    super(outputSourceNode, getReferenceRole(macro), context.getInput());
+    super(outputSourceNode, InternUtil.intern(getReferenceRole(macro)), context.getInput());
     myTemplateReferenceNode = templateReferenceNode;
     myReferenceMacro = macro;
     myContext = context;
