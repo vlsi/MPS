@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.IScope;
@@ -40,12 +41,12 @@ public class SModelOperations {
       return model.getRoots();
     }
     GlobalScope scope = GlobalScope.getInstance();
-    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, scope);
     if (concept == null) return new ArrayList<SNode>();
 
     List<SNode> list = new ArrayList<SNode>();
     for (SNode node : model.getRoots()) {
-      if (node.isInstanceOfConcept(concept)) {
+      if (node.isInstanceOfConcept(conceptFqName)) {
         list.add(node);
       }
     }

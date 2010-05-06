@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.behaviour;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
@@ -27,6 +28,7 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
@@ -213,10 +215,10 @@ public final class BehaviorManager implements ApplicationComponent {
   public void reloadAll() {
   }
 
-  private Method getMethod(final AbstractConceptDeclaration concept, final String methodName, final Class[] parameterTypes) {
+  private Method getMethod(final SNode concept, final String methodName, final Class[] parameterTypes) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Method>() {
       public Method compute() {
-        Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+        Language l = SModelUtil.getDeclaringLanguage(concept, GlobalScope.getInstance());
 
         Method method = null;
         String fqName = NameUtil.nodeFQName(concept);
@@ -280,7 +282,8 @@ public final class BehaviorManager implements ApplicationComponent {
     Method method = null;
     Class[] parameterTypeArray = parametersTypes;
 
-    for (AbstractConceptDeclaration conceptDeclaration : superConcepts) {
+    for (AbstractConceptDeclaration sconcept : superConcepts) {
+      SNode conceptDeclaration = BaseAdapter.fromAdapter(sconcept);
       method = getMethod(conceptDeclaration, methodName, parameterTypeArray);
       if (method != null) {
         break;

@@ -1704,8 +1704,7 @@ public final class SNode {
 
   public SNode getConceptDeclarationNode() {
     String conceptFQName = getConceptFqName();
-    SNode concept = SModelUtil.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
-    return concept;
+    return SModelUtil.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
   }
 
   public PropertyDeclaration getPropertyDeclaration(String propertyName) {

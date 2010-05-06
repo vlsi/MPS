@@ -64,7 +64,7 @@ public final class SConceptOperations {
 
 
   public static SNode findConceptDeclaration(String conceptFqName) {
-    return BaseAdapter.fromAdapter(SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance()));
+    return SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
   }
 
   /**
@@ -121,8 +121,8 @@ public final class SConceptOperations {
       SNode declaration = SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance());
       Language lang = SModelUtil.getDeclaringLanguage(declaration, scope);
       if (availableLanguages.contains(lang)) {
-        result.add(lang.findConceptDeclaration(NameUtil.shortNameFromLongName(descendant)).getNode());         
-      }      
+        result.add(lang.findConceptDeclaration(NameUtil.shortNameFromLongName(descendant)).getNode());
+      }
     }
 
     return result;
@@ -135,7 +135,7 @@ public final class SConceptOperations {
   }
 
   public static SNode createNewNode(String conceptFqName, SNode prototypeNode) {
-    if(conceptFqName == null) return null;
+    if (conceptFqName == null) return null;
     return NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, null);
   }
 
