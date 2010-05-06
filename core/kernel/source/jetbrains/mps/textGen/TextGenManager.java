@@ -56,13 +56,17 @@ public class TextGenManager {
 
   private HashMap<SNode, PositionInfo> myPositions;
   private HashMap<SNode, ScopePositionInfo> myScopePositions;
+  private Map<String, Class<SNodeTextGen>> myClassesCache;
 
   public TextGenerationResult generateText(IOperationContext context, SNode node) {
     myPositions = new HashMap<SNode, PositionInfo>();
     myScopePositions = new HashMap<SNode, ScopePositionInfo>();
+    myClassesCache = new HashMap<String,Class<SNodeTextGen>>();
+
     TextGenBuffer buffer = new TextGenBuffer();
     buffer.putUserObject(PACKAGE_NAME, node.getModel().getLongName());
     appendNodeText(context, buffer, node, null);
+    myClassesCache = null;
     int topLength = buffer.getTopBufferText().split(buffer.getLineSeparator(), -1).length + 2;
     for (PositionInfo position : myPositions.values()) {
       position.setStartLine(position.getStartLine() + topLength);
@@ -133,9 +137,7 @@ public class TextGenManager {
     }
   }
 
-  private SNodeTextGen loadNodeTextGen(IOperationContext context, SNode node) {
-    SNode cd = node.getConceptDeclarationNode();
-
+  private Class loadTextGenClass(SNode cd) {
     SNode baseConcept = SModelUtil.getBaseConcept();
     while (cd != baseConcept) {
       Language l = SModelUtil.getDeclaringLanguage(cd, GlobalScope.getInstance());
@@ -143,22 +145,36 @@ public class TextGenManager {
       String packageName = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(cd));
       String className = cd.getName();
       String textgenClassname = packageName + ".textGen." + className + "_TextGen";
-      try {
-        Class textgenClass = l.getClass(textgenClassname);
-        if (textgenClass != null) {
-          SNodeTextGen result = (SNodeTextGen) textgenClass.newInstance();
-          result.setContext(context);
-          return result;
-        }
-      } catch (InstantiationException e) {
-        LOG.error(e, node);
-      } catch (IllegalAccessException e) {
-        LOG.error(e, node);
+      Class textgenClass = l.getClass(textgenClassname);
+      if (textgenClass != null) {
+        return textgenClass;
       }
 
       cd = cd.getReferent(ConceptDeclaration.EXTENDS);
       if (cd == null) cd = baseConcept;
     }
+    return DefaultTextGen.class;
+  }
+
+  private SNodeTextGen loadNodeTextGen(IOperationContext context, SNode node) {
+    String nodeConcept = node.getConceptFqName();
+
+    Class<SNodeTextGen> textgenClass = myClassesCache == null ? loadTextGenClass(node.getConceptDeclarationNode()) : myClassesCache.get(nodeConcept);
+    if(textgenClass == null) {
+      textgenClass = loadTextGenClass(node.getConceptDeclarationNode());
+      myClassesCache.put(nodeConcept, textgenClass);
+    }
+
+    try {
+      SNodeTextGen result = (SNodeTextGen) textgenClass.newInstance();
+      result.setContext(context);
+      return result;
+    } catch (InstantiationException e) {
+      LOG.error(e, node);
+    } catch (IllegalAccessException e) {
+      LOG.error(e, node);
+    }
+
     DefaultTextGen result = new DefaultTextGen();
     result.setContext(context);
     return result;
