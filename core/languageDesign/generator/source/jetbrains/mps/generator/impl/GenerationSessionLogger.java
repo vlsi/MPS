@@ -121,7 +121,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
 
     if (node != null) {
       if (myOperationContext != null) {
-        NodeWithContext context = new NodeWithContext(node, myOperationContext);
+        NodeWithContext context = new NodeWithContext(node, myOperationContext.getInvocationContext());
         message.setHintObject(context);
         myOperationContext.addTransientModelToKeep(node.getModel());
       } else {
