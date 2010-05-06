@@ -82,7 +82,7 @@ public class SNodeOperations {
     // look up for certain concept
     if (root) {
       SNode rootParent = node.getContainingRoot();
-      if (rootParent.isInstanceOfConcept(ancestorConceptFqName)) {
+      if (rootParent != null && rootParent.isInstanceOfConcept(ancestorConceptFqName)) {
         return rootParent;
       }
       return null;
