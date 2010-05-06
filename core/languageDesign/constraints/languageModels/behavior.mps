@@ -237,7 +237,6 @@
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877345069">
       <property name="name" value="usesParameterObjectFor" />
       <property name="isPrivate" value="false" />
-      <link role="overridenMethod" targetNodeId="11.1213877374432" resolveInfo="usesParameterObjectFor" />
       <link role="overriddenMethod" targetNodeId="11.1213877374432" resolveInfo="usesParameterObjectFor" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877345070">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1213877345071">
