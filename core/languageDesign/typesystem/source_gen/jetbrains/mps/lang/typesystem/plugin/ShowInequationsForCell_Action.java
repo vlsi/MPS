@@ -20,7 +20,7 @@ public class ShowInequationsForCell_Action extends GeneratedAction {
   private EditorCell selectedCell;
 
   public ShowInequationsForCell_Action() {
-    super("Show Inequations For Cell", "", ICON);
+    super("Show Inequations for Cell", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

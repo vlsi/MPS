@@ -4,7 +4,7 @@ package jetbrains.mps.lang.typesystem.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 
 public class TypesystemEditorPopupInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(TypesystemEditorPopupInternal_ActionGroup.class);
@@ -23,6 +23,6 @@ public class TypesystemEditorPopupInternal_ActionGroup extends GeneratedActionGr
   }
 
   public void adjust() {
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
+    this.insertGroupIntoAnother(EditorInternal_ActionGroup.ID, null);
   }
 }

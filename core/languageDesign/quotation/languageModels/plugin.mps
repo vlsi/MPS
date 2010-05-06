@@ -36,7 +36,7 @@
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="3981318653438276869">
     <property name="name:23" value="ShowMetaLevel" />
-    <property name="caption:23" value="Show Metalevel" />
+    <property name="caption:23" value="Show Quotation Metalevel" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration:23" id="3981318653438278529">
       <property name="name:23" value="currentNode" />
       <node role="visibility:23" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3981318653438278530" />

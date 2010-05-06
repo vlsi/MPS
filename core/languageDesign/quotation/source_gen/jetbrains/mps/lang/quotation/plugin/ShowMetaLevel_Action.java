@@ -22,7 +22,7 @@ public class ShowMetaLevel_Action extends GeneratedAction {
   private Component component;
 
   public ShowMetaLevel_Action() {
-    super("Show Metalevel", "", ICON);
+    super("Show Quotation Metalevel", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

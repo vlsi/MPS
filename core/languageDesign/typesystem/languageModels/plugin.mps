@@ -104,7 +104,7 @@
     <property name="name:23" value="TypesystemEditorPopupInternal" />
     <property name="isInternal:23" value="true" />
     <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="1205245368690">
-      <link role="modifiedGroup:23" targetNodeId="4.1204991231476" resolveInfo="EditorPopup" />
+      <link role="modifiedGroup:23" targetNodeId="4.1204991232446" resolveInfo="EditorInternal" />
     </node>
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="1207148358868">
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="1228846932936">
@@ -1281,7 +1281,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1230214426481">
     <property name="package:23" value="Actions" />
     <property name="name:23" value="ShowInequationsForCell" />
-    <property name="caption:23" value="Show Inequations For Cell" />
+    <property name="caption:23" value="Show Inequations for Cell" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1230214590204">
       <property name="name:23" value="selectedCell" />
       <link role="key:23" targetNodeId="34.~MPSDataKeys.EDITOR_CELL" resolveInfo="EDITOR_CELL" />
