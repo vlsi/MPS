@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -30,6 +29,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.util.Calculable;
@@ -163,7 +163,7 @@ public class QueriesGenerated {
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_8283631902252337708(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     // if parent of this <node> is DotExpression then this leftTransform 
     // will be provided to this <node> by rules defined in binaryOperations LT 
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.DotExpression")) && PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) != null;
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.DotExpression"));
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1177503884613(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -360,7 +360,7 @@ __switch__:
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_8283631902252126592(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     // if parent of this <node> is DotExpression then this leftTransform 
     // will be provided to this <node> by rules defined in binaryOperations LT 
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.DotExpression")) && PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression")) != null;
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.DotExpression"));
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_434283027167546576(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -2004,16 +2004,10 @@ __switch__:
           public SNode doSubstitute(String pattern) {
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
-              SNode nodeToProcess = _context.getSourceNode();
-              if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToProcess), "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression") || SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToProcess), "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression")) {
-                nodeToProcess = SNodeOperations.cast(SNodeOperations.getParent(nodeToProcess), "jetbrains.mps.baseLanguage.structure.Expression");
-              }
-              if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToProcess), "jetbrains.mps.baseLanguage.structure.InstanceOfExpression")) {
-                nodeToProcess = SNodeOperations.cast(SNodeOperations.getParent(nodeToProcess), "jetbrains.mps.baseLanguage.structure.Expression");
-              }
+              SNode nodeToProcess = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
               SNodeOperations.replaceWithAnother(nodeToProcess, result);
               SLinkOperations.setTarget(result, "rightExpression", nodeToProcess, true);
-              ParenthesisUtil.checkOperationWRTPriority(result);
+              // <node> 
               return result;
             }
           }
@@ -2180,7 +2174,7 @@ __switch__:
           public SNode doSubstitute(String pattern) {
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
-              SNode source = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"));
+              SNode source = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
               SNodeOperations.replaceWithAnother(source, result);
               SLinkOperations.setTarget(result, "rValue", source, true);
               return result;
@@ -3546,7 +3540,7 @@ __switch__:
           public SNode doSubstitute(String pattern) {
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
-              SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"));
+              SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
               SNodeOperations.replaceWithAnother(targetExpression, result);
               SLinkOperations.setTarget(result, "expression", targetExpression, true);
               return result;
