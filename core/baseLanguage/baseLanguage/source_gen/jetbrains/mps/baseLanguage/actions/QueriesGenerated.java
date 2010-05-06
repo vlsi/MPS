@@ -20,6 +20,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
@@ -29,7 +30,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.util.Calculable;
@@ -360,7 +360,7 @@ __switch__:
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_8283631902252126592(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     // if parent of this <node> is DotExpression then this leftTransform 
     // will be provided to this <node> by rules defined in binaryOperations LT 
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.DotExpression"));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.DotExpression")) && PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression")) != null;
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_434283027167546576(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -3548,9 +3548,12 @@ __switch__:
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-            SLinkOperations.setTarget(result, "expression", _context.getSourceNode(), true);
-            return result;
+            {
+              SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"));
+              SNodeOperations.replaceWithAnother(targetExpression, result);
+              SLinkOperations.setTarget(result, "expression", targetExpression, true);
+              return result;
+            }
           }
         });
       }
