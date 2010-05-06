@@ -80,12 +80,11 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
     SNode newSelection = null;
     for (SNode ref : this.getNodesToRafactor()) {
       SNode sourceNode = ref;
-      if (SNodeOperations.isInstanceOf(sourceNode, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
-        SNode copy = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(this.myVariable, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "initializer", true));
-        if (newSelection == null) {
-          newSelection = copy;
+      // <node> 
+      for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(sourceNode, "jetbrains.mps.baseLanguage.structure.VariableReference", true, new String[]{}))) {
+        if (SLinkOperations.getTarget(reference, "variableDeclaration", false) == myVariable) {
+          SNodeOperations.replaceWithAnother(reference, SNodeOperations.copyNode(SLinkOperations.getTarget(myVariable, "initializer", true)));
         }
-        SNodeOperations.replaceWithAnother(SNodeOperations.cast(sourceNode, "jetbrains.mps.baseLanguage.structure.VariableReference"), copy);
       }
     }
     this.optimizeDeclaration(this.myVariable);
