@@ -104,7 +104,7 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
 
   protected void report(MessageKind kind, String text, SNode node) {
     Message message = new Message(kind, text);
-    if(node != null) {
+    if(node != null && node.isRegistered() && node.getModel() != null && !node.getModel().isTransient()) {
       message.setHintObject(new SNodePointer(node));
     }
     synchronized (myMessageHandler) {
