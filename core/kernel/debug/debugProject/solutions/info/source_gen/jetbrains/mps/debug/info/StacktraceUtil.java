@@ -9,8 +9,9 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.execution.filters.HyperlinkInfo;
 import com.intellij.openapi.project.Project;
-import java.util.List;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SModelDescriptor;
+import java.util.List;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -59,8 +60,7 @@ public class StacktraceUtil {
     });
   }
 
-  public static SNode getUnitNode(String className, final String file, final int position) {
-    // TODO duplication 
+  private static SNode findNode(String className, final _FunctionTypes._return_P2_E0<? extends SNode, ? super DebugInfo, ? super SModelDescriptor> nodeGetter) {
     int lastDot = className.lastIndexOf(".");
     String pkg = (lastDot == -1 ?
       "" :
@@ -80,7 +80,7 @@ public class StacktraceUtil {
       final Wrappers._T<SNode> nodeToShow = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          nodeToShow.value = result.getUnitNodeForLine(file, position, descriptor.getSModel());
+          nodeToShow.value = nodeGetter.invoke(result, descriptor);
         }
       });
 
@@ -90,48 +90,30 @@ public class StacktraceUtil {
     }
 
     return null;
+  }
+
+  public static SNode getUnitNode(String className, final String file, final int position) {
+    return findNode(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
+      public SNode invoke(DebugInfo result, SModelDescriptor descriptor) {
+        return result.getUnitNodeForLine(file, position, descriptor.getSModel());
+      }
+    });
   }
 
   public static SNode getNode(String className, String file, int position) {
     return getNodeOrVar(className, file, position, null);
   }
 
-  public static SNode getNodeOrVar(final String className, final String file, final int position, final String varName) {
-    int lastDot = className.lastIndexOf(".");
-    String pkg = (lastDot == -1 ?
-      "" :
-      className.substring(0, lastDot)
-    );
-    List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptorsByModelName(pkg);
-    for (final SModelDescriptor descriptor : ListSequence.fromList(list)) {
-      if (SModelStereotype.isStubModelStereotype(descriptor.getStereotype())) {
-        continue;
-      }
-
-      final DebugInfo result = BLDebugInfoCache.getInstance().get(descriptor);
-      if (result == null) {
-        continue;
-      }
-
-      final Wrappers._T<SNode> nodeToShow = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          if (varName != null) {
-            nodeToShow.value = result.getVarForLine(file, position, descriptor.getSModel(), varName);
-          } else {
-            nodeToShow.value = result.getNodeForLine(file, position, descriptor.getSModel());
-          }
+  public static SNode getNodeOrVar(String className, final String file, final int position, final String varName) {
+    return findNode(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
+      public SNode invoke(DebugInfo result, SModelDescriptor descriptor) {
+        if (varName != null) {
+          return result.getVarForLine(file, position, descriptor.getSModel(), varName);
+        } else {
+          return result.getNodeForLine(file, position, descriptor.getSModel());
         }
-      });
-
-      if (nodeToShow.value != null) {
-        return nodeToShow.value;
       }
-    }
-
-    // <node> 
-
-    return null;
+    });
   }
 
   private static SNode getNodes(String stacktraceLine, String position) {
