@@ -129,24 +129,25 @@ public class GenerationIntentions_Action extends GeneratedAction {
     if (groupItems.isEmpty()) {
       return null;
     }
+    final EditorContext editorContext = GenerationIntentions_Action.this.editorContext;
     Collections.sort(groupItems, new Comparator<Pair<Intention, SNode>>() {
       public int compare(Pair<Intention, SNode> p0, Pair<Intention, SNode> p1) {
         Intention intention1 = p0.getFirst();
         Intention intention2 = p1.getFirst();
         SNode node1 = p0.getSecond();
         SNode node2 = p1.getSecond();
-        return intention1.getDescription(node1, GenerationIntentions_Action.this.editorContext).compareTo(intention2.getDescription(node2, GenerationIntentions_Action.this.editorContext));
+        return intention1.getDescription(node1, editorContext).compareTo(intention2.getDescription(node2, editorContext));
       }
     });
     for (final Pair<Intention, SNode> pair : groupItems) {
-      BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), GenerationIntentions_Action.this.editorContext)) {
-        protected void doExecute(AnActionEvent p0) {
+      BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), editorContext)) {
+        protected void doExecute(AnActionEvent event) {
           final IntentionContext intentionContext = new IntentionContext();
           final GenerateIntention generateIntention = (GenerateIntention) pair.getFirst();
-          if (generateIntention.executeUI(pair.getSecond(), GenerationIntentions_Action.this.editorContext, intentionContext)) {
-            ModelAccess.instance().runCommandInEDT(new Runnable() {
+          if (generateIntention.executeUI(pair.getSecond(), editorContext, intentionContext)) {
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
-                generateIntention.execute(pair.getSecond(), GenerationIntentions_Action.this.editorContext, intentionContext);
+                generateIntention.execute(pair.getSecond(), editorContext, intentionContext);
               }
             });
           }
