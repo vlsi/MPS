@@ -9,6 +9,7 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.execution.filters.HyperlinkInfo;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
@@ -17,10 +18,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import org.jetbrains.annotations.Nullable;
 
 public class StacktraceUtil {
   private static String STRING_START = "at ";
@@ -60,7 +61,7 @@ public class StacktraceUtil {
     });
   }
 
-  private static SNode findNode(String className, final _FunctionTypes._return_P2_E0<? extends SNode, ? super DebugInfo, ? super SModelDescriptor> nodeGetter) {
+  private static SNode findNode(@NotNull String className, @NotNull final _FunctionTypes._return_P2_E0<? extends SNode, ? super DebugInfo, ? super SModelDescriptor> nodeGetter) {
     int lastDot = className.lastIndexOf(".");
     String pkg = (lastDot == -1 ?
       "" :
@@ -92,7 +93,8 @@ public class StacktraceUtil {
     return null;
   }
 
-  public static SNode getUnitNode(String className, final String file, final int position) {
+  @Nullable
+  public static SNode getUnitNode(@NotNull String className, final String file, final int position) {
     return findNode(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo result, SModelDescriptor descriptor) {
         return result.getUnitNodeForLine(file, position, descriptor.getSModel());
@@ -100,18 +102,20 @@ public class StacktraceUtil {
     });
   }
 
-  public static SNode getNode(String className, String file, int position) {
-    return getNodeOrVar(className, file, position, null);
-  }
-
-  public static SNode getNodeOrVar(String className, final String file, final int position, final String varName) {
+  @Nullable
+  public static SNode getNode(@NotNull String className, final String file, final int position) {
     return findNode(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo result, SModelDescriptor descriptor) {
-        if (varName != null) {
-          return result.getVarForLine(file, position, descriptor.getSModel(), varName);
-        } else {
-          return result.getNodeForLine(file, position, descriptor.getSModel());
-        }
+        return result.getNodeForLine(file, position, descriptor.getSModel());
+      }
+    });
+  }
+
+  @Nullable
+  public static SNode getVar(@NotNull String className, final String file, final int position, @NotNull final String varName) {
+    return findNode(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
+      public SNode invoke(DebugInfo result, SModelDescriptor descriptor) {
+        return result.getVarForLine(file, position, descriptor.getSModel(), varName);
       }
     });
   }
