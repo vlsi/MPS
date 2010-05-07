@@ -20,6 +20,7 @@ import jetbrains.mps.make.dependencies.graph.Graph.IDFSWalker;
 import jetbrains.mps.make.dependencies.graph.Graph;
 import jetbrains.mps.make.dependencies.graph.Graphs;
 import junit.framework.TestCase;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -118,22 +119,22 @@ public class GraphTestCase extends TestCase {
       return null;
     }
 
-    public void enterTree(IntVertex v) {
+    public void enterTree(@NotNull IntVertex v) {
       assertTrue("Not natural vertex order : " + v + " <= " + myLastTreeRoot, myLastTreeRoot < v.getID());
       myLastTreeRoot = v.getID();
     }
 
-    public void leaveTree(IntVertex v) {
+    public void leaveTree(@NotNull IntVertex v) {
       assertEquals(v.getID().intValue(), myLastTreeRoot);
     }
 
-    public void enter(IntVertex v) {
+    public void enter(@NotNull IntVertex v) {
       assertFalse("Can not enter same vertex twice.", myStack.contains(v.getID()));
       myStack.add(v.getID());
       mySum += v.getID();
     }
 
-    public void leave(IntVertex v) {
+    public void leave(@NotNull IntVertex v) {
       assertEquals("Is not valid bracket sequence.", myStack.get(myStack.size() - 1), v.getID());
       myStack.remove(myStack.size() - 1);
     }

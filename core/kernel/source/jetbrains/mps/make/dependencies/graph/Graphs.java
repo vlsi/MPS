@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.make.dependencies.graph;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.dependencies.graph.Graph.EmptyDFSWalker;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -113,26 +115,38 @@ public class Graphs {
     }
 
     @Override
-    public void leave(V v) {
+    public void leave(@NotNull V v) {
       myExitTimes.put(v, myTimer);
       myTimer++;
     }
   }
 
   private static class SCCSecondStageWalker<V extends IVertex> extends EmptyDFSWalker<VertexDecorator<V>> {
+    private static final Logger LOG = Logger.getLogger(SCCSecondStageWalker.class);
     private final List<Set<V>> myComponents = new LinkedList<Set<V>>();
     private LinkedHashSet<V> myCurrentComponent;
+    @NotNull
     private final Map<V, Integer> myExitTimes;
 
-    public SCCSecondStageWalker(Map<V, Integer> exitTimes) {
+    public SCCSecondStageWalker(@NotNull Map<V, Integer> exitTimes) {
       myExitTimes = exitTimes;
     }
 
     public Comparator<VertexDecorator<V>> getVertexComparator() {
       return new Comparator<VertexDecorator<V>>() {
-        public int compare(VertexDecorator<V> o1, VertexDecorator<V> o2) {
+        public int compare(@NotNull VertexDecorator<V> o1, @NotNull VertexDecorator<V> o2) {
           // minus, since we need to walk through vertexes in exit time descending order
-          return -myExitTimes.get(o1.getVertex()).compareTo(myExitTimes.get(o2.getVertex()));
+          Integer exitTime1 = myExitTimes.get(o1.getVertex());
+          Integer exitTime2 = myExitTimes.get(o2.getVertex());
+          if (exitTime1 == null) {
+            LOG.error("Exit time for vertex " + o1.getVertex() + " is null.");
+            return 1;
+          }
+          if (exitTime2 == null) {
+            LOG.error("Exit time for vertex " + o2.getVertex() + " is null.");
+            return -1;
+          }
+          return -exitTime1.compareTo(exitTime2);
         }
       };
     }
@@ -141,15 +155,15 @@ public class Graphs {
       return Collections.unmodifiableList(myComponents);
     }
 
-    public void enterTree(VertexDecorator<V> v) {
+    public void enterTree(@NotNull VertexDecorator<V> v) {
       myCurrentComponent = new LinkedHashSet<V>();
     }
 
-    public void leaveTree(VertexDecorator<V> v) {
+    public void leaveTree(@NotNull VertexDecorator<V> v) {
       myComponents.add(Collections.unmodifiableSet(myCurrentComponent));
     }
 
-    public void enter(VertexDecorator<V> v) {
+    public void enter(@NotNull VertexDecorator<V> v) {
       assert myCurrentComponent != null;
       myCurrentComponent.add(v.getVertex());
     }

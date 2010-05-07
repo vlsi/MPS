@@ -15,19 +15,25 @@
  */
 package jetbrains.mps.make.dependencies.graph;
 
+import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.*;
 
 public class Graph<V extends IVertex> {
-
+  private static final Logger LOG = Logger.getLogger(Graph.class);
   private final Set<V> myData = new LinkedHashSet<V>();
 
   public Graph() {
   }
 
-  public void add(V vertex) {
+  public void add(@NotNull V vertex) {
     myData.add(vertex);
     for (IVertex next : vertex.getNexts()) {
-      if (!myData.contains(next)) {
+      if (next == null) {
+        LOG.error("Next of vertex " + vertex + " is null.");
+      } else if (!myData.contains(next)) {
         add((V) next);
       }
     }
@@ -80,6 +86,7 @@ public class Graph<V extends IVertex> {
      *
      * @return comparator defining order in which to take new vertex.
      */
+    @Nullable
     Comparator<V> getVertexComparator();
 
     /**
@@ -87,28 +94,28 @@ public class Graph<V extends IVertex> {
      *
      * @param v - root vertex of the tree.
      */
-    void enterTree(V v);
+    void enterTree(@NotNull V v);
 
     /**
      * Leaving DFS-tree.
      *
      * @param v - root vertex of the tree.
      */
-    void leaveTree(V v);
+    void leaveTree(@NotNull V v);
 
     /**
      * Entering vertex.
      *
      * @param v - vertex.
      */
-    void enter(V v);
+    void enter(@NotNull V v);
 
     /**
      * Leaving vertex.
      *
      * @param v - vertex.
      */
-    void leave(V v);
+    void leave(@NotNull V v);
   }
 
   public static class EmptyDFSWalker<V extends IVertex> implements IDFSWalker<V> {
@@ -116,16 +123,16 @@ public class Graph<V extends IVertex> {
       return null;
     }
 
-    public void enterTree(V v) {
+    public void enterTree(@NotNull V v) {
     }
 
-    public void leaveTree(V v) {
+    public void leaveTree(@NotNull V v) {
     }
 
-    public void enter(V v) {
+    public void enter(@NotNull V v) {
     }
 
-    public void leave(V v) {
+    public void leave(@NotNull V v) {
     }
   }
 
