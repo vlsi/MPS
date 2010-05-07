@@ -37,7 +37,7 @@ public class EvaluationDialog extends BaseDialog {
   private EvaluationDialog.MyTree myTree;
   private EmbeddableEditor myEditor;
   private EmbeddableEditor myResultEditor;
-  private final EvaluationData myEvaluationData;
+  private final EvaluationLogic myEvaluationData;
 
   public EvaluationDialog(final IOperationContext context, JavaUiState uiState, DebugSession debugSession) {
     super(context.getMainFrame(), "Evaluate");
@@ -45,7 +45,7 @@ public class EvaluationDialog extends BaseDialog {
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
 
-    this.myEvaluationData = new EvaluationData(context, uiState, debugSession);
+    this.myEvaluationData = new EvaluationLogic(context, uiState, debugSession);
     myEvaluationData.addGenerationListener(new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode result) {
         EvaluationDialog.this.updateGenerationResultTab(result);

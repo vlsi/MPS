@@ -5474,7 +5474,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6185141366360269633">
-    <property name="name:3" value="EvaluationData" />
+    <property name="name:3" value="EvaluationLogic" />
     <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6185141366360333685">
       <property name="name:3" value="MyInMemoryJavaGenerationHandler" />
       <property name="nonStatic:3" value="true" />
@@ -6270,17 +6270,26 @@
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6185141366360320967">
           <link role="classifier:3" targetNodeId="9.~IOperationContext" resolveInfo="IOperationContext" />
         </node>
+        <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4736057464620515495">
+          <link role="annotation:3" targetNodeId="26.~NotNull" resolveInfo="NotNull" />
+        </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6185141366360271596">
         <property name="name:3" value="state" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6185141366360271598">
           <link role="classifier:3" targetNodeId="12.~JavaUiState" resolveInfo="JavaUiState" />
         </node>
+        <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4736057464620515496">
+          <link role="annotation:3" targetNodeId="26.~NotNull" resolveInfo="NotNull" />
+        </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6185141366360271599">
         <property name="name:3" value="debugSession" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6185141366360271601">
           <link role="classifier:3" targetNodeId="12.~DebugSession" resolveInfo="DebugSession" />
+        </node>
+        <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4736057464620515497">
+          <link role="annotation:3" targetNodeId="26.~NotNull" resolveInfo="NotNull" />
         </node>
       </node>
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6185141366360269636" />
@@ -6431,6 +6440,11 @@
                 </node>
               </node>
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="6185141366360330797" />
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="4736057464620515493">
+                <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="4736057464620515494">
+                  <property name="text:3" value="TODO not all languages have block statements; type of used statement should be specified via plugin" />
+                </node>
+              </node>
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6185141366360330972">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="6185141366360330974">
                   <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6185141366360330973">

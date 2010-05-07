@@ -230,7 +230,7 @@ public class TransformationUtil {
   }
 
   public static void checkForAnonimousClassCreations(SNode evaluator) {
-    // TODO in some cases, we might actually support anonimous classes creation 
+    // TODO in some cases, we might actually support anonymous classes creation 
     SNode evalMethod = findEvaluateMethod(evaluator);
     if (ListSequence.fromList(SNodeOperations.getDescendants(evalMethod, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, new String[]{})).isNotEmpty()) {
       throw new UnsupportedOperationException("Anonimous classes evaluation is not supported.");
