@@ -94,19 +94,17 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   }
 
   private void addToCache(final SNode root) {
-    boolean wereBlocked = NodeReadAccessCasterInEditor.areEventsBlocked();
-    try {
-      NodeReadAccessCasterInEditor.blockEvents();
+    NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
+      @Override
+      public void run() {
+        for (SNode child : root.getChildren()) {
+          addToCache(child);
+        }
 
-      for (SNode child : root.getChildren()) {
-        addToCache(child);
+        String conceptFqName = root.getConceptFqName();
+        add(conceptFqName, root);
       }
-
-      String conceptFqName = root.getConceptFqName();
-      add(conceptFqName, root);
-    } finally {
-      NodeReadAccessCasterInEditor.setEventsBlocked(wereBlocked);
-    }
+    });
   }
 
   private void removeFromCache(final SNode root) {

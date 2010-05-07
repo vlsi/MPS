@@ -17,63 +17,60 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 
 import java.util.Stack;
 
 public class NodeReadAccessCasterInEditor {
-  private static ThreadLocal<ListenersContainer> myListenersContainer = new ThreadLocal<ListenersContainer>();
+  private static ThreadLocal<ListenersContainer> ourListenersContainer = new ThreadLocal<ListenersContainer>();
 
   public static void setCellBuildNodeReadAccessListener(CellBuildNodeAccessListener listener) {
     getListenersContainer().addListener(listener);
   }
 
   public static void removeCellBuildNodeAccessListener() {
-    ListenersContainer listenersContainer = myListenersContainer.get();
+    ListenersContainer listenersContainer = ourListenersContainer.get();
     assert listenersContainer != null : "Removing not existing listener";
     listenersContainer.removeListener();
     if (listenersContainer.canBeDisposed()) {
-      myListenersContainer.set(null);
+      ourListenersContainer.set(null);
     }
   }
 
   public static String runEditorCellPropertyAccessAction(PropertyAccessor accessor) {
     EditorCellPropertyAccessAction propertyAccessAction = new EditorCellPropertyAccessAction(accessor);
-    ListenersContainer listenersContainer = myListenersContainer.get();
+    ListenersContainer listenersContainer = ourListenersContainer.get();
     return listenersContainer != null ? listenersContainer.runEditorCellPropertyAccessAction(propertyAccessAction) : propertyAccessAction.getPropertyValue();
   }
 
   public static void fireNodeReadAccessed(SNode node) {
-    ListenersContainer listenersContainer = myListenersContainer.get();
+    ListenersContainer listenersContainer = ourListenersContainer.get();
     if (listenersContainer != null) {
       listenersContainer.fireNodeReadAccessed(node);
     }
   }
 
   public static void firePropertyReadAccessed(SNode node, String propertyName, boolean propertyExistenceCheck) {
-    ListenersContainer listenersContainer = myListenersContainer.get();
+    ListenersContainer listenersContainer = ourListenersContainer.get();
     if (listenersContainer != null) {
       listenersContainer.firePropertyReadAccessed(node, propertyName, propertyExistenceCheck);
     }
   }
 
   public static void fireReferenceTargetReadAccessed(SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
-    ListenersContainer listenersContainer = myListenersContainer.get();
+    ListenersContainer listenersContainer = ourListenersContainer.get();
     if (listenersContainer != null) {
       listenersContainer.fireReferenceTargetReadAccessed(sourceNode, targetModelReference, targetNodeId);
     }
   }
 
   public static CellBuildNodeAccessListener getReadAccessListener() {
-    ListenersContainer listenersContainer = myListenersContainer.get();
+    ListenersContainer listenersContainer = ourListenersContainer.get();
     return listenersContainer == null ? null : listenersContainer.getActiveListener();
   }
 
   public static boolean areEventsBlocked() {
-    ListenersContainer listenersContainer = myListenersContainer.get();
+    ListenersContainer listenersContainer = ourListenersContainer.get();
     return listenersContainer != null && listenersContainer.areEventsBlocked();
   }
 
@@ -81,7 +78,7 @@ public class NodeReadAccessCasterInEditor {
     ListenersContainer listenersCotainer = getListenersContainer();
     listenersCotainer.setEventsBlocked(blocked);
     if (listenersCotainer.canBeDisposed()) {
-      myListenersContainer.set(null);
+      ourListenersContainer.set(null);
     }
   }
 
@@ -95,29 +92,35 @@ public class NodeReadAccessCasterInEditor {
 
   public static void runReadTransparentAction(Runnable r) {
     boolean wereBlocked = areEventsBlocked();
+    boolean wereBlockedNonEditor = NodeReadEventsCaster.areEventsBlocked();
+    NodeReadEventsCaster.setEventsBlocked(true);
     setEventsBlocked(true);
     try {
       r.run();
     } finally {
       setEventsBlocked(wereBlocked);
+      NodeReadEventsCaster.setEventsBlocked(wereBlockedNonEditor);
     }
   }
 
   public static <T> T runReadTransparentAction(final Computable<T> c) {
     boolean wereBlocked = areEventsBlocked();
+    boolean wereBlockedNonEditor = NodeReadEventsCaster.areEventsBlocked();
+    NodeReadEventsCaster.setEventsBlocked(true);
     setEventsBlocked(true);
     try {
       return c.compute();
     } finally {
       setEventsBlocked(wereBlocked);
+      NodeReadEventsCaster.setEventsBlocked(wereBlockedNonEditor);
     }
   }
 
   private static ListenersContainer getListenersContainer() {
-    ListenersContainer listeners = myListenersContainer.get();
+    ListenersContainer listeners = ourListenersContainer.get();
     if (listeners == null) {
       listeners = new ListenersContainer();
-      myListenersContainer.set(listeners);
+      ourListenersContainer.set(listeners);
     }
     return listeners;
   }
