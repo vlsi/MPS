@@ -276,9 +276,6 @@ public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
         if (!(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
           return false;
         }
-        if (SLinkOperations.getTarget(SNodeOperations.cast(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.structure.ThisExpression"), "classConcept", false) == null) {
-          return true;
-        }
         List<SNode> param = new ParameterScope(node).getNodes();
         List<SNode> vars = new LocalVariablesScope(node).getNodes();
         vars.addAll(param);
@@ -288,6 +285,9 @@ public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
             ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", true)).contains(SNodeOperations.getAncestor(var, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
             return false;
           }
+        }
+        if (SLinkOperations.getTarget(SNodeOperations.cast(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.structure.ThisExpression"), "classConcept", false) == null) {
+          return true;
         }
         SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(node);
         SNode declarationClassifier = SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
