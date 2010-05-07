@@ -23,7 +23,6 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
@@ -33,10 +32,12 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by: Sergey Dmitriev
@@ -52,6 +53,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private final RuleManager myRuleManager;
   private final DelayedChanges myDelayedChanges;
   private final Map<SNode, SNode> myNewToOldRoot = new HashMap<SNode, SNode>();
+  private final Map<SNode, Object> myAdditionalInputNodes = new ConcurrentHashMap<SNode, Object>();
   protected final ArrayList<SNode> myOutputRoots;
 
   private final boolean myIsStrict;
@@ -86,12 +88,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myAreMappingsReady = true;
 
     // optimization: no changes? quit
-    if(!isPrimary && !myChanged && myDelayedChanges.isEmpty() && !myRuleManager.hasWeavings()) {
+    if (!isPrimary && !myChanged && myDelayedChanges.isEmpty() && !myRuleManager.hasWeavings()) {
       return false;
     }
 
     // publish roots
-    for(SNode outputRoot : myOutputRoots) {
+    for (SNode outputRoot : myOutputRoots) {
       myOutputModel.addRoot(outputRoot);
     }
 
@@ -101,7 +103,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     ttrace.pop();
 
     // optimization: no changes? quit
-    if(!isPrimary && !myChanged && myDelayedChanges.isEmpty()) {
+    if (!isPrimary && !myChanged && myDelayedChanges.isEmpty()) {
       return false;
     }
 
@@ -110,7 +112,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myDelayedChanges.doAllChanges();
     ttrace.pop();
 
-    if(myChanged || isPrimary) {
+    if (myChanged || isPrimary) {
       // new unresolved references could appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
       ttrace.push("restoring references", false);
       revalidateAllReferences();
@@ -396,36 +398,26 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return result;
   }
 
-  private void invalidateReferencesInCopiedNode(SNode node) {
-    for (SReference reference : node.getReferencesIterable()) {
-      SNode targetNode = reference.getTargetNode();
-      if (targetNode == null) {
-        showErrorMessage(node, "broken reference '" + reference.getRole() + "' in copied node: " + node.getDebugText());
-        continue;
-      }
-      if (targetNode.getModel().equals(myInputModel)) {
-        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-          reference.getRole(),
-          node,
-          reference.getSourceNode(),
-          targetNode);
-        PostponedReference newReference = new PostponedReference(
-          refInfo,
-          this
-        );
-        node.replaceReference(reference, newReference);
-      }
+  List<SNode> copyNodeFromExternalNode(String mappingName, SNode templateNode, SNode inputNode, ReductionBlockingContext blockingContext) throws GenerationFailureException, GenerationCanceledException {
+    if (inputNode.isRegistered()) {
+      // TODO fail in strict mode
+      inputNode = CopyUtil.copy(inputNode);
+      // TODO inputNode.changeModel();
     }
-    for (SNode childNode : node.getChildrenIterable()) {
-      invalidateReferencesInCopiedNode(childNode);
-    }
-  }
 
-  SNode copyNodeFromExternalNode(SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
-    SNode target = CopyUtil.copy(inputNode);
+    synchronized (myAdditionalInputNodes) {
+      if (!myAdditionalInputNodes.containsKey(inputNode)) {
+        for (SNode n : inputNode.getDescendantsIterable(null, true)) {
+          myAdditionalInputNodes.put(n, Boolean.TRUE);
+        }
+      }
+    }
+
     // replace all references to input model => output model
-    invalidateReferencesInCopiedNode(target);
-    return target;
+    //invalidateReferencesInCopiedNode(inputNode);
+    //return Collections.singletonList(inputNode);
+
+    return copyNodeFromInputNode(mappingName, templateNode, inputNode, blockingContext, new boolean[]{false});
   }
 
   List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode, ReductionBlockingContext blockingContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
@@ -449,7 +441,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
     SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
-    if (inputNode.hasId()) {
+    if (inputNode.hasId() && inputNode.isRegistered()) {
       outputNode.setId(inputNode.getSNodeId());
     }
     blockReductionsForCopiedNode(inputNode, outputNode, blockingContext); // prevent infinite applying of the same reduction to the 'same' node.
@@ -467,11 +459,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     for (SReference inputReference : inputNode.getReferencesIterable()) {
-      if (inputReference instanceof DynamicReference || inputNode.getModel().equals(myInputModel) && inputReference.isExternal()) {
+      if (inputNode.isRegistered() && (inputReference instanceof DynamicReference || inputReference.isExternal())) {
         // dynamic & external references don't need validation => replace input model with output
         SModelReference targetModelReference = inputReference.isExternal() ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();
         if (targetModelReference == null) {
-          showErrorMessage(inputNode, templateNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText());
+          showErrorMessage(inputNode, templateNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (target model is null)");
           continue;
         }
 
@@ -500,7 +492,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         showErrorMessage(inputNode, templateNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText());
         continue;
       }
-      if (inputTargetNode.getModel().equals(myInputModel)) {
+      if (inputTargetNode.isRegistered() && inputTargetNode.getModel().equals(myInputModel) || myAdditionalInputNodes.containsKey(inputTargetNode)) {
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           inputReference.getRole(),
           outputNode,
@@ -511,8 +503,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           this
         );
         outputNode.addReference(reference);
-      } else {
+      } else if (inputTargetNode.isRegistered()) {
         outputNode.setReferent(inputReference.getRole(), inputTargetNode);
+      } else {
+        showErrorMessage(inputNode, templateNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (unregistered target node)");
       }
     }
 

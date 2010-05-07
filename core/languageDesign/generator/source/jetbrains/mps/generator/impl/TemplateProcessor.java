@@ -213,9 +213,9 @@ public class TemplateProcessor {
       List<SNode> newInputNodes = getNewInputNodes(nodeMacro, templateContext);
       for (SNode newInputNode : newInputNodes) {
         List<SNode> _outputNodes =
-          newInputNode.getModel() == myGenerator.getInputModel()
+          newInputNode.getModel() == myGenerator.getInputModel() && newInputNode.isRegistered()
             ? myGenerator.copyNodeFromInputNode(mappingName, templateNode, newInputNode, myBlockingContext, new boolean[]{false})
-            : Collections.singletonList(myGenerator.copyNodeFromExternalNode(newInputNode));
+            : myGenerator.copyNodeFromExternalNode(mappingName, templateNode, newInputNode, myBlockingContext);
         if (_outputNodes != null) {
           // check node languages : prevent 'input node' query from returning node, which language was not counted when
           // planning the generation steps.
