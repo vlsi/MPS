@@ -1086,7 +1086,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_5830155447076591819(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, false);
-    rule = (SNode) rule.getUserObject("origin");
+    SNode origin = (SNode) rule.getUserObject("origin");
+    if (origin != null) {
+      rule = origin;
+    }
     if (rule != null) {
       return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(rule, "applicableNodePatternField"), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
     }
@@ -1099,7 +1102,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_5830155447076592158(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, false);
-    rule = (SNode) rule.getUserObject("origin");
+    SNode origin = (SNode) rule.getUserObject("origin");
+    if (origin != null) {
+      rule = origin;
+    }
     return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(rule, "applicableNodePatternField"), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
   }
 
@@ -1109,7 +1115,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_5830155447076591993(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, false);
-    rule = (SNode) rule.getUserObject("origin");
+    SNode origin = (SNode) rule.getUserObject("origin");
+    if (origin != null) {
+      rule = origin;
+    }
     return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(rule, "applicableNodePatternField"), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
   }
 
