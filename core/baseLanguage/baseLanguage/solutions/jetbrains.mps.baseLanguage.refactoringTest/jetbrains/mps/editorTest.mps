@@ -7305,8 +7305,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="3956753173913342768">
-    <property name="package:4" value="bugTest.precedence" />
-    <property name="name:4" value="LT_Cast_PlusExpression" />
+    <property name="package:4" value="sideTransform.precedence" />
+    <property name="name:4" value="LT_PlusExpression_with_Cast" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="3956753173913342772">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3956753173913342773">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3956753173913342776">
@@ -7366,8 +7366,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="3956753173913378557">
-    <property name="package:4" value="bugTest.precedence" />
-    <property name="name:4" value="LT_Assignment_MapElement" />
+    <property name="package:4" value="sideTransform.precedence" />
+    <property name="name:4" value="LT_MapElement_with_Assignment" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="3956753173913378559">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3956753173913378560">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3956753173913378563">
@@ -7439,8 +7439,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="3956753173913385484">
-    <property name="package:4" value="bugTest.precedence" />
-    <property name="name:4" value="LT_PlusAssignment_Assignment" />
+    <property name="package:4" value="sideTransform.precedence" />
+    <property name="name:4" value="LT_Assignment_with_PlusAssignment" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="3956753173913385486">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3956753173913385487">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3956753173913385488">
@@ -7519,8 +7519,8 @@
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="3956753173913394401">
-    <property name="package:4" value="bugTest.precedence" />
-    <property name="name:4" value="LT_PlusExpression_SNodeTypeCast" />
+    <property name="package:4" value="sideTransform.precedence" />
+    <property name="name:4" value="LT_SNodeTypeCast_with_PlusExpression" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="3956753173913414192">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3956753173913414193">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3956753173913414196">
@@ -7579,6 +7579,73 @@
     </node>
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3956753173913414219">
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.TypeKeyStatement:4" id="3956753173913414220">
+        <property name="keys:4" value="+ " />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1413941122942910870">
+    <property name="package:4" value="sideTransform.precedence" />
+    <property name="name:4" value="LT_PostfixIncrement_with_Plus" />
+    <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1413941122942912211">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1413941122942912212">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1413941122942920655">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1413941122942920656">
+            <property name="name:3" value="a" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1413941122942920657" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1413941122942920659">
+              <property name="value:3" value="1" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1413941122942920661">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression:3" id="1413941122942920663">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1413941122942920664">
+              <link role="variableDeclaration:3" targetNodeId="1413941122942920656" resolveInfo="a" />
+              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1413941122942920673">
+                <property name="caretPosition:4" value="0" />
+                <property name="useLabelSelection:4" value="true" />
+                <property name="selectionStart:4" value="0" />
+                <property name="selectionEnd:4" value="0" />
+                <property name="cellId:4" value="property_name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1413941122942912213">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1413941122942912214">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1413941122942920666">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1413941122942920667">
+            <property name="name:3" value="a" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1413941122942920668" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1413941122942920669">
+              <property name="value:3" value="1" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1413941122942920670">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1413941122942920674">
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1413941122942920676">
+              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1413941122942920677">
+                <property name="isLastPosition:4" value="true" />
+                <property name="useLabelSelection:4" value="true" />
+                <property name="selectionStart:4" value="1" />
+                <property name="selectionEnd:4" value="1" />
+                <property name="cellId:4" value="Custom_1ltshm_a0" />
+              </node>
+            </node>
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression:3" id="1413941122942920671">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1413941122942920672">
+                <link role="variableDeclaration:3" targetNodeId="1413941122942920667" resolveInfo="a" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1413941122942920678">
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.TypeKeyStatement:4" id="1413941122942920679">
         <property name="keys:4" value="+ " />
       </node>
     </node>
