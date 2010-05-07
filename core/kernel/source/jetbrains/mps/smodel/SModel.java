@@ -601,7 +601,7 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public Set<ModuleReference> getLanguageRefs(IScope scope) {
-    ModelAccess.assertLegalRead();
+//    ModelAccess.assertLegalRead();
 
     Set<ModuleReference> result = new HashSet<ModuleReference>(myLanguages.size() + myDevKits.size() * 8);
     result.addAll(myLanguages);
