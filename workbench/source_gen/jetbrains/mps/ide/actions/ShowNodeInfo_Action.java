@@ -84,9 +84,11 @@ public class ShowNodeInfo_Action extends GeneratedAction {
       final Point point = new Point(ShowNodeInfo_Action.this.cell.getX() + ShowNodeInfo_Action.this.cell.getWidth(), ShowNodeInfo_Action.this.cell.getY());
       SwingUtilities.convertPointToScreen(point, ShowNodeInfo_Action.this.editor);
       // Displaying this action in .invokeLater call to let popup menu be disposed first ( <node> will be diposed immediately by corresponding events otherwise) 
+      final Frame frame = ShowNodeInfo_Action.this.frame;
+      final SNode node = ShowNodeInfo_Action.this.node;
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          new NodeInformationDialog(ShowNodeInfo_Action.this.frame, point, ShowNodeInfo_Action.this.node).setVisible(true);
+          new NodeInformationDialog(frame, point, node).setVisible(true);
         }
       });
     } catch (Throwable t) {
