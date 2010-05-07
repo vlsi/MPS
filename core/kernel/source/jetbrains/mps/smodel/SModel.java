@@ -604,6 +604,7 @@ public class SModel implements Iterable<SNode> {
     ModelAccess.assertLegalRead();
 
     Set<ModuleReference> result = new HashSet<ModuleReference>(myLanguages.size() + myDevKits.size() * 8);
+    result.addAll(myLanguages);
     for (ModuleReference dk : myDevKits) {
       DevKit devKit = scope.getDevKit(dk);
       if (devKit != null) {
