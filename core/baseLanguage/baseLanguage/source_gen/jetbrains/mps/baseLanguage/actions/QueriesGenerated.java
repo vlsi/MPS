@@ -2175,6 +2175,11 @@ __switch__:
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode source = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
+              // since BaseAssignmentExpressions are right-associative we should parent 
+              // BaseAssignmentExpressions or it's lValue depenting on current position 
+              if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression") && SNodeOperations.getContainingLinkDeclaration(source) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", "lValue")) {
+                source = SNodeOperations.cast(SNodeOperations.getParent(source), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression");
+              }
               SNodeOperations.replaceWithAnother(source, result);
               SLinkOperations.setTarget(result, "rValue", source, true);
               return result;

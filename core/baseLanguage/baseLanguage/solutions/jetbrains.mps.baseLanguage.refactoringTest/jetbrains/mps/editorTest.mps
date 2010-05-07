@@ -7488,10 +7488,10 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3956753173913385517" />
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3956753173913385518">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression:3" id="3956753173913385523">
-            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="3956753173913385524">
-              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="3956753173913385526">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="577599984096529167">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression:3" id="577599984096529173">
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="577599984096529174">
+              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="577599984096529176">
                 <property name="isLastPosition:4" value="true" />
                 <property name="useLabelSelection:4" value="true" />
                 <property name="selectionStart:4" value="0" />
@@ -7499,11 +7499,11 @@
                 <property name="cellId:4" value="Custom_1ltshm_a0" />
               </node>
             </node>
-            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="3956753173913385519">
-              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3956753173913385520">
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="577599984096529169">
+              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="577599984096529172">
                 <property name="value:3" value="10" />
               </node>
-              <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3956753173913385521">
+              <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="577599984096529168">
                 <link role="variableDeclaration:3" targetNodeId="3956753173913385513" resolveInfo="i" />
               </node>
             </node>
@@ -7647,6 +7647,140 @@
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1413941122942920678">
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.TypeKeyStatement:4" id="1413941122942920679">
         <property name="keys:4" value="+ " />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1413941122942930891">
+    <property name="package:4" value="sideTransform.precedence" />
+    <property name="name:4" value="LT_PlusExpression_with_Plus" />
+    <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1413941122942931504">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1413941122942931505">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1413941122942932312">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1413941122942932314">
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1413941122942932313">
+              <property name="value:3" value="1" />
+              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1413941122942932333">
+                <property name="caretPosition:4" value="0" />
+                <property name="useLabelSelection:4" value="true" />
+                <property name="selectionStart:4" value="0" />
+                <property name="selectionEnd:4" value="0" />
+                <property name="cellId:4" value="property_value" />
+              </node>
+            </node>
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1413941122942932317">
+              <property name="value:3" value="2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1413941122942931506">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1413941122942931507">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1413941122942932322">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1413941122942932355">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1413941122942932358">
+              <property name="value:3" value="2" />
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1413941122942932362">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1413941122942932364">
+                <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1413941122942932365">
+                  <property name="isLastPosition:4" value="true" />
+                  <property name="useLabelSelection:4" value="true" />
+                  <property name="selectionStart:4" value="1" />
+                  <property name="selectionEnd:4" value="1" />
+                  <property name="cellId:4" value="Custom_1ltshm_a0" />
+                </node>
+              </node>
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1413941122942932351">
+                <property name="value:3" value="1" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1413941122942932342">
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.TypeKeyStatement:4" id="1413941122942932343">
+        <property name="keys:4" value="+ " />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="577599984096529177">
+    <property name="package:4" value="sideTransform.precedence" />
+    <property name="name:4" value="LT_AssignmentRValue_with_PlusAssignment" />
+    <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="577599984096529179">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="577599984096529180">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="577599984096529183">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="577599984096529184">
+            <property name="name:3" value="i" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="577599984096529185" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="577599984096529187">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="577599984096529188">
+            <property name="name:3" value="j" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="577599984096529189" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="577599984096529207">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="577599984096529209">
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="577599984096529212">
+              <property name="value:3" value="10" />
+              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="577599984096529224">
+                <property name="caretPosition:4" value="0" />
+                <property name="useLabelSelection:4" value="true" />
+                <property name="selectionStart:4" value="0" />
+                <property name="selectionEnd:4" value="0" />
+                <property name="cellId:4" value="property_value" />
+              </node>
+            </node>
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="577599984096529208">
+              <link role="variableDeclaration:3" targetNodeId="577599984096529184" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="577599984096529181">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="577599984096529182">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="577599984096529214">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="577599984096529215">
+            <property name="name:3" value="i" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="577599984096529216" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="577599984096529217">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="577599984096529218">
+            <property name="name:3" value="j" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="577599984096529219" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="577599984096529220">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="577599984096529221">
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression:3" id="577599984096529228">
+              <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="577599984096529229">
+                <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="577599984096529231">
+                  <property name="isLastPosition:4" value="true" />
+                  <property name="useLabelSelection:4" value="true" />
+                  <property name="selectionStart:4" value="0" />
+                  <property name="selectionEnd:4" value="0" />
+                  <property name="cellId:4" value="Custom_1ltshm_a0" />
+                </node>
+              </node>
+              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="577599984096529222">
+                <property name="value:3" value="10" />
+              </node>
+            </node>
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="577599984096529223">
+              <link role="variableDeclaration:3" targetNodeId="577599984096529215" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="577599984096529232">
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.TypeKeyStatement:4" id="577599984096529233">
+        <property name="keys:4" value="+=" />
       </node>
     </node>
   </node>
