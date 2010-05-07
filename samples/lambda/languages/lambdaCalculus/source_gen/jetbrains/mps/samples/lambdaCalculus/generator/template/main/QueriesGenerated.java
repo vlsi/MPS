@@ -11,7 +11,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction_Behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -98,7 +98,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2167053794906731150(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Sequence.fromIterable(LambdaAbstraction_Behavior.call_getAllVariables_5066394162984559815(_context.getNode())).count();
+    return ListSequence.fromList(LambdaAbstraction_Behavior.call_getAllVariables_5066394162984559815(_context.getNode())).count();
   }
 
   public static Object propertyMacro_GetPropertyValue_2985097847315916808(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -222,7 +222,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_3777111214477850524(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Sequence.fromIterable(SLinkOperations.getTargets(_context.getNode(), "expressions", true)).last();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "expressions", true)).last();
   }
 
   public static SNode sourceNodeQuery_1888188276221892656(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
