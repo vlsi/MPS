@@ -212,14 +212,14 @@ public class FileGenerationManager implements ApplicationComponent {
     Map<SNode, PositionInfo> positions = result.getPositions();
     Map<SNode, ScopePositionInfo> scopePositions = result.getScopePositions();
     Map<SNode, UnitPositionInfo> unitPositions = result.getUnitPositions();
-    if (positions == null && scopePositions == null) {
+    if (positions == null && scopePositions == null && unitPositions == null) {
       return;
     }
     String fileName = outputNode.getName() + ".java";
     if (positions != null) {
       for (SNode out : positions.keySet()) {
         SNode input = out;
-        input = getOriginalInputNode(input);
+        input = getOriginalInputNodeForNearestParent(input);
         if (input != null && !(input.isDisposed())) {
           PositionInfo positionInfo = result.getPositions().get(out);
           positionInfo.setNodeId(input.getId());
@@ -232,7 +232,7 @@ public class FileGenerationManager implements ApplicationComponent {
     if (scopePositions != null) {
       for (SNode out : scopePositions.keySet()) {
         SNode input = out;
-        input = getOriginalInputNode(input);
+        input = getOriginalInputNodeForNearestParent(input);
         if (input != null && !(input.isDisposed())) {
           ScopePositionInfo positionInfo = result.getScopePositions().get(out);
           positionInfo.setNodeId(input.getId());
@@ -257,7 +257,7 @@ public class FileGenerationManager implements ApplicationComponent {
     if (unitPositions != null) {
       for (SNode out : unitPositions.keySet()) {
         SNode input = out;
-        input = getOriginalInputNode(input);
+        input = getOriginalInputNodeForNearestParent(input);
         if (input != null && !(input.isDisposed())) {
           UnitPositionInfo positionInfo = result.getUnitPositions().get(out);
           positionInfo.setNodeId(input.getId());
@@ -268,6 +268,17 @@ public class FileGenerationManager implements ApplicationComponent {
         }
       }
     }
+  }
+
+  private SNode getOriginalInputNodeForNearestParent(SNode output) {
+    while (output != null) {
+      SNode node = getOriginalInputNode(output);
+      if (node != null) {
+        return node;
+      }
+      output = output.getParent();
+    }
+    return null;
   }
 
   private SNode getOriginalInputNode(SNode input) {
