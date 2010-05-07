@@ -248,7 +248,13 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     Set<String> children;
     synchronized (myDescendantsLock) {
       if (!myDescendantsCachesAreValid) {
-        rebuildDescendantsCaches();
+        NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
+          @Override
+          public void run() {
+            rebuildDescendantsCaches();
+          }
+        });
+
       }
       children = myDirectDescendantsCache.get(congeptFQName);
     }
