@@ -25,7 +25,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScope;
-import javax.swing.SwingUtilities;
 import java.awt.Rectangle;
 import java.awt.Point;
 import com.intellij.ui.awt.RelativePoint;
@@ -141,14 +140,10 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
         }
       });
 
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          Rectangle cellBounds = GoToInheritedClassifier_Action.this.editorContext.getSelectedCell().getBounds();
-          Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
-          RelativePoint relPpoint = new RelativePoint(GoToInheritedClassifier_Action.this.editorComponent, point);
-          GoToHelper.showInheritedClassesMenu(nodes, relPpoint, GoToInheritedClassifier_Action.this.project);
-        }
-      });
+      Rectangle cellBounds = GoToInheritedClassifier_Action.this.editorContext.getSelectedCell().getBounds();
+      Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
+      RelativePoint relPpoint = new RelativePoint(GoToInheritedClassifier_Action.this.editorComponent, point);
+      GoToHelper.showInheritedClassesMenu(nodes, relPpoint, GoToInheritedClassifier_Action.this.project);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToInheritedClassifier", t);
     }

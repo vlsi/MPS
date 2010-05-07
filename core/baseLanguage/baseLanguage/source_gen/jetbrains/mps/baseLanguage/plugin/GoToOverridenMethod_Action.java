@@ -20,7 +20,6 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
-import javax.swing.SwingUtilities;
 import com.intellij.ui.awt.RelativePoint;
 import java.awt.event.MouseEvent;
 import java.awt.Rectangle;
@@ -121,23 +120,19 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
           });
         }
       });
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          RelativePoint relativePoint;
-          if (event.getInputEvent() instanceof MouseEvent) {
-            relativePoint = new RelativePoint((MouseEvent) event.getInputEvent());
-          } else {
-            Rectangle cellBounds = GoToOverridenMethod_Action.this.editorContext.getSelectedCell().getBounds();
-            Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
-            relativePoint = new RelativePoint(GoToOverridenMethod_Action.this.editorComponent, point);
-          }
-          GoToHelper.showOverridenMethodsMenu(SetSequence.fromSet(overridenMethods.value).select(new ISelector<Tuples._2<SNode, SNode>, SNode>() {
-            public SNode select(Tuples._2<SNode, SNode> it) {
-              return it._0();
-            }
-          }).toListSequence(), relativePoint, GoToOverridenMethod_Action.this.project);
+      RelativePoint relativePoint;
+      if (event.getInputEvent() instanceof MouseEvent) {
+        relativePoint = new RelativePoint((MouseEvent) event.getInputEvent());
+      } else {
+        Rectangle cellBounds = GoToOverridenMethod_Action.this.editorContext.getSelectedCell().getBounds();
+        Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
+        relativePoint = new RelativePoint(GoToOverridenMethod_Action.this.editorComponent, point);
+      }
+      GoToHelper.showOverridenMethodsMenu(SetSequence.fromSet(overridenMethods.value).select(new ISelector<Tuples._2<SNode, SNode>, SNode>() {
+        public SNode select(Tuples._2<SNode, SNode> it) {
+          return it._0();
         }
-      });
+      }).toListSequence(), relativePoint, GoToOverridenMethod_Action.this.project);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToOverridenMethod", t);
     }
