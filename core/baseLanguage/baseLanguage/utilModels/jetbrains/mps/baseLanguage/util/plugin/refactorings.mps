@@ -20351,7 +20351,7 @@
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8492459591399169788" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399169789">
-      <property name="name:3" value="myOperationCotext" />
+      <property name="name:3" value="myOperationContext" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399169790" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8492459591399169791">
         <link role="classifier:3" targetNodeId="10.~IOperationContext" resolveInfo="IOperationContext" />
@@ -20756,7 +20756,14 @@
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8492459591399169978">
               <link role="baseMethodDeclaration:3" targetNodeId="31.~RefactoringView.showRefactoringView(jetbrains.mps.refactoring.framework.RefactoringContext,jetbrains.mps.refactoring.RefactoringViewAction,jetbrains.mps.ide.findusages.model.SearchResults,boolean):void" resolveInfo="showRefactoringView" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8492459591399169979" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2703085928134209196">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="2703085928134209195">
+                  <link role="variableDeclaration:3" targetNodeId="8492459591399169789" resolveInfo="myOperationContext" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2703085928134209200">
+                  <link role="baseMethodDeclaration:3" targetNodeId="10.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
+                </node>
+              </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8492459591399169980">
                 <link role="variableDeclaration:3" targetNodeId="8492459591399169950" resolveInfo="refactoringViewAction" />
               </node>

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.refactoring;
 
-import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder.ConstantHolder;
@@ -29,7 +28,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -49,20 +47,27 @@ public abstract class RefactoringViewItem {
   private JButton myDoRefactorButton;
   private JButton myCancelButton;
   @Nullable
-  private RefactoringContext myRefactoringContext;
+  private RefactoringContext myRefactoringContext = null;
   private JCheckBox myGenerateModelsCheckbox;
   private JCheckBox myIsLocalCheckbox;
 
-  //first parameter is null - no checkboxes will be shown
-  public RefactoringViewItem(@Nullable RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
+  public RefactoringViewItem(@NotNull RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
     myRefactoringContext = refactoringContext;
+    init(refactoringViewAction, searchResults, hasModelsToGenerate, refactoringContext.getSelectedProject());
+  }
+
+  public RefactoringViewItem(Project p, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
+    init(refactoringViewAction, searchResults, hasModelsToGenerate, p);
+  }
+
+  private void init(RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate, final Project project) {
     myRefactoringViewAction = refactoringViewAction;
     mySearchResults = searchResults;
     if (mySearchResults == null) {
       throw new IllegalArgumentException("search result is null");
     }
     myPanel = new JPanel(new BorderLayout());
-    myUsagesView = new UsagesView(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), new ViewOptions()) {
+    myUsagesView = new UsagesView(project, new ViewOptions()) {
       public void close() {
         RefactoringViewItem.this.close();
       }
@@ -75,10 +80,10 @@ public abstract class RefactoringViewItem {
         return null;
       }
 
-      public void read(Element element, Project project) {
+      public void read(Element element, Project p) {
       }
 
-      public void write(Element element, Project project) {
+      public void write(Element element, Project p) {
       }
     };
     myButtonsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -106,45 +111,29 @@ public abstract class RefactoringViewItem {
     myButtonsPanel.add(myCancelButton);
 
     if (myRefactoringContext != null) {
-      if (hasModelsToGenerate) {
-        myGenerateModelsCheckbox = new JCheckBox("generate models");
-        myGenerateModelsCheckbox.setSelected(true);
-        myButtonsPanel.add(myGenerateModelsCheckbox);
-      }
-
-      if (refactoringContext.getRefactoring() instanceof ILoggableRefactoring) {
-        myIsLocalCheckbox = new JCheckBox("is local");
-        myIsLocalCheckbox.setSelected(false);
-        myButtonsPanel.add(myIsLocalCheckbox);
-      }
+      addCheckboxes(hasModelsToGenerate);
     }
 
     myPanel.add(myUsagesView.getComponent(), BorderLayout.CENTER);
     myPanel.add(myButtonsPanel, BorderLayout.SOUTH);
 
     final FocusTraversalPolicy ftp = myPanel.getFocusTraversalPolicy();
-    myPanel.setFocusTraversalPolicy(new FocusTraversalPolicy() {
-      public Component getComponentAfter(Container aContainer, Component aComponent) {
-        return ftp.getComponentAfter(aContainer, aComponent);
-      }
+    myPanel.setFocusTraversalPolicy(new MyFocusTraversalPolicy(ftp));
+  }
 
-      public Component getComponentBefore(Container aContainer, Component aComponent) {
-        return ftp.getComponentBefore(aContainer, aComponent);
-      }
+  private void addCheckboxes(boolean hasModelsToGenerate) {
+    if (hasModelsToGenerate) {
+      myGenerateModelsCheckbox = new JCheckBox("generate models");
+      myGenerateModelsCheckbox.setSelected(true);
+      myButtonsPanel.add(myGenerateModelsCheckbox);
+    }
 
-      public Component getFirstComponent(Container aContainer) {
-        return ftp.getFirstComponent(aContainer);
-      }
-
-      public Component getLastComponent(Container aContainer) {
-        return ftp.getLastComponent(aContainer);
-      }
-
-      @Override
-      public Component getDefaultComponent(Container aContainer) {
-        return myDoRefactorButton;
-      }
-    });
+    //noinspection ConstantConditions
+    if (myRefactoringContext.getRefactoring() instanceof ILoggableRefactoring) {
+      myIsLocalCheckbox = new JCheckBox("is local");
+      myIsLocalCheckbox.setSelected(false);
+      myButtonsPanel.add(myIsLocalCheckbox);
+    }
   }
 
   public JComponent getComponent() {
@@ -200,5 +189,33 @@ public abstract class RefactoringViewItem {
         myDoRefactorButton.requestFocus();
       }
     });
+  }
+
+  private class MyFocusTraversalPolicy extends FocusTraversalPolicy {
+    private final FocusTraversalPolicy myFtp;
+
+    public MyFocusTraversalPolicy(FocusTraversalPolicy ftp) {
+      myFtp = ftp;
+    }
+
+    public Component getComponentAfter(Container aContainer, Component aComponent) {
+      return myFtp.getComponentAfter(aContainer, aComponent);
+    }
+
+    public Component getComponentBefore(Container aContainer, Component aComponent) {
+      return myFtp.getComponentBefore(aContainer, aComponent);
+    }
+
+    public Component getFirstComponent(Container aContainer) {
+      return myFtp.getFirstComponent(aContainer);
+    }
+
+    public Component getLastComponent(Container aContainer) {
+      return myFtp.getLastComponent(aContainer);
+    }
+
+    public Component getDefaultComponent(Container aContainer) {
+      return myDoRefactorButton;
+    }
   }
 }

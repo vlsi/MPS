@@ -24,7 +24,7 @@ public class InlineMethodDialogModel {
   private MethodCallAdapter myCall;
   private boolean myIsContainsSelfCalls;
   private boolean myIsPreview;
-  private IOperationContext myOperationCotext;
+  private IOperationContext myOperationContext;
 
   public InlineMethodDialogModel(final SNode node, IOperationContext operationContext) {
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -37,7 +37,7 @@ public class InlineMethodDialogModel {
         }
       }
     });
-    this.myOperationCotext = operationContext;
+    this.myOperationContext = operationContext;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         InlineMethodDialogModel.this.myIsContainsSelfCalls = InlineMethodRefactoringAnalyzer.isContainsSelfCalls(InlineMethodDialogModel.this.myMethod);
@@ -47,7 +47,7 @@ public class InlineMethodDialogModel {
 
   private void findUssages() {
     if (this.myForAll) {
-      ProgressManager.getInstance().run(new Task.Modal(InlineMethodDialogModel.this.myOperationCotext.getProject(), "Searching for ussages", true) {
+      ProgressManager.getInstance().run(new Task.Modal(InlineMethodDialogModel.this.myOperationContext.getProject(), "Searching for ussages", true) {
         public void run(@NotNull final ProgressIndicator indiactor) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
@@ -63,7 +63,7 @@ public class InlineMethodDialogModel {
     String problems = this.findProblems();
     if (problems.length() > 0) {
       this.myIsPreview = false;
-      ProblemsDialog dialog = new ProblemsDialog(this.myOperationCotext.getMainFrame(), problems, this);
+      ProblemsDialog dialog = new ProblemsDialog(this.myOperationContext.getMainFrame(), problems, this);
       dialog.showDialog();
     } else {
       this.doRefactoring();
@@ -91,7 +91,7 @@ public class InlineMethodDialogModel {
     String problems = this.findProblems();
     if (problems.length() > 0) {
       this.myIsPreview = true;
-      ProblemsDialog dialog = new ProblemsDialog(this.myOperationCotext.getMainFrame(), problems, this);
+      ProblemsDialog dialog = new ProblemsDialog(this.myOperationContext.getMainFrame(), problems, this);
       dialog.showDialog();
     } else {
       this.doPreview();
@@ -114,9 +114,9 @@ public class InlineMethodDialogModel {
     this.findUssages();
     InlineMethodRefactoringAnalyzer analyzer;
     if (this.myCall == null) {
-      analyzer = new InlineMethodRefactoringAnalyzer(this.myOperationCotext, null, this.myMethod);
+      analyzer = new InlineMethodRefactoringAnalyzer(this.myOperationContext, null, this.myMethod);
     } else {
-      analyzer = new InlineMethodRefactoringAnalyzer(this.myOperationCotext, this.myCall.getNode(), this.myMethod);
+      analyzer = new InlineMethodRefactoringAnalyzer(this.myOperationContext, this.myCall.getNode(), this.myMethod);
     }
     return analyzer.findProblems(this.myForAll, this.myResults);
   }
@@ -144,6 +144,6 @@ public class InlineMethodDialogModel {
         InlineMethodDialogModel.this.doRefactoring();
       }
     };
-    this.myOperationCotext.getComponent(RefactoringView.class).showRefactoringView(null, refactoringViewAction, this.myResults, false);
+    this.myOperationContext.getComponent(RefactoringView.class).showRefactoringView(myOperationContext.getProject(), refactoringViewAction, this.myResults, false);
   }
 }

@@ -49,24 +49,41 @@ public class RefactoringView extends TabbedUsagesTool {
     return true;
   }
       
-  //first parameter is null - no checkboxes will be shown
-  public void showRefactoringView(@Nullable RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction,
+  public void showRefactoringView(RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction,
                                   SearchResults searchResults, boolean hasModelsToGenerate) {
-    final RefactoringViewItem refactoringViewItem = new RefactoringViewItem(refactoringContext, refactoringViewAction, searchResults, hasModelsToGenerate){
-      public void close() {
-        int index = myRefactoringViews.indexOf(this);
-        RefactoringView.this.closeTab(index);
-      }
-    };
-
+    RefactoringViewItem refactoringViewItem = new MyRefactoringViewItem(refactoringContext, refactoringViewAction, searchResults, hasModelsToGenerate);
     myRefactoringViews.add(refactoringViewItem);
-    String tabCaption = refactoringContext == null ? "refactoring" : refactoringContext.getRefactoring().getUserFriendlyName();
-    addContent(refactoringViewItem.getComponent(), tabCaption, null, false);
+    addContent(refactoringViewItem.getComponent(), refactoringContext.getRefactoring().getUserFriendlyName(), null, false);
+    refactoringViewItem.initUsagesView();
+    openTool(true);
+  }
+
+  public void showRefactoringView(Project p, @NotNull RefactoringViewAction refactoringViewAction,
+                                  SearchResults searchResults, boolean hasModelsToGenerate) {
+
+    RefactoringViewItem refactoringViewItem = new MyRefactoringViewItem(p, refactoringViewAction, searchResults, hasModelsToGenerate);
+    myRefactoringViews.add(refactoringViewItem);
+    addContent(refactoringViewItem.getComponent(), "refactoring", null, false);
     refactoringViewItem.initUsagesView();
     openTool(true);
   }
 
   public int getPriority() {
     return -1;
+  }
+
+  private class MyRefactoringViewItem extends RefactoringViewItem {
+    public MyRefactoringViewItem(RefactoringContext refactoringContext, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
+      super(refactoringContext, refactoringViewAction, searchResults, hasModelsToGenerate);
+    }
+
+    public MyRefactoringViewItem(Project p, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
+      super(p, refactoringViewAction, searchResults, hasModelsToGenerate);
+    }
+
+    public void close() {
+      int index = myRefactoringViews.indexOf(this);
+      RefactoringView.this.closeTab(index);
+    }
   }
 }
