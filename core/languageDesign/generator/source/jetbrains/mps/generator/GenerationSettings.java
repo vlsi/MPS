@@ -225,7 +225,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     private boolean myStrictMode = false;
     private int myNumberOfParallelThreads = 2;
     private int myPerformanceTracingLevel = TRACE_OFF;
-    private int myNumberOfModelsToKeep = 0;
+    private int myNumberOfModelsToKeep = -1;
     private boolean myShowInfo = false;
     private boolean myShowWarnings = true;
     private boolean myKeepModelsWithWarnings = true;
