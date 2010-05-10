@@ -61,10 +61,7 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
     }
 
     if (myMessageTarget.getTarget() == MessageTargetEnum.DELETED_CHILD) {
-      if (((DeletedNodeMessageTarget) myMessageTarget).getNextChildIndex() == -1) {
-        return getCell(editor) == cell;
-      }
-      return cell.isBigCell() && getCell(editor) == cell;
+      return getCell(editor) == cell;
     }
 
     return false;
@@ -112,16 +109,14 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
       }
     }
     if (myMessageTarget.getTarget() == MessageTargetEnum.DELETED_CHILD) {
-      if (((DeletedNodeMessageTarget) myMessageTarget).getNextChildIndex() == -1) {
-        EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
-          @Override
-          public boolean met(EditorCell cell) {
-            return myMessageTarget.getRole().equals(cell.getRole());
-          }
-        }, true), true);
-        if (child != null) {
-          return child;
+      EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
+        @Override
+        public boolean met(EditorCell cell) {
+          return myMessageTarget.getRole().equals(cell.getRole());
         }
+      }, true), true);
+      if (child != null) {
+        return child;
       }
       return rawCell;
     }
