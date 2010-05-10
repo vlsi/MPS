@@ -43,8 +43,8 @@ class GenerationSettingsPreferencesPage {
   private JCheckBox myShowInfo = new JCheckBox("Show informational messages");
   private JCheckBox myShowWarnings = new JCheckBox("Show warnings");
   private JCheckBox myKeepModelsWithWarnings = new JCheckBox("Keep transient models with warnings");
-  private JCheckBox myLimitNumberOfModels = new JCheckBox("Keep no more than");
-  private JFormattedTextField myNumberOfModelsToKeep = new JFormattedTextField(new RangeDecimalFormatter(1,128));
+  private JCheckBox myLimitNumberOfModels = new JCheckBox("Maximum number of transient models to keep:");
+  private JFormattedTextField myNumberOfModelsToKeep = new JFormattedTextField(new RangeDecimalFormatter(0,1000));
 
   private GenerationSettings myGenerationSettings;
 
@@ -150,7 +150,7 @@ class GenerationSettingsPreferencesPage {
     myShowWarnings.addChangeListener(listener);
     c.ipady = 0;
     panel.add(createLinkErrorsGroup(), c);
-    panel.setBorder(BorderFactory.createTitledBorder("Reporting"));
+    panel.setBorder(BorderFactory.createTitledBorder("Error reporting"));
     return panel;
   }
 
@@ -165,11 +165,10 @@ class GenerationSettingsPreferencesPage {
       }
     };
     myLimitNumberOfModels.addChangeListener(listener);
-    c.insets.left = 0;
-    myNumberOfModelsToKeep.setColumns(2);
+    group.add(myLimitNumberOfModels, c);
+    myNumberOfModelsToKeep.setColumns(3);
+    c.insets.left = 5;
     group.add(myNumberOfModelsToKeep, c);
-    c.insets.left = 3;
-    group.add(new JLabel("transient models"), c);
     c.weightx = 1;
     group.add(new JPanel(), c);
     return group;
@@ -220,7 +219,7 @@ class GenerationSettingsPreferencesPage {
   }
 
   private int getNumberOfModelsToKeep() {
-    return myLimitNumberOfModels.isSelected() ? (Integer) myNumberOfModelsToKeep.getValue() : 0;
+    return myLimitNumberOfModels.isSelected() ? (Integer) myNumberOfModelsToKeep.getValue() : -1;
   }
 
   public boolean isModified() {
@@ -252,9 +251,9 @@ class GenerationSettingsPreferencesPage {
     myShowWarnings.setSelected(myGenerationSettings.isShowWarnings());
     myKeepModelsWithWarnings.setEnabled(myGenerationSettings.isShowWarnings());
     myKeepModelsWithWarnings.setSelected(myGenerationSettings.isKeepModelsWithWarnings());
-    myNumberOfModelsToKeep.setEditable(myGenerationSettings.getNumberOfModelsToKeep() != 0);
-    myNumberOfModelsToKeep.setValue(myGenerationSettings.getNumberOfModelsToKeep() == 0 ? 16 : myGenerationSettings.getNumberOfModelsToKeep());
-    myLimitNumberOfModels.setSelected(myGenerationSettings.getNumberOfModelsToKeep() != 0);
+    myNumberOfModelsToKeep.setEditable(myGenerationSettings.getNumberOfModelsToKeep() != -1);
+    myNumberOfModelsToKeep.setValue(myGenerationSettings.getNumberOfModelsToKeep() == -1 ? 16 : myGenerationSettings.getNumberOfModelsToKeep());
+    myLimitNumberOfModels.setSelected(myGenerationSettings.getNumberOfModelsToKeep() != -1);
 
     final JRadioButton[] allbuttons = {myTraceNone, myTraceSteps, myTraceLanguages, myTraceTypes};
     allbuttons[myGenerationSettings.getPerformanceTracingLevel()].setSelected(true);

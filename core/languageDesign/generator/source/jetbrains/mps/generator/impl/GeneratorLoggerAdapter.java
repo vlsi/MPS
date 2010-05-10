@@ -21,7 +21,7 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     myMessageHandler = messageHandler;
     myHandleInfo = handleInfo;
     myHandleWarnings = handleWarnings;
-    myKeepModelsWithWarnings = keepModelsWithWarnings;
+    myKeepModelsWithWarnings = keepModelsWithWarnings && handleWarnings;
   }
 
   @Override
