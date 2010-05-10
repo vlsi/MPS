@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vcs.diff.changes;
 
+import jetbrains.mps.nodeEditor.messageTargets.DeletedNodeMessageTarget;
 import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
 import jetbrains.mps.nodeEditor.messageTargets.NodeMessageTarget;
 import jetbrains.mps.smodel.SModel;
@@ -26,14 +27,27 @@ import java.util.List;
 public class DeleteNodeChange extends Change {
   private SNodeId myNodeId;
   private List<SNodeId> myChildren;
+  private String myRole = null;
+  private int myPreviousChildIndex = -1;
 
   public DeleteNodeChange(SNodeId nodeId, List<SNodeId> childrenIds) {
     myNodeId = nodeId;
     myChildren = childrenIds;
   }
 
+  public DeleteNodeChange(SNodeId nodeId, List<SNodeId> children, String role, int previousChildIndex) {
+    myNodeId = nodeId;
+    myChildren = children;
+    myRole = role;
+    myPreviousChildIndex = previousChildIndex;
+  }
+
   public String toString() {
-    return "delete " + myNodeId;
+    if (myRole == null) {
+      return "delete " + myNodeId;
+    } else {
+      return "delete " + myNodeId + " in role " + myRole + " (previous child index is " + myPreviousChildIndex + ")";
+    }
   }
 
   public SNodeId getAffectedNodeId() {
@@ -58,8 +72,20 @@ public class DeleteNodeChange extends Change {
     return myChildren;
   }
 
+  public int getPreviousChildIndex() {
+    return myPreviousChildIndex;
+  }
+
+  public String getRole() {
+    return myRole;
+  }
+
   @Override
   public MessageTarget getMessageTarget() {
-    return new NodeMessageTarget();
+    if (myRole != null) {
+      return new DeletedNodeMessageTarget(myRole, myPreviousChildIndex);
+    } else {
+      return new NodeMessageTarget();
+    }
   }
 }
