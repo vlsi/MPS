@@ -15,11 +15,13 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
   protected final IMessageHandler myMessageHandler;
   protected final boolean myHandleInfo;
   protected final boolean myHandleWarnings;
+  protected final boolean myKeepModelsWithWarnings;
 
-  public GeneratorLoggerAdapter(IMessageHandler messageHandler, boolean handleInfo, boolean handleWarnings) {
+  public GeneratorLoggerAdapter(IMessageHandler messageHandler, boolean handleInfo, boolean handleWarnings, boolean keepModelsWithWarnings) {
     myMessageHandler = messageHandler;
     myHandleInfo = handleInfo;
     myHandleWarnings = handleWarnings;
+    myKeepModelsWithWarnings = keepModelsWithWarnings;
   }
 
   @Override

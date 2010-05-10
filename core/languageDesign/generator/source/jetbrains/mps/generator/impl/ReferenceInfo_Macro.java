@@ -22,9 +22,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.util.InternUtil;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.Map;
 
 /**
  * Created by: Sergey Dmitriev
@@ -140,7 +137,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
         generator.showWarningMessage(getOutputSourceNode(), "reference '" + linkRole + "' to input model in output node " + getOutputSourceNode().getDebugText());
         generator.showInformationMessage(myOutputTargetNode, " -- referent node: " + myOutputTargetNode.getDebugText());
         generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node: " + myReferenceMacro.getNode().getDebugText());
-        generator.getGeneratorSessionContext().addTransientModelToKeep(generator.getInputModel());
+        generator.getGeneratorSessionContext().keepTransientModel(generator.getInputModel());
       }
     }
   }

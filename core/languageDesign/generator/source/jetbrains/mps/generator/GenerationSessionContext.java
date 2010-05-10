@@ -285,10 +285,11 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return !myInvocationContext.isTestMode();
   }
 
-  public void addTransientModelToKeep(SModel model) {
+  public boolean keepTransientModel(SModel model) {
     if (model instanceof TransientSModel && keepTransientForMessageNavigation()) {
-      ((TransientModelsModule) getModule()).addModelToKeep(model);
+      return ((TransientModelsModule) getModule()).addModelToKeep(model);
     }
+    return false;
   }
 
   public boolean isTransientModelToKeep(SModel model) {

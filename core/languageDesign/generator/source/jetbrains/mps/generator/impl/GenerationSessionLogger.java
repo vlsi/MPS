@@ -21,6 +21,7 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.NodeWithContext;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -37,11 +38,13 @@ public class GenerationSessionLogger implements IGeneratorLogger {
   private final IMessageHandler myMessageHandler;
   private final boolean myHandleInfo;
   private final boolean myHandleWarnings;
+  private final boolean myKeepModelsWithWarnings;
 
   public GenerationSessionLogger(GeneratorLoggerAdapter logger) {
     myMessageHandler = logger.myMessageHandler;
     myHandleInfo = logger.myHandleInfo;
     myHandleWarnings = logger.myHandleWarnings;
+    myKeepModelsWithWarnings = logger.myKeepModelsWithWarnings;
   }
 
   public boolean needsInfo() {
@@ -121,9 +124,10 @@ public class GenerationSessionLogger implements IGeneratorLogger {
 
     if (node != null) {
       if (myOperationContext != null) {
-        NodeWithContext context = new NodeWithContext(node, myOperationContext.getInvocationContext());
-        message.setHintObject(context);
-        myOperationContext.addTransientModelToKeep(node.getModel());
+        if(keepModel(node.getModel(), kind != MessageKind.ERROR)) {
+          NodeWithContext context = new NodeWithContext(node, myOperationContext.getInvocationContext());
+          message.setHintObject(context);
+        }
       } else if(node.isRegistered() && node.getModel() != null && !node.getModel().isTransient()) {
         message.setHintObject(new SNodePointer(node));
       }
@@ -132,6 +136,19 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     synchronized (myMessageHandler) {
       myMessageHandler.handle(message);
     }
+  }
+
+  private boolean keepModel(SModel model, boolean isWarning) {
+    if(model == null) {
+      return false;
+    }
+    if(model.isTransient()) {
+      if(isWarning && !myKeepModelsWithWarnings) {
+        return false;
+      }
+      return myOperationContext.keepTransientModel(model);
+    }
+    return true;
   }
 
   public int getErrorCount() {

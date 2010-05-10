@@ -21,8 +21,6 @@ import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.util.performance.IPerformanceTracer;
-import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
-import jetbrains.mps.util.performance.PerformanceTracer;
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.MappingScript;
@@ -30,15 +28,12 @@ import jetbrains.mps.lang.generator.structure.MappingScriptKind;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -457,11 +452,11 @@ public class GenerationSession {
           if(mySessionContext == null) return;
           Object o = e.getHintObject();
           if (o instanceof SNode) {
-            mySessionContext.addTransientModelToKeep(((SNode) o).getModel());
+            mySessionContext.keepTransientModel(((SNode) o).getModel());
           } else if (o instanceof NodeWithContext) {
             SNode node = ((NodeWithContext) o).getNode();
             if (node != null) {
-              mySessionContext.addTransientModelToKeep(node.getModel());
+              mySessionContext.keepTransientModel(node.getModel());
             }
           }
         }

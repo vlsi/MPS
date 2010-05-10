@@ -36,7 +36,7 @@ import javax.swing.JComponent;
   name = "GenerationSettings",
   storages = {
     @Storage(
-      id ="other",
+      id = "other",
       file = "$APP_CONFIG$/generationSettings.xml"
     )
   }
@@ -136,14 +136,6 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.mySaveTransientModels = saveTransientModels;
   }
 
-  public boolean isShowErrorsOnly() {
-    return myState.myShowErrorsOnly;
-  }
-
-  public void setShowErrorsOnly(boolean showErrorsOnly) {
-    myState.myShowErrorsOnly = showErrorsOnly;
-  }
-
   public boolean isGenerateRequirements() {
     return myState.myGenerateRequirements;
   }
@@ -192,6 +184,38 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myPerformanceTracingLevel = performanceTracingLevel;
   }
 
+  public int getNumberOfModelsToKeep() {
+    return myState.myNumberOfModelsToKeep;
+  }
+
+  public void setNumberOfModelsToKeep(int numberOfModelsToKeep) {
+    myState.myNumberOfModelsToKeep = numberOfModelsToKeep;
+  }
+
+  public boolean isShowInfo() {
+    return myState.myShowInfo;
+  }
+
+  public void setShowInfo(boolean showInfo) {
+    myState.myShowInfo = showInfo;
+  }
+
+  public boolean isShowWarnings() {
+    return myState.myShowWarnings;
+  }
+
+  public void setShowWarnings(boolean showWarnings) {
+    myState.myShowWarnings = showWarnings;
+  }
+
+  public boolean isKeepModelsWithWarnings() {
+    return myState.myKeepModelsWithWarnings;
+  }
+
+  public void setKeepModelsWithWarnings(boolean keepModelsWithWarnings) {
+    myState.myKeepModelsWithWarnings = keepModelsWithWarnings;
+  }
+
   public static class MyState {
     private boolean mySaveTransientModels;
     private boolean myShowErrorsOnly;
@@ -201,6 +225,42 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     private boolean myStrictMode = false;
     private int myNumberOfParallelThreads = 2;
     private int myPerformanceTracingLevel = TRACE_OFF;
+    private int myNumberOfModelsToKeep = 0;
+    private boolean myShowInfo = false;
+    private boolean myShowWarnings = true;
+    private boolean myKeepModelsWithWarnings = true;
+
+    public int getNumberOfModelsToKeep() {
+      return myNumberOfModelsToKeep;
+    }
+
+    public void setNumberOfModelsToKeep(int numberOfModelsToKeep) {
+      myNumberOfModelsToKeep = numberOfModelsToKeep;
+    }
+
+    public boolean isShowInfo() {
+      return myShowInfo;
+    }
+
+    public void setShowInfo(boolean showInfo) {
+      myShowInfo = showInfo;
+    }
+
+    public boolean isShowWarnings() {
+      return myShowWarnings;
+    }
+
+    public void setShowWarnings(boolean showWarnings) {
+      myShowWarnings = showWarnings;
+    }
+
+    public boolean isKeepModelsWithWarnings() {
+      return myKeepModelsWithWarnings;
+    }
+
+    public void setKeepModelsWithWarnings(boolean keepModelsWithWarnings) {
+      myKeepModelsWithWarnings = keepModelsWithWarnings;
+    }
 
     public boolean isSaveTransientModels() {
       return mySaveTransientModels;

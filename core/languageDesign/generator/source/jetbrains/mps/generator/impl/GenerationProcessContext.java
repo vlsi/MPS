@@ -63,9 +63,6 @@ public class GenerationProcessContext {
   }
 
   public int getTracingMode() {
-    if(!myStrictMode) {
-      return GenerationSettings.TRACE_OFF;
-    }
     if(isGenerateInParallel() && myTracingMode > GenerationSettings.TRACE_STEPS) {
       return GenerationSettings.TRACE_STEPS;
     }
