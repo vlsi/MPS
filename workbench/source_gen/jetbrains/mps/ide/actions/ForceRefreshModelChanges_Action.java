@@ -35,7 +35,7 @@ public class ForceRefreshModelChanges_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      event.getPresentation().setText("Force Refresh Model Changes for " + ForceRefreshModelChanges_Action.this.model.getModelDescriptor().getName());
+      event.getPresentation().setText("Force Refresh Model Changes for " + ForceRefreshModelChanges_Action.this.model.getModelDescriptor().getSModelFqName().getShortName());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "ForceRefreshModelChanges", t);
@@ -71,14 +71,15 @@ public class ForceRefreshModelChanges_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<ModelChangesManager> modelChangesManager = new Wrappers._T<ModelChangesManager>();
+      final Project project = ForceRefreshModelChanges_Action.this.project;
       ChangesManager.getInstance(ForceRefreshModelChanges_Action.this.project).getCommandQueue().runTask(new Runnable() {
         public void run() {
-          modelChangesManager.value = ChangesManager.getInstance(ForceRefreshModelChanges_Action.this.project).getModelChangesManager(ForceRefreshModelChanges_Action.this.model.getModelDescriptor());
+          modelChangesManager.value = ChangesManager.getInstance(project).getModelChangesManager(ForceRefreshModelChanges_Action.this.model.getModelDescriptor());
+          if (modelChangesManager.value != null) {
+            modelChangesManager.value.update(null);
+          }
         }
       });
-      if (modelChangesManager.value != null) {
-        modelChangesManager.value.update(null);
-      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ForceRefreshModelChanges", t);
