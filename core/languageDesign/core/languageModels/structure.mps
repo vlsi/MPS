@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="BaseConcept" conceptFQName="jetbrains.mps.core.structure.BaseConcept" featureKind="CONCEPT" />
@@ -46,7 +47,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="25" />
+  <maxImportIndex value="26" />
   <node type="jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration:0" id="1082983041843">
     <property name="name:0" value="string" />
   </node>

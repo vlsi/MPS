@@ -25,7 +25,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="22" />
+  <maxImportIndex value="23" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.ide.findusages.model(jetbrains.mps.ide.findusages.model@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.ide.findusages.findalgorithm.finders.specific(jetbrains.mps.ide.findusages.findalgorithm.finders.specific@java_stub)" version="-1" />
@@ -36,6 +36,7 @@
   <import index="15" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="20" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
+  <import index="23" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1209308509191">
     <property name="name:23" value="FindModelUsages" />
     <property name="caption:23" value="Find Usages" />
@@ -1014,6 +1015,196 @@
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1225978220842">
       <property name="name:23" value="scope" />
       <link role="key:23" targetNodeId="19.~MPSDataKeys.SCOPE" resolveInfo="SCOPE" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration:23" id="5143881521904566066">
+    <property name="name:23" value="ReferencesScopeChecking" />
+    <node role="persistenPropertyDeclaration:23" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="5143881521904566067">
+      <property name="name:23" value="mRefScopeChecking" />
+      <node role="type:23" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="5143881521904566921" />
+    </node>
+    <node role="preferencePage:23" type="jetbrains.mps.lang.plugin.structure.PreferencePage:23" id="5143881521904566922">
+      <property name="name:23" value="References Scope Checking" />
+      <node role="component:23" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5143881521904598593">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5143881521904598595">
+          <link role="baseMethodDeclaration:3" targetNodeId="5143881521904566932" resolveInfo="ReferencesScopeCheckingOptionEditor" />
+        </node>
+      </node>
+      <node role="isModifiedBlock:23" type="jetbrains.mps.lang.plugin.structure.PreferencePageIsModifiedBlock:23" id="5143881521904566924">
+        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5143881521904566925">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5143881521904598596">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="5143881521904598600">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5143881521904598604">
+                <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component:23" id="5143881521904598603" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5143881521904598608">
+                  <link role="baseMethodDeclaration:3" targetNodeId="5143881521904598568" resolveInfo="getEnabledOption" />
+                </node>
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5143881521904598597">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="5143881521904598598" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference:23" id="5143881521904598599">
+                  <link role="member:23" targetNodeId="5143881521904566067" resolveInfo="mRefScopeSchecking" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="resetBlock:23" type="jetbrains.mps.lang.plugin.structure.PreferencePageResetBlock:23" id="5143881521904566926">
+        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5143881521904566927">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5143881521904598609">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5143881521904598611">
+              <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component:23" id="5143881521904598610" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5143881521904598615">
+                <link role="baseMethodDeclaration:3" targetNodeId="5143881521904581119" resolveInfo="setEnabledOption" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5143881521904598616">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="5143881521904598617" />
+                  <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference:23" id="5143881521904598618">
+                    <link role="member:23" targetNodeId="5143881521904566067" resolveInfo="mRefScopeSchecking" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="commitBlock:23" type="jetbrains.mps.lang.plugin.structure.PreferencePageCommitBlock:23" id="5143881521904566928">
+        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5143881521904566929">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5143881521904598619">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="5143881521904598623">
+              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5143881521904598627">
+                <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component:23" id="5143881521904598626" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5143881521904598631">
+                  <link role="baseMethodDeclaration:3" targetNodeId="5143881521904598568" resolveInfo="getEnabledOption" />
+                </node>
+              </node>
+              <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5143881521904598620">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="5143881521904598621" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference:23" id="5143881521904598622">
+                  <link role="member:23" targetNodeId="5143881521904566067" resolveInfo="mRefScopeSchecking" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5143881521904566930">
+    <property name="name:3" value="ReferencesScopeCheckingOptionEditor" />
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5143881521904581119">
+      <property name="name:3" value="setEnabledOption" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5143881521904581120" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5143881521904581121" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5143881521904581122">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="5143881521904610372">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="5143881521904610374">
+            <property name="text:3" value="it is not possible to access option from the preferences compononent" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="5143881521904610376">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="5143881521904610377">
+            <property name="text:3" value=" so mRefScopeChecking is declared as static and processed here also" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5143881521904581125">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="5143881521904581127">
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference:3" id="5143881521904581126">
+              <link role="variableDeclaration:3" targetNodeId="5143881521904580483" resolveInfo="mRefScopeChecking" />
+            </node>
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5143881521904598559">
+              <link role="variableDeclaration:3" targetNodeId="5143881521904581123" resolveInfo="enable" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5143881521904598560">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5143881521904598562">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="5143881521904598561">
+              <link role="variableDeclaration:3" targetNodeId="5143881521904580488" resolveInfo="chkEnabled" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5143881521904598566">
+              <link role="baseMethodDeclaration:3" targetNodeId="14.~AbstractButton.setSelected(boolean):void" resolveInfo="setSelected" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5143881521904598567">
+                <link role="variableDeclaration:3" targetNodeId="5143881521904581123" resolveInfo="enable" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="5143881521904581123">
+        <property name="name:3" value="enable" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="5143881521904581124" />
+      </node>
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5143881521904598568">
+      <property name="name:3" value="getEnabledOption" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5143881521904598570" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5143881521904598571">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5143881521904598573">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="5143881521904598575">
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5143881521904598579">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="5143881521904598578">
+                <link role="variableDeclaration:3" targetNodeId="5143881521904580488" resolveInfo="chkEnabled" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5143881521904598583">
+                <link role="baseMethodDeclaration:3" targetNodeId="14.~AbstractButton.isSelected():boolean" resolveInfo="isSelected" />
+              </node>
+            </node>
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference:3" id="5143881521904598574">
+              <link role="variableDeclaration:3" targetNodeId="5143881521904580483" resolveInfo="mRefScopeChecking" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5143881521904598585">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5143881521904598588">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="5143881521904598587">
+              <link role="variableDeclaration:3" targetNodeId="5143881521904580488" resolveInfo="chkEnabled" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5143881521904598592">
+              <link role="baseMethodDeclaration:3" targetNodeId="14.~AbstractButton.isSelected():boolean" resolveInfo="isSelected" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="5143881521904598572" />
+    </node>
+    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="5143881521904580488">
+      <property name="name:3" value="chkEnabled" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="5143881521904580489" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5143881521904580491">
+        <link role="classifier:3" targetNodeId="14.~JCheckBox" resolveInfo="JCheckBox" />
+      </node>
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5143881521904580493">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5143881521904581114">
+          <link role="baseMethodDeclaration:3" targetNodeId="14.~JCheckBox.&lt;init&gt;(java.lang.String)" resolveInfo="JCheckBox" />
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5143881521904581115">
+            <property name="value:3" value="Enable References Scope Checking" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="5143881521904580483">
+      <property name="name:3" value="mRefScopeChecking" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5143881521904580486" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="5143881521904580487" />
+    </node>
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5143881521904566931" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="5143881521904566932">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5143881521904566933" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5143881521904566934" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5143881521904566935">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5143881521904581116">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="5143881521904581117">
+            <link role="baseMethodDeclaration:3" targetNodeId="23.~Container.add(java.awt.Component):java.awt.Component" resolveInfo="add" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="5143881521904581118">
+              <link role="variableDeclaration:3" targetNodeId="5143881521904580488" resolveInfo="chkEnabled" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5143881521904566936">
+      <link role="classifier:3" targetNodeId="14.~JPanel" resolveInfo="JPanel" />
     </node>
   </node>
 </model>
