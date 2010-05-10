@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 
 import java.awt.Color;
+import java.awt.Graphics;
 
 /**
  * Created by IntelliJ IDEA.
@@ -59,6 +60,13 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
       }
     }
 
+    if (myMessageTarget.getTarget() == MessageTargetEnum.DELETED_CHILD) {
+      if (((DeletedNodeMessageTarget) myMessageTarget).getNextChildIndex() == -1) {
+        return getCell(editor) == cell;
+      }
+      return cell.isBigCell() && getCell(editor) == cell;
+    }
+
     return false;
   }
 
@@ -103,6 +111,20 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
         return rawCell;
       }
     }
+    if (myMessageTarget.getTarget() == MessageTargetEnum.DELETED_CHILD) {
+      if (((DeletedNodeMessageTarget) myMessageTarget).getNextChildIndex() == -1) {
+        EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
+          @Override
+          public boolean met(EditorCell cell) {
+            return myMessageTarget.getRole().equals(cell.getRole());
+          }
+        }, true), true);
+        if (child != null) {
+          return child;
+        }
+      }
+      return rawCell;
+    }
     return null;
   }
 
@@ -115,5 +137,14 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
       return false;
     }
     return myMessageTarget.sameAs(((EditorMessageWithTarget) message).myMessageTarget);
+  }
+
+  @Override
+   public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
+    if (myMessageTarget.getTarget() == MessageTargetEnum.DELETED_CHILD) {
+      paintWithColor(g, cell, Color.GRAY);
+    } else {
+      super.paint(g, editorComponent, cell);
+    }
   }
 }

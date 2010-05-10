@@ -16,5 +16,5 @@
 package jetbrains.mps.nodeEditor.messageTargets;
 
 public enum MessageTargetEnum {
-  NODE, REFERENCE, PROPERTY
+  NODE, REFERENCE, PROPERTY, DELETED_CHILD
 }
