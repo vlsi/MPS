@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.actions;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
@@ -19,9 +20,34 @@ public class PrecedenceUtil {
         // or typeArgument (parameters of method call), so we should not go upper 
         break;
       }
+      if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation") && SNodeOperations.getContainingLinkDeclaration(targetNode) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression")) {
+        // if parent expression is BinaryOperation having higher priority and target is rhigh child of it 
+        // then we should rather transform current target and add additional parenthesis around resulting expression 
+        break;
+      }
       targetNode = SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.structure.Expression");
     }
     return targetNode;
+  }
+
+  public static boolean isSamePriority(SNode firstExpression, SNode secondExpression) {
+    return getPriority(SNodeOperations.getConceptDeclaration(firstExpression)) == getPriority(SNodeOperations.getConceptDeclaration(secondExpression));
+  }
+
+  public static SNode parenthesiseIfNecessary(@NotNull SNode contextNode) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+      SNode parentBinaryOperation = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
+      if (SNodeOperations.getContainingLinkDeclaration(contextNode) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression") && isHigherPriority(parentBinaryOperation, contextNode)) {
+        SNode result = SNodeOperations.replaceWithNewChild(contextNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+        SLinkOperations.setTarget(result, "expression", contextNode, true);
+        return result;
+      }
+    }
+    return contextNode;
+  }
+
+  private static boolean isHigherPriority(SNode firstExpression, SNode secondExpression) {
+    return getPriority(SNodeOperations.getConceptDeclaration(firstExpression)).ordinal() < getPriority(SNodeOperations.getConceptDeclaration(secondExpression)).ordinal();
   }
 
   private static PrecedenceUtil.Precedence getPriority(SNode expression) {

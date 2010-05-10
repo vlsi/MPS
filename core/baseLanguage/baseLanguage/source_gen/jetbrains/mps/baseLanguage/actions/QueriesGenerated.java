@@ -2005,9 +2005,21 @@ __switch__:
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode nodeToProcess = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
+              // since BinaryOperations are left-associative we should perform complex LT then 
+              // BinaryOperations is "rightExpression" child of another BinaryOperations with same priority 
+              if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToProcess), "jetbrains.mps.baseLanguage.structure.BinaryOperation") && SNodeOperations.getContainingLinkDeclaration(nodeToProcess) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression")) {
+                SNode parentBinaryOperation = SNodeOperations.cast(SNodeOperations.getParent(nodeToProcess), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
+                if (PrecedenceUtil.isSamePriority(parentBinaryOperation, result)) {
+                  SNodeOperations.replaceWithAnother(parentBinaryOperation, result);
+                  // <node> 
+                  SLinkOperations.setTarget(result, "rightExpression", nodeToProcess, true);
+                  SLinkOperations.setTarget(result, "leftExpression", parentBinaryOperation, true);
+                  return result;
+                }
+              }
               SNodeOperations.replaceWithAnother(nodeToProcess, result);
               SLinkOperations.setTarget(result, "rightExpression", nodeToProcess, true);
-              // <node> 
+              PrecedenceUtil.parenthesiseIfNecessary(result);
               return result;
             }
           }
@@ -2175,13 +2187,14 @@ __switch__:
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode source = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
-              // since BaseAssignmentExpressions are right-associative we should parent 
+              // since BaseAssignmentExpressions are right-associative we should LT parent 
               // BaseAssignmentExpressions or it's lValue depenting on current position 
               if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression") && SNodeOperations.getContainingLinkDeclaration(source) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", "lValue")) {
                 source = SNodeOperations.cast(SNodeOperations.getParent(source), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression");
               }
               SNodeOperations.replaceWithAnother(source, result);
               SLinkOperations.setTarget(result, "rValue", source, true);
+              PrecedenceUtil.parenthesiseIfNecessary(result);
               return result;
             }
           }
