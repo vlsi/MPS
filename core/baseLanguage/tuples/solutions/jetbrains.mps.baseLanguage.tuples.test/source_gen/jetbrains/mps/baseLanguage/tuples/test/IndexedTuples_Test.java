@@ -156,6 +156,13 @@ public class IndexedTuples_Test extends TestCase {
     Assert.assertFalse(t._0().invoke());
   }
 
+  public void test_mps8674() throws Exception {
+    Tuples._2<Integer, String> t = MultiTuple.<Integer,String>from(0, null);
+    Assert.assertNotNull(t);
+    Assert.assertSame(0, t._0());
+    Assert.assertNull(t._1());
+  }
+
   public Tuples._2<String, Character> toTuple(String s, char c) {
     return MultiTuple.<String,Character>from(s, c);
   }

@@ -1258,6 +1258,56 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="6272899139367862288">
+        <property name="methodName" value="mps8674" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6272899139367862289" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6272899139367862290" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6272899139367862291">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6272899139367862292">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6272899139367862293">
+              <property name="name:3" value="t" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType:2" id="6272899139367862294">
+                <node role="componentType:2" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="6272899139367862296" />
+                <node role="componentType:2" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="6272899139367862298" />
+              </node>
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral:2" id="6272899139367862300">
+                <node role="component:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6272899139367862301">
+                  <property name="value:3" value="0" />
+                </node>
+                <node role="component:2" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="6272899139367862303" />
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull" id="6272899139367862305">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6272899139367862307">
+              <link role="variableDeclaration:3" targetNodeId="6272899139367862293" resolveInfo="t" />
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="6272899139367862309">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6272899139367862312">
+              <property name="value:3" value="0" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="6272899139367862314">
+              <node role="index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6272899139367862317">
+                <property name="value:3" value="0" />
+              </node>
+              <node role="tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6272899139367862313">
+                <link role="variableDeclaration:3" targetNodeId="6272899139367862293" resolveInfo="t" />
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull" id="6272899139367862319">
+            <node role="expression" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="6272899139367862322">
+              <node role="index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6272899139367862325">
+                <property name="value:3" value="1" />
+              </node>
+              <node role="tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6272899139367862321">
+                <link role="variableDeclaration:3" targetNodeId="6272899139367862293" resolveInfo="t" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1239714501613">
