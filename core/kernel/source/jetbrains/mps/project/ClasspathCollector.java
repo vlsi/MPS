@@ -19,6 +19,7 @@ import jetbrains.mps.lang.core.structure.Core_Language;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 import java.util.*;
 
@@ -39,6 +40,14 @@ public class ClasspathCollector {
     }
 
     CompositeClassPathItem result = new CompositeClassPathItem();
+    if (includeStubSolutions){
+      for (Solution s: MPSModuleRepository.getInstance().getAllSolutions()){
+        if (s.isStub()){
+          result.add(s.getClassPathItem());
+        }
+      }
+    }
+
     for (IClassPathItem item : myResult) {
       result.add(item);
     }
