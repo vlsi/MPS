@@ -201,6 +201,9 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
   public void dispose() {
     myNodeEditor.dispose();
     myNodeEditor = null;
+    
+    myComponent.removeAll();
+    myComponent = null;
   }
 
   public void recreateEditor() {
