@@ -94,6 +94,7 @@ public class NodeRangeSelection implements KeyboardHandler {
 
   public void setRange(SNode first, SNode last) {
     assert first.getParent() == last.getParent();
+    assert first.getRole_() != null && first.getRole_().equals(last.getRole_()) : "First role: " + first.getRole_() + ", last role: " + last.getRole_();
 
     if (!myActive) {
       myActive = true;
