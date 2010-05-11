@@ -17545,18 +17545,31 @@
     <property name="package:3" value="method" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240394564107">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1240395578457">
-        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1240395578458">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240395578459">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240395578460">
-              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1240395588552">
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="4434895596489966759">
+          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4434895596490007237">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4434895596489985902">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4434895596489985901">
                 <link role="applicableNode:3" targetNodeId="1240395549409" resolveInfo="parameterReference" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1240395592569">
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4434895596490007236">
                 <link role="link:16" targetNodeId="1.1070567982819:3" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1240395578463">
-              <link role="property:16" targetNodeId="1.1176718929932:3" resolveInfo="isFinal" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="4434895596490007241" />
+          </node>
+          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1240395578458">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240395578459">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240395578460">
+                <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1240395588552">
+                  <link role="applicableNode:3" targetNodeId="1240395549409" resolveInfo="parameterReference" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1240395592569">
+                  <link role="link:16" targetNodeId="1.1070567982819:3" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1240395578463">
+                <link role="property:16" targetNodeId="1.1176718929932:3" resolveInfo="isFinal" />
+              </node>
             </node>
           </node>
         </node>
