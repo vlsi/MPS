@@ -60,6 +60,7 @@ public abstract class AbstractLazyTab implements ILazyTab {
 
     for (SModelReference r : myImportantNodes.keySet()) {
       SModelDescriptor d = SModelRepository.getInstance().getModelDescriptor(r);
+      if (d == null) continue;
       d.removeModelListener(myRootRemovedListener);
     }
     myImportantNodes.clear();
