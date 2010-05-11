@@ -531,7 +531,7 @@ public class TestGenerationWorker extends GeneratorWorker {
       IClassPathItem cp = ModelAccess.instance().runReadAction(new Computable<IClassPathItem>() {
         @Override
         public IClassPathItem compute() {
-          return AbstractModule.getDependenciesClasspath(Collections.singleton(myModule), true, true);
+          return AbstractModule.getDependenciesClasspath(Collections.singleton(myModule), true);
         }
       });
       return classPathItemToFiles(cp);

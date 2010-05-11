@@ -199,7 +199,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   }
 
   protected CompositeClassPathItem getClassPath(Set<IModule> contextModules) {
-    CompositeClassPathItem result = (CompositeClassPathItem) AbstractModule.getDependenciesClasspath(contextModules, true, true);
+    CompositeClassPathItem result = (CompositeClassPathItem) AbstractModule.getDependenciesClasspath(contextModules, true);
 
     StringBuffer sb = new StringBuffer();
     sb.append("compiling with classpath : ");

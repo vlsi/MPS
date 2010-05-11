@@ -28,7 +28,10 @@ import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.reloading.*;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -726,6 +729,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   //todo[CP] remove this method when got rid of classpaths
+
   protected List<StubModelsEntry> getStubModelEntries() {
     List<ClassPathEntry> cp = getModuleDescriptor().getClassPaths();
     List<StubModelsEntry> sm = getModuleDescriptor().getStubModelEntries();
@@ -734,6 +738,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   //todo[CP] remove this method when got rid of classpaths
+
   protected List<StubModelsEntry> toStubModelEntries(List<ClassPathEntry> cp, List<StubModelsEntry> sm) {
     ArrayList<StubModelsEntry> result = new ArrayList<StubModelsEntry>();
 
@@ -757,6 +762,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   //todo check this code. Wy not to do it where we add jars?
+
   protected void updatePackagedDescriptorClasspath() {
     if (!isPackaged()) return;
 
@@ -824,11 +830,11 @@ public abstract class AbstractModule implements IModule {
   }
 
   public IClassPathItem getModuleWithDependenciesClassPathItem() {
-    return getDependenciesClasspath(CollectionUtil.set((IModule) this), false, false);
+    return getDependenciesClasspath(CollectionUtil.set((IModule) this), false);
   }
 
-  public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeJDK, boolean includeMPS) {
-    return new ClasspathCollector(modules).collect(includeJDK, includeMPS);
+  public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
+    return new ClasspathCollector(modules).collect(includeStubSolutions);
   }
 
   public BytecodeLocator getBytecodeLocator() {

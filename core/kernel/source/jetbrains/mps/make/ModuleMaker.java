@@ -262,7 +262,7 @@ public class ModuleMaker {
   }
 
   private IClassPathItem computeDependenciesClassPath(Set<IModule> modules) {
-    return AbstractModule.getDependenciesClasspath(modules, true, true);
+    return AbstractModule.getDependenciesClasspath(modules, true);
   }
 
   private Set<IModule> getModulesToCompile(Set<IModule> modules) {

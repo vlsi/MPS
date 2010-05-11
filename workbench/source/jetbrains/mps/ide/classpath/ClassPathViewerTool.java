@@ -82,7 +82,7 @@ public class ClassPathViewerTool extends BaseProjectTool {
 
       TextTreeNode root = new TextTreeNode("ClassPath of module " + myInspectedModule.getModuleUID());
       ClasspathCollector collector = new ClasspathCollector(CollectionUtil.set(myInspectedModule));
-      collector.collect();
+      collector.collect(false);
 
       List<IClassPathItem> items = new ArrayList<IClassPathItem>(collector.getResult());
       Collections.sort(items, new ToStringComparator());

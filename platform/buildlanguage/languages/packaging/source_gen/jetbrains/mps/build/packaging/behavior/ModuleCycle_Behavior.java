@@ -34,7 +34,7 @@ public class ModuleCycle_Behavior {
       SetSequence.fromSet(modules).addElement(module);
     }
     // getting classpath 
-    IClassPathItem classpath = AbstractModule.getDependenciesClasspath(modules, false, false);
+    IClassPathItem classpath = AbstractModule.getDependenciesClasspath(modules, false);
     List<String> stringClasspath = ModuleUtil.retrieveClassPath(classpath);
     // creating path holders to use in generator 
     return ModuleCycle_Behavior.createPathHolders_1218716903754(stringClasspath, ModuleCycle_Behavior.call_getBasedir_1218647622991(thisNode), SLinkOperations.getTargets(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.MPSLayout", true, true), "macro", true));

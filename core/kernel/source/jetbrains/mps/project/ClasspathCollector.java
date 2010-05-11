@@ -16,7 +16,6 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.lang.core.structure.Core_Language;
-import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
@@ -34,29 +33,15 @@ public class ClasspathCollector {
     myStart = new HashSet<IModule>(start);
   }
 
-  public IClassPathItem collect() {
-    return collect(false, false);
-  }
-
-  public IClassPathItem collect(boolean includeJDK, boolean includeMPS) {
-    CompositeClassPathItem result = new CompositeClassPathItem();
-
+  public IClassPathItem collect(boolean includeStubSolutions) {
     for (IModule m : myStart) {
-      doCollect(m);
+      doCollect(m, includeStubSolutions);
     }
 
-    if (includeJDK) {
-      result.add(CommonPaths.getJDKClassPath());
-    }
-
-    if (includeMPS) {
-      result.add(CommonPaths.getMPSClassPath());
-    }
-
+    CompositeClassPathItem result = new CompositeClassPathItem();
     for (IClassPathItem item : myResult) {
       result.add(item);
     }
-
     return result.optimize();
   }
 
@@ -68,40 +53,45 @@ public class ClasspathCollector {
     return myPaths.get(item);
   }
 
-  private void doCollect(IModule current) {
+  private void doCollect(IModule current, boolean includeStubSolutions) {
     try {
       myStack.push(current);
 
-      if (myVisited.contains(current)) {
-        return;
-      }
+      if (myVisited.contains(current)) return;
 
       myVisited.add(current);
-      addPart(current.getClassPathItem());
+      if (includeStubSolutions || !isStubSolution(current)) {
+        addPart(current.getClassPathItem());
+      }
 
       for (IModule dep : current.getAllDependOnModules()) {
-        doCollect(dep);
+        doCollect(dep, includeStubSolutions);
       }
 
       for (Language l : current.getAllUsedLanguages()) {
         myStack.push(l);
         addPart(l.getLanguageRuntimeClasspath());
         for (IModule runtimeModule : l.getRuntimeDependOnModules()) {
-          doCollect(runtimeModule);
+          doCollect(runtimeModule, includeStubSolutions);
         }
         myStack.pop();
       }
 
       if (current instanceof Language) {
         Language l = (Language) current;
-        doCollect(Core_Language.get());
+        doCollect(Core_Language.get(), includeStubSolutions);
         for (Language extended : l.getExtendedLanguages()) {
-          doCollect(extended);
+          doCollect(extended, includeStubSolutions);
         }
       }
     } finally {
       myStack.pop();
     }
+  }
+
+  private boolean isStubSolution(IModule current) {
+    if (!(current instanceof Solution)) return false;
+    return ((Solution) current).isStub();
   }
 
   private void addPart(IClassPathItem item) {
