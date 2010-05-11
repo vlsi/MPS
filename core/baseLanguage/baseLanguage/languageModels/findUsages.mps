@@ -851,21 +851,37 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1206537426813">
             <property name="name:3" value="methodDeclarations" />
             <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="1206537426814" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7399622179842280889">
+              <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator:16" id="7399622179842280890">
+                <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="7399622179842280891" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1206537426815">
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1206537426816">
-            <node role="statement:3" type="jetbrains.mps.lang.findUsages.structure.NodeStatement:2" id="1206537426818">
-              <node role="foundNode:2" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node:2" id="1206537426819" />
-            </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1206537426820">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1206537426821">
-                <node role="rValue:3" type="jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression:2" id="1206537426822">
-                  <link role="finder:2" targetNodeId="1200309609796" resolveInfo="OverridingMethods" />
-                  <node role="queryNode:2" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node:2" id="1206537426823" />
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7399622179842281367">
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7399622179842281368">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7399622179842302710">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7399622179842302711">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7399622179842302712">
+                      <link role="variableDeclaration:3" targetNodeId="1206537426813" resolveInfo="methodDeclarations" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation:7" id="7399622179842302713">
+                      <node role="argument:7" type="jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression:2" id="7399622179842302714">
+                        <link role="finder:2" targetNodeId="1200309609796" resolveInfo="OverridingMethods" />
+                        <node role="queryNode:2" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node:2" id="7399622179842302715" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
-                <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1206537426824">
-                  <link role="variableDeclaration:3" targetNodeId="1206537426813" resolveInfo="methodDeclarations" />
+              </node>
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7399622179842281372">
+                <node role="operand:3" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node:2" id="7399622179842281371" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="7399622179842302707">
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="7399622179842302709">
+                    <link role="conceptDeclaration:16" targetNodeId="1.1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -895,14 +911,16 @@
           </node>
           <node role="ifFalseStatement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1206537426836">
             <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1206537426837">
-              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1206537426838">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1206537426839">
-                  <node role="rValue:3" type="jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression:2" id="1206537426840">
-                    <link role="finder:2" targetNodeId="1200425321273" resolveInfo="InterfaceMethodImplementations" />
-                    <node role="queryNode:2" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node:2" id="1206537426841" />
-                  </node>
-                  <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1206537426842">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7399622179842281356">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7399622179842281358">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7399622179842281357">
                     <link role="variableDeclaration:3" targetNodeId="1206537426813" resolveInfo="methodDeclarations" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation:7" id="7399622179842281362">
+                    <node role="argument:7" type="jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression:2" id="7399622179842281364">
+                      <link role="finder:2" targetNodeId="1200425321273" resolveInfo="InterfaceMethodImplementations" />
+                      <node role="queryNode:2" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node:2" id="7399622179842281365" />
+                    </node>
                   </node>
                 </node>
               </node>

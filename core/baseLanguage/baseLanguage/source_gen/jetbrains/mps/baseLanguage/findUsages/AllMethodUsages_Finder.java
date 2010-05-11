@@ -11,6 +11,7 @@ import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class AllMethodUsages_Finder extends GeneratedFinder {
@@ -59,13 +60,14 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
   }
 
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
-    List<SNode> methodDeclarations;
+    List<SNode> methodDeclarations = new ArrayList<SNode>();
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
-      ListSequence.fromList(_results).addElement(node);
-      methodDeclarations = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", node, scope, new EmptyProgressIndicator());
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+        ListSequence.fromList(methodDeclarations).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", node, scope, new EmptyProgressIndicator())));
+      }
       ListSequence.fromList(methodDeclarations).addElement(node);
     } else {
-      methodDeclarations = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder", node, scope, new EmptyProgressIndicator());
+      ListSequence.fromList(methodDeclarations).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder", node, scope, new EmptyProgressIndicator())));
     }
     // 
     for (SNode methodDeclaration : methodDeclarations) {
