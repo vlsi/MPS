@@ -3500,8 +3500,9 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression", null);
-          SLinkOperations.setTarget(result, "expression", SNodeOperations.copyNode(_context.getSourceNode()), true);
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+          SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
+          SNodeOperations.replaceWithAnother(targetExpression, result);
+          SLinkOperations.setTarget(result, "expression", targetExpression, true);
           return result;
         }
 
@@ -3511,6 +3512,10 @@ __switch__:
 
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "prefix increment";
         }
       });
     }
@@ -3524,8 +3529,9 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression", null);
-          SLinkOperations.setTarget(result, "expression", SNodeOperations.copyNode(_context.getSourceNode()), true);
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+          SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
+          SNodeOperations.replaceWithAnother(targetExpression, result);
+          SLinkOperations.setTarget(result, "expression", targetExpression, true);
           return result;
         }
 
@@ -3535,6 +3541,10 @@ __switch__:
 
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "prefix decrement";
         }
       });
     }
