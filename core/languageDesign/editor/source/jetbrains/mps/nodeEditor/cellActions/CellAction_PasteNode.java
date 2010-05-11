@@ -110,7 +110,16 @@ public class CellAction_PasteNode extends EditorCellAction {
             }
 
             if (pasteNodes.size() > 1) {
-              editorComponent.getNodeRangeSelection().setRange(pasteNodes.get(0), pasteNodes.get(pasteNodes.size() - 1));
+              SNode firstNodeToSelect = pasteNodes.get(0);
+              SNode lastNodeToSelect = null;
+              for (int i = pasteNodes.size() - 1; i > 0 && lastNodeToSelect == null; i--) {
+                if (pasteNodes.get(i).getParent() == firstNodeToSelect.getParent()) {
+                  lastNodeToSelect = pasteNodes.get(i);
+                }
+              }
+              if (lastNodeToSelect != null) {
+                editorComponent.getNodeRangeSelection().setRange(firstNodeToSelect, lastNodeToSelect);
+              }
             }
           }
         });
