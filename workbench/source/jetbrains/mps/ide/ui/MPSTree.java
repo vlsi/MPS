@@ -22,13 +22,12 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.impl.IdeFocusManagerHeadless;
 import com.intellij.ui.TreeToolTipHandler;
-import com.intellij.util.ui.EmptyIcon;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
@@ -490,14 +489,12 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
 
-    //this should be done before the runnable will be run, or you can get "updating..." status after update is finished
-    boolean dumb = project != null && DumbService.getInstance(project).isDumb();
-
     r.run();
 
-    if (dumb) {
-      DumbService.getInstance(project).smartInvokeLater(r);
-    }
+    if (project == null) return;
+
+    //this should be done before the runnable will be run, or you can get "updating..." status after update is finished
+    DumbService.getInstance(project).smartInvokeLater(r);
   }
 
   public void clear() {
@@ -768,7 +765,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
         Font newFont = tree.getFont().deriveFont(treeNode.getFontStyle());
         myMainTextLabel.setFont(newFont);
-        myAdditionalTextLabel.setFont(tree.getFont());        
+        myAdditionalTextLabel.setFont(tree.getFont());
 
         if (!selected) {
           myMainTextLabel.setForeground(treeNode.getColor());

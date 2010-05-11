@@ -16,7 +16,9 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
@@ -346,7 +348,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return result;
   }
 
-  public GenerationStatus getGenerationStatus() {
+  public GenerationStatus getGenerationStatus()  {
     if (getSModelDescriptor() == null) return GenerationStatus.NOT_REQUIRED;
     if (isPackaged()) return GenerationStatus.PACKAGED;
     if (isDoNotGenerate()) return GenerationStatus.DO_NOT_GENERATE;
@@ -354,8 +356,14 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     Project project = getOperationContext().getProject();
     if (DumbService.getInstance(project).isDumb()) return GenerationStatus.UPDATING;
 
-    boolean required = ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor(), project, null);
-    return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;
+    try {
+      boolean required = ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor(), project);
+      return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;
+    } catch (IndexNotReadyException e) {
+      return GenerationStatus.UPDATING;
+    } catch (ProcessCanceledException e) {
+      return GenerationStatus.UPDATING;
+    }
   }
 
   private boolean isPackaged() {

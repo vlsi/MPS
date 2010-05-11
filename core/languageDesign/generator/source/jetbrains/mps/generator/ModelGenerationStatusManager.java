@@ -17,7 +17,9 @@ package jetbrains.mps.generator;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
@@ -39,7 +41,10 @@ import org.jetbrains.annotations.Nullable;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ModelGenerationStatusManager implements ApplicationComponent {
   public static final String HASH_PREFIX = ".hash.";
@@ -99,7 +104,17 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     myGlobalEventsManager.removeGlobalModelListener(mySmodelReloadListener);
   }
 
-  public boolean generationRequired(SModelDescriptor sm, Project project, @Nullable NoCachesStrategy strategy) {
+  public boolean generationRequired(SModelDescriptor sm, Project project, @NotNull NoCachesStrategy strategy) {
+    try {
+      return generationRequired(sm,project);
+    } catch (IndexNotReadyException e) {
+      return strategy.compute(project, sm, getGenerationHash(sm));
+    } catch (ProcessCanceledException e) {
+      return strategy.compute(project, sm, getGenerationHash(sm));
+    }
+  }
+
+  public boolean generationRequired(SModelDescriptor sm, Project project) {
     if (sm.isPackaged()) return false;
     if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return false;
     IFile modelFile = sm.getModelFile();
@@ -110,11 +125,6 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
     String generatedHash = getGenerationHash(sm);
     if (generatedHash == null) return true;
-
-    if (DumbService.getInstance(project).isDumb()) {
-      if (strategy == null) throw new AssertionError("NoCachesStrategy should be specified in this case");
-      return strategy.compute(project, sm, generatedHash);
-    }
 
     VirtualFile file = modelFile.toVirtualFile();
     if (file == null) return true;
