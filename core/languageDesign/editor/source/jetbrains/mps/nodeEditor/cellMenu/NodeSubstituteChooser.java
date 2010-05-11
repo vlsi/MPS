@@ -79,7 +79,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   private Window getEditorWindow() {
     Component component = myEditorComponent;
-    while (!(component instanceof Window)) {
+    while (!(component instanceof Window) && component != null) {
       component = component.getParent();
     }
     return (Window) component;
@@ -137,6 +137,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
           getPopupWindow().relayout();
         } else {
           getPatternEditor().activate(null, myPatternEditorLocation, myPatternEditorSize);
+          myNodeSubstituteInfo.invalidateActions();
+          rebuildMenuEntries();
+          getPopupWindow().initListModel();
+          getPopupWindow().setSelectionIndex(0);
         }
         myPopupActivated = true;
       } else {
@@ -575,7 +579,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     public PopupWindow(final Window owner) {
       super(owner);
 
-      owner.addComponentListener(myComponentListener);
+      getOwner().addComponentListener(myComponentListener);
 
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
       myList.setFont(EditorSettings.getInstance().getDefaultEditorFont());
@@ -674,21 +678,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
       int oldIndex = getSelectionIndex();
 
-      myList.setModel(new ListModel() {
-        public int getSize() {
-          return mySubstituteActions.size();
-        }
-
-        public Object getElementAt(int index) {
-          return mySubstituteActions.get(index);
-        }
-
-        public void addListDataListener(ListDataListener l) {
-        }
-
-        public void removeListDataListener(ListDataListener l) {
-        }
-      });
+      initListModel();
 
       setSelectionIndex(oldIndex);
       scrollToSelection();
@@ -714,6 +704,24 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
       validateTree();
       repaint();
+    }
+
+    private void initListModel() {
+      myList.setModel(new ListModel() {
+        public int getSize() {
+          return mySubstituteActions.size();
+        }
+
+        public Object getElementAt(int index) {
+          return mySubstituteActions.get(index);
+        }
+
+        public void addListDataListener(ListDataListener l) {
+        }
+
+        public void removeListDataListener(ListDataListener l) {
+        }
+      });
     }
 
     public void scrollToSelection() {
