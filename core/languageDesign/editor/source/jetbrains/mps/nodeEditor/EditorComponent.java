@@ -2596,6 +2596,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         public Object compute() {
           if (myNode == null) return null;
           SModelDescriptor sModelDescriptor = myNode.getModel().getModelDescriptor();
+          if (sModelDescriptor == null) {
+            return null;
+          }
           IFile ifile = sModelDescriptor.getModelFile();
           if (ifile == null || !ifile.exists()) return null;
           VirtualFile vfile = VFileSystem.getFile(ifile);
