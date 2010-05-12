@@ -118,6 +118,10 @@ public class PositionInfo implements Comparable<PositionInfo> {
     }
   }
 
+  public boolean isOccupyTheSameSpace(PositionInfo p) {
+    return (ObjectUtils.equals(myStartLine, p.myStartLine)) && (ObjectUtils.equals(myEndLine, p.myEndLine)) && (ObjectUtils.equals(myStartPosition, p.myStartPosition)) && (ObjectUtils.equals(myEndPosition, p.myEndPosition));
+  }
+
   public void fillFrom(PositionInfo position) {
     this.myNodeId = position.myNodeId;
     this.myFileName = position.myFileName;

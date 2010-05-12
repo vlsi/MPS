@@ -215,7 +215,7 @@ public class DebugInfo {
         return it;
       }
     }, true);
-    PositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
+    final PositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
     String nodeId = firstPositionInfo.getNodeId();
     // here we do some magic to fix the following bug: 
     // each node in base language owns a '\n' symbol in a previous line 
@@ -224,9 +224,47 @@ public class DebugInfo {
     // 2.    some statement 
     // 3.  } 
     // since 'some statement' takes lines 1-2 instead of just line 2 
+    // TODO actually, this mega-hack might not work for other languages 
+    // we should seriously consider fixing debug info generation instead 
     if (Sequence.fromIterable(sorted).count() > 1 && firstPositionInfo.getStartLine() == line && firstPositionInfo.getLineDistance() > 0) {
       nodeId = ListSequence.fromList(Sequence.fromIterable(sorted).toListSequence()).getElement(1).getNodeId();
     }
+    // here we have another example of how not to write code 
+    // this is a hack fixing MPS-8644	
+ 
+    // the problem is with the BlockStatement which sometimes generates to nothing, but is still present in .debug 
+    // so in the code like this: 
+    // 1. { 
+    // 2. statement 
+    // 3. } 
+    // block statement occupy the same place as "statement" because this code generates into: 
+    // 1. statement 
+    // the solution is simple: 
+    // among all node with same position we select the deepest 
+    if (Sequence.fromIterable(sorted).count() > 1) {
+      Iterable<PositionInfo> sameSpacePositions = Sequence.fromIterable(sorted).where(new IWhereFilter<PositionInfo>() {
+        public boolean accept(PositionInfo it) {
+          return firstPositionInfo.isOccupyTheSameSpace(it);
+        }
+      });
+      if (Sequence.fromIterable(sameSpacePositions).count() > 1) {
+        SNode currentNode = model.getNodeById(firstPositionInfo.getNodeId());
+        boolean finished = false;
+        while (!(finished)) {
+          finished = true;
+          for (PositionInfo otherPos : Sequence.fromIterable(sameSpacePositions)) {
+            SNode otherNode = model.getNodeById(otherPos.getNodeId());
+            if ((otherNode != null) && otherNode.isDescendantOf(currentNode, false)) {
+              currentNode = otherNode;
+              finished = false;
+              break;
+            }
+          }
+        }
+        return currentNode;
+      }
+    }
+    // TODO seriously, instead of adding another hack do something with textgen 
     return model.getNodeById(nodeId);
   }
 
