@@ -1152,7 +1152,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
         }
       }
       for (SReference reference : references) {
-        SNode targetNode = reference.getTargetNode();
+        SNode targetNode = reference.getTargetNodeSilently();
         if (targetNode != null) {
           markDependentNodesForInvalidation(targetNode, true);
         }
@@ -1163,7 +1163,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
       markDependentNodesForInvalidation(event.getReference().getSourceNode(), false);
       markDependentNodesForInvalidation(event.getReference().getSourceNode(), true);
       if (!event.isAdded()) return;
-      markDependentNodesForInvalidation(event.getReference().getTargetNode(), true);
+      markDependentNodesForInvalidation(event.getReference().getTargetNodeSilently(), true);
     }
 
     public void visitPropertyEvent(SModelPropertyEvent event) {
