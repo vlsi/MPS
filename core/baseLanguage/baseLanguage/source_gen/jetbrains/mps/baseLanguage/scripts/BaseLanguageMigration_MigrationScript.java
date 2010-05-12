@@ -281,8 +281,7 @@ public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
         vars.addAll(param);
         SNode field = SLinkOperations.getTarget(node, "fieldDeclaration", false);
         for (SNode var : vars) {
-          if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.lang.core.structure.INamedConcept") && SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"))) {
-            ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", true)).contains(SNodeOperations.getAncestor(var, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
+          if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.lang.core.structure.INamedConcept") && SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name").equals(SPropertyOperations.getString(field, "name")) && ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", true)).contains(SNodeOperations.getAncestor(var, "jetbrains.mps.baseLanguage.structure.Classifier", false, false))) {
             return false;
           }
         }
@@ -294,7 +293,7 @@ public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
         int constraint = IClassifiersSearchScope.INSTANCE_FIELD;
         while (classifier != declarationClassifier) {
           for (SNode fieldDeclaration : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, node, constraint)) {
-            if (SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(fieldDeclaration, "name"))) {
+            if (SPropertyOperations.getString(fieldDeclaration, "name") != null && SPropertyOperations.getString(fieldDeclaration, "name").equals(SPropertyOperations.getString(field, "name"))) {
               return false;
             }
           }
