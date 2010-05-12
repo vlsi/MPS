@@ -19,20 +19,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
-import jetbrains.mps.internal.collections.runtime.impl.BasicSequence;
-import jetbrains.mps.internal.collections.runtime.impl.ComparingSequence;
-import jetbrains.mps.internal.collections.runtime.impl.ConcatingSequence;
-import jetbrains.mps.internal.collections.runtime.impl.EnumeratorIterator;
-import jetbrains.mps.internal.collections.runtime.impl.FilteringSequence;
-import jetbrains.mps.internal.collections.runtime.impl.LimitedCardinalitySequence;
-import jetbrains.mps.internal.collections.runtime.impl.NegateWhereFilter;
-import jetbrains.mps.internal.collections.runtime.impl.NullSequence;
-import jetbrains.mps.internal.collections.runtime.impl.NullSetSequence;
-import jetbrains.mps.internal.collections.runtime.impl.PagingSequence;
-import jetbrains.mps.internal.collections.runtime.impl.SelectingSequence;
-import jetbrains.mps.internal.collections.runtime.impl.SortingSequence;
-import jetbrains.mps.internal.collections.runtime.impl.TranslatingSequence;
-import jetbrains.mps.internal.collections.runtime.impl.TranslatorAdapter;
+import jetbrains.mps.internal.collections.runtime.impl.*;
 
 
 /**
@@ -236,7 +223,11 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
         return new ComparingSequence<T> (this, that, ComparingSequence.Kind.DISJUNCTION);
     }
 
-    // TODO: change to containsElement to avoid name clashing with Collection.contains()
+  public ISequence<T> reverse() {
+    return new ReversingSequence (this);
+  }
+
+  // TODO: change to containsElement to avoid name clashing with Collection.contains()
     public boolean contains (T t) {
         return IterableUtils.contains(toIterable(), t);
     }
@@ -273,8 +264,24 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     public T last () {
         return IterableUtils.last(toIterable());
     }
-    
-    public Iterable<T> toIterable () {
+
+  public T reduceLeft(ILeftCombinator<T, T> comb) {
+    return IterableUtils.reduceLeft(this, comb);
+  }
+
+  public T reduceRight(IRightCombinator<T, T> comb) {
+     return IterableUtils.reduceRight(this.reverse(), comb);
+  }
+
+  public <S> S foldLeft(S seed, ILeftCombinator<T, S> comb) {
+    return IterableUtils.foldLeft(this, seed, comb);
+  }
+
+  public <S> S foldRight(S seed, IRightCombinator<T, S> comb) {
+    return IterableUtils.foldRight(this.reverse(), seed, comb);
+  }
+
+  public Iterable<T> toIterable () {
         return this;
     }
     

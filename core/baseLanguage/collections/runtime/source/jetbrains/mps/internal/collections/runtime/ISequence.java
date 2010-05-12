@@ -68,6 +68,8 @@ public interface ISequence<T> extends Iterable<T>, IEnumerable<T> {
 
     ISequence<T> disjunction(ISequence<T> that);
 
+    ISequence<T> reverse();
+
     boolean contains(T t);
     
     boolean containsSequence(ISequence<T> that);    
@@ -83,6 +85,14 @@ public interface ISequence<T> extends Iterable<T>, IEnumerable<T> {
     T first();
 
     T last();
+
+    T reduceLeft (ILeftCombinator<T, T> comb);
+
+    T reduceRight (IRightCombinator<T, T> comb);
+
+    <S> S foldLeft (S seed, ILeftCombinator<T, S> comb);
+
+    <S> S foldRight(S seed, IRightCombinator<T, S> comb);
 
     Iterable<T> toIterable();
 

@@ -105,8 +105,54 @@ public class IterableUtils {
     	}
     	return sb.toString();
     }
-        
-    private static boolean eq(Object a, Object b) {
+
+  public static <T> T reduceLeft(Iterable<T> seq, ILeftCombinator<T, T> combinator) {
+    Iterator<T> it = seq.iterator();
+    if (!it.hasNext ()) {
+      if (Sequence.NULL_WHEN_EMPTY) {
+          return null;
+      }
+      throw new NoSuchElementException("Empty iterator");
+    }
+    T left = it.next ();
+    while (it.hasNext()) {
+      left = combinator.combine(left, it.next ());
+    }
+    return left;
+  }  
+
+  public static <T> T reduceRight(Iterable<T> revSeq, IRightCombinator<T, T> combinator) {
+    Iterator<T> it = revSeq.iterator();
+    if (!it.hasNext ()) {
+      if (Sequence.NULL_WHEN_EMPTY) {
+          return null;
+      }
+      throw new NoSuchElementException("Empty iterator");
+    }
+    T right = it.next ();
+    while (it.hasNext()) {
+      right = combinator.combine(it.next (), right);
+    }
+    return right;
+  }
+
+  public static <T, S> S foldLeft(Iterable<T> seq, S seed, ILeftCombinator<T, S> combinator) {
+    S s = seed;
+    for (Iterator<T> it = seq.iterator(); it.hasNext();) {
+      s = combinator.combine(s, it.next());
+    }
+    return s;
+  }
+
+  public static <T, S> S foldRight(Iterable<T> revSeq, S seed, IRightCombinator<T, S> combinator) {
+    S s = seed;
+    for (Iterator<T> it =  revSeq.iterator(); it.hasNext();) {
+      s = combinator.combine(it.next(), s);
+    }
+    return s;
+  }
+
+  private static boolean eq(Object a, Object b) {
         return (a == b) || ((a != null) ? a.equals(b) : false);
     }
 }
