@@ -243,6 +243,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     return tmpFile;
   }
 
+  //do not touch this class if you are not sure in your changes - this can lead to excess memory consumption (see #53513)
   private static class MyCache{
     private Map<String, Set<String>> myClasses = new HashMap<String, Set<String>>();
     private Map<String, Set<String>> mySubpackages = new HashMap<String, Set<String>>();
