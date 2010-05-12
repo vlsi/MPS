@@ -41,9 +41,10 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   private String myPrefix;
   private File myFile;
 
-  private Map<String, Set<String>> myClasses = new HashMap<String, Set<String>>();
-  private Map<String, Set<String>> mySubpackages = new HashMap<String, Set<String>>();
   private Map<String, ZipEntry> myEntries = new HashMap<String, ZipEntry>();
+  private MyCache myCache = new MyCache();
+
+  private static final HashSet<String> DEFAULT_VALUE = new HashSet<String>(0);
 
   protected JarFileClassPathItem(String path) {
     this(FileSystem.getFile(path));
@@ -99,12 +100,12 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
 
   public void collectAvailableClasses(Set<String> classes, String namespace) {
     ensureInitialized();
-    classes.addAll(getClassesSetFor(namespace));
+    classes.addAll(myCache.getClassesSetFor(namespace));
   }
 
   public void collectSubpackages(Set<String> subpackages, String namespace) {
     ensureInitialized();
-    subpackages.addAll(getSubpackagesSetFor(namespace));
+    subpackages.addAll(myCache.getSubpackagesSetFor(namespace));
   }
 
   public long getClassesTimestamp(String namespace) {
@@ -155,19 +156,6 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     return entry.getTime();
   }
 
-  private Set<String> getClassesSetFor(String pack) {
-    if (!myClasses.containsKey(pack)) {
-      myClasses.put(pack, new HashSet<String>());
-    }
-    return myClasses.get(pack);
-  }
-
-  private Set<String> getSubpackagesSetFor(String pack) {
-    if (!mySubpackages.containsKey(pack)) {
-      mySubpackages.put(pack, new HashSet<String>());
-    }
-    return mySubpackages.get(pack);
-  }
 
   private void buildCaches() {
     Iterable<? extends ZipEntry> entries = CollectionUtil.asIterable(myZipFile.entries());
@@ -202,7 +190,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
         }
 
         buildPackageCaches(pack);
-        getClassesSetFor(pack).add(className);
+        myCache.addClass(pack, className);
 
         if (pack.length() > 0) {
           myEntries.put(pack + "." + className, entry);
@@ -216,7 +204,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   private void buildPackageCaches(String namespace) {
     String parent = getParentPackage(namespace);
     if (parent.equals(namespace)) return;
-    getSubpackagesSetFor(parent).add(namespace);
+    myCache.addPackage(namespace, parent);
     buildPackageCaches(parent);
   }
 
@@ -253,5 +241,38 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     }
 
     return tmpFile;
+  }
+
+  private static class MyCache{
+    private Map<String, Set<String>> myClasses = new HashMap<String, Set<String>>();
+    private Map<String, Set<String>> mySubpackages = new HashMap<String, Set<String>>();
+
+    public Set<String> getClassesSetFor(String pack) {
+      if (!myClasses.containsKey(pack)) {
+        return DEFAULT_VALUE;
+      }
+      return myClasses.get(pack);
+    }
+
+    public Set<String> getSubpackagesSetFor(String pack) {
+      if (!mySubpackages.containsKey(pack)) {
+        return DEFAULT_VALUE;
+      }
+      return mySubpackages.get(pack);
+    }
+
+    public void addClass(String pack, String className) {
+      if (!myClasses.containsKey(pack)){
+        myClasses.put(pack,new HashSet<String>(1));
+      }
+      myClasses.get(pack).add(className);
+    }
+
+    public void addPackage(String namespace, String pack) {
+      if (!mySubpackages.containsKey(pack)){
+        mySubpackages.put(pack,new HashSet<String>(1));
+      }
+      mySubpackages.get(pack).add(namespace);
+    }
   }
 }
