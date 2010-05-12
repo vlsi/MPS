@@ -5,5 +5,8 @@
   </models>
   <classPath />
   <sourcePath />
+  <usedLanguages>
+    <usedLanguage>08ffecab-a1e5-4be9-bd87-e14140b1b0e0(jetbrains.mps.nanoc)</usedLanguage>
+  </usedLanguages>
 </solution>
 
