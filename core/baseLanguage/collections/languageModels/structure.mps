@@ -3080,5 +3080,97 @@
       <link role="intfc:0" targetNodeId="2.5432666129547687712:3" resolveInfo="IVariableDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1522217801069359738">
+    <property name="package:0" value="sequence.closures" />
+    <property name="name:0" value="ReduceLeftOperation" />
+    <link role="extends:0" targetNodeId="1204796164442:7" resolveInfo="InternalSequenceOperation" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1522217801069359739">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="comb" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+      <link role="specializedLink:0" targetNodeId="1204796294226:7" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1522217801069422149">
+      <property name="value:0" value="reduceLeft" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1522217801069422151">
+      <property name="value:0" value="perform left reduction" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1522217801069396403">
+    <property name="package:0" value="sequence.closures" />
+    <property name="name:0" value="ReduceRightOperation" />
+    <link role="extends:0" targetNodeId="1204796164442:7" resolveInfo="InternalSequenceOperation" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1522217801069396404">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="comb" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="specializedLink:0" targetNodeId="1204796294226:7" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1522217801069422152">
+      <property name="value:0" value="reduceRight" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1522217801069422154">
+      <property name="value:0" value="perform right reduction" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1522217801069396578">
+    <property name="package:0" value="sequence.closures" />
+    <property name="name:0" value="FoldLeftOperation" />
+    <link role="extends:0" targetNodeId="1204796164442:7" resolveInfo="InternalSequenceOperation" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1522217801069396579">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="comb" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="specializedLink:0" targetNodeId="1204796294226:7" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1522217801069421796">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="seed" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1522217801069422108">
+      <property name="value:0" value="foldLeft" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1522217801069422110">
+      <property name="value:0" value="perform left folding" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1522217801069421831">
+    <property name="package:0" value="sequence.closures" />
+    <property name="name:0" value="FoldRightOperation" />
+    <link role="extends:0" targetNodeId="1204796164442:7" resolveInfo="InternalSequenceOperation" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1522217801069421832">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="comb" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="specializedLink:0" targetNodeId="1204796294226:7" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1522217801069421833">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="seed" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1522217801069422111">
+      <property name="value:0" value="foldRight" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1522217801069422113">
+      <property name="value:0" value="perform right folding" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+  </node>
 </model>
 
