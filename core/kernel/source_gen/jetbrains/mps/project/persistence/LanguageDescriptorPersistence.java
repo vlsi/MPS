@@ -219,6 +219,8 @@ public class LanguageDescriptorPersistence {
           Element result_v3r4p8_a0a0a51a0a0d0c = new Element("entry");
           String result_v3r4p8_a0a0a0a51a0a0d0c = macros.shrinkPath(entry.getPath(), file);
           result_v3r4p8_a0a0a51a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a51a0a0d0c);
+          boolean result_v3r4p8_a1a0a0a51a0a0d0c = entry.isIncludedInVCS();
+          result_v3r4p8_a0a0a51a0a0d0c.setAttribute("include", "" + result_v3r4p8_a1a0a0a51a0a0d0c);
           result_v3r4p8_a51a0a0d0c.addContent(result_v3r4p8_a0a0a51a0a0d0c);
         }
         result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a51a0a0d0c);

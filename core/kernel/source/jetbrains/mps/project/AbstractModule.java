@@ -692,11 +692,15 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  protected List<StubModelsEntry> getStubModelEntriesToIncludeOrExclude(){
+    return getStubModelEntries();
+  }
+
   private Set<String> getIncludedStubPaths() {
     LinkedHashSet<String> result = new LinkedHashSet<String>();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
-      for (StubModelsEntry entry : getStubModelEntries()) {
+      for (StubModelsEntry entry : getStubModelEntriesToIncludeOrExclude()) {
         if (entry.isIncludedInVCS()) result.add(entry.getPath());
       }
     }
@@ -704,7 +708,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   private void setIncludedStubPath() {
-    for (StubModelsEntry entry : getStubModelEntries()) {
+    for (StubModelsEntry entry : getStubModelEntriesToIncludeOrExclude()) {
       if (myIncludedStubPaths.contains(entry.getPath())) {
         entry.setIncludedInVCS(true);
       } else {

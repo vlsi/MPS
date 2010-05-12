@@ -35,6 +35,7 @@ import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.reloading.*;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
@@ -938,6 +939,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   //-----------stubs--------------
+
+  @Override
+  protected List<StubModelsEntry> getStubModelEntriesToIncludeOrExclude() {
+    return CollectionUtil.union(super.getStubModelEntriesToIncludeOrExclude(), getRuntimeModelsEntries());
+  }
 
   private static LanguageDescriptor createNewDescriptor(String languageNamespace, IFile descriptorFile) {
     LanguageDescriptor languageDescriptor = new LanguageDescriptor();

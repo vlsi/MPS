@@ -5180,6 +5180,20 @@
                                   </node>
                                 </node>
                               </node>
+                              <node role="statement:3" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement:0" id="7346178002042740256">
+                                <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7346178002042740257" />
+                                <node role="builder:0" type="jetbrains.mps.xmlQuery.structure.AttributeBuilder:4" id="7346178002042740258">
+                                  <link role="attributeDeclaration:4" targetNodeId="2574803278448809922" resolveInfo="include" />
+                                  <node role="value:4" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7346178002042740261">
+                                    <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="7346178002042740260">
+                                      <link role="variable:7" targetNodeId="842994667883031638" resolveInfo="entry" />
+                                    </node>
+                                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7346178002042740265">
+                                      <link role="baseMethodDeclaration:3" targetNodeId="11.~ClassPathEntry.isIncludedInVCS():boolean" resolveInfo="isIncludedInVCS" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
                             </node>
                             <node role="builder:0" type="jetbrains.mps.xmlQuery.structure.ElementBuilder:4" id="842994667883031655">
                               <link role="elementDeclaration:4" targetNodeId="2574803278448809918" resolveInfo="entry" />
