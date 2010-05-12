@@ -7,10 +7,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -29,21 +28,8 @@ public class CWhile_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_d2vtwf_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_d2vtwf_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_d2vtwf_e0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_d2vtwf_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_d2vtwf_f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_d2vtwf_g0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_d2vtwf_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_d2vtwf_f0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-    }
-    editorCell.addEditorCell(this.createIndentCell_d2vtwf_a5a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_d2vtwf_b5a(editorContext, node));
     return editorCell;
   }
 
@@ -86,11 +72,6 @@ public class CWhile_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createIndentCell_d2vtwf_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
-  }
-
   private EditorCell createRefNode_d2vtwf_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("condition");
@@ -108,12 +89,17 @@ public class CWhile_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_d2vtwf_b5a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_d2vtwf_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
