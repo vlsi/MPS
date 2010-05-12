@@ -9,6 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class LocalInstanceFieldReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append(this.getReferentPresentation(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", "fieldDeclaration")), false));
+    this.append(this.getReferentPresentation(SNodeOperations.getReference(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration")), false));
   }
 }

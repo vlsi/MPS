@@ -280,6 +280,9 @@ public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
         List<SNode> vars = new LocalVariablesScope(node).getNodes();
         vars.addAll(param);
         SNode field = SLinkOperations.getTarget(node, "fieldDeclaration", false);
+        if (field == null) {
+          return false;
+        }
         for (SNode var : vars) {
           if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.lang.core.structure.INamedConcept") && SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name").equals(SPropertyOperations.getString(field, "name")) && ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", true)).contains(SNodeOperations.getAncestor(var, "jetbrains.mps.baseLanguage.structure.Classifier", false, false))) {
             return false;

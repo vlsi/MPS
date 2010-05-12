@@ -2660,6 +2660,21 @@
               </node>
             </node>
           </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3652446454730630355">
+            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3652446454730630356">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3652446454730630364">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3652446454730630366">
+                  <property name="value:3" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3652446454730630360">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3652446454730630363" />
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3652446454730630359">
+                <link role="variableDeclaration:3" targetNodeId="8559617843245542956" resolveInfo="field" />
+              </node>
+            </node>
+          </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="8559617843245542838">
             <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8559617843245542839">
               <property name="name:3" value="var" />
