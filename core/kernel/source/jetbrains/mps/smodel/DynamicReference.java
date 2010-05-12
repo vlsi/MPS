@@ -46,7 +46,7 @@ public class DynamicReference extends SReferenceBase {
     setResolveInfo(resolveInfo);
   }
 
-  protected SNode getTargetNode_internal() {
+  protected SNode getTargetNode_internal(boolean silently) {
     synchronized (this) {
       if (!mature()) {
         return myImmatureTargetNode;
@@ -54,7 +54,9 @@ public class DynamicReference extends SReferenceBase {
     }
 
     if (getResolveInfo() == null) {
-      error("no resolve info");
+      if (!silently) {
+        error("no resolve info");
+      }
       return null;
     }
 
@@ -68,26 +70,34 @@ public class DynamicReference extends SReferenceBase {
       getRole(), // "genuine" role here
       new GlobalOperationContext());
     if (status.isError()) {
-      error("can't obtain search scope: " + status.getMessage());
+      if (!silently) {
+        error("can't obtain search scope: " + status.getMessage());
+      }
       return null;
     }
 
     LinkDeclaration mostSpecificForRole = new ConceptAndSuperConceptsScope(referenceNodeConcept).getMostSpecificLinkDeclarationByRole(getRole());
     if (mostSpecificForRole == null) {
-      error("couldn't find link declaration '" + getRole() + "' in concept '" + referenceNode.getConceptFqName() + "'");
+      if (!silently) {
+        error("couldn't find link declaration '" + getRole() + "' in concept '" + referenceNode.getConceptFqName() + "'");
+      }
       return null;
     }
 
     ISearchScope searchScope = status.getSearchScope();
     IReferenceInfoResolver infoResolver = searchScope.getReferenceInfoResolver(referenceNode, mostSpecificForRole.getTarget());
     if (infoResolver == null) {
-      error("can't obtain resolve info resolver: '" + getRole() + "'");
+      if (!silently) {
+        error("can't obtain resolve info resolver: '" + getRole() + "'");
+      }
       return null;
     }
 
     SNode targetNode = infoResolver.resolve(getResolveInfo(), getTargetSModelReference());
     if (targetNode == null) {
-      error("can't find target by resolve info: '" + getResolveInfo() + "'");
+      if (!silently) {
+        error("can't find target by resolve info: '" + getResolveInfo() + "'");
+      }
 //      infoResolver.resolve(getResolveInfo(), getTargetSModelReference());
     }
 

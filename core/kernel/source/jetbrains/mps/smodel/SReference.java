@@ -64,7 +64,12 @@ public abstract class SReference {
   }
 
   public final SNode getTargetNode() {
-    SNode targetNode = getTargetNode_internal();
+    SNode targetNode = getTargetNode_internal(false);
+    return targetNode;
+  }
+
+  public final SNode getTargetNodeSilently() {
+    SNode targetNode = getTargetNode_internal(true);
     return targetNode;
   }
 
@@ -74,7 +79,7 @@ public abstract class SReference {
     return targetNode == null ? null : targetNode.getSNodeId();
   }
 
-  protected abstract SNode getTargetNode_internal();
+  protected abstract SNode getTargetNode_internal(boolean silently);
 
   @Nullable
   public abstract SModelReference getTargetSModelReference();

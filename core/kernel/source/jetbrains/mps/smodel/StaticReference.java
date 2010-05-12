@@ -54,7 +54,7 @@ public class StaticReference extends SReferenceBase {
     myTargetNodeId = nodeId;
   }
 
-  protected SNode getTargetNode_internal() {
+  protected SNode getTargetNode_internal(boolean silently) {
     NodeReadAccessCasterInEditor.fireReferenceTargetReadAccessed(getSourceNode(), getTargetSModelReference(), getTargetNodeId());
 
     synchronized (this) {
@@ -77,7 +77,9 @@ public class StaticReference extends SReferenceBase {
     if (targetNode != null) return targetNode;
     targetNode = UnregisteredNodes.instance().get(targetModel.getSModelReference(), targetNodeId);
     if (targetNode == null) {
-      error("target model '" + targetModel.getSModelReference() + "' doesn't contain node with id=" + getTargetNodeId());
+      if (!silently) {
+        error("target model '" + targetModel.getSModelReference() + "' doesn't contain node with id=" + getTargetNodeId());
+      }
     }
 
     return targetNode;

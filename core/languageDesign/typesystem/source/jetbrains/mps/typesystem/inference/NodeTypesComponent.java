@@ -1163,7 +1163,6 @@ public class NodeTypesComponent implements EditorMessageOwner {
       markDependentNodesForInvalidation(event.getReference().getSourceNode(), false);
       markDependentNodesForInvalidation(event.getReference().getSourceNode(), true);
       if (!event.isAdded()) return;
-      
       markDependentNodesForInvalidation(event.getReference().getTargetNode(), true);
     }
 
