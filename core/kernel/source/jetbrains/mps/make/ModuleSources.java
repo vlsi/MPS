@@ -109,15 +109,17 @@ public class ModuleSources {
       if (isIgnored(file)) continue;
 
       if (file.getName().endsWith(MPSExtentions.DOT_CLASSFILE)) {
+        boolean isInnerClass = false;
         String containerName = file.getName().substring(0, file.getName().length() - MPSExtentions.DOT_CLASSFILE.length());
         if (containerName.contains("$")) {
           containerName = containerName.substring(0, containerName.indexOf("$"));
+          isInnerClass = true;
         }
         String fqName = toPack(addSubPath(path, containerName));
         JavaFile javaFile = myJavaFiles.get(fqName);
         if (javaFile == null) {
           toDelete.add(file);
-        } else if (isFileUpToDate(javaFile, file.lastModified())) {
+        } else if (!isInnerClass && isFileUpToDate(javaFile, file.lastModified())) {
           toCompile.remove(javaFile);
         }
       } else if (isResourceFile(file)) {

@@ -77,8 +77,10 @@ public class ModuleMaker {
       indicator.setIndeterminate(true);
 
       Set<IModule> candidates = new DependencyCollector(modules, IModule.class).collect();
+      indicator.setText2("Loading dependencies..");
       myDependencies = new Dependencies(candidates);
 
+      indicator.setText2("Calculating modules to compile..");
       Set<IModule> toCompile = getModulesToCompile(candidates);
 
 
@@ -199,7 +201,7 @@ public class ModuleMaker {
           }
           String className = NameUtil.shortNameFromLongName(fqName);
           File output = new File(outputDir, className + ".class");
-          if (!classesWithErrors.contains(fqName)) {
+          if (!classesWithErrors.contains(containerClassName)) {
             FileOutputStream os = null;
             try {
               os = new FileOutputStream(output);
