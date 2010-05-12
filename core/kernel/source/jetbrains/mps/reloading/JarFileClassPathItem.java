@@ -264,14 +264,14 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
 
     public void addClass(String pack, String className) {
       if (!myClasses.containsKey(pack)){
-        myClasses.put(pack,new HashSet<String>(1));
+        myClasses.put(pack,new HashSet<String>(2));
       }
       myClasses.get(pack).add(className);
     }
 
     public void addPackage(String namespace, String pack) {
       if (!mySubpackages.containsKey(pack)){
-        mySubpackages.put(pack,new HashSet<String>(1));
+        mySubpackages.put(pack,new HashSet<String>(2));
       }
       mySubpackages.get(pack).add(namespace);
     }
