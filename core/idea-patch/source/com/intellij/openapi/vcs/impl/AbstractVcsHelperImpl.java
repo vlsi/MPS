@@ -649,7 +649,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     // MPS Patch Start
     // we create providerDecorator which does actual backup
     MergeProvider providerDecorator = new MergeProvider() {
-      private File myBackup;
+      private File myBackup = null;
 
       @NotNull
       public MergeData loadRevisions(VirtualFile file) throws VcsException {
@@ -671,7 +671,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
 
       public void conflictResolvedForFile(VirtualFile file) {
         provider.conflictResolvedForFile(file);
-        if (myBackup.exists()) {
+        if (myBackup != null && myBackup.exists()) {
           try {
             File tmp = FileUtil.createTmpDir();
             ZipUtil.extract(myBackup, tmp, null);
