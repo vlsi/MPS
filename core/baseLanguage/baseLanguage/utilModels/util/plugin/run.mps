@@ -957,12 +957,18 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8492459591399147556">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="8492459591399147557">
                 <link role="baseMethodDeclaration:3" targetNodeId="8492459591399147565" resolveInfo="createModuleClasspath" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8492459591399147558">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8492459591399147559">
-                    <link role="baseMethodDeclaration:3" targetNodeId="35.~IModule.getModuleWithDependenciesClassPathItem():jetbrains.mps.reloading.IClassPathItem" resolveInfo="getModuleWithDependenciesClassPathItem" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8802582350201890780">
+                  <link role="baseMethodDeclaration:3" targetNodeId="35.~AbstractModule.getDependenciesClasspath(java.util.Set,boolean):jetbrains.mps.reloading.IClassPathItem" resolveInfo="getDependenciesClasspath" />
+                  <link role="classConcept:3" targetNodeId="35.~AbstractModule" resolveInfo="AbstractModule" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8802582350201890782">
+                    <link role="baseMethodDeclaration:3" targetNodeId="28.~CollectionUtil.set(java.lang.Object...):java.util.Set" resolveInfo="set" />
+                    <link role="classConcept:3" targetNodeId="28.~CollectionUtil" resolveInfo="CollectionUtil" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8802582350201890783">
+                      <link role="variableDeclaration:3" targetNodeId="8492459591399147526" resolveInfo="module" />
+                    </node>
                   </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8492459591399147560">
-                    <link role="variableDeclaration:3" targetNodeId="8492459591399147526" resolveInfo="module" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="8802582350201890785">
+                    <property name="value:3" value="true" />
                   </node>
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8492459591399147561">
