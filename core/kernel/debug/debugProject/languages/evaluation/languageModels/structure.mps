@@ -155,5 +155,16 @@
     <link role="source:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
     <link role="target:0" targetNodeId="6887799812494808332" resolveInfo="HighLevelLocalVariableAnnotation" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4698880862823893381">
+    <property name="package:0" value="annotations" />
+    <property name="name:0" value="ToEvaluateAnnotation" />
+    <link role="extends:0" targetNodeId="1707366700950402060" resolveInfo="GenerationHelperAnnotation" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration:0" id="4698880862823893385">
+    <property name="package:0" value="annotations" />
+    <property name="role:0" value="toEvaluateAnnotation" />
+    <link role="source:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
+    <link role="target:0" targetNodeId="1304595503654368306" resolveInfo="UnprocessedAnnotation" />
+  </node>
 </model>
 

@@ -5,19 +5,21 @@ package jetbrains.mps.debug.evaluation.ui;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.baseLanguage.textGen.LastStatementUtil;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
@@ -42,13 +44,26 @@ public class TransformationUtil {
   public static void transform(SNode evaluator) {
     SNode evaluateMethod = findEvaluateMethod(evaluator);
 
-    preprocess(evaluateMethod);
+    // find what to evaluate 
+    SNode whatToEvaluate = ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(evaluator), "jetbrains.mps.baseLanguage.structure.ClassConcept")).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode root) {
+        return ListSequence.fromList(SNodeOperations.getDescendants(root, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode node) {
+            return (SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("toEvaluateAnnotation"), true) != null);
+          }
+        });
+      }
+    }).first();
 
-    replaceThis(evaluateMethod);
-    replaceLowLevelVariableReferences(evaluateMethod);
-    replaceLocalMemberReferences(evaluateMethod);
-    wrapMemberReferencesInCycle(evaluator);
+    preprocess(whatToEvaluate);
+
+    replaceThis(whatToEvaluate);
+    replaceLowLevelVariableReferences(evaluator, whatToEvaluate);
+    replaceLocalMemberReferences(whatToEvaluate);
+    wrapMemberReferencesInCycle(evaluator, whatToEvaluate);
     wrapReturn(evaluateMethod);
+
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(evaluateMethod, "body", true), "statement", true)).addElement(SNodeOperations.cast(whatToEvaluate, "jetbrains.mps.baseLanguage.structure.Statement"));
   }
 
   public static void preprocess(SNode evaluateMethod) {
@@ -73,9 +88,9 @@ public class TransformationUtil {
     }
   }
 
-  public static void replaceLowLevelVariableReferences(final SNode evaluateMethod) {
+  public static void replaceLowLevelVariableReferences(SNode evaluator, final SNode evaluateMethod) {
     for (SNode variableRef : ListSequence.fromList(SNodeOperations.getDescendants(evaluateMethod, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
-      if ((TransformationUtil.isLowLevelVariableReference(variableRef, evaluateMethod))) {
+      if ((TransformationUtil.isLowLevelVariableReference(variableRef, evaluator))) {
         SNode getValue = new TransformationUtil.QuotationClass_crriw5_a0a0a0a0a3().createNode();
 
         ListSequence.fromList(SLinkOperations.getTargets(getValue, "actualArgument", true)).addElement(createStringLiteral(SPropertyOperations.getString(SLinkOperations.getTarget(variableRef, "variableDeclaration", false), "name")));
@@ -117,8 +132,7 @@ public class TransformationUtil {
     }
   }
 
-  public static void wrapMemberReferencesInCycle(SNode evaluator) {
-    SNode evaluateMethod = findEvaluateMethod(evaluator);
+  public static void wrapMemberReferencesInCycle(SNode evaluator, SNode evaluateMethod) {
 
     boolean finished = false;
 
@@ -132,7 +146,7 @@ public class TransformationUtil {
         if (TransformationUtil.needsToBeReplacedWithInvoke(methodCall)) {
 
           SNode originalMethodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
-          SNode invokeMethodCall = new TransformationUtil.QuotationClass_crriw5_a0a2a0a3a6a5().createNode(createStringLiteral(SPropertyOperations.getString(originalMethodDeclaration, "name")), createStringLiteral(getJniSignature(originalMethodDeclaration)));
+          SNode invokeMethodCall = new TransformationUtil.QuotationClass_crriw5_a0a2a0a3a5a5().createNode(createStringLiteral(SPropertyOperations.getString(originalMethodDeclaration, "name")), createStringLiteral(getJniSignature(originalMethodDeclaration)));
           ListSequence.fromList(SLinkOperations.getTargets(invokeMethodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)));
           SNodeOperations.replaceWithAnother(methodCall, invokeMethodCall);
 
@@ -145,7 +159,7 @@ public class TransformationUtil {
 
           // TODO what if we are inside of an inner class? 
           SNode fqNameNode = TransformationUtil.createClassFqNameNode(evaluator, SLinkOperations.getTarget(staticMethodCall, "classConcept", false));
-          SNode invokeStaticMethodCall = new TransformationUtil.QuotationClass_crriw5_a0a3a0a5a6a5().createNode(fqNameNode, createStringLiteral(SPropertyOperations.getString(SLinkOperations.getTarget(staticMethodCall, "baseMethodDeclaration", false), "name")), createStringLiteral(getJniSignature(SLinkOperations.getTarget(staticMethodCall, "baseMethodDeclaration", false))));
+          SNode invokeStaticMethodCall = new TransformationUtil.QuotationClass_crriw5_a0a3a0a5a5a5().createNode(fqNameNode, createStringLiteral(SPropertyOperations.getString(SLinkOperations.getTarget(staticMethodCall, "baseMethodDeclaration", false), "name")), createStringLiteral(getJniSignature(SLinkOperations.getTarget(staticMethodCall, "baseMethodDeclaration", false))));
           ListSequence.fromList(SLinkOperations.getTargets(invokeStaticMethodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(staticMethodCall, "actualArgument", true)));
           SNodeOperations.replaceWithAnother(staticMethodCall, invokeStaticMethodCall);
 
@@ -158,9 +172,9 @@ public class TransformationUtil {
       }
 
       for (SNode fieldReferenceOperation : ListSequence.fromList(SNodeOperations.getDescendants(evaluateMethod, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{}))) {
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getAncestor(fieldReferenceOperation, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), "operand", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a0j0g0f().createNode())) {
+        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getAncestor(fieldReferenceOperation, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), "operand", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a0j0f0f().createNode())) {
           SNode returnType = getValueProxyTypeFromType(SLinkOperations.getTarget(SLinkOperations.getTarget(fieldReferenceOperation, "fieldDeclaration", false), "type", true));
-          SNodeOperations.replaceWithAnother(SNodeOperations.getParent(fieldReferenceOperation), new TransformationUtil.QuotationClass_crriw5_a0a0b0a0j0g0f().createNode(returnType, returnType, SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(fieldReferenceOperation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), createStringLiteral(SPropertyOperations.getString(SLinkOperations.getTarget(fieldReferenceOperation, "fieldDeclaration", false), "name"))));
+          SNodeOperations.replaceWithAnother(SNodeOperations.getParent(fieldReferenceOperation), new TransformationUtil.QuotationClass_crriw5_a0a0b0a0j0f0f().createNode(returnType, returnType, SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(fieldReferenceOperation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), createStringLiteral(SPropertyOperations.getString(SLinkOperations.getTarget(fieldReferenceOperation, "fieldDeclaration", false), "name"))));
           finished = false;
         }
       }
@@ -168,17 +182,17 @@ public class TransformationUtil {
       for (SNode staticFieldReference : ListSequence.fromList(SNodeOperations.getDescendants(evaluateMethod, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", false, new String[]{}))) {
         // TODO we really process all(?) static field references now, so might wanna move this code out of while cycle 
         SNode returnType = getValueProxyTypeFromType(SLinkOperations.getTarget(SLinkOperations.getTarget(staticFieldReference, "variableDeclaration", false), "type", true));
-        SNodeOperations.replaceWithAnother(staticFieldReference, new TransformationUtil.QuotationClass_crriw5_a0a0c0l0g0f().createNode(returnType, createClassFqNameNode(evaluator, SNodeOperations.cast(SLinkOperations.getTarget(staticFieldReference, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")), createStringLiteral(SPropertyOperations.getString(SLinkOperations.getTarget(staticFieldReference, "variableDeclaration", false), "name")), returnType));
+        SNodeOperations.replaceWithAnother(staticFieldReference, new TransformationUtil.QuotationClass_crriw5_a0a0c0l0f0f().createNode(returnType, createClassFqNameNode(evaluator, SNodeOperations.cast(SLinkOperations.getTarget(staticFieldReference, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")), createStringLiteral(SPropertyOperations.getString(SLinkOperations.getTarget(staticFieldReference, "variableDeclaration", false), "name")), returnType));
         finished = false;
       }
 
       for (SNode binaryOperation : ListSequence.fromList(SNodeOperations.getDescendants(evaluateMethod, "jetbrains.mps.baseLanguage.structure.BinaryOperation", false, new String[]{}))) {
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a0n0g0f().createNode())) {
-          SLinkOperations.setTarget(binaryOperation, "leftExpression", new TransformationUtil.QuotationClass_crriw5_a0a0a0a0n0g0f().createNode(binaryOperation.getChild(LTYPE), SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), true);
+        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a0n0f0f().createNode())) {
+          SLinkOperations.setTarget(binaryOperation, "leftExpression", new TransformationUtil.QuotationClass_crriw5_a0a0a0a0n0f0f().createNode(binaryOperation.getChild(LTYPE), SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), true);
           finished = false;
         }
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), new TransformationUtil.QuotationClass_crriw5_a1a0b0n0g0f().createNode())) {
-          SLinkOperations.setTarget(binaryOperation, "rightExpression", new TransformationUtil.QuotationClass_crriw5_a0a0a0b0n0g0f().createNode(binaryOperation.getChild(RTYPE), SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), true);
+        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), new TransformationUtil.QuotationClass_crriw5_a1a0b0n0f0f().createNode())) {
+          SLinkOperations.setTarget(binaryOperation, "rightExpression", new TransformationUtil.QuotationClass_crriw5_a0a0a0b0n0f0f().createNode(binaryOperation.getChild(RTYPE), SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), true);
           finished = false;
         }
       }
@@ -582,8 +596,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a0a2a0a3a6a5 {
-    public QuotationClass_crriw5_a0a2a0a3a6a5() {
+  public static class QuotationClass_crriw5_a0a2a0a3a5a5 {
+    public QuotationClass_crriw5_a0a2a0a3a5a5() {
     }
 
     public SNode createNode(Object parameter_11, Object parameter_12) {
@@ -641,8 +655,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a0a3a0a5a6a5 {
-    public QuotationClass_crriw5_a0a3a0a5a6a5() {
+  public static class QuotationClass_crriw5_a0a3a0a5a5a5 {
+    public QuotationClass_crriw5_a0a3a0a5a5a5() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14, Object parameter_15) {
@@ -714,8 +728,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a0a0b0a0j0g0f {
-    public QuotationClass_crriw5_a0a0b0a0j0g0f() {
+  public static class QuotationClass_crriw5_a0a0b0a0j0f0f {
+    public QuotationClass_crriw5_a0a0b0a0j0f0f() {
     }
 
     public SNode createNode(Object parameter_15, Object parameter_16, Object parameter_17, Object parameter_18) {
@@ -800,8 +814,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a1a0a0j0g0f {
-    public QuotationClass_crriw5_a1a0a0j0g0f() {
+  public static class QuotationClass_crriw5_a1a0a0j0f0f {
+    public QuotationClass_crriw5_a1a0a0j0f0f() {
     }
 
     public SNode createNode() {
@@ -818,8 +832,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a0a0c0l0g0f {
-    public QuotationClass_crriw5_a0a0c0l0g0f() {
+  public static class QuotationClass_crriw5_a0a0c0l0f0f {
+    public QuotationClass_crriw5_a0a0c0l0f0f() {
     }
 
     public SNode createNode(Object parameter_17, Object parameter_18, Object parameter_19, Object parameter_20) {
@@ -910,8 +924,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a0a0a0a0n0g0f {
-    public QuotationClass_crriw5_a0a0a0a0n0g0f() {
+  public static class QuotationClass_crriw5_a0a0a0a0n0f0f {
+    public QuotationClass_crriw5_a0a0a0a0n0f0f() {
     }
 
     public SNode createNode(Object parameter_16, Object parameter_17) {
@@ -978,8 +992,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a1a0a0n0g0f {
-    public QuotationClass_crriw5_a1a0a0n0g0f() {
+  public static class QuotationClass_crriw5_a1a0a0n0f0f {
+    public QuotationClass_crriw5_a1a0a0n0f0f() {
     }
 
     public SNode createNode() {
@@ -996,8 +1010,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a0a0a0b0n0g0f {
-    public QuotationClass_crriw5_a0a0a0b0n0g0f() {
+  public static class QuotationClass_crriw5_a0a0a0b0n0f0f {
+    public QuotationClass_crriw5_a0a0a0b0n0f0f() {
     }
 
     public SNode createNode(Object parameter_16, Object parameter_17) {
@@ -1064,8 +1078,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a1a0b0n0g0f {
-    public QuotationClass_crriw5_a1a0b0n0g0f() {
+  public static class QuotationClass_crriw5_a1a0b0n0f0f {
+    public QuotationClass_crriw5_a1a0b0n0f0f() {
     }
 
     public SNode createNode() {

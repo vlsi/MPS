@@ -119,6 +119,7 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_1304595503654398417(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode evaluatorConcept : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept")) {
+      SLinkOperations.setNewChild(SLinkOperations.getTarget(evaluatorConcept, "evaluatedStatement", false), AttributesRolesUtil.childRoleFromAttributeRole("toEvaluateAnnotation"), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
       SNode expr = SLinkOperations.getTarget(evaluatorConcept, "evaluatedExpression", true);
       for (SNode classCreator : SNodeOperations.getDescendants(expr, "jetbrains.mps.baseLanguage.structure.ClassCreator", false, new String[]{})) {
         SLinkOperations.setNewChild(classCreator, AttributesRolesUtil.childRoleFromAttributeRole("unprocessedAnnotations"), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
