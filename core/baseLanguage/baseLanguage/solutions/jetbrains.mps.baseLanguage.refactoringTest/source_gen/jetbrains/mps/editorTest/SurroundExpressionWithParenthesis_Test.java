@@ -12,24 +12,22 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 @MPSLaunch
-public class CompexTransformTest_Test extends BaseTransformationTest {
+public class SurroundExpressionWithParenthesis_Test extends BaseTransformationTest {
   @Test
-  public void test_CompexTransformTest() throws Throwable {
+  public void test_SurroundExpressionWithParenthesis() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
-    this.runTest("jetbrains.mps.editorTest.CompexTransformTest_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.SurroundExpressionWithParenthesis_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      final IEditor editor = TestBody.this.initEditor("1236013323503", "1236013384899");
+      final IEditor editor = TestBody.this.initEditor("1989240834983537721", "1989240834983537728");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE", " BACK_SPACE"));
       BaseEditorTestBody.typeString(editorComponent, "(");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " LEFT", " LEFT", " LEFT"));
-      BaseEditorTestBody.typeString(editorComponent, "!");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " LEFT"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }

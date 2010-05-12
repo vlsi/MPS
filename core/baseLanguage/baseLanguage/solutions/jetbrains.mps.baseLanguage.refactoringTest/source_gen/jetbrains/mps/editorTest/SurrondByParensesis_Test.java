@@ -10,7 +10,6 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import javax.swing.SwingUtilities;
 
 @MPSLaunch
 public class SurrondByParensesis_Test extends BaseTransformationTest {
@@ -27,13 +26,8 @@ public class SurrondByParensesis_Test extends BaseTransformationTest {
       final IEditor editor = TestBody.this.initEditor("1241100704753", "1241100756809");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "(");
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
-      final IEditor editorVar = editor;
-      SwingUtilities.invokeAndWait(new Runnable() {
-        public void run() {
-          editorVar.getCurrentEditorComponent().getNodeSubstituteChooser().doSubstituteSelection("(", 0);
-        }
-      });
     }
   }
 }

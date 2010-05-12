@@ -3338,7 +3338,7 @@
       <property name="vertical:32" value="false" />
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1081880010410">
         <property name="text:32" value="(" />
-        <property name="attractsFocus:32" value="1" />
+        <property name="attractsFocus:32" value="0" />
         <link role="actionMap:32" targetNodeId="1166027091157" resolveInfo="DeleteParenthesis_Actions" />
         <link role="keyMap:32" targetNodeId="1166110777830" resolveInfo="OpenParenthesis_KeyMap" />
         <link role="styleClass:32" targetNodeId="1215087929380" resolveInfo="LeftParen" />
@@ -3347,6 +3347,7 @@
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1081880010411">
+        <property name="attractsFocus:32" value="2" />
         <link role="relationDeclaration:32" targetNodeId="17.1079359253376:3" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1081880010412">

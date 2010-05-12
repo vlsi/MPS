@@ -38,9 +38,6 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, false);
     }
-    if (true) {
-      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
-    }
     DeleteParenthesis_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addKeyMap(new OpenParenthesis_KeyMap());
     editorCell.setDefaultText("");
@@ -71,6 +68,9 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no expression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (true) {
+      editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
