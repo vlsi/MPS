@@ -180,7 +180,12 @@ public abstract class MpsWorker {
 
       if (result.isReloadingNeeded()) {
         info("Reloading classes...");
-        ClassLoaderManager.getInstance().reloadAll(new InfoProgressIndicator());
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            ClassLoaderManager.getInstance().reloadAll(new InfoProgressIndicator());
+          }
+        });
         info("Classes reloaded");
       }
     }
