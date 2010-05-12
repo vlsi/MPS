@@ -17,7 +17,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -36,7 +35,6 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
     SNode node = baseConcept;
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
     for (SReference ref : node.getReferences()) {
-      final SNode target = ref.getTargetNode();
       SearchScopeStatus sss = ModelConstraintsUtil.getSearchScope(node.getParent(), node, concept, ref.getRole(), context);
       if (sss.isError()) {
         {
@@ -46,12 +44,8 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
         }
       } else if (sss.isDefault()) {
         //  global search scope is not checked now 
-      } else if (sss.getSearchScope().findNode(new Condition<SNode>() {
-        public boolean met(SNode n) {
-          return n == target;
-        }
-      }) == null) {
-        String name = target.getName();
+      } else if (!(sss.getSearchScope().isInScope(ref.getTargetNode()))) {
+        String name = ref.getTargetNode().getName();
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
@@ -66,7 +60,7 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
       }
       ++cnt;
     }
-    // update debugging information (it looks that rule checking works in single thread) 
+    // update debugging information (rule checking works in single thread) 
     ReferencesScopeCheckingOptionEditor.ourTime += new Date().getTime() - t0;
     ReferencesScopeCheckingOptionEditor.ourRefs += cnt;
     ++ReferencesScopeCheckingOptionEditor.ourNodes;

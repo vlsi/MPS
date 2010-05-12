@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.search;
 
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 
@@ -33,6 +34,7 @@ public class NodeListChildrenSearchScope extends AbstractSearchScope {
     this.myNodes = new ArrayList<SNode>(nodes);
   }
 
+  @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
     ArrayList<SNode> result = new ArrayList<SNode>();
     for (SNode node : myNodes) {

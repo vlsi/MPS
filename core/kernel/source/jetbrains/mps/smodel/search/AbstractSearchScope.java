@@ -30,7 +30,7 @@ import java.util.List;
  * Jan 20, 2006
  */
 public abstract class AbstractSearchScope implements ISearchScope {
-  protected static Condition<SNode> TRUE_CONDITION = new Condition<SNode>() {
+  protected final static Condition<SNode> TRUE_CONDITION = new Condition<SNode>() {
     public boolean met(SNode object) {
       return true;
     }
@@ -55,7 +55,6 @@ public abstract class AbstractSearchScope implements ISearchScope {
     }));
   }
 
-
   @NotNull
   public <T extends INodeAdapter> List<T> getAdapters(final Class<T> adapterClass) {
     return (List<T>) getAdapters(new Condition<INodeAdapter>() {
@@ -65,19 +64,10 @@ public abstract class AbstractSearchScope implements ISearchScope {
     });
   }
 
-  @Nullable
-  public SNode findNode(Condition<SNode> condition) {
-    List<SNode> list = getNodes(condition);
-    if (list.size() > 0) return list.get(0);
-    return null;
-  }
-
-  @Nullable
-  public INodeAdapter findAdapter(final Condition<INodeAdapter> condition) {
-    return BaseAdapter.fromNode(findNode(new Condition<SNode>() {
-      public boolean met(SNode object) {
-        return condition.met(BaseAdapter.fromNode(object));
-      }
-    }));
+  public boolean isInScope(final SNode node)
+  {
+    return getNodes(new Condition<SNode>(){
+      public boolean met(SNode n) { return n==node; }
+    }).size()>0;
   }
 }

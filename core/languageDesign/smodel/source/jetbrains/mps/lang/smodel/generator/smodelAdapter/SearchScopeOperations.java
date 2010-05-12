@@ -26,10 +26,6 @@ import jetbrains.mps.util.Condition;
 public class SearchScopeOperations {
   public static boolean containsNode(ISearchScope searchScope, final SNode node) {
     if (searchScope == null || node == null) return false;
-    return null != searchScope.findNode(new Condition<SNode>() {
-      public boolean met(SNode n) {
-        return n == node;
-      }
-    });
+    return searchScope.isInScope(node);
   }
 }

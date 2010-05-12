@@ -38,11 +38,7 @@ public interface ISearchScope {
   @NotNull
   <T extends INodeAdapter> List<T> getAdapters(Class<T> adapterClass);
 
-  @Nullable
-  SNode findNode(Condition<SNode> condition);
-
-  @Nullable
-  INodeAdapter findAdapter(Condition<INodeAdapter> condition);
+  boolean isInScope(SNode node);
 
   @NotNull
   List<SNode> getNodes();

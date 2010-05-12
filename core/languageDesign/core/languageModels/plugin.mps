@@ -1091,6 +1091,24 @@
         </node>
       </node>
     </node>
+    <node role="afterReadBlock:23" type="jetbrains.mps.lang.plugin.structure.OnAfterReadBlock:23" id="1996901569405012748">
+      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1996901569405012749">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1996901569405018321">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1996901569405018323">
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1996901569405018326">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1996901569405018327" />
+              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference:23" id="1996901569405018328">
+                <link role="member:23" targetNodeId="5143881521904566067" resolveInfo="myRefScopeChecking" />
+              </node>
+            </node>
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1996901569405018322">
+              <link role="classifier:3" targetNodeId="5143881521904566930" resolveInfo="ReferencesScopeCheckingOptionEditor" />
+              <link role="variableDeclaration:3" targetNodeId="5143881521904580483" resolveInfo="ourRefScopeChecking" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5143881521904566930">
     <property name="name:3" value="ReferencesScopeCheckingOptionEditor" />

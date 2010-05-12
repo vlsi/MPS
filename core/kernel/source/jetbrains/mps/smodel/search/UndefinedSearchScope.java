@@ -47,13 +47,7 @@ public class UndefinedSearchScope implements ISearchScope {
     throw new UnsupportedOperationException();
   }
 
-  @Nullable
-  public SNode findNode(Condition<SNode> condition) {
-    throw new UnsupportedOperationException();
-  }
-
-  @Nullable
-  public INodeAdapter findAdapter(Condition<INodeAdapter> condition) {
+  public boolean isInScope(SNode node) {
     throw new UnsupportedOperationException();
   }
 
