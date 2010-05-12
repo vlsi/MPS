@@ -18,10 +18,7 @@ package jetbrains.mps.ide.messages;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -108,6 +105,9 @@ public class Message {
     boolean error = true;
     if (obj instanceof SNode) {
       myHintObject = new SNodePointer(((SNode) obj));
+    } else if (obj instanceof INodeAdapter) {
+      SNode node = ((INodeAdapter) obj).getNode();
+      myHintObject = new SNodePointer(node);
     } else if (obj instanceof SModel) {
       myHintObject = ((SModel) obj).getSModelReference();
     } else if (obj instanceof IModule) {
