@@ -29,7 +29,7 @@ import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.EqualUtil;
+import org.apache.commons.lang.ObjectUtils;
 
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
@@ -166,7 +166,7 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
             return new SNodePointer(node);
           }
         });
-        if (EqualUtil.equals(myLoadableNode, nodePointer)) {
+        if (ObjectUtils.equals(myLoadableNode, nodePointer)) {
           getTabbedEditor().updateTabColor(BaseSingletabbedTab.this, getBaseNodeVirtualFile());
         }
       }

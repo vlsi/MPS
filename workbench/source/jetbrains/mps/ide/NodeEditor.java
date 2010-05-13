@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
+import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -190,7 +191,7 @@ public class NodeEditor implements IEditor {
       }
 
       MyFileEditorState state = (MyFileEditorState) obj;
-      return EqualUtil.equals(state.myMemento, myMemento) && EqualUtil.equals(state.myInspectorMemento, myInspectorMemento);
+      return ObjectUtils.equals(state.myMemento, myMemento) && ObjectUtils.equals(state.myInspectorMemento, myInspectorMemento);
     }
   }
 

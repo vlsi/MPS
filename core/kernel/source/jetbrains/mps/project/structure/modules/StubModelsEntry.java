@@ -16,7 +16,7 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.model.ModelRootManager;
-import jetbrains.mps.util.EqualUtil;
+import org.apache.commons.lang.ObjectUtils;
 
 public class StubModelsEntry {
   public static final String PATH = "path";
@@ -57,8 +57,8 @@ public class StubModelsEntry {
 
     StubModelsEntry that = (StubModelsEntry) o;
 
-    if (!EqualUtil.equals(myManager, that.myManager)) return false;
-    if (!EqualUtil.equals(myPath, that.myPath)) return false;
+    if (!ObjectUtils.equals(myManager, that.myManager)) return false;
+    if (!ObjectUtils.equals(myPath, that.myPath)) return false;
 
     return true;
   }

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.util;
 
+import org.apache.commons.lang.ObjectUtils;
+
 @SuppressWarnings({"InstanceVariableNamingConvention"})
 public class Pair<T1, T2> {
   @SuppressWarnings({"ClassEscapesDefinedScope"})
@@ -38,7 +40,7 @@ public class Pair<T1, T2> {
     if (this == obj) return true;
     if (!(obj instanceof Pair)) return false;
     Pair pair = (Pair) obj;
-    return EqualUtil.equals(pair.o1, o1) && EqualUtil.equals(pair.o2, o2);
+    return ObjectUtils.equals(pair.o1, o1) && ObjectUtils.equals(pair.o2, o2);
   }
 
 

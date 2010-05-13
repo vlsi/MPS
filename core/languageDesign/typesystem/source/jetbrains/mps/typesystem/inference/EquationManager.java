@@ -15,25 +15,28 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.*;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
-import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
-import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
+import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.intentions.IntentionProvider;
+import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
+import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.inference.util.LatticeUtil;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.WeakSet;
+import org.apache.commons.lang.ObjectUtils;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-import java.util.HashSet;
-import java.util.HashMap;
-
-import org.jetbrains.annotations.NotNull;
 
 public class EquationManager {
 
@@ -641,7 +644,7 @@ public class EquationManager {
     IWrapper rhsRepresentator = getRepresentatorWrapper(rhs);
 
     // no equation needed
-    if (EqualUtil.equals(rhsRepresentator, lhsRepresentator)) return;
+    if (ObjectUtils.equals(rhsRepresentator, lhsRepresentator)) return;
     if (rhsRepresentator == null || lhsRepresentator == null) return;
 
     // add var to type's multieq

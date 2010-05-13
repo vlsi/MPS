@@ -16,15 +16,10 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.components.ComponentsUtil;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import org.jdom.Element;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodePointer;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 
@@ -98,7 +93,7 @@ public class DefaultCellInfo implements CellInfo {
   public boolean equals(Object o) {
     if (!(o instanceof CellInfo)) return false;
     DefaultCellInfo cellInfo = (DefaultCellInfo) o;
-    if (!EqualUtil.equals(cellInfo.myParentInfo, myParentInfo)) return false;
+    if (!ObjectUtils.equals(cellInfo.myParentInfo, myParentInfo)) return false;
     if (cellInfo.myNodePointer == null) return false;
     boolean idsBothNull = false;
     if (cellInfo.myCellId == null && myCellId == null) idsBothNull = true;

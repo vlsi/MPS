@@ -15,13 +15,16 @@
  */
 package jetbrains.mps.nodeEditor.style;
 
-import java.util.*;
-
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.commons.lang.ObjectUtils;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 
 public class Style {
   private static final Logger LOG = Logger.getLogger(Style.class);
@@ -167,7 +170,7 @@ public class Style {
 
         Object newValue = attribute.combine(parentValue, currentValue);
 
-        if (!EqualUtil.equals(newValue, oldValue)) {
+        if (!ObjectUtils.equals(newValue, oldValue)) {
           changedAttributes.add(attribute);
         }
 

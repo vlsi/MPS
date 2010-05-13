@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project.structure.model;
 
-import jetbrains.mps.util.EqualUtil;
+import org.apache.commons.lang.ObjectUtils;
 
 public class ModelRootManager {
   private String myModuleId;
@@ -56,8 +56,8 @@ public class ModelRootManager {
 
     ModelRootManager that = (ModelRootManager) o;
 
-    if (!EqualUtil.equals(myClassName, that.myClassName)) return false;
-    if (!EqualUtil.equals(myModuleId, that.myModuleId)) return false;
+    if (!ObjectUtils.equals(myClassName, that.myClassName)) return false;
+    if (!ObjectUtils.equals(myModuleId, that.myModuleId)) return false;
 
     return true;
   }

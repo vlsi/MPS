@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.workbench.action;
 
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.misc.hash.HashMap;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.KeyStroke;
@@ -74,8 +74,8 @@ public abstract class BaseKeymapChanges {
       if (o == null || getClass() != o.getClass()) return false;
 
       ActionDescriptor that = (ActionDescriptor) o;
-      if (!EqualUtil.equals(this.myClassName, that.myClassName)) return false;
-      if (!EqualUtil.equals(this.myModuleNamespace, that.myModuleNamespace)) return false;
+      if (!ObjectUtils.equals(this.myClassName, that.myClassName)) return false;
+      if (!ObjectUtils.equals(this.myModuleNamespace, that.myModuleNamespace)) return false;
 
       return true;
     }

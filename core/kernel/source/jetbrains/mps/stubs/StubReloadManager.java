@@ -19,10 +19,10 @@ import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -253,7 +253,7 @@ public class StubReloadManager implements ApplicationComponent {
     for (StubPath sp : myNotChangedStubPaths) {
       String oldManagerClass = descriptor.getManagerClass();
       String newManagerClass = sp.getManager().getClassName();
-      boolean managersEqual = EqualUtil.equals(oldManagerClass, newManagerClass);
+      boolean managersEqual = ObjectUtils.equals(oldManagerClass, newManagerClass);
 
       if (managersEqual && isUnder(path, sp.getPath())) return false;
     }
@@ -264,8 +264,8 @@ public class StubReloadManager implements ApplicationComponent {
     if (os == ns) return true;
     if (ns == null || os.getClass() != ns.getClass()) return false;
 
-    boolean pathsEqual = EqualUtil.equals(ns.getPath(), os.getPath());
-    boolean managersEqual = EqualUtil.equals(ns.getManager(), os.getManager());
+    boolean pathsEqual = ObjectUtils.equals(ns.getPath(), os.getPath());
+    boolean managersEqual = ObjectUtils.equals(ns.getManager(), os.getManager());
     boolean equalSP = pathsEqual && managersEqual;
     return equalSP;
   }

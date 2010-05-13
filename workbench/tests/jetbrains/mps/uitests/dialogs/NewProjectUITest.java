@@ -20,11 +20,11 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.uitests.dialogs.UITestsBase.NoProjectUITestsBase;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.dialogs.project.newproject.LanguageStep;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectStep;
 import jetbrains.mps.workbench.dialogs.project.newproject.SolutionStep;
 import junit.extensions.jfcunit.finder.DialogFinder;
+import org.apache.commons.lang.ObjectUtils;
 
 import java.awt.Component;
 import java.io.File;
@@ -76,7 +76,7 @@ public class NewProjectUITest extends NoProjectUITestsBase {
     List<ModuleReference> languages = solution.getSolutionDescriptor().getUsedLanguages();
     boolean imported = false;
     for (ModuleReference langRef:languages){
-      if (EqualUtil.equals(langRef.getModuleFqName(),language.getModuleFqName())){
+      if (ObjectUtils.equals(langRef.getModuleFqName(),language.getModuleFqName())){
         imported = true;
       }
     }

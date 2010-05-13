@@ -39,11 +39,11 @@ import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
+import org.apache.commons.lang.ObjectUtils;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -499,7 +499,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     if (getContentManager() == null) return;
     Content content = getContentManager().getSelectedContent();
     if (content == null) return;
-    if (!EqualUtil.equals(content.getComponent(), myComponent)) return;
+    if (!ObjectUtils.equals(content.getComponent(), myComponent)) return;
     if (hasErrors() || hasWarnings() || hasInfo()) {
       getToolWindow().setTitle(NameUtil.formatNumericalString(myErrors, "error") + "/"
         + NameUtil.formatNumericalString(myWarnings, "warning") + "/"

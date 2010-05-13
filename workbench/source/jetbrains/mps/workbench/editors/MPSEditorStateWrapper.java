@@ -18,7 +18,7 @@ package jetbrains.mps.workbench.editors;
 import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import jetbrains.mps.ide.MPSEditorState;
-import jetbrains.mps.util.EqualUtil;
+import org.apache.commons.lang.ObjectUtils;
 
 class MPSEditorStateWrapper implements FileEditorState {
   private MPSEditorState myEditorState;
@@ -48,13 +48,13 @@ class MPSEditorStateWrapper implements FileEditorState {
   }
 
   public int hashCode() {
-    return EqualUtil.hashCode(myEditorState);
+    return ObjectUtils.hashCode(myEditorState);
   }
 
   public boolean equals(Object obj) {
     if (!(obj instanceof MPSEditorStateWrapper)) return false;
 
     MPSEditorStateWrapper w = (MPSEditorStateWrapper) obj;
-    return EqualUtil.equals(myEditorState, w.myEditorState);
+    return ObjectUtils.equals(myEditorState, w.myEditorState);
   }
 }

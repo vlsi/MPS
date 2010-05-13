@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.EqualUtil;
+import org.apache.commons.lang.ObjectUtils;
 
 import java.util.Stack;
 
@@ -109,20 +109,20 @@ public class ReferencedNodeContext {
   }
 
   public int hashCode() {
-    return EqualUtil.hashCode(myNodePointer) +
-      31 * (EqualUtil.hashCode(myContextRefererNodes) +
-        31 * (EqualUtil.hashCode(myContextRoles) +
-          31 * EqualUtil.hashCode(myAttributesStack)));
+    return ObjectUtils.hashCode(myNodePointer) +
+      31 * (ObjectUtils.hashCode(myContextRefererNodes) +
+        31 * (ObjectUtils.hashCode(myContextRoles) +
+          31 * ObjectUtils.hashCode(myAttributesStack)));
   }
 
   public boolean equals(Object obj) {
     if (obj == this) return true;
     if (obj instanceof ReferencedNodeContext) {
       ReferencedNodeContext o = (ReferencedNodeContext) obj;
-      return EqualUtil.equals(myNodePointer, o.myNodePointer)
-        && EqualUtil.equals(myContextRoles, o.myContextRoles)
-        && EqualUtil.equals(myContextRefererNodes, o.myContextRefererNodes)
-        && EqualUtil.equals(myAttributesStack, o.myAttributesStack);
+      return ObjectUtils.equals(myNodePointer, o.myNodePointer)
+        && ObjectUtils.equals(myContextRoles, o.myContextRoles)
+        && ObjectUtils.equals(myContextRefererNodes, o.myContextRefererNodes)
+        && ObjectUtils.equals(myAttributesStack, o.myAttributesStack);
     } else {
       return false;
     }

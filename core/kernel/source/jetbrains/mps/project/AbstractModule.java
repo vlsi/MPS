@@ -36,12 +36,12 @@ import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
 import jetbrains.mps.vfs.VFileSystem;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -80,7 +80,7 @@ public abstract class AbstractModule implements IModule {
   private ModuleReference myModuleReference;
 
   protected void setModulePointer(@NotNull ModuleReference reference) {
-    LOG.assertLog(myModuleReference == null || EqualUtil.equals(myModuleReference.getModuleId(), reference.getModuleId()), reference.getModuleFqName());
+    LOG.assertLog(myModuleReference == null || ObjectUtils.equals(myModuleReference.getModuleId(), reference.getModuleId()), reference.getModuleFqName());
 
     ModuleReference oldValue = myModuleReference;
     myModuleReference = reference;
@@ -159,8 +159,8 @@ public abstract class AbstractModule implements IModule {
         List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
         for (StubModelsEntry e : getModuleDescriptor().getStubModelEntries()) {
           for (StubModelsEntry ve : visited) {
-            boolean eqManager = EqualUtil.equals(ve.getManager(), e.getManager());
-            boolean eqPath = EqualUtil.equals(e.getPath(), ve.getPath());
+            boolean eqManager = ObjectUtils.equals(ve.getManager(), e.getManager());
+            boolean eqPath = ObjectUtils.equals(e.getPath(), ve.getPath());
             if (eqManager && eqPath) {
               remove.add(e);
               needToSave = true;
@@ -768,7 +768,7 @@ public abstract class AbstractModule implements IModule {
   public void invalidateClassPath() {
     Set<String> invalidate = new HashSet<String>();
     for (StubPath path : getAllStubPaths()) {
-      if (!EqualUtil.equals(path.getManager().getClassName(), JavaStubs.class.getName())) continue;
+      if (!ObjectUtils.equals(path.getManager().getClassName(), JavaStubs.class.getName())) continue;
       invalidate.add(path.getPath());
     }
     ClassPathFactory.getInstance().invalidate(invalidate);
@@ -812,8 +812,8 @@ public abstract class AbstractModule implements IModule {
         }
 
         for (StubModelsEntry ve : visited) {
-          boolean eqManager = EqualUtil.equals(ve.getManager(), entry.getManager());
-          boolean eqPath = EqualUtil.equals(cp.getAbsolutePath(), ve.getPath());
+          boolean eqManager = ObjectUtils.equals(ve.getManager(), entry.getManager());
+          boolean eqPath = ObjectUtils.equals(cp.getAbsolutePath(), ve.getPath());
           if (eqManager && eqPath) {
             remove.add(entry);
           }
@@ -829,7 +829,7 @@ public abstract class AbstractModule implements IModule {
       myCachedClassPathItem = new CompositeClassPathItem();
       for (StubPath path : getAllStubPaths()) {
         //look for classes only in stub dirs with JavaStub manager
-        if (!EqualUtil.equals(path.getManager().getClassName(), JavaStubs.class.getName())) continue;
+        if (!ObjectUtils.equals(path.getManager().getClassName(), JavaStubs.class.getName())) continue;
 
         try {
           IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path.getPath(), this);

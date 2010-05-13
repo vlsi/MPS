@@ -26,8 +26,8 @@ import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.WeakSet;
+import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -1419,8 +1419,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   private boolean changed(ModuleReference ref1, ModuleReference ref2) {
-    return !EqualUtil.equals(ref1.getModuleFqName(), ref2.getModuleFqName()) ||
-      !EqualUtil.equals(ref1.getModuleId(), ref2.getModuleId());
+    return !ObjectUtils.equals(ref1.getModuleFqName(), ref2.getModuleFqName()) ||
+      !ObjectUtils.equals(ref1.getModuleId(), ref2.getModuleId());
   }
 
   public synchronized FastNodeFinder getFastNodeFinder() {

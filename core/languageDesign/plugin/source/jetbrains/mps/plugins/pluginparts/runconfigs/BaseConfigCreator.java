@@ -26,9 +26,7 @@ import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.openapi.util.Computable;
 import com.intellij.psi.PsiElement;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.EqualUtil;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer {
@@ -88,8 +86,8 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
   public boolean equals(Object obj) {
     if (obj == null || !(obj instanceof BaseConfigCreator)) return false;
     BaseConfigCreator configCreator = (BaseConfigCreator) obj;
-    return EqualUtil.equals(configCreator.myContext, myContext)
-      && EqualUtil.equals(configCreator.mySourceElement, mySourceElement)
-      && EqualUtil.equals(configCreator.getClass().getName(), getClass().getName());
+    return ObjectUtils.equals(configCreator.myContext, myContext)
+      && ObjectUtils.equals(configCreator.mySourceElement, mySourceElement)
+      && ObjectUtils.equals(configCreator.getClass().getName(), getClass().getName());
   }
 }

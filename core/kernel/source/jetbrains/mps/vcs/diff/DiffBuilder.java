@@ -23,9 +23,9 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.vcs.diff.changes.*;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.vcs.diff.changes.*;
+import org.apache.commons.lang.ObjectUtils;
 
 import java.util.*;
 
@@ -308,7 +308,7 @@ public class DiffBuilder {
 
       SNode nPrevSibling = n.prevSibling();
       SNode oPrevSibling = o.prevSibling();
-      if (EqualUtil.equals(nid, oid)) {
+      if (ObjectUtils.equals(nid, oid)) {
         if (nPrevSibling == oPrevSibling) {
           continue;
         }

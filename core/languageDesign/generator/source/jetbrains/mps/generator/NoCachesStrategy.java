@@ -18,8 +18,8 @@ package jetbrains.mps.generator;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vfs.IFile;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.FileInputStream;
@@ -66,7 +66,7 @@ public abstract class NoCachesStrategy {
         }
 
         String currentHash = ModelDigestIndex.hash(modelBytes);
-        return EqualUtil.equals(currentHash, generatedHash);
+        return ObjectUtils.equals(currentHash, generatedHash);
       }
     };
   }

@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.logging.Logger;
+import org.apache.commons.lang.ObjectUtils;
 
 import java.util.Iterator;
 import java.util.List;
@@ -53,12 +54,12 @@ public class MatchingUtil {
         SNode diagnosticsNode = propertyNames1.contains(propertyName) ? node1 : node2;
         LOG.warning("can't find a property declaration for property " + propertyName + " in a concept " + typeDeclaration, diagnosticsNode);
         LOG.warning("try to compare just properties' internal values");
-        if (!EqualUtil.equals(propertyValue1, propertyValue2)) {
+        if (!ObjectUtils.equals(propertyValue1, propertyValue2)) {
           return false;
         }
       } else {
         PropertySupport propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
-        if (!EqualUtil.equals(propertySupport.fromInternalValue(propertyValue1),
+        if (!ObjectUtils.equals(propertySupport.fromInternalValue(propertyValue1),
           propertySupport.fromInternalValue(propertyValue2))) return false;
       }
     }

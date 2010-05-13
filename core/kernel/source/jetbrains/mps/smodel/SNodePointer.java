@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.util.EqualUtil;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -96,7 +96,7 @@ public class SNodePointer {
     if (o == null || !(o instanceof SNodePointer)) return false;
 
     SNodePointer np = (SNodePointer) o;
-    return EqualUtil.equals(myModelReference, np.myModelReference) && EqualUtil.equals(myNodeId, np.myNodeId);
+    return ObjectUtils.equals(myModelReference, np.myModelReference) && ObjectUtils.equals(myNodeId, np.myNodeId);
   }
 
   public int hashCode() {

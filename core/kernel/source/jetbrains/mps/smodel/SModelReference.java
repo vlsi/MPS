@@ -16,8 +16,8 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
+import org.apache.commons.lang.ObjectUtils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -127,6 +127,6 @@ public class SModelReference {
   }
 
   public boolean differs(SModelReference ref) {
-    return !(EqualUtil.equals(myModelId, ref.myModelId) && EqualUtil.equals(myModelFqName, ref.myModelFqName));
+    return !(ObjectUtils.equals(myModelId, ref.myModelId) && ObjectUtils.equals(myModelFqName, ref.myModelFqName));
   }
 }

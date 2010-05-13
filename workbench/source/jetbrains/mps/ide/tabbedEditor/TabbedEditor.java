@@ -37,10 +37,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -137,7 +137,7 @@ public class TabbedEditor implements IEditor {
       for (FileEditor openedEditor : manager.getAllEditors()) {
         if (openedEditor instanceof MPSFileNodeEditor) {
           MPSFileNodeEditor openedMPSEditor = (MPSFileNodeEditor) openedEditor;
-          if (EqualUtil.equals(this, openedMPSEditor.getNodeEditor())) continue;
+          if (ObjectUtils.equals(this, openedMPSEditor.getNodeEditor())) continue;
           List<SNode> openedNodes = openedMPSEditor.getNodeEditor().getEditedNodes();
           if (openedNodes.size() == 1 && thisNodes.contains(openedNodes.get(0))) {
             manager.closeFile(openedMPSEditor.getFile());
@@ -412,7 +412,7 @@ public class TabbedEditor implements IEditor {
       }
 
       MyFileEditorState state = (MyFileEditorState) obj;
-      return EqualUtil.equals(state.myMemento, myMemento) && EqualUtil.equals(state.myInspectorMemento, myInspectorMemento);
+      return ObjectUtils.equals(state.myMemento, myMemento) && ObjectUtils.equals(state.myInspectorMemento, myInspectorMemento);
     }
   }
 

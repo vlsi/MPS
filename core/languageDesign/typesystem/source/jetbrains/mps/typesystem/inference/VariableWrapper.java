@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SNode;
+import org.apache.commons.lang.ObjectUtils;
 
 public class VariableWrapper extends NodeWrapper implements IWrapperListener {
   private static final Logger LOG = Logger.getLogger(VariableWrapper.class);
@@ -103,7 +103,7 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
   }
 
   public void becomesDeeplyConcrete(IWrapper wrapper, EquationManager equationManager) {
-    if (EqualUtil.equals(wrapper, myShallowConcreteRepresentator)) {//must be always true
+    if (ObjectUtils.equals(wrapper, myShallowConcreteRepresentator)) {//must be always true
       SNode[] typeVariables = equationManager.getTypeCheckingContext().getRegisteredTypeVariables(getNode().getName());
       for (final SNode var : typeVariables) {
         SNode parent = var.getParent();

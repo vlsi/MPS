@@ -33,9 +33,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.search.AbstractSearchPanel;
 import jetbrains.mps.workbench.search.SearchHistoryComponent;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
@@ -385,14 +385,14 @@ public class SearchPanel extends AbstractSearchPanel {
 
     @Override
     public int hashCode() {
-      return ((myPositions == null) ? -1 : myPositions.size()) + EqualUtil.hashCode(myInfo);
+      return ((myPositions == null) ? -1 : myPositions.size()) + ObjectUtils.hashCode(myInfo);
     }
 
     @Override
     public boolean equals(Object obj) {
       if (!(obj instanceof SearchPanelEditorMessage)) return false;
       SearchPanelEditorMessage msg = (SearchPanelEditorMessage) obj;
-      return EqualUtil.equals(myPositions, msg.myPositions) && EqualUtil.equals(myInfo, msg.myInfo);
+      return ObjectUtils.equals(myPositions, msg.myPositions) && ObjectUtils.equals(myInfo, msg.myInfo);
     }
   }
 }

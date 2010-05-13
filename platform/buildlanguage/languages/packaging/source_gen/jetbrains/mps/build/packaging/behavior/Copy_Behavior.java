@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.io.File;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.EqualUtil;
+import org.apache.commons.lang.StringUtils;
 
 public class Copy_Behavior {
   public static void init(SNode thisNode) {
@@ -55,6 +55,6 @@ public class Copy_Behavior {
     if (!(SNodeOperations.isInstanceOf(snode, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))))) {
       return false;
     }
-    return EqualUtil.equalsIgnoreCase(Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(thisNode, "sourcePath", true)), Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(SNodeOperations.cast(snode, "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true)));
+    return StringUtils.equalsIgnoreCase(Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(thisNode, "sourcePath", true)), Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(SNodeOperations.cast(snode, "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true)));
   }
 }

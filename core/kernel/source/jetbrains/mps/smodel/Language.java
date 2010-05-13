@@ -41,12 +41,12 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -140,7 +140,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
       boolean hasDependency = false;
       for (Dependency ld : dependencies) {
-        if (EqualUtil.equals(ld.getModuleRef(), sd.getModuleReference())) {
+        if (ObjectUtils.equals(ld.getModuleRef(), sd.getModuleReference())) {
           hasDependency = true;
           break;
         }
@@ -653,7 +653,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     Iterator<SModelReference> accessoryModels = getLanguageDescriptor().getAccessoryModels().iterator();
     while (accessoryModels.hasNext()) {
       SModelReference model = accessoryModels.next();
-      if (EqualUtil.equals(model, modelReference)) {
+      if (ObjectUtils.equals(model, modelReference)) {
         return true;
       }
     }
@@ -840,7 +840,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     Set<String> invalidate = new HashSet<String>();
     for (StubPath path : getRuntimeStubPaths()) {
-      if (!EqualUtil.equals(path.getManager().getClassName(), JavaStubs.class.getName())) continue;
+      if (!ObjectUtils.equals(path.getManager().getClassName(), JavaStubs.class.getName())) continue;
       invalidate.add(path.getPath());
     }
 
@@ -914,8 +914,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         }
 
         for (StubModelsEntry ve : visited) {
-          boolean eqManager = EqualUtil.equals(ve.getManager(), entry.getManager());
-          boolean eqPath = EqualUtil.equals(cp.getAbsolutePath(), ve.getPath());
+          boolean eqManager = ObjectUtils.equals(ve.getManager(), entry.getManager());
+          boolean eqPath = ObjectUtils.equals(cp.getAbsolutePath(), ve.getPath());
           if (eqManager && eqPath) {
             remove.add(entry);
             break;
@@ -927,7 +927,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
       boolean containsJar = false;
       for (StubModelsEntry ve : visited) {
-        boolean eqPath = EqualUtil.equals(jarFile.getPath(), ve.getPath());
+        boolean eqPath = ObjectUtils.equals(jarFile.getPath(), ve.getPath());
         if (eqPath) {
           containsJar = true;
           break;

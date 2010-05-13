@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import org.apache.commons.lang.ObjectUtils;
 
 public class EditorCell_RefPresentation {
 
@@ -110,7 +110,7 @@ public class EditorCell_RefPresentation {
     }
 
     public boolean isValidText(String text) {
-      return EqualUtil.equals(getText(), text);
+      return ObjectUtils.equals(getText(), text);
     }
   }
 }

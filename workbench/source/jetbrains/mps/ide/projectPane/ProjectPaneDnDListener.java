@@ -16,10 +16,10 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
+import org.apache.commons.lang.ObjectUtils;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -67,9 +67,9 @@ public class ProjectPaneDnDListener implements DropTargetListener {
     if (targetModel == null) return Collections.emptyList();
     List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>();
     for (final Pair<SNode, String> node : sourceNodes) {
-      if (EqualUtil.equals(virtualPackage + node.o2, getVirtualPackage(node.o1))) continue;
+      if (ObjectUtils.equals(virtualPackage + node.o2, getVirtualPackage(node.o1))) continue;
       SModelDescriptor sourceModel = getModelDescriptor(node.o1);
-      if (EqualUtil.equals(sourceModel, targetModel)) {
+      if (ObjectUtils.equals(sourceModel, targetModel)) {
         result.add(new Pair(node.o1, node.o2));
       }
     }

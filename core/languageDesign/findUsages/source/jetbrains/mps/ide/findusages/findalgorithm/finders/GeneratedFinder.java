@@ -16,22 +16,24 @@
 package jetbrains.mps.ide.findusages.findalgorithm.finders;
 
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
-import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationHelper;
+import org.apache.commons.lang.ObjectUtils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public abstract class GeneratedFinder implements IInterfacedFinder {
   private static final Logger LOG = Logger.getLogger(GeneratedFinder.class);
@@ -117,7 +119,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
   private Comparator<SNode> getComparator() {
     return new Comparator<SNode>() {
       private boolean fromSameCollection(SNode node1, SNode node2) {
-        return EqualUtil.equals(node1.getRole_(), node2.getRole_());
+        return ObjectUtils.equals(node1.getRole_(), node2.getRole_());
       }
 
       private int compareWithoutEditor(SNode ancestor, SNode node1, SNode node2) {
@@ -162,7 +164,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
       public int compare(SNode o1, SNode o2) {
         SNode root1 = o1.getContainingRoot();
         SNode root2 = o2.getContainingRoot();
-        if (!EqualUtil.equals(root1, root2)) {
+        if (!ObjectUtils.equals(root1, root2)) {
           return root1.toString().compareTo(root2.toString());
         }
         List<SNode> anc1 = o1.getAncestors(true);
@@ -171,7 +173,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
           if (i1 == 0) continue;
           for (int i2 = 0; i2 < anc2.size(); i2++) {
             if (i2 == 0) continue;
-            if (EqualUtil.equals(anc1.get(i1), anc2.get(i2))) {
+            if (ObjectUtils.equals(anc1.get(i1), anc2.get(i2))) {
               SNode ancestor = anc1.get(i1);
               SNode node1 = anc1.get(i1 - 1);
               SNode node2 = anc2.get(i2 - 1);

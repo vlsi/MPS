@@ -1,24 +1,24 @@
 package jetbrains.mps.debug.runtime;
 
-import com.sun.jdi.*;
+import com.sun.jdi.LocalVariable;
+import com.sun.jdi.ObjectReference;
+import com.sun.jdi.ThreadReference;
+import com.sun.jdi.Value;
 import jetbrains.mps.debug.api.AbstractDebugSession.ExecutionState;
 import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.IThread;
-import jetbrains.mps.debug.api.programState.IValue;
-import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.runtime.java.programState.JavaStackFrame;
 import jetbrains.mps.debug.runtime.java.programState.JavaThread;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.EqualUtil;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 /**
 * Created by IntelliJ IDEA.
@@ -75,7 +75,7 @@ public class JavaUiState extends AbstractUiState {
   JavaUiState(@NotNull JavaUiState previousState, @Nullable JavaStackFrame frame, DebugSession debugSession) {
     super(debugSession);
     myDebugSession = debugSession;
-    LOG.assertLog(frame == null || EqualUtil.equals(frame.getThread(), previousState.myThread));
+    LOG.assertLog(frame == null || ObjectUtils.equals(frame.getThread(), previousState.myThread));
     myContext = previousState.myContext;
     myThread = previousState.myThread;
     myStackFrame = frame;

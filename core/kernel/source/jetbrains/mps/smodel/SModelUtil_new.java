@@ -17,13 +17,8 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.behavior.structure.ConceptBehavior;
-import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration;
-import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.lang.structure.structure.*;
-import jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
@@ -33,8 +28,8 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -93,7 +88,7 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static boolean isAssignableConcept(String fromConceptFqName, String toConceptFqName) {
-    if (EqualUtil.equals(fromConceptFqName, toConceptFqName)) return true;
+    if (ObjectUtils.equals(fromConceptFqName, toConceptFqName)) return true;
     if (toConceptFqName == null || fromConceptFqName == null) return false;
     if (toConceptFqName.equals("jetbrains.mps.lang.core.structure.BaseConcept")) return true;
 
