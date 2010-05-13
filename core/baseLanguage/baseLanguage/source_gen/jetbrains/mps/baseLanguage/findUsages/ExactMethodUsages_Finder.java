@@ -29,10 +29,9 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == null)) {
-      return false;
-    }
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+    // <node> 
+    // <node> 
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {

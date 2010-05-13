@@ -52,7 +52,7 @@ public class InlineMethodDialog extends BaseDialog {
     checkboxesPanel.setBorder(new TitledBorder("Inline"));
     ButtonGroup group = new ButtonGroup();
     JRadioButton button1 = this.createButton(group, checkboxesPanel, 0, false, "Inline only this call of method.");
-    if (this.myModel == null) {
+    if (this.myModel == null || this.myModel.getMethodCall() == null) {
       button1.setEnabled(false);
     }
     JRadioButton button2 = this.createButton(group, checkboxesPanel, 1, true, "Inline all calls of method.");
