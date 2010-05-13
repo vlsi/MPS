@@ -55,6 +55,7 @@ public class StepRequestor implements Requestor {
         LOG.error(e);
       }
       // if we are not in debuggable position we step again
+      // TODO this place may lead (and does lead) to bad performance (see MPS-8725)
       if (!sourceName.isEmpty() && !myFramesSelector.isDebuggablePosition(location.declaringType().name(), sourceName, location.lineNumber())) {
         return myStepType;
       }

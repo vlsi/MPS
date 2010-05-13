@@ -499,7 +499,18 @@ public class DebugVMEventsProcessor {
 
     StepRequest stepRequest = myRequestManager.createStepRequest(stepRequestor, stepType, stepThread, suspendContext.getSuspendPolicy());
 
-    // TODO add ignore filters to request
+    // TODO request filters should be configured by user
+    // this particular list was taken from idea debugger settings in order to fix MPS-8725
+    stepRequest.addClassExclusionFilter("java.*");
+    stepRequest.addClassExclusionFilter("javax.*");
+    stepRequest.addClassExclusionFilter("org.omg.*");
+    stepRequest.addClassExclusionFilter("sun.*");
+    stepRequest.addClassExclusionFilter("junit.*");
+    stepRequest.addClassExclusionFilter("com.sun.*");
+
+    //TODO also might wanna let user to exclude constructors, classloaders, getters,
+    //synthetic methods (whatever synthetic methods are).
+    //see idea debugger settings for the full list
 
     myRequestManager.enableRequest(stepRequest);
   }
