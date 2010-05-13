@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.baseLanguage.closures.structure.Closures_Language;
 import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
-import jetbrains.mps.baseLanguage.dates.structure.Dates_Language;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.lang.actions.structure.Actions_Language;
 import jetbrains.mps.lang.annotations.structure.Annotations_Language;
@@ -81,10 +80,6 @@ public class BootstrapLanguages {
 
   public static Language collectionsLanguage() {
     return Collections_Language.get();
-  }
-
-  public static Language datesLanguage() {
-    return Dates_Language.get();
   }
 
   public static Language closuresLanguage() {
