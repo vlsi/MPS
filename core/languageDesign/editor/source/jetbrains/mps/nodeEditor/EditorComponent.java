@@ -571,6 +571,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       LOG.error("Notify disposal with empty operation context");
       return;
     }
+    if (myOperationContext.getProject().isDisposed()) {
+      return;
+    }
     EditorComponentCreateListener listener = myOperationContext.getProject().getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
     listener.editorComponentDisposed(this);
   }
