@@ -244,7 +244,9 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
       return null;
     }
 
-    return new ModuleContext(sm.getModule(), myProject);
+    IOperationContext result = new ModuleContext(sm.getModule(), myProject);
+    assert result.getModule() == sm.getModule() : "Different modules: " + result.getModule() + "/" + sm.getModule();
+    return result;
   }
 
 }
