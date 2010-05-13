@@ -14,12 +14,9 @@ public class ClassPathFactory {
   private static final Logger LOG = Logger.getLogger(ClassPathFactory.class);
   private static final ClassPathFactory ourInstance = new ClassPathFactory();
 
-  private ClassPathFactory() {
-    ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
-        myCache.clear();
-      }
-    });
+
+  public void update() {
+    myCache.clear();
   }
 
   public static ClassPathFactory getInstance() {

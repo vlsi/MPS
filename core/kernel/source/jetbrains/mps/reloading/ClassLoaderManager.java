@@ -192,6 +192,7 @@ public class ClassLoaderManager implements ApplicationComponent {
 
       myRuntimeEnvironment.reloadAll();
 
+      ClassPathFactory.getInstance().update();
       for (IModule m : myRepository.getAllModules()) {
         m.updateClassPath();
       }
@@ -291,6 +292,7 @@ public class ClassLoaderManager implements ApplicationComponent {
           Class.forName(fqName_language);
           LOG.error("Non-bootstrap language class is available in application classpath: " + fqName_language);
         } catch (ClassNotFoundException e) {
+
         }
       }
     }
