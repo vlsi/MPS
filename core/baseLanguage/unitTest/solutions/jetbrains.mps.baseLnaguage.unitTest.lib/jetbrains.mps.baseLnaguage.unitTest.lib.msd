@@ -3,7 +3,9 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}/lib/junit4/junit-4.1.jar" include="false" />
+  </classPath>
   <sourcePath />
 </solution>
 
