@@ -91,7 +91,7 @@ public final class SNode {
     ourMemberAccessModifier = modifier;
   }
 
-  public SNode(SModel model, String conceptFqName, boolean callIntern) {
+  public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
     myModel = model;
     if (callIntern) {
       myConceptFqName = InternUtil.intern(conceptFqName);
@@ -1594,6 +1594,7 @@ public final class SNode {
     return SModelUtil.getDeclaringLanguage(concept, GlobalScope.getInstance());
   }
 
+  @NotNull
   public String getConceptFqName() {
     ModelAccess.assertLegalRead(this);
 
@@ -1615,6 +1616,7 @@ public final class SNode {
     return new ModuleReference(getLanguageNamespace());
   }
 
+  @NotNull
   public String getConceptShortName() {
     ModelAccess.assertLegalRead(this);
 
@@ -1639,7 +1641,7 @@ public final class SNode {
 
 
   @UseCarefully
-  void setConceptFqName(String conceptFQName) {
+  void setConceptFqName(@NotNull String conceptFQName) {
     myConceptFqName = InternUtil.intern(conceptFQName);
     myLanguageNamespace = null;
     myAdapter = null;
