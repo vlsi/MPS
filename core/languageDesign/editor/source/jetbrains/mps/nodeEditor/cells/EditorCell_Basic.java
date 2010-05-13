@@ -449,7 +449,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   protected boolean doProcessKeyTyped(final KeyEvent e, final boolean allowErrors) {
-    if (getSNode() == null) return false;
+    if (getSNode() == null || !isBigCell()) return false;
 
     if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
@@ -463,6 +463,9 @@ public abstract class EditorCell_Basic implements EditorCell {
       public void run() {
         SNode oldNode = getSNode();
         SNode newNode = replaceWithDefault();
+        if (newNode == null) {
+          return;
+        }
         newNode.putUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION, oldNode);
         EditorComponent editor = getEditorContext().getNodeEditorComponent();
         EditorCell nodeCell = editor.findNodeCell(newNode);
@@ -490,6 +493,9 @@ public abstract class EditorCell_Basic implements EditorCell {
     LinkDeclaration link = node.getParent().getLinkDeclaration(node.getRole_());
     AbstractConceptDeclaration concept = link.getTarget();
     String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept), editorContext.getScope());
+    if (node.getConceptFqName().equals(concreteConceptFqName)) {
+      return null;
+    }
     SNode newNode = new SNode(node.getModel(), concreteConceptFqName);
     node.getParent().replaceChild(node, newNode);
     editorContext.flushEvents();
