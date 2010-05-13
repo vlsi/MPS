@@ -15,13 +15,8 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -32,15 +27,6 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
 
   public IClassPathItem optimize() {
     return this;
-  }
-
-  private long getTimestamp(String namespace) {
-    long result = getClassesTimestamp(namespace);
-    Set<String> subpackages = getSubpackages(namespace);
-    for (String subpackage : subpackages) {
-      result = Math.max(result, getTimestamp(subpackage));
-    }
-    return result;
   }
 
   @NotNull
@@ -54,6 +40,15 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
   public final Set<String> getAvailableClasses(String namespace) {
     Set<String> result = new HashSet<String>();
     collectAvailableClasses(result, namespace);
+    return result;
+  }
+
+  private long getTimestamp(String namespace) {
+    long result = getClassesTimestamp(namespace);
+    Set<String> subpackages = getSubpackages(namespace);
+    for (String subpackage : subpackages) {
+      result = Math.max(result, getTimestamp(subpackage));
+    }
     return result;
   }
 
