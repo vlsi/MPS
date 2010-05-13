@@ -16,6 +16,9 @@ public class ClassPathFactory {
 
 
   public void update() {
+    for (RealClassPathItem p : myCache.values()) {
+      p.invalidate();
+    }
     myCache.clear();
   }
 
@@ -25,7 +28,7 @@ public class ClassPathFactory {
 
   //--------------------------
 
-  private Map<String, IClassPathItem> myCache = new HashMap<String, IClassPathItem>();
+  private Map<String, RealClassPathItem> myCache = new HashMap<String, RealClassPathItem>();
 
   private IClassPathItem get(String path) {
     if (!myCache.containsKey(path)) {

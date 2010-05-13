@@ -34,7 +34,10 @@ import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
-import jetbrains.mps.reloading.*;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
@@ -67,9 +70,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   private CachesInvalidator myCachesInvalidator;
 
   private Set<SNodePointer> myNotFoundRefactorings = new HashSet<SNodePointer>(2);
-  private
   @Nullable
-  Set<IRefactoring> myCachedRefactorings = null;
+  private Set<IRefactoring> myCachedRefactorings = null;
 
   private List<Language> myAllExtendedLanguages = new ArrayList<Language>();
 
@@ -164,7 +166,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     rereadModels();
     updatePackagedDescriptorClasspath();
-    updateLanguageRuntimeClassPathItem();
     updateClassPath();
     revalidateGenerators();
   }
@@ -828,28 +829,33 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public IClassPathItem getLanguageRuntimeClasspath() {
-    return myLanguageRuntimeClasspathCache;
+  public void updateClassPath() {
+    super.updateClassPath();
+    myLanguageRuntimeClasspathCache = null;
   }
 
-  private void updateLanguageRuntimeClassPathItem() {
-    CompositeClassPathItem result = new CompositeClassPathItem();
-    for (StubModelsEntry entry : getRuntimeModelsEntries()) {
-      String s = entry.getPath();
-      try {
-        IFile file = FileSystem.getFile(s);
-        if (!file.exists()) {
-          LOG.error("Can't find " + s);
-          continue;
+  public IClassPathItem getLanguageRuntimeClasspath() {
+    if (myLanguageRuntimeClasspathCache == null) {
+      CompositeClassPathItem result = new CompositeClassPathItem();
+      for (StubModelsEntry entry : getRuntimeModelsEntries()) {
+        String s = entry.getPath();
+        try {
+          IFile file = FileSystem.getFile(s);
+          if (!file.exists()) {
+            LOG.error("Can't find " + s);
+            continue;
+          }
+
+          result.add(ClassPathFactory.getInstance().createFromPath(s, this));
+        } catch (IOException e) {
+          LOG.error(e.getMessage());
         }
-
-        result.add(ClassPathFactory.getInstance().createFromPath(s, this));
-      } catch (IOException e) {
-        LOG.error(e.getMessage());
       }
-    }
 
-    myLanguageRuntimeClasspathCache = result;
+      myLanguageRuntimeClasspathCache = result;
+    }
+    
+    return myLanguageRuntimeClasspathCache;
   }
 
   //todo check this code. Wy not to do it where we add jars?

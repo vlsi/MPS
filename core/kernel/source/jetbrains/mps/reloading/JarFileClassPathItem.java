@@ -30,7 +30,7 @@ import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-public class JarFileClassPathItem extends AbstractClassPathItem {
+public class JarFileClassPathItem extends RealClassPathItem {
   private static final Logger LOG = Logger.getLogger(JarFileClassPathItem.class);
 
   private IFile myIFile;
@@ -55,15 +55,18 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   }
 
   public IFile getIFile() {
+    checkValidity();
     return myIFile;
   }
 
   public File getFile() {
+    checkValidity();
     ensureInitialized();
     return myFile;
   }
 
   public byte[] getClass(String name) {
+    checkValidity();
     ensureInitialized();
     ZipEntry entry = myEntries.get(name);
     if (entry == null) return null;
@@ -89,6 +92,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   }
 
   public URL getResource(String name) {
+    checkValidity();
     ensureInitialized();
     try {
       if (myZipFile.getEntry(name) == null) return null;
@@ -99,16 +103,19 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   }
 
   public void collectAvailableClasses(Set<String> classes, String namespace) {
+    checkValidity();
     ensureInitialized();
     classes.addAll(myCache.getClassesSetFor(namespace));
   }
 
   public void collectSubpackages(Set<String> subpackages, String namespace) {
+    checkValidity();
     ensureInitialized();
     subpackages.addAll(myCache.getSubpackagesSetFor(namespace));
   }
 
   public long getClassesTimestamp(String namespace) {
+    checkValidity();
     ensureInitialized();
     long timestamp = 0;
     for (String cls : getAvailableClasses(namespace)) {
@@ -118,16 +125,19 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   }
 
   public long getTimestamp() {
+    checkValidity();
     return myIFile.lastModified();
   }
 
   public List<IClassPathItem> flatten() {
+    checkValidity();
     List<IClassPathItem> result = new ArrayList<IClassPathItem>();
     result.add(this);
     return result;
   }
 
   public void accept(IClassPathItemVisitor visitor) {
+    checkValidity();
     visitor.visit(this);
   }
 

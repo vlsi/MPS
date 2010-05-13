@@ -31,7 +31,7 @@ import java.util.*;
 /**
  * @author Kostik
  */
-public class FileClassPathItem extends AbstractClassPathItem {
+public class FileClassPathItem extends RealClassPathItem {
   private String myClassPath;
   private Map<String, Set<String>> mySubpackagesCache = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myAvailableClassesCache = new HashMap<String, Set<String>>();
@@ -41,10 +41,12 @@ public class FileClassPathItem extends AbstractClassPathItem {
   }
 
   public String getClassPath() {
+    checkValidity();
     return myClassPath;
   }
 
   public byte[] getClass(String name) {
+    checkValidity();
     String namespace = NameUtil.namespaceFromLongName(name);
     String shortname = NameUtil.shortNameFromLongName(name);
 
@@ -79,6 +81,7 @@ public class FileClassPathItem extends AbstractClassPathItem {
   }
 
   public URL getResource(String name) {
+    checkValidity();
     try {
       IFile resourceFile = FileSystem.getFile(myClassPath + File.separator + name.replace('/', File.separatorChar));
       if (!resourceFile.exists()) return null;
@@ -89,6 +92,7 @@ public class FileClassPathItem extends AbstractClassPathItem {
   }
 
   public void collectAvailableClasses(Set<String> classes, String namespace) {
+    checkValidity();
     if (!myAvailableClassesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
     }
@@ -100,6 +104,7 @@ public class FileClassPathItem extends AbstractClassPathItem {
   }
 
   public void collectSubpackages(Set<String> subpackages, String namespace) {
+    checkValidity();
     if (!mySubpackagesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
     }
@@ -140,6 +145,7 @@ public class FileClassPathItem extends AbstractClassPathItem {
   }
 
   public long getClassesTimestamp(String namespace) {
+    checkValidity();
     IFile dir = getModelDir(namespace);
     long result = dir.lastModified();
     if (dir.exists()) {
@@ -153,6 +159,7 @@ public class FileClassPathItem extends AbstractClassPathItem {
   }
 
   public List<IClassPathItem> flatten() {
+    checkValidity();
     List<IClassPathItem> result = new ArrayList<IClassPathItem>();
     result.add(this);
     return result;
@@ -160,10 +167,12 @@ public class FileClassPathItem extends AbstractClassPathItem {
 
   @Override
   public void accept(IClassPathItemVisitor visitor) {
+    checkValidity();
     visitor.visit(this);
   }
 
   public IFile getModelDir(String namespace) {
+    checkValidity();
     if (namespace == null) namespace = "";
     return FileSystem.getFile(myClassPath + File.separatorChar + namespace.replace('.', File.separatorChar));
   }
