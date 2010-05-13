@@ -9,6 +9,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class File_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    this.append("int main() {");
+    this.appendNewLine();
+    this.increaseDepth();
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "body", true), this.getSNode());
+    this.decreaseDepth();
+    this.append("}");
   }
 }

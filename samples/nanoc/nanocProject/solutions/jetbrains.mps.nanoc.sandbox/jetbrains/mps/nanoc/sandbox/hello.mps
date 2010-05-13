@@ -111,7 +111,6 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.nanoc.structure.CStatement" id="6585869519574747615" />
         </node>
         <node role="condition" type="jetbrains.mps.nanoc.structure.MinusOp" id="6585869519574784355">
           <node role="right" type="jetbrains.mps.nanoc.structure.LessEqOp" id="6585869519574784359">

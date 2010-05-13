@@ -32,7 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="20" />
+  <maxImportIndex value="22" />
   <import index="2" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="5" modelUID="r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)" version="-1" />
@@ -50,6 +50,8 @@
   <import index="17" modelUID="f:java_stub#jetbrains.mps.debug.executable(jetbrains.mps.debug.executable@java_stub)" version="-1" />
   <import index="18" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.nanoc.debug(jetbrains.mps.nanoc.debug@java_stub)" version="-1" />
+  <import index="21" modelUID="f:java_stub#jetbrains.mps.nanoc.debug.breakpoints(jetbrains.mps.nanoc.debug.breakpoints@java_stub)" version="-1" />
+  <import index="22" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration:23" id="8325829821233548499">
     <property name="name:23" value="ExecutableFileRunConfiguration" />
     <property name="caption:23" value="Executable File" />
@@ -1317,6 +1319,30 @@
     </node>
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2617013732192790805">
       <link role="classifier:3" targetNodeId="2.~JPanel" resolveInfo="JPanel" />
+    </node>
+  </node>
+  <visible index="2" modelUID="r:d65f98fc-790c-41b3-9614-f2de26685b21(jetbrains.mps.nanoc.structure)" />
+  <node type="jetbrains.mps.lang.plugin.structure.DebugInfoInitializer:23" id="4211204866430906520">
+    <node role="conceptsToDebug:23" type="jetbrains.mps.lang.plugin.structure.DebuggableNodeItem:23" id="4211204866430906521">
+      <link role="declaration:23" targetNodeId="2v.7211731935130582982" resolveInfo="CStatement" />
+      <node role="createBreakpoint:23" type="jetbrains.mps.lang.plugin.structure.ConceptFunction_CreateBreakpoint:23" id="4211204866430906522">
+        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4211204866430906523">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4211204866430939956">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4211204866430939958">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4211204866431007103">
+                <link role="baseMethodDeclaration:3" targetNodeId="21.~GDBBreakpoint.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,com.intellij.openapi.project.Project)" resolveInfo="GDBBreakpoint" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4211204866431007104">
+                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4211204866431007106">
+                    <link role="baseMethodDeclaration:3" targetNodeId="22.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SNodePointer" />
+                    <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_DebuggableNode:23" id="4211204866431007107" />
+                  </node>
+                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Debug_Project:23" id="4211204866431007109" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

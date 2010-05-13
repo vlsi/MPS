@@ -31,7 +31,7 @@ public class GDBBreakpoint extends AbstractMPSBreakpoint {
   private static final String BKPT = "bkpt";
   private static final String NUMBER = "number";
 
-  protected GDBBreakpoint(SNodePointer nodePointer, Project project) {
+  public GDBBreakpoint(SNodePointer nodePointer, Project project) {
     super(nodePointer, project);
   }
 
