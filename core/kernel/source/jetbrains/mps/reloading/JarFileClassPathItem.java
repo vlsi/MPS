@@ -142,7 +142,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
   }
 
   public String toString() {
-    return "jar file class path item : " + myIFile;
+    return "jar-cp: " + myIFile;
   }
 
   private void ensureInitialized(){

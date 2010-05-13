@@ -172,6 +172,9 @@ public class ModuleMaker {
           if (cp.isWarning()) {
             LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
           } else {
+            if(outputtedErrors == 0) {
+              LOG.error("Errors encountered:\nModules: " + modules.toString() + "\nClasspath: " + classPathItems +"\n");
+            }
             if (outputtedErrors < MAX_ERRORS) {
               outputtedErrors++;
               LOG.error(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);

@@ -179,6 +179,6 @@ public class FileClassPathItem extends RealClassPathItem {
 
 
   public String toString() {
-    return "file class path item " + myClassPath;
+    return "file-cp: " + myClassPath;
   }
 }
