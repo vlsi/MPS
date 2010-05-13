@@ -59,6 +59,7 @@
             <project file="${mps.home}/core/baseLanguage/money/MoneyLang.mpr"/>
             <project file="${mps.home}/core/baseLanguage/tuples/tuples.mpr"/>
             <project file="${mps.home}/core/baseLanguage/unitTest/unitTest.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/runConfigurations/runConfigurations.mpr"/>
             <project file="${mps.home}/core/languageDesign/actions/actions.mpr"/>
             <project file="${mps.home}/core/languageDesign/annotations/annotations.mpr"/>
             <project file="${mps.home}/core/languageDesign/behavior/behavior.mpr"/>
