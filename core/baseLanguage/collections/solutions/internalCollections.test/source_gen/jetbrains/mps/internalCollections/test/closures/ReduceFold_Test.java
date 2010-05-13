@@ -91,7 +91,7 @@ public class ReduceFold_Test extends Util_Test {
     Iterable<Integer> in = this.input10();
     String con = Sequence.fromIterable(in).foldRight("", new IRightCombinator<Integer, String>() {
       public String combine(Integer it, String s) {
-        return "" + it + s;
+        return "" + s + it;
       }
     });
     Assert.assertEquals("10987654321", con);
