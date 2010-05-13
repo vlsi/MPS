@@ -26,6 +26,7 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 import javax.swing.Icon;
 import javax.swing.JList;
@@ -104,7 +105,8 @@ public class GoToHelper {
     protected String getContainerText(final NodeNavigationItem element, String name) {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
-          return element.getNode().getModel().getLongName();
+          return NodePresentationUtil.descriptionText(element.getNode(), false);
+//          return element.getNode().getModel().getLongName();
         }
       });
     }
