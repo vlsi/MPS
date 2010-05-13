@@ -19,17 +19,17 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.ide.messages.FileWithPosition;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.DependencyCollector;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.DependencyCollector;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
@@ -65,6 +65,7 @@ public class ModuleMaker {
         indicator.setText2("Cleaning " + m.getModuleFqName() + "...");
         FileUtil.delete(m.getClassesGen().toFile());
       }
+      invalidateClasspath(modules);
     } finally {
       indicator.popState();
     }
@@ -123,7 +124,7 @@ public class ModuleMaker {
     IClassPathItem classPathItems = computeDependenciesClassPath(modules);
     JavaCompiler compiler = new JavaCompiler(classPathItems);
 
-
+    Set<IModule> modulesWithRemovals = new HashSet<IModule>();
     for (IModule m : modules) {
       if (areClassesUpToDate(m)) {
         continue;
@@ -138,6 +139,7 @@ public class ModuleMaker {
 
       for (IFile f : sources.getFilesToDelete()) {
         f.delete();
+        modulesWithRemovals.add(m);
       }
 
       for (JavaFile f : sources.getFilesToCompile()) {
@@ -146,7 +148,11 @@ public class ModuleMaker {
       }
     }
 
+    invalidateClasspath(modulesWithRemovals);
+
     compiler.compile();
+
+    invalidateClasspath(modules);
 
     int errorCount = 0;
     int outputtedErrors = 0;
@@ -172,8 +178,8 @@ public class ModuleMaker {
           if (cp.isWarning()) {
             LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
           } else {
-            if(outputtedErrors == 0) {
-              LOG.error("Errors encountered:\nModules: " + modules.toString() + "\nClasspath: " + classPathItems +"\n");
+            if (outputtedErrors == 0) {
+              LOG.error("Errors encountered:\nModules: " + modules.toString() + "\nClasspath: " + classPathItems + "\n");
             }
             if (outputtedErrors < MAX_ERRORS) {
               outputtedErrors++;
@@ -346,5 +352,11 @@ public class ModuleMaker {
     }
 
     return false;
+  }
+
+  private void invalidateClasspath(Set<IModule> modules) {
+    for (IModule m : modules) {
+      m.updateClassPath();
+    }
   }
 }
