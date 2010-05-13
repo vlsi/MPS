@@ -8,7 +8,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SModelReference;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.Set;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -51,27 +52,23 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
   }
 
   public Condition<SModelReference> getImportedModelsRemoveCondition() {
-    return new Condition<SModelReference>() {
-      public boolean met(final SModelReference object) {
-        return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-          public Boolean compute() {
-            return !(ModelPropertiesDialog.this.myPresenter.getModelDescriptor().getSModel().getUsedImportedModels().contains(object));
-          }
-        });
+    final Wrappers._T<Set<SModelReference>> models = new Wrappers._T<Set<SModelReference>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        models.value = ModelPropertiesDialog.this.myPresenter.getModelDescriptor().getSModel().getUsedImportedModels();
       }
-    };
+    });
+    return new ModelPropertiesDialog.ModelsCondition(models.value);
   }
 
   public Condition<ModuleReference> getUsedLanguageRemoveCondition() {
-    return new Condition<ModuleReference>() {
-      public boolean met(final ModuleReference object) {
-        return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-          public Boolean compute() {
-            return !(ModelPropertiesDialog.this.myPresenter.getModelDescriptor().getSModel().getUsedLanguages().contains(object));
-          }
-        });
+    final Wrappers._T<Set<ModuleReference>> usedLanguages = new Wrappers._T<Set<ModuleReference>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        usedLanguages.value = ModelPropertiesDialog.this.myPresenter.getModelDescriptor().getSModel().getUsedLanguages();
       }
-    };
+    });
+    return new ModelPropertiesDialog.LanguagesCondition(usedLanguages.value);
   }
 
   public JPanel createNamePanel() {
@@ -178,6 +175,30 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
         return ModelPropertiesDialog.this.myPresenter.getModelDescriptor();
       } else
       return this.myRealContext.getData(dataId);
+    }
+  }
+
+  private class ModelsCondition implements Condition<SModelReference> {
+    private final Set<SModelReference> myModels;
+
+    public ModelsCondition(Set<SModelReference> models) {
+      this.myModels = models;
+    }
+
+    public boolean met(final SModelReference object) {
+      return !(this.myModels.contains(object));
+    }
+  }
+
+  private class LanguagesCondition implements Condition<ModuleReference> {
+    private final Set<ModuleReference> myUsedLanguages;
+
+    public LanguagesCondition(Set<ModuleReference> usedLanguages) {
+      this.myUsedLanguages = usedLanguages;
+    }
+
+    public boolean met(final ModuleReference object) {
+      return this.myUsedLanguages.contains(object);
     }
   }
 }

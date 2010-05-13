@@ -970,8 +970,8 @@ public class SModel implements Iterable<SNode> {
     validateLanguagesAndImports(false, false);
   }
 
-  public List<ModuleReference> getUsedLanguages() {
-    List<ModuleReference> result = new ArrayList<ModuleReference>();
+  public Set<ModuleReference> getUsedLanguages() {
+    Set<ModuleReference> result = new HashSet<ModuleReference>();
     for (SNode node : allNodes()) {
       Language lang = node.getLanguage(GlobalScope.getInstance());
       ModuleReference ref = lang.getModuleReference();
@@ -980,8 +980,8 @@ public class SModel implements Iterable<SNode> {
     return result;
   }
 
-  public List<SModelReference> getUsedImportedModels() {
-    List<SModelReference> result = new ArrayList<SModelReference>();
+  public Set<SModelReference> getUsedImportedModels() {
+    Set<SModelReference> result = new HashSet<SModelReference>();
     for (SNode node : allNodes()) {
       List<SReference> references = node.getReferences();
       for (SReference reference : references) {
