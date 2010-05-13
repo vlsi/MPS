@@ -897,7 +897,14 @@ public class ChangeListManagerImpl extends ChangeListManagerEx implements Projec
     return myIgnoredIdeaLevel.getFilesToIgnore();
   }
 
+  @Patch
   public boolean isIgnoredFile(@NotNull VirtualFile file) {
+    // MPS Patch begin
+    // This is a hack to fix MPS-8678
+    if (".svn".equals(file.getName())) {
+      return true;
+    }
+    // MPS Patch end
     return myIgnoredIdeaLevel.isIgnoredFile(file);
   }
 
