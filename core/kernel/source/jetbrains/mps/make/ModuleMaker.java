@@ -26,6 +26,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
@@ -356,6 +357,9 @@ public class ModuleMaker {
 
   private void invalidateClasspath(Set<IModule> modules) {
     for (IModule m : modules) {
+      m.invalidateClassPath();
+    }
+    for (IModule m: MPSModuleRepository.getInstance().getAllModules()){
       m.updateClassPath();
     }
   }

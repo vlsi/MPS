@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import jetbrains.mps.lang.core.structure.Core_Language;
 import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.lang.refactoring.structure.OldRefactoring;
@@ -832,6 +833,18 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public void updateClassPath() {
     super.updateClassPath();
     myLanguageRuntimeClasspathCache = null;
+  }
+
+  public void invalidateClassPath() {
+    super.invalidateClassPath();
+
+    Set<String> invalidate = new HashSet<String>();
+    for (StubPath path : getRuntimeStubPaths()) {
+      if (!EqualUtil.equals(path.getManager().getClassName(), JavaStubs.class.getName())) continue;
+      invalidate.add(path.getPath());
+    }
+
+    ClassPathFactory.getInstance().invalidate(invalidate);
   }
 
   public IClassPathItem getLanguageRuntimeClasspath() {

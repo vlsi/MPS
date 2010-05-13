@@ -124,6 +124,8 @@ public interface IModule extends ModelOwner{
 
   void updateClassPath();
 
+   void invalidateClassPath();
+
   void save();
 
   void onModuleLoad();

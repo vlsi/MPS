@@ -692,7 +692,7 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  protected List<StubModelsEntry> getStubModelEntriesToIncludeOrExclude(){
+  protected List<StubModelsEntry> getStubModelEntriesToIncludeOrExclude() {
     return getStubModelEntries();
   }
 
@@ -763,6 +763,15 @@ public abstract class AbstractModule implements IModule {
   public void updateClassPath() {
     myCachedClassPathItem = null;
     myIncludedStubPaths = getIncludedStubPaths();
+  }
+
+  public void invalidateClassPath() {
+    Set<String> invalidate = new HashSet<String>();
+    for (StubPath path : getAllStubPaths()) {
+      if (!EqualUtil.equals(path.getManager().getClassName(), JavaStubs.class.getName())) continue;
+      invalidate.add(path.getPath());
+    }
+    ClassPathFactory.getInstance().invalidate(invalidate);
   }
 
   //todo check this code. Wy not to do it where we add jars?

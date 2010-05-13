@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class ClassPathFactory {
   private static final Logger LOG = Logger.getLogger(ClassPathFactory.class);
@@ -40,6 +41,14 @@ public class ClassPathFactory {
     }
 
     return myCache.get(path);
+  }
+
+  public void invalidate(Set<String> paths) {
+    for (String path : paths) {
+      if (myCache.containsKey(path)){
+        myCache.remove(path).invalidate();
+      }
+    }
   }
 
   //--------------------------
