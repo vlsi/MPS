@@ -230,8 +230,7 @@ public class DebugInfo {
       nodeId = ListSequence.fromList(Sequence.fromIterable(sorted).toListSequence()).getElement(1).getNodeId();
     }
     // here we have another example of how not to write code 
-    // this is a hack fixing MPS-8644	
- 
+    // this is a hack fixing MPS-8644 
     // the problem is with the BlockStatement which sometimes generates to nothing, but is still present in .debug 
     // so in the code like this: 
     // 1. { 
