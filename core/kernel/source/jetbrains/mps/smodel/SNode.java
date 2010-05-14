@@ -792,6 +792,15 @@ public final class SNode {
     return myParent;
   }
 
+  @NotNull
+  final public SNode getTopParent() {
+    SNode result = this;
+    while(result.myParent != null) {
+      result = result.myParent;
+    }
+    return result;
+  }
+
   public void setChild(String role, SNode childNode) {
     SNode oldChild = getChild(role);
     if (oldChild != null) {
