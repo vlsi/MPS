@@ -36,7 +36,7 @@ public class ClasspathCollector {
 
   public IClassPathItem collect(boolean includeStubSolutions) {
     for (IModule m : myStart) {
-      doCollect(m, includeStubSolutions);
+      doCollect(m, true);
     }
 
     CompositeClassPathItem result = new CompositeClassPathItem();
