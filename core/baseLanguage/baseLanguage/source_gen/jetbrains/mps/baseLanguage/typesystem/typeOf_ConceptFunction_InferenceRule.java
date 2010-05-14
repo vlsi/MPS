@@ -18,11 +18,9 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
 
 public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -36,29 +34,9 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
       // function is expected to return value of any type 
       expectedRetType = null;
     }
-    // ============= 
-    Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(func, "body", true));
-    boolean somethingReturned = Sequence.fromIterable(returnStatements).isNotEmpty();
-    // ============= 
-    final SNode LCS_typevar_1186052624152 = typeCheckingContext.createNewRuntimeTypesVariable();
-    if (noReturnExpected) {
-      // shouldn't return any values 
-      for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
-        if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
-          {
-            BaseIntentionProvider intentionProvider = null;
-            IErrorTarget errorTarget = new NodeErrorTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(returnStatement, "no return value expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053278842", intentionProvider, errorTarget);
-          }
-        }
-      }
-      {
-        SNode _nodeToCheck_1029348928467 = func;
-        BaseIntentionProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485205", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485210", true), (SNode) null, _info_12389875345);
-      }
-    } else {
+    if (!(noReturnExpected)) {
+      final SNode LCS_typevar_1186052624152 = typeCheckingContext.createNewRuntimeTypesVariable();
+      Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(func, "body", true));
       // should return subtypes of the 'expected type' 
       // if 'expected type' is null - should still return some value (of any type) 
       for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
@@ -105,22 +83,6 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770756", 0, intentionProvider);
             _info_12389875345.setInequationGroup("default");
             typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770753", true), (SNode) expectedRetType, true, _info_12389875345);
-          }
-        }
-        somethingReturned = true;
-      }
-      if (!(somethingReturned)) {
-        Set<SNode> throwables = SetSequence.fromSet(new HashSet());
-        StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(IMethodLike_Behavior.call_getBody_1239354440022(func), throwables, true);
-        if (SetSequence.fromSet(throwables).isEmpty()) {
-          String whatExpected = ((expectedRetType == null) ?
-            "some value" :
-            "" + expectedRetType
-          );
-          {
-            BaseIntentionProvider intentionProvider = null;
-            IErrorTarget errorTarget = new NodeErrorTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(func, "function should return " + whatExpected, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4313092516462081125", intentionProvider, errorTarget);
           }
         }
       }
