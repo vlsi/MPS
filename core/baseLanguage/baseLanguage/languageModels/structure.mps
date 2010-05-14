@@ -485,6 +485,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1068580123165">
     <property name="name:0" value="InstanceMethodDeclaration" />
     <property name="package:0" value="method.instance" />
+    <property name="iconPath:0" value="${language_descriptor}/icons/methodNew.png" />
     <link role="extends:0" targetNodeId="1068580123132:3" resolveInfo="BaseMethodDeclaration" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1178608670077">
       <property name="name:0" value="isAbstract" />
