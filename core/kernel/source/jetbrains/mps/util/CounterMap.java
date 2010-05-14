@@ -64,6 +64,13 @@ public class CounterMap<K> {
     }
   }
 
+  public void zeroizeKey(K key) {
+    if (myMap.containsKey(key) && myMap.get(key) != 0) {
+      myHandler.counterZero(key);
+    }
+    myMap.remove(key);
+  }
+
   public void removeKey(K key) {
     if (myMap.containsKey(key)) {
       myMap.remove(key);
