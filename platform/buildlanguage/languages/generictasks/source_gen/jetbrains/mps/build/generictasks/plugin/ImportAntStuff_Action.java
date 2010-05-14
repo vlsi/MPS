@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.build.generictasks.tasksfromjar.Generator;
+import jetbrains.mps.build.generictasks.taskfromjar.Generator;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ImportAntStuff_Action extends GeneratedAction {

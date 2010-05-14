@@ -65,7 +65,7 @@
     <entry path="${language_descriptor}/runtime/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath>
-    <entry path="${language_descriptor}/runtime/classes" />
+    <entry path="${language_descriptor}/runtime/classes" include="false" />
   </languageRuntimeClassPath>
   <sourcePath>
     <source path="${language_descriptor}/source" />
