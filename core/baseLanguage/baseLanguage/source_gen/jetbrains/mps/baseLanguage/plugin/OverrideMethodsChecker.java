@@ -20,7 +20,6 @@ import java.util.HashSet;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Iterator;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -35,6 +34,7 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class OverrideMethodsChecker extends EditorCheckerAdapter {
   private static final int MAX_MESSAGE_NUMBER = 5;
@@ -82,7 +82,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
           "Implements"
         ));
         tooltip.append(" method in '");
-        tooltip.append(INamedConcept_Behavior.call_getFqName_1213877404258(overridenClassifier));
+        tooltip.append(getPresentation(overridenClassifier));
         tooltip.append("'");
         if (it.hasNext()) {
           tooltip.append(LF);
@@ -134,7 +134,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
       for (Iterator<Tuples._2<SNode, SNode>> it = SetSequence.fromSet(MapSequence.fromMap(overridenToOverridingMethodsMap).get(overridenMethod)).iterator(); it.hasNext();) {
         SNode overridingClassifier = it.next()._1();
         tooltip.append(TOOLTIP_INDENT);
-        tooltip.append(INamedConcept_Behavior.call_getFqName_1213877404258(overridingClassifier));
+        tooltip.append(getPresentation(overridingClassifier));
         if (++messageCounter == MAX_MESSAGE_NUMBER && it.hasNext()) {
           tooltip.append(TOOLTIP_INDENT);
           tooltip.append("...");
@@ -237,6 +237,10 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
       }
     }
     return false;
+  }
+
+  private String getPresentation(SNode classifier) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(classifier);
   }
 
   private static boolean isParameterType(SNode type) {

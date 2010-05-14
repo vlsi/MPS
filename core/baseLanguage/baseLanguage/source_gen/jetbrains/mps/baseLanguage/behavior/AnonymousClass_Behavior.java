@@ -20,6 +20,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class AnonymousClass_Behavior {
   private static Class[] PARAMETERS_2193927380279967693 = {SNode.class};
+  private static Class[] PARAMETERS_7523932196475787022 = {SNode.class};
 
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "nonStatic", "" + true);
@@ -62,24 +63,52 @@ public class AnonymousClass_Behavior {
   }
 
   public static String virtual_getNestedName_8540045600162184125(SNode thisNode) {
+    String anonymousClassPresentation = AnonymousClass_Behavior.call_getAnonymousClassPresentation_7523932196475740197(thisNode);
+    if (anonymousClassPresentation != null) {
+      SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      assert containingClassifier != null;
+      return anonymousClassPresentation + Classifier_Behavior.call_getNestedName_8540045600162184125(containingClassifier);
+    }
+    return Classifier_Behavior.callSuper_getNestedName_8540045600162184125(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass");
+  }
+
+  public static String virtual_getFqName_1213877404258(SNode thisNode) {
+    String anonymousClassPresentation = AnonymousClass_Behavior.call_getAnonymousClassPresentation_7523932196475740197(thisNode);
+    if (anonymousClassPresentation != null) {
+      SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      assert containingClassifier != null;
+      return anonymousClassPresentation + INamedConcept_Behavior.call_getFqName_1213877404258(containingClassifier);
+    }
+    return INamedConcept_Behavior.callSuper_getFqName_1213877404258(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass");
+  }
+
+  public static String call_getAnonymousClassPresentation_7523932196475740197(SNode thisNode) {
     SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     if (containingClassifier == null) {
-      return Classifier_Behavior.callSuper_getNestedName_8540045600162184125(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass");
+      return null;
     }
     String result = "Anonymous in ";
     SNode containingMethod = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     if (containingMethod != null && SNodeOperations.getParent(containingMethod) == containingClassifier) {
       result += SPropertyOperations.getString(containingMethod, "name") + "() in ";
     }
-    return result + Classifier_Behavior.call_getNestedName_8540045600162184125(containingClassifier);
+    return result;
   }
 
   public static String call_getNestedName_2193927380279967693(SNode thisNode) {
     return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "virtual_getNestedName_8540045600162184125", PARAMETERS_2193927380279967693);
   }
 
+  public static String call_getFqName_7523932196475787022(SNode thisNode) {
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "virtual_getFqName_1213877404258", PARAMETERS_7523932196475787022);
+  }
+
   public static String callSuper_getNestedName_2193927380279967693(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), callerConceptFqName, "virtual_getNestedName_8540045600162184125", PARAMETERS_2193927380279967693);
+  }
+
+  public static String callSuper_getFqName_7523932196475787022(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_7523932196475787022);
   }
 
   public static class QuotationClass_mhnjwj_a0a0b {
