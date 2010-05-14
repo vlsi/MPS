@@ -235,7 +235,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
       return myContext;
     }
 
-    assert myFile.getNode() != null : "File should not be null";
+    assert myFile.getNode() != null : "Node should not be null for file: " + myFile;
     assert myFile.getNode().getModel() != null : "Model should not be null";
     SModelDescriptor sm = myFile.getNode().getModel().getModelDescriptor();
 
