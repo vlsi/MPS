@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ModelUsagesFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -35,11 +36,16 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 
 public class DeleteModelHelper {
@@ -54,10 +60,25 @@ public class DeleteModelHelper {
       return;
     }
 
+    deleteGeneratedFiles(project, modelDescriptor);
+    
     if (safeDelete) {
       safeDelete(project, modelDescriptor, deleteFiles);
     } else {
       delete(contextModule, modelDescriptor, deleteFiles);
+    }
+  }
+
+  public static void deleteGeneratedFiles(Project project, SModelDescriptor modelDescriptor) {
+    File moduleOutput = new File(modelDescriptor.getModule().getOutputFor(modelDescriptor));
+    List<File> directoriesToDelete = new ArrayList<File>();
+    directoriesToDelete.add(FileGenerationUtil.getDefaultOutputDir(modelDescriptor, moduleOutput));
+    directoriesToDelete.add(FileGenerationUtil.getDefaultOutputDir(modelDescriptor,FileGenerationUtil.getCachesOutputDir(moduleOutput)));
+    for (File directory: directoriesToDelete) {
+      if (directory.exists()) {
+        MPSVCSManager.getInstance(project).deleteFromDiskAndRemoveFromVcs(Arrays.asList(directory.listFiles()), false);
+        MPSVCSManager.getInstance(project).deleteFromDiskAndRemoveFromVcs(Arrays.asList(directory), false);
+      }
     }
   }
 
