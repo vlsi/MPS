@@ -140,14 +140,14 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   }
 
   public List<CompilationResult> compile(ITaskProgressHelper progress) {
-    myCompiler = createJavaCompiler(myContextModules);
+    myCompiler = createJavaCompiler();
 
     for (String key : myJavaSources) {
       myCompiler.addSource(getJavaNameFromKey(key), mySources.get(key));
     }
 
     progress.setText2("Compiling...");
-    myCompiler.compile();
+    myCompiler.compile(getClassPath(myContextModules));
     progress.setText2("Compilation finished.");
 
     List<CompilationResult> result = myCompiler.getCompilationResults();
@@ -190,12 +190,8 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     return myCompiler;
   }
 
-  protected final JavaCompiler createJavaCompiler(IModule contextModule) {
-    return createJavaCompiler(Collections.singleton(contextModule));
-  }
-
-  protected JavaCompiler createJavaCompiler(Set<IModule> contextModules) {
-    return new JavaCompiler(getClassPath(contextModules));
+  protected JavaCompiler createJavaCompiler() {
+    return new JavaCompiler();
   }
 
   protected CompositeClassPathItem getClassPath(Set<IModule> contextModules) {

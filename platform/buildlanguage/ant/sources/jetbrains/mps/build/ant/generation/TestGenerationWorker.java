@@ -55,8 +55,8 @@ public class TestGenerationWorker extends GeneratorWorker {
   private final Map<SModelDescriptor, Long> myPerfomanceMap = new HashMap<SModelDescriptor, Long>();
 
   private final TesterGenerationHandler myGenerationHandler = new TesterGenerationHandler(false, true) {
-    protected JavaCompiler createJavaCompiler(Set<IModule> contextModules) {
-      return new JavaCompiler(getClassPath(contextModules)) {
+    protected JavaCompiler createJavaCompiler() {
+      return new JavaCompiler() {
         public ClassLoader getClassLoader(ClassLoader parent) {
           return new MyClassLoader(parent);
         }

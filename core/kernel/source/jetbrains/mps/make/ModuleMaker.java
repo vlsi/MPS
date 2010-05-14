@@ -122,8 +122,7 @@ public class ModuleMaker {
       return new jetbrains.mps.plugin.CompilationResult(0, 0, false, false);
     }
 
-    IClassPathItem classPathItems = computeDependenciesClassPath(modules);
-    JavaCompiler compiler = new JavaCompiler(classPathItems);
+    JavaCompiler compiler = new JavaCompiler();
 
     Set<IModule> modulesWithRemovals = new HashSet<IModule>();
     for (IModule m : modules) {
@@ -151,7 +150,8 @@ public class ModuleMaker {
 
     invalidateClasspath(modulesWithRemovals);
 
-    compiler.compile();
+    IClassPathItem classPathItems = computeDependenciesClassPath(modules);
+    compiler.compile(classPathItems);
 
     invalidateClasspath(modules);
 

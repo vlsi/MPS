@@ -36,12 +36,11 @@ public class JavaCompiler {
   private static final Logger LOG = Logger.getLogger(JavaCompiler.class);
 
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
-  private IClassPathItem myClassPathItem;
   private List<CompilationResult> myCompilationResults = new ArrayList<CompilationResult>();
   private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();
 
-  public JavaCompiler(IClassPathItem item) {
-    myClassPathItem = item;
+  public JavaCompiler() {
+
   }
 
   public void addSource(String classFqName, String text) {
@@ -49,13 +48,13 @@ public class JavaCompiler {
     myCompilationUnits.put(classFqName, compilationUnit);
   }
 
-  public void compile() {
+  public void compile(IClassPathItem classPath) {
     CompilerOptions options = new CompilerOptions();
     options.sourceLevel = ClassFileConstants.JDK1_5;
     options.targetJDK = ClassFileConstants.JDK1_5;
     options.produceDebugAttributes = ClassFileConstants.ATTR_SOURCE | ClassFileConstants.ATTR_LINES | ClassFileConstants.ATTR_VARS;
 
-    org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(), new MyErrorHandlingPolicy(), options, new MyCompilerRequestor(), new DefaultProblemFactory(), null);
+    org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(classPath), new MyErrorHandlingPolicy(), options, new MyCompilerRequestor(), new DefaultProblemFactory(), null);
     //c.options.verbose = true;
 
     c.compile(myCompilationUnits.values().toArray(new CompilationUnit[0]));
@@ -139,8 +138,14 @@ public class JavaCompiler {
   }
 
   private class MyNameEnvironment extends MPSNameEnvironment {
+    private IClassPathItem myClassPath;
+
+    public MyNameEnvironment(IClassPathItem classPath) {
+      myClassPath = classPath;
+    }
+
     protected IClassPathItem getClassPathItem() {
-      return myClassPathItem;
+      return myClassPath;
     }
 
     protected NameEnvironmentAnswer findType(String fqName) {
