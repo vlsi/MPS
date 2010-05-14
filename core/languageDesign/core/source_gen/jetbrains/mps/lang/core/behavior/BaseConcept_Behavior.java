@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.Icon;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
@@ -13,6 +15,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseConcept_Behavior {
   private static Class[] PARAMETERS_5017341185733863694 = {SNode.class};
+  private static Class[] PARAMETERS_3923831204883340393 = {SNode.class};
   private static Class[] PARAMETERS_7941158526576616752 = {SNode.class};
   private static Class[] PARAMETERS_1213877396640 = {SNode.class};
   private static Class[] PARAMETERS_3981318653438234726 = {SNode.class};
@@ -26,6 +29,10 @@ public class BaseConcept_Behavior {
 
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return null;
+  }
+
+  public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
+    return new ArrayList<Icon>();
   }
 
   public static boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
@@ -69,6 +76,10 @@ public class BaseConcept_Behavior {
     return (Icon) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_5017341185733863694);
   }
 
+  public static List<Icon> call_getMarkIcons_3923831204883340393(SNode thisNode) {
+    return (List<Icon>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_3923831204883340393);
+  }
+
   public static boolean call_isRunnable_7941158526576616752(SNode thisNode) {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_isRunnable_7941158526576616752", PARAMETERS_7941158526576616752);
   }
@@ -83,6 +94,10 @@ public class BaseConcept_Behavior {
 
   public static Icon callSuper_getAdditionalIcon_5017341185733863694(SNode thisNode, String callerConceptFqName) {
     return (Icon) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_5017341185733863694);
+  }
+
+  public static List<Icon> callSuper_getMarkIcons_3923831204883340393(SNode thisNode, String callerConceptFqName) {
+    return (List<Icon>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", PARAMETERS_3923831204883340393);
   }
 
   public static boolean callSuper_isRunnable_7941158526576616752(SNode thisNode, String callerConceptFqName) {

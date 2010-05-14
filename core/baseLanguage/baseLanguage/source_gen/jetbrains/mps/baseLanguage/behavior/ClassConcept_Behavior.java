@@ -7,11 +7,14 @@ import jetbrains.mps.logging.Logger;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import javax.swing.Icon;
+import java.util.ArrayList;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.baseLanguage.icons.Icons;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,6 +34,7 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class ClassConcept_Behavior {
   private static Class[] PARAMETERS_7941158526576616766 = {SNode.class};
+  private static Class[] PARAMETERS_5039675756632924553 = {SNode.class};
   private static Class[] PARAMETERS_1240936569950 = {SNode.class};
   private static Logger LOG = Logger.getLogger(ClassConcept_Behavior.class);
 
@@ -48,6 +52,14 @@ public class ClassConcept_Behavior {
 
   public static boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
     return (ClassConcept_Behavior.call_getMainMethod_1213877355884(thisNode) != null);
+  }
+
+  public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
+    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_Behavior.callSuper_getMarkIcons_3923831204883340393(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    if ((ClassConcept_Behavior.call_getMainMethod_1213877355884(thisNode) != null)) {
+      markIcons.add(Icons.RUNNABLE_MARK_ICON);
+    }
+    return markIcons;
   }
 
   public static boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
@@ -129,7 +141,7 @@ public class ClassConcept_Behavior {
   public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, "superclass", true) != null ?
       SLinkOperations.getTarget(thisNode, "superclass", true) :
-      new ClassConcept_Behavior.QuotationClass_xjj00_a0a0a8().createNode()
+      new ClassConcept_Behavior.QuotationClass_xjj00_a0a0a9().createNode()
     );
   }
 
@@ -144,12 +156,20 @@ public class ClassConcept_Behavior {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_isRunnable_7941158526576616752", PARAMETERS_7941158526576616766);
   }
 
+  public static List<Icon> call_getMarkIcons_5039675756632924553(SNode thisNode) {
+    return (List<Icon>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756632924553);
+  }
+
   public static SNode call_getSuperclass_1240936569950(SNode thisNode) {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getSuperclass_1240936569950", PARAMETERS_1240936569950);
   }
 
   public static boolean callSuper_isRunnable_7941158526576616766(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_isRunnable_7941158526576616752", PARAMETERS_7941158526576616766);
+  }
+
+  public static List<Icon> callSuper_getMarkIcons_5039675756632924553(SNode thisNode, String callerConceptFqName) {
+    return (List<Icon>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756632924553);
   }
 
   public static SNode callSuper_getSuperclass_1240936569950(SNode thisNode, String callerConceptFqName) {
@@ -173,8 +193,8 @@ public class ClassConcept_Behavior {
     return SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
   }
 
-  public static class QuotationClass_xjj00_a0a0a8 {
-    public QuotationClass_xjj00_a0a0a8() {
+  public static class QuotationClass_xjj00_a0a0a9 {
+    public QuotationClass_xjj00_a0a0a9() {
     }
 
     public SNode createNode() {

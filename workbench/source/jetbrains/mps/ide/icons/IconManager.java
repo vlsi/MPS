@@ -40,6 +40,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -127,12 +128,14 @@ public class IconManager {
         if (!model.isDisposed() && model.isNotEditable()) {
           return new LayeredIcon(result, com.intellij.util.Icons.LOCKED_ICON);
         }
-        if (BaseConcept_Behavior.call_isRunnable_7941158526576616752(node)) {
-          LayeredIcon layeredIcon = new LayeredIcon(2);
+        
+        List<Icon> markIcons = BaseConcept_Behavior.call_getMarkIcons_3923831204883340393(node);
+        if (markIcons != null) {
+          LayeredIcon layeredIcon = new LayeredIcon(markIcons.size() + 1);
           layeredIcon.setIcon(result, 0);
-          Icon run = IconLoader.getIcon("/general/run.png");
-          int horizontalShift = mainIcon.getIconWidth() - run.getIconWidth();
-          layeredIcon.setIcon(run, 1, horizontalShift, -1);
+          for (int i = 0; i < markIcons.size(); i++) {
+            layeredIcon.setIcon(markIcons.get(i), i + 1);
+          }
           return layeredIcon;
         }
         return result;
