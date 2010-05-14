@@ -20,6 +20,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.ui.awt.RelativePoint;
 import java.awt.event.MouseEvent;
 import java.awt.Rectangle;
@@ -111,11 +112,13 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<Set<Tuples._2<SNode, SNode>>> overridenMethods = new Wrappers._T<Set<Tuples._2<SNode, SNode>>>();
+      final String[] methodName = new String[1];
       ProgressManager.getInstance().run(new Task.Modal(GoToOverridenMethod_Action.this.project, "Searchig...", true) {
         public void run(@NotNull ProgressIndicator p0) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               overridenMethods.value = GoToOverridenMethod_Action.this.getOverridenMethod();
+              methodName[0] = SPropertyOperations.getString(GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(), "name");
             }
           });
         }
@@ -132,7 +135,7 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
         public SNode select(Tuples._2<SNode, SNode> it) {
           return it._0();
         }
-      }).toListSequence(), relativePoint, GoToOverridenMethod_Action.this.project);
+      }).toListSequence(), relativePoint, GoToOverridenMethod_Action.this.project, methodName[0]);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToOverridenMethod", t);
     }

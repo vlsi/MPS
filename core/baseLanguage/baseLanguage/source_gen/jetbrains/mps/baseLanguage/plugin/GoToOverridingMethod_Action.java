@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -130,8 +131,10 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final List<String> finders = ListSequence.fromList(new ArrayList<String>());
+      final String[] methodName = new String[1];
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
+          methodName[0] = SPropertyOperations.getString(GoToOverridingMethod_Action.this.methodNode, "name");
           for (String finderClass : GoToOverridingMethod_Action.this.finderClasses) {
             GeneratedFinder finder = FindUtils.getFinderByClassName(finderClass);
             if (finder.isApplicable(GoToOverridingMethod_Action.this.methodNode)) {
@@ -162,7 +165,7 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
         Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
         relativePoint = new RelativePoint(GoToOverridingMethod_Action.this.editorComponent, point);
       }
-      GoToHelper.showOverridingMethodsMenu(SetSequence.fromSet(nodes).toListSequence(), relativePoint, GoToOverridingMethod_Action.this.project);
+      GoToHelper.showOverridingMethodsMenu(SetSequence.fromSet(nodes).toListSequence(), relativePoint, GoToOverridingMethod_Action.this.project, methodName[0]);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToOverridingMethod", t);
     }

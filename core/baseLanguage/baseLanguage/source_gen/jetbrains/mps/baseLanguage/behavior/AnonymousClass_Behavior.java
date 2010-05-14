@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,6 +19,8 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class AnonymousClass_Behavior {
+  private static Class[] PARAMETERS_2193927380279967693 = {SNode.class};
+
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "nonStatic", "" + true);
   }
@@ -56,6 +59,25 @@ public class AnonymousClass_Behavior {
       }).indexOf(thisNode) + 1;
     }
     return index;
+  }
+
+  public static String virtual_getNestedName_8540045600162184125(SNode thisNode) {
+    SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    assert containingClassifier != null;
+    String result = "Anonymous in ";
+    SNode containingMethod = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+    if (containingMethod != null && SNodeOperations.getParent(containingMethod) == containingClassifier) {
+      result += SPropertyOperations.getString(containingMethod, "name") + "() in ";
+    }
+    return result + Classifier_Behavior.call_getNestedName_8540045600162184125(containingClassifier);
+  }
+
+  public static String call_getNestedName_2193927380279967693(SNode thisNode) {
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "virtual_getNestedName_8540045600162184125", PARAMETERS_2193927380279967693);
+  }
+
+  public static String callSuper_getNestedName_2193927380279967693(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), callerConceptFqName, "virtual_getNestedName_8540045600162184125", PARAMETERS_2193927380279967693);
   }
 
   public static class QuotationClass_mhnjwj_a0a0b {

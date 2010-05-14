@@ -26,6 +26,7 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 public class Classifier_Behavior {
   private static Class[] PARAMETERS_5039675756633081868 = {SNode.class};
   private static Class[] PARAMETERS_1214840444586 = {SNode.class};
+  private static Class[] PARAMETERS_8540045600162184125 = {SNode.class};
   private static Class[] PARAMETERS_7165541881557222913 = {SNode.class ,SNode.class};
   private static Class[] PARAMETERS_7165541881557222950 = {SNode.class ,SNode.class ,Set.class};
   private static Class[] PARAMETERS_1906502351318572840 = {SNode.class};
@@ -73,7 +74,7 @@ public class Classifier_Behavior {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticField", true)).count() > 0;
   }
 
-  public static String call_getNestedName_8540045600162184125(SNode thisNode) {
+  public static String virtual_getNestedName_8540045600162184125(SNode thisNode) {
     return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(thisNode, null);
   }
 
@@ -160,6 +161,10 @@ public class Classifier_Behavior {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_hasStaticMemebers_1214840444586", PARAMETERS_1214840444586);
   }
 
+  public static String call_getNestedName_8540045600162184125(SNode thisNode) {
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getNestedName_8540045600162184125", PARAMETERS_8540045600162184125);
+  }
+
   public static boolean call_isDescendant_7165541881557222913(SNode thisNode, SNode nodeToCompare) {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_isDescendant_7165541881557222913", PARAMETERS_7165541881557222913, nodeToCompare);
   }
@@ -182,6 +187,10 @@ public class Classifier_Behavior {
 
   public static boolean callSuper_hasStaticMemebers_1214840444586(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_hasStaticMemebers_1214840444586", PARAMETERS_1214840444586);
+  }
+
+  public static String callSuper_getNestedName_8540045600162184125(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_getNestedName_8540045600162184125", PARAMETERS_8540045600162184125);
   }
 
   public static boolean callSuper_isDescendant_7165541881557222913(SNode thisNode, String callerConceptFqName, SNode nodeToCompare) {

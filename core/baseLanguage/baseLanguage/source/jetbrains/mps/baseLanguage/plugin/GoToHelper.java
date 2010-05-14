@@ -23,7 +23,9 @@ import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.baseLanguage.icons.Icons;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -36,14 +38,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class GoToHelper {
-  public static void showOverridingMethodsMenu(List<SNode> nodes, RelativePoint point, Project project) {
-    String title = "Choose overriding method to navigate to";
+  public static void showOverridingMethodsMenu(List<SNode> nodes, RelativePoint point, Project project, String methodName) {
+    String title = "Choose overriding method of " + methodName + "() to navigate to";
     MethodCellRenderer renderer = new MethodCellRenderer();
     showMenu(point, project, title, nodes, renderer);
   }
 
-  public static void showOverridenMethodsMenu(List<SNode> nodes, RelativePoint point, Project project) {
-    String title = "Choose overriden method to navigate to";
+  public static void showOverridenMethodsMenu(List<SNode> nodes, RelativePoint point, Project project, String methodName) {
+    String title = "Choose super method of" + methodName + "()";
     MethodCellRenderer renderer = new MethodCellRenderer();
     showMenu(point, project, title, nodes, renderer);
   }
@@ -96,8 +98,7 @@ public class GoToHelper {
     public String getElementText(final NodeNavigationItem element) {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
-          BaseMethodDeclaration methodAdapter = (BaseMethodDeclaration) element.getNode().getAdapter();
-          return methodAdapter.toString();
+          return getLabelNode(element).getAdapter().toString();
         }
       });
     }
@@ -105,14 +106,23 @@ public class GoToHelper {
     protected String getContainerText(final NodeNavigationItem element, String name) {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
-          return NodePresentationUtil.descriptionText(element.getNode(), false);
-//          return element.getNode().getModel().getLongName();
+          return NodePresentationUtil.descriptionText(getContainerNode(element), false);
         }
       });
     }
 
     protected Icon getIcon(NodeNavigationItem element) {
-      return Icons.METHOD_ICON;
+      return IconManager.getIconFor(getLabelNode(element));
+    }
+
+    private SNode getLabelNode(NodeNavigationItem element) {
+      SNode parentNode = element.getNode().getParent();
+      assert parentNode != null;
+      return parentNode;
+    }
+
+    private SNode getContainerNode(NodeNavigationItem element) {
+      return getLabelNode(element).getTopmostAncestor();
     }
   }
 
