@@ -16,10 +16,6 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JComponent;
-import javax.swing.ButtonGroup;
-import javax.swing.JRadioButton;
-import javax.swing.AbstractAction;
-import java.awt.event.ActionEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.event.TableModelEvent;
 import javax.swing.JLabel;
@@ -135,7 +131,6 @@ public class ExtractMethodDialog extends BaseDialog {
     c.gridwidth = 1;
     this.myVisibilityPanel = new VisibilityPanel();
     this.myPanel.add(this.myVisibilityPanel, c);
-    // <node> 
 
     c.gridx = 0;
     c.gridy = 2;
@@ -164,43 +159,6 @@ public class ExtractMethodDialog extends BaseDialog {
     this.myMessagesArea.setBackground(this.myPanel.getBackground());
     this.myMessagesArea.setBorder(this.createBorder("Messages"));
     return this.myMessagesArea;
-  }
-
-  private JComponent createVisibilityPanel() {
-    JPanel visbilityPanel = new JPanel(new GridBagLayout());
-    visbilityPanel.setBorder(this.createBorder("Visibility"));
-    ButtonGroup group = new ButtonGroup();
-    JRadioButton button = this.createVisibilityButton(0, VisibilityLevel.PRIVATE, group, visbilityPanel);
-    this.createVisibilityButton(1, VisibilityLevel.PACKAGE_LOCAL, group, visbilityPanel);
-    this.createVisibilityButton(2, VisibilityLevel.PROTECTED, group, visbilityPanel);
-    this.createVisibilityButton(3, VisibilityLevel.PUBLIC, group, visbilityPanel);
-    GridBagConstraints c = new GridBagConstraints();
-    c.gridx = 0;
-    c.gridy = 4;
-    c.weightx = 1;
-    c.weighty = 1;
-    visbilityPanel.add(new JPanel(), c);
-    button.setSelected(true);
-    return visbilityPanel;
-  }
-
-  private JRadioButton createVisibilityButton(int y, final VisibilityLevel levelToSet, ButtonGroup group, JPanel visbilityPanel) {
-    GridBagConstraints c = new GridBagConstraints();
-    c.fill = GridBagConstraints.NONE;
-    c.gridx = 0;
-    c.gridy = y;
-    c.weightx = 1;
-    c.weighty = 0;
-    c.anchor = GridBagConstraints.FIRST_LINE_START;
-    JRadioButton button = new JRadioButton(new AbstractAction(levelToSet.getButtonText()) {
-      public void actionPerformed(ActionEvent e) {
-        ExtractMethodDialog.this.myParameters.setVisibilityLevel(levelToSet);
-        ExtractMethodDialog.this.update();
-      }
-    });
-    group.add(button);
-    visbilityPanel.add(button, c);
-    return button;
   }
 
   private JComponent createParametersPanel() {
