@@ -137,7 +137,7 @@ public abstract class BaseAction extends AnAction implements DumbAware {
         });
       }
     } finally {
-      cleanup();
+      //cleanup();
     }
   }
 
