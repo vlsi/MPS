@@ -978,6 +978,71 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="2110126027396399395" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2110126027396399397">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2110126027396399398">
+            <property name="name:3" value="delete" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.SetType:7" id="2110126027396399399">
+              <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2110126027396407506" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2110126027396407508">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator:7" id="2110126027396407509">
+                <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2110126027396407510" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="2110126027396397613">
+          <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="2110126027396397614">
+            <property name="name:7" value="cpItem" />
+          </node>
+          <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2110126027396397617">
+            <link role="variableDeclaration:3" targetNodeId="8492459591399147532" resolveInfo="res" />
+          </node>
+          <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2110126027396397616">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2110126027396397618">
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2110126027396397620">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2110126027396407511">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2110126027396407513">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2110126027396407512">
+                      <link role="variableDeclaration:3" targetNodeId="2110126027396399398" resolveInfo="delete" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation:7" id="2110126027396407517">
+                      <node role="argument:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="2110126027396407519">
+                        <link role="variable:7" targetNodeId="2110126027396397614" resolveInfo="cpItem" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2110126027396399389">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2110126027396399388">
+                  <link role="baseMethodDeclaration:3" targetNodeId="15.~CommonPaths.getJDKPath():java.util.List" resolveInfo="getJDKPath" />
+                  <link role="classConcept:3" targetNodeId="15.~CommonPaths" resolveInfo="CommonPaths" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2110126027396399393">
+                  <link role="baseMethodDeclaration:3" targetNodeId="4.~List.contains(java.lang.Object):boolean" resolveInfo="contains" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="2110126027396399394">
+                    <link role="variable:7" targetNodeId="2110126027396397614" resolveInfo="cpItem" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="2110126027396407520" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2110126027396407522">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2110126027396407524">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2110126027396407523">
+              <link role="variableDeclaration:3" targetNodeId="8492459591399147532" resolveInfo="res" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation:7" id="2110126027396407528">
+              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2110126027396407530">
+                <link role="variableDeclaration:3" targetNodeId="2110126027396399398" resolveInfo="delete" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8492459591399147562">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8492459591399147563">
             <link role="variableDeclaration:3" targetNodeId="8492459591399147532" resolveInfo="res" />
