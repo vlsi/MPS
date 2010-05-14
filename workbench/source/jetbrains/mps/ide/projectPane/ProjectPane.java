@@ -364,11 +364,19 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       return getNode(context) != null;
     }
 
-    public void selectIn(final SelectInContext context, boolean requestFocus) {
-      activate(requestFocus);
-      SNode toSelect = getNode(context);
-      if (toSelect == null) return;
-      selectNode(toSelect);
+    public void selectIn(final SelectInContext context, final boolean requestFocus) {
+      ToolWindowManager windowManager=ToolWindowManager.getInstance(myProject);
+      final ToolWindow projectViewToolWindow = windowManager.getToolWindow(ToolWindowId.PROJECT_VIEW);
+      projectViewToolWindow.activate(new Runnable() {
+        @Override
+        public void run() {
+          activate(requestFocus);
+          SNode toSelect = getNode(context);
+          if (toSelect != null) {
+            selectNode(toSelect);
+          }
+        }
+      }, false);
     }
 
     public String getToolWindowId() {
