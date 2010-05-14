@@ -25,6 +25,7 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -79,6 +80,8 @@ public class RenameModelDialog extends BaseDialog {
       setErrorText("Incorrect model name for the model root (should start with prefix " + myModelRoot.getPrefix() + ")");
       return;
     }
+
+    DeleteModelHelper.deleteGeneratedFiles(myProject, myModelDescriptor);
 
     final ModelRenamer renamer = new ModelRenamer(myModelDescriptor, fqName, !myUpdateAllReferences.getModel().isSelected());
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
