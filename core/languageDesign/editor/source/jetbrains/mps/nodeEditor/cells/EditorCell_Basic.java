@@ -461,13 +461,19 @@ public abstract class EditorCell_Basic implements EditorCell {
 
     getEditorContext().executeCommand(new Runnable() {
       public void run() {
+        EditorComponent editor = getEditorContext().getNodeEditorComponent();
         SNode oldNode = getSNode();
         SNode newNode = replaceWithDefault();
         if (newNode == null) {
+          EditorCell_Label editable = findChild(CellFinders.FIRST_EDITABLE);
+          if (editable != null) {
+            editor.changeSelection(editable);
+            editor.processKeyTyped(e);
+          }
           return;
         }
+
         newNode.putUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION, oldNode);
-        EditorComponent editor = getEditorContext().getNodeEditorComponent();
         EditorCell nodeCell = editor.findNodeCell(newNode);
         if (nodeCell == null) return;
         EditorCell_Label editable = nodeCell.findChild(CellFinders.FIRST_EDITABLE);
@@ -489,7 +495,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     SNode node = getSNode();
     while (node.isAttribute()) {
       node = node.getParent();
-    }    
+    }
     LinkDeclaration link = node.getParent().getLinkDeclaration(node.getRole_());
     AbstractConceptDeclaration concept = link.getTarget();
     String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept), editorContext.getScope());
@@ -501,7 +507,6 @@ public abstract class EditorCell_Basic implements EditorCell {
     editorContext.flushEvents();
     return newNode;
   }
-
 
   public void setCaretX(int x) {
     myCaretX = x;
