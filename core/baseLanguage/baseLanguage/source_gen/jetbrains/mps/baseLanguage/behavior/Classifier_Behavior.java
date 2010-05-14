@@ -6,22 +6,25 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
+import javax.swing.Icon;
+import java.util.ArrayList;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.icons.Icons;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import javax.swing.Icon;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class Classifier_Behavior {
+  private static Class[] PARAMETERS_5039675756633081868 = {SNode.class};
   private static Class[] PARAMETERS_1214840444586 = {SNode.class};
   private static Class[] PARAMETERS_7165541881557222913 = {SNode.class ,SNode.class};
   private static Class[] PARAMETERS_7165541881557222950 = {SNode.class ,SNode.class ,Set.class};
@@ -30,6 +33,14 @@ public class Classifier_Behavior {
 
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+  }
+
+  public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
+    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_Behavior.callSuper_getMarkIcons_3923831204883340393(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"));
+    if ((SNodeOperations.getParent(thisNode) != null) && Classifier_Behavior.call_isStatic_521412098689998668(thisNode)) {
+      markIcons.add(Icons.STATIC_MARK_ICON);
+    }
+    return markIcons;
   }
 
   public static List<SNode> call_getVisibleMembers_1213877306257(SNode thisNode, SNode contextNode, int constraint) {
@@ -141,6 +152,10 @@ public class Classifier_Behavior {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
 
+  public static List<Icon> call_getMarkIcons_5039675756633081868(SNode thisNode) {
+    return (List<Icon>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633081868);
+  }
+
   public static boolean call_hasStaticMemebers_1214840444586(SNode thisNode) {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_hasStaticMemebers_1214840444586", PARAMETERS_1214840444586);
   }
@@ -159,6 +174,10 @@ public class Classifier_Behavior {
 
   public static Icon call_getAdditionalIcon_5017341185733869650(SNode thisNode) {
     return (Icon) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_5017341185733869650);
+  }
+
+  public static List<Icon> callSuper_getMarkIcons_5039675756633081868(SNode thisNode, String callerConceptFqName) {
+    return (List<Icon>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633081868);
   }
 
   public static boolean callSuper_hasStaticMemebers_1214840444586(SNode thisNode, String callerConceptFqName) {

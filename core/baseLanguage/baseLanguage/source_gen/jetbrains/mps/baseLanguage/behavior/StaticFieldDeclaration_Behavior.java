@@ -5,14 +5,18 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import java.util.List;
+import javax.swing.Icon;
+import java.util.ArrayList;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.baseLanguage.icons.Icons;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import javax.swing.Icon;
 import jetbrains.mps.intentions.CodeStyleSettings;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StaticFieldDeclaration_Behavior {
+  private static Class[] PARAMETERS_5039675756633082276 = {SNode.class};
   private static Class[] PARAMETERS_4025276038182459921 = {SNode.class};
   private static Class[] PARAMETERS_8986964027630472415 = {SNode.class};
   private static Class[] PARAMETERS_8884554759541381553 = {SNode.class};
@@ -20,6 +24,12 @@ public class StaticFieldDeclaration_Behavior {
   private static Class[] PARAMETERS_3012473318495506812 = {SNode.class ,Project.class};
 
   public static void init(SNode thisNode) {
+  }
+
+  public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
+    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_Behavior.callSuper_getMarkIcons_3923831204883340393(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
+    markIcons.add(Icons.STATIC_MARK_ICON);
+    return markIcons;
   }
 
   public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
@@ -62,6 +72,10 @@ public class StaticFieldDeclaration_Behavior {
     );
   }
 
+  public static List<Icon> call_getMarkIcons_5039675756633082276(SNode thisNode) {
+    return (List<Icon>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633082276);
+  }
+
   public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459921(SNode thisNode) {
     return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_getChildrenToDisplayIntention_4025276038182325660", PARAMETERS_4025276038182459921);
   }
@@ -80,6 +94,10 @@ public class StaticFieldDeclaration_Behavior {
 
   public static String call_getPrefix_3012473318495506812(SNode thisNode, Project project) {
     return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506812, project);
+  }
+
+  public static List<Icon> callSuper_getMarkIcons_5039675756633082276(SNode thisNode, String callerConceptFqName) {
+    return (List<Icon>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633082276);
   }
 
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459921(SNode thisNode, String callerConceptFqName) {

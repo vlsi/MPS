@@ -7,9 +7,13 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import javax.swing.Icon;
+import java.util.ArrayList;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.baseLanguage.icons.Icons;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class EnumConstantDeclaration_Behavior {
+  private static Class[] PARAMETERS_5039675756633083396 = {SNode.class};
   private static Class[] PARAMETERS_8986964027630472402 = {SNode.class};
   private static Class[] PARAMETERS_8884554759541376072 = {SNode.class};
 
@@ -21,6 +25,13 @@ public class EnumConstantDeclaration_Behavior {
     return SLinkOperations.getTargets(enumClass, "constructor", true);
   }
 
+  public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
+    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_Behavior.callSuper_getMarkIcons_3923831204883340393(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"));
+    markIcons.add(Icons.STATIC_MARK_ICON);
+    markIcons.add(Icons.FINAL_MARK_ICON);
+    return markIcons;
+  }
+
   public static boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return true;
   }
@@ -29,12 +40,20 @@ public class EnumConstantDeclaration_Behavior {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
 
+  public static List<Icon> call_getMarkIcons_5039675756633083396(SNode thisNode) {
+    return (List<Icon>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633083396);
+  }
+
   public static boolean call_isStatic_8986964027630472402(SNode thisNode) {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630472402);
   }
 
   public static Icon call_getAdditionalIcon_8884554759541376072(SNode thisNode) {
     return (Icon) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541376072);
+  }
+
+  public static List<Icon> callSuper_getMarkIcons_5039675756633083396(SNode thisNode, String callerConceptFqName) {
+    return (List<Icon>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633083396);
   }
 
   public static boolean callSuper_isStatic_8986964027630472402(SNode thisNode, String callerConceptFqName) {
