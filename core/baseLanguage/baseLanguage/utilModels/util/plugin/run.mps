@@ -992,6 +992,21 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6357922041456400163">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6357922041456400164">
+            <property name="name:3" value="jdkPath" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6357922041456400165">
+              <link role="classifier:3" targetNodeId="4.~List" resolveInfo="List" />
+              <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6357922041456400166">
+                <link role="classifier:3" targetNodeId="34.~String" resolveInfo="String" />
+              </node>
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6357922041456400167">
+              <link role="baseMethodDeclaration:3" targetNodeId="15.~CommonPaths.getJDKPath():java.util.List" resolveInfo="getJDKPath" />
+              <link role="classConcept:3" targetNodeId="15.~CommonPaths" resolveInfo="CommonPaths" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="2110126027396397613">
           <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="2110126027396397614">
             <property name="name:7" value="cpItem" />
@@ -1016,9 +1031,8 @@
                 </node>
               </node>
               <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2110126027396399389">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2110126027396399388">
-                  <link role="baseMethodDeclaration:3" targetNodeId="15.~CommonPaths.getJDKPath():java.util.List" resolveInfo="getJDKPath" />
-                  <link role="classConcept:3" targetNodeId="15.~CommonPaths" resolveInfo="CommonPaths" />
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6357922041456400161">
+                  <link role="variableDeclaration:3" targetNodeId="6357922041456400164" resolveInfo="jdkPath" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2110126027396399393">
                   <link role="baseMethodDeclaration:3" targetNodeId="4.~List.contains(java.lang.Object):boolean" resolveInfo="contains" />
