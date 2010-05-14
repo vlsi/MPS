@@ -2382,7 +2382,7 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="792512149229743784">
           <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="792512149229743785">
-            <property name="text:3" value="this is a hack fixing MPS-8644&#9;&#10;" />
+            <property name="text:3" value="this is a hack fixing MPS-8644" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="792512149229743788">
