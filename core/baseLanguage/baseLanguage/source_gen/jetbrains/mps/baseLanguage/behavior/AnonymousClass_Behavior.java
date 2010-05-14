@@ -63,7 +63,9 @@ public class AnonymousClass_Behavior {
 
   public static String virtual_getNestedName_8540045600162184125(SNode thisNode) {
     SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    assert containingClassifier != null;
+    if (containingClassifier == null) {
+      return Classifier_Behavior.callSuper_getNestedName_8540045600162184125(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass");
+    }
     String result = "Anonymous in ";
     SNode containingMethod = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     if (containingMethod != null && SNodeOperations.getParent(containingMethod) == containingClassifier) {

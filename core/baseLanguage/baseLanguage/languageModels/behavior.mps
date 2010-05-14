@@ -477,11 +477,21 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.AssertStatement:3" id="2193927380279973682">
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="2193927380279973685">
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2193927380279973689" />
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2193927380279973684">
-              <link role="variableDeclaration:3" targetNodeId="2193927380279973248" resolveInfo="parentClassifier" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7523932196475689171">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7523932196475689172">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7523932196475689180">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7523932196475689183">
+                <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.SuperNodeExpression" id="7523932196475689182" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="7523932196475689187">
+                  <link role="baseMethodDeclaration:16" targetNodeId="8540045600162184125" resolveInfo="getNestedName" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="7523932196475689176">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7523932196475689179" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7523932196475689175">
+              <link role="variableDeclaration:3" targetNodeId="2193927380279973248" resolveInfo="containingClassifier" />
             </node>
           </node>
         </node>
