@@ -74,6 +74,12 @@ public class OverridingMethodsFinder {
           collectOverridingMethods(it, nameToMethodsMap, visitedClassifiers);
         }
       });
+      if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        SNode superClassifier = SLinkOperations.getTarget(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false);
+        if (addIfNotContains(visitedClassifiers, superClassifier)) {
+          collectOverridingMethods(superClassifier, nameToMethodsMap, visitedClassifiers);
+        }
+      }
     } else if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
