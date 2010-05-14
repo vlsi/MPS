@@ -7,8 +7,9 @@ package jetbrains.mps.nanoc.debug;
  * Time: 18:50:44
  * To change this template use File | Settings | File Templates.
  */
-public class GDBLocationUtil {
-  public static String ourGdbLocation;
+public class ProgramsLocationUtil {
+  private static String ourGdbLocation;
+  private static String ourGccLocation;
 
   public static void setGdbLocation(String gdbLocation) {
     ourGdbLocation = gdbLocation;
@@ -16,5 +17,13 @@ public class GDBLocationUtil {
 
   public static String getGdbLocation() {
     return ourGdbLocation;
+  }
+
+  public static void setGccLocation(String gccLocation) {
+    ourGccLocation = gccLocation;
+  }
+
+  public static String getGccLocation() {
+    return ourGccLocation;
   }
 }

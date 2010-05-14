@@ -16,4 +16,8 @@ public class File_TextGen extends SNodeTextGen {
     this.decreaseDepth();
     this.append("}");
   }
+
+  public String getExtension(SNode node) {
+    return "c";
+  }
 }

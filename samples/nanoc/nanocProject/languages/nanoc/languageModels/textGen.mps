@@ -59,6 +59,15 @@
         </node>
       </node>
     </node>
+    <node role="extension:11" type="jetbrains.mps.lang.textGen.structure.ExtensionDeclaration:11" id="7243599812675930504">
+      <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7243599812675930505">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7243599812675930506">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7243599812675930507">
+            <property name="value:3" value="c" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="6585869519574798154">
     <link role="conceptDeclaration:11" targetNodeId="1.7211731935130600480" resolveInfo="CBody" />

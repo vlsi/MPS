@@ -19,8 +19,6 @@ import jetbrains.mps.nanoc.debug.answer.*;
 import jetbrains.mps.nanoc.debug.events.GDBEventsAdapter;
 import jetbrains.mps.nanoc.debug.events.GDBEventsHandler;
 import jetbrains.mps.nanoc.debug.requests.BreakpointRequestor;
-import jetbrains.mps.nanoc.debug.requests.GDBRequestManager;
-import jetbrains.mps.nanoc.debug.requests.GDBRequestor;
 import jetbrains.mps.nanoc.debug.util.ProcessUtil;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.debug.info.StacktraceUtil;
@@ -57,7 +55,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
   @Override
   public ExecutionResult startSession(Executor executor, ProgramRunner runner, RunProfileState state, Project project) throws ExecutionException {
     try {
-      File gdbFile = new File(GDBLocationUtil.getGdbLocation());
+      File gdbFile = new File(ProgramsLocationUtil.getGdbLocation());
       ProcessBuilder processBuilder = new ProcessBuilder();
       processBuilder.directory(gdbFile.getParentFile());
       processBuilder.command(gdbFile.getAbsolutePath(), "-quiet", "--interpreter=mi");
