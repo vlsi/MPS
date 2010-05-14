@@ -18,6 +18,7 @@ package jetbrains.mps.generator.fileGenerator;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.debug.info.DebugInfo;
 import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.dependencies.GenerationDependencies;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 
@@ -46,6 +47,10 @@ public class CacheGenerationContext {
 
   public DebugInfo getDebugInfo() {
     return myStatus.getDebugInfo();
+  }
+
+  public GenerationDependencies getDependencies() {
+    return myStatus.getDependencies();
   }
 
   public File getOutputDir() {

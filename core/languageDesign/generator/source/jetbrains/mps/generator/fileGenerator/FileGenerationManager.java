@@ -191,10 +191,7 @@ public class FileGenerationManager implements ApplicationComponent {
         TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
         String rootNodeId = null;
         if (status.getDependencies() != null) {
-          SNode node = status.getDependencies().getOriginalRoot(outputNode);
-          if (node != null) {
-            rootNodeId = node.getId();
-          }
+          rootNodeId = status.getDependencies().getOriginalRootId(outputNode.getId());
         }
         fillDebugInfo(info, rootNodeId, outputNode, result);
         fillDependencies(dependRoot, outputNode, result);
@@ -315,9 +312,10 @@ public class FileGenerationManager implements ApplicationComponent {
     for (SNode outputRootNode : outputNodeContents.keySet()) {
       try {
         SNode originalInputNode = null;
-        if (status.getTraceMap() != null) {
-          originalInputNode = status.getTraceMap().getOriginalInputNode(outputRootNode);
-        }
+        // TODO get from dependencies
+//        if (status.getTraceMap() != null) {
+//          originalInputNode = status.getTraceMap().getOriginalInputNode(outputRootNode);
+//        }
         File generatedFile = fileGenerator.generateFile(outputRootNode, originalInputNode, status.getInputModel(), outputNodeContents.get(outputRootNode), outputRootDirectory);
 
         if (generatedFile != null) {

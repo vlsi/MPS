@@ -368,6 +368,10 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.generator.dependencies.GenerationDependenciesCache</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.debug.DebugInfoManager</implementation-class>
         </component>
 

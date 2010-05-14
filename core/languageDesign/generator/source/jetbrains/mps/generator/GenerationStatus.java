@@ -17,7 +17,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.debug.info.DebugInfo;
-import jetbrains.mps.generator.dependencies.DynamicDependencies;
+import jetbrains.mps.generator.dependencies.GenerationDependencies;
 import jetbrains.mps.ide.Status;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -31,20 +31,19 @@ public class GenerationStatus extends Status {
   private SModel myInputModel;
   private boolean myCanceled;
   private boolean myWarnings;
-  private TraceMap myTraceMap;
   private DebugInfo myDebugInfo;
-  private DynamicDependencies myDependencies;
+  private GenerationDependencies myDependencies;
   private ModelDependencies myBLDependencies;
 
   private SModelDescriptor myOriginalInputModel;
 
-  public GenerationStatus(SModel inputModel, SModel outputModel, TraceMap traceMap, boolean errors, boolean warnings, boolean canceled) {
+  public GenerationStatus(SModel inputModel, SModel outputModel, GenerationDependencies dependencies, boolean errors, boolean warnings, boolean canceled) {
     super(errors ? Code.ERROR : Code.OK, null);
     myCanceled = canceled;
     myOutputModel = outputModel;
     myInputModel = inputModel;
     myWarnings = warnings;
-    myTraceMap = traceMap;
+    myDependencies = dependencies;
   }
 
   public boolean isOk() {
@@ -63,10 +62,6 @@ public class GenerationStatus extends Status {
     return myOutputModel;
   }
 
-  public TraceMap getTraceMap() {
-    return myTraceMap;
-  }
-
   public SModel getInputModel() {
     return myInputModel;
   }
@@ -83,12 +78,8 @@ public class GenerationStatus extends Status {
     return myBLDependencies;
   }
 
-  public DynamicDependencies getDependencies() {
+  public GenerationDependencies getDependencies() {
     return myDependencies;
-  }
-
-  public void setDependencies(DynamicDependencies dependencies) {
-    myDependencies = dependencies;
   }
 
   public void setBLDependencies(ModelDependencies dependencies) {

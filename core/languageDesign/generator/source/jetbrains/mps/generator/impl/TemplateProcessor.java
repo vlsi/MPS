@@ -33,12 +33,12 @@ import java.util.*;
  */
 public class TemplateProcessor {
   private final TemplateGenerator myGenerator;
-  private ReductionBlockingContext myBlockingContext;
+  private ReductionContext myReductionContext;
   private final SModel myOutputModel;
 
-  public TemplateProcessor(TemplateGenerator generator, ReductionBlockingContext blockingContext) {
+  public TemplateProcessor(TemplateGenerator generator, ReductionContext reductionContext) {
     myGenerator = generator;
-    myBlockingContext = blockingContext;
+    myReductionContext = reductionContext;
     myOutputModel = myGenerator.getOutputModel();
   }
 
@@ -214,8 +214,8 @@ public class TemplateProcessor {
       for (SNode newInputNode : newInputNodes) {
         List<SNode> _outputNodes =
           newInputNode.getModel() == myGenerator.getInputModel() && newInputNode.isRegistered()
-            ? myGenerator.copyNodeFromInputNode(mappingName, templateNode, newInputNode, myBlockingContext, new boolean[]{false})
-            : myGenerator.copyNodeFromExternalNode(mappingName, templateNode, newInputNode, myBlockingContext);
+            ? myGenerator.copyNodeFromInputNode(mappingName, templateNode, newInputNode, myReductionContext, new boolean[]{false})
+            : myGenerator.copyNodeFromExternalNode(mappingName, templateNode, newInputNode, myReductionContext);
         if (_outputNodes != null) {
           // check node languages : prevent 'input node' query from returning node, which language was not counted when
           // planning the generation steps.
@@ -530,7 +530,7 @@ public class TemplateProcessor {
     throws
     DismissTopMappingRuleException,
     GenerationFailureException, GenerationCanceledException {
-    TemplateProcessor templateProcessor = new TemplateProcessor(myGenerator, myBlockingContext);
+    TemplateProcessor templateProcessor = new TemplateProcessor(myGenerator, myReductionContext);
     return templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, context, 0);
   }
 

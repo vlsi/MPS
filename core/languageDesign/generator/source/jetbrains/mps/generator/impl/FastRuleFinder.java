@@ -16,13 +16,11 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationFailureException;
-import jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition;
 import jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule;
 import jetbrains.mps.lang.generator.structure.ReductionRule;
 import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
@@ -84,9 +82,9 @@ public class FastRuleFinder {
     private Map<SNode, Object> myCurrentReductionData = new HashMap<SNode, Object>();
     private Map<SNode, Object> myNextReductionData = new HashMap<SNode, Object>();
 
-    public boolean isReductionBlocked(SNode node, ReductionRule rule, ReductionBlockingContext blockingContext) {
+    public boolean isReductionBlocked(SNode node, ReductionRule rule, ReductionContext reductionContext) {
       return isReductionBlocked(node, rule)
-        || blockingContext != null && blockingContext.isBlocked(node, rule);
+        || reductionContext != null && reductionContext.isBlocked(node, rule);
     }
 
     private boolean isReductionBlocked(SNode node, ReductionRule rule) {
@@ -99,10 +97,10 @@ public class FastRuleFinder {
       return false;
     }
 
-    public void blockReductionsForCopiedNode(SNode inputNode, SNode outputNode, ReductionBlockingContext blockingContext) {
+    public void blockReductionsForCopiedNode(SNode inputNode, SNode outputNode, ReductionContext reductionContext) {
       Object o;
-      if(blockingContext != null) {
-        o = ReductionBlockingContext.combineRuleSets(myCurrentReductionData.get(inputNode), blockingContext.getBlockedRules(inputNode));
+      if(reductionContext != null) {
+        o = ReductionContext.combineRuleSets(myCurrentReductionData.get(inputNode), reductionContext.getBlockedRules(inputNode));
       } else {
         o = myCurrentReductionData.get(inputNode);
       }

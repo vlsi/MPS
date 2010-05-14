@@ -10,20 +10,20 @@ import java.util.Set;
 /**
  * Evgeny Gryaznov, Apr 14, 2010
  */
-class ReductionBlockingContext {
+class ReductionContext {
 
-  private ReductionBlockingContext myParent;
+  private ReductionContext myParent;
   private SNode myInputNode;
   private ReductionRule myReductionRule;
 
-  ReductionBlockingContext(ReductionBlockingContext parent, @NotNull SNode inputNode, @NotNull ReductionRule reductionRule) {
+  ReductionContext(ReductionContext parent, @NotNull SNode inputNode, @NotNull ReductionRule reductionRule) {
     myParent = parent;
     myInputNode = inputNode;
     myReductionRule = reductionRule;
   }
 
   boolean isBlocked(SNode inputNode, ReductionRule rule) {
-    for(ReductionBlockingContext current = this; current != null; current = current.myParent) {
+    for(ReductionContext current = this; current != null; current = current.myParent) {
       if(current.myInputNode == inputNode && current.myReductionRule == rule) {
         return true;
       }
@@ -33,7 +33,7 @@ class ReductionBlockingContext {
 
   Object getBlockedRules(SNode inputNode) {
     Object currentSet = null;
-    for(ReductionBlockingContext current = this; current != null; current = current.myParent) {
+    for(ReductionContext current = this; current != null; current = current.myParent) {
       if(current.myInputNode == inputNode) {
         currentSet = combineRuleSets(currentSet, current.myReductionRule);
       }

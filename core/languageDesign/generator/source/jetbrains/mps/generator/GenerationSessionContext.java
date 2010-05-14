@@ -48,7 +48,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private Map<Object, Object> mySessionObjects = new HashMap<Object, Object>();
 
   // these objects survive through all steps of generation
-  private TraceMap myTraceMap = new TraceMap();
   private Set<String> myUsedNames = new HashSet<String>();
 
   public GenerationSessionContext(IOperationContext invocationContext,
@@ -107,10 +106,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public IOperationContext getInvocationContext() {
     return myInvocationContext;
-  }
-
-  public TraceMap getTraceMap() {
-    return myTraceMap;
   }
 
   public String toString() {

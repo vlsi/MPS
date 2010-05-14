@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.generator.template.ITemplateGenerator;
@@ -113,7 +114,7 @@ public class GenerationSession {
       }
 
       return new GenerationStatus(myOriginalInputModel.getSModel(), currOutput,
-        mySessionContext != null ? mySessionContext.getTraceMap() : null, myLogger.getErrorCount() > 0,
+        new GenerationDependencies(), myLogger.getErrorCount() > 0,
         myLogger.getWarningCount() > 0, false);
 
     } catch (GenerationCanceledException gce) {
