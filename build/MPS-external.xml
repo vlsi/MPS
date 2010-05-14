@@ -274,10 +274,11 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.refactoring_r1f0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest_s1f0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.runtime_t1f0" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.test_u1f0" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples_v1f0" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples.runtime_w1f0" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.runConfigurations_x1f0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.lib_u1f0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.test_v1f0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples_w1f0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples.runtime_x1f0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.runConfigurations_y1f0" />
     <mkdir dir="${deploy.dir}/MPS/core/baseLanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.actions_a2f0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.annotations_b2f0" />

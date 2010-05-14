@@ -117,6 +117,10 @@
       <property name="id" value="f618e99a-2641-465c-bb54-31fe76f9e285" />
       <property name="name" value="jetbrains.mps.baseLanguage.unitTest.runtime" />
     </node>
+    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="8017053302131066570">
+      <property name="id" value="83f155ff-422c-4b5a-a2f2-b459302dd215" />
+      <property name="name" value="jetbrains.mps.baseLanguage.unitTest.lib" />
+    </node>
     <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="701559220729405154">
       <property name="id" value="9c8b4b95-5d89-4201-ad78-0b2db3a22768" />
       <property name="name" value="jetbrains.mps.baseLanguage.test" />
