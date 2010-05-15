@@ -153,7 +153,7 @@
     <exec executable="${deploy.dir}/nsis/makensis.exe" osfamily="windows" failonerror="true">
       <arg file="${nsis.script.path.tmp}" />
     </exec>
-    <exec executable="${mps_home}/build/sign/SignCode.exe" osfamily="windows" failonerror="true" dir="${scripts.folder}">
+    <exec executable="${mps_home}/build/sign/SignCode.exe" osfamily="windows" failonerror="true" dir="${basedir}">
       <arg line="-spc ${mps_home}/build/sign/cert_2009_cs.spc -v ${mps_home}/build/sign/key_2009_cs_nocrypt.pvk ${installer}" />
     </exec>
     <delete file="${nsis.script.path.tmp}" />
