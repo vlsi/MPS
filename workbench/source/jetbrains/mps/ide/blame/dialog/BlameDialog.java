@@ -103,6 +103,10 @@ public class BlameDialog extends BaseDialog {
     myTitleField.setText(message);
   }
 
+  public void setDescription(String message) {
+    myDescription.setText(message);  
+  }
+
   private void init() {
     setModal(true);
 

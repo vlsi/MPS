@@ -46,7 +46,7 @@ public class NewModelDialog extends BaseDialog {
     myModule = module;
     myNamespace = namespace;
 
-    assert myModule.getSModelRoots().size() > 0 : "Can't create a model in solution with no module roots";
+    assert myModule.getSModelRoots().size() > 0 : "Can't create a model in solution with no model roots";
 
     initContentPane();
 

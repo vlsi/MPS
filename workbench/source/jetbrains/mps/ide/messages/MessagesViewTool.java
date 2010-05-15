@@ -357,14 +357,20 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   private void submitToTracker(Object[] msgs) {
     JFrame frame = WindowManager.getInstance().getFrame(getProject());
     BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(getProject(), frame);
-    StringBuilder issueTitle = new StringBuilder();
+    StringBuilder description = new StringBuilder();
+    boolean first = true;
     for (Object msg : msgs) {
       if (!(msg instanceof Message)) continue;
       Message message = (Message) msg;
-      issueTitle.append(message.getText()).append(' ');
+      if (first) {
+        dialog.setIssueTitle(message.getText());
+        first = false;
+      } else {
+        description.append(message.getText()).append('\n');
+      }
       dialog.addEx(message.getException());
     }
-    dialog.setIssueTitle(issueTitle.toString());
+    dialog.setDescription(description.toString());
     dialog.showDialog();
 
     if (!dialog.isCancelled()) {
