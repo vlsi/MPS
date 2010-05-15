@@ -5,7 +5,7 @@
   <property name="mps.home" value="${mps_home}"/>
   <property name="real.deploy.dir" value="${mps_home}/artifacts"/>
   <import file="${ant.file}/../MPS-external-dist.xml"/>
-  <target name="default.buildserver">
+  <target name="default.buildserver" depends="MPS-external-dist.default">
     <delete dir="${real.deploy.dir}" />
     <mkdir  dir="${real.deploy.dir}"/>
     <copydir src="${deploy.dir}" dest="${real.deploy.dir}"/>
