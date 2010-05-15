@@ -20,6 +20,7 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NAME = "name";
   public static final String COMPILE = "compile";
+  public static final String USE_TMP_DIR = "useTmpDir";
   public static final String BASE_DIRECTORY = "baseDirectory";
   public static final String PROPERTY_FILE = "propertyFile";
   public static final String CONFIGURATION = "configuration";
@@ -79,6 +80,14 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
 
   public void setCompile(boolean value) {
     this.setBooleanProperty(MPSLayout.COMPILE, value);
+  }
+
+  public boolean getUseTmpDir() {
+    return this.getBooleanProperty(MPSLayout.USE_TMP_DIR);
+  }
+
+  public void setUseTmpDir(boolean value) {
+    this.setBooleanProperty(MPSLayout.USE_TMP_DIR, value);
   }
 
   public BaseDirPath getBaseDirectory() {

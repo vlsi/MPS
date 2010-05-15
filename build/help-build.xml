@@ -36,7 +36,7 @@
     <copy file="${build.number.file}" todir="${output.dir}" />
   </target>
   <target name="pack.mps.src">
-    <property name="tmpdir" value="${java.io.tmpdir}/MPS" />
+    <property name="tmpdir" value="${java.io.tmpdir}/MPS.src" />
     <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
     <fail unless="build.number" message="Property build.number unspecified." />
     <fail unless="output.dir" message="Property output.dir unspecified." />

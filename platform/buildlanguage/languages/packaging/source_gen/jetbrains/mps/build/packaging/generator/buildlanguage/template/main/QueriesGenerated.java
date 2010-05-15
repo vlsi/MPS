@@ -292,6 +292,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_8804596799833413905(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1220026680305(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return PathHolder_Behavior.call_getPathWithoutMacro_1219770843283(_context.getNode()).replace(File.separator, Util.SEPARATOR);
   }
@@ -627,6 +631,10 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1219157474820(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode layout = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false);
     return (layout == null) || (!(ListSequence.fromList(SLinkOperations.getTargets(layout, "builtInVariable", true)).contains(SLinkOperations.getTarget(_context.getNode(), "variable", false))) && ListSequence.fromList(IVariableHolder_Behavior.call_getAllVariable_1234864693585(layout)).contains(SLinkOperations.getTarget(_context.getNode(), "variable", false)));
+  }
+
+  public static boolean ifMacro_Condition_4993758969474299268(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "useTmpDir");
   }
 
   public static boolean ifMacro_Condition_1220026604203(final IOperationContext operationContext, final IfMacroContext _context) {

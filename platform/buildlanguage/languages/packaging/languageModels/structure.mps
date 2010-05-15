@@ -537,6 +537,10 @@
       <property name="name:0" value="scriptsFolder" />
       <link role="dataType:0" targetNodeId="3.1082983041843:0" resolveInfo="string" />
     </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="4993758969474324591">
+      <property name="name:0" value="useTmpDir" />
+      <link role="dataType:0" targetNodeId="3.1082983657063:0" resolveInfo="boolean" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1203013653398">
     <property name="name:0" value="ILayoutComponent" />

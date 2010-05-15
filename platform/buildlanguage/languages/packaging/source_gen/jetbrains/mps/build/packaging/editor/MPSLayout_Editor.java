@@ -35,6 +35,10 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     return this.createCollection_4e8zux_a(editorContext, node);
   }
 
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_4e8zux_a_0(editorContext, node);
+  }
+
   private EditorCell createCollection_4e8zux_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_4e8zux_a");
@@ -140,6 +144,14 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createIndentCell_4e8zux_a1i0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4e8zux_b1i0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_4e8zux_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_4e8zux_a_0");
+    editorCell.addEditorCell(this.createConstant_4e8zux_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_4e8zux_b0(editorContext, node));
     return editorCell;
   }
 
@@ -266,6 +278,13 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_4e8zux_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use temporal directory");
+    editorCell.setCellId("Constant_4e8zux_a0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createRefNodeList_4e8zux_b6a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MPSLayout_Editor.configurationListHandler_4e8zux_b6a(node, "configuration", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
@@ -347,6 +366,24 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_compile");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_4e8zux_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("useTmpDir");
+    provider.setNoTargetText("<no useTmpDir>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_useTmpDir");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

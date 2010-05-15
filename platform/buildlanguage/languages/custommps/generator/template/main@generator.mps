@@ -1693,7 +1693,7 @@
           <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1238512027774">
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1238512027775">
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1238512027776">
-                <property name="value:21" value="MPS" />
+                <property name="value:21" value="MPS.src" />
               </node>
               <node role="left:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1238512027777">
                 <property name="value:21" value="/" />
