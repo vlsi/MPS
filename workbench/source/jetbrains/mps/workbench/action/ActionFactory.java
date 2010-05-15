@@ -20,7 +20,6 @@ import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.keymap.KeymapManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -98,15 +97,19 @@ public class ActionFactory {
     if (module == null) return null;
     Class groupClass = module.getClass(groupClassName);
 
-    String id = null;
-    try {
-      id = (String) groupClass.getField("ID").get(null);
-    } catch (Exception e) {
-      id = groupClass.getName();
+    String id = groupClassName;
+    if (groupClass != null) {
+      try {
+        id = (String) groupClass.getField("ID").get(null);
+      } catch (Exception e) {
+        id = groupClass.getName();
+      }
+    } else {
+      LOG.error("Could not find class for " + groupClassName + " in module " + module);
     }
 
     AnAction action = ActionManager.getInstance().getAction(id);
-    if (action == null) {
+    if (action == null && groupClass != null) {
       try {
         BaseGroup group = (BaseGroup) groupClass.getConstructors()[0].newInstance(params);
         registerGroup(group, id, moduleNamespace);
