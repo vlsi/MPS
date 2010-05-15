@@ -8,6 +8,12 @@ import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
 import jetbrains.mps.logging.Logger;
 import com.intellij.execution.configurations.RunProfileState;
@@ -31,11 +37,6 @@ import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -56,7 +57,6 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class SourceNanocConfiguration_Configuration extends BaseRunConfig {
@@ -80,7 +80,21 @@ public class SourceNanocConfiguration_Configuration extends BaseRunConfig {
   public void checkConfiguration() throws RuntimeConfigurationException {
     final StringBuilder error_22042010 = new StringBuilder();
     try {
-
+      SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(SourceNanocConfiguration_Configuration.this.getStateObject().modelRef));
+      if (descriptor == null) {
+        error_22042010.append("no model found").append("\n");
+        return;
+      }
+      SModel model = descriptor.getSModel();
+      SNode node = model.getNodeById(SourceNanocConfiguration_Configuration.this.getStateObject().nodeId);
+      if (node == null) {
+        error_22042010.append("node not found").append("\n");
+        return;
+      }
+      if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.nanoc.structure.File"))) {
+        error_22042010.append("node should be jetbrains.mps.nanoc.File").append("\n");
+        return;
+      }
     } catch (Throwable t_22042010) {
       if (t_22042010 instanceof RuntimeConfigurationException) {
         throw (RuntimeConfigurationException) t_22042010;
