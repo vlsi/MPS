@@ -5721,7 +5721,7 @@
       <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1203622428110">
         <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="4993758969474299262">
           <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1203622428111">
-            <property name="value:21" value=".artifacts" />
+            <property name="value:21" value="artifacts" />
           </node>
           <node role="left:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="4993758969474299265">
             <property name="value:21" value="${java.io.tmpdir}/" />
@@ -5743,12 +5743,17 @@
               <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="8804596799833413905">
                 <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8804596799833413906">
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8804596799833414905">
-                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="8804596799833414916">
-                      <node role="leftExpression:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue:2" id="8804596799833414919" />
-                      <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8804596799833414907">
-                        <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="8804596799833414906" />
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="8804596799833414911">
-                          <link role="property:16" targetNodeId="4.1169194664001:0" resolveInfo="name" />
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5267773026153395314">
+                      <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5267773026153395535">
+                        <property name="value:3" value="." />
+                      </node>
+                      <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="8804596799833414916">
+                        <node role="leftExpression:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue:2" id="8804596799833414919" />
+                        <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8804596799833414907">
+                          <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="8804596799833414906" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="8804596799833414911">
+                            <link role="property:16" targetNodeId="4.1169194664001:0" resolveInfo="name" />
+                          </node>
                         </node>
                       </node>
                     </node>

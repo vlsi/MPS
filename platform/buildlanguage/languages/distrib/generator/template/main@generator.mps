@@ -1946,7 +1946,7 @@
             <link role="attributeDeclaration:22" targetNodeId="4v.353793545802812930" resolveInfo="executable" />
             <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1230579886452">
               <node role="value:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1230579886453">
-                <property name="value:21" value="${basedir}/${deploy.dir}/nsis/makensis.exe" />
+                <property name="value:21" value="${deploy.dir}/nsis/makensis.exe" />
               </node>
             </node>
           </node>
@@ -2880,7 +2880,7 @@
           <property name="name:21" value="nsis.script.path.tmp" />
           <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1230577604877">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1230656087749">
-              <property name="value:21" value="${basedir}/${deploy.dir}/installation.script${DSTAMP}.nsi" />
+              <property name="value:21" value="${deploy.dir}/installation.script${DSTAMP}.nsi" />
             </node>
           </node>
           <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1230577585931" />
@@ -2908,7 +2908,7 @@
                 </node>
               </node>
               <node role="left:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1234795713126">
-                <property name="value:21" value="${basedir}/${deploy.dir}/" />
+                <property name="value:21" value="${deploy.dir}/" />
               </node>
             </node>
           </node>
@@ -2936,7 +2936,7 @@
                 </node>
               </node>
               <node role="left:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1234795739583">
-                <property name="value:21" value="${basedir}/${deploy.dir}/" />
+                <property name="value:21" value="${deploy.dir}/" />
               </node>
             </node>
           </node>
@@ -2981,7 +2981,7 @@
                 </node>
               </node>
               <node role="left:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1240556381824">
-                <property name="value:21" value="${basedir}/${deploy.dir}/" />
+                <property name="value:21" value="${deploy.dir}/" />
               </node>
             </node>
           </node>
@@ -3026,7 +3026,7 @@
                 </node>
               </node>
               <node role="left:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1240556384471">
-                <property name="value:21" value="${basedir}/${deploy.dir}/" />
+                <property name="value:21" value="${deploy.dir}/" />
               </node>
             </node>
           </node>
@@ -3071,7 +3071,7 @@
                 </node>
               </node>
               <node role="left:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1237900778731">
-                <property name="value:21" value="${basedir}/${deploy.dir}/" />
+                <property name="value:21" value="${deploy.dir}/" />
               </node>
             </node>
           </node>
@@ -3178,7 +3178,7 @@
           <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1238076257314" />
           <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1238076260893">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1238076260894">
-              <property name="value:21" value="${basedir}/${deploy.dir}" />
+              <property name="value:21" value="${deploy.dir}" />
             </node>
           </node>
           <node role="nodeMacro$attribute:21" type="jetbrains.mps.lang.generator.structure.IfMacro:2" id="1238076335982">
@@ -3204,7 +3204,7 @@
           <node role="type:21" type="jetbrains.mps.buildlanguage.structure.StringType:21" id="1234793850740" />
           <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="4350419540518233333">
             <node role="left:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="4350419540518233336">
-              <property name="value:21" value="${basedir}/${deploy.dir}/" />
+              <property name="value:21" value="${deploy.dir}/" />
             </node>
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1234793887415">
               <property name="value:21" value="exe.file.name" />
@@ -5118,7 +5118,7 @@
           <property name="name:21" value="info.plist.tmp" />
           <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1234518167960">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1234518167961">
-              <property name="value:21" value="${basedir}/${deploy.dir}/Info.plist" />
+              <property name="value:21" value="${deploy.dir}/Info.plist" />
             </node>
           </node>
           <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1234518167962" />
