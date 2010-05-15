@@ -186,7 +186,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_RunConfigurationDeclaration_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_RunConfigurationRunProfileState_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -234,15 +234,15 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_RunConfigurationDeclaration_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_RunConfigurationCreatesDebugSession_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_RunConfigurationDeclaration_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_RunConfigurationEditor_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_RunConfigurationDeclaration_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_RunConfigurationIcon_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {

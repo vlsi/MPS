@@ -2627,7 +2627,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="8591610611835793702">
-    <property name="name:3" value="typeof_RunConfigurationDeclaration" />
+    <property name="name:3" value="typeof_RunConfigurationRunProfileState" />
     <property name="package:3" value="RunConfigs" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8591610611835793703">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2941250027791651020">
@@ -2993,7 +2993,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="2195473424935456956">
-    <property name="name:3" value="check_RunConfigurationDeclaration" />
+    <property name="name:3" value="check_RunConfigurationEditor" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2195473424935456957">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2195473424935459710">
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="2195473424935658036">
@@ -3159,7 +3159,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="6986911548761815246">
-    <property name="name:3" value="check_RunConfigurationDeclaration" />
+    <property name="name:3" value="check_RunConfigurationIcon" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6986911548761815247">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6986911548761815418">
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="6986911548761825935">
@@ -3211,13 +3211,8 @@
             <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6986911548761826078">
               <property name="value:3" value="Run Configuration Should Declare An Icon" />
             </node>
-            <node role="nodeToReport:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6986911548761826069">
-              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6986911548761826070">
-                <link role="applicableNode:3" targetNodeId="6986911548761815248" resolveInfo="runConfigurationDeclaration" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6986911548761826071">
-                <link role="link:16" targetNodeId="4.678887849223472878:23" />
-              </node>
+            <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6986911548761826070">
+              <link role="applicableNode:3" targetNodeId="6986911548761815248" resolveInfo="runConfigurationDeclaration" />
             </node>
           </node>
         </node>
@@ -3341,7 +3336,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="8255351389870627565">
-    <property name="name:3" value="check_RunConfigurationDeclaration" />
+    <property name="name:3" value="check_RunConfigurationCreatesDebugSession" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8255351389870627566">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8255351389870630210">
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8255351389870630212">
@@ -3371,39 +3366,12 @@
               </node>
             </node>
             <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8255351389870630218">
-              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8255351389870630283">
-                <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8255351389870630284">
-                  <property name="name:3" value="errorReport" />
-                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8255351389870630285" />
-                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8255351389870630286">
-                    <property name="value:3" value="Debuggable configuration must declare either state type or debug session creator" />
-                  </node>
-                </node>
-              </node>
               <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="8255351389870630255">
-                <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8255351389870630281">
-                  <link role="variableDeclaration:3" targetNodeId="8255351389870630284" resolveInfo="errorReport" />
+                <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="672157982583233308">
+                  <property name="value:3" value="Debuggable configuration must declare either state type or debug session creator" />
                 </node>
-                <node role="nodeToReport:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8255351389870630260">
-                  <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8255351389870630259">
-                    <link role="applicableNode:3" targetNodeId="8255351389870627567" resolveInfo="runConfigurationDeclaration" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8255351389870630264">
-                    <link role="link:16" targetNodeId="4.8255351389869184300:23" />
-                  </node>
-                </node>
-              </node>
-              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="8255351389870630265">
-                <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8255351389870630280">
-                  <link role="variableDeclaration:3" targetNodeId="8255351389870630284" resolveInfo="errorReport" />
-                </node>
-                <node role="nodeToReport:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8255351389870630267">
-                  <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8255351389870630268">
-                    <link role="applicableNode:3" targetNodeId="8255351389870627567" resolveInfo="runConfigurationDeclaration" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8255351389870630287">
-                    <link role="link:16" targetNodeId="4.8591610611835621641:23" />
-                  </node>
+                <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8255351389870630259">
+                  <link role="applicableNode:3" targetNodeId="8255351389870627567" resolveInfo="runConfigurationDeclaration" />
                 </node>
               </node>
             </node>
