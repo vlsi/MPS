@@ -45,7 +45,7 @@ public class ClassPathFactory {
 
   public void invalidate(Set<String> paths) {
     for (String path : paths) {
-      if (myCache.containsKey(path)){
+      if (myCache.containsKey(path)) {
         myCache.remove(path).invalidate();
       }
     }
@@ -57,7 +57,7 @@ public class ClassPathFactory {
     try {
       return createFromPath(path, null);
     } catch (IOException e) {
-      LOG.error("Can't find classpath " + path);
+      LOG.error("Can't find classpath " + path, e);
       return null;
     }
   }
