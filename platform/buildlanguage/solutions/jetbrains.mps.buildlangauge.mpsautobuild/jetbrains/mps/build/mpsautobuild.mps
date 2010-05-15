@@ -30,6 +30,7 @@
     <property name="name:7" value="MPS" />
     <property name="scriptsFolder:7" value="build" />
     <property name="compile:7" value="true" />
+    <property name="useTmpDir:7" value="true" />
     <node role="component:7" type="jetbrains.mps.build.custommps.structure.MPSBuild" id="1237299829995" />
     <node role="configuration:7" type="jetbrains.mps.build.packaging.structure.Configuration:7" id="1237299779834">
       <property name="name:7" value="external" />
