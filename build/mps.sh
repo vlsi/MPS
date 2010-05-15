@@ -1,6 +1,7 @@
 #!/bin/sh
 
-PROJECT_HOME=`dirname "$0"`
+SCRIPT_PATH=`readlink -f "$0"`
+PROJECT_HOME=`dirname "${SCRIPT_PATH}"`
 PROJECT_HOME_FROM_STARTUP_DIR=..
 
 if [ -z "${JDK_HOME}" ]; then

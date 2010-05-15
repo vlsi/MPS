@@ -779,5 +779,41 @@
     <property name="name" value="dialog" />
     <node role="optionDeclaration" type="jetbrains.mps.bash.structure.ArgumentList" id="3835416431562293968" />
   </node>
+  <node type="jetbrains.mps.bash.structure.ExternalCommandDeclaration" id="7093590863634209406">
+    <property name="name" value="readlink" />
+    <node role="optionDeclaration" type="jetbrains.mps.bash.structure.OptionSet" id="7093590863634209412">
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="7093590863634209413">
+        <property name="symbol" value="f" />
+        <property name="description" value="canonicalize" />
+      </node>
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="7093590863634209415">
+        <property name="symbol" value="e" />
+        <property name="description" value="canonicalize-existing" />
+      </node>
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="7093590863634209416">
+        <property name="symbol" value="m" />
+        <property name="description" value="canonicalize-missing" />
+      </node>
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="7093590863634209420">
+        <property name="symbol" value="n" />
+        <property name="description" value="no-newline" />
+      </node>
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="7093590863634209421">
+        <property name="symbol" value="q" />
+        <property name="description" value="quiet" />
+      </node>
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="7093590863634209422">
+        <property name="symbol" value="s" />
+        <property name="description" value="silent" />
+      </node>
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="7093590863634209423">
+        <property name="symbol" value="v" />
+        <property name="description" value="verbose" />
+      </node>
+    </node>
+    <node role="optionDeclaration" type="jetbrains.mps.bash.structure.Argument" id="7093590863634209418">
+      <property name="name" value="FILE" />
+    </node>
+  </node>
 </model>
 
