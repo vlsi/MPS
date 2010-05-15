@@ -16,10 +16,10 @@ import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavi
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
+import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
-import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Behavior;
 import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import jetbrains.mps.build.distrib.behavior.UniversalConfig_Behavior;
 import jetbrains.mps.build.distrib.behavior.MacConfig_Behavior;
@@ -115,6 +115,10 @@ public class QueriesGenerated {
     return Configuration_Behavior.call_getBuildFileName_1230217425313(SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false)) + DistribConfiguration_Behavior.getSuffix_1240229578757();
   }
 
+  public static Object propertyMacro_GetPropertyValue_672157982583316934(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ArtifactReferenceCommandLinePart_Behavior.getExecutableFilePropertyName_1231864298769();
+  }
+
   public static Object propertyMacro_GetPropertyValue_8356548439144032736(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "vmOptionsDir", true));
   }
@@ -200,10 +204,6 @@ public class QueriesGenerated {
     }
     exe += "windows.exe";
     return exe;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1234793857049(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ArtifactReferenceCommandLinePart_Behavior.getExecutableFilePropertyName_1231864298769();
   }
 
   public static Object propertyMacro_GetPropertyValue_1230650823092(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -125,9 +125,10 @@
     <property name="license.src.path" value="${mps_home}/license/mps_license.txt" />
     <property name="jre.zip.path" value="${mps_home}/build/tools/jre.zip" />
     <property name="jre.unzipped.path" value="${deploy.dir}" />
-    <property name="installer" value="${deploy.dir}/MPS-${build.number}-windows.exe" />
+    <property name="installer.relative.path" value="${deploy.dir}/MPS-${build.number}-windows.exe" />
     <property name="mps_home" value="${basedir}" />
     <fail unless="mps_home" message="Property mps_home unspecified." />
+    <property name="installer" location="${installer.relative.path}" />
     <fixcrlf file="${startup.bat}" eol="dos" eof="asis" />
     <fixcrlf file="${vmoptions.file}" eol="dos" eof="asis" />
     <copy file="${nsis.script.path}" tofile="${nsis.script.path.tmp}" />
@@ -153,7 +154,7 @@
     <exec executable="${deploy.dir}/nsis/makensis.exe" osfamily="windows" failonerror="true">
       <arg file="${nsis.script.path.tmp}" />
     </exec>
-    <exec executable="${mps_home}/build/sign/SignCode.exe" osfamily="windows" failonerror="true" dir="${basedir}">
+    <exec executable="${mps_home}/build/sign/SignCode.exe" osfamily="windows" failonerror="true" dir="${scripts.folder}">
       <arg line="-spc ${mps_home}/build/sign/cert_2009_cs.spc -v ${mps_home}/build/sign/key_2009_cs_nocrypt.pvk ${installer}" />
     </exec>
     <delete file="${nsis.script.path.tmp}" />

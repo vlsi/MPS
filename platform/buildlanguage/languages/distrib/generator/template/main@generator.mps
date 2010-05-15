@@ -1176,6 +1176,35 @@
       <node role="target:21" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration:21" id="1230234617349">
         <property name="name:21" value="default" />
         <property name="if:21" value="windows" />
+        <node role="taskCall:21" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="672157982583316924">
+          <link role="declaration:22" targetNodeId="4v.353793545802814750" resolveInfo="property" />
+          <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="672157982583316925">
+            <link role="attributeDeclaration:22" targetNodeId="4v.353793545802814759" resolveInfo="name" />
+            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="672157982583316926">
+              <property name="value:21" value="installer.full.path" />
+              <node role="propertyMacro$property_attribute$value:21" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="672157982583316933">
+                <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="672157982583316934">
+                  <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="672157982583316935">
+                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="672157982583316936">
+                      <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="672157982583316937">
+                        <link role="baseMethodDeclaration:16" targetNodeId="8.1231864298769" resolveInfo="getExecutableFilePropertyName" />
+                        <link role="concept:16" targetNodeId="1.1231860019901:0" resolveInfo="ArtifactReferenceCommandLinePart" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="672157982583316927">
+            <link role="attributeDeclaration:22" targetNodeId="4v.353793545802814773" resolveInfo="location" />
+            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="672157982583316930">
+              <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="672157982583316932">
+                <link role="propertyDeclaration:21" targetNodeId="1234793841365" resolveInfo="installer" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="taskCall:21" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="1239643257930">
           <link role="declaration:22" targetNodeId="4v.353793545802813303" resolveInfo="fixcrlf" />
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239643261058">
@@ -3200,7 +3229,7 @@
           </node>
         </node>
         <node role="propertyList:21" type="jetbrains.mps.buildlanguage.structure.PropertyDeclaration:21" id="1234793841365">
-          <property name="name:21" value="installer" />
+          <property name="name:21" value="installer.relative.path" />
           <node role="type:21" type="jetbrains.mps.buildlanguage.structure.StringType:21" id="1234793850740" />
           <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="4350419540518233333">
             <node role="left:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="4350419540518233336">
@@ -3309,18 +3338,6 @@
                         <link role="variableDeclaration:3" targetNodeId="1234793991137" resolveInfo="exe" />
                       </node>
                     </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="propertyMacro$property_attribute$name:21" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1234793857048">
-            <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1234793857049">
-              <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234793857050">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1234793871401">
-                  <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="1234793871402">
-                    <link role="concept:16" targetNodeId="1.1231860019901:0" resolveInfo="ArtifactReferenceCommandLinePart" />
-                    <link role="baseMethodDeclaration:16" targetNodeId="8.1231864298769" resolveInfo="getExecutableFilePropertyName" />
                   </node>
                 </node>
               </node>
