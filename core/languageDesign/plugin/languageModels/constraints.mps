@@ -1148,5 +1148,10 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5267773026153284329">
+    <property name="package:8" value="RunConfigs.Configuration.IsCorrect" />
+    <link role="concept:8" targetNodeId="7.1347772807199150767:23" resolveInfo="AbstractCheckConfigBlock" />
+    <link role="defaultConcreteConcept:8" targetNodeId="7.678887849223472879:23" resolveInfo="CheckConfigurationBlock" />
+  </node>
 </model>
 

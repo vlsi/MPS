@@ -2795,6 +2795,9 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="678887849223472888">
       <link role="conceptPropertyDeclaration:0" targetNodeId="2.1216468774225:3" resolveInfo="showName" />
     </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="5267773026153263958">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.6293714305936158372:0" resolveInfo="substituteInAmbigousPosition" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="678887849223472884">
     <property name="package:0" value="RunConfigs.Configuration.Execute" />
