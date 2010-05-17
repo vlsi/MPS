@@ -111,7 +111,16 @@ public class NewModel_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       if (NewModel_Action.this.module.getSModelRoots().size() == 0) {
+        int code = JOptionPane.showConfirmDialog(NewModel_Action.this.frame, "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
+        if (code != JOptionPane.YES_OPTION) {
+          return;
+        } else {
+          NewModelUtil.ShowModulePropertiesDialog(NewModel_Action.this.module, NewModel_Action.this.context);
+        }
+      }
+      if (NewModel_Action.this.module.getSModelRoots().size() == 0) {
         JOptionPane.showMessageDialog(NewModel_Action.this.frame, "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
+        return;
       }
       final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
       final IOperationContext localContext = NewModel_Action.this.context;
