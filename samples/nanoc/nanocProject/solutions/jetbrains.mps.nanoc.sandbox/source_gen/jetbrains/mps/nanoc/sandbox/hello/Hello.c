@@ -1,7 +1,7 @@
 int main() {
 int i = 0;
-while (1) {
-i = i + 2;
+while (i < 5) {
+i = i + 1;
 
 }
 }

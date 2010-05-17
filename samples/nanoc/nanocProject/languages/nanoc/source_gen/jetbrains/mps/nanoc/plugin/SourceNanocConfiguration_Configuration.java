@@ -37,15 +37,11 @@ import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.NameUtil;
 import java.io.File;
-import jetbrains.mps.nanoc.debug.ProgramsLocationUtil;
 import java.io.IOException;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
+import jetbrains.mps.nanoc.debug.CppGDBCreator;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.openapi.util.JDOMExternalizable;
@@ -56,6 +52,7 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import javax.swing.JLabel;
 import com.intellij.execution.ui.ExecutionConsole;
@@ -144,61 +141,10 @@ public class SourceNanocConfiguration_Configuration extends BaseRunConfig {
 
             final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
             // create process handler 
-            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E5<ProcessHandler, ExecutionException, ExecutionException, ExecutionException, ExecutionException, ExecutionException>() {
-              public ProcessHandler invoke() throws ExecutionException, ExecutionException, ExecutionException, ExecutionException, ExecutionException {
+            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E1<ProcessHandler, ExecutionException>() {
+              public ProcessHandler invoke() throws ExecutionException {
                 try {
-                  SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(SourceNanocConfiguration_Configuration.this.getStateObject().modelRef));
-                  SNode node = descriptor.getSModel().getNodeById(SourceNanocConfiguration_Configuration.this.getStateObject().nodeId);
-                  final SNode sourceFileNode = SNodeOperations.cast(node, "jetbrains.mps.nanoc.structure.File");
-                  IModule module = descriptor.getModule();
-                  String folder = module.getGeneratorOutputPath();
-                  final Wrappers._T<String> sourceFileName = new Wrappers._T<String>();
-                  ModelAccess.instance().runReadAction(new Runnable() {
-                    public void run() {
-                      sourceFileName.value = SPropertyOperations.getString(sourceFileNode, "name");
-                    }
-                  });
-                  String packageName = NameUtil.pathFromNamespace(descriptor.getLongName());
-                  File modelSourceFolder = new File(module.getGeneratorOutputPath() + File.separator + packageName);
-                  File modelClassesFolder = new File(module.getClassesGen().getAbsolutePath() + File.separator + packageName);
-                  File f = new File(modelSourceFolder, sourceFileName.value + ".c");
-                  if (!(f.exists())) {
-                    throw new ExecutionException("node is not generated");
-                  }
-                  File gcc = new File(ProgramsLocationUtil.getGccLocation());
-                  if (!(gcc.exists())) {
-                    throw new ExecutionException("no GCC found");
-                  }
-                  ProcessBuilder processBuilder = new ProcessBuilder();
-                  String outputExtension = ".exe";
-                  File executableFile = new File(modelClassesFolder, sourceFileName.value + outputExtension);
-                  processBuilder.command(gcc.getAbsolutePath(), f.getAbsolutePath(), "-o" + executableFile.getAbsolutePath(), "-g", "-xc");
-                  processBuilder.directory(f.getParentFile());
-                  Process compileProcess;
-                  try {
-                    compileProcess = processBuilder.start();
-                  } catch (IOException ioException) {
-                    throw new ExecutionException("error executing gcc compiler", ioException);
-                  }
-                  int timeout = 5000;
-                  int current = 100;
-                  boolean success = false;
-                  while (current < timeout) {
-                    try {
-                      Thread.sleep(100);
-                    } catch (InterruptedException ignored) {
-                    }
-                    if (executableFile.exists()) {
-                      success = true;
-                      break;
-                    }
-                    current += 100;
-                  }
-                  if (!(success)) {
-                    compileProcess.destroy();
-                    throw new ExecutionException("executable file not found");
-                  }
-
+                  File executableFile = NanocConfigRunPreparationUtil.prepare(SourceNanocConfiguration_Configuration.this.getStateObject().nodeId, SourceNanocConfiguration_Configuration.this.getStateObject().modelRef);
                   List<String> params = new ArrayList<String>();
                   params.add(executableFile.getAbsolutePath());
                   File workingDir = executableFile.getParentFile();
@@ -239,7 +185,7 @@ public class SourceNanocConfiguration_Configuration extends BaseRunConfig {
       }
 
       public AbstractDebugSessionCreator createDebugSessionCreator(Project p) {
-        return null;
+        return new CppGDBCreator(SourceNanocConfiguration_Configuration.this.getStateObject().nodeId, SourceNanocConfiguration_Configuration.this.getStateObject().modelRef);
       }
 
       public RunnerSettings getRunnerSettings() {

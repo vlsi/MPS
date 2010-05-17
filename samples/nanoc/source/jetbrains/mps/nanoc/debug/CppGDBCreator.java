@@ -22,6 +22,7 @@ import jetbrains.mps.nanoc.debug.requests.BreakpointRequestor;
 import jetbrains.mps.nanoc.debug.util.ProcessUtil;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.debug.info.StacktraceUtil;
+import jetbrains.mps.nanoc.plugin.NanocConfigRunPreparationUtil;
 
 import javax.swing.JComponent;
 import java.io.File;
@@ -36,15 +37,23 @@ import java.io.File;
 public class CppGDBCreator extends AbstractDebugSessionCreator {
   CppDebugSession myDebugSession;
   private boolean myReadyForInput = false;
-  private String myCommand;
+  private String myNodeId;
+  private String myModelRef;
+  private File myProgramFile;
 
   @Deprecated
   public CppGDBCreator() {
 
   }
 
-  public CppGDBCreator(String command) {
-    myCommand = command;
+  @Deprecated
+  public CppGDBCreator(String ignored) {
+
+  }
+
+  public CppGDBCreator(String nodeId, String modelRef) {
+    myNodeId = nodeId;
+    myModelRef = modelRef;
   }
 
   @Override
@@ -55,13 +64,13 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
   @Override
   public ExecutionResult startSession(Executor executor, ProgramRunner runner, RunProfileState state, Project project) throws ExecutionException {
     try {
+      myProgramFile = NanocConfigRunPreparationUtil.prepare(myNodeId, myModelRef);
       File gdbFile = new File(ProgramsLocationUtil.getGdbLocation());
       ProcessBuilder processBuilder = new ProcessBuilder();
       processBuilder.directory(gdbFile.getParentFile());
       processBuilder.command(gdbFile.getAbsolutePath(), "-quiet", "--interpreter=mi");
       Process process = processBuilder.start();
       final ConsoleViewImpl consoleView = StacktraceUtil.createConsoleView(project);
-      String s = ProcessUtil.getProcessId(process);
       SimpleConsoleProcessHandler processHandler = new SimpleConsoleProcessHandler(consoleView, process, gdbFile.getAbsolutePath());
       processHandler.addProcessListener(new MyProcessListener());
       ExecutionConsole executionConsole = new ExecutionConsole() {
@@ -109,11 +118,10 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
         if (s.startsWith("(gdb)")) {
           myReadyForInput = true;
           final SimpleConsoleProcessHandler gdbProcess = (SimpleConsoleProcessHandler) event.getProcessHandler();
-          File programFile = new File(myCommand);
-          File dir = programFile.getParentFile();
+          File dir = myProgramFile.getParentFile();
           String workingDir = dir.getAbsolutePath();
           gdbProcess.inputWithFlush("-environment-cd " + workingDir + "\n");
-          gdbProcess.inputWithFlush("-file-exec-and-symbols " + myCommand.replace(File.separatorChar, '/') + "\n");
+          gdbProcess.inputWithFlush("-file-exec-and-symbols " + myProgramFile.getAbsolutePath().replace(File.separatorChar, '/') + "\n");
           //   gdbProcess.inputWithFlush("-gdb-set new-console off\n");
           myDebugSession.getGDBRequestManager().createRequest(new BreakpointRequestor("main") {
             @Override

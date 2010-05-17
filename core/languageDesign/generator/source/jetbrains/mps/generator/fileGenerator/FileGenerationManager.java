@@ -212,7 +212,7 @@ public class FileGenerationManager implements ApplicationComponent {
     if (positions == null && scopePositions == null && unitPositions == null) {
       return;
     }
-    String fileName = outputNode.getName() + ".java";
+    String fileName = outputNode.getName() + "." + TextGenManager.instance().getExtension(outputNode);
     if (positions != null) {
       for (SNode out : positions.keySet()) {
         SNode input = out;

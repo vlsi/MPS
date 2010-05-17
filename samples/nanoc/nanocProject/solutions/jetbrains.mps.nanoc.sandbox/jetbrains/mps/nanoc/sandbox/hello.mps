@@ -23,11 +23,11 @@
           <node role="statement" type="jetbrains.mps.nanoc.structure.CExpressionStatement" id="5698737643333767062">
             <node role="expression" type="jetbrains.mps.nanoc.structure.CAssignmentExpression" id="5698737643333767064">
               <node role="value" type="jetbrains.mps.nanoc.structure.PlusOp" id="5698737643333767068">
-                <node role="right" type="jetbrains.mps.nanoc.structure.IntConst" id="5698737643333767071">
-                  <property name="value" value="2" />
-                </node>
                 <node role="left" type="jetbrains.mps.nanoc.structure.VarRef" id="5698737643333767067">
                   <link role="declaration" targetNodeId="5698737643333767058" resolveInfo="i" />
+                </node>
+                <node role="right" type="jetbrains.mps.nanoc.structure.IntConst" id="871143615196734911">
+                  <property name="value" value="1" />
                 </node>
               </node>
               <node role="variable" type="jetbrains.mps.nanoc.structure.VarRef" id="5698737643333767063">
@@ -36,8 +36,13 @@
             </node>
           </node>
         </node>
-        <node role="condition" type="jetbrains.mps.nanoc.structure.IntConst" id="5698737643333767044">
-          <property name="value" value="1" />
+        <node role="condition" type="jetbrains.mps.nanoc.structure.LessOp" id="871143615196734913">
+          <node role="right" type="jetbrains.mps.nanoc.structure.IntConst" id="871143615196734916">
+            <property name="value" value="5" />
+          </node>
+          <node role="left" type="jetbrains.mps.nanoc.structure.VarRef" id="871143615196734912">
+            <link role="declaration" targetNodeId="5698737643333767058" resolveInfo="i" />
+          </node>
         </node>
       </node>
     </node>

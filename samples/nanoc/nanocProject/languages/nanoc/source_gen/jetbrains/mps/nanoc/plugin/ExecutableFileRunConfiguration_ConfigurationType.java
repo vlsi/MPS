@@ -20,7 +20,6 @@ public class ExecutableFileRunConfiguration_ConfigurationType implements Configu
 
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
-    ListSequence.fromList(result).addElement(new ExecutableCppConfiguration_Factory(this));
     ListSequence.fromList(result).addElement(new SourceNanocConfiguration_Factory(this));
     return ListSequence.fromList(result).toGenericArray(ConfigurationFactory.class);
   }
