@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
+import jetbrains.mps.vcs.diff.changes.DeleteNodeChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.List;
@@ -101,7 +102,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     });
   }
 
-  private EditorMessage highlightChange(@NotNull Change change) {
+  private EditorMessage highlightChange(@NotNull final Change change) {
     final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -118,25 +119,23 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     if (model.value == null) {
       return null;
     }
-    final SNodeId affectedNodeId = change.getAffectedNodeId();
+    SNodeId affectedNodeId = change.getAffectedNodeId();
     MessageTarget messageTarget = change.getMessageTarget();
     if (affectedNodeId == null || messageTarget == null) {
       return null;
     }
-    final Wrappers._T<SNode> node = new Wrappers._T<SNode>(model.value.getNodeById(affectedNodeId));
-    if (node.value == null) {
-      if (change.getChangeType() == ChangeType.DELETE) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            node.value = model.value.getNodeById(myModelChangesManager.getBaseParentId(affectedNodeId));
-          }
-        });
-        if (node.value == null) {
-          return null;
+    final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
+    if (change.getChangeType() == ChangeType.DELETE) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          node.value = model.value.getNodeById(((DeleteNodeChange) change).getParentId());
         }
-      } else {
-        return null;
-      }
+      });
+    } else {
+      node.value = model.value.getNodeById(affectedNodeId);
+    }
+    if (node.value == null) {
+      return null;
     }
 
     final Wrappers._boolean isOurChange = new Wrappers._boolean();

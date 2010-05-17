@@ -27,6 +27,7 @@ import java.util.List;
 public class DeleteNodeChange extends Change {
   private SNodeId myNodeId;
   private List<SNodeId> myChildren;
+  private SNodeId myParentId = null;
   private String myRole = null;
   private int myNextChildIndex = -1;
 
@@ -35,9 +36,10 @@ public class DeleteNodeChange extends Change {
     myChildren = childrenIds;
   }
 
-  public DeleteNodeChange(SNodeId nodeId, List<SNodeId> children, String role, int nextChildIndex) {
+  public DeleteNodeChange(SNodeId nodeId, List<SNodeId> children, SNodeId parentId, String role, int nextChildIndex) {
     myNodeId = nodeId;
     myChildren = children;
+    myParentId = parentId;
     myRole = role;
     myNextChildIndex = nextChildIndex;
   }
@@ -46,7 +48,7 @@ public class DeleteNodeChange extends Change {
     if (myRole == null) {
       return "delete " + myNodeId;
     } else {
-      return "delete " + myNodeId + " in role " + myRole + " (previous child index is " + myNextChildIndex + ")";
+      return "delete " + myNodeId + " in role " + myRole + " (next child index is " + myNextChildIndex + ")";
     }
   }
 
@@ -72,12 +74,16 @@ public class DeleteNodeChange extends Change {
     return myChildren;
   }
 
-  public int getNextChildIndex() {
-    return myNextChildIndex;
+  public SNodeId getParentId() {
+    return myParentId;
   }
 
   public String getRole() {
     return myRole;
+  }
+
+  public int getNextChildIndex() {
+    return myNextChildIndex;
   }
 
   @Override

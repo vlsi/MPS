@@ -485,7 +485,7 @@ __switch__:
             if (ch instanceof DeleteNodeChange) {
               SNode deletedNode = myBaseVersionModel.getNodeById(ch.getAffectedNodeId());
               if (LinkDeclaration_Behavior.call_isSingular_1213877254557(SNodeOperations.getContainingLinkDeclaration(deletedNode))) {
-                newCh = new DeleteNodeChange(ch.getAffectedNodeId(), ch.getDependencies(), SNodeOperations.getContainingLinkRole(deletedNode), -1);
+                newCh = new DeleteNodeChange(ch.getAffectedNodeId(), ch.getDependencies(), check_7206051335377860075(SNodeOperations.getParent(deletedNode)), SNodeOperations.getContainingLinkRole(deletedNode), -1);
               }
             }
             return newCh;
@@ -778,7 +778,7 @@ __switch__:
           }
         }
         for (SNodeId nodeId : ListSequence.fromList(baseNodeGroup).skip(commonGroupSize)) {
-          ListSequence.fromList(changesToAdd).addElement(new DeleteNodeChange(nodeId, new ArrayList<SNodeId>(), SNodeOperations.getContainingLinkRole(((SNode) myBaseVersionModel.getNodeById(nodeId))), currentIndex));
+          ListSequence.fromList(changesToAdd).addElement(new DeleteNodeChange(nodeId, new ArrayList<SNodeId>(), parentNode.getSNodeId(), SNodeOperations.getContainingLinkRole(((SNode) myBaseVersionModel.getNodeById(nodeId))), currentIndex));
         }
       }
     }
@@ -901,6 +901,13 @@ __switch__:
     return p.getChild(SNodeOperations.getContainingLinkRole(node));
   }
 
+  private static SNodeId check_7206051335377860075(SNode p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getSNodeId();
+  }
+
   private static VirtualFile check_4132956801439389203(IFile p) {
     if (null == p) {
       return null;
@@ -992,7 +999,14 @@ __switch__:
     return p.getReferent(reference.getRole());
   }
 
-  private static SNodeId check_781066578206382712(SNode p) {
+  private static SNodeId check_7206051335377860095(SNode p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getSNodeId();
+  }
+
+  private static SNodeId check_9042451232534986458(SNode p) {
     if (null == p) {
       return null;
     }
@@ -1329,7 +1343,7 @@ __switch__:
               }) == 0) {
                 if (!(isAncestorAlreadyAdded(pathToRoot))) {
                   if (isSingle) {
-                    addChange(new DeleteNodeChange(e.getChild().getSNodeId(), SModelUtils.getNodeIds(e.getChild().getChildren()), e.getChildRole(), -1), e.getAffectedRoot());
+                    addChange(new DeleteNodeChange(e.getChild().getSNodeId(), SModelUtils.getNodeIds(e.getChild().getChildren()), check_7206051335377860095(e.getParent()), e.getChildRole(), -1), e.getAffectedRoot());
                   } else {
                     refreshMultipleChildChanges(e.getParent(), e.getChildRole(), currentChildren, false);
                   }
@@ -1352,7 +1366,6 @@ __switch__:
       final List<SNode> currentChildren = getCurrentChildren(e.getParent(), e.getChildRole());
       myCommandQueue.runTask(new Runnable() {
         public void run() {
-          fireChangeUpdateStarted();
           if (!(checkLoaded())) {
             return;
           }
@@ -1364,20 +1377,6 @@ __switch__:
                 return;
               }
 
-              if (removeChanges(DeleteNodeChange.class, new _FunctionTypes._return_P1_E0<Boolean, DeleteNodeChange>() {
-                public Boolean invoke(DeleteNodeChange ch) {
-                  return ch.getAffectedNodeId().equals(e.getChild().getSNodeId()) && ObjectUtils.equals(getBaseParentId(ch.getAffectedNodeId()), e.getParent().getSNodeId());
-                }
-              }) != 0) {
-                return;
-              }
-
-              SNode thisNodeInBase = myBaseVersionModel.getNodeById(e.getChild().getSNodeId());
-              if (thisNodeInBase != null) {
-                if (check_781066578206382712(SNodeOperations.getParent(thisNodeInBase)) == e.getParent().getSNodeId() && e.getChildRole().equals(SNodeOperations.getContainingLinkRole(thisNodeInBase))) {
-                  return;
-                }
-              }
 
               SNode child = e.getChild();
               String prevRole = null;
@@ -1388,9 +1387,22 @@ __switch__:
 
               boolean isSingle = SModelUtils.isChildInSingleRole(e);
               if (isSingle) {
+                if (removeChanges(DeleteNodeChange.class, new _FunctionTypes._return_P1_E0<Boolean, DeleteNodeChange>() {
+                  public Boolean invoke(DeleteNodeChange ch) {
+                    return ch.getAffectedNodeId().equals(e.getChild().getSNodeId()) && ObjectUtils.equals(ch.getParentId(), e.getParent().getSNodeId());
+                  }
+                }) != 0) {
+                  return;
+                }
+                SNode thisNodeInBase = myBaseVersionModel.getNodeById(e.getChild().getSNodeId());
+                if (thisNodeInBase != null) {
+                  if (check_9042451232534986458(SNodeOperations.getParent(thisNodeInBase)) == e.getParent().getSNodeId() && e.getChildRole().equals(SNodeOperations.getContainingLinkRole(thisNodeInBase))) {
+                    return;
+                  }
+                }
                 removeChanges(DeleteNodeChange.class, new _FunctionTypes._return_P1_E0<Boolean, DeleteNodeChange>() {
                   public Boolean invoke(DeleteNodeChange ch) {
-                    return ObjectUtils.equals(getBaseParentId(ch.getAffectedNodeId()), e.getParent().getSNodeId()) && e.getChildRole().equals(ch.getRole());
+                    return ObjectUtils.equals(ch.getParentId(), e.getParent().getSNodeId()) && e.getChildRole().equals(ch.getRole());
                   }
                 });
                 addChange(new SetNodeChange(child.getConceptFqName(), child.getSNodeId(), e.getChildRole(), e.getParent().getSNodeId(), check_7601193928418818744(check_7601193928418818745(myBaseVersionModel.getNodeById(e.getParent().getSNodeId()), e)), prevRole), e.getAffectedRoot());
