@@ -7,18 +7,18 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
+import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import java.util.List;
-import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint() {
@@ -33,9 +33,12 @@ public class LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstrain
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    List<SNode> result = new ArrayList<SNode>();
+    if (SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false) != null) {
+      return result;
+    }
     SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(_context.getEnclosingNode());
     int constraint = IClassifiersSearchScope.INSTANCE_METHOD;
-    List<SNode> result = new ArrayList<SNode>();
     Set<String> names = SetSequence.fromSet(new HashSet<String>());
     while (classifier != null) {
       for (SNode method : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, _context.getEnclosingNode(), constraint)) {

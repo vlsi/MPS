@@ -2927,6 +2927,11 @@
       </node>
       <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction:23" id="1217426014453">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1217426014454">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="4746038179140410052">
+            <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="4746038179140410053">
+              <property name="text:3" value="this action is deprecated due to LocalInstanceMethodCall &amp; LocalInstanceFieldReference" />
+            </node>
+          </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1217426014455">
             <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1217426014456">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1217426014457">
