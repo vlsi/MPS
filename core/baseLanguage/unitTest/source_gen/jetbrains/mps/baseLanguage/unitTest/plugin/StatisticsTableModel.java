@@ -41,6 +41,7 @@ public class StatisticsTableModel implements TableModel {
         if (row != null) {
           row.setStartTime(event.getTime());
           row.setUsageBefore(event.getMemoryUsage());
+          fireTableChanged();
         }
       }
 
@@ -57,6 +58,7 @@ public class StatisticsTableModel implements TableModel {
           if (row.getFailed() == 0 && row.getErrored() == 0) {
             row.setSucceed();
           }
+          fireTableChanged();
         }
       }
 
@@ -64,6 +66,7 @@ public class StatisticsTableModel implements TableModel {
         TestMethodRow row = this.findRowForEvent(event);
         if (row != null) {
           row.setErrored();
+          fireTableChanged();
         }
       }
 
@@ -71,6 +74,7 @@ public class StatisticsTableModel implements TableModel {
         TestMethodRow row = this.findRowForEvent(event);
         if (row != null) {
           row.setFailed();
+          fireTableChanged();
         }
       }
 
@@ -78,6 +82,7 @@ public class StatisticsTableModel implements TableModel {
         TestMethodRow row = StatisticsTableModel.this.getRow(className, methodName);
         if (row != null) {
           row.setErrored();
+          fireTableChanged();
         }
       }
     });
@@ -110,9 +115,13 @@ public class StatisticsTableModel implements TableModel {
   public void updateRow(TestMethodRow row) {
     int index = ListSequence.fromList(this.myFilteredRows).indexOf(row);
     if (index >= 0) {
-      for (TableModelListener listener : ListSequence.fromList(this.myListeners)) {
-        listener.tableChanged(new TableModelEvent(this));
-      }
+      this.fireTableChanged();
+    }
+  }
+
+  private void fireTableChanged() {
+    for (TableModelListener listener : ListSequence.fromList(this.myListeners)) {
+      listener.tableChanged(new TableModelEvent(this));
     }
   }
 
