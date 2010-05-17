@@ -7,11 +7,11 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 public class ToEvaluateAnnotation_AnnotationLink {
   public static final String TO_EVALUATE_ANNOTATION = "toEvaluateAnnotation";
 
-  public static void setToEvaluateAnnotation(BaseConcept source, UnprocessedAnnotation target) {
+  public static void setToEvaluateAnnotation(BaseConcept source, ToEvaluateAnnotation target) {
     source.setAttribute(ToEvaluateAnnotation_AnnotationLink.TO_EVALUATE_ANNOTATION, target);
   }
 
-  public static UnprocessedAnnotation getToEvaluateAnnotation(BaseConcept source) {
-    return (UnprocessedAnnotation) source.getAttribute(ToEvaluateAnnotation_AnnotationLink.TO_EVALUATE_ANNOTATION);
+  public static ToEvaluateAnnotation getToEvaluateAnnotation(BaseConcept source) {
+    return (ToEvaluateAnnotation) source.getAttribute(ToEvaluateAnnotation_AnnotationLink.TO_EVALUATE_ANNOTATION);
   }
 }

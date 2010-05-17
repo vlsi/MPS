@@ -63,7 +63,9 @@ public class TransformationUtil {
     wrapMemberReferencesInCycle(evaluator, whatToEvaluate);
     wrapReturn(evaluateMethod);
 
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(evaluateMethod, "body", true), "statement", true)).addElement(SNodeOperations.cast(whatToEvaluate, "jetbrains.mps.baseLanguage.structure.Statement"));
+    if (!(whatToEvaluate.isDescendantOf(evaluateMethod, false))) {
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(evaluateMethod, "body", true), "statement", true)).addElement(SNodeOperations.cast(whatToEvaluate, "jetbrains.mps.baseLanguage.structure.Statement"));
+    }
   }
 
   public static void preprocess(SNode evaluateMethod) {
@@ -89,11 +91,11 @@ public class TransformationUtil {
   }
 
   public static void replaceLowLevelVariableReferences(SNode evaluator, final SNode evaluateMethod) {
-    for (SNode variableRef : ListSequence.fromList(SNodeOperations.getDescendants(evaluateMethod, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
+    for (SNode variableRef : ListSequence.fromList(SNodeOperations.getDescendants(evaluateMethod, "jetbrains.mps.baseLanguage.structure.BaseVariableReference", false, new String[]{}))) {
       if ((TransformationUtil.isLowLevelVariableReference(variableRef, evaluator))) {
         SNode getValue = new TransformationUtil.QuotationClass_crriw5_a0a0a0a0a3().createNode();
 
-        ListSequence.fromList(SLinkOperations.getTargets(getValue, "actualArgument", true)).addElement(createStringLiteral(SPropertyOperations.getString(SLinkOperations.getTarget(variableRef, "variableDeclaration", false), "name")));
+        ListSequence.fromList(SLinkOperations.getTargets(getValue, "actualArgument", true)).addElement(createStringLiteral(SPropertyOperations.getString(SLinkOperations.getTarget(variableRef, "baseVariableDeclaration", false), "name")));
         SNode returnType = getValueProxyTypeFromType(TypeChecker.getInstance().getTypeOf(variableRef));
         SLinkOperations.setTarget(getValue, "returnType", returnType, true);
         SNodeOperations.replaceWithAnother(variableRef, new TransformationUtil.QuotationClass_crriw5_a0a0f0a0a0d().createNode(returnType, getValue));
@@ -263,8 +265,11 @@ public class TransformationUtil {
   }
 
   private static boolean isLowLevelVariableReference(SNode variableRef, SNode evaluator) {
+    if (SNodeOperations.isInstanceOf(variableRef, "jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference")) {
+      return true;
+    }
     if (SNodeOperations.isInstanceOf(variableRef, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(variableRef, "jetbrains.mps.baseLanguage.structure.ParameterReference")) {
-      return SNodeOperations.getContainingRoot(SLinkOperations.getTarget(variableRef, "variableDeclaration", false)) != evaluator;
+      return SNodeOperations.getContainingRoot(SLinkOperations.getTarget(variableRef, "baseVariableDeclaration", false)) != evaluator;
     }
     return false;
   }

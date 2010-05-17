@@ -31,12 +31,6 @@
     <property name="name:0" value="EvaluatorConcept" />
     <property name="rootable:0" value="true" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6483976992294523670">
-      <property name="metaClass:0" value="reference" />
-      <property name="role:0" value="evaluatedStatement" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="3v.1082485599095:3" resolveInfo="BlockStatement" />
-    </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="6036237525966243739">
       <property name="name:0" value="isRuntime" />
       <link role="dataType:0" targetNodeId="2v.1082983657063:0" resolveInfo="boolean" />
@@ -54,23 +48,20 @@
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6851930645646735510">
       <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="evaluatedExpression" />
-      <link role="target:0" targetNodeId="3v.1068580123136:3" resolveInfo="StatementList" />
+      <property name="role:0" value="evaluatedStatement" />
+      <property name="sourceCardinality:0" value="0..1" />
+      <link role="target:0" targetNodeId="3v.1082485599095:3" resolveInfo="BlockStatement" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6036237525966182694">
-    <property name="name:0" value="HighLevelVariable" />
-    <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6036237525966182695">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="variable" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
-    </node>
+    <property name="name:0" value="LowLevelVariable" />
+    <link role="extends:0" targetNodeId="3v.4972933694980447171:3" resolveInfo="BaseVariableDeclaration" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6036237525966189269">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="deducedType" />
+      <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="3v.1068431790189:3" resolveInfo="Type" />
+      <link role="specializedLink:0" targetNodeId="3v.5680397130376446158:3" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6036237525966315974">
@@ -95,65 +86,10 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration:0" id="1304595503654368305">
-    <property name="role:0" value="unprocessedAnnotations" />
-    <property name="package:0" value="annotations" />
-    <link role="source:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
-    <link role="target:0" targetNodeId="1304595503654368306" resolveInfo="UnprocessedAnnotation" />
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1304595503654368306">
-    <property name="name:0" value="UnprocessedAnnotation" />
-    <property name="package:0" value="annotations" />
-    <link role="extends:0" targetNodeId="1707366700950402060" resolveInfo="GenerationHelperAnnotation" />
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1304595503654368307">
-      <property name="value:0" value="unprocessed" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1707366700950402059">
-    <property name="name:0" value="NeedsCallToString" />
-    <property name="package:0" value="annotations" />
-    <link role="extends:0" targetNodeId="1707366700950402060" resolveInfo="GenerationHelperAnnotation" />
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1707366700950402068">
-      <property name="value:0" value="needsCallToString" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1707366700950402060">
     <property name="name:0" value="GenerationHelperAnnotation" />
+    <property name="package:0" value="annotations" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1707366700950402069">
-    <property name="name:0" value="NeedsCallGetValue" />
-    <property name="package:0" value="annotations" />
-    <link role="extends:0" targetNodeId="1707366700950402060" resolveInfo="GenerationHelperAnnotation" />
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1707366700950402071">
-      <property name="value:0" value="needsCallGetValue" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration:0" id="1707366700950545714">
-    <property name="role:0" value="needsCallToString" />
-    <property name="package:0" value="annotations" />
-    <link role="source:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
-    <link role="target:0" targetNodeId="1707366700950402059" resolveInfo="NeedsCallToString" />
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration:0" id="1707366700950545716">
-    <property name="role:0" value="needsCallGetValue" />
-    <property name="package:0" value="annotations" />
-    <link role="source:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
-    <link role="target:0" targetNodeId="1707366700950402069" resolveInfo="NeedsCallGetValue" />
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6887799812494808332">
-    <property name="name:0" value="HighLevelLocalVariableAnnotation" />
-    <property name="package:0" value="annotations" />
-    <link role="extends:0" targetNodeId="1707366700950402060" resolveInfo="GenerationHelperAnnotation" />
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration:0" id="6887799812494808333">
-    <property name="package:0" value="annotations" />
-    <property name="role:0" value="highLevelLocalVariableAnnotation" />
-    <link role="source:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
-    <link role="target:0" targetNodeId="6887799812494808332" resolveInfo="HighLevelLocalVariableAnnotation" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4698880862823893381">
     <property name="package:0" value="annotations" />
@@ -164,7 +100,18 @@
     <property name="package:0" value="annotations" />
     <property name="role:0" value="toEvaluateAnnotation" />
     <link role="source:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
-    <link role="target:0" targetNodeId="1304595503654368306" resolveInfo="UnprocessedAnnotation" />
+    <link role="target:0" targetNodeId="4698880862823893381" resolveInfo="ToEvaluateAnnotation" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="9050639307831392587">
+    <property name="name:0" value="LowLevelVariableReference" />
+    <link role="extends:0" targetNodeId="3v.5497648299878491908:3" resolveInfo="BaseVariableReference" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="9050639307831393059">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="variableDeclaration" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="specializedLink:0" targetNodeId="3v.5497648299878491909:3" />
+      <link role="target:0" targetNodeId="6036237525966182694" resolveInfo="LowLevelVariable" />
+    </node>
   </node>
 </model>
 
