@@ -901,7 +901,7 @@ public class ChangeListManagerImpl extends ChangeListManagerEx implements Projec
   public boolean isIgnoredFile(@NotNull VirtualFile file) {
     // MPS Patch begin
     // This is a hack to fix MPS-8678
-    if (".svn".equals(file.getName())) {
+    if (file.getName().contains(".svn")) {
       return true;
     }
     // MPS Patch end
