@@ -45,7 +45,6 @@ import java.io.File;
 import jetbrains.mps.nanoc.debug.ProgramsLocationUtil;
 import java.io.IOException;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
-import com.intellij.execution.ui.ExecutionConsole;
 import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
@@ -58,6 +57,8 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import javax.swing.JLabel;
+import com.intellij.execution.ui.ExecutionConsole;
 
 public class SourceNanocConfiguration_Configuration extends BaseRunConfig {
   @Tag(value = "state")
@@ -219,40 +220,10 @@ public class SourceNanocConfiguration_Configuration extends BaseRunConfig {
           }
         }
 
-        final JComponent finalConsoleComponent = consoleComponent_22042010;
-        final Runnable finalConsoleDispose = consoleDispose_22042010;
-        final ProcessHandler finalHandler = handler_22042010;
-        if (finalHandler == null) {
-          return null;
+        if (handler_22042010 == null) {
+          throw new ExecutionException("Process handler is null");
         }
-        return new ExecutionResult() {
-          public ExecutionConsole getExecutionConsole() {
-            return new ExecutionConsole() {
-              public void dispose() {
-                if (finalConsoleDispose == null) {
-                  return;
-                }
-                finalConsoleDispose.run();
-              }
-
-              public JComponent getComponent() {
-                return finalConsoleComponent;
-              }
-
-              public JComponent getPreferredFocusableComponent() {
-                return finalConsoleComponent;
-              }
-            };
-          }
-
-          public AnAction[] getActions() {
-            return ListSequence.fromList(actions_22042010).toGenericArray(AnAction.class);
-          }
-
-          public ProcessHandler getProcessHandler() {
-            return finalHandler;
-          }
-        };
+        return new SourceNanocConfiguration_Configuration.MyExecutionResult(handler_22042010, ListSequence.fromList(actions_22042010).toGenericArray(AnAction.class), new SourceNanocConfiguration_Configuration.MyExecutionConsole(consoleComponent_22042010, consoleDispose_22042010));
       }
 
       public AbstractDebugSessionCreator createDebugSessionCreator(Project p) {
@@ -305,40 +276,53 @@ public class SourceNanocConfiguration_Configuration extends BaseRunConfig {
     }
 
     protected void resetEditorFrom(SourceNanocConfiguration_Configuration c) {
-      if (c.getStateObject().modelRef != null && c.getStateObject().nodeId != null) {
-        SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(c.getStateObject().modelRef));
-        if (descriptor == null) {
-          return;
+      try {
+        if (c.getStateObject().modelRef != null && c.getStateObject().nodeId != null) {
+          SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(c.getStateObject().modelRef));
+          if (descriptor == null) {
+            return;
+          }
+          SModel model = descriptor.getSModel();
+          SNode node = model.getNodeById(c.getStateObject().nodeId);
+          if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.nanoc.structure.File"))) {
+            return;
+          }
+          MySettingsEditor.this.myComponent.setNode(node);
         }
-        SModel model = descriptor.getSModel();
-        SNode node = model.getNodeById(c.getStateObject().nodeId);
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.nanoc.structure.File"))) {
-          return;
-        }
-        MySettingsEditor.this.myComponent.setNode(node);
+      } catch (Throwable t) {
+        Logger.getLogger(SourceNanocConfiguration_Configuration.class).error(t);
       }
     }
 
     protected void applyEditorTo(final SourceNanocConfiguration_Configuration c) {
-      final SNode node = MySettingsEditor.this.myComponent.getNode();
-      if (node != null) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            c.getStateObject().nodeId = node.getId();
-            c.getStateObject().modelRef = node.getModel().getSModelReference().toString();
-          }
-        });
+      try {
+        final SNode node = MySettingsEditor.this.myComponent.getNode();
+        if (node != null) {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              c.getStateObject().nodeId = node.getId();
+              c.getStateObject().modelRef = node.getModel().getSModelReference().toString();
+            }
+          });
+        }
+      } catch (Throwable t) {
+        Logger.getLogger(SourceNanocConfiguration_Configuration.class).error(t);
       }
     }
 
     @NotNull
     protected JComponent createEditor() {
-      this.myComponent = new MainNodeChooser<SNode>(SConceptOperations.findConceptDeclaration("jetbrains.mps.nanoc.structure.File"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
-        public Boolean invoke(SNode n) {
-          return true;
-        }
-      });
-      return this.myComponent;
+      try {
+        this.myComponent = new MainNodeChooser<SNode>(SConceptOperations.findConceptDeclaration("jetbrains.mps.nanoc.structure.File"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+          public Boolean invoke(SNode n) {
+            return true;
+          }
+        });
+        return this.myComponent;
+      } catch (Throwable t) {
+        Logger.getLogger(SourceNanocConfiguration_Configuration.class).error(t);
+      }
+      return new JLabel("Error during configuration editor initialization.");
     }
 
     protected void disposeEditor() {
@@ -355,6 +339,56 @@ public class SourceNanocConfiguration_Configuration extends BaseRunConfig {
     public Object clone() throws CloneNotSupportedException {
       SourceNanocConfiguration_Configuration.MyState object = (SourceNanocConfiguration_Configuration.MyState) super.clone();
       return object;
+    }
+  }
+
+  private static class MyExecutionResult implements ExecutionResult {
+    private final ProcessHandler myHandler;
+    private final AnAction[] myActions;
+    private final ExecutionConsole myConsole;
+
+    public MyExecutionResult(ProcessHandler handler, AnAction[] actions, ExecutionConsole console) {
+      myHandler = handler;
+      myActions = actions;
+      myConsole = console;
+    }
+
+    public ProcessHandler getProcessHandler() {
+      return myHandler;
+    }
+
+    public AnAction[] getActions() {
+      return myActions;
+    }
+
+    public ExecutionConsole getExecutionConsole() {
+      return myConsole;
+    }
+  }
+
+  private static class MyExecutionConsole implements ExecutionConsole {
+    @Nullable
+    private final Runnable myDispose;
+    private final JComponent myComponent;
+
+    public MyExecutionConsole(JComponent component, @Nullable Runnable dispose) {
+      myComponent = component;
+      myDispose = dispose;
+    }
+
+    public void dispose() {
+      if (myDispose == null) {
+        return;
+      }
+      myDispose.run();
+    }
+
+    public JComponent getPreferredFocusableComponent() {
+      return myComponent;
+    }
+
+    public JComponent getComponent() {
+      return myComponent;
     }
   }
 }
