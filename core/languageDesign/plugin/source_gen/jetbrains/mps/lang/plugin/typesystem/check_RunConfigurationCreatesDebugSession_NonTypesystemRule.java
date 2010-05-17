@@ -20,11 +20,11 @@ public class check_RunConfigurationCreatesDebugSession_NonTypesystemRule extends
 
   public void applyRule(final SNode runConfigurationDeclaration, final TypeCheckingContext typeCheckingContext) {
     if (SPropertyOperations.getBoolean(runConfigurationDeclaration, "isDebuggable")) {
-      if ((SLinkOperations.getTarget(runConfigurationDeclaration, "stateTypeParameter", false) == null) && (SLinkOperations.getTarget(runConfigurationDeclaration, "debugSessionCreator", true) == null)) {
+      if ((SLinkOperations.getTarget(runConfigurationDeclaration, "debugSessionCreator", true) == null)) {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(runConfigurationDeclaration, "Debuggable configuration must declare either state type or debug session creator", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "8255351389870630255", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(runConfigurationDeclaration, "Debuggable configuration must declare debug session creator", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "8255351389870630255", intentionProvider, errorTarget);
         }
       }
     }

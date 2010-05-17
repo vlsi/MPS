@@ -3341,34 +3341,21 @@
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8255351389870630210">
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8255351389870630212">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8255351389870630216">
-            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="8255351389870630244">
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8255351389870630245">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8255351389870630246">
-                  <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8255351389870630247">
-                    <link role="applicableNode:3" targetNodeId="8255351389870627567" resolveInfo="runConfigurationDeclaration" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8255351389870630248">
-                    <link role="link:16" targetNodeId="4.8591610611835621641:23" />
-                  </node>
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8255351389870630250">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8255351389870630251">
+                <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8255351389870630252">
+                  <link role="applicableNode:3" targetNodeId="8255351389870627567" resolveInfo="runConfigurationDeclaration" />
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation:16" id="8255351389870630249" />
-              </node>
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8255351389870630250">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8255351389870630251">
-                  <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8255351389870630252">
-                    <link role="applicableNode:3" targetNodeId="8255351389870627567" resolveInfo="runConfigurationDeclaration" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8255351389870630253">
-                    <link role="link:16" targetNodeId="4.8255351389869184300:23" />
-                  </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8255351389870630253">
+                  <link role="link:16" targetNodeId="4.8255351389869184300:23" />
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation:16" id="8255351389870630254" />
               </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation:16" id="8255351389870630254" />
             </node>
             <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8255351389870630218">
               <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="8255351389870630255">
                 <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="672157982583233308">
-                  <property name="value:3" value="Debuggable configuration must declare either state type or debug session creator" />
+                  <property name="value:3" value="Debuggable configuration must declare debug session creator" />
                 </node>
                 <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8255351389870630259">
                   <link role="applicableNode:3" targetNodeId="8255351389870627567" resolveInfo="runConfigurationDeclaration" />

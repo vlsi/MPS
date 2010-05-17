@@ -19,7 +19,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.ExecutionException;
-import jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaRunProfileState;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
@@ -119,7 +118,7 @@ public class DefaultCustomMpsApplication_Configuration extends BaseRunConfig {
   }
 
   public RunProfileState getState(@NotNull final Executor executor, @NotNull final ExecutionEnvironment environment) throws ExecutionException {
-    return new JavaRunProfileState() {
+    return new RunProfileState() {
       @Nullable
       public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
         final ConsoleViewImpl consoleView_22042010 = StacktraceUtil.createConsoleView(MPSDataKeys.PROJECT.getData(environment.getDataContext()));

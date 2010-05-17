@@ -239,12 +239,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_8591610611835627262(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    if ((SLinkOperations.getTarget(_context.getNode(), "stateTypeParameter", false) != null)) {
-      return SLinkOperations.getTarget(_context.getNode(), "stateTypeParameter", false);
-    } else if (!(SPropertyOperations.getBoolean(_context.getNode(), "isDebuggable"))) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0tb().createNode(), "classifier", false);
-    }
-    return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a1a54().createNode(), "classifier", false);
+    return SLinkOperations.getTarget(RunConfigurationDeclaration_Behavior.call_getStateType_9017024590936598176(_context.getNode()), "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_8294332872984122924(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -661,42 +656,6 @@ public class QueriesGenerated {
           SLinkOperations.setTarget(parameter, "userSpecifiedParameterType", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(block, "executeParameterQuery", true), "parameterType", true)), true);
         }
       }
-    }
-  }
-
-  public static class QuotationClass_x583g4_a0a0a0a0tb {
-    public QuotationClass_x583g4_a0a0a0a0tb() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#com.intellij.execution.configurations(com.intellij.execution.configurations@java_stub)"), SNodeId.fromString("~RunProfileState")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_x583g4_a0a1a54 {
-    public QuotationClass_x583g4_a0a1a54() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.runconfigs(jetbrains.mps.plugins.pluginparts.runconfigs@java_stub)"), SNodeId.fromString("~BaseRunProfileState")));
-        result = quotedNode1_2;
-      }
-      return result;
     }
   }
 
