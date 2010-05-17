@@ -14,7 +14,7 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.generator.impl.TemplateContext;
+import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class QueriesGenerated {
@@ -86,19 +86,19 @@ public class QueriesGenerated {
     return ((String) _context.getPatternVariable("PatternVar_jobName"));
   }
 
-  public static GeneratedMatchingPattern patternRule_Condition_4146564171992608883(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+  public static GeneratedMatchingPattern patternRule_Condition_4146564171992608883(final IOperationContext operationContext, final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a71();
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
-    _context.setContext(new TemplateContext(pattern, null, _context.getNode()));
+    _context.createPatternContext(pattern);
     if (!(baseMappingRule_Condition_4112907264514778044(operationContext, _context))) {
       return null;
     }
     return pattern;
   }
 
-  public static GeneratedMatchingPattern patternRule_Condition_2681305894288275225(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+  public static GeneratedMatchingPattern patternRule_Condition_2681305894288275225(final IOperationContext operationContext, final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a81();
     if (!(pattern.match(_context.getNode()))) {
       return null;
@@ -106,7 +106,7 @@ public class QueriesGenerated {
     return pattern;
   }
 
-  public static GeneratedMatchingPattern patternRule_Condition_2681305894288382558(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+  public static GeneratedMatchingPattern patternRule_Condition_2681305894288382558(final IOperationContext operationContext, final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a91();
     if (!(pattern.match(_context.getNode()))) {
       return null;
@@ -114,7 +114,7 @@ public class QueriesGenerated {
     return pattern;
   }
 
-  public static GeneratedMatchingPattern patternRule_Condition_2681305894288486365(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+  public static GeneratedMatchingPattern patternRule_Condition_2681305894288486365(final IOperationContext operationContext, final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a02();
     if (!(pattern.match(_context.getNode()))) {
       return null;
@@ -122,7 +122,7 @@ public class QueriesGenerated {
     return pattern;
   }
 
-  public static GeneratedMatchingPattern patternRule_Condition_2163819695913701566(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+  public static GeneratedMatchingPattern patternRule_Condition_2163819695913701566(final IOperationContext operationContext, final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a12();
     if (!(pattern.match(_context.getNode()))) {
       return null;
@@ -130,7 +130,7 @@ public class QueriesGenerated {
     return pattern;
   }
 
-  public static GeneratedMatchingPattern patternRule_Condition_5857536350883030949(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+  public static GeneratedMatchingPattern patternRule_Condition_5857536350883030949(final IOperationContext operationContext, final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a22();
     if (!(pattern.match(_context.getNode()))) {
       return null;
@@ -138,7 +138,7 @@ public class QueriesGenerated {
     return pattern;
   }
 
-  public static GeneratedMatchingPattern patternRule_Condition_933643154465852759(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+  public static GeneratedMatchingPattern patternRule_Condition_933643154465852759(final IOperationContext operationContext, final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a32();
     if (!(pattern.match(_context.getNode()))) {
       return null;

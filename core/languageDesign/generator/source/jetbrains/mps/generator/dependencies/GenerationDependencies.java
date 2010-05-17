@@ -12,15 +12,20 @@ import java.util.*;
 public class GenerationDependencies {
 
   private static final String ROOT_ELEMENT = "dependencies";
-  private static final String NODE_ROOT = "root";
-  private static final String NODE_COMMON = "common";
+  private static final String NODE_ROOT = "source";
+  private static final String NODE_COMMON = "createdRoots";
   private static final String ATTR_ID = "id";
-  private static final String NODE_DEPENDS_ON_ROOT = "local";
-  private static final String NODE_DEPENDS_ON_MODEL = "model";
+  private static final String ATTR_NAME = "name";
+  private static final String ATTR_DEPENDS_ON_CONDITIONALS = "dependsOnCreated";
+  private static final String NODE_DEPENDS_ON = "dependson";
+  private static final String ATTR_ROOT_ID = "root";
+  private static final String ATTR_MODEL_ID = "model";
+  private static final String TRUE = "true";
 
   private List<RootData> myRootDependencies;
   private Map<String, String> myGeneratedToOriginalMap;
 
+  @Deprecated
   public GenerationDependencies() {
     this(new ArrayList<RootData>(), new HashMap<String, String>());
   }
@@ -48,20 +53,56 @@ public class GenerationDependencies {
   }
 
   public static GenerationDependencies fromXml(Element e) {
-    GenerationDependencies result = new GenerationDependencies();
+    GenerationDependencies result = new GenerationDependencies(new ArrayList(), new HashMap<String, String>());
     // TODO
     return result;
   }
 
+  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, DependenciesListener[] roots) {
+    Map<String,String> generatedToOriginalMap = new HashMap<String, String>();
+    for(Map.Entry<SNode,SNode> entry : currentToOriginalMap.entrySet()) {
+      generatedToOriginalMap.put(entry.getKey().getId(), entry.getValue().getId());
+    }
+    List<RootData> rootDependencies = new ArrayList<RootData>(roots.length);
+    for(DependenciesListener l : roots) {
+      rootDependencies.add(fromData(l));
+    }
+    return new GenerationDependencies(rootDependencies, generatedToOriginalMap);
+  }
+
+  private static RootData fromData(DependenciesListener l) {
+    final Collection<SNode> localNodes = l.getDependsOn();
+    final Collection<SModel> externalModels = l.getDependsOnModels();
+
+    List<String> local = new ArrayList<String>(localNodes.size());
+    for(SNode n : localNodes) {
+      local.add(n.getId());
+    }
+    Collections.sort(local);
+
+    List<String> external = new ArrayList<String>(externalModels.size());
+    for(SModel m : externalModels) {
+      external.add(m.getSModelReference().toString());
+    }
+    Collections.sort(external);
+
+    final SNode originalRoot = l.getOriginalRoot();
+    return new RootData(originalRoot != null ? originalRoot.getId() : null, originalRoot != null ? originalRoot.getName() : null, local, external, l.isDependsOnConditionals());
+  }
+
   private static class RootData {
     private String myRootId;
+    private String myRootName;
+    private boolean myDependsOnConditionals;
     private List<String> myLocal;
     private List<String> myExternal;
 
-    public RootData(String rootId, List<String> local, List<String> external) {
+    public RootData(String rootId, String rootName, List<String> local, List<String> external, boolean dependsOnConditionals) {
       this.myRootId = rootId;
+      this.myRootName = rootName;
       this.myLocal = local;
       this.myExternal = external;
+      this.myDependsOnConditionals = dependsOnConditionals;
     }
 
     public List<String> getLocal() {
@@ -75,15 +116,19 @@ public class GenerationDependencies {
     public void saveTo(Element element) {
       if(myRootId != null) {
         element.setAttribute(ATTR_ID, this.myRootId);
+        element.setAttribute(ATTR_NAME, this.myRootName);
+      }
+      if(myDependsOnConditionals) {
+        element.setAttribute(ATTR_DEPENDS_ON_CONDITIONALS, TRUE);
       }
       for(String id : myLocal) {
-        Element node = new Element(NODE_DEPENDS_ON_ROOT);
-        node.setAttribute(ATTR_ID, id);
+        Element node = new Element(NODE_DEPENDS_ON);
+        node.setAttribute(ATTR_ROOT_ID, id);
         element.addContent(node);
       }
       for(String id : myExternal) {
-        Element node = new Element(NODE_DEPENDS_ON_MODEL);
-        node.setAttribute(ATTR_ID, id);
+        Element node = new Element(NODE_DEPENDS_ON);
+        node.setAttribute(ATTR_MODEL_ID, id);
         element.addContent(node);
       }
     }

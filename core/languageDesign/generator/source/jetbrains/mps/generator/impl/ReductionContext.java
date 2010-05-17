@@ -1,5 +1,6 @@
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.template.IQueryExecutor;
 import jetbrains.mps.lang.generator.structure.ReductionRule;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -10,16 +11,25 @@ import java.util.Set;
 /**
  * Evgeny Gryaznov, Apr 14, 2010
  */
-class ReductionContext {
+public class ReductionContext {
 
-  private ReductionContext myParent;
-  private SNode myInputNode;
-  private ReductionRule myReductionRule;
+  private final ReductionContext myParent;
+  private final SNode myInputNode;
+  private final ReductionRule myReductionRule;
+  private final IQueryExecutor myExecutor;
 
-  ReductionContext(ReductionContext parent, @NotNull SNode inputNode, @NotNull ReductionRule reductionRule) {
+  ReductionContext(@NotNull IQueryExecutor executor) {
+    myParent = null;
+    myInputNode = null;
+    myReductionRule = null;
+    myExecutor = executor;
+  }
+
+  ReductionContext(@NotNull ReductionContext parent, @NotNull SNode inputNode, @NotNull ReductionRule reductionRule) {
     myParent = parent;
     myInputNode = inputNode;
     myReductionRule = reductionRule;
+    myExecutor = parent.myExecutor;
   }
 
   boolean isBlocked(SNode inputNode, ReductionRule rule) {
@@ -40,8 +50,12 @@ class ReductionContext {
     }
     return currentSet;
   }
-  
-  public static Object combineRuleSets(Object set1, Object set2) {
+
+  public IQueryExecutor getExecutor() {
+    return myExecutor;
+  }
+
+  static Object combineRuleSets(Object set1, Object set2) {
     if(set1 == null)
       return set2;
     if(set2 == null)

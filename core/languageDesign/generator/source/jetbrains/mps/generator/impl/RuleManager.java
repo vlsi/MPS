@@ -23,6 +23,7 @@ import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -121,7 +122,7 @@ public class RuleManager {
     return myPostScripts;
   }
 
-  public RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch, ITemplateGenerator generator) throws GenerationFailureException {
+  public RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch, @NotNull ReductionContext reductionContext, ITemplateGenerator generator) throws GenerationFailureException {
     AbstractConceptDeclaration inputNodeConcept = inputNode.getConceptDeclarationAdapter();
 
     List<TemplateSwitch> switches;
@@ -142,7 +143,7 @@ public class RuleManager {
     for (TemplateSwitch aSwitch : switches) {
       List<Reduction_MappingRule> rules = aSwitch.getReductionMappingRules();
       for (Reduction_MappingRule rule : rules) {
-        if (checkPremiseForBaseMappingRule(inputNode, inputNodeConcept, rule, generator)) {
+        if (checkPremiseForBaseMappingRule(inputNode, inputNodeConcept, rule, reductionContext)) {
           RuleConsequence ruleConsequence = rule.getRuleConsequence();
           if (ruleConsequence == null) {
             generator.showErrorMessage(inputNode, null, rule.getNode(), "couldn't apply reduction: no rule consequence");
@@ -161,7 +162,7 @@ public class RuleManager {
     return null;
   }
 
-  private static boolean checkPremiseForBaseMappingRule(SNode inputNode, AbstractConceptDeclaration inputNodeConcept, BaseMappingRule rule, ITemplateGenerator generator) throws GenerationFailureException {
+  private static boolean checkPremiseForBaseMappingRule(SNode inputNode, AbstractConceptDeclaration inputNodeConcept, BaseMappingRule rule, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept != null) {
       if (rule.getApplyToConceptInheritors()) {
@@ -170,6 +171,6 @@ public class RuleManager {
         if (inputNodeConcept != applicableConcept) return false;
       }
     }
-    return generator.getExecutor().checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode());
+    return reductionContext.getExecutor().checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode());
   }
 }

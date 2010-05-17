@@ -17,14 +17,9 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.template.IQueryExecutor;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.QueryExecutor;
-import jetbrains.mps.generator.template.TraceableQueryExecutor;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.performance.IPerformanceTracer;
 
 import java.util.HashSet;
 import java.util.List;
@@ -42,20 +37,15 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   private HashSet<SNode> myFailedRules;
 
-  protected final IQueryExecutor myExecutor;
-
   protected AbstractTemplateGenerator(IOperationContext operationContext,
                                       ProgressIndicator progressMonitor, IGeneratorLogger logger,
-                                      IPerformanceTracer tracer, SModel inputModel, SModel outputModel, GenerationProcessContext generationContext) {
+                                      SModel inputModel, SModel outputModel) {
     myOperationContext = operationContext;
     myProgressMonitor = progressMonitor;
     myLogger = logger;
     myInputModel = inputModel;
     myOutputModel = outputModel;
     myMappings = new GeneratorMappings(inputModel.size());
-    myExecutor = generationContext.getTracingMode() >= GenerationSettings.TRACE_LANGS
-      ? new TraceableQueryExecutor(new QueryExecutor(this), tracer)
-      : new QueryExecutor(this);
   }
 
   public IOperationContext getOperationContext() {
@@ -202,10 +192,5 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   public SNode findInputNodeById(SNodeId nodeId) {
     return myInputModel.getNodeById(nodeId);
-  }
-
-  @Override
-  public IQueryExecutor getExecutor() {
-    return myExecutor;
   }
 }

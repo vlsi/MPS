@@ -2421,8 +2421,8 @@
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1434091819680828197">
           <property name="name:3" value="_context" />
           <property name="isFinal:3" value="true" />
-          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4112907264514903317">
-            <link role="classifier:3" targetNodeId="3.~BaseMappingRuleContext" resolveInfo="BaseMappingRuleContext" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6873193698001675882">
+            <link role="classifier:3" targetNodeId="3.~PatternRuleContext" resolveInfo="PatternRuleContext" />
           </node>
         </node>
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1434091819680828199" />
@@ -2482,23 +2482,9 @@
                 <link role="variableDeclaration:3" targetNodeId="1434091819680828197" resolveInfo="_context" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4112907264514924699">
-                <link role="baseMethodDeclaration:3" targetNodeId="3.~TemplateQueryContext.setContext(jetbrains.mps.generator.impl.TemplateContext):void" resolveInfo="setContext" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5122067947693331978">
-                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5122067947693341743">
-                    <link role="baseMethodDeclaration:3" targetNodeId="31.~TemplateContext.&lt;init&gt;(jetbrains.mps.lang.pattern.GeneratedMatchingPattern,java.util.Map,jetbrains.mps.smodel.SNode)" resolveInfo="TemplateContext" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5122067947693341744">
-                      <link role="variableDeclaration:3" targetNodeId="304293736224463223" resolveInfo="pattern" />
-                    </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="5122067947693341746" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6790872658438051151">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6790872658438051150">
-                        <link role="variableDeclaration:3" targetNodeId="1434091819680828197" resolveInfo="_context" />
-                      </node>
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6790872658438051155">
-                        <link role="baseMethodDeclaration:3" targetNodeId="3.~TemplateQueryContext.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
-                      </node>
-                    </node>
-                  </node>
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~PatternRuleContext.createPatternContext(jetbrains.mps.lang.pattern.GeneratedMatchingPattern):void" resolveInfo="createPatternContext" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6873193698001675883">
+                  <link role="variableDeclaration:3" targetNodeId="304293736224463223" resolveInfo="pattern" />
                 </node>
               </node>
             </node>

@@ -1,5 +1,6 @@
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.template.IQueryExecutor;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.annotation.ImmutableObject;
@@ -21,34 +22,39 @@ public class TemplateContext {
   private final GeneratedMatchingPattern pattern;
   private final Map<String, Object> variables;
 
+  @NotNull
+  private final IQueryExecutor executor;
+
   /**
    *  Only context node.
    */
-  public TemplateContext(SNode inputNode) {
-    this((GeneratedMatchingPattern)null, null, inputNode);
+  public TemplateContext(SNode inputNode, @NotNull IQueryExecutor executor) {
+    this((GeneratedMatchingPattern)null, null, inputNode, executor);
   }
 
   /**
    *  Creates a new context for template declaration.
    */
-  public TemplateContext(GeneratedMatchingPattern pattern, Map<String, Object> variables, SNode inputNode) {
+  public TemplateContext(GeneratedMatchingPattern pattern, Map<String, Object> variables, SNode inputNode, @NotNull IQueryExecutor executor) {
     this.pattern = pattern;
     this.variables = variables;
     this.parent = null;
 
     this.inputName = null;
     this.inputNode = inputNode;
+    this.executor = executor;
   }
 
   /**
    *  Creates a new context for loop. 
    */
-  private TemplateContext(TemplateContext parent, String inputName, SNode inputNode) {
+  private TemplateContext(@NotNull TemplateContext parent, String inputName, SNode inputNode) {
     this.parent = parent;
     this.pattern = null;
     this.variables = null;
     this.inputName = inputName;
     this.inputNode = inputNode;
+    this.executor = parent.executor;
   }
 
   public TemplateContext getParent() {
@@ -97,6 +103,11 @@ public class TemplateContext {
       }
     }
     return null;
+  }
+
+  @NotNull
+  public IQueryExecutor getExecutor() {
+    return executor;
   }
 
   public Iterable<SNode> getInputHistory() {
@@ -148,10 +159,7 @@ public class TemplateContext {
   }
 
   @NotNull
-  public static TemplateContext getContext(TemplateContext parent, String inputName, SNode inputNode) {
-    if(parent == null) {
-      return new TemplateContext(null, inputName, inputNode);
-    }
+  public static TemplateContext getContext(@NotNull TemplateContext parent, String inputName, SNode inputNode) {
     if(inputNode == parent.getInput() && (inputName == null || inputName.equals(parent.getInputName()))) {
       return parent;
     }
@@ -159,7 +167,7 @@ public class TemplateContext {
   }
 
   @NotNull
-  public static TemplateContext getContext(TemplateContext parent, String inputName) {
+  public static TemplateContext getContext(@NotNull TemplateContext parent, String inputName) {
     if(inputName == null || inputName.equals(parent.getInputName())) {
       return parent;
     }

@@ -2,6 +2,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
@@ -9,6 +10,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -127,7 +129,7 @@ public class TraceableQueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query, TemplateContext context) {
+  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query, @NotNull TemplateContext context) {
     try {
       tracer.push(taskName("evaluate source nodes", query.getNode()), true);
       return wrapped.evaluateSourceNodesQuery(inputNode, ruleNode, macroNode, query, context);
@@ -137,10 +139,10 @@ public class TraceableQueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public SNode getContextNodeForTemplateFragment(SNode inputNode, SNode templateFragmentNode, SNode mainContextNode) {
+  public SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context) {
     try {
       tracer.push(taskName("context for template fragment", templateFragmentNode), true);
-      return wrapped.getContextNodeForTemplateFragment(inputNode, templateFragmentNode, mainContextNode);
+      return wrapped.getContextNodeForTemplateFragment(templateFragmentNode, mainContextNode, context);
     } finally {
       tracer.pop();
     }
@@ -167,17 +169,17 @@ public class TraceableQueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public GeneratedMatchingPattern checkIfApplicable(PatternReduction_MappingRule patternRule, SNode inputNode) throws GenerationFailureException {
+  public GeneratedMatchingPattern checkIfApplicable(SNode inputNode, PatternReduction_MappingRule patternRule, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
     try {
       tracer.push(taskName("check if pattern rule is applicable", patternRule.getNode()), true);
-      return wrapped.checkIfApplicable(patternRule, inputNode);
+      return wrapped.checkIfApplicable(inputNode, patternRule, reductionContext);
     } finally {
       tracer.pop();
     }
   }
 
   @Override
-  public Object evaluateArgumentQuery(SNode inputNode, TemplateArgumentQuery query, TemplateContext context) {
+  public Object evaluateArgumentQuery(SNode inputNode, TemplateArgumentQuery query, @Nullable TemplateContext context) {
     try {
       tracer.push(taskName("evaluate template argument query", query.getNode()), true);
       return wrapped.evaluateArgumentQuery(inputNode, query, context);

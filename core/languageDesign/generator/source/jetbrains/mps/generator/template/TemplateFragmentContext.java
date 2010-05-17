@@ -15,14 +15,16 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 public class TemplateFragmentContext extends TemplateQueryContext {
   private SNode myMainContextNode;
   private SNode myFragmentNode;
 
-  public TemplateFragmentContext(SNode node, SNode mainContextNode, SNode templateFragmentNode, ITemplateGenerator generator) {
-    super(node, templateFragmentNode.getParent(), null, generator);
+  public TemplateFragmentContext(SNode mainContextNode, SNode templateFragmentNode, @NotNull TemplateContext context, ITemplateGenerator generator) {
+    super(context.getInput(), templateFragmentNode.getParent(), context, generator);
     myMainContextNode = mainContextNode;
     myFragmentNode = templateFragmentNode;
   }

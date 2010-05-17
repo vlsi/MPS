@@ -96,7 +96,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private void expandReferenceMacro(ITemplateGenerator generator) {
     String linkRole = getReferenceRole();
 
-    Object result = generator.getExecutor().getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro, myContext);
+    Object result = myContext.getExecutor().getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro, myContext);
     if (result instanceof SNode) {
       myOutputTargetNode = (SNode) result;
     } else if (result != null) {

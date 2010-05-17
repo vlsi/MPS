@@ -36,7 +36,7 @@ public class TemplateQueryContext {
   private final SNode myInputNode;
   private final SNode myTemplateNode;
   private final ITemplateGenerator myGenerator;
-  private TemplateContext myContext;
+  protected TemplateContext myContext;
 
   public TemplateQueryContext(SNode inputNode, SNode templateNode, TemplateContext context, ITemplateGenerator generator) {
     myInputNode = inputNode;
@@ -93,10 +93,6 @@ public class TemplateQueryContext {
     return myGenerator;
   }
 
-  public void setContext(TemplateContext context) {
-    myContext = context;
-  }
-  
   /**
    * 'scope' mapping
    */

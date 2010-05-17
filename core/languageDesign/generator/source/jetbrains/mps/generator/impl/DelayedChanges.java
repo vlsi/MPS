@@ -20,12 +20,14 @@ import jetbrains.mps.lang.generator.structure.MapSrcListMacro;
 import jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction;
 import jetbrains.mps.lang.generator.structure.MapSrcNodeMacro;
 import jetbrains.mps.lang.generator.structure.NodeMacro;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by: Sergey Dmitriev
@@ -89,7 +91,7 @@ public class DelayedChanges {
 
     public void doChange() {
       try {
-        SNode child = myGenerator.getExecutor().executeMapSrcNodeMacro(myContext.getInput(), myMapSrcMacro, myChildToReplace.getParent(), myContext);
+        SNode child = myContext.getExecutor().executeMapSrcNodeMacro(myContext.getInput(), myMapSrcMacro, myChildToReplace.getParent(), myContext);
         if (child != null) {
           // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
           // planning the generation steps.
@@ -177,7 +179,7 @@ public class DelayedChanges {
 
     public void doChange() {
       try {
-        myGenerator.getExecutor().executeMapSrcNodeMacro_PostProc(myContext.getInput(), myMapSrcMacro, myOutputChild, myContext);
+        myContext.getExecutor().executeMapSrcNodeMacro_PostProc(myContext.getInput(), myMapSrcMacro, myOutputChild, myContext);
       } catch (Throwable t) {
         myGenerator.showErrorMessage(myContext.getInput(), myMapSrcMacro, "mapping failed: '" + t.getMessage() + "'");
         myLogger.handleException(t);

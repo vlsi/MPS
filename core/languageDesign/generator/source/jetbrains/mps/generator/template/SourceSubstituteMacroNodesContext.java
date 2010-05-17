@@ -17,6 +17,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 public class SourceSubstituteMacroNodesContext extends TemplateQueryContext {
   private SNode myRule;
@@ -25,7 +26,7 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContext {
   /**
    * actually this parameter is passed not only to 'sourceNodesQuery' in macros but also to similar queries in rules
    */
-  public SourceSubstituteMacroNodesContext(SNode node, SNode ruleNode, SNode macroNode, TemplateContext context, ITemplateGenerator generator) {
+  public SourceSubstituteMacroNodesContext(SNode node, SNode ruleNode, SNode macroNode, @NotNull TemplateContext context, ITemplateGenerator generator) {
     super(node, macroNode != null ? macroNode.getParent() : null, context, generator);
     myRule = ruleNode;
     myMacro = macroNode;

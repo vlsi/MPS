@@ -26,17 +26,19 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Applies template to input node.
  */
 public class TemplateProcessor {
   private final TemplateGenerator myGenerator;
-  private ReductionContext myReductionContext;
+  private final ReductionContext myReductionContext;
   private final SModel myOutputModel;
 
-  public TemplateProcessor(TemplateGenerator generator, ReductionContext reductionContext) {
+  public TemplateProcessor(@NotNull TemplateGenerator generator, @NotNull ReductionContext reductionContext) {
     myGenerator = generator;
     myReductionContext = reductionContext;
     myOutputModel = myGenerator.getOutputModel();
@@ -78,7 +80,7 @@ public class TemplateProcessor {
   @Nullable
   private List<SNode> createOutputNodesForTemplateNode(String mappingName,
                                                        SNode templateNode,
-                                                       TemplateContext context,
+                                                       @NotNull TemplateContext context,
                                                        int nodeMacrosToSkip)
     throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
 
@@ -142,7 +144,7 @@ public class TemplateProcessor {
     List<INodeAdapter> templateChildNodes = new ArrayList<INodeAdapter>();
     for (INodeAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
       if (templateChildNode instanceof PropertyMacro) {
-        myGenerator.getExecutor().expandPropertyMacro((PropertyMacro) templateChildNode, context.getInput(), templateNode, outputNode, context);
+        myReductionContext.getExecutor().expandPropertyMacro((PropertyMacro) templateChildNode, context.getInput(), templateNode, outputNode, context);
       } else if (templateChildNode instanceof ReferenceMacro) {
         ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(
           outputNode, (ReferenceMacro) templateChildNode,
@@ -184,7 +186,7 @@ public class TemplateProcessor {
   }
 
   @Nullable
-  private List<SNode> createOutputNodesForTemplateNodeWithMacro(NodeMacro nodeMacro, SNode templateNode, TemplateContext templateContext, int nodeMacrosToSkip) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
+  private List<SNode> createOutputNodesForTemplateNodeWithMacro(NodeMacro nodeMacro, SNode templateNode, @NotNull TemplateContext templateContext, int nodeMacrosToSkip) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
     IGenerationTracer generationTracer = myGenerator.getGenerationTracer();
     List<SNode> outputNodes = new ArrayList<SNode>();
     String mappingName = GeneratorUtil.getMappingName(nodeMacro, null);
@@ -238,14 +240,14 @@ public class TemplateProcessor {
     } else if (nodeMacro instanceof IfMacro) {
       // $IF$
       List<SNode> _outputNodes = null;
-      if (myGenerator.getExecutor().checkConditionForIfMacro(templateContext.getInput(), (IfMacro) nodeMacro, templateContext)) {
+      if (myReductionContext.getExecutor().checkConditionForIfMacro(templateContext.getInput(), (IfMacro) nodeMacro, templateContext)) {
         _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, TemplateContext.getContext(templateContext, mappingName), nodeMacrosToSkip + 1);
       } else {
         // alternative consequence
         RuleConsequence altConsequence = ((IfMacro) nodeMacro).getAlternativeConsequence();
         if (altConsequence != null) {
           try {
-            List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(altConsequence, templateContext.getInput(), nodeMacro.getNode(), myGenerator);
+            List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(altConsequence, templateContext.getInput(), nodeMacro.getNode(), myReductionContext, myGenerator);
             if (nodeAndMappingNamePairs == null) {
               myGenerator.showErrorMessage(templateContext.getInput(), null, nodeMacro.getNode(), "error processing $IF$/alternative");
               return null;
@@ -339,13 +341,13 @@ public class TemplateProcessor {
       generationTracer.pushSwitch(templateSwitch.getNode());
       try {
         List<SNode> _outputNodes = null;
-        RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getRuleManager().getConsequenceForSwitchCase(newInputNode, templateSwitch, myGenerator);
+        RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getRuleManager().getConsequenceForSwitchCase(newInputNode, templateSwitch, myReductionContext, myGenerator);
         if (consequenceForCase == null) {
           // no switch-case found for the inputNode - continue with templateNode under the $switch$
           _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, TemplateContext.getContext(templateContext, mappingName, newInputNode), nodeMacrosToSkip + 1);
 
         } else {
-          List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(consequenceForCase, newInputNode, nodeMacro.getNode(), myGenerator);
+          List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(consequenceForCase, newInputNode, nodeMacro.getNode(), myReductionContext, myGenerator);
           if (nodeAndMappingNamePairs == null) {
             myGenerator.showErrorMessage(newInputNode, nodeMacro.getNode(), consequenceForCase.getNode(), "error processing $SWITCH$");
             return null;
@@ -443,7 +445,7 @@ public class TemplateProcessor {
         return null;
       }
 
-      TemplateContext newcontext = GeneratorUtil.createTemplateContext(templateContext.getInput(), templateContext, callMacro, newInputNode, myGenerator);
+      TemplateContext newcontext = GeneratorUtil.createTemplateContext(templateContext.getInput(), templateContext, myReductionContext, callMacro, newInputNode, myGenerator);
 
 /*
       TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(template, newInputNode, nodeMacro.getNode(), myGenerator);
@@ -500,8 +502,8 @@ public class TemplateProcessor {
     }
   }
 
-  private SNode getNewInputNode(NodeMacro nodeMacro, TemplateContext context) throws GenerationFailureException {
-    SNode node = InputQueryUtil.getNewInputNode(nodeMacro, context.getInput(), context, myGenerator);
+  private SNode getNewInputNode(NodeMacro nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
+    SNode node = InputQueryUtil.getNewInputNode(nodeMacro, context.getInput(), context);
 //    if(myGenerator.isStrict() && node != null) {
 //      if(node.getModel() != myGenerator.getInputModel()) {
 //        myGenerator.showErrorMessage(nodeMacro.getNode(), "returned node should be from input model");
@@ -510,8 +512,8 @@ public class TemplateProcessor {
     return node;
   }
 
-  private List<SNode> getNewInputNodes(NodeMacro nodeMacro, TemplateContext context) throws GenerationFailureException {
-    List<SNode> nodes = InputQueryUtil.getNewInputNodes(nodeMacro, context.getInput(), context, myGenerator);
+  private List<SNode> getNewInputNodes(NodeMacro nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
+    List<SNode> nodes = InputQueryUtil.getNewInputNodes(nodeMacro, context.getInput(), context);
 //    if(myGenerator.isStrict() && nodes != null) {
 //      for(SNode node : nodes) {
 //        if(node.getModel() != myGenerator.getInputModel()) {

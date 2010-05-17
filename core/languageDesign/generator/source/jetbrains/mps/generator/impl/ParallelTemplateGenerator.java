@@ -5,14 +5,19 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.dependencies.DependenciesData;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
-import jetbrains.mps.util.performance.IPerformanceTracer;
+import jetbrains.mps.generator.template.IQueryExecutor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -26,8 +31,9 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
 
   public ParallelTemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
                                    IGeneratorLogger logger, RuleManager ruleManager,
-                                   SModel inputModel, SModel outputModel, GenerationProcessContext generationContext, IPerformanceTracer performance) {
-    super(operationContext, progressMonitor, logger, ruleManager, inputModel, outputModel, generationContext, performance);
+                                   SModel inputModel, SModel outputModel, GenerationProcessContext generationContext,
+                                   DependenciesData dependenciesData, IPerformanceTracer performance) {
+    super(operationContext, progressMonitor, logger, ruleManager, inputModel, outputModel, generationContext, dependenciesData, performance);
     myTasks = new ArrayList<RootGenerationTask>();
     myInputToTask = new ConcurrentHashMap<Pair<SNode, SNode>, RootGenerationTask>();
     myPool = generationContext.getTaskPool();
@@ -44,22 +50,22 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  protected void createRootNodeFromTemplate(final String mappingName, @NotNull final SNode templateNode, final SNode inputNode, final boolean copyRootOnFailure) throws GenerationFailureException, GenerationCanceledException {
+  protected void createRootNodeFromTemplate(final String mappingName, @NotNull final SNode templateNode, final SNode inputNode, final boolean copyRootOnFailure, final IQueryExecutor executor) throws GenerationFailureException, GenerationCanceledException {
     pushTask(new RootGenerationTask() {
       @Override
       public void run() throws GenerationCanceledException, GenerationFailureException {
-        ParallelTemplateGenerator.super.createRootNodeFromTemplate(mappingName, templateNode, inputNode, copyRootOnFailure);
+        ParallelTemplateGenerator.super.createRootNodeFromTemplate(mappingName, templateNode, inputNode, copyRootOnFailure, executor);
       }
     }, new Pair(inputNode, templateNode));
 
   }
 
   @Override
-  protected void copyRootNodeFromInput(@NotNull final SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
+  protected void copyRootNodeFromInput(@NotNull final SNode inputRootNode, final IQueryExecutor executor) throws GenerationFailureException, GenerationCanceledException {
     pushTask(new RootGenerationTask() {
       @Override
       public void run() throws GenerationCanceledException, GenerationFailureException {
-        ParallelTemplateGenerator.super.copyRootNodeFromInput(inputRootNode);
+        ParallelTemplateGenerator.super.copyRootNodeFromInput(inputRootNode, executor);
       }
     }, new Pair(inputRootNode, null));
   }

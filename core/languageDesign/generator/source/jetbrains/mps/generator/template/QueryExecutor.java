@@ -1,9 +1,8 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailureException;
-import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateContext;
-import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.*;
@@ -13,6 +12,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -59,14 +59,14 @@ public class QueryExecutor implements IQueryExecutor {
     return false;
   }
 
-  public GeneratedMatchingPattern checkIfApplicable(PatternReduction_MappingRule patternRule, SNode inputNode) throws GenerationFailureException {
+  public GeneratedMatchingPattern checkIfApplicable(SNode inputNode, PatternReduction_MappingRule patternRule, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
     final SNode ruleNode = patternRule.getNode();
     String methodName = TemplateFunctionMethodName.patternRule_Condition(ruleNode);
     try {
       return (GeneratedMatchingPattern) QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new BaseMappingRuleContext(inputNode, ruleNode, generator),
+        new PatternRuleContext(inputNode, ruleNode, generator, reductionContext.getExecutor()),
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
@@ -271,7 +271,7 @@ public class QueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public Object evaluateArgumentQuery(SNode inputNode, TemplateArgumentQuery query, TemplateContext context) {
+  public Object evaluateArgumentQuery(SNode inputNode, TemplateArgumentQuery query, @Nullable TemplateContext context) {
     String methodName = TemplateFunctionMethodName.templateArgumentQuery(query.getNode());
     try {
       return QueryMethodGenerated.invoke(
@@ -293,7 +293,7 @@ public class QueryExecutor implements IQueryExecutor {
    * used to evaluate 'sourceNodesQuery' in macros and in rules
    */
   @Override
-  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query, TemplateContext context) {
+  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query, @NotNull TemplateContext context) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
     try {
       Object result = QueryMethodGenerated.invoke(
@@ -323,7 +323,7 @@ public class QueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public SNode getContextNodeForTemplateFragment(SNode inputNode, SNode templateFragmentNode, SNode mainContextNode) {
+  public SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context) {
     TemplateFragment fragment = TemplateFragment_AnnotationLink.getTemplateFragment((BaseConcept) templateFragmentNode.getAdapter());
     // has custom context builder provider?
     TemplateFragment_ContextNodeQuery query = fragment.getContextNodeQuery();
@@ -333,13 +333,13 @@ public class QueryExecutor implements IQueryExecutor {
         return (SNode) QueryMethodGenerated.invoke(
           methodName,
           generator.getGeneratorSessionContext(),
-          new TemplateFragmentContext(inputNode, mainContextNode, templateFragmentNode, generator),
+          new TemplateFragmentContext(mainContextNode, templateFragmentNode, context, generator),
           query.getModel());
       } catch (NoSuchMethodException e) {
         generator.showWarningMessage(templateFragmentNode, "couldn't find context node method for template fragment '" + methodName + "' : evaluate to null");
         return null;
       } catch (Exception e) {
-        generator.showErrorMessage(inputNode, null, templateFragmentNode, "couldn't evaluate template fragment context query");
+        generator.showErrorMessage(context.getInput(), null, templateFragmentNode, "couldn't evaluate template fragment context query");
         LOG.error(e);
         return null;
       }
