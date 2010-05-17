@@ -992,6 +992,13 @@ __switch__:
     return p.getReferent(reference.getRole());
   }
 
+  private static SNodeId check_781066578206382712(SNode p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getSNodeId();
+  }
+
   private static SNodeId check_7601193928418818744(SNode p) {
     if (null == p) {
       return null;
@@ -1363,6 +1370,13 @@ __switch__:
                 }
               }) != 0) {
                 return;
+              }
+
+              SNode thisNodeInBase = myBaseVersionModel.getNodeById(e.getChild().getSNodeId());
+              if (thisNodeInBase != null) {
+                if (check_781066578206382712(SNodeOperations.getParent(thisNodeInBase)) == e.getParent().getSNodeId() && e.getChildRole().equals(SNodeOperations.getContainingLinkRole(thisNodeInBase))) {
+                  return;
+                }
               }
 
               SNode child = e.getChild();
