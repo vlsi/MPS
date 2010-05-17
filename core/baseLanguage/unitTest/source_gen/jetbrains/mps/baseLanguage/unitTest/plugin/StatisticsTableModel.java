@@ -112,13 +112,6 @@ public class StatisticsTableModel implements TableModel {
     return this.myMap.get(testCase, testMethod);
   }
 
-  public void updateRow(TestMethodRow row) {
-    int index = ListSequence.fromList(this.myFilteredRows).indexOf(row);
-    if (index >= 0) {
-      this.fireTableChanged();
-    }
-  }
-
   private void fireTableChanged() {
     for (TableModelListener listener : ListSequence.fromList(this.myListeners)) {
       listener.tableChanged(new TableModelEvent(this));
