@@ -31,7 +31,6 @@
   <import index="11" modelUID="r:32537826-1146-4f8d-92f2-d34a6c6f2706(jetbrains.mps.ui.swing.generator.template.main@generator)" version="-1" />
   <import index="13" modelUID="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)" version="-1" />
   <import index="15" modelUID="f:java_stub#org.jdesktop.swingx(org.jdesktop.swingx@java_stub)" version="-1" />
-  <import index="16" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#javax.swing.text(javax.swing.text@java_stub)" version="-1" />
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="5725024602606794293">
     <property name="name" value="JRadioButton" />
