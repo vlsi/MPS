@@ -13,21 +13,21 @@ public class TestMethodRow implements TestStatisticsRow {
   private static final int FAILED = 1;
   private static final int ERRORED = 2;
 
-  private String testCaseName;
-  private String testMethodName;
-  private long startTime = -1;
-  private long finishTime = -1;
-  private long usageBefore = -1;
-  private long usageAfter = -1;
-  private int state = UNDEFINED;
+  private final String myTestCaseName;
+  private final String myTestMethodName;
+  private long myStartTime = -1;
+  private long myFinishTime = -1;
+  private long myUsageBefore = -1;
+  private long myUsageAfter = -1;
+  private int myState = UNDEFINED;
 
   public TestMethodRow(SNode testMethod) {
-    this.testCaseName = ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(testMethod));
-    this.testMethodName = ITestMethod_Behavior.call_getTestName_1216136419751(testMethod);
+    this.myTestCaseName = ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(testMethod));
+    this.myTestMethodName = ITestMethod_Behavior.call_getTestName_1216136419751(testMethod);
   }
 
   public String getText() {
-    return this.testMethodName;
+    return this.myTestMethodName;
   }
 
   public String getAdditionalText() {
@@ -36,78 +36,78 @@ public class TestMethodRow implements TestStatisticsRow {
 
   public long getElapsedTime() {
     long elapsedTime = -1;
-    if (this.startTime >= 0 && this.finishTime >= 0) {
-      elapsedTime = this.finishTime - this.startTime;
+    if (this.myStartTime >= 0 && this.myFinishTime >= 0) {
+      elapsedTime = this.myFinishTime - this.myStartTime;
     }
     return elapsedTime;
   }
 
   public void setStartTime(long startTime) {
-    this.startTime = startTime;
+    this.myStartTime = startTime;
   }
 
   public void setFinishTime(long finishTime) {
-    this.finishTime = finishTime;
+    this.myFinishTime = finishTime;
   }
 
   public long getUsageBefore() {
-    return this.usageBefore;
+    return this.myUsageBefore;
   }
 
   public void setUsageBefore(long usageBefore) {
-    this.usageBefore = usageBefore;
+    this.myUsageBefore = usageBefore;
   }
 
   public long getUsageAfter() {
-    return this.usageAfter;
+    return this.myUsageAfter;
   }
 
   public void setUsageAfter(long usageAfter) {
-    this.usageAfter = usageAfter;
+    this.myUsageAfter = usageAfter;
   }
 
   public long getUsageDelta() {
     long usageDelta = -1;
-    if (this.usageAfter >= 0 && this.usageBefore >= 0) {
-      usageDelta = this.usageAfter - this.usageBefore;
+    if (this.myUsageAfter >= 0 && this.myUsageBefore >= 0) {
+      usageDelta = this.myUsageAfter - this.myUsageBefore;
     }
     return usageDelta;
   }
 
   public void setSucceed() {
-    this.state = SUCCEED;
+    this.myState = SUCCEED;
   }
 
   public void setFailed() {
-    this.state = FAILED;
+    this.myState = FAILED;
   }
 
   public void setErrored() {
-    this.state = ERRORED;
+    this.myState = ERRORED;
   }
 
   public int getSuccessful() {
-    return (this.state == SUCCEED ?
+    return (this.myState == SUCCEED ?
       1 :
       0
     );
   }
 
   public int getErrored() {
-    return (this.state == ERRORED ?
+    return (this.myState == ERRORED ?
       1 :
       0
     );
   }
 
   public int getFailed() {
-    return (this.state == FAILED ?
+    return (this.myState == FAILED ?
       1 :
       0
     );
   }
 
   public boolean matches(String testCase, String testMethod) {
-    return testCase == null || (ObjectUtils.equals(testCase, this.testCaseName) && (testMethod == null || ObjectUtils.equals(testMethod, this.testMethodName)));
+    return testCase == null || (ObjectUtils.equals(testCase, this.myTestCaseName) && (testMethod == null || ObjectUtils.equals(testMethod, this.myTestMethodName)));
   }
 }

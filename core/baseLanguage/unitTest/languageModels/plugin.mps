@@ -7048,6 +7048,48 @@
                                 </node>
                               </node>
                             </node>
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="934117740632855399">
+                              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="934117740632855400">
+                                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="934117740632855440">
+                                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="934117740632855442">
+                                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="934117740632855441">
+                                      <link role="variableDeclaration:3" targetNodeId="4675671065022521230:0" resolveInfo="row" />
+                                    </node>
+                                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="934117740632855446">
+                                      <link role="baseMethodDeclaration:3" targetNodeId="1208803636701:0" resolveInfo="setSucceed" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="934117740632855432">
+                                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="934117740632855409">
+                                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="934117740632855404">
+                                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="934117740632855403">
+                                      <link role="variableDeclaration:3" targetNodeId="4675671065022521230:0" resolveInfo="row" />
+                                    </node>
+                                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="934117740632855408">
+                                      <link role="baseMethodDeclaration:3" targetNodeId="1208803671109:0" resolveInfo="getFailed" />
+                                    </node>
+                                  </node>
+                                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="934117740632855412">
+                                    <property name="value:3" value="0" />
+                                  </node>
+                                </node>
+                                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="934117740632855435">
+                                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="934117740632855436">
+                                    <property name="value:3" value="0" />
+                                  </node>
+                                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="934117740632855437">
+                                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="934117740632855438">
+                                      <link role="variableDeclaration:3" targetNodeId="4675671065022521230:0" resolveInfo="row" />
+                                    </node>
+                                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="934117740632855439">
+                                      <link role="baseMethodDeclaration:3" targetNodeId="1208803671113:0" resolveInfo="getErrored" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
                           </node>
                           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="4675671065022521252">
                             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="4675671065022521253" />
@@ -7095,7 +7137,7 @@
                                   <link role="variableDeclaration:3" targetNodeId="4675671065022521256:0" resolveInfo="row" />
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4675671065022521287">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="1208803671113:0" resolveInfo="getErrored" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="1208803661360:0" resolveInfo="setErrored" />
                                 </node>
                               </node>
                             </node>
@@ -7146,7 +7188,7 @@
                                   <link role="variableDeclaration:3" targetNodeId="4675671065022521290:0" resolveInfo="row" />
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4675671065022521301">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="1208803671109:0" resolveInfo="getFailed" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="1208803653972:0" resolveInfo="setFailed" />
                                 </node>
                               </node>
                             </node>
@@ -7204,7 +7246,7 @@
                                   <link role="variableDeclaration:3" targetNodeId="4675671065022521306:0" resolveInfo="row" />
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4675671065022521317">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="1208803671113:0" resolveInfo="getErrored" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="1208803661360:0" resolveInfo="setErrored" />
                                 </node>
                               </node>
                             </node>
@@ -7233,7 +7275,8 @@
       </node>
     </node>
     <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="1208801624798">
-      <property name="name:3" value="testColumns" />
+      <property name="name:3" value="TEST_COLUMNS" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208801624799" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1208801627936">
         <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225195766769" />
@@ -7263,7 +7306,8 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208801539795">
-      <property name="name:3" value="listeners" />
+      <property name="name:3" value="myListeners" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208801539796" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1208801541397">
         <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208801546148">
@@ -7279,7 +7323,7 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208871907207">
-      <property name="name:3" value="rows" />
+      <property name="name:3" value="myRows" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208871907208" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1208871909253">
         <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208871913365">
@@ -7288,7 +7332,7 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208872168316">
-      <property name="name:3" value="filteredRows" />
+      <property name="name:3" value="myFilteredRows" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208872168317" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1208872170331">
         <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208872172638">
@@ -7304,19 +7348,20 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208873421108">
-      <property name="name:3" value="filterTestCase" />
+      <property name="name:3" value="myFilterTestCase" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="1208889974315" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1208873422900" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1208873431216" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208873431832">
-      <property name="name:3" value="filterTestMethod" />
+      <property name="name:3" value="myFilterTestMethod" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="1208889976701" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1208873433497" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1208873442219" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208875435753">
-      <property name="name:3" value="map" />
+      <property name="name:3" value="myMap" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208875435754" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208875441328">
         <link role="classifier:3" targetNodeId="1208874106058:0" resolveInfo="TestNameMap" />
@@ -7341,6 +7386,7 @@
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="2281887280933725600">
       <property name="name:3" value="myState" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="2281887280933725601" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2281887280933729613">
         <link role="classifier:3" targetNodeId="1717728468090344607:0" resolveInfo="TestRunState" />
@@ -8218,17 +8264,19 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208889783941">
-      <property name="name:3" value="testCaseName" />
+      <property name="name:3" value="myTestCaseName" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208889783942" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1208889786365" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208803125357">
-      <property name="name:3" value="testMethodName" />
+      <property name="name:3" value="myTestMethodName" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208803125358" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1208803192925" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208803252298">
-      <property name="name:3" value="startTime" />
+      <property name="name:3" value="myStartTime" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208803252299" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.LongType:3" id="1208803254380" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1208803283543">
@@ -8236,7 +8284,7 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208803261548">
-      <property name="name:3" value="finishTime" />
+      <property name="name:3" value="myFinishTime" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208803261549" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.LongType:3" id="1208803263402" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1208803286934">
@@ -8244,7 +8292,7 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208803367214">
-      <property name="name:3" value="usageBefore" />
+      <property name="name:3" value="myUsageBefore" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208803367215" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.LongType:3" id="1208803368932" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1208803383039">
@@ -8252,7 +8300,7 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208803386677">
-      <property name="name:3" value="usageAfter" />
+      <property name="name:3" value="myUsageAfter" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208803386678" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.LongType:3" id="1208803386679" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1208803386680">
@@ -8260,7 +8308,7 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208803519051">
-      <property name="name:3" value="state" />
+      <property name="name:3" value="myState" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208803519052" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1208803621346" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference:3" id="1208803629460">
@@ -8772,7 +8820,8 @@
     <property name="package:3" value="tool.table.row" />
     <property name="name:3" value="TestCaseRow" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208889724049">
-      <property name="name:3" value="testCaseName" />
+      <property name="name:3" value="myTestCaseName" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208889724050" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1208889725769" />
     </node>
@@ -9434,17 +9483,18 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208871335804">
-      <property name="name:3" value="text" />
+      <property name="name:3" value="myText" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208871335805" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1208871335806" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208871335807">
-      <property name="name:3" value="additionalText" />
+      <property name="name:3" value="myAdditionalText" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208871335808" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1208871335809" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208871335810">
-      <property name="name:3" value="rows" />
+      <property name="name:3" value="myRows" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208871335811" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1208871335812">
         <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208871387873">
@@ -9928,77 +9978,88 @@
     <property name="package:3" value="tool.table" />
     <property name="name:3" value="StatisticsRowRenderer" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208881431168">
-      <property name="name:3" value="textPanel" />
+      <property name="name:3" value="myTextPanel" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208881431169" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208881437362">
         <link role="classifier:3" targetNodeId="7.~JPanel" resolveInfo="JPanel" />
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208881447924">
-      <property name="name:3" value="text" />
+      <property name="name:3" value="myText" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208881447925" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208881548986">
         <link role="classifier:3" targetNodeId="7.~JLabel" resolveInfo="JLabel" />
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208881497350">
-      <property name="name:3" value="advancedText" />
+      <property name="name:3" value="myAdvancedText" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208881497351" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208881552947">
         <link role="classifier:3" targetNodeId="7.~JLabel" resolveInfo="JLabel" />
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208881509252">
-      <property name="name:3" value="simpleField" />
+      <property name="name:3" value="mySimpleField" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208881509253" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208881555685">
         <link role="classifier:3" targetNodeId="7.~JLabel" resolveInfo="JLabel" />
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208884937663">
-      <property name="name:3" value="statePanel" />
+      <property name="name:3" value="myStatePanel" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208884937664" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208884941799">
         <link role="classifier:3" targetNodeId="7.~JPanel" resolveInfo="JPanel" />
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208885003789">
-      <property name="name:3" value="success" />
+      <property name="name:3" value="mySuccess" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208885003790" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208885007341">
         <link role="classifier:3" targetNodeId="7.~JLabel" resolveInfo="JLabel" />
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208885012079">
-      <property name="name:3" value="error" />
+      <property name="name:3" value="myError" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208885012080" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208885016745">
         <link role="classifier:3" targetNodeId="7.~JLabel" resolveInfo="JLabel" />
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208885020045">
-      <property name="name:3" value="failure" />
+      <property name="name:3" value="myFailure" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208885020046" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208885024487">
         <link role="classifier:3" targetNodeId="7.~JLabel" resolveInfo="JLabel" />
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208887435923">
-      <property name="name:3" value="aloneSuccess" />
+      <property name="name:3" value="myAloneSuccess" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208887435924" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208887435925">
         <link role="classifier:3" targetNodeId="7.~JLabel" resolveInfo="JLabel" />
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208887435927">
-      <property name="name:3" value="aloneError" />
+      <property name="name:3" value="myAloneError" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208887435928" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208887435929">
         <link role="classifier:3" targetNodeId="7.~JLabel" resolveInfo="JLabel" />
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1208887435930">
-      <property name="name:3" value="aloneFailure" />
+      <property name="name:3" value="myAloneFailure" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1208887435931" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208887435932">
         <link role="classifier:3" targetNodeId="7.~JLabel" resolveInfo="JLabel" />

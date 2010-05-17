@@ -18,15 +18,15 @@ import javax.swing.event.TableModelEvent;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class StatisticsTableModel implements TableModel {
-  private static List<String> testColumns = ListSequence.fromListAndArray(new ArrayList<String>(), "Test", "Time elapsed", "Usage Delta", "Usage Before", "Usage After", "Results");
+  private static final List<String> TEST_COLUMNS = ListSequence.fromListAndArray(new ArrayList<String>(), "Test", "Time elapsed", "Usage Delta", "Usage Before", "Usage After", "Results");
 
-  private List<TableModelListener> listeners = ListSequence.fromList(new ArrayList<TableModelListener>());
-  private List<TestStatisticsRow> rows;
-  private List<TestStatisticsRow> filteredRows = ListSequence.fromList(new ArrayList<TestStatisticsRow>());
-  protected String filterTestCase = null;
-  protected String filterTestMethod = null;
-  private TestNameMap<TestCaseRow, TestMethodRow> map = new TestNameMap<TestCaseRow, TestMethodRow>();
-  private TestRunState myState;
+  private final List<TableModelListener> myListeners = ListSequence.fromList(new ArrayList<TableModelListener>());
+  private List<TestStatisticsRow> myRows;
+  private List<TestStatisticsRow> myFilteredRows = ListSequence.fromList(new ArrayList<TestStatisticsRow>());
+  protected String myFilterTestCase = null;
+  protected String myFilterTestMethod = null;
+  private final TestNameMap<TestCaseRow, TestMethodRow> myMap = new TestNameMap<TestCaseRow, TestMethodRow>();
+  private final TestRunState myState;
 
   public StatisticsTableModel(final TestRunState state) {
     this.myState = state;
@@ -54,96 +54,99 @@ public class StatisticsTableModel implements TableModel {
         if (row != null) {
           row.setFinishTime(event.getTime());
           row.setUsageAfter(event.getMemoryUsage());
+          if (row.getFailed() == 0 && row.getErrored() == 0) {
+            row.setSucceed();
+          }
         }
       }
 
       public void onTestError(TestEvent event) {
         TestMethodRow row = this.findRowForEvent(event);
         if (row != null) {
-          row.getErrored();
+          row.setErrored();
         }
       }
 
       public void onTestFailure(TestEvent event) {
         TestMethodRow row = this.findRowForEvent(event);
         if (row != null) {
-          row.getFailed();
+          row.setFailed();
         }
       }
 
       public void onLooseTest(String className, String methodName) {
         TestMethodRow row = StatisticsTableModel.this.getRow(className, methodName);
         if (row != null) {
-          row.getErrored();
+          row.setErrored();
         }
       }
     });
   }
 
   private void setTests(Map<SNode, List<SNode>> tests) {
-    this.rows = ListSequence.fromList(new ArrayList<TestStatisticsRow>());
+    this.myRows = ListSequence.fromList(new ArrayList<TestStatisticsRow>());
     TotalRow totalRow = new TotalRow();
-    ListSequence.fromList(this.rows).addElement(totalRow);
-    this.map.clear();
+    ListSequence.fromList(this.myRows).addElement(totalRow);
+    this.myMap.clear();
     for (SNode testCase : SetSequence.fromSet(MapSequence.fromMap(tests).keySet())) {
       TestCaseRow testCaseRow = new TestCaseRow(testCase);
       totalRow.addRow(testCaseRow);
-      ListSequence.fromList(this.rows).addElement(testCaseRow);
-      this.map.put(testCase, testCaseRow);
+      ListSequence.fromList(this.myRows).addElement(testCaseRow);
+      this.myMap.put(testCase, testCaseRow);
       for (SNode testMethod : ListSequence.fromList(MapSequence.fromMap(tests).get(testCase))) {
         TestMethodRow testMethodRow = new TestMethodRow(testMethod);
         testCaseRow.addRow(testMethodRow);
-        ListSequence.fromList(this.rows).addElement(testMethodRow);
-        this.map.put(testCase, testMethod, testMethodRow);
+        ListSequence.fromList(this.myRows).addElement(testMethodRow);
+        this.myMap.put(testCase, testMethod, testMethodRow);
       }
     }
     this.filter();
   }
 
   public TestMethodRow getRow(String testCase, String testMethod) {
-    return this.map.get(testCase, testMethod);
+    return this.myMap.get(testCase, testMethod);
   }
 
   public void updateRow(TestMethodRow row) {
-    int index = ListSequence.fromList(this.filteredRows).indexOf(row);
+    int index = ListSequence.fromList(this.myFilteredRows).indexOf(row);
     if (index >= 0) {
-      for (TableModelListener listener : ListSequence.fromList(this.listeners)) {
+      for (TableModelListener listener : ListSequence.fromList(this.myListeners)) {
         listener.tableChanged(new TableModelEvent(this));
       }
     }
   }
 
   public int getRowCount() {
-    return ListSequence.fromList(this.filteredRows).count();
+    return ListSequence.fromList(this.myFilteredRows).count();
   }
 
   public Object getValueAt(int rowIndex, int columnIndex) {
-    return ListSequence.fromList(this.filteredRows).getElement(rowIndex);
+    return ListSequence.fromList(this.myFilteredRows).getElement(rowIndex);
   }
 
   public void setFilter(String testCase, String testMethod) {
-    this.filterTestCase = testCase;
-    this.filterTestMethod = testMethod;
+    this.myFilterTestCase = testCase;
+    this.myFilterTestMethod = testMethod;
     this.filter();
   }
 
   private void filter() {
-    this.filteredRows = ListSequence.fromList(this.rows).where(new IWhereFilter<TestStatisticsRow>() {
+    this.myFilteredRows = ListSequence.fromList(this.myRows).where(new IWhereFilter<TestStatisticsRow>() {
       public boolean accept(TestStatisticsRow it) {
-        return it.matches(StatisticsTableModel.this.filterTestCase, StatisticsTableModel.this.filterTestMethod);
+        return it.matches(StatisticsTableModel.this.myFilterTestCase, StatisticsTableModel.this.myFilterTestMethod);
       }
     }).toListSequence();
-    for (TableModelListener listener : ListSequence.fromList(this.listeners)) {
+    for (TableModelListener listener : ListSequence.fromList(this.myListeners)) {
       listener.tableChanged(new TableModelEvent(this));
     }
   }
 
   public int getColumnCount() {
-    return ListSequence.fromList(testColumns).count();
+    return ListSequence.fromList(TEST_COLUMNS).count();
   }
 
   public String getColumnName(int columnIndex) {
-    return ListSequence.fromList(testColumns).getElement(columnIndex);
+    return ListSequence.fromList(TEST_COLUMNS).getElement(columnIndex);
   }
 
   public Class<?> getColumnClass(int columnIndex) {
@@ -158,10 +161,10 @@ public class StatisticsTableModel implements TableModel {
   }
 
   public void addTableModelListener(TableModelListener listener) {
-    ListSequence.fromList(this.listeners).addElement(listener);
+    ListSequence.fromList(this.myListeners).addElement(listener);
   }
 
   public void removeTableModelListener(TableModelListener listener) {
-    ListSequence.fromList(this.listeners).removeElement(listener);
+    ListSequence.fromList(this.myListeners).removeElement(listener);
   }
 }
