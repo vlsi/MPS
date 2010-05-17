@@ -1006,7 +1006,7 @@ __switch__:
     return p.getSNodeId();
   }
 
-  private static SNodeId check_9042451232534986458(SNode p) {
+  private static SNodeId check_4410510979167128200(SNode p) {
     if (null == p) {
       return null;
     }
@@ -1396,7 +1396,7 @@ __switch__:
                 }
                 SNode thisNodeInBase = myBaseVersionModel.getNodeById(e.getChild().getSNodeId());
                 if (thisNodeInBase != null) {
-                  if (check_9042451232534986458(SNodeOperations.getParent(thisNodeInBase)) == e.getParent().getSNodeId() && e.getChildRole().equals(SNodeOperations.getContainingLinkRole(thisNodeInBase))) {
+                  if (e.getParent().getSNodeId().equals(check_4410510979167128200(SNodeOperations.getParent(thisNodeInBase))) && e.getChildRole().equals(SNodeOperations.getContainingLinkRole(thisNodeInBase))) {
                     return;
                   }
                 }
