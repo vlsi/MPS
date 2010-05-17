@@ -20,7 +20,7 @@ public class typeof_LowLevelVariable_InferenceRule extends AbstractInferenceRule
       SNode _nodeToCheck_1029348928467 = lowLevelVariable;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debug.evaluation.typesystem)", "4454641827113761131", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debug.evaluation.typesystem)", "4454641827113761128", true), (SNode) SLinkOperations.getTarget(lowLevelVariable, "deducedType", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debug.evaluation.typesystem)", "4454641827113761128", true), (SNode) SLinkOperations.getTarget(lowLevelVariable, "type", true), _info_12389875345);
     }
   }
 
