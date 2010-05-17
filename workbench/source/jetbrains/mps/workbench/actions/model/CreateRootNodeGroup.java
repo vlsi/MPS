@@ -25,6 +25,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.actions.AddLanguageImport_Action;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
@@ -103,6 +104,7 @@ public class CreateRootNodeGroup extends BaseGroup {
         protected void doExecute(AnActionEvent e) {
         }
       });
+      //add(new AddLanguageImport_Action());
     }
 
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
