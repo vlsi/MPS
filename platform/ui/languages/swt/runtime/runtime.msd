@@ -4,7 +4,7 @@
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <classPath>
-    <entry path="/Volumes/Sparky/Development/MPS-workspace/MUFFIN/languages/swt/lib/macosx/64/swt.jar" include="false" />
+    <entry path="${solution_descriptor}/../lib/macosx/64/swt.jar" include="false" />
   </classPath>
   <sourcePath />
   <dependencies>
