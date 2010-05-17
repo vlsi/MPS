@@ -846,6 +846,7 @@
       <zipfileset dir="platform/ui/languages/swing/runtime/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="platform/ui/languages/swing/runtime/test_gen.caches" prefix="test_gen.caches" />
       <zipfileset dir="platform/ui/languages/swing/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset file="platform/ui/languages/swing/lib/swingx-1.6.jar" />
       <zipfileset dir="platform/ui/languages/swing/runtime/classes_gen" />
     </jar>
   </target>
