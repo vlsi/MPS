@@ -188,12 +188,8 @@ public class TestMain {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         try {
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              File projectFile = new File(destination, "testRefactoring" + MPSExtentions.DOT_MPS_PROJECT);
-              projectArray[0] = loadProject(projectFile);
-            }
-          });
+          File projectFile = new File(destination, "testRefactoring" + MPSExtentions.DOT_MPS_PROJECT);
+          projectArray[0] = loadProject(projectFile);
         } catch (Throwable t) {
           t.printStackTrace();
         }
