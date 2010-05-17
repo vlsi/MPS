@@ -5,8 +5,8 @@
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.ui.swt" />
   </models>
   <accessoryModels>
-    <model modelUID="r:fdfa4297-e47f-4051-a403-8ec60f159a16(jetbrains.mps.ui.swt.widgets)" />
     <model modelUID="r:b5bea281-ab90-4fa9-bfa9-a6d130009710(jetbrains.mps.ui.swt.events)" />
+    <model modelUID="r:fdfa4297-e47f-4051-a403-8ec60f159a16(jetbrains.mps.ui.swt.widgets)" />
   </accessoryModels>
   <generators>
     <generator name="ui" generatorUID="jetbrains.mps.ui.swt#1250358102411218055" uuid="fc9ba4c3-4355-4a86-b84b-1c46c728f9ea">
@@ -86,13 +86,12 @@
   </generators>
   <classPath />
   <languageRuntimeClassPath>
-    <entry path="${language_descriptor}/lib/macosx/64/swt.jar" />
-    <entry path="${language_descriptor}/runtime/classes_gen" />
+    <entry path="${language_descriptor}/lib/macosx/64/swt.jar" include="false" />
+    <entry path="${language_descriptor}/runtime/classes_gen" include="false" />
   </languageRuntimeClassPath>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">8a448bd0-1380-4c01-9820-0f051d33888c(jetbrains.mps.ui.modeling)</dependency>
-    <dependency reexport="false">3f6b4db2-3eb5-44c8-a9bd-d6d426d08010(jetbrains.mps.ui.sandbox)</dependency>
     <dependency reexport="false">fc9ba4c3-4355-4a86-b84b-1c46c728f9ea(jetbrains.mps.ui.swt#1250358102411218055)</dependency>
     <dependency reexport="false">69934240-945d-492b-83e7-39bda70200e7(jetbrains.mps.ui.swt.runtime)</dependency>
   </dependencies>

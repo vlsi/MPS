@@ -86,14 +86,11 @@
     <entry path="${language_descriptor}/lib/swingx-1.6.jar" include="false" />
   </classPath>
   <languageRuntimeClassPath>
-    <entry path="${language_descriptor}/lib/swingx-1.6.jar" />
+    <entry path="${language_descriptor}/lib/swingx-1.6.jar" include="false" />
   </languageRuntimeClassPath>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">3f6b4db2-3eb5-44c8-a9bd-d6d426d08010(jetbrains.mps.ui.sandbox)</dependency>
     <dependency reexport="false">feb13c42-6479-4631-bedd-7524f34b91c0(jetbrains.mps.ui.swing#5725024602606914374)</dependency>
-    <dependency reexport="false">71c80332-b17f-4f0a-be23-b5cba1d261f7(jetbrains.mps.ui.swt)</dependency>
-    <dependency reexport="false">69934240-945d-492b-83e7-39bda70200e7(jetbrains.mps.ui.swt.runtime)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)</usedLanguage>
