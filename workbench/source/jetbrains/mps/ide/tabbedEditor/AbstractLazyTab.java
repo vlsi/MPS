@@ -18,8 +18,8 @@ package jetbrains.mps.ide.tabbedEditor;
 
 import com.intellij.openapi.util.Pair;
 import com.intellij.util.containers.MultiMap;
-import jetbrains.mps.changesmanager.NodeFileStatusListener;
-import jetbrains.mps.changesmanager.RootNodeFileStatusManager;
+import jetbrains.mps.vcs.changesmanager.NodeFileStatusListener;
+import jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRootEvent;

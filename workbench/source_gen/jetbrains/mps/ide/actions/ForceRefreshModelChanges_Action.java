@@ -12,8 +12,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.changesmanager.ModelChangesManager;
-import jetbrains.mps.changesmanager.ChangesManager;
+import jetbrains.mps.vcs.changesmanager.ModelChangesManager;
+import jetbrains.mps.vcs.changesmanager.ChangesManager;
 
 public class ForceRefreshModelChanges_Action extends GeneratedAction {
   private static final Icon ICON = null;

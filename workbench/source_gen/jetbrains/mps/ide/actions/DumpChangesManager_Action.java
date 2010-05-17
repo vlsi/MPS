@@ -10,7 +10,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.changesmanager.ChangesManager;
+import jetbrains.mps.vcs.changesmanager.ChangesManager;
 
 public class DumpChangesManager_Action extends GeneratedAction {
   private static final Icon ICON = null;

@@ -19,7 +19,7 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.vcs.FileStatus;
-import jetbrains.mps.changesmanager.RootNodeFileStatusManager;
+import jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;

@@ -636,22 +636,22 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.changesmanager.ChangesManager</implementation-class>
+            <implementation-class>jetbrains.mps.vcs.changesmanager.ChangesManager</implementation-class>
             <skipForDefaultProject />
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.changesmanager.ProjectTreeChangesHighlighter</implementation-class>
+            <implementation-class>jetbrains.mps.vcs.changesmanager.ProjectTreeChangesHighlighter</implementation-class>
             <skipForDefaultProject />
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.changesmanager.EditorChangesHighlighter</implementation-class>
+            <implementation-class>jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter</implementation-class>
             <skipForDefaultProject />
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.changesmanager.RootNodeFileStatusManager</implementation-class>
+            <implementation-class>jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager</implementation-class>
             <skipForDefaultProject />
         </component>
     </project-components>

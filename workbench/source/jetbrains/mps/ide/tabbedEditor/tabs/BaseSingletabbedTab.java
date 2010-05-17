@@ -18,7 +18,7 @@ package jetbrains.mps.ide.tabbedEditor.tabs;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowManager;
-import jetbrains.mps.changesmanager.NodeFileStatusListener;
+import jetbrains.mps.vcs.changesmanager.NodeFileStatusListener;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;

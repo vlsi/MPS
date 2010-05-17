@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.changesmanager.EditorChangesHighlighter;
+import jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class GoToPreviousChange_Action extends GeneratedAction {
