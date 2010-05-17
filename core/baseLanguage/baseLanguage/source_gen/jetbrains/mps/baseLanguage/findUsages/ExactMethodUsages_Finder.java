@@ -29,8 +29,6 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    // <node> 
-    // <node> 
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
   }
 

@@ -100,11 +100,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     List<Language> modelLanguages = modelDescriptor.getSModel().getLanguages(scope);
     if (modelLanguages.size() == 0) {
-      add(new BaseAction("<NO LANGUAGES>") {
-        protected void doExecute(AnActionEvent e) {
-        }
-      });
-      //add(new AddLanguageImport_Action());
+      add(new AddLanguageImport_Action());
     }
 
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);

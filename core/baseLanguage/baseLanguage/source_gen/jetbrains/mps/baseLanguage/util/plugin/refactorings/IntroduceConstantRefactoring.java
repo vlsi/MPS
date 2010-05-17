@@ -48,7 +48,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     }
   }
 
-  public static boolean isAbblicable(SNode node) {
+  public static boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression") && (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null);
   }
 
