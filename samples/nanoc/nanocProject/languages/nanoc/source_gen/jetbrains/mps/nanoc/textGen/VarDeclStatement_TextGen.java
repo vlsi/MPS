@@ -20,5 +20,6 @@ public class VarDeclStatement_TextGen extends SNodeTextGen {
         }
       }
     }
+    this.append(";");
   }
 }

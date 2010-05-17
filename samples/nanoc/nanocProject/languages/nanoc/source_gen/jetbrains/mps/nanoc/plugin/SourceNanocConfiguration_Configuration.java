@@ -144,8 +144,8 @@ public class SourceNanocConfiguration_Configuration extends BaseRunConfig {
 
             final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
             // create process handler 
-            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E6<ProcessHandler, ExecutionException, ExecutionException, ExecutionException, ExecutionException, ExecutionException, ExecutionException>() {
-              public ProcessHandler invoke() throws ExecutionException, ExecutionException, ExecutionException, ExecutionException, ExecutionException, ExecutionException {
+            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E5<ProcessHandler, ExecutionException, ExecutionException, ExecutionException, ExecutionException, ExecutionException>() {
+              public ProcessHandler invoke() throws ExecutionException, ExecutionException, ExecutionException, ExecutionException, ExecutionException {
                 try {
                   SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(SourceNanocConfiguration_Configuration.this.getStateObject().modelRef));
                   SNode node = descriptor.getSModel().getNodeById(SourceNanocConfiguration_Configuration.this.getStateObject().nodeId);
@@ -159,8 +159,9 @@ public class SourceNanocConfiguration_Configuration extends BaseRunConfig {
                     }
                   });
                   String packageName = NameUtil.pathFromNamespace(descriptor.getLongName());
-                  File modelFolder = new File(folder + File.separator + packageName);
-                  File f = new File(modelFolder, sourceFileName.value + ".c");
+                  File modelSourceFolder = new File(module.getGeneratorOutputPath() + File.separator + packageName);
+                  File modelClassesFolder = new File(module.getClassesGen().getAbsolutePath() + File.separator + packageName);
+                  File f = new File(modelSourceFolder, sourceFileName.value + ".c");
                   if (!(f.exists())) {
                     throw new ExecutionException("node is not generated");
                   }
@@ -169,21 +170,32 @@ public class SourceNanocConfiguration_Configuration extends BaseRunConfig {
                     throw new ExecutionException("no GCC found");
                   }
                   ProcessBuilder processBuilder = new ProcessBuilder();
-                  processBuilder.command(gcc.getAbsolutePath(), f.getAbsolutePath(), "-g", "-x c");
+                  String outputExtension = ".exe";
+                  File executableFile = new File(modelClassesFolder, sourceFileName.value + outputExtension);
+                  processBuilder.command(gcc.getAbsolutePath(), f.getAbsolutePath(), "-o" + executableFile.getAbsolutePath(), "-g", "-xc");
                   processBuilder.directory(f.getParentFile());
+                  Process compileProcess;
                   try {
-                    Process compileProcess = processBuilder.start();
-                    try {
-                      compileProcess.waitFor();
-                    } catch (InterruptedException ex) {
-                      throw new ExecutionException("waiting for gcc compiler interrupted", ex);
-                    }
+                    compileProcess = processBuilder.start();
                   } catch (IOException ioException) {
                     throw new ExecutionException("error executing gcc compiler", ioException);
                   }
-                  String outputExtension = ".exe";
-                  File executableFile = new File(folder, sourceFileName.value + outputExtension);
-                  if (!(executableFile.exists())) {
+                  int timeout = 5000;
+                  int current = 100;
+                  boolean success = false;
+                  while (current < timeout) {
+                    try {
+                      Thread.sleep(100);
+                    } catch (InterruptedException ignored) {
+                    }
+                    if (executableFile.exists()) {
+                      success = true;
+                      break;
+                    }
+                    current += 100;
+                  }
+                  if (!(success)) {
+                    compileProcess.destroy();
                     throw new ExecutionException("executable file not found");
                   }
 

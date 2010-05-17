@@ -149,6 +149,11 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.lang.textGen.structure.AppendOperation:11" id="5698737643333715861">
+          <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart:11" id="5698737643333715863">
+            <property name="value:11" value=";" />
+          </node>
+        </node>
       </node>
     </node>
   </node>
