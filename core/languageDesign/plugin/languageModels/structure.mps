@@ -2749,6 +2749,11 @@
       <property name="role:0" value="debugSessionCreator" />
       <link role="target:0" targetNodeId="8255351389869159733:23" resolveInfo="DebugSessionCreator" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="9017024590936865850">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="prepareBlock" />
+      <link role="target:0" targetNodeId="9017024590936865843:23" resolveInfo="PrepareConceptFunction" />
+    </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="678887849223564240">
       <link role="intfc:0" targetNodeId="6.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
@@ -4415,6 +4420,41 @@
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4089570349960659798">
       <property name="value:0" value="unitNode" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="9017024590936865843">
+    <property name="package:0" value="RunConfigs.Configuration.Debug" />
+    <property name="name:0" value="PrepareConceptFunction" />
+    <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="9017024590937198562">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="retrunTypeParameter" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2.1068431790189:3" resolveInfo="Type" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="9017024590937024725">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="678887849223882678:23" resolveInfo="Executor_FunctionParameter" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="9017024590937024726">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="678887849223882679:23" resolveInfo="Environment_FunctionParameter" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="9017024590936865844">
+      <property name="value:0" value="prepare" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="9017024590936865846">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1216468774225:3" resolveInfo="showName" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="9017024590937198702">
+    <property name="package:0" value="RunConfigs.Configuration.Debug" />
+    <property name="name:0" value="PrepareReturnType_FunctionParameter" />
+    <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="9017024590937198704">
+      <property name="value:0" value="preparedValue" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
