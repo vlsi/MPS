@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import com.intellij.openapi.application.ApplicationManager;
+import org.jetbrains.annotations.NotNull;
 
 public class DataFlowManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(DataFlowManager.class);
@@ -43,6 +44,7 @@ public class DataFlowManager implements ApplicationComponent {
     });
   }
 
+  @NotNull
   public String getComponentName() {
     return "Data Flow Manager";
   }
