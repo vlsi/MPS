@@ -81,7 +81,9 @@ public class RenameModelDialog extends BaseDialog {
       return;
     }
 
-    DeleteModelHelper.deleteGeneratedFiles(myProject, myModelDescriptor);
+    if (!(fqName.equals(myModelDescriptor.getSModelFqName()))) {
+      DeleteModelHelper.deleteGeneratedFiles(myProject, myModelDescriptor);
+    }
 
     final ModelRenamer renamer = new ModelRenamer(myModelDescriptor, fqName, !myUpdateAllReferences.getModel().isSelected());
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
