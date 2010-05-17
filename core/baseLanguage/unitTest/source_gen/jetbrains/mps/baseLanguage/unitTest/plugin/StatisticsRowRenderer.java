@@ -17,6 +17,8 @@ import javax.swing.UIManager;
 import javax.swing.BorderFactory;
 
 public class StatisticsRowRenderer implements TableCellRenderer {
+  private static final String INDENT = "    ";
+
   private final JPanel myTextPanel;
   private final JLabel myText;
   private final JLabel myAdvancedText;
@@ -30,6 +32,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
   private final JLabel myAloneFailure;
 
   public StatisticsRowRenderer() {
+
     this.myTextPanel = new JPanel(new BorderLayout());
     this.myText = new JLabel();
     this.myTextPanel.add(this.myText, BorderLayout.WEST);
@@ -37,27 +40,38 @@ public class StatisticsRowRenderer implements TableCellRenderer {
     this.myAdvancedText.setForeground(Color.GRAY);
     this.myTextPanel.add(this.myAdvancedText, BorderLayout.CENTER);
     this.mySimpleField = new JLabel("", SwingConstants.RIGHT);
+
+    // container states 
+
     this.mySuccess = new JLabel("", SwingConstants.RIGHT);
     Font font = this.mySuccess.getFont();
     Font boldFont = new Font(font.getName(), Font.BOLD, font.getSize());
     this.mySuccess.setForeground(new Color(0, 127, 0));
     this.mySuccess.setFont(boldFont);
+
     this.myFailure = new JLabel("", SwingConstants.RIGHT);
     this.myFailure.setForeground(Color.RED);
     this.myFailure.setFont(boldFont);
+
     this.myError = new JLabel("", SwingConstants.RIGHT);
     this.myError.setForeground(Color.RED);
     this.myError.setFont(boldFont);
+
     this.myStatePanel = new JPanel(new GridLayout(1, 3));
     this.myStatePanel.add(this.mySuccess, BorderLayout.WEST);
     this.myStatePanel.add(this.myFailure, BorderLayout.CENTER);
     this.myStatePanel.add(this.myError, BorderLayout.EAST);
+
+    // single test states 
+
     this.myAloneSuccess = new JLabel("Passed", SwingConstants.RIGHT);
     this.myAloneSuccess.setForeground(new Color(0, 127, 0));
     this.myAloneSuccess.setFont(boldFont);
+
     this.myAloneFailure = new JLabel("Failed", SwingConstants.RIGHT);
     this.myAloneFailure.setForeground(Color.RED);
     this.myAloneFailure.setFont(boldFont);
+
     this.myAloneError = new JLabel("Error", SwingConstants.RIGHT);
     this.myAloneError.setForeground(Color.RED);
     this.myAloneError.setFont(boldFont);
@@ -72,7 +86,11 @@ public class StatisticsRowRenderer implements TableCellRenderer {
     switch (column) {
       case 0:
         // Test 
-        this.myText.setText(rowValue.getText());
+        String text = rowValue.getText();
+        if (!(container)) {
+          text = INDENT + text;
+        }
+        this.myText.setText(text);
         String additionalText = rowValue.getAdditionalText();
         if (additionalText != null) {
           this.myAdvancedText.setText(" (" + additionalText + ")");
