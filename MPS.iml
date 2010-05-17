@@ -8,6 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/core/baseLanguage/languages/overridenOperators/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/platform/languages/analyzers/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/platform/solutions/jetbrains.mps.analyzers.sandbox/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
