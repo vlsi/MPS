@@ -43,6 +43,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -76,7 +77,12 @@ public class DeleteModelHelper {
     directoriesToDelete.add(FileGenerationUtil.getDefaultOutputDir(modelDescriptor,FileGenerationUtil.getCachesOutputDir(moduleOutput)));
     for (File directory: directoriesToDelete) {
       if (directory.exists()) {
-        MPSVCSManager.getInstance(project).deleteFromDiskAndRemoveFromVcs(Arrays.asList(directory.listFiles()), false);
+        MPSVCSManager.getInstance(project).deleteFromDiskAndRemoveFromVcs(Arrays.asList(directory.listFiles(new FilenameFilter() {
+          @Override
+          public boolean accept(File dir, String name) {
+            return !".svn".equals(name);
+          }
+        })), false);
         MPSVCSManager.getInstance(project).deleteFromDiskAndRemoveFromVcs(Arrays.asList(directory), false);
       }
     }
