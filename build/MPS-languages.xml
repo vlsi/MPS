@@ -872,6 +872,7 @@
       <zipfileset dir="platform/ui/languages/swt/runtime/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="platform/ui/languages/swt/runtime/test_gen.caches" prefix="test_gen.caches" />
       <zipfileset dir="platform/ui/languages/swt/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset file="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
       <zipfileset dir="platform/ui/languages/swt/runtime/classes_gen" />
     </jar>
   </target>
