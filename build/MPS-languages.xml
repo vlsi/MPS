@@ -246,7 +246,6 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.unitTest.lib_u1f0">
-    <mkdir dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <mkdir dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/source_gen.caches" />
     <mkdir dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/test_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -254,7 +253,6 @@
       <zipfileset dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/test_gen.caches" prefix="test_gen.caches" />
       <zipfileset dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.test_v1f0">
@@ -782,7 +780,102 @@
       <zipfileset dir="platform/gtext/runtime/classes_gen" />
     </jar>
   </target>
-  <target name="pack.ypath.main_b6a">
+  <target name="pack.jetbrains.mps.ui_a1g0">
+    <mkdir dir="platform/ui/languages/ui/classes_gen" />
+    <mkdir dir="platform/ui/languages/ui/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/ui/languages/ui/ui.mpl" prefix="module" />
+      <zipfileset dir="platform/ui/languages/ui/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/ui/languages/ui" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/ui/languages/ui/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.ui.modeling_b1g0">
+    <mkdir dir="platform/ui/languages/meta/classes_gen" />
+    <mkdir dir="platform/ui/languages/meta/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.modeling.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/ui/languages/meta/meta.mpl" prefix="module" />
+      <zipfileset dir="platform/ui/languages/meta/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/ui/languages/meta" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/ui/languages/meta/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.ui.internal_c1g0">
+    <mkdir dir="platform/ui/languages/internal/classes_gen" />
+    <mkdir dir="platform/ui/languages/internal/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.internal.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/ui/languages/internal/internal.mpl" prefix="module" />
+      <zipfileset dir="platform/ui/languages/internal/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/ui/languages/internal" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/ui/languages/internal/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.ui.gwt_d1g0">
+    <mkdir dir="platform/ui/languages/gwt/classes_gen" />
+    <mkdir dir="platform/ui/languages/gwt/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.gwt.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/ui/languages/gwt/gwt.mpl" prefix="module" />
+      <zipfileset dir="platform/ui/languages/gwt/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/ui/languages/gwt" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/ui/languages/gwt/classes_gen" />
+    </jar>
+    <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.gwt.runtime.jar" duplicate="preserve" filesonly="true">
+      <fileset file="platform/ui/languages/gwt/lib/gwt-user.jar" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.ui.swing_e1g0">
+    <mkdir dir="platform/ui/languages/swing/classes_gen" />
+    <mkdir dir="platform/ui/languages/swing/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.swing.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/ui/languages/swing/swing.mpl" prefix="module" />
+      <zipfileset dir="platform/ui/languages/swing/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/ui/languages/swing" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset file="platform/ui/languages/swing/lib/swingx-1.6.jar" />
+      <zipfileset dir="platform/ui/languages/swing/classes_gen" />
+    </jar>
+    <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.swing.runtime.jar" duplicate="preserve" filesonly="true">
+      <fileset file="platform/ui/languages/swing/lib/swingx-1.6.jar" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.ui.swing.runtime_f1g0">
+    <mkdir dir="platform/ui/languages/swing/runtime/classes_gen" />
+    <mkdir dir="platform/ui/languages/swing/runtime/source_gen.caches" />
+    <mkdir dir="platform/ui/languages/swing/runtime/test_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.swing.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/ui/languages/swing/runtime/runtime.msd" prefix="module" />
+      <zipfileset dir="platform/ui/languages/swing/runtime/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/ui/languages/swing/runtime/test_gen.caches" prefix="test_gen.caches" />
+      <zipfileset dir="platform/ui/languages/swing/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/ui/languages/swing/runtime/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.ui.swt_g1g0">
+    <mkdir dir="platform/ui/languages/swt/classes_gen" />
+    <mkdir dir="platform/ui/languages/swt/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.swt.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/ui/languages/swt/swt.mpl" prefix="module" />
+      <zipfileset dir="platform/ui/languages/swt/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/ui/languages/swt" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/ui/languages/swt/classes_gen" />
+    </jar>
+    <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.swt.runtime.jar" duplicate="preserve" filesonly="true">
+      <fileset file="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
+      <fileset dir="platform/ui/languages/swt/runtime/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.ui.swt.runtime_h1g0">
+    <mkdir dir="platform/ui/languages/swt/runtime/classes_gen" />
+    <mkdir dir="platform/ui/languages/swt/runtime/source_gen.caches" />
+    <mkdir dir="platform/ui/languages/swt/runtime/test_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.swt.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/ui/languages/swt/runtime/runtime.msd" prefix="module" />
+      <zipfileset dir="platform/ui/languages/swt/runtime/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/ui/languages/swt/runtime/test_gen.caches" prefix="test_gen.caches" />
+      <zipfileset dir="platform/ui/languages/swt/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/ui/languages/swt/runtime/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.ypath.main_c6a">
     <mkdir dir="platform/ypath/solutions/main/classes_gen" />
     <mkdir dir="platform/ypath/solutions/main/source_gen.caches" />
     <mkdir dir="platform/ypath/solutions/main/test_gen.caches" />
@@ -794,7 +887,7 @@
       <zipfileset dir="platform/ypath/solutions/main/classes_gen" />
     </jar>
   </target>
-  <target name="pack.ypath.test_c6a">
+  <target name="pack.ypath.test_d6a">
     <mkdir dir="platform/ypath/solutions/test/classes_gen" />
     <mkdir dir="platform/ypath/solutions/test/source_gen.caches" />
     <mkdir dir="platform/ypath/solutions/test/test_gen.caches" />
@@ -806,7 +899,7 @@
       <zipfileset dir="platform/ypath/solutions/test/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.ypath_d6a">
+  <target name="pack.jetbrains.mps.ypath_e6a">
     <mkdir dir="platform/ypath/classes_gen" />
     <mkdir dir="platform/ypath/runtime/classes" />
     <mkdir dir="platform/ypath/classes_gen" />
@@ -823,7 +916,7 @@
       <fileset dir="platform/ypath/runtime/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.buildlanguage_e6a">
+  <target name="pack.jetbrains.mps.buildlanguage_f6a">
     <mkdir dir="platform/buildlanguage/languages/buildlanguage/classes" />
     <mkdir dir="platform/buildlanguage/languages/buildlanguage/classes_gen" />
     <mkdir dir="platform/buildlanguage/languages/buildlanguage/source_gen.caches" />
@@ -838,7 +931,7 @@
       <fileset dir="platform/buildlanguage/languages/buildlanguage/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.build.custommps_f6a">
+  <target name="pack.jetbrains.mps.build.custommps_g6a">
     <mkdir dir="platform/buildlanguage/languages/custommps/classes" />
     <mkdir dir="platform/buildlanguage/languages/custommps/classes_gen" />
     <mkdir dir="platform/buildlanguage/languages/custommps/source_gen.caches" />
@@ -850,7 +943,7 @@
       <zipfileset dir="platform/buildlanguage/languages/custommps/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.build.custommpsInternal_g6a">
+  <target name="pack.jetbrains.mps.build.custommpsInternal_h6a">
     <mkdir dir="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
     <mkdir dir="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
     <mkdir dir="platform/buildlanguage/languages/custommpsInternal/source_gen.caches" />
@@ -862,7 +955,7 @@
       <zipfileset dir="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.build.distrib_h6a">
+  <target name="pack.jetbrains.mps.build.distrib_i6a">
     <mkdir dir="platform/buildlanguage/languages/distrib/classes" />
     <mkdir dir="platform/buildlanguage/languages/distrib/classes_gen" />
     <mkdir dir="platform/buildlanguage/languages/distrib/source_gen.caches" />
@@ -874,7 +967,7 @@
       <zipfileset dir="platform/buildlanguage/languages/distrib/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.build.generictasks_i6a">
+  <target name="pack.jetbrains.mps.build.generictasks_j6a">
     <mkdir dir="platform/buildlanguage/languages/generictasks/classes" />
     <mkdir dir="platform/buildlanguage/languages/generictasks/classes_gen" />
     <mkdir dir="platform/buildlanguage/languages/generictasks/source_gen.caches" />
@@ -889,7 +982,7 @@
       <fileset dir="platform/buildlanguage/languages/generictasks/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.build.packaging_j6a">
+  <target name="pack.jetbrains.mps.build.packaging_k6a">
     <mkdir dir="platform/buildlanguage/languages/packaging/classes" />
     <mkdir dir="platform/buildlanguage/languages/packaging/classes_gen" />
     <mkdir dir="platform/buildlanguage/languages/packaging/source_gen.caches" />
@@ -904,7 +997,7 @@
       <fileset dir="platform/buildlanguage/languages/packaging/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.build.dependency_k6a">
+  <target name="pack.jetbrains.mps.build.dependency_l6a">
     <mkdir dir="platform/buildlanguage/languages/dependency/classes" />
     <mkdir dir="platform/buildlanguage/languages/dependency/classes_gen" />
     <mkdir dir="platform/buildlanguage/languages/dependency/source_gen.caches" />
@@ -916,7 +1009,7 @@
       <zipfileset dir="platform/buildlanguage/languages/dependency/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.build.property_l6a">
+  <target name="pack.jetbrains.mps.build.property_m6a">
     <mkdir dir="platform/buildlanguage/languages/property/classes" />
     <mkdir dir="platform/buildlanguage/languages/property/classes_gen" />
     <mkdir dir="platform/buildlanguage/languages/property/source_gen.caches" />
@@ -928,7 +1021,7 @@
       <zipfileset dir="platform/buildlanguage/languages/property/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.bash_m6a">
+  <target name="pack.jetbrains.mps.bash_n6a">
     <mkdir dir="platform/bash/languages/bash/classes_gen" />
     <mkdir dir="platform/bash/languages/bash/source_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.bash.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -938,7 +1031,7 @@
       <zipfileset dir="platform/bash/languages/bash/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.regexp_n6a">
+  <target name="pack.jetbrains.mps.baseLanguage.regexp_o6a">
     <mkdir dir="platform/regexp/classes" />
     <mkdir dir="platform/regexp/runtime/classes" />
     <mkdir dir="platform/regexp/classes_gen" />
@@ -955,7 +1048,7 @@
       <fileset dir="platform/regexp/runtime/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.regexp.examples_o6a">
+  <target name="pack.jetbrains.mps.baseLanguage.regexp.examples_p6a">
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/source_gen.caches" />
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/test_gen.caches" />
@@ -967,7 +1060,7 @@
       <zipfileset dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.methodExtension_p6a">
+  <target name="pack.jetbrains.mps.baseLanguage.methodExtension_q6a">
     <mkdir dir="platform/extensionMethod/classes" />
     <mkdir dir="platform/extensionMethod/source_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.methodExtension.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -980,7 +1073,7 @@
       <fileset dir="platform/extensionMethod/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.xml.deprecated_q6a">
+  <target name="pack.jetbrains.mps.xml.deprecated_r6a">
     <mkdir dir="platform/xmlDeprecated/classes" />
     <mkdir dir="platform/xmlDeprecated/classes_gen" />
     <mkdir dir="platform/xmlDeprecated/source_gen.caches" />
@@ -992,7 +1085,7 @@
       <zipfileset dir="platform/xmlDeprecated/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.quickQueryLanguage_r6a">
+  <target name="pack.jetbrains.mps.quickQueryLanguage_s6a">
     <mkdir dir="platform/quickQueryLanguage/classes" />
     <mkdir dir="platform/quickQueryLanguage/classes_gen" />
     <mkdir dir="platform/quickQueryLanguage/source_gen.caches" />
@@ -1004,7 +1097,7 @@
       <zipfileset dir="platform/quickQueryLanguage/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.xmlUnitTest_s6a">
+  <target name="pack.jetbrains.mps.xmlUnitTest_t6a">
     <mkdir dir="platform/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
     <mkdir dir="platform/xmlUnitTest/languages/xmlUnitTest/source_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.xmlUnitTest.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -1017,7 +1110,7 @@
       <fileset file="platform/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.gwt.client_t6a">
+  <target name="pack.jetbrains.mps.gwt.client_u6a">
     <mkdir dir="platform/gwtsupport/languages/client/classes_gen" />
     <mkdir dir="platform/gwtsupport/languages/client/source_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.gwt.client.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
