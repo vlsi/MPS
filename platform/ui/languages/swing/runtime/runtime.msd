@@ -4,7 +4,7 @@
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <classPath>
-    <entry path="/Volumes/Sparky/Development/MPS-workspace/MUFFIN/languages/swing/lib/swingx-1.6.jar" include="false" />
+    <entry path="${solution_descriptor}/../lib/swingx-1.6.jar" include="false" />
   </classPath>
   <sourcePath />
 </solution>
