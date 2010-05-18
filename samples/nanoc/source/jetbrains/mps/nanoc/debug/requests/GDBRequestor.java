@@ -2,8 +2,10 @@ package jetbrains.mps.nanoc.debug.requests;
 
 import jetbrains.mps.nanoc.debug.answer.GDBAnswer;
 import jetbrains.mps.nanoc.debug.answer.ResultAnswer;
+import jetbrains.mps.nanoc.debug.answer.StreamAnswer;
 
 import java.security.SecureRandom;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -35,5 +37,5 @@ public abstract class GDBRequestor {
 
   public abstract String createRequestString();
 
-  public abstract void onRequestFulfilled(ResultAnswer answer);
+  public abstract void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers);
 }

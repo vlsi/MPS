@@ -6,15 +6,13 @@ import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.nanoc.debug.CppDebugSession;
 import jetbrains.mps.nanoc.debug.CppDebugSession.DebugSessionAction;
-import jetbrains.mps.nanoc.debug.answer.GDBValue;
-import jetbrains.mps.nanoc.debug.answer.RecordValue;
-import jetbrains.mps.nanoc.debug.answer.ResultAnswer;
-import jetbrains.mps.nanoc.debug.answer.StringValue;
+import jetbrains.mps.nanoc.debug.answer.*;
 import jetbrains.mps.nanoc.debug.requests.BreakpointRequestor;
 import jetbrains.mps.nanoc.debug.requests.GDBRequestManager;
 import jetbrains.mps.nanoc.debug.requests.RemoveBreakpointRequestor;
 import jetbrains.mps.smodel.SNodePointer;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -58,7 +56,7 @@ public class GDBBreakpoint extends AbstractMPSBreakpoint {
   public void createBreakpointRequest(GDBRequestManager requestManager) {
     requestManager.createRequest(new BreakpointRequestor(getFileName(), getLineIndexInFile()) {
       @Override
-      public void onRequestFulfilled(ResultAnswer answer) {
+      public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
         myAdded = true;
         RecordValue bkptInfo = (RecordValue) answer.getResults().getPropertyValue(BKPT);
         StringValue numberValue = (StringValue) bkptInfo.getPropertyValue(NUMBER);
@@ -71,7 +69,7 @@ public class GDBBreakpoint extends AbstractMPSBreakpoint {
   public void createRemoveBreakpointRequest(GDBRequestManager requestManager) {
     requestManager.createRequest(new RemoveBreakpointRequestor(myInternalGDBNumber) {
       @Override
-      public void onRequestFulfilled(ResultAnswer answer) {
+      public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
         myAdded = false;
         myInternalGDBNumber = -1;
       }

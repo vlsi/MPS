@@ -6,12 +6,14 @@ import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.nanoc.debug.CppDebugSession;
 import jetbrains.mps.nanoc.debug.CppDebugSession.DebugSessionAction;
+import jetbrains.mps.nanoc.debug.answer.StreamAnswer;
 import jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint;
 import jetbrains.mps.nanoc.debug.events.GDBEventsAdapter;
 import jetbrains.mps.nanoc.debug.events.GDBEventsHandler;
 import jetbrains.mps.nanoc.debug.answer.ResultAnswer;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,19 +33,19 @@ public class GDBRequestManager {
     myEventsHandler = eventsHandler;
     myEventsHandler.addEventListener(new GDBEventsAdapter() {
       @Override
-      public void resultReceived(ResultAnswer result, SimpleConsoleProcessHandler gdbProcess) {
-        requestResultReceived(result);
+      public void resultReceived(ResultAnswer result, List<StreamAnswer> receivedStreamAnswers, SimpleConsoleProcessHandler gdbProcess) {
+        requestResultReceived(result, receivedStreamAnswers);
       }
     });
   }
 
-  private void requestResultReceived(ResultAnswer resultAnswer) {
+  private void requestResultReceived(ResultAnswer resultAnswer, List<StreamAnswer> receivedStreamAnswers) {
     Long token = resultAnswer.getDigitalToken();
-    GDBRequestor gdbRequestor = myRequestors.get(token);
+    GDBRequestor gdbRequestor = myRequestors.remove(token);
     if (gdbRequestor == null) {
       return;
     }
-    gdbRequestor.onRequestFulfilled(resultAnswer);
+    gdbRequestor.onRequestFulfilled(resultAnswer, receivedStreamAnswers);
   }
 
   public void createRequest(GDBRequestor requestor) {

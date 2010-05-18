@@ -5,11 +5,17 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
+import jetbrains.mps.nanoc.debug.answer.AsyncAnswer;
+import jetbrains.mps.nanoc.debug.answer.ResultAnswer;
+import jetbrains.mps.nanoc.debug.answer.StreamAnswer;
+import jetbrains.mps.nanoc.debug.events.GDBEventsAdapter;
 import jetbrains.mps.nanoc.debug.events.GDBEventsHandler;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.nanoc.debug.requests.GDBRequestManager;
+import jetbrains.mps.nanoc.debug.requests.StackInfoRequest;
 import jetbrains.mps.smodel.IOperationContext;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -70,6 +76,18 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
     super.setProcessHandler(processHandler);
     myEventsHandler = new GDBEventsHandler((SimpleConsoleProcessHandler) processHandler);
     myRequestManager = new GDBRequestManager(myEventsHandler, getProject().getComponent(BreakpointManagerComponent.class));
+    myEventsHandler.addEventListener(new GDBEventsAdapter() {
+      @Override
+      public void breakpointHit(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess) {
+        StackInfoRequest request = new StackInfoRequest() {
+          @Override
+          public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
+            System.err.println("");
+          }
+        };
+        myRequestManager.createRequest(request);
+      }
+    });
   }
 
   public GDBEventsHandler getGDBEventsHandler() {

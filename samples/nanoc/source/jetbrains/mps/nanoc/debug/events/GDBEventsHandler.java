@@ -23,6 +23,8 @@ public class GDBEventsHandler {
   public static final String REASON_BP_HIT = "breakpoint-hit";
   public static final String REASON_EXITED_NORMALLY = "exited-normally";
 
+  private List<StreamAnswer> myPendingStreamAnswers = new ArrayList<StreamAnswer>();
+
   public GDBEventsHandler(SimpleConsoleProcessHandler gdbProcess) {
     myProcessHandler = gdbProcess;
     myProcessHandler.addProcessListener(new ProcessAdapter() {
@@ -52,9 +54,16 @@ public class GDBEventsHandler {
           }
         }
 
+        if (gdbAnswer instanceof StreamAnswer) {
+          StreamAnswer streamAnswer = (StreamAnswer) gdbAnswer;
+          myPendingStreamAnswers.add(streamAnswer);
+        }
+
         if (gdbAnswer instanceof ResultAnswer) {
           ResultAnswer resultAnswer = (ResultAnswer) gdbAnswer;
-          fireResultReceived(resultAnswer);
+          List<StreamAnswer> receivedStreamAnswers = new ArrayList<StreamAnswer>(myPendingStreamAnswers);
+          myPendingStreamAnswers.clear();
+          fireResultReceived(resultAnswer, receivedStreamAnswers);
           return;
         }
       }
@@ -78,9 +87,9 @@ public class GDBEventsHandler {
     }
   }
 
-  private void fireResultReceived(ResultAnswer gdbAnswer) {
+  private void fireResultReceived(ResultAnswer gdbAnswer, List<StreamAnswer> receivedStreamAnswers) {
     for (GDBEventsListener listener : getEventsListeners()) {
-      listener.resultReceived(gdbAnswer, myProcessHandler);
+      listener.resultReceived(gdbAnswer, receivedStreamAnswers, myProcessHandler);
     }
   }
 

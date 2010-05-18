@@ -26,6 +26,7 @@ import jetbrains.mps.nanoc.plugin.NanocConfigRunPreparationUtil;
 
 import javax.swing.JComponent;
 import java.io.File;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -125,7 +126,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
           //   gdbProcess.inputWithFlush("-gdb-set new-console off\n");
           myDebugSession.getGDBRequestManager().createRequest(new BreakpointRequestor("main") {
             @Override
-            public void onRequestFulfilled(ResultAnswer answer) {
+            public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
               final GDBEventsHandler eventsHandler = myDebugSession.getGDBEventsHandler();
               eventsHandler.addEventListener(new GDBEventsAdapter() {
                 @Override
