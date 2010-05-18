@@ -45,7 +45,7 @@ public interface DependenciesBuilder {
 
     @Override
     public GenerationDependencies getResult() {
-      return new GenerationDependencies();
+      return null;
     }
   }
 }

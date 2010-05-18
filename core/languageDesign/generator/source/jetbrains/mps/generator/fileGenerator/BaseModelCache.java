@@ -56,6 +56,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
     myFileGeneratorManager.addCachesGenerator(new CacheGenerator() {
       public File generateCache(CacheGenerationContext context) {
         T cache = BaseModelCache.this.generateCache(context);
+        if(cache == null) return null;
 
         SModelDescriptor model = context.getOriginalInputModel();
 
