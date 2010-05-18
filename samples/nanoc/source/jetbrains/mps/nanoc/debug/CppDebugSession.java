@@ -1,6 +1,7 @@
 package jetbrains.mps.nanoc.debug;
 
 import com.intellij.execution.process.ProcessHandler;
+import com.intellij.execution.ui.layout.impl.TabImpl.Default;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
@@ -11,6 +12,7 @@ import jetbrains.mps.nanoc.debug.answer.StreamAnswer;
 import jetbrains.mps.nanoc.debug.events.GDBEventsAdapter;
 import jetbrains.mps.nanoc.debug.events.GDBEventsHandler;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
+import jetbrains.mps.nanoc.debug.programState.DefaultThread;
 import jetbrains.mps.nanoc.debug.requests.GDBRequestManager;
 import jetbrains.mps.nanoc.debug.requests.StackInfoRequest;
 import jetbrains.mps.smodel.IOperationContext;
@@ -76,18 +78,26 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
     super.setProcessHandler(processHandler);
     myEventsHandler = new GDBEventsHandler((SimpleConsoleProcessHandler) processHandler);
     myRequestManager = new GDBRequestManager(myEventsHandler, getProject().getComponent(BreakpointManagerComponent.class));
+  }
+
+  void setupBreakpointListener() {
     myEventsHandler.addEventListener(new GDBEventsAdapter() {
       @Override
       public void breakpointHit(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess) {
         StackInfoRequest request = new StackInfoRequest() {
           @Override
           public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
-            System.err.println("");
+            processStackOnPause(answer);
           }
         };
         myRequestManager.createRequest(request);
       }
     });
+  }
+
+  private void processStackOnPause(ResultAnswer resultAnswer) {
+    DefaultThread defaultThread = new DefaultThread(resultAnswer);
+    defaultThread.getFramesCount();
   }
 
   public GDBEventsHandler getGDBEventsHandler() {

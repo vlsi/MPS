@@ -1,6 +1,11 @@
 package jetbrains.mps.nanoc.debug.answer;
 
+import jetbrains.mps.util.Pair;
+
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,13 +15,18 @@ import java.util.LinkedHashMap;
  * To change this template use File | Settings | File Templates.
  */
 public class ListMapValue extends GDBValue {
-  private LinkedHashMap<String, GDBValue> myMap = new LinkedHashMap<String, GDBValue>();
+  private List<Pair<String, GDBValue>> myList = new ArrayList<Pair<String, GDBValue>>();
 
-  public void putProperty(String key, GDBValue value) {
-    myMap.put(key, value);
+  public void addProperty(String key, GDBValue value) {
+    myList.add(new Pair<String, GDBValue>(key, value));
   }
 
-  public GDBValue getPropertyValue(String key) {
-    return myMap.get(key);
+  public List<GDBValue> getValues() {
+    List<GDBValue> result = new ArrayList<GDBValue>();
+    for (Pair<String, GDBValue> entry : myList) {
+      result.add(entry.o2);
+    }
+    return result;
   }
+
 }

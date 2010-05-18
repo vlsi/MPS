@@ -11,9 +11,7 @@ import jetbrains.mps.util.Pair;
  */
 public class GDBAnswerProducer {
   public static final String SAMPLE_STRING =
-    "*stopped,reason=\"breakpoint-hit\",bkptno=\"1\"" +
-      ",thread-id=\"1\",frame={addr=\"0x004013b5\",func=\"main\"" +
-      ",args=[],file=\"C:/MPS/core/kernel/debug/debugProject/resource/hello.cpp\",line=\"3\"}\r\n";
+    "7529668209268105118^done,stack=[frame={level=\"0 \",addr=\"0x004012c1\",func=\"main\",file=\"C:/MPS/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/source_gen/jetbrains/mps/nanoc/sandbox/hello/Hello.c\",line=\"3\"}]\r\n";
 
   private String myInput;
   private GDBAnswer myGDBAnswer;
@@ -79,9 +77,8 @@ public class GDBAnswerProducer {
     if (Character.isDigit(c)) {
       token = readToken();
       c = currentChar();
-    } else {
-      myOffset++;
     }
+    myOffset++;
 
 
     if (c == '*' || c == '+' || c == '=') {
@@ -203,27 +200,26 @@ public class GDBAnswerProducer {
     boolean isMap = first instanceof Pair;
     if (isMap) {
       ListMapValue listMapValue = new ListMapValue();
-      Pair<String, GDBValue> pair = (Pair<String, GDBValue>) first;
-      listMapValue.putProperty(pair.o1, pair.o2);
+      Pair<String, GDBValue> result = (Pair<String, GDBValue>) first;
       while (true) {
-        Pair<String, GDBValue> result = readResult();
         if (currentChar() == ',') {
-          listMapValue.putProperty(result.o1, result.o2);
+          listMapValue.addProperty(result.o1, result.o2);
           myOffset++;
         } else if (currentChar() == ']') {
-          listMapValue.putProperty(result.o1, result.o2);
+          listMapValue.addProperty(result.o1, result.o2);
           myOffset++;
           return listMapValue;
         } else {
           error("");
           return null;
         }
+        result = readResult();
       }
     } else {
       ListValue listValue = new ListValue();
+      GDBValue value = (GDBValue) listValue;
       listValue.add((GDBValue) first);
       while (true) {
-        GDBValue value = readValue();
         if (currentChar() == ',') {
           listValue.add(value);
           myOffset++;
@@ -235,6 +231,7 @@ public class GDBAnswerProducer {
           error("");
           return null;
         }
+        value = readValue();
       }
     }
   }

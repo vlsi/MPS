@@ -20,4 +20,25 @@ public class RecordValue extends GDBValue {
   public GDBValue getPropertyValue(String propertyName) {
     return myMap.get(propertyName);
   }
+
+  public String getStringValue(String propertyName) {
+    GDBValue value = myMap.get(propertyName);
+    if (value instanceof StringValue) {
+      return ((StringValue)value).getString();
+    }
+    return null;
+  }
+
+  public Integer getIntegerValue(String propertyName) {
+    String stringValue = getStringValue(propertyName);
+    if (stringValue != null) {
+      try {
+        Integer result = Integer.parseInt(stringValue);
+        return result;
+      } catch (NumberFormatException ex) {
+        return null;
+      }
+    }
+    return null;
+  }
 }

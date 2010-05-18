@@ -108,6 +108,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
   private void connectedToDebuggee(SimpleConsoleProcessHandler gdbProcess) {
     //here we get some info about debuggee process and then resume it
     myDebugSession.getGDBRequestManager().createBreakpointRequests();
+    myDebugSession.setupBreakpointListener();
     gdbProcess.inputWithFlush("-exec-continue\n");
   }
 

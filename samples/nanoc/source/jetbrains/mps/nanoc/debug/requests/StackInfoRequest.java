@@ -10,7 +10,8 @@ package jetbrains.mps.nanoc.debug.requests;
 public abstract class StackInfoRequest extends GDBRequestor {
   @Override
   public String createRequestString() {
-    return "-stack-list-locals 2";
+   // return "-stack-list-locals 2";
+   return "-stack-list-frames";
     // return "-stack-info-frame";
   }
 }

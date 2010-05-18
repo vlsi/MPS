@@ -12,6 +12,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="runConfigurations" />
+    <orderEntry type="module" module-name="debug" />
   </component>
 </module>
 
