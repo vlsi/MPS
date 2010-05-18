@@ -235,10 +235,6 @@ public class DevKit extends AbstractModule implements MPSModuleOwner{
     DevkitDescriptorPersistence.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
   }
 
-  public void onModuleLoad() {
-    super.onModuleLoad();
-  }
-
   public String getName() {
     return myDescriptor.getNamespace();
   }
