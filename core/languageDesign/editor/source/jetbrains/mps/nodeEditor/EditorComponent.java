@@ -1107,6 +1107,19 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myDisposed;
   }
 
+  /**
+   * Can be used to check if editor is in vadid state or not.
+   * Editor can be in invalid state then corresponding model
+   * was reloaded, but current editor instance was not
+   * updated yet.
+   */
+  private boolean isInvalid() {
+    return getEditorContext() == null ||
+      getEditedNode() == null ||
+      getEditedNode().getModel() == null ||
+      getEditedNode().getModel().getModelDescriptor() == null;
+  }
+
   private void addOurListeners(@NotNull SModelDescriptor sm) {
     myEventsCollector.add(sm);
     sm.addModelListener(mySimpleModelListener);
@@ -3104,8 +3117,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public boolean isCutEnabled(DataContext dataContext) {
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
-          if (getEditorContext() == null) return false;
-          if (getSelectedCell() == null) return false;
+          if (isDisposed() || isInvalid() || getSelectedCell() == null) {
+            return false;
+          }
           return getSelectedCell().canExecuteAction(CellActionType.CUT);
         }
       });
@@ -3130,8 +3144,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public boolean isCopyEnabled(DataContext dataContext) {
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
-          if (getEditorContext() == null) return false;
-          if (getSelectedCell() == null) return false;
+          if (isDisposed() || isInvalid() || getSelectedCell() == null) {
+            return false;
+          }
           return getSelectedCell().canExecuteAction(CellActionType.COPY);
         }
       });
@@ -3156,9 +3171,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public boolean isPastePossible(DataContext dataContext) {
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
-          if (isDisposed() || getEditedNode() == null || getEditorContext() == null) return false;
-          if (getSelectedCell() == null) return false;
-          if (getEditorContext().getModel().isNotEditable()) {
+          if (isDisposed() || isInvalid() || getSelectedCell() == null || getEditorContext().getModel().isNotEditable()) {
             return false;
           }
           return getSelectedCell().canExecuteAction(CellActionType.PASTE);
