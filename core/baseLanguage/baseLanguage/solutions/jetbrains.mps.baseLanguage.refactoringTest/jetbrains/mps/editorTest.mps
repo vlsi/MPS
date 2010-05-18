@@ -8891,6 +8891,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="7011073693661692260">
     <property name="name:4" value="SimpleUndoTest" />
+    <property name="package:4" value="undoRedo" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="7011073693661757279">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7011073693661757280">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7011073693661765721">
@@ -8932,6 +8933,64 @@
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="1101347953350160320">
         <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="1205677679168463006">
           <property name="actionId:4" value="$Undo" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1205677679168513015">
+    <property name="package:4" value="undoRedo" />
+    <property name="name:4" value="SimpleRedoTest" />
+    <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1205677679168513017">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1205677679168513018">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1205677679168513025">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1205677679168513026">
+            <property name="name:3" value="i" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1205677679168513027" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1205677679168513029">
+              <property name="value:3" value="0" />
+            </node>
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1205677679168513031">
+              <property name="isLastPosition:4" value="true" />
+              <property name="useLabelSelection:4" value="true" />
+              <property name="selectionStart:4" value="1" />
+              <property name="selectionEnd:4" value="1" />
+              <property name="cellId:4" value="Constant_i0gfbw_a4a" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1205677679168513023">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1205677679168513024">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1205677679168513032">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1205677679168513033">
+            <property name="name:3" value="i" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1205677679168513034" />
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1205677679168513040">
+              <property name="isLastPosition:4" value="true" />
+              <property name="useLabelSelection:4" value="true" />
+              <property name="selectionStart:4" value="1" />
+              <property name="selectionEnd:4" value="1" />
+              <property name="cellId:4" value="property_name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1205677679168513037">
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="1205677679168513038">
+        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="1205677679168513039">
+          <property name="keycode:23" value="VK_BACK_SPACE" />
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="1205677679168513042">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="1205677679168513043">
+          <property name="actionId:4" value="$Undo" />
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="1205677679168513045">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="1205677679168513046">
+          <property name="actionId:4" value="$Redo" />
         </node>
       </node>
     </node>
