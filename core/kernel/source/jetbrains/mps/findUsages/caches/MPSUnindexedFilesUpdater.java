@@ -65,18 +65,19 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
   }
 
   private static void iterateRecursively(final VirtualFile root, final ContentIterator processor, ProgressIndicator indicator) {
-    if (root != null) {
-      if (indicator != null) {
-        indicator.setText("Scanning files to index");
-        indicator.setText2(root.getPresentableUrl());
-      }
+    if (root == null) return;
+    if (!CacheUtil.checkFile(root)) return;
 
-      for (VirtualFile file : root.getChildren()) {
-        if (file.isDirectory()) {
-          iterateRecursively(file, processor, indicator);
-        } else {
-          processor.processFile(file);
-        }
+    if (indicator != null) {
+      indicator.setText("Scanning files to index");
+      indicator.setText2(root.getPresentableUrl());
+    }
+
+    for (VirtualFile file : root.getChildren()) {
+      if (file.isDirectory()) {
+        iterateRecursively(file, processor, indicator);
+      } else {
+        processor.processFile(file);
       }
     }
   }

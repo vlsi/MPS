@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.findUsages.caches;
 
+import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
@@ -43,5 +44,11 @@ class CacheUtil {
     }
 
     return files;
+  }
+
+  public static boolean checkFile(VirtualFile file) {
+    if (FileTypeManager.getInstance().isFileIgnored(file.getName())) return false;
+    if (!file.isInLocalFileSystem()) return false;
+    return true;
   }
 }

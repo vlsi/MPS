@@ -78,8 +78,28 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
   }
 
   public boolean isInSet(VirtualFile file) {
-    if (!file.isInLocalFileSystem()) return false;
+    return (CacheUtil.checkFile(file) && checkUnderModule(file));
+  }
 
+  public void iterateIndexableFilesIn(VirtualFile file, ContentIterator iterator) {
+    if (!isInSet(file)) return;
+    iterateIndexableFilesIn_internal(file, iterator);
+  }
+
+  public void iterateIndexableFilesIn_internal(VirtualFile file, ContentIterator iterator) {
+    if (!CacheUtil.checkFile(file)) return;
+
+    if (file.isDirectory()) {
+      for (VirtualFile child : file.getChildren()) {
+        iterateIndexableFilesIn_internal(child, iterator);
+      }
+    } else {
+      iterator.processFile(file);
+    }
+  }
+
+  private boolean checkUnderModule(VirtualFile file) {
+    //todo make this compute once or incrementally
     Set<VirtualFile> files = ModelAccess.instance().runReadAction(new Computable<Set<VirtualFile>>() {
       public Set<VirtualFile> compute() {
         return CacheUtil.getIndexableRoots();
@@ -91,17 +111,5 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
       }
     }
     return false;
-  }
-
-  public void iterateIndexableFilesIn(VirtualFile file, ContentIterator iterator) {
-    if (!isInSet(file)) return;
-
-    if (file.isDirectory()) {
-      for (VirtualFile child : file.getChildren()) {
-        iterateIndexableFilesIn(child, iterator);
-      }
-    } else {
-      iterator.processFile(file);
-    }
   }
 }
