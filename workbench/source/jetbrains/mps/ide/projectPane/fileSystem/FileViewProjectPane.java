@@ -208,11 +208,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
 
   public void projectOpened() {
     rebuildTreeLater();
-    StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
-      public void run() {
-        myProjectView.addProjectPane(FileViewProjectPane.this);
-      }
-    });
   }
 
   public void dispose() {

@@ -79,11 +79,6 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     };
     myFavoritesManager.addListener(myFavoritesListener);
     getTree().rebuildLater();
-    StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
-      public void run() {
-        myProjectView.addProjectPane(FavoritesProjectPane.this);
-      }
-    });
   }
 
   public void rebuild() {
