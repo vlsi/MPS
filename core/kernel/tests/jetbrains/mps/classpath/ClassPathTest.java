@@ -43,7 +43,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
-import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -92,7 +91,7 @@ public class ClassPathTest extends BaseMPSTest {
     final MPSProject project = loadProject(MPS_CORE_PROJECT);
     assertNotNull("Can't open project " + MPS_CORE_PROJECT, project);
     waitForEDTTasksToComplete();
-    
+
     final MultiMap<String, LoadEnvironment> loadedClasses = new MultiMap<String, LoadEnvironment>();
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -107,13 +106,8 @@ public class ClassPathTest extends BaseMPSTest {
           List<ClassPathEntry> classPaths = m.getModuleDescriptor().getClassPaths();
           for (ClassPathEntry classPath : classPaths) {
             String path = classPath.getPath();
-            IClassPathItem pathItem = null;
-            try {
-              pathItem = ClassPathFactory.getInstance().createFromPath(path, null);
-            } catch (IOException e) {
-              LOG.error(e.getMessage());
-              continue;
-            }
+            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path);
+            if (pathItem == null) continue;
 
             // do not check libs
             if (pathItem instanceof JarFileClassPathItem) continue;

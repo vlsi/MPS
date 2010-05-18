@@ -57,7 +57,7 @@ public class ClassPathFactory {
     try {
       return createFromPath(path, null);
     } catch (IOException e) {
-      LOG.error("Can't find classpath " + path, e);
+      LOG.error("Can't find classpath " + path);
       return null;
     }
   }
