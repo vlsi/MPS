@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.command.undo.UndoableAction;
 import com.intellij.openapi.project.Project;
@@ -31,6 +32,10 @@ public class UndoUtil {
     // The method is called very often, so getting data from DataContext
     // seems to be too time-consuming to use here
     Project project = PerCommandData.getInstance().getProjectAtCurrentCommandStart();
+    if (project == null) {
+      // Trying to get project from CommandProcessor - necessary for unit-test mode
+      project = CommandProcessor.getInstance().getCurrentCommandProject();
+    }
     if (project == null) return;
 
     UndoManager undoManager = UndoManager.getInstance(project);

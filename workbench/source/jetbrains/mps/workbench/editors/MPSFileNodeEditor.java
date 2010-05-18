@@ -17,6 +17,8 @@ package jetbrains.mps.workbench.editors;
 
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.ide.structureView.StructureViewBuilder;
+import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.impl.DocumentReferenceManagerImpl;
 import com.intellij.openapi.editor.Document;
@@ -47,7 +49,7 @@ import java.util.List;
 
 public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor, DocumentsEditor {
   private IEditor myNodeEditor;
-  private JPanel myComponent = new JPanel(new BorderLayout());
+  private JPanel myComponent = new MPSFileNodeEditorComponent();
   private Project myProject;
   private MPSNodeVirtualFile myFile;
   private IOperationContext myContext;
@@ -247,6 +249,26 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
     IOperationContext result = new ModuleContext(sm.getModule(), myProject);
     assert result.getModule() == sm.getModule() : "Different modules: " + result.getModule() + "/" + sm.getModule();
     return result;
+  }
+
+  private class MPSFileNodeEditorComponent extends JPanel implements DataProvider {
+
+    private MPSFileNodeEditorComponent() {
+      super(new BorderLayout());
+    }
+
+    @Override
+    public Object getData(@NonNls String dataId) {
+      if (getParent() == null) {
+        if (dataId.equals(PlatformDataKeys.FILE_EDITOR.getName())) {
+          return MPSFileNodeEditor.this;
+        }
+        if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
+          return myProject;
+        }
+      }
+      return null;
+    }
   }
 
 }

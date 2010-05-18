@@ -8889,5 +8889,52 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="7011073693661692260">
+    <property name="name:4" value="SimpleUndoTest" />
+    <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="7011073693661757279">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7011073693661757280">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7011073693661765721">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7011073693661765722">
+            <property name="name:3" value="i" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="7011073693661765723" />
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="7011073693661765731">
+              <property name="isLastPosition:4" value="true" />
+              <property name="useLabelSelection:4" value="true" />
+              <property name="selectionStart:4" value="1" />
+              <property name="selectionEnd:4" value="1" />
+              <property name="cellId:4" value="property_name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="7011073693661765725">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7011073693661765726">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7011073693661765727">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7011073693661765728">
+            <property name="name:3" value="i" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="7011073693661765729" />
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="7011073693661765735">
+              <property name="isLastPosition:4" value="true" />
+              <property name="useLabelSelection:4" value="true" />
+              <property name="selectionStart:4" value="1" />
+              <property name="selectionEnd:4" value="1" />
+              <property name="cellId:4" value="property_name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7011073693661765736">
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.TypeKeyStatement:4" id="7011073693661765737">
+        <property name="keys:4" value="=" />
+      </node>
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="1101347953350160320">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="1205677679168463006">
+          <property name="actionId:4" value="$Undo" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

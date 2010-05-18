@@ -33,10 +33,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="7" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <import index="7" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1210673785657">
     <link role="conceptDeclaration:32" targetNodeId="1.1210673684636:4" resolveInfo="TestNodeAnnotation" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1210673789911">
@@ -1061,6 +1062,92 @@
         <link role="relationDeclaration:32" targetNodeId="1.5097124989038916363:4" resolveInfo="projectPath" />
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="5097124989038916368" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1101347953350099232">
+    <property name="package:32" value="editor" />
+    <link role="conceptDeclaration:32" targetNodeId="1.7011073693661765739:4" resolveInfo="InvokeActionStatement" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1101347953350099234">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="1101347953350099238">
+        <link role="relationDeclaration:32" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
+        <link role="styleClass:32" targetNodeId="1227190782920" resolveInfo="EditorOperation" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1101347953350127929">
+        <link role="relationDeclaration:32" targetNodeId="1.1101347953350127927:4" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1101347953350099236" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1101347953350138824">
+    <property name="package:32" value="actions" />
+    <link role="conceptDeclaration:32" targetNodeId="1.1101347953350122758:4" resolveInfo="BootstrapActionReference" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1101347953350138826">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1205677679168424445">
+        <property name="text:32" value="by id:" />
+        <link role="styleClass:32" targetNodeId="1227190782920" resolveInfo="EditorOperation" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1205677679168449735">
+          <property name="flag:32" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1101347953350138833">
+        <link role="relationDeclaration:32" targetNodeId="1.1101347953350127918:4" resolveInfo="actionId" />
+        <node role="menuDescriptor:32" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor:32" id="1101347953350138838">
+          <node role="cellMenuPart:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues:32" id="1101347953350138839">
+            <node role="valuesFunction:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues:32" id="1101347953350138840">
+              <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1101347953350138841">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="1101347953350241948">
+                  <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.StatementCommentPart:3" id="1101347953350241949">
+                    <node role="commentedStatement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1101347953350138842">
+                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1101347953350138843">
+                        <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="1101347953350139784">
+                          <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1101347953350139786">
+                            <property name="value:3" value="$Undo" />
+                          </node>
+                          <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1101347953350142744" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1101347953350240463">
+                  <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1101347953350240464">
+                    <property name="name:3" value="result" />
+                    <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1101347953350240465">
+                      <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1101347953350240467" />
+                    </node>
+                    <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1101347953350240469">
+                      <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="1101347953350240470">
+                        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1101347953350240471" />
+                        <node role="copyFrom:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1101347953350241944">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1101347953350241945">
+                            <link role="classConcept:3" targetNodeId="7.~ActionManager" resolveInfo="ActionManager" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="7.~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolveInfo="getInstance" />
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1101347953350241946">
+                            <link role="baseMethodDeclaration:3" targetNodeId="7.~ActionManager.getActionIds(java.lang.String):java.lang.String[]" resolveInfo="getActionIds" />
+                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1101347953350241947">
+                              <property name="value:3" value="" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1101347953350240473">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1101347953350240475">
+                    <link role="variableDeclaration:3" targetNodeId="1101347953350240464" resolveInfo="result" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="1101347953350186997">
+          <property name="color:32" value="blue" />
+        </node>
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1101347953350138828" />
     </node>
   </node>
 </model>

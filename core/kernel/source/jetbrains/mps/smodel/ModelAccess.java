@@ -295,9 +295,17 @@ public class ModelAccess {
     return runWriteActionInCommand(c, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
+  public <T> T runWriteActionInCommand(final Computable<T> c, Project project) {
+    return runWriteActionInCommand(c, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, project);
+  }
+
   public <T> T runWriteActionInCommand(final Computable<T> c, final String name, final UndoConfirmationPolicy policy) {
+    return runWriteActionInCommand(c, name, policy, null);
+  }
+
+  public <T> T runWriteActionInCommand(final Computable<T> c, final String name, final UndoConfirmationPolicy policy, Project project) {
     final Object[] result = new Object[1];
-    CommandProcessor.getInstance().executeCommand(null, new Runnable() {
+    CommandProcessor.getInstance().executeCommand(project, new Runnable() {
       public void run() {
         result[0] = new CommandComputable(c).compute();
       }
@@ -309,8 +317,16 @@ public class ModelAccess {
     runWriteActionInCommand(r, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
+  public void runWriteActionInCommand(final Runnable r, Project project) {
+    runWriteActionInCommand(r, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, project);
+  }
+
   public void runWriteActionInCommand(final Runnable r, String name, UndoConfirmationPolicy policy) {
     CommandProcessor.getInstance().executeCommand(null, new CommandRunnable(r), name, null, policy);
+  }
+
+  public void runWriteActionInCommand(final Runnable r, String name, UndoConfirmationPolicy policy, Project project) {
+    CommandProcessor.getInstance().executeCommand(project, new CommandRunnable(r), name, null, policy);
   }
 
   public void runWriteActionInCommandAsync(final Runnable r) {

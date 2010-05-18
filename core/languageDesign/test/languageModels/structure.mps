@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="4">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="AbstractNodeAssert" conceptFQName="jetbrains.mps.transformationTest.structure.AbstractNodeAssert" featureKind="CONCEPT" />
@@ -698,6 +699,38 @@
     <link role="extends:0" targetNodeId="5.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="5097124989038916363">
       <property name="name:0" value="projectPath" />
+      <link role="dataType:0" targetNodeId="5.1082983041843:0" resolveInfo="string" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7011073693661765739">
+    <property name="package:0" value="editor" />
+    <property name="name:0" value="InvokeActionStatement" />
+    <link role="extends:0" targetNodeId="7.1068580123157:3" resolveInfo="Statement" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1101347953350127927">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="actionReference" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1101347953350122484:4" resolveInfo="ActionReference" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7011073693661765740">
+      <property name="value:0" value="invoke action" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1101347953350122484">
+    <property name="name:0" value="ActionReference" />
+    <property name="package:0" value="actions" />
+    <link role="extends:0" targetNodeId="5.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1101347953350122757">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473854053:0" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1101347953350122758">
+    <property name="package:0" value="actions" />
+    <property name="name:0" value="BootstrapActionReference" />
+    <link role="extends:0" targetNodeId="1101347953350122484:4" resolveInfo="ActionReference" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1101347953350127918">
+      <property name="name:0" value="actionId" />
       <link role="dataType:0" targetNodeId="5.1082983041843:0" resolveInfo="string" />
     </node>
   </node>

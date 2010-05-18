@@ -2253,7 +2253,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         public void run() {
           r.run();
         }
-      });
+      }, getCurrentProject());
     } finally {
       myInsideOfCommand = false;
     }
@@ -2264,10 +2264,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   <T> T executeCommand(final Computable<T> c) {
     myInsideOfCommand = true;
     try {
-      return ModelAccess.instance().runWriteActionInCommand(c);
+      return ModelAccess.instance().runWriteActionInCommand(c, getCurrentProject());
     } finally {
       myInsideOfCommand = false;
     }
+  }
+
+  private Project getCurrentProject() {
+    if (getEditorContext() == null || getEditorContext().getOperationContext() == null) {
+      return null;
+    }
+    return getEditorContext().getOperationContext().getProject();
   }
 
   boolean isForcedFocusChangeEnabled() {
