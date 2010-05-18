@@ -216,6 +216,14 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myKeepModelsWithWarnings = keepModelsWithWarnings;
   }
 
+  public boolean isGenerateDependencies() {
+    return myState.myGenerateDependencies;
+  }
+
+  public void setGenerateDependencies(boolean generateDependencies) {
+    myState.myGenerateDependencies = generateDependencies;
+  }
+
   public static class MyState {
     private boolean mySaveTransientModels;
     private boolean myShowErrorsOnly;
@@ -229,6 +237,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     private boolean myShowInfo = false;
     private boolean myShowWarnings = true;
     private boolean myKeepModelsWithWarnings = true;
+    private boolean myGenerateDependencies = false;
 
     public int getNumberOfModelsToKeep() {
       return myNumberOfModelsToKeep;
@@ -324,6 +333,14 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
     public void setPerformanceTracingLevel(int performanceTracingLevel) {
       myPerformanceTracingLevel = performanceTracingLevel;
+    }
+
+    public boolean isGenerateDependencies() {
+      return myGenerateDependencies;
+    }
+
+    public void setGenerateDependencies(boolean generateDependencies) {
+      myGenerateDependencies = generateDependencies;
     }
   }
 }

@@ -17,8 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
-import jetbrains.mps.generator.dependencies.DependenciesData;
-import jetbrains.mps.generator.dependencies.DependenciesListener;
+import jetbrains.mps.generator.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.template.*;
@@ -67,23 +66,23 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   
   private final IGenerationTracer myGenerationTracer;
   private IPerformanceTracer ttrace;
-  private DependenciesData myDependenciesData;
+  private DependenciesBuilder myDependenciesBuilder;
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
                            IGeneratorLogger logger, RuleManager ruleManager,
                            SModel inputModel, SModel outputModel, GenerationProcessContext generationContext,
-                           DependenciesData dependenciesData, IPerformanceTracer performance) {
+                           DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {
 
     super(operationContext, progressMonitor, logger, inputModel, outputModel);
     myRuleManager = ruleManager;
     myGenerationTracer = getGeneratorSessionContext().getGenerationTracer();
     myIsStrict = generationContext.isStrictMode();
     myDelayedChanges = new DelayedChanges(this);
-    myDependenciesData = dependenciesData;
-    ttrace = performance;
+    myDependenciesBuilder = dependenciesBuilder;
+    ttrace = performanceTracer;
     myOutputRoots = new ArrayList<SNode>();
     myExecutor = generationContext.getTracingMode() >= GenerationSettings.TRACE_LANGS
-      ? new TraceableQueryExecutor(new QueryExecutor(this), performance)
+      ? new TraceableQueryExecutor(new QueryExecutor(this), performanceTracer)
       : new QueryExecutor(this);
 
   }
@@ -225,7 +224,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     throws GenerationFailureException, GenerationCanceledException {
 
     try {
-      List<SNode> outputNodes = new TemplateProcessor(this, new ReductionContext(executor)).processTemplateNode(mappingName, templateNode, new TemplateContext(inputNode, executor));
+      List<SNode> outputNodes = new TemplateProcessor(this, new ReductionContext(executor)).processTemplateNode(mappingName, templateNode, new TemplateContext(inputNode));
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, inputNode, templateNode, false);
         setChanged();
@@ -293,7 +292,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
    * Unsynchronized
    */
   IQueryExecutor getExecutorForNode(SNode inputNode) {
-    final INodesReadListener listener = myDependenciesData.getListener(inputNode);
+    final INodesReadListener listener = myDependenciesBuilder.getListener(inputNode);
     if(listener != null) {
       IQueryExecutor value;
       if(myExecutorsMap == null) {
@@ -406,7 +405,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no rule consequence");
       return null;
     }
-    TemplateContext conseqContext = GeneratorUtil.createTemplateContext(inputNode, pattern == null ? null : new TemplateContext(pattern, null, inputNode, reductionContext.getExecutor()), reductionContext, ruleConsequence, inputNode, this);
+    TemplateContext conseqContext = GeneratorUtil.createTemplateContext(inputNode, pattern == null ? null : new TemplateContext(pattern, null, inputNode), reductionContext, ruleConsequence, inputNode, this);
 
     List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(ruleConsequence, inputNode, rule.getNode(), reductionContext, this);
     if (nodeAndMappingNamePairs == null) {
@@ -655,7 +654,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     synchronized (this) {
       registerInModel(outputRoot, inputNode, templateNode);
       myNewToOldRoot.put(outputRoot, inputNode);
-      myDependenciesData.registerRoot(outputRoot, inputNode);
+      myDependenciesBuilder.registerRoot(outputRoot, inputNode);
       if (isCopied) {
         getGeneratorSessionContext().registerCopiedRoot(outputRoot);
       }

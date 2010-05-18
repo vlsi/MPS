@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -31,21 +32,21 @@ import java.util.List;
  */
 public class InputQueryUtil {
 
-  public static List<SNode> getNewInputNodes(NodeMacro nodeMacro, SNode currentInputNode, @NotNull TemplateContext context) throws GenerationFailureException {
+  public static List<SNode> getNewInputNodes(NodeMacro nodeMacro, SNode currentInputNode, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
     try {
       if (nodeMacro instanceof LoopMacro) {
-        return getNewInputNodes(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((LoopMacro) nodeMacro).getSourceNodesQuery(), context);
+        return getNewInputNodes(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((LoopMacro) nodeMacro).getSourceNodesQuery(), context, reductionContext);
       } else if (nodeMacro instanceof CopySrcListMacro) {
-        return getNewInputNodes(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcListMacro) nodeMacro).getSourceNodesQuery(), context);
+        return getNewInputNodes(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcListMacro) nodeMacro).getSourceNodesQuery(), context, reductionContext);
       } else if (nodeMacro instanceof MapSrcListMacro) {
-        return getNewInputNodes(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcListMacro) nodeMacro).getSourceNodesQuery(), context);
+        return getNewInputNodes(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcListMacro) nodeMacro).getSourceNodesQuery(), context, reductionContext);
       }
 
       if (nodeMacro instanceof CopySrcNodeMacro) {
-        SNode newInputNode = getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcNodeMacro) nodeMacro).getSourceNodeQuery(), false, context);
+        SNode newInputNode = getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcNodeMacro) nodeMacro).getSourceNodeQuery(), false, context, reductionContext);
         return wrapAsList(newInputNode);
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
-        SNode newInputNode = getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcNodeMacro) nodeMacro).getSourceNodeQuery(), true, context);
+        SNode newInputNode = getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcNodeMacro) nodeMacro).getSourceNodeQuery(), true, context, reductionContext);
         return wrapAsList(newInputNode);
       }
 
@@ -72,14 +73,14 @@ public class InputQueryUtil {
   /**
    * only applicable to macros, which can yield 1 new output node
    */
-  public static SNode getNewInputNode(NodeMacro nodeMacro, SNode currentInputNode, @NotNull TemplateContext context) throws GenerationFailureException {
+  public static SNode getNewInputNode(NodeMacro nodeMacro, SNode currentInputNode, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
     try {
       if (nodeMacro instanceof SwitchMacro) {
-        return getNewInputNodeForSwitchMacro(currentInputNode, (SwitchMacro) nodeMacro, context);
+        return getNewInputNodeForSwitchMacro(currentInputNode, (SwitchMacro) nodeMacro, context, reductionContext);
       } else if (nodeMacro instanceof IncludeMacro) {
-        return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((IncludeMacro) nodeMacro).getSourceNodeQuery(), true, context);
+        return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((IncludeMacro) nodeMacro).getSourceNodeQuery(), true, context, reductionContext);
       } else if (nodeMacro instanceof TemplateCallMacro) {
-        return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((TemplateCallMacro) nodeMacro).getSourceNodeQuery(), true, context);
+        return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((TemplateCallMacro) nodeMacro).getSourceNodeQuery(), true, context, reductionContext);
       }
     } catch (Throwable t) {
       throw new GenerationFailureException("couldn't get new input node", currentInputNode, nodeMacro.getNode(), null, t);
@@ -87,7 +88,7 @@ public class InputQueryUtil {
     throw new GenerationFailureException("couldn't get new input node", currentInputNode, nodeMacro.getNode(), null);
   }
 
-  private static SNode getNewInputNode(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodeQuery query, boolean optionalQuery, @NotNull TemplateContext context) throws GenerationFailureException {
+  private static SNode getNewInputNode(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodeQuery query, boolean optionalQuery, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
     if (query == null) {
       if (optionalQuery) {
         // continue with current source node
@@ -96,25 +97,25 @@ public class InputQueryUtil {
       throw new GenerationFailureException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);
     }
 
-    return context.getExecutor().evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, context);
+    return reductionContext.getExecutor().evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, context);
   }
 
-  private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, @NotNull TemplateContext context) throws GenerationFailureException {
+  private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
     if (query != null) {
-      List<SNode> list = context.getExecutor().evaluateSourceNodesQuery(currentInputNode, null, macro.getNode(), query, context);
+      List<SNode> list = reductionContext.getExecutor().evaluateSourceNodesQuery(currentInputNode, null, macro.getNode(), query, context);
       return list != null ? list : Collections.<SNode>emptyList();
     }
 
     throw new GenerationFailureException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);
   }
 
-  private static SNode getNewInputNodeForSwitchMacro(SNode currentInputNode, SwitchMacro macro, @NotNull TemplateContext context) {
+  private static SNode getNewInputNodeForSwitchMacro(SNode currentInputNode, SwitchMacro macro, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
     // in SWITCH the input query is optional
     SourceSubstituteMacro_SourceNodeQuery query = macro.getSourceNodeQuery();
     if (query == null) {
       // continue with current input node
       return currentInputNode;
     }
-    return context.getExecutor().evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, context);
+    return reductionContext.getExecutor().evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, context);
   }
 }

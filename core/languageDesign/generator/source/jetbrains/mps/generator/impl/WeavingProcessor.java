@@ -169,7 +169,7 @@ public class WeavingProcessor {
                 break;
               }
               TemplateDeclaration template = weaveEach.getTemplate();
-              List<SNode> queryNodes = reductionContext.getExecutor().evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query, new TemplateContext(applicableNode, reductionContext.getExecutor()));
+              List<SNode> queryNodes = reductionContext.getExecutor().evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query, new TemplateContext(applicableNode));
               if (queryNodes.isEmpty()) {
                 someOutputGenerated = false;
               }

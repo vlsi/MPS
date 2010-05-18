@@ -149,7 +149,7 @@ public class TemplateProcessor {
         ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(
           outputNode, (ReferenceMacro) templateChildNode,
           templateNode,
-          context
+          context, myReductionContext
         );
         PostponedReference postponedReference = new PostponedReference(
           refInfo,
@@ -297,7 +297,7 @@ public class TemplateProcessor {
             outputNodes.add(childToReplaceLater);
             // execute the 'mapper' function later
             myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroChange(
-              nodeMacro, childToReplaceLater, newcontext);
+              nodeMacro, childToReplaceLater, newcontext, myReductionContext);
           } else {
             List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newcontext, nodeMacrosToSkip + 1);
             if (_outputNodes != null) {
@@ -305,7 +305,7 @@ public class TemplateProcessor {
               // do post-processing here (it's not really a post-processing because model is not completed yet - output nodes are not added to parent node).
               for (SNode outputNode : _outputNodes) {
                 myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroPostProcChange(
-                  nodeMacro, outputNode, newcontext);
+                  nodeMacro, outputNode, newcontext, myReductionContext);
               }
             }
           }
@@ -503,7 +503,7 @@ public class TemplateProcessor {
   }
 
   private SNode getNewInputNode(NodeMacro nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    SNode node = InputQueryUtil.getNewInputNode(nodeMacro, context.getInput(), context);
+    SNode node = InputQueryUtil.getNewInputNode(nodeMacro, context.getInput(), context, myReductionContext);
 //    if(myGenerator.isStrict() && node != null) {
 //      if(node.getModel() != myGenerator.getInputModel()) {
 //        myGenerator.showErrorMessage(nodeMacro.getNode(), "returned node should be from input model");
@@ -513,7 +513,7 @@ public class TemplateProcessor {
   }
 
   private List<SNode> getNewInputNodes(NodeMacro nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    List<SNode> nodes = InputQueryUtil.getNewInputNodes(nodeMacro, context.getInput(), context);
+    List<SNode> nodes = InputQueryUtil.getNewInputNodes(nodeMacro, context.getInput(), context, myReductionContext);
 //    if(myGenerator.isStrict() && nodes != null) {
 //      for(SNode node : nodes) {
 //        if(node.getModel() != myGenerator.getInputModel()) {

@@ -16,6 +16,6 @@ public class PatternRuleContext extends BaseMappingRuleContext {
   }
 
   public void createPatternContext(GeneratedMatchingPattern pattern) {
-    myContext = new TemplateContext(pattern, null, getInputNode(), myExecutor);
+    myContext = new TemplateContext(pattern, null, getInputNode());
   }
 }

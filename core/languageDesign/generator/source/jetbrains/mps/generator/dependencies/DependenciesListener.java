@@ -17,19 +17,19 @@ import java.util.Set;
 public class DependenciesListener implements INodesReadListener {
 
   private final SNode myOriginalRoot;
-  private final DependenciesData myData;
+  private final DefaultDependenciesBuilder myBuilder;
 
   private boolean dependsOnConditionals = false;
   private Set<SNode> dependsOn = new HashSet<SNode>();
   private Set<SModel> dependsOnModels = new HashSet<SModel>();
 
-  public DependenciesListener(@Nullable SNode originalRoot, @NotNull DependenciesData data) {
+  public DependenciesListener(@Nullable SNode originalRoot, @NotNull DefaultDependenciesBuilder builder) {
     myOriginalRoot = originalRoot;
-    myData = data;
+    myBuilder = builder;
   }
 
   private void readNode(SNode node) {
-    SNode root = myData.currentToOriginalMap.get(node);
+    SNode root = myBuilder.currentToOriginalMap.get(node);
     if(root == null) {
       dependsOnConditionals = true;
       return;
@@ -41,7 +41,7 @@ public class DependenciesListener implements INodesReadListener {
   }
 
   private void readModel(SModel model) {
-    if(model == null || model.isTransient() || model == myData.currentModel) {
+    if(model == null || model.isTransient() || model == myBuilder.currentModel) {
       return;
     }
     dependsOnModels.add(model);
@@ -50,7 +50,7 @@ public class DependenciesListener implements INodesReadListener {
   @Override
   public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
     if(node.isRegistered()) {
-      if(node.getModel() == myData.currentModel) {
+      if(node.getModel() == myBuilder.currentModel) {
         readNode(node.getTopParent());
       } else {
         readModel(node.getModel());
@@ -61,7 +61,7 @@ public class DependenciesListener implements INodesReadListener {
   @Override
   public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
     if(node.isRegistered()) {
-      if(node.getModel() == myData.currentModel) {
+      if(node.getModel() == myBuilder.currentModel) {
         readNode(node.getTopParent());
       } else {
         readModel(node.getModel());
@@ -72,7 +72,7 @@ public class DependenciesListener implements INodesReadListener {
   @Override
   public void propertyExistenceAccess(SNode node, String propertyName) {
     if(node.isRegistered()) {
-      if(node.getModel() == myData.currentModel) {
+      if(node.getModel() == myBuilder.currentModel) {
         readNode(node.getTopParent());
       } else {
         readModel(node.getModel());
@@ -83,7 +83,7 @@ public class DependenciesListener implements INodesReadListener {
   @Override
   public void propertyDirtyReadAccess(SNode node, String propertyName) {
     if(node.isRegistered()) {
-      if(node.getModel() == myData.currentModel) {
+      if(node.getModel() == myBuilder.currentModel) {
         readNode(node.getTopParent());
       } else {
         readModel(node.getModel());
@@ -94,7 +94,7 @@ public class DependenciesListener implements INodesReadListener {
   @Override
   public void propertyCleanReadAccess(SNode node, String propertyName) {
     if(node.isRegistered()) {
-      if(node.getModel() == myData.currentModel) {
+      if(node.getModel() == myBuilder.currentModel) {
         readNode(node.getTopParent());
       } else {
         readModel(node.getModel());
@@ -105,7 +105,7 @@ public class DependenciesListener implements INodesReadListener {
   @Override
   public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
     if(node.isRegistered()) {
-      if(node.getModel() == myData.currentModel) {
+      if(node.getModel() == myBuilder.currentModel) {
         readNode(node.getTopParent());
       } else {
         readModel(node.getModel());
@@ -116,7 +116,7 @@ public class DependenciesListener implements INodesReadListener {
   @Override
   public void nodeUnclassifiedReadAccess(SNode node) {
     if(node.isRegistered()) {
-      if(node.getModel() == myData.currentModel) {
+      if(node.getModel() == myBuilder.currentModel) {
         readNode(node.getTopParent());
       } else {
         readModel(node.getModel());

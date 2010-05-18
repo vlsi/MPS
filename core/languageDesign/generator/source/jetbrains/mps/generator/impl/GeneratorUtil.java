@@ -245,7 +245,7 @@ public class GeneratorUtil {
     if(consequence instanceof ITemplateCall) {
       return createTemplateContext(inputNode, outerContext, reductionContext, (ITemplateCall)consequence, newInputNode, generator);
     }
-    return outerContext != null ? outerContext : new TemplateContext(newInputNode, reductionContext.getExecutor());
+    return outerContext != null ? outerContext : new TemplateContext(newInputNode);
   }
 
   @NotNull
@@ -254,11 +254,11 @@ public class GeneratorUtil {
     final TemplateParameterDeclaration[] parameters = getParameters(templateCall);
 
     if(arguments == null && parameters == null) {
-      return new TemplateContext(newInputNode, reductionContext.getExecutor());
+      return new TemplateContext(newInputNode);
     }
     if(arguments == null || parameters == null || arguments.length != parameters.length) {
       generator.showErrorMessage(inputNode, templateCall.getNode(), "number of arguments doesn't match template");
-      return new TemplateContext(newInputNode, reductionContext.getExecutor());
+      return new TemplateContext(newInputNode);
     }
 
     final Map<String,Object> vars = new HashMap<String, Object>(arguments.length);
@@ -291,7 +291,7 @@ public class GeneratorUtil {
 
       vars.put(name, value);
     }
-    return new TemplateContext(null, vars, newInputNode, reductionContext.getExecutor());
+    return new TemplateContext(null, vars, newInputNode);
 }
 
   /**

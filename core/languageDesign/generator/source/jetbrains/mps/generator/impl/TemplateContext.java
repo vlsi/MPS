@@ -22,27 +22,23 @@ public class TemplateContext {
   private final GeneratedMatchingPattern pattern;
   private final Map<String, Object> variables;
 
-  @NotNull
-  private final IQueryExecutor executor;
-
   /**
    *  Only context node.
    */
-  public TemplateContext(SNode inputNode, @NotNull IQueryExecutor executor) {
-    this((GeneratedMatchingPattern)null, null, inputNode, executor);
+  public TemplateContext(SNode inputNode) {
+    this((GeneratedMatchingPattern)null, null, inputNode);
   }
 
   /**
    *  Creates a new context for template declaration.
    */
-  public TemplateContext(GeneratedMatchingPattern pattern, Map<String, Object> variables, SNode inputNode, @NotNull IQueryExecutor executor) {
+  public TemplateContext(GeneratedMatchingPattern pattern, Map<String, Object> variables, SNode inputNode) {
     this.pattern = pattern;
     this.variables = variables;
     this.parent = null;
 
     this.inputName = null;
     this.inputNode = inputNode;
-    this.executor = executor;
   }
 
   /**
@@ -54,7 +50,6 @@ public class TemplateContext {
     this.variables = null;
     this.inputName = inputName;
     this.inputNode = inputNode;
-    this.executor = parent.executor;
   }
 
   public TemplateContext getParent() {
@@ -103,11 +98,6 @@ public class TemplateContext {
       }
     }
     return null;
-  }
-
-  @NotNull
-  public IQueryExecutor getExecutor() {
-    return executor;
   }
 
   public Iterable<SNode> getInputHistory() {

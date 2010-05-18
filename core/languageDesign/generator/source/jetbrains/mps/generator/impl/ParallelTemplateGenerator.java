@@ -5,7 +5,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.dependencies.DependenciesData;
+import jetbrains.mps.generator.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
 import jetbrains.mps.generator.template.IQueryExecutor;
 import jetbrains.mps.smodel.SModel;
@@ -32,8 +32,8 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   public ParallelTemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
                                    IGeneratorLogger logger, RuleManager ruleManager,
                                    SModel inputModel, SModel outputModel, GenerationProcessContext generationContext,
-                                   DependenciesData dependenciesData, IPerformanceTracer performance) {
-    super(operationContext, progressMonitor, logger, ruleManager, inputModel, outputModel, generationContext, dependenciesData, performance);
+                                   DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {
+    super(operationContext, progressMonitor, logger, ruleManager, inputModel, outputModel, generationContext, dependenciesBuilder, performanceTracer);
     myTasks = new ArrayList<RootGenerationTask>();
     myInputToTask = new ConcurrentHashMap<Pair<SNode, SNode>, RootGenerationTask>();
     myPool = generationContext.getTaskPool();

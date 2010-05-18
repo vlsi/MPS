@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Evgeny Gryaznov, May 11, 2010
  */
-public class DependenciesData {
+public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
   private DependenciesListener conditionalsBuilder;
   private Map<SNode, DependenciesListener> listeners = new HashMap<SNode, DependenciesListener>();
@@ -20,7 +20,7 @@ public class DependenciesData {
   Map<SNode, SNode> currentToOriginalMap;
   SModel currentModel;
 
-  public DependenciesData(SModel inputModel) {
+  public DefaultDependenciesBuilder(SModel inputModel) {
     currentModel = inputModel;
     SNode[] roots = getRoots(inputModel);
     conditionalsBuilder = new DependenciesListener(null, this);
@@ -35,6 +35,7 @@ public class DependenciesData {
     }
   }
 
+  @Override
   public void scriptApplied(SModel newmodel) {
     Map<SNodeId, SNode> oldidsToOriginal = new HashMap<SNodeId, SNode>();
     for(Map.Entry<SNode, SNode> entry : currentToOriginalMap.entrySet()) {
@@ -51,6 +52,7 @@ public class DependenciesData {
     currentModel = newmodel;
   }
 
+  @Override
   public void registerRoot(SNode outputRoot, SNode inputNode) {
     if(inputNode == null) {
       return;
@@ -65,6 +67,7 @@ public class DependenciesData {
     currentStepToOriginalMap.put(outputRoot, originalRoot);
   }
 
+  @Override
   public void updateModel(SModel newInputModel) {
     if(currentStepToOriginalMap != null) {
       currentToOriginalMap = currentStepToOriginalMap;
@@ -75,6 +78,7 @@ public class DependenciesData {
     currentModel = newInputModel;
   }
 
+  @Override
   public void dropModel() {
     currentStepToOriginalMap = null;
   }
@@ -88,6 +92,7 @@ public class DependenciesData {
     return currentToOriginalMap.get(outputNode);
   }
 
+  @Override
   public DependenciesListener getListener(SNode inputNode) {
     if(inputNode == null || !inputNode.isRegistered()) {
       return conditionalsBuilder;
@@ -103,7 +108,8 @@ public class DependenciesData {
     return null;
   }
 
-  public GenerationDependencies getCache() {
+  @Override
+  public GenerationDependencies getResult() {
     return GenerationDependencies.fromData(currentToOriginalMap, listenersList);
   }
 }

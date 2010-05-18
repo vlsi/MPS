@@ -76,7 +76,8 @@ public class GenerationController {
     myProgress = progress;
     myLogger = new GeneratorLoggerAdapter(messages, settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings());
     myGenerationContext = new GenerationProcessContext(
-      saveTransientModels, settings.isParallelGenerator(), settings.isStrictMode(), !settings.isShowWarnings() && !settings.isShowInfo(),
+      saveTransientModels, settings.isParallelGenerator(), settings.isStrictMode(), settings.isGenerateDependencies(),
+      !settings.isShowWarnings() && !settings.isShowInfo(),
       progress, generationTracer, settings.getNumberOfParallelThreads(), settings.getPerformanceTracingLevel());
   }
 

@@ -17,8 +17,9 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
-import jetbrains.mps.generator.dependencies.DependenciesData;
-import jetbrains.mps.generator.dependencies.GenerationDependencies;
+import jetbrains.mps.generator.dependencies.DefaultDependenciesBuilder;
+import jetbrains.mps.generator.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.dependencies.DependenciesBuilder.NullDependenciesBuilder;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.ide.messages.NodeWithContext;
@@ -53,7 +54,7 @@ public class GenerationSession {
   private final ProgressIndicator myProgressMonitor;
   private ILoggingHandler myLoggingHandler;
   private final GenerationSessionLogger myLogger;
-  private DependenciesData myDependenciesData;
+  private DependenciesBuilder myDependenciesBuilder;
 
   private GenerationSessionContext mySessionContext;
   private IPerformanceTracer ttrace;
@@ -85,7 +86,10 @@ public class GenerationSession {
     if (!checkGenerationPlan(myGenerationPlan)) {
       // throw new GenerationCanceledException();
     }
-    myDependenciesData = new DependenciesData(myOriginalInputModel.getSModel());
+    myDependenciesBuilder =
+      myGenerationContext.isGenerateDependencies()
+        ? new DefaultDependenciesBuilder(myOriginalInputModel.getSModel())
+        : new NullDependenciesBuilder();
 
     try {
       SModel currInputModel = myOriginalInputModel.getSModel();
@@ -116,7 +120,7 @@ public class GenerationSession {
       }
 
       return new GenerationStatus(myOriginalInputModel.getSModel(), currOutput,
-        myDependenciesData.getCache(), myLogger.getErrorCount() > 0,
+        myDependenciesBuilder.getResult(), myLogger.getErrorCount() > 0,
         myLogger.getWarningCount() > 0, false);
 
     } catch (GenerationCanceledException gce) {
@@ -183,7 +187,7 @@ public class GenerationSession {
     boolean somethingHasBeenGenerated = applyRules(currentInputModel, currentOutputModel, true, ruleManager);
     if (!somethingHasBeenGenerated) {
       currentOutputModel.validateLanguagesAndImports();
-      myDependenciesData.updateModel(currentOutputModel);
+      myDependenciesBuilder.updateModel(currentOutputModel);
       recycleWasteModel(currentInputModel);
       return currentOutputModel;
     }
@@ -194,7 +198,7 @@ public class GenerationSession {
     int secondaryMappingRepeatCount = 1;
     while (true) {
       currentOutputModel.validateLanguagesAndImports();
-      myDependenciesData.updateModel(currentOutputModel);
+      myDependenciesBuilder.updateModel(currentOutputModel);
 
       // apply mapping to the output model
       mySessionContext.clearTransientObjects();
@@ -211,7 +215,7 @@ public class GenerationSession {
       tracer.startTracing(currentInputModel, transientModel);
       if (!applyRules(currentInputModel, transientModel, false, ruleManager)) {
         // nothing has been generated
-        myDependenciesData.dropModel();
+        myDependenciesBuilder.dropModel();
         tracer.discardTracing(currentInputModel, transientModel);
         SModelRepository.getInstance().removeModelDescriptor(transientModel.getModelDescriptor());
         myTransientModelsCount--;
@@ -255,8 +259,8 @@ public class GenerationSession {
                              RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
     final TemplateGenerator tg =
       myGenerationContext.isGenerateInParallel()
-        ? new ParallelTemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationContext, myDependenciesData, ttrace)
-        : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationContext, myDependenciesData, ttrace);
+        ? new ParallelTemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationContext, myDependenciesBuilder, ttrace)
+        : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationContext, myDependenciesBuilder, ttrace);
     if(tg instanceof ParallelTemplateGenerator) {
       return GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {
         @Override
@@ -315,12 +319,12 @@ public class GenerationSession {
       if (myLogger.needsInfo()) {
         myLogger.info(preMappingScript.getNode(), "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ")");
       }
-      TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentInputModel, myGenerationContext, myDependenciesData, ttrace);
+      TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentInputModel, myGenerationContext, myDependenciesBuilder, ttrace);
       templateGenerator.getDefaultExecutor().executeMappingScript(preMappingScript, currentInputModel);
       preProcessed = true;
     }
     if(needToCloneInputMode) {
-      myDependenciesData.scriptApplied(currentInputModel);
+      myDependenciesBuilder.scriptApplied(currentInputModel);
       recycleWasteModel(toRecycle);
     }
     if(myLogger.needsInfo() && preProcessed) {
@@ -360,12 +364,12 @@ public class GenerationSession {
       if (myLogger.needsInfo()) {
         myLogger.info(postMappingScript.getNode(), "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")");
       }
-      TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentModel, currentModel, myGenerationContext, myDependenciesData, ttrace);
+      TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentModel, currentModel, myGenerationContext, myDependenciesBuilder, ttrace);
       templateGenerator.getDefaultExecutor().executeMappingScript(postMappingScript, currentModel);
       postProcessed = true;
     }
     if(needToCloneModel) {
-      myDependenciesData.scriptApplied(currentModel);
+      myDependenciesBuilder.scriptApplied(currentModel);
       recycleWasteModel(toRecycle);
     }
     if(myLogger.needsInfo() && postProcessed) {

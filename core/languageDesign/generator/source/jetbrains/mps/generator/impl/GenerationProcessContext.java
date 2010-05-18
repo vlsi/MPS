@@ -14,6 +14,7 @@ public class GenerationProcessContext {
 
   boolean mySaveTransientModels;
   boolean myStrictMode;
+  private boolean myGenerateDependencies;
   boolean myShowErrorsOnly;
   boolean myGenerateInParallel;
   int myNumberOfThreads;
@@ -23,10 +24,13 @@ public class GenerationProcessContext {
   IGenerationTracer myGenerationTracer;
   IGenerationTaskPool myParallelTaskPool;
 
-  public GenerationProcessContext(boolean saveTransientModels, boolean generateInParallel, boolean strictMode, boolean showErrorsOnly, ProgressIndicator progressIndicator, IGenerationTracer generationTracer, int numberOfThreads, int tracingMode) {
+  public GenerationProcessContext(boolean saveTransientModels, boolean generateInParallel, boolean strictMode,
+                                  boolean generateDependencies, boolean showErrorsOnly, ProgressIndicator progressIndicator,
+                                  IGenerationTracer generationTracer, int numberOfThreads, int tracingMode) {
     mySaveTransientModels = saveTransientModels;
     myGenerateInParallel = generateInParallel;
     myStrictMode = strictMode;
+    myGenerateDependencies = generateDependencies;
     myShowErrorsOnly = showErrorsOnly;
     myGenerationTracer = generationTracer;
     myProgressIndicator = progressIndicator;
@@ -50,6 +54,10 @@ public class GenerationProcessContext {
     return myShowErrorsOnly;
   }
 
+  public boolean isGenerateDependencies() {
+    return myGenerateDependencies;
+  }
+
   public ProgressIndicator getProgressIndicator() {
     return myProgressIndicator;
   }
@@ -63,24 +71,24 @@ public class GenerationProcessContext {
   }
 
   public int getTracingMode() {
-    if(isGenerateInParallel() && myTracingMode > GenerationSettings.TRACE_STEPS) {
+    if (isGenerateInParallel() && myTracingMode > GenerationSettings.TRACE_STEPS) {
       return GenerationSettings.TRACE_STEPS;
     }
     return myTracingMode;
   }
 
   public IGenerationTaskPool getTaskPool() {
-    if(myParallelTaskPool != null || !isGenerateInParallel()) {
+    if (myParallelTaskPool != null || !isGenerateInParallel()) {
       return myParallelTaskPool;
     }
     myParallelTaskPool = USE_PARALLEL_POOL
-        ? new GenerationTaskPool(myProgressIndicator, myNumberOfThreads)
-        : new SimpleGenerationTaskPool();
+      ? new GenerationTaskPool(myProgressIndicator, myNumberOfThreads)
+      : new SimpleGenerationTaskPool();
     return myParallelTaskPool;
   }
 
   public void cleanup() {
-    if(myParallelTaskPool != null) {
+    if (myParallelTaskPool != null) {
       myParallelTaskPool.dispose();
       myParallelTaskPool = null;
     }

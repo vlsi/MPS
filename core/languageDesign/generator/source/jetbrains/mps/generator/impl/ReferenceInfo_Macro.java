@@ -31,6 +31,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private final SNode myTemplateReferenceNode;
   private final ReferenceMacro myReferenceMacro;
   private final TemplateContext myContext;
+  private final ReductionContext myReductionContext;
 
   // results of 'expandReferenceMacro'
   private boolean myMacroProcessed;
@@ -38,11 +39,12 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private SNode myOutputTargetNode;
   private SModelReference myExternalTargetModelReference;
 
-  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro macro, SNode templateReferenceNode, TemplateContext context) {
+  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro macro, SNode templateReferenceNode, TemplateContext context, ReductionContext reductionContext) {
     super(outputSourceNode, InternUtil.intern(getReferenceRole(macro)), context.getInput());
     myTemplateReferenceNode = templateReferenceNode;
     myReferenceMacro = macro;
     myContext = context;
+    myReductionContext = reductionContext;
   }
 
   public SNode getInputTargetNode() {
@@ -96,7 +98,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private void expandReferenceMacro(ITemplateGenerator generator) {
     String linkRole = getReferenceRole();
 
-    Object result = myContext.getExecutor().getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro, myContext);
+    Object result = myReductionContext.getExecutor().getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro, myContext);
     if (result instanceof SNode) {
       myOutputTargetNode = (SNode) result;
     } else if (result != null) {
