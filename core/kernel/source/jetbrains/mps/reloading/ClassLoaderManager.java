@@ -149,7 +149,7 @@ public class ClassLoaderManager implements ApplicationComponent {
     }
   }
 
-  private void updateClassPath() {
+  public void updateClassPath() {
     synchronized (myLock) {
       if (myRuntimeEnvironment == null) {
         myRuntimeEnvironment = createRuntimeEnvironment(LibraryManager.getInstance());
