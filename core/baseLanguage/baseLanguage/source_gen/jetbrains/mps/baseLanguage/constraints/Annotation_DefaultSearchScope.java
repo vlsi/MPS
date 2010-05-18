@@ -22,6 +22,6 @@ public class Annotation_DefaultSearchScope extends BaseNodeReferenceSearchScopeP
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.ANNOTATION, operationContext.getScope());
+    return new VisibleClassifiersScope(_context.getEnclosingNode(), IClassifiersSearchScope.ANNOTATION, operationContext.getScope());
   }
 }

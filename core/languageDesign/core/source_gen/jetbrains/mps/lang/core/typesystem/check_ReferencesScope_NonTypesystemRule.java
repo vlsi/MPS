@@ -36,6 +36,7 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
     for (SReference ref : node.getReferences()) {
       SearchScopeStatus sss = ModelConstraintsUtil.getSearchScope(node.getParent(), node, concept, ref.getRole(), context);
+      SNode target = ref.getTargetNode();
       if (sss.isError()) {
         {
           BaseIntentionProvider intentionProvider = null;
@@ -44,8 +45,11 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
         }
       } else if (sss.isDefault()) {
         //  global search scope is not checked now 
-      } else if (!(sss.getSearchScope().isInScope(ref.getTargetNode()))) {
-        String name = ref.getTargetNode().getName();
+      } else if (!(sss.getSearchScope().isInScope(target))) {
+        String name = (target == null ?
+          "" :
+          target.getName()
+        );
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();

@@ -35,7 +35,7 @@ public class StaticFieldReference_classifier_ReferentConstraint extends BaseNode
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope()) {
+    return new VisibleClassifiersScope(_context.getEnclosingNode(), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope()) {
       @NotNull
       @Override
       public List<Classifier> getClassifiers() {

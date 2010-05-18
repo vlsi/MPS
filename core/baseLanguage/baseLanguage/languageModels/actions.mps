@@ -47,7 +47,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <maxImportIndex value="75" />
+  <maxImportIndex value="76" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -75,6 +75,7 @@
   <import index="73" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <import index="74" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="75" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
+  <import index="76" modelUID="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" version="-1" />
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1138168268784">
     <property name="name:23" value="binaryOperations" />
     <property name="package:23" value="sideTransforms" />
@@ -6354,17 +6355,17 @@
             <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1212711024149">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1212711060033">
                 <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1212711060034">
-                  <property name="name:3" value="serchScope" />
-                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1212711060035">
-                    <link role="classifier:3" targetNodeId="28.~VisibleClassifiersScope" resolveInfo="VisibleClassifiersScope" />
+                  <property name="name:3" value="searchScope" />
+                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5432664157459264650">
+                    <link role="classifier:3" targetNodeId="76.3161373106581142281" resolveInfo="VisibleClassifiersScope" />
                   </node>
                   <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1213034571260">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1213034571278">
-                      <link role="baseMethodDeclaration:3" targetNodeId="28.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
-                      <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model:0" id="1212711230444" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="76.2433178749262262939" resolveInfo="VisibleClassifiersScope" />
+                      <node role="actualArgument:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="5432664157459264649" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1212711236055">
-                        <link role="classifier:3" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                        <link role="variableDeclaration:3" targetNodeId="28.~IClassifiersSearchScope.ANYTHING" resolveInfo="ANYTHING" />
+                        <link role="classifier:3" targetNodeId="76.3161373106581141431" resolveInfo="IClassifiersSearchScope" />
+                        <link role="variableDeclaration:3" targetNodeId="76.3161373106581141510" resolveInfo="ANYTHING" />
                       </node>
                       <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope:0" id="1212711251135" />
                     </node>
@@ -6388,7 +6389,7 @@
                         <link role="variableDeclaration:3" targetNodeId="1212711060034" resolveInfo="serchScope" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1212711364655">
-                        <link role="baseMethodDeclaration:3" targetNodeId="28.~AbstractClassifiersScope.getClassifierNodes():java.util.List" resolveInfo="getClassifierNodes" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="76.3161373106581142271" resolveInfo="getClassifierNodes" />
                       </node>
                     </node>
                   </node>
@@ -6771,17 +6772,17 @@
             <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238763484474">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1238763516514">
                 <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1238763516515">
-                  <property name="name:3" value="serchScope" />
-                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1238763516516">
-                    <link role="classifier:3" targetNodeId="28.~VisibleClassifiersScope" resolveInfo="VisibleClassifiersScope" />
+                  <property name="name:3" value="searchScope" />
+                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5432664157459264651">
+                    <link role="classifier:3" targetNodeId="76.3161373106581142281" resolveInfo="VisibleClassifiersScope" />
                   </node>
                   <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1238763516517">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1238763516518">
-                      <link role="baseMethodDeclaration:3" targetNodeId="28.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
-                      <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model:0" id="1238763516519" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="76.2433178749262262939" resolveInfo="VisibleClassifiersScope" />
+                      <node role="actualArgument:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="5432664157459311851" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1238763516520">
-                        <link role="classifier:3" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                        <link role="variableDeclaration:3" targetNodeId="28.~IClassifiersSearchScope.ANYTHING" resolveInfo="ANYTHING" />
+                        <link role="classifier:3" targetNodeId="76.3161373106581141431" resolveInfo="IClassifiersSearchScope" />
+                        <link role="variableDeclaration:3" targetNodeId="76.3161373106581141510" resolveInfo="ANYTHING" />
                       </node>
                       <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope:0" id="1238763516521" />
                     </node>
@@ -6800,7 +6801,7 @@
                         <link role="variableDeclaration:3" targetNodeId="1238763516515" resolveInfo="serchScope" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1238763516529">
-                        <link role="baseMethodDeclaration:3" targetNodeId="28.~AbstractClassifiersScope.getClassifierNodes():java.util.List" resolveInfo="getClassifierNodes" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="76.3161373106581142271" resolveInfo="getClassifierNodes" />
                       </node>
                     </node>
                     <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="434283027168230977">
@@ -8641,11 +8642,11 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1221636109247">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1221636109248">
                       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1221636109249">
-                        <link role="baseMethodDeclaration:3" targetNodeId="28.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
-                        <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model:0" id="1221636109250" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="76.2433178749262262939" resolveInfo="VisibleClassifiersScope" />
+                        <node role="actualArgument:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="5432664157459311857" />
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1221636109251">
-                          <link role="classifier:3" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                          <link role="variableDeclaration:3" targetNodeId="28.~IClassifiersSearchScope.NON_FINAL_CLASS" resolveInfo="NON_FINAL_CLASS" />
+                          <link role="classifier:3" targetNodeId="76.3161373106581141431" resolveInfo="IClassifiersSearchScope" />
+                          <link role="variableDeclaration:3" targetNodeId="76.3161373106581141488" resolveInfo="NON_FINAL_CLASS" />
                         </node>
                         <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope:0" id="1221636109252" />
                       </node>
@@ -8756,11 +8757,11 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1221636607728">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1221636607729">
                       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1221636607730">
-                        <link role="baseMethodDeclaration:3" targetNodeId="28.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
-                        <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model:0" id="1221636607731" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="76.2433178749262262939" resolveInfo="VisibleClassifiersScope" />
+                        <node role="actualArgument:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="5432664157459311858" />
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1221636607732">
-                          <link role="classifier:3" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                          <link role="variableDeclaration:3" targetNodeId="28.~IClassifiersSearchScope.INTERFACE" resolveInfo="INTERFACE" />
+                          <link role="classifier:3" targetNodeId="76.3161373106581141431" resolveInfo="IClassifiersSearchScope" />
+                          <link role="variableDeclaration:3" targetNodeId="76.3161373106581141434" resolveInfo="INTERFACE" />
                         </node>
                         <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope:0" id="1221636607733" />
                       </node>
@@ -8871,11 +8872,11 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1221637600635">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1221637600636">
                       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1221637600637">
-                        <link role="baseMethodDeclaration:3" targetNodeId="28.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
-                        <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model:0" id="1221637600638" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="76.2433178749262262939" resolveInfo="VisibleClassifiersScope" />
+                        <node role="actualArgument:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="5432664157459311859" />
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1221637600639">
-                          <link role="classifier:3" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                          <link role="variableDeclaration:3" targetNodeId="28.~IClassifiersSearchScope.INTERFACE" resolveInfo="INTERFACE" />
+                          <link role="classifier:3" targetNodeId="76.3161373106581141431" resolveInfo="IClassifiersSearchScope" />
+                          <link role="variableDeclaration:3" targetNodeId="76.3161373106581141434" resolveInfo="INTERFACE" />
                         </node>
                         <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope:0" id="1221637600640" />
                       </node>
@@ -8987,29 +8988,25 @@
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1221733218595">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1221733296267">
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1221733296268">
-                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1221733296269">
-                      <link role="baseMethodDeclaration:3" targetNodeId="19.~BaseAdapter.toNodes(java.util.List):java.util.List" resolveInfo="toNodes" />
-                      <link role="classConcept:3" targetNodeId="19.~BaseAdapter" resolveInfo="BaseAdapter" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1221733296270">
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1221733296271">
-                          <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1221733296272">
-                            <link role="baseMethodDeclaration:3" targetNodeId="28.~VisibleThrowablesScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleThrowablesScope" />
-                            <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model:0" id="1221733296273" />
-                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1221733296274">
-                              <link role="classifier:3" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                              <link role="variableDeclaration:3" targetNodeId="28.~IClassifiersSearchScope.CLASS" resolveInfo="CLASS" />
-                            </node>
-                            <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope:0" id="1221733296275" />
-                          </node>
-                        </node>
-                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1221733296276">
-                          <link role="baseMethodDeclaration:3" targetNodeId="28.~VisibleThrowablesScope.getClassifiers():java.util.List" resolveInfo="getClassifiers" />
-                        </node>
-                      </node>
-                    </node>
                     <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="434283027168230940">
                       <node role="elementType:7" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="434283027168230942">
                         <link role="concept:16" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
+                      </node>
+                    </node>
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5432664157459256793">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5432664157459256794">
+                        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5432664157459256795">
+                          <link role="baseMethodDeclaration:3" targetNodeId="76.3161373106581143416" resolveInfo="VisibleThrowablesScope" />
+                          <node role="actualArgument:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="5432664157459256796" />
+                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5432664157459256797">
+                            <link role="classifier:3" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
+                            <link role="variableDeclaration:3" targetNodeId="28.~IClassifiersSearchScope.CLASS" resolveInfo="CLASS" />
+                          </node>
+                          <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope:0" id="5432664157459256798" />
+                        </node>
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5432664157459256799">
+                        <link role="baseMethodDeclaration:3" targetNodeId="76.3161373106581142271" resolveInfo="getClassifierNodes" />
                       </node>
                     </node>
                   </node>
@@ -13138,19 +13135,16 @@
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1177396538474">
                 <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1177396538475">
                   <property name="name:3" value="searchScope" />
-                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1188506233772">
-                    <link role="classifier:3" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
+                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5432664157459311863">
+                    <link role="classifier:3" targetNodeId="76.3161373106581141431" resolveInfo="IClassifiersSearchScope" />
                   </node>
                   <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1213034571965">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1213034571967">
-                      <link role="baseMethodDeclaration:3" targetNodeId="28.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203977955812">
-                        <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="1188506280491" />
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1188506280492" />
-                      </node>
+                      <link role="baseMethodDeclaration:3" targetNodeId="76.2433178749262262939" resolveInfo="VisibleClassifiersScope" />
+                      <node role="actualArgument:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="5432664157459311862" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1188506280493">
-                        <link role="classifier:3" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                        <link role="variableDeclaration:3" targetNodeId="28.~IClassifiersSearchScope.CLASSIFFIER" resolveInfo="CLASSIFFIER" />
+                        <link role="classifier:3" targetNodeId="76.3161373106581141431" resolveInfo="IClassifiersSearchScope" />
+                        <link role="variableDeclaration:3" targetNodeId="76.3161373106581141446" resolveInfo="CLASSIFFIER" />
                       </node>
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1204332421896">
                         <node role="operand:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext:0" id="1188506280495" />
@@ -13174,7 +13168,7 @@
                         <link role="variableDeclaration:3" targetNodeId="1177396538475" resolveInfo="searchScope" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1204332445884">
-                        <link role="baseMethodDeclaration:3" targetNodeId="28.~IClassifiersSearchScope.getClassifierNodes():java.util.List" resolveInfo="getClassifierNodes" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="76.3161373106581141520" resolveInfo="getClassifierNodes" />
                       </node>
                     </node>
                     <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="434283027168230985">

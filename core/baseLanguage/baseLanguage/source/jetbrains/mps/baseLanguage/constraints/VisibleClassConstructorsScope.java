@@ -31,8 +31,13 @@ import java.util.*;
  */
 public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
 
+  @Deprecated
   public VisibleClassConstructorsScope(SModel model, IScope scope) {
     super(model, CONSTRUCTOR, scope);
+  }
+
+  public VisibleClassConstructorsScope(SNode contextNode, IScope scope) {
+    super(contextNode, CONSTRUCTOR, scope);
   }
 
   @NotNull

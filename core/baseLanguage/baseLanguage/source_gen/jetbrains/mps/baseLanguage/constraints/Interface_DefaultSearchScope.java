@@ -22,6 +22,6 @@ public class Interface_DefaultSearchScope extends BaseNodeReferenceSearchScopePr
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.INTERFACE, operationContext.getScope());
+    return new VisibleClassifiersScope(_context.getEnclosingNode(), IClassifiersSearchScope.INTERFACE, operationContext.getScope());
   }
 }

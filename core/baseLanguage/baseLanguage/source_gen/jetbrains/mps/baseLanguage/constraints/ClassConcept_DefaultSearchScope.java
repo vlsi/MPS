@@ -22,6 +22,6 @@ public class ClassConcept_DefaultSearchScope extends BaseNodeReferenceSearchScop
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.CLASS, operationContext.getScope());
+    return new VisibleClassifiersScope(_context.getEnclosingNode(), IClassifiersSearchScope.CLASS, operationContext.getScope());
   }
 }

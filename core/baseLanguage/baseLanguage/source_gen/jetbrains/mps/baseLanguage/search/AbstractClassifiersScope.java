@@ -36,7 +36,7 @@ public abstract class AbstractClassifiersScope extends AbstractSearchScope imple
 
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
-    return BaseAdapter.toNodes(this.getNodesFormClassifiersList(this.getClassifiers(), this.myConstraint, BaseAdapter.adapterCondition(condition)));
+    return BaseAdapter.toNodes(this.getNodesFormClassifiersList(getClassifiers(), this.myConstraint, BaseAdapter.adapterCondition(condition)));
   }
 
   protected List<INodeAdapter> getNodesFormClassifiersList(List<Classifier> classifiers, int constraint, Condition<INodeAdapter> condition) {
@@ -124,10 +124,7 @@ public abstract class AbstractClassifiersScope extends AbstractSearchScope imple
     return result;
   }
 
-  @NotNull
-  public abstract List<Classifier> getClassifiers();
-
   public List<SNode> getClassifierNodes() {
-    return BaseAdapter.toNodes(this.getClassifiers());
+    return BaseAdapter.toNodes(getClassifiers());
   }
 }

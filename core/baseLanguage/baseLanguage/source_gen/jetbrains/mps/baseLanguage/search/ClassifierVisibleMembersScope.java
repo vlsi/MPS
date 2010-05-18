@@ -13,12 +13,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.IMethodCall;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 
 public class ClassifierVisibleMembersScope extends AbstractSearchScope {
@@ -45,7 +47,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode member : this.getClassifierMembers()) {
       if (condition.met(member)) {
-        result.add(member);
+        ListSequence.fromList(result).addElement(member);
       }
     }
     return result;
@@ -61,7 +63,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     for (SNode memberNode : members) {
       SNode member = SNodeOperations.cast(memberNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
       if (VisibilityUtil.isVisible(this.myContextNode, member)) {
-        result.add(member);
+        ListSequence.fromList(result).addElement(member);
       }
     }
     return result;
@@ -72,12 +74,12 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
       if (SModelUtil_new.isAssignableConcept(targetConcept, StaticMethodDeclaration.concept)) {
         SNode classifier = SLinkOperations.getTarget(this.myClassifierType, "classifier", false);
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SNodeOperations.isInstanceOf(referenceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-          return new StaticMethodReferenceInfoResolver(this.myClassifierScope, (ClassConcept) ((Classifier) SNodeOperations.getAdapter(classifier)), ((IMethodCall) referenceNode.getAdapter()).getActualArguments());
+          return new StaticMethodReferenceInfoResolver(this.myClassifierScope, (ClassConcept) ((Classifier) SNodeOperations.getAdapter(classifier)), ((IMethodCall) ((BaseConcept) SNodeOperations.getAdapter(referenceNode))).getActualArguments());
         }
       } else
       if (SModelUtil_new.isAssignableConcept(targetConcept, InstanceMethodDeclaration.concept)) {
-        if (referenceNode.getAdapter() instanceof IMethodCall) {
-          return new InstanceMethodReferenceInfoResolver(this.myClassifierScope, ((ClassifierType) SNodeOperations.getAdapter(this.myClassifierType)), ((IMethodCall) referenceNode.getAdapter()).getActualArguments());
+        if (((BaseConcept) SNodeOperations.getAdapter(referenceNode)) instanceof IMethodCall) {
+          return new InstanceMethodReferenceInfoResolver(this.myClassifierScope, ((ClassifierType) SNodeOperations.getAdapter(this.myClassifierType)), ((IMethodCall) ((BaseConcept) SNodeOperations.getAdapter(referenceNode))).getActualArguments());
         }
       }
     }
