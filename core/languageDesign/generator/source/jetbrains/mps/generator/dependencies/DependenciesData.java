@@ -21,62 +21,62 @@ public class DependenciesData {
   SModel currentModel;
 
   public DependenciesData(SModel inputModel) {
-//    currentModel = inputModel;
-//    SNode[] roots = getRoots(inputModel);
-//    conditionalsBuilder = new DependenciesListener(null, this);
-//    currentToOriginalMap = new HashMap<SNode, SNode>(roots.length*3/2);
-//    listenersList = new DependenciesListener[roots.length+1];
-//    int e = 0;
-//    listenersList[e++] = conditionalsBuilder;
-//    for(SNode root : roots) {
-//      listenersList[e] = new DependenciesListener(root, this);
-//      listeners.put(root, listenersList[e++]);
-//      currentToOriginalMap.put(root,root);
-//    }
+    currentModel = inputModel;
+    SNode[] roots = getRoots(inputModel);
+    conditionalsBuilder = new DependenciesListener(null, this);
+    currentToOriginalMap = new HashMap<SNode, SNode>(roots.length*3/2);
+    listenersList = new DependenciesListener[roots.length+1];
+    int e = 0;
+    listenersList[e++] = conditionalsBuilder;
+    for(SNode root : roots) {
+      listenersList[e] = new DependenciesListener(root, this);
+      listeners.put(root, listenersList[e++]);
+      currentToOriginalMap.put(root,root);
+    }
   }
 
   public void scriptApplied(SModel newmodel) {
-//    Map<SNodeId, SNode> oldidsToOriginal = new HashMap<SNodeId, SNode>();
-//    for(Map.Entry<SNode, SNode> entry : currentToOriginalMap.entrySet()) {
-//      oldidsToOriginal.put(entry.getKey().getSNodeId(), entry.getValue());
-//    }
-//    currentToOriginalMap = new HashMap<SNode, SNode>();
-//    for(SNode root : newmodel.getRoots()) {
-//      SNodeId id = root.getSNodeId();
-//      SNode original = oldidsToOriginal.get(id);
-//      if(original != null) {
-//        currentToOriginalMap.put(root, original);
-//      }
-//    }
-//    currentModel = newmodel;
+    Map<SNodeId, SNode> oldidsToOriginal = new HashMap<SNodeId, SNode>();
+    for(Map.Entry<SNode, SNode> entry : currentToOriginalMap.entrySet()) {
+      oldidsToOriginal.put(entry.getKey().getSNodeId(), entry.getValue());
+    }
+    currentToOriginalMap = new HashMap<SNode, SNode>();
+    for(SNode root : newmodel.getRoots()) {
+      SNodeId id = root.getSNodeId();
+      SNode original = oldidsToOriginal.get(id);
+      if(original != null) {
+        currentToOriginalMap.put(root, original);
+      }
+    }
+    currentModel = newmodel;
   }
 
   public void registerRoot(SNode outputRoot, SNode inputNode) {
-//    if(inputNode == null) {
-//      return;
-//    }
-//    SNode originalRoot = currentToOriginalMap.get(inputNode.getTopParent());
-//    if(originalRoot == null) {
-//      return;
-//    }
-//    if(currentStepToOriginalMap == null) {
-//      currentStepToOriginalMap = new HashMap<SNode, SNode>();
-//    }
-//    currentStepToOriginalMap.put(outputRoot, originalRoot);
+    if(inputNode == null) {
+      return;
+    }
+    SNode originalRoot = currentToOriginalMap.get(inputNode.getTopParent());
+    if(originalRoot == null) {
+      return;
+    }
+    if(currentStepToOriginalMap == null) {
+      currentStepToOriginalMap = new HashMap<SNode, SNode>();
+    }
+    currentStepToOriginalMap.put(outputRoot, originalRoot);
   }
 
   public void updateModel(SModel newInputModel) {
-//    if(currentStepToOriginalMap != null) {
-//      currentToOriginalMap = currentStepToOriginalMap;
-//      currentStepToOriginalMap = null;
-//    } else {
-//      currentToOriginalMap = new HashMap<SNode, SNode>();
-//    }
-//    currentModel = newInputModel;
+    if(currentStepToOriginalMap != null) {
+      currentToOriginalMap = currentStepToOriginalMap;
+      currentStepToOriginalMap = null;
+    } else {
+      currentToOriginalMap = new HashMap<SNode, SNode>();
+    }
+    currentModel = newInputModel;
   }
 
   public void dropModel() {
-//    currentStepToOriginalMap = null;
+    currentStepToOriginalMap = null;
   }
 
   private static SNode[] getRoots(SModel model) {
@@ -85,27 +85,25 @@ public class DependenciesData {
   }
 
   public SNode getOriginalRoot(SNode outputNode) {
-//    return currentToOriginalMap.get(outputNode);
-    return null;
+    return currentToOriginalMap.get(outputNode);
   }
 
   public DependenciesListener getListener(SNode inputNode) {
-//    if(inputNode == null || !inputNode.isRegistered()) {
-//      return conditionalsBuilder;
-//    }
-//    inputNode = inputNode.getTopParent();
-//    if(inputNode.getModel() == currentModel) {
-//      SNode originalRoot = currentToOriginalMap.get(inputNode);
-//      if(originalRoot != null) {
-//        return listeners.get(originalRoot);
-//      }
-//    }
+    if(inputNode == null || !inputNode.isRegistered()) {
+      return conditionalsBuilder;
+    }
+    inputNode = inputNode.getTopParent();
+    if(inputNode.getModel() == currentModel) {
+      SNode originalRoot = currentToOriginalMap.get(inputNode);
+      if(originalRoot != null) {
+        return listeners.get(originalRoot);
+      }
+    }
     // TODO ????? fix
     return null;
   }
 
   public GenerationDependencies getCache() {
-//    return GenerationDependencies.fromData(currentToOriginalMap, listenersList);
-    return new GenerationDependencies();
+    return GenerationDependencies.fromData(currentToOriginalMap, listenersList);
   }
 }

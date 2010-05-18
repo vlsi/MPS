@@ -116,6 +116,8 @@ public class GenerationDependencies {
     public void saveTo(Element element) {
       if(myRootId != null) {
         element.setAttribute(ATTR_ID, this.myRootId);
+      }
+      if(myRootName != null) {
         element.setAttribute(ATTR_NAME, this.myRootName);
       }
       if(myDependsOnConditionals) {

@@ -28,6 +28,7 @@ import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
@@ -56,7 +57,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected final ArrayList<SNode> myOutputRoots;
 
   private final IQueryExecutor myExecutor;
-  //private Map<DependenciesListener,IQueryExecutor> myExecutorsMap;
+  private Map<INodesReadListener, IQueryExecutor> myExecutorsMap;
 
   private final boolean myIsStrict;
   private boolean myAreMappingsReady = false;
@@ -292,21 +293,21 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
    * Unsynchronized
    */
   IQueryExecutor getExecutorForNode(SNode inputNode) {
-//    final DependenciesListener listener = myDependenciesData.getListener(inputNode);
-//    if(listener != null) {
-//      IQueryExecutor value;
-//      if(myExecutorsMap == null) {
-//        myExecutorsMap = new HashMap<DependenciesListener, IQueryExecutor>();
-//        value = null;
-//      } else {
-//        value = myExecutorsMap.get(listener);
-//      }
-//      if(value == null) {
-//        value = new DependencyRecordingQueryExecutor(myExecutor, listener);
-//        myExecutorsMap.put(listener, value);
-//      }
-//      return value;
-//    }
+    final INodesReadListener listener = myDependenciesData.getListener(inputNode);
+    if(listener != null) {
+      IQueryExecutor value;
+      if(myExecutorsMap == null) {
+        myExecutorsMap = new HashMap<INodesReadListener, IQueryExecutor>();
+        value = null;
+      } else {
+        value = myExecutorsMap.get(listener);
+      }
+      if(value == null) {
+        value = new DependencyRecordingQueryExecutor(myExecutor, listener);
+        myExecutorsMap.put(listener, value);
+      }
+      return value;
+    }
     return myExecutor;
   }
 

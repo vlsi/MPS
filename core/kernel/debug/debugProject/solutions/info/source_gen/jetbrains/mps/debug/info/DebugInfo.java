@@ -153,9 +153,9 @@ public class DebugInfo {
       if (re == null) {
         re = new Element(ROOT);
         MapSequence.fromMap(rootsToElements).put(rootId, re);
+        root.addContent(re);
       }
       re.setAttribute(ROOT_ID_ATTR, rootId);
-      root.addContent(re);
       for (ScopePositionInfo position : MapSequence.fromMap(this.myRootToScopePositions).get(rootId)) {
         Element e = new Element(SCOPE_INFO);
         position.saveTo(e);
