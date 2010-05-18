@@ -16,6 +16,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.lang.core.structure.Core_Language;
+import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
@@ -41,6 +42,11 @@ public class ClasspathCollector {
 
     CompositeClassPathItem result = new CompositeClassPathItem();
     if (includeStubSolutions){
+
+      //this is needed because we can use this class before these stub solutions are loaded
+      result.add(CommonPaths.getJDKClassPath());
+      result.add(CommonPaths.getMPSClassPath());
+
       for (Solution s: MPSModuleRepository.getInstance().getAllSolutions()){
         if (s.isStub()){
           result.add(s.getClassPathItem());
