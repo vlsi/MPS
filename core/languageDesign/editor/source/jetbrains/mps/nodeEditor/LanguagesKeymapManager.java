@@ -67,9 +67,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (Language l : myRepository.getAllLanguages()) {
-          registerLanguageKeyMaps(l);
-        }
+        myLanguages.addAll(myRepository.getAllLanguages());
       }
     });
   }
@@ -104,7 +102,6 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   }
 
   private void registerLanguageKeyMaps(Language language) {
-//    System.out.println("register KeyMaps " + language.getNamespace());
     if (myRegisteredLanguages.contains(language)) return;
     myLanguages.add(language);
     myRegisteredLanguages.add(language);
@@ -143,7 +140,6 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     myLanguages.remove(language);
     myRegisteredLanguages.remove(language);
     myLanguagesToRegister.remove(language);
-//    System.out.println("unregister KeyMaps " + language.getNamespace());
     SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
     if (editorModelDescriptor == null) return;
     String modelName = editorModelDescriptor.getLongName();
@@ -170,26 +166,17 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     return myLanguagesToKeyMaps.get(l);
   }
 
-  private class MyModuleRepositoryListener implements ModuleRepositoryListener {
+  private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
     public void moduleInitialized(IModule module) {
       if (module instanceof Language) {
         myLanguagesToRegister.add((Language) module);
       }
     }
 
-    public void moduleRemoved(IModule module) {
-    }
-
-    public void moduleAdded(IModule module) {
-    }
-
     public void beforeModuleRemoved(IModule module) {
       if (module instanceof Language) {
         unregisterLanguageKeyMaps((Language) module);
       }
-    }
-
-    public void moduleChanged(IModule module) {
     }
   }
 }
