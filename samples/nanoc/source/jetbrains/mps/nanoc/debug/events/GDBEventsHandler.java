@@ -22,6 +22,7 @@ public class GDBEventsHandler {
   public static final String REASON = "reason";
   public static final String REASON_BP_HIT = "breakpoint-hit";
   public static final String REASON_EXITED_NORMALLY = "exited-normally";
+  public static final String REASON_EXITED = "exited";
 
   private List<StreamAnswer> myPendingStreamAnswers = new ArrayList<StreamAnswer>();
 
@@ -46,7 +47,7 @@ public class GDBEventsHandler {
               fireBreakpointHit(answer);
               return;
             }
-            if (REASON_EXITED_NORMALLY.equals(reason)) {
+            if (REASON_EXITED_NORMALLY.equals(reason) || REASON_EXITED.equals(reason)) {
               fireProcessTerminated();
               return;
             }

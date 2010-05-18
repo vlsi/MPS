@@ -94,15 +94,6 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
     setState(state, state.resumed(suspendContext));
   }
 
-  private void setState(JavaUiState oldState, JavaUiState newState) {
-    while (!myUiState.compareAndSet(oldState, newState)) {
-      System.err.println("OOPS! somebody changed UiState");
-      // TODO we do not care here if user selected something, we just replace old state. But we might do something more clever, like remember what user selected.
-      oldState = getUiState();
-    }
-    fireStateChanged();
-  }
-
   @Override
   public void sessionRegistered(DebugSessionManagerComponent manager) {
     VMEventsProcessorManagerComponent vmManager

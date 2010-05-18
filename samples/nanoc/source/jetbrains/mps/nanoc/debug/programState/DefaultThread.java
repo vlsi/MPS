@@ -28,7 +28,7 @@ public class DefaultThread implements IThread {
     ListMapValue listMapValue = (ListMapValue) resultAnswer.getResults().getPropertyValue(STACK);
     for (GDBValue value : listMapValue.getValues()) {
       RecordValue recordValue = (RecordValue) value;
-      myFrames.add(new GDBStackFrame(recordValue));
+      myFrames.add(new GDBStackFrame(recordValue, this));
     }
   }
 

@@ -14,6 +14,7 @@ import jetbrains.mps.nanoc.debug.events.GDBEventsHandler;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.nanoc.debug.programState.DefaultThread;
 import jetbrains.mps.nanoc.debug.requests.GDBRequestManager;
+import jetbrains.mps.nanoc.debug.requests.ResumeRequest;
 import jetbrains.mps.nanoc.debug.requests.StackInfoRequest;
 import jetbrains.mps.smodel.IOperationContext;
 
@@ -37,11 +38,18 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
 
   @Override
   protected CppUiState createUiState() {
-    return new DummyUiState(this);
+    return new CppUiStateImpl(this);
   }
 
   @Override
   public void resume() {
+    myRequestManager.createRequest(new ResumeRequest() {
+      @Override
+      public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
+        myExecutionState = ExecutionState.Running;
+        setState(getUiState(), new CppUiStateImpl(CppDebugSession.this));
+      }
+    });
   }
 
   @Override
@@ -87,17 +95,31 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
         StackInfoRequest request = new StackInfoRequest() {
           @Override
           public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
-            processStackOnPause(answer);
+            doPauseOnBreakpoint(answer);
           }
         };
         myRequestManager.createRequest(request);
       }
+
+      @Override
+      public void processTerminated(SimpleConsoleProcessHandler gdbProcess) {
+        doTerminateProcess();
+      }
     });
+    myExecutionState = ExecutionState.Running;
   }
 
-  private void processStackOnPause(ResultAnswer resultAnswer) {
+
+  private void doPauseOnBreakpoint(ResultAnswer resultAnswer) {
+    myExecutionState = ExecutionState.Paused;
     DefaultThread defaultThread = new DefaultThread(resultAnswer);
-    defaultThread.getFramesCount();
+    CppUiState state = getUiState();
+    setState(state, new CppUiStateImpl(this, defaultThread));
+  }
+
+  private void doTerminateProcess() {
+    myExecutionState = ExecutionState.Stopped;
+    setState(getUiState(), new CppUiStateImpl(this));
   }
 
   public GDBEventsHandler getGDBEventsHandler() {
