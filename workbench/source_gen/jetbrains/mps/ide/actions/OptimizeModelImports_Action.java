@@ -16,6 +16,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.actions.model.OptimizeImportsHelper;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.dialogs.ScrollingMessageDialog;
 
 public class OptimizeModelImports_Action extends GeneratedAction {
@@ -80,6 +81,7 @@ public class OptimizeModelImports_Action extends GeneratedAction {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           report.value = new OptimizeImportsHelper(OptimizeModelImports_Action.this.context).optimizeModelsImports(OptimizeModelImports_Action.this.models);
+          SModelRepository.getInstance().saveAll();
         }
       });
       new ScrollingMessageDialog(OptimizeModelImports_Action.this.frame, report.value).showDialog();

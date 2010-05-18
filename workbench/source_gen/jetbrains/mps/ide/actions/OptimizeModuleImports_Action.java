@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.actions.model.OptimizeImportsHelper;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.dialogs.ScrollingMessageDialog;
@@ -88,6 +89,8 @@ public class OptimizeModuleImports_Action extends GeneratedAction {
           } else if (OptimizeModuleImports_Action.this.module instanceof Language) {
             report.value = helper.optimizeLanguageImports(((Language) OptimizeModuleImports_Action.this.module));
           }
+          SModelRepository.getInstance().saveAll();
+          OptimizeModuleImports_Action.this.module.save();
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         }
       });
