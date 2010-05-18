@@ -1604,6 +1604,19 @@
                     </node>
                   </node>
                 </node>
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4837185610456268807">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4837185610456268808">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4837185610456268809">
+                      <link role="variableDeclaration:3" targetNodeId="4494976841093370323" resolveInfo="root" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4837185610456268810">
+                      <link role="baseMethodDeclaration:3" targetNodeId="16.~Element.addContent(org.jdom.Element):org.jdom.Element" resolveInfo="addContent" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4837185610456268811">
+                        <link role="variableDeclaration:3" targetNodeId="4837185610456268790" resolveInfo="re" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
               <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="4837185610456269068">
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="4837185610456269071" />
@@ -1624,19 +1637,6 @@
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="4837185610456268800">
                     <link role="variable:7" targetNodeId="4837185610456268787" resolveInfo="rootId" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4837185610456268807">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4837185610456268808">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4837185610456268809">
-                  <link role="variableDeclaration:3" targetNodeId="4494976841093370323" resolveInfo="root" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4837185610456268810">
-                  <link role="baseMethodDeclaration:3" targetNodeId="16.~Element.addContent(org.jdom.Element):org.jdom.Element" resolveInfo="addContent" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4837185610456268811">
-                    <link role="variableDeclaration:3" targetNodeId="4837185610456268790" resolveInfo="re" />
                   </node>
                 </node>
               </node>
