@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.make;
 
-import com.intellij.ide.startup.StartupManagerEx;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -23,7 +22,9 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -31,29 +32,28 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.util.LinkedHashSet;
 
 public class StartupModuleMaker extends AbstractProjectComponent {
-  public StartupModuleMaker(Project project) {
+  @SuppressWarnings({"UnusedDeclaration"})
+  public StartupModuleMaker(Project project, MPSProject mpsProject, ProjectLibraryManager plm) {
     super(project);
 
-    StartupManagerEx.getInstanceEx(myProject).registerPreStartupActivity(new Runnable() {
+    final ProgressIndicator[] indicator = {ProgressManager.getInstance().getProgressIndicator()};
+    if (indicator[0] == null) {
+      indicator[0] = new EmptyProgressIndicator();
+    }
+    indicator[0].pushState();
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        final ProgressIndicator[] indicator = {ProgressManager.getInstance().getProgressIndicator()};
-        if (indicator[0] == null) {
-          indicator[0] = new EmptyProgressIndicator();
+        ClassLoaderManager.getInstance().updateClassPath();
+
+        if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
+          ModuleMaker maker = new ModuleMaker();
+          maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator[0]);
         }
-        indicator[0].pushState();
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
-              ModuleMaker maker = new ModuleMaker();
-              maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator[0]);
-            }
 
-            ClassLoaderManager.getInstance().reloadAll(indicator[0]);
-          }
-        });
-
-        indicator[0].popState();
+        ClassLoaderManager.getInstance().reloadAll(indicator[0]);
       }
     });
+
+    indicator[0].popState();
   }
 }
