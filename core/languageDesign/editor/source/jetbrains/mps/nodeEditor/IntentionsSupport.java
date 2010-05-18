@@ -299,7 +299,7 @@ public class IntentionsSupport {
 
   private void showLightBulb(Computable<Boolean> terminated) {
     SNode node = myEditor.getEditedNode();
-    if (node != null && node.getModel().isNotEditable()) return;
+    if (node == null || node.getModel().isDisposed() || node.getModel().isNotEditable()) return;
 
     Set<Pair<Intention, SNode>> enabledIntentions = getEnabledIntentions(terminated);
     if (enabledIntentions.isEmpty()) return;
