@@ -45,18 +45,17 @@ public class CommonPaths {
   }
 
   public static List<String> getMPSPaths() {
-    List<String> result = itemToPath(getMPSClassPath());
-    result.add(libPath() + "commons-lang" + File.separator + "commons-lang-2.1.jar");
-    result.add(libPath() + "jdom" + File.separator + "jdom.jar");
-    result.add(libPath() + "picocontainer" + File.separator + "picocontainer.jar");
-    return result;
+    return itemToPath(getMPSClassPath());
   }
 
   public static List<String> getJDKPath() {
     return itemToPath(getJDKClassPath());
   }
 
-  public static List<String> getJDKJars() {
+
+  //------classpaths--------
+
+  private static List<String> getJDKJars() {
     List<String> result = new ArrayList<String>();
 
     if (!SystemInfo.isMac) {
@@ -70,8 +69,6 @@ public class CommonPaths {
     result.add("charsets.jar");
     return result;
   }
-
-  //------classpaths--------
 
   public static IClassPathItem getJDKClassPath() {
     CompositeClassPathItem composite = new CompositeClassPathItem();
@@ -119,6 +116,10 @@ public class CommonPaths {
     if (javaConverterClassPath != null) {
       result.add(javaConverterClassPath);
     }
+
+    addIfExists(result,"/lib/commons-lang/commons-lang-2.1.jar");
+    addIfExists(result,"/lib/picocontainer/picocontainer.jar");
+    addIfExists(result,"/lib/jdom/jdom.jar");
 
     addIfExists(result, "/lib/jetbrains-ideframework/annotations.jar");
 
