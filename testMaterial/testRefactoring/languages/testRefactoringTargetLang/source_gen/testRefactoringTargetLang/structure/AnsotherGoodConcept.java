@@ -11,16 +11,15 @@ import jetbrains.mps.project.GlobalScope;
 public class AnsotherGoodConcept extends BaseConcept {
   public static final String concept = "testRefactoringTargetLang.structure.AnsotherGoodConcept";
 
-  public  AnsotherGoodConcept(SNode node) {
+  public AnsotherGoodConcept(SNode node) {
     super(node);
   }
 
   public static AnsotherGoodConcept newInstance(SModel sm, boolean init) {
-    return (AnsotherGoodConcept)SModelUtil_new.instantiateConceptDeclaration("testRefactoringTargetLang.structure.AnsotherGoodConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AnsotherGoodConcept) SModelUtil_new.instantiateConceptDeclaration("testRefactoringTargetLang.structure.AnsotherGoodConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AnsotherGoodConcept newInstance(SModel sm) {
     return AnsotherGoodConcept.newInstance(sm, false);
   }
-
 }

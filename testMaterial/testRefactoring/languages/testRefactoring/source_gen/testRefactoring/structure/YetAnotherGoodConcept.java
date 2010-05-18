@@ -10,20 +10,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class YetAnotherGoodConcept extends AnsotherGoodConcept {
   public static final String concept = "testRefactoring.structure.YetAnotherGoodConcept";
-  public static String NICE_PROPERTY = "niceProperty";
+  public static final String NICE_PROPERTY = "niceProperty";
 
-  public  YetAnotherGoodConcept(SNode node) {
+  public YetAnotherGoodConcept(SNode node) {
     super(node);
   }
-
-  public static YetAnotherGoodConcept newInstance(SModel sm, boolean init) {
-    return (YetAnotherGoodConcept)SModelUtil_new.instantiateConceptDeclaration("testRefactoring.structure.YetAnotherGoodConcept", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static YetAnotherGoodConcept newInstance(SModel sm) {
-    return YetAnotherGoodConcept.newInstance(sm, false);
-  }
-
 
   public String getNiceProperty() {
     return this.getProperty(YetAnotherGoodConcept.NICE_PROPERTY);
@@ -33,4 +24,11 @@ public class YetAnotherGoodConcept extends AnsotherGoodConcept {
     this.setProperty(YetAnotherGoodConcept.NICE_PROPERTY, value);
   }
 
+  public static YetAnotherGoodConcept newInstance(SModel sm, boolean init) {
+    return (YetAnotherGoodConcept) SModelUtil_new.instantiateConceptDeclaration("testRefactoring.structure.YetAnotherGoodConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static YetAnotherGoodConcept newInstance(SModel sm) {
+    return YetAnotherGoodConcept.newInstance(sm, false);
+  }
 }

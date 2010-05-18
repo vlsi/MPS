@@ -4,31 +4,19 @@ package testRefactoringTargetLang.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class AnsotherGoodConcept_Editor extends DefaultNodeEditor {
-
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId(node.getId() + "_1198682124392");
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createConstant_x6a4n9_a(editorContext, node);
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstantCell(context, node, "another");
-  }
-
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    AnsotherGoodConcept_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    AnsotherGoodConcept_Editor.setupLabel_ConstantCell(editorCell, node, context);
+  private EditorCell createConstant_x6a4n9_a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "another");
+    editorCell.setCellId("Constant_x6a4n9_a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
 }

@@ -4,29 +4,20 @@ package testRefactoringTargetLang.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class AbstractGoodConcept extends BaseConcept {
   public static final String concept = "testRefactoringTargetLang.structure.AbstractGoodConcept";
-  public static String VERY_NICE_PROPERTY = "veryNiceProperty";
-  public static String GOOD_CONCEPT = "goodConcept";
+  public static final String VERY_NICE_PROPERTY = "veryNiceProperty";
+  public static final String ANOTHER_GOOD_CONCEPT = "anotherGoodConcept";
 
-  public  AbstractGoodConcept(SNode node) {
+  public AbstractGoodConcept(SNode node) {
     super(node);
   }
-
-  public static AbstractGoodConcept newInstance(SModel sm, boolean init) {
-    return (AbstractGoodConcept)SModelUtil_new.instantiateConceptDeclaration("testRefactoringTargetLang.structure.AbstractGoodConcept", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AbstractGoodConcept newInstance(SModel sm) {
-    return AbstractGoodConcept.newInstance(sm, false);
-  }
-
 
   public String getVeryNiceProperty() {
     return this.getProperty(AbstractGoodConcept.VERY_NICE_PROPERTY);
@@ -36,24 +27,31 @@ public class AbstractGoodConcept extends BaseConcept {
     this.setProperty(AbstractGoodConcept.VERY_NICE_PROPERTY, value);
   }
 
-  public int getGoodConceptsCount() {
-    return this.getChildCount(AbstractGoodConcept.GOOD_CONCEPT);
+  public int getAnotherGoodConceptsCount() {
+    return this.getChildCount(AbstractGoodConcept.ANOTHER_GOOD_CONCEPT);
   }
 
-  public Iterator<AnsotherGoodConcept> goodConcepts() {
-    return this.children(AbstractGoodConcept.GOOD_CONCEPT);
+  public Iterator<AnsotherGoodConcept> anotherGoodConcepts() {
+    return this.children(AnsotherGoodConcept.class, AbstractGoodConcept.ANOTHER_GOOD_CONCEPT);
   }
 
-  public List<AnsotherGoodConcept> getGoodConcepts() {
-    return this.getChildren(AbstractGoodConcept.GOOD_CONCEPT);
+  public List<AnsotherGoodConcept> getAnotherGoodConcepts() {
+    return this.getChildren(AnsotherGoodConcept.class, AbstractGoodConcept.ANOTHER_GOOD_CONCEPT);
   }
 
-  public void addGoodConcept(AnsotherGoodConcept node) {
-    this.addChild(AbstractGoodConcept.GOOD_CONCEPT, node);
+  public void addAnotherGoodConcept(AnsotherGoodConcept node) {
+    this.addChild(AbstractGoodConcept.ANOTHER_GOOD_CONCEPT, node);
   }
 
-  public void insertGoodConcept(AnsotherGoodConcept prev, AnsotherGoodConcept node) {
-    this.insertChild(prev, AbstractGoodConcept.GOOD_CONCEPT, node);
+  public void insertAnotherGoodConcept(AnsotherGoodConcept prev, AnsotherGoodConcept node) {
+    this.insertChild(prev, AbstractGoodConcept.ANOTHER_GOOD_CONCEPT, node);
   }
 
+  public static AbstractGoodConcept newInstance(SModel sm, boolean init) {
+    return (AbstractGoodConcept) SModelUtil_new.instantiateConceptDeclaration("testRefactoringTargetLang.structure.AbstractGoodConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AbstractGoodConcept newInstance(SModel sm) {
+    return AbstractGoodConcept.newInstance(sm, false);
+  }
 }

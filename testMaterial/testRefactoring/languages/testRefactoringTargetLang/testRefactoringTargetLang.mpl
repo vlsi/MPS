@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="testRefactoringTargetLang" uuid="7bb4f305-7fb7-495b-be9c-5777cd6ab9d6" compileInMPS="false">
+<language namespace="testRefactoringTargetLang" uuid="7bb4f305-7fb7-495b-be9c-5777cd6ab9d6" java-stubs-enabled="false" compileInMPS="false" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="testRefactoringTargetLang" />
-    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="testRefactoringTargetLang" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="testRefactoringTargetLang" />
+    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="testRefactoringTargetLang" />
   </models>
   <accessoryModels />
   <generators />
   <classPath>
-    <entry path="${mps_home}\testMaterial\testRefactoring\classes" />
+    <entry path="${mps_home}/testMaterial/testRefactoring/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />

@@ -11,24 +11,15 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MyVeryGoodConcept1 extends AbstractGoodConcept implements INamedConcept {
   public static final String concept = "testRefactoring.structure.MyVeryGoodConcept1";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String BROTHER = "brother";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String BROTHER = "brother";
 
-  public  MyVeryGoodConcept1(SNode node) {
+  public MyVeryGoodConcept1(SNode node) {
     super(node);
   }
-
-  public static MyVeryGoodConcept1 newInstance(SModel sm, boolean init) {
-    return (MyVeryGoodConcept1)SModelUtil_new.instantiateConceptDeclaration("testRefactoring.structure.MyVeryGoodConcept1", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static MyVeryGoodConcept1 newInstance(SModel sm) {
-    return MyVeryGoodConcept1.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(MyVeryGoodConcept1.NAME);
@@ -63,11 +54,18 @@ public class MyVeryGoodConcept1 extends AbstractGoodConcept implements INamedCon
   }
 
   public MyVeryGoodConcept1 getBrother() {
-    return (MyVeryGoodConcept1)this.getReferent(MyVeryGoodConcept1.BROTHER);
+    return (MyVeryGoodConcept1) this.getReferent(MyVeryGoodConcept1.class, MyVeryGoodConcept1.BROTHER);
   }
 
   public void setBrother(MyVeryGoodConcept1 node) {
     super.setReferent(MyVeryGoodConcept1.BROTHER, node);
   }
 
+  public static MyVeryGoodConcept1 newInstance(SModel sm, boolean init) {
+    return (MyVeryGoodConcept1) SModelUtil_new.instantiateConceptDeclaration("testRefactoring.structure.MyVeryGoodConcept1", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static MyVeryGoodConcept1 newInstance(SModel sm) {
+    return MyVeryGoodConcept1.newInstance(sm, false);
+  }
 }
