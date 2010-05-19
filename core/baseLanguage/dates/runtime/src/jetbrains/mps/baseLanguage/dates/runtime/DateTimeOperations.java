@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.baseLanguage.dates.runtime;
 
-import org.apache.log4j.Logger;
 import org.joda.time.*;
 import org.joda.time.field.FieldUtils;
 import org.joda.time.format.DateTimeFormatter;
@@ -30,8 +29,6 @@ import java.util.Locale;
  */
 public class DateTimeOperations {
     
-  private static final Logger LOG = Logger.getLogger(DateTimeOperations.class);
-
   @Deprecated
   private static InheritableThreadLocal<DateTimeZone> currentZone = new InheritableThreadLocal<DateTimeZone> () {
       protected DateTimeZone initialValue() {
@@ -122,8 +119,7 @@ public class DateTimeOperations {
               int res = formatter.parseInto(mdt, datetimeString, 0);
               if (res <= 0) {
                   // parsing error
-                  LOG.debug("Error parsing the string \""+datetimeString+"\"");
-                  return null;
+                  throw new IllegalArgumentException(datetimeString);
               }
               return convert (mdt.toDateTime());
           }
@@ -131,17 +127,15 @@ public class DateTimeOperations {
               DateTime dt = formatter.parseDateTime(datetimeString);
               return convert (dt);
           }
-      }
-      catch (UnsupportedOperationException uoe) {
-          // parsing is not supported with this formatter
-          LOG.debug("Error parsing date/time ("+uoe.getMessage()+")");
-      }
-      catch (IllegalArgumentException iae) {
+      } catch (IllegalArgumentException iae) {
           // the string is not a datetime
-          LOG.debug("Error parsing date/time ("+iae.getMessage()+")");
+          throw new IllegalArgumentException("Error parsing date/time ("+iae.getMessage()+")");
+
+      } catch (UnsupportedOperationException uoe) {
+          // parsing is not supported with this formatter
+          throw new IllegalArgumentException("Error parsing date/time ("+uoe.getMessage()+")");
       }
-      return null;
-  }   
+  }
 
   public static DateTime parseDateTime(String datetimeString, DateTimeFormatter formatter, DateTimeZone zone, Locale locale, DateTime defValue) {
       if (locale != null) {
@@ -154,24 +148,21 @@ public class DateTimeOperations {
               int res = formatter.parseInto(mdt, datetimeString, 0);
               if (res <= 0) {
                   // parsing error
-                  LOG.debug("Error parsing the string \""+datetimeString+"\"");
-                  return null;
+                  throw new IllegalArgumentException(datetimeString);
               }
               return mdt.toDateTime();
           }
           else {
               return formatter.parseDateTime(datetimeString);
           }
-      }
-      catch (UnsupportedOperationException uoe) {
-          // parsing is not supported with this formatter
-          LOG.debug("Error parsing date/time ("+uoe.getMessage()+")");
-      }
-      catch (IllegalArgumentException iae) {
+      } catch (IllegalArgumentException iae) {
           // the string is not a datetime
-          LOG.debug("Error parsing date/time ("+iae.getMessage()+")");
+          throw new IllegalArgumentException("Error parsing date/time ("+iae.getMessage()+")");
+        
+      } catch (UnsupportedOperationException uoe) {
+          // parsing is not supported with this formatter
+          throw new IllegalArgumentException("Error parsing date/time ("+uoe.getMessage()+")");
       }
-      return null;
   }
 
   @Deprecated
