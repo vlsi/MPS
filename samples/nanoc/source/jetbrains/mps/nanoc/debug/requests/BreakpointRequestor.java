@@ -16,7 +16,7 @@ public abstract class BreakpointRequestor extends GDBRequestor {
 
   public BreakpointRequestor(String sourceFile, int lineNumber) {
     mySourceFile = sourceFile;
-    myLineNumber = lineNumber - 4;
+    myLineNumber = lineNumber - 3;
   }
 
   public BreakpointRequestor(String function) {

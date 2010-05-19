@@ -56,6 +56,6 @@ public class GDBLocation implements ILocation {
 
   @Override
   public int getLineNumber() {
-    return myLineNumber + 3;
+    return myLineNumber + 2;
   }
 }

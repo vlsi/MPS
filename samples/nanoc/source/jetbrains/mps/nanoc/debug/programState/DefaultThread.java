@@ -2,10 +2,9 @@ package jetbrains.mps.nanoc.debug.programState;
 
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.IThread;
-import jetbrains.mps.nanoc.debug.answer.GDBValue;
-import jetbrains.mps.nanoc.debug.answer.ListMapValue;
-import jetbrains.mps.nanoc.debug.answer.RecordValue;
-import jetbrains.mps.nanoc.debug.answer.ResultAnswer;
+import jetbrains.mps.nanoc.debug.CppDebugSession;
+import jetbrains.mps.nanoc.debug.answer.*;
+import jetbrains.mps.nanoc.debug.requests.GDBRequestor;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
@@ -18,17 +17,24 @@ import java.util.List;
  * Time: 19:57:49
  * To change this template use File | Settings | File Templates.
  */
-public class DefaultThread implements IThread {
+public abstract class DefaultThread implements IThread {
   public static final String STACK = "stack";
   public static final String FRAME = "frame";
 
   private List<GDBStackFrame> myFrames = new ArrayList<GDBStackFrame>();
+  private CppDebugSession myDebugSession;
 
-  public DefaultThread(ResultAnswer resultAnswer, String sourceGen) {
+  public DefaultThread(ResultAnswer resultAnswer, String sourceGen, CppDebugSession debugSession) {
+    myDebugSession = debugSession;
     ListMapValue listMapValue = (ListMapValue) resultAnswer.getResults().getPropertyValue(STACK);
     for (GDBValue value : listMapValue.getValues()) {
       RecordValue recordValue = (RecordValue) value;
       myFrames.add(new GDBStackFrame(recordValue, this, sourceGen));
+    }
+    if (!myFrames.isEmpty()) {
+      myDebugSession.getGDBRequestManager().createRequest(new MyRequestor1(0));
+    } else {
+      whenCreated();
     }
   }
 
@@ -55,5 +61,48 @@ public class DefaultThread implements IThread {
   @Override
   public Icon getPresentationIcon() {
     return null;
+  }
+
+  public abstract void whenCreated();
+
+  private class MyRequestor1 extends GDBRequestor {
+    private int myLevel;
+
+    public MyRequestor1(int level) {
+      myLevel = level;
+    }
+
+    @Override
+    public String createRequestString() {
+      return "-stack-select-frame " + myLevel;
+    }
+
+    @Override
+    public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
+      myDebugSession.getGDBRequestManager().createRequest(new MyRequestor2(myLevel));
+    }
+  }
+
+  private class MyRequestor2 extends GDBRequestor {
+    private int myLevel;
+
+    public MyRequestor2(int level) {
+      myLevel = level;
+    }
+
+    @Override
+    public String createRequestString() {
+      return "-stack-list-locals 2";
+    }
+
+    @Override
+    public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
+      //todo
+      if (myLevel + 1 < myFrames.size()) {
+        myDebugSession.getGDBRequestManager().createRequest(new MyRequestor1(myLevel + 1));
+      } else {
+        whenCreated();
+      }
+    }
   }
 }

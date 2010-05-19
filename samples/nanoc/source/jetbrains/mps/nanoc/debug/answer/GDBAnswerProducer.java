@@ -11,7 +11,7 @@ import jetbrains.mps.util.Pair;
  */
 public class GDBAnswerProducer {
   public static final String SAMPLE_STRING =
-    "7529668209268105118^done,stack=[frame={level=\"0 \",addr=\"0x004012c1\",func=\"main\",file=\"C:/MPS/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/source_gen/jetbrains/mps/nanoc/sandbox/hello/Hello.c\",line=\"3\"}]\r\n";
+    "8209685090165226493^done\r\n";
 
   private String myInput;
   private GDBAnswer myGDBAnswer;
@@ -112,7 +112,7 @@ public class GDBAnswerProducer {
     StringBuilder sb = new StringBuilder();
     while (myOffset < myInput.length()) {
       char c = currentChar();
-      if (c == ',') {
+      if (c == ',' || c == '\n' || c == '\r') {
         myOffset++;
         return sb.toString();
       }

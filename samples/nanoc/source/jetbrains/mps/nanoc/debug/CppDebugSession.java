@@ -124,9 +124,13 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
 
   private void doPauseOnBreakpoint(ResultAnswer resultAnswer) {
     myExecutionState = ExecutionState.Paused;
-    DefaultThread defaultThread = new DefaultThread(resultAnswer, mySourceGen);
-    CppUiState state = getUiState();
-    setState(state, new CppUiStateImpl(this, defaultThread));
+    new DefaultThread(resultAnswer, mySourceGen, this) {
+      @Override
+      public void whenCreated() {
+        CppUiState state = getUiState();
+        setState(state, new CppUiStateImpl(CppDebugSession.this, this));
+      }
+    };
   }
 
   private void doTerminateProcess() {
@@ -145,11 +149,11 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
   }
 
   public static void performAllSessionsAction(Project p, DebugSessionAction action) {
-     DebugSessionManagerComponent debugSessionManager = DebugSessionManagerComponent.getInstance(p);
+    DebugSessionManagerComponent debugSessionManager = DebugSessionManagerComponent.getInstance(p);
     Set<AbstractDebugSession> debugSessions = debugSessionManager.getDebugSessions();
     for (AbstractDebugSession session : debugSessions) {
       if (session instanceof CppDebugSession) {
-         action.run((CppDebugSession) session);
+        action.run((CppDebugSession) session);
       }
     }
   }

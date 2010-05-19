@@ -63,4 +63,8 @@ public class GDBStackFrame implements IStackFrame {
   public List<IWatchable> getVisibleWatchables() {
     return new ArrayList<IWatchable>();
   }
+
+  public int getLevel() {
+    return myLevel;
+  }
 }
