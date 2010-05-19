@@ -54,11 +54,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
   }
 
   private List<SNode> getClassifierMembers() {
-    List<SNode> members = this.myClassifierScope.getNodes(new Condition<SNode>() {
-      public boolean met(SNode node) {
-        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
-      }
-    });
+    List<SNode> members = this.getAllClassifierMembers();
     List<SNode> result = new ArrayList<SNode>();
     for (SNode memberNode : members) {
       SNode member = SNodeOperations.cast(memberNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
@@ -67,6 +63,14 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
       }
     }
     return result;
+  }
+
+  protected List<SNode> getAllClassifierMembers() {
+    return this.myClassifierScope.getNodes(new Condition<SNode>() {
+      public boolean met(SNode node) {
+        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
+      }
+    });
   }
 
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
