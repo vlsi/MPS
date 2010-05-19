@@ -43,6 +43,7 @@ import com.intellij.util.containers.ConcurrentHashMap;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.messages.MessageBusConnection;
 import gnu.trove.THashMap;
+import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.TestOnly;
@@ -691,9 +692,11 @@ public class DirectoryIndexImpl extends DirectoryIndex implements ProjectCompone
     return parentPackageName.length() > 0 ? parentPackageName + "." + subdirName : subdirName;
   }
 
+  @Patch
   private class MyVirtualFileListener extends VirtualFileAdapter {
     private final Key<List<VirtualFile>> FILES_TO_RELEASE_KEY = Key.create("DirectoryIndexImpl.MyVirtualFileListener.FILES_TO_RELEASE_KEY");
 
+    @Patch
     public void fileCreated(VirtualFileEvent event) {
       VirtualFile file = event.getFile();
 
@@ -704,13 +707,20 @@ public class DirectoryIndexImpl extends DirectoryIndex implements ProjectCompone
 
       if (isIgnored(file)) return;
 
-      DirectoryInfo parentInfo = myDirToInfoMap.get(parent);
+      // MPS patch begin
+      DirectoryInfo parentInfo = getOrCreateDirInfo(parent);
+      // MPS patch end
       if (parentInfo == null) return;
 
       Module module = parentInfo.module;
 
       for (DirectoryIndexExcludePolicy policy : myExcludePolicies) {
-        if (policy.isExcludeRoot(file)) return;
+        // MPS patch begin
+        if (policy.isExcludeRoot(file)) {
+          doInitialize();
+          return;
+        }
+        // MPS patch end
       }
 
       fillMapWithModuleContent(file, module, parentInfo.contentRoot);

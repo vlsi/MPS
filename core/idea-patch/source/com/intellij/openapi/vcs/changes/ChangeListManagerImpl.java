@@ -908,7 +908,7 @@ public class ChangeListManagerImpl extends ChangeListManagerEx implements Projec
         return true;
       }
       if (DirectoryIndex.getInstance(myProject) != null &&
-          DirectoryIndex.getInstance(myProject).isProjectExcludeRoot(file)) {
+          DirectoryIndex.getInstance(myProject).isProjectExcludeRoot(currentFile)) {
         return true;
       }
       currentFile = currentFile.getParent();

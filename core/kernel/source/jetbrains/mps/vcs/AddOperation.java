@@ -18,6 +18,7 @@ package jetbrains.mps.vcs;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.impl.DirectoryIndex;
 import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.rollback.RollbackEnvironment;
@@ -166,6 +167,9 @@ class AddOperation extends VcsOperation {
             continue;
           }
           List<VirtualFile> path = getPathMaxUnversionedParent(vf);
+          if (path.size() != 0 && DirectoryIndex.getInstance(myProject).isProjectExcludeRoot(path.get(0))) {
+            continue;
+          }
           for (VirtualFile f : path) {
             scheduleUnversionedFileForAdditionInternal(f);
           }
