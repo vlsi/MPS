@@ -25,18 +25,18 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.platform.ProjectBaseDirectory;
 
 public class ExtendedDefaultVcsRootPolicy extends BasicDefaultVcsRootPolicy {
-  private Project myIDEAProject;
+  private Project myProject;
 
   public ExtendedDefaultVcsRootPolicy(Project project) {
     super(project);
-    myIDEAProject = project;
+    myProject = project;
   }
 
   @Override
   public void markDefaultRootsDirty(DirtBuilder builder, final VcsGuess vcsGuess) {
     super.markDefaultRootsDirty(builder, vcsGuess);
 
-    ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(myIDEAProject);
+    ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(myProject);
     VcsRoot[] roots = manager.getAllVcsRoots();
 
     for (VcsRoot root : roots) {
@@ -46,7 +46,7 @@ public class ExtendedDefaultVcsRootPolicy extends BasicDefaultVcsRootPolicy {
 
   @Override
   public boolean matchesDefaultMapping(VirtualFile file, Object matchContext) {
-    if (ProjectBaseDirectory.getInstance(myIDEAProject).getBaseDir() == null) {
+    if (ProjectBaseDirectory.getInstance(myProject).getBaseDir() == null) {
       return false;
     }
     return super.matchesDefaultMapping(file, matchContext);
