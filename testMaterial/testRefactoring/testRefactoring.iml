@@ -4,8 +4,6 @@
     <output url="file://$MODULE_DIR$/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/languages/testRefactoring/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/testRefactoringTargetLang/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
