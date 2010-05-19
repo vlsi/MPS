@@ -97,7 +97,7 @@ public abstract class DefaultThread implements IThread {
 
     @Override
     public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
-      //todo
+      myFrames.get(myLevel).fillLocals(answer); 
       if (myLevel + 1 < myFrames.size()) {
         myDebugSession.getGDBRequestManager().createRequest(new MyRequestor1(myLevel + 1));
       } else {

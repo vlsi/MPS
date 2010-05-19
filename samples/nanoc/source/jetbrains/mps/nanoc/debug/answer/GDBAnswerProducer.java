@@ -11,7 +11,7 @@ import jetbrains.mps.util.Pair;
  */
 public class GDBAnswerProducer {
   public static final String SAMPLE_STRING =
-    "8209685090165226493^done\r\n";
+    "8209685090165226878^done,locals=[{name=\"i\",value=\"0\"}]\r\n";
 
   private String myInput;
   private GDBAnswer myGDBAnswer;
@@ -217,8 +217,7 @@ public class GDBAnswerProducer {
       }
     } else {
       ListValue listValue = new ListValue();
-      GDBValue value = (GDBValue) listValue;
-      listValue.add((GDBValue) first);
+      GDBValue value = (GDBValue) first;
       while (true) {
         if (currentChar() == ',') {
           listValue.add(value);

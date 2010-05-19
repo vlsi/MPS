@@ -1,7 +1,10 @@
 package jetbrains.mps.nanoc.debug.programState;
 
 import jetbrains.mps.debug.api.programState.*;
+import jetbrains.mps.nanoc.debug.answer.GDBValue;
+import jetbrains.mps.nanoc.debug.answer.ListValue;
 import jetbrains.mps.nanoc.debug.answer.RecordValue;
+import jetbrains.mps.nanoc.debug.answer.ResultAnswer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,12 +24,18 @@ public class GDBStackFrame implements IStackFrame {
   public static final String LINE = "line";
   public static final String LEVEL = "level";
 
+  public static final String LOCALS = "locals";
+  public static final String NAME = "name";
+  public static final String VALUE = "value";
+
   private int myLevel;
   private String myRoutine;
   private String myFileAbsolutePath;
   private int myPosition;
   private DefaultThread myThread;
   private GDBLocation myLocation;
+  private List<SimpleVarWatchable> myVariables = new ArrayList<SimpleVarWatchable>();
+
 //  private
 
   public GDBStackFrame(RecordValue value, DefaultThread thread, String sourceGen) {
@@ -51,20 +60,39 @@ public class GDBStackFrame implements IStackFrame {
 
   @Override
   public Map<IWatchable, IValue> getWatchableValues() {
-    return new HashMap<IWatchable, IValue>();
+    HashMap<IWatchable, IValue> result = new HashMap<IWatchable, IValue>();
+    for (SimpleVarWatchable variable : myVariables) {
+      result.put(variable, variable.getValue());
+    }
+    return result;
   }
 
   @Override
   public IValue getValue(IWatchable watchable) {
+    for (SimpleVarWatchable variable : myVariables) {
+      if (variable == watchable) {
+        return variable.getValue();
+      }
+    }
     return null;
   }
 
   @Override
   public List<IWatchable> getVisibleWatchables() {
-    return new ArrayList<IWatchable>();
+    return new ArrayList<IWatchable>(myVariables);
   }
 
   public int getLevel() {
     return myLevel;
+  }
+
+  public void fillLocals(ResultAnswer answer) {
+     ListValue localsList = (ListValue) answer.getResults().getPropertyValue(LOCALS);
+      for (GDBValue value : localsList.getValues()) {
+        RecordValue varRecord = (RecordValue) value;
+        String varName = varRecord.getStringValue(NAME);
+        String varValue = varRecord.getStringValue(VALUE);
+        myVariables.add(new SimpleVarWatchable(varName, varValue));
+      }
   }
 }

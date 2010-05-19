@@ -70,6 +70,39 @@
           </node>
         </node>
       </node>
+      <node role="statement" type="jetbrains.mps.nanoc.structure.VarDeclStatement" id="7530891836727013742">
+        <node role="varDecl" type="jetbrains.mps.nanoc.structure.VarDecl" id="7530891836727013743">
+          <property name="name" value="j" />
+          <node role="initializer" type="jetbrains.mps.nanoc.structure.IntConst" id="7530891836727013746">
+            <property name="value" value="4" />
+          </node>
+        </node>
+        <node role="type" type="jetbrains.mps.nanoc.structure.CInt" id="7530891836727013744" />
+      </node>
+      <node role="statement" type="jetbrains.mps.nanoc.structure.CExpressionStatement" id="7530891836727013762">
+        <node role="expression" type="jetbrains.mps.nanoc.structure.CAssignmentExpression" id="7530891836727013764">
+          <node role="value" type="jetbrains.mps.nanoc.structure.MinusOp" id="7530891836727013771">
+            <node role="right" type="jetbrains.mps.nanoc.structure.IntConst" id="7530891836727013774">
+              <property name="value" value="1" />
+            </node>
+            <node role="left" type="jetbrains.mps.nanoc.structure.VarRef" id="7530891836727013770">
+              <link role="declaration" targetNodeId="7530891836727013743" resolveInfo="j" />
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.nanoc.structure.VarRef" id="7530891836727013763">
+            <link role="declaration" targetNodeId="7530891836727013743" resolveInfo="j" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.nanoc.structure.VarDeclStatement" id="7530891836727013776">
+        <node role="varDecl" type="jetbrains.mps.nanoc.structure.VarDecl" id="7530891836727013777">
+          <property name="name" value="f" />
+          <node role="initializer" type="jetbrains.mps.nanoc.structure.IntConst" id="7530891836727013782">
+            <property name="value" value="0" />
+          </node>
+        </node>
+        <node role="type" type="jetbrains.mps.nanoc.structure.CFloat" id="7530891836727013778" />
+      </node>
       <node role="statement" type="jetbrains.mps.nanoc.structure.CExpressionStatement" id="849607630585440652">
         <node role="expression" type="jetbrains.mps.nanoc.structure.CAssignmentExpression" id="849607630585440653">
           <node role="value" type="jetbrains.mps.nanoc.structure.PlusOp" id="849607630585440654">
