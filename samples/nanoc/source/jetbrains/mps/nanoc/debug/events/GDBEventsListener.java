@@ -17,5 +17,7 @@ public interface GDBEventsListener {
   public void breakpointHit(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess);
   public void processTerminated(SimpleConsoleProcessHandler gdbProcess);
   public void resultReceived(ResultAnswer result, List<StreamAnswer> receivedStreamAnswers, SimpleConsoleProcessHandler gdbProcess);
+  public void gdbProcessTerminated(SimpleConsoleProcessHandler processHandler);
+
   //todo
 }

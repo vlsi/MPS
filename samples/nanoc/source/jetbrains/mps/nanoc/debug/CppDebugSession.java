@@ -105,6 +105,11 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
       public void processTerminated(SimpleConsoleProcessHandler gdbProcess) {
         doTerminateProcess();
       }
+
+      @Override
+      public void gdbProcessTerminated(SimpleConsoleProcessHandler processHandler) {
+        doTerminateProcess();
+      }
     });
     myExecutionState = ExecutionState.Running;
   }
@@ -118,8 +123,10 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
   }
 
   private void doTerminateProcess() {
-    myExecutionState = ExecutionState.Stopped;
-    setState(getUiState(), new CppUiStateImpl(this));
+    if (myExecutionState != ExecutionState.Stopped) {
+      myExecutionState = ExecutionState.Stopped;
+      setState(getUiState(), new CppUiStateImpl(this));
+    }
   }
 
   public GDBEventsHandler getGDBEventsHandler() {

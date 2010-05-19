@@ -71,7 +71,7 @@ public class GDBEventsHandler {
 
       @Override
       public void processTerminated(ProcessEvent event) {
-        // fireProcessTerminated();
+        fireGDBProcessTerminated();
       }
     });
   }
@@ -79,6 +79,12 @@ public class GDBEventsHandler {
   private void fireProcessTerminated() {
     for (GDBEventsListener listener : getEventsListeners()) {
       listener.processTerminated(myProcessHandler);
+    }
+  }
+
+  private void fireGDBProcessTerminated() {
+    for (GDBEventsListener listener : getEventsListeners()) {
+      listener.gdbProcessTerminated(myProcessHandler);
     }
   }
 

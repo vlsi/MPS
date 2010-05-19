@@ -27,4 +27,9 @@ public abstract class GDBEventsAdapter implements GDBEventsListener {
   public void resultReceived(ResultAnswer result, List<StreamAnswer> receivedStreamAnswers, SimpleConsoleProcessHandler gdbProcess) {
 
   }
+
+  @Override
+  public void gdbProcessTerminated(SimpleConsoleProcessHandler processHandler) {
+    
+  }
 }
