@@ -38,6 +38,9 @@ public class MPSVcsProjectConfiguration extends AbstractProjectComponent impleme
     myState.myIgnoreGeneratedFiles = ignoreGeneratedFiles;
   }
 
+  public static MPSVcsProjectConfiguration getInstance(Project project) {
+    return project.getComponent(MPSVcsProjectConfiguration.class);
+  }
 
   public static class MyState {
     private boolean myIgnoreGeneratedFiles;
