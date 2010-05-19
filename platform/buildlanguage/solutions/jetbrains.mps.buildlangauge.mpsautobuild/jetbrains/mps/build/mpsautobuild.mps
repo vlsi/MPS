@@ -67,7 +67,7 @@
       <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1239364393111" />
       <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393112">
         <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393113">
-          <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393114">
+          <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706037">
             <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
           </node>
           <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393115">
@@ -112,7 +112,7 @@
           <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="5932458081781489349">
             <property name="value:21" value="/idea-src/community/platform" />
           </node>
-          <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489345">
+          <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706038">
             <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
           </node>
         </node>
@@ -120,22 +120,22 @@
     </node>
     <node role="target:21" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration:21" id="1239364393126">
       <property name="name:21" value="default" />
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393127">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759706031">
         <link role="targetDeclaration:21" targetNodeId="1239364393133" resolveInfo="prepare" />
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393128">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759706032">
         <link role="targetDeclaration:21" targetNodeId="1239364393137" resolveInfo="download" />
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393129">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759706033">
         <link role="targetDeclaration:21" targetNodeId="1239364393247" resolveInfo="replace.libraries" />
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393130">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759706034">
         <link role="targetDeclaration:21" targetNodeId="1239364393570" resolveInfo="unpack.sources" />
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393131">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759706035">
         <link role="targetDeclaration:21" targetNodeId="1239364393821" resolveInfo="upgrade.plugins" />
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393132">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759706036">
         <link role="targetDeclaration:21" targetNodeId="1239364393844" resolveInfo="clean" />
       </node>
     </node>
@@ -145,7 +145,7 @@
         <link role="declaration:22" targetNodeId="2v.353793545802814434" resolveInfo="mkdir" />
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393135">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802814435" resolveInfo="dir" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393136">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="2196757486872522654">
             <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
           </node>
         </node>
@@ -161,7 +161,7 @@
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393141">
               <property name="value:21" value="/platform15/platform-api.jar" />
             </node>
-            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393142">
+            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705916">
               <link role="propertyDeclaration:21" targetNodeId="1239364393103" resolveInfo="main.url" />
             </node>
           </node>
@@ -173,7 +173,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393146">
                 <property name="value:21" value="/platform-api.jar" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393147">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705924">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393110" resolveInfo="idea.platform.dir" />
               </node>
             </node>
@@ -185,7 +185,7 @@
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393149">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813387" resolveInfo="src" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393150">
-            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393151">
+            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705917">
               <link role="propertyDeclaration:21" targetNodeId="1239364393103" resolveInfo="main.url" />
             </node>
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393152">
@@ -200,7 +200,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393156">
                 <property name="value:21" value="/platform.jar" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393157">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705923">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393110" resolveInfo="idea.platform.dir" />
               </node>
             </node>
@@ -212,7 +212,7 @@
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393159">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813387" resolveInfo="src" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393160">
-            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393161">
+            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705918">
               <link role="propertyDeclaration:21" targetNodeId="1239364393103" resolveInfo="main.url" />
             </node>
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393162">
@@ -227,7 +227,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393166">
                 <property name="value:21" value="/resources.jar" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393167">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705922">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393110" resolveInfo="idea.platform.dir" />
               </node>
             </node>
@@ -239,7 +239,7 @@
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393169">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813387" resolveInfo="src" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393170">
-            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393171">
+            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705919">
               <link role="propertyDeclaration:21" targetNodeId="1239364393103" resolveInfo="main.url" />
             </node>
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393172">
@@ -254,7 +254,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393176">
                 <property name="value:21" value="/resources_en.jar" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393177">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705921">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393110" resolveInfo="idea.platform.dir" />
               </node>
             </node>
@@ -266,7 +266,7 @@
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393179">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813387" resolveInfo="src" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393180">
-            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393181">
+            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705920">
               <link role="propertyDeclaration:21" targetNodeId="1239364393103" resolveInfo="main.url" />
             </node>
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393182">
@@ -281,7 +281,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393186">
                 <property name="value:21" value="/sources.zip" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393187">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705925">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393110" resolveInfo="idea.platform.dir" />
               </node>
             </node>
@@ -296,7 +296,7 @@
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393191">
               <property name="value:21" value="/ideaIU-{build.number}-jdk15.zip" />
             </node>
-            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393192">
+            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705926">
               <link role="propertyDeclaration:21" targetNodeId="1239364393103" resolveInfo="main.url" />
             </node>
           </node>
@@ -305,7 +305,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813381" resolveInfo="dest" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393194">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393195">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393196">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705927">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393197">
@@ -315,7 +315,7 @@
           </node>
         </node>
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393209">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759706039">
         <link role="targetDeclaration:21" targetNodeId="1239364393133" resolveInfo="prepare" />
       </node>
     </node>
@@ -325,7 +325,7 @@
         <link role="declaration:22" targetNodeId="2v.353793545802814434" resolveInfo="mkdir" />
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393212">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802814435" resolveInfo="dir" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393213">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705933">
             <link role="propertyDeclaration:21" targetNodeId="1239364393240" resolveInfo="tmpdir" />
           </node>
         </node>
@@ -334,13 +334,13 @@
         <link role="declaration:22" targetNodeId="2v.353793545802815734" resolveInfo="unzip" />
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393215">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802815741" resolveInfo="src" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393216">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705934">
             <link role="propertyDeclaration:21" targetNodeId="1239364393234" resolveInfo="platform.jar" />
           </node>
         </node>
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393217">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802815735" resolveInfo="dest" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393218">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705935">
             <link role="propertyDeclaration:21" targetNodeId="1239364393240" resolveInfo="tmpdir" />
           </node>
         </node>
@@ -349,7 +349,7 @@
         <link role="declaration:22" targetNodeId="2v.353793545802812660" resolveInfo="delete" />
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393220">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812669" resolveInfo="dir" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393221">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705936">
             <link role="propertyDeclaration:21" targetNodeId="1239364393240" resolveInfo="tmpdir" />
           </node>
         </node>
@@ -364,7 +364,7 @@
         <link role="declaration:22" targetNodeId="2v.353793545802814434" resolveInfo="mkdir" />
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="2240426702285079528">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802814435" resolveInfo="dir" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="2240426702285079529">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705937">
             <link role="propertyDeclaration:21" targetNodeId="2240426702285079515" resolveInfo="openapi.tmpdir" />
           </node>
         </node>
@@ -378,7 +378,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="2240426702285079513">
                 <property name="value:21" value="/idea/lib/openapi.jar" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="2240426702285079514">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705938">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
             </node>
@@ -386,7 +386,7 @@
         </node>
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="2240426702285079531">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802815735" resolveInfo="dest" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="2240426702285079533">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705939">
             <link role="propertyDeclaration:21" targetNodeId="2240426702285079515" resolveInfo="openapi.tmpdir" />
           </node>
         </node>
@@ -397,7 +397,7 @@
           <link role="declaration:22" targetNodeId="2v.353793545802813175" resolveInfo="fileset" />
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="2240426702285079507">
             <link role="attributeDeclaration:22" targetNodeId="2v.353793545802811531" resolveInfo="dir" />
-            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="2240426702285079530">
+            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705941">
               <link role="propertyDeclaration:21" targetNodeId="2240426702285079515" resolveInfo="openapi.tmpdir" />
             </node>
           </node>
@@ -410,7 +410,7 @@
         </node>
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="2240426702285079500">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812455" resolveInfo="todir" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="2240426702285079502">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705940">
             <link role="propertyDeclaration:21" targetNodeId="1239364393240" resolveInfo="tmpdir" />
           </node>
         </node>
@@ -419,7 +419,7 @@
         <link role="declaration:22" targetNodeId="2v.353793545802812660" resolveInfo="delete" />
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="2240426702285079539">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812669" resolveInfo="dir" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="2240426702285079540">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705942">
             <link role="propertyDeclaration:21" targetNodeId="2240426702285079515" resolveInfo="openapi.tmpdir" />
           </node>
         </node>
@@ -428,13 +428,13 @@
         <link role="declaration:22" targetNodeId="2v.353793545802813521" resolveInfo="jar" />
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393225">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802815893" resolveInfo="basedir" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393226">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705943">
             <link role="propertyDeclaration:21" targetNodeId="1239364393240" resolveInfo="tmpdir" />
           </node>
         </node>
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393227">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802815899" resolveInfo="destfile" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393228">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705944">
             <link role="propertyDeclaration:21" targetNodeId="1239364393234" resolveInfo="platform.jar" />
           </node>
         </node>
@@ -449,7 +449,7 @@
         <link role="declaration:22" targetNodeId="2v.353793545802812660" resolveInfo="delete" />
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393232">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812669" resolveInfo="dir" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393233">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705945">
             <link role="propertyDeclaration:21" targetNodeId="1239364393240" resolveInfo="tmpdir" />
           </node>
         </node>
@@ -462,7 +462,7 @@
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393238">
               <property name="value:21" value="/platform.jar" />
             </node>
-            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393239">
+            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705930">
               <link role="propertyDeclaration:21" targetNodeId="1239364393110" resolveInfo="idea.platform.dir" />
             </node>
           </node>
@@ -476,7 +476,7 @@
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393244">
               <property name="value:21" value="/tmp" />
             </node>
-            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393245">
+            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705931">
               <link role="propertyDeclaration:21" targetNodeId="1239364393110" resolveInfo="idea.platform.dir" />
             </node>
           </node>
@@ -490,16 +490,16 @@
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="2240426702285079522">
               <property name="value:21" value="/idea/lib/openapi" />
             </node>
-            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="2240426702285079523">
+            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705932">
               <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
             </node>
           </node>
         </node>
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393246">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759705928">
         <link role="targetDeclaration:21" targetNodeId="1239364393137" resolveInfo="download" />
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="2240426702285079497">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759705929">
         <link role="targetDeclaration:21" targetNodeId="1239364393247" resolveInfo="replace.libraries" />
       </node>
     </node>
@@ -511,7 +511,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802815741" resolveInfo="src" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393250">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393251">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393252">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705947">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393253">
@@ -527,7 +527,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393257">
                 <property name="value:21" value="/idea" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393258">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705948">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
             </node>
@@ -540,7 +540,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393276">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393277">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393278">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705949">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393279">
@@ -561,7 +561,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393285">
                 <property name="value:21" value="/commons-codec" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393286">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705950">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
@@ -580,7 +580,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393291">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393292">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393293">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705951">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393294">
@@ -601,7 +601,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393300">
                 <property name="value:21" value="/commons-collections" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393301">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705952">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
@@ -623,7 +623,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393315">
                 <property name="value:21" value="/jdom" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393316">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705953">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
@@ -633,7 +633,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393306">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393307">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393308">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705954">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393309">
@@ -660,7 +660,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393321">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393322">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393323">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705955">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393324">
@@ -681,7 +681,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393330">
                 <property name="value:21" value="/jgoodies" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393331">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705956">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
@@ -700,7 +700,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393336">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393337">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393338">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705957">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393339">
@@ -721,7 +721,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393345">
                 <property name="value:21" value="/javahelp" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393346">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705958">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
@@ -751,7 +751,7 @@
             <link role="attributeDeclaration:22" targetNodeId="2v.353793545802811531" resolveInfo="dir" />
             <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393355">
               <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393356">
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393357">
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705960">
                   <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
                 </node>
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393358">
@@ -768,7 +768,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393362">
                 <property name="value:21" value="/jna" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393363">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705959">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
@@ -787,7 +787,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393369">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393370">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393371">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705961">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393372">
@@ -808,7 +808,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393379">
                 <property name="value:21" value="/log4j" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393380">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705962">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
@@ -827,7 +827,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393385">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393386">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393387">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705963">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393388">
@@ -848,7 +848,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393394">
                 <property name="value:21" value="/microba" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393395">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705964">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
@@ -867,7 +867,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393400">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393401">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393402">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705965">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393403">
@@ -888,7 +888,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393409">
                 <property name="value:21" value="/nanoxml" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393410">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705966">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
@@ -907,7 +907,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393415">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393416">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393417">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705967">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393418">
@@ -928,7 +928,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393424">
                 <property name="value:21" value="/oromatcher" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393425">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705968">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
@@ -947,7 +947,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393430">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393431">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393432">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705969">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393433">
@@ -968,7 +968,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393439">
                 <property name="value:21" value="/picocontainer" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393440">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705970">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
@@ -998,7 +998,7 @@
             <link role="attributeDeclaration:22" targetNodeId="2v.353793545802811531" resolveInfo="dir" />
             <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393449">
               <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393450">
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393451">
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705972">
                   <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
                 </node>
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393452">
@@ -1015,7 +1015,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393456">
                 <property name="value:21" value="/trove4j" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393457">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705971">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
@@ -1034,7 +1034,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393477">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393478">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393479">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705973">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393480">
@@ -1055,7 +1055,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393486">
                 <property name="value:21" value="/xmlrpc" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393487">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705974">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
@@ -1074,7 +1074,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393492">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393493">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393494">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705975">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393495">
@@ -1095,7 +1095,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393501">
                 <property name="value:21" value="/xstream" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393502">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705976">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
@@ -1114,7 +1114,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393507">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393508">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393509">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705977">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393510">
@@ -1135,7 +1135,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393516">
                 <property name="value:21" value="/yjp" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393517">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705978">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
               </node>
             </node>
@@ -1159,7 +1159,7 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393525">
                   <property name="value:21" value="/idea/lib" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393526">
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705981">
                   <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
                 </node>
               </node>
@@ -1194,7 +1194,7 @@
         </node>
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393536">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812455" resolveInfo="todir" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393537">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705980">
             <link role="propertyDeclaration:21" targetNodeId="1239364393110" resolveInfo="idea.platform.dir" />
           </node>
         </node>
@@ -1210,7 +1210,7 @@
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393541">
           <link role="attributeDeclaration:22" targetNodeId="3v.353793545802853778" resolveInfo="match" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393542">
-            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393543">
+            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705982">
               <link role="propertyDeclaration:21" targetNodeId="1239364393120" resolveInfo="idea.platform.build.property" />
             </node>
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393544">
@@ -1232,7 +1232,7 @@
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393550">
               <property name="value:21" value="=" />
             </node>
-            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393551">
+            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705983">
               <link role="propertyDeclaration:21" targetNodeId="1239364393120" resolveInfo="idea.platform.build.property" />
             </node>
           </node>
@@ -1255,7 +1255,7 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393559">
                   <property name="value:21" value="/idea/build.txt" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393561">
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705984">
                   <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
                 </node>
               </node>
@@ -1277,7 +1277,7 @@
           </node>
         </node>
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393569">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759705946">
         <link role="targetDeclaration:21" targetNodeId="1239364393137" resolveInfo="download" />
       </node>
     </node>
@@ -1290,14 +1290,14 @@
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393573">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393574">
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393575">
-                <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393576">
+                <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705986">
                   <link role="propertyDeclaration:21" targetNodeId="1239364393123" resolveInfo="platfrom.src.zip" />
                 </node>
                 <node role="left:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393577">
                   <property name="value:21" value="/" />
                 </node>
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393578">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705985">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393110" resolveInfo="idea.platform.dir" />
               </node>
             </node>
@@ -1312,7 +1312,7 @@
                   <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393584">
                     <property name="value:21" value=".old" />
                   </node>
-                  <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393585">
+                  <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705987">
                     <link role="propertyDeclaration:21" targetNodeId="1239364393123" resolveInfo="platfrom.src.zip" />
                   </node>
                 </node>
@@ -1320,7 +1320,7 @@
                   <property name="value:21" value="/" />
                 </node>
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393587">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705988">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393110" resolveInfo="idea.platform.dir" />
               </node>
             </node>
@@ -1336,7 +1336,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393592">
                 <property name="value:21" value="/sources.zip" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393593">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705989">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393110" resolveInfo="idea.platform.dir" />
               </node>
             </node>
@@ -1349,7 +1349,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393597">
                 <property name="value:21" value="/idea-src" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393598">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705990">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
             </node>
@@ -1363,14 +1363,14 @@
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393601">
             <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393602">
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393603">
-                <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393604">
+                <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705992">
                   <link role="propertyDeclaration:21" targetNodeId="1239364393123" resolveInfo="platfrom.src.zip" />
                 </node>
                 <node role="left:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393605">
                   <property name="value:21" value="/" />
                 </node>
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393606">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705991">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393110" resolveInfo="idea.platform.dir" />
               </node>
             </node>
@@ -1391,8 +1391,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393614">
                   <property name="value:21" value="/annotations/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489368">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705993">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1407,8 +1407,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393622">
                   <property name="value:21" value="/boot/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489367">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705994">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1423,8 +1423,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393630">
                   <property name="value:21" value="/bootstrap/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489366">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705995">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1439,8 +1439,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393638">
                   <property name="value:21" value="/extensions/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489365">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705996">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1455,8 +1455,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393646">
                   <property name="value:21" value="/lang-api/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489364">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705997">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1471,8 +1471,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393654">
                   <property name="value:21" value="/lang-impl/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489363">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705998">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1487,8 +1487,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393662">
                   <property name="value:21" value="/lvcs-impl/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489362">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705999">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1503,8 +1503,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393670">
                   <property name="value:21" value="/lvcs-api/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489361">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706000">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1519,8 +1519,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393678">
                   <property name="value:21" value="/platform-api/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489360">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706001">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1535,8 +1535,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393686">
                   <property name="value:21" value="/platform-impl/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489359">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706002">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1551,8 +1551,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393694">
                   <property name="value:21" value="/platform-resources/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489358">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706003">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1567,8 +1567,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393702">
                   <property name="value:21" value="/platform-resources-en/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489357">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706004">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1583,8 +1583,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393726">
                   <property name="value:21" value="/testRunner/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489354">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706005">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1599,8 +1599,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393734">
                   <property name="value:21" value="/usageView/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489353">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706006">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1615,8 +1615,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393742">
                   <property name="value:21" value="/util/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489352">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706007">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1631,8 +1631,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393750">
                   <property name="value:21" value="/vcs-api/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489351">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706008">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1647,8 +1647,8 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393758">
                   <property name="value:21" value="/vcs-impl/src/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="5932458081781489350">
-                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="src.dir" />
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706009">
+                  <link role="propertyDeclaration:21" targetNodeId="5932458081781489339" resolveInfo="srcdir" />
                 </node>
               </node>
             </node>
@@ -1666,7 +1666,7 @@
                   <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393767">
                     <property name="value:21" value=".old" />
                   </node>
-                  <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393768">
+                  <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706011">
                     <link role="propertyDeclaration:21" targetNodeId="1239364393123" resolveInfo="platfrom.src.zip" />
                   </node>
                 </node>
@@ -1674,7 +1674,7 @@
                   <property name="value:21" value="/" />
                 </node>
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393770">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706010">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393110" resolveInfo="idea.platform.dir" />
               </node>
             </node>
@@ -1690,7 +1690,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393775">
                 <property name="value:21" value="/sources.zip" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393776">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706012">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393110" resolveInfo="idea.platform.dir" />
               </node>
             </node>
@@ -1711,7 +1711,7 @@
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393784">
               <property name="value:21" value="/idea-dev/lib/src/src_openapi.zip" />
             </node>
-            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393785">
+            <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706014">
               <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
             </node>
           </node>
@@ -1726,7 +1726,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393790">
                 <property name="value:21" value="/idea-dev.zip" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393791">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706015">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
             </node>
@@ -1739,7 +1739,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393795">
                 <property name="value:21" value="/idea-dev" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393796">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706016">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
             </node>
@@ -1750,7 +1750,7 @@
         <link role="declaration:22" targetNodeId="2v.353793545802815734" resolveInfo="unzip" />
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393798">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802815741" resolveInfo="src" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393799">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706019">
             <link role="propertyDeclaration:21" targetNodeId="1239364393779" resolveInfo="src" />
           </node>
         </node>
@@ -1761,7 +1761,7 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393803">
                 <property name="value:21" value="/idea-openapi" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393804">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706017">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
             </node>
@@ -1788,7 +1788,7 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393813">
                   <property name="value:21" value="/idea-openapi" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393814">
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706021">
                   <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
                 </node>
               </node>
@@ -1802,14 +1802,14 @@
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393818">
                 <property name="value:21" value="/idea-external-src.zip" />
               </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393819">
+              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706020">
                 <link role="propertyDeclaration:21" targetNodeId="1239364393110" resolveInfo="idea.platform.dir" />
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393820">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759706013">
         <link role="targetDeclaration:21" targetNodeId="1239364393137" resolveInfo="download" />
       </node>
     </node>
@@ -1826,7 +1826,7 @@
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393827">
                   <property name="value:21" value="/idea/plugins/" />
                 </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393828">
+                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706023">
                   <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
                 </node>
               </node>
@@ -1862,35 +1862,35 @@
           </node>
         </node>
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393843">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759706022">
         <link role="targetDeclaration:21" targetNodeId="1239364393247" resolveInfo="replace.libraries" />
       </node>
     </node>
     <node role="target:21" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration:21" id="1239364393844">
       <property name="name:21" value="clean" />
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393845">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759706024">
         <link role="targetDeclaration:21" targetNodeId="1239364393821" resolveInfo="upgrade.plugins" />
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393846">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759706025">
         <link role="targetDeclaration:21" targetNodeId="1239364393137" resolveInfo="download" />
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393847">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759706026">
         <link role="targetDeclaration:21" targetNodeId="1239364393247" resolveInfo="replace.libraries" />
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393848">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759706027">
         <link role="targetDeclaration:21" targetNodeId="1239364393570" resolveInfo="unpack.sources" />
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393849">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759706028">
         <link role="targetDeclaration:21" targetNodeId="1239364393133" resolveInfo="prepare" />
       </node>
-      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1239364393850">
+      <node role="depends:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="7502604942759706029">
         <link role="targetDeclaration:21" targetNodeId="1239364393210" resolveInfo="clean.license.classes" />
       </node>
       <node role="taskCall:21" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="1239364393852">
         <link role="declaration:22" targetNodeId="2v.353793545802812660" resolveInfo="delete" />
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393853">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812669" resolveInfo="dir" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393854">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759706030">
             <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
           </node>
         </node>
