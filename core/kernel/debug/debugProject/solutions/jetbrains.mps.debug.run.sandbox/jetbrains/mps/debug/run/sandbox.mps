@@ -886,7 +886,7 @@
     </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="5661655420496807176">
       <property name="name:3" value="getOne" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5661655420496807178" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="6798089603760986933" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5661655420496807179">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5661655420496807181">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5661655420496807182">

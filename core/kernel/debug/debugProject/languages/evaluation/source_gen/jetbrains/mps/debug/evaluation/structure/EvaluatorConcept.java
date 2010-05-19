@@ -16,6 +16,7 @@ public class EvaluatorConcept extends BaseConcept {
   public static final String concept = "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept";
   public static final String IS_RUNTIME = "isRuntime";
   public static final String THIS_TYPE = "thisType";
+  public static final String STATIC_CONTEXT_TYPE = "staticContextType";
   public static final String EVALUATED_STATEMENT = "evaluatedStatement";
   public static final String VARIABLES = "variables";
 
@@ -37,6 +38,14 @@ public class EvaluatorConcept extends BaseConcept {
 
   public void setThisType(ClassifierType node) {
     super.setChild(EvaluatorConcept.THIS_TYPE, node);
+  }
+
+  public ClassifierType getStaticContextType() {
+    return (ClassifierType) this.getChild(ClassifierType.class, EvaluatorConcept.STATIC_CONTEXT_TYPE);
+  }
+
+  public void setStaticContextType(ClassifierType node) {
+    super.setChild(EvaluatorConcept.STATIC_CONTEXT_TYPE, node);
   }
 
   public BlockStatement getEvaluatedStatement() {

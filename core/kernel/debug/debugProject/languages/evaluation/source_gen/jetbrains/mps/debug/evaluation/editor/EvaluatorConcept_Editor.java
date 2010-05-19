@@ -51,7 +51,9 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6rl195_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6rl195_b0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6rl195_c0a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_6rl195_d0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6rl195_d0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6rl195_e0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_6rl195_f0a(editorContext, node));
     return editorCell;
   }
 
@@ -63,7 +65,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6rl195_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this type:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static context type:");
     editorCell.setCellId("Constant_6rl195_b0a");
     {
       Style style = editorCell.getStyle();
@@ -73,8 +75,19 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_6rl195_d0a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new EvaluatorConcept_Editor.variablesListHandler_6rl195_d0a(node, "variables", editorContext);
+  private EditorCell createConstant_6rl195_d0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this type:");
+    editorCell.setCellId("Constant_6rl195_d0a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_6rl195_f0a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new EvaluatorConcept_Editor.variablesListHandler_6rl195_f0a(node, "variables", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_variables");
     {
@@ -87,6 +100,23 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNode_6rl195_c0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("staticContextType");
+    provider.setNoTargetText("<no staticContextType>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_6rl195_e0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("thisType");
     provider.setNoTargetText("static context");
@@ -127,8 +157,8 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.getBoolean(node, "isRuntime"));
   }
 
-  private static class variablesListHandler_6rl195_d0a extends RefNodeListHandler {
-    public variablesListHandler_6rl195_d0a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class variablesListHandler_6rl195_f0a extends RefNodeListHandler {
+    public variablesListHandler_6rl195_f0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

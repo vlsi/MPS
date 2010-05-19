@@ -64,8 +64,17 @@
           <property name="text:32" value="evaluator" />
         </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="6036237525966315970">
-          <property name="text:32" value="this type:" />
+          <property name="text:32" value="static context type:" />
           <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem:32" id="6036237525966315973">
+            <property name="flag:32" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4494939654047346021">
+          <link role="relationDeclaration:32" targetNodeId="1.7614982787448003602" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4494939654047346018">
+          <property name="text:32" value="this type:" />
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem:32" id="4494939654047346019">
             <property name="flag:32" value="true" />
           </node>
         </node>
