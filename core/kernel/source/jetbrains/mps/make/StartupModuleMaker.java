@@ -56,6 +56,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
       }
     });
 
+    //the pre-startup activity is needed because all project components must be alredy instantiated when first class reload happens
     StartupManager.getInstance(project).registerPreStartupActivity(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteAction(new Runnable() {
