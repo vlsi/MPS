@@ -135,11 +135,6 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
       for (DebugProcessListener listener : getAllProcessListeners()) {
         listener.processAttached(process);
       }
-      DebugSession debugSession;
-      synchronized (myEventProcessorToSessionMap) {
-        debugSession = myEventProcessorToSessionMap.get(process);
-      }
-      myDebugManager.fireSessionAttached(debugSession);
     }
   }
 

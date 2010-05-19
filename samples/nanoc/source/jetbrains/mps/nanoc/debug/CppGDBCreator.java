@@ -23,6 +23,9 @@ import jetbrains.mps.nanoc.debug.util.ProcessUtil;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.debug.info.StacktraceUtil;
 import jetbrains.mps.nanoc.plugin.NanocConfigRunPreparationUtil;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 
 import javax.swing.JComponent;
 import java.io.File;
@@ -66,6 +69,8 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
   public ExecutionResult startSession(Executor executor, ProgramRunner runner, RunProfileState state, Project project) throws ExecutionException {
     try {
       myProgramFile = NanocConfigRunPreparationUtil.prepare(myNodeId, myModelRef);
+      String sourceGen =
+        SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(myModelRef)).getModule().getGeneratorOutputPath();
       File gdbFile = new File(ProgramsLocationUtil.getGdbLocation());
       ProcessBuilder processBuilder = new ProcessBuilder();
       processBuilder.directory(gdbFile.getParentFile());
@@ -90,7 +95,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
           Disposer.dispose(consoleView);
         }
       };
-      myDebugSession = new CppDebugSession(project);
+      myDebugSession = new CppDebugSession(project, sourceGen);
       myDebugSession.setProcessHandler(processHandler);
       myDebugSession.getGDBEventsHandler().addEventListener(new GDBEventsAdapter() {
         @Override

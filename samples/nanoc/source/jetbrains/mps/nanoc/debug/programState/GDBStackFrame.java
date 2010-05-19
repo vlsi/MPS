@@ -29,14 +29,14 @@ public class GDBStackFrame implements IStackFrame {
   private GDBLocation myLocation;
 //  private
 
-  public GDBStackFrame(RecordValue value, DefaultThread thread) {
+  public GDBStackFrame(RecordValue value, DefaultThread thread, String sourceGen) {
     String s = value.getStringValue(LEVEL);
     myLevel = Integer.parseInt(s.substring(0, s.length()-1));
     myRoutine = value.getStringValue(FUNCTION);
     myPosition = value.getIntegerValue(LINE);
     myFileAbsolutePath = value.getStringValue(FILE);
     myThread = thread;
-    myLocation = new GDBLocation(myFileAbsolutePath, myRoutine, myPosition);
+    myLocation = new GDBLocation(myFileAbsolutePath, myRoutine, myPosition, sourceGen);
   }
 
   @Override

@@ -18,30 +18,75 @@
         </node>
         <node role="type" type="jetbrains.mps.nanoc.structure.CInt" id="5698737643333767059" />
       </node>
-      <node role="statement" type="jetbrains.mps.nanoc.structure.CWhile" id="6585869519574685732">
-        <node role="body" type="jetbrains.mps.nanoc.structure.CBody" id="6585869519574685734">
-          <node role="statement" type="jetbrains.mps.nanoc.structure.CExpressionStatement" id="5698737643333767062">
-            <node role="expression" type="jetbrains.mps.nanoc.structure.CAssignmentExpression" id="5698737643333767064">
-              <node role="value" type="jetbrains.mps.nanoc.structure.PlusOp" id="5698737643333767068">
-                <node role="left" type="jetbrains.mps.nanoc.structure.VarRef" id="5698737643333767067">
-                  <link role="declaration" targetNodeId="5698737643333767058" resolveInfo="i" />
-                </node>
-                <node role="right" type="jetbrains.mps.nanoc.structure.IntConst" id="871143615196734911">
+      <node role="statement" type="jetbrains.mps.nanoc.structure.CExpressionStatement" id="1485470850545864015">
+        <node role="expression" type="jetbrains.mps.nanoc.structure.CAssignmentExpression" id="1485470850545864016">
+          <node role="value" type="jetbrains.mps.nanoc.structure.PlusOp" id="1485470850545864017">
+            <node role="left" type="jetbrains.mps.nanoc.structure.VarRef" id="1485470850545864018">
+              <link role="declaration" targetNodeId="5698737643333767058" resolveInfo="i" />
+            </node>
+            <node role="right" type="jetbrains.mps.nanoc.structure.IntConst" id="1485470850545864019">
+              <property name="value" value="1" />
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.nanoc.structure.VarRef" id="1485470850545864020">
+            <link role="declaration" targetNodeId="5698737643333767058" resolveInfo="i" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.nanoc.structure.CExpressionStatement" id="1485470850545864022">
+        <node role="expression" type="jetbrains.mps.nanoc.structure.CAssignmentExpression" id="1485470850545864023">
+          <node role="value" type="jetbrains.mps.nanoc.structure.PlusOp" id="1485470850545864024">
+            <node role="left" type="jetbrains.mps.nanoc.structure.VarRef" id="1485470850545864025">
+              <link role="declaration" targetNodeId="5698737643333767058" resolveInfo="i" />
+            </node>
+            <node role="right" type="jetbrains.mps.nanoc.structure.IntConst" id="1485470850545864026">
+              <property name="value" value="1" />
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.nanoc.structure.VarRef" id="1485470850545864027">
+            <link role="declaration" targetNodeId="5698737643333767058" resolveInfo="i" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.nanoc.structure.CExpressionStatement" id="1485470850545864029">
+        <node role="expression" type="jetbrains.mps.nanoc.structure.CAssignmentExpression" id="1485470850545864030">
+          <node role="value" type="jetbrains.mps.nanoc.structure.PlusOp" id="1485470850545864031">
+            <node role="left" type="jetbrains.mps.nanoc.structure.VarRef" id="1485470850545864032">
+              <link role="declaration" targetNodeId="5698737643333767058" resolveInfo="i" />
+            </node>
+            <node role="right" type="jetbrains.mps.nanoc.structure.IntConst" id="1485470850545864033">
+              <property name="value" value="1" />
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.nanoc.structure.VarRef" id="1485470850545864034">
+            <link role="declaration" targetNodeId="5698737643333767058" resolveInfo="i" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.nanoc.structure.CWhile" id="1485470850545864036">
+        <node role="condition" type="jetbrains.mps.nanoc.structure.LessOp" id="1485470850545864040">
+          <node role="right" type="jetbrains.mps.nanoc.structure.IntConst" id="1485470850545864043">
+            <property name="value" value="6" />
+          </node>
+          <node role="left" type="jetbrains.mps.nanoc.structure.VarRef" id="1485470850545864039">
+            <link role="declaration" targetNodeId="5698737643333767058" resolveInfo="i" />
+          </node>
+        </node>
+        <node role="body" type="jetbrains.mps.nanoc.structure.CBody" id="1485470850545864038">
+          <node role="statement" type="jetbrains.mps.nanoc.structure.CExpressionStatement" id="1485470850545864044">
+            <node role="expression" type="jetbrains.mps.nanoc.structure.CAssignmentExpression" id="1485470850545864046">
+              <node role="value" type="jetbrains.mps.nanoc.structure.PlusOp" id="1485470850545864050">
+                <node role="right" type="jetbrains.mps.nanoc.structure.IntConst" id="1485470850545864053">
                   <property name="value" value="1" />
                 </node>
+                <node role="left" type="jetbrains.mps.nanoc.structure.VarRef" id="1485470850545864049">
+                  <link role="declaration" targetNodeId="5698737643333767058" resolveInfo="i" />
+                </node>
               </node>
-              <node role="variable" type="jetbrains.mps.nanoc.structure.VarRef" id="5698737643333767063">
+              <node role="variable" type="jetbrains.mps.nanoc.structure.VarRef" id="1485470850545864045">
                 <link role="declaration" targetNodeId="5698737643333767058" resolveInfo="i" />
               </node>
             </node>
-          </node>
-        </node>
-        <node role="condition" type="jetbrains.mps.nanoc.structure.LessOp" id="871143615196734913">
-          <node role="right" type="jetbrains.mps.nanoc.structure.IntConst" id="871143615196734916">
-            <property name="value" value="5" />
-          </node>
-          <node role="left" type="jetbrains.mps.nanoc.structure.VarRef" id="871143615196734912">
-            <link role="declaration" targetNodeId="5698737643333767058" resolveInfo="i" />
           </node>
         </node>
       </node>

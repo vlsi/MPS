@@ -24,11 +24,11 @@ public class DefaultThread implements IThread {
 
   private List<GDBStackFrame> myFrames = new ArrayList<GDBStackFrame>();
 
-  public DefaultThread(ResultAnswer resultAnswer) {
+  public DefaultThread(ResultAnswer resultAnswer, String sourceGen) {
     ListMapValue listMapValue = (ListMapValue) resultAnswer.getResults().getPropertyValue(STACK);
     for (GDBValue value : listMapValue.getValues()) {
       RecordValue recordValue = (RecordValue) value;
-      myFrames.add(new GDBStackFrame(recordValue, this));
+      myFrames.add(new GDBStackFrame(recordValue, this, sourceGen));
     }
   }
 

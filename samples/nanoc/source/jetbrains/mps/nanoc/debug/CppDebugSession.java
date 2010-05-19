@@ -31,9 +31,16 @@ import java.util.Set;
 public class CppDebugSession extends AbstractDebugSession<CppUiState> {
   private GDBEventsHandler myEventsHandler;
   private GDBRequestManager myRequestManager;
+  private String mySourceGen;
 
+  @Deprecated
   public CppDebugSession(Project p) {
     super(p);
+  }
+
+  public CppDebugSession(Project p, String sourceGen) {
+    super(p);
+    mySourceGen = sourceGen;
   }
 
   @Override
@@ -117,7 +124,7 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
 
   private void doPauseOnBreakpoint(ResultAnswer resultAnswer) {
     myExecutionState = ExecutionState.Paused;
-    DefaultThread defaultThread = new DefaultThread(resultAnswer);
+    DefaultThread defaultThread = new DefaultThread(resultAnswer, mySourceGen);
     CppUiState state = getUiState();
     setState(state, new CppUiStateImpl(this, defaultThread));
   }

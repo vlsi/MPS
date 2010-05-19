@@ -1,6 +1,7 @@
 package jetbrains.mps.nanoc.debug.programState;
 
 import jetbrains.mps.debug.api.programState.ILocation;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.NameUtil;
 
 import java.io.File;
@@ -13,16 +14,29 @@ import java.io.File;
  * To change this template use File | Settings | File Templates.
  */
 public class GDBLocation implements ILocation {
+  private static Logger LOG = Logger.getLogger(GDBLocation.class);
+
   private int myLineNumber;
   private String myRoutine;
   private String myFileAbsolutePath;
   private String myFileName;
+  private String myUnit;
 
-  public GDBLocation(String file, String routine, int line) {
+  public GDBLocation(String file, String routine, int line, String sourceGen) {
     myFileAbsolutePath = file;
     myRoutine = routine;
     myLineNumber = line;
     myFileName = new File(myFileAbsolutePath).getName();
+    if (!sourceGen.endsWith(File.separator)) {
+      sourceGen = sourceGen + File.separator;
+    }
+    sourceGen = sourceGen.replace(File.separatorChar, '/');
+    if (myFileAbsolutePath.startsWith(sourceGen)) {
+      String postfix = NameUtil.namespaceFromLongName(myFileAbsolutePath.substring(sourceGen.length(), myFileAbsolutePath.length()));
+      myUnit = postfix.replace('/', '.');
+    } else {
+      LOG.error("source file path does not start with module's source_gen");
+    }
   }
 
   @Override
@@ -32,7 +46,7 @@ public class GDBLocation implements ILocation {
 
   @Override
   public String getUnitName() {
-    return getFileName();
+    return myUnit;
   }
 
   @Override
@@ -42,6 +56,6 @@ public class GDBLocation implements ILocation {
 
   @Override
   public int getLineNumber() {
-    return myLineNumber + 4;
+    return myLineNumber + 3;
   }
 }
