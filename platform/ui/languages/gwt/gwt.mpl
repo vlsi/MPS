@@ -89,7 +89,7 @@
   </generators>
   <classPath />
   <languageRuntimeClassPath>
-    <entry path="${language_descriptor}/lib/gwt-user.jar" />
+    <entry path="${language_descriptor}/lib/gwt-user.jar" include="false" />
   </languageRuntimeClassPath>
   <sourcePath />
   <dependencies>

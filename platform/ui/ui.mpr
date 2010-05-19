@@ -321,6 +321,12 @@
     <mapping directory="" vcs="" />
     <mapping directory="" vcs="" />
     <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
     <mapping directory="$PROJECT_DIR$" vcs="svn" />
     <mapping directory="$PROJECT_DIR$" vcs="svn" />
     <mapping directory="$PROJECT_DIR$" vcs="svn" />
