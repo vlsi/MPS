@@ -20,6 +20,10 @@ public abstract class BaseDirectoryIndexExcludePolicy implements DirectoryIndexE
     myProject = project;
   }
 
+  protected Project getProject() {
+    return myProject;
+  }
+
   @NotNull
   protected abstract Set<VirtualFile> getAllExcludeRoots();
 
