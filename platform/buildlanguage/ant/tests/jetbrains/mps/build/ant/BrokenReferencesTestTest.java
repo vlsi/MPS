@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.build.ant;
 
+import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.util.PathManager;
 import junit.framework.TestCase;
 
 import java.io.File;
@@ -39,11 +41,11 @@ public class BrokenReferencesTestTest extends TestCase {
     });
 
     WhatToDo whatToDo = new WhatToDo();
-    whatToDo.addProjectFile(new File("/core/baseLanguage/baseLanguage/baseLanguage.mpr"));
-    whatToDo.addModelFile(new File(destdir.getAbsolutePath()  + File.separator + "Broken.sandbox" + File.separator + "broken" + File.separator + "model.mps"));
+    whatToDo.addProjectFile(new File(PathManager.getHomePath() + File.separator + "core" + File.separator + "baseLanguage" + File.separator + "baseLanguage" + File.separator + "baseLanguage.mpr"));
+    whatToDo.addModelFile(new File(destdir.getAbsolutePath() + File.separator + "Broken.sandbox" + File.separator + "broken" + File.separator + "model.mps"));
     whatToDo.addLibrary(solutionName, destdir, false);
     whatToDo.updateLogLevel(4); // debug log level
-    final boolean[] brokenReferenceFound = new boolean[] { false };
+    final boolean[] brokenReferenceFound = new boolean[]{false};
     TestBrokenReferencesWorker worker = new TestBrokenReferencesWorker(whatToDo, new SystemOutLogger()) {
       @Override
       protected void output(CharSequence text) {
