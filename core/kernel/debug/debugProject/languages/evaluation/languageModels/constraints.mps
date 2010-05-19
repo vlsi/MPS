@@ -5,6 +5,7 @@
   <language namespace="7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debug.evaluation)" />
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
@@ -29,10 +30,14 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="7" />
   <import index="1" modelUID="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debug.evaluation.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.baseLanguage.constraints(jetbrains.mps.baseLanguage.constraints@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
+  <import index="4" modelUID="f:java_stub#jetbrains.mps.baseLanguage.search(jetbrains.mps.baseLanguage.search@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
+  <import index="6" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
+  <import index="7" modelUID="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debug.evaluation.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="6036237525966315979">
     <link role="concept:8" targetNodeId="1.6036237525966315974" resolveInfo="EvaluatorsThisExpression" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="6036237525966315980">
@@ -168,6 +173,61 @@
                 <link role="variableDeclaration:3" targetNodeId="6036237525966325299" resolveInfo="classifierType" />
               </node>
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="6036237525966325313" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="6310975304105535723">
+    <link role="concept:8" targetNodeId="1.6310975304105535614" resolveInfo="StaticMethodCall" />
+    <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="6310975304105535724">
+      <link role="applicableLink:8" targetNodeId="2v.1172058436957:3" />
+      <node role="searchScopeFactory:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory:8" id="6310975304105535725">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6310975304105535726">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6310975304105592259">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6310975304105592260">
+              <property name="name:3" value="classifier" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6310975304105592261">
+                <link role="classifier:3" targetNodeId="6.~Classifier" resolveInfo="Classifier" />
+              </node>
+              <node role="initializer:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="6310975304105592262">
+                <link role="concept:16" targetNodeId="1.6310975304105535614" resolveInfo="EvaluatorStaticMethodCall" />
+                <link role="baseMethodDeclaration:16" targetNodeId="7.6310975304105592192" resolveInfo="getClassType" />
+                <node role="actualArgument:16" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode:8" id="6310975304105592263" />
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6310975304105592266">
+            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6310975304105592267">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6310975304105592280">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6310975304105592282">
+                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6310975304105592283">
+                    <link role="baseMethodDeclaration:3" targetNodeId="5.~EmptySearchScope.&lt;init&gt;()" resolveInfo="EmptySearchScope" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="6310975304105592276">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="6310975304105592279" />
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6310975304105592270">
+                <link role="variableDeclaration:3" targetNodeId="6310975304105592260" resolveInfo="classifier" />
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6310975304105535727">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6310975304105535728">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6310975304105535729">
+                <link role="baseMethodDeclaration:3" targetNodeId="4.~ClassifierVisibleStaticMembersScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.Classifier,jetbrains.mps.smodel.SNode,int)" resolveInfo="ClassifierVisibleStaticMembersScope" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6310975304105592264">
+                  <link role="variableDeclaration:3" targetNodeId="6310975304105592260" resolveInfo="classifier" />
+                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode:8" id="6310975304105535735" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="6310975304105535736">
+                  <link role="classifier:3" targetNodeId="4.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
+                  <link role="variableDeclaration:3" targetNodeId="4.~IClassifiersSearchScope.STATIC_METHOD" resolveInfo="STATIC_METHOD" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

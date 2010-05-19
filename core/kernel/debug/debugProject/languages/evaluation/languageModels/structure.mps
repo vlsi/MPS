@@ -113,5 +113,9 @@
       <link role="target:0" targetNodeId="6036237525966182694" resolveInfo="LowLevelVariable" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6310975304105535614">
+    <property name="name:0" value="EvaluatorStaticMethodCall" />
+    <link role="extends:0" targetNodeId="3v.1172058436953:3" resolveInfo="LocalStaticMethodCall" />
+  </node>
 </model>
 

@@ -13,6 +13,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new EvaluatorStaticMethodCall_staticMethodDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

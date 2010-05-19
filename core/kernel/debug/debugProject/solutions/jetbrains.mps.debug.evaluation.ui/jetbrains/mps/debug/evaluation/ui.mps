@@ -6465,15 +6465,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="9017024590936564134">
-              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="9017024590936564135">
-                <property name="name:3" value="locationNode" />
-                <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="9017024590936564136" />
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="9017024590936564137">
-                  <link role="baseMethodDeclaration:3" targetNodeId="6185141366360271606" resolveInfo="getLocationNode" />
-                </node>
-              </node>
-            </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement:3" id="9017024590936563041">
               <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9017024590936563042">
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="9017024590936564083">
@@ -6593,6 +6584,11 @@
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="5274620501708497325" />
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5274620501708497326">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="5722070778270722381">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="5722070778270722385">
+            <property name="text:3" value="TODO this is totally wrong. What if we want a class which exists in generated code, but does not in MPS?" />
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5274620501708497327">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5274620501708497320">
             <property name="name:3" value="classifiers" />
@@ -7016,11 +7012,11 @@
                   <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4168654243301208329">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4168654243301208330">
                       <link role="baseMethodDeclaration:3" targetNodeId="55.3161373106581139701" resolveInfo="ReachableClassifiersScope" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4168654243301208331">
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3659686309286366918">
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="4168654243301208332">
                           <link role="baseMethodDeclaration:3" targetNodeId="6185141366360271606" resolveInfo="getLocationNode" />
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="4168654243301208333" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="3659686309286366922" />
                       </node>
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4168654243301208334">
                         <link role="classifier:3" targetNodeId="55.3161373106581141431" resolveInfo="IClassifiersSearchScope" />
