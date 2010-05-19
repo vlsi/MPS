@@ -39,6 +39,7 @@ public class BrokenReferencesTestTest extends TestCase {
     });
 
     WhatToDo whatToDo = new WhatToDo();
+    whatToDo.addProjectFile(new File("/core/baseLanguage/baseLanguage/baseLanguage.mpr"));
     whatToDo.addModelFile(new File(destdir.getAbsolutePath()  + File.separator + "Broken.sandbox" + File.separator + "broken" + File.separator + "model.mps"));
     whatToDo.addLibrary(solutionName, destdir, false);
     whatToDo.updateLogLevel(4); // debug log level
