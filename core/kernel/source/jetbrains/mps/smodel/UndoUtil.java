@@ -28,14 +28,7 @@ public class UndoUtil {
   private static boolean ourUndoBlocked = false;
 
   public static void addUndoableAction(UndoableAction action) {
-    // This code is for performance reasons 
-    // The method is called very often, so getting data from DataContext
-    // seems to be too time-consuming to use here
-    Project project = PerCommandData.getInstance().getProjectAtCurrentCommandStart();
-    if (project == null) {
-      // Trying to get project from CommandProcessor - necessary for unit-test mode
-      project = CommandProcessor.getInstance().getCurrentCommandProject();
-    }
+    Project project = CommandProcessor.getInstance().getCurrentCommandProject();
     if (project == null) return;
 
     UndoManager undoManager = UndoManager.getInstance(project);

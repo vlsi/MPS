@@ -229,7 +229,15 @@ public class ModelAccess {
     });
   }
 
+  /**
+   * use tryWriteInCommand(final Runnable r, Project project)
+   */
+  @Deprecated
   public boolean tryWriteInCommand(final Runnable r) {
+    return tryWriteInCommand(r, CurrentProjectAccessUtil.getProjectFromUI());
+  }
+
+  public boolean tryWriteInCommand(final Runnable r, Project project) {
     final boolean[] res = new boolean[]{false};
 
     //todo this is a hack but it works
@@ -253,7 +261,7 @@ public class ModelAccess {
           }
         });
       }
-    });
+    }, project);
 
     return res[0];
   }
@@ -287,20 +295,36 @@ public class ModelAccess {
     }
   }
 
+  /**
+   * use executeCommand(Runnable r, Project project)
+   */
+  @Deprecated
   public void executeCommand(Runnable r) {
-    CommandProcessor.getInstance().executeCommand(null, new CommandRunnable(r), "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    executeCommand(r, CurrentProjectAccessUtil.getProjectFromUI());
   }
 
-  public <T> T runWriteActionInCommand(final Computable<T> c) {
-    return runWriteActionInCommand(c, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+  public void executeCommand(Runnable r, Project project) {
+    CommandProcessor.getInstance().executeCommand(project, new CommandRunnable(r), "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
-  public <T> T runWriteActionInCommand(final Computable<T> c, Project project) {
+  /**
+   * use runWriteActionInCommand(final Computable<T> c, Project project)
+   */
+  @Deprecated
+  public <T> T runWriteActionInCommand(Computable<T> c) {
+    return runWriteActionInCommand(c, CurrentProjectAccessUtil.getProjectFromUI());
+  }
+
+  public <T> T runWriteActionInCommand(Computable<T> c, Project project) {
     return runWriteActionInCommand(c, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, project);
   }
 
-  public <T> T runWriteActionInCommand(final Computable<T> c, final String name, final UndoConfirmationPolicy policy) {
-    return runWriteActionInCommand(c, name, policy, null);
+  /**
+   * use runWriteActionInCommand(final Computable<T> c, final String name, final UndoConfirmationPolicy policy, Project project)
+   */
+  @Deprecated
+  public <T> T runWriteActionInCommand(Computable<T> c, String name, UndoConfirmationPolicy policy) {
+    return runWriteActionInCommand(c, name, policy, CurrentProjectAccessUtil.getProjectFromUI());
   }
 
   public <T> T runWriteActionInCommand(final Computable<T> c, final String name, final UndoConfirmationPolicy policy, Project project) {
@@ -313,26 +337,42 @@ public class ModelAccess {
     return (T) result[0];
   }
 
-  public void runWriteActionInCommand(final Runnable r) {
-    runWriteActionInCommand(r, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+  /**
+   * use runWriteActionInCommand(Runnable r, Project project)
+   */
+  @Deprecated
+  public void runWriteActionInCommand(Runnable r) {
+    runWriteActionInCommand(r, CurrentProjectAccessUtil.getProjectFromUI());
   }
 
-  public void runWriteActionInCommand(final Runnable r, Project project) {
+  public void runWriteActionInCommand(Runnable r, Project project) {
     runWriteActionInCommand(r, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, project);
   }
 
-  public void runWriteActionInCommand(final Runnable r, String name, UndoConfirmationPolicy policy) {
-    CommandProcessor.getInstance().executeCommand(null, new CommandRunnable(r), name, null, policy);
+  /**
+   * use runWriteActionInCommand(Runnable r, String name, UndoConfirmationPolicy policy, Project project)
+   */
+  @Deprecated
+  public void runWriteActionInCommand(Runnable r, String name, UndoConfirmationPolicy policy) {
+    runWriteActionInCommand(r, name, policy, CurrentProjectAccessUtil.getProjectFromUI());
   }
 
-  public void runWriteActionInCommand(final Runnable r, String name, UndoConfirmationPolicy policy, Project project) {
+  public void runWriteActionInCommand(Runnable r, String name, UndoConfirmationPolicy policy, Project project) {
     CommandProcessor.getInstance().executeCommand(project, new CommandRunnable(r), name, null, policy);
   }
 
+  /**
+   * use runWriteActionInCommandAsync(final Runnable r, final Project project)
+   */
+  @Deprecated
   public void runWriteActionInCommandAsync(final Runnable r) {
+    runWriteActionInCommandAsync(r, CurrentProjectAccessUtil.getProjectFromUI());
+  }
+
+  public void runWriteActionInCommandAsync(final Runnable r, final Project project) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        runWriteActionInCommand(r);
+        runWriteActionInCommand(r, project);
       }
     });
   }
