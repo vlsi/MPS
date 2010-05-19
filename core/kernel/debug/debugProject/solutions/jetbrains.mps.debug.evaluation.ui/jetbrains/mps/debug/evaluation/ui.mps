@@ -2035,6 +2035,26 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7502604942759716062">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7502604942759716063">
+            <property name="name:3" value="evalThisExpressions" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="7502604942759716064">
+              <link role="elementConcept:16" targetNodeId="27.6036237525966315974" resolveInfo="EvaluatorsThisExpression" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7502604942759716065">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7502604942759716066">
+                <link role="variableDeclaration:3" targetNodeId="178589597265224114" resolveInfo="evaluateMethod" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation:16" id="7502604942759716067">
+                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="7502604942759716068">
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="7502604942759716070">
+                    <link role="conceptDeclaration:16" targetNodeId="27.6036237525966315974" resolveInfo="EvaluatorsThisExpression" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="178589597265224269">
           <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="178589597265224270">
             <property name="name:7" value="thisExpression" />
@@ -2050,6 +2070,29 @@
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation:16" id="178589597265224280">
                   <node role="replacementNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7474628078187409472">
+                    <link role="classConcept:3" targetNodeId="8804575757433489765" resolveInfo="TransformationUtil" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="2960002797019071641" resolveInfo="createThisNodeReplacement" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="7502604942759716071">
+          <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="7502604942759716072">
+            <property name="name:7" value="thisExpression" />
+          </node>
+          <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7502604942759716080">
+            <link role="variableDeclaration:3" targetNodeId="7502604942759716063" resolveInfo="evalThisExpressions" />
+          </node>
+          <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7502604942759716074">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7502604942759716075">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7502604942759716076">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="7502604942759716077">
+                  <link role="variable:7" targetNodeId="7502604942759716072" resolveInfo="thisExpression" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation:16" id="7502604942759716078">
+                  <node role="replacementNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7502604942759716079">
                     <link role="classConcept:3" targetNodeId="8804575757433489765" resolveInfo="TransformationUtil" />
                     <link role="baseMethodDeclaration:3" targetNodeId="2960002797019071641" resolveInfo="createThisNodeReplacement" />
                   </node>

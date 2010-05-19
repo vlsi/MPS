@@ -85,7 +85,11 @@ public class TransformationUtil {
 
   public static void replaceThis(SNode evaluateMethod) {
     List<SNode> thisExpressions = SNodeOperations.getDescendants(evaluateMethod, "jetbrains.mps.baseLanguage.structure.ThisExpression", false, new String[]{});
+    List<SNode> evalThisExpressions = SNodeOperations.getDescendants(evaluateMethod, "jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression", false, new String[]{});
     for (SNode thisExpression : ListSequence.fromList(thisExpressions)) {
+      SNodeOperations.replaceWithAnother(thisExpression, TransformationUtil.createThisNodeReplacement());
+    }
+    for (SNode thisExpression : ListSequence.fromList(evalThisExpressions)) {
       SNodeOperations.replaceWithAnother(thisExpression, TransformationUtil.createThisNodeReplacement());
     }
   }
