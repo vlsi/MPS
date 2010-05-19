@@ -97,12 +97,12 @@ public class InputQueryUtil {
       throw new GenerationFailureException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);
     }
 
-    return reductionContext.getExecutor().evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, context);
+    return reductionContext.getQueryExecutor().evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, context);
   }
 
   private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
     if (query != null) {
-      List<SNode> list = reductionContext.getExecutor().evaluateSourceNodesQuery(currentInputNode, null, macro.getNode(), query, context);
+      List<SNode> list = reductionContext.getQueryExecutor().evaluateSourceNodesQuery(currentInputNode, null, macro.getNode(), query, context);
       return list != null ? list : Collections.<SNode>emptyList();
     }
 
@@ -116,6 +116,6 @@ public class InputQueryUtil {
       // continue with current input node
       return currentInputNode;
     }
-    return reductionContext.getExecutor().evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, context);
+    return reductionContext.getQueryExecutor().evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, context);
   }
 }

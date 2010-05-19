@@ -15,7 +15,9 @@ import java.util.List;
 /**
  * Evgeny Gryaznov, Feb 24, 2010
  */
-public interface IQueryExecutor {
+public interface QueryExecutionContext {
+
+  boolean isMultithreaded();
 
   boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException;
 

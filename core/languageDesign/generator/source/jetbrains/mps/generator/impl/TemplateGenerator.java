@@ -55,8 +55,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private final Map<SNode, Object> myAdditionalInputNodes = new ConcurrentHashMap<SNode, Object>();
   protected final ArrayList<SNode> myOutputRoots;
 
-  private final IQueryExecutor myExecutor;
-  private Map<INodesReadListener, IQueryExecutor> myExecutorsMap;
+  private final QueryExecutionContext myExecutionContext;
+  private Map<INodesReadListener, QueryExecutionContext> myExecutionContextMap;
 
   private final boolean myIsStrict;
   private boolean myAreMappingsReady = false;
@@ -81,9 +81,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myDependenciesBuilder = dependenciesBuilder;
     ttrace = performanceTracer;
     myOutputRoots = new ArrayList<SNode>();
-    myExecutor = generationContext.getTracingMode() >= GenerationSettings.TRACE_LANGS
-      ? new TraceableQueryExecutor(new QueryExecutor(this), performanceTracer)
-      : new QueryExecutor(this);
+    myExecutionContext = generationContext.getTracingMode() >= GenerationSettings.TRACE_LANGS
+      ? new QueryExecutionContextWithTracing(new DefaultQueryExecutionContext(this), performanceTracer)
+      : new DefaultQueryExecutionContext(this);
 
   }
 
@@ -159,13 +159,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     checkMonitorCanceled();
     getGeneratorSessionContext().clearCopiedRootsSet();
     for (SNode rootToCopy : rootsToCopy) {
-      copyRootNodeFromInput(rootToCopy, getExecutorForNode(rootToCopy));
+      copyRootNodeFromInput(rootToCopy, getExecutionContext(rootToCopy));
     }
   }
 
   private void applyCreateRootRule(CreateRootRule createRootRule) throws GenerationFailureException, GenerationCanceledException {
-    final IQueryExecutor executor = getExecutorForNode(null);
-    if (executor.checkCondition(createRootRule)) {
+    final QueryExecutionContext executionContext = getExecutionContext(null);
+    if (executionContext.checkCondition(createRootRule)) {
       INamedConcept templateNode = createRootRule.getTemplateNode();
       if (templateNode == null) {
         showErrorMessage(null, null, createRootRule.getNode(), "'create root' rule has no template");
@@ -174,7 +174,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         try {
           createRootNodeFromTemplate(
             GeneratorUtil.getMappingName(createRootRule, null),
-            BaseAdapter.fromAdapter(templateNode), null, false, executor);
+            BaseAdapter.fromAdapter(templateNode), null, false, executionContext);
         } finally {
           myGenerationTracer.closeRule(createRootRule.getNode());
         }
@@ -197,8 +197,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         continue;
       }
 
-      final IQueryExecutor executor = getExecutorForNode(inputNode);
-      if (executor.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode())) {
+      final QueryExecutionContext executionContext = getExecutionContext(inputNode);
+      if (executionContext.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode())) {
         myGenerationTracer.pushInputNode(inputNode);
         myGenerationTracer.pushRule(rule.getNode());
         try {
@@ -209,7 +209,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
               rootsToCopy.remove(inputNode);
               copyRootOnFailure = true;
             }
-            createRootNodeFromTemplate(GeneratorUtil.getMappingName(rule, null), templateNode, inputNode, copyRootOnFailure, executor);
+            createRootNodeFromTemplate(GeneratorUtil.getMappingName(rule, null), templateNode, inputNode, copyRootOnFailure, executionContext);
           } else {
             showErrorMessage(BaseAdapter.fromAdapter(rule), "no template is defined for the rule");
           }
@@ -220,11 +220,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  protected void createRootNodeFromTemplate(String mappingName, @NotNull SNode templateNode, SNode inputNode, boolean copyRootOnFailure, IQueryExecutor executor)
+  protected void createRootNodeFromTemplate(String mappingName, @NotNull SNode templateNode, SNode inputNode, boolean copyRootOnFailure, QueryExecutionContext executionContext)
     throws GenerationFailureException, GenerationCanceledException {
 
     try {
-      List<SNode> outputNodes = new TemplateProcessor(this, new ReductionContext(executor)).processTemplateNode(mappingName, templateNode, new TemplateContext(inputNode));
+      List<SNode> outputNodes = new TemplateProcessor(this, new ReductionContext(executionContext)).processTemplateNode(mappingName, templateNode, new TemplateContext(inputNode));
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, inputNode, templateNode, false);
         setChanged();
@@ -232,17 +232,17 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } catch (DismissTopMappingRuleException e) {
       // it's ok, just continue
       if (copyRootOnFailure && inputNode.isRoot()) {
-        copyRootNodeFromInput(inputNode, executor);
+        copyRootNodeFromInput(inputNode, executionContext);
       }
     } catch (TemplateProcessingFailureException e) {
       showErrorMessage(inputNode, templateNode, "couldn't create root node");
     }
   }
 
-  protected void copyRootNodeFromInput(@NotNull SNode inputRootNode, IQueryExecutor executor) throws GenerationFailureException, GenerationCanceledException {
+  protected void copyRootNodeFromInput(@NotNull SNode inputRootNode, QueryExecutionContext executionContext) throws GenerationFailureException, GenerationCanceledException {
     // check if can drop
     for (DropRootRule dropRootRule : myRuleManager.getDropRootRules()) {
-      if (isApplicableDropRootRule(inputRootNode, dropRootRule, executor)) {
+      if (isApplicableDropRootRule(inputRootNode, dropRootRule, executionContext)) {
         return;
       }
     }
@@ -251,7 +251,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myGenerationTracer.pushInputNode(inputRootNode);
     try {
       boolean[] changed = new boolean[]{false};
-      SNode root = copyNodeFromInputNode_internal(null, inputRootNode, new ReductionContext(executor), changed);
+      SNode root = copyNodeFromInputNode_internal(null, inputRootNode, new ReductionContext(executionContext), changed);
       registerRoot(root, inputRootNode, null, true);
       if (changed[0]) {
         setChanged();
@@ -269,7 +269,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private boolean isApplicableDropRootRule(SNode inputRootNode, DropRootRule rule, IQueryExecutor executor) throws GenerationFailureException {
+  private boolean isApplicableDropRootRule(SNode inputRootNode, DropRootRule rule, QueryExecutionContext executionContext) throws GenerationFailureException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
       showErrorMessage(null, null, rule.getNode(), "rule has no applicable concept defined");
@@ -277,7 +277,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     if (inputRootNode.isInstanceOfConcept(applicableConcept)) {
-      if (executor.checkCondition(rule.getConditionFunction(), inputRootNode, rule.getNode())) {
+      if (executionContext.checkCondition(rule.getConditionFunction(), inputRootNode, rule.getNode())) {
         myGenerationTracer.pushInputNode(inputRootNode);
         myGenerationTracer.pushRule(rule.getNode());
         myGenerationTracer.closeInputNode(inputRootNode);
@@ -291,27 +291,27 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   /**
    * Unsynchronized
    */
-  IQueryExecutor getExecutorForNode(SNode inputNode) {
+  QueryExecutionContext getExecutionContext(SNode inputNode) {
     final INodesReadListener listener = myDependenciesBuilder.getListener(inputNode);
     if(listener != null) {
-      IQueryExecutor value;
-      if(myExecutorsMap == null) {
-        myExecutorsMap = new HashMap<INodesReadListener, IQueryExecutor>();
+      QueryExecutionContext value;
+      if(myExecutionContextMap == null) {
+        myExecutionContextMap = new HashMap<INodesReadListener, QueryExecutionContext>();
         value = null;
       } else {
-        value = myExecutorsMap.get(listener);
+        value = myExecutionContextMap.get(listener);
       }
       if(value == null) {
-        value = new DependencyRecordingQueryExecutor(myExecutor, listener);
-        myExecutorsMap.put(listener, value);
+        value = new QueryExecutionContextWithDependencyRecording(myExecutionContext, listener);
+        myExecutionContextMap.put(listener, value);
       }
       return value;
     }
-    return myExecutor;
+    return myExecutionContext;
   }
 
-  public IQueryExecutor getDefaultExecutor() {
-    return myExecutor;
+  public QueryExecutionContext getDefaultExecutor() {
+    return myExecutionContext;
   }
   
   /**
@@ -331,12 +331,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       for (ReductionRule rule : conceptRules) {
         if (!getBlockedReductionsData().isReductionBlocked(inputNode, rule, reductionContext)) {
           if (rule instanceof Reduction_MappingRule) {
-            if (reductionContext.getExecutor().checkCondition(((Reduction_MappingRule) rule).getConditionFunction(), false, inputNode, rule.getNode())) {
+            if (reductionContext.getQueryExecutor().checkCondition(((Reduction_MappingRule) rule).getConditionFunction(), false, inputNode, rule.getNode())) {
               reductionRule = rule;
               break;
             }
           } else if (rule instanceof PatternReduction_MappingRule) {
-            pattern = reductionContext.getExecutor().checkIfApplicable(inputNode, (PatternReduction_MappingRule) rule, reductionContext);
+            pattern = reductionContext.getQueryExecutor().checkIfApplicable(inputNode, (PatternReduction_MappingRule) rule, reductionContext);
             if (pattern != null) {
               reductionRule = rule;
               break;

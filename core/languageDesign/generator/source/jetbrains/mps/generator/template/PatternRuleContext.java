@@ -8,11 +8,11 @@ import jetbrains.mps.smodel.SNode;
  * Evgeny Gryaznov, May 17, 2010
  */
 public class PatternRuleContext extends BaseMappingRuleContext {
-  private IQueryExecutor myExecutor;
+  private QueryExecutionContext myExecutionContext;
 
-  public PatternRuleContext(SNode inputNode, SNode ruleNode, ITemplateGenerator generator, IQueryExecutor executor) {
+  public PatternRuleContext(SNode inputNode, SNode ruleNode, ITemplateGenerator generator, QueryExecutionContext executionContext) {
     super(inputNode, ruleNode, generator);
-    myExecutor = executor;
+    myExecutionContext = executionContext;
   }
 
   public void createPatternContext(GeneratedMatchingPattern pattern) {

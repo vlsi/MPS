@@ -1,6 +1,6 @@
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.template.IQueryExecutor;
+import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.generator.structure.ReductionRule;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -16,20 +16,20 @@ public class ReductionContext {
   private final ReductionContext myParent;
   private final SNode myInputNode;
   private final ReductionRule myReductionRule;
-  private final IQueryExecutor myExecutor;
+  private final QueryExecutionContext myExecutionContext;
 
-  ReductionContext(@NotNull IQueryExecutor executor) {
+  ReductionContext(@NotNull QueryExecutionContext executionContext) {
     myParent = null;
     myInputNode = null;
     myReductionRule = null;
-    myExecutor = executor;
+    myExecutionContext = executionContext;
   }
 
   ReductionContext(@NotNull ReductionContext parent, @NotNull SNode inputNode, @NotNull ReductionRule reductionRule) {
     myParent = parent;
     myInputNode = inputNode;
     myReductionRule = reductionRule;
-    myExecutor = parent.myExecutor;
+    myExecutionContext = parent.myExecutionContext;
   }
 
   boolean isBlocked(SNode inputNode, ReductionRule rule) {
@@ -51,8 +51,8 @@ public class ReductionContext {
     return currentSet;
   }
 
-  public IQueryExecutor getExecutor() {
-    return myExecutor;
+  public QueryExecutionContext getQueryExecutor() {
+    return myExecutionContext;
   }
 
   static Object combineRuleSets(Object set1, Object set2) {

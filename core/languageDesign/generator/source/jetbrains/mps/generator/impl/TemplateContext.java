@@ -1,6 +1,5 @@
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.template.IQueryExecutor;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.annotation.ImmutableObject;

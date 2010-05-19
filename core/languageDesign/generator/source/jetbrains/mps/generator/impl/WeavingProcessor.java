@@ -85,7 +85,7 @@ public class WeavingProcessor {
       SNode templateFragmentNode = BaseAdapter.fromAdapter(templateFragment.getParent());
       SNode contextParentNode = null;
       try {
-        contextParentNode = reductionContext.getExecutor().getContextNodeForTemplateFragment(templateFragmentNode, outputContextNode, context);
+        contextParentNode = reductionContext.getQueryExecutor().getContextNodeForTemplateFragment(templateFragmentNode, outputContextNode, context);
       } catch (Exception e) {
         myGenerator.getLogger().handleException(e);
       }
@@ -139,9 +139,9 @@ public class WeavingProcessor {
     boolean includeInheritors = rule.getApplyToConceptInheritors();
     Iterable<SNode> nodes = myFastNodeFinder.getNodes(applicableConcept, includeInheritors);
     for (SNode applicableNode : nodes) {
-      ReductionContext reductionContext = new ReductionContext(myGenerator.getExecutorForNode(applicableNode));
-      if (reductionContext.getExecutor().checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode())) {
-        SNode outputContextNode = reductionContext.getExecutor().getContextNodeForWeavingingRule(applicableNode, rule);
+      ReductionContext reductionContext = new ReductionContext(myGenerator.getExecutionContext(applicableNode));
+      if (reductionContext.getQueryExecutor().checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode())) {
+        SNode outputContextNode = reductionContext.getQueryExecutor().getContextNodeForWeavingingRule(applicableNode, rule);
         if (!checkContext(rule, applicableNode, outputContextNode)) {
           continue;
         }
@@ -169,7 +169,7 @@ public class WeavingProcessor {
                 break;
               }
               TemplateDeclaration template = weaveEach.getTemplate();
-              List<SNode> queryNodes = reductionContext.getExecutor().evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query, new TemplateContext(applicableNode));
+              List<SNode> queryNodes = reductionContext.getQueryExecutor().evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query, new TemplateContext(applicableNode));
               if (queryNodes.isEmpty()) {
                 someOutputGenerated = false;
               }

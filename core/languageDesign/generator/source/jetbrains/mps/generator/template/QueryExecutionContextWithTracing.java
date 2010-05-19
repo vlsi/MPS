@@ -17,12 +17,12 @@ import java.util.List;
 /**
 * Evgeny Gryaznov, May 13, 2010
 */
-public class TraceableQueryExecutor implements IQueryExecutor {
+public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
-  private final IQueryExecutor wrapped;
+  private final QueryExecutionContext wrapped;
   private final IPerformanceTracer tracer;
 
-  public TraceableQueryExecutor(IQueryExecutor wrapped, IPerformanceTracer tracer) {
+  public QueryExecutionContextWithTracing(QueryExecutionContext wrapped, IPerformanceTracer tracer) {
     this.wrapped = wrapped;
     this.tracer = tracer;
   }
@@ -186,5 +186,10 @@ public class TraceableQueryExecutor implements IQueryExecutor {
     } finally {
       tracer.pop();
     }
+  }
+
+  @Override
+  public boolean isMultithreaded() {
+    return false;
   }
 }

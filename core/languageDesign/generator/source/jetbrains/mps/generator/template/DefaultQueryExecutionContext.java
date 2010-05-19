@@ -21,13 +21,13 @@ import java.util.List;
 /**
  * Evgeny Gryaznov, Feb 10, 2010
  */
-public class QueryExecutor implements IQueryExecutor {
+public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
-  private static final Logger LOG = Logger.getLogger(QueryExecutor.class);
+  private static final Logger LOG = Logger.getLogger(DefaultQueryExecutionContext.class);
 
   private ITemplateGenerator generator;
 
-  public QueryExecutor(ITemplateGenerator generator) {
+  public DefaultQueryExecutionContext(ITemplateGenerator generator) {
     this.generator = generator;
   }
 
@@ -66,7 +66,7 @@ public class QueryExecutor implements IQueryExecutor {
       return (GeneratedMatchingPattern) QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new PatternRuleContext(inputNode, ruleNode, generator, reductionContext.getExecutor()),
+        new PatternRuleContext(inputNode, ruleNode, generator, reductionContext.getQueryExecutor()),
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
@@ -394,4 +394,8 @@ public class QueryExecutor implements IQueryExecutor {
     return null;
   }
 
+  @Override
+  public boolean isMultithreaded() {
+    return true;
+  }
 }

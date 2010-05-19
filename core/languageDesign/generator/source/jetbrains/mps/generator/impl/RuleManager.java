@@ -171,6 +171,6 @@ public class RuleManager {
         if (inputNodeConcept != applicableConcept) return false;
       }
     }
-    return reductionContext.getExecutor().checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode());
+    return reductionContext.getQueryExecutor().checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode());
   }
 }

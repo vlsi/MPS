@@ -182,7 +182,7 @@ public class GeneratorUtil {
     } else if (ruleConsequence instanceof InlineSwitch_RuleConsequence) {
       InlineSwitch_RuleConsequence inlineSwitch = (InlineSwitch_RuleConsequence) ruleConsequence;
       for (InlineSwitch_Case switchCase : inlineSwitch.getCases()) {
-        if (reductionContext.getExecutor().checkCondition(switchCase.getConditionFunction(), true, inputNode, switchCase.getNode())) {
+        if (reductionContext.getQueryExecutor().checkCondition(switchCase.getConditionFunction(), true, inputNode, switchCase.getNode())) {
           return getTemplateNodesFromRuleConsequence(switchCase.getCaseConsequence(), inputNode, switchCase.getNode(), reductionContext, generator);
         }
       }
@@ -284,7 +284,7 @@ public class GeneratorUtil {
         }
       } else if(expr instanceof TemplateArgumentQueryExpression) {
         TemplateArgumentQuery query = ((TemplateArgumentQueryExpression) expr).getQuery();
-        value = reductionContext.getExecutor().evaluateArgumentQuery(inputNode, query, outerContext);
+        value = reductionContext.getQueryExecutor().evaluateArgumentQuery(inputNode, query, outerContext);
       } else {
         generator.showErrorMessage(inputNode, templateCall.getNode(), "cannot evaluate template argument #" + (i+1));
       }

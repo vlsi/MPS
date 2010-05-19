@@ -17,12 +17,12 @@ import java.util.List;
 /**
  * Evgeny Gryaznov, May 12, 2010
  */
-public class DependencyRecordingQueryExecutor implements IQueryExecutor {
+public class QueryExecutionContextWithDependencyRecording implements QueryExecutionContext {
 
-  private IQueryExecutor wrapped;
+  private QueryExecutionContext wrapped;
   private INodesReadListener listener;
 
-  public DependencyRecordingQueryExecutor(IQueryExecutor wrapped, INodesReadListener listener) {
+  public QueryExecutionContextWithDependencyRecording(QueryExecutionContext wrapped, INodesReadListener listener) {
     this.wrapped = wrapped;
     this.listener = listener;
   }
@@ -175,5 +175,10 @@ public class DependencyRecordingQueryExecutor implements IQueryExecutor {
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
+  }
+
+  @Override
+  public boolean isMultithreaded() {
+    return false;
   }
 }

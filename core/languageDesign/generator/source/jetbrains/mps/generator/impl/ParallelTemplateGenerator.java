@@ -7,17 +7,15 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
-import jetbrains.mps.generator.template.IQueryExecutor;
+import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -28,6 +26,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   private IGenerationTaskPool myPool;
   private List<RootGenerationTask> myTasks;
   private Map<Pair<SNode,SNode>, RootGenerationTask> myInputToTask;
+  private Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
   public ParallelTemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
                                    IGeneratorLogger logger, RuleManager ruleManager,
@@ -43,37 +42,57 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   protected void applyReductions(boolean isPrimary)
     throws GenerationCanceledException, GenerationFailureException {
     super.applyReductions(isPrimary);
+    
     myPool.waitForCompletion();
+    contextToTask = null;
     for(RootGenerationTask task : myTasks) {
       task.registerGeneratedRoot();
     }
   }
 
   @Override
-  protected void createRootNodeFromTemplate(final String mappingName, @NotNull final SNode templateNode, final SNode inputNode, final boolean copyRootOnFailure, final IQueryExecutor executor) throws GenerationFailureException, GenerationCanceledException {
+  protected void createRootNodeFromTemplate(final String mappingName, @NotNull final SNode templateNode, final SNode inputNode, final boolean copyRootOnFailure, final QueryExecutionContext executionContext) throws GenerationFailureException, GenerationCanceledException {
     pushTask(new RootGenerationTask() {
       @Override
       public void run() throws GenerationCanceledException, GenerationFailureException {
-        ParallelTemplateGenerator.super.createRootNodeFromTemplate(mappingName, templateNode, inputNode, copyRootOnFailure, executor);
+        ParallelTemplateGenerator.super.createRootNodeFromTemplate(mappingName, templateNode, inputNode, copyRootOnFailure, executionContext);
       }
-    }, new Pair(inputNode, templateNode));
+    }, new Pair(inputNode, templateNode), executionContext);
 
   }
 
   @Override
-  protected void copyRootNodeFromInput(@NotNull final SNode inputRootNode, final IQueryExecutor executor) throws GenerationFailureException, GenerationCanceledException {
+  protected void copyRootNodeFromInput(@NotNull final SNode inputRootNode, final QueryExecutionContext executionContext) throws GenerationFailureException, GenerationCanceledException {
     pushTask(new RootGenerationTask() {
       @Override
       public void run() throws GenerationCanceledException, GenerationFailureException {
-        ParallelTemplateGenerator.super.copyRootNodeFromInput(inputRootNode, executor);
+        ParallelTemplateGenerator.super.copyRootNodeFromInput(inputRootNode, executionContext);
       }
-    }, new Pair(inputRootNode, null));
+    }, new Pair(inputRootNode, null), executionContext);
   }
 
-  private void pushTask(RootGenerationTask task, Pair<SNode,SNode> pair) {
+  private void pushTask(RootGenerationTask task, Pair<SNode, SNode> pair, QueryExecutionContext executionContext) {
     myInputToTask.put(pair, task);
     myTasks.add(task);
-    myPool.addTask(task);
+    if(executionContext.isMultithreaded()) {
+      myPool.addTask(task);
+    } else {
+      runTaskWithContext(task, executionContext);
+    }
+  }
+
+  private void runTaskWithContext(RootGenerationTask task, QueryExecutionContext executionContext) {
+    CompositeGenerationTask compositeTask;
+    synchronized (contextToTask) {
+      compositeTask = contextToTask.get(executionContext);
+      if(compositeTask != null && compositeTask.addTask(task)) {
+        return;
+      }
+      compositeTask = new CompositeGenerationTask();
+      compositeTask.addTask(task);
+      contextToTask.put(executionContext, compositeTask);
+    }
+    myPool.addTask(compositeTask);
   }
 
   @Override
@@ -124,6 +143,40 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       for(SNode root : generated) {
         myOutputRoots.add(root);
       }
+    }
+  }
+
+  public class CompositeGenerationTask implements GenerationTask {
+
+    private Queue<RootGenerationTask> list = new LinkedList<RootGenerationTask>();
+    private boolean isInShutdownMode = false;
+
+    public synchronized boolean addTask(RootGenerationTask task) {
+      if(isInShutdownMode) {
+        return false;
+      }
+      return list.add(task);
+    }
+
+    private synchronized RootGenerationTask next() {
+      if(list.isEmpty()) {
+        isInShutdownMode = true;
+        return null;
+      }
+      return list.remove();
+    }
+
+    @Override
+    public void run() throws GenerationCanceledException, GenerationFailureException {
+      RootGenerationTask next;
+      while((next = next()) != null) {
+        next.run();
+      }
+    }
+
+    @Override
+    public boolean requiresReadAccess() {
+      return true;
     }
   }
 }
