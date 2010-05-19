@@ -17,6 +17,8 @@
 
         <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
 
+        <directoryIndexExcludePolicy implementation="jetbrains.mps.project.ClassesGenPolicy"/>
+
         <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.ChangesManagerFileStatusProvider"/>
         <checkinHandlerFactory implementation="jetbrains.mps.vcs.OptimizeImportsCheckinHandlerFactory" />
         <checkinHandlerFactory implementation="jetbrains.mps.ide.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory" />

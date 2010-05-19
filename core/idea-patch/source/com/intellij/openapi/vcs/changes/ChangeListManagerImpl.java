@@ -26,6 +26,7 @@ import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.DumbAwareRunnable;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.impl.DirectoryIndex;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.*;
 import com.intellij.openapi.util.io.FileUtil;
@@ -900,10 +901,14 @@ public class ChangeListManagerImpl extends ChangeListManagerEx implements Projec
   @Patch
   public boolean isIgnoredFile(@NotNull VirtualFile file) {
     // MPS Patch begin
-    // This is a hack to fix MPS-8678
+    // This is a hack to fix MPS-8678 and MPS-8789
     VirtualFile currentFile = file;
     while (currentFile != null) {
       if (".svn".equals(currentFile.getName())) {
+        return true;
+      }
+      if (DirectoryIndex.getInstance(myProject) != null &&
+          DirectoryIndex.getInstance(myProject).isProjectExcludeRoot(file)) {
         return true;
       }
       currentFile = currentFile.getParent();
