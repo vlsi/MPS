@@ -1,21 +1,28 @@
 package jetbrains.mps.build.ant.brokenRefs;
 
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.ProjectManager;
+import jetbrains.mps.TestMain;
+import jetbrains.mps.build.ant.IBuildServerMessageFormat;
+import jetbrains.mps.build.ant.MpsWorker;
+import jetbrains.mps.build.ant.TeamCityMessageFormat;
+import jetbrains.mps.build.ant.WhatToDo;
+import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.build.ant.MpsWorker;
-import jetbrains.mps.build.ant.IBuildServerMessageFormat;
-import jetbrains.mps.build.ant.WhatToDo;
-import jetbrains.mps.build.ant.TeamCityMessageFormat;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.MPSExtentions;
 
+import java.io.File;
 import java.lang.management.ManagementFactory;
 import java.lang.management.MemoryMXBean;
-import java.lang.management.MemoryUsage;
+import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
-import java.io.File;
+import java.util.Map;
 
 public class TestBrokenReferencesWorker extends MpsWorker {
   private final IBuildServerMessageFormat myBuildServerMessageFormat = TestBrokenReferencesWorker.getBuildServerMessageFormat();
@@ -36,6 +43,26 @@ public class TestBrokenReferencesWorker extends MpsWorker {
 
   public static IBuildServerMessageFormat getBuildServerMessageFormat() {
     return new TeamCityMessageFormat();
+  }
+
+  public void work() {
+    setupEnvironment();
+
+    Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
+
+    File file = mpsProjects.keySet().iterator().next();
+    if (!file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT)) throw new IllegalArgumentException(file.getPath());
+
+    final MPSProject p = TestMain.loadProject(file);
+    info("Loaded project " + p);
+
+    ObjectsToProcess go = new ObjectsToProcess();
+    collectModelsToGenerate(go);
+
+    executeTask(p, go);
+
+    disposeProject(p);
+    dispose();
   }
 
   protected void executeTask(MPSProject project, final ObjectsToProcess go) {
@@ -106,7 +133,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
 
   protected void showStatistic() {
     MemoryMXBean mmbean = ManagementFactory.getMemoryMXBean();
-    output("Used heap: "+(mmbean.getHeapMemoryUsage().getUsed()-usedHeap));
-    output("Used non-heap: "+(mmbean.getNonHeapMemoryUsage().getUsed()-usedNonHeap));
+    output("Used heap: " + (mmbean.getHeapMemoryUsage().getUsed() - usedHeap));
+    output("Used non-heap: " + (mmbean.getNonHeapMemoryUsage().getUsed() - usedNonHeap));
   }
 }
