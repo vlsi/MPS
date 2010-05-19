@@ -26,6 +26,7 @@ import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.make.StartupModuleMaker;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ProjectPluginCreator;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
@@ -62,7 +63,8 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private Project myProject;
   private EditorsProvider myEditorsProvider;
 
-  public ProjectPluginManager(Project project) {
+  @SuppressWarnings({"UnusedDeclaration"})
+  public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker) {
     myProject = project;
     myEditorsProvider = new EditorsProvider(myProject);    
   }

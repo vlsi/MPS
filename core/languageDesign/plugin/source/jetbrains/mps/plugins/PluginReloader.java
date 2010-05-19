@@ -22,6 +22,7 @@ import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.make.StartupModuleMaker;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
@@ -60,6 +61,7 @@ public class PluginReloader implements ApplicationComponent {
   private ProjectManager myProjectManager;
   private ApplicationPluginManager myPluginManager;
 
+  @SuppressWarnings({"UnusedDeclaration"})
   public PluginReloader(ClassLoaderManager classLoaderManager,ProjectManager projectManager,ApplicationPluginManager pluginManager) {
     myClassLoaderManager = classLoaderManager;
     myProjectManager = projectManager;

@@ -20,6 +20,7 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.library.ProjectLibraryManager;
@@ -50,7 +51,18 @@ public class StartupModuleMaker extends AbstractProjectComponent {
           maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator[0]);
         }
 
-        ClassLoaderManager.getInstance().reloadAll(indicator[0]);
+        //todo [Misha] think this is not needed - cp is updated in maker when necessary
+        ClassLoaderManager.getInstance().updateClassPath();
+      }
+    });
+
+    StartupManager.getInstance(project).registerPreStartupActivity(new Runnable() {
+      public void run() {
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            ClassLoaderManager.getInstance().reloadAll(indicator[0]);
+          }
+        });
       }
     });
 
