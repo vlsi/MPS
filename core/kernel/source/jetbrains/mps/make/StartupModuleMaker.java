@@ -46,9 +46,6 @@ public class StartupModuleMaker extends AbstractProjectComponent {
 
         ModuleMaker maker = new ModuleMaker();
         maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator[0]);
-
-        //todo [Misha] think this is not needed - cp is updated in maker when necessary
-        ClassLoaderManager.getInstance().updateClassPath();
       }
     });
 
