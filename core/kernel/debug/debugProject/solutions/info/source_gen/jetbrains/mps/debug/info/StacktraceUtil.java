@@ -61,7 +61,7 @@ public class StacktraceUtil {
     });
   }
 
-  private static SNode findNode(@NotNull String className, @NotNull final _FunctionTypes._return_P2_E0<? extends SNode, ? super DebugInfo, ? super SModelDescriptor> nodeGetter) {
+  private static <T> T findInDebugInfo(@NotNull String className, @NotNull final _FunctionTypes._return_P2_E0<? extends T, ? super DebugInfo, ? super SModelDescriptor> nodeGetter) {
     int lastDot = className.lastIndexOf(".");
     String pkg = (lastDot == -1 ?
       "" :
@@ -73,20 +73,20 @@ public class StacktraceUtil {
         continue;
       }
 
-      final DebugInfo result = BLDebugInfoCache.getInstance().get(descriptor);
-      if (result == null) {
+      final DebugInfo info = BLDebugInfoCache.getInstance().get(descriptor);
+      if (info == null) {
         continue;
       }
 
-      final Wrappers._T<SNode> nodeToShow = new Wrappers._T<SNode>();
+      final Wrappers._T<T> result = new Wrappers._T<T>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          nodeToShow.value = nodeGetter.invoke(result, descriptor);
+          result.value = nodeGetter.invoke(info, descriptor);
         }
       });
 
-      if (nodeToShow.value != null) {
-        return nodeToShow.value;
+      if (result.value != null) {
+        return result.value;
       }
     }
 
@@ -94,8 +94,17 @@ public class StacktraceUtil {
   }
 
   @Nullable
+  public static String getUnitName(@NotNull String className, final String file, final int position) {
+    return findInDebugInfo(className, new _FunctionTypes._return_P2_E0<String, DebugInfo, SModelDescriptor>() {
+      public String invoke(DebugInfo info, SModelDescriptor descriptor) {
+        return info.getUnitNameForLine(file, position);
+      }
+    });
+  }
+
+  @Nullable
   public static SNode getUnitNode(@NotNull String className, final String file, final int position) {
-    return findNode(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
+    return findInDebugInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo result, SModelDescriptor descriptor) {
         return result.getUnitNodeForLine(file, position, descriptor.getSModel());
       }
@@ -104,7 +113,7 @@ public class StacktraceUtil {
 
   @Nullable
   public static SNode getNode(@NotNull String className, final String file, final int position) {
-    return findNode(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
+    return findInDebugInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo result, SModelDescriptor descriptor) {
         return result.getNodeForLine(file, position, descriptor.getSModel());
       }
@@ -113,7 +122,7 @@ public class StacktraceUtil {
 
   @Nullable
   public static SNode getVar(@NotNull String className, final String file, final int position, @NotNull final String varName) {
-    return findNode(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
+    return findInDebugInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo result, SModelDescriptor descriptor) {
         return result.getVarForLine(file, position, descriptor.getSModel(), varName);
       }
