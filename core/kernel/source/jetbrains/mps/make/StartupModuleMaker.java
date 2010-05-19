@@ -21,8 +21,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -46,10 +44,8 @@ public class StartupModuleMaker extends AbstractProjectComponent {
       public void run() {
         ClassLoaderManager.getInstance().updateClassPath();
 
-        if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
-          ModuleMaker maker = new ModuleMaker();
-          maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator[0]);
-        }
+        ModuleMaker maker = new ModuleMaker();
+        maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator[0]);
 
         //todo [Misha] think this is not needed - cp is updated in maker when necessary
         ClassLoaderManager.getInstance().updateClassPath();
