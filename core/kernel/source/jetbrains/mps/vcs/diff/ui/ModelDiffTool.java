@@ -50,15 +50,18 @@ public class ModelDiffTool implements DiffTool {
 
       final ModelDifferenceDialog d = ModelAccess.instance().runReadAction(new Computable<ModelDifferenceDialog>() {
         public ModelDifferenceDialog compute() {
-          SModelDescriptor sModelDescriptor = oldModel.getModelDescriptor();
-          if (sModelDescriptor == null) {
-            sModelDescriptor = newModel.getModelDescriptor();
+          SModelDescriptor modelDescriptor = oldModel.getModelDescriptor();
+          if (modelDescriptor == null) {
+            modelDescriptor = newModel.getModelDescriptor();
+            if (modelDescriptor == null) {
+              modelDescriptor = SModelRepository.getInstance().getModelDescriptor(oldModel.getSModelFqName());
+            }
           }
           IOperationContext context;
-          if (sModelDescriptor == null) {
+          if (modelDescriptor == null) {
             context = new GlobalOperationContext();
           } else {
-            context = new ModuleContext(sModelDescriptor.getModule(), request.getProject());
+            context = new ModuleContext(modelDescriptor.getModule(), request.getProject());
           }
           boolean modal = !request.getHints().contains(DiffTool.HINT_SHOW_FRAME);
           JFrame frame = WindowManager.getInstance().getFrame(request.getProject());
