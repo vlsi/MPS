@@ -48,7 +48,8 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
   private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
   private boolean myMessagesChanged = false;
 
-  public Set<EditorMessage> createMessages(final SNode node, final IOperationContext operationContext, List<SModelEvent> events, final boolean wasCheckedOnce) {
+  public Set<EditorMessage> createMessages(final SNode node, final IOperationContext operationContext,
+                                           List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
     myMessagesChanged = false;
     final Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
     final TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node.getContainingRoot());
@@ -113,6 +114,8 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                                   intention.execute(node);
                                 }
                               });
+                              editorContext.flushEvents();
+                              intention.setSelection(node, editorContext);
                             }
                           });
                         }

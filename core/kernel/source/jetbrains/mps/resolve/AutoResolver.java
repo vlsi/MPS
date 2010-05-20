@@ -17,6 +17,7 @@ package jetbrains.mps.resolve;
 
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.IEditorChecker;
 import jetbrains.mps.smodel.IOperationContext;
@@ -33,7 +34,8 @@ import com.intellij.openapi.command.CommandProcessor;
 
 public class AutoResolver extends EditorCheckerAdapter {
 
-  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
+  public Set<EditorMessage> createMessages(SNode rootNode, 
+                                           IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
     Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
     if (rootNode.getModel() == null || rootNode.getModel().getModelDescriptor() == null) {
       return messages;

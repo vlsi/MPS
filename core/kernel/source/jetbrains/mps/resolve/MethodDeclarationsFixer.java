@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.resolve;
 
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.event.*;
@@ -65,7 +66,8 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
   }
 
-  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
+  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext,
+                                           List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
 
     if (DISABLED) {
       return new HashSet<EditorMessage>();

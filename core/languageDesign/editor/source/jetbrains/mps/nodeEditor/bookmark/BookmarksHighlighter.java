@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.bookmark;
 
-import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
-import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.nodeEditor.DefaultEditorMessage;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.BookmarkListener;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -48,7 +45,8 @@ public class BookmarksHighlighter extends EditorCheckerAdapter implements Editor
     });
   }
 
-  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
+  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext,
+                                           List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
     Set<EditorMessage> result = new HashSet<EditorMessage>();
     List<Pair<SNode,Integer>> bookmarks = myBookmarkManager.getBookmarks(rootNode);
     for (Pair<SNode, Integer> bookmark : bookmarks) {

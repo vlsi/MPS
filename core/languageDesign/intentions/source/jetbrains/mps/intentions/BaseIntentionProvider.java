@@ -94,6 +94,7 @@ public class BaseIntentionProvider implements IntentionProvider {
 
       public void execute(SNode node, EditorContext editorContext) {
         quickFix.execute(node);
+        quickFix.setSelection(node, editorContext);
       }
 
       public IntentionType getType() {

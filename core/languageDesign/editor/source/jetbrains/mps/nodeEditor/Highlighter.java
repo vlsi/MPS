@@ -389,7 +389,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           SNode node = editor.getEditedNode();          
           if (node == null || node.isDisposed()) return;
           owners[0] = checker.getOwner(node);
-          messages.addAll(checker.createMessages(node, editor.getOperationContext(), events, wasCheckedOnce));
+          messages.addAll(checker.createMessages(node, editor.getOperationContext(), events, wasCheckedOnce, editor.getEditorContext()));
           messagesChangedContainer[0] = messagesChangedContainer[0] || checker.messagesChanged();
         }
       };

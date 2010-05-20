@@ -19,6 +19,7 @@ public class TypesystemQuickFix extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXECUTE_BLOCK = "executeBlock";
   public static final String DESCRIPTION_BLOCK = "descriptionBlock";
+  public static final String SET_SELECTION_BLOCK = "setSelectionBlock";
   public static final String QUICK_FIX_ARGUMENT = "quickFixArgument";
 
   public TypesystemQuickFix(SNode node) {
@@ -71,6 +72,14 @@ public class TypesystemQuickFix extends BaseConcept implements INamedConcept {
 
   public void setDescriptionBlock(QuickFixDescriptionBlock node) {
     super.setChild(TypesystemQuickFix.DESCRIPTION_BLOCK, node);
+  }
+
+  public QuickFixSetSelectionBlock getSetSelectionBlock() {
+    return (QuickFixSetSelectionBlock) this.getChild(QuickFixSetSelectionBlock.class, TypesystemQuickFix.SET_SELECTION_BLOCK);
+  }
+
+  public void setSetSelectionBlock(QuickFixSetSelectionBlock node) {
+    super.setChild(TypesystemQuickFix.SET_SELECTION_BLOCK, node);
   }
 
   public int getQuickFixArgumentsCount() {

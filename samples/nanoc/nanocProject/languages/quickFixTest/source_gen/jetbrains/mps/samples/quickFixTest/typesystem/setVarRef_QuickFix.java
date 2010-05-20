@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 public class setVarRef_QuickFix extends QuickFix_Runtime {
   public setVarRef_QuickFix() {
@@ -16,5 +17,9 @@ public class setVarRef_QuickFix extends QuickFix_Runtime {
     SNode newVar = SConceptOperations.createNewNode("jetbrains.mps.samples.quickFixTest.structure.FooVariableReference", null);
     SLinkOperations.setTarget(newVar, "fooVar", ((SNode) setVarRef_QuickFix.this.getField("target")[0]), false);
     SNodeOperations.replaceWithAnother(((SNode) setVarRef_QuickFix.this.getField("oldVar")[0]), newVar);
+  }
+
+  public void setSelection(SNode node, EditorContext editorContext) {
+    editorContext.select(((SNode) setVarRef_QuickFix.this.getField("target")[0]));
   }
 }
