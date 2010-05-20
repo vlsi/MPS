@@ -19,14 +19,6 @@
         <node role="type" type="jetbrains.mps.nanoc.structure.CInt" id="5698737643333767059" />
       </node>
       <node role="statement" type="jetbrains.mps.nanoc.structure.CWhile" id="1485470850545864036">
-        <node role="condition" type="jetbrains.mps.nanoc.structure.LessOp" id="1485470850545864040">
-          <node role="right" type="jetbrains.mps.nanoc.structure.IntConst" id="1485470850545864043">
-            <property name="value" value="6" />
-          </node>
-          <node role="left" type="jetbrains.mps.nanoc.structure.VarRef" id="1485470850545864039">
-            <link role="declaration" targetNodeId="5698737643333767058" resolveInfo="i" />
-          </node>
-        </node>
         <node role="body" type="jetbrains.mps.nanoc.structure.CBody" id="1485470850545864038">
           <node role="statement" type="jetbrains.mps.nanoc.structure.CExpressionStatement" id="1485470850545864044">
             <node role="expression" type="jetbrains.mps.nanoc.structure.CAssignmentExpression" id="1485470850545864046">
@@ -43,6 +35,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node role="condition" type="jetbrains.mps.nanoc.structure.IntConst" id="1118666212551441943">
+          <property name="value" value="0" />
         </node>
       </node>
       <node role="statement" type="jetbrains.mps.nanoc.structure.CExpressionStatement" id="849607630585440638">

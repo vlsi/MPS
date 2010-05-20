@@ -33,19 +33,27 @@ public class GDBStackFrame implements IStackFrame {
   private String myFileAbsolutePath;
   private int myPosition;
   private DefaultThread myThread;
-  private GDBLocation myLocation;
+  private ILocation myLocation;
   private List<SimpleVarWatchable> myVariables = new ArrayList<SimpleVarWatchable>();
-
-//  private
+  private boolean myIsNonProgram = false;
 
   public GDBStackFrame(RecordValue value, DefaultThread thread, String sourceGen) {
     String s = value.getStringValue(LEVEL);
     myLevel = Integer.parseInt(s.substring(0, s.length()-1));
     myRoutine = value.getStringValue(FUNCTION);
-    myPosition = value.getIntegerValue(LINE);
+    Integer position = value.getIntegerValue(LINE);
+    if (position != null) {
+      myPosition = position;
+    } else {
+      myIsNonProgram = true;
+    }
     myFileAbsolutePath = value.getStringValue(FILE);
     myThread = thread;
-    myLocation = new GDBLocation(myFileAbsolutePath, myRoutine, myPosition, sourceGen);
+    if (myIsNonProgram) {
+      myLocation = new NullLocation();
+    } else {
+      myLocation = new GDBLocation(myFileAbsolutePath, myRoutine, myPosition, sourceGen);
+    }
   }
 
   @Override
@@ -94,5 +102,10 @@ public class GDBStackFrame implements IStackFrame {
         String varValue = varRecord.getStringValue(VALUE);
         myVariables.add(new SimpleVarWatchable(varName, varValue));
       }
+  }
+
+  // if a frame has no line => it's higher than a program or something
+  public boolean isNonProgram() {
+    return myIsNonProgram;
   }
 }

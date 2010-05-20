@@ -1,6 +1,6 @@
 int main() {
 int i = 0;
-while (i < 6) {
+while (0) {
 i = i + 1;
 
 }
