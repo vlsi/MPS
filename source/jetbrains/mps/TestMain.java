@@ -18,10 +18,12 @@ package jetbrains.mps;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.idea.IdeaTestApplication;
 import com.intellij.idea.LoggerFactory;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -76,18 +78,22 @@ public class TestMain {
 
     final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
 
-    String filePath = projectFile.getAbsolutePath();
+    final String filePath = projectFile.getAbsolutePath();
 
-    Project project = null;
-    try {
-      project = projectManager.loadAndOpenProject(filePath, false);
-    } catch (IOException e) {
-      throw new RuntimeException(e);
-    } catch (JDOMException e) {
-      throw new RuntimeException(e);
-    } catch (InvalidDataException e) {
-      throw new RuntimeException(e);
-    }
+    //this is a workaround for MPS-8840
+    Project project = ApplicationManager.getApplication().runWriteAction(new Computable<Project>() {
+      public Project compute() {
+        try {
+          return projectManager.loadAndOpenProject(filePath, false);
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        } catch (JDOMException e) {
+          throw new RuntimeException(e);
+        } catch (InvalidDataException e) {
+          throw new RuntimeException(e);
+        }
+      }
+    });
 
     assert project != null;
 
