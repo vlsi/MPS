@@ -11,19 +11,27 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.core.plugin.ReferencesScopeCheckingOptionEditor;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.typesystem.inference.ReferenceErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ReferencesScope_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode baseConcept, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
     // debugging info 
     long t0 = new Date().getTime();
     int cnt = 0;
@@ -32,20 +40,47 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
     if (context == null || !(ReferencesScopeCheckingOptionEditor.ourRefScopeChecking)) {
       return;
     }
-    SNode node = baseConcept;
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
-    for (SReference ref : node.getReferences()) {
-      SearchScopeStatus sss = ModelConstraintsUtil.getSearchScope(node.getParent(), node, concept, ref.getRole(), context);
-      SNode target = ref.getTargetNode();
+    for (final SReference ref : SNodeOperations.getReferences(node)) {
+      SearchScopeStatus sss = ModelConstraintsUtil.getSearchScope(SNodeOperations.getParent(node), node, concept, SLinkOperations.getRole(ref), context);
+      final SNode target = ref.getTargetNode();
       if (sss.isError()) {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
+          errorTarget = new ReferenceErrorTarget(ref.getRole());
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, sss.getMessage(), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4942048232752368615", intentionProvider, errorTarget);
         }
       } else if (sss.isDefault()) {
-        //  global search scope is not checked now 
+        // node should be in global scope anyway, no need to check 
       } else if (!(sss.getSearchScope().isInScope(target))) {
+        // calculate ConceptConstraints node with the rule checked 
+        SModelDescriptor linkMD = node.getLanguage(context.getScope()).getConstraintsModelDescriptor();
+        SModel linkModel = (linkMD == null ?
+          null :
+          linkMD.getSModel()
+        );
+        SNode factoryNode = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SModelOperations.getRoots(linkModel, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SLinkOperations.getTarget(it, "concept", false) == SNodeOperations.getConceptDeclaration(node);
+          }
+        }), "referent", true)).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SLinkOperations.getTarget(it, "applicableLink", false) == SLinkOperations.findLinkDeclaration(ref);
+          }
+        }), "searchScopeFactory", true);
+        if ((factoryNode == null)) {
+          SModelDescriptor targetMD = SLinkOperations.getTargetNode(ref).getLanguage(context.getScope()).getConstraintsModelDescriptor();
+          SModel targetModel = (targetMD == null ?
+            null :
+            targetMD.getSModel()
+          );
+          factoryNode = SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SModelOperations.getRoots(targetModel, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")).findFirst(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return SLinkOperations.getTarget(it, "concept", false) == SNodeOperations.getConceptDeclaration(target);
+            }
+          }), "defaultScope", true), "searchScopeFactory", true);
+        }
         String name = (target == null ?
           "" :
           target.getName()
@@ -53,6 +88,7 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
+          errorTarget = new ReferenceErrorTarget(ref.getRole());
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "reference" + ((name == null ?
             "" :
             " " + name
@@ -60,6 +96,12 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
             " global" :
             " search"
           )) + " scope", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4942048232752376292", intentionProvider, errorTarget);
+          {
+            SNode _foreign_34989546 = factoryNode;
+            if (_foreign_34989546 != null) {
+              _reporter_2309309498.addAdditionalRuleId(_foreign_34989546.getModel().toString(), _foreign_34989546.getId());
+            }
+          }
         }
       }
       ++cnt;

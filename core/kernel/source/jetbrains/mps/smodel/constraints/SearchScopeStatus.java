@@ -16,6 +16,8 @@
 package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.ide.Status;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
 
 /**
@@ -25,6 +27,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 public class SearchScopeStatus extends Status {
   protected boolean myDefault;
   protected ISearchScope mySearchScope;
+  protected SNodePointer mySearchScopeFactory;
   protected IReferencePresentation myPresentation;
 
   /*package*/ SearchScopeStatus(Code code, String message) {
@@ -43,10 +46,15 @@ public class SearchScopeStatus extends Status {
     return myDefault;
   }
 
+  public SNode getSearchScopeFactoryNode() {
+    return mySearchScopeFactory == null ? null : mySearchScopeFactory.getNode();
+  }
+
   /*package*/ static class OK extends SearchScopeStatus {
-    public OK(ISearchScope ss, IReferencePresentation presentation, boolean isDefault) {
+    public OK(ISearchScope ss, IReferencePresentation presentation, boolean isDefault, SNodePointer searchScopeFactory) {
       super(Code.OK, "");
       mySearchScope = ss;
+      mySearchScopeFactory = searchScopeFactory;
       myPresentation = presentation;
       myDefault = isDefault;
     }

@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
 
 public interface INodeReferentSearchScopeProvider extends IModelConstraints {
@@ -25,4 +26,10 @@ public interface INodeReferentSearchScopeProvider extends IModelConstraints {
   boolean hasPresentation();
 
   String getPresentation(IOperationContext operationContext, PresentationReferentConstraintContext _context);
+
+  /**
+   *  For convenience navigation from errors in search scope
+   * @return pointer to corresponding ConstraintFunction_ReferentSearchScope_Factory node or null 
+   */
+  SNodePointer getSearchScopeFactoryNodePointer();
 }

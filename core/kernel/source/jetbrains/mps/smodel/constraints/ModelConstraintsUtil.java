@@ -103,13 +103,14 @@ public class ModelConstraintsUtil {
       if (!(searchScope instanceof UndefinedSearchScope)) {
         return newOK(searchScope,
           referencePresentation,
-          false);
+          false,
+          scopeProvider.getSearchScopeFactoryNodePointer());
       }
     }
 
     // global search scope
     ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(model, false, context.getScope());
-    return newOK(searchScope, referencePresentation, true);
+    return newOK(searchScope, referencePresentation, true, null);
   }
 
   public static IReferencePresentation getPresentation(SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IOperationContext context) {
@@ -131,11 +132,11 @@ public class ModelConstraintsUtil {
   }
 
 
-  private static OK newOK(ISearchScope searchScope, IReferencePresentation presentation, boolean isDefault) {
+  private static OK newOK(ISearchScope searchScope, IReferencePresentation presentation, boolean isDefault, SNodePointer searchScopeFactory) {
     if (searchScope == null) {
       searchScope = new EmptySearchScope();
     }
-    return new OK(searchScope, presentation, isDefault);
+    return new OK(searchScope, presentation, isDefault, searchScopeFactory);
   }
 
   private static class DefaultReferencPresentation implements IReferencePresentation {

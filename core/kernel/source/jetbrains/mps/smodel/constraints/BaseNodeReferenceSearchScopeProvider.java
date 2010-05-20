@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
@@ -56,5 +57,9 @@ public abstract class BaseNodeReferenceSearchScopeProvider implements INodeRefer
 
   public String getPresentation(IOperationContext operationContext, PresentationReferentConstraintContext _context) {
     throw new UnsupportedOperationException();
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return null;
   }
 }
