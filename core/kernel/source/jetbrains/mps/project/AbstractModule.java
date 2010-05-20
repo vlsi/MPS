@@ -664,7 +664,7 @@ public abstract class AbstractModule implements IModule {
 
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
-      for (StubModelsEntry entry : getStubModelEntries()) {
+      for (StubModelsEntry entry : getModuleDescriptor().getStubModelEntries()) {
         result.add(new StubPath(entry.getPath(), entry.getManager()));
       }
     }
@@ -673,7 +673,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected List<StubModelsEntry> getStubModelEntriesToIncludeOrExclude() {
-    return getStubModelEntries();
+    return getModuleDescriptor().getStubModelEntries();
   }
 
   private Set<String> getIncludedStubPaths() {
@@ -712,13 +712,6 @@ public abstract class AbstractModule implements IModule {
     return changed;
   }
 
-
-  //todo[CP] remove this method when got rid of classpaths
-
-  protected List<StubModelsEntry> getStubModelEntries() {
-    return getModuleDescriptor().getStubModelEntries();
-  }
-
   //-----------classpath--------------
 
   public void updateClassPath() {
@@ -736,7 +729,6 @@ public abstract class AbstractModule implements IModule {
   }
 
   //todo check this code. Wy not to do it where we add jars?
-
   protected void updatePackagedDescriptorClasspath() {
     if (!isPackaged()) return;
 

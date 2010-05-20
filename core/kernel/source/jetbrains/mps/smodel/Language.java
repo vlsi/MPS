@@ -407,7 +407,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return myLanguageDescriptor;
   }
 
-
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     if (moduleDescriptor instanceof LanguageDescriptor) {
       setLanguageDescriptor((LanguageDescriptor) moduleDescriptor, reloadClasses);
@@ -872,8 +871,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   //todo check this code. Wy not to do it where we add jars?
-  //todo[CP] rewrite when classpaths are removed
-  @Override
   protected void updatePackagedDescriptorClasspath() {
     super.updatePackagedDescriptorClasspath();
 
@@ -908,7 +905,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
   }
 
-  //todo[CP] remove this method when got rid of classpaths
   protected List<StubModelsEntry> getRuntimeModelsEntries() {
     return myLanguageDescriptor.getRuntimeStubModels();
   }
@@ -919,7 +915,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   //-----------stubs--------------
 
-  @Override
   protected List<StubModelsEntry> getStubModelEntriesToIncludeOrExclude() {
     return CollectionUtil.union(super.getStubModelEntriesToIncludeOrExclude(), getRuntimeModelsEntries());
   }
