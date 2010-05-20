@@ -585,12 +585,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return LanguageAspect.TEXT_GEN.get(this);
   }
 
-  public Set<SModelDescriptor> getEditorDescriptors() {
-    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-    result.add(getEditorModelDescriptor());
-    return result;
-  }
-
   public Set<SModelDescriptor> getAspectModelDescriptors() {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     for (LanguageAspect aspect : LanguageAspect.values()) {
