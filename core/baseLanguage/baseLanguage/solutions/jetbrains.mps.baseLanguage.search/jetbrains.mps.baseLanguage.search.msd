@@ -3,14 +3,7 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <classPath>
-    <entry path="${mps_home}/core/baseLanguage/baseLanguage/classes" include="false" />
-    <entry path="${mps_home}/core/languageDesign/core/classes" include="false" />
-    <entry path="${mps_home}/core/languageDesign/editor/classes" include="false" />
-    <entry path="${mps_home}/core/languageDesign/generator/classes" include="false" />
-    <entry path="${mps_home}/core/languageDesign/structure/classes" include="false" />
-    <entry path="${mps_home}/core/languageDesign/typesystem/classes" include="false" />
-  </classPath>
+  <classPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</dependency>
