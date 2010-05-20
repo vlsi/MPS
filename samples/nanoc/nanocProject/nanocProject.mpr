@@ -7,9 +7,11 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/solutions/jetbrains.mps.nanoc.sandbox/jetbrains.mps.nanoc.sandbox.msd" />
+      <solutionPath path="${project}/languages/quickFixTest/sandbox/jetbrains.mps.samples.quickFixTest.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/nanoc/nanoc.mpl" />
+      <languagePath path="${project}/languages/quickFixTest/quickFixTest.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs />
