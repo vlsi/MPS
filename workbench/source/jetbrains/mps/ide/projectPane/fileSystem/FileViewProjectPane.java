@@ -112,25 +112,28 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     myBus = bus;
     myIdeDocumentHistory = ideDocumentHistory;
     myEditorManager = fileEditorManager;
+    initComponent();
   }
 
   protected abstract MPSTreeNode createRoot(Project project);
 
+  // TODO: remove on fixing http://youtrack.jetbrains.net/issue/MPS-8845
   public void initComponent() {
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalSModelListener);
   }
 
   public void dispose() {
     disposeComponent();
-    myScrollPane = null;
-  }
-
-  public void disposeComponent() {
-    GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalSModelListener);
     if (isInitialized()) {
       myTimer.stop();
       disposeListeners();
     }
+    myScrollPane = null;
+  }
+
+  // TODO: remove on fixing http://youtrack.jetbrains.net/issue/MPS-8845
+  public void disposeComponent() {
+    GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalSModelListener);
   }
 
   public MPSTree getTree() {
@@ -206,7 +209,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     myTimer.setRepeats(false);
     myTimer.setInitialDelay(DELAY);
 
-    initComponent();
     // Looks like thid method can be called from different threads
     if (ModelAccess.instance().isInEDT()) {
       ModelAccess.instance().executeCommand(new Runnable() {
