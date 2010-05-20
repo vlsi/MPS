@@ -712,18 +712,6 @@ public abstract class AbstractModule implements IModule {
     return changed;
   }
 
-  public static List<StubModelsEntry> filterJava(List<StubModelsEntry> list) {
-    List<StubModelsEntry> result = new ArrayList<StubModelsEntry>();
-
-    for (StubModelsEntry e : list) {
-      if (LanguageID.JAVA_MANAGER.equals(e.getManager())) {
-        result.add(e);
-      }
-    }
-
-    return result;
-  }
-
 
   //todo[CP] remove this method when got rid of classpaths
 

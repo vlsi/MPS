@@ -24,12 +24,10 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
-import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.project.structure.project.Path;
@@ -37,7 +35,6 @@ import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
-import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.PathManager;
@@ -106,7 +103,7 @@ public class ClassPathTest extends BaseMPSTest {
 
         //collect class2module info
         for (IModule m : modulesToCheck) {
-          List<StubModelsEntry> stubs = AbstractModule.filterJava(m.getModuleDescriptor().getStubModelEntries());
+          List<StubModelsEntry> stubs = StubModelsEntry.filterJava(m.getModuleDescriptor().getStubModelEntries());
 
           for (StubModelsEntry entry : stubs) {
             String path = entry.getPath();

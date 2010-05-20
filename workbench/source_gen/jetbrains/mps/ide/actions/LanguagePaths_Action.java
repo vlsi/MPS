@@ -18,7 +18,6 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.BoxLayout;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
-import jetbrains.mps.project.AbstractModule;
 import java.util.ArrayList;
 import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
@@ -70,8 +69,8 @@ public class LanguagePaths_Action extends GeneratedAction {
       dialog.add(sp);
       mainp.setLayout(new BoxLayout(mainp, BoxLayout.Y_AXIS));
       for (Language lang : ListSequence.fromList(languages)) {
-        List<StubModelsEntry> cp = AbstractModule.filterJava(lang.getLanguageDescriptor().getStubModelEntries());
-        List<StubModelsEntry> rcp = AbstractModule.filterJava(lang.getLanguageDescriptor().getRuntimeStubModels());
+        List<StubModelsEntry> cp = StubModelsEntry.filterJava(lang.getLanguageDescriptor().getStubModelEntries());
+        List<StubModelsEntry> rcp = StubModelsEntry.filterJava(lang.getLanguageDescriptor().getRuntimeStubModels());
 
         List<String> cpu = new ArrayList();
         for (StubModelsEntry i : ListSequence.fromList(cp)) {

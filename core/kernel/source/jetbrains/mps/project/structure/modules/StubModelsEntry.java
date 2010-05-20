@@ -19,6 +19,9 @@ import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.LanguageID;
 import org.apache.commons.lang.ObjectUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StubModelsEntry {
   public static final String PATH = "path";
   public static final String MANAGER = "manager";
@@ -88,6 +91,18 @@ public class StubModelsEntry {
     result.setIncludedInVCS(cpe.isIncludedInVCS());
     result.setPath(cpe.getPath());
     result.setManager(LanguageID.JAVA_MANAGER);
+    return result;
+  }
+
+  public static List<StubModelsEntry> filterJava(List<StubModelsEntry> list) {
+    List<StubModelsEntry> result = new ArrayList<StubModelsEntry>();
+
+    for (StubModelsEntry e : list) {
+      if (LanguageID.JAVA_MANAGER.equals(e.getManager())) {
+        result.add(e);
+      }
+    }
+
     return result;
   }
 }
