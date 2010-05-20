@@ -16,7 +16,7 @@ import java.util.List;
  */
 public abstract class GDBEventsAdapter implements GDBEventsListener {
   @Override
-  public void breakpointHit(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess) {
+  public void paused(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess) {
   }
 
   @Override

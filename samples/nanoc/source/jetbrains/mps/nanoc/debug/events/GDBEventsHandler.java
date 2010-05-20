@@ -43,12 +43,15 @@ public class GDBEventsHandler {
           if (answer.isExec() && answer.isStopped()) {
             GDBValue reasonRaw = answer.getResults().getPropertyValue(REASON);
             String reason = reasonRaw instanceof StringValue ? ((StringValue)reasonRaw).getString() : null;
-            if (REASON_BP_HIT.equals(reason)) {
-              fireBreakpointHit(answer);
+           /* if (REASON_BP_HIT.equals(reason)) {
+              firePaused(answer);
               return;
-            }
+            }*/
             if (REASON_EXITED_NORMALLY.equals(reason) || REASON_EXITED.equals(reason)) {
               fireProcessTerminated();
+              return;
+            } else {
+              firePaused(answer);
               return;
             }
             //todo other events
@@ -88,9 +91,9 @@ public class GDBEventsHandler {
     }
   }
 
-  private void fireBreakpointHit(AsyncAnswer gdbAnswer) {
+  private void firePaused(AsyncAnswer gdbAnswer) {
     for (GDBEventsListener listener : getEventsListeners()) {
-      listener.breakpointHit(gdbAnswer, myProcessHandler);
+      listener.paused(gdbAnswer, myProcessHandler);
     }
   }
 

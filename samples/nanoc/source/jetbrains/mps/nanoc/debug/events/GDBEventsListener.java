@@ -14,7 +14,8 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface GDBEventsListener {
-  public void breakpointHit(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess);
+  //paused on breakpoint / while stepping / by user, from UI
+  public void paused(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess);
   public void processTerminated(SimpleConsoleProcessHandler gdbProcess);
   public void resultReceived(ResultAnswer result, List<StreamAnswer> receivedStreamAnswers, SimpleConsoleProcessHandler gdbProcess);
   public void gdbProcessTerminated(SimpleConsoleProcessHandler processHandler);

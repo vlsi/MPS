@@ -1,7 +1,6 @@
 package jetbrains.mps.nanoc.debug;
 
 import com.intellij.execution.process.ProcessHandler;
-import com.intellij.execution.ui.layout.impl.TabImpl.Default;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
@@ -13,9 +12,7 @@ import jetbrains.mps.nanoc.debug.events.GDBEventsAdapter;
 import jetbrains.mps.nanoc.debug.events.GDBEventsHandler;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.nanoc.debug.programState.DefaultThread;
-import jetbrains.mps.nanoc.debug.requests.GDBRequestManager;
-import jetbrains.mps.nanoc.debug.requests.ResumeRequest;
-import jetbrains.mps.nanoc.debug.requests.StackInfoRequest;
+import jetbrains.mps.nanoc.debug.requests.*;
 import jetbrains.mps.smodel.IOperationContext;
 
 import java.util.List;
@@ -61,6 +58,11 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
 
   @Override
   public void pause() {
+    myRequestManager.createRequest(new PauseRequest() {
+      @Override
+      public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
+      }
+    });
   }
 
   @Override
@@ -69,6 +71,12 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
 
   @Override
   public void stepOver() {
+    myExecutionState = ExecutionState.Running;
+    myRequestManager.createRequest(new StepRequest() {
+      @Override
+      public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
+      }
+    });
   }
 
   @Override
@@ -98,11 +106,11 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
   void setupBreakpointListener() {
     myEventsHandler.addEventListener(new GDBEventsAdapter() {
       @Override
-      public void breakpointHit(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess) {
+      public void paused(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess) {
         StackInfoRequest request = new StackInfoRequest() {
           @Override
           public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
-            doPauseOnBreakpoint(answer);
+            doPause(answer);
           }
         };
         myRequestManager.createRequest(request);
@@ -122,7 +130,7 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
   }
 
 
-  private void doPauseOnBreakpoint(ResultAnswer resultAnswer) {
+  private void doPause(ResultAnswer resultAnswer) {
     myExecutionState = ExecutionState.Paused;
     new DefaultThread(resultAnswer, mySourceGen, this) {
       @Override

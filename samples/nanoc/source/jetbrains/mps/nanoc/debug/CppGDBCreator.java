@@ -136,7 +136,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
               final GDBEventsHandler eventsHandler = myDebugSession.getGDBEventsHandler();
               eventsHandler.addEventListener(new GDBEventsAdapter() {
                 @Override
-                public void breakpointHit(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess) {
+                public void paused(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess) {
                   eventsHandler.removeEventListener(this);
                   connectedToDebuggee(gdbProcess);
                 }
