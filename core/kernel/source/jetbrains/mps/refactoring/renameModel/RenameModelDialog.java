@@ -83,32 +83,31 @@ public class RenameModelDialog extends BaseDialog {
 
     if (!(fqName.equals(myModelDescriptor.getSModelFqName()))) {
       DeleteModelHelper.deleteGeneratedFiles(myProject, myModelDescriptor);
-    }
 
-    final ModelRenamer renamer = new ModelRenamer(myModelDescriptor, fqName, !myUpdateAllReferences.getModel().isSelected());
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        renamer.rename();
-      }
-    });
-
-    ProgressManager.getInstance().run(new Modal(myProject, "Updating model usages...", false) {
-      @Override
-      public void run(@NotNull ProgressIndicator indicator) {
-        indicator.pushState();
-        indicator.setIndeterminate(true);
-        try {
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              renamer.updateReferencesIfNeeded();
-            }
-          });
-        } finally {
-          indicator.popState();
+      final ModelRenamer renamer = new ModelRenamer(myModelDescriptor, fqName, !myUpdateAllReferences.getModel().isSelected());
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          renamer.rename();
         }
-      }
-    });
+      });
 
+      ProgressManager.getInstance().run(new Modal(myProject, "Updating model usages...", false) {
+        @Override
+        public void run(@NotNull ProgressIndicator indicator) {
+          indicator.pushState();
+          indicator.setIndeterminate(true);
+          try {
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              public void run() {
+                renamer.updateReferencesIfNeeded();
+              }
+            });
+          } finally {
+            indicator.popState();
+          }
+        }
+      });
+    }
     dispose();
   }
 
