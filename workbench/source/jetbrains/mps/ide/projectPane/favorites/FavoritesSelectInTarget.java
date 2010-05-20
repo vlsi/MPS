@@ -1,11 +1,12 @@
 package jetbrains.mps.ide.projectPane.favorites;
 
 import com.intellij.ide.SelectInContext;
-import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.wm.ToolWindowManager;
+import jetbrains.mps.ide.projectPane.AbstractProjectViewSelectInTarget;
 import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -18,7 +19,11 @@ import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FavoritesSelectInTarget implements SelectInTarget {
+public class FavoritesSelectInTarget extends AbstractProjectViewSelectInTarget {
+  public FavoritesSelectInTarget(Project project) {
+    super(project, FavoritesProjectPane.ID, 0, FavoritesProjectPane.ID);
+  }
+
   private List<SNode> getAvailableNodes(List<Object> objects) {
     List<SNode> result = new ArrayList<SNode>();
     if (objects == null) return result;
@@ -49,7 +54,7 @@ public class FavoritesSelectInTarget implements SelectInTarget {
     VirtualFile file = context.getVirtualFile();
     if (!(file instanceof MPSNodeVirtualFile)) return false;
     MPSNodeVirtualFile nodeVirtualFile = (MPSNodeVirtualFile) file;
-    Project project = context.getProject();
+    Project project = getProject();
     FavoritesProjectPane currentFavoritesPane = FavoritesUtil.getCurrentPane(project);
     if (currentFavoritesPane != null) {
       MPSFavoritesManager favoritesManager = project.getComponent(MPSFavoritesManager.class);
@@ -63,8 +68,9 @@ public class FavoritesSelectInTarget implements SelectInTarget {
     return false;
   }
 
-  public void selectIn(SelectInContext context, boolean requestFocus) {
-    Project project = context.getProject();
+  @Override
+  protected void doSelectIn(SelectInContext context, boolean requestFocus) {
+    Project project = getProject();
     MPSNodeVirtualFile nodeVirtualFile = (MPSNodeVirtualFile) context.getVirtualFile();
     final SNode nodeToSelect = nodeVirtualFile.getNode();
     SModelDescriptor model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
@@ -84,21 +90,5 @@ public class FavoritesSelectInTarget implements SelectInTarget {
         select(findTreeNode(root, nodeToSelect), tree);
       }
     }
-  }
-
-  public String getToolWindowId() {
-    return FavoritesProjectPane.ID;
-  }
-
-  public String getMinorViewId() {
-    return FavoritesProjectPane.ID;
-  }
-
-  public float getWeight() {
-    return 0;
-  }
-
-  public String toString() {
-    return getMinorViewId();
   }
 }

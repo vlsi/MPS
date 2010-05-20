@@ -14,6 +14,7 @@ import com.intellij.util.ui.EmptyIcon;
 
 import javax.swing.*;
 
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.ProjectOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -110,7 +111,13 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
       }
     };
     myFavoritesManager.addListener(myFavoritesListener);
-    getTree().rebuildLater();
+    // Looks like thid method can be called from different threads
+    if (ThreadUtils.isEventDispatchThread()) {
+      getTree().rebuildNow();
+    } else {
+      getTree().rebuildLater();
+    }
+
     myScrollPane = new JScrollPane(myTree);
     return myScrollPane;
   }
@@ -132,7 +139,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public SelectInTarget createSelectInTarget() {
-    return new FavoritesSelectInTarget();
+    return new FavoritesSelectInTarget(myProject);
   }
 
   @NotNull

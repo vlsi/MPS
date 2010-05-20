@@ -32,7 +32,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
-
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
@@ -182,6 +181,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     myScrollPane = new MyScrollPane(getTree());
     addListeners();
     if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
+      // Looks like thid method can be called from different threads
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
           rebuildTree();
@@ -354,40 +354,23 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     }
   }
 
-  private class MySelectInTarget implements SelectInTarget {
+  private class MySelectInTarget extends AbstractProjectViewSelectInTarget {
+    private MySelectInTarget() {
+      super(myProject, ID, 0, "Logical View");
+    }
+
+    @Override
     public boolean canSelect(SelectInContext context) {
       return getNode(context) != null;
     }
 
-    public void selectIn(final SelectInContext context, final boolean requestFocus) {
-      ToolWindowManager windowManager=ToolWindowManager.getInstance(myProject);
-      final ToolWindow projectViewToolWindow = windowManager.getToolWindow(ToolWindowId.PROJECT_VIEW);
-      projectViewToolWindow.activate(new Runnable() {
-        @Override
-        public void run() {
-          activate(requestFocus);
-          SNode toSelect = getNode(context);
-          if (toSelect != null) {
-            selectNode(toSelect);
-          }
-        }
-      }, false);
-    }
 
-    public String getToolWindowId() {
-      return ID;
-    }
-
-    public String getMinorViewId() {
-      return ID;
-    }
-
-    public float getWeight() {
-      return 0;
-    }
-
-    public String toString() {
-      return "Logical View";
+    @Override
+    protected void doSelectIn(SelectInContext context, boolean requestFocus) {
+      SNode toSelect = getNode(context);
+      if (toSelect != null) {
+        selectNode(toSelect);
+      }
     }
 
     private SNode getNode(SelectInContext context) {

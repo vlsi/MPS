@@ -44,6 +44,8 @@ import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.projectPane.AbstractProjectViewSelectInTarget;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePaneCopyProvider;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePanePasteProvider;
@@ -155,10 +157,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     GlobalClassPathIndex.getInstance().addListener(myExclusionListener);
   }
 
-  public void projectOpened() {
-    rebuildTreeLater();
-  }
-
   public void dispose() {
     disposeComponent();
     //if this method is not overridden, myTree is set to null on every change
@@ -201,7 +199,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   }
 
   public JComponent createComponent() {
-    if (myScrollPane != null) {
+    if (isInitialized()) {
       return myScrollPane;
     }
     myTree = new MPSTree() {
@@ -254,10 +252,22 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     myChangeListListener = new ChangeListUpdateListener();
 
     initComponent();
-    projectOpened();
-
+    // Looks like thid method can be called from different threads
+    if (ModelAccess.instance().isInEDT()) {
+      ModelAccess.instance().executeCommand(new Runnable() {
+        public void run() {
+          getTree().rebuildNow();
+        }
+      }, myProject);
+    } else {
+      rebuildTreeLater();
+    }
     myScrollPane = new JScrollPane(myTree);
     return myScrollPane;
+  }
+
+  private boolean isInitialized() {
+    return myScrollPane != null;
   }
 
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
@@ -386,16 +396,14 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   }
 
   public SelectInTarget createSelectInTarget() {
-    return new SelectInTarget() {
+    return new AbstractProjectViewSelectInTarget(myProject, getId(), getWeight(), getTitle()) {
       public VirtualFile myFile;
 
       public boolean canSelect(SelectInContext context) {
         VirtualFile virtualFile = context.getVirtualFile();
         if (!(virtualFile instanceof MPSNodeVirtualFile)) {
-
-          if (getNode(virtualFile) == null) return false;
-
           myFile = virtualFile;
+          if (isInitialized() && getNode(virtualFile) == null) return false;
           return true;
         }
 
@@ -407,40 +415,19 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
         });
         VirtualFile realFile = VFileSystem.getFile(smodel.getModelDescriptor().getModelFile());
 
-        if ((realFile == null) || (getNode(realFile) == null)) return false;
-
         myFile = realFile;
+        if ((realFile == null) || (isInitialized() && getNode(realFile) == null)) return false;
+        
         return true;
       }
 
-      public void selectIn(final SelectInContext context, boolean requestFocus) {
-        final ToolWindowManager manager = ToolWindowManager.getInstance(getProject());
-        manager.getToolWindow(ToolWindowId.PROJECT_VIEW).activate(new Runnable() {
+      @Override
+      protected void doSelectIn(SelectInContext context, boolean requestFocus) {
+        ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            manager.getFocusManager().requestFocus(myTree, false);
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                selectNode(myFile, true);
-              }
-            });
+            selectNode(myFile, true);
           }
-        }, false);
-      }
-
-      public String getToolWindowId() {
-        return FileViewProjectPane.this.getId();
-      }
-
-      public String getMinorViewId() {
-        return null;
-      }
-
-      public float getWeight() {
-        return FileViewProjectPane.this.getWeight();
-      }
-
-      public String toString() {
-        return FileViewProjectPane.this.getTitle();
+        });
       }
     };
   }
