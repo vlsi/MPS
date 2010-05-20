@@ -125,6 +125,9 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
         MapSequence.fromMap(mySNodesToTreeNodes).put(node, ListSequence.fromListAndArray(new ArrayList<SNodeTreeNode>(), sNodeTreeNode));
         myCommandQueue.runTask(new Runnable() {
           public void run() {
+            if (node.isDisposed()) {
+              return;
+            }
             final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
@@ -461,7 +464,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           modelTreeNode.removeTreeMessages(ProjectTreeChangesHighlighter.this, true);
           if (EXTRA_CHECKS_ENABLED && fileStatus == FileStatus.NOT_CHANGED) {
             SModel model = modelDescriptor.getSModel();
-            if (model != null) {
+            if (model != null && !(model.isDisposed())) {
               for (SNode node : Sequence.fromIterable(model.getAllNodesWithIds())) {
                 myChangeCountForNode.zeroizeKey(node);
                 myPropertyChangeCountForNode.zeroizeKey(node);

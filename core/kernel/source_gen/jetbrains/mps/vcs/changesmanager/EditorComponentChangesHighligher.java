@@ -107,11 +107,11 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode editedNode = myEditorComponent.getEditedNode();
-        if (editedNode == null) {
+        if (editedNode == null || editedNode.isDisposed()) {
           return;
         }
         model.value = editedNode.getModel();
-        if (model.value == null) {
+        if (model.value == null || model.value.isDisposed()) {
           return;
         }
       }
