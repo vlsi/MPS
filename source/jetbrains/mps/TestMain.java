@@ -242,8 +242,8 @@ public class TestMain {
             cpEntry1.setPath(classPath);
             cpEntry2.setPath(classPath);
 
-            testRefactoringDescriptor.getStubModelEntries().set(0, StubModelsEntry.fromClassPathEntry(cpEntry1));
-            testRefactoringTargetDescriptor.getStubModelEntries().set(0, StubModelsEntry.fromClassPathEntry(cpEntry2));
+            testRefactoringDescriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(cpEntry1));
+            testRefactoringTargetDescriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(cpEntry2));
 
             testRefactoringLanguage[0].setLanguageDescriptor(testRefactoringDescriptor, false);
             testRefactoringTargetLanguage[0].setLanguageDescriptor(testRefactoringTargetDescriptor, false);
