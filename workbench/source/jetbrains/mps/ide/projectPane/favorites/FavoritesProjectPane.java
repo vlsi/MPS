@@ -9,7 +9,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.State;
-import com.intellij.openapi.startup.StartupManager;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.ui.EmptyIcon;
 
@@ -44,41 +43,13 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   private MPSFavoritesListener myFavoritesListener;
   private ProjectView myProjectView;
   private IOperationContext myContext;
+  private JScrollPane myScrollPane;
 
   protected FavoritesProjectPane(Project project, MPSFavoritesManager manager, ProjectView projectView) {
     super(project);
     myFavoritesManager = manager;
     myProjectView = projectView;
     myContext = ProjectOperationContext.get(getProject());
-    myTree = new MyLogicalViewTree();
-    myFavoritesListener = new MPSFavoritesListener() {
-      public void rootsChanged(String listName) {
-        refreshMySubIdsAndSelect(listName);
-        getTree().rebuildLater();
-      }
-      public void listAdded(String listName) {
-        refreshMySubIdsAndSelect(listName);
-      }
-
-      public void listRemoved(String listName) {
-        String selectedSubId = getSubId();
-        refreshMySubIdsAndSelect(selectedSubId);
-      }
-
-      private void refreshMySubIdsAndSelect(String listName) {
-        myFavoritesManager.removeListener(myFavoritesListener);
-        myProjectView.removeProjectPane(FavoritesProjectPane.this);
-        myProjectView.addProjectPane(FavoritesProjectPane.this);
-        myFavoritesManager.addListener(myFavoritesListener);
-
-        if (ArrayUtil.find(myFavoritesManager.getFavoriteNames(), listName) == -1) {
-          listName = null;
-        }
-        myProjectView.changeView(ID, listName);
-      }
-    };
-    myFavoritesManager.addListener(myFavoritesListener);
-    getTree().rebuildLater();
   }
 
   public void rebuild() {
@@ -108,9 +79,40 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public JComponent createComponent() {
-    super.createComponent();
+    if (myScrollPane != null) {
+      return myScrollPane;
+    }
+    myTree = new MyLogicalViewTree();
+    myFavoritesListener = new MPSFavoritesListener() {
+      public void rootsChanged(String listName) {
+        refreshMySubIdsAndSelect(listName);
+        getTree().rebuildLater();
+      }
+      public void listAdded(String listName) {
+        refreshMySubIdsAndSelect(listName);
+      }
+
+      public void listRemoved(String listName) {
+        String selectedSubId = getSubId();
+        refreshMySubIdsAndSelect(selectedSubId);
+      }
+
+      private void refreshMySubIdsAndSelect(String listName) {
+        myFavoritesManager.removeListener(myFavoritesListener);
+        myProjectView.removeProjectPane(FavoritesProjectPane.this);
+        myProjectView.addProjectPane(FavoritesProjectPane.this);
+        myFavoritesManager.addListener(myFavoritesListener);
+
+        if (ArrayUtil.find(myFavoritesManager.getFavoriteNames(), listName) == -1) {
+          listName = null;
+        }
+        myProjectView.changeView(ID, listName);
+      }
+    };
+    myFavoritesManager.addListener(myFavoritesListener);
     getTree().rebuildLater();
-    return new JScrollPane(myTree);
+    myScrollPane = new JScrollPane(myTree);
+    return myScrollPane;
   }
 
   public MPSTree getTree() {

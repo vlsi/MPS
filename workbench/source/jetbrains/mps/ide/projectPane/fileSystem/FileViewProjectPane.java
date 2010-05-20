@@ -107,6 +107,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     }
   };
   private VirtualFileManagerListener myVirtualFileManagerListener;
+  private JScrollPane myScrollPane;
 
   @Override
   public void addToolbarActions(DefaultActionGroup actionGroup) {
@@ -121,58 +122,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     myBus = bus;
     myIdeDocumentHistory = ideDocumentHistory;
     myEditorManager = fileEditorManager;
-
-    myTree = new MPSTree() {
-      protected MPSTreeNode rebuild() {
-        MPSTreeNode node;
-        if (myProject != null && !myProject.isDisposed() && (myProject.getBaseDir() != null)) {
-          node = createRoot(project);
-        } else {
-          node = new TextTreeNode("No Project");
-        }
-        return node;
-      }
-    };
-
-    myTree.addKeyListener(new KeyAdapter() {
-      @Override
-      public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ENTER && e.getModifiers() == 0) {
-          openEditor();
-          e.consume();
-        }
-      }
-    });
-    myTree.addMouseListener(new MouseAdapter() {
-      @Override
-      public void mouseClicked(MouseEvent e) {
-        if (e.getClickCount() >= 2) {
-          openEditor();
-          e.consume();
-        }
-      }
-    });
-
-    myTimer = new Timer(DELAY, new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        //why command? see http://youtrack.jetbrains.net/issue/MPS-8411 for details; IDEA can acquire write lock under that code
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
-          public void run() {
-            getTree().rebuildNow();
-          }
-        });
-      }
-    });
-    myTimer.setRepeats(false);
-    myTimer.setInitialDelay(DELAY);
-
-    myFileStatusListener = new FileStatusChangeListener();
-    myFileListener = new FileChangesListener();
-    myVirtualFileManagerListener = new RefreshListener();
-    myChangeListListener = new ChangeListUpdateListener();
-
-    initComponent();
-    projectOpened();
   }
 
   protected abstract MPSTreeNode createRoot(Project project);
@@ -252,7 +201,63 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   }
 
   public JComponent createComponent() {
-    return new JScrollPane(myTree);
+    if (myScrollPane != null) {
+      return myScrollPane;
+    }
+    myTree = new MPSTree() {
+      protected MPSTreeNode rebuild() {
+        MPSTreeNode node;
+        if (myProject != null && !myProject.isDisposed() && (myProject.getBaseDir() != null)) {
+          node = createRoot(myProject);
+        } else {
+          node = new TextTreeNode("No Project");
+        }
+        return node;
+      }
+    };
+
+    myTree.addKeyListener(new KeyAdapter() {
+      @Override
+      public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER && e.getModifiers() == 0) {
+          openEditor();
+          e.consume();
+        }
+      }
+    });
+    myTree.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        if (e.getClickCount() >= 2) {
+          openEditor();
+          e.consume();
+        }
+      }
+    });
+
+    myTimer = new Timer(DELAY, new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        //why command? see http://youtrack.jetbrains.net/issue/MPS-8411 for details; IDEA can acquire write lock under that code
+        ModelAccess.instance().runCommandInEDT(new Runnable() {
+          public void run() {
+            getTree().rebuildNow();
+          }
+        });
+      }
+    });
+    myTimer.setRepeats(false);
+    myTimer.setInitialDelay(DELAY);
+
+    myFileStatusListener = new FileStatusChangeListener();
+    myFileListener = new FileChangesListener();
+    myVirtualFileManagerListener = new RefreshListener();
+    myChangeListListener = new ChangeListUpdateListener();
+
+    initComponent();
+    projectOpened();
+
+    myScrollPane = new JScrollPane(myTree);
+    return myScrollPane;
   }
 
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {

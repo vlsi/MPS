@@ -144,16 +144,6 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return myDisposed;
   }
 
-  @Override
-  public JComponent createComponent() {
-    ProjectView projectView = getProjectView();
-    if (projectView == null) return null;
-    AbstractProjectViewPane currentProjectView = projectView.getCurrentProjectViewPane();
-    if (currentProjectView == null) return null;
-    currentProjectView.dispose();
-    return null;
-  }
-
   //todo:the same thing for nodes & modules
   protected void onBeforeModelWillBeDeleted(SModelDescriptor sm) {
     selectNextModel(sm);

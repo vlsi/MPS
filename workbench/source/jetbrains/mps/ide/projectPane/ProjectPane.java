@@ -175,12 +175,12 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public JComponent createComponent() {
+    if (myScrollPane != null) {
+      return myScrollPane;
+    }
     myTree = new ProjectPaneTree(this, myProject);
-
     myScrollPane = new MyScrollPane(getTree());
-
     addListeners();
-
     if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
@@ -188,12 +188,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
         }
       });
     }
-    super.createComponent();
     fireComponentCreated();
-    return getComponent();
-  }
-
-  public JComponent getComponent() {
     return myScrollPane;
   }
 
