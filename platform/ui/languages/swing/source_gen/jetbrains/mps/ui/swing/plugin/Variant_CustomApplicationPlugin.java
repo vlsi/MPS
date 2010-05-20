@@ -4,7 +4,7 @@ package jetbrains.mps.ui.swing.plugin;
 
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ui.modeling.plugin.Variants;
+import jetbrains.mps.ui.plugin.Variants;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;

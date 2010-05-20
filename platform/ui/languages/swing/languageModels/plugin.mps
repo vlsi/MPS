@@ -112,19 +112,20 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="r:490ca91d-cc9b-4e08-b398-1a8bb08d54bb(jetbrains.mps.ui.plugin)" />
   <node type="jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration" id="2441084687258581572">
     <property name="name" value="Variant" />
     <node role="initBlock" type="jetbrains.mps.lang.plugin.structure.ApplicationPluginInitBlock" id="2441084687258581573">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2441084687258581574">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2441084687258581575">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2441084687258581577">
-            <link role="baseMethodDeclaration" targetNodeId="2.2441084687258576926" resolveInfo="register" />
-            <link role="classConcept" targetNodeId="2.8905126934806146482" resolveInfo="Variants" />
+            <link role="baseMethodDeclaration" targetNodeId="2v.8117382572454923216" resolveInfo="register" />
+            <link role="classConcept" targetNodeId="2v.8117382572454923102" resolveInfo="Variants" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="2441084687258581578">
               <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="2441084687258581580">
                 <property name="name" value="vars" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2441084687258581582">
-                  <link role="classifier" targetNodeId="2.8905126934806146482" resolveInfo="Variants" />
+                  <link role="classifier" targetNodeId="2v.8117382572454923102" resolveInfo="Variants" />
                 </node>
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2441084687258581579">
@@ -134,7 +135,7 @@
                       <link role="variableDeclaration" targetNodeId="2441084687258581580" resolveInfo="vars" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2441084687258581589">
-                      <link role="baseMethodDeclaration" targetNodeId="2.2441084687258577047" resolveInfo="addVariant" />
+                      <link role="baseMethodDeclaration" targetNodeId="2v.8117382572454923114" resolveInfo="addVariant" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2441084687258581590">
                         <property name="value" value="Swing" />
                       </node>

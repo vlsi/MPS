@@ -38,7 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="8" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="3" modelUID="r:9515a1bb-7c0a-41f9-bbe5-1afbeffea2f9(jetbrains.mps.ui.modeling.plugin)" version="-1" />
@@ -47,6 +47,7 @@
   <import index="6" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="9" modelUID="r:490ca91d-cc9b-4e08-b398-1a8bb08d54bb(jetbrains.mps.ui.plugin)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="8381258131358771407">
     <property name="name" value="View_wrap_with_ValidatingView" />
@@ -397,8 +398,8 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2441084687258589299">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2441084687258589300">
-                <link role="baseMethodDeclaration" targetNodeId="3.2441084687258556672" resolveInfo="languageToGenerate" />
-                <link role="classConcept" targetNodeId="3.8905126934806146482" resolveInfo="Variants" />
+                <link role="baseMethodDeclaration" targetNodeId="9.8117382572454923191" resolveInfo="languageToGenerate" />
+                <link role="classConcept" targetNodeId="9.8117382572454923102" resolveInfo="Variants" />
                 <node role="actualArgument" type="jetbrains.mps.lang.intentions.structure.IntentionParameter" id="2441084687258589301" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2441084687258589302">
@@ -552,8 +553,8 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2441084687258535926">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2441084687258535919">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2441084687258498817">
-                <link role="baseMethodDeclaration" targetNodeId="3.2441084687258489513" resolveInfo="availableVariants" />
-                <link role="classConcept" targetNodeId="3.8905126934806146482" resolveInfo="Variants" />
+                <link role="baseMethodDeclaration" targetNodeId="9.8117382572454923172" resolveInfo="availableVariants" />
+                <link role="classConcept" targetNodeId="9.8117382572454923102" resolveInfo="Variants" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ExcludeOperation" id="2441084687258535923">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2441084687258535925">
