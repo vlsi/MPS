@@ -123,7 +123,6 @@
   <target name="broken.references.test">
     <mps.test.broken.references fork="true" loglevel="info">
       <jvmargs refid="mps.args"/>
-      <project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>
       <modules dir="${mps.home}">
         <exclude name="**/classes/**"/>
         <exclude name="**/classes_gen/**"/>

@@ -14,6 +14,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.MPSExtentions;
 
 import java.io.File;
@@ -48,19 +49,22 @@ public class TestBrokenReferencesWorker extends MpsWorker {
   public void work() {
     setupEnvironment();
 
-    Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
-
-    File file = mpsProjects.keySet().iterator().next();
+    File file =new File(PathManager.getHomePath() + File.separator + "core" + File.separator + "baseLanguage" + File.separator + "baseLanguage" + File.separator + "baseLanguage.mpr");
     if (!file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT)) throw new IllegalArgumentException(file.getPath());
-
     final MPSProject p = TestMain.loadProject(file);
     info("Loaded project " + p);
+
+    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
+    File projectFile = FileUtil.createTmpFile();
+    final MPSProject project = new MPSProject(ideaProject);
+    project.init(projectFile, new ProjectDescriptor());
 
     ObjectsToProcess go = new ObjectsToProcess();
     collectModelsToGenerate(go);
 
-    executeTask(p, go);
+    executeTask(project, go);
 
+    disposeProject(project);
     disposeProject(p);
     dispose();
   }
