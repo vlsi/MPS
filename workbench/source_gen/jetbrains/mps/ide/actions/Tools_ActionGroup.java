@@ -27,7 +27,7 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
       Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.InstallIDEAPlugin_Action", "jetbrains.mps.ide");
       Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameAspects_Action", "jetbrains.mps.ide");
       Tools_ActionGroup.this.addSeparator();
-      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceGlobally_Action", "jetbrains.mps.ide");
+      Tools_ActionGroup.this.addGroup("jetbrains.mps.ide.actions.ToolsUpgrade_ActionGroup", "jetbrains.mps.ide");
       Tools_ActionGroup.this.addGroup("jetbrains.mps.ide.actions.ToolsInternal_ActionGroup", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
