@@ -40,6 +40,7 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.MPSExtentions;
 import org.jdom.JDOMException;
 
+import javax.swing.SwingUtilities;
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashSet;
@@ -81,10 +82,12 @@ public class TestMain {
     final String filePath = projectFile.getAbsolutePath();
 
     //this is a workaround for MPS-8840
-    Project project = ApplicationManager.getApplication().runWriteAction(new Computable<Project>() {
-      public Project compute() {
+    final Project[] project = new Project[1];
+
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
         try {
-          return projectManager.loadAndOpenProject(filePath, false);
+          project[0] = projectManager.loadAndOpenProject(filePath, false);
         } catch (IOException e) {
           throw new RuntimeException(e);
         } catch (JDOMException e) {
@@ -95,7 +98,7 @@ public class TestMain {
       }
     });
 
-    assert project != null;
+    assert project[0] != null;
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -105,8 +108,8 @@ public class TestMain {
       }
     });
 
-    projectManager.openProject(project);
-    return project.getComponent(MPSProject.class);
+    projectManager.openProject(project[0]);
+    return project[0].getComponent(MPSProject.class);
   }
 
   public static boolean testProjectGenerationForLeaks(File projectFile) {
