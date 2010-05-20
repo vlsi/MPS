@@ -32,6 +32,7 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -241,8 +242,8 @@ public class TestMain {
             cpEntry1.setPath(classPath);
             cpEntry2.setPath(classPath);
 
-            testRefactoringDescriptor.getClassPaths().set(0, cpEntry1);
-            testRefactoringTargetDescriptor.getClassPaths().set(0, cpEntry2);
+            testRefactoringDescriptor.getStubModelEntries().set(0, StubModelsEntry.fromClassPathEntry(cpEntry1));
+            testRefactoringTargetDescriptor.getStubModelEntries().set(0, StubModelsEntry.fromClassPathEntry(cpEntry2));
 
             testRefactoringLanguage[0].setLanguageDescriptor(testRefactoringDescriptor, false);
             testRefactoringTargetLanguage[0].setLanguageDescriptor(testRefactoringTargetDescriptor, false);

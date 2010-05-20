@@ -22,6 +22,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
+import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
@@ -312,7 +313,7 @@ public class JavaCompiler {
               cpe = null;
             }
             if (cpe != null) {
-              myModule.getModuleDescriptor().getClassPaths().add(cpe);
+              myModule.getModuleDescriptor().getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(cpe));
               myModule.save();
             }
           }

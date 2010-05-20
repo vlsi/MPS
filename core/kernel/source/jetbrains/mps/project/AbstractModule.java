@@ -36,6 +36,7 @@ import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -139,39 +140,18 @@ public abstract class AbstractModule implements IModule {
     if (isPackaged()) {
       updatePackagedDescriptorClasspath();
     } else {
-      { //old classpath
-        Set<String> visited = new HashSet<String>();
-        List<ClassPathEntry> remove = new ArrayList<ClassPathEntry>();
-        for (ClassPathEntry e : getModuleDescriptor().getClassPaths()) {
-          if (visited.contains(e.getPath())) {
-            remove.add(e);
-            needToSave = true;
-          }
-
-          visited.add(e.getPath());
+      Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
+      List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
+      for (StubModelsEntry e : getModuleDescriptor().getStubModelEntries()) {
+        if (visited.contains(e)) {
+          remove.add(e);
+          needToSave = true;
         }
 
-        getModuleDescriptor().getClassPaths().removeAll(remove);
+        visited.add(e);
       }
 
-      { //new classpath
-        Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
-        List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
-        for (StubModelsEntry e : getModuleDescriptor().getStubModelEntries()) {
-          for (StubModelsEntry ve : visited) {
-            boolean eqManager = ObjectUtils.equals(ve.getManager(), e.getManager());
-            boolean eqPath = ObjectUtils.equals(e.getPath(), ve.getPath());
-            if (eqManager && eqPath) {
-              remove.add(e);
-              needToSave = true;
-            }
-          }
-
-          visited.add(e);
-        }
-
-        getModuleDescriptor().getStubModelEntries().removeAll(remove);
-      }
+      getModuleDescriptor().getStubModelEntries().removeAll(remove);
     }
 
     if (needToSave && !isPackaged()) {
@@ -732,30 +712,23 @@ public abstract class AbstractModule implements IModule {
     return changed;
   }
 
-  //todo[CP] remove this method when got rid of classpaths
+  public static List<StubModelsEntry> filterJava(List<StubModelsEntry> list) {
+    List<StubModelsEntry> result = new ArrayList<StubModelsEntry>();
 
-  protected List<StubModelsEntry> getStubModelEntries() {
-    List<ClassPathEntry> cp = getModuleDescriptor().getClassPaths();
-    List<StubModelsEntry> sm = getModuleDescriptor().getStubModelEntries();
-
-    return toStubModelEntries(cp, sm);
-  }
-
-  //todo[CP] remove this method when got rid of classpaths
-
-  protected List<StubModelsEntry> toStubModelEntries(List<ClassPathEntry> cp, List<StubModelsEntry> sm) {
-    ArrayList<StubModelsEntry> result = new ArrayList<StubModelsEntry>();
-
-    result.addAll(sm);
-    for (ClassPathEntry entry : cp) {
-      StubModelsEntry sme = new StubModelsEntry();
-      sme.setPath(entry.getPath());
-      sme.setManager(LanguageID.JAVA_MANAGER);
-      sme.setIncludedInVCS(entry.isIncludedInVCS());
-      result.add(sme);
+    for (StubModelsEntry e : list) {
+      if (LanguageID.JAVA_MANAGER.equals(e.getManager())) {
+        result.add(e);
+      }
     }
 
     return result;
+  }
+
+
+  //todo[CP] remove this method when got rid of classpaths
+
+  protected List<StubModelsEntry> getStubModelEntries() {
+    return getModuleDescriptor().getStubModelEntries();
   }
 
   //-----------classpath--------------
@@ -780,47 +753,32 @@ public abstract class AbstractModule implements IModule {
     if (!isPackaged()) return;
 
     ModuleDescriptor descriptor = getModuleDescriptor();
-
-    if (descriptor != null) {
-      Set<String> visited = new HashSet<String>();
-      List<ClassPathEntry> remove = new ArrayList<ClassPathEntry>();
-      for (ClassPathEntry entry : descriptor.getClassPaths()) {
-        IFile cp = FileSystem.getFile(entry.getPath());
-        if ((!cp.exists()) || cp.isDirectory() || visited.contains(cp.getAbsolutePath())) {
-          remove.add(entry);
-        }
-        visited.add(entry.getPath());
-      }
-      descriptor.getClassPaths().removeAll(remove);
-      File bundleHomeFile = getBundleHome();
-      if (bundleHomeFile == null) return;
-      String bundleHomePath = bundleHomeFile.getPath();
-      if (!visited.contains(bundleHomePath)) {
-        ClassPathEntry bundleHome = new ClassPathEntry();
-        descriptor.getClassPaths().add(bundleHome);
-        bundleHome.setPath(bundleHomePath);
-      }
-    }
-
     if (descriptor != null) {
       Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
       List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
       for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
         IFile cp = FileSystem.getFile(entry.getPath());
-        if ((!cp.exists()) || cp.isDirectory()) {
+        if ((!cp.exists()) || cp.isDirectory() || visited.contains(entry)) {
           remove.add(entry);
-        }
-
-        for (StubModelsEntry ve : visited) {
-          boolean eqManager = ObjectUtils.equals(ve.getManager(), entry.getManager());
-          boolean eqPath = ObjectUtils.equals(cp.getAbsolutePath(), ve.getPath());
-          if (eqManager && eqPath) {
-            remove.add(entry);
-          }
         }
         visited.add(entry);
       }
       descriptor.getStubModelEntries().removeAll(remove);
+
+      File bundleHomeFile = getBundleHome();
+      if (bundleHomeFile == null) return;
+      String bundleHomePath = bundleHomeFile.getPath();
+      boolean contains = false;
+      for (StubModelsEntry v : visited) {
+        if (EqualUtil.equals(v.getPath(), bundleHomePath)) {
+          contains = true;
+        }
+      }
+      if (!contains) {
+        ClassPathEntry bundleHome = new ClassPathEntry();
+        bundleHome.setPath(bundleHomePath);
+        descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(bundleHome));
+      }
     }
   }
 

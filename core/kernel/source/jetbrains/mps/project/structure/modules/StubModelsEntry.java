@@ -16,6 +16,7 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.smodel.LanguageID;
 import org.apache.commons.lang.ObjectUtils;
 
 public class StubModelsEntry {
@@ -75,6 +76,18 @@ public class StubModelsEntry {
     result.myManager = myManager;
     result.myIncludedInVCS = myIncludedInVCS;
 
+    return result;
+  }
+
+  public boolean isJava(){
+    return LanguageID.JAVA_MANAGER.equals(myManager);
+  }
+
+  public static StubModelsEntry fromClassPathEntry(ClassPathEntry cpe) {
+    StubModelsEntry result = new StubModelsEntry();
+    result.setIncludedInVCS(cpe.isIncludedInVCS());
+    result.setPath(cpe.getPath());
+    result.setManager(LanguageID.JAVA_MANAGER);
     return result;
   }
 }

@@ -85,12 +85,6 @@ public class LanguageProperties extends ModuleProperties {
     this.myAccessoryModels.addAll(d.getAccessoryModels());
     this.myExtendedLanguages.addAll(d.getExtendedLanguages());
     this.myRuntimeModules.addAll(d.getRuntimeModules());
-    for (ClassPathEntry entry : d.getRuntimeClassPaths()) {
-      this.myRuntimeClassPaths.add((entry != null ?
-        entry.getCopy() :
-        null
-      ));
-    }
     for (StubSolution ss : d.getStubSolutions()) {
       this.myStubSolutions.add((ss != null ?
         ss.getCopy() :
@@ -118,8 +112,6 @@ public class LanguageProperties extends ModuleProperties {
     d.getExtendedLanguages().addAll(this.myExtendedLanguages);
     d.getRuntimeModules().clear();
     d.getRuntimeModules().addAll(this.myRuntimeModules);
-    d.getRuntimeClassPaths().clear();
-    d.getRuntimeClassPaths().addAll(this.myRuntimeClassPaths);
     d.getStubSolutions().clear();
     d.getStubSolutions().addAll(this.myStubSolutions);
     d.getRuntimeStubModels().clear();

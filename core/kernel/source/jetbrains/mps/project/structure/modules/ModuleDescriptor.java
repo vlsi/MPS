@@ -32,7 +32,6 @@ public class ModuleDescriptor {
   private List<Dependency> myDependencies;
   private List<ModuleReference> myUsedLanguages;
   private List<ModuleReference> myUsedDevkits;
-  private List<ClassPathEntry> myClassPaths;
   private List<StubModelsEntry> myStubModels;
   private List<String> mySourcePaths;
 
@@ -41,7 +40,6 @@ public class ModuleDescriptor {
     myDependencies = new ArrayList<Dependency>();
     myUsedLanguages = new ArrayList<ModuleReference>();
     myUsedDevkits = new ArrayList<ModuleReference>();
-    myClassPaths = new ArrayList<ClassPathEntry>();
     myStubModels = new ArrayList<StubModelsEntry>();
     mySourcePaths = new ArrayList<String>();
   }
@@ -104,10 +102,6 @@ public class ModuleDescriptor {
 
   public List<ModuleReference> getUsedDevkits() {
     return myUsedDevkits;
-  }
-
-  public List<ClassPathEntry> getClassPaths() {
-    return myClassPaths;
   }
 
   public List<StubModelsEntry> getStubModelEntries() {

@@ -17,7 +17,8 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.BoxLayout;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.structure.modules.ClassPathEntry;
+import jetbrains.mps.project.structure.modules.StubModelsEntry;
+import jetbrains.mps.project.AbstractModule;
 import java.util.ArrayList;
 import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
@@ -69,22 +70,22 @@ public class LanguagePaths_Action extends GeneratedAction {
       dialog.add(sp);
       mainp.setLayout(new BoxLayout(mainp, BoxLayout.Y_AXIS));
       for (Language lang : ListSequence.fromList(languages)) {
-        List<ClassPathEntry> cp = new ArrayList(lang.getLanguageDescriptor().getClassPaths());
-        List<ClassPathEntry> rcp = new ArrayList(lang.getLanguageDescriptor().getRuntimeClassPaths());
+        List<StubModelsEntry> cp = AbstractModule.filterJava(lang.getLanguageDescriptor().getStubModelEntries());
+        List<StubModelsEntry> rcp = AbstractModule.filterJava(lang.getLanguageDescriptor().getRuntimeStubModels());
 
         List<String> cpu = new ArrayList();
-        for (ClassPathEntry i : ListSequence.fromList(cp)) {
+        for (StubModelsEntry i : ListSequence.fromList(cp)) {
           cpu.add(i.getPath());
         }
-        for (ClassPathEntry i : ListSequence.fromList(rcp)) {
+        for (StubModelsEntry i : ListSequence.fromList(rcp)) {
           cpu.remove(i.getPath());
         }
 
         List<String> rcpu = new ArrayList();
-        for (ClassPathEntry i : ListSequence.fromList(rcp)) {
+        for (StubModelsEntry i : ListSequence.fromList(rcp)) {
           rcpu.add(i.getPath());
         }
-        for (ClassPathEntry i : ListSequence.fromList(cp)) {
+        for (StubModelsEntry i : ListSequence.fromList(cp)) {
           rcpu.remove(i.getPath());
         }
 

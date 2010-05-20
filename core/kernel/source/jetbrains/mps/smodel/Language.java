@@ -879,78 +879,38 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     if (!isPackaged()) return;
 
-    LanguageDescriptor descriptor = getLanguageDescriptor();
-
-    File bundleParent = getBundleHome().getParentFile();
-    String jarName = getModuleFqName() + "." + RUNTIME_JAR_SUFFIX;
-    File jarFile = new File(bundleParent, jarName);
-    boolean addJar = false;
-
-    if (descriptor != null) {
-      Set<String> visited = new HashSet<String>();
-      List<ClassPathEntry> remove = new ArrayList<ClassPathEntry>();
-      for (ClassPathEntry e : myLanguageDescriptor.getRuntimeClassPaths()) {
-        IFile file = FileSystem.getFile(e.getPath());
-        if (!file.exists() || file.isDirectory() || (visited.contains(e.getPath()))) {
-          remove.add(e);
-        }
-        visited.add(e.getPath());
-      }
-      myLanguageDescriptor.getRuntimeClassPaths().removeAll(remove);
-
-
-      if (jarFile.exists() && !visited.contains(jarFile.getPath())) {
-        addJar = true;
-      }
-    }
-
-    if (descriptor != null) {
+    if (myLanguageDescriptor != null) {
       Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
       List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
-      for (StubModelsEntry entry : descriptor.getRuntimeStubModels()) {
+      for (StubModelsEntry entry : myLanguageDescriptor.getRuntimeStubModels()) {
         IFile cp = FileSystem.getFile(entry.getPath());
-        if ((!cp.exists()) || cp.isDirectory()) {
+        if ((!cp.exists()) || cp.isDirectory() ||visited.contains(entry)) {
           remove.add(entry);
-        }
-
-        for (StubModelsEntry ve : visited) {
-          boolean eqManager = ObjectUtils.equals(ve.getManager(), entry.getManager());
-          boolean eqPath = ObjectUtils.equals(cp.getAbsolutePath(), ve.getPath());
-          if (eqManager && eqPath) {
-            remove.add(entry);
-            break;
-          }
         }
         visited.add(entry);
       }
-      descriptor.getRuntimeStubModels().removeAll(remove);
+      myLanguageDescriptor.getRuntimeStubModels().removeAll(remove);
 
-      boolean containsJar = false;
-      for (StubModelsEntry ve : visited) {
-        boolean eqPath = ObjectUtils.equals(jarFile.getPath(), ve.getPath());
-        if (eqPath) {
-          containsJar = true;
-          break;
-        }
-      }
-      if (jarFile.exists() && !containsJar) {
-        addJar = true;
-      }
-    }
+      File bundleParent = getBundleHome().getParentFile();
+      String jarName = getModuleFqName() + "." + RUNTIME_JAR_SUFFIX;
+      File jarFile = new File(bundleParent, jarName);
+      String path = jarFile.getPath();
 
-    if (addJar) {
-      ClassPathEntry runtimeJar = new ClassPathEntry();
-      myLanguageDescriptor.getRuntimeClassPaths().add(runtimeJar);
-      runtimeJar.setPath(jarFile.getPath());
+      StubModelsEntry tmp = new StubModelsEntry();
+      tmp.setPath(path);
+      tmp.setManager(LanguageID.JAVA_MANAGER);
+
+      if (jarFile.exists() && !visited.contains(tmp)) {
+        ClassPathEntry runtimeJar = new ClassPathEntry();
+        runtimeJar.setPath(path);
+        myLanguageDescriptor.getRuntimeStubModels().add(StubModelsEntry.fromClassPathEntry(runtimeJar));
+      }
     }
   }
 
   //todo[CP] remove this method when got rid of classpaths
   protected List<StubModelsEntry> getRuntimeModelsEntries() {
-    List<StubModelsEntry> sm = myLanguageDescriptor.getRuntimeStubModels();
-    List<ClassPathEntry> cp = myLanguageDescriptor.getRuntimeClassPaths();
-
-    return toStubModelEntries(cp, sm);
+    return myLanguageDescriptor.getRuntimeStubModels();
   }
 
   public boolean isGenerateAdapters() {

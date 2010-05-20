@@ -140,12 +140,6 @@ public class ModuleProperties {
     for (String p : descriptor.getSourcePaths()) {
       this.mySourcePaths.add(p);
     }
-    for (ClassPathEntry entry : descriptor.getClassPaths()) {
-      this.myClassPaths.add((entry != null ?
-        entry.getCopy() :
-        null
-      ));
-    }
     for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
       this.myStubModels.add((entry != null ?
         entry.getCopy() :
@@ -168,8 +162,6 @@ public class ModuleProperties {
     descriptor.getUsedDevkits().addAll(this.myUsedDevkits);
     descriptor.getSourcePaths().clear();
     descriptor.getSourcePaths().addAll(this.mySourcePaths);
-    descriptor.getClassPaths().clear();
-    descriptor.getClassPaths().addAll(this.myClassPaths);
     descriptor.getStubModelEntries().clear();
     descriptor.getStubModelEntries().addAll(this.myStubModels);
   }
