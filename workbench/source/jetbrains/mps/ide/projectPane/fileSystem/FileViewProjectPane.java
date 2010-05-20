@@ -122,7 +122,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
 
   public void dispose() {
     disposeComponent();
-    //if this method is not overridden, myTree is set to null on every change
+    myScrollPane = null;
   }
 
   public void disposeComponent() {
