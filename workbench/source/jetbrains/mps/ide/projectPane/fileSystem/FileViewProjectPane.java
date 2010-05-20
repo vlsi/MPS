@@ -28,7 +28,6 @@ import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.util.ActionCallback;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vcs.FileStatusListener;
@@ -40,11 +39,8 @@ import com.intellij.openapi.vcs.changes.ChangeListListener;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vfs.*;
-import com.intellij.openapi.wm.ToolWindowId;
-import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.projectPane.AbstractProjectViewSelectInTarget;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePaneCopyProvider;
@@ -92,22 +88,14 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(modeFile));
     }
   };
-  private final ExclusionChangedListener myExclusionListener = new ExclusionChangedListener() {
-    public void exclusionChanged() {
-      rebuildTreeLater();
-    }
-  };
+  private ExclusionChangedListener myExclusionListener;
 
   private ChangeListListener myChangeListListener;
   private MessageBusConnection myMessageBusConnection;
   private FileStatusListener myFileStatusListener;
   private VirtualFileAdapter myFileListener;
   private Timer myTimer;
-  private VcsListener myDirectoryMappingListener = new VcsListener() {
-    public void directoryMappingChanged() {
-      rebuildTreeLater();
-    }
-  };
+  private VcsListener myDirectoryMappingListener;
   private VirtualFileManagerListener myVirtualFileManagerListener;
   private JScrollPane myScrollPane;
 
@@ -129,32 +117,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   protected abstract MPSTreeNode createRoot(Project project);
 
   public void initComponent() {
-    FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
-    VirtualFileManager.getInstance().addVirtualFileListener(myFileListener);
-    VirtualFileManager.getInstance().addVirtualFileManagerListener(myVirtualFileManagerListener);
-    myProject.getComponent(ProjectLevelVcsManager.class).addVcsListener(myDirectoryMappingListener);
-    ChangeListManager.getInstance(myProject).addChangeListListener(myChangeListListener);
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalSModelListener);
-    myMessageBusConnection = myBus.connect();
-    myMessageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, new FileEditorManagerAdapter() {
-      @Override
-      public void fileOpened(FileEditorManager source, VirtualFile file) {
-        if (myProjectView.isAutoscrollFromSource(getId())) {
-          selectNode(file, false);
-        }
-      }
-
-      @Override
-      public void selectionChanged(FileEditorManagerEvent event) {
-        if (myProjectView.isAutoscrollFromSource(getId())) {
-          VirtualFile newFile = event.getNewFile();
-          if (newFile != null) {
-            selectNode(newFile, false);
-          }
-        }
-      }
-    });
-    GlobalClassPathIndex.getInstance().addListener(myExclusionListener);
   }
 
   public void dispose() {
@@ -163,15 +126,11 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   }
 
   public void disposeComponent() {
-    myTimer.stop();
-    FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
-    VirtualFileManager.getInstance().removeVirtualFileListener(myFileListener);
-    VirtualFileManager.getInstance().removeVirtualFileManagerListener(myVirtualFileManagerListener);
-    myProject.getComponent(ProjectLevelVcsManager.class).removeVcsListener(myDirectoryMappingListener);
-    ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
     GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalSModelListener);
-    myMessageBusConnection.disconnect();
-    GlobalClassPathIndex.getInstance().removeListener(myExclusionListener);
+    if (isInitialized()) {
+      myTimer.stop();
+      disposeListeners();
+    }
   }
 
   public MPSTree getTree() {
@@ -202,6 +161,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     if (isInitialized()) {
       return myScrollPane;
     }
+    installListeners();
     myTree = new MPSTree() {
       protected MPSTreeNode rebuild() {
         MPSTreeNode node;
@@ -246,11 +206,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     myTimer.setRepeats(false);
     myTimer.setInitialDelay(DELAY);
 
-    myFileStatusListener = new FileStatusChangeListener();
-    myFileListener = new FileChangesListener();
-    myVirtualFileManagerListener = new RefreshListener();
-    myChangeListListener = new ChangeListUpdateListener();
-
     initComponent();
     // Looks like thid method can be called from different threads
     if (ModelAccess.instance().isInEDT()) {
@@ -264,6 +219,60 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     }
     myScrollPane = new JScrollPane(myTree);
     return myScrollPane;
+  }
+
+  private void installListeners() {
+    FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener = new FileStatusChangeListener());
+    VirtualFileManager.getInstance().addVirtualFileListener(myFileListener = new FileChangesListener());
+    VirtualFileManager.getInstance().addVirtualFileManagerListener(myVirtualFileManagerListener = new RefreshListener());
+    myDirectoryMappingListener = new VcsListener() {
+      public void directoryMappingChanged() {
+        rebuildTreeLater();
+      }
+    };
+    myProject.getComponent(ProjectLevelVcsManager.class).addVcsListener(myDirectoryMappingListener);
+    ChangeListManager.getInstance(myProject).addChangeListListener(myChangeListListener = new ChangeListUpdateListener());
+    myMessageBusConnection = myBus.connect();
+    myMessageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, new FileEditorManagerAdapter() {
+      @Override
+      public void fileOpened(FileEditorManager source, VirtualFile file) {
+        if (myProjectView.isAutoscrollFromSource(getId())) {
+          selectNode(file, false);
+        }
+      }
+
+      @Override
+      public void selectionChanged(FileEditorManagerEvent event) {
+        if (myProjectView.isAutoscrollFromSource(getId())) {
+          VirtualFile newFile = event.getNewFile();
+          if (newFile != null) {
+            selectNode(newFile, false);
+          }
+        }
+      }
+    });
+    myExclusionListener = new ExclusionChangedListener() {
+      public void exclusionChanged() {
+        rebuildTreeLater();
+      }
+    };
+    GlobalClassPathIndex.getInstance().addListener(myExclusionListener);
+  }
+
+  private void disposeListeners() {
+    FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
+    VirtualFileManager.getInstance().removeVirtualFileListener(myFileListener);
+    VirtualFileManager.getInstance().removeVirtualFileManagerListener(myVirtualFileManagerListener);
+    myProject.getComponent(ProjectLevelVcsManager.class).removeVcsListener(myDirectoryMappingListener);
+    ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
+
+    myMessageBusConnection.disconnect();
+    myExclusionListener = new ExclusionChangedListener() {
+      public void exclusionChanged() {
+        rebuildTreeLater();
+      }
+    };
+    GlobalClassPathIndex.getInstance().removeListener(myExclusionListener);
   }
 
   private boolean isInitialized() {
