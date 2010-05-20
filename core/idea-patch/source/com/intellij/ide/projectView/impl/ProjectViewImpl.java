@@ -608,14 +608,17 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
         public void run() {
           changeView(id, firstNonTrivialSubId);
           newPane.setSubId(firstNonTrivialSubId);
+          //begin patch
+          newPane.restoreExpandedPaths();
+          //end patch
         }
       });
     } else {
       showPane(newPane);
+      //begin patch
+      newPane.restoreExpandedPaths();
+      //end patch
     }
-    //begin patch
-    newPane.restoreExpandedPaths();
-    //end patch
     return true;
   }
 
