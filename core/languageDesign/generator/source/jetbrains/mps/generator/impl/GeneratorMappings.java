@@ -1,6 +1,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
@@ -101,10 +102,11 @@ public class GeneratorMappings {
     Object o = currentMapping.get(inputNode);
     if (o instanceof List) {
       List<SNode> list = (List<SNode>) o;
-      logger.warning(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingName + "' and input " + inputNode.getDebugText());
+      ProblemDescription[] descr = new ProblemDescription[list.size()];
       for (int i = 0; i < list.size(); i++) {
-        logger.describeWarning(list.get(i), "output [" + i + "] : " + list.get(i).getDebugText());
+        descr[i] = new ProblemDescription(list.get(i), "output [" + i + "] : " + list.get(i).getDebugText());
       }
+      logger.warning(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingName + "' and input " + inputNode.getDebugText(), descr);
       return list.get(0);
     }
 

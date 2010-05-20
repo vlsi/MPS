@@ -16,6 +16,8 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.lang.generator.structure.MapSrcListMacro;
 import jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction;
 import jetbrains.mps.lang.generator.structure.MapSrcNodeMacro;
@@ -100,10 +102,10 @@ public class DelayedChanges {
           Language childLang = child.getNodeLanguage();
           if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
             if (!childLang.getGenerators().isEmpty()) {
-              myLogger.error(child, "language of output node is '" + childLang.getNamespace() + "' - this language did not show up when computing generation steps!");
-              myLogger.describeError(myContext.getInput(), "was input: " + myContext.getInput().getDebugText());
-              myLogger.describeError(myMapSrcMacro, "was template: " + myMapSrcMacro.getDebugText());
-              myLogger.describeError(null, "workaround: add the language '" + childLang.getNamespace() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'");
+              myLogger.error(child, "language of output node is '" + childLang.getNamespace() + "' - this language did not show up when computing generation steps!",
+                GeneratorUtil.describe(myContext.getInput(), "input"),
+                GeneratorUtil.describe(myMapSrcMacro, "template"),
+                new ProblemDescription(null, "workaround: add the language '" + childLang.getNamespace() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'"));
             }
           }
 
@@ -124,11 +126,12 @@ public class DelayedChanges {
             }            
           } else {
             String childRole = parent.getRoleOf(myChildToReplace);
-            if (!GeneratorUtil.checkChild(parent, childRole, child)) {
-              myLogger.describeWarning(myContext.getInput(), "was input: " + myContext.getInput().getDebugText());
-              myLogger.describeWarning(myMapSrcMacro, "was template: " + myMapSrcMacro.getDebugText());
+            RoleValidationStatus status = myGenerator.validateChild(parent, childRole, child);
+            if (status != null) {
+              status.reportProblem(false,
+                GeneratorUtil.describe(myContext.getInput(), "input"),
+                GeneratorUtil.describe(myMapSrcMacro, "template"));
             }
-
             parent.replaceChild(myChildToReplace, child);
           }
           myGenerator.getGeneratorSessionContext().getGenerationTracer().replaceOutputNode(myChildToReplace, child);

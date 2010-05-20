@@ -17,15 +17,33 @@ public interface IGeneratorLogger {
 
   void warning(String message);
 
-  void warning(SNode node, String message);
-
-  void describeWarning(SNode node, String message);
+  void warning(SNode node, String message, ProblemDescription... descriptions);
 
   void error(String message);
   
-  void error(SNode node, String message);
-
-  void describeError(SNode node, String message);
+  void error(SNode node, String message, ProblemDescription... descriptions);
 
   void handleException(Throwable t);
+
+  /**
+   * Contains description of the problem.
+   */
+  public class ProblemDescription {
+
+    private SNode myNode;
+    private String myMessage;
+
+    public ProblemDescription(SNode node, String message) {
+      myNode = node;
+      myMessage = message;
+    }
+
+    public SNode getNode() {
+      return myNode;
+    }
+
+    public String getMessage() {
+      return myMessage;
+    }
+  }
 }

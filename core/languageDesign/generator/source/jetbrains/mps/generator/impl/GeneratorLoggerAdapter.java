@@ -65,29 +65,34 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
   }
 
   @Override
-  public void warning(SNode node, String message) {
+  public void warning(SNode node, String message, ProblemDescription... descriptions) {
     if(!myHandleWarnings) {
       return;
     }
     report(MessageKind.WARNING, message, node);
-  }
 
-  @Override
-  public void describeWarning(SNode node, String message) {
-    if(!myHandleWarnings) {
+    if(descriptions == null) {
       return;
     }
-    report(MessageKind.WARNING, "-- " + message, node);
+    for(ProblemDescription d : descriptions) {
+      if(d != null) {
+        report(MessageKind.WARNING, "-- " + d.getMessage(), d.getNode());
+      }
+    }
   }
 
   @Override
-  public void error(SNode node, String message) {
+  public void error(SNode node, String message, ProblemDescription... descriptions) {
     report(MessageKind.ERROR, message, node);
-  }
 
-  @Override
-  public void describeError(SNode node, String message) {
-    report(MessageKind.ERROR, "-- " + message, node);
+    if(descriptions == null) {
+      return;
+    }
+    for(ProblemDescription d : descriptions) {
+      if(d != null) {
+        report(MessageKind.WARNING, "-- " + d.getMessage(), d.getNode());
+      }
+    }
   }
 
   @Override

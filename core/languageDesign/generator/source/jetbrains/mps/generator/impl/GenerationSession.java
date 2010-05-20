@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.dependencies.DefaultDependenciesBuilder;
 import jetbrains.mps.generator.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.dependencies.DependenciesBuilder.NullDependenciesBuilder;
@@ -231,8 +232,8 @@ public class GenerationSession {
           myLogger.error("last rules applied:");
           List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(transientModel.getSModelReference());
           for (Pair<SNode, SNode> pair : pairs) {
-            myLogger.error(pair.o1, "rule: " + pair.o1.getDebugText());
-            myLogger.describeError(pair.o2, "input: " + (pair.o2 != null ? pair.o2.getDebugText() : "n/a"));
+            myLogger.error(pair.o1, "rule: " + pair.o1.getDebugText(),
+              GeneratorUtil.describe(pair.o2, "input"));
           }
         } else {
           myLogger.error("to get more diagnostic generate model with the 'save transient models' option");
@@ -320,7 +321,7 @@ public class GenerationSession {
         myLogger.info(preMappingScript.getNode(), "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ")");
       }
       TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentInputModel, myGenerationContext, myDependenciesBuilder, ttrace);
-      templateGenerator.getDefaultExecutor().executeMappingScript(preMappingScript, currentInputModel);
+      templateGenerator.getDefaultExecutionContext(null).executeMappingScript(preMappingScript, currentInputModel);
       preProcessed = true;
     }
     if(needToCloneInputMode) {
@@ -365,7 +366,7 @@ public class GenerationSession {
         myLogger.info(postMappingScript.getNode(), "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")");
       }
       TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentModel, currentModel, myGenerationContext, myDependenciesBuilder, ttrace);
-      templateGenerator.getDefaultExecutor().executeMappingScript(postMappingScript, currentModel);
+      templateGenerator.getDefaultExecutionContext(null).executeMappingScript(postMappingScript, currentModel);
       postProcessed = true;
     }
     if(needToCloneModel) {

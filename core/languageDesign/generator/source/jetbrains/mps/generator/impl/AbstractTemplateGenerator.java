@@ -18,8 +18,12 @@ package jetbrains.mps.generator.impl;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 
 import java.util.HashSet;
 import java.util.List;
@@ -109,16 +113,10 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       }
     }
 
-    myLogger.error((templateNode != null ? templateNode : ruleNode), message);
-    if (inputNode != null) {
-      myLogger.describeError(inputNode, "was input node: " + inputNode.getDebugText());
-    }
-    if (ruleNode != null) {
-      myLogger.describeError(ruleNode, "was rule: " + ruleNode.getDebugText());
-    }
-    if (templateNode != null) {
-      myLogger.describeError(templateNode, "was template: " + templateNode.getDebugText());
-    }
+    myLogger.error((templateNode != null ? templateNode : ruleNode), message,
+      GeneratorUtil.describeIfExists(inputNode, "input node"),
+      GeneratorUtil.describeIfExists(ruleNode, "rule"),
+      GeneratorUtil.describeIfExists(templateNode, "template"));
   }
 
   public IGeneratorLogger getLogger() {
@@ -193,4 +191,58 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   public SNode findInputNodeById(SNodeId nodeId) {
     return myInputModel.getNodeById(nodeId);
   }
+
+
+  public RoleValidationStatus validateChild(SNode parent, String role, SNode child) {
+    return validateRole(parent, role, child, true);
+  }
+
+  public RoleValidationStatus validateReferent(SNode reference, String role, SNode referent) {
+    return validateRole(reference, role, referent, false);
+  }
+
+  private RoleValidationStatus validateRole(SNode sourceNode, String role, SNode targetNode, boolean child) {
+    if (child && AttributesRolesUtil.isAttributeRole(role)) {
+      //unnecessary warning removed
+      return null; //todo maybe add check for attribule links
+    }
+    String relationKind = child ? "child" : "referent";
+    AbstractConceptDeclaration concept = sourceNode.getConceptDeclarationAdapter();
+    if (concept == null) {
+      return new RoleValidationStatus(sourceNode, "cannot find concept '" + sourceNode.getConceptFqName()+ "'");
+    }
+    LinkDeclaration link = SModelSearchUtil.findMostSpecificLinkDeclaration(concept, role);
+    if (link == null) {
+      return new RoleValidationStatus(sourceNode, "concept '" + concept.getName() + "' can't have " + relationKind + " with role '" + role + "'",
+        GeneratorUtil.describe(targetNode, relationKind + (child ? "" : " (hidden in editor)")));
+    }
+    if (!SModelUtil_new.isAcceptableTarget(link, targetNode)) {
+      String expected = link.getTarget().getName();
+      String was = targetNode.getConceptShortName();
+      return new RoleValidationStatus(sourceNode, relationKind + " '" + expected + "' is expected for role '" + role + "' but was '" + was + "'",
+        GeneratorUtil.describe(targetNode, relationKind));
+    }
+    return null;
+  }
+
+  public class RoleValidationStatus {
+    private SNode sourceNode;
+    private String message;
+    private ProblemDescription[] descriptions;
+
+    public RoleValidationStatus(SNode sourceNode, String message, ProblemDescription...descriptions) {
+      this.sourceNode = sourceNode;
+      this.message = message;
+      this.descriptions = descriptions;
+    }
+
+    public void reportProblem(boolean isError, ProblemDescription...descriptions) {
+      if(isError) {
+        myLogger.error(sourceNode, message, GeneratorUtil.concat(this.descriptions, descriptions));
+      } else {
+        myLogger.warning(sourceNode, message, GeneratorUtil.concat(this.descriptions, descriptions));
+      }
+    }
+  }
+
 }

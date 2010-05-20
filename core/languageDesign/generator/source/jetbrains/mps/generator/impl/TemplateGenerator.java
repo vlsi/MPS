@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
@@ -291,7 +292,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   /**
    * Unsynchronized
    */
-  QueryExecutionContext getExecutionContext(SNode inputNode) {
+  protected QueryExecutionContext getExecutionContext(SNode inputNode) {
     final INodesReadListener listener = myDependenciesBuilder.getListener(inputNode);
     if(listener != null) {
       QueryExecutionContext value;
@@ -307,10 +308,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
       return value;
     }
-    return myExecutionContext;
+    return getDefaultExecutionContext(inputNode);
   }
 
-  public QueryExecutionContext getDefaultExecutor() {
+  protected QueryExecutionContext getDefaultExecutionContext(SNode inputNode) {
     return myExecutionContext;
   }
   
@@ -558,11 +559,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           changed[0] = true;
           for (SNode outputChildNode : outputChildNodes) {
             // check child
-            if (!GeneratorUtil.checkChild(outputNode, childRole, outputChildNode)) {
-              showWarningMessage(inputNode, " -- was input: " + inputNode.getDebugText());
-              if (templateNode != null && SModelStereotype.isGeneratorModel(templateNode.getModel())) {
-                showWarningMessage(templateNode, " -- was template: " + templateNode.getDebugText());
-              }
+            RoleValidationStatus status = validateChild(outputNode, childRole, outputChildNode);
+            if (status != null) {
+              status.reportProblem(false,
+                GeneratorUtil.describe(inputNode, "input"),
+                templateNode != null && SModelStereotype.isGeneratorModel(templateNode.getModel()) ?
+                  GeneratorUtil.describe(templateNode, "template") : null);
             }
             outputNode.addChild(childRole, outputChildNode);
           }

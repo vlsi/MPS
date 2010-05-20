@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.TransientSModel;
+import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -128,7 +129,9 @@ public class PostponedReference extends SReference {
   }
 
   private boolean checkResolvedTarget(SNode outputNode, String role, SNode outputTargetNode) {
-    if (!GeneratorUtil.checkReferent(outputNode, role, outputTargetNode)) {
+    RoleValidationStatus status = myGenerator.validateReferent(outputNode, role, outputTargetNode);
+    if (status != null) {
+      status.reportProblem(true);
       return false;
     }
 

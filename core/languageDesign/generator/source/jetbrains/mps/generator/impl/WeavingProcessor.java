@@ -2,6 +2,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
@@ -96,12 +97,16 @@ public class WeavingProcessor {
             templateFragmentNode, context);
           String childRole = templateFragmentNode.getRole_();
           for (SNode outputNodeToWeave : outputNodesToWeave) {
-            if (!GeneratorUtil.checkChild(contextParentNode, childRole, outputNodeToWeave)) {
-              myGenerator.showWarningMessage(context.getInput(), " -- was input: " + context.getInput().getDebugText());
-              myGenerator.showWarningMessage(templateFragment.getNode(), " -- was template: " + templateFragment.getDebugText());
-              myGenerator.showWarningMessage(rule.getNode(), " -- was rule: " + rule.getDebugText());
+            // check child
+            RoleValidationStatus status = myGenerator.validateChild(contextParentNode, childRole, outputNodeToWeave);
+            if (status != null) {
+              status.reportProblem(false,
+                GeneratorUtil.describe(context.getInput(), "input"),
+                GeneratorUtil.describe(templateFragment.getNode(), "template"),
+                GeneratorUtil.describe(rule.getNode(), "rule"));
             }
 
+            // add
             LinkDeclaration childLinkDeclaration = contextParentNode.getLinkDeclaration(childRole);
             if (childLinkDeclaration == null) {
               // there should have been warning about that

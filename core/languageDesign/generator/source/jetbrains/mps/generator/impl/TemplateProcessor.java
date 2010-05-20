@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.template.InputQueryUtil;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
@@ -169,10 +170,12 @@ public class TemplateProcessor {
           String role = templateChildNode.getRole_();
           for (SNode outputChildNode : outputChildNodes) {
             // check child
-            if (!GeneratorUtil.checkChild(outputNode, role, outputChildNode)) {
-              myGenerator.showWarningMessage(context.getInput(), " -- was input: " + (context.getInput() != null ? context.getInput().getDebugText() : "null"));
-              myGenerator.showWarningMessage(templateNode, " -- was parent in template: " + templateNode.getDebugText());
-              myGenerator.showWarningMessage(templateChildNode.getNode(), " -- was child in template: " + templateChildNode.getDebugText());
+            RoleValidationStatus status = myGenerator.validateChild(outputNode, role, outputChildNode);
+            if (status != null) {
+              status.reportProblem(false,
+                GeneratorUtil.describe(context.getInput(), "input"),
+                GeneratorUtil.describe(templateNode, "parent in template"),
+                GeneratorUtil.describe(templateChildNode.getNode(), "child in template"));
             }
             outputNode.addChild(role, outputChildNode);
           }

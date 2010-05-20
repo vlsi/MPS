@@ -20,16 +20,14 @@ import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -315,50 +313,6 @@ public class GeneratorUtil {
     return messageType;
   }
 
-  static boolean checkChild(SNode parent, String role, SNode child) {
-    return checkLinkTarget(parent, role, child, true, false);
-  }
-
-  static boolean checkReferent(SNode reference, String role, SNode referent) {
-    return checkLinkTarget(reference, role, referent, false, true);
-  }
-
-  private static boolean checkLinkTarget(SNode sourceNode, String role, SNode targetNode, boolean child, boolean riseError) {
-    if (child && AttributesRolesUtil.isAttributeRole(role)) {
-      //unnecessary warning removed
-      return true; //todo maybe add check for attribule links
-    }
-    String relationKind = child ? "child" : "referent";
-    AbstractConceptDeclaration concept = sourceNode.getConceptDeclarationAdapter();
-    if (concept == null) {
-      // error logging is in the 'getConceptDeclarationAdapter()'
-      return false;
-    }
-    LinkDeclaration link = SModelSearchUtil.findMostSpecificLinkDeclaration(concept, role);
-    if (link == null) {
-      reportProblem("concept '" + concept.getName() + "' can't have " + relationKind + " with role '" + role + "'", sourceNode, riseError);
-      reportProblem(" -- was " + relationKind + (child ? ": " : " (hidden in editor): ") + targetNode.getDebugText(), targetNode, riseError);
-      return false;
-    }
-    if (!SModelUtil_new.isAcceptableTarget(link, targetNode)) {
-      String expected = link.getTarget().getName();
-      String was = targetNode.getConceptShortName();
-      reportProblem(relationKind + " '" + expected + "' is expected for role '" + role + "' but was '" + was + "'", sourceNode, riseError);
-      reportProblem(" -- was " + relationKind + ": " + targetNode.getDebugText(), targetNode, riseError);
-      return false;
-    }
-
-    return true;
-  }
-
-  private static void reportProblem(String message, SNode node, boolean error) {
-    if (error) {
-      LOG.error(message, node);
-    } else {
-      LOG.warning(message, node);
-    }
-  }
-
   public static void logCurrentGenerationBranch(IGeneratorLogger logger, IGenerationTracer generationTracer, boolean error) {
     List<Pair<SNode, String>> pairs = generationTracer.getNodesWithTextFromCurrentBranch();
     StringBuilder indent = new StringBuilder();
@@ -384,6 +338,22 @@ public class GeneratorUtil {
     }
   }
 
+  public static ProblemDescription describe(SNode node, String nodeRole) {
+    return new ProblemDescription(node, " -- was " + nodeRole + ": " + (node == null ? "null" : node.getDebugText()));
+  }
+
+  public static ProblemDescription describeIfExists(SNode node, String nodeRole) {
+    return node != null ? new ProblemDescription(node, " -- was " + nodeRole + ": " + node.getDebugText()) : null;
+  }
+
+  public static <T> T[] concat(T[] arr1, T[] arr2) {
+    if(arr1 == null || arr1.length == 0) return arr2;
+    if(arr2 == null || arr2.length == 0) return arr1;
+    T[] result = Arrays.copyOf(arr1, arr1.length + arr2.length);
+    System.arraycopy(arr2, 0, result, arr1.length, arr2.length);
+    return result;
+  }
+  
   public static <T> T runReadInWrite(final GenerationComputable<T> c) throws GenerationCanceledException, GenerationFailureException {
     try {
       return ModelAccess.instance().runReadInWriteAction(new Computable<T>() {

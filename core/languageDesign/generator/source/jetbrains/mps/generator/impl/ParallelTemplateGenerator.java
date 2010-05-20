@@ -7,6 +7,8 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
+import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.SModel;
@@ -23,9 +25,12 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ParallelTemplateGenerator extends TemplateGenerator {
 
+  private static final boolean ROOT_PER_THREAD = true;
+
   private IGenerationTaskPool myPool;
   private List<RootGenerationTask> myTasks;
   private Map<Pair<SNode,SNode>, RootGenerationTask> myInputToTask;
+  private Map<SNode,RootBasedQueryExectionContext> myRootContext;
   private Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
   public ParallelTemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
@@ -45,6 +50,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     
     myPool.waitForCompletion();
     contextToTask = null;
+    myRootContext = null;
     for(RootGenerationTask task : myTasks) {
       task.registerGeneratedRoot();
     }
@@ -69,6 +75,31 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
         ParallelTemplateGenerator.super.copyRootNodeFromInput(inputRootNode, executionContext);
       }
     }, new Pair(inputRootNode, null), executionContext);
+  }
+
+  @Override
+  protected QueryExecutionContext getDefaultExecutionContext(SNode inputNode) {
+    if(ROOT_PER_THREAD) {
+      if(inputNode == null || !inputNode.isRegistered()) {
+        return super.getDefaultExecutionContext(null);
+      }
+      inputNode = inputNode.getTopParent();
+      if(inputNode.getModel() == getInputModel()) {
+        RootBasedQueryExectionContext context;
+        if(myRootContext == null) {
+          myRootContext = new HashMap<SNode, RootBasedQueryExectionContext>();
+          context = null;
+        } else {
+          context = myRootContext.get(inputNode);
+        }
+        if(context == null) {
+          context = new RootBasedQueryExectionContext(inputNode, this);
+          myRootContext.put(inputNode, context);
+        }
+        return context;
+      }
+    }
+    return super.getDefaultExecutionContext(inputNode);
   }
 
   private void pushTask(RootGenerationTask task, Pair<SNode, SNode> pair, QueryExecutionContext executionContext) {
@@ -146,7 +177,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     }
   }
 
-  public class CompositeGenerationTask implements GenerationTask {
+  public static class CompositeGenerationTask implements GenerationTask {
 
     private Queue<RootGenerationTask> list = new LinkedList<RootGenerationTask>();
     private boolean isInShutdownMode = false;
@@ -177,6 +208,18 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     @Override
     public boolean requiresReadAccess() {
       return true;
+    }
+  }
+  
+  private static class RootBasedQueryExectionContext extends DefaultQueryExecutionContext {
+
+    public RootBasedQueryExectionContext(SNode root, ITemplateGenerator generator) {
+      super(generator);
+    }
+
+    @Override
+    public boolean isMultithreaded() {
+      return false;
     }
   }
 }
