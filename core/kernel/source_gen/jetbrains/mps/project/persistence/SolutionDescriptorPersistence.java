@@ -14,7 +14,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.structure.modules.ClassPathEntry;
+import jetbrains.mps.project.structure.modules.StubModelsEntry;
+import jetbrains.mps.smodel.LanguageID;
 import java.io.OutputStream;
 
 public class SolutionDescriptorPersistence {
@@ -64,12 +65,11 @@ public class SolutionDescriptorPersistence {
           ModuleDescriptorPersistence.loadDependencies(result_8ckma3_a0a0g0c0a, solutionElement);
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "classPath")).first(), "entry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "runtimeClassPath")).first(), "entry")))) {
             // runtime classpath left for compatibility 
-            ClassPathEntry result_8ckma3_a1a61a0a0g0c0a = new ClassPathEntry();
-            String result_8ckma3_a0a1a61a0a0g0c0a = macros.expandPath(entryElement.getAttributeValue("path"), file);
-            result_8ckma3_a1a61a0a0g0c0a.setPath(result_8ckma3_a0a1a61a0a0g0c0a);
-            boolean result_8ckma3_a1a1a61a0a0g0c0a = AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false);
-            result_8ckma3_a1a61a0a0g0c0a.setIncludedInVCS(result_8ckma3_a1a1a61a0a0g0c0a);
-            result_8ckma3_a0a0g0c0a.getClassPaths().add(result_8ckma3_a1a61a0a0g0c0a);
+            StubModelsEntry entry = new StubModelsEntry();
+            entry.setIncludedInVCS(AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false));
+            entry.setPath(macros.expandPath(entryElement.getAttributeValue("path"), file));
+            entry.setManager(LanguageID.JAVA_MANAGER);
+            result_8ckma3_a0a0g0c0a.getStubModelEntries().add(entry);
           }
 
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "sourcePath")).first(), "source"))) {
@@ -130,25 +130,15 @@ public class SolutionDescriptorPersistence {
           result_8ckma3_a0a0d0b.addContent(result_8ckma3_a0a01a0a0d0b);
         }
 
-        Element result_8ckma3_a21a0a0d0b = new Element("classPath");
-        for (ClassPathEntry entry : ListSequence.fromList(descriptor.getClassPaths())) {
-          Element result_8ckma3_a0a0a21a0a0d0b = new Element("entry");
-          String result_8ckma3_a0a0a0a21a0a0d0b = macros.shrinkPath(entry.getPath(), file);
-          result_8ckma3_a0a0a21a0a0d0b.setAttribute("path", "" + result_8ckma3_a0a0a0a21a0a0d0b);
-          boolean result_8ckma3_a1a0a0a21a0a0d0b = entry.isIncludedInVCS();
-          result_8ckma3_a0a0a21a0a0d0b.setAttribute("include", "" + result_8ckma3_a1a0a0a21a0a0d0b);
-          result_8ckma3_a21a0a0d0b.addContent(result_8ckma3_a0a0a21a0a0d0b);
-        }
-        result_8ckma3_a0a0d0b.addContent(result_8ckma3_a21a0a0d0b);
 
-        Element result_8ckma3_a41a0a0d0b = new Element("sourcePath");
+        Element result_8ckma3_a31a0a0d0b = new Element("sourcePath");
         for (String p : ListSequence.fromList(descriptor.getSourcePaths())) {
-          Element result_8ckma3_a0a0a41a0a0d0b = new Element("source");
-          String result_8ckma3_a0a0a0a41a0a0d0b = macros.shrinkPath(p, file);
-          result_8ckma3_a0a0a41a0a0d0b.setAttribute("path", "" + result_8ckma3_a0a0a0a41a0a0d0b);
-          result_8ckma3_a41a0a0d0b.addContent(result_8ckma3_a0a0a41a0a0d0b);
+          Element result_8ckma3_a0a0a31a0a0d0b = new Element("source");
+          String result_8ckma3_a0a0a0a31a0a0d0b = macros.shrinkPath(p, file);
+          result_8ckma3_a0a0a31a0a0d0b.setAttribute("path", "" + result_8ckma3_a0a0a0a31a0a0d0b);
+          result_8ckma3_a31a0a0d0b.addContent(result_8ckma3_a0a0a31a0a0d0b);
         }
-        result_8ckma3_a0a0d0b.addContent(result_8ckma3_a41a0a0d0b);
+        result_8ckma3_a0a0d0b.addContent(result_8ckma3_a31a0a0d0b);
 
         ModuleDescriptorPersistence.saveDependencies(result_8ckma3_a0a0d0b, descriptor);
         return result_8ckma3_a0a0d0b;

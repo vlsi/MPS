@@ -24,8 +24,7 @@ import jetbrains.mps.vfs.VFileSystem;
 
 public class ModuleDescriptorPersistence {
   public static void loadDependencies(ModuleDescriptor descriptor, Element root) {
-    ModuleDescriptor result_dxyzb6_a0a0 = descriptor;
-    result_dxyzb6_a0a0.getDependencies().addAll(loadDependenciesList(ListSequence.fromList(AttributeUtils.elementChildren(root, "dependencies")).first()));
+    descriptor.getDependencies().addAll(loadDependenciesList(ListSequence.fromList(AttributeUtils.elementChildren(root, "dependencies")).first()));
 
     descriptor.getUsedLanguages().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "usedLanguages")).first(), "usedLanguage")).select(new ISelector<Element, ModuleReference>() {
       public ModuleReference select(Element ul) {

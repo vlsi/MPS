@@ -13,8 +13,9 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.ClassPathEntry;
+import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.util.Macros;
+import jetbrains.mps.smodel.LanguageID;
 import java.io.OutputStream;
 
 public class DevkitDescriptorPersistence {
@@ -48,12 +49,11 @@ public class DevkitDescriptorPersistence {
 
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "classPath")).first(), "entry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "runtimeClassPath")).first(), "entry")))) {
             // runtimeClassPath is left for compatibility 
-            ClassPathEntry result_raojav_a1a11a0a0c0a0a = new ClassPathEntry();
-            String result_raojav_a0a1a11a0a0c0a0a = Macros.devkitMacros().expandPath(entryElement.getAttributeValue("path"), file);
-            result_raojav_a1a11a0a0c0a0a.setPath(result_raojav_a0a1a11a0a0c0a0a);
-            boolean result_raojav_a1a1a11a0a0c0a0a = AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false);
-            result_raojav_a1a11a0a0c0a0a.setIncludedInVCS(result_raojav_a1a1a11a0a0c0a0a);
-            result_raojav_a0a0c0a0a.getClassPaths().add(result_raojav_a1a11a0a0c0a0a);
+            StubModelsEntry entry = new StubModelsEntry();
+            entry.setIncludedInVCS(AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false));
+            entry.setPath(Macros.devkitMacros().expandPath(entryElement.getAttributeValue("path"), file));
+            entry.setManager(LanguageID.JAVA_MANAGER);
+            result_raojav_a0a0c0a0a.getStubModelEntries().add(entry);
           }
 
           String result_raojav_a31a0a0c0a0a = root.getAttributeValue("pluginClass");
@@ -69,7 +69,7 @@ public class DevkitDescriptorPersistence {
     }
   }
 
-  public static void saveDevKitDescriptor(final DevkitDescriptor descriptor, final IFile file) {
+  public static void saveDevKitDescriptor(final DevkitDescriptor descriptor, IFile file) {
     Element root = new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
         Element result_raojav_a0a0a0b = new Element("dev-kit");
@@ -113,20 +113,10 @@ public class DevkitDescriptorPersistence {
           result_raojav_a0a0a0b.addContent(result_raojav_a0a01a0a0a0b);
         }
 
-        Element result_raojav_a21a0a0a0b = new Element("classPath");
-        for (ClassPathEntry entry : ListSequence.fromList(descriptor.getClassPaths())) {
-          Element result_raojav_a0a0a21a0a0a0b = new Element("entry");
-          String result_raojav_a0a0a0a21a0a0a0b = Macros.devkitMacros().shrinkPath(entry.getPath(), file);
-          result_raojav_a0a0a21a0a0a0b.setAttribute("path", "" + result_raojav_a0a0a0a21a0a0a0b);
-          boolean result_raojav_a1a0a0a21a0a0a0b = entry.isIncludedInVCS();
-          result_raojav_a0a0a21a0a0a0b.setAttribute("include", "" + result_raojav_a1a0a0a21a0a0a0b);
-          result_raojav_a21a0a0a0b.addContent(result_raojav_a0a0a21a0a0a0b);
-        }
-        result_raojav_a0a0a0b.addContent(result_raojav_a21a0a0a0b);
 
         if (descriptor.getPlugin() != null) {
-          String result_raojav_a0a41a0a0a0b = descriptor.getPlugin();
-          result_raojav_a0a0a0b.setAttribute("pluginClass", "" + result_raojav_a0a41a0a0a0b);
+          String result_raojav_a0a31a0a0a0b = descriptor.getPlugin();
+          result_raojav_a0a0a0b.setAttribute("pluginClass", "" + result_raojav_a0a31a0a0a0b);
         }
         return result_raojav_a0a0a0b;
       }

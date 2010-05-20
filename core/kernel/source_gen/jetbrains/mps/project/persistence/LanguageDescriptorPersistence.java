@@ -15,8 +15,8 @@ import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.project.ModuleId;
@@ -81,12 +81,11 @@ public class LanguageDescriptorPersistence {
 
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "classPath")).first(), "entry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeClassPath")).first(), "entry")))) {
             // runtimeClassPath was left for compatibility 
-            ClassPathEntry result_v3r4p8_a1a81a0a0d0d0a = new ClassPathEntry();
-            String result_v3r4p8_a0a1a81a0a0d0d0a = macros.expandPath(entryElement.getAttributeValue("path"), file);
-            result_v3r4p8_a1a81a0a0d0d0a.setPath(result_v3r4p8_a0a1a81a0a0d0d0a);
-            boolean result_v3r4p8_a1a1a81a0a0d0d0a = AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false);
-            result_v3r4p8_a1a81a0a0d0d0a.setIncludedInVCS(result_v3r4p8_a1a1a81a0a0d0d0a);
-            result_v3r4p8_a0a0d0d0a.getClassPaths().add(result_v3r4p8_a1a81a0a0d0d0a);
+            StubModelsEntry entry = new StubModelsEntry();
+            entry.setIncludedInVCS(AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false));
+            entry.setPath(macros.expandPath(entryElement.getAttributeValue("path"), file));
+            entry.setManager(LanguageID.JAVA_MANAGER);
+            result_v3r4p8_a0a0d0d0a.getStubModelEntries().add(entry);
           }
 
           if (ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "stubModelEntries")).isNotEmpty()) {
@@ -94,12 +93,11 @@ public class LanguageDescriptorPersistence {
           }
 
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "languageRuntimeClassPath")).first(), "entry"))) {
-            ClassPathEntry result_v3r4p8_a0a22a0a0d0d0a = new ClassPathEntry();
-            String result_v3r4p8_a0a0a22a0a0d0d0a = macros.expandPath(entryElement.getAttributeValue("path"), file);
-            result_v3r4p8_a0a22a0a0d0d0a.setPath(result_v3r4p8_a0a0a22a0a0d0d0a);
-            boolean result_v3r4p8_a1a0a22a0a0d0d0a = AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false);
-            result_v3r4p8_a0a22a0a0d0d0a.setIncludedInVCS(result_v3r4p8_a1a0a22a0a0d0d0a);
-            result_v3r4p8_a0a0d0d0a.getRuntimeClassPaths().add(result_v3r4p8_a0a22a0a0d0d0a);
+            StubModelsEntry entry = new StubModelsEntry();
+            entry.setIncludedInVCS(AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false));
+            entry.setPath(macros.expandPath(entryElement.getAttributeValue("path"), file));
+            entry.setManager(LanguageID.JAVA_MANAGER);
+            result_v3r4p8_a0a0d0d0a.getRuntimeStubModels().add(entry);
           }
 
           if (ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeStubModels")).isNotEmpty()) {
@@ -197,90 +195,70 @@ public class LanguageDescriptorPersistence {
         }
         result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a9a0a0d0c);
 
-        Element result_v3r4p8_a11a0a0d0c = new Element("classPath");
-        for (ClassPathEntry entry : ListSequence.fromList(descriptor.getClassPaths())) {
-          Element result_v3r4p8_a0a0a11a0a0d0c = new Element("entry");
-          String result_v3r4p8_a0a0a0a11a0a0d0c = macros.shrinkPath(entry.getPath(), file);
-          result_v3r4p8_a0a0a11a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a11a0a0d0c);
-          boolean result_v3r4p8_a1a0a0a11a0a0d0c = entry.isIncludedInVCS();
-          result_v3r4p8_a0a0a11a0a0d0c.setAttribute("include", "" + result_v3r4p8_a1a0a0a11a0a0d0c);
-          result_v3r4p8_a11a0a0d0c.addContent(result_v3r4p8_a0a0a11a0a0d0c);
-        }
-        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a11a0a0d0c);
 
         if (!(descriptor.getStubModelEntries().isEmpty())) {
-          Element result_v3r4p8_a0a31a0a0d0c = new Element("stubModelEntries");
-          ModuleDescriptorPersistence.saveStubModelEntries(result_v3r4p8_a0a31a0a0d0c, descriptor.getStubModelEntries(), file, macros);
-          result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a0a31a0a0d0c);
+          Element result_v3r4p8_a0a21a0a0d0c = new Element("stubModelEntries");
+          ModuleDescriptorPersistence.saveStubModelEntries(result_v3r4p8_a0a21a0a0d0c, descriptor.getStubModelEntries(), file, macros);
+          result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a0a21a0a0d0c);
         }
 
-        Element result_v3r4p8_a51a0a0d0c = new Element("languageRuntimeClassPath");
-        for (ClassPathEntry entry : ListSequence.fromList(descriptor.getRuntimeClassPaths())) {
-          Element result_v3r4p8_a0a0a51a0a0d0c = new Element("entry");
-          String result_v3r4p8_a0a0a0a51a0a0d0c = macros.shrinkPath(entry.getPath(), file);
-          result_v3r4p8_a0a0a51a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a51a0a0d0c);
-          boolean result_v3r4p8_a1a0a0a51a0a0d0c = entry.isIncludedInVCS();
-          result_v3r4p8_a0a0a51a0a0d0c.setAttribute("include", "" + result_v3r4p8_a1a0a0a51a0a0d0c);
-          result_v3r4p8_a51a0a0d0c.addContent(result_v3r4p8_a0a0a51a0a0d0c);
-        }
-        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a51a0a0d0c);
 
         if (!(descriptor.getRuntimeStubModels().isEmpty())) {
-          Element result_v3r4p8_a0a71a0a0d0c = new Element("runtimeStubModels");
+          Element result_v3r4p8_a0a51a0a0d0c = new Element("runtimeStubModels");
           for (StubModelsEntry entry : ListSequence.fromList(descriptor.getRuntimeStubModels())) {
-            Element result_v3r4p8_a0a0a0a71a0a0d0c = new Element("stubModelEntry");
-            String result_v3r4p8_a0a0a0a0a71a0a0d0c = macros.shrinkPath(entry.getPath(), file);
-            result_v3r4p8_a0a0a0a71a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a0a71a0a0d0c);
-            boolean result_v3r4p8_a1a0a0a0a71a0a0d0c = entry.isIncludedInVCS();
-            result_v3r4p8_a0a0a0a71a0a0d0c.setAttribute("include", "" + result_v3r4p8_a1a0a0a0a71a0a0d0c);
-            Element result_v3r4p8_a2a0a0a0a71a0a0d0c = new Element("manager");
-            String result_v3r4p8_a0a2a0a0a0a71a0a0d0c = entry.getManager().getModuleId();
-            result_v3r4p8_a2a0a0a0a71a0a0d0c.setAttribute("moduleId", "" + result_v3r4p8_a0a2a0a0a0a71a0a0d0c);
-            String result_v3r4p8_a1a2a0a0a0a71a0a0d0c = entry.getManager().getClassName();
-            result_v3r4p8_a2a0a0a0a71a0a0d0c.setAttribute("className", "" + result_v3r4p8_a1a2a0a0a0a71a0a0d0c);
-            result_v3r4p8_a0a0a0a71a0a0d0c.addContent(result_v3r4p8_a2a0a0a0a71a0a0d0c);
+            Element result_v3r4p8_a0a0a0a51a0a0d0c = new Element("stubModelEntry");
+            String result_v3r4p8_a0a0a0a0a51a0a0d0c = macros.shrinkPath(entry.getPath(), file);
+            result_v3r4p8_a0a0a0a51a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a0a51a0a0d0c);
+            boolean result_v3r4p8_a1a0a0a0a51a0a0d0c = entry.isIncludedInVCS();
+            result_v3r4p8_a0a0a0a51a0a0d0c.setAttribute("include", "" + result_v3r4p8_a1a0a0a0a51a0a0d0c);
+            Element result_v3r4p8_a2a0a0a0a51a0a0d0c = new Element("manager");
+            String result_v3r4p8_a0a2a0a0a0a51a0a0d0c = entry.getManager().getModuleId();
+            result_v3r4p8_a2a0a0a0a51a0a0d0c.setAttribute("moduleId", "" + result_v3r4p8_a0a2a0a0a0a51a0a0d0c);
+            String result_v3r4p8_a1a2a0a0a0a51a0a0d0c = entry.getManager().getClassName();
+            result_v3r4p8_a2a0a0a0a51a0a0d0c.setAttribute("className", "" + result_v3r4p8_a1a2a0a0a0a51a0a0d0c);
+            result_v3r4p8_a0a0a0a51a0a0d0c.addContent(result_v3r4p8_a2a0a0a0a51a0a0d0c);
+            result_v3r4p8_a0a51a0a0d0c.addContent(result_v3r4p8_a0a0a0a51a0a0d0c);
+          }
+          result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a0a51a0a0d0c);
+        }
+
+        if (!(descriptor.getStubSolutions().isEmpty())) {
+          Element result_v3r4p8_a0a71a0a0d0c = new Element("stubSolutions");
+          for (StubSolution entry : ListSequence.fromList(descriptor.getStubSolutions())) {
+            Element result_v3r4p8_a0a0a0a71a0a0d0c = new Element("stubSolution");
+            String result_v3r4p8_a0a0a0a0a71a0a0d0c = entry.getName();
+            result_v3r4p8_a0a0a0a71a0a0d0c.setAttribute("moduleName", "" + result_v3r4p8_a0a0a0a0a71a0a0d0c);
+            String result_v3r4p8_a1a0a0a0a71a0a0d0c = entry.getId().toString();
+            result_v3r4p8_a0a0a0a71a0a0d0c.setAttribute("moduleId", "" + result_v3r4p8_a1a0a0a0a71a0a0d0c);
             result_v3r4p8_a0a71a0a0d0c.addContent(result_v3r4p8_a0a0a0a71a0a0d0c);
           }
           result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a0a71a0a0d0c);
         }
 
-        if (!(descriptor.getStubSolutions().isEmpty())) {
-          Element result_v3r4p8_a0a91a0a0d0c = new Element("stubSolutions");
-          for (StubSolution entry : ListSequence.fromList(descriptor.getStubSolutions())) {
-            Element result_v3r4p8_a0a0a0a91a0a0d0c = new Element("stubSolution");
-            String result_v3r4p8_a0a0a0a0a91a0a0d0c = entry.getName();
-            result_v3r4p8_a0a0a0a91a0a0d0c.setAttribute("moduleName", "" + result_v3r4p8_a0a0a0a0a91a0a0d0c);
-            String result_v3r4p8_a1a0a0a0a91a0a0d0c = entry.getId().toString();
-            result_v3r4p8_a0a0a0a91a0a0d0c.setAttribute("moduleId", "" + result_v3r4p8_a1a0a0a0a91a0a0d0c);
-            result_v3r4p8_a0a91a0a0d0c.addContent(result_v3r4p8_a0a0a0a91a0a0d0c);
-          }
-          result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a0a91a0a0d0c);
-        }
-
-        Element result_v3r4p8_a12a0a0d0c = new Element("sourcePath");
+        Element result_v3r4p8_a91a0a0d0c = new Element("sourcePath");
         for (String p : ListSequence.fromList(descriptor.getSourcePaths())) {
-          Element result_v3r4p8_a0a0a12a0a0d0c = new Element("source");
-          String result_v3r4p8_a0a0a0a12a0a0d0c = macros.shrinkPath(p, file);
-          result_v3r4p8_a0a0a12a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a12a0a0d0c);
-          result_v3r4p8_a12a0a0d0c.addContent(result_v3r4p8_a0a0a12a0a0d0c);
+          Element result_v3r4p8_a0a0a91a0a0d0c = new Element("source");
+          String result_v3r4p8_a0a0a0a91a0a0d0c = macros.shrinkPath(p, file);
+          result_v3r4p8_a0a0a91a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a91a0a0d0c);
+          result_v3r4p8_a91a0a0d0c.addContent(result_v3r4p8_a0a0a91a0a0d0c);
         }
-        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a12a0a0d0c);
+        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a91a0a0d0c);
 
-        boolean result_v3r4p8_a32a0a0d0c = descriptor.getCompileInMPS();
-        result_v3r4p8_a0a0d0c.setAttribute("compileInMPS", "" + result_v3r4p8_a32a0a0d0c);
-        boolean result_v3r4p8_a42a0a0d0c = descriptor.isDoNotGenerateAdapters();
-        result_v3r4p8_a0a0d0c.setAttribute("doNotGenerateAdapters", "" + result_v3r4p8_a42a0a0d0c);
+        boolean result_v3r4p8_a12a0a0d0c = descriptor.getCompileInMPS();
+        result_v3r4p8_a0a0d0c.setAttribute("compileInMPS", "" + result_v3r4p8_a12a0a0d0c);
+        boolean result_v3r4p8_a22a0a0d0c = descriptor.isDoNotGenerateAdapters();
+        result_v3r4p8_a0a0d0c.setAttribute("doNotGenerateAdapters", "" + result_v3r4p8_a22a0a0d0c);
 
         ModuleDescriptorPersistence.saveDependencies(result_v3r4p8_a0a0d0c, descriptor);
 
-        Element result_v3r4p8_a82a0a0d0c = new Element("extendedLanguages");
+        Element result_v3r4p8_a62a0a0d0c = new Element("extendedLanguages");
         for (ModuleReference ref : ListSequence.fromList(descriptor.getExtendedLanguages())) {
-          Element result_v3r4p8_a0a0a82a0a0d0c = new Element("extendedLanguage");
-          String result_v3r4p8_a0a0a0a82a0a0d0c = ref.toString();
-          result_v3r4p8_a0a0a82a0a0d0c.setText(result_v3r4p8_a0a0a0a82a0a0d0c);
-          result_v3r4p8_a82a0a0d0c.addContent(result_v3r4p8_a0a0a82a0a0d0c);
+          Element result_v3r4p8_a0a0a62a0a0d0c = new Element("extendedLanguage");
+          String result_v3r4p8_a0a0a0a62a0a0d0c = ref.toString();
+          result_v3r4p8_a0a0a62a0a0d0c.setText(result_v3r4p8_a0a0a0a62a0a0d0c);
+          result_v3r4p8_a62a0a0d0c.addContent(result_v3r4p8_a0a0a62a0a0d0c);
         }
-        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a82a0a0d0c);
+        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a62a0a0d0c);
         return result_v3r4p8_a0a0d0c;
       }
     }.invoke();
