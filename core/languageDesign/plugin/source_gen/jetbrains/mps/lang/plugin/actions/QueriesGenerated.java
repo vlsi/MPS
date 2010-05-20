@@ -137,6 +137,11 @@ public class QueriesGenerated {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
     }
     {
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
+    }
+    {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionInstance");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {

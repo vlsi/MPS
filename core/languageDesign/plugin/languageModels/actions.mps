@@ -347,6 +347,9 @@
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.ConceptSubstitutePart:23" id="1218810531312">
         <link role="concept:23" targetNodeId="1.1203680534665:23" resolveInfo="ExtentionPoint" />
       </node>
+      <node role="part:23" type="jetbrains.mps.lang.actions.structure.ConceptSubstitutePart:23" id="7154590315135353787">
+        <link role="concept:23" targetNodeId="1.1203087890642:23" resolveInfo="ActionGroupDeclaration" />
+      </node>
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1218809073107">
         <link role="concept:23" targetNodeId="1.1203088046679:23" resolveInfo="ActionReference" />
         <node role="part:23" type="jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart:23" id="1218809212509">
