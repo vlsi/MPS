@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JPanel;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.InternalFlag;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import com.intellij.openapi.util.Disposer;
@@ -31,8 +32,10 @@ public class SolutionPropertiesDialog extends BasePropertiesDialog {
     List<StandardComponents.CheckboxDescriptor> list = new ArrayList<StandardComponents.CheckboxDescriptor>();
     list.add(new StandardComponents.CheckboxDescriptor(this.myProperties, SolutionProperties.EXTERNALLY_VISIBLE, "Externally visible"));
     list.add(new StandardComponents.CheckboxDescriptor(this.myProperties, ModuleProperties.COMPILE_IN_MPS, "Compile in MPS"));
-    list.add(new StandardComponents.CheckboxDescriptor(this.myProperties, ModuleProperties.ENABLE_JAVA_STUBS, "Stubs For Generated Code"));
-    list.add(new StandardComponents.CheckboxDescriptor(this.myProperties, SolutionProperties.DONT_LOAD_CLASSPATH, "Don't load classes", true));
+    if (InternalFlag.isInternalMode()) {
+      list.add(new StandardComponents.CheckboxDescriptor(this.myProperties, ModuleProperties.ENABLE_JAVA_STUBS, "Stubs For Generated Code"));
+      list.add(new StandardComponents.CheckboxDescriptor(this.myProperties, SolutionProperties.DONT_LOAD_CLASSPATH, "Load Classes with App Classloader", true));
+    }
     return StandardComponents.createCheckboxPanel(this, list);
   }
 

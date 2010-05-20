@@ -36,7 +36,9 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
       list.add(new StandardComponents.CheckboxDescriptor(this.myProperties, ModuleProperties.ENABLE_JAVA_STUBS, "Stubs For Generated Code"));
     }
     list.add(new StandardComponents.CheckboxDescriptor(this.myProperties, ModuleProperties.COMPILE_IN_MPS, "Compile in MPS"));
-    list.add(new StandardComponents.CheckboxDescriptor(this.myProperties, LanguageProperties.DO_NOT_GENERATE_ADAPTERS, "Do Not Generate Adapters"));
+    if (InternalFlag.isInternalMode()) {
+      list.add(new StandardComponents.CheckboxDescriptor(this.myProperties, LanguageProperties.DO_NOT_GENERATE_ADAPTERS, "Do Not Generate Adapters"));
+    }
     return StandardComponents.createCheckboxPanel(this, list);
   }
 

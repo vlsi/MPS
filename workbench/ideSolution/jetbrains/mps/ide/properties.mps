@@ -9745,32 +9745,40 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5923576889075041897">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5923576889075041898">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5923576889075041899">
-              <link role="variableDeclaration:3" targetNodeId="5923576889075041866" resolveInfo="list" />
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075041900">
-              <link role="baseMethodDeclaration:3" targetNodeId="12.~List.add(java.lang.Object):boolean" resolveInfo="add" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5923576889075041901">
-                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5923576889075041902">
-                  <link role="baseMethodDeclaration:3" targetNodeId="69.~StandardComponents$CheckboxDescriptor.&lt;init&gt;(java.lang.Object,java.lang.String,java.lang.String)" resolveInfo="StandardComponents.CheckboxDescriptor" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5923576889075041903">
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5923576889075041904">
-                      <link role="fieldDeclaration:3" targetNodeId="5923576889075041825" resolveInfo="myProperties" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7168227884262510556">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7168227884262510557">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7168227884262510666">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7168227884262510667">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7168227884262510668">
+                  <link role="variableDeclaration:3" targetNodeId="5923576889075041866" resolveInfo="list" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7168227884262510669">
+                  <link role="baseMethodDeclaration:3" targetNodeId="12.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7168227884262510670">
+                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7168227884262510671">
+                      <link role="baseMethodDeclaration:3" targetNodeId="69.~StandardComponents$CheckboxDescriptor.&lt;init&gt;(java.lang.Object,java.lang.String,java.lang.String)" resolveInfo="StandardComponents.CheckboxDescriptor" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7168227884262510672">
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="7168227884262510673">
+                          <link role="fieldDeclaration:3" targetNodeId="5923576889075041825" resolveInfo="myProperties" />
+                        </node>
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="7168227884262510674" />
+                      </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7168227884262510675">
+                        <link role="classifier:3" targetNodeId="5923576889075043939" resolveInfo="LanguageProperties" />
+                        <link role="variableDeclaration:3" targetNodeId="5923576889075043946" resolveInfo="DO_NOT_GENERATE_ADAPTERS" />
+                      </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7168227884262510676">
+                        <property name="value:3" value="Do Not Generate Adapters" />
+                      </node>
                     </node>
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5923576889075041905" />
-                  </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5923576889075041906">
-                    <link role="classifier:3" targetNodeId="5923576889075043939" resolveInfo="LanguageProperties" />
-                    <link role="variableDeclaration:3" targetNodeId="5923576889075043946" resolveInfo="DO_NOT_GENERATE_ADAPTERS" />
-                  </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5923576889075041907">
-                    <property name="value:3" value="Do Not Generate Adapters" />
                   </node>
                 </node>
               </node>
             </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7168227884262510665">
+            <link role="baseMethodDeclaration:3" targetNodeId="20.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
+            <link role="classConcept:3" targetNodeId="20.~InternalFlag" resolveInfo="InternalFlag" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5923576889075041908">
@@ -11951,63 +11959,71 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5923576889075042752">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5923576889075042753">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5923576889075042754">
-              <link role="variableDeclaration:3" targetNodeId="5923576889075042724" resolveInfo="list" />
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075042755">
-              <link role="baseMethodDeclaration:3" targetNodeId="12.~List.add(java.lang.Object):boolean" resolveInfo="add" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5923576889075042756">
-                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5923576889075042757">
-                  <link role="baseMethodDeclaration:3" targetNodeId="69.~StandardComponents$CheckboxDescriptor.&lt;init&gt;(java.lang.Object,java.lang.String,java.lang.String)" resolveInfo="StandardComponents.CheckboxDescriptor" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5923576889075042758">
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5923576889075042759">
-                      <link role="fieldDeclaration:3" targetNodeId="5923576889075042687" resolveInfo="myProperties" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7168227884262507350">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7168227884262507351">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7168227884262507356">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7168227884262507357">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7168227884262507358">
+                  <link role="variableDeclaration:3" targetNodeId="5923576889075042724" resolveInfo="list" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7168227884262507359">
+                  <link role="baseMethodDeclaration:3" targetNodeId="12.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7168227884262507360">
+                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7168227884262507361">
+                      <link role="baseMethodDeclaration:3" targetNodeId="69.~StandardComponents$CheckboxDescriptor.&lt;init&gt;(java.lang.Object,java.lang.String,java.lang.String)" resolveInfo="StandardComponents.CheckboxDescriptor" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7168227884262507362">
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="7168227884262507363">
+                          <link role="fieldDeclaration:3" targetNodeId="5923576889075042687" resolveInfo="myProperties" />
+                        </node>
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="7168227884262507364" />
+                      </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7168227884262507365">
+                        <link role="classifier:3" targetNodeId="5923576889075044542" resolveInfo="ModuleProperties" />
+                        <link role="variableDeclaration:3" targetNodeId="5923576889075044552" resolveInfo="ENABLE_JAVA_STUBS" />
+                      </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7168227884262507366">
+                        <property name="value:3" value="Stubs For Generated Code" />
+                      </node>
                     </node>
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5923576889075042760" />
                   </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5923576889075042761">
-                    <link role="classifier:3" targetNodeId="5923576889075044542" resolveInfo="ModuleProperties" />
-                    <link role="variableDeclaration:3" targetNodeId="5923576889075044552" resolveInfo="ENABLE_JAVA_STUBS" />
-                  </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5923576889075042762">
-                    <property name="value:3" value="Stubs For Generated Code" />
+                </node>
+              </node>
+            </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7168227884262507367">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7168227884262507368">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7168227884262507369">
+                  <link role="variableDeclaration:3" targetNodeId="5923576889075042724" resolveInfo="list" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7168227884262507370">
+                  <link role="baseMethodDeclaration:3" targetNodeId="12.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7168227884262507371">
+                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7168227884262507372">
+                      <link role="baseMethodDeclaration:3" targetNodeId="69.~StandardComponents$CheckboxDescriptor.&lt;init&gt;(java.lang.Object,java.lang.String,java.lang.String,boolean)" resolveInfo="StandardComponents.CheckboxDescriptor" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7168227884262507373">
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="7168227884262507374">
+                          <link role="fieldDeclaration:3" targetNodeId="5923576889075042687" resolveInfo="myProperties" />
+                        </node>
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="7168227884262507375" />
+                      </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7168227884262507376">
+                        <link role="classifier:3" targetNodeId="5923576889075044370" resolveInfo="SolutionProperties" />
+                        <link role="variableDeclaration:3" targetNodeId="5923576889075044381" resolveInfo="DONT_LOAD_CLASSPATH" />
+                      </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7168227884262507377">
+                        <property name="value:3" value="Load Classes with App Classloader" />
+                      </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7168227884262507378">
+                        <property name="value:3" value="true" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
-        </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5923576889075042763">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5923576889075042764">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5923576889075042765">
-              <link role="variableDeclaration:3" targetNodeId="5923576889075042724" resolveInfo="list" />
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075042766">
-              <link role="baseMethodDeclaration:3" targetNodeId="12.~List.add(java.lang.Object):boolean" resolveInfo="add" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5923576889075042767">
-                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5923576889075042768">
-                  <link role="baseMethodDeclaration:3" targetNodeId="69.~StandardComponents$CheckboxDescriptor.&lt;init&gt;(java.lang.Object,java.lang.String,java.lang.String,boolean)" resolveInfo="StandardComponents.CheckboxDescriptor" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5923576889075042769">
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5923576889075042770">
-                      <link role="fieldDeclaration:3" targetNodeId="5923576889075042687" resolveInfo="myProperties" />
-                    </node>
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5923576889075042771" />
-                  </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5923576889075042772">
-                    <link role="classifier:3" targetNodeId="5923576889075044370" resolveInfo="SolutionProperties" />
-                    <link role="variableDeclaration:3" targetNodeId="5923576889075044381" resolveInfo="DONT_LOAD_CLASSPATH" />
-                  </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5923576889075042773">
-                    <property name="value:3" value="Don't load classes" />
-                  </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="5923576889075042774">
-                    <property name="value:3" value="true" />
-                  </node>
-                </node>
-              </node>
-            </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7168227884262507355">
+            <link role="baseMethodDeclaration:3" targetNodeId="20.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
+            <link role="classConcept:3" targetNodeId="20.~InternalFlag" resolveInfo="InternalFlag" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5923576889075042775">
