@@ -83,8 +83,10 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
           for (Change change : ListSequence.fromList(myModelChangesManager.getChangeList())) {
             highlightChange(change);
           }
-          for (EditorComponentChangesHighligher.ChangeEditorMessage message : Sequence.fromIterable(MapSequence.fromMap(myChangesMessages).values())) {
-            getHighlightManager().mark(message);
+          synchronized (myChangesMessages) {
+            for (EditorComponentChangesHighligher.ChangeEditorMessage message : Sequence.fromIterable(MapSequence.fromMap(myChangesMessages).values())) {
+              getHighlightManager().mark(message);
+            }
           }
           getHighlightManager().repaintAndRebuildEditorMessages();
           ThreadUtils.runInUIThreadNoWait(new Runnable() {
@@ -163,23 +165,29 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
       // don't highlight added roots 
       return null;
     }
-    if (MapSequence.fromMap(myChangesMessages).containsKey(change)) {
-      return null;
+    EditorComponentChangesHighligher.ChangeEditorMessage message;
+    synchronized (myChangesMessages) {
+      if (MapSequence.fromMap(myChangesMessages).containsKey(change)) {
+        return null;
+      }
+      message = new EditorComponentChangesHighligher.ChangeEditorMessage(change, node.value, c, messageTarget);
+      if (myEditorComponent == null) {
+        return null;
+      }
+      MapSequence.fromMap(myChangesMessages).put(change, message);
     }
-    EditorComponentChangesHighligher.ChangeEditorMessage message = new EditorComponentChangesHighligher.ChangeEditorMessage(change, node.value, c, messageTarget);
-    if (myEditorComponent == null) {
-      return null;
-    }
-    MapSequence.fromMap(myChangesMessages).put(change, message);
     return message;
   }
 
   private EditorMessage unhighlightChange(@NotNull Change change) {
-    EditorMessage message = MapSequence.fromMap(myChangesMessages).get(change);
-    if (message == null || getHighlightManager() == null || message.getNode() == null) {
-      return null;
+    EditorMessage message;
+    synchronized (myChangesMessages) {
+      message = MapSequence.fromMap(myChangesMessages).get(change);
+      if (message == null || getHighlightManager() == null || message.getNode() == null) {
+        return null;
+      }
+      MapSequence.fromMap(myChangesMessages).removeKey(change);
     }
-    MapSequence.fromMap(myChangesMessages).removeKey(change);
     return message;
   }
 

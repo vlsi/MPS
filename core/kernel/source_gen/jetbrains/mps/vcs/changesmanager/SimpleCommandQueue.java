@@ -74,7 +74,7 @@ public class SimpleCommandQueue {
           task.run();
         } catch (Throwable e) {
           if (log.isErrorEnabled()) {
-            log.error("Error in " + getName(), e);
+            log.error(e.getClass().getName() + " exception in " + getName(), e);
           }
         }
       }
