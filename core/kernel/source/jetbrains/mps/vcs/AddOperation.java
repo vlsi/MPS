@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vcs;
 
+import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
@@ -31,6 +32,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.util.CollectionUtil;
@@ -129,16 +131,21 @@ class AddOperation extends VcsOperation {
     } else if (myConfirmationOption.getValue() == VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY) {
       return;
     } else {
-      Collection<VirtualFile> filesToProcess = null;
-      List<VirtualFile> virtualFileList = CollectionUtil.union(myVirtualFilesToAdd, myVirtualFilesToRevert);
+      final Collection<VirtualFile> filesToProcess = new ArrayList<VirtualFile>();
+      final List<VirtualFile> virtualFileList = CollectionUtil.union(myVirtualFilesToAdd, myVirtualFilesToRevert);
       if (!virtualFileList.isEmpty()) {
         final AbstractVcsHelper helper = AbstractVcsHelper.getInstance(myProject);
-        filesToProcess = helper.selectFilesToProcess(virtualFileList, "Add Files To Vcs", null,
-          "Add File To Vcs",
-          "Do you want to add the following file to Vcs?\n{0}\n\nIf you say NO, you can still add it later manually.",
-          myConfirmationOption);
+        ThreadUtils.runInUIThreadAndWait(new Runnable() {
+          @Override
+          public void run() {
+            filesToProcess.addAll(helper.selectFilesToProcess(virtualFileList, "Add Files To Vcs", null,
+              "Add File To Vcs",
+              "Do you want to add the following file to Vcs?\n{0}\n\nIf you say NO, you can still add it later manually.",
+              myConfirmationOption));
+          }
+        });
       }
-      if (filesToProcess != null) {
+      if (!filesToProcess.isEmpty()) {
         reallyPerform(CollectionUtil.intersect(myVirtualFilesToRevert, filesToProcess),
           CollectionUtil.intersect(myVirtualFilesToAdd, filesToProcess));
       }
@@ -179,18 +186,9 @@ class AddOperation extends VcsOperation {
     });
   }
 
-  /**
-   * Here we point out that everything should be done in EDT.
-   *
-   * @param runnable
-   */
   @Override
   public void runPerform(final Runnable runnable) {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        runnable.run();
-      }
-    }, ModalityState.NON_MODAL);
+    ApplicationManager.getApplication().executeOnPooledThread(runnable);
   }
 
   /**
