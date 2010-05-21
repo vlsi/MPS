@@ -1363,7 +1363,19 @@ __switch__:
                   }
                 }
               } else {
-                if (!(isSingle)) {
+                if (isSingle) {
+                  final SNode baseParent = myBaseVersionModel.getNodeById(e.getParent().getSNodeId());
+                  if (baseParent != null) {
+                    ModelAccess.instance().runReadAction(new Runnable() {
+                      public void run() {
+                        SNode baseChild = baseParent.getChild(e.getChildRole());
+                        if (baseChild != null) {
+                          addChange(new DeleteNodeChange(baseChild.getSNodeId(), SModelUtils.getNodeIds(baseChild.getChildren()), baseParent.getSNodeId(), e.getChildRole(), -1), e.getAffectedRoot());
+                        }
+                      }
+                    });
+                  }
+                } else {
                   refreshMultipleChildChanges(e.getParent(), e.getChildRole(), currentChildren, false);
                 }
               }
