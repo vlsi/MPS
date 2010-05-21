@@ -22,6 +22,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.util.BuildNumber;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressManager;
@@ -88,8 +89,8 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   }
 
   private void checkSamplesAndUpdateIfNeeded() {
-    String currentBuildNumberString = currentBuildNumberString();
-    if (Integer.parseInt(myState.myLastBuildNumber) < Integer.parseInt(currentBuildNumberString)) {
+    int currentBuildNumber = currentBuildNumberString();
+    if (myState.myLastBuildNumber < currentBuildNumber) {
 
       if (!myIsSamplesInMPSHome) {
         extractSamples();
@@ -97,12 +98,15 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
     }
   }
 
-  private String currentBuildNumberString() {
-    String currentBuildNumberString = myApplicationInfo.getBuild().asString();
+  private int currentBuildNumberString() {
+    BuildNumber buildNumber = myApplicationInfo.getBuild();
+    String currentBuildNumberString = buildNumber.asString();
     if (currentBuildNumberString.matches(".*[^\\d\\.].*")) {
-      currentBuildNumberString = MyState.DEFAULT;
+      // In "normal" build number only dots and digits allowed.
+      // If build number looks like "11.snapshot", we consider it developers build and do not to extract samples.
+      return MyState.DEFAULT;
     }
-    return currentBuildNumberString;
+    return buildNumber.getBuildNumber();
   }
 
   private void updateSamplesLocation() {
@@ -167,7 +171,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   }
 
   public static class MyState {
-    public String myLastBuildNumber = DEFAULT;
-    private static final String DEFAULT = "-1";
+    public int myLastBuildNumber = DEFAULT;
+    private static final int DEFAULT = -1;
   }
 }
