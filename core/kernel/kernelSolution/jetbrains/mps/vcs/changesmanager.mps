@@ -10499,12 +10499,22 @@
                                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4106098632826232715">
                                     <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1608852180199770340">
                                       <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1608852180199770352">
-                                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="1608852180199770353">
-                                          <node role="classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1608852180199770354">
-                                            <link role="classifier:3" targetNodeId="13.~NewNodeChange" resolveInfo="NewNodeChange" />
+                                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="4680421991522689590">
+                                          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="4680421991522689594">
+                                            <node role="classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4680421991522741843">
+                                              <link role="classifier:3" targetNodeId="13.~DeleteNodeChange" resolveInfo="DeleteNodeChange" />
+                                            </node>
+                                            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4680421991522689593">
+                                              <link role="variableDeclaration:3" targetNodeId="4106098632826232726" resolveInfo="ch" />
+                                            </node>
                                           </node>
-                                          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1608852180199770355">
-                                            <link role="variableDeclaration:3" targetNodeId="4106098632826232726" resolveInfo="ch" />
+                                          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="1608852180199770353">
+                                            <node role="classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1608852180199770354">
+                                              <link role="classifier:3" targetNodeId="13.~NewNodeChange" resolveInfo="NewNodeChange" />
+                                            </node>
+                                            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1608852180199770355">
+                                              <link role="variableDeclaration:3" targetNodeId="4106098632826232726" resolveInfo="ch" />
+                                            </node>
                                           </node>
                                         </node>
                                       </node>

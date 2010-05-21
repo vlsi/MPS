@@ -1341,7 +1341,7 @@ __switch__:
               }
               removeChanges(Change.class, new _FunctionTypes._return_P1_E0<Boolean, Change>() {
                 public Boolean invoke(Change ch) {
-                  return !(ch instanceof NewNodeChange) && ObjectUtils.equals(ch.getAffectedNodeId(), e.getChild().getSNodeId());
+                  return !(ch instanceof NewNodeChange || ch instanceof DeleteNodeChange) && ObjectUtils.equals(ch.getAffectedNodeId(), e.getChild().getSNodeId());
                 }
               });
               removeChildChanges(e.getChild().getSNodeId());
