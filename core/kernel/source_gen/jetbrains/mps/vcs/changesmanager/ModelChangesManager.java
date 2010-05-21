@@ -806,17 +806,21 @@ __switch__:
   }
 
   @Nullable
-  private SNode getOldNode(@NotNull SNodeId childId) {
-    SNode oldNode = myBaseVersionModel.getNodeById(childId);
-    SNode copyOfOldNode = CopyUtil.copyAndPreserveId(oldNode);
-    for (SNode descendant : ListSequence.fromList(oldNode.getDescendants())) {
+  private SNode getBaseNode(@NotNull SNodeId childId, @Nullable SNode nodeToBeReplaced) {
+    SNode baseNode = myBaseVersionModel.getNodeById(childId);
+    SNode copyOfBaseNode = CopyUtil.copyAndPreserveId(baseNode);
+    for (SNode descendant : ListSequence.fromList(baseNode.getDescendants())) {
       // If rollbacking this change may end with node id overlapping, rollbacking should be cancelled 
       // TODO make this more friendly 
-      if (getModel().getNodeById(descendant.getSNodeId()) != null) {
+      SNode maybeOverlappedNode = getModel().getNodeById(descendant.getSNodeId());
+      if (maybeOverlappedNode != null) {
+        if (nodeToBeReplaced != null && nodeToBeReplaced.isAncestorOf(maybeOverlappedNode)) {
+          continue;
+        }
         return null;
       }
     }
-    return copyOfOldNode;
+    return copyOfBaseNode;
   }
 
   public void rollbackChanges(@NotNull Iterable<Change> changes) {
@@ -841,21 +845,21 @@ __switch__:
       } else {
         SNode node = getModel().getNodeById(change.getAffectedNodeId());
         assert node != null;
-        SNodeId oldChildId = null;
+        SNodeId baseNodeId = null;
         if (change instanceof SubstituteNodeChange) {
-          oldChildId = ((SubstituteNodeChange) change).getOldChildId();
+          baseNodeId = ((SubstituteNodeChange) change).getOldChildId();
         } else if (change instanceof SetNodeChange) {
-          oldChildId = ((SetNodeChange) change).getOldChildId();
+          baseNodeId = ((SetNodeChange) change).getOldChildId();
         }
-        if (oldChildId == null) {
+        if (baseNodeId == null) {
           node.delete();
         } else {
           SNode parent = node.getParent();
           assert parent != null;
 
-          SNode oldNode = getOldNode(oldChildId);
-          if (oldNode != null) {
-            parent.replaceChild(node, oldNode);
+          SNode baseNode = getBaseNode(baseNodeId, node);
+          if (baseNode != null) {
+            parent.replaceChild(node, baseNode);
           }
         }
       }
@@ -863,7 +867,7 @@ __switch__:
       DeleteNodeChange deleteChange = (DeleteNodeChange) change;
       SNode parent = check_977382291400365621(myBaseVersionModel.getNodeById(change.getAffectedNodeId()));
       parent = getModel().getNodeById(check_1964941449295625432(parent));
-      SNode oldNode = getOldNode(change.getAffectedNodeId());
+      SNode oldNode = getBaseNode(change.getAffectedNodeId(), null);
       if (deleteChange.getRole() != null && oldNode != null) {
         if (deleteChange.getNextChildIndex() == -1) {
           parent.setChild(deleteChange.getRole(), oldNode);
