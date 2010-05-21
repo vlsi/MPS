@@ -82,7 +82,7 @@
   <target name="do.the.job" depends="folders.create">
     <fail unless="mps_home" message="Property mps_home unspecified." />
     <copy todir="${deploy.dir}/MPS/bin">
-      <fileset dir="${mps_home}/bin" excludes="**/*.iml, **/*.iws" />
+      <fileset dir="${mps_home}/bin" excludes="**/*.hprof, **/*.iml, **/*.iws" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/beansbinding">
       <fileset dir="${mps_home}/lib/beansbinding" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />

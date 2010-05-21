@@ -511,6 +511,7 @@
         <property name="name:7" value="MPS" />
         <property name="excludes:7" value="**/*.iml, **/*.iws" />
         <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="1239724681164">
+          <property name="excludes:7" value="**/*.hprof" />
           <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="1239724681165">
             <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="1239724681166">
               <property name="name:7" value="mps_home" />
@@ -1812,6 +1813,15 @@
               <link role="attributeDeclaration:22" targetNodeId="7v.353793545802814494" resolveInfo="name" />
               <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1238512027825">
                 <property name="value:21" value="system/**" />
+              </node>
+            </node>
+          </node>
+          <node role="nested:22" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="8135724031453096864">
+            <link role="declaration:22" targetNodeId="7v.353793545802811560" resolveInfo="exclude" />
+            <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="8135724031453096865">
+              <link role="attributeDeclaration:22" targetNodeId="7v.353793545802814494" resolveInfo="name" />
+              <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="8135724031453096866">
+                <property name="value:21" value="**/*.hprof" />
               </node>
             </node>
           </node>

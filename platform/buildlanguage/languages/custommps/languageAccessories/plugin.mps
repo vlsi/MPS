@@ -1848,7 +1848,7 @@
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1325286122617618147">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1325286122617618148" />
-                  <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.RunConfigParameterReferenceOperation:23" id="1325286122617745270">
+                  <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.RunConfigParameterReferenceOperation:23" id="6310975304105508680">
                     <link role="member:23" targetNodeId="1325286122617722972" resolveInfo="context" />
                   </node>
                 </node>

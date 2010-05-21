@@ -53,6 +53,7 @@
         <exclude name="**/*.pw" />
         <exclude name="**/sign/**" />
         <exclude name="system/**" />
+        <exclude name="**/*.hprof" />
         <exclude name="integrationBuild*" />
       </zipfileset>
       <zipfileset file="lib/jetbrains-ideframework/idea-external-src.zip" prefix="MPS/lib/jetbrains-ideframework" />
