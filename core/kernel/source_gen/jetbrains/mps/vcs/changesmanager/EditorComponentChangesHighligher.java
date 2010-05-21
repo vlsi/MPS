@@ -30,6 +30,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
@@ -274,9 +275,11 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   public void rollbackChanges(@NotNull EditorContext editorContext) {
-    for (EditorComponentChangesHighligher.ChangeEditorMessage msg : ListSequence.fromList(myFoldingAreaPainter.getCurrentMessageGroup().getMessages())) {
-      myModelChangesManager.rollbackChange(msg.getChange());
-    }
+    myModelChangesManager.rollbackChanges(ListSequence.fromList(myFoldingAreaPainter.getCurrentMessageGroup().getMessages()).select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, Change>() {
+      public Change select(EditorComponentChangesHighligher.ChangeEditorMessage msg) {
+        return msg.getChange();
+      }
+    }));
     myFoldingAreaPainter.updateAfterRollback();
   }
 

@@ -58,6 +58,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.SubstituteNodeChange;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -816,6 +817,19 @@ __switch__:
       }
     }
     return copyOfOldNode;
+  }
+
+  public void rollbackChanges(@NotNull Iterable<Change> changes) {
+    Iterable<Change> sortedChanges = Sequence.fromIterable(changes).sort(new ISelector<Change, Comparable<?>>() {
+      public Comparable<?> select(Change ch) {
+        return ListSequence.fromList(myChangeList).indexOf(ch);
+      }
+    }, false);
+    Sequence.fromIterable(sortedChanges).visitAll(new IVisitor<Change>() {
+      public void visit(Change ch) {
+        rollbackChange(ch);
+      }
+    });
   }
 
   public void rollbackChange(@NotNull Change change) {
