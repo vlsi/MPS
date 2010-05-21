@@ -31,12 +31,12 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.nodeEditor.messageTargets.MessageTargetEnum;
 import jetbrains.mps.nodeEditor.messageTargets.DeletedNodeMessageTarget;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import java.awt.Graphics;
 import org.apache.commons.lang.ObjectUtils;
@@ -281,10 +281,19 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   private NodeHighlightManager getHighlightManager() {
-    if (myEditorComponent == null) {
-      return null;
+    return check_5458603184245461677(myEditorComponent);
+  }
+
+  private static boolean hasChildrenWithDifferentNode(EditorCell cell) {
+    if (cell instanceof EditorCell_Collection) {
+      final EditorCell_Collection collectionCell = (EditorCell_Collection) cell;
+      return Sequence.fromIterable(((Iterable<EditorCell>) collectionCell)).any(new IWhereFilter<EditorCell>() {
+        public boolean accept(EditorCell child) {
+          return child.getSNode() != collectionCell.getSNode();
+        }
+      });
     } else {
-      return myEditorComponent.getHighlightManager();
+      return false;
     }
   }
 
@@ -293,6 +302,13 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
       return null;
     }
     return p.getModel();
+  }
+
+  private static NodeHighlightManager check_5458603184245461677(EditorComponent p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getHighlightManager();
   }
 
   public class ChangeEditorMessage extends EditorMessageWithTarget {
@@ -310,7 +326,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
 
     public boolean isThinDeletedMessage(@NotNull EditorComponent editorComponent) {
       EditorCell cell = getCell(editorComponent);
-      return isDeletedChild() && ((DeletedNodeMessageTarget) myMessageTarget).getNextChildIndex() != -1 && cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
+      return isDeletedChild() && ((DeletedNodeMessageTarget) myMessageTarget).getNextChildIndex() != -1 && cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE) && hasChildrenWithDifferentNode(cell);
     }
 
     public int getY(@NotNull EditorComponent editorComponent) {
@@ -357,10 +373,16 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
         if (isDeletedChild()) {
           int nextChildIndex = ((DeletedNodeMessageTarget) myMessageTarget).getNextChildIndex();
           if (nextChildIndex != -1) {
+            EditorCell_Collection collectionCell = ((EditorCell_Collection) cell);
+
+            if (!(hasChildrenWithDifferentNode(cell))) {
+              cell.paintSelection(graphics, getColor(), false);
+              return;
+            }
+
             boolean vertical = cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
             Rectangle bounds = cell.getBounds();
             if (vertical) {
-              EditorCell_Collection collectionCell = ((EditorCell_Collection) cell);
               int y;
               if (collectionCell.getChildCount() > nextChildIndex) {
                 y = collectionCell.getChildAt(nextChildIndex).getY();
@@ -371,7 +393,6 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
               graphics.drawLine(bounds.x, y, bounds.x + bounds.width, y);
             } else {
               // horizontal collection: draw vertical line 
-              EditorCell_Collection collectionCell = ((EditorCell_Collection) cell);
               int x;
               if (collectionCell.getChildCount() > nextChildIndex) {
                 x = collectionCell.getChildAt(nextChildIndex).getX();
