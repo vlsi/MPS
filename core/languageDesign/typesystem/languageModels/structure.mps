@@ -2508,6 +2508,13 @@
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target:0" targetNodeId="6998169140110925844:3" resolveInfo="ConceptFunctionParameter_Selection" />
     </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1076452857760028093">
+      <property name="value:0" value="set selection" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1076452857760028097">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1216468774225:3" resolveInfo="showName" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3701925705266318588">
     <property name="name:0" value="ConceptFunctionParameter_EditorContext" />
