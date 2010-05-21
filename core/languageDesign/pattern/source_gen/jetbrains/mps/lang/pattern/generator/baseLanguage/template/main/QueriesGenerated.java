@@ -438,6 +438,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "patternNode", true);
   }
 
+  public static SNode sourceNodeQuery_4413230749907735498(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "action", true);
+  }
+
   public static Iterable sourceNodesQuery_1190931377097(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (String propertyName : _context.getNode().getPropertyNames()) {
@@ -647,5 +651,9 @@ public class QueriesGenerated {
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", false, new String[]{})));
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{})));
     return result;
+  }
+
+  public static Iterable sourceNodesQuery_4413230749907735501(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.ActionAsPattern", false, new String[]{});
   }
 }

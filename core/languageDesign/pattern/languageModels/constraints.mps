@@ -113,5 +113,11 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="4413230749907802465">
+    <link role="concept:8" targetNodeId="1.4413230749907802464:0" resolveInfo="ActionStatement" />
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="4217760266503599759">
+    <link role="concept:8" targetNodeId="1.4413230749907733332:0" resolveInfo="ActionAsPattern" />
+  </node>
 </model>
 

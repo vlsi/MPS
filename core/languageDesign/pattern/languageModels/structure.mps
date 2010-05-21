@@ -182,5 +182,27 @@
     <link role="source:0" targetNodeId="1.1133920641626:0" />
     <link role="target:0" targetNodeId="1136720037773:0" resolveInfo="AsPattern" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4413230749907733332">
+    <property name="name:0" value="ActionAsPattern" />
+    <link role="extends:0" targetNodeId="1136720037773:0" resolveInfo="AsPattern" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4413230749907733337">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="sourceCardinality:0" value="1" />
+      <property name="role:0" value="action" />
+      <link role="target:0" targetNodeId="4413230749907802464:0" resolveInfo="ActionStatement" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration:0" id="4413230749907733335">
+    <property name="role:0" value="actionAsPattern" />
+    <link role="source:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <link role="target:0" targetNodeId="4413230749907733332:0" resolveInfo="ActionAsPattern" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4413230749907802464">
+    <property name="name:0" value="ActionStatement" />
+    <link role="extends:0" targetNodeId="5.1068580123157:3" resolveInfo="Statement" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="4413230749907802485">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473854053:0" resolveInfo="abstract" />
+    </node>
+  </node>
 </model>
 

@@ -1130,5 +1130,31 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1239880325940" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4413230749907733338">
+    <link role="conceptDeclaration:32" targetNodeId="1.4413230749907733332:0" resolveInfo="ActionAsPattern" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4413230749907733340">
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="4413230749907733342" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4217760266503545604">
+        <property name="text:32" value="$Action$" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4217760266503657577">
+          <property name="flag:32" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4413230749907794840">
+        <link role="relationDeclaration:32" targetNodeId="1.4413230749907733337:0" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem:32" id="4413230749907807509">
+          <property name="flag:32" value="true" />
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="4413230749907807510">
+          <property name="flag:32" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell:32" id="4413230749907733356">
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem:32" id="4413230749907812845">
+          <property name="flag:32" value="true" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

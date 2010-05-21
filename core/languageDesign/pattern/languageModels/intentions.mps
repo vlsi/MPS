@@ -430,5 +430,63 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="4413230749907735528">
+    <property name="name:8" value="CreateActionAsPattern" />
+    <property name="isAvailableInChildNodes:8" value="true" />
+    <link role="forConcept:8" targetNodeId="2v.1136720037777:0" resolveInfo="PatternExpression" />
+    <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="4413230749907735529">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4413230749907735530">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4413230749907743482">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4413230749907743483">
+            <property name="value:3" value="Create Action Pattern" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction:8" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock:8" id="4413230749907735531">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4413230749907735532">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4413230749907743485">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4413230749907743486">
+            <property name="name:3" value="currentNode" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4413230749907743487" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4413230749907743488">
+              <node role="operand:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext:0" id="4413230749907743489" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4413230749907743490">
+                <link role="baseMethodDeclaration:3" targetNodeId="7.~EditorContext.getSelectedNode():jetbrains.mps.smodel.SNode" resolveInfo="getSelectedNode" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4413230749907743491">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4413230749907743492">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4413230749907743493">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4413230749907743494">
+                <link role="variableDeclaration:3" targetNodeId="4413230749907743486" resolveInfo="currentNode" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation:16" id="4413230749907743495">
+                <node role="attributeQualifier:16" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier:16" id="4413230749907743500">
+                  <link role="annotationLink:16" targetNodeId="2v.4413230749907733335:0" resolveInfo="actionAsPattern" />
+                </node>
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation:16" id="4413230749907743497">
+              <link role="concept:16" targetNodeId="2v.4413230749907733332:0" resolveInfo="ActionAsPattern" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction:8" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock:8" id="4413230749907743502">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4413230749907743503">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4413230749907743504">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4413230749907743505">
+            <link role="classConcept:3" targetNodeId="5.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="5.~PatternAddingUtil.isPatternApplicable(jetbrains.mps.nodeEditor.EditorContext):boolean" resolveInfo="isPatternApplicable" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext:0" id="4413230749907743506" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

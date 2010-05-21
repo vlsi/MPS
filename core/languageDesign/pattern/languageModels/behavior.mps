@@ -315,5 +315,30 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5830155447075815041" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4413230749907802466">
+    <link role="concept" targetNodeId="1.4413230749907802464:0" resolveInfo="ActionStatement" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4413230749907802469">
+      <property name="name" value="canBeActionStatement" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4413230749907802470" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="4413230749907802473" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4413230749907802472">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4413230749907802474">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="4413230749907802476">
+            <property name="value:3" value="false" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4413230749907802477">
+        <property name="name:3" value="pattern" />
+        <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4413230749907802479">
+          <link role="concept:16" targetNodeId="1.1136720037777:0" resolveInfo="PatternExpression" />
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4413230749907802467">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4413230749907802468" />
+    </node>
+  </node>
 </model>
 
