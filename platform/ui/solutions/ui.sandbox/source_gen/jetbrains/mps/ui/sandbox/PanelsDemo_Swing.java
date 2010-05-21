@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.JPanel;
 import java.util.Iterator;
+import jetbrains.mps.ui.swing.runtime.JComponentIterator;
 import jetbrains.mps.ui.swing.runtime.DockLayout;
 import jetbrains.mps.ui.swing.runtime.DockLayoutData;
 import javax.swing.JTabbedPane;

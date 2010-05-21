@@ -728,8 +728,8 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="9003987136928164078">
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="9003987136928164079">
                   <property name="nonStatic" value="true" />
-                  <link role="classifier" targetNodeId="11.2459884175395067453" resolveInfo="JComponentIterator" />
-                  <link role="baseMethodDeclaration" targetNodeId="11.2459884175395067455" resolveInfo="JComponentIterator" />
+                  <link role="classifier" targetNodeId="13.8717063129899353109" resolveInfo="JComponentIterator" />
+                  <link role="baseMethodDeclaration" targetNodeId="13.8717063129899353854" resolveInfo="JComponentIterator" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9003987136928164080" />
                   <node role="actualArgument" type="jetbrains.mps.ui.modeling.structure.ThisUIObjectParam" id="9003987136928164077" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="9003987136928189957">
@@ -811,8 +811,8 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="9003987136928190020">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="9003987136928190021">
                     <property name="nonStatic" value="true" />
-                    <link role="baseMethodDeclaration" targetNodeId="11.2459884175395067455" resolveInfo="JComponentIterator" />
-                    <link role="classifier" targetNodeId="11.2459884175395067453" resolveInfo="JComponentIterator" />
+                    <link role="classifier" targetNodeId="13.8717063129899353109" resolveInfo="JComponentIterator" />
+                    <link role="baseMethodDeclaration" targetNodeId="13.8717063129899353854" resolveInfo="JComponentIterator" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9003987136928190022" />
                     <node role="actualArgument" type="jetbrains.mps.ui.modeling.structure.ThisUIObjectParam" id="9003987136928190023" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="9003987136928190024">
@@ -973,8 +973,8 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="9003987136928190107">
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="9003987136928190108">
                   <property name="nonStatic" value="true" />
-                  <link role="classifier" targetNodeId="11.2459884175395067453" resolveInfo="JComponentIterator" />
-                  <link role="baseMethodDeclaration" targetNodeId="11.2459884175395067455" resolveInfo="JComponentIterator" />
+                  <link role="classifier" targetNodeId="13.8717063129899353109" resolveInfo="JComponentIterator" />
+                  <link role="baseMethodDeclaration" targetNodeId="13.8717063129899353854" resolveInfo="JComponentIterator" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9003987136928190109" />
                   <node role="actualArgument" type="jetbrains.mps.ui.modeling.structure.ThisUIObjectParam" id="9003987136928190110" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="9003987136928190111">
@@ -1043,8 +1043,8 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="9003987136928190134">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="9003987136928190135">
                     <property name="nonStatic" value="true" />
-                    <link role="baseMethodDeclaration" targetNodeId="11.2459884175395067455" resolveInfo="JComponentIterator" />
-                    <link role="classifier" targetNodeId="11.2459884175395067453" resolveInfo="JComponentIterator" />
+                    <link role="classifier" targetNodeId="13.8717063129899353109" resolveInfo="JComponentIterator" />
+                    <link role="baseMethodDeclaration" targetNodeId="13.8717063129899353854" resolveInfo="JComponentIterator" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9003987136928190136" />
                     <node role="actualArgument" type="jetbrains.mps.ui.modeling.structure.ThisUIObjectParam" id="9003987136928190137" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="9003987136928190138">
@@ -1192,8 +1192,8 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="9003987136928190205">
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="9003987136928190206">
                   <property name="nonStatic" value="true" />
-                  <link role="classifier" targetNodeId="11.2459884175395067453" resolveInfo="JComponentIterator" />
-                  <link role="baseMethodDeclaration" targetNodeId="11.2459884175395067455" resolveInfo="JComponentIterator" />
+                  <link role="baseMethodDeclaration" targetNodeId="13.8717063129899353854" resolveInfo="JComponentIterator" />
+                  <link role="classifier" targetNodeId="13.8717063129899353109" resolveInfo="JComponentIterator" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9003987136928190207" />
                   <node role="actualArgument" type="jetbrains.mps.ui.modeling.structure.ThisUIObjectParam" id="9003987136928190208" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="9003987136928190209">
@@ -1275,8 +1275,8 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="9003987136928190239">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="9003987136928190240">
                     <property name="nonStatic" value="true" />
-                    <link role="baseMethodDeclaration" targetNodeId="11.2459884175395067455" resolveInfo="JComponentIterator" />
-                    <link role="classifier" targetNodeId="11.2459884175395067453" resolveInfo="JComponentIterator" />
+                    <link role="baseMethodDeclaration" targetNodeId="13.8717063129899353854" resolveInfo="JComponentIterator" />
+                    <link role="classifier" targetNodeId="13.8717063129899353109" resolveInfo="JComponentIterator" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9003987136928190241" />
                     <node role="actualArgument" type="jetbrains.mps.ui.modeling.structure.ThisUIObjectParam" id="9003987136928190242" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="9003987136928190243">
@@ -1424,8 +1424,8 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="9003987136928190315">
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="9003987136928190316">
                   <property name="nonStatic" value="true" />
-                  <link role="baseMethodDeclaration" targetNodeId="11.2459884175395067455" resolveInfo="JComponentIterator" />
-                  <link role="classifier" targetNodeId="11.2459884175395067453" resolveInfo="JComponentIterator" />
+                  <link role="classifier" targetNodeId="13.8717063129899353109" resolveInfo="JComponentIterator" />
+                  <link role="baseMethodDeclaration" targetNodeId="13.8717063129899353854" resolveInfo="JComponentIterator" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9003987136928190317" />
                   <node role="actualArgument" type="jetbrains.mps.ui.modeling.structure.ThisUIObjectParam" id="9003987136928190318" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="9003987136928190319">
@@ -1507,8 +1507,8 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="9003987136928190349">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="9003987136928190350">
                     <property name="nonStatic" value="true" />
-                    <link role="classifier" targetNodeId="11.2459884175395067453" resolveInfo="JComponentIterator" />
-                    <link role="baseMethodDeclaration" targetNodeId="11.2459884175395067455" resolveInfo="JComponentIterator" />
+                    <link role="classifier" targetNodeId="13.8717063129899353109" resolveInfo="JComponentIterator" />
+                    <link role="baseMethodDeclaration" targetNodeId="13.8717063129899353854" resolveInfo="JComponentIterator" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9003987136928190351" />
                     <node role="actualArgument" type="jetbrains.mps.ui.modeling.structure.ThisUIObjectParam" id="9003987136928190352" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="9003987136928190353">
@@ -1656,8 +1656,8 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="9003987136928190420">
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="9003987136928190421">
                   <property name="nonStatic" value="true" />
-                  <link role="classifier" targetNodeId="11.2459884175395067453" resolveInfo="JComponentIterator" />
-                  <link role="baseMethodDeclaration" targetNodeId="11.2459884175395067455" resolveInfo="JComponentIterator" />
+                  <link role="baseMethodDeclaration" targetNodeId="13.8717063129899353854" resolveInfo="JComponentIterator" />
+                  <link role="classifier" targetNodeId="13.8717063129899353109" resolveInfo="JComponentIterator" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9003987136928190422" />
                   <node role="actualArgument" type="jetbrains.mps.ui.modeling.structure.ThisUIObjectParam" id="9003987136928190423" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="9003987136928190424">
@@ -1739,8 +1739,8 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="9003987136928190454">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="9003987136928190455">
                     <property name="nonStatic" value="true" />
-                    <link role="baseMethodDeclaration" targetNodeId="11.2459884175395067455" resolveInfo="JComponentIterator" />
-                    <link role="classifier" targetNodeId="11.2459884175395067453" resolveInfo="JComponentIterator" />
+                    <link role="baseMethodDeclaration" targetNodeId="13.8717063129899353854" resolveInfo="JComponentIterator" />
+                    <link role="classifier" targetNodeId="13.8717063129899353109" resolveInfo="JComponentIterator" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9003987136928190456" />
                     <node role="actualArgument" type="jetbrains.mps.ui.modeling.structure.ThisUIObjectParam" id="9003987136928190457" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="9003987136928190458">
