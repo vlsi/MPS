@@ -3592,5 +3592,63 @@
       <link role="concept:3" targetNodeId="1.7884032992241804520:3" resolveInfo="ConceptFunctionParameter_BlockingComputationNode" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="8090891477833033257">
+    <property name="name:3" value="typeof_QuickFixField" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8090891477833033258">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="8090891477833033260">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="8090891477833033261">
+          <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8090891477833033262">
+            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8090891477833048053">
+              <link role="applicableNode:3" targetNodeId="8090891477833033259" resolveInfo="quickFixField" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8090891477833069369">
+              <link role="link:16" targetNodeId="1.8090891477833017663:3" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="8090891477833033265">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="8090891477833033266">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8090891477833048052">
+              <link role="applicableNode:3" targetNodeId="8090891477833033259" resolveInfo="quickFixField" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="8090891477833033259">
+      <property name="name:3" value="quickFixField" />
+      <link role="concept:3" targetNodeId="1.8090891477833017662:3" resolveInfo="QuickFixField" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="8090891477833133025">
+    <property name="name:3" value="typeof_QuickFixFieldReference" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8090891477833133026">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="8090891477833133028">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="8090891477833133029">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="8090891477833133030">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8090891477833133031">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8090891477833133038">
+                <link role="applicableNode:3" targetNodeId="8090891477833133027" resolveInfo="fieldReference" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8090891477833133039">
+                <link role="link:16" targetNodeId="1.8090891477833069918:3" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="8090891477833133034">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="8090891477833133035">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8090891477833133037">
+              <link role="applicableNode:3" targetNodeId="8090891477833133027" resolveInfo="fieldReference" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="8090891477833133027">
+      <property name="name:3" value="fieldReference" />
+      <link role="concept:3" targetNodeId="1.8090891477833069917:3" resolveInfo="QuickFixFieldReference" />
+    </node>
+  </node>
 </model>
 

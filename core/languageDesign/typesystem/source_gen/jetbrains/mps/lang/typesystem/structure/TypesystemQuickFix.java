@@ -21,6 +21,7 @@ public class TypesystemQuickFix extends BaseConcept implements INamedConcept {
   public static final String DESCRIPTION_BLOCK = "descriptionBlock";
   public static final String SET_SELECTION_BLOCK = "setSelectionBlock";
   public static final String QUICK_FIX_ARGUMENT = "quickFixArgument";
+  public static final String QUICK_FIX_FIELD = "quickFixField";
 
   public TypesystemQuickFix(SNode node) {
     super(node);
@@ -100,6 +101,26 @@ public class TypesystemQuickFix extends BaseConcept implements INamedConcept {
 
   public void insertQuickFixArgument(QuickFixArgument prev, QuickFixArgument node) {
     this.insertChild(prev, TypesystemQuickFix.QUICK_FIX_ARGUMENT, node);
+  }
+
+  public int getQuickFixFieldsCount() {
+    return this.getChildCount(TypesystemQuickFix.QUICK_FIX_FIELD);
+  }
+
+  public Iterator<QuickFixField> quickFixFields() {
+    return this.children(QuickFixField.class, TypesystemQuickFix.QUICK_FIX_FIELD);
+  }
+
+  public List<QuickFixField> getQuickFixFields() {
+    return this.getChildren(QuickFixField.class, TypesystemQuickFix.QUICK_FIX_FIELD);
+  }
+
+  public void addQuickFixField(QuickFixField node) {
+    this.addChild(TypesystemQuickFix.QUICK_FIX_FIELD, node);
+  }
+
+  public void insertQuickFixField(QuickFixField prev, QuickFixField node) {
+    this.insertChild(prev, TypesystemQuickFix.QUICK_FIX_FIELD, node);
   }
 
   public static TypesystemQuickFix newInstance(SModel sm, boolean init) {
