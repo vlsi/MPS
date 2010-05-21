@@ -2802,5 +2802,64 @@
       </node>
     </node>
   </node>
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1076452857759831353">
+    <link role="concept:8" targetNodeId="1.1076452857759748206:3" resolveInfo="WasSelectedNodeOperation" />
+    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1076452857759831354">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1076452857759831355">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1076452857759831385">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1076452857759831399">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1076452857759831394">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1076452857759831389">
+                <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1076452857759831387">
+                  <property name="asCast:16" value="true" />
+                  <link role="concept:16" targetNodeId="3v.1197027756228:3" resolveInfo="DotExpression" />
+                  <node role="leftExpression:16" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode:8" id="1076452857759831386" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1076452857759831393">
+                  <link role="link:16" targetNodeId="3v.1197027771414:3" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation:3" id="1076452857759831398" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1076452857759831403">
+              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1076452857759831405">
+                <link role="conceptDeclaration:16" targetNodeId="1.6998169140110894792:3" resolveInfo="SelectionType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1076452857759831406">
+    <link role="concept:8" targetNodeId="1.1076452857759748200:3" resolveInfo="CaretPositionOperation" />
+    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1076452857759831407">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1076452857759831408">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1076452857759831409">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1076452857759831410">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1076452857759831411">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1076452857759831412">
+                <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1076452857759831413">
+                  <property name="asCast:16" value="true" />
+                  <link role="concept:16" targetNodeId="3v.1197027756228:3" resolveInfo="DotExpression" />
+                  <node role="leftExpression:16" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode:8" id="1076452857759831414" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1076452857759831415">
+                  <link role="link:16" targetNodeId="3v.1197027771414:3" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation:3" id="1076452857759831416" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1076452857759831417">
+              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1076452857759831418">
+                <link role="conceptDeclaration:16" targetNodeId="1.6998169140110894792:3" resolveInfo="SelectionType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

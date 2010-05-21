@@ -16,6 +16,8 @@
 package jetbrains.mps.typesystem.checking;
 
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -107,6 +109,13 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                       myOnceExecutedQuickFixes.add(intention);
                       LaterInvocator.invokeLater(new Runnable() {
                         public void run() {
+                          EditorCell selectedCell = editorContext.getSelectedCell();
+                          SNode selectedNode = selectedCell.getSNode();
+                          Integer caretPosition = null;
+                          if (selectedCell instanceof EditorCell_Label) {
+                            caretPosition = ((EditorCell_Label)selectedCell).getCaretPosition();
+                          }
+                          Pair<SNode, Integer> wasSelected = new Pair<SNode, Integer>(selectedNode, caretPosition);
                           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                             public void run() {
                               CommandProcessor.getInstance().runUndoTransparentAction(new Runnable() {
@@ -114,10 +123,10 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                                   intention.execute(node);
                                 }
                               });
-                              editorContext.flushEvents();
-                              intention.setSelection(node, editorContext);
                             }
                           });
+                          editorContext.flushEvents();
+                          intention.setSelection(node, editorContext, wasSelected);
                         }
                       }, ModalityState.NON_MODAL);
                     }

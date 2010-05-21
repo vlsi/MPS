@@ -18,9 +18,12 @@ package jetbrains.mps.intentions;
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.util.Pair;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -93,8 +96,15 @@ public class BaseIntentionProvider implements IntentionProvider {
       }
 
       public void execute(SNode node, EditorContext editorContext) {
+        EditorCell selectedCell = editorContext.getSelectedCell();
+        SNode selectedNode = selectedCell.getSNode();
+        Integer caretPosition = null;
+        if (selectedCell instanceof EditorCell_Label) {
+          caretPosition = ((EditorCell_Label)selectedCell).getCaretPosition();
+        }
+        Pair<SNode, Integer> wasSelected = new Pair<SNode, Integer>(selectedNode, caretPosition);
         quickFix.execute(node);
-        quickFix.setSelection(node, editorContext);
+        quickFix.setSelection(node, editorContext, wasSelected);
       }
 
       public IntentionType getType() {

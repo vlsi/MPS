@@ -4263,5 +4263,24 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="6998169140110894796">
+    <link role="conceptDeclaration:32" targetNodeId="1.6998169140110894792:3" resolveInfo="SelectionType" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="6998169140110910382">
+      <link role="relationDeclaration:32" targetNodeId="2.1137473891462:0" resolveInfo="alias" />
+      <link role="styleClass:32" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1076452857759748203">
+    <link role="conceptDeclaration:32" targetNodeId="1.1076452857759748200:3" resolveInfo="CaretPositionOperation" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="1076452857759748205">
+      <link role="relationDeclaration:32" targetNodeId="2.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1076452857759748209">
+    <link role="conceptDeclaration:32" targetNodeId="1.1076452857759748206:3" resolveInfo="WasSelectedNodeOperation" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="1076452857759748211">
+      <link role="relationDeclaration:32" targetNodeId="2.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

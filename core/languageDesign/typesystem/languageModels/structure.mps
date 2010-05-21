@@ -403,6 +403,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
@@ -2503,6 +2504,10 @@
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target:0" targetNodeId="3701925705266318588:3" resolveInfo="ConceptFunctionParameter_EditorContext" />
     </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1076452857759956247">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="6998169140110925844:3" resolveInfo="ConceptFunctionParameter_Selection" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3701925705266318588">
     <property name="name:0" value="ConceptFunctionParameter_EditorContext" />
@@ -2541,6 +2546,48 @@
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="8090891477833294863">
       <link role="conceptPropertyDeclaration:0" targetNodeId="2.1146528679895:3" resolveInfo="lvalue" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6998169140110894792">
+    <property name="name:0" value="SelectionType" />
+    <link role="extends:0" targetNodeId="2.1068431790189:3" resolveInfo="Type" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6998169140110894794">
+      <property name="value:0" value="selection" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6998169140110925844">
+    <property name="name:0" value="ConceptFunctionParameter_Selection" />
+    <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="6998169140111047132">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
+      <node role="target:0" type="jetbrains.mps.lang.typesystem.structure.SelectionType:3" id="1076452857759748199" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1076452857759826875">
+      <property name="value:0" value="selectionBefore" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1076452857759748200">
+    <property name="name:0" value="CaretPositionOperation" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1076452857759748201">
+      <link role="intfc:0" targetNodeId="2.1197027803184:3" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1076452857759748202">
+      <property name="value:0" value="caretPosition" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1076452857759748206">
+    <property name="name:0" value="WasSelectedNodeOperation" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1076452857759748207">
+      <link role="intfc:0" targetNodeId="2.1197027803184:3" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1076452857759748208">
+      <property name="value:0" value="wasSelectedNode" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
 </model>

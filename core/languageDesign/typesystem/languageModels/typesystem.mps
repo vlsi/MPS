@@ -3650,5 +3650,53 @@
       <link role="concept:3" targetNodeId="1.8090891477833069917:3" resolveInfo="QuickFixFieldReference" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1076452857760005713">
+    <property name="name:3" value="typeof_CaretPositionOperation" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1076452857760005714">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1076452857760008234">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1076452857760008238">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1076452857760008239">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1076452857760008243">
+              <link role="classifier:3" targetNodeId="8.~Integer" resolveInfo="Integer" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1076452857760008237">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1076452857760008231">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1076452857760008233">
+              <link role="applicableNode:3" targetNodeId="1076452857760005715" resolveInfo="caretPositionOperation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1076452857760005715">
+      <property name="name:3" value="caretPositionOperation" />
+      <link role="concept:3" targetNodeId="1.1076452857759748200:3" resolveInfo="CaretPositionOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1076452857760008244">
+    <property name="name:3" value="typeof_WasSelectedNodeOperation" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1076452857760008245">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1076452857760008247">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1076452857760008248">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1076452857760008249">
+            <node role="quotedNode:0" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1076452857760008256" />
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1076452857760008251">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1076452857760008252">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1076452857760008254">
+              <link role="applicableNode:3" targetNodeId="1076452857760008246" resolveInfo="wasSelectedNodeOperation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1076452857760008246">
+      <property name="name:3" value="wasSelectedNodeOperation" />
+      <link role="concept:3" targetNodeId="1.1076452857759748206:3" resolveInfo="WasSelectedNodeOperation" />
+    </node>
+  </node>
 </model>
 

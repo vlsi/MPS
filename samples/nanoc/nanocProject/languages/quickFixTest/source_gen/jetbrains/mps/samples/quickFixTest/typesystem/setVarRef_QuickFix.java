@@ -8,6 +8,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
 public class setVarRef_QuickFix extends QuickFix_Runtime {
   public setVarRef_QuickFix() {
@@ -20,7 +25,20 @@ public class setVarRef_QuickFix extends QuickFix_Runtime {
     SNodeOperations.replaceWithAnother(((SNode) setVarRef_QuickFix.this.getField("oldVar")[0]), newVar);
   }
 
-  public void setSelection(SNode node, EditorContext editorContext) {
-    editorContext.select(((SNode) setVarRef_QuickFix.this.getField("newVar")[0]));
+  public void setSelection(SNode node, EditorContext editorContext, Pair<SNode, Integer> selectionBefore) {
+    EditorComponent component = editorContext.getNodeEditorComponent();
+    EditorCell editorCell = component.findNodeCell(((SNode) setVarRef_QuickFix.this.getField("newVar")[0]));
+    EditorCell_Property foundCell = null;
+    if (editorCell instanceof EditorCell_Collection) {
+      EditorCell_Collection collection = (EditorCell_Collection) editorCell;
+      for (EditorCell child : collection.getCells()) {
+        if (child instanceof EditorCell_Property) {
+          foundCell = (EditorCell_Property) child;
+          break;
+        }
+      }
+    }
+    component.changeSelection(foundCell);
+    foundCell.setCaretPosition(selectionBefore.o2);
   }
 }
