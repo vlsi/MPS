@@ -120,7 +120,7 @@ public class OverridingMethodsFinder {
         SetSequence.fromSet(safeGet(this.myOverridingToOverridenMethodsMap, overridingMethod)).addElement(MultiTuple.<SNode,SNode>from(classifierMethod, classifier));
         SetSequence.fromSet(similarMethods).removeElement(overridingMethod);
         if (SetSequence.fromSet(similarMethods).isEmpty()) {
-          MapSequence.fromMap(methodNameToMethodMapCopy).put(SPropertyOperations.getString(classifierMethod, "name"), null);
+          MapSequence.fromMap(methodNameToMethodMapCopy).removeKey(SPropertyOperations.getString(classifierMethod, "name"));
         }
       }
     }
@@ -138,7 +138,7 @@ public class OverridingMethodsFinder {
   }
 
   public static <K, V> Set<V> safeGet(Map<K, Set<V>> map, K key) {
-    if (MapSequence.fromMap(map).get(key) == null) {
+    if (!(MapSequence.fromMap(map).containsKey(key))) {
       MapSequence.fromMap(map).put(key, SetSequence.fromSet(new LinkedHashSet<V>()));
     }
     return MapSequence.fromMap(map).get(key);
