@@ -75,7 +75,8 @@ public class MPSVCSManager implements ProjectComponent {
   private final GenerationListener myGenerationListener = new GenerationWatcher();
   private final CompilationListener myCompilationListener = new CompilationWatcher();
   private final SModelRepositoryListener myModelRepositoryListener = new MySModelRepositoryListener();
-  private final SModelAdapter myModelInitializationListener = new ModelSavedListener();
+  private final NewModelSavedListener myNewModelSavedListener = new NewModelSavedListener();
+  private final GlobalModelSavedListener myGlobalModelSavedListener = new GlobalModelSavedListener();
   private final DataCreationListener myMetadataListener = new MyMetadataCreationListener();
   private final ChangeListAdapter myChangeListUpdateListener = new ChangeListAdapter() {
     @Override
@@ -213,6 +214,7 @@ public class MPSVCSManager implements ProjectComponent {
     myProject.getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
     myProject.getComponent(GeneratorManager.class).addCompilationListener(myCompilationListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
+    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalModelSavedListener);
     ModelChangesWatcher.instance().addDataListener(myMetadataListener);
     myChangeListManager.addChangeListListener(myChangeListUpdateListener);
   }
@@ -220,6 +222,7 @@ public class MPSVCSManager implements ProjectComponent {
   public void disposeComponent() {
     myProject.getComponent(GeneratorManager.class).removeGenerationListener(myGenerationListener);
     myProject.getComponent(GeneratorManager.class).removeCompilationListener(myCompilationListener);
+    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalModelSavedListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
     ModelChangesWatcher.instance().removeDataListener(myMetadataListener);
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
@@ -232,13 +235,23 @@ public class MPSVCSManager implements ProjectComponent {
     return ChangeListManagerImpl.getInstanceImpl(myProject).getUnversionedFiles(); 
   }
 
-  private class ModelSavedListener extends SModelAdapter {
+  private class NewModelSavedListener extends SModelAdapter {
     @Override
     public void modelSaved(SModelDescriptor sm) {
-      final IFile ifile = sm.getModelFile();
-      if (ifile != null) {
-        addFilesToVcs(Collections.singletonList(ifile.toFile()), false, false);
+      final IFile modelFile = sm.getModelFile();
+      if (modelFile != null) {
+        addFilesToVcs(Collections.singletonList(modelFile.toFile()), false, false);
         sm.removeModelListener(this);
+      }
+    }
+  }
+
+  private class GlobalModelSavedListener extends SModelAdapter {
+    @Override
+    public void modelSaved(SModelDescriptor sm) {
+      IFile modeFile = sm.getModelFile();
+      if (modeFile != null) {
+        VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(modeFile));
       }
     }
   }
@@ -287,14 +300,14 @@ public class MPSVCSManager implements ProjectComponent {
   private class MySModelRepositoryListener extends SModelRepositoryAdapter {
     @Override
     public void modelCreated(SModelDescriptor modelDescriptor) {
-      modelDescriptor.addModelListener(myModelInitializationListener);
+      modelDescriptor.addModelListener(myNewModelSavedListener);
     }
 
     public void modelFileChanged(SModelDescriptor modelDescriptor, IFile ifrom) {
       if (ifrom != null) {
         VirtualFile from = VFileSystem.getFile(ifrom);
         deleteFromDiskAndRemoveFromVcs(Collections.singleton(from), true);
-        modelDescriptor.addModelListener(myModelInitializationListener);
+        modelDescriptor.addModelListener(myNewModelSavedListener);
       }
     }
 
@@ -307,10 +320,6 @@ public class MPSVCSManager implements ProjectComponent {
 //            deleteInternal(Collections.singletonList(file));
         }
       }
-    }
-
-    @Override
-    public void modelAdded(SModelDescriptor modelDescriptor) {
     }
   }
 

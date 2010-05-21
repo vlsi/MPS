@@ -80,14 +80,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private final IdeDocumentHistory myIdeDocumentHistory;
   private final ProjectView myProjectView;
   private final FileEditorManager myEditorManager;
-  private final SModelAdapter myGlobalSModelListener = new SModelAdapter() {
-    @Override
-    public void modelSaved(SModelDescriptor sm) {
-      IFile modeFile = sm.getModelFile();
-      if (modeFile == null) return;
-      VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(modeFile));
-    }
-  };
   private ExclusionChangedListener myExclusionListener;
 
   private ChangeListListener myChangeListListener;
@@ -112,28 +104,16 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     myBus = bus;
     myIdeDocumentHistory = ideDocumentHistory;
     myEditorManager = fileEditorManager;
-    initComponent();
   }
 
   protected abstract MPSTreeNode createRoot(Project project);
 
-  // TODO: remove on fixing http://youtrack.jetbrains.net/issue/MPS-8845
-  public void initComponent() {
-    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalSModelListener);
-  }
-
   public void dispose() {
-    disposeComponent();
     if (isInitialized()) {
       myTimer.stop();
       disposeListeners();
     }
     myScrollPane = null;
-  }
-
-  // TODO: remove on fixing http://youtrack.jetbrains.net/issue/MPS-8845
-  public void disposeComponent() {
-    GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalSModelListener);
   }
 
   public MPSTree getTree() {
