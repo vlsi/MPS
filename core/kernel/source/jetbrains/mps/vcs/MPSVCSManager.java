@@ -222,7 +222,7 @@ public class MPSVCSManager implements ProjectComponent {
   public void disposeComponent() {
     myProject.getComponent(GeneratorManager.class).removeGenerationListener(myGenerationListener);
     myProject.getComponent(GeneratorManager.class).removeCompilationListener(myCompilationListener);
-    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalModelSavedListener);
+    GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalModelSavedListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
     ModelChangesWatcher.instance().removeDataListener(myMetadataListener);
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
