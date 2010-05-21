@@ -12,6 +12,7 @@ public class Gwt_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     this.addCustomPart(res, new EditorExtension_CustomApplicationPlugin());
+    this.addCustomPart(res, new Variant_CustomApplicationPlugin());
     return res;
   }
 

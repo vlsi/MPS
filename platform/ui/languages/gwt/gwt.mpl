@@ -87,10 +87,11 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <classPath />
-  <languageRuntimeClassPath>
-    <entry path="${language_descriptor}/lib/gwt-user.jar" include="false" />
-  </languageRuntimeClassPath>
+  <runtimeStubModels>
+    <stubModelEntry path="${language_descriptor}/lib/gwt-user.jar" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+  </runtimeStubModels>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">a5a5d5ab-3987-4848-9421-998f92430773(jetbrains.mps.ui.gwt#9106854556042091019)</dependency>
