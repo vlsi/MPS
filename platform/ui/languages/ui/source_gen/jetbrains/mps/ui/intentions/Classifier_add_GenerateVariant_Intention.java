@@ -10,8 +10,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ui.plugin.Variants;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -64,8 +66,26 @@ public class Classifier_add_GenerateVariant_Intention extends BaseIntention impl
       ann = ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).addElement(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0a0a2a5().createNode());
     }
     ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).first(), "value", true), "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), "item", true)).addElement(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0d0f().createNode(this.myParameter));
-    ModuleReference moduleRef = Variants.languageToGenerate(this.myParameter).getModuleReference();
-    SNodeOperations.getModel(node).addEngagedOnGenerationLanguage(moduleRef);
+    Language langToDep = Variants.languageToGenerate(this.myParameter);
+    ModuleReference langRefToEng = langToDep.getModuleReference();
+    for (IModule depOn : SNodeOperations.getModel(node).getModelDescriptor().getModule().getDependOnModules()) {
+      if (depOn.equals(langToDep)) {
+        langToDep = null;
+        break;
+      }
+    }
+    if (langToDep != null) {
+      SNodeOperations.getModel(node).getModelDescriptor().getModule().addDependency(langToDep.getModuleReference(), false);
+    }
+    for (ModuleReference eng : SNodeOperations.getModel(node).getEngagedOnGenerationLanguages()) {
+      if (eng.equals(langRefToEng)) {
+        langRefToEng = null;
+        break;
+      }
+    }
+    if (langRefToEng != null) {
+      SNodeOperations.getModel(node).addEngagedOnGenerationLanguage(langRefToEng);
+    }
   }
 
   public String getLocationString() {
