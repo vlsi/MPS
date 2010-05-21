@@ -98,8 +98,8 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   }
 
   private String currentBuildNumberString() {
-    String currentBuildNumberString = myApplicationInfo.getBuildNumber();
-    if (currentBuildNumberString.matches(".*[^\\d].*")) {
+    String currentBuildNumberString = myApplicationInfo.getBuild().asString();
+    if (currentBuildNumberString.matches(".*[^\\d\\.].*")) {
       currentBuildNumberString = MyState.DEFAULT;
     }
     return currentBuildNumberString;
