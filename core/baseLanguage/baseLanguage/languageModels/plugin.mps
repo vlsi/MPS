@@ -357,6 +357,12 @@
         <property name="name:3" value="wasCheckedOnce" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1222347163536" />
       </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3238664143031493812">
+        <property name="name:3" value="editorContext" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3238664143031493813">
+          <link role="classifier:3" targetNodeId="35.~EditorContext" resolveInfo="EditorContext" />
+        </node>
+      </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1208786474488">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1208787056655">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1208787056656">
@@ -7015,6 +7021,12 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="5002400195358006657">
         <property name="name:3" value="wasCheckedOnce" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="5002400195358006658" />
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3238664143031470885">
+        <property name="name:3" value="editorContext" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3238664143031483250">
+          <link role="classifier:3" targetNodeId="35.~EditorContext" resolveInfo="EditorContext" />
+        </node>
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5002400195358006659">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3859623152551802603">

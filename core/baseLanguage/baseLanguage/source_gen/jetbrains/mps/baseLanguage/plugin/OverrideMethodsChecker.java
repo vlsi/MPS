@@ -4,13 +4,12 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
 import java.util.Set;
-
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -48,8 +47,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
   public OverrideMethodsChecker() {
   }
 
-  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext,
-                                           List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
+  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
     Iterable<SNode> classifiers = ListSequence.fromList(SNodeOperations.getDescendants(rootNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Interface");
