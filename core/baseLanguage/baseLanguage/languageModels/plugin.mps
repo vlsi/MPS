@@ -6774,6 +6774,21 @@
         </node>
       </node>
     </node>
+    <node role="unitConcepts:23" type="jetbrains.mps.lang.plugin.structure.UnitNodeItem:23" id="4208012086501209377">
+      <link role="unitConcept:23" targetNodeId="1.1107796713796:3" resolveInfo="Interface" />
+      <node role="getUnitName:23" type="jetbrains.mps.lang.plugin.structure.ConceptFunction_GetUnitName:23" id="4208012086501209378">
+        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4208012086501209379">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4208012086501249333">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4208012086501249335">
+              <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_UnitNode:23" id="4208012086501249334" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4208012086501249339">
+                <link role="baseMethodDeclaration:16" targetNodeId="48.1213877404258" resolveInfo="getFqName" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="unitConcepts:23" type="jetbrains.mps.lang.plugin.structure.UnitNodeItem:23" id="4089570349960820759">
       <link role="unitConcept:23" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
       <node role="getUnitName:23" type="jetbrains.mps.lang.plugin.structure.ConceptFunction_GetUnitName:23" id="4089570349960820760">

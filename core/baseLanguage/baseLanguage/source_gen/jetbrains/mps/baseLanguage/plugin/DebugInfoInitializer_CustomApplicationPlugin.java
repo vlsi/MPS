@@ -79,6 +79,11 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
         return AnonymousClass_Behavior.call_getJavaName_2977939203456914071(unitNode);
       }
     });
+    manager.addUnitConcept("jetbrains.mps.baseLanguage.structure.Interface", new Mapper<SNode, String>() {
+      public String value(SNode unitNode) {
+        return INamedConcept_Behavior.call_getFqName_1213877404258(unitNode);
+      }
+    });
     manager.addUnitConcept("jetbrains.mps.baseLanguage.structure.ClassConcept", new Mapper<SNode, String>() {
       public String value(SNode unitNode) {
         return INamedConcept_Behavior.call_getFqName_1213877404258(unitNode);
@@ -98,6 +103,7 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
     manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ForeachStatement");
     manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ForStatement");
     manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.AnonymousClass");
+    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.Interface");
     manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
 }
