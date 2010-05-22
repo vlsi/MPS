@@ -1717,14 +1717,18 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5849716370568349046">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5849716370568349047">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5849716370568349048">
-              <link role="classConcept:3" targetNodeId="9.~SModelRepository" />
-              <link role="baseMethodDeclaration:3" targetNodeId="9.~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository" />
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5849716370568349049">
-              <link role="baseMethodDeclaration:3" targetNodeId="9.~SModelRepository.removeUnusedDescriptors():void" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="8104862145896629981">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.StatementCommentPart:3" id="8104862145896629982">
+            <node role="commentedStatement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8104862145896629984">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8104862145896629985">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8104862145896629986">
+                  <link role="baseMethodDeclaration:3" targetNodeId="9.~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository" resolveInfo="getInstance" />
+                  <link role="classConcept:3" targetNodeId="9.~SModelRepository" resolveInfo="SModelRepository" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8104862145896629987">
+                  <link role="baseMethodDeclaration:3" targetNodeId="9.~SModelRepository.removeUnusedDescriptors():void" resolveInfo="removeUnusedDescriptors" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

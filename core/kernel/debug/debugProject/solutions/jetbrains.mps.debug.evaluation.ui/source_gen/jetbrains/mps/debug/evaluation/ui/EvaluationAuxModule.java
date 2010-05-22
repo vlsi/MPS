@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.smodel.SModelRepository;
 
 public class EvaluationAuxModule extends AbstractModule {
   private Project myProject;
@@ -97,7 +96,7 @@ public class EvaluationAuxModule extends AbstractModule {
   public void clearAll() {
     // model is already disposed by EmbeddableEditor 
     // <node> 
-    SModelRepository.getInstance().removeUnusedDescriptors();
+    // <node> 
     this.invalidateCaches();
     this.setInvocationContext(null);
   }
