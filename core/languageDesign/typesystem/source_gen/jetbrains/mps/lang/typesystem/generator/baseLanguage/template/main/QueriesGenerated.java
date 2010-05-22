@@ -2952,6 +2952,10 @@ parametersLoop:
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 
   public static class Pattern_x583g4_a0a1a2a3a03 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -2987,6 +2991,10 @@ parametersLoop:
         return this.PatternVar__;
       }
       return null;
+    }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
     }
   }
 
@@ -3578,6 +3586,10 @@ parametersLoop:
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 
   public static class QuotationClass_x583g4_a0a0a0a0d0b0a0d0c0a0h0f0a0jt {
@@ -3700,6 +3712,10 @@ parametersLoop:
 
     public Object getFieldValue(String fieldName) {
       return null;
+    }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
     }
   }
 

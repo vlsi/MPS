@@ -2469,6 +2469,10 @@ public class QueriesGenerated {
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 
   public static class Pattern_x583g4_a1a0a0a36 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -2502,6 +2506,10 @@ public class QueriesGenerated {
 
     public Object getFieldValue(String fieldName) {
       return null;
+    }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
     }
   }
 
@@ -2537,6 +2545,10 @@ public class QueriesGenerated {
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 
   public static class Pattern_x583g4_a1a0a0a27 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -2570,6 +2582,10 @@ public class QueriesGenerated {
 
     public Object getFieldValue(String fieldName) {
       return null;
+    }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
     }
   }
 
@@ -2605,6 +2621,10 @@ public class QueriesGenerated {
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 
   public static class Pattern_x583g4_a1a0a0a68 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -2638,6 +2658,10 @@ public class QueriesGenerated {
 
     public Object getFieldValue(String fieldName) {
       return null;
+    }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
     }
   }
 
@@ -2673,6 +2697,10 @@ public class QueriesGenerated {
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 
   public static class Pattern_x583g4_a1a0a0a49 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -2706,6 +2734,10 @@ public class QueriesGenerated {
 
     public Object getFieldValue(String fieldName) {
       return null;
+    }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
     }
   }
 
@@ -2741,6 +2773,10 @@ public class QueriesGenerated {
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 
   public static class Pattern_x583g4_a1a0a0a901 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -2775,6 +2811,10 @@ public class QueriesGenerated {
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 
   public static class Pattern_x583g4_a1a0a0a561 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -2808,6 +2848,10 @@ public class QueriesGenerated {
 
     public Object getFieldValue(String fieldName) {
       return null;
+    }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
     }
   }
 
