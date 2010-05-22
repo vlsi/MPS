@@ -56,7 +56,7 @@ public abstract class AbstractEvaluationLogic {
   protected JavaUiState myUiState;
   protected final DebugSession myDebugSession;
   protected final IOperationContext myContext;
-  private SModelDescriptor myAuxModel;
+  protected SModelDescriptor myAuxModel;
   private final EvaluationAuxModule myAuxModule;
   private final List<Language> myLanguages = ListSequence.fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation"));
   protected SNode myEvaluator;

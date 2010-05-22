@@ -12,9 +12,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListSequence.fromList(this.myConstraints).addElement(new EvaluationStaticFieldReference_staticFieldDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new EvaluationStaticMethodCall_staticMethodDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

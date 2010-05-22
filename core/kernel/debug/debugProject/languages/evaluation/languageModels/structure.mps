@@ -118,13 +118,5 @@
       <link role="target:0" targetNodeId="6036237525966182694" resolveInfo="LowLevelVariable" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3580083550116335781">
-    <property name="name:0" value="EvaluationStaticMethodCall" />
-    <link role="extends:0" targetNodeId="3v.1081236700937:3" resolveInfo="StaticMethodCall" />
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3580083550116335782">
-    <property name="name:0" value="EvaluationStaticFieldReference" />
-    <link role="extends:0" targetNodeId="3v.1070533707846:3" resolveInfo="StaticFieldReference" />
-  </node>
 </model>
 

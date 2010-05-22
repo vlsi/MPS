@@ -8,29 +8,18 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugSession;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.debug.runtime.java.programState.JavaStackFrame;
-import com.sun.jdi.StackFrame;
-import java.util.List;
-import com.sun.jdi.LocalVariable;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import com.sun.jdi.ClassNotLoadedException;
-import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.EachClassPathItemVisitor;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.stubs.StubReloadManager;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNode;
 import com.sun.jdi.Type;
+import com.sun.jdi.ClassNotLoadedException;
 import com.sun.jdi.PrimitiveType;
 import com.sun.jdi.BooleanType;
 import com.sun.jdi.ByteType;
@@ -41,16 +30,26 @@ import com.sun.jdi.DoubleType;
 import com.sun.jdi.FloatType;
 import com.sun.jdi.CharType;
 import com.sun.jdi.ArrayType;
+import jetbrains.mps.debug.runtime.java.programState.JavaStackFrame;
 import com.sun.jdi.Location;
 import jetbrains.mps.debug.info.StacktraceUtil;
-import org.jetbrains.annotations.Nullable;
+import com.sun.jdi.AbsentInformationException;
 import com.sun.jdi.ObjectReference;
+import java.util.List;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.debug.DebugInfoManager;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
+import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import com.sun.jdi.StackFrame;
+import com.sun.jdi.LocalVariable;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -62,56 +61,16 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
   private static final Logger LOG = Logger.getLogger(LowLevelEvaluationLogic.class);
 
-  private final AbstractClassifiersScope myScope;
+  private AbstractClassifiersScope myScope;
 
-  public LowLevelEvaluationLogic(@NotNull final IOperationContext context, @NotNull JavaUiState state, @NotNull DebugSession debugSession) {
+  public LowLevelEvaluationLogic(@NotNull IOperationContext context, @NotNull JavaUiState state, @NotNull DebugSession debugSession) {
     super(context, state, debugSession);
 
-    final Wrappers._T<AbstractClassifiersScope> scope = new Wrappers._T<AbstractClassifiersScope>();
-
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        // creating scope 
-        scope.value = new ReachableClassifiersScope(SNodeOperations.getModel(getLocationNode()), IClassifiersSearchScope.CLASSIFFIER, context.getScope());
-      }
-    });
-    myScope = scope.value;
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SLinkOperations.setNewChild(myEvaluator, "evaluatedStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
         SLinkOperations.setNewChild(SLinkOperations.getTarget(myEvaluator, "evaluatedStatement", true), AttributesRolesUtil.childRoleFromAttributeRole("toEvaluateAnnotation"), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
-
-        JavaStackFrame javaStackFrame = myUiState.getStackFrame();
-        if (javaStackFrame != null) {
-          StackFrame stackFrame = javaStackFrame.getStackFrame();
-          if (stackFrame != null) {
-            try {
-
-              // create vars 
-              List<LocalVariable> variables = stackFrame.visibleVariables();
-              for (LocalVariable variable : ListSequence.fromList(variables)) {
-                try {
-                  SNode lowLevelVarNode = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", null);
-                  SPropertyOperations.set(lowLevelVarNode, "name", ((LocalVariable) variable).name());
-                  SLinkOperations.setTarget(lowLevelVarNode, "type", getMpsTypeFromJdiType(((LocalVariable) variable).type()), true);
-                  ListSequence.fromList(SLinkOperations.getTargets(myEvaluator, "variables", true)).addElement(lowLevelVarNode);
-                } catch (ClassNotLoadedException cne) {
-                  LOG.error(cne);
-                }
-
-              }
-
-              // create static context type 
-              // <node> 
-              // create this 
-              // <node> 
-            } catch (AbsentInformationException e) {
-              LOG.error(e);
-            }
-
-          }
-        }
       }
     });
 
@@ -136,7 +95,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     });
   }
 
-  @NotNull
+  @Nullable
   private SNode getMpsTypeFromJdiType(Type type) throws ClassNotLoadedException {
     // TODO generics 
     if (type instanceof PrimitiveType) {
@@ -197,8 +156,14 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     return createStaticContextType();
   }
 
+  @Nullable
   private SNode createClassifierType(final String unitFqName) {
-    // TODO this is totally wrong. What if we want a class which exists in generated code, but does not in MPS? 
+    int lastDot = unitFqName.lastIndexOf(".");
+    if (lastDot > 0) {
+      String unitPackage = unitFqName.substring(0, lastDot);
+      importStubForFqName(unitPackage);
+    }
+
     List<SNode> classifiers = myScope.getNodes(new Condition<SNode>() {
       public boolean met(SNode node) {
         if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
@@ -234,8 +199,72 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
   public void setModel(SModelDescriptor model) {
     super.setModel(model);
 
-    SModelReference stubReference = StubHelper.uidForPackageInStubs(getLocationModel().getSModelFqName().toString());
-    model.getSModel().addImportedModel(stubReference);
+    this.importStubForFqName(getLocationModel().getSModelFqName().toString());
+
+    createVars();
+  }
+
+  private void importStubForFqName(String fqName) {
+    SModelReference stubReference = StubHelper.uidForPackageInStubs(fqName);
+    if (stubReference == null) {
+      LOG.error("Stub for " + fqName + " was not found.");
+      return;
+    }
+    myAuxModel.getSModel().addImportedModel(stubReference);
+  }
+
+  private void createVars() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        // creating scope 
+        myScope = new ReachableClassifiersScope(myAuxModel.getSModel(), IClassifiersSearchScope.CLASSIFFIER, myContext.getScope());
+      }
+    });
+
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        fillVariables();
+      }
+    });
+  }
+
+  private void fillVariables() {
+    JavaStackFrame javaStackFrame = myUiState.getStackFrame();
+    if (javaStackFrame != null) {
+      StackFrame stackFrame = javaStackFrame.getStackFrame();
+      if (stackFrame != null) {
+        try {
+
+          // create vars 
+          List<LocalVariable> variables = stackFrame.visibleVariables();
+          for (LocalVariable variable : ListSequence.fromList(variables)) {
+            try {
+              SNode lowLevelVarNode = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", null);
+              String name = ((LocalVariable) variable).name();
+              SPropertyOperations.set(lowLevelVarNode, "name", name);
+              SNode deducedType = getMpsTypeFromJdiType(((LocalVariable) variable).type());
+              if (deducedType == null) {
+                LOG.warning("Could not deduce type for variable" + name);
+                continue;
+              }
+              SLinkOperations.setTarget(lowLevelVarNode, "type", deducedType, true);
+              ListSequence.fromList(SLinkOperations.getTargets(myEvaluator, "variables", true)).addElement(lowLevelVarNode);
+            } catch (ClassNotLoadedException cne) {
+              LOG.error(cne);
+            }
+
+          }
+
+          // create static context type 
+          SLinkOperations.setTarget(myEvaluator, "staticContextType", createStaticContextType(), true);
+          // create this 
+          SLinkOperations.setTarget(myEvaluator, "thisType", createThisClassifierType(), true);
+        } catch (AbsentInformationException e) {
+          LOG.error(e);
+        }
+
+      }
+    }
   }
 
   public static class QuotationClass_qka7a1_a0a0a0b0a {
