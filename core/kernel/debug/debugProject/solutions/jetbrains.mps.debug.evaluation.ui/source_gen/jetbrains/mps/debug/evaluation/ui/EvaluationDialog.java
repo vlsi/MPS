@@ -18,6 +18,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.Language;
 import javax.swing.JScrollPane;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.JComponent;
 import jetbrains.mps.debug.evaluation.ValueProxy;
 import com.intellij.openapi.application.ApplicationManager;
@@ -67,6 +69,14 @@ public class EvaluationDialog extends BaseDialog {
     this.myTree = new EvaluationDialog.MyTree();
     this.myPanel.add(new JScrollPane(this.myTree), BorderLayout.CENTER);
     this.myTabbedPane.addTab("Main", myPanel);
+
+    addWindowListener(new WindowAdapter() {
+      @Override
+      public void windowClosed(WindowEvent event) {
+        EvaluationDialog.this.myEditor.disposeEditor();
+        EvaluationDialog.this.myEvaluationData.getModule().dispose();
+      }
+    });
   }
 
   protected JComponent getMainComponent() {
@@ -91,8 +101,6 @@ public class EvaluationDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C', defaultButton = false)
   public void buttonCancel() {
-    this.myEditor.disposeEditor();
-    this.myEvaluationData.getModule().dispose();
     this.dispose();
   }
 
