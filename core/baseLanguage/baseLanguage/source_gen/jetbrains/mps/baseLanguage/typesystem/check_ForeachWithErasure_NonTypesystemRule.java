@@ -116,6 +116,10 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 
   public static class QuotationClass_aftnu9_a0a0b0a2a2a0 {

@@ -187,5 +187,9 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }

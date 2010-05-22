@@ -217,6 +217,10 @@ public class ClassifierType_Behavior {
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 
   public static class Pattern_hz3823_a0a0a1a6 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -274,6 +278,10 @@ public class ClassifierType_Behavior {
         return this.PatternVar_ignored;
       }
       return null;
+    }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
     }
   }
 

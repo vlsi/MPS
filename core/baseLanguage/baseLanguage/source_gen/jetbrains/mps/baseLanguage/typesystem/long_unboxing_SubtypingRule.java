@@ -101,5 +101,9 @@ public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }

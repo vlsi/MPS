@@ -134,6 +134,10 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
       public Object getFieldValue(String fieldName) {
         return null;
       }
+
+      public void performActions() {
+        throw new RuntimeException("NOT IMPLEMENTED");
+      }
     }
 
     public static class Pattern_b5sqja_a1a0a3a5a4a extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -167,6 +171,10 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
 
       public Object getFieldValue(String fieldName) {
         return null;
+      }
+
+      public void performActions() {
+        throw new RuntimeException("NOT IMPLEMENTED");
       }
     }
   }

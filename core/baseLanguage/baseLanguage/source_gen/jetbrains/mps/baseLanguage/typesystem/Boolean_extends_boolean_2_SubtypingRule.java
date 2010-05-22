@@ -101,5 +101,9 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }

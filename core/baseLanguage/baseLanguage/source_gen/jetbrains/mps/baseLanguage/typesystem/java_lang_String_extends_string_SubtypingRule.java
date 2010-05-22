@@ -101,5 +101,9 @@ public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }

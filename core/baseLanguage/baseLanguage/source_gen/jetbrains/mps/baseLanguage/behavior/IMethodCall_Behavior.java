@@ -200,6 +200,10 @@ public class IMethodCall_Behavior {
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 
   public static class QuotationClass_fq0410_a0a0b0d {

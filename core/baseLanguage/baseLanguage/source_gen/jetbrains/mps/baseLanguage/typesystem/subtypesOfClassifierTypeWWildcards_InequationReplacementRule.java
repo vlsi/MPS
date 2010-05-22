@@ -238,6 +238,10 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 
   public static class Pattern_1s2zdh_a0a0a0a0a1a1 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -295,6 +299,10 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
         return this.PatternVar_ignored;
       }
       return null;
+    }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
     }
   }
 }

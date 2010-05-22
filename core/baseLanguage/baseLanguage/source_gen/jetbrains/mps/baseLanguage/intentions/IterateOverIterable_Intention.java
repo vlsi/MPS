@@ -127,6 +127,10 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 
   public static class Pattern_w1n2qe_a0a0a0a7 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -179,6 +183,10 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
         return this.PatternVar_elem;
       }
       return null;
+    }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
     }
   }
 }
