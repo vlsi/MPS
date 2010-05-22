@@ -121,6 +121,10 @@ public class MacroIntentionsUtil {
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 
   public static class Pattern_iiuth6_a0a0a0a0d0b extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -172,6 +176,10 @@ public class MacroIntentionsUtil {
         return this.PatternVar_concept;
       }
       return null;
+    }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
     }
   }
 }

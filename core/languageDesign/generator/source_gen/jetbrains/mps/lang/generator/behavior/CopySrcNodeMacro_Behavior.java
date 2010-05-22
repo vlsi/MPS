@@ -58,5 +58,9 @@ public class CopySrcNodeMacro_Behavior {
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }
