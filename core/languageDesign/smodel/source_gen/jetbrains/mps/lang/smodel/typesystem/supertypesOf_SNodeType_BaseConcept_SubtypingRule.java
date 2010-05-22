@@ -100,5 +100,9 @@ public class supertypesOf_SNodeType_BaseConcept_SubtypingRule extends SubtypingR
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }

@@ -74,5 +74,9 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }

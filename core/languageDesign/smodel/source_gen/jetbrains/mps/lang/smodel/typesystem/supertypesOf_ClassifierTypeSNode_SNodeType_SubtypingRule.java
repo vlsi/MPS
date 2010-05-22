@@ -101,5 +101,9 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }

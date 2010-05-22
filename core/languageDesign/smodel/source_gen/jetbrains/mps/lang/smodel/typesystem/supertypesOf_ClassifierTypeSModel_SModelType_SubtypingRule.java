@@ -101,5 +101,9 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
     public Object getFieldValue(String fieldName) {
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }
