@@ -20,6 +20,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.runtime.java.programState.JavaStackFrame;
 import com.sun.jdi.StackFrame;
@@ -43,7 +45,6 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public abstract class AbstractEvaluationLogic {
@@ -85,6 +86,10 @@ public abstract class AbstractEvaluationLogic {
       }
     });
     this.myEvaluator = evaluatorConcept.value;
+  }
+
+  protected SModel getLocationModel() {
+    return SNodeOperations.getModel(getLocationNode());
   }
 
   @Nullable

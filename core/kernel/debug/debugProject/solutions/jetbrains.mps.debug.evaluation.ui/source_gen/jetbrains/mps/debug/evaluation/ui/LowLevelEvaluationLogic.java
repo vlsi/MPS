@@ -25,6 +25,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.sun.jdi.ClassNotLoadedException;
 import com.sun.jdi.AbsentInformationException;
+import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.EachClassPathItemVisitor;
+import jetbrains.mps.reloading.JarFileClassPathItem;
+import jetbrains.mps.reloading.FileClassPathItem;
+import jetbrains.mps.stubs.StubReloadManager;
 import com.sun.jdi.Type;
 import com.sun.jdi.PrimitiveType;
 import com.sun.jdi.BooleanType;
@@ -43,6 +48,9 @@ import com.sun.jdi.ObjectReference;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.debug.DebugInfoManager;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -71,10 +79,6 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        // if we not in high-level model, we just use low-level vars 
-        // TODO extract a superclass and two children: one for high-level, one for low-level 
-        // or maybe not 
-
         SLinkOperations.setNewChild(myEvaluator, "evaluatedStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
         SLinkOperations.setNewChild(SLinkOperations.getTarget(myEvaluator, "evaluatedStatement", true), AttributesRolesUtil.childRoleFromAttributeRole("toEvaluateAnnotation"), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
 
@@ -99,15 +103,35 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
               }
 
               // create static context type 
-              SLinkOperations.setTarget(myEvaluator, "staticContextType", createStaticContextType(), true);
+              // <node> 
               // create this 
-              SLinkOperations.setTarget(myEvaluator, "thisType", createThisClassifierType(), true);
+              // <node> 
             } catch (AbsentInformationException e) {
               LOG.error(e);
             }
 
           }
         }
+      }
+    });
+
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        // add classpath to module to be able to see classes in evaluation 
+        IClassPathItem cpItem = getLocationModel().getModelDescriptor().getModule().getClassPathItem();
+        cpItem.accept(new EachClassPathItemVisitor() {
+          @Override
+          public void visit(JarFileClassPathItem item) {
+            getModule().addStubPath(item.getFile().getAbsolutePath());
+          }
+
+          @Override
+          public void visit(FileClassPathItem item) {
+            getModule().addStubPath(item.getClassPath());
+          }
+        });
+
+        StubReloadManager.getInstance().reload();
       }
     });
   }
@@ -204,6 +228,14 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
   @NotNull
   public SNode getRootToShow() {
     return myEvaluator;
+  }
+
+  @Override
+  public void setModel(SModelDescriptor model) {
+    super.setModel(model);
+
+    SModelReference stubReference = StubHelper.uidForPackageInStubs(getLocationModel().getSModelFqName().toString());
+    model.getSModel().addImportedModel(stubReference);
   }
 
   public static class QuotationClass_qka7a1_a0a0a0b0a {

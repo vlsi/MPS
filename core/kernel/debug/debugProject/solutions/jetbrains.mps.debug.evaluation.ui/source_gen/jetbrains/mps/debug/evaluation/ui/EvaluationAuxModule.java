@@ -5,7 +5,11 @@ package jetbrains.mps.debug.evaluation.ui;
 import jetbrains.mps.project.AbstractModule;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import java.util.UUID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.MPSProject;
@@ -13,15 +17,17 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModelRepository;
 
 public class EvaluationAuxModule extends AbstractModule {
   private Project myProject;
   private IModule myInvocationContext;
+  private final List<AbstractModule.StubPath> myStubPaths = ListSequence.fromList(new ArrayList<AbstractModule.StubPath>());
 
   public EvaluationAuxModule(Project project) {
     this.myProject = project;
-    ModuleReference reference = ModuleReference.fromString("Debug Evaluation Aux Module");
+    ModuleReference reference = ModuleReference.fromString(UUID.randomUUID() + "(Debug Evaluation Aux Module)");
     this.setModulePointer(reference);
     this.init();
   }
@@ -77,6 +83,15 @@ public class EvaluationAuxModule extends AbstractModule {
   }
 
   public void save() {
+  }
+
+  @Override
+  public List<AbstractModule.StubPath> getStubPaths() {
+    return myStubPaths;
+  }
+
+  public void addStubPath(String stubPath) {
+    ListSequence.fromList(myStubPaths).addElement(new AbstractModule.StubPath(stubPath, LanguageID.JAVA_MANAGER));
   }
 
   public void clearAll() {

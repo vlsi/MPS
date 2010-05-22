@@ -3,14 +3,26 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <classPath>
-    <entry path="${mps_home}/core/baseLanguage/baseLanguage/classes" include="false" />
-    <entry path="${mps_home}/core/languageDesign/core/classes" include="false" />
-    <entry path="${mps_home}/core/languageDesign/smodel/classes" include="false" />
-    <entry path="${mps_home}/core/languageDesign/typesystem/classes" include="false" />
-    <entry path="${mps_home}/core/runtime/classes" include="false" />
-    <entry path="${mps_home}/lib/tools/tools.jar" include="false" />
-  </classPath>
+  <stubModelEntries>
+    <stubModelEntry path="${mps_home}/core/baseLanguage/baseLanguage/classes" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/core/languageDesign/core/classes" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/core/languageDesign/smodel/classes" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/core/languageDesign/typesystem/classes" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/core/runtime/classes" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/lib/tools/tools.jar" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">88f8bc48-a7a1-4edf-93ec-38cb00d0c9d5(jetbrains.mps.debug.info)</dependency>
