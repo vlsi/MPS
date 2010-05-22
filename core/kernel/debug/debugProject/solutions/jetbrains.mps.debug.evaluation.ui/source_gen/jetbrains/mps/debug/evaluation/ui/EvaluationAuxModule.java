@@ -95,7 +95,8 @@ public class EvaluationAuxModule extends AbstractModule {
   }
 
   public void clearAll() {
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    // model is already disposed by EmbeddableEditor 
+    // <node> 
     SModelRepository.getInstance().removeUnusedDescriptors();
     this.invalidateCaches();
     this.setInvocationContext(null);

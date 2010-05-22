@@ -1696,15 +1696,24 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5849716370568349038" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5849716370568349039" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5849716370568349040">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5849716370568349041">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5849716370568349042">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5849716370568349043">
-              <link role="classConcept:3" targetNodeId="9.~SModelRepository" />
-              <link role="baseMethodDeclaration:3" targetNodeId="9.~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository" />
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5849716370568349044">
-              <link role="baseMethodDeclaration:3" targetNodeId="9.~SModelRepository.unRegisterModelDescriptors(jetbrains.mps.smodel.ModelOwner):void" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5849716370568349045" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="4871934138168091356">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="4871934138168091357">
+            <property name="text:3" value="model is already disposed by EmbeddableEditor" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="4871934138168091346">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.StatementCommentPart:3" id="4871934138168091347">
+            <node role="commentedStatement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4871934138168091349">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4871934138168091350">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4871934138168091351">
+                  <link role="baseMethodDeclaration:3" targetNodeId="9.~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository" resolveInfo="getInstance" />
+                  <link role="classConcept:3" targetNodeId="9.~SModelRepository" resolveInfo="SModelRepository" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4871934138168091352">
+                  <link role="baseMethodDeclaration:3" targetNodeId="9.~SModelRepository.unRegisterModelDescriptors(jetbrains.mps.smodel.ModelOwner):void" resolveInfo="unRegisterModelDescriptors" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="4871934138168091353" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
