@@ -150,5 +150,9 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }

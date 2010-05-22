@@ -150,5 +150,9 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }

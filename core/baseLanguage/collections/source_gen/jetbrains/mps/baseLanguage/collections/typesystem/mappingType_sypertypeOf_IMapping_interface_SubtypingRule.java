@@ -188,5 +188,9 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }

@@ -93,5 +93,9 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }

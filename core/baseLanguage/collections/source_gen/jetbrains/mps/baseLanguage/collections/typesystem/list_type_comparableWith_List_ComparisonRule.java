@@ -93,5 +93,9 @@ public class list_type_comparableWith_List_ComparisonRule extends ComparisonRule
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }

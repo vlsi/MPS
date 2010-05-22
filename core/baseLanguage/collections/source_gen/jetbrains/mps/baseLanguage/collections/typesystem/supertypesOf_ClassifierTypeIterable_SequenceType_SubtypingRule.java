@@ -150,5 +150,9 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }

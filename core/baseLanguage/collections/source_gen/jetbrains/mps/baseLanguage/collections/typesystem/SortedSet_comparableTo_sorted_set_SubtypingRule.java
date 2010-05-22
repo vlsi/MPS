@@ -150,5 +150,9 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }

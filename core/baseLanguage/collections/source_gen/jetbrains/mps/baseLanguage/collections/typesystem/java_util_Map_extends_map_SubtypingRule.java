@@ -188,5 +188,9 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }

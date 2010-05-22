@@ -145,5 +145,9 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 }
