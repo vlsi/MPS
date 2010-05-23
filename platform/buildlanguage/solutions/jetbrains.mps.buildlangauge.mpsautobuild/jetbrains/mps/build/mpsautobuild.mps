@@ -143,9 +143,9 @@
       <property name="name:21" value="prepare" />
       <node role="taskCall:21" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="1239364393134">
         <link role="declaration:22" targetNodeId="2v.353793545802814434" resolveInfo="mkdir" />
-        <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393135">
+        <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1648602681640275492">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802814435" resolveInfo="dir" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="2196757486872522654">
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1648602681640275494">
             <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
           </node>
         </node>

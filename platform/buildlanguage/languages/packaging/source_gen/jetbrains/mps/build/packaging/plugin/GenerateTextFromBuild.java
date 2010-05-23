@@ -19,8 +19,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.messages.Message;
+import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -53,19 +52,7 @@ public class GenerateTextFromBuild {
     if (showWindow) {
       generatorManager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, true);
     } else {
-      generatorManager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, new EmptyProgressIndicator(), new IMessageHandler() {
-        public void handle(Message message) {
-          switch (message.getKind()) {
-            case ERROR:
-              System.err.println("error: " + message.getText());
-            case WARNING:
-              System.out.println("warning: " + message.getText());
-            case INFORMATION:
-              System.out.println("info: " + message.getText());
-            default:
-          }
-        }
-      });
+      generatorManager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, new EmptyProgressIndicator(), new DefaultMessageHandler(project));
     }
     return fileToRun[0];
   }
