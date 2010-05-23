@@ -39,7 +39,7 @@ public class Attribute_attributeDeclaration_ReferentConstraint extends BaseNodeR
     return new DefaultSearchScope(TaskCall_Behavior.call_getUndefinedAttributes_353793545802643943(taskCall)) {
       @Override
       public boolean isInScope(SNode node) {
-        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.generictasks.structure.AttributeDeclaration")) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.generictasks.structure.AttributeDeclaration"))) {
           return false;
         }
         return ListSequence.fromList(ITaskDeclaration_Behavior.call_getAttributesDeclarations_1190349257898147625(SLinkOperations.getTarget(taskCall, "declaration", false))).contains(SNodeOperations.cast(node, "jetbrains.mps.build.generictasks.structure.AttributeDeclaration"));
