@@ -43,7 +43,7 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
 
     if (myMessageTarget.getTarget() == MessageTargetEnum.REFERENCE) {
       if (cell.isReferenceCell()) {
-        return myMessageTarget.getRole().equals(cell.getRole());
+        return myMessageTarget.getRole().equals(cell.getRole()) && getNode() == cell.getSNode();
       } else {
         return cell.isBigCell() && getCell(editor) == cell;
       }
@@ -56,7 +56,7 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
       EditorCell_Property propertyCell = (EditorCell_Property) cell;
       ModelAccessor modelAccessor = propertyCell.getModelAccessor();
       if (modelAccessor instanceof PropertyAccessor) {
-        return myMessageTarget.getRole().equals(((PropertyAccessor) modelAccessor).getPropertyName());
+        return myMessageTarget.getRole().equals(((PropertyAccessor) modelAccessor).getPropertyName()) && getNode() == propertyCell.getSNode();
       }
     }
 
@@ -78,7 +78,7 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
     if (myMessageTarget.getTarget() == MessageTargetEnum.REFERENCE) {
       EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
         public boolean met(EditorCell cell) {
-          return cell.isReferenceCell() && myMessageTarget.getRole().equals(cell.getRole());
+          return cell.isReferenceCell() && myMessageTarget.getRole().equals(cell.getRole()) && cell.getSNode() == getNode();
         }
       }, true), true);
       if (child != null) {
@@ -96,7 +96,7 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
           if (!(modelAccessor instanceof PropertyAccessor)) {
             return false;
           }
-          if (myMessageTarget.getRole().equals(((PropertyAccessor) modelAccessor).getPropertyName())) {
+          if (getNode() == propertyCell.getSNode() && myMessageTarget.getRole().equals(((PropertyAccessor) modelAccessor).getPropertyName())) {
             return true;
           }
           return false;
