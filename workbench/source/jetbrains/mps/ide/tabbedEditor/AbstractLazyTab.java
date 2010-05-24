@@ -18,12 +18,12 @@ package jetbrains.mps.ide.tabbedEditor;
 
 import com.intellij.openapi.util.Pair;
 import com.intellij.util.containers.MultiMap;
-import jetbrains.mps.vcs.changesmanager.NodeFileStatusListener;
-import jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.vcs.changesmanager.NodeFileStatusListener;
+import jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
@@ -65,6 +65,14 @@ public abstract class AbstractLazyTab implements ILazyTab {
     }
     myImportantNodes.clear();
 
+    for (SModelReference modelRef : myModelAdditionListeners.keySet()) {
+      for (SModelListener listener : myModelAdditionListeners.get(modelRef)) {
+        SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelRef);
+        if (model == null) continue;
+        model.removeModelListener(listener);
+      }
+      myModelAdditionListeners.remove(modelRef);
+    }
     myModelAdditionListeners.clear();
   }
 
