@@ -815,5 +815,46 @@
       <property name="name" value="FILE" />
     </node>
   </node>
+  <node type="jetbrains.mps.bash.structure.ExternalCommandDeclaration" id="6027654792138152393">
+    <property name="name" value="uname" />
+    <node role="optionDeclaration" type="jetbrains.mps.bash.structure.OptionSet" id="6027654792138152395">
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="6027654792138152396">
+        <property name="symbol" value="a" />
+        <property name="description" value="all" />
+      </node>
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="6027654792138152398">
+        <property name="symbol" value="s" />
+        <property name="description" value="kernel name" />
+      </node>
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="6027654792138152399">
+        <property name="symbol" value="n" />
+        <property name="description" value="network node hostname" />
+      </node>
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="6027654792138152400">
+        <property name="symbol" value="r" />
+        <property name="description" value="kernel release" />
+      </node>
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="6027654792138152401">
+        <property name="symbol" value="v" />
+        <property name="description" value="kernel version" />
+      </node>
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="6027654792138152402">
+        <property name="symbol" value="m" />
+        <property name="description" value="machine hardware name" />
+      </node>
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="6027654792138152403">
+        <property name="symbol" value="p" />
+        <property name="description" value="processor type or &quot;unknown&quot;" />
+      </node>
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="6027654792138152404">
+        <property name="symbol" value="i" />
+        <property name="description" value="hardware platform or &quot;unknown&quot;" />
+      </node>
+      <node role="options" type="jetbrains.mps.bash.structure.Option" id="6027654792138152405">
+        <property name="symbol" value="o" />
+        <property name="description" value="operating system" />
+      </node>
+    </node>
+  </node>
 </model>
 

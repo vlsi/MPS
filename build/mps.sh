@@ -30,8 +30,22 @@ CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/log4j/log4j.jar
 
 cd ${PROJECT_HOME}
 cd bin
-LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${PWD}
-DYLD_LIBRARY_PATH=${DYLD_LIBRARY_PATH}:${PWD}
-export LD_LIBRARY_PATH
-export DYLD_LIBRARY_PATH
+UNAME=`uname`
+if [ "${UNAME}" == "Darwin" ]; then
+  if [ -z ${DYLD_LIBRARY_PATH} ]; then
+    DYLD_LIBRARY_PATH=${PWD}
+  else
+    DYLD_LIBRARY_PATH=${DYLD_LIBRARY_PATH}:${PWD}
+  fi
+  export DYLD_LIBRARY_PATH
+elif [ "${UNAME}" == "Linux" ]; then
+  if [ -z ${LD_LIBRARY_PATH} ]; then
+    LD_LIBRARY_PATH=${PWD}
+  else
+    LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${PWD}
+  fi
+  export LD_LIBRARY_PATH
+else
+  echo "Unknown operation system ${UNAME}"
+fi
 ${JAVA} ${JVM_ARGS} ${ADDITIONAL_JVM_ARGS} -classpath ${CLASSPATH} ${MAIN_CLASS} $*
