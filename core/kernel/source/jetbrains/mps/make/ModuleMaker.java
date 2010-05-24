@@ -82,7 +82,7 @@ public class ModuleMaker {
       indicator.setText2("Loading dependencies..");
       myDependencies = new Dependencies(candidates);
 
-      indicator.setText2("Calculating modules to compile..");
+      indicator.setText2("Calculating modules to compile...");
       Set<IModule> toCompile = getModulesToCompile(candidates);
 
 
