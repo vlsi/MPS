@@ -16,10 +16,6 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath>
-    <entry path="${samples_home}/lambda/classes" include="false" />
-  </classPath>
-  <languageRuntimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>

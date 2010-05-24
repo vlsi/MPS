@@ -44,10 +44,6 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <classPath>
-    <entry path="${language_descriptor}/classes" include="false" />
-  </classPath>
-  <languageRuntimeClassPath />
   <sourcePath>
     <source path="${language_descriptor}/source_gen" />
   </sourcePath>
