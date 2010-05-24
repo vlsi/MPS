@@ -7398,9 +7398,24 @@
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="977382291400364234" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="977382291400364233">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="762570481842420747">
-          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="762570481842420748">
-            <property name="text:3" value="TODO write this non-trivial method description" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="5494534766666298753">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="5494534766666298754">
+            <property name="text:3" value="This method gets node with given id from base version model to put in place" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="5494534766666298756">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="5494534766666298757">
+            <property name="text:3" value="where it was deleted in current model. When it may result in node id overlapping ," />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="5494534766666298759">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="5494534766666298761">
+            <property name="text:3" value="it resets other nodes with overlapping ids, making this node and its children ids" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="5494534766666298763">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="5494534766666298765">
+            <property name="text:3" value="be the same as in base version model." />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="977382291400364241">

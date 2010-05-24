@@ -807,7 +807,10 @@ __switch__:
 
   @Nullable
   private SNode getBaseNode(@NotNull SNodeId childId, @Nullable SNode nodeToBeReplaced) {
-    // TODO write this non-trivial method description 
+    // This method gets node with given id from base version model to put in place 
+    // where it was deleted in current model. When it may result in node id overlapping , 
+    // it resets other nodes with overlapping ids, making this node and its children ids 
+    // be the same as in base version model. 
     SNode baseNode = myBaseVersionModel.getNodeById(childId);
     SNode copyOfBaseNode = CopyUtil.copyAndPreserveId(baseNode);
     SModel model = getModel();
