@@ -167,7 +167,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         public void run() {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              if (isProjectDisposed()) return;
+              if (isProjectDisposed() || isNodeDisposed()) return;
               rebuildEditorContent();
               myNodeSubstituteChooser.clearContent();
             }
@@ -2905,6 +2905,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private boolean isProjectDisposed() {
     return getOperationContext() != null && getOperationContext().getProject() != null && getOperationContext().getProject().isDisposed();
+  }
+
+  private boolean isNodeDisposed() {
+    return getEditedNode() != null && getEditedNode().isDisposed();
   }
 
   public boolean isEditable() {

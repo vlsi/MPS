@@ -305,7 +305,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     return runUpdateMessagesAction(new Computable<Boolean>() {
       public Boolean compute() {
         final SNode editedNode = component.getEditedNode();
-        if (editedNode != null) {
+        if (editedNode != null && !editedNode.isDisposed()) {
           final Set<IEditorChecker> checkersToRecheck = new LinkedHashSet<IEditorChecker>();
           boolean wasCheckedOnce = wasCheckedOnce(component);
           if (!wasCheckedOnce) {
