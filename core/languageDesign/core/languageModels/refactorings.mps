@@ -43,7 +43,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="21" />
+  <maxImportIndex value="22" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590287(jetbrains.mps.lang.core.scripts)" version="-1" />
@@ -62,6 +62,7 @@
   <import index="19" modelUID="f:java_stub#javax.swing.tree(javax.swing.tree@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
   <import index="21" modelUID="f:java_stub#jetbrains.mps.ide.ui(jetbrains.mps.ide.ui@java_stub)" version="-1" />
+  <import index="22" modelUID="f:java_stub#com.intellij.openapi.wm(com.intellij.openapi.wm@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="1347577327951770664">
     <property name="name:1" value="Rename" />
     <property name="userFriendlyName:1" value="Rename" />
@@ -145,6 +146,46 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1347577327951780484">
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1347577327951780485">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8537071608806078683">
+              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8537071608806078684">
+                <property name="name:3" value="frame" />
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8537071608806078685">
+                  <link role="classifier:3" targetNodeId="15.~JFrame" resolveInfo="JFrame" />
+                </node>
+                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8537071608806078686">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8537071608806078687">
+                    <link role="baseMethodDeclaration:3" targetNodeId="22.~WindowManager.getInstance():com.intellij.openapi.wm.WindowManager" resolveInfo="getInstance" />
+                    <link role="classConcept:3" targetNodeId="22.~WindowManager" resolveInfo="WindowManager" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8537071608806078688">
+                    <link role="baseMethodDeclaration:3" targetNodeId="22.~WindowManager.getFrame(com.intellij.openapi.project.Project):javax.swing.JFrame" resolveInfo="getFrame" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8537071608806078689">
+                      <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter:1" id="8537071608806078690" />
+                      <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.MainProjectOperation:1" id="8537071608806078691" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8537071608806061066">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8537071608806074926">
+                <link role="classConcept:3" targetNodeId="15.~JOptionPane" resolveInfo="JOptionPane" />
+                <link role="baseMethodDeclaration:3" targetNodeId="15.~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int):void" resolveInfo="showMessageDialog" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8537071608806078692">
+                  <link role="variableDeclaration:3" targetNodeId="8537071608806078684" resolveInfo="frame" />
+                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8537071608806078694">
+                  <property name="value:3" value="Nodes with getter for the &quot;name&quot; property can't be renamed" />
+                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8537071608806078699">
+                  <property name="value:3" value="Node can't be renamed" />
+                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="8537071608806078696">
+                  <link role="classifier:3" targetNodeId="15.~JOptionPane" resolveInfo="JOptionPane" />
+                  <link role="variableDeclaration:3" targetNodeId="15.~JOptionPane.INFORMATION_MESSAGE" resolveInfo="INFORMATION_MESSAGE" />
+                </node>
+              </node>
+            </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1347577327951780486">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1347577327951780487">
                 <property name="value:3" value="false" />
