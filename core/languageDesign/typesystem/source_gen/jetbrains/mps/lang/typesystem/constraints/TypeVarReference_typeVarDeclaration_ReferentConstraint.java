@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.typesystem.search.TypeVarScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TypeVarReference_typeVarDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public TypeVarReference_typeVarDeclaration_ReferentConstraint() {
@@ -23,5 +24,9 @@ public class TypeVarReference_typeVarDeclaration_ReferentConstraint extends Base
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new TypeVarScope(_context.getEnclosingNode());
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1213104847202");
   }
 }

@@ -12,6 +12,7 @@ import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class StaticFieldReference_staticFieldDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public StaticFieldReference_staticFieldDeclaration_ReferentConstraint() {
@@ -28,5 +29,9 @@ public class StaticFieldReference_staticFieldDeclaration_ReferentConstraint exte
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     // static fields from hierarchy of specified class 
     return new ClassifierVisibleStaticMembersScope(((Classifier) SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getReferenceNode(), "classifier", false))), _context.getReferenceNode(), IClassifiersSearchScope.STATIC_FIELD);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213104847361");
   }
 }

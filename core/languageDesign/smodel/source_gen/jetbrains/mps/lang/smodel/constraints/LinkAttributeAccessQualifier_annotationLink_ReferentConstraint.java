@@ -13,6 +13,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class LinkAttributeAccessQualifier_annotationLink_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public LinkAttributeAccessQualifier_annotationLink_ReferentConstraint() {
@@ -36,5 +37,9 @@ public class LinkAttributeAccessQualifier_annotationLink_ReferentConstraint exte
       }
     }).toListSequence();
     return linkAttrLinks;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104856013");
   }
 }

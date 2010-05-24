@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -25,6 +26,10 @@ public class ReferenceContainer_rightChild_ReferentConstraint extends BaseNodeRe
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.smodelTests.structure.Child");
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "8758390115029225986");
   }
 
   public boolean hasPresentation() {

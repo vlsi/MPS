@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.packaging.behavior.Variable_Behavior;
 import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Variable_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
   public Variable_DefaultSearchScope() {
@@ -25,5 +26,9 @@ public class Variable_DefaultSearchScope extends BaseNodeReferenceSearchScopePro
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return ListSequence.fromList(Variable_Behavior.getDefaultVariables_7323449223785133410()).union(ListSequence.fromList(IVariableHolder_Behavior.call_getAllVariable_1234864693585(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.build.packaging.structure.IVariableHolder", true, false))));
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)", "1233927017126");
   }
 }

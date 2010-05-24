@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptBehavior_defaultConcreteConcept_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ConceptBehavior_defaultConcreteConcept_ReferentConstraint() {
@@ -29,5 +30,9 @@ public class ConceptBehavior_defaultConcreteConcept_ReferentConstraint extends B
     SNode concept = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getReferenceNode(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false), "concept", false);
     List<SNode> concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
     return concepts;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "1225194245361");
   }
 }

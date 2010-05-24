@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ApplicableNodeReference_applicableNode_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ApplicableNodeReference_applicableNode_ReferentConstraint() {
@@ -62,5 +63,9 @@ public class ApplicableNodeReference_applicableNode_ReferentConstraint extends B
       matchStatementItem = SNodeOperations.getAncestor(matchStatementItem, "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", false, false);
     }
     return result;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1213104858865");
   }
 }

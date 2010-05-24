@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint() {
@@ -33,5 +34,9 @@ public class WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint ex
       ListSequence.fromList(declarations).addElement(SLinkOperations.getTarget(whenConcreteStatement, "argumentRepresentator", true));
     }
     return declarations;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1213104837477");
   }
 }

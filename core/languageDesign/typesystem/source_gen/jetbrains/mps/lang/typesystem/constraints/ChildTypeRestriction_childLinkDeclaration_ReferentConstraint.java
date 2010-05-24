@@ -13,6 +13,7 @@ import jetbrains.mps.lang.typesystem.behavior.ApplicableNodeCondition_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ChildTypeRestriction_childLinkDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ChildTypeRestriction_childLinkDeclaration_ReferentConstraint() {
@@ -31,5 +32,9 @@ public class ChildTypeRestriction_childLinkDeclaration_ReferentConstraint extend
     SNode abstractConceptDeclaration = ApplicableNodeCondition_Behavior.call_getApplicableConcept_1213877307633(SLinkOperations.getTarget(inferenceRule, "applicableNode", true));
     ConceptAndSuperConceptsScope conceptScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(abstractConceptDeclaration)));
     return conceptScope;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1213104847822");
   }
 }

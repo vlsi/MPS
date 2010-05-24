@@ -15,6 +15,7 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint() {
@@ -37,5 +38,9 @@ public class Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstrai
         return SPropertyOperations.hasValue(it, "metaClass", "reference", "reference");
       }
     });
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1221169557310");
   }
 }

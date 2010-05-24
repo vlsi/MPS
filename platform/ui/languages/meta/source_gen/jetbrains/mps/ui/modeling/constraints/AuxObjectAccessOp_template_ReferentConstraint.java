@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ui.modeling.behavior.HasTemplate_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class AuxObjectAccessOp_template_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public AuxObjectAccessOp_template_ReferentConstraint() {
@@ -32,5 +33,9 @@ public class AuxObjectAccessOp_template_ReferentConstraint extends BaseNodeRefer
       SLinkOperations.getTarget(uiot, "uiObject", false)
     );
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(HasTemplate_Behavior.call_findTemplate_3939571372331676060(uio, _context.getModel(), operationContext.getScope()), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "auxillary", true), "auxTemplate", true);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "1412244996131808159");
   }
 }

@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class SPropertyAccess_property_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public SPropertyAccess_property_ReferentConstraint() {
@@ -27,5 +28,9 @@ public class SPropertyAccess_property_ReferentConstraint extends BaseNodeReferen
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode dotOperandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1213877508847(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"));
     return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(dotOperandConcept);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104840264");
   }
 }

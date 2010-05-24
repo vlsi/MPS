@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.xml.actions.ElementUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.EmptySearchScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ElementBuilder_elementDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ElementBuilder_elementDeclaration_ReferentConstraint() {
@@ -37,5 +38,9 @@ public class ElementBuilder_elementDeclaration_ReferentConstraint extends BaseNo
     } else {
       return new EmptySearchScope();
     }
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:e79b58b4-ea58-4c9d-b43b-c3a260addf6a(jetbrains.mps.xmlQuery.constraints)", "1384720974900260388");
   }
 }

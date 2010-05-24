@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -35,6 +36,10 @@ public class MatchVariableReferenceReplacement_match_ReferentConstraint extends 
       Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(top, "search", true), matches);
     }
     return matches;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "3796137614137558194");
   }
 
   public boolean hasPresentation() {

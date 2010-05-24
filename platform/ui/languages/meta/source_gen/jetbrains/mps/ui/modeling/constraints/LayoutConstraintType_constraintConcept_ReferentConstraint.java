@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
 
 public class LayoutConstraintType_constraintConcept_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -32,6 +33,10 @@ public class LayoutConstraintType_constraintConcept_ReferentConstraint extends B
         return !(SConceptPropertyOperations.getBoolean(it, "abstract"));
       }
     });
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "7930737280446914702");
   }
 
   public boolean hasPresentation() {

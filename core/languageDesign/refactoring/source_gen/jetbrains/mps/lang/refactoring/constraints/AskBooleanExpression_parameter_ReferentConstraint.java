@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class AskBooleanExpression_parameter_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public AskBooleanExpression_parameter_ReferentConstraint() {
@@ -31,5 +32,9 @@ public class AskBooleanExpression_parameter_ReferentConstraint extends BaseNodeR
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "chooser", true), "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser");
       }
     });
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "4312073247720715119");
   }
 }

@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -38,6 +39,10 @@ public class MatchVariableReferenceRegexp_match_ReferentConstraint extends BaseN
       ListSequence.fromList(matches).addElement(SNodeOperations.cast(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"));
     }
     return matches;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "1213104860360");
   }
 
   public boolean hasPresentation() {

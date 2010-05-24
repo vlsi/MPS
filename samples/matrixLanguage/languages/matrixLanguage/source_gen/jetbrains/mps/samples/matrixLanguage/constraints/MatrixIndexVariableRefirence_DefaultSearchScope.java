@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class MatrixIndexVariableRefirence_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
   public MatrixIndexVariableRefirence_DefaultSearchScope() {
@@ -37,5 +38,9 @@ public class MatrixIndexVariableRefirence_DefaultSearchScope extends BaseNodeRef
     }
     SimpleSearchScope result = new SimpleSearchScope(vars);
     return result;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c8959044f(jetbrains.mps.samples.matrixLanguage.constraints)", "1213107436039");
   }
 }

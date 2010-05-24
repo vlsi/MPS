@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class DefaultClassifierType_classifier_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public DefaultClassifierType_classifier_ReferentConstraint() {
@@ -36,5 +37,9 @@ public class DefaultClassifierType_classifier_ReferentConstraint extends BaseNod
       }
     }).toListSequence();
     return classifiers;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "1216915259774");
   }
 }

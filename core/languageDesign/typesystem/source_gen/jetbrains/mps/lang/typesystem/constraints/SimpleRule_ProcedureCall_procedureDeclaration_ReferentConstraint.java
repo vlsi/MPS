@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint() {
@@ -30,5 +31,9 @@ public class SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint ex
       return AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(conceptDeclaration);
     }
     return new ArrayList<SNode>();
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1223057283782");
   }
 }

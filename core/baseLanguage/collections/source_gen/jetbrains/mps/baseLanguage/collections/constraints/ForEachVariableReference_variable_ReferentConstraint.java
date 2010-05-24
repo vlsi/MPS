@@ -11,6 +11,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.NodeListChildrenSearchScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ForEachVariableReference_variable_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ForEachVariableReference_variable_ReferentConstraint() {
@@ -28,5 +29,9 @@ public class ForEachVariableReference_variable_ReferentConstraint extends BaseNo
     // cycle-variable of enclosing 'foreach' cycle 
     List<SNode> forEachStatements = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", false);
     return new NodeListChildrenSearchScope(forEachStatements);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1213104847100");
   }
 }

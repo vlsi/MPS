@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TreeNodeKindOccurrence_nodeKind_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public TreeNodeKindOccurrence_nodeKind_ReferentConstraint() {
@@ -33,5 +34,9 @@ public class TreeNodeKindOccurrence_nodeKind_ReferentConstraint extends BaseNode
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreeNodeKind");
       }
     }).toListSequence();
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104859283");
   }
 }

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class MatrixInitializerIndexReference_index_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public MatrixInitializerIndexReference_index_ReferentConstraint() {
@@ -64,5 +65,9 @@ public class MatrixInitializerIndexReference_index_ReferentConstraint extends Ba
       n = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer", false, false);
     }
     return indices;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)", "6219660258344759923");
   }
 }

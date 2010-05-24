@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TaskCall_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
   public TaskCall_DefaultSearchScope() {
@@ -35,5 +36,9 @@ public class TaskCall_DefaultSearchScope extends BaseNodeReferenceSearchScopePro
       }
     }
     return visible;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:71eee63a-b16f-40f8-920d-8fd0fe7dc8a1(jetbrains.mps.build.generictasks.constraints)", "353793545802644535");
   }
 }

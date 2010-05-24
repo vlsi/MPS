@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class OperationDeclaration_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
   public OperationDeclaration_DefaultSearchScope() {
@@ -33,5 +34,9 @@ public class OperationDeclaration_DefaultSearchScope extends BaseNodeReferenceSe
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(tg, "operation", true)));
     }
     return result;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1236703304349");
   }
 }

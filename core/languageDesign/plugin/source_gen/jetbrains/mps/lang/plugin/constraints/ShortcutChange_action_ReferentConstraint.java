@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ShortcutChange_action_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ShortcutChange_action_ReferentConstraint() {
@@ -23,5 +24,9 @@ public class ShortcutChange_action_ReferentConstraint extends BaseNodeReferenceS
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.lang.plugin.structure.ActionDeclaration");
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "6193305307616734337");
   }
 }

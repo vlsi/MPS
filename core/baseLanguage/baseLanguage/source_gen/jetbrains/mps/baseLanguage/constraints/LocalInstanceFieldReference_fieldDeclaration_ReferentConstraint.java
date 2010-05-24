@@ -21,6 +21,7 @@ import java.util.HashSet;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class LocalInstanceFieldReference_fieldDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public LocalInstanceFieldReference_fieldDeclaration_ReferentConstraint() {
@@ -63,5 +64,9 @@ public class LocalInstanceFieldReference_fieldDeclaration_ReferentConstraint ext
       classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     }
     return result;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7785501532031899739");
   }
 }

@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class NamedTupleComponentAccessOperation_component_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public NamedTupleComponentAccessOperation_component_ReferentConstraint() {
@@ -25,5 +26,9 @@ public class NamedTupleComponentAccessOperation_component_ReferentConstraint ext
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"), "classifier", false), "component", true);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239576899058");
   }
 }

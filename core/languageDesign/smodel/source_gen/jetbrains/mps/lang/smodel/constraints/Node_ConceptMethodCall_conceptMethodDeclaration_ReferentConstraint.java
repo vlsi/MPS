@@ -17,6 +17,7 @@ import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.smodel.search.EmptySearchScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Node_ConceptMethodCall_conceptMethodDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public Node_ConceptMethodCall_conceptMethodDeclaration_ReferentConstraint() {
@@ -42,5 +43,9 @@ public class Node_ConceptMethodCall_conceptMethodDeclaration_ReferentConstraint 
       searchScope = new EmptySearchScope();
     }
     return searchScope;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104840562");
   }
 }

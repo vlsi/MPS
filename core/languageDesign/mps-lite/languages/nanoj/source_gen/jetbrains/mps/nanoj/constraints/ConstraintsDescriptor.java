@@ -4,36 +4,26 @@ package jetbrains.mps.nanoj.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.nanoj.constraints.Constructor_name_PropertyConstraint;
-import jetbrains.mps.nanoj.constraints.FieldAccess_declaration_ReferentConstraint;
-import jetbrains.mps.nanoj.constraints.ParameterReference_parameter_ReferentConstraint;
-import jetbrains.mps.nanoj.constraints.InstanceMethodCall_method_ReferentConstraint;
-import jetbrains.mps.nanoj.constraints.LocalVariableReference_variable_ReferentConstraint;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class ConstraintsDescriptor implements IModelConstraints {
-
-  private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
+  private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    this.myConstraints.add(new Constructor_name_PropertyConstraint());
-    this.myConstraints.add(new FieldAccess_declaration_ReferentConstraint());
-    this.myConstraints.add(new ParameterReference_parameter_ReferentConstraint());
-    this.myConstraints.add(new InstanceMethodCall_method_ReferentConstraint());
-    this.myConstraints.add(new LocalVariableReference_variable_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new VarDeclReference_declaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
-    for(IModelConstraints c : this.myConstraints) {
+    for (IModelConstraints c : this.myConstraints) {
       c.unRegisterSelf(p0);
     }
   }
 
   public void registerSelf(ModelConstraintsManager p0) {
-    for(IModelConstraints c : this.myConstraints) {
+    for (IModelConstraints c : this.myConstraints) {
       c.registerSelf(p0);
     }
   }
-
 }

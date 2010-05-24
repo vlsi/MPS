@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint() {
@@ -37,5 +38,9 @@ public class MatrixElementVariableReference_matrixElementDeclaration_ReferentCon
     }
     SimpleSearchScope result = new SimpleSearchScope(vars);
     return result;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c8959044f(jetbrains.mps.samples.matrixLanguage.constraints)", "1213107435732");
   }
 }

@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.behavior.SModelLanguageUtil;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class EnumMemberReference_enumMember_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public EnumMemberReference_enumMember_ReferentConstraint() {
@@ -34,5 +35,9 @@ public class EnumMemberReference_enumMember_ReferentConstraint extends BaseNodeR
       }
     }
     return null;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104858409");
   }
 }

@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class RequiredAdditionalArgumentReference_argument_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public RequiredAdditionalArgumentReference_argument_ReferentConstraint() {
@@ -32,5 +33,9 @@ public class RequiredAdditionalArgumentReference_argument_ReferentConstraint ext
     ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(refactoring, "arguments", true)));
     ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(refactoring, "internalArguments", true)));
     return nodes;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "1214839131317");
   }
 }

@@ -16,6 +16,7 @@ import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class NamedTupleType_tupleDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public NamedTupleType_tupleDeclaration_ReferentConstraint() {
@@ -41,5 +42,9 @@ public class NamedTupleType_tupleDeclaration_ReferentConstraint extends BaseNode
         return result;
       }
     };
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1652220223504359703");
   }
 }

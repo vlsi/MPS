@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptDeclaration_extends_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ConceptDeclaration_extends_ReferentConstraint() {
@@ -23,5 +24,9 @@ public class ConceptDeclaration_extends_ReferentConstraint extends BaseNodeRefer
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     // don't allow cycling 
     return new ConceptDeclarationExtendedConceptSearchScope(_context.getReferenceNode(), operationContext.getScope());
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104841231");
   }
 }

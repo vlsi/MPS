@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class VariableDeclarationReference_var_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public VariableDeclarationReference_var_ReferentConstraint() {
@@ -35,5 +36,9 @@ public class VariableDeclarationReference_var_ReferentConstraint extends BaseNod
       }
     }
     return result;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:94b1feee-20bf-48e9-9677-814a5fdcaf90(jetbrains.mps.lang.editor.editorTest.constraints)", "2340678293597344726");
   }
 }

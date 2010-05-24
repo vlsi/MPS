@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ThisExpression_classConcept_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ThisExpression_classConcept_ReferentConstraint() {
@@ -30,5 +31,9 @@ public class ThisExpression_classConcept_ReferentConstraint extends BaseNodeRefe
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
     return ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(SNodeOperations.cast(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ThisExpression"));
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213104846936");
   }
 }

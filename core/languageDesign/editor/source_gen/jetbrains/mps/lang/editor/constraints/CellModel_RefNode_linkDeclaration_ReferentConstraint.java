@@ -15,6 +15,7 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class CellModel_RefNode_linkDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public CellModel_RefNode_linkDeclaration_ReferentConstraint() {
@@ -38,5 +39,9 @@ public class CellModel_RefNode_linkDeclaration_ReferentConstraint extends BaseNo
         return LinkDeclaration_Behavior.call_isSingular_1213877254557(it);
       }
     }).toListSequence();
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1213104860581");
   }
 }

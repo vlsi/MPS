@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ModificationStatement_point_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ModificationStatement_point_ReferentConstraint() {
@@ -36,5 +37,9 @@ public class ModificationStatement_point_ReferentConstraint extends BaseNodeRefe
       }).toListSequence();
     }
     return new ArrayList<SNode>();
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213104860270");
   }
 }

@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint() {
@@ -33,5 +34,9 @@ public class SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclarati
       ListSequence.fromList(vars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(builder, "variable", true)));
     }
     return vars;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1213104855839");
   }
 }

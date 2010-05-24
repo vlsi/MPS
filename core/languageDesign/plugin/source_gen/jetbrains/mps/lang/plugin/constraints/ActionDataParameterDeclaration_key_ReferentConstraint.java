@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ActionDataParameterDeclaration_key_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ActionDataParameterDeclaration_key_ReferentConstraint() {
@@ -23,5 +24,9 @@ public class ActionDataParameterDeclaration_key_ReferentConstraint extends BaseN
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return ActionDataParameterDeclaration_Behavior.getVariants_1227641865136();
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1217254460030");
   }
 }

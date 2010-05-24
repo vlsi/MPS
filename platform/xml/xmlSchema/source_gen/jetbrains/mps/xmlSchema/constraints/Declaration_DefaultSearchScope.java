@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SubnodesSearchScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Declaration_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
   public Declaration_DefaultSearchScope() {
@@ -25,5 +26,9 @@ public class Declaration_DefaultSearchScope extends BaseNodeReferenceSearchScope
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode schema = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.xmlSchema.structure.Schema", true, false);
     return new SubnodesSearchScope(schema);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590595(jetbrains.mps.xmlSchema.constraints)", "1213104847290");
   }
 }

@@ -13,9 +13,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class VarDeclReference_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public VarDeclReference_declaration_ReferentConstraint() {
   }
 
@@ -35,8 +35,7 @@ public class VarDeclReference_declaration_ReferentConstraint extends BaseNodeRef
       if ((currentBlock == null)) {
         break;
       }
-      for(SNode statement : ListSequence.fromList(SNodeOperations.getChildren(currentBlock)).where(new IWhereFilter <SNode>() {
-
+      for (SNode statement : ListSequence.fromList(SNodeOperations.getChildren(currentBlock)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, "jetbrains.mps.nanoj.structure.NanoStatement");
         }
@@ -51,4 +50,7 @@ public class VarDeclReference_declaration_ReferentConstraint extends BaseNodeRef
     return result;
   }
 
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895905dc(jetbrains.mps.nanoj.constraints)", "1239982506080");
+  }
 }

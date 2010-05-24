@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.xmlSchema.behavior.ElementDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Attribute_attributeDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public Attribute_attributeDeclaration_ReferentConstraint() {
@@ -36,5 +37,9 @@ public class Attribute_attributeDeclaration_ReferentConstraint extends BaseNodeR
       searchScope = new SimpleSearchScope(ElementDeclaration_Behavior.call_getAttributeDeclarations_1213877429821(SLinkOperations.getTarget(element, "elementDeclaration", false)));
     }
     return searchScope;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590585(jetbrains.mps.xml.constraints)", "1213104860621");
   }
 }

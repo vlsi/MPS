@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ViewBinding_property_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ViewBinding_property_ReferentConstraint() {
@@ -32,5 +33,9 @@ public class ViewBinding_property_ReferentConstraint extends BaseNodeReferenceSe
         return SLinkOperations.getTargets(n, "property", true);
       }
     });
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)", "8115675450774409689");
   }
 }

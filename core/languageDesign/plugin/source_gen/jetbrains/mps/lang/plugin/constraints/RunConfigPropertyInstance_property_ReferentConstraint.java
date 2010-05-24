@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class RunConfigPropertyInstance_property_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public RunConfigPropertyInstance_property_ReferentConstraint() {
@@ -34,5 +35,9 @@ public class RunConfigPropertyInstance_property_ReferentConstraint extends BaseN
       return new ArrayList<SNode>();
     }
     return SLinkOperations.getTargets(runConfig, "property", true);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "7066926174333292962");
   }
 }

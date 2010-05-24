@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ypath.actions.TreePathAspectUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TreePathAdapterExpression_treepathAspect_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public TreePathAdapterExpression_treepathAspect_ReferentConstraint() {
@@ -26,5 +27,9 @@ public class TreePathAdapterExpression_treepathAspect_ReferentConstraint extends
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode tpae = _context.getReferenceNode();
     return TreePathAspectUtil.getTreePathAspects(SLinkOperations.getTarget(tpae, "expression", true), operationContext.getScope());
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104858654");
   }
 }

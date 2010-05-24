@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -36,6 +37,10 @@ public class FieldDocReference_fieldDeclaration_ReferentConstraint extends BaseN
         return SLinkOperations.getTarget(it, "visibility", true) == new FieldDocReference_fieldDeclaration_ReferentConstraint.QuotationClass_om8oe2_a0a0a0a0a0c().createNode();
       }
     });
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "7051378335467735966");
   }
 
   public static class QuotationClass_om8oe2_a0a0a0a0a0c {

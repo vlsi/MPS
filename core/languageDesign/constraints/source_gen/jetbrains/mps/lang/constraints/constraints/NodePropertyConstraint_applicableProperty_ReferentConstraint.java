@@ -12,6 +12,7 @@ import jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class NodePropertyConstraint_applicableProperty_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public NodePropertyConstraint_applicableProperty_ReferentConstraint() {
@@ -37,5 +38,9 @@ public class NodePropertyConstraint_applicableProperty_ReferentConstraint extend
       }
     }
     return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(applicableConcept);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "1213104781821");
   }
 }

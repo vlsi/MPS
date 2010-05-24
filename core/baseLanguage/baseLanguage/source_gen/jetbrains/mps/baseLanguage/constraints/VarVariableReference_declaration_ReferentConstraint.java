@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class VarVariableReference_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public VarVariableReference_declaration_ReferentConstraint() {
@@ -30,5 +31,9 @@ public class VarVariableReference_declaration_ReferentConstraint extends BaseNod
     SNode methodDeclaration = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(methodDeclaration, "jetbrains.mps.baseLanguage.structure.VarVariableDeclaration", false, new String[]{})));
     return result;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1236697659585");
   }
 }

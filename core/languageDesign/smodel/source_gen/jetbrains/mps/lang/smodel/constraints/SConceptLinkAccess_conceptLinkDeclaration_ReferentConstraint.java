@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint() {
@@ -39,5 +40,9 @@ public class SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint extend
       }
     }
     return AbstractConceptDeclaration_Behavior.call_getConceptLinkDeclarations_1213877394578(operandConcept);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104847319");
   }
 }

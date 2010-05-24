@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Node_IsRoleOperation_linkInParent_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public Node_IsRoleOperation_linkInParent_ReferentConstraint() {
@@ -26,5 +27,9 @@ public class Node_IsRoleOperation_linkInParent_ReferentConstraint extends BaseNo
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode conceptOfParent = SLinkOperations.getTarget(_context.getReferenceNode(), "conceptOfParent", false);
     return AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(conceptOfParent);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104847807");
   }
 }

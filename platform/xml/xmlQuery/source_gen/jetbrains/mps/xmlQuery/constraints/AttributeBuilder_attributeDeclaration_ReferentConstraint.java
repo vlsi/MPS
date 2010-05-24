@@ -12,6 +12,7 @@ import jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.xmlQuery.behavior.ElementBuilder_Behavior;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -34,6 +35,10 @@ public class AttributeBuilder_attributeDeclaration_ReferentConstraint extends Ba
       return SchemaUtil.getAvailableAttributes(ElementBuilder_Behavior.call_getComplexType_1384720974900281910(SNodeOperations.cast(contextBuilder, "jetbrains.mps.xmlQuery.structure.ElementBuilder")));
     }
     return new ArrayList<SNode>();
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:e79b58b4-ea58-4c9d-b43b-c3a260addf6a(jetbrains.mps.xmlQuery.constraints)", "7225751495667376052");
   }
 
   public boolean hasPresentation() {

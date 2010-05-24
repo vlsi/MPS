@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class LocalVariableReference_localVariableDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public LocalVariableReference_localVariableDeclaration_ReferentConstraint() {
@@ -23,5 +24,9 @@ public class LocalVariableReference_localVariableDeclaration_ReferentConstraint 
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new LocalVariablesScope(_context.getEnclosingNode());
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1236696046358");
   }
 }

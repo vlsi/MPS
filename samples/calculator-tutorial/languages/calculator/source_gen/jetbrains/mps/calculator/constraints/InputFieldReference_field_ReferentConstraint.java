@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class InputFieldReference_field_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public InputFieldReference_field_ReferentConstraint() {
@@ -26,5 +27,9 @@ public class InputFieldReference_field_ReferentConstraint extends BaseNodeRefere
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode calc = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.calculator.structure.Calcualtor", false, false);
     return SLinkOperations.getTargets(calc, "inputField", true);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:ac9571c5-26be-4fef-b5fd-705a2c38e949(jetbrains.mps.calculator.constraints)", "1241364816355");
   }
 }

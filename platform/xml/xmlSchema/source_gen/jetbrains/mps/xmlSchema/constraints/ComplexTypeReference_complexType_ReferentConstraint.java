@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ModelAndImportedModelsScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ComplexTypeReference_complexType_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ComplexTypeReference_complexType_ReferentConstraint() {
@@ -23,5 +24,9 @@ public class ComplexTypeReference_complexType_ReferentConstraint extends BaseNod
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new ModelAndImportedModelsScope(_context.getModel(), false, operationContext.getScope());
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590595(jetbrains.mps.xmlSchema.constraints)", "115745247309443797");
   }
 }

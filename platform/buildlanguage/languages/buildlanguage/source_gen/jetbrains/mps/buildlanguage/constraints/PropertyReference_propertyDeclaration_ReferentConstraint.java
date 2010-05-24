@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.buildlanguage.behavior.PropertyReference_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class PropertyReference_propertyDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public PropertyReference_propertyDeclaration_ReferentConstraint() {
@@ -23,5 +24,9 @@ public class PropertyReference_propertyDeclaration_ReferentConstraint extends Ba
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return PropertyReference_Behavior.getAllVisibleDeclarations_1239123615225(_context.getEnclosingNode());
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)", "1213104860242");
   }
 }

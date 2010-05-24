@@ -16,6 +16,7 @@ import jetbrains.mps.ui.modeling.behavior.UIObject_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class UIObject_belongsTo_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public UIObject_belongsTo_ReferentConstraint() {
@@ -45,5 +46,9 @@ public class UIObject_belongsTo_ReferentConstraint extends BaseNodeReferenceSear
       });
     }
     return nodes;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "1719339442170193747");
   }
 }

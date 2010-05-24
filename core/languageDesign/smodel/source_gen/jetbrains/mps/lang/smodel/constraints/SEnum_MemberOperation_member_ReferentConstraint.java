@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class SEnum_MemberOperation_member_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public SEnum_MemberOperation_member_ReferentConstraint() {
@@ -30,5 +31,9 @@ public class SEnum_MemberOperation_member_ReferentConstraint extends BaseNodeRef
       return SLinkOperations.getTargets(enumNode, "member", true);
     }
     return new ArrayList<SNode>();
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1240148891886");
   }
 }

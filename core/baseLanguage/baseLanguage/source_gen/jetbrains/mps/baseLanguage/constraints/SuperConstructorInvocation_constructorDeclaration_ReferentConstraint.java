@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -39,6 +40,10 @@ public class SuperConstructorInvocation_constructorDeclaration_ReferentConstrain
       superClass = SNodeOperations.cast(SLinkOperations.getTarget(new SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.QuotationClass_kci5zf_a0a0a0a3a2().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     }
     return SLinkOperations.getTargets(superClass, "constructor", true);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213104847241");
   }
 
   public static class QuotationClass_kci5zf_a0a0a0a3a2 {

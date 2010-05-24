@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Interface_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
   public Interface_DefaultSearchScope() {
@@ -23,5 +24,9 @@ public class Interface_DefaultSearchScope extends BaseNodeReferenceSearchScopePr
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new VisibleClassifiersScope(_context.getEnclosingNode(), IClassifiersSearchScope.INTERFACE, operationContext.getScope());
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213104847535");
   }
 }

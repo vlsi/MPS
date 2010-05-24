@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderDeclaration_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class SimpleBuilder_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public SimpleBuilder_declaration_ReferentConstraint() {
@@ -53,5 +54,9 @@ public class SimpleBuilder_declaration_ReferentConstraint extends BaseNodeRefere
     } else {
       return new ArrayList<SNode>();
     }
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)", "7288041816793179321");
   }
 }

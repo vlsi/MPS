@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class BinaryOperationReference_binaryOperation_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public BinaryOperationReference_binaryOperation_ReferentConstraint() {
@@ -45,5 +46,9 @@ public class BinaryOperationReference_binaryOperation_ReferentConstraint extends
       }));
     }
     return result;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:9b7a7baa-7b52-4b41-8293-5aa14d41220f(jetbrains.mps.baseLanguage.overloadedOperators.constraints)", "2838654975957288976");
   }
 }

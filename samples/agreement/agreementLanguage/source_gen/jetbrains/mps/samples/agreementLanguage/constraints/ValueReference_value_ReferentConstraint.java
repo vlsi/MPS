@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SubnodesSearchScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ValueReference_value_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ValueReference_value_ReferentConstraint() {
@@ -26,5 +27,9 @@ public class ValueReference_value_ReferentConstraint extends BaseNodeReferenceSe
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode plan = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.agreementLanguage.structure.Plan", true, false);
     return new SubnodesSearchScope(plan);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590408(jetbrains.mps.samples.agreementLanguage.constraints)", "1214253543334");
   }
 }

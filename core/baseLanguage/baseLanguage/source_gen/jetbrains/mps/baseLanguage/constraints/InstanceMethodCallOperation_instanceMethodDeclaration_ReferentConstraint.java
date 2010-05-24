@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint() {
@@ -35,5 +36,9 @@ public class InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConst
     SNode instance = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     return new InstanceMethodCall_InstanceMethodScope(((ClassifierType) SNodeOperations.getAdapter(classifierType)), _context.getEnclosingNode());
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213104856737");
   }
 }

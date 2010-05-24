@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.SubnodesSearchScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint() {
@@ -24,5 +25,9 @@ public class EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint ext
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     // members declared here 
     return new SubnodesSearchScope(_context.getReferenceNode());
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104847177");
   }
 }

@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class CallReference_call_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public CallReference_call_ReferentConstraint() {
@@ -32,5 +33,9 @@ public class CallReference_call_ReferentConstraint extends BaseNodeReferenceSear
         return StringUtils.isNotEmpty(SPropertyOperations.getString(it, "name"));
       }
     });
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)", "4710899751214243185");
   }
 }

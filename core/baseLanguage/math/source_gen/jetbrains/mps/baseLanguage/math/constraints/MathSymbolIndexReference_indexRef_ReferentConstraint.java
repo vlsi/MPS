@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.math.behavior.MathSymbol_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class MathSymbolIndexReference_indexRef_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public MathSymbolIndexReference_indexRef_ReferentConstraint() {
@@ -29,5 +30,9 @@ public class MathSymbolIndexReference_indexRef_ReferentConstraint extends BaseNo
     List<SNode> msi = MathSymbol_Behavior.call_getEmptyIndexList_1237828382992(ms);
     MathSymbol_Behavior.call_getVisibleIndices_1236440390782(ms, _context.getEnclosingNode(), msi);
     return msi;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)", "1237825752099");
   }
 }

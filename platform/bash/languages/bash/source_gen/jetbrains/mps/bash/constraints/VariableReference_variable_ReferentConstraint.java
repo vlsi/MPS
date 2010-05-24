@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.bash.behavior.VariableNameDeclaration_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class VariableReference_variable_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public VariableReference_variable_ReferentConstraint() {
@@ -23,5 +24,9 @@ public class VariableReference_variable_ReferentConstraint extends BaseNodeRefer
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return VariableNameDeclaration_Behavior.getDefinedBeforeNode_9034131902193864152(_context.getEnclosingNode());
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:32c4fb44-9e66-4976-aa43-e37da5fe27dd(jetbrains.mps.bash.constraints)", "9034131902193373921");
   }
 }

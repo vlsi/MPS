@@ -19,6 +19,7 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_Behavi
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class IMemberOperation_member_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public IMemberOperation_member_ReferentConstraint() {
@@ -48,5 +49,9 @@ public class IMemberOperation_member_ReferentConstraint extends BaseNodeReferenc
       }
     }
     return applicableMembers;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "1213104844336");
   }
 }

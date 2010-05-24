@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class NamedTupleDeclaration_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
   public NamedTupleDeclaration_DefaultSearchScope() {
@@ -33,5 +34,9 @@ public class NamedTupleDeclaration_DefaultSearchScope extends BaseNodeReferenceS
         return SNodeOperations.getModel(ntd) == refModel || (SLinkOperations.getTarget(ntd, "visibility", true) != null);
       }
     });
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239537196771");
   }
 }

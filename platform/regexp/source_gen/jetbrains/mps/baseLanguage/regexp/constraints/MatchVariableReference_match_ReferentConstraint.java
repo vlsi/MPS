@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util.GeneratorUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class MatchVariableReference_match_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public MatchVariableReference_match_ReferentConstraint() {
@@ -23,5 +24,9 @@ public class MatchVariableReference_match_ReferentConstraint extends BaseNodeRef
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return GeneratorUtil.collectMatchReferences(_context.getEnclosingNode());
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "1213104858751");
   }
 }

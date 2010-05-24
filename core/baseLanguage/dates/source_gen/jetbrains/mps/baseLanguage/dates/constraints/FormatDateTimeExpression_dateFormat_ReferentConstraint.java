@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class FormatDateTimeExpression_dateFormat_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public FormatDateTimeExpression_dateFormat_ReferentConstraint() {
@@ -22,5 +23,9 @@ public class FormatDateTimeExpression_dateFormat_ReferentConstraint extends Base
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return DateFormatReferenceUtil.buildIDateFormatSearchScope(_context.getEnclosingNode(), operationContext.getScope());
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895903cf(jetbrains.mps.baseLanguage.dates.constraints)", "5034322243092299901");
   }
 }

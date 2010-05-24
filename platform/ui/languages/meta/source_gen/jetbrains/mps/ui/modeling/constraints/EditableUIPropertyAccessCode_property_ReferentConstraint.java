@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class EditableUIPropertyAccessCode_property_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public EditableUIPropertyAccessCode_property_ReferentConstraint() {
@@ -31,5 +32,9 @@ public class EditableUIPropertyAccessCode_property_ReferentConstraint extends Ba
         return SNodeOperations.isInstanceOf(p, "jetbrains.mps.ui.modeling.structure.EditableUIProperty");
       }
     });
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "8938819815716373408");
   }
 }

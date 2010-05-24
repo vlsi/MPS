@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.search.ModelNodesSearchScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class NodeFactory_applicableConcept_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public NodeFactory_applicableConcept_ReferentConstraint() {
@@ -28,5 +29,9 @@ public class NodeFactory_applicableConcept_ReferentConstraint extends BaseNodeRe
     Language language = Language.getLanguageForLanguageAspect(_context.getModel().getModelDescriptor());
     SModel structureModel = language.getStructureModelDescriptor().getSModel();
     return new ModelNodesSearchScope(structureModel);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1213104859361");
   }
 }

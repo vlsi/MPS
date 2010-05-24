@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.baseLanguage.constraints.VisibleClassConstructorsScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class BeanBuilder_constructor_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public BeanBuilder_constructor_ReferentConstraint() {
@@ -23,5 +24,9 @@ public class BeanBuilder_constructor_ReferentConstraint extends BaseNodeReferenc
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new VisibleClassConstructorsScope(_context.getModel(), operationContext.getScope());
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)", "6666322667909634554");
   }
 }

@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class SimpleBuilderPropertyBuilder_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public SimpleBuilderPropertyBuilder_declaration_ReferentConstraint() {
@@ -33,5 +34,9 @@ public class SimpleBuilderPropertyBuilder_declaration_ReferentConstraint extends
     } else {
       return new ArrayList<SNode>();
     }
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)", "5389689214217448672");
   }
 }

@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.smodel.search.EmptySearchScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TreeNodeKindReference_treeNodeKind_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public TreeNodeKindReference_treeNodeKind_ReferentConstraint() {
@@ -32,5 +33,9 @@ public class TreeNodeKindReference_treeNodeKind_ReferentConstraint extends BaseN
       searchScope = new EmptySearchScope();
     }
     return searchScope;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104858820");
   }
 }

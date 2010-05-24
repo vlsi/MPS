@@ -12,6 +12,7 @@ import jetbrains.mps.generator.JavaModelUtil_new;
 import org.joda.time.format.PeriodFormatterBuilder;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class DateTimeProperty_periodFormatMethod_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public DateTimeProperty_periodFormatMethod_ReferentConstraint() {
@@ -29,5 +30,9 @@ public class DateTimeProperty_periodFormatMethod_ReferentConstraint extends Base
     ClassifierType ct = ClassifierType.newInstance(null);
     ct.setClassifier(JavaModelUtil_new.findClassifier(PeriodFormatterBuilder.class));
     return new ClassifierVisibleMembersScope(ct, _context.getEnclosingNode(), IClassifiersSearchScope.INSTANCE_METHOD);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895903db(jetbrains.mps.baseLanguage.datesInternal.constraints)", "48671598476606830");
   }
 }

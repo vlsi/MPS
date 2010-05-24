@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.generictasks.behavior.TaskCall_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class PathReference_call_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public PathReference_call_ReferentConstraint() {
@@ -37,5 +38,9 @@ public class PathReference_call_ReferentConstraint extends BaseNodeReferenceSear
       }
     }
     return newScope;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:71eee63a-b16f-40f8-920d-8fd0fe7dc8a1(jetbrains.mps.build.generictasks.constraints)", "353793545802855004");
   }
 }

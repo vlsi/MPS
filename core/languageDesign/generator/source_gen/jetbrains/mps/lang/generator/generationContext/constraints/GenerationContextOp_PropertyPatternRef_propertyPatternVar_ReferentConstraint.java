@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class GenerationContextOp_PropertyPatternRef_propertyPatternVar_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public GenerationContextOp_PropertyPatternRef_propertyPatternVar_ReferentConstraint() {
@@ -33,5 +34,9 @@ public class GenerationContextOp_PropertyPatternRef_propertyPatternVar_ReferentC
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(rule, "pattern", true), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{})));
     }
     return result;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902ee(jetbrains.mps.lang.generator.generationContext.constraints)", "1758784108619297785");
   }
 }

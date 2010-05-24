@@ -20,11 +20,6 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.typesystem.inference.ReferenceErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -41,9 +36,9 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
       return;
     }
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
-    for (final SReference ref : SNodeOperations.getReferences(node)) {
+    for (SReference ref : SNodeOperations.getReferences(node)) {
       SearchScopeStatus sss = ModelConstraintsUtil.getSearchScope(SNodeOperations.getParent(node), node, concept, SLinkOperations.getRole(ref), context);
-      final SNode target = ref.getTargetNode();
+      SNode target = ref.getTargetNode();
       if (sss.isError()) {
         {
           BaseIntentionProvider intentionProvider = null;
@@ -54,33 +49,6 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
       } else if (sss.isDefault()) {
         // node should be in global scope anyway, no need to check 
       } else if (!(sss.getSearchScope().isInScope(target))) {
-        // calculate ConceptConstraints node with the rule checked 
-        SModelDescriptor linkMD = node.getLanguage(context.getScope()).getConstraintsModelDescriptor();
-        SModel linkModel = (linkMD == null ?
-          null :
-          linkMD.getSModel()
-        );
-        SNode factoryNode = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SModelOperations.getRoots(linkModel, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")).findFirst(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SLinkOperations.getTarget(it, "concept", false) == SNodeOperations.getConceptDeclaration(node);
-          }
-        }), "referent", true)).findFirst(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SLinkOperations.getTarget(it, "applicableLink", false) == SLinkOperations.findLinkDeclaration(ref);
-          }
-        }), "searchScopeFactory", true);
-        if ((factoryNode == null)) {
-          SModelDescriptor targetMD = SLinkOperations.getTargetNode(ref).getLanguage(context.getScope()).getConstraintsModelDescriptor();
-          SModel targetModel = (targetMD == null ?
-            null :
-            targetMD.getSModel()
-          );
-          factoryNode = SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SModelOperations.getRoots(targetModel, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")).findFirst(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return SLinkOperations.getTarget(it, "concept", false) == SNodeOperations.getConceptDeclaration(target);
-            }
-          }), "defaultScope", true), "searchScopeFactory", true);
-        }
         String name = (target == null ?
           "" :
           target.getName()
@@ -97,7 +65,7 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
             " search"
           )) + " scope", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4942048232752376292", intentionProvider, errorTarget);
           {
-            SNode _foreign_34989546 = factoryNode;
+            SNode _foreign_34989546 = sss.getSearchScopeFactoryNode();
             if (_foreign_34989546 != null) {
               _reporter_2309309498.addAdditionalRuleId(_foreign_34989546.getModel().toString(), _foreign_34989546.getId());
             }

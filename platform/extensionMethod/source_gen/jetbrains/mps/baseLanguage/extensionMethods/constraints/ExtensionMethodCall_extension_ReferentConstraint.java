@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ExtensionMethodCall_extension_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ExtensionMethodCall_extension_ReferentConstraint() {
@@ -52,5 +53,9 @@ public class ExtensionMethodCall_extension_ReferentConstraint extends BaseNodeRe
       }
     }
     return result;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "7997068947889524884");
   }
 }

@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class MatchPropertyOperation_property_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public MatchPropertyOperation_property_ReferentConstraint() {
@@ -32,5 +33,9 @@ public class MatchPropertyOperation_property_ReferentConstraint extends BaseNode
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreeNodeKindProperty");
       }
     }).toListSequence();
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104836709");
   }
 }

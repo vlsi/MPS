@@ -19,6 +19,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TaskCall_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints, INodeReferentSetEventHandler {
   public TaskCall_declaration_ReferentConstraint() {
@@ -65,5 +66,9 @@ public class TaskCall_declaration_ReferentConstraint extends BaseNodeReferenceSe
         return SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.generictasks.structure.ITaskDeclaration") && ITaskDeclaration_Behavior.call_isPossibleNested_1648602681640249389(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.TaskCall"), "declaration", false), SNodeOperations.cast(node, "jetbrains.mps.build.generictasks.structure.ITaskDeclaration"), nesteds);
       }
     };
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:71eee63a-b16f-40f8-920d-8fd0fe7dc8a1(jetbrains.mps.build.generictasks.constraints)", "353793545802644482");
   }
 }

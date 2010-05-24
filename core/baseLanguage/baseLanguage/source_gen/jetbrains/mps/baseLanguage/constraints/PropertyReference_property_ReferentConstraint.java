@@ -17,6 +17,7 @@ import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class PropertyReference_property_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public PropertyReference_property_ReferentConstraint() {
@@ -52,5 +53,9 @@ public class PropertyReference_property_ReferentConstraint extends BaseNodeRefer
       }
     }
     return resultProperties;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213104859432");
   }
 }

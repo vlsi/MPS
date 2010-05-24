@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Container_specializes_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public Container_specializes_ReferentConstraint() {
@@ -32,5 +33,9 @@ public class Container_specializes_ReferentConstraint extends BaseNodeReferenceS
         return SLinkOperations.getTargets(uio, "compartment", true);
       }
     }).subtract(Sequence.fromIterable(Sequence.<SNode>singleton(_context.getReferenceNode())));
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "6424935405035112791");
   }
 }

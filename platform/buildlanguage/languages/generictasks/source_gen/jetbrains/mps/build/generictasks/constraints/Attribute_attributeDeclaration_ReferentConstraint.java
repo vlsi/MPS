@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.generictasks.behavior.TaskCall_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.generictasks.behavior.ITaskDeclaration_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Attribute_attributeDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints, INodeReferentSetEventHandler {
   public Attribute_attributeDeclaration_ReferentConstraint() {
@@ -45,5 +46,9 @@ public class Attribute_attributeDeclaration_ReferentConstraint extends BaseNodeR
         return ListSequence.fromList(ITaskDeclaration_Behavior.call_getAttributesDeclarations_1190349257898147625(SLinkOperations.getTarget(taskCall, "declaration", false))).contains(SNodeOperations.cast(node, "jetbrains.mps.build.generictasks.structure.AttributeDeclaration"));
       }
     };
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:71eee63a-b16f-40f8-920d-8fd0fe7dc8a1(jetbrains.mps.build.generictasks.constraints)", "353793545802644407");
   }
 }

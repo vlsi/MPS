@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class CreateRootRule_templateNode_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public CreateRootRule_templateNode_ReferentConstraint() {
@@ -22,5 +23,9 @@ public class CreateRootRule_templateNode_ReferentConstraint extends BaseNodeRefe
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new MappingRuleTemplateNodeSearchScope(_context.getModel(), operationContext.getScope());
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "1213104840279");
   }
 }

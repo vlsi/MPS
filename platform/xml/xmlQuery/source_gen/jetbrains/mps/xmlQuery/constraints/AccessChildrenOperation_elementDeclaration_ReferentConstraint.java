@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import jetbrains.mps.xml.actions.ElementUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class AccessChildrenOperation_elementDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public AccessChildrenOperation_elementDeclaration_ReferentConstraint() {
@@ -44,5 +45,9 @@ public class AccessChildrenOperation_elementDeclaration_ReferentConstraint exten
     }
     List<SNode> elementDeclarations = ElementUtil.getElementDeclarations(elementDeclaration, _context.getEnclosingNode(), operationContext.getScope());
     return elementDeclarations;
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:e79b58b4-ea58-4c9d-b43b-c3a260addf6a(jetbrains.mps.xmlQuery.constraints)", "4991903842868413103");
   }
 }

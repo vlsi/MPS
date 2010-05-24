@@ -13,6 +13,7 @@ import jetbrains.mps.baseLanguage.collections.behavior.CustomContainersUtil;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class CustomMapCreator_containerDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public CustomMapCreator_containerDeclaration_ReferentConstraint() {
@@ -32,5 +33,9 @@ public class CustomMapCreator_containerDeclaration_ReferentConstraint extends Ba
       CustomContainersUtil.containerDeclarations(SNodeOperations.getModel(expr), TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(expr), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), expr)) :
       Sequence.fromIterable(Collections.<SNode>emptyList())
     );
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "9034802358628290362");
   }
 }

@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.behavior.ILinkAccessQualifierContainer_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class LinkRefQualifier_link_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public LinkRefQualifier_link_ReferentConstraint() {
@@ -26,5 +27,9 @@ public class LinkRefQualifier_link_ReferentConstraint extends BaseNodeReferenceS
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode qualifierContainer = SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer");
     return ILinkAccessQualifierContainer_Behavior.call_getLinkAccessScope_2906110183022538642(qualifierContainer);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104859122");
   }
 }

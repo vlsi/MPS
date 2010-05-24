@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ExtractStaticMethod_CallExpression_staticMethodDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ExtractStaticMethod_CallExpression_staticMethodDeclaration_ReferentConstraint() {
@@ -26,5 +27,9 @@ public class ExtractStaticMethod_CallExpression_staticMethodDeclaration_Referent
       _context.getReferenceNode() :
       _context.getEnclosingNode()
     ));
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "5857910569715972164");
   }
 }

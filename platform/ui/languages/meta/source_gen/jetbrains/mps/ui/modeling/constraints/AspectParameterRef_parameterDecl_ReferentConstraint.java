@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class AspectParameterRef_parameterDecl_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public AspectParameterRef_parameterDecl_ReferentConstraint() {
@@ -24,5 +25,9 @@ public class AspectParameterRef_parameterDecl_ReferentConstraint extends BaseNod
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.IAspectParameterHolder", true, false), "aspectParameter", true);
+  }
+
+  public SNodePointer getSearchScopeFactoryNodePointer() {
+    return new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "5572604531249478151");
   }
 }
