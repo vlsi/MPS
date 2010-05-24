@@ -23,6 +23,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -140,7 +141,7 @@ public class ActionFactory {
     registerDefaultActionShortcut(action, id);
     registerKeymapChanges(id, shortId, languageNamespace, params);
 
-    ActionManager.getInstance().registerAction(id, action, PluginId.getId(languageNamespace != null ? languageNamespace : "java actions"));
+    ActionManager.getInstance().registerAction(id, action, PluginId.getId(languageNamespace != null ? InternUtil.intern(languageNamespace) : "java actions"));
   }
 
   private void registerKeymapChanges(String actionId, String action, String languageNamespace, Object[] params) {

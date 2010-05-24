@@ -18,6 +18,7 @@ package jetbrains.mps.project.structure.modules;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
@@ -50,7 +51,7 @@ public class ModuleReference {
   }
 
   public ModuleReference(String moduleFqName, ModuleId moduleId) {
-    myModuleFqName = moduleFqName;
+    myModuleFqName = InternUtil.intern(moduleFqName);
     myModuleId = moduleId;
   }
 
