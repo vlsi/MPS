@@ -29,6 +29,7 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -194,7 +195,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
             return result;
           }
         });
-        myAncestorsNamesMap.put(conceptFqName, result);
+        myAncestorsNamesMap.put(InternUtil.intern(conceptFqName), result);
       }
       return result;
     }
@@ -203,7 +204,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   private void collectAncestorNames(String conceptFqName, Set<String> result) {
     if (result.contains(conceptFqName)) return;
 
-    result.add(conceptFqName);
+    result.add(InternUtil.intern(conceptFqName));
 
     AbstractConceptDeclaration declaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
     if (declaration == null) {
