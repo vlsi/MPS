@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vcs;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
@@ -36,7 +37,7 @@ abstract class VcsOperation {
   public abstract void performInternal();
 
   public void runPerform(Runnable runnable) {
-    runnable.run();
+    ApplicationManager.getApplication().executeOnPooledThread(runnable);
   }
 
   protected boolean isIgnored(VirtualFile virtualFile) {
