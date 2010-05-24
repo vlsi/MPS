@@ -57,10 +57,9 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
 
     Set<VirtualFile> visitedRoots = new HashSet<VirtualFile>();
     for (VirtualFile root : CacheUtil.getIndexableRoots()) {
-      if (!visitedRoots.contains(root)) {
-        visitedRoots.add(root);
-        iterateRecursively(root, processor, indicator);
-      }
+      if (visitedRoots.contains(root)) continue;
+      visitedRoots.add(root);
+      iterateRecursively(root, processor, indicator);
     }
   }
 
