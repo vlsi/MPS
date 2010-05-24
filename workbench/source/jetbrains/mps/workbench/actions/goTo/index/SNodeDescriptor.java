@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.InternUtil;
 
 import java.util.UUID;
 
@@ -31,8 +32,8 @@ public class SNodeDescriptor {
   private SModelReference myModelReference;
 
   public SNodeDescriptor(String nodeName, String fqName, long mostSignificantBits, long leastSignificantBits, int number) {
-    myNodeName = nodeName;
-    myConceptFqName = fqName;
+    myNodeName = InternUtil.intern(nodeName);
+    myConceptFqName = InternUtil.intern(fqName);
     myMostSignificantBits = mostSignificantBits;
     myLeastSignificantBits = leastSignificantBits;
     myNumberInModel = number;
@@ -82,7 +83,6 @@ public class SNodeDescriptor {
     }
   }
 
-  @Override
   public boolean equals(Object obj) {
     if (!(obj instanceof SNodeDescriptor)) return false;
     SNodeDescriptor sd = (SNodeDescriptor) obj;
@@ -92,7 +92,6 @@ public class SNodeDescriptor {
       && sd.getModelReference().equals(getModelReference());
   }
 
-  @Override
   public int hashCode() {
     return getNodeName().hashCode();
   }
