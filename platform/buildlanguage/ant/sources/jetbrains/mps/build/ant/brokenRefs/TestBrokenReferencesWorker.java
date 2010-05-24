@@ -64,7 +64,6 @@ public class TestBrokenReferencesWorker extends MpsWorker {
 
     executeTask(project, go);
 
-    disposeProject(project);
     disposeProject(p);
     dispose();
   }
