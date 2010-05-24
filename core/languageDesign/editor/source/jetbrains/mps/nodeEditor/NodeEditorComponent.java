@@ -172,6 +172,7 @@ public class NodeEditorComponent extends EditorComponent {
         inspectorTool.inspect(null, null, null);
       }
     }
+    myLastInspectedNode = null;
     super.dispose();
   }
 }
