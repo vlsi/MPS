@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.runtime;
 
+import jetbrains.mps.util.InternUtil;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,6 +38,7 @@ abstract class BaseClassLoader extends ClassLoader {
   }
 
   protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+    name = InternUtil.intern(name);
     Class c = myCache.get(name);
 
     if (myCache.containsKey(name) && c == null) {
