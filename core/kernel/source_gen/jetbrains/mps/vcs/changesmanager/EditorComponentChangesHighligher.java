@@ -37,6 +37,7 @@ import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.nodeEditor.messageTargets.MessageTargetEnum;
 import jetbrains.mps.nodeEditor.messageTargets.DeletedNodeMessageTarget;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import java.awt.Graphics;
@@ -329,7 +330,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
 
     public boolean isThinDeletedMessage(@NotNull EditorComponent editorComponent) {
       EditorCell cell = getCell(editorComponent);
-      return isDeletedChild() && ((DeletedNodeMessageTarget) myMessageTarget).getNextChildIndex() != -1 && cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE) && hasChildrenWithDifferentNode(cell);
+      return isDeletedChild() && ((DeletedNodeMessageTarget) myMessageTarget).getNextChildIndex() != -1 && cell instanceof EditorCell_Collection && (((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Vertical || cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE)) && hasChildrenWithDifferentNode(cell);
     }
 
     public int getY(@NotNull EditorComponent editorComponent) {
@@ -383,7 +384,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
               return;
             }
 
-            boolean vertical = cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
+            boolean vertical = collectionCell.getCellLayout() instanceof CellLayout_Vertical || cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
             Rectangle bounds = cell.getBounds();
             if (vertical) {
               int y;
