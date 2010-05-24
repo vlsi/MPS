@@ -33,10 +33,7 @@ import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.util.AndCondition;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.util.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import org.jetbrains.annotations.NotNull;
@@ -345,7 +342,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       result = name;
     }
 
-    return result;
+    return InternUtil.intern(result);
   }
 
   public GenerationStatus getGenerationStatus()  {
