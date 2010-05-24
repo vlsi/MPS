@@ -193,6 +193,22 @@ public class QueriesGenerated {
     return BehaviorConstants.GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME;
   }
 
+  public static Object propertyMacro_GetPropertyValue_8435267934159517666(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8435267934159550623(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8435267934159550658(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8435267934159550689(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME;
+  }
+
   public static Object propertyMacro_GetPropertyValue_3595467341488130128(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getOriginalInputModel().getSModelReference().toString();
   }
@@ -225,12 +241,12 @@ public class QueriesGenerated {
     }
     SNode bltype = DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType);
     if (SNodeOperations.isInstanceOf(bltype, "jetbrains.mps.baseLanguage.structure.IntegerType")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a5a44().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a5a84().createNode(), "baseMethodDeclaration", false);
     }
     if (SNodeOperations.isInstanceOf(bltype, "jetbrains.mps.baseLanguage.structure.BooleanType")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a6a44().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a6a84().createNode(), "baseMethodDeclaration", false);
     }
-    return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a7a44().createNode(), "baseMethodDeclaration", false);
+    return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a7a84().createNode(), "baseMethodDeclaration", false);
   }
 
   public static boolean ifMacro_Condition_1213106765274(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -251,6 +267,18 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1213107130447(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "defaultConcreteConcept", false) != null);
+  }
+
+  public static boolean ifMacro_Condition_8435267934159550614(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "canBeChild", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_8435267934159550649(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "canBeParent", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_8435267934159550680(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "canBeRoot", true) != null);
   }
 
   public static SNode sourceNodeQuery_1184609613810(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -283,6 +311,18 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1382946559831657791(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "alternativeIcon", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_8435267934159550601(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "canBeChild", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_8435267934159550636(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "canBeParent", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_8435267934159550667(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "canBeRoot", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_3595467341488130247(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -373,8 +413,8 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode()), "class_for_concept");
   }
 
-  public static class QuotationClass_x583g4_a0a0a5a44 {
-    public QuotationClass_x583g4_a0a0a5a44() {
+  public static class QuotationClass_x583g4_a0a0a5a84 {
+    public QuotationClass_x583g4_a0a0a5a84() {
     }
 
     public SNode createNode() {
@@ -392,8 +432,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a6a44 {
-    public QuotationClass_x583g4_a0a0a6a44() {
+  public static class QuotationClass_x583g4_a0a0a6a84 {
+    public QuotationClass_x583g4_a0a0a6a84() {
     }
 
     public SNode createNode() {
@@ -411,8 +451,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a7a44 {
-    public QuotationClass_x583g4_a0a7a44() {
+  public static class QuotationClass_x583g4_a0a7a84 {
+    public QuotationClass_x583g4_a0a7a84() {
     }
 
     public SNode createNode() {

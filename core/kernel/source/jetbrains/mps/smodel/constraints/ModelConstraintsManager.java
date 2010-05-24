@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.constraints;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.constraints.ConceptConstraintExtensionsManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
 import jetbrains.mps.lang.core.structure.INamedConcept;
@@ -736,7 +737,14 @@ public class ModelConstraintsManager implements ApplicationComponent {
       Method method = getCanBeRootMethod(conceptFqName, context);
       if (method != null) {
         try {
-          return (Boolean) method.invoke(null, context, new CanBeARootContext(model));
+          final CanBeARootContext canBeARootContext = new CanBeARootContext(model);
+          if (!(Boolean) method.invoke(null, context, canBeARootContext)) {
+            return false;
+          }
+          ConceptConstraints constraints = getClassConstraints(context, method);
+          if (constraints != null) {
+            return ConceptConstraintExtensionsManager.getInstance().checkCanBeRoot(BaseAdapter.fromAdapter(constraints.getConcept()), context, canBeARootContext);
+          }
         } catch (IllegalAccessException e) {
           LOG.error(e);
         } catch (InvocationTargetException e) {
