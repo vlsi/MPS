@@ -93,19 +93,29 @@ public abstract class MpsWorker {
   public void work() {
     setupEnvironment();
 
-    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
-
-    File projectFile = FileUtil.createTmpFile();
-    final MPSProject project = new MPSProject(ideaProject);
-    project.init(projectFile, new ProjectDescriptor());    
+    final MPSProject project = createDummyProject();
 
     ObjectsToProcess go = new ObjectsToProcess();
     collectModelsToGenerate(go);
 
     executeTask(project, go);
 
-    unloadLoadedStuff(go.getProjects());
+    disposeProjects(go.getProjects());
+    dispose();
+    
     showStatistic();
+  }
+
+  protected MPSProject createDummyProject() {
+    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
+
+    File projectFile = FileUtil.createTmpFile();
+    final MPSProject project = new MPSProject(ideaProject);
+    project.init(projectFile, new ProjectDescriptor());
+
+    projectFile.deleteOnExit();
+
+    return project;
   }
 
   protected void dispose() {
@@ -215,7 +225,7 @@ public abstract class MpsWorker {
 
   protected abstract void showStatistic();
 
-  protected void unloadLoadedStuff(Set<MPSProject> projects) {
+  protected void disposeProjects(Set<MPSProject> projects) {
     ModelAccess.instance().flushEventQueue();
     for (final MPSProject project : projects) {
       disposeProject(project);

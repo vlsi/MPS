@@ -99,10 +99,7 @@ public class TestGenerationWorker extends GeneratorWorker {
       dispose();
     }
 
-    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
-    File projectFile = FileUtil.createTmpFile();
-    final MPSProject project = new MPSProject(ideaProject);
-    project.init(projectFile, new ProjectDescriptor());
+    MPSProject project = createDummyProject();
 
     LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
     LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
@@ -112,7 +109,6 @@ public class TestGenerationWorker extends GeneratorWorker {
 
     generatePerformanceReport();
 
-    projectFile.deleteOnExit();
     dispose();
 
     showStatistic();
