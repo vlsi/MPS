@@ -43,6 +43,9 @@
     <property name="name:23" value="ChooseMPSModule" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1240034061504">
       <link role="applicableConcept:23" targetNodeId="1.1240033962434" resolveInfo="MPSModule" />
+      <node role="part:23" type="jetbrains.mps.lang.actions.structure.RemovePart:23" id="5452960144484174428">
+        <link role="conceptToRemove:23" targetNodeId="2v.1203599702327:7" resolveInfo="Module" />
+      </node>
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1240034061505">
         <link role="concept:23" targetNodeId="1.1240033962434" resolveInfo="MPSModule" />
         <node role="part:23" type="jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart:23" id="1240034061506">
