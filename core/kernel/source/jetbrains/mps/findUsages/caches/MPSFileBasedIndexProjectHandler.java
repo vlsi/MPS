@@ -42,44 +42,47 @@ import java.util.Set;
 
 
 public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent implements IndexableFileSet {
+  private ProjectManager myProjectManager;
   private final FileBasedIndex myIndex;
   private boolean myFirstUpdate = true;
   private Set<VirtualFile> myRootFiles = null;
   private ReloadListener myReloadHandler = new ReloadAdapter() {
-   public void onReload() {
-     myRootFiles = null;
-   }
- };
+    public void onReload() {
+      myRootFiles = null;
+    }
+  };
+  private ProjectManagerAdapter myProjectListener = new ProjectManagerAdapter() {
+    public void projectClosing(Project project) {
+      myIndex.removeIndexableSet(MPSFileBasedIndexProjectHandler.this);
+    }
+  };
 
-  public MPSFileBasedIndexProjectHandler(final Project project, final ProjectRootManagerEx rootManager, FileBasedIndex index, StartupModuleMaker maker) {
+  public MPSFileBasedIndexProjectHandler(final Project project, final ProjectRootManagerEx rootManager, ProjectManager projectManager, FileBasedIndex index, StartupModuleMaker maker) {
     super(project);
+    myProjectManager = projectManager;
     myIndex = index;
 
     final MPSUnindexedFilesUpdater updater = new MPSUnindexedFilesUpdater(myIndex);
 
     final StartupManagerEx startupManager = (StartupManagerEx) StartupManager.getInstance(myProject);
-    if (startupManager != null) {
-      startupManager.registerPreStartupActivity(new Runnable() {
-        public void run() {
-          updateRoots();
-          startupManager.registerCacheUpdater(updater);
-          myIndex.registerIndexableSet(MPSFileBasedIndexProjectHandler.this);
-          ProjectManager projectManager = ProjectManager.getInstance();
-          projectManager.addProjectManagerListener(project, new ProjectManagerAdapter() {
-            public void projectClosing(Project project) {
-              myIndex.removeIndexableSet(MPSFileBasedIndexProjectHandler.this);
-            }
-          });
-        }
-      });
-    }
+    if (startupManager == null) return;
+
+    startupManager.registerPreStartupActivity(new Runnable() {
+      public void run() {
+        updateRoots();
+        startupManager.registerCacheUpdater(updater);
+        myIndex.registerIndexableSet(MPSFileBasedIndexProjectHandler.this);
+      }
+    });
   }
 
   public void initComponent() {
     ClassLoaderManager.getInstance().addReloadHandler(myReloadHandler);
+    myProjectManager.addProjectManagerListener(myProject, myProjectListener);
   }
 
   public void disposeComponent() {
+    myProjectManager.addProjectManagerListener(myProject, myProjectListener);
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadHandler);
   }
 
