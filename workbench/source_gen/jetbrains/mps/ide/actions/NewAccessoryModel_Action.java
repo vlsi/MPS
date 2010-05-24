@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.awt.Frame;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
 import com.intellij.openapi.project.Project;
 import javax.swing.tree.TreeNode;
@@ -15,22 +16,18 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.projectPane.ProjectModuleTreeNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.Language;
-import java.util.List;
+import jetbrains.mps.workbench.dialogs.project.creation.NewModelDialog;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.smodel.IScope;
-import javax.swing.JOptionPane;
 
 public class NewAccessoryModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewAccessoryModel_Action.class);
 
   private Frame frame;
+  private IOperationContext context;
   private IModule module;
   private Project project;
   private TreeNode treeNode;
@@ -68,6 +65,10 @@ public class NewAccessoryModel_Action extends GeneratedAction {
     if (this.frame == null) {
       return false;
     }
+    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
+    if (this.context == null) {
+      return false;
+    }
     this.module = event.getData(MPSDataKeys.CONTEXT_MODULE);
     if (this.module == null) {
       return false;
@@ -86,6 +87,7 @@ public class NewAccessoryModel_Action extends GeneratedAction {
   protected void cleanup() {
     super.cleanup();
     this.frame = null;
+    this.context = null;
     this.module = null;
     this.project = null;
     this.treeNode = null;
@@ -94,29 +96,18 @@ public class NewAccessoryModel_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Language language = ((Language) NewAccessoryModel_Action.this.module);
-      final List<SModelDescriptor> models = ListSequence.fromList(new ArrayList<SModelDescriptor>());
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          ListSequence.fromList(models).addSequence(ListSequence.fromList(GlobalScope.getInstance().getModelDescriptors()));
-        }
-      });
-      final SModelDescriptor result = CommonChoosers.showDialogModelChooser(NewAccessoryModel_Action.this.frame, models, null);
+      NewModelDialog d = new NewModelDialog(NewAccessoryModel_Action.this.module, language.getModuleFqName() + ".", NewAccessoryModel_Action.this.context, SModelStereotype.NONE, true);
+      d.showDialog();
+      final SModelDescriptor result = d.getResult();
+
       if (result == null) {
         return;
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          LanguageDescriptor descriptor;
-          descriptor = language.getLanguageDescriptor();
+          LanguageDescriptor descriptor = language.getLanguageDescriptor();
           descriptor.getAccessoryModels().add(result.getSModelReference());
           language.setLanguageDescriptor(descriptor);
-          IScope scope = language.getScope();
-          if (scope.getModelDescriptor(result.getSModelReference()) == null) {
-            int res = JOptionPane.showConfirmDialog(NewAccessoryModel_Action.this.frame, "<html>Model <b>" + result.getLongName() + "</b> is added to accessories</html>\n\n" + "Do you want to automatically the module add to dependency?", "Add Dependency", JOptionPane.YES_NO_OPTION);
-            if (res == JOptionPane.YES_OPTION) {
-              language.addDependency(result.getModule().getModuleReference(), false);
-            }
-          }
           language.save();
         }
       });

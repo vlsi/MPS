@@ -15,6 +15,7 @@ public class AccessoriesGroupActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       AccessoriesGroupActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewAccessoryModel_Action", "jetbrains.mps.ide");
+      AccessoriesGroupActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddAccessoryModel_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
