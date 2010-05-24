@@ -36,7 +36,7 @@ public class Attribute_attributeDeclaration_ReferentConstraint extends BaseNodeR
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     final SNode taskCall = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.TaskCall", true, false);
-    return new DefaultSearchScope(TaskCall_Behavior.call_getUndefinedAttributes_353793545802643943(taskCall)) {
+    return new SequenceSearchScope(TaskCall_Behavior.call_getUndefinedAttributes_353793545802643943(taskCall)) {
       @Override
       public boolean isInScope(SNode node) {
         if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.generictasks.structure.AttributeDeclaration"))) {

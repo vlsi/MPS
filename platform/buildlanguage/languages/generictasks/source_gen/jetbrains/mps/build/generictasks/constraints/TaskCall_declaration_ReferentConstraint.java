@@ -47,7 +47,7 @@ public class TaskCall_declaration_ReferentConstraint extends BaseNodeReferenceSe
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> declarations = SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.build.generictasks.structure.ITaskDeclaration");
     if (!(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.TaskCall"))) {
-      return new DefaultSearchScope(ListSequence.fromList(declarations).where(new IWhereFilter<SNode>() {
+      return new SequenceSearchScope(ListSequence.fromList(declarations).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return ITaskDeclaration_Behavior.call_canBeRootTask_1449762848926780427(it);
         }
@@ -59,7 +59,7 @@ public class TaskCall_declaration_ReferentConstraint extends BaseNodeReferenceSe
       };
     }
     final List<SNode> nesteds = ITaskDeclaration_Behavior.call_getNestedTasks_4241383766070831847(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.TaskCall"), "declaration", false));
-    return new DefaultSearchScope(ITaskDeclaration_Behavior.call_getPossibleNesteds_1449762848926780436(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.TaskCall"), "declaration", false), declarations)) {
+    return new SequenceSearchScope(ITaskDeclaration_Behavior.call_getPossibleNesteds_1449762848926780436(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.TaskCall"), "declaration", false), declarations)) {
       @Override
       public boolean isInScope(SNode node) {
         return SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.generictasks.structure.ITaskDeclaration") && ITaskDeclaration_Behavior.call_isPossibleNested_1648602681640249389(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.TaskCall"), "declaration", false), SNodeOperations.cast(node, "jetbrains.mps.build.generictasks.structure.ITaskDeclaration"), nesteds);
