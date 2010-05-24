@@ -44,7 +44,6 @@ import java.util.Set;
 public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent implements IndexableFileSet {
   private ProjectManager myProjectManager;
   private final FileBasedIndex myIndex;
-  private boolean myFirstUpdate = true;
   private Set<VirtualFile> myRootFiles = null;
   private ReloadListener myReloadHandler = new ReloadAdapter() {
     public void onReload() {
@@ -69,8 +68,8 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
 
     startupManager.registerPreStartupActivity(new Runnable() {
       public void run() {
-        updateRoots();
         startupManager.registerCacheUpdater(updater);
+        DumbServiceImpl.getInstance(myProject).queueCacheUpdate(Collections.<CacheUpdater>singletonList(new MPSUnindexedFilesUpdater(myIndex)));
         myIndex.registerIndexableSet(MPSFileBasedIndexProjectHandler.this);
       }
     });
@@ -95,17 +94,6 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
       });
     }
     return myRootFiles;
-  }
-
-  private void updateRoots() {
-    if (!myFirstUpdate) {
-      ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
-        public void run() {
-          DumbServiceImpl.getInstance(myProject).queueCacheUpdate(Collections.<CacheUpdater>singletonList(new MPSUnindexedFilesUpdater(myIndex)));
-        }
-      }, "Updating Caches", true, myProject);
-    }
-    myFirstUpdate = false;
   }
 
   public boolean isInSet(VirtualFile file) {
