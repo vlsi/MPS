@@ -17,6 +17,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.CopyUtil;
 
 public class SModelUtils {
   @NotNull
@@ -56,5 +58,30 @@ public class SModelUtils {
     }
     nodes = ListSequence.fromList(nodes).reversedList();
     return nodes;
+  }
+
+  @NotNull
+  public static List<SNode> getDominators(@NotNull List<SNode> nodes) {
+    List<SNode> dominators = ListSequence.fromList(new ArrayList<SNode>());
+    for (final SNode minor : ListSequence.fromList(nodes)) {
+      if (!(ListSequence.fromList(nodes).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode major) {
+          return minor.isDescendantOf(major, false);
+        }
+      }))) {
+        ListSequence.fromList(dominators).addElement(minor);
+      }
+    }
+    return dominators;
+  }
+
+  public static void resetNodeId(@NotNull SNode node) {
+    SNode copyOfNode = CopyUtil.copy(node);
+    SNode parent = node.getParent();
+    if (parent == null) {
+      return;
+    } else {
+      parent.replaceChild(node, copyOfNode);
+    }
   }
 }

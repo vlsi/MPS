@@ -807,18 +807,23 @@ __switch__:
 
   @Nullable
   private SNode getBaseNode(@NotNull SNodeId childId, @Nullable SNode nodeToBeReplaced) {
+    // TODO write this non-trivial method description 
     SNode baseNode = myBaseVersionModel.getNodeById(childId);
     SNode copyOfBaseNode = CopyUtil.copyAndPreserveId(baseNode);
-    for (SNode descendant : ListSequence.fromList(baseNode.getDescendants())) {
+    SModel model = getModel();
+    List<SNode> nodesToChangeId = ListSequence.fromList(new ArrayList<SNode>());
+    for (SNode descendant : ListSequence.fromList(SNodeOperations.getDescendants(baseNode, null, true, new String[]{}))) {
       // If rollbacking this change may end with node id overlapping, rollbacking should be cancelled 
-      // TODO make this more friendly 
-      SNode maybeOverlappedNode = getModel().getNodeById(descendant.getSNodeId());
+      SNode maybeOverlappedNode = model.getNodeById(descendant.getSNodeId());
       if (maybeOverlappedNode != null) {
         if (nodeToBeReplaced != null && nodeToBeReplaced.isAncestorOf(maybeOverlappedNode)) {
           continue;
         }
-        return null;
+        ListSequence.fromList(nodesToChangeId).addElement(maybeOverlappedNode);
       }
+    }
+    for (SNode node : ListSequence.fromList(SModelUtils.getDominators(nodesToChangeId))) {
+      SModelUtils.resetNodeId(node);
     }
     return copyOfBaseNode;
   }
@@ -844,7 +849,9 @@ __switch__:
         return;
       } else {
         SNode node = getModel().getNodeById(change.getAffectedNodeId());
-        assert node != null;
+        if (node == null) {
+          return;
+        }
         SNodeId baseNodeId = null;
         if (change instanceof SubstituteNodeChange) {
           baseNodeId = ((SubstituteNodeChange) change).getOldChildId();
