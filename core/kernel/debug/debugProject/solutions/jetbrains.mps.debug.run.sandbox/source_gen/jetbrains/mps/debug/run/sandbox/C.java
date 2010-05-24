@@ -39,7 +39,7 @@ public class C {
     new C();
   }
 
-  public static int getOne() {
+  private static int getOne() {
     return 1;
   }
 }

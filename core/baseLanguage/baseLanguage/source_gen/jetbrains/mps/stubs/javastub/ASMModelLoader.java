@@ -93,10 +93,16 @@ public abstract class ASMModelLoader {
 
   private IClassPathItem myCpItem;
   private SModel myModel;
+  private final boolean mySkipPrivate;
 
   public ASMModelLoader(IClassPathItem classPathItem, SModel model) {
+    this(classPathItem, model, true);
+  }
+
+  public ASMModelLoader(IClassPathItem classPathItem, SModel model, boolean skipPrivate) {
     this.myCpItem = classPathItem;
     this.myModel = model;
+    this.mySkipPrivate = skipPrivate;
   }
 
   public void updateModel() {
@@ -293,7 +299,7 @@ public abstract class ASMModelLoader {
   private void updateInstanceFields(ASMClass refCls, ClassConcept cls) {
     SModel model = cls.getModel();
     for (ASMField field : refCls.getDeclaredFields()) {
-      if (field.isPrivate()) {
+      if (field.isPrivate() && mySkipPrivate) {
         continue;
       }
       if (field.isStatic()) {
@@ -318,7 +324,7 @@ public abstract class ASMModelLoader {
   private void updateStaticFields(ASMClass ac, Classifier cls) {
     SModel model = cls.getModel();
     for (ASMField field : ac.getDeclaredFields()) {
-      if (field.isPrivate()) {
+      if (field.isPrivate() && mySkipPrivate) {
         continue;
       }
       if (!(field.isStatic())) {
@@ -367,7 +373,7 @@ public abstract class ASMModelLoader {
   private void updateConstructors(ASMClass ac, ClassConcept cls) {
     SModel model = cls.getModel();
     for (ASMMethod c : ac.getDeclaredConstructors()) {
-      if (c.isPrivate()) {
+      if (c.isPrivate() && mySkipPrivate) {
         continue;
       }
       ConstructorDeclaration constructor = ConstructorDeclaration.newInstance(model);
@@ -403,7 +409,7 @@ public abstract class ASMModelLoader {
   private void updateInstanceMethods(ASMClass ac, Classifier cls) {
     SModel model = cls.getModel();
     for (ASMMethod m : ac.getDeclaredMethods()) {
-      if (m.isPrivate()) {
+      if (m.isPrivate() && mySkipPrivate) {
         continue;
       }
       if (m.isStatic()) {
@@ -447,7 +453,7 @@ public abstract class ASMModelLoader {
   private void updateStaticMethods(ASMClass ac, ClassConcept cls) {
     SModel model = cls.getModel();
     for (ASMMethod m : ac.getDeclaredMethods()) {
-      if (m.isPrivate()) {
+      if (m.isPrivate() && mySkipPrivate) {
         continue;
       }
       if (!(m.isStatic())) {
@@ -501,7 +507,7 @@ public abstract class ASMModelLoader {
     return false;
   }
 
-  private Visibility createVisibility(ASMMethod m, SModel model) {
+  protected Visibility createVisibility(ASMMethod m, SModel model) {
     if (m.isPublic()) {
       return PublicVisibility.newInstance(model);
     }
@@ -514,7 +520,7 @@ public abstract class ASMModelLoader {
     return null;
   }
 
-  private Visibility createVisibility(ASMField f, SModel model) {
+  protected Visibility createVisibility(ASMField f, SModel model) {
     if (f.isPublic()) {
       return PublicVisibility.newInstance(model);
     }
