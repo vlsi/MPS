@@ -28,7 +28,7 @@ public abstract class ValueProxy {
   }
 
   public Object getJavaValue() {
-    throw new UnsupportedOperationException();
+    return MirrorUtil.getJavaValue(myValue);
   }
 
   public abstract ValueProxy invokeMethod(String name, String jniSignature, Object... args);

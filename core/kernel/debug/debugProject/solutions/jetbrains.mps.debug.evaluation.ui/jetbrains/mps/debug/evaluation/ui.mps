@@ -5320,15 +5320,14 @@
                 </node>
               </node>
             </node>
-            <node role="condition:3" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression:3" id="4067466941953972338">
-              <node role="subtypeExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4067466941953972342">
+            <node role="condition:3" type="jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression:3" id="4875140473316063182">
+              <node role="subtypeExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4875140473316063186">
                 <link role="variableDeclaration:3" targetNodeId="2960002797019071594" resolveInfo="type" />
               </node>
-              <node role="supertypeExpression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4067466941953972344">
-                <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4067466941953972348">
-                  <link role="classifier:3" targetNodeId="46.~Integer" resolveInfo="Integer" />
-                  <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="4067466941953972349">
-                    <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4067466941953972351">
+              <node role="supertypeExpression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4875140473316063188">
+                <node role="quotedNode:0" type="jetbrains.mps.lang.core.structure.BaseConcept:0" id="4875140473316063189">
+                  <node role="_attr_$attribute:0" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="4875140473316063191">
+                    <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4875140473316063193">
                       <link role="variableDeclaration:3" targetNodeId="4067466941953899891" resolveInfo="primitive" />
                     </node>
                   </node>

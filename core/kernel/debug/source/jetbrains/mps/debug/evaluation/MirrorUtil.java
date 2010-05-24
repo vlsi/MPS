@@ -70,6 +70,20 @@ public class MirrorUtil {
       if (primitiveValue instanceof LongValue) {
         return primitiveValue.longValue();
       }
+    } else if (jdiValue instanceof ObjectReference) {
+      String typename = ((ObjectReference) jdiValue).referenceType().name();
+      if (typename.equals(Boolean.class.getName()) ||
+        typename.equals(Short.class.getName()) ||
+        typename.equals(Byte.class.getName()) ||
+        typename.equals(Character.class.getName()) ||
+        typename.equals(Double.class.getName()) ||
+        typename.equals(Float.class.getName()) ||
+        typename.equals(Integer.class.getName()) ||
+        typename.equals(Long.class.getName())) {
+        Field f = ((ObjectReference) jdiValue).referenceType().fieldByName("value");
+        Value result = ((ObjectReference) jdiValue).getValue(f);
+        return getJavaValue(result);
+      }
     }
     throw new UnsupportedOperationException();
   }

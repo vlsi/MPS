@@ -374,7 +374,7 @@ public class TransformationUtil {
     SNode primitive = SLinkOperations.getTarget(new TransformationUtil.QuotationClass_crriw5_a0a0a0u().createNode(), "descriptor", false);
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
       return new TransformationUtil.QuotationClass_crriw5_a0a0b0u().createNode();
-    } else if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new TransformationUtil.QuotationClass_crriw5_a1a0a1a02().createNode(primitive))) {
+    } else if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new TransformationUtil.QuotationClass_crriw5_a1a0a1a02().createNode(primitive), false)) {
       return new TransformationUtil.QuotationClass_crriw5_a0a0a1a02().createNode();
     } else if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new TransformationUtil.QuotationClass_crriw5_a1a0b1a02().createNode())) {
       return new TransformationUtil.QuotationClass_crriw5_a0a0b1a02().createNode();
