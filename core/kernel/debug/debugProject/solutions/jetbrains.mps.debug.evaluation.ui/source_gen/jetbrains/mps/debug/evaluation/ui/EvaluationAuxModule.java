@@ -14,6 +14,8 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.UUID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
@@ -44,6 +46,17 @@ public class EvaluationAuxModule extends AbstractModule {
       public void run() {
         EvaluationAuxModule.this.clearAll();
         MPSModuleRepository.getInstance().removeModule(EvaluationAuxModule.this);
+        if (ListSequence.fromList(myStubPaths).isNotEmpty()) {
+          ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+            public void run() {
+              ModelAccess.instance().runWriteAction(new Runnable() {
+                public void run() {
+                  StubReloadManager.getInstance().reload();
+                }
+              });
+            }
+          });
+        }
       }
     });
   }

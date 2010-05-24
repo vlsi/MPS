@@ -1486,6 +1486,62 @@
                   </node>
                 </node>
               </node>
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="635925451958541874">
+                <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="635925451958541875">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="635925451958599078">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="635925451958599081">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="635925451958599080">
+                        <link role="baseMethodDeclaration:3" targetNodeId="43.~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolveInfo="getApplication" />
+                        <link role="classConcept:3" targetNodeId="43.~ApplicationManager" resolveInfo="ApplicationManager" />
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="635925451958606055">
+                        <link role="baseMethodDeclaration:3" targetNodeId="43.~Application.executeOnPooledThread(java.lang.Runnable):java.util.concurrent.Future" resolveInfo="executeOnPooledThread" />
+                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="635925451958606056">
+                          <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="635925451958606166">
+                            <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="635925451958606167">
+                              <property name="nonStatic:3" value="true" />
+                              <link role="classifier:3" targetNodeId="46.~Runnable" resolveInfo="Runnable" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="46.~Object.&lt;init&gt;()" resolveInfo="Object" />
+                              <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="635925451958606168" />
+                              <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="635925451958606169">
+                                <property name="isAbstract:3" value="false" />
+                                <property name="name:3" value="run" />
+                                <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="635925451958606170" />
+                                <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="635925451958606171" />
+                                <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="635925451958606172">
+                                  <node role="statement:3" type="jetbrains.mps.lang.plugin.structure.ExecuteWriteActionStatement:23" id="635925451958606173">
+                                    <node role="commandClosureLiteral:23" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral:23" id="635925451958606174">
+                                      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="635925451958606175">
+                                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="635925451958606176">
+                                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="635925451958606177">
+                                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="635925451958606178">
+                                              <link role="classConcept:3" targetNodeId="59.~StubReloadManager" resolveInfo="StubReloadManager" />
+                                              <link role="baseMethodDeclaration:3" targetNodeId="59.~StubReloadManager.getInstance():jetbrains.mps.stubs.StubReloadManager" resolveInfo="getInstance" />
+                                            </node>
+                                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="635925451958606179">
+                                              <link role="baseMethodDeclaration:3" targetNodeId="59.~StubReloadManager.reload():void" resolveInfo="reload" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="635925451958541879">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="635925451958541878">
+                    <link role="variableDeclaration:3" targetNodeId="2582156706586416182" resolveInfo="myStubPaths" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation:7" id="635925451958541883" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
