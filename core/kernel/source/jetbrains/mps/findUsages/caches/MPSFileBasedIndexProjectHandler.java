@@ -32,6 +32,9 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.IndexableFileSet;
 import jetbrains.mps.make.StartupModuleMaker;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.Collections;
@@ -41,6 +44,12 @@ import java.util.Set;
 public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent implements IndexableFileSet {
   private final FileBasedIndex myIndex;
   private boolean myFirstUpdate = true;
+  private Set<VirtualFile> myRootFiles = null;
+  private ReloadListener myReloadHandler = new ReloadAdapter() {
+   public void onReload() {
+     myRootFiles = null;
+   }
+ };
 
   public MPSFileBasedIndexProjectHandler(final Project project, final ProjectRootManagerEx rootManager, FileBasedIndex index, StartupModuleMaker maker) {
     super(project);
@@ -66,9 +75,28 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     }
   }
 
+  public void initComponent() {
+    ClassLoaderManager.getInstance().addReloadHandler(myReloadHandler);
+  }
+
+  public void disposeComponent() {
+    ClassLoaderManager.getInstance().removeReloadHandler(myReloadHandler);
+  }
+
+  private Set<VirtualFile> getRootFiles() {
+    if (myRootFiles == null) {
+      myRootFiles = ModelAccess.instance().runReadAction(new Computable<Set<VirtualFile>>() {
+        public Set<VirtualFile> compute() {
+          return CacheUtil.getIndexableRoots();
+        }
+      });
+    }
+    return myRootFiles;
+  }
+
   private void updateRoots() {
     if (!myFirstUpdate) {
-      boolean ok = ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
+      ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
         public void run() {
           DumbServiceImpl.getInstance(myProject).queueCacheUpdate(Collections.<CacheUpdater>singletonList(new MPSUnindexedFilesUpdater(myIndex)));
         }
@@ -99,16 +127,8 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
   }
 
   private boolean checkUnderModule(VirtualFile file) {
-    //todo make this compute once or incrementally
-    Set<VirtualFile> files = ModelAccess.instance().runReadAction(new Computable<Set<VirtualFile>>() {
-      public Set<VirtualFile> compute() {
-        return CacheUtil.getIndexableRoots();
-      }
-    });
-    for (VirtualFile vf : files) {
-      if (VfsUtil.isAncestor(vf, file, true)) {
-        return true;
-      }
+    for (VirtualFile vf : getRootFiles()) {
+      if (VfsUtil.isAncestor(vf, file, true)) return true;
     }
     return false;
   }
