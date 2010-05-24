@@ -35,6 +35,7 @@ public class BasicParameterExpansion_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yzb0ok_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$");
     editorCell.setCellId("Constant_yzb0ok_a0");
+    BashLanguageStyle_StyleSheet.getParameterExpansion(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -42,10 +43,12 @@ public class BasicParameterExpansion_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yzb0ok_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_yzb0ok_b0");
+    BashLanguageStyle_StyleSheet.getParameterExpansion(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.MATCHING_LABEL, "curly-brace");
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -54,9 +57,11 @@ public class BasicParameterExpansion_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yzb0ok_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_yzb0ok_d0");
+    BashLanguageStyle_StyleSheet.getParameterExpansion(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.MATCHING_LABEL, "curly-brace");
     }
     editorCell.setDefaultText("");
     return editorCell;

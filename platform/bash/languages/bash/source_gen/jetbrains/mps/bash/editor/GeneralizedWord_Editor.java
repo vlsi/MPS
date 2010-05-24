@@ -32,6 +32,7 @@ public class GeneralizedWord_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new GeneralizedWord_Editor.unitsListHandler_1ribud_a0(node, "units", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Flow(), false);
     editorCell.setCellId("refNodeList_units");
+    BashLanguageStyle_StyleSheet.getNullStyle(editorCell).apply(editorCell);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -71,10 +72,6 @@ public class GeneralizedWord_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
-    }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
     }
   }
 }

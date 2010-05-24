@@ -64,6 +64,7 @@ public class HeadCommandList_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("?c");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    BashLanguageStyle_StyleSheet.getNullStyle(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -143,10 +143,6 @@ public class CaseCommand_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
-
     private EditorCell createConstant_xxihx4_a0d0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<case clause ... >>");
       editorCell.setCellId("Constant_xxihx4_a0d0");

@@ -125,6 +125,7 @@ public class IfCommand_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new IfCommand_Editor.elseIfListHandler_a9dubz_f0(node, "elseIf", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_elseIf");
+    BashLanguageStyle_StyleSheet.getNullStyle(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -139,6 +140,7 @@ public class IfCommand_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<test command>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    BashLanguageStyle_StyleSheet.getNullStyle(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -156,6 +158,7 @@ public class IfCommand_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<if true>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    BashLanguageStyle_StyleSheet.getNullStyle(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -173,6 +176,7 @@ public class IfCommand_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<if false>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    BashLanguageStyle_StyleSheet.getNullStyle(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -223,10 +227,6 @@ public class IfCommand_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
-    }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
     }
 
     private EditorCell createConstant_a9dubz_a5a(EditorContext editorContext, SNode node) {

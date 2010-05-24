@@ -19,7 +19,7 @@ public class Command_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_5th3tc_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5th3tc_a");
-    BashLanguageStyle_StyleSheet.getHintStyle(editorCell).apply(editorCell);
+    BashLanguageStyle_StyleSheet.getNullStyle(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.DEFAULT_CARET_POSITON, CaretPosition.FIRST);

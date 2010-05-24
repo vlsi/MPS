@@ -465,6 +465,7 @@
         <property name="emptyNoTargetText:32" value="false" />
         <property name="noTargetText:32" value="&lt;test command&gt;" />
         <link role="relationDeclaration:32" targetNodeId="1.7633559109508737478" />
+        <link role="styleClass:32" targetNodeId="5610919440661280460" resolveInfo="NullStyle" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7633559109508852669">
         <property name="text:32" value=";" />
@@ -480,6 +481,7 @@
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="7633559109508852676">
           <property name="noTargetText:32" value="&lt;if true&gt;" />
           <link role="relationDeclaration:32" targetNodeId="1.7633559109508737479" />
+          <link role="styleClass:32" targetNodeId="5610919440661280460" resolveInfo="NullStyle" />
         </node>
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="7633559109508852682">
           <property name="flag:32" value="true" />
@@ -490,6 +492,7 @@
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="7633559109508852686">
         <link role="relationDeclaration:32" targetNodeId="1.7633559109508737481" />
+        <link role="styleClass:32" targetNodeId="5610919440661280460" resolveInfo="NullStyle" />
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="7633559109508852687" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="7633559109509301282">
           <property name="flag:32" value="true" />
@@ -512,6 +515,7 @@
           <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="7633559109508852711">
             <property name="noTargetText:32" value="&lt;if false&gt;" />
             <link role="relationDeclaration:32" targetNodeId="1.7633559109508737480" />
+            <link role="styleClass:32" targetNodeId="5610919440661280460" resolveInfo="NullStyle" />
           </node>
           <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem:32" id="7633559109508852714">
             <property name="flag:32" value="true" />
@@ -935,14 +939,19 @@
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3999172467442263103">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3999172467442335344">
         <property name="text:32" value="$" />
+        <link role="styleClass:32" targetNodeId="5610919440661251953" resolveInfo="ParameterExpansion" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3999172467442335346">
         <property name="text:32" value="{" />
+        <link role="styleClass:32" targetNodeId="5610919440661251953" resolveInfo="ParameterExpansion" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="8353259571483143544">
           <property name="flag:32" value="true" />
         </node>
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="8353259571483143546">
           <property name="flag:32" value="true" />
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="5610919440661366342">
+          <property name="labelName:32" value="curly-brace" />
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="3999172467442459847">
@@ -957,8 +966,12 @@
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3999172467442335348">
         <property name="text:32" value="}" />
+        <link role="styleClass:32" targetNodeId="5610919440661251953" resolveInfo="ParameterExpansion" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="8353259571483143547">
           <property name="flag:32" value="true" />
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="5610919440661366344">
+          <property name="labelName:32" value="curly-brace" />
         </node>
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="3999172467442263105" />
@@ -1004,6 +1017,7 @@
     <link role="conceptDeclaration:32" targetNodeId="1.8353259571485353280" resolveInfo="JustWord" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8353259571485353285">
       <link role="relationDeclaration:32" targetNodeId="1.8353259571485353282" resolveInfo="word" />
+      <link role="styleClass:32" targetNodeId="5610919440661547016" resolveInfo="SimpleWordStyle" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="8353259571485385866">
@@ -1011,6 +1025,7 @@
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="8353259571485385868">
       <property name="usesBraces:32" value="false" />
       <link role="relationDeclaration:32" targetNodeId="1.8353259571485385865" />
+      <link role="styleClass:32" targetNodeId="5610919440661280460" resolveInfo="NullStyle" />
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Flow:32" id="8353259571486510915" />
     </node>
   </node>
@@ -1636,12 +1651,18 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="3147078024747082362" />
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3147078024747082363">
         <property name="text:32" value="[" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="5610919440661309044">
+          <property name="labelName:32" value="condition" />
+        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="3147078024747082365">
         <link role="relationDeclaration:32" targetNodeId="1.3147078024747082356" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3147078024747082367">
         <property name="text:32" value="]" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="5610919440661309045">
+          <property name="labelName:32" value="condition" />
+        </node>
       </node>
     </node>
   </node>
@@ -1650,42 +1671,33 @@
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3147078024751877543">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="3263637656455059151">
         <link role="relationDeclaration:32" targetNodeId="1.3263637656455059148" resolveInfo="quotetype" />
+        <link role="styleClass:32" targetNodeId="4995402009321872858" resolveInfo="QuoteStyle" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="8474643070100157550">
           <property name="flag:32" value="false" />
         </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="3263637656455059152">
-          <property name="style:32" value="BOLD" />
-        </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="3263637656455059153">
-          <property name="color:32" value="DARK_GREEN" />
-        </node>
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="3263637656455059154">
           <property name="flag:32" value="true" />
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="5610919440661309047">
+          <property name="labelName:32" value="quote" />
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="3147078024751877550">
         <property name="attractsFocus:32" value="2" />
         <link role="relationDeclaration:32" targetNodeId="1.3147078024751877535" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem:32" id="3263637656455432924">
-          <property name="color:32" value="green" />
-          <node role="query:32" type="jetbrains.mps.lang.editor.structure.RGBColor:32" id="3263637656455432925">
-            <property name="value:32" value="CCFFCC" />
-          </node>
-        </node>
+        <link role="styleClass:32" targetNodeId="5610919440661159542" resolveInfo="QuotedWord" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="3263637656455059156">
         <link role="relationDeclaration:32" targetNodeId="1.3263637656455059148" resolveInfo="quotetype" />
+        <link role="styleClass:32" targetNodeId="4995402009321872858" resolveInfo="QuoteStyle" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="8474643070100157552">
           <property name="flag:32" value="false" />
         </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="3263637656455059157">
-          <property name="style:32" value="BOLD" />
-        </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="3263637656455059158">
-          <property name="color:32" value="DARK_GREEN" />
-        </node>
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="3263637656455059159">
           <property name="flag:32" value="true" />
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="5610919440661309049">
+          <property name="labelName:32" value="quote" />
         </node>
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="3147078024751877545" />
@@ -1696,18 +1708,16 @@
     <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="3147078024755445597">
       <property name="name:32" value="Variable" />
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="3147078024755445598">
-        <property name="style:32" value="BOLD" />
-      </node>
-      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="3147078024755445600">
-        <node role="query:32" type="jetbrains.mps.lang.editor.structure.RGBColor:32" id="3147078024755445603">
-          <property name="value:32" value="00A017" />
-        </node>
+        <property name="style:32" value="PLAIN" />
       </node>
     </node>
     <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="3147078024756881581">
       <property name="name:32" value="CommandName" />
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="3147078024756881582">
         <property name="style:32" value="BOLD" />
+      </node>
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="5610919440661575708">
+        <property name="color:32" value="darkGray" />
       </node>
     </node>
     <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="3147078024757582229">
@@ -1722,7 +1732,7 @@
         <property name="flag:32" value="true" />
       </node>
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="3905757829895296293">
-        <property name="color:32" value="gray" />
+        <property name="color:32" value="lightGray" />
       </node>
     </node>
     <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="3905757829898977059">
@@ -1754,8 +1764,8 @@
     </node>
     <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="4515773109208411261">
       <property name="name:32" value="CommentedCommand" />
-      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem:32" id="4515773109208411264">
-        <property name="color:32" value="lightGray" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="5610919440661604396">
+        <property name="color:32" value="gray" />
       </node>
     </node>
     <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="4515773109208411262">
@@ -1770,13 +1780,13 @@
     <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="6382090206695324299">
       <property name="name:32" value="ActivationRecord" />
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="6382090206695324300">
-        <property name="color:32" value="DARK_GREEN" />
+        <property name="color:32" value="DARK_BLUE" />
       </node>
     </node>
     <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="2362837471610351523">
       <property name="name:32" value="ShellScriptName" />
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="2362837471610351524">
-        <property name="style:32" value="BOLD" />
+        <property name="style:32" value="PLAIN" />
       </node>
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="2362837471610351526">
         <property name="color:32" value="DARK_MAGENTA" />
@@ -1786,6 +1796,54 @@
       <property name="name:32" value="Operator" />
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="3835416431563851217">
         <property name="style:32" value="PLAIN" />
+      </node>
+    </node>
+    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="5610919440661159542">
+      <property name="name:32" value="QuotedWord" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem:32" id="5610919440661159543">
+        <property name="color:32" value="LIGHT_BLUE" />
+        <node role="query:32" type="jetbrains.mps.lang.editor.structure.RGBColor:32" id="5610919440661223467">
+          <property name="value:32" value="e4f2ff" />
+        </node>
+      </node>
+    </node>
+    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="5610919440661251953">
+      <property name="name:32" value="ParameterExpansion" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="5610919440661251954">
+        <property name="color:32" value="DARK_MAGENTA" />
+      </node>
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="5610919440661337693" />
+    </node>
+    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="5610919440661280460">
+      <property name="name:32" value="NullStyle" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem:32" id="5610919440661280463">
+        <property name="flag:32" value="true" />
+      </node>
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem:32" id="5610919440661280461">
+        <property name="color:32" value="lightGray" />
+      </node>
+    </node>
+    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="5610919440661547016">
+      <property name="name:32" value="SimpleWordStyle" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="5610919440661547019">
+        <property name="style:32" value="ITALIC" />
+      </node>
+    </node>
+    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="5610919440661633083">
+      <property name="name:32" value="QuotesCommandSubstitution" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem:32" id="5610919440661633084">
+        <node role="query:32" type="jetbrains.mps.lang.editor.structure.RGBColor:32" id="5610919440661633085">
+          <property name="value:32" value="feffb3" />
+        </node>
+      </node>
+    </node>
+    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="4995402009321872858">
+      <property name="name:32" value="QuoteStyle" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="4995402009321872859">
+        <property name="style:32" value="BOLD" />
+      </node>
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="4995402009321872860">
+        <property name="color:32" value="blue" />
       </node>
     </node>
   </node>
@@ -1881,6 +1939,7 @@
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="8474643070102636504">
           <property name="noTargetText:32" value="?c" />
           <link role="relationDeclaration:32" targetNodeId="1.8474643070102636486" />
+          <link role="styleClass:32" targetNodeId="5610919440661280460" resolveInfo="NullStyle" />
         </node>
         <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="8474643070103162691">
           <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8474643070103162692">
@@ -1956,6 +2015,7 @@
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="8474643070111818354">
           <property name="noTargetText:32" value="?p" />
           <link role="relationDeclaration:32" targetNodeId="1.8474643070111818352" />
+          <link role="styleClass:32" targetNodeId="5610919440661280460" resolveInfo="NullStyle" />
         </node>
         <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="3905757829909264650">
           <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3905757829909264651">
@@ -2012,7 +2072,7 @@
     <link role="conceptDeclaration:32" targetNodeId="1.3905757829901343108" resolveInfo="CommandKeeper" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="975347375211242238">
       <property name="nullText:32" value="?command" />
-      <link role="styleClass:32" targetNodeId="3905757829895296290" resolveInfo="HintStyle" />
+      <link role="styleClass:32" targetNodeId="5610919440661280460" resolveInfo="NullStyle" />
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem:32" id="975347375211572477">
         <property name="position:32" value="FIRST" />
       </node>
@@ -2038,32 +2098,26 @@
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="9034131902186403395">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="9034131902186403398">
         <link role="relationDeclaration:32" targetNodeId="1.4857814468235197588" resolveInfo="left" />
+        <link role="styleClass:32" targetNodeId="4995402009321872858" resolveInfo="QuoteStyle" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="9034131902186403403">
           <property name="flag:32" value="true" />
         </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem:32" id="9034131902191124040">
-          <node role="query:32" type="jetbrains.mps.lang.editor.structure.RGBColor:32" id="9034131902191124041">
-            <property name="value:32" value="C5C5FF" />
-          </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="5610919440661633087">
+          <property name="labelName:32" value="quote-command" />
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="9034131902186403400">
         <link role="relationDeclaration:32" targetNodeId="1.4857814468235197593" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem:32" id="9034131902191189788">
-          <node role="query:32" type="jetbrains.mps.lang.editor.structure.RGBColor:32" id="9034131902191189789">
-            <property name="value:32" value="FFE6E6" />
-          </node>
-        </node>
+        <link role="styleClass:32" targetNodeId="5610919440661633083" resolveInfo="QuotesCommandSubstitution" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="9034131902186403402">
         <link role="relationDeclaration:32" targetNodeId="1.4857814468235197590" resolveInfo="right" />
+        <link role="styleClass:32" targetNodeId="4995402009321872858" resolveInfo="QuoteStyle" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="9034131902186403404">
           <property name="flag:32" value="true" />
         </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem:32" id="9034131902191124043">
-          <node role="query:32" type="jetbrains.mps.lang.editor.structure.RGBColor:32" id="9034131902191124044">
-            <property name="value:32" value="C5C5FF" />
-          </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="5610919440661633089">
+          <property name="labelName:32" value="quote-command" />
         </node>
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="9034131902186403397" />

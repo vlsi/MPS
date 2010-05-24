@@ -6,20 +6,20 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
+import java.awt.Color;
 
 public class BashLanguageStyle_StyleSheet {
   public static Style getVariable(final EditorCell cell) {
     Style style = new Style(cell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, new Color(40983));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }
 
   public static Style getCommandName(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
     return style;
   }
 
@@ -32,7 +32,7 @@ public class BashLanguageStyle_StyleSheet {
   public static Style getHintStyle(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.AUTO_DELETABLE, true);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
     return style;
   }
 
@@ -55,7 +55,7 @@ public class BashLanguageStyle_StyleSheet {
 
   public static Style getCommentedCommand(final EditorCell cell) {
     Style style = new Style(cell);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     return style;
   }
 
@@ -68,13 +68,13 @@ public class BashLanguageStyle_StyleSheet {
 
   public static Style getActivationRecord(final EditorCell cell) {
     Style style = new Style(cell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     return style;
   }
 
   public static Style getShellScriptName(final EditorCell cell) {
     Style style = new Style(cell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     return style;
   }
@@ -82,6 +82,45 @@ public class BashLanguageStyle_StyleSheet {
   public static Style getOperator(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    return style;
+  }
+
+  public static Style getQuotedWord(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(15004415));
+    return style;
+  }
+
+  public static Style getParameterExpansion(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    return style;
+  }
+
+  public static Style getNullStyle(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.AUTO_DELETABLE, true);
+    style.set(StyleAttributes.NULL_TEXT_COLOR, MPSColors.lightGray);
+    return style;
+  }
+
+  public static Style getSimpleWordStyle(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    return style;
+  }
+
+  public static Style getQuotesCommandSubstitution(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.BACKGROUND_COLOR, new Color(16711603));
+    return style;
+  }
+
+  public static Style getQuoteStyle(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
     return style;
   }
 }
