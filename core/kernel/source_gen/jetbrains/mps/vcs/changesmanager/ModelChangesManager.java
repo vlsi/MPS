@@ -35,6 +35,7 @@ import jetbrains.mps.vcs.diff.changes.DeleteNodeChange;
 import jetbrains.mps.vcs.diff.changes.MoveNodeChange;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
+import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.vcs.diff.changes.SetNodeChange;
@@ -71,7 +72,6 @@ import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.vcs.diff.changes.UsedDevkitsChange;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
-import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.vcs.diff.changes.DeleteReferenceChange;
@@ -93,6 +93,7 @@ public class ModelChangesManager {
   private Map<NodeIdRolePair, List<Change>> myMultipleChildChanges = MapSequence.fromMap(new HashMap<NodeIdRolePair, List<Change>>());
   private boolean myEnabled = false;
   private FileStatus myFileStatus;
+  private Map<SNodeId, SNodeId> myRollbackReplaceCache = MapSequence.fromMap(new HashMap<SNodeId, SNodeId>());
 
   public ModelChangesManager(@NotNull Project project, @NotNull SModelDescriptor modelDescriptor) {
     myProject = project;
@@ -407,6 +408,10 @@ public class ModelChangesManager {
             SNode node = model.getNodeById(nodeId);
             SNode parent = SNodeOperations.getParent(node);
             String conceptFqName = node.getConceptFqName();
+            MoveNodeChange moveNodeChange = (MoveNodeChange) change;
+            if (ObjectUtils.equals(moveNodeChange.getNewParent(), check_9173428185844017636(parent)) && ObjectUtils.equals(moveNodeChange.getNewRole(), SNodeOperations.getContainingLinkRole(node))) {
+              continue;
+            }
 
             // adding NewNodeChange if needed 
             if (parent == null || !(SetSequence.fromSet(addedNodes).contains(parent.getSNodeId()))) {
@@ -826,7 +831,7 @@ __switch__:
       }
     }
     for (SNode node : ListSequence.fromList(SModelUtils.getDominators(nodesToChangeId))) {
-      SModelUtils.resetNodeId(node);
+      resetNodeId(node);
     }
     return copyOfBaseNode;
   }
@@ -839,19 +844,41 @@ __switch__:
     }, false);
     Sequence.fromIterable(sortedChanges).visitAll(new IVisitor<Change>() {
       public void visit(Change ch) {
-        rollbackChange(ch);
+        rollbackChange_internal(ch);
       }
     });
+    MapSequence.fromMap(myRollbackReplaceCache).clear();
   }
 
   public void rollbackChange(@NotNull Change change) {
+    rollbackChange_internal(change);
+    MapSequence.fromMap(myRollbackReplaceCache).clear();
+  }
+
+  private void resetNodeId(@NotNull SNode node) {
+    SNode copyOfNode = CopyUtil.copy(node);
+    SNode parent = node.getParent();
+    if (parent == null) {
+      return;
+    } else {
+      MapSequence.fromMap(myRollbackReplaceCache).put(node.getSNodeId(), copyOfNode.getSNodeId());
+      parent.replaceChild(node, copyOfNode);
+      node.delete();
+    }
+  }
+
+  private void rollbackChange_internal(@NotNull Change change) {
     // This method should be invoked inside command 
     assert ModelAccess.instance().canWrite();
     if (change instanceof NewNodeChange) {
       if (change instanceof AddRootChange) {
         return;
       } else {
-        SNode node = getModel().getNodeById(change.getAffectedNodeId());
+        SNodeId nodeId = change.getAffectedNodeId();
+        if (MapSequence.fromMap(myRollbackReplaceCache).containsKey(nodeId)) {
+          nodeId = MapSequence.fromMap(myRollbackReplaceCache).get(nodeId);
+        }
+        SNode node = getModel().getNodeById(nodeId);
         if (node == null) {
           return;
         }
@@ -869,7 +896,9 @@ __switch__:
 
           SNode baseNode = getBaseNode(baseNodeId, node);
           if (baseNode != null) {
+            MapSequence.fromMap(myRollbackReplaceCache).put(node.getSNodeId(), baseNode.getSNodeId());
             parent.replaceChild(node, baseNode);
+            node.delete();
           }
         }
       }
@@ -913,6 +942,13 @@ __switch__:
         }
       }
     }
+  }
+
+  private static SNodeId check_9173428185844017636(SNode p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getSNodeId();
   }
 
   private static SNodeId check_7654328074273895290(SNode p) {
@@ -1060,9 +1096,14 @@ __switch__:
     }
 
     private void removeChildChanges(@NotNull final SNodeId nodeId) {
-      removeChanges(Change.class, new _FunctionTypes._return_P1_E0<Boolean, Change>() {
-        public Boolean invoke(Change ch) {
-          return ch.getAffectedNodeId() != null && nodeId.equals(getBaseParentId(ch.getAffectedNodeId()));
+      removeChanges(NewNodeChange.class, new _FunctionTypes._return_P1_E0<Boolean, NewNodeChange>() {
+        public Boolean invoke(NewNodeChange ch) {
+          return nodeId.equals(ch.getNodeParent());
+        }
+      });
+      removeChanges(DeleteNodeChange.class, new _FunctionTypes._return_P1_E0<Boolean, DeleteNodeChange>() {
+        public Boolean invoke(DeleteNodeChange ch) {
+          return nodeId.equals(ch.getParentId());
         }
       });
     }

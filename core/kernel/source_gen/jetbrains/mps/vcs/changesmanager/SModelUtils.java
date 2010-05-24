@@ -18,7 +18,6 @@ import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.CopyUtil;
 
 public class SModelUtils {
   @NotNull
@@ -73,15 +72,5 @@ public class SModelUtils {
       }
     }
     return dominators;
-  }
-
-  public static void resetNodeId(@NotNull SNode node) {
-    SNode copyOfNode = CopyUtil.copy(node);
-    SNode parent = node.getParent();
-    if (parent == null) {
-      return;
-    } else {
-      parent.replaceChild(node, copyOfNode);
-    }
   }
 }
