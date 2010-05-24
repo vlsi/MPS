@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.SModelDescriptor;
 import javax.swing.JScrollPane;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -57,13 +59,20 @@ public class EvaluationDialog extends BaseDialog {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         EvaluationDialog.this.myEditor = new EmbeddableEditor(new ModuleContext(EvaluationDialog.this.myEvaluationData.getModule(), EvaluationDialog.this.myEvaluationData.getModule().getMPSProject()), EvaluationDialog.this.myEvaluationData.getModule(), EvaluationDialog.this.myEvaluationData.getRootToShow(), myEvaluationData.getNodeToShow(), true);
-        myEvaluationData.setModel(myEditor.getModel());
 
         for (Language language : EvaluationDialog.this.myEvaluationData.getRequiredLanguages()) {
           EvaluationDialog.this.myEditor.addLanguage(language);
         }
       }
     });
+
+    final Wrappers._T<SModelDescriptor> d = new Wrappers._T<SModelDescriptor>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        d.value = myEditor.getModel();
+      }
+    });
+    myEvaluationData.setModel(d.value);
 
     this.myPanel.add(this.myEditor.getComponenet(), BorderLayout.NORTH);
     this.myTree = new EvaluationDialog.MyTree();

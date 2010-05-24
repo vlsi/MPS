@@ -11,6 +11,8 @@ import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.EachClassPathItemVisitor;
 import jetbrains.mps.reloading.JarFileClassPathItem;
@@ -74,25 +76,35 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
       }
     });
 
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
       public void run() {
-        // add classpath to module to be able to see classes in evaluation 
-        IClassPathItem cpItem = getLocationModel().getModelDescriptor().getModule().getClassPathItem();
-        cpItem.accept(new EachClassPathItemVisitor() {
-          @Override
-          public void visit(JarFileClassPathItem item) {
-            getModule().addStubPath(item.getFile().getAbsolutePath());
-          }
+        final ProgressIndicator indicator = ProgressManager.getInstance().getProgressIndicator();
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            // add classpath to module to be able to see classes in evaluation 
+            IClassPathItem cpItem = getLocationModel().getModelDescriptor().getModule().getClassPathItem();
+            cpItem.accept(new EachClassPathItemVisitor() {
+              @Override
+              public void visit(JarFileClassPathItem item) {
+                String path = item.getFile().getAbsolutePath();
+                getModule().addStubPath(path);
+                indicator.setText2("Added " + path);
+              }
 
-          @Override
-          public void visit(FileClassPathItem item) {
-            getModule().addStubPath(item.getClassPath());
+              @Override
+              public void visit(FileClassPathItem item) {
+                String path = item.getClassPath();
+                getModule().addStubPath(path);
+                indicator.setText2("Added " + path);
+              }
+            });
+
+            indicator.setText2("Reloading stubs...");
+            StubReloadManager.getInstance().reload();
           }
         });
-
-        StubReloadManager.getInstance().reload();
       }
-    });
+    }, "Loading stubs", false, myContext.getProject());
   }
 
   @Nullable
@@ -199,8 +211,11 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
   public void setModel(SModelDescriptor model) {
     super.setModel(model);
 
-    this.importStubForFqName(getLocationModel().getSModelFqName().toString());
-
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        LowLevelEvaluationLogic.this.importStubForFqName(getLocationModel().getSModelFqName().toString());
+      }
+    });
     createVars();
   }
 
