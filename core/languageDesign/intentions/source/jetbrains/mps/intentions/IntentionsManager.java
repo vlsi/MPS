@@ -36,6 +36,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -339,7 +340,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       intentions = new HashSet<Intention>();
     }
     intentions.add((Intention) intention);
-    myIntentions.put(intention.getConcept(), intentions);
+    myIntentions.put(InternUtil.intern(intention.getConcept()), intentions);
   }
 
   //-------------queryDescriptor-----------------
