@@ -901,6 +901,10 @@ public class QueriesGenerated {
       }
       return null;
     }
+
+    public void performActions() {
+      throw new RuntimeException("NOT IMPLEMENTED");
+    }
   }
 
   public static class QuotationClass_x583g4_a0a0a0a94 {
