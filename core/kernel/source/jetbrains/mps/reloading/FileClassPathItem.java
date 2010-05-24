@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -116,6 +117,7 @@ public class FileClassPathItem extends RealClassPathItem {
   }
 
   private void buildCacheFor(String namespace) {
+    namespace = InternUtil.intern(namespace);
     Set<String> subpacks = null;
     Set<String> classes = null;
     IFile dir = getModelDir(namespace);
