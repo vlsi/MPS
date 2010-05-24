@@ -27,6 +27,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.ActionUtils;
 
@@ -59,12 +60,12 @@ public class NamespaceTextNode extends TextTreeNode {
   private String myName;
 
   public NamespaceTextNode(String name, IOperationContext context) {
-    super(name, context);
+    super(name = InternUtil.intern(name), context);
     setName(name);
   }
 
   public void setName(String newName) {
-    myName = newName;
+    myName = InternUtil.intern(newName);
     setText(newName);
   }
 
