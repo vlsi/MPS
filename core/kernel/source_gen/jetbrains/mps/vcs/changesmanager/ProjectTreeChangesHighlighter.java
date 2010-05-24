@@ -134,6 +134,9 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
                 model.value = SNodeOperations.getModel(node);
               }
             });
+            if (model.value.getModelDescriptor() == null) {
+              return;
+            }
             ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(model.value);
             if (modelChangesManager != null) {
               modelChangesManager.setEnabled(true);
