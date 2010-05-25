@@ -70,9 +70,9 @@ public class OptimizeImportsHelper {
     List<SModelDescriptor> modelsToOptimize = solution.getOwnModelDescriptors();
     Result result = optimizeModelsImports_internal(modelsToOptimize);
 
-    SolutionDescriptor descriptor = solution.getSolutionDescriptor();
+    SolutionDescriptor descriptor = solution.getModuleDescriptor();
     result.myReport = optimizeModuleImports(descriptor, result) + "\n\n" + result.myReport;
-    solution.setSolutionDescriptor(descriptor, false);
+    solution.setModuleDescriptor(descriptor, false);
 
     return result;
   }
@@ -85,9 +85,9 @@ public class OptimizeImportsHelper {
     }
     Result result = optimizeModelsImports_internal(modelsToOptimize);
 
-    LanguageDescriptor descriptor = language.getLanguageDescriptor();
+    LanguageDescriptor descriptor = language.getModuleDescriptor();
     result.myReport = optimizeModuleImports(descriptor, result) + "\n\n" + result.myReport;
-    language.setLanguageDescriptor(descriptor, false);
+    language.setModuleDescriptor(descriptor, false);
 
     return result;
   }

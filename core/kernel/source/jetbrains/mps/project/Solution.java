@@ -126,7 +126,7 @@ public class Solution extends AbstractModule<SolutionDescriptor> {
 
   @Deprecated
   public SolutionDescriptor getSolutionDescriptor() {
-    return mySolutionDescriptor;
+    return getModuleDescriptor();
   }
 
   @Deprecated

@@ -24,7 +24,6 @@ import jetbrains.mps.ide.StereotypeProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -172,7 +171,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     public List<String> validate() {
       List<String> errors = new ArrayList<String>();
       IScope scope = getLanguage().getScope();
-      for (SModelReference accessory : getLanguage().getLanguageDescriptor().getAccessoryModels()) {
+      for (SModelReference accessory : getLanguage().getModuleDescriptor().getAccessoryModels()) {
         if (scope.getModelDescriptor(accessory) == null) {
           errors.add("Can't find accessory " + accessory.getLongName());
         }

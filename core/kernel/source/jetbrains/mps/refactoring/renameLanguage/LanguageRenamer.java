@@ -91,9 +91,9 @@ public class LanguageRenamer {
       }
     }
 
-    LanguageDescriptor descriptor = myLanguage.getLanguageDescriptor();
+    LanguageDescriptor descriptor = myLanguage.getModuleDescriptor();
     descriptor.setNamespace(myNewName);
-    myLanguage.setLanguageDescriptor(descriptor, false);
+    myLanguage.setModuleDescriptor(descriptor, false);
     myLanguage.save();
 
     myProcessor.writeIntoLog(structure.getSModel(), myContext);

@@ -164,7 +164,7 @@ public class Generator extends AbstractModule<GeneratorDescriptor>{
 
   @Deprecated
   public GeneratorDescriptor getGeneratorDescriptor() {
-    return myGeneratorDescriptor;
+    return getModuleDescriptor();
   }
 
   public GeneratorDescriptor getModuleDescriptor() {
@@ -172,11 +172,11 @@ public class Generator extends AbstractModule<GeneratorDescriptor>{
   }
 
   public void setModuleDescriptor(GeneratorDescriptor moduleDescriptor, boolean reloadClasses) {
-    LanguageDescriptor languageDescriptor = getSourceLanguage().getLanguageDescriptor();
-    int index = languageDescriptor.getGenerators().indexOf(this.getGeneratorDescriptor());
+    LanguageDescriptor languageDescriptor = getSourceLanguage().getModuleDescriptor();
+    int index = languageDescriptor.getGenerators().indexOf(getModuleDescriptor());
     languageDescriptor.getGenerators().remove(index);
     languageDescriptor.getGenerators().add(index, (GeneratorDescriptor) moduleDescriptor);
-    getSourceLanguage().setLanguageDescriptor(languageDescriptor, reloadClasses);
+    getSourceLanguage().setModuleDescriptor(languageDescriptor, reloadClasses);
   }
 
   public String getName() {
