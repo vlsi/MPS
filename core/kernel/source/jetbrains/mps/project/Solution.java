@@ -37,7 +37,7 @@ import java.util.UUID;
  * Igor Alshannikov
  * Aug 26, 2005
  */
-public class Solution extends AbstractModule<SolutionDescriptor> {
+public class Solution extends AbstractModule {
   private static final Logger LOG = Logger.getLogger(Solution.class);
 
   private SolutionDescriptor mySolutionDescriptor;
@@ -67,7 +67,7 @@ public class Solution extends AbstractModule<SolutionDescriptor> {
       return repository.getSolution(descriptor.getModuleReference());
     }
 
-    solution.setModuleDescriptor(descriptor, false);
+    solution.setSolutionDescriptor(descriptor, false);
     repository.addModule(solution, moduleOwner);
 
     return solution;
@@ -110,41 +110,16 @@ public class Solution extends AbstractModule<SolutionDescriptor> {
     }
   }
 
-  public void dispose() {
-    super.dispose();
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
+    setSolutionDescriptor((SolutionDescriptor) moduleDescriptor, reloadClasses);
   }
 
-  public void save() {
-    if (isStub()) return;
-    SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getSolutionDescriptor());
-  }
-
-  public boolean isStub() {
-    return myDescriptorFile == null;
-  }
-
-  @Deprecated
-  public SolutionDescriptor getSolutionDescriptor() {
-    return getModuleDescriptor();
-  }
-
-  @Deprecated
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
     setSolutionDescriptor(newDescriptor, true);
   }
 
-  @Deprecated
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
-    setModuleDescriptor(newDescriptor, reloadClasses);
-  }
-
-  public SolutionDescriptor getModuleDescriptor() {
-    return mySolutionDescriptor;
-  }
-
-  public void setModuleDescriptor(SolutionDescriptor moduleDescriptor, boolean reloadClasses) {
-    mySolutionDescriptor = moduleDescriptor;
+    mySolutionDescriptor = newDescriptor;
 
     ModuleReference mp;
     if (isExternallyVisible() && mySolutionDescriptor.getNamespace() != null) {
@@ -163,6 +138,28 @@ public class Solution extends AbstractModule<SolutionDescriptor> {
     if (reloadClasses) {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     }
+  }
+
+  public void dispose() {
+    super.dispose();
+    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+  }
+
+  public void save() {
+    if (isStub()) return;
+    SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getSolutionDescriptor());
+  }
+
+  public boolean isStub() {
+    return myDescriptorFile == null;
+  }
+
+  public SolutionDescriptor getSolutionDescriptor() {
+    return mySolutionDescriptor;
+  }
+
+  public SolutionDescriptor getModuleDescriptor() {
+    return mySolutionDescriptor;
   }
 
   public String toString() {

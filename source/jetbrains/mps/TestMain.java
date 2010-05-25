@@ -18,10 +18,12 @@ package jetbrains.mps;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.idea.IdeaTestApplication;
 import com.intellij.idea.LoggerFactory;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -39,6 +41,7 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.MPSExtentions;
 import org.jdom.JDOMException;
 
+import javax.swing.SwingUtilities;
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashSet;
@@ -230,8 +233,8 @@ public class TestMain {
 
           //update languages' classpathes
           {
-            LanguageDescriptor testRefactoringDescriptor = testRefactoringLanguage[0].getModuleDescriptor();
-            LanguageDescriptor testRefactoringTargetDescriptor = testRefactoringTargetLanguage[0].getModuleDescriptor();
+            LanguageDescriptor testRefactoringDescriptor = testRefactoringLanguage[0].getLanguageDescriptor();
+            LanguageDescriptor testRefactoringTargetDescriptor = testRefactoringTargetLanguage[0].getLanguageDescriptor();
 
             ClassPathEntry cpEntry1 = new ClassPathEntry();
             ClassPathEntry cpEntry2 = new ClassPathEntry();
@@ -242,8 +245,8 @@ public class TestMain {
             testRefactoringDescriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(cpEntry1));
             testRefactoringTargetDescriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(cpEntry2));
 
-            testRefactoringLanguage[0].setModuleDescriptor(testRefactoringDescriptor, false);
-            testRefactoringTargetLanguage[0].setModuleDescriptor(testRefactoringTargetDescriptor, false);
+            testRefactoringLanguage[0].setLanguageDescriptor(testRefactoringDescriptor, false);
+            testRefactoringTargetLanguage[0].setLanguageDescriptor(testRefactoringTargetDescriptor, false);
           }
         } catch (Throwable t) {
           t.printStackTrace();

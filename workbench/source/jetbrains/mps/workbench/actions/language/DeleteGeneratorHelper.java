@@ -43,9 +43,9 @@ public class DeleteGeneratorHelper {
   }
 
   public static void delete(Language sourceLanguage, GeneratorDescriptor generatorDescriptor, boolean deleteFiles) {
-    LanguageDescriptor languageDescriptor = sourceLanguage.getModuleDescriptor();
+    LanguageDescriptor languageDescriptor = sourceLanguage.getLanguageDescriptor();
     languageDescriptor.getGenerators().remove(generatorDescriptor);
-    sourceLanguage.setModuleDescriptor(languageDescriptor, true);
+    sourceLanguage.setLanguageDescriptor(languageDescriptor);
     sourceLanguage.save();
   }
 
@@ -73,9 +73,9 @@ public class DeleteGeneratorHelper {
       return;
     }
 
-    LanguageDescriptor languageDescriptor = sourceLanguage.getModuleDescriptor();
-    languageDescriptor.getGenerators().remove(generator.getModuleDescriptor());
-    sourceLanguage.setModuleDescriptor(languageDescriptor, true);
+    LanguageDescriptor languageDescriptor = sourceLanguage.getLanguageDescriptor();
+    languageDescriptor.getGenerators().remove(generator.getGeneratorDescriptor());
+    sourceLanguage.setLanguageDescriptor(languageDescriptor);
     if (deleteFiles) {
       LOG.error("DELETE GENERATOR FILES - NOT IMPLEMENTED", new Throwable());
       //todo

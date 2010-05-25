@@ -199,7 +199,7 @@ public class NewGeneratorDialog extends BaseDialog {
   }
 
   protected Generator createNewGenerator(Language sourceLanguage, File templateModelsDir, String name) {
-    LanguageDescriptor languageDescriptor = sourceLanguage.getModuleDescriptor();
+    LanguageDescriptor languageDescriptor = sourceLanguage.getLanguageDescriptor();
     GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(sourceLanguage));
     generatorDescriptor.setNamespace(name);

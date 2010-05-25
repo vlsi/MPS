@@ -30,7 +30,7 @@ import java.io.File;
 import java.util.List;
 import java.util.Set;
 
-public interface IModule<D extends ModuleDescriptor> extends ModelOwner{
+public interface IModule extends ModelOwner{
   @Deprecated
   String getModuleUID();
 
@@ -87,11 +87,11 @@ public interface IModule<D extends ModuleDescriptor> extends ModelOwner{
 
   IFile getDescriptorFile();
 
-  D getModuleDescriptor();
+  ModuleDescriptor getModuleDescriptor();
 
-  void setModuleDescriptor(D descriptor);
+  void setModuleDescriptor(ModuleDescriptor moduleDescriptor);
 
-  void setModuleDescriptor(D descriptor, boolean reloadClasses);
+  void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses);
 
   String getGeneratorOutputPath();
 

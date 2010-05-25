@@ -16,8 +16,12 @@
 package jetbrains.mps.project.listener;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.ThreadUtils;
+
+import java.util.List;
 
 public class LanguageAspectCreationListener extends ModelCreationListener {
   public boolean isApplicable(SModelDescriptor m) {
@@ -42,7 +46,7 @@ public class LanguageAspectCreationListener extends ModelCreationListener {
         }
       });
     }
-    language.setModuleDescriptor(language.getModuleDescriptor(), false);
+    language.setLanguageDescriptor(language.getLanguageDescriptor(), false);
     language.save();
   }
 }
