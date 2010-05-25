@@ -23,7 +23,10 @@ All rights reserved.
 NanoContainer Organization 
 http://www.picocontainer.org/
 Copyright (c) 2003
- 
+
+The HTML Parser project
+http://htmlparser.org
+
 Original Reusable Objects, Inc 
 http://www.savarese.org/oro/index.html
 Copyright (c) 1996, 1997
