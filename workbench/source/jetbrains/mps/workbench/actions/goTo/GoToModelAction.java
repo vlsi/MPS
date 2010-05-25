@@ -54,7 +54,6 @@ public class GoToModelAction extends BaseAction {
           public void navigate(boolean requestFocus) {
             ProjectPane projectPane = ProjectPane.getInstance(project);
             projectPane.selectModel(modelDescriptor);
-            projectPane.activate(true);
           }
         };
       }

@@ -246,19 +246,26 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   public void selectModel(@NotNull final SModelDescriptor model) {
     LOG.checkEDT();
-
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ToolWindowManager windowManager = ToolWindowManager.getInstance(myProject);
+    ToolWindow projectViewToolWindow = windowManager.getToolWindow(ToolWindowId.PROJECT_VIEW);
+    projectViewToolWindow.activate(new Runnable() {
+      @Override
       public void run() {
-        SModelTreeNode modelTreeNode = myFindHelper.findMostSuitableModelTreeNode(model);
+        myProjectView.changeView(ID);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            SModelTreeNode modelTreeNode = myFindHelper.findMostSuitableModelTreeNode(model);
 
-        if (modelTreeNode == null) {
-          LOG.warning("Couldn't select model \"" + model.getLongName() + "\" : tree node not found.");
-          return;
-        }
+            if (modelTreeNode == null) {
+              LOG.warning("Couldn't select model \"" + model.getLongName() + "\" : tree node not found.");
+              return;
+            }
 
-        getTree().selectNode(modelTreeNode);
+            getTree().selectNode(modelTreeNode);
+          }
+        });
       }
-    });
+    }, false);
   }
 
   public void selectNode(@NotNull final SNode node) {
