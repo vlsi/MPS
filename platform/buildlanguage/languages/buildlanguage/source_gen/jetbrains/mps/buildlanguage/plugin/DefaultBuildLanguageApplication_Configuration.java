@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.impl.ConsoleViewImpl;
-import jetbrains.mps.debug.info.StacktraceUtil;
+import jetbrains.mps.debug.api.info.StacktraceUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JComponent;
 import java.util.List;
