@@ -23,6 +23,13 @@ import java.awt.event.MouseEvent;
 import java.awt.Cursor;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
+import jetbrains.mps.vcs.diff.changes.Change;
+import jetbrains.mps.vcs.diff.changes.SetNodeChange;
+import jetbrains.mps.vcs.diff.changes.SubstituteNodeChange;
+import jetbrains.mps.vcs.diff.changes.NewNodeChange;
+import jetbrains.mps.vcs.diff.changes.DeleteNodeChange;
+import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
+import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -253,6 +260,11 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     return myCurrentMessageGroup;
   }
 
+  @Override
+  public String getToolTipText() {
+    return check_8382651302317426266(myCurrentMessageGroup);
+  }
+
   @NotNull
   public ChangesFoldingAreaPainter.MessageGroup createMessageGroup(@NotNull List<EditorComponentChangesHighligher.ChangeEditorMessage> messages) {
     final EditorComponent editorComponent = getEditorComponent();
@@ -265,6 +277,13 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     } else {
       return new ChangesFoldingAreaPainter.MessageGroup(messages);
     }
+  }
+
+  private static String check_8382651302317426266(ChangesFoldingAreaPainter.MessageGroup p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getToolTipText();
   }
 
   public class MessageGroup {
@@ -298,22 +317,54 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
       return myHeight;
     }
 
-    @NotNull
-    public Color getColor() {
+    private ChangeType getUnitedChangeType() {
       if (ListSequence.fromList(myMessages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
         public boolean accept(EditorComponentChangesHighligher.ChangeEditorMessage m) {
           return m.getChange().getChangeType() == ChangeType.ADD;
         }
       })) {
-        return ChangeType.ADD.getColor();
+        return ChangeType.ADD;
       } else if (ListSequence.fromList(myMessages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
         public boolean accept(EditorComponentChangesHighligher.ChangeEditorMessage m) {
           return m.getChange().getChangeType() == ChangeType.DELETE;
         }
       })) {
-        return ChangeType.DELETE.getColor();
+        return ChangeType.DELETE;
       } else {
-        return ChangeType.CHANGE.getColor();
+        return ChangeType.CHANGE;
+      }
+    }
+
+    @NotNull
+    public Color getColor() {
+      return getUnitedChangeType().getColor();
+    }
+
+    public String getToolTipText() {
+      if (ListSequence.fromList(myMessages).count() == 1) {
+        Change change = ListSequence.fromList(myMessages).first().getChange();
+        if (change instanceof SetNodeChange && change.getChangeType() == ChangeType.CHANGE || change instanceof SubstituteNodeChange) {
+          return "Replaced node in role " + ((NewNodeChange) change).getNodeRole();
+        } else if (change instanceof NewNodeChange) {
+          return "Added node of in role " + ((NewNodeChange) change).getNodeRole();
+        } else if (change instanceof DeleteNodeChange) {
+          return "Deleted node in role " + ((DeleteNodeChange) change).getRole();
+        } else if (change instanceof SetReferenceChange) {
+          return "Changed reference target in role " + ((SetReferenceChange) change).getRole();
+        } else if (change instanceof SetPropertyChange) {
+          return "Changed property value with name " + ((SetPropertyChange) change).getProperty();
+        }
+        return "1 change";
+      } else {
+        ChangeType unitedChangeType = getUnitedChangeType();
+        switch (unitedChangeType) {
+          case ADD:
+            return "Added " + ListSequence.fromList(myMessages).count() + " nodes";
+          case DELETE:
+            return "Deleted " + ListSequence.fromList(myMessages).count() + " nodes";
+          default:
+            return ListSequence.fromList(myMessages).count() + " changes";
+        }
       }
     }
   }

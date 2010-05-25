@@ -444,7 +444,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
 
     @Override
     public boolean isLongInGutter() {
-      return isDeletedChild();
+      return true;
     }
 
     @Override
