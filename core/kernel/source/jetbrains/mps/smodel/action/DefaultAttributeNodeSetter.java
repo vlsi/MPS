@@ -25,7 +25,10 @@ public class DefaultAttributeNodeSetter extends DefaultChildNodeSetter {
   }
 
   public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
-    parentNode.replaceChild(oldChild, newChild);
+    if (oldChild != null) {
+      parentNode.replaceChild(oldChild, newChild);
+      oldChild.delete();
+    }
     return newChild;
   }
 

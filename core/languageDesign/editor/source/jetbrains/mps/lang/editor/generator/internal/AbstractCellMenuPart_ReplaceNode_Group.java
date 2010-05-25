@@ -65,6 +65,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
           SNode newNode = createReplacementNode(parameterObject, node, node.getModel(), context.getScope(), context);
           if (newNode != node) {
             parent.replaceChild(node, newNode);
+            node.delete();
           }
 
           return newNode;
