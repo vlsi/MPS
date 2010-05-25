@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug;
+package jetbrains.mps.debug.api;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;

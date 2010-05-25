@@ -360,7 +360,7 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.debug.info.BLDebugInfoCache</implementation-class>
+            <implementation-class>jetbrains.mps.debug.api.info.BLDebugInfoCache</implementation-class>
         </component>
 
         <component>
@@ -368,7 +368,7 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.debug.DebugInfoManager</implementation-class>
+            <implementation-class>jetbrains.mps.debug.api.DebugInfoManager</implementation-class>
         </component>
 
         <component>

@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.generator.generationTypes;
 
-import jetbrains.mps.debug.info.PositionInfo;
-import jetbrains.mps.debug.info.ScopePositionInfo;
-import jetbrains.mps.debug.info.UnitPositionInfo;
+import jetbrains.mps.debug.api.info.PositionInfo;
+import jetbrains.mps.debug.api.info.ScopePositionInfo;
+import jetbrains.mps.debug.api.info.UnitPositionInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;

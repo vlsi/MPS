@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug.info)">
+<model modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug.api.info)">
   <persistence version="4" />
   <refactoringHistory />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
@@ -6262,7 +6262,7 @@
               <link role="variableDeclaration:3" targetNodeId="4494976841093543965" resolveInfo="ctx" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2521107925296530259">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~CacheGenerationContext.getDebugInfo():jetbrains.mps.debug.info.DebugInfo" resolveInfo="getDebugInfo" />
+              <link role="baseMethodDeclaration:3" targetNodeId="6.~CacheGenerationContext.getDebugInfo():jetbrains.mps.debug.api.info.DebugInfo" resolveInfo="getDebugInfo" />
             </node>
           </node>
         </node>

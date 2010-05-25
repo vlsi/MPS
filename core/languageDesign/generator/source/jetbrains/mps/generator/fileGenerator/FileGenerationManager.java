@@ -25,7 +25,7 @@ import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
-import jetbrains.mps.debug.info.*;
+import jetbrains.mps.debug.api.info.*;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;

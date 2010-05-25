@@ -1,7 +1,6 @@
 package jetbrains.mps.debug.api;
 
 import jetbrains.mps.debug.api.BreakpointInfo;
-import jetbrains.mps.debug.DebugInfoManager;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.project.Project;
 

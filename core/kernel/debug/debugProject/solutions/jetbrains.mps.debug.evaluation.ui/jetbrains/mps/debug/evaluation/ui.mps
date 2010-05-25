@@ -38,7 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
-  <maxImportIndex value="68" />
+  <maxImportIndex value="69" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.ui(jetbrains.mps.ide.ui@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.debug.evaluation(jetbrains.mps.debug.evaluation@java_stub)" version="-1" />
@@ -51,7 +51,7 @@
   <import index="11" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#jetbrains.mps.debug.runtime(jetbrains.mps.debug.runtime@java_stub)" version="-1" />
   <import index="13" modelUID="f:java_stub#com.sun.jdi(com.sun.jdi@java_stub)" version="-1" />
-  <import index="14" modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug.info)" version="-1" />
+  <import index="14" modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug.api.info)" version="-1" />
   <import index="15" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
   <import index="21" modelUID="f:java_stub#java.lang.reflect(java.lang.reflect@java_stub)" version="-1" />
@@ -93,6 +93,7 @@
   <import index="66" modelUID="r:d0deafb6-c4af-4c30-b09c-3ec1bfe23ece(jetbrains.mps.baseLanguage.stubs)" version="-1" />
   <import index="67" modelUID="r:aa7e8178-3b66-4295-bcce-165c85d78006(jetbrains.mps.stubs.javastub)" version="-1" />
   <import index="68" modelUID="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.stubs.javastub.asm)" version="-1" />
+  <import index="69" modelUID="f:java_stub#jetbrains.mps.debug.api(jetbrains.mps.debug.api@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5849716370568348282">
     <property name="name:3" value="EvaluationDialog" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5849716370568348283" />
@@ -8203,11 +8204,11 @@
                               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="672360099287477336" />
                               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="672360099287477337">
                                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="672360099287477338">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="57.~DebugInfoManager.getInstance():jetbrains.mps.debug.DebugInfoManager" resolveInfo="getInstance" />
-                                  <link role="classConcept:3" targetNodeId="57.~DebugInfoManager" resolveInfo="DebugInfoManager" />
+                                  <link role="classConcept:3" targetNodeId="69.~DebugInfoManager" resolveInfo="DebugInfoManager" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="69.~DebugInfoManager.getInstance():jetbrains.mps.debug.api.DebugInfoManager" resolveInfo="getInstance" />
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="672360099287477339">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="57.~DebugInfoManager.getUnitName(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="getUnitName" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="69.~DebugInfoManager.getUnitName(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="getUnitName" />
                                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="672360099287477340">
                                     <link role="variableDeclaration:3" targetNodeId="672360099287477321" resolveInfo="node" />
                                   </node>

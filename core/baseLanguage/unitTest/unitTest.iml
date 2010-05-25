@@ -17,6 +17,7 @@
     <orderEntry type="library" exported="" name="JUnit4" level="project" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="runConfigurations" />
+    <orderEntry type="module" module-name="debug" />
   </component>
 </module>
 

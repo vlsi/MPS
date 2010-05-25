@@ -28,11 +28,12 @@
   </stubModelEntries>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
     <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
     <dependency reexport="false">a0c108f0-1637-416e-a249-3effbaa4c998(jetbrains.mps.baseLanguage.search)</dependency>
+    <dependency reexport="false">9b67baf0-e986-49af-b77c-998667f458cb(jetbrains.mps.debug.api.info)</dependency>
     <dependency reexport="false">7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debug.evaluation)</dependency>
     <dependency reexport="false">c6bda6e2-9c37-4cbb-9e2c-bb38ed451c7e(jetbrains.mps.debug.evaluation#1620955434532134778)</dependency>
-    <dependency reexport="false">88f8bc48-a7a1-4edf-93ec-38cb00d0c9d5(jetbrains.mps.debug.info)</dependency>
     <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
     <dependency reexport="false">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</dependency>
   </dependencies>

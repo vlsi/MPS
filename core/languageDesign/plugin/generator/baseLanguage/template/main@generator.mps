@@ -13116,11 +13116,11 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5124230653299830229">
             <property name="name:3" value="manager" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5124230653299830230">
-              <link role="classifier:3" targetNodeId="88.~DebugInfoManager" resolveInfo="DebugInfoManager" />
+              <link role="classifier:3" targetNodeId="94.~DebugInfoManager" resolveInfo="DebugInfoManager" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3136887681529953349">
-              <link role="baseMethodDeclaration:3" targetNodeId="88.~DebugInfoManager.getInstance():jetbrains.mps.debug.DebugInfoManager" resolveInfo="getInstance" />
-              <link role="classConcept:3" targetNodeId="88.~DebugInfoManager" resolveInfo="DebugInfoManager" />
+              <link role="classConcept:3" targetNodeId="94.~DebugInfoManager" resolveInfo="DebugInfoManager" />
+              <link role="baseMethodDeclaration:3" targetNodeId="94.~DebugInfoManager.getInstance():jetbrains.mps.debug.api.DebugInfoManager" resolveInfo="getInstance" />
             </node>
           </node>
         </node>
@@ -13130,7 +13130,7 @@
               <link role="variableDeclaration:3" targetNodeId="5124230653299830229" resolveInfo="manager" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5124230653299830235">
-              <link role="baseMethodDeclaration:3" targetNodeId="88.~DebugInfoManager.addDebuggableConcept(java.lang.String,jetbrains.mps.util.Mapper2):void" resolveInfo="addDebuggableConcept" />
+              <link role="baseMethodDeclaration:3" targetNodeId="94.~DebugInfoManager.addDebuggableConcept(java.lang.String,jetbrains.mps.util.Mapper2):void" resolveInfo="addDebuggableConcept" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6030304139513239380">
                 <property name="value:3" value="" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="6030304139513239381">
@@ -13236,7 +13236,7 @@
               <link role="variableDeclaration:3" targetNodeId="5124230653299830229" resolveInfo="manager" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5177675550061758215">
-              <link role="baseMethodDeclaration:3" targetNodeId="88.~DebugInfoManager.addScopeConcept(java.lang.String,jetbrains.mps.util.Mapper):void" resolveInfo="addScopeConcept" />
+              <link role="baseMethodDeclaration:3" targetNodeId="94.~DebugInfoManager.addScopeConcept(java.lang.String,jetbrains.mps.util.Mapper):void" resolveInfo="addScopeConcept" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5177675550061758216">
                 <property name="value:3" value="" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="5177675550061758217">
@@ -13339,7 +13339,7 @@
               <link role="variableDeclaration:3" targetNodeId="5124230653299830229" resolveInfo="manager" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2278004790372578233">
-              <link role="baseMethodDeclaration:3" targetNodeId="88.~DebugInfoManager.addUnitConcept(java.lang.String,jetbrains.mps.util.Mapper):void" resolveInfo="addUnitConcept" />
+              <link role="baseMethodDeclaration:3" targetNodeId="94.~DebugInfoManager.addUnitConcept(java.lang.String,jetbrains.mps.util.Mapper):void" resolveInfo="addUnitConcept" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2278004790372578234">
                 <property name="value:3" value="" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="2278004790372581334">
@@ -13444,11 +13444,11 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1229033840771641137">
             <property name="name:3" value="manager" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1229033840771641138">
-              <link role="classifier:3" targetNodeId="88.~DebugInfoManager" resolveInfo="DebugInfoManager" />
+              <link role="classifier:3" targetNodeId="94.~DebugInfoManager" resolveInfo="DebugInfoManager" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3136887681529953350">
-              <link role="baseMethodDeclaration:3" targetNodeId="88.~DebugInfoManager.getInstance():jetbrains.mps.debug.DebugInfoManager" resolveInfo="getInstance" />
-              <link role="classConcept:3" targetNodeId="88.~DebugInfoManager" resolveInfo="DebugInfoManager" />
+              <link role="classConcept:3" targetNodeId="94.~DebugInfoManager" resolveInfo="DebugInfoManager" />
+              <link role="baseMethodDeclaration:3" targetNodeId="94.~DebugInfoManager.getInstance():jetbrains.mps.debug.api.DebugInfoManager" resolveInfo="getInstance" />
             </node>
           </node>
         </node>
@@ -13458,7 +13458,7 @@
               <link role="variableDeclaration:3" targetNodeId="1229033840771641137" resolveInfo="manager" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1229033840771641143">
-              <link role="baseMethodDeclaration:3" targetNodeId="88.~DebugInfoManager.removeDebuggableConcept(java.lang.String):void" resolveInfo="removeDebuggableConcept" />
+              <link role="baseMethodDeclaration:3" targetNodeId="94.~DebugInfoManager.removeDebuggableConcept(java.lang.String):void" resolveInfo="removeDebuggableConcept" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1229033840771641144">
                 <property name="value:3" value="" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1229033840771641145">
@@ -13504,7 +13504,7 @@
               <link role="variableDeclaration:3" targetNodeId="1229033840771641137" resolveInfo="manager" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1229033840771641164">
-              <link role="baseMethodDeclaration:3" targetNodeId="88.~DebugInfoManager.removeScopeConcept(java.lang.String):void" resolveInfo="removeScopeConcept" />
+              <link role="baseMethodDeclaration:3" targetNodeId="94.~DebugInfoManager.removeScopeConcept(java.lang.String):void" resolveInfo="removeScopeConcept" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1229033840771641165">
                 <property name="value:3" value="" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1229033840771641166">
@@ -13550,7 +13550,7 @@
               <link role="variableDeclaration:3" targetNodeId="1229033840771641137" resolveInfo="manager" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2278004790372601983">
-              <link role="baseMethodDeclaration:3" targetNodeId="88.~DebugInfoManager.removeScopeConcept(java.lang.String):void" resolveInfo="removeScopeConcept" />
+              <link role="baseMethodDeclaration:3" targetNodeId="94.~DebugInfoManager.removeScopeConcept(java.lang.String):void" resolveInfo="removeScopeConcept" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2278004790372601984">
                 <property name="value:3" value="" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="2278004790372601985">

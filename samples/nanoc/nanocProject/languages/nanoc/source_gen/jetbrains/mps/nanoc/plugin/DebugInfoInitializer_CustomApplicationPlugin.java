@@ -4,7 +4,7 @@ package jetbrains.mps.nanoc.plugin;
 
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.debug.DebugInfoManager;
+import jetbrains.mps.debug.api.DebugInfoManager;
 import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;

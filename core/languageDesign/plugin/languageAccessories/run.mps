@@ -34,7 +34,7 @@
   <import index="3" modelUID="f:java_stub#java.nio.charset(java.nio.charset@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#com.intellij.execution.ui(com.intellij.execution.ui@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#com.intellij.execution.impl(com.intellij.execution.impl@java_stub)" version="-1" />
-  <import index="6" modelUID="f:java_stub#jetbrains.mps.debug.info(jetbrains.mps.debug.info@java_stub)" version="-1" />
+  <import index="6" modelUID="f:java_stub#jetbrains.mps.debug.api.info(jetbrains.mps.debug.api.info@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#com.intellij.execution.process(com.intellij.execution.process@java_stub)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="242278890011773407">

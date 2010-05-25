@@ -7,7 +7,7 @@ import com.sun.jdi.StackFrame;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
-import jetbrains.mps.debug.info.StacktraceUtil;
+import jetbrains.mps.debug.api.info.StacktraceUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 

@@ -26,7 +26,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.runtime.java.programState.JavaStackFrame;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.Location;
-import jetbrains.mps.debug.info.StacktraceUtil;
+import jetbrains.mps.debug.api.info.StacktraceUtil;
 import jetbrains.mps.debug.evaluation.ValueProxy;
 import java.util.Set;
 import jetbrains.mps.reloading.IClassPathItem;

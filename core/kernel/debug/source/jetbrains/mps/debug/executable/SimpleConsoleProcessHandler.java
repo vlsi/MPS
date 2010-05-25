@@ -4,13 +4,11 @@ import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.execution.process.*;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.util.Key;
-import jetbrains.mps.debug.info.StacktraceUtil;
+import jetbrains.mps.debug.api.info.StacktraceUtil;
 import jetbrains.mps.logging.Logger;
 
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.nio.charset.Charset;
 
 /**
  * Created by IntelliJ IDEA.

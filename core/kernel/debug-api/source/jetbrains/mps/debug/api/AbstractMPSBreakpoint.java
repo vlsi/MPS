@@ -1,12 +1,12 @@
 package jetbrains.mps.debug.api;
 
+import jetbrains.mps.debug.api.info.BLDebugInfoCache;
+import jetbrains.mps.debug.api.info.DebugInfo;
+import jetbrains.mps.debug.api.info.PositionInfo;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.debug.info.PositionInfo;
-import jetbrains.mps.debug.info.DebugInfo;
-import jetbrains.mps.debug.info.BLDebugInfoCache;
-import jetbrains.mps.debug.DebugInfoManager;
+import jetbrains.mps.debug.api.DebugInfoManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 

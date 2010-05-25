@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.debug.DebugInfoManager;
-import jetbrains.mps.debug.info.PositionInfo;
-import jetbrains.mps.debug.info.ScopePositionInfo;
-import jetbrains.mps.debug.info.UnitPositionInfo;
+import jetbrains.mps.debug.api.DebugInfoManager;
+import jetbrains.mps.debug.api.info.PositionInfo;
+import jetbrains.mps.debug.api.info.ScopePositionInfo;
+import jetbrains.mps.debug.api.info.UnitPositionInfo;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
