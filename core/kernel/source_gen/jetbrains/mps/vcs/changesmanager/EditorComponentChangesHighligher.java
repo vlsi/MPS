@@ -444,23 +444,36 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
 
     @Override
     public boolean isLongInGutter() {
-      return !(isDeletedChild());
+      return isDeletedChild();
     }
 
     @Override
     @NotNull
     public Color getColorInGutter() {
-      if (isDeletedChild()) {
-        // TODO 
-        return EditorComponentChangesHighligher.HIGHLIGHT_COLOR_DELETED;
-      } else {
-        return EditorComponentChangesHighligher.GUTTER_COLOR;
-      }
+      return EditorComponentChangesHighligher.GUTTER_COLOR;
     }
 
     @Override
     public boolean isBackground() {
       return true;
+    }
+
+    @Override
+    public int getStart(EditorComponent component) {
+      if (isThinDeletedMessage(component)) {
+        return getY(component);
+      } else {
+        return super.getStart(component);
+      }
+    }
+
+    @Override
+    public int getHeight(EditorComponent component) {
+      if (isThinDeletedMessage(component)) {
+        return 1;
+      } else {
+        return super.getHeight(component);
+      }
     }
   }
 
