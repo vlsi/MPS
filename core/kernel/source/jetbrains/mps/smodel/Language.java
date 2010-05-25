@@ -56,7 +56,7 @@ import java.lang.reflect.Constructor;
 import java.util.*;
 
 
-public class Language extends AbstractModule implements MPSModuleOwner {
+public class Language extends AbstractModule<LanguageDescriptor> implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
   private static final String LANGUAGE_ACCESSORIES = "languageAccessories";
@@ -277,7 +277,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return errors;
   }
 
-  protected ModuleDescriptor loadDescriptor() {
+  protected LanguageDescriptor loadDescriptor() {
     return LanguageDescriptorPersistence.loadLanguageDescriptor(getDescriptorFile());
   }
 
@@ -371,12 +371,27 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     myCachedRefactorings = null;
   }
 
+  @Deprecated
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
     setLanguageDescriptor(newDescriptor, true);
   }
 
+  @Deprecated
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
-    myLanguageDescriptor = newDescriptor;
+    setModuleDescriptor(newDescriptor,reloadClasses);
+  }
+
+  @Deprecated
+  public LanguageDescriptor getLanguageDescriptor() {
+    return myLanguageDescriptor;
+  }
+
+  public LanguageDescriptor getModuleDescriptor() {
+    return myLanguageDescriptor;
+  }
+
+  public void setModuleDescriptor(LanguageDescriptor moduleDescriptor, boolean reloadClasses) {
+    myLanguageDescriptor = moduleDescriptor;
 
     ModuleReference reference = new ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getUUID());
     setModulePointer(reference);
@@ -401,22 +416,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public int getVersion() {
     return getStructureModelDescriptor().getVersion();
-  }
-
-  public ModuleDescriptor getModuleDescriptor() {
-    return myLanguageDescriptor;
-  }
-
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    if (moduleDescriptor instanceof LanguageDescriptor) {
-      setLanguageDescriptor((LanguageDescriptor) moduleDescriptor, reloadClasses);
-    } else {
-      LOG.error("not a language descriptor", new Throwable());
-    }
-  }
-
-  public LanguageDescriptor getLanguageDescriptor() {
-    return myLanguageDescriptor;
   }
 
   public String getGeneratedPluginClassLongName() {

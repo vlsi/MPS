@@ -31,7 +31,7 @@ import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
 
-public class DevKit extends AbstractModule implements MPSModuleOwner{
+public class DevKit extends AbstractModule<DevkitDescriptor> implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(DevKit.class);
 
   public static DevKit newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
@@ -75,19 +75,6 @@ public class DevKit extends AbstractModule implements MPSModuleOwner{
     return myDescriptorFile;
   }
 
-  public DevkitDescriptor getModuleDescriptor() {
-    return myDescriptor;
-  }
-
-
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    if (moduleDescriptor instanceof DevkitDescriptor) {
-      setDevKitDescriptor((DevkitDescriptor) moduleDescriptor, reloadClasses);
-    } else {
-      LOG.error("not a devkit descriptor", new Throwable());
-    }
-  }
-
   public String getGeneratorOutputPath() {
     return null;
   }
@@ -96,11 +83,25 @@ public class DevKit extends AbstractModule implements MPSModuleOwner{
     return null;
   }
 
+  @Deprecated
   public void setDevKitDescriptor(DevkitDescriptor descriptor) {
     setDevKitDescriptor(descriptor, true);
   }
 
+  @Deprecated
   public void setDevKitDescriptor(DevkitDescriptor descriptor, boolean reloadClasses) {
+    setModuleDescriptor(descriptor, reloadClasses);
+  }
+
+  public DevkitDescriptor getModuleDescriptor() {
+    return myDescriptor;
+  }
+
+  public void setModuleDescriptor(DevkitDescriptor descriptor) {
+    setModuleDescriptor(descriptor, true);
+  }
+
+  public void setModuleDescriptor(DevkitDescriptor descriptor, boolean reloadClasses) {
     MPSModuleRepository moduleRepo = MPSModuleRepository.getInstance();
     moduleRepo.unRegisterModules(this);
     moduleRepo.unRegisterModules(myGenerationOnlyModelsModelOwner);

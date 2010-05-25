@@ -51,7 +51,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public abstract class AbstractModule implements IModule {
+public abstract class AbstractModule<D extends ModuleDescriptor> implements IModule<D> {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
   public static final String RUNTIME_JAR_SUFFIX = "runtime.jar";
@@ -188,7 +188,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
-    ModuleDescriptor descriptor = getModuleDescriptor();
+    D descriptor = getModuleDescriptor();
     Dependency dep = new Dependency();
     dep.setModuleRef(moduleRef);
     dep.setReexport(reexport);
@@ -198,14 +198,14 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void addUsedLanguage(ModuleReference langRef) {
-    ModuleDescriptor descriptor = getModuleDescriptor();
+    D descriptor = getModuleDescriptor();
     descriptor.getUsedLanguages().add(langRef);
     setModuleDescriptor(descriptor);
     save();
   }
 
   public void addUsedDevkit(ModuleReference devkitRef) {
-    ModuleDescriptor descriptor = getModuleDescriptor();
+    D descriptor = getModuleDescriptor();
     descriptor.getUsedDevkits().add(devkitRef);
     setModuleDescriptor(descriptor);
     save();
@@ -532,10 +532,10 @@ public abstract class AbstractModule implements IModule {
   public void addModuleImport(@NotNull final ModuleReference moduleRef) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        ModuleDescriptor md = getModuleDescriptor();
-        if (md == null) return;
+        D descriptor = getModuleDescriptor();
+        if (descriptor == null) return;
 
-        for (Dependency dependency : md.getDependencies()) {
+        for (Dependency dependency : descriptor.getDependencies()) {
           if (moduleRef.equals(dependency.getModuleRef())) {
             return;
           }
@@ -543,9 +543,9 @@ public abstract class AbstractModule implements IModule {
 
         Dependency dep = new Dependency();
         dep.setModuleRef(moduleRef);
-        md.getDependencies().add(dep);
+        descriptor.getDependencies().add(dep);
 
-        setModuleDescriptor(md);
+        setModuleDescriptor(descriptor);
         save();
       }
     });
@@ -554,7 +554,7 @@ public abstract class AbstractModule implements IModule {
   public void addUsedLanguage(final String languageNamespace) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        ModuleDescriptor md = getModuleDescriptor();
+        D md = getModuleDescriptor();
         if (md == null) return;
 
         for (ModuleReference r : md.getUsedLanguages()) {
@@ -595,7 +595,7 @@ public abstract class AbstractModule implements IModule {
     return timestamp != myDescriptorFile.lastModified();
   }
 
-  public void setModuleDescriptor(ModuleDescriptor descriptor) {
+  public void setModuleDescriptor(D descriptor) {
     setModuleDescriptor(descriptor, true);
     myExplicitlyDependentModules = null;
   }
@@ -611,7 +611,7 @@ public abstract class AbstractModule implements IModule {
   public final void reloadFromDisk(boolean reloadClasses) {
     ModelAccess.instance().checkWriteAccess();
     try {
-      ModuleDescriptor descriptor = loadDescriptor();
+      D descriptor = loadDescriptor();
       setModuleDescriptor(descriptor, reloadClasses);
     } catch (ModuleReadException e) {
       handleReadProblem(e, false);
@@ -634,7 +634,7 @@ public abstract class AbstractModule implements IModule {
     return getModuleDescriptor().updateModuleRefs();
   }
 
-  protected ModuleDescriptor loadDescriptor() {
+  protected D loadDescriptor() {
     return null;
   }
 

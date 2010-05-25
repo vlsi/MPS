@@ -30,7 +30,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.*;
 
-public class Generator extends AbstractModule{
+public class Generator extends AbstractModule<GeneratorDescriptor>{
   public static final Logger LOG = Logger.getLogger(Generator.class);
 
   private Language mySourceLanguage;
@@ -162,14 +162,16 @@ public class Generator extends AbstractModule{
     return mappings;
   }
 
-  public ModuleDescriptor getModuleDescriptor() {
+  @Deprecated
+  public GeneratorDescriptor getGeneratorDescriptor() {
     return myGeneratorDescriptor;
   }
 
+  public GeneratorDescriptor getModuleDescriptor() {
+    return myGeneratorDescriptor;
+  }
 
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    assert moduleDescriptor instanceof GeneratorDescriptor;
-
+  public void setModuleDescriptor(GeneratorDescriptor moduleDescriptor, boolean reloadClasses) {
     LanguageDescriptor languageDescriptor = getSourceLanguage().getLanguageDescriptor();
     int index = languageDescriptor.getGenerators().indexOf(this.getGeneratorDescriptor());
     languageDescriptor.getGenerators().remove(index);
@@ -196,10 +198,6 @@ public class Generator extends AbstractModule{
 
   public String toString() {
     return getAlias();
-  }
-
-  public GeneratorDescriptor getGeneratorDescriptor() {
-    return myGeneratorDescriptor;
   }
 
   public void save() {
