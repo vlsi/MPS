@@ -137,7 +137,6 @@ public class DebugVMEventsProcessor {
                 final SuspendContext suspendContext = mySuspendManager.pushSuspendContextFromEventSet(eventSet);
 
                 for (Event event : eventSet) {
-                  System.err.println("event happened: " + event.toString());
                   try {
                     //todo processing different event kinds here
                     /*   if (event instanceof VMStartEvent) {
@@ -150,7 +149,6 @@ public class DebugVMEventsProcessor {
                     } else if (event instanceof VMDisconnectEvent) {
                       processVMDeathEvent(suspendContext, event);
                     } else if (event instanceof ClassPrepareEvent) {
-                      System.err.println("class prepare event happened");
                       processClassPrepareEvent(suspendContext, (ClassPrepareEvent) event);
                     }
                     //AccessWatchpointEvent, BreakpointEvent, ExceptionEvent, MethodEntryEvent, MethodExitEvent,
@@ -158,7 +156,6 @@ public class DebugVMEventsProcessor {
                     else if (event instanceof StepEvent) {
                       processStepEvent(suspendContext, (StepEvent) event);
                     } else if (event instanceof LocatableEvent) {
-                      System.err.println("locatable event happened");
                       processLocatableEvent(suspendContext, (LocatableEvent) event);
                     } else {
                       mySuspendManager.voteResume(suspendContext);
@@ -421,7 +418,6 @@ public class DebugVMEventsProcessor {
 
     @Override
     protected void action() throws Exception {
-      System.err.println("Resuming execution!");
       // see DebugProcessImpl.ResumeCommand in idea
       SuspendManager suspendManager = getSuspendManager();
       suspendManager.resume(getSuspendContext());
@@ -432,7 +428,6 @@ public class DebugVMEventsProcessor {
   private class PauseCommand extends DebuggerCommand {
     @Override
     protected void action() throws Exception {
-      System.err.println("Pausing execution!");
       // see DebugProcessImpl.PauseCommand in idea
       getVirtualMachine().suspend();
       SuspendManager suspendManager = getSuspendManager();

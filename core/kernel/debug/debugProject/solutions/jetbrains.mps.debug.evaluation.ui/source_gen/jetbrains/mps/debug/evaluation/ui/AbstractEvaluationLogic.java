@@ -172,7 +172,6 @@ public abstract class AbstractEvaluationLogic {
       String source = handler.getSources().get(fullClassName);
 
       if (successful || StringUtils.isNotEmpty(source)) {
-        System.err.println(source);
         try {
           ClassLoader loader = handler.getCompiler().getClassLoader(this.myUiState.getClass().getClassLoader());
           Class clazz = Class.forName(fullClassName, true, loader);

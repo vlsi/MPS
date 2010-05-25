@@ -50,11 +50,13 @@ public class EvaluationDialog extends BaseDialog {
     this.setModal(false);
 
     this.myEvaluationData = AbstractEvaluationLogic.createInstance(context, uiState, debugSession);
-    myEvaluationData.addGenerationListener(new _FunctionTypes._void_P1_E0<SNode>() {
-      public void invoke(SNode result) {
-        EvaluationDialog.this.updateGenerationResultTab(result);
-      }
-    });
+    /*
+      myEvaluationData.addGenerationListener(new _FunctionTypes._void_P1_E0<SNode>() {
+        public void invoke(SNode result) {
+          EvaluationDialog.this.updateGenerationResultTab(result);
+        }
+      });
+    */
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {

@@ -11,6 +11,7 @@ import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -51,7 +52,6 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.LocalVariable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -73,6 +73,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
       public void run() {
         SLinkOperations.setNewChild(myEvaluator, "evaluatedStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
         SLinkOperations.setNewChild(SLinkOperations.getTarget(myEvaluator, "evaluatedStatement", true), AttributesRolesUtil.childRoleFromAttributeRole("toEvaluateAnnotation"), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
+        SPropertyOperations.set(myEvaluator, "isRuntime", "" + (true));
       }
     });
 
