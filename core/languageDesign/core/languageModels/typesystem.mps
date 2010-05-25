@@ -584,6 +584,37 @@
               </node>
             </node>
           </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1998770035420738151">
+            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1998770035420738152">
+              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="1998770035420757821">
+                <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1998770035420757826">
+                  <property name="value:3" value="Node isn't applicable in the context" />
+                </node>
+                <node role="nodeToReport:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1998770035420841931">
+                  <link role="variableDeclaration:3" targetNodeId="5622704259074611016" resolveInfo="child" />
+                </node>
+              </node>
+            </node>
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1998770035420738155">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1998770035420738158">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1998770035420738157">
+                  <link role="variableDeclaration:3" targetNodeId="4950342498455637953" resolveInfo="cm" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1998770035420739163">
+                  <link role="baseMethodDeclaration:3" targetNodeId="7.~ModelConstraintsManager.canBeAncestor(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext):boolean" resolveInfo="canBeAncestor" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1998770035420757812">
+                    <link role="variableDeclaration:3" targetNodeId="4950342498455635259" resolveInfo="node" />
+                  </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1998770035420757813">
+                    <link role="variableDeclaration:3" targetNodeId="5622704259074611050" resolveInfo="childConcept" />
+                  </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1998770035420757815">
+                    <link role="variableDeclaration:3" targetNodeId="5622704259074608655" resolveInfo="operationContext" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5622704259074611024">
           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5622704259074611023">

@@ -100,6 +100,13 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
           }
         }
       }
+      if (!(cm.canBeAncestor(node, childConcept, operationContext))) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(child, "Node isn't applicable in the context", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1998770035420757821", intentionProvider, errorTarget);
+        }
+      }
     }
   }
 
