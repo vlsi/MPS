@@ -18,6 +18,7 @@ import java.util.HashSet;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -44,6 +45,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Arrays;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -55,7 +57,6 @@ import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.SubstituteNodeChange;
 import jetbrains.mps.smodel.CopyUtil;
@@ -90,7 +91,7 @@ public class ModelChangesManager {
   private Set<SNodeId> myAddedNodeIds = SetSequence.fromSet(new HashSet<SNodeId>());
   private Map<SNodeId, Integer> myChangesCountsForRoots = MapSequence.fromMap(new HashMap<SNodeId, Integer>());
   private Map<Change, SNodeId> myRootForChange = MapSequence.fromMap(new HashMap<Change, SNodeId>());
-  private Map<NodeIdRolePair, List<Change>> myMultipleChildChanges = MapSequence.fromMap(new HashMap<NodeIdRolePair, List<Change>>());
+  private Map<Tuples._2<SNodeId, String>, List<Change>> myMultipleChildChanges = MapSequence.fromMap(new HashMap<Tuples._2<SNodeId, String>, List<Change>>());
   private boolean myEnabled = false;
   private FileStatus myFileStatus;
   private Map<SNodeId, SNodeId> myRollbackReplaceCache = MapSequence.fromMap(new HashMap<SNodeId, SNodeId>());
@@ -523,7 +524,7 @@ __switch__:
       if (change instanceof AddNodeChange || change instanceof DeleteNodeChange) {
         SNode parentNode = SNodeOperations.getParent(node);
         if (!(LinkDeclaration_Behavior.call_isSingular_1213877254557(SNodeOperations.getContainingLinkDeclaration(node))) && parentNode != null) {
-          NodeIdRolePair pair = new NodeIdRolePair(parentNode.getSNodeId(), SNodeOperations.getContainingLinkRole(node));
+          Tuples._2<SNodeId, String> pair = MultiTuple.<SNodeId,String>from(parentNode.getSNodeId(), SNodeOperations.getContainingLinkRole(node));
           if (MapSequence.fromMap(myMultipleChildChanges).containsKey(pair)) {
             ListSequence.fromList(MapSequence.fromMap(myMultipleChildChanges).get(pair)).addElement(change);
           } else {
@@ -692,8 +693,8 @@ __switch__:
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModel model = getModel();
-        for (NodeIdRolePair nodeIdRolePair : SetSequence.fromSet(MapSequence.fromMap(myMultipleChildChanges).keySet()).toListSequence()) {
-          refreshMultipleChildChanges(model.getNodeById(nodeIdRolePair.nodeId), nodeIdRolePair.role, true);
+        for (Tuples._2<SNodeId, String> nodeIdRolePair : SetSequence.fromSet(MapSequence.fromMap(myMultipleChildChanges).keySet()).toListSequence()) {
+          refreshMultipleChildChanges(model.getNodeById(nodeIdRolePair._0()), nodeIdRolePair._1(), true);
         }
 
       }
@@ -716,7 +717,7 @@ __switch__:
     if ((parentNode == null)) {
       return;
     }
-    NodeIdRolePair pair = new NodeIdRolePair(parentNode.getSNodeId(), role);
+    Tuples._2<SNodeId, String> pair = MultiTuple.<SNodeId,String>from(parentNode.getSNodeId(), role);
     SModel model = getModel();
 
     if (!(MapSequence.fromMap(myMultipleChildChanges).containsKey(pair))) {
