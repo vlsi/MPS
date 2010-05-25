@@ -42,7 +42,6 @@
   <import index="11" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="13" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
-  <import index="14" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.xmlSchema.structure.Schema:3" id="842994667883029650">
     <property name="schemaName:3" value="MPS devkit" />
     <property name="alwaysUseRoot:3" value="true" />

@@ -590,7 +590,15 @@ public class ModelConstraintsManager implements ApplicationComponent {
     Method m = getCanBeParentMethod(parentNode, context);
     if (m != null) {
       try {
-        return (Boolean) m.invoke(null, context, new CanBeAParentContext(parentNode, childConcept, link));
+        final CanBeAParentContext canBeAParentContext = new CanBeAParentContext(parentNode, childConcept, link);
+        if (!(Boolean) m.invoke(null, context, canBeAParentContext)) {
+          return false;
+        }
+        ConceptConstraints constraints = getClassConstraints(context, m);
+        if (constraints != null) {
+          return myConceptConstraintExtensionManager.checkCanBeParentExtensions(BaseAdapter.fromAdapter(constraints.getConcept()), context, canBeAParentContext);
+        }
+
       } catch (IllegalAccessException e) {
         LOG.error(e);
       } catch (InvocationTargetException e) {
@@ -651,7 +659,14 @@ public class ModelConstraintsManager implements ApplicationComponent {
     if (method != null) {
       try {
         SNode concept = BaseAdapter.fromAdapter(SModelUtil_new.findConceptDeclaration(fqName, context.getScope()));
-        return (Boolean) method.invoke(null, context, new CanBeAChildContext(parentNode, link, concept));
+        final CanBeAChildContext canBeAChildContext = new CanBeAChildContext(parentNode, link, concept);
+        if (!(Boolean) method.invoke(null, context, canBeAChildContext)) {
+          return false;
+        }
+        ConceptConstraints constraints = getClassConstraints(context, method);
+        if (constraints != null) {
+          return myConceptConstraintExtensionManager.checkCanBeChildExtensions(BaseAdapter.fromAdapter(constraints.getConcept()), context, canBeAChildContext);
+        }
       } catch (IllegalAccessException e) {
         LOG.error(e);
       } catch (InvocationTargetException e) {
@@ -745,7 +760,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
           }
           ConceptConstraints constraints = getClassConstraints(context, method);
           if (constraints != null) {
-            return myConceptConstraintExtensionManager.checkCanBeRoot(BaseAdapter.fromAdapter(constraints.getConcept()), context, canBeARootContext);
+            return myConceptConstraintExtensionManager.checkCanBeRootExtensions(BaseAdapter.fromAdapter(constraints.getConcept()), context, canBeARootContext);
           }
         } catch (IllegalAccessException e) {
           LOG.error(e);

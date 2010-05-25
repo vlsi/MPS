@@ -37,7 +37,7 @@ public class ConceptConstraintExtensionsManager extends AbstractManager {
   private Map<SNode, List<AbstractManager.Descriptor>> myCanBeRootExtensions;
   private boolean myInitialized = false;
 
-  public boolean checkCanBeChild(SNode concept, IOperationContext operationContext, CanBeAChildContext context) {
+  public boolean checkCanBeChildExtensions(SNode concept, IOperationContext operationContext, CanBeAChildContext context) {
     List<AbstractManager.Descriptor> extensions = getCanBeChildExtensions(concept);
     if (extensions != null) {
       for (AbstractManager.Descriptor extension : ListSequence.fromList(extensions)) {
@@ -49,7 +49,7 @@ public class ConceptConstraintExtensionsManager extends AbstractManager {
     return true;
   }
 
-  public boolean checkCanBeParent(SNode concept, IOperationContext operationContext, CanBeAParentContext context) {
+  public boolean checkCanBeParentExtensions(SNode concept, IOperationContext operationContext, CanBeAParentContext context) {
     List<AbstractManager.Descriptor> extensions = getCanBeParentExtensions(concept);
     if (extensions != null) {
       for (AbstractManager.Descriptor extension : ListSequence.fromList(extensions)) {
@@ -61,7 +61,7 @@ public class ConceptConstraintExtensionsManager extends AbstractManager {
     return true;
   }
 
-  public boolean checkCanBeRoot(SNode concept, IOperationContext operationContext, CanBeARootContext context) {
+  public boolean checkCanBeRootExtensions(SNode concept, IOperationContext operationContext, CanBeARootContext context) {
     List<AbstractManager.Descriptor> extensions = getCanBeRootExtensions(concept);
     if (extensions != null) {
       for (AbstractManager.Descriptor extension : ListSequence.fromList(extensions)) {
