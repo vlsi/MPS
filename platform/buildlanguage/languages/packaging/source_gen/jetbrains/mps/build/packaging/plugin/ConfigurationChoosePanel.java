@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
 import javax.swing.JComboBox;
 import jetbrains.mps.build.packaging.plugin.run.ui.ReadComboBoxRenderrer;
+import jetbrains.mps.build.packaging.plugin.run.ui.ReadComboBoxEditor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -35,6 +36,7 @@ public class ConfigurationChoosePanel extends JPanel {
     this.add(new JLabel("Configuration"), LayoutUtil.createLabelConstraints(0));
     JComboBox comboBox = new JComboBox(this.myComboBoxModel);
     comboBox.setRenderer(new ReadComboBoxRenderrer());
+    comboBox.setEditor(new ReadComboBoxEditor());
     this.add(comboBox, LayoutUtil.createFieldConstraints(1));
   }
 

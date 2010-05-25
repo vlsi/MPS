@@ -13156,6 +13156,21 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3494725401345111543">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3494725401345111545">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3494725401345111544">
+              <link role="variableDeclaration:3" targetNodeId="7584047889594946824" resolveInfo="comboBox" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3494725401345113585">
+              <link role="baseMethodDeclaration:3" targetNodeId="37.~JComboBox.setEditor(javax.swing.ComboBoxEditor):void" resolveInfo="setEditor" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3494725401345113586">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8815159199211987404">
+                  <link role="baseMethodDeclaration:3" targetNodeId="95.~ReadComboBoxEditor.&lt;init&gt;()" resolveInfo="ReadComboBoxEditor" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5842104767988515877">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5842104767988515878">
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5842104767988515879">
