@@ -18,7 +18,6 @@ package jetbrains.mps.smodel.constraints;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.constraints.ConceptConstraintExtensionsManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
 import jetbrains.mps.lang.core.structure.INamedConcept;
@@ -77,13 +76,11 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private Map<String, String> myDefaultConceptNames = new HashMap<String, String>();
 
   private Map<String, String> myConstraintClassNames = new HashMap<String, String>();
-  private ConceptConstraintExtensionsManager myConceptConstraintExtensionManager = new ConceptConstraintExtensionsManager();
 
   public ModelConstraintsManager(ClassLoaderManager cm) {
   }
 
   public void initComponent() {
-    myConceptConstraintExtensionManager.init();
     MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryListener() {
       public void moduleAdded(IModule module) {
       }
@@ -118,7 +115,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-    myConceptConstraintExtensionManager.dispose();
+
   }
 
   public void registerNodePropertyGetter(String conceptFqName, String propertyName, INodePropertyGetter getter) {
@@ -590,15 +587,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     Method m = getCanBeParentMethod(parentNode, context);
     if (m != null) {
       try {
-        final CanBeAParentContext canBeAParentContext = new CanBeAParentContext(parentNode, childConcept, link);
-        if (!(Boolean) m.invoke(null, context, canBeAParentContext)) {
-          return false;
-        }
-        ConceptConstraints constraints = getClassConstraints(context, m);
-        if (constraints != null) {
-          return myConceptConstraintExtensionManager.checkCanBeParentExtensions(BaseAdapter.fromAdapter(constraints.getConcept()), context, canBeAParentContext);
-        }
-
+        return (Boolean) m.invoke(null, context, new CanBeAParentContext(parentNode, childConcept, link));
       } catch (IllegalAccessException e) {
         LOG.error(e);
       } catch (InvocationTargetException e) {
@@ -659,14 +648,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     if (method != null) {
       try {
         SNode concept = BaseAdapter.fromAdapter(SModelUtil_new.findConceptDeclaration(fqName, context.getScope()));
-        final CanBeAChildContext canBeAChildContext = new CanBeAChildContext(parentNode, link, concept);
-        if (!(Boolean) method.invoke(null, context, canBeAChildContext)) {
-          return false;
-        }
-        ConceptConstraints constraints = getClassConstraints(context, method);
-        if (constraints != null) {
-          return myConceptConstraintExtensionManager.checkCanBeChildExtensions(BaseAdapter.fromAdapter(constraints.getConcept()), context, canBeAChildContext);
-        }
+        return (Boolean) method.invoke(null, context, new CanBeAChildContext(parentNode, link, concept));
       } catch (IllegalAccessException e) {
         LOG.error(e);
       } catch (InvocationTargetException e) {
@@ -754,14 +736,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
       Method method = getCanBeRootMethod(conceptFqName, context);
       if (method != null) {
         try {
-          final CanBeARootContext canBeARootContext = new CanBeARootContext(model);
-          if (!(Boolean) method.invoke(null, context, canBeARootContext)) {
-            return false;
-          }
-          ConceptConstraints constraints = getClassConstraints(context, method);
-          if (constraints != null) {
-            return myConceptConstraintExtensionManager.checkCanBeRootExtensions(BaseAdapter.fromAdapter(constraints.getConcept()), context, canBeARootContext);
-          }
+          return (Boolean) method.invoke(null, context, new CanBeARootContext(model));
         } catch (IllegalAccessException e) {
           LOG.error(e);
         } catch (InvocationTargetException e) {

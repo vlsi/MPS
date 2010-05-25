@@ -13,7 +13,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new ConceptConstraints_name_PropertyConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new ConceptConstraintsExtension_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new NodePropertyConstraint_applicableProperty_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new NodeReferentConstraint_applicableLink_ReferentConstraint());
   }

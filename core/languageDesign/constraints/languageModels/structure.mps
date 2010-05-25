@@ -4624,42 +4624,5 @@
       <node role="target:0" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="3754598629525728485" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7088764199360852437">
-    <property name="name:0" value="ConceptConstraintsExtension" />
-    <property name="rootable:0" value="true" />
-    <property name="iconPath:0" value="${language_descriptor}\icons\constraints.png" />
-    <link role="extends:0" targetNodeId="7088764199360852441:8" resolveInfo="AbstractHierarchyConstraints" />
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="7088764199360854757">
-      <link role="intfc:0" targetNodeId="1.1169194658468:0" resolveInfo="INamedConcept" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7088764199360852441">
-    <property name="name:0" value="AbstractHierarchyConstraints" />
-    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7088764199360854756">
-      <property name="metaClass:0" value="reference" />
-      <property name="role:0" value="concept" />
-      <property name="sourceCardinality:0" value="0..1" />
-      <link role="target:0" targetNodeId="2.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7088764199360854753">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="canBeChild" />
-      <link role="target:0" targetNodeId="1202989531578:8" resolveInfo="ConstraintFunction_CanBeAChild" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7088764199360854754">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="canBeRoot" />
-      <link role="target:0" targetNodeId="1227084988347:8" resolveInfo="ConstraintFunction_CanBeARoot" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7088764199360854755">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="canBeParent" />
-      <link role="target:0" targetNodeId="1203001093456:8" resolveInfo="ConstraintFunction_CanBeAParent" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="7088764199360854752">
-      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473854053:0" resolveInfo="abstract" />
-    </node>
-  </node>
 </model>
 
