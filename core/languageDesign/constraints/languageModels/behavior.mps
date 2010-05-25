@@ -575,5 +575,32 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6261424444345978687" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="7494912800760359233">
+    <property name="package" value="Functions" />
+    <link role="concept" targetNodeId="1.7855321458717464197:8" resolveInfo="ConstraintFunction_CanBeAnAncestor" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7494912800760359236">
+      <property name="name" value="usesParameterObjectFor" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="11.1213877374432" resolveInfo="usesParameterObjectFor" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7494912800760359237">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7494912800760359238">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7494912800760359239">
+            <property name="value:3" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7494912800760359240">
+        <property name="name:3" value="parameter" />
+        <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7494912800760359241">
+          <link role="concept:16" targetNodeId="12.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="7494912800760359242" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7494912800760359243" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="7494912800760359234">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7494912800760359235" />
+    </node>
+  </node>
 </model>
 

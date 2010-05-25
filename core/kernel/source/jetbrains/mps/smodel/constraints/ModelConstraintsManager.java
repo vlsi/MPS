@@ -72,6 +72,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   private Map<String, Method> myCanBeChildMethods = new HashMap<String, Method>();
   private Map<String, Method> myCanBeParentMethods = new HashMap<String, Method>();
+  private Map<String, Method> myCanBeAncestorMethods = new HashMap<String, Method>();
   private Map<String, Method> myCanBeRootMethods = new HashMap<String, Method>();
   private Map<String, String> myDefaultConceptNames = new HashMap<String, String>();
 
@@ -461,6 +462,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
     synchronized (myCanBeParentMethods) {
       myCanBeParentMethods.clear();
     }
+    synchronized (myCanBeAncestorMethods) {
+      myCanBeAncestorMethods.clear();
+    }
     synchronized (myCanBeRootMethods) {
       myCanBeRootMethods.clear();
     }
@@ -557,6 +561,30 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
+  private Method getCanBeAncestorMethod(SNode parentNode, IOperationContext context) {
+    final String fqName = parentNode.getConceptFqName();
+    synchronized (myCanBeAncestorMethods) {
+      Method result = myCanBeAncestorMethods.get(fqName);
+      if (result != null || myCanBeAncestorMethods.containsKey(fqName)) {
+        return result;
+      }
+
+      Language language = context.getScope().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
+      if (language != null) {
+        Class behaviorClass = language.getClass(constraintsClassByConceptFqName(fqName));
+        if (behaviorClass != null) {
+          try {
+            result = behaviorClass.getMethod(BehaviorConstants.CAN_BE_AN_ANCESTOR_METHOD_NAME, IOperationContext.class, CanBeAnAncestorContext.class);
+          } catch (NoSuchMethodException e) {
+            /* ignore */
+          }
+        }
+      }
+
+      myCanBeAncestorMethods.put(fqName, result);
+      return result;
+    }
+  }
 
   private Method getCanBeParentMethod(SNode parentNode, IOperationContext context) {
     final String fqName = parentNode.getConceptFqName();
@@ -581,6 +609,23 @@ public class ModelConstraintsManager implements ApplicationComponent {
       myCanBeParentMethods.put(fqName, result);
       return result;
     }
+  }
+
+  public boolean canBeAncestor(SNode parentNode, SNode childConcept, IOperationContext context) {
+    Method m = getCanBeAncestorMethod(parentNode, context);
+    if (m != null) {
+      try {
+        if (!(Boolean) m.invoke(null, context, new CanBeAnAncestorContext(parentNode, childConcept))) {
+          return false;
+        }
+      } catch (IllegalAccessException e) {
+        LOG.error(e);
+      } catch (InvocationTargetException e) {
+        LOG.error(e);
+      }
+    }
+    final SNode parentOfParent = parentNode.getParent();
+    return parentOfParent != null ? canBeAncestor(parentOfParent, childConcept, context): true;
   }
 
   public boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {

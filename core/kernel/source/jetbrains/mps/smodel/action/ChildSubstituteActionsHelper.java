@@ -185,7 +185,8 @@ public class ChildSubstituteActionsHelper {
           continue;
         }
 
-        if (!ModelConstraintsManager.getInstance().canBeParent(parentNode, conceptNode, settter.myLinkDeclaration.getNode(), context)) {
+        if (!ModelConstraintsManager.getInstance().canBeParent(parentNode, conceptNode, settter.myLinkDeclaration.getNode(), context) ||
+          !ModelConstraintsManager.getInstance().canBeAncestor(parentNode, conceptNode, context)) {
           it.remove();
         }
       }
