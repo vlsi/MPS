@@ -1,52 +1,57 @@
 package jetbrains.mps.build.ant.generation;
 
-import com.intellij.openapi.project.Project;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.TestMain;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
-import jetbrains.mps.build.ant.*;
+import jetbrains.mps.build.ant.IBuildServerMessageFormat;
+import jetbrains.mps.build.ant.TeamCityMessageFormat;
+import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestAdapter;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestRunner;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.GenerationAdapter;
 import jetbrains.mps.generator.GenerationListener;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.ide.genconf.GenParameters;
+import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.library.Library;
 import jetbrains.mps.project.*;
-import jetbrains.mps.reloading.*;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.*;
-import junit.framework.*;
-import org.apache.tools.ant.ProjectComponent;
-import org.apache.tools.ant.BuildException;
-import org.apache.tools.ant.util.JavaEnvUtils;
-import org.eclipse.jdt.internal.compiler.CompilationResult;
-import org.eclipse.jdt.core.compiler.CategorizedProblem;
-import org.jdom.Document;
-import org.jdom.Element;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.project.tester.TesterGenerationHandler;
 import jetbrains.mps.project.tester.DiffReporter;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.ide.genconf.GenParameters;
-import jetbrains.mps.ide.messages.IMessageHandler;
+import jetbrains.mps.project.tester.TesterGenerationHandler;
+import jetbrains.mps.reloading.EachClassPathItemVisitor;
+import jetbrains.mps.reloading.FileClassPathItem;
+import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.JarFileClassPathItem;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.AbstractClassLoader;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.TestMain;
+import junit.framework.TestCase;
+import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.ProjectComponent;
+import org.apache.tools.ant.util.JavaEnvUtils;
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
+import org.eclipse.jdt.internal.compiler.CompilationResult;
+import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.StringWriter;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.*;
-import java.io.*;
-
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.project.ProjectManager;
 
 public class TestGenerationWorker extends GeneratorWorker {
 
@@ -64,7 +69,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
 
     public void finishGeneration(ITaskProgressHelper progressHelper) {
-      
+
     }
   };
 
@@ -421,8 +426,12 @@ public class TestGenerationWorker extends GeneratorWorker {
           }
         } else {
           for (BaseTestConfiguration config : testConfigurationList) {
-            GenParameters genParams = config.getGenParams(project.getProject(), true);
-            modelDescriptors.addAll(genParams.getModelDescriptors());
+            try {
+              GenParameters genParams = config.getGenParams(project.getProject(), true);
+              modelDescriptors.addAll(genParams.getModelDescriptors());
+            } catch (IllegalGeneratorConfigurationException e) {
+              log("Error while reading configuration of project " + project.getProject().getName(), e);
+            }
           }
         }
       }

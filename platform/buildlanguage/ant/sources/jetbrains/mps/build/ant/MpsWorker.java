@@ -438,6 +438,11 @@ public abstract class MpsWorker {
     error(sb.toString());
   }
 
+  public void log(String text, Throwable e) {
+    StringBuffer sb = extractStackTrace(e);
+    error(text + "\n" + sb.toString());
+  }
+
   public static StringBuffer extractStackTrace(Throwable e) {
     StringWriter writer = new StringWriter();
     e.printStackTrace(new PrintWriter(writer));
