@@ -6,9 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import java.util.Date;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.lang.core.plugin.ReferencesScopeCheckingOptionEditor;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -27,12 +25,8 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
-    // debugging info 
-    long t0 = new Date().getTime();
-    int cnt = 0;
-
     IOperationContext context = typeCheckingContext.getOperationContext();
-    if (context == null || !(ReferencesScopeCheckingOptionEditor.ourRefScopeChecking)) {
+    if (context == null) {
       return;
     }
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
@@ -46,9 +40,7 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
           errorTarget = new ReferenceErrorTarget(ref.getRole());
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, sss.getMessage(), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4942048232752368615", intentionProvider, errorTarget);
         }
-      } else if (sss.isDefault()) {
-        // node should be in global scope anyway, no need to check 
-      } else if (!(sss.getSearchScope().isInScope(target))) {
+      } else if (!(sss.isDefault() || sss.getSearchScope().isInScope(target))) {
         String name = (target == null ?
           "" :
           target.getName()
@@ -60,10 +52,7 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "reference" + ((name == null ?
             "" :
             " " + name
-          )) + " (" + ref.getRole() + ") is out of" + ((sss.isDefault() ?
-            " global" :
-            " search"
-          )) + " scope", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4942048232752376292", intentionProvider, errorTarget);
+          )) + " (" + ref.getRole() + ") is out of search scope", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4942048232752376292", intentionProvider, errorTarget);
           {
             SNode _foreign_34989546 = sss.getSearchScopeFactoryNode();
             if (_foreign_34989546 != null) {
@@ -72,12 +61,7 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
           }
         }
       }
-      ++cnt;
     }
-    // update debugging information (rule checking works in single thread) 
-    ReferencesScopeCheckingOptionEditor.ourTime += new Date().getTime() - t0;
-    ReferencesScopeCheckingOptionEditor.ourRefs += cnt;
-    ++ReferencesScopeCheckingOptionEditor.ourNodes;
   }
 
   public String getApplicableConceptFQName() {
