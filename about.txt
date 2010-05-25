@@ -10,6 +10,9 @@ http://www.w3c.org
  
 The SAX project 
 http://www.saxproject.org
+
+The jMock project
+http://jmock.org/
  
 INRIA, France Telecom  
 http://asm.objectweb.org/
