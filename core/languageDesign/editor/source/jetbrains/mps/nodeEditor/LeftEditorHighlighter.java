@@ -519,7 +519,13 @@ public class LeftEditorHighlighter extends JComponent {
 
   @Override
   public String getToolTipText(MouseEvent e) {
-    if (!isInFoldingArea(e)) {
+    if (isInFoldingArea(e)) {
+      for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
+        if (painter.getToolTipText() != null) {
+          return painter.getToolTipText();
+        }
+      }
+    } else {
       EditorMessageIconRenderer iconRenderer = getIconRendererUnderMouse(e);
       if (iconRenderer != null) {
         return iconRenderer.getTooltipText();

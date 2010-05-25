@@ -85,6 +85,10 @@ public abstract class AbstractFoldingAreaPainter {
    */
   public abstract int getWeight();
 
+  public String getToolTipText() {
+    return null;
+  }
+
   public void dispose() {
   }
 
