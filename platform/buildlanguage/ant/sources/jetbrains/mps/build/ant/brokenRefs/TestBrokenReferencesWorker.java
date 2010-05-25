@@ -1,5 +1,6 @@
 package jetbrains.mps.build.ant.brokenRefs;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.build.ant.IBuildServerMessageFormat;
@@ -8,10 +9,12 @@ import jetbrains.mps.build.ant.TeamCityMessageFormat;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
+import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;
@@ -49,10 +52,19 @@ public class TestBrokenReferencesWorker extends MpsWorker {
   public void work() {
     setupEnvironment();
 
-    File file =new File(PathManager.getHomePath() + File.separator + "core" + File.separator + "baseLanguage" + File.separator + "baseLanguage" + File.separator + "baseLanguage.mpr");
-    if (!file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT)) throw new IllegalArgumentException(file.getPath());
-    final MPSProject p = TestMain.loadProject(file);
-    info("Loaded project " + p);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        EmptyProgressIndicator indicator = new EmptyProgressIndicator();
+
+        ClassLoaderManager.getInstance().updateClassPath();
+
+        ModuleMaker maker = new ModuleMaker();
+        maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator);
+
+        ClassLoaderManager.getInstance().reloadAll(indicator);
+      }
+    });
+
 
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     File projectFile = FileUtil.createTmpFile();
@@ -64,7 +76,6 @@ public class TestBrokenReferencesWorker extends MpsWorker {
 
     executeTask(project, go);
 
-    disposeProject(p);
     dispose();
   }
 
