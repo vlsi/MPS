@@ -1411,12 +1411,10 @@ __switch__:
                   return ch.getAffectedNodeId().equals(e.getChild().getSNodeId());
                 }
               }) == 0) {
-                if (!(isAncestorAlreadyAdded(pathToRoot))) {
-                  if (isSingle) {
-                    addChange(new DeleteNodeChange(e.getChild().getSNodeId(), SModelUtils.getNodeIds(e.getChild().getChildren()), check_7206051335377860095(e.getParent()), e.getChildRole(), -1), e.getAffectedRoot());
-                  } else {
-                    refreshMultipleChildChanges(e.getParent(), e.getChildRole(), currentChildren, false);
-                  }
+                if (isSingle) {
+                  addChange(new DeleteNodeChange(e.getChild().getSNodeId(), SModelUtils.getNodeIds(e.getChild().getChildren()), check_7206051335377860095(e.getParent()), e.getChildRole(), -1), e.getAffectedRoot());
+                } else {
+                  refreshMultipleChildChanges(e.getParent(), e.getChildRole(), currentChildren, false);
                 }
               } else {
                 if (isSingle) {
@@ -1444,7 +1442,7 @@ __switch__:
 
     @Override
     public void childAdded(final SModelChildEvent e) {
-      final List<SNode> pathToRoot = SModelUtils.getPathToRoot(e.getChild());
+      final List<SNode> pathToRoot = SModelUtils.getPathToRoot(e.getParent());
       final List<SNode> currentChildren = getCurrentChildren(e.getParent(), e.getChildRole());
       myCommandQueue.runTask(new Runnable() {
         public void run() {
@@ -1458,7 +1456,6 @@ __switch__:
               if (isAncestorAlreadyAdded(pathToRoot)) {
                 return;
               }
-
 
               SNode child = e.getChild();
               String prevRole = null;

@@ -24,13 +24,8 @@ public class DefaultAttributeNodeSetter extends DefaultChildNodeSetter {
     super(linkDeclaration);
   }
 
-  public SNode doExecute(SNode parenNode, SNode oldChild, SNode newChild, IScope scope) {
-    if (oldChild != null) {
-      String role = oldChild.getRole_();
-      assert role != null;
-      parenNode.insertChild(oldChild, role, newChild);
-      oldChild.delete();
-    }
+  public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
+    parentNode.replaceChild(oldChild, newChild);
     return newChild;
   }
 

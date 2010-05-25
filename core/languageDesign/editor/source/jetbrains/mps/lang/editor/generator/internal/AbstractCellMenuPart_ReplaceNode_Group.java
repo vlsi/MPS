@@ -64,11 +64,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
         public SNode doSubstitute(String pattern) {
           SNode newNode = createReplacementNode(parameterObject, node, node.getModel(), context.getScope(), context);
           if (newNode != node) {
-            // replace referenceNode with new node
-            String role = node.getRole_();
-            assert role != null;
-            parent.insertChild(node, role, newNode);
-            node.delete();
+            parent.replaceChild(node, newNode);
           }
 
           return newNode;
