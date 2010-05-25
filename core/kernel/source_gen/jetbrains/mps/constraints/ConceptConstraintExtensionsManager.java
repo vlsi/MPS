@@ -7,7 +7,6 @@ import jetbrains.mps.logging.Logger;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeAChildContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -28,7 +27,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.application.ApplicationManager;
 import java.util.ArrayList;
 
 public class ConceptConstraintExtensionsManager extends AbstractManager {
@@ -38,10 +36,6 @@ public class ConceptConstraintExtensionsManager extends AbstractManager {
   private Map<SNode, List<AbstractManager.Descriptor>> myCanBeParentExtensions;
   private Map<SNode, List<AbstractManager.Descriptor>> myCanBeRootExtensions;
   private boolean myInitialized = false;
-
-  public ConceptConstraintExtensionsManager(ClassLoaderManager classLoaderManager) {
-    super(classLoaderManager);
-  }
 
   public boolean checkCanBeChild(SNode concept, IOperationContext operationContext, CanBeAChildContext context) {
     List<AbstractManager.Descriptor> extensions = getCanBeChildExtensions(concept);
@@ -162,10 +156,6 @@ public class ConceptConstraintExtensionsManager extends AbstractManager {
   @NotNull
   public String getComponentName() {
     return "Concept Constraints Extension Manager";
-  }
-
-  public static ConceptConstraintExtensionsManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(ConceptConstraintExtensionsManager.class);
   }
 
   private static List<AbstractManager.Descriptor> safeGet(Map<SNode, List<AbstractManager.Descriptor>> map, SNode concept) {

@@ -77,11 +77,13 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private Map<String, String> myDefaultConceptNames = new HashMap<String, String>();
 
   private Map<String, String> myConstraintClassNames = new HashMap<String, String>();
+  private ConceptConstraintExtensionsManager myConceptConstraintExtensionManager = new ConceptConstraintExtensionsManager();
 
   public ModelConstraintsManager(ClassLoaderManager cm) {
   }
 
   public void initComponent() {
+    myConceptConstraintExtensionManager.init();
     MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryListener() {
       public void moduleAdded(IModule module) {
       }
@@ -116,7 +118,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-
+    myConceptConstraintExtensionManager.dispose();
   }
 
   public void registerNodePropertyGetter(String conceptFqName, String propertyName, INodePropertyGetter getter) {
@@ -743,7 +745,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
           }
           ConceptConstraints constraints = getClassConstraints(context, method);
           if (constraints != null) {
-            return ConceptConstraintExtensionsManager.getInstance().checkCanBeRoot(BaseAdapter.fromAdapter(constraints.getConcept()), context, canBeARootContext);
+            return myConceptConstraintExtensionManager.checkCanBeRoot(BaseAdapter.fromAdapter(constraints.getConcept()), context, canBeARootContext);
           }
         } catch (IllegalAccessException e) {
           LOG.error(e);

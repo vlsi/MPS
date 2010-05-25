@@ -819,14 +819,7 @@
       </node>
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1622834379618551049" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1622834379618551050" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1622834379618551051">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="1058093769519002890">
-          <link role="baseMethodDeclaration:3" targetNodeId="1058093769518980130" resolveInfo="AbstractRegistry" />
-          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1058093769519002891">
-            <link role="variableDeclaration:3" targetNodeId="1622834379618764256" resolveInfo="classLoaderManager" />
-          </node>
-        </node>
-      </node>
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1622834379618551051" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1622834379618764283">
       <property name="name:3" value="getComponentName" />
@@ -882,6 +875,33 @@
         </node>
       </node>
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1720905492960354560">
+      <property name="name:3" value="initComponent" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1720905492960354561" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1720905492960354562" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1720905492960354563">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1720905492960356473">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="1720905492960356474">
+            <link role="baseMethodDeclaration:3" targetNodeId="1720905492960355658" resolveInfo="init" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1720905492960354568">
+      <property name="name:3" value="disposeComponent" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1720905492960354569" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1720905492960354570" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1720905492960354571">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1720905492960354576">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="1720905492960354577">
+            <link role="baseMethodDeclaration:3" targetNodeId="1058093769518980213" resolveInfo="dispose" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="implementedInterface:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1720905492960354555">
+      <link role="classifier:3" targetNodeId="8.~ApplicationComponent" resolveInfo="ApplicationComponent" />
+    </node>
   </node>
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1058093769518980128">
@@ -889,7 +909,7 @@
     <property name="name:3" value="AbstractManager" />
     <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1058093769518980217">
       <property name="nonStatic:3" value="true" />
-      <property name="name:3" value="ReloadHelper" />
+      <property name="name:3" value="ReloadListener" />
       <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1058093769518980218">
         <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1058093769518980219" />
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1058093769518980220" />
@@ -1217,15 +1237,8 @@
         <property name="name:3" value="T" />
       </node>
     </node>
-    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1058093769518980194">
-      <property name="name:3" value="myClassLoaderManager" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1058093769518980195" />
-      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1058093769518980196">
-        <link role="classifier:3" targetNodeId="9.~ClassLoaderManager" resolveInfo="ClassLoaderManager" />
-      </node>
-    </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1058093769518981030">
-      <property name="name:3" value="myReloadHelper" />
+      <property name="name:3" value="myReloadListener" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1058093769518981031" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1058093769518981032">
         <link role="classifier:3" targetNodeId="1058093769518980217" resolveInfo="ReloadHelper" />
@@ -1237,45 +1250,21 @@
       </node>
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1058093769518980129" />
-    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1058093769518980130">
-      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1058093769518980192">
-        <property name="name:3" value="classLoaderManager" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1058093769518980193">
-          <link role="classifier:3" targetNodeId="9.~ClassLoaderManager" resolveInfo="ClassLoaderManager" />
-        </node>
-      </node>
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1058093769518980131" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1058093769518980132" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1058093769518980133">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1058093769518980197">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1058093769518980201">
-            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1058093769518980204">
-              <link role="variableDeclaration:3" targetNodeId="1058093769518980192" resolveInfo="classLoaderManager" />
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1720905492960355658">
+      <property name="name:3" value="init" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1720905492960355659" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1720905492960355660" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1720905492960355661">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3138738821092035818">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3138738821092036602">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3138738821092035820">
+              <link role="baseMethodDeclaration:3" targetNodeId="9.~ClassLoaderManager.getInstance():jetbrains.mps.reloading.ClassLoaderManager" resolveInfo="getInstance" />
+              <link role="classConcept:3" targetNodeId="9.~ClassLoaderManager" resolveInfo="ClassLoaderManager" />
             </node>
-            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3531050000760639318">
-              <link role="variableDeclaration:3" targetNodeId="1058093769518980194" resolveInfo="myClassLoaderManager" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="implementedInterface:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1058093769518980191">
-      <link role="classifier:3" targetNodeId="8.~ApplicationComponent" resolveInfo="ApplicationComponent" />
-    </node>
-    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1058093769518980209">
-      <property name="name:3" value="initComponent" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1058093769518980210" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1058093769518980211" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1058093769518980212">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1058093769518980245">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1058093769518980249">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3531050000760639134">
-              <link role="variableDeclaration:3" targetNodeId="1058093769518980194" resolveInfo="myClassLoaderManager" />
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1058093769518981026">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3138738821092036606">
               <link role="baseMethodDeclaration:3" targetNodeId="9.~ClassLoaderManager.addReloadHandler(jetbrains.mps.reloading.ReloadListener):void" resolveInfo="addReloadHandler" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3531050000760639320">
-                <link role="variableDeclaration:3" targetNodeId="1058093769518981030" resolveInfo="myReloadHelper" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3138738821092036607">
+                <link role="variableDeclaration:3" targetNodeId="1058093769518981030" resolveInfo="myReloadListener" />
               </node>
             </node>
           </node>
@@ -1283,19 +1272,20 @@
       </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1058093769518980213">
-      <property name="name:3" value="disposeComponent" />
+      <property name="name:3" value="dispose" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1058093769518980214" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1058093769518980215" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1058093769518980216">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1058093769519002854">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1058093769519002861">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3531050000760639017">
-              <link role="variableDeclaration:3" targetNodeId="1058093769518980194" resolveInfo="myClassLoaderManager" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3138738821092036609">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3138738821092036612">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3138738821092036611">
+              <link role="baseMethodDeclaration:3" targetNodeId="9.~ClassLoaderManager.getInstance():jetbrains.mps.reloading.ClassLoaderManager" resolveInfo="getInstance" />
+              <link role="classConcept:3" targetNodeId="9.~ClassLoaderManager" resolveInfo="ClassLoaderManager" />
             </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1058093769519002865">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3138738821092036616">
               <link role="baseMethodDeclaration:3" targetNodeId="9.~ClassLoaderManager.removeReloadHandler(jetbrains.mps.reloading.ReloadListener):void" resolveInfo="removeReloadHandler" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3531050000760639354">
-                <link role="variableDeclaration:3" targetNodeId="1058093769518981030" resolveInfo="myReloadHelper" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3138738821092036617">
+                <link role="variableDeclaration:3" targetNodeId="1058093769518981030" resolveInfo="myReloadListener" />
               </node>
             </node>
           </node>
