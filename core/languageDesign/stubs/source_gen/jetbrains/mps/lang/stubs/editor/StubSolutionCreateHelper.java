@@ -19,7 +19,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 public class StubSolutionCreateHelper {
   public static List<StubSolution> getAvailableStubSolutions(SNode node) {
     Language currentLanguage = StubSolutionCreateHelper.getCurrentLanguage(node);
-    return currentLanguage.getLanguageDescriptor().getStubSolutions();
+    return currentLanguage.getModuleDescriptor().getStubSolutions();
   }
 
   public static Language getCurrentLanguage(SNode node) {
@@ -43,9 +43,9 @@ public class StubSolutionCreateHelper {
 
     ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
-        LanguageDescriptor descriptor = language.getLanguageDescriptor();
+        LanguageDescriptor descriptor = language.getModuleDescriptor();
         descriptor.getStubSolutions().add(stubSolution);
-        language.setLanguageDescriptor(descriptor);
+        language.setLanguageDescriptor(descriptor, true);
       }
     });
 
