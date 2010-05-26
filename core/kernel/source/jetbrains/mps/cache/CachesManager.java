@@ -17,6 +17,7 @@ package jetbrains.mps.cache;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
@@ -27,11 +28,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 public class CachesManager implements ApplicationComponent {
+  private static final Logger LOG = Logger.getLogger(CachesManager.class);
 
   private ClassLoaderManager myClassLoaderManager;
   private SModelRepository mySModelRepository;
 
-  private Object myLock = new Object();
+  private final Object myLock = new Object();
 
   private Map<Object, AbstractCache> myCaches = new HashMap<Object, AbstractCache>();
   private Map<AbstractCache, ModelEventRouter> myModelEventRouters = new HashMap<AbstractCache, ModelEventRouter>();
@@ -103,7 +105,12 @@ public class CachesManager implements ApplicationComponent {
         return result;
       }
       result = creator.create(key, element);
-      putCache(key, result, new ArrayList<SModelDescriptor>(result.getDependsOnModels(element)));
+      Set<SModelDescriptor> descriptorSet = result.getDependsOnModels(element);
+      if (descriptorSet.contains(null)){
+        LOG.error("Dependent models for cache contains null",new Throwable());
+        descriptorSet.remove(null);
+      }
+      putCache(key, result, new ArrayList<SModelDescriptor>(descriptorSet));
       return result;
     }
   }

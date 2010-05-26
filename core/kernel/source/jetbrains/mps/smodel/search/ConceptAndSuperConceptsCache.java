@@ -54,8 +54,9 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     for (AbstractConceptDeclaration concept : getConcepts()) {
       // http://youtrack.jetbrains.net/issue/MPS-8362
       // http://youtrack.jetbrains.net/issue/MPS-8556
-      assert concept.getModel().getModelDescriptor() != null : "Model descriptor is null for concept: " + concept + " same concept from SModelUtil_new: " + SModelUtil_new.findConceptDeclaration(NameUtil.nodeFQName(concept), GlobalScope.getInstance());
-      dependsOnModel.add(concept.getModel().getModelDescriptor());
+      SModelDescriptor descriptor = concept.getModel().getModelDescriptor();
+      assert descriptor != null : "Model descriptor is null for concept: " + concept + " same concept from SModelUtil_new: " + SModelUtil_new.findConceptDeclaration(NameUtil.nodeFQName(concept), GlobalScope.getInstance());
+      dependsOnModel.add(descriptor);
     }
     return dependsOnModel;
   }
