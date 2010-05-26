@@ -24,6 +24,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JComponent;
 import jetbrains.mps.debug.evaluation.ValueProxy;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -31,12 +33,14 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.debug.api.integration.ui.WatchableNode;
 import jetbrains.mps.debug.runtime.java.programState.CalculatedValue;
+import java.awt.Color;
+import jetbrains.mps.ide.messages.Icons;
 
 public class EvaluationDialog extends BaseDialog {
   private static final Logger LOG = Logger.getLogger(EvaluationDialog.class);
 
-  private JPanel myPanel = new JPanel(new BorderLayout());
-  private JTabbedPane myTabbedPane = new JTabbedPane();
+  private final JPanel myPanel = new JPanel(new BorderLayout());
+  private final JTabbedPane myTabbedPane = new JTabbedPane();
   private final IOperationContext myContext;
   private EvaluationDialog.MyTree myTree;
   private EmbeddableEditor myEditor;
@@ -76,9 +80,9 @@ public class EvaluationDialog extends BaseDialog {
     });
     myEvaluationData.setModel(d.value);
 
-    this.myPanel.add(this.myEditor.getComponenet(), BorderLayout.NORTH);
-    this.myTree = new EvaluationDialog.MyTree();
-    this.myPanel.add(new JScrollPane(this.myTree), BorderLayout.CENTER);
+    myPanel.add(this.myEditor.getComponenet(), BorderLayout.NORTH);
+    myTree = new EvaluationDialog.MyTree();
+    myPanel.add(new JScrollPane(myTree), BorderLayout.CENTER);
 
     if (myEvaluationData.isDeveloperMode()) {
       this.myTabbedPane.addTab("Main", myPanel);
@@ -106,20 +110,33 @@ public class EvaluationDialog extends BaseDialog {
     try {
       ValueProxy evaluatedValue = myEvaluationData.evaluate();
       if (evaluatedValue != null) {
-        myTree.setResultProxy(evaluatedValue);
+        setSuccess(evaluatedValue);
       } else {
-        myTree.setUnsuccessful("Evaluation returned null.");
+        setFailure(null, "Evaluation returned null.");
       }
     } catch (BaseEvaluationException e) {
-      myTree.setUnsuccessful(e.getMessage());
+      setFailure(e, null);
       LOG.error(e);
     }
-    myTree.rebuildLater();
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C', defaultButton = false)
   public void buttonCancel() {
     this.dispose();
+  }
+
+  private void setSuccess(@NotNull ValueProxy evaluatedValue) {
+    myTree.setResultProxy(evaluatedValue);
+    myTree.rebuildLater();
+  }
+
+  private void setFailure(@Nullable Throwable error, @Nullable String message) {
+    if (error != null) {
+      myTree.setError(error.getMessage());
+    } else {
+      myTree.setError(message);
+    }
+    myTree.rebuildLater();
   }
 
   public void updateGenerationResultTab(final SNode generatedResult) {
@@ -145,9 +162,10 @@ public class EvaluationDialog extends BaseDialog {
   }
 
   private static class MyTree extends MPSTree {
+    @Nullable
     private ValueProxy myValueProxy;
-    private boolean myIsSuccessful = true;
-    private String myErrorText = "";
+    @Nullable
+    private String myErrorText;
 
     public MyTree() {
       super();
@@ -155,30 +173,47 @@ public class EvaluationDialog extends BaseDialog {
     }
 
     public void setResultProxy(ValueProxy valueProxy) {
-      this.myValueProxy = valueProxy;
-      this.myIsSuccessful = true;
-      myErrorText = "";
+      myValueProxy = valueProxy;
+      myErrorText = null;
     }
 
-    public void setUnsuccessful(String errorText) {
-      this.myIsSuccessful = false;
-      this.myValueProxy = null;
-      myErrorText = errorText;
+    private void setError(String text) {
+      myErrorText = text;
+      myValueProxy = null;
     }
 
     @Override
     protected MPSTreeNode rebuild() {
       MPSTreeNode rootTreeNode = new TextTreeNode("Evaluation Result");
-      if (this.myValueProxy != null && this.myIsSuccessful) {
+      if (myValueProxy != null) {
         rootTreeNode.add(new WatchableNode(new CalculatedValue(this.myValueProxy.getJDIValue())));
-      }
-      if (!(this.myIsSuccessful)) {
-        rootTreeNode.add(new TextTreeNode(myErrorText));
-        // todo set error icon 
+      } else if (myErrorText != null) {
+        rootTreeNode.add(new EvaluationDialog.ErrorTreeNode(myErrorText));
       }
       this.setRootVisible(false);
       this.setShowsRootHandles(true);
       return rootTreeNode;
+    }
+  }
+
+  private static class ErrorTreeNode extends TextTreeNode {
+    public ErrorTreeNode(@NotNull String text) {
+      super(text);
+
+      updatePresentation();
+    }
+
+    @Override
+    public boolean isLeaf() {
+      return true;
+    }
+
+    @Override
+    protected void updatePresentation() {
+      super.updatePresentation();
+
+      setColor(Color.RED);
+      setIcon(Icons.ERROR_ICON);
     }
   }
 }
