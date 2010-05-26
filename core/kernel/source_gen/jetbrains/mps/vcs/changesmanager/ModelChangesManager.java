@@ -422,7 +422,11 @@ public class ModelChangesManager {
               if (parent == null) {
                 ListSequence.fromList(changeList.value).addElement(new AddRootChange(conceptFqName, nodeId));
               } else if (LinkDeclaration_Behavior.call_isSingular_1213877254557(SNodeOperations.getContainingLinkDeclaration(node))) {
-                ListSequence.fromList(changeList.value).addElement(new SetNodeChange(conceptFqName, nodeId, SNodeOperations.getContainingLinkRole(node), parent.getSNodeId(), check_fh1co9_e0a0a0a0a0h0c0a6a0a0e0y(check_fh1co9_a4a0a0a0a0a7a2a0g0a0a4a42(myBaseVersionModel.getNodeById(SNodeOperations.getParent(node).getSNodeId()), node)), SNodeOperations.getContainingLinkRole(SNodeOperations.getPrevSibling(node))));
+                SNode thisNodeInBase = myBaseVersionModel.getNodeById(nodeId);
+                if (thisNodeInBase != null && parent.getSNodeId().equals(check_fh1co9_a0a0a1a0a0h0c0a6a0a0e0y(SNodeOperations.getParent(thisNodeInBase))) && SNodeOperations.getContainingLinkRole(node).equals(SNodeOperations.getContainingLinkRole(thisNodeInBase))) {
+                  continue;
+                }
+                ListSequence.fromList(changeList.value).addElement(new SetNodeChange(conceptFqName, nodeId, SNodeOperations.getContainingLinkRole(node), parent.getSNodeId(), check_fh1co9_e0a0a2a0a0h0c0a6a0a0e0y(check_fh1co9_a4a0a0c0a0a7a2a0g0a0a4a42(myBaseVersionModel.getNodeById(SNodeOperations.getParent(node).getSNodeId()), node)), SNodeOperations.getContainingLinkRole(SNodeOperations.getPrevSibling(node))));
               } else {
                 // TODO null in prevSibling and prevRole 
                 ListSequence.fromList(changeList.value).addElement(new AddNodeChange(conceptFqName, nodeId, SNodeOperations.getContainingLinkRole(node), parent.getSNodeId(), null, null));
@@ -949,14 +953,21 @@ __switch__:
     }
   }
 
-  private static SNodeId check_fh1co9_e0a0a0a0a0h0c0a6a0a0e0y(SNode p) {
+  private static SNodeId check_fh1co9_a0a0a1a0a0h0c0a6a0a0e0y(SNode p) {
     if (null == p) {
       return null;
     }
     return p.getSNodeId();
   }
 
-  private static SNode check_fh1co9_a4a0a0a0a0a7a2a0g0a0a4a42(SNode p, SNode node) {
+  private static SNodeId check_fh1co9_e0a0a2a0a0h0c0a6a0a0e0y(SNode p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getSNodeId();
+  }
+
+  private static SNode check_fh1co9_a4a0a0c0a0a7a2a0g0a0a4a42(SNode p, SNode node) {
     if (null == p) {
       return null;
     }
