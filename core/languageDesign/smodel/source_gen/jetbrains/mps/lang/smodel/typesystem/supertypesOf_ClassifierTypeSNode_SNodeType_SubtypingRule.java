@@ -102,8 +102,8 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 }

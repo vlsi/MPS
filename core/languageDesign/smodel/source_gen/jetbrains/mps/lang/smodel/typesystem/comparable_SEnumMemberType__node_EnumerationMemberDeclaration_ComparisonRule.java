@@ -75,8 +75,8 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 }

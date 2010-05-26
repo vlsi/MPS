@@ -119,8 +119,8 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 }

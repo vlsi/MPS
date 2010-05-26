@@ -102,8 +102,8 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 }

@@ -102,8 +102,8 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 }
