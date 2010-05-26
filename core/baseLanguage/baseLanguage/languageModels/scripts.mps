@@ -2956,5 +2956,47 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript:0" id="3427990840445203005">
+    <property name="name:0" value="SetReturnTypeInConstructors" />
+    <property name="title:0" value="Set return type in constructors" />
+    <property name="category:0" value="baseLanguage" />
+    <node role="part:0" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance:0" id="3427990840445203143">
+      <property name="description:0" value="Set return type in constructors" />
+      <property name="showAsIntention:0" value="true" />
+      <link role="affectedInstanceConcept:0" targetNodeId="1.1068580123140:3" resolveInfo="ConstructorDeclaration" />
+      <node role="affectedInstanceUpdater:0" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater:0" id="3427990840445203144">
+        <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3427990840445203145">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3427990840445203160">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3427990840445203167">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3427990840445203162">
+                <node role="operand:3" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node:0" id="3427990840445203161" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="3427990840445203166">
+                  <link role="link:16" targetNodeId="1.1068580123133:3" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation:16" id="3427990840445203171">
+                <link role="concept:16" targetNodeId="1.1068581517677:3" resolveInfo="VoidType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate:0" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate:0" id="3427990840445203146">
+        <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3427990840445203147">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3427990840445203148">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3427990840445203155">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3427990840445203150">
+                <node role="operand:3" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node:0" id="3427990840445203149" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="3427990840445203154">
+                  <link role="link:16" targetNodeId="1.1068580123133:3" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation:16" id="3427990840445203159" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

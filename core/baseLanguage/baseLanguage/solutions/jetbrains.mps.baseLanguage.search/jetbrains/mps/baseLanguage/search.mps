@@ -353,6 +353,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208596" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581136797">
       <property name="name:3" value="processNode" />
@@ -1675,6 +1676,7 @@
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3161373106581137352">
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3161373106581137353" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3161373106581137354" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208589" />
     </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="3161373106581137355">
       <property name="name:3" value="isVisible" />
@@ -2615,6 +2617,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208583" />
       </node>
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581137585">
         <property name="name:3" value="getClassifiers" />
@@ -4208,6 +4211,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208602" />
       </node>
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581137666">
         <property name="name:3" value="getMethods" />
@@ -5901,6 +5905,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208598" />
       </node>
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581137737">
         <property name="name:3" value="getFields" />
@@ -7315,6 +7320,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208592" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581137917">
       <property name="name:3" value="getClassifiers" />
@@ -7828,6 +7834,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208594" />
       </node>
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581139688">
         <property name="name:3" value="resolve" />
@@ -8016,6 +8023,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208597" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581139724">
       <property name="name:3" value="getModel" />
@@ -8246,6 +8254,7 @@
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3161373106581139871">
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3161373106581139872" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3161373106581139873" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208587" />
     </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="3161373106581139874">
       <property name="name:3" value="getTypeWithResolvedTypeVars" />
@@ -8750,6 +8759,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208591" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581140073">
       <property name="name:3" value="resolve" />
@@ -9105,6 +9115,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208582" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581140218">
       <property name="name:3" value="resolve" />
@@ -9381,6 +9392,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208595" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581140331">
       <property name="name:3" value="getNodes" />
@@ -10594,6 +10606,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208590" />
     </node>
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3161373106581140824">
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3161373106581140825" />
@@ -10683,6 +10696,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208585" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581140860">
       <property name="name:3" value="getClassifiers" />
@@ -12414,6 +12428,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208588" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581141578">
       <property name="name:3" value="getClassifiers" />
@@ -12982,6 +12997,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208599" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581141823">
       <property name="name:3" value="getConstraint" />
@@ -14176,6 +14192,7 @@
       <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="6568041038405656694">
         <link role="annotation:3" targetNodeId="2v.~Deprecated" resolveInfo="Deprecated" />
       </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208584" />
     </node>
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="2433178749262262939">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2433178749262262940" />
@@ -14509,6 +14526,7 @@
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3161373106581142363">
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3161373106581142364" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3161373106581142365" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208586" />
     </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="3161373106581142366">
       <property name="name:3" value="selectByParmCount" />
@@ -16669,6 +16687,7 @@
       <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3573019447813743500">
         <link role="annotation:3" targetNodeId="2v.~Deprecated" resolveInfo="Deprecated" />
       </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208600" />
     </node>
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3573019447813594739">
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3573019447813594740" />
@@ -16760,6 +16779,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208593" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581143238">
       <property name="name:3" value="getNodes" />
@@ -17267,6 +17287,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208601" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581143429">
       <property name="name:3" value="getClassifiers" />
@@ -17461,6 +17482,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3427990840445208581" />
     </node>
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3573019447813594661">
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3573019447813594665">

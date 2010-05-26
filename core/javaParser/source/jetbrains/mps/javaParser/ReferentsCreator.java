@@ -316,11 +316,10 @@ public class ReferentsCreator {
       FieldBinding b = fieldDeclaration.binding;
       Classifier enclosingClassifier = (Classifier) myReferentsCreator.myBindingMap.get(scope.enclosingSourceType());
       boolean isEnumConstant = isEnumConstant(fieldDeclaration);
-      VariableDeclaration field = null;
       if (isEnumConstant) {
         createEnumField(b, enclosingClassifier);
       } else {
-        field = createField(b, enclosingClassifier);
+        createField(b, enclosingClassifier);
       }
       return true;
     }
@@ -395,6 +394,7 @@ public class ReferentsCreator {
           jetbrains.mps.baseLanguage.structure.ConstructorDeclaration.newInstance(model);
         Visibility visibility = getMethodVisibility(b);
         constructorDeclaration.setVisibility(visibility);
+        constructorDeclaration.setReturnType(VoidType.newInstance(model));
         //should be put to map before mapParameters()
         myReferentsCreator.myBindingMap.put(b, constructorDeclaration);
         processMethodTypeParameters(ctorDecl, constructorDeclaration);
