@@ -31,13 +31,13 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.plugin.run.DefaultProcessHandler;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.io.File;
 import jetbrains.mps.buildlanguage.plugin.AntScriptRunner;
@@ -123,7 +123,6 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
         Runnable consoleDispose_22042010 = null;
         final List<AnAction> actions_22042010 = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler_22042010 = null;
-        final IOperationContext context = MPSDataKeys.OPERATION_CONTEXT.getData(environment.getDataContext());
         final Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
 
         // user's execute code 
@@ -162,12 +161,14 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
                   }
 
                   final Wrappers._T<SModelDescriptor> model = new Wrappers._T<SModelDescriptor>();
+                  final Wrappers._T<ModuleContext> context = new Wrappers._T<ModuleContext>();
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
                       model.value = SNodeOperations.getModel(node).getModelDescriptor();
+                      context.value = new ModuleContext(model.value.getModule(), project);
                     }
                   });
-                  File file = GenerateTextFromBuild.generate(configuration, model.value, context, project, true);
+                  File file = GenerateTextFromBuild.generate(configuration, model.value, context.value, project, true);
 
                   if (file == null) {
                     throw new ExecutionException("No executable file were generated.");
