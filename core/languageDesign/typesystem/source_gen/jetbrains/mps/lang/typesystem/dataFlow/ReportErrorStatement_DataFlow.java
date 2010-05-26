@@ -21,5 +21,8 @@ public class ReportErrorStatement_DataFlow extends DataFlowBuilder {
     if ((SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true) != null)) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true));
     }
+    if ((SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true) != null)) {
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true));
+    }
   }
 }
