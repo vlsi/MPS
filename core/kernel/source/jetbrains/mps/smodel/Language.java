@@ -393,6 +393,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     if (getStructureModelDescriptor() != null && myCachesInvalidator == null) {
       getStructureModelDescriptor().addModelListener(myCachesInvalidator = new CachesInvalidator());
     }
+
+    invalidateDependencies();
   }
 
   public boolean isBootstrap() {
@@ -408,11 +410,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    if (moduleDescriptor instanceof LanguageDescriptor) {
-      setLanguageDescriptor((LanguageDescriptor) moduleDescriptor, reloadClasses);
-    } else {
-      LOG.error("not a language descriptor", new Throwable());
-    }
+    setLanguageDescriptor((LanguageDescriptor) moduleDescriptor, reloadClasses);
   }
 
   public LanguageDescriptor getLanguageDescriptor() {
@@ -860,7 +858,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
       myLanguageRuntimeClasspathCache = result;
     }
-    
+
     return myLanguageRuntimeClasspathCache;
   }
 
@@ -875,7 +873,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
       for (StubModelsEntry entry : myLanguageDescriptor.getRuntimeStubModels()) {
         IFile cp = FileSystem.getFile(entry.getPath());
-        if ((!cp.exists()) || cp.isDirectory() ||visited.contains(entry)) {
+        if ((!cp.exists()) || cp.isDirectory() || visited.contains(entry)) {
           remove.add(entry);
         }
         visited.add(entry);

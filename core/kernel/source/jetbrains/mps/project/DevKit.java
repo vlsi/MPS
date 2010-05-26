@@ -31,7 +31,7 @@ import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
 
-public class DevKit extends AbstractModule implements MPSModuleOwner{
+public class DevKit extends AbstractModule implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(DevKit.class);
 
   public static DevKit newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
@@ -79,21 +79,8 @@ public class DevKit extends AbstractModule implements MPSModuleOwner{
     return myDescriptor;
   }
 
-
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    if (moduleDescriptor instanceof DevkitDescriptor) {
-      setDevKitDescriptor((DevkitDescriptor) moduleDescriptor, reloadClasses);
-    } else {
-      LOG.error("not a devkit descriptor", new Throwable());
-    }
-  }
-
-  public String getGeneratorOutputPath() {
-    return null;
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    return null;
+    setDevKitDescriptor((DevkitDescriptor) moduleDescriptor, reloadClasses);
   }
 
   public void setDevKitDescriptor(DevkitDescriptor descriptor) {
@@ -118,6 +105,16 @@ public class DevKit extends AbstractModule implements MPSModuleOwner{
     if (reloadClasses) {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     }
+
+    invalidateDependencies();
+  }
+
+  public String getGeneratorOutputPath() {
+    return null;
+  }
+
+  public String getTestsGeneratorOutputPath() {
+    return null;
   }
 
   protected void reloadAfterDescriptorChange() {

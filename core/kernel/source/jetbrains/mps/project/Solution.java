@@ -138,6 +138,8 @@ public class Solution extends AbstractModule {
     if (reloadClasses) {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     }
+
+    invalidateDependencies();
   }
 
   public void dispose() {

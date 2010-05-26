@@ -89,8 +89,6 @@ public interface IModule extends ModelOwner{
 
   ModuleDescriptor getModuleDescriptor();
 
-  void setModuleDescriptor(ModuleDescriptor moduleDescriptor);
-
   void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses);
 
   String getGeneratorOutputPath();

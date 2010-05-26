@@ -49,7 +49,7 @@ public class GeneratorPropertiesDialog extends BasePropertiesDialog {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         GeneratorPropertiesDialog.this.myProperties.saveTo(GeneratorPropertiesDialog.this.myGenerator.getModuleDescriptor());
-        GeneratorPropertiesDialog.this.myGenerator.setModuleDescriptor(GeneratorPropertiesDialog.this.myGenerator.getModuleDescriptor());
+        GeneratorPropertiesDialog.this.myGenerator.setModuleDescriptor(GeneratorPropertiesDialog.this.myGenerator.getModuleDescriptor(), true);
         GeneratorPropertiesDialog.this.myGenerator.save();
       }
     });

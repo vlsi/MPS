@@ -193,21 +193,21 @@ public abstract class AbstractModule implements IModule {
     dep.setModuleRef(moduleRef);
     dep.setReexport(reexport);
     descriptor.getDependencies().add(dep);
-    setModuleDescriptor(descriptor);
+    setModuleDescriptor(descriptor, true);
     save();
   }
 
   public void addUsedLanguage(ModuleReference langRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     descriptor.getUsedLanguages().add(langRef);
-    setModuleDescriptor(descriptor);
+    setModuleDescriptor(descriptor, true);
     save();
   }
 
   public void addUsedDevkit(ModuleReference devkitRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     descriptor.getUsedDevkits().add(devkitRef);
-    setModuleDescriptor(descriptor);
+    setModuleDescriptor(descriptor, true);
     save();
   }
 
@@ -545,7 +545,7 @@ public abstract class AbstractModule implements IModule {
         dep.setModuleRef(moduleRef);
         md.getDependencies().add(dep);
 
-        setModuleDescriptor(md);
+        setModuleDescriptor(md, true);
         save();
       }
     });
@@ -566,7 +566,7 @@ public abstract class AbstractModule implements IModule {
         ModuleReference ref = ModuleReference.fromString(languageNamespace);
         md.getUsedLanguages().add(ref);
 
-        setModuleDescriptor(md);
+        setModuleDescriptor(md, true);
         save();
       }
     });
@@ -593,11 +593,6 @@ public abstract class AbstractModule implements IModule {
     if (timestampString == null) return true;
     long timestamp = Long.decode(timestampString);
     return timestamp != myDescriptorFile.lastModified();
-  }
-
-  public void setModuleDescriptor(ModuleDescriptor descriptor) {
-    setModuleDescriptor(descriptor, true);
-    myExplicitlyDependentModules = null;
   }
 
   public String getOutputFor(SModelDescriptor model) {
@@ -632,6 +627,10 @@ public abstract class AbstractModule implements IModule {
   public boolean updateModuleReferences() {
     if (getModuleDescriptor() == null) return false;
     return getModuleDescriptor().updateModuleRefs();
+  }
+
+  protected void invalidateDependencies() {
+    myExplicitlyDependentModules = null;
   }
 
   protected ModuleDescriptor loadDescriptor() {
@@ -729,6 +728,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   //todo check this code. Wy not to do it where we add jars?
+
   protected void updatePackagedDescriptorClasspath() {
     if (!isPackaged()) return;
 

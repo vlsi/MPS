@@ -227,7 +227,7 @@ public class ImportProperties {
       for (Dependency dep : deps) {
         descriptor.getDependencies().add(dep);
       }
-      targetModule.setModuleDescriptor(descriptor);
+      targetModule.setModuleDescriptor(descriptor, true);
     }
 
     targetModule.save();

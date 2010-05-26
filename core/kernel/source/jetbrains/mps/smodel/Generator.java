@@ -175,6 +175,8 @@ public class Generator extends AbstractModule{
     languageDescriptor.getGenerators().remove(index);
     languageDescriptor.getGenerators().add(index, (GeneratorDescriptor) moduleDescriptor);
     getSourceLanguage().setLanguageDescriptor(languageDescriptor, reloadClasses);
+
+    invalidateDependencies();
   }
 
   public String getName() {

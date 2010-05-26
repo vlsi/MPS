@@ -43,7 +43,7 @@ public class MissingDependenciesFixer {
 
     final ModuleDescriptor[] md = new ModuleDescriptor[1];
     final List<IModule> newImports = new ArrayList<IModule>();
-    
+
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         module[0] = myModelDescriptor.getModule();
@@ -100,7 +100,7 @@ public class MissingDependenciesFixer {
         }
 
         if (wereChanges[0]) {
-          module[0].setModuleDescriptor(md[0]);
+          module[0].setModuleDescriptor(md[0], true);
           module[0].save();
         }
       }

@@ -9323,7 +9323,7 @@
                               </node>
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075041805">
-                              <link role="baseMethodDeclaration:3" targetNodeId="19.~AbstractModule.setModuleDescriptor(jetbrains.mps.project.structure.modules.ModuleDescriptor):void" resolveInfo="setModuleDescriptor" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="31.~Generator.setModuleDescriptor(jetbrains.mps.project.structure.modules.ModuleDescriptor,boolean):void" resolveInfo="setModuleDescriptor" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5923576889075041806">
                                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5923576889075041807">
                                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5923576889075041808">
@@ -9336,6 +9336,9 @@
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075041810">
                                   <link role="baseMethodDeclaration:3" targetNodeId="31.~Generator.getModuleDescriptor():jetbrains.mps.project.structure.modules.ModuleDescriptor" resolveInfo="getModuleDescriptor" />
                                 </node>
+                              </node>
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="5063587436144983539">
+                                <property name="value:3" value="true" />
                               </node>
                             </node>
                           </node>
