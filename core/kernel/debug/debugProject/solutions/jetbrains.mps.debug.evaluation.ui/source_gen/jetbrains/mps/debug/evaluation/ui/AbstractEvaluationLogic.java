@@ -234,7 +234,7 @@ public abstract class AbstractEvaluationLogic {
             public void run() {
               try {
                 TransformationUtil.transform(evaluator);
-                if (!(AbstractEvaluationLogic.IS_DEVELOPER_MODE)) {
+                if (AbstractEvaluationLogic.IS_DEVELOPER_MODE) {
                   ListSequence.fromList(myGenerationListeners).visitAll(new IVisitor<_FunctionTypes._void_P1_E0<? super SNode>>() {
                     public void visit(_FunctionTypes._void_P1_E0<? super SNode> it) {
                       it.invoke(evaluator);

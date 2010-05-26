@@ -104,5 +104,42 @@ public abstract class Evaluator {
     return location.declaringType().name();
   }
 
+  protected ValueProxy invokeConstructor(String className, String jniSignature, Object... args) {
+    // TODO duplication in code
+    List<ReferenceType> classes = getVM().classesByName(className);
+    if (classes.size() == 0) {
+      LOG.error("could not find class " + className);
+      return null;
+    }
+    ClassType referenceType = (ClassType) classes.get(0);
+    List<Method> methods = referenceType.methodsByName("<init>", jniSignature);
+    if (methods.size() == 0) {
+      LOG.error("could not find constructor " + " with signature " + jniSignature + " in " + className);
+      return null;
+    }
+    Method constructor = null;
+    for (Method m : methods) {
+      if (m.isConstructor()) {
+        constructor = m;
+        break;
+      }
+    }
+    if (constructor == null) {
+      // TODO throw exception
+      LOG.error("could not find constructor " + " with signature " + jniSignature + " in " + className);
+      return null;
+    }
+
+    List<Value> argValues = MirrorUtil.getValues(getThreadReference(), args);
+    Value result;
+    try {
+      result = referenceType.newInstance(getThreadReference(), constructor, argValues, 0);
+    } catch (Throwable t) {
+      LOG.error("method invocation failed", t);
+      return null;
+    }
+    return MirrorUtil.getValueProxy(result, getThreadReference());
+  }
+
   public abstract ValueProxy evaluate() throws EvaluationException;
 }

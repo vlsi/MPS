@@ -50,6 +50,17 @@ public class Main {
     doSomething();
     doSomething();
     doSomething();
+    int j = 50;
+    while (j > 0) {
+      System.err.println("while");
+
+      j--;
+    }
+    do {
+      System.err.println("do ... while");
+
+      j++;
+    } while (j < 0);
     while (true) {
       System.err.println("hi");
     }
