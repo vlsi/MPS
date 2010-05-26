@@ -85,7 +85,7 @@ public class OptimizeImportsHelper {
     }
     Result result = optimizeModelsImports_internal(modelsToOptimize);
 
-    LanguageDescriptor descriptor = language.getLanguageDescriptor();
+    LanguageDescriptor descriptor = language.getModuleDescriptor();
     result.myReport = optimizeModuleImports(descriptor, result) + "\n\n" + result.myReport;
     language.setLanguageDescriptor(descriptor, false);
 

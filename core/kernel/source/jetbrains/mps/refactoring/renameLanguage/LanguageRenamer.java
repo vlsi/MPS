@@ -91,7 +91,7 @@ public class LanguageRenamer {
       }
     }
 
-    LanguageDescriptor descriptor = myLanguage.getLanguageDescriptor();
+    LanguageDescriptor descriptor = myLanguage.getModuleDescriptor();
     descriptor.setNamespace(myNewName);
     myLanguage.setLanguageDescriptor(descriptor, false);
     myLanguage.save();

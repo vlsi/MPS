@@ -19,8 +19,6 @@ import com.intellij.ide.IdeBundle;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.ide.wizard.AbstractWizard;
 import com.intellij.ide.wizard.CommitStepException;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -30,7 +28,6 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.startup.StartupManager;
 
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
@@ -234,7 +231,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
       dir.mkdirs();
     }
     Language language = Language.createLanguage(myOptions.getLanguageNamespace(), new FileSystemFile(descriptorFile), mpsProject);
-    LanguageDescriptor languageDescriptor = language.getLanguageDescriptor();
+    LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
     ModuleReference ref = LanguageDesign_DevKit.MODULE_REFERENCE;
     languageDescriptor.getUsedDevkits().add(ref);
     LanguageAspect.STRUCTURE.createNew(language, false);

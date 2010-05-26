@@ -236,7 +236,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public List<Dependency> getRuntimeDependOn() {
     List<Dependency> result = new ArrayList<Dependency>();
-    LanguageDescriptor descriptor = getLanguageDescriptor();
+    LanguageDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
       for (Dependency dep : descriptor.getRuntimeModules()) {
         result.add(dep);
@@ -269,7 +269,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         errors.add("Can't find extended language " + lang.getModuleFqName());
       }
     }
-    for (SModelReference accessory : getLanguageDescriptor().getAccessoryModels()) {
+    for (SModelReference accessory : getModuleDescriptor().getAccessoryModels()) {
       if (getScope().getModelDescriptor(accessory) == null) {
         errors.add("Can't find accessory model" + accessory.getLongName());
       }
@@ -346,7 +346,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private void revalidateGenerators() {
     myGenerators.clear();
-    for (GeneratorDescriptor generatorDescriptor1 : getLanguageDescriptor().getGenerators()) {
+    for (GeneratorDescriptor generatorDescriptor1 : getModuleDescriptor().getGenerators()) {
       GeneratorDescriptor generatorDescriptor = generatorDescriptor1;
       Generator generator = new Generator(this, generatorDescriptor);
       MPSModuleRepository.getInstance().addModule(generator, this);
@@ -371,20 +371,12 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     myCachedRefactorings = null;
   }
 
-  public ModuleDescriptor getModuleDescriptor() {
+  public LanguageDescriptor getModuleDescriptor() {
     return myLanguageDescriptor;
   }
 
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     setLanguageDescriptor((LanguageDescriptor) moduleDescriptor, reloadClasses);
-  }
-
-  public LanguageDescriptor getLanguageDescriptor() {
-    return myLanguageDescriptor;
-  }
-
-  public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
-    setLanguageDescriptor(newDescriptor, true);
   }
 
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
@@ -407,6 +399,16 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
 
     invalidateDependencies();
+  }
+
+  @Deprecated
+  public LanguageDescriptor getLanguageDescriptor() {
+    return getModuleDescriptor();
+  }
+
+  @Deprecated
+  public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
+    setLanguageDescriptor(newDescriptor, true);
   }
 
   public boolean isBootstrap() {
@@ -438,15 +440,15 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public void rename(String newNamespace) {
-    LanguageDescriptor languageDescriptor = getLanguageDescriptor();
+    LanguageDescriptor languageDescriptor = getModuleDescriptor();
     languageDescriptor.setNamespace(newNamespace);
     setLanguageDescriptor(languageDescriptor, false);
   }
 
   public File getSourceDir() {
     File sourceDir = new File(myDescriptorFile.getParent().toFile(), "source_gen");
-    if (getLanguageDescriptor().getGenPath() != null) {
-      sourceDir = new File(getLanguageDescriptor().getGenPath());
+    if (getModuleDescriptor().getGenPath() != null) {
+      sourceDir = new File(getModuleDescriptor().getGenPath());
     }
     if (!sourceDir.exists()) {
       sourceDir.mkdirs();
@@ -626,12 +628,12 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       LOG.warning("Trying to save packaged language " + getModuleFqName());
       return;
     }
-    LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getLanguageDescriptor());
+    LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor());
   }
 
   public List<SModelDescriptor> getAccessoryModels() {
     List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
-    for (SModelReference model : getLanguageDescriptor().getAccessoryModels()) {
+    for (SModelReference model : getModuleDescriptor().getAccessoryModels()) {
       SModelDescriptor modelDescriptor = getScope().getModelDescriptor(model);
       if (modelDescriptor != null) {
         result.add(modelDescriptor);
@@ -641,7 +643,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public boolean isAccessoryModel(SModelReference modelReference) {
-    Iterator<SModelReference> accessoryModels = getLanguageDescriptor().getAccessoryModels().iterator();
+    Iterator<SModelReference> accessoryModels = getModuleDescriptor().getAccessoryModels().iterator();
     while (accessoryModels.hasNext()) {
       SModelReference model = accessoryModels.next();
       if (ObjectUtils.equals(model, modelReference)) {
@@ -664,12 +666,12 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public String toString() {
-    return getLanguageDescriptor().getNamespace();
+    return getModuleDescriptor().getNamespace();
   }
 
   @Hack("Created to simplify New Language Dialog")
   public ModelRoot getDefaultModelRoot() {
-    return getLanguageDescriptor().getModelRoots().iterator().next();
+    return getModuleDescriptor().getModelRoots().iterator().next();
   }
 
   public Set<IRefactoring> getRefactorings() {
@@ -808,7 +810,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   //-----------stubs--------------
 
   public boolean areJavaStubsEnabled() {
-    return getLanguageDescriptor().getEnableJavaStubs();
+    return getModuleDescriptor().getEnableJavaStubs();
   }
 
   public List<StubPath> getRuntimeStubPaths() {
