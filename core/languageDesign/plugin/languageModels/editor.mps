@@ -5891,6 +5891,36 @@
         </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="6629582826328966227">
           <link role="relationDeclaration:32" targetNodeId="1.162872405267681133:23" />
+          <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="6385017993862367501">
+            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6385017993862367502">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6385017993862367503">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6385017993862367505">
+                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="6385017993862367504" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess:16" id="6385017993862367509">
+                    <link role="conceptProperty:16" targetNodeId="1.2195473424935653498:23" resolveInfo="requiresCustomEditor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="6385017993862367511">
+          <property name="noTargetText:32" value="&lt;default editor&gt;" />
+          <link role="relationDeclaration:32" targetNodeId="1.162872405267681133:23" />
+          <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="6385017993862367512">
+            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6385017993862367513">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6385017993862367514">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="6385017993862367515">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6385017993862367518">
+                    <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="6385017993862367517" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess:16" id="6385017993862367522">
+                      <link role="conceptProperty:16" targetNodeId="1.2195473424935653498:23" resolveInfo="requiresCustomEditor" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="6629582826328966228" />
       </node>
