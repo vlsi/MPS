@@ -314,8 +314,9 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.stubs_db2f0" />
     <mkdir dir="${deploy.dir}/MPS/core/languageDesign" />
     <antcall target="MPS-languages.pack.jetbrains.mps.kernel_d5a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.debug_e5a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.debug.api.info_e5a" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debug.evaluation_f5a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.debug.evaluation.ui_g5a" />
     <mkdir dir="${deploy.dir}/MPS/core" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui_a0g0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ui.modeling_b0g0" />

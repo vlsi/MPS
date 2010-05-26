@@ -441,12 +441,16 @@
       <property name="name" value="jetbrains.mps.kernel" />
     </node>
     <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="8625435145953827603">
-      <property name="id" value="88f8bc48-a7a1-4edf-93ec-38cb00d0c9d5" />
-      <property name="name" value="jetbrains.mps.debug" />
+      <property name="id" value="9b67baf0-e986-49af-b77c-998667f458cb" />
+      <property name="name" value="jetbrains.mps.debug.api.info" />
     </node>
-    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="59229739795782417">
+    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4586617688011253498">
       <property name="id" value="7da4580f-9d75-4603-8162-51a896d78375" />
       <property name="name" value="jetbrains.mps.debug.evaluation" />
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="59229739795782417">
+      <property name="id" value="cf8c9de5-1b4a-4dc8-8e6d-847159af31dd" />
+      <property name="name" value="jetbrains.mps.debug.evaluation.ui" />
     </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="4577526975411839127">
