@@ -344,15 +344,15 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
       if (ListSequence.fromList(myMessages).count() == 1) {
         Change change = ListSequence.fromList(myMessages).first().getChange();
         if (change instanceof SetNodeChange && change.getChangeType() == ChangeType.CHANGE || change instanceof SubstituteNodeChange) {
-          return "Replaced node in role " + ((NewNodeChange) change).getNodeRole();
+          return "Replaced node in '" + ((NewNodeChange) change).getNodeRole() + "' role";
         } else if (change instanceof NewNodeChange) {
-          return "Added node of in role " + ((NewNodeChange) change).getNodeRole();
+          return "Added node in '" + ((NewNodeChange) change).getNodeRole() + "' role";
         } else if (change instanceof DeleteNodeChange) {
-          return "Deleted node in role " + ((DeleteNodeChange) change).getRole();
+          return "Deleted node from '" + ((DeleteNodeChange) change).getRole() + "' role";
         } else if (change instanceof SetReferenceChange) {
-          return "Changed reference target in role " + ((SetReferenceChange) change).getRole();
+          return "Changed '" + ((SetReferenceChange) change).getRole() + "' reference target";
         } else if (change instanceof SetPropertyChange) {
-          return "Changed property value with name " + ((SetPropertyChange) change).getProperty();
+          return "Changed '" + ((SetPropertyChange) change).getProperty() + "' property value";
         }
         return "1 change";
       } else {
