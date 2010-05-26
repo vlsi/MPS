@@ -18,18 +18,18 @@ package jetbrains.mps.ide.tabbedEditor.tabs;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowManager;
-import jetbrains.mps.vcs.changesmanager.NodeFileStatusListener;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.vcs.changesmanager.NodeFileStatusListener;
 import org.apache.commons.lang.ObjectUtils;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
@@ -142,7 +142,7 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
         SNode node = createLoadableNode();
         if (node == null) return;
 
-        node.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
+        onCreate(node);
       }
     });
   }
@@ -160,7 +160,7 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
 
   protected NodeFileStatusListener createFileStatusListener() {
     return new NodeFileStatusListener() {
-      public void fileStatusChanged(final SNode node) {
+      public void fileStatusChanged(@NotNull final SNode node) {
         SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
           public SNodePointer compute() {
             return new SNodePointer(node);

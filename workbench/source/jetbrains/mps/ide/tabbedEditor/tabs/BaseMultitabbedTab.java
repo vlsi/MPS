@@ -27,13 +27,10 @@ import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.vcs.changesmanager.NodeFileStatusListener;
-import jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
@@ -42,6 +39,8 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.vcs.changesmanager.NodeFileStatusListener;
+import jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NotNull;
@@ -179,9 +178,11 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
           public PopupStep onChosen(final SNode selectedValue, boolean finalChoice) {
             myListPopup.dispose();
             myListPopup = null;
-            Pair<SNode, IOperationContext>[] nodeAndContext = new Pair[1];
-            createLoadableNodeChecked(nodeAndContext, selectedValue);
-            setPackageAfterCreationChecked(nodeAndContext);
+            IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(new Runnable() {
+              public void run() {
+                createLoadableNodeChecked(selectedValue);
+              }
+            });
             return FINAL_CHOICE;
           }
         });
@@ -308,47 +309,26 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     return myEditors.get(index);
   }
 
-  private void setPackageAfterCreation(final Pair<SNode, IOperationContext> nodeAndContext) {
-    if (nodeAndContext == null) return;
-    nodeAndContext.o1.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
-  }
-
-  private void setPackageAfterCreationChecked(final Pair<SNode, IOperationContext>[] nodeAndContext) {
+  private void createLoadableNodeChecked(final SNode concept) {
     Runnable runnable = new Runnable() {
       public void run() {
-        setPackageAfterCreation(nodeAndContext[0]);
+        Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode(true, concept);
+        if (nodeAndContext != null) {
+          onCreate(nodeAndContext.o1);
+        }
       }
     };
 
-    if (ModelAccess.instance().canWrite()) {
+    if (isOutsideCommandExecution()) {
       runnable.run();
     } else {
       ModelAccess.instance().runWriteActionInCommand(runnable);
     }
   }
 
-  private void createLoadableNodeChecked(final Pair<SNode, IOperationContext>[] nodeAndContext, final SNode concept) {
-    IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(new Runnable() {
-      public void run() {
-        Runnable runnable = new Runnable() {
-          public void run() {
-            nodeAndContext[0] = createLoadableNode(true, concept);
-          }
-        };
-
-        if (isOutsideCommandExecution()) {
-          runnable.run();
-        } else {
-          ModelAccess.instance().runWriteActionInCommand(runnable);
-        }
-      }
-    });
-  }
-
   private void createAnyone(final RelativePoint relativePoint) {
     if (!canCreate()) return;
 
-    final Pair<SNode, IOperationContext>[] nodeAndContext = new Pair[1];
     List<SNode> availableConcepts = ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
       public List<SNode> compute() {
         return getAvailableConcepts();
@@ -357,8 +337,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     if (availableConcepts.size() <= 1) {
       SNode concept = (availableConcepts.size() == 0) ? null : availableConcepts.get(0);
       if (!askCreate()) return;
-      createLoadableNodeChecked(nodeAndContext, concept);
-      setPackageAfterCreationChecked(nodeAndContext);
+      createLoadableNodeChecked(concept);
     } else {
       if (myListPopup != null) {
         myListPopup = null;

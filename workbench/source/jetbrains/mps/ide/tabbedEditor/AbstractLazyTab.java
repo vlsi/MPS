@@ -91,6 +91,11 @@ public abstract class AbstractLazyTab implements ILazyTab {
     return getTabbedEditor().getOperationContext();
   }
 
+  protected void onCreate(SNode created) {
+    String mainPack = getBaseNode().getProperty(SNode.PACK);
+    created.setProperty(SNode.PACK, mainPack);
+  }
+
   protected abstract NodeFileStatusListener createFileStatusListener();
 
   protected abstract void onImportantRootRemoved(SNodePointer node);
