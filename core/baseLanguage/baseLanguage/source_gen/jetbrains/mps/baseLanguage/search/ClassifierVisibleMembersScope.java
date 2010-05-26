@@ -30,7 +30,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
 
   @Deprecated
   public ClassifierVisibleMembersScope(@Nullable ClassifierType classifierType, @Nullable SNode contextNode, int constraint) {
-    this(SNodeOperations.cast(check_3573019447813743493(classifierType), "jetbrains.mps.baseLanguage.structure.ClassifierType"), contextNode, constraint);
+    this(SNodeOperations.cast(check_y8c6cm_a0a0a(classifierType), "jetbrains.mps.baseLanguage.structure.ClassifierType"), contextNode, constraint);
   }
 
   public ClassifierVisibleMembersScope(@Nullable SNode classifierType, @Nullable SNode contextNode, int constraint) {
@@ -90,7 +90,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     return this.myClassifierScope.getReferenceInfoResolver(referenceNode, targetConcept);
   }
 
-  private static SNode check_3573019447813743493(ClassifierType p) {
+  private static SNode check_y8c6cm_a0a0a(ClassifierType p) {
     if (null == p) {
       return null;
     }
