@@ -218,9 +218,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
       }
       ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(p);
       if (manager != null) {
-        for (VirtualFile f : manager.getAllVersionedRoots()) {
-          roots.add(f);
-        }
+        roots.addAll(Arrays.asList(manager.getAllVersionedRoots()));
       }
     }
 
