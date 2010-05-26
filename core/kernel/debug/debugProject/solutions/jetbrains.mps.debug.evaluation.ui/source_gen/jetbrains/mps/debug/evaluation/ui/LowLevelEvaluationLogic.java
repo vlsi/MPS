@@ -221,7 +221,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
   }
 
   private void importStubForFqName(String fqName) {
-    SModelReference stubReference = StubHelper.uidForPackageInStubs(fqName);
+    SModelReference stubReference = StubHelper.uidForPackageInStubs(fqName, AllMembersJavaStubs.DEBUG_JAVA_ID);
     if (stubReference == null) {
       LOG.error("Stub for " + fqName + " was not found.");
       return;

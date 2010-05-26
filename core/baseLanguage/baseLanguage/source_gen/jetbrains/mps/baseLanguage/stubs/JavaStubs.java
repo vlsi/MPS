@@ -22,7 +22,6 @@ import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import java.util.ArrayList;
@@ -31,6 +30,7 @@ import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.baseLanguage.structure.Annotation;
 import jetbrains.mps.baseLanguage.structure.EnumClass;
+import jetbrains.mps.smodel.LanguageID;
 
 public class JavaStubs extends BaseStubModelRootManager {
   public JavaStubs() {
@@ -98,9 +98,9 @@ public class JavaStubs extends BaseStubModelRootManager {
 
     for (String subpackage : cpItem.getSubpackages(pack)) {
       if (!(cpItem.getAvailableClasses(subpackage).isEmpty())) {
-        SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage);
+        SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, JavaStubs.this.getLanguageId());
         if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
-          SModelReference ref = SModelReference.fromString(subpackage + "@" + SModelStereotype.getStubStereotypeForId(LanguageID.JAVA));
+          SModelReference ref = SModelReference.fromString(subpackage + "@" + SModelStereotype.getStubStereotypeForId(JavaStubs.this.getLanguageId()));
           SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(ref);
           assert descriptor instanceof BaseStubModelDescriptor;
           BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) descriptor;
@@ -148,5 +148,9 @@ public class JavaStubs extends BaseStubModelRootManager {
     for (String subpack : item.getSubpackages(pack)) {
       JavaStubs.this.iterateClasspath(item, result, subpack);
     }
+  }
+
+  protected String getLanguageId() {
+    return LanguageID.JAVA;
   }
 }

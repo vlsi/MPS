@@ -16,7 +16,13 @@ import jetbrains.mps.baseLanguage.structure.PublicVisibility;
 import jetbrains.mps.stubs.javastub.asm.ASMField;
 
 public class AllMembersJavaStubs extends JavaStubs {
+  public static final String DEBUG_JAVA_ID = "debugger_java";
+
   public AllMembersJavaStubs() {
+  }
+
+  protected String getLanguageId() {
+    return DEBUG_JAVA_ID;
   }
 
   @Override

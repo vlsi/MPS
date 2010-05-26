@@ -8485,10 +8485,14 @@
               <link role="classifier:3" targetNodeId="9.~SModelReference" resolveInfo="SModelReference" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4592086915999591141">
-              <link role="baseMethodDeclaration:3" targetNodeId="60.7241381882860002218" resolveInfo="uidForPackageInStubs" />
               <link role="classConcept:3" targetNodeId="60.7241381882860002213" resolveInfo="StubHelper" />
+              <link role="baseMethodDeclaration:3" targetNodeId="60.2470070441756628409" resolveInfo="uidForPackageInStubs" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4592086915999591142">
                 <link role="variableDeclaration:3" targetNodeId="4592086915999591133" resolveInfo="smodelFqName" />
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1652604548634767711">
+                <link role="classifier:3" targetNodeId="634073782578690327" resolveInfo="AllMembersJavaStubs" />
+                <link role="variableDeclaration:3" targetNodeId="1652604548634760201" resolveInfo="DEBUG_JAVA_ID" />
               </node>
             </node>
           </node>
@@ -9736,6 +9740,18 @@
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="634073782578691520">
       <link role="classifier:3" targetNodeId="65.~JavaStubs" resolveInfo="JavaStubs" />
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2470070441756629122">
+      <property name="name:3" value="getLanguageId" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2470070441756630386" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="2470070441756629126" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2470070441756629125">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2470070441756630387">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference:3" id="1652604548634760205">
+            <link role="variableDeclaration:3" targetNodeId="1652604548634760201" resolveInfo="DEBUG_JAVA_ID" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="634073782578701749">
       <property name="name:3" value="updateModel" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="634073782578701750" />
@@ -9980,6 +9996,15 @@
       </node>
       <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="634073782578701757">
         <link role="annotation:3" targetNodeId="46.~Override" />
+      </node>
+    </node>
+    <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="1652604548634760201">
+      <property name="isFinal:3" value="true" />
+      <property name="name:3" value="DEBUG_JAVA_ID" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1652604548634760202" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1652604548634760203" />
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1652604548634760204">
+        <property name="value:3" value="debugger_java" />
       </node>
     </node>
   </node>

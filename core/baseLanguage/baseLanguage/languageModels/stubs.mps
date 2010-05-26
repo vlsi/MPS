@@ -285,9 +285,15 @@
                     </node>
                     <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6209672816070764729">
                       <link role="classConcept:3" targetNodeId="2.7241381882860002213" resolveInfo="StubHelper" />
-                      <link role="baseMethodDeclaration:3" targetNodeId="2.7241381882860002218" resolveInfo="uidForPackageInStubs" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="2.2470070441756628409" resolveInfo="uidForPackageInStubs" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6209672816070764730">
                         <link role="variableDeclaration:3" targetNodeId="6209672816070764714" resolveInfo="subpackage" />
+                      </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2470070441756629113">
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="2470070441756629112" />
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation:0" id="2470070441756629117">
+                          <link role="member:0" targetNodeId="2470070441756629101" resolveInfo="getLanguageId" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -352,9 +358,11 @@
                               </node>
                             </node>
                             <node role="rightExpression:3" type="jetbrains.mps.lang.stubs.structure.Stereotype" id="6209672816070764795">
-                              <node role="langName" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="6209672816070764796">
-                                <link role="classifier:3" targetNodeId="5.~LanguageID" resolveInfo="LanguageID" />
-                                <link role="variableDeclaration:3" targetNodeId="5.~LanguageID.JAVA" resolveInfo="JAVA" />
+                              <node role="langName" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2470070441756629107">
+                                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="2470070441756629108" />
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation:0" id="2470070441756629109">
+                                  <link role="member:0" targetNodeId="2470070441756629101" resolveInfo="getLanguageId" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -955,6 +963,19 @@
     <node role="settings" type="jetbrains.mps.lang.stubs.structure.ModelCreationSettings" id="562112407432412193">
       <node role="importedLanguage" type="jetbrains.mps.lang.stubs.structure.LanguageRef" id="562112407432412197">
         <property name="languageId" value="f3061a53-9226-4cc5-a443-f952ceaf5816" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="2470070441756629101">
+      <property name="name:0" value="getLanguageId" />
+      <node role="visibility:0" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="2470070441756629102" />
+      <node role="returnType:0" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2470070441756629110" />
+      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2470070441756629104">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2470070441756629105">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2470070441756629106">
+            <link role="classifier:3" targetNodeId="5.~LanguageID" resolveInfo="LanguageID" />
+            <link role="variableDeclaration:3" targetNodeId="5.~LanguageID.JAVA" resolveInfo="JAVA" />
+          </node>
+        </node>
       </node>
     </node>
   </node>
