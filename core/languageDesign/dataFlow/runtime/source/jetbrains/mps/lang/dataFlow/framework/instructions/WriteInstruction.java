@@ -43,7 +43,7 @@ public class WriteInstruction extends Instruction {
     myIndex = getProgram().getVariableIndex(myVar);
   }
 
-  String commandPresentation() {
+  public String commandPresentation() {
     if (myValue == null) {
       return "write " + myVar;
     } else {

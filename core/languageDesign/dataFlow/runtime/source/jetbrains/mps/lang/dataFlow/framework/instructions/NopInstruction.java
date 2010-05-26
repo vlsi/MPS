@@ -19,7 +19,7 @@ public class NopInstruction extends Instruction {
   public NopInstruction() {
   }
 
-  String commandPresentation() {
+  public String commandPresentation() {
     return "nop";
   }
 }

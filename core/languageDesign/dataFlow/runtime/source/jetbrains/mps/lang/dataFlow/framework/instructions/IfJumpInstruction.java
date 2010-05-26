@@ -50,7 +50,7 @@ public class IfJumpInstruction extends Instruction {
     return result;    
   }
 
-  String commandPresentation() {
+  public String commandPresentation() {
     return "ifjump " + myJumpTo;
   }
 }

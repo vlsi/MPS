@@ -206,7 +206,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3133930811460119173">
     <property name="name:0" value="PatternVariableReference" />
-    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <link role="extends:0" targetNodeId="5.1068431790191:3" resolveInfo="Expression" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3133930811460119174">
       <property name="metaClass:0" value="reference" />
       <property name="role:0" value="variable" />

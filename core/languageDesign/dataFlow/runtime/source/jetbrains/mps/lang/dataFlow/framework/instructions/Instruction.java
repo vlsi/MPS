@@ -31,7 +31,7 @@ public abstract class Instruction {
   private TryFinallyInfo myBlockInfo;
   private int myIndex;
 
-  Instruction() {
+  public Instruction() {
   }
 
   public Program getProgram() {
@@ -133,7 +133,7 @@ public abstract class Instruction {
     return getIndex() > i.getIndex();
   }
 
-  abstract String commandPresentation();
+  public abstract String commandPresentation();
 
   public void putUserObject(Object key, Object value) {
     myUserObjects.put(key, value);

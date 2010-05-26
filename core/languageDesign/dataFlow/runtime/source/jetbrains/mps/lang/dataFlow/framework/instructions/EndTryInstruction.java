@@ -28,7 +28,7 @@ public class EndTryInstruction extends Instruction {
   private TryFinallyInfo myInfo;
   private List<RetInstruction> myReturns = new ArrayList<RetInstruction>();
 
-  String commandPresentation() {
+  public String commandPresentation() {
     return "endTry";
   }
 

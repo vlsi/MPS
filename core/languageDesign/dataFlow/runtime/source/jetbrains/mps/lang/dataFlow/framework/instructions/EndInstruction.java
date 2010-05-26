@@ -24,7 +24,7 @@ public class EndInstruction extends Instruction {
   private Set<RetInstruction> myReturns = new HashSet<RetInstruction>();
   private Set<TryFinallyInfo> myRootTryFinallies = new HashSet<TryFinallyInfo>();
 
-  String commandPresentation() {
+  public String commandPresentation() {
     return "end";
   }
 

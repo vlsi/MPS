@@ -8,14 +8,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
-import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -139,6 +140,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_412500033819201168(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return PatternVarsUtil.getFieldName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7236394192440107544(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", false), "varName");
   }
 
   public static Object referenceMacro_GetReferent_3527005385733066962(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -440,6 +445,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1767704432736121442(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "action", true);
+  }
+
+  public static SNode sourceNodeQuery_7236394192440107561(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "variable", false));
   }
 
   public static Iterable sourceNodesQuery_1190931377097(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

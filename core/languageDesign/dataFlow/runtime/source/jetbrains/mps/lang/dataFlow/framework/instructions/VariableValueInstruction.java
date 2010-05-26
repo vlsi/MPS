@@ -38,7 +38,7 @@ public class VariableValueInstruction extends Instruction{
     myVar = var;
   }
 
-  String commandPresentation() {
+  public String commandPresentation() {
     return myVar + " is " + myValue;  
   }
 }

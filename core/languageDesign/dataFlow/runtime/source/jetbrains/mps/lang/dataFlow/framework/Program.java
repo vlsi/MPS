@@ -95,7 +95,7 @@ public class Program {
     myInstructions.add(instruction);
   }
 
-  void insert(Instruction instruction, int position) {
+  public void insert(Instruction instruction, int position) {
     instruction.setProgram(this);
     instruction.setSource(myInstructions.get(position-1).getSource());
     instruction.setIndex(position);

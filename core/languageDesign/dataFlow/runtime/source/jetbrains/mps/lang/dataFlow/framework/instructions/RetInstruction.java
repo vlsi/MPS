@@ -42,7 +42,7 @@ public class RetInstruction extends Instruction {
     return result;
   }
 
-  String commandPresentation() {
+  public String commandPresentation() {
     return "ret";
   }
 }

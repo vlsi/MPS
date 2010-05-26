@@ -48,7 +48,7 @@ public class JumpInstruction extends Instruction {
     return result;
   }
 
-  String commandPresentation() {
+  public String commandPresentation() {
     return "jump " + myJumpTo;
   }
 }

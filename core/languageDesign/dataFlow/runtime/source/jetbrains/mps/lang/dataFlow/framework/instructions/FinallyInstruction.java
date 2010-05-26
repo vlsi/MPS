@@ -28,7 +28,7 @@ public class FinallyInstruction extends Instruction {
   private List<RetInstruction> myReturns = new ArrayList<RetInstruction>();
   private List<TryFinallyInfo> myChildTryFinallies = new ArrayList<TryFinallyInfo>();
 
-  String commandPresentation() {
+  public String commandPresentation() {
     return "finally";
   }
 
