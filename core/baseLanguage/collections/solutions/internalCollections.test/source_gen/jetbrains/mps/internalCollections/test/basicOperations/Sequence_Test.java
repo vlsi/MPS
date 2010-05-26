@@ -289,15 +289,15 @@ __switch__:
 
   public void test_toOperations() throws Exception {
     Iterable<Integer> input = this.input5();
-    Assert.assertTrue(Arrays.equals(new int[]{1,2,3,4,5}, ArrayUtils.toIntArray(Sequence.fromIterable(input).toListSequence())));
+    Assert.assertTrue(Arrays.equals(new int[]{1, 2, 3, 4, 5}, ArrayUtils.toIntArray(Sequence.fromIterable(input).toListSequence())));
     this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).toListSequence());
     Integer i = 1;
     for (Iterator<Integer> it = input.iterator(); it.hasNext(); i++) {
       Assert.assertEquals(i, it.next());
     }
     Assert.assertSame(6, i);
-    String[] sarr = new String[]{"A","B","C"};
-    Object[] oarr = new Object[]{"A","B","C"};
+    String[] sarr = new String[]{"A", "B", "C"};
+    Object[] oarr = new Object[]{"A", "B", "C"};
     List list = Arrays.asList(oarr);
     List<String> slist = ((List<String>) list);
     String[] toarray = ListSequence.fromList(slist).toGenericArray(String.class);
@@ -441,20 +441,20 @@ __switch__:
   }
 
   public void test_asSequence() throws Exception {
-    String[] arr = new String[]{"A","B","C"};
+    String[] arr = new String[]{"A", "B", "C"};
     this.assertIterableEquals(this.inputABC(), Sequence.fromArray(arr));
   }
 
   public void test_asSequencePrim() throws Exception {
-    int[] iarr = new int[]{1,2,3,4,5};
+    int[] iarr = new int[]{1, 2, 3, 4, 5};
     this.assertIterableEquals(this.input5(), ArrayUtils.fromIntegerArray(iarr));
   }
 
   public void test_containsAll() throws Exception {
-    Iterable<Integer> seq = ArrayUtils.fromIntegerArray(new int[]{2,4,3,1,5});
+    Iterable<Integer> seq = ArrayUtils.fromIntegerArray(new int[]{2, 4, 3, 1, 5});
     Assert.assertFalse(Sequence.fromIterable(seq).containsSequence(Sequence.fromIterable(this.input10())));
     Assert.assertTrue(Sequence.fromIterable(seq).containsSequence(Sequence.fromIterable(this.input5())));
-    Iterable<Integer> seq2 = ArrayUtils.fromIntegerArray(new int[]{5,3,5,1,1,4,2,1});
+    Iterable<Integer> seq2 = ArrayUtils.fromIntegerArray(new int[]{5, 3, 5, 1, 1, 4, 2, 1});
     Assert.assertTrue(Sequence.fromIterable(seq2).containsSequence(Sequence.fromIterable(seq)));
     Assert.assertFalse(Sequence.fromIterable(seq).containsSequence(Sequence.fromIterable(seq2)));
   }

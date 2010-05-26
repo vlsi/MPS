@@ -13,7 +13,7 @@ import java.util.PriorityQueue;
 
 public class RemoveWhereTest_Test extends Util_Test {
   public void test_listRemoveWhere() throws Exception {
-    List<String> l1 = Sequence.fromIterable(Sequence.fromArray(new String[]{"a","bb","ccc","dddd"})).toListSequence();
+    List<String> l1 = Sequence.fromIterable(Sequence.fromArray(new String[]{"a", "bb", "ccc", "dddd"})).toListSequence();
     ListSequence.fromList(l1).removeWhere(new IWhereFilter<String>() {
       public boolean accept(String it) {
         return it.length() > 2;

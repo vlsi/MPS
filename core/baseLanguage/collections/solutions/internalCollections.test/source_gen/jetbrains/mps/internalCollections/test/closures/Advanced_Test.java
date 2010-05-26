@@ -86,7 +86,7 @@ __switch__:
                       this.yield(_4_s);
                       return true;
                     case 0:
-                      this._3_array = new String[]{"A","B","C"};
+                      this._3_array = new String[]{"A", "B", "C"};
                       this.__CP__ = 4;
                       break;
                     case 6:
@@ -103,6 +103,6 @@ __switch__:
         };
       }
     });
-    this.assertIterableEquals(Sequence.fromArray(new String[]{"C","B","A"}), test);
+    this.assertIterableEquals(Sequence.fromArray(new String[]{"C", "B", "A"}), test);
   }
 }

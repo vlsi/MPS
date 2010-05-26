@@ -126,7 +126,7 @@ public class ControlsDemo_Swing {
     for (int i = 0; i < 128; i++) {
       final Vector<Object> widget_e1wtj0_a0a0b0a0a0a1a1a2 = new Vector();
       widget_e1wtj0_a0a0b0a0a0a1a1a2.clear();
-      widget_e1wtj0_a0a0b0a0a0a1a1a2.addAll(Arrays.asList(new String[]{"" + (i + 32),"" + Character.valueOf((char) (' ' + i))}));
+      widget_e1wtj0_a0a0b0a0a0a1a1a2.addAll(Arrays.asList(new String[]{"" + (i + 32), "" + Character.valueOf((char) (' ' + i))}));
       ((DefaultTableModel) ((JTable) widget_e1wtj0_a0a0a0b0b0c.getViewport().getView()).getModel()).addRow(widget_e1wtj0_a0a0b0a0a0a1a1a2);
     }
     widget_e1wtj0_a0a1a1a2.add(widget_e1wtj0_a0a0a0b0b0c);

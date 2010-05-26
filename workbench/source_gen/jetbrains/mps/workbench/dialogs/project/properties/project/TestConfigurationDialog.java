@@ -332,7 +332,7 @@ public class TestConfigurationDialog extends BaseDialog {
           }
         }
       };
-      this.add(this.createToolbar(new AnAction[]{addAction,removeAction}), BorderLayout.EAST);
+      this.add(this.createToolbar(new AnAction[]{addAction, removeAction}), BorderLayout.EAST);
       this.bind();
     }
 

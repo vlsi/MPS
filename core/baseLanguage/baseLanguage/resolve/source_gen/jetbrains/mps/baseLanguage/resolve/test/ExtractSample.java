@@ -8,36 +8,36 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class ExtractSample {
+  private static Pattern PATTERN_1g2q45_a0a0a1 = Pattern.compile("\\w+");
+  private static Pattern PATTERN_1g2q45_a0a0a0a0c = Pattern.compile("\\w+");
   private static double PI = 3.1415926;
-  private static Pattern PATTERN4379_0 = Pattern.compile("\\w+");
-  private static Pattern PATTERN4379_1 = Pattern.compile("\\w+");
 
   public ExtractSample() {
   }
 
   public static int fromA() {
-    int i = fromA4379_0(90);
+    int i = fromA_1g2q45_a0a0a0(90);
     return i;
   }
 
   public static void usePattern() {
-    Matcher m = PATTERN4379_0.matcher("   aaaa ");
+    Matcher m = PATTERN_1g2q45_a0a0a1.matcher("   aaaa ");
     while (m.find()) {
     }
   }
 
   public static void usePattern2() {
-    Matcher m = PATTERN4379_1.matcher("   aaaa ");
+    Matcher m = PATTERN_1g2q45_a0a0a0a0c.matcher("   aaaa ");
     while ((m.find())) {
     }
   }
 
   public static void extrClass() {
-    int[] i = new int[]{1,7,4,8};
-    Arrays.sort(i, new ExtractSample.MyComparator4379_0(1, 'c'));
+    int[] i = new int[]{1, 7, 4, 8};
+    Arrays.sort(i, new ExtractSample.MyComparator_1g2q45_a1a1a3(1, 'c'));
   }
 
-  public static int fromA4379_0(int i) {
+  public static int fromA_1g2q45_a0a0a0(int i) {
     return 1 * 2 * 3 * 4 * 5 * 6 * i;
   }
 
@@ -46,8 +46,8 @@ public class ExtractSample {
     }
   }
 
-  public static class MyComparator4379_0 implements Comparator {
-    public MyComparator4379_0(int i, char c) {
+  public static class MyComparator_1g2q45_a1a1a3 implements Comparator {
+    public MyComparator_1g2q45_a1a1a3(int i, char c) {
       double d;
       d = PI;
     }

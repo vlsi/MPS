@@ -110,7 +110,7 @@ __switch__:
 
   public void test_longSet() throws Exception {
     final Set<Long> ls = SetSequence.fromSet(new TLongHashSetDecorator(new TLongHashSet()));
-    Sequence.fromIterable(ArrayUtils.fromLongArray(new long[]{5,4,3,2,1,2,3,4,5})).visitAll(new IVisitor<Long>() {
+    Sequence.fromIterable(ArrayUtils.fromLongArray(new long[]{5, 4, 3, 2, 1, 2, 3, 4, 5})).visitAll(new IVisitor<Long>() {
       public void visit(Long i) {
         SetSequence.fromSet(ls).addElement(i);
       }

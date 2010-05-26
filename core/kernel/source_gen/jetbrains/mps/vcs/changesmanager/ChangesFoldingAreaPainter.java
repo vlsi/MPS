@@ -79,8 +79,8 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
         Graphics2D g2d = ((Graphics2D) g);
         Object oldAntialiasing = g2d.getRenderingHint(RenderingHints.KEY_ANTIALIASING);
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        int[] xPoints = new int[]{-AREA_WIDTH,-AREA_WIDTH,-1};
-        int[] yPoints = new int[]{y,y + ChangesFoldingAreaPainter.ARROW_HEIGHT,y + ChangesFoldingAreaPainter.ARROW_HEIGHT / 2};
+        int[] xPoints = new int[]{-AREA_WIDTH, -AREA_WIDTH, -1};
+        int[] yPoints = new int[]{y, y + ChangesFoldingAreaPainter.ARROW_HEIGHT, y + ChangesFoldingAreaPainter.ARROW_HEIGHT / 2};
         g.fillPolygon(xPoints, yPoints, 3);
 
         g.setColor(AREA_FRAME_COLOR);

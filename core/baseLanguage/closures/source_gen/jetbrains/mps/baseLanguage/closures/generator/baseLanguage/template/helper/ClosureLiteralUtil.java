@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.SNodeId;
 public class ClosureLiteralUtil {
   public static boolean hasYieldStatement(SNode cl) {
     for (SNode desc : SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false, new String[]{})) {
-      if (cl == SNodeOperations.getAncestorWhereConceptInList(desc, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"}, false, false)) {
+      if (cl == SNodeOperations.getAncestorWhereConceptInList(desc, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"}, false, false)) {
         return true;
       }
     }

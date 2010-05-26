@@ -146,7 +146,7 @@ public class SLinkImplicitSelect_Test extends BaseTransformationTest {
           return SLinkOperations.getTargets(it, "grandChild_0_n", true);
         }
       }).isEmpty());
-      this.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("7551657168186489236"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"),SNodeOperations.cast(this.getNodeById("7551657168186489238"), "jetbrains.mps.lang.smodelTests.structure.GrandChild")}), ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("7551657168186489229"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).translate(new ITranslator2<SNode, SNode>() {
+      this.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("7551657168186489236"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"), SNodeOperations.cast(this.getNodeById("7551657168186489238"), "jetbrains.mps.lang.smodelTests.structure.GrandChild")}), ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("7551657168186489229"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "grandChild_1_n", true);
         }
@@ -165,7 +165,7 @@ public class SLinkImplicitSelect_Test extends BaseTransformationTest {
           return SLinkOperations.getTarget(it, "grandChild_0_1", true);
         }
       }).isEmpty());
-      this.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("7551657168186489231"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"),SNodeOperations.cast(this.getNodeById("7551657168186611648"), "jetbrains.mps.lang.smodelTests.structure.GrandChild")}), ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("7551657168186489229"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).where(new IWhereFilter<SNode>() {
+      this.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("7551657168186489231"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"), SNodeOperations.cast(this.getNodeById("7551657168186611648"), "jetbrains.mps.lang.smodelTests.structure.GrandChild")}), ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("7551657168186489229"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (SLinkOperations.getTarget(it, "grandChild_1", true) != null);
         }
@@ -179,7 +179,7 @@ public class SLinkImplicitSelect_Test extends BaseTransformationTest {
           return SLinkOperations.getTargets(it, "grandChild_0_n", true);
         }
       }));
-      this.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("7551657168186489232"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"),SNodeOperations.cast(this.getNodeById("7551657168186611655"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"),SNodeOperations.cast(this.getNodeById("7551657168186611649"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"),SNodeOperations.cast(this.getNodeById("7551657168186611661"), "jetbrains.mps.lang.smodelTests.structure.GrandChild")}), ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("7551657168186489229"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).translate(new ITranslator2<SNode, SNode>() {
+      this.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("7551657168186489232"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"), SNodeOperations.cast(this.getNodeById("7551657168186611655"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"), SNodeOperations.cast(this.getNodeById("7551657168186611649"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"), SNodeOperations.cast(this.getNodeById("7551657168186611661"), "jetbrains.mps.lang.smodelTests.structure.GrandChild")}), ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("7551657168186489229"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "grandChild_1_n", true);
         }
@@ -191,7 +191,7 @@ public class SLinkImplicitSelect_Test extends BaseTransformationTest {
       this.addNodeById("7551657168186489228");
       List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
       ListSequence.fromList(list).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("7551657168186489229"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)));
-      this.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("7551657168186489231"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"),SNodeOperations.cast(this.getNodeById("7551657168186611648"), "jetbrains.mps.lang.smodelTests.structure.GrandChild")}), ListSequence.fromList(list).where(new IWhereFilter<SNode>() {
+      this.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("7551657168186489231"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"), SNodeOperations.cast(this.getNodeById("7551657168186611648"), "jetbrains.mps.lang.smodelTests.structure.GrandChild")}), ListSequence.fromList(list).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (SLinkOperations.getTarget(it, "grandChild_1", true) != null);
         }
@@ -205,7 +205,7 @@ public class SLinkImplicitSelect_Test extends BaseTransformationTest {
     public void test_specializedLinks() throws Exception {
       this.addNodeById("278471160714368807");
       this.addNodeById("7551657168186489228");
-      this.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("34342663958911397"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"),SNodeOperations.cast(this.getNodeById("34342663958911401"), "jetbrains.mps.lang.smodelTests.structure.GrandChild")}), ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("7551657168186489229"), "jetbrains.mps.lang.smodelTests.structure.Root"), "childSubConcept_0_n", true)).where(new IWhereFilter<SNode>() {
+      this.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("34342663958911397"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"), SNodeOperations.cast(this.getNodeById("34342663958911401"), "jetbrains.mps.lang.smodelTests.structure.GrandChild")}), ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("7551657168186489229"), "jetbrains.mps.lang.smodelTests.structure.Root"), "childSubConcept_0_n", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (SLinkOperations.getTarget(it, "grandChild_0_1", true) != null);
         }
@@ -219,7 +219,7 @@ public class SLinkImplicitSelect_Test extends BaseTransformationTest {
     public void test_inheritedLinks() throws Exception {
       this.addNodeById("278471160714368807");
       this.addNodeById("7551657168186489228");
-      this.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("34342663959152983"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"),SNodeOperations.cast(this.getNodeById("34342663959152984"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"),SNodeOperations.cast(this.getNodeById("34342663959152985"), "jetbrains.mps.lang.smodelTests.structure.GrandChild")}), ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("7551657168186489229"), "jetbrains.mps.lang.smodelTests.structure.Root"), "childSubConcept_0_n", true)).translate(new ITranslator2<SNode, SNode>() {
+      this.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("34342663959152983"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"), SNodeOperations.cast(this.getNodeById("34342663959152984"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"), SNodeOperations.cast(this.getNodeById("34342663959152985"), "jetbrains.mps.lang.smodelTests.structure.GrandChild")}), ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("7551657168186489229"), "jetbrains.mps.lang.smodelTests.structure.Root"), "childSubConcept_0_n", true)).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "grandChild_0_n", true);
         }

@@ -97,7 +97,7 @@ public class Map_Test extends Util_Test {
   }
 
   public void test_array() throws Exception {
-    Map<String, String[]> test = MapSequence.<String, String[]>fromMapAndKeysArray(new HashMap<String, String[]>(), "foo").withValues(new String[]{"bar","baz"});
+    Map<String, String[]> test = MapSequence.<String, String[]>fromMapAndKeysArray(new HashMap<String, String[]>(), "foo").withValues(new String[]{"bar", "baz"});
     Iterable<String> seq = MapSequence.fromMap(test).keySet();
     Assert.assertTrue(Sequence.fromIterable(seq).contains("foo"));
     String[] array = MapSequence.fromMap(test).get("foo");
@@ -105,7 +105,7 @@ public class Map_Test extends Util_Test {
   }
 
   public void test_arrayOfString() throws Exception {
-    Map<String, String[]> test = MapSequence.<String, String[]>fromMapAndKeysArray(new HashMap<String, String[]>(), "foo").withValues(new String[]{"bar","baz"});
+    Map<String, String[]> test = MapSequence.<String, String[]>fromMapAndKeysArray(new HashMap<String, String[]>(), "foo").withValues(new String[]{"bar", "baz"});
     Iterable<String> seq = MapSequence.fromMap(test).keySet();
     Assert.assertTrue(Sequence.fromIterable(seq).contains("foo"));
     String[] array = MapSequence.fromMap(test).get("foo");

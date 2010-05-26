@@ -2426,7 +2426,7 @@
             <property name="value:11" value="[]{" />
           </node>
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.CollectionAppendPart:11" id="1237463992582">
-            <property name="separator:11" value="," />
+            <property name="separator:11" value=", " />
             <property name="withSeparator:11" value="true" />
             <node role="list:11" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1236252990853">
               <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="1236252990508" />

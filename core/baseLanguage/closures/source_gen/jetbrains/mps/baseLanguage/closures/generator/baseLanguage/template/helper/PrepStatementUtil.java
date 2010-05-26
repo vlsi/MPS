@@ -23,7 +23,7 @@ public class PrepStatementUtil {
   private void prepTopStatementList(TemplateQueryContext genContext, SNode slist) {
     int beginLabel = this.ctx.label;
     int endLabel = this.ctx.incrementLabel();
-    Object data = new Integer[]{beginLabel,endLabel};
+    Object data = new Integer[]{beginLabel, endLabel};
     Values.CLOSURE_DATA.set(genContext, slist, data);
     this.prepStatementList(genContext, slist);
   }
@@ -82,10 +82,10 @@ public class PrepStatementUtil {
     int beginLabel = label;
     int blockLabel = this.ctx.incrementLabel();
     SNode sn = SLinkOperations.getTarget(wstmt, "body", true);
-    Object data1 = new Integer[]{blockLabel,beginLabel};
+    Object data1 = new Integer[]{blockLabel, beginLabel};
     Values.CLOSURE_DATA.set(genContext, sn, data1);
     int nextLabel = this.calcNextLabel(genContext, wstmt);
-    Object data = new Integer[]{beginLabel,beginLabel,blockLabel,nextLabel};
+    Object data = new Integer[]{beginLabel, beginLabel, blockLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, wstmt, data);
     this.prepStatementList(genContext, SLinkOperations.getTarget(wstmt, "body", true));
     return nextLabel;
@@ -95,10 +95,10 @@ public class PrepStatementUtil {
     int beginLabel = label;
     int condLabel = this.ctx.incrementLabel();
     SNode sn = SLinkOperations.getTarget(dwstmt, "body", true);
-    Object data = new Integer[]{beginLabel,condLabel};
+    Object data = new Integer[]{beginLabel, condLabel};
     Values.CLOSURE_DATA.set(genContext, sn, data);
     int nextLabel = this.calcNextLabel(genContext, dwstmt);
-    Object data1 = new Integer[]{beginLabel,condLabel,nextLabel};
+    Object data1 = new Integer[]{beginLabel, condLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, dwstmt, data1);
     this.prepStatementList(genContext, SLinkOperations.getTarget(dwstmt, "body", true));
     return nextLabel;
@@ -111,10 +111,10 @@ public class PrepStatementUtil {
     int blockLabel = this.ctx.incrementLabel();
     int postLabel = this.ctx.incrementLabel();
     SNode sn = SLinkOperations.getTarget(fstmt, "body", true);
-    Object data = new Integer[]{blockLabel,postLabel};
+    Object data = new Integer[]{blockLabel, postLabel};
     Values.CLOSURE_DATA.set(genContext, sn, data);
     int nextLabel = this.calcNextLabel(genContext, fstmt);
-    Object data1 = new Integer[]{beginLabel,postLabel,blockLabel,condLabel,nextLabel};
+    Object data1 = new Integer[]{beginLabel, postLabel, blockLabel, condLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, fstmt, data1);
     this.prepStatementList(genContext, SLinkOperations.getTarget(fstmt, "body", true));
     return nextLabel;
@@ -126,10 +126,10 @@ public class PrepStatementUtil {
     int condLabel = this.ctx.incrementLabel();
     int blockLabel = this.ctx.incrementLabel();
     SNode sn = SLinkOperations.getTarget(fstmt, "body", true);
-    Object data1 = new Integer[]{blockLabel,condLabel};
+    Object data1 = new Integer[]{blockLabel, condLabel};
     Values.CLOSURE_DATA.set(genContext, sn, data1);
     int nextLabel = this.calcNextLabel(genContext, fstmt);
-    Object data = new Integer[]{beginLabel,condLabel,blockLabel,nextLabel};
+    Object data = new Integer[]{beginLabel, condLabel, blockLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, fstmt, data);
     this.prepStatementList(genContext, SLinkOperations.getTarget(fstmt, "body", true));
     return nextLabel;
@@ -141,14 +141,14 @@ public class PrepStatementUtil {
     int ifFalseLabel = -1;
     int nextLabel = this.calcNextLabel(genContext, ifstmt);
     SNode sn = SLinkOperations.getTarget(ifstmt, "ifTrue", true);
-    Object data = new Integer[]{ifTrueLabel,nextLabel};
+    Object data = new Integer[]{ifTrueLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, sn, data);
     this.prepStatementList(genContext, SLinkOperations.getTarget(ifstmt, "ifTrue", true));
     if (ListSequence.fromList(SLinkOperations.getTargets(ifstmt, "elsifClauses", true)).count() > 0) {
       for (SNode eicls : SLinkOperations.getTargets(ifstmt, "elsifClauses", true)) {
         int tmp = this.ctx.incrementLabel();
         SNode sn1 = SLinkOperations.getTarget(eicls, "statementList", true);
-        Object data1 = new Integer[]{tmp,nextLabel};
+        Object data1 = new Integer[]{tmp, nextLabel};
         Values.CLOSURE_DATA.set(genContext, sn1, data1);
         this.prepStatementList(genContext, SLinkOperations.getTarget(eicls, "statementList", true));
         Object data2 = new Integer[]{tmp};
@@ -160,11 +160,11 @@ public class PrepStatementUtil {
         ifFalseLabel = this.ctx.incrementLabel();
       }
     }
-    Object data2 = new Integer[]{beginLabel,ifTrueLabel,ifFalseLabel,nextLabel};
+    Object data2 = new Integer[]{beginLabel, ifTrueLabel, ifFalseLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, ifstmt, data2);
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
       SNode sn1 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true);
-      Object data1 = new Integer[]{ifFalseLabel,nextLabel};
+      Object data1 = new Integer[]{ifFalseLabel, nextLabel};
       Values.CLOSURE_DATA.set(genContext, sn1, data1);
       this.prepStatementList(genContext, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true));
     } else
@@ -177,7 +177,7 @@ public class PrepStatementUtil {
   private int prepSwitchStatement(TemplateQueryContext genContext, SNode sstmt, int label) {
     int beginLabel = label;
     int nextLabel = this.calcNextLabel(genContext, sstmt);
-    Object data1 = new Integer[]{beginLabel,nextLabel};
+    Object data1 = new Integer[]{beginLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, sstmt, data1);
     int nextCaseLabel = this.ctx.incrementLabel();
     for (SNode scase : SLinkOperations.getTargets(sstmt, "case", true)) {
@@ -190,7 +190,7 @@ public class PrepStatementUtil {
           endCaseLabel = nextLabel;
         }
         SNode sn = SLinkOperations.getTarget(scase, "body", true);
-        Object data = new Integer[]{caseLabel,endCaseLabel};
+        Object data = new Integer[]{caseLabel, endCaseLabel};
         Values.CLOSURE_DATA.set(genContext, sn, data);
         this.prepStatementList(genContext, SLinkOperations.getTarget(scase, "body", true));
       }
@@ -198,7 +198,7 @@ public class PrepStatementUtil {
     if ((SLinkOperations.getTarget(sstmt, "defaultBlock", true) != null)) {
       int defLabel = this.ctx.incrementLabel();
       SNode sn = SLinkOperations.getTarget(sstmt, "defaultBlock", true);
-      Object data = new Integer[]{defLabel,nextLabel};
+      Object data = new Integer[]{defLabel, nextLabel};
       Values.CLOSURE_DATA.set(genContext, sn, data);
       this.prepStatementList(genContext, SLinkOperations.getTarget(sstmt, "defaultBlock", true));
     }
@@ -208,7 +208,7 @@ public class PrepStatementUtil {
   private int prepYieldStatement(TemplateQueryContext genContext, SNode ystmt, int label) {
     int beginLabel = label;
     int nextLabel = this.calcNextLabel(genContext, ystmt);
-    Object data = new Integer[]{beginLabel,nextLabel};
+    Object data = new Integer[]{beginLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, ystmt, data);
     return nextLabel;
   }
@@ -216,7 +216,7 @@ public class PrepStatementUtil {
   private void prepBreakStatement(TemplateQueryContext genContext, SNode bstmt) {
     int brLabel = -1;
     SNode node = bstmt;
-    while (((node = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false, false)) != null)) {
+    while (((node = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false, false)) != null)) {
       SNode loopLabel = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") ?
         SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "loopLabel", true) :
         SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "switchLabel", true)
@@ -255,10 +255,10 @@ public class PrepStatementUtil {
     int beginLabel = label;
     int nextLabel = this.calcNextLabel(genContext, bs);
     SNode sn = SLinkOperations.getTarget(bs, "statements", true);
-    Object data1 = new Integer[]{beginLabel,nextLabel};
+    Object data1 = new Integer[]{beginLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, sn, data1);
     int tmp = this.prepStatementList(genContext, SLinkOperations.getTarget(bs, "statements", true));
-    Object data = new Integer[]{beginLabel,tmp};
+    Object data = new Integer[]{beginLabel, tmp};
     Values.CLOSURE_DATA.set(genContext, bs, data);
     return tmp;
   }

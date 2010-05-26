@@ -49,7 +49,7 @@ public class SortedSet_Test extends Util_Test {
         return -String.CASE_INSENSITIVE_ORDER.compare(a, b);
       }
     }));
-    SortedSetSequence.fromSet(sset).addSequence(Sequence.fromIterable(Sequence.fromArray(new String[]{"b","d","c","a"})));
-    this.assertIterableEquals(Sequence.fromArray(new String[]{"d","c","b","a"}), sset);
+    SortedSetSequence.fromSet(sset).addSequence(Sequence.fromIterable(Sequence.fromArray(new String[]{"b", "d", "c", "a"})));
+    this.assertIterableEquals(Sequence.fromArray(new String[]{"d", "c", "b", "a"}), sset);
   }
 }

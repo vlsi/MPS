@@ -108,7 +108,7 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
         return classifier;
       }
     }
-    SNode outerClass = SNodeOperations.cast(SNodeOperations.getAncestorWhereConceptInList(ShowClassInHierarchy_Action.this.node, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept","jetbrains.mps.baseLanguage.structure.Interface"}, true, false), "jetbrains.mps.baseLanguage.structure.Classifier");
+    SNode outerClass = SNodeOperations.cast(SNodeOperations.getAncestorWhereConceptInList(ShowClassInHierarchy_Action.this.node, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.Interface"}, true, false), "jetbrains.mps.baseLanguage.structure.Classifier");
     return outerClass;
   }
 }

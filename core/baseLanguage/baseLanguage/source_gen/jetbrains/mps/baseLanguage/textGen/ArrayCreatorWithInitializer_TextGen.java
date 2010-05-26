@@ -16,7 +16,7 @@ public class ArrayCreatorWithInitializer_TextGen extends SNodeTextGen {
       for (SNode item : SLinkOperations.getTargets(node, "initValue", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).last()) {
-          this.append(",");
+          this.append(", ");
         }
       }
     }

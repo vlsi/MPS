@@ -16,12 +16,12 @@ public class ForEach_Test extends Util_Test {
   }
 
   public void test_iterateArray() throws Exception {
-    int[] arr = new int[]{1,2,3,4,5};
+    int[] arr = new int[]{1, 2, 3, 4, 5};
     Iterable<Integer> exp = this.input5();
     for (int i : arr) {
       Assert.assertTrue(Sequence.fromIterable(exp).contains(i));
     }
-    String[] arr2 = new String[]{"A","B","C"};
+    String[] arr2 = new String[]{"A", "B", "C"};
     Iterable<String> exp2 = this.inputABC();
     for (String s : arr2) {
       Assert.assertTrue(Sequence.fromIterable(exp2).contains(s));
@@ -30,7 +30,7 @@ public class ForEach_Test extends Util_Test {
 
   public void test_noWrapperForGNE() throws Exception {
     Iterable<Integer> exp = this.input5();
-    for (int i : new int[]{1,2,3,4,5}) {
+    for (int i : new int[]{1, 2, 3, 4, 5}) {
       Assert.assertTrue(Sequence.fromIterable(exp).contains(i));
       this.accept(i);
     }
@@ -38,7 +38,7 @@ public class ForEach_Test extends Util_Test {
 
   public void test_noWrapperForArray() throws Exception {
     Iterable<Integer> exp = this.input5();
-    int[] arr = new int[]{1,2,3,4,5};
+    int[] arr = new int[]{1, 2, 3, 4, 5};
     for (int i : arr) {
       Assert.assertTrue(Sequence.fromIterable(exp).contains(i));
       this.accept(i);

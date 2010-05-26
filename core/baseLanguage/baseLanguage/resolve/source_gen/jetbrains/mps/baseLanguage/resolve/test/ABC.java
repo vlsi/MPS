@@ -5,20 +5,21 @@ package jetbrains.mps.baseLanguage.resolve.test;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class ABC {
-  private static int fact88 = fact4578_0(88);
-
-  private int abc;
+  private static int fact88 = fact_owx_a0a0o0a1(88);
 
   public void a() {
     ABC.B.C abc;
+    new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        try {
+        } catch (<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.Type'!> ) {
+        }
+      }
+    };
   }
 
-  public static int seleAA() {
-    return 1;
-  }
-
-  public static int fact4578_0(int i) throws IndexOutOfBoundsException {
-    return fact4578_0(i) + fact4578_0(i - 1);
+  public static int fact_owx_a0a0o0a1(int i) throws IndexOutOfBoundsException {
+    return fact_owx_a0a0o0a1(i) + fact_owx_a0a0o0a1(i - 1);
   }
 
   public class II {
@@ -51,20 +52,20 @@ public class ABC {
       }
 
       int qq = 5;
-      int[] a = new int[]{1,2,qq};
+      int[] a = new int[]{1, 2, qq};
       for (Object i : (a)) {
 
       }
       int i = seleI();
 
-      int e = seleAA();
+      int e = seleXI();
 
       int calc6 = calc(6);
       int e22 = (calc6 + 1);
 
       int ttt = fact88;
 
-      int qq1 = ttt + fact4578_1();
+      int qq1 = ttt + fact_owx_a0a0q0a1();
 
       int ee;
       int bbb = 3;
@@ -84,22 +85,22 @@ public class ABC {
     public static void q() {
     }
 
-    public static int calc(int i) {
-      return calc(i - 1) + calc(i - 2);
-    }
-
     public static int seleI() {
       q();
       return 42;
     }
 
-    public static int fact4578_1() {
-      return 123;
-    }
-
     private static int seleXI() {
       q();
       return 42;
+    }
+
+    public static int calc(int i) {
+      return calc(i - 1) + calc(i - 2);
+    }
+
+    public static int fact_owx_a0a0q0a1() {
+      return 123;
     }
   }
 

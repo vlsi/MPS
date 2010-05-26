@@ -23,7 +23,7 @@ import java.util.Iterator;
 public class WrappersUtils {
   public static List<SNode> collectVariableDeclarationsToWrap2(SNode closure) {
     List<SNode> resVdecls = ListSequence.fromList(new ArrayList<SNode>());
-    SNode wrpPrgNode = SNodeOperations.getAncestorWhereConceptInList(closure, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList","jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
+    SNode wrpPrgNode = SNodeOperations.getAncestorWhereConceptInList(closure, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
     if ((wrpPrgNode != null)) {
       Map<SNode, Integer> clsMap = collectVariableUsages(SLinkOperations.getTarget(closure, "body", true));
       for (IMapping<SNode, Integer> m : SetSequence.fromSet(MapSequence.fromMap(clsMap).mappingsSet())) {
@@ -82,7 +82,7 @@ public class WrappersUtils {
 with_decls:
     for (Iterator<SNode> it = ListSequence.fromList(vdecls).iterator(); it.hasNext();) {
       SNode vd = it.next();
-      SNode sl = SNodeOperations.getAncestorWhereConceptInList(vd, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList","jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
+      SNode sl = SNodeOperations.getAncestorWhereConceptInList(vd, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
       for (SNode desc : SNodeOperations.getDescendants(sl, null, false, new String[]{})) {
         if ((SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.ParameterReference")) && SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) == vd) {
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "lValue", true) == desc) {

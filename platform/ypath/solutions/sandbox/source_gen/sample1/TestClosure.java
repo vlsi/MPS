@@ -467,7 +467,7 @@ __switch__:
                       return true;
                     case 0:
                       this._3_i = 2;
-                      this._4_consts = new TestClosure.Enm[]{TestClosure.Enm.A,TestClosure.Enm.B,TestClosure.Enm.C};
+                      this._4_consts = new TestClosure.Enm[]{TestClosure.Enm.A, TestClosure.Enm.B, TestClosure.Enm.C};
                       this._5_e = null;
                       this.__CP__ = 6;
                       break;

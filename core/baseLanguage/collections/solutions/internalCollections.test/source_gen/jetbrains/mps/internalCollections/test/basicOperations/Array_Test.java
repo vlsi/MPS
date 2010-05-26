@@ -12,7 +12,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class Array_Test extends Util_Test {
   public void test_iterateArrayFor() throws Exception {
-    int[] arr = new int[]{1,2,3,4,5};
+    int[] arr = new int[]{1, 2, 3, 4, 5};
     List test = new ArrayList();
     for (int i : arr) {
       test.add(i);
@@ -21,7 +21,7 @@ public class Array_Test extends Util_Test {
   }
 
   public void test_iterateArrayYield() throws Exception {
-    final int[] arr = new int[]{1,2,3,4,5};
+    final int[] arr = new int[]{1, 2, 3, 4, 5};
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
@@ -120,7 +120,7 @@ __switch__:
       }
     });
     this.assertIterableEquals(this.expect5(), test2);
-    final String[] arr2 = new String[]{"A","B","C"};
+    final String[] arr2 = new String[]{"A", "B", "C"};
     Iterable<String> test3 = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
         return new Iterable<String>() {

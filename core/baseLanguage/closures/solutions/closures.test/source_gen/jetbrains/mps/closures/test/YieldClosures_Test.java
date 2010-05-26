@@ -631,7 +631,7 @@ __switch__:
   public void test_switchStatement() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
-        for (Fruits fr : Arrays.asList(new Fruits[]{Fruits.APPLES,Fruits.ORANGES,Fruits.CARS})) {
+        for (Fruits fr : Arrays.asList(new Fruits[]{Fruits.APPLES, Fruits.ORANGES, Fruits.CARS})) {
           switch (fr) {
             case APPLES:
               ListSequence.fromList(exp).addElement(1);
@@ -664,7 +664,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_fr_it = Arrays.asList(new Fruits[]{Fruits.APPLES,Fruits.ORANGES,Fruits.CARS}).iterator();
+                      this._2_fr_it = Arrays.asList(new Fruits[]{Fruits.APPLES, Fruits.ORANGES, Fruits.CARS}).iterator();
                     case 3:
                       if (!(this._2_fr_it.hasNext())) {
                         this.__CP__ = 1;

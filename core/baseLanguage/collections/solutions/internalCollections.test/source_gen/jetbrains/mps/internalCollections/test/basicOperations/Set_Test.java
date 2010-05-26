@@ -115,7 +115,7 @@ public class Set_Test extends Util_Test {
   }
 
   public void test_array() throws Exception {
-    String[] arr = new String[]{"A","B","C"};
+    String[] arr = new String[]{"A", "B", "C"};
     Set<String> test = SetSequence.fromSetAndArray(new LinkedHashSet<String>(), arr);
     this.assertIterableEquals(this.inputABC(), test);
   }

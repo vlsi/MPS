@@ -227,7 +227,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1231456828270(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode ucl = SNodeOperations.getAncestorWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral","jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
+    SNode ucl = SNodeOperations.getAncestorWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
     return SNodeOperations.isInstanceOf(ucl, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral");
   }
 
@@ -253,7 +253,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1231495827362(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode ucl = SNodeOperations.getAncestorWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral","jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"}, false, false);
+    SNode ucl = SNodeOperations.getAncestorWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"}, false, false);
     return SNodeOperations.isInstanceOf(ucl, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral");
   }
 
@@ -404,8 +404,8 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_608109309169759537(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode cl = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false);
-    List<SNode> allYAS = SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"});
-    List<SNode> allYS = SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"});
+    List<SNode> allYAS = SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"});
+    List<SNode> allYS = SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"});
     return (ListSequence.fromList(allYS).isEmpty() ?
       (ListSequence.fromList(allYAS).count() == 1 && ListSequence.fromList(allYAS).first() == ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(cl, "body", true), "statement", true)).last()) :
       false
@@ -1069,7 +1069,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_608109309169759696(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("_yield", SNodeOperations.getAncestorWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false, false));
+    return _context.createUniqueName("_yield", SNodeOperations.getAncestorWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false, false));
   }
 
   public static Object propertyMacro_GetPropertyValue_7001216437968768004(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1825,7 +1825,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8665905049777027947(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BreakStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock","jetbrains.mps.baseLanguage.structure.IStatementListContainer"})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BreakStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"})).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_8665905049776865340(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1872,7 +1872,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6995834834764138783(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BreakStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock","jetbrains.mps.baseLanguage.structure.IStatementListContainer"})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BreakStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"})).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_7246115176735005221(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2826,7 +2826,7 @@ public class QueriesGenerated {
         }
       }
       ListSequence.fromList(results).addElement(slist);
-      Object data = new Integer[]{beginLabel,endLabel};
+      Object data = new Integer[]{beginLabel, endLabel};
       Values.CLOSURE_DATA.set(_context, slist, data);
     } while (stmts != null && ListSequence.fromList(stmts).count() > 0);
     return results;
@@ -3695,7 +3695,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_6995834834764138064(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> res = new ArrayList<SNode>();
-    for (SNode cs : SNodeOperations.getAncestorsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false)) {
+    for (SNode cs : SNodeOperations.getAncestorsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false)) {
       if (SPropertyOperations.getString(SNodeOperations.as(cs, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") != null) {
         ListSequence.fromList(res).addElement(cs);
       }
@@ -3708,7 +3708,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_6995834834764138728(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> res = new ArrayList<SNode>();
-    for (SNode cs : SNodeOperations.getAncestorsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false)) {
+    for (SNode cs : SNodeOperations.getAncestorsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false)) {
       if (SPropertyOperations.getString(SNodeOperations.as(cs, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") != null) {
         ListSequence.fromList(res).addElement(cs);
       }
@@ -3725,7 +3725,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_7246115176735005629(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> res = new ArrayList<SNode>();
-    for (SNode cs : SNodeOperations.getAncestorsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false)) {
+    for (SNode cs : SNodeOperations.getAncestorsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false)) {
       if (SPropertyOperations.getString(SNodeOperations.as(cs, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") != null) {
         ListSequence.fromList(res).addElement(cs);
       }
@@ -3742,7 +3742,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_7246115176735007739(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> res = new ArrayList<SNode>();
-    for (SNode cs : SNodeOperations.getAncestorsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false)) {
+    for (SNode cs : SNodeOperations.getAncestorsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false)) {
       if (SPropertyOperations.getString(SNodeOperations.as(cs, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") != null) {
         ListSequence.fromList(res).addElement(cs);
       }
@@ -4014,7 +4014,7 @@ public class QueriesGenerated {
     List<SNode> rss = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ReturnStatement");
     for (SNode rs : rss) {
       if ((SLinkOperations.getTarget(rs, "expression", true) != null)) {
-        SNode anc = SNodeOperations.getAncestorWhereConceptInList(rs, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration","jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"}, false, false);
+        SNode anc = SNodeOperations.getAncestorWhereConceptInList(rs, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"}, false, false);
         if (SNodeOperations.isInstanceOf(anc, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
           SNode rt = SLinkOperations.getTarget(SNodeOperations.cast(anc, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true);
           if (!((rt != null) && SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
@@ -4077,8 +4077,8 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_8665905049777027950(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode ucl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral")) {
-      for (SNode bs : SNodeOperations.getDescendants(ucl, "jetbrains.mps.baseLanguage.structure.BreakStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock","jetbrains.mps.baseLanguage.structure.IStatementListContainer"})) {
-        SNode cs = SNodeOperations.getAncestorWhereConceptInList(bs, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false, false);
+      for (SNode bs : SNodeOperations.getDescendants(ucl, "jetbrains.mps.baseLanguage.structure.BreakStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"})) {
+        SNode cs = SNodeOperations.getAncestorWhereConceptInList(bs, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false, false);
         String label = SPropertyOperations.getString(SNodeOperations.as(cs, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label");
         if (label == null) {
           label = SPropertyOperations.getString(SNodeOperations.as(cs, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label");
@@ -4102,7 +4102,7 @@ public class QueriesGenerated {
     for (SNode sl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.StatementList")) {
       if (ExpressionStatement_Behavior.call_canServeAsReturn_1239355137616(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(sl, "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
         SNode es = SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(sl, "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
-        SNode anc = SNodeOperations.getAncestorWhereConceptInList(es, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration","jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"}, false, false);
+        SNode anc = SNodeOperations.getAncestorWhereConceptInList(es, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"}, false, false);
         if (SNodeOperations.isInstanceOf(anc, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
           SNode rt = SLinkOperations.getTarget(SNodeOperations.cast(anc, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true);
           if (!((rt != null) && SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.VoidType"))) {

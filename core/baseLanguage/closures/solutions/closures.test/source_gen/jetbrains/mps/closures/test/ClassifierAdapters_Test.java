@@ -101,7 +101,7 @@ __switch__:
         };
       }
     };
-    Integer[] exp = new Integer[]{1,2,3};
+    Integer[] exp = new Integer[]{1, 2, 3};
     int i = 0;
     for (Integer in : ng.generate()) {
       Assert.assertEquals(exp[i], in);
@@ -190,7 +190,7 @@ __switch__:
 
   public void test_closureLiteralAsComparator() throws Exception {
     List<Integer> list = ListSequence.fromList(new ArrayList<Integer>());
-    ListSequence.fromList(list).addSequence(ListSequence.fromList(Arrays.asList(new Integer[]{4,3,5,1,2})));
+    ListSequence.fromList(list).addSequence(ListSequence.fromList(Arrays.asList(new Integer[]{4, 3, 5, 1, 2})));
     // =================================================================== 
     // The following is a hack! 
     // In reality we could only substitute an interface that has a single method. 
@@ -203,7 +203,7 @@ __switch__:
         return a.hashCode() - b.hashCode();
       }
     });
-    Assert.assertEquals(Arrays.asList(new Integer[]{1,2,3,4,5}), list);
+    Assert.assertEquals(Arrays.asList(new Integer[]{1, 2, 3, 4, 5}), list);
   }
 
   public void test_closureLiteralAsParameterToConstructor() throws Exception {

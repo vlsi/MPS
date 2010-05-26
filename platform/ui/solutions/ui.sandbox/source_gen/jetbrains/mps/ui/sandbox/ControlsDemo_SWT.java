@@ -143,7 +143,7 @@ public class ControlsDemo_SWT {
     widget_z347t1_b0a0a0a0a1a1a2.pack();
     for (int i = 0; i < 128; i++) {
       final TableItem widget_z347t1_a0a0b0a0a0a1a1a2 = new TableItem(widget_z347t1_a0a0a0b0b0c, SWT.NONE);
-      widget_z347t1_a0a0b0a0a0a1a1a2.setText((String[]) new String[]{"" + (i + 32),"" + Character.valueOf((char) (' ' + i))});
+      widget_z347t1_a0a0b0a0a0a1a1a2.setText((String[]) new String[]{"" + (i + 32), "" + Character.valueOf((char) (' ' + i))});
       // nothing to do 
     }
     //  with SWT items are not added to container

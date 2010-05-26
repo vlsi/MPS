@@ -67,7 +67,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
 
     this.setLayout(new BorderLayout());
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
-    viewOptions.myCategories = new boolean[]{true,false};
+    viewOptions.myCategories = new boolean[]{true, false};
 
     this.myUsagesView = new UsagesView(project, viewOptions) {
       public void close() {

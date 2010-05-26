@@ -408,12 +408,12 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
 
               graphics.setColor(getColor());
               graphics.drawLine(x, y1, x, y2);
-              graphics.fillPolygon(new int[]{x,x - 3,x + 3}, new int[]{y1 - 2,y1 - 5,y1 - 5}, 3);
-              graphics.fillPolygon(new int[]{x,x - 3,x + 3}, new int[]{y2 + 2,y2 + 5,y2 + 5}, 3);
+              graphics.fillPolygon(new int[]{x, x - 3, x + 3}, new int[]{y1 - 2, y1 - 5, y1 - 5}, 3);
+              graphics.fillPolygon(new int[]{x, x - 3, x + 3}, new int[]{y2 + 2, y2 + 5, y2 + 5}, 3);
 
               graphics.setColor(ColorAndGraphicsUtil.brightenColor(getColor(), 0.8f));
-              graphics.drawPolygon(new int[]{x,x - 3,x + 3}, new int[]{y1 - 2,y1 - 5,y1 - 5}, 3);
-              graphics.drawPolygon(new int[]{x,x - 3,x + 3}, new int[]{y2 + 2,y2 + 5,y2 + 5}, 3);
+              graphics.drawPolygon(new int[]{x, x - 3, x + 3}, new int[]{y1 - 2, y1 - 5, y1 - 5}, 3);
+              graphics.drawPolygon(new int[]{x, x - 3, x + 3}, new int[]{y2 + 2, y2 + 5, y2 + 5}, 3);
             }
             return;
           }

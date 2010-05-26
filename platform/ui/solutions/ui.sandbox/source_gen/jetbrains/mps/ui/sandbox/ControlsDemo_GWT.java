@@ -109,7 +109,7 @@ public class ControlsDemo_GWT {
     widget_z343cv_a0a0a0b0b0c.resizeColumns(widget_z343cv_a0a0a0b0b0c.getColumnCount() + 1);
     for (int i = 0; i < 128; i++) {
       final Object[][] widget_z343cv_a0a0b0a0a0a1a1a2 = (Object[][]) new Object[1][];
-      ((Object[]) widget_z343cv_a0a0b0a0a0a1a1a2)[0] = new String[]{"" + (i + 32),"" + Character.valueOf((char) (' ' + i))};
+      ((Object[]) widget_z343cv_a0a0b0a0a0a1a1a2)[0] = new String[]{"" + (i + 32), "" + Character.valueOf((char) (' ' + i))};
       widget_z343cv_a0a0a0b0b0c.resizeRows(widget_z343cv_a0a0a0b0b0c.getRowCount() + 1);
       for (int c = 0; c < widget_z343cv_a0a0a0b0b0c.getColumnCount() && c < widget_z343cv_a0a0b0a0a0a1a1a2[0].length; c++) {
         widget_z343cv_a0a0a0b0b0c.setText(widget_z343cv_a0a0a0b0b0c.getRowCount() - 1, c, String.valueOf(widget_z343cv_a0a0b0a0a0a1a1a2[0][c]));
