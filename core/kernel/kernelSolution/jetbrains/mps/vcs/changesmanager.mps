@@ -15019,8 +15019,20 @@
                       </node>
                     </node>
                   </node>
-                  <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="1536420391249840118">
-                    <link role="baseMethodDeclaration:3" targetNodeId="6707717378011964265" resolveInfo="isDeletedChild" />
+                  <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="2262739892486055179">
+                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="2262739892486055182">
+                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2262739892486055185">
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2262739892486055184">
+                          <link role="variableDeclaration:3" targetNodeId="6149144798615862402" resolveInfo="cell" />
+                        </node>
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2262739892486055245">
+                          <link role="baseMethodDeclaration:3" targetNodeId="52.~EditorCell.isBigCell():boolean" resolveInfo="isBigCell" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="1536420391249840118">
+                      <link role="baseMethodDeclaration:3" targetNodeId="6707717378011964265" resolveInfo="isDeletedChild" />
+                    </node>
                   </node>
                 </node>
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3719874279484891809">
@@ -16294,6 +16306,7 @@
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="166132277801270136">
       <property name="name:3" value="myChangesMessages" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="166132277801270137" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.MapType:7" id="166132277801270138">
         <node role="keyType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="166132277801270139">
@@ -28637,6 +28650,9 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4056424511791981359" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="4056424511791981364">
       <property name="name:3" value="getNodeIds" />
+      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4056424511791981388">
+        <link role="annotation:3" targetNodeId="2.~NotNull" resolveInfo="NotNull" />
+      </node>
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="4056424511791981365">
         <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4056424511791981366">
           <link role="classifier:3" targetNodeId="7.~SNodeId" resolveInfo="SNodeId" />
@@ -28682,9 +28698,6 @@
         <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="4056424511791981385">
           <node role="elementType:7" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4056424511791981386" />
         </node>
-      </node>
-      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4056424511791981388">
-        <link role="annotation:3" targetNodeId="2.~NotNull" resolveInfo="NotNull" />
       </node>
     </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="4056424511791981395">

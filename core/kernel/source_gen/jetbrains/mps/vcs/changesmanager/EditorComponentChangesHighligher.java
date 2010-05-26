@@ -55,7 +55,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   private static final Color TRANSPARENT_COLOR = new Color(0, 0, 0, 0);
 
   private EditorComponent myEditorComponent;
-  private Map<Change, EditorComponentChangesHighligher.ChangeEditorMessage> myChangesMessages = MapSequence.fromMap(new HashMap<Change, EditorComponentChangesHighligher.ChangeEditorMessage>());
+  private final Map<Change, EditorComponentChangesHighligher.ChangeEditorMessage> myChangesMessages = MapSequence.fromMap(new HashMap<Change, EditorComponentChangesHighligher.ChangeEditorMessage>());
   private ChangeListener myChangeListener;
   private ChangesFoldingAreaPainter myFoldingAreaPainter;
   private ModelChangesManager myModelChangesManager;
@@ -374,7 +374,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
       if (ObjectUtils.equals(getNode(), cell.getSNode()) && targetIsNode || !(targetIsNode) && !(cell instanceof EditorCell_Collection)) {
         cell.paintSelection(graphics, getColor(), false);
       } else {
-        if (isDeletedChild()) {
+        if (isDeletedChild() && !(cell.isBigCell())) {
           int nextChildIndex = ((DeletedNodeMessageTarget) myMessageTarget).getNextChildIndex();
           if (nextChildIndex != -1) {
             EditorCell_Collection collectionCell = ((EditorCell_Collection) cell);
