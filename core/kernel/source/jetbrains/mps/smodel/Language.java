@@ -401,16 +401,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     invalidateDependencies();
   }
 
-  @Deprecated
-  public LanguageDescriptor getLanguageDescriptor() {
-    return getModuleDescriptor();
-  }
-
-  @Deprecated
-  public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
-    setLanguageDescriptor(newDescriptor, true);
-  }
-
   public boolean isBootstrap() {
     return LibraryManager.getInstance().getBootstrapModules(Language.class).contains(this);
   }

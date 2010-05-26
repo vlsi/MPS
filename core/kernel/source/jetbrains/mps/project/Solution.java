@@ -156,16 +156,6 @@ public class Solution extends AbstractModule {
     return myDescriptorFile == null;
   }
 
-  @Deprecated
-  public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
-    setSolutionDescriptor(newDescriptor, true);
-  }
-
-  @Deprecated
-  public SolutionDescriptor getSolutionDescriptor() {
-    return getModuleDescriptor();
-  }
-
   public String toString() {
     String namespace = mySolutionDescriptor.getNamespace();
     if (namespace != null && namespace.length() != 0) return namespace;

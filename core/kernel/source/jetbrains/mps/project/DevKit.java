@@ -84,11 +84,6 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     setDevKitDescriptor((DevkitDescriptor) moduleDescriptor, reloadClasses);
   }
 
-  @Deprecated
-  public void setDevKitDescriptor(DevkitDescriptor descriptor) {
-    setDevKitDescriptor(descriptor, true);
-  }
-
   public void setDevKitDescriptor(DevkitDescriptor descriptor, boolean reloadClasses) {
     MPSModuleRepository moduleRepo = MPSModuleRepository.getInstance();
     moduleRepo.unRegisterModules(this);
