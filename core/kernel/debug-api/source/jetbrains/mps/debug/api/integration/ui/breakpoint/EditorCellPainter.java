@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.Color;
@@ -31,7 +32,8 @@ public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> 
   @Nullable
   protected abstract Image getIcon();
 
-  protected EditorCell_Label findCell(EditorComponent editorComponent) {
+  @Nullable
+  protected EditorCell_Label findCell(@NotNull EditorComponent editorComponent) {
     SNode node = getSNode();
     EditorCell_Label innerCell = null;
     if (node != null) {
@@ -74,7 +76,7 @@ public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> 
     }
   }
 
-  private void paintIcon(Graphics g, EditorCell_Label innerCell) {
+  private void paintIcon(@NotNull Graphics g, @NotNull EditorCell_Label innerCell) {
     Image img = getIcon();
     if (img != null) {
       int additionalShift = (innerCell.getHeight() - img.getHeight(null)) / 2;
@@ -82,7 +84,7 @@ public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> 
     }
   }
 
-  private void paintCellBackground(Graphics g, EditorComponent editorComponent) {
+  private void paintCellBackground(@NotNull Graphics g, @NotNull EditorComponent editorComponent) {
     EditorCell bigCell = editorComponent.getBigValidCellForNode(getSNode());
     if (bigCell != null && getCellBackgroundColor() != null) {
       g.setColor(getCellBackgroundColor());
@@ -90,7 +92,7 @@ public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> 
     }
   }
 
-  private void paintCellFrame(Graphics g, EditorComponent editorComponent) {
+  private void paintCellFrame(@NotNull Graphics g, @NotNull EditorComponent editorComponent) {
     EditorCell bigCell = editorComponent.getBigValidCellForNode(getSNode());
     if (bigCell != null && getFrameColor() != null) {
       g.setColor(getFrameColor());
@@ -98,13 +100,14 @@ public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> 
     }
   }
 
-  protected Rectangle getBounds(EditorComponent editorComponent, EditorCell_Label innerCell) {
-     int leftMargin = 4;
+  @NotNull
+  protected Rectangle getBounds(@NotNull EditorComponent editorComponent, @NotNull EditorCell_Label innerCell) {
+    int leftMargin = 4;
     return new Rectangle(leftMargin, innerCell.getY(), editorComponent.getWidth() - leftMargin,
       innerCell.getHeight() - innerCell.getTopInset() - innerCell.getBottomInset());
   }
 
-  protected void paintStripe(Graphics g, EditorComponent editorComponent, EditorCell_Label innerCell) {
+  protected void paintStripe(@NotNull Graphics g, @NotNull EditorComponent editorComponent, @NotNull EditorCell_Label innerCell) {
     g.setColor(getStripeBackgroundColor());
     Rectangle bounds = getBounds(editorComponent, innerCell);
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);

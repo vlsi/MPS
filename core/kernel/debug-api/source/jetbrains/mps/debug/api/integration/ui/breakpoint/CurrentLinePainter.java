@@ -71,7 +71,9 @@ public class CurrentLinePainter extends EditorCellPainter<SNode> {
   @Override
   public Rectangle getCoverageArea(EditorComponent editorComponent) {
     if (myInvisible) return null;
-    Rectangle bounds = getBounds(editorComponent, findCell(editorComponent));
+    EditorCell_Label cell = findCell(editorComponent);
+    if (cell == null) return null;
+    Rectangle bounds = getBounds(editorComponent, cell);
     return bounds;//new Rectangle(bounds.x + 1, bounds.y + 1, bounds.width - 1, bounds.height - 1);
   }
 
