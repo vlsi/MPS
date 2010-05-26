@@ -36,11 +36,11 @@ import jetbrains.mps.vcs.diff.changes.DeleteNodeChange;
 import jetbrains.mps.vcs.diff.changes.MoveNodeChange;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
-import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.vcs.diff.changes.SetNodeChange;
 import jetbrains.mps.vcs.diff.changes.AddNodeChange;
+import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
@@ -410,9 +410,6 @@ public class ModelChangesManager {
             SNode parent = SNodeOperations.getParent(node);
             String conceptFqName = node.getConceptFqName();
             MoveNodeChange moveNodeChange = (MoveNodeChange) change;
-            if (ObjectUtils.equals(moveNodeChange.getNewParent(), check_9173428185844017636(parent)) && ObjectUtils.equals(moveNodeChange.getNewRole(), SNodeOperations.getContainingLinkRole(node))) {
-              continue;
-            }
 
             // adding NewNodeChange if needed 
             if (parent == null || !(SetSequence.fromSet(addedNodes).contains(parent.getSNodeId()))) {
@@ -424,6 +421,10 @@ public class ModelChangesManager {
                 // TODO null in prevSibling and prevRole 
                 ListSequence.fromList(changeList.value).addElement(new AddNodeChange(conceptFqName, nodeId, SNodeOperations.getContainingLinkRole(node), parent.getSNodeId(), null, null));
               }
+            }
+
+            if (ObjectUtils.equals(moveNodeChange.getNewParent(), check_9173428185844017636(parent)) && ObjectUtils.equals(moveNodeChange.getNewRole(), SNodeOperations.getContainingLinkRole(node))) {
+              continue;
             }
 
             // adding DeleteNodeChange if needed 
@@ -845,14 +846,14 @@ __switch__:
     }, false);
     Sequence.fromIterable(sortedChanges).visitAll(new IVisitor<Change>() {
       public void visit(Change ch) {
-        rollbackChange_internal(ch);
+        rollbackChangeCore(ch);
       }
     });
     MapSequence.fromMap(myRollbackReplaceCache).clear();
   }
 
   public void rollbackChange(@NotNull Change change) {
-    rollbackChange_internal(change);
+    rollbackChangeCore(change);
     MapSequence.fromMap(myRollbackReplaceCache).clear();
   }
 
@@ -868,7 +869,7 @@ __switch__:
     }
   }
 
-  private void rollbackChange_internal(@NotNull Change change) {
+  private void rollbackChangeCore(@NotNull Change change) {
     // This method should be invoked inside command 
     assert ModelAccess.instance().canWrite();
     if (change instanceof NewNodeChange) {
@@ -945,13 +946,6 @@ __switch__:
     }
   }
 
-  private static SNodeId check_9173428185844017636(SNode p) {
-    if (null == p) {
-      return null;
-    }
-    return p.getSNodeId();
-  }
-
   private static SNodeId check_7654328074273895290(SNode p) {
     if (null == p) {
       return null;
@@ -964,6 +958,13 @@ __switch__:
       return null;
     }
     return p.getChild(SNodeOperations.getContainingLinkRole(node));
+  }
+
+  private static SNodeId check_9173428185844017636(SNode p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getSNodeId();
   }
 
   private static SNodeId check_7206051335377860075(SNode p) {
