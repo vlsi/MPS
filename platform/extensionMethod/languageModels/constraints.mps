@@ -97,7 +97,8 @@
       </node>
     </node>
   </node>
-  <visible index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
+  <visible index="3" modelUID="r:a5509d93-a6df-4356-9363-7de4efc47849(jetbrains.mps.baseLanguage.extensionMethods.behavior)" />
+  <visible index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1550313277221324861">
     <link role="concept:8" targetNodeId="10.1550313277221324859:0" resolveInfo="TypeExtensionReference" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="7997068947889524883">
@@ -396,16 +397,16 @@
                               </node>
                               <node role="operation:3" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation:3" id="6235310215814089118" />
                             </node>
-                            <node role="supertypeExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6235310215814089119">
+                            <node role="supertypeExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4548662281495661220">
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6235310215814089120">
                                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6235310215814089124">
                                   <link role="variableDeclaration:3" targetNodeId="6235310215814089094" resolveInfo="extMethod" />
                                 </node>
-                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6235310215814090127">
-                                  <link role="link:16" targetNodeId="10.8022092943109605394:0" />
+                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4548662281495661219">
+                                  <link role="baseMethodDeclaration:16" targetNodeId="3v.8022092943109893938" resolveInfo="getThisType" />
                                 </node>
                               </node>
-                              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="6235310215814089123">
+                              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4548662281495661224">
                                 <link role="baseMethodDeclaration:16" targetNodeId="12.5744862332972792015" resolveInfo="getLooseType" />
                               </node>
                             </node>
@@ -414,7 +415,7 @@
                       </node>
                     </node>
                     <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="6235310215814037994">
-                      <link role="annotation:3" targetNodeId="3v.~Override" />
+                      <link role="annotation:3" targetNodeId="4v.~Override" />
                     </node>
                   </node>
                 </node>

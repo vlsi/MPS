@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
+import jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_Behavior;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ExtensionMethodCall_extension_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -65,7 +66,7 @@ public class ExtensionMethodCall_extension_ReferentConstraint extends BaseNodeRe
       public boolean isInScope(SNode node) {
         SNode extMethod = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration");
         SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-        return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(SLinkOperations.getTarget(extMethod, "extendedType", true))) && VisibilityUtil.isVisible(_context.getEnclosingNode(), extMethod);
+        return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(ExtensionMethodDeclaration_Behavior.call_getThisType_8022092943109893938(extMethod))) && VisibilityUtil.isVisible(_context.getEnclosingNode(), extMethod);
       }
     };
 
