@@ -50,10 +50,11 @@ public class LocalInstanceFieldReference_fieldDeclaration_ReferentConstraint ext
       for (SNode field : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, _context.getEnclosingNode(), constraint)) {
         boolean hasNameSakes = false;
         for (SNode var : vars) {
-          if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.lang.core.structure.INamedConcept") && SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"))) {
-            ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", true)).contains(SNodeOperations.getAncestor(var, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
-            hasNameSakes = true;
-            break;
+          if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.lang.core.structure.INamedConcept") && SPropertyOperations.getString(field, "name") != null && SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"))) {
+            if (!(ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", false)).contains(SNodeOperations.getAncestor(var, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)))) {
+              hasNameSakes = true;
+              break;
+            }
           }
         }
         if (!(hasNameSakes) && !(SetSequence.fromSet(names).contains(SPropertyOperations.getString(field, "name")))) {
