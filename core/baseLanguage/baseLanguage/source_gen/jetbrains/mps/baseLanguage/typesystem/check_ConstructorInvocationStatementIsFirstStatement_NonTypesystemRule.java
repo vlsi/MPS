@@ -21,8 +21,11 @@ public class check_ConstructorInvocationStatementIsFirstStatement_NonTypesystemR
   }
 
   public void applyRule(final SNode constructorInvocation, final TypeCheckingContext typeCheckingContext) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(constructorInvocation)), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(constructorInvocation)), "jetbrains.mps.baseLanguage.structure.StatementList")) {
-      SNode list = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(constructorInvocation)), "jetbrains.mps.baseLanguage.structure.StatementList");
+    boolean hasError = false;
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(constructorInvocation)), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(constructorInvocation), "jetbrains.mps.baseLanguage.structure.StatementList"))) {
+      hasError = true;
+    } else {
+      SNode list = SNodeOperations.cast(SNodeOperations.getParent(constructorInvocation), "jetbrains.mps.baseLanguage.structure.StatementList");
       for (SNode statement : SLinkOperations.getTargets(list, "statement", true)) {
         if (statement == constructorInvocation) {
           return;
@@ -30,12 +33,15 @@ public class check_ConstructorInvocationStatementIsFirstStatement_NonTypesystemR
         if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.SingleLineComment") || SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock") || ListSequence.fromList(SNodeOperations.getDescendants(statement, null, false, new String[]{})).count() == 0) {
           continue;
         }
-        {
-          BaseIntentionProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(constructorInvocation, "Call to '" + BaseConcept_Behavior.call_getPresentation_1213877396640(constructorInvocation) + "' must be first statement in constructor body", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8640198651485880912", intentionProvider, errorTarget);
-        }
-        return;
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      {
+        BaseIntentionProvider intentionProvider = null;
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(constructorInvocation, "Call to '" + BaseConcept_Behavior.call_getPresentation_1213877396640(constructorInvocation) + "' must be first statement in constructor body", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3133930811460325358", intentionProvider, errorTarget);
       }
     }
   }
