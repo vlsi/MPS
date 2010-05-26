@@ -61,18 +61,4 @@ public class SimpleSearchScope extends AbstractSearchScope {
     }
     return result;
   }
-
-  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
-    return new IReferenceInfoResolver() {
-      public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
-        if (referenceInfo == null) return null;
-        for (SNode node : myNodes) {
-          if (referenceInfo.equals(node.getResolveInfo())) {
-            return node;
-          }
-        }
-        return null;
-      }
-    };
-  }
 }

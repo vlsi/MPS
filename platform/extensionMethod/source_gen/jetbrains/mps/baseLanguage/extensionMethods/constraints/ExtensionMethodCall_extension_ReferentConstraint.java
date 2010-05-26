@@ -7,8 +7,11 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
+import jetbrains.mps.smodel.search.AbstractSearchScope;
+import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -32,27 +35,42 @@ public class ExtensionMethodCall_extension_ReferentConstraint extends BaseNodeRe
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    List<SNode> result = new ArrayList<SNode>();
-    SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-    for (SNode extension : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"))) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(SLinkOperations.getTarget(extension, "type", true)))) {
-        for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(extension, "methods", true))) {
-          if (VisibilityUtil.isVisible(_context.getEnclosingNode(), method)) {
-            ListSequence.fromList(result).addElement(method);
+    return new AbstractSearchScope() {
+      @NotNull
+      public List<SNode> getNodes(Condition<SNode> p0) {
+        List<SNode> result = new ArrayList<SNode>();
+        SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+        for (SNode extension : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"))) {
+          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(SLinkOperations.getTarget(extension, "type", true)))) {
+            for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(extension, "methods", true))) {
+              if (VisibilityUtil.isVisible(_context.getEnclosingNode(), method)) {
+                ListSequence.fromList(result).addElement(method);
+              }
+            }
           }
         }
-      }
-    }
-    for (SNode container : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"))) {
-      for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(container, "methods", true))) {
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(SLinkOperations.getTarget(method, "extendedType", true)))) {
-          if (VisibilityUtil.isVisible(_context.getEnclosingNode(), method)) {
-            ListSequence.fromList(result).addElement(method);
+        for (SNode container : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"))) {
+          for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(container, "methods", true))) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(SLinkOperations.getTarget(method, "extendedType", true)))) {
+              if (VisibilityUtil.isVisible(_context.getEnclosingNode(), method)) {
+                ListSequence.fromList(result).addElement(method);
+              }
+            }
           }
         }
+        return ListSequence.fromListWithValues(new ArrayList<SNode>(), result);
       }
-    }
-    return result;
+
+      @Override
+      public boolean isInScope(SNode node) {
+        SNode extMethod = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration");
+        SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+        return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(SLinkOperations.getTarget(extMethod, "extendedType", true))) && VisibilityUtil.isVisible(_context.getEnclosingNode(), extMethod);
+      }
+    };
+
+
+
   }
 
   public SNodePointer getSearchScopeFactoryNodePointer() {
