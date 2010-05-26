@@ -175,10 +175,6 @@ public class ClassloaderUtil {
 
       File languageDesignFolder = new File(homePath + File.separator + "core" + File.separator + "languageDesign");
       addLibraries(classPath, languageDesignFolder, selfRootUrl);
-
-      File platformCoreFolder = new File(homePath + File.separator + "platform" + File.separator + "core");
-      addLibraries(classPath, platformCoreFolder, selfRootUrl);
-
     }
     catch (MalformedURLException e) {
       getLogger().error(e);
