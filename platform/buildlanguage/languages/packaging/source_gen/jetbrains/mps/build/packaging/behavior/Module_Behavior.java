@@ -198,7 +198,7 @@ public class Module_Behavior {
     if (module instanceof Solution) {
       Solution solution = (Solution) module;
       if (!(solution.isExternallyVisible())) {
-        return Module_Behavior.replaceBadCharacters_1235487831795(solution.getSolutionDescriptor().getNamespace());
+        return Module_Behavior.replaceBadCharacters_1235487831795(solution.getModuleDescriptor().getNamespace());
       }
     }
     return Module_Behavior.replaceBadCharacters_1235487831795(module.getModuleFqName());

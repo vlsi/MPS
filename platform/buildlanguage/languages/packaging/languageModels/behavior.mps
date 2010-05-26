@@ -3137,7 +3137,7 @@
                           <link role="variableDeclaration:3" targetNodeId="1235487763790" resolveInfo="solution" />
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1235487919176">
-                          <link role="baseMethodDeclaration:3" targetNodeId="6.~Solution.getSolutionDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolveInfo="getSolutionDescriptor" />
+                          <link role="baseMethodDeclaration:3" targetNodeId="6.~Solution.getModuleDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolveInfo="getModuleDescriptor" />
                         </node>
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1235487919177">

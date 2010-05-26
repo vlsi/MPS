@@ -67,7 +67,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             ModelAccess.instance().runWriteAction(new Runnable() {
               public void run() {
                 for (ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
-                  (solution).getSolutionDescriptor().getUsedLanguages().add(ref);
+                  (solution).getModuleDescriptor().getUsedLanguages().add(ref);
                 }
               }
             });

@@ -1390,7 +1390,7 @@
                                                             </node>
                                                           </node>
                                                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8683696394984066706">
-                                                            <link role="baseMethodDeclaration:3" targetNodeId="2.~Solution.getSolutionDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolveInfo="getSolutionDescriptor" />
+                                                            <link role="baseMethodDeclaration:3" targetNodeId="2.~Solution.getModuleDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolveInfo="getModuleDescriptor" />
                                                           </node>
                                                         </node>
                                                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6979612000521482049">
