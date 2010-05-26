@@ -121,7 +121,7 @@ public class NewRuntimeModule_Action extends GeneratedAction {
               Language language = (Language) NewRuntimeModule_Action.this.contextModule;
               Dependency dependency = new Dependency();
               dependency.setModuleRef(module.getModuleReference());
-              language.getLanguageDescriptor().getRuntimeModules().add(dependency);
+              language.getModuleDescriptor().getRuntimeModules().add(dependency);
               language.save();
               ((MPSTreeNode) NewRuntimeModule_Action.this.treeNode).getTree().rebuildLater();
             }

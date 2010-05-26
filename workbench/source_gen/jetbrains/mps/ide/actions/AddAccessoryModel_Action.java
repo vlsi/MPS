@@ -103,9 +103,9 @@ public class AddAccessoryModel_Action extends GeneratedAction {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           LanguageDescriptor descriptor;
-          descriptor = language.getLanguageDescriptor();
+          descriptor = language.getModuleDescriptor();
           descriptor.getAccessoryModels().add(result.getSModelReference());
-          language.setLanguageDescriptor(descriptor);
+          language.setLanguageDescriptor(descriptor, true);
           IScope scope = language.getScope();
           if (scope.getModelDescriptor(result.getSModelReference()) == null) {
             int res = JOptionPane.showConfirmDialog(AddAccessoryModel_Action.this.frame, "<html>Model <b>" + result.getLongName() + "</b> is added to accessories</html>\n\n" + "Do you want to automatically the module add to dependency?", "Add Dependency", JOptionPane.YES_NO_OPTION);

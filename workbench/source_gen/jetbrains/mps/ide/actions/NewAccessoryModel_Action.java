@@ -105,9 +105,9 @@ public class NewAccessoryModel_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          LanguageDescriptor descriptor = language.getLanguageDescriptor();
+          LanguageDescriptor descriptor = language.getModuleDescriptor();
           descriptor.getAccessoryModels().add(result.getSModelReference());
-          language.setLanguageDescriptor(descriptor);
+          language.setLanguageDescriptor(descriptor, true);
           language.save();
         }
       });

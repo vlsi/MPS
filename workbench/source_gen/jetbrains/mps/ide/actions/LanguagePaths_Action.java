@@ -69,8 +69,8 @@ public class LanguagePaths_Action extends GeneratedAction {
       dialog.add(sp);
       mainp.setLayout(new BoxLayout(mainp, BoxLayout.Y_AXIS));
       for (Language lang : ListSequence.fromList(languages)) {
-        List<StubModelsEntry> cp = StubModelsEntry.filterJava(lang.getLanguageDescriptor().getStubModelEntries());
-        List<StubModelsEntry> rcp = StubModelsEntry.filterJava(lang.getLanguageDescriptor().getRuntimeStubModels());
+        List<StubModelsEntry> cp = StubModelsEntry.filterJava(lang.getModuleDescriptor().getStubModelEntries());
+        List<StubModelsEntry> rcp = StubModelsEntry.filterJava(lang.getModuleDescriptor().getRuntimeStubModels());
 
         List<String> cpu = new ArrayList();
         for (StubModelsEntry i : ListSequence.fromList(cp)) {
@@ -100,7 +100,7 @@ public class LanguagePaths_Action extends GeneratedAction {
         panel.add(list1, BorderLayout.WEST);
         panel.add(list2, BorderLayout.EAST);
       }
-      dialog.show();
+      dialog.setVisible(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "LanguagePaths", t);

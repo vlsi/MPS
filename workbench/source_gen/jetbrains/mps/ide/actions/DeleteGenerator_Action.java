@@ -95,7 +95,7 @@ public class DeleteGenerator_Action extends GeneratedAction {
           Generator generator = ((Generator) DeleteGenerator_Action.this.module);
           Language sourceLanguage = generator.getSourceLanguage();
           int genIndex = sourceLanguage.getGenerators().indexOf(generator);
-          GeneratorDescriptor genToDelete = sourceLanguage.getLanguageDescriptor().getGenerators().get(genIndex);
+          GeneratorDescriptor genToDelete = sourceLanguage.getModuleDescriptor().getGenerators().get(genIndex);
           DeleteGeneratorHelper.deleteGenerator(DeleteGenerator_Action.this.project, sourceLanguage, generator, genToDelete, dialog.isSafe(), dialog.isDeleteFiles());
         }
       });
