@@ -102,8 +102,8 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 }

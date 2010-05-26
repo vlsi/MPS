@@ -239,8 +239,8 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 
@@ -301,8 +301,8 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 }

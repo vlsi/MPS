@@ -218,8 +218,8 @@ public class ClassifierType_Behavior {
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 
@@ -280,8 +280,8 @@ public class ClassifierType_Behavior {
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 

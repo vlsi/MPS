@@ -117,8 +117,8 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 

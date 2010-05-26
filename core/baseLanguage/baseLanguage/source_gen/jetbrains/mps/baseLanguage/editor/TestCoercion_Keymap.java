@@ -135,8 +135,8 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
         return null;
       }
 
-      public void performActions() {
-        throw new RuntimeException("NOT IMPLEMENTED");
+      public void performActions(Object o) {
+
       }
     }
 
@@ -173,8 +173,8 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
         return null;
       }
 
-      public void performActions() {
-        throw new RuntimeException("NOT IMPLEMENTED");
+      public void performActions(Object o) {
+
       }
     }
   }

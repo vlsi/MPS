@@ -102,8 +102,8 @@ public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 }

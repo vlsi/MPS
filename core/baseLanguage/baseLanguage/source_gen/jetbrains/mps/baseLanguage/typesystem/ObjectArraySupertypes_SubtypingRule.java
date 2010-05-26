@@ -188,8 +188,8 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 }
