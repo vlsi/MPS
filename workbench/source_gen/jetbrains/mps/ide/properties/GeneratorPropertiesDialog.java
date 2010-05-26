@@ -52,7 +52,7 @@ public class GeneratorPropertiesDialog extends BasePropertiesDialog {
         GeneratorPropertiesDialog.this.myGenerator.setModuleDescriptor(GeneratorPropertiesDialog.this.myGenerator.getModuleDescriptor(), true);
         GeneratorPropertiesDialog.this.myGenerator.save();
       }
-    });
+    }, getOperationContext().getProject());
     return true;
   }
 }

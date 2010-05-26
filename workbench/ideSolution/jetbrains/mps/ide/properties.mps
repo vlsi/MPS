@@ -8869,7 +8869,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="31.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075039152">
-              <link role="baseMethodDeclaration:3" targetNodeId="31.~ModelAccess.runWriteActionInCommand(java.lang.Runnable):void" resolveInfo="runWriteActionInCommand" />
+              <link role="baseMethodDeclaration:3" targetNodeId="31.~ModelAccess.runWriteActionInCommand(java.lang.Runnable,com.intellij.openapi.project.Project):void" resolveInfo="runWriteActionInCommand" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5923576889075039153">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="5923576889075039154">
                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="5923576889075039155">
@@ -8920,7 +8920,7 @@
                               </node>
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075039176">
-                              <link role="baseMethodDeclaration:3" targetNodeId="19.~DevKit.setDevKitDescriptor(jetbrains.mps.project.structure.modules.DevkitDescriptor):void" resolveInfo="setDevKitDescriptor" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="19.~DevKit.setDevKitDescriptor(jetbrains.mps.project.structure.modules.DevkitDescriptor,boolean):void" resolveInfo="setDevKitDescriptor" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5923576889075039177">
                                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5923576889075039178">
                                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5923576889075039179">
@@ -8933,6 +8933,9 @@
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075039181">
                                   <link role="baseMethodDeclaration:3" targetNodeId="19.~DevKit.getModuleDescriptor():jetbrains.mps.project.structure.modules.DevkitDescriptor" resolveInfo="getModuleDescriptor" />
                                 </node>
+                              </node>
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="590718980854864632">
+                                <property name="value:3" value="true" />
                               </node>
                             </node>
                           </node>
@@ -8971,6 +8974,14 @@
                       </node>
                     </node>
                   </node>
+                </node>
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="590718980854864635">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="590718980854864634">
+                  <link role="baseMethodDeclaration:3" targetNodeId="23.~BaseBindedDialog.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="590718980854864639">
+                  <link role="baseMethodDeclaration:3" targetNodeId="31.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
                 </node>
               </node>
             </node>
@@ -9214,7 +9225,7 @@
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5923576889075041754" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075041755">
-                  <link role="baseMethodDeclaration:3" targetNodeId="31.~Generator.getModuleDescriptor():jetbrains.mps.project.structure.modules.ModuleDescriptor" resolveInfo="getModuleDescriptor" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="31.~Generator.getModuleDescriptor():jetbrains.mps.project.structure.modules.GeneratorDescriptor" resolveInfo="getModuleDescriptor" />
                 </node>
               </node>
             </node>
@@ -9272,7 +9283,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="31.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075041781">
-              <link role="baseMethodDeclaration:3" targetNodeId="31.~ModelAccess.runWriteActionInCommand(java.lang.Runnable):void" resolveInfo="runWriteActionInCommand" />
+              <link role="baseMethodDeclaration:3" targetNodeId="31.~ModelAccess.runWriteActionInCommand(java.lang.Runnable,com.intellij.openapi.project.Project):void" resolveInfo="runWriteActionInCommand" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5923576889075041782">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="5923576889075041783">
                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="5923576889075041784">
@@ -9306,7 +9317,7 @@
                                   </node>
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075041799">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="31.~Generator.getModuleDescriptor():jetbrains.mps.project.structure.modules.ModuleDescriptor" resolveInfo="getModuleDescriptor" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="31.~Generator.getModuleDescriptor():jetbrains.mps.project.structure.modules.GeneratorDescriptor" resolveInfo="getModuleDescriptor" />
                                 </node>
                               </node>
                             </node>
@@ -9334,7 +9345,7 @@
                                   </node>
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075041810">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="31.~Generator.getModuleDescriptor():jetbrains.mps.project.structure.modules.ModuleDescriptor" resolveInfo="getModuleDescriptor" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="31.~Generator.getModuleDescriptor():jetbrains.mps.project.structure.modules.GeneratorDescriptor" resolveInfo="getModuleDescriptor" />
                                 </node>
                               </node>
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="5063587436144983539">
@@ -9361,6 +9372,14 @@
                       </node>
                     </node>
                   </node>
+                </node>
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="590718980854874063">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="590718980854874062">
+                  <link role="baseMethodDeclaration:3" targetNodeId="23.~BaseBindedDialog.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="590718980854874067">
+                  <link role="baseMethodDeclaration:3" targetNodeId="31.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
                 </node>
               </node>
             </node>
@@ -9440,7 +9459,7 @@
                 <link role="variableDeclaration:3" targetNodeId="5923576889075041839" resolveInfo="language" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075041848">
-                <link role="baseMethodDeclaration:3" targetNodeId="19.~AbstractModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
+                <link role="baseMethodDeclaration:3" targetNodeId="19.~AbstractModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
               </node>
             </node>
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5923576889075041849">
@@ -9650,7 +9669,7 @@
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5923576889075041932" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075041933">
-                  <link role="baseMethodDeclaration:3" targetNodeId="31.~Language.getModuleDescriptor():jetbrains.mps.project.structure.modules.ModuleDescriptor" resolveInfo="getModuleDescriptor" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="31.~Language.getModuleDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolveInfo="getModuleDescriptor" />
                 </node>
               </node>
             </node>
@@ -9685,7 +9704,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="31.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075041949">
-              <link role="baseMethodDeclaration:3" targetNodeId="31.~ModelAccess.runWriteActionInCommand(java.lang.Runnable):void" resolveInfo="runWriteActionInCommand" />
+              <link role="baseMethodDeclaration:3" targetNodeId="31.~ModelAccess.runWriteActionInCommand(java.lang.Runnable,com.intellij.openapi.project.Project):void" resolveInfo="runWriteActionInCommand" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5923576889075041950">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="5923576889075041951">
                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="5923576889075041952">
@@ -9719,7 +9738,7 @@
                                   </node>
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075041967">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="31.~Language.getLanguageDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolveInfo="getLanguageDescriptor" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="31.~Language.getModuleDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolveInfo="getModuleDescriptor" />
                                 </node>
                               </node>
                             </node>
@@ -9736,7 +9755,7 @@
                               </node>
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075041973">
-                              <link role="baseMethodDeclaration:3" targetNodeId="31.~Language.setLanguageDescriptor(jetbrains.mps.project.structure.modules.LanguageDescriptor):void" resolveInfo="setLanguageDescriptor" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="31.~Language.setLanguageDescriptor(jetbrains.mps.project.structure.modules.LanguageDescriptor,boolean):void" resolveInfo="setLanguageDescriptor" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5923576889075041974">
                                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5923576889075041975">
                                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5923576889075041976">
@@ -9747,8 +9766,11 @@
                                   </node>
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075041978">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="31.~Language.getLanguageDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolveInfo="getLanguageDescriptor" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="31.~Language.getModuleDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolveInfo="getModuleDescriptor" />
                                 </node>
+                              </node>
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="590718980854874060">
+                                <property name="value:3" value="true" />
                               </node>
                             </node>
                           </node>
@@ -9786,6 +9808,14 @@
                       </node>
                     </node>
                   </node>
+                </node>
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="590718980854872634">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="590718980854872633">
+                  <link role="baseMethodDeclaration:3" targetNodeId="23.~BaseBindedDialog.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="590718980854872638">
+                  <link role="baseMethodDeclaration:3" targetNodeId="31.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
                 </node>
               </node>
             </node>
@@ -11895,7 +11925,7 @@
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5923576889075042799" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075042800">
-                  <link role="baseMethodDeclaration:3" targetNodeId="19.~Solution.getSolutionDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolveInfo="getSolutionDescriptor" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="19.~Solution.getModuleDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolveInfo="getModuleDescriptor" />
                 </node>
               </node>
             </node>
@@ -11930,7 +11960,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="31.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075042816">
-              <link role="baseMethodDeclaration:3" targetNodeId="31.~ModelAccess.runWriteActionInCommand(java.lang.Runnable):void" resolveInfo="runWriteActionInCommand" />
+              <link role="baseMethodDeclaration:3" targetNodeId="31.~ModelAccess.runWriteActionInCommand(java.lang.Runnable,com.intellij.openapi.project.Project):void" resolveInfo="runWriteActionInCommand" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5923576889075042817">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="5923576889075042818">
                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="5923576889075042819">
@@ -11958,7 +11988,7 @@
                                 </node>
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075042831">
-                                <link role="baseMethodDeclaration:3" targetNodeId="19.~Solution.getSolutionDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolveInfo="getSolutionDescriptor" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="19.~Solution.getModuleDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolveInfo="getModuleDescriptor" />
                               </node>
                             </node>
                           </node>
@@ -11992,9 +12022,12 @@
                               </node>
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075042844">
-                              <link role="baseMethodDeclaration:3" targetNodeId="19.~Solution.setSolutionDescriptor(jetbrains.mps.project.structure.modules.SolutionDescriptor):void" resolveInfo="setSolutionDescriptor" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="19.~Solution.setSolutionDescriptor(jetbrains.mps.project.structure.modules.SolutionDescriptor,boolean):void" resolveInfo="setSolutionDescriptor" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5923576889075042845">
                                 <link role="variableDeclaration:3" targetNodeId="5923576889075042825" resolveInfo="solutionDescriptor" />
+                              </node>
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="590718980854864641">
+                                <property name="value:3" value="true" />
                               </node>
                             </node>
                           </node>
@@ -12017,6 +12050,14 @@
                       </node>
                     </node>
                   </node>
+                </node>
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="590718980854864644">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="590718980854864643">
+                  <link role="baseMethodDeclaration:3" targetNodeId="23.~BaseBindedDialog.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="590718980854864648">
+                  <link role="baseMethodDeclaration:3" targetNodeId="31.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
                 </node>
               </node>
             </node>

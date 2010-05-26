@@ -25,7 +25,7 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
   };
 
   /*package*/ LanguagePropertiesDialog(final Language language, IOperationContext operationContext) {
-    super(language.getModuleUID() + " Properties", operationContext);
+    super(language.getModuleFqName() + " Properties", operationContext);
     this.myLanguage = language;
     this.collectLanguageProperties();
   }
@@ -53,12 +53,12 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        LanguagePropertiesDialog.this.myProperties.saveTo(LanguagePropertiesDialog.this.myLanguage.getLanguageDescriptor());
-        LanguagePropertiesDialog.this.myLanguage.setLanguageDescriptor(LanguagePropertiesDialog.this.myLanguage.getLanguageDescriptor());
+        LanguagePropertiesDialog.this.myProperties.saveTo(LanguagePropertiesDialog.this.myLanguage.getModuleDescriptor());
+        LanguagePropertiesDialog.this.myLanguage.setLanguageDescriptor(LanguagePropertiesDialog.this.myLanguage.getModuleDescriptor(), true);
         LanguagePropertiesDialog.this.myLanguage.validateExtends();
         LanguagePropertiesDialog.this.myLanguage.save();
       }
-    });
+    }, getOperationContext().getProject());
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         Project project = LanguagePropertiesDialog.this.getOperationContext().getProject();

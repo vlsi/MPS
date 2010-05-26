@@ -41,7 +41,7 @@ public class SolutionPropertiesDialog extends BasePropertiesDialog {
 
   private void collectSolutionProperties() {
     this.myProperties = new SolutionProperties();
-    this.myProperties.loadFrom(this.mySolution.getSolutionDescriptor());
+    this.myProperties.loadFrom(this.mySolution.getModuleDescriptor());
   }
 
   protected boolean doSaveChanges() {
@@ -50,12 +50,12 @@ public class SolutionPropertiesDialog extends BasePropertiesDialog {
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        SolutionDescriptor solutionDescriptor = SolutionPropertiesDialog.this.mySolution.getSolutionDescriptor();
+        SolutionDescriptor solutionDescriptor = SolutionPropertiesDialog.this.mySolution.getModuleDescriptor();
         SolutionPropertiesDialog.this.myProperties.saveTo(solutionDescriptor);
-        SolutionPropertiesDialog.this.mySolution.setSolutionDescriptor(solutionDescriptor);
+        SolutionPropertiesDialog.this.mySolution.setSolutionDescriptor(solutionDescriptor, true);
         SolutionPropertiesDialog.this.mySolution.save();
       }
-    });
+    }, getOperationContext().getProject());
     return true;
   }
 

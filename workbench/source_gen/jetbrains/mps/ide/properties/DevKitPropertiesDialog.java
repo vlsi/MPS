@@ -40,11 +40,11 @@ public class DevKitPropertiesDialog extends BasePropertiesDialog {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         DevKitPropertiesDialog.this.myProperties.saveTo(DevKitPropertiesDialog.this.myDevKit.getModuleDescriptor());
-        DevKitPropertiesDialog.this.myDevKit.setDevKitDescriptor(DevKitPropertiesDialog.this.myDevKit.getModuleDescriptor());
+        DevKitPropertiesDialog.this.myDevKit.setDevKitDescriptor(DevKitPropertiesDialog.this.myDevKit.getModuleDescriptor(), true);
         DevKitPropertiesDialog.this.myDevKit.save();
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
       }
-    });
+    }, getOperationContext().getProject());
     return true;
   }
 
