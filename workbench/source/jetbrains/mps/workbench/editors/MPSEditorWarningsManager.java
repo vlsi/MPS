@@ -134,12 +134,12 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     }
 
     if (model.isTransient()) {
-      addWarningPanel(editor, "Warning: node is in transient model. Your changes won't be saved.");
+      addWarningPanel(editor, "Warning: the node is in a transient model. Your changes won't be saved.");
     }
 
     IModule module = model.getModule();
     if (module != null && module.isPackaged()) {
-      addWarningPanel(editor, "Warning: node is in packaged model. Your changes won't be saved");
+      addWarningPanel(editor, "Warning: the node is in a packaged model. Your changes won't be saved");
     }
 
     final Set<Language> outdatedLanguages = new HashSet<Language>();
