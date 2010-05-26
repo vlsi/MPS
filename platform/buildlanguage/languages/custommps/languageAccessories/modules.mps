@@ -400,10 +400,7 @@
       <property name="id" value="019b622b-0aef-4dd3-86d0-4eef01f3f6bb" />
       <property name="name" value="jetbrains.mps.ide" />
     </node>
-    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1272383961749356385">
-      <property name="id" value="13bb5d8e-e640-4722-80ed-259ec90709b3" />
-      <property name="name" value="jetbrains.mps.xmlQuery.runtime" />
-    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.AbstractProjectComponent:7" id="1272383961749392356" />
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="4062013737453621622">
     <property name="name:7" value="core" />
