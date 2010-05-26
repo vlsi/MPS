@@ -44,7 +44,8 @@ import javax.swing.tree.DefaultTreeModel;
 import java.util.*;
 
 public class SModelTreeNode extends MPSTreeNodeEx {
-  public static final String PACK = "package";
+  @Deprecated
+  public static final String PACK = SNode.PACK;
 
   private SModelDescriptor myModelDescriptor;
   private List<SModelTreeNode> myChildModelTreeNodes = new ArrayList<SModelTreeNode>();

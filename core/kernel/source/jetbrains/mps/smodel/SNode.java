@@ -47,6 +47,7 @@ import java.util.concurrent.atomic.AtomicLong;
 public final class SNode {
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
+  public static final String PACK = "package";
   private static final ModelConstraintsManager CONSTRAINTS_MANAGER = ModelConstraintsManager.getInstance();
 
   public static final Object STATUS = new Object();
