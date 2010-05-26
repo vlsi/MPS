@@ -27,7 +27,6 @@ import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.library.Library;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.misc.hash.HashSet;
 
 import java.util.*;
@@ -91,8 +90,8 @@ public class WatchedRoots implements ApplicationComponent {
   }
 
   private void processLibrariesChange(Set<Library> currentLibraries, Map<Library, WatchRequest> libraryToRequest) {
-    List<Library> toRemove = librarySubstract(libraryToRequest.keySet(), currentLibraries);
-    List<Library> toAdd = librarySubstract(currentLibraries, libraryToRequest.keySet());
+    List<Library> toRemove = librarySubtract(libraryToRequest.keySet(), currentLibraries);
+    List<Library> toAdd = librarySubtract(currentLibraries, libraryToRequest.keySet());
     removeLibraryWatch(toRemove, libraryToRequest);
     addLibraryWatch(toAdd, libraryToRequest);
   }
@@ -114,7 +113,7 @@ public class WatchedRoots implements ApplicationComponent {
     }
   }
 
-  private List<Library> librarySubstract(Collection<Library> from, Collection<Library> what) {
+  private List<Library> librarySubtract(Collection<Library> from, Collection<Library> what) {
     List<Library> result = new ArrayList<Library>();
     for (Library pattern : from) {
       boolean found = false;
