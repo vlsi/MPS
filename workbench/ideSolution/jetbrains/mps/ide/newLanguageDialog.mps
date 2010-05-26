@@ -907,17 +907,12 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1233049671947">
               <link role="classifier:3" targetNodeId="25.~LanguageDescriptor" resolveInfo="LanguageDescriptor" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1203687513863">
-              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1233049427947">
-                <link role="classifier:3" targetNodeId="25.~LanguageDescriptor" resolveInfo="LanguageDescriptor" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1205834599181">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1203687513867">
+                <link role="variableDeclaration:3" targetNodeId="1203687010409" resolveInfo="language" />
               </node>
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1205834599181">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1203687513867">
-                  <link role="variableDeclaration:3" targetNodeId="1203687010409" resolveInfo="language" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1205834599182">
-                  <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getLanguageDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolveInfo="getLanguageDescriptor" />
-                </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1205834599182">
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getModuleDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolveInfo="getModuleDescriptor" />
               </node>
             </node>
           </node>
@@ -974,9 +969,12 @@
               <link role="variableDeclaration:3" targetNodeId="1203687010409" resolveInfo="language" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1205834599241">
-              <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.setLanguageDescriptor(jetbrains.mps.project.structure.modules.LanguageDescriptor):void" resolveInfo="setLanguageDescriptor" />
+              <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.setLanguageDescriptor(jetbrains.mps.project.structure.modules.LanguageDescriptor,boolean):void" resolveInfo="setLanguageDescriptor" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1233049805232">
                 <link role="variableDeclaration:3" targetNodeId="1203687044425" resolveInfo="languageDescriptor" />
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="590718980855032490">
+                <property name="value:3" value="true" />
               </node>
             </node>
           </node>
@@ -1177,7 +1175,7 @@
                 <link role="variableDeclaration:3" targetNodeId="5890305283801272027" resolveInfo="solution" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5890305283801272045">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~Solution.getSolutionDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolveInfo="getSolutionDescriptor" />
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~Solution.getModuleDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolveInfo="getModuleDescriptor" />
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5890305283801272050">
@@ -1301,7 +1299,7 @@
                 <link role="variableDeclaration:3" targetNodeId="5890305283801272204" resolveInfo="solution" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5890305283801272216">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~Solution.getSolutionDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolveInfo="getSolutionDescriptor" />
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~Solution.getModuleDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolveInfo="getModuleDescriptor" />
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5890305283801272217">

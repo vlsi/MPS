@@ -488,7 +488,7 @@
                 <link role="variableDeclaration:3" targetNodeId="5890305283801268146" resolveInfo="solution" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5890305283801268174">
-                <link role="baseMethodDeclaration:3" targetNodeId="4.~Solution.getSolutionDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolveInfo="getSolutionDescriptor" />
+                <link role="baseMethodDeclaration:3" targetNodeId="4.~Solution.getModuleDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolveInfo="getModuleDescriptor" />
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5890305283801268181">

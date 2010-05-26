@@ -241,7 +241,7 @@ public class NewSolutionDialogContentPane extends JPanel {
 
   /*package*/ Solution createNewSolution(final IFile solutionDescriptorFile) {
     Solution solution = NewModuleUtil.createNewSolution(solutionDescriptorFile, myThis.getProject());
-    solution.getSolutionDescriptor().setCompileInMPS(myThis.getCompileInMPS());
+    solution.getModuleDescriptor().setCompileInMPS(myThis.getCompileInMPS());
     return solution;
   }
 

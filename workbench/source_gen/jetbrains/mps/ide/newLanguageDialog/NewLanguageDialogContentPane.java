@@ -308,11 +308,11 @@ public class NewLanguageDialogContentPane extends JPanel {
       dir.mkdirs();
     }
     final Language language = Language.createLanguage(myThis.getLanguageNamespace(), new FileSystemFile(descriptorFile), myThis.getProject());
-    LanguageDescriptor languageDescriptor = (LanguageDescriptor) language.getLanguageDescriptor();
+    LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
     ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
     languageDescriptor.getUsedDevkits().add(devkitRef);
     languageDescriptor.setCompileInMPS(myThis.getCompileInMPS());
-    language.setLanguageDescriptor(languageDescriptor);
+    language.setLanguageDescriptor(languageDescriptor, true);
     language.save();
     myThis.getProject().addProjectLanguage(language);
     myThis.setResult(language);
@@ -329,7 +329,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     String descriptorPath = myThis.getLanguagePath() + File.separator + "runtime" + File.separator + myThis.getLanguageNamespace() + ".runtime" + MPSExtentions.DOT_SOLUTION;
     final File file = new File(descriptorPath);
     Solution solution = NewModuleUtil.createNewSolution(FileSystem.getFile(file), myThis.getProject());
-    solution.getSolutionDescriptor().setCompileInMPS(myThis.getCompileInMPS());
+    solution.getModuleDescriptor().setCompileInMPS(myThis.getCompileInMPS());
     return solution;
   }
 
@@ -337,7 +337,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     String descriptorPath = myThis.getLanguagePath() + File.separator + "sandbox" + File.separator + myThis.getLanguageNamespace() + ".sandbox" + MPSExtentions.DOT_SOLUTION;
     final File file = new File(descriptorPath);
     Solution solution = NewModuleUtil.createNewSolution(FileSystem.getFile(file), myThis.getProject());
-    solution.getSolutionDescriptor().setCompileInMPS(myThis.getCompileInMPS());
+    solution.getModuleDescriptor().setCompileInMPS(myThis.getCompileInMPS());
     return solution;
   }
 
