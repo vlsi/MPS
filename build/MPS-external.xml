@@ -352,11 +352,10 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.uiLanguage_u6a" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml_v6a" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlQuery_w6a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.xmlQuery.runtime_x6a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.xmlInternal_y6a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.xmlSchema_z6a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.gtext_ab6a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.gtext.runtime_bb6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.xmlInternal_x6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.xmlSchema_y6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.gtext_z6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.gtext.runtime_ab6a" />
     <copy todir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp">
       <fileset dir="${mps_home}/platform/buildlanguage/ant/classes" excludes="**/*.iml, **/*.iws" includes="**/*.class, **/*.xml, " />
     </copy>
@@ -370,6 +369,7 @@
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.uiLanguage_a8a" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide_b8a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.xmlQuery.runtime_c8a" />
     <mkdir dir="${deploy.dir}/MPS/workbench" />
     <echo file="${deploy.dir}/MPS/help-build.append.idea.version/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}</echo>
     <antcall target="help-build.append.idea.version" inheritall="true">
