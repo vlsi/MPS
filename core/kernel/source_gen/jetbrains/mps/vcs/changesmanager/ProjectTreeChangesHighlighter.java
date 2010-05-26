@@ -461,8 +461,8 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
 
     myCommandQueue.runTask(new Runnable() {
       public void run() {
-        FileStatus fileStatus = check_2261642348366451463(myChangesManager.getModelChangesManager(modelDescriptor));
-        Color color = check_5962623969496448884(fileStatus);
+        FileStatus fileStatus = check_ybywwq_a0a0a0a2a01(myChangesManager.getModelChangesManager(modelDescriptor));
+        Color color = check_ybywwq_a0b0a0a2a01(fileStatus);
         for (SModelTreeNode modelTreeNode : ListSequence.fromList(MapSequence.fromMap(mySModelDescriptorsToTreeNodes).get(modelDescriptor))) {
           modelTreeNode.removeTreeMessages(ProjectTreeChangesHighlighter.this, true);
           if (EXTRA_CHECKS_ENABLED && fileStatus == FileStatus.NOT_CHANGED) {
@@ -512,14 +512,14 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
     }
   }
 
-  private static FileStatus check_2261642348366451463(ModelChangesManager p) {
+  private static FileStatus check_ybywwq_a0a0a0a2a01(ModelChangesManager p) {
     if (null == p) {
       return null;
     }
     return p.getFileStatus();
   }
 
-  private static Color check_5962623969496448884(FileStatus p) {
+  private static Color check_ybywwq_a0b0a0a2a01(FileStatus p) {
     if (null == p) {
       return null;
     }

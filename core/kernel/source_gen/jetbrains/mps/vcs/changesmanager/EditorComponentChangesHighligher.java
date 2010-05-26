@@ -71,7 +71,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            final SModel model = check_7314078349084977809(editorComponent.getEditedNode());
+            final SModel model = check_7ugudc_a0a0a0a0a0a0f0a(editorComponent.getEditedNode());
             if (model != null && model.getModelDescriptor() != null) {
               myModelChangesManager = ChangesManager.getInstance(project).getModelChangesManager(model);
             } else {
@@ -285,7 +285,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   private NodeHighlightManager getHighlightManager() {
-    return check_5458603184245461677(myEditorComponent);
+    return check_7ugudc_a0a41(myEditorComponent);
   }
 
   private static boolean hasChildrenWithDifferentNode(EditorCell cell) {
@@ -301,14 +301,14 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     }
   }
 
-  private static SModel check_7314078349084977809(SNode p) {
+  private static SModel check_7ugudc_a0a0a0a0a0a0f0a(SNode p) {
     if (null == p) {
       return null;
     }
     return p.getModel();
   }
 
-  private static NodeHighlightManager check_5458603184245461677(EditorComponent p) {
+  private static NodeHighlightManager check_7ugudc_a0a41(EditorComponent p) {
     if (null == p) {
       return null;
     }

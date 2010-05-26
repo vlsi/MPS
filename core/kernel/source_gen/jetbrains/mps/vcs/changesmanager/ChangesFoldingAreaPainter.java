@@ -262,7 +262,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public String getToolTipText() {
-    return check_8382651302317426266(myCurrentMessageGroup);
+    return check_kvu3z4_a0a51(myCurrentMessageGroup);
   }
 
   @NotNull
@@ -279,7 +279,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     }
   }
 
-  private static String check_8382651302317426266(ChangesFoldingAreaPainter.MessageGroup p) {
+  private static String check_kvu3z4_a0a51(ChangesFoldingAreaPainter.MessageGroup p) {
     if (null == p) {
       return null;
     }
