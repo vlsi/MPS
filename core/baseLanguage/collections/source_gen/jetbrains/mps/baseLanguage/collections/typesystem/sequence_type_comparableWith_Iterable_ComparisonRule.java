@@ -94,8 +94,8 @@ public class sequence_type_comparableWith_Iterable_ComparisonRule extends Compar
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 }

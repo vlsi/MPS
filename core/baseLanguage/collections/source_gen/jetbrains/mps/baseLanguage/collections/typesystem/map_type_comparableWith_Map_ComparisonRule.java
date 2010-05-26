@@ -104,8 +104,8 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 }

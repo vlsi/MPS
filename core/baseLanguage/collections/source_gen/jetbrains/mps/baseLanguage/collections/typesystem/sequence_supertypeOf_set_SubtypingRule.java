@@ -141,8 +141,8 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 }

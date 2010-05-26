@@ -189,8 +189,8 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 }

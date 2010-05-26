@@ -94,8 +94,8 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
       return null;
     }
 
-    public void performActions() {
-      throw new RuntimeException("NOT IMPLEMENTED");
+    public void performActions(Object o) {
+
     }
   }
 }
