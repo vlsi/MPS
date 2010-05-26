@@ -57,6 +57,19 @@ public class TypesProvider {
   }
 
   public Type createType(TypeBinding binding) {
+    return createType(binding, false);
+  }
+
+  private void setComponentType(Type vector, Type component) {
+    if (vector instanceof ArrayType) {
+      ((ArrayType)vector).setComponentType(component);
+    }
+    if (vector instanceof VariableArityType) {
+      ((VariableArityType)vector).setComponentType(component);
+    }
+  }
+
+  public Type createType(TypeBinding binding, boolean varArg) {
     SModel model = myReferentsCreator.myCurrentModel;
     if (binding instanceof BaseTypeBinding) {
       if (binding == TypeBinding.BOOLEAN) {
@@ -92,16 +105,16 @@ public class TypesProvider {
       ArrayBinding arrayBinding = (ArrayBinding) binding;
       TypeBinding componentTypeBinding = arrayBinding.leafComponentType;
       int dimensions = arrayBinding.dimensions;
-      ArrayType arrayType = ArrayType.newInstance(model);
-      ArrayType smallestArrayType = arrayType;
+      Type outerType = varArg ? VariableArityType.newInstance(model) :  ArrayType.newInstance(model);
+      Type smallestVectorType = outerType;
       while (dimensions > 1) {
         ArrayType newArrayType = ArrayType.newInstance(model);
-        smallestArrayType.setComponentType(newArrayType);
-        smallestArrayType = newArrayType;
+        setComponentType(smallestVectorType, newArrayType);
+        smallestVectorType = newArrayType;
         dimensions--;
       }
-      smallestArrayType.setComponentType(createType(componentTypeBinding));
-      return arrayType;
+      setComponentType(smallestVectorType, createType(componentTypeBinding));
+      return outerType;
     }
     if (binding instanceof ReferenceBinding) {
       if (binding instanceof WildcardBinding) {

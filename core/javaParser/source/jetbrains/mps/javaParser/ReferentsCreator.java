@@ -475,7 +475,15 @@ public class ReferentsCreator {
 
     private ParameterDeclaration createParameter(LocalVariableBinding binding,
                                                  BaseMethodDeclaration enclosingMethod) {
-      Type type = createType(binding.type);
+      boolean varArg = false;
+      if (binding.declaration.type instanceof ArrayTypeReference) {
+        ArrayTypeReference arrayTypeReference = (ArrayTypeReference) binding.declaration.type;
+        if ((arrayTypeReference.bits & arrayTypeReference.IsVarArgs) != 0) {
+          //vararg
+          varArg = true;
+        }
+      }
+      Type type = myReferentsCreator.myTypesProvider.createType(binding.type, varArg);
       ParameterDeclaration result = ParameterDeclaration.newInstance(myReferentsCreator.myCurrentModel);
       result.setName(new String(binding.name));
       result.setType(type);
