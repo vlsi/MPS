@@ -146,8 +146,10 @@ import jetbrains.mps.cache.CachesManager;
       for (Classifier classifier : classifiersToUpdate) {
         String oldRefName = this.myNameByClassifier.get(classifier.getNode());
         List<SNode> nodes = this.myClassifiersByName.get(oldRefName);
-        nodes.remove(classifier.getNode());
-        if (nodes.isEmpty()) {
+        if (nodes != null) {
+          nodes.remove(classifier.getNode());
+        }
+        if (nodes == null || nodes.isEmpty()) {
           this.myClassifiersByName.remove(oldRefName);
         }
         this.myNameByClassifier.remove(classifier.getNode());
