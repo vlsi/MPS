@@ -438,7 +438,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "patternNode", true);
   }
 
-  public static SNode sourceNodeQuery_4413230749907735498(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1767704432736121442(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "action", true);
   }
 
@@ -653,7 +653,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static Iterable sourceNodesQuery_4413230749907735501(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1767704432736121445(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.ActionAsPattern", false, new String[]{});
   }
 }

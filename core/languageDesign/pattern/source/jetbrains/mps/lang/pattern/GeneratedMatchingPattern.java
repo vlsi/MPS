@@ -30,4 +30,8 @@ public class GeneratedMatchingPattern extends DefaultMatchingPattern {
 
   }
 
+  public void performActions(Object o) {
+    
+  }
+
 }
