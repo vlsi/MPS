@@ -102,7 +102,7 @@ public class LanguageRenamer {
 
   private void renameGenerators(String oldFqName) {
     for (Generator g : myLanguage.getGenerators()) {
-      GeneratorDescriptor genDesc = g.getGeneratorDescriptor();
+      GeneratorDescriptor genDesc = g.getModuleDescriptor();
       String uid = genDesc.getGeneratorUID();
       int sharpIndex = uid.indexOf('#');
       genDesc.setGeneratorUID(myNewName + "#" + uid.substring(sharpIndex + 1));

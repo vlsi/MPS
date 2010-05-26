@@ -223,7 +223,7 @@ public class NewGeneratorDialog extends BaseDialog {
 
     // add new generator to language
     languageDescriptor.getGenerators().add(generatorDescriptor);
-    sourceLanguage.setLanguageDescriptor(languageDescriptor);
+    sourceLanguage.setLanguageDescriptor(languageDescriptor, true);
     sourceLanguage.save();
 
     // add <default> templates model (if root is empty)

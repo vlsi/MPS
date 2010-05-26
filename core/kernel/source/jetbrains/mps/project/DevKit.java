@@ -69,6 +69,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
   private MPSModuleOwner myGenerationOnlyModelsModelOwner = this;
 
   public DevKit() {
+    
   }
 
   public IFile getDescriptorFile() {
@@ -83,6 +84,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     setDevKitDescriptor((DevkitDescriptor) moduleDescriptor, reloadClasses);
   }
 
+  @Deprecated
   public void setDevKitDescriptor(DevkitDescriptor descriptor) {
     setDevKitDescriptor(descriptor, true);
   }

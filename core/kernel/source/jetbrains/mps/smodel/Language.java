@@ -661,7 +661,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         i.remove();
       }
     }
-    setLanguageDescriptor(myLanguageDescriptor);
+    setLanguageDescriptor(myLanguageDescriptor, true);
     save();
   }
 

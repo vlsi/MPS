@@ -24,7 +24,6 @@ import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
@@ -48,7 +47,7 @@ public class PartitioningHelper {
 
     Map<MappingPriorityRule, GeneratorDescriptor> myRule2Generator = new HashMap<MappingPriorityRule, GeneratorDescriptor>();
     for (Generator generator : generators) {
-      GeneratorDescriptor generatorDescriptor = generator.getGeneratorDescriptor();
+      GeneratorDescriptor generatorDescriptor = generator.getModuleDescriptor();
       for (MappingPriorityRule rule : generatorDescriptor.getPriorityRules()) {
         myRule2Generator.put(rule, generatorDescriptor);
       }

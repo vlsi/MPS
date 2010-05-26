@@ -114,8 +114,8 @@ public class Solution extends AbstractModule {
     setSolutionDescriptor((SolutionDescriptor) moduleDescriptor, reloadClasses);
   }
 
-  public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
-    setSolutionDescriptor(newDescriptor, true);
+  public SolutionDescriptor getModuleDescriptor() {
+    return mySolutionDescriptor;
   }
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
@@ -149,19 +149,21 @@ public class Solution extends AbstractModule {
 
   public void save() {
     if (isStub()) return;
-    SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getSolutionDescriptor());
+    SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor());
   }
 
   public boolean isStub() {
     return myDescriptorFile == null;
   }
 
-  public SolutionDescriptor getSolutionDescriptor() {
-    return mySolutionDescriptor;
+  @Deprecated
+  public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
+    setSolutionDescriptor(newDescriptor, true);
   }
 
-  public SolutionDescriptor getModuleDescriptor() {
-    return mySolutionDescriptor;
+  @Deprecated
+  public SolutionDescriptor getSolutionDescriptor() {
+    return getModuleDescriptor();
   }
 
   public String toString() {
@@ -203,7 +205,7 @@ public class Solution extends AbstractModule {
   }
 
   public boolean areJavaStubsEnabled() {
-    return getSolutionDescriptor().getEnableJavaStubs();
+    return getModuleDescriptor().getEnableJavaStubs();
   }
 
   @Override
@@ -216,7 +218,7 @@ public class Solution extends AbstractModule {
   public BytecodeLocator getBytecodeLocator() {
     return new ModuleBytecodeLocator() {
       public byte[] find(String fqName) {
-        if (getSolutionDescriptor().isDontLoadClasses()) return null;
+        if (getModuleDescriptor().isDontLoadClasses()) return null;
         return super.find(fqName);
       }
     };

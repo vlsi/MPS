@@ -29,9 +29,9 @@ public class SolutionRenamer {
   }
 
   public void rename() {
-    SolutionDescriptor solutionDescriptor = mySolution.getSolutionDescriptor();
+    SolutionDescriptor solutionDescriptor = mySolution.getModuleDescriptor();
     solutionDescriptor.setNamespace(myNewName);
-    mySolution.setSolutionDescriptor(solutionDescriptor);
+    mySolution.setSolutionDescriptor(solutionDescriptor, true);
     mySolution.save();
 
     MPSModuleRepository.getInstance().updateReferences();

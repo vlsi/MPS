@@ -162,16 +162,15 @@ public class Generator extends AbstractModule{
     return mappings;
   }
 
-  public ModuleDescriptor getModuleDescriptor() {
+  public GeneratorDescriptor getModuleDescriptor() {
     return myGeneratorDescriptor;
   }
-
 
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     assert moduleDescriptor instanceof GeneratorDescriptor;
 
     LanguageDescriptor languageDescriptor = getSourceLanguage().getModuleDescriptor();
-    int index = languageDescriptor.getGenerators().indexOf(this.getGeneratorDescriptor());
+    int index = languageDescriptor.getGenerators().indexOf(getModuleDescriptor());
     languageDescriptor.getGenerators().remove(index);
     languageDescriptor.getGenerators().add(index, (GeneratorDescriptor) moduleDescriptor);
     getSourceLanguage().setLanguageDescriptor(languageDescriptor, reloadClasses);
@@ -198,10 +197,6 @@ public class Generator extends AbstractModule{
 
   public String toString() {
     return getAlias();
-  }
-
-  public GeneratorDescriptor getGeneratorDescriptor() {
-    return myGeneratorDescriptor;
   }
 
   public void save() {

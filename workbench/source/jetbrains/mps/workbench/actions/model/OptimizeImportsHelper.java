@@ -70,7 +70,7 @@ public class OptimizeImportsHelper {
     List<SModelDescriptor> modelsToOptimize = solution.getOwnModelDescriptors();
     Result result = optimizeModelsImports_internal(modelsToOptimize);
 
-    SolutionDescriptor descriptor = solution.getSolutionDescriptor();
+    SolutionDescriptor descriptor = solution.getModuleDescriptor();
     result.myReport = optimizeModuleImports(descriptor, result) + "\n\n" + result.myReport;
     solution.setSolutionDescriptor(descriptor, false);
 
