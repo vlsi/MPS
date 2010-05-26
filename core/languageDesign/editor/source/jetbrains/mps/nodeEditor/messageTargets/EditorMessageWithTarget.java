@@ -112,7 +112,7 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
       EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
         @Override
         public boolean met(EditorCell cell) {
-          return myMessageTarget.getRole().equals(cell.getRole());
+          return myMessageTarget.getRole().equals(cell.getRole()) && getNode() == cell.getSNode();
         }
       }, true), true);
       if (child != null) {
