@@ -10,7 +10,9 @@
     </projectSolutions>
     <projectLanguages />
     <projectDevkits />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="info" moduleRef="jetbrains.mps.debug.api.info" />
+    </genConfs>
   </component>
   <component name="ProjectModuleManager">
     <modules />
