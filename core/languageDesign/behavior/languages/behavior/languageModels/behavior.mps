@@ -113,6 +113,21 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5828142732487898462">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5828142732487898464">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5828142732487898463">
+              <link role="variableDeclaration:3" targetNodeId="1225194243308" resolveInfo="members" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation:7" id="5828142732487898468">
+              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5828142732487898471">
+                <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5828142732487898470" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="5828142732487898475">
+                  <link role="link:16" targetNodeId="1.1225194240806" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1225194243334">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1225194243335">
             <link role="variableDeclaration:3" targetNodeId="1225194243308" resolveInfo="members" />

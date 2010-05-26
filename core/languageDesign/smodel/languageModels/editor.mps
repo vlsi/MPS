@@ -2326,6 +2326,9 @@
         <link role="editorComponent:32" targetNodeId="5.1173990860683" resolveInfo="IMethodCall_actualArguments" />
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237817289810" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem:32" id="5828142732487804105">
+        <link role="parametersInformation:32" targetNodeId="5.4755152624708725521" resolveInfo="BaseMethodParameterInformationQuery" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration:32" id="1206480334645">
