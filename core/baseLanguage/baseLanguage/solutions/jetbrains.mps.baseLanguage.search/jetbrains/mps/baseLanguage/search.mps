@@ -193,7 +193,6 @@
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3161373106581136743">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="3161373106581136744">
                     <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="3161373106581136745">
-                      <property name="name:3" value="" />
                       <link role="classifier:3" targetNodeId="1.~CachesManager$CacheCreator" resolveInfo="CachesManager.CacheCreator" />
                       <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.&lt;init&gt;()" />
                       <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3161373106581136746">
@@ -6930,7 +6929,6 @@
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3161373106581137785">
         <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="3161373106581137786">
           <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="3161373106581137787">
-            <property name="name:3" value="" />
             <link role="classifier:3" targetNodeId="1.~AbstractCache$DataSetCreator" resolveInfo="AbstractCache.DataSetCreator" />
             <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.&lt;init&gt;()" />
             <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3161373106581137788">
@@ -6986,7 +6984,6 @@
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3161373106581137798">
         <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="3161373106581137799">
           <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="3161373106581137800">
-            <property name="name:3" value="" />
             <link role="classifier:3" targetNodeId="1.~AbstractCache$DataSetCreator" resolveInfo="AbstractCache.DataSetCreator" />
             <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.&lt;init&gt;()" />
             <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3161373106581137801">
@@ -7034,7 +7031,6 @@
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3161373106581137811">
         <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="3161373106581137812">
           <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="3161373106581137813">
-            <property name="name:3" value="" />
             <link role="classifier:3" targetNodeId="1.~AbstractCache$DataSetCreator" resolveInfo="AbstractCache.DataSetCreator" />
             <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.&lt;init&gt;()" />
             <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3161373106581137814">
@@ -7134,7 +7130,6 @@
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3161373106581137845">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="3161373106581137846">
                     <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="3161373106581137847">
-                      <property name="name:3" value="" />
                       <link role="classifier:3" targetNodeId="1.~CachesManager$CacheCreator" resolveInfo="CachesManager.CacheCreator" />
                       <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.&lt;init&gt;()" />
                       <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3161373106581137848">
@@ -10503,7 +10498,6 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3161373106581140764">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="3161373106581140765">
                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="3161373106581140766">
-                    <property name="name:3" value="" />
                     <link role="classifier:3" targetNodeId="10.~IReferenceInfoResolver" resolveInfo="IReferenceInfoResolver" />
                     <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.&lt;init&gt;()" />
                     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581140767">
@@ -11902,7 +11896,6 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3161373106581141343">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="3161373106581141344">
                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="3161373106581141345">
-                    <property name="name:3" value="" />
                     <link role="classifier:3" targetNodeId="10.~IReferenceInfoResolver" resolveInfo="IReferenceInfoResolver" />
                     <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.&lt;init&gt;()" />
                     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581141346">
@@ -11979,7 +11972,6 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3161373106581141359">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="3161373106581141360">
                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="3161373106581141361">
-                    <property name="name:3" value="" />
                     <link role="classifier:3" targetNodeId="10.~IReferenceInfoResolver" resolveInfo="IReferenceInfoResolver" />
                     <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.&lt;init&gt;()" />
                     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581141362">
@@ -12056,7 +12048,6 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3161373106581141375">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="3161373106581141376">
                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="3161373106581141377">
-                    <property name="name:3" value="" />
                     <link role="classifier:3" targetNodeId="10.~IReferenceInfoResolver" resolveInfo="IReferenceInfoResolver" />
                     <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.&lt;init&gt;()" />
                     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3161373106581141378">
@@ -12617,7 +12608,6 @@
                           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3161373106581141646">
                             <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="3161373106581141647">
                               <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="3161373106581141648">
-                                <property name="name:3" value="" />
                                 <link role="classifier:3" targetNodeId="12.~Condition" resolveInfo="Condition" />
                                 <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.&lt;init&gt;()" />
                                 <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3161373106581141649">

@@ -2998,5 +2998,52 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript:0" id="5248861918753541286">
+    <property name="name:0" value="RemoveNameFromAnonymousClasses" />
+    <property name="title:0" value="Remove name from anonymous classes" />
+    <property name="category:0" value="baseLanguage" />
+    <node role="part:0" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance:0" id="5248861918753541287">
+      <property name="description:0" value="Remove name from anonymous classes" />
+      <property name="showAsIntention:0" value="true" />
+      <link role="affectedInstanceConcept:0" targetNodeId="1.1170345865475:3" resolveInfo="AnonymousClass" />
+      <node role="affectedInstanceUpdater:0" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater:0" id="5248861918753541288">
+        <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5248861918753541289">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5248861918753542072">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5248861918753542079">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5248861918753542074">
+                <node role="operand:3" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node:0" id="5248861918753542073" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="5248861918753542078">
+                  <link role="property:16" targetNodeId="31.1169194664001:0" resolveInfo="name" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation:16" id="5248861918753542083">
+                <node role="value:16" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="5248861918753542085" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate:0" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate:0" id="5248861918753542059">
+        <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5248861918753542060">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5248861918753542061">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="5248861918753542068">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="5248861918753542071" />
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5248861918753542063">
+                <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="5248861918753585891">
+                  <node role="leftExpression:16" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node:0" id="5248861918753542062" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5248861918753585893">
+                  <link role="baseMethodDeclaration:3" targetNodeId="2.~SNode.getPersistentProperty(java.lang.String):java.lang.String" resolveInfo="getPersistentProperty" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5248861918753585894">
+                    <property name="value:3" value="name" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

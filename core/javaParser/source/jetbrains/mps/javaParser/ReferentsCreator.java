@@ -124,15 +124,17 @@ public class ReferentsCreator {
       } else {
         return false;
       }
-      String shortName = new String(name[name.length - 1]);
-      int dollarIndex = -1;
-      do {
-        dollarIndex = shortName.indexOf('$');
-        if (dollarIndex != -1) {
-          shortName = shortName.substring(dollarIndex + 1);
-        }
-      } while (dollarIndex != -1);
-      classifier.setName(shortName);
+      if (!binding.isLocalType()) {
+        String shortName = new String(name[name.length - 1]);
+        int dollarIndex = -1;
+        do {
+          dollarIndex = shortName.indexOf('$');
+          if (dollarIndex != -1) {
+            shortName = shortName.substring(dollarIndex + 1);
+          }
+        } while (dollarIndex != -1);
+        classifier.setName(shortName);
+      }
       classifier.setVisibility(visibility);
 
       myReferentsCreator.myBindingMap.put(binding, classifier);
