@@ -71,7 +71,6 @@ public abstract class AbstractLazyTab implements ILazyTab {
         if (model == null) continue;
         model.removeModelListener(listener);
       }
-      myModelAdditionListeners.remove(modelRef);
     }
     myModelAdditionListeners.clear();
   }
