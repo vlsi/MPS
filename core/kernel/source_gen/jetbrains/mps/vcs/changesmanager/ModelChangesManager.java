@@ -741,12 +741,6 @@ __switch__:
     // Step 2: find longest common subsequence of children 
     List<SNodeId> currentChildrenIds = SModelUtils.getNodeIds(currentChildren);
     List<SNodeId> baseChildrenIds = SModelUtils.getNodeIds(check_fh1co9_a0a31a93(myBaseVersionModel.getNodeById(parentNode.getSNodeId()), role));
-    if (baseChildrenIds == null) {
-      if (log.isWarnEnabled()) {
-        log.warn("", new AssertionError("baseChildrenIds == null for model " + model + " pair is " + pair));
-      }
-      return;
-    }
     List<Tuples._2<Iterable<SNodeId>, Iterable<SNodeId>>> differentSubsequences = LongestCommonSubsequenceFinder.findDifferentSubsequences(baseChildrenIds, currentChildrenIds);
 
     // Step 3: add new changes 
