@@ -204,5 +204,15 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473854053:0" resolveInfo="abstract" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3133930811460119173">
+    <property name="name:0" value="PatternVariableReference" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3133930811460119174">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="variable" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1136720037779:0" resolveInfo="PatternVariableDeclaration" />
+    </node>
+  </node>
 </model>
 

@@ -1156,5 +1156,20 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3133930811460119175">
+    <link role="conceptDeclaration:32" targetNodeId="1.3133930811460119173:0" resolveInfo="PatternVariableReference" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3133930811460119177">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="3133930811460119180">
+        <link role="relationDeclaration:32" targetNodeId="1.3133930811460119174:0" />
+        <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="3133930811460119181">
+          <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="3133930811460119183">
+            <property name="readOnly:32" value="true" />
+            <link role="relationDeclaration:32" targetNodeId="1.1136720037780:0" resolveInfo="varName" />
+          </node>
+        </node>
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="3133930811460119179" />
+    </node>
+  </node>
 </model>
 
