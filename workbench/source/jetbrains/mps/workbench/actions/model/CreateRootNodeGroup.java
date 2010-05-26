@@ -204,7 +204,6 @@ public class CreateRootNodeGroup extends BaseGroup {
 
       if (!trySelectInCurrentPane(node)) {
         ProjectPane pane = ProjectPane.getInstance(myProject);
-        pane.activate(false);
         pane.selectNode(node);
       }
 

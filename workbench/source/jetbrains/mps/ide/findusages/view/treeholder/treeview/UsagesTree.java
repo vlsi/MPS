@@ -687,8 +687,9 @@ public class UsagesTree extends MPSTree {
     } else {
       throw new IllegalArgumentException();
     }
-
-    projectPane.activate(focus);
+    if (focus) {
+      projectPane.activate();
+    }
   }
 
   private UsagesTreeNode getResultsNode() {

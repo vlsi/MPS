@@ -168,7 +168,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
 
     StartupManager.getInstance(myCreatedProject).runWhenProjectIsInitialized(new Runnable() {
       public void run() {
-        ProjectPane.getInstance(myCreatedProject).activate(true);
+        ProjectPane.getInstance(myCreatedProject).activate();
       }
     });
   }

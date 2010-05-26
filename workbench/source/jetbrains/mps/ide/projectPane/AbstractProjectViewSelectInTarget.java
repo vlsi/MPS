@@ -42,7 +42,7 @@ public abstract class AbstractProjectViewSelectInTarget implements SelectInTarge
         projectView.changeView(getMinorViewId());
         doSelectIn(context, requestFocus);
       }
-    }, false);
+    }, requestFocus);
   }
 
   @Override
