@@ -371,6 +371,18 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     myCachedRefactorings = null;
   }
 
+  public ModuleDescriptor getModuleDescriptor() {
+    return myLanguageDescriptor;
+  }
+
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
+    setLanguageDescriptor((LanguageDescriptor) moduleDescriptor, reloadClasses);
+  }
+
+  public LanguageDescriptor getLanguageDescriptor() {
+    return myLanguageDescriptor;
+  }
+
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
     setLanguageDescriptor(newDescriptor, true);
   }
@@ -403,18 +415,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public int getVersion() {
     return getStructureModelDescriptor().getVersion();
-  }
-
-  public ModuleDescriptor getModuleDescriptor() {
-    return myLanguageDescriptor;
-  }
-
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    setLanguageDescriptor((LanguageDescriptor) moduleDescriptor, reloadClasses);
-  }
-
-  public LanguageDescriptor getLanguageDescriptor() {
-    return myLanguageDescriptor;
   }
 
   public String getGeneratedPluginClassLongName() {
@@ -468,10 +468,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public List<ConceptDeclaration> getConceptDeclarations() {
     return getStructureModelDescriptor().getSModel().allAdapters(ConceptDeclaration.class);
-  }
-
-  public SModelDescriptor getStructureModelDescriptor() {
-    return LanguageAspect.STRUCTURE.get(this);
   }
 
   public List<SModelDescriptor> getUtilModels() {
@@ -533,6 +529,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       }
     }
     return result;
+  }
+
+  public SModelDescriptor getStructureModelDescriptor() {
+    return LanguageAspect.STRUCTURE.get(this);
   }
 
   public SModelDescriptor getTypesystemModelDescriptor() {
