@@ -50,13 +50,13 @@ public class EvaluationDialog extends BaseDialog {
     this.setModal(false);
 
     this.myEvaluationData = AbstractEvaluationLogic.createInstance(context, uiState, debugSession);
-    /*
+    if (myEvaluationData.isDeveloperMode()) {
       myEvaluationData.addGenerationListener(new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode result) {
           EvaluationDialog.this.updateGenerationResultTab(result);
         }
       });
-    */
+    }
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -79,7 +79,10 @@ public class EvaluationDialog extends BaseDialog {
     this.myPanel.add(this.myEditor.getComponenet(), BorderLayout.NORTH);
     this.myTree = new EvaluationDialog.MyTree();
     this.myPanel.add(new JScrollPane(this.myTree), BorderLayout.CENTER);
-    this.myTabbedPane.addTab("Main", myPanel);
+
+    if (myEvaluationData.isDeveloperMode()) {
+      this.myTabbedPane.addTab("Main", myPanel);
+    }
 
     addWindowListener(new WindowAdapter() {
       @Override
@@ -91,7 +94,11 @@ public class EvaluationDialog extends BaseDialog {
   }
 
   protected JComponent getMainComponent() {
-    return this.myTabbedPane;
+    if (myEvaluationData.isDeveloperMode()) {
+      return this.myTabbedPane;
+    } else {
+      return myPanel;
+    }
   }
 
   @BaseDialog.Button(position = 0, name = "Evaluate", mnemonic = 'E', defaultButton = true)

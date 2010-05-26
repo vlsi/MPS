@@ -51,8 +51,8 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public abstract class AbstractEvaluationLogic {
   private static final Logger LOG = Logger.getLogger(AbstractEvaluationLogic.class);
   private static final String EVALUATOR_NAME = "EvaluatorInstance";
-  private static final boolean isInHighLevelMode = false;
-  private static final boolean IS_RUNTIME = false;
+  private static final boolean IS_IN_HIGHLEVEL_MODE = false;
+  private static final boolean IS_DEVELOPER_MODE = false;
 
   protected JavaUiState myUiState;
   protected final DebugSession myDebugSession;
@@ -83,7 +83,7 @@ public abstract class AbstractEvaluationLogic {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         evaluatorConcept.value = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", null);
-        SPropertyOperations.set(evaluatorConcept.value, "isRuntime", "" + IS_RUNTIME);
+        SPropertyOperations.set(evaluatorConcept.value, "isRuntime", "" + IS_DEVELOPER_MODE);
       }
     });
     this.myEvaluator = evaluatorConcept.value;
@@ -146,6 +146,10 @@ public abstract class AbstractEvaluationLogic {
     ListSequence.fromList(myGenerationListeners).addElement(listener);
   }
 
+  public boolean isDeveloperMode() {
+    return IS_DEVELOPER_MODE;
+  }
+
   @Nullable
   public ValueProxy evaluate() throws BaseEvaluationException {
     try {
@@ -191,7 +195,7 @@ public abstract class AbstractEvaluationLogic {
   }
 
   public static AbstractEvaluationLogic createInstance(IOperationContext context, JavaUiState state, DebugSession session) {
-    if (isInHighLevelMode) {
+    if (IS_IN_HIGHLEVEL_MODE) {
       return new HighLevelEvaluationLogic(context, state, session);
     }
     return new LowLevelEvaluationLogic(context, state, session);
@@ -230,7 +234,7 @@ public abstract class AbstractEvaluationLogic {
             public void run() {
               try {
                 TransformationUtil.transform(evaluator);
-                if (!(AbstractEvaluationLogic.IS_RUNTIME)) {
+                if (!(AbstractEvaluationLogic.IS_DEVELOPER_MODE)) {
                   ListSequence.fromList(myGenerationListeners).visitAll(new IVisitor<_FunctionTypes._void_P1_E0<? super SNode>>() {
                     public void visit(_FunctionTypes._void_P1_E0<? super SNode> it) {
                       it.invoke(evaluator);
