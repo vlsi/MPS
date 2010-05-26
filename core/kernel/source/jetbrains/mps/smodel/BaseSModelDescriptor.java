@@ -48,7 +48,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
   private SModelCommandListener[] myModelCommandListenersCopy;
 
-  public BaseSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
+  public BaseSModelDescriptor(IModelRootManager manager, IFile modelFile,@NotNull SModelReference modelReference) {
     myModelReference = modelReference;
     myModelFile = modelFile;
     myModelRootManager = manager;
