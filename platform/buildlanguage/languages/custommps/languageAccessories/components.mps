@@ -115,6 +115,29 @@
           </node>
         </node>
       </node>
+      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Copy:7" id="3054521739276449253">
+        <property name="name:7" value="" />
+        <property name="excludes:7" value="" />
+        <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="3054521739276449254">
+          <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="3054521739276449257">
+            <property name="name:7" value="mps_home" />
+          </node>
+          <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="3054521739276449256">
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="3054521739276449258">
+              <property name="path:7" value="core" />
+            </node>
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="3054521739276449260">
+              <property name="path:7" value="kernel" />
+            </node>
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="3054521739276449262">
+              <property name="path:7" value="debug-api" />
+            </node>
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="3054521739276449264">
+              <property name="path:7" value="classes" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Copy:7" id="7323513735996323338">
         <property name="file:7" value="false" />
         <property name="excludes:7" value="idea/MPSApplicationInfo.xml" />
