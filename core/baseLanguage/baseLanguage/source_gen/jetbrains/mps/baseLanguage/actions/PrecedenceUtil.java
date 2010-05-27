@@ -11,6 +11,32 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 
 public class PrecedenceUtil {
   @NotNull
+  public static SNode getTargetForRightTransform(@NotNull SNode contextNode) {
+    SNode targetNode = contextNode;
+    for (SNode parentNode = SNodeOperations.getParent(targetNode); parentNode != null && SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.Expression"); parentNode = SNodeOperations.getParent(targetNode)) {
+      if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.IMethodCall") || SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
+        // if parent expression is IMethodCall then targetNode is either actualArgument 
+        // or typeArgument (parameters of method call), so we should not go upper 
+        // same with ParenthesizedExpression 
+        break;
+      }
+      SNode targetContainingLink = SNodeOperations.getContainingLinkDeclaration(targetNode);
+      if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation") && targetContainingLink == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", "leftExpression")) {
+        // if parent expression is BinaryOperation and target is left child of it 
+        // then we should rather transform current target 
+        break;
+      }
+      if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression") && targetContainingLink == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", "operand")) {
+        // if parent expression is DotExpression and target is operang ("left" part of the expression) 
+        // then we should rather transform current target 
+        break;
+      }
+      targetNode = SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.structure.Expression");
+    }
+    return targetNode;
+  }
+
+  @NotNull
   public static SNode getTargetForLeftTransform(@NotNull SNode contextNode, @NotNull SNode resultNode) {
     int resultingExpressionPriority = getPriority(SNodeOperations.getConceptDeclaration(resultNode)).ordinal();
     SNode targetNode = contextNode;
@@ -18,6 +44,7 @@ public class PrecedenceUtil {
       if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.IMethodCall") || SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
         // if parent expression is IMethodCall then targetNode is either actualArgument 
         // or typeArgument (parameters of method call), so we should not go upper 
+        // same with ParenthesizedExpression 
         break;
       }
       if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation") && SNodeOperations.getContainingLinkDeclaration(targetNode) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression")) {
