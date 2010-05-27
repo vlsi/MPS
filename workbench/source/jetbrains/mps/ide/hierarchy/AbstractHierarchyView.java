@@ -44,7 +44,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
   public JScrollPane myScrollPane;
 
   public AbstractHierarchyView(Project project, String id, int number, Icon icon) {
-    super(project, id, number, icon, ToolWindowAnchor.BOTTOM, true);
+    super(project, id, number, icon, ToolWindowAnchor.RIGHT, true);
   }
 
   public void initComponent() {
