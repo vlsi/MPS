@@ -198,7 +198,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     }
 
     public boolean met(final ModuleReference object) {
-      return this.myUsedLanguages.contains(object);
+      return !(this.myUsedLanguages.contains(object));
     }
   }
 }
