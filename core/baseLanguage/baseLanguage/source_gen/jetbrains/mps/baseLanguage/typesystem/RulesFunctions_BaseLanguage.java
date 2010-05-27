@@ -455,7 +455,7 @@ __switch__:
   }
 
   public static boolean isWithinStatic(SNode node) {
-    SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.FieldDeclaration","jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration","jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
+    SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
     if (ancestor != null && (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") || SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
       return true;
     }
@@ -530,7 +530,7 @@ __switch__:
     List<SNode> ancSLs = SNodeOperations.getAncestors(mainNode, "jetbrains.mps.baseLanguage.structure.StatementList", false);
     boolean use_quickfix = false;
 with_anc:
-    for (SNode anc : SNodeOperations.getAncestorsWhereConceptInList(mainNode, new String[]{"jetbrains.mps.baseLanguage.structure.TryStatement","jetbrains.mps.baseLanguage.structure.TryCatchStatement","jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false)) {
+    for (SNode anc : SNodeOperations.getAncestorsWhereConceptInList(mainNode, new String[]{"jetbrains.mps.baseLanguage.structure.TryStatement", "jetbrains.mps.baseLanguage.structure.TryCatchStatement", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false)) {
       if (ListSequence.fromList(throwTypes).isEmpty()) {
         return;
       }
