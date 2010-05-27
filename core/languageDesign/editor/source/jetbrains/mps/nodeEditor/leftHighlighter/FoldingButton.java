@@ -70,10 +70,8 @@ class FoldingButton {
       int xs[] = {-HALF_WIDTH, -HALF_WIDTH, 0, HALF_WIDTH, HALF_WIDTH};
       int ys[] = {myY1, myY1 + CANT_HEIGHT, myY1 + HEIGHT, myY1 + CANT_HEIGHT, myY1};
 
-      if (myMouseOver) {
-        g.setColor(myBackgroundColor);
-        g.fillPolygon(xs, ys, xs.length);
-      }
+      g.setColor(myBackgroundColor);
+      g.fillPolygon(xs, ys, xs.length);
       g.setColor(borderColor);
       g.drawPolygon(xs, ys, xs.length);
 
@@ -81,10 +79,8 @@ class FoldingButton {
         ys[i] = myY2 - (ys[i] - myY1);
       }
 
-      if (myMouseOver) {
-        g.setColor(myBackgroundColor);
-        g.fillPolygon(xs, ys, xs.length);
-      }
+      g.setColor(myBackgroundColor);
+      g.fillPolygon(xs, ys, xs.length);
       g.setColor(borderColor);
       g.drawPolygon(xs, ys, xs.length);
 
@@ -93,10 +89,8 @@ class FoldingButton {
       g.drawLine(-HALF_WIDTH / 2, myY2 - HALF_WIDTH, HALF_WIDTH / 2, myY2 - HALF_WIDTH);
 
     } else {
-      if (myMouseOver) {
-        g.setColor(myBackgroundColor);
-        g.fillRect(-HALF_WIDTH, (myY1 + myY2) / 2 - HALF_WIDTH, HALF_WIDTH * 2, HALF_WIDTH * 2);
-      }
+      g.setColor(myBackgroundColor);
+      g.fillRect(-HALF_WIDTH, (myY1 + myY2) / 2 - HALF_WIDTH, HALF_WIDTH * 2, HALF_WIDTH * 2);
       
       g.setColor(borderColor);
       g.drawRect(-HALF_WIDTH, (myY1 + myY2) / 2 - HALF_WIDTH, HALF_WIDTH * 2, HALF_WIDTH * 2);
