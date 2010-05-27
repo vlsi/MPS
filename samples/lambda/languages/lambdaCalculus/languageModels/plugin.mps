@@ -100,7 +100,7 @@
                   <link role="variableDeclaration:3" targetNodeId="6796549325584806284" resolveInfo="classRunner" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6796549325584806306">
-                  <link role="baseMethodDeclaration:3" targetNodeId="3.6796549325584700171" resolveInfo="run" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="3.8492459591399148235" resolveInfo="run" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.Node_FunctionParameter:0" id="6796549325584806307" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6796549325584806308">
                     <link role="variableDeclaration:3" targetNodeId="6796549325584806290" resolveInfo="className" />
