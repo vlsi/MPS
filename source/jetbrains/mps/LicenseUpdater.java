@@ -40,18 +40,20 @@ public class LicenseUpdater {
       " * limitations under the License.\n" +
       " */\n").replace("\n", LINE_SEPARATOR);
 
+  private static final String[] IGNORED_DIRS = new String[]{".svn", ".git", "_svn"};
+  
 
   private static void updateLicense(File current, boolean inSourceDir, boolean inSourceGen) {
-    if (current.getName().equals(".svn")) return;
+    if (isIgnoredDir(current.getName())) return;
 
     if (current.isDirectory()) {
       File[] files = current.listFiles();
       if (files == null) return;
       for (File f : files) {
         if (f.isDirectory()) {
-          if (isSourceFolder(f.getName()) && !inSourceGen) {
+          if (isSourceDir(f.getName()) && !inSourceGen) {
             updateLicense(f, true, inSourceGen);
-          } else if (isSourceGenFolder(f.getName())) {
+          } else if (isSourceGenDir(f.getName())) {
             updateLicense(f, inSourceDir, true);
           } else {
             updateLicense(f, inSourceDir, inSourceGen);
@@ -74,12 +76,21 @@ public class LicenseUpdater {
     }
   }
 
-  private static boolean isSourceFolder(String name) {
+  private static boolean isSourceDir(String name) {
     return "source".equals(name) || "test".equals(name) || "src".equals(name) || "tests".equals(name);
   }
 
-  private static boolean isSourceGenFolder(String name) {
+  private static boolean isSourceGenDir(String name) {
     return "source_gen".equals(name) || "test_gen".equals(name);
+  }
+
+  private static boolean isIgnoredDir(String name) {
+    for (String ignoredDir : IGNORED_DIRS) {
+      if (ignoredDir.equals(name)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public static void main(String[] args) {
