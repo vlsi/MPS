@@ -198,7 +198,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   public void activate() {
     LOG.checkEDT();
-    activatePane(new PaneActivator(), true);
+    activatePane(new PaneActivator(false), true);
   }
 
   public void rebuild() {
@@ -223,7 +223,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   private void selectModule(@NotNull final IModule module, final boolean autoFocusContents) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        activatePane(new PaneActivator() {
+        activatePane(new PaneActivator(true) {
           @Override
           public void doOnPaneActivation() {
             MPSTreeNode moduleTreeNode = myFindHelper.findMostSuitableModuleTreeNode(module);
@@ -242,21 +242,15 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   public void selectModel(@NotNull final SModelDescriptor model) {
     LOG.checkEDT();
-    activatePane(new PaneActivator() {
+    activatePane(new PaneActivator(true) {
       @Override
       public void doOnPaneActivation() {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            SModelTreeNode modelTreeNode = myFindHelper.findMostSuitableModelTreeNode(model);
-
-            if (modelTreeNode == null) {
-              LOG.warning("Couldn't select model \"" + model.getLongName() + "\" : tree node not found.");
-              return;
-            }
-
-            getTree().selectNode(modelTreeNode);
-          }
-        });
+        SModelTreeNode modelTreeNode = myFindHelper.findMostSuitableModelTreeNode(model);
+        if (modelTreeNode == null) {
+          LOG.warning("Couldn't select model \"" + model.getLongName() + "\" : tree node not found.");
+          return;
+        }
+        getTree().selectNode(modelTreeNode);
       }
     }, false);
   }
@@ -269,23 +263,19 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   public void selectNode(@NotNull final SNode node) {
     LOG.checkEDT();
-    activatePane(new PaneActivator() {
+    activatePane(new PaneActivator(true) {
       @Override
       public void doOnPaneActivation() {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        getTree().runWithoutExpansion(new Runnable() {
           public void run() {
-            getTree().runWithoutExpansion(new Runnable() {
-              public void run() {
-                MPSTreeNodeEx sNodeNode = myFindHelper.findMostSuitableSNodeTreeNode(node);
+            MPSTreeNodeEx sNodeNode = myFindHelper.findMostSuitableSNodeTreeNode(node);
 
-                if (sNodeNode == null) {
-                  LOG.warning("Couldn't select node \"" + node.getName() + "\" : tree node not found.");
-                  return;
-                }
+            if (sNodeNode == null) {
+              LOG.warning("Couldn't select node \"" + node.getName() + "\" : tree node not found.");
+              return;
+            }
 
-                getTree().selectNode(sNodeNode);
-              }
-            });
+            getTree().selectNode(sNodeNode);
           }
         });
       }
@@ -402,10 +392,25 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   private class PaneActivator implements Runnable {
+    private boolean myRunReadAction;
+
+    private PaneActivator(boolean runReadAction) {
+      myRunReadAction = runReadAction;
+    }
+
     @Override
     public final void run() {
       getProjectView().changeView(getId());
-      doOnPaneActivation();
+      if (myRunReadAction) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            doOnPaneActivation();
+          }
+        });
+      } else {
+        doOnPaneActivation();
+      }
     }
 
     protected void doOnPaneActivation() {
