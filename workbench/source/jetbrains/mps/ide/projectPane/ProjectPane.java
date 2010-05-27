@@ -401,6 +401,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     @Override
     public final void run() {
       getProjectView().changeView(getId());
+      // TODO: check if we need running read action here, or should we better do it inside myFindHelper methods.
       if (myRunReadAction) {
         ModelAccess.instance().runReadAction(new Runnable() {
           @Override
