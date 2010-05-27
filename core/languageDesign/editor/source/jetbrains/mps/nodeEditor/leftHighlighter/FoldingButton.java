@@ -46,7 +46,8 @@ class FoldingButton {
         myY1 = cell.getY() + ADDITIONAL_VERTICAL_SHIFT;
         myY2 = cell.getY() + cell.getHeight() - cell.getTopInset() - cell.getBottomInset() - 1 - ADDITIONAL_VERTICAL_SHIFT;
       }
-      return true;
+      // to avoid overlapping folding buttons
+      return myY2 - myY1 >= 2 * HEIGHT;
     }
     return false;
   }

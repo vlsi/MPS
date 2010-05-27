@@ -20,6 +20,7 @@ import java.util.Map.Entry;
 public class FoldingButtonsPainter extends AbstractFoldingAreaPainter {
   private Map<CellInfo, FoldingButton> myFoldingButtons = new HashMap<CellInfo, FoldingButton>();
   private FoldingButton myButtonUnderMouse;
+  private boolean myNeedsRelayout = false;
 
   public FoldingButtonsPainter(LeftEditorHighlighter leftHighlighter) {
     super(leftHighlighter);
@@ -33,10 +34,15 @@ public class FoldingButtonsPainter extends AbstractFoldingAreaPainter {
       assert foldable.getEditor() == editorComponent : "cell must be from my editor";
       myFoldingButtons.put(foldable.getCellInfo(), new FoldingButton(foldable, getLeftHighlighter().getBackground()));
     }
+    myNeedsRelayout = true;
   }
 
   @Override
   public void relayout() {
+    myNeedsRelayout = true;
+  }
+
+  private void doRelayout() {
     for (Iterator<Entry<CellInfo, FoldingButton>> it = myFoldingButtons.entrySet().iterator(); it.hasNext();) {
       Entry<CellInfo, FoldingButton> nextEntry = it.next();
       if (!nextEntry.getValue().relayout()) {
@@ -47,6 +53,10 @@ public class FoldingButtonsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public int getLeftAreaWidth() {
+    if (myNeedsRelayout) {
+      myNeedsRelayout = false;
+      doRelayout();
+    }
     return myFoldingButtons.isEmpty() ? 0 : FoldingButton.HALF_WIDTH;
   }
 
