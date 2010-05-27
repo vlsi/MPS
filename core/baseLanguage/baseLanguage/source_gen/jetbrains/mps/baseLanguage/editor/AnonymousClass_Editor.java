@@ -238,7 +238,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_msf9u8_a6a");
     editorCell.setDefaultText("<add members (ctrl+space)>");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_a0a6a(),new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_b0a6a(),new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_c0a6a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_a0a6a(), new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_b0a6a(), new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_c0a6a()}));
     return editorCell;
   }
 

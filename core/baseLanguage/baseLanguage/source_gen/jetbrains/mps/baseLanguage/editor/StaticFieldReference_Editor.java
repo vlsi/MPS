@@ -84,7 +84,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     }
     StaticFieldReference_DeleteDot.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new StaticFieldReference_Editor.StaticFieldReference_generic_cellMenu_a0c0(),new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu_b0c0(),new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu_c0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new StaticFieldReference_Editor.StaticFieldReference_generic_cellMenu_a0c0(), new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu_b0c0(), new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu_c0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

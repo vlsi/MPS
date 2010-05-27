@@ -184,7 +184,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     }
     IfStatement_elseDelete_action.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IfStatement_Editor.IfStatement_generic_cellMenu_a0a6a(),new IfStatement_Editor.IfStatement_generic_cellMenu_b0a6a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IfStatement_Editor.IfStatement_generic_cellMenu_a0a6a(), new IfStatement_Editor.IfStatement_generic_cellMenu_b0a6a()}));
     return editorCell;
   }
 
