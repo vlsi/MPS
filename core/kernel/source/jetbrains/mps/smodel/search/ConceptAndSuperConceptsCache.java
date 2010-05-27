@@ -55,10 +55,19 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       // http://youtrack.jetbrains.net/issue/MPS-8362
       // http://youtrack.jetbrains.net/issue/MPS-8556
       SModelDescriptor descriptor = concept.getModel().getModelDescriptor();
-      assert descriptor != null : "Model descriptor is null for concept: " + concept + " same concept from SModelUtil_new: " + SModelUtil_new.findConceptDeclaration(NameUtil.nodeFQName(concept), GlobalScope.getInstance());
+      assert descriptor != null : getAssertionMessage(element, concept);
       dependsOnModel.add(descriptor);
     }
     return dependsOnModel;
+  }
+
+  private String getAssertionMessage(Object element, AbstractConceptDeclaration concept) {
+    AbstractConceptDeclaration conceptFromModelUtil = SModelUtil_new.findConceptDeclaration(NameUtil.nodeFQName(concept), GlobalScope.getInstance());
+    return "Model descriptor is null for concept: " +
+      concept + "(" + System.identityHashCode(concept) + ")  same concept from SModelUtil_new: " +
+      conceptFromModelUtil + "(" + System.identityHashCode(conceptFromModelUtil) + "), element: " +
+      element + "(" + System.identityHashCode(element) + "), myTopConcept: " +
+      myTopConcept + "(" + System.identityHashCode(element) + ")";
   }
 
   //-----------------------
