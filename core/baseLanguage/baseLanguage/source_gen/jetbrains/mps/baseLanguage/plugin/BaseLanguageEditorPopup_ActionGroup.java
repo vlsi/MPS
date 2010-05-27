@@ -19,6 +19,8 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
     try {
       BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.CommentStatements_Action", "jetbrains.mps.baseLanguage");
       BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.UncommentStatements_Action", "jetbrains.mps.baseLanguage");
+      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.CommentLine_Action", "jetbrains.mps.baseLanguage");
+      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.UncommentLine_Action", "jetbrains.mps.baseLanguage");
       BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action", "jetbrains.mps.baseLanguage", ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder"));
       BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action", "jetbrains.mps.baseLanguage");
       BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action", "jetbrains.mps.baseLanguage");
