@@ -30,7 +30,7 @@ public class TestNodeReference_declaration_ReferentConstraint extends BaseNodeRe
     if (SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.test.structure.TestNode", false, false) != null) {
       return new ArrayList<SNode>();
     }
-    SNode test = SNodeOperations.getAncestorWhereConceptInList(_context.getEnclosingNode(), new String[]{"jetbrains.mps.lang.test.structure.NodesTestCase","jetbrains.mps.lang.test.structure.EditorTestCase"}, true, false);
+    SNode test = SNodeOperations.getAncestorWhereConceptInList(_context.getEnclosingNode(), new String[]{"jetbrains.mps.lang.test.structure.NodesTestCase", "jetbrains.mps.lang.test.structure.EditorTestCase"}, true, false);
     List<SNode> result = new ArrayList<SNode>();
     if (test != null) {
       for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(test, "jetbrains.mps.lang.test.structure.TestNodeAnnotation", true, new String[]{}))) {

@@ -16,7 +16,7 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 public class SmartClosureParameterTypeUtil {
   @InferenceMethod
   public static void equateInputType(final TypeCheckingContext typeCheckingContext, SNode scpd, SNode InputType) {
-    SNode vabs = SNodeOperations.getAncestorWhereConceptInList(scpd, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration","jetbrains.mps.baseLanguage.structure.AssignmentExpression","jetbrains.mps.baseLanguage.structure.IMethodCall","jetbrains.mps.baseLanguage.structure.DotExpression"}, false, false);
+    SNode vabs = SNodeOperations.getAncestorWhereConceptInList(scpd, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration", "jetbrains.mps.baseLanguage.structure.AssignmentExpression", "jetbrains.mps.baseLanguage.structure.IMethodCall", "jetbrains.mps.baseLanguage.structure.DotExpression"}, false, false);
     if (SNodeOperations.isInstanceOf(vabs, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       {
         SNode _nodeToCheck_1029348928467 = vabs;

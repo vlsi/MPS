@@ -21,7 +21,7 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
-    SNode parentMacro = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.ReferenceMacro","jetbrains.mps.lang.generator.structure.MapSrcNodeMacro","jetbrains.mps.lang.generator.structure.MapSrcListMacro"}, false, false);
+    SNode parentMacro = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", "jetbrains.mps.lang.generator.structure.MapSrcListMacro"}, false, false);
     if (SNodeOperations.isInstanceOf(parentMacro, "jetbrains.mps.lang.generator.structure.ReferenceMacro")) {
       {
         SNode _nodeToCheck_1029348928467 = node;

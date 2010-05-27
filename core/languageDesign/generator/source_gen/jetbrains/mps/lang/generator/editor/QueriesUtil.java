@@ -58,7 +58,7 @@ public class QueriesUtil {
       return false;
     }
     //  not inside any kind of macro (code shown in inspector) but OK on a macro node itself 
-    SNode ancestorMacro = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro","jetbrains.mps.lang.generator.structure.PropertyMacro","jetbrains.mps.lang.generator.structure.ReferenceMacro","jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"}, true, false);
+    SNode ancestorMacro = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"}, true, false);
     if (ancestorMacro != null) {
       //  exception: can be inside 'alternativeConsequence' in IF-macro 
       if (SNodeOperations.isInstanceOf(ancestorMacro, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")) {
@@ -71,7 +71,7 @@ public class QueriesUtil {
       return true;
     }
     //  inside template declaration  
-    if (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration","jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"}, false, false) != null) {
+    if (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"}, false, false) != null) {
       return true;
     }
     return false;

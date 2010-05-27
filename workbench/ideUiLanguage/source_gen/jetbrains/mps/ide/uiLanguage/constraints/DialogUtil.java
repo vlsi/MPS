@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DialogUtil {
   public static SNode getContextComponent(SNode parentNode) {
-    SNode container = SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.uiLanguage.structure.ComponentDeclaration","jetbrains.mps.uiLanguage.structure.ComponentController"}, true, false);
+    SNode container = SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.uiLanguage.structure.ComponentDeclaration", "jetbrains.mps.uiLanguage.structure.ComponentController"}, true, false);
     if (container == null) {
       return null;
     }
