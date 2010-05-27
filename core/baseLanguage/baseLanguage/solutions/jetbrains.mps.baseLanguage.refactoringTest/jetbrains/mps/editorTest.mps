@@ -8995,5 +8995,244 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="4910482895444456901">
+    <property name="package:4" value="sideTransform" />
+    <property name="name:4" value="RT_Assert_with_colon" />
+    <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="4910482895444510849">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4910482895444510850">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.AssertStatement:3" id="4910482895444519291">
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="4910482895444519293">
+            <property name="value:3" value="true" />
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="4910482895444519294">
+              <property name="isLastPosition:4" value="true" />
+              <property name="useLabelSelection:4" value="true" />
+              <property name="selectionStart:4" value="4" />
+              <property name="selectionEnd:4" value="4" />
+              <property name="cellId:4" value="property_value" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="4910482895444519295">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4910482895444519296">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.AssertStatement:3" id="4910482895444519297">
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="4910482895444519299">
+            <property name="value:3" value="true" />
+          </node>
+          <node role="message:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="4910482895444519300">
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="4910482895444519301">
+              <property name="isLastPosition:4" value="true" />
+              <property name="useLabelSelection:4" value="true" />
+              <property name="selectionStart:4" value="1" />
+              <property name="selectionEnd:4" value="1" />
+              <property name="cellId:4" value="Custom_1ltshm_a0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4910482895444519302">
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.TypeKeyStatement:4" id="4910482895444519303">
+        <property name="keys:4" value=": " />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="5041847952539798523">
+    <property name="package:4" value="sideTransform" />
+    <property name="name:4" value="RT_AssertBinaryOperation_with_colon" />
+    <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="5041847952539846136">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5041847952539846137">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.AssertStatement:3" id="5041847952539854578">
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="5041847952539922809">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5041847952539922812">
+              <property name="value:3" value="2" />
+              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="5041847952539922813">
+                <property name="isLastPosition:4" value="true" />
+                <property name="useLabelSelection:4" value="true" />
+                <property name="selectionStart:4" value="1" />
+                <property name="selectionEnd:4" value="1" />
+                <property name="cellId:4" value="property_value" />
+              </node>
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5041847952539922805">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5041847952539854580">
+                <property name="value:3" value="1" />
+              </node>
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5041847952539922808">
+                <property name="value:3" value="1" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="5041847952539922814">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5041847952539922815">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.AssertStatement:3" id="5041847952539922816">
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="5041847952539922823">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5041847952539922826">
+              <property name="value:3" value="2" />
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5041847952539922819">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5041847952539922818">
+                <property name="value:3" value="1" />
+              </node>
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5041847952539922822">
+                <property name="value:3" value="1" />
+              </node>
+            </node>
+          </node>
+          <node role="message:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="5041847952539922827">
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="5041847952539922828">
+              <property name="isLastPosition:4" value="true" />
+              <property name="useLabelSelection:4" value="true" />
+              <property name="selectionStart:4" value="1" />
+              <property name="selectionEnd:4" value="1" />
+              <property name="cellId:4" value="Custom_1ltshm_a0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5041847952539922829">
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.TypeKeyStatement:4" id="5041847952539922830">
+        <property name="keys:4" value=": " />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="5041847952539922831">
+    <property name="package:4" value="sideTransform" />
+    <property name="name:4" value="RT_AssertInstanceMethodCallOperation_with_colon" />
+    <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5041847952539922837">
+      <property name="name:3" value="Container" />
+      <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5041847952539922850">
+        <property name="name:3" value="Checker" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5041847952539922851" />
+        <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="5041847952539922852">
+          <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5041847952539922853" />
+          <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5041847952539922854" />
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5041847952539922855" />
+        </node>
+        <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5041847952539922856">
+          <property name="name:3" value="checkIt" />
+          <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="5041847952539922860" />
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5041847952539922858">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5041847952539922861">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="5041847952539922863">
+                <property name="value:3" value="true" />
+              </node>
+            </node>
+          </node>
+          <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5041847952539922859" />
+        </node>
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5041847952539922838" />
+      <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="5041847952539922839">
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5041847952539922840" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5041847952539922841" />
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5041847952539922842">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5041847952539923867">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5041847952539923868">
+              <property name="name:3" value="checker" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5041847952539923869">
+                <link role="classifier:3" targetNodeId="5041847952539922850" resolveInfo="Container.Checker" />
+              </node>
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5041847952539923871">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5041847952539923981">
+                  <link role="baseMethodDeclaration:3" targetNodeId="5041847952539922852" resolveInfo="Container.Checker" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.AssertStatement:3" id="5041847952539923983">
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5041847952539923986">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5041847952539923985">
+                <link role="variableDeclaration:3" targetNodeId="5041847952539923868" resolveInfo="checker" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5041847952539924442">
+                <link role="baseMethodDeclaration:3" targetNodeId="5041847952539922856" resolveInfo="checkIt" />
+                <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="5041847952539924443">
+                  <property name="isLastPosition:4" value="true" />
+                  <property name="useLabelSelection:4" value="true" />
+                  <property name="selectionStart:4" value="1" />
+                  <property name="selectionEnd:4" value="1" />
+                  <property name="cellId:4" value="Constant_arlg9k_c0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5041847952539924448">
+      <property name="name:3" value="Container" />
+      <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5041847952539924449">
+        <property name="name:3" value="Checker" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5041847952539924450" />
+        <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="5041847952539924451">
+          <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5041847952539924452" />
+          <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5041847952539924453" />
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5041847952539924454" />
+        </node>
+        <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5041847952539924455">
+          <property name="name:3" value="checkIt" />
+          <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="5041847952539924456" />
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5041847952539924457">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5041847952539924458">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="5041847952539924459">
+                <property name="value:3" value="true" />
+              </node>
+            </node>
+          </node>
+          <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5041847952539924460" />
+        </node>
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5041847952539924461" />
+      <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="5041847952539924462">
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5041847952539924463" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5041847952539924464" />
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5041847952539924465">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5041847952539924466">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5041847952539924467">
+              <property name="name:3" value="checker" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5041847952539924468">
+                <link role="classifier:3" targetNodeId="5041847952539924449" resolveInfo="Container.Checker" />
+              </node>
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5041847952539924469">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5041847952539924470">
+                  <link role="baseMethodDeclaration:3" targetNodeId="5041847952539924451" resolveInfo="Container.Checker" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.AssertStatement:3" id="5041847952539924471">
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5041847952539924472">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5041847952539924473">
+                <link role="variableDeclaration:3" targetNodeId="5041847952539924467" resolveInfo="checker" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5041847952539924474">
+                <link role="baseMethodDeclaration:3" targetNodeId="5041847952539924455" resolveInfo="checkIt" />
+              </node>
+            </node>
+            <node role="message:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="5041847952539924476">
+              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="5041847952539924477">
+                <property name="isLastPosition:4" value="true" />
+                <property name="useLabelSelection:4" value="true" />
+                <property name="selectionStart:4" value="1" />
+                <property name="selectionEnd:4" value="1" />
+                <property name="cellId:4" value="Custom_1ltshm_a0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5041847952539924478">
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.TypeKeyStatement:4" id="5041847952539924479">
+        <property name="keys:4" value=": " />
+      </node>
+    </node>
+  </node>
 </model>
 
