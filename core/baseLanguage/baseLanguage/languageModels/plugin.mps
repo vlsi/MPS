@@ -11660,7 +11660,7 @@
                   <link role="variableDeclaration:3" targetNodeId="3607966867310300135" resolveInfo="classRunner" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3607966867310344475">
-                  <link role="baseMethodDeclaration:3" targetNodeId="141.6796549325584700171" resolveInfo="run" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="141.8492459591399148235" resolveInfo="run" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.Node_FunctionParameter:0" id="3038691514508987083" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6796549325584737059">
                     <link role="variableDeclaration:3" targetNodeId="6796549325584737046" resolveInfo="className" />
