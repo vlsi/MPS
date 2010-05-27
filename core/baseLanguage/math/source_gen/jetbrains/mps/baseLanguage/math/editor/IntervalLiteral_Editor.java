@@ -102,7 +102,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_a0a0(),new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_b0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_a0a0(), new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_b0a0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_yq81ip_a0");
     {
       Style style = editorCell.getStyle();
@@ -129,7 +129,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_a0e0(),new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_b0e0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_a0e0(), new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_b0e0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_yq81ip_e0");
     return editorCell;
   }

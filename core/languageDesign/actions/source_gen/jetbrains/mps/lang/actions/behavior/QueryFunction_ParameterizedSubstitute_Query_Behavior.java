@@ -18,7 +18,7 @@ public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart","jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"}, false, false);
+    SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart", "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"}, false, false);
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.actions.structure.AddMenuPart")) {
       return new QueryFunction_ParameterizedSubstitute_Query_Behavior.QuotationClass_6qptm2_a0a0b0b().createNode(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.lang.actions.structure.AddMenuPart"), "concept", false));
     }
