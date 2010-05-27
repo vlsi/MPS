@@ -25729,21 +25729,31 @@
               <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6923910471520922802">
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ContinueStatement:3" id="6923910471520923503" />
               </node>
-              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.LessThanExpression:3" id="6923910471520923222">
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6923910471520923362">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6923910471520923293">
-                    <link role="variableDeclaration:3" targetNodeId="6923910471520917317" resolveInfo="clipBounds" />
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="4888324911735221529">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="4888324911735221533">
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="4888324911735221536">
+                    <property name="value:3" value="0" />
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="6923910471520923434">
-                    <link role="fieldDeclaration:3" targetNodeId="30.~Rectangle.y" resolveInfo="y" />
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4888324911735221532">
+                    <link role="variableDeclaration:3" targetNodeId="9213787164325786216" resolveInfo="height" />
                   </node>
                 </node>
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="6923910471520923012">
-                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6923910471520922873">
-                    <link role="variableDeclaration:3" targetNodeId="9213787164325786207" resolveInfo="y" />
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LessThanExpression:3" id="6923910471520923222">
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6923910471520923362">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6923910471520923293">
+                      <link role="variableDeclaration:3" targetNodeId="6923910471520917317" resolveInfo="clipBounds" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="6923910471520923434">
+                      <link role="fieldDeclaration:3" targetNodeId="30.~Rectangle.y" resolveInfo="y" />
+                    </node>
                   </node>
-                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6923910471520923083">
-                    <link role="variableDeclaration:3" targetNodeId="9213787164325786216" resolveInfo="height" />
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="6923910471520923012">
+                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6923910471520922873">
+                      <link role="variableDeclaration:3" targetNodeId="9213787164325786207" resolveInfo="y" />
+                    </node>
+                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6923910471520923083">
+                      <link role="variableDeclaration:3" targetNodeId="9213787164325786216" resolveInfo="height" />
+                    </node>
                   </node>
                 </node>
               </node>

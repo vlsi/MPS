@@ -89,7 +89,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
         continue;
       }
       int height = messageGroup.getHeight();
-      if (y + height < clipBounds.y) {
+      if (height == 0 || y + height < clipBounds.y) {
         continue;
       }
       if (clipBounds.y + clipBounds.height < y) {
