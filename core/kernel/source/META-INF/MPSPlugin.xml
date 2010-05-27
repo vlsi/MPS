@@ -21,6 +21,7 @@
         <directoryIndexExcludePolicy implementation="jetbrains.mps.project.GeneratedFilesExcludePolicy"/>
 
         <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.ChangesManagerFileStatusProvider"/>
+        <checkoutListener implementation="jetbrains.mps.vcs.ProjectCheckoutListener"/>
         <checkinHandlerFactory implementation="jetbrains.mps.vcs.OptimizeImportsCheckinHandlerFactory" />
         <checkinHandlerFactory implementation="jetbrains.mps.ide.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory" />
 
