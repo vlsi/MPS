@@ -19,6 +19,7 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
@@ -80,7 +81,7 @@ public class DeleteModelHelper {
         MPSVCSManager.getInstance(project).deleteFromDiskAndRemoveFromVcs(Arrays.asList(directory.listFiles(new FilenameFilter() {
           @Override
           public boolean accept(File dir, String name) {
-            return !".svn".equals(name);
+            return !FileTypeManager.getInstance().isFileIgnored(name);
           }
         })), false);
         MPSVCSManager.getInstance(project).deleteFromDiskAndRemoveFromVcs(Arrays.asList(directory), false);

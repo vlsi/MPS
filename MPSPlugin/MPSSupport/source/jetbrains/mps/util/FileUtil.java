@@ -31,6 +31,8 @@ import java.util.zip.ZipOutputStream;
  * @author Kostik
  */
 public class FileUtil {
+  private static final String[] IGNORED_DIRS = new String[]{".svn", ".git", "_svn"};
+
   public static File getJREHome() {
     return getRTJar().getParentFile().getParentFile();
   }
@@ -115,7 +117,7 @@ public class FileUtil {
     for (File f : what.listFiles()) {
       if (f.isDirectory()) {
 
-        if (".svn".equals(f.getName())) continue;
+        if (isIgnoredDir(f.getName())) continue;
 
         File fCopy = new File(to, f.getName());
         if (!fCopy.exists()) {
@@ -218,7 +220,7 @@ public class FileUtil {
     }
     long result = dir.lastModified();
     for (File file : files) {
-      if (file.getName().equals(".svn")) {
+      if (isIgnoredDir(file.getName())) {
         continue;
       }
 
@@ -372,5 +374,14 @@ public class FileUtil {
     File parentOfChild = child.getParentFile();
     if (parentOfChild == null) return false;
     return isParentUp(parent, parentOfChild);
+  }
+
+  public static boolean isIgnoredDir(String name) {
+    for (String ignoredDir : IGNORED_DIRS) {
+      if (ignoredDir.equals(name)) {
+        return true;
+      }
+    }
+    return false;
   }
 }

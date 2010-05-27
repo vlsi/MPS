@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.fileTypes.FileTypeManager;
 import jetbrains.mps.generator.fileGenerator.BaseModelCache;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
@@ -440,13 +441,6 @@ public class MPSModuleRepository implements ApplicationComponent {
     }
   }
 
-  private boolean isExcluded(String dirName) {
-    if (".svn".equals(dirName)) return true;
-    if ("WEB-INF".equals(dirName)) return true;
-
-    return false;
-  }
-
   public List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner) {
     return readModuleDescriptors(dir, owner, new HashSet<IFile>());
   }
@@ -457,7 +451,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     List<IModule> result = new ArrayList<IModule>();
     String dirName = dir.getName();
 
-    if (isExcluded(dirName)) return result;
+    if (FileTypeManager.getInstance().isFileIgnored(dirName)) return result;
 
     List<IFile> files = dir.list();
     if (files == null) {
@@ -474,7 +468,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     }
 
     for (IFile childDir : files) {
-      if (childDir.getName().endsWith(".svn")) continue;
+      if (FileTypeManager.getInstance().isFileIgnored(childDir.getName())) continue;
       if (hasModuleExtension(childDir.getName())) continue;
       if (excludes.contains(childDir)) continue;
 

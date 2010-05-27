@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence;
 
+import com.intellij.openapi.fileTypes.FileTypeManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
@@ -38,7 +39,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author Kostik
@@ -195,7 +199,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   private void readModelDescriptors(IFile dir, SModelRoot modelRoot, ModelOwner owner) {
-    if (dir.getName().endsWith(".svn")) return;
+    if (FileTypeManager.getInstance().isFileIgnored(dir.getName())) return;
     if (!dir.isDirectory()) return;
 
     List<IFile> files = dir.list();

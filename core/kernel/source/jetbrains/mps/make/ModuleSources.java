@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.make;
 
+import com.intellij.openapi.fileTypes.FileTypeManager;
+import jetbrains.mps.generator.fileGenerator.AllCaches;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.generator.fileGenerator.AllCaches;
-import jetbrains.mps.reloading.FileClassPathItem;
 
 import java.util.*;
 
@@ -152,7 +152,7 @@ public class ModuleSources {
   }
 
   private boolean isIgnored(IFile file) {
-    return ".svn".equals(file.getName());
+    return FileTypeManager.getInstance().isFileIgnored(file.getName());
   }
 
   private String addSubPath(String path, String name) {

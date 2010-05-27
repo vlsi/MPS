@@ -21,6 +21,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -52,7 +53,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 import java.io.File;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
@@ -904,7 +905,7 @@ public class ChangeListManagerImpl extends ChangeListManagerEx implements Projec
     // This is a hack to fix MPS-8678 and MPS-8789
     VirtualFile currentFile = file;
     while (currentFile != null) {
-      if (".svn".equals(currentFile.getName())) {
+      if (FileTypeManager.getInstance().isFileIgnored(currentFile.getName())) {
         return true;
       }
       if (DirectoryIndex.getInstance(myProject) != null &&

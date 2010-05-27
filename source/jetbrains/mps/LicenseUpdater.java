@@ -40,11 +40,9 @@ public class LicenseUpdater {
       " * limitations under the License.\n" +
       " */\n").replace("\n", LINE_SEPARATOR);
 
-  private static final String[] IGNORED_DIRS = new String[]{".svn", ".git", "_svn"};
-  
 
   private static void updateLicense(File current, boolean inSourceDir, boolean inSourceGen) {
-    if (isIgnoredDir(current.getName())) return;
+    if (FileUtil.isIgnoredDir(current.getName())) return;
 
     if (current.isDirectory()) {
       File[] files = current.listFiles();
@@ -82,15 +80,6 @@ public class LicenseUpdater {
 
   private static boolean isSourceGenDir(String name) {
     return "source_gen".equals(name) || "test_gen".equals(name);
-  }
-
-  private static boolean isIgnoredDir(String name) {
-    for (String ignoredDir : IGNORED_DIRS) {
-      if (ignoredDir.equals(name)) {
-        return true;
-      }
-    }
-    return false;
   }
 
   public static void main(String[] args) {
