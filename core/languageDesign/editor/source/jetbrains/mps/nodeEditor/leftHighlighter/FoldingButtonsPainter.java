@@ -53,10 +53,6 @@ public class FoldingButtonsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public int getLeftAreaWidth() {
-    if (myNeedsRelayout) {
-      myNeedsRelayout = false;
-      doRelayout();
-    }
     return myFoldingButtons.isEmpty() ? 0 : FoldingButton.HALF_WIDTH;
   }
 
@@ -68,6 +64,10 @@ public class FoldingButtonsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public void paintInLocalCoordinates(Graphics g) {
+    if (myNeedsRelayout) {
+      myNeedsRelayout = false;
+      doRelayout();
+    }
     Rectangle clipBounds = g.getClipBounds();
     // Painting mouse over feedback "below" all other folding buttons
     for (FoldingButton button : myFoldingButtons.values()) {
