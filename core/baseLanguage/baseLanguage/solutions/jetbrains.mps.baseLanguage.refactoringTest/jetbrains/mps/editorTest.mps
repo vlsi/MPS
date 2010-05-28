@@ -9234,5 +9234,100 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="6386137884199284577">
+    <property name="package:4" value="sideTransform.precedence" />
+    <property name="name:4" value="LT_ListElementAccess_with_PlusOperation" />
+    <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="6386137884199285709">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6386137884199285710">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6386137884199290122">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6386137884199290123">
+            <property name="name:3" value="myList" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="6386137884199290124">
+              <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="6386137884199290126" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6386137884199290128">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="6386137884199290129">
+                <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="6386137884199290130" />
+                <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6386137884199290142">
+                  <property name="value:3" value="str" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6386137884199290132">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6386137884199290133">
+            <property name="name:3" value="str" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="6386137884199290134" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression:7" id="6386137884199290137">
+              <node role="index:7" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6386137884199290140">
+                <property name="value:3" value="0" />
+              </node>
+              <node role="list:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6386137884199290136">
+                <link role="variableDeclaration:3" targetNodeId="6386137884199290123" resolveInfo="myList" />
+                <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6386137884199290143">
+                  <property name="caretPosition:4" value="0" />
+                  <property name="useLabelSelection:4" value="true" />
+                  <property name="selectionStart:4" value="0" />
+                  <property name="selectionEnd:4" value="0" />
+                  <property name="cellId:4" value="property_name" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="6386137884199290145">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6386137884199290146">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6386137884199290147">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6386137884199290148">
+            <property name="name:3" value="myList" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="6386137884199290149">
+              <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="6386137884199290150" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6386137884199290151">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="6386137884199290152">
+                <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="6386137884199290153" />
+                <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6386137884199290154">
+                  <property name="value:3" value="str" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6386137884199290155">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6386137884199290156">
+            <property name="name:3" value="str" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="6386137884199290157" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="6386137884199321749">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="6386137884199321751">
+                <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6386137884199321752">
+                  <property name="isLastPosition:4" value="true" />
+                  <property name="useLabelSelection:4" value="true" />
+                  <property name="selectionStart:4" value="1" />
+                  <property name="selectionEnd:4" value="1" />
+                  <property name="cellId:4" value="Custom_1ltshm_a0" />
+                </node>
+              </node>
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression:7" id="6386137884199290158">
+                <node role="index:7" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6386137884199290159">
+                  <property name="value:3" value="0" />
+                </node>
+                <node role="list:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6386137884199290160">
+                  <link role="variableDeclaration:3" targetNodeId="6386137884199290148" resolveInfo="myList" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6386137884199290166">
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.TypeKeyStatement:4" id="6386137884199290167">
+        <property name="keys:4" value="+ " />
+      </node>
+    </node>
+  </node>
 </model>
 

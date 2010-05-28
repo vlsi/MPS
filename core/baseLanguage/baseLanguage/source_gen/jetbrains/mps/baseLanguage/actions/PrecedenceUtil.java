@@ -120,7 +120,9 @@ public class PrecedenceUtil {
     if (SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
       return PrecedenceUtil.Precedence.PARENTHESES;
     }
-    if (SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.VariableReference") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.collections.structure.MapElement") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression")) {
+    // TODO: m.b. we should make "Default" precenence higher then all the user extensions 
+    // TODO: will be recognized as high-priority expressions 
+    if (SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.VariableReference") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.collections.structure.MapElement") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression")) {
       return PrecedenceUtil.Precedence.ARRAY_OPARATIONS_AND_METHOD_CALLS;
     }
     if (SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
