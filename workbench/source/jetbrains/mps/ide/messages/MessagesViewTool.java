@@ -649,6 +649,9 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
       boolean enabled = isEnabled();
       Icon icon = enabled ? myIcon : UIManager.getLookAndFeel().getDisabledIcon(null, myIcon);
+      if (icon == null) {
+        icon = myIcon;
+      }
       e.getPresentation().setIcon(icon);
     }
 
