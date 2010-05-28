@@ -144,7 +144,7 @@
         <property name="text:32" value="&gt;" />
         <link role="styleClass:32" targetNodeId="5.1215088010675" resolveInfo="RightParen" />
       </node>
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237817289968" />
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="6386137884199334639" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1138412002490">
