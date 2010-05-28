@@ -49,12 +49,12 @@ public class DebuggerToolPanel extends JPanel {
     Splitter splitter = new Splitter(false);
     splitter.setLayout(new BorderLayout());
     splitter.setFirstComponent(leftPanel);
-    splitter.setSecondComponent(createVariablesPanel());
+    splitter.setSecondComponent(createVariablesPanel(project));
     add(splitter, BorderLayout.CENTER);
   }
 
-  private JComponent createVariablesPanel() {
-    myVariablesTree = new VariablesTree(myDebugSession.getUiState());
+  private JComponent createVariablesPanel(Project project) {
+    myVariablesTree = new VariablesTree(project, myDebugSession.getUiState());
     JScrollPane scrollPane = new JScrollPane(myVariablesTree);
     scrollPane.setBorder(new TitledBorder("Variables"));
     return scrollPane;

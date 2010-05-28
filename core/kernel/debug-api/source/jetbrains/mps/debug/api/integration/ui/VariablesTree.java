@@ -1,27 +1,53 @@
 package jetbrains.mps.debug.api.integration.ui;
 
+import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
-import jetbrains.mps.debug.api.integration.ui.WatchableNode;
-import jetbrains.mps.debug.api.integration.ui.NodeTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.workbench.MPSDataKeys;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import javax.swing.AbstractAction;
+import javax.swing.KeyStroke;
+import javax.swing.tree.TreePath;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.util.*;
 
-class VariablesTree extends MPSTree {
+class VariablesTree extends MPSTree implements DataProvider {
   @NotNull
   private AbstractUiState myUiState;
+  private final Project myProject;
+  private final IOperationContext myContext;
+  private static final String COMMAND_OPEN_NODE_IN_PROJECT = "COMMAND_OPEN_NODE_IN_PROJECT";
 
-  public VariablesTree(AbstractUiState state) {
+  public VariablesTree(Project project, AbstractUiState state) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     myUiState = state;
+    myProject = project;
+    myContext = ProjectOperationContext.get(project);
+
+    getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_OPEN_NODE_IN_PROJECT);
+    getActionMap().put(COMMAND_OPEN_NODE_IN_PROJECT, new AbstractAction() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        AbstractWatchableNode selectedNode = findSelectedNode();
+        if (selectedNode != null) {
+          selectedNode.openNode(false, true);
+        }
+      }
+    });
   }
 
   public void setUiState(@NotNull AbstractUiState uiState) {
@@ -41,6 +67,7 @@ class VariablesTree extends MPSTree {
     }
 
     MPSTreeNode rootTreeNode = new TextTreeNode("Local Variables");
+    rootTreeNode.setTree(this);
 
     // collecting nodes
     Map<WatchablesCategory, List<IWatchable>> orphanesByCategory =
@@ -104,23 +131,50 @@ class VariablesTree extends MPSTree {
         if (watchablesWithNodes.size() == 1) {
           IWatchable watchable = watchablesWithNodes.get(0);
           WatchableNode nodeTreeNode =
-            new WatchableNode(watchable);
+            new WatchableNode(myContext, watchable);
           rootTreeNode.add(nodeTreeNode);
         } else {
-          NodeTreeNode nodeTreeNode = new NodeTreeNode(snode);
+          NodeTreeNode nodeTreeNode = new NodeTreeNode(myContext, snode);
           for (IWatchable watchable : watchablesWithNodes) {
-            nodeTreeNode.add(new WatchableNode(watchable));
+            nodeTreeNode.add(new WatchableNode(myContext, watchable));
           }
           rootTreeNode.add(nodeTreeNode);
         }
       }
 
       for (IWatchable watchable : orphanes) {
-        rootTreeNode.add(new WatchableNode(watchable));
+        rootTreeNode.add(new WatchableNode(myContext, watchable));
       }
     }
     setRootVisible(false);
     setShowsRootHandles(true);
     return rootTreeNode;
+  }
+
+  @Nullable
+  private AbstractWatchableNode findSelectedNode() {
+    TreePath selectionPath = getSelectionPath();
+    if (selectionPath == null) return null;
+    Object selectedNode = selectionPath.getLastPathComponent();
+    if (selectedNode instanceof AbstractWatchableNode) {
+      return ((AbstractWatchableNode) selectedNode);
+    }
+    return null;
+  }
+
+  @Override
+  @Nullable
+  public Object getData(@NonNls String dataId) {
+    if (dataId.equals(MPSDataKeys.NODE.getName())) {
+      AbstractWatchableNode selectedNode = findSelectedNode();
+      if (selectedNode != null) {
+        return selectedNode.getNode();
+      }
+    }
+    return null;
+  }
+
+  public Project getProject() {
+    return myProject;
   }
 }

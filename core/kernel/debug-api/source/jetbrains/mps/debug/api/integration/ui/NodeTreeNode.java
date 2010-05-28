@@ -1,21 +1,22 @@
 package jetbrains.mps.debug.api.integration.ui;
 
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
-public class NodeTreeNode extends MPSTreeNode {
-  private final SNode mySNode;
-
+public class NodeTreeNode extends AbstractWatchableNode {
   public NodeTreeNode(@NotNull SNode node) {
-    super(null);
-    mySNode = node;
+    this(null, node);
+  }
+
+  public NodeTreeNode(IOperationContext context, @NotNull SNode node) {
+    super(context, node);
     updatePresentation();
   }
 
   @Override
   protected void updatePresentation() {
-    setNodeIdentifier(mySNode.toString());
+    setNodeIdentifier(myNode.toString());
     setIcon(jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON);
   }
 }

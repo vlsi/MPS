@@ -164,7 +164,7 @@ public class MPSEditorOpener{
     return openNode(node, context, true, select, openBaseNode);
   }
 
-  private IEditor openNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select, final boolean openBaseNode) {
+  private IEditor openNode(final SNode node, @NotNull final IOperationContext context, final boolean focus, final boolean select, final boolean openBaseNode) {
     final Project ideaProject = context.getProject();
     ideaProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
     /* TODO use SNodePointer instead of SNode */

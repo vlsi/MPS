@@ -1,25 +1,29 @@
 package jetbrains.mps.debug.api.integration.ui;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import java.util.List;
 
-public class WatchableNode extends MPSTreeNode {
+public class WatchableNode extends AbstractWatchableNode {
   private boolean myInitialized;
   private IWatchable myWatchable;
-  @Nullable
-  private SNode myNode;
 
   public WatchableNode(IWatchable watchable) {
-    super(null);
+    this(null, watchable);
+  }
+
+  public WatchableNode(IOperationContext context, IWatchable watchable) {
+    super(context, watchable.getNode());
     myWatchable = watchable;
-    myNode = watchable.getNode();
     updatePresentation();
   }
 
@@ -81,7 +85,6 @@ public class WatchableNode extends MPSTreeNode {
   protected IValue getValue() {
     return myWatchable.getValue();
   }
-
 
   @Override
   protected void doInit() {
