@@ -139,7 +139,7 @@
     <copy file="${license.src.path}" tofile="${license.path}" />
     <unzip src="${jre.zip.path}" dest="${jre.unzipped.path}/jre" />
     <copy file="${vmoptions.file}" tofile="${root.folder}/bin/${vmoptions.exe.file.name}" />
-    <java classpath="${mps_home}/platform/buildlanguage/languages/distrib/classes" classname="jetbrains.mps.build.GenerateNSI" fork="true" dir="${deploy.dir}" failonerror="true">
+    <java classname="jetbrains.mps.build.GenerateNSI" fork="true" dir="${deploy.dir}" failonerror="true">
       <arg file="${nsis.script.path.tmp}/../install.nsh" />
       <arg file="${nsis.script.path.tmp}/../uninstall.nsh" />
       <arg file="${root.folder}" />
@@ -147,6 +147,10 @@
       <arg file="${application.icon}" />
       <arg file="${jre.unzipped.path}/jre" />
       <arg file="${homepage.icon}" />
+      <classpath>
+        <pathelement path="${mps_home}/platform/buildlanguage/languages/distrib/classes" />
+        <pathelement path="${mps_home}/MPSPlugin/MPSSupport/classes" />
+      </classpath>
     </java>
     <replace file="${nsis.script.path.tmp}" token="$version$" value="${version}" />
     <replace file="${nsis.script.path.tmp}" token="$build$" value="${build.number}" />

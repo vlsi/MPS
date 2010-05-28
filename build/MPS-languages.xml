@@ -1148,7 +1148,6 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.xmlQuery.runtime_c8a">
-    <mkdir dir="core/kernel/xmlQuery/runtime/classes_gen" />
     <mkdir dir="core/kernel/xmlQuery/runtime/source_gen.caches" />
     <mkdir dir="core/kernel/xmlQuery/runtime/test_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/workbench/jetbrains.mps.xmlQuery.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -1156,7 +1155,6 @@
       <zipfileset dir="core/kernel/xmlQuery/runtime/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="core/kernel/xmlQuery/runtime/test_gen.caches" prefix="test_gen.caches" />
       <zipfileset dir="core/kernel/xmlQuery/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/kernel/xmlQuery/runtime/classes_gen" />
     </jar>
   </target>
 </project>

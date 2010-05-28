@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.build;
 
+import jetbrains.mps.util.FileUtil;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -163,7 +165,7 @@ public class GenerateNSI {
     for (File f : files) {
       if (!f.isDirectory()) {
         list.add(f);
-      } else if (!f.getName().equals(".svn")) {
+      } else if (!FileUtil.isIgnoredDir(f.getName())) {
         getAllFiles(f, list);
       }
     }
@@ -176,7 +178,7 @@ public class GenerateNSI {
   }
 
   private ArrayList<File> getAllDirs(File dir, ArrayList<File> list) {
-    if (dir.getName().equals(".svn")) return list;
+    if (FileUtil.isIgnoredDir(dir.getName())) return list;
     list.add(dir);
     File[] files = dir.listFiles();
     for (File f : files) {

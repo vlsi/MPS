@@ -528,11 +528,19 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "SystemSpecificConfigToTargetDeclaration");
   }
 
-  public static Object referenceMacro_GetReferent_1230650270986(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1580548376419850362(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "NullToMPSHomePropertyDeclaration");
   }
 
-  public static Object referenceMacro_GetReferent_4331351068295137109(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1580548376419850393(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "NullToMPSHomePropertyDeclaration");
+  }
+
+  public static Object referenceMacro_GetReferent_1580548376419850408(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "NullToMPSHomePropertyDeclaration");
+  }
+
+  public static Object referenceMacro_GetReferent_1580548376419850436(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "NullToMPSHomePropertyDeclaration");
   }
 
@@ -630,7 +638,12 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "homepageIcon", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1230645373261(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1580548376419850372(final IOperationContext operationContext, final IfMacroContext _context) {
+    Language distLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.distrib");
+    return distLanguage.isPackaged();
+  }
+
+  public static boolean ifMacro_Condition_1580548376419850417(final IOperationContext operationContext, final IfMacroContext _context) {
     Language distLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.distrib");
     return distLanguage.isPackaged();
   }
