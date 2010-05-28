@@ -8,6 +8,7 @@ import jetbrains.mps.project.MPSProject;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
@@ -33,7 +34,7 @@ public enum JUnitRunTypes {
       if (ListSequence.fromList(TestRunUtil.getValues(configuration.getStateObject().method, configuration.getStateObject().methods)).isEmpty()) {
         errorReport = "methods list is empty";
       } else if (!(TestRunUtil.validateMethods(configuration.getStateObject().node, configuration.getStateObject().nodes, configuration.getStateObject().method, configuration.getStateObject().methods))) {
-        errorReport = "methods is not valid";
+        errorReport = "methods are not valid";
       }
       return errorReport;
     }
@@ -65,7 +66,7 @@ public enum JUnitRunTypes {
       if (ListSequence.fromList(TestRunUtil.getValues(configuration.getStateObject().node, configuration.getStateObject().nodes)).isEmpty()) {
         errorReport = "classes list is empty";
       } else if (!(TestRunUtil.validateNodes(configuration.getStateObject().node, configuration.getStateObject().nodes))) {
-        errorReport = "nodes is not valid";
+        errorReport = "nodes are not valid";
       }
       return errorReport;
     }
@@ -74,7 +75,7 @@ public enum JUnitRunTypes {
   MODEL() {
 
     public List<SNode> collect(DefaultJUnit_Configuration configuration, MPSProject project) {
-      return TestRunUtil.getModelTests(TestRunUtil.getModel(configuration.getStateObject().model));
+      return Sequence.fromIterable(TestRunUtil.getModelTests(TestRunUtil.getModel(configuration.getStateObject().model))).toListSequence();
     }
 
     public String check(DefaultJUnit_Configuration configuration) {
@@ -91,7 +92,7 @@ public enum JUnitRunTypes {
   MODULE() {
 
     public List<SNode> collect(DefaultJUnit_Configuration configuration, MPSProject project) {
-      return TestRunUtil.getModuleTests(configuration.getStateObject().module);
+      return Sequence.fromIterable(TestRunUtil.getModuleTests(configuration.getStateObject().module)).toListSequence();
     }
 
     public String check(DefaultJUnit_Configuration configuration) {
@@ -111,7 +112,7 @@ public enum JUnitRunTypes {
       List<SNode> all = new ArrayList<SNode>();
       if (project != null) {
         for (IModule projectModule : project.getModules()) {
-          ListSequence.fromList(all).addSequence(ListSequence.fromList(TestRunUtil.getModuleTests(projectModule)));
+          ListSequence.fromList(all).addSequence(Sequence.fromIterable(TestRunUtil.getModuleTests(projectModule)));
         }
       }
       return all;

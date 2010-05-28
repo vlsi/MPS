@@ -10,9 +10,6 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.ide.DataManager;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
 import jetbrains.mps.logging.Logger;
 import com.intellij.execution.configurations.RunProfileState;
@@ -26,12 +23,14 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import jetbrains.mps.debug.api.info.StacktraceUtil;
+import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JComponent;
 import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import com.intellij.execution.executors.DefaultDebugExecutor;
@@ -86,10 +85,11 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             errorReport.value = DefaultJUnit_Configuration.this.getStateObject().type.check(DefaultJUnit_Configuration.this);
           }
         });
-        MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
-        if (DefaultJUnit_Configuration.this.collectWhatToTest(mpsProject).isEmpty()) {
-          errorReport.value = "could not find tests to run";
-        }
+        // We do not check, if there is something to test, since it can be very slow 
+        // see MPS-8781 JUnit run configuration check method performance. 
+        // TODO might add a button, which does collect all tests in selected config 
+        // <node> 
+        // <node> 
         if (errorReport.value != null) {
           error_22042010.append(errorReport.value).append("\n");
         }

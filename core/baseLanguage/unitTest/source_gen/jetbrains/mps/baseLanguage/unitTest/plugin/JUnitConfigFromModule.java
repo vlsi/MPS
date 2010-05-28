@@ -7,7 +7,7 @@ import jetbrains.mps.project.IModule;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 
 public class JUnitConfigFromModule extends BaseConfigCreator<IModule> implements Cloneable {
@@ -23,7 +23,7 @@ public class JUnitConfigFromModule extends BaseConfigCreator<IModule> implements
   }
 
   private void createConfig(final IModule parameter) {
-    if (ListSequence.fromList(TestRunUtil.getModuleTests(parameter.getModuleFqName())).isEmpty()) {
+    if (Sequence.fromIterable(TestRunUtil.getModuleTests(parameter.getModuleFqName())).isEmpty()) {
       return;
     }
     final String name = parameter.getModuleFqName();
