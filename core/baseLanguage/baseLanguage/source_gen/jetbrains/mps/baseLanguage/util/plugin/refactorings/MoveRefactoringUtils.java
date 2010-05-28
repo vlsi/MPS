@@ -23,6 +23,9 @@ public class MoveRefactoringUtils {
   }
 
   private static void addImportIfNeed(SModel model, SModel toImport) {
+    if (model == null || toImport == null) {
+      return;
+    }
     if (model == toImport || model.getImportedModelUIDs().contains(toImport.getSModelReference())) {
       return;
     }
