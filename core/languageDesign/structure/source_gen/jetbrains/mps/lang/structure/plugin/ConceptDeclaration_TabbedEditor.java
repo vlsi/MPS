@@ -116,7 +116,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
       List<SNode> nodes = new ArrayList<SNode>();
       IScope scope = ConceptEditorHelper.getScope(Editor_Tab.this);
       ListSequence.fromList(nodes).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_1567570417158062208(node, scope, LanguageAspect.EDITOR)));
-      return nodes;
+      return ConceptEditorHelper.sortRootsByConcept(nodes, new SNode[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuComponent"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleSheet")});
     }
 
     public String getTabTextForNode(SNode node) {
@@ -549,8 +549,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     public List<SNode> getNodes(SNode node) {
       List<SNode> nodes = new ArrayList<SNode>();
       IScope scope = ConceptEditorHelper.getScope(Generator_Tab.this);
-      ListSequence.fromList(nodes).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findAdditionalGenerators_3590548766499750586(node, scope)));
       ListSequence.fromList(nodes).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(node, scope)));
+      ListSequence.fromList(nodes).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findAdditionalGenerators_3590548766499750586(node, scope)));
       return nodes;
     }
 

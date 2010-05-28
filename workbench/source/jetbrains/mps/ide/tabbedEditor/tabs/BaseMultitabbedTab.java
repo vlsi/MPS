@@ -222,6 +222,9 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     for (Pair<SNode, IOperationContext> loadableNodeAndContext : loadableNodes) {
       addInnerTab(loadableNodeAndContext.o1, loadableNodeAndContext.o2);
     }
+    if (myInnerTabbedPane.getTabCount() != 0) {
+      myInnerTabbedPane.setSelectedIndex(0);
+    }
 
     myComponent.add(myInnerTabbedPane, BorderLayout.CENTER);
 

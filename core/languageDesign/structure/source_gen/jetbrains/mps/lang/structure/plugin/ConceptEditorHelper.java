@@ -23,6 +23,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.plugins.pluginparts.tabbedEditor.BaseMultiTab;
 import jetbrains.mps.plugins.pluginparts.tabbedEditor.BaseSingleTab;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import java.util.Map;
@@ -101,6 +103,18 @@ public class ConceptEditorHelper {
     Language language = SModelUtil.getDeclaringLanguage(node, GlobalScope.getInstance());
     assert language != null : "language is null for node " + node;
     return language;
+  }
+
+  /*package*/ static List<SNode> sortRootsByConcept(List<SNode> roots, final SNode[] conceptOrder) {
+    return ListSequence.fromList(roots).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode root) {
+        int conceptIndex = Sequence.fromIterable(Sequence.fromArray(conceptOrder)).indexOf(SNodeOperations.getConceptDeclaration(root));
+        return (conceptIndex == -1 ?
+          conceptOrder.length :
+          conceptIndex
+        );
+      }
+    }, true).toListSequence();
   }
 
   public static class MultitabbedListener extends SModelAdapter {
