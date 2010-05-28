@@ -210,6 +210,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5569019188765049940">
     <property name="name:3" value="A" />
+    <property name="abstractClass:3" value="true" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5569019188765049947">
       <property name="name:3" value="getT" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="5569019188765049951">
@@ -217,6 +218,19 @@
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5569019188765049949" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5569019188765049950" />
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3148306863810590607">
+      <property name="name:3" value="foobarString" />
+      <property name="isAbstract:3" value="true" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3148306863810590608" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3148306863810590609" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3148306863810590610" />
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3148306863810590611">
+        <property name="name:3" value="s" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3148306863810590612">
+          <link role="classifier:3" targetNodeId="14.~String" resolveInfo="String" />
+        </node>
+      </node>
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5569019188765049941" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="5569019188765049942">
@@ -241,6 +255,16 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3148306863810591622">
+      <property name="name:3" value="foobarString" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3148306863810591623" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3148306863810591624" />
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3148306863810591625">
+        <property name="name:3" value="s" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="3148306863810591628" />
+      </node>
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3148306863810591627" />
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5569019188765049953" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="5569019188765049954">

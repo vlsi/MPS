@@ -19377,6 +19377,26 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4859441577819567599" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1225271178076" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3148306863810674376">
+      <property name="name" value="getErasureSignature" />
+      <link role="overriddenMethod" targetNodeId="1213877337313" resolveInfo="getErasureSignature" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3148306863810674379">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3148306863810674526">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3148306863810684182">
+            <node role="operand:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="3148306863810674528">
+              <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3148306863810684181">
+                <link role="classifier:3" targetNodeId="2.~String" resolveInfo="String" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3148306863810684186">
+              <link role="baseMethodDeclaration:16" targetNodeId="1213877337313" resolveInfo="getErasureSignature" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="3148306863810674380" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3148306863810674381" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1225271178077">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225271178078" />
     </node>
