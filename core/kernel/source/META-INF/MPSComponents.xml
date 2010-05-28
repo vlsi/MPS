@@ -230,6 +230,10 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.intentions.IntentionsPreferencesPage</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.typesystem.inference.TypeChecker</implementation-class>
         </component>
 

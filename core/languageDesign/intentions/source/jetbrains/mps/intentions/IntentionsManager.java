@@ -256,6 +256,11 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return sNode;
   }
 
+  @NotNull
+  public Set<Intention> getAllIntentions() {
+    return Collections.unmodifiableSet(myNodesByIntentions.keySet());
+  }
+
   //-------------reloading-----------------
 
   public void dispose() {
