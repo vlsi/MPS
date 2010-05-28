@@ -66,14 +66,15 @@ import java.util.Set;
   }
 )
 public class BreakpointManagerComponent implements ProjectComponent, PersistentStateComponent<MyState> {
-  private static Logger LOG = Logger.getLogger(BreakpointManagerComponent.class);
+  private static final Logger LOG = Logger.getLogger(BreakpointManagerComponent.class);
 
   private final Project myProject;
+  private final DebugInfoManager myDebugInfoManager;
 
-  private EditorsProvider myEditorsProvider;
-  private Map<SNodePointer, Set<AbstractMPSBreakpoint>> myRootsToBreakpointsMap = new HashMap<SNodePointer, Set<AbstractMPSBreakpoint>>();
+  private final EditorsProvider myEditorsProvider;
+  private final Map<SNodePointer, Set<AbstractMPSBreakpoint>> myRootsToBreakpointsMap = new HashMap<SNodePointer, Set<AbstractMPSBreakpoint>>();
 
-  private Set<AbstractMPSBreakpoint> myBreakpoints = new HashSet<AbstractMPSBreakpoint>();
+  private final Set<AbstractMPSBreakpoint> myBreakpoints = new HashSet<AbstractMPSBreakpoint>();
 
   // because DebugInfoInitializers may be loaded after this component
   private Set<FutureBreakpoint> myFutureBreakpoints = new HashSet<FutureBreakpoint>();
@@ -104,8 +105,9 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
   };
 
-  public BreakpointManagerComponent(Project project) {
+  public BreakpointManagerComponent(Project project, DebugInfoManager debugInfoManager) {
     myProject = project;
+    myDebugInfoManager = debugInfoManager;
     myEditorsProvider = new EditorsProvider(project);
     myEditorsProvider.addEditorOpenListener(new EditorOpenListener() {
       @Override
@@ -127,6 +129,10 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
   }
 
+  public boolean isDebuggable(EditorCell cell) {
+    return findDebuggableCell(cell) != null;
+  }
+
   private SNode findDebuggableNode(EditorComponent editorComponent, int x, int y) {
     EditorCell foundCell = editorComponent.getRootCell().findCellWeak(x, y);
     if (foundCell == null) return null;
@@ -143,17 +149,15 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   }
 
   private EditorCell findDebuggableCell(EditorCell foundCell) {
-    final BLDebugInfoCache cache = BLDebugInfoCache.getInstance();
     EditorCell cell = foundCell;
     while (cell != null) {
       SNode node = cell.getSNode();
-      DebugInfo debugInfo = cache.get(node.getModel().getModelDescriptor());
-      if (debugInfo != null && debugInfo.getPositionForNode(node.getId()) != null) {
-        break;
+      if (myDebugInfoManager.isDebuggableNode(node)) {
+        return cell;
       }
       cell = cell.getParent();
     }
-    return cell;
+    return null;
   }
 
   @Override
@@ -235,8 +239,10 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       AbstractMPSBreakpoint newBreakpoint = createNewBreakpoint(node);
       if (newBreakpoint != null) {
         addBreakpoint(newBreakpoint);
+      } else if (myDebugInfoManager.isDebuggableNode(node)) {
+        LOG.error("Node is debuggable but created breakpoint is null.", node);
       } else {
-        LOG.error("node is debuggable but created breakpoint is null");
+        LOG.error("Trying to create breakpoint on non-debuggable node.", node);
       }
     }
   }

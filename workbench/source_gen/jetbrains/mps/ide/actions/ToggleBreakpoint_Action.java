@@ -11,8 +11,8 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 public class ToggleBreakpoint_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -35,7 +35,7 @@ public class ToggleBreakpoint_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      event.getPresentation().setEnabled(ToggleBreakpoint_Action.this.project.getComponent(BreakpointManagerComponent.class).isDebuggable(ToggleBreakpoint_Action.this.selectedCell));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "ToggleBreakpoint", t);
