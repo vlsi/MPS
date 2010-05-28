@@ -16,15 +16,15 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.RuntimeInterruptedException;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import com.intellij.ui.awt.RelativePoint;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.intentions.*;
 import jetbrains.mps.intentions.IntentionsManager.QueryDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -33,8 +33,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.AbstractAction;
 import javax.swing.Icon;
@@ -228,7 +228,48 @@ public class IntentionsSupport {
     return getInsertedPosition(viewRect, myLightBulb.getPreferredSize(), new Point(x, y));
   }
 
-  private BaseGroup getIntentionGroup() {
+  private AnAction getIntentionGroup(final Intention intention, final SNode node) {
+    Icon icon = IntentionType.getLowestPriorityType().getIcon();
+
+    final DefaultActionGroup intentionActionGroup = new DefaultActionGroup(intention.getDescription(node, myEditor.getEditorContext()), true) {
+      @Override
+      public boolean canBePerformed() {
+        return true;
+      }
+
+      @Override
+      public void actionPerformed(AnActionEvent e) {
+        ModelAccess.instance().runCommandInEDT(new Runnable() {
+          public void run() {
+            intention.execute(node, myEditor.getEditorContext());
+          }
+        });
+      }
+    };
+    intentionActionGroup.add(new BaseAction("Go to Intention Declaration", "Go to declaration of this intention", icon) {
+      @Override
+      protected void doExecute(AnActionEvent e) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            SNode intentionNode = IntentionsManager.getInstance().getNodeByIntention(intention);
+            if (intentionNode == null) {
+              Messages.showErrorDialog(myEditor.getOperationContext().getProject(),
+                                       "Could not find declaration for " + intention.getClass().getSimpleName()
+                                         + " intention (" + intention.getClass().getName() + ")", "Intention Declaration");
+            } else {
+              myEditor.getOperationContext().getComponent(MPSEditorOpener.class).editNode(intentionNode, myEditor.getOperationContext());
+              ProjectPane.getInstance(myEditor.getOperationContext().getProject()).selectNode(intentionNode);
+            }
+          }
+        });
+      }
+    });
+    intentionActionGroup.getTemplatePresentation().setIcon(icon);
+
+    return intentionActionGroup;
+  }
+
+  private BaseGroup getIntentionsGroup() {
     BaseGroup group = new BaseGroup("");
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
     groupItems.addAll(getAvailableIntentions());
@@ -250,19 +291,7 @@ public class IntentionsSupport {
       }
     });
     for (final Pair<Intention, SNode> pair : groupItems) {
-      BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), myEditor.getEditorContext())) {
-        protected void doExecute(AnActionEvent e) {
-          ModelAccess.instance().runCommandInEDT(new Runnable() {
-            public void run() {
-              pair.getFirst().execute(pair.getSecond(), myEditor.getEditorContext());
-            }
-          });
-        }
-      };
-      Icon icon = IntentionType.getLowestPriorityType().getIcon();
-      action.getTemplatePresentation().setIcon(icon);
-      action.setExecuteOutsideCommand(true);
-      group.add(action);
+      group.add(getIntentionGroup(pair.getFirst(), pair.getSecond()));
     }
     return group;
   }
@@ -278,7 +307,7 @@ public class IntentionsSupport {
     final DataContext dataContext = DataManager.getInstance().getDataContext(editorContext.getNodeEditorComponent(), x, y);
     ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
       public ListPopup compute() {
-        ActionGroup group = getIntentionGroup();
+        ActionGroup group = getIntentionsGroup();
         ListPopup popup = null;
         if (group != null) {
           popup = JBPopupFactory.getInstance()
