@@ -40,6 +40,7 @@ import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
+import com.intellij.openapi.util.Disposer;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.reloading.CompositeClassPathItem;
@@ -170,7 +171,10 @@ public abstract class AbstractEvaluationLogic {
       InMemoryJavaGenerationHandler handler = new AbstractEvaluationLogic.MyInMemoryJavaGenerationHandler(false, true, classpaths);
       Project ideaProject = this.myAuxModule.getMPSProject().getProject();
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
-      boolean successful = manager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), this.myAuxModel), myContext, handler, new ProgressWindow(false, ideaProject), messageHandler, true);
+      ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
+      boolean successful = manager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), this.myAuxModel), myContext, handler, progressWindow, messageHandler, true);
+
+      Disposer.dispose(progressWindow);
 
       String fullClassName = this.myAuxModel.getLongName() + "." + EVALUATOR_NAME;
       String source = handler.getSources().get(fullClassName);

@@ -43,7 +43,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <maxImportIndex value="70" />
+  <maxImportIndex value="71" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.ui(jetbrains.mps.ide.ui@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.debug.evaluation(jetbrains.mps.debug.evaluation@java_stub)" version="-1" />
@@ -100,6 +100,7 @@
   <import index="68" modelUID="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.stubs.javastub.asm)" version="-1" />
   <import index="69" modelUID="f:java_stub#jetbrains.mps.debug.api(jetbrains.mps.debug.api@java_stub)" version="-1" />
   <import index="70" modelUID="f:java_stub#javax.swing.text(javax.swing.text@java_stub)" version="-1" />
+  <import index="71" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5849716370568348282">
     <property name="name:3" value="EvaluationDialog" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5849716370568348283" />
@@ -7666,6 +7667,25 @@
                 </node>
               </node>
             </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2788001542316982176">
+              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2788001542316982177">
+                <property name="name:3" value="progressWindow" />
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2788001542316982178">
+                  <link role="classifier:3" targetNodeId="62.~ProgressWindow" resolveInfo="ProgressWindow" />
+                </node>
+                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2788001542316982179">
+                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2788001542316982180">
+                    <link role="baseMethodDeclaration:3" targetNodeId="62.~ProgressWindow.&lt;init&gt;(boolean,com.intellij.openapi.project.Project)" resolveInfo="ProgressWindow" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2788001542316982181">
+                      <property name="value:3" value="false" />
+                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2788001542316982182">
+                      <link role="variableDeclaration:3" targetNodeId="2013735682822662042" resolveInfo="ideaProject" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6185141366360305816">
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6185141366360305817">
                 <property name="name:3" value="successful" />
@@ -7695,16 +7715,8 @@
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6185141366360305833">
                       <link role="variableDeclaration:3" targetNodeId="6185141366360305796" resolveInfo="handler" />
                     </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6185141366360305834">
-                      <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2013735682822661685">
-                        <link role="baseMethodDeclaration:3" targetNodeId="62.~ProgressWindow.&lt;init&gt;(boolean,com.intellij.openapi.project.Project)" resolveInfo="ProgressWindow" />
-                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2013735682822662039">
-                          <property name="value:3" value="false" />
-                        </node>
-                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2013735682822662052">
-                          <link role="variableDeclaration:3" targetNodeId="2013735682822662042" resolveInfo="ideaProject" />
-                        </node>
-                      </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2788001542316982183">
+                      <link role="variableDeclaration:3" targetNodeId="2788001542316982177" resolveInfo="progressWindow" />
                     </node>
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6185141366360305836">
                       <link role="variableDeclaration:3" targetNodeId="6185141366360305805" resolveInfo="messageHandler" />
@@ -7716,7 +7728,17 @@
                 </node>
               </node>
             </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="6185141366360305838" />
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="2788001542317039957" />
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5514781920652467685">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5514781920652467905">
+                <link role="baseMethodDeclaration:3" targetNodeId="71.~Disposer.dispose(com.intellij.openapi.Disposable):void" resolveInfo="dispose" />
+                <link role="classConcept:3" targetNodeId="71.~Disposer" resolveInfo="Disposer" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5514781920652467906">
+                  <link role="variableDeclaration:3" targetNodeId="2788001542316982177" resolveInfo="progressWindow" />
+                </node>
+              </node>
+            </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="5514781920652444329" />
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6185141366360305839">
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6185141366360305840">
                 <property name="name:3" value="fullClassName" />
