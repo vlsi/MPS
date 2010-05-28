@@ -1108,46 +1108,6 @@
           </node>
         </node>
       </node>
-      <node role="taskCall:21" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="1239364393505">
-        <link role="declaration:22" targetNodeId="2v.353793545802812427" resolveInfo="copy" />
-        <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393506">
-          <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393507">
-            <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393508">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705977">
-                <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
-              </node>
-              <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393510">
-                <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393511">
-                  <property name="value:21" value="/yjp-controller-api-redist.jar" />
-                </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393512">
-                  <property name="value:21" value="/idea/lib" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393513">
-          <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812455" resolveInfo="todir" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393514">
-            <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393515">
-              <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393516">
-                <property name="value:21" value="/yjp" />
-              </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705978">
-                <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393518">
-          <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812450" resolveInfo="overwrite" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.BooleanLiteral:21" id="1239364393519">
-            <property name="value:21" value="true" />
-          </node>
-        </node>
-      </node>
       <node role="taskCall:21" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="1239364393520">
         <link role="declaration:22" targetNodeId="2v.353793545802812427" resolveInfo="copy" />
         <node role="nested:22" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="1239364393521">

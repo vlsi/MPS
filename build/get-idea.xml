@@ -58,7 +58,6 @@
     </copy>
     <copy file="${tmp}/idea/lib/xmlrpc-2.0.jar" todir="${lib.dir}/xmlrpc" overwrite="true" />
     <copy file="${tmp}/idea/lib/xstream.jar" todir="${lib.dir}/xstream" overwrite="true" />
-    <copy file="${tmp}/idea/lib/yjp-controller-api-redist.jar" todir="${lib.dir}/yjp" overwrite="true" />
     <copy todir="${idea.platform.dir}" overwrite="true">
       <fileset dir="${tmp}/idea/lib" includes="annotations.jar, boot.jar, bootstrap.jar, extensions.jar, forms_rt.jar, icons.jar, util.jar, " />
     </copy>
