@@ -64,7 +64,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                       final SNode concreteParam = myParam;
                       typeCheckingContext.whenConcrete(concreteParam, new Runnable() {
                         public void run() {
-                          if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.UpperBoundType"))) {
+                          if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
                             {
                               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                               BaseIntentionProvider intentionProvider = null;
@@ -136,7 +136,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                 result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) finalTypeParam, (SNode) myParam, true);
                 {
                   final SNode concreteParam = myParam;
-                  if (!(SNodeOperations.isInstanceOf(concreteParam, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(concreteParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType"))) {
+                  if (!(SNodeOperations.isInstanceOf(concreteParam, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(concreteParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(concreteParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
                     result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) finalTypeParam, (SNode) concreteParam);
                   }
                 }
