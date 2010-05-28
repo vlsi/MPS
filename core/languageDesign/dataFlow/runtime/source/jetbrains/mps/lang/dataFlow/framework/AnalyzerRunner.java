@@ -20,16 +20,16 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.*;
 import java.util.*;
 import java.util.Map.Entry;
 
-class AnalyzerRunner<E> {
-  private Program myProgram;
-  private DataFlowAnalyzer<E> myAnalyzer;
+public class AnalyzerRunner<E> {
+  protected Program myProgram;
+  protected DataFlowAnalyzer<E> myAnalyzer;
 
-  AnalyzerRunner(Program program, DataFlowAnalyzer<E> analyzer) {
+  public AnalyzerRunner(Program program, DataFlowAnalyzer<E> analyzer) {
     myProgram = program;
     myAnalyzer = analyzer;
   }
 
-  AnalysisResult analyze() {
+  public AnalysisResult analyze() {
     Map<ProgramState, E> stateValues = doAnalyze();
     Map<Instruction, E> result = new HashMap<Instruction, E>();
     for (Instruction i : myProgram.getInstructions()) {

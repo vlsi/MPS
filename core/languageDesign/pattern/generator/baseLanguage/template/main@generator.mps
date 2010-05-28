@@ -5415,15 +5415,14 @@
                       <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="7236394192440107544">
                         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7236394192440107545">
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7236394192440107546">
-                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7236394192440107547">
-                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7236394192440107548">
-                                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="7236394192440107549" />
-                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7236394192440107550">
+                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7236394192440144834">
+                              <link role="classConcept:3" targetNodeId="34.5830155447075815036" resolveInfo="PatternVarsUtil" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="34.5830155447075815042" resolveInfo="getFieldName" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7236394192440144835">
+                                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="7236394192440144836" />
+                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7236394192440144838">
                                   <link role="link:16" targetNodeId="1.3133930811460119174:0" />
                                 </node>
-                              </node>
-                              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="7236394192440107551">
-                                <link role="property:16" targetNodeId="1.1136720037780:0" resolveInfo="varName" />
                               </node>
                             </node>
                           </node>
