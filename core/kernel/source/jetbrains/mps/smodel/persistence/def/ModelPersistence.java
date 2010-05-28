@@ -193,7 +193,7 @@ public class ModelPersistence {
     SModel model = reader.readModel(document, modelName, modelStereotype);
     try {
       model.setLoading(true);
-      if (needsUpgradeCondition.met(modelPersistenceVersion)) {
+      if (needsUpgradeCondition.met(modelPersistenceVersion) && !file.isReadOnly()) {
           model = upgradeModelPersistence(model, modelPersistenceVersion, toVersion); //sets persistence version
           document = saveModel(model, false);
           try {
