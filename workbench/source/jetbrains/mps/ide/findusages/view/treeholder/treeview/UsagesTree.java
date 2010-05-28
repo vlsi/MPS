@@ -24,7 +24,6 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowType;
-
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
@@ -39,9 +38,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -49,6 +46,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.AbstractAction;
 import javax.swing.JPopupMenu;
@@ -608,7 +606,7 @@ public class UsagesTree extends MPSTree {
     UsagesTreeNode current = fromNode;
     while (true) {
       UsagesTreeNode parent = (UsagesTreeNode) current.getParent();
-      if (parent == getResultsNode().getParent()) return null;
+      if (parent == null) return null;
 
       //step into prev children of that parent
       int prevIndex = parent.getIndex(current) - 1;
@@ -618,7 +616,10 @@ public class UsagesTree extends MPSTree {
         prevIndex--;
       }
 
-      if (isAliveResultNode(parent.getUserObject())) return parent;
+      DataNode userObject = parent.getUserObject();
+      if (userObject != null){
+        if (isAliveResultNode(userObject)) return parent;
+      }
 
       current = parent;
     }
@@ -643,12 +644,17 @@ public class UsagesTree extends MPSTree {
   }
 
   public void navigateToPreviousResult() {
-    if (getResultsNode().getChildCount() == 0) return;
+    boolean noResults = getResultsNode().getChildCount() == 0;
+
+    UsagesTreeNode searchedNodesNode = getSearchedNodesNode();
+    boolean noSearchedNodes = searchedNodesNode == null || searchedNodesNode.getChildCount() == 0;
+
+    if (noResults && noSearchedNodes) return;
 
     UsagesTreeNode currentNode = getCurrentNode();
     UsagesTreeNode next;
 
-    if (currentNode == null || !inResults(currentNode)) {
+    if (currentNode == null) {
       next = findLastResultInSubtree((UsagesTreeNode) getResultsNode().getChildAt(0), false);
     } else {
       next = findPrevResult((UsagesTreeNode) currentNode);
@@ -695,6 +701,12 @@ public class UsagesTree extends MPSTree {
   private UsagesTreeNode getResultsNode() {
     int index = myShowSearchedNodes ? 1 : 0;
     return (UsagesTreeNode) getRootNode().getChildAt(index);
+  }
+
+  @Nullable
+  private UsagesTreeNode getSearchedNodesNode() {
+    if (!myShowSearchedNodes) return null;
+    return (UsagesTreeNode) getRootNode().getChildAt(0);
   }
 
   public void setAutoscroll(boolean autoscroll) {
