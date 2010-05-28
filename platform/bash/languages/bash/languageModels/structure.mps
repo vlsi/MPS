@@ -3414,5 +3414,22 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="898011086340135411">
+    <property name="package:0" value="expressions.conditional.binary" />
+    <property name="name:0" value="EqualityStrings2" />
+    <link role="extends:0" targetNodeId="9034131902191635402" resolveInfo="BinaryConditionalExpression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="898011086340135412">
+      <property name="value:0" value="equals string operation" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="898011086340135413">
+      <property name="value:0" value="=" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="898011086340135414">
+      <property name="value:0" value="=" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="9034131902191635403" resolveInfo="op" />
+    </node>
+  </node>
 </model>
 

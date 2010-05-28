@@ -9680,20 +9680,20 @@
           <node role="base" type="jetbrains.mps.bash.structure.HeadPipeline" id="6027654792138152410">
             <node role="command" type="jetbrains.mps.bash.structure.IfCommand" id="6027654792138152413">
               <node role="testCommand" type="jetbrains.mps.bash.structure.ConditionalCommand" id="6027654792138152421">
-                <node role="conditionalExpression" type="jetbrains.mps.bash.structure.EqualityStrings" id="6027654792138152423">
-                  <node role="left" type="jetbrains.mps.bash.structure.GeneralizedWord" id="6027654792138152424">
-                    <node role="units" type="jetbrains.mps.bash.structure.DoubleQuote" id="6027654792138152426">
-                      <node role="word" type="jetbrains.mps.bash.structure.GeneralizedWord" id="6027654792138152427">
-                        <node role="units" type="jetbrains.mps.bash.structure.BasicParameterExpansion" id="6027654792138152428">
+                <node role="conditionalExpression" type="jetbrains.mps.bash.structure.EqualityStrings2" id="898011086340152054">
+                  <node role="left" type="jetbrains.mps.bash.structure.GeneralizedWord" id="898011086340152055">
+                    <node role="units" type="jetbrains.mps.bash.structure.DoubleQuote" id="898011086340152060">
+                      <node role="word" type="jetbrains.mps.bash.structure.GeneralizedWord" id="898011086340152061">
+                        <node role="units" type="jetbrains.mps.bash.structure.BasicParameterExpansion" id="898011086340152062">
                           <link role="variable" targetNodeId="6027654792138150264" resolveInfo="UNAME" />
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node role="right" type="jetbrains.mps.bash.structure.GeneralizedWord" id="6027654792138152425">
-                    <node role="units" type="jetbrains.mps.bash.structure.DoubleQuote" id="6027654792138152429">
-                      <node role="word" type="jetbrains.mps.bash.structure.GeneralizedWord" id="6027654792138152430">
-                        <node role="units" type="jetbrains.mps.bash.structure.SimpleWord" id="6027654792138152431">
+                  <node role="right" type="jetbrains.mps.bash.structure.GeneralizedWord" id="898011086340152056">
+                    <node role="units" type="jetbrains.mps.bash.structure.DoubleQuote" id="898011086340152057">
+                      <node role="word" type="jetbrains.mps.bash.structure.GeneralizedWord" id="898011086340152058">
+                        <node role="units" type="jetbrains.mps.bash.structure.SimpleWord" id="898011086340152059">
                           <property name="word" value="Darwin" />
                         </node>
                       </node>
@@ -9785,20 +9785,20 @@
               </node>
               <node role="elseIf" type="jetbrains.mps.bash.structure.ElifCommand" id="6027654792138152442">
                 <node role="testCommand" type="jetbrains.mps.bash.structure.ConditionalCommand" id="6027654792138152450">
-                  <node role="conditionalExpression" type="jetbrains.mps.bash.structure.EqualityStrings" id="6027654792138152452">
-                    <node role="left" type="jetbrains.mps.bash.structure.GeneralizedWord" id="6027654792138152453">
-                      <node role="units" type="jetbrains.mps.bash.structure.DoubleQuote" id="6027654792138152454">
-                        <node role="word" type="jetbrains.mps.bash.structure.GeneralizedWord" id="6027654792138152455">
-                          <node role="units" type="jetbrains.mps.bash.structure.BasicParameterExpansion" id="6027654792138152456">
+                  <node role="conditionalExpression" type="jetbrains.mps.bash.structure.EqualityStrings2" id="898011086340152045">
+                    <node role="left" type="jetbrains.mps.bash.structure.GeneralizedWord" id="898011086340152046">
+                      <node role="units" type="jetbrains.mps.bash.structure.DoubleQuote" id="898011086340152048">
+                        <node role="word" type="jetbrains.mps.bash.structure.GeneralizedWord" id="898011086340152049">
+                          <node role="units" type="jetbrains.mps.bash.structure.BasicParameterExpansion" id="898011086340152050">
                             <link role="variable" targetNodeId="6027654792138150264" resolveInfo="UNAME" />
                           </node>
                         </node>
                       </node>
                     </node>
-                    <node role="right" type="jetbrains.mps.bash.structure.GeneralizedWord" id="6027654792138152457">
-                      <node role="units" type="jetbrains.mps.bash.structure.DoubleQuote" id="6027654792138152458">
-                        <node role="word" type="jetbrains.mps.bash.structure.GeneralizedWord" id="6027654792138152459">
-                          <node role="units" type="jetbrains.mps.bash.structure.SimpleWord" id="6027654792138152461">
+                    <node role="right" type="jetbrains.mps.bash.structure.GeneralizedWord" id="898011086340152047">
+                      <node role="units" type="jetbrains.mps.bash.structure.DoubleQuote" id="898011086340152051">
+                        <node role="word" type="jetbrains.mps.bash.structure.GeneralizedWord" id="898011086340152052">
+                          <node role="units" type="jetbrains.mps.bash.structure.SimpleWord" id="898011086340152053">
                             <property name="word" value="Linux" />
                           </node>
                         </node>
@@ -9900,7 +9900,7 @@
                             <node role="units" type="jetbrains.mps.bash.structure.DoubleQuote" id="6027654792138152524">
                               <node role="word" type="jetbrains.mps.bash.structure.GeneralizedWord" id="6027654792138152525">
                                 <node role="units" type="jetbrains.mps.bash.structure.SimpleWord" id="6027654792138152527">
-                                  <property name="word" value="Unknown operation system " />
+                                  <property name="word" value="Unknown operating system " />
                                 </node>
                                 <node role="units" type="jetbrains.mps.bash.structure.BasicParameterExpansion" id="6027654792138152530">
                                   <link role="variable" targetNodeId="6027654792138150264" resolveInfo="UNAME" />
