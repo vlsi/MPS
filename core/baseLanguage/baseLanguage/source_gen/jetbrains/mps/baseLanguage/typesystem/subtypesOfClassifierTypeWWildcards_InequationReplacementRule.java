@@ -91,14 +91,14 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                 {
                   BaseIntentionProvider intentionProvider = null;
                   IErrorTarget errorTarget = new NodeErrorTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1227259028675", intentionProvider, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1227259028675", intentionProvider, errorTarget);
                   _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
                 }
               } else {
                 {
                   BaseIntentionProvider intentionProvider = null;
                   IErrorTarget errorTarget = new NodeErrorTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357915", intentionProvider, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357915", intentionProvider, errorTarget);
                   _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
                 }
               }

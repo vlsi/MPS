@@ -1486,6 +1486,10 @@ public final class SNode {
   }
 
   public String getPresentation() {
+    return getPresentation(false);
+  }
+
+  public String getPresentation(boolean detailed) {
     if (isUnknown()) {
       String persistentName = getPersistentProperty(INamedConcept.NAME);
       if (persistentName == null) {
@@ -1499,8 +1503,11 @@ public final class SNode {
  Warning:
  BaseConcept_Behavior class will be loaded using platform classloader here.
  As a result this class will be loaded twice - once using own BundleClassLoader and one more time - here.
- */
-      return "" + BaseConcept_Behavior.call_getPresentation_1213877396640(this);
+ */   if (detailed) {
+        return "" + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(this);
+      } else {
+        return "" + BaseConcept_Behavior.call_getPresentation_1213877396640(this);
+      }
     } catch (RuntimeException t) {
       LOG.error(t);
       return "[can't calculate presentation : " + t.getMessage() + "]";

@@ -252,6 +252,22 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155723921" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="2354269628709769373">
+      <property name="name" value="getDetailedPresentation" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2354269628709769374" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2354269628709769381" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2354269628709769376">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2354269628709769382">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2354269628709769384">
+            <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="2354269628709769385" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="2354269628709769386">
+              <link role="baseMethodDeclaration:16" targetNodeId="1213877396640" resolveInfo="getPresentation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3981318653438234726">
       <property name="name" value="getMetaLevel" />
       <property name="isVirtual" value="true" />

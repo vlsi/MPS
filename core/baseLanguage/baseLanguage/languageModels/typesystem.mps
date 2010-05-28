@@ -12666,8 +12666,8 @@
                         <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1227259028679">
                           <link role="applicableNode:3" targetNodeId="1220523330092" resolveInfo="classifierType" />
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1227259028680">
-                          <link role="baseMethodDeclaration:16" targetNodeId="34.1213877396640" resolveInfo="getPresentation" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4055525057869195582">
+                          <link role="baseMethodDeclaration:16" targetNodeId="34.2354269628709769373" resolveInfo="getDetailedPresentation" />
                         </node>
                       </node>
                       <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1227259028676">
@@ -12675,8 +12675,8 @@
                           <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1227259028683">
                             <link role="applicableNode:3" targetNodeId="1220523314502" resolveInfo="type" />
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1227259028684">
-                            <link role="baseMethodDeclaration:16" targetNodeId="34.1213877396640" resolveInfo="getPresentation" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4055525057869195579">
+                            <link role="baseMethodDeclaration:16" targetNodeId="34.2354269628709769373" resolveInfo="getDetailedPresentation" />
                           </node>
                         </node>
                         <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1227259028681">
@@ -12703,8 +12703,8 @@
                           <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1220523359105">
                             <link role="applicableNode:3" targetNodeId="1220523330092" resolveInfo="classifierType" />
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1220523357920">
-                            <link role="baseMethodDeclaration:16" targetNodeId="34.1213877396640" resolveInfo="getPresentation" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4055525057869195581">
+                            <link role="baseMethodDeclaration:16" targetNodeId="34.2354269628709769373" resolveInfo="getDetailedPresentation" />
                           </node>
                         </node>
                         <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1220523357916">
@@ -12712,8 +12712,8 @@
                             <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1220523359073">
                               <link role="applicableNode:3" targetNodeId="1220523314502" resolveInfo="type" />
                             </node>
-                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1220523357924">
-                              <link role="baseMethodDeclaration:16" targetNodeId="34.1213877396640" resolveInfo="getPresentation" />
+                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4055525057869195580">
+                              <link role="baseMethodDeclaration:16" targetNodeId="34.2354269628709769373" resolveInfo="getDetailedPresentation" />
                             </node>
                           </node>
                           <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1220523357921">

@@ -53,6 +53,6 @@ public class PresentationManager {
     if (typeAdapter instanceof RuntimeTypeVariable) {
       return toString(type);
     }
-    return type.getPresentation();
+    return type.getPresentation(true);
   }
 }
