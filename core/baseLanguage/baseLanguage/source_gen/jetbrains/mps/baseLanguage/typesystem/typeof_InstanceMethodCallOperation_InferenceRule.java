@@ -11,6 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.baseLanguage.behavior.ClassifierType_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -47,11 +49,22 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
     }
     // --- following piece of cake is identical for any method call --- 
     //  no more when_concrete 
-    Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
-    RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, imco, SLinkOperations.getTarget(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "returnType", true), mmap);
-    RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), mmap);
-    RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithMethodTypeVariables(typeCheckingContext, imco, mmap);
-    RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
+    {
+      final SNode IT = typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338);
+      typeCheckingContext.whenConcrete(IT, new Runnable() {
+        public void run() {
+          SNode returnType = SLinkOperations.getTarget(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "returnType", true);
+          if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(IT), "jetbrains.mps.baseLanguage.structure.ClassifierType") && ClassifierType_Behavior.call_isRawType_702942408396828337(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(IT), "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+            returnType = Type_Behavior.call_getErasure_702942408396803226(returnType);
+          }
+          Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
+          RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, imco, returnType, mmap);
+          RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), mmap);
+          RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithMethodTypeVariables(typeCheckingContext, imco, mmap);
+          RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
+        }
+      }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "702942408396860198", false, false);
+    }
   }
 
   public String getApplicableConceptFQName() {

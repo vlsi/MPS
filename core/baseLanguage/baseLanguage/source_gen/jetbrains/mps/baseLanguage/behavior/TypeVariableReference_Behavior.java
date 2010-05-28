@@ -6,6 +6,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class TypeVariableReference_Behavior {
   public static void init(SNode thisNode) {
@@ -26,6 +34,13 @@ public class TypeVariableReference_Behavior {
     return "java.lang.Object";
   }
 
+  public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
+    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true) != null)) {
+      return Type_Behavior.call_getErasure_702942408396803226(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true));
+    }
+    return new TypeVariableReference_Behavior.QuotationClass_6i211a_a0b0d().createNode();
+  }
+
   public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode) {
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true) != null)) {
       SNode upperBoundType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UpperBoundType", null);
@@ -35,5 +50,23 @@ public class TypeVariableReference_Behavior {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WildCardType", null);
     }
 
+  }
+
+  public static class QuotationClass_6i211a_a0b0d {
+    public QuotationClass_6i211a_a0b0d() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }
