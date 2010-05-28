@@ -26,7 +26,7 @@ public class DistribConfiguration_projectFolder_ReferentConstraint extends BaseN
     return DistribConfiguration_Behavior.call_getAvailableFolders_1230293856288(_context.getReferenceNode());
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:cbd3ad66-b4a6-4397-9afb-cbc7a80da1e5(jetbrains.mps.build.distrib.constraints)", "1230295109355");
   }
 }

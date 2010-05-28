@@ -36,7 +36,7 @@ public class VariableReference_variable_ReferentConstraint extends BaseNodeRefer
     return result;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:3d08e5ef-3618-477b-9827-f996a0e87a53(jetbrains.mps.samples.lambdaCalculus.constraints)", "7125334522320417175");
   }
 }

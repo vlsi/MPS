@@ -28,7 +28,7 @@ public class ReferenceContainer_leftChild_ReferentConstraint extends BaseNodeRef
     return SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.smodelTests.structure.Child");
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "8758390115029226005");
   }
 

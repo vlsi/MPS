@@ -23,10 +23,13 @@ public class Annotation_DefaultSearchScope extends BaseNodeReferenceSearchScopeP
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new VisibleClassifiersScope(_context.getEnclosingNode(), IClassifiersSearchScope.ANNOTATION, operationContext.getScope());
+    return new VisibleClassifiersScope(((_context.getReferenceNode() == null) ?
+      _context.getEnclosingNode() :
+      _context.getReferenceNode()
+    ), IClassifiersSearchScope.ANNOTATION, operationContext.getScope());
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213104840486");
   }
 }

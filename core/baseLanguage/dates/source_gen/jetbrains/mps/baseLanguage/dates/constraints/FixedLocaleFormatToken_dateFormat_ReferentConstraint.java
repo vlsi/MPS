@@ -25,7 +25,7 @@ public class FixedLocaleFormatToken_dateFormat_ReferentConstraint extends BaseNo
     return DateFormatReferenceUtil.buildIDateFormatSearchScope(_context.getEnclosingNode(), operationContext.getScope());
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895903cf(jetbrains.mps.baseLanguage.dates.constraints)", "1213104847084");
   }
 }

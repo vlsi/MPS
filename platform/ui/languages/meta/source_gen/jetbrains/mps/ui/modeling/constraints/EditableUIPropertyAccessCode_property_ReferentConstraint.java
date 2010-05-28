@@ -34,7 +34,7 @@ public class EditableUIPropertyAccessCode_property_ReferentConstraint extends Ba
     });
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "8938819815716373408");
   }
 }

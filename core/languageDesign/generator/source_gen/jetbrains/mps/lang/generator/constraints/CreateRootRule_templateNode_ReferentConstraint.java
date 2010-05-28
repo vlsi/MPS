@@ -25,7 +25,7 @@ public class CreateRootRule_templateNode_ReferentConstraint extends BaseNodeRefe
     return new MappingRuleTemplateNodeSearchScope(_context.getModel(), operationContext.getScope());
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "1213104840279");
   }
 }

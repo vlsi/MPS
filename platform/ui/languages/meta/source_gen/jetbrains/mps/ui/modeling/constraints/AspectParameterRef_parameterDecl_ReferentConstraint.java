@@ -27,7 +27,7 @@ public class AspectParameterRef_parameterDecl_ReferentConstraint extends BaseNod
     return SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.IAspectParameterHolder", true, false), "aspectParameter", true);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "5572604531249478151");
   }
 }

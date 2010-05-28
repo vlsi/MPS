@@ -30,7 +30,7 @@ public class StubCellRendererInfo_cellRendererSetter_ReferentConstraint extends 
     return new ClassifierAndSuperClassifiersScope(((ClassConcept) SNodeOperations.getAdapter(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getReferenceNode()), "jetbrains.mps.uiLanguage.structure.ComponentDeclaration"), "mapTo", false))), IClassifiersSearchScope.INSTANCE_METHOD);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)", "1213104847142");
   }
 }

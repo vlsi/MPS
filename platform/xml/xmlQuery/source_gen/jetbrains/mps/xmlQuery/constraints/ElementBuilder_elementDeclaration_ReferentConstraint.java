@@ -40,7 +40,7 @@ public class ElementBuilder_elementDeclaration_ReferentConstraint extends BaseNo
     }
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:e79b58b4-ea58-4c9d-b43b-c3a260addf6a(jetbrains.mps.xmlQuery.constraints)", "1384720974900260388");
   }
 }

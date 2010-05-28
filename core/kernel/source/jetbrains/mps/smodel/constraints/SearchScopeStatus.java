@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 public class SearchScopeStatus extends Status {
   protected boolean myDefault;
   protected ISearchScope mySearchScope;
-  protected SNodePointer mySearchScopeFactory;
+  protected SNodePointer myReferenceValidator;
   protected IReferencePresentation myPresentation;
 
   /*package*/ SearchScopeStatus(Code code, String message) {
@@ -46,15 +46,15 @@ public class SearchScopeStatus extends Status {
     return myDefault;
   }
 
-  public SNode getSearchScopeFactoryNode() {
-    return mySearchScopeFactory == null ? null : mySearchScopeFactory.getNode();
+  public SNode getReferenceValidatorNode() {
+    return myReferenceValidator == null ? null : myReferenceValidator.getNode();
   }
 
   /*package*/ static class OK extends SearchScopeStatus {
-    public OK(ISearchScope ss, IReferencePresentation presentation, boolean isDefault, SNodePointer searchScopeFactory) {
+    public OK(ISearchScope ss, IReferencePresentation presentation, boolean isDefault, SNodePointer validatorNode) {
       super(Code.OK, "");
       mySearchScope = ss;
-      mySearchScopeFactory = searchScopeFactory;
+      myReferenceValidator = validatorNode;
       myPresentation = presentation;
       myDefault = isDefault;
     }

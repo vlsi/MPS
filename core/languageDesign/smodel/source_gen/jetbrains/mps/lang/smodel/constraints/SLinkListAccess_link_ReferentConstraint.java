@@ -40,7 +40,7 @@ public class SLinkListAccess_link_ReferentConstraint extends BaseNodeReferenceSe
     }).toListSequence();
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104855758");
   }
 }

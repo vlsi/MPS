@@ -32,7 +32,7 @@ public class EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstra
     return new SuperMethodCall_InstanceMethodScope(((ClassifierType) SNodeOperations.getAdapter(ClassConcept_Behavior.call_getSuperclass_1240936569950(enclosingClass))), _context.getEnclosingNode());
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debug.evaluation.constraints)", "6036237525966325249");
   }
 }

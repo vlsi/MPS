@@ -39,7 +39,7 @@ public class ClassifierDocReference_classifier_ReferentConstraint extends BaseNo
     });
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "2546654756694393841");
   }
 

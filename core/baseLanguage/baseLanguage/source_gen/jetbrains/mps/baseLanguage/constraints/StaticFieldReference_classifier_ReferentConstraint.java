@@ -70,7 +70,7 @@ public class StaticFieldReference_classifier_ReferentConstraint extends BaseNode
     };
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "4074304533012411948");
   }
 }

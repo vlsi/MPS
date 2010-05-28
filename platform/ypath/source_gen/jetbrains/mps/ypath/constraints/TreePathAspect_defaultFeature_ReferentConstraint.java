@@ -27,7 +27,7 @@ public class TreePathAspect_defaultFeature_ReferentConstraint extends BaseNodeRe
     return SLinkOperations.getTargets(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.TreePath"), "features", true);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104837326");
   }
 }

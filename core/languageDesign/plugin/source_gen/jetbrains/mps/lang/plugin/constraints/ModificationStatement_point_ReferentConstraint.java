@@ -39,7 +39,7 @@ public class ModificationStatement_point_ReferentConstraint extends BaseNodeRefe
     return new ArrayList<SNode>();
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213104860270");
   }
 }

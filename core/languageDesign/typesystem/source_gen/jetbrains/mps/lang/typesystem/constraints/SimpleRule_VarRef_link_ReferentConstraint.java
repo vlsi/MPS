@@ -33,7 +33,7 @@ public class SimpleRule_VarRef_link_ReferentConstraint extends BaseNodeReference
     return new ArrayList<SNode>();
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1223035204091");
   }
 }

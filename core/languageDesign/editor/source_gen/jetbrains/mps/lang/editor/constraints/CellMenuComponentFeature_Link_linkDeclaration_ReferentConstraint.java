@@ -32,7 +32,7 @@ public class CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint ex
     return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(editedConcept);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1213104846220");
   }
 }

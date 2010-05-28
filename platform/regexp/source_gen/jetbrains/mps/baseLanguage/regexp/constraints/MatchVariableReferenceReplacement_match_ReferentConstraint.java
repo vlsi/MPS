@@ -38,7 +38,7 @@ public class MatchVariableReferenceReplacement_match_ReferentConstraint extends 
     return matches;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "3796137614137558194");
   }
 

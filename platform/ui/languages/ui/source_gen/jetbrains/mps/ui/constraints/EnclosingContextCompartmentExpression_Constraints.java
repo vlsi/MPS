@@ -8,6 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class EnclosingContextCompartmentExpression_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.ui.structure.IUIObjectContextProvider"}, true, false), "jetbrains.mps.ui.structure.IUIObjectContextProvider");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.ui.structure.IUIObjectContextProvider"}, true, false), "jetbrains.mps.ui.structure.IUIObjectContextProvider");
   }
 }

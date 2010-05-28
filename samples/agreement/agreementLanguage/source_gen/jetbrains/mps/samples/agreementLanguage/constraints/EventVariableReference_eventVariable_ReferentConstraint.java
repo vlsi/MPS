@@ -30,7 +30,7 @@ public class EventVariableReference_eventVariable_ReferentConstraint extends Bas
     return new SubnodesSearchScope(eventType);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590408(jetbrains.mps.samples.agreementLanguage.constraints)", "1214253610429");
   }
 }

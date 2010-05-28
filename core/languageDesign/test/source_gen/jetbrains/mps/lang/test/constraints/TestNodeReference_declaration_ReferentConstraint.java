@@ -40,7 +40,7 @@ public class TestNodeReference_declaration_ReferentConstraint extends BaseNodeRe
     return result;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)", "1213104844718");
   }
 }

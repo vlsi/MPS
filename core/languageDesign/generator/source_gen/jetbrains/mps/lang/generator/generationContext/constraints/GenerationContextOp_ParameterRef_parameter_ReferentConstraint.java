@@ -36,7 +36,7 @@ public class GenerationContextOp_ParameterRef_parameter_ReferentConstraint exten
     return result;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902ee(jetbrains.mps.lang.generator.generationContext.constraints)", "5190093307972812910");
   }
 }

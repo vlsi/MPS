@@ -36,7 +36,7 @@ public class XMLElementType_complexType_ReferentConstraint extends BaseNodeRefer
     return new SubnodesSearchScope(SLinkOperations.getTarget(_context.getReferenceNode(), "schema", false));
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:e79b58b4-ea58-4c9d-b43b-c3a260addf6a(jetbrains.mps.xmlQuery.constraints)", "4815471077468703818");
   }
 

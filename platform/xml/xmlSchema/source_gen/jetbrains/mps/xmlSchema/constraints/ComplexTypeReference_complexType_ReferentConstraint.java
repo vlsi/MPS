@@ -26,7 +26,7 @@ public class ComplexTypeReference_complexType_ReferentConstraint extends BaseNod
     return new ModelAndImportedModelsScope(_context.getModel(), false, operationContext.getScope());
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590595(jetbrains.mps.xmlSchema.constraints)", "115745247309443797");
   }
 }

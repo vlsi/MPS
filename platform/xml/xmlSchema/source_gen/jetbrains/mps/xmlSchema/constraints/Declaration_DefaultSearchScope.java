@@ -28,7 +28,7 @@ public class Declaration_DefaultSearchScope extends BaseNodeReferenceSearchScope
     return new SubnodesSearchScope(schema);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590595(jetbrains.mps.xmlSchema.constraints)", "1213104847290");
   }
 }

@@ -36,7 +36,7 @@ public class TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentCons
     return result;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "4665309944889434725");
   }
 }

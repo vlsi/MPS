@@ -40,7 +40,7 @@ public class Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstrai
     });
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1221169557310");
   }
 }

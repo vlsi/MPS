@@ -31,7 +31,7 @@ public class NavigatableReferenceStyleClassItem_link_ReferentConstraint extends 
     return AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(editedConcept);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1227861668969");
   }
 }

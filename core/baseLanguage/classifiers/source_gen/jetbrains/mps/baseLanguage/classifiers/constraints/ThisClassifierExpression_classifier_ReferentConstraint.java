@@ -27,7 +27,7 @@ public class ThisClassifierExpression_classifier_ReferentConstraint extends Base
     return ThisClassifierExpression_Behavior.call_getPossibleClassifiers_1219068414643(SNodeOperations.cast(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"));
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "1218737393727");
   }
 }

@@ -29,7 +29,7 @@ public class ArgumentReference_arg_ReferentConstraint extends BaseNodeReferenceS
     return ExternalCommandCall_Behavior.call_getUnusedArguments_3263637656466355284(call);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:32c4fb44-9e66-4976-aa43-e37da5fe27dd(jetbrains.mps.bash.constraints)", "3263637656466344330");
   }
 }

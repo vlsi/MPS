@@ -34,7 +34,7 @@ public class ChildTypeRestriction_childLinkDeclaration_ReferentConstraint extend
     return conceptScope;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1213104847822");
   }
 }

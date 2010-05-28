@@ -27,7 +27,7 @@ public class EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint ext
     return new SubnodesSearchScope(_context.getReferenceNode());
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104847177");
   }
 }

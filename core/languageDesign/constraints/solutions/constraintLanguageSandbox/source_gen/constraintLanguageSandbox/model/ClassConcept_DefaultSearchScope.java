@@ -25,7 +25,7 @@ public class ClassConcept_DefaultSearchScope extends BaseNodeReferenceSearchScop
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895905c3(constraintLanguageSandbox.model)", "3025230698924756389");
   }
 

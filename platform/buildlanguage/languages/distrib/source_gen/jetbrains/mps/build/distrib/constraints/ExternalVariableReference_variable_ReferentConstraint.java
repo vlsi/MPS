@@ -36,7 +36,7 @@ public class ExternalVariableReference_variable_ReferentConstraint extends BaseN
     return availableVars;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:cbd3ad66-b4a6-4397-9afb-cbc7a80da1e5(jetbrains.mps.build.distrib.constraints)", "1234515222366");
   }
 }

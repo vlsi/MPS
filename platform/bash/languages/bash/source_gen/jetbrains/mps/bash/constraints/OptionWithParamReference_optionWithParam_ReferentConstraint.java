@@ -29,7 +29,7 @@ public class OptionWithParamReference_optionWithParam_ReferentConstraint extends
     return ExternalCommandCall_Behavior.call_getUnusedOptionsWithParam_3263637656468078237(call);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:32c4fb44-9e66-4976-aa43-e37da5fe27dd(jetbrains.mps.bash.constraints)", "3263637656468078258");
   }
 }

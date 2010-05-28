@@ -42,7 +42,7 @@ public class SConceptPropertyAccess_conceptProperty_ReferentConstraint extends B
     return AbstractConceptDeclaration_Behavior.call_getConceptPropertyDeclarations_1213877394562(operandConcept);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104860200");
   }
 }

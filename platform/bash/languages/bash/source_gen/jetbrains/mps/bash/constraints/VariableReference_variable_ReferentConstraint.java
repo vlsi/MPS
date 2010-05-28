@@ -26,7 +26,7 @@ public class VariableReference_variable_ReferentConstraint extends BaseNodeRefer
     return VariableNameDeclaration_Behavior.getDefinedBeforeNode_9034131902193864152(_context.getEnclosingNode());
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:32c4fb44-9e66-4976-aa43-e37da5fe27dd(jetbrains.mps.bash.constraints)", "9034131902193373921");
   }
 }

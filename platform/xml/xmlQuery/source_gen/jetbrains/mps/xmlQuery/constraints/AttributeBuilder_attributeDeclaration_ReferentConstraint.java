@@ -37,7 +37,7 @@ public class AttributeBuilder_attributeDeclaration_ReferentConstraint extends Ba
     return new ArrayList<SNode>();
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:e79b58b4-ea58-4c9d-b43b-c3a260addf6a(jetbrains.mps.xmlQuery.constraints)", "7225751495667376052");
   }
 

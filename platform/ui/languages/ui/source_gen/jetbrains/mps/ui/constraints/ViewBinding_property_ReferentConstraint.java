@@ -35,7 +35,7 @@ public class ViewBinding_property_ReferentConstraint extends BaseNodeReferenceSe
     });
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)", "8115675450774409689");
   }
 }

@@ -67,7 +67,7 @@ public class MatrixInitializerIndexReference_index_ReferentConstraint extends Ba
     return indices;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)", "6219660258344759923");
   }
 }

@@ -26,7 +26,7 @@ public class BeanBuilder_constructor_ReferentConstraint extends BaseNodeReferenc
     return new VisibleClassConstructorsScope(_context.getModel(), operationContext.getScope());
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)", "6666322667909634554");
   }
 }

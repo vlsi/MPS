@@ -38,7 +38,7 @@ public class ComponentInstance_componentDeclaration_ReferentConstraint extends B
     return components;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)", "1213104846154");
   }
 }

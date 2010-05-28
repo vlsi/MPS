@@ -38,7 +38,7 @@ public class NotEditableVaraileReference_variableDeclaration_ReferentConstraint 
     return result;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:94b1feee-20bf-48e9-9677-814a5fdcaf90(jetbrains.mps.lang.editor.editorTest.constraints)", "4965160547087600888");
   }
 }

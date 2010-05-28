@@ -26,7 +26,7 @@ public class ProjectDescriptionReference_description_ReferentConstraint extends 
     return SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.dependency.structure.ProjectDescription");
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895904cc(jetbrains.mps.build.dependency.constraints)", "1224776378344");
   }
 }

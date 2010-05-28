@@ -29,7 +29,7 @@ public class TargetReference_targetDeclaration_ReferentConstraint extends BaseNo
     return Project_Behavior.call_getAllTargets_1213877351828(project);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)", "1213104847184");
   }
 }

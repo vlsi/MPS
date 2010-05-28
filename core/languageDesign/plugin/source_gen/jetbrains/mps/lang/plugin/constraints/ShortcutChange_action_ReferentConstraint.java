@@ -26,7 +26,7 @@ public class ShortcutChange_action_ReferentConstraint extends BaseNodeReferenceS
     return SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.lang.plugin.structure.ActionDeclaration");
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "6193305307616734337");
   }
 }

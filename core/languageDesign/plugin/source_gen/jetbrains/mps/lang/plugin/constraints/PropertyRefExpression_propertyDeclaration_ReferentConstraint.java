@@ -34,7 +34,7 @@ public class PropertyRefExpression_propertyDeclaration_ReferentConstraint extend
     return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getReferenceNode(), "nodeExpr", true)), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false));
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1628770029971140585");
   }
 }

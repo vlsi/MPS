@@ -35,7 +35,7 @@ public class Container_specializes_ReferentConstraint extends BaseNodeReferenceS
     }).subtract(Sequence.fromIterable(Sequence.<SNode>singleton(_context.getReferenceNode())));
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "6424935405035112791");
   }
 }

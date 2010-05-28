@@ -40,7 +40,7 @@ public class MatrixIndexVariableRefirence_DefaultSearchScope extends BaseNodeRef
     return result;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959044f(jetbrains.mps.samples.matrixLanguage.constraints)", "1213107436039");
   }
 }

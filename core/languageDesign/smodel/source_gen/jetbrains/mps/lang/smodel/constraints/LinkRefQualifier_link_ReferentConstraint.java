@@ -29,7 +29,7 @@ public class LinkRefQualifier_link_ReferentConstraint extends BaseNodeReferenceS
     return ILinkAccessQualifierContainer_Behavior.call_getLinkAccessScope_2906110183022538642(qualifierContainer);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104859122");
   }
 }

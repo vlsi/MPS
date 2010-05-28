@@ -28,7 +28,7 @@ public class Variable_DefaultSearchScope extends BaseNodeReferenceSearchScopePro
     return ListSequence.fromList(Variable_Behavior.getDefaultVariables_7323449223785133410()).union(ListSequence.fromList(IVariableHolder_Behavior.call_getAllVariable_1234864693585(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.build.packaging.structure.IVariableHolder", true, false))));
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)", "1233927017126");
   }
 }

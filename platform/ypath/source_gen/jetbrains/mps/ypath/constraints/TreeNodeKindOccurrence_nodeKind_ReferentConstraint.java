@@ -36,7 +36,7 @@ public class TreeNodeKindOccurrence_nodeKind_ReferentConstraint extends BaseNode
     }).toListSequence();
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104859283");
   }
 }

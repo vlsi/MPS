@@ -10,7 +10,7 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 
 public class SuperClassifierExpresson_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    boolean inClassifier = SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier","jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"}, true, false) != null;
+    boolean inClassifier = SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"}, true, false) != null;
     if (!(inClassifier)) {
       return false;
     }

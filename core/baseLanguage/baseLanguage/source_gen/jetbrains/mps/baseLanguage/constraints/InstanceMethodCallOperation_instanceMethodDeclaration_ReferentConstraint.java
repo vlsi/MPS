@@ -38,7 +38,7 @@ public class InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConst
     return new InstanceMethodCall_InstanceMethodScope(((ClassifierType) SNodeOperations.getAdapter(classifierType)), _context.getEnclosingNode());
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213104856737");
   }
 }

@@ -47,7 +47,7 @@ public class AccessUIPropertyOperation_property_ReferentConstraint extends BaseN
     }
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)", "1870423755832759853");
   }
 }

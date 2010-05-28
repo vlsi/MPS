@@ -35,7 +35,7 @@ public class CustomMapCreator_containerDeclaration_ReferentConstraint extends Ba
     );
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "9034802358628290362");
   }
 }

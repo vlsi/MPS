@@ -29,7 +29,7 @@ public class UIObjectReference_declaration_ReferentConstraint extends BaseNodeRe
     return SNodeOperations.getDescendants(lastSlc, "jetbrains.mps.ui.structure.IUIObjectDeclaration", false, new String[]{});
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)", "6410919744913609623");
   }
 }

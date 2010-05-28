@@ -35,7 +35,7 @@ public class CallReference_call_ReferentConstraint extends BaseNodeReferenceSear
     });
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)", "4710899751214243185");
   }
 }

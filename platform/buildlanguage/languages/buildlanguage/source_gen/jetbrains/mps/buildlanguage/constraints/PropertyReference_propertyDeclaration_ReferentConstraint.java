@@ -26,7 +26,7 @@ public class PropertyReference_propertyDeclaration_ReferentConstraint extends Ba
     return PropertyReference_Behavior.getAllVisibleDeclarations_1239123615225(_context.getEnclosingNode());
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)", "1213104860242");
   }
 }

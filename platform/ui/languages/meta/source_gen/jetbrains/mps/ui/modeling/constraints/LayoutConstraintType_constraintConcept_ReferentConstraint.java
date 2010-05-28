@@ -35,7 +35,7 @@ public class LayoutConstraintType_constraintConcept_ReferentConstraint extends B
     });
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "7930737280446914702");
   }
 

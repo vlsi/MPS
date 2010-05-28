@@ -27,7 +27,7 @@ public class ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint extends Ba
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", true, false), "matchingConcept", false), "linkDeclaration", true);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1240323016898");
   }
 }

@@ -36,7 +36,7 @@ public class TypesystemIntentionArgument_quickFixArgument_ReferentConstraint ext
     return nodes;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1216387794916");
   }
 }

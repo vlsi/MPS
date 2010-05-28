@@ -29,7 +29,7 @@ public class InputFieldReference_field_ReferentConstraint extends BaseNodeRefere
     return SLinkOperations.getTargets(calc, "inputField", true);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:ac9571c5-26be-4fef-b5fd-705a2c38e949(jetbrains.mps.calculator.constraints)", "1241364816355");
   }
 }

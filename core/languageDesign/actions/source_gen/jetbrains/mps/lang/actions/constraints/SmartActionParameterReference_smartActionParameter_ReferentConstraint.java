@@ -34,7 +34,7 @@ public class SmartActionParameterReference_smartActionParameter_ReferentConstrai
     return SLinkOperations.getTargets(ancestor, "smartActionParameter", true);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1235053874371");
   }
 }

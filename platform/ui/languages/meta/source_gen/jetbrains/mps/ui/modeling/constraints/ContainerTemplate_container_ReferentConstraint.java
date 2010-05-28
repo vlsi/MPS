@@ -57,7 +57,7 @@ public class ContainerTemplate_container_ReferentConstraint extends BaseNodeRefe
     return Sequence.fromIterable(allConts).subtract(Sequence.fromIterable(specializesConts)).subtract(Sequence.fromIterable(existing));
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "4391079257750389363");
   }
 }

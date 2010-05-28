@@ -44,7 +44,7 @@ public class NamedTupleType_tupleDeclaration_ReferentConstraint extends BaseNode
     };
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1652220223504359703");
   }
 }

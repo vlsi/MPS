@@ -37,7 +37,7 @@ public class RunConfigPropertyInstance_property_ReferentConstraint extends BaseN
     return SLinkOperations.getTargets(runConfig, "property", true);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "7066926174333292962");
   }
 }

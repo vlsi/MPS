@@ -41,7 +41,7 @@ public class UtilityMethodDeclaration_DefaultSearchScope extends BaseNodeReferen
     return methods;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1237206482577");
   }
 }

@@ -834,9 +834,7 @@
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1660804075096318915">
                       <link role="variableDeclaration:3" targetNodeId="4942048232752368548" resolveInfo="ref" />
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1660804075096318920">
-                      <link role="baseMethodDeclaration:3" targetNodeId="4.~SReference.getRole():java.lang.String" resolveInfo="getRole" />
-                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation:16" id="1702358244050829251" />
                   </node>
                 </node>
               </node>
@@ -942,9 +940,7 @@
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4942048232752376323">
                           <link role="variableDeclaration:3" targetNodeId="4942048232752368548" resolveInfo="ref" />
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4942048232752376328">
-                          <link role="baseMethodDeclaration:3" targetNodeId="4.~SReference.getRole():java.lang.String" resolveInfo="getRole" />
-                        </node>
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation:16" id="1702358244050994904" />
                       </node>
                     </node>
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4942048232752376332">
@@ -959,9 +955,7 @@
                       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1660804075096322427">
                         <link role="variableDeclaration:3" targetNodeId="4942048232752368548" resolveInfo="ref" />
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1660804075096322432">
-                        <link role="baseMethodDeclaration:3" targetNodeId="4.~SReference.getRole():java.lang.String" resolveInfo="getRole" />
-                      </node>
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation:16" id="1702358244050837264" />
                     </node>
                   </node>
                   <node role="foreignMessageSource:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1290122678034620848">
@@ -969,7 +963,7 @@
                       <link role="variableDeclaration:3" targetNodeId="4942048232752368574" resolveInfo="sss" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1290122678034620854">
-                      <link role="baseMethodDeclaration:3" targetNodeId="7.~SearchScopeStatus.getSearchScopeFactoryNode():jetbrains.mps.smodel.SNode" resolveInfo="getSearchScopeFactoryNode" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="7.~SearchScopeStatus.getReferenceValidatorNode():jetbrains.mps.smodel.SNode" resolveInfo="getReferenceValidatorNode" />
                     </node>
                   </node>
                 </node>

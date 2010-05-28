@@ -33,7 +33,7 @@ public class LabelPosition_label_ReferentConstraint extends BaseNodeReferenceSea
     return labels;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)", "1213104855809");
   }
 }

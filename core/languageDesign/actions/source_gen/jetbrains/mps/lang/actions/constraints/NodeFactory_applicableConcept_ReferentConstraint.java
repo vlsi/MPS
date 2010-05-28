@@ -31,7 +31,7 @@ public class NodeFactory_applicableConcept_ReferentConstraint extends BaseNodeRe
     return new ModelNodesSearchScope(structureModel);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1213104859361");
   }
 }

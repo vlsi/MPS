@@ -27,7 +27,7 @@ public class NodeKindSpecificCase_treeNodeKind_ReferentConstraint extends BaseNo
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.SwitchNodeKindStatement"), "nodeExpression", true), "treepathAspect", false), "nodeKinds", true);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104860503");
   }
 }

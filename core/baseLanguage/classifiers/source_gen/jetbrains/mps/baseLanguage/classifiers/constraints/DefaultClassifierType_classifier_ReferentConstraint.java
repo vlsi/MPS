@@ -39,7 +39,7 @@ public class DefaultClassifierType_classifier_ReferentConstraint extends BaseNod
     return classifiers;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "1216915259774");
   }
 }

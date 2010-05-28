@@ -37,7 +37,7 @@ public class EventPropertyGetter_property_ReferentConstraint extends BaseNodeRef
     });
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "5263857617434470704");
   }
 

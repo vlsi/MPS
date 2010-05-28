@@ -51,7 +51,7 @@ public class IMemberOperation_member_ReferentConstraint extends BaseNodeReferenc
     return applicableMembers;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "1213104844336");
   }
 }

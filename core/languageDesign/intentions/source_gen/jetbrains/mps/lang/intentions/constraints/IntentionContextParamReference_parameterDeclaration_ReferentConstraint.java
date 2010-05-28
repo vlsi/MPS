@@ -27,7 +27,7 @@ public class IntentionContextParamReference_parameterDeclaration_ReferentConstra
     return SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.intentions.structure.GenerateIntentionDeclaration", false, false), "parameter", true);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)", "1379737298155043974");
   }
 }

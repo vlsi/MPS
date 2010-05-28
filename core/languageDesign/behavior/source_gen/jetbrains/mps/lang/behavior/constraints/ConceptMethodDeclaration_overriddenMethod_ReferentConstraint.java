@@ -51,7 +51,7 @@ public class ConceptMethodDeclaration_overriddenMethod_ReferentConstraint extend
     return methods;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "1225194475680");
   }
 }

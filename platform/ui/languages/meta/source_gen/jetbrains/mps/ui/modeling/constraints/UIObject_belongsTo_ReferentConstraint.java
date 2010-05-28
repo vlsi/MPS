@@ -48,7 +48,7 @@ public class UIObject_belongsTo_ReferentConstraint extends BaseNodeReferenceSear
     return nodes;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "1719339442170193747");
   }
 }

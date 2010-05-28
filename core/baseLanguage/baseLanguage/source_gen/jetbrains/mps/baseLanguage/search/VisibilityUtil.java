@@ -101,8 +101,14 @@ public final class VisibilityUtil {
       // context should be in the body of subclass of member class 
       // + context should be a member access node with the type = subclass of that subclass (not checked now) 
       for (SNode cls : ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", false))) {
-        // todo: check ExpressionName or PrimaryExpression is subclass of cls 
         if (BaseLanguageUtil.isAssignable(((Classifier) SNodeOperations.getAdapter(cls)), ((Classifier) SNodeOperations.getAdapter(classifier)))) {
+          if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+            // todo: check ExpressionName or PrimaryExpression is subclass of cls 
+          }
+          if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
+            // check it is superclass constructor infocation or anonymous class instance creation 
+            return SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation") || SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
+          }
           return true;
         }
       }

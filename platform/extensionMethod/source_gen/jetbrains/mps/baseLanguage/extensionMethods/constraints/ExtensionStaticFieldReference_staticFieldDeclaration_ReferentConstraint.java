@@ -29,7 +29,7 @@ public class ExtensionStaticFieldReference_staticFieldDeclaration_ReferentConstr
     return SLinkOperations.getTargets(container, "staticFields", true);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "3097384118511835569");
   }
 }

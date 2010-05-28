@@ -34,7 +34,7 @@ public class AskBooleanExpression_parameter_ReferentConstraint extends BaseNodeR
     });
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "4312073247720715119");
   }
 }

@@ -56,7 +56,7 @@ public class SimpleBuilder_declaration_ReferentConstraint extends BaseNodeRefere
     }
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)", "7288041816793179321");
   }
 }

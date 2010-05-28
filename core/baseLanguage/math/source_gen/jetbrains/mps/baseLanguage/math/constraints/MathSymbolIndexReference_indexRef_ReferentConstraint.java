@@ -32,7 +32,7 @@ public class MathSymbolIndexReference_indexRef_ReferentConstraint extends BaseNo
     return msi;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)", "1237825752099");
   }
 }

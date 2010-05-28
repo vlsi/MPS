@@ -42,7 +42,7 @@ public class Element_elementDeclaration_ReferentConstraint extends BaseNodeRefer
     return searchScope;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590585(jetbrains.mps.xml.constraints)", "1213104840332");
   }
 }

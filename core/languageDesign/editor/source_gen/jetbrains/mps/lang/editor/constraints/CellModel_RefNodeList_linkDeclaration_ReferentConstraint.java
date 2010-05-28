@@ -40,7 +40,7 @@ public class CellModel_RefNodeList_linkDeclaration_ReferentConstraint extends Ba
     }).toListSequence();
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1213104860419");
   }
 }

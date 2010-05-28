@@ -38,7 +38,7 @@ public class IterateOperation_usedFeature_ReferentConstraint extends BaseNodeRef
     return Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(tpoe), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true))).toListSequence();
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104845582");
   }
 }

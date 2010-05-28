@@ -30,7 +30,7 @@ public class ReferenceConceptLink_target_ReferentConstraint extends BaseNodeRefe
     return new ReferenceConceptLinkTargetSearchScope(_context.getReferenceNode(), operationContext.getScope());
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104847457");
   }
 }

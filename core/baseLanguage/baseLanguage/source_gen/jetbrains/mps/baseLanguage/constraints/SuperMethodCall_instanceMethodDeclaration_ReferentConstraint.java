@@ -30,7 +30,7 @@ public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint extend
     return new SuperMethodCall_InstanceMethodScope(((ClassifierType) SNodeOperations.getAdapter(ClassConcept_Behavior.call_getSuperclass_1240936569950(enclosingClass))), _context.getEnclosingNode());
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213104855714");
   }
 }

@@ -4093,6 +4093,11 @@
       <property name="sourceCardinality:0" value="0..1" />
       <link role="target:0" targetNodeId="1148684180339:8" resolveInfo="ConstraintFunction_ReferentSearchScope_Factory" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3481330710159425093">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="validator" />
+      <link role="target:0" targetNodeId="3481330710159180554:8" resolveInfo="ConstraintFunction_ReferenceValidator" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3906442776579556548">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="presentation" />
@@ -4193,6 +4198,11 @@
       <property name="role:0" value="searchScopeFactory" />
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="1148684180339:8" resolveInfo="ConstraintFunction_ReferentSearchScope_Factory" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3481330710159185858">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="validator" />
+      <link role="target:0" targetNodeId="3481330710159180554:8" resolveInfo="ConstraintFunction_ReferenceValidator" />
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3906442776579628834">
       <property name="metaClass:0" value="aggregation" />
@@ -4652,6 +4662,23 @@
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="4543999568462233458">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
       <node role="target:0" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="4543999568462233460" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3481330710159180554">
+    <property name="package:0" value="Functions" />
+    <property name="name:0" value="ConstraintFunction_ReferentSearchScope_Validator" />
+    <link role="extends:0" targetNodeId="1148934493876:8" resolveInfo="ConstraintFunction_ReferentSearchScope_AbstractBase" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="3481330710159180558">
+      <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="3906442776579549644:8" resolveInfo="ConstraintFunctionParameter_parameterNode" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="3481330710159185852">
+      <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="3481330710159185854" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3481330710159180556">
+      <property name="value:0" value="reference validity" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
 </model>

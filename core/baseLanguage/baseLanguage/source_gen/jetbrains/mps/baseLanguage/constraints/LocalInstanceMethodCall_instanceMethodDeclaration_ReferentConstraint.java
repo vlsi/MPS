@@ -55,7 +55,7 @@ public class LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstrain
     return result;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "3066917033203129869");
   }
 }

@@ -19,10 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
-import jetbrains.mps.smodel.search.EmptySearchScope;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.smodel.search.UndefinedSearchScope;
+import jetbrains.mps.smodel.search.*;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.List;
@@ -32,7 +29,15 @@ public abstract class BaseNodeReferenceSearchScopeProvider implements INodeRefer
     return new UndefinedSearchScope();
   }
 
-  public ISearchScope createNodeReferentSearchScope(IOperationContext operationContext, ReferentConstraintContext _context) {
+  public boolean hasValidator() {
+    return false;
+  }
+
+  public boolean validate(final IOperationContext operationContext, final ValidatorReferentConstraintContext _context) {
+    throw new UnsupportedOperationException();
+  }
+
+  private ISearchScope createNodeReferentSearchScope0(IOperationContext operationContext, ReferentConstraintContext _context) {
     Object searchScopeOrListOfNodes = this.createSearchScopeOrListOfNodes(operationContext, _context);
     if (searchScopeOrListOfNodes == null) {
       return new EmptySearchScope();
@@ -51,6 +56,17 @@ public abstract class BaseNodeReferenceSearchScopeProvider implements INodeRefer
     throw new RuntimeException("unexpected type in search-scope provider " + searchScopeOrListOfNodes.getClass());
   }
 
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    if (hasValidator())
+      return new WrappedSearchScope(createNodeReferentSearchScope0(operationContext, _context)) {
+        public boolean isInScope(final SNode node) {
+          return validate(operationContext, new ValidatorReferentConstraintContext(_context, node));
+        }
+      };
+    else
+      return createNodeReferentSearchScope0(operationContext, _context);
+  }
+
   public boolean hasPresentation() {
     return false;
   }
@@ -59,7 +75,7 @@ public abstract class BaseNodeReferenceSearchScopeProvider implements INodeRefer
     throw new UnsupportedOperationException();
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return null;
   }
 }

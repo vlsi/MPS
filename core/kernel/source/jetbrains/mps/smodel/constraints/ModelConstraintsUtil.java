@@ -104,7 +104,7 @@ public class ModelConstraintsUtil {
         return newOK(searchScope,
           referencePresentation,
           false,
-          scopeProvider.getSearchScopeFactoryNodePointer());
+          scopeProvider.getSearchScopeValidatorNodePointer());
       }
     }
 

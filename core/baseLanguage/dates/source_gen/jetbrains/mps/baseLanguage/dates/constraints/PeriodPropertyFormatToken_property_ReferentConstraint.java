@@ -28,7 +28,7 @@ public class PeriodPropertyFormatToken_property_ReferentConstraint extends BaseN
     return DateFormatReferenceUtil.buildPeriodPropertySearchScope(_context.getEnclosingNode(), operationContext.getScope());
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895903cf(jetbrains.mps.baseLanguage.dates.constraints)", "5581663871699705089");
   }
 

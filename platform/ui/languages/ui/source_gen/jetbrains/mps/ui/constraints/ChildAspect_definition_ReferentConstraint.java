@@ -25,10 +25,10 @@ public class ChildAspect_definition_ReferentConstraint extends BaseNodeReference
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return SLinkOperations.getTargets(IUIObjectContextProvider_Behavior.call_getContainer_8923564134258257521(SNodeOperations.as(SNodeOperations.getAncestorWhereConceptInList(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ui.structure.UIObjectStatement", true, false), new String[]{"jetbrains.mps.ui.structure.IUIObjectContextProvider","jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false, false), "jetbrains.mps.ui.structure.IUIObjectContextProvider")), "requiredAspect", true);
+    return SLinkOperations.getTargets(IUIObjectContextProvider_Behavior.call_getContainer_8923564134258257521(SNodeOperations.as(SNodeOperations.getAncestorWhereConceptInList(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ui.structure.UIObjectStatement", true, false), new String[]{"jetbrains.mps.ui.structure.IUIObjectContextProvider", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false, false), "jetbrains.mps.ui.structure.IUIObjectContextProvider")), "requiredAspect", true);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)", "6424935405034937411");
   }
 }

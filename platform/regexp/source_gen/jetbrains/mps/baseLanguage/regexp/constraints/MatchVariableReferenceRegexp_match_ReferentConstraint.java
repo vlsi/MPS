@@ -41,7 +41,7 @@ public class MatchVariableReferenceRegexp_match_ReferentConstraint extends BaseN
     return matches;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "1213104860360");
   }
 

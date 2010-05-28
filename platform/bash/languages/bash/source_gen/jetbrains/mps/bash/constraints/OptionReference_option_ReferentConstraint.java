@@ -29,7 +29,7 @@ public class OptionReference_option_ReferentConstraint extends BaseNodeReference
     return ExternalCommandCall_Behavior.call_getAvailableOptions_7803330421062325454(call);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:32c4fb44-9e66-4976-aa43-e37da5fe27dd(jetbrains.mps.bash.constraints)", "7803330421060154885");
   }
 }

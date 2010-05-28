@@ -47,7 +47,7 @@ public class AccessChildrenOperation_elementDeclaration_ReferentConstraint exten
     return elementDeclarations;
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:e79b58b4-ea58-4c9d-b43b-c3a260addf6a(jetbrains.mps.xmlQuery.constraints)", "4991903842868413103");
   }
 }

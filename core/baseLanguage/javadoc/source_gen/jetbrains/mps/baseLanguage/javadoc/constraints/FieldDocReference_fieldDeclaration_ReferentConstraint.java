@@ -39,7 +39,7 @@ public class FieldDocReference_fieldDeclaration_ReferentConstraint extends BaseN
     });
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "7051378335467735966");
   }
 

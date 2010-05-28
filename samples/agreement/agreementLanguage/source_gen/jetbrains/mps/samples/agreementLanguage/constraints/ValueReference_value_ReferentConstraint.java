@@ -29,7 +29,7 @@ public class ValueReference_value_ReferentConstraint extends BaseNodeReferenceSe
     return new SubnodesSearchScope(plan);
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590408(jetbrains.mps.samples.agreementLanguage.constraints)", "1214253543334");
   }
 }

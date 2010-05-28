@@ -68,7 +68,7 @@ public class TaskCall_declaration_ReferentConstraint extends BaseNodeReferenceSe
     };
   }
 
-  public SNodePointer getSearchScopeFactoryNodePointer() {
+  public SNodePointer getSearchScopeValidatorNodePointer() {
     return new SNodePointer("r:71eee63a-b16f-40f8-920d-8fd0fe7dc8a1(jetbrains.mps.build.generictasks.constraints)", "353793545802644482");
   }
 }
