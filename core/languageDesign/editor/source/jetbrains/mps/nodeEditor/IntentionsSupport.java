@@ -230,6 +230,7 @@ public class IntentionsSupport {
 
   private AnAction getIntentionGroup(final Intention intention, final SNode node) {
     Icon icon = IntentionType.getLowestPriorityType().getIcon();
+    final IntentionsManager intentionsManager = IntentionsManager.getInstance();
 
     final DefaultActionGroup intentionActionGroup = new DefaultActionGroup(intention.getDescription(node, myEditor.getEditorContext()), true) {
       @Override
@@ -246,12 +247,13 @@ public class IntentionsSupport {
         });
       }
     };
+
     intentionActionGroup.add(new BaseAction("Go to Intention Declaration", "Go to declaration of this intention", icon) {
       @Override
       protected void doExecute(AnActionEvent e) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            SNode intentionNode = IntentionsManager.getInstance().getNodeByIntention(intention);
+            SNode intentionNode = intentionsManager.getNodeByIntention(intention);
             if (intentionNode == null) {
               Messages.showErrorDialog(myEditor.getOperationContext().getProject(),
                                        "Could not find declaration for " + intention.getClass().getSimpleName()
@@ -264,7 +266,23 @@ public class IntentionsSupport {
         });
       }
     });
+
+    final boolean enabled = !intentionsManager.intentionIsDisabled(intention);
+    intentionActionGroup.add(new BaseAction((enabled ? "Disable" : "Enable") + " This Intention", (enabled ? "Disables" : "Enables") + " this intention type", icon) {
+      @Override
+      protected void doExecute(AnActionEvent e) {
+        if (enabled) {
+          intentionsManager.disableIntention(intention);
+        } else {
+          intentionsManager.enableIntention(intention);
+        }
+      }
+    });
+
     intentionActionGroup.getTemplatePresentation().setIcon(icon);
+    if (IntentionsManager.getInstance().intentionIsDisabled(intention)) {
+      intentionActionGroup.getTemplatePresentation().setText(intentionActionGroup.getTemplatePresentation().getText() + " (-)");
+    }
 
     return intentionActionGroup;
   }
