@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -27,6 +28,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   public static ProjectModuleTreeNode createFor(MPSProject project, IModule module) {
@@ -63,7 +65,12 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
     }
     setText(getModulePresentation());
 
-    setErrorState(getModule().isValid() ? ErrorState.NONE : ErrorState.ERROR);
+    boolean valid = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return getModule().isValid();
+      }
+    });
+    setErrorState(valid ? ErrorState.NONE : ErrorState.ERROR);
     if (getModule().validate().isEmpty()) {
       setTooltipText(null);
     } else {
