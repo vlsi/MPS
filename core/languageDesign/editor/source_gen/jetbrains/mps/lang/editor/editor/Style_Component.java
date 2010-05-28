@@ -43,92 +43,87 @@ public class Style_Component extends AbstractCellProvider {
   private EditorCell createCollection_zdjsuv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_zdjsuv_a");
-    editorCell.addEditorCell(this.createCollection_zdjsuv_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_zdjsuv_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_zdjsuv_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_zdjsuv_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_zdjsuv_d0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_zdjsuv_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_zdjsuv_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_zdjsuv_a0a(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_zdjsuv_b0a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_zdjsuv_c0a(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_zdjsuv_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_zdjsuv_b0");
+    editorCell.addEditorCell(this.createCollection_zdjsuv_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_zdjsuv_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_zdjsuv_c1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_zdjsuv_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_zdjsuv_a1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createIndentCell_zdjsuv_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_zdjsuv_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_zdjsuv_a0b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_zdjsuv_b0b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_zdjsuv_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "style");
-    editorCell.setCellId("Constant_zdjsuv_a0a");
-    Styles_StyleSheet.getStyle(editorCell).apply(editorCell);
+  private EditorCell createCollection_zdjsuv_b1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_zdjsuv_b1a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createIndentCell_zdjsuv_a1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_zdjsuv_b1b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_zdjsuv_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Style:");
+    editorCell.setCellId("Constant_zdjsuv_a0");
+    Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_zdjsuv_c0a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_zdjsuv_b0b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_zdjsuv_c0a");
+    editorCell.setCellId("Constant_zdjsuv_b0b0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_zdjsuv_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_zdjsuv_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_zdjsuv_c0");
+    editorCell.setCellId("Constant_zdjsuv_c1a");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_zdjsuv_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_zdjsuv_d0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_zdjsuv_b1a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Style_Component.styleItemListHandler_zdjsuv_b1a(node, "styleItem", editorContext);
+  private EditorCell createRefNodeList_zdjsuv_b1b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Style_Component.styleItemListHandler_zdjsuv_b1b0(node, "styleItem", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_styleItem");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createIndentCell_zdjsuv_a1a(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_zdjsuv_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createRefCell_zdjsuv_b0a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_zdjsuv_a0b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("styleClass");
     provider.setNoTargetText("<no base style>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Style_Component._Inline_zdjsuv_a1a0());
+    provider.setAuxiliaryCellProvider(new Style_Component._Inline_zdjsuv_a0a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -141,8 +136,8 @@ public class Style_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public static class _Inline_zdjsuv_a1a0 extends InlineCellProvider {
-    public _Inline_zdjsuv_a1a0() {
+  public static class _Inline_zdjsuv_a0a1a extends InlineCellProvider {
+    public _Inline_zdjsuv_a0a1a() {
       super();
     }
 
@@ -151,10 +146,10 @@ public class Style_Component extends AbstractCellProvider {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_zdjsuv_a0b0a(editorContext, node);
+      return this.createProperty_zdjsuv_a0a0b0(editorContext, node);
     }
 
-    private EditorCell createProperty_zdjsuv_a0b0a(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_zdjsuv_a0a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -174,8 +169,8 @@ public class Style_Component extends AbstractCellProvider {
     }
   }
 
-  private static class styleItemListHandler_zdjsuv_b1a extends RefNodeListHandler {
-    public styleItemListHandler_zdjsuv_b1a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class styleItemListHandler_zdjsuv_b1b0 extends RefNodeListHandler {
+    public styleItemListHandler_zdjsuv_b1b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
