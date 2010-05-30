@@ -2,11 +2,17 @@ package jetbrains.mps.intentions;
 
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import jetbrains.mps.smodel.Language;
 import org.apache.commons.lang.builder.CompareToBuilder;
 import org.jetbrains.annotations.Nls;
 
 import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeCellRenderer;
+import javax.swing.tree.TreeCellRenderer;
+import java.awt.Component;
 import java.util.*;
+import java.util.Map.Entry;
 
 public class IntentionsPreferencesPage implements Configurable {
   private List<IntentionEnabledCheckBox> myCheckBoxes = null;
@@ -38,10 +44,41 @@ public class IntentionsPreferencesPage implements Configurable {
     JPanel panel = new JPanel();
     panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
     panel.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
-    JScrollPane scrollPane = new JScrollPane(panel);
+
+    DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode();
+    LinkedHashMap<Language, DefaultMutableTreeNode> languagesToNodes = new LinkedHashMap<Language, DefaultMutableTreeNode>();
     for (IntentionEnabledCheckBox checkBox : myCheckBoxes) {
-      panel.add(checkBox.getCheckBox());
+      Language language = myIntentionsManager.getIntentionLanguage(checkBox.getIntention());
+      if (language != null) {
+        DefaultMutableTreeNode languageNode = languagesToNodes.get(language);
+        if (languageNode == null) {
+          languageNode = new DefaultMutableTreeNode(language, true);
+          rootNode.add(languageNode);
+          languagesToNodes.put(language, languageNode);
+        }
+        languageNode.add(new DefaultMutableTreeNode(checkBox, false));
+      }
     }
+
+    JTree tree = new JTree(rootNode);
+    tree.setRootVisible(false);
+    tree.setCellRenderer(new DefaultTreeCellRenderer() {
+      @Override
+      public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded,
+                                                    boolean leaf, int row, boolean hasFocus) {
+        System.out.println(value.getClass());
+        if (value instanceof DefaultMutableTreeNode) {
+          DefaultMutableTreeNode mutableTreeNode = (DefaultMutableTreeNode) value;
+          Object userObject = mutableTreeNode.getUserObject();
+          if (userObject instanceof IntentionEnabledCheckBox) {
+            return ((IntentionEnabledCheckBox) userObject).getCheckBox(); 
+          }
+        }
+        return super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
+      }
+    });
+    JScrollPane scrollPane = new JScrollPane(tree);
+
     return scrollPane;
   }
 
@@ -104,6 +141,10 @@ public class IntentionsPreferencesPage implements Configurable {
 
     private boolean isModified() {
       return myIntentionsManager.intentionIsDisabled(myIntention) == myCheckBox.isSelected();
+    }
+
+    public Intention getIntention() {
+      return myIntention;
     }
 
     private JCheckBox getCheckBox() {
