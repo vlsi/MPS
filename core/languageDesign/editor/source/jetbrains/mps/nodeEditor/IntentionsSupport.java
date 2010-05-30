@@ -141,11 +141,7 @@ public class IntentionsSupport {
                 finished[0] = false;
                 return;
               }
-              enabledPresent[0] = !getEnabledIntentions(new Computable<Boolean>() {
-                public Boolean compute() {
-                  return interrupted(); //why so many interrupted() calls? which thread can interrupt this?
-                }
-              }).isEmpty();
+              enabledPresent[0] = !getEnabledIntentions().isEmpty();
               finished[0] = true;
             }
           });
@@ -280,17 +276,13 @@ public class IntentionsSupport {
     });
 
     intentionActionGroup.getTemplatePresentation().setIcon(icon);
-    if (IntentionsManager.getInstance().intentionIsDisabled(intention)) {
-      intentionActionGroup.getTemplatePresentation().setText(intentionActionGroup.getTemplatePresentation().getText() + " (-)");
-    }
-
     return intentionActionGroup;
   }
 
   private BaseGroup getIntentionsGroup() {
     BaseGroup group = new BaseGroup("");
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
-    groupItems.addAll(getAvailableIntentions());
+    groupItems.addAll(getEnabledIntentions());
     if (groupItems.isEmpty()) {
       return null;
     }
@@ -348,7 +340,7 @@ public class IntentionsSupport {
     SNode node = myEditor.getEditedNode();
     if (node == null || node.getModel().isDisposed() || node.getModel().isNotEditable()) return;
 
-    Set<Pair<Intention, SNode>> enabledIntentions = getEnabledIntentions(terminated);
+    Set<Pair<Intention, SNode>> enabledIntentions = getEnabledIntentions();
     if (enabledIntentions.isEmpty()) return;
 
     IntentionType typeToShow = IntentionType.getLowestPriorityType();
@@ -383,7 +375,7 @@ public class IntentionsSupport {
     return result;
   }
 
-  private Set<Pair<Intention, SNode>> getEnabledIntentions(Computable<Boolean> terminated) {
+  private Set<Pair<Intention, SNode>> getEnabledIntentions() {
     final Set<Pair<Intention, SNode>> result = new LinkedHashSet<Pair<Intention, SNode>>();
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
