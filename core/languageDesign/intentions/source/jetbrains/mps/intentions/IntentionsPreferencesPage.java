@@ -2,10 +2,17 @@ package jetbrains.mps.intentions;
 
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import org.apache.commons.lang.builder.CompareToBuilder;
 import org.jetbrains.annotations.Nls;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import java.awt.Component;
+import java.awt.Dimension;
 import java.util.*;
 
 public class IntentionsPreferencesPage implements Configurable {
@@ -35,14 +42,29 @@ public class IntentionsPreferencesPage implements Configurable {
   @Override
   public JComponent createComponent() {
     initCheckBoxes();
-    JPanel panel = new JPanel();
-    panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-    panel.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
-    JScrollPane scrollPane = new JScrollPane(panel);
+    JPanel mainPanel = new JPanel();
+    mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+    mainPanel.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
+    LinkedHashMap<Language, JPanel> languagesToPanels = new LinkedHashMap<Language, JPanel>();
     for (IntentionEnabledCheckBox checkBox : myCheckBoxes) {
-      panel.add(checkBox.getCheckBox());
+      Language language = myIntentionsManager.getIntentionLanguage(checkBox.getIntention());
+      if (language != null) {
+        JPanel languagePanel = languagesToPanels.get(language);
+        if (languagePanel == null) {
+          languagePanel = new JPanel();
+          languagePanel.setLayout(new BoxLayout(languagePanel, BoxLayout.Y_AXIS));
+          languagePanel.add(Box.createHorizontalGlue());
+          languagePanel.setBorder(new TitledBorder(language.getNamespace()));
+          languagePanel.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
+          languagePanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+          languagesToPanels.put(language, languagePanel);
+          mainPanel.add(languagePanel);
+        }
+        languagePanel.add(checkBox.getCheckBox());
+      }
     }
-    return scrollPane;
+    return mainPanel;
   }
 
   private void initCheckBoxes() {
@@ -97,8 +119,17 @@ public class IntentionsPreferencesPage implements Configurable {
 
     private IntentionEnabledCheckBox(Intention intention) {
       myIntention = intention;
-      myCheckBox = new JCheckBox(intention.getClass().getPackage().getName() + " : " + intention.getClass().getSimpleName(),
-        !myIntentionsManager.intentionIsDisabled(intention));
+      String intentionName = myIntention.getClass().getName();
+      final SNode intentionNode = myIntentionsManager.getNodeByIntention(intention);
+      if (intentionNode != null) {
+        intentionName = ModelAccess.instance().runReadAction(new Computable<String>() {
+          @Override
+          public String compute() {
+            return intentionNode.getName();
+          }
+        });
+      }
+      myCheckBox = new JCheckBox(intentionName);
       myCheckBox.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
     }
 
@@ -108,6 +139,10 @@ public class IntentionsPreferencesPage implements Configurable {
 
     private JCheckBox getCheckBox() {
       return myCheckBox;
+    }
+
+    public Intention getIntention() {
+      return myIntention;
     }
 
     private void apply() {
