@@ -1,33 +1,37 @@
 package jetbrains.mps.ide.projectPane.favorites;
 
-import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.SelectInTarget;
+import com.intellij.ide.projectView.ProjectView;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.ActionCallback;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.components.State;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.ui.EmptyIcon;
-
-import javax.swing.*;
-
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.project.ProjectOperationContext;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager.MPSFavoritesListener;
 import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JScrollPane;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 @State(
   name = "Favorites",
@@ -169,7 +173,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     return myProjectView;
   }
 
-  private class MyLogicalViewTree extends MPSTree implements LogicalViewTree{
+  private class MyLogicalViewTree extends MPSTree implements LogicalViewTree {
     protected MPSTreeNode rebuild() {
       String subId = getSubId();
       TextTreeNode invisibleRoot = new TextTreeNode(subId == null? "Favorites" : subId);
@@ -199,6 +203,11 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
         }
       });
       FavoritesProjectPane.this.editNode(node, context, focus, select);
+    }
+
+    @Override
+    public Comparator<Object> getChildrenComparator() {
+      return getTreeChildrenComparator();
     }
 
     public boolean isAutoOpen() {

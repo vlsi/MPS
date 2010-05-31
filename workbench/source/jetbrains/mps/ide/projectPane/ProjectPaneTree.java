@@ -23,9 +23,10 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
-class ProjectPaneTree extends ProjectTree implements LogicalViewTree{
+class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
   private ProjectPane myProjectPane;
 
   public ProjectPaneTree(ProjectPane projectPane, Project project) {
@@ -103,6 +104,11 @@ class ProjectPaneTree extends ProjectTree implements LogicalViewTree{
     public void dropActionChanged(DragSourceDragEvent dsde) {
       dsde.getDragSourceContext().setCursor(null);
     }
+  }
+
+  @Override
+  public Comparator<Object> getChildrenComparator() {
+    return myProjectPane.getTreeChildrenComparator();
   }
 
   private class MyDragGestureListener implements DragGestureListener {

@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jdom.Element;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.event.TreeExpansionEvent;
@@ -336,6 +337,11 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     JPopupMenu defaultMenu = createDefaultPopupMenu();
     if (defaultMenu == null) return;
     defaultMenu.show(this, x, y);
+    }
+
+  @Nullable
+  public Comparator<Object> getChildrenComparator() {
+    return null;
   }
 
   protected abstract MPSTreeNode rebuild();

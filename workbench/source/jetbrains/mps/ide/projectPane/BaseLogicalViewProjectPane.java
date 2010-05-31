@@ -8,6 +8,7 @@ import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.ide.projectView.impl.ProjectViewImpl;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
@@ -44,6 +45,7 @@ import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -150,9 +152,43 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return getProjectView().isShowMembers(getId());
   }
 
+  public boolean isSortByType() {
+    return getProjectView().isSortByType(getId());
+  }
+
+  @Override
+  public void installComparator() {
+    // Overrid to avoid NPE
+  }
+
+  @Nullable
+  public Comparator<Object> getTreeChildrenComparator() {
+    return new Comparator<Object>() {
+      @Override
+      public int compare(final Object o1, final Object o2) {
+        if (isSortByType()) {
+          if (o1 instanceof SNode && o2 instanceof SNode) {
+            final SNode node1 = (SNode) o1;
+            final SNode node2 = (SNode) o2;
+            return ModelAccess.instance().runReadAction(new Computable<Integer>() {
+              @Override
+              public Integer compute() {
+                String concept1 = node1.getConceptFqName();
+                String concept2 = node2.getConceptFqName();
+                return concept1.compareTo(concept2);
+              }
+            });
+          }
+        }
+        return 0;
+      }
+    };
+  }
+
   public void addToolbarActions(final DefaultActionGroup group) {
     group.add(new PropertiesAndReferencesToggleAction());
     group.addAction(new PropertiesAndReferencesToggleAction()).setAsSecondary(true);
+    group.addAction(new SortByTypeToggleAction()).setAsSecondary(true);
   }
 
   protected void removeListeners() {
@@ -507,6 +543,23 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
             rebuild();
           }
         });
+      }
+    }
+  }
+
+  private class SortByTypeToggleAction extends ToggleAction {
+    public SortByTypeToggleAction() {
+      super("Sort Roots by Concept", "Sort root nodes by concept", null);
+    }
+
+    public boolean isSelected(@Nullable AnActionEvent e) {
+      return isSortByType();
+    }
+
+    public void setSelected(@Nullable AnActionEvent e, boolean state) {
+      if (state != isSortByType()) {
+        getProjectView().setSortByType(getId(), state);
+        rebuild();
       }
     }
   }

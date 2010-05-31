@@ -460,6 +460,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       };
       List<SNode> filteredRoots = CollectionUtil.filter(model.getRoots(), new AndCondition<SNode>(condition, myNodesCondition));
       List<SNode> sortedRoots = SortUtil.sortNodesByPresentation(filteredRoots);
+      Comparator<Object> childrenComparator = getTree().getChildrenComparator();
+      if (childrenComparator != null) {
+        Collections.sort(sortedRoots, childrenComparator);
+      }
       for (SNode sortedRoot : sortedRoots) {
         MPSTreeNodeEx treeNode = createSNodeTreeNode(sortedRoot, getOperationContext(), myNodesCondition);
         MPSTreeNode group = getNodeGroupFor(sortedRoot);
