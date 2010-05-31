@@ -1093,14 +1093,14 @@ __switch__:
     return p.getSNodeId();
   }
 
-  private static SNodeId check_fh1co9_e0a0e0i0a0a3a0a0c0t0(SNode p) {
+  private static SNodeId check_fh1co9_e0a0f0i0a0a3a0a0c0t0(SNode p) {
     if (null == p) {
       return null;
     }
     return p.getSNodeId();
   }
 
-  private static SNode check_fh1co9_a4a0a4a8a0a0d0a0a2a91a(SNode p, SModelChildEvent e) {
+  private static SNode check_fh1co9_a4a0a5a8a0a0d0a0a2a91a(SNode p, SModelChildEvent e) {
     if (null == p) {
       return null;
     }
@@ -1537,7 +1537,12 @@ __switch__:
                     return ObjectUtils.equals(ch.getParentId(), e.getParent().getSNodeId()) && e.getChildRole().equals(ch.getRole());
                   }
                 });
-                addChange(new SetNodeChange(child.getConceptFqName(), child.getSNodeId(), e.getChildRole(), e.getParent().getSNodeId(), check_fh1co9_e0a0e0i0a0a3a0a0c0t0(check_fh1co9_a4a0a4a8a0a0d0a0a2a91a(myBaseVersionModel.getNodeById(e.getParent().getSNodeId()), e)), prevRole), e.getAffectedRoot());
+                removeChanges(SetNodeChange.class, new _FunctionTypes._return_P1_E0<Boolean, SetNodeChange>() {
+                  public Boolean invoke(SetNodeChange ch) {
+                    return ObjectUtils.equals(ch.getNodeParent(), e.getParent().getSNodeId()) && e.getChildRole().equals(ch.getNodeRole());
+                  }
+                });
+                addChange(new SetNodeChange(child.getConceptFqName(), child.getSNodeId(), e.getChildRole(), e.getParent().getSNodeId(), check_fh1co9_e0a0f0i0a0a3a0a0c0t0(check_fh1co9_a4a0a5a8a0a0d0a0a2a91a(myBaseVersionModel.getNodeById(e.getParent().getSNodeId()), e)), prevRole), e.getAffectedRoot());
               } else {
                 refreshMultipleChildChanges(e.getParent(), e.getChildRole(), currentChildren, false);
               }
