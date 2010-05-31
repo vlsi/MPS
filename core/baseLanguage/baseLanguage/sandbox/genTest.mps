@@ -27,7 +27,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <maxImportIndex value="23" />
+  <maxImportIndex value="24" />
   <import index="14" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="18" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.cache(jetbrains.mps.cache@java_stub)" version="-1" />
@@ -35,6 +35,7 @@
   <import index="21" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
   <import index="23" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
+  <import index="24" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3764553758271149919">
     <property name="name:3" value="Foo" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="3427990840445106141">
@@ -364,6 +365,78 @@
     </node>
     <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="3148306863810577811">
       <property name="name:3" value="S" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="684456904423879532">
+    <property name="name:3" value="Collections" />
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="684456904423879538">
+      <property name="name:3" value="foo" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="684456904423879539" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="684456904423879540" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="684456904423879541">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="684456904423879544">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="684456904423879545">
+            <property name="name:3" value="mis" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="684456904423879546">
+              <link role="classifier:3" targetNodeId="20.~Map" resolveInfo="Map" />
+              <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="684456904423879549">
+                <link role="classifier:3" targetNodeId="14.~Integer" resolveInfo="Integer" />
+              </node>
+              <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="684456904423879550">
+                <link role="classifier:3" targetNodeId="14.~String" resolveInfo="String" />
+              </node>
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="684456904423879552" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="684456904423879554">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="684456904423879583">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="684456904423879555">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="684456904423879556">
+                <link role="baseMethodDeclaration:3" targetNodeId="24.~SetSequence.fromSet(java.util.Set):jetbrains.mps.internal.collections.runtime.ISetSequence" resolveInfo="fromSet" />
+                <link role="classConcept:3" targetNodeId="24.~SetSequence" resolveInfo="SetSequence" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="684456904423879557">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="684456904423879558">
+                    <link role="baseMethodDeclaration:3" targetNodeId="24.~MapSequence.fromMap(java.util.Map):jetbrains.mps.internal.collections.runtime.IMapSequence" resolveInfo="fromMap" />
+                    <link role="classConcept:3" targetNodeId="24.~MapSequence" resolveInfo="MapSequence" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="684456904423879559">
+                      <link role="variableDeclaration:3" targetNodeId="684456904423879545" resolveInfo="mis" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="684456904423879560">
+                    <link role="baseMethodDeclaration:3" targetNodeId="24.~IMapSequence.mappingsSet():jetbrains.mps.internal.collections.runtime.ISetSequence" resolveInfo="mappingsSet" />
+                  </node>
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="684456904423879561">
+                <link role="baseMethodDeclaration:3" targetNodeId="24.~ISequence.toListSequence():jetbrains.mps.internal.collections.runtime.IListSequence" resolveInfo="toListSequence" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="684456904423879587">
+              <link role="baseMethodDeclaration:3" targetNodeId="24.~ISequence.visitAll(jetbrains.mps.internal.collections.runtime.IVisitor):void" resolveInfo="visitAll" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="684456904423879588">
+                <node role="parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="684456904423879589">
+                  <property name="name:7" value="m" />
+                  <node role="type:7" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="684456904423879590" />
+                </node>
+                <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="684456904423879591">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="684456904423879618">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="684456904423879619">
+                      <property name="value:3" value="true" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="684456904423879533" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="684456904423879534">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="684456904423879535" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="684456904423879536" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="684456904423879537" />
     </node>
   </node>
 </model>

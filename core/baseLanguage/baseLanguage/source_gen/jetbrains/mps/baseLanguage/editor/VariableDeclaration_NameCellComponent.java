@@ -70,7 +70,12 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
   }
 
   private static boolean renderingCondition_j36akn_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "type", true)) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type") && !(Type_Behavior.call_hasMissingParameters_3508583411997314206(SLinkOperations.getTarget(node, "type", true)));
+    boolean condition = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "type", true)) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.Type")) {
+      return condition && !(Type_Behavior.call_hasMissingParameters_3508583411997314206(SLinkOperations.getTarget(node, "type", true)));
+    } else {
+      return condition;
+    }
   }
 
   public static class VariableDeclaration_name_postfixCellMenu_a0a extends AbstractCellMenuPart_PropertyPostfixHints {

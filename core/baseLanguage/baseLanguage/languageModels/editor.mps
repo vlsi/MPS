@@ -10081,33 +10081,68 @@
       </node>
       <node role="focusPolicyApplicable:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="3508583411997322804">
         <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3508583411997322805">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7087185108958074534">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="7087185108958074535">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="7087185108958074536">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7087185108958074537">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7087185108958074538">
-                    <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="7087185108958074539" />
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7087185108958074540">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="684456904423619414">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="684456904423619415">
+              <property name="name:3" value="condition" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="684456904423619416" />
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="684456904423619417">
+                <node role="rightExpression:3" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression:16" id="684456904423619418">
+                  <link role="conceptDeclaration:16" targetNodeId="17.1068431790189:3" resolveInfo="Type" />
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="684456904423619419">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="684456904423619420">
+                    <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="684456904423619421" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="684456904423619422">
                       <link role="link:16" targetNodeId="17.5680397130376446158:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="7087185108958074541">
-                    <link role="baseMethodDeclaration:16" targetNodeId="75.3508583411997314206" resolveInfo="hasMissingParameters" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation:16" id="684456904423619423" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="684456904423625047">
+            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="684456904423625048">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="684456904423656331">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="684456904423656332">
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="684456904423656333">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="684456904423656334">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="684456904423656335">
+                        <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="684456904423656336" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="684456904423656337">
+                          <link role="link:16" targetNodeId="17.5680397130376446158:3" />
+                        </node>
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="684456904423656338">
+                        <link role="baseMethodDeclaration:16" targetNodeId="75.3508583411997314206" resolveInfo="hasMissingParameters" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="684456904423656339">
+                    <link role="variableDeclaration:3" targetNodeId="684456904423619415" resolveInfo="condition" />
                   </node>
                 </node>
               </node>
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="7087185108958074546">
-                <node role="rightExpression:3" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression:16" id="3891087596588734565">
+            </node>
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="684456904423625058">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="684456904423625052">
+                <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="684456904423625051" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="684456904423625057">
+                  <link role="link:16" targetNodeId="17.5680397130376446158:3" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="684456904423626423">
+                <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="684456904423626425">
                   <link role="conceptDeclaration:16" targetNodeId="17.1068431790189:3" resolveInfo="Type" />
                 </node>
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3891087596588684551">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7087185108958074543">
-                    <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="7087185108958074544" />
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7087185108958074545">
-                      <link role="link:16" targetNodeId="17.5680397130376446158:3" />
-                    </node>
+              </node>
+            </node>
+            <node role="ifFalseStatement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="684456904423626426">
+              <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="684456904423626427">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="684456904423656340">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="684456904423656342">
+                    <link role="variableDeclaration:3" targetNodeId="684456904423619415" resolveInfo="condition" />
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation:16" id="3891087596588684555" />
                 </node>
               </node>
             </node>
