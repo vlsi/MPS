@@ -25104,5 +25104,25 @@
       <link role="concept:3" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="684456904424062648">
+    <property name="package:3" value="type" />
+    <property name="name:3" value="supertypesOfUpperBoundType" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="684456904424062649">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="684456904424062651">
+        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="684456904424062654">
+          <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="684456904424062653">
+            <link role="applicableNode:3" targetNodeId="684456904424062650" resolveInfo="upperBoundType" />
+          </node>
+          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="684456904424062658">
+            <link role="link:16" targetNodeId="1.1171903916107:3" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="684456904424062650">
+      <property name="name:3" value="upperBoundType" />
+      <link role="concept:3" targetNodeId="1.1171903916106:3" resolveInfo="UpperBoundType" />
+    </node>
+  </node>
 </model>
 

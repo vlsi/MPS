@@ -763,6 +763,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
+      SubtypingRule_Runtime subtypingRule = new supertypesOfUpperBoundType_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new supertypes_of_typeVariableReference_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
@@ -821,14 +825,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOpsProvider_OneTypeSpecified provider = new OverloadedOpsProvider_OneTypeSpecified() {
         {
-          this.myOperandType = new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a0qh0a().createNode();
+          this.myOperandType = new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a0rh0a().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myTypeIsExact = false;
           this.myIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a891a0().createNode();
+          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a991a0().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
@@ -1112,8 +1116,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a891a0 {
-    public QuotationClass_3ist9o_a0a0a0a0a0a0a891a0() {
+  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a991a0 {
+    public QuotationClass_3ist9o_a0a0a0a0a0a0a991a0() {
     }
 
     public SNode createNode() {
@@ -1129,8 +1133,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a0qh0a {
-    public QuotationClass_3ist9o_a0a0a0a0a0a0a0qh0a() {
+  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a0rh0a {
+    public QuotationClass_3ist9o_a0a0a0a0a0a0a0rh0a() {
     }
 
     public SNode createNode() {
