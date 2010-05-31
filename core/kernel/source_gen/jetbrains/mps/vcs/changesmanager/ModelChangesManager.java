@@ -403,7 +403,7 @@ public class ModelChangesManager {
           } else if (change instanceof SetPropertyChange || change instanceof SetReferenceChange) {
             SNodeId nodeId = change.getAffectedNodeId();
             SNode node = model.getNodeById(nodeId);
-            if (!(ListSequence.fromList(SNodeOperations.getAncestors(node, null, false)).any(new IWhereFilter<SNode>() {
+            if (!(ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).any(new IWhereFilter<SNode>() {
               public boolean accept(SNode a) {
                 return SetSequence.fromSet(addedNodes).contains(a.getSNodeId()) || SetSequence.fromSet(removedNodes).contains(a.getSNodeId());
               }

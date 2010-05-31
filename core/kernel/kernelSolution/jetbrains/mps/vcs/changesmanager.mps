@@ -4183,7 +4183,9 @@
                                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6198597596203365604">
                                   <link role="variableDeclaration:3" targetNodeId="6198597596203365588" resolveInfo="node" />
                                 </node>
-                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation:16" id="6198597596203365609" />
+                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation:16" id="6198597596203365609">
+                                  <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion:16" id="7132911809917750767" />
+                                </node>
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AnyOperation:7" id="6198597596203365614">
                                 <node role="closure:7" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="6198597596203365615">
