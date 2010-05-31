@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -31,7 +32,7 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
     }
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
     for (SReference ref : SNodeOperations.getReferences(node)) {
-      SearchScopeStatus sss = ModelConstraintsUtil.getSearchScope(SNodeOperations.getParent(node), node, concept, SLinkOperations.getRole(ref), context);
+      SearchScopeStatus sss = ModelConstraintsUtil.getSearchScope(SNodeOperations.getParent(node), node, concept, ((LinkDeclaration) SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration(ref))), context);
       SNode target = ref.getTargetNode();
       if (sss.isError()) {
         {
