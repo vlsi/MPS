@@ -437,7 +437,6 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     }
 
     class MyBasePathToggleAction extends MyBaseToggleAction {
-      private boolean myIsSelected = false;
       private PathItemRole myPathItemRole = null;
 
       public MyBasePathToggleAction(PathItemRole itemRole, String name, Icon icon) {
@@ -446,13 +445,12 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       }
 
       public boolean isSelected(AnActionEvent e) {
-        return myIsSelected;
+        return myPathProvider.contains(myPathItemRole);
       }
 
       public void doSetSelected(AnActionEvent e, boolean state) {
-        myIsSelected = state;
         if (myPathItemRole == null) return;
-        if (myIsSelected) {
+        if (state) {
           addPathComponent(myPathItemRole);
         } else {
           removePathComponent(myPathItemRole);
