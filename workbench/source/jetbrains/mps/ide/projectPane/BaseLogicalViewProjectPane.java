@@ -151,25 +151,8 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   public void addToolbarActions(final DefaultActionGroup group) {
-    ToggleAction propAndRefToggle = new ToggleAction("Show Properties and References", "Show properties and references", Icons.PROP_AND_REF) {
-      public boolean isSelected(@Nullable AnActionEvent e) {
-        return isShowPropertiesAndReferences();
-      }
-
-      public void setSelected(@Nullable AnActionEvent e, boolean state) {
-        if (state != isShowPropertiesAndReferences()) {
-          if (getProjectView() instanceof ProjectViewImpl) {
-            ((ProjectViewImpl) getProjectView()).setShowMembers(state, getId());
-          }
-          ModelAccess.instance().runReadInEDT(new Runnable() {
-            public void run() {
-              rebuild();
-            }
-          });
-        }
-      }
-    };
-    group.add(propAndRefToggle);
+    group.add(new PropertiesAndReferencesToggleAction());
+    group.addAction(new PropertiesAndReferencesToggleAction()).setAsSecondary(true);
   }
 
   protected void removeListeners() {
@@ -501,6 +484,29 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
           ((MPSTree) tree).rebuildLater();
         }
         myNeedRebuild = false;
+      }
+    }
+  }
+
+  private class PropertiesAndReferencesToggleAction extends ToggleAction {
+    public PropertiesAndReferencesToggleAction() {
+      super("Show Properties and References", "Show properties and references", Icons.PROP_AND_REF);
+    }
+
+    public boolean isSelected(@Nullable AnActionEvent e) {
+      return isShowPropertiesAndReferences();
+    }
+
+    public void setSelected(@Nullable AnActionEvent e, boolean state) {
+      if (state != isShowPropertiesAndReferences()) {
+        if (getProjectView() instanceof ProjectViewImpl) {
+          ((ProjectViewImpl) getProjectView()).setShowMembers(state, getId());
+        }
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+          public void run() {
+            rebuild();
+          }
+        });
       }
     }
   }
