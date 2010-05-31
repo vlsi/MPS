@@ -853,7 +853,6 @@
       <module fileurl="file://$PROJECT_DIR$/samples/theSimplestLanguage/theSimplestLanguage.iml" filepath="$PROJECT_DIR$/samples/theSimplestLanguage/theSimplestLanguage.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/typesystem/typesystem.iml" filepath="$PROJECT_DIR$/core/languageDesign/typesystem/typesystem.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" filepath="$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" group="platform/uiLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/platform/uiLanguage/runtime/uiLanguage-runtime.iml" filepath="$PROJECT_DIR$/platform/uiLanguage/runtime/uiLanguage-runtime.iml" group="platform/uiLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/unitTest/unitTest.iml" filepath="$PROJECT_DIR$/core/baseLanguage/unitTest/unitTest.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/platform/wizards/wizards.iml" filepath="$PROJECT_DIR$/platform/wizards/wizards.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/workbench/workbench.iml" filepath="$PROJECT_DIR$/workbench/workbench.iml" group="workbench" />
