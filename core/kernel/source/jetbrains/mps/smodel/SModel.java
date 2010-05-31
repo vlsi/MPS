@@ -812,26 +812,24 @@ public class SModel implements Iterable<SNode> {
   public List<SModelDescriptor> allImportedModels(IScope scope) {
     SModelDescriptor sourceModel = getModelDescriptor();
     Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();
-    List<Language> languages = getLanguages(scope);
-    for (Language language : languages) {
+    for (Language language : getLanguages(scope)) {
       for (SModelDescriptor am : language.getAccessoryModels()) {
-        if (am != sourceModel && !result.contains(am)) {
+        if (am != sourceModel) {
           result.add(am);
         }
       }
     }
 
-    List<SModelDescriptor> imports = importedModels(scope);
-    for (SModelDescriptor importedModel : imports) {
-      if (importedModel != sourceModel && !result.contains(importedModel)) {
+    for (SModelDescriptor importedModel : importedModels(scope)) {
+      if (importedModel != sourceModel) {
         result.add(importedModel);
       }
     }
 
-    if (getModelDescriptor() != null) {
-      IModule module = getModelDescriptor().getModule();
+    if (sourceModel != null) {
+      IModule module = sourceModel.getModule();
       if (module != null) {
-        result.addAll(module.getImplicitlyImportedModelsFor(getModelDescriptor()));
+        result.addAll(module.getImplicitlyImportedModelsFor(sourceModel));
       }
     }
 

@@ -213,8 +213,8 @@
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1229706801587">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1229706801588">
-                  <link role="baseMethodDeclaration:3" targetNodeId="9.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
-                  <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model:0" id="1229706801589" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="9.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SNode,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
+                  <node role="actualArgument:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="3741064044550106717" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1229706801590">
                     <link role="classifier:3" targetNodeId="9.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
                     <link role="variableDeclaration:3" targetNodeId="9.~IClassifiersSearchScope.STATIC_METHOD" resolveInfo="STATIC_METHOD" />
@@ -305,8 +305,8 @@
                   </node>
                   <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1229707121311">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1229707121312">
-                      <link role="baseMethodDeclaration:3" targetNodeId="9.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
-                      <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model:0" id="1229707121313" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="9.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SNode,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
+                      <node role="actualArgument:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="3741064044550106718" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1229707121314">
                         <link role="classifier:3" targetNodeId="9.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
                         <link role="variableDeclaration:3" targetNodeId="9.~IClassifiersSearchScope.STATIC_METHOD" resolveInfo="STATIC_METHOD" />

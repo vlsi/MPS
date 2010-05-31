@@ -23,7 +23,10 @@ public class ControlAbstractionContainer_DefaultSearchScope extends BaseNodeRefe
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.CLASS, operationContext.getScope());
+    return new VisibleClassifiersScope((_context.getReferenceNode() == null ?
+      _context.getEnclosingNode() :
+      _context.getReferenceNode()
+    ), IClassifiersSearchScope.CLASS, operationContext.getScope());
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

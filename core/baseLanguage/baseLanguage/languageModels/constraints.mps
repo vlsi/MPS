@@ -1826,11 +1826,11 @@
                     </node>
                     <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213104859480">
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1213104859481">
-                        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1213104859482">
+                        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4095201003056366484">
+                          <link role="baseMethodDeclaration:3" targetNodeId="10.~VisibilityUtil.isAccessible(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):boolean" resolveInfo="isAccessible" />
                           <link role="classConcept:3" targetNodeId="10.~VisibilityUtil" resolveInfo="VisibilityUtil" />
-                          <link role="baseMethodDeclaration:3" targetNodeId="10.~VisibilityUtil.isVisible(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):boolean" resolveInfo="isVisible" />
-                          <node role="actualArgument:3" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode:8" id="1213104859483" />
-                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1213104859484">
+                          <node role="actualArgument:3" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode:8" id="4095201003056366485" />
+                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="4095201003056366486">
                             <link role="variable:7" targetNodeId="1213104859478:83" resolveInfo="property" />
                           </node>
                         </node>

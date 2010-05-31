@@ -46,7 +46,7 @@ public class PropertyReference_property_ReferentConstraint extends BaseNodeRefer
         SNode classConcept = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
         List<SNode> properties = SLinkOperations.getTargets(classConcept, "property", true);
         for (SNode property : ListSequence.fromList(properties)) {
-          if (VisibilityUtil.isVisible(_context.getEnclosingNode(), property)) {
+          if (VisibilityUtil.isAccessible(_context.getEnclosingNode(), property)) {
             ListSequence.fromList(resultProperties).addElement(property);
           }
         }

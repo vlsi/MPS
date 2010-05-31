@@ -23,7 +23,10 @@ public class BeanBuilder_constructor_ReferentConstraint extends BaseNodeReferenc
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new VisibleClassConstructorsScope(_context.getModel(), operationContext.getScope());
+    return new VisibleClassConstructorsScope((_context.getReferenceNode() == null ?
+      _context.getEnclosingNode() :
+      _context.getReferenceNode()
+    ), operationContext.getScope());
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

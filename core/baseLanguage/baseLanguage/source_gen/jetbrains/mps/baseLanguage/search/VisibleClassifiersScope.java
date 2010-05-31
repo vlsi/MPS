@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class VisibleClassifiersScope extends ReachableClassifiersScope {
@@ -30,12 +31,17 @@ public class VisibleClassifiersScope extends ReachableClassifiersScope {
     List<Classifier> list = super.getClassifiers();
     List<Classifier> result = new ArrayList<Classifier>();
     for (Classifier classifier : list) {
-      String clsNamespace = classifier.getModel().getSModelFqName().getNamespace();
-      String modelNamespace = this.getModel().getSModelFqName().getNamespace();
-      if (classifier.getVisibility() == null && !(clsNamespace.equals(modelNamespace))) {
-        continue;
+      if (VisibilityUtil.isAccessible(myContextNode, SNodeOperations.cast(BaseAdapter.fromAdapter(classifier), "jetbrains.mps.baseLanguage.structure.IVisible"))) {
+        result.add(classifier);
       }
-      result.add(classifier);
+      /*
+        String clsNamespace = classifier.getModel().getSModelFqName().getNamespace();
+        String modelNamespace = this.getModel().getSModelFqName().getNamespace();
+        if (classifier.getVisibility() == null && !(clsNamespace.equals(modelNamespace))) {
+          continue;
+        }
+        result.add(classifier);
+      */
     }
     return result;
   }

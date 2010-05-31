@@ -57,7 +57,7 @@ public class QueriesGenerated {
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1229704835784(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    VisibleClassifiersScope scope = new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.STATIC_METHOD, operationContext.getScope());
+    VisibleClassifiersScope scope = new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.STATIC_METHOD, operationContext.getScope());
     List<SNode> nodes = scope.getNodes(new Condition<SNode>() {
       public boolean met(SNode smd) {
         return ControlMethodUtil.isControlMethod(smd);
@@ -159,7 +159,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            VisibleClassifiersScope scope = new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.STATIC_METHOD, operationContext.getScope());
+            VisibleClassifiersScope scope = new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.STATIC_METHOD, operationContext.getScope());
             List<SNode> nodes = scope.getNodes(new Condition<SNode>() {
               public boolean met(SNode smd) {
                 return ControlMethodUtil.isControlMethod(smd);

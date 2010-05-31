@@ -3025,8 +3025,15 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1230321893354">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1230321893355">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1230321893356">
-                <link role="baseMethodDeclaration:3" targetNodeId="24.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
-                <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model:0" id="1230321893357" />
+                <link role="baseMethodDeclaration:3" targetNodeId="24.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SNode,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="3741064044550107038">
+                  <node role="ifTrue:3" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode:8" id="3741064044550107042" />
+                  <node role="ifFalse:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode:8" id="3741064044550107043" />
+                  <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3741064044550107034">
+                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3741064044550107037" />
+                    <node role="leftExpression:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode:8" id="3741064044550107033" />
+                  </node>
+                </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1230321893358">
                   <link role="classifier:3" targetNodeId="24.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
                   <link role="variableDeclaration:3" targetNodeId="24.~IClassifiersSearchScope.CLASS" resolveInfo="CLASS" />

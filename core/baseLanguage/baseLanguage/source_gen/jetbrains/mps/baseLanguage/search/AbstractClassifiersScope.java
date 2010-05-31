@@ -56,7 +56,7 @@ public abstract class AbstractClassifiersScope extends AbstractSearchScope imple
         if ((constraint & IClassifiersSearchScope.NON_FINAL) == IClassifiersSearchScope.NON_FINAL && classifier instanceof ClassConcept && ((ClassConcept) classifier).getIsFinal()) {
           continue;
         }
-        if ((constraint & IClassifiersSearchScope.INTERFACE) == IClassifiersSearchScope.INTERFACE && classifier instanceof Interface && !((classifier instanceof Annotation)) && condition.met(classifier)) {
+        if ((constraint & IClassifiersSearchScope.INTERFACE) == IClassifiersSearchScope.INTERFACE && classifier instanceof Interface && !(classifier instanceof Annotation) && condition.met(classifier)) {
           result.add(classifier);
         }
         if ((constraint & IClassifiersSearchScope.ANNOTATION) == IClassifiersSearchScope.ANNOTATION && classifier.getClass() == Annotation.class && condition.met(classifier)) {

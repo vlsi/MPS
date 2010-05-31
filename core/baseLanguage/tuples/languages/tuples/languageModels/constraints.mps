@@ -992,7 +992,7 @@
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="1652220223504374046">
                 <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="1652220223504374047">
                   <link role="classifier:3" targetNodeId="8.~VisibleClassifiersScope" resolveInfo="VisibleClassifiersScope" />
-                  <link role="baseMethodDeclaration:3" targetNodeId="8.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="8.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SNode,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
                   <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1652220223504374048" />
                   <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1652220223504375449">
                     <property name="name:3" value="getNodesFormClassifiersList" />
@@ -1090,10 +1090,7 @@
                       </node>
                     </node>
                   </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1652220223504372079">
-                    <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode:8" id="1652220223504372078" />
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1652220223504372083" />
-                  </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode:8" id="1652220223504372078" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1652220223504372097">
                     <link role="classifier:3" targetNodeId="8.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
                     <link role="variableDeclaration:3" targetNodeId="8.~IClassifiersSearchScope.ANYTHING" resolveInfo="ANYTHING" />

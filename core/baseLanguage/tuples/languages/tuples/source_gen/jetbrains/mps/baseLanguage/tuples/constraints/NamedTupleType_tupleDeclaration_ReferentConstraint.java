@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import java.util.List;
 import jetbrains.mps.smodel.INodeAdapter;
@@ -31,7 +30,7 @@ public class NamedTupleType_tupleDeclaration_ReferentConstraint extends BaseNode
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new VisibleClassifiersScope(SNodeOperations.getModel(_context.getEnclosingNode()), IClassifiersSearchScope.ANYTHING, operationContext.getScope()) {
+    return new VisibleClassifiersScope(_context.getEnclosingNode(), IClassifiersSearchScope.ANYTHING, operationContext.getScope()) {
       protected List<INodeAdapter> getNodesFormClassifiersList(List<Classifier> classifiers, int constraint, Condition<INodeAdapter> condition) {
         List<INodeAdapter> result = new ArrayList<INodeAdapter>();
         for (Classifier classifier : classifiers) {

@@ -329,8 +329,8 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240564650486">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1240564650487">
                       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1240564650488">
-                        <link role="baseMethodDeclaration:3" targetNodeId="6.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
-                        <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model:0" id="1240564650489" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="6.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SNode,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
+                        <node role="actualArgument:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="3741064044550107044" />
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1240564650490">
                           <link role="classifier:3" targetNodeId="6.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
                           <link role="variableDeclaration:3" targetNodeId="6.~IClassifiersSearchScope.INTERFACE" resolveInfo="INTERFACE" />
