@@ -6595,15 +6595,6 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="993300782394692055">
-          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="993300782394692056">
-            <property name="name:3" value="model" />
-            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SModelType:16" id="993300782394692057" />
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="1794625231785943929">
-              <link role="baseMethodDeclaration:3" targetNodeId="993300782394691287" resolveInfo="getModel" />
-            </node>
-          </node>
-        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="2698665420347341937" />
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2698665420347341871">
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2698665420347341872">

@@ -726,7 +726,6 @@ __switch__:
       return;
     }
     Tuples._2<SNodeId, String> pair = MultiTuple.<SNodeId,String>from(parentNode.getSNodeId(), role);
-    SModel model = getModel();
 
     if (!(MapSequence.fromMap(myMultipleChildChanges).containsKey(pair))) {
       MapSequence.fromMap(myMultipleChildChanges).put(pair, ListSequence.fromList(new ArrayList<Change>()));
@@ -740,7 +739,7 @@ __switch__:
 
     // Step 2: find longest common subsequence of children 
     List<SNodeId> currentChildrenIds = SModelUtils.getNodeIds(currentChildren);
-    List<SNodeId> baseChildrenIds = SModelUtils.getNodeIds(check_fh1co9_a0a31a93(myBaseVersionModel.getNodeById(parentNode.getSNodeId()), role));
+    List<SNodeId> baseChildrenIds = SModelUtils.getNodeIds(check_fh1co9_a0a21a93(myBaseVersionModel.getNodeById(parentNode.getSNodeId()), role));
     List<Tuples._2<Iterable<SNodeId>, Iterable<SNodeId>>> differentSubsequences = LongestCommonSubsequenceFinder.findDifferentSubsequences(baseChildrenIds, currentChildrenIds);
 
     // Step 3: add new changes 
@@ -1003,7 +1002,7 @@ __switch__:
     return p.getNodeById(child);
   }
 
-  private static List<SNode> check_fh1co9_a0a31a93(SNode p, String role) {
+  private static List<SNode> check_fh1co9_a0a21a93(SNode p, String role) {
     if (null == p) {
       return null;
     }
