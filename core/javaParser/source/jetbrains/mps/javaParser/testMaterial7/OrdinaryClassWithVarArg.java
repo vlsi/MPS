@@ -8,7 +8,7 @@ package jetbrains.mps.javaParser.testMaterial7;
  * To change this template use File | Settings | File Templates.
  */
 public class OrdinaryClassWithVarArg {
-  public static void foo(Object[]... o) {
+  public static void foo(Object[][] o) {
     
   }
 }
