@@ -9,11 +9,11 @@
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.uiLanguage.samples/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.uiLanguage.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/jetbrains.mps.ide.uiLanguage.runtime/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
-    <orderEntry type="module" module-name="uiLanguage-runtime" exported="" />
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="module" module-name="classifiers" exported="" />
     <orderEntry type="library" name="JUnit4" level="project" />
