@@ -22,8 +22,6 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
     try {
       EditorPopup_ActionGroup.this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_goByRef);
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoByCurrentReference_Action", "jetbrains.mps.ide");
-      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightUsages_Action", "jetbrains.mps.ide");
-      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightInstances_Action", "jetbrains.mps.ide");
       EditorPopup_ActionGroup.this.addSeparator();
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SelectInActionAdapter_Action", "jetbrains.mps.ide", new SelectInAction());
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowInProject_Action", "jetbrains.mps.ide");

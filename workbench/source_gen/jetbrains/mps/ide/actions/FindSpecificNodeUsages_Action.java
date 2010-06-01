@@ -41,9 +41,10 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
   private SNode node;
 
   public FindSpecificNodeUsages_Action() {
-    super("Find Usages", "", ICON);
-    this.setIsAlwaysVisible(false);
+    super("Find Usages...", "", ICON);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
+    this.setMnemonic("U".charAt(0));
   }
 
   @NotNull

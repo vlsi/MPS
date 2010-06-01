@@ -33,7 +33,7 @@ public class FastFindNodeUsages_Action extends GeneratedAction {
 
   public FastFindNodeUsages_Action() {
     super("Find Usages (Without Options Dialog)", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
 

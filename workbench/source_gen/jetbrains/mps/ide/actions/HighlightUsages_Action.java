@@ -33,7 +33,7 @@ public class HighlightUsages_Action extends GeneratedAction {
 
   public HighlightUsages_Action() {
     super("Highlight Usages", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
 

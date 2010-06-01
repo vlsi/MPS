@@ -32,7 +32,7 @@ public class HighlightInstances_Action extends GeneratedAction {
 
   public HighlightInstances_Action() {
     super("Highlight Instances", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
 
