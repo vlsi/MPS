@@ -907,37 +907,13 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1560298786499492846">
-          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1560298786499492847">
-            <property name="name:3" value="file" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1560298786499492848">
-              <link role="classifier:3" targetNodeId="8.~VirtualFile" />
-            </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1560298786499492849">
-              <link role="classConcept:3" targetNodeId="9.~VFileSystem" />
-              <link role="baseMethodDeclaration:3" targetNodeId="9.~VFileSystem.getFile(java.lang.String):com.intellij.openapi.vfs.VirtualFile" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1560298786499492850">
-                <link role="variableDeclaration:3" targetNodeId="1560298786499492820" resolveInfo="path" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1560298786499492851">
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="1560298786499492852">
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1560298786499492853">
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1560298786499492854">
-                <link role="variableDeclaration:3" targetNodeId="1560298786499492847" resolveInfo="file" />
-              </node>
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1560298786499492855" />
-            </node>
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1560298786499492856">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499492857">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1560298786499492858">
-                  <link role="variableDeclaration:3" targetNodeId="1560298786499492847" resolveInfo="file" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499492859">
-                  <link role="baseMethodDeclaration:3" targetNodeId="8.~VirtualFile.exists():boolean" />
-                </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1866989091100466851">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1866989091100466847">
+              <link role="baseMethodDeclaration:3" targetNodeId="20.1866989091100461278" resolveInfo="isAvailable" />
+              <link role="classConcept:3" targetNodeId="20.4972790448884483620" resolveInfo="StateUtil" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1866989091100466848">
+                <link role="variableDeclaration:3" targetNodeId="1560298786499492820" resolveInfo="path" />
               </node>
             </node>
           </node>
@@ -949,7 +925,7 @@
                   <link role="baseMethodDeclaration:3" targetNodeId="2.~JComponent.setForeground(java.awt.Color):void" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1560298786499492865">
                     <link role="classifier:3" targetNodeId="1.~Color" />
-                    <link role="variableDeclaration:3" targetNodeId="1.~Color.RED" />
+                    <link role="variableDeclaration:3" targetNodeId="1.~Color.RED" resolveInfo="RED" />
                   </node>
                 </node>
               </node>
@@ -2840,12 +2816,7 @@
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1560298786499495068">
                   <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1560298786499495069">
                     <property name="name:3" value="nodeName" />
-                    <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1560298786499495070">
-                      <link role="classifier:3" targetNodeId="2v.~String" />
-                    </node>
-                    <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1560298786499495071">
-                      <property name="value:3" value="" />
-                    </node>
+                    <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1866989091100460892" />
                   </node>
                 </node>
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1560298786499495072">

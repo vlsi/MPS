@@ -122,7 +122,7 @@
         <link role="baseMethodDeclaration:3" targetNodeId="3.1560298786499493749" resolveInfo="create" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3201642974933580342">
           <link role="classifier:3" targetNodeId="3.1560298786499493498" resolveInfo="ListsFactory" />
-          <link role="variableDeclaration:3" targetNodeId="3.1560298786499493667" resolveInfo="PATH_COMPARATOR" />
+          <link role="variableDeclaration:3" targetNodeId="3.59624520828736531" resolveInfo="PATH_VALID_COMPARATOR" />
         </node>
       </node>
     </node>
@@ -140,7 +140,7 @@
         <link role="baseMethodDeclaration:3" targetNodeId="3.1560298786499493749" resolveInfo="create" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3201642974933580348">
           <link role="classifier:3" targetNodeId="3.1560298786499493498" resolveInfo="ListsFactory" />
-          <link role="variableDeclaration:3" targetNodeId="3.1560298786499493667" resolveInfo="PATH_COMPARATOR" />
+          <link role="variableDeclaration:3" targetNodeId="3.59624520828736531" resolveInfo="PATH_VALID_COMPARATOR" />
         </node>
       </node>
     </node>
@@ -158,7 +158,7 @@
         <link role="baseMethodDeclaration:3" targetNodeId="3.1560298786499493749" resolveInfo="create" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3201642974933580354">
           <link role="classifier:3" targetNodeId="3.1560298786499493498" resolveInfo="ListsFactory" />
-          <link role="variableDeclaration:3" targetNodeId="3.1560298786499493667" resolveInfo="PATH_COMPARATOR" />
+          <link role="variableDeclaration:3" targetNodeId="3.59624520828736531" resolveInfo="PATH_VALID_COMPARATOR" />
         </node>
       </node>
     </node>

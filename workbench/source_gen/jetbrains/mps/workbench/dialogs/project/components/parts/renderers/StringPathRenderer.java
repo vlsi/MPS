@@ -5,8 +5,7 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.renderers;
 import javax.swing.DefaultListCellRenderer;
 import java.awt.Component;
 import javax.swing.JList;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil;
 import java.awt.Color;
 
 public class StringPathRenderer extends DefaultListCellRenderer {
@@ -22,8 +21,7 @@ public class StringPathRenderer extends DefaultListCellRenderer {
     if (isSelected) {
       return result;
     }
-    VirtualFile file = VFileSystem.getFile(path);
-    if (file == null || !(file.exists())) {
+    if (!(StateUtil.isAvailable(path))) {
       this.setForeground(Color.RED);
     }
     return result;

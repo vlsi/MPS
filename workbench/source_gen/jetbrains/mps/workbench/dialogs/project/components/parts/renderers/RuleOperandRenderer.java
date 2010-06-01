@@ -87,7 +87,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
     if (ref instanceof MappingConfig_SimpleRef) {
       MappingConfig_SimpleRef refC = (MappingConfig_SimpleRef) ref;
       SModelReference modelRef = SModelReference.fromString(refC.getModelUID());
-      String nodeName = "";
+      String nodeName;
       if (refC.getNodeID().equals("*")) {
         nodeName = modelRef.getShortName() + ".*";
       } else {

@@ -144,6 +144,15 @@ public final class ListsFactory {
       return string1.compareTo(string2);
     }
   };
+  public static final ListsFactory.ListComparator<Path> PATH_VALID_COMPARATOR = new ListsFactory.ListComparator<Path>() {
+    public int compare(Path o1, Path o2) {
+      int result = StateUtil.compare(o1.getPath(), o2.getPath());
+      if (result != 0) {
+        return result;
+      }
+      return ListsFactory.PATH_COMPARATOR.compare(o1, o2);
+    }
+  };
   public static final ListsFactory.ListComparator<BaseTestConfiguration> GEN_CONF_COMPARATOR = new ListsFactory.ListComparator<BaseTestConfiguration>() {
     public int compare(BaseTestConfiguration o1, BaseTestConfiguration o2) {
       return o1.getName().compareTo(o2.getName());

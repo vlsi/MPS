@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
@@ -25,6 +27,14 @@ public class StateUtil {
     return MPSModuleRepository.getInstance().getModule(moduleReference) != null;
   }
 
+  public static boolean isAvailable(String path) {
+    VirtualFile file = VFileSystem.getFile(path);
+    if (file == null || !(file.exists())) {
+      return false;
+    }
+    return true;
+  }
+
   public static boolean isInScope(final IScope scope, final SModelReference modelReference) {
     SModelDescriptor model;
     if (scope != null) {
@@ -38,35 +48,29 @@ public class StateUtil {
     return true;
   }
 
-  public static int compare(final SModelReference ref1, final SModelReference ref2, final IScope scope) {
-    boolean isAvailable1 = isAvailable(ref1);
-    boolean isAvailable2 = isAvailable(ref2);
-    if (isAvailable1 && !(isAvailable2)) {
+  public static int compare(boolean isOk1, boolean isOk2) {
+    if (isOk1 && !(isOk2)) {
       return 1;
     }
-    if (isAvailable2 && !(isAvailable1)) {
-      return -1;
-    }
-    boolean isInScope1 = isInScope(scope, ref1);
-    boolean isInScope2 = isInScope(scope, ref2);
-    if (isInScope1 && !(isInScope2)) {
-      return 1;
-    }
-    if (isInScope2 && !(isInScope1)) {
+    if (isOk2 && !(isOk1)) {
       return -1;
     }
     return 0;
   }
 
+  public static int compare(final SModelReference ref1, final SModelReference ref2, final IScope scope) {
+    int result = compare(isAvailable(ref1), isAvailable(ref2));
+    if (result != 0) {
+      return result;
+    }
+    return compare(isInScope(scope, ref1), isInScope(scope, ref2));
+  }
+
   public static int compare(ModuleReference moduleRef1, ModuleReference moduleRef2) {
-    boolean isAvailable1 = isAvailable(moduleRef1);
-    boolean isAvailable2 = isAvailable(moduleRef2);
-    if (isAvailable1 && !(isAvailable2)) {
-      return 1;
-    }
-    if (isAvailable2 && !(isAvailable1)) {
-      return -1;
-    }
-    return 0;
+    return compare(isAvailable(moduleRef1), isAvailable(moduleRef2));
+  }
+
+  public static int compare(String path1, String path2) {
+    return compare(isAvailable(path1), isAvailable(path2));
   }
 }

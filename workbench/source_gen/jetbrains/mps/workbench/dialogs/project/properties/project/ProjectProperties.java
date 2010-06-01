@@ -17,9 +17,9 @@ public class ProjectProperties {
   public static final String PROPERTY_GEN_CONFIGS = "testConfigurations";
 
   private ProjectDescriptor myProjectDescriptor;
-  private List<Path> mySolutions = ListsFactory.create(ListsFactory.PATH_COMPARATOR);
-  private List<Path> myLanguages = ListsFactory.create(ListsFactory.PATH_COMPARATOR);
-  private List<Path> myDevkits = ListsFactory.create(ListsFactory.PATH_COMPARATOR);
+  private List<Path> mySolutions = ListsFactory.create(ListsFactory.PATH_VALID_COMPARATOR);
+  private List<Path> myLanguages = ListsFactory.create(ListsFactory.PATH_VALID_COMPARATOR);
+  private List<Path> myDevkits = ListsFactory.create(ListsFactory.PATH_VALID_COMPARATOR);
   private List<BaseTestConfiguration> myTestConfigs = ListsFactory.create(ListsFactory.GEN_CONF_COMPARATOR);
   private boolean myTestConfigsChanged = false;
 
