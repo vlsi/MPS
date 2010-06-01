@@ -412,12 +412,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        mySearchPanel.activate();
-      }
-    }, KeyStroke.getKeyStroke("ctrl F"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
         if (areMouseEventsBlocked()) {

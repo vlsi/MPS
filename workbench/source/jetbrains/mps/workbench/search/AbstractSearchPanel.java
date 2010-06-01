@@ -20,9 +20,13 @@ import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.components.panels.NonOpaquePanel;
+import jetbrains.mps.ide.actions.FindNext_Action;
+import jetbrains.mps.ide.actions.FindPrevious_Action;
+import jetbrains.mps.ide.actions.Find_Action;
 import jetbrains.mps.ide.ui.CompletionTextField;
+import jetbrains.mps.plugins.PluginUtil;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.search.icons.Icons;
-import jetbrains.mps.datatransfer.TextPasteUtil;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -30,8 +34,8 @@ import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Pattern;
 
 
@@ -46,9 +50,9 @@ public abstract class AbstractSearchPanel extends JPanel {
 
   protected abstract SearchHistoryComponent getSearchHistory();
 
-  protected abstract void goUp();
+  public abstract void goToPrevious();
 
-  protected abstract void goDown();
+  public abstract void goToNext();
 
   protected abstract void search();
 
@@ -148,13 +152,13 @@ public abstract class AbstractSearchPanel extends JPanel {
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        goDown();
+        goToNext();
       }
     }, KeyStroke.getKeyStroke("DOWN"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        goUp();
+        goToPrevious();
       }
     }, KeyStroke.getKeyStroke("UP"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
@@ -303,9 +307,9 @@ public abstract class AbstractSearchPanel extends JPanel {
       getTemplatePresentation().setText("Search History");
 
       ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
-      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(IdeActions.ACTION_FIND).getShortcutSet().getShortcuts()));
+      shortcuts.addAll(Arrays.asList(ActionFactory.getInstance().acquireRegisteredAction(
+          Find_Action.class.getName(), PluginUtil.IDE_MODULE_ID).getShortcutSet().getShortcuts()));
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_H, KeyEvent.CTRL_DOWN_MASK), null));
-      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction("IncrementalSearch").getShortcutSet().getShortcuts()));
 
       registerCustomShortcutSet(
         new CustomShortcutSet(shortcuts.toArray(new Shortcut[shortcuts.size()])),
@@ -328,8 +332,10 @@ public abstract class AbstractSearchPanel extends JPanel {
       getTemplatePresentation().setText("Previous Occurrence");
 
       ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
-      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(IdeActions.ACTION_FIND_PREVIOUS).getShortcutSet().getShortcuts()));
-      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(IdeActions.ACTION_EDITOR_MOVE_CARET_UP).getShortcutSet().getShortcuts()));
+      shortcuts.addAll(Arrays.asList(ActionFactory.getInstance().acquireRegisteredAction(
+          FindPrevious_Action.class.getName(), PluginUtil.IDE_MODULE_ID).getShortcutSet().getShortcuts()));
+      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(
+          IdeActions.ACTION_EDITOR_MOVE_CARET_UP).getShortcutSet().getShortcuts()));
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, KeyEvent.SHIFT_DOWN_MASK), null));
 
       registerCustomShortcutSet(
@@ -338,7 +344,7 @@ public abstract class AbstractSearchPanel extends JPanel {
     }
 
     public void actionPerformed(final AnActionEvent e) {
-      goUp();
+      goToPrevious();
     }
   }
 
@@ -349,8 +355,10 @@ public abstract class AbstractSearchPanel extends JPanel {
       getTemplatePresentation().setText("Next Occurrence");
 
       ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
-      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(IdeActions.ACTION_FIND_NEXT).getShortcutSet().getShortcuts()));
-      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(IdeActions.ACTION_EDITOR_MOVE_CARET_DOWN).getShortcutSet().getShortcuts()));
+      shortcuts.addAll(Arrays.asList(ActionFactory.getInstance().acquireRegisteredAction(
+          FindNext_Action.class.getName(), PluginUtil.IDE_MODULE_ID).getShortcutSet().getShortcuts()));
+      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(
+          IdeActions.ACTION_EDITOR_MOVE_CARET_DOWN).getShortcutSet().getShortcuts()));
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), null));
 
       registerCustomShortcutSet(
@@ -359,7 +367,7 @@ public abstract class AbstractSearchPanel extends JPanel {
     }
 
     public void actionPerformed(final AnActionEvent e) {
-      goDown();
+      goToNext();
     }
   }
 
@@ -368,7 +376,8 @@ public abstract class AbstractSearchPanel extends JPanel {
       getTemplatePresentation().setIcon(IconLoader.getIcon("/actions/export.png"));
       getTemplatePresentation().setDescription("Export matches to Find tool window");
       getTemplatePresentation().setText("Find All");
-      registerCustomShortcutSet(ActionManager.getInstance().getAction(IdeActions.ACTION_FIND_USAGES).getShortcutSet(), myText);
+      registerCustomShortcutSet(ActionFactory.getInstance().acquireRegisteredAction(
+          FindNext_Action.class.getName(), PluginUtil.IDE_MODULE_ID).getShortcutSet(), myText);
     }
 
     public void update(AnActionEvent e) {

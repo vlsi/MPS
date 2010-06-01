@@ -185,18 +185,7 @@
         </group>
 
         <group id="SearchMenu" popup="true">
-            <action id="Find" class="com.intellij.openapi.editor.actions.IncrementalFindAction"
-                    icon="/actions/menu-find.png"/>
-            <!--<action id="Replace" class="com.intellij.openapi.editor.actions.ReplaceAction"
-                    icon="/actions/menu-replace.png"/>-->
-            <action id="FindNext" class="com.intellij.ide.actions.SearchAgainAction"/>
-            <action id="FindPrevious" class="com.intellij.ide.actions.SearchBackAction"/>
-            <!--<action id="FindWordAtCaret" class="com.intellij.openapi.editor.actions.FindWordAtCaretAction"/> -->
-            <separator/>
-            <action id="FindUsages" class="com.intellij.find.actions.FindUsagesAction"/>
-            <separator/>
-            <!--<action id="FindInPath" class="com.intellij.find.actions.FindInPathAction"/>-->
-            <!--<action id="ReplaceInPath" class="com.intellij.find.actions.ReplaceInPathAction"/>-->          <add-to-group group-id="MainMenu" anchor="after" relative-to-action="EditMenu"/>
+          <add-to-group group-id="MainMenu" anchor="after" relative-to-action="EditMenu"/>
         </group>
 
         <!--Fixing exeception in ToolWindowContentUi which uses this action-->

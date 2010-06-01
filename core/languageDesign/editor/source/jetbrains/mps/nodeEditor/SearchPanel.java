@@ -90,7 +90,7 @@ public class SearchPanel extends AbstractSearchPanel {
     return !getMessages().isEmpty();
   }
 
-  protected void goUp() {
+  public void goToPrevious() {
     if (myCells.size() == 0) return;
     addToHistory();
     //noinspection SuspiciousMethodCalls
@@ -110,7 +110,7 @@ public class SearchPanel extends AbstractSearchPanel {
     changeSelection(index);
   }
 
-  protected void goDown() {
+  public void goToNext() {
     if (myCells.size() == 0) return;
     addToHistory();
     //noinspection SuspiciousMethodCalls
@@ -279,7 +279,7 @@ public class SearchPanel extends AbstractSearchPanel {
     return searchMessages;
   }
 
-  protected void exportToFindTool() {
+  public void exportToFindTool() {
     final List<SearchPanelEditorMessage> searchMessages = getMessages();
     Collections.sort(searchMessages, new Comparator<SearchPanelEditorMessage>() {
       public int compare(SearchPanelEditorMessage o1, SearchPanelEditorMessage o2) {

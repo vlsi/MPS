@@ -44,7 +44,7 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
     myList.setCellRenderer(myRenderer);
   }
 
-  protected void goUp() {
+  public void goToPrevious() {
     if (myResults.isEmpty()) return;
     int selected = myList.getSelectedIndex();
     if (selected != -1) {
@@ -58,7 +58,7 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
     myList.setSelectedIndex(myResults.get(myResults.size() - 1));
   }
 
-  protected void goDown() {
+  public void goToNext() {
     if (myResults.isEmpty()) return;
     int selected = myList.getSelectedIndex();
     if (selected != -1) {
