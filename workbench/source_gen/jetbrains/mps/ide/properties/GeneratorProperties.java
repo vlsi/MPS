@@ -14,7 +14,7 @@ public class GeneratorProperties extends ModuleProperties {
   private List<MappingPriorityRule> myPriorityRules;
 
   public GeneratorProperties() {
-    this.myDepGenerators = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
+    this.myDepGenerators = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
     this.myPriorityRules = (List) ListsFactory.create(ListsFactory.IGNORING_COMPARATOR);
   }
 

@@ -9,6 +9,7 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
@@ -19,7 +20,6 @@ import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfig
 import java.util.List;
 import org.jdesktop.observablecollections.ObservableCollections;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil;
 import java.util.Comparator;
 
 public final class ListsFactory {
@@ -53,6 +53,19 @@ public final class ListsFactory {
       IModule m1 = MPSModuleRepository.getInstance().getModule(o1);
       IModule m2 = MPSModuleRepository.getInstance().getModule(o2);
       return EqualUtil.equals(m1, m2);
+    }
+  };
+  public static final ListsFactory.ListComparator<ModuleReference> MODULE_VALID_REF_COMPARATOR = new ListsFactory.ListComparator<ModuleReference>() {
+    public int compare(ModuleReference o1, ModuleReference o2) {
+      int result = StateUtil.compare(o1, o2);
+      if (result != 0) {
+        return result;
+      }
+      return ListsFactory.MODULE_REF_COMPARATOR.compare(o1, o2);
+    }
+
+    public boolean isEqual(ModuleReference o1, ModuleReference o2) {
+      return ListsFactory.MODULE_REF_COMPARATOR.isEqual(o1, o2);
     }
   };
   public static final ListsFactory.ListComparator<ModelRoot> MODEL_ROOT_COMPARATOR = new ListsFactory.ListComparator<ModelRoot>() {

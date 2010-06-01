@@ -32,8 +32,8 @@ public class ModuleProperties {
   public ModuleProperties() {
     this.myModelRoots = ListsFactory.create(ListsFactory.MODEL_ROOT_COMPARATOR);
     this.myDependencies = ListsFactory.create(ListsFactory.DEPENDENCY_COMPARATOR);
-    this.myUsedLanguages = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
-    this.myUsedDevkits = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
+    this.myUsedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
+    this.myUsedDevkits = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
     this.mySourcePaths = (List) ListsFactory.create(ListsFactory.COMPARABLE_COMPARATOR);
     this.myClassPaths = ListsFactory.create(ListsFactory.CLASSPATH_ENTRY_COMPARATOR);
     this.myStubModels = ListsFactory.create(ListsFactory.STUB_MODEL_ENTRY_COMPARATOR);

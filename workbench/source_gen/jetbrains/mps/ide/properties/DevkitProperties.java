@@ -17,9 +17,9 @@ public class DevkitProperties extends ModuleProperties {
   private List<ModuleReference> myExtendedDevkits;
 
   public DevkitProperties() {
-    this.myExportedLanguages = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
-    this.myExportedSolutions = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
-    this.myExtendedDevkits = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
+    this.myExportedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
+    this.myExportedSolutions = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
+    this.myExtendedDevkits = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
   }
 
   public String getPlugin() {

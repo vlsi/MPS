@@ -21,8 +21,8 @@ import jetbrains.mps.smodel.MissingDependenciesFixer;
 
 public class ModelProperties extends BaseBean {
   private List<SModelReference> myImportedModels;
-  private List<ModuleReference> myUsedLanguages = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
-  private List<ModuleReference> myUsedDevKits = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
+  private List<ModuleReference> myUsedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
+  private List<ModuleReference> myUsedDevKits = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
   private List<ModuleReference> myLanguagesEngagedOnGeneration = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
   private SModelDescriptor myModelDescriptor;
   private IOperationContext myContext;

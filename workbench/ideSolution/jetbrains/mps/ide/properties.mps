@@ -12156,7 +12156,7 @@
         <link role="baseMethodDeclaration:3" targetNodeId="77.1560298786499493749" resolveInfo="create" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5923576889075042892">
           <link role="classifier:3" targetNodeId="77.1560298786499493498" resolveInfo="ListsFactory" />
-          <link role="variableDeclaration:3" targetNodeId="77.1560298786499493535" resolveInfo="MODULE_REF_COMPARATOR" />
+          <link role="variableDeclaration:3" targetNodeId="77.7567158975345112855" resolveInfo="MODULE_VALID_REF_COMPARATOR" />
         </node>
       </node>
     </node>
@@ -12174,7 +12174,7 @@
         <link role="baseMethodDeclaration:3" targetNodeId="77.1560298786499493749" resolveInfo="create" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5923576889075042898">
           <link role="classifier:3" targetNodeId="77.1560298786499493498" resolveInfo="ListsFactory" />
-          <link role="variableDeclaration:3" targetNodeId="77.1560298786499493535" resolveInfo="MODULE_REF_COMPARATOR" />
+          <link role="variableDeclaration:3" targetNodeId="77.7567158975345112855" resolveInfo="MODULE_VALID_REF_COMPARATOR" />
         </node>
       </node>
     </node>
@@ -13824,7 +13824,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="77.1560298786499493749" resolveInfo="create" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5923576889075043582">
                 <link role="classifier:3" targetNodeId="77.1560298786499493498" resolveInfo="ListsFactory" />
-                <link role="variableDeclaration:3" targetNodeId="77.1560298786499493535" resolveInfo="MODULE_REF_COMPARATOR" />
+                <link role="variableDeclaration:3" targetNodeId="77.7567158975345112855" resolveInfo="MODULE_VALID_REF_COMPARATOR" />
               </node>
             </node>
           </node>
@@ -13842,7 +13842,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="77.1560298786499493749" resolveInfo="create" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5923576889075043589">
                 <link role="classifier:3" targetNodeId="77.1560298786499493498" resolveInfo="ListsFactory" />
-                <link role="variableDeclaration:3" targetNodeId="77.1560298786499493535" resolveInfo="MODULE_REF_COMPARATOR" />
+                <link role="variableDeclaration:3" targetNodeId="77.7567158975345112855" resolveInfo="MODULE_VALID_REF_COMPARATOR" />
               </node>
             </node>
           </node>
@@ -13860,7 +13860,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="77.1560298786499493749" resolveInfo="create" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5923576889075043596">
                 <link role="classifier:3" targetNodeId="77.1560298786499493498" resolveInfo="ListsFactory" />
-                <link role="variableDeclaration:3" targetNodeId="77.1560298786499493535" resolveInfo="MODULE_REF_COMPARATOR" />
+                <link role="variableDeclaration:3" targetNodeId="77.7567158975345112855" resolveInfo="MODULE_VALID_REF_COMPARATOR" />
               </node>
             </node>
           </node>
@@ -14358,7 +14358,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="77.1560298786499493749" resolveInfo="create" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5923576889075043806">
                 <link role="classifier:3" targetNodeId="77.1560298786499493498" resolveInfo="ListsFactory" />
-                <link role="variableDeclaration:3" targetNodeId="77.1560298786499493535" resolveInfo="MODULE_REF_COMPARATOR" />
+                <link role="variableDeclaration:3" targetNodeId="77.7567158975345112855" resolveInfo="MODULE_VALID_REF_COMPARATOR" />
               </node>
             </node>
           </node>
@@ -14819,7 +14819,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="77.1560298786499493749" resolveInfo="create" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5923576889075043997">
                 <link role="classifier:3" targetNodeId="77.1560298786499493498" resolveInfo="ListsFactory" />
-                <link role="variableDeclaration:3" targetNodeId="77.1560298786499493535" resolveInfo="MODULE_REF_COMPARATOR" />
+                <link role="variableDeclaration:3" targetNodeId="77.7567158975345112855" resolveInfo="MODULE_VALID_REF_COMPARATOR" />
               </node>
             </node>
           </node>
@@ -16191,7 +16191,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="77.1560298786499493749" resolveInfo="create" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5923576889075044624">
                 <link role="classifier:3" targetNodeId="77.1560298786499493498" resolveInfo="ListsFactory" />
-                <link role="variableDeclaration:3" targetNodeId="77.1560298786499493535" resolveInfo="MODULE_REF_COMPARATOR" />
+                <link role="variableDeclaration:3" targetNodeId="77.7567158975345112855" resolveInfo="MODULE_VALID_REF_COMPARATOR" />
               </node>
             </node>
           </node>
@@ -16209,7 +16209,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="77.1560298786499493749" resolveInfo="create" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5923576889075044631">
                 <link role="classifier:3" targetNodeId="77.1560298786499493498" resolveInfo="ListsFactory" />
-                <link role="variableDeclaration:3" targetNodeId="77.1560298786499493535" resolveInfo="MODULE_REF_COMPARATOR" />
+                <link role="variableDeclaration:3" targetNodeId="77.7567158975345112855" resolveInfo="MODULE_VALID_REF_COMPARATOR" />
               </node>
             </node>
           </node>

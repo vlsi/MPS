@@ -28,7 +28,7 @@ public class LanguageProperties extends ModuleProperties {
 
   public LanguageProperties() {
     this.myAccessoryModels = ListsFactory.create(ListsFactory.MODEL_REF_COMPARATOR);
-    this.myExtendedLanguages = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
+    this.myExtendedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
     this.myRuntimeModules = ListsFactory.create(ListsFactory.DEPENDENCY_COMPARATOR);
     this.myRuntimeClassPaths = ListsFactory.create(ListsFactory.CLASSPATH_ENTRY_COMPARATOR);
     this.myStubSolutions = ListsFactory.create(ListsFactory.STUB_SOLUTIONS_ENTRY_COMPARATOR);

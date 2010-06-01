@@ -4,6 +4,8 @@ package jetbrains.mps.workbench.dialogs.project.components.parts;
 
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
@@ -17,6 +19,10 @@ public class StateUtil {
 
   public static boolean isAvailable(final SModelReference modelReference) {
     return SModelRepository.getInstance().getModelDescriptor(modelReference) != null;
+  }
+
+  public static boolean isAvailable(ModuleReference moduleReference) {
+    return MPSModuleRepository.getInstance().getModule(moduleReference) != null;
   }
 
   public static boolean isInScope(final IScope scope, final SModelReference modelReference) {
@@ -47,6 +53,18 @@ public class StateUtil {
       return 1;
     }
     if (isInScope2 && !(isInScope1)) {
+      return -1;
+    }
+    return 0;
+  }
+
+  public static int compare(ModuleReference moduleRef1, ModuleReference moduleRef2) {
+    boolean isAvailable1 = isAvailable(moduleRef1);
+    boolean isAvailable2 = isAvailable(moduleRef2);
+    if (isAvailable1 && !(isAvailable2)) {
+      return 1;
+    }
+    if (isAvailable2 && !(isAvailable1)) {
       return -1;
     }
     return 0;
