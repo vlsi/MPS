@@ -5,8 +5,8 @@ package jetbrains.mps.ide.properties;
 import jetbrains.mps.uiLanguage.runtime.BaseBean;
 import java.util.List;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MissingDependenciesFixer;
 
 public class ModelProperties extends BaseBean {
-  private List<SModelReference> myImportedModels = ListsFactory.create(ListsFactory.MODEL_REF_COMPARATOR);
+  private List<SModelReference> myImportedModels;
   private List<ModuleReference> myUsedLanguages = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
   private List<ModuleReference> myUsedDevKits = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
   private List<ModuleReference> myLanguagesEngagedOnGeneration = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
@@ -30,6 +30,7 @@ public class ModelProperties extends BaseBean {
 
   public ModelProperties(SModelDescriptor modelDescriptor, IOperationContext context) {
     this.myModelDescriptor = modelDescriptor;
+    this.myImportedModels = ListsFactory.create(ListsFactory.createValidRefComparator(modelDescriptor.getModule().getScope()));
     this.myContext = context;
     this.myImportedModels.addAll(this.myModelDescriptor.getSModel().getImportedModelUIDs());
     this.myUsedLanguages.addAll(this.myModelDescriptor.getSModel().getExplicitlyImportedLanguages());

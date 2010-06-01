@@ -12141,14 +12141,6 @@
         </node>
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="5923576889075042884" />
-      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5923576889075042885">
-        <link role="classConcept:3" targetNodeId="77.1560298786499493498" resolveInfo="ListsFactory" />
-        <link role="baseMethodDeclaration:3" targetNodeId="77.1560298786499493749" resolveInfo="create" />
-        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5923576889075042886">
-          <link role="classifier:3" targetNodeId="77.1560298786499493498" resolveInfo="ListsFactory" />
-          <link role="variableDeclaration:3" targetNodeId="77.1560298786499493513" resolveInfo="MODEL_REF_COMPARATOR" />
-        </node>
-      </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="5923576889075042887">
       <property name="name:3" value="myUsedLanguages" />
@@ -12248,6 +12240,37 @@
             </node>
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5923576889075042926">
               <link role="variableDeclaration:3" targetNodeId="5923576889075042916" resolveInfo="modelDescriptor" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7567158975344817748">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="7567158975344817755">
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7567158975344817750">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="7567158975344817749" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="7567158975344817754">
+                <link role="fieldDeclaration:3" targetNodeId="5923576889075042881" resolveInfo="myImportedModels" />
+              </node>
+            </node>
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7567158975344817862">
+              <link role="baseMethodDeclaration:3" targetNodeId="77.1560298786499493749" resolveInfo="create" />
+              <link role="classConcept:3" targetNodeId="77.1560298786499493498" resolveInfo="ListsFactory" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7567158975344817863">
+                <link role="baseMethodDeclaration:3" targetNodeId="77.7567158975344817764" resolveInfo="createValidRefComparator" />
+                <link role="classConcept:3" targetNodeId="77.1560298786499493498" resolveInfo="ListsFactory" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7567158975344817864">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7567158975344817865">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7567158975344817866">
+                      <link role="variableDeclaration:3" targetNodeId="5923576889075042916" resolveInfo="modelDescriptor" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7567158975344817867">
+                      <link role="baseMethodDeclaration:3" targetNodeId="31.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7567158975344817868">
+                    <link role="baseMethodDeclaration:3" targetNodeId="19.~IModule.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

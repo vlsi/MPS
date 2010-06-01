@@ -8,9 +8,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import java.awt.Component;
 import javax.swing.JList;
+import jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil;
 import java.awt.Color;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
 
 public class ModelRenderer extends ProjectLevelRenderer {
   public ModelRenderer(IScope moduleScope, IScope projectScope) {
@@ -34,21 +33,10 @@ public class ModelRenderer extends ProjectLevelRenderer {
     Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
     final SModelReference modelReference = (SModelReference) value;
     this.setText(this.getItemLabel(value));
-    SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelReference);
-    if (model == null) {
-      if (!(isSelected)) {
+    if (!(isSelected)) {
+      if (!(StateUtil.isAvailable(modelReference))) {
         this.setForeground(Color.RED);
-      }
-      return result;
-    }
-    final IScope moduleScope = this.getModuleScope();
-    if (moduleScope != null) {
-      model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
-        public SModelDescriptor compute() {
-          return moduleScope.getModelDescriptor(modelReference);
-        }
-      });
-      if (!(isSelected) && model == null) {
+      } else if (!(StateUtil.isInScope(this.getModuleScope(), modelReference))) {
         this.setForeground(new Color(128, 0, 128));
       }
     }
