@@ -88,7 +88,8 @@ public class CheckCoreRuntimeDeps_Action extends GeneratedAction {
           for (IModule module : ListSequence.fromList(language.getRuntimeDependOnModules())) {
             // check that this module is in classpath on build startup 
             if (!(Sequence.fromIterable(coreModules).contains(module))) {
-              throw new RuntimeException("Module " + module.getModuleFqName() + " should be in core because it's a runtime of language " + language.getModuleFqName() + ", which is used by core solution " + solution.getModuleFqName());
+              String msg = "Module " + module.getModuleFqName() + " should be in core because it's a runtime of language " + language.getModuleFqName() + ", which is used by core solution " + solution.getModuleFqName();
+              LOG.error(msg);
             }
           }
         }
