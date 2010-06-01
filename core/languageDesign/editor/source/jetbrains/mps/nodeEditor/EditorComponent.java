@@ -54,6 +54,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -1712,7 +1713,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     final DataContext dataContext = DataManager.getInstance().getDataContext(this);
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        AnAction action = ActionFactory.getInstance().acquireRegisteredAction(GoByCurrentReference_Action.class.getName(), "jetbrains.mps.ide");
+        AnAction action = ActionFactory.getInstance().acquireRegisteredAction(GoByCurrentReference_Action.class.getName(), PluginUtil.IDE_MODULE_ID);
         AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, dataContext);
         ActionUtils.updateAndPerformAction(action, event);
       }
