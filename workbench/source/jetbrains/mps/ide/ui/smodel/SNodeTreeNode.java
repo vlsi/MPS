@@ -24,6 +24,7 @@ import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeUpdater;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.CollectionUtil;
@@ -36,6 +37,8 @@ import java.awt.Color;
 import java.util.List;
 
 public class SNodeTreeNode extends MPSTreeNodeEx {
+  private static final Logger LOG = Logger.getLogger(SNodeTreeNode.class);
+
   protected boolean myInitialized = false;
   private SNode myNode;
   private String myRole;
@@ -225,14 +228,21 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
     SNode node = getSNode();
     if (node != null) {
-      String nodeString = node.getPresentation();
+      String nodePresentation;
+      try {
+        nodePresentation = node.getPresentation();
+      } catch (Throwable t) {
+        nodePresentation = null;
+        LOG.error(t);
+      }
+      String nodeString = nodePresentation;
       output.append(nodeString);
-      if (myRole != null) {
+      /*if (myRole != null) {
         String presentation = node.getPresentation();
         if (presentation != null && !presentation.equals(nodeString)) {
           output.append(" [").append(presentation).append("]");
         }
-      }
+      }*/
     }
 
     return output.toString();
