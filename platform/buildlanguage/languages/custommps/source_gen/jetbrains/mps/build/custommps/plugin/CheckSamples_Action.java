@@ -60,7 +60,7 @@ public class CheckSamples_Action extends GeneratedAction {
       List<IModule> sampleModules = MPSModuleRepository.getInstance().getAllModulesInDirectory(new File(samplesPath));
       for (IModule module : ListSequence.fromList(sampleModules)) {
         if (!(module.isCompileInMPS())) {
-          String msg = "Module " + module.getModuleFqName() + " is a sample, but is not ompiled in MPS";
+          String msg = "Module " + module.getModuleFqName() + " is a sample, but is not compiled in MPS";
           LOG.error(msg);
         }
       }

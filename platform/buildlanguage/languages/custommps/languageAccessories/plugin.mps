@@ -2778,7 +2778,7 @@
                     <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="7482942963842063046" />
                     <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="7482942963842063047">
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7482942963842063048">
-                        <property name="value:3" value=" is a sample, but is not ompiled in MPS" />
+                        <property name="value:3" value=" is a sample, but is not compiled in MPS" />
                       </node>
                       <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="7482942963842063049">
                         <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7482942963842063050">
