@@ -77,10 +77,10 @@ public class CheckCoreRuntimeDeps_Action extends GeneratedAction {
 
       for (Solution solution : ListSequence.fromList(MPSModuleRepository.getInstance().getAllSolutions())) {
         if (solution.isStub()) {
-          return;
+          continue;
         }
         if (!(solution.getModuleDescriptor().isDontLoadClasses())) {
-          return;
+          continue;
         }
 
         // if we are here, this means this solution is a part of MPS core 
