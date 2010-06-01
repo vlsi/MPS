@@ -25,6 +25,9 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Igor Alshannikov
  * Nov 30, 2007
@@ -86,31 +89,13 @@ public class GenerationSessionLogger implements IGeneratorLogger {
       return;
     }
     myWarningsCount++;
-    report(MessageKind.WARNING, message, node);
-
-    if(descriptions == null) {
-      return;
-    }
-    for(ProblemDescription d : descriptions) {
-      if(d != null) {
-        report(MessageKind.WARNING, "-- " + d.getMessage(), d.getNode());
-      }
-    }
+    report(MessageKind.WARNING, message, node, descriptions);
   }
 
   @Override
   public void error(SNode node, String message, ProblemDescription... descriptions) {
     myErrorsCount++;
-    report(MessageKind.ERROR, message, node);
-
-    if(descriptions == null) {
-      return;
-    }
-    for(ProblemDescription d : descriptions) {
-      if(d != null) {
-        report(MessageKind.ERROR, "-- " + d.getMessage(), d.getNode());
-      }
-    }
+    report(MessageKind.ERROR, message, node, descriptions);
   }
 
   public void error(String message) {
@@ -127,6 +112,30 @@ public class GenerationSessionLogger implements IGeneratorLogger {
   }
 
   private void report(MessageKind kind, String text, SNode node) {
+    Message message = prepare(kind, text, node);
+    synchronized (myMessageHandler) {
+      myMessageHandler.handle(message);
+    }
+  }
+
+  private void report(MessageKind kind, String text, SNode node, ProblemDescription ...descriptions) {
+    List<Message> messages = new ArrayList<Message>(descriptions == null ? 1 : descriptions.length + 1);
+    messages.add(prepare(kind, text, node));
+    if(descriptions != null) {
+      for(ProblemDescription d : descriptions) {
+        if(d != null) {
+          messages.add(prepare(kind, "-- " + d.getMessage(), d.getNode()));
+        }
+      }
+    }
+    synchronized (myMessageHandler) {
+      for(Message m : messages) {
+        myMessageHandler.handle(m);
+      }
+    }
+  }
+
+  private Message prepare(MessageKind kind, String text, SNode node) {
     Message message = new Message(kind, text);
 
     if (node != null) {
@@ -139,11 +148,9 @@ public class GenerationSessionLogger implements IGeneratorLogger {
         message.setHintObject(new SNodePointer(node));
       }
     }
-
-    synchronized (myMessageHandler) {
-      myMessageHandler.handle(message);
-    }
+    return message;
   }
+
 
   private boolean keepModel(SModel model, boolean isWarning) {
     if(model == null) {

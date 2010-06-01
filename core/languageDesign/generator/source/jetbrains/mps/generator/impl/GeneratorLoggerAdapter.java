@@ -7,6 +7,9 @@ import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Evgeny Gryaznov, Feb 23, 2010
  */
@@ -69,30 +72,12 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     if(!myHandleWarnings) {
       return;
     }
-    report(MessageKind.WARNING, message, node);
-
-    if(descriptions == null) {
-      return;
-    }
-    for(ProblemDescription d : descriptions) {
-      if(d != null) {
-        report(MessageKind.WARNING, "-- " + d.getMessage(), d.getNode());
-      }
-    }
+    report(MessageKind.WARNING, message, node, descriptions);
   }
 
   @Override
   public void error(SNode node, String message, ProblemDescription... descriptions) {
-    report(MessageKind.ERROR, message, node);
-
-    if(descriptions == null) {
-      return;
-    }
-    for(ProblemDescription d : descriptions) {
-      if(d != null) {
-        report(MessageKind.WARNING, "-- " + d.getMessage(), d.getNode());
-      }
-    }
+    report(MessageKind.ERROR, message, node, descriptions);
   }
 
   @Override
@@ -109,13 +94,35 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     }
   }
 
-  protected void report(MessageKind kind, String text, SNode node) {
+  private void report(MessageKind kind, String text, SNode node) {
+    Message message = prepare(kind, text, node);
+    synchronized (myMessageHandler) {
+      myMessageHandler.handle(message);
+    }
+  }
+
+  private void report(MessageKind kind, String text, SNode node, ProblemDescription ...descriptions) {
+    List<Message> messages = new ArrayList<Message>(descriptions == null ? 1 : descriptions.length + 1);
+    messages.add(prepare(kind, text, node));
+    if(descriptions != null) {
+      for(ProblemDescription d : descriptions) {
+        if(d != null) {
+          messages.add(prepare(kind, "-- " + d.getMessage(), d.getNode()));
+        }
+      }
+    }
+    synchronized (myMessageHandler) {
+      for(Message m : messages) {
+        myMessageHandler.handle(m);
+      }
+    }
+  }
+
+  private Message prepare(MessageKind kind, String text, SNode node) {
     Message message = new Message(kind, text);
     if(node != null && node.isRegistered() && node.getModel() != null && !node.getModel().isTransient()) {
       message.setHintObject(new SNodePointer(node));
     }
-    synchronized (myMessageHandler) {
-      myMessageHandler.handle(message);
-    }
+    return message;
   }
 }
