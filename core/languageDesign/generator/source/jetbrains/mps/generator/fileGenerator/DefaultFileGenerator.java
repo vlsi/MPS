@@ -25,7 +25,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class DefaultFileGenerator implements IFileGenerator {
-  private static final Logger LOG = Logger.getLogger(DefaultFileGenerator.class);
 
   public boolean overridesDefault(SNode outputRootNode, SNode originalInputNode) {
     return true;
@@ -35,14 +34,18 @@ public class DefaultFileGenerator implements IFileGenerator {
     return true;
   }
 
+  public String getFileName(SNode outputRootNode) {
+    String extension = TextGenManager.instance().getExtension(outputRootNode);
+    return (extension == null)? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
+  }
+
   public final File generateFile(SNode outputRootNode, SNode originalInputNode, SModel inputModel, String content, File outputRootDir) throws IOException {
     if (!isDefault(outputRootNode)) {
       throw new RuntimeException("couldn't generate file for output node: " + outputRootNode.getDebugText());
     }
 
     File outputDir = FileGenerationUtil.getDefaultOutputDir(inputModel, outputRootDir);
-    String extension = TextGenManager.instance().getExtension(outputRootNode);
-    String filename = (extension == null)? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
+    String filename = getFileName(outputRootNode);
     if (filename == null) {
       return null;
     }
@@ -66,17 +69,19 @@ public class DefaultFileGenerator implements IFileGenerator {
     }
 
     boolean fileCreated = false;
+    IOException lastExc = null;
     for (int i = 1; i <= 20; i++) {
       try {
         file.createNewFile();
         fileCreated = true;
         break;
       } catch (IOException ex) {
+        lastExc = ex;
         //sometimes:
         //java.io.IOException: Access is denied
         //at java.io.WinNTFileSystem.createFileExclusively(Native Method)
         //at java.io.File.createNewFile(File.java:850)
-        // so we'll try 5 times
+        // so we'll try 5(20) times
       }
       try {
         Thread.sleep(100);
@@ -88,9 +93,9 @@ public class DefaultFileGenerator implements IFileGenerator {
     if (fileCreated) {
       FileUtil.write(file, content);
     } else {
-      LOG.error("Can't create " + file.getPath());
+      throw lastExc == null ? new IOException("Can't create " + file.getPath()) : lastExc;
     }
 
-    return fileCreated ? file : null;
+    return file;
   }
 }

@@ -41,7 +41,7 @@ public class DependenciesListener implements INodesReadListener {
   }
 
   private void readModel(SModel model) {
-    if(model == null || model.isTransient() || model == myBuilder.currentModel) {
+    if(model == null || model.isTransient() || model == myBuilder.currentInputModel) {
       return;
     }
     dependsOnModels.add(model);
@@ -50,7 +50,7 @@ public class DependenciesListener implements INodesReadListener {
   @Override
   public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
     if(node.isRegistered()) {
-      if(node.getModel() == myBuilder.currentModel) {
+      if(node.getModel() == myBuilder.currentInputModel) {
         readNode(node.getTopParent());
       } else {
         readModel(node.getModel());
@@ -61,7 +61,7 @@ public class DependenciesListener implements INodesReadListener {
   @Override
   public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
     if(node.isRegistered()) {
-      if(node.getModel() == myBuilder.currentModel) {
+      if(node.getModel() == myBuilder.currentInputModel) {
         readNode(node.getTopParent());
       } else {
         readModel(node.getModel());
@@ -72,7 +72,7 @@ public class DependenciesListener implements INodesReadListener {
   @Override
   public void propertyExistenceAccess(SNode node, String propertyName) {
     if(node.isRegistered()) {
-      if(node.getModel() == myBuilder.currentModel) {
+      if(node.getModel() == myBuilder.currentInputModel) {
         readNode(node.getTopParent());
       } else {
         readModel(node.getModel());
@@ -83,7 +83,7 @@ public class DependenciesListener implements INodesReadListener {
   @Override
   public void propertyDirtyReadAccess(SNode node, String propertyName) {
     if(node.isRegistered()) {
-      if(node.getModel() == myBuilder.currentModel) {
+      if(node.getModel() == myBuilder.currentInputModel) {
         readNode(node.getTopParent());
       } else {
         readModel(node.getModel());
@@ -94,7 +94,7 @@ public class DependenciesListener implements INodesReadListener {
   @Override
   public void propertyCleanReadAccess(SNode node, String propertyName) {
     if(node.isRegistered()) {
-      if(node.getModel() == myBuilder.currentModel) {
+      if(node.getModel() == myBuilder.currentInputModel) {
         readNode(node.getTopParent());
       } else {
         readModel(node.getModel());
@@ -105,7 +105,7 @@ public class DependenciesListener implements INodesReadListener {
   @Override
   public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
     if(node.isRegistered()) {
-      if(node.getModel() == myBuilder.currentModel) {
+      if(node.getModel() == myBuilder.currentInputModel) {
         readNode(node.getTopParent());
       } else {
         readModel(node.getModel());
@@ -116,7 +116,7 @@ public class DependenciesListener implements INodesReadListener {
   @Override
   public void nodeUnclassifiedReadAccess(SNode node) {
     if(node.isRegistered()) {
-      if(node.getModel() == myBuilder.currentModel) {
+      if(node.getModel() == myBuilder.currentInputModel) {
         readNode(node.getTopParent());
       } else {
         readModel(node.getModel());

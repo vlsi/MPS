@@ -9,32 +9,47 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * Dependencies collector. Created once per model generation.
+ *
  * Evgeny Gryaznov, May 11, 2010
  */
 public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
-  private DependenciesListener conditionalsBuilder;
-  private Map<SNode, DependenciesListener> listeners = new HashMap<SNode, DependenciesListener>();
-  private DependenciesListener[] listenersList;
-  private Map<SNode, SNode> currentStepToOriginalMap;
-  Map<SNode, SNode> currentToOriginalMap;
-  SModel currentModel;
+  /* generation data */
+  private DependenciesListener myConditionalsBuilder;
+  private Map<SNode, DependenciesListener> myRootBuilders = new HashMap<SNode, DependenciesListener>();
+  private DependenciesListener[] myAllListeners;
 
-  public DefaultDependenciesBuilder(SModel inputModel) {
-    currentModel = inputModel;
-    SNode[] roots = getRoots(inputModel);
-    conditionalsBuilder = new DependenciesListener(null, this);
+  /* next step input -> original */
+  private Map<SNode, SNode> myNextStepToOriginalMap;
+
+  /* current step data */
+  Map<SNode, SNode> currentToOriginalMap;
+  SModel currentInputModel;
+
+  public DefaultDependenciesBuilder(SModel originalInputModel) {
+    currentInputModel = originalInputModel;
+    initData(getRoots(originalInputModel));
+  }
+
+  private void initData(SNode[] roots) {
+    myConditionalsBuilder = new DependenciesListener(null, this);
     currentToOriginalMap = new HashMap<SNode, SNode>(roots.length*3/2);
-    listenersList = new DependenciesListener[roots.length+1];
+    myAllListeners = new DependenciesListener[roots.length+1];
     int e = 0;
-    listenersList[e++] = conditionalsBuilder;
+    myAllListeners[e++] = myConditionalsBuilder;
     for(SNode root : roots) {
-      listenersList[e] = new DependenciesListener(root, this);
-      listeners.put(root, listenersList[e++]);
+      myAllListeners[e] = new DependenciesListener(root, this);
+      myRootBuilders.put(root, myAllListeners[e++]);
       currentToOriginalMap.put(root,root);
     }
   }
 
+  private static SNode[] getRoots(SModel model) {
+    List<SNode> roots = model.getRoots();
+    return roots.toArray(new SNode[roots.size()]);
+  }
+  
   @Override
   public void scriptApplied(SModel newmodel) {
     Map<SNodeId, SNode> oldidsToOriginal = new HashMap<SNodeId, SNode>();
@@ -45,47 +60,38 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
     for(SNode root : newmodel.getRoots()) {
       SNodeId id = root.getSNodeId();
       SNode original = oldidsToOriginal.get(id);
-      if(original != null) {
-        currentToOriginalMap.put(root, original);
-      }
+      currentToOriginalMap.put(root, original);
     }
-    currentModel = newmodel;
+    currentInputModel = newmodel;
   }
 
   @Override
   public void registerRoot(SNode outputRoot, SNode inputNode) {
+    if(myNextStepToOriginalMap == null) {
+      myNextStepToOriginalMap = new HashMap<SNode, SNode>();
+    }
     if(inputNode == null) {
+      myNextStepToOriginalMap.put(outputRoot, null);
       return;
     }
     SNode originalRoot = currentToOriginalMap.get(inputNode.getTopParent());
-    if(originalRoot == null) {
-      return;
-    }
-    if(currentStepToOriginalMap == null) {
-      currentStepToOriginalMap = new HashMap<SNode, SNode>();
-    }
-    currentStepToOriginalMap.put(outputRoot, originalRoot);
+    myNextStepToOriginalMap.put(outputRoot, originalRoot);
   }
 
   @Override
   public void updateModel(SModel newInputModel) {
-    if(currentStepToOriginalMap != null) {
-      currentToOriginalMap = currentStepToOriginalMap;
-      currentStepToOriginalMap = null;
+    if(myNextStepToOriginalMap != null) {
+      currentToOriginalMap = myNextStepToOriginalMap;
+      myNextStepToOriginalMap = null;
     } else {
       currentToOriginalMap = new HashMap<SNode, SNode>();
     }
-    currentModel = newInputModel;
+    currentInputModel = newInputModel;
   }
 
   @Override
   public void dropModel() {
-    currentStepToOriginalMap = null;
-  }
-
-  private static SNode[] getRoots(SModel model) {
-    List<SNode> roots = model.getRoots();
-    return roots.toArray(new SNode[roots.size()]);
+    myNextStepToOriginalMap = null;
   }
 
   public SNode getOriginalRoot(SNode outputNode) {
@@ -95,21 +101,21 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   @Override
   public DependenciesListener getListener(SNode inputNode) {
     if(inputNode == null || !inputNode.isRegistered()) {
-      return conditionalsBuilder;
+      return myConditionalsBuilder;
     }
     inputNode = inputNode.getTopParent();
-    if(inputNode.getModel() == currentModel) {
-      SNode originalRoot = currentToOriginalMap.get(inputNode);
-      if(originalRoot != null) {
-        return listeners.get(originalRoot);
-      }
+    SNode originalRoot = currentToOriginalMap.get(inputNode);
+    if(originalRoot != null) {
+      return myRootBuilders.get(originalRoot);
+    } else if(currentToOriginalMap.containsKey(inputNode)) {
+      return myConditionalsBuilder;
     }
-    // TODO ????? fix
+    // shouldn't happen
     return null;
   }
 
   @Override
   public GenerationDependencies getResult() {
-    return GenerationDependencies.fromData(currentToOriginalMap, listenersList);
+    return GenerationDependencies.fromData(currentToOriginalMap, myAllListeners);
   }
 }
