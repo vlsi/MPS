@@ -785,9 +785,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
       myMainTextLabel.setText(text);
       if (additionalText != null) {
-        myAdditionalTextLabel.setText(" (" + additionalText + ")");
+        myAdditionalTextLabel.setText(" (" + additionalText + ") ");
       } else {
-        myAdditionalTextLabel.setText("");
+        myAdditionalTextLabel.setText(" ");
       }
 
       if (icon == null) {
