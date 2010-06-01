@@ -49,7 +49,6 @@ public class Solution extends AbstractModule {
   }
 
   //this is for stubs framework only
-
   public static Solution newInstance(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
     Solution solution = new Solution() {
       public String getGeneratorOutputPath() {
