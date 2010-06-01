@@ -60,6 +60,7 @@ public class CheckCoreRuntimeDeps_Action extends GeneratedAction {
     try {
       List<SNode> coreBlocks = new ArrayList<SNode>();
       ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)", "4062013737453621622"));
+      ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)", "767042628922931192"));
       ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)", "701559220729385454"));
       ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)", "7678729833318422579"));
       ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)", "4062013737453621614"));

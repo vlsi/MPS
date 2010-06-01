@@ -2842,6 +2842,18 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="767042628922931196">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="767042628922931197">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="767042628922931198">
+              <link role="variableDeclaration:3" targetNodeId="7482942963842028350" resolveInfo="coreBlocks" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="767042628922931199">
+              <node role="argument:7" type="jetbrains.mps.lang.smodel.structure.NodeRefExpression:16" id="767042628922931200">
+                <link role="referentNode:16" targetNodeId="38.767042628922931192" resolveInfo="core.usages" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7482942963842028367">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7482942963842028368">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7482942963842028369">

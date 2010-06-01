@@ -372,6 +372,9 @@
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="4062013737453621622">
     <property name="name:7" value="core" />
     <property name="package:7" value="core" />
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="767042628922931194">
+      <link role="block:7" targetNodeId="767042628922931192" resolveInfo="core.usages" />
+    </node>
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="7678729833318422623">
       <link role="block:7" targetNodeId="701559220729385454" resolveInfo="core.baseLanguage" />
     </node>
@@ -534,6 +537,10 @@
       <property name="id" value="cf8c9de5-1b4a-4dc8-8e6d-847159af31dd" />
       <property name="name" value="jetbrains.mps.debug.evaluation.ui" />
     </node>
+  </node>
+  <node type="jetbrains.mps.build.packaging.structure.Block:7" id="767042628922931192">
+    <property name="package:7" value="core" />
+    <property name="name:7" value="core.usages" />
   </node>
 </model>
 
