@@ -868,6 +868,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myLeftHighlighter;
   }
 
+  @NotNull
+  public SearchPanel getSearchPanel() {
+    return mySearchPanel;
+  }
+
   public void updateMessages() {
 
     //todo remove
