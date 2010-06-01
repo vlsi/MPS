@@ -570,6 +570,17 @@ System.out.println("alltypes = " + allTypes);*/
       return null;
     }
 
+    if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConceptFqName())) {
+      List<SNode> children = subtype.getChildren("argument");
+      Set<IWrapper> wrappers = new HashSet<IWrapper>();
+      for (SNode child : children) {
+        wrappers.add(NodeWrapper.fromNode(child, equationManager));
+      }
+      IWrapper lcs = leastCommonSupertype(wrappers, isWeak, equationManager);
+      SNode result = coerceSubtyping(lcs.getNode(), pattern, isWeak, equationManager);
+      return result;
+    }
+
     synchronized (CACHE_ACCESS) {
       //asking the cache
       SubtypingCache cache = myTypeChecker.getSubtypingCache();
