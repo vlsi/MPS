@@ -4,6 +4,7 @@ package jetbrains.mps.build.custommps.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.actions.Build_ActionGroup;
 
 public class InternalChecks_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(InternalChecks_ActionGroup.class);
@@ -22,6 +23,6 @@ public class InternalChecks_ActionGroup extends GeneratedActionGroup {
   }
 
   public void adjust() {
-    this.insertGroupIntoAnother(ProjectPaneProjectAddition_ActionGroup.ID, null);
+    this.insertGroupIntoAnother(Build_ActionGroup.ID, null);
   }
 }

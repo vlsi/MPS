@@ -804,7 +804,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1241455730164">
-    <property name="name:23" value="ProjectPaneProjectAddition" />
+    <property name="name:23" value="ProjectAddition" />
     <property name="package:23" value="wizard" />
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="1241455730165">
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="1241455730167">
@@ -2666,6 +2666,7 @@
       </node>
     </node>
   </node>
+  <visible index="6" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="7482942963841965839">
     <property name="package:23" value="wizard" />
     <property name="name:23" value="InternalChecks" />
@@ -2673,7 +2674,7 @@
     <property name="isPopup:23" value="true" />
     <property name="caption:23" value="Checks" />
     <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="7482942963841967329">
-      <link role="modifiedGroup:23" targetNodeId="1241455730164" resolveInfo="ProjectPaneProjectAddition" />
+      <link role="modifiedGroup:23" targetNodeId="6v.1215013255981" resolveInfo="Build" />
     </node>
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="7482942963841967336">
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="7482942963841967337">
