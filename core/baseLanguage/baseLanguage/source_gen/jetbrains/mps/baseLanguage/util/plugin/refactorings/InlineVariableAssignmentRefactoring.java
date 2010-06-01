@@ -29,7 +29,6 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
 
   public InlineVariableAssignmentRefactoring(SNode node) {
     this.myVariable = node;
-    // <node> 
     SNode body = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     this.myProgram = DataFlowManager.getInstance().buildProgramFor(body);
     AnalysisResult<Set<ReadInstruction>> reachingReads = this.myProgram.analyze(new ReachingReadsAnalyzer());
