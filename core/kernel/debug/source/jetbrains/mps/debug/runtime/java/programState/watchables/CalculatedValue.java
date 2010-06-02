@@ -1,9 +1,11 @@
-package jetbrains.mps.debug.runtime.java.programState;
+package jetbrains.mps.debug.runtime.java.programState.watchables;
 
 import com.sun.jdi.Value;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
+import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
+import jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.Icon;
@@ -24,7 +26,7 @@ public class CalculatedValue implements IWatchable {
 
   @Override
   public WatchablesCategory getCategory() {
-    return JavaWatchablesCategories.CALCULATED_VALUE;
+    return JavaWatchablesCategory.CALCULATED_VALUE;
   }
 
   @Override

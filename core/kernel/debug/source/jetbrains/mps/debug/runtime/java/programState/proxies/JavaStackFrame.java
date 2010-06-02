@@ -1,7 +1,12 @@
-package jetbrains.mps.debug.runtime.java.programState;
+package jetbrains.mps.debug.runtime.java.programState.proxies;
 
 import com.sun.jdi.*;
-import jetbrains.mps.debug.api.programState.*;
+import jetbrains.mps.debug.api.programState.IStackFrame;
+import jetbrains.mps.debug.api.programState.IValue;
+import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaLocalVariable;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticField;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaThisObject;
 import jetbrains.mps.logging.Logger;
 
 import java.util.*;
@@ -61,13 +66,22 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   public List<IWatchable> getVisibleWatchables() {
     try {
       List<IWatchable> result = new ArrayList<IWatchable>();
+
       for (LocalVariable variable : myStackFrame.visibleVariables()) {
         result.add(new JavaLocalVariable(variable, myStackFrame));
       }
+
       ObjectReference thisObject = myStackFrame.thisObject();
       if (thisObject != null) {
         result.add(new JavaThisObject(thisObject, myStackFrame));
+      } else {
+        ReferenceType contextType = myStackFrame.location().declaringType();
+        for (Field field : contextType.fields()) {
+          if (!field.isStatic()) continue;
+          result.add(new JavaStaticField(field));
+        }
       }
+
       return result;
     } catch (AbsentInformationException ex) {
       LOG.error(ex);

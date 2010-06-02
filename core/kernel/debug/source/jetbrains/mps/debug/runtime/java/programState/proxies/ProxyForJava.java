@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.runtime.java.programState;
+package jetbrains.mps.debug.runtime.java.programState.proxies;
 
 /**
  * Created by IntelliJ IDEA.

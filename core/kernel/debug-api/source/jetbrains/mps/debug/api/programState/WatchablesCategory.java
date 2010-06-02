@@ -7,10 +7,10 @@ package jetbrains.mps.debug.api.programState;
  * Time: 18:08:56
  * To change this template use File | Settings | File Templates.
  */
-public class WatchablesCategory {
+public class WatchablesCategory implements Comparable<WatchablesCategory> {
   public static final WatchablesCategory NONE = new WatchablesCategory("");
 
-  private String myCategoryName;
+  private final String myCategoryName;
 
   public WatchablesCategory(String categoryName) {
     myCategoryName = categoryName;
@@ -20,4 +20,8 @@ public class WatchablesCategory {
     return myCategoryName;
   }
 
+  @Override
+  public int compareTo(WatchablesCategory o) {
+    return this.getCategoryName().compareTo(o.getCategoryName());
+  }
 }

@@ -32,7 +32,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.debug.api.integration.ui.WatchableNode;
-import jetbrains.mps.debug.runtime.java.programState.CalculatedValue;
+import jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedValue;
 import java.awt.Color;
 import jetbrains.mps.ide.messages.Icons;
 

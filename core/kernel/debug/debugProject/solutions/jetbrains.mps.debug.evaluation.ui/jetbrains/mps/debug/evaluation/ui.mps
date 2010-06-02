@@ -6811,7 +6811,7 @@
                 <link role="variableDeclaration:3" targetNodeId="6185141366360271590" resolveInfo="myUiState" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="672360099287476255">
-                <link role="baseMethodDeclaration:3" targetNodeId="12.~JavaUiState.getStackFrame():jetbrains.mps.debug.runtime.java.programState.JavaStackFrame" resolveInfo="getStackFrame" />
+                <link role="baseMethodDeclaration:3" targetNodeId="12.~JavaUiState.getStackFrame():jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" resolveInfo="getStackFrame" />
               </node>
             </node>
           </node>
@@ -8308,7 +8308,7 @@
                 <link role="variableDeclaration:3" targetNodeId="6185141366360271590" resolveInfo="myUiState" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="672360099287477513">
-                <link role="baseMethodDeclaration:3" targetNodeId="12.~JavaUiState.getStackFrame():jetbrains.mps.debug.runtime.java.programState.JavaStackFrame" resolveInfo="getStackFrame" />
+                <link role="baseMethodDeclaration:3" targetNodeId="12.~JavaUiState.getStackFrame():jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" resolveInfo="getStackFrame" />
               </node>
             </node>
           </node>
@@ -8327,7 +8327,7 @@
                       <link role="variableDeclaration:3" targetNodeId="672360099287477509" resolveInfo="frame" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="672360099287477522">
-                      <link role="baseMethodDeclaration:3" targetNodeId="35.~JavaStackFrame.getLocation():jetbrains.mps.debug.runtime.java.programState.JavaLocation" resolveInfo="getLocation" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="35.~JavaStackFrame.getLocation():jetbrains.mps.debug.runtime.java.programState.proxies.JavaLocation" resolveInfo="getLocation" />
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="672360099287477523">
@@ -9390,7 +9390,7 @@
                 <link role="variableDeclaration:3" targetNodeId="6185141366360271590" resolveInfo="myUiState" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4592086915999590994">
-                <link role="baseMethodDeclaration:3" targetNodeId="12.~JavaUiState.getStackFrame():jetbrains.mps.debug.runtime.java.programState.JavaStackFrame" resolveInfo="getStackFrame" />
+                <link role="baseMethodDeclaration:3" targetNodeId="12.~JavaUiState.getStackFrame():jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" resolveInfo="getStackFrame" />
               </node>
             </node>
           </node>

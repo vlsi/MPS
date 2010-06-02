@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class C {
   private static Integer myStatic239 = 239;
+  private static Integer myStatic239_2 = 239;
 
   private Integer my239 = 239;
 

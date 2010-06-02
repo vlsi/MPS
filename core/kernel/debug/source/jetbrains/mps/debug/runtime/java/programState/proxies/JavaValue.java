@@ -1,9 +1,10 @@
-package jetbrains.mps.debug.runtime.java.programState;
+package jetbrains.mps.debug.runtime.java.programState.proxies;
 
 import com.sun.jdi.*;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.integration.Icons;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaField;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.Nullable;
 

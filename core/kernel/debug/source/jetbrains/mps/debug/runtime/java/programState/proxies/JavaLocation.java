@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.runtime.java.programState;
+package jetbrains.mps.debug.runtime.java.programState.proxies;
 
 import com.sun.jdi.AbsentInformationException;
 import com.sun.jdi.Location;

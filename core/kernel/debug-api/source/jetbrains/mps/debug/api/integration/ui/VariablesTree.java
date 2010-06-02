@@ -104,7 +104,7 @@ class VariablesTree extends MPSTree implements DataProvider {
 
     }
 
-    LinkedHashSet<WatchablesCategory> keys = new LinkedHashSet<WatchablesCategory>(orphanesByCategory.keySet());
+    SortedSet<WatchablesCategory> keys = new TreeSet<WatchablesCategory>(orphanesByCategory.keySet());
     keys.addAll(nodeToVarsMapByCategory.keySet());
     //todo sort categories
 
