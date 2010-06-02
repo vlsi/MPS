@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.blame.dialog;
 
 import com.intellij.ide.BrowserUtil;
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
@@ -29,10 +30,12 @@ import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.dialogs.ScrollingMessageDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.workbench.MPSDataKeys;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
@@ -122,11 +125,12 @@ public class BlameDialog extends BaseDialog {
         Query query = createQuery();
 
         Response response = poster.test(query);
+        Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
         if (response.isSuccess()) {
-          JOptionPane.showMessageDialog(BlameDialog.this, response.getMessage(), "Info", JOptionPane.INFORMATION_MESSAGE);
+          new ScrollingMessageDialog(frame, response.getMessage()).showDialog();
         } else {
-          JOptionPane.showMessageDialog(BlameDialog.this, response.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-          LOG.error("Submit failed: " + response.getMessage() + ":" + response.getResponseString(), response.getThrowable());
+          new ScrollingMessageDialog(frame, "Error", response.getMessage()).showDialog();
+          LOG.warning("Submit failed: " + response.getMessage() + ":" + response.getResponseString(), response.getThrowable());
         }
       }
     });

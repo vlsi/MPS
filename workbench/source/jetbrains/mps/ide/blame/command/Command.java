@@ -48,7 +48,7 @@ public class Command {
     int statusCode = p.getStatusCode();
     String responseString = p.getResponseBodyAsString();
     if (statusCode != 200 || responseString.indexOf("ok") == -1) {
-      return new Response("Can't login into issue tracker", responseString, false, null);
+      return new Response("Can't login into issue tracker (status " + statusCode + ")", responseString, false, null);
     } else {
       return new Response("Logged in correctly", responseString, true, null);
     }

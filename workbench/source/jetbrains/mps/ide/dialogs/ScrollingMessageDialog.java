@@ -20,7 +20,11 @@ import java.awt.HeadlessException;
 
 public class ScrollingMessageDialog extends BaseScrollingTextDialog {
   public ScrollingMessageDialog(Frame mainFrame, String text) throws HeadlessException {
-    super(mainFrame, "Message", text);
+    this(mainFrame, "Message", text);
+  }
+
+  public ScrollingMessageDialog(Frame mainFrame, String title, String text) throws HeadlessException {
+    super(mainFrame, title, text);
   }
 
   @BaseDialog.Button(position = 0, name = "Close", mnemonic = 'C', defaultButton = true)
