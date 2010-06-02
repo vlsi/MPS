@@ -196,7 +196,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
           result = true;
           Set<SNode> nodes = myBlockedOnSlaveComputation.get(blockingNode);
           if (nodes == null) {
-            nodes = new HashSet<SNode>();
+            nodes = new HashSet<SNode>(1);
             myBlockedOnSlaveComputation.put(blockingNode, nodes);
           }
           nodes.add(node);
@@ -320,7 +320,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
 
     List<IErrorReporter> iErrorReporters = errorMap.get(node);
     if (iErrorReporters == null) {
-      iErrorReporters = new ArrayList<IErrorReporter>();
+      iErrorReporters = new ArrayList<IErrorReporter>(1);
       errorMap.put(node, iErrorReporters);
     }
     iErrorReporters.add(errorReporter);
@@ -338,12 +338,12 @@ public class NodeTypesComponent implements EditorMessageOwner {
         NonTypesystemRule_Runtime currentRule = myNonTypesystemRuleAndNodeBeingChecked.o2;
         Map<NonTypesystemRule_Runtime, Set<IErrorReporter>> rulesToErrorsMap = myNodesAndNTRulesToErrors.get(currentNode);
         if (rulesToErrorsMap == null) {
-          rulesToErrorsMap = new HashMap<NonTypesystemRule_Runtime, Set<IErrorReporter>>();
+          rulesToErrorsMap = new HashMap<NonTypesystemRule_Runtime, Set<IErrorReporter>>(1);
           myNodesAndNTRulesToErrors.put(currentNode, rulesToErrorsMap);
         }
         Set<IErrorReporter> errorsSet = rulesToErrorsMap.get(currentRule);
         if (errorsSet == null) {
-          errorsSet = new HashSet<IErrorReporter>();
+          errorsSet = new HashSet<IErrorReporter>(1);
           rulesToErrorsMap.put(currentRule, errorsSet);
         }
         errorsSet.add(errorReporter);
@@ -369,7 +369,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   public void computeTypes(boolean refreshTypes) {
-    computeTypes(myRootNode, refreshTypes, true, new ArrayList<SNode>(), false);
+    computeTypes(myRootNode, refreshTypes, true, new ArrayList<SNode>(0), false);
   }
 
   private void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
@@ -405,7 +405,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   private void performActionsAfterChecking() {
-    Map<SNode, List<IErrorReporter>> toAdd = new HashMap<SNode, List<IErrorReporter>>();
+    Map<SNode, List<IErrorReporter>> toAdd = new HashMap<SNode, List<IErrorReporter>>(8);
 
     // setting expanded errors
     for (SNode node : myNodesToErrorsMap.keySet()) {
@@ -419,7 +419,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
           reporter.setAdditionalRulesIds(iErrorReporter.getAdditionalRulesIds());
           List<IErrorReporter> errorReporterList = toAdd.get(node);
           if (errorReporterList == null) {
-            errorReporterList = new ArrayList<IErrorReporter>();
+            errorReporterList = new ArrayList<IErrorReporter>(1);
             toAdd.put(node, errorReporterList);
           }
           errorReporterList.add(iErrorReporter);
@@ -467,19 +467,19 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, true, new ArrayList<SNode>(), false);
+    return computeTypesForNode_special(initialNode, true, new ArrayList<SNode>(0), false);
   }
 
   public SNode computeTypesForNodeDuringResolving(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, false, new ArrayList<SNode>(), false);
+    return computeTypesForNode_special(initialNode, false, new ArrayList<SNode>(0), false);
   }
 
   public SNode computeTypesForNodeInferenceMode(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, false, new ArrayList<SNode>(), true);
+    return computeTypesForNode_special(initialNode, false, new ArrayList<SNode>(0), true);
   }
 
   public InequationSystem computeInequationsForHole(SNode hole, boolean holeIsAType) {
-    List<SNode> additionalNodes = new ArrayList<SNode>();
+    List<SNode> additionalNodes = new ArrayList<SNode>(1);
     additionalNodes.add(hole);
 
     try {
@@ -527,7 +527,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
           (type.getAdapter() instanceof RuntimeHoleType && myHoleTypeWrapper.getInequationSystem().isEmpty()) ||
           !type.getAdapter().getDescendants(RuntimeTypeVariable.class).isEmpty()) {
           if (node.isRoot()) {
-            computeTypes(node, refreshTypes, true, new ArrayList<SNode>(), inferenceMode); //the last possibility: check the whole root
+            computeTypes(node, refreshTypes, true, new ArrayList<SNode>(0), inferenceMode); //the last possibility: check the whole root
             type = getType(initialNode);
             return type;
           }
@@ -623,7 +623,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
       if (nodeToDependOn == null) continue;
       WeakSet<SNode> dependentNodes = dependencies.get(nodeToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new WeakSet<SNode>();
+        dependentNodes = new WeakSet<SNode>(1);
         dependencies.put(nodeToDependOn, dependentNodes);
         myModelListenerManager.track(nodeToDependOn);
       }
@@ -650,12 +650,12 @@ public class NodeTypesComponent implements EditorMessageOwner {
       if (propertyToDependOn == null) continue;
       WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = mapToNodesWithNTRules.get(propertyToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>();
+        dependentNodes = new WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>(1);
         mapToNodesWithNTRules.put(propertyToDependOn, dependentNodes);
       }
       Set<NonTypesystemRule_Runtime> rules = dependentNodes.get(sNode);
       if (rules == null) {
-        rules = new HashSet<NonTypesystemRule_Runtime>();
+        rules = new HashSet<NonTypesystemRule_Runtime>(1);
         dependentNodes.put(sNode, rules);
       }
       rules.add(rule);
@@ -669,12 +669,12 @@ public class NodeTypesComponent implements EditorMessageOwner {
       if (nodeToDependOn == null) continue;
       WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = mapToNodesWithNTRules.get(nodeToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>();
+        dependentNodes = new WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>(1);
         mapToNodesWithNTRules.put(nodeToDependOn, dependentNodes);
       }
       Set<NonTypesystemRule_Runtime> rules = dependentNodes.get(sNode);
       if (rules == null) {
-        rules = new HashSet<NonTypesystemRule_Runtime>();
+        rules = new HashSet<NonTypesystemRule_Runtime>(1);
         dependentNodes.put(sNode, rules);
       }
       rules.add(rule);
@@ -685,7 +685,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
     WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = myNodesDependentOnCachesWithNTRules;
     Set<NonTypesystemRule_Runtime> rules = dependentNodes.get(node);
     if (rules == null) {
-      rules = new HashSet<NonTypesystemRule_Runtime>();
+      rules = new HashSet<NonTypesystemRule_Runtime>(1);
       dependentNodes.put(node, rules);
     }
     rules.add(rule);
@@ -704,13 +704,13 @@ public class NodeTypesComponent implements EditorMessageOwner {
   //"type affected" means that *type* of this node depends on current
   // used to decide whether call "type will be recalculated" if current invalidated
   public void addDependcyOnCurrent(SNode node, boolean typeAffected) {
-    HashSet<SNode> hashSet = new HashSet<SNode>();
+    HashSet<SNode> hashSet = new HashSet<SNode>(1);
     hashSet.add(myCurrentCheckedNode);
     addDepedentNodesTypesystem(node, hashSet, typeAffected);
   }
 
   public void addDependencyForCurrent(SNode node) {
-    HashSet<SNode> hashSet = new HashSet<SNode>();
+    HashSet<SNode> hashSet = new HashSet<SNode>(1);
     hashSet.add(node);
     addDepedentNodesTypesystem(myCurrentCheckedNode, hashSet, true);
   }
@@ -861,7 +861,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
 
   @NotNull
   public List<IErrorReporter> getErrors(SNode node) {
-    List<IErrorReporter> result = new ArrayList<IErrorReporter>();
+    List<IErrorReporter> result = new ArrayList<IErrorReporter>(4);
     List<IErrorReporter> iErrorReporters = myNodesToErrorsMap.get(node);
     if (iErrorReporters != null) {
       result.addAll(iErrorReporters);
@@ -883,7 +883,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
-    Set<Pair<SNode, List<IErrorReporter>>> result = new HashSet<Pair<SNode, List<IErrorReporter>>>();
+    Set<Pair<SNode, List<IErrorReporter>>> result = new HashSet<Pair<SNode, List<IErrorReporter>>>(1);
     Set<SNode> keySet = new HashSet<SNode>(myNodesToErrorsMap.keySet());
     keySet.addAll(myNodesToNonTypesystemErrorsMap.keySet());
     for (SNode key : keySet) {
@@ -911,7 +911,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
     if (myInvalidationWasPerformedNT) {
       return myInvalidationResultNT;
     }
-    Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>();
+    Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>(1);
     //nodes
     for (SNode node : myCurrentNodesToInvalidateNonTypesystem) {
       WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> nodesAndRules = myNodesToDependentNodesWithNTRules.get(node);
@@ -1073,7 +1073,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
     String name = variable.getName();
     Set<SNode> variables = myRegisteredVariables.get(name);
     if (variables == null) {
-      variables = new HashSet<SNode>();
+      variables = new HashSet<SNode>(1);
       myRegisteredVariables.put(name, variables);
     }
     variables.add(variable);
