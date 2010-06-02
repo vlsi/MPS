@@ -52,7 +52,7 @@ public class Graph<V extends IVertex> {
    *
    * @param walker - walker handling search events.
    */
-  public void dfsValk(IDFSWalker<V> walker) {
+  public void dfsValk(@NotNull IDFSWalker<V> walker) {
     TreeSet<V> vertexes = new TreeSet<V>(walker.getVertexComparator());
     vertexes.addAll(myData);
 
@@ -66,7 +66,7 @@ public class Graph<V extends IVertex> {
     }
   }
 
-  private void dfs(V v, TreeSet<V> vertexes, IDFSWalker<V> walker) {
+  private void dfs(@NotNull V v, @NotNull TreeSet<V> vertexes, @NotNull IDFSWalker<V> walker) {
     vertexes.remove(v);
 
     walker.enter(v);
