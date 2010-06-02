@@ -8,12 +8,15 @@ if [ -z "${JDK_HOME}" ]; then
   JAVA=java
 else
   JAVA="${JDK_HOME}/bin/java"
+  echo "$0 info: Using jdk located in ${JDK_HOME}."
 fi
 
 MAIN_CLASS=jetbrains.mps.Launcher
 
 if [ -z "${MPS_VM_OPTIONS}" ]; then
   MPS_VM_OPTIONS="${PROJECT_HOME}/bin/mps.vmoptions"
+else
+  echo "$0 info: Using vmoptions defined in ${MPS_VM_OPTIONS}."
 fi
 JVM_ARGS=`tr '\n' ' ' <${MPS_VM_OPTIONS} | tr '\r' ' '`
 # ADDITIONAL_JVM_ARGS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
@@ -46,6 +49,6 @@ elif [ "${UNAME}" = "Linux" ]; then
   fi
   export LD_LIBRARY_PATH
 else
-  echo "Unknown operating system ${UNAME}"
+  echo "$0 warning: Unknown operating system ${UNAME}. Do not know how to add PWD to libraries path."
 fi
 ${JAVA} ${JVM_ARGS} ${ADDITIONAL_JVM_ARGS} -classpath ${CLASSPATH} ${MAIN_CLASS} $*

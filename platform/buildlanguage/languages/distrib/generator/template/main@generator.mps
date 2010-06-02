@@ -9192,6 +9192,33 @@
                   </node>
                   <node role="terminator" type="jetbrains.mps.bash.structure.CommandTerminator" id="1635896182103904680" />
                 </node>
+                <node role="lines" type="jetbrains.mps.bash.structure.CommandList" id="4295420159790374215">
+                  <node role="head" type="jetbrains.mps.bash.structure.HeadCommandList" id="4295420159790374216">
+                    <node role="base" type="jetbrains.mps.bash.structure.HeadPipeline" id="4295420159790374217">
+                      <node role="command" type="jetbrains.mps.bash.structure.ExternalCommandCall" id="4295420159790374218">
+                        <link role="declaration" targetNodeId="6v.7803330421062580359" resolveInfo="echo" />
+                        <node role="refToOptions" type="jetbrains.mps.bash.structure.ArgumentListReference" id="4295420159790374219">
+                          <node role="words" type="jetbrains.mps.bash.structure.GeneralizedWord" id="4295420159790374220">
+                            <node role="units" type="jetbrains.mps.bash.structure.DoubleQuote" id="4295420159790374221">
+                              <node role="word" type="jetbrains.mps.bash.structure.GeneralizedWord" id="4295420159790374222">
+                                <node role="units" type="jetbrains.mps.bash.structure.SimpleWord" id="4295420159790374223">
+                                  <property name="word" value="$0 info: Using jdk located in " />
+                                </node>
+                                <node role="units" type="jetbrains.mps.bash.structure.BasicParameterExpansion" id="4295420159790374224">
+                                  <link role="variable" targetNodeId="1635896182103904838" resolveInfo="JDK_HOME" />
+                                </node>
+                                <node role="units" type="jetbrains.mps.bash.structure.SimpleWord" id="4295420159790374225">
+                                  <property name="word" value="." />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="terminator" type="jetbrains.mps.bash.structure.CommandTerminator" id="4295420159790374226" />
+                </node>
               </node>
             </node>
           </node>
@@ -9308,6 +9335,35 @@
                     </node>
                   </node>
                   <node role="terminator" type="jetbrains.mps.bash.structure.CommandTerminator" id="1635896182103904711" />
+                </node>
+              </node>
+              <node role="ifFalse" type="jetbrains.mps.bash.structure.InputLines" id="4295420159790374116">
+                <node role="lines" type="jetbrains.mps.bash.structure.CommandList" id="4295420159790374117">
+                  <node role="head" type="jetbrains.mps.bash.structure.HeadCommandList" id="4295420159790374118">
+                    <node role="base" type="jetbrains.mps.bash.structure.HeadPipeline" id="4295420159790374119">
+                      <node role="command" type="jetbrains.mps.bash.structure.ExternalCommandCall" id="4295420159790374122">
+                        <link role="declaration" targetNodeId="6v.7803330421062580359" resolveInfo="echo" />
+                        <node role="refToOptions" type="jetbrains.mps.bash.structure.ArgumentListReference" id="4295420159790374123">
+                          <node role="words" type="jetbrains.mps.bash.structure.GeneralizedWord" id="4295420159790374124">
+                            <node role="units" type="jetbrains.mps.bash.structure.DoubleQuote" id="4295420159790374125">
+                              <node role="word" type="jetbrains.mps.bash.structure.GeneralizedWord" id="4295420159790374126">
+                                <node role="units" type="jetbrains.mps.bash.structure.SimpleWord" id="4295420159790374127">
+                                  <property name="word" value="$0 info: Using vmoptions defined in " />
+                                </node>
+                                <node role="units" type="jetbrains.mps.bash.structure.BasicParameterExpansion" id="4295420159790374129">
+                                  <link role="variable" targetNodeId="1635896182103904839" resolveInfo="MPS_VM_OPTIONS" />
+                                </node>
+                                <node role="units" type="jetbrains.mps.bash.structure.SimpleWord" id="4295420159790374131">
+                                  <property name="word" value="." />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="terminator" type="jetbrains.mps.bash.structure.CommandTerminator" id="4295420159790374121" />
                 </node>
               </node>
             </node>
@@ -9996,11 +10052,17 @@
                           <node role="words" type="jetbrains.mps.bash.structure.GeneralizedWord" id="6027654792138152523">
                             <node role="units" type="jetbrains.mps.bash.structure.DoubleQuote" id="6027654792138152524">
                               <node role="word" type="jetbrains.mps.bash.structure.GeneralizedWord" id="6027654792138152525">
+                                <node role="units" type="jetbrains.mps.bash.structure.SimpleWord" id="4295420159790374110">
+                                  <property name="word" value="$0 warning: " />
+                                </node>
                                 <node role="units" type="jetbrains.mps.bash.structure.SimpleWord" id="6027654792138152527">
                                   <property name="word" value="Unknown operating system " />
                                 </node>
                                 <node role="units" type="jetbrains.mps.bash.structure.BasicParameterExpansion" id="6027654792138152530">
                                   <link role="variable" targetNodeId="6027654792138150264" resolveInfo="UNAME" />
+                                </node>
+                                <node role="units" type="jetbrains.mps.bash.structure.SimpleWord" id="4295420159790374108">
+                                  <property name="word" value=". Do not know how to add PWD to libraries path." />
                                 </node>
                               </node>
                             </node>
