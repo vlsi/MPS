@@ -106,7 +106,6 @@ class VariablesTree extends MPSTree implements DataProvider {
 
     SortedSet<WatchablesCategory> keys = new TreeSet<WatchablesCategory>(orphanesByCategory.keySet());
     keys.addAll(nodeToVarsMapByCategory.keySet());
-    //todo sort categories
 
     for (WatchablesCategory category : keys) {
       List<IWatchable> orphanes = orphanesByCategory.get(category);
@@ -130,8 +129,7 @@ class VariablesTree extends MPSTree implements DataProvider {
         List<IWatchable> watchablesWithNodes = nodeToVarsMap.get(snode);
         if (watchablesWithNodes.size() == 1) {
           IWatchable watchable = watchablesWithNodes.get(0);
-          WatchableNode nodeTreeNode =
-            new WatchableNode(myContext, watchable);
+          WatchableNode nodeTreeNode = new WatchableNode(myContext, watchable);
           rootTreeNode.add(nodeTreeNode);
         } else {
           NodeTreeNode nodeTreeNode = new NodeTreeNode(myContext, snode);

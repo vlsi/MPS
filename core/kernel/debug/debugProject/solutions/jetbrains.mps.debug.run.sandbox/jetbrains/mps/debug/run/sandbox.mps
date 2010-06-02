@@ -155,6 +155,20 @@
                                           </node>
                                         </node>
                                       </node>
+                                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1580548376419839646">
+                                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1580548376419839647">
+                                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1580548376419839648">
+                                            <link role="classifier:3" targetNodeId="2.~System" resolveInfo="System" />
+                                            <link role="variableDeclaration:3" targetNodeId="2.~System.err" resolveInfo="err" />
+                                          </node>
+                                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1580548376419839649">
+                                            <link role="baseMethodDeclaration:3" targetNodeId="1.~PrintStream.print(java.lang.String):void" resolveInfo="print" />
+                                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1580548376419839650">
+                                              <property name="value:3" value="blah" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
                                     </node>
                                   </node>
                                 </node>
@@ -328,21 +342,6 @@
             </node>
           </node>
           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9010565462999112809">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3602708221906295565">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3602708221906295566">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3602708221906295567">
-                  <link role="classifier:3" targetNodeId="2.~System" resolveInfo="System" />
-                  <link role="variableDeclaration:3" targetNodeId="2.~System.err" resolveInfo="err" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3602708221906295568">
-                  <link role="baseMethodDeclaration:3" targetNodeId="1.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3602708221906295569">
-                    <property name="value:3" value="while" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="3602708221906295577" />
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9010565462999112821">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression:3" id="9010565462999112823">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="9010565462999112824">
@@ -795,6 +794,16 @@
         <link role="classifier:3" targetNodeId="2.~Integer" resolveInfo="Integer" />
       </node>
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="7474628078187305922">
+        <property name="value:3" value="239" />
+      </node>
+    </node>
+    <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="6971092784491434439">
+      <property name="name:3" value="myStatic239_2" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="6971092784491434440" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6971092784491434441">
+        <link role="classifier:3" targetNodeId="2.~Integer" resolveInfo="Integer" />
+      </node>
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6971092784491434442">
         <property name="value:3" value="239" />
       </node>
     </node>

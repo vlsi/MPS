@@ -28,6 +28,7 @@ public class Main {
         _FunctionTypes._void_P0_E0 cl = new _FunctionTypes._void_P0_E0() {
           public void invoke() {
             System.err.print("blah");
+            System.err.print("blah");
           }
         };
         while (true) {
@@ -52,8 +53,6 @@ public class Main {
     doSomething();
     int j = 50;
     while (j > 0) {
-      System.err.println("while");
-
       j--;
     }
     do {

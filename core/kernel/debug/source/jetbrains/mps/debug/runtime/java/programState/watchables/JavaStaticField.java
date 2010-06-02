@@ -26,7 +26,7 @@ public class JavaStaticField implements IWatchable {
 
   @Override
   public WatchablesCategory getCategory() {
-    return JavaWatchablesCategory.STATIC_CONTEXT_FIELD;
+    return WatchablesCategory.NONE;
   }
 
   @Override

@@ -5,6 +5,7 @@ import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaLocalVariable;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticContext;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticField;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaThisObject;
 import jetbrains.mps.logging.Logger;
@@ -75,11 +76,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
       if (thisObject != null) {
         result.add(new JavaThisObject(thisObject, myStackFrame));
       } else {
-        ReferenceType contextType = myStackFrame.location().declaringType();
-        for (Field field : contextType.fields()) {
-          if (!field.isStatic()) continue;
-          result.add(new JavaStaticField(field));
-        }
+        result.add(new JavaStaticContext(myStackFrame.location().declaringType()));
       }
 
       return result;

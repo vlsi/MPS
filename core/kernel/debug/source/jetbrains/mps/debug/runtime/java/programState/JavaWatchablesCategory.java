@@ -11,11 +11,10 @@ import jetbrains.mps.logging.Logger;
  * To change this template use File | Settings | File Templates.
  */
 public class JavaWatchablesCategory extends WatchablesCategory {
-  private static final Logger LOG = Logger.getLogger(JavaWatchablesCategory.class);
   public static final WatchablesCategory LOCAL_VARIABLE = new JavaWatchablesCategory("local variable", 2);
   public static final WatchablesCategory THIS_OBJECT = new JavaWatchablesCategory("this", 1);
   public static final WatchablesCategory CALCULATED_VALUE = new WatchablesCategory("calculated value");
-  public static final WatchablesCategory STATIC_CONTEXT_FIELD = new JavaWatchablesCategory("static field", 0);
+  public static final WatchablesCategory STATIC_CONTEXT = new JavaWatchablesCategory("static field", 0);
 
   private final int myOrder;
 
@@ -27,7 +26,7 @@ public class JavaWatchablesCategory extends WatchablesCategory {
 
   @Override
   public int compareTo(WatchablesCategory o) {
-    LOG.assertLog(o instanceof JavaWatchablesCategory);
+    if (! (o instanceof JavaWatchablesCategory)) return 1;
     return myOrder - ((JavaWatchablesCategory) o).myOrder;
   }
 }
