@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.make.dependencies;
 
-import jetbrains.mps.project.IModule;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.make.dependencies.graph.Graph;
 import jetbrains.mps.make.dependencies.graph.Graphs;
 import jetbrains.mps.make.dependencies.graph.IVertex;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.*;
 
@@ -131,6 +133,16 @@ public class StronglyConnectedModules {
 
     public int compareTo(IModuleDecorator<M> o) {
       return this.hashCode() - o.hashCode();
+    }
+
+    @Override
+    public String toString() {
+      return ModelAccess.instance().runReadAction(new Computable<String>() {
+        @Override
+        public String compute() {
+          return myModule.toString();
+        }
+      });
     }
   }
 

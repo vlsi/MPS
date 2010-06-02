@@ -22,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 public class Graphs {
+  private static final Logger LOG = Logger.getLogger(Graphs.class);
 
   private static final Graphs INSTANCE = new Graphs();
 
@@ -44,25 +45,26 @@ public class Graphs {
     return secondStageWalker.getComponents();
   }
 
-  public <V extends IVertex> Graph<VertexDecorator<V>> getTransposed(Graph<V> g) {
-    Graph<VertexDecorator<V>> gt = new Graph<VertexDecorator<V>>();
+  public <V extends IVertex> Graph<VertexDecorator<V>> getTransposed(Graph<V> graph) {
+    Graph<VertexDecorator<V>> transposed = new Graph<VertexDecorator<V>>();
 
-    Map<V, VertexDecorator> map = new LinkedHashMap<V, VertexDecorator>();
+    Map<V, VertexDecorator> vertexToDecoratorMap = new LinkedHashMap<V, VertexDecorator>();
 
-    for (V v : g.getData()) {
-      VertexDecorator<V> vertexDecorator = new VertexDecorator<V>(v);
-      gt.add(vertexDecorator);
-      map.put(v, vertexDecorator);
+    for (V vertex : graph.getData()) {
+      VertexDecorator<V> vertexDecorator = new VertexDecorator<V>(vertex);
+      transposed.add(vertexDecorator);
+      vertexToDecoratorMap.put(vertex, vertexDecorator);
     }
 
-    for (V from : g.getData()) {
-      VertexDecorator fromDecorator = map.get(from);
+    for (V from : graph.getData()) {
+      VertexDecorator fromDecorator = vertexToDecoratorMap.get(from);
       for (IVertex to : from.getNexts()) {
-        map.get(to).addNext(fromDecorator);
+        LOG.assertLog(graph.getData().contains(to), "Graph does not contain vertex " + to + " while there is an edge from " + from + " to it.");
+        vertexToDecoratorMap.get(to).addNext(fromDecorator);
       }
     }
 
-    return gt;
+    return transposed;
   }
 
   public static class VertexDecorator<V extends IVertex> implements IVertex, Comparable<VertexDecorator<V>> {
@@ -78,7 +80,7 @@ public class Graphs {
     }
 
     public Set<VertexDecorator<V>> getNexts() {
-      return Collections.unmodifiableSet(myNext);  //To change body of implemented methods use File | Settings | File Templates.
+      return Collections.unmodifiableSet(myNext);
     }
 
     public V getVertex() {
@@ -87,7 +89,7 @@ public class Graphs {
 
     @Override
     public String toString() {
-      return myVertex.toString();    //To change body of overridden methods use File | Settings | File Templates.
+      return myVertex.toString();
     }
 
     public boolean equals(Object obj) {
@@ -98,7 +100,7 @@ public class Graphs {
     }
 
     public int hashCode() {
-      return myVertex.hashCode();    //To change body of overridden methods use File | Settings | File Templates.
+      return myVertex.hashCode();
     }
 
     public int compareTo(VertexDecorator<V> o) {
