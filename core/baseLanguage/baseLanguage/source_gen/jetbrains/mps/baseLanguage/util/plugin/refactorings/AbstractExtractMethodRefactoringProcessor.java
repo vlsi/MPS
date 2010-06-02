@@ -8,7 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -53,7 +55,7 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
       return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(containerMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true));
     }
     if (SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) {
-      return SNodeOperations.cast(ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(SNodeOperations.cast(containerMethod, "jetbrains.mps.baseLanguage.structure.ConceptFunction")), "jetbrains.mps.baseLanguage.structure.Type");
+      return TypeChecker.getInstance().getRuntimeSupport().coerce_(ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(SNodeOperations.cast(containerMethod, "jetbrains.mps.baseLanguage.structure.ConceptFunction")), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
     }
     return null;
   }

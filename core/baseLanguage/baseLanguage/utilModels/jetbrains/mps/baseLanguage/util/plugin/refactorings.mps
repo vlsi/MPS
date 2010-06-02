@@ -7531,16 +7531,19 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8492459591399164490">
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8492459591399164491">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8492459591399164492">
-              <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="8492459591399164493">
-                <link role="concept:16" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
-                <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8492459591399164494">
-                  <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="8492459591399164495">
+              <node role="expression:3" type="jetbrains.mps.lang.typesystem.structure.CoerceExpression:3" id="6447427729872472109">
+                <node role="pattern:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="6447427729872472118">
+                  <property name="name:3" value="type" />
+                  <link role="concept:3" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
+                </node>
+                <node role="nodeToCoerce:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6447427729872472113">
+                  <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="6447427729872472114">
                     <link role="concept:16" targetNodeId="1.1137021947720:3" resolveInfo="ConceptFunction" />
-                    <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8492459591399164496">
+                    <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6447427729872472115">
                       <link role="variableDeclaration:3" targetNodeId="8492459591399164472" resolveInfo="containerMethod" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="8492459591399164497">
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="6447427729872472116">
                     <link role="baseMethodDeclaration:16" targetNodeId="3v.1213877374441" resolveInfo="getExpectedReturnType" />
                   </node>
                 </node>
