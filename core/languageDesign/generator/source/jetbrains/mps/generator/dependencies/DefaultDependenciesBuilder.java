@@ -3,6 +3,7 @@ package jetbrains.mps.generator.dependencies;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.List;
@@ -27,19 +28,19 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   Map<SNode, SNode> currentToOriginalMap;
   SModel currentInputModel;
 
-  public DefaultDependenciesBuilder(SModel originalInputModel) {
+  public DefaultDependenciesBuilder(SModel originalInputModel, @Nullable Map<String, String> generationHashes) {
     currentInputModel = originalInputModel;
-    initData(getRoots(originalInputModel));
+    initData(getRoots(originalInputModel), generationHashes);
   }
 
-  private void initData(SNode[] roots) {
-    myConditionalsBuilder = new DependenciesListener(null, this);
+  private void initData(SNode[] roots, Map<String, String> generationHashes) {
+    myConditionalsBuilder = new DependenciesListener(null, this, generationHashes != null ? generationHashes.get("") : "");
     currentToOriginalMap = new HashMap<SNode, SNode>(roots.length*3/2);
     myAllListeners = new DependenciesListener[roots.length+1];
     int e = 0;
     myAllListeners[e++] = myConditionalsBuilder;
     for(SNode root : roots) {
-      myAllListeners[e] = new DependenciesListener(root, this);
+      myAllListeners[e] = new DependenciesListener(root, this, generationHashes != null ? generationHashes.get(root.getId()) : null);
       myRootBuilders.put(root, myAllListeners[e++]);
       currentToOriginalMap.put(root,root);
     }

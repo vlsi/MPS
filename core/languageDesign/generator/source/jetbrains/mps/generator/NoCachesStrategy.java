@@ -17,6 +17,7 @@ package jetbrains.mps.generator;
 
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.index.ModelDigestIndex;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;

@@ -109,7 +109,7 @@ public class GenerationDependencies {
     return new GenerationRootDependencies(
       originalRoot != null ? originalRoot.getId() : null,
       originalRoot != null ? originalRoot.getName() : null,
-      l.isDependsOnConditionals(),
+      l.getHash(), l.isDependsOnConditionals(),
       local, external, generatedFiles);
   }
 

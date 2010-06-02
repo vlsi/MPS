@@ -21,6 +21,7 @@ import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.dependencies.DefaultDependenciesBuilder;
 import jetbrains.mps.generator.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.dependencies.DependenciesBuilder.NullDependenciesBuilder;
+import jetbrains.mps.generator.index.ModelDigestUtil;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.ide.messages.NodeWithContext;
@@ -38,6 +39,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Igor Alshannikov
@@ -87,9 +89,10 @@ public class GenerationSession {
     if (!checkGenerationPlan(myGenerationPlan)) {
       // throw new GenerationCanceledException();
     }
+
     myDependenciesBuilder =
       myGenerationContext.isGenerateDependencies()
-        ? new DefaultDependenciesBuilder(myOriginalInputModel.getSModel())
+        ? new DefaultDependenciesBuilder(myOriginalInputModel.getSModel(), ModelDigestUtil.getGenerationHashes(myOriginalInputModel, myInvocationContext.getProject()))
         : new NullDependenciesBuilder();
 
     try {

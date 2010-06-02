@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.VcsHelper;
 import java.io.FileNotFoundException;
-import jetbrains.mps.generator.ModelDigestIndex;
+import jetbrains.mps.generator.index.ModelDigestIndex;
 
 public class ReRunMergeFromBackup_Action extends GeneratedAction {
   private static final Icon ICON = null;

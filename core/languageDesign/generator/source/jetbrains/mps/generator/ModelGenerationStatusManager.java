@@ -18,7 +18,6 @@ package jetbrains.mps.generator;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProcessCanceledException;
-import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -29,6 +28,7 @@ import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
 import jetbrains.mps.generator.fileGenerator.CacheGenerator;
 import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.generator.index.ModelDigestIndex;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
@@ -36,7 +36,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
@@ -134,9 +133,9 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
   private boolean checkGenerationRequired(final Project project, @NotNull VirtualFile f, String generatedHash) {
     final String[] valueArray = new String[1];
-    FileBasedIndex.getInstance().processValues(ModelDigestIndex.NAME, FileBasedIndex.getFileId(f), f, new ValueProcessor<String>() {
-      public boolean process(VirtualFile file, String value) {
-        valueArray[0] = value;
+    FileBasedIndex.getInstance().processValues(ModelDigestIndex.NAME, FileBasedIndex.getFileId(f), f, new ValueProcessor<Map<String,String>>() {
+      public boolean process(VirtualFile file, Map<String,String> values) {
+        valueArray[0] = values.get("");
         return true;
       }
     }, GlobalSearchScope.allScope(project));

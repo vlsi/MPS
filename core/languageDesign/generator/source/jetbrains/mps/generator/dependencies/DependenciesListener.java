@@ -18,14 +18,16 @@ public class DependenciesListener implements INodesReadListener {
 
   private final SNode myOriginalRoot;
   private final DefaultDependenciesBuilder myBuilder;
+  private final String myHash;
 
   private boolean dependsOnConditionals = false;
   private Set<SNode> dependsOn = new HashSet<SNode>();
   private Set<SModel> dependsOnModels = new HashSet<SModel>();
 
-  public DependenciesListener(@Nullable SNode originalRoot, @NotNull DefaultDependenciesBuilder builder) {
+  public DependenciesListener(@Nullable SNode originalRoot, @NotNull DefaultDependenciesBuilder builder, @Nullable String hash) {
     myOriginalRoot = originalRoot;
     myBuilder = builder;
+    myHash = hash;
   }
 
   private void readNode(SNode node) {
@@ -127,6 +129,10 @@ public class DependenciesListener implements INodesReadListener {
   @Nullable
   public SNode getOriginalRoot() {
     return myOriginalRoot;
+  }
+
+  public String getHash() {
+    return myHash;
   }
 
   public Collection<SNode> getDependsOn() {

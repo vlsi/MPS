@@ -12,6 +12,7 @@ class GenerationRootDependencies {
 
   private static final String ATTR_ID = "id";
   private static final String ATTR_NAME = "name";
+  private static final String ATTR_HASH = "hash";
   private static final String ATTR_DEPENDS_ON_CONDITIONALS = "dependsOnCreated";
   private static final String NODE_DEPENDS_ON = "dep";
   private static final String NODE_FILE = "file";
@@ -21,14 +22,16 @@ class GenerationRootDependencies {
 
   private String myRootId;
   private String myRootName;
+  private String myHash;
   private boolean myDependsOnConditionals;
   private List<String> myLocal;
   private List<String> myExternal;
   private List<String> myGeneratedFiles;
 
-  public GenerationRootDependencies(String rootId, String rootName, boolean dependsOnConditionals, List<String> local, List<String> external, List<String> files) {
+  public GenerationRootDependencies(String rootId, String rootName, String rootHash, boolean dependsOnConditionals, List<String> local, List<String> external, List<String> files) {
     this.myRootId = rootId;
     this.myRootName = rootName;
+    this.myHash = rootHash;
     this.myDependsOnConditionals = dependsOnConditionals;
     this.myLocal = local;
     this.myExternal = external;
@@ -65,6 +68,9 @@ class GenerationRootDependencies {
     }
     if(myRootName != null) {
       element.setAttribute(ATTR_NAME, this.myRootName);
+    }
+    if(myHash != null) {
+      element.setAttribute(ATTR_HASH, this.myHash);
     }
     if(myDependsOnConditionals) {
       element.setAttribute(ATTR_DEPENDS_ON_CONDITIONALS, TRUE);
