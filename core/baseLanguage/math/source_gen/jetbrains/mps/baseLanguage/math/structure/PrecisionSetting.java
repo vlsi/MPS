@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.math.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 
 public enum PrecisionSetting {
   CUSTOM("CUSTOM", 0),

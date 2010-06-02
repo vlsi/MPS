@@ -5,11 +5,11 @@ package jetbrains.mps.internalCollections.test.basicOperations;
 import junit.framework.TestCase;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import junit.framework.Assert;
 import org.apache.commons.lang.ObjectUtils;
 import java.util.PriorityQueue;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import java.util.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
 
 public class QueueDequeStack_Test extends TestCase {

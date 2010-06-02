@@ -2103,33 +2103,6 @@
                   </node>
                 </node>
               </node>
-              <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.Type:3" id="1231340548924">
-                <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1231340548925">
-                  <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1231340548926">
-                    <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1231340548927">
-                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1231340548928">
-                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1231340548929">
-                          <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1231340548930">
-                            <link role="concept:16" targetNodeId="1.1199542442495:3" resolveInfo="FunctionType" />
-                            <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1231340548931">
-                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1231340548932">
-                                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1231340548933" />
-                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1231340548934">
-                                  <link role="link:16" targetNodeId="3.1197027771414:3" />
-                                </node>
-                              </node>
-                              <node role="operation:3" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation:3" id="1231340548935" />
-                            </node>
-                          </node>
-                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1231340548936">
-                            <link role="link:16" targetNodeId="1.1199542457201:3" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node role="instance:1" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1231340548937">
                 <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1231340548938">
                   <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1231340548939">

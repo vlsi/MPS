@@ -2031,10 +2031,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "function", true);
   }
 
-  public static SNode sourceNodeQuery_1231340548926(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "operand", true)), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "resultType", true);
-  }
-
   public static SNode sourceNodeQuery_1231340548939(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
   }

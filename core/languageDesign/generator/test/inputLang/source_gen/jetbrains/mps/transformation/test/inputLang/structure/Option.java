@@ -4,7 +4,7 @@ package jetbrains.mps.transformation.test.inputLang.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 
 public enum Option {
   option_default("option_default", "option_default"),

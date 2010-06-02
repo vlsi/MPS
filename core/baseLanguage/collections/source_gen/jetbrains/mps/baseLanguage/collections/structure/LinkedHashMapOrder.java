@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.collections.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 
 public enum LinkedHashMapOrder {
   insertion_order("insertion_order", false),

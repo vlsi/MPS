@@ -8977,7 +8977,7 @@
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6801639034384703217">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="6801639034384703218">
           <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6801639034384703219">
-            <link role="classifier:3" targetNodeId="25.~Deque" resolveInfo="Deque" />
+            <link role="classifier:3" targetNodeId="8.~Deque" resolveInfo="Deque" />
             <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="6801639034384703220">
               <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="6801639034384703221">
                 <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6801639034384703222">
@@ -9022,7 +9022,7 @@
       <property name="name:3" value="classQueueType" />
       <node role="pattern:3" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="6801639034384706574">
         <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6801639034384706575">
-          <link role="classifier:3" targetNodeId="25.~Deque" resolveInfo="Deque" />
+          <link role="classifier:3" targetNodeId="8.~Deque" resolveInfo="Deque" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="6801639034384706576">
             <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="6801639034384706577">
               <property name="varName:0" value="ELEMENT_TYPE" />
@@ -9077,7 +9077,7 @@
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6801639034384800411">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="6801639034384800412">
           <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6801639034384800413">
-            <link role="classifier:3" targetNodeId="25.~Deque" resolveInfo="Deque" />
+            <link role="classifier:3" targetNodeId="8.~Deque" resolveInfo="Deque" />
             <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="6801639034384800414">
               <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="6801639034384800415">
                 <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6801639034384800416">
@@ -9122,7 +9122,7 @@
       <property name="name:3" value="classQueueType" />
       <node role="pattern:3" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="6801639034384806467">
         <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6801639034384806468">
-          <link role="classifier:3" targetNodeId="25.~Deque" resolveInfo="Deque" />
+          <link role="classifier:3" targetNodeId="8.~Deque" resolveInfo="Deque" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="6801639034384806469">
             <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="6801639034384806470">
               <property name="varName:0" value="ELEMENT_TYPE" />
