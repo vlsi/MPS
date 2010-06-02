@@ -18,15 +18,16 @@ package jetbrains.mps.ide.ui.smodel;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
-import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeUpdater;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -90,10 +91,12 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     if (getSModelModelTreeNode() != null) {
       getSModelModelTreeNode().getDependencyRecorder().remove(this);
     }
-    super.onRemove();
   }
 
   protected void doUpdatePresentation_internal() {
+    if (myNode.isDisposed()) {
+      return;
+    }
     if (hasErrors()) {
       setColor(Color.RED);
     } else {
@@ -103,13 +106,13 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       setIcon(IconManager.getIconFor(myNode));
     }
 
-    if (getSNode() == null) {
+    if (myNode == null) {
       setNodeIdentifier("null");
     } else {
-      setNodeIdentifier(getSNode().getId());
+      setNodeIdentifier(myNode.getId());
     }
 
-    if (getSNode().isUnknown()) {
+    if (myNode.isUnknown()) {
       setErrorState(ErrorState.ERROR);
     }
 
