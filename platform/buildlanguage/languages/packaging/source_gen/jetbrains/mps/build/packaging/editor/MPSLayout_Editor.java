@@ -279,7 +279,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4e8zux_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use temporal directory");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use directory ouside of project");
     editorCell.setCellId("Constant_4e8zux_a0");
     editorCell.setDefaultText("");
     return editorCell;
