@@ -1005,6 +1005,30 @@
         </node>
       </node>
     </node>
+    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="236633587817012676">
+      <link role="classifier:3" targetNodeId="236633587817012660" resolveInfo="BaseC" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="236633587817012660">
+    <property name="name:3" value="BaseC" />
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="236633587817012666">
+      <property name="name:3" value="getZero" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="236633587817012670" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="236633587817012668" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="236633587817012669">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="236633587817012671">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="236633587817012673">
+            <property name="value:3" value="1" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="236633587817012661" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="236633587817012662">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="236633587817012663" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="236633587817012664" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="236633587817012665" />
+    </node>
   </node>
 </model>
 

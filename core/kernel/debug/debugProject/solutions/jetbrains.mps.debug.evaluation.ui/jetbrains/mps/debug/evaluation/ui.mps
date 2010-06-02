@@ -43,7 +43,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <maxImportIndex value="71" />
+  <maxImportIndex value="73" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.ui(jetbrains.mps.ide.ui@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.debug.evaluation(jetbrains.mps.debug.evaluation@java_stub)" version="-1" />
@@ -101,6 +101,8 @@
   <import index="69" modelUID="f:java_stub#jetbrains.mps.debug.api(jetbrains.mps.debug.api@java_stub)" version="-1" />
   <import index="70" modelUID="f:java_stub#javax.swing.text(javax.swing.text@java_stub)" version="-1" />
   <import index="71" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
+  <import index="72" modelUID="f:java_stub#jetbrains.mps.debug.runtime.java.programState.proxies(jetbrains.mps.debug.runtime.java.programState.proxies@java_stub)" version="-1" />
+  <import index="73" modelUID="f:java_stub#jetbrains.mps.debug.runtime.java.programState.watchables(jetbrains.mps.debug.runtime.java.programState.watchables@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5849716370568348282">
     <property name="name:3" value="EvaluationDialog" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5849716370568348283" />
@@ -250,7 +252,7 @@
                         <link role="baseMethodDeclaration:3" targetNodeId="37.~WatchableNode.&lt;init&gt;(jetbrains.mps.debug.api.programState.IWatchable)" resolveInfo="WatchableNode" />
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8638521523002110212">
                           <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8638521523002110213">
-                            <link role="baseMethodDeclaration:3" targetNodeId="35.~CalculatedValue.&lt;init&gt;(com.sun.jdi.Value)" resolveInfo="CalculatedValue" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="73.~CalculatedValue.&lt;init&gt;(com.sun.jdi.Value)" resolveInfo="CalculatedValue" />
                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8638521523002110214">
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8638521523002110215">
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="8638521523002110216">
@@ -6804,7 +6806,7 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="672360099287476251">
             <property name="name:3" value="javaStackFrame" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="672360099287476252">
-              <link role="classifier:3" targetNodeId="35.~JavaStackFrame" resolveInfo="JavaStackFrame" />
+              <link role="classifier:3" targetNodeId="72.~JavaStackFrame" resolveInfo="JavaStackFrame" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="672360099287476253">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="672360099287476254">
@@ -6836,7 +6838,7 @@
                     <link role="variableDeclaration:3" targetNodeId="672360099287476251" resolveInfo="javaStackFrame" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="672360099287476267">
-                    <link role="baseMethodDeclaration:3" targetNodeId="35.~JavaStackFrame.getStackFrame():com.sun.jdi.StackFrame" resolveInfo="getStackFrame" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="72.~JavaStackFrame.getStackFrame():com.sun.jdi.StackFrame" resolveInfo="getStackFrame" />
                   </node>
                 </node>
               </node>
@@ -8301,7 +8303,7 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="672360099287477509">
             <property name="name:3" value="frame" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="672360099287477510">
-              <link role="classifier:3" targetNodeId="35.~JavaStackFrame" resolveInfo="JavaStackFrame" />
+              <link role="classifier:3" targetNodeId="72.~JavaStackFrame" resolveInfo="JavaStackFrame" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="672360099287477511">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="672360099287477512">
@@ -8327,11 +8329,11 @@
                       <link role="variableDeclaration:3" targetNodeId="672360099287477509" resolveInfo="frame" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="672360099287477522">
-                      <link role="baseMethodDeclaration:3" targetNodeId="35.~JavaStackFrame.getLocation():jetbrains.mps.debug.runtime.java.programState.proxies.JavaLocation" resolveInfo="getLocation" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="72.~JavaStackFrame.getLocation():jetbrains.mps.debug.runtime.java.programState.proxies.JavaLocation" resolveInfo="getLocation" />
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="672360099287477523">
-                    <link role="baseMethodDeclaration:3" targetNodeId="35.~JavaLocation.getLocation():com.sun.jdi.Location" resolveInfo="getLocation" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="72.~JavaLocation.getLocation():com.sun.jdi.Location" resolveInfo="getLocation" />
                   </node>
                 </node>
               </node>
@@ -9382,8 +9384,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4592086915999590990">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4592086915999590979">
             <property name="name:3" value="javaStackFrame" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4592086915999590991">
-              <link role="classifier:3" targetNodeId="35.~JavaStackFrame" resolveInfo="JavaStackFrame" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="236633587817091956">
+              <link role="classifier:3" targetNodeId="72.~JavaStackFrame" resolveInfo="JavaStackFrame" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4592086915999590992">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4592086915999590993">
@@ -9408,7 +9410,7 @@
                     <link role="variableDeclaration:3" targetNodeId="4592086915999590979" resolveInfo="javaStackFrame" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4592086915999591001">
-                    <link role="baseMethodDeclaration:3" targetNodeId="35.~JavaStackFrame.getStackFrame():com.sun.jdi.StackFrame" resolveInfo="getStackFrame" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="72.~JavaStackFrame.getStackFrame():com.sun.jdi.StackFrame" resolveInfo="getStackFrame" />
                   </node>
                 </node>
               </node>

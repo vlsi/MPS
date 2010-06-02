@@ -7,7 +7,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
-public class C {
+public class C extends BaseC {
   private static Integer myStatic239 = 239;
   private static Integer myStatic239_2 = 239;
 
