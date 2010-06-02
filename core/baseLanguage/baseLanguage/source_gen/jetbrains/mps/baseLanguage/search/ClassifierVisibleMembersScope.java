@@ -53,6 +53,13 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     return result;
   }
 
+  public boolean isInScope(SNode node) {
+    if (myContextNode == null || !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IVisible"))) {
+      return super.isInScope(node);
+    }
+    return VisibilityUtil.isAccessible(myContextNode, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IVisible"));
+  }
+
   private List<SNode> getClassifierMembers() {
     List<SNode> members = this.getAllClassifierMembers();
     List<SNode> result = new ArrayList<SNode>();

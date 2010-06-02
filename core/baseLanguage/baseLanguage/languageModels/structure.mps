@@ -2496,6 +2496,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1197029447546">
     <property name="package:0" value="dotExpression" />
     <property name="name:0" value="FieldReferenceOperation" />
+    <link role="extends:0" targetNodeId="4.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1197029500499">
       <property name="sourceCardinality:0" value="1" />
       <property name="role:0" value="fieldDeclaration" />

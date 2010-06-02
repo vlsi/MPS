@@ -9,6 +9,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.BaseLanguageUtil;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public final class VisibilityUtil {
   private VisibilityUtil() {
@@ -68,51 +74,112 @@ public final class VisibilityUtil {
   }
 
   public static String packageName(@NotNull SNode node) {
-    return SNodeOperations.getModel(node).getSModelFqName().getNamespace();
+    return SNodeOperations.getModel(node).getSModelFqName().getLongName();
   }
 
   public static SNode topClassifier(@NotNull SNode node) {
     return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last();
   }
 
-  public static boolean isAccessible(@NotNull SNode context, @NotNull SNode name) {
-    SNode classifier = SNodeOperations.getAncestor(name, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+  public static boolean isClassifierAccessible(@NotNull SNode context, @Nullable SNode classifier) {
+    //  check "static" accessibility here 
     if ((classifier == null)) {
-      // top level class or interface accessible in the same package or if public 
-      return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(name, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") || packageName(context).equals(packageName(name));
+      return true;
     }
-    if (!(isAccessible(context, classifier))) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifier, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+      return topClassifier(context) == topClassifier(classifier);
+    }
+    SNode parent = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    if (!(isClassifierAccessible(context, parent))) {
       return false;
     }
-    // type is accessible, check member access 
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(name, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifier, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") || packageName(context).equals(packageName(classifier))) {
       return true;
     }
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(name, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
-      // private member accessible only in the body of top level class of member definition 
-      return topClassifier(context) == topClassifier(name);
-    }
-    // protected or package access 
-    if (packageName(context).equals(packageName(name))) {
-      return true;
-    }
-    // check special cases of protected access 
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(name, "visibility", true), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
-      // context should be in the body of subclass of member class 
-      // + context should be a member access node with the type = subclass of that subclass (not checked now) 
-      for (SNode cls : ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", false))) {
-        if (BaseLanguageUtil.isAssignable(((Classifier) SNodeOperations.getAdapter(cls)), ((Classifier) SNodeOperations.getAdapter(classifier)))) {
-          if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-            // todo: check ExpressionName or PrimaryExpression is subclass of cls 
-          }
-          if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
-            // check it is superclass constructor infocation or anonymous class instance creation 
-            return SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation") || SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
-          }
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifier, "visibility", true), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
+      // parent cannot be null here 
+      for (SNode cls : ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
+        if (BaseLanguageUtil.isAssignable(((Classifier) SNodeOperations.getAdapter(cls)), ((Classifier) SNodeOperations.getAdapter(parent))) && isClassifierAccessible(context, parent)) {
           return true;
         }
       }
     }
     return false;
+  }
+
+  public static boolean isAccessible(@NotNull SNode context, @NotNull SNode name) {
+    // only check visibility of the name, accessibility of qualifier is not checked here 
+    if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      return isClassifierAccessible(context, SNodeOperations.cast(name, "jetbrains.mps.baseLanguage.structure.Classifier"));
+    }
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(name, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") || SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
+      return true;
+    }
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(name, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+      return topClassifier(context) == topClassifier(name);
+    }
+    // package or protected access 
+    if (packageName(context) == packageName(name)) {
+      return true;
+    }
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(name, "visibility", true), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
+      //  checkspecial cases of protected access 
+      SNode classifier = SNodeOperations.getAncestor(name, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      SNode qualifier = null;
+      if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+        if (SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+          // the case where context is not referenceNode but enclsoingNode 
+          qualifier = SLinkOperations.getTarget(SNodeOperations.cast(context, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+        } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(context), "jetbrains.mps.baseLanguage.structure.DotExpression") && !(SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference") || SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall") || SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference") || SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall"))) {
+          qualifier = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(context), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+        }
+      }
+
+      for (SNode cls : ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
+        if (BaseLanguageUtil.isAssignable(((Classifier) SNodeOperations.getAdapter(cls)), ((Classifier) SNodeOperations.getAdapter(classifier)))) {
+          if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+            // check ExpressionName or PrimaryExpression is subclass of cls 
+            if ((qualifier == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(qualifier), new VisibilityUtil.QuotationClass_v8uv56_a1a0a1a0a0a5a6a4().createNode(cls))) {
+              return true;
+            }
+          } else if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
+            // check it is superclass constructor invocation or anonymous class instance creation 
+            return SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation") || SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
+          } else {
+            // no additional check needed 
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+
+  public static boolean isMember(SNode type, SNode member) {
+    // hiding is not checked 
+    for (SNode cls : new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(SLinkOperations.getTarget(type, "classifier", false)))).getClassifierNodes()) {
+      if (ListSequence.fromList(SNodeOperations.getChildren(cls)).contains(member)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public static class QuotationClass_v8uv56_a1a0a1a0a0a5a6a4 {
+    public QuotationClass_v8uv56_a1a0a1a0a0a5a6a4() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }
