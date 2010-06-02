@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.closures.structure;
 
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Interface;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
@@ -13,12 +14,21 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FunctionType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.closures.structure.FunctionType";
+  public static final String RUNTIME_IFACE = "runtimeIface";
   public static final String RESULT_TYPE = "resultType";
   public static final String PARAMETER_TYPE = "parameterType";
   public static final String THROWS_TYPE = "throwsType";
 
   public FunctionType(SNode node) {
     super(node);
+  }
+
+  public Interface getRuntimeIface() {
+    return (Interface) this.getReferent(Interface.class, FunctionType.RUNTIME_IFACE);
+  }
+
+  public void setRuntimeIface(Interface node) {
+    super.setReferent(FunctionType.RUNTIME_IFACE, node);
   }
 
   public Type getResultType() {

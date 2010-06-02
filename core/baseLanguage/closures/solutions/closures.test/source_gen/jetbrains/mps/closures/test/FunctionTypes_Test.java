@@ -285,6 +285,14 @@ __switch__:
     Assert.assertNull(ret_string.invoke());
   }
 
+  public void test_specifiedInterface() throws Exception {
+    _FunctionTypes._return_P1_E0<? extends Integer, ? super Boolean> ssdf = new _FunctionTypes._return_P1_E0<Integer, Boolean>() {
+      public Integer invoke(Boolean b) {
+        return 0;
+      }
+    };
+  }
+
   public void accept_int(_FunctionTypes._return_P0_E0<? extends Integer> fun) {
   }
 

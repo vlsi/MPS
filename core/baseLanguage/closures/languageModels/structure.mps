@@ -84,6 +84,11 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1199542442495">
     <property name="name:0" value="FunctionType" />
     <link role="extends:0" targetNodeId="2.1068431790189:3" resolveInfo="Type" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="100821637069096425">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="runtimeIface" />
+      <link role="target:0" targetNodeId="2.1107796713796:3" resolveInfo="Interface" />
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1199546749847">
       <property name="value:0" value="{ =&gt; }" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />

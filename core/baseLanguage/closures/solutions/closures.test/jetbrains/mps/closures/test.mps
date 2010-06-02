@@ -5567,6 +5567,36 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="100821637069279986">
+        <property name="methodName" value="specifiedInterface" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="100821637069279987" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="100821637069279988" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="100821637069279989">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="100821637069279992">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="100821637069279993">
+              <property name="name:3" value="ssdf" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.closures.structure.FunctionType:3" id="100821637069279994">
+                <link role="runtimeIface:3" targetNodeId="2.~Comparable" resolveInfo="Comparable" />
+                <node role="parameterType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="100821637069280012" />
+                <node role="resultType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="100821637069280006" />
+              </node>
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="6871507691291132955">
+                <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6871507691291132956">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6871507691291132960">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6871507691291132961">
+                      <property name="value:3" value="0" />
+                    </node>
+                  </node>
+                </node>
+                <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6871507691291132957">
+                  <property name="name:3" value="b" />
+                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="6871507691291132959" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1201773926206">

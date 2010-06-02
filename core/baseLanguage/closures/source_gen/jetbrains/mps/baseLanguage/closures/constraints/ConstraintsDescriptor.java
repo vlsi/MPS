@@ -12,6 +12,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
+    ListSequence.fromList(this.myConstraints).addElement(new FunctionType_runtimeIface_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ControlAbstractionContainer_DefaultSearchScope());
   }
 

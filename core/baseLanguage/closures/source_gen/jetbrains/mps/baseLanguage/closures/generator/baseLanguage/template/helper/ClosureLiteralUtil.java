@@ -9,14 +9,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Map;
+import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import java.util.Map;
-import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -51,6 +51,30 @@ public class ClosureLiteralUtil {
       }
     }
     return vrefs;
+  }
+
+  public static SNode fillParams(SNode ctNoParams, SNode ft) {
+    Map<String, SNode> map = null;
+    List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "method", true);
+    if (ListSequence.fromList(imds).count() > 0) {
+      SNode method = ListSequence.fromList(imds).getElement(0);
+      if ((SLinkOperations.getTarget(method, "returnType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+        map = matchReturnType(SLinkOperations.getTarget(method, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(ft), map);
+      }
+      List<SNode> ptypes = FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(ft);
+      int idx = 0;
+      for (SNode pd : SLinkOperations.getTargets(method, "parameter", true)) {
+        map = matchType(SLinkOperations.getTarget(pd, "type", true), ListSequence.fromList(ptypes).getElement(idx), map);
+        idx++;
+      }
+    }
+    SNode ctWithParams = SNodeOperations.copyNode(ctNoParams);
+    if (map != null) {
+      for (SNode tvd : SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "typeVariableDeclaration", true)) {
+        ListSequence.fromList(SLinkOperations.getTargets(ctWithParams, "parameter", true)).addElement(SNodeOperations.cast(MapSequence.fromMap(map).get(SPropertyOperations.getString(tvd, "name")), "jetbrains.mps.baseLanguage.structure.Type"));
+      }
+    }
+    return ctWithParams;
   }
 
   public static void addAdaptableClosureLiteralTarget(TemplateQueryContext genContext, SNode literal, SNode target) {
@@ -94,8 +118,8 @@ public class ClosureLiteralUtil {
     if ((absRetCT != null)) {
       SNode ftResCT = SNodeOperations.cast(FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(ft)), "jetbrains.mps.baseLanguage.structure.ClassifierType");
       /*
-        if (SLinkOperations.getTarget(ftResCT, "classifier", false) == SLinkOperations.getTarget(new ClosureLiteralUtil.QuotationClass_wj0zdn_a0a0a1a5a3().createNode(), "classifier", false)) {
-          SLinkOperations.setTarget(ftResCT, "classifier", SLinkOperations.getTarget(new ClosureLiteralUtil.QuotationClass_wj0zdn_a0a0a0a1a5a3().createNode(), "classifier", false), false);
+        if (SLinkOperations.getTarget(ftResCT, "classifier", false) == SLinkOperations.getTarget(new ClosureLiteralUtil.QuotationClass_wj0zdn_a0a0a1a5a4().createNode(), "classifier", false)) {
+          SLinkOperations.setTarget(ftResCT, "classifier", SLinkOperations.getTarget(new ClosureLiteralUtil.QuotationClass_wj0zdn_a0a0a0a1a5a4().createNode(), "classifier", false), false);
         }
       */
       String adapterName = JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(absRetCT, "classifier", false), "name")) + JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(ftResCT, "classifier", false), "name")) + "Adapter";
@@ -241,8 +265,8 @@ public class ClosureLiteralUtil {
     return map;
   }
 
-  public static class QuotationClass_wj0zdn_a0a0a0a1a5a3 {
-    public QuotationClass_wj0zdn_a0a0a0a1a5a3() {
+  public static class QuotationClass_wj0zdn_a0a0a0a1a5a4 {
+    public QuotationClass_wj0zdn_a0a0a0a1a5a4() {
     }
 
     public SNode createNode() {
@@ -259,8 +283,8 @@ public class ClosureLiteralUtil {
     }
   }
 
-  public static class QuotationClass_wj0zdn_a0a0a1a5a3 {
-    public QuotationClass_wj0zdn_a0a0a1a5a3() {
+  public static class QuotationClass_wj0zdn_a0a0a1a5a4 {
+    public QuotationClass_wj0zdn_a0a0a1a5a4() {
     }
 
     public SNode createNode() {
