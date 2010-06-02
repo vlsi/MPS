@@ -5724,7 +5724,7 @@
             <property name="value:21" value="artifacts" />
           </node>
           <node role="left:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="4993758969474299265">
-            <property name="value:21" value="${java.io.tmpdir}/" />
+            <property name="value:21" value="../" />
             <node role="nodeMacro$attribute:21" type="jetbrains.mps.lang.generator.structure.IfMacro:2" id="4993758969474299267">
               <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition:2" id="4993758969474299268">
                 <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4993758969474299269">

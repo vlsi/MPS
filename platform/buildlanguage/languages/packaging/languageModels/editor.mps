@@ -220,7 +220,7 @@
     </node>
     <node role="inspectedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4993758969474330433">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4993758969474330436">
-        <property name="text:32" value="use temporal directory" />
+        <property name="text:32" value="use directory ouside of project" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="4993758969474330438">
         <link role="relationDeclaration:32" targetNodeId="1.4993758969474324591:7" resolveInfo="useTmpDir" />
