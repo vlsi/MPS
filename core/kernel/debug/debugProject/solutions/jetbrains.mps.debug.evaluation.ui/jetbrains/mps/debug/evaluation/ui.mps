@@ -1812,18 +1812,18 @@
       <property name="name:3" value="getScope" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5849716370568348998" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5849716370568348999">
-        <link role="classifier:3" targetNodeId="9.~IScope" />
+        <link role="classifier:3" targetNodeId="9.~IScope" resolveInfo="IScope" />
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5849716370568349000">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5849716370568349001">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5849716370568349002">
-            <link role="classConcept:3" targetNodeId="15.~GlobalScope" />
-            <link role="baseMethodDeclaration:3" targetNodeId="15.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" />
+            <link role="classConcept:3" targetNodeId="15.~GlobalScope" resolveInfo="GlobalScope" />
+            <link role="baseMethodDeclaration:3" targetNodeId="15.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
           </node>
         </node>
       </node>
       <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="5849716370568349003">
-        <link role="annotation:3" targetNodeId="26.~NotNull" />
+        <link role="annotation:3" targetNodeId="26.~NotNull" resolveInfo="NotNull" />
       </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5849716370568349004">
@@ -8941,12 +8941,12 @@
                         <link role="classifier:3" targetNodeId="55.3161373106581141431" resolveInfo="IClassifiersSearchScope" />
                         <link role="variableDeclaration:3" targetNodeId="55.3161373106581141446" resolveInfo="CLASSIFFIER" />
                       </node>
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4592086915999590169">
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4592086915999590189">
-                          <link role="variableDeclaration:3" targetNodeId="6185141366360320968" resolveInfo="myContext" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="236633587817333153">
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="236633587817333927">
+                          <link role="baseMethodDeclaration:3" targetNodeId="15.~AbstractModule.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4592086915999590171">
-                          <link role="baseMethodDeclaration:3" targetNodeId="9.~IOperationContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="236633587817333926">
+                          <link role="baseMethodDeclaration:3" targetNodeId="6185141366360321015" resolveInfo="getModule" />
                         </node>
                       </node>
                     </node>

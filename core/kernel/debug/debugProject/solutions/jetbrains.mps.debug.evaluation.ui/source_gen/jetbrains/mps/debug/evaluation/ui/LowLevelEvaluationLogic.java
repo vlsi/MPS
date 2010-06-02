@@ -233,7 +233,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         // creating scope 
-        myScope = new ReachableClassifiersScope(myAuxModel.getSModel(), IClassifiersSearchScope.CLASSIFFIER, myContext.getScope());
+        myScope = new ReachableClassifiersScope(myAuxModel.getSModel(), IClassifiersSearchScope.CLASSIFFIER, getModule().getScope());
       }
     });
 
