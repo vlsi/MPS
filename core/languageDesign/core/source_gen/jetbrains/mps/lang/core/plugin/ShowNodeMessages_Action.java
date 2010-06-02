@@ -7,13 +7,14 @@ import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.workbench.MPSDataKeys;
-import javax.swing.JOptionPane;
+import jetbrains.mps.ide.dialogs.ScrollingMessageDialog;
 
 public class ShowNodeMessages_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -21,6 +22,7 @@ public class ShowNodeMessages_Action extends GeneratedAction {
 
   private SNode node;
   private EditorComponent editorComponent;
+  private Frame frame;
 
   public ShowNodeMessages_Action() {
     super("Show Node Messages", "", ICON);
@@ -61,6 +63,10 @@ public class ShowNodeMessages_Action extends GeneratedAction {
     if (this.editorComponent == null) {
       return false;
     }
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
+      return false;
+    }
     return true;
   }
 
@@ -68,6 +74,7 @@ public class ShowNodeMessages_Action extends GeneratedAction {
     super.cleanup();
     this.node = null;
     this.editorComponent = null;
+    this.frame = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
@@ -77,10 +84,10 @@ public class ShowNodeMessages_Action extends GeneratedAction {
       for (EditorMessage message : messages) {
         sb.append(message.getMessage());
         sb.append("; owner is ");
-        sb.append(message.getOwner().toString());
+        sb.append(message.getOwner());
         sb.append("\n");
       }
-      JOptionPane.showMessageDialog(ShowNodeMessages_Action.this.editorComponent, sb, "node messages", JOptionPane.INFORMATION_MESSAGE);
+      new ScrollingMessageDialog(ShowNodeMessages_Action.this.frame, "node messages", sb.toString());
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowNodeMessages", t);
     }
