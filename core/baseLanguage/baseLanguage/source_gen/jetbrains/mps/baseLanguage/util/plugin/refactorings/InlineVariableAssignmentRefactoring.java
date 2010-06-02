@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import javax.swing.JOptionPane;
+import jetbrains.mps.util.NameUtil;
 import java.util.ArrayList;
 
 public class InlineVariableAssignmentRefactoring extends InlineVariableRefactoring {
@@ -52,22 +53,22 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
       }
     });
     if (isLocalVariable.value) {
-      final Wrappers._T<List<SNode>> nodesToRafactor = new Wrappers._T<List<SNode>>();
+      final Wrappers._T<List<SNode>> nodesToRefactor = new Wrappers._T<List<SNode>>();
       final Wrappers._T<SNode> initializer = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           initializer.value = SLinkOperations.getTarget(SNodeOperations.cast(InlineVariableAssignmentRefactoring.this.myVariable, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "initializer", true);
-          nodesToRafactor.value = InlineVariableAssignmentRefactoring.this.getNodesToRefactor();
+          nodesToRefactor.value = InlineVariableAssignmentRefactoring.this.getNodesToRefactor();
         }
       });
       if (initializer.value == null) {
         return false;
       }
-      if (ListSequence.fromList(nodesToRafactor.value).isEmpty()) {
+      if (ListSequence.fromList(nodesToRefactor.value).isEmpty()) {
         JOptionPane.showMessageDialog(frame, "Variable is never used", "", JOptionPane.INFORMATION_MESSAGE);
         return false;
       } else {
-        int code = JOptionPane.showConfirmDialog(frame, "Inline variable? (" + ListSequence.fromList(nodesToRafactor.value).count() + " occurrences)", "", JOptionPane.YES_NO_OPTION);
+        int code = JOptionPane.showConfirmDialog(frame, "Inline variable? (" + NameUtil.formatNumericalString(ListSequence.fromList(nodesToRefactor.value).count(), "occurence") + ")", "", JOptionPane.YES_NO_OPTION);
         if (code != JOptionPane.YES_OPTION) {
           return false;
         }

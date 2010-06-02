@@ -20868,7 +20868,7 @@
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8492459591399170016">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8492459591399170017">
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8492459591399170018">
-                <property name="name:3" value="nodesToRafactor" />
+                <property name="name:3" value="nodesToRefactor" />
                 <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="8492459591399170019" />
               </node>
             </node>
@@ -20981,15 +20981,22 @@
                             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8492459591399170070">
                               <property name="value:3" value="Inline variable? (" />
                             </node>
-                            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8492459591399170071">
-                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8492459591399170072">
-                                <link role="variableDeclaration:3" targetNodeId="8492459591399170018" resolveInfo="nodesToRafactor" />
+                            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7100928452798549512">
+                              <link role="baseMethodDeclaration:3" targetNodeId="37.~NameUtil.formatNumericalString(int,java.lang.String):java.lang.String" resolveInfo="formatNumericalString" />
+                              <link role="classConcept:3" targetNodeId="37.~NameUtil" resolveInfo="NameUtil" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7100928452798549514">
+                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7100928452798549513">
+                                  <link role="variableDeclaration:3" targetNodeId="8492459591399170018" resolveInfo="nodesToRafactor" />
+                                </node>
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="7100928452798549518" />
                               </node>
-                              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="8492459591399170073" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7100928452798549520">
+                                <property name="value:3" value="occurence" />
+                              </node>
                             </node>
                           </node>
                           <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8492459591399170074">
-                            <property name="value:3" value=" occurrences)" />
+                            <property name="value:3" value=")" />
                           </node>
                         </node>
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8492459591399170075" />
