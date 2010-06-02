@@ -49,9 +49,6 @@ public interface IListSequence<T> extends ICollectionSequence<T>, ISequence<T>, 
     IListSequence<T> headListSequence(int upToIdx);
 
     IListSequence<T> tailListSequence(int fromIdx);
-
-    @Deprecated
-    IListSequence<T> distinctList ();
     
     List<T> toList();
 

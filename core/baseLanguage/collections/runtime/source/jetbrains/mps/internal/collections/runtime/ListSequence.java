@@ -334,11 +334,6 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
         return (IListSequence<T>) super.asSynchronized();
     }
     
-    @Deprecated
-    public IListSequence<T> distinctList() {
-        return ListSequence.fromIterable(this.distinct());
-    }
-    
     @SuppressWarnings("unchecked")
     public T[] toGenericArray() {
         return (T[]) getList().toArray();

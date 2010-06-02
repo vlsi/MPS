@@ -145,10 +145,6 @@ public class NullListSequence<T> extends NullCollectionSequence<T> implements IL
         return (IListSequence<T>) super.asUnmodifiable();
     }
     
-    public IListSequence<T> distinctList() {
-        return this;
-    }
-
     public List<T> toList() {
         return this;
     }
