@@ -5793,8 +5793,8 @@
             <node role="statementList:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4067466941953899909">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4067466941953899911">
                 <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4067466941953899912">
-                  <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4067466941953899913">
-                    <link role="classifier:3" targetNodeId="3.~ObjectValueProxy" resolveInfo="ObjectValueProxy" />
+                  <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4541449053585952478">
+                    <link role="classifier:3" targetNodeId="3.~AbstractObjectValueProxy" resolveInfo="AbstractObjectValueProxy" />
                   </node>
                 </node>
               </node>
@@ -7994,8 +7994,8 @@
       <property name="name:3" value="IS_DEVELOPER_MODE" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="672360099287494395" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="672360099287494396" />
-      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="6173316648353370757">
-        <property name="value:3" value="false" />
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="4987011375451568873">
+        <property name="value:3" value="true" />
       </node>
     </node>
   </node>

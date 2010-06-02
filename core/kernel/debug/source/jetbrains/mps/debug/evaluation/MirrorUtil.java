@@ -1,6 +1,8 @@
 package jetbrains.mps.debug.evaluation;
 
 import com.sun.jdi.*;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +15,8 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class MirrorUtil {
-  public static Value getJDIValueFromRaw(Object value, VirtualMachine vm) {
+  @Nullable
+  public static Value getJDIValueFromRaw(@Nullable Object value, VirtualMachine vm) {
     if (value == null) {
       return null;
     }
@@ -40,7 +43,7 @@ public class MirrorUtil {
     }
   }
 
-  public static Object getJavaValue(Value jdiValue) {
+  public static Object getJavaValue(@NotNull Value jdiValue) {
     if (jdiValue instanceof StringReference) {
       return ((StringReference) jdiValue).value();
     }
@@ -88,12 +91,12 @@ public class MirrorUtil {
     throw new UnsupportedOperationException();
   }
 
-  public static ValueProxy getValueProxyFromJavaValue(Object javaValue, ThreadReference threadReference) {
+  public static ValueProxy getValueProxyFromJavaValue(@Nullable Object javaValue, ThreadReference threadReference) {
     Value v = getJDIValueFromRaw(javaValue, threadReference.virtualMachine());
     return getValueProxy(v, threadReference);
   }
 
-  public static ValueProxy getValueProxy(Value value, ThreadReference threadReference) {
+  public static ValueProxy getValueProxy(@Nullable Value value, ThreadReference threadReference) {
     if (value == null) {
       return new NullValueProxy(threadReference);
     }

@@ -2,17 +2,22 @@ package jetbrains.mps.debug.evaluation;
 
 import com.sun.jdi.*;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 public class ArrayValueProxy extends ValueProxy {
   private static final Logger LOG = Logger.getLogger(ArrayValueProxy.class);
 
+  // TODO figure out, whether do we need arrays to be objects
+
   public ArrayValueProxy(ArrayReference value, ThreadReference threadReference) {
     super(value, threadReference);
   }
 
+  @NotNull
   public ArrayReference getObjectValue() {
+    assert myValue != null;
     return (ArrayReference) myValue;
   }
 
@@ -32,6 +37,7 @@ public class ArrayValueProxy extends ValueProxy {
     ReferenceType objectType = myThreadReference.virtualMachine().classesByName("java.lang.Object").get(0);
     List<Method> methods = objectType.methodsByName(name, jniSignature);
     if (methods.size() == 0) {
+      // TODO seriously, exception 
       LOG.error("method with " + name + " signature " + jniSignature + " not found in class " + objectType);
       return null;
     }

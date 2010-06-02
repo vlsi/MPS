@@ -2,6 +2,7 @@ package jetbrains.mps.debug.evaluation;
 
 import com.sun.jdi.*;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -13,8 +14,8 @@ import java.util.List;
  * Time: 16:41:09
  * To change this template use File | Settings | File Templates.
  */
-public class ObjectValueProxy extends ValueProxy {
-  private static Logger LOG = Logger.getLogger(ObjectValueProxy.class);
+public class ObjectValueProxy extends AbstractObjectValueProxy {
+  private static final Logger LOG = Logger.getLogger(ObjectValueProxy.class);
   private ClassType myReferenceType;
 
   public ObjectValueProxy(ObjectReference v, ThreadReference threadReference) {
@@ -22,7 +23,9 @@ public class ObjectValueProxy extends ValueProxy {
     myReferenceType = (ClassType) v.referenceType();
   }
 
+  @NotNull
   public ObjectReference getObjectValue() {
+    assert myValue != null;
     return (ObjectReference) myValue;
   }
 
