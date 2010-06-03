@@ -519,6 +519,8 @@ public class JavaConverterTreeBuilder {
       result.setType(createType((TypeBinding) ((SingleNameReference)x.type).binding));
     } else if (x.type instanceof ArrayTypeReference) {
       result.setType(createType(((ArrayTypeReference)x.type).resolvedType));
+    } else if (x.type instanceof ParameterizedQualifiedTypeReference) {
+      result.setType(createType(((ParameterizedQualifiedTypeReference)x.type).resolvedType));
     }
 
     return result;
