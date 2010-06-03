@@ -681,32 +681,20 @@ public class JavaConverterTreeBuilder {
       methodCall = smc;
       result = smc;
     } else {
-      jetbrains.mps.baseLanguage.structure.Expression qualifier;
-      InstanceMethodCallOperation imco = InstanceMethodCallOperation.newInstance(myCurrentModel);
-      methodCall = imco;
-      if (x.receiver instanceof ThisReference) {
-        if (x.receiver instanceof QualifiedThisReference) {
-          // use the supplied qualifier
-          qualifier = processExpressionRefl(x.receiver);
-        } else {
-          /*
-          * In cases where JDT had to synthesize a this ref for us, it could
-          * actually be the wrong type, if the target method is in an enclosing
-          * class. We have to synthesize our own ref of the correct type.
-          */
-          if (x.receiver.isImplicitThis()) {
-            qualifier = createThisExpression(x.binding, x.receiver);
-          } else {
-            qualifier = processExpressionRefl(x.receiver);
-          }
-        }
+      if (x.receiver instanceof ThisReference && x.receiver.isImplicitThis()) {
+        LocalInstanceMethodCall limc = LocalInstanceMethodCall.newInstance(myCurrentModel);
+        methodCall = limc;
+        result = limc;
       } else {
+        jetbrains.mps.baseLanguage.structure.Expression qualifier;
+        InstanceMethodCallOperation imco = InstanceMethodCallOperation.newInstance(myCurrentModel);
+        methodCall = imco;
         qualifier = processExpressionRefl(x.receiver);
+        DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
+        dotExpression.setOperand(qualifier);
+        dotExpression.setOperation(imco);
+        result = dotExpression;
       }
-      DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
-      dotExpression.setOperand(qualifier);
-      dotExpression.setOperation(imco);
-      result = dotExpression;
     }
 
     SReference methodReference = myTypesProvider.createMethodReference(x.binding, BaseMethodCall.BASE_METHOD_DECLARATION, methodCall.getNode());
