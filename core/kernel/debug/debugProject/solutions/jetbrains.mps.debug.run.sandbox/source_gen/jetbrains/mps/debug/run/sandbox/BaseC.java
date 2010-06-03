@@ -7,7 +7,7 @@ public class BaseC {
   public BaseC() {
   }
 
-  public int getZero() {
-    return 1;
+  public int getZero(int arg) {
+    return arg;
   }
 }

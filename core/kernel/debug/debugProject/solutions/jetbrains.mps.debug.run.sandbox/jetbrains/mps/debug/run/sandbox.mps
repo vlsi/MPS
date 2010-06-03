@@ -828,6 +828,22 @@
           </node>
         </node>
       </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7745058440407989502">
+        <property name="name:3" value="arg" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="7745058440407989503" />
+      </node>
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="9020439274434605518">
+      <property name="name:3" value="getObject" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9020439274434605522">
+        <link role="classifier:3" targetNodeId="2.~Object" resolveInfo="Object" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="9020439274434605520" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9020439274434605521">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9020439274434630734">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="9020439274434630735" />
+        </node>
+      </node>
     </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="4060685206781456033">
       <property name="name:3" value="main" />
@@ -1017,10 +1033,14 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="236633587817012668" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="236633587817012669">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="236633587817012671">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="236633587817012673">
-            <property name="value:3" value="1" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7745058440407992094">
+            <link role="variableDeclaration:3" targetNodeId="7745058440407992092" resolveInfo="arg" />
           </node>
         </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7745058440407992092">
+        <property name="name:3" value="arg" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="7745058440407992093" />
       </node>
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="236633587817012661" />

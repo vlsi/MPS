@@ -18,8 +18,12 @@ public class C extends BaseC {
     y++;
   }
 
-  public int getZero() {
+  public int getZero(int arg) {
     return 0;
+  }
+
+  public Object getObject() {
+    return null;
   }
 
   public static void main(String[] args) {
