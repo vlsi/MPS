@@ -41,6 +41,10 @@ public class QueriesGenerated {
             return null;
           }
 
+          public String getDescriptionText(String pattern) {
+            return "checked dot";
+          }
+
           public String getMatchingText(String pattern) {
             return "?";
           }

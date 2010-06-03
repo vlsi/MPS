@@ -299,6 +299,9 @@
           <node role="matchingText:23" type="jetbrains.mps.lang.actions.structure.Substitute_SimpleString:23" id="2248628811136262609">
             <property name="text:23" value="?" />
           </node>
+          <node role="descriptionText:23" type="jetbrains.mps.lang.actions.structure.Substitute_SimpleString:23" id="4283893961140181490">
+            <property name="text:23" value="checked dot" />
+          </node>
         </node>
       </node>
     </node>
