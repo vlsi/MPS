@@ -347,7 +347,9 @@ public class SubtypingManager {
       if (subtypingRule_runtimes != null) {
         for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
           List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(node, null);    //todo should typeCheckingContext really be null?
-          result.addAll(toWrappers(new HashSet<SNode>(supertypes), null));
+          if (supertypes != null) {
+            result.addAll(toWrappers(new HashSet<SNode>(supertypes), null));            
+          }
         }
       }
     }
