@@ -590,29 +590,25 @@ public class JavaConverterTreeBuilder {
         result = sfr;
       }
     } else {
-      role = FieldReferenceOperation.FIELD_DECLARATION;
-      jetbrains.mps.baseLanguage.structure.Expression instance;
       if (instanceExpression == null) {
-        ThisExpression thisExpression = ThisExpression.newInstance(myCurrentModel);
-        if (myCurrentClass != myTypesProvider.getRaw(declaredClassBinding)) {
-          if (!isSubtype(myCurrentTypeDeclaration.binding, declaredClassBinding)) {
-            thisExpression.getNode().addReference(
-              myTypesProvider.createClassifierReference(declaredClassBinding, ThisExpression.CLASS_CONCEPT, thisExpression.getNode()));
-          }
-        }
-        instance = thisExpression;
+        role = LocalInstanceFieldReference.VARIABLE_DECLARATION;
+        LocalInstanceFieldReference lifr = LocalInstanceFieldReference.newInstance(myCurrentModel);
+        sourceNode = lifr.getNode();
+        result = lifr;
       } else {
+        role = FieldReferenceOperation.FIELD_DECLARATION;
+        jetbrains.mps.baseLanguage.structure.Expression instance;
         instance = instanceExpression;
+        if (declaredClassBinding == null) {
+          return createArrayLengthExpression(instance, fieldBinding);
+        }
+        FieldReferenceOperation fieldRef = FieldReferenceOperation.newInstance(myCurrentModel);
+        DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
+        dotExpression.setOperation(fieldRef);
+        dotExpression.setOperand(instance);
+        sourceNode = fieldRef.getNode();
+        result = dotExpression;
       }
-      if (declaredClassBinding == null) {
-        return createArrayLengthExpression(instance, fieldBinding);
-      }
-      FieldReferenceOperation fieldRef = FieldReferenceOperation.newInstance(myCurrentModel);
-      DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
-      dotExpression.setOperation(fieldRef);
-      dotExpression.setOperand(instance);
-      sourceNode = fieldRef.getNode();
-      result = dotExpression;
     }
     SReference fieldReference = myTypesProvider.createFieldReference(fieldBinding, role, sourceNode);
     sourceNode.addReference(fieldReference);
