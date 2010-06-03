@@ -41,7 +41,10 @@ public class RenameModel_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return !(RenameModel_Action.this.module instanceof Language);
+    if (!(RenameModel_Action.this.module instanceof Language)) {
+      return true;
+    }
+    return Language.isLanguageOwnedAccessoryModel(RenameModel_Action.this.model);
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
