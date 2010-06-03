@@ -7,13 +7,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 07.03.2010
- * Time: 17:45:52
- * To change this template use File | Settings | File Templates.
- */
 public class MirrorUtil {
   @Nullable
   public static Value getJDIValueFromRaw(@Nullable Object value, VirtualMachine vm) {
@@ -43,6 +36,7 @@ public class MirrorUtil {
     }
   }
 
+  @NotNull
   public static Object getJavaValue(@NotNull Value jdiValue) {
     if (jdiValue instanceof StringReference) {
       return ((StringReference) jdiValue).value();
@@ -91,6 +85,7 @@ public class MirrorUtil {
     throw new UnsupportedOperationException();
   }
 
+  @NotNull
   public static IValueProxy getValueProxyFromJavaValue(@Nullable Object javaValue, ThreadReference threadReference) {
     Value v = getJDIValueFromRaw(javaValue, threadReference.virtualMachine());
     return getValueProxy(v, threadReference);

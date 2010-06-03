@@ -5,13 +5,6 @@ import com.sun.jdi.Value;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 07.03.2010
- * Time: 16:39:52
- * To change this template use File | Settings | File Templates.
- */
 abstract class ValueProxy implements IValueProxy {
   @NotNull
   protected final Value myValue;

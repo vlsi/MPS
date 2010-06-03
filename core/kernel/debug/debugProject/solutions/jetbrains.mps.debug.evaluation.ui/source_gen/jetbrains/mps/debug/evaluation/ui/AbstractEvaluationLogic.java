@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -28,6 +28,7 @@ import com.sun.jdi.StackFrame;
 import com.sun.jdi.Location;
 import jetbrains.mps.debug.api.info.StacktraceUtil;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
+import jetbrains.mps.debug.evaluation.EvaluationException;
 import java.util.Set;
 import jetbrains.mps.reloading.IClassPathItem;
 import java.util.HashSet;
@@ -152,7 +153,7 @@ public abstract class AbstractEvaluationLogic {
   }
 
   @Nullable
-  public IValueProxy evaluate() throws BaseEvaluationException {
+  public IValueProxy evaluate() throws EvaluationException {
     try {
       final Set<IClassPathItem> classpaths = new HashSet<IClassPathItem>();
       for (Language language : this.myLanguages) {
@@ -183,21 +184,19 @@ public abstract class AbstractEvaluationLogic {
         if (isDeveloperMode()) {
           System.err.println(source);
         }
-        try {
-          ClassLoader loader = handler.getCompiler().getClassLoader(this.myUiState.getClass().getClassLoader());
-          Class clazz = Class.forName(fullClassName, true, loader);
-          Evaluator evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
-          IValueProxy value = evaluator.evaluate();
-          this.myUiState = this.myDebugSession.refresh();
-          return value;
-        } catch (Throwable t) {
-          throw new BaseEvaluationException(t);
-        }
+        ClassLoader loader = handler.getCompiler().getClassLoader(this.myUiState.getClass().getClassLoader());
+        Class clazz = Class.forName(fullClassName, true, loader);
+        Evaluator evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
+        IValueProxy value = evaluator.evaluate();
+        this.myUiState = this.myDebugSession.refresh();
+        return value;
       } else {
-        throw new BaseEvaluationException("Errors during generation.");
+        throw new EvaluationException("Errors during generation.");
       }
+    } catch (EvaluationException e) {
+      throw e;
     } catch (Throwable t) {
-      throw new BaseEvaluationException(t);
+      throw new EvaluationException(t);
     }
   }
 

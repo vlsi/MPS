@@ -24,6 +24,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JComponent;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
+import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
+import jetbrains.mps.debug.evaluation.EvaluationException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ApplicationManager;
@@ -114,7 +116,9 @@ public class EvaluationDialog extends BaseDialog {
       } else {
         setFailure(null, "Evaluation returned null.");
       }
-    } catch (BaseEvaluationException e) {
+    } catch (InvalidEvaluatedExpressionException e) {
+      setFailure(e.getCause(), null);
+    } catch (EvaluationException e) {
       setFailure(e, null);
       LOG.error(e);
     }

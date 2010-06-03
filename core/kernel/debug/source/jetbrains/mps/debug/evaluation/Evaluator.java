@@ -1,35 +1,29 @@
 package jetbrains.mps.debug.evaluation;
 
 import com.sun.jdi.*;
+import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
-import jetbrains.mps.debug.evaluation.proxies.ObjectValueProxy;
 import jetbrains.mps.debug.runtime.JavaUiState;
-import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 07.03.2010
- * Time: 17:09:52
- * To change this template use File | Settings | File Templates.
- */
 public abstract class Evaluator {
-  private static final Logger LOG = Logger.getLogger(Evaluator.class);
   private JavaUiState myUiState;
-  private ObjectValueProxy myThisObject;
+  private IObjectValueProxy myThisObject;
 
   public Evaluator(JavaUiState uiState) {
     myUiState = uiState;
     ObjectReference objectReference = uiState.getThisObject();
     if (objectReference != null) {
-      myThisObject = new ObjectValueProxy(objectReference, uiState.getThread().getThread());
+      myThisObject = (IObjectValueProxy) MirrorUtil.getValueProxy(objectReference, uiState.getThread().getThread());
     }
   }
 
+  // TODO might wanna move all this stuff out
+  @NotNull
   protected IValueProxy getValue(String varName) throws EvaluationException {
     StackFrame stackFrame = myUiState.getStackFrame().getStackFrame();
     assert stackFrame != null;
@@ -46,7 +40,7 @@ public abstract class Evaluator {
     return MirrorUtil.getValueProxy(v, myUiState.getThread().getThread());
   }
 
-  protected ObjectValueProxy getThisObject() {
+  protected IObjectValueProxy getThisObject() {
     return myThisObject;
   }
 
@@ -58,45 +52,27 @@ public abstract class Evaluator {
     return myUiState.getThread().getThread().virtualMachine();
   }
 
-  @Nullable
-  public IValueProxy invokeStatic(String className, String name, String jniSignature, Object... args) {
-    List<ReferenceType> classes = getVM().classesByName(className);
-    if (classes.size() == 0) {
-      LOG.error("could not find class " + className);
-      return null;
-    }
-    ClassType referenceType = (ClassType) classes.get(0);
-    List<Method> methods = referenceType.methodsByName(name, jniSignature);
-    if (methods.size() == 0) {
-      LOG.error("could not find method " + name + " with signature " + jniSignature + " in " + className);
-      return null;
-    }
-    Method method = methods.get(0);
+  @NotNull
+  protected IValueProxy invokeStatic(String className, String name, String jniSignature, Object... args) throws EvaluationException {
+    final ClassType referenceType = findClassType(className, getVM());
+    final Method method = findMethod(referenceType, name, jniSignature);
 
-    List<Value> argValues = MirrorUtil.getValues(getThreadReference(), args);
-    Value result;
-    try {
-      result = referenceType.invokeMethod(getThreadReference(), method, argValues, 0);
-    } catch (Throwable t) {
-      LOG.error("method invocation failed", t);
-      return null;
-    }
-    return MirrorUtil.getValueProxy(result, getThreadReference());
+    final List<Value> argValues = MirrorUtil.getValues(getThreadReference(), args);
+
+    return handleInvocationExceptions(new Invocatable<IValueProxy>() {
+      @Override
+      public IValueProxy invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException {
+        Value result = referenceType.invokeMethod(getThreadReference(), method, argValues, 0);
+        return MirrorUtil.getValueProxy(result, getThreadReference());
+      }
+    });
   }
 
-  @Nullable
-  public IValueProxy getStaticFieldValue(String className, String fieldName) {
-    List<ReferenceType> classes = getVM().classesByName(className);
-    if (classes.size() == 0) {
-      LOG.error("Could not find class " + className);
-      return null;
-    }
-    ClassType referenceType = (ClassType) classes.get(0);
-    Field field = referenceType.fieldByName(fieldName);
-    if (field == null) {
-      LOG.error("Could not find field " + fieldName + " in " + className);
-      return null;
-    }
+  @NotNull
+  protected IValueProxy getStaticFieldValue(String className, String fieldName) throws InvalidEvaluatedExpressionException {
+    ClassType referenceType = findClassType(className, getVM());
+    Field field = findField(referenceType, fieldName);
+    assert field.isStatic();
     Value result = referenceType.getValue(field);
     return MirrorUtil.getValueProxy(result, getThreadReference());
   }
@@ -107,18 +83,35 @@ public abstract class Evaluator {
     return location.declaringType().name();
   }
 
-  protected IValueProxy invokeConstructor(String className, String jniSignature, Object... args) {
+  @NotNull
+  protected IValueProxy invokeConstructor(String className, String jniSignature, Object... args) throws EvaluationException {
     // TODO duplication in code
-    List<ReferenceType> classes = getVM().classesByName(className);
-    if (classes.size() == 0) {
-      LOG.error("could not find class " + className);
-      return null;
+    final ClassType referenceType = findClassType(className, getVM());
+    final Method constructor = findConstructor(referenceType, jniSignature);
+
+    final List<Value> argValues = MirrorUtil.getValues(getThreadReference(), args);
+
+    return handleInvocationExceptions(new Invocatable<IValueProxy>() {
+      @Override
+      public IValueProxy invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException {
+        Value result = referenceType.newInstance(getThreadReference(), constructor, argValues, 0);
+        return MirrorUtil.getValueProxy(result, getThreadReference());
+      }
+    });
+  }
+
+  public static Field findField(ClassType referenceType, String fieldName) throws InvalidEvaluatedExpressionException {
+    Field field = referenceType.fieldByName(fieldName);
+    if (field == null) {
+      throw new InvalidEvaluatedExpressionException("Could not find field " + fieldName + " in " + referenceType.name() + ".");
     }
-    ClassType referenceType = (ClassType) classes.get(0);
+    return field;
+  }
+
+  public static Method findConstructor(ClassType referenceType, String jniSignature) throws InvalidEvaluatedExpressionException {
     List<Method> methods = referenceType.methodsByName("<init>", jniSignature);
     if (methods.size() == 0) {
-      LOG.error("could not find constructor " + " with signature " + jniSignature + " in " + className);
-      return null;
+      throw new InvalidEvaluatedExpressionException("Could not find constructor " + " with signature " + jniSignature + " in " + referenceType.name() + ".");
     }
     Method constructor = null;
     for (Method m : methods) {
@@ -128,20 +121,44 @@ public abstract class Evaluator {
       }
     }
     if (constructor == null) {
-      // TODO throw exception
-      LOG.error("could not find constructor " + " with signature " + jniSignature + " in " + className);
-      return null;
+      throw new InvalidEvaluatedExpressionException("Could not find constructor " + " with signature " + jniSignature + " in " + referenceType.name() + ".");
     }
+    return constructor;
+  }
 
-    List<Value> argValues = MirrorUtil.getValues(getThreadReference(), args);
-    Value result;
-    try {
-      result = referenceType.newInstance(getThreadReference(), constructor, argValues, 0);
-    } catch (Throwable t) {
-      LOG.error("method invocation failed", t);
-      return null;
+  public static Method findMethod(ClassType referenceType, String methodsName, String jniSignature) throws InvalidEvaluatedExpressionException {
+    List<Method> methods = referenceType.methodsByName(methodsName, jniSignature);
+    if (methods.size() == 0) {
+      throw new InvalidEvaluatedExpressionException("Could not find method " + methodsName + " with signature " + jniSignature + " in " + referenceType.name() + ".");
     }
-    return MirrorUtil.getValueProxy(result, getThreadReference());
+    return methods.get(0);
+  }
+
+  public static ClassType findClassType(String className, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException {
+    List<ReferenceType> classes = virtualMachine.classesByName(className);
+    if (classes.size() == 0) {
+      throw new InvalidEvaluatedExpressionException("Could not find class " + className + ".");
+    }
+    ClassType referenceType = (ClassType) classes.get(0);
+    return referenceType;
+  }
+
+  public static <T> T handleInvocationExceptions(Invocatable<T> invocatable) throws EvaluationException {
+    try {
+      return invocatable.invoke();
+    } catch (InvocationException e) {
+      throw new TargetVMEvaluationException(e.getCause());
+    } catch (IllegalArgumentException e) {
+      throw new InvalidEvaluatedExpressionException(e);
+    } catch (InvalidTypeException e) {
+      throw new InvalidEvaluatedExpressionException(e);
+    } catch (Throwable t) {
+      throw new EvaluationException(t);
+    }
+  }
+
+  public static interface Invocatable<T> {
+    T invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException;
   }
 
   public abstract IValueProxy evaluate() throws EvaluationException;
