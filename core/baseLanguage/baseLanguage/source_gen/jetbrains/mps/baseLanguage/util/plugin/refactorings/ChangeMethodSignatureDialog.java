@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import javax.swing.JPanel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
+import java.util.List;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -23,14 +23,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelReference;
 import javax.swing.border.TitledBorder;
-import java.util.List;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.ArrayList;
-import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -41,9 +35,9 @@ public class ChangeMethodSignatureDialog extends BaseDialog {
   private JPanel myPanel;
   private SNode myDeclaration;
   private ChangeMethodSignatureParameters myParameters;
-  private SearchResults<SNode> myResults;
   private IOperationContext myOperationContext;
   private EmbeddableEditor myEditor;
+  private List<ChangeMethodSignatureRefactoring> myRefactorings = null;
 
   public ChangeMethodSignatureDialog(SNode node, IOperationContext operationContext) {
     super(operationContext.getMainFrame(), "Change Method Signature");
@@ -102,10 +96,11 @@ public class ChangeMethodSignatureDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "Refactor", mnemonic = 'R', defaultButton = true)
   public void onOk() {
-    List<SNode> overriding = MethodRefactoringUtils.findOverridingMethods(this.myDeclaration, this.myOperationContext);
-    this.doRefactoringForMethod(this.myDeclaration);
-    for (SNode node : ListSequence.fromList(overriding)) {
-      this.doRefactoringForMethod(node);
+    final List<SNode> methodsToRefactor = MethodRefactoringUtils.findOverridingMethods(this.myDeclaration, this.myOperationContext);
+    ListSequence.fromList(methodsToRefactor).addElement(myDeclaration);
+    myRefactorings = ListSequence.fromList(new ArrayList<ChangeMethodSignatureRefactoring>());
+    for (SNode method : ListSequence.fromList(methodsToRefactor)) {
+      ListSequence.fromList(myRefactorings).addElement(new ChangeMethodSignatureRefactoring(this.myParameters, method));
     }
     this.dispose();
   }
@@ -115,36 +110,16 @@ public class ChangeMethodSignatureDialog extends BaseDialog {
     this.dispose();
   }
 
+  public List<ChangeMethodSignatureRefactoring> getAllRefactorings() {
+    return myRefactorings;
+  }
+
   protected JPanel getMainComponent() {
     return this.myPanel;
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
     return new DialogDimensionsSettings.DialogDimensions(100, 200, 600, 500);
-  }
-
-  private void doRefactoringForMethod(SNode method) {
-    final ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(this.myParameters, method);
-    ProgressManager.getInstance().run(new Task.Modal(this.myOperationContext.getProject(), "Search for ussages", true) {
-      public void run(@NotNull final ProgressIndicator indicator) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            ChangeMethodSignatureDialog.this.myResults = MethodRefactoringUtils.findMethodUsages(ChangeMethodSignatureDialog.this.myDeclaration, indicator);
-          }
-        });
-      }
-    });
-    List<SNode> ussages = new ArrayList<SNode>();
-    for (SearchResult<SNode> res : ListSequence.fromList(this.myResults.getSearchResults())) {
-      SNode node = res.getObject();
-      ListSequence.fromList(ussages).addElement(node);
-    }
-    ref.setUsages(ussages);
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        ref.doRefactoring();
-      }
-    });
   }
 
   private void checkMethodHasOverriden(final SNode node) {

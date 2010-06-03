@@ -51,6 +51,10 @@ public class ChangeMethodSignatureRefactoring {
     }
   }
 
+  public SNode getDeclaration() {
+    return myDeclaration;
+  }
+
   private void changeParameters() {
     List<SNode> oldParams = SLinkOperations.getTargets(this.myDeclaration, "parameter", true);
     ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).clear();
@@ -61,8 +65,8 @@ public class ChangeMethodSignatureRefactoring {
       } else {
         ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).addElement(ListSequence.fromList(oldParams).getElement(index));
         SNode newParam = ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).last();
-        SPropertyOperations.set(newParam, "name", SPropertyOperations.getString(parameter, "name"));
-        SLinkOperations.setTarget(newParam, "type", SLinkOperations.getTarget(parameter, "type", true), true);
+        SPropertyOperations.set(newParam, "name", SPropertyOperations.getString(parameter, "name").substring(0));
+        SLinkOperations.setTarget(newParam, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(parameter, "type", true)), true);
       }
     }
   }

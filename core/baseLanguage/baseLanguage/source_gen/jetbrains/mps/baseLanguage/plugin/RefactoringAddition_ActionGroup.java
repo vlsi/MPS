@@ -18,7 +18,6 @@ public class RefactoringAddition_ActionGroup extends GeneratedActionGroup {
       RefactoringAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.InlineLocalVariable_Action", "jetbrains.mps.baseLanguage");
       RefactoringAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ExtractMethod_Action", "jetbrains.mps.baseLanguage");
       RefactoringAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.InlineMethod_Action", "jetbrains.mps.baseLanguage");
-      RefactoringAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ChangeMethodSignature_Action", "jetbrains.mps.baseLanguage");
       RefactoringAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.IntroduceVariable_Action", "jetbrains.mps.baseLanguage");
       RefactoringAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.IntroduceField_Action", "jetbrains.mps.baseLanguage");
       RefactoringAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.IntroduceConstant_Action", "jetbrains.mps.baseLanguage");
