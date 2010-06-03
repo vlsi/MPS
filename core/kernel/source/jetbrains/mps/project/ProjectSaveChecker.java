@@ -21,18 +21,13 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
-import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.dialogs.ScrollingConfirmDialog;
-import jetbrains.mps.ide.dialogs.ScrollingConfirmDialog.Result;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
-
-import javax.swing.JFrame;
 
 public class ProjectSaveChecker implements ProjectComponent{
   private Project myProject;
@@ -69,6 +64,7 @@ public class ProjectSaveChecker implements ProjectComponent{
     private boolean myIgnoredSaving = false;
 
     @Override
+    
     public boolean canCloseProject(Project project) {
       if (IdeMain.getTestMode() == TestMode.CORE_TEST) return true;
 
@@ -77,24 +73,23 @@ public class ProjectSaveChecker implements ProjectComponent{
         return true;
       }
 
-      JFrame projectFrame = WindowManager.getInstance().getFrame(project);
       boolean save = true;
       if (!GeneralSettings.getInstance().isSaveOnFrameDeactivation() &&
         !GeneralSettings.getInstance().isAutoSaveIfInactive() &&
         !SModelRepository.getInstance().getChangedModels().isEmpty()) {
 
-        String message = "You have unsaved models:\n\n";
+        StringBuffer message = new StringBuffer("You have unsaved models:\n\n");
         for (SModelDescriptor sm : SModelRepository.getInstance().getChangedModels()) {
-          message += sm.getSModelReference().getSModelFqName().toString() + "\n";
+          message.append(sm.getSModelReference().getSModelFqName().toString()).append("\n");
         }
-        message += "\nDo you want to save them?";
+        message.append("\nDo you want to save them?");
 
-        ScrollingConfirmDialog dialog = new ScrollingConfirmDialog(projectFrame, "Save models", message);
-        dialog.showDialog();
-        if (dialog.getResult() == Result.CANCEL) {
+        int saveModelsAnswer = Messages.showYesNoCancelDialog(project, message.toString(),
+          "Save Models", Messages.getQuestionIcon());
+        if (saveModelsAnswer == 2) {
           return false;
         }
-        save = (dialog.getResult() == Result.YES);
+        save = saveModelsAnswer == 0;
       }
 
       if (save) {
