@@ -1,8 +1,7 @@
-package jetbrains.mps.debug.evaluation;
+package jetbrains.mps.debug.evaluation.proxies;
 
 import com.sun.jdi.PrimitiveValue;
 import com.sun.jdi.ThreadReference;
-import com.sun.jdi.Value;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,17 +10,12 @@ import com.sun.jdi.Value;
  * Time: 18:03:26
  * To change this template use File | Settings | File Templates.
  */
-public class PrimitiveValueProxy extends ValueProxy {
+public class PrimitiveValueProxy extends ValueProxy implements IValueProxy {
   public PrimitiveValueProxy(PrimitiveValue v, ThreadReference threadReference) {
     super(v, threadReference);
   }
 
   public PrimitiveValue getPrimitiveValue() {
     return (PrimitiveValue) myValue;
-  }
-
-  @Override
-  public ValueProxy invokeMethod(String name, String jniSignature, Object... args) {
-    throw new UnsupportedOperationException("Methods invocation is unsupported in primitives.");
   }
 }

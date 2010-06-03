@@ -260,7 +260,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
               SPropertyOperations.set(lowLevelVarNode, "name", name);
               SNode deducedType = getMpsTypeFromJdiType(((LocalVariable) variable).type());
               if (deducedType == null) {
-                LOG.warning("Could not deduce type for variable" + name);
+                LOG.warning("Could not deduce type for variable " + name);
                 continue;
               }
               SLinkOperations.setTarget(lowLevelVarNode, "type", deducedType, true);

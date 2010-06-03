@@ -23,7 +23,7 @@ import javax.swing.JScrollPane;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JComponent;
-import jetbrains.mps.debug.evaluation.ValueProxy;
+import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ApplicationManager;
@@ -108,7 +108,7 @@ public class EvaluationDialog extends BaseDialog {
   @BaseDialog.Button(position = 0, name = "Evaluate", mnemonic = 'E', defaultButton = true)
   public void buttonEvaluate() {
     try {
-      ValueProxy evaluatedValue = myEvaluationData.evaluate();
+      IValueProxy evaluatedValue = myEvaluationData.evaluate();
       if (evaluatedValue != null) {
         setSuccess(evaluatedValue);
       } else {
@@ -125,7 +125,7 @@ public class EvaluationDialog extends BaseDialog {
     this.dispose();
   }
 
-  private void setSuccess(@NotNull ValueProxy evaluatedValue) {
+  private void setSuccess(@NotNull IValueProxy evaluatedValue) {
     myTree.setResultProxy(evaluatedValue);
     myTree.rebuildLater();
   }
@@ -163,7 +163,7 @@ public class EvaluationDialog extends BaseDialog {
 
   private static class MyTree extends MPSTree {
     @Nullable
-    private ValueProxy myValueProxy;
+    private IValueProxy myValueProxy;
     @Nullable
     private String myErrorText;
 
@@ -172,7 +172,7 @@ public class EvaluationDialog extends BaseDialog {
       this.rebuildNow();
     }
 
-    public void setResultProxy(ValueProxy valueProxy) {
+    public void setResultProxy(IValueProxy valueProxy) {
       myValueProxy = valueProxy;
       myErrorText = null;
     }

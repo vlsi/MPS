@@ -27,7 +27,7 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.Location;
 import jetbrains.mps.debug.api.info.StacktraceUtil;
-import jetbrains.mps.debug.evaluation.ValueProxy;
+import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import java.util.Set;
 import jetbrains.mps.reloading.IClassPathItem;
 import java.util.HashSet;
@@ -152,7 +152,7 @@ public abstract class AbstractEvaluationLogic {
   }
 
   @Nullable
-  public ValueProxy evaluate() throws BaseEvaluationException {
+  public IValueProxy evaluate() throws BaseEvaluationException {
     try {
       final Set<IClassPathItem> classpaths = new HashSet<IClassPathItem>();
       for (Language language : this.myLanguages) {
@@ -180,11 +180,14 @@ public abstract class AbstractEvaluationLogic {
       String source = handler.getSources().get(fullClassName);
 
       if (successful || StringUtils.isNotEmpty(source)) {
+        if (isDeveloperMode()) {
+          System.err.println(source);
+        }
         try {
           ClassLoader loader = handler.getCompiler().getClassLoader(this.myUiState.getClass().getClassLoader());
           Class clazz = Class.forName(fullClassName, true, loader);
           Evaluator evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
-          ValueProxy value = evaluator.evaluate();
+          IValueProxy value = evaluator.evaluate();
           this.myUiState = this.myDebugSession.refresh();
           return value;
         } catch (Throwable t) {

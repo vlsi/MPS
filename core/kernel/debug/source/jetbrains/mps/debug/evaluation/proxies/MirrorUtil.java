@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.evaluation;
+package jetbrains.mps.debug.evaluation.proxies;
 
 import com.sun.jdi.*;
 import org.jetbrains.annotations.NotNull;
@@ -91,14 +91,15 @@ public class MirrorUtil {
     throw new UnsupportedOperationException();
   }
 
-  public static ValueProxy getValueProxyFromJavaValue(@Nullable Object javaValue, ThreadReference threadReference) {
+  public static IValueProxy getValueProxyFromJavaValue(@Nullable Object javaValue, ThreadReference threadReference) {
     Value v = getJDIValueFromRaw(javaValue, threadReference.virtualMachine());
     return getValueProxy(v, threadReference);
   }
 
-  public static ValueProxy getValueProxy(@Nullable Value value, ThreadReference threadReference) {
+  @NotNull
+  public static IValueProxy getValueProxy(@Nullable Value value, ThreadReference threadReference) {
     if (value == null) {
-      return new NullValueProxy(threadReference);
+      return new NullValueProxy();
     }
     if (value instanceof ArrayReference) {
       return new ArrayValueProxy((ArrayReference) value, threadReference);
@@ -111,6 +112,7 @@ public class MirrorUtil {
     }
   }
 
+  @NotNull
   public static List<Value> getValues(ThreadReference threadReference, Object... args) {
     List<Value> argValues = new ArrayList<Value>();
     for (Object arg : args) {

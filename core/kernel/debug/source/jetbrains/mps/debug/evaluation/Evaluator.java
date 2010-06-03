@@ -1,6 +1,9 @@
 package jetbrains.mps.debug.evaluation;
 
 import com.sun.jdi.*;
+import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
+import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
+import jetbrains.mps.debug.evaluation.proxies.ObjectValueProxy;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.Nullable;
@@ -27,7 +30,7 @@ public abstract class Evaluator {
     }
   }
 
-  protected ValueProxy getValue(String varName) throws EvaluationException {
+  protected IValueProxy getValue(String varName) throws EvaluationException {
     StackFrame stackFrame = myUiState.getStackFrame().getStackFrame();
     assert stackFrame != null;
     LocalVariable localVariable;
@@ -56,7 +59,7 @@ public abstract class Evaluator {
   }
 
   @Nullable
-  public ValueProxy invokeStatic(String className, String name, String jniSignature, Object... args) {
+  public IValueProxy invokeStatic(String className, String name, String jniSignature, Object... args) {
     List<ReferenceType> classes = getVM().classesByName(className);
     if (classes.size() == 0) {
       LOG.error("could not find class " + className);
@@ -82,7 +85,7 @@ public abstract class Evaluator {
   }
 
   @Nullable
-  public ValueProxy getStaticFieldValue(String className, String fieldName) {
+  public IValueProxy getStaticFieldValue(String className, String fieldName) {
     List<ReferenceType> classes = getVM().classesByName(className);
     if (classes.size() == 0) {
       LOG.error("Could not find class " + className);
@@ -104,7 +107,7 @@ public abstract class Evaluator {
     return location.declaringType().name();
   }
 
-  protected ValueProxy invokeConstructor(String className, String jniSignature, Object... args) {
+  protected IValueProxy invokeConstructor(String className, String jniSignature, Object... args) {
     // TODO duplication in code
     List<ReferenceType> classes = getVM().classesByName(className);
     if (classes.size() == 0) {
@@ -141,5 +144,5 @@ public abstract class Evaluator {
     return MirrorUtil.getValueProxy(result, getThreadReference());
   }
 
-  public abstract ValueProxy evaluate() throws EvaluationException;
+  public abstract IValueProxy evaluate() throws EvaluationException;
 }

@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.evaluation;
+package jetbrains.mps.debug.evaluation.proxies;
 
 import com.sun.jdi.*;
 import jetbrains.mps.logging.Logger;
@@ -14,7 +14,7 @@ import java.util.List;
  * Time: 16:41:09
  * To change this template use File | Settings | File Templates.
  */
-public class ObjectValueProxy extends AbstractObjectValueProxy {
+public class ObjectValueProxy extends ValueProxy implements IObjectValueProxy {
   private static final Logger LOG = Logger.getLogger(ObjectValueProxy.class);
   private ClassType myReferenceType;
 
@@ -24,13 +24,12 @@ public class ObjectValueProxy extends AbstractObjectValueProxy {
   }
 
   @NotNull
-  public ObjectReference getObjectValue() {
-    assert myValue != null;
+  private ObjectReference getObjectValue() {
     return (ObjectReference) myValue;
   }
 
   @Nullable
-  public ValueProxy getFieldValue(String fieldName) {
+  public IValueProxy getFieldValue(String fieldName) {
     ObjectReference value = getObjectValue();
     Field f = myReferenceType.fieldByName(fieldName);
     if (f == null) {
@@ -43,13 +42,14 @@ public class ObjectValueProxy extends AbstractObjectValueProxy {
   }
 
   @Override
-  public ValueProxy invokeMethod(String name, String jniSignature, Object... args) {
+  public IValueProxy invokeMethod(String name, String jniSignature, Object... args) {
     ClassType classType = (ClassType) myReferenceType;
     int options = 0;
     return invoke(name, jniSignature, classType, options, args);
   }
 
-  public ValueProxy invokeSuperMethod(String name, String jniSignature, Object... args) {
+  @Override
+  public IValueProxy invokeSuperMethod(String name, String jniSignature, Object... args) {
     ClassType classType = myReferenceType;
     ClassType superclass = classType.superclass();
     if (superclass == null) {
@@ -59,7 +59,7 @@ public class ObjectValueProxy extends AbstractObjectValueProxy {
     return invoke(name, jniSignature, superclass, options, args);
   }
 
-  private ValueProxy invoke(String name, String jniSignature, ClassType classType, int options, Object[] args) {
+  protected IValueProxy invoke(String name, String jniSignature, ClassType classType, int options, Object[] args) {
     Method method = classType.concreteMethodByName(name, jniSignature);
     if (method == null) {
       LOG.error("Concrete method " + name + " with signature " + jniSignature +  " not found in " + classType + ".");
