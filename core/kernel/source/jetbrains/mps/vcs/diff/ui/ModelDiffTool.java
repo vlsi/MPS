@@ -24,14 +24,11 @@ import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalOperationContext;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.ModelUtils;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.GlobalOperationContext;
-
-import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 
@@ -68,7 +65,7 @@ public class ModelDiffTool implements DiffTool {
           return new ModelDifferenceDialog(context, frame, oldModel, newModel, request.getWindowTitle(), modal, request.getContentTitles());
         }
       });
-      AnAction action = new AnAction("View As Text", "View As Text", Icons.TEXT_ICON) {
+      AnAction action = new AnAction("View as Text", "View as Text", Icons.TEXT_ICON) {
         public void actionPerformed(AnActionEvent e) {
           DiffTool ideaDiffTool = DiffManager.getInstance().getIdeaDiffTool();
           if (ideaDiffTool.canShow(request)) {
