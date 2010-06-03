@@ -19,14 +19,15 @@ import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeId;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Change {
   private boolean myIsError;
 
   public abstract SNodeId getAffectedNodeId();
 
+  // Should be invoked in write action
   public abstract boolean apply(SModel m);
 
   public List<SNodeId> getDependencies() {
