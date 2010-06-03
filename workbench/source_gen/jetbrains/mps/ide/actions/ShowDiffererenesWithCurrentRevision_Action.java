@@ -15,7 +15,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.vfs.IFile;
 
 public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/diff.png", "jetbrains.mps.ide"), true);
@@ -28,7 +31,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
   private SModelDescriptor model;
 
   public ShowDiffererenesWithCurrentRevision_Action() {
-    super("Show Diff", "Compare with the Same Repository Revision", ICON);
+    super("Compare with the Same Repository Revision", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -39,7 +42,8 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return ShowDiffererenesWithCurrentRevision_Action.this.node.isRoot();
+    VirtualFile virtualFile = check_ahqk2l_a0a0b(ShowDiffererenesWithCurrentRevision_Action.this.model.getModelFile());
+    return ShowDiffererenesWithCurrentRevision_Action.this.node.isRoot() && ProjectLevelVcsManager.getInstance(ShowDiffererenesWithCurrentRevision_Action.this.project).getVcsFor(virtualFile) != null;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -100,5 +104,12 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
         log.error("User's action execute method failed. Action:" + "ShowDiffererenesWithCurrentRevision", t);
       }
     }
+  }
+
+  private static VirtualFile check_ahqk2l_a0a0b(IFile p) {
+    if (null == p) {
+      return null;
+    }
+    return p.toVirtualFile();
   }
 }
