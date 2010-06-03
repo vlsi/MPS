@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -48,7 +48,6 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public abstract class AbstractEvaluationLogic {
   private static final Logger LOG = Logger.getLogger(AbstractEvaluationLogic.class);
@@ -241,11 +240,9 @@ public abstract class AbstractEvaluationLogic {
               try {
                 TransformationUtil.transform(evaluator);
                 if (AbstractEvaluationLogic.IS_DEVELOPER_MODE) {
-                  ListSequence.fromList(myGenerationListeners).visitAll(new IVisitor<_FunctionTypes._void_P1_E0<? super SNode>>() {
-                    public void visit(_FunctionTypes._void_P1_E0<? super SNode> it) {
-                      it.invoke(evaluator);
-                    }
-                  });
+                  for (_FunctionTypes._void_P1_E0<? super SNode> listener : ListSequence.fromList(myGenerationListeners)) {
+                    listener.invoke(evaluator);
+                  }
                 }
               } catch (Throwable t) {
                 AbstractEvaluationLogic.LOG.error(t);
