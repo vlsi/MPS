@@ -15,7 +15,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.smodel.IOperationContext;
@@ -343,7 +342,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         }
 
         public void doCommitImpl(final String oldValue, final String newValue) {
-          AbstractConceptDeclaration_Behavior.commitNameProperty_1232962485892(editorContext, oldValue, node, newValue);
+          CommitUtil.commitName(editorContext, oldValue, newValue, node, "concept");
         }
       };
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);

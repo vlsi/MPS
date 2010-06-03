@@ -32,10 +32,6 @@ import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.util.EqualUtil;
-import javax.swing.JOptionPane;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -301,23 +297,6 @@ public class AbstractConceptDeclaration_Behavior {
 
   public static List<SNode> callSuper_getImmediateSuperconcepts_1222430305282(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), callerConceptFqName, "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282);
-  }
-
-  public static void commitNameProperty_1232962485892(EditorContext editorContext, String oldValue, final SNode node, final String newValue) {
-    if (EqualUtil.equals(oldValue, newValue)) {
-      return;
-    }
-    if (oldValue != null) {
-      int result = JOptionPane.showConfirmDialog(editorContext.getNodeEditorComponent(), "Renaming concept can break your model. It's advised to use rename refactoring instead. Are you sure?", "Rename concept", JOptionPane.YES_NO_OPTION);
-      if (result == JOptionPane.NO_OPTION) {
-        return;
-      }
-    }
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        SPropertyOperations.set(node, "name", newValue);
-      }
-    });
   }
 
   public static class QuotationClass_8dqsla_a0a0a0n {

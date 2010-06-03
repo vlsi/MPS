@@ -2207,14 +2207,17 @@
           <link role="property:32" targetNodeId="2.1169194664001:0" resolveInfo="name" />
           <node role="handlerBlock:32" type="jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler:32" id="1216387630009">
             <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216387630010">
-              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1232962560583">
-                <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="1232962560584">
-                  <link role="concept:16" targetNodeId="1.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
-                  <link role="baseMethodDeclaration:16" targetNodeId="34.1232962485892" resolveInfo="commitNameProperty" />
-                  <node role="actualArgument:16" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext:32" id="1232962560585" />
-                  <node role="actualArgument:16" type="jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue:32" id="1232962560586" />
-                  <node role="actualArgument:16" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1232962560587" />
-                  <node role="actualArgument:16" type="jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue:32" id="1232962560588" />
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3547767174814493319">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3547767174814493320">
+                  <link role="classConcept:3" targetNodeId="3557929875030453819" resolveInfo="CommitUtil" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="3557929875030454565" resolveInfo="commitName" />
+                  <node role="actualArgument:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext:32" id="3547767174814493321" />
+                  <node role="actualArgument:3" type="jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue:32" id="3547767174814493322" />
+                  <node role="actualArgument:3" type="jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue:32" id="3547767174814493323" />
+                  <node role="actualArgument:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="3547767174814493324" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3547767174814493325">
+                    <property name="value:3" value="concept" />
+                  </node>
                 </node>
               </node>
             </node>
