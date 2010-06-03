@@ -16,6 +16,8 @@
 package jetbrains.mps.vcs.diff.ui;
 
 
+import com.intellij.openapi.wm.FocusWatcher;
+import com.intellij.ui.FocusTrackback;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.nodeEditor.CellSelectionListener;
@@ -24,10 +26,7 @@ import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.diff.DiffBuilder;
-import jetbrains.mps.vcs.diff.changes.Change;
-import jetbrains.mps.vcs.diff.changes.DeleteNodeChange;
-import jetbrains.mps.vcs.diff.changes.MoveNodeChange;
-import jetbrains.mps.vcs.diff.changes.NewNodeChange;
+import jetbrains.mps.vcs.diff.changes.*;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -40,9 +39,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.intellij.ui.FocusTrackback;
-import com.intellij.openapi.wm.FocusWatcher;
 
 public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwner {
   private JSplitPane myContainer;
@@ -197,6 +193,10 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
       }
     }
     changeToApply.apply(myNewModel);
+    if (changeToApply instanceof AddRootChange) {
+      myNewEditorComponent.editNode(myNewModel.getNodeById(changeToApply.getAffectedNodeId()),
+        myNewEditorComponent.getOperationContext());
+    }
   }
 
   class RevertMenu extends JLabel {
