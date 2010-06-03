@@ -60,7 +60,9 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
 
         SModelDescriptor model = context.getOriginalInputModel();
 
-        myCache.put(model, cache);
+        synchronized (myCache) {
+          myCache.put(model, cache);
+        }
         
         IFile cacheFile = getCacheFile(model);
         if (cacheFile == null) return null;
@@ -91,34 +93,36 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
 
   @Nullable
   public T get(SModelDescriptor sm) {
-    if (myCache.containsKey(sm)) {
-      return myCache.get(sm);
-    }
+    synchronized (myCache) {
+      if (myCache.containsKey(sm)) {
+        return myCache.get(sm);
+      }
 
-    IFile cacheFile = getCacheFile(sm);
+      IFile cacheFile = getCacheFile(sm);
 
-    if (cacheFile == null || !cacheFile.exists()) return null;
+      if (cacheFile == null || !cacheFile.exists()) return null;
 
-    InputStream is = null;
-    try {
-      is = cacheFile.openInputStream();
-      T result = load(is);
-      myCache.put(sm, result);
-      return result;
-    } catch (IOException e) {
-      LOG.error(e);
-    } finally {
+      InputStream is = null;
       try {
-        if (is != null) {
-          is.close();
-        }
+        is = cacheFile.openInputStream();
+        T result = load(is);
+        myCache.put(sm, result);
+        return result;
       } catch (IOException e) {
         LOG.error(e);
+      } finally {
+        try {
+          if (is != null) {
+            is.close();
+          }
+        } catch (IOException e) {
+          LOG.error(e);
+        }
       }
-    }
 
-    myCache.put(sm, null);
-    return null;
+      myCache.put(sm, null);
+      return null;
+    }
   }
 
   @Nullable
