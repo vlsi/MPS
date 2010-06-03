@@ -1379,18 +1379,19 @@ __switch__:
           fireChangeUpdateStarted();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              removeChanges(DeleteNodeChange.class, new _FunctionTypes._return_P1_E0<Boolean, DeleteNodeChange>() {
-                public Boolean invoke(DeleteNodeChange ch) {
-                  return ch.getAffectedNodeId().equals(e.getRoot().getSNodeId());
-                }
-              });
               removeChanges(AddRootChange.class, new _FunctionTypes._return_P1_E0<Boolean, AddRootChange>() {
                 public Boolean invoke(AddRootChange ch) {
                   return ch.getAffectedNodeId().equals(e.getRoot().getSNodeId());
                 }
               });
-
-              addChange(new AddRootChange(e.getRoot().getConceptFqName(), e.getRoot().getSNodeId()), e.getRoot());
+              if (removeChanges(DeleteNodeChange.class, new _FunctionTypes._return_P1_E0<Boolean, DeleteNodeChange>() {
+                public Boolean invoke(DeleteNodeChange ch) {
+                  return ch.getAffectedNodeId().equals(e.getRoot().getSNodeId());
+                }
+              }) == 0) {
+                addChange(new AddRootChange(e.getRoot().getConceptFqName(), e.getRoot().getSNodeId()), e.getRoot());
+              }
+              recursivelyChildAdded(e.getRoot());
             }
           });
           fireChangeUpdateFinished();
@@ -1409,16 +1410,19 @@ __switch__:
           fireChangeUpdateStarted();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
+              recursivelyChildRemoved(e.getRoot());
+              if (removeChanges(AddRootChange.class, new _FunctionTypes._return_P1_E0<Boolean, AddRootChange>() {
+                public Boolean invoke(AddRootChange ch) {
+                  return ObjectUtils.equals(ch.getAffectedNodeId(), e.getRoot().getSNodeId());
+                }
+              }) == 0) {
+                addChange(new DeleteNodeChange(e.getRoot().getSNodeId(), SModelUtils.getNodeIds(e.getRoot().getChildren())), e.getRoot());
+              }
               removeChanges(Change.class, new _FunctionTypes._return_P1_E0<Boolean, Change>() {
                 public Boolean invoke(Change ch) {
                   return ObjectUtils.equals(ch.getAffectedNodeId(), e.getRoot().getSNodeId());
                 }
               });
-              removeChildChanges(e.getRoot().getSNodeId());
-
-              // This method is optimized to order of raising model events: before raising 
-              // rootRemoved() event for node it raises childRemoved() and similar events for all its children 
-              addChange(new DeleteNodeChange(e.getRoot().getSNodeId(), SModelUtils.getNodeIds(e.getRoot().getChildren())), e.getRoot());
             }
           });
           fireChangeUpdateFinished();
