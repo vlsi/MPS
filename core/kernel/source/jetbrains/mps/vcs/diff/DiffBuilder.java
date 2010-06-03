@@ -429,11 +429,7 @@ public class DiffBuilder {
   }
 
   private String getTargetId(SReference ref) {
-    // hey, why we need to get target node?!! especially from old model
-    // bad references from old model produce errors in MPS message view
     if (ref == null) return null;
-    // SNode tn = ref.getTargetNode();
-    // if (tn != null) return tn.getId();
     SNodeId id = ref.getTargetNodeId();
     if (id == null) return null;
     return id.toString();
