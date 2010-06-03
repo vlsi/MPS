@@ -19,6 +19,8 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.smodel.ReferenceTreeNode;
+import jetbrains.mps.ide.ui.smodel.SModelReferenceTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.StereotypeProvider;
 import jetbrains.mps.project.IModule;
@@ -115,7 +117,11 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
         Set<IModule> modules = model.getModules();
         boolean currentModule = modules.contains(myLanguage) || modules.isEmpty();
         IModule module = currentModule ? myLanguage : model.getModule();
-        accessories.add(new SModelTreeNode(model, null, new ModuleContext(module, myProject)));
+        if (!currentModule) {
+          accessories.add(new SModelReferenceTreeNode(model,new ModuleContext(module, myProject)));
+        } else {
+          accessories.add(new SModelTreeNode(model, null, new ModuleContext(module, myProject)));
+        }
       }
       this.add(accessories);
     }
