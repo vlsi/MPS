@@ -22,6 +22,7 @@ import com.intellij.ide.actions.SaveAllAction;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileDocumentManagerAdapter;
+import com.intellij.openapi.vcs.changes.actions.RollbackAction;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
@@ -39,8 +40,8 @@ public class VCSProjectHelper implements ProjectComponent{
             if (!GeneralSettings.getInstance().isSaveOnFrameDeactivation() &&
               !GeneralSettings.getInstance().isAutoSaveIfInactive() &&
               !SModelRepository.getInstance().getChangedModels().isEmpty() &&
-              !isFromSaveAll()) {
-              //todo hack for MPS-2736
+              !isFromSaveAll() && !isFromRollback()) {
+              //todo hack for MPS-2763 & MPS-8565
               return;
             }
 
@@ -53,6 +54,16 @@ public class VCSProjectHelper implements ProjectComponent{
         //todo this is a hack
         for (StackTraceElement e : Thread.getAllStackTraces().get(Thread.currentThread())) {
           if (e.getClassName().equals(SaveAllAction.class.getName()) && e.getMethodName().equals("actionPerformed")) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      private boolean isFromRollback() {
+        //todo this is a hack for MPS-8565
+        for (StackTraceElement e : Thread.getAllStackTraces().get(Thread.currentThread())) {
+          if (e.getClassName().equals(RollbackAction.class.getName()) && e.getMethodName().equals("actionPerformed")) {
             return true;
           }
         }
