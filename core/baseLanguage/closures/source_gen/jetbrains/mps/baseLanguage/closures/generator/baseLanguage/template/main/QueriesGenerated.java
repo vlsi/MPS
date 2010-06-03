@@ -2023,10 +2023,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "function", true);
   }
 
-  public static SNode sourceNodeQuery_7246115176735007941(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "function", true)), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "resultType", true);
-  }
-
   public static SNode sourceNodeQuery_7246115176735007954(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "function", true);
   }
@@ -2521,21 +2517,21 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_4314010248456881346(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode trg = FunctionTypeUtil.getAdaptableTarget(_context, _context.getNode(), ((TemplateQueryContext) _context).getGenerator());
-    SNode ntype = (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType") ?
-      ClassifierTypeUtil.getDeclarationClassifierType(TypeChecker.getInstance().getTypeOf(_context.getNode())) :
-      null
-    );
+    SNode ntype = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
     ntype = (ntype == null ?
       TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true) :
       ntype
     );
     final Map<SNode, SNode> theMap = FunctionTypeUtil.mapAdaptableTargetTVDs(SLinkOperations.getTarget(SNodeOperations.cast(ntype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), trg);
+    System.out.println("*** ntype=" + ntype);
+    System.out.println("*** trg=" + trg);
+    System.out.println("*** theMap=" + theMap);
     final List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(ntype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
     return ListSequence.fromList(SLinkOperations.getTargets(trg, "typeVariableDeclaration", true)).select(new ISelector<SNode, SNode>() {
-      public SNode select(final SNode tvr) {
+      public SNode select(final SNode tvd) {
         return ListSequence.fromList(params).getElement(SNodeOperations.getIndexInParent(MapSequence.fromMap(theMap).findFirst(new IWhereFilter<IMapping<SNode, SNode>>() {
           public boolean accept(IMapping<SNode, SNode> m) {
-            return m.value() == tvr;
+            return m.value() == tvd;
           }
         }).key()));
       }

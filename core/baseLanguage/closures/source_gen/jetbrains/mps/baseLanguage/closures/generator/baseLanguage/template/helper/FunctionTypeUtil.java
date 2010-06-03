@@ -9,7 +9,6 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -53,10 +52,7 @@ public class FunctionTypeUtil {
   }
 
   public static SNode getAdaptableTarget(TemplateQueryContext genContext, SNode expr, ITemplateGenerator generator) {
-    SNode ntype = (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(expr), "jetbrains.mps.baseLanguage.closures.structure.FunctionType") ?
-      ClassifierTypeUtil.getDeclarationClassifierType(TypeChecker.getInstance().getTypeOf(expr)) :
-      null
-    );
+    SNode ntype = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(expr), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
     ntype = (ntype == null ?
       TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expr), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true) :
       ntype

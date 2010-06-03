@@ -1711,22 +1711,10 @@
           </node>
         </node>
       </node>
-      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="2480535601342503189">
-        <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="2480535601342503191">
-          <property name="text:3" value="turn off the rule temporarily" />
-        </node>
-      </node>
-      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="2480535601342503192">
-        <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.StatementCommentPart:3" id="2480535601342503193">
-          <node role="commentedStatement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2480535601342503185">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2480535601342503187">
-              <link role="variableDeclaration:3" targetNodeId="1202757030094" resolveInfo="supertypes" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1202756513407">
-        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2480535601342490705" />
+        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1202757090410">
+          <link role="variableDeclaration:3" targetNodeId="1202757030094" resolveInfo="supertypes" />
+        </node>
       </node>
     </node>
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1202756483922">

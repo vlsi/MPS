@@ -16,8 +16,13 @@
 package jetbrains.mps.internal.collections.runtime;
 
 import java.io.Serializable;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 
+import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.collections.runtime.impl.NullDequeSequence;
 
 public class DequeSequence<T> extends QueueSequence<T> implements Deque<T>, IDequeSequence<T>, Serializable {

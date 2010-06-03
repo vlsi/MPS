@@ -6,7 +6,7 @@ import jetbrains.mps.internalCollections.test.closures.Util_Test;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Arrays;
 import junit.framework.Assert;
@@ -23,7 +23,7 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import java.util.Deque;
+import jetbrains.mps.internal.collections.runtime.backports.Deque;
 
 public class List_Test extends Util_Test {
   public void test_listCreator() throws Exception {

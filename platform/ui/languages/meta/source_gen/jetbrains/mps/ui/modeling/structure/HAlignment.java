@@ -4,7 +4,7 @@ package jetbrains.mps.ui.modeling.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum HAlignment {
   left("left", "LEFT"),

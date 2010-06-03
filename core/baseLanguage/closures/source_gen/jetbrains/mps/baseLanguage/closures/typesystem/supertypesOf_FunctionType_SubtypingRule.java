@@ -47,9 +47,7 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
       ct = ClosureLiteralUtil.fillParams(new supertypesOf_FunctionType_SubtypingRule.QuotationClass_8hodjs_a0a0a0a2a0().createNode(SLinkOperations.getTarget(ft, "runtimeIface", false), typeCheckingContext), ft);
       supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), ct);
     }
-    // turn off the rule temporarily 
-    // <node> 
-    return null;
+    return supertypes;
   }
 
   public String getApplicableConceptFQName() {

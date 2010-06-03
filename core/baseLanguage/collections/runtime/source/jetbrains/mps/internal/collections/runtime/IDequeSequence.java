@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.internal.collections.runtime;
 
-import java.util.Deque;
+import jetbrains.mps.internal.collections.runtime.backports.Deque;
 
 public interface IDequeSequence<T> extends IQueueSequence<T>, Deque<T> {
 

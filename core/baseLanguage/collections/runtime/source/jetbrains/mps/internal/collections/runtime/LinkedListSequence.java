@@ -7,10 +7,13 @@ package jetbrains.mps.internal.collections.runtime;
  * Time: 1:43:40 PM
  * To change this template use File | Settings | File Templates.
  */
+import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.collections.runtime.impl.NullLinkedListSequence;
 import jetbrains.mps.internal.collections.runtime.impl.NullListSequence;
 
 import java.util.*;
+
 
 public class LinkedListSequence<T> extends ListSequence<T> implements ILinkedListSequence<T>, ILinkedList<T> {
 

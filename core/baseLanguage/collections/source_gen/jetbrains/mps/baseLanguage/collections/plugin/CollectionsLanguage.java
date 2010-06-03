@@ -9,8 +9,8 @@ import jetbrains.mps.internal.collections.runtime.QueueSequence;
 
 public class CollectionsLanguage {
   private static CollectionsLanguage INSTANCE;
-  private static Queue<_FunctionTypes._void_P1_E0<? super CollectionsLanguage>> ONINIT_DELAYED_RUNMES;
-  private static Queue<_FunctionTypes._void_P1_E0<? super CollectionsLanguage>> ONDISPOSE_RUNMES;
+  private static Queue<_FunctionTypes._void_P1_E0<CollectionsLanguage>> ONINIT_DELAYED_RUNMES;
+  private static Queue<_FunctionTypes._void_P1_E0<CollectionsLanguage>> ONDISPOSE_RUNMES;
   private static Logger LOG = Logger.getLogger(CollectionsLanguage.class);
 
   /*package*/ CollectionsLanguage() {
@@ -50,7 +50,7 @@ public class CollectionsLanguage {
     return INSTANCE;
   }
 
-  public static void runOnInit(_FunctionTypes._void_P1_E0<? super CollectionsLanguage> runme) {
+  public static void runOnInit(_FunctionTypes._void_P1_E0<CollectionsLanguage> runme) {
     synchronized (CollectionsLanguage.class) {
       if (INSTANCE != null) {
         runme.invoke(INSTANCE);
@@ -60,7 +60,7 @@ public class CollectionsLanguage {
     }
   }
 
-  public static void runOnDispose(_FunctionTypes._void_P1_E0<? super CollectionsLanguage> runme) {
+  public static void runOnDispose(_FunctionTypes._void_P1_E0<CollectionsLanguage> runme) {
     synchronized (CollectionsLanguage.class) {
       QueueSequence.fromQueue(ONINIT_DELAYED_RUNMES).addLastElement(runme);
     }

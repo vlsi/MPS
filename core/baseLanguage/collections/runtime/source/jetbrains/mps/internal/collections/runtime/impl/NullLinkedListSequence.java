@@ -1,8 +1,8 @@
 package jetbrains.mps.internal.collections.runtime.impl;
 
 import jetbrains.mps.internal.collections.runtime.*;
+import jetbrains.mps.internal.collections.runtime.backports.Deque;
 
-import java.util.Deque;
 import java.util.Iterator;
 import java.util.Queue;
 

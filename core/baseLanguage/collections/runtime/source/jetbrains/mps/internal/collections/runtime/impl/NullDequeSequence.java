@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.internal.collections.runtime.impl;
 
-import java.util.Deque;
 import java.util.Iterator;
 
 import jetbrains.mps.internal.collections.runtime.IDequeSequence;
 import jetbrains.mps.internal.collections.runtime.IQueueSequence;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.backports.Deque;
 
 public class NullDequeSequence<T> extends NullQueueSequence<T> implements IDequeSequence<T>, Deque<T> {
     

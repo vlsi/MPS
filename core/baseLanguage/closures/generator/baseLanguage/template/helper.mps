@@ -4726,30 +4726,19 @@
             <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1202818479554">
               <link role="concept:16" targetNodeId="14.1107535904670:3" resolveInfo="ClassifierType" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="772326222507172069">
-              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="772326222507193448">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="772326222507172077">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="772326222507172076">
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6218721514428339343">
+              <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="6218721514428339341">
+                <property name="asCast:16" value="true" />
+                <link role="concept:16" targetNodeId="20.1199542442495:3" resolveInfo="FunctionType" />
+                <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6218721514428318004">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6218721514428318003">
                     <link role="variableDeclaration:3" targetNodeId="1202818455188" resolveInfo="expr" />
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation:3" id="772326222507193444" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="772326222507193455">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="772326222507193460">
-                    <link role="conceptDeclaration:16" targetNodeId="20.1199542442495:3" resolveInfo="FunctionType" />
-                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation:3" id="6218721514428339340" />
                 </node>
               </node>
-              <node role="ifFalse:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="772326222507194928" />
-              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="772326222507193464">
-                <link role="classConcept:3" targetNodeId="23.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
-                <link role="baseMethodDeclaration:3" targetNodeId="23.1202774119632:2" resolveInfo="getDeclarationClassifierType" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="772326222507193469">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="772326222507193470">
-                    <link role="variableDeclaration:3" targetNodeId="1202818455188" resolveInfo="expr" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation:3" id="772326222507193471" />
-                </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="6218721514428339347">
+                <link role="baseMethodDeclaration:16" targetNodeId="28.1230319610063" resolveInfo="getDeclarationRuntimeType" />
               </node>
             </node>
           </node>

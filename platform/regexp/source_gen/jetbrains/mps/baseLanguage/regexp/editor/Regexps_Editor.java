@@ -146,5 +146,9 @@ public class Regexps_Editor extends DefaultNodeEditor {
         }
       }
     }
+
+    public EditorCell createSeparatorCell(EditorContext editorContext) {
+      return super.createSeparatorCell(editorContext);
+    }
   }
 }
