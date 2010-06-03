@@ -13,6 +13,6 @@ import java.util.List;
 public class OrdinaryClassWithReference<U> {
   public Object foo() {
     OrdinaryInterfaceWithNested.Iterator<U> u;
-    return (List<String>) null;
+    return (OrdinaryInterfaceWithNested.Iterator) null;
   }
 }
