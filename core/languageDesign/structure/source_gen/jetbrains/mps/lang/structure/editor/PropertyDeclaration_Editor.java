@@ -12,6 +12,11 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IOperationContext;
@@ -33,7 +38,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lnae77_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_lnae77_a");
-    editorCell.addEditorCell(this.createProperty_lnae77_a0(editorContext, node));
+    editorCell.addEditorCell(this.createTransactionalProperty_lnae77_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lnae77_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_lnae77_c0(editorContext, node));
     if (renderingCondition_lnae77_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -75,19 +80,31 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_lnae77_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createTransactionalProperty_lnae77_a0(final EditorContext editorContext, final SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
-    provider.setNoTargetText("<no name>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_name");
+    EditorCell_Property editorCell = null;
     {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+      ModelAccessor modelAccessor = new TransactionalPropertyAccessor(node, "name", false, true, editorContext) {
+        public void doCommit(final String oldValue, final String newValue) {
+          this.doCommitImpl(oldValue, newValue);
+        }
+
+        public void doCommitImpl(final String oldValue, final String newValue) {
+          CommitUtil.commitName(editorContext, oldValue, newValue, node, "property");
+        }
+      };
+      editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+      editorCell.setCellId("TransactionalProperty_lnae77_a0");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+        style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+      }
+      editorCell.setDefaultText("<no name>");
+      editorCell.setCommitInCommand(false);
     }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -158,7 +175,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
       provider.setReadOnly(true);
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name_1");
+      editorCell.setCellId("property_name");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

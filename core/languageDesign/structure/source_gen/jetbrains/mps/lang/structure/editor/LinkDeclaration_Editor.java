@@ -20,7 +20,9 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -53,7 +55,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
     editorCell.addEditorCell(this.createRefCell_6h6dhy_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6h6dhy_b0(editorContext, node));
+    editorCell.addEditorCell(this.createTransactionalProperty_6h6dhy_b0(editorContext, node));
     if (renderingCondition_6h6dhy_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createProperty_6h6dhy_c0(editorContext, node));
     }
@@ -84,7 +86,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6h6dhy_a_0");
     editorCell.addEditorCell(this.createConstant_6h6dhy_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6h6dhy_b0_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6h6dhy_b0(editorContext, node));
     return editorCell;
   }
 
@@ -138,19 +140,31 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6h6dhy_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createTransactionalProperty_6h6dhy_b0(final EditorContext editorContext, final SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("role");
-    provider.setNoTargetText("<no role>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_role");
+    EditorCell_Property editorCell = null;
     {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BORDER, true);
+      ModelAccessor modelAccessor = new TransactionalPropertyAccessor(node, "role", false, true, editorContext) {
+        public void doCommit(final String oldValue, final String newValue) {
+          this.doCommitImpl(oldValue, newValue);
+        }
+
+        public void doCommitImpl(final String oldValue, final String newValue) {
+          CommitUtil.commitLinkRole(editorContext, oldValue, newValue, node);
+        }
+      };
+      editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+      editorCell.setCellId("TransactionalProperty_6h6dhy_b0");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.DRAW_BORDER, true);
+      }
+      editorCell.setDefaultText("<no role>");
+      editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new LinkDeclaration_Editor.LinkDeclaration_null_postfixCellMenu_a0b0()}));
+      editorCell.setCommitInCommand(false);
     }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new LinkDeclaration_Editor.LinkDeclaration_role_postfixCellMenu_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -184,7 +198,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6h6dhy_b0_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6h6dhy_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("doNotGenerate");
     provider.setNoTargetText("<no doNotGenerate>");
@@ -315,7 +329,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       provider.setReadOnly(true);
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_role_1");
+      editorCell.setCellId("property_role");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -346,8 +360,8 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class LinkDeclaration_role_postfixCellMenu_a0b0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public LinkDeclaration_role_postfixCellMenu_a0b0() {
+  public static class LinkDeclaration_null_postfixCellMenu_a0b0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public LinkDeclaration_null_postfixCellMenu_a0b0() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
