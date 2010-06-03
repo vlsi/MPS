@@ -30,6 +30,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.behavior.IParameter_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IExtractMethodAvailable_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -200,6 +201,8 @@ public class ExtractMethodRefactoringAnalyzer {
   public List<MethodParameter> getInputVariables() {
     Map<SNode, MethodParameter> result = MapSequence.fromMap(new LinkedHashMap<SNode, MethodParameter>(16, (float) 0.75, false));
     this.addDataflowParameters(result);
+    // added to fix problems with closures 
+    addExternalParameters(result);
     for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
       for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IParameter", false, new String[]{}))) {
         SNode expressionType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(parameter), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
@@ -227,6 +230,48 @@ public class ExtractMethodRefactoringAnalyzer {
       this.myProcessor = IExtractMethodAvailable_Behavior.call_getExtractMethodRefactoringProcessor_1221393367929(extractable, this.myPartToExtract);
     } else {
       this.myProcessor = new AbstractExtractMethodRefactoringProcessor(null, this.myPartToExtract);
+    }
+  }
+
+  private void addExternalParameters(Map<SNode, MethodParameter> result) {
+    SNode list = SNodeOperations.getAncestor(ListSequence.fromList(myPartToExtract).getElement(0), "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+    while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(list), "jetbrains.mps.baseLanguage.structure.Statement")) {
+      list = SNodeOperations.getAncestor(list, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+    }
+    Program program = DataFlowManager.getInstance().buildProgramFor(list);
+    Set<Instruction> nodeInstructions = SetSequence.fromSet(new HashSet<Instruction>());
+    for (SNode node : ListSequence.fromList(myPartToExtract)) {
+      SetSequence.fromSet(nodeInstructions).addSequence(ListSequence.fromList(program.getInstructionsFor(node)));
+    }
+    AnalysisResult<Set<WriteInstruction>> reachability = program.analyze(new ReachingDefinitionsAnalyzer());
+    for (Instruction instruction : SetSequence.fromSet(nodeInstructions).where(new IWhereFilter<Instruction>() {
+      public boolean accept(Instruction it) {
+        return it instanceof ReadInstruction;
+      }
+    })) {
+      final ReadInstruction read = (ReadInstruction) instruction;
+      Set<WriteInstruction> writes = reachability.get(read);
+      if (SetSequence.fromSet(writes).where(new IWhereFilter<WriteInstruction>() {
+        public boolean accept(WriteInstruction it) {
+          return it.getVariable() == read.getVariable();
+        }
+      }).isEmpty()) {
+        SNode declaration = ((SNode) read.getVariable());
+        if (MapSequence.fromMap(result).containsKey(declaration)) {
+          continue;
+        }
+        if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
+          continue;
+        }
+        SNode type = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(declaration), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
+        SNode reference;
+        if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+          reference = VariableDeclaration_Behavior.call_createReference_1213877517482(SNodeOperations.cast(declaration, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
+        } else {
+          reference = ((SNode) read.getSource());
+        }
+        MapSequence.fromMap(result).put(declaration, new MethodParameter(declaration, type, SPropertyOperations.getString(declaration, "name"), reference));
+      }
     }
   }
 
