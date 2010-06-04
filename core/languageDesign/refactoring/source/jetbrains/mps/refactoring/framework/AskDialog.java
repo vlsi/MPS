@@ -77,7 +77,7 @@ public class AskDialog extends BaseDialog {
 
   protected void prepareDialog() {
     super.prepareDialog();
-    pack();
+  
     if (myFirstChooser != null) {
       final FocusTraversalPolicy policy = this.getFocusTraversalPolicy();
       this.setFocusTraversalPolicy(new FocusTraversalPolicy() {
