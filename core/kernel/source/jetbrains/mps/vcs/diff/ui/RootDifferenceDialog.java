@@ -67,7 +67,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
 
     }
   };
-  private boolean veiwportSetInPorgress;
+  private boolean myViewportSetInProgress;
 
   public RootDifferenceDialog(Frame parent, final SModel newModel, final SModel oldModel, boolean editable, boolean modal) throws HeadlessException {
     super(parent, "Difference");
@@ -138,13 +138,13 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     result.getViewport().addChangeListener(new ChangeListener() {
 
       public void stateChanged(ChangeEvent e) {
-        if (veiwportSetInPorgress) {
+        if (myViewportSetInProgress) {
           return;
         }
-        veiwportSetInPorgress = true;
+        myViewportSetInProgress = true;
         result.synchronizeViewWith(myNewEditorComponent);
         result.synchronizeViewWith(myOldEditorComponent);
-        veiwportSetInPorgress = false;
+        myViewportSetInProgress = false;
       }
     });
 
