@@ -67,8 +67,11 @@ class RemoveOperation extends VcsOperation {
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
           AbstractVcsHelper helper = AbstractVcsHelper.getInstance(myProject);
-          selectedFilePaths.addAll(helper.selectFilePathsToProcess(myFilePathsToDelete, "Delete Files From Vcs", null, "Delete File From Vcs",
-            "Do you want to delete the following file from Vcs?\n{0}\n\nIf you say NO, you can still delete it later manually.", myConfirmationOption));
+          Collection<FilePath> dialogResult = helper.selectFilePathsToProcess(myFilePathsToDelete, "Delete Files From Vcs", null, "Delete File From Vcs",
+            "Do you want to delete the following file from Vcs?\n{0}\n\nIf you say NO, you can still delete it later manually.", myConfirmationOption);
+          if (dialogResult != null) {
+            selectedFilePaths.addAll(dialogResult);
+          }
         }
       });
       if (!selectedFilePaths.isEmpty()) {

@@ -15,29 +15,25 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.impl.DirectoryIndex;
 import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
-import com.intellij.openapi.vcs.rollback.RollbackEnvironment;
-import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
 import com.intellij.openapi.vcs.changes.*;
 import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
-import com.intellij.openapi.vcs.impl.ExcludedFileIndex;
+import com.intellij.openapi.vcs.rollback.RollbackEnvironment;
+import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.fileTypes.FileTypeManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.vcs.MPSVCSManager.StubChangeListManagerGate;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -138,10 +134,13 @@ class AddOperation extends VcsOperation {
         ThreadUtils.runInUIThreadAndWait(new Runnable() {
           @Override
           public void run() {
-            filesToProcess.addAll(helper.selectFilesToProcess(virtualFileList, "Add Files To Vcs", null,
+            Collection<VirtualFile> dialogResult = helper.selectFilesToProcess(virtualFileList, "Add Files To Vcs", null,
               "Add File To Vcs",
               "Do you want to add the following file to Vcs?\n{0}\n\nIf you say NO, you can still add it later manually.",
-              myConfirmationOption));
+              myConfirmationOption);
+            if (dialogResult != null) {
+              filesToProcess.addAll(dialogResult);
+            }
           }
         });
       }
