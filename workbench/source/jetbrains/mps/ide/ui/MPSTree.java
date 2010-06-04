@@ -521,13 +521,13 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   private String pathToString(TreePath path) {
-    String result = "";
+    StringBuffer result = new StringBuffer();
     for (int i = 1; i < path.getPathCount(); i++) {
       MPSTreeNode node = (MPSTreeNode) path.getPathComponent(i);
-      result += TREE_PATH_SEPARATOR + node.getNodeIdentifier().replaceAll(TREE_PATH_SEPARATOR, "-");
+      result.append(TREE_PATH_SEPARATOR).append(node.getNodeIdentifier().replaceAll(TREE_PATH_SEPARATOR, "-"));
     }
-    if (result.equals("")) result = TREE_PATH_SEPARATOR;
-    return result;
+    if (result.length() == 0) return TREE_PATH_SEPARATOR;
+    return result.toString();
   }
 
   public TreeNode findNodeWith(Object userObject) {
