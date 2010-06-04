@@ -49,4 +49,8 @@ public class SModelReferenceTreeNode extends MPSTreeNode {
       }
     });
   }
+
+  public boolean isLeaf() {
+    return true;
+  }
 }
