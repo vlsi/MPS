@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1205921340852(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier","jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"}, true, false) != null;
+    return SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"}, true, false) != null;
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ThisClassifierExpression_1219068300393(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -41,7 +41,7 @@ public class QueriesGenerated {
     {
       Calculable calc = new Calculable() {
         public Object calculate() {
-          SNode contextPart = SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier","jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"}, true, false);
+          SNode contextPart = SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"}, true, false);
           if (SNodeOperations.isInstanceOf(contextPart, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")) {
             return SNodeOperations.cast(contextPart, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier");
           } else {
@@ -54,7 +54,7 @@ public class QueriesGenerated {
     {
       Calculable calc = new Calculable() {
         public Object calculate() {
-          return ListSequence.fromList(SNodeOperations.getAncestorsWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier","jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart","jetbrains.mps.baseLanguage.structure.Classifier"}, true)).count() > 1;
+          return ListSequence.fromList(SNodeOperations.getAncestorsWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart", "jetbrains.mps.baseLanguage.structure.Classifier"}, true)).count() > 1;
         }
       };
       multipleClassifiers = (Boolean) calc.calculate();

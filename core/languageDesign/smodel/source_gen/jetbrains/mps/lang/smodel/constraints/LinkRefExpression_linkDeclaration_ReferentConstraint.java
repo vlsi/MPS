@@ -9,6 +9,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.AbstractSearchScope;
+import org.jetbrains.annotations.NotNull;
+import java.util.List;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Condition;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class LinkRefExpression_linkDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -25,6 +32,24 @@ public class LinkRefExpression_linkDeclaration_ReferentConstraint extends BaseNo
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(_context.getReferenceNode(), "conceptDeclaration", false));
+  }
+
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    return new AbstractSearchScope() {
+      @NotNull
+      public List<SNode> getNodes(Condition<SNode> condition) {
+        Iterable<SNode> seq = (Iterable<SNode>) createSearchScopeOrListOfNodes(operationContext, _context);
+        List<SNode> result = new ArrayList<SNode>();
+        if (seq != null) {
+          for (SNode node : seq) {
+            if (condition.met(node)) {
+              result.add(node);
+            }
+          }
+        }
+        return result;
+      }
+    };
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

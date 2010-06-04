@@ -98,10 +98,6 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
         }
       }
     }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
   }
 
   public static class PositiveSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

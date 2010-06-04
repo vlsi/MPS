@@ -180,10 +180,6 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
         }
       }
     }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
   }
 
   public static class NamedTupleComponentDeclaration_name_postfixCellMenu_a0d0 extends AbstractCellMenuPart_PropertyPostfixHints {

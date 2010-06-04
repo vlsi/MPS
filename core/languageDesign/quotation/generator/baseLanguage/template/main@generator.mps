@@ -3487,7 +3487,7 @@
                           </node>
                           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1196351887504">
                             <link role="classConcept:3" targetNodeId="20.~HUtil" resolveInfo="HUtil" />
-                            <link role="baseMethodDeclaration:3" targetNodeId="20.~HUtil.copyIfNecessary(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.INodeAdapter" resolveInfo="copyIfNecessary" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="20.~HUtil.copyIfNecessary(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="copyIfNecessary" />
                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1196351887505">
                               <link role="variableDeclaration:3" targetNodeId="1196351887459" resolveInfo="child" />
                             </node>

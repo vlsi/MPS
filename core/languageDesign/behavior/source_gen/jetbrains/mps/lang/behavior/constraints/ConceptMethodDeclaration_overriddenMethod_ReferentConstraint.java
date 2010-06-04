@@ -16,6 +16,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.AbstractSearchScope;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.Condition;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptMethodDeclaration_overriddenMethod_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints, INodeReferentSetEventHandler {
@@ -49,6 +54,24 @@ public class ConceptMethodDeclaration_overriddenMethod_ReferentConstraint extend
     SNode concept = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false), "concept", false);
     List<SNode> methods = AbstractConceptDeclaration_Behavior.call_getVirtualConceptMethods_1213877394290(concept, operationContext.getScope());
     return methods;
+  }
+
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    return new AbstractSearchScope() {
+      @NotNull
+      public List<SNode> getNodes(Condition<SNode> condition) {
+        Iterable<SNode> seq = (Iterable<SNode>) createSearchScopeOrListOfNodes(operationContext, _context);
+        List<SNode> result = new ArrayList<SNode>();
+        if (seq != null) {
+          for (SNode node : seq) {
+            if (condition.met(node)) {
+              result.add(node);
+            }
+          }
+        }
+        return result;
+      }
+    };
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

@@ -9,6 +9,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.AbstractSearchScope;
+import org.jetbrains.annotations.NotNull;
+import java.util.List;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Condition;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class NodeKindSpecificCase_treeNodeKind_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -25,6 +32,24 @@ public class NodeKindSpecificCase_treeNodeKind_ReferentConstraint extends BaseNo
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.SwitchNodeKindStatement"), "nodeExpression", true), "treepathAspect", false), "nodeKinds", true);
+  }
+
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    return new AbstractSearchScope() {
+      @NotNull
+      public List<SNode> getNodes(Condition<SNode> condition) {
+        Iterable<SNode> seq = (Iterable<SNode>) createSearchScopeOrListOfNodes(operationContext, _context);
+        List<SNode> result = new ArrayList<SNode>();
+        if (seq != null) {
+          for (SNode node : seq) {
+            if (condition.met(node)) {
+              result.add(node);
+            }
+          }
+        }
+        return result;
+      }
+    };
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

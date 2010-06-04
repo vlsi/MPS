@@ -15,6 +15,11 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.AbstractSearchScope;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.Condition;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class SLinkAccess_link_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -38,6 +43,24 @@ public class SLinkAccess_link_ReferentConstraint extends BaseNodeReferenceSearch
         return LinkDeclaration_Behavior.call_isSingular_1213877254557(it);
       }
     });
+  }
+
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    return new AbstractSearchScope() {
+      @NotNull
+      public List<SNode> getNodes(Condition<SNode> condition) {
+        Iterable<SNode> seq = (Iterable<SNode>) createSearchScopeOrListOfNodes(operationContext, _context);
+        List<SNode> result = new ArrayList<SNode>();
+        if (seq != null) {
+          for (SNode node : seq) {
+            if (condition.met(node)) {
+              result.add(node);
+            }
+          }
+        }
+        return result;
+      }
+    };
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

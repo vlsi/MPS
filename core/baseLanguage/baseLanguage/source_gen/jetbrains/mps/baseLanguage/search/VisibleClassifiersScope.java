@@ -31,7 +31,7 @@ public class VisibleClassifiersScope extends ReachableClassifiersScope {
     List<Classifier> list = super.getClassifiers();
     List<Classifier> result = new ArrayList<Classifier>();
     for (Classifier classifier : list) {
-      if (VisibilityUtil.isAccessible(myContextNode, SNodeOperations.cast(BaseAdapter.fromAdapter(classifier), "jetbrains.mps.baseLanguage.structure.IVisible"))) {
+      if (VisibilityUtil.isVisible(myContextNode, SNodeOperations.cast(BaseAdapter.fromAdapter(classifier), "jetbrains.mps.baseLanguage.structure.IVisible"))) {
         result.add(classifier);
       }
       /*
@@ -55,6 +55,6 @@ public class VisibleClassifiersScope extends ReachableClassifiersScope {
     if ((getConstraint() & NON_FINAL) != 0 && SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "isFinal")) {
       return false;
     }
-    return VisibilityUtil.isAccessible(myContextNode, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IVisible"));
+    return VisibilityUtil.isVisible(myContextNode, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IVisible"));
   }
 }

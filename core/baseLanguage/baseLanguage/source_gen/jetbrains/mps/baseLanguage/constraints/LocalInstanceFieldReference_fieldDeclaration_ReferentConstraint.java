@@ -21,6 +21,10 @@ import java.util.HashSet;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.AbstractSearchScope;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class LocalInstanceFieldReference_fieldDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -47,7 +51,10 @@ public class LocalInstanceFieldReference_fieldDeclaration_ReferentConstraint ext
     int constraint = IClassifiersSearchScope.INSTANCE_FIELD;
     Set<String> names = SetSequence.fromSet(new HashSet<String>());
     while (classifier != null) {
-      for (SNode field : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, _context.getEnclosingNode(), constraint)) {
+      for (SNode field : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, ((_context.getReferenceNode() != null) ?
+        _context.getReferenceNode() :
+        _context.getEnclosingNode()
+      ), constraint)) {
         boolean hasNameSakes = false;
         for (SNode var : vars) {
           if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.lang.core.structure.INamedConcept") && SPropertyOperations.getString(field, "name") != null && SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"))) {
@@ -65,6 +72,24 @@ public class LocalInstanceFieldReference_fieldDeclaration_ReferentConstraint ext
       classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     }
     return result;
+  }
+
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    return new AbstractSearchScope() {
+      @NotNull
+      public List<SNode> getNodes(Condition<SNode> condition) {
+        Iterable<SNode> seq = (Iterable<SNode>) createSearchScopeOrListOfNodes(operationContext, _context);
+        List<SNode> result = new ArrayList<SNode>();
+        if (seq != null) {
+          for (SNode node : seq) {
+            if (condition.met(node)) {
+              result.add(node);
+            }
+          }
+        }
+        return result;
+      }
+    };
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

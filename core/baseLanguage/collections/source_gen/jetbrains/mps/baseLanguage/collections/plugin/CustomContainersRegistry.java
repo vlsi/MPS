@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SModelRepository;
 public class CustomContainersRegistry {
   /*package*/ static CustomContainersRegistry INSTANCE = new CustomContainersRegistry();
 
-  private List<_FunctionTypes._return_P0_E0<List<SNode>>> providers = ListSequence.fromList(new ArrayList<_FunctionTypes._return_P0_E0<List<SNode>>>());
+  private List<_FunctionTypes._return_P0_E0<? extends List<SNode>>> providers = ListSequence.fromList(new ArrayList<_FunctionTypes._return_P0_E0<? extends List<SNode>>>());
 
   private CustomContainersRegistry() {
   }
@@ -58,13 +58,13 @@ public class CustomContainersRegistry {
     return res;
   }
 
-  public void registerProvider(_FunctionTypes._return_P0_E0<List<SNode>> prov) {
+  public void registerProvider(_FunctionTypes._return_P0_E0<? extends List<SNode>> prov) {
     synchronized (this) {
       ListSequence.fromList(this.providers).addElement(prov);
     }
   }
 
-  public void unRegisterProvider(_FunctionTypes._return_P0_E0<List<SNode>> prov) {
+  public void unRegisterProvider(_FunctionTypes._return_P0_E0<? extends List<SNode>> prov) {
     synchronized (this) {
       ListSequence.fromList(this.providers).removeElement(prov);
     }
@@ -79,12 +79,12 @@ public class CustomContainersRegistry {
   }
 
   private Iterable<SNode> primAllCustomContainers() {
-    List<_FunctionTypes._return_P0_E0<List<SNode>>> providersCopy;
+    List<_FunctionTypes._return_P0_E0<? extends List<SNode>>> providersCopy;
     synchronized (this) {
-      providersCopy = ListSequence.fromListWithValues(new ArrayList<_FunctionTypes._return_P0_E0<List<SNode>>>(), this.providers);
+      providersCopy = ListSequence.fromListWithValues(new ArrayList<_FunctionTypes._return_P0_E0<? extends List<SNode>>>(), this.providers);
     }
-    return ListSequence.fromList(providersCopy).translate(new ITranslator2<_FunctionTypes._return_P0_E0<List<SNode>>, SNode>() {
-      public Iterable<SNode> translate(_FunctionTypes._return_P0_E0<List<SNode>> prov) {
+    return ListSequence.fromList(providersCopy).translate(new ITranslator2<_FunctionTypes._return_P0_E0<? extends List<SNode>>, SNode>() {
+      public Iterable<SNode> translate(_FunctionTypes._return_P0_E0<? extends List<SNode>> prov) {
         return prov.invoke();
       }
     });

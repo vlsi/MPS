@@ -3101,7 +3101,7 @@
       <link role="applicableConcept:2" targetNodeId="8.3358009230509553641:7" resolveInfo="LinkedListType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="2458725063871595316">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2458725063871595321">
-          <link role="classifier:3" targetNodeId="34.~Deque" resolveInfo="Deque" />
+          <link role="classifier:3" targetNodeId="1.~Deque" resolveInfo="Deque" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="2458725063871595322">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="2458725063871595332">
               <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="2458725063871595333">
@@ -3157,7 +3157,7 @@
       <link role="applicableConcept:2" targetNodeId="8.3357971920378033937:7" resolveInfo="DequeType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3358009230509158283">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3358009230509158288">
-          <link role="classifier:3" targetNodeId="34.~Deque" resolveInfo="Deque" />
+          <link role="classifier:3" targetNodeId="1.~Deque" resolveInfo="Deque" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="3358009230509158290">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="3358009230509158291">
               <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="3358009230509158292">
@@ -3185,7 +3185,7 @@
       <link role="applicableConcept:2" targetNodeId="8.6801639034384703212:7" resolveInfo="StackType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3358009230509158301">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3358009230509158304">
-          <link role="classifier:3" targetNodeId="34.~Deque" resolveInfo="Deque" />
+          <link role="classifier:3" targetNodeId="1.~Deque" resolveInfo="Deque" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="3358009230509158306">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="3358009230509158307">
               <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="3358009230509158308">
@@ -10729,7 +10729,7 @@
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="169948565230101792">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="169948565230104576">
           <link role="classConcept:3" targetNodeId="13.~LinkedListSequence" resolveInfo="LinkedListSequence" />
-          <link role="baseMethodDeclaration:3" targetNodeId="13.~LinkedListSequence.fromLinkedList(jetbrains.mps.internal.collections.runtime.backports.Deque):jetbrains.mps.internal.collections.runtime.ILinkedListSequence" resolveInfo="fromLinkedList" />
+          <link role="baseMethodDeclaration:3" targetNodeId="13.~LinkedListSequence.fromLinkedList(java.util.Deque):jetbrains.mps.internal.collections.runtime.ILinkedListSequence" resolveInfo="fromLinkedList" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="169948565230113126">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="169948565230113127">
               <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="169948565230113128">
@@ -10768,8 +10768,8 @@
       <link role="applicableConcept:2" targetNodeId="6.1068431790191:3" resolveInfo="Expression" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3444116434174032582">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3444116434174032585">
-          <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDeque(jetbrains.mps.internal.collections.runtime.backports.Deque):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDeque" />
           <link role="classConcept:3" targetNodeId="13.~DequeSequence" resolveInfo="DequeSequence" />
+          <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDeque(java.util.Deque):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDeque" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="3444116434174032601">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="3444116434174032602">
               <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="3444116434174032603">
@@ -11252,8 +11252,8 @@
       <link role="applicableConcept:2" targetNodeId="6.1068431790191:3" resolveInfo="Expression" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3358009230509159546">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3358009230509159607">
-          <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDeque(jetbrains.mps.internal.collections.runtime.backports.Deque):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDeque" />
           <link role="classConcept:3" targetNodeId="13.~DequeSequence" resolveInfo="DequeSequence" />
+          <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDeque(java.util.Deque):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDeque" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="3358009230509159608">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="3358009230509159609">
               <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="3358009230509159610">
@@ -11819,7 +11819,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3444116434174665359">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="169948565229337552">
               <link role="classConcept:3" targetNodeId="13.~LinkedListSequence" resolveInfo="LinkedListSequence" />
-              <link role="baseMethodDeclaration:3" targetNodeId="13.~LinkedListSequence.fromListAndArray(jetbrains.mps.internal.collections.runtime.backports.LinkedList,java.lang.Object...):jetbrains.mps.internal.collections.runtime.ILinkedListSequence" resolveInfo="fromListAndArray" />
+              <link role="baseMethodDeclaration:3" targetNodeId="13.~LinkedListSequence.fromListAndArray(java.util.LinkedList,java.lang.Object...):jetbrains.mps.internal.collections.runtime.ILinkedListSequence" resolveInfo="fromListAndArray" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="169948565229337553">
                 <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="169948565229337554">
                   <link role="templateSwitch:2" targetNodeId="3444116434173277285" resolveInfo="switch_creator_Collection" />
@@ -11900,7 +11900,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3444116434174666877">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="169948565229337883">
               <link role="classConcept:3" targetNodeId="13.~LinkedListSequence" resolveInfo="LinkedListSequence" />
-              <link role="baseMethodDeclaration:3" targetNodeId="13.~LinkedListSequence.fromListAndArray(jetbrains.mps.internal.collections.runtime.backports.LinkedList,java.lang.Object...):jetbrains.mps.internal.collections.runtime.ILinkedListSequence" resolveInfo="fromListAndArray" />
+              <link role="baseMethodDeclaration:3" targetNodeId="13.~LinkedListSequence.fromListAndArray(java.util.LinkedList,java.lang.Object...):jetbrains.mps.internal.collections.runtime.ILinkedListSequence" resolveInfo="fromListAndArray" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="169948565229337884">
                 <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="169948565229337885">
                   <link role="templateSwitch:2" targetNodeId="3444116434173277285" resolveInfo="switch_creator_Collection" />
@@ -11981,7 +11981,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3444116434174667184">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="169948565229338219">
               <link role="classConcept:3" targetNodeId="13.~LinkedListSequence" resolveInfo="LinkedListSequence" />
-              <link role="baseMethodDeclaration:3" targetNodeId="13.~LinkedListSequence.fromListWithValues(jetbrains.mps.internal.collections.runtime.backports.LinkedList,java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ILinkedListSequence" resolveInfo="fromListWithValues" />
+              <link role="baseMethodDeclaration:3" targetNodeId="13.~LinkedListSequence.fromListWithValues(java.util.LinkedList,java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ILinkedListSequence" resolveInfo="fromListWithValues" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="169948565229338220">
                 <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="169948565229338221">
                   <link role="templateSwitch:2" targetNodeId="3444116434173277285" resolveInfo="switch_creator_Collection" />
@@ -12045,7 +12045,7 @@
         <node role="defaultConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3444116434174665049">
           <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="169948565231079816">
             <link role="classConcept:3" targetNodeId="13.~LinkedListSequence" resolveInfo="LinkedListSequence" />
-            <link role="baseMethodDeclaration:3" targetNodeId="13.~LinkedListSequence.fromLinkedList(jetbrains.mps.internal.collections.runtime.backports.Deque):jetbrains.mps.internal.collections.runtime.ILinkedListSequence" resolveInfo="fromLinkedList" />
+            <link role="baseMethodDeclaration:3" targetNodeId="13.~LinkedListSequence.fromLinkedList(java.util.Deque):jetbrains.mps.internal.collections.runtime.ILinkedListSequence" resolveInfo="fromLinkedList" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="169948565231079817">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="169948565231079818">
                 <link role="templateSwitch:2" targetNodeId="3444116434173277285" resolveInfo="switch_creator_Collection" />
@@ -12096,8 +12096,8 @@
           </node>
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3002214349487692173">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3002214349487694479">
-              <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDequeAndArray(jetbrains.mps.internal.collections.runtime.backports.Deque,java.lang.Object...):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDequeAndArray" />
               <link role="classConcept:3" targetNodeId="13.~DequeSequence" resolveInfo="DequeSequence" />
+              <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDequeAndArray(java.util.Deque,java.lang.Object...):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDequeAndArray" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="3002214349487694480">
                 <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="3002214349487694481">
                   <link role="templateSwitch:2" targetNodeId="3444116434173277285" resolveInfo="switch_creator_Collection" />
@@ -12177,8 +12177,8 @@
           </node>
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3002214349487692209">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3002214349487694632">
-              <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDequeAndArray(jetbrains.mps.internal.collections.runtime.backports.Deque,java.lang.Object...):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDequeAndArray" />
               <link role="classConcept:3" targetNodeId="13.~DequeSequence" resolveInfo="DequeSequence" />
+              <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDequeAndArray(java.util.Deque,java.lang.Object...):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDequeAndArray" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="3002214349487694633">
                 <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="3002214349487694634">
                   <link role="templateSwitch:2" targetNodeId="3444116434173277285" resolveInfo="switch_creator_Collection" />
@@ -12258,8 +12258,8 @@
           </node>
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3002214349487692245">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3002214349487694727">
-              <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDequeWithValues(jetbrains.mps.internal.collections.runtime.backports.Deque,java.lang.Iterable):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDequeWithValues" />
               <link role="classConcept:3" targetNodeId="13.~DequeSequence" resolveInfo="DequeSequence" />
+              <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDequeWithValues(java.util.Deque,java.lang.Iterable):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDequeWithValues" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="3002214349487694728">
                 <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="3002214349487694729">
                   <link role="templateSwitch:2" targetNodeId="3444116434173277285" resolveInfo="switch_creator_Collection" />
@@ -12322,8 +12322,8 @@
         </node>
         <node role="defaultConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3444116434174665066">
           <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3444116434174665067">
-            <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDeque(jetbrains.mps.internal.collections.runtime.backports.Deque):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDeque" />
             <link role="classConcept:3" targetNodeId="13.~DequeSequence" resolveInfo="DequeSequence" />
+            <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDeque(java.util.Deque):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDeque" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="3444116434174665068">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="3444116434174665069">
                 <link role="templateSwitch:2" targetNodeId="3444116434173277285" resolveInfo="switch_creator_Collection" />
@@ -12375,7 +12375,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3002214349487694765">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3002214349487694766">
               <link role="classConcept:3" targetNodeId="13.~DequeSequence" resolveInfo="DequeSequence" />
-              <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDequeAndArray(jetbrains.mps.internal.collections.runtime.backports.Deque,java.lang.Object...):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDequeAndArray" />
+              <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDequeAndArray(java.util.Deque,java.lang.Object...):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDequeAndArray" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="3002214349487694767">
                 <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="3002214349487694768">
                   <link role="templateSwitch:2" targetNodeId="3444116434173277285" resolveInfo="switch_creator_Collection" />
@@ -12456,7 +12456,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3002214349487694801">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3002214349487694802">
               <link role="classConcept:3" targetNodeId="13.~DequeSequence" resolveInfo="DequeSequence" />
-              <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDequeAndArray(jetbrains.mps.internal.collections.runtime.backports.Deque,java.lang.Object...):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDequeAndArray" />
+              <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDequeAndArray(java.util.Deque,java.lang.Object...):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDequeAndArray" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="3002214349487694803">
                 <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="3002214349487694804">
                   <link role="templateSwitch:2" targetNodeId="3444116434173277285" resolveInfo="switch_creator_Collection" />
@@ -12537,7 +12537,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3002214349487694837">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3002214349487694838">
               <link role="classConcept:3" targetNodeId="13.~DequeSequence" resolveInfo="DequeSequence" />
-              <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDequeWithValues(jetbrains.mps.internal.collections.runtime.backports.Deque,java.lang.Iterable):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDequeWithValues" />
+              <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDequeWithValues(java.util.Deque,java.lang.Iterable):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDequeWithValues" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="3002214349487694839">
                 <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="3002214349487694840">
                   <link role="templateSwitch:2" targetNodeId="3444116434173277285" resolveInfo="switch_creator_Collection" />
@@ -12601,7 +12601,7 @@
         <node role="defaultConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3444116434174665083">
           <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3444116434174665084">
             <link role="classConcept:3" targetNodeId="13.~DequeSequence" resolveInfo="DequeSequence" />
-            <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDeque(jetbrains.mps.internal.collections.runtime.backports.Deque):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDeque" />
+            <link role="baseMethodDeclaration:3" targetNodeId="13.~DequeSequence.fromDeque(java.util.Deque):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromDeque" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="3444116434174665085">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="3444116434174665086">
                 <link role="templateSwitch:2" targetNodeId="3444116434173277285" resolveInfo="switch_creator_Collection" />
@@ -13779,7 +13779,7 @@
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3444116434173277316">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3444116434173277318">
           <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3444116434173277319">
-            <link role="baseMethodDeclaration:3" targetNodeId="34.~LinkedList.&lt;init&gt;()" resolveInfo="LinkedList" />
+            <link role="baseMethodDeclaration:3" targetNodeId="1.~LinkedList.&lt;init&gt;()" resolveInfo="LinkedList" />
             <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="3444116434173277320">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="3444116434173277321">
                 <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="3444116434173277322">
@@ -14418,7 +14418,7 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1279588871815121496">
                     <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1279588871815121497">
                       <link role="classConcept:3" targetNodeId="12.~CopyUtil" resolveInfo="CopyUtil" />
-                      <link role="baseMethodDeclaration:3" targetNodeId="12.~CopyUtil.copy(jetbrains.mps.smodel.BaseAdapter):jetbrains.mps.smodel.BaseAdapter" resolveInfo="copy" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="12.~CopyUtil.copy(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="copy" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1279588871815121498">
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1279588871815121499">
                           <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1279588871815121500" />

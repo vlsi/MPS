@@ -57,7 +57,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     if (myContextNode == null || !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IVisible"))) {
       return super.isInScope(node);
     }
-    return VisibilityUtil.isAccessible(myContextNode, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IVisible"));
+    return VisibilityUtil.isVisible(myContextNode, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IVisible"));
   }
 
   private List<SNode> getClassifierMembers() {
@@ -65,7 +65,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode memberNode : members) {
       SNode member = SNodeOperations.cast(memberNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
-      if (VisibilityUtil.isAccessible(this.myContextNode, member)) {
+      if (VisibilityUtil.isVisible(this.myContextNode, member)) {
         ListSequence.fromList(result).addElement(member);
       }
     }

@@ -15,16 +15,21 @@
  */
 package jetbrains.mps.smodel.constraints;
 
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.search.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseNodeReferenceSearchScopeProvider implements INodeReferentSearchScopeProvider {
+public abstract class BaseNodeReferenceSearchScopeProvider implements INodeReferentSearchScopeProvider{
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new UndefinedSearchScope();
   }
@@ -37,7 +42,7 @@ public abstract class BaseNodeReferenceSearchScopeProvider implements INodeRefer
     throw new UnsupportedOperationException();
   }
 
-  private ISearchScope createNodeReferentSearchScope0(IOperationContext operationContext, ReferentConstraintContext _context) {
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     Object searchScopeOrListOfNodes = this.createSearchScopeOrListOfNodes(operationContext, _context);
     if (searchScopeOrListOfNodes == null) {
       return new EmptySearchScope();
@@ -54,17 +59,6 @@ public abstract class BaseNodeReferenceSearchScopeProvider implements INodeRefer
       return new SimpleSearchScope(CollectionUtil.asList((Iterable) searchScopeOrListOfNodes));
     }
     throw new RuntimeException("unexpected type in search-scope provider " + searchScopeOrListOfNodes.getClass());
-  }
-
-  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    if (hasValidator())
-      return new WrappedSearchScope(createNodeReferentSearchScope0(operationContext, _context)) {
-        public boolean isInScope(final SNode node) {
-          return validate(operationContext, new ValidatorReferentConstraintContext(_context, node));
-        }
-      };
-    else
-      return createNodeReferentSearchScope0(operationContext, _context);
   }
 
   public boolean hasPresentation() {
