@@ -17,11 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
-import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
-import jetbrains.mps.generator.dependencies.DefaultDependenciesBuilder;
 import jetbrains.mps.generator.dependencies.DependenciesBuilder;
-import jetbrains.mps.generator.dependencies.DependenciesBuilder.NullDependenciesBuilder;
-import jetbrains.mps.generator.index.ModelDigestUtil;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.ide.messages.NodeWithContext;
@@ -39,7 +35,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Igor Alshannikov
@@ -90,10 +85,12 @@ public class GenerationSession {
       // throw new GenerationCanceledException();
     }
 
-    myDependenciesBuilder =
-      myGenerationContext.isGenerateDependencies()
-        ? new DefaultDependenciesBuilder(myOriginalInputModel.getSModel(), ModelDigestUtil.getGenerationHashes(myOriginalInputModel, myInvocationContext.getProject()))
-        : new NullDependenciesBuilder();
+    GenerationFilter filter = new GenerationFilter(myOriginalInputModel, myInvocationContext.getProject(), myGenerationContext);
+    myDependenciesBuilder = filter.createDependenciesBuilder();
+
+    if(myLogger.needsInfo() && !filter.getUnchangedRoots().isEmpty()) {
+      myLogger.info(filter.getUnchangedRoots().size() + " roots are unchanged");
+    }
 
     try {
       SModel currInputModel = myOriginalInputModel.getSModel();
@@ -461,11 +458,11 @@ public class GenerationSession {
           if(mySessionContext == null) return;
           Object o = e.getHintObject();
           if (o instanceof SNode) {
-            mySessionContext.keepTransientModel(((SNode) o).getModel());
+            mySessionContext.keepTransientModel(((SNode) o).getModel(), false);
           } else if (o instanceof NodeWithContext) {
             SNode node = ((NodeWithContext) o).getNode();
             if (node != null) {
-              mySessionContext.keepTransientModel(node.getModel());
+              mySessionContext.keepTransientModel(node.getModel(), false);
             }
           }
         }

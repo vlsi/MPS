@@ -137,11 +137,11 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     }
   }
 
-  public boolean addModelToKeep(SModel model) {
+  public boolean addModelToKeep(SModel model, boolean force) {
     assert model instanceof TransientSModel;
     int modelsToKeep = GenerationSettings.getInstance().getNumberOfModelsToKeep();
     synchronized (myModelsToKeep) {
-      if(modelsToKeep >= 0 && myModelsToKeep.size() >= modelsToKeep) {
+      if((modelsToKeep >= 0 && myModelsToKeep.size() >= modelsToKeep) && !force) {
         // maximum number of models reached
         return myModelsToKeep.contains(model.getSModelReference().toString());
       }

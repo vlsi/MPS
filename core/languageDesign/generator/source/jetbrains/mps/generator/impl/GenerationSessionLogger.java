@@ -160,7 +160,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
       if(isWarning && !myKeepModelsWithWarnings) {
         return false;
       }
-      return myOperationContext.keepTransientModel(model);
+      return myOperationContext.keepTransientModel(model, false);
     }
     return true;
   }

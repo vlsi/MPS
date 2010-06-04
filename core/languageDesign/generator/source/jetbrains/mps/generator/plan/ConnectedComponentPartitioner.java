@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.plan;
 
+import jetbrains.mps.generator.util.GraphUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 

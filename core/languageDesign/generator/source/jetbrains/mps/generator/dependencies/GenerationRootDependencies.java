@@ -1,14 +1,19 @@
 package jetbrains.mps.generator.dependencies;
 
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import org.jdom.Attribute;
 import org.jdom.Element;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 /**
 * Evgeny Gryaznov, Jun 1, 2010
 */
-class GenerationRootDependencies {
+public class GenerationRootDependencies {
 
   private static final String ATTR_ID = "id";
   private static final String ATTR_NAME = "name";
@@ -44,6 +49,10 @@ class GenerationRootDependencies {
 
   public String getRootName() {
     return myRootName;
+  }
+
+  public String getHash() {
+    return myHash;
   }
 
   public boolean isDependsOnConditionals() {
@@ -92,8 +101,58 @@ class GenerationRootDependencies {
     }
   }
 
-  public static GenerationRootDependencies fromXml(Element element) {
-    // TODO
-    return null;
+  private static String getValue(Element e, String attrId) {
+    Attribute attr = e.getAttribute(attrId);
+    return attr == null ? null : attr.getValue();
+  }
+
+  public static GenerationRootDependencies fromXml(Element element, boolean isCommon) {
+    String rootId = isCommon ? null : getValue(element, ATTR_ID);
+    String rootName = getValue(element, ATTR_NAME);
+    String rootHash = getValue(element, ATTR_HASH);
+    boolean dependsOnConditionals = "true".equals(getValue(element, ATTR_DEPENDS_ON_CONDITIONALS));
+    List<String> local = new ArrayList<String>();
+    List<String> external = new ArrayList<String>();
+    List<String> files = new ArrayList<String>();
+    for (Element e : ((List<Element>) element.getChildren(NODE_DEPENDS_ON))) {
+      Attribute attr = e.getAttribute(ATTR_ROOT_ID);
+      if(attr != null) {
+        local.add(attr.getValue());
+      } else if((attr = e.getAttribute(ATTR_MODEL_ID)) != null) {
+        external.add(attr.getValue());
+      }
+    }
+    for (Element e : ((List<Element>) element.getChildren(NODE_FILE))) {
+      String v = getValue(e, ATTR_NAME);
+      if(v != null) {
+        files.add(v);
+      }
+    }
+    return new GenerationRootDependencies(rootId, rootName, rootHash, dependsOnConditionals, local, external, files);
+  }
+
+  public static GenerationRootDependencies fromData(DependenciesListener l, List<String> generatedFiles) {
+    final Collection<SNode> localNodes = l.getDependsOn();
+    final Collection<SModel> externalModels = l.getDependsOnModels();
+
+    List<String> local = new ArrayList<String>(localNodes.size());
+    for(SNode n : localNodes) {
+      local.add(n.getId());
+    }
+    Collections.sort(local);
+
+    List<String> external = new ArrayList<String>(externalModels.size());
+    for(SModel m : externalModels) {
+      external.add(m.getSModelReference().toString());
+    }
+    Collections.sort(external);
+    Collections.sort(generatedFiles);
+
+    final SNode originalRoot = l.getOriginalRoot();
+    return new GenerationRootDependencies(
+      originalRoot != null ? originalRoot.getId() : null,
+      originalRoot != null ? originalRoot.getName() : null,
+      l.getHash(), l.isDependsOnConditionals(),
+      local, external, generatedFiles);
   }
 }

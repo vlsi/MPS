@@ -1,6 +1,5 @@
 package jetbrains.mps.generator.dependencies;
 
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
 import org.jdom.Element;
@@ -16,21 +15,32 @@ public class GenerationDependencies {
   private static final String NODE_ROOT = "source";
   private static final String NODE_COMMON = "common";
 
-  private List<GenerationRootDependencies> myRootDependencies;
-  private Map<String, String> myGeneratedToOriginalMap;
-
-  @Deprecated
-  public GenerationDependencies() {
-    this(new ArrayList<GenerationRootDependencies>(), new HashMap<String, String>());
-  }
+  private final List<GenerationRootDependencies> myRootDependencies;
+  private final Map<String, GenerationRootDependencies> myRootDependenciesMap;
+  private final Map<String, String> myGeneratedToOriginalMap;
 
   private GenerationDependencies(List<GenerationRootDependencies> data, Map<String,String> generatedToOriginalMap) {
     this.myRootDependencies = data;
     this.myGeneratedToOriginalMap = generatedToOriginalMap;
+    this.myRootDependenciesMap = new HashMap<String, GenerationRootDependencies>(data.size());
+    for(GenerationRootDependencies rd : data) {
+      String id = rd.getRootId();
+      if(id != null) {
+        myRootDependenciesMap.put(id, rd);
+      }
+    }
   }
 
   public String getOriginalRootId(String outputNode) {
     return myGeneratedToOriginalMap.get(outputNode);
+  }
+
+  public GenerationRootDependencies getDependenciesFor(String rootId) {
+    return myRootDependenciesMap.get(rootId);
+  }
+
+  public List<GenerationRootDependencies> getRootDependencies() {
+    return Collections.unmodifiableList(myRootDependencies);
   }
 
   public Element toXml() {
@@ -46,10 +56,18 @@ public class GenerationDependencies {
     return root;
   }
 
-  public static GenerationDependencies fromXml(Element e) {
-    GenerationDependencies result = new GenerationDependencies(new ArrayList(), new HashMap<String, String>());
-    // TODO
-    return result;
+  public static GenerationDependencies fromXml(Element root) {
+    List<GenerationRootDependencies> data = new ArrayList<GenerationRootDependencies>();
+
+    for (Element e : ((List<Element>) root.getChildren(NODE_COMMON))) {
+      data.add(GenerationRootDependencies.fromXml(e, true));
+    }
+    for (Element e : ((List<Element>) root.getChildren(NODE_ROOT))) {
+      data.add(GenerationRootDependencies.fromXml(e, false));
+    }
+    final HashMap<String, String> map = new HashMap<String, String>();
+    // TODO restore generatedToOriginal map ...
+    return new GenerationDependencies(data, map);
   }
 
   public static String getFileName(SNode outputRootNode) {
@@ -83,34 +101,9 @@ public class GenerationDependencies {
       if(files == null) {
         files = Collections.emptyList();
       }
-      rootDependencies.add(fromData(l, files));
+      rootDependencies.add(GenerationRootDependencies.fromData(l, files));
     }
     return new GenerationDependencies(rootDependencies, generatedToOriginalMap);
-  }
-
-  private static GenerationRootDependencies fromData(DependenciesListener l, List<String> generatedFiles) {
-    final Collection<SNode> localNodes = l.getDependsOn();
-    final Collection<SModel> externalModels = l.getDependsOnModels();
-
-    List<String> local = new ArrayList<String>(localNodes.size());
-    for(SNode n : localNodes) {
-      local.add(n.getId());
-    }
-    Collections.sort(local);
-
-    List<String> external = new ArrayList<String>(externalModels.size());
-    for(SModel m : externalModels) {
-      external.add(m.getSModelReference().toString());
-    }
-    Collections.sort(external);
-    Collections.sort(generatedFiles);
-
-    final SNode originalRoot = l.getOriginalRoot();
-    return new GenerationRootDependencies(
-      originalRoot != null ? originalRoot.getId() : null,
-      originalRoot != null ? originalRoot.getName() : null,
-      l.getHash(), l.isDependsOnConditionals(),
-      local, external, generatedFiles);
   }
 
 }

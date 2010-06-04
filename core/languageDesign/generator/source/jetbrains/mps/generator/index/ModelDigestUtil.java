@@ -1,5 +1,7 @@
 package jetbrains.mps.generator.index;
 
+import com.intellij.openapi.progress.ProcessCanceledException;
+import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
@@ -12,12 +14,11 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.StringReader;
+import java.io.*;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -118,7 +119,13 @@ public class ModelDigestUtil {
     VirtualFile file = modelFile.toVirtualFile();
     if (file == null) return null;
 
-    return getGenerationHashes(project, file);
+    try {
+      return getGenerationHashes(project, file);
+    } catch (IndexNotReadyException e) {
+      return calculateHashes(file);
+    } catch (ProcessCanceledException e) {
+      return calculateHashes(file);
+    }
   }
 
   private static Map<String, String> getGenerationHashes(final Project project, @NotNull VirtualFile f) {
@@ -130,5 +137,29 @@ public class ModelDigestUtil {
       }
     }, GlobalSearchScope.allScope(project));
     return valueArray[0];
+  }
+
+  private static Map<String, String> calculateHashes(@NotNull VirtualFile f) {
+    InputStream in;
+    try {
+      in = f.getInputStream();
+    } catch (FileNotFoundException e) {
+      return null;
+    } catch (IOException e) {
+      return null;
+    }
+
+    byte[] modelBytes = new byte[(int) f.getLength()];
+    try {
+      //noinspection ResultOfMethodCallIgnored
+      in.read(modelBytes);
+    } catch (IOException e) {
+      return null;
+    }
+
+    Map<String, String> result = new HashMap<String, String>();
+    result.put("", ModelDigestIndex.hash(modelBytes));
+    ModelDigestUtil.extractRootHashes(modelBytes, result);
+    return result;
   }
 }

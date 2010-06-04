@@ -136,10 +136,11 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       if (outputTargetNode_output != null) {
         myOutputTargetNode = outputTargetNode_output;
       } else {
+        // FIXME showErrorIfStrict
         generator.showWarningMessage(getOutputSourceNode(), "reference '" + linkRole + "' to input model in output node " + getOutputSourceNode().getDebugText());
         generator.showInformationMessage(myOutputTargetNode, " -- referent node: " + myOutputTargetNode.getDebugText());
         generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node: " + myReferenceMacro.getNode().getDebugText());
-        generator.getGeneratorSessionContext().keepTransientModel(generator.getInputModel());
+        generator.getGeneratorSessionContext().keepTransientModel(generator.getInputModel(), true);
       }
     }
   }
