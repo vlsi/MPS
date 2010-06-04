@@ -17,12 +17,9 @@
 package jetbrains.mps.project;
 
 import com.intellij.AppTopics;
-import com.intellij.ide.GeneralSettings;
-import com.intellij.ide.actions.SaveAllAction;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileDocumentManagerAdapter;
-import com.intellij.openapi.vcs.changes.actions.RollbackAction;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
@@ -37,37 +34,9 @@ public class VCSProjectHelper implements ProjectComponent{
       public void beforeAllDocumentsSaving() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            if (!GeneralSettings.getInstance().isSaveOnFrameDeactivation() &&
-              !GeneralSettings.getInstance().isAutoSaveIfInactive() &&
-              !SModelRepository.getInstance().getChangedModels().isEmpty() &&
-              !isFromSaveAll() && !isFromRollback()) {
-              //todo hack for MPS-2763 & MPS-8565
-              return;
-            }
-
             SModelRepository.getInstance().saveAll();
           }
         });
-      }
-
-      private boolean isFromSaveAll() {
-        //todo this is a hack
-        for (StackTraceElement e : Thread.getAllStackTraces().get(Thread.currentThread())) {
-          if (e.getClassName().equals(SaveAllAction.class.getName()) && e.getMethodName().equals("actionPerformed")) {
-            return true;
-          }
-        }
-        return false;
-      }
-
-      private boolean isFromRollback() {
-        //todo this is a hack for MPS-8565
-        for (StackTraceElement e : Thread.getAllStackTraces().get(Thread.currentThread())) {
-          if (e.getClassName().equals(RollbackAction.class.getName()) && e.getMethodName().equals("actionPerformed")) {
-            return true;
-          }
-        }
-        return false;
       }
     });
   }
@@ -78,7 +47,7 @@ public class VCSProjectHelper implements ProjectComponent{
 
   @NotNull
   public String getComponentName() {
-    return "VCS Project Helper"; 
+    return "VCS Project Helper";
   }
 
   public void initComponent() {

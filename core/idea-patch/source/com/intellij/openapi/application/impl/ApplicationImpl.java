@@ -18,10 +18,7 @@ package com.intellij.openapi.application.impl;
 import com.intellij.CommonBundle;
 import com.intellij.Patches;
 import com.intellij.diagnostic.PluginException;
-import com.intellij.ide.ActivityTracker;
-import com.intellij.ide.ApplicationLoadListener;
-import com.intellij.ide.IdeEventQueue;
-import com.intellij.ide.IdeRepaintManager;
+import com.intellij.ide.*;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
@@ -61,6 +58,7 @@ import com.intellij.util.ReflectionCache;
 import com.intellij.util.concurrency.ReentrantWriterPreferenceReadWriteLock;
 import com.intellij.util.containers.Stack;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -614,6 +612,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
     exit(false);
   }
 
+  @Patch
   public void exit(final boolean force) {
     if (!force && getDefaultModalityState() != ModalityState.NON_MODAL) {
       return;
@@ -623,12 +622,12 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
       public void run() {
         if (!force) {
           if (!showConfirmation()) {
-            saveAll();
+            saveAllIfNeeded(); // MPS Patch
             return;
           }
         }
 
-        FileDocumentManager.getInstance().saveAllDocuments();
+        saveAllDocumentsIfNeeded(); // MPS Patch
 
         saveSettings();
 
@@ -1034,6 +1033,36 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
     if (myDoNotSave || isUnitTestMode() || isHeadlessEnvironment()) return;
 
     FileDocumentManager.getInstance().saveAllDocuments();
+
+    Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
+    for (Project openProject : openProjects) {
+      ProjectEx project = (ProjectEx)openProject;
+      project.save();
+    }
+
+    saveSettings();
+  }
+
+  /**
+   * MPS patch: added this method to save model only if any of
+   * "save on frame deactivation" or "auto save if inactive" global options are enabled
+   */
+  @Patch
+  public void saveAllDocumentsIfNeeded() {
+    if (GeneralSettings.getInstance().isSaveOnFrameDeactivation() ||
+              GeneralSettings.getInstance().isAutoSaveIfInactive()) {
+      FileDocumentManager.getInstance().saveAllDocuments();
+    }
+  }
+
+  /**
+   * MPS patch: added this method to save everything except for models
+   */
+  @Patch
+  private void saveAllIfNeeded() {
+    if (myDoNotSave || isUnitTestMode() || isHeadlessEnvironment()) return;
+
+    saveAllDocumentsIfNeeded();
 
     Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
     for (Project openProject : openProjects) {

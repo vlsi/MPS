@@ -57,6 +57,7 @@ import com.intellij.util.io.fs.IFile;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import gnu.trove.TObjectLongHashMap;
+import jetbrains.mps.util.annotation.Patch;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NonNls;
@@ -847,6 +848,7 @@ public class ProjectManagerImpl extends ProjectManagerEx implements NamedJDOMExt
     return closeProject(project, true);
   }
 
+  @Patch
   private boolean closeProject(final Project project, final boolean save) {
     if (!isProjectOpened(project)) return true;
     if (!canClose(project)) return false;
@@ -855,7 +857,14 @@ public class ProjectManagerImpl extends ProjectManagerEx implements NamedJDOMExt
     shutDownTracker.registerStopperThread(Thread.currentThread());
     try {
       if (save) {
-        FileDocumentManager.getInstance().saveAllDocuments();
+        /* MPS Patch begin */
+        Application application = ApplicationManager.getApplication();
+        if (application instanceof ApplicationImpl) {
+          ((ApplicationImpl) application).saveAllDocumentsIfNeeded();
+        } else {
+          FileDocumentManager.getInstance().saveAllDocuments();
+        }
+        /* MPS Patch end */
         project.save();
       }
       fireProjectClosing(project);
