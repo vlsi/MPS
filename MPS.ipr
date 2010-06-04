@@ -765,7 +765,6 @@
       <module fileurl="file://$PROJECT_DIR$/samples/complexLanguage/ComplexNumbersLanguage.iml" filepath="$PROJECT_DIR$/samples/complexLanguage/ComplexNumbersLanguage.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
-      <module fileurl="file://$PROJECT_DIR$/samples/matrixLanguage/MatrixLanguage.iml" filepath="$PROJECT_DIR$/samples/matrixLanguage/MatrixLanguage.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/tuples/Tuples.iml" filepath="$PROJECT_DIR$/core/baseLanguage/tuples/Tuples.iml" group="core/baseLanguage/tuples" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/tuples/runtime/Tuples-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/tuples/runtime/Tuples-runtime.iml" group="core/baseLanguage/tuples" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/YPath.iml" filepath="$PROJECT_DIR$/platform/ypath/YPath.iml" group="platform/YPath-Panacea" />
@@ -783,7 +782,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/blTypes/blTypes.iml" filepath="$PROJECT_DIR$/core/baseLanguage/blTypes/blTypes.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/platform/buildlanguage/buildLanguage.iml" filepath="$PROJECT_DIR$/platform/buildlanguage/buildLanguage.iml" group="platform/build" />
       <module fileurl="file://$PROJECT_DIR$/platform/builders/builders.iml" filepath="$PROJECT_DIR$/platform/builders/builders.iml" group="platform" />
-      <module fileurl="file://$PROJECT_DIR$/samples/calculator/calculator.iml" filepath="$PROJECT_DIR$/samples/calculator/calculator.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/checkDot/checkedDots.iml" filepath="$PROJECT_DIR$/core/baseLanguage/checkDot/checkedDots.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/classifiers/classifiers.iml" filepath="$PROJECT_DIR$/core/baseLanguage/classifiers/classifiers.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" group="core/baseLanguage/collections" />
@@ -819,7 +817,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/javaParser/javaParser.iml" filepath="$PROJECT_DIR$/core/javaParser/javaParser.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/javadoc/javadoc.iml" filepath="$PROJECT_DIR$/core/baseLanguage/javadoc/javadoc.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/kernel.iml" filepath="$PROJECT_DIR$/core/kernel/kernel.iml" group="core/kernel" />
-      <module fileurl="file://$PROJECT_DIR$/samples/lambda/lambda.iml" filepath="$PROJECT_DIR$/samples/lambda/lambda.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/logging/logging.iml" filepath="$PROJECT_DIR$/core/baseLanguage/logging/logging.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/math/math.iml" filepath="$PROJECT_DIR$/core/baseLanguage/math/math.iml" group="core/baseLanguage/math" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/math/runtime/math-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/math/runtime/math-runtime.iml" group="core/baseLanguage/math" />
@@ -850,7 +847,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/test/test.iml" filepath="$PROJECT_DIR$/core/languageDesign/test/test.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/testMaterial/testRefactoring/testRefactoring.iml" filepath="$PROJECT_DIR$/testMaterial/testRefactoring/testRefactoring.iml" group="core/languageDesign/refactoring" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/textGen/textgen.iml" filepath="$PROJECT_DIR$/core/languageDesign/textGen/textgen.iml" group="core/languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/samples/theSimplestLanguage/theSimplestLanguage.iml" filepath="$PROJECT_DIR$/samples/theSimplestLanguage/theSimplestLanguage.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/typesystem/typesystem.iml" filepath="$PROJECT_DIR$/core/languageDesign/typesystem/typesystem.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" filepath="$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" group="platform/uiLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/unitTest/unitTest.iml" filepath="$PROJECT_DIR$/core/baseLanguage/unitTest/unitTest.iml" group="core/baseLanguage" />
@@ -974,6 +970,7 @@
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Profile " />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
