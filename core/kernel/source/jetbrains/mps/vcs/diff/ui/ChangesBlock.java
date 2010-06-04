@@ -30,21 +30,21 @@ import java.util.List;
 
 public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
   private List<ChangeEditorMessage> myChanges = new ArrayList<ChangeEditorMessage>();
-  private int y1 = 0;
-  private int y2 = 0;
+  private int myMinY = 0;
+  private int myMaxY = 0;
   private JComponent myRollbackIcon;
 
 
   public void addChange(ChangeEditorMessage message, EditorCell cell) {
     if (myChanges.isEmpty()) {
-      y1 = cell.getY();
-      y2 = cell.getY() + cell.getHeight();
+      myMinY = cell.getY();
+      myMaxY = cell.getY() + cell.getHeight();
     } else {
-      if (y1 > cell.getY()) {
-        y1 = cell.getY();
+      if (myMinY > cell.getY()) {
+        myMinY = cell.getY();
       }
-      if (y2 < cell.getY() + cell.getHeight()) {
-        y2 = cell.getY() + cell.getHeight();
+      if (myMaxY < cell.getY() + cell.getHeight()) {
+        myMaxY = cell.getY() + cell.getHeight();
       }
     }
     myChanges.add(message);
@@ -54,25 +54,25 @@ public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
     myRollbackIcon = rollbackIcon;
   }
 
-  public int getY1() {
-    return y1;
+  public int getMinY() {
+    return myMinY;
   }
 
-  public int getY2() {
-    return y2;
+  public int getMaxY() {
+    return myMaxY;
   }
 
   public void paint(Graphics2D g, Dimension size) {
     g.setColor(Color.GRAY);
-    g.drawLine(0, y1, (int) size.getWidth(), y1);
-    g.drawLine(0, y2, (int) size.getWidth(), y2);
+    g.drawLine(0, myMinY, (int) size.getWidth(), myMinY);
+    g.drawLine(0, myMaxY, (int) size.getWidth(), myMaxY);
   }
 
   public void addTo(EditorComponent component) {
     component.addAdditionalPainter(this);
     if (myRollbackIcon != null) {
       component.add(myRollbackIcon);
-      myRollbackIcon.setLocation(1, y1 + 1);
+      myRollbackIcon.setLocation(1, myMinY + 1);
     }
   }
 

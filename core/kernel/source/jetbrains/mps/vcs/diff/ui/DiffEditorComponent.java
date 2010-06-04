@@ -16,17 +16,17 @@
 package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.vcs.diff.changes.*;
 
-import java.util.*;
 import java.awt.Color;
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.util.*;
 
 public abstract class DiffEditorComponent extends EditorComponent {
   private EditorMessageOwner myOwner = new EditorMessageOwner() {
@@ -207,7 +207,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
       if (block == null) {
         block = new ChangesBlock();
       } else {
-        if (block.getY2() < cell.getY()) {
+        if (block.getMaxY() < cell.getY()) {
           configureBlock(block);
           addBlock(component, block);
           block = new ChangesBlock();
