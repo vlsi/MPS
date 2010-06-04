@@ -1,0 +1,2380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <option name="myBookmarkInfos">
+      <array>
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+      </array>
+    </option>
+  </component>
+  <component name="BookmarksTool">
+    <option name="myTreeState">
+      <TreeState>
+        <option name="expansion">
+          <list>
+            <option value="/" />
+          </list>
+        </option>
+      </TreeState>
+    </option>
+  </component>
+  <component name="BreakpointManager">
+    <option name="myRootBreakpointInfos">
+      <array>
+        <MyRootBreakpointInfo>
+          <option name="myModelReference" value="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" />
+          <option name="myNodeId" value="5923576889075042074" />
+        </MyRootBreakpointInfo>
+        <MyRootBreakpointInfo>
+          <option name="myModelReference" value="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" />
+          <option name="myNodeId" value="5923576889075042878" />
+        </MyRootBreakpointInfo>
+        <MyRootBreakpointInfo>
+          <option name="myModelReference" value="r:2516a5ea-6626-4511-a78e-b75c007f4fd3(jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels)" />
+          <option name="myNodeId" value="1560298786499491521" />
+        </MyRootBreakpointInfo>
+        <MyRootBreakpointInfo>
+          <option name="myModelReference" value="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
+          <option name="myNodeId" value="5357294907628536183" />
+        </MyRootBreakpointInfo>
+        <MyRootBreakpointInfo>
+          <option name="myModelReference" value="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
+          <option name="myNodeId" value="965654005418338549" />
+        </MyRootBreakpointInfo>
+      </array>
+    </option>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="bc2cb128-32f6-4de8-96d7-99fd0f4b16f2" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\InstructionReference.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\InstructionParameter_Editor.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\editor\.debug" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen/jetbrains/mps/analyzers/structure" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen/jetbrains/mps/analyzers" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\behavior\.dependencies" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen.caches/jetbrains/mps/analyzers/typesystem" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen.caches/jetbrains/mps/analyzers/structure" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen/jetbrains/mps/analyzers/generator/template" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen/jetbrains/mps" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\AnalysisDirection_Editor.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\EmitInstruction_Editor.java" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen.caches/jetbrains/mps/analyzers/generator/template" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\InstructionReference_Editor.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\generator\template\main\.dependencies" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\constraints\InstructionReference_DefaultSearchScope.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\structure\.dependencies" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerMergeFunction.java" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen.caches/jetbrains/mps/analyzers/generator" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/testDelete/languageModels/constraints.mps" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerMergeParameterInput.java" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen/jetbrains" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\constraints\.debug" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\Analyzer_Editor.java" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen.caches/jetbrains/mps/analyzers/constraints" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\generator\template\main\.hash.cx3oltgt01eh9mznsgh40004wkb45ew" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\EmitInstruction.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\behavior\.debug" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\AnalyzerFunFunction_Behavior.java" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen/jetbrains/mps/analyzers/generator/template/main" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\behavior\.hash.-2r0n6xe69bz8yecjs76anebuqyqrx6k" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\Instruction_Editor.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/TestComplex.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/TestComplex.java" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/analyzers.mpr" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\constraints\ConstraintsDescriptor.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/testDelete/languageModels/editor.mps" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\generator\template\main@generator.mps" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\generator\template\main\QueriesGenerated.java" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen/jetbrains/mps/analyzers/typesystem" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\typesystem\typeof_InstructionReference_InferenceRule.java" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/generator/template" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerFunParameterProgramState.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\ApplicableCondition.java" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen/jetbrains/mps/analyzers/generator" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\typesystem\.generated" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\Rule_Editor.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\typesystem\typeof_AnalyzerFunParameterProgramState_InferenceRule.java" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\AnalyzerInitialFunction_Behavior.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/testDelete" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\constraints\.dependencies" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\AnalyzerMergeFunction_Behavior.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\PatternCondition_Editor.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/MPS.ipr" afterPath="$APPLICATION_HOME_DIR$/MPS.ipr" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen.caches/jetbrains/mps/analyzers/editor" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\typesystem\typeof_AnalyzerFunctionResultType_InferenceRule.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\constraints\.hash.-4j6bbmkkohmux61suvonu3v8m7jcicl" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/testDelete/languageModels/typesystem.mps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzers.iws" afterPath="$PROJECT_DIR$/analyzers.iws" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\ForwardDirection.java" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/generator" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerParameterProgram.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/testDelete/languageModels/structure.mps" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\languageModels\structure.metadata" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\PatternCondition_Behavior.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\typesystem\typeof_AnalyzerMergeParameterInput_InferenceRule.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/analyzers/test3.mps" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\Analyzer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\Analyzers_Language.java" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen/jetbrains/mps/analyzers/editor" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\EmitInstruction_Behavior.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\typesystem\.dependencies" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\languageModels\constraints.mps" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\editor\.dependencies" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\Rule.java" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen.caches/jetbrains/mps/analyzers/behavior" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen/jetbrains/mps/analyzers/constraints" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\InstructionParameter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\Instruction_Behavior.java" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/languageModels" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen.caches/jetbrains/mps/analyzers" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerFunParameterInput.java" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen.caches/jetbrains" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\PatternCondition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\structure\.debug" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/testDelete/languageModels" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\InstructionReference_Behavior.java" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen/jetbrains/mps/analyzers/behavior" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\Analyzer_Behavior.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\languageModels\behavior.mps" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\typesystem\.debug" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen.caches/jetbrains/mps" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen.caches" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\Instruction.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\typesystem\typeof_AnalyzerFunParameterInput_InferenceRule.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\typesystem\.hash.-2lr6z2witcey95ul7ossk7tjmob9jbt" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerFunctionResultType.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\typesystem\typeof_AnalyzerParameterProgram_InferenceRule.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerFunFunction.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\languageModels\typesystem.mps" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\languageModels\structure.mps" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\ApplicableCondition_Behavior.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\BackwardDirection.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalysisDirection.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\languageModels\editor.mps" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/languages/analyzers/source_gen.caches/jetbrains/mps/analyzers/generator/template/main" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\structure\.hash.3fijit5gs025s33e080xlicyuo3cvh8" afterPath="" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/platform/analyzers.iws" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\generator\template\main\.debug" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\editor\.hash.61m8go2ec1aps6g95yz4ao1g1u69ldm" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerInitialFunction.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\languages\analyzers\source_gen\jetbrains\mps\analyzers\typesystem\TypesystemDescriptor.java" afterPath="" />
+    </list>
+    <ignored path="analyzers.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+    <option name="REVERSE_PATCH" value="false" />
+  </component>
+  <component name="DefaultSearchOptionsComponent">
+    <option class_name="jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions">
+      <finders>
+        <finder class_name="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder" />
+      </finders>
+    </option>
+    <option class_name="jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions">
+      <flags show_one_result="true" new_tab="false" />
+    </option>
+    <option class_name="jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions">
+      <scope_type scope_type="global_scope" module="&lt;default&gt;" model="&lt;default&gt;" />
+    </option>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="CommitUtil" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.lang.structure.editor/CommitUtil">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RenameModel" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.ide.actions/RenameModel">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestConcpt2" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.analyzers.structure/TestConcpt2">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
+              <inner_tabs>
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+              </inner_tabs>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LinkDeclaration" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.lang.structure.structure/LinkDeclaration">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="1">
+              <inner_tabs>
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+              </inner_tabs>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestConcept3" pinned="false" current="true" current-in-tab="true">
+        <entry file="mps://jetbrains.mps.analyzers.structure/TestConcept3">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
+              <inner_tabs>
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+              </inner_tabs>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PropertyDeclaration" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.lang.structure.structure/PropertyDeclaration">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="1">
+              <inner_tabs>
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+              </inner_tabs>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConceptDeclaration" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.lang.structure.structure/ConceptDeclaration">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="1">
+              <inner_tabs>
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+              </inner_tabs>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractConceptDeclaration" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.lang.structure.structure/AbstractConceptDeclaration">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="3">
+              <inner_tabs>
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+              </inner_tabs>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InterfaceConceptDeclaration" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.lang.structure.structure/InterfaceConceptDeclaration">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="1">
+              <inner_tabs>
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+              </inner_tabs>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="INamedConcept" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.lang.core.structure/INamedConcept">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="3">
+              <inner_tabs>
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+              </inner_tabs>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/languages/analyzers/source_gen/jetbrains/mps/analyzers/generator/template/main/QueriesGenerated.java" />
+        <option value="$PROJECT_DIR$/solutions/jetbrains.mps.analyzers.sandbox/source_gen/jetbrains/mps/analyzers/sandbox/test/notNullInstruction.java" />
+        <option value="$PROJECT_DIR$/solutions/jetbrains.mps.analyzers.sandbox/source_gen/jetbrains/mps/analyzers/sandbox/test/RuleNullNotEquals.java" />
+        <option value="$PROJECT_DIR$/solutions/sandbox/jetbrains.mps.analyzers.sandbox/source_gen/jetbrains/mps/analyzers/sandbox/test/test.java" />
+        <option value="$PROJECT_DIR$/solutions/sandbox/jetbrains.mps.analyzers.sandbox/source_gen/jetbrains/mps/analyzers/sandbox/test/RuleNotEqualsNull.java" />
+        <option value="$PROJECT_DIR$/solutions/sandbox/jetbrains.mps.analyzers.sandbox/source_gen/jetbrains/mps/analyzers/sandbox/test/RuleNullNotEquals.java" />
+        <option value="$PROJECT_DIR$/solutions/sandbox/jetbrains.mps.analyzers.sandbox/source_gen/jetbrains/mps/analyzers/sandbox/test/NullableAnalyzerRunner.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MessagesViewTool">
+    <option name="autoscrollToSource" value="true" />
+    <option name="info" value="true" />
+    <option name="warnings" value="true" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
+  </component>
+  <component name="ProjectPluginManager">
+    <option name="pluginsState">
+      <option name="jetbrains.mps.baseLanguage.collections.plugin.Collections_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.baseLanguage.collections.trove.plugin.Trove_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.baseLanguage.dates.plugin.Dates_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTest_ProjectPlugin">
+        <value>
+          <PluginState>
+            <option name="myComponentsState">
+              <list>
+                <ComponentState>
+                  <option name="first" value="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestActionOptions_PreferencesComponent" />
+                  <params>
+                    <option name="isHidePassed" value="false" />
+                    <option name="isSelectFirstFailed" value="false" />
+                    <option name="isTrackRunning" value="false" />
+                  </params>
+                </ComponentState>
+              </list>
+            </option>
+          </PluginState>
+        </value>
+      </option>
+      <option name="jetbrains.mps.build.custommps.plugin.Custommps_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.build.generictasks.plugin.Generictasks_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.build.packaging.plugin.Packaging_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.buildlanguage.plugin.Buildlanguage_ProjectPlugin">
+        <value>
+          <PluginState>
+            <option name="myComponentsState">
+              <list>
+                <ComponentState>
+                  <option name="first" value="jetbrains.mps.buildlanguage.plugin.AntRunnerPreferences_PreferencesComponent" />
+                  <params>
+                    <option name="data">
+                      <map />
+                    </option>
+                  </params>
+                </ComponentState>
+              </list>
+            </option>
+          </PluginState>
+        </value>
+      </option>
+      <option name="jetbrains.mps.calculator.plugin.Calculator_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.ide.actions.Ide_ProjectPlugin">
+        <value>
+          <PluginState>
+            <option name="myComponentsState">
+              <list>
+                <ComponentState>
+                  <option name="first" value="jetbrains.mps.ide.actions.PersistentOptions_PreferencesComponent" />
+                  <params>
+                    <option name="addReturnsOnImplement" value="false" />
+                    <option name="sortAlphabetically" value="false" />
+                    <option name="addOverrideAnnotation" value="true" />
+                    <option name="removeAttributes" value="false" />
+                  </params>
+                </ComponentState>
+              </list>
+            </option>
+          </PluginState>
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.behavior.plugin.Behavior_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.core.plugin.Core_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.dataFlow.plugin.DataFlow_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.editor.plugin.Editor_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.quotation.plugin.Quotation_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.refactoring.plugin.Refactoring_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.script.plugin.Script_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.smodel.plugin.Smodel_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.test.plugin.Test_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.typesystem.plugin.Typesystem_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.nanoc.plugin.Nanoc_ProjectPlugin">
+        <value>
+          <PluginState>
+            <option name="myComponentsState">
+              <list>
+                <ComponentState>
+                  <option name="first" value="jetbrains.mps.nanoc.plugin.ProgramsLocationComponent_PreferencesComponent" />
+                  <params>
+                    <option name="myGDBLocation" />
+                    <option name="myGCCLocation" />
+                  </params>
+                </ComponentState>
+              </list>
+            </option>
+          </PluginState>
+        </value>
+      </option>
+      <option name="jetbrains.mps.quickQueryLanguage.plugin.QuickQueryLanguage_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.samples.lambdaCalculus.plugin.LambdaCalculus_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.ui.gwt.plugin.Gwt_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.ui.internal.testdata.plugin.Testdata_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.ui.modeling.plugin.Modeling_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.ui.plugin.Ui_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.ui.swing.plugin.Swing_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.ui.swt.plugin.Swt_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.uiLanguage.plugin.UiLanguage_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.wizards.plugin.Wizards_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.ypath.plugin.Ypath_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+    </option>
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers ProjectPane="true" />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="FileSystem">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <selection />
+        </subPane>
+      </pane>
+      <pane id="Favorites">
+        <subPane>
+          <selection />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="textGen" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="structure" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="structure" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behavior" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="structure" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editor" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugin" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugin" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="accessories" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editor" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editorTest" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blTypes" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blTypes" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="accessories" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="collections_unittest" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.baseLanguage.collections.unittest" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins.pluginparts" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tabbedEditor" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Refactoring History" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model Checker" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Menu" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectPane" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Menu" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectPane" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Menu" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectPane" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Menu" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MPS" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classpath" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stubs" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MPS" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classpath" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stubs" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps@java_stub" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <selection>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="analyzers" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="jetbrains.mps.analyzers" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+            </PATH>
+          </selection>
+        </subPane>
+      </pane>
+      <pane id="VCSRoots">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VCS Roots" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <selection />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="RunManager">
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="UPDATE_RUN_STATUS" value="false" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <configuration useDefault="true">C:\Users\Ilya.Lintsbakh\AppData\Roaming\Subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\generator" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\structure\.dependencies" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\typesystem\.debug" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\generator\template\main" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\Analyzer.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\typesystem\typeof_AnalyzerMergeParameterInput_InferenceRule.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\PatternCondition_Behavior.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\generator" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\behavior" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\editor\.debug" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\constraints\ConstraintsDescriptor.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\AnalysisDirection_Editor.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalysisDirection.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\generator\template\main\.dependencies" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\Analyzer_Behavior.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\InstructionReference_Behavior.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\Instruction_Behavior.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\Instruction.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\InstructionReference_Editor.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\AnalyzerMergeFunction_Behavior.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\constraints" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\typesystem" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\behavior\.debug" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerMergeParameterInput.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\ForwardDirection.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\AnalyzerInitialFunction_Behavior.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\generator\template\main\.hash.cx3oltgt01eh9mznsgh40004wkb45ew" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerFunFunction.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerParameterProgram.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\InstructionReference.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\PatternCondition_Editor.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\behavior\.dependencies" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\EmitInstruction.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\Analyzer_Editor.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\generator\template\main@generator.mps" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\structure\.hash.3fijit5gs025s33e080xlicyuo3cvh8" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\EmitInstruction_Editor.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\typesystem\TypesystemDescriptor.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\ApplicableCondition_Behavior.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\editor" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\typesystem\typeof_AnalyzerFunctionResultType_InferenceRule.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\InstructionParameter_Editor.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\Analyzers_Language.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\Rule.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerFunParameterInput.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerFunParameterProgramState.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\structure" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\constraints\.hash.-4j6bbmkkohmux61suvonu3v8m7jcicl" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\constraints\InstructionReference_DefaultSearchScope.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\editor\.dependencies" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\behavior\.hash.-2r0n6xe69bz8yecjs76anebuqyqrx6k" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\Rule_Editor.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\typesystem\typeof_AnalyzerFunParameterProgramState_InferenceRule.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\ApplicableCondition.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\typesystem\typeof_AnalyzerParameterProgram_InferenceRule.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\AnalyzerFunFunction_Behavior.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\generator\template\main" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\structure\.debug" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\constraints\.dependencies" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\generator\template" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\typesystem" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\typesystem\typeof_AnalyzerFunParameterInput_InferenceRule.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\generator\template\main\QueriesGenerated.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\editor\.hash.61m8go2ec1aps6g95yz4ao1g1u69ldm" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerFunctionResultType.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\generator\template\main\.debug" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\editor\Instruction_Editor.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\typesystem\.dependencies" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerMergeFunction.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\constraints\.debug" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\InstructionParameter.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\typesystem\.hash.-2lr6z2witcey95ul7ossk7tjmob9jbt" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\BackwardDirection.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\behavior\EmitInstruction_Behavior.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\constraints" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\PatternCondition.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\structure\AnalyzerInitialFunction.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\generator\template" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains\mps\analyzers\typesystem\typeof_InstructionReference_InferenceRule.java" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\generator\template" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\typesystem\.generated" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen\jetbrains" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS\platform\analyzers\languages\analyzers\generator\template" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="1186" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Usages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32732448" sideWeight="0.46666667" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827324" sideWeight="0.3809524" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Supertypes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Migration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Model Repository Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Replacement" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Module Repository Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Model Checker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Generation Tracer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295238" sideWeight="0.7258065" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Module Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.031746034" sideWeight="0.66413665" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Classpath Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="RefactoringView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.49739245" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="MPS Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2675522" sideWeight="0.38920635" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Concept Structure" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2675522" sideWeight="0.60634923" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Node Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922202" sideWeight="0.4977778" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Typechecker State" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Analyze Stacktrace" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Class Hierarchy" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922202" sideWeight="0.4977778" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cell Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="UsagesViewTool">
+    <version id="0.9997" />
+    <tabs />
+    <default_view_options>
+      <options category_option="false" module_option="true" model_option="true" root_option="true" path_option="false" count_option="true" info_option="true" view_searched_nodes_option="true" group_searched_nodes_option="true" autoscroll_option="false" />
+    </default_view_options>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
+    <option name="ENABLE_BACKGROUND_PROCESSES" value="true" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="mps://jetbrains.mps.ide.actions/DefaultMakeTask">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.util@java_stub/JSplitPaneWithoutBorders">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.ide.actions@java_stub/RenameModel_Action">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors/FloatingPoint">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.lang.editor.structure/ConceptEditorDeclaration">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="1">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.lang.structure.structure/ConceptLinkDeclaration">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="1">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.lang.structure.editor/CommitUtil">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.ide.actions/RenameModel">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.analyzers.structure/TestConcpt2">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.lang.structure.structure/LinkDeclaration">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="1">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.lang.structure.structure/PropertyDeclaration">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="1">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.lang.structure.structure/ConceptDeclaration">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="1">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.lang.structure.structure/AbstractConceptDeclaration">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="3">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.lang.structure.structure/InterfaceConceptDeclaration">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="1">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.lang.core.structure/INamedConcept">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="3">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.analyzers.structure/TestConcept3">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
