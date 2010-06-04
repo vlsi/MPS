@@ -15,19 +15,16 @@
  */
 package jetbrains.mps.workbench.actions.language;
 
-import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.dialogs.ScrollingMessageDialog;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.logging.Logger;
 
 import javax.swing.SwingUtilities;
-import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,8 +63,7 @@ public class DeleteGeneratorHelper {
 
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
-          new ScrollingMessageDialog(frame, report.toString()).showDialog();
+          Messages.showErrorDialog(project, report.toString(), "Deleting Generator");
         }
       });
       return;

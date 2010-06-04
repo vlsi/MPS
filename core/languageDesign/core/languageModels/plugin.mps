@@ -26,7 +26,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
-  <maxImportIndex value="25" />
+  <maxImportIndex value="27" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.ide.findusages.model(jetbrains.mps.ide.findusages.model@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.ide.findusages.findalgorithm.finders.specific(jetbrains.mps.ide.findusages.findalgorithm.finders.specific@java_stub)" version="-1" />
@@ -40,6 +40,8 @@
   <import index="23" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="24" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
   <import index="25" modelUID="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
+  <import index="26" modelUID="f:java_stub#com.intellij.openapi.ui(com.intellij.openapi.ui@java_stub)" version="-1" />
+  <import index="27" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1209308509191">
     <property name="name:23" value="FindModelUsages" />
     <property name="caption:23" value="Find Usages" />
@@ -611,27 +613,30 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7100928452798584947">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7100928452798584948">
-            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7100928452798599334">
-              <link role="baseMethodDeclaration:3" targetNodeId="25.~ScrollingMessageDialog.&lt;init&gt;(java.awt.Frame,java.lang.String,java.lang.String)" resolveInfo="ScrollingMessageDialog" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7100928452798599337">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="7100928452798599338" />
-                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="7100928452798599339">
-                  <link role="member:23" targetNodeId="7100928452798599336" resolveInfo="frame" />
-                </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8711271696997803357">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8711271696997803811">
+            <link role="classConcept:3" targetNodeId="26.~Messages" resolveInfo="Messages" />
+            <link role="baseMethodDeclaration:3" targetNodeId="26.~Messages.showMessageDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):void" resolveInfo="showMessageDialog" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8711271696997803814">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="8711271696997803815" />
+              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="8711271696997803816">
+                <link role="member:23" targetNodeId="8711271696997803813" resolveInfo="project" />
               </node>
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7100928452798599341">
-                <property name="value:3" value="node messages" />
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8711271696997804539">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8711271696997804538">
+                <link role="variableDeclaration:3" targetNodeId="1210953376371" resolveInfo="sb" />
               </node>
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7100928452798599344">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7100928452798599343">
-                  <link role="variableDeclaration:3" targetNodeId="1210953376371" resolveInfo="sb" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7100928452798599348">
-                  <link role="baseMethodDeclaration:3" targetNodeId="15.~StringBuilder.toString():java.lang.String" resolveInfo="toString" />
-                </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8711271696997804543">
+                <link role="baseMethodDeclaration:3" targetNodeId="15.~StringBuilder.toString():java.lang.String" resolveInfo="toString" />
               </node>
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8711271696997804545">
+              <property name="value:3" value="Node Messages" />
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8711271696997804548">
+              <link role="baseMethodDeclaration:3" targetNodeId="26.~Messages.getInformationIcon():javax.swing.Icon" resolveInfo="getInformationIcon" />
+              <link role="classConcept:3" targetNodeId="26.~Messages" resolveInfo="Messages" />
             </node>
           </node>
         </node>
@@ -682,6 +687,10 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="8711271696997803813">
+      <property name="name:23" value="project" />
+      <link role="key:23" targetNodeId="27.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1217420648896">
       <property name="name:23" value="node" />
