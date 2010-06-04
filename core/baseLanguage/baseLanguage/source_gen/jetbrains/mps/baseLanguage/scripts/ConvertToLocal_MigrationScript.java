@@ -55,6 +55,9 @@ public class ConvertToLocal_MigrationScript extends BaseMigrationScript {
         }
         SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(node);
         SNode declarationClassifier = SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+        if (!(classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier))) {
+          return false;
+        }
         int constraint = IClassifiersSearchScope.INSTANCE_FIELD;
         while (classifier != declarationClassifier) {
           for (SNode fieldDeclaration : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, node, constraint)) {
@@ -99,6 +102,9 @@ public class ConvertToLocal_MigrationScript extends BaseMigrationScript {
         SNode declaration = SLinkOperations.getTarget(node, "baseMethodDeclaration", false);
         SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(node);
         SNode declarationClassifier = SNodeOperations.getAncestor(declaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+        if (!(classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier))) {
+          return false;
+        }
         int constraint = IClassifiersSearchScope.INSTANCE_METHOD;
         while (classifier != declarationClassifier) {
           for (SNode method : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, node, constraint)) {
