@@ -15,28 +15,31 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.vcs.FilePath;
-import com.intellij.openapi.vcs.actions.VcsContextFactory;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.vfs.*;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.vcs.diff.ui.MergeModelsDialog;
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
-import jetbrains.mps.vcs.ModelUtils.Version;
-
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.io.FileUtil;
+import com.intellij.openapi.vcs.FilePath;
+import com.intellij.openapi.vcs.actions.VcsContextFactory;
+import com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.vcs.ModelUtils.Version;
+import jetbrains.mps.vcs.diff.ui.MergeModelsDialog;
+import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
 
-import java.io.*;
-
 import javax.swing.SwingUtilities;
+import java.io.File;
+import java.io.IOException;
 
 public class VcsHelper {
   private static final Logger LOG = Logger.getLogger(VcsHelper.class);
@@ -68,7 +71,7 @@ public class VcsHelper {
     String memoryVersion = "Save Memory Version";
     String showMergeDialog = "Show Merge Dialog";
     String[] options = {diskVersion, memoryVersion, showMergeDialog};
-    int result = com.intellij.openapi.ui.Messages.showDialog(message, title, options, 0, com.intellij.openapi.ui.Messages.getQuestionIcon());
+    int result = Messages.showDialog(message, title, options, 0, Messages.getQuestionIcon());
     if (result == -1) return showDiskMemoryMerge(modelFile, inMemory);
     if (options[result].equals(diskVersion)) {
       return false;
