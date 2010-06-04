@@ -499,7 +499,7 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.project.VCSProjectHelper</implementation-class>
+            <implementation-class>jetbrains.mps.project.ModelsSaver</implementation-class>
         </component>
 
         <component>

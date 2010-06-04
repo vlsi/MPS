@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 
-public class VCSProjectHelper implements ProjectComponent{
+public class ModelsSaver implements ProjectComponent {
   private MessageBusConnection myMessageBusConnection;
 
   public void projectOpened() {
