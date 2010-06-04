@@ -15,19 +15,17 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.util.io.FileUtil;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.CollectionUtil;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.*;
 
 class RemoveOperation extends VcsOperation {
@@ -63,23 +61,23 @@ class RemoveOperation extends VcsOperation {
   public void performInternal() {
     if (mySilently || myConfirmationOption.getValue() == VcsShowConfirmationOption.Value.DO_ACTION_SILENTLY) {
       performWithoutAsking(myFilePathsToDelete);
+      return;
     } else if (myConfirmationOption.getValue() != VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
+      final ArrayList<FilePath> selectedFilePaths = new ArrayList<FilePath>();
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
           AbstractVcsHelper helper = AbstractVcsHelper.getInstance(myProject);
-          Collection<FilePath> filePathCollection = helper.selectFilePathsToProcess(myFilePathsToDelete, "Delete Files From Vcs", null, "Delete File From Vcs",
-            "Do you want to delete the following file from Vcs?\n{0}\n\nIf you say NO, you can still delete it later manually.", myConfirmationOption);
-          if (filePathCollection != null) {
-            performWithoutAsking(filePathCollection);
-//            justDelete(CollectionUtil.subtract(myFilePathsToDelete, filePathCollection));
-          } else {
-//            justDelete(myFilePathsToDelete);
-          }
+          selectedFilePaths.addAll(helper.selectFilePathsToProcess(myFilePathsToDelete, "Delete Files From Vcs", null, "Delete File From Vcs",
+            "Do you want to delete the following file from Vcs?\n{0}\n\nIf you say NO, you can still delete it later manually.", myConfirmationOption));
         }
       });
-    } else {
-//      justDelete(myFilePathsToDelete);
+      if (!selectedFilePaths.isEmpty()) {
+        performWithoutAsking(selectedFilePaths);
+        return;
+//            justDelete(CollectionUtil.subtract(myFilePathsToDelete, filePathCollection));
+      }
     }
+//  justDelete(myFilePathsToDelete);
   }
 
   public void absorb(VcsOperation operation) {
