@@ -15,24 +15,17 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.AdditionalPainter;
 import jetbrains.mps.nodeEditor.AbstractAdditionalPainter;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
-import javax.swing.ToolTipManager;
 import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.util.List;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.util.ArrayList;
-import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.util.List;
 
 
 public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
@@ -57,7 +50,7 @@ public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
     myChanges.add(message);
   }
 
-  public void addMenu(JComponent menu) {
+  public void setMenu(JComponent menu) {
     myMenu = menu;
   }
 

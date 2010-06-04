@@ -15,30 +15,30 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.vcs.diff.Merger;
-import jetbrains.mps.vcs.diff.Conflict;
-import jetbrains.mps.vcs.diff.changes.Change;
-import jetbrains.mps.vcs.diff.changes.DeleteNodeChange;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.misc.hash.HashSet;
+import jetbrains.mps.vcs.diff.Conflict;
+import jetbrains.mps.vcs.diff.Merger;
+import jetbrains.mps.vcs.diff.changes.Change;
+import jetbrains.mps.vcs.diff.changes.DeleteNodeChange;
 
 import javax.swing.*;
-import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.ActionEvent;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
@@ -96,7 +96,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
         panel.setSize(20, 10);
         panel.add(new ApplyMenu(block.getChanges()));
         panel.add(new ExcludeMenu(block.getChanges()));
-        block.addMenu(panel);
+        block.setMenu(panel);
       }
     };
     result.editNode(node, context);

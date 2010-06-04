@@ -123,7 +123,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     final DiffEditorComponent result = new DiffEditorComponent(context, node) {
       @Override
       public void configureBlock(ChangesBlock block) {
-        block.addMenu(new RevertMenu(block.getChanges(), getChanges()));
+        block.setMenu(new RevertMenu(block.getChanges(), getChanges()));
       }
     };
     result.editNode(node, context);
