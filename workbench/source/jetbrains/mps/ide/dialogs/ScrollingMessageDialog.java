@@ -18,6 +18,9 @@ package jetbrains.mps.ide.dialogs;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 
+/**
+ * @deprecated Use {@link com.intellij.openapi.ui.Messages#showMessageDialog} instead
+ */
 public class ScrollingMessageDialog extends BaseScrollingTextDialog {
   public ScrollingMessageDialog(Frame mainFrame, String text) throws HeadlessException {
     this(mainFrame, "Message", text);

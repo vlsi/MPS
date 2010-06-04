@@ -18,6 +18,9 @@ package jetbrains.mps.ide.dialogs;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 
+/**
+ * @deprecated Use {@link com.intellij.openapi.ui.Messages#showYesNoCancelDialog} instead
+ */
 public class ScrollingConfirmDialog extends BaseScrollingTextDialog {
   private Result myResult = Result.CANCEL;
 

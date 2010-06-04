@@ -24,13 +24,16 @@ import javax.swing.JScrollPane;
 import javax.swing.border.Border;
 import java.awt.*;
 
+/**
+ * @deprecated
+ */
 public class BaseScrollingTextDialog extends BaseDialog {
   private JScrollPane myScrollPane;
 
   public BaseScrollingTextDialog(Frame mainFrame, String caption, String text) throws HeadlessException {
     super(mainFrame, caption);
 
-
+                                                                   
     JLabel label = new JLabel("<html>" + text.replaceAll("\n", "<br>") + "</html>");
     JPanel innerPanel = new JPanel(new BorderLayout());
     innerPanel.add(label, BorderLayout.NORTH);
