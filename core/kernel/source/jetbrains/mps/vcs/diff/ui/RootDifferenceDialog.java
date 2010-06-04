@@ -123,7 +123,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     final DiffEditorComponent result = new DiffEditorComponent(context, node) {
       @Override
       public void configureBlock(ChangesBlock block) {
-        block.setMenu(new RevertMenu(block.getChanges(), getChanges()));
+        block.setRollbackIcon(new RevertButton(block.getChanges(), getChanges()));
       }
     };
     result.editNode(node, context);
@@ -199,11 +199,11 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     }
   }
 
-  class RevertMenu extends JLabel {
+  class RevertButton extends JLabel {
     private List<ChangeEditorMessage> myChangeMessages;
     private List<Change> myChanges;
 
-    public RevertMenu(List<ChangeEditorMessage> changeMessages, List<Change> changes) {
+    public RevertButton(List<ChangeEditorMessage> changeMessages, List<Change> changes) {
       super(Icons.REVERT);
       myChangeMessages = changeMessages;
       myChanges = changes;
@@ -211,7 +211,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
       setBorder(new EmptyBorder(0, 2, 1, 2));
       setBackground(Color.WHITE);
 
-      setToolTipText("revert changes");
+      setToolTipText("Rollback");
 
       setPreferredSize(new Dimension(getWidth(), getHeight()));
       setSize(getWidth(), getHeight());
@@ -233,7 +233,6 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
 
     protected void revert() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
         public void run() {
           List<Change> notAppliedChanges = new ArrayList<Change>();
           notAppliedChanges.addAll(myChanges);

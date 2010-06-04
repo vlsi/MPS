@@ -32,7 +32,7 @@ public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
   private List<ChangeEditorMessage> myChanges = new ArrayList<ChangeEditorMessage>();
   private int y1 = 0;
   private int y2 = 0;
-  private JComponent myMenu;
+  private JComponent myRollbackIcon;
 
 
   public void addChange(ChangeEditorMessage message, EditorCell cell) {
@@ -50,8 +50,8 @@ public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
     myChanges.add(message);
   }
 
-  public void setMenu(JComponent menu) {
-    myMenu = menu;
+  public void setRollbackIcon(JComponent rollbackIcon) {
+    myRollbackIcon = rollbackIcon;
   }
 
   public int getY1() {
@@ -70,9 +70,9 @@ public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
 
   public void addTo(EditorComponent component) {
     component.addAdditionalPainter(this);
-    if (myMenu != null) {
-      component.add(myMenu);
-      myMenu.setLocation(1, y1 + 1);
+    if (myRollbackIcon != null) {
+      component.add(myRollbackIcon);
+      myRollbackIcon.setLocation(1, y1 + 1);
     }
   }
 
@@ -86,8 +86,8 @@ public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
 
   public void removeFrom(EditorComponent component) {
     component.removeAdditionalPainter(this);
-    if (myMenu != null) {
-      component.remove(myMenu);
+    if (myRollbackIcon != null) {
+      component.remove(myRollbackIcon);
     }
   }
 
