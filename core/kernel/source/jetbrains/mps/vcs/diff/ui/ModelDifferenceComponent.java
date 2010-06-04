@@ -24,27 +24,24 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vcs.diff.DiffBuilder;
 import jetbrains.mps.vcs.diff.changes.*;
 
-import javax.swing.*;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
 import java.awt.BorderLayout;
 import java.util.List;
 
 class ModelDifferenceComponent extends JPanel {
   private ModelChangesTree myModelTree;
 
-  private MPSTree myChangesTree = new MPSTree() {
-    protected MPSTreeNode rebuild() {
-      if (myNewModel == null) {
-        return new TextTreeNode("No Changes To Display");
-      } else {
-        return buildChangesTree();
-      }
-    }
-  };
+  private MPSTree myChangesTree = new MyChangesTree();
 
   private SModel myNewModel;
   private List<Change> myChanges;
@@ -57,12 +54,7 @@ class ModelDifferenceComponent extends JPanel {
   public ModelDifferenceComponent(IOperationContext context) {
     setLayout(new BorderLayout());
     myContext = context;
-    myModelTree = new ModelChangesTree(context) {
-      @Override
-      protected void doubleClickOnNode(SNode node) {
-        ModelDifferenceComponent.this.doubleClickOnNode(node);
-      }
-    };
+    myModelTree = new MyModelTree(context);
 
     myModelTreeActionGroup = new DefaultActionGroup();
     myChangesTreeActionGroup = new DefaultActionGroup();
@@ -133,94 +125,6 @@ class ModelDifferenceComponent extends JPanel {
     myModelTree.expandRoot();
   }
 
-  private MPSTreeNode buildChangesTree() {
-    TextTreeNode changes = new TextTreeNode("Changes");
-
-    List<UsedLanguagesChange> usedLanguagesChanges = CollectionUtil.filter(UsedLanguagesChange.class, myChanges);
-    if (!usedLanguagesChanges.isEmpty()) {
-      TextTreeNode addImport = new TextTreeNode("Used Languages (" + usedLanguagesChanges.size() + ")");
-      for (UsedLanguagesChange change : usedLanguagesChanges) {
-        addImport.add(new ChangeNode(change));
-      }
-      changes.add(addImport);
-    }
-
-    List<AddNodeChange> addNodeChanges = CollectionUtil.filter(AddNodeChange.class, myChanges);
-    if (!addNodeChanges.isEmpty()) {
-      TextTreeNode addNode = new TextTreeNode("Add Node (" + addNodeChanges.size() + ")");
-      for (AddNodeChange change : addNodeChanges) {
-        addNode.add(new ChangeNode(change));
-      }
-      changes.add(addNode);
-    }
-
-    List<AddRootChange> addRootChanges = CollectionUtil.filter(AddRootChange.class, myChanges);
-    if (!addRootChanges.isEmpty()) {
-      TextTreeNode addRoot = new TextTreeNode("Add Root (" + addRootChanges.size() + ")");
-      for (AddRootChange change : addRootChanges) {
-        addRoot.add(new ChangeNode(change));
-      }
-      changes.add(addRoot);
-    }
-
-    List<DeleteNodeChange> deleteNodeChanges = CollectionUtil.filter(DeleteNodeChange.class, myChanges);
-    if (!deleteNodeChanges.isEmpty()) {
-      TextTreeNode deleteNode = new TextTreeNode("Delete Node (" + deleteNodeChanges.size() + ")");
-      for (DeleteNodeChange change : deleteNodeChanges) {
-        deleteNode.add(new ChangeNode(change));
-      }
-      changes.add(deleteNode);
-    }
-
-    List<MoveNodeChange> moveNodeChanges = CollectionUtil.filter(MoveNodeChange.class, myChanges);
-    if (!moveNodeChanges.isEmpty()) {
-      TextTreeNode moveNode = new TextTreeNode("Move Node (" + moveNodeChanges.size() + ")");
-      for (MoveNodeChange change : moveNodeChanges) {
-        moveNode.add(new ChangeNode(change));
-      }
-      changes.add(moveNode);
-    }
-
-    List<SetNodeChange> setNodeChanges = CollectionUtil.filter(SetNodeChange.class, myChanges);
-    if (!setNodeChanges.isEmpty()) {
-      TextTreeNode setNode = new TextTreeNode("Set Node (" + setNodeChanges.size() + ")");
-      for (SetNodeChange change : setNodeChanges) {
-        setNode.add(new ChangeNode(change));
-      }
-      changes.add(setNode);
-    }
-
-    List<SetPropertyChange> setPropertyChanges = CollectionUtil.filter(SetPropertyChange.class, myChanges);
-    if (!setPropertyChanges.isEmpty()) {
-      TextTreeNode setProperty = new TextTreeNode("Set Property (" + setPropertyChanges.size() + ")");
-      for (SetPropertyChange change : setPropertyChanges) {
-        setProperty.add(new ChangeNode(change));
-      }
-      changes.add(setProperty);
-    }
-
-    List<SetReferenceChange> setReferenceChanges = CollectionUtil.filter(SetReferenceChange.class, myChanges);
-    if (!setReferenceChanges.isEmpty()) {
-      TextTreeNode setReference = new TextTreeNode("Set Reference (" + setReferenceChanges.size() + ")");
-      for (SetReferenceChange change : setReferenceChanges) {
-        setReference.add(new ChangeNode(change));
-      }
-      changes.add(setReference);
-    }
-
-    List<ChangeConceptChange> changeConceptChanges = CollectionUtil.filter(ChangeConceptChange.class, myChanges);
-    if (!changeConceptChanges.isEmpty()) {
-      TextTreeNode changeConceptNode = new TextTreeNode("Change Concept (" + changeConceptChanges.size() + ")");
-      for (ChangeConceptChange change : changeConceptChanges) {
-        changeConceptNode.add(new ChangeNode(change));
-      }
-      changes.add(changeConceptNode);
-    }
-
-    return changes;
-  }
-
-
   protected void doubleClickOnNode(final SNode node) {
   }
 
@@ -275,6 +179,59 @@ class ModelDifferenceComponent extends JPanel {
 
     public boolean canCollapse() {
       return true;
+    }
+  }
+
+  private class MyChangesTree extends MPSTree {
+    private <C extends Change> TextTreeNode getChangeTypeSubtree(Class<C> changeClass, String title) {
+      List<C> filteredChanges = CollectionUtil.filter(changeClass, myChanges);
+      if (!filteredChanges.isEmpty()) {
+        TextTreeNode changesNode = new TextTreeNode(title + " (" + filteredChanges.size() + ")");
+        for (C change : filteredChanges) {
+          changesNode.add(new ChangeNode(change));
+        }
+        return changesNode;
+      }
+      return null;
+    }
+
+    private <C extends Change>
+    void addSubtree(TextTreeNode root, Class<C> changeClass, String title) {
+      TextTreeNode subtree = getChangeTypeSubtree(changeClass, title);
+      if (subtree != null) {
+        root.add(subtree);
+      }
+    }
+
+    protected MPSTreeNode rebuild() {
+      if (myNewModel == null) {
+        return new TextTreeNode("No Changes To Display");
+      } else {
+        TextTreeNode changes = new TextTreeNode("Changes");
+
+        addSubtree(changes, UsedLanguagesChange.class, "Used Languages");
+        addSubtree(changes, AddNodeChange.class, "Add Node");
+        addSubtree(changes, AddRootChange.class, "Add Root");
+        addSubtree(changes, DeleteNodeChange.class, "Delete Node");
+        addSubtree(changes, MoveNodeChange.class, "Move Node");
+        addSubtree(changes, SetNodeChange.class, "Set Node");
+        addSubtree(changes, SetPropertyChange.class, "Set Property");
+        addSubtree(changes, SetReferenceChange.class, "Set Reference");
+        addSubtree(changes, ChangeConceptChange.class, "Change Concept");
+
+        return changes;
+      }
+    }
+  }
+
+  private class MyModelTree extends ModelChangesTree {
+    public MyModelTree(IOperationContext context) {
+      super(context);
+    }
+
+    @Override
+    protected void doubleClickOnNode(SNode node) {
+      ModelDifferenceComponent.this.doubleClickOnNode(node);
     }
   }
 }
