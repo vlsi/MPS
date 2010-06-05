@@ -23,6 +23,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.FilenameFilter;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.Project;
@@ -32,6 +34,17 @@ import jetbrains.mps.build.ant.generation.GenerateTask;
 
 public class GenerateTaskFilesCreationTest extends BaseMPSTest {
   private static final String CONCEPT_NAME = "SomeConcept";
+  private final List<File> myTmpDirstoDelete = new ArrayList<File>();
+
+  @Override
+  protected void tearDown() throws Exception {
+    super.tearDown();
+
+    for (File f : myTmpDirstoDelete) {
+      FileUtil.delete(f);
+    }
+    myTmpDirstoDelete.clear();
+  }
 
   public void testOneFileForOneConcept() throws IOException {
     String projectName = "FileTestProject";
@@ -40,8 +53,6 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
     File destdir = generateProjectFromZipFile(projectName);
 
     assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
-
-    FileUtil.delete(destdir);
   }
 
   public void testSeveralFilesForOneConcept() throws IOException {
@@ -53,8 +64,6 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
     assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
-
-    FileUtil.delete(destdir);
   }
 
   public void testLanguageAndSolution() throws IOException {
@@ -71,8 +80,6 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
 
     File someConceptInstanceFile = new File(getSolutionSourceFolderPath(destdir, projectName, solutionName) + "SomeInstanceOfSomeConcept.java");
     TestCase.assertTrue(someConceptInstanceFile.exists());
-
-    FileUtil.delete(destdir);
   }
 
   public void testLanguageOnly() throws IOException {
@@ -89,8 +96,6 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
     assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertGeneratorGenerated(projectName, languageName, destdir);
-
-    FileUtil.delete(destdir);
   }
 
   private void assertBehaviorGenerated(String projectName, String languageName, File destdir, String conceptName) {
@@ -131,6 +136,7 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
   private File extractProject(String projectName) throws IOException {
     URL resource = GenerateTaskFilesCreationTest.class.getResource(projectName + ".zip");
     File destdir = FileUtil.createTempDirectory(projectName, "");
+    myTmpDirstoDelete.add(destdir);
     ZipUtil.extract(new File(resource.getFile()), destdir, new FilenameFilter() {
       public boolean accept(File dir, String name) {
         return true;
