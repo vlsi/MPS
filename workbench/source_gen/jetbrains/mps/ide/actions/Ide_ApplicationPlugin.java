@@ -26,9 +26,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Build_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.ChangesStrip_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.CreateRootNode_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.DebugHelperActionGroup_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.DebugPlaybackActionGroup_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.DebugSpecificPlaybackActionGroup_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.DebugRunMenu_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.DebugTool_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.DevkitActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Edit_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.EditorInternal_ActionGroup");
@@ -94,6 +93,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "VcsGroup", LanguageActions_ActionGroup.LABEL_ID_vcs);
     this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, "VcsGroup", ModelActions_ActionGroup.LABEL_ID_vcs);
     this.insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, "NavbarPopupMenu", AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);
+    this.insertGroupIntoAnother(DebugTool_ActionGroup.ID, "DebugStopAction", DebugTool_ActionGroup.LABEL_ID_StopAction);
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "RunContextGroup", null);
     this.insertGroupIntoAnother(EditorTabActions_ActionGroup.ID, "RunContextGroup", null);
     this.insertGroupIntoAnother(JUnitTestCaseActions_ActionGroup.ID, "RunContextGroup", null);

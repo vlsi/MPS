@@ -33,6 +33,7 @@ import com.intellij.openapi.util.IconLoader;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import jetbrains.mps.debug.api.integration.ui.DebuggerToolPanel;
+import jetbrains.mps.ide.actions.DebugTool_ActionGroup;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -110,7 +111,7 @@ public class DebugContentBuilder implements Disposable {
     restartAction.registerShortcut(ui.getComponent());
     actionGroup.add(restartAction);
 
-    actionGroup.add(ActionManager.getInstance().getAction("DebugToolBar"));
+    actionGroup.add(ActionManager.getInstance().getAction(DebugTool_ActionGroup.ID));
 
     actionGroup.addAll(myExecutionResult.getActions());
 
