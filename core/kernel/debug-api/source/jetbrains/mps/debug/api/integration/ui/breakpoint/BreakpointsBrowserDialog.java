@@ -82,7 +82,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         AbstractMPSBreakpoint breakpoint = (AbstractMPSBreakpoint) myBreakpointsList.getSelectedValue();
         if (breakpoint == null) return;
         dispose();
-        openNode(breakpoint, true, false);
+        openNode(breakpoint, true, true);
       }
     }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
