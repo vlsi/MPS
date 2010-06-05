@@ -15,13 +15,13 @@ public abstract class BaseValidatedAction extends AnAction {
 
   public final void actionPerformed(AnActionEvent e) {
     this.doPerform(e);
-    if (this.myValidator != null) {
-      this.myValidator.run();
+    if (myValidator != null) {
+      myValidator.run();
     }
   }
 
   public final void setValidator(Runnable validator) {
-    this.myValidator = validator;
+    myValidator = validator;
   }
 
   protected abstract void doPerform(AnActionEvent e);

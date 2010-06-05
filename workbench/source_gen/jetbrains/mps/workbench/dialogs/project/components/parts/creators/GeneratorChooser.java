@@ -17,7 +17,7 @@ public class GeneratorChooser implements Computable<List<ModuleReference>> {
   private final IBindedDialog myOwner;
 
   public GeneratorChooser(IBindedDialog owner) {
-    this.myOwner = owner;
+    myOwner = owner;
   }
 
   public List<ModuleReference> compute() {
@@ -32,7 +32,7 @@ public class GeneratorChooser implements Computable<List<ModuleReference>> {
         return result;
       }
     });
-    List<Generator> generator = CommonChoosers.showDialogModuleCollectionChooser(this.myOwner.getMainComponent(), "generator", generators, null);
+    List<Generator> generator = CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "generator", generators, null);
     if (generator == null) {
       return null;
     }

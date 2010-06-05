@@ -17,9 +17,9 @@ public class PriorityRuleDescriptor extends VoidColumnDescriptor {
 
   public PriorityRuleDescriptor(Generator generator, List<ModuleReference> depGenerators, boolean left, String name, String header, int width) {
     super(name, header, width);
-    this.myGenerator = generator;
-    this.myDepGenerators = depGenerators;
-    this.myLeft = left;
+    myGenerator = generator;
+    myDepGenerators = depGenerators;
+    myLeft = left;
   }
 
   public TableCellRenderer createRenderer() {
@@ -27,6 +27,6 @@ public class PriorityRuleDescriptor extends VoidColumnDescriptor {
   }
 
   public TableCellEditor createEditor() {
-    return new RuleOperandEditor(this.myGenerator, this.myDepGenerators, this.myLeft);
+    return new RuleOperandEditor(myGenerator, myDepGenerators, myLeft);
   }
 }

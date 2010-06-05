@@ -25,29 +25,29 @@ public class HandlerTableCellEditor extends AbstractTableCellEditor {
   private JPanel myMainComponent;
 
   public HandlerTableCellEditor(final IBindedDialog owner, final String caption) {
-    this.myOwner = owner;
-    this.myClass = new TextFieldWithBrowseButton.NoPathCompletion();
-    this.myClass.addActionListener(new ActionListener() {
+    myOwner = owner;
+    myClass = new TextFieldWithBrowseButton.NoPathCompletion();
+    myClass.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        String s = CommonChoosers.showDialogStringChooser(HandlerTableCellEditor.this.myOwner.getMainComponent(), caption, HandlerTableCellEditor.this.getModelRootManagerClassNames(owner.getOperationContext()));
+        String s = CommonChoosers.showDialogStringChooser(myOwner.getMainComponent(), caption, HandlerTableCellEditor.this.getModelRootManagerClassNames(owner.getOperationContext()));
         if (s == null) {
           return;
         }
-        HandlerTableCellEditor.this.myClass.setText(s);
+        myClass.setText(s);
         HandlerTableCellEditor.this.stopCellEditing();
       }
     });
-    this.myMainComponent = new JPanel(new BorderLayout());
-    this.myMainComponent.add(this.myClass, BorderLayout.CENTER);
+    myMainComponent = new JPanel(new BorderLayout());
+    myMainComponent.add(myClass, BorderLayout.CENTER);
   }
 
   public Object getCellEditorValue() {
-    return this.myClass.getText();
+    return myClass.getText();
   }
 
   public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
-    this.myClass.setText(((String) value));
-    return this.myMainComponent;
+    myClass.setText(((String) value));
+    return myMainComponent;
   }
 
   public List<String> getModelRootManagerClassNames(IOperationContext context) {

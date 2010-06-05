@@ -14,11 +14,11 @@ public class ManagerDescriptor extends VoidColumnDescriptor {
 
   public ManagerDescriptor(IBindedDialog owner, String name, String header, int width) {
     super(name, header, width);
-    this.myOwner = owner;
+    myOwner = owner;
   }
 
   public TableCellEditor createEditor() {
-    return new ManagerTableCellEditor(this.myOwner);
+    return new ManagerTableCellEditor(myOwner);
   }
 
   public TableCellRenderer createRenderer() {

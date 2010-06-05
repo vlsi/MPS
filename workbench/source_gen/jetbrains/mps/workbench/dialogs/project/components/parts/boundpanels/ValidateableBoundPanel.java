@@ -48,30 +48,30 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
   private boolean myInitialized = false;
 
   public ValidateableBoundPanel(final IBindedDialog owner, String caption, @NotNull final List<T> list) {
-    this.myOwner = owner;
-    this.myCaption = caption;
-    this.myList = list;
+    myOwner = owner;
+    myCaption = caption;
+    myList = list;
   }
 
   public void setAddAction(BaseValidatedAction action) {
     this.assertNotInitialized();
-    this.myAddAction = action;
+    myAddAction = action;
   }
 
   public void setRemoveAction(BaseValidatedAction action) {
     this.assertNotInitialized();
-    this.myRemoveAction = action;
+    myRemoveAction = action;
   }
 
   public void setEditAction(BaseValidatedAction action) {
     this.assertNotInitialized();
-    this.myEditAction = action;
+    myEditAction = action;
   }
 
   public void setChooser(final Computable<T> chooser) {
     this.assertNotInitialized();
-    this.myMultipleChooser = false;
-    this.myChooser = new Computable<List<T>>() {
+    myMultipleChooser = false;
+    myChooser = new Computable<List<T>>() {
       public List<T> compute() {
         return Collections.singletonList(chooser.compute());
       }
@@ -80,40 +80,40 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
 
   public void setMultipleChooser(Computable<List<T>> chooser) {
     this.assertNotInitialized();
-    this.myMultipleChooser = true;
-    this.myChooser = chooser;
+    myMultipleChooser = true;
+    myChooser = chooser;
   }
 
   public void setCellRenderer(DefaultListCellRenderer cellRenderer) {
     this.assertNotInitialized();
-    this.myCellRenderer = cellRenderer;
+    myCellRenderer = cellRenderer;
   }
 
   public void setTransferHandler(TransferHandler transferHandler) {
     this.assertNotInitialized();
-    this.myTransferHandler = transferHandler;
+    myTransferHandler = transferHandler;
   }
 
   public void setObjectValidator(Validator objectValidator) {
     this.assertNotInitialized();
-    this.myObjectValidator = objectValidator;
+    myObjectValidator = objectValidator;
   }
 
   public void setCanRemoveCondition(Condition<T> canRemoveCondition) {
     this.assertNotInitialized();
-    this.myCanRemoveCondition = (canRemoveCondition != null ?
+    myCanRemoveCondition = (canRemoveCondition != null ?
       canRemoveCondition :
       Condition.TRUE_CONDITION
     );
   }
 
   public void init() {
-    this.myInitialized = true;
-    this.setBorder(new TitledBorder(this.myCaption));
+    myInitialized = true;
+    this.setBorder(new TitledBorder(myCaption));
     this.setLayout(new BorderLayout());
     JComponent component = ValidateableBoundPanel.this.initUIComponentAndBinding();
-    if (this.myTransferHandler != null) {
-      component.setTransferHandler(this.myTransferHandler);
+    if (myTransferHandler != null) {
+      component.setTransferHandler(myTransferHandler);
     }
     CopySupport.addCopyPopup(component);
     component.addKeyListener(new ValidateableBoundPanel.MyKeyAdapter());
@@ -124,11 +124,11 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     JScrollPane comp = new JScrollPane(component);
     comp.doLayout();
     this.add(comp, BorderLayout.CENTER);
-    this.myValidator.run();
+    myValidator.run();
   }
 
   protected boolean multipleChooserSet() {
-    return this.myMultipleChooser == Boolean.TRUE;
+    return myMultipleChooser == Boolean.TRUE;
   }
 
   protected String removeSelectedWithCheck() {
@@ -138,14 +138,14 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     Arrays.sort(indices);
 
     for (int i = indices.length - 1; i >= 0; i--) {
-      T value = (T) this.myList.get(indices[i]);
-      if (!(this.myCanRemoveCondition.met(value))) {
+      T value = (T) myList.get(indices[i]);
+      if (!(myCanRemoveCondition.met(value))) {
         if (errorMessage.length() != 0) {
           errorMessage.append("<br>");
         }
         errorMessage.append("<b>");
-        if (this.myCellRenderer instanceof ProjectLevelRenderer) {
-          ProjectLevelRenderer levelRenderer = (ProjectLevelRenderer) this.myCellRenderer;
+        if (myCellRenderer instanceof ProjectLevelRenderer) {
+          ProjectLevelRenderer levelRenderer = (ProjectLevelRenderer) myCellRenderer;
           errorMessage.append(levelRenderer.getItemLabel(value));
         } else {
           errorMessage.append(value);
@@ -153,32 +153,32 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
         errorMessage.append("</b>");
         continue;
       }
-      this.myList.remove(indices[i]);
+      myList.remove(indices[i]);
     }
     return errorMessage.toString();
   }
 
   private JComponent createActionsComponent() {
-    if (this.myMultipleChooser != null) {
-      if (this.myAddAction == null) {
-        this.myAddAction = ValidateableBoundPanel.this.createAddAction(this.myChooser);
+    if (myMultipleChooser != null) {
+      if (myAddAction == null) {
+        myAddAction = ValidateableBoundPanel.this.createAddAction(myChooser);
       }
-      if (this.myRemoveAction == null) {
-        this.myRemoveAction = ValidateableBoundPanel.this.createRemoveAction();
+      if (myRemoveAction == null) {
+        myRemoveAction = ValidateableBoundPanel.this.createRemoveAction();
       }
     }
     List<AnAction> act = new ArrayList<AnAction>();
-    if (this.myAddAction != null) {
-      this.myAddAction.setValidator(this.myValidator);
-      act.add(this.myAddAction);
+    if (myAddAction != null) {
+      myAddAction.setValidator(myValidator);
+      act.add(myAddAction);
     }
-    if (this.myRemoveAction != null) {
-      this.myRemoveAction.setValidator(this.myValidator);
-      act.add(this.myRemoveAction);
+    if (myRemoveAction != null) {
+      myRemoveAction.setValidator(myValidator);
+      act.add(myRemoveAction);
     }
-    if (this.myEditAction != null) {
-      this.myEditAction.setValidator(this.myValidator);
-      act.add(this.myEditAction);
+    if (myEditAction != null) {
+      myEditAction.setValidator(myValidator);
+      act.add(myEditAction);
     }
     AnAction[] actions = act.toArray(new AnAction[act.size()]);
     if (actions.length == 0) {
@@ -190,7 +190,7 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
   }
 
   private void assertNotInitialized() {
-    assert !(this.myInitialized);
+    assert !(myInitialized);
   }
 
   protected abstract BaseValidatedAction createAddAction(Computable<List<T>> chooser);
@@ -206,7 +206,7 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     }
 
     public void run() {
-      if (ValidateableBoundPanel.this.myObjectValidator == null) {
+      if (myObjectValidator == null) {
         return;
       }
       if (!((ValidateableBoundPanel.this.getBorder() instanceof TitledBorder))) {
@@ -214,8 +214,8 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
       }
       TitledBorder titledBorder = (TitledBorder) ValidateableBoundPanel.this.getBorder();
       boolean hasError = false;
-      for (T value : ValidateableBoundPanel.this.myList) {
-        if (ValidateableBoundPanel.this.myObjectValidator.isBrokenValue(value)) {
+      for (T value : myList) {
+        if (myObjectValidator.isBrokenValue(value)) {
           hasError = true;
           break;
         }
@@ -234,14 +234,14 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
 
     public void keyPressed(KeyEvent e) {
       if (e.getKeyCode() == KeyEvent.VK_INSERT) {
-        if (ValidateableBoundPanel.this.myAddAction != null) {
-          ActionUtils.updateAndPerformAction(ValidateableBoundPanel.this.myAddAction, ActionUtils.createEvent(e));
+        if (myAddAction != null) {
+          ActionUtils.updateAndPerformAction(myAddAction, ActionUtils.createEvent(e));
         }
         e.consume();
       }
       if (e.getKeyCode() == KeyEvent.VK_DELETE) {
-        if (ValidateableBoundPanel.this.myRemoveAction != null) {
-          ActionUtils.updateAndPerformAction(ValidateableBoundPanel.this.myRemoveAction, ActionUtils.createEvent(e));
+        if (myRemoveAction != null) {
+          ActionUtils.updateAndPerformAction(myRemoveAction, ActionUtils.createEvent(e));
         }
         e.consume();
       }

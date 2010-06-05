@@ -11,13 +11,13 @@ public class SourcePathChooser implements Computable {
   private final IBindedDialog myOwner;
 
   public SourcePathChooser(IBindedDialog owner) {
-    this.myOwner = owner;
+    myOwner = owner;
   }
 
   public Object compute() {
     TreeFileChooser chooser = new TreeFileChooser();
     chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-    IFile result = chooser.showDialog(this.myOwner.getMainComponent());
+    IFile result = chooser.showDialog(myOwner.getMainComponent());
     if (result == null) {
       return null;
     }

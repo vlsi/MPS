@@ -132,11 +132,8 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1560298786499498207">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1560298786499498208">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1560298786499498209">
-            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499498210">
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499498211">
-                <link role="fieldDeclaration:3" targetNodeId="1560298786499498200" resolveInfo="myModuleScope" />
-              </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499498212" />
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148205028">
+              <link role="variableDeclaration:3" targetNodeId="1560298786499498200" resolveInfo="myModuleScope" />
             </node>
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499498213">
               <link role="variableDeclaration:3" targetNodeId="1560298786499498205" resolveInfo="moduleScope" />
@@ -196,11 +193,8 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1560298786499498235">
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1560298786499498236">
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499498237">
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499498238">
-                <link role="fieldDeclaration:3" targetNodeId="1560298786499498200" resolveInfo="myModuleScope" />
-              </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499498239" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204787">
+              <link role="variableDeclaration:3" targetNodeId="1560298786499498200" resolveInfo="myModuleScope" />
             </node>
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1560298786499498240" />
           </node>
@@ -239,13 +233,8 @@
                         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1560298786499498256">
                           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1560298786499498257">
                             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499498258">
-                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499498259">
-                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499498260">
-                                  <link role="fieldDeclaration:3" targetNodeId="1560298786499498200" resolveInfo="myModuleScope" />
-                                </node>
-                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499498261">
-                                  <link role="classConcept:3" targetNodeId="1560298786499498197" resolveInfo="ModelValidator" />
-                                </node>
+                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204235">
+                                <link role="variableDeclaration:3" targetNodeId="1560298786499498200" resolveInfo="myModuleScope" />
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499498262">
                                 <link role="baseMethodDeclaration:3" targetNodeId="2.~IScope.getModelDescriptor(jetbrains.mps.smodel.SModelReference):jetbrains.mps.smodel.SModelDescriptor" />

@@ -12,10 +12,10 @@ public class ListRendererAdapter implements TableCellRenderer {
   private ListCellRenderer myCellRenderer;
 
   public ListRendererAdapter(ListCellRenderer cellRenderer) {
-    this.myCellRenderer = cellRenderer;
+    myCellRenderer = cellRenderer;
   }
 
   public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-    return this.myCellRenderer.getListCellRendererComponent(new JList(), value, row, isSelected, hasFocus);
+    return myCellRenderer.getListCellRendererComponent(new JList(), value, row, isSelected, hasFocus);
   }
 }

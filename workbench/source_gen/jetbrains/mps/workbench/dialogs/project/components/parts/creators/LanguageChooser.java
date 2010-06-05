@@ -16,7 +16,7 @@ public class LanguageChooser implements Computable<List<ModuleReference>> {
   private final IBindedDialog myOwner;
 
   public LanguageChooser(IBindedDialog owner) {
-    this.myOwner = owner;
+    myOwner = owner;
   }
 
   public List<ModuleReference> compute() {
@@ -25,7 +25,7 @@ public class LanguageChooser implements Computable<List<ModuleReference>> {
         return GlobalScope.getInstance().getVisibleLanguages();
       }
     });
-    List<Language> language = CommonChoosers.showDialogModuleCollectionChooser(this.myOwner.getMainComponent(), "language", languages, null);
+    List<Language> language = CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "language", languages, null);
     if (language == null) {
       return null;
     }

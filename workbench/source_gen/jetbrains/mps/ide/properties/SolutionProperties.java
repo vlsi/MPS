@@ -18,27 +18,27 @@ public class SolutionProperties extends ModuleProperties {
   }
 
   public boolean isExternallyVisible() {
-    return this.myExternallyVisible;
+    return myExternallyVisible;
   }
 
   public void setExternallyVisible(boolean externallyVisible) {
-    this.myExternallyVisible = externallyVisible;
+    myExternallyVisible = externallyVisible;
   }
 
   public boolean isDontLoadClasses() {
-    return this.myDontLoadClasses;
+    return myDontLoadClasses;
   }
 
   public void setDontLoadClasses(boolean dontLoadClasses) {
-    this.myDontLoadClasses = dontLoadClasses;
+    myDontLoadClasses = dontLoadClasses;
   }
 
   public String getOutputPath() {
-    return this.myOutputPath;
+    return myOutputPath;
   }
 
   public void setOutputPath(String outputPath) {
-    this.myOutputPath = outputPath;
+    myOutputPath = outputPath;
   }
 
   @Override
@@ -46,9 +46,9 @@ public class SolutionProperties extends ModuleProperties {
     assert descriptor instanceof SolutionDescriptor;
     super.loadFrom(descriptor);
     SolutionDescriptor d = (SolutionDescriptor) descriptor;
-    this.myExternallyVisible = d.isExternallyVisible();
-    this.myDontLoadClasses = d.isDontLoadClasses();
-    this.myOutputPath = d.getOutputPath();
+    myExternallyVisible = d.isExternallyVisible();
+    myDontLoadClasses = d.isDontLoadClasses();
+    myOutputPath = d.getOutputPath();
   }
 
   @Override
@@ -56,8 +56,8 @@ public class SolutionProperties extends ModuleProperties {
     assert descriptor instanceof SolutionDescriptor;
     super.saveTo(descriptor);
     SolutionDescriptor d = (SolutionDescriptor) descriptor;
-    d.setExternallyVisible(this.myExternallyVisible);
-    d.setDontLoadClasses(this.myDontLoadClasses);
-    d.setOutputPath(this.myOutputPath);
+    d.setExternallyVisible(myExternallyVisible);
+    d.setDontLoadClasses(myDontLoadClasses);
+    d.setOutputPath(myOutputPath);
   }
 }

@@ -14,16 +14,16 @@ public class GeneratorProperties extends ModuleProperties {
   private List<MappingPriorityRule> myPriorityRules;
 
   public GeneratorProperties() {
-    this.myDepGenerators = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
-    this.myPriorityRules = (List) ListsFactory.create(ListsFactory.IGNORING_COMPARATOR);
+    myDepGenerators = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
+    myPriorityRules = (List) ListsFactory.create(ListsFactory.IGNORING_COMPARATOR);
   }
 
   public List<ModuleReference> getDepGenerators() {
-    return this.myDepGenerators;
+    return myDepGenerators;
   }
 
   public List<MappingPriorityRule> getPriorityRules() {
-    return this.myPriorityRules;
+    return myPriorityRules;
   }
 
   @Override
@@ -32,10 +32,10 @@ public class GeneratorProperties extends ModuleProperties {
     super.loadFrom(descriptor);
     GeneratorDescriptor d = (GeneratorDescriptor) descriptor;
     for (ModuleReference ref : d.getDepGenerators()) {
-      this.myDepGenerators.add(ref);
+      myDepGenerators.add(ref);
     }
     for (MappingPriorityRule rule : d.getPriorityRules()) {
-      this.myPriorityRules.add((rule != null ?
+      myPriorityRules.add((rule != null ?
         rule.getCopy() :
         null
       ));
@@ -48,8 +48,8 @@ public class GeneratorProperties extends ModuleProperties {
     super.saveTo(descriptor);
     GeneratorDescriptor d = (GeneratorDescriptor) descriptor;
     d.getDepGenerators().clear();
-    d.getDepGenerators().addAll(this.myDepGenerators);
+    d.getDepGenerators().addAll(myDepGenerators);
     d.getPriorityRules().clear();
-    d.getPriorityRules().addAll(this.myPriorityRules);
+    d.getPriorityRules().addAll(myPriorityRules);
   }
 }

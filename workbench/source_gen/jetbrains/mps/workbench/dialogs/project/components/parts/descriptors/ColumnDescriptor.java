@@ -11,21 +11,21 @@ public abstract class ColumnDescriptor {
   private int myWidth;
 
   public ColumnDescriptor(String name, String header, int width) {
-    this.myName = name;
-    this.myHeader = header;
-    this.myWidth = width;
+    myName = name;
+    myHeader = header;
+    myWidth = width;
   }
 
   public String getName() {
-    return this.myName;
+    return myName;
   }
 
   public String getHeader() {
-    return this.myHeader;
+    return myHeader;
   }
 
   public int getWidth() {
-    return this.myWidth;
+    return myWidth;
   }
 
   public abstract TableCellRenderer createRenderer();

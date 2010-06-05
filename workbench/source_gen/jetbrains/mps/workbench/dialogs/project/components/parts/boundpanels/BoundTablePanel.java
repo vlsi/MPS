@@ -39,15 +39,15 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
   }
 
   public void addColumn(ColumnDescriptor d) {
-    this.myColumns.add(d);
+    myColumns.add(d);
   }
 
   public void setDiffRow(boolean isDiffRow) {
-    this.myDiffRow = isDiffRow;
+    myDiffRow = isDiffRow;
   }
 
   public JTable getTable() {
-    return this.myTable;
+    return myTable;
   }
 
   protected BaseValidatedAction createAddAction(final Computable<List<T>> chooser) {
@@ -55,27 +55,27 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
   }
 
   protected BaseValidatedAction createRemoveAction() {
-    return new BoundTablePanel.MyTableRemoveAction(this.myTable);
+    return new BoundTablePanel.MyTableRemoveAction(myTable);
   }
 
   protected int[] getSelectedIndices() {
-    return this.myTable.getSelectedRows();
+    return myTable.getSelectedRows();
   }
 
   protected JComponent initUIComponentAndBinding() {
-    this.myTable = (this.myDiffRow ?
+    myTable = (myDiffRow ?
       new DiffRowTable() :
       new JTable()
     );
-    JTableBinding<T, List<T>, JTable> tableBinding = SwingBindings.createJTableBinding(AutoBinding.UpdateStrategy.READ_WRITE, this.myList, this.myTable);
-    for (final ColumnDescriptor d : this.myColumns) {
+    JTableBinding<T, List<T>, JTable> tableBinding = SwingBindings.createJTableBinding(AutoBinding.UpdateStrategy.READ_WRITE, myList, myTable);
+    for (final ColumnDescriptor d : myColumns) {
       tableBinding.addColumnBinding((Property<T, ?>) BeanProperty.create(d.getName()));
     }
     tableBinding.bind();
-    this.myOwner.addBinding(tableBinding);
+    myOwner.addBinding(tableBinding);
     int i = 0;
-    for (final ColumnDescriptor d : this.myColumns) {
-      TableColumn column = this.myTable.getColumnModel().getColumn(i);
+    for (final ColumnDescriptor d : myColumns) {
+      TableColumn column = myTable.getColumnModel().getColumn(i);
       column.setHeaderValue(d.getHeader());
       if (d.getWidth() > 0) {
         column.setWidth(d.getWidth());
@@ -101,11 +101,11 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
       }
       i++;
     }
-    this.myTable.setSelectionMode((this.multipleChooserSet() ?
+    myTable.setSelectionMode((this.multipleChooserSet() ?
       ListSelectionModel.MULTIPLE_INTERVAL_SELECTION :
       ListSelectionModel.SINGLE_INTERVAL_SELECTION
     ));
-    return this.myTable;
+    return myTable;
   }
 
   private class MyTableRemoveAction extends TableRemoveAction {
@@ -125,12 +125,12 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
     private final Computable<List<T>> myChooser;
 
     public MyTableAddAction(Computable<List<T>> chooser) {
-      super(BoundTablePanel.this.myTable);
-      this.myChooser = chooser;
+      super(myTable);
+      myChooser = chooser;
     }
 
     protected int doAdd(AnActionEvent e) {
-      List<T> chosen = this.myChooser.compute();
+      List<T> chosen = myChooser.compute();
       if (chosen == null) {
         return -1;
       }

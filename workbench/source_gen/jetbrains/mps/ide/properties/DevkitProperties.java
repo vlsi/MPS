@@ -17,29 +17,29 @@ public class DevkitProperties extends ModuleProperties {
   private List<ModuleReference> myExtendedDevkits;
 
   public DevkitProperties() {
-    this.myExportedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
-    this.myExportedSolutions = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
-    this.myExtendedDevkits = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
+    myExportedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
+    myExportedSolutions = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
+    myExtendedDevkits = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
   }
 
   public String getPlugin() {
-    return this.myPlugin;
+    return myPlugin;
   }
 
   public void setPlugin(String plugin) {
-    this.myPlugin = plugin;
+    myPlugin = plugin;
   }
 
   public List<ModuleReference> getExportedLanguages() {
-    return this.myExportedLanguages;
+    return myExportedLanguages;
   }
 
   public List<ModuleReference> getExportedSolutions() {
-    return this.myExportedSolutions;
+    return myExportedSolutions;
   }
 
   public List<ModuleReference> getExtendedDevkits() {
-    return this.myExtendedDevkits;
+    return myExtendedDevkits;
   }
 
   @Override
@@ -47,15 +47,15 @@ public class DevkitProperties extends ModuleProperties {
     assert descriptor instanceof DevkitDescriptor;
     super.loadFrom(descriptor);
     DevkitDescriptor d = (DevkitDescriptor) descriptor;
-    this.myPlugin = d.getPlugin();
+    myPlugin = d.getPlugin();
     for (ModuleReference ref : d.getExportedLanguages()) {
-      this.myExportedLanguages.add(ref);
+      myExportedLanguages.add(ref);
     }
     for (ModuleReference ref : d.getExportedSolutions()) {
-      this.myExportedSolutions.add(ref);
+      myExportedSolutions.add(ref);
     }
     for (ModuleReference ref : d.getExtendedDevkits()) {
-      this.myExtendedDevkits.add(ref);
+      myExtendedDevkits.add(ref);
     }
   }
 
@@ -64,12 +64,12 @@ public class DevkitProperties extends ModuleProperties {
     assert descriptor instanceof DevkitDescriptor;
     super.saveTo(descriptor);
     DevkitDescriptor d = (DevkitDescriptor) descriptor;
-    d.setPlugin(this.myPlugin);
+    d.setPlugin(myPlugin);
     d.getExportedLanguages().clear();
-    d.getExportedLanguages().addAll(this.myExportedLanguages);
+    d.getExportedLanguages().addAll(myExportedLanguages);
     d.getExportedSolutions().clear();
-    d.getExportedSolutions().addAll(this.myExportedSolutions);
+    d.getExportedSolutions().addAll(myExportedSolutions);
     d.getExtendedDevkits().clear();
-    d.getExtendedDevkits().addAll(this.myExtendedDevkits);
+    d.getExtendedDevkits().addAll(myExtendedDevkits);
   }
 }

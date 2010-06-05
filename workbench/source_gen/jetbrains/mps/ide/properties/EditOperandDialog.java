@@ -55,11 +55,11 @@ public class EditOperandDialog extends BaseDialog {
       }
     });
     this.setRootMappingRef(root, operand, isLeft);
-    this.myTree = new MappingSelectTree(isLeft);
-    this.myTree.setModel(new DefaultTreeModel(root, false));
+    myTree = new MappingSelectTree(isLeft);
+    myTree.setModel(new DefaultTreeModel(root, false));
     this.setCheckedUnder(root);
-    this.expandCheckedUnder(this.myTree, root);
-    this.myMainComponent = new JScrollPane(this.myTree);
+    this.expandCheckedUnder(myTree, root);
+    myMainComponent = new JScrollPane(myTree);
   }
 
   public void expandCheckedUnder(JTree tree, DefaultMutableTreeNode node) {
@@ -93,7 +93,7 @@ public class EditOperandDialog extends BaseDialog {
   }
 
   protected JComponent getMainComponent() {
-    return this.myMainComponent;
+    return myMainComponent;
   }
 
   @Override
@@ -102,7 +102,7 @@ public class EditOperandDialog extends BaseDialog {
   }
 
   public MappingConfig_AbstractRef getResult() {
-    return this.myResult;
+    return myResult;
   }
 
   private void setRootMappingRef(DefaultMutableTreeNode root, MappingConfig_AbstractRef operand, boolean isLeft) {
@@ -282,9 +282,9 @@ public class EditOperandDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void buttonOK() {
-    final DefaultMutableTreeNode root = (DefaultMutableTreeNode) this.myTree.getModel().getRoot();
+    final DefaultMutableTreeNode root = (DefaultMutableTreeNode) myTree.getModel().getRoot();
     this.setCheckedUnder(root);
-    this.myResult = ModelAccess.instance().runReadAction(new Computable<MappingConfig_AbstractRef>() {
+    myResult = ModelAccess.instance().runReadAction(new Computable<MappingConfig_AbstractRef>() {
       public MappingConfig_AbstractRef compute() {
         return EditOperandDialog.this.getRootMappingRef(root);
       }
@@ -294,7 +294,7 @@ public class EditOperandDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void buttonCancel() {
-    this.myResult = null;
+    myResult = null;
     this.dispose();
   }
 }

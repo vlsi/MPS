@@ -12,11 +12,11 @@ public class DepDescriptor extends VoidColumnDescriptor {
 
   public DepDescriptor(IBindedDialog owner, String name, String header, int width) {
     super(name, header, width);
-    this.myOwner = owner;
+    myOwner = owner;
   }
 
   public TableCellRenderer createRenderer() {
-    ModuleRenderer renderer = new ModuleRenderer(this.myOwner.getModuleScope(), this.myOwner.getProjectScope());
+    ModuleRenderer renderer = new ModuleRenderer(myOwner.getModuleScope(), myOwner.getProjectScope());
     return new ListRendererAdapter(renderer);
   }
 }

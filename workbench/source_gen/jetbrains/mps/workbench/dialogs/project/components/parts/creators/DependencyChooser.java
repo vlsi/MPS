@@ -16,7 +16,7 @@ public class DependencyChooser implements Computable<List<Dependency>> {
   private final IBindedDialog myOwner;
 
   public DependencyChooser(IBindedDialog owner) {
-    this.myOwner = owner;
+    myOwner = owner;
   }
 
   public List<Dependency> compute() {
@@ -25,7 +25,7 @@ public class DependencyChooser implements Computable<List<Dependency>> {
         return new ArrayList(MPSModuleRepository.getInstance().getAllModules());
       }
     });
-    List<IModule> module = CommonChoosers.showDialogModuleCollectionChooser(this.myOwner.getMainComponent(), "module", modules, null);
+    List<IModule> module = CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "module", modules, null);
     if (module == null) {
       return null;
     }

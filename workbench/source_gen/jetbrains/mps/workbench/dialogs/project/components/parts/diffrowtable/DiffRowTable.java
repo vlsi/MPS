@@ -104,10 +104,10 @@ public class DiffRowTable extends JTable {
     Rectangle cellFrame;
     TableColumn aColumn;
     cellFrame = new Rectangle();
-    cellFrame.height = this.getRowHeight(row) + this.rowMargin;
+    cellFrame.height = this.getRowHeight(row) + rowMargin;
     cellFrame.y = 0;
     for (int i = 0; i < row; i++) {
-      cellFrame.y += this.getRowHeight(i) + this.rowMargin;
+      cellFrame.y += this.getRowHeight(i) + rowMargin;
     }
     int index = 0;
     int columnMargin = this.getColumnModel().getColumnMargin();

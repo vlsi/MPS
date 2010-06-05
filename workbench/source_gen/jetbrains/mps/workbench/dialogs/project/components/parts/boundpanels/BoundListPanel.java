@@ -23,11 +23,11 @@ public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
   }
 
   protected JComponent initUIComponentAndBinding() {
-    if (this.myCellRenderer != null) {
-      this.myUIList.setCellRenderer(this.myCellRenderer);
+    if (myCellRenderer != null) {
+      myUIList.setCellRenderer(myCellRenderer);
     }
-    this.myOwner.addBinding(SwingBindings.createJListBinding(AutoBinding.UpdateStrategy.READ_WRITE, this.myList, this.myUIList));
-    return this.myUIList;
+    myOwner.addBinding(SwingBindings.createJListBinding(AutoBinding.UpdateStrategy.READ_WRITE, myList, myUIList));
+    return myUIList;
   }
 
   protected BaseValidatedAction createAddAction(Computable<List<T>> chooser) {
@@ -39,23 +39,23 @@ public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
   }
 
   protected int[] getSelectedIndices() {
-    return this.myUIList.getSelectedIndices();
+    return myUIList.getSelectedIndices();
   }
 
   public JList getList() {
-    return this.myUIList;
+    return myUIList;
   }
 
   private class MyListAddAction extends ListAddAction {
     private Computable<List<T>> myChooser;
 
     public MyListAddAction(Computable<List<T>> chooser) {
-      super(BoundListPanel.this.myUIList);
-      this.myChooser = chooser;
+      super(myUIList);
+      myChooser = chooser;
     }
 
     protected int doAdd(AnActionEvent e) {
-      List<T> chosen = this.myChooser.compute();
+      List<T> chosen = myChooser.compute();
       if (chosen == null) {
         return -1;
       }
@@ -74,7 +74,7 @@ public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
 
   private class MyListRemoveAction extends ListRemoveAction {
     public MyListRemoveAction() {
-      super(BoundListPanel.this.myUIList);
+      super(myUIList);
     }
 
     protected void doRemove(AnActionEvent e) {

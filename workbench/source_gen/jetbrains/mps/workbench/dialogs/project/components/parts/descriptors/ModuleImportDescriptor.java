@@ -15,8 +15,8 @@ public class ModuleImportDescriptor extends VoidColumnDescriptor {
 
   public ModuleImportDescriptor(ImportProperties props, boolean forModel, String name, String header, int width) {
     super(name, header, width);
-    this.myProps = props;
-    this.myForModel = forModel;
+    myProps = props;
+    myForModel = forModel;
   }
 
   public TableCellRenderer createRenderer() {
@@ -24,6 +24,6 @@ public class ModuleImportDescriptor extends VoidColumnDescriptor {
   }
 
   public TableCellEditor createEditor() {
-    return new ModuleImportEditor(this.myProps, this.myForModel);
+    return new ModuleImportEditor(myProps, myForModel);
   }
 }

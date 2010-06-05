@@ -16,7 +16,7 @@ public class DevKitChooser implements Computable<List<ModuleReference>> {
   private final IBindedDialog myOwner;
 
   public DevKitChooser(IBindedDialog owner) {
-    this.myOwner = owner;
+    myOwner = owner;
   }
 
   public List<ModuleReference> compute() {
@@ -25,7 +25,7 @@ public class DevKitChooser implements Computable<List<ModuleReference>> {
         return GlobalScope.getInstance().getVisibleDevkits();
       }
     });
-    List<DevKit> devKit = CommonChoosers.showDialogModuleCollectionChooser(this.myOwner.getMainComponent(), "devkit", devkits, null);
+    List<DevKit> devKit = CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "devkit", devkits, null);
     if (devKit == null) {
       return null;
     }

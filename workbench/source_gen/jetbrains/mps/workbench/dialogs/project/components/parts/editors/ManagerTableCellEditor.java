@@ -35,41 +35,41 @@ public class ManagerTableCellEditor extends AbstractTableCellEditor {
   private ModelRootManager myManager;
 
   public ManagerTableCellEditor(final IBindedDialog owner) {
-    this.myOwner = owner;
-    this.myManager = null;
-    this.myLabel = new JLabel();
-    this.myLabel.addMouseListener(new MouseAdapter() {
+    myOwner = owner;
+    myManager = null;
+    myLabel = new JLabel();
+    myLabel.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
-        final SNode node = CommonChoosers.showDialogNodeChooser(ManagerTableCellEditor.this.myOwner.getMainComponent(), ManagerTableCellEditor.this.getManagerNodes(owner.getOperationContext()));
+        final SNode node = CommonChoosers.showDialogNodeChooser(myOwner.getMainComponent(), ManagerTableCellEditor.this.getManagerNodes(owner.getOperationContext()));
         if (node == null) {
           return;
         }
         String text = ModelAccess.instance().runReadAction(new Computable<String>() {
           public String compute() {
             Language language = Language.getLanguageFor(node.getModel().getModelDescriptor());
-            ManagerTableCellEditor.this.myManager = new ModelRootManager(language.getModuleId().toString(), AbstractModelCreator_Behavior.call_getGeneratedClassFQName_5553449326502826666(node));
+            myManager = new ModelRootManager(language.getModuleId().toString(), AbstractModelCreator_Behavior.call_getGeneratedClassFQName_5553449326502826666(node));
             String languageName = language.getShortName();
             return node.getName() + " (" + languageName + ")";
           }
         });
-        ManagerTableCellEditor.this.myLabel.setText(text);
+        myLabel.setText(text);
         ManagerTableCellEditor.this.stopCellEditing();
       }
     });
   }
 
   public Object getCellEditorValue() {
-    return this.myManager;
+    return myManager;
   }
 
   public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
-    this.myManager = ((ModelRootManager) value);
-    String representation = (this.myManager == null ?
+    myManager = ((ModelRootManager) value);
+    String representation = (myManager == null ?
       "" :
-      NameUtil.shortNameFromLongName(this.myManager.getClassName())
+      NameUtil.shortNameFromLongName(myManager.getClassName())
     );
-    this.myLabel.setText(representation);
-    return this.myLabel;
+    myLabel.setText(representation);
+    return myLabel;
   }
 
   public List<SNode> getManagerNodes(final IOperationContext context) {

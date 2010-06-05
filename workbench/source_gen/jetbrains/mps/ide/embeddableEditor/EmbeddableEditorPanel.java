@@ -19,7 +19,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
   }
 
   /*package*/ void setEditor(MPSFileNodeEditor editor) {
-    this.myFileNodeEditor = editor;
+    myFileNodeEditor = editor;
     this.removeAll();
     this.add(editor.getComponent(), BorderLayout.CENTER);
   }
@@ -27,7 +27,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
   @Nullable
   public Object getData(@NonNls String dataId) {
     if (dataId.equals(MPSDataKeys.FILE_EDITOR.getName())) {
-      return this.myFileNodeEditor;
+      return myFileNodeEditor;
     }
     return null;
   }

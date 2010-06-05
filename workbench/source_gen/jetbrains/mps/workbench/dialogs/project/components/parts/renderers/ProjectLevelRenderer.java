@@ -11,18 +11,18 @@ public class ProjectLevelRenderer extends DefaultListCellRenderer {
   private IScope myProjectScope;
 
   public ProjectLevelRenderer(IScope moduleScope, IScope projectScope) {
-    this.myModuleScope = moduleScope;
-    this.myProjectScope = projectScope;
+    myModuleScope = moduleScope;
+    myProjectScope = projectScope;
   }
 
   @Nullable
   public IScope getProjectScope() {
-    return this.myProjectScope;
+    return myProjectScope;
   }
 
   @Nullable
   public IScope getModuleScope() {
-    return this.myModuleScope;
+    return myModuleScope;
   }
 
   public String getItemLabel(Object value) {

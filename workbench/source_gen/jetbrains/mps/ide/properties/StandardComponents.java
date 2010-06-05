@@ -33,12 +33,9 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.creators.Depende
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ColumnDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.DepDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.BooleanDescriptor;
-import jetbrains.mps.project.structure.modules.ClassPathEntry;
-import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ClassPathChooser;
-import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.StringPathDescriptor;
-import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.IncludedVCSDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelRootChooser;
+import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.StringPathDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.EditableStringDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.VoidColumnDescriptor;
@@ -50,6 +47,8 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubSol
 import javax.swing.JOptionPane;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser;
+import jetbrains.mps.project.structure.modules.ClassPathEntry;
+import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.IncludedVCSDescriptor;
 import jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.ImportProperties;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModelDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModuleImportDescriptor;
@@ -232,44 +231,27 @@ public class StandardComponents {
     }.invoke();
   }
 
-  public static JPanel createClassPathsPanel(final IBindedDialog owner, final String caption, final List<ClassPathEntry> list) {
-    return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
-      public BoundTablePanel invoke() {
-        final BoundTablePanel result_wf5hwp_a0a0a8 = new BoundTablePanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a8 = new ClassPathChooser(owner);
-        result_wf5hwp_a0a0a8.setMultipleChooser(result_wf5hwp_a0a0a0a8);
-
-        final ColumnDescriptor result_wf5hwp_a2a0a0a8 = new StringPathDescriptor(ClassPathEntry.PATH, "Path", -1);
-        result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a2a0a0a8);
-        final ColumnDescriptor result_wf5hwp_a3a0a0a8 = new IncludedVCSDescriptor(ClassPathEntry.INCLUDED, "Included in VCS", 200);
-        result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a3a0a0a8);
-        result_wf5hwp_a0a0a8.init();
-        return result_wf5hwp_a0a0a8;
-      }
-    }.invoke();
-  }
-
   public static JPanel createModelRootsPanel(final IBindedDialog owner, final String caption, final List<ModelRoot> list) {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        final BoundTablePanel result_wf5hwp_a0a0a9 = new BoundTablePanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a9 = new ModelRootChooser(owner);
-        result_wf5hwp_a0a0a9.setChooser(result_wf5hwp_a0a0a0a9);
+        final BoundTablePanel result_wf5hwp_a0a0a8 = new BoundTablePanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a8 = new ModelRootChooser(owner);
+        result_wf5hwp_a0a0a8.setChooser(result_wf5hwp_a0a0a0a8);
 
-        final ColumnDescriptor result_wf5hwp_a2a0a0a9 = new StringPathDescriptor(ModelRoot.PATH, "Path", -1);
-        result_wf5hwp_a0a0a9.addColumn(result_wf5hwp_a2a0a0a9);
-        final ColumnDescriptor result_wf5hwp_a3a0a0a9 = new EditableStringDescriptor(ModelRoot.PREFIX, "Prefix", 250);
-        result_wf5hwp_a0a0a9.addColumn(result_wf5hwp_a3a0a0a9);
-        final ColumnDescriptor result_wf5hwp_a4a0a0a9 = new ManagerDescriptor(owner, ModelRoot.MANAGER, "Manager", 200);
-        result_wf5hwp_a0a0a9.addColumn(result_wf5hwp_a4a0a0a9);
-        final ColumnDescriptor result_wf5hwp_a5a0a0a9 = new VoidColumnDescriptor(ModelRoot.OLD_MANAGER, "Manager (Int)", 200) {
+        final ColumnDescriptor result_wf5hwp_a2a0a0a8 = new StringPathDescriptor(ModelRoot.PATH, "Path", -1);
+        result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a2a0a0a8);
+        final ColumnDescriptor result_wf5hwp_a3a0a0a8 = new EditableStringDescriptor(ModelRoot.PREFIX, "Prefix", 250);
+        result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a3a0a0a8);
+        final ColumnDescriptor result_wf5hwp_a4a0a0a8 = new ManagerDescriptor(owner, ModelRoot.MANAGER, "Manager", 200);
+        result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a4a0a0a8);
+        final ColumnDescriptor result_wf5hwp_a5a0a0a8 = new VoidColumnDescriptor(ModelRoot.OLD_MANAGER, "Manager (Int)", 200) {
           public TableCellEditor createEditor() {
             return new HandlerTableCellEditor(owner, caption);
           }
         };
-        result_wf5hwp_a0a0a9.addColumn(result_wf5hwp_a5a0a0a9);
-        result_wf5hwp_a0a0a9.init();
-        return result_wf5hwp_a0a0a9;
+        result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a5a0a0a8);
+        result_wf5hwp_a0a0a8.init();
+        return result_wf5hwp_a0a0a8;
       }
     }.invoke();
   }
@@ -277,26 +259,26 @@ public class StandardComponents {
   public static JComponent createStubSolutionsPanel(final IBindedDialog owner, final String caption, final List<StubSolution> list) {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        final BoundTablePanel result_wf5hwp_a0a0a01 = new BoundTablePanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a01 = new StubSolutionChooser(owner);
-        result_wf5hwp_a0a0a01.setChooser(result_wf5hwp_a0a0a0a01);
-        final boolean result_wf5hwp_a1a0a0a01 = false;
-        result_wf5hwp_a0a0a01.setDiffRow(result_wf5hwp_a1a0a0a01);
-        final Condition result_wf5hwp_a2a0a0a01 = new Condition<StubSolution>() {
+        final BoundTablePanel result_wf5hwp_a0a0a9 = new BoundTablePanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a9 = new StubSolutionChooser(owner);
+        result_wf5hwp_a0a0a9.setChooser(result_wf5hwp_a0a0a0a9);
+        final boolean result_wf5hwp_a1a0a0a9 = false;
+        result_wf5hwp_a0a0a9.setDiffRow(result_wf5hwp_a1a0a0a9);
+        final Condition result_wf5hwp_a2a0a0a9 = new Condition<StubSolution>() {
           public boolean met(StubSolution ss) {
             String message = "You are going to delete stub solution " + ss.getName() + ". It can't be restored later with the same id. Are you sure?";
             int result = JOptionPane.showConfirmDialog(owner.getMainComponent(), message, "Delete Stub Solution", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             return result == JOptionPane.YES_OPTION;
           }
         };
-        result_wf5hwp_a0a0a01.setCanRemoveCondition(result_wf5hwp_a2a0a0a01);
+        result_wf5hwp_a0a0a9.setCanRemoveCondition(result_wf5hwp_a2a0a0a9);
 
-        final ColumnDescriptor result_wf5hwp_a4a0a0a01 = new EditableStringDescriptor(StubSolution.NAME, "Name", -1);
-        result_wf5hwp_a0a0a01.addColumn(result_wf5hwp_a4a0a0a01);
-        final ColumnDescriptor result_wf5hwp_a5a0a0a01 = new VoidColumnDescriptor(StubSolution.ID, "Module ID", 300);
-        result_wf5hwp_a0a0a01.addColumn(result_wf5hwp_a5a0a0a01);
-        result_wf5hwp_a0a0a01.init();
-        return result_wf5hwp_a0a0a01;
+        final ColumnDescriptor result_wf5hwp_a4a0a0a9 = new EditableStringDescriptor(StubSolution.NAME, "Name", -1);
+        result_wf5hwp_a0a0a9.addColumn(result_wf5hwp_a4a0a0a9);
+        final ColumnDescriptor result_wf5hwp_a5a0a0a9 = new VoidColumnDescriptor(StubSolution.ID, "Module ID", 300);
+        result_wf5hwp_a0a0a9.addColumn(result_wf5hwp_a5a0a0a9);
+        result_wf5hwp_a0a0a9.init();
+        return result_wf5hwp_a0a0a9;
       }
     }.invoke();
   }
@@ -304,18 +286,18 @@ public class StandardComponents {
   public static JPanel createStubRootsPanel(final IBindedDialog owner, final String caption, final List<StubModelsEntry> list) {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        final BoundTablePanel result_wf5hwp_a0a0a11 = new BoundTablePanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a11 = new StubRootChooser(owner);
-        result_wf5hwp_a0a0a11.setMultipleChooser(result_wf5hwp_a0a0a0a11);
+        final BoundTablePanel result_wf5hwp_a0a0a01 = new BoundTablePanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a01 = new StubRootChooser(owner);
+        result_wf5hwp_a0a0a01.setMultipleChooser(result_wf5hwp_a0a0a0a01);
 
-        final ColumnDescriptor result_wf5hwp_a2a0a0a11 = new StringPathDescriptor(ClassPathEntry.PATH, "Path", -1);
-        result_wf5hwp_a0a0a11.addColumn(result_wf5hwp_a2a0a0a11);
-        final ColumnDescriptor result_wf5hwp_a3a0a0a11 = new IncludedVCSDescriptor(ClassPathEntry.INCLUDED, "Included in VCS", 200);
-        result_wf5hwp_a0a0a11.addColumn(result_wf5hwp_a3a0a0a11);
-        final ColumnDescriptor result_wf5hwp_a4a0a0a11 = new ManagerDescriptor(owner, StubModelsEntry.MANAGER, "Manager", 200);
-        result_wf5hwp_a0a0a11.addColumn(result_wf5hwp_a4a0a0a11);
-        result_wf5hwp_a0a0a11.init();
-        return result_wf5hwp_a0a0a11;
+        final ColumnDescriptor result_wf5hwp_a2a0a0a01 = new StringPathDescriptor(ClassPathEntry.PATH, "Path", -1);
+        result_wf5hwp_a0a0a01.addColumn(result_wf5hwp_a2a0a0a01);
+        final ColumnDescriptor result_wf5hwp_a3a0a0a01 = new IncludedVCSDescriptor(ClassPathEntry.INCLUDED, "Included in VCS", 200);
+        result_wf5hwp_a0a0a01.addColumn(result_wf5hwp_a3a0a0a01);
+        final ColumnDescriptor result_wf5hwp_a4a0a0a01 = new ManagerDescriptor(owner, StubModelsEntry.MANAGER, "Manager", 200);
+        result_wf5hwp_a0a0a01.addColumn(result_wf5hwp_a4a0a0a01);
+        result_wf5hwp_a0a0a01.init();
+        return result_wf5hwp_a0a0a01;
       }
     }.invoke();
   }
@@ -323,18 +305,18 @@ public class StandardComponents {
   public static JComponent createModelsImportsPanel(final IBindedDialog owner, final String caption, final ImportProperties props) {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        final BoundTablePanel result_wf5hwp_a0a0a21 = new BoundTablePanel(owner, caption, props.getModelList());
-        final boolean result_wf5hwp_a0a0a0a21 = true;
-        result_wf5hwp_a0a0a21.setDiffRow(result_wf5hwp_a0a0a0a21);
+        final BoundTablePanel result_wf5hwp_a0a0a11 = new BoundTablePanel(owner, caption, props.getModelList());
+        final boolean result_wf5hwp_a0a0a0a11 = true;
+        result_wf5hwp_a0a0a11.setDiffRow(result_wf5hwp_a0a0a0a11);
 
-        final ColumnDescriptor result_wf5hwp_a2a0a0a21 = new BooleanDescriptor(ImportProperties.ImportDescriptor.IS_IMPORTED, "Import", 100);
-        result_wf5hwp_a0a0a21.addColumn(result_wf5hwp_a2a0a0a21);
-        final ColumnDescriptor result_wf5hwp_a3a0a0a21 = new ModelDescriptor(ImportProperties.ModelImportDescriptor.MODEL, "Model", -1);
-        result_wf5hwp_a0a0a21.addColumn(result_wf5hwp_a3a0a0a21);
-        final ColumnDescriptor result_wf5hwp_a4a0a0a21 = new ModuleImportDescriptor(props, true, ImportProperties.ImportDescriptor.MODULE, "Module", -1);
-        result_wf5hwp_a0a0a21.addColumn(result_wf5hwp_a4a0a0a21);
-        result_wf5hwp_a0a0a21.init();
-        return result_wf5hwp_a0a0a21;
+        final ColumnDescriptor result_wf5hwp_a2a0a0a11 = new BooleanDescriptor(ImportProperties.ImportDescriptor.IS_IMPORTED, "Import", 100);
+        result_wf5hwp_a0a0a11.addColumn(result_wf5hwp_a2a0a0a11);
+        final ColumnDescriptor result_wf5hwp_a3a0a0a11 = new ModelDescriptor(ImportProperties.ModelImportDescriptor.MODEL, "Model", -1);
+        result_wf5hwp_a0a0a11.addColumn(result_wf5hwp_a3a0a0a11);
+        final ColumnDescriptor result_wf5hwp_a4a0a0a11 = new ModuleImportDescriptor(props, true, ImportProperties.ImportDescriptor.MODULE, "Module", -1);
+        result_wf5hwp_a0a0a11.addColumn(result_wf5hwp_a4a0a0a11);
+        result_wf5hwp_a0a0a11.init();
+        return result_wf5hwp_a0a0a11;
       }
     }.invoke();
   }
@@ -342,18 +324,18 @@ public class StandardComponents {
   public static JComponent createLanguagesImportsPanel(final IBindedDialog owner, final String caption, final ImportProperties props) {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        final BoundTablePanel result_wf5hwp_a0a0a31 = new BoundTablePanel(owner, caption, props.getLanguagesList());
-        final boolean result_wf5hwp_a0a0a0a31 = true;
-        result_wf5hwp_a0a0a31.setDiffRow(result_wf5hwp_a0a0a0a31);
+        final BoundTablePanel result_wf5hwp_a0a0a21 = new BoundTablePanel(owner, caption, props.getLanguagesList());
+        final boolean result_wf5hwp_a0a0a0a21 = true;
+        result_wf5hwp_a0a0a21.setDiffRow(result_wf5hwp_a0a0a0a21);
 
-        final ColumnDescriptor result_wf5hwp_a2a0a0a31 = new BooleanDescriptor(ImportProperties.ImportDescriptor.IS_IMPORTED, "Import", 100);
-        result_wf5hwp_a0a0a31.addColumn(result_wf5hwp_a2a0a0a31);
-        final ColumnDescriptor result_wf5hwp_a3a0a0a31 = new ModuleDescriptor(ImportProperties.LanguageImportDescriptor.LANGUAGE, "Language", -1);
-        result_wf5hwp_a0a0a31.addColumn(result_wf5hwp_a3a0a0a31);
-        final ColumnDescriptor result_wf5hwp_a4a0a0a31 = new ModuleImportDescriptor(props, false, ImportProperties.ImportDescriptor.MODULE, "Devkit", -1);
-        result_wf5hwp_a0a0a31.addColumn(result_wf5hwp_a4a0a0a31);
-        result_wf5hwp_a0a0a31.init();
-        return result_wf5hwp_a0a0a31;
+        final ColumnDescriptor result_wf5hwp_a2a0a0a21 = new BooleanDescriptor(ImportProperties.ImportDescriptor.IS_IMPORTED, "Import", 100);
+        result_wf5hwp_a0a0a21.addColumn(result_wf5hwp_a2a0a0a21);
+        final ColumnDescriptor result_wf5hwp_a3a0a0a21 = new ModuleDescriptor(ImportProperties.LanguageImportDescriptor.LANGUAGE, "Language", -1);
+        result_wf5hwp_a0a0a21.addColumn(result_wf5hwp_a3a0a0a21);
+        final ColumnDescriptor result_wf5hwp_a4a0a0a21 = new ModuleImportDescriptor(props, false, ImportProperties.ImportDescriptor.MODULE, "Devkit", -1);
+        result_wf5hwp_a0a0a21.addColumn(result_wf5hwp_a4a0a0a21);
+        result_wf5hwp_a0a0a21.init();
+        return result_wf5hwp_a0a0a21;
       }
     }.invoke();
   }
@@ -361,20 +343,20 @@ public class StandardComponents {
   public static JPanel createMappingConfigsPanel(final IBindedDialog owner, final String caption, final List<MappingPriorityRule> list, final Generator generator, final List<ModuleReference> depGenerators) {
     Component tablePanel = new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        final BoundTablePanel result_wf5hwp_a0a0a0o = new BoundTablePanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a0o = new MappingRuleCreator();
-        result_wf5hwp_a0a0a0o.setChooser(result_wf5hwp_a0a0a0a0o);
-        final boolean result_wf5hwp_a1a0a0a0o = true;
-        result_wf5hwp_a0a0a0o.setDiffRow(result_wf5hwp_a1a0a0a0o);
+        final BoundTablePanel result_wf5hwp_a0a0a0n = new BoundTablePanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a0n = new MappingRuleCreator();
+        result_wf5hwp_a0a0a0n.setChooser(result_wf5hwp_a0a0a0a0n);
+        final boolean result_wf5hwp_a1a0a0a0n = true;
+        result_wf5hwp_a0a0a0n.setDiffRow(result_wf5hwp_a1a0a0a0n);
 
-        final ColumnDescriptor result_wf5hwp_a3a0a0a0o = new PriorityRuleDescriptor(generator, depGenerators, true, MappingPriorityRule.LEFT, "Operand", -1);
-        result_wf5hwp_a0a0a0o.addColumn(result_wf5hwp_a3a0a0a0o);
-        final ColumnDescriptor result_wf5hwp_a4a0a0a0o = new RuleTypeDescriptor(MappingPriorityRule.TYPE, "Type", 50);
-        result_wf5hwp_a0a0a0o.addColumn(result_wf5hwp_a4a0a0a0o);
-        final ColumnDescriptor result_wf5hwp_a5a0a0a0o = new PriorityRuleDescriptor(generator, depGenerators, false, MappingPriorityRule.RIGHT, "Operand", -1);
-        result_wf5hwp_a0a0a0o.addColumn(result_wf5hwp_a5a0a0a0o);
-        result_wf5hwp_a0a0a0o.init();
-        return result_wf5hwp_a0a0a0o;
+        final ColumnDescriptor result_wf5hwp_a3a0a0a0n = new PriorityRuleDescriptor(generator, depGenerators, true, MappingPriorityRule.LEFT, "Operand", -1);
+        result_wf5hwp_a0a0a0n.addColumn(result_wf5hwp_a3a0a0a0n);
+        final ColumnDescriptor result_wf5hwp_a4a0a0a0n = new RuleTypeDescriptor(MappingPriorityRule.TYPE, "Type", 50);
+        result_wf5hwp_a0a0a0n.addColumn(result_wf5hwp_a4a0a0a0n);
+        final ColumnDescriptor result_wf5hwp_a5a0a0a0n = new PriorityRuleDescriptor(generator, depGenerators, false, MappingPriorityRule.RIGHT, "Operand", -1);
+        result_wf5hwp_a0a0a0n.addColumn(result_wf5hwp_a5a0a0a0n);
+        result_wf5hwp_a0a0a0n.init();
+        return result_wf5hwp_a0a0a0n;
       }
     }.invoke();
 
@@ -505,12 +487,12 @@ public class StandardComponents {
   public static JPanel createTestConfigsPanel(final IBindedDialog owner, final String caption, final List<BaseTestConfiguration> list, final ProjectProperties properties) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
-        final BoundListPanel result_wf5hwp_a0a0a22 = new BoundListPanel(owner, caption, list);
-        final DefaultListCellRenderer result_wf5hwp_a0a0a0a22 = new TestConfigListCellRenderer();
-        result_wf5hwp_a0a0a22.setCellRenderer(result_wf5hwp_a0a0a0a22);
+        final BoundListPanel result_wf5hwp_a0a0a12 = new BoundListPanel(owner, caption, list);
+        final DefaultListCellRenderer result_wf5hwp_a0a0a0a12 = new TestConfigListCellRenderer();
+        result_wf5hwp_a0a0a12.setCellRenderer(result_wf5hwp_a0a0a0a12);
 
-        final JList jlist = result_wf5hwp_a0a0a22.getList();
-        final BaseValidatedAction result_wf5hwp_a3a0a0a22 = new ListAddAction(jlist) {
+        final JList jlist = result_wf5hwp_a0a0a12.getList();
+        final BaseValidatedAction result_wf5hwp_a3a0a0a12 = new ListAddAction(jlist) {
           protected int doAdd(AnActionEvent e) {
             TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getProject(), null);
             dialog.showDialog();
@@ -523,8 +505,8 @@ public class StandardComponents {
             return list.indexOf(config);
           }
         };
-        result_wf5hwp_a0a0a22.setAddAction(result_wf5hwp_a3a0a0a22);
-        final BaseValidatedAction result_wf5hwp_a4a0a0a22 = new ListRemoveAction(jlist) {
+        result_wf5hwp_a0a0a12.setAddAction(result_wf5hwp_a3a0a0a12);
+        final BaseValidatedAction result_wf5hwp_a4a0a0a12 = new ListRemoveAction(jlist) {
           protected void doRemove(AnActionEvent e) {
             for (Object value : jlist.getSelectedValues()) {
               properties.testConfigsChanged();
@@ -532,8 +514,8 @@ public class StandardComponents {
             }
           }
         };
-        result_wf5hwp_a0a0a22.setRemoveAction(result_wf5hwp_a4a0a0a22);
-        final BaseValidatedAction result_wf5hwp_a5a0a0a22 = new ListEditAction(jlist) {
+        result_wf5hwp_a0a0a12.setRemoveAction(result_wf5hwp_a4a0a0a12);
+        final BaseValidatedAction result_wf5hwp_a5a0a0a12 = new ListEditAction(jlist) {
           public void doEdit() {
             Object value = jlist.getSelectedValue();
             if (value == null) {
@@ -550,10 +532,10 @@ public class StandardComponents {
             properties.testConfigsChanged();
           }
         };
-        result_wf5hwp_a0a0a22.setEditAction(result_wf5hwp_a5a0a0a22);
+        result_wf5hwp_a0a0a12.setEditAction(result_wf5hwp_a5a0a0a12);
 
-        result_wf5hwp_a0a0a22.init();
-        return result_wf5hwp_a0a0a22;
+        result_wf5hwp_a0a0a12.init();
+        return result_wf5hwp_a0a0a12;
       }
     }.invoke();
   }
@@ -573,13 +555,13 @@ public class StandardComponents {
   public static JPanel createProjectModulesPathsList(final IBindedDialog owner, final String caption, final List<Path> list, final String extension) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
-        final BoundListPanel result_wf5hwp_a0a0a62 = new BoundListPanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a62 = new ModulePathChooser(extension, owner);
-        result_wf5hwp_a0a0a62.setChooser(result_wf5hwp_a0a0a0a62);
-        final DefaultListCellRenderer result_wf5hwp_a1a0a0a62 = new PathRenderer();
-        result_wf5hwp_a0a0a62.setCellRenderer(result_wf5hwp_a1a0a0a62);
-        result_wf5hwp_a0a0a62.init();
-        return result_wf5hwp_a0a0a62;
+        final BoundListPanel result_wf5hwp_a0a0a52 = new BoundListPanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a52 = new ModulePathChooser(extension, owner);
+        result_wf5hwp_a0a0a52.setChooser(result_wf5hwp_a0a0a0a52);
+        final DefaultListCellRenderer result_wf5hwp_a1a0a0a52 = new PathRenderer();
+        result_wf5hwp_a0a0a52.setCellRenderer(result_wf5hwp_a1a0a0a52);
+        result_wf5hwp_a0a0a52.init();
+        return result_wf5hwp_a0a0a52;
       }
     }.invoke();
   }
@@ -640,26 +622,26 @@ public class StandardComponents {
     }
 
     public CheckboxDescriptor(Object object, String propName, String checkboxCaption, boolean isInternal) {
-      this.myObject = object;
-      this.myPropName = propName;
-      this.myCheckboxCaption = checkboxCaption;
-      this.myIsInternal = isInternal;
+      myObject = object;
+      myPropName = propName;
+      myCheckboxCaption = checkboxCaption;
+      myIsInternal = isInternal;
     }
 
     public Object getObject() {
-      return this.myObject;
+      return myObject;
     }
 
     public String getPropName() {
-      return this.myPropName;
+      return myPropName;
     }
 
     public String getCheckboxCaption() {
-      return this.myCheckboxCaption;
+      return myCheckboxCaption;
     }
 
     public boolean isInternal() {
-      return this.myIsInternal;
+      return myIsInternal;
     }
   }
 }

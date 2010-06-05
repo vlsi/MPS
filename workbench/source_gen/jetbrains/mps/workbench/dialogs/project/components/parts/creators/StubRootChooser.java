@@ -14,13 +14,13 @@ public class StubRootChooser implements Computable<List<StubModelsEntry>> {
   private final IBindedDialog myOwner;
 
   public StubRootChooser(IBindedDialog owner) {
-    this.myOwner = owner;
+    myOwner = owner;
   }
 
   public List<StubModelsEntry> compute() {
     TreeFileChooser chooser = new TreeFileChooser();
     chooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);
-    List<IFile> files = chooser.showMultiSelectionDialog(this.myOwner.getMainComponent());
+    List<IFile> files = chooser.showMultiSelectionDialog(myOwner.getMainComponent());
     List<StubModelsEntry> result = new ArrayList<StubModelsEntry>();
     for (IFile file : files) {
       StubModelsEntry sme = new StubModelsEntry();

@@ -12,13 +12,13 @@ public class ModelRootChooser implements Computable<ModelRoot> {
   private final IBindedDialog myOwner;
 
   public ModelRootChooser(IBindedDialog owner) {
-    this.myOwner = owner;
+    myOwner = owner;
   }
 
   public ModelRoot compute() {
     TreeFileChooser chooser = new TreeFileChooser();
     chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-    IFile dir = chooser.showDialog(this.myOwner.getMainComponent());
+    IFile dir = chooser.showDialog(myOwner.getMainComponent());
     if (dir == null) {
       return null;
     }

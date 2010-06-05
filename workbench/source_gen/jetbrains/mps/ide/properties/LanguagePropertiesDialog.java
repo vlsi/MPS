@@ -26,25 +26,25 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
 
   /*package*/ LanguagePropertiesDialog(final Language language, IOperationContext operationContext) {
     super(language.getModuleFqName() + " Properties", operationContext);
-    this.myLanguage = language;
+    myLanguage = language;
     this.collectLanguageProperties();
   }
 
   public JPanel createCheckboxPanel() {
     List<StandardComponents.CheckboxDescriptor> list = new ArrayList<StandardComponents.CheckboxDescriptor>();
     if (InternalFlag.isInternalMode()) {
-      list.add(new StandardComponents.CheckboxDescriptor(this.myProperties, ModuleProperties.ENABLE_JAVA_STUBS, "Stubs For Generated Code"));
+      list.add(new StandardComponents.CheckboxDescriptor(myProperties, ModuleProperties.ENABLE_JAVA_STUBS, "Stubs For Generated Code"));
     }
-    list.add(new StandardComponents.CheckboxDescriptor(this.myProperties, ModuleProperties.COMPILE_IN_MPS, "Compile in MPS"));
+    list.add(new StandardComponents.CheckboxDescriptor(myProperties, ModuleProperties.COMPILE_IN_MPS, "Compile in MPS"));
     if (InternalFlag.isInternalMode()) {
-      list.add(new StandardComponents.CheckboxDescriptor(this.myProperties, LanguageProperties.DO_NOT_GENERATE_ADAPTERS, "Do Not Generate Adapters"));
+      list.add(new StandardComponents.CheckboxDescriptor(myProperties, LanguageProperties.DO_NOT_GENERATE_ADAPTERS, "Do Not Generate Adapters"));
     }
     return StandardComponents.createCheckboxPanel(this, list);
   }
 
   private void collectLanguageProperties() {
-    this.myProperties = new LanguageProperties();
-    this.myProperties.loadFrom(this.myLanguage.getModuleDescriptor());
+    myProperties = new LanguageProperties();
+    myProperties.loadFrom(myLanguage.getModuleDescriptor());
   }
 
   protected boolean doSaveChanges() {
@@ -53,16 +53,16 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        LanguagePropertiesDialog.this.myProperties.saveTo(LanguagePropertiesDialog.this.myLanguage.getModuleDescriptor());
-        LanguagePropertiesDialog.this.myLanguage.setLanguageDescriptor(LanguagePropertiesDialog.this.myLanguage.getModuleDescriptor(), true);
-        LanguagePropertiesDialog.this.myLanguage.validateExtends();
-        LanguagePropertiesDialog.this.myLanguage.save();
+        myProperties.saveTo(myLanguage.getModuleDescriptor());
+        myLanguage.setLanguageDescriptor(myLanguage.getModuleDescriptor(), true);
+        myLanguage.validateExtends();
+        myLanguage.save();
       }
     }, getOperationContext().getProject());
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         Project project = LanguagePropertiesDialog.this.getOperationContext().getProject();
-        ProjectPane.getInstance(project).selectModule(LanguagePropertiesDialog.this.myLanguage);
+        ProjectPane.getInstance(project).selectModule(myLanguage);
       }
     });
     return true;
@@ -70,11 +70,11 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
 
   protected String getErrorString() {
     String errors;
-    errors = this.checkStubModels(this.myProperties.getStubModels());
+    errors = this.checkStubModels(myProperties.getStubModels());
     if (errors != null) {
       return errors;
     }
-    errors = this.checkStubModels(this.myProperties.getRuntimeStubModels());
+    errors = this.checkStubModels(myProperties.getRuntimeStubModels());
     if (errors != null) {
       return errors;
     }
@@ -83,6 +83,6 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
 
   public void dispose() {
     super.dispose();
-    Disposer.dispose(this.myDisposable);
+    Disposer.dispose(myDisposable);
   }
 }

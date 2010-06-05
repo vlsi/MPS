@@ -11,22 +11,22 @@ public class BooleanRenderer extends DefaultListCellRenderer {
   private JCheckBox myCheckBox;
 
   public BooleanRenderer() {
-    this.myCheckBox = new JCheckBox();
+    myCheckBox = new JCheckBox();
   }
 
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
-    this.myCheckBox.setSelected((value == null ?
+    myCheckBox.setSelected((value == null ?
       false :
       (Boolean) value
     ));
-    this.myCheckBox.setBackground((isSelected ?
+    myCheckBox.setBackground((isSelected ?
       list.getSelectionBackground() :
       list.getBackground()
     ));
-    this.myCheckBox.setForeground((isSelected ?
+    myCheckBox.setForeground((isSelected ?
       list.getSelectionForeground() :
       list.getForeground()
     ));
-    return this.myCheckBox;
+    return myCheckBox;
   }
 }

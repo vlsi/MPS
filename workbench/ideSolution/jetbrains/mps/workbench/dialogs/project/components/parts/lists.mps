@@ -74,11 +74,8 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1560298786499489604">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1560298786499489605">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1560298786499489606">
-            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489607">
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499489608">
-                <link role="fieldDeclaration:3" targetNodeId="1560298786499489588" resolveInfo="myComparator" />
-              </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499489609" />
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204385">
+              <link role="variableDeclaration:3" targetNodeId="1560298786499489588" resolveInfo="myComparator" />
             </node>
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499489610">
               <link role="variableDeclaration:3" targetNodeId="1560298786499489601" resolveInfo="comparator" />
@@ -94,11 +91,8 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1560298786499489614">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1560298786499489615">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489616">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489617">
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499489618">
-                <link role="fieldDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
-              </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499489619" />
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204300">
+              <link role="variableDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499489620">
               <link role="baseMethodDeclaration:3" targetNodeId="1.~ArrayList.size():int" />
@@ -120,11 +114,8 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1560298786499489626">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1560298786499489627">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489628">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489629">
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499489630">
-                <link role="fieldDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
-              </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499489631" />
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204406">
+              <link role="variableDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499489632">
               <link role="baseMethodDeclaration:3" targetNodeId="1.~ArrayList.get(int):java.lang.Object" />
@@ -187,11 +178,8 @@
                 <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1560298786499489657">
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1560298786499489658">
                     <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489659">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489660">
-                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499489661">
-                          <link role="fieldDeclaration:3" targetNodeId="1560298786499489588" resolveInfo="myComparator" />
-                        </node>
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499489662" />
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204242">
+                        <link role="variableDeclaration:3" targetNodeId="1560298786499489588" resolveInfo="myComparator" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499489663">
                         <link role="baseMethodDeclaration:3" targetNodeId="1560298786499493506" resolveInfo="isEqual" />
@@ -341,11 +329,8 @@
                 <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1560298786499489722">
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1560298786499489723">
                     <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489724">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489725">
-                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499489726">
-                          <link role="fieldDeclaration:3" targetNodeId="1560298786499489588" resolveInfo="myComparator" />
-                        </node>
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499489727" />
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204715">
+                        <link role="variableDeclaration:3" targetNodeId="1560298786499489588" resolveInfo="myComparator" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499489728">
                         <link role="baseMethodDeclaration:3" targetNodeId="1560298786499493506" resolveInfo="isEqual" />
@@ -449,11 +434,8 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1560298786499489766">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1560298786499489767">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489768">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489769">
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499489770">
-                <link role="fieldDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
-              </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499489771" />
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204586">
+              <link role="variableDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499489772">
               <link role="baseMethodDeclaration:3" targetNodeId="1.~ArrayList.remove(int):java.lang.Object" />
@@ -514,11 +496,8 @@
             <property name="name:3" value="index" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1560298786499489796" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489797">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489798">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499489799">
-                  <link role="fieldDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499489800" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148205155">
+                <link role="variableDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499489801">
                 <link role="baseMethodDeclaration:3" targetNodeId="1.~ArrayList.size():int" />
@@ -532,11 +511,8 @@
               <link role="variableDeclaration:3" targetNodeId="1560298786499489810" resolveInfo="i" />
             </node>
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489805">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489806">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499489807">
-                  <link role="fieldDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499489808" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204750">
+                <link role="variableDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499489809">
                 <link role="baseMethodDeclaration:3" targetNodeId="1.~ArrayList.size():int" />
@@ -559,20 +535,14 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1560298786499489816">
               <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression:3" id="1560298786499489817">
                 <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489818">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489819">
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499489820">
-                      <link role="fieldDeclaration:3" targetNodeId="1560298786499489588" resolveInfo="myComparator" />
-                    </node>
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499489821" />
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204815">
+                    <link role="variableDeclaration:3" targetNodeId="1560298786499489588" resolveInfo="myComparator" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499489822">
                     <link role="baseMethodDeclaration:3" targetNodeId="1.~Comparator.compare(java.lang.Object,java.lang.Object):int" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489823">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489824">
-                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499489825">
-                          <link role="fieldDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
-                        </node>
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499489826" />
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204575">
+                        <link role="variableDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499489827">
                         <link role="baseMethodDeclaration:3" targetNodeId="1.~ArrayList.get(int):java.lang.Object" />
@@ -618,11 +588,8 @@
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1560298786499489841">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1560298786499489842">
               <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489843">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489844">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499489845">
-                    <link role="fieldDeclaration:3" targetNodeId="1560298786499489588" resolveInfo="myComparator" />
-                  </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499489846" />
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204273">
+                  <link role="variableDeclaration:3" targetNodeId="1560298786499489588" resolveInfo="myComparator" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499489847">
                   <link role="baseMethodDeclaration:3" targetNodeId="1560298786499493506" resolveInfo="isEqual" />
@@ -630,11 +597,8 @@
                     <link role="variableDeclaration:3" targetNodeId="1560298786499489791" resolveInfo="o" />
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489849">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489850">
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499489851">
-                        <link role="fieldDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
-                      </node>
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499489852" />
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204655">
+                      <link role="variableDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499489853">
                       <link role="baseMethodDeclaration:3" targetNodeId="1.~ArrayList.get(int):java.lang.Object" />
@@ -660,11 +624,8 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1560298786499489860">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489861">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499489862">
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499489863">
-                <link role="fieldDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
-              </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499489864" />
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204951">
+              <link role="variableDeclaration:3" targetNodeId="1560298786499489592" resolveInfo="myList" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499489865">
               <link role="baseMethodDeclaration:3" targetNodeId="1.~ArrayList.add(int,java.lang.Object):void" />

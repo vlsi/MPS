@@ -801,11 +801,8 @@
                   </node>
                 </node>
               </node>
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499490898">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499490899">
-                  <link role="fieldDeclaration:3" targetNodeId="1.~JTable.rowMargin" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499490900" />
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204912">
+                <link role="variableDeclaration:3" targetNodeId="1.~JTable.rowMargin" resolveInfo="rowMargin" />
               </node>
             </node>
           </node>
@@ -867,11 +864,8 @@
                       </node>
                     </node>
                   </node>
-                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499490927">
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499490928">
-                      <link role="fieldDeclaration:3" targetNodeId="1.~JTable.rowMargin" />
-                    </node>
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499490929" />
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204013">
+                    <link role="variableDeclaration:3" targetNodeId="1.~JTable.rowMargin" resolveInfo="rowMargin" />
                   </node>
                 </node>
               </node>
@@ -1454,11 +1448,8 @@
             <property name="name:3" value="numCols" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1560298786499496086" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496087">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496088">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496089">
-                  <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496090" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204453">
+                <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496091">
                 <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getColumnCount():int" />
@@ -1471,11 +1462,8 @@
             <property name="name:3" value="numRows" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1560298786499496094" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496095">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496096">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496097">
-                  <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496098" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204073">
+                <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496099">
                 <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getRowCount():int" />
@@ -1490,11 +1478,8 @@
               <link role="classifier:3" targetNodeId="2.~TableModel" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496103">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496104">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496105">
-                  <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496106" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204582">
+                <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496107">
                 <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getModel():javax.swing.table.TableModel" />
@@ -1588,11 +1573,8 @@
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496146">
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1560298786499496147">
                           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1560298786499496148">
-                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496149">
-                              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496150">
-                                <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                              </node>
-                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496151" />
+                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204217">
+                              <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                             </node>
                             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1560298786499496152">
                               <link role="classifier:3" targetNodeId="1560298786499490568" resolveInfo="DiffRowTable" />
@@ -1634,11 +1616,8 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.MulExpression:3" id="1560298786499496163">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496164">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496165">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496166">
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496167">
-                      <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                    </node>
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496168" />
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148205135">
+                    <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496169">
                     <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getColumnModel():javax.swing.table.TableColumnModel" />
@@ -1759,11 +1738,8 @@
                     <link role="variableDeclaration:3" targetNodeId="1560298786499496093" resolveInfo="numRows" />
                   </node>
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496216">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496217">
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496218">
-                        <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                      </node>
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496219" />
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204322">
+                      <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496220">
                       <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getRowMargin():int" />
@@ -1806,11 +1782,8 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496234">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496235">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496236">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496237">
-                    <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                  </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496238" />
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204782">
+                  <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496239">
                   <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getColumnModel():javax.swing.table.TableColumnModel" />
@@ -1918,11 +1891,8 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496280">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496281">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496282">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496283">
-                    <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                  </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496284" />
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204624">
+                  <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496285">
                   <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getColumnModel():javax.swing.table.TableColumnModel" />
@@ -2030,11 +2000,8 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496326">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496327">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496328">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496329">
-                    <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                  </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496330" />
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204542">
+                  <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496331">
                   <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getColumnModel():javax.swing.table.TableColumnModel" />
@@ -2167,11 +2134,8 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1560298786499496381" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496382">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496383">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496384">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496385">
-                    <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                  </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496386" />
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148205091">
+                  <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496387">
                   <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getColumnModel():javax.swing.table.TableColumnModel" />
@@ -2239,11 +2203,8 @@
             <property name="name:3" value="firstIndex" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1560298786499496411" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496412">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496413">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496414">
-                  <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496415" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148205163">
+                <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496416">
                 <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.rowAtPoint(java.awt.Point):int" />
@@ -2287,11 +2248,8 @@
             <property name="name:3" value="rowMargin" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1560298786499496432" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496433">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496434">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496435">
-                  <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496436" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204297">
+                <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496437">
                 <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getRowMargin():int" />
@@ -2321,11 +2279,8 @@
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496447">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1560298786499496448">
                       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1560298786499496449">
-                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496450">
-                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496451">
-                            <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                          </node>
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496452" />
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204484">
+                          <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                         </node>
                         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1560298786499496453">
                           <link role="classifier:3" targetNodeId="1560298786499490568" resolveInfo="DiffRowTable" />
@@ -2398,11 +2353,8 @@
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496479">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1560298786499496480">
                       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1560298786499496481">
-                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496482">
-                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496483">
-                            <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                          </node>
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496484" />
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204503">
+                          <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                         </node>
                         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1560298786499496485">
                           <link role="classifier:3" targetNodeId="1560298786499490568" resolveInfo="DiffRowTable" />
@@ -2489,11 +2441,8 @@
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496517">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1560298786499496518">
                       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1560298786499496519">
-                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496520">
-                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496521">
-                            <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                          </node>
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496522" />
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204472">
+                          <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                         </node>
                         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1560298786499496523">
                           <link role="classifier:3" targetNodeId="1560298786499490568" resolveInfo="DiffRowTable" />
@@ -2549,11 +2498,8 @@
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496541">
               <link role="baseMethodDeclaration:3" targetNodeId="4.~Graphics.setColor(java.awt.Color):void" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496542">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496543">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496544">
-                    <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                  </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496545" />
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148205073">
+                  <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496546">
                   <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getGridColor():java.awt.Color" />
@@ -2564,11 +2510,8 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1560298786499496547">
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496548">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496549">
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496550">
-                <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-              </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496551" />
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204423">
+              <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496552">
               <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getShowHorizontalLines():boolean" />
@@ -2590,11 +2533,8 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1560298786499496559">
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496560">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496561">
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496562">
-                <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-              </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496563" />
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204650">
+              <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496564">
               <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getShowVerticalLines():boolean" />
@@ -2659,11 +2599,8 @@
             <property name="name:3" value="firstIndex" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1560298786499496589" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496590">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496591">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496592">
-                  <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496593" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204018">
+                <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496594">
                 <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.rowAtPoint(java.awt.Point):int" />
@@ -2707,11 +2644,8 @@
             <property name="name:3" value="rowMargin" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1560298786499496610" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496611">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496612">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496613">
-                  <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496614" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204745">
+                <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496615">
                 <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getRowMargin():int" />
@@ -2761,11 +2695,8 @@
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496635">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1560298786499496636">
                       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1560298786499496637">
-                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496638">
-                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496639">
-                            <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                          </node>
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496640" />
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204599">
+                          <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                         </node>
                         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1560298786499496641">
                           <link role="classifier:3" targetNodeId="1560298786499490568" resolveInfo="DiffRowTable" />
@@ -2818,11 +2749,8 @@
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496659">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1560298786499496660">
                       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1560298786499496661">
-                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496662">
-                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496663">
-                            <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                          </node>
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496664" />
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204250">
+                          <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                         </node>
                         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1560298786499496665">
                           <link role="classifier:3" targetNodeId="1560298786499490568" resolveInfo="DiffRowTable" />
@@ -2982,11 +2910,8 @@
             <property name="name:3" value="count" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1560298786499496725" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496726">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496727">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496728">
-                  <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496729" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204705">
+                <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496730">
                 <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getColumnCount():int" />
@@ -3003,11 +2928,8 @@
                 <link role="fieldDeclaration:3" targetNodeId="4.~Dimension.width" />
               </node>
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496736">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496737">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496738">
-                    <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                  </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496739" />
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204294">
+                  <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496740">
                   <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getIntercellSpacing():java.awt.Dimension" />
@@ -3192,11 +3114,8 @@
                           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1560298786499496816">
                             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496817">
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496818">
-                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496819">
-                                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496820">
-                                    <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                                  </node>
-                                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496821" />
+                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204832">
+                                  <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496822">
                                   <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getColumnModel():javax.swing.table.TableColumnModel" />
@@ -3304,11 +3223,8 @@
               <link role="classifier:3" targetNodeId="4.~Dimension" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496862">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496863">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496864">
-                  <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496865" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204642">
+                <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496866">
                 <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getIntercellSpacing():java.awt.Dimension" />
@@ -3323,11 +3239,8 @@
               <link role="classifier:3" targetNodeId="2.~JTableHeader" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496870">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496871">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496872">
-                  <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496873" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204851">
+                <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496874">
                 <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getTableHeader():javax.swing.table.JTableHeader" />
@@ -3362,11 +3275,8 @@
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496886">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1560298786499496887">
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1560298786499496888">
-                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496889">
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496890">
-                        <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                      </node>
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496891" />
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204264">
+                      <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                     </node>
                     <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1560298786499496892">
                       <link role="classifier:3" targetNodeId="1560298786499490568" resolveInfo="DiffRowTable" />
@@ -3442,11 +3352,8 @@
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496920">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1560298786499496921">
                       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1560298786499496922">
-                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496923">
-                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496924">
-                            <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                          </node>
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496925" />
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204779">
+                          <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                         </node>
                         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1560298786499496926">
                           <link role="classifier:3" targetNodeId="1560298786499490568" resolveInfo="DiffRowTable" />
@@ -3481,11 +3388,8 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496935">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496936">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499496937">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499496938">
-                    <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                  </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499496939" />
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204201">
+                  <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499496940">
                   <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getColumnModel():javax.swing.table.TableColumnModel" />
@@ -3630,11 +3534,8 @@
                             <link role="baseMethodDeclaration:3" targetNodeId="4.~Graphics.setColor(java.awt.Color):void" />
                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497001">
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497002">
-                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497003">
-                                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497004">
-                                    <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                                  </node>
-                                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497005" />
+                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204411">
+                                  <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497006">
                                   <link role="baseMethodDeclaration:3" targetNodeId="4.~Component.getParent():java.awt.Container" />
@@ -3818,11 +3719,8 @@
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497075">
                   <link role="baseMethodDeclaration:3" targetNodeId="4.~Graphics.setColor(java.awt.Color):void" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497076">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497077">
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497078">
-                        <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                      </node>
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497079" />
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204605">
+                      <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497080">
                       <link role="baseMethodDeclaration:3" targetNodeId="4.~Component.getBackground():java.awt.Color" />
@@ -3881,11 +3779,8 @@
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497100">
                   <link role="baseMethodDeclaration:3" targetNodeId="4.~Graphics.setColor(java.awt.Color):void" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497101">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497102">
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497103">
-                        <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                      </node>
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497104" />
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204646">
+                      <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497105">
                       <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getGridColor():java.awt.Color" />
@@ -3972,11 +3867,8 @@
             </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1560298786499497138">
               <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497139">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497140">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497141">
-                    <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                  </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497142" />
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204288">
+                  <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497143">
                   <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getShowVerticalLines():boolean" />
@@ -4009,11 +3901,8 @@
             </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1560298786499497153">
               <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497154">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497155">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497156">
-                    <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                  </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497157" />
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148205165">
+                  <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497158">
                   <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getShowHorizontalLines():boolean" />
@@ -4098,11 +3987,8 @@
             <property name="name:3" value="spacingHeight" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1560298786499497190" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497191">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497192">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497193">
-                  <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497194" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204762">
+                <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497195">
                 <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getRowMargin():int" />
@@ -4116,11 +4002,8 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1560298786499497198" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497199">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497200">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497201">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497202">
-                    <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                  </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497203" />
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148205052">
+                  <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497204">
                   <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getColumnModel():javax.swing.table.TableColumnModel" />
@@ -4208,11 +4091,8 @@
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1560298786499497235">
             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1560298786499497236">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497237">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497238">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497239">
-                    <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                  </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497240" />
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204230">
+                  <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497241">
                   <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.isEditing():boolean" />
@@ -4220,11 +4100,8 @@
               </node>
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1560298786499497242">
                 <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497243">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497244">
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497245">
-                      <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                    </node>
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497246" />
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204395">
+                    <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497247">
                     <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getEditingRow():int" />
@@ -4237,11 +4114,8 @@
             </node>
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1560298786499497249">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497250">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497251">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497252">
-                    <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                  </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497253" />
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204394">
+                  <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497254">
                   <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getEditingColumn():int" />
@@ -4261,11 +4135,8 @@
                     <link role="classifier:3" targetNodeId="2.~TableCellRenderer" />
                   </node>
                   <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497261">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497262">
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497263">
-                        <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                      </node>
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497264" />
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204064">
+                      <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497265">
                       <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getCellRenderer(int,int):javax.swing.table.TableCellRenderer" />
@@ -4286,11 +4157,8 @@
                     <link role="classifier:3" targetNodeId="4.~Component" />
                   </node>
                   <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497271">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497272">
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497273">
-                        <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                      </node>
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497274" />
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204078">
+                      <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497275">
                       <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.prepareRenderer(javax.swing.table.TableCellRenderer,int,int):java.awt.Component" />
@@ -4322,11 +4190,8 @@
                 <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1560298786499497285">
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1560298786499497286">
                     <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497287">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497288">
-                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497289">
-                          <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.rendererPane" />
-                        </node>
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497290" />
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204930">
+                        <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.rendererPane" resolveInfo="rendererPane" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497291">
                         <link role="baseMethodDeclaration:3" targetNodeId="4.~Container.add(java.awt.Component):java.awt.Component" />
@@ -4340,11 +4205,8 @@
               </node>
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1560298786499497293">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497294">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497295">
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497296">
-                      <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.rendererPane" />
-                    </node>
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497297" />
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204958">
+                    <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.rendererPane" resolveInfo="rendererPane" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497298">
                     <link role="baseMethodDeclaration:3" targetNodeId="1.~CellRendererPane.paintComponent(java.awt.Graphics,java.awt.Component,java.awt.Container,int,int,int,int,boolean):void" />
@@ -4354,11 +4216,8 @@
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1560298786499497300">
                       <link role="variableDeclaration:3" targetNodeId="1560298786499497269" resolveInfo="component" />
                     </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497301">
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497302">
-                        <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                      </node>
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497303" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148205123">
+                      <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                     </node>
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497304">
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497305">
@@ -4408,11 +4267,8 @@
                   <link role="classifier:3" targetNodeId="4.~Component" />
                 </node>
                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497321">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497322">
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497323">
-                      <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                    </node>
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497324" />
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148205010">
+                    <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497325">
                     <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getEditorComponent():java.awt.Component" />
@@ -4535,11 +4391,8 @@
             <property name="name:3" value="lastIndex" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1560298786499497371" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497372">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497373">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497374">
-                  <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497375" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204150">
+                <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497376">
                 <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.rowAtPoint(java.awt.Point):int" />
@@ -4597,11 +4450,8 @@
                 </node>
                 <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.MinusExpression:3" id="1560298786499497398">
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497399">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497400">
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497401">
-                        <link role="fieldDeclaration:3" targetNodeId="7.~BasicTableUI.table" />
-                      </node>
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497402" />
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204727">
+                      <link role="variableDeclaration:3" targetNodeId="7.~BasicTableUI.table" resolveInfo="table" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497403">
                       <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.getRowCount():int" />

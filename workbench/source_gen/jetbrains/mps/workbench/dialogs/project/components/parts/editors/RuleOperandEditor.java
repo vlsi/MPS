@@ -24,13 +24,13 @@ public class RuleOperandEditor extends AbstractTableCellEditor {
   private boolean myLeft;
 
   public RuleOperandEditor(Generator generator, List<ModuleReference> depGens, boolean isLeft) {
-    this.myGenerator = generator;
-    this.myDepGens = depGens;
-    this.myLeft = isLeft;
+    myGenerator = generator;
+    myDepGens = depGens;
+    myLeft = isLeft;
   }
 
   public Object getCellEditorValue() {
-    return this.myOperand;
+    return myOperand;
   }
 
   @Override
@@ -50,13 +50,13 @@ public class RuleOperandEditor extends AbstractTableCellEditor {
   }
 
   public Component getTableCellEditorComponent(final JTable table, Object value, boolean isSelected, final int row, final int column) {
-    this.myOperand = (MappingConfig_AbstractRef) value;
+    myOperand = (MappingConfig_AbstractRef) value;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        EditOperandDialog dialog = new EditOperandDialog(RuleOperandEditor.this.myGenerator, RuleOperandEditor.this.myDepGens, RuleOperandEditor.this.myOperand, RuleOperandEditor.this.myLeft);
+        EditOperandDialog dialog = new EditOperandDialog(myGenerator, myDepGens, myOperand, myLeft);
         dialog.showDialog();
         if (dialog.getResult() != null) {
-          RuleOperandEditor.this.myOperand = dialog.getResult();
+          myOperand = dialog.getResult();
           table.editingStopped(new ChangeEvent(this));
           table.revalidate();
           table.repaint();
@@ -65,7 +65,7 @@ public class RuleOperandEditor extends AbstractTableCellEditor {
         }
       }
     });
-    return this.createRenderer(table, this.myOperand, row, column);
+    return this.createRenderer(table, myOperand, row, column);
   }
 
   private JComponent createRenderer(JTable table, Object value, int row, int column) {

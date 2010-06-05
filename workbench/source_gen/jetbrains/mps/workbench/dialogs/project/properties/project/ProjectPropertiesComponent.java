@@ -18,47 +18,47 @@ public class ProjectPropertiesComponent extends JPanel {
   private ProjectPropertiesDialog myPropertiesDialog;
 
   public ProjectPropertiesComponent(Project project) {
-    this.myProject = project;
-    this.myPropertiesDialog = new ProjectPropertiesDialog(this.myProject, this.myEditableDescriptor);
+    myProject = project;
+    myPropertiesDialog = new ProjectPropertiesDialog(myProject, myEditableDescriptor);
     this.initUI();
   }
 
   public void addNotify() {
     super.addNotify();
-    this.myPropertiesDialog.bindData();
+    myPropertiesDialog.bindData();
   }
 
   public void removeNotify() {
     super.removeNotify();
-    this.myPropertiesDialog.unbindData();
+    myPropertiesDialog.unbindData();
   }
 
   private void initUI() {
     this.setLayout(new BorderLayout());
-    this.add(this.myPropertiesDialog.getMainComponent(), BorderLayout.CENTER);
+    this.add(myPropertiesDialog.getMainComponent(), BorderLayout.CENTER);
   }
 
   public boolean isModified() {
-    return !(this.myEditableDescriptor.isSame(this.getMPSProject().getProjectDescriptor()));
+    return !(myEditableDescriptor.isSame(this.getMPSProject().getProjectDescriptor()));
   }
 
   public void apply() throws ConfigurationException {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        ProjectPropertiesComponent.this.myEditableDescriptor.saveTo(ProjectPropertiesComponent.this.getMPSProject());
+        myEditableDescriptor.saveTo(ProjectPropertiesComponent.this.getMPSProject());
       }
     });
   }
 
   public void reset() {
     try {
-      this.myEditableDescriptor.loadFrom(this.getMPSProject());
+      myEditableDescriptor.loadFrom(this.getMPSProject());
     } catch (Throwable t) {
       LOG.error("This should not be thrown", t);
     }
   }
 
   private MPSProject getMPSProject() {
-    return this.myProject.getComponent(MPSProject.class);
+    return myProject.getComponent(MPSProject.class);
   }
 }

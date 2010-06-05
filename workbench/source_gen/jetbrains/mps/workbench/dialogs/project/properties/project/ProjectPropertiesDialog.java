@@ -18,39 +18,39 @@ public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
 
   public ProjectPropertiesDialog(final Project project) {
     super(project.getName() + " Properties", ProjectOperationContext.get(project));
-    this.myProject = project;
+    myProject = project;
     this.collectProjectProperties();
     this.initUI();
   }
 
   public ProjectPropertiesDialog(final Project project, ProjectProperties properties) {
     super(project.getName() + " Properties", ProjectOperationContext.get(project));
-    this.myProject = project;
-    this.myProperties = properties;
+    myProject = project;
+    myProperties = properties;
     this.initUI();
   }
 
   private void initUI() {
-    this.addComponent(StandardComponents.createProjectSolutionsPanel(this, "Solutions", this.myProperties.getSolutions()), BaseBindedDialog.ConstraintsType.LIST);
-    this.addComponent(StandardComponents.createProjectLanguagesPanel(this, "Languages", this.myProperties.getLanguages()), BaseBindedDialog.ConstraintsType.LIST);
-    this.addComponent(StandardComponents.createProjectDevkitsPanel(this, "Devkits", this.myProperties.getDevkits()), BaseBindedDialog.ConstraintsType.LIST);
-    this.addComponent(StandardComponents.createTestConfigsPanel(this, "Test Configurations", this.myProperties.getTestConfigurations(), this.myProperties), BaseBindedDialog.ConstraintsType.LIST);
+    this.addComponent(StandardComponents.createProjectSolutionsPanel(this, "Solutions", myProperties.getSolutions()), BaseBindedDialog.ConstraintsType.LIST);
+    this.addComponent(StandardComponents.createProjectLanguagesPanel(this, "Languages", myProperties.getLanguages()), BaseBindedDialog.ConstraintsType.LIST);
+    this.addComponent(StandardComponents.createProjectDevkitsPanel(this, "Devkits", myProperties.getDevkits()), BaseBindedDialog.ConstraintsType.LIST);
+    this.addComponent(StandardComponents.createTestConfigsPanel(this, "Test Configurations", myProperties.getTestConfigurations(), myProperties), BaseBindedDialog.ConstraintsType.LIST);
   }
 
   private void collectProjectProperties() {
-    this.myProperties = new ProjectProperties();
-    this.myProperties.loadFrom(this.getMPSProject());
+    myProperties = new ProjectProperties();
+    myProperties.loadFrom(this.getMPSProject());
   }
 
   private MPSProject getMPSProject() {
-    return this.myProject.getComponent(MPSProject.class);
+    return myProject.getComponent(MPSProject.class);
   }
 
   protected boolean doSaveChanges() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        ProjectPropertiesDialog.this.myProperties.saveTo(ProjectPropertiesDialog.this.getMPSProject());
-        ProjectPropertiesDialog.this.myProject.save();
+        myProperties.saveTo(ProjectPropertiesDialog.this.getMPSProject());
+        myProject.save();
       }
     });
     return true;

@@ -11,24 +11,24 @@ public abstract class ListRemoveAction extends BaseValidatedAction {
 
   public ListRemoveAction(JList list) {
     super("Remove", "Remove", Icons.REMOVE);
-    this.myList = list;
+    myList = list;
   }
 
   @Override
   public void update(AnActionEvent e) {
     super.update(e);
-    e.getPresentation().setEnabled(this.myList.getSelectedIndices().length != 0);
+    e.getPresentation().setEnabled(myList.getSelectedIndices().length != 0);
   }
 
   public final void doPerform(AnActionEvent e) {
-    int index = this.myList.getSelectedIndex();
-    for (int i : this.myList.getSelectedIndices()) {
+    int index = myList.getSelectedIndex();
+    for (int i : myList.getSelectedIndices()) {
       if (i < index) {
         index = i;
       }
     }
     this.doRemove(e);
-    int listSize = this.myList.getModel().getSize();
+    int listSize = myList.getModel().getSize();
     if (index >= listSize) {
       index--;
     } else
@@ -36,7 +36,7 @@ public abstract class ListRemoveAction extends BaseValidatedAction {
       index = 0;
     }
     if (index > -1) {
-      this.myList.setSelectedIndex(index);
+      myList.setSelectedIndex(index);
     }
   }
 

@@ -43,10 +43,10 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
 
   /*package*/ ModelPropertiesDialog(final SModelDescriptor sm, final IOperationContext context) {
     super("Model Properties for " + sm.getSModelFqName(), context);
-    this.myModel = sm;
+    myModel = sm;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ModelPropertiesDialog.this.myPresenter = new ModelProperties(sm, context);
+        myPresenter = new ModelProperties(sm, context);
       }
     });
   }
@@ -55,7 +55,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     final Wrappers._T<Set<SModelReference>> models = new Wrappers._T<Set<SModelReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        models.value = ModelPropertiesDialog.this.myPresenter.getModelDescriptor().getSModel().getUsedImportedModels();
+        models.value = myPresenter.getModelDescriptor().getSModel().getUsedImportedModels();
       }
     });
     return new ModelPropertiesDialog.ModelsCondition(models.value);
@@ -65,18 +65,18 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     final Wrappers._T<Set<ModuleReference>> usedLanguages = new Wrappers._T<Set<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        usedLanguages.value = ModelPropertiesDialog.this.myPresenter.getModelDescriptor().getSModel().getUsedLanguages();
+        usedLanguages.value = myPresenter.getModelDescriptor().getSModel().getUsedLanguages();
       }
     });
     return new ModelPropertiesDialog.LanguagesCondition(usedLanguages.value);
   }
 
   public JPanel createNamePanel() {
-    String stereotype = (this.myModel.getStereotype().equals("") ?
+    String stereotype = (myModel.getStereotype().equals("") ?
       "" :
-      " (" + this.myModel.getStereotype() + ")"
+      " (" + myModel.getStereotype() + ")"
     );
-    String initText = this.myModel.getLongName() + stereotype;
+    String initText = myModel.getLongName() + stereotype;
     return this.createFieldPanel("Model UID:", initText);
   }
 
@@ -92,10 +92,10 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
 
   public JComponent createDoNotGenerateCheckBox() {
     final JCheckBox checkBox = new JCheckBox("Do Not Generate");
-    checkBox.getModel().setSelected(this.myPresenter.isDoNotGenerate());
+    checkBox.getModel().setSelected(myPresenter.isDoNotGenerate());
     checkBox.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        ModelPropertiesDialog.this.myPresenter.setDoNotGenerate(checkBox.getModel().isSelected());
+        myPresenter.setDoNotGenerate(checkBox.getModel().isSelected());
       }
     });
     return checkBox;
@@ -109,12 +109,12 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
         int references = 0;
         int properties = 0;
         messageText.append("<html>");
-        for (SNode node : ModelPropertiesDialog.this.myModel.getSModel().allNodes()) {
+        for (SNode node : myModel.getSModel().allNodes()) {
           nodes++;
           references += node.getReferences().size();
           properties += node.getPropertyNames().size();
         }
-        messageText.append("Roots : ").append(ModelPropertiesDialog.this.myModel.getSModel().getRoots().size()).append("<br>");
+        messageText.append("Roots : ").append(myModel.getSModel().getRoots().size()).append("<br>");
         messageText.append("Nodes : ").append(nodes).append("<br>");
         messageText.append("References : ").append(references).append("<br>");
         messageText.append("Properties : ").append(properties).append("<br>");
@@ -151,7 +151,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
   }
 
   protected boolean doSaveChanges() {
-    this.myPresenter.saveChanges();
+    myPresenter.saveChanges();
     return true;
   }
 
@@ -172,9 +172,9 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
         return ModelPropertiesDialog.this.getOperationContext();
       }
       if (dataId.equals(MPSDataKeys.MODEL.getName())) {
-        return ModelPropertiesDialog.this.myPresenter.getModelDescriptor();
+        return myPresenter.getModelDescriptor();
       } else
-      return this.myRealContext.getData(dataId);
+      return myRealContext.getData(dataId);
     }
   }
 
@@ -182,11 +182,11 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     private final Set<SModelReference> myModels;
 
     public ModelsCondition(Set<SModelReference> models) {
-      this.myModels = models;
+      myModels = models;
     }
 
     public boolean met(final SModelReference object) {
-      return !(this.myModels.contains(object));
+      return !(myModels.contains(object));
     }
   }
 
@@ -194,11 +194,11 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     private final Set<ModuleReference> myUsedLanguages;
 
     public LanguagesCondition(Set<ModuleReference> usedLanguages) {
-      this.myUsedLanguages = usedLanguages;
+      myUsedLanguages = usedLanguages;
     }
 
     public boolean met(final ModuleReference object) {
-      return !(this.myUsedLanguages.contains(object));
+      return !(myUsedLanguages.contains(object));
     }
   }
 }

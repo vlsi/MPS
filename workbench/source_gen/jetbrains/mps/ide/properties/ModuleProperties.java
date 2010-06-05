@@ -30,118 +30,118 @@ public class ModuleProperties {
   private List<StubModelsEntry> myStubModels;
 
   public ModuleProperties() {
-    this.myModelRoots = ListsFactory.create(ListsFactory.MODEL_ROOT_COMPARATOR);
-    this.myDependencies = ListsFactory.create(ListsFactory.DEPENDENCY_COMPARATOR);
-    this.myUsedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
-    this.myUsedDevkits = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
-    this.mySourcePaths = (List) ListsFactory.create(ListsFactory.COMPARABLE_COMPARATOR);
-    this.myClassPaths = ListsFactory.create(ListsFactory.CLASSPATH_ENTRY_COMPARATOR);
-    this.myStubModels = ListsFactory.create(ListsFactory.STUB_MODEL_ENTRY_COMPARATOR);
+    myModelRoots = ListsFactory.create(ListsFactory.MODEL_ROOT_COMPARATOR);
+    myDependencies = ListsFactory.create(ListsFactory.DEPENDENCY_COMPARATOR);
+    myUsedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
+    myUsedDevkits = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
+    mySourcePaths = (List) ListsFactory.create(ListsFactory.COMPARABLE_COMPARATOR);
+    myClassPaths = ListsFactory.create(ListsFactory.CLASSPATH_ENTRY_COMPARATOR);
+    myStubModels = ListsFactory.create(ListsFactory.STUB_MODEL_ENTRY_COMPARATOR);
   }
 
   public String getNamespace() {
-    return this.myNamespace;
+    return myNamespace;
   }
 
   public void setNamespace(String namespace) {
-    this.myNamespace = namespace;
+    myNamespace = namespace;
   }
 
   public boolean isCompileInMPS() {
-    return this.myCompileInMPS;
+    return myCompileInMPS;
   }
 
   public void setCompileInMPS(boolean compileInMPS) {
-    this.myCompileInMPS = compileInMPS;
+    myCompileInMPS = compileInMPS;
   }
 
   public boolean isEnableJavaStubs() {
-    return this.myEnableJavaStubs;
+    return myEnableJavaStubs;
   }
 
   public void setEnableJavaStubs(boolean enableJavaStubs) {
-    this.myEnableJavaStubs = enableJavaStubs;
+    myEnableJavaStubs = enableJavaStubs;
   }
 
   public List<ModelRoot> getModelRoots() {
-    return this.myModelRoots;
+    return myModelRoots;
   }
 
   public void setModelRoots(List<ModelRoot> modelRoots) {
-    this.myModelRoots = modelRoots;
+    myModelRoots = modelRoots;
   }
 
   public List<Dependency> getDependencies() {
-    return this.myDependencies;
+    return myDependencies;
   }
 
   public void setDependencies(List<Dependency> dependencies) {
-    this.myDependencies = dependencies;
+    myDependencies = dependencies;
   }
 
   public List<ModuleReference> getUsedLanguages() {
-    return this.myUsedLanguages;
+    return myUsedLanguages;
   }
 
   public void setUsedLanguages(List<ModuleReference> usedLanguages) {
-    this.myUsedLanguages = usedLanguages;
+    myUsedLanguages = usedLanguages;
   }
 
   public List<ModuleReference> getUsedDevkits() {
-    return this.myUsedDevkits;
+    return myUsedDevkits;
   }
 
   public void setUsedDevkits(List<ModuleReference> usedDevkits) {
-    this.myUsedDevkits = usedDevkits;
+    myUsedDevkits = usedDevkits;
   }
 
   public List<String> getSourcePaths() {
-    return this.mySourcePaths;
+    return mySourcePaths;
   }
 
   public void setSourcePaths(List<String> sourcePaths) {
-    this.mySourcePaths = sourcePaths;
+    mySourcePaths = sourcePaths;
   }
 
   public List<ClassPathEntry> getClassPaths() {
-    return this.myClassPaths;
+    return myClassPaths;
   }
 
   public void setClassPaths(List<ClassPathEntry> classPaths) {
-    this.myClassPaths = classPaths;
+    myClassPaths = classPaths;
   }
 
   public List<StubModelsEntry> getStubModels() {
-    return this.myStubModels;
+    return myStubModels;
   }
 
   public void setStubModels(List<StubModelsEntry> stubModels) {
-    this.myStubModels = stubModels;
+    myStubModels = stubModels;
   }
 
   public void loadFrom(ModuleDescriptor descriptor) {
-    this.myNamespace = descriptor.getNamespace();
-    this.myCompileInMPS = descriptor.getCompileInMPS();
-    this.myEnableJavaStubs = descriptor.getEnableJavaStubs();
+    myNamespace = descriptor.getNamespace();
+    myCompileInMPS = descriptor.getCompileInMPS();
+    myEnableJavaStubs = descriptor.getEnableJavaStubs();
     for (ModelRoot root : descriptor.getModelRoots()) {
-      this.myModelRoots.add((root != null ?
+      myModelRoots.add((root != null ?
         root.getCopy() :
         null
       ));
     }
     for (Dependency dep : descriptor.getDependencies()) {
-      this.myDependencies.add((dep != null ?
+      myDependencies.add((dep != null ?
         dep.getCopy() :
         null
       ));
     }
-    this.myUsedLanguages.addAll(descriptor.getUsedLanguages());
-    this.myUsedDevkits.addAll(descriptor.getUsedDevkits());
+    myUsedLanguages.addAll(descriptor.getUsedLanguages());
+    myUsedDevkits.addAll(descriptor.getUsedDevkits());
     for (String p : descriptor.getSourcePaths()) {
-      this.mySourcePaths.add(p);
+      mySourcePaths.add(p);
     }
     for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
-      this.myStubModels.add((entry != null ?
+      myStubModels.add((entry != null ?
         entry.getCopy() :
         null
       ));
@@ -149,20 +149,20 @@ public class ModuleProperties {
   }
 
   public void saveTo(ModuleDescriptor descriptor) {
-    descriptor.setNamespace(this.myNamespace);
-    descriptor.setCompileInMPS(this.myCompileInMPS);
-    descriptor.setEnableJavaStubs(this.myEnableJavaStubs);
+    descriptor.setNamespace(myNamespace);
+    descriptor.setCompileInMPS(myCompileInMPS);
+    descriptor.setEnableJavaStubs(myEnableJavaStubs);
     descriptor.getModelRoots().clear();
-    descriptor.getModelRoots().addAll(this.myModelRoots);
+    descriptor.getModelRoots().addAll(myModelRoots);
     descriptor.getDependencies().clear();
-    descriptor.getDependencies().addAll(this.myDependencies);
+    descriptor.getDependencies().addAll(myDependencies);
     descriptor.getUsedLanguages().clear();
-    descriptor.getUsedLanguages().addAll(this.myUsedLanguages);
+    descriptor.getUsedLanguages().addAll(myUsedLanguages);
     descriptor.getUsedDevkits().clear();
-    descriptor.getUsedDevkits().addAll(this.myUsedDevkits);
+    descriptor.getUsedDevkits().addAll(myUsedDevkits);
     descriptor.getSourcePaths().clear();
-    descriptor.getSourcePaths().addAll(this.mySourcePaths);
+    descriptor.getSourcePaths().addAll(mySourcePaths);
     descriptor.getStubModelEntries().clear();
-    descriptor.getStubModelEntries().addAll(this.myStubModels);
+    descriptor.getStubModelEntries().addAll(myStubModels);
   }
 }

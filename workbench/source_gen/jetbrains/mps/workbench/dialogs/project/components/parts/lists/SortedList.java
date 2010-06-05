@@ -12,15 +12,15 @@ import java.util.Collection;
   private ArrayList<T> myList = new ArrayList<T>();
 
   public SortedList(ListsFactory.ListComparator<T> comparator) {
-    this.myComparator = comparator;
+    myComparator = comparator;
   }
 
   public int size() {
-    return this.myList.size();
+    return myList.size();
   }
 
   public T get(int index) {
-    return this.myList.get(index);
+    return myList.get(index);
   }
 
   @Override
@@ -34,7 +34,7 @@ import java.util.Collection;
       }
     } else {
       while (e.hasNext()) {
-        if (this.myComparator.isEqual((T) o, e.next())) {
+        if (myComparator.isEqual((T) o, e.next())) {
           return e.previousIndex();
         }
       }
@@ -53,7 +53,7 @@ import java.util.Collection;
       }
     } else {
       while (e.hasPrevious()) {
-        if (this.myComparator.isEqual((T) o, e.previous())) {
+        if (myComparator.isEqual((T) o, e.previous())) {
           return e.nextIndex();
         }
       }
@@ -63,7 +63,7 @@ import java.util.Collection;
 
   @Override
   public T remove(int index) {
-    return this.myList.remove(index);
+    return myList.remove(index);
   }
 
   public void add(int index, T element) {
@@ -71,19 +71,19 @@ import java.util.Collection;
   }
 
   public boolean add(T o) {
-    int index = this.myList.size();
-    for (int i = 0; i < this.myList.size(); i++) {
-      if (this.myComparator.compare(this.myList.get(i), o) > 0) {
+    int index = myList.size();
+    for (int i = 0; i < myList.size(); i++) {
+      if (myComparator.compare(myList.get(i), o) > 0) {
         index = i;
         break;
       }
     }
     if (index != 0) {
-      if (this.myComparator.isEqual(o, this.myList.get(index - 1))) {
+      if (myComparator.isEqual(o, myList.get(index - 1))) {
         return false;
       }
     }
-    this.myList.add(index, o);
+    myList.add(index, o);
     return true;
   }
 

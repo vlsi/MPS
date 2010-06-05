@@ -14,7 +14,7 @@ public class ProjectPathRenderer extends PathRenderer {
   private MPSProject myProject;
 
   public ProjectPathRenderer(MPSProject project) {
-    this.myProject = project;
+    myProject = project;
   }
 
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
@@ -24,7 +24,7 @@ public class ProjectPathRenderer extends PathRenderer {
       return result;
     }
     boolean isContained = false;
-    for (Path p : this.myProject.getAllModulePaths()) {
+    for (Path p : myProject.getAllModulePaths()) {
       if (p.isSamePath(path)) {
         isContained = true;
         break;

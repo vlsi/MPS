@@ -13,14 +13,14 @@ public class ModulePathChooser implements Computable<Path> {
   private final IBindedDialog myOwner;
 
   public ModulePathChooser(String extension, IBindedDialog owner) {
-    this.myExtension = extension;
-    this.myOwner = owner;
+    myExtension = extension;
+    myOwner = owner;
   }
 
   public Path compute() {
     TreeFileChooser chooser = new TreeFileChooser();
-    chooser.setExtensionFileFilter(this.myExtension);
-    IFile file = chooser.showDialog(this.myOwner.getMainComponent());
+    chooser.setExtensionFileFilter(myExtension);
+    IFile file = chooser.showDialog(myOwner.getMainComponent());
     if (file == null) {
       return null;
     }

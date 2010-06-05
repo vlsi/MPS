@@ -17,21 +17,21 @@ public class ModuleImportEditor extends DefaultCellEditor {
 
   public ModuleImportEditor(ImportProperties props, boolean forModel) {
     super(new JComboBox());
-    this.myComboBox = (JComboBox) this.editorComponent;
-    this.myProps = props;
-    this.myForModel = forModel;
-    this.myComboBox.setRenderer(new ModuleImportRenderer(null, null));
+    myComboBox = (JComboBox) editorComponent;
+    myProps = props;
+    myForModel = forModel;
+    myComboBox.setRenderer(new ModuleImportRenderer(null, null));
   }
 
   @Override
   public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
-    this.myComboBox.removeAllItems();
-    this.myComboBox.addItem(null);
-    for (ModuleReference modRef : (this.myForModel ?
-      this.myProps.getModulesForModel(row) :
-      this.myProps.getModulesForLanguage(row)
+    myComboBox.removeAllItems();
+    myComboBox.addItem(null);
+    for (ModuleReference modRef : (myForModel ?
+      myProps.getModulesForModel(row) :
+      myProps.getModulesForLanguage(row)
     )) {
-      this.myComboBox.addItem(modRef);
+      myComboBox.addItem(modRef);
     }
     return super.getTableCellEditorComponent(table, value, isSelected, row, column);
   }

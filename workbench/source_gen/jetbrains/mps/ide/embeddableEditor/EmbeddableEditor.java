@@ -50,32 +50,32 @@ public class EmbeddableEditor {
   }
 
   public EmbeddableEditor(IOperationContext context, ModelOwner owner, SNode rootNode, SNode targetNode, boolean editable) {
-    this.myOwner = owner;
-    this.myContext = context;
-    this.myIsEditable = editable;
-    this.myModel = ProjectModels.createDescriptorFor(this.myOwner);
-    this.myModel.getSModel().addDevKit(LanguageDesign_DevKit.get());
+    myOwner = owner;
+    myContext = context;
+    myIsEditable = editable;
+    myModel = ProjectModels.createDescriptorFor(myOwner);
+    myModel.getSModel().addDevKit(LanguageDesign_DevKit.get());
     this.setNode(rootNode, targetNode);
   }
 
   private void setNode(@NotNull SNode rootNode, @NotNull SNode targetNode) {
-    this.myRootNode = rootNode;
-    this.myNode = targetNode;
-    this.myModel.getSModel().runLoadingAction(new Runnable() {
+    myRootNode = rootNode;
+    myNode = targetNode;
+    myModel.getSModel().runLoadingAction(new Runnable() {
       public void run() {
-        EmbeddableEditor.this.myModel.getSModel().addRoot(EmbeddableEditor.this.myRootNode);
+        myModel.getSModel().addRoot(myRootNode);
       }
     });
-    this.myFileNodeEditor = new MPSFileNodeEditor(this.myContext, MPSNodesVirtualFileSystem.getInstance().getFileFor(this.myNode));
-    IEditor editor = this.myFileNodeEditor.getNodeEditor();
+    myFileNodeEditor = new MPSFileNodeEditor(myContext, MPSNodesVirtualFileSystem.getInstance().getFileFor(myNode));
+    IEditor editor = myFileNodeEditor.getNodeEditor();
     if (editor instanceof NodeEditor) {
       NodeEditor nodeEditor = (NodeEditor) editor;
-      nodeEditor.setEditable(this.myIsEditable);
+      nodeEditor.setEditable(myIsEditable);
     }
-    if (this.myPanel == null) {
-      this.myPanel = new EmbeddableEditorPanel(this.myFileNodeEditor);
+    if (myPanel == null) {
+      myPanel = new EmbeddableEditorPanel(myFileNodeEditor);
     } else {
-      this.myPanel.setEditor(this.myFileNodeEditor);
+      myPanel.setEditor(myFileNodeEditor);
     }
   }
 
@@ -84,11 +84,11 @@ public class EmbeddableEditor {
   }
 
   public JComponent getComponenet() {
-    return this.myPanel;
+    return myPanel;
   }
 
   public void setBackground(Color color) {
-    IEditor editor = this.myFileNodeEditor.getNodeEditor();
+    IEditor editor = myFileNodeEditor.getNodeEditor();
     if (editor instanceof NodeEditor) {
       NodeEditor nodeEditor = (NodeEditor) editor;
       nodeEditor.setBackground(color);
@@ -96,7 +96,7 @@ public class EmbeddableEditor {
   }
 
   public void mark(List<EditorMessage> messages) {
-    IEditor editor = this.myFileNodeEditor.getNodeEditor();
+    IEditor editor = myFileNodeEditor.getNodeEditor();
     if (editor instanceof NodeEditor) {
       NodeEditor nodeEditor = (NodeEditor) editor;
       nodeEditor.mark(messages);
@@ -104,11 +104,11 @@ public class EmbeddableEditor {
   }
 
   public void selectNode(SNode node) {
-    this.myFileNodeEditor.getNodeEditor().selectNode(node);
+    myFileNodeEditor.getNodeEditor().selectNode(node);
   }
 
   public GenerationResult generate(final Set<IClassPathItem> additionalClasspath) {
-    if (this.myRootNode == null) {
+    if (myRootNode == null) {
       return null;
     }
     InMemoryJavaGenerationHandler handler = new InMemoryJavaGenerationHandler(false, false) {
@@ -126,23 +126,23 @@ public class EmbeddableEditor {
         return result;
       }
     };
-    GeneratorManager manager = new GeneratorManager(EmbeddableEditor.this.myContext.getProject(), new GenerationSettings()) {
+    GeneratorManager manager = new GeneratorManager(myContext.getProject(), new GenerationSettings()) {
       protected boolean generateRequirements() {
         return false;
       }
     };
-    boolean successful = manager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), this.myModel), this.myContext, handler, false);
-    return new GenerationResult(this.myRootNode, this.myContext, this.myModel, handler, successful);
+    boolean successful = manager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), myModel), myContext, handler, false);
+    return new GenerationResult(myRootNode, myContext, myModel, handler, successful);
   }
 
   public SModelDescriptor getModel() {
-    return this.myModel;
+    return myModel;
   }
 
   public void addLanguageStructureModel(final Language language) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        EmbeddableEditor.this.myModel.getSModel().addImportedModel(language.getStructureModelDescriptor().getSModelReference());
+        myModel.getSModel().addImportedModel(language.getStructureModelDescriptor().getSModelReference());
       }
     });
   }
@@ -150,7 +150,7 @@ public class EmbeddableEditor {
   public void addLanguage(final Language language) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        EmbeddableEditor.this.myModel.getSModel().addLanguage(language);
+        myModel.getSModel().addLanguage(language);
       }
     });
   }
@@ -158,17 +158,17 @@ public class EmbeddableEditor {
   public void addModel(final SModelReference model) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        EmbeddableEditor.this.myModel.getSModel().addImportedModel(model);
+        myModel.getSModel().addImportedModel(model);
       }
     });
   }
 
   public void disposeEditor() {
-    SModelRepository.getInstance().unRegisterModelDescriptors(this.myOwner);
-    this.myFileNodeEditor.dispose();
+    SModelRepository.getInstance().unRegisterModelDescriptors(myOwner);
+    myFileNodeEditor.dispose();
   }
 
   protected IOperationContext createOperationContext() {
-    return this.myContext;
+    return myContext;
   }
 }

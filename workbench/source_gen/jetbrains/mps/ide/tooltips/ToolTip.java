@@ -31,28 +31,28 @@ public class ToolTip {
   private boolean myRigthAligned;
 
   /*package*/ ToolTip(boolean rightAligned) {
-    this.myRigthAligned = rightAligned;
+    myRigthAligned = rightAligned;
   }
 
   /*package*/ void show(Frame owner, Point location, ToolTipData hintInformation) {
-    this.myHintInformation = hintInformation;
-    location = new Point(location.x + ((this.myRigthAligned ?
+    myHintInformation = hintInformation;
+    location = new Point(location.x + ((myRigthAligned ?
       -X_OFFSET :
       X_OFFSET
     )), location.y + Y_OFFSET);
-    this.myDialog = new ToolTip.MyDialog(owner, location, this.myRigthAligned, hintInformation);
-    this.myDialog.setVisible(true);
+    myDialog = new ToolTip.MyDialog(owner, location, myRigthAligned, hintInformation);
+    myDialog.setVisible(true);
   }
 
   /*package*/ void hide() {
-    if (this.myDialog != null) {
-      this.myDialog.dispose();
-      this.myDialog = null;
+    if (myDialog != null) {
+      myDialog.dispose();
+      myDialog = null;
     }
   }
 
   /*package*/ String getText() {
-    return this.myHintInformation.getText();
+    return myHintInformation.getText();
   }
 
   /*package*/ static class MyDialog extends Window {
@@ -79,7 +79,7 @@ public class ToolTip {
 
     /*package*/ MyDialog(Frame owner, Point location, boolean rightAligned, ToolTipData toolTipData) {
       super(owner);
-      this.myPrevFocusOwner = owner.getFocusOwner();
+      myPrevFocusOwner = owner.getFocusOwner();
 
       this.setFocusableWindowState(false);
 
@@ -103,20 +103,20 @@ public class ToolTip {
     }
 
     private void addListeners() {
-      if (this.myPrevFocusOwner != null) {
-        this.myPrevFocusOwner.addFocusListener(this.myOwnerFocusListener);
-        this.myPrevFocusOwner.addMouseListener(this.myOwnerMouseListener);
-        this.myPrevFocusOwner.addKeyListener(this.myOwnerKeyListener);
+      if (myPrevFocusOwner != null) {
+        myPrevFocusOwner.addFocusListener(myOwnerFocusListener);
+        myPrevFocusOwner.addMouseListener(myOwnerMouseListener);
+        myPrevFocusOwner.addKeyListener(myOwnerKeyListener);
       }
       super.dispose();
     }
 
     @Override
     public void dispose() {
-      if (this.myPrevFocusOwner != null) {
-        this.myPrevFocusOwner.removeFocusListener(this.myOwnerFocusListener);
-        this.myPrevFocusOwner.removeMouseListener(this.myOwnerMouseListener);
-        this.myPrevFocusOwner.removeKeyListener(this.myOwnerKeyListener);
+      if (myPrevFocusOwner != null) {
+        myPrevFocusOwner.removeFocusListener(myOwnerFocusListener);
+        myPrevFocusOwner.removeMouseListener(myOwnerMouseListener);
+        myPrevFocusOwner.removeKeyListener(myOwnerKeyListener);
       }
       super.dispose();
     }

@@ -39,14 +39,14 @@ public class MappingSelectTree extends JTree {
     public CheckBoxNodeRenderer() {
       Font font = UIManager.getFont("Tree.font");
       if (font != null) {
-        this.myRenderer.setFont(font);
+        myRenderer.setFont(font);
       }
       Boolean iconBorder = (Boolean) UIManager.get("Tree.drawsFocusBorderAroundIcon");
-      this.myRenderer.setFocusPainted((iconBorder != null) && iconBorder);
+      myRenderer.setFocusPainted((iconBorder != null) && iconBorder);
     }
 
     public JCheckBox getRenderer() {
-      return this.myRenderer;
+      return myRenderer;
     }
 
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
@@ -54,13 +54,13 @@ public class MappingSelectTree extends JTree {
       Color selectionBackground = UIManager.getColor("Tree.selectionBackground");
       Color textForeground = UIManager.getColor("Tree.textForeground");
       Color textBackground = UIManager.getColor("Tree.textBackground");
-      this.myRenderer.setEnabled(tree.isEnabled());
+      myRenderer.setEnabled(tree.isEnabled());
       if (selected) {
-        this.myRenderer.setForeground(selectionForeground);
-        this.myRenderer.setBackground(selectionBackground);
+        myRenderer.setForeground(selectionForeground);
+        myRenderer.setBackground(selectionBackground);
       } else {
-        this.myRenderer.setForeground(textForeground);
-        this.myRenderer.setBackground(textBackground);
+        myRenderer.setForeground(textForeground);
+        myRenderer.setBackground(textBackground);
       }
       final DefaultMutableTreeNode node = (DefaultMutableTreeNode) value;
       final String text = tree.convertValueToText(value, selected, expanded, leaf, row, hasFocus);
@@ -68,15 +68,15 @@ public class MappingSelectTree extends JTree {
         public void run() {
           if (node.getUserObject() instanceof MappingSelectTree.NodeData) {
             MappingSelectTree.NodeData data = (MappingSelectTree.NodeData) node.getUserObject();
-            CheckBoxNodeRenderer.this.myRenderer.setText(data.getText());
-            CheckBoxNodeRenderer.this.myRenderer.setSelected(data.isSelected());
+            myRenderer.setText(data.getText());
+            myRenderer.setSelected(data.isSelected());
           } else {
-            CheckBoxNodeRenderer.this.myRenderer.setText(text);
-            CheckBoxNodeRenderer.this.myRenderer.setSelected(false);
+            myRenderer.setText(text);
+            myRenderer.setSelected(false);
           }
         }
       });
-      return this.myRenderer;
+      return myRenderer;
     }
   }
 
@@ -88,30 +88,30 @@ public class MappingSelectTree extends JTree {
     }
 
     public Object getCellEditorValue() {
-      JCheckBox checkbox = this.myRenderer.getRenderer();
+      JCheckBox checkbox = myRenderer.getRenderer();
       MappingSelectTree.NodeData data;
-      if (this.myObject instanceof MappingSelectTree.RootNodeData) {
-        data = new MappingSelectTree.RootNodeData(this.myObject.getText());
+      if (myObject instanceof MappingSelectTree.RootNodeData) {
+        data = new MappingSelectTree.RootNodeData(myObject.getText());
       } else
-      if (this.myObject instanceof MappingSelectTree.GenRefNodeData) {
-        data = new MappingSelectTree.GenRefNodeData(((MappingSelectTree.GenRefNodeData) this.myObject).getObject());
+      if (myObject instanceof MappingSelectTree.GenRefNodeData) {
+        data = new MappingSelectTree.GenRefNodeData(((MappingSelectTree.GenRefNodeData) myObject).getObject());
       } else
-      if (this.myObject instanceof MappingSelectTree.ModelRefNodeData) {
-        data = new MappingSelectTree.ModelRefNodeData(((MappingSelectTree.ModelRefNodeData) this.myObject).getObject());
+      if (myObject instanceof MappingSelectTree.ModelRefNodeData) {
+        data = new MappingSelectTree.ModelRefNodeData(((MappingSelectTree.ModelRefNodeData) myObject).getObject());
       } else
-      if (this.myObject instanceof MappingSelectTree.NodeRefNodeData) {
-        data = new MappingSelectTree.NodeRefNodeData(((MappingSelectTree.NodeRefNodeData) this.myObject).getObject());
+      if (myObject instanceof MappingSelectTree.NodeRefNodeData) {
+        data = new MappingSelectTree.NodeRefNodeData(((MappingSelectTree.NodeRefNodeData) myObject).getObject());
       } else {
-        throw new RuntimeException("Wrong type of parameter: " + this.myObject.getClass().getName());
+        throw new RuntimeException("Wrong type of parameter: " + myObject.getClass().getName());
       }
       data.setSelected(checkbox.isSelected());
       return data;
     }
 
     public Component getTreeCellEditorComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row) {
-      Component editor = this.myRenderer.getTreeCellRendererComponent(tree, value, true, expanded, leaf, row, true);
+      Component editor = myRenderer.getTreeCellRendererComponent(tree, value, true, expanded, leaf, row, true);
       DefaultMutableTreeNode node = (DefaultMutableTreeNode) value;
-      this.myObject = (MappingSelectTree.NodeData) node.getUserObject();
+      myObject = (MappingSelectTree.NodeData) node.getUserObject();
       ItemListener itemListener = new ItemListener() {
         public void itemStateChanged(ItemEvent itemEvent) {
           if (CheckBoxNodeEditor.this.stopCellEditing()) {
@@ -131,11 +131,11 @@ public class MappingSelectTree extends JTree {
 
     public RootNodeData(String text) {
       super(null);
-      this.myText = text;
+      myText = text;
     }
 
     public String getText() {
-      return this.myText;
+      return myText;
     }
   }
 
@@ -191,28 +191,28 @@ public class MappingSelectTree extends JTree {
     private boolean myChecksUnder;
 
     public NodeData(Object object) {
-      this.myObject = object;
-      this.myChecksUnder = false;
+      myObject = object;
+      myChecksUnder = false;
     }
 
     public Object getObject() {
-      return this.myObject;
+      return myObject;
     }
 
     public boolean isChecksUnder() {
-      return this.myChecksUnder;
+      return myChecksUnder;
     }
 
     public void setChecksUnder(boolean checksUnder) {
-      this.myChecksUnder = checksUnder;
+      myChecksUnder = checksUnder;
     }
 
     public boolean isSelected() {
-      return this.mySelected;
+      return mySelected;
     }
 
     public void setSelected(boolean newValue) {
-      this.mySelected = newValue;
+      mySelected = newValue;
     }
 
     public abstract String getText();

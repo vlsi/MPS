@@ -11,7 +11,7 @@ public class ModelValidator implements Validator {
   private IScope myModuleScope;
 
   public ModelValidator(IScope moduleScope) {
-    this.myModuleScope = moduleScope;
+    myModuleScope = moduleScope;
   }
 
   public boolean isBrokenValue(Object value) {
@@ -19,12 +19,12 @@ public class ModelValidator implements Validator {
       return true;
     }
     final SModelReference modelReference = (SModelReference) value;
-    if (this.myModuleScope == null) {
+    if (myModuleScope == null) {
       return true;
     }
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
-        return ModelValidator.this.myModuleScope.getModelDescriptor(modelReference) == null;
+        return myModuleScope.getModelDescriptor(modelReference) == null;
       }
     });
   }

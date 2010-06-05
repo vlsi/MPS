@@ -13,16 +13,16 @@ public class ModuleEditor extends DefaultCellEditor {
 
   public ModuleEditor() {
     super(new JTextField());
-    this.myTextField = (JTextField) super.getComponent();
-    this.myTextField.setOpaque(false);
+    myTextField = (JTextField) super.getComponent();
+    myTextField.setOpaque(false);
   }
 
   public Object getCellEditorValue() {
-    return this.myTextField.getText();
+    return myTextField.getText();
   }
 
   public Component getTableCellEditorComponent(final JTable table, Object value, boolean isSelected, final int row, final int column) {
-    this.myTextField.setText(((ModuleReference) value).getModuleFqName());
+    myTextField.setText(((ModuleReference) value).getModuleFqName());
     return super.getTableCellEditorComponent(table, value, isSelected, row, column);
   }
 }

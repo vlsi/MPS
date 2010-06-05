@@ -11,25 +11,25 @@ public class ToolTipData {
   private Component myComponent;
 
   /*package*/ ToolTipData(String text) {
-    this.myText = text;
+    myText = text;
   }
 
   public ToolTipData(Component component) {
-    this.myComponent = component;
+    myComponent = component;
   }
 
   /*package*/ String getText() {
-    return this.myText;
+    return myText;
   }
 
   /*package*/ Component getComponent() {
-    if (this.myComponent != null) {
-      return this.myComponent;
+    if (myComponent != null) {
+      return myComponent;
     } else {
       JTextArea text = new JTextArea();
       text = new JTextArea();
       text.setEditable(false);
-      text.setText(this.myText);
+      text.setText(myText);
       text.setFont(EditorSettings.getInstance().getDefaultEditorFont());
 
       text.setBackground(ToolTip.BACKGROUND_COLOR);

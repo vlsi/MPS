@@ -15,38 +15,38 @@ public class GenerationResult {
   private boolean mySuccesful = true;
 
   /*package*/ GenerationResult(SNode node, IOperationContext context, SModelDescriptor modelDescriptor, InMemoryJavaGenerationHandler handler, boolean succesful) {
-    this.myContext = context;
-    this.myNode = node;
-    this.myDescriptor = modelDescriptor;
-    this.myHandler = handler;
-    this.mySuccesful = succesful;
+    myContext = context;
+    myNode = node;
+    myDescriptor = modelDescriptor;
+    myHandler = handler;
+    mySuccesful = succesful;
   }
 
   /*package*/ GenerationResult(SNode node, IOperationContext context) {
-    this.myContext = context;
-    this.myNode = node;
+    myContext = context;
+    myNode = node;
   }
 
   public SNode getSNode() {
-    return this.myNode;
+    return myNode;
   }
 
   public IOperationContext getOperationContext() {
-    return this.myContext;
+    return myContext;
   }
 
   public SModelDescriptor getModelDescriptor() {
-    return this.myDescriptor;
+    return myDescriptor;
   }
 
   public boolean isSuccessful() {
-    return this.mySuccesful;
+    return mySuccesful;
   }
 
   public ClassLoader getLoader(ClassLoader parentLoader) {
-    if (this.myHandler == null) {
+    if (myHandler == null) {
       return null;
     }
-    return this.myHandler.getCompiler().getClassLoader(parentLoader);
+    return myHandler.getCompiler().getClassLoader(parentLoader);
   }
 }

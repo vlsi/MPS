@@ -27,72 +27,72 @@ public class ProjectProperties {
   }
 
   public void testConfigsChanged() {
-    this.myTestConfigsChanged = true;
+    myTestConfigsChanged = true;
   }
 
   public List<Path> getSolutions() {
-    return this.mySolutions;
+    return mySolutions;
   }
 
   public List<Path> getLanguages() {
-    return this.myLanguages;
+    return myLanguages;
   }
 
   public List<Path> getDevkits() {
-    return this.myDevkits;
+    return myDevkits;
   }
 
   public List<BaseTestConfiguration> getTestConfigurations() {
-    return this.myTestConfigs;
+    return myTestConfigs;
   }
 
   public boolean isSame(ProjectDescriptor projectDescriptor) {
     List<Path> paths = ListsFactory.createSortedList(ListsFactory.PATH_COMPARATOR);
     paths.clear();
-    paths.addAll(this.myProjectDescriptor.getLanguages());
-    if (!(paths.equals(this.myLanguages))) {
+    paths.addAll(myProjectDescriptor.getLanguages());
+    if (!(paths.equals(myLanguages))) {
       return false;
     }
     paths.clear();
-    paths.addAll(this.myProjectDescriptor.getSolutions());
-    if (!(paths.equals(this.mySolutions))) {
+    paths.addAll(myProjectDescriptor.getSolutions());
+    if (!(paths.equals(mySolutions))) {
       return false;
     }
     paths.clear();
-    paths.addAll(this.myProjectDescriptor.getDevkits());
-    if (!(paths.equals(this.myDevkits))) {
+    paths.addAll(myProjectDescriptor.getDevkits());
+    if (!(paths.equals(myDevkits))) {
       return false;
     }
-    return !(this.myTestConfigsChanged);
+    return !(myTestConfigsChanged);
   }
 
   public void loadFrom(MPSProject project) {
-    this.myProjectDescriptor = project.getProjectDescriptor();
-    this.mySolutions.clear();
-    this.mySolutions.addAll(this.myProjectDescriptor.getSolutions());
-    this.myLanguages.clear();
-    this.myLanguages.addAll(this.myProjectDescriptor.getLanguages());
-    this.myDevkits.clear();
-    this.myDevkits.addAll(this.myProjectDescriptor.getDevkits());
-    this.myTestConfigs.clear();
-    this.myTestConfigs.addAll(this.myProjectDescriptor.getTestConfigurations());
+    myProjectDescriptor = project.getProjectDescriptor();
+    mySolutions.clear();
+    mySolutions.addAll(myProjectDescriptor.getSolutions());
+    myLanguages.clear();
+    myLanguages.addAll(myProjectDescriptor.getLanguages());
+    myDevkits.clear();
+    myDevkits.addAll(myProjectDescriptor.getDevkits());
+    myTestConfigs.clear();
+    myTestConfigs.addAll(myProjectDescriptor.getTestConfigurations());
   }
 
   public void saveTo(MPSProject project) {
-    this.myProjectDescriptor.getLanguages().clear();
-    for (Path path : this.myLanguages) {
-      this.myProjectDescriptor.addLanguage(path);
+    myProjectDescriptor.getLanguages().clear();
+    for (Path path : myLanguages) {
+      myProjectDescriptor.addLanguage(path);
     }
-    this.myProjectDescriptor.getSolutions().clear();
-    for (Path path : this.mySolutions) {
-      this.myProjectDescriptor.addSolution(path);
+    myProjectDescriptor.getSolutions().clear();
+    for (Path path : mySolutions) {
+      myProjectDescriptor.addSolution(path);
     }
-    this.myProjectDescriptor.getDevkits().clear();
-    for (Path path : this.myDevkits) {
-      this.myProjectDescriptor.addDevkit(path);
+    myProjectDescriptor.getDevkits().clear();
+    for (Path path : myDevkits) {
+      myProjectDescriptor.addDevkit(path);
     }
-    this.myProjectDescriptor.getTestConfigurations().clear();
-    this.myProjectDescriptor.getTestConfigurations().addAll(this.myTestConfigs);
-    project.setProjectDescriptor(this.myProjectDescriptor);
+    myProjectDescriptor.getTestConfigurations().clear();
+    myProjectDescriptor.getTestConfigurations().addAll(myTestConfigs);
+    project.setProjectDescriptor(myProjectDescriptor);
   }
 }

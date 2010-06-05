@@ -11,24 +11,24 @@ public abstract class TableRemoveAction extends BaseValidatedAction {
 
   public TableRemoveAction(JTable table) {
     super("Remove", "Remove", Icons.REMOVE);
-    this.myTable = table;
+    myTable = table;
   }
 
   @Override
   public void update(AnActionEvent e) {
     super.update(e);
-    e.getPresentation().setEnabled(this.myTable.getSelectedRowCount() != 0);
+    e.getPresentation().setEnabled(myTable.getSelectedRowCount() != 0);
   }
 
   public final void doPerform(AnActionEvent e) {
-    int index = this.myTable.getSelectedRow();
-    for (int i : this.myTable.getSelectedRows()) {
+    int index = myTable.getSelectedRow();
+    for (int i : myTable.getSelectedRows()) {
       if (i < index) {
         index = i;
       }
     }
     this.doRemove(e);
-    int listSize = this.myTable.getModel().getRowCount();
+    int listSize = myTable.getModel().getRowCount();
     if (index >= listSize) {
       index--;
     } else
@@ -36,7 +36,7 @@ public abstract class TableRemoveAction extends BaseValidatedAction {
       index = 0;
     }
     if (index > -1) {
-      this.myTable.getSelectionModel().setSelectionInterval(index, index);
+      myTable.getSelectionModel().setSelectionInterval(index, index);
     }
   }
 

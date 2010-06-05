@@ -20,17 +20,17 @@ public class DevKitPropertiesDialog extends BasePropertiesDialog {
 
   /*package*/ DevKitPropertiesDialog(DevKit devKit, IOperationContext operationContext) {
     super("DevKit Properties", operationContext);
-    this.myDevKit = devKit;
+    myDevKit = devKit;
     this.collectDevkitProperties();
   }
 
   private void collectDevkitProperties() {
-    this.myProperties = new DevkitProperties();
-    this.myProperties.loadFrom(this.myDevKit.getModuleDescriptor());
+    myProperties = new DevkitProperties();
+    myProperties.loadFrom(myDevKit.getModuleDescriptor());
   }
 
   protected String getErrorString() {
-    return this.checkStubModels(this.myProperties.getStubModels());
+    return this.checkStubModels(myProperties.getStubModels());
   }
 
   protected boolean doSaveChanges() {
@@ -39,9 +39,9 @@ public class DevKitPropertiesDialog extends BasePropertiesDialog {
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        DevKitPropertiesDialog.this.myProperties.saveTo(DevKitPropertiesDialog.this.myDevKit.getModuleDescriptor());
-        DevKitPropertiesDialog.this.myDevKit.setDevKitDescriptor(DevKitPropertiesDialog.this.myDevKit.getModuleDescriptor(), true);
-        DevKitPropertiesDialog.this.myDevKit.save();
+        myProperties.saveTo(myDevKit.getModuleDescriptor());
+        myDevKit.setDevKitDescriptor(myDevKit.getModuleDescriptor(), true);
+        myDevKit.save();
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
       }
     }, getOperationContext().getProject());

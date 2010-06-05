@@ -16,7 +16,7 @@ public class ModelChooser implements Computable<List<SModelReference>> {
   private final IBindedDialog myOwner;
 
   public ModelChooser(IBindedDialog owner) {
-    this.myOwner = owner;
+    myOwner = owner;
   }
 
   public List<SModelReference> compute() {
@@ -25,7 +25,7 @@ public class ModelChooser implements Computable<List<SModelReference>> {
         return GlobalScope.getInstance().getModelDescriptors();
       }
     });
-    List<SModelDescriptor> sModelDescriptor = CommonChoosers.showDialogModelCollectionChooser(this.myOwner.getMainComponent(), models, null);
+    List<SModelDescriptor> sModelDescriptor = CommonChoosers.showDialogModelCollectionChooser(myOwner.getMainComponent(), models, null);
     if (sModelDescriptor == null) {
       return null;
     }

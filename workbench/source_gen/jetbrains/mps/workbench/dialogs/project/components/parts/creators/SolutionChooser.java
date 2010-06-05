@@ -17,7 +17,7 @@ public class SolutionChooser implements Computable<List<ModuleReference>> {
   private final IBindedDialog myOwner;
 
   public SolutionChooser(IBindedDialog owner) {
-    this.myOwner = owner;
+    myOwner = owner;
   }
 
   public List<ModuleReference> compute() {
@@ -32,7 +32,7 @@ public class SolutionChooser implements Computable<List<ModuleReference>> {
         return result;
       }
     });
-    List<Solution> solution = CommonChoosers.showDialogModuleCollectionChooser(this.myOwner.getMainComponent(), "solution", solutions, null);
+    List<Solution> solution = CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "solution", solutions, null);
     if (solution == null) {
       return null;
     }

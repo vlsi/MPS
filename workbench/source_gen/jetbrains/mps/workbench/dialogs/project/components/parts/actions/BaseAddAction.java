@@ -13,7 +13,7 @@ public abstract class BaseAddAction extends BaseValidatedAction {
 
   protected BaseAddAction(ListSelectionModel model) {
     super("Add", "Add", Icons.ADD);
-    this.mySelectionModel = model;
+    mySelectionModel = model;
   }
 
   public final void doPerform(AnActionEvent e) {
@@ -25,7 +25,7 @@ public abstract class BaseAddAction extends BaseValidatedAction {
   }
 
   protected ListSelectionModel getSelectionModel() {
-    return this.mySelectionModel;
+    return mySelectionModel;
   }
 
   protected List<Integer> doAddMul(AnActionEvent e) {

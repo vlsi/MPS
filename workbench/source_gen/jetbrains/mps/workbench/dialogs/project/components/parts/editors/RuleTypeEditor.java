@@ -10,10 +10,10 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleTy
 public class RuleTypeEditor extends DefaultCellEditor {
   public RuleTypeEditor() {
     super(new JComboBox());
-    JComboBox cb = (JComboBox) this.editorComponent;
+    JComboBox cb = (JComboBox) editorComponent;
     cb.addItem(RuleType.STRICTLY_BEFORE);
     cb.addItem(RuleType.STRICTLY_TOGETHER);
     cb.addItem(RuleType.BEFORE_OR_TOGETHER);
-    this.editorComponent = RuleTypeRenderer.createCenterAlignmentInCell(this.editorComponent);
+    editorComponent = RuleTypeRenderer.createCenterAlignmentInCell(editorComponent);
   }
 }

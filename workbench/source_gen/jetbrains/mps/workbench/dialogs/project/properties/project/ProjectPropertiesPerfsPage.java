@@ -18,7 +18,7 @@ public final class ProjectPropertiesPerfsPage implements SearchableConfigurable,
   private ProjectPropertiesComponent myComponent;
 
   public ProjectPropertiesPerfsPage(Project project) {
-    this.myProject = project;
+    myProject = project;
   }
 
   @Nls
@@ -35,24 +35,24 @@ public final class ProjectPropertiesPerfsPage implements SearchableConfigurable,
   }
 
   public JComponent createComponent() {
-    this.myComponent = new ProjectPropertiesComponent(this.myProject);
-    return this.myComponent;
+    myComponent = new ProjectPropertiesComponent(myProject);
+    return myComponent;
   }
 
   public boolean isModified() {
-    return this.myComponent.isModified();
+    return myComponent.isModified();
   }
 
   public void apply() throws ConfigurationException {
-    this.myComponent.apply();
+    myComponent.apply();
   }
 
   public void reset() {
-    this.myComponent.reset();
+    myComponent.reset();
   }
 
   public void disposeUIResources() {
-    this.myComponent = null;
+    myComponent = null;
   }
 
   public void projectOpened() {

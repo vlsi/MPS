@@ -83,13 +83,13 @@ public class TestConfigurationDialog extends BaseDialog {
 
   public TestConfigurationDialog(Project mpsProject, @Nullable BaseTestConfiguration config) throws HeadlessException {
     super(WindowManager.getInstance().getFrame(mpsProject), "Edit Test Configuration");
-    this.myProject = mpsProject;
-    this.myConfig = config;
+    myProject = mpsProject;
+    myConfig = config;
     this.initUI();
   }
 
   protected JComponent getMainComponent() {
-    return this.myMainComponent;
+    return myMainComponent;
   }
 
   @Override
@@ -98,41 +98,41 @@ public class TestConfigurationDialog extends BaseDialog {
   }
 
   private void initUI() {
-    this.myMainComponent = new JPanel();
+    myMainComponent = new JPanel();
     GridBagLayout bagLayout = new GridBagLayout();
-    this.myMainComponent.setLayout(bagLayout);
+    myMainComponent.setLayout(bagLayout);
     GridBagConstraints cName = new GridBagConstraints(0, 0, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(5, 5, 0, 5), 0, 0);
-    this.myNamePanel = new TestConfigurationDialog.NamePanel();
-    this.myMainComponent.add(this.myNamePanel, cName);
+    myNamePanel = new TestConfigurationDialog.NamePanel();
+    myMainComponent.add(myNamePanel, cName);
     GridBagConstraints cCheck = new GridBagConstraints(0, 1, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(5, 5, 0, 5), 0, 0);
-    this.myMainComponent.add(this.createCheckboxPanel(), cCheck);
+    myMainComponent.add(this.createCheckboxPanel(), cCheck);
     GridBagConstraints cRadio = new GridBagConstraints(0, 2, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(5, 5, 0, 5), 0, 0);
-    this.myMainComponent.add(this.createRadioPanel(), cRadio);
+    myMainComponent.add(this.createRadioPanel(), cRadio);
     GridBagConstraints cConfig = new GridBagConstraints(0, 3, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(10, 0, 0, 0), 0, 0);
-    this.myCards = new CardLayout();
-    this.myConfigPanel = new JPanel(this.myCards);
-    this.myModulePanel = new TestConfigurationDialog.ModulePanel(this.myProject);
-    this.myModelsPanel = new TestConfigurationDialog.ModelsPanel(this.myProject);
-    this.myConfigPanel.add(this.createPanel("Module", this.myModulePanel), MODULE);
-    this.myConfigPanel.add(this.createPanel("Models", this.myModelsPanel), MODEL);
-    this.myMainComponent.add(this.myConfigPanel, cConfig);
+    myCards = new CardLayout();
+    myConfigPanel = new JPanel(myCards);
+    myModulePanel = new TestConfigurationDialog.ModulePanel(myProject);
+    myModelsPanel = new TestConfigurationDialog.ModelsPanel(myProject);
+    myConfigPanel.add(this.createPanel("Module", myModulePanel), MODULE);
+    myConfigPanel.add(this.createPanel("Models", myModelsPanel), MODEL);
+    myMainComponent.add(myConfigPanel, cConfig);
     ButtonGroup group = new ButtonGroup();
-    group.add(this.myRadioModule);
-    group.add(this.myRadioModels);
-    if (this.myConfig != null) {
-      this.myNamePanel.init(this.myConfig);
-      if (this.myConfig instanceof ModuleTestConfiguration) {
-        this.myModulePanel.init((ModuleTestConfiguration) this.myConfig);
-        this.myRadioModule.doClick();
+    group.add(myRadioModule);
+    group.add(myRadioModels);
+    if (myConfig != null) {
+      myNamePanel.init(myConfig);
+      if (myConfig instanceof ModuleTestConfiguration) {
+        myModulePanel.init((ModuleTestConfiguration) myConfig);
+        myRadioModule.doClick();
       } else
-      if (this.myConfig instanceof ModelsTestConfiguration) {
-        this.myModelsPanel.init((ModelsTestConfiguration) this.myConfig);
-        this.myRadioModels.doClick();
+      if (myConfig instanceof ModelsTestConfiguration) {
+        myModelsPanel.init((ModelsTestConfiguration) myConfig);
+        myRadioModels.doClick();
       } else {
-        LOG.error("Unknown configuration " + this.myConfig.getClass().getSimpleName());
+        LOG.error("Unknown configuration " + myConfig.getClass().getSimpleName());
       }
     } else {
-      this.myRadioModule.doClick();
+      myRadioModule.doClick();
     }
   }
 
@@ -143,24 +143,24 @@ public class TestConfigurationDialog extends BaseDialog {
   }
 
   private JPanel createRadioPanel() {
-    this.myRadioModule = new JRadioButton(new AbstractAction("Module configuration") {
+    myRadioModule = new JRadioButton(new AbstractAction("Module configuration") {
       public void actionPerformed(ActionEvent e) {
-        TestConfigurationDialog.this.myModulePanel.setState(true);
-        TestConfigurationDialog.this.myModelsPanel.setState(false);
-        TestConfigurationDialog.this.myCards.show(TestConfigurationDialog.this.myConfigPanel, TestConfigurationDialog.MODULE);
+        myModulePanel.setState(true);
+        myModelsPanel.setState(false);
+        myCards.show(myConfigPanel, TestConfigurationDialog.MODULE);
       }
     });
-    this.myRadioModels = new JRadioButton(new AbstractAction("Models configuration") {
+    myRadioModels = new JRadioButton(new AbstractAction("Models configuration") {
       public void actionPerformed(ActionEvent e) {
-        TestConfigurationDialog.this.myModulePanel.setState(false);
-        TestConfigurationDialog.this.myModelsPanel.setState(true);
-        TestConfigurationDialog.this.myCards.show(TestConfigurationDialog.this.myConfigPanel, TestConfigurationDialog.MODEL);
+        myModulePanel.setState(false);
+        myModelsPanel.setState(true);
+        myCards.show(myConfigPanel, TestConfigurationDialog.MODEL);
       }
     });
     JPanel panel = new JPanel();
     panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
-    panel.add(this.myRadioModule);
-    panel.add(this.myRadioModels);
+    panel.add(myRadioModule);
+    panel.add(myRadioModels);
     return panel;
   }
 
@@ -175,23 +175,23 @@ public class TestConfigurationDialog extends BaseDialog {
   }
 
   public BaseTestConfiguration getResult() {
-    return this.myResult;
+    return myResult;
   }
 
   @BaseDialog.Button(name = "OK", mnemonic = 'O', position = 0, defaultButton = true)
   public void buttonOK() {
-    if (!(this.myNamePanel.isConfigNameSet())) {
+    if (!(myNamePanel.isConfigNameSet())) {
       this.setErrorText("Name must be specified");
       return;
     }
-    if (this.myRadioModels.isSelected()) {
-      this.myResult = this.myModelsPanel.create();
-      this.myResult.setName(this.myNamePanel.getConfigName());
+    if (myRadioModels.isSelected()) {
+      myResult = myModelsPanel.create();
+      myResult.setName(myNamePanel.getConfigName());
       this.dispose();
     } else
-    if (this.myRadioModule.isSelected()) {
-      this.myResult = this.myModulePanel.create();
-      this.myResult.setName(this.myNamePanel.getConfigName());
+    if (myRadioModule.isSelected()) {
+      myResult = myModulePanel.create();
+      myResult.setName(myNamePanel.getConfigName());
       this.dispose();
     } else {
       LOG.error("Unknown radiobutton state");
@@ -200,7 +200,7 @@ public class TestConfigurationDialog extends BaseDialog {
 
   @BaseDialog.Button(name = "Cancel", mnemonic = 'C', position = 1, defaultButton = false)
   public void buttonCancel() {
-    this.myResult = null;
+    myResult = null;
     this.dispose();
   }
 
@@ -222,9 +222,9 @@ public class TestConfigurationDialog extends BaseDialog {
     private Project myProject;
 
     public ModulePanel(Project project) {
-      this.myProject = project;
+      myProject = project;
       this.setLayout(new BorderLayout());
-      this.myModuleUID = new JTextField();
+      myModuleUID = new JTextField();
       JButton button = new JButton(new AbstractAction("Select") {
         public void actionPerformed(ActionEvent e) {
           List<IModule> modules = ModelAccess.instance().runReadAction(new Computable<List<IModule>>() {
@@ -232,30 +232,30 @@ public class TestConfigurationDialog extends BaseDialog {
               return MPSModuleRepository.getInstance().getAllModules();
             }
           });
-          IModule module = CommonChoosers.showDialogModuleChooser(ModulePanel.this, TestConfigurationDialog.MODULE, ModulePanel.this.myProject.getComponent(MPSProject.class).getModules(), modules);
+          IModule module = CommonChoosers.showDialogModuleChooser(ModulePanel.this, TestConfigurationDialog.MODULE, myProject.getComponent(MPSProject.class).getModules(), modules);
           if (module == null) {
             return;
           }
           String moduleName = module.getModuleFqName();
-          ModulePanel.this.myModuleUID.setText(moduleName);
-          if (!(TestConfigurationDialog.this.myNamePanel.isConfigNameSet())) {
-            TestConfigurationDialog.this.myNamePanel.setConfigName(NameUtil.shortNameFromLongName(moduleName));
+          myModuleUID.setText(moduleName);
+          if (!(myNamePanel.isConfigNameSet())) {
+            myNamePanel.setConfigName(NameUtil.shortNameFromLongName(moduleName));
           }
         }
       });
       JPanel panel = new JPanel(new BorderLayout());
-      panel.add(this.myModuleUID, BorderLayout.CENTER);
+      panel.add(myModuleUID, BorderLayout.CENTER);
       panel.add(button, BorderLayout.EAST);
       this.add(panel, BorderLayout.NORTH);
     }
 
     public void init(ModuleTestConfiguration mtc) {
-      this.myModuleUID.setText(mtc.getModuleRef().getModuleFqName());
+      myModuleUID.setText(mtc.getModuleRef().getModuleFqName());
     }
 
     public BaseTestConfiguration create() {
       ModuleTestConfiguration result = new ModuleTestConfiguration();
-      result.setModuleRef(new ModuleReference(this.myModuleUID.getText()));
+      result.setModuleRef(new ModuleReference(myModuleUID.getText()));
       return result;
     }
   }
@@ -268,10 +268,10 @@ public class TestConfigurationDialog extends BaseDialog {
     private Project myProject;
 
     public ModelsPanel(Project project) {
-      this.myProject = project;
+      myProject = project;
       this.setLayout(new BorderLayout());
-      this.myModelsList = new JList();
-      this.myModelsList.setCellRenderer(new DefaultListCellRenderer() {
+      myModelsList = new JList();
+      myModelsList.setCellRenderer(new DefaultListCellRenderer() {
         public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
           final SModelReference model = (SModelReference) value;
           final DefaultListCellRenderer ren = this;
@@ -286,7 +286,7 @@ public class TestConfigurationDialog extends BaseDialog {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               boolean inProject = false;
-              for (SModelDescriptor projectModel : ModelsPanel.this.myProject.getComponent(MPSProject.class).getProjectModels()) {
+              for (SModelDescriptor projectModel : myProject.getComponent(MPSProject.class).getProjectModels()) {
                 if (model.equals(projectModel.getSModelReference())) {
                   inProject = true;
                   break;
@@ -305,30 +305,30 @@ public class TestConfigurationDialog extends BaseDialog {
           return result;
         }
       });
-      JScrollPane scroller = new JScrollPane(this.myModelsList);
+      JScrollPane scroller = new JScrollPane(myModelsList);
       this.add(scroller, BorderLayout.CENTER);
-      ListAddAction addAction = new ListAddAction(this.myModelsList) {
+      ListAddAction addAction = new ListAddAction(myModelsList) {
         @Override
         protected int doAdd(AnActionEvent e) {
-          List<SModelDescriptor> models = ModelsPanel.this.myProject.getComponent(MPSProject.class).getProjectModels();
+          List<SModelDescriptor> models = myProject.getComponent(MPSProject.class).getProjectModels();
           SModelDescriptor sModelDescriptor = CommonChoosers.showDialogModelChooser(ModelsPanel.this, models, SModelRepository.getInstance().getModelDescriptors());
           if (sModelDescriptor == null) {
             return -1;
           }
           SModelReference modelRef = sModelDescriptor.getSModelReference();
-          ModelsPanel.this.myModels.add(modelRef);
-          if (!(TestConfigurationDialog.this.myNamePanel.isConfigNameSet())) {
-            TestConfigurationDialog.this.myNamePanel.setConfigName(sModelDescriptor.getName());
+          myModels.add(modelRef);
+          if (!(myNamePanel.isConfigNameSet())) {
+            myNamePanel.setConfigName(sModelDescriptor.getName());
           }
-          return ModelsPanel.this.myModels.indexOf(modelRef);
+          return myModels.indexOf(modelRef);
         }
       };
-      ListRemoveAction removeAction = new ListRemoveAction(this.myModelsList) {
+      ListRemoveAction removeAction = new ListRemoveAction(myModelsList) {
         @Override
         protected void doRemove(AnActionEvent e) {
-          for (Object o : ModelsPanel.this.myModelsList.getSelectedValues()) {
+          for (Object o : myModelsList.getSelectedValues()) {
             SModelReference model = (SModelReference) o;
-            ModelsPanel.this.myModels.remove(model);
+            myModels.remove(model);
           }
         }
       };
@@ -343,12 +343,12 @@ public class TestConfigurationDialog extends BaseDialog {
     }
 
     private void setButtonsState(JButton bRemove) {
-      bRemove.setEnabled(this.myModelsList.getSelectedIndices().length != 0);
+      bRemove.setEnabled(myModelsList.getSelectedIndices().length != 0);
     }
 
     private void bind() {
       List<AutoBinding> bindings = new ArrayList<AutoBinding>();
-      bindings.add(SwingBindings.createJListBinding(AutoBinding.UpdateStrategy.READ_WRITE, this, (Property) BeanProperty.create(MODELS_PROPERTY), this.myModelsList));
+      bindings.add(SwingBindings.createJListBinding(AutoBinding.UpdateStrategy.READ_WRITE, this, (Property) BeanProperty.create(MODELS_PROPERTY), myModelsList));
       for (AutoBinding b : bindings) {
         b.bind();
       }
@@ -362,22 +362,22 @@ public class TestConfigurationDialog extends BaseDialog {
     }
 
     public void init(ModelsTestConfiguration mtc) {
-      this.myModels.clear();
-      this.myModels.addAll(mtc.getModels());
+      myModels.clear();
+      myModels.addAll(mtc.getModels());
     }
 
     public BaseTestConfiguration create() {
-      return new ModelsTestConfiguration(this.myModels);
+      return new ModelsTestConfiguration(myModels);
     }
 
     @Override
     public void setState(boolean isEnabled) {
       super.setState(isEnabled);
-      this.myModelsList.setEnabled(isEnabled);
+      myModelsList.setEnabled(isEnabled);
     }
 
     public List<SModelReference> getModels() {
-      return this.myModels;
+      return myModels;
     }
   }
 
@@ -387,8 +387,8 @@ public class TestConfigurationDialog extends BaseDialog {
     public NamePanel() {
       super(new BorderLayout());
       this.add(new JLabel("Name:"), BorderLayout.WEST);
-      this.myName = new JTextField();
-      this.add(this.myName, BorderLayout.CENTER);
+      myName = new JTextField();
+      this.add(myName, BorderLayout.CENTER);
     }
 
     public boolean isConfigNameSet() {
@@ -396,16 +396,16 @@ public class TestConfigurationDialog extends BaseDialog {
     }
 
     public String getConfigName() {
-      return this.myName.getText();
+      return myName.getText();
     }
 
     public void setConfigName(String name) {
-      this.myName.setText(name);
+      myName.setText(name);
       TestConfigurationDialog.this.setErrorText("");
     }
 
     public void init(BaseTestConfiguration config) {
-      this.myName.setText(config.getName());
+      myName.setText(config.getName());
     }
   }
 }

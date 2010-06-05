@@ -16,28 +16,28 @@ public class GeneratorPropertiesDialog extends BasePropertiesDialog {
 
   /*package*/ GeneratorPropertiesDialog(Project project, final Generator generator) {
     super("Generator Properties", new ModuleContext(generator, project));
-    this.myGenerator = generator;
+    myGenerator = generator;
     this.collectGeneratorProperties();
   }
 
   public GeneratorProperties getProperties() {
-    return this.myProperties;
+    return myProperties;
   }
 
   protected String getErrorString() {
-    for (MappingPriorityRule rule : this.myProperties.getPriorityRules()) {
+    for (MappingPriorityRule rule : myProperties.getPriorityRules()) {
       if (rule.getLeft().isIncomplete() || rule.getRight().isIncomplete()) {
         return "One or more priority rules are incomplete";
       }
     }
     GeneratorDescriptor tmpDescr = new GeneratorDescriptor();
-    this.myProperties.saveTo(tmpDescr);
+    myProperties.saveTo(tmpDescr);
     return null;
   }
 
   private void collectGeneratorProperties() {
-    this.myProperties = new GeneratorProperties();
-    this.myProperties.loadFrom(this.myGenerator.getModuleDescriptor());
+    myProperties = new GeneratorProperties();
+    myProperties.loadFrom(myGenerator.getModuleDescriptor());
   }
 
   protected boolean doSaveChanges() {
@@ -48,9 +48,9 @@ public class GeneratorPropertiesDialog extends BasePropertiesDialog {
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        GeneratorPropertiesDialog.this.myProperties.saveTo(GeneratorPropertiesDialog.this.myGenerator.getModuleDescriptor());
-        GeneratorPropertiesDialog.this.myGenerator.setModuleDescriptor(GeneratorPropertiesDialog.this.myGenerator.getModuleDescriptor(), true);
-        GeneratorPropertiesDialog.this.myGenerator.save();
+        myProperties.saveTo(myGenerator.getModuleDescriptor());
+        myGenerator.setModuleDescriptor(myGenerator.getModuleDescriptor(), true);
+        myGenerator.save();
       }
     }, getOperationContext().getProject());
     return true;

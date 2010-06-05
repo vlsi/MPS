@@ -11,13 +11,13 @@ public abstract class ListEditAction extends BaseValidatedAction {
 
   public ListEditAction(JList list) {
     super("Edit", "Edit", Icons.EDIT);
-    this.myList = list;
+    myList = list;
   }
 
   @Override
   public void update(AnActionEvent e) {
     super.update(e);
-    e.getPresentation().setEnabled(this.myList.getSelectedIndices().length == 1);
+    e.getPresentation().setEnabled(myList.getSelectedIndices().length == 1);
   }
 
   public final void doPerform(AnActionEvent e) {

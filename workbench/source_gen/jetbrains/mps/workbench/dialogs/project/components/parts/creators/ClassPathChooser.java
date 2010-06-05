@@ -14,13 +14,13 @@ public class ClassPathChooser implements Computable<List<ClassPathEntry>> {
   private final IBindedDialog myOwner;
 
   public ClassPathChooser(IBindedDialog owner) {
-    this.myOwner = owner;
+    myOwner = owner;
   }
 
   public List<ClassPathEntry> compute() {
     TreeFileChooser chooser = new TreeFileChooser();
     chooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);
-    List<IFile> files = chooser.showMultiSelectionDialog(this.myOwner.getMainComponent());
+    List<IFile> files = chooser.showMultiSelectionDialog(myOwner.getMainComponent());
     List<ClassPathEntry> result = new ArrayList<ClassPathEntry>();
     for (IFile file : files) {
       ClassPathEntry cpe = new ClassPathEntry();

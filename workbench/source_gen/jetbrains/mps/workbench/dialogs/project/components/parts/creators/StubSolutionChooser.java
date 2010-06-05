@@ -12,7 +12,7 @@ public class StubSolutionChooser implements Computable<StubSolution> {
   private final IBindedDialog myOwner;
 
   public StubSolutionChooser(IBindedDialog owner) {
-    this.myOwner = owner;
+    myOwner = owner;
   }
 
   public StubSolution compute() {

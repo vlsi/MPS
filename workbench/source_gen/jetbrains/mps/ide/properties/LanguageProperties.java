@@ -27,52 +27,52 @@ public class LanguageProperties extends ModuleProperties {
   private List<StubSolution> myStubSolutions;
 
   public LanguageProperties() {
-    this.myAccessoryModels = ListsFactory.create(ListsFactory.MODEL_REF_COMPARATOR);
-    this.myExtendedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
-    this.myRuntimeModules = ListsFactory.create(ListsFactory.DEPENDENCY_COMPARATOR);
-    this.myRuntimeClassPaths = ListsFactory.create(ListsFactory.CLASSPATH_ENTRY_COMPARATOR);
-    this.myStubSolutions = ListsFactory.create(ListsFactory.STUB_SOLUTIONS_ENTRY_COMPARATOR);
-    this.myRuntimeStubModels = ListsFactory.create(ListsFactory.STUB_MODEL_ENTRY_COMPARATOR);
+    myAccessoryModels = ListsFactory.create(ListsFactory.MODEL_REF_COMPARATOR);
+    myExtendedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
+    myRuntimeModules = ListsFactory.create(ListsFactory.DEPENDENCY_COMPARATOR);
+    myRuntimeClassPaths = ListsFactory.create(ListsFactory.CLASSPATH_ENTRY_COMPARATOR);
+    myStubSolutions = ListsFactory.create(ListsFactory.STUB_SOLUTIONS_ENTRY_COMPARATOR);
+    myRuntimeStubModels = ListsFactory.create(ListsFactory.STUB_MODEL_ENTRY_COMPARATOR);
   }
 
   public String getGenPath() {
-    return this.myGenPath;
+    return myGenPath;
   }
 
   public void setGenPath(String genPath) {
-    this.myGenPath = genPath;
+    myGenPath = genPath;
   }
 
   public List<SModelReference> getAccessoryModels() {
-    return this.myAccessoryModels;
+    return myAccessoryModels;
   }
 
   public List<ModuleReference> getExtendedLanguages() {
-    return this.myExtendedLanguages;
+    return myExtendedLanguages;
   }
 
   public List<Dependency> getRuntimeModules() {
-    return this.myRuntimeModules;
+    return myRuntimeModules;
   }
 
   public List<StubSolution> getStubSolutions() {
-    return this.myStubSolutions;
+    return myStubSolutions;
   }
 
   public List<ClassPathEntry> getRuntimeClassPaths() {
-    return this.myRuntimeClassPaths;
+    return myRuntimeClassPaths;
   }
 
   public List<StubModelsEntry> getRuntimeStubModels() {
-    return this.myRuntimeStubModels;
+    return myRuntimeStubModels;
   }
 
   public boolean isDoNotGenerateAdapters() {
-    return this.myDoNotGenerateAdapters;
+    return myDoNotGenerateAdapters;
   }
 
   public void setDoNotGenerateAdapters(boolean doNotGenerateAdapters) {
-    this.myDoNotGenerateAdapters = doNotGenerateAdapters;
+    myDoNotGenerateAdapters = doNotGenerateAdapters;
   }
 
   @Override
@@ -80,19 +80,19 @@ public class LanguageProperties extends ModuleProperties {
     assert descriptor instanceof LanguageDescriptor;
     super.loadFrom(descriptor);
     LanguageDescriptor d = (LanguageDescriptor) descriptor;
-    this.myGenPath = d.getGenPath();
-    this.myDoNotGenerateAdapters = d.isDoNotGenerateAdapters();
-    this.myAccessoryModels.addAll(d.getAccessoryModels());
-    this.myExtendedLanguages.addAll(d.getExtendedLanguages());
-    this.myRuntimeModules.addAll(d.getRuntimeModules());
+    myGenPath = d.getGenPath();
+    myDoNotGenerateAdapters = d.isDoNotGenerateAdapters();
+    myAccessoryModels.addAll(d.getAccessoryModels());
+    myExtendedLanguages.addAll(d.getExtendedLanguages());
+    myRuntimeModules.addAll(d.getRuntimeModules());
     for (StubSolution ss : d.getStubSolutions()) {
-      this.myStubSolutions.add((ss != null ?
+      myStubSolutions.add((ss != null ?
         ss.getCopy() :
         null
       ));
     }
     for (StubModelsEntry entry : d.getRuntimeStubModels()) {
-      this.myRuntimeStubModels.add((entry != null ?
+      myRuntimeStubModels.add((entry != null ?
         entry.getCopy() :
         null
       ));
@@ -104,17 +104,17 @@ public class LanguageProperties extends ModuleProperties {
     assert descriptor instanceof LanguageDescriptor;
     super.saveTo(descriptor);
     LanguageDescriptor d = (LanguageDescriptor) descriptor;
-    d.setGenPath(this.myGenPath);
-    d.setDoNotGenerateAdapters(this.myDoNotGenerateAdapters);
+    d.setGenPath(myGenPath);
+    d.setDoNotGenerateAdapters(myDoNotGenerateAdapters);
     d.getAccessoryModels().clear();
-    d.getAccessoryModels().addAll(this.myAccessoryModels);
+    d.getAccessoryModels().addAll(myAccessoryModels);
     d.getExtendedLanguages().clear();
-    d.getExtendedLanguages().addAll(this.myExtendedLanguages);
+    d.getExtendedLanguages().addAll(myExtendedLanguages);
     d.getRuntimeModules().clear();
-    d.getRuntimeModules().addAll(this.myRuntimeModules);
+    d.getRuntimeModules().addAll(myRuntimeModules);
     d.getStubSolutions().clear();
-    d.getStubSolutions().addAll(this.myStubSolutions);
+    d.getStubSolutions().addAll(myStubSolutions);
     d.getRuntimeStubModels().clear();
-    d.getRuntimeStubModels().addAll(this.myRuntimeStubModels);
+    d.getRuntimeStubModels().addAll(myRuntimeStubModels);
   }
 }
