@@ -4,6 +4,13 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="MPSFavoritesManager">
+    <favorites_list name="gen">
+      <favorite_root model_ref="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)" />
+      <favorite_root model_ref="r:00000000-0000-4000-0000-011c895905d5(jetbrains.mpslite.structure)" />
+      <favorite_root model_ref="r:00000000-0000-4000-0000-011c895905d5(jetbrains.mpslite.structure)" />
+    </favorites_list>
+  </component>
   <component name="MPSProject">
     <projectSolutions />
     <projectLanguages>
