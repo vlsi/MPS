@@ -107,4 +107,20 @@ public abstract class AbstractMPSBreakpoint {
   public abstract void removeFromRunningSessions();
 
   public abstract void addToRunningSessions();
+
+  @ToDebugAPI
+  public String getPresentation() {
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
+      public String compute() {
+        SNode node = myNodePointer.getNode();
+        if (node != null) {
+          SNode root = node.getContainingRoot();
+          return node + " in " + root + "(" + myNodePointer.getModel().getSModelFqName() + ")";
+        } else {
+          return myNodePointer.getNodeId() + "(" + myNodePointer.getModel().getSModelFqName() + ")";  
+        }
+      }
+    });
+  }
 }

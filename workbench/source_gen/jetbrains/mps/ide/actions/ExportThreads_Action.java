@@ -45,6 +45,7 @@ public class ExportThreads_Action extends GeneratedAction {
       {
         AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
         event.getPresentation().setEnabled(debugSession != null);
+        event.getPresentation().setVisible(true);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

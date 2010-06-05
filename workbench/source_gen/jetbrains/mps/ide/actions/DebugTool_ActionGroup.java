@@ -22,6 +22,7 @@ public class DebugTool_ActionGroup extends GeneratedActionGroup {
       DebugTool_ActionGroup.this.addSeparator();
       DebugTool_ActionGroup.this.addAction("jetbrains.mps.ide.actions.EvaluateExpression_Action", "jetbrains.mps.ide");
       DebugTool_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ExportThreads_Action", "jetbrains.mps.ide");
+      DebugTool_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ViewBreakpoints_Action", "jetbrains.mps.ide");
       DebugTool_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);
