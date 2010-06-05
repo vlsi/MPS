@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.util.plugin.run.BaseOutputReader;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.application.PathMacros;
 import java.util.Set;
