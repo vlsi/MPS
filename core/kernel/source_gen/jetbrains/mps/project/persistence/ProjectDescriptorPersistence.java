@@ -31,65 +31,65 @@ public class ProjectDescriptorPersistence {
     final Macros macros = Macros.projectDescriptor();
     return new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
-        Element result_jnk9az_a0a1a0 = new Element("project");
-        Element result_jnk9az_a0a0a1a0 = new Element("projectSolutions");
+        final Element result_jnk9az_a0a1a0 = new Element("project");
+        final Element result_jnk9az_a0a0a1a0 = new Element("projectSolutions");
         for (Path solutionPath : ListSequence.fromList(descriptor.getSolutions())) {
-          Element result_jnk9az_a0a0a0a0a1a0 = new Element("solutionPath");
+          final Element result_jnk9az_a0a0a0a0a1a0 = new Element("solutionPath");
           if (solutionPath.getPath() != null) {
-            String result_jnk9az_a0a0a0a0a0a0a1a0 = macros.shrinkPath(solutionPath.getPath(), file);
+            final String result_jnk9az_a0a0a0a0a0a0a1a0 = macros.shrinkPath(solutionPath.getPath(), file);
             result_jnk9az_a0a0a0a0a1a0.setAttribute("path", "" + result_jnk9az_a0a0a0a0a0a0a1a0);
           }
           if (solutionPath.getMPSFolder() != null) {
-            String result_jnk9az_a0a1a0a0a0a0a1a0 = solutionPath.getMPSFolder();
+            final String result_jnk9az_a0a1a0a0a0a0a1a0 = solutionPath.getMPSFolder();
             result_jnk9az_a0a0a0a0a1a0.setAttribute("folder", "" + result_jnk9az_a0a1a0a0a0a0a1a0);
           }
           result_jnk9az_a0a0a1a0.addContent(result_jnk9az_a0a0a0a0a1a0);
         }
         result_jnk9az_a0a1a0.addContent(result_jnk9az_a0a0a1a0);
 
-        Element result_jnk9az_a2a0a1a0 = new Element("projectLanguages");
+        final Element result_jnk9az_a2a0a1a0 = new Element("projectLanguages");
         for (Path languagePath : ListSequence.fromList(descriptor.getLanguages())) {
-          Element result_jnk9az_a0a0a2a0a1a0 = new Element("languagePath");
+          final Element result_jnk9az_a0a0a2a0a1a0 = new Element("languagePath");
           if (languagePath.getPath() != null) {
-            String result_jnk9az_a0a0a0a0a2a0a1a0 = macros.shrinkPath(languagePath.getPath(), file);
+            final String result_jnk9az_a0a0a0a0a2a0a1a0 = macros.shrinkPath(languagePath.getPath(), file);
             result_jnk9az_a0a0a2a0a1a0.setAttribute("path", "" + result_jnk9az_a0a0a0a0a2a0a1a0);
           }
           if (languagePath.getMPSFolder() != null) {
-            String result_jnk9az_a0a1a0a0a2a0a1a0 = languagePath.getMPSFolder();
+            final String result_jnk9az_a0a1a0a0a2a0a1a0 = languagePath.getMPSFolder();
             result_jnk9az_a0a0a2a0a1a0.setAttribute("folder", "" + result_jnk9az_a0a1a0a0a2a0a1a0);
           }
           result_jnk9az_a2a0a1a0.addContent(result_jnk9az_a0a0a2a0a1a0);
         }
         result_jnk9az_a0a1a0.addContent(result_jnk9az_a2a0a1a0);
 
-        Element result_jnk9az_a4a0a1a0 = new Element("projectDevkits");
+        final Element result_jnk9az_a4a0a1a0 = new Element("projectDevkits");
         for (Path devkitPath : ListSequence.fromList(descriptor.getDevkits())) {
-          Element result_jnk9az_a0a0a4a0a1a0 = new Element("devkitPath");
+          final Element result_jnk9az_a0a0a4a0a1a0 = new Element("devkitPath");
           if (devkitPath.getPath() != null) {
-            String result_jnk9az_a0a0a0a0a4a0a1a0 = macros.shrinkPath(devkitPath.getPath(), file);
+            final String result_jnk9az_a0a0a0a0a4a0a1a0 = macros.shrinkPath(devkitPath.getPath(), file);
             result_jnk9az_a0a0a4a0a1a0.setAttribute("path", "" + result_jnk9az_a0a0a0a0a4a0a1a0);
           }
           if (devkitPath.getMPSFolder() != null) {
-            String result_jnk9az_a0a1a0a0a4a0a1a0 = devkitPath.getMPSFolder();
+            final String result_jnk9az_a0a1a0a0a4a0a1a0 = devkitPath.getMPSFolder();
             result_jnk9az_a0a0a4a0a1a0.setAttribute("folder", "" + result_jnk9az_a0a1a0a0a4a0a1a0);
           }
           result_jnk9az_a4a0a1a0.addContent(result_jnk9az_a0a0a4a0a1a0);
         }
         result_jnk9az_a0a1a0.addContent(result_jnk9az_a4a0a1a0);
 
-        Element result_jnk9az_a6a0a1a0 = new Element("genConfs");
+        final Element result_jnk9az_a6a0a1a0 = new Element("genConfs");
         for (BaseTestConfiguration tc : ListSequence.fromList(descriptor.getTestConfigurations())) {
           if (tc instanceof ModelsTestConfiguration) {
             ModelsTestConfiguration mgc = (ModelsTestConfiguration) tc;
-            Element result_jnk9az_a1a0a0a6a0a1a0 = new Element("genConfModels");
+            final Element result_jnk9az_a1a0a0a6a0a1a0 = new Element("genConfModels");
             if (mgc.getName() != null) {
-              String result_jnk9az_a0a0a1a0a0a6a0a1a0 = mgc.getName();
+              final String result_jnk9az_a0a0a1a0a0a6a0a1a0 = mgc.getName();
               result_jnk9az_a1a0a0a6a0a1a0.setAttribute("name", "" + result_jnk9az_a0a0a1a0a0a6a0a1a0);
             }
-            Element result_jnk9az_a1a1a0a0a6a0a1a0 = new Element("models");
+            final Element result_jnk9az_a1a1a0a0a6a0a1a0 = new Element("models");
             for (SModelReference m : ListSequence.fromList(mgc.getModels())) {
-              Element result_jnk9az_a0a0a1a1a0a0a6a0a1a0 = new Element("model");
-              String result_jnk9az_a0a0a0a1a1a0a0a6a0a1a0 = m.toString();
+              final Element result_jnk9az_a0a0a1a1a0a0a6a0a1a0 = new Element("model");
+              final String result_jnk9az_a0a0a0a1a1a0a0a6a0a1a0 = m.toString();
               result_jnk9az_a0a0a1a1a0a0a6a0a1a0.setAttribute("modelRef", "" + result_jnk9az_a0a0a0a1a1a0a0a6a0a1a0);
               result_jnk9az_a1a1a0a0a6a0a1a0.addContent(result_jnk9az_a0a0a1a1a0a0a6a0a1a0);
             }
@@ -98,14 +98,14 @@ public class ProjectDescriptorPersistence {
           }
           if (tc instanceof ModuleTestConfiguration) {
             ModuleTestConfiguration sgc = (ModuleTestConfiguration) tc;
-            Element result_jnk9az_a1a1a0a6a0a1a0 = new Element("genConfModule");
+            final Element result_jnk9az_a1a1a0a6a0a1a0 = new Element("genConfModule");
             if (sgc.getName() != null) {
-              String result_jnk9az_a0a0a1a1a0a6a0a1a0 = sgc.getName();
+              final String result_jnk9az_a0a0a1a1a0a6a0a1a0 = sgc.getName();
               result_jnk9az_a1a1a0a6a0a1a0.setAttribute("name", "" + result_jnk9az_a0a0a1a1a0a6a0a1a0);
             }
 
             if (sgc.getModuleRef() != null) {
-              String result_jnk9az_a0a2a1a1a0a6a0a1a0 = sgc.getModuleRef().toString();
+              final String result_jnk9az_a0a2a1a1a0a6a0a1a0 = sgc.getModuleRef().toString();
               result_jnk9az_a1a1a0a6a0a1a0.setAttribute("moduleRef", "" + result_jnk9az_a0a2a1a1a0a6a0a1a0);
             }
             result_jnk9az_a6a0a1a0.addContent(result_jnk9az_a1a1a0a6a0a1a0);
@@ -134,7 +134,7 @@ public class ProjectDescriptorPersistence {
   public static void loadProjectDescriptorFromElement(ProjectDescriptor descriptor, File file, Element root) {
     Macros macros = Macros.projectDescriptor();
     ProjectDescriptor result_jnk9az_a1a2 = descriptor;
-    String result_jnk9az_a0a1a2 = file.getName();
+    final String result_jnk9az_a0a1a2 = file.getName();
     result_jnk9az_a1a2.setName(result_jnk9az_a0a1a2);
 
     if (root == null) {
@@ -145,9 +145,9 @@ public class ProjectDescriptorPersistence {
     for (Element solutionElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectSolutions")).first(), "solutionPath"))) {
       Path solutionPath = new Path();
       Path result_jnk9az_a1a5a1a2 = solutionPath;
-      String result_jnk9az_a0a1a5a1a2 = macros.expandPath(solutionElement.getAttributeValue("path"), file);
+      final String result_jnk9az_a0a1a5a1a2 = macros.expandPath(solutionElement.getAttributeValue("path"), file);
       result_jnk9az_a1a5a1a2.setPath(result_jnk9az_a0a1a5a1a2);
-      String result_jnk9az_a1a1a5a1a2 = solutionElement.getAttributeValue("folder");
+      final String result_jnk9az_a1a1a5a1a2 = solutionElement.getAttributeValue("folder");
       result_jnk9az_a1a5a1a2.setMPSFolder(result_jnk9az_a1a1a5a1a2);
       result_jnk9az_a1a2.getSolutions().add(solutionPath);
     }
@@ -156,9 +156,9 @@ public class ProjectDescriptorPersistence {
     for (Element languageElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectLanguages")).first(), "languagePath")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectLanguages")).first(), "projectLanguage")))) {
       Path languagePath = new Path();
       Path result_jnk9az_a1a8a1a2 = languagePath;
-      String result_jnk9az_a0a1a8a1a2 = macros.expandPath(languageElement.getAttributeValue("path"), file);
+      final String result_jnk9az_a0a1a8a1a2 = macros.expandPath(languageElement.getAttributeValue("path"), file);
       result_jnk9az_a1a8a1a2.setPath(result_jnk9az_a0a1a8a1a2);
-      String result_jnk9az_a1a1a8a1a2 = languageElement.getAttributeValue("folder");
+      final String result_jnk9az_a1a1a8a1a2 = languageElement.getAttributeValue("folder");
       result_jnk9az_a1a8a1a2.setMPSFolder(result_jnk9az_a1a1a8a1a2);
       result_jnk9az_a1a2.getLanguages().add(languagePath);
     }
@@ -167,9 +167,9 @@ public class ProjectDescriptorPersistence {
     for (Element languageElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectDevkits")).first(), "devkitPath"))) {
       Path devkitPath = new Path();
       Path result_jnk9az_a1a11a1a2 = devkitPath;
-      String result_jnk9az_a0a1a11a1a2 = macros.expandPath(languageElement.getAttributeValue("path"), file);
+      final String result_jnk9az_a0a1a11a1a2 = macros.expandPath(languageElement.getAttributeValue("path"), file);
       result_jnk9az_a1a11a1a2.setPath(result_jnk9az_a0a1a11a1a2);
-      String result_jnk9az_a1a1a11a1a2 = languageElement.getAttributeValue("folder");
+      final String result_jnk9az_a1a1a11a1a2 = languageElement.getAttributeValue("folder");
       result_jnk9az_a1a11a1a2.setMPSFolder(result_jnk9az_a1a1a11a1a2);
       result_jnk9az_a1a2.getDevkits().add(devkitPath);
     }

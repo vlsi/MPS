@@ -78,12 +78,16 @@
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7057666463730718251">
       <property name="name" value="getResultType" />
       <property name="isVirtual" value="true" />
-      <property name="isAbstract" value="true" />
+      <property name="isAbstract" value="false" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7057666463730718252" />
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7057666463730718255">
         <link role="concept:16" targetNodeId="2v.1068431790189:3" resolveInfo="Type" />
       </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7057666463730718254" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7057666463730718254">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="754838298734498715">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="754838298734498716" />
+        </node>
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7057666463730727863">
       <property name="name" value="getCreatorExpression" />

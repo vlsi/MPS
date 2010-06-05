@@ -236,6 +236,7 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7057666463730728096">
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7057666463730728097">
               <property name="name:3" value="result" />
+              <property name="isFinal:3" value="true" />
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7057666463730728098">
                 <link role="classifier:3" targetNodeId="2.~Object" resolveInfo="Object" />
                 <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="7057666463730728105">

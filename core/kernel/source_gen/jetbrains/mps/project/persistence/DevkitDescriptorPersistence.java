@@ -27,10 +27,10 @@ public class DevkitDescriptorPersistence {
       final Element root = ((Element) document.getRootElement());
       DevkitDescriptor descriptor = new _FunctionTypes._return_P0_E0<DevkitDescriptor>() {
         public DevkitDescriptor invoke() {
-          DevkitDescriptor result_raojav_a0a0c0a0a = new DevkitDescriptor();
-          String result_raojav_a0a0a0c0a0a = root.getAttributeValue("name");
+          final DevkitDescriptor result_raojav_a0a0c0a0a = new DevkitDescriptor();
+          final String result_raojav_a0a0a0c0a0a = root.getAttributeValue("name");
           result_raojav_a0a0c0a0a.setNamespace(result_raojav_a0a0a0c0a0a);
-          String result_raojav_a1a0a0c0a0a = root.getAttributeValue("uuid");
+          final String result_raojav_a1a0a0c0a0a = root.getAttributeValue("uuid");
           result_raojav_a0a0c0a0a.setUUID(result_raojav_a1a0a0c0a0a);
 
           ModuleDescriptorPersistence.loadDependencies(result_raojav_a0a0c0a0a, root);
@@ -56,7 +56,7 @@ public class DevkitDescriptorPersistence {
             result_raojav_a0a0c0a0a.getStubModelEntries().add(entry);
           }
 
-          String result_raojav_a31a0a0c0a0a = root.getAttributeValue("pluginClass");
+          final String result_raojav_a31a0a0c0a0a = root.getAttributeValue("pluginClass");
           result_raojav_a0a0c0a0a.setPlugin(result_raojav_a31a0a0c0a0a);
           return result_raojav_a0a0c0a0a;
         }
@@ -72,30 +72,30 @@ public class DevkitDescriptorPersistence {
   public static void saveDevKitDescriptor(final DevkitDescriptor descriptor, IFile file) {
     Element root = new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
-        Element result_raojav_a0a0a0b = new Element("dev-kit");
-        String result_raojav_a0a0a0a0b = descriptor.getNamespace();
+        final Element result_raojav_a0a0a0b = new Element("dev-kit");
+        final String result_raojav_a0a0a0a0b = descriptor.getNamespace();
         result_raojav_a0a0a0b.setAttribute("name", "" + result_raojav_a0a0a0a0b);
 
         if (descriptor.getUUID() != null) {
-          String result_raojav_a0a2a0a0a0b = descriptor.getUUID();
+          final String result_raojav_a0a2a0a0a0b = descriptor.getUUID();
           result_raojav_a0a0a0b.setAttribute("uuid", "" + result_raojav_a0a2a0a0a0b);
         }
 
         ModuleDescriptorPersistence.saveDependencies(result_raojav_a0a0a0b, descriptor);
 
         for (ModuleReference lang : ListSequence.fromList(descriptor.getExportedLanguages())) {
-          Element result_raojav_a0a6a0a0a0b = new Element("exported-language");
-          String result_raojav_a0a0a6a0a0a0b = lang.toString();
+          final Element result_raojav_a0a6a0a0a0b = new Element("exported-language");
+          final String result_raojav_a0a0a6a0a0a0b = lang.toString();
           result_raojav_a0a6a0a0a0b.setAttribute("name", "" + result_raojav_a0a0a6a0a0a0b);
           result_raojav_a0a0a0b.addContent(result_raojav_a0a6a0a0a0b);
         }
 
         if (!(descriptor.getExtendedDevkits().isEmpty())) {
 
-          Element result_raojav_a1a8a0a0a0b = new Element("extendedDevKits");
+          final Element result_raojav_a1a8a0a0a0b = new Element("extendedDevKits");
           for (ModuleReference ref : ListSequence.fromList(descriptor.getExtendedDevkits())) {
-            Element result_raojav_a0a0a1a8a0a0a0b = new Element("extendedDevKit");
-            String result_raojav_a0a0a0a1a8a0a0a0b = ref.toString();
+            final Element result_raojav_a0a0a1a8a0a0a0b = new Element("extendedDevKit");
+            final String result_raojav_a0a0a0a1a8a0a0a0b = ref.toString();
             result_raojav_a0a0a1a8a0a0a0b.setText(result_raojav_a0a0a0a1a8a0a0a0b);
             result_raojav_a1a8a0a0a0b.addContent(result_raojav_a0a0a1a8a0a0a0b);
           }
@@ -103,10 +103,10 @@ public class DevkitDescriptorPersistence {
         }
 
         if (!(descriptor.getExportedSolutions().isEmpty())) {
-          Element result_raojav_a0a01a0a0a0b = new Element("exported-solutions");
+          final Element result_raojav_a0a01a0a0a0b = new Element("exported-solutions");
           for (ModuleReference ref : ListSequence.fromList(descriptor.getExtendedDevkits())) {
-            Element result_raojav_a0a0a0a01a0a0a0b = new Element("exported-solution");
-            String result_raojav_a0a0a0a0a01a0a0a0b = ref.toString();
+            final Element result_raojav_a0a0a0a01a0a0a0b = new Element("exported-solution");
+            final String result_raojav_a0a0a0a0a01a0a0a0b = ref.toString();
             result_raojav_a0a0a0a01a0a0a0b.setText(result_raojav_a0a0a0a0a01a0a0a0b);
             result_raojav_a0a01a0a0a0b.addContent(result_raojav_a0a0a0a01a0a0a0b);
           }
@@ -115,7 +115,7 @@ public class DevkitDescriptorPersistence {
 
 
         if (descriptor.getPlugin() != null) {
-          String result_raojav_a0a31a0a0a0b = descriptor.getPlugin();
+          final String result_raojav_a0a31a0a0a0b = descriptor.getPlugin();
           result_raojav_a0a0a0b.setAttribute("pluginClass", "" + result_raojav_a0a31a0a0a0b);
         }
         return result_raojav_a0a0a0b;

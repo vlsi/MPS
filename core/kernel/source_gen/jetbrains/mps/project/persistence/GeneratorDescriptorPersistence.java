@@ -27,18 +27,18 @@ public class GeneratorDescriptorPersistence {
   public static GeneratorDescriptor loadGeneratorDescriptor(final Element generatorElement, final IFile file, final Macros macros) {
     GeneratorDescriptor descriptor = new _FunctionTypes._return_P0_E0<GeneratorDescriptor>() {
       public GeneratorDescriptor invoke() {
-        GeneratorDescriptor result_wk2vdq_a0a0a0a = new GeneratorDescriptor();
+        final GeneratorDescriptor result_wk2vdq_a0a0a0a = new GeneratorDescriptor();
         String genUID = generatorElement.getAttributeValue("generatorUID");
-        String result_wk2vdq_a1a0a0a0a = genUID;
+        final String result_wk2vdq_a1a0a0a0a = genUID;
         result_wk2vdq_a0a0a0a.setGeneratorUID(result_wk2vdq_a1a0a0a0a);
 
         if (generatorElement.getAttributeValue("uuid") != null) {
-          String result_wk2vdq_a0a3a0a0a0a = generatorElement.getAttributeValue("uuid");
+          final String result_wk2vdq_a0a3a0a0a0a = generatorElement.getAttributeValue("uuid");
           result_wk2vdq_a0a0a0a.setUUID(result_wk2vdq_a0a3a0a0a0a);
         }
 
         if (generatorElement.getAttributeValue("name") != null) {
-          String result_wk2vdq_a0a5a0a0a0a = generatorElement.getAttributeValue("name");
+          final String result_wk2vdq_a0a5a0a0a0a = generatorElement.getAttributeValue("name");
           result_wk2vdq_a0a0a0a.setNamespace(result_wk2vdq_a0a5a0a0a0a);
         }
 
@@ -58,25 +58,25 @@ public class GeneratorDescriptorPersistence {
         }
 
         for (Element ruleElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(generatorElement, "mapping-priorities")).first(), "mapping-priority-rule"))) {
-          MappingPriorityRule result_wk2vdq_a0a51a0a0a0a = new MappingPriorityRule();
+          final MappingPriorityRule result_wk2vdq_a0a51a0a0a0a = new MappingPriorityRule();
           // TODO: remove when the error disappear. Remove trim() also 
           try {
-            RuleType result_wk2vdq_a0a1a0a51a0a0a0a = RuleType.parse(ruleElement.getAttributeValue("kind").trim());
+            final RuleType result_wk2vdq_a0a1a0a51a0a0a0a = RuleType.parse(ruleElement.getAttributeValue("kind").trim());
             result_wk2vdq_a0a51a0a0a0a.setType(result_wk2vdq_a0a1a0a51a0a0a0a);
           } catch (IllegalArgumentException e) {
             if (log.isErrorEnabled()) {
               log.error(e.getMessage() + " Rule type for generator " + genUID + " is set to EQUALS. You can change this in Generator Properties dialog.", e);
             }
-            RuleType result_wk2vdq_a1a0b0a0p0a0a0a0 = RuleType.STRICTLY_TOGETHER;
+            final RuleType result_wk2vdq_a1a0b0a0p0a0a0a0 = RuleType.STRICTLY_TOGETHER;
             result_wk2vdq_a0a51a0a0a0a.setType(result_wk2vdq_a1a0b0a0p0a0a0a0);
           }
 
           if (ListSequence.fromList(AttributeUtils.elementChildren(ruleElement, "greater-priority-mapping")).isNotEmpty()) {
-            MappingConfig_AbstractRef result_wk2vdq_a0a3a0a51a0a0a0a = loadGeneratorMappingConfigRef(ListSequence.fromList(AttributeUtils.elementChildren(ruleElement, "greater-priority-mapping")).first(), genUID, false);
+            final MappingConfig_AbstractRef result_wk2vdq_a0a3a0a51a0a0a0a = loadGeneratorMappingConfigRef(ListSequence.fromList(AttributeUtils.elementChildren(ruleElement, "greater-priority-mapping")).first(), genUID, false);
             result_wk2vdq_a0a51a0a0a0a.setLeft(result_wk2vdq_a0a3a0a51a0a0a0a);
           }
           if (ListSequence.fromList(AttributeUtils.elementChildren(ruleElement, "lesser-priority-mapping")).isNotEmpty()) {
-            MappingConfig_AbstractRef result_wk2vdq_a0a4a0a51a0a0a0a = loadGeneratorMappingConfigRef(ListSequence.fromList(AttributeUtils.elementChildren(ruleElement, "lesser-priority-mapping")).first(), genUID, false);
+            final MappingConfig_AbstractRef result_wk2vdq_a0a4a0a51a0a0a0a = loadGeneratorMappingConfigRef(ListSequence.fromList(AttributeUtils.elementChildren(ruleElement, "lesser-priority-mapping")).first(), genUID, false);
             result_wk2vdq_a0a51a0a0a0a.setRight(result_wk2vdq_a0a4a0a51a0a0a0a);
           }
           result_wk2vdq_a0a0a0a.getPriorityRules().add(result_wk2vdq_a0a51a0a0a0a);
@@ -90,29 +90,29 @@ public class GeneratorDescriptorPersistence {
 
   public static void saveGeneratorDescriptor(Element languageGeneratorsElement, GeneratorDescriptor descriptor, IFile file, Macros macros) {
     Element result_wk2vdq_a0a1 = languageGeneratorsElement;
-    Element result_wk2vdq_a0a0a1 = new Element("generator");
+    final Element result_wk2vdq_a0a0a1 = new Element("generator");
     if (descriptor.getNamespace() != null) {
-      String result_wk2vdq_a0a0a0a0a1 = descriptor.getNamespace();
+      final String result_wk2vdq_a0a0a0a0a1 = descriptor.getNamespace();
       result_wk2vdq_a0a0a1.setAttribute("name", "" + result_wk2vdq_a0a0a0a0a1);
     }
     if (descriptor.getGeneratorUID() != null) {
-      String result_wk2vdq_a0a1a0a0a1 = descriptor.getGeneratorUID();
+      final String result_wk2vdq_a0a1a0a0a1 = descriptor.getGeneratorUID();
       result_wk2vdq_a0a0a1.setAttribute("generatorUID", "" + result_wk2vdq_a0a1a0a0a1);
     }
     if (descriptor.getUUID() != null) {
-      String result_wk2vdq_a0a2a0a0a1 = descriptor.getUUID();
+      final String result_wk2vdq_a0a2a0a0a1 = descriptor.getUUID();
       result_wk2vdq_a0a0a1.setAttribute("uuid", "" + result_wk2vdq_a0a2a0a0a1);
     }
 
-    Element result_wk2vdq_a4a0a0a1 = new Element("models");
+    final Element result_wk2vdq_a4a0a0a1 = new Element("models");
     ModuleDescriptorPersistence.saveModelRoots(result_wk2vdq_a4a0a0a1, descriptor.getModelRoots(), file, macros);
     result_wk2vdq_a0a0a1.addContent(result_wk2vdq_a4a0a0a1);
 
     // "depends on" generators 
-    Element result_wk2vdq_a7a0a0a1 = new Element("external-templates");
+    final Element result_wk2vdq_a7a0a0a1 = new Element("external-templates");
     for (ModuleReference generatorReference : ListSequence.fromList(descriptor.getDepGenerators())) {
-      Element result_wk2vdq_a0a0a7a0a0a1 = new Element("generator");
-      String result_wk2vdq_a0a0a0a7a0a0a1 = generatorReference.toString();
+      final Element result_wk2vdq_a0a0a7a0a0a1 = new Element("generator");
+      final String result_wk2vdq_a0a0a0a7a0a0a1 = generatorReference.toString();
       result_wk2vdq_a0a0a7a0a0a1.setAttribute("generatorUID", "" + result_wk2vdq_a0a0a0a7a0a0a1);
       result_wk2vdq_a7a0a0a1.addContent(result_wk2vdq_a0a0a7a0a0a1);
     }
@@ -121,15 +121,15 @@ public class GeneratorDescriptorPersistence {
     ModuleDescriptorPersistence.saveDependencies(result_wk2vdq_a0a0a1, descriptor);
 
     // mapping priority rules 
-    Element result_wk2vdq_a21a0a0a1 = new Element("mapping-priorities");
+    final Element result_wk2vdq_a21a0a0a1 = new Element("mapping-priorities");
     for (MappingPriorityRule rule : ListSequence.fromList(descriptor.getPriorityRules())) {
-      Element result_wk2vdq_a0a0a21a0a0a1 = new Element("mapping-priority-rule");
-      String result_wk2vdq_a0a0a0a21a0a0a1 = rule.getType().getName();
+      final Element result_wk2vdq_a0a0a21a0a0a1 = new Element("mapping-priority-rule");
+      final String result_wk2vdq_a0a0a0a21a0a0a1 = rule.getType().getName();
       result_wk2vdq_a0a0a21a0a0a1.setAttribute("kind", "" + result_wk2vdq_a0a0a0a21a0a0a1);
-      Element result_wk2vdq_a1a0a0a21a0a0a1 = new Element("greater-priority-mapping");
+      final Element result_wk2vdq_a1a0a0a21a0a0a1 = new Element("greater-priority-mapping");
       saveGeneratorMappingConfigRef(rule.getLeft(), result_wk2vdq_a1a0a0a21a0a0a1);
       result_wk2vdq_a0a0a21a0a0a1.addContent(result_wk2vdq_a1a0a0a21a0a0a1);
-      Element result_wk2vdq_a2a0a0a21a0a0a1 = new Element("lesser-priority-mapping");
+      final Element result_wk2vdq_a2a0a0a21a0a0a1 = new Element("lesser-priority-mapping");
       saveGeneratorMappingConfigRef(rule.getRight(), result_wk2vdq_a2a0a0a21a0a0a1);
       result_wk2vdq_a0a0a21a0a0a1.addContent(result_wk2vdq_a2a0a0a21a0a0a1);
       result_wk2vdq_a21a0a0a1.addContent(result_wk2vdq_a0a0a21a0a0a1);
@@ -145,30 +145,30 @@ public class GeneratorDescriptorPersistence {
   private static void saveGeneratorMappingConfigRef(MappingConfig_AbstractRef mappingRef, Element parentElement) {
     Element result_wk2vdq_a0a2 = parentElement;
     if (mappingRef instanceof MappingConfig_RefAllLocal) {
-      Element result_wk2vdq_a0a0a0a2 = new Element("all-local-mappings");
+      final Element result_wk2vdq_a0a0a0a2 = new Element("all-local-mappings");
       result_wk2vdq_a0a2.addContent(result_wk2vdq_a0a0a0a2);
     } else if (mappingRef instanceof MappingConfig_RefAllGlobal) {
-      Element result_wk2vdq_a0a0a0a0c = new Element("all-mappings");
+      final Element result_wk2vdq_a0a0a0a0c = new Element("all-mappings");
       result_wk2vdq_a0a2.addContent(result_wk2vdq_a0a0a0a0c);
     } else if (mappingRef instanceof MappingConfig_SimpleRef) {
-      Element result_wk2vdq_a0a1a0a0c = new Element("mapping-node");
-      String result_wk2vdq_a0a0a1a0a0c = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
+      final Element result_wk2vdq_a0a1a0a0c = new Element("mapping-node");
+      final String result_wk2vdq_a0a0a1a0a0c = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
       result_wk2vdq_a0a1a0a0c.setAttribute("modelUID", "" + result_wk2vdq_a0a0a1a0a0c);
-      String result_wk2vdq_a1a0a1a0a0c = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
+      final String result_wk2vdq_a1a0a1a0a0c = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
       result_wk2vdq_a0a1a0a0c.setAttribute("nodeID", "" + result_wk2vdq_a1a0a1a0a0c);
       result_wk2vdq_a0a2.addContent(result_wk2vdq_a0a1a0a0c);
     } else if (mappingRef instanceof MappingConfig_ExternalRef) {
-      Element result_wk2vdq_a0a2a0a0c = new Element("generator");
-      String result_wk2vdq_a0a0a2a0a0c = ((MappingConfig_ExternalRef) mappingRef).getGenerator().toString();
+      final Element result_wk2vdq_a0a2a0a0c = new Element("generator");
+      final String result_wk2vdq_a0a0a2a0a0c = ((MappingConfig_ExternalRef) mappingRef).getGenerator().toString();
       result_wk2vdq_a0a2a0a0c.setAttribute("generatorUID", "" + result_wk2vdq_a0a0a2a0a0c);
       result_wk2vdq_a0a2.addContent(result_wk2vdq_a0a2a0a0c);
-      Element result_wk2vdq_a1a2a0a0c = new Element("external-mapping");
+      final Element result_wk2vdq_a1a2a0a0c = new Element("external-mapping");
       saveGeneratorMappingConfigRef(((MappingConfig_ExternalRef) mappingRef).getMappingConfig(), result_wk2vdq_a1a2a0a0c);
       result_wk2vdq_a0a2.addContent(result_wk2vdq_a1a2a0a0c);
     } else if (mappingRef instanceof MappingConfig_RefSet) {
-      Element result_wk2vdq_a0a3a0a0c = new Element("mapping-set");
+      final Element result_wk2vdq_a0a3a0a0c = new Element("mapping-set");
       for (MappingConfig_AbstractRef mappingRefInner : ListSequence.fromList(((MappingConfig_RefSet) mappingRef).getMappingConfigs())) {
-        Element result_wk2vdq_a0a0a0a3a0a0c = new Element("mapping-set-element");
+        final Element result_wk2vdq_a0a0a0a3a0a0c = new Element("mapping-set-element");
         saveGeneratorMappingConfigRef(mappingRefInner, result_wk2vdq_a0a0a0a3a0a0c);
         result_wk2vdq_a0a3a0a0c.addContent(result_wk2vdq_a0a0a0a3a0a0c);
       }
@@ -187,10 +187,10 @@ public class GeneratorDescriptorPersistence {
 
       return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
         public MappingConfig_ExternalRef invoke() {
-          MappingConfig_ExternalRef result_wk2vdq_a0a3a0a0d = new MappingConfig_ExternalRef();
-          ModuleReference result_wk2vdq_a0a0a3a0a0d = ModuleReference.fromString(genUID);
+          final MappingConfig_ExternalRef result_wk2vdq_a0a3a0a0d = new MappingConfig_ExternalRef();
+          final ModuleReference result_wk2vdq_a0a0a3a0a0d = ModuleReference.fromString(genUID);
           result_wk2vdq_a0a3a0a0d.setGenerator(result_wk2vdq_a0a0a3a0a0d);
-          MappingConfig_AbstractRef result_wk2vdq_a1a0a3a0a0d = local;
+          final MappingConfig_AbstractRef result_wk2vdq_a1a0a3a0a0d = local;
           result_wk2vdq_a0a3a0a0d.setMappingConfig(result_wk2vdq_a1a0a3a0a0d);
           return result_wk2vdq_a0a3a0a0d;
         }
@@ -207,10 +207,10 @@ public class GeneratorDescriptorPersistence {
 
       return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
         public MappingConfig_ExternalRef invoke() {
-          MappingConfig_ExternalRef result_wk2vdq_a0a5a1a0d = new MappingConfig_ExternalRef();
-          ModuleReference result_wk2vdq_a0a0a5a1a0d = ModuleReference.fromString(genUID);
+          final MappingConfig_ExternalRef result_wk2vdq_a0a5a1a0d = new MappingConfig_ExternalRef();
+          final ModuleReference result_wk2vdq_a0a0a5a1a0d = ModuleReference.fromString(genUID);
           result_wk2vdq_a0a5a1a0d.setGenerator(result_wk2vdq_a0a0a5a1a0d);
-          MappingConfig_AbstractRef result_wk2vdq_a1a0a5a1a0d = mappingSet;
+          final MappingConfig_AbstractRef result_wk2vdq_a1a0a5a1a0d = mappingSet;
           result_wk2vdq_a0a5a1a0d.setMappingConfig(result_wk2vdq_a1a0a5a1a0d);
           return result_wk2vdq_a0a5a1a0d;
         }
@@ -219,10 +219,10 @@ public class GeneratorDescriptorPersistence {
       // external reference 
       return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
         public MappingConfig_ExternalRef invoke() {
-          MappingConfig_ExternalRef result_wk2vdq_a0a1a2a0d = new MappingConfig_ExternalRef();
-          ModuleReference result_wk2vdq_a0a0a1a2a0d = ModuleReference.fromString(ListSequence.fromList(AttributeUtils.elementChildren(parentElement, "generator")).first().getAttributeValue("generatorUID"));
+          final MappingConfig_ExternalRef result_wk2vdq_a0a1a2a0d = new MappingConfig_ExternalRef();
+          final ModuleReference result_wk2vdq_a0a0a1a2a0d = ModuleReference.fromString(ListSequence.fromList(AttributeUtils.elementChildren(parentElement, "generator")).first().getAttributeValue("generatorUID"));
           result_wk2vdq_a0a1a2a0d.setGenerator(result_wk2vdq_a0a0a1a2a0d);
-          MappingConfig_AbstractRef result_wk2vdq_a1a0a1a2a0d = loadGeneratorMappingConfigRef(ListSequence.fromList(AttributeUtils.elementChildren(parentElement, "external-mapping")).first(), ListSequence.fromList(AttributeUtils.elementChildren(parentElement, "generator")).first().getAttributeValue("generatorUID"), true);
+          final MappingConfig_AbstractRef result_wk2vdq_a1a0a1a2a0d = loadGeneratorMappingConfigRef(ListSequence.fromList(AttributeUtils.elementChildren(parentElement, "external-mapping")).first(), ListSequence.fromList(AttributeUtils.elementChildren(parentElement, "generator")).first().getAttributeValue("generatorUID"), true);
           result_wk2vdq_a0a1a2a0d.setMappingConfig(result_wk2vdq_a1a0a1a2a0d);
           return result_wk2vdq_a0a1a2a0d;
         }
@@ -233,9 +233,9 @@ public class GeneratorDescriptorPersistence {
 
       final MappingConfig_SimpleRef mapping_SimpleRef = new MappingConfig_SimpleRef();
       MappingConfig_SimpleRef result_wk2vdq_a4a3a0d = mapping_SimpleRef;
-      String result_wk2vdq_a0a4a3a0d = ListSequence.fromList(AttributeUtils.elementChildren(parentElement, "mapping-node")).first().getAttributeValue("modelUID");
+      final String result_wk2vdq_a0a4a3a0d = ListSequence.fromList(AttributeUtils.elementChildren(parentElement, "mapping-node")).first().getAttributeValue("modelUID");
       result_wk2vdq_a4a3a0d.setModelUID(result_wk2vdq_a0a4a3a0d);
-      String result_wk2vdq_a1a4a3a0d = ListSequence.fromList(AttributeUtils.elementChildren(parentElement, "mapping-node")).first().getAttributeValue("nodeID");
+      final String result_wk2vdq_a1a4a3a0d = ListSequence.fromList(AttributeUtils.elementChildren(parentElement, "mapping-node")).first().getAttributeValue("nodeID");
       result_wk2vdq_a4a3a0d.setNodeID(result_wk2vdq_a1a4a3a0d);
 
       if (childOfGen) {
@@ -244,10 +244,10 @@ public class GeneratorDescriptorPersistence {
 
       return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
         public MappingConfig_ExternalRef invoke() {
-          MappingConfig_ExternalRef result_wk2vdq_a0a8a3a0d = new MappingConfig_ExternalRef();
-          ModuleReference result_wk2vdq_a0a0a8a3a0d = ModuleReference.fromString(genUID);
+          final MappingConfig_ExternalRef result_wk2vdq_a0a8a3a0d = new MappingConfig_ExternalRef();
+          final ModuleReference result_wk2vdq_a0a0a8a3a0d = ModuleReference.fromString(genUID);
           result_wk2vdq_a0a8a3a0d.setGenerator(result_wk2vdq_a0a0a8a3a0d);
-          MappingConfig_AbstractRef result_wk2vdq_a1a0a8a3a0d = mapping_SimpleRef;
+          final MappingConfig_AbstractRef result_wk2vdq_a1a0a8a3a0d = mapping_SimpleRef;
           result_wk2vdq_a0a8a3a0d.setMappingConfig(result_wk2vdq_a1a0a8a3a0d);
           return result_wk2vdq_a0a8a3a0d;
         }

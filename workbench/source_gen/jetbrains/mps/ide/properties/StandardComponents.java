@@ -114,16 +114,16 @@ public class StandardComponents {
   public static JPanel createModelsPanel(final IBindedDialog owner, final String caption, final List<SModelReference> list, final Condition<SModelReference> canRemove) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
-        BoundListPanel result_wf5hwp_a0a0a0 = new BoundListPanel(owner, caption, list);
-        Condition result_wf5hwp_a0a0a0a0 = canRemove;
+        final BoundListPanel result_wf5hwp_a0a0a0 = new BoundListPanel(owner, caption, list);
+        final Condition result_wf5hwp_a0a0a0a0 = canRemove;
         result_wf5hwp_a0a0a0.setCanRemoveCondition(result_wf5hwp_a0a0a0a0);
-        Computable result_wf5hwp_a1a0a0a0 = new ModelChooser(owner);
+        final Computable result_wf5hwp_a1a0a0a0 = new ModelChooser(owner);
         result_wf5hwp_a0a0a0.setMultipleChooser(result_wf5hwp_a1a0a0a0);
-        DefaultListCellRenderer result_wf5hwp_a2a0a0a0 = new ModelRenderer(owner.getModuleScope(), owner.getProjectScope());
+        final DefaultListCellRenderer result_wf5hwp_a2a0a0a0 = new ModelRenderer(owner.getModuleScope(), owner.getProjectScope());
         result_wf5hwp_a0a0a0.setCellRenderer(result_wf5hwp_a2a0a0a0);
-        TransferHandler result_wf5hwp_a3a0a0a0 = new CopySupport.ModelReferenceTransferHandler();
+        final TransferHandler result_wf5hwp_a3a0a0a0 = new CopySupport.ModelReferenceTransferHandler();
         result_wf5hwp_a0a0a0.setTransferHandler(result_wf5hwp_a3a0a0a0);
-        Validator result_wf5hwp_a4a0a0a0 = new ModelValidator(owner.getModuleScope());
+        final Validator result_wf5hwp_a4a0a0a0 = new ModelValidator(owner.getModuleScope());
         result_wf5hwp_a0a0a0.setObjectValidator(result_wf5hwp_a4a0a0a0);
         result_wf5hwp_a0a0a0.init();
         return result_wf5hwp_a0a0a0;
@@ -134,14 +134,14 @@ public class StandardComponents {
   public static JPanel createLanguagesPanel(final IBindedDialog owner, final String caption, final List<ModuleReference> list, final Condition<ModuleReference> condition) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
-        BoundListPanel result_wf5hwp_a0a0a1 = new BoundListPanel(owner, caption, list);
-        Computable result_wf5hwp_a0a0a0a1 = new LanguageChooser(owner);
+        final BoundListPanel result_wf5hwp_a0a0a1 = new BoundListPanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a1 = new LanguageChooser(owner);
         result_wf5hwp_a0a0a1.setMultipleChooser(result_wf5hwp_a0a0a0a1);
-        DefaultListCellRenderer result_wf5hwp_a1a0a0a1 = new ModuleRenderer(owner.getModuleScope(), owner.getProjectScope());
+        final DefaultListCellRenderer result_wf5hwp_a1a0a0a1 = new ModuleRenderer(owner.getModuleScope(), owner.getProjectScope());
         result_wf5hwp_a0a0a1.setCellRenderer(result_wf5hwp_a1a0a0a1);
-        Validator result_wf5hwp_a2a0a0a1 = new ModuleValidator();
+        final Validator result_wf5hwp_a2a0a0a1 = new ModuleValidator();
         result_wf5hwp_a0a0a1.setObjectValidator(result_wf5hwp_a2a0a0a1);
-        Condition result_wf5hwp_a3a0a0a1 = condition;
+        final Condition result_wf5hwp_a3a0a0a1 = condition;
         result_wf5hwp_a0a0a1.setCanRemoveCondition(result_wf5hwp_a3a0a0a1);
         result_wf5hwp_a0a0a1.init();
         return result_wf5hwp_a0a0a1;
@@ -156,12 +156,12 @@ public class StandardComponents {
   public static JPanel createSolutionsPanel(final IBindedDialog owner, final String caption, final List<ModuleReference> list) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
-        BoundListPanel result_wf5hwp_a0a0a3 = new BoundListPanel(owner, caption, list);
-        Computable result_wf5hwp_a0a0a0a3 = new SolutionChooser(owner);
+        final BoundListPanel result_wf5hwp_a0a0a3 = new BoundListPanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a3 = new SolutionChooser(owner);
         result_wf5hwp_a0a0a3.setMultipleChooser(result_wf5hwp_a0a0a0a3);
-        DefaultListCellRenderer result_wf5hwp_a1a0a0a3 = new ModuleRenderer(owner.getModuleScope(), owner.getProjectScope());
+        final DefaultListCellRenderer result_wf5hwp_a1a0a0a3 = new ModuleRenderer(owner.getModuleScope(), owner.getProjectScope());
         result_wf5hwp_a0a0a3.setCellRenderer(result_wf5hwp_a1a0a0a3);
-        Validator result_wf5hwp_a2a0a0a3 = new ModuleValidator();
+        final Validator result_wf5hwp_a2a0a0a3 = new ModuleValidator();
         result_wf5hwp_a0a0a3.setObjectValidator(result_wf5hwp_a2a0a0a3);
         result_wf5hwp_a0a0a3.init();
         return result_wf5hwp_a0a0a3;
@@ -172,12 +172,12 @@ public class StandardComponents {
   public static JPanel createDevKitsPanel(final IBindedDialog owner, final String caption, final List<ModuleReference> list) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
-        BoundListPanel result_wf5hwp_a0a0a4 = new BoundListPanel(owner, caption, list);
-        Computable result_wf5hwp_a0a0a0a4 = new DevKitChooser(owner);
+        final BoundListPanel result_wf5hwp_a0a0a4 = new BoundListPanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a4 = new DevKitChooser(owner);
         result_wf5hwp_a0a0a4.setMultipleChooser(result_wf5hwp_a0a0a0a4);
-        DefaultListCellRenderer result_wf5hwp_a1a0a0a4 = new ModuleRenderer(owner.getModuleScope(), owner.getProjectScope());
+        final DefaultListCellRenderer result_wf5hwp_a1a0a0a4 = new ModuleRenderer(owner.getModuleScope(), owner.getProjectScope());
         result_wf5hwp_a0a0a4.setCellRenderer(result_wf5hwp_a1a0a0a4);
-        Validator result_wf5hwp_a2a0a0a4 = new ModuleValidator();
+        final Validator result_wf5hwp_a2a0a0a4 = new ModuleValidator();
         result_wf5hwp_a0a0a4.setObjectValidator(result_wf5hwp_a2a0a0a4);
         result_wf5hwp_a0a0a4.init();
         return result_wf5hwp_a0a0a4;
@@ -188,12 +188,12 @@ public class StandardComponents {
   public static JPanel createGeneratorsPanel(final IBindedDialog owner, final String caption, final List<ModuleReference> list) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
-        BoundListPanel result_wf5hwp_a0a0a5 = new BoundListPanel(owner, caption, list);
-        Computable result_wf5hwp_a0a0a0a5 = new GeneratorChooser(owner);
+        final BoundListPanel result_wf5hwp_a0a0a5 = new BoundListPanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a5 = new GeneratorChooser(owner);
         result_wf5hwp_a0a0a5.setMultipleChooser(result_wf5hwp_a0a0a0a5);
-        DefaultListCellRenderer result_wf5hwp_a1a0a0a5 = new GeneratorRenderer(owner.getModuleScope(), owner.getProjectScope());
+        final DefaultListCellRenderer result_wf5hwp_a1a0a0a5 = new GeneratorRenderer(owner.getModuleScope(), owner.getProjectScope());
         result_wf5hwp_a0a0a5.setCellRenderer(result_wf5hwp_a1a0a0a5);
-        Validator result_wf5hwp_a2a0a0a5 = new ModuleValidator();
+        final Validator result_wf5hwp_a2a0a0a5 = new ModuleValidator();
         result_wf5hwp_a0a0a5.setObjectValidator(result_wf5hwp_a2a0a0a5);
         result_wf5hwp_a0a0a5.init();
         return result_wf5hwp_a0a0a5;
@@ -204,10 +204,10 @@ public class StandardComponents {
   public static JPanel createSourcePathsPanel(final IBindedDialog owner, final String caption, final List<String> list) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
-        BoundListPanel result_wf5hwp_a0a0a6 = new BoundListPanel(owner, caption, list);
-        Computable result_wf5hwp_a0a0a0a6 = new SourcePathChooser(owner);
+        final BoundListPanel result_wf5hwp_a0a0a6 = new BoundListPanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a6 = new SourcePathChooser(owner);
         result_wf5hwp_a0a0a6.setChooser(result_wf5hwp_a0a0a0a6);
-        DefaultListCellRenderer result_wf5hwp_a1a0a0a6 = new StringPathRenderer();
+        final DefaultListCellRenderer result_wf5hwp_a1a0a0a6 = new StringPathRenderer();
         result_wf5hwp_a0a0a6.setCellRenderer(result_wf5hwp_a1a0a0a6);
         result_wf5hwp_a0a0a6.init();
         return result_wf5hwp_a0a0a6;
@@ -218,13 +218,13 @@ public class StandardComponents {
   public static JPanel createDepsPanel(final IBindedDialog owner, final String caption, final List<Dependency> list) {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        BoundTablePanel result_wf5hwp_a0a0a7 = new BoundTablePanel(owner, caption, list);
-        Computable result_wf5hwp_a0a0a0a7 = new DependencyChooser(owner);
+        final BoundTablePanel result_wf5hwp_a0a0a7 = new BoundTablePanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a7 = new DependencyChooser(owner);
         result_wf5hwp_a0a0a7.setMultipleChooser(result_wf5hwp_a0a0a0a7);
 
-        ColumnDescriptor result_wf5hwp_a2a0a0a7 = new DepDescriptor(owner, Dependency.MODULEREF, "Module", -1);
+        final ColumnDescriptor result_wf5hwp_a2a0a0a7 = new DepDescriptor(owner, Dependency.MODULEREF, "Module", -1);
         result_wf5hwp_a0a0a7.addColumn(result_wf5hwp_a2a0a0a7);
-        ColumnDescriptor result_wf5hwp_a3a0a0a7 = new BooleanDescriptor(Dependency.REEXPORT, "Reexport", 100);
+        final ColumnDescriptor result_wf5hwp_a3a0a0a7 = new BooleanDescriptor(Dependency.REEXPORT, "Reexport", 100);
         result_wf5hwp_a0a0a7.addColumn(result_wf5hwp_a3a0a0a7);
         result_wf5hwp_a0a0a7.init();
         return result_wf5hwp_a0a0a7;
@@ -235,13 +235,13 @@ public class StandardComponents {
   public static JPanel createClassPathsPanel(final IBindedDialog owner, final String caption, final List<ClassPathEntry> list) {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        BoundTablePanel result_wf5hwp_a0a0a8 = new BoundTablePanel(owner, caption, list);
-        Computable result_wf5hwp_a0a0a0a8 = new ClassPathChooser(owner);
+        final BoundTablePanel result_wf5hwp_a0a0a8 = new BoundTablePanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a8 = new ClassPathChooser(owner);
         result_wf5hwp_a0a0a8.setMultipleChooser(result_wf5hwp_a0a0a0a8);
 
-        ColumnDescriptor result_wf5hwp_a2a0a0a8 = new StringPathDescriptor(ClassPathEntry.PATH, "Path", -1);
+        final ColumnDescriptor result_wf5hwp_a2a0a0a8 = new StringPathDescriptor(ClassPathEntry.PATH, "Path", -1);
         result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a2a0a0a8);
-        ColumnDescriptor result_wf5hwp_a3a0a0a8 = new IncludedVCSDescriptor(ClassPathEntry.INCLUDED, "Included in VCS", 200);
+        final ColumnDescriptor result_wf5hwp_a3a0a0a8 = new IncludedVCSDescriptor(ClassPathEntry.INCLUDED, "Included in VCS", 200);
         result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a3a0a0a8);
         result_wf5hwp_a0a0a8.init();
         return result_wf5hwp_a0a0a8;
@@ -252,17 +252,17 @@ public class StandardComponents {
   public static JPanel createModelRootsPanel(final IBindedDialog owner, final String caption, final List<ModelRoot> list) {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        BoundTablePanel result_wf5hwp_a0a0a9 = new BoundTablePanel(owner, caption, list);
-        Computable result_wf5hwp_a0a0a0a9 = new ModelRootChooser(owner);
+        final BoundTablePanel result_wf5hwp_a0a0a9 = new BoundTablePanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a9 = new ModelRootChooser(owner);
         result_wf5hwp_a0a0a9.setChooser(result_wf5hwp_a0a0a0a9);
 
-        ColumnDescriptor result_wf5hwp_a2a0a0a9 = new StringPathDescriptor(ModelRoot.PATH, "Path", -1);
+        final ColumnDescriptor result_wf5hwp_a2a0a0a9 = new StringPathDescriptor(ModelRoot.PATH, "Path", -1);
         result_wf5hwp_a0a0a9.addColumn(result_wf5hwp_a2a0a0a9);
-        ColumnDescriptor result_wf5hwp_a3a0a0a9 = new EditableStringDescriptor(ModelRoot.PREFIX, "Prefix", 250);
+        final ColumnDescriptor result_wf5hwp_a3a0a0a9 = new EditableStringDescriptor(ModelRoot.PREFIX, "Prefix", 250);
         result_wf5hwp_a0a0a9.addColumn(result_wf5hwp_a3a0a0a9);
-        ColumnDescriptor result_wf5hwp_a4a0a0a9 = new ManagerDescriptor(owner, ModelRoot.MANAGER, "Manager", 200);
+        final ColumnDescriptor result_wf5hwp_a4a0a0a9 = new ManagerDescriptor(owner, ModelRoot.MANAGER, "Manager", 200);
         result_wf5hwp_a0a0a9.addColumn(result_wf5hwp_a4a0a0a9);
-        ColumnDescriptor result_wf5hwp_a5a0a0a9 = new VoidColumnDescriptor(ModelRoot.OLD_MANAGER, "Manager (Int)", 200) {
+        final ColumnDescriptor result_wf5hwp_a5a0a0a9 = new VoidColumnDescriptor(ModelRoot.OLD_MANAGER, "Manager (Int)", 200) {
           public TableCellEditor createEditor() {
             return new HandlerTableCellEditor(owner, caption);
           }
@@ -277,12 +277,12 @@ public class StandardComponents {
   public static JComponent createStubSolutionsPanel(final IBindedDialog owner, final String caption, final List<StubSolution> list) {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        BoundTablePanel result_wf5hwp_a0a0a01 = new BoundTablePanel(owner, caption, list);
-        Computable result_wf5hwp_a0a0a0a01 = new StubSolutionChooser(owner);
+        final BoundTablePanel result_wf5hwp_a0a0a01 = new BoundTablePanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a01 = new StubSolutionChooser(owner);
         result_wf5hwp_a0a0a01.setChooser(result_wf5hwp_a0a0a0a01);
-        boolean result_wf5hwp_a1a0a0a01 = false;
+        final boolean result_wf5hwp_a1a0a0a01 = false;
         result_wf5hwp_a0a0a01.setDiffRow(result_wf5hwp_a1a0a0a01);
-        Condition result_wf5hwp_a2a0a0a01 = new Condition<StubSolution>() {
+        final Condition result_wf5hwp_a2a0a0a01 = new Condition<StubSolution>() {
           public boolean met(StubSolution ss) {
             String message = "You are going to delete stub solution " + ss.getName() + ". It can't be restored later with the same id. Are you sure?";
             int result = JOptionPane.showConfirmDialog(owner.getMainComponent(), message, "Delete Stub Solution", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
@@ -291,9 +291,9 @@ public class StandardComponents {
         };
         result_wf5hwp_a0a0a01.setCanRemoveCondition(result_wf5hwp_a2a0a0a01);
 
-        ColumnDescriptor result_wf5hwp_a4a0a0a01 = new EditableStringDescriptor(StubSolution.NAME, "Name", -1);
+        final ColumnDescriptor result_wf5hwp_a4a0a0a01 = new EditableStringDescriptor(StubSolution.NAME, "Name", -1);
         result_wf5hwp_a0a0a01.addColumn(result_wf5hwp_a4a0a0a01);
-        ColumnDescriptor result_wf5hwp_a5a0a0a01 = new VoidColumnDescriptor(StubSolution.ID, "Module ID", 300);
+        final ColumnDescriptor result_wf5hwp_a5a0a0a01 = new VoidColumnDescriptor(StubSolution.ID, "Module ID", 300);
         result_wf5hwp_a0a0a01.addColumn(result_wf5hwp_a5a0a0a01);
         result_wf5hwp_a0a0a01.init();
         return result_wf5hwp_a0a0a01;
@@ -304,15 +304,15 @@ public class StandardComponents {
   public static JPanel createStubRootsPanel(final IBindedDialog owner, final String caption, final List<StubModelsEntry> list) {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        BoundTablePanel result_wf5hwp_a0a0a11 = new BoundTablePanel(owner, caption, list);
-        Computable result_wf5hwp_a0a0a0a11 = new StubRootChooser(owner);
+        final BoundTablePanel result_wf5hwp_a0a0a11 = new BoundTablePanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a11 = new StubRootChooser(owner);
         result_wf5hwp_a0a0a11.setMultipleChooser(result_wf5hwp_a0a0a0a11);
 
-        ColumnDescriptor result_wf5hwp_a2a0a0a11 = new StringPathDescriptor(ClassPathEntry.PATH, "Path", -1);
+        final ColumnDescriptor result_wf5hwp_a2a0a0a11 = new StringPathDescriptor(ClassPathEntry.PATH, "Path", -1);
         result_wf5hwp_a0a0a11.addColumn(result_wf5hwp_a2a0a0a11);
-        ColumnDescriptor result_wf5hwp_a3a0a0a11 = new IncludedVCSDescriptor(ClassPathEntry.INCLUDED, "Included in VCS", 200);
+        final ColumnDescriptor result_wf5hwp_a3a0a0a11 = new IncludedVCSDescriptor(ClassPathEntry.INCLUDED, "Included in VCS", 200);
         result_wf5hwp_a0a0a11.addColumn(result_wf5hwp_a3a0a0a11);
-        ColumnDescriptor result_wf5hwp_a4a0a0a11 = new ManagerDescriptor(owner, StubModelsEntry.MANAGER, "Manager", 200);
+        final ColumnDescriptor result_wf5hwp_a4a0a0a11 = new ManagerDescriptor(owner, StubModelsEntry.MANAGER, "Manager", 200);
         result_wf5hwp_a0a0a11.addColumn(result_wf5hwp_a4a0a0a11);
         result_wf5hwp_a0a0a11.init();
         return result_wf5hwp_a0a0a11;
@@ -323,15 +323,15 @@ public class StandardComponents {
   public static JComponent createModelsImportsPanel(final IBindedDialog owner, final String caption, final ImportProperties props) {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        BoundTablePanel result_wf5hwp_a0a0a21 = new BoundTablePanel(owner, caption, props.getModelList());
-        boolean result_wf5hwp_a0a0a0a21 = true;
+        final BoundTablePanel result_wf5hwp_a0a0a21 = new BoundTablePanel(owner, caption, props.getModelList());
+        final boolean result_wf5hwp_a0a0a0a21 = true;
         result_wf5hwp_a0a0a21.setDiffRow(result_wf5hwp_a0a0a0a21);
 
-        ColumnDescriptor result_wf5hwp_a2a0a0a21 = new BooleanDescriptor(ImportProperties.ImportDescriptor.IS_IMPORTED, "Import", 100);
+        final ColumnDescriptor result_wf5hwp_a2a0a0a21 = new BooleanDescriptor(ImportProperties.ImportDescriptor.IS_IMPORTED, "Import", 100);
         result_wf5hwp_a0a0a21.addColumn(result_wf5hwp_a2a0a0a21);
-        ColumnDescriptor result_wf5hwp_a3a0a0a21 = new ModelDescriptor(ImportProperties.ModelImportDescriptor.MODEL, "Model", -1);
+        final ColumnDescriptor result_wf5hwp_a3a0a0a21 = new ModelDescriptor(ImportProperties.ModelImportDescriptor.MODEL, "Model", -1);
         result_wf5hwp_a0a0a21.addColumn(result_wf5hwp_a3a0a0a21);
-        ColumnDescriptor result_wf5hwp_a4a0a0a21 = new ModuleImportDescriptor(props, true, ImportProperties.ImportDescriptor.MODULE, "Module", -1);
+        final ColumnDescriptor result_wf5hwp_a4a0a0a21 = new ModuleImportDescriptor(props, true, ImportProperties.ImportDescriptor.MODULE, "Module", -1);
         result_wf5hwp_a0a0a21.addColumn(result_wf5hwp_a4a0a0a21);
         result_wf5hwp_a0a0a21.init();
         return result_wf5hwp_a0a0a21;
@@ -342,15 +342,15 @@ public class StandardComponents {
   public static JComponent createLanguagesImportsPanel(final IBindedDialog owner, final String caption, final ImportProperties props) {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        BoundTablePanel result_wf5hwp_a0a0a31 = new BoundTablePanel(owner, caption, props.getLanguagesList());
-        boolean result_wf5hwp_a0a0a0a31 = true;
+        final BoundTablePanel result_wf5hwp_a0a0a31 = new BoundTablePanel(owner, caption, props.getLanguagesList());
+        final boolean result_wf5hwp_a0a0a0a31 = true;
         result_wf5hwp_a0a0a31.setDiffRow(result_wf5hwp_a0a0a0a31);
 
-        ColumnDescriptor result_wf5hwp_a2a0a0a31 = new BooleanDescriptor(ImportProperties.ImportDescriptor.IS_IMPORTED, "Import", 100);
+        final ColumnDescriptor result_wf5hwp_a2a0a0a31 = new BooleanDescriptor(ImportProperties.ImportDescriptor.IS_IMPORTED, "Import", 100);
         result_wf5hwp_a0a0a31.addColumn(result_wf5hwp_a2a0a0a31);
-        ColumnDescriptor result_wf5hwp_a3a0a0a31 = new ModuleDescriptor(ImportProperties.LanguageImportDescriptor.LANGUAGE, "Language", -1);
+        final ColumnDescriptor result_wf5hwp_a3a0a0a31 = new ModuleDescriptor(ImportProperties.LanguageImportDescriptor.LANGUAGE, "Language", -1);
         result_wf5hwp_a0a0a31.addColumn(result_wf5hwp_a3a0a0a31);
-        ColumnDescriptor result_wf5hwp_a4a0a0a31 = new ModuleImportDescriptor(props, false, ImportProperties.ImportDescriptor.MODULE, "Devkit", -1);
+        final ColumnDescriptor result_wf5hwp_a4a0a0a31 = new ModuleImportDescriptor(props, false, ImportProperties.ImportDescriptor.MODULE, "Devkit", -1);
         result_wf5hwp_a0a0a31.addColumn(result_wf5hwp_a4a0a0a31);
         result_wf5hwp_a0a0a31.init();
         return result_wf5hwp_a0a0a31;
@@ -361,17 +361,17 @@ public class StandardComponents {
   public static JPanel createMappingConfigsPanel(final IBindedDialog owner, final String caption, final List<MappingPriorityRule> list, final Generator generator, final List<ModuleReference> depGenerators) {
     Component tablePanel = new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        BoundTablePanel result_wf5hwp_a0a0a0o = new BoundTablePanel(owner, caption, list);
-        Computable result_wf5hwp_a0a0a0a0o = new MappingRuleCreator();
+        final BoundTablePanel result_wf5hwp_a0a0a0o = new BoundTablePanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a0o = new MappingRuleCreator();
         result_wf5hwp_a0a0a0o.setChooser(result_wf5hwp_a0a0a0a0o);
-        boolean result_wf5hwp_a1a0a0a0o = true;
+        final boolean result_wf5hwp_a1a0a0a0o = true;
         result_wf5hwp_a0a0a0o.setDiffRow(result_wf5hwp_a1a0a0a0o);
 
-        ColumnDescriptor result_wf5hwp_a3a0a0a0o = new PriorityRuleDescriptor(generator, depGenerators, true, MappingPriorityRule.LEFT, "Operand", -1);
+        final ColumnDescriptor result_wf5hwp_a3a0a0a0o = new PriorityRuleDescriptor(generator, depGenerators, true, MappingPriorityRule.LEFT, "Operand", -1);
         result_wf5hwp_a0a0a0o.addColumn(result_wf5hwp_a3a0a0a0o);
-        ColumnDescriptor result_wf5hwp_a4a0a0a0o = new RuleTypeDescriptor(MappingPriorityRule.TYPE, "Type", 50);
+        final ColumnDescriptor result_wf5hwp_a4a0a0a0o = new RuleTypeDescriptor(MappingPriorityRule.TYPE, "Type", 50);
         result_wf5hwp_a0a0a0o.addColumn(result_wf5hwp_a4a0a0a0o);
-        ColumnDescriptor result_wf5hwp_a5a0a0a0o = new PriorityRuleDescriptor(generator, depGenerators, false, MappingPriorityRule.RIGHT, "Operand", -1);
+        final ColumnDescriptor result_wf5hwp_a5a0a0a0o = new PriorityRuleDescriptor(generator, depGenerators, false, MappingPriorityRule.RIGHT, "Operand", -1);
         result_wf5hwp_a0a0a0o.addColumn(result_wf5hwp_a5a0a0a0o);
         result_wf5hwp_a0a0a0o.init();
         return result_wf5hwp_a0a0a0o;
@@ -505,12 +505,12 @@ public class StandardComponents {
   public static JPanel createTestConfigsPanel(final IBindedDialog owner, final String caption, final List<BaseTestConfiguration> list, final ProjectProperties properties) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
-        BoundListPanel result_wf5hwp_a0a0a22 = new BoundListPanel(owner, caption, list);
-        DefaultListCellRenderer result_wf5hwp_a0a0a0a22 = new TestConfigListCellRenderer();
+        final BoundListPanel result_wf5hwp_a0a0a22 = new BoundListPanel(owner, caption, list);
+        final DefaultListCellRenderer result_wf5hwp_a0a0a0a22 = new TestConfigListCellRenderer();
         result_wf5hwp_a0a0a22.setCellRenderer(result_wf5hwp_a0a0a0a22);
 
         final JList jlist = result_wf5hwp_a0a0a22.getList();
-        BaseValidatedAction result_wf5hwp_a3a0a0a22 = new ListAddAction(jlist) {
+        final BaseValidatedAction result_wf5hwp_a3a0a0a22 = new ListAddAction(jlist) {
           protected int doAdd(AnActionEvent e) {
             TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getProject(), null);
             dialog.showDialog();
@@ -524,7 +524,7 @@ public class StandardComponents {
           }
         };
         result_wf5hwp_a0a0a22.setAddAction(result_wf5hwp_a3a0a0a22);
-        BaseValidatedAction result_wf5hwp_a4a0a0a22 = new ListRemoveAction(jlist) {
+        final BaseValidatedAction result_wf5hwp_a4a0a0a22 = new ListRemoveAction(jlist) {
           protected void doRemove(AnActionEvent e) {
             for (Object value : jlist.getSelectedValues()) {
               properties.testConfigsChanged();
@@ -533,7 +533,7 @@ public class StandardComponents {
           }
         };
         result_wf5hwp_a0a0a22.setRemoveAction(result_wf5hwp_a4a0a0a22);
-        BaseValidatedAction result_wf5hwp_a5a0a0a22 = new ListEditAction(jlist) {
+        final BaseValidatedAction result_wf5hwp_a5a0a0a22 = new ListEditAction(jlist) {
           public void doEdit() {
             Object value = jlist.getSelectedValue();
             if (value == null) {
@@ -573,10 +573,10 @@ public class StandardComponents {
   public static JPanel createProjectModulesPathsList(final IBindedDialog owner, final String caption, final List<Path> list, final String extension) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
-        BoundListPanel result_wf5hwp_a0a0a62 = new BoundListPanel(owner, caption, list);
-        Computable result_wf5hwp_a0a0a0a62 = new ModulePathChooser(extension, owner);
+        final BoundListPanel result_wf5hwp_a0a0a62 = new BoundListPanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a62 = new ModulePathChooser(extension, owner);
         result_wf5hwp_a0a0a62.setChooser(result_wf5hwp_a0a0a0a62);
-        DefaultListCellRenderer result_wf5hwp_a1a0a0a62 = new PathRenderer();
+        final DefaultListCellRenderer result_wf5hwp_a1a0a0a62 = new PathRenderer();
         result_wf5hwp_a0a0a62.setCellRenderer(result_wf5hwp_a1a0a0a62);
         result_wf5hwp_a0a0a62.init();
         return result_wf5hwp_a0a0a62;

@@ -33,26 +33,26 @@ public class SolutionDescriptorPersistence {
 
       descriptor = new _FunctionTypes._return_P0_E0<SolutionDescriptor>() {
         public SolutionDescriptor invoke() {
-          SolutionDescriptor result_8ckma3_a0a0g0c0a = new SolutionDescriptor();
-          String result_8ckma3_a0a0a0g0c0a = solutionElement.getAttributeValue("name");
+          final SolutionDescriptor result_8ckma3_a0a0g0c0a = new SolutionDescriptor();
+          final String result_8ckma3_a0a0a0g0c0a = solutionElement.getAttributeValue("name");
           result_8ckma3_a0a0g0c0a.setNamespace(result_8ckma3_a0a0a0g0c0a);
 
           if (solutionElement.getAttributeValue("uuid") != null) {
-            String result_8ckma3_a0a2a0a0g0c0a = solutionElement.getAttributeValue("uuid");
+            final String result_8ckma3_a0a2a0a0g0c0a = solutionElement.getAttributeValue("uuid");
             result_8ckma3_a0a0g0c0a.setUUID(result_8ckma3_a0a2a0a0g0c0a);
           }
 
-          boolean result_8ckma3_a4a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("extenallyVisible"), true);
+          final boolean result_8ckma3_a4a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("extenallyVisible"), true);
           result_8ckma3_a0a0g0c0a.setExternallyVisible(result_8ckma3_a4a0a0g0c0a);
-          boolean result_8ckma3_a5a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("dontLoadClasses"), false);
+          final boolean result_8ckma3_a5a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("dontLoadClasses"), false);
           result_8ckma3_a0a0g0c0a.setDontLoadClasses(result_8ckma3_a5a0a0g0c0a);
-          boolean result_8ckma3_a6a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("compileInMPS"), false);
+          final boolean result_8ckma3_a6a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("compileInMPS"), false);
           result_8ckma3_a0a0g0c0a.setCompileInMPS(result_8ckma3_a6a0a0g0c0a);
-          boolean result_8ckma3_a7a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("java-stubs-enabled"), true);
+          final boolean result_8ckma3_a7a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("java-stubs-enabled"), true);
           result_8ckma3_a0a0g0c0a.setEnableJavaStubs(result_8ckma3_a7a0a0g0c0a);
 
           if (StringUtils.isNotEmpty(solutionElement.getAttributeValue("generatorOutputPath"))) {
-            String result_8ckma3_a0a9a0a0g0c0a = macros.expandPath(solutionElement.getAttributeValue("generatorOutputPath"), file);
+            final String result_8ckma3_a0a9a0a0g0c0a = macros.expandPath(solutionElement.getAttributeValue("generatorOutputPath"), file);
             result_8ckma3_a0a0g0c0a.setOutputPath(result_8ckma3_a0a9a0a0g0c0a);
           }
 
@@ -96,45 +96,45 @@ public class SolutionDescriptorPersistence {
     final Macros macros = Macros.solutionDescriptor();
     Element solElem = new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
-        Element result_8ckma3_a0a0d0b = new Element("solution");
+        final Element result_8ckma3_a0a0d0b = new Element("solution");
         if (descriptor.getNamespace() != null) {
-          String result_8ckma3_a0a0a0a0d0b = descriptor.getNamespace();
+          final String result_8ckma3_a0a0a0a0d0b = descriptor.getNamespace();
           result_8ckma3_a0a0d0b.setAttribute("name", "" + result_8ckma3_a0a0a0a0d0b);
         }
         if (descriptor.getUUID() != null) {
-          String result_8ckma3_a0a1a0a0d0b = descriptor.getUUID();
+          final String result_8ckma3_a0a1a0a0d0b = descriptor.getUUID();
           result_8ckma3_a0a0d0b.setAttribute("uuid", "" + result_8ckma3_a0a1a0a0d0b);
         }
-        boolean result_8ckma3_a2a0a0d0b = descriptor.isExternallyVisible();
+        final boolean result_8ckma3_a2a0a0d0b = descriptor.isExternallyVisible();
         result_8ckma3_a0a0d0b.setAttribute("extenallyVisible", "" + result_8ckma3_a2a0a0d0b);
         if (descriptor.isDontLoadClasses()) {
-          boolean result_8ckma3_a0a3a0a0d0b = true;
+          final boolean result_8ckma3_a0a3a0a0d0b = true;
           result_8ckma3_a0a0d0b.setAttribute("dontLoadClasses", "" + result_8ckma3_a0a3a0a0d0b);
         }
-        boolean result_8ckma3_a4a0a0d0b = descriptor.getCompileInMPS();
+        final boolean result_8ckma3_a4a0a0d0b = descriptor.getCompileInMPS();
         result_8ckma3_a0a0d0b.setAttribute("compileInMPS", "" + result_8ckma3_a4a0a0d0b);
-        boolean result_8ckma3_a5a0a0d0b = descriptor.getEnableJavaStubs();
+        final boolean result_8ckma3_a5a0a0d0b = descriptor.getEnableJavaStubs();
         result_8ckma3_a0a0d0b.setAttribute("java-stubs-enabled", "" + result_8ckma3_a5a0a0d0b);
         if (descriptor.getOutputPath() != null) {
-          String result_8ckma3_a0a6a0a0d0b = macros.shrinkPath(descriptor.getOutputPath(), file);
+          final String result_8ckma3_a0a6a0a0d0b = macros.shrinkPath(descriptor.getOutputPath(), file);
           result_8ckma3_a0a0d0b.setAttribute("generatorOutputPath", "" + result_8ckma3_a0a6a0a0d0b);
         }
 
-        Element result_8ckma3_a8a0a0d0b = new Element("models");
+        final Element result_8ckma3_a8a0a0d0b = new Element("models");
         ModuleDescriptorPersistence.saveModelRoots(result_8ckma3_a8a0a0d0b, descriptor.getModelRoots(), file, macros);
         result_8ckma3_a0a0d0b.addContent(result_8ckma3_a8a0a0d0b);
 
         if (!(descriptor.getStubModelEntries().isEmpty())) {
-          Element result_8ckma3_a0a01a0a0d0b = new Element("stubModelEntries");
+          final Element result_8ckma3_a0a01a0a0d0b = new Element("stubModelEntries");
           ModuleDescriptorPersistence.saveStubModelEntries(result_8ckma3_a0a01a0a0d0b, descriptor.getStubModelEntries(), file, macros);
           result_8ckma3_a0a0d0b.addContent(result_8ckma3_a0a01a0a0d0b);
         }
 
 
-        Element result_8ckma3_a31a0a0d0b = new Element("sourcePath");
+        final Element result_8ckma3_a31a0a0d0b = new Element("sourcePath");
         for (String p : ListSequence.fromList(descriptor.getSourcePaths())) {
-          Element result_8ckma3_a0a0a31a0a0d0b = new Element("source");
-          String result_8ckma3_a0a0a0a31a0a0d0b = macros.shrinkPath(p, file);
+          final Element result_8ckma3_a0a0a31a0a0d0b = new Element("source");
+          final String result_8ckma3_a0a0a0a31a0a0d0b = macros.shrinkPath(p, file);
           result_8ckma3_a0a0a31a0a0d0b.setAttribute("path", "" + result_8ckma3_a0a0a0a31a0a0d0b);
           result_8ckma3_a31a0a0d0b.addContent(result_8ckma3_a0a0a31a0a0d0b);
         }

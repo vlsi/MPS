@@ -30,6 +30,10 @@ public class Builder_Behavior {
     return SConceptPropertyOperations.getBoolean(thisNode, "leaf");
   }
 
+  public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
+    return null;
+  }
+
   public static SNode virtual_getAttachStatement_7288041816792215495(SNode thisNode, SNode childBuilder, SNode parentRef, SNode childRef) {
     return Builder_Behavior.call_getAttachStatementChild_4797501453850305563(childBuilder, thisNode, parentRef, childRef);
   }

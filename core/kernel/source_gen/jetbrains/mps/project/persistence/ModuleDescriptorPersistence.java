@@ -54,16 +54,16 @@ public class ModuleDescriptorPersistence {
   public static void saveDependencies(Element result, ModuleDescriptor descriptor) {
     Element result_dxyzb6_a0a1 = result;
     if (!(descriptor.getDependencies().isEmpty())) {
-      Element result_dxyzb6_a0a0a0a1 = new Element("dependencies");
+      final Element result_dxyzb6_a0a0a0a1 = new Element("dependencies");
       saveDependencyList(result_dxyzb6_a0a0a0a1, descriptor.getDependencies());
       result_dxyzb6_a0a1.addContent(result_dxyzb6_a0a0a0a1);
     }
 
     if (!(descriptor.getUsedLanguages().isEmpty())) {
-      Element result_dxyzb6_a0a2a0a1 = new Element("usedLanguages");
+      final Element result_dxyzb6_a0a2a0a1 = new Element("usedLanguages");
       for (ModuleReference langRef : ListSequence.fromList(descriptor.getUsedLanguages())) {
-        Element result_dxyzb6_a0a0a0a2a0a1 = new Element("usedLanguage");
-        String result_dxyzb6_a0a0a0a0a2a0a1 = langRef.toString();
+        final Element result_dxyzb6_a0a0a0a2a0a1 = new Element("usedLanguage");
+        final String result_dxyzb6_a0a0a0a0a2a0a1 = langRef.toString();
         result_dxyzb6_a0a0a0a2a0a1.setText(result_dxyzb6_a0a0a0a0a2a0a1);
         result_dxyzb6_a0a2a0a1.addContent(result_dxyzb6_a0a0a0a2a0a1);
       }
@@ -71,10 +71,10 @@ public class ModuleDescriptorPersistence {
     }
 
     if (!(descriptor.getUsedDevkits().isEmpty())) {
-      Element result_dxyzb6_a0a4a0a1 = new Element("usedDevKits");
+      final Element result_dxyzb6_a0a4a0a1 = new Element("usedDevKits");
       for (ModuleReference dkRef : ListSequence.fromList(descriptor.getUsedDevkits())) {
-        Element result_dxyzb6_a0a0a0a4a0a1 = new Element("usedDevKit");
-        String result_dxyzb6_a0a0a0a0a4a0a1 = dkRef.toString();
+        final Element result_dxyzb6_a0a0a0a4a0a1 = new Element("usedDevKit");
+        final String result_dxyzb6_a0a0a0a0a4a0a1 = dkRef.toString();
         result_dxyzb6_a0a0a0a4a0a1.setText(result_dxyzb6_a0a0a0a0a4a0a1);
         result_dxyzb6_a0a4a0a1.addContent(result_dxyzb6_a0a0a0a4a0a1);
       }
@@ -84,7 +84,7 @@ public class ModuleDescriptorPersistence {
     if (descriptor instanceof LanguageDescriptor) {
       LanguageDescriptor ld = (LanguageDescriptor) descriptor;
       if (!(ld.getRuntimeModules().isEmpty())) {
-        Element result_dxyzb6_a0a1a6a0a1 = new Element("runtime");
+        final Element result_dxyzb6_a0a1a6a0a1 = new Element("runtime");
         saveDependencyList(result_dxyzb6_a0a1a6a0a1, ld.getRuntimeModules());
         result_dxyzb6_a0a1.addContent(result_dxyzb6_a0a1a6a0a1);
       }
@@ -96,10 +96,10 @@ public class ModuleDescriptorPersistence {
       public Dependency select(final Element d) {
         return new _FunctionTypes._return_P0_E0<Dependency>() {
           public Dependency invoke() {
-            Dependency result_dxyzb6_a0a0a0a0a0a2 = new Dependency();
-            ModuleReference result_dxyzb6_a0a0a0a0a0a0a2 = ModuleReference.fromString(d.getText());
+            final Dependency result_dxyzb6_a0a0a0a0a0a2 = new Dependency();
+            final ModuleReference result_dxyzb6_a0a0a0a0a0a0a2 = ModuleReference.fromString(d.getText());
             result_dxyzb6_a0a0a0a0a0a2.setModuleRef(result_dxyzb6_a0a0a0a0a0a0a2);
-            boolean result_dxyzb6_a1a0a0a0a0a0a2 = AttributeUtils.booleanWithDefault(d.getAttributeValue("reexport"), true);
+            final boolean result_dxyzb6_a1a0a0a0a0a0a2 = AttributeUtils.booleanWithDefault(d.getAttributeValue("reexport"), true);
             result_dxyzb6_a0a0a0a0a0a2.setReexport(result_dxyzb6_a1a0a0a0a0a0a2);
             return result_dxyzb6_a0a0a0a0a0a2;
           }
@@ -111,10 +111,10 @@ public class ModuleDescriptorPersistence {
   private static void saveDependencyList(Element depElement, List<Dependency> dependencies) {
     Element result_dxyzb6_a0a3 = depElement;
     for (Dependency md : ListSequence.fromList(dependencies)) {
-      Element result_dxyzb6_a0a0a0a3 = new Element("dependency");
-      String result_dxyzb6_a0a0a0a0a3 = md.getModuleRef().toString();
+      final Element result_dxyzb6_a0a0a0a3 = new Element("dependency");
+      final String result_dxyzb6_a0a0a0a0a3 = md.getModuleRef().toString();
       result_dxyzb6_a0a0a0a3.setText(result_dxyzb6_a0a0a0a0a3);
-      boolean result_dxyzb6_a1a0a0a0a3 = md.isReexport();
+      final boolean result_dxyzb6_a1a0a0a0a3 = md.isReexport();
       result_dxyzb6_a0a0a0a3.setAttribute("reexport", "" + result_dxyzb6_a1a0a0a0a3);
       result_dxyzb6_a0a3.addContent(result_dxyzb6_a0a0a0a3);
     }
@@ -131,11 +131,11 @@ public class ModuleDescriptorPersistence {
   private static ModelRoot loadModelRoot(final Element modelRootElement, final IFile file, final Macros macros) {
     return new _FunctionTypes._return_P0_E0<ModelRoot>() {
       public ModelRoot invoke() {
-        ModelRoot result_dxyzb6_a0a0a5 = new ModelRoot();
-        String result_dxyzb6_a0a0a0a5 = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("namespacePrefix"), "");
+        final ModelRoot result_dxyzb6_a0a0a5 = new ModelRoot();
+        final String result_dxyzb6_a0a0a0a5 = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("namespacePrefix"), "");
         result_dxyzb6_a0a0a5.setPrefix(result_dxyzb6_a0a0a0a5);
         if (modelRootElement.getAttributeValue("persistenceHandler") != null) {
-          String result_dxyzb6_a0a1a0a0a5 = modelRootElement.getAttributeValue("persistenceHandler");
+          final String result_dxyzb6_a0a1a0a0a5 = modelRootElement.getAttributeValue("persistenceHandler");
           result_dxyzb6_a0a0a5.setHandlerClass(result_dxyzb6_a0a1a0a0a5);
         }
         String pathName = modelRootElement.getAttributeValue("path");
@@ -143,14 +143,14 @@ public class ModuleDescriptorPersistence {
           // left for compatibility 
           pathName = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("rootPath"), "");
         }
-        String result_dxyzb6_a4a0a0a5 = macros.expandPath(pathName, file);
+        final String result_dxyzb6_a4a0a0a5 = macros.expandPath(pathName, file);
         result_dxyzb6_a0a0a5.setPath(result_dxyzb6_a4a0a0a5);
         if (ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).isNotEmpty()) {
-          ModelRootManager result_dxyzb6_a0a5a0a0a5 = new ModelRootManager();
+          final ModelRootManager result_dxyzb6_a0a5a0a0a5 = new ModelRootManager();
           Element manager = ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first();
-          String result_dxyzb6_a1a0a5a0a0a5 = AttributeUtils.stringWithDefault(manager.getAttributeValue("moduleId"), "");
+          final String result_dxyzb6_a1a0a5a0a0a5 = AttributeUtils.stringWithDefault(manager.getAttributeValue("moduleId"), "");
           result_dxyzb6_a0a5a0a0a5.setModuleId(result_dxyzb6_a1a0a5a0a0a5);
-          String result_dxyzb6_a2a0a5a0a0a5 = AttributeUtils.stringWithDefault(manager.getAttributeValue("className"), "");
+          final String result_dxyzb6_a2a0a5a0a0a5 = AttributeUtils.stringWithDefault(manager.getAttributeValue("className"), "");
           result_dxyzb6_a0a5a0a0a5.setClassName(result_dxyzb6_a2a0a5a0a0a5);
           result_dxyzb6_a0a0a5.setManager(result_dxyzb6_a0a5a0a0a5);
         }
@@ -170,16 +170,16 @@ public class ModuleDescriptorPersistence {
   private static StubModelsEntry loadModelEntry(final Element modelRootElement, final IFile file, final Macros macros) {
     return new _FunctionTypes._return_P0_E0<StubModelsEntry>() {
       public StubModelsEntry invoke() {
-        StubModelsEntry result_dxyzb6_a0a0a7 = new StubModelsEntry();
-        String result_dxyzb6_a0a0a0a7 = macros.expandPath(modelRootElement.getAttributeValue("path"), file);
+        final StubModelsEntry result_dxyzb6_a0a0a7 = new StubModelsEntry();
+        final String result_dxyzb6_a0a0a0a7 = macros.expandPath(modelRootElement.getAttributeValue("path"), file);
         result_dxyzb6_a0a0a7.setPath(result_dxyzb6_a0a0a0a7);
-        ModelRootManager result_dxyzb6_a1a0a0a7 = new ModelRootManager();
-        String result_dxyzb6_a0a1a0a0a7 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("moduleId"), "");
+        final ModelRootManager result_dxyzb6_a1a0a0a7 = new ModelRootManager();
+        final String result_dxyzb6_a0a1a0a0a7 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("moduleId"), "");
         result_dxyzb6_a1a0a0a7.setModuleId(result_dxyzb6_a0a1a0a0a7);
-        String result_dxyzb6_a1a1a0a0a7 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("className"), "");
+        final String result_dxyzb6_a1a1a0a0a7 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("className"), "");
         result_dxyzb6_a1a0a0a7.setClassName(result_dxyzb6_a1a1a0a0a7);
         result_dxyzb6_a0a0a7.setManager(result_dxyzb6_a1a0a0a7);
-        boolean result_dxyzb6_a2a0a0a7 = AttributeUtils.booleanWithDefault(modelRootElement.getAttributeValue("include"), false);
+        final boolean result_dxyzb6_a2a0a0a7 = AttributeUtils.booleanWithDefault(modelRootElement.getAttributeValue("include"), false);
         result_dxyzb6_a0a0a7.setIncludedInVCS(result_dxyzb6_a2a0a0a7);
         return result_dxyzb6_a0a0a7;
       }
@@ -189,26 +189,26 @@ public class ModuleDescriptorPersistence {
   public static void saveModelRoots(Element modelsElement, List<ModelRoot> modelRoots, IFile file, Macros macros) {
     Element result_dxyzb6_a0a8 = modelsElement;
     for (ModelRoot root : ListSequence.fromList(modelRoots)) {
-      Element result_dxyzb6_a0a0a0a8 = new Element("modelRoot");
-      String result_dxyzb6_a0a0a0a0a8 = macros.shrinkPath((root.getPath() == null ?
+      final Element result_dxyzb6_a0a0a0a8 = new Element("modelRoot");
+      final String result_dxyzb6_a0a0a0a0a8 = macros.shrinkPath((root.getPath() == null ?
         "" :
         root.getPath()
       ), file);
       result_dxyzb6_a0a0a0a8.setAttribute("path", "" + result_dxyzb6_a0a0a0a0a8);
-      String result_dxyzb6_a1a0a0a0a8 = (root.getPrefix() == null ?
+      final String result_dxyzb6_a1a0a0a0a8 = (root.getPrefix() == null ?
         "" :
         root.getPrefix()
       );
       result_dxyzb6_a0a0a0a8.setAttribute("namespacePrefix", "" + result_dxyzb6_a1a0a0a0a8);
       if (root.getHandlerClass() != null) {
-        String result_dxyzb6_a0a2a0a0a0a8 = root.getHandlerClass();
+        final String result_dxyzb6_a0a2a0a0a0a8 = root.getHandlerClass();
         result_dxyzb6_a0a0a0a8.setAttribute("persistenceHandler", "" + result_dxyzb6_a0a2a0a0a0a8);
       }
       if (root.getManager() != null) {
-        Element result_dxyzb6_a0a3a0a0a0a8 = new Element("manager");
-        String result_dxyzb6_a0a0a3a0a0a0a8 = root.getManager().getModuleId();
+        final Element result_dxyzb6_a0a3a0a0a0a8 = new Element("manager");
+        final String result_dxyzb6_a0a0a3a0a0a0a8 = root.getManager().getModuleId();
         result_dxyzb6_a0a3a0a0a0a8.setAttribute("moduleId", "" + result_dxyzb6_a0a0a3a0a0a0a8);
-        String result_dxyzb6_a1a0a3a0a0a0a8 = root.getManager().getClassName();
+        final String result_dxyzb6_a1a0a3a0a0a0a8 = root.getManager().getClassName();
         result_dxyzb6_a0a3a0a0a0a8.setAttribute("className", "" + result_dxyzb6_a1a0a3a0a0a0a8);
         result_dxyzb6_a0a0a0a8.addContent(result_dxyzb6_a0a3a0a0a0a8);
       }
@@ -219,18 +219,18 @@ public class ModuleDescriptorPersistence {
   public static void saveStubModelEntries(Element modelsElement, List<StubModelsEntry> modelRoots, IFile file, Macros macros) {
     Element result_dxyzb6_a0a9 = modelsElement;
     for (StubModelsEntry root : ListSequence.fromList(modelRoots)) {
-      Element result_dxyzb6_a0a0a0a9 = new Element("stubModelEntry");
-      String result_dxyzb6_a0a0a0a0a9 = macros.shrinkPath((root.getPath() == null ?
+      final Element result_dxyzb6_a0a0a0a9 = new Element("stubModelEntry");
+      final String result_dxyzb6_a0a0a0a0a9 = macros.shrinkPath((root.getPath() == null ?
         "" :
         root.getPath()
       ), file);
       result_dxyzb6_a0a0a0a9.setAttribute("path", "" + result_dxyzb6_a0a0a0a0a9);
-      boolean result_dxyzb6_a1a0a0a0a9 = root.isIncludedInVCS();
+      final boolean result_dxyzb6_a1a0a0a0a9 = root.isIncludedInVCS();
       result_dxyzb6_a0a0a0a9.setAttribute("include", "" + result_dxyzb6_a1a0a0a0a9);
-      Element result_dxyzb6_a2a0a0a0a9 = new Element("manager");
-      String result_dxyzb6_a0a2a0a0a0a9 = root.getManager().getModuleId();
+      final Element result_dxyzb6_a2a0a0a0a9 = new Element("manager");
+      final String result_dxyzb6_a0a2a0a0a0a9 = root.getManager().getModuleId();
       result_dxyzb6_a2a0a0a0a9.setAttribute("moduleId", "" + result_dxyzb6_a0a2a0a0a0a9);
-      String result_dxyzb6_a1a2a0a0a0a9 = root.getManager().getClassName();
+      final String result_dxyzb6_a1a2a0a0a0a9 = root.getManager().getClassName();
       result_dxyzb6_a2a0a0a0a9.setAttribute("className", "" + result_dxyzb6_a1a2a0a0a0a9);
       result_dxyzb6_a0a0a0a9.addContent(result_dxyzb6_a2a0a0a0a9);
       result_dxyzb6_a0a9.addContent(result_dxyzb6_a0a0a0a9);
