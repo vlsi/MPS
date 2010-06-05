@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.awt.Cursor;
@@ -19,8 +20,8 @@ import java.awt.Cursor;
  * User: Alexander Shatalin
  */
 public class BreakpointIconRenderer implements EditorMessageIconRenderer {
-  public static IconRendererType TYPE = new IconRendererType(4);
-  private AbstractMPSBreakpoint myBreakpoint;
+  public static final IconRendererType TYPE = new IconRendererType(4);
+  private final AbstractMPSBreakpoint myBreakpoint;
 
   public static EditorCell getBreakpointIconAnchorCell(EditorCell bigCell) {
     if (bigCell instanceof EditorCell_Collection) {
@@ -30,13 +31,17 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
     return bigCell;
   }
 
+  public static Icon getIconFor(@NotNull AbstractMPSBreakpoint breakpoint) {
+    return breakpoint.isValid() ? Icons.BREAKPOINT : Icons.INV_BREAKPOINT;  
+  }
+
   public BreakpointIconRenderer(AbstractMPSBreakpoint breakpoint) {
     myBreakpoint = breakpoint;
   }
 
   @Override
   public Icon getIcon() {
-    return myBreakpoint.isValid() ? Icons.BREAKPOINT : Icons.INV_BREAKPOINT;
+    return getIconFor(myBreakpoint);
   }
 
   @Override

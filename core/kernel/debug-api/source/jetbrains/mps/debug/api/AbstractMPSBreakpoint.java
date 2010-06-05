@@ -116,9 +116,9 @@ public abstract class AbstractMPSBreakpoint {
         SNode node = myNodePointer.getNode();
         if (node != null) {
           SNode root = node.getContainingRoot();
-          return node + " in " + root + "(" + myNodePointer.getModel().getSModelFqName() + ")";
+          return node + " in " + root + " (" + myNodePointer.getModel().getSModelFqName() + ")";
         } else {
-          return myNodePointer.getNodeId() + "(" + myNodePointer.getModel().getSModelFqName() + ")";  
+          return myNodePointer.getNodeId() + " (" + myNodePointer.getModel().getSModelFqName() + ")";  
         }
       }
     });
