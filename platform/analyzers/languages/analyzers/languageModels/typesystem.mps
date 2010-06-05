@@ -31,7 +31,6 @@
   <maxImportIndex value="3" />
   <import index="1" modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)" version="-1" />
-  <import index="3" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework.instructions(jetbrains.mps.lang.dataFlow.framework.instructions@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="9177062368042317188">
     <property name="name:3" value="typeof_AnalyzerFunParameterProgramState" />
     <property name="package:3" value="Analyzer.AnalyzerFunctions" />

@@ -34,7 +34,6 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0" />
-  <import index="2" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="4217760266503603654">
     <link role="concept:8" targetNodeId="1.4217760266503579796:0" resolveInfo="EmitInstruction" />
   </node>
