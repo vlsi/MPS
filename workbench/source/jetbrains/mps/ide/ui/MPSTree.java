@@ -524,7 +524,13 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     StringBuffer result = new StringBuffer();
     for (int i = 1; i < path.getPathCount(); i++) {
       MPSTreeNode node = (MPSTreeNode) path.getPathComponent(i);
-      result.append(TREE_PATH_SEPARATOR).append(node.getNodeIdentifier().replaceAll(TREE_PATH_SEPARATOR, "-"));
+      result.append(TREE_PATH_SEPARATOR);
+      if (node.getNodeIdentifier() == null) {
+        // Workaround to avoid NPE: node identifier may be null (MPS-8785)
+        result.append("[null]");
+      } else {
+        result.append(node.getNodeIdentifier().replaceAll(TREE_PATH_SEPARATOR, "-"));
+      }
     }
     if (result.length() == 0) return TREE_PATH_SEPARATOR;
     return result.toString();
