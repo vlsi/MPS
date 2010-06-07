@@ -17,16 +17,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
 
 public class ClosureLiteralUtil {
   public static boolean hasYieldStatement(SNode cl) {
@@ -116,13 +112,8 @@ public class ClosureLiteralUtil {
     }
     Values.TYPE_MAP.set(genContext, ctNoParams, map);
     if ((absRetCT != null)) {
-      SNode ftResCT = SNodeOperations.cast(FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(ft)), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-      /*
-        if (SLinkOperations.getTarget(ftResCT, "classifier", false) == SLinkOperations.getTarget(new ClosureLiteralUtil.QuotationClass_wj0zdn_a0a0a1a5a4().createNode(), "classifier", false)) {
-          SLinkOperations.setTarget(ftResCT, "classifier", SLinkOperations.getTarget(new ClosureLiteralUtil.QuotationClass_wj0zdn_a0a0a0a1a5a4().createNode(), "classifier", false), false);
-        }
-      */
-      String adapterName = JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(absRetCT, "classifier", false), "name")) + JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(ftResCT, "classifier", false), "name")) + "Adapter";
+      SNode ftResCT = FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(ft));
+      String adapterName = JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(absRetCT, "classifier", false), "name")) + JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(FunctionTypeUtil.unbound(ftResCT), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "name")) + "Adapter";
       for (SNode cls : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(absRetCT, "classifier", false)), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         if (adapterName.equals(JavaNameUtil.shortName(SPropertyOperations.getString(cls, "name")))) {
           SNode newRetCT = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
@@ -145,22 +136,21 @@ public class ClosureLiteralUtil {
     List<SNode> varDecls = SLinkOperations.getTargets(SLinkOperations.getTarget(origCT, "classifier", false), "typeVariableDeclaration", true);
     int idx = 0;
     for (SNode p : SLinkOperations.getTargets(origCT, "parameter", true)) {
-      if (SNodeOperations.isInstanceOf(p, "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(p, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
-        p = (SNodeOperations.isInstanceOf(p, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ?
-          SLinkOperations.getTarget(SNodeOperations.cast(p, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true) :
-          SLinkOperations.getTarget(SNodeOperations.cast(p, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true)
-        );
-      }
-      if (SNodeOperations.isInstanceOf(p, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-        if (idx < ListSequence.fromList(varDecls).count()) {
-          SNode tvd = ListSequence.fromList(varDecls).getElement(idx);
-          ListSequence.fromList(SLinkOperations.getTargets(ctNoParams, "parameter", true)).addElement((map != null ?
-            MapSequence.fromMap(map).get(SPropertyOperations.getString(tvd, "name")) :
-            null
-          ));
+      SNode c = ListSequence.fromList(SLinkOperations.getTargets(ctNoParams, "parameter", true)).addElement(SNodeOperations.copyNode(p));
+      List<SNode> queue = ListSequence.fromListAndArray(new LinkedList<SNode>(), c);
+      while (!(ListSequence.fromList(queue).isEmpty())) {
+        SNode n = ListSequence.fromList(queue).removeElementAt(0);
+        if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+          if (idx < ListSequence.fromList(varDecls).count()) {
+            n = SNodeOperations.replaceWithAnother(n, (map != null ?
+              MapSequence.fromMap(map).get(SPropertyOperations.getString(ListSequence.fromList(varDecls).getElement(idx), "name")) :
+              null
+            ));
+          }
         }
-      } else {
-        ListSequence.fromList(SLinkOperations.getTargets(ctNoParams, "parameter", true)).addElement(SNodeOperations.copyNode(p));
+        if (n != null) {
+          ListSequence.fromList(queue).addSequence(ListSequence.fromList(SNodeOperations.getChildren(n)));
+        }
       }
       idx++;
     }
@@ -263,41 +253,5 @@ public class ClosureLiteralUtil {
       map = MapSequence.fromMap(new HashMap<String, SNode>());
     }
     return map;
-  }
-
-  public static class QuotationClass_wj0zdn_a0a0a0a1a5a4 {
-    public QuotationClass_wj0zdn_a0a0a0a1a5a4() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Iterable")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_wj0zdn_a0a0a1a5a4 {
-    public QuotationClass_wj0zdn_a0a0a1a5a4() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~ISequence")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
   }
 }

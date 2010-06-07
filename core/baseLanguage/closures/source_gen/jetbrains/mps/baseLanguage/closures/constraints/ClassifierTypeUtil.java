@@ -36,6 +36,7 @@ public class ClassifierTypeUtil {
     if (SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
       SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UpperBoundType", null);
       SLinkOperations.setTarget(res, "bound", SNodeOperations.copyNode(getTypeCoercedToClassifierType(SLinkOperations.getTarget(SNodeOperations.cast(purified, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true))), true);
+      return res;
     }
     if (SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
       SNode at = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
@@ -257,13 +258,25 @@ public class ClassifierTypeUtil {
         ));
         covariantParam = false;
       }
-      return (covariant || isFunctionTypeClassifier(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false)) ?
-        new ClassifierTypeUtil.QuotationClass_zgotlq_a0a4a0a11().createNode(copy) :
-        new ClassifierTypeUtil.QuotationClass_zgotlq_a0a4a0a11_0().createNode(copy)
+      if (covariant || isFunctionTypeClassifier(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false))) {
+        return (SNodeOperations.isInstanceOf(copy, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ?
+          copy :
+          new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a4a0a11().createNode(copy)
+        );
+      } else {
+        return (SNodeOperations.isInstanceOf(copy, "jetbrains.mps.baseLanguage.structure.LowerBoundType") ?
+          copy :
+          new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0e0a0l().createNode(copy)
+        );
+      }
+    } else if (covariant) {
+      return (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ?
+        SNodeOperations.copyNode(type) :
+        new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a0l().createNode(SNodeOperations.copyNode(type))
       );
     } else {
-      return (covariant ?
-        new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a0l().createNode(SNodeOperations.copyNode(type)) :
+      return (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType") ?
+        SNodeOperations.copyNode(type) :
         new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a0l_0().createNode(SNodeOperations.copyNode(type))
       );
     }
@@ -456,8 +469,8 @@ public class ClassifierTypeUtil {
     }
   }
 
-  public static class QuotationClass_zgotlq_a0a4a0a11 {
-    public QuotationClass_zgotlq_a0a4a0a11() {
+  public static class QuotationClass_zgotlq_a0a0a4a0a11 {
+    public QuotationClass_zgotlq_a0a0a4a0a11() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -487,8 +500,8 @@ public class ClassifierTypeUtil {
     }
   }
 
-  public static class QuotationClass_zgotlq_a0a4a0a11_0 {
-    public QuotationClass_zgotlq_a0a4a0a11_0() {
+  public static class QuotationClass_zgotlq_a0a0a0e0a0l {
+    public QuotationClass_zgotlq_a0a0a0e0a0l() {
     }
 
     public SNode createNode(Object parameter_5) {

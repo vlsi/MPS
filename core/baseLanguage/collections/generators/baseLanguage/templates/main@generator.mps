@@ -3101,7 +3101,7 @@
       <link role="applicableConcept:2" targetNodeId="8.3358009230509553641:7" resolveInfo="LinkedListType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="2458725063871595316">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2458725063871595321">
-          <link role="classifier:3" targetNodeId="1.~Deque" resolveInfo="Deque" />
+          <link role="classifier:3" targetNodeId="34.~Deque" resolveInfo="Deque" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="2458725063871595322">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="2458725063871595332">
               <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="2458725063871595333">
@@ -3157,7 +3157,7 @@
       <link role="applicableConcept:2" targetNodeId="8.3357971920378033937:7" resolveInfo="DequeType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3358009230509158283">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3358009230509158288">
-          <link role="classifier:3" targetNodeId="1.~Deque" resolveInfo="Deque" />
+          <link role="classifier:3" targetNodeId="34.~Deque" resolveInfo="Deque" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="3358009230509158290">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="3358009230509158291">
               <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="3358009230509158292">
@@ -3185,7 +3185,7 @@
       <link role="applicableConcept:2" targetNodeId="8.6801639034384703212:7" resolveInfo="StackType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3358009230509158301">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3358009230509158304">
-          <link role="classifier:3" targetNodeId="1.~Deque" resolveInfo="Deque" />
+          <link role="classifier:3" targetNodeId="34.~Deque" resolveInfo="Deque" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="3358009230509158306">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="3358009230509158307">
               <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="3358009230509158308">
@@ -13779,7 +13779,7 @@
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="3444116434173277316">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3444116434173277318">
           <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3444116434173277319">
-            <link role="baseMethodDeclaration:3" targetNodeId="1.~LinkedList.&lt;init&gt;()" resolveInfo="LinkedList" />
+            <link role="baseMethodDeclaration:3" targetNodeId="34.~LinkedList.&lt;init&gt;()" resolveInfo="LinkedList" />
             <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="3444116434173277320">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="3444116434173277321">
                 <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="3444116434173277322">

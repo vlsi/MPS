@@ -2422,12 +2422,8 @@
                   <link role="variableDeclaration:3" targetNodeId="1213877405280" resolveInfo="resList" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1237042864927">
-                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1237042864928">
-                    <link role="baseMethodDeclaration:3" targetNodeId="11.1202763885217:2" resolveInfo="copyTypeRecursively" />
-                    <link role="classConcept:3" targetNodeId="11.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1237042864929">
-                      <link role="variableDeclaration:3" targetNodeId="1213877405299" resolveInfo="pct" />
-                    </node>
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1544005601051336284">
+                    <link role="variableDeclaration:3" targetNodeId="1213877405299" resolveInfo="pct" />
                   </node>
                 </node>
               </node>

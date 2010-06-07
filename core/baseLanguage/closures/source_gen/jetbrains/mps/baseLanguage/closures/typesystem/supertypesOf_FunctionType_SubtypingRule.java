@@ -29,20 +29,23 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
     List<SNode> supertypes = null;
     SNode ct = null;
     if ((SLinkOperations.getTarget(ft, "runtimeIface", false) == null)) {
-      String rtSig = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(ft) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(ft);
-      SNode ice = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtSig);
-      if (SNodeOperations.isInstanceOf(ice, "jetbrains.mps.baseLanguage.structure.Interface")) {
-        ct = new supertypesOf_FunctionType_SubtypingRule.QuotationClass_8hodjs_a0a0a2a2a0().createNode(ice, typeCheckingContext);
-      }
-      if ((ct != null)) {
-        if ((FunctionType_Behavior.call_getResultType_1230475757059(ft) != null)) {
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(SNodeOperations.copyNode(FunctionType_Behavior.call_getResultType_1230475757059(ft)));
+      /*
+        String rtSig = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(ft) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(ft);
+        SNode ice = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtSig);
+        if (SNodeOperations.isInstanceOf(ice, "jetbrains.mps.baseLanguage.structure.Interface")) {
+          ct = new supertypesOf_FunctionType_SubtypingRule.QuotationClass_8hodjs_a0a0a2a0c0a().createNode(ice, typeCheckingContext);
         }
-        for (SNode pt : SLinkOperations.getTargets(ft, "parameterType", true)) {
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(SNodeOperations.copyNode(pt));
+        if ((ct != null)) {
+          if ((FunctionType_Behavior.call_getResultType_1230475757059(ft) != null)) {
+            ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(SNodeOperations.copyNode(FunctionType_Behavior.call_getResultType_1230475757059(ft)));
+          }
+          for (SNode pt : SLinkOperations.getTargets(ft, "parameterType", true)) {
+            ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(SNodeOperations.copyNode(pt));
+          }
+          supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), ct);
         }
-        supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), ct);
-      }
+      */
+      supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(ft));
     } else {
       ct = ClosureLiteralUtil.fillParams(new supertypesOf_FunctionType_SubtypingRule.QuotationClass_8hodjs_a0a0a0a2a0().createNode(SLinkOperations.getTarget(ft, "runtimeIface", false), typeCheckingContext), ft);
       supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), ct);
@@ -62,8 +65,8 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
     return true;
   }
 
-  public static class QuotationClass_8hodjs_a0a0a2a2a0 {
-    public QuotationClass_8hodjs_a0a0a2a2a0() {
+  public static class QuotationClass_8hodjs_a0a0a2a0c0a {
+    public QuotationClass_8hodjs_a0a0a2a0c0a() {
     }
 
     public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {

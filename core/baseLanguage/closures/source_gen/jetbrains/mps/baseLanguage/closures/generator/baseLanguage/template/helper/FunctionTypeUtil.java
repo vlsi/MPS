@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.text.Collator;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.baseLanguage.closures.util.Constants;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Map;
@@ -119,6 +120,27 @@ with_meet:
       }
     }
     return tmp;
+  }
+
+  public static SNode unbound(SNode maybeBound) {
+    SNode res = null;
+    List<SNode> q = ListSequence.fromListAndArray(new LinkedList<SNode>(), SNodeOperations.copyNode(maybeBound));
+    while (!(ListSequence.fromList(q).isEmpty())) {
+      SNode n = ListSequence.fromList(q).removeElementAt(0);
+      if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+        n = SNodeOperations.replaceWithAnother(n, SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true));
+      }
+      if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+        n = SNodeOperations.replaceWithAnother(n, SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true));
+      }
+      if ((n != null)) {
+        ListSequence.fromList(q).addSequence(ListSequence.fromList(SNodeOperations.getChildren(n)));
+      }
+      if ((res == null)) {
+        res = n;
+      }
+    }
+    return res;
   }
 
   public static SNode unmeetRecursively(SNode nodeWithMeetDescendants) {

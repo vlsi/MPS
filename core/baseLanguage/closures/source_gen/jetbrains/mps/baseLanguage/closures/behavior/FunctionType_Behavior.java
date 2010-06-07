@@ -261,7 +261,7 @@ with_meet:
     int idx = 0;
     for (SNode p : paramTypes) {
       SNode pct = ClassifierTypeUtil.getTypeCoercedToClassifierType(p);
-      ListSequence.fromList(resList).addElement(ClassifierTypeUtil.copyTypeRecursively(pct));
+      ListSequence.fromList(resList).addElement(pct);
       idx++;
     }
     return resList;
