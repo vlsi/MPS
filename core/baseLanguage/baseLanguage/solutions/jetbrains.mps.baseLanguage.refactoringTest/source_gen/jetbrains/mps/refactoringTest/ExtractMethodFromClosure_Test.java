@@ -34,7 +34,7 @@ public class ExtractMethodFromClosure_Test extends BaseTransformationTest {
       params.setName("foo");
       MethodParameter p0 = ListSequence.fromList(params.getParameters()).getElement(0);
       MethodParameter p1 = ListSequence.fromList(params.getParameters()).getElement(1);
-      if (SNodeOperations.isInstanceOf(p0.getDeclaration(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+      if (SNodeOperations.isInstanceOf(p0.getDeclaration(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
         ListSequence.fromList(params.getParameters()).setElement(0, p1);
         ListSequence.fromList(params.getParameters()).setElement(1, p0);
       }

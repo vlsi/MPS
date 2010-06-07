@@ -22650,8 +22650,8 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="5604183372188209913">
-              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="5604183372188209915">
-                <link role="conceptDeclaration:16" targetNodeId="3.1068431474542:3" resolveInfo="VariableDeclaration" />
+              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1695213683766131298">
+                <link role="conceptDeclaration:16" targetNodeId="3.1068581242863:3" resolveInfo="LocalVariableDeclaration" />
               </node>
             </node>
           </node>
