@@ -25,9 +25,10 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScope;
+import com.intellij.ui.awt.RelativePoint;
+import java.awt.event.MouseEvent;
 import java.awt.Rectangle;
 import java.awt.Point;
-import com.intellij.ui.awt.RelativePoint;
 
 public class GoToInheritedClassifier_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -140,10 +141,15 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
         }
       });
 
-      Rectangle cellBounds = GoToInheritedClassifier_Action.this.editorContext.getSelectedCell().getBounds();
-      Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
-      RelativePoint relPpoint = new RelativePoint(GoToInheritedClassifier_Action.this.editorComponent, point);
-      GoToHelper.showInheritedClassesMenu(nodes, relPpoint, GoToInheritedClassifier_Action.this.project);
+      RelativePoint relativePoint;
+      if (event.getInputEvent() instanceof MouseEvent) {
+        relativePoint = new RelativePoint((MouseEvent) event.getInputEvent());
+      } else {
+        Rectangle cellBounds = GoToInheritedClassifier_Action.this.editorContext.getSelectedCell().getBounds();
+        Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
+        relativePoint = new RelativePoint(GoToInheritedClassifier_Action.this.editorComponent, point);
+      }
+      GoToHelper.showInheritedClassesMenu(nodes, relativePoint, GoToInheritedClassifier_Action.this.project);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToInheritedClassifier", t);
     }
