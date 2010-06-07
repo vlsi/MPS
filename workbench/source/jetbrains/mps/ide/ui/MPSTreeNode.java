@@ -225,7 +225,9 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   final void removeThisAndChildren() {
-    assert myAdded;
+    if (!myAdded) {
+      throw new IllegalStateException("Trying to remove tree node which have not been added");
+    }
     try {
       onRemove();
     } catch (Throwable t) {
@@ -241,7 +243,9 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   final void addThisAndChildren() {
-    assert !myAdded;
+    if (myAdded) {
+      throw new IllegalStateException("Trying to add tree node which have already been added");
+    }
     try {
       onAdd();
     } catch (Throwable t) {
