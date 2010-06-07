@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameter;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
@@ -31,6 +32,12 @@ public class ExtractMethodFromClosure_Test extends BaseTransformationTest {
       this.addNodeById("5161277940733600960");
       ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5161277940733600941"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), SNodeOperations.cast(this.getNodeById("5161277940733600950"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
       params.setName("foo");
+      MethodParameter p0 = ListSequence.fromList(params.getParameters()).getElement(0);
+      MethodParameter p1 = ListSequence.fromList(params.getParameters()).getElement(1);
+      if (SNodeOperations.isInstanceOf(p0.getDeclaration(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+        ListSequence.fromList(params.getParameters()).setElement(0, p1);
+        ListSequence.fromList(params.getParameters()).setElement(1, p0);
+      }
       ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
       ref.doRefactor();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5161277940733600919"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5161277940733600997"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
