@@ -556,14 +556,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   protected void notifyCreation() {
-    assert myOperationContext != null;
-    EditorComponentCreateListener listener = myOperationContext.getProject().getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
-    listener.editorComponentCreated(this);
+    if (myOperationContext == null) {
+      LOG.warning("Trying to notify EditorComponent creation with null operation context");
+    } else {
+      EditorComponentCreateListener listener = myOperationContext.getProject().getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
+      listener.editorComponentCreated(this);
+    }
   }
 
   protected void notifyDisposal() {
     if (myOperationContext == null) {
-      LOG.error("Notify disposal with empty operation context");
+      LOG.warning("Trying to notify disposal with empty operation context");
       return;
     }
     if (myOperationContext.getProject().isDisposed()) {
