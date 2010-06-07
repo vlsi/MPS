@@ -12,9 +12,9 @@ import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -34,11 +34,12 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
     AbstractConceptDeclaration concept = ((ConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node)));
     for (SReference ref : SNodeOperations.getReferences(node)) {
       SNode target = SLinkOperations.getTargetNode(ref);
-      // don't check unresolved and broken references, they already have an error message 
-      if ((target == null)) {
+      LinkDeclaration linkDeclaration = ((LinkDeclaration) SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration(ref)));
+      // don't check unresolved and broken references, they should already have an error message 
+      if ((target == null) || linkDeclaration == null) {
         continue;
       }
-      SearchScopeStatus sss = ModelConstraintsUtil.getSearchScope(SNodeOperations.getParent(node), node, concept, ((LinkDeclaration) SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration(ref))), context);
+      SearchScopeStatus sss = ModelConstraintsUtil.getSearchScope(SNodeOperations.getParent(node), node, concept, linkDeclaration, context);
       if (sss.isError()) {
         {
           BaseIntentionProvider intentionProvider = null;

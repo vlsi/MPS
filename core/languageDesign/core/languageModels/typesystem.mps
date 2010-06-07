@@ -777,20 +777,45 @@
               </node>
             </node>
           </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5481565908031271897">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5481565908031271898">
+              <property name="name:3" value="linkDeclaration" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5481565908031271899">
+                <link role="classifier:3" targetNodeId="6.~LinkDeclaration" resolveInfo="LinkDeclaration" />
+              </node>
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5481565908031271925">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5481565908031271920">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5481565908031271919">
+                    <link role="variableDeclaration:3" targetNodeId="4942048232752368548" resolveInfo="ref" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation:16" id="5481565908031271924" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation:16" id="5481565908031271929" />
+              </node>
+            </node>
+          </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="3342685437083418884">
             <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="3342685437083418885">
-              <property name="text:3" value="don't check unresolved and broken references, they already have an error message" />
+              <property name="text:3" value="don't check unresolved and broken references, they should already have an error message" />
             </node>
           </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3342685437083418817">
             <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3342685437083418818">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ContinueStatement:3" id="3342685437083418827" />
             </node>
-            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3342685437083418822">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3342685437083418821">
-                <link role="variableDeclaration:3" targetNodeId="3342685437083418796" resolveInfo="target" />
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="5481565908031271931">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="5481565908031271937">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="5481565908031271940" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5481565908031271934">
+                  <link role="variableDeclaration:3" targetNodeId="5481565908031271898" resolveInfo="refLinkDeclaration" />
+                </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation:16" id="3342685437083418826" />
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3342685437083418822">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3342685437083418821">
+                  <link role="variableDeclaration:3" targetNodeId="3342685437083418796" resolveInfo="target" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation:16" id="3342685437083418826" />
+              </node>
             </node>
           </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4942048232752368573">
@@ -814,14 +839,8 @@
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="583814670653302768">
                   <link role="variableDeclaration:3" targetNodeId="5143881521904623578" resolveInfo="concept" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="583814670653302773">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="583814670653302769">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="583814670653302770">
-                      <link role="variableDeclaration:3" targetNodeId="4942048232752368548" resolveInfo="ref" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation:16" id="583814670653302771" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation:16" id="583814670653302777" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5481565908031272906">
+                  <link role="variableDeclaration:3" targetNodeId="5481565908031271898" resolveInfo="refLinkDeclaration" />
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="583814670653302772">
                   <link role="variableDeclaration:3" targetNodeId="4942048232752368525" resolveInfo="context" />
