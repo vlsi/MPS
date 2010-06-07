@@ -126,8 +126,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
         block.setRollbackButton(new RollbackButton(block.getChanges(), getChanges()));
       }
     };
-    result.editNode(node, context);
-    result.setEditable(false);
+    result.setReadOnly(true);
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(new JLabel(revisionName), BorderLayout.PAGE_START);
     panel.add(result.getExternalComponent(), BorderLayout.CENTER);

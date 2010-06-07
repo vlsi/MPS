@@ -100,7 +100,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
       }
     };
     result.editNode(node, context);
-    result.setEditable(false);
+    result.setReadOnly(true);
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(new JLabel(revisionName), BorderLayout.NORTH);
     panel.add(result.getExternalComponent(), BorderLayout.CENTER);

@@ -40,7 +40,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
   public DiffEditorComponent(IOperationContext context, SNode node) {
     super(context);
     myInspector = new InspectorEditorComponent();
-    myInspector.setEditable(false);
+    myInspector.setReadOnly(true);
     editNode(node, context);
 
   }
@@ -65,7 +65,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
   public EditorCell createRootCell(List<SModelEvent> events) {
     if (getEditedNode() == null || getEditedNode().isDeleted()) {
       EditorContext editorContext = getEditorContext();
-      return new EditorCell_Constant(editorContext, getEditedNode(), "<no editor info>");
+      return new EditorCell_Constant(editorContext, getEditedNode(), "<no node>");
     }
     return getEditorContext().createRootCell(getEditedNode(), events);
   }
@@ -244,7 +244,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
     removeAllChangesFrom(myInspector);
   }
 
-  public SNode getFirtsVisibleNode() {
+  public SNode getFirstVisibleNode() {
     return getFirtsVisibleNode(getEditedNode());
   }
 
@@ -273,7 +273,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-        SNode visibleNode = getFirtsVisibleNode();
+        SNode visibleNode = getFirstVisibleNode();
         if (visibleNode != null) {
           SNodeId id = visibleNode.getSNodeId();
           int newRelativePos = getViewport().getViewPosition().y - findNodeCell(visibleNode).getY();
