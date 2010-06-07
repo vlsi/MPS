@@ -92,7 +92,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
           {
             List<SNode> nodes = (List<SNode>) parameter_15;
             for (SNode child : nodes) {
-              quotedNode_2.addChild("parameterType", HUtil.copyIfNecessary(child));
+              quotedNode_2.addChild("parameterType", HUtil.copyIfNecessary(child, typeCheckingContext));
             }
           }
           {
@@ -116,7 +116,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
           {
             List<SNode> nodes = (List<SNode>) parameter_17;
             for (SNode child : nodes) {
-              quotedNode_3.addChild("parameterType", HUtil.copyIfNecessary(child));
+              quotedNode_3.addChild("parameterType", HUtil.copyIfNecessary(child, typeCheckingContext));
             }
           }
           {

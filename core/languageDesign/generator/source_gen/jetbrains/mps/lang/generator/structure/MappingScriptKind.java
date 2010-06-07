@@ -4,7 +4,7 @@ package jetbrains.mps.lang.generator.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum MappingScriptKind {
   pre_process_input_model("pre-process input model", "pre_processing"),
