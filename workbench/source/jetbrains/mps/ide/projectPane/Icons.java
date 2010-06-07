@@ -142,7 +142,6 @@ public class Icons {
   public static final Icon BOOKMARK_UNNUMBERED = new ImageIcon(Icons.class.getResource("other/check.png"));
 
   public static final Icon REVERT = new ImageIcon(Icons.class.getResource("vc/revert.png"));
-  public static final Icon ROLLBACK = new ImageIcon(Icons.class.getResource("vc/rollback.png"));
   public static final Icon APPLY = new ImageIcon(Icons.class.getResource("vc/apply.png"));
   public static final Icon EXCLUDE = new ImageIcon(Icons.class.getResource("vc/exclude.png"));
 }

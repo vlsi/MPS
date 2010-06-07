@@ -50,7 +50,7 @@ public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
     myChanges.add(message);
   }
 
-  public void setRollbackButton(JComponent rollbackIcon) {
+  public void setRollbackIcon(JComponent rollbackIcon) {
     myRollbackIcon = rollbackIcon;
   }
 
