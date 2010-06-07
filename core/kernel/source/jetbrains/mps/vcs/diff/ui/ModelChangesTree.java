@@ -15,39 +15,38 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.TreeTextUtil;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.vcs.diff.changes.*;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.MPSProject;
-
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.misc.hash.HashMap;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.vcs.diff.changes.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
-
-import javax.swing.KeyStroke;
-import javax.swing.AbstractAction;
-import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreeNode;
-import java.awt.event.KeyEvent;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.util.*;
-
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.vcs.FileStatus;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import javax.swing.AbstractAction;
+import javax.swing.KeyStroke;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.util.*;
 
 class ModelChangesTree extends MPSTree {
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
@@ -294,9 +293,14 @@ class ModelChangesTree extends MPSTree {
       }
 
       for (SNodeId root : rootNodes) {
-        SNode parent = myOldModel.getNodeById(root).getParent();
+        SNode rootInOldModel = myOldModel.getNodeById(root);
+        assert rootInOldModel != null;
+        SNode parent = rootInOldModel.getParent();
         if (parent == null) {
-          add(idToTreeNode.get(root));
+          SNodeTreeNode treeNode = idToTreeNode.get(root);
+          treeNode.setTree(ModelChangesTree.this);
+          treeNode.init();
+          add(treeNode);
         } else {
           final SNodeId deletedNodeParentId = parent.getSNodeId();
           MPSTreeNode parentTreeNode = findDescendantWith(new Condition<Object>() {
@@ -306,7 +310,10 @@ class ModelChangesTree extends MPSTree {
             }
           });
           if (parentTreeNode != null) {
-            parentTreeNode.add(idToTreeNode.get(root));
+            SNodeTreeNode treeNode = idToTreeNode.get(root);
+            treeNode.setTree(ModelChangesTree.this);
+            treeNode.init();
+            parentTreeNode.add(treeNode);
           }
         }
       }
