@@ -15,14 +15,13 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScope;
 import com.intellij.ui.awt.RelativePoint;
@@ -119,13 +118,14 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      final Wrappers._T<String> finderClass = new Wrappers._T<String>();
+      final List<String> finderClasses = ListSequence.fromList(new ArrayList<String>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           if (SNodeOperations.isInstanceOf(GoToInheritedClassifier_Action.this.classifierNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-            finderClass.value = "jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder";
+            ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
           } else {
-            finderClass.value = "jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder";
+            ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
+            ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder");
           }
         }
       });
@@ -135,7 +135,9 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
         public void run(@NotNull final ProgressIndicator p) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              ListSequence.fromList(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finderClass.value, GoToInheritedClassifier_Action.this.classifierNode, GlobalScope.getInstance(), p)));
+              for (String finderClass : ListSequence.fromList(finderClasses)) {
+                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finderClass, GoToInheritedClassifier_Action.this.classifierNode, GlobalScope.getInstance(), p)));
+              }
             }
           });
         }

@@ -23,6 +23,7 @@ import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.baseLanguage.icons.Icons;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -52,7 +53,7 @@ public class GoToHelper {
 
   public static void showInheritedClassesMenu(List<SNode> nodes, RelativePoint point, Project project) {
     String title = "Choose inherited class to navigate to";
-    ClassCellRenderer renderer = new ClassCellRenderer();
+    ClassifierCellRenderer renderer = new ClassifierCellRenderer();
     showMenu(point, project, title, nodes, renderer);
   }
 
@@ -126,12 +127,12 @@ public class GoToHelper {
     }
   }
 
-  public static class ClassCellRenderer extends NodeListCellRenderer<NodeNavigationItem> {
+  public static class ClassifierCellRenderer extends NodeListCellRenderer<NodeNavigationItem> {
     public String getElementText(final NodeNavigationItem element) {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
-          ClassConcept classAdapter = (ClassConcept) element.getNode().getAdapter();
-          return classAdapter.getName();
+          Classifier classifierAdapter = (Classifier) element.getNode().getAdapter();
+          return classifierAdapter.getName();
         }
       });
     }
@@ -139,8 +140,8 @@ public class GoToHelper {
     protected String getContainerText(final NodeNavigationItem element, String name) {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
-          ClassConcept classAdapter = (ClassConcept) element.getNode().getAdapter();
-          return classAdapter.getModel().getLongName();
+          Classifier classifierAdapter = (Classifier) element.getNode().getAdapter();
+          return classifierAdapter.getModel().getLongName();
         }
       });
     }
