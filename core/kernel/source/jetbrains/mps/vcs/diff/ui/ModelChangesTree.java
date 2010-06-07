@@ -437,15 +437,48 @@ class ModelChangesTree extends MPSTree {
       SNodeId id = getSNode().getSNodeId();
       ActionGroup groupForChanges = getActionGroupForChanges(myChangesMap.get(id));
       final SNode node = getSNode();
-      if (node != null && node.isRoot()) {
+      if (node != null) {
         BaseAction showRootDiffDialog = new BaseAction("Show Difference In MPS Editor") {
+          @NotNull
+          @Override
+          protected String getKeyStroke() {
+            return "ctrl D";
+          }
+
           @Override
           protected void doExecute(AnActionEvent e) {
             doubleClickOnNode(node);
           }
         };
         showRootDiffDialog.setExecuteOutsideCommand(true);
-        DefaultActionGroup group = ActionUtils.groupFromActions(showRootDiffDialog);
+
+        BaseAction showNodeInEditor = new BaseAction("Open in Editor") {
+          @Override
+          protected void doUpdate(final AnActionEvent e) {
+            ModelAccess.instance().runReadAction(new Runnable() {
+              @Override
+              public void run() {
+                boolean enabled = !node.getModel().isNotEditable();
+                e.getPresentation().setEnabled(enabled);
+                e.getPresentation().setVisible(enabled);
+              }
+            });
+          }
+
+          @NotNull
+          @Override
+          protected String getKeyStroke() {
+            return "F4";
+          }
+
+          @Override
+          protected void doExecute(AnActionEvent e) {
+            getOperationContext().getComponent(MPSEditorOpener.class).editNode(node, getOperationContext());
+          }
+        };
+        showNodeInEditor.setExecuteOutsideCommand(true);
+
+        DefaultActionGroup group = ActionUtils.groupFromActions(showRootDiffDialog, showNodeInEditor);
         if (groupForChanges != null) {
           group.addSeparator();
           group.addAll(groupForChanges);

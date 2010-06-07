@@ -16,6 +16,7 @@
 package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.FocusWatcher;
 import com.intellij.ui.FocusTrackback;
 import jetbrains.mps.ide.dialogs.BaseDialog;
@@ -46,24 +47,21 @@ public class ModelDifferenceDialog extends BaseDialog {
         myDifferenceComponent = new ModelDifferenceComponent(context) {
           @Override
           protected void doubleClickOnNode(final SNode node) {
-            final boolean[] isRoot = new boolean[1];
-            ModelAccess.instance().runReadAction(new Runnable() {
-
-              public void run() {
-                isRoot[0] = node.isRoot();
+            final SNode rootNode = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+              @Override
+              public SNode compute() {
+                return node.getContainingRoot();
               }
             });
-            if (isRoot[0]) {
-              final RootDifferenceDialog dialog = new RootDifferenceDialog(context.getMainFrame(), newModel, oldModel, false, modal);
-              ModelAccess.instance().runReadAction(new Runnable() {
-                public void run() {
-                  dialog.init(context, node, contentTitles[1], contentTitles[0]);
-                }
-              });
+            final RootDifferenceDialog dialog = new RootDifferenceDialog(context.getMainFrame(), newModel, oldModel, false, modal);
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                dialog.init(context, rootNode, contentTitles[1], contentTitles[0]);
+              }
+            });
 
-              dialog.showDialog();
-              updateDiff(oldModel, newModel);
-            }
+            dialog.showDialog();
+            updateDiff(oldModel, newModel);
           }
         };
         myDifferenceComponent.showDifference(oldModel, newModel);
