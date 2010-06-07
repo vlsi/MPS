@@ -123,7 +123,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     final DiffEditorComponent result = new DiffEditorComponent(context, node) {
       @Override
       public void configureBlock(ChangesBlock block) {
-        block.setRollbackIcon(new RevertButton(block.getChanges(), getChanges()));
+        block.setRollbackButton(new RollbackButton(block.getChanges(), getChanges()));
       }
     };
     result.editNode(node, context);
@@ -199,12 +199,12 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     }
   }
 
-  class RevertButton extends JLabel {
+  class RollbackButton extends JLabel {
     private List<ChangeEditorMessage> myChangeMessages;
     private List<Change> myChanges;
 
-    public RevertButton(List<ChangeEditorMessage> changeMessages, List<Change> changes) {
-      super(Icons.REVERT);
+    public RollbackButton(List<ChangeEditorMessage> changeMessages, List<Change> changes) {
+      super(Icons.ROLLBACK);
       myChangeMessages = changeMessages;
       myChanges = changes;
 
@@ -221,6 +221,8 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
           revert();
         }
       });
+
+      setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }
 
     public int getWidth() {

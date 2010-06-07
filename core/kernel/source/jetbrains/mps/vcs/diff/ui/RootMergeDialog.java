@@ -96,7 +96,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
         panel.setSize(20, 10);
         panel.add(new ApplyMenu(block.getChanges()));
         panel.add(new ExcludeMenu(block.getChanges()));
-        block.setRollbackIcon(panel);
+        block.setRollbackButton(panel);
       }
     };
     result.editNode(node, context);
