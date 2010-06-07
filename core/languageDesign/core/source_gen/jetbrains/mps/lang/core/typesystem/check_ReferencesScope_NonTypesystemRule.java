@@ -11,10 +11,10 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -33,8 +33,12 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
     }
     AbstractConceptDeclaration concept = ((ConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node)));
     for (SReference ref : SNodeOperations.getReferences(node)) {
+      SNode target = SLinkOperations.getTargetNode(ref);
+      // don't check unresolved and broken references, they already have an error message 
+      if ((target == null)) {
+        continue;
+      }
       SearchScopeStatus sss = ModelConstraintsUtil.getSearchScope(SNodeOperations.getParent(node), node, concept, ((LinkDeclaration) SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration(ref))), context);
-      SNode target = ref.getTargetNode();
       if (sss.isError()) {
         {
           BaseIntentionProvider intentionProvider = null;
@@ -43,10 +47,7 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, sss.getMessage(), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4942048232752368615", intentionProvider, errorTarget);
         }
       } else if (!(sss.isDefault() || sss.getSearchScope().isInScope(target))) {
-        String name = (target == null ?
-          "" :
-          target.getName()
-        );
+        String name = target.getName();
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
