@@ -12,7 +12,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 
 public class OverridingMethodEditorMessage extends AbstractOverrideEditorMessage {
-  private static EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(1);
+  private static final EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(1);
   private static String myOverridingIconPath = MacrosUtil.expandPath("${language_descriptor}/icons/gutter/overridingMethod.png", "jetbrains.mps.baseLanguage");
   private static String myImplementingIconPath = MacrosUtil.expandPath("${language_descriptor}/icons/gutter/implementingMethod.png", "jetbrains.mps.baseLanguage");
 

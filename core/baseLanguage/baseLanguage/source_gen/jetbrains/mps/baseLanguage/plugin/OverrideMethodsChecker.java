@@ -21,12 +21,12 @@ import java.util.HashSet;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Iterator;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -59,6 +59,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     }
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
     for (SNode containedClassifier : Sequence.fromIterable(classifiers)) {
+      // each classifier here is instance of ClassConcept or Interface 
       collectOverridenMethods(containedClassifier, result);
       collectOverridingMethods(containedClassifier, result);
     }
@@ -98,17 +99,6 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
   }
 
   private void collectOverridenMethods(SNode container, Set<EditorMessage> messages) {
-    Map<String, Set<SNode>> nameToMethodsMap = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
-    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(container, "method", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return OverridingMethodsFinder.canBeOverriden(it);
-      }
-    })) {
-      SetSequence.fromSet(OverridingMethodsFinder.safeGet(nameToMethodsMap, SPropertyOperations.getString(method, "name"))).addElement(method);
-    }
-    if (MapSequence.fromMap(nameToMethodsMap).isEmpty()) {
-      return;
-    }
     List<SNode> rawDerivedClassifiers = ClassifierSuccessorsFinder.getDerivedClassifiers(container, GlobalScope.getInstance());
     Iterable<SNode> derivedClassifiers = ListSequence.fromList(rawDerivedClassifiers).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
@@ -120,6 +110,36 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
       }
     });
     if (Sequence.fromIterable(derivedClassifiers).isEmpty()) {
+      return;
+    }
+    boolean isInterface = SNodeOperations.isInstanceOf(container, "jetbrains.mps.baseLanguage.structure.Interface");
+    StringBuffer superClassifierTooltip = new StringBuffer();
+    if (Sequence.fromIterable(derivedClassifiers).count() > MAX_MESSAGE_NUMBER) {
+      superClassifierTooltip.append((isInterface ?
+        "Has implementations" :
+        "Has subclasses"
+      ));
+    } else {
+      superClassifierTooltip.append((isInterface ?
+        "Is implemented by" :
+        "Is subclassed by"
+      ));
+      for (SNode subClassifier : Sequence.fromIterable(derivedClassifiers)) {
+        superClassifierTooltip.append(TOOLTIP_INDENT);
+        superClassifierTooltip.append(getPresentation(subClassifier));
+      }
+    }
+    SetSequence.fromSet(messages).addElement(new SubclassedClassifierEditorMessage(container, this, superClassifierTooltip.toString(), isInterface));
+
+    Map<String, Set<SNode>> nameToMethodsMap = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
+    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(container, "method", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return OverridingMethodsFinder.canBeOverriden(it);
+      }
+    })) {
+      SetSequence.fromSet(OverridingMethodsFinder.safeGet(nameToMethodsMap, SPropertyOperations.getString(method, "name"))).addElement(method);
+    }
+    if (MapSequence.fromMap(nameToMethodsMap).isEmpty()) {
       return;
     }
     Map<SNode, Set<Tuples._2<SNode, SNode>>> overridenToOverridingMethodsMap = createOverridenToOverridingMethodsMap(nameToMethodsMap, derivedClassifiers);
