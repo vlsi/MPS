@@ -11,7 +11,6 @@
       <sourceFolder url="file://$MODULE_DIR$/languages/nanoj/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/mpslite.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/langAlpha/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/languages/langBeta/classes_gen" />
     </content>
     <orderEntry type="inheritedJdk" />

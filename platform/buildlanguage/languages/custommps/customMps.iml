@@ -12,7 +12,6 @@
     <orderEntry type="module" module-name="packaging" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="distrib" />
-    <orderEntry type="module" module-name="custommpsInternal" />
     <orderEntry type="module" module-name="buildLanguage" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="runConfigurations" />
