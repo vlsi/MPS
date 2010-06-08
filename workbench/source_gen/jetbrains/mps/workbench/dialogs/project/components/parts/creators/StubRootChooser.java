@@ -9,6 +9,7 @@ import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.vfs.IFile;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.LanguageID;
 
 public class StubRootChooser implements Computable<List<StubModelsEntry>> {
   private final IBindedDialog myOwner;
@@ -25,6 +26,7 @@ public class StubRootChooser implements Computable<List<StubModelsEntry>> {
     for (IFile file : files) {
       StubModelsEntry sme = new StubModelsEntry();
       sme.setPath(file.getAbsolutePath());
+      sme.setManager(LanguageID.JAVA_MANAGER);
       result.add(sme);
     }
     return result;
