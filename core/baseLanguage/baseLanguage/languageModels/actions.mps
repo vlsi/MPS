@@ -4123,18 +4123,30 @@
       <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction:23" id="1177506104970">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1177506104971">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1177506104972">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1177506104973">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1177506104974">
-                <property name="value:3" value="0" />
-              </node>
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203977956855">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203977967748">
-                  <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode:23" id="1177506104977" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="1177506104978">
-                    <link role="link:16" targetNodeId="1.1109279881614:3" />
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="7777631808229660201">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="7777631808229660204">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7777631808229660207">
+                  <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode:23" id="7777631808229660206" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="7777631808229660211">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="7777631808229660213">
+                      <link role="conceptDeclaration:16" targetNodeId="1.1188206331916:3" resolveInfo="Annotation" />
+                    </node>
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115934" />
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1177506104973">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203977956855">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203977967748">
+                    <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode:23" id="1177506104977" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="1177506104978">
+                      <link role="link:16" targetNodeId="1.1109279881614:3" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115934" />
+                </node>
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1177506104974">
+                  <property name="value:3" value="0" />
+                </node>
               </node>
             </node>
           </node>

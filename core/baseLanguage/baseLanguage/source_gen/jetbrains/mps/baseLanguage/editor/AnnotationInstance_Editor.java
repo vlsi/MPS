@@ -52,6 +52,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.PARAMETERS_INFORMATION, new AnnotationInstanceParameterInformationQuery());
     }
     editorCell.addEditorCell(this.createConstant_d5p1uc_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_d5p1uc_b2a(editorContext, node));
