@@ -23,7 +23,6 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 
 public class ConstraintsChecker extends SpecificChecker {
@@ -44,12 +43,16 @@ public class ConstraintsChecker extends SpecificChecker {
         if (LinkDeclaration_Behavior.call_isAtLeastOneCardinality_3386205146660812199(link)) {
           if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
             if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
-              addIssue(results, node, "Cardinality constraint violation in role \"" + SPropertyOperations.getString(link, "role") + "\"", ModelChecker.SEVERITY_ERROR, "cardinality", null);
+              addIssue(results, node, "No children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", ModelChecker.SEVERITY_ERROR, "cardinality", null);
             }
           } else {
             if ((SLinkOperations.getTargetNode(SNodeOperations.getReference(node, link)) == null)) {
-              addIssue(results, node, "Cardinality constraint violation in role \"" + SPropertyOperations.getString(link, "role") + "\"", ModelChecker.SEVERITY_ERROR, "cardinality", null);
+              addIssue(results, node, "No reference in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is 1)", ModelChecker.SEVERITY_ERROR, "cardinality", null);
             }
+          }
+        } else if (LinkDeclaration_Behavior.call_isSingular_1213877254557(link)) {
+          if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() > 1) {
+            addIssue(results, node, "Too many children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", ModelChecker.SEVERITY_WARNING, "cardinality", null);
           }
         }
       }
@@ -96,7 +99,7 @@ public class ConstraintsChecker extends SpecificChecker {
       }
 
       for (final String name : SetSequence.fromSet(node.getPropertyNames())) {
-        if (node.isRoot() && SModelTreeNode.PACK.equals(name)) {
+        if (node.isRoot() && SNode.PACK.equals(name)) {
           continue;
         }
         if (!(isDeclaredProperty(concept, name))) {
