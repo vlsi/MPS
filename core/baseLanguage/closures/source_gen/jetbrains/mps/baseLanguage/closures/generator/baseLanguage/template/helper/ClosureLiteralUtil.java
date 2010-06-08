@@ -143,7 +143,7 @@ public class ClosureLiteralUtil {
         if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
           if (idx < ListSequence.fromList(varDecls).count()) {
             n = SNodeOperations.replaceWithAnother(n, (map != null ?
-              MapSequence.fromMap(map).get(SPropertyOperations.getString(ListSequence.fromList(varDecls).getElement(idx), "name")) :
+              SNodeOperations.copyNode(MapSequence.fromMap(map).get(SPropertyOperations.getString(ListSequence.fromList(varDecls).getElement(idx), "name"))) :
               null
             ));
           }
