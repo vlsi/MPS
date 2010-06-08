@@ -17,6 +17,9 @@ import java.util.Comparator;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Result;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 public class ClassifierAdapters_Test extends TestCase {
   public void test_interfaceAsFunctionType() throws Exception {
@@ -366,6 +369,53 @@ __switch__:
   public void test_mps7619() throws Exception {
     IFilter flt = this.filter();
     Assert.assertFalse(flt.filter(null));
+  }
+
+  public void test_translate() throws Exception {
+    Iterable<_FunctionTypes._return_P0_E0<? extends String>> seq = Sequence.fromClosure(new ISequenceClosure<_FunctionTypes._return_P0_E0<? extends String>>() {
+      public Iterable<_FunctionTypes._return_P0_E0<? extends String>> iterable() {
+        return new Iterable<_FunctionTypes._return_P0_E0<? extends String>>() {
+          public Iterator<_FunctionTypes._return_P0_E0<? extends String>> iterator() {
+            return new YieldingIterator<_FunctionTypes._return_P0_E0<? extends String>>() {
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this.__CP__ = 1;
+                      this.yield(new _FunctionTypes._return_P0_E0<String>() {
+                        public String invoke() {
+                          return "ABC";
+                        }
+                      });
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while (true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    });
+    Iterable<String> res = Sequence.fromIterable(seq).translate(new ITranslator2<_FunctionTypes._return_P0_E0<? extends String>, String>() {
+      public Iterable<String> translate(_FunctionTypes._return_P0_E0<? extends String> s) {
+        return Sequence.<String>singleton(s.invoke());
+      }
+    });
+    Assert.assertSame(1, Sequence.fromIterable(res).count());
+    Assert.assertEquals("ABC", Sequence.fromIterable(res).first());
   }
 
   public void acceptWorker(Worker one, Worker two) {
