@@ -123,7 +123,9 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     final DiffEditorComponent result = new DiffEditorComponent(context, node) {
       @Override
       public void configureBlock(ChangesBlock block) {
-        block.setRollbackButton(new RollbackButton(block.getChanges(), getChanges()));
+        if (!myNewModel.isNotEditable()) {
+          block.setRollbackButton(new RollbackButton(block.getChanges(), getChanges()));
+        }
       }
     };
     result.setReadOnly(true);
