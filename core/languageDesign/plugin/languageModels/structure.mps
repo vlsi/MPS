@@ -870,6 +870,7 @@
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="8538762981200303653">
       <property name="name:0" value="outsideCommand" />
       <link role="dataType:0" targetNodeId="6.1082983657063:0" resolveInfo="boolean" />
+      <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="1571396962404074800" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1203851903990">
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473854053:0" resolveInfo="abstract" />

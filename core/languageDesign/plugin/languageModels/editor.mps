@@ -781,16 +781,6 @@
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="3618415754251518842">
           <link role="editorComponent:32" targetNodeId="3618415754251518818" resolveInfo="AbstractEditorTabShortcut" />
         </node>
-        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8538762981200305013">
-          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8538762981200305014" />
-          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8538762981200305015">
-            <property name="text:32" value="execute outside command:" />
-          </node>
-          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8538762981200305016">
-            <property name="allowEmptyText:32" value="true" />
-            <link role="relationDeclaration:32" targetNodeId="1.8538762981200303653:23" resolveInfo="outsideCommand" />
-          </node>
-        </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="929556153838355356" />
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="929556153838355357">
           <property name="noTargetText:32" value="&lt;no init block&gt;" />
@@ -885,16 +875,6 @@
         </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="3618415754251518821">
           <link role="editorComponent:32" targetNodeId="3618415754251518818" resolveInfo="AbstractEditorTabShortcut" />
-        </node>
-        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8538762981200305008">
-          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8538762981200305009" />
-          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8538762981200305006">
-            <property name="text:32" value="execute outside command:" />
-          </node>
-          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8538762981200305011">
-            <property name="allowEmptyText:32" value="true" />
-            <link role="relationDeclaration:32" targetNodeId="1.8538762981200303653:23" resolveInfo="outsideCommand" />
-          </node>
         </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1218984978352" />
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="929556153838355354">

@@ -114,10 +114,6 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
 
   protected abstract Pair<SNode, IOperationContext> createLoadableNode(boolean ask, SNode concept);
 
-  public boolean isOutsideCommandExecution() {
-    return false;
-  }
-
   public List<SNode> getLoadableNodes() {
     List<SNode> result = new ArrayList<SNode>();
     for (SNodePointer sNodePointer : myLoadableNodes) {
@@ -322,11 +318,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
       }
     };
 
-    if (isOutsideCommandExecution()) {
-      runnable.run();
-    } else {
-      ModelAccess.instance().runWriteActionInCommand(runnable);
-    }
+    ModelAccess.instance().runWriteActionInCommand(runnable);
   }
 
   private void createAnyone(final RelativePoint relativePoint) {
