@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.editor.runtime.ParametersInformation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
@@ -17,17 +17,23 @@ import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.editor.runtime.StyledTextPrinter;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class BaseMethodParameterInformationQuery extends ParametersInformation<SNode> {
   public BaseMethodParameterInformationQuery() {
   }
 
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
-    SNode method = SLinkOperations.getTarget(node, "baseMethodDeclaration", false);
+    SNode selectedActualArgument = this.getSelectedActualArgument(editorContext);
+    SNode methodCall = (selectedActualArgument != null ?
+      SNodeOperations.cast(SNodeOperations.getParent(selectedActualArgument), "jetbrains.mps.baseLanguage.structure.IMethodCall") :
+      node
+    );
+    SNode method = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
     SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.IMemberContainer");
     List<SNode> members;
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      members = Classifier_Behavior.call_getVisibleMembers_1213877306257(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), node, IClassifiersSearchScope.ANYTHING);
+    if (SNodeOperations.isInstanceOf(methodCall, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      members = Classifier_Behavior.call_getVisibleMembers_1213877306257(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), methodCall, IClassifiersSearchScope.ANYTHING);
     } else {
       members = IMemberContainer_Behavior.call_getMembers_1213877531970(classifier);
     }
@@ -41,11 +47,6 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation<S
   }
 
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
-    SNode argument = editorContext.getSelectedNode();
-    while (argument != null && !(SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.Expression") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).contains(SNodeOperations.cast(argument, "jetbrains.mps.baseLanguage.structure.Expression")))) {
-      argument = SNodeOperations.getParent(argument);
-    }
-
     SNode methodDeclaration = parameterObject;
     if (!(SNodeOperations.isInstanceOf(methodDeclaration, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
       if (SLinkOperations.getTarget(methodDeclaration, "returnType", true) != null) {
@@ -72,7 +73,12 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation<S
         styledText.append(">");
       }
     }
-    int argumentIndex = SNodeOperations.getIndexInParent(argument);
+
+    SNode selectedActualArgument = this.getSelectedActualArgument(editorContext);
+    int argumentIndex = (selectedActualArgument != null ?
+      SNodeOperations.getIndexInParent(selectedActualArgument) :
+      -1
+    );
     styledText.append("(");
     for (SNode param : SLinkOperations.getTargets(methodDeclaration, "parameter", true)) {
       if (SNodeOperations.getIndexInParent(param) > 0) {
@@ -96,5 +102,14 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation<S
 
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
     return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == parameterObject;
+  }
+
+  private SNode getSelectedActualArgument(EditorContext editorContext) {
+    SNode selectedNode = editorContext.getSelectedNode();
+    return ListSequence.fromList(SNodeOperations.getAncestors(selectedNode, "jetbrains.mps.baseLanguage.structure.Expression", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), "jetbrains.mps.baseLanguage.structure.IMethodCall") && SNodeOperations.getContainingLinkDeclaration(it) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "actualArgument");
+      }
+    });
   }
 }
