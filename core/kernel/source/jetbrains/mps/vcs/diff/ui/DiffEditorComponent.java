@@ -245,10 +245,10 @@ public abstract class DiffEditorComponent extends EditorComponent {
   }
 
   public SNode getFirstVisibleNode() {
-    return getFirtsVisibleNode(getEditedNode());
+    return getFirstVisibleNode(getEditedNode());
   }
 
-  private SNode getFirtsVisibleNode(SNode node) {
+  private SNode getFirstVisibleNode(SNode node) {
     EditorCell cell = findNodeCell(node);
     if (cell == null) {
       return null;
@@ -256,14 +256,19 @@ public abstract class DiffEditorComponent extends EditorComponent {
     if (cell.getY() > getViewport().getViewPosition().y) {
       return node;
     }
+    SNode result = null;
+    int resultY = Integer.MAX_VALUE;
     for (SNode child : node.getChildrenArray()) {
-      SNode result = getFirtsVisibleNode(child);
-      if (result != null) {
-        return result;
+      SNode visibleForChild = getFirstVisibleNode(child);
+      if (visibleForChild != null) {
+        int thisY = findNodeCell(visibleForChild).getY();
+        if (thisY < resultY) {
+          resultY = thisY;
+          result = visibleForChild;
+        }
       }
-
     }
-    return null;
+    return result;
   }
 
   public void synchronizeViewWith(final DiffEditorComponent otherComponent) {
@@ -271,8 +276,8 @@ public abstract class DiffEditorComponent extends EditorComponent {
       return;
     }
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
+        // Finding node in current editor which is fully visible
         SNode visibleNode = getFirstVisibleNode();
         if (visibleNode != null) {
           SNodeId id = visibleNode.getSNodeId();
