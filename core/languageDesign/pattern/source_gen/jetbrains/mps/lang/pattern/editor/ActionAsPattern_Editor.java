@@ -30,7 +30,7 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x7b2gi_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$Action$");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$");
     editorCell.setCellId("Constant_x7b2gi_a0");
     {
       Style style = editorCell.getStyle();

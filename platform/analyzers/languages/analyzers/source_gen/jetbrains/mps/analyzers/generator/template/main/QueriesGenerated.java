@@ -4,18 +4,24 @@ package jetbrains.mps.analyzers.generator.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.analyzers.behavior.Analyzer_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class QueriesGenerated {
+  public static Object propertyMacro_GetPropertyValue_7685333756920149243(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getOriginalCopiedInputNode(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.analyzers.structure.PatternCondition"), "pattern", true)), "jetbrains.mps.lang.pattern.structure.PatternExpression"), "patternNode", true).getConceptFqName();
+  }
+
   public static Object propertyMacro_GetPropertyValue_9177062368042363996(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name") + "Analyzer";
   }
@@ -44,7 +50,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object referenceMacro_GetReferent_2156297836851612522(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_752944717341742040(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ruleConstructor");
   }
 
@@ -100,7 +106,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "direction", true);
   }
 
-  public static SNode sourceNodeQuery_430844094082164523(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_7685333756920161578(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(_context.getNode(), "latticeElementType", true));
+  }
+
+  public static SNode sourceNodeQuery_7685333756920161551(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(_context.getNode(), "latticeElementType", true));
   }
 
@@ -120,8 +130,16 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
-  public static Iterable sourceNodesQuery_2156297836851612536(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Analyzer_Behavior.call_getRules_2156297836851612484(_context.getNode());
+  public static Iterable sourceNodesQuery_752944717341742059(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "ruleReference", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "rule", false) != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "rule", false);
+      }
+    });
   }
 
   public static Iterable sourceNodesQuery_8656002014371078217(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

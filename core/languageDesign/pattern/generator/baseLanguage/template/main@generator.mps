@@ -5312,7 +5312,7 @@
             </node>
           </node>
           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1767704432736121436">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="1767704432736121437" />
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="7685333756920075766" />
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="1767704432736121438">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1767704432736121444">
                 <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1767704432736121445">

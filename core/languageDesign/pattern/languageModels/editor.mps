@@ -1135,7 +1135,7 @@
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4413230749907733340">
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="4413230749907733342" />
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4217760266503545604">
-        <property name="text:32" value="$Action$" />
+        <property name="text:32" value="$" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4217760266503657577">
           <property name="flag:32" value="false" />
         </node>

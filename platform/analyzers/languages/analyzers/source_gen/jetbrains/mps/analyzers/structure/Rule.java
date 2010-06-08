@@ -15,7 +15,6 @@ public class Rule extends BaseConcept implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String ANALYZER = "analyzer";
   public static final String CONDITION = "condition";
 
   public Rule(SNode node) {
@@ -52,14 +51,6 @@ public class Rule extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(Rule.VIRTUAL_PACKAGE, value);
-  }
-
-  public Analyzer getAnalyzer() {
-    return (Analyzer) this.getReferent(Analyzer.class, Rule.ANALYZER);
-  }
-
-  public void setAnalyzer(Analyzer node) {
-    super.setReferent(Rule.ANALYZER, node);
   }
 
   public ApplicableCondition getCondition() {
