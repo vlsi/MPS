@@ -8,9 +8,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -37,6 +37,10 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_q24t2b_e0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new MessageComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     return editorCell;
   }
 
