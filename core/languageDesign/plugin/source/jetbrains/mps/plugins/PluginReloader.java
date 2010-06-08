@@ -39,7 +39,8 @@ public class PluginReloader implements ApplicationComponent {
     public void onReload() {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          ModelAccess.instance().runReadAction(new Runnable() {
+          //write action is needed the because user can acquire write action inside of this [see MPS-9139]
+          ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
               reloadAllPlugins();
             }
