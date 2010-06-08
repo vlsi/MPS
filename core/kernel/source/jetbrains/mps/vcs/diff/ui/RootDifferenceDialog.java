@@ -16,6 +16,7 @@
 package jetbrains.mps.vcs.diff.ui;
 
 
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.FocusWatcher;
 import com.intellij.ui.FocusTrackback;
 import jetbrains.mps.ide.dialogs.BaseDialog;
@@ -106,7 +107,6 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     final SNode[] newNode = new SNode[1];
 
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         oldNode[0] = myOldModel.getNodeById(node.getSNodeId());
         newNode[0] = myNewModel.getNodeById(node.getSNodeId());
@@ -119,7 +119,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     rebuildChangeBlocks();
   }
 
-  private DiffEditorComponent addEditor(IOperationContext context, SNode node, String revisionName) {
+  private DiffEditorComponent addEditor(IOperationContext context, final SNode node, String revisionName) {
     final DiffEditorComponent result = new DiffEditorComponent(context, node) {
       @Override
       public void configureBlock(ChangesBlock block) {
@@ -128,7 +128,14 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
         }
       }
     };
-    result.setReadOnly(true);
+    if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        return node.getModel().isNotEditable();
+      }
+    })) {
+      result.setReadOnly(true);
+    }
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(new JLabel(revisionName), BorderLayout.PAGE_START);
     panel.add(result.getExternalComponent(), BorderLayout.CENTER);
@@ -137,7 +144,6 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     result.addCellSelectionListener(myCellSelectionListener);
 
     result.getViewport().addChangeListener(new ChangeListener() {
-
       public void stateChanged(ChangeEvent e) {
         if (myViewportSetInProgress) {
           return;
