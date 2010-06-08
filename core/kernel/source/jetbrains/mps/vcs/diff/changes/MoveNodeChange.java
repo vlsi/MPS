@@ -19,6 +19,9 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class MoveNodeChange extends Change {
   private SNodeId myNodeId;
   private SNodeId myNewParent;
@@ -52,6 +55,11 @@ public class MoveNodeChange extends Change {
 
   public SNodeId getAffectedNodeId() {
     return myNodeId;
+  }
+
+  @Override
+  public List<SNodeId> getDependencies() {
+    return Arrays.asList(myNewParent);
   }
 
   public boolean apply(SModel m) {

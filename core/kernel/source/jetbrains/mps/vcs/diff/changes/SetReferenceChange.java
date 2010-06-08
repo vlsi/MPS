@@ -19,6 +19,9 @@ import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
 import jetbrains.mps.nodeEditor.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class SetReferenceChange extends Change {
   protected final SNodeId myNodeId;
   private final SModel myModel;
@@ -92,6 +95,11 @@ public class SetReferenceChange extends Change {
       }
     }
     return true;
+  }
+
+  @Override
+  public List<SNodeId> getDependencies() {
+    return Arrays.asList(myNodeId);
   }
 
   public String getResolveInfo() {

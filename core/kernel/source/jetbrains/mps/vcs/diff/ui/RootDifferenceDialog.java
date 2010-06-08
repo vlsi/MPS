@@ -18,6 +18,7 @@ package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.wm.FocusWatcher;
 import com.intellij.ui.FocusTrackback;
+import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.nodeEditor.CellSelectionListener;
@@ -26,7 +27,8 @@ import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.diff.DiffBuilder;
-import jetbrains.mps.vcs.diff.changes.*;
+import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import jetbrains.mps.vcs.diff.changes.Change;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -38,6 +40,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwner {
@@ -170,27 +173,23 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     dispose();
   }
 
-  private void applyChange(List<Change> notAppliedChanges, Change changeToApply) {
+  private void applyChange(MultiMap<SNodeId, Change> dependenciesMap,
+                           List<Change> notAppliedChanges, Change changeToApply) {
     if (!notAppliedChanges.contains(changeToApply)) {
       return;
     }
     notAppliedChanges.remove(changeToApply);
-    for (SNodeId usedNodeId : changeToApply.getDependencies()) {
-      for (Change change : notAppliedChanges) {
-        if (change instanceof NewNodeChange || change instanceof DeleteNodeChange || change instanceof MoveNodeChange) {
-          if (change.getAffectedNodeId().equals(usedNodeId)) {
-            applyChange(notAppliedChanges, change);
-            break;
-          }
-        }
-      }
-    }
-    for (Change change : new ArrayList<Change>(notAppliedChanges)) {
-      if (change.getDependencies().contains(change.getAffectedNodeId())) {
-        applyChange(notAppliedChanges, change);
-      }
-    }
+
+    // Applying this change
     changeToApply.apply(myNewModel);
+
+    // Applying changes which depend on current node id
+    if (dependenciesMap.containsKey(changeToApply.getAffectedNodeId())) {
+      for (Change dependant : dependenciesMap.get(changeToApply.getAffectedNodeId())) {
+        applyChange(dependenciesMap, notAppliedChanges, dependant);
+      }
+    }
+
     if (changeToApply instanceof AddRootChange) {
       myNewEditorComponent.editNode(myNewModel.getNodeById(changeToApply.getAffectedNodeId()),
         myNewEditorComponent.getOperationContext());
@@ -237,8 +236,9 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
           List<Change> notAppliedChanges = new ArrayList<Change>();
           notAppliedChanges.addAll(myChanges);
 
+          MultiMap<SNodeId, Change> dependenciesMap = getChangeDependencies(notAppliedChanges);
           for (ChangeEditorMessage m : myChangeMessages) {
-            applyChange(notAppliedChanges, m.getChange());
+            applyChange(dependenciesMap, notAppliedChanges, m.getChange());
           }
         }
       });
@@ -260,5 +260,18 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     myNewEditorComponent.dispose();
     myOldEditorComponent.dispose();
     super.dispose();
+  }
+
+  private static MultiMap<SNodeId, Change> getChangeDependencies(Collection<Change> changes) {
+    MultiMap<SNodeId, Change> result = new MultiMap<SNodeId, Change>();
+    for (Change change : changes) {
+      for (SNodeId dependant : change.getDependencies()) {
+        result.putValue(dependant, change);
+      }
+      if (change.getAffectedNodeId() != null) {
+        result.putValue(change.getAffectedNodeId(), change);
+      }
+    }
+    return result;
   }
 }
