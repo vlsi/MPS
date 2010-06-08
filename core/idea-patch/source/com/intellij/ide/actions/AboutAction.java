@@ -257,7 +257,7 @@ public class AboutAction extends AnAction {
         g2.drawImage(myImage, 0, 0, this);
 
         g2.setColor(col);
-        TextRenderer renderer = new TextRenderer(2, 145, 398, 120, g2);
+        TextRenderer renderer = new TextRenderer(4, 145, 392, 120, g2);
         g2.setComposite(AlphaComposite.Src);
         myFont = labelFont.deriveFont(Font.PLAIN, labelSize);
         myBoldFont = labelFont.deriveFont(Font.BOLD, labelSize + 1);
