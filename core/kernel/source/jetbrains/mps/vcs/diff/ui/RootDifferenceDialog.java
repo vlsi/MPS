@@ -16,7 +16,6 @@
 package jetbrains.mps.vcs.diff.ui;
 
 
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.FocusWatcher;
 import com.intellij.ui.FocusTrackback;
 import jetbrains.mps.ide.dialogs.BaseDialog;
@@ -128,14 +127,6 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
         }
       }
     };
-    if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return node.getModel().isNotEditable();
-      }
-    })) {
-      result.setReadOnly(true);
-    }
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(new JLabel(revisionName), BorderLayout.PAGE_START);
     panel.add(result.getExternalComponent(), BorderLayout.CENTER);

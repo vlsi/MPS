@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -231,6 +232,17 @@ public abstract class DiffEditorComponent extends EditorComponent {
         ((ChangesBlock) painter).removeFrom(component);
       }
     }
+  }
+
+  @Override
+  public void editNode(final SNode node, IOperationContext operationContext) {
+    super.editNode(node, operationContext);
+    setReadOnly(ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        return node != null && node.getModel().isNotEditable();
+      }
+    }));
   }
 
   public abstract void configureBlock(ChangesBlock block);
