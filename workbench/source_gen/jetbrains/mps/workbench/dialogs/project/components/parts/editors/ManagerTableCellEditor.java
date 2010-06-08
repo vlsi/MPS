@@ -19,13 +19,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.stubs.behavior.AbstractModelCreator_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class ManagerTableCellEditor extends DefaultCellEditor {
   private JComboBox myCombo;
@@ -61,13 +59,13 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
     final List<SNode> result = new ArrayList<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        AbstractConceptDeclaration concept = ((ConceptDeclaration) SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration")));
         for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
           SModelDescriptor stubsAspect = LanguageAspect.STUBS.get(l);
           if (stubsAspect == null) {
             continue;
           }
-          result.addAll(stubsAspect.getSModel().getRoots(new IsInstanceCondition(concept)));
+          SModel model = stubsAspect.getSModel();
+          result.addAll(SModelOperations.getRoots(model, "jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration"));
         }
       }
     });
