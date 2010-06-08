@@ -42,10 +42,6 @@ public class ComponentEditor_TabbedEditor extends BaseTabbedEditor {
       return false;
     }
 
-    public boolean isOutsideCommandExecution() {
-      return false;
-    }
-
     public SNode createNode(final SNode node) {
       throw new IllegalArgumentException();
     }
@@ -70,10 +66,6 @@ public class ComponentEditor_TabbedEditor extends BaseTabbedEditor {
 
     public boolean canCreate() {
       return true;
-    }
-
-    public boolean isOutsideCommandExecution() {
-      return false;
     }
 
     public SNode createNode(final SNode node) {

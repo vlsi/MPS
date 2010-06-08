@@ -85,10 +85,6 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
       return false;
     }
 
-    public boolean isOutsideCommandExecution() {
-      return false;
-    }
-
     public SNode createNode(final SNode node) {
       throw new IllegalArgumentException();
     }
@@ -135,10 +131,6 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
       return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.EDITOR, node);
     }
 
-    public boolean isOutsideCommandExecution() {
-      return false;
-    }
-
     public SNode createNode(final SNode node, final boolean ask, final SNode concept) {
       return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.EDITOR, node, concept, Editor_Tab.this);
     }
@@ -174,10 +166,6 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
       return true;
     }
 
-    public boolean isOutsideCommandExecution() {
-      return false;
-    }
-
     public SNode createNode(final SNode node) {
       return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.CONSTRAINTS, node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConceptConstraints"), Constraints_Tab.this);
     }
@@ -211,10 +199,6 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
 
     public boolean canCreate() {
       return true;
-    }
-
-    public boolean isOutsideCommandExecution() {
-      return false;
     }
 
     public SNode createNode(final SNode node) {
@@ -288,10 +272,6 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
       return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.TYPESYSTEM, node);
     }
 
-    public boolean isOutsideCommandExecution() {
-      return false;
-    }
-
     public SNode createNode(final SNode node, final boolean ask, final SNode concept) {
       return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.TYPESYSTEM, node, concept, Typesystem_Tab.this);
     }
@@ -333,10 +313,6 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
 
     public List<SNode> getAvailableConcepts(final SNode node) {
       return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.ACTIONS, node);
-    }
-
-    public boolean isOutsideCommandExecution() {
-      return false;
     }
 
     public SNode createNode(final SNode node, final boolean ask, final SNode concept) {
@@ -382,10 +358,6 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
       return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.REFACTORINGS, node);
     }
 
-    public boolean isOutsideCommandExecution() {
-      return false;
-    }
-
     public SNode createNode(final SNode node, final boolean ask, final SNode concept) {
       return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.REFACTORINGS, node, concept, Refactorings_Tab.this);
     }
@@ -427,10 +399,6 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
 
     public List<SNode> getAvailableConcepts(final SNode node) {
       return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.INTENTIONS, node);
-    }
-
-    public boolean isOutsideCommandExecution() {
-      return false;
     }
 
     public SNode createNode(final SNode node, final boolean ask, final SNode concept) {
@@ -480,10 +448,6 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
       return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.FIND_USAGES, node);
     }
 
-    public boolean isOutsideCommandExecution() {
-      return false;
-    }
-
     public SNode createNode(final SNode node, final boolean ask, final SNode concept) {
       return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.FIND_USAGES, node, concept, Find_Usages_Tab.this);
     }
@@ -517,10 +481,6 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
 
     public boolean canCreate() {
       return true;
-    }
-
-    public boolean isOutsideCommandExecution() {
-      return false;
     }
 
     public SNode createNode(final SNode node) {
@@ -594,10 +554,6 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
         }
       }
       return result;
-    }
-
-    public boolean isOutsideCommandExecution() {
-      return true;
     }
 
     public SNode createNode(final SNode node, final boolean ask, final SNode concept) {
@@ -724,10 +680,6 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
 
     public boolean canCreate() {
       return true;
-    }
-
-    public boolean isOutsideCommandExecution() {
-      return false;
     }
 
     public SNode createNode(final SNode node) {
