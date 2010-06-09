@@ -159,15 +159,14 @@
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro:2" id="1238946912350">
               <node role="mapperFunction:2" type="jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction:2" id="1238946918745">
                 <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238946918746">
-                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8209339320719718571">
-                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8209339320719718574">
-                      <link role="classConcept:3" targetNodeId="5.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
-                      <link role="baseMethodDeclaration:3" targetNodeId="5.1202763885217:2" resolveInfo="copyTypeRecursively" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8209339320719718577">
-                        <link role="classConcept:3" targetNodeId="5.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7854901761081479791">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7854901761081479824">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7854901761081479792">
                         <link role="baseMethodDeclaration:3" targetNodeId="5.1201536134312:2" resolveInfo="getTypeCoercedToClassifierType" />
-                        <node role="actualArgument:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="8209339320719718578" />
+                        <link role="classConcept:3" targetNodeId="5.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
+                        <node role="actualArgument:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="7854901761081479793" />
                       </node>
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_CopyOperation:16" id="7854901761081479830" />
                     </node>
                   </node>
                 </node>

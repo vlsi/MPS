@@ -756,14 +756,14 @@
                           </node>
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019487">
-                          <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1227623155170">
-                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="1227623155171">
-                              <link role="baseMethodDeclaration:3" targetNodeId="1227623029090:2" resolveInfo="getTypeCoercedToClassifierTypeOrPrimitive" />
-                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1227623155172">
+                          <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7854901761081463309">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="7854901761081463291">
+                              <link role="baseMethodDeclaration:3" targetNodeId="1201536134312:2" resolveInfo="getTypeCoercedToClassifierType" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7854901761081463300">
                                 <link role="variableDeclaration:3" targetNodeId="1227623155175:2" resolveInfo="p" />
                               </node>
                             </node>
-                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_CopyOperation:16" id="1227623155173" />
+                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_CopyOperation:16" id="7854901761081463321" />
                           </node>
                         </node>
                       </node>

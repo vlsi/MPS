@@ -94,7 +94,7 @@ public class ClassifierTypeUtil {
         SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
         SLinkOperations.setTarget(res, "classifier", SLinkOperations.getTarget(cType, "classifier", false), false);
         for (SNode p : params) {
-          ListSequence.fromList(SLinkOperations.getTargets(res, "parameter", true)).addElement(SNodeOperations.copyNode(coerceToClassifierTypeOrPrimitive(p)));
+          ListSequence.fromList(SLinkOperations.getTargets(res, "parameter", true)).addElement(SNodeOperations.copyNode(getTypeCoercedToClassifierType(p)));
         }
         return res;
       }

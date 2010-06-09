@@ -1022,7 +1022,7 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_1238946918745(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    return ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(_context.getNode()));
+    return SNodeOperations.copyNode(ClassifierTypeUtil.getTypeCoercedToClassifierType(_context.getNode()));
   }
 
   public static SNode mapSrcMacro_mapper_1239699675907(final IOperationContext operationContext, final MapSrcMacroContext _context) {
