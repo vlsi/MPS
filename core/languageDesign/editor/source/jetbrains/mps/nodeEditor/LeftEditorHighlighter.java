@@ -439,9 +439,7 @@ public class LeftEditorHighlighter extends JComponent {
 */
     for (int y : sortedYCoordinates) {
       List<IconRendererLayoutConstraint> row = myLineToRenderersMap.get(y);
-      if (row.size() == 0) {
-        continue;
-      }
+      assert row.size() != 0;
       int maxIconHeight = 0;
       for (IconRendererLayoutConstraint rendererConstraint : row) {
         maxIconHeight = Math.max(maxIconHeight, rendererConstraint.getIconRenderer().getIcon().getIconHeight());
@@ -478,7 +476,7 @@ public class LeftEditorHighlighter extends JComponent {
   }
 
   private void updateSeparatorLinePosition() {
-    // addint 1 pixel for folding line itself
+    // adding 1 pixel for folding line itself
     myFoldingLineX = myIconRenderersWidth + myLeftFoldingAreaWidth + 1;
     int newWidth = myFoldingLineX + myRightFoldingAreaWidth;
     int newHeight = myEditorComponent.getPreferredSize().height;
@@ -702,6 +700,14 @@ public class LeftEditorHighlighter extends JComponent {
       }
       EditorCell anchorCell1 = getAnchorCell(renderer1);
       EditorCell anchorCell2 = getAnchorCell(renderer2);
+      if (anchorCell1 == anchorCell2 && renderer1 instanceof EditorMessage && renderer2 instanceof EditorMessage) {
+        EditorMessage editorMessage1 = (EditorMessage) renderer1;
+        EditorMessage editorMessage2 = (EditorMessage) renderer2;
+        assert false : 
+          "Two EditorMessages with same type are attached to the same EditorCell: m1 = " +
+          editorMessage1 + ", m2 = " + editorMessage2 +
+          "; owner1 = " + editorMessage1.getOwner() + ", owner2 = " + editorMessage2.getOwner();
+      }
       if (anchorCell1 != null) {
         if (anchorCell2 == null) {
           return 1;
