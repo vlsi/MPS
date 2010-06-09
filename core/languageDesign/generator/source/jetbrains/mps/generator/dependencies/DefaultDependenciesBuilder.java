@@ -17,30 +17,32 @@ import java.util.Map;
 public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
   /* generation data */
-  private DependenciesListener myConditionalsBuilder;
-  private Map<SNode, DependenciesListener> myRootBuilders = new HashMap<SNode, DependenciesListener>();
-  private DependenciesListener[] myAllListeners;
+  private RootDependenciesListener myConditionalsBuilder;
+  private Map<SNode, RootDependenciesListener> myRootBuilders = new HashMap<SNode, RootDependenciesListener>();
+  private RootDependenciesListener[] myAllListeners;
 
   /* next step input -> original */
-  private Map<SNode, SNode> myNextStepToOriginalMap;
+  Map<SNode, SNode> nextStepToOriginalMap;
 
   /* current step data */
   Map<SNode, SNode> currentToOriginalMap;
   SModel currentInputModel;
+  SModel currentOutputModel;
 
   public DefaultDependenciesBuilder(SModel originalInputModel, @Nullable Map<String, String> generationHashes) {
     currentInputModel = originalInputModel;
+    currentOutputModel = null;
     initData(getRoots(originalInputModel), generationHashes);
   }
 
   private void initData(SNode[] roots, Map<String, String> generationHashes) {
-    myConditionalsBuilder = new DependenciesListener(null, this, generationHashes != null ? generationHashes.get("") : "");
+    myConditionalsBuilder = new RootDependenciesListener(null, this, generationHashes != null ? generationHashes.get("") : "");
     currentToOriginalMap = new HashMap<SNode, SNode>(roots.length*3/2);
-    myAllListeners = new DependenciesListener[roots.length+1];
+    myAllListeners = new RootDependenciesListener[roots.length+1];
     int e = 0;
     myAllListeners[e++] = myConditionalsBuilder;
     for(SNode root : roots) {
-      myAllListeners[e] = new DependenciesListener(root, this, generationHashes != null ? generationHashes.get(root.getId()) : null);
+      myAllListeners[e] = new RootDependenciesListener(root, this, generationHashes != null ? generationHashes.get(root.getId()) : null);
       myRootBuilders.put(root, myAllListeners[e++]);
       currentToOriginalMap.put(root,root);
     }
@@ -64,35 +66,42 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
       currentToOriginalMap.put(root, original);
     }
     currentInputModel = newmodel;
+    currentOutputModel = null;
   }
 
   @Override
   public void registerRoot(SNode outputRoot, SNode inputNode) {
-    if(myNextStepToOriginalMap == null) {
-      myNextStepToOriginalMap = new HashMap<SNode, SNode>();
+    if(nextStepToOriginalMap == null) {
+      nextStepToOriginalMap = new HashMap<SNode, SNode>();
     }
     if(inputNode == null) {
-      myNextStepToOriginalMap.put(outputRoot, null);
+      nextStepToOriginalMap.put(outputRoot, null);
       return;
     }
     SNode originalRoot = currentToOriginalMap.get(inputNode.getTopParent());
-    myNextStepToOriginalMap.put(outputRoot, originalRoot);
+    nextStepToOriginalMap.put(outputRoot, originalRoot);
   }
 
   @Override
   public void updateModel(SModel newInputModel) {
-    if(myNextStepToOriginalMap != null) {
-      currentToOriginalMap = myNextStepToOriginalMap;
-      myNextStepToOriginalMap = null;
+    if(nextStepToOriginalMap != null) {
+      currentToOriginalMap = nextStepToOriginalMap;
+      nextStepToOriginalMap = null;
     } else {
       currentToOriginalMap = new HashMap<SNode, SNode>();
     }
     currentInputModel = newInputModel;
+    currentOutputModel = null;
   }
 
   @Override
   public void dropModel() {
-    myNextStepToOriginalMap = null;
+    nextStepToOriginalMap = null;
+    currentOutputModel = null;
+  }
+
+  public void setOutputModel(SModel model) {
+    currentOutputModel = model;
   }
 
   public SNode getOriginalRoot(SNode outputNode) {
@@ -100,7 +109,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   }
 
   @Override
-  public DependenciesListener getListener(SNode inputNode) {
+  public RootDependenciesListener getListener(SNode inputNode) {
     if(inputNode == null || !inputNode.isRegistered()) {
       return myConditionalsBuilder;
     }

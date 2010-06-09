@@ -16,10 +16,10 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.INodesReadListener;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
 
 import java.util.HashSet;
 import java.util.Set;

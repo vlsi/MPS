@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
-
 import java.util.Stack;
 
 public class NodeReadEventsCaster {

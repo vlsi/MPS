@@ -10,11 +10,13 @@ public interface DependenciesBuilder {
 
   void scriptApplied(SModel newmodel);
 
-  DependenciesListener getListener(SNode inputNode);
+  RootDependenciesListener getListener(SNode inputNode);
   
   void registerRoot(SNode outputRoot, SNode inputNode);
 
   void updateModel(SModel newInputModel);
+
+  void setOutputModel(SModel model);
 
   void dropModel();
 
@@ -27,7 +29,7 @@ public interface DependenciesBuilder {
     }
 
     @Override
-    public DependenciesListener getListener(SNode inputNode) {
+    public RootDependenciesListener getListener(SNode inputNode) {
       return null;
     }
 
@@ -37,6 +39,10 @@ public interface DependenciesBuilder {
 
     @Override
     public void updateModel(SModel newInputModel) {
+    }
+
+    @Override
+    public void setOutputModel(SModel model) {
     }
 
     @Override

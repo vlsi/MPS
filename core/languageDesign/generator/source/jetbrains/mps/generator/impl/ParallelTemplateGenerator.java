@@ -68,7 +68,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  protected void copyRootNodeFromInput(@NotNull final SNode inputRootNode, final QueryExecutionContext executionContext) throws GenerationFailureException, GenerationCanceledException {
+  protected void copyRootNodeFromInput(@NotNull final SNode inputRootNode, @NotNull final QueryExecutionContext executionContext) throws GenerationFailureException, GenerationCanceledException {
     pushTask(new RootGenerationTask() {
       @Override
       public void run() throws GenerationCanceledException, GenerationFailureException {

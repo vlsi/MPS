@@ -1,11 +1,12 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
+import jetbrains.mps.smodel.INodesReadListener;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -20,9 +21,9 @@ import java.util.List;
 public class QueryExecutionContextWithDependencyRecording implements QueryExecutionContext {
 
   private QueryExecutionContext wrapped;
-  private INodesReadListener listener;
+  private DependenciesReadListener listener;
 
-  public QueryExecutionContextWithDependencyRecording(QueryExecutionContext wrapped, INodesReadListener listener) {
+  public QueryExecutionContextWithDependencyRecording(QueryExecutionContext wrapped, DependenciesReadListener listener) {
     this.wrapped = wrapped;
     this.listener = listener;
   }
@@ -171,7 +172,11 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context) {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.getReferentTarget(node, outputNode, refMacro, context);
+      Object target = wrapped.getReferentTarget(node, outputNode, refMacro, context);
+      if(target instanceof SNode) {
+        listener.readNode((SNode) target);
+      }
+      return target;
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

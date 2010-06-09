@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.typesystem.runtime.incremental;
 
+import jetbrains.mps.smodel.INodesReadListener;
 import jetbrains.mps.smodel.SNode;
 
 /**

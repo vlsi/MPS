@@ -4,6 +4,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
+import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -144,7 +145,11 @@ public class WeavingProcessor {
     boolean includeInheritors = rule.getApplyToConceptInheritors();
     Iterable<SNode> nodes = myFastNodeFinder.getNodes(applicableConcept, includeInheritors);
     for (SNode applicableNode : nodes) {
-      ReductionContext reductionContext = new ReductionContext(myGenerator.getExecutionContext(applicableNode));
+      QueryExecutionContext executionContext = myGenerator.getExecutionContext(applicableNode);
+      if(executionContext == null) {
+        continue;
+      }
+      ReductionContext reductionContext = new ReductionContext(executionContext);
       if (reductionContext.getQueryExecutor().checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode())) {
         SNode outputContextNode = reductionContext.getQueryExecutor().getContextNodeForWeavingingRule(applicableNode, rule);
         if (!checkContext(rule, applicableNode, outputContextNode)) {

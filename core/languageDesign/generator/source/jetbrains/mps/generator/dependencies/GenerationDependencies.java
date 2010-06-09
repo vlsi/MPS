@@ -76,7 +76,7 @@ public class GenerationDependencies {
     return (extension == null)? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 
-  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, DependenciesListener[] roots) {
+  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, RootDependenciesListener[] roots) {
     Map<String,String> generatedToOriginalMap = new HashMap<String, String>();
     Map<String,List<String>> generatedFiles = new HashMap<String, List<String>>();
 
@@ -95,7 +95,7 @@ public class GenerationDependencies {
       filesList.add(getFileName(outputRoot));
     }
     List<GenerationRootDependencies> rootDependencies = new ArrayList<GenerationRootDependencies>(roots.length);
-    for(DependenciesListener l : roots) {
+    for(RootDependenciesListener l : roots) {
       SNode originalRoot = l.getOriginalRoot();
       List<String> files = generatedFiles.get(originalRoot != null ? originalRoot.getId() : "");
       if(files == null) {

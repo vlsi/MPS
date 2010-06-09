@@ -17,8 +17,9 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
-import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.dependencies.DependenciesReadListener;
+import jetbrains.mps.generator.dependencies.RootDependenciesListener;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.template.*;
@@ -28,7 +29,6 @@ import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
@@ -57,14 +57,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected final ArrayList<SNode> myOutputRoots;
 
   private final QueryExecutionContext myExecutionContext;
-  private Map<INodesReadListener, QueryExecutionContext> myExecutionContextMap;
+  private Map<DependenciesReadListener, QueryExecutionContext> myExecutionContextMap;
 
   private final boolean myIsStrict;
   private boolean myAreMappingsReady = false;
 
   /* cached session data */
   private BlockedReductionsData myReductionData;
-  
+
   private final IGenerationTracer myGenerationTracer;
   private IPerformanceTracer ttrace;
   private DependenciesBuilder myDependenciesBuilder;
@@ -160,12 +160,19 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     checkMonitorCanceled();
     getGeneratorSessionContext().clearCopiedRootsSet();
     for (SNode rootToCopy : rootsToCopy) {
-      copyRootNodeFromInput(rootToCopy, getExecutionContext(rootToCopy));
+      QueryExecutionContext context = getExecutionContext(rootToCopy);
+      if (context != null) {
+        copyRootNodeFromInput(rootToCopy, context);
+      }
     }
   }
 
   private void applyCreateRootRule(CreateRootRule createRootRule) throws GenerationFailureException, GenerationCanceledException {
     final QueryExecutionContext executionContext = getExecutionContext(null);
+    if (executionContext == null) {
+      return;
+    }
+
     if (executionContext.checkCondition(createRootRule)) {
       INamedConcept templateNode = createRootRule.getTemplateNode();
       if (templateNode == null) {
@@ -199,7 +206,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
 
       final QueryExecutionContext executionContext = getExecutionContext(inputNode);
-      if (executionContext.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode())) {
+      if (executionContext != null && executionContext.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode())) {
         myGenerationTracer.pushInputNode(inputNode);
         myGenerationTracer.pushRule(rule.getNode());
         try {
@@ -240,7 +247,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  protected void copyRootNodeFromInput(@NotNull SNode inputRootNode, QueryExecutionContext executionContext) throws GenerationFailureException, GenerationCanceledException {
+  protected void copyRootNodeFromInput(@NotNull SNode inputRootNode, @NotNull QueryExecutionContext executionContext) throws GenerationFailureException, GenerationCanceledException {
     // check if can drop
     for (DropRootRule dropRootRule : myRuleManager.getDropRootRules()) {
       if (isApplicableDropRootRule(inputRootNode, dropRootRule, executionContext)) {
@@ -292,17 +299,22 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   /**
    * Unsynchronized
    */
+  @Nullable
   protected QueryExecutionContext getExecutionContext(SNode inputNode) {
-    final INodesReadListener listener = myDependenciesBuilder.getListener(inputNode);
-    if(listener != null) {
+    RootDependenciesListener listener = myDependenciesBuilder.getListener(inputNode);
+    if (listener != null) {
+      if (listener.isBlocked()) {
+        return null;
+      }
+
       QueryExecutionContext value;
-      if(myExecutionContextMap == null) {
-        myExecutionContextMap = new HashMap<INodesReadListener, QueryExecutionContext>();
+      if (myExecutionContextMap == null) {
+        myExecutionContextMap = new HashMap<DependenciesReadListener, QueryExecutionContext>();
         value = null;
       } else {
         value = myExecutionContextMap.get(listener);
       }
-      if(value == null) {
+      if (value == null) {
         value = new QueryExecutionContextWithDependencyRecording(myExecutionContext, listener);
         myExecutionContextMap.put(listener, value);
       }
@@ -314,7 +326,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected QueryExecutionContext getDefaultExecutionContext(SNode inputNode) {
     return myExecutionContext;
   }
-  
+
   /**
    * @return null if no reductions found
    */

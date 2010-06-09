@@ -88,7 +88,7 @@ public class GenerationSession {
     GenerationFilter filter = new GenerationFilter(myOriginalInputModel, myInvocationContext.getProject(), myGenerationContext);
     myDependenciesBuilder = filter.createDependenciesBuilder();
 
-    if(myLogger.needsInfo() && !filter.getUnchangedRoots().isEmpty()) {
+    if(!filter.getUnchangedRoots().isEmpty()) {
       myLogger.info(filter.getUnchangedRoots().size() + " roots are unchanged");
     }
 
@@ -258,6 +258,7 @@ public class GenerationSession {
 
   private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
                              RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
+    myDependenciesBuilder.setOutputModel(currentOutputModel);
     final TemplateGenerator tg =
       myGenerationContext.isGenerateInParallel()
         ? new ParallelTemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationContext, myDependenciesBuilder, ttrace)
