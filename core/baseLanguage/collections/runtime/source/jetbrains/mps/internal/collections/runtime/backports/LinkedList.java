@@ -75,25 +75,7 @@ public class LinkedList<T> extends java.util.LinkedList<T> implements Deque<T>, 
     public void push(T t) {
         addFirst(t);
     }
-
-    public boolean removeFirstOccurrence(Object o) {
-        int idx = indexOf(o);
-        if (idx >= 0) {
-            remove(idx);
-            return true;
-        }
-        return false;
-    }
-
-    public boolean removeLastOccurrence(Object o) {
-        int idx = lastIndexOf(o);
-        if (idx >= 0) {
-            remove(idx);
-            return true;
-        }
-        return false;
-    }
-    
+  
     private static class DescendingIterator<U> implements Iterator<U> {
 
         private ListIterator<U> listIterator;
