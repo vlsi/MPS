@@ -15,8 +15,8 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -39,7 +39,7 @@ public class ConstraintsChecker extends SpecificChecker {
       SNode concept = SNodeOperations.getConceptDeclaration(node);
 
       // Check links 
-      for (SNode link : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
+      for (final SNode link : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
         if (LinkDeclaration_Behavior.call_isAtLeastOneCardinality_3386205146660812199(link)) {
           if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
             if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
@@ -52,7 +52,16 @@ public class ConstraintsChecker extends SpecificChecker {
           }
         } else if (LinkDeclaration_Behavior.call_isSingular_1213877254557(link)) {
           if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() > 1) {
-            addIssue(results, node, "Too many children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", ModelChecker.SEVERITY_WARNING, "cardinality", null);
+            addIssue(results, node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", ModelChecker.SEVERITY_ERROR, "cardinality", new IModelCheckerFix() {
+              public boolean doFix() {
+                ListSequence.fromList(SNodeOperations.getChildren(node, link)).skip(1).toListSequence().visitAll(new IVisitor<SNode>() {
+                  public void visit(SNode child) {
+                    SNodeOperations.deleteNode(child);
+                  }
+                });
+                return true;
+              }
+            });
           }
         }
       }
