@@ -700,6 +700,7 @@ public class LeftEditorHighlighter extends JComponent {
       }
       EditorCell anchorCell1 = getAnchorCell(renderer1);
       EditorCell anchorCell2 = getAnchorCell(renderer2);
+      // [++] Debugging assertion
       if (anchorCell1 == anchorCell2 && renderer1 instanceof EditorMessage && renderer2 instanceof EditorMessage) {
         EditorMessage editorMessage1 = (EditorMessage) renderer1;
         EditorMessage editorMessage2 = (EditorMessage) renderer2;
@@ -708,6 +709,7 @@ public class LeftEditorHighlighter extends JComponent {
           editorMessage1 + ", m2 = " + editorMessage2 +
           "; owner1 = " + editorMessage1.getOwner() + ", owner2 = " + editorMessage2.getOwner();
       }
+      // [--] Debugging assertion
       if (anchorCell1 != null) {
         if (anchorCell2 == null) {
           return 1;
