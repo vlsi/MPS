@@ -140,6 +140,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean myIsEditable = true;
 
   private boolean myDisposed = false;
+  private Throwable myDisposedTrace = null;
 
   private Set<AdditionalPainter> myAdditionalPainters = new TreeSet<AdditionalPainter>(new Comparator<AdditionalPainter>() {
     @Override
@@ -1070,8 +1071,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void dispose() {
-    if (myDisposed) throw new IllegalStateException();
+    if (myDisposed) throw new IllegalStateException(myDisposedTrace);
     myDisposed = true;
+    myDisposedTrace = new Throwable("Editor was disposed by: ");
 
     if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
       hideMessageToolTip();
