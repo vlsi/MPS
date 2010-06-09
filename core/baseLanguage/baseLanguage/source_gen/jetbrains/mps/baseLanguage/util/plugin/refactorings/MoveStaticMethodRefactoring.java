@@ -28,7 +28,10 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
     SNode classNode = SNodeOperations.getAncestor(this.myMoving, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(this.myMoving, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", false, new String[]{}))) {
       if (SLinkOperations.getTarget(call, "baseMethodDeclaration", false) != this.myMoving) {
-        SNodeOperations.replaceWithAnother(call, new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a0a0b0b().createNode(classNode, SLinkOperations.getTarget(call, "baseMethodDeclaration", false)));
+        SNode newCall = new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a0a1a1().createNode(classNode, SLinkOperations.getTarget(call, "baseMethodDeclaration", false));
+        ListSequence.fromList(SLinkOperations.getTargets(newCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)));
+        ListSequence.fromList(SLinkOperations.getTargets(newCall, "typeArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(call, "typeArgument", true)));
+        SNodeOperations.replaceWithAnother(call, newCall);
       }
     }
   }
@@ -74,8 +77,8 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
     }
   }
 
-  public static class QuotationClass_f5lqsg_a0a0a0a0b0b {
-    public QuotationClass_f5lqsg_a0a0a0a0b0b() {
+  public static class QuotationClass_f5lqsg_a0a0a0a1a1 {
+    public QuotationClass_f5lqsg_a0a0a0a1a1() {
     }
 
     public SNode createNode(Object parameter_3, Object parameter_4) {
