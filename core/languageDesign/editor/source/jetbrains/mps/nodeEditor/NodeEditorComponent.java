@@ -37,17 +37,10 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 
 public class NodeEditorComponent extends EditorComponent {
-  @NotNull
-  private JPanel myExternalComponent;
   private SNode myLastInspectedNode = null;
 
   public NodeEditorComponent(final IOperationContext operationContext) {
-    super(operationContext, false);
-
-
-    myExternalComponent = new JPanel(new BorderLayout());
-    myExternalComponent.add(super.getExternalComponent(), BorderLayout.CENTER);
-    myExternalComponent.add(getMessagesGutter(), BorderLayout.EAST);
+    super(operationContext, true);
 
     addCellSelectionListener(new CellSelectionListener() {
       public void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
@@ -147,11 +140,6 @@ public class NodeEditorComponent extends EditorComponent {
       return new EditorCell_Constant(editorContext, getEditedNode(), "<no editor info>");
     }
     return getEditorContext().createRootCell(getEditedNode(), events);
-  }
-
-  @NotNull
-  public JComponent getExternalComponent() {
-    return myExternalComponent;
   }
 
   public EditorComponent getInspector() {
