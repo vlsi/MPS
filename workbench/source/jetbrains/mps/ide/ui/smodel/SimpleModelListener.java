@@ -27,10 +27,7 @@ public abstract class SimpleModelListener extends SModelAdapter {
   private void updateNodePresentation(final boolean reloadSubTree, final boolean updateAncesotrs) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        if (getTree() == null) return;
-
-        //module has been already removed
-        if (!getOperationContext().isValid()) return;
+        if (!isValid()) return;
 
         updateTreeNodePresentation();
         myTreeNode.updateNodePresentationInTree();
@@ -56,5 +53,14 @@ public abstract class SimpleModelListener extends SModelAdapter {
   @Override
   public void modelReplaced(SModelDescriptor sm) {
     updateNodePresentation(true, true);
+  }
+
+  public boolean isValid(){
+    if (getTree() == null) return false;
+
+    //module has been already removed
+    if (!getOperationContext().isValid()) return false;
+
+    return true;
   }
 }

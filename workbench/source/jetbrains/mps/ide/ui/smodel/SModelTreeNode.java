@@ -59,6 +59,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     public void updateTreeNodePresentation() {
       SModelTreeNode.this.updatePresentation();
     }
+
+    public boolean isValid() {
+      if (!super.isValid()) return false;
+      return !(myModelDescriptor.isInitialized() && myModelDescriptor.getSModel().isDisposed());
+    }
   };
   private MyGenerationStatusListener myStatusListener = new MyGenerationStatusListener();
   private boolean myShowLongName;
@@ -346,7 +351,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return InternUtil.intern(result);
   }
 
-  public GenerationStatus getGenerationStatus()  {
+  public GenerationStatus getGenerationStatus() {
     if (getSModelDescriptor() == null) return GenerationStatus.NOT_REQUIRED;
     if (isPackaged()) return GenerationStatus.PACKAGED;
     if (isDoNotGenerate()) return GenerationStatus.DO_NOT_GENERATE;
