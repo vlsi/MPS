@@ -856,6 +856,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return result;
   }
 
+  // TODO pool this method up to NodeEditorComponent
   @NotNull
   public MessagesGutter getMessagesGutter() {
     return myMessagesGutter;
