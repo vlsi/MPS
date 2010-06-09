@@ -1,5 +1,6 @@
 package jetbrains.mps.generator.dependencies;
 
+import jetbrains.mps.generator.index.ModelDigestUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
@@ -20,6 +21,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   private RootDependenciesListener myConditionalsBuilder;
   private Map<SNode, RootDependenciesListener> myRootBuilders = new HashMap<SNode, RootDependenciesListener>();
   private RootDependenciesListener[] myAllListeners;
+  private String myModelHash;
 
   /* next step input -> original */
   Map<SNode, SNode> nextStepToOriginalMap;
@@ -32,11 +34,12 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   public DefaultDependenciesBuilder(SModel originalInputModel, @Nullable Map<String, String> generationHashes) {
     currentInputModel = originalInputModel;
     currentOutputModel = null;
+    myModelHash = generationHashes == null ? null : generationHashes.get(ModelDigestUtil.FILE);
     initData(getRoots(originalInputModel), generationHashes);
   }
 
   private void initData(SNode[] roots, Map<String, String> generationHashes) {
-    myConditionalsBuilder = new RootDependenciesListener(null, this, generationHashes != null ? generationHashes.get("") : "");
+    myConditionalsBuilder = new RootDependenciesListener(null, this, generationHashes != null ? generationHashes.get(ModelDigestUtil.HEADER) : "");
     currentToOriginalMap = new HashMap<SNode, SNode>(roots.length*3/2);
     myAllListeners = new RootDependenciesListener[roots.length+1];
     int e = 0;
@@ -126,6 +129,6 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public GenerationDependencies getResult() {
-    return GenerationDependencies.fromData(currentToOriginalMap, myAllListeners);
+    return GenerationDependencies.fromData(currentToOriginalMap, myAllListeners, myModelHash);
   }
 }

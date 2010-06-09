@@ -21,6 +21,7 @@ public class GenerationFilter {
   private GenerationProcessContext myGenerationContext;
   private Project myProject;
   private Set<SNode> myUnchangedRoots;
+  private boolean myConditionalsUnchanged;
   private Map<String, String> myGenerationHashes;
   private GenerationDependencies mySavedDependencies;
 
@@ -30,6 +31,7 @@ public class GenerationFilter {
     myProject = project;
     myUnchangedRoots = Collections.emptySet();
     init();
+    myConditionalsUnchanged = false;
   }
 
   private void init() {
@@ -55,12 +57,29 @@ public class GenerationFilter {
     return !myUnchangedRoots.contains(root);
   }
 
+  public boolean areConditionalsDirty() {
+    return !myConditionalsUnchanged;
+  }
+
   private void analyzeDependencies(@NotNull GenerationDependencies dependencies) {
-    final List<SNode> rootsList = myModel.getSModel().getRoots();
+
+    GenerationRootDependencies commonDeps = dependencies.getDependenciesFor(ModelDigestUtil.HEADER);
+    if(commonDeps == null) {
+      return;
+    }
+
+    {
+      String oldHash = commonDeps.getHash();
+      String newHash = myGenerationHashes.get(ModelDigestUtil.HEADER);
+      if(oldHash == null || newHash == null || !newHash.equals(oldHash)) {
+        return;
+      }
+    }
+
+    List<SNode> rootsList = myModel.getSModel().getRoots();
     Map<String, SNode> rootById = new HashMap<String, SNode>();
 
     myUnchangedRoots = new HashSet<SNode>();
-
     for(SNode root : rootsList) {
       String id = root.getId();
       GenerationRootDependencies rd = dependencies.getDependenciesFor(id);
@@ -84,6 +103,7 @@ public class GenerationFilter {
     }
 
     // closure using saved dependencies graph
+    myConditionalsUnchanged = true;
     Map<String, Set<String>> dep = getDependenciesWithoutOrientation(dependencies, myUnchangedRoots);
     boolean changed = true;
     while(changed) {
@@ -103,6 +123,17 @@ public class GenerationFilter {
           it.remove();
           dep.remove(root.getId());
           changed = true;
+        }
+      }
+      if(myConditionalsUnchanged) {
+        Set<String> conditionalsDeps = dep.get(CONDITIONALS_ID);
+        for(String localRootId : conditionalsDeps) {
+          if(!dep.containsKey(localRootId)) {
+            dep.remove(CONDITIONALS_ID);
+            myConditionalsUnchanged = false;
+            changed = true;
+            break;
+          }
         }
       }
     }
@@ -137,6 +168,7 @@ public class GenerationFilter {
     for(SNode n : selectedRoots) {
       graph.put(n.getId(), new HashSet<String>());
     }
+    graph.put(CONDITIONALS_ID, new HashSet<String>());
     for(GenerationRootDependencies rd : dependencies.getRootDependencies()) {
       String id = rd.getRootId();
       if(id == null) {

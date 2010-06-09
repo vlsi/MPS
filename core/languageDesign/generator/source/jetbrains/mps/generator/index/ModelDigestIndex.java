@@ -76,11 +76,8 @@ public class ModelDigestIndex extends SingleEntryFileBasedIndexExtension<Map<Str
     return new SingleEntryIndexer<Map<String, String>>(false) {
       @Override
       protected Map<String, String> computeValue(@NotNull FileContent inputData) {
-        Map<String, String> result = new HashMap<String, String>();
         final byte[] content = inputData.getContent();
-        result.put("", hash(content));
-        ModelDigestUtil.extractRootHashes(content, result);
-        return result;
+        return ModelDigestUtil.getDigestMap(content);
       }
     };
   }
@@ -98,7 +95,7 @@ public class ModelDigestIndex extends SingleEntryFileBasedIndexExtension<Map<Str
   }
 
   public int getVersion() {
-    return 4;
+    return 7;
   }
 
   public class MapStringStringExternalizer implements DataExternalizer<Map<String, String>> {

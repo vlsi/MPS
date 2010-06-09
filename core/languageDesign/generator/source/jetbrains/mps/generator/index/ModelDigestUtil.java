@@ -25,13 +25,16 @@ import java.util.Map;
  * Evgeny Gryaznov, Jun 2, 2010
  */
 public class ModelDigestUtil {
-
   private static final Logger LOG = Logger.getLogger(ModelDigestUtil.class);
-  
-  public static void extractRootHashes(byte[] content, Map<String, String> rootHashes) {
+
+  public static final String HEADER = "header";
+  public static final String FILE = "model";
+
+  private static void extractRootHashes(byte[] content, Map<String, String> rootHashes) {
     XmlFastScanner scanner = new XmlFastScanner(content);
     int deep = 0, token, rootStart = -1;
     String rootId = null;
+    boolean firstNode = true;
 
     while((token = scanner.next()) != XmlFastScanner.EOI) {
       switch(token) {
@@ -40,6 +43,10 @@ public class ModelDigestUtil {
           if(deep == 2 && ModelPersistence.NODE.equals(scanner.getName())) {
             rootStart = scanner.getTokenOffset();
             rootId = extractId(scanner.token());
+            if(rootId != null && firstNode) {
+              rootHashes.put(HEADER, hash(scanner.getText(0, rootStart)));
+              firstNode = false;
+            }
           }
           break;
         case XmlFastScanner.SIMPLE_TAG:
@@ -157,9 +164,13 @@ public class ModelDigestUtil {
       return null;
     }
 
+    return getDigestMap(modelBytes);
+  }
+
+  public static Map<String, String> getDigestMap(byte[] modelBytes) {
     Map<String, String> result = new HashMap<String, String>();
-    result.put("", ModelDigestIndex.hash(modelBytes));
-    ModelDigestUtil.extractRootHashes(modelBytes, result);
+    result.put(FILE, ModelDigestIndex.hash(modelBytes));
+    extractRootHashes(modelBytes, result);
     return result;
   }
 }

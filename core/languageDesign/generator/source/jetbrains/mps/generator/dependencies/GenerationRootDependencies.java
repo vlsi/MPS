@@ -101,7 +101,7 @@ public class GenerationRootDependencies {
     }
   }
 
-  private static String getValue(Element e, String attrId) {
+  public static String getValue(Element e, String attrId) {
     Attribute attr = e.getAttribute(attrId);
     return attr == null ? null : attr.getValue();
   }
