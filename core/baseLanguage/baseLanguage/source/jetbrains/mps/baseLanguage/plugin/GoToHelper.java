@@ -53,7 +53,7 @@ public class GoToHelper {
 
   public static void showInheritedClassesMenu(List<SNode> nodes, RelativePoint point, Project project) {
     String title = "Choose inherited class to navigate to";
-    ClassifierCellRenderer renderer = new ClassifierCellRenderer();
+    DefaultNodeNavigationItemCellRenderer renderer = new DefaultNodeNavigationItemCellRenderer();
     showMenu(point, project, title, nodes, renderer);
   }
 
@@ -95,11 +95,11 @@ public class GoToHelper {
     }
   }
 
-  public static class MethodCellRenderer extends NodeListCellRenderer<NodeNavigationItem> {
+  public static class DefaultNodeNavigationItemCellRenderer extends NodeListCellRenderer<NodeNavigationItem> {
     public String getElementText(final NodeNavigationItem element) {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
-          return getLabelNode(element).getAdapter().toString();
+          return getLabelNode(element).getPresentation();
         }
       });
     }
@@ -116,38 +116,20 @@ public class GoToHelper {
       return IconManager.getIconFor(getLabelNode(element));
     }
 
-    private SNode getLabelNode(NodeNavigationItem element) {
-      SNode parentNode = element.getNode().getParent();
-      assert parentNode != null;
-      return parentNode;
+    protected SNode getLabelNode(NodeNavigationItem element) {
+      return element.getNode();
     }
 
-    private SNode getContainerNode(NodeNavigationItem element) {
+    protected SNode getContainerNode(NodeNavigationItem element) {
       return getLabelNode(element).getTopmostAncestor();
     }
   }
 
-  public static class ClassifierCellRenderer extends NodeListCellRenderer<NodeNavigationItem> {
-    public String getElementText(final NodeNavigationItem element) {
-      return ModelAccess.instance().runReadAction(new Computable<String>() {
-        public String compute() {
-          Classifier classifierAdapter = (Classifier) element.getNode().getAdapter();
-          return classifierAdapter.getName();
-        }
-      });
-    }
-
-    protected String getContainerText(final NodeNavigationItem element, String name) {
-      return ModelAccess.instance().runReadAction(new Computable<String>() {
-        public String compute() {
-          Classifier classifierAdapter = (Classifier) element.getNode().getAdapter();
-          return classifierAdapter.getModel().getLongName();
-        }
-      });
-    }
-
-    protected Icon getIcon(NodeNavigationItem element) {
-      return Icons.METHOD_ICON;
+  public static class MethodCellRenderer extends DefaultNodeNavigationItemCellRenderer {
+    protected SNode getLabelNode(NodeNavigationItem element) {
+      SNode parentNode = element.getNode().getParent();
+      assert parentNode != null;
+      return parentNode;
     }
   }
 }
