@@ -15,6 +15,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_refactoring = ID + "refactoring";
   public static final String LABEL_ID_favorites = ID + "favorites";
   public static final String LABEL_ID_vcs = ID + "vcs";
+  public static final String LABEL_ID_scripts = ID + "scripts";
 
   public ModelActions_ActionGroup() {
     super("ModelActions", ID);
@@ -53,6 +54,8 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_favorites);
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_vcs);
+      ModelActions_ActionGroup.this.addSeparator();
+      ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_scripts);
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ModelProperties_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {

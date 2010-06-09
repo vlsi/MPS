@@ -441,6 +441,7 @@
     </node>
     <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="1240665077347">
       <link role="modifiedGroup:23" targetNodeId="2v.1204991224874" resolveInfo="LanguageActions" />
+      <link role="point:23" targetNodeId="2v.8804573242127407724" resolveInfo="find_javastub_usages" />
     </node>
   </node>
 </model>

@@ -10,6 +10,7 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.GeneratorActions";
   public static final String LABEL_ID_generatorNew = ID + "generatorNew";
   public static final String LABEL_ID_favorites = ID + "favorites";
+  public static final String LABEL_ID_scripts = ID + "scripts";
 
   public GeneratorActions_ActionGroup() {
     super("GeneratorActions", ID);
@@ -28,6 +29,8 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
       GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModule_Action", "jetbrains.mps.ide", "Generator");
       GeneratorActions_ActionGroup.this.addSeparator();
       GeneratorActions_ActionGroup.this.addAnchor(GeneratorActions_ActionGroup.LABEL_ID_favorites);
+      GeneratorActions_ActionGroup.this.addSeparator();
+      GeneratorActions_ActionGroup.this.addAnchor(GeneratorActions_ActionGroup.LABEL_ID_scripts);
       GeneratorActions_ActionGroup.this.addSeparator();
       GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GeneratorProperties_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {

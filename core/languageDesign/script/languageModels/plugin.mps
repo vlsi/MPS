@@ -51,18 +51,22 @@
     <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="1207489220050">
       <property name="additionType:23" value="false" />
       <link role="modifiedGroup:23" targetNodeId="14.1204991218714" resolveInfo="ProjectPaneModelActions" />
+      <link role="point:23" targetNodeId="14.4555696683442018021" resolveInfo="scripts" />
     </node>
     <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="1207489220051">
       <property name="additionType:23" value="false" />
       <link role="modifiedGroup:23" targetNodeId="14.1204991224874" resolveInfo="LanguageActions" />
+      <link role="point:23" targetNodeId="14.4555696683442018009" resolveInfo="scripts" />
     </node>
     <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="1207489220052">
       <property name="additionType:23" value="false" />
       <link role="modifiedGroup:23" targetNodeId="14.1204991229896" resolveInfo="GeneratorActions" />
+      <link role="point:23" targetNodeId="14.4555696683442018017" resolveInfo="scripts" />
     </node>
     <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="1207489220053">
       <property name="additionType:23" value="false" />
       <link role="modifiedGroup:23" targetNodeId="14.1204991226689" resolveInfo="SolutionActions" />
+      <link role="point:23" targetNodeId="14.4555696683442018013" resolveInfo="scripts" />
     </node>
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.UpdateGroupBlock:23" id="1239976637010">
       <node role="updateFunction:23" type="jetbrains.mps.lang.plugin.structure.UpdateGroupFunction:23" id="1239976637011">

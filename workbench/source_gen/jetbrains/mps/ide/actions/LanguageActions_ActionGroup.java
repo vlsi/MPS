@@ -15,6 +15,8 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_refactoring = ID + "refactoring";
   public static final String LABEL_ID_favorites = ID + "favorites";
   public static final String LABEL_ID_vcs = ID + "vcs";
+  public static final String LABEL_ID_scripts = ID + "scripts";
+  public static final String LABEL_ID_find_javastub_usages = ID + "find_javastub_usages";
 
   public LanguageActions_ActionGroup() {
     super("LanguageActions", ID);
@@ -28,9 +30,6 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action", "jetbrains.mps.ide");
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FixVirtualPackges_Action", "jetbrains.mps.ide");
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action", "jetbrains.mps.ide");
-      LanguageActions_ActionGroup.this.addSeparator();
-      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LanguageProperties_Action", "jetbrains.mps.ide");
-      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LanguageHierarchy_Action", "jetbrains.mps.ide");
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action", "jetbrains.mps.ide");
       LanguageActions_ActionGroup.this.addSeparator();
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModuleToProject_Action", "jetbrains.mps.ide");
@@ -53,6 +52,13 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
       LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_favorites);
       LanguageActions_ActionGroup.this.addSeparator();
       LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_vcs);
+      LanguageActions_ActionGroup.this.addSeparator();
+      LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_scripts);
+      LanguageActions_ActionGroup.this.addSeparator();
+      LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_find_javastub_usages);
+      LanguageActions_ActionGroup.this.addSeparator();
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LanguageHierarchy_Action", "jetbrains.mps.ide");
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LanguageProperties_Action", "jetbrains.mps.ide");
       LanguageActions_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

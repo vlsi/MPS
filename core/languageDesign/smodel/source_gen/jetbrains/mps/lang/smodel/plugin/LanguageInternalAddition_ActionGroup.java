@@ -23,6 +23,6 @@ public class LanguageInternalAddition_ActionGroup extends GeneratedActionGroup {
   }
 
   public void adjust() {
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, null);
+    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_find_javastub_usages);
   }
 }

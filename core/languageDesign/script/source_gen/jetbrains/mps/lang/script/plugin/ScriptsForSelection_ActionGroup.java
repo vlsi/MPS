@@ -69,9 +69,9 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
   }
 
   public void adjust() {
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, null);
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, null);
-    this.insertGroupIntoAnother(GeneratorActions_ActionGroup.ID, null);
-    this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, null);
+    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_scripts);
+    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_scripts);
+    this.insertGroupIntoAnother(GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_scripts);
+    this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_scripts);
   }
 }
