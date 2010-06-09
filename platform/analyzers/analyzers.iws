@@ -55,36 +55,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="bc2cb128-32f6-4de8-96d7-99fd0f4b16f2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/script/source_gen.caches/jetbrains/mps/lang/script/plugin/.hash.-aa50qzyma8mzyyq5x8n9fxdzf66dw5z" />
+      <change type="DELETED" beforePath="C:\MPS2\platform\analyzers\languages\analyzers\source_gen.caches\jetbrains\mps\analyzers\generator\template\main\.hash.1m0xs21bwcq1ktq79mcc0k8uyoz3a3k" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/workbench/source_gen.caches/jetbrains/mps/ide/actions/.hash.37xjkdxwokkc8w7uhq2wz5rfhxh8bc5" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen.caches/jetbrains/mps/baseLanguage/extensionMethods/constraints/.hash.95el4ttx2l6ceonafq3p9o62wxyihrx" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/workbench/source_gen/jetbrains/mps/ide/actions/LanguageActions_ActionGroup.java" afterPath="$APPLICATION_HOME_DIR$/workbench/source_gen/jetbrains/mps/ide/actions/LanguageActions_ActionGroup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/analyzers/source_gen.caches/jetbrains/mps/analyzers/generator/template/main/.debug" afterPath="$PROJECT_DIR$/languages/analyzers/source_gen.caches/jetbrains/mps/analyzers/generator/template/main/.debug" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen/jetbrains/mps/baseLanguage/extensionMethods/structure/LocalExtendedMethodCall.java" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen.caches/jetbrains/mps/baseLanguage/extensionMethods/editor/.dependencies" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen.caches/jetbrains/mps/baseLanguage/extensionMethods/editor/.dependencies" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/workbench/source_gen/jetbrains/mps/ide/actions/ModelActions_ActionGroup.java" afterPath="$APPLICATION_HOME_DIR$/workbench/source_gen/jetbrains/mps/ide/actions/ModelActions_ActionGroup.java" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/generator/template/main@generator.mps" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/generator/template/main@generator.mps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/analyzers/generator/template/main@generator.mps" afterPath="$PROJECT_DIR$/languages/analyzers/generator/template/main@generator.mps" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen.caches/jetbrains/mps/baseLanguage/extensionMethods/constraints/.dependencies" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen.caches/jetbrains/mps/baseLanguage/extensionMethods/constraints/.dependencies" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen/jetbrains/mps/baseLanguage/extensionMethods/constraints/LocalExtendedMethodCall_Constraints.java" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen.caches/jetbrains/mps/baseLanguage/extensionMethods/structure/.hash.-2khl7atr3g8m8eeaczl5f9ij1sopuqr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/analyzers/source_gen.caches/jetbrains/mps/analyzers/generator/template/main/.hash.eajihmwwb4qa2gkuq12ffii6whnsjqi" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/languageModels/typesystem.mps" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/languageModels/typesystem.mps" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/languageModels/editor.mps" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/languageModels/editor.mps" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/languageModels/constraints.mps" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/languageModels/constraints.mps" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/languageModels/behavior.mps" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/languageModels/behavior.mps" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/workbench/source_gen.caches/jetbrains/mps/ide/actions/.debug" afterPath="$APPLICATION_HOME_DIR$/workbench/source_gen.caches/jetbrains/mps/ide/actions/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/workbench/ideSolution/jetbrains/mps/ide/actions.mps" afterPath="$APPLICATION_HOME_DIR$/workbench/ideSolution/jetbrains/mps/ide/actions.mps" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen.caches/jetbrains/mps/baseLanguage/extensionMethods/generator/template/main/.hash.uocvi0jqz95e0ecb308m4tg9yxc9c8" />
       <change type="DELETED" beforePath="C:\MPS2\platform\extensionMethod\source_gen.caches\jetbrains\mps\baseLanguage\extensionMethods\constraints\.hash.ade7o9xmc7ahwxglyycy2rmfjt62k7y" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/analyzers/source_gen/jetbrains/mps/analyzers/generator/template/main/QueriesGenerated.java" afterPath="$PROJECT_DIR$/languages/analyzers/source_gen/jetbrains/mps/analyzers/generator/template/main/QueriesGenerated.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/structure/languageModels/editor.mps" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/structure/languageModels/editor.mps" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/script/source_gen/jetbrains/mps/lang/script/plugin/ScriptsForSelection_ActionGroup.java" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/script/source_gen/jetbrains/mps/lang/script/plugin/ScriptsForSelection_ActionGroup.java" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen/jetbrains/mps/baseLanguage/extensionMethods/editor/LocalExtendedMethodCall_Editor.java" />
+      <change type="DELETED" beforePath="C:\MPS2\workbench\source_gen.caches\jetbrains\mps\ide\actions\.hash.72rz0v2odwz2ojmlqepbhyiyw7c9wk1" afterPath="" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/sandbox.mps" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/sandbox.mps" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen.caches/jetbrains/mps/baseLanguage/extensionMethods/structure/.dependencies" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen.caches/jetbrains/mps/baseLanguage/extensionMethods/structure/.dependencies" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen.caches/jetbrains/mps/baseLanguage/extensionMethods/constraints/.debug" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen.caches/jetbrains/mps/baseLanguage/extensionMethods/constraints/.debug" />
       <change type="DELETED" beforePath="C:\MPS2\platform\extensionMethod\source_gen.caches\jetbrains\mps\baseLanguage\extensionMethods\generator\template\main\.hash.9nivhepxgq6gtvbof5f5kz431s8ttkw" afterPath="" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/workbench/source_gen/jetbrains/mps/ide/actions/SolutionActions_ActionGroup.java" afterPath="$APPLICATION_HOME_DIR$/workbench/source_gen/jetbrains/mps/ide/actions/SolutionActions_ActionGroup.java" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen.caches/jetbrains/mps/baseLanguage/extensionMethods/editor/.hash.d5h3ig2yl0eagarn9paos9eyyy8jfi5" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/languageModels/structure.mps" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/languageModels/structure.mps" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/workbench/source_gen/jetbrains/mps/ide/actions/GeneratorActions_ActionGroup.java" afterPath="$APPLICATION_HOME_DIR$/workbench/source_gen/jetbrains/mps/ide/actions/GeneratorActions_ActionGroup.java" />
+      <change type="DELETED" beforePath="C:\MPS2\core\languageDesign\script\source_gen.caches\jetbrains\mps\lang\script\plugin\.hash.-c56mtz7cjo54bdak800xgvmioxshpjd" afterPath="" />
       <change type="DELETED" beforePath="C:\MPS2\platform\extensionMethod\source_gen.caches\jetbrains\mps\baseLanguage\extensionMethods\structure\.hash.-29ic2e3okuca987vsyh703uebubu2a2" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzers.iws" afterPath="$PROJECT_DIR$/analyzers.iws" />
       <change type="DELETED" beforePath="C:\MPS2\platform\extensionMethod\source_gen.caches\jetbrains\mps\baseLanguage\extensionMethods\editor\.hash.-etx2s1f2ef4g588nk5zfa7k3qkosh2l" afterPath="" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/script/languageModels/plugin.mps" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/script/languageModels/plugin.mps" />
     </list>
     <list id="07822054-ccc9-4433-a9b5-98d904ced214" name="project" comment="">
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/MPS.ipr" afterPath="$APPLICATION_HOME_DIR$/MPS.ipr" />
     </list>
-    <ignored path=".idea/workspace.xml" />
     <ignored path="analyzers.iws" />
+    <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,198 +122,93 @@
       <flags show_one_result="true" new_tab="false" />
     </option>
     <option class_name="jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions">
-      <scope_type scope_type="global_scope" module="&lt;default&gt;" model="&lt;default&gt;" />
+      <scope_type scope_type="module_scope" module="&lt;default&gt;" model="&lt;default&gt;" />
     </option>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserAnalyzerRunner" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.analyzers.generator.template.main@generator/UserAnalyzerRunner">
+      <file leaf-file-name="LinkDeclaration" pinned="false" current="true" current-in-tab="true">
+        <entry file="mps://jetbrains.mps.lang.structure.structure/LinkDeclaration">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="1">
+              <inner_tabs>
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+              </inner_tabs>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommitUtil" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.lang.structure.editor/CommitUtil">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RuleNotEqualsNull" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.analyzers.sandbox.test/RuleNotEqualsNull">
+      <file leaf-file-name="NodeRefactoring" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.lang.refactoring.plugin/NodeRefactoring">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomOperatorUsage" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.structure/CustomOperatorUsage">
+      <file leaf-file-name="ScriptsGlobally" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.lang.script.plugin/ScriptsGlobally">
           <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="2">
-              <inner_tabs>
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-              </inner_tabs>
-            </state>
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomOperator" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.structure/CustomOperator">
+      <file leaf-file-name="ScriptsForSelection" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.lang.script.plugin/ScriptsForSelection">
           <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="2">
-              <inner_tabs>
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-              </inner_tabs>
-            </state>
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OverloadedBinaryOperator" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.structure/OverloadedBinaryOperator">
+      <file leaf-file-name="GeneratorActions" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.ide.actions/GeneratorActions">
           <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
-              <inner_tabs>
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-              </inner_tabs>
-            </state>
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BinaryOperationReference" pinned="false" current="true" current-in-tab="true">
-        <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.structure/BinaryOperationReference">
+      <file leaf-file-name="SolutionActions" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.ide.actions/SolutionActions">
           <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="2">
-              <inner_tabs>
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-              </inner_tabs>
-            </state>
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmitInstruction" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.analyzers.structure/EmitInstruction">
+      <file leaf-file-name="LanguageActions" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.ide.actions/LanguageActions">
           <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
-              <inner_tabs>
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-              </inner_tabs>
-            </state>
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActionStatement" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.lang.pattern.structure/ActionStatement">
+      <file leaf-file-name="ModelActions" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.ide.actions/ModelActions">
           <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="2">
-              <inner_tabs>
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-              </inner_tabs>
-            </state>
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActionAsPattern" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.lang.pattern.structure/ActionAsPattern">
+      <file leaf-file-name="NodeActions" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.ide.actions/NodeActions">
           <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
-              <inner_tabs>
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-              </inner_tabs>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RuleReference" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.analyzers.structure/RuleReference">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
-              <inner_tabs>
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-              </inner_tabs>
-            </state>
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
         </entry>
       </file>
@@ -545,11 +456,6 @@
           <PluginState />
         </value>
       </option>
-      <option name="jetbrains.mps.wizards.plugin.Wizards_ProjectPlugin">
-        <value>
-          <PluginState />
-        </value>
-      </option>
       <option name="jetbrains.mps.ypath.plugin.Ypath_ProjectPlugin">
         <value>
           <PluginState />
@@ -573,17 +479,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="VCSRoots">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VCS Roots" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <selection />
-        </subPane>
-      </pane>
       <pane id="FileSystem">
         <subPane>
           <PATH>
@@ -803,6 +698,168 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="editor" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generator/&lt;no name&gt;" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugin" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="refactoring" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="refactoring" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugin" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -1476,6 +1533,320 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Menu" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectPane" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Menu" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectPane" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Menu" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectPane" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solution" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Menu" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectPane" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Language" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Menu" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectPane" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Language" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Solutions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ide" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Menu" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="jetbrains.mps.analyzers" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -1703,11 +2074,22 @@
                 <option name="myItemType" value="" />
               </PATH_ELEMENT>
               <PATH_ELEMENT>
-                <option name="myItemId" value="jetbrains.mps.analyzers.runtime" />
+                <option name="myItemId" value="jetbrains.mps.analyzers" />
                 <option name="myItemType" value="" />
               </PATH_ELEMENT>
             </PATH>
           </selection>
+        </subPane>
+      </pane>
+      <pane id="VCSRoots">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VCS Roots" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <selection />
         </subPane>
       </pane>
     </panes>
@@ -1752,10 +2134,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="1170" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Usages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32732448" sideWeight="0.46666667" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Usages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32658958" sideWeight="0.46440026" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32755297" sideWeight="0.5189224" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Supertypes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Migration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1766,16 +2148,16 @@
       <window_info id="Model Checker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Generation Tracer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3329057" sideWeight="0.72157997" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Module Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33932006" sideWeight="0.72157997" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Module Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.49775496" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.031746034" sideWeight="0.66413665" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Classpath Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="RefactoringView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.49739245" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="MPS Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2716763" sideWeight="0.487492" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="MPS Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2716763" sideWeight="0.4720975" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Concept Structure" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2716763" sideWeight="0.50801796" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Node Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922202" sideWeight="0.4977778" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2716763" sideWeight="0.52341247" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Node Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851636" sideWeight="0.49518922" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Typechecker State" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Analyze Stacktrace" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1826,92 +2208,12 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="mps://jetbrains.mps.lang.pattern.structure/PatternExpression">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="10">
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.analyzers.runtime.framework/CustomAnalyzerRunner">
+    <entry file="mps://jetbrains.mps.ide.actions/LanguageHierarchy">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.analyzers.sandbox.test/Nullable">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.analyzers.sandbox.test/RuleNullNotEquals">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.analyzers.structure/Rule">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="10">
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.analyzers.runtime.framework/DataFlowConstructor">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.analyzers.generator.template.main@generator/UserAnalyzerRunner">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.lang.pattern.structure/ActionStatement">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="2">
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.lang.pattern.structure/ActionAsPattern">
+    <entry file="mps://jetbrains.mps.analyzers.structure/AnalysisDirection">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
           <inner_tabs>
@@ -1931,7 +2233,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.analyzers.structure/RuleReference">
+    <entry file="mps://jetbrains.mps.lang.structure.structure/ConceptDeclaration">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="1">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.lang.structure.structure/AbstractConceptDeclaration">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
           <inner_tabs>
@@ -1951,94 +2273,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.analyzers.structure/EmitInstruction">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.analyzers.sandbox.test/RuleNotEqualsNull">
+    <entry file="mps://jetbrains.mps.lang.structure.editor/CommitUtil">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.structure/OverloadedBinaryOperator">
+    <entry file="mps://jetbrains.mps.lang.refactoring.plugin/NodeRefactoring">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.structure/CustomOperatorUsage">
+    <entry file="mps://jetbrains.mps.lang.script.plugin/ScriptsGlobally">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="2">
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.structure/CustomOperator">
+    <entry file="mps://jetbrains.mps.lang.script.plugin/ScriptsForSelection">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="2">
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.structure/BinaryOperationReference">
+    <entry file="mps://jetbrains.mps.ide.actions/GeneratorActions">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="2">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.ide.actions/SolutionActions">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.ide.actions/LanguageActions">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.ide.actions/ModelActions">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.ide.actions/NodeActions">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.lang.structure.structure/LinkDeclaration">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="1">
           <inner_tabs>
             <tab index="0" />
             <tab index="0" />

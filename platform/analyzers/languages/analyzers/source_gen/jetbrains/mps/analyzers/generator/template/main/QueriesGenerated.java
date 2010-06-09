@@ -66,10 +66,6 @@ public class QueriesGenerated {
     return true;
   }
 
-  public static SNode sourceNodeQuery_430844094082165044(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(_context.getNode(), "latticeElementType", true));
-  }
-
   public static SNode sourceNodeQuery_430844094082167075(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "initialFunction", true), "body", true);
   }
