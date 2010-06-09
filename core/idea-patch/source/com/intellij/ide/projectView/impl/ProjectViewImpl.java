@@ -622,8 +622,6 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
   @Patch
   private void createToolbarActions() {
     myActionGroup.removeAll();
-    myActionGroup.add(myAutoScrollToSourceHandler.createToggleAction());
-    myActionGroup.add(myAutoScrollFromSourceHandler.createToggleAction());
     myActionGroup.addAction(myAutoScrollToSourceHandler.createToggleAction()).setAsSecondary(true);
     myActionGroup.addAction(myAutoScrollFromSourceHandler.createToggleAction()).setAsSecondary(true);
 
