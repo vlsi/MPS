@@ -25,14 +25,12 @@
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/uiLanguage.mpl" />
-      <languagePath path="${mps_home}/platform/wizards/wizards.mpl" />
       <languagePath path="${mps_home}/workbench/ideUiLanguage/uiLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
       <genConfModule name="ide.uiLanguage" moduleRef="jetbrains.mps.ide.uiLanguage" />
       <genConfModule name="uiLanguage" moduleRef="jetbrains.mps.uiLanguage" />
-      <genConfModule name="wizards" moduleRef="jetbrains.mps.wizards" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
