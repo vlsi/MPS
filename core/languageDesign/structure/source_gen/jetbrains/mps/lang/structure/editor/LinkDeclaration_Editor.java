@@ -151,7 +151,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         }
 
         public void doCommitImpl(final String oldValue, final String newValue) {
-          CommitUtil.commitLinkRole(editorContext, oldValue, newValue, node);
+          CommitUtil.commitRename(editorContext, node, oldValue, newValue);
         }
       };
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);

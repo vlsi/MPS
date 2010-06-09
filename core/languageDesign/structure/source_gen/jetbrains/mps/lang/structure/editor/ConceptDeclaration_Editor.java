@@ -469,7 +469,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         }
 
         public void doCommitImpl(final String oldValue, final String newValue) {
-          CommitUtil.commitName(editorContext, oldValue, newValue, node, "concept");
+          CommitUtil.commitRename(editorContext, node, oldValue, newValue);
         }
       };
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);

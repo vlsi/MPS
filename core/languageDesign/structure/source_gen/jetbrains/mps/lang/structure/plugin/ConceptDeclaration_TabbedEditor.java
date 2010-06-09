@@ -20,6 +20,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.plugins.pluginparts.tabbedEditor.TabHelper;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -507,11 +511,14 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     }
 
     public List<SNode> getNodes(SNode node) {
-      List<SNode> nodes = new ArrayList<SNode>();
       IScope scope = ConceptEditorHelper.getScope(Generator_Tab.this);
-      ListSequence.fromList(nodes).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(node, scope)));
-      ListSequence.fromList(nodes).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findAdditionalGenerators_3590548766499750586(node, scope)));
-      return nodes;
+      Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
+      SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(node, scope)).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.getContainingRoot(it);
+        }
+      }));
+      return SetSequence.fromSet(nodes).toListSequence();
     }
 
     public String getTabTextForNode(SNode node) {
