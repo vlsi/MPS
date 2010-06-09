@@ -106,6 +106,7 @@ public class AbstractConceptDeclaration_Behavior {
           if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false) == thisNode || SLinkOperations.getTarget(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true), "applicableConcept", false) == thisNode) {
             ListSequence.fromList(result).addElement(node);
           }
+          // generator rules 
           ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.BaseMappingRule") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "applicableConcept", false) == thisNode || SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.DropRootRule") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.generator.structure.DropRootRule"), "applicableConcept", false) == thisNode;

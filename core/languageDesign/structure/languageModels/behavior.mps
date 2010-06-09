@@ -1666,6 +1666,11 @@
                         </node>
                       </node>
                     </node>
+                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="8292108433549671083">
+                      <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="8292108433549671085">
+                        <property name="text:3" value="generator rules" />
+                      </node>
+                    </node>
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8292108433549470389">
                       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8292108433549470392">
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8292108433549470390">
