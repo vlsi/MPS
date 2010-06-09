@@ -174,22 +174,18 @@
   <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="271545267239538933">
     <property name="name:3" value="Interface" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="271545267239538935">
-      <property name="isAbstract:3" value="true" />
-      <property name="name:3" value="foo" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="271545267239538936" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="271545267239538937" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="271545267239538938" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="271545267239538939">
       <property name="isAbstract:3" value="true" />
-      <property name="name:3" value="bar" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="271545267239538940" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="271545267239538941" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="271545267239538942" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="271545267239538943">
       <property name="isAbstract:3" value="true" />
-      <property name="name:3" value="baz" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="271545267239538944" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="271545267239538945" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="271545267239538946" />

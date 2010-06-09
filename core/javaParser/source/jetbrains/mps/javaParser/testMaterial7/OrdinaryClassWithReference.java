@@ -13,6 +13,18 @@ import java.util.List;
 public class OrdinaryClassWithReference<U> {
   public Object foo() {
     OrdinaryInterfaceWithNested.Iterator<U> u;
-    return (OrdinaryInterfaceWithNested.Iterator) null;
+    char c = (char) 2;
+    return (OrdinaryInterfaceWithNested.Iterator<U>) null;
+  }
+
+  public static void bar() {
+    OrdinaryEnum ordEnum = OrdinaryEnum.X;
+
+    switch (ordEnum) {
+      case X: {
+        System.err.println("");
+        break;
+      }
+    }
   }
 }

@@ -515,6 +515,11 @@ public class JavaConverterTreeBuilder {
     result.setExpression(processExpressionRefl(x.expression));
 
     //compiler returns not a type but rather an expression
+    if (x.type instanceof Expression) {
+      result.setType(createType(((Expression)x.type).resolvedType));
+    }
+/*
+
     if (x.type instanceof SingleNameReference) {
       result.setType(createType((TypeBinding) ((SingleNameReference)x.type).binding));
     } else if (x.type instanceof ArrayTypeReference) {
@@ -524,6 +529,7 @@ public class JavaConverterTreeBuilder {
     } else if (x.type instanceof QualifiedNameReference) {
       result.setType(createType((TypeBinding) ((QualifiedNameReference)x.type).binding));
     }
+*/
 
     return result;
   }
