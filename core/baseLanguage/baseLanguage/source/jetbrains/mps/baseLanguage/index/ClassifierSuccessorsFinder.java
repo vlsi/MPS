@@ -93,8 +93,8 @@ public class ClassifierSuccessorsFinder {
       // lazy initialization of mySuccessorsMap
       if (adapter instanceof Interface) {
         mapInterfaces();
+        mapClasses();
       } else if (adapter instanceof ClassConcept) {
-        mapInterfaces();
         mapClasses();
       } else {
         return;
