@@ -114,7 +114,7 @@ public class IntentionsSupport {
 
   private void checkAndShowMenu() {
     if (isInconsistentEditor()) return;
-    if (myEditor.getSelectedNode().getModel().isNotEditable()) return;
+    if (myEditor.isReadOnly() || myEditor.getSelectedNode().getModel().isNotEditable()) return;
     if (!hasIntentions()) return;
 
     showIntentionsMenu();
@@ -137,7 +137,7 @@ public class IntentionsSupport {
           final boolean[] enabledPresent = new boolean[1];
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              if (isInconsistentEditor()) {
+              if (isInconsistentEditor() || myEditor.isReadOnly()) {
                 finished[0] = false;
                 return;
               }
