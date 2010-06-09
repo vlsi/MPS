@@ -7,6 +7,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.internal.collections.runtime.IListSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -54,8 +55,8 @@ __switch__:
         return seq;
       }
     };
-    fun1 = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
-      public Iterable<Integer> invoke() {
+    fun1 = new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
+      public IListSequence<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), Integer.valueOf(1));
       }
     };

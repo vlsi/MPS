@@ -9,6 +9,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.Arrays;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -1227,12 +1228,12 @@ __switch__:
   }
 
   public void test_yieldAllLast() throws Exception {
-    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
-      public Iterable<Integer> invoke() {
+    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
+      public IListSequence<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
       }
-    }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
-      public Iterable<Integer> invoke() {
+    }, new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
+      public IListSequence<Integer> invoke() {
         //  some statements 
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
       }
@@ -1240,8 +1241,8 @@ __switch__:
   }
 
   public void test_yieldAll() throws Exception {
-    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
-      public Iterable<Integer> invoke() {
+    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
+      public IListSequence<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
       }
     }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
@@ -1299,8 +1300,8 @@ __switch__:
   }
 
   public void test_yieldYieldAll() throws Exception {
-    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
-      public Iterable<Integer> invoke() {
+    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
+      public IListSequence<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
       }
     }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
@@ -1358,8 +1359,8 @@ __switch__:
   }
 
   public void test_yieldAllYieldAll() throws Exception {
-    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
-      public Iterable<Integer> invoke() {
+    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
+      public IListSequence<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);
       }
     }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
@@ -1432,8 +1433,8 @@ __switch__:
   }
 
   public void test_yieldAllInCycle() throws Exception {
-    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
-      public Iterable<Integer> invoke() {
+    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
+      public IListSequence<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);
       }
     }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {

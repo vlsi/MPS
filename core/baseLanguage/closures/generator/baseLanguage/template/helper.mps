@@ -6095,13 +6095,8 @@
                           </node>
                           <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="2619154382621052736">
                             <link role="baseMethodDeclaration:16" targetNodeId="28.811905832257074290" resolveInfo="getDeclarationRuntimeType" />
-                            <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2619154382621052737">
-                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2619154382621052738">
-                                <link role="variableDeclaration:3" targetNodeId="1215470164340" resolveInfo="rFType" />
-                              </node>
-                              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="2619154382621052739">
-                                <link role="link:16" targetNodeId="20.1199542501692:3" />
-                              </node>
+                            <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2619154382621052738">
+                              <link role="variableDeclaration:3" targetNodeId="1215470164340" resolveInfo="rFType" />
                             </node>
                           </node>
                         </node>

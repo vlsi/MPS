@@ -34,8 +34,8 @@ public class FunctionTypes_Test extends TestCase {
         return (Integer) 1;
       }
     });
-    this.accept_Number(new _FunctionTypes._return_P0_E0<Number>() {
-      public Number invoke() {
+    this.accept_Number(new _FunctionTypes._return_P0_E0<Integer>() {
+      public Integer invoke() {
         return (Integer) 1;
       }
     });
@@ -58,8 +58,8 @@ public class FunctionTypes_Test extends TestCase {
         throw new IllegalArgumentException();
       }
     };
-    _FunctionTypes._void_P0_E2<? extends NumberFormatException, ? extends IllegalThreadStateException> throwsTwo = new _FunctionTypes._void_P0_E2<NumberFormatException, IllegalThreadStateException>() {
-      public void invoke() throws NumberFormatException, IllegalThreadStateException {
+    _FunctionTypes._void_P0_E2<? extends IllegalThreadStateException, ? extends NumberFormatException> throwsTwo = new _FunctionTypes._void_P0_E2<IllegalThreadStateException, NumberFormatException>() {
+      public void invoke() throws IllegalThreadStateException, NumberFormatException {
         if (true) {
           throw new NumberFormatException();
         } else {
@@ -117,7 +117,7 @@ __switch__:
         };
       }
     };
-    _FunctionTypes._return_P0_E3<? extends Iterable<Integer>, ? extends IllegalArgumentException, ? extends NumberFormatException, ? extends IllegalThreadStateException> throwsThree = new _FunctionTypes._return_P0_E3<Iterable<Integer>, IllegalArgumentException, NumberFormatException, IllegalThreadStateException>() {
+    _FunctionTypes._return_P0_E3<? extends Iterable<Integer>, ? extends IllegalArgumentException, ? extends IllegalThreadStateException, ? extends NumberFormatException> throwsThree = new _FunctionTypes._return_P0_E3<Iterable<Integer>, IllegalArgumentException, IllegalThreadStateException, NumberFormatException>() {
       public Iterable<Integer> invoke() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -249,13 +249,13 @@ __switch__:
       }
     });
     this.accept_Integer_from_Object(fun3);
-    this.accept_Number_from_String(new _FunctionTypes._return_P1_E0<Number, String>() {
-      public Number invoke(String s) {
+    this.accept_Number_from_String(new _FunctionTypes._return_P1_E0<Integer, String>() {
+      public Integer invoke(String s) {
         return s.length();
       }
     });
-    this.accept_Number_from_String(new _FunctionTypes._return_P1_E0<Number, Object>() {
-      public Number invoke(Object o) {
+    this.accept_Number_from_String(new _FunctionTypes._return_P1_E0<Integer, Object>() {
+      public Integer invoke(Object o) {
         return o.hashCode();
       }
     });
