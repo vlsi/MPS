@@ -64,6 +64,11 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
       public void updateTreeNodePresentation() {
         UpdatableSNodeTreeNode.this.updatePresentation();
       }
+
+      public boolean isValid() {
+        if (!super.isValid()) return false;
+        return !getSNode().isDisposed();
+      }
     };
     if (!getModelDescriptor().isReadOnly()) {
       myTreeUpdater = new MySNodeTreeUpdater(getOperationContext().getProject(), this);
