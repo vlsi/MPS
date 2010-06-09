@@ -385,7 +385,7 @@
                           <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6235310215814090132">
                             <link role="baseMethodDeclaration:3" targetNodeId="11.~VisibilityUtil.isVisible(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):boolean" resolveInfo="isVisible" />
                             <link role="classConcept:3" targetNodeId="11.~VisibilityUtil" resolveInfo="VisibilityUtil" />
-                            <node role="actualArgument:3" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode:8" id="6235310215814090133" />
+                            <node role="actualArgument:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode:8" id="8292108433549612828" />
                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6235310215814090135">
                               <link role="variableDeclaration:3" targetNodeId="6235310215814089094" resolveInfo="extMethod" />
                             </node>

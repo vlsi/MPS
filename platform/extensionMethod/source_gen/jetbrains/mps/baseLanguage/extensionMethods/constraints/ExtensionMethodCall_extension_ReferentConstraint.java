@@ -66,7 +66,7 @@ public class ExtensionMethodCall_extension_ReferentConstraint extends BaseNodeRe
       public boolean isInScope(SNode node) {
         SNode extMethod = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration");
         SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-        return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(ExtensionMethodDeclaration_Behavior.call_getThisType_8022092943109893938(extMethod))) && VisibilityUtil.isVisible(_context.getEnclosingNode(), extMethod);
+        return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(ExtensionMethodDeclaration_Behavior.call_getThisType_8022092943109893938(extMethod))) && VisibilityUtil.isVisible(_context.getReferenceNode(), extMethod);
       }
     };
 

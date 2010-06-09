@@ -2928,36 +2928,21 @@
               <link role="classifier:3" targetNodeId="42.~IRefactoring" resolveInfo="IRefactoring" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="8292108433549555407">
-              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="8292108433549555408">
-                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8292108433549555409">
-                  <link role="classifier:3" targetNodeId="42.~IRefactoring" resolveInfo="IRefactoring" />
-                </node>
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8292108433549555410">
-                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8292108433549555411">
-                    <link role="baseMethodDeclaration:3" targetNodeId="45.~RenameConcept.&lt;init&gt;()" resolveInfo="RenameConcept" />
-                  </node>
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8292108433549555410">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8292108433549555411">
+                  <link role="baseMethodDeclaration:3" targetNodeId="45.~RenameConcept.&lt;init&gt;()" resolveInfo="RenameConcept" />
                 </node>
               </node>
               <node role="ifFalse:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="8292108433549555412">
-                <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="8292108433549555413">
-                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8292108433549555414">
-                    <link role="classifier:3" targetNodeId="42.~IRefactoring" resolveInfo="IRefactoring" />
-                  </node>
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8292108433549555415">
-                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8292108433549555416">
-                      <link role="baseMethodDeclaration:3" targetNodeId="45.~RenameProperty.&lt;init&gt;()" resolveInfo="RenameProperty" />
-                    </node>
+                <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8292108433549555415">
+                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8292108433549555416">
+                    <link role="baseMethodDeclaration:3" targetNodeId="45.~RenameProperty.&lt;init&gt;()" resolveInfo="RenameProperty" />
                   </node>
                 </node>
                 <node role="ifFalse:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="8292108433549555417">
-                  <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="8292108433549555418">
-                    <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8292108433549555419">
-                      <link role="classifier:3" targetNodeId="42.~IRefactoring" resolveInfo="IRefactoring" />
-                    </node>
-                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8292108433549555420">
-                      <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8292108433549555421">
-                        <link role="baseMethodDeclaration:3" targetNodeId="45.~RenameLink.&lt;init&gt;()" resolveInfo="RenameLink" />
-                      </node>
+                  <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8292108433549555420">
+                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8292108433549555421">
+                      <link role="baseMethodDeclaration:3" targetNodeId="45.~RenameLink.&lt;init&gt;()" resolveInfo="RenameLink" />
                     </node>
                   </node>
                   <node role="ifFalse:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8292108433549555422" />

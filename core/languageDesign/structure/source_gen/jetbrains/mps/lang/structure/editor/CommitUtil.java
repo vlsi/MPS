@@ -26,11 +26,11 @@ public class CommitUtil {
     });
 
     final IRefactoring refactoring = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration") ?
-      (IRefactoring) new RenameConcept() :
+      new RenameConcept() :
       (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration") ?
-        (IRefactoring) new RenameProperty() :
+        new RenameProperty() :
         (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration") ?
-          (IRefactoring) new RenameLink() :
+          new RenameLink() :
           null
         )
       )
