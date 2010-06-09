@@ -187,7 +187,6 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   public void addToolbarActions(final DefaultActionGroup group) {
     group.add(new PropertiesAndReferencesToggleAction());
-    group.addAction(new PropertiesAndReferencesToggleAction()).setAsSecondary(true);
     group.addAction(new SortByTypeToggleAction()).setAsSecondary(true);
   }
 
