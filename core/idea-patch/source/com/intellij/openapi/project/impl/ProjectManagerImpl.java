@@ -858,6 +858,7 @@ public class ProjectManagerImpl extends ProjectManagerEx implements NamedJDOMExt
     try {
       if (save) {
         /* MPS Patch begin */
+        // Patched to avoid forced model saving on closing project
         Application application = ApplicationManager.getApplication();
         if (application instanceof ApplicationImpl) {
           ((ApplicationImpl) application).saveAllDocumentsIfNeeded();

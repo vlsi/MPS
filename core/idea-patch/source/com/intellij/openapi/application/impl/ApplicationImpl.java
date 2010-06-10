@@ -622,12 +622,12 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
       public void run() {
         if (!force) {
           if (!showConfirmation()) {
-            saveAllIfNeeded(); // MPS Patch
+            saveAllIfNeeded(); // Patched by MPS to avoid forced models saving on closing IDE
             return;
           }
         }
 
-        saveAllDocumentsIfNeeded(); // MPS Patch
+        saveAllDocumentsIfNeeded(); // Patched by MPS to avoid forced models saving on closing IDE
 
         saveSettings();
 
