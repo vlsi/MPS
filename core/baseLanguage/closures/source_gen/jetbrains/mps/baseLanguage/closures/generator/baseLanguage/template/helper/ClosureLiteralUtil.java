@@ -136,20 +136,20 @@ public class ClosureLiteralUtil {
     List<SNode> varDecls = SLinkOperations.getTargets(SLinkOperations.getTarget(origCT, "classifier", false), "typeVariableDeclaration", true);
     int idx = 0;
     for (SNode p : SLinkOperations.getTargets(origCT, "parameter", true)) {
-      SNode c = ListSequence.fromList(SLinkOperations.getTargets(ctNoParams, "parameter", true)).addElement(SNodeOperations.copyNode(p));
-      List<SNode> queue = ListSequence.fromListAndArray(new LinkedList<SNode>(), c);
+      List<SNode> queue = ListSequence.fromListAndArray(new LinkedList<SNode>(), ListSequence.fromList(SLinkOperations.getTargets(ctNoParams, "parameter", true)).addElement(SNodeOperations.copyNode(p)));
       while (!(ListSequence.fromList(queue).isEmpty())) {
         SNode n = ListSequence.fromList(queue).removeElementAt(0);
         if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
           if (idx < ListSequence.fromList(varDecls).count()) {
             n = SNodeOperations.replaceWithAnother(n, (map != null ?
-              SNodeOperations.copyNode(MapSequence.fromMap(map).get(SPropertyOperations.getString(ListSequence.fromList(varDecls).getElement(idx), "name"))) :
+              MapSequence.fromMap(map).get(SPropertyOperations.getString(ListSequence.fromList(varDecls).getElement(idx), "name")) :
               null
             ));
           }
-        }
-        if (n != null) {
-          ListSequence.fromList(queue).addSequence(ListSequence.fromList(SNodeOperations.getChildren(n)));
+        } else {
+          if (n != null) {
+            ListSequence.fromList(queue).addSequence(ListSequence.fromList(SNodeOperations.getChildren(n)));
+          }
         }
       }
       idx++;
@@ -241,7 +241,7 @@ public class ClosureLiteralUtil {
         List<SNode> mptypes = SLinkOperations.getTargets(SNodeOperations.as(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
         List<SNode> rptypes = SLinkOperations.getTargets(SNodeOperations.as(matched, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
         for (int i = 0; i < ListSequence.fromList(mptypes).count() && i < ListSequence.fromList(rptypes).count(); i++) {
-          map = matchType(ListSequence.fromList(mptypes).getElement(i), ListSequence.fromList(rptypes).getElement(i), getMap(map));
+          map = matchType(ListSequence.fromList(mptypes).getElement(i), ListSequence.fromList(rptypes).getElement(i), map);
         }
       }
     }
