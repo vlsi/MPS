@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.textGen.TextGenBuffer;
 import java.util.HashSet;
 import jetbrains.mps.util.InternUtil;
@@ -145,8 +146,16 @@ public abstract class BaseLanguageTextGen {
 
   public static void fileHeader(SNode cls, final SNodeTextGen textGen) {
     Set<String> names = (Set<String>) BaseLanguageTextGen.getUserObjects(TextGenManager.IMPORT, textGen);
-    String newImport = BaseLanguageTextGen.getPackageName(cls, textGen) + "." + SPropertyOperations.getString(cls, "name");
-    SetSequence.fromSet(names).addElement(newImport);
+    String key = "importsDone";
+    Object importsDone = textGen.getBuffer().getUserObject(key);
+    if (importsDone == null) {
+      for (SNode classifier : SModelOperations.getRoots(SNodeOperations.getModel(cls), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+        String newImport = BaseLanguageTextGen.getPackageName(classifier, textGen) + "." + SPropertyOperations.getString(classifier, "name");
+        SetSequence.fromSet(names).addElement(newImport);
+      }
+      importsDone = new Object();
+      textGen.getBuffer().putUserObject(key, importsDone);
+    }
     if (cls.isRoot()) {
       int wasPart = textGen.getBuffer().selectPart(TextGenBuffer.TOP);
       textGen.append("package " + BaseLanguageTextGen.getPackageName(cls, textGen) + ";");
@@ -223,21 +232,24 @@ public abstract class BaseLanguageTextGen {
       textGen.foundError("class name not contain '@'");
     }
     String importedFqName;
+    String importedLongFqName;
     String importedShortName = className.split("\\.")[0];
     if (packageName.length() > 0) {
       importedFqName = packageName + "." + importedShortName;
+      importedLongFqName = packageName + "." + className;
     } else {
       importedFqName = importedShortName;
+      importedLongFqName = className;
     }
     Set<String> importedNames = BaseLanguageTextGen.getUserObjects(TextGenManager.IMPORT, textGen);
-    if (SetSequence.fromSet(importedNames).contains(importedFqName)) {
+    if (SetSequence.fromSet(importedNames).contains(importedLongFqName)) {
       if (isInternal) {
         textGen.append(className);
       }
       return;
     }
     for (String importedName : importedNames) {
-      if (importedShortName.equals(JavaNameUtil.shortName(importedName))) {
+      if (className.equals(JavaNameUtil.shortName(importedName))) {
         if (isInternal) {
           String fqName;
           if (packageName.length() > 0) {
@@ -250,7 +262,7 @@ public abstract class BaseLanguageTextGen {
         return;
       }
     }
-    SetSequence.fromSet(importedNames).addElement(importedFqName);
+    SetSequence.fromSet(importedNames).addElement(importedLongFqName);
     BaseLanguageTextGen.addDependency(InternUtil.intern(importedFqName), textGen);
     if (!(packageName.equals("java.lang") || packageName.equals(textGen.getBuffer().getUserObject(TextGenManager.PACKAGE_NAME)))) {
       int currPartId = textGen.getBuffer().selectPart(TextGenBuffer.TOP);
