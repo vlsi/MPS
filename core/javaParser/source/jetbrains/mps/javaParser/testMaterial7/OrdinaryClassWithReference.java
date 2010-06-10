@@ -18,13 +18,5 @@ public class OrdinaryClassWithReference<U> {
   }
 
   public static void bar() {
-    OrdinaryEnum ordEnum = OrdinaryEnum.X;
-
-    switch (ordEnum) {
-      case X: {
-        System.err.println("");
-        break;
-      }
-    }
   }
 }
