@@ -912,14 +912,7 @@
                 <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3068114543317961962">
                   <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
                   <link role="classConcept:3" targetNodeId="5.~Language" resolveInfo="Language" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317974097">
-                    <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3068114543317974095">
-                      <node role="leftExpression:16" type="jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_RefactoringParameter:1" id="3068114543317974094" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317974101">
-                      <link role="baseMethodDeclaration:3" targetNodeId="5.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
-                    </node>
-                  </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_RefactoringParameter:1" id="3068114543317974094" />
                 </node>
               </node>
             </node>
@@ -981,15 +974,8 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3068114543317978965">
               <link role="classConcept:3" targetNodeId="5.~Language" resolveInfo="Language" />
               <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getLanguageFor(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.Language" resolveInfo="getLanguageFor" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317979417">
-                <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3068114543317979415">
-                  <node role="leftExpression:16" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference:1" id="3068114543317979383">
-                    <link role="refactoringParameter:1" targetNodeId="3068114543317961952" resolveInfo="targetModel" />
-                  </node>
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317979421">
-                  <link role="baseMethodDeclaration:3" targetNodeId="5.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
-                </node>
+              <node role="actualArgument:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference:1" id="3068114543317979383">
+                <link role="refactoringParameter:1" targetNodeId="3068114543317961952" resolveInfo="targetModel" />
               </node>
             </node>
           </node>
@@ -1466,13 +1452,11 @@
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3068114543317979456">
                     <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317979457">
                       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317979458">
-                        <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3068114543317979459">
-                          <node role="leftExpression:16" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference:1" id="3068114543317979460">
-                            <link role="refactoringParameter:1" targetNodeId="3068114543317961952" resolveInfo="targetModel" />
-                          </node>
+                        <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference:1" id="3068114543317979460">
+                          <link role="refactoringParameter:1" targetNodeId="3068114543317961952" resolveInfo="targetModel" />
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317979461">
-                          <link role="baseMethodDeclaration:3" targetNodeId="5.~SModel.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
+                          <link role="baseMethodDeclaration:3" targetNodeId="5.~SModelDescriptor.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
                         </node>
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317979462">
@@ -1508,8 +1492,13 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3068114543317979163">
           <node role="expression:3" type="jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression:1" id="3068114543317979164">
-            <node role="destination:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference:1" id="3068114543317979409">
-              <link role="refactoringParameter:1" targetNodeId="3068114543317961952" resolveInfo="targetModel" />
+            <node role="destination:1" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2756732146289180810">
+              <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference:1" id="2756732146289180809">
+                <link role="refactoringParameter:1" targetNodeId="3068114543317961952" resolveInfo="targetModel" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2756732146289180814">
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+              </node>
             </node>
             <node role="whatToMove:1" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317979406">
               <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter:1" id="3068114543317979407" />
@@ -2187,15 +2176,8 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3068114543317979363">
               <link role="classConcept:3" targetNodeId="5.~Language" resolveInfo="Language" />
               <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getLanguageFor(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.Language" resolveInfo="getLanguageFor" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317979438">
-                <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3068114543317979436">
-                  <node role="leftExpression:16" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference:1" id="3068114543317979422">
-                    <link role="refactoringParameter:1" targetNodeId="3068114543317961952" resolveInfo="targetModel" />
-                  </node>
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317979442">
-                  <link role="baseMethodDeclaration:3" targetNodeId="5.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
-                </node>
+              <node role="actualArgument:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference:1" id="3068114543317979422">
+                <link role="refactoringParameter:1" targetNodeId="3068114543317961952" resolveInfo="targetModel" />
               </node>
             </node>
           </node>

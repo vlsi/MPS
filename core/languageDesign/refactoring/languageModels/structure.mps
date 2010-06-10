@@ -219,7 +219,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <maxImportIndex value="19" />
+  <maxImportIndex value="20" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -230,6 +230,7 @@
   <import index="14" modelUID="f:java_stub#jetbrains.mps.ide.findusages.model(jetbrains.mps.ide.findusages.model@java_stub)" version="-1" />
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
+  <import index="20" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1189693812263">
     <property name="name:0" value="OldRefactoring" />
     <property name="package:0" value="Deprecated" />
@@ -1686,6 +1687,9 @@
       <property name="name:0" value="paramType" />
       <link role="targetType:0" targetNodeId="2.1068431790189:3" resolveInfo="Type" />
     </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="2756732146289180815">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473854053:0" resolveInfo="abstract" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4413749148913695137">
     <property name="package:0" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
@@ -1693,10 +1697,12 @@
     <link role="extends:0" targetNodeId="4413749148913695136:1" resolveInfo="MPSParameterType" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="4413749148913757072">
       <link role="conceptLinkDeclaration:0" targetNodeId="4413749148913757059:1" resolveInfo="paramType" />
-      <node role="target:0" type="jetbrains.mps.lang.smodel.structure.SModelType:16" id="4413749148913757075" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2756732146289136465">
+        <link role="classifier:3" targetNodeId="20.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+      </node>
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3673527736022208474">
-      <property name="value:0" value="model" />
+      <property name="value:0" value="SModelDescriptor" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>

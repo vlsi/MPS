@@ -5273,20 +5273,8 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7573235936722759023">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7573235936722759024">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="7573235936722759424">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7573235936722759425">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="7573235936722759427">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="7573235936722759428">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7573235936722759429">
-                    <link role="variableDeclaration:3" targetNodeId="7573235936722759021" resolveInfo="entity" />
-                  </node>
-                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7573235936722759430">
-                    <link role="classifier:3" targetNodeId="10.~SModelDescriptor" resolveInfo="SModelDescriptor" />
-                  </node>
-                </node>
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7573235936722759432">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
-              </node>
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7573235936722759429">
+              <link role="variableDeclaration:3" targetNodeId="7573235936722759021" resolveInfo="entity" />
             </node>
             <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="7573235936722759433" />
           </node>

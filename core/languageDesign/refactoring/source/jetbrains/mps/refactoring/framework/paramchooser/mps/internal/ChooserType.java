@@ -22,6 +22,7 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -34,12 +35,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class ChooserType {
-  public abstract ChooseByNameModel createChooserModel(IChooserSettings settings);
+public abstract class ChooserType<T> {
+  public abstract ChooseByNameModel createChooserModel(IChooserSettings<T> settings, RefactoringContext context, String paramName);
 
-  protected List filter(IChooserSettings settings, List list) {
-    List result = new ArrayList<SNode>();
-    for (Object entity : list) {
+  protected List<T> filter(IChooserSettings<T> settings, List<T> list) {
+    List<T> result = new ArrayList<T>();
+    for (T entity : list) {
       if (settings.met(entity)) {
         result.add(entity);
       }
@@ -47,26 +48,27 @@ public abstract class ChooserType {
     return result;
   }
 
-  public static class ModelChooserType extends ChooserType {
+  public static class ModelChooserType extends ChooserType<SModelDescriptor> {
     public ModelChooserType() {
     }
 
-    public ChooseByNameModel createChooserModel(final IChooserSettings settings) {
+    public ChooseByNameModel createChooserModel(final IChooserSettings<SModelDescriptor> settings, final RefactoringContext context, final String paramName) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
       return new BaseModelModel(project) {
-        public NavigationItem doGetNavigationItem(SModelDescriptor model) {
-          return new BaseModelItem(model) {
+        public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
+          return new BaseModelItem(modelDescriptor) {
             public void navigate(boolean requestFocus) {
+              context.setParameter(paramName, getModelDescriptor());
             }
           };
         }
 
         public SModelDescriptor[] find(boolean checkboxState) {
           List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors();
-          List filteredModelDescriptors = filter(settings, Arrays.asList(modelDescriptors));
-          return (SModelDescriptor[]) filteredModelDescriptors.toArray();
+          List<SModelDescriptor> filteredModelDescriptors = filter(settings, modelDescriptors);
+          return filteredModelDescriptors.toArray(new SModelDescriptor[filteredModelDescriptors.size()]);
         }
 
         public SModelDescriptor[] find(IScope scope) {
@@ -85,26 +87,27 @@ public abstract class ChooserType {
   }
 
 
-  public static class ModuleChooserType extends ChooserType {
+  public static class ModuleChooserType extends ChooserType<IModule> {
     public ModuleChooserType() {
     }
 
-    public ChooseByNameModel createChooserModel(final IChooserSettings settings) {
+    public ChooseByNameModel createChooserModel(final IChooserSettings<IModule> settings, final RefactoringContext context, final String paramName) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
       return new BaseModuleModel(project, "module") {
-        public NavigationItem doGetNavigationItem(IModule module) {
+        public NavigationItem doGetNavigationItem(final IModule module) {
           return new BaseModuleItem(module) {
             public void navigate(boolean requestFocus) {
+              context.setParameter(paramName, module);
             }
           };
         }
 
         public IModule[] find(boolean checkboxState) {
           List<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
-          List filteredModules = filter(settings, Arrays.asList(modules));
-          return (IModule[]) filteredModules.toArray();
+          List<IModule> filteredModules = filter(settings, modules);
+          return filteredModules.toArray(new IModule[filteredModules.size()]);
         }
 
         public IModule[] find(IScope scope) {
