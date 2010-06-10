@@ -28,6 +28,8 @@ import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.debug.api.info.*;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
+import jetbrains.mps.generator.dependencies.GenerationDependencies;
+import jetbrains.mps.generator.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -323,6 +325,19 @@ public class FileGenerationManager implements ApplicationComponent {
         }
       } catch (IOException e) {
         LOG.error(e);
+      }
+    }
+
+    GenerationDependencies dependencies = status.getDependencies();
+    if(dependencies != null) {
+      File outputDir = FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputRootDirectory);
+      for(GenerationRootDependencies rdep : dependencies.getUnchangedDependencies()) {
+        for(String filename : rdep.getFiles()) {
+          File file = new File(outputDir, filename);
+          if(file.exists()) {
+            generatedFiles.add(file);
+          }
+        }
       }
     }
 

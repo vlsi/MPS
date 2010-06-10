@@ -12,21 +12,27 @@ import java.util.*;
  */
 public class GenerationDependencies {
 
+  private static final int DEPENDENCIES_VERSION = 1;
+
   private static final String ROOT_ELEMENT = "dependencies";
   private static final String NODE_ROOT = "source";
   private static final String NODE_COMMON = "common";
   private static final String ATTR_MODEL_HASH = "modelHash";
+  private static final String ATTR_VERSION = "version";
 
   private final List<GenerationRootDependencies> myRootDependencies;
   private final Map<String, GenerationRootDependencies> myRootDependenciesMap;
-  private final Map<String, String> myGeneratedToOriginalMap;
   private final String myModelHash;
 
-  private GenerationDependencies(List<GenerationRootDependencies> data, Map<String,String> generatedToOriginalMap, String modelHash) {
+  private /* transient */ final Map<String, String> myGeneratedToOriginalMap;
+  private /* transient */ final List<GenerationRootDependencies> myUnchanged;
+
+  private GenerationDependencies(List<GenerationRootDependencies> data, Map<String,String> generatedToOriginalMap, String modelHash, List<GenerationRootDependencies> unchanged) {
     this.myRootDependencies = data;
     this.myGeneratedToOriginalMap = generatedToOriginalMap;
     this.myRootDependenciesMap = new HashMap<String, GenerationRootDependencies>(data.size());
     this.myModelHash = modelHash;
+    this.myUnchanged = unchanged; 
     for(GenerationRootDependencies rd : data) {
       String id = rd.getRootId();
       myRootDependenciesMap.put(id == null ? ModelDigestUtil.HEADER : id, rd);
@@ -45,9 +51,13 @@ public class GenerationDependencies {
     return Collections.unmodifiableList(myRootDependencies);
   }
 
+  public List<GenerationRootDependencies> getUnchangedDependencies() {
+    return Collections.unmodifiableList(myUnchanged);
+  }
+
   public Element toXml() {
     Element root = new Element(ROOT_ELEMENT);
-
+    root.setAttribute(ATTR_VERSION, Integer.toString(DEPENDENCIES_VERSION));
     if(myModelHash != null) {
       root.setAttribute(ATTR_MODEL_HASH, myModelHash);
     }
@@ -62,6 +72,12 @@ public class GenerationDependencies {
   }
 
   public static GenerationDependencies fromXml(Element root) {
+    String version = GenerationRootDependencies.getValue(root, ATTR_VERSION);
+    if(version == null || !version.equals(Integer.toString(DEPENDENCIES_VERSION))) {
+      /* regenerate all */
+      return null;
+    }
+
     List<GenerationRootDependencies> data = new ArrayList<GenerationRootDependencies>();
 
     for (Element e : ((List<Element>) root.getChildren(NODE_COMMON))) {
@@ -73,7 +89,7 @@ public class GenerationDependencies {
     String modelHash = GenerationRootDependencies.getValue(root, ATTR_MODEL_HASH);
     final HashMap<String, String> map = new HashMap<String, String>();
     // TODO restore generatedToOriginal map ...
-    return new GenerationDependencies(data, map, modelHash);
+    return new GenerationDependencies(data, map, modelHash, Collections.<GenerationRootDependencies>emptyList());
   }
 
   public static String getFileName(SNode outputRootNode) {
@@ -100,6 +116,7 @@ public class GenerationDependencies {
       }
       filesList.add(getFileName(outputRoot));
     }
+    List<GenerationRootDependencies> unchanged = null;
     List<GenerationRootDependencies> rootDependencies = new ArrayList<GenerationRootDependencies>(roots.length);
     for(RootDependenciesListener l : roots) {
       SNode originalRoot = l.getOriginalRoot();
@@ -107,9 +124,18 @@ public class GenerationDependencies {
       if(files == null) {
         files = Collections.emptyList();
       }
-      rootDependencies.add(GenerationRootDependencies.fromData(l, files));
+      if(l.isUnchanged()) {
+        GenerationRootDependencies dep = l.getSavedDependencies();
+        rootDependencies.add(dep);
+        if(unchanged == null) {
+          unchanged = new ArrayList<GenerationRootDependencies>();
+        }
+        unchanged.add(dep);
+      } else {
+        rootDependencies.add(GenerationRootDependencies.fromData(l, files));
+      }
     }
-    return new GenerationDependencies(rootDependencies, generatedToOriginalMap, modelHash);
+    return new GenerationDependencies(rootDependencies, generatedToOriginalMap, modelHash, unchanged);
   }
 
 }

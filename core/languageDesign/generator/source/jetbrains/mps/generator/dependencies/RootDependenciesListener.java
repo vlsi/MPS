@@ -19,17 +19,18 @@ public class RootDependenciesListener implements DependenciesReadListener {
   private final SNode myOriginalRoot;
   private final DefaultDependenciesBuilder myBuilder;
   private final String myHash;
-  private boolean isBlocked;
+  private boolean isUnchanged;
 
   private boolean dependsOnConditionals = false;
   private Set<SNode> dependsOn = new HashSet<SNode>();
   private Set<SModelDescriptor> dependsOnModels = new HashSet<SModelDescriptor>();
+  private GenerationRootDependencies mySavedDependencies;
 
   public RootDependenciesListener(@Nullable SNode originalRoot, @NotNull DefaultDependenciesBuilder builder, @Nullable String hash) {
     myOriginalRoot = originalRoot;
     myBuilder = builder;
     myHash = hash;
-    isBlocked = false;
+    isUnchanged = false;
   }
 
   private void addNodeAccess(SNode node) {
@@ -193,14 +194,16 @@ public class RootDependenciesListener implements DependenciesReadListener {
     return dependsOnConditionals && myOriginalRoot != null;
   }
 
-  public boolean isBlocked() {
-    return isBlocked;
+  public boolean isUnchanged() {
+    return isUnchanged;
   }
 
-  public void updateDependencies(Collection<SNode> roots, Collection<SModelDescriptor> models, boolean dependsOnConditionals) {
-    this.dependsOnConditionals |= dependsOnConditionals;
-    dependsOn.addAll(roots);
-    dependsOnModels.addAll(models);
-    isBlocked = true;
+  public void loadDependencies(GenerationRootDependencies previous) {
+    mySavedDependencies = previous;
+    isUnchanged = true;
+  }
+
+  public GenerationRootDependencies getSavedDependencies() {
+    return mySavedDependencies;
   }
 }

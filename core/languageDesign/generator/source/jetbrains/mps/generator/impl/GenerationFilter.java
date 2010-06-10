@@ -205,7 +205,7 @@ public class GenerationFilter {
     }
 
     DefaultDependenciesBuilder result = new DefaultDependenciesBuilder(myModel.getSModel(), myGenerationHashes);
-    if(myUnchangedRoots.isEmpty()) {
+    if(myUnchangedRoots.isEmpty() && myConditionalsUnchanged == false) {
       return result;
     }
 
@@ -215,26 +215,17 @@ public class GenerationFilter {
     }
 
     for(SNode root : myUnchangedRoots) {
-      RootDependenciesListener listener = result.getListener(root);
-      GenerationRootDependencies deps = mySavedDependencies.getDependenciesFor(root.getId());
-      assert deps.getHash().equals(listener.getHash());
-      Set<SNode> roots = new HashSet<SNode>();
-      Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
-      for(String rootId : deps.getLocal()) {
-        SNode localRoot = rootById.get(rootId);
-        if(localRoot != null) {
-          roots.add(localRoot);
-        }
-      }
-      for(String modelId : deps.getExternal()) {
-        SModelDescriptor externalModel = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelId));
-        if(externalModel != null) {
-          models.add(externalModel);
-        }
-      }
-      listener.updateDependencies(roots, models, deps.isDependsOnConditionals());
+      propagateDependencies(rootById, result.getListener(root), mySavedDependencies.getDependenciesFor(root.getId()));
+    }
+    if(myConditionalsUnchanged) {
+      propagateDependencies(rootById, result.getListener(null), mySavedDependencies.getDependenciesFor(ModelDigestUtil.HEADER));
     }
 
     return result;
+  }
+
+  private void propagateDependencies(Map<String, SNode> rootById, RootDependenciesListener listener, GenerationRootDependencies deps) {
+    assert deps.getHash().equals(listener.getHash());
+    listener.loadDependencies(deps);
   }
 }

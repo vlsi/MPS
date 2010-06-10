@@ -303,7 +303,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected QueryExecutionContext getExecutionContext(SNode inputNode) {
     RootDependenciesListener listener = myDependenciesBuilder.getListener(inputNode);
     if (listener != null) {
-      if (listener.isBlocked()) {
+      if (listener.isUnchanged()) {
         return null;
       }
 

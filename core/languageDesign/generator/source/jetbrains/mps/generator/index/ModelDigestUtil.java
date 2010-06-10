@@ -75,6 +75,9 @@ public class ModelDigestUtil {
     if(deep != 0) {
       LOG.error("xml: bad data");
     }
+    if(firstNode) {
+      rootHashes.put(HEADER, ModelDigestIndex.hash(content));
+    }
   }
 
   public static String hash(String content) {
