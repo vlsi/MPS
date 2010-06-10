@@ -261,6 +261,7 @@ public final class SNode {
   public SNode getTopmostAncestor() {
     SNode current = this;
     while (current.getParent() != null) {
+      assert current != current.getParent();
       current = current.getParent();
     }
     return current;
