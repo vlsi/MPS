@@ -29,6 +29,7 @@ import jetbrains.mps.generator.fileGenerator.CacheGenerator;
 import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.index.ModelDigestIndex;
+import jetbrains.mps.generator.index.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
@@ -135,7 +136,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     final String[] valueArray = new String[1];
     FileBasedIndex.getInstance().processValues(ModelDigestIndex.NAME, FileBasedIndex.getFileId(f), f, new ValueProcessor<Map<String,String>>() {
       public boolean process(VirtualFile file, Map<String,String> values) {
-        valueArray[0] = values.get("");
+        valueArray[0] = values.get(ModelDigestUtil.FILE);
         return true;
       }
     }, GlobalSearchScope.allScope(project));
