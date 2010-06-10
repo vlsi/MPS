@@ -74,6 +74,10 @@ public class DeleteNodeChange extends Change {
     return myChildren;
   }
 
+  public List<SNodeId> getChildren() {
+    return myChildren;
+  }
+
   public SNodeId getParentId() {
     return myParentId;
   }

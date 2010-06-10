@@ -3816,11 +3816,18 @@
                             <property name="name:7" value="child" />
                           </node>
                           <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="967641992124638738">
-                            <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="967641992124638731">
-                              <link role="variable:7" targetNodeId="967641992124622352" resolveInfo="change" />
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="2803708743937485050">
+                              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="2803708743937485051">
+                                <node role="expression:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="2803708743937485052">
+                                  <link role="variable:7" targetNodeId="967641992124622352" resolveInfo="change" />
+                                </node>
+                                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2803708743937555765">
+                                  <link role="classifier:3" targetNodeId="13.~DeleteNodeChange" resolveInfo="DeleteNodeChange" />
+                                </node>
+                              </node>
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="967641992124638755">
-                              <link role="baseMethodDeclaration:3" targetNodeId="13.~Change.getDependencies():java.util.List" resolveInfo="getDependencies" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="13.~DeleteNodeChange.getChildren():java.util.List" resolveInfo="getChildren" />
                             </node>
                           </node>
                           <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="967641992124638729">
@@ -3934,31 +3941,9 @@
                             </node>
                           </node>
                         </node>
-                        <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="2352903979085962609">
-                          <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="2352903979085962610">
-                            <property name="name:7" value="child" />
-                          </node>
-                          <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2352903979085962611">
-                            <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="2352903979085962612">
-                              <link role="variable:7" targetNodeId="967641992124622352" resolveInfo="change" />
-                            </node>
-                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2352903979085962613">
-                              <link role="baseMethodDeclaration:3" targetNodeId="13.~Change.getDependencies():java.util.List" resolveInfo="getDependencies" />
-                            </node>
-                          </node>
-                          <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2352903979085962614">
-                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2352903979085962615">
-                              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2352903979085962616">
-                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2352903979085962617">
-                                  <link role="variableDeclaration:3" targetNodeId="967641992124638896" resolveInfo="hasRemovedParent" />
-                                </node>
-                                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation:7" id="2352903979085962618">
-                                  <node role="argument:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="2352903979085962619">
-                                    <link role="variable:7" targetNodeId="2352903979085962610" resolveInfo="child" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
+                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="2803708743937555772">
+                          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="2803708743937555773">
+                            <property name="text:3" value="TODO update hasRemovedParent" />
                           </node>
                         </node>
                       </node>
@@ -4904,11 +4889,18 @@
                                               </node>
                                             </node>
                                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4959636007936558555">
-                                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4959636007936558556">
-                                                <link role="variableDeclaration:3" targetNodeId="7055875085428864156" resolveInfo="ch" />
+                                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="2803708743937555766">
+                                                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="2803708743937555767">
+                                                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2803708743937555768">
+                                                    <link role="variableDeclaration:3" targetNodeId="7055875085428864156" resolveInfo="ch" />
+                                                  </node>
+                                                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2803708743937555770">
+                                                    <link role="classifier:3" targetNodeId="13.~DeleteNodeChange" resolveInfo="DeleteNodeChange" />
+                                                  </node>
+                                                </node>
                                               </node>
                                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4959636007936558557">
-                                                <link role="baseMethodDeclaration:3" targetNodeId="13.~Change.getDependencies():java.util.List" resolveInfo="getDependencies" />
+                                                <link role="baseMethodDeclaration:3" targetNodeId="13.~DeleteNodeChange.getChildren():java.util.List" resolveInfo="getChildren" />
                                               </node>
                                             </node>
                                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" id="7206051335377860075">

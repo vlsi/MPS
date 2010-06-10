@@ -371,7 +371,7 @@ public class ModelChangesManager {
           } else if (change instanceof DeleteNodeChange) {
             SNodeId parent = change.getAffectedNodeId();
             SetSequence.fromSet(removedNodes).addElement(parent);
-            for (SNodeId child : ListSequence.fromList(change.getDependencies())) {
+            for (SNodeId child : ListSequence.fromList(((DeleteNodeChange) change).getChildren())) {
               SetSequence.fromSet(hasRemovedParent).addElement(child);
             }
           } else if (change instanceof MoveNodeChange) {
@@ -379,9 +379,7 @@ public class ModelChangesManager {
             SetSequence.fromSet(addedNodes).addSequence(ListSequence.fromList(SModelUtils.getNodeIds(SNodeOperations.getDescendants(((SNode) model.getNodeById(change.getAffectedNodeId())), null, false, new String[]{}))));
             SNodeId parentId = change.getAffectedNodeId();
             SetSequence.fromSet(removedNodes).addElement(parentId);
-            for (SNodeId child : ListSequence.fromList(change.getDependencies())) {
-              SetSequence.fromSet(hasRemovedParent).addElement(child);
-            }
+            // TODO update hasRemovedParent 
           }
         }
 
@@ -500,7 +498,7 @@ __switch__:
             if (ch instanceof DeleteNodeChange) {
               SNode deletedNode = myBaseVersionModel.getNodeById(ch.getAffectedNodeId());
               if (LinkDeclaration_Behavior.call_isSingular_1213877254557(SNodeOperations.getContainingLinkDeclaration(deletedNode))) {
-                newCh = new DeleteNodeChange(ch.getAffectedNodeId(), ch.getDependencies(), check_fh1co9_c0a0a0b0b0a0a0a9a0a0e0y(SNodeOperations.getParent(deletedNode)), SNodeOperations.getContainingLinkRole(deletedNode), -1);
+                newCh = new DeleteNodeChange(ch.getAffectedNodeId(), ((DeleteNodeChange) ch).getChildren(), check_fh1co9_c0a0a0b0b0a0a0a9a0a0e0y(SNodeOperations.getParent(deletedNode)), SNodeOperations.getContainingLinkRole(deletedNode), -1);
               }
             }
             return newCh;
