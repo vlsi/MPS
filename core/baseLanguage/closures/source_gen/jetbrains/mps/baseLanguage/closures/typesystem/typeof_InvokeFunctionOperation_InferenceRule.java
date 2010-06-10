@@ -93,7 +93,7 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
           {
             List<SNode> nodes = (List<SNode>) parameter_15;
             for (SNode child : nodes) {
-              quotedNode_2.addChild("parameterType", HUtil.copyIfNecessary(child, typeCheckingContext));
+              quotedNode_2.addChild("parameterType", HUtil.copyIfNecessary(child));
             }
           }
           {
@@ -117,7 +117,7 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
           {
             List<SNode> nodes = (List<SNode>) parameter_17;
             for (SNode child : nodes) {
-              quotedNode_3.addChild("parameterType", HUtil.copyIfNecessary(child, typeCheckingContext));
+              quotedNode_3.addChild("parameterType", HUtil.copyIfNecessary(child));
             }
           }
           {

@@ -73,7 +73,7 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
         {
           List<SNode> nodes = (List<SNode>) parameter_6;
           for (SNode child : nodes) {
-            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(child, typeCheckingContext));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(child));
           }
         }
         {
