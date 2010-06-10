@@ -42,8 +42,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.*;
 import java.util.List;
 
 public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwner {
@@ -155,6 +154,30 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     return result;
   }
 
+  private void sortChildren(SNodeId nodeId) {
+    SNode newNode = myNewModel.getNodeById(nodeId);
+    SNode oldNode = myOldModel.getNodeById(nodeId);
+    assert newNode != null && oldNode != null;
+
+    LinkedHashSet<String> rolesOrder = new LinkedHashSet<String>();
+    for (SNode child : oldNode.getChildrenIterable()) {
+      rolesOrder.add(child.getRole_());
+    }
+
+    MultiMap<String, SNode> childrenForRoles = new MultiMap<String, SNode>();
+    for (SNode child : newNode.getChildrenIterable()) {
+      childrenForRoles.putValue(child.getRole_(), child);
+    }
+    for (SNode child : newNode.getChildren()) {
+      newNode.removeChild(child);
+    }
+    for (String role : rolesOrder) {
+      for (SNode child : childrenForRoles.get(role)) {
+        newNode.addChild(role, child);
+      }
+    }
+  }
+
   private void applySafeMoves(final List<Change> changes) {
     // Safe moves means moving nodes when the role is the same, the parent is the same,
     // but roles of children in parent node are ordered in different way.
@@ -174,8 +197,12 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
             }
           }
         }
+        HashSet<SNodeId> nodesToSortChildren = new HashSet<SNodeId>();
         for (MoveNodeChange moveNodeChange : movesToApply) {
-          moveNodeChange.apply(myNewModel);
+          nodesToSortChildren.add(moveNodeChange.getNewParent());
+        }
+        for (SNodeId nodeId : nodesToSortChildren) {
+          sortChildren(nodeId);
         }
         changes.removeAll(movesToApply);
       }
@@ -205,11 +232,12 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   }
 
   private void applyChange(MultiMap<SNodeId, Change> dependenciesMap,
-                           List<Change> notAppliedChanges, Change changeToApply) {
-    if (!notAppliedChanges.contains(changeToApply)) {
+                           Set<Change> appliedChanges, Set<SNodeId> notAppliedNodes, Change changeToApply) {
+    if (appliedChanges.contains(changeToApply)) {
       return;
     }
-    notAppliedChanges.remove(changeToApply);
+    appliedChanges.add(changeToApply);
+    notAppliedNodes.remove(changeToApply.getAffectedNodeId());
 
     // Applying this change
     changeToApply.apply(myNewModel);
@@ -217,7 +245,17 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     // Applying changes which depend on current node id
     if (dependenciesMap.containsKey(changeToApply.getAffectedNodeId())) {
       for (Change dependant : dependenciesMap.get(changeToApply.getAffectedNodeId())) {
-        applyChange(dependenciesMap, notAppliedChanges, dependant);
+        boolean dependenciesResolved = true;
+        for (SNodeId dependency : dependant.getDependencies()) {
+          if (notAppliedNodes.contains(dependency)) {
+            dependenciesResolved = false;
+            break;
+          }
+        }
+
+        if (dependenciesResolved) {
+          applyChange(dependenciesMap, appliedChanges, notAppliedNodes, dependant);
+        }
       }
     }
 
@@ -264,12 +302,14 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     protected void revert() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          List<Change> notAppliedChanges = new ArrayList<Change>();
-          notAppliedChanges.addAll(myChanges);
-
-          MultiMap<SNodeId, Change> dependenciesMap = getChangeDependencies(notAppliedChanges);
+          HashSet<SNodeId> notAppliedNodes = new HashSet<SNodeId>();
+          for (Change change : myChanges) {
+            notAppliedNodes.add(change.getAffectedNodeId());
+          }
+          HashSet<Change> appliedChanges = new HashSet<Change>();
+          MultiMap<SNodeId, Change> dependenciesMap = getChangeDependencies(myChanges);
           for (ChangeEditorMessage m : myChangeMessages) {
-            applyChange(dependenciesMap, notAppliedChanges, m.getChange());
+            applyChange(dependenciesMap, appliedChanges, notAppliedNodes, m.getChange());
           }
         }
       });

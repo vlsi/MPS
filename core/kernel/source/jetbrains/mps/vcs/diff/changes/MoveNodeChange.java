@@ -59,7 +59,7 @@ public class MoveNodeChange extends Change {
 
   @Override
   public List<SNodeId> getDependencies() {
-    return Arrays.asList(myNewParent);
+    return Arrays.asList(myPrevSibling, myNewParent);
   }
 
   public boolean apply(SModel m) {
