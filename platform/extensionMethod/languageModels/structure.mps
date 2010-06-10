@@ -153,5 +153,20 @@
     <property name="name:0" value="ExtensionStaticFieldDeclaration" />
     <link role="extends:0" targetNodeId="6.1068431474542:3" resolveInfo="VariableDeclaration" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7685333756920172912">
+    <property name="name:0" value="LocalExtendedMethodCall" />
+    <link role="extends:0" targetNodeId="6.1068499141036:3" resolveInfo="BaseMethodCall" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7685333756920172914">
+      <property name="value:0" value="local extended method call" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7685333756920172913">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="instanceMethodDeclaration" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="specializedLink:0" targetNodeId="6.1068499141037:3" />
+      <link role="target:0" targetNodeId="6.1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
+    </node>
+  </node>
 </model>
 

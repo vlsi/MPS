@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.extensionMethods.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ExtensionMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -16,5 +18,19 @@ public class ExtensionMethodDeclaration_Behavior {
     } else {
       return SLinkOperations.getTarget(thisNode, "extendedType", true);
     }
+  }
+
+  public static SNode call_getClassifier_7685333756920241018(SNode thisNode) {
+    SNode type = ExtensionMethodDeclaration_Behavior.call_getThisType_8022092943109893938(thisNode);
+    SNode classifierType;
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+      classifierType = SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    } else {
+      classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
+    }
+    if (classifierType == null) {
+      return null;
+    }
+    return SLinkOperations.getTarget(classifierType, "classifier", false);
   }
 }

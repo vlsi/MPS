@@ -35,7 +35,7 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_8455935734540360534(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     if ((SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"}, true, false) != null)) {
-      return true;
+      return false;
     }
     return false;
   }

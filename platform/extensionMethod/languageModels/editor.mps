@@ -575,5 +575,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="7685333756920172915">
+    <link role="conceptDeclaration:32" targetNodeId="1.7685333756920172912:0" resolveInfo="LocalExtendedMethodCall" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="7685333756920187164">
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem:32" id="7685333756920187165">
+        <link role="parametersInformation:32" targetNodeId="2v.4755152624708725521" resolveInfo="BaseMethodParameterInformationQuery" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="7685333756920187166">
+        <link role="relationDeclaration:32" targetNodeId="1.7685333756920172913:0" />
+        <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="7685333756920187167">
+          <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="7685333756920187168">
+            <property name="readOnly:32" value="true" />
+            <link role="relationDeclaration:32" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="7685333756920187169">
+        <link role="editorComponent:32" targetNodeId="2v.1173990860683" resolveInfo="IMethodCall_actualArguments" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="7685333756920187170" />
+    </node>
+  </node>
 </model>
 
