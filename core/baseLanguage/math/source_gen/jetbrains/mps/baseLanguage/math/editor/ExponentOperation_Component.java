@@ -81,7 +81,6 @@ public class ExponentOperation_Component extends AbstractCellProvider {
       style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
     }
     deleteUpperIndex.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ExponentOperation_Component.ExponentialOperation_generic_cellMenu_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
