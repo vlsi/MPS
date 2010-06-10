@@ -110,6 +110,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                       LaterInvocator.invokeLater(new Runnable() {
                         public void run() {
                           EditorCell selectedCell = editorContext.getSelectedCell();
+                          if (selectedCell == null) return;
                           SNode selectedNode = selectedCell.getSNode();
                           Integer caretPosition = null;
                           if (selectedCell instanceof EditorCell_Label) {
