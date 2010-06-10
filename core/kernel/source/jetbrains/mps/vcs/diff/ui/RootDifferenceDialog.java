@@ -21,6 +21,7 @@ import com.intellij.ui.FocusTrackback;
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
@@ -29,6 +30,8 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.diff.DiffBuilder;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.Change;
+import jetbrains.mps.vcs.diff.changes.MoveNodeChange;
+import org.apache.commons.lang.ObjectUtils;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -152,11 +155,39 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     return result;
   }
 
+  private void applySafeMoves(final List<Change> changes) {
+    // Safe moves means moving nodes when the role is the same, the parent is the same,
+    // but roles of children in parent node are ordered in different way.
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      @Override
+      public void run() {
+        ArrayList<MoveNodeChange> movesToApply = new ArrayList<MoveNodeChange>();
+        for (Change change : changes) {
+          if (change instanceof MoveNodeChange) {
+            MoveNodeChange moveNodeChange = (MoveNodeChange) change;
+            SNode newNode = myNewModel.getNodeById(change.getAffectedNodeId());
+            SNode oldNode = myOldModel.getNodeById(change.getAffectedNodeId());
+            assert newNode != null && oldNode != null;
+            if (ObjectUtils.equals(newNode.getRole_(), oldNode.getRole_())
+              && SNodeOperations.getIndexInParent(newNode) == SNodeOperations.getIndexInParent(oldNode)) {
+              movesToApply.add(moveNodeChange);
+            }
+          }
+        }
+        for (MoveNodeChange moveNodeChange : movesToApply) {
+          moveNodeChange.apply(myNewModel);
+        }
+        changes.removeAll(movesToApply);
+      }
+    }, myOldEditorComponent.getOperationContext().getProject());
+  }
+
   private void rebuildChangeBlocks() {
     myNewEditorComponent.removeAllChanges();
     myOldEditorComponent.removeAllChanges();
 
     List<Change> revertChanges = new DiffBuilder(myNewModel, myOldModel).getChanges();
+    applySafeMoves(revertChanges);
     myNewEditorComponent.hightlight(revertChanges, true, true);
     myOldEditorComponent.hightlight(revertChanges, false, true);
 
