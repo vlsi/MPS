@@ -53,7 +53,6 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
   private Project myProject;
   private MPSNodeVirtualFile myFile;
   private IOperationContext myContext;
-  private boolean myIsValid = true;
 
   public MPSFileNodeEditor(IOperationContext context, final MPSNodeVirtualFile file) {
     this(context.getProject(), file, context);
@@ -170,7 +169,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
   }
 
   public boolean isValid() {
-    return myIsValid;
+    return myFile.isValid();
   }
 
   public void selectNotify() {
@@ -209,7 +208,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
   }
 
   public void recreateEditor() {
-    if (myProject.isDisposed()) return;
+    if (myProject.isDisposed() || !isValid()) return;
     if (myNodeEditor instanceof NodeEditor) return;
 
     myComponent.removeAll();
@@ -221,7 +220,6 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
     }
 
     IOperationContext context = createOperationContext();
-    assert context != null;
     myNodeEditor = myProject.getComponent(MPSEditorOpener.class).createEditorFor(context, myFile.getNode());
 
     if (state != null) {
@@ -232,19 +230,15 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
     myComponent.validate();
   }
 
+  @NotNull
   protected IOperationContext createOperationContext() {
     if (myContext != null) {
       return myContext;
     }
 
-    assert myFile.getNode() != null : "Node should not be null for file: " + myFile;
-    assert myFile.getNode().getModel() != null : "Model should not be null";
+    assert isValid() : "createOperationContext() was called for MPSFileNodeEditor with invalid file: " + myFile;
     SModelDescriptor sm = myFile.getNode().getModel().getModelDescriptor();
-
-    if (sm == null) {
-      myIsValid = false;
-      return null;
-    }
+    assert sm != null : "Model descriptor is null for model: " + myFile.getNode().getModel();
 
     IOperationContext result = new ModuleContext(sm.getModule(), myProject);
     assert result.getModule() == sm.getModule() : "Different modules: " + result.getModule() + "/" + sm.getModule();

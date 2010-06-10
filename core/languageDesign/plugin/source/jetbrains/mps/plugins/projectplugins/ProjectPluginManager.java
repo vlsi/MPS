@@ -215,7 +215,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (MPSFileNodeEditor editor : myEditorsProvider.getAllEditors()) {
-          if (editor.getNodeEditor() instanceof TabbedEditor){
+          if (editor.isValid() && editor.getNodeEditor() instanceof TabbedEditor){
             editor.recreateEditor();
           }
         }
