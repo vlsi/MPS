@@ -24,19 +24,21 @@ import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.ModelUtils.Version;
 import jetbrains.mps.vcs.diff.ui.MergeModelsDialog;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
+import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
 
+import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import java.io.File;
 import java.io.IOException;
@@ -44,13 +46,13 @@ import java.io.IOException;
 public class VcsHelper {
   private static final Logger LOG = Logger.getLogger(VcsHelper.class);
 
-  public static boolean showDiskMemoryMerge(final IFile modelFile, final SModel inMemory) {
+  public static boolean resolveDiskMemoryConflict(final IFile modelFile, final SModel inMemory) {
     return ModelChangesWatcher.instance().executeUnderBlockedReload(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         try {
           File backupFile = doBackup(modelFile, inMemory);
-          return showSimpleDialog(modelFile, inMemory, backupFile);
+          return showDiskMemoryQuestion(modelFile, inMemory, backupFile);
         } catch (IOException e) {
           LOG.error(e);
           throw new RuntimeException(e);
@@ -60,25 +62,24 @@ public class VcsHelper {
 
   }
 
-  private static boolean showSimpleDialog(IFile modelFile, SModel inMemory, File backupFile) {
-    String message = "Model " + inMemory + " has conflicting changes.\n" +
-      "It was modified on disk and in memory at the same time.\n" +
-      "Fear not, backup of both versions was created and saved to:\n" +
-      backupFile.getAbsolutePath() + "\n" +
+  private static boolean showDiskMemoryQuestion(IFile modelFile, SModel inMemory, File backupFile) {
+    String message = "Changes have been made to " + inMemory + " model in memory and on disk.\n" +
+      "Backup of both versions was saved to \"" + backupFile.getAbsolutePath() + "\"\n" +
       "Which version to use?";
-    String title = "Model " + inMemory + " has conflicting changes.";
-    String diskVersion = "Load Disk Version";
-    String memoryVersion = "Save Memory Version";
-    String showMergeDialog = "Show Merge Dialog";
-    String[] options = {diskVersion, memoryVersion, showMergeDialog};
+    String title = "Model Versions Conflict";
+    String diskVersion = "Load &File System Version";
+    String memoryVersion = "Save &Memory Version";
+    String showDiffDialog = "Show &Difference";
+    String[] options = {diskVersion, memoryVersion, showDiffDialog};
     int result = Messages.showDialog(message, title, options, 0, Messages.getQuestionIcon());
-    if (result == -1) return showDiskMemoryMerge(modelFile, inMemory);
+    if (result == -1) return resolveDiskMemoryConflict(modelFile, inMemory);
+
     if (options[result].equals(diskVersion)) {
       return false;
     } else if (options[result].equals(memoryVersion)) {
       return true;
     } else {
-      return doRealMerge(modelFile, inMemory);
+      return openDiffDialog(modelFile, inMemory);
     }
   }
 
@@ -94,10 +95,10 @@ public class VcsHelper {
     return zipfile;
   }
 
-  private static boolean doRealMerge(IFile modelFile, final SModel inMemory) {
+  private static boolean openDiffDialog(IFile modelFile, final SModel inMemory) {
     try {
       final SModel onDisk = ModelUtils.readModel(FileUtil.loadFileBytes(FileSystem.toFile(modelFile)), modelFile.getPath());
-      return showMergeDialog(inMemory, inMemory, onDisk, modelFile,ProjectManager.getInstance().getOpenProjects()[0]);
+      return showDiffDialog(onDisk, inMemory, modelFile, ProjectManager.getInstance().getOpenProjects()[0]);
     } catch (IOException e) {
       LOG.error(e);
     } catch (ReadException e) {
@@ -106,6 +107,41 @@ public class VcsHelper {
     return true;
   }
 
+  private static boolean showDiffDialog(final SModel diskModel, final SModel memoryModel, IFile modelFile, final Project project) {
+    final VirtualFile file = VFileSystem.getFile(modelFile);
+    LOG.assertLog(file != null);
+
+    final ModelDifferenceDialog dialog = ModelAccess.instance().runReadAction(new Computable<ModelDifferenceDialog>() {
+      public ModelDifferenceDialog compute() {
+        SModelDescriptor modelDescriptor = diskModel.getModelDescriptor();
+        if (modelDescriptor == null) {
+          modelDescriptor = memoryModel.getModelDescriptor();
+          if (modelDescriptor == null) {
+            modelDescriptor = SModelRepository.getInstance().getModelDescriptor(diskModel.getSModelFqName());
+          }
+        }
+        IOperationContext context;
+        if (modelDescriptor == null) {
+          context = new GlobalOperationContext();
+        } else {
+          context = new ModuleContext(modelDescriptor.getModule(), project);
+        }
+        JFrame frame = WindowManager.getInstance().getFrame(project);
+        return new ModelDifferenceDialog(context, frame, diskModel, memoryModel, "Disk Memory Diff",
+                                         true, new String[]{"Filesystem version (read-only)", "Memory version"});
+      }
+    });
+    dialog.showDialog();
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        dialog.toFront();
+      }
+    });
+
+    return true;
+  }  
+
+  @Deprecated
   public static boolean showMergeDialog(final SModel base, final SModel mine, final SModel repo, IFile modelFile, final Project project) {
     final VirtualFile file = VFileSystem.getFile(modelFile);
     LOG.assertLog(file != null);

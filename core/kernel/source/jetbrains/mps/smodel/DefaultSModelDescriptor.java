@@ -33,10 +33,8 @@ import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.vcs.VcsHelper;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -90,7 +88,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (SModelRepository.getInstance().isChanged(this)) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          final boolean needSave = VcsHelper.showDiskMemoryMerge(myModelFile, mySModel);
+          final boolean needSave = VcsHelper.resolveDiskMemoryConflict(myModelFile, mySModel);
           if (needSave) {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
@@ -341,7 +339,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
         "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          final boolean needSave = VcsHelper.showDiskMemoryMerge(myModelFile, mySModel);
+          final boolean needSave = VcsHelper.resolveDiskMemoryConflict(myModelFile, mySModel);
           if (needSave) {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
