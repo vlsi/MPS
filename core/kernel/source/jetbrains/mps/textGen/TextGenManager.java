@@ -43,6 +43,8 @@ public class TextGenManager {
   public static final String DEPENDENCY = "DEPENDENCY";
   public static final String EXTENDS = "EXTENDS";
   public static final String IMPORT = "IMPORT";
+  //temp hack
+  public static final String ADDED_IMPORT = "ADDED_IMPORT";
 
   public static void reset() {
     ourInstance = null;

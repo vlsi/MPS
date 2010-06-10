@@ -264,11 +264,13 @@ public abstract class BaseLanguageTextGen {
     }
     SetSequence.fromSet(importedNames).addElement(importedLongFqName);
     BaseLanguageTextGen.addDependency(InternUtil.intern(importedFqName), textGen);
-    if (!(packageName.equals("java.lang") || packageName.equals(textGen.getBuffer().getUserObject(TextGenManager.PACKAGE_NAME)))) {
+    Set<String> addedImports = BaseLanguageTextGen.getUserObjects(TextGenManager.ADDED_IMPORT, textGen);
+    if (!(packageName.equals("java.lang") || packageName.equals(textGen.getBuffer().getUserObject(TextGenManager.PACKAGE_NAME)) || SetSequence.fromSet(addedImports).contains(importedFqName))) {
       int currPartId = textGen.getBuffer().selectPart(TextGenBuffer.TOP);
       textGen.appendNewLine();
       textGen.append("import " + importedFqName + ";");
       textGen.getBuffer().selectPart(currPartId);
+      SetSequence.fromSet(addedImports).addElement(importedFqName);
     }
     if (isInternal) {
       textGen.append(className);
