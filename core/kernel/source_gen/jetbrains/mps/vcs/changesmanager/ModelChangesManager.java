@@ -1411,6 +1411,12 @@ __switch__:
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               recursivelyChildRemoved(e.getRoot());
+              removeChanges(Change.class, new _FunctionTypes._return_P1_E0<Boolean, Change>() {
+                public Boolean invoke(Change ch) {
+                  return !(ch instanceof NewNodeChange || ch instanceof DeleteNodeChange) && ObjectUtils.equals(ch.getAffectedNodeId(), e.getRoot().getSNodeId());
+                }
+              });
+              removeChildChanges(e.getRoot().getSNodeId());
               if (removeChanges(AddRootChange.class, new _FunctionTypes._return_P1_E0<Boolean, AddRootChange>() {
                 public Boolean invoke(AddRootChange ch) {
                   return ObjectUtils.equals(ch.getAffectedNodeId(), e.getRoot().getSNodeId());
@@ -1418,11 +1424,6 @@ __switch__:
               }) == 0) {
                 addChange(new DeleteNodeChange(e.getRoot().getSNodeId(), SModelUtils.getNodeIds(e.getRoot().getChildren())), e.getRoot());
               }
-              removeChanges(Change.class, new _FunctionTypes._return_P1_E0<Boolean, Change>() {
-                public Boolean invoke(Change ch) {
-                  return ObjectUtils.equals(ch.getAffectedNodeId(), e.getRoot().getSNodeId());
-                }
-              });
             }
           });
           fireChangeUpdateFinished();
