@@ -19,8 +19,8 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.vcs.diff.changes.DeleteNodeChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
@@ -107,9 +107,11 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   private EditorMessage highlightChange(@NotNull final Change change) {
-    final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
+    final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
+    final Wrappers._T<MessageTarget> messageTarget = new Wrappers._T<MessageTarget>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
         SNode editedNode = myEditorComponent.getEditedNode();
         if (editedNode == null || editedNode.isDisposed()) {
           return;
@@ -118,26 +120,22 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
         if (model.value == null || model.value.isDisposed()) {
           return;
         }
+        SNodeId affectedNodeId = change.getAffectedNodeId();
+        messageTarget.value = change.getMessageTarget();
+        if (affectedNodeId == null || messageTarget.value == null) {
+          return;
+        }
+        if (change.getChangeType() == ChangeType.DELETE) {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              node.value = model.value.getNodeById(((DeleteNodeChange) change).getParentId());
+            }
+          });
+        } else {
+          node.value = model.value.getNodeById(affectedNodeId);
+        }
       }
     });
-    if (model.value == null) {
-      return null;
-    }
-    SNodeId affectedNodeId = change.getAffectedNodeId();
-    MessageTarget messageTarget = change.getMessageTarget();
-    if (affectedNodeId == null || messageTarget == null) {
-      return null;
-    }
-    final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-    if (change.getChangeType() == ChangeType.DELETE) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          node.value = model.value.getNodeById(((DeleteNodeChange) change).getParentId());
-        }
-      });
-    } else {
-      node.value = model.value.getNodeById(affectedNodeId);
-    }
     if (node.value == null) {
       return null;
     }
@@ -172,7 +170,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
       if (MapSequence.fromMap(myChangesMessages).containsKey(change)) {
         return null;
       }
-      message = new EditorComponentChangesHighligher.ChangeEditorMessage(change, node.value, c, messageTarget);
+      message = new EditorComponentChangesHighligher.ChangeEditorMessage(change, node.value, c, messageTarget.value);
       if (myEditorComponent == null) {
         return null;
       }
