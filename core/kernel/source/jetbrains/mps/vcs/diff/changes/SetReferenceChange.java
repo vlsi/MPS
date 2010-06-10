@@ -86,7 +86,11 @@ public class SetReferenceChange extends Change {
     if (node != null) {
       if (myInternal) {
         SNode target = m.getNodeById(myTargetId);
-        node.setReferent(getRole(), target);
+        node.setReferent(myRole, target);
+        if (target == null) {
+          node.addReference(new StaticReference(myRole, node, node.getModel().getSModelReference(),
+            myTargetId, myResolveInfo));
+        }
       } else {
         SReference reference = SReference.create(myRole, node, myTargetModel, myTargetId);
         node.removeReferent(myRole);
