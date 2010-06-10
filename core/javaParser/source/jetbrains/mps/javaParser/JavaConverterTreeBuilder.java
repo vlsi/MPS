@@ -179,7 +179,7 @@ public class JavaConverterTreeBuilder {
 
   LongLiteral processConstant(LongConstant x) {
     LongLiteral result = LongLiteral.newInstance(myCurrentModel);
-    result.setValue(x.longValue() + "");
+    result.setValue(x.longValue() + "L");
     return result;
   }
 
