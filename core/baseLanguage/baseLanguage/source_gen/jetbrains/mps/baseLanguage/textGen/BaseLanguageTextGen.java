@@ -157,6 +157,9 @@ public abstract class BaseLanguageTextGen {
       textGen.getBuffer().putUserObject(key, importsDone);
     }
     if (cls.isRoot()) {
+      for (SNode nestedClassifier : SNodeOperations.getDescendants(cls, "jetbrains.mps.baseLanguage.structure.Classifier", false, new String[]{})) {
+        SetSequence.fromSet(names).addElement(BaseLanguageTextGen.getPackageName(nestedClassifier, textGen) + "." + SPropertyOperations.getString(nestedClassifier, "name"));
+      }
       int wasPart = textGen.getBuffer().selectPart(TextGenBuffer.TOP);
       textGen.append("package " + BaseLanguageTextGen.getPackageName(cls, textGen) + ";");
       textGen.appendNewLine();
