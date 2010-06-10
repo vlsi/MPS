@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import org.jetbrains.annotations.Nullable;
@@ -44,7 +45,9 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
 
   @Deprecated
   protected AbstractNodeSubstituteAction(Object parameterObject, SNode sourceNode) {
-    assert sourceNode.getModel().getModelDescriptor() != null : "model descriptor is null for node: " + sourceNode;
+    SModelDescriptor modelDescriptor = sourceNode.getModel().getModelDescriptor();
+    assert modelDescriptor != null : "model descriptor is null for node: " + sourceNode;
+    assert modelDescriptor.getModule() != null : "module is null for modelDescriptor: " + modelDescriptor;
     myParameterObject = parameterObject;
     if (parameterObject instanceof SNode && ((SNode) parameterObject).getAdapter() instanceof AbstractConceptDeclaration) {
       myOutputConcept = (SNode) parameterObject;
@@ -54,7 +57,9 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
 
   protected AbstractNodeSubstituteAction(SNode outputConcept, Object parameterObject, SNode sourceNode) {
     assert outputConcept == null || outputConcept.getAdapter() instanceof AbstractConceptDeclaration;
-    assert sourceNode.getModel().getModelDescriptor() != null : "model descriptor is null for node: " + sourceNode;
+    SModelDescriptor modelDescriptor = sourceNode.getModel().getModelDescriptor();
+    assert modelDescriptor != null : "model descriptor is null for node: " + sourceNode;
+    assert modelDescriptor.getModule() != null : "module is null for modelDescriptor: " + modelDescriptor;
     myOutputConcept = outputConcept;
     myParameterObject = parameterObject;
     mySourceNode = sourceNode;
