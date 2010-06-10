@@ -1458,7 +1458,7 @@ public class JavaConverterTreeBuilder {
           constructorBinding = initializer.binding;
         }
         jetbrains.mps.baseLanguage.structure.ConstructorDeclaration constructor =
-          (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myTypesProvider.getRaw(constructorBinding);
+          (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myTypesProvider.getRaw(constructorBinding.original());
         enumConstant.setConstructor(constructor);
         Expression[] arguments = initializer.arguments;
         if (arguments != null) {
