@@ -7,6 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ChangeStaticInInner_Intention extends BaseIntention implements Intention {
@@ -14,7 +15,7 @@ public class ChangeStaticInInner_Intention extends BaseIntention implements Inte
   }
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.ClassConcept";
+    return "jetbrains.mps.baseLanguage.structure.Classifier";
   }
 
   public boolean isParameterized() {
@@ -44,7 +45,7 @@ public class ChangeStaticInInner_Intention extends BaseIntention implements Inte
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return Classifier_Behavior.call_isInner_521412098689998677(node);
+    return Classifier_Behavior.call_isInner_521412098689998677(node) && (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

@@ -70,6 +70,10 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3073231036166300546" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3073231036166300547" />
     </node>
+    <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.Interface:3" id="3073231036166417766">
+      <property name="nonStatic:3" value="true" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3073231036166417767" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3073231036166392859">
     <property name="name:3" value="Enumerator" />

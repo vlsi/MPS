@@ -9393,7 +9393,7 @@
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="521412098689817330">
     <property name="package:8" value="class" />
     <property name="name:8" value="ChangeStaticInInner" />
-    <link role="forConcept:8" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
+    <link role="forConcept:8" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="521412098689817331">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="521412098689817332">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1705375422254837393">
@@ -9450,11 +9450,33 @@
     </node>
     <node role="isApplicableFunction:8" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock:8" id="521412098689820015">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="521412098689820016">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="521412098689820017">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="521412098689820019">
-            <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="521412098689820018" />
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="521412098689820023">
-              <link role="baseMethodDeclaration:16" targetNodeId="29.521412098689998677" resolveInfo="isInner" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3073231036166520441">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="3073231036166520471">
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3073231036166520475">
+              <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="3073231036166520474" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3073231036166520479">
+                <link role="baseMethodDeclaration:16" targetNodeId="29.521412098689998677" resolveInfo="isInner" />
+              </node>
+            </node>
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="3073231036166520461">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="3073231036166520462">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3073231036166520463">
+                  <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="3073231036166520464" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="3073231036166520465">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="3073231036166520466">
+                      <link role="conceptDeclaration:16" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3073231036166520467">
+                  <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="3073231036166520468" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="3073231036166520469">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="3073231036166520470">
+                      <link role="conceptDeclaration:16" targetNodeId="1.1107796713796:3" resolveInfo="Interface" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

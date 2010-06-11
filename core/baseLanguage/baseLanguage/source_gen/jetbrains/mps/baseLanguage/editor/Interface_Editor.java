@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -101,6 +101,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");
     editorCell.setCellId("Constant_4hcgjd_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    Classifier_StaticKeyWord.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -294,7 +295,7 @@ public class Interface_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_4hcgjd_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Classifier");
+    return Classifier_Behavior.call_isInner_521412098689998677(node) && Classifier_Behavior.call_isStatic_521412098689998668(node);
   }
 
   private static boolean renderingCondition_4hcgjd_a5a(SNode node, EditorContext editorContext, IScope scope) {

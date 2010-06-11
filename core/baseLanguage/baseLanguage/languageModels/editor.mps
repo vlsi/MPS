@@ -4464,17 +4464,21 @@
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1224500226822">
         <property name="text:32" value="static" />
         <link role="styleClass:32" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+        <link role="actionMap:32" targetNodeId="4539702814067210008" resolveInfo="Classifier_StaticKeyWord" />
         <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="1224500226823">
           <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1224500226824">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1224500226825">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1224500226826">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1224500226827">
-                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1224500226828" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="1224500226829" />
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3073231036166417785">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="3073231036166417792">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3073231036166417796">
+                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="3073231036166417795" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3073231036166417800">
+                    <link role="baseMethodDeclaration:16" targetNodeId="75.521412098689998668" resolveInfo="isStatic" />
+                  </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1224500226830">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1224500226831">
-                    <link role="conceptDeclaration:16" targetNodeId="17.1107461130800:3" resolveInfo="Classifier" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3073231036166417787">
+                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="3073231036166417786" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3073231036166417791">
+                    <link role="baseMethodDeclaration:16" targetNodeId="75.521412098689998677" resolveInfo="isInner" />
                   </node>
                 </node>
               </node>
@@ -14452,8 +14456,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="4539702814067210008">
-    <property name="name:32" value="ClassConcept_StaticKeyWord" />
-    <link role="applicableConcept:32" targetNodeId="17.1068390468198:3" resolveInfo="ClassConcept" />
+    <property name="name:32" value="Classifier_StaticKeyWord" />
+    <link role="applicableConcept:32" targetNodeId="17.1107461130800:3" resolveInfo="Classifier" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="4539702814067233496">
       <property name="actionId:32" value="delete_action_id" />
       <node role="executeFunction:32" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction:32" id="4539702814067233497">

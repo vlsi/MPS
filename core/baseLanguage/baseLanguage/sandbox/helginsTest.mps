@@ -40,6 +40,19 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3073231036166300534" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3073231036166300535" />
     </node>
+    <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.Interface:3" id="3073231036166520430">
+      <property name="nonStatic:3" value="true" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3073231036166520431" />
+    </node>
+    <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3073231036166520434">
+      <property name="nonStatic:3" value="true" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3073231036166520435" />
+      <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3073231036166520436">
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3073231036166520437" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3073231036166520438" />
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3073231036166520439" />
+      </node>
+    </node>
   </node>
 </model>
 
