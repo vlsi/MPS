@@ -27,6 +27,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 class MessageToolSearchPanel extends AbstractSearchPanel {
 
@@ -95,11 +96,6 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
 
     private void updateView() {
       updateSearchReport(myCountResult);
-      if (myCountResult == 0) {
-        myText.setBackground(myBadSequenceColor);
-      } else if (myText.getBackground() == myBadSequenceColor) {
-        myText.setBackground(Color.white);
-      }
     }
 
     public void search() {
@@ -110,7 +106,13 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
         StringBuilder line = new StringBuilder();
         line.append(myList.getModel().getElementAt(i));
         if (myText.getText().length() != 0) {
-          Matcher matcher = getPattern().matcher(line.toString());
+          Pattern pattern = getPattern();
+          if (pattern == null) {
+            setErrorMessage("Incorrect regular expression");
+            return;
+          }
+          setErrorMessage(null);
+          Matcher matcher = pattern.matcher(line.toString());
           while (matcher.find()) {
             int column = matcher.start() + 11;
             if (!(myColumnResults.contains(column) && myResults.contains(i)

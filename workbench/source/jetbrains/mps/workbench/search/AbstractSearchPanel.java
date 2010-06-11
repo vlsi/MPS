@@ -47,6 +47,7 @@ public abstract class AbstractSearchPanel extends JPanel {
   private JCheckBox myIsRegex = new JCheckBox("Regex");
   protected JLabel myFindResult = new JLabel();
   private JComponent myToolbarComponent;
+  private String myErrorMessage = null;
 
   protected abstract SearchHistoryComponent getSearchHistory();
 
@@ -198,7 +199,25 @@ public abstract class AbstractSearchPanel extends JPanel {
   protected void exportToFindTool() {
   }
 
+  protected void setErrorMessage(String message) {
+    myErrorMessage = message;
+    if (message == null) {
+      return;
+    }
+    Font font = myFindResult.getFont().deriveFont(Font.BOLD);
+    myFindResult.setFont(font);
+    myFindResult.setText(message);
+    myText.setBackground(myBadSequenceColor);
+  }
+
+  private boolean hasErrors() {
+    return myErrorMessage != null;
+  }
+
   protected void updateSearchReport(int matches) {
+    if (hasErrors()) {
+      return;
+    }
     Font font = myFindResult.getFont().deriveFont(Font.PLAIN);
     String text;
     if (matches > 100) {
@@ -213,6 +232,11 @@ public abstract class AbstractSearchPanel extends JPanel {
     }
     myFindResult.setFont(font);
     myFindResult.setText(text);
+    if (matches == 0) {
+      myText.setBackground(myBadSequenceColor);
+    } else if (myText.getBackground() == myBadSequenceColor) {
+      myText.setBackground(Color.white);
+    }
   }
 
   public void activate() {

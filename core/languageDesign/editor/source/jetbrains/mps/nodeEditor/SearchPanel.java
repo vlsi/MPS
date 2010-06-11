@@ -43,6 +43,7 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.util.*;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SearchPanel extends AbstractSearchPanel {
   private EditorComponent myEditor;
@@ -156,14 +157,6 @@ public class SearchPanel extends AbstractSearchPanel {
     }
     selectCell(requestFocus);
     updateSearchReport(myCells.size());
-    if (myCells.isEmpty()) {
-      myText.setBackground(myBadSequenceColor);
-      myEditor.repaint();
-      return;
-    }
-    if (myText.getBackground() == myBadSequenceColor) {
-      myText.setBackground(Color.white);
-    }
   }
 
   public void update(AnActionEvent e) {
@@ -201,7 +194,13 @@ public class SearchPanel extends AbstractSearchPanel {
     List<Integer> resultIndex = new ArrayList<Integer>();
     List<Integer> startHighlightPosition = new ArrayList<Integer>();
     List<Integer> endHighlightPosition = new ArrayList<Integer>();
-    Matcher matcher = getPattern().matcher(content);
+    Pattern pattern = getPattern();
+    if (pattern == null) {
+      setErrorMessage("Incorrect regular expression");
+      return;
+    }
+    setErrorMessage(null);
+    Matcher matcher = pattern.matcher(content);
     int index = 0;
     boolean needChangeSelection, selected = false;
     while (matcher.find()) {
