@@ -275,6 +275,10 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new AnonymousClass_Editor.constructorArgumentListHandler_msf9u8_e0a(node, "constructorArgument", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_constructorArgument");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQueryRestricted());
+    }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

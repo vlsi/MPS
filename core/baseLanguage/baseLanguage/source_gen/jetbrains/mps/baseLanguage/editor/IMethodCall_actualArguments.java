@@ -84,6 +84,10 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     AbstractCellListHandler handler = new IMethodCall_actualArguments.actualArgumentListHandler_arlg9k_b0(node, "actualArgument", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_actualArgument");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQueryRestricted());
+    }
     if (renderingCondition_arlg9k_a1a(node, editorContext, editorContext.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
     }

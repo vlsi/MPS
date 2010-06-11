@@ -80,6 +80,10 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new ThisConstructorInvocation_Editor.actualArgumentListHandler_g21mz4_c0(node, "actualArgument", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_actualArgument");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQueryRestricted());
+    }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

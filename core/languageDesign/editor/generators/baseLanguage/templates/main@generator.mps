@@ -6898,6 +6898,14 @@
         <link role="template:2" targetNodeId="1176796245693" resolveInfo="reduce_QueryMethodEditorProviderExpression" />
       </node>
     </node>
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="893779103613740007">
+      <link role="applicableConcept:2" targetNodeId="38.3903367331818357915:32" resolveInfo="StyledTextType" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="893779103613740009">
+        <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="893779103613774142">
+          <link role="classifier:3" targetNodeId="77.8394433674396727873" resolveInfo="StyledTextPrinter" />
+        </node>
+      </node>
+    </node>
     <node role="weavingMappingRule:2" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule:2" id="1167270396110">
       <link role="applicableConcept:2" targetNodeId="38.1142886221719:32" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1169664923269">
