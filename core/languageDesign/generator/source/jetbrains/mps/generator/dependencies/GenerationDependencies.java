@@ -123,7 +123,7 @@ public class GenerationDependencies {
           rootDependencies.add(GenerationRootDependencies.fromData(l, files));
         }
       }
-    return new GenerationDependencies(rootDependencies, modelHash, unchanged);
+    return new GenerationDependencies(rootDependencies, modelHash, unchanged == null ? Collections.<GenerationRootDependencies>emptyList() : unchanged);
   }
 
 }

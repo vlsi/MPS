@@ -310,10 +310,6 @@ public class FileGenerationManager implements ApplicationComponent {
     for (SNode outputRootNode : outputNodeContents.keySet()) {
       try {
         SNode originalInputNode = null;
-        // TODO get from dependencies
-//        if (status.getTraceMap() != null) {
-//          originalInputNode = status.getTraceMap().getOriginalInputNode(outputRootNode);
-//        }
         File generatedFile = fileGenerator.generateFile(outputRootNode, originalInputNode, status.getInputModel(), outputNodeContents.get(outputRootNode), outputRootDirectory);
 
         if (generatedFile != null) {
@@ -324,6 +320,8 @@ public class FileGenerationManager implements ApplicationComponent {
       }
     }
 
+    DebugInfo debugInfoCache = null;
+
     GenerationDependencies dependencies = status.getDependencies();
     if(dependencies != null) {
       File outputDir = FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputRootDirectory);
@@ -332,6 +330,16 @@ public class FileGenerationManager implements ApplicationComponent {
           File file = new File(outputDir, filename);
           if(file.exists()) {
             generatedFiles.add(file);
+          }
+        }
+
+        if(debugInfoCache == null) {
+          debugInfoCache = BLDebugInfoCache.getInstance().get(status.getOriginalInputModel());
+        }
+        if(debugInfoCache != null) {
+          DebugInfoRoot infoRoot = debugInfoCache.getRootInfo(rdep.getRootId());
+          if(infoRoot != null) {
+            status.getDebugInfo().replaceRoot(infoRoot);
           }
         }
       }
