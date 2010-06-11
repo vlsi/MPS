@@ -337,6 +337,10 @@ public class SearchPanel extends AbstractSearchPanel {
 
   private class SearchPanelEditorMessage extends DefaultEditorMessage {
     private final List<Pair> myPositions;
+    /**
+     * Using cell instead of CellInfo here because SearchPanel itself depends on EditorCells
+     * and re-execute search query/re-create EditorMessages on each underlying editor relayout
+     */
     private EditorCell_Label myCell;
 
     public SearchPanelEditorMessage(EditorCell_Label cell, List<Pair> positions) {
