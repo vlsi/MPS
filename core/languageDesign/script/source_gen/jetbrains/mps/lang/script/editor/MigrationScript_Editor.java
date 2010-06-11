@@ -213,7 +213,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.DRAW_BORDER, true);
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new MigrationScript_Editor.MigrationScript_category_cellMenu_a0a2a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -261,7 +260,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.DRAW_BORDER, true);
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new MigrationScript_Editor.MigrationScript_migrationFromBuild_cellMenu_a0e2a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
