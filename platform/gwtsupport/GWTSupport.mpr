@@ -24,6 +24,7 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/solutions/gwtsupport.sandbox/gwtsupport.sandbox.msd" folder="" />
+      <solutionPath path="${project}/solutions/gwtsupport.buildtest/gwtsupport.buildtest.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/client/client.mpl" folder="" />
@@ -70,6 +71,8 @@
     <subPane />
   </component>
   <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
     <mapping directory="" vcs="" />
     <mapping directory="" vcs="" />
     <mapping directory="" vcs="" />
