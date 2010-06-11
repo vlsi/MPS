@@ -18,50 +18,45 @@ package jetbrains.mps.ide.findusages.model.holders;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-public class ModelsHolder implements IHolder<List<SModelDescriptor>> {
-  private List<SModelDescriptor> myModelDescriptors = new ArrayList<SModelDescriptor>();
-  private IOperationContext myOperationContext = null;
+public class ModulesHolder implements IHolder<List<IModule>> {
+  private List<IModule> myModules = new ArrayList<IModule>();
 
-  public ModelsHolder(List<SModelDescriptor> modelDescriptors, IOperationContext operationContext) {
-    myModelDescriptors = modelDescriptors;
-    myOperationContext = operationContext;
+  public ModulesHolder(Element element, Project project) throws CantLoadSomethingException {
+    read(element, project);
   }
 
-  public List<SModelDescriptor> getObject() {
-    return Collections.unmodifiableList(myModelDescriptors);
+  public ModulesHolder(List<IModule> modules) {
+    myModules = modules;
   }
 
-  public IOperationContext getOperationContext() {
-    return myOperationContext;
+  public List<IModule> getObject() {
+    return myModules;
   }
 
   @NotNull
   public String getCaption() {
-    return NameUtil.formatNumericalString(myModelDescriptors.size(), "model");
+    return NameUtil.formatNumericalString(myModules.size(), "model");
   }
 
   public Icon getIcon() {
-    return jetbrains.mps.ide.projectPane.Icons.MODEL_ICON;
-  }
-
-  public void read(Element element, Project project) throws CantLoadSomethingException {
-    throw new UnsupportedOperationException();
+    return Icons.SOLUTION_ICON;
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {
     throw new UnsupportedOperationException();
   }
 
-
+  public void read(Element element, Project project) throws CantLoadSomethingException {
+    throw new UnsupportedOperationException();
+  }
 }
