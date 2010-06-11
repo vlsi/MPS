@@ -20,6 +20,7 @@ import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
@@ -148,9 +149,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
     if (checkForErrors() && myModelDescriptor != null && myModelDescriptor.isInitialized()) {
       final IScope scope = getOperationContext().getScope();
-      boolean isValid = getSModelDescriptor().isValid(scope);
-      setErrorState(isValid ? ErrorState.NONE : ErrorState.ERROR);
-      List<String> errors = getSModelDescriptor().validate(scope);
+      List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+        public List<String> compute() {
+          boolean isValid = getSModelDescriptor().isValid(scope);
+          setErrorState(isValid ? ErrorState.NONE : ErrorState.ERROR);
+          return getSModelDescriptor().validate(scope);
+        }
+      });
       if (errors.isEmpty()) {
         setTooltipText(null);
       } else {

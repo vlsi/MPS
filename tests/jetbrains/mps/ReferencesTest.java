@@ -16,6 +16,7 @@
 package jetbrains.mps;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.lang.core.structure.BaseConcept;
@@ -96,9 +97,13 @@ public class ReferencesTest extends BaseMPSTest {
     assertTrue(fatals.isEmpty());
   }
 
-  private void checkModel(SModelDescriptor sm) {
-    IScope scope = sm.getModule().getScope();
-    List<String> validationResult = sm.validate(scope);
+  private void checkModel(final SModelDescriptor sm) {
+    final IScope scope = sm.getModule().getScope();
+    List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+      public List<String> compute() {
+        return sm.validate(scope);
+      }
+    });
     for (String item : validationResult) {
       LOG.error("Error in model " + sm.getSModelFqName() + " : " + item);
     }

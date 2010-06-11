@@ -146,6 +146,8 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public List<String> validate(IScope scope) {
+    ModelAccess.assertLegalRead();
+
     List<String> errors = new ArrayList<String>();
     SModel model = getSModel();
 

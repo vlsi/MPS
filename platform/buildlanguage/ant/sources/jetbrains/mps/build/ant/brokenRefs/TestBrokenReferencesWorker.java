@@ -2,6 +2,7 @@ package jetbrains.mps.build.ant.brokenRefs;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.build.ant.IBuildServerMessageFormat;
 import jetbrains.mps.build.ant.MpsWorker;
@@ -108,10 +109,14 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     System.out.println(s);
   }
 
-  private StringBuffer checkModel(SModelDescriptor sm) {
-    IScope scope = sm.getModule().getScope();
+  private StringBuffer checkModel(final SModelDescriptor sm) {
+    final IScope scope = sm.getModule().getScope();
     StringBuffer errorMessages = new StringBuffer();
-    List<String> validationResult = sm.validate(scope);
+    List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+      public List<String> compute() {
+        return sm.validate(scope);
+      }
+    });
     for (String item : validationResult) {
       errorMessages.append(item);
       errorMessages.append("\n");
