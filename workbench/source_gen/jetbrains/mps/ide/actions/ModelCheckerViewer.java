@@ -31,12 +31,14 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
+import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.project.ProjectScope;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
@@ -168,7 +170,18 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     });
   }
 
-  public void prepareAndCheck(final List<SModelDescriptor> modelDescriptors, final String taskTargetTitle, final Icon taskIcon) {
+  public void prepareAndCheckModules(List<IModule> modules, String taskTargetTitle, Icon taskIcon) {
+    IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder());
+    SearchQuery searchQuery = new SearchQuery(new ModulesHolder(modules, myOperationContext), myProject.getComponent(ProjectScope.class));
+    myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, false, true));
+
+    myCheckProgressTitle = "Checking " + taskTargetTitle;
+    setTabProperties(taskTargetTitle, taskIcon);
+
+    runCheck();
+  }
+
+  public void prepareAndCheckModels(List<SModelDescriptor> modelDescriptors, String taskTargetTitle, Icon taskIcon) {
     IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder());
     SearchQuery searchQuery = new SearchQuery(new ModelsHolder(modelDescriptors, myOperationContext), myProject.getComponent(ProjectScope.class));
     myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, false, true));

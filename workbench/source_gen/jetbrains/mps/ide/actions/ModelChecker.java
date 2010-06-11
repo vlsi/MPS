@@ -20,9 +20,15 @@ public class ModelChecker {
   private IOperationContext myOperationContext;
   private ProgressContext myProgressContext;
 
-  public ModelChecker(IOperationContext myOperationContext, ProgressContext myProgressContext) {
-    this.myOperationContext = myOperationContext;
-    this.myProgressContext = myProgressContext;
+  public ModelChecker(IOperationContext operationContext, ProgressContext progressContext) {
+    myOperationContext = operationContext;
+    myProgressContext = progressContext;
+  }
+
+  public ModelChecker(IOperationContext operationContext, ProgressContext progressContext, SearchResults<ModelCheckerIssue> results) {
+    myResults = results;
+    myOperationContext = operationContext;
+    myProgressContext = progressContext;
   }
 
   public void checkModel(final SModelDescriptor modelDescriptor) {

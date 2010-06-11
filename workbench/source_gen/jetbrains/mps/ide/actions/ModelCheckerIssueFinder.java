@@ -6,10 +6,13 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
+import jetbrains.mps.ide.findusages.model.holders.IHolder;
+import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
+import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -18,16 +21,38 @@ public class ModelCheckerIssueFinder implements IFinder {
   }
 
   public SearchResults find(SearchQuery searchQuery, ProgressIndicator indicator) {
-    assert searchQuery.getObjectHolder() instanceof ModelsHolder;
-    ModelsHolder modelsHolder = (ModelsHolder) searchQuery.getObjectHolder();
-    List<SModelDescriptor> modelDescriptors = modelsHolder.getObject();
-    IOperationContext operationContext = modelsHolder.getOperationContext();
+    IHolder objectHolder = searchQuery.getObjectHolder();
+    IOperationContext operationContext;
+    List<SModelDescriptor> modelDescriptors;
+    List<IModule> modules = null;
+    if (objectHolder instanceof ModelsHolder) {
+      ModelsHolder modelsHolder = (ModelsHolder) objectHolder;
+      operationContext = modelsHolder.getOperationContext();
+      modelDescriptors = modelsHolder.getObject();
+    } else if (objectHolder instanceof ModulesHolder) {
+      ModulesHolder modulesHolder = (ModulesHolder) objectHolder;
+      operationContext = modulesHolder.getOperationContext();
+      modelDescriptors = ModelCheckerUtils.getModelDescriptors(modulesHolder.getObject());
+      modules = modulesHolder.getObject();
+    } else {
+      throw new IllegalArgumentException();
+    }
 
     ProgressContext progressContext = new ProgressContext(indicator, ListSequence.fromList(modelDescriptors).select(new ISelector<SModelDescriptor, String>() {
-      public String select(SModelDescriptor it) {
-        return getTaskName(it);
+      public String select(SModelDescriptor md) {
+        return getTaskName(md);
       }
     }));
+    if (modules != null) {
+      ModuleChecker moduleChecker = new ModuleChecker(progressContext);
+      indicator.setIndeterminate(true);
+      for (IModule module : ListSequence.fromList(modules)) {
+        moduleChecker.checkModule(module);
+        if (moduleChecker.isCancelled()) {
+          break;
+        }
+      }
+    }
     ModelChecker modelChecker = new ModelChecker(operationContext, progressContext);
 
     for (SModelDescriptor modelDescriptor : ListSequence.fromList(modelDescriptors)) {
@@ -45,6 +70,6 @@ public class ModelCheckerIssueFinder implements IFinder {
   }
 
   private static String getTaskName(SModelDescriptor modelDescriptor) {
-    return modelDescriptor.getName() + "_modelcheck";
+    return modelDescriptor.getLongName() + "_modelcheck";
   }
 }
