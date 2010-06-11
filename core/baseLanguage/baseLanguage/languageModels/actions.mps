@@ -412,11 +412,34 @@
               </node>
             </node>
           </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3073231036166369916">
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3073231036166369917">
+              <node role="operand:3" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode:23" id="3073231036166369918" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="3073231036166369919" />
+            </node>
+            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3073231036166369920">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3073231036166369921">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3073231036166369922">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3073231036166369923">
+                    <node role="operand:3" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode:23" id="3073231036166369924" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3073231036166369925">
+                      <link role="property:16" targetNodeId="1.521412098689998745:3" resolveInfo="nonStatic" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation:16" id="3073231036166369926">
+                    <node role="value:16" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3073231036166369927">
+                      <property name="value:3" value="true" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
     <node role="nodeFactory:23" type="jetbrains.mps.lang.actions.structure.NodeFactory:23" id="3073231036166227544">
-      <link role="applicableConcept:23" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
+      <link role="applicableConcept:23" targetNodeId="1.1107796713796:3" resolveInfo="Interface" />
       <node role="setupFunction:23" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction:23" id="3073231036166227545">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3073231036166227546">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3073231036166227549">

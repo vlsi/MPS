@@ -379,9 +379,12 @@ __switch__:
     if (!(SNodeOperations.isInstanceOf(_context.getNewNode(), "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
       SLinkOperations.addNewChild(_context.getNewNode(), "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
     }
+    if ((_context.getEnclosingNode() != null)) {
+      SPropertyOperations.set(_context.getNewNode(), "nonStatic", "" + (true));
+    }
   }
 
-  public static void nodeFactory_NodeSetup_Classifier_3073231036166227545(final IOperationContext operationContext, final NodeSetupContext _context) {
+  public static void nodeFactory_NodeSetup_Interface_3073231036166227545(final IOperationContext operationContext, final NodeSetupContext _context) {
     if ((_context.getEnclosingNode() != null)) {
       SPropertyOperations.set(_context.getNewNode(), "nonStatic", "" + (true));
     }

@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.textGen.TextGenBuffer;
 import java.util.HashSet;
 import jetbrains.mps.util.InternUtil;
@@ -146,16 +145,8 @@ public abstract class BaseLanguageTextGen {
 
   public static void fileHeader(SNode cls, final SNodeTextGen textGen) {
     Set<String> names = (Set<String>) BaseLanguageTextGen.getUserObjects(TextGenManager.IMPORT, textGen);
-    String key = "importsDone";
-    Object importsDone = textGen.getBuffer().getUserObject(key);
-    if (importsDone == null) {
-      for (SNode classifier : SModelOperations.getRoots(SNodeOperations.getModel(cls), "jetbrains.mps.baseLanguage.structure.Classifier")) {
-        String newImport = BaseLanguageTextGen.getPackageName(classifier, textGen) + "." + SPropertyOperations.getString(classifier, "name");
-        SetSequence.fromSet(names).addElement(newImport);
-      }
-      importsDone = new Object();
-      textGen.getBuffer().putUserObject(key, importsDone);
-    }
+    String newImport = BaseLanguageTextGen.getPackageName(cls, textGen) + "." + SPropertyOperations.getString(cls, "name");
+    SetSequence.fromSet(names).addElement(newImport);
     if (cls.isRoot()) {
       for (SNode nestedClassifier : SNodeOperations.getDescendants(cls, "jetbrains.mps.baseLanguage.structure.Classifier", false, new String[]{})) {
         SetSequence.fromSet(names).addElement(BaseLanguageTextGen.getPackageName(nestedClassifier, textGen) + "." + SPropertyOperations.getString(nestedClassifier, "name"));
