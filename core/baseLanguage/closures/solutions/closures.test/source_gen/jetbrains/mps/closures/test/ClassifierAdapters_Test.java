@@ -418,6 +418,22 @@ __switch__:
     Assert.assertEquals("ABC", Sequence.fromIterable(res).first());
   }
 
+  public void test_mps9190() throws Exception {
+    try {
+      this.acceptFunction(new _FunctionTypes._return_P1_E0<Object, String>() {
+        public Object invoke(String s) {
+          if (s.length() == 3) {
+            throw new RuntimeException();
+          }
+          return null;
+        }
+      });
+      Assert.fail();
+    } catch (RuntimeException e) {
+      // expected exception 
+    }
+  }
+
   public void acceptWorker(Worker one, Worker two) {
   }
 
@@ -454,5 +470,9 @@ __switch__:
         return false;
       }
     };
+  }
+
+  public Object acceptFunction(_FunctionTypes._return_P1_E0<? extends Object, ? super String> fff) {
+    return fff.invoke("foo");
   }
 }
