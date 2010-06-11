@@ -1938,23 +1938,6 @@
               </node>
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="3068114543317978841">
                 <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3068114543317978842">
-                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3068114543317978843">
-                    <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3068114543317978844">
-                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3068114543317978845" />
-                    </node>
-                    <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="3068114543317978847">
-                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317978848">
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3068114543317978849">
-                          <link role="variableDeclaration:3" targetNodeId="3068114543317978862" resolveInfo="node" />
-                        </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="3068114543317978850">
-                          <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="3068114543317978851">
-                            <link role="conceptDeclaration:16" targetNodeId="1.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3068114543317978852">
                     <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3068114543317978853">
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3068114543317978854" />

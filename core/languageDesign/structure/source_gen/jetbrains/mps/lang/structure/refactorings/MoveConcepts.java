@@ -62,9 +62,6 @@ public class MoveConcepts extends BaseLoggableRefactoring {
       public void run() {
         SModel model = SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first());
         for (SNode node : refactoringContext.getSelectedNodes()) {
-          if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
-            return;
-          }
           if (SNodeOperations.getModel(node) != model) {
             return;
           }

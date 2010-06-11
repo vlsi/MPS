@@ -155,6 +155,10 @@ public class DeleteModelHelper {
       myDeleteFiles = deleteFiles;
     }
 
+    public String getUserFriendlyName() {
+      return "Delete model";
+    }
+
     public RefactoringTarget getRefactoringTarget() {
       return RefactoringTarget.MODEL;
     }
@@ -202,11 +206,18 @@ public class DeleteModelHelper {
         }
       }
 
+      // delete imports from available models, helps if there are no references to deleted model
+      for (SModelDescriptor md : SModelRepository.getInstance().getModelDescriptors()) {
+        if (SModelStereotype.isUserModel(md) && md.hasImportedModel(modelDescriptor)) {
+          md.getSModel().deleteImportedModel(modelDescriptor.getSModelReference());
+        }
+      }
+
       if (myDeleteFiles) {
         modelDescriptor.delete();
       }
 
-      //todo: check correctness-thay are not ALL model owners
+      //todo: check correctness - they are not ALL model owners
       for (ModelOwner modelOwner : owners) {
         if (modelOwner instanceof IModule) {
           ((IModule) modelOwner).save();
