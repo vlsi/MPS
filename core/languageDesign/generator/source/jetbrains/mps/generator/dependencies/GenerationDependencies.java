@@ -24,12 +24,10 @@ public class GenerationDependencies {
   private final Map<String, GenerationRootDependencies> myRootDependenciesMap;
   private final String myModelHash;
 
-  private /* transient */ final Map<String, String> myGeneratedToOriginalMap;
   private /* transient */ final List<GenerationRootDependencies> myUnchanged;
 
-  private GenerationDependencies(List<GenerationRootDependencies> data, Map<String,String> generatedToOriginalMap, String modelHash, List<GenerationRootDependencies> unchanged) {
+  private GenerationDependencies(List<GenerationRootDependencies> data, String modelHash, List<GenerationRootDependencies> unchanged) {
     this.myRootDependencies = data;
-    this.myGeneratedToOriginalMap = generatedToOriginalMap;
     this.myRootDependenciesMap = new HashMap<String, GenerationRootDependencies>(data.size());
     this.myModelHash = modelHash;
     this.myUnchanged = unchanged; 
@@ -37,10 +35,6 @@ public class GenerationDependencies {
       String id = rd.getRootId();
       myRootDependenciesMap.put(id == null ? ModelDigestUtil.HEADER : id, rd);
     }
-  }
-
-  public String getOriginalRootId(String outputNode) {
-    return myGeneratedToOriginalMap.get(outputNode);
   }
 
   public GenerationRootDependencies getDependenciesFor(String rootId) {
@@ -87,9 +81,7 @@ public class GenerationDependencies {
       data.add(GenerationRootDependencies.fromXml(e, false));
     }
     String modelHash = GenerationRootDependencies.getValue(root, ATTR_MODEL_HASH);
-    final HashMap<String, String> map = new HashMap<String, String>();
-    // TODO restore generatedToOriginal map ...
-    return new GenerationDependencies(data, map, modelHash, Collections.<GenerationRootDependencies>emptyList());
+    return new GenerationDependencies(data, modelHash, Collections.<GenerationRootDependencies>emptyList());
   }
 
   public static String getFileName(SNode outputRootNode) {
@@ -98,17 +90,13 @@ public class GenerationDependencies {
     return (extension == null)? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 
-  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, RootDependenciesListener[] roots, String modelHash) {
-    Map<String,String> generatedToOriginalMap = new HashMap<String, String>();
+  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash) {
     Map<String,List<String>> generatedFiles = new HashMap<String, List<String>>();
 
     for(Map.Entry<SNode,SNode> entry : currentToOriginalMap.entrySet()) {
       String inputRootId = entry.getValue() != null ? entry.getValue().getId() : "";
       SNode outputRoot = entry.getKey();
       
-      if(entry.getValue() != null) {
-        generatedToOriginalMap.put(outputRoot.getId(), inputRootId);
-      }
       List<String> filesList = generatedFiles.get(inputRootId);
       if(filesList == null) {
         filesList = new ArrayList<String>();
@@ -118,24 +106,24 @@ public class GenerationDependencies {
     }
     List<GenerationRootDependencies> unchanged = null;
     List<GenerationRootDependencies> rootDependencies = new ArrayList<GenerationRootDependencies>(roots.length);
-    for(RootDependenciesListener l : roots) {
-      SNode originalRoot = l.getOriginalRoot();
-      List<String> files = generatedFiles.get(originalRoot != null ? originalRoot.getId() : "");
-      if(files == null) {
-        files = Collections.emptyList();
-      }
-      if(l.isUnchanged()) {
-        GenerationRootDependencies dep = l.getSavedDependencies();
-        rootDependencies.add(dep);
-        if(unchanged == null) {
-          unchanged = new ArrayList<GenerationRootDependencies>();
+    for(RootDependenciesBuilder l : roots) {
+        SNode originalRoot = l.getOriginalRoot();
+        List<String> files = generatedFiles.get(originalRoot != null ? originalRoot.getId() : "");
+        if(files == null) {
+          files = Collections.emptyList();
         }
-        unchanged.add(dep);
-      } else {
-        rootDependencies.add(GenerationRootDependencies.fromData(l, files));
+        if(l.isUnchanged()) {
+          GenerationRootDependencies dep = l.getSavedDependencies();
+          rootDependencies.add(dep);
+          if(unchanged == null) {
+            unchanged = new ArrayList<GenerationRootDependencies>();
+          }
+          unchanged.add(dep);
+        } else {
+          rootDependencies.add(GenerationRootDependencies.fromData(l, files));
+        }
       }
-    }
-    return new GenerationDependencies(rootDependencies, generatedToOriginalMap, modelHash, unchanged);
+    return new GenerationDependencies(rootDependencies, modelHash, unchanged);
   }
 
 }

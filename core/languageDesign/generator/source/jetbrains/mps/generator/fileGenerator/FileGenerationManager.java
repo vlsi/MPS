@@ -191,11 +191,7 @@ public class FileGenerationManager implements ApplicationComponent {
     for (SNode outputNode : status.getOutputModel().getRoots()) {
       try {
         TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
-        String rootNodeId = null;
-        if (status.getDependencies() != null) {
-          rootNodeId = status.getDependencies().getOriginalRootId(outputNode.getId());
-        }
-        fillDebugInfo(info, rootNodeId, outputNode, result);
+        fillDebugInfo(info, outputNode, result);
         fillDependencies(dependRoot, outputNode, result);
 
         hasErrors |= result.hasErrors();
@@ -207,7 +203,7 @@ public class FileGenerationManager implements ApplicationComponent {
     return !hasErrors;
   }
 
-  private void fillDebugInfo(DebugInfo info, String rootNodeId, SNode outputNode, TextGenerationResult result) {
+  private void fillDebugInfo(DebugInfo info, SNode outputNode, TextGenerationResult result) {
     Map<SNode, PositionInfo> positions = result.getPositions();
     Map<SNode, ScopePositionInfo> scopePositions = result.getScopePositions();
     Map<SNode, UnitPositionInfo> unitPositions = result.getUnitPositions();
@@ -224,7 +220,7 @@ public class FileGenerationManager implements ApplicationComponent {
           positionInfo.setNodeId(input.getId());
           info.setModel(input.getModel());
           positionInfo.setFileName(fileName);
-          info.addPosition(positionInfo, rootNodeId);
+          info.addPosition(positionInfo, input.getTopParent().getId());
         }
       }
     }
@@ -249,7 +245,7 @@ public class FileGenerationManager implements ApplicationComponent {
             }
           }
           //    positionInfo.clearTempVarInfoMap();
-          info.addScopePosition(positionInfo, rootNodeId);
+          info.addScopePosition(positionInfo, input.getTopParent().getId());
         }
       }
     }
@@ -263,7 +259,7 @@ public class FileGenerationManager implements ApplicationComponent {
           info.setModel(input.getModel());
           positionInfo.setFileName(fileName);
 
-          info.addUnitPosition(positionInfo, rootNodeId);
+          info.addUnitPosition(positionInfo, input.getTopParent().getId());
         }
       }
     }

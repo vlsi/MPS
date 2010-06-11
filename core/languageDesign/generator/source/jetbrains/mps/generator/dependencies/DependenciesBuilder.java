@@ -10,7 +10,7 @@ public interface DependenciesBuilder {
 
   void scriptApplied(SModel newmodel);
 
-  RootDependenciesListener getListener(SNode inputNode);
+  RootDependenciesBuilder getListener(SNode inputNode);
   
   void registerRoot(SNode outputRoot, SNode inputNode);
 
@@ -26,10 +26,10 @@ public interface DependenciesBuilder {
 
     @Override
     public void scriptApplied(SModel newmodel) {
-    }
+}
 
     @Override
-    public RootDependenciesListener getListener(SNode inputNode) {
+    public RootDependenciesBuilder getListener(SNode inputNode) {
       return null;
     }
 

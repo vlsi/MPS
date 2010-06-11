@@ -209,23 +209,18 @@ public class GenerationFilter {
       return result;
     }
 
-    Map<String,SNode> rootById = new HashMap<String, SNode>();
-    for(SNode root : myModel.getSModel().getRoots()) {
-      rootById.put(root.getId(), root);
-    }
-
     for(SNode root : myUnchangedRoots) {
-      propagateDependencies(rootById, result.getListener(root), mySavedDependencies.getDependenciesFor(root.getId()));
+      propagateDependencies(result.getListener(root), mySavedDependencies.getDependenciesFor(root.getId()));
     }
     if(myConditionalsUnchanged) {
-      propagateDependencies(rootById, result.getListener(null), mySavedDependencies.getDependenciesFor(ModelDigestUtil.HEADER));
+      propagateDependencies(result.getListener(null), mySavedDependencies.getDependenciesFor(ModelDigestUtil.HEADER));
     }
 
     return result;
   }
 
-  private void propagateDependencies(Map<String, SNode> rootById, RootDependenciesListener listener, GenerationRootDependencies deps) {
-    assert deps.getHash().equals(listener.getHash());
-    listener.loadDependencies(deps);
+  private void propagateDependencies(RootDependenciesBuilder builder, GenerationRootDependencies deps) {
+    assert deps.getHash().equals(builder.getHash());
+    builder.loadDependencies(deps);
   }
 }

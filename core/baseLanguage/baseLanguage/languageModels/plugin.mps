@@ -5152,8 +5152,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6173548178016197745">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6173548178016197746">
             <property name="name:3" value="result" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4494976841093550746">
-              <link role="classifier:3" targetNodeId="132.4494976841093370185" resolveInfo="DebugInfo" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5166158193670496766">
+              <link role="classifier:3" targetNodeId="132.5166158193670371780" resolveInfo="DebugInfo" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7358399876271371818">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7358399876271371819">
@@ -5185,7 +5185,7 @@
                     <link role="variableDeclaration:3" targetNodeId="6173548178016197746" resolveInfo="result" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6173548178016197755">
-                    <link role="baseMethodDeclaration:3" targetNodeId="132.4494976841093370489" resolveInfo="getPositionForNode" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="132.5166158193670392487" resolveInfo="getPositionForNode" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6173548178016197756">
                       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6173548178016197757">
                         <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="6173548178016197758">

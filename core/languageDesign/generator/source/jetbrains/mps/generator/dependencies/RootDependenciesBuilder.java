@@ -14,7 +14,7 @@ import java.util.Set;
 /**
  * Evgeny Gryaznov, May 11, 2010
  */
-public class RootDependenciesListener implements DependenciesReadListener {
+public class RootDependenciesBuilder implements DependenciesReadListener {
 
   private final SNode myOriginalRoot;
   private final DefaultDependenciesBuilder myBuilder;
@@ -26,7 +26,7 @@ public class RootDependenciesListener implements DependenciesReadListener {
   private Set<SModelDescriptor> dependsOnModels = new HashSet<SModelDescriptor>();
   private GenerationRootDependencies mySavedDependencies;
 
-  public RootDependenciesListener(@Nullable SNode originalRoot, @NotNull DefaultDependenciesBuilder builder, @Nullable String hash) {
+  public RootDependenciesBuilder(@Nullable SNode originalRoot, @NotNull DefaultDependenciesBuilder builder, @Nullable String hash) {
     myOriginalRoot = originalRoot;
     myBuilder = builder;
     myHash = hash;

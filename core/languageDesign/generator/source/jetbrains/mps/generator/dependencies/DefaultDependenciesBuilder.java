@@ -18,9 +18,9 @@ import java.util.Map;
 public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
   /* generation data */
-  private RootDependenciesListener myConditionalsBuilder;
-  private Map<SNode, RootDependenciesListener> myRootBuilders = new HashMap<SNode, RootDependenciesListener>();
-  private RootDependenciesListener[] myAllListeners;
+  private RootDependenciesBuilder myConditionalsBuilder;
+  private Map<SNode, RootDependenciesBuilder> myRootBuilders = new HashMap<SNode, RootDependenciesBuilder>();
+  private RootDependenciesBuilder[] myAllBuilders;
   private String myModelHash;
 
   /* next step input -> original */
@@ -39,14 +39,14 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   }
 
   private void initData(SNode[] roots, Map<String, String> generationHashes) {
-    myConditionalsBuilder = new RootDependenciesListener(null, this, generationHashes != null ? generationHashes.get(ModelDigestUtil.HEADER) : "");
+    myConditionalsBuilder = new RootDependenciesBuilder(null, this, generationHashes != null ? generationHashes.get(ModelDigestUtil.HEADER) : "");
     currentToOriginalMap = new HashMap<SNode, SNode>(roots.length*3/2);
-    myAllListeners = new RootDependenciesListener[roots.length+1];
+    myAllBuilders = new RootDependenciesBuilder[roots.length+1];
     int e = 0;
-    myAllListeners[e++] = myConditionalsBuilder;
+    myAllBuilders[e++] = myConditionalsBuilder;
     for(SNode root : roots) {
-      myAllListeners[e] = new RootDependenciesListener(root, this, generationHashes != null ? generationHashes.get(root.getId()) : null);
-      myRootBuilders.put(root, myAllListeners[e++]);
+      myAllBuilders[e] = new RootDependenciesBuilder(root, this, generationHashes != null ? generationHashes.get(root.getId()) : null);
+      myRootBuilders.put(root, myAllBuilders[e++]);
       currentToOriginalMap.put(root,root);
     }
   }
@@ -55,7 +55,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
     List<SNode> roots = model.getRoots();
     return roots.toArray(new SNode[roots.size()]);
   }
-  
+
   @Override
   public void scriptApplied(SModel newmodel) {
     Map<SNodeId, SNode> oldidsToOriginal = new HashMap<SNodeId, SNode>();
@@ -112,7 +112,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   }
 
   @Override
-  public RootDependenciesListener getListener(SNode inputNode) {
+  public RootDependenciesBuilder getListener(SNode inputNode) {
     if(inputNode == null || !inputNode.isRegistered()) {
       return myConditionalsBuilder;
     }
@@ -129,6 +129,6 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public GenerationDependencies getResult() {
-    return GenerationDependencies.fromData(currentToOriginalMap, myAllListeners, myModelHash);
+    return GenerationDependencies.fromData(currentToOriginalMap, myAllBuilders, myModelHash);
   }
 }

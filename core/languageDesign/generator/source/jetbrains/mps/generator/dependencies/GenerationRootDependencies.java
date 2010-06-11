@@ -131,7 +131,7 @@ public class GenerationRootDependencies {
     return new GenerationRootDependencies(rootId, rootName, rootHash, dependsOnConditionals, local, external, files);
   }
 
-  public static GenerationRootDependencies fromData(RootDependenciesListener l, List<String> generatedFiles) {
+  public static GenerationRootDependencies fromData(RootDependenciesBuilder l, List<String> generatedFiles) {
     final Collection<SNode> localNodes = l.getDependsOn();
     final Collection<SModelDescriptor> externalModels = l.getDependsOnModels();
 

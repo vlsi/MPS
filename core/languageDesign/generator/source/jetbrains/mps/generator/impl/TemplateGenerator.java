@@ -19,7 +19,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.dependencies.DependenciesReadListener;
-import jetbrains.mps.generator.dependencies.RootDependenciesListener;
+import jetbrains.mps.generator.dependencies.RootDependenciesBuilder;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.template.*;
@@ -301,9 +301,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
    */
   @Nullable
   protected QueryExecutionContext getExecutionContext(SNode inputNode) {
-    RootDependenciesListener listener = myDependenciesBuilder.getListener(inputNode);
-    if (listener != null) {
-      if (listener.isUnchanged()) {
+    RootDependenciesBuilder builder = myDependenciesBuilder.getListener(inputNode);
+    if (builder != null) {
+      if (builder.isUnchanged()) {
         return null;
       }
 
@@ -312,11 +312,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         myExecutionContextMap = new HashMap<DependenciesReadListener, QueryExecutionContext>();
         value = null;
       } else {
-        value = myExecutionContextMap.get(listener);
+        value = myExecutionContextMap.get(builder);
       }
       if (value == null) {
-        value = new QueryExecutionContextWithDependencyRecording(myExecutionContext, listener);
-        myExecutionContextMap.put(listener, value);
+        value = new QueryExecutionContextWithDependencyRecording(myExecutionContext, builder);
+        myExecutionContextMap.put(builder, value);
       }
       return value;
     }
