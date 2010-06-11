@@ -20,6 +20,7 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -30,17 +31,19 @@ import java.util.List;
 
 public class ModulesHolder implements IHolder<List<IModule>> {
   private List<IModule> myModules = new ArrayList<IModule>();
+  private IOperationContext myOperationContext = null;
 
-  public ModulesHolder(Element element, Project project) throws CantLoadSomethingException {
-    read(element, project);
-  }
-
-  public ModulesHolder(List<IModule> modules) {
+  public ModulesHolder(List<IModule> modules, IOperationContext operationContext) {
     myModules = modules;
+    myOperationContext = operationContext;
   }
 
   public List<IModule> getObject() {
     return myModules;
+  }
+
+  public IOperationContext getOperationContext() {
+    return myOperationContext;
   }
 
   @NotNull
