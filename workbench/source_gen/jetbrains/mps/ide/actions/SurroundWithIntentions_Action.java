@@ -140,12 +140,13 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
         return intention1.getDescription(node1, SurroundWithIntentions_Action.this.editorContext).compareTo(intention2.getDescription(node2, SurroundWithIntentions_Action.this.editorContext));
       }
     });
+    final EditorContext context = SurroundWithIntentions_Action.this.editorContext;
     for (final Pair<Intention, SNode> pair : groupItems) {
       BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), SurroundWithIntentions_Action.this.editorContext)) {
         protected void doExecute(AnActionEvent p0) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              pair.getFirst().execute(pair.getSecond(), SurroundWithIntentions_Action.this.editorContext);
+              pair.getFirst().execute(pair.getSecond(), context);
             }
           });
         }
