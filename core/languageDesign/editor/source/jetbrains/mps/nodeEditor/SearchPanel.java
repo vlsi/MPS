@@ -336,21 +336,21 @@ public class SearchPanel extends AbstractSearchPanel {
   }
 
   private class SearchPanelEditorMessage extends DefaultEditorMessage {
-    private final CellInfo myInfo;
     private final List<Pair> myPositions;
+    private EditorCell_Label myCell;
 
-    public SearchPanelEditorMessage(EditorCell cell, List<Pair> positions) {
+    public SearchPanelEditorMessage(EditorCell_Label cell, List<Pair> positions) {
       super(cell.getSNode(), Color.yellow, "", SearchPanel.this.myOwner);
-      myInfo = cell.getCellInfo();
+      myCell = cell;
       myPositions = positions;
     }
 
     public EditorCell getCell(EditorComponent editor) {
-      return myInfo.findCell(editor);
+      return myCell;
     }
 
     public boolean acceptCell(EditorCell cell, EditorComponent editor) {
-      return myInfo.findCell(editor) == cell;
+      return myCell == cell;
     }
 
     public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
@@ -384,15 +384,10 @@ public class SearchPanel extends AbstractSearchPanel {
     }
 
     @Override
-    public int hashCode() {
-      return ((myPositions == null) ? -1 : myPositions.size()) + ObjectUtils.hashCode(myInfo);
-    }
-
-    @Override
     public boolean equals(Object obj) {
       if (!(obj instanceof SearchPanelEditorMessage)) return false;
       SearchPanelEditorMessage msg = (SearchPanelEditorMessage) obj;
-      return ObjectUtils.equals(myPositions, msg.myPositions) && ObjectUtils.equals(myInfo, msg.myInfo);
+      return ObjectUtils.equals(myPositions, msg.myPositions) && ObjectUtils.equals(myCell, msg.myCell);
     }
   }
 }
