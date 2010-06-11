@@ -212,7 +212,6 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5553449326502622462">
     <property name="name:0" value="ModelManagerDeclaration" />
     <property name="package:0" value="Persistence" />
-    <property name="rootable:0" value="true" />
     <link role="extends:0" targetNodeId="5553449326502549575" resolveInfo="AbstractModelCreator" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5553449326502622463">
