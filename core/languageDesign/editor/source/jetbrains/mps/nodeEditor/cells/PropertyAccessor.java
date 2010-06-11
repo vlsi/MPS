@@ -86,7 +86,7 @@ public class PropertyAccessor implements ModelAccessor {
 
   private boolean isValidText_internal(String text) {
     if (myReadOnly) {
-      String propertyValue = NodeReadAccessCasterInEditor.runEditorCellPropertyAccessAction(this);
+      String propertyValue = getText();
       return (text == null && propertyValue == null) || (text != null && text.equals(propertyValue));
     }
 
