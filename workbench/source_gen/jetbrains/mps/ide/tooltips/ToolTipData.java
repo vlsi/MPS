@@ -27,7 +27,6 @@ public class ToolTipData {
       return myComponent;
     } else {
       JTextArea text = new JTextArea();
-      text = new JTextArea();
       text.setEditable(false);
       text.setText(myText);
       text.setFont(EditorSettings.getInstance().getDefaultEditorFont());

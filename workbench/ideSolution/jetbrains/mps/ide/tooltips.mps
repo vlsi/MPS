@@ -960,18 +960,6 @@
                   </node>
                 </node>
               </node>
-              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1975624945529346106">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1975624945529346107">
-                  <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1975624945529346108">
-                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1975624945529346109">
-                      <link role="baseMethodDeclaration:3" targetNodeId="1.~JTextArea.&lt;init&gt;()" resolveInfo="JTextArea" />
-                    </node>
-                  </node>
-                  <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1975624945529346155">
-                    <link role="variableDeclaration:3" targetNodeId="1975624945529346148" resolveInfo="text" />
-                  </node>
-                </node>
-              </node>
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1975624945529346113">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1975624945529346114">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1975624945529346157">
