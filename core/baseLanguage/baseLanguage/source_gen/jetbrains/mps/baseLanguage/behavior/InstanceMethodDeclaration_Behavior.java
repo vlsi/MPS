@@ -14,6 +14,7 @@ import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
+import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class InstanceMethodDeclaration_Behavior {
@@ -56,7 +57,7 @@ public class InstanceMethodDeclaration_Behavior {
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(superclass)), IClassifiersSearchScope.INSTANCE_METHOD);
     List<SNode> methodDeclarations = BaseAdapter.toNodes(scope.getAdapters(InstanceMethodDeclaration.class));
     for (SNode methodCandidate : ((List<SNode>) methodDeclarations)) {
-      if (SPropertyOperations.getString(methodCandidate, "name").equals(SPropertyOperations.getString(thisNode, "name")) && ListSequence.fromList(SLinkOperations.getTargets(methodCandidate, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count()) {
+      if (ObjectUtils.equals(SPropertyOperations.getString(methodCandidate, "name"), SPropertyOperations.getString(thisNode, "name")) && ListSequence.fromList(SLinkOperations.getTargets(methodCandidate, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count()) {
         if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(methodCandidate, thisNode)) {
           return methodCandidate;
         }

@@ -13545,8 +13545,8 @@
                     </node>
                   </node>
                 </node>
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5014346297260520712">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5014346297260520713">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression:3" id="6361444434083933327">
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5014346297260520713">
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="5014346297260520714">
                       <link role="property:16" targetNodeId="19.1169194664001:0" resolveInfo="name" />
                     </node>
@@ -13554,14 +13554,11 @@
                       <link role="variableDeclaration:3" targetNodeId="7648674000049864076" resolveInfo="methodCandidate" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5014346297260520716">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5014346297260520717">
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="5014346297260520718">
-                        <link role="property:16" targetNodeId="19.1169194664001:0" resolveInfo="name" />
-                      </node>
-                      <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5014346297260520817" />
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6361444434083933330">
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="6361444434083933331">
+                      <link role="property:16" targetNodeId="19.1169194664001:0" resolveInfo="name" />
                     </node>
+                    <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="6361444434083933332" />
                   </node>
                 </node>
               </node>
