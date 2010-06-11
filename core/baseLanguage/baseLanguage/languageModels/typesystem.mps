@@ -17188,6 +17188,32 @@
         </node>
       </node>
     </node>
+    <node role="rule:3" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule:3" id="6361444434083801794">
+      <node role="leftOperandType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="6361444434083817744">
+        <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="6361444434083817746" />
+      </node>
+      <node role="operationConcept:3" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="6361444434083817231">
+        <link role="concept:16" targetNodeId="1.1224500764161:3" resolveInfo="BitwiseAndExpression" />
+      </node>
+      <node role="operationConcept:3" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="6361444434083817233">
+        <link role="concept:16" targetNodeId="1.1224500790866:3" resolveInfo="BitwiseOrExpression" />
+      </node>
+      <node role="operationConcept:3" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="6361444434083817235">
+        <link role="concept:16" targetNodeId="1.1224500799915:3" resolveInfo="BitwiseXorExpression" />
+      </node>
+      <node role="function:3" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction:3" id="6361444434083801798">
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6361444434083801799">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6361444434083817749">
+            <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="6361444434083817751">
+              <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="6361444434083817753" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="rightOperandType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="6361444434083817747">
+        <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="6361444434083817748" />
+      </node>
+    </node>
     <node role="rule:3" type="jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified:3" id="1533154877881631948">
       <node role="operandType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="7447106258752476409">
         <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="7447106258752476411" />
