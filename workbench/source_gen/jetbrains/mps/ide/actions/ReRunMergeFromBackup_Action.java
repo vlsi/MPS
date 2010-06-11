@@ -15,11 +15,14 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.io.File;
-import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.VcsHelper;
-import java.io.FileNotFoundException;
+import java.io.IOException;
+import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.generator.index.ModelDigestIndex;
 
 public class ReRunMergeFromBackup_Action extends GeneratedAction {
@@ -30,7 +33,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
   private Project project;
 
   public ReRunMergeFromBackup_Action() {
-    super("Re-Run Merge From Backup", "", ICON);
+    super("Rerun Merge from Backup", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -89,23 +92,31 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      File[] backupFiles = ReRunMergeFromBackup_Action.this.getBackupFiles();
-      if (backupFiles.length == 0) {
-        Messages.showInfoMessage("Suitable backup file for model\n" + ReRunMergeFromBackup_Action.this.model + "\nwas not found.", "Backup File Not Found");
-        return;
-      }
-      File latestBackup = backupFiles[0];
-      for (File backupFile : backupFiles) {
-        if (backupFile.lastModified() > latestBackup.lastModified()) {
-          latestBackup = backupFile;
+      Iterable<File> backupFiles = Sequence.fromIterable(Sequence.fromArray(ReRunMergeFromBackup_Action.this.getBackupFiles())).sort(new ISelector<File, Comparable<?>>() {
+        public Comparable<?> select(File f) {
+          return f.lastModified();
+        }
+      }, false);
+      for (File backupFile : Sequence.fromIterable(backupFiles)) {
+        try {
+          SModel[] models = ModelUtils.loadZippedModels(backupFile, VcsHelper.VcsMergeVersion.values());
+          ReRunMergeFromBackup_Action.this.doMerge(models[VcsHelper.VcsMergeVersion.MINE.ordinal()], models[VcsHelper.VcsMergeVersion.BASE.ordinal()], models[VcsHelper.VcsMergeVersion.REPOSITORY.ordinal()]);
+          return;
+        } catch (IOException e) {
+          if (log.isWarnEnabled()) {
+            log.warn("", e);
+          }
+          // Skip this backup 
+          continue;
+        } catch (ModelDiffTool.ReadException e) {
+          if (log.isWarnEnabled()) {
+            log.warn("", e);
+          }
+          // Skip this backup 
+          continue;
         }
       }
-      try {
-        SModel[] models = ModelUtils.loadZippedModels(latestBackup, VcsHelper.VcsMergeVersion.values());
-        ReRunMergeFromBackup_Action.this.doMerge(models[VcsHelper.VcsMergeVersion.MINE.ordinal()], models[VcsHelper.VcsMergeVersion.BASE.ordinal()], models[VcsHelper.VcsMergeVersion.THEIRS.ordinal()]);
-      } catch (FileNotFoundException e) {
-        Messages.showErrorDialog("Backup File\n" + latestBackup.getPath() + "\nIs Invalid:\n" + e.getMessage(), "Invalid Backup File");
-      }
+      Messages.showInfoMessage("No suitable backup files for " + ReRunMergeFromBackup_Action.this.model.getSModelFqName() + "was not found.", "No Backup Files Found");
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ReRunMergeFromBackup", t);
@@ -113,12 +124,12 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     }
   }
 
-  private void doMerge(SModel mine, SModel base, SModel theirs) {
+  private void doMerge(SModel mine, SModel base, SModel repository) {
     SModel mineModel = ReRunMergeFromBackup_Action.this.whichMineModel(ReRunMergeFromBackup_Action.this.model.getSModel(), mine);
     if (mineModel == null) {
       return;
     }
-    VcsHelper.showMergeDialog(base, mineModel, theirs, ReRunMergeFromBackup_Action.this.model.getModelFile(), ReRunMergeFromBackup_Action.this.project);
+    VcsHelper.showMergeDialog(base, mineModel, repository, ReRunMergeFromBackup_Action.this.model.getModelFile(), ReRunMergeFromBackup_Action.this.project);
   }
 
   private File[] getBackupFiles() {

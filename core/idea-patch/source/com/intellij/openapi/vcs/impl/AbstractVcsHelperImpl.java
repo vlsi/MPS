@@ -735,7 +735,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     File tmp = FileUtil.createTmpDir();
     writeContentsToFile(contents[ModelMergeRequest.ORIGINAL], file, tmp, VcsMergeVersion.BASE.getSuffix());
     writeContentsToFile(contents[ModelMergeRequest.CURRENT], file, tmp, VcsMergeVersion.MINE.getSuffix());
-    writeContentsToFile(contents[ModelMergeRequest.LAST_REVISION], file, tmp, VcsMergeVersion.THEIRS.getSuffix());
+    writeContentsToFile(contents[ModelMergeRequest.LAST_REVISION], file, tmp, VcsMergeVersion.REPOSITORY.getSuffix());
     writeMetaInformation(request, file, tmp);
     File zipfile = ModelUtils.chooseZipFileNameForModelFile(file.getPath());
     FileUtil.zip(tmp, zipfile);

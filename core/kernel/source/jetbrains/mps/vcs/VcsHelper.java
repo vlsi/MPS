@@ -141,12 +141,11 @@ public class VcsHelper {
     return true;
   }  
 
-  @Deprecated
   public static boolean showMergeDialog(final SModel base, final SModel mine, final SModel repo, IFile modelFile, final Project project) {
     final VirtualFile file = VFileSystem.getFile(modelFile);
     LOG.assertLog(file != null);
 
-    final MergeModelsDialog dialog = ModelAccess.instance().runWriteActionInCommand(new Computable<MergeModelsDialog>() {
+    final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
       public MergeModelsDialog compute() {
         IOperationContext context = new ModuleContext(base.getModelDescriptor().getModule(), project);
         return new MergeModelsDialog(context, base, mine, repo);
@@ -217,7 +216,7 @@ public class VcsHelper {
 
   public static enum VcsMergeVersion implements Version {
     MINE("mine"),
-    THEIRS("repository"),
+    REPOSITORY("repository"),
     BASE("base");
 
     private final String mySuffix;

@@ -206,16 +206,12 @@ public class ModelUtils {
 
   public static File[] findZipFileNameForModelFile(final String modelFilePath) {
     File parentFile = new File(modelFilePath).getParentFile();
-    File[] files = parentFile.listFiles(new FilenameFilter() {
+    return parentFile.listFiles(new FilenameFilter() {
       public boolean accept(File dir, String name) {
         String fullName = dir.getPath() + File.separator + name;
         return fullName.contains(modelFilePath) && fullName.endsWith(".zip");
       }
     });
-    if (files == null) {
-      return new File[0];
-    }
-    return files;
   }
 
   public static void writeModel(final SModel model, String modelPath) throws IOException {
