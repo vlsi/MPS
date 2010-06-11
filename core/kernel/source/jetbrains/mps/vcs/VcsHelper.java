@@ -52,7 +52,11 @@ public class VcsHelper {
       public Boolean compute() {
         try {
           File backupFile = doBackup(modelFile, inMemory);
-          return showDiskMemoryQuestion(modelFile, inMemory, backupFile);
+          if (modelFile.exists()) {
+            return showDiskMemoryQuestion(modelFile, inMemory, backupFile);
+          } else {
+            return showDeletedFromDiskQuestion(inMemory, backupFile);
+          }
         } catch (IOException e) {
           LOG.error(e);
           throw new RuntimeException(e);
@@ -60,6 +64,13 @@ public class VcsHelper {
       }
     });
 
+  }
+
+  private static boolean showDeletedFromDiskQuestion(SModel inMemory, File backupFile) {
+    int result = Messages.showYesNoDialog("Model file for model " + inMemory + " was externally deleted from disk.\n"
+      + "Backup of it was saved to \"" + backupFile.getAbsolutePath() + "\"\nDo you wish to restore it?",
+      "Model Deleted Externally", Messages.getQuestionIcon());
+    return result == 0;
   }
 
   private static boolean showDiskMemoryQuestion(IFile modelFile, SModel inMemory, File backupFile) {
@@ -86,7 +97,9 @@ public class VcsHelper {
   private static File doBackup(IFile modelFile, SModel inMemory) throws IOException {
     File tmp = jetbrains.mps.util.FileUtil.createTmpDir();
     AbstractVcsHelperImpl.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, FsMemoryMergeVersion.MEMORY.getSuffix());
-    FileUtil.copy(modelFile.toFile(), new File(tmp.getAbsolutePath() + File.separator + modelFile.getName() + "." + FsMemoryMergeVersion.FILE_SYSTEM.getSuffix()));
+    if (modelFile.exists()) {
+      FileUtil.copy(modelFile.toFile(), new File(tmp.getAbsolutePath() + File.separator + modelFile.getName() + "." + FsMemoryMergeVersion.FILE_SYSTEM.getSuffix()));
+    }
     File zipfile = ModelUtils.chooseZipFileNameForModelFile(modelFile.getPath());
     jetbrains.mps.util.FileUtil.zip(tmp, zipfile);
 
