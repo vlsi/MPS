@@ -336,14 +336,16 @@ public class SearchPanel extends AbstractSearchPanel {
   }
 
   private class SearchPanelEditorMessage extends DefaultEditorMessage {
+    @NotNull
     private final List<Pair> myPositions;
     /**
      * Using cell instead of CellInfo here because SearchPanel itself depends on EditorCells
      * and re-execute search query/re-create EditorMessages on each underlying editor relayout
      */
+    @NotNull
     private EditorCell_Label myCell;
 
-    public SearchPanelEditorMessage(EditorCell_Label cell, List<Pair> positions) {
+    public SearchPanelEditorMessage(@NotNull EditorCell_Label cell, @NotNull List<Pair> positions) {
       super(cell.getSNode(), Color.yellow, "", SearchPanel.this.myOwner);
       myCell = cell;
       myPositions = positions;
@@ -388,10 +390,23 @@ public class SearchPanel extends AbstractSearchPanel {
     }
 
     @Override
-    public boolean equals(Object obj) {
-      if (!(obj instanceof SearchPanelEditorMessage)) return false;
-      SearchPanelEditorMessage msg = (SearchPanelEditorMessage) obj;
-      return ObjectUtils.equals(myPositions, msg.myPositions) && ObjectUtils.equals(myCell, msg.myCell);
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (!(o instanceof SearchPanelEditorMessage)) return false;
+
+      SearchPanelEditorMessage that = (SearchPanelEditorMessage) o;
+
+      if (!myCell.equals(that.myCell)) return false;
+      if (!myPositions.equals(that.myPositions)) return false;
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int result = myPositions.hashCode();
+      result = 31 * result + myCell.hashCode();
+      return result;
     }
   }
 }
