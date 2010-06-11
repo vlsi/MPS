@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.icons;
 
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.IconLoader;
 import com.intellij.ui.LayeredIcon;
 import com.intellij.ui.RowIcon;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -119,16 +118,22 @@ public class IconManager {
             return Icons.DEFAULT_NODE_ICON;
           }
         }
+
+        SModel model = node.getModel();
+        if (model.isDisposed()) {
+          return mainIcon;
+        }
+
+        if (model.isNotEditable()) {
+          mainIcon = new LayeredIcon(mainIcon, com.intellij.util.Icons.LOCKED_ICON);
+        }
+
         RowIcon result = new RowIcon(2);
         result.setIcon(mainIcon, 0);
         if (!withoutAdditional) {
           result.setIcon(BaseConcept_Behavior.call_getAdditionalIcon_5017341185733863694(node), 1);
         }
-        SModel model = node.getModel();
-        if (!model.isDisposed() && model.isNotEditable()) {
-          return new LayeredIcon(result, com.intellij.util.Icons.LOCKED_ICON);
-        }
-        
+
         List<Icon> markIcons = BaseConcept_Behavior.call_getMarkIcons_3923831204883340393(node);
         if (markIcons != null) {
           LayeredIcon layeredIcon = new LayeredIcon(markIcons.size() + 1);
