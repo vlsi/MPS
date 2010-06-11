@@ -203,7 +203,11 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
       boolean isResult = index == path.size() - 1;
       if (o instanceof IModule) {
-        data = new ModuleNodeData(creator, (IModule) o, isResult, results);
+        if (result != null && isResult) {
+          data = new ModuleNodeData(creator, result, isResult, nodeRepresentator, results);
+        } else {
+          data = new ModuleNodeData(creator, (IModule) o, isResult, results);
+        }
       } else if (o instanceof SModel) {
         data = new ModelNodeData(creator, (SModel) o, isResult, results);
       } else if (o instanceof SNode) {

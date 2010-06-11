@@ -13,6 +13,6 @@ public abstract class SpecificChecker {
   public abstract List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext);
 
   protected static void addIssue(List<SearchResult<ModelCheckerIssue>> results, SNode node, String message, String severity, String issueType, IModelCheckerFix fix) {
-    ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResult(node, message, fix, severity, issueType));
+    ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForNode(node, message, fix, severity, issueType));
   }
 }

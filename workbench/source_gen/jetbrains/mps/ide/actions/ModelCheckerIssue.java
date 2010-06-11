@@ -7,6 +7,7 @@ import jetbrains.mps.ide.messages.Icons;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.project.IModule;
 
 public abstract class ModelCheckerIssue {
   public static final CategoryKind CATEGORY_KIND_SEVERITY = new CategoryKind("Severity", Icons.ERROR_ICON, "Group by severity");
@@ -36,9 +37,14 @@ public abstract class ModelCheckerIssue {
     return myFix != null;
   }
 
-  public static SearchResult<ModelCheckerIssue> getSearchResult(SNode node, String message, IModelCheckerFix fix, String severity, String issueType) {
+  public static SearchResult<ModelCheckerIssue> getSearchResultForNode(SNode node, String message, IModelCheckerFix fix, String severity, String issueType) {
     ModelCheckerIssue issue = new ModelCheckerIssue.NodeIssue(node, message, fix);
     return new SearchResult<ModelCheckerIssue>(issue, node, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, severity), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
+  }
+
+  public static SearchResult<ModelCheckerIssue> getSearchResultForModule(IModule module, String message, IModelCheckerFix fix, String severity, String issueType) {
+    ModelCheckerIssue issue = new ModelCheckerIssue.ModuleIssue(message, fix);
+    return new SearchResult<ModelCheckerIssue>(issue, module, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, severity), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
   }
 
   public static class NodeIssue extends ModelCheckerIssue {
@@ -60,6 +66,12 @@ public abstract class ModelCheckerIssue {
 
     public SNode getNode() {
       return myNode;
+    }
+  }
+
+  public static class ModuleIssue extends ModelCheckerIssue {
+    public ModuleIssue(String message, IModelCheckerFix fix) {
+      super(message, fix);
     }
   }
 }

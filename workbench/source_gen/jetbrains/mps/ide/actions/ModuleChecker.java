@@ -7,7 +7,7 @@ import jetbrains.mps.project.IModule;
 
 public class ModuleChecker {
   private ProgressContext myProgressContext;
-  private SearchResults<ModelCheckerIssue> myResults;
+  private SearchResults<ModelCheckerIssue> myResults = new SearchResults<ModelCheckerIssue>();
 
   public ModuleChecker(ProgressContext progressContext) {
     myProgressContext = progressContext;
@@ -17,7 +17,9 @@ public class ModuleChecker {
     myProgressContext.getProgressIndicator().setText("Checking " + module.getModuleFqName() + " module properties...");
     myProgressContext.getProgressIndicator().setText2("");
     // TODO perform check 
-    System.out.println("CHECKING MODULE IS NOT IMPLEMENTED: " + module.getModuleFqName());
+    /*
+      myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, "Debug message: " + module.getModuleFqName(), null, ModelChecker.SEVERITY_INFO, "Module properties"));
+    */
   }
 
   public SearchResults<ModelCheckerIssue> getSearchResults() {

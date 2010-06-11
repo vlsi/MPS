@@ -18,7 +18,9 @@ package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
@@ -33,6 +35,13 @@ public class ModuleNodeData extends BaseNodeData {
   private static final String MODULE_REF = "module_ref";
 
   private ModuleReference myModuleReference = new ModuleReference("");
+
+  public ModuleNodeData(PathItemRole role, SearchResult result, boolean isResult, INodeRepresentator nodeRepresentator, boolean resultsSection) {
+    super(role,
+          (isResult && nodeRepresentator != null) ? nodeRepresentator.getPresentation(result.getObject()) : getCaption((IModule) result.getPathObject()),
+          "", true, isResult, resultsSection);
+    myModuleReference = ((IModule) result.getPathObject()).getModuleReference();
+  }
 
   public ModuleNodeData(PathItemRole role, IModule module, boolean isResult, boolean resultsSection) {
     super(role, getCaption(module), "", true, isResult, resultsSection);

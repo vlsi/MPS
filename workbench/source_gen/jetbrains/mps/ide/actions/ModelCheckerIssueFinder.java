@@ -43,8 +43,9 @@ public class ModelCheckerIssueFinder implements IFinder {
         return getTaskName(md);
       }
     }));
+    ModuleChecker moduleChecker = null;
     if (modules != null) {
-      ModuleChecker moduleChecker = new ModuleChecker(progressContext);
+      moduleChecker = new ModuleChecker(progressContext);
       indicator.setIndeterminate(true);
       for (IModule module : ListSequence.fromList(modules)) {
         moduleChecker.checkModule(module);
@@ -53,7 +54,12 @@ public class ModelCheckerIssueFinder implements IFinder {
         }
       }
     }
-    ModelChecker modelChecker = new ModelChecker(operationContext, progressContext);
+    ModelChecker modelChecker;
+    if (moduleChecker != null) {
+      modelChecker = new ModelChecker(operationContext, progressContext, moduleChecker.getSearchResults());
+    } else {
+      modelChecker = new ModelChecker(operationContext, progressContext);
+    }
 
     for (SModelDescriptor modelDescriptor : ListSequence.fromList(modelDescriptors)) {
       long modelStartTime = System.currentTimeMillis();
