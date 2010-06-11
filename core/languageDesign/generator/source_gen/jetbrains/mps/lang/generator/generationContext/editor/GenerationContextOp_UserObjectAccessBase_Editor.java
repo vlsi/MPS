@@ -79,7 +79,6 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new GenerationContextOp_UserObjectAccessBase_Editor.GenerationContextOp_UserObjectAccessBase_Editor_replaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
