@@ -238,7 +238,7 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1238617792594">
             <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1238617792595">
               <node role="rightExpression:3" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression:16" id="1238617792596">
-                <link role="conceptDeclaration:16" targetNodeId="3.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
+                <link role="conceptDeclaration:16" targetNodeId="3.1169125989551:0" resolveInfo="InterfaceConceptDeclaration" />
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1238617792597">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1238617792598">
