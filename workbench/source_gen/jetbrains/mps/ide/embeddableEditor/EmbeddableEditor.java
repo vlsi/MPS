@@ -55,7 +55,7 @@ public class EmbeddableEditor {
     myIsEditable = editable;
     myModel = ProjectModels.createDescriptorFor(myOwner);
     myModel.getSModel().addDevKit(LanguageDesign_DevKit.get());
-    this.setNode(rootNode, targetNode);
+    setNode(rootNode, targetNode);
   }
 
   private void setNode(@NotNull SNode rootNode, @NotNull SNode targetNode) {
@@ -80,7 +80,7 @@ public class EmbeddableEditor {
   }
 
   public void setNode(@NotNull SNode node) {
-    this.setNode(node, node);
+    setNode(node, node);
   }
 
   public JComponent getComponenet() {

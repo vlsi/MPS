@@ -37,7 +37,7 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(new OverrideConceptMethodStrategy.QuotationClass_3gioqg_a0a0a0d0a().createNode(superCallExpr));
     } else {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(this.getReturnStatement(superCallExpr));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(superCallExpr));
     }
   }
 
@@ -48,8 +48,8 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
   public JComponent createAdditionalOptionsComponent() {
     JPanel optPanel = new JPanel();
     optPanel.setLayout(new BoxLayout(optPanel, BoxLayout.Y_AXIS));
-    optPanel.add(this.getReturnCheckBox());
-    optPanel.add(this.getRemoveAttributes());
+    optPanel.add(getReturnCheckBox());
+    optPanel.add(getRemoveAttributes());
     return optPanel;
   }
 

@@ -44,7 +44,7 @@ import java.util.Collection;
 
   @Override
   public int lastIndexOf(Object o) {
-    ListIterator<T> e = SortedList.this.listIterator(SortedList.this.size());
+    ListIterator<T> e = SortedList.this.listIterator(size());
     if (o == null) {
       while (e.hasPrevious()) {
         if (e.previous() == null) {
@@ -67,7 +67,7 @@ import java.util.Collection;
   }
 
   public void add(int index, T element) {
-    SortedList.this.add(element);
+    add(element);
   }
 
   public boolean add(T o) {
@@ -89,12 +89,12 @@ import java.util.Collection;
 
   public boolean addAll(Collection<? extends T> c) {
     for (T element : c) {
-      SortedList.this.add(element);
+      add(element);
     }
     return true;
   }
 
   public boolean addAll(int index, Collection<? extends T> c) {
-    return SortedList.this.addAll(c);
+    return addAll(c);
   }
 }

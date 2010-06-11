@@ -36,11 +36,11 @@ public class ModuleRenderer extends ProjectLevelRenderer {
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     ModuleReference moduleReference = (ModuleReference) value;
     final Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-    this.setText(this.getItemLabel(value));
+    setText(getItemLabel(value));
     final IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     if (module == null) {
       if (!(isSelected)) {
-        this.setForeground(Color.RED);
+        setForeground(Color.RED);
       }
       return result;
     }

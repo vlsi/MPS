@@ -21,10 +21,10 @@ import javax.swing.Action;
 
   public CheckBeforeGenerationDialog(Project project, int errors, int warnings) {
     super(project, true);
-    this.myDialogMessage = String.format("Model checker found %d errors and %d warnings. " + "Review them and don't generate models or ignore them?", errors, warnings);
-    this.setTitle("Check Before Generation");
-    this.setButtonsAlignment(SwingUtilities.CENTER);
-    this.init();
+    myDialogMessage = String.format("Model checker found %d errors and %d warnings. " + "Review them and don't generate models or ignore them?", errors, warnings);
+    setTitle("Check Before Generation");
+    setButtonsAlignment(SwingUtilities.CENTER);
+    init();
   }
 
   @Nullable
@@ -39,7 +39,7 @@ import javax.swing.Action;
       }
     });
 
-    panel.add(new JLabel(this.myDialogMessage), BorderLayout.CENTER);
+    panel.add(new JLabel(myDialogMessage), BorderLayout.CENTER);
     panel.add(checkBox, BorderLayout.SOUTH);
     return panel;
   }

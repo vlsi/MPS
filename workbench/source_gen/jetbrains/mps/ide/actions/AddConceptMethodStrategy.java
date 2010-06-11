@@ -23,26 +23,26 @@ public class AddConceptMethodStrategy implements StratergyAddMethodDialog.Contai
   public AddConceptMethodStrategy(final SNode node) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        AddConceptMethodStrategy.this.myBehavior = node.getAdapter().getParent(ConceptBehavior.class);
-        AddConceptMethodStrategy.this.myContextMethod = node.getAdapter().getParent(ConceptMethodDeclaration.class);
+        myBehavior = node.getAdapter().getParent(ConceptBehavior.class);
+        myContextMethod = node.getAdapter().getParent(ConceptMethodDeclaration.class);
       }
     });
   }
 
   public List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> doAddMethods(List<SNode> baseMethods) {
-    boolean insertion = this.myContextMethod != null && this.myContextMethod.getParent() == this.myBehavior;
+    boolean insertion = myContextMethod != null && myContextMethod.getParent() == myBehavior;
     List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> methods = new ArrayList<StratergyAddMethodDialog.ContainerStrategy.MethodAddition>();
     for (SNode methodNode : baseMethods) {
-      SNode behaviorNode = this.myBehavior.getNode();
+      SNode behaviorNode = myBehavior.getNode();
       ConceptMethodDeclaration method = (ConceptMethodDeclaration) ResolveUtil.processMethodToImplement(behaviorNode, methodNode).getAdapter();
       methods.add(new StratergyAddMethodDialog.ContainerStrategy.MethodAddition(((BaseMethodDeclaration) methodNode.getAdapter()), method));
       method.setIsAbstract(false);
-      method.setBody(StatementList.newInstance(this.myBehavior.getModel()));
+      method.setBody(StatementList.newInstance(myBehavior.getModel()));
       method.setOverriddenMethod((ConceptMethodDeclaration) methodNode.getAdapter());
       if (insertion) {
-        this.myBehavior.insertMethod(this.myContextMethod, method);
+        myBehavior.insertMethod(myContextMethod, method);
       } else {
-        this.myBehavior.addMethod(method);
+        myBehavior.addMethod(method);
       }
     }
     return (List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition>) methods;
@@ -61,11 +61,11 @@ public class AddConceptMethodStrategy implements StratergyAddMethodDialog.Contai
   }
 
   public int compareContainers(INodeAdapter c1, INodeAdapter c2) {
-    return this.getSuperBehavioursCount(c2).compareTo(this.getSuperBehavioursCount(c1));
+    return getSuperBehavioursCount(c2).compareTo(getSuperBehavioursCount(c1));
   }
 
   public SNode getMainContainer() {
-    return this.myBehavior.getNode();
+    return myBehavior.getNode();
   }
 
   public SNode getContainer(SNode methodDecl) {

@@ -31,61 +31,61 @@ public abstract class SelectMembersDialog<T extends SNode> extends BaseDialog {
   private List<T> mySelectedMembers = ListSequence.fromList(new ArrayList<T>());
   private MPSTree myTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
-      return SelectMembersDialog.this.rebuildOurTree();
+      return rebuildOurTree();
     }
   };
 
   public SelectMembersDialog(EditorContext editorContext, Frame mainFrame, SNode node, String memberDescription) {
     super(mainFrame, "Select " + memberDescription);
-    this.myMemberDescription = memberDescription;
-    this.myClassifier = node;
-    this.myFrame = mainFrame;
-    this.myTree.setRootVisible(true);
+    myMemberDescription = memberDescription;
+    myClassifier = node;
+    myFrame = mainFrame;
+    myTree.setRootVisible(true);
   }
 
   protected JComponent getMainComponent() {
-    this.myTree.rebuildNow();
-    this.myTree.expandAll();
-    this.myTree.selectFirstLeaf();
-    this.myTree.addKeyListener(new KeyAdapter() {
+    myTree.rebuildNow();
+    myTree.expandAll();
+    myTree.selectFirstLeaf();
+    myTree.addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent keyEvent) {
         if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER) {
-          SelectMembersDialog.this.disposeTrue();
+          disposeTrue();
         }
       }
     });
-    JScrollPane scrollPane = new JScrollPane(this.myTree);
+    JScrollPane scrollPane = new JScrollPane(myTree);
     JPanel mainPanel = new JPanel(new BorderLayout());
     mainPanel.add(scrollPane, BorderLayout.CENTER);
     return mainPanel;
   }
 
   private void disposeTrue() {
-    this.myAnswer = true;
-    for (MPSTreeNode selectedNode : this.myTree.getSelectedNodes(MPSNodeInSelectDialog.class, null)) {
-      ListSequence.fromList(this.mySelectedMembers).addElement(((MPSNodeInSelectDialog<T>) selectedNode).getNode());
+    myAnswer = true;
+    for (MPSTreeNode selectedNode : myTree.getSelectedNodes(MPSNodeInSelectDialog.class, null)) {
+      ListSequence.fromList(mySelectedMembers).addElement(((MPSNodeInSelectDialog<T>) selectedNode).getNode());
     }
-    this.dispose();
+    dispose();
   }
 
   @Override
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
     int width = 200;
     int height = 250;
-    if (this.myFrame == null) {
+    if (myFrame == null) {
       return new DialogDimensionsSettings.DialogDimensions(400, 400, width, height);
     }
-    return new DialogDimensionsSettings.DialogDimensions(this.myFrame.getX() + (this.myFrame.getWidth() - width) / 2, this.myFrame.getY() + (this.myFrame.getHeight() - height) / 2, width, height);
+    return new DialogDimensionsSettings.DialogDimensions(myFrame.getX() + (myFrame.getWidth() - width) / 2, myFrame.getY() + (myFrame.getHeight() - height) / 2, width, height);
   }
 
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void onOk() {
-    this.disposeTrue();
+    disposeTrue();
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void onCancel() {
-    this.dispose();
+    dispose();
   }
 
   protected abstract List<T> getMembers();
@@ -95,21 +95,21 @@ public abstract class SelectMembersDialog<T extends SNode> extends BaseDialog {
   }
 
   private MPSTreeNode rebuildOurTree() {
-    TextTreeNode root = new TextTreeNode(NameUtil.capitalize(this.myMemberDescription));
-    for (final T member : this.getMembers()) {
+    TextTreeNode root = new TextTreeNode(NameUtil.capitalize(myMemberDescription));
+    for (final T member : getMembers()) {
       MPSNodeInSelectDialog<T> newNode = new MPSNodeInSelectDialog<T>(member);
       newNode.setIcon(IconManager.getIconFor(member));
-      newNode.setText(this.getPresentation(member));
+      newNode.setText(getPresentation(member));
       root.add(newNode);
     }
     return root;
   }
 
   public List<T> getSelectedMembers() {
-    return ListSequence.fromListWithValues(new ArrayList<T>(), this.mySelectedMembers);
+    return ListSequence.fromListWithValues(new ArrayList<T>(), mySelectedMembers);
   }
 
   public boolean getAnswer() {
-    return this.myAnswer;
+    return myAnswer;
   }
 }

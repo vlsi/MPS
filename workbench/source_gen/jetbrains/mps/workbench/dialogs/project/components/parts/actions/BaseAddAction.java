@@ -17,10 +17,10 @@ public abstract class BaseAddAction extends BaseValidatedAction {
   }
 
   public final void doPerform(AnActionEvent e) {
-    List<Integer> indices = this.doAddMul(e);
-    this.getSelectionModel().clearSelection();
+    List<Integer> indices = doAddMul(e);
+    getSelectionModel().clearSelection();
     for (int index : indices) {
-      this.getSelectionModel().addSelectionInterval(index, index);
+      getSelectionModel().addSelectionInterval(index, index);
     }
   }
 
@@ -30,7 +30,7 @@ public abstract class BaseAddAction extends BaseValidatedAction {
 
   protected List<Integer> doAddMul(AnActionEvent e) {
     ArrayList<Integer> result = new ArrayList<Integer>();
-    int addResult = this.doAdd(e);
+    int addResult = doAdd(e);
     if (addResult >= 0) {
       result.add(addResult);
     }

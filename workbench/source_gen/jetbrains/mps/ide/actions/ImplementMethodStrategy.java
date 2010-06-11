@@ -23,9 +23,9 @@ public class ImplementMethodStrategy extends BaseMethodUpdateStrategy {
   public JComponent createAdditionalOptionsComponent() {
     JPanel optPanel = new JPanel();
     optPanel.setLayout(new BoxLayout(optPanel, BoxLayout.Y_AXIS));
-    optPanel.add(this.getReturnCheckBox());
-    optPanel.add(this.getRemoveAttributes());
-    this.getReturnCheckBox();
+    optPanel.add(getReturnCheckBox());
+    optPanel.add(getRemoveAttributes());
+    getReturnCheckBox();
     return optPanel;
   }
 
@@ -33,7 +33,7 @@ public class ImplementMethodStrategy extends BaseMethodUpdateStrategy {
     super.updateMethod(sourceMethod, method);
     SNode defaultReturnExpr = Type_Behavior.call_createDefaultTypeExpression_3359611512358152580(SLinkOperations.getTarget(method, "returnType", true));
     if ((defaultReturnExpr != null)) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(this.getReturnStatement(defaultReturnExpr));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(defaultReturnExpr));
     }
   }
 }

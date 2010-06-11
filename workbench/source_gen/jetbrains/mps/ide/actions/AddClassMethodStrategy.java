@@ -24,25 +24,25 @@ public class AddClassMethodStrategy implements StratergyAddMethodDialog.Containe
   public AddClassMethodStrategy(final SNode contextNode) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        AddClassMethodStrategy.this.myClassConcept = contextNode.getAdapter().getParent(ClassConcept.class);
-        AddClassMethodStrategy.this.myContextMethod = contextNode.getAdapter().getParent(InstanceMethodDeclaration.class);
+        myClassConcept = contextNode.getAdapter().getParent(ClassConcept.class);
+        myContextMethod = contextNode.getAdapter().getParent(InstanceMethodDeclaration.class);
       }
     });
   }
 
   public List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> doAddMethods(List<SNode> baseMethods) {
-    boolean insertion = this.myContextMethod != null && this.myContextMethod.getParent() == this.myClassConcept;
+    boolean insertion = myContextMethod != null && myContextMethod.getParent() == myClassConcept;
     List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> methods = new ArrayList<StratergyAddMethodDialog.ContainerStrategy.MethodAddition>();
     for (SNode methodNode : baseMethods) {
-      SNode classNode = this.myClassConcept.getNode();
+      SNode classNode = myClassConcept.getNode();
       InstanceMethodDeclaration method = (InstanceMethodDeclaration) ResolveUtil.processMethodToImplement(classNode, methodNode).getAdapter();
       methods.add(new StratergyAddMethodDialog.ContainerStrategy.MethodAddition(((BaseMethodDeclaration) methodNode.getAdapter()), method));
       method.setIsAbstract(false);
-      method.setBody(StatementList.newInstance(this.myClassConcept.getModel()));
+      method.setBody(StatementList.newInstance(myClassConcept.getModel()));
       if (insertion) {
-        this.myClassConcept.insertMethod(this.myContextMethod, method);
+        myClassConcept.insertMethod(myContextMethod, method);
       } else {
-        this.myClassConcept.addMethod(method);
+        myClassConcept.addMethod(method);
       }
     }
     return (List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition>) methods;
@@ -58,11 +58,11 @@ public class AddClassMethodStrategy implements StratergyAddMethodDialog.Containe
   }
 
   public int compareContainers(INodeAdapter c1, INodeAdapter c2) {
-    return this.getSuperclssesCount(c2).compareTo(this.getSuperclssesCount(c1));
+    return getSuperclssesCount(c2).compareTo(getSuperclssesCount(c1));
   }
 
   public SNode getMainContainer() {
-    return this.myClassConcept.getNode();
+    return myClassConcept.getNode();
   }
 
   public SNode getContainer(SNode methodDecl) {

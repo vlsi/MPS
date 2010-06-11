@@ -21,7 +21,7 @@ public class BooleanEditor extends DefaultCellEditor {
     JComponent component = (JComponent) super.getTableCellEditorComponent(table, value, isSelected, row, column);
     component.setBackground(table.getSelectionBackground());
     component.setForeground(table.getSelectionForeground());
-    component.setEnabled(this.isEnabledFor(table, value, isSelected, row, column));
+    component.setEnabled(isEnabledFor(table, value, isSelected, row, column));
     return component;
   }
 }

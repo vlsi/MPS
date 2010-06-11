@@ -19,19 +19,19 @@ public abstract class BaseSingleTab extends BaseSingletabbedTab {
   }
 
   public SNode tryToLoadNode() {
-    return this.getNode(this.getBaseNode());
+    return getNode(getBaseNode());
   }
 
   public SNode createLoadableNode() {
-    return this.createNode(this.getBaseNode());
+    return createNode(getBaseNode());
   }
 
   public boolean askCreate() {
-    return this.askCreate(this.getBaseNode());
+    return askCreate(getBaseNode());
   }
 
   public boolean askCreate(SNode baseNode) {
-    return TabHelper.ask("Do you want to create a new " + NameUtil.decapitalize(this.getTitle()) + "?", "Create New " + this.getTitle());
+    return TabHelper.ask("Do you want to create a new " + NameUtil.decapitalize(getTitle()) + "?", "Create New " + getTitle());
   }
 
   public abstract String getTitle();

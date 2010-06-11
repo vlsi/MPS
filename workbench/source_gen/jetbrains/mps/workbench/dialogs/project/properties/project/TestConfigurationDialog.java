@@ -85,7 +85,7 @@ public class TestConfigurationDialog extends BaseDialog {
     super(WindowManager.getInstance().getFrame(mpsProject), "Edit Test Configuration");
     myProject = mpsProject;
     myConfig = config;
-    this.initUI();
+    initUI();
   }
 
   protected JComponent getMainComponent() {
@@ -105,16 +105,16 @@ public class TestConfigurationDialog extends BaseDialog {
     myNamePanel = new TestConfigurationDialog.NamePanel();
     myMainComponent.add(myNamePanel, cName);
     GridBagConstraints cCheck = new GridBagConstraints(0, 1, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(5, 5, 0, 5), 0, 0);
-    myMainComponent.add(this.createCheckboxPanel(), cCheck);
+    myMainComponent.add(createCheckboxPanel(), cCheck);
     GridBagConstraints cRadio = new GridBagConstraints(0, 2, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(5, 5, 0, 5), 0, 0);
-    myMainComponent.add(this.createRadioPanel(), cRadio);
+    myMainComponent.add(createRadioPanel(), cRadio);
     GridBagConstraints cConfig = new GridBagConstraints(0, 3, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(10, 0, 0, 0), 0, 0);
     myCards = new CardLayout();
     myConfigPanel = new JPanel(myCards);
     myModulePanel = new TestConfigurationDialog.ModulePanel(myProject);
     myModelsPanel = new TestConfigurationDialog.ModelsPanel(myProject);
-    myConfigPanel.add(this.createPanel("Module", myModulePanel), MODULE);
-    myConfigPanel.add(this.createPanel("Models", myModelsPanel), MODEL);
+    myConfigPanel.add(createPanel("Module", myModulePanel), MODULE);
+    myConfigPanel.add(createPanel("Models", myModelsPanel), MODEL);
     myMainComponent.add(myConfigPanel, cConfig);
     ButtonGroup group = new ButtonGroup();
     group.add(myRadioModule);
@@ -181,18 +181,18 @@ public class TestConfigurationDialog extends BaseDialog {
   @BaseDialog.Button(name = "OK", mnemonic = 'O', position = 0, defaultButton = true)
   public void buttonOK() {
     if (!(myNamePanel.isConfigNameSet())) {
-      this.setErrorText("Name must be specified");
+      setErrorText("Name must be specified");
       return;
     }
     if (myRadioModels.isSelected()) {
       myResult = myModelsPanel.create();
       myResult.setName(myNamePanel.getConfigName());
-      this.dispose();
+      dispose();
     } else
     if (myRadioModule.isSelected()) {
       myResult = myModulePanel.create();
       myResult.setName(myNamePanel.getConfigName());
-      this.dispose();
+      dispose();
     } else {
       LOG.error("Unknown radiobutton state");
     }
@@ -201,7 +201,7 @@ public class TestConfigurationDialog extends BaseDialog {
   @BaseDialog.Button(name = "Cancel", mnemonic = 'C', position = 1, defaultButton = false)
   public void buttonCancel() {
     myResult = null;
-    this.dispose();
+    dispose();
   }
 
   private abstract class BasePanel extends JPanel {
@@ -209,7 +209,7 @@ public class TestConfigurationDialog extends BaseDialog {
     }
 
     public void setState(boolean isEnabled) {
-      for (Component c : this.getComponents()) {
+      for (Component c : getComponents()) {
         c.setEnabled(isEnabled);
       }
     }
@@ -223,7 +223,7 @@ public class TestConfigurationDialog extends BaseDialog {
 
     public ModulePanel(Project project) {
       myProject = project;
-      this.setLayout(new BorderLayout());
+      setLayout(new BorderLayout());
       myModuleUID = new JTextField();
       JButton button = new JButton(new AbstractAction("Select") {
         public void actionPerformed(ActionEvent e) {
@@ -246,7 +246,7 @@ public class TestConfigurationDialog extends BaseDialog {
       JPanel panel = new JPanel(new BorderLayout());
       panel.add(myModuleUID, BorderLayout.CENTER);
       panel.add(button, BorderLayout.EAST);
-      this.add(panel, BorderLayout.NORTH);
+      add(panel, BorderLayout.NORTH);
     }
 
     public void init(ModuleTestConfiguration mtc) {
@@ -269,7 +269,7 @@ public class TestConfigurationDialog extends BaseDialog {
 
     public ModelsPanel(Project project) {
       myProject = project;
-      this.setLayout(new BorderLayout());
+      setLayout(new BorderLayout());
       myModelsList = new JList();
       myModelsList.setCellRenderer(new DefaultListCellRenderer() {
         public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
@@ -306,7 +306,7 @@ public class TestConfigurationDialog extends BaseDialog {
         }
       });
       JScrollPane scroller = new JScrollPane(myModelsList);
-      this.add(scroller, BorderLayout.CENTER);
+      add(scroller, BorderLayout.CENTER);
       ListAddAction addAction = new ListAddAction(myModelsList) {
         @Override
         protected int doAdd(AnActionEvent e) {
@@ -332,8 +332,8 @@ public class TestConfigurationDialog extends BaseDialog {
           }
         }
       };
-      this.add(this.createToolbar(new AnAction[]{addAction, removeAction}), BorderLayout.EAST);
-      this.bind();
+      add(createToolbar(new AnAction[]{addAction, removeAction}), BorderLayout.EAST);
+      bind();
     }
 
     private JComponent createToolbar(AnAction[] actions) {
@@ -386,13 +386,13 @@ public class TestConfigurationDialog extends BaseDialog {
 
     public NamePanel() {
       super(new BorderLayout());
-      this.add(new JLabel("Name:"), BorderLayout.WEST);
+      add(new JLabel("Name:"), BorderLayout.WEST);
       myName = new JTextField();
-      this.add(myName, BorderLayout.CENTER);
+      add(myName, BorderLayout.CENTER);
     }
 
     public boolean isConfigNameSet() {
-      return !(this.getConfigName().trim().equals(""));
+      return !(getConfigName().trim().equals(""));
     }
 
     public String getConfigName() {

@@ -22,8 +22,8 @@ public class InformationDialog extends BaseDialog {
 
   public InformationDialog(IOperationContext context, RefactoringContext refactoringContext) {
     super(context.getMainFrame(), "'" + refactoringContext.getRefactoring().getUserFriendlyName() + "' Refactoring Information");
-    this.myOperationContext = context;
-    this.myRefactoringContext = refactoringContext;
+    myOperationContext = context;
+    myRefactoringContext = refactoringContext;
   }
 
   private void append(Object object, JPanel panel) {
@@ -31,15 +31,15 @@ public class InformationDialog extends BaseDialog {
   }
 
   protected RefactoringContext getRefactoringContext() {
-    return this.myRefactoringContext;
+    return myRefactoringContext;
   }
 
   protected IOperationContext getOperationContext() {
-    return this.myOperationContext;
+    return myOperationContext;
   }
 
   protected JPanel getConceptsPanel() {
-    return this.myConceptsPanel;
+    return myConceptsPanel;
   }
 
   @Override
@@ -50,11 +50,11 @@ public class InformationDialog extends BaseDialog {
   protected JComponent getMainComponent() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        InformationDialog.this.collectInformation(InformationDialog.this.getRefactoringContext().getConceptFeatures());
+        collectInformation(getRefactoringContext().getConceptFeatures());
       }
     });
     JPanel mainPanel = new JPanel(new BorderLayout());
-    mainPanel.add(this.getSimplePanel(), BorderLayout.NORTH);
+    mainPanel.add(getSimplePanel(), BorderLayout.NORTH);
     return mainPanel;
   }
 
@@ -62,7 +62,7 @@ public class InformationDialog extends BaseDialog {
     if (pairs.isEmpty()) {
       return;
     }
-    this.setCaption(this.myConceptsPanel, "Concept Features");
+    setCaption(myConceptsPanel, "Concept Features");
     JPanel centerPanel = new JPanel(new GridLayout(pairs.size() + 2, 1));
     for (Pair pair : pairs) {
       boolean isCreated = pair.o1 == null;
@@ -71,22 +71,22 @@ public class InformationDialog extends BaseDialog {
         continue;
       }
       if (isCreated) {
-        this.append(pair.o2.toString() + " created", centerPanel);
+        append(pair.o2.toString() + " created", centerPanel);
       } else if (isRemoved) {
-        this.append(pair.o1.toString() + " removed", centerPanel);
+        append(pair.o1.toString() + " removed", centerPanel);
       } else {
         String s1 = pair.o1.toString();
         String s2 = pair.o2.toString();
-        this.append("<html>" + this.highlightDiff(s1, s2) + " -> " + this.highlightDiff(s2, s1) + "</html>", centerPanel);
+        append("<html>" + highlightDiff(s1, s2) + " -> " + highlightDiff(s2, s1) + "</html>", centerPanel);
       }
     }
-    this.append("", centerPanel);
-    this.append("", centerPanel);
-    this.myConceptsPanel.add(centerPanel, BorderLayout.CENTER);
+    append("", centerPanel);
+    append("", centerPanel);
+    myConceptsPanel.add(centerPanel, BorderLayout.CENTER);
   }
 
   protected JComponent getSimplePanel() {
-    return this.myConceptsPanel;
+    return myConceptsPanel;
   }
 
   private String highlightDiff(String mainString, String toCompare) {
@@ -119,6 +119,6 @@ public class InformationDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void buttonOk() {
-    this.dispose();
+    dispose();
   }
 }

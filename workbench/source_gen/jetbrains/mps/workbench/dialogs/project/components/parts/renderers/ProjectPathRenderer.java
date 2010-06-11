@@ -32,7 +32,7 @@ public class ProjectPathRenderer extends PathRenderer {
     }
     VirtualFile file = VFileSystem.getFile(path.getPath());
     if (file != null && file.exists() && !(isContained)) {
-      this.setForeground(new Color(128, 0, 128));
+      setForeground(new Color(128, 0, 128));
     }
     return result;
   }

@@ -14,7 +14,7 @@ public abstract class BaseValidatedAction extends AnAction {
   }
 
   public final void actionPerformed(AnActionEvent e) {
-    this.doPerform(e);
+    doPerform(e);
     if (myValidator != null) {
       myValidator.run();
     }

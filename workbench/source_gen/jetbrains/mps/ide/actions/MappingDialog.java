@@ -47,17 +47,17 @@ public class MappingDialog extends BaseDialog {
 
   public MappingDialog(final Project project, Language language) {
     super(WindowManager.getInstance().getFrame(project), "Choose Mapping Configuration");
-    this.myProject = project;
-    this.myLanguage = language;
-    JScrollPane scrollPane = new JScrollPane(this.myTree);
-    this.myMainComponent.add(scrollPane, BorderLayout.CENTER);
-    this.myTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
-    this.myTree.addTreeSelectionListener(new TreeSelectionListener() {
+    myProject = project;
+    myLanguage = language;
+    JScrollPane scrollPane = new JScrollPane(myTree);
+    myMainComponent.add(scrollPane, BorderLayout.CENTER);
+    myTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+    myTree.addTreeSelectionListener(new TreeSelectionListener() {
       public void valueChanged(TreeSelectionEvent e) {
         if (e.getNewLeadSelectionPath() == null) {
           return;
         }
-        TreePath path = MappingDialog.this.myTree.getSelectionModel().getSelectionPath();
+        TreePath path = myTree.getSelectionModel().getSelectionPath();
         if (path == null) {
           return;
         }
@@ -70,12 +70,12 @@ public class MappingDialog extends BaseDialog {
         opener.editNode(treeNode.getSNode(), treeNode.getOperationContext());
       }
     });
-    this.myTree.rebuildNow();
-    this.myTree.expandAll();
+    myTree.rebuildNow();
+    myTree.expandAll();
   }
 
   protected JComponent getMainComponent() {
-    return this.myMainComponent;
+    return myMainComponent;
   }
 
   @Override
@@ -84,12 +84,12 @@ public class MappingDialog extends BaseDialog {
   }
 
   private MPSTreeNode rebuildTree() {
-    if (this.myLanguage == null) {
+    if (myLanguage == null) {
       return null;
     }
     TextTreeNode root = new TextTreeNode("Generators");
-    for (final Generator generator : this.myLanguage.getGenerators()) {
-      ModuleContext moduleContext = new ModuleContext(generator, this.myProject);
+    for (final Generator generator : myLanguage.getGenerators()) {
+      ModuleContext moduleContext = new ModuleContext(generator, myProject);
       MPSTreeNode generatorTreeNode = new MappingDialog.MyTreeNode(moduleContext, Icons.GENERATORS_ICON, generator.getModuleUID(), "generator/" + generator.getName());
       root.add(generatorTreeNode);
       for (SModelDescriptor md : generator.getOwnTemplateModels()) {
@@ -110,12 +110,12 @@ public class MappingDialog extends BaseDialog {
   }
 
   public SNode getResult() {
-    return this.myResult;
+    return myResult;
   }
 
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void buttonOk() {
-    Object[] selectedNode = this.myTree.getSelectedNodes(SNodeTreeNode.class, new Tree.NodeFilter() {
+    Object[] selectedNode = myTree.getSelectedNodes(SNodeTreeNode.class, new Tree.NodeFilter() {
       public boolean accept(Object p0) {
         return true;
       }
@@ -123,16 +123,16 @@ public class MappingDialog extends BaseDialog {
     if (selectedNode.length != 1) {
       JOptionPane.showMessageDialog(this, "Mapping Configuration node is not selected!");
     } else {
-      this.myResult = (SNode) ((SNodeTreeNode) selectedNode[0]).getSNode();
-      this.myTree.dispose();
-      this.dispose();
+      myResult = (SNode) ((SNodeTreeNode) selectedNode[0]).getSNode();
+      myTree.dispose();
+      dispose();
     }
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C', defaultButton = false)
   public void buttonCancel() {
-    this.myTree.dispose();
-    this.dispose();
+    myTree.dispose();
+    dispose();
   }
 
   /*package*/ class MyTreeNode extends MPSTreeNode {
@@ -142,17 +142,17 @@ public class MappingDialog extends BaseDialog {
 
     public MyTreeNode(IOperationContext context, Icon icon, String nodeIdentifier, String text) {
       super(context);
-      this.myIcon = icon;
-      this.myNodeIdentifier = nodeIdentifier;
-      this.myText = text;
-      this.updatePresentation();
+      myIcon = icon;
+      myNodeIdentifier = nodeIdentifier;
+      myText = text;
+      updatePresentation();
     }
 
     protected void doUpdatePresentation() {
       super.doUpdatePresentation();
-      this.setText(this.myText);
-      this.setIcon(this.myIcon);
-      this.setNodeIdentifier(this.myNodeIdentifier);
+      setText(myText);
+      setIcon(myIcon);
+      setNodeIdentifier(myNodeIdentifier);
     }
   }
 }

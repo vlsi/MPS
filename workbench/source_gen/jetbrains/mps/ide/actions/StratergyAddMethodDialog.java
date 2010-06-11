@@ -38,11 +38,11 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
 
   public StratergyAddMethodDialog(EditorContext context, Frame mainFrame, StratergyAddMethodDialog.ContainerStrategy containerStrategy, StratergyAddMethodDialog.CollectMethodsStrategy collectStrategy, StratergyAddMethodDialog.AdditionStrategy additionStrategy) throws HeadlessException {
     super(context, mainFrame, additionStrategy.getTitle());
-    this.myContainerStrategy = containerStrategy;
-    this.myCollectStrategy = collectStrategy;
-    this.myAdditionStrategy = additionStrategy;
-    this.myProject = context.getOperationContext().getProject();
-    this.mySortByNameAction = new StratergyAddMethodDialog.SortByNameAction(this.myProject);
+    myContainerStrategy = containerStrategy;
+    myCollectStrategy = collectStrategy;
+    myAdditionStrategy = additionStrategy;
+    myProject = context.getOperationContext().getProject();
+    mySortByNameAction = new StratergyAddMethodDialog.SortByNameAction(myProject);
   }
 
   private void setVariableNames(SNode node) {
@@ -51,8 +51,8 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
       SNode nodeType = SLinkOperations.getTarget(variable, "type", true);
       if (nodeType != null) {
         String name = ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType)).first();
-        String prefix = VariableDeclaration_Behavior.call_getPrefix_3012473318495495520(variable, this.myProject);
-        String suffix = VariableDeclaration_Behavior.call_getSuffix_3012473318495499856(variable, this.myProject);
+        String prefix = VariableDeclaration_Behavior.call_getPrefix_3012473318495495520(variable, myProject);
+        String suffix = VariableDeclaration_Behavior.call_getSuffix_3012473318495499856(variable, myProject);
         String mainName = (StringUtils.isEmpty(prefix) ?
           name :
           NameUtil.capitalize(name)
@@ -61,27 +61,27 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
       }
     }
     for (SNode child : SNodeOperations.getChildren(node)) {
-      this.setVariableNames(child);
+      setVariableNames(child);
     }
   }
 
   public List<BaseMethodDeclaration> collectImplementableMethods() {
-    return this.myCollectStrategy.collectImplementableMethods(this.myContainerStrategy.getMainContainer());
+    return myCollectStrategy.collectImplementableMethods(myContainerStrategy.getMainContainer());
   }
 
   protected List<AnAction> getToolbarActions() {
     List<AnAction> result = new ArrayList<AnAction>();
     result.addAll(super.getToolbarActions());
-    result.add(this.mySortByNameAction);
+    result.add(mySortByNameAction);
     return result;
   }
 
   protected int compareMethods(BaseMethodDeclaration m1, BaseMethodDeclaration m2) {
-    if (!(this.mySortByNameAction.isSelected())) {
+    if (!(mySortByNameAction.isSelected())) {
       SNode n1 = m1.getNode();
-      int i1 = this.myContainerStrategy.getContainer(n1).getIndexOfChild(n1);
+      int i1 = myContainerStrategy.getContainer(n1).getIndexOfChild(n1);
       SNode n2 = m2.getNode();
-      int i2 = this.myContainerStrategy.getContainer(n2).getIndexOfChild(n2);
+      int i2 = myContainerStrategy.getContainer(n2).getIndexOfChild(n2);
       return i1 - i2;
     } else {
       String n1 = "" + m1.getName();
@@ -97,30 +97,30 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
       SNode method = methodNode.getMethod().getNode();
       methods.add(method);
     }
-    List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> addedMethods = this.myContainerStrategy.doAddMethods(methods);
+    List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> addedMethods = myContainerStrategy.doAddMethods(methods);
     for (StratergyAddMethodDialog.ContainerStrategy.MethodAddition added : addedMethods) {
       BaseMethodDeclaration addedMethodAdapter = added.getResult();
       SNode addedMethod = addedMethodAdapter.getNode();
       SModel sourceModel = added.getSource().getNode().getModel();
       if (SModelStereotype.isStubModelStereotype(sourceModel.getStereotype())) {
-        this.setVariableNames(addedMethod);
+        setVariableNames(addedMethod);
       }
       result.add(added.getResult());
-      this.myAdditionStrategy.updateMethod(added.getSource().getNode(), added.getResult().getNode());
+      myAdditionStrategy.updateMethod(added.getSource().getNode(), added.getResult().getNode());
     }
     return result;
   }
 
   public INodeAdapter getContainer(BaseMethodDeclaration bm) {
-    return this.myContainerStrategy.getContainer(BaseAdapter.fromAdapter(bm)).getAdapter();
+    return myContainerStrategy.getContainer(BaseAdapter.fromAdapter(bm)).getAdapter();
   }
 
   protected int compareContainers(INodeAdapter c1, INodeAdapter c2) {
-    return this.myContainerStrategy.compareContainers(c1, c2);
+    return myContainerStrategy.compareContainers(c1, c2);
   }
 
   protected JComponent createAdditionalOptionsComponent() {
-    return this.myAdditionStrategy.createAdditionalOptionsComponent();
+    return myAdditionStrategy.createAdditionalOptionsComponent();
   }
 
   public static interface ContainerStrategy {
@@ -133,16 +133,16 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
       private BaseMethodDeclaration myResult;
 
       public MethodAddition(BaseMethodDeclaration source, BaseMethodDeclaration result) {
-        this.mySource = source;
-        this.myResult = result;
+        mySource = source;
+        myResult = result;
       }
 
       public BaseMethodDeclaration getSource() {
-        return this.mySource;
+        return mySource;
       }
 
       public BaseMethodDeclaration getResult() {
-        return this.myResult;
+        return myResult;
       }
     }
 
@@ -163,25 +163,25 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
 
     private SortByNameAction(Project p) {
       super("Sort Alphabetically");
-      this.getTemplatePresentation().setIcon(Icons.SORT_ALPHABETICALLY_ICON);
-      this.myProject = p;
+      getTemplatePresentation().setIcon(Icons.SORT_ALPHABETICALLY_ICON);
+      myProject = p;
     }
 
     public boolean isSelected(AnActionEvent e) {
-      return this.isSelected();
+      return isSelected();
     }
 
     public void setSelected(AnActionEvent e, boolean state) {
-      this.setSelected(state);
+      setSelected(state);
       StratergyAddMethodDialog.this.refreshTree();
     }
 
     public boolean isSelected() {
-      return this.myProject.getComponent(ProjectPluginManager.class).getPrefsComponent(PersistentOptions_PreferencesComponent.class).getStateObject().sortAlphabetically;
+      return myProject.getComponent(ProjectPluginManager.class).getPrefsComponent(PersistentOptions_PreferencesComponent.class).getStateObject().sortAlphabetically;
     }
 
     public void setSelected(boolean state) {
-      this.myProject.getComponent(ProjectPluginManager.class).getPrefsComponent(PersistentOptions_PreferencesComponent.class).getStateObject().sortAlphabetically = state;
+      myProject.getComponent(ProjectPluginManager.class).getPrefsComponent(PersistentOptions_PreferencesComponent.class).getStateObject().sortAlphabetically = state;
     }
   }
 }

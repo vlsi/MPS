@@ -28,35 +28,35 @@ public class SetNodePackageDialog extends BaseDialog {
 
   public SetNodePackageDialog(Frame frame, String title, List<String> existingPackages) {
     super(frame, title);
-    this.setModal(true);
-    this.myMainPanel = new JPanel();
-    this.myMainPanel.setLayout(new GridBagLayout());
+    setModal(true);
+    myMainPanel = new JPanel();
+    myMainPanel.setLayout(new GridBagLayout());
     GridBagConstraints c = new GridBagConstraints(0, 0, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
-    this.myMainPanel.add(new JLabel("Enter virtual package name:"), c);
-    this.myCbPackage = new JComboBox();
-    this.myCbPackage.setEditable(true);
-    this.myCbPackage.setModel(new DefaultComboBoxModel(ListSequence.fromList(existingPackages).toGenericArray(String.class)));
-    this.myCbPackage.addActionListener(new ActionListener() {
+    myMainPanel.add(new JLabel("Enter virtual package name:"), c);
+    myCbPackage = new JComboBox();
+    myCbPackage.setEditable(true);
+    myCbPackage.setModel(new DefaultComboBoxModel(ListSequence.fromList(existingPackages).toGenericArray(String.class)));
+    myCbPackage.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        SetNodePackageDialog.this.myPackage = ((String) SetNodePackageDialog.this.myCbPackage.getSelectedItem());
+        myPackage = ((String) myCbPackage.getSelectedItem());
       }
     });
-    this.myCbPackage.getEditor().getEditorComponent().addKeyListener(new KeyAdapter() {
+    myCbPackage.getEditor().getEditorComponent().addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ENTER && !(SetNodePackageDialog.this.myCbPackage.isPopupVisible())) {
-          SetNodePackageDialog.this.onOk();
+        if (e.getKeyCode() == KeyEvent.VK_ENTER && !(myCbPackage.isPopupVisible())) {
+          onOk();
         }
       }
     });
     c.gridy = 1;
-    this.myMainPanel.add(this.myCbPackage, c);
+    myMainPanel.add(myCbPackage, c);
     c.gridy = 2;
     c.weighty = 1.0;
-    this.myMainPanel.add(new JPanel(), c);
+    myMainPanel.add(new JPanel(), c);
   }
 
   protected JComponent getMainComponent() {
-    return this.myMainPanel;
+    return myMainPanel;
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
@@ -64,37 +64,37 @@ public class SetNodePackageDialog extends BaseDialog {
   }
 
   public String getPackage() {
-    return this.myPackage;
+    return myPackage;
   }
 
   private void updatePackage() {
-    String pack = ((String) this.myCbPackage.getEditor().getItem());
+    String pack = ((String) myCbPackage.getEditor().getItem());
     if (pack != null && pack.length() == 0) {
       pack = null;
     }
-    this.myPackage = pack;
+    myPackage = pack;
   }
 
   public void setPackage(String pack) {
     if (pack == null) {
       pack = "";
     }
-    this.myCbPackage.setSelectedItem(pack);
+    myCbPackage.setSelectedItem(pack);
   }
 
   public boolean isCancelled() {
-    return this.myIsCancelled;
+    return myIsCancelled;
   }
 
   @BaseDialog.Button(name = "OK", mnemonic = 'O', position = 0, defaultButton = true)
   public void onOk() {
-    this.updatePackage();
-    this.myIsCancelled = false;
-    this.dispose();
+    updatePackage();
+    myIsCancelled = false;
+    dispose();
   }
 
   @BaseDialog.Button(name = "Cancel", mnemonic = 'C', position = 1)
   public void onCancel() {
-    this.dispose();
+    dispose();
   }
 }

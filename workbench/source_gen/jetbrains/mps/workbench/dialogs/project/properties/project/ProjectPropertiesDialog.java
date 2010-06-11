@@ -19,27 +19,27 @@ public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
   public ProjectPropertiesDialog(final Project project) {
     super(project.getName() + " Properties", ProjectOperationContext.get(project));
     myProject = project;
-    this.collectProjectProperties();
-    this.initUI();
+    collectProjectProperties();
+    initUI();
   }
 
   public ProjectPropertiesDialog(final Project project, ProjectProperties properties) {
     super(project.getName() + " Properties", ProjectOperationContext.get(project));
     myProject = project;
     myProperties = properties;
-    this.initUI();
+    initUI();
   }
 
   private void initUI() {
-    this.addComponent(StandardComponents.createProjectSolutionsPanel(this, "Solutions", myProperties.getSolutions()), BaseBindedDialog.ConstraintsType.LIST);
-    this.addComponent(StandardComponents.createProjectLanguagesPanel(this, "Languages", myProperties.getLanguages()), BaseBindedDialog.ConstraintsType.LIST);
-    this.addComponent(StandardComponents.createProjectDevkitsPanel(this, "Devkits", myProperties.getDevkits()), BaseBindedDialog.ConstraintsType.LIST);
-    this.addComponent(StandardComponents.createTestConfigsPanel(this, "Test Configurations", myProperties.getTestConfigurations(), myProperties), BaseBindedDialog.ConstraintsType.LIST);
+    addComponent(StandardComponents.createProjectSolutionsPanel(this, "Solutions", myProperties.getSolutions()), BaseBindedDialog.ConstraintsType.LIST);
+    addComponent(StandardComponents.createProjectLanguagesPanel(this, "Languages", myProperties.getLanguages()), BaseBindedDialog.ConstraintsType.LIST);
+    addComponent(StandardComponents.createProjectDevkitsPanel(this, "Devkits", myProperties.getDevkits()), BaseBindedDialog.ConstraintsType.LIST);
+    addComponent(StandardComponents.createTestConfigsPanel(this, "Test Configurations", myProperties.getTestConfigurations(), myProperties), BaseBindedDialog.ConstraintsType.LIST);
   }
 
   private void collectProjectProperties() {
     myProperties = new ProjectProperties();
-    myProperties.loadFrom(this.getMPSProject());
+    myProperties.loadFrom(getMPSProject());
   }
 
   private MPSProject getMPSProject() {
@@ -49,7 +49,7 @@ public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
   protected boolean doSaveChanges() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        myProperties.saveTo(ProjectPropertiesDialog.this.getMPSProject());
+        myProperties.saveTo(getMPSProject());
         myProject.save();
       }
     });
@@ -70,19 +70,19 @@ public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void buttonOK() {
-    if (!(this.saveChanges())) {
+    if (!(saveChanges())) {
       return;
     }
-    this.dispose();
+    dispose();
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void buttonCancel() {
-    this.dispose();
+    dispose();
   }
 
   @BaseDialog.Button(position = 2, name = "Apply", mnemonic = 'A')
   public void buttonApply() {
-    this.saveChanges();
+    saveChanges();
   }
 }

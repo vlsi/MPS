@@ -27,7 +27,7 @@ public abstract class TableRemoveAction extends BaseValidatedAction {
         index = i;
       }
     }
-    this.doRemove(e);
+    doRemove(e);
     int listSize = myTable.getModel().getRowCount();
     if (index >= listSize) {
       index--;

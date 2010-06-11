@@ -29,7 +29,7 @@ public class HandlerTableCellEditor extends AbstractTableCellEditor {
     myClass = new TextFieldWithBrowseButton.NoPathCompletion();
     myClass.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        String s = CommonChoosers.showDialogStringChooser(myOwner.getMainComponent(), caption, HandlerTableCellEditor.this.getModelRootManagerClassNames(owner.getOperationContext()));
+        String s = CommonChoosers.showDialogStringChooser(myOwner.getMainComponent(), caption, getModelRootManagerClassNames(owner.getOperationContext()));
         if (s == null) {
           return;
         }

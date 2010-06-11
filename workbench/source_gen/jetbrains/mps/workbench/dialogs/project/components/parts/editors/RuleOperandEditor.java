@@ -65,7 +65,7 @@ public class RuleOperandEditor extends AbstractTableCellEditor {
         }
       }
     });
-    return this.createRenderer(table, myOperand, row, column);
+    return createRenderer(table, myOperand, row, column);
   }
 
   private JComponent createRenderer(JTable table, Object value, int row, int column) {

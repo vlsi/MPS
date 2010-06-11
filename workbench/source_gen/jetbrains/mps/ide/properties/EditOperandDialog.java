@@ -42,23 +42,23 @@ public class EditOperandDialog extends BaseDialog {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (isLeft) {
-          EditOperandDialog.this.addGeneratorModels(currentGen, root);
+          addGeneratorModels(currentGen, root);
         } else {
-          EditOperandDialog.this.addGeneratorModels(currentGen, root);
+          addGeneratorModels(currentGen, root);
           for (ModuleReference ref : depGenerators) {
             Generator gen = (Generator) MPSModuleRepository.getInstance().getModule(ref);
             if (gen != null) {
-              EditOperandDialog.this.addGeneratorModels(gen, root);
+              addGeneratorModels(gen, root);
             }
           }
         }
       }
     });
-    this.setRootMappingRef(root, operand, isLeft);
+    setRootMappingRef(root, operand, isLeft);
     myTree = new MappingSelectTree(isLeft);
     myTree.setModel(new DefaultTreeModel(root, false));
-    this.setCheckedUnder(root);
-    this.expandCheckedUnder(myTree, root);
+    setCheckedUnder(root);
+    expandCheckedUnder(myTree, root);
     myMainComponent = new JScrollPane(myTree);
   }
 
@@ -71,7 +71,7 @@ public class EditOperandDialog extends BaseDialog {
       }
     }
     for (int i = 0; i < node.getChildCount(); i++) {
-      this.expandCheckedUnder(tree, (DefaultMutableTreeNode) node.getChildAt(i));
+      expandCheckedUnder(tree, (DefaultMutableTreeNode) node.getChildAt(i));
     }
   }
 
@@ -119,11 +119,11 @@ public class EditOperandDialog extends BaseDialog {
       }
     } else
     if (operand instanceof MappingConfig_ExternalRef) {
-      this.setGenMappingRef(root, (MappingConfig_ExternalRef) operand);
+      setGenMappingRef(root, (MappingConfig_ExternalRef) operand);
     } else
     if (operand instanceof MappingConfig_RefSet) {
       for (MappingConfig_AbstractRef ref : ((MappingConfig_RefSet) operand).getMappingConfigs()) {
-        this.setGenMappingRef(root, (MappingConfig_ExternalRef) ref);
+        setGenMappingRef(root, (MappingConfig_ExternalRef) ref);
       }
     }
   }
@@ -141,11 +141,11 @@ public class EditOperandDialog extends BaseDialog {
           rootData.setSelected(true);
         } else
         if (innerOperand instanceof MappingConfig_SimpleRef) {
-          this.setModelMappingRef(child, (MappingConfig_SimpleRef) innerOperand);
+          setModelMappingRef(child, (MappingConfig_SimpleRef) innerOperand);
         } else
         if (innerOperand instanceof MappingConfig_RefSet) {
           for (MappingConfig_AbstractRef ref : ((MappingConfig_RefSet) innerOperand).getMappingConfigs()) {
-            this.setModelMappingRef(child, (MappingConfig_SimpleRef) ref);
+            setModelMappingRef(child, (MappingConfig_SimpleRef) ref);
           }
         }
       }
@@ -164,7 +164,7 @@ public class EditOperandDialog extends BaseDialog {
         if (operand.getNodeID().equals("*")) {
           childData.setSelected(true);
         } else {
-          this.setNodeMappingRef(child, operand);
+          setNodeMappingRef(child, operand);
         }
       }
     }
@@ -190,13 +190,13 @@ public class EditOperandDialog extends BaseDialog {
     if (rootData.isSelected()) {
       return new MappingConfig_RefAllGlobal();
     }
-    List<DefaultMutableTreeNode> chChildren = this.getChildrenWithChecks(root);
+    List<DefaultMutableTreeNode> chChildren = getChildrenWithChecks(root);
     if (chChildren.size() == 1) {
-      return this.getGeneratorMappingRef(chChildren.get(0));
+      return getGeneratorMappingRef(chChildren.get(0));
     } else {
       MappingConfig_RefSet result = new MappingConfig_RefSet();
       for (DefaultMutableTreeNode child : chChildren) {
-        result.getMappingConfigs().add(this.getGeneratorMappingRef(child));
+        result.getMappingConfigs().add(getGeneratorMappingRef(child));
       }
       return result;
     }
@@ -209,13 +209,13 @@ public class EditOperandDialog extends BaseDialog {
     if (rootData.isSelected()) {
       result.setMappingConfig(new MappingConfig_RefAllLocal());
     } else {
-      List<DefaultMutableTreeNode> chChildren = this.getChildrenWithChecks(gRoot);
+      List<DefaultMutableTreeNode> chChildren = getChildrenWithChecks(gRoot);
       if (chChildren.size() == 1) {
-        result.setMappingConfig(this.getModelMappingRef(chChildren.get(0)));
+        result.setMappingConfig(getModelMappingRef(chChildren.get(0)));
       } else {
         MappingConfig_RefSet modelsResult = new MappingConfig_RefSet();
         for (DefaultMutableTreeNode child : chChildren) {
-          modelsResult.getMappingConfigs().add(this.getModelMappingRef(child));
+          modelsResult.getMappingConfigs().add(getModelMappingRef(child));
         }
         result.setMappingConfig(modelsResult);
       }
@@ -234,13 +234,13 @@ public class EditOperandDialog extends BaseDialog {
       result.setNodeID("*");
       return result;
     }
-    List<DefaultMutableTreeNode> chChildren = this.getChildrenWithChecks(mRoot);
+    List<DefaultMutableTreeNode> chChildren = getChildrenWithChecks(mRoot);
     if (chChildren.size() == 1) {
-      return this.getNodeMappingRef(chChildren.get(0));
+      return getNodeMappingRef(chChildren.get(0));
     } else {
       MappingConfig_RefSet result = new MappingConfig_RefSet();
       for (DefaultMutableTreeNode child : chChildren) {
-        result.getMappingConfigs().add(this.getNodeMappingRef(child));
+        result.getMappingConfigs().add(getNodeMappingRef(child));
       }
       return result;
     }
@@ -272,7 +272,7 @@ public class EditOperandDialog extends BaseDialog {
     Enumeration<DefaultMutableTreeNode> children = root.children();
     while (children.hasMoreElements()) {
       DefaultMutableTreeNode child = children.nextElement();
-      childChecks = childChecks | this.setCheckedUnder(child);
+      childChecks = childChecks | setCheckedUnder(child);
     }
     MappingSelectTree.NodeData rootData = (MappingSelectTree.NodeData) root.getUserObject();
     boolean checksUnder = rootData.isSelected() || childChecks;
@@ -283,18 +283,18 @@ public class EditOperandDialog extends BaseDialog {
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void buttonOK() {
     final DefaultMutableTreeNode root = (DefaultMutableTreeNode) myTree.getModel().getRoot();
-    this.setCheckedUnder(root);
+    setCheckedUnder(root);
     myResult = ModelAccess.instance().runReadAction(new Computable<MappingConfig_AbstractRef>() {
       public MappingConfig_AbstractRef compute() {
-        return EditOperandDialog.this.getRootMappingRef(root);
+        return getRootMappingRef(root);
       }
     });
-    this.dispose();
+    dispose();
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void buttonCancel() {
     myResult = null;
-    this.dispose();
+    dispose();
   }
 }

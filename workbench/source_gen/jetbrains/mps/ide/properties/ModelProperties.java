@@ -70,26 +70,26 @@ public class ModelProperties extends BaseBean {
   public void saveChanges() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        ModelProperties.this.addNewModels();
-        ModelProperties.this.removeUnusedModels();
-        ModelProperties.this.addNewLanguages();
-        ModelProperties.this.removeUnusedLanguages();
-        ModelProperties.this.addNewDevKits();
-        ModelProperties.this.removeUnusedDevKits();
-        ModelProperties.this.addNewEngagedOnGenerationLanguages();
-        ModelProperties.this.removeUnusedEngagedOnGenerationLanguages();
+        addNewModels();
+        removeUnusedModels();
+        addNewLanguages();
+        removeUnusedLanguages();
+        addNewDevKits();
+        removeUnusedDevKits();
+        addNewEngagedOnGenerationLanguages();
+        removeUnusedEngagedOnGenerationLanguages();
         if (ModelGenerationStatusManager.isDoNotGenerate(myModelDescriptor) != myDoNotGenerate) {
           ModelGenerationStatusManager.setDoNotGenerate(myModelDescriptor, myDoNotGenerate);
         }
         myModelDescriptor.save();
       }
     });
-    this.addMissingDependenciesToModule();
+    addMissingDependenciesToModule();
   }
 
   private void addNewDevKits() {
     Set<ModuleReference> devKitsInModel = new HashSet<ModuleReference>(myModelDescriptor.getSModel().getDevKitRefs());
-    Set<ModuleReference> devKitsInProperties = new HashSet<ModuleReference>(this.getUsedDevKits());
+    Set<ModuleReference> devKitsInProperties = new HashSet<ModuleReference>(getUsedDevKits());
     devKitsInProperties.removeAll(devKitsInModel);
     for (ModuleReference dk : devKitsInProperties) {
       DevKit devKit = GlobalScope.getInstance().getDevKit(dk);
@@ -100,7 +100,7 @@ public class ModelProperties extends BaseBean {
   }
 
   private void removeUnusedDevKits() {
-    Set<ModuleReference> propsDevKits = new HashSet<ModuleReference>(this.getUsedDevKits());
+    Set<ModuleReference> propsDevKits = new HashSet<ModuleReference>(getUsedDevKits());
     for (ModuleReference dk : myModelDescriptor.getSModel().getDevKitRefs()) {
       if (!(propsDevKits.contains(dk))) {
         myModelDescriptor.getSModel().deleteDevKit(dk);
@@ -114,7 +114,7 @@ public class ModelProperties extends BaseBean {
 
   private void addNewLanguages() {
     Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(myModelDescriptor.getSModel().getExplicitlyImportedLanguages());
-    Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(this.getUsedLanguages());
+    Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getUsedLanguages());
     languagesInProps.removeAll(languagesInModel);
     for (ModuleReference namespace : languagesInProps) {
       Language language = GlobalScope.getInstance().getLanguage(namespace);
@@ -126,7 +126,7 @@ public class ModelProperties extends BaseBean {
 
   private void removeUnusedLanguages() {
     Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(myModelDescriptor.getSModel().getExplicitlyImportedLanguages());
-    Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(this.getUsedLanguages());
+    Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getUsedLanguages());
     languagesInModel.removeAll(languagesInProps);
     for (ModuleReference namespace : languagesInModel) {
       myModelDescriptor.getSModel().deleteLanguage(namespace);
@@ -135,7 +135,7 @@ public class ModelProperties extends BaseBean {
 
   private void addNewEngagedOnGenerationLanguages() {
     Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(myModelDescriptor.getSModel().getEngagedOnGenerationLanguages());
-    Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(this.getLanguagesEngagedOnGeneration());
+    Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getLanguagesEngagedOnGeneration());
     languagesInProps.removeAll(languagesInModel);
     for (ModuleReference namespace : languagesInProps) {
       myModelDescriptor.getSModel().addEngagedOnGenerationLanguage(namespace);
@@ -144,7 +144,7 @@ public class ModelProperties extends BaseBean {
 
   private void removeUnusedEngagedOnGenerationLanguages() {
     Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(myModelDescriptor.getSModel().getEngagedOnGenerationLanguages());
-    Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(this.getLanguagesEngagedOnGeneration());
+    Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getLanguagesEngagedOnGeneration());
     languagesInModel.removeAll(languagesInProps);
     for (ModuleReference ref : languagesInModel) {
       myModelDescriptor.getSModel().removeEngagedOnGenerationLanguage(ref);
@@ -153,7 +153,7 @@ public class ModelProperties extends BaseBean {
 
   private void addNewModels() {
     Set<SModelReference> modelsInModel = new HashSet<SModelReference>(myModelDescriptor.getSModel().getImportedModelUIDs());
-    Set<SModelReference> modelsInProps = new HashSet<SModelReference>(this.getImportedModels());
+    Set<SModelReference> modelsInProps = new HashSet<SModelReference>(getImportedModels());
     modelsInProps.removeAll(modelsInModel);
     for (SModelReference modelReference : modelsInProps) {
       myModelDescriptor.getSModel().addImportedModel(modelReference);
@@ -162,7 +162,7 @@ public class ModelProperties extends BaseBean {
 
   private void removeUnusedModels() {
     Set<SModelReference> modelsInModel = new HashSet<SModelReference>(myModelDescriptor.getSModel().getImportedModelUIDs());
-    Set<SModelReference> modelsInProps = new HashSet<SModelReference>(this.getImportedModels());
+    Set<SModelReference> modelsInProps = new HashSet<SModelReference>(getImportedModels());
     modelsInModel.removeAll(modelsInProps);
     for (SModelReference modelReference : modelsInModel) {
       myModelDescriptor.getSModel().deleteImportedModel(modelReference);

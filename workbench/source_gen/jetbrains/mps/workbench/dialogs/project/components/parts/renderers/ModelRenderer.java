@@ -32,12 +32,12 @@ public class ModelRenderer extends ProjectLevelRenderer {
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
     final SModelReference modelReference = (SModelReference) value;
-    this.setText(this.getItemLabel(value));
+    setText(getItemLabel(value));
     if (!(isSelected)) {
       if (!(StateUtil.isAvailable(modelReference))) {
-        this.setForeground(Color.RED);
-      } else if (!(StateUtil.isInScope(this.getModuleScope(), modelReference))) {
-        this.setForeground(new Color(128, 0, 128));
+        setForeground(Color.RED);
+      } else if (!(StateUtil.isInScope(getModuleScope(), modelReference))) {
+        setForeground(new Color(128, 0, 128));
       }
     }
     return result;

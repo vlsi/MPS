@@ -47,9 +47,9 @@ public class CopySupport {
     }
 
     public void exportToClipboard(JComponent comp, Clipboard clip, int action) throws IllegalStateException {
-      int clipboardAction = this.getSourceActions(comp) & action;
+      int clipboardAction = getSourceActions(comp) & action;
       if (clipboardAction == TransferHandler.NONE) {
-        this.exportDone(comp, null, TransferHandler.NONE);
+        exportDone(comp, null, TransferHandler.NONE);
       }
       Object[] selected = ((JList) comp).getSelectedValues();
       StringBuilder textPresentation = new StringBuilder();
@@ -63,9 +63,9 @@ public class CopySupport {
       StringSelection t = new StringSelection(textPresentation.toString());
       try {
         clip.setContents(t, null);
-        this.exportDone(comp, t, action);
+        exportDone(comp, t, action);
       } catch (IllegalStateException e) {
-        this.exportDone(comp, t, TransferHandler.NONE);
+        exportDone(comp, t, TransferHandler.NONE);
       }
     }
   }

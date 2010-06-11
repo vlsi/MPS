@@ -21,7 +21,7 @@ public class DevKitPropertiesDialog extends BasePropertiesDialog {
   /*package*/ DevKitPropertiesDialog(DevKit devKit, IOperationContext operationContext) {
     super("DevKit Properties", operationContext);
     myDevKit = devKit;
-    this.collectDevkitProperties();
+    collectDevkitProperties();
   }
 
   private void collectDevkitProperties() {
@@ -30,11 +30,11 @@ public class DevKitPropertiesDialog extends BasePropertiesDialog {
   }
 
   protected String getErrorString() {
-    return this.checkStubModels(myProperties.getStubModels());
+    return checkStubModels(myProperties.getStubModels());
   }
 
   protected boolean doSaveChanges() {
-    if (!(this.checkValidity())) {
+    if (!(checkValidity())) {
       return false;
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {

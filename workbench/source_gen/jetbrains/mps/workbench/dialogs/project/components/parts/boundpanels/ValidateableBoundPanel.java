@@ -54,22 +54,22 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
   }
 
   public void setAddAction(BaseValidatedAction action) {
-    this.assertNotInitialized();
+    assertNotInitialized();
     myAddAction = action;
   }
 
   public void setRemoveAction(BaseValidatedAction action) {
-    this.assertNotInitialized();
+    assertNotInitialized();
     myRemoveAction = action;
   }
 
   public void setEditAction(BaseValidatedAction action) {
-    this.assertNotInitialized();
+    assertNotInitialized();
     myEditAction = action;
   }
 
   public void setChooser(final Computable<T> chooser) {
-    this.assertNotInitialized();
+    assertNotInitialized();
     myMultipleChooser = false;
     myChooser = new Computable<List<T>>() {
       public List<T> compute() {
@@ -79,28 +79,28 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
   }
 
   public void setMultipleChooser(Computable<List<T>> chooser) {
-    this.assertNotInitialized();
+    assertNotInitialized();
     myMultipleChooser = true;
     myChooser = chooser;
   }
 
   public void setCellRenderer(DefaultListCellRenderer cellRenderer) {
-    this.assertNotInitialized();
+    assertNotInitialized();
     myCellRenderer = cellRenderer;
   }
 
   public void setTransferHandler(TransferHandler transferHandler) {
-    this.assertNotInitialized();
+    assertNotInitialized();
     myTransferHandler = transferHandler;
   }
 
   public void setObjectValidator(Validator objectValidator) {
-    this.assertNotInitialized();
+    assertNotInitialized();
     myObjectValidator = objectValidator;
   }
 
   public void setCanRemoveCondition(Condition<T> canRemoveCondition) {
-    this.assertNotInitialized();
+    assertNotInitialized();
     myCanRemoveCondition = (canRemoveCondition != null ?
       canRemoveCondition :
       Condition.TRUE_CONDITION
@@ -109,21 +109,21 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
 
   public void init() {
     myInitialized = true;
-    this.setBorder(new TitledBorder(myCaption));
-    this.setLayout(new BorderLayout());
-    JComponent component = ValidateableBoundPanel.this.initUIComponentAndBinding();
+    setBorder(new TitledBorder(myCaption));
+    setLayout(new BorderLayout());
+    JComponent component = initUIComponentAndBinding();
     if (myTransferHandler != null) {
       component.setTransferHandler(myTransferHandler);
     }
     CopySupport.addCopyPopup(component);
     component.addKeyListener(new ValidateableBoundPanel.MyKeyAdapter());
-    JComponent actionsComponent = ValidateableBoundPanel.this.createActionsComponent();
+    JComponent actionsComponent = createActionsComponent();
     if (actionsComponent != null) {
-      this.add(actionsComponent, BorderLayout.WEST);
+      add(actionsComponent, BorderLayout.WEST);
     }
     JScrollPane comp = new JScrollPane(component);
     comp.doLayout();
-    this.add(comp, BorderLayout.CENTER);
+    add(comp, BorderLayout.CENTER);
     myValidator.run();
   }
 
@@ -134,7 +134,7 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
   protected String removeSelectedWithCheck() {
     StringBuilder errorMessage = new StringBuilder();
 
-    int[] indices = this.getSelectedIndices();
+    int[] indices = getSelectedIndices();
     Arrays.sort(indices);
 
     for (int i = indices.length - 1; i >= 0; i--) {
@@ -161,10 +161,10 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
   private JComponent createActionsComponent() {
     if (myMultipleChooser != null) {
       if (myAddAction == null) {
-        myAddAction = ValidateableBoundPanel.this.createAddAction(myChooser);
+        myAddAction = createAddAction(myChooser);
       }
       if (myRemoveAction == null) {
-        myRemoveAction = ValidateableBoundPanel.this.createRemoveAction();
+        myRemoveAction = createRemoveAction();
       }
     }
     List<AnAction> act = new ArrayList<AnAction>();

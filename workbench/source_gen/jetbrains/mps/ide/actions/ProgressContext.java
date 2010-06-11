@@ -18,10 +18,10 @@ public class ProgressContext {
   private ProgressIndicator myProgressIndicator;
 
   public ProgressContext(ProgressIndicator progressIndicator, List<String> taskNames) {
-    this.myTaskNames = taskNames;
-    this.myProgressIndicator = progressIndicator;
-    this.myStartTime = System.currentTimeMillis();
-    this.myEstimatedTime = getEstimatedTimeMillis(taskNames);
+    myTaskNames = taskNames;
+    myProgressIndicator = progressIndicator;
+    myStartTime = System.currentTimeMillis();
+    myEstimatedTime = getEstimatedTimeMillis(taskNames);
   }
 
   public ProgressContext(ProgressIndicator progressIndicator, Iterable<String> taskNames) {
@@ -33,35 +33,35 @@ public class ProgressContext {
   }
 
   public void saveEstimatedTime(long subtaskStartTime) {
-    addEstimatedTimeMillis(ListSequence.fromList(this.myTaskNames).getElement(this.myCurrentTaskIndex), subtaskStartTime);
-    this.myCurrentTaskIndex++;
+    addEstimatedTimeMillis(ListSequence.fromList(myTaskNames).getElement(myCurrentTaskIndex), subtaskStartTime);
+    myCurrentTaskIndex++;
   }
 
   public void saveEstimatedTime() {
-    this.saveEstimatedTime(this.myStartTime);
+    saveEstimatedTime(myStartTime);
   }
 
   public long getStartTime() {
-    return this.myStartTime;
+    return myStartTime;
   }
 
   public long getEstimatedTime() {
-    return this.myEstimatedTime;
+    return myEstimatedTime;
   }
 
   public ProgressIndicator getProgressIndicator() {
-    return this.myProgressIndicator;
+    return myProgressIndicator;
   }
 
   public boolean checkAndUpdateIndicator(String text) {
-    ProgressIndicator indicator = this.getProgressIndicator();
-    long estimatedTime = this.getEstimatedTime();
+    ProgressIndicator indicator = getProgressIndicator();
+    long estimatedTime = getEstimatedTime();
     // Return false if operation was cancelled 
     if (indicator.isCanceled()) {
       return false;
     }
 
-    long elapsedTime = System.currentTimeMillis() - this.getStartTime();
+    long elapsedTime = System.currentTimeMillis() - getStartTime();
     String estimatedTimeString = TimePresentationUtil.timeIntervalStringPresentation(estimatedTime);
     String elapsedTimeString = TimePresentationUtil.timeIntervalStringPresentation(elapsedTime);
     indicator.setText(text);

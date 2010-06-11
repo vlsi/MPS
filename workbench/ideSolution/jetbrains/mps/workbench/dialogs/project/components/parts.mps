@@ -59,13 +59,10 @@
               <property name="name:3" value="clipboardAction" />
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1560298786499494424" />
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.BitwiseAndExpression:3" id="1560298786499494425">
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499494426">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499494427" />
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499494428">
-                    <link role="baseMethodDeclaration:3" targetNodeId="1.~TransferHandler.getSourceActions(javax.swing.JComponent):int" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499494429">
-                      <link role="variableDeclaration:3" targetNodeId="1560298786499494360" resolveInfo="comp" />
-                    </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="1200564340082201802">
+                  <link role="baseMethodDeclaration:3" targetNodeId="1.~TransferHandler.getSourceActions(javax.swing.JComponent):int" resolveInfo="getSourceActions" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499494429">
+                    <link role="variableDeclaration:3" targetNodeId="1560298786499494360" resolveInfo="comp" />
                   </node>
                 </node>
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499494430">
@@ -86,18 +83,15 @@
             </node>
             <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1560298786499494435">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1560298786499494436">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499494437">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499494438" />
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499494439">
-                    <link role="baseMethodDeclaration:3" targetNodeId="1.~TransferHandler.exportDone(javax.swing.JComponent,java.awt.datatransfer.Transferable,int):void" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499494440">
-                      <link role="variableDeclaration:3" targetNodeId="1560298786499494360" resolveInfo="comp" />
-                    </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1560298786499494441" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1560298786499494442">
-                      <link role="classifier:3" targetNodeId="1.~TransferHandler" />
-                      <link role="variableDeclaration:3" targetNodeId="1.~TransferHandler.NONE" />
-                    </node>
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="1200564340082201872">
+                  <link role="baseMethodDeclaration:3" targetNodeId="1.~TransferHandler.exportDone(javax.swing.JComponent,java.awt.datatransfer.Transferable,int):void" resolveInfo="exportDone" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499494440">
+                    <link role="variableDeclaration:3" targetNodeId="1560298786499494360" resolveInfo="comp" />
+                  </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1560298786499494441" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1560298786499494442">
+                    <link role="classifier:3" targetNodeId="1.~TransferHandler" />
+                    <link role="variableDeclaration:3" targetNodeId="1.~TransferHandler.NONE" />
                   </node>
                 </node>
               </node>
@@ -260,20 +254,17 @@
             <node role="catchClause:3" type="jetbrains.mps.baseLanguage.structure.CatchClause:3" id="1560298786499494506">
               <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1560298786499494507">
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1560298786499494508">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499494509">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499494510" />
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499494511">
-                      <link role="baseMethodDeclaration:3" targetNodeId="1.~TransferHandler.exportDone(javax.swing.JComponent,java.awt.datatransfer.Transferable,int):void" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499494512">
-                        <link role="variableDeclaration:3" targetNodeId="1560298786499494360" resolveInfo="comp" />
-                      </node>
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1560298786499494513">
-                        <link role="variableDeclaration:3" targetNodeId="1560298786499494498" resolveInfo="t" />
-                      </node>
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1560298786499494514">
-                        <link role="classifier:3" targetNodeId="1.~TransferHandler" />
-                        <link role="variableDeclaration:3" targetNodeId="1.~TransferHandler.NONE" />
-                      </node>
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="1200564340082201783">
+                    <link role="baseMethodDeclaration:3" targetNodeId="1.~TransferHandler.exportDone(javax.swing.JComponent,java.awt.datatransfer.Transferable,int):void" resolveInfo="exportDone" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499494512">
+                      <link role="variableDeclaration:3" targetNodeId="1560298786499494360" resolveInfo="comp" />
+                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1560298786499494513">
+                      <link role="variableDeclaration:3" targetNodeId="1560298786499494498" resolveInfo="t" />
+                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1560298786499494514">
+                      <link role="classifier:3" targetNodeId="1.~TransferHandler" />
+                      <link role="variableDeclaration:3" targetNodeId="1.~TransferHandler.NONE" />
                     </node>
                   </node>
                 </node>
@@ -301,19 +292,16 @@
                 </node>
               </node>
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1560298786499494524">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499494525">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499494526" />
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499494527">
-                    <link role="baseMethodDeclaration:3" targetNodeId="1.~TransferHandler.exportDone(javax.swing.JComponent,java.awt.datatransfer.Transferable,int):void" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499494528">
-                      <link role="variableDeclaration:3" targetNodeId="1560298786499494360" resolveInfo="comp" />
-                    </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1560298786499494529">
-                      <link role="variableDeclaration:3" targetNodeId="1560298786499494498" resolveInfo="t" />
-                    </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499494530">
-                      <link role="variableDeclaration:3" targetNodeId="1560298786499494364" resolveInfo="action" />
-                    </node>
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="1200564340082201774">
+                  <link role="baseMethodDeclaration:3" targetNodeId="1.~TransferHandler.exportDone(javax.swing.JComponent,java.awt.datatransfer.Transferable,int):void" resolveInfo="exportDone" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499494528">
+                    <link role="variableDeclaration:3" targetNodeId="1560298786499494360" resolveInfo="comp" />
+                  </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1560298786499494529">
+                    <link role="variableDeclaration:3" targetNodeId="1560298786499494498" resolveInfo="t" />
+                  </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499494530">
+                    <link role="variableDeclaration:3" targetNodeId="1560298786499494364" resolveInfo="action" />
                   </node>
                 </node>
               </node>

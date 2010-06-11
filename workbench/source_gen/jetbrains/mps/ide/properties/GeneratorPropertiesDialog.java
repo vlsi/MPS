@@ -17,7 +17,7 @@ public class GeneratorPropertiesDialog extends BasePropertiesDialog {
   /*package*/ GeneratorPropertiesDialog(Project project, final Generator generator) {
     super("Generator Properties", new ModuleContext(generator, project));
     myGenerator = generator;
-    this.collectGeneratorProperties();
+    collectGeneratorProperties();
   }
 
   public GeneratorProperties getProperties() {
@@ -41,9 +41,9 @@ public class GeneratorPropertiesDialog extends BasePropertiesDialog {
   }
 
   protected boolean doSaveChanges() {
-    String errorString = this.getErrorString();
+    String errorString = getErrorString();
     if (errorString != null) {
-      this.setErrorText(errorString);
+      setErrorText(errorString);
       return false;
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {

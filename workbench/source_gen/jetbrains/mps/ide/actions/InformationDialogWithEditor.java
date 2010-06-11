@@ -56,10 +56,10 @@ public class InformationDialogWithEditor extends InformationDialog {
   }
 
   private JComponent getEditorPanel() {
-    if (this.myEditor != null) {
+    if (myEditor != null) {
       JPanel editorPanel = new JPanel(new BorderLayout());
-      editorPanel.add(this.myEditorLabel, BorderLayout.PAGE_START);
-      editorPanel.add(this.myEditor.getComponenet(), BorderLayout.CENTER);
+      editorPanel.add(myEditorLabel, BorderLayout.PAGE_START);
+      editorPanel.add(myEditor.getComponenet(), BorderLayout.CENTER);
       return editorPanel;
     }
     JPanel panel = new JPanel();
@@ -68,8 +68,8 @@ public class InformationDialogWithEditor extends InformationDialog {
   }
 
   private void setEditorNode(SNode node) {
-    this.myEditorLabel.setText(node.getName());
-    this.myEditorLabel.setIcon(IconManager.getIconFor(node));
+    myEditorLabel.setText(node.getName());
+    myEditorLabel.setIcon(IconManager.getIconFor(node));
   }
 
   private void highlightChanges(List<SNode> nodes) {
@@ -77,50 +77,50 @@ public class InformationDialogWithEditor extends InformationDialog {
     for (SNode node : nodes) {
       ListSequence.fromList(messages).addElement(new EditorMessageWithTarget(node, MessageStatus.OK, new NodeMessageTarget(), new Color(0, 0, 255, 40), "", new EditorMessageOwner() {}));
     }
-    this.myEditor.mark(messages);
+    myEditor.mark(messages);
   }
 
   protected JComponent getMainComponent() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Map<SNode, Set<SNode>> movedNodes = InformationDialogWithEditor.this.getRefactoringContext().getMovedNodes();
-        Map<SNode, Set<SNode>> sourceNodes = InformationDialogWithEditor.this.getRefactoringContext().getSourceNodes();
+        Map<SNode, Set<SNode>> movedNodes = getRefactoringContext().getMovedNodes();
+        Map<SNode, Set<SNode>> sourceNodes = getRefactoringContext().getSourceNodes();
         if (movedNodes.isEmpty()) {
-          InformationDialogWithEditor.this.myChangedPanel = null;
+          myChangedPanel = null;
         } else {
-          InformationDialogWithEditor.this.collectInformation(movedNodes, "Changed Nodes", InformationDialogWithEditor.this.myChangedPanel);
+          collectInformation(movedNodes, "Changed Nodes", myChangedPanel);
         }
         if (sourceNodes.isEmpty()) {
-          InformationDialogWithEditor.this.mySourcePanel = null;
+          mySourcePanel = null;
         } else {
-          InformationDialogWithEditor.this.collectInformation(sourceNodes, "Source Nodes", InformationDialogWithEditor.this.mySourcePanel);
+          collectInformation(sourceNodes, "Source Nodes", mySourcePanel);
         }
-        InformationDialogWithEditor.this.collectInformation(InformationDialogWithEditor.this.getRefactoringContext().getConceptFeatures());
+        collectInformation(getRefactoringContext().getConceptFeatures());
         if (!(movedNodes.isEmpty())) {
-          InformationDialogWithEditor.this.myFirstValidNode = (SNode) movedNodes.keySet().toArray()[0];
-          InformationDialogWithEditor.this.myFirstValidNodeChilds = movedNodes.get(InformationDialogWithEditor.this.myFirstValidNode);
+          myFirstValidNode = (SNode) movedNodes.keySet().toArray()[0];
+          myFirstValidNodeChilds = movedNodes.get(myFirstValidNode);
         }
       }
     });
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        if (InformationDialogWithEditor.this.myFirstValidNode != null) {
-          if (InformationDialogWithEditor.this.myEditor == null) {
-            SNode copiedRoot = SNodeOperations.copyNode(InformationDialogWithEditor.this.myFirstValidNode);
-            InformationDialogWithEditor.this.myEditor = new EmbeddableEditor(InformationDialogWithEditor.this.getOperationContext(), new ModelOwner() {}, copiedRoot, false);
-            InformationDialogWithEditor.this.setEditorNode(InformationDialogWithEditor.this.myFirstValidNode);
-            InformationDialogWithEditor.this.highlightChanges(InformationDialogWithEditor.this.getCopiedNodes(InformationDialogWithEditor.this.myFirstValidNodeChilds, InformationDialogWithEditor.this.myFirstValidNode, copiedRoot));
+        if (myFirstValidNode != null) {
+          if (myEditor == null) {
+            SNode copiedRoot = SNodeOperations.copyNode(myFirstValidNode);
+            myEditor = new EmbeddableEditor(getOperationContext(), new ModelOwner() {}, copiedRoot, false);
+            setEditorNode(myFirstValidNode);
+            highlightChanges(getCopiedNodes(myFirstValidNodeChilds, myFirstValidNode, copiedRoot));
           }
         }
       }
     });
     JPanel mainPanel = new JPanel(new BorderLayout());
-    mainPanel.add(this.getSimplePanel(), BorderLayout.NORTH);
+    mainPanel.add(getSimplePanel(), BorderLayout.NORTH);
     Splitter splitter = new Splitter(false);
-    splitter.setFirstComponent(new JScrollPane(this.getSimplePanel()));
-    splitter.setSecondComponent(this.getEditorPanel());
-    this.myMainPanel = splitter;
-    return this.myMainPanel;
+    splitter.setFirstComponent(new JScrollPane(getSimplePanel()));
+    splitter.setSecondComponent(getEditorPanel());
+    myMainPanel = splitter;
+    return myMainPanel;
   }
 
   @Override
@@ -131,16 +131,16 @@ public class InformationDialogWithEditor extends InformationDialog {
   @Override
   protected JComponent getSimplePanel() {
     JPanel panel = new JPanel(new BorderLayout());
-    int row = (this.myChangedPanel == null || this.mySourcePanel == null ?
+    int row = (myChangedPanel == null || mySourcePanel == null ?
       1 :
       2
     );
     JPanel centerPanel = new JPanel(new GridLayout(row, 1));
-    if (this.myChangedPanel != null) {
-      centerPanel.add(this.myChangedPanel);
+    if (myChangedPanel != null) {
+      centerPanel.add(myChangedPanel);
     }
-    if (this.mySourcePanel != null) {
-      centerPanel.add(this.mySourcePanel);
+    if (mySourcePanel != null) {
+      centerPanel.add(mySourcePanel);
     }
     panel.add(super.getSimplePanel(), BorderLayout.PAGE_START);
     panel.add(centerPanel, BorderLayout.CENTER);
@@ -158,7 +158,7 @@ public class InformationDialogWithEditor extends InformationDialog {
   private List<SNode> getCopiedNodes(Set<SNode> nodes, SNode root, SNode copiedRoot) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode node : nodes) {
-      SNode copiedNode = this.getCopiedNode(node, root, copiedRoot);
+      SNode copiedNode = getCopiedNode(node, root, copiedRoot);
       if ((copiedNode == null)) {
         continue;
       }
@@ -171,7 +171,7 @@ public class InformationDialogWithEditor extends InformationDialog {
     if (rootToChilds.isEmpty()) {
       return;
     }
-    this.setCaption(panel, caption);
+    setCaption(panel, caption);
     final MPSTree tree = new MPSTree() {
       protected MPSTreeNode rebuild() {
         TextTreeNode rootTreeNode = new TextTreeNode("");
@@ -205,16 +205,16 @@ public class InformationDialogWithEditor extends InformationDialog {
           public void run() {
             SNode root = node.getContainingRoot();
             SNode copiedRoot = SNodeOperations.copyNode(root);
-            InformationDialogWithEditor.this.myEditor.setNode(copiedRoot);
-            InformationDialogWithEditor.this.setEditorNode(root);
-            InformationDialogWithEditor.this.highlightChanges(InformationDialogWithEditor.this.getCopiedNodes(rootToChilds.get(root), root, copiedRoot));
+            myEditor.setNode(copiedRoot);
+            setEditorNode(root);
+            highlightChanges(getCopiedNodes(rootToChilds.get(root), root, copiedRoot));
             if (node != root) {
-              InformationDialogWithEditor.this.myEditor.selectNode(InformationDialogWithEditor.this.getCopiedNode(node, root, copiedRoot));
+              myEditor.selectNode(getCopiedNode(node, root, copiedRoot));
             }
           }
         });
-        if (InformationDialogWithEditor.this.myMainPanel != null) {
-          InformationDialogWithEditor.this.myMainPanel.updateUI();
+        if (myMainPanel != null) {
+          myMainPanel.updateUI();
         }
       }
     });
@@ -225,8 +225,8 @@ public class InformationDialogWithEditor extends InformationDialog {
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   @Override
   public void buttonOk() {
-    if (this.myEditor != null) {
-      this.myEditor.disposeEditor();
+    if (myEditor != null) {
+      myEditor.disposeEditor();
     }
     super.buttonOk();
   }

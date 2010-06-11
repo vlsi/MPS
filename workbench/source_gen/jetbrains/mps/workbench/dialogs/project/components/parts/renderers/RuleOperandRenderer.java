@@ -59,7 +59,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
       tree.setForeground(table.getForeground());
       tree.setCellRenderer(new DefaultTreeCellRenderer() {
         public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
-          this.setBackgroundNonSelectionColor(tree.getBackground());
+          setBackgroundNonSelectionColor(tree.getBackground());
           return super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
         }
       });
@@ -127,12 +127,12 @@ public class RuleOperandRenderer implements TableCellRenderer {
       }
       TextMPSTreeNode child = new TextMPSTreeNode(generator.getAlias(), null);
       root.add(child);
-      return this.add(child, refC.getMappingConfig());
+      return add(child, refC.getMappingConfig());
     } else
     if (ref instanceof MappingConfig_RefSet) {
       boolean complete = true;
       for (MappingConfig_AbstractRef mappingRef : ((MappingConfig_RefSet) ref).getMappingConfigs()) {
-        if (!(this.add(root, mappingRef))) {
+        if (!(add(root, mappingRef))) {
           complete = false;
         }
       }

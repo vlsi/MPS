@@ -98,8 +98,8 @@ public class RemoveModuleFromProject_Action extends GeneratedAction {
       final String message = "Are you sure you want to remove selected module from a project? This operation is not undoable.";
       DialogWrapper dialogWrapper = new DialogWrapper(RemoveModuleFromProject_Action.this.project, true) {
         {
-          this.setTitle("Remove Module From Project");
-          this.init();
+          setTitle("Remove Module From Project");
+          init();
         }
 
         @Nullable

@@ -46,35 +46,35 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
   private EditorContext myContext;
   private MPSTree myTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
-      return BaseAddMethodDialog.this.rebuildOurTree();
+      return rebuildOurTree();
     }
   };
 
   public BaseAddMethodDialog(EditorContext context, Frame mainFrame, String title) throws HeadlessException {
     super(mainFrame, title);
-    this.myContext = context;
-    InputMap inputMap = this.myTree.getInputMap();
+    myContext = context;
+    InputMap inputMap = myTree.getInputMap();
     for (KeyStroke ks : inputMap.allKeys()) {
       if (ks.getKeyCode() == KeyEvent.VK_ENTER) {
         inputMap.put(ks, new Object());
       }
     }
-    this.myTree.registerKeyboardAction(new AbstractAction() {
+    myTree.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        BaseAddMethodDialog.this.onOk();
+        onOk();
       }
     }, KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
   protected List<AnAction> getToolbarActions() {
     List<AnAction> result = new ArrayList<AnAction>();
-    result.add(new CollapseAllAction(this.myTree));
-    result.add(new ExpandAllAction(this.myTree));
+    result.add(new CollapseAllAction(myTree));
+    result.add(new ExpandAllAction(myTree));
     return result;
   }
 
   protected void refreshTree() {
-    this.myTree.rebuildLater();
+    myTree.rebuildLater();
   }
 
   protected abstract List<BaseMethodDeclaration> collectImplementableMethods();
@@ -91,7 +91,7 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
 
   private MPSTreeNode rebuildOurTree() {
     Map<String, BaseMethodDeclaration> possibleMethods = new LinkedHashMap<String, BaseMethodDeclaration>();
-    for (BaseMethodDeclaration method : this.collectImplementableMethods()) {
+    for (BaseMethodDeclaration method : collectImplementableMethods()) {
       String signature = BaseConcept_Behavior.call_getPresentation_1213877396640(method.getNode());
       if (possibleMethods.containsKey(signature)) {
         possibleMethods.put(signature, method);
@@ -101,12 +101,12 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
     }
     MultiMap<INodeAdapter, BaseMethodDeclaration> methodsByContainer = new MultiMap<INodeAdapter, BaseMethodDeclaration>();
     for (BaseMethodDeclaration method : possibleMethods.values()) {
-      methodsByContainer.putValue(this.getContainer(method), method);
+      methodsByContainer.putValue(getContainer(method), method);
     }
     List<INodeAdapter> containers = new ArrayList<INodeAdapter>(methodsByContainer.keySet());
     Collections.sort(containers, new Comparator<INodeAdapter>() {
       public int compare(INodeAdapter o1, INodeAdapter o2) {
-        return BaseAddMethodDialog.this.compareContainers(o1, o2);
+        return compareContainers(o1, o2);
       }
     });
     TextTreeNode root = new TextTreeNode("Methods");
@@ -115,7 +115,7 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
       List<BaseMethodDeclaration> methods = new ArrayList<BaseMethodDeclaration>(methodsByContainer.get(container));
       Collections.sort(methods, new Comparator<BaseMethodDeclaration>() {
         public int compare(BaseMethodDeclaration m1, BaseMethodDeclaration m2) {
-          return BaseAddMethodDialog.this.compareMethods(m1, m2);
+          return compareMethods(m1, m2);
         }
       });
       for (BaseMethodDeclaration method : methods) {
@@ -131,15 +131,15 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
   }
 
   protected JComponent getMainComponent() {
-    this.myTree.rebuildNow();
-    this.myTree.expandAll();
-    this.myTree.selectFirstLeaf();
-    JScrollPane scrollPane = new JScrollPane(this.myTree);
-    JComponent optionsComponent = this.createAdditionalOptionsComponent();
+    myTree.rebuildNow();
+    myTree.expandAll();
+    myTree.selectFirstLeaf();
+    JScrollPane scrollPane = new JScrollPane(myTree);
+    JComponent optionsComponent = createAdditionalOptionsComponent();
     if (optionsComponent == null) {
       return scrollPane;
     }
-    List<AnAction> actions = this.getToolbarActions();
+    List<AnAction> actions = getToolbarActions();
     DefaultActionGroup group = new DefaultActionGroup(actions.toArray(new AnAction[actions.size()]));
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
     JPanel mainPanel = new JPanel(new BorderLayout());
@@ -151,10 +151,10 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void onOk() {
-    this.dispose();
+    dispose();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        List<TreePath> paths = new ArrayList<TreePath>(Arrays.asList(BaseAddMethodDialog.this.myTree.getSelectionPaths()));
+        List<TreePath> paths = new ArrayList<TreePath>(Arrays.asList(myTree.getSelectionPaths()));
         List<BaseAddMethodDialog.MethodTreeNode> methodNodes = ListSequence.fromList(new ArrayList<BaseAddMethodDialog.MethodTreeNode>());
         for (TreePath path : paths) {
           if (path.getLastPathComponent() instanceof BaseAddMethodDialog.MethodTreeNode) {
@@ -163,21 +163,21 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
         }
         Collections.sort(methodNodes, new Comparator<BaseAddMethodDialog.MethodTreeNode>() {
           public int compare(BaseAddMethodDialog.MethodTreeNode m1, BaseAddMethodDialog.MethodTreeNode m2) {
-            return BaseAddMethodDialog.this.compareMethods(m1.getMethod(), m2.getMethod());
+            return compareMethods(m1.getMethod(), m2.getMethod());
           }
         });
-        List<BaseMethodDeclaration> methods = BaseAddMethodDialog.this.doAddMethods(ListSequence.fromList(methodNodes).reversedList());
+        List<BaseMethodDeclaration> methods = doAddMethods(ListSequence.fromList(methodNodes).reversedList());
         if (methods.isEmpty()) {
           return;
         }
         if (methods.size() == 1) {
           SNode node = methods.get(0).getNode();
-          BaseAddMethodDialog.this.myContext.selectAfter(node);
+          myContext.selectAfter(node);
         } else {
           SNode first = methods.get(methods.size() - 1).getNode();
           SNode last = methods.get(0).getNode();
-          BaseAddMethodDialog.this.myContext.select(first);
-          BaseAddMethodDialog.this.myContext.selectRange(first, last);
+          myContext.select(first);
+          myContext.selectRange(first, last);
         }
       }
     });
@@ -185,7 +185,7 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void onCancel() {
-    this.dispose();
+    dispose();
   }
 
   private static class NodeTreeNode extends MPSTreeNode {
@@ -193,9 +193,9 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
 
     public NodeTreeNode(INodeAdapter nodeAdapter) {
       super(null);
-      this.myNodeAdapter = nodeAdapter;
-      this.setIcon(IconManager.getIconFor(this.myNodeAdapter.getNode()));
-      this.setNodeIdentifier(this.myNodeAdapter.getNode().getName());
+      myNodeAdapter = nodeAdapter;
+      setIcon(IconManager.getIconFor(myNodeAdapter.getNode()));
+      setNodeIdentifier(myNodeAdapter.getNode().getName());
     }
   }
 
@@ -204,13 +204,13 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
 
     public MethodTreeNode(BaseMethodDeclaration method) {
       super(null);
-      this.myMethod = method;
-      this.setIcon(IconManager.getIconFor(this.myMethod.getNode()));
-      this.setNodeIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(this.myMethod.getNode()));
+      myMethod = method;
+      setIcon(IconManager.getIconFor(myMethod.getNode()));
+      setNodeIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(myMethod.getNode()));
     }
 
     public BaseMethodDeclaration getMethod() {
-      return this.myMethod;
+      return myMethod;
     }
   }
 }

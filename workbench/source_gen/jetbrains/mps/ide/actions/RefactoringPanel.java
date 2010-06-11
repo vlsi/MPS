@@ -37,32 +37,32 @@ public class RefactoringPanel {
   private BaseDialog myOwner;
 
   public RefactoringPanel(SModel model, List<SNode> refactorings, IOperationContext context) {
-    this.myModel = model;
-    this.myRefactorings = refactorings;
-    this.myContext = context;
-    this.initComponent();
+    myModel = model;
+    myRefactorings = refactorings;
+    myContext = context;
+    initComponent();
   }
 
   private void initComponent() {
-    this.myComponent = new JPanel(new BorderLayout());
-    Icon modelIcon = IconManager.getIconFor(this.myModel.getModelDescriptor());
-    String modelName = "<html><b>" + this.myModel.getLongName() + "</b></html>";
+    myComponent = new JPanel(new BorderLayout());
+    Icon modelIcon = IconManager.getIconFor(myModel.getModelDescriptor());
+    String modelName = "<html><b>" + myModel.getLongName() + "</b></html>";
     JLabel modelNameLabel = new JLabel(modelName, modelIcon, SwingConstants.LEADING);
-    this.myComponent.add(modelNameLabel, BorderLayout.PAGE_START);
-    List<RefactoringContext> refactoringsContextList = this.myModel.getRefactoringHistory().getRefactoringContexts();
+    myComponent.add(modelNameLabel, BorderLayout.PAGE_START);
+    List<RefactoringContext> refactoringsContextList = myModel.getRefactoringHistory().getRefactoringContexts();
     JPanel mainPanel = new JPanel(new GridBagLayout());
     mainPanel.setBorder(new TitledBorder("actions"));
     GridBagConstraints gridBagConstraints = new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(4, 8, 4, 8), 0, 0);
     gridBagConstraints.weighty = 0;
     gridBagConstraints.gridy = GridBagConstraints.RELATIVE;
     for (RefactoringContext refactoringContext : refactoringsContextList) {
-      this.addRefactoringItem(refactoringContext, mainPanel, gridBagConstraints);
+      addRefactoringItem(refactoringContext, mainPanel, gridBagConstraints);
     }
-    this.myComponent.add(mainPanel, BorderLayout.CENTER);
+    myComponent.add(mainPanel, BorderLayout.CENTER);
   }
 
   public void setOwner(BaseDialog dialog) {
-    this.myOwner = dialog;
+    myOwner = dialog;
   }
 
   private ActionListener getGoToInformationListener(final RefactoringContext context) {
@@ -70,9 +70,9 @@ public class RefactoringPanel {
       public void actionPerformed(ActionEvent event) {
         BaseDialog dialog;
         if (context.isEmptyMaps()) {
-          dialog = new InformationDialog(RefactoringPanel.this.myContext, context);
+          dialog = new InformationDialog(myContext, context);
         } else {
-          dialog = new InformationDialogWithEditor(RefactoringPanel.this.myContext, context);
+          dialog = new InformationDialogWithEditor(myContext, context);
         }
         dialog.showDialog();
       }
@@ -80,7 +80,7 @@ public class RefactoringPanel {
   }
 
   private SNode findRefactoringNode(String name) {
-    for (SNode node : this.myRefactorings) {
+    for (SNode node : myRefactorings) {
       String userFriendlyNodeName = null;
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.refactoring.structure.Refactoring")) {
         userFriendlyNodeName = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.refactoring.structure.Refactoring"), "userFriendlyName");
@@ -97,9 +97,9 @@ public class RefactoringPanel {
   private ActionListener getGoToRefactoringListener(final SNode nodeToSelect) {
     return new ActionListener() {
       public void actionPerformed(ActionEvent event) {
-        RefactoringPanel.this.myContext.getComponent(MPSEditorOpener.class).openNode(nodeToSelect, RefactoringPanel.this.myContext, true, true);
-        if (RefactoringPanel.this.myOwner != null) {
-          RefactoringPanel.this.myOwner.dispose();
+        myContext.getComponent(MPSEditorOpener.class).openNode(nodeToSelect, myContext, true, true);
+        if (myOwner != null) {
+          myOwner.dispose();
         }
       }
     };
@@ -114,11 +114,11 @@ public class RefactoringPanel {
     }
     JComponent itemPanel = new JPanel(new GridLayout(1, 3));
     JLabel refactoringName = new JLabel(name);
-    SNode refactoringNode = this.findRefactoringNode(name);
+    SNode refactoringNode = findRefactoringNode(name);
     itemPanel.add(refactoringName);
     if (refactoringContext.hasInformation()) {
       JButton infoButton = new JButton("Information");
-      infoButton.addActionListener(this.getGoToInformationListener(refactoringContext));
+      infoButton.addActionListener(getGoToInformationListener(refactoringContext));
       itemPanel.add(infoButton);
     } else {
       JLabel infoLabel = new JLabel("<html><i>no information</i></html>");
@@ -126,7 +126,7 @@ public class RefactoringPanel {
     }
     if (refactoringNode != null) {
       JButton button = new JButton(SPropertyOperations.getString(SNodeOperations.cast(refactoringNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
-      button.addActionListener(this.getGoToRefactoringListener(refactoringNode));
+      button.addActionListener(getGoToRefactoringListener(refactoringNode));
       button.setIcon(IconManager.getIconFor(refactoringNode));
       itemPanel.add(button);
     } else {
@@ -137,6 +137,6 @@ public class RefactoringPanel {
   }
 
   public JComponent getComponent() {
-    return this.myComponent;
+    return myComponent;
   }
 }

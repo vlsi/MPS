@@ -15,13 +15,13 @@ import jetbrains.mps.workbench.MPSDataKeys;
 
   /*package*/ EmbeddableEditorPanel(MPSFileNodeEditor editor) {
     super(new BorderLayout());
-    this.setEditor(editor);
+    setEditor(editor);
   }
 
   /*package*/ void setEditor(MPSFileNodeEditor editor) {
     myFileNodeEditor = editor;
-    this.removeAll();
-    this.add(editor.getComponent(), BorderLayout.CENTER);
+    removeAll();
+    add(editor.getComponent(), BorderLayout.CENTER);
   }
 
   @Nullable

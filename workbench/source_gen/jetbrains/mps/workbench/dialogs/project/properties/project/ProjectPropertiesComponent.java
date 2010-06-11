@@ -20,7 +20,7 @@ public class ProjectPropertiesComponent extends JPanel {
   public ProjectPropertiesComponent(Project project) {
     myProject = project;
     myPropertiesDialog = new ProjectPropertiesDialog(myProject, myEditableDescriptor);
-    this.initUI();
+    initUI();
   }
 
   public void addNotify() {
@@ -34,25 +34,25 @@ public class ProjectPropertiesComponent extends JPanel {
   }
 
   private void initUI() {
-    this.setLayout(new BorderLayout());
-    this.add(myPropertiesDialog.getMainComponent(), BorderLayout.CENTER);
+    setLayout(new BorderLayout());
+    add(myPropertiesDialog.getMainComponent(), BorderLayout.CENTER);
   }
 
   public boolean isModified() {
-    return !(myEditableDescriptor.isSame(this.getMPSProject().getProjectDescriptor()));
+    return !(myEditableDescriptor.isSame(getMPSProject().getProjectDescriptor()));
   }
 
   public void apply() throws ConfigurationException {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        myEditableDescriptor.saveTo(ProjectPropertiesComponent.this.getMPSProject());
+        myEditableDescriptor.saveTo(getMPSProject());
       }
     });
   }
 
   public void reset() {
     try {
-      myEditableDescriptor.loadFrom(this.getMPSProject());
+      myEditableDescriptor.loadFrom(getMPSProject());
     } catch (Throwable t) {
       LOG.error("This should not be thrown", t);
     }

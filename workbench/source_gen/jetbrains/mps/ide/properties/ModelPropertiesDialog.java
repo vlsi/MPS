@@ -77,7 +77,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
       " (" + myModel.getStereotype() + ")"
     );
     String initText = myModel.getLongName() + stereotype;
-    return this.createFieldPanel("Model UID:", initText);
+    return createFieldPanel("Model UID:", initText);
   }
 
   private JPanel createFieldPanel(String label, String initText) {
@@ -127,13 +127,13 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     JButton bShowMissRef = new JButton(new AbstractAction("Show Missing References") {
       public void actionPerformed(ActionEvent e) {
         ModelPropertiesDialog.this.dispose();
-        ModelPropertiesDialog.this.performActionInContext(new ModelPropertiesDialog.MyDataContext(), ActionFactory.getInstance().acquireRegisteredAction("jetbrains.mps.ide.actions.ShowReferencesToMissingStuff_Action", "jetbrains.mps.ide"));
+        performActionInContext(new ModelPropertiesDialog.MyDataContext(), ActionFactory.getInstance().acquireRegisteredAction("jetbrains.mps.ide.actions.ShowReferencesToMissingStuff_Action", "jetbrains.mps.ide"));
       }
     });
     JButton bShowModelUsages = new JButton(new AbstractAction("Show Model Usages") {
       public void actionPerformed(ActionEvent e) {
         ModelPropertiesDialog.this.dispose();
-        ModelPropertiesDialog.this.performActionInContext(new ModelPropertiesDialog.MyDataContext(), ActionFactory.getInstance().acquireRegisteredAction("jetbrains.mps.lang.core.plugin.FindModelUsages_Action", "jetbrains.mps.lang.core"));
+        performActionInContext(new ModelPropertiesDialog.MyDataContext(), ActionFactory.getInstance().acquireRegisteredAction("jetbrains.mps.lang.core.plugin.FindModelUsages_Action", "jetbrains.mps.lang.core"));
       }
     });
     JPanel result = new JPanel(new GridBagLayout());

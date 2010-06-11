@@ -49,7 +49,7 @@ import javax.swing.table.TableCellRenderer;
       TableColumn aColumn = (TableColumn) enumeration.nextElement();
       width = width + aColumn.getMinWidth();
     }
-    return this.createTableSize(width);
+    return createTableSize(width);
   }
 
   public Dimension getPreferredSize(JComponent c) {
@@ -59,7 +59,7 @@ import javax.swing.table.TableCellRenderer;
       TableColumn aColumn = (TableColumn) enumeration.nextElement();
       width = width + aColumn.getPreferredWidth();
     }
-    return this.createTableSize(width);
+    return createTableSize(width);
   }
 
   public Dimension getMaximumSize(JComponent c) {
@@ -69,7 +69,7 @@ import javax.swing.table.TableCellRenderer;
       TableColumn aColumn = (TableColumn) enumeration.nextElement();
       width = width + aColumn.getMaxWidth();
     }
-    return this.createTableSize(width);
+    return createTableSize(width);
   }
 
   public void paint(Graphics g, JComponent c) {
@@ -78,9 +78,9 @@ import javax.swing.table.TableCellRenderer;
     int tableWidth = table.getColumnModel().getTotalColumnWidth();
     clipBounds.width = Math.min(clipBounds.width, tableWidth);
     g.setClip(clipBounds);
-    this.paintGrid(g);
+    paintGrid(g);
     int firstIndex = table.rowAtPoint(new Point(0, clipBounds.y));
-    int lastIndex = this.lastVisibleRow(clipBounds);
+    int lastIndex = lastVisibleRow(clipBounds);
     int rowMargin = table.getRowMargin();
     Rectangle rowRect = new Rectangle(0, 0, tableWidth, ((DiffRowTable) table).getRowHeight(firstIndex) + rowMargin);
     rowRect.y = 0;
@@ -89,7 +89,7 @@ import javax.swing.table.TableCellRenderer;
     }
     for (int index = firstIndex; index <= lastIndex; index++) {
       if (rowRect.intersects(clipBounds)) {
-        this.paintRow(g, index);
+        paintRow(g, index);
       }
       rowRect.y += ((DiffRowTable) table).getRowHeight(index) + rowMargin;
     }
@@ -99,10 +99,10 @@ import javax.swing.table.TableCellRenderer;
   private void paintGrid(Graphics g) {
     g.setColor(table.getGridColor());
     if (table.getShowHorizontalLines()) {
-      this.paintHorizontalLines(g);
+      paintHorizontalLines(g);
     }
     if (table.getShowVerticalLines()) {
-      this.paintVerticalLines(g);
+      paintVerticalLines(g);
     }
   }
 
@@ -110,7 +110,7 @@ import javax.swing.table.TableCellRenderer;
     Rectangle r = g.getClipBounds();
     Rectangle rect = r;
     int firstIndex = table.rowAtPoint(new Point(0, r.y));
-    int lastIndex = this.lastVisibleRow(r);
+    int lastIndex = lastVisibleRow(r);
     int rowMargin = table.getRowMargin();
     int y = -rowMargin;
     for (int i = 0; i < firstIndex; i++) {
@@ -160,7 +160,7 @@ import javax.swing.table.TableCellRenderer;
       if (cellRect.intersects(rect)) {
         drawn = true;
         if ((header == null) || (aColumn != header.getDraggedColumn())) {
-          this.paintCell(g, cellRect, row, column);
+          paintCell(g, cellRect, row, column);
         } else {
           g.setColor(table.getParent().getBackground());
           g.fillRect(cellRect.x, cellRect.y, cellRect.width, cellRect.height);
@@ -190,7 +190,7 @@ import javax.swing.table.TableCellRenderer;
       if (table.getShowHorizontalLines()) {
         g.drawLine(x1, y2, x2, y2);
       }
-      this.paintCell(g, draggedCellRect, row, draggedColumnIndex);
+      paintCell(g, draggedCellRect, row, draggedColumnIndex);
     }
   }
 

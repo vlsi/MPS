@@ -10,10 +10,10 @@ public class MPSNodeInSelectDialog<T extends SNode> extends MPSTreeNode {
 
   public MPSNodeInSelectDialog(T node) {
     super(null);
-    this.mySNode = node;
+    mySNode = node;
   }
 
   public T getNode() {
-    return this.mySNode;
+    return mySNode;
   }
 }

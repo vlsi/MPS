@@ -22,7 +22,7 @@ public class StringPathRenderer extends DefaultListCellRenderer {
       return result;
     }
     if (!(StateUtil.isAvailable(path))) {
-      this.setForeground(Color.RED);
+      setForeground(Color.RED);
     }
     return result;
   }

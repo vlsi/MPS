@@ -27,7 +27,7 @@ public abstract class ListRemoveAction extends BaseValidatedAction {
         index = i;
       }
     }
-    this.doRemove(e);
+    doRemove(e);
     int listSize = myList.getModel().getSize();
     if (index >= listSize) {
       index--;

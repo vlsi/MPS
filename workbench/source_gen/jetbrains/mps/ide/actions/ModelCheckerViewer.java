@@ -62,14 +62,14 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
   private String myCheckProgressTitle = "Checking...";
 
   public ModelCheckerViewer(Project project, IOperationContext operationContext) {
-    this.myProject = project;
-    this.myOperationContext = operationContext;
+    myProject = project;
+    myOperationContext = operationContext;
 
-    this.setLayout(new BorderLayout());
+    setLayout(new BorderLayout());
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
     viewOptions.myCategories = new boolean[]{true, false};
 
-    this.myUsagesView = new UsagesView(project, viewOptions) {
+    myUsagesView = new UsagesView(project, viewOptions) {
       public void close() {
         ModelCheckerViewer.this.close();
       }
@@ -79,41 +79,41 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
       }
 
       protected String getSearchProgressTitle() {
-        return ModelCheckerViewer.this.myCheckProgressTitle;
+        return myCheckProgressTitle;
       }
     };
-    this.myUsagesView.setCustomNodeRepresentator(new ModelCheckerViewer.MyNodeRepresentator());
-    this.add(this.myUsagesView.getComponent(), BorderLayout.CENTER);
+    myUsagesView.setCustomNodeRepresentator(new ModelCheckerViewer.MyNodeRepresentator());
+    add(myUsagesView.getComponent(), BorderLayout.CENTER);
 
     JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
-    this.myGenerateButton = new JButton("Generate");
-    this.myGenerateButton.addActionListener(new ActionListener() {
+    myGenerateButton = new JButton("Generate");
+    myGenerateButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
-        assert ModelCheckerViewer.this.myGenerateRunnable != null;
-        ModelCheckerViewer.this.myGenerateRunnable.run();
+        assert myGenerateRunnable != null;
+        myGenerateRunnable.run();
       }
     });
-    this.myGenerateButton.setVisible(false);
+    myGenerateButton.setVisible(false);
 
-    this.myFixButton = new JButton("Perform Quick Fixes");
-    this.myFixButton.setToolTipText("Remove undeclared children and undeclared references, resolve links in included nodes");
-    this.myFixButton.addActionListener(new ActionListener() {
+    myFixButton = new JButton("Perform Quick Fixes");
+    myFixButton.setToolTipText("Remove undeclared children and undeclared references, resolve links in included nodes");
+    myFixButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
-        ModelCheckerViewer.this.performQuickFixes();
+        performQuickFixes();
       }
     });
 
-    buttonPanel.add(this.myGenerateButton);
-    buttonPanel.add(this.myFixButton);
-    this.add(buttonPanel, BorderLayout.SOUTH);
+    buttonPanel.add(myGenerateButton);
+    buttonPanel.add(myFixButton);
+    add(buttonPanel, BorderLayout.SOUTH);
   }
 
   protected abstract void close();
 
   public void performQuickFixes() {
     // Ask if need to fix 
-    int dialogAnswer = Messages.showYesNoDialog(this.myOperationContext.getProject(), "You are going to remove undeclared properties, children from nodes and resolve references. " + "You may not be able to undo it. Are you sure?", "Warning", null);
+    int dialogAnswer = Messages.showYesNoDialog(myOperationContext.getProject(), "You are going to remove undeclared properties, children from nodes and resolve references. " + "You may not be able to undo it. Are you sure?", "Warning", null);
     if (dialogAnswer != 0) {
       return;
     }
@@ -123,8 +123,8 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         // Select all fixable issues 
-        final Set<SNodePointer> includedResultNodes = SetSequence.fromSetWithValues(new HashSet<SNodePointer>(), ModelCheckerViewer.this.myUsagesView.getIncludedResultNodes());
-        List<ModelCheckerIssue> issuesToFix = ListSequence.fromList(((List<SearchResult<ModelCheckerIssue>>) ModelCheckerViewer.this.getSearchResults().getSearchResults())).select(new ISelector<SearchResult<ModelCheckerIssue>, ModelCheckerIssue>() {
+        final Set<SNodePointer> includedResultNodes = SetSequence.fromSetWithValues(new HashSet<SNodePointer>(), myUsagesView.getIncludedResultNodes());
+        List<ModelCheckerIssue> issuesToFix = ListSequence.fromList(((List<SearchResult<ModelCheckerIssue>>) getSearchResults().getSearchResults())).select(new ISelector<SearchResult<ModelCheckerIssue>, ModelCheckerIssue>() {
           public ModelCheckerIssue select(SearchResult<ModelCheckerIssue> sr) {
             return sr.getObject();
           }
@@ -151,66 +151,66 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
 
     // Perform recheck if needed 
     if (fixedTotal.value != 0) {
-      int dialogAnswer1 = Messages.showYesNoDialog(this.myOperationContext.getProject(), "Model checker fixed " + fixedTotal.value + " issues. Do you wish to recheck?", "Recheck", null);
+      int dialogAnswer1 = Messages.showYesNoDialog(myOperationContext.getProject(), "Model checker fixed " + fixedTotal.value + " issues. Do you wish to recheck?", "Recheck", null);
       if (dialogAnswer1 != 0) {
         return;
       }
 
-      this.runCheck();
+      runCheck();
     }
   }
 
   private void runCheck() {
-    ProgressManager.getInstance().run(new Task.Modal(this.myProject, this.myCheckProgressTitle, true) {
+    ProgressManager.getInstance().run(new Task.Modal(myProject, myCheckProgressTitle, true) {
       public void run(@NotNull ProgressIndicator indicator) {
-        ModelCheckerViewer.this.myUsagesView.run(indicator);
+        myUsagesView.run(indicator);
       }
     });
   }
 
   public void prepareAndCheck(final List<SModelDescriptor> modelDescriptors, final String taskTargetTitle, final Icon taskIcon) {
     IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder());
-    SearchQuery searchQuery = new SearchQuery(new ModelsHolder(modelDescriptors, this.myOperationContext), ModelCheckerViewer.this.myProject.getComponent(ProjectScope.class));
-    ModelCheckerViewer.this.myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, false, true));
+    SearchQuery searchQuery = new SearchQuery(new ModelsHolder(modelDescriptors, myOperationContext), myProject.getComponent(ProjectScope.class));
+    myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, false, true));
 
-    this.myCheckProgressTitle = "Checking " + taskTargetTitle;
-    this.setTabProperties(taskTargetTitle, taskIcon);
+    myCheckProgressTitle = "Checking " + taskTargetTitle;
+    setTabProperties(taskTargetTitle, taskIcon);
 
-    this.runCheck();
+    runCheck();
   }
 
   public void setTabProperties(String title, Icon icon) {
-    this.myTabTitle = title;
-    this.myTabIcon = icon;
+    myTabTitle = title;
+    myTabIcon = icon;
   }
 
   public void saveGenerationRunnable(Runnable runnable) {
-    this.myGenerateRunnable = runnable;
-    this.myGenerateButton.setVisible(runnable != null);
+    myGenerateRunnable = runnable;
+    myGenerateButton.setVisible(runnable != null);
   }
 
   public void dispose() {
-    this.myUsagesView.dispose();
+    myUsagesView.dispose();
   }
 
   public String getTabTitle() {
-    return this.myTabTitle;
+    return myTabTitle;
   }
 
   public Icon getTabIcon() {
-    return this.myTabIcon;
+    return myTabIcon;
   }
 
   public SearchResults<ModelCheckerIssue> getSearchResults() {
-    return this.myUsagesView.getSearchResults();
+    return myUsagesView.getSearchResults();
   }
 
   public void goToPrevious() {
-    this.myUsagesView.goToPrevious();
+    myUsagesView.goToPrevious();
   }
 
   public void goToNext() {
-    this.myUsagesView.goToNext();
+    myUsagesView.goToNext();
   }
 
   public static class MyNodeRepresentator implements INodeRepresentator<ModelCheckerIssue> {

@@ -29,8 +29,8 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
   private CheckinProjectPanel myPanel;
 
   public ModelCheckerCheckinHandler(Project project, CheckinProjectPanel panel) {
-    this.myProject = project;
-    this.myPanel = panel;
+    myProject = project;
+    myPanel = panel;
   }
 
   @Nullable
@@ -63,7 +63,7 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
       return CheckinHandler.ReturnResult.COMMIT;
     }
 
-    return this.myProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeCommit(ProjectOperationContext.get(this.myProject), getModelDescriptorsByFiles(this.myPanel.getFiles()));
+    return myProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeCommit(ProjectOperationContext.get(myProject), getModelDescriptorsByFiles(myPanel.getFiles()));
   }
 
   public static List<SModelDescriptor> getModelDescriptorsByFiles(Iterable<File> files) {

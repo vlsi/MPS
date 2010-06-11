@@ -24,12 +24,12 @@ import jetbrains.mps.smodel.SNodePointer;
 public class MappingSelectTree extends JTree {
   public MappingSelectTree(boolean isLeft) {
     super();
-    this.setCellRenderer(new MappingSelectTree.CheckBoxNodeRenderer());
-    this.setCellEditor(new MappingSelectTree.CheckBoxNodeEditor());
-    this.setEditable(true);
-    this.setRootVisible(!(isLeft));
+    setCellRenderer(new MappingSelectTree.CheckBoxNodeRenderer());
+    setCellEditor(new MappingSelectTree.CheckBoxNodeEditor());
+    setEditable(true);
+    setRootVisible(!(isLeft));
     if (isLeft) {
-      this.setShowsRootHandles(true);
+      setShowsRootHandles(true);
     }
   }
 
@@ -149,7 +149,7 @@ public class MappingSelectTree extends JTree {
     }
 
     public String getText() {
-      Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(this.getObject());
+      Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(getObject());
       if (generator == null) {
         return "unknown generator";
       }
@@ -167,7 +167,7 @@ public class MappingSelectTree extends JTree {
     }
 
     public String getText() {
-      return this.getObject().getShortName();
+      return getObject().getShortName();
     }
   }
 
@@ -181,7 +181,7 @@ public class MappingSelectTree extends JTree {
     }
 
     public String getText() {
-      return this.getObject().getNode().getName();
+      return getObject().getNode().getName();
     }
   }
 

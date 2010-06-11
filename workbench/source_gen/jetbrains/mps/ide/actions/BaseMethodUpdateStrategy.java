@@ -21,12 +21,12 @@ public abstract class BaseMethodUpdateStrategy implements StratergyAddMethodDial
   private PersistentOptions_PreferencesComponent myPrefsComponent;
 
   public BaseMethodUpdateStrategy(Project p) {
-    this.myPrefsComponent = p.getComponent(ProjectPluginManager.class).getPrefsComponent(PersistentOptions_PreferencesComponent.class);
-    this.myAddReturnKeyword = new JCheckBox("Add \"return\" keyword");
-    this.myAddReturnKeyword.setSelected(this.myPrefsComponent.getStateObject().addReturnsOnImplement);
+    myPrefsComponent = p.getComponent(ProjectPluginManager.class).getPrefsComponent(PersistentOptions_PreferencesComponent.class);
+    myAddReturnKeyword = new JCheckBox("Add \"return\" keyword");
+    myAddReturnKeyword.setSelected(myPrefsComponent.getStateObject().addReturnsOnImplement);
 
-    this.myRemoveAttributes = new JCheckBox("Remove Attributes");
-    this.myRemoveAttributes.setSelected(this.myPrefsComponent.getStateObject().removeAttributes);
+    myRemoveAttributes = new JCheckBox("Remove Attributes");
+    myRemoveAttributes.setSelected(myPrefsComponent.getStateObject().removeAttributes);
   }
 
   private void removeAttributes(SNode node) {
@@ -34,25 +34,25 @@ public abstract class BaseMethodUpdateStrategy implements StratergyAddMethodDial
       SNodeOperations.deleteNode(node);
     } else {
       for (SNode child : SNodeOperations.getChildren(node)) {
-        this.removeAttributes(child);
+        removeAttributes(child);
       }
     }
   }
 
   public JCheckBox getReturnCheckBox() {
-    return this.myAddReturnKeyword;
+    return myAddReturnKeyword;
   }
 
   public JCheckBox getRemoveAttributes() {
-    return this.myRemoveAttributes;
+    return myRemoveAttributes;
   }
 
   public void updateMethod(SNode sourceMethod, SNode method) {
-    this.myPrefsComponent.getStateObject().addReturnsOnImplement = this.myAddReturnKeyword.isSelected();
-    this.myPrefsComponent.getStateObject().removeAttributes = this.myRemoveAttributes.isSelected();
-    if (this.myRemoveAttributes.isSelected()) {
+    myPrefsComponent.getStateObject().addReturnsOnImplement = myAddReturnKeyword.isSelected();
+    myPrefsComponent.getStateObject().removeAttributes = myRemoveAttributes.isSelected();
+    if (myRemoveAttributes.isSelected()) {
       for (SNode child : SNodeOperations.getChildren(method)) {
-        this.removeAttributes(child);
+        removeAttributes(child);
       }
     }
   }
@@ -62,7 +62,7 @@ public abstract class BaseMethodUpdateStrategy implements StratergyAddMethodDial
       return null;
     }
 
-    if (this.myAddReturnKeyword.isSelected()) {
+    if (myAddReturnKeyword.isSelected()) {
       return new BaseMethodUpdateStrategy.QuotationClass_f5ta53_a0a0c0e().createNode(returnExpr);
     } else {
       return new BaseMethodUpdateStrategy.QuotationClass_f5ta53_a0a0a2a4().createNode(returnExpr);

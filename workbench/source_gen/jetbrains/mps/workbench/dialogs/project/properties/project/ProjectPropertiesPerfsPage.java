@@ -23,7 +23,7 @@ public final class ProjectPropertiesPerfsPage implements SearchableConfigurable,
 
   @Nls
   public String getDisplayName() {
-    return this.getComponentName();
+    return getComponentName();
   }
 
   public Icon getIcon() {

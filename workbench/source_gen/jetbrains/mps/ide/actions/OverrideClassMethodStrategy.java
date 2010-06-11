@@ -33,19 +33,19 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
   public OverrideClassMethodStrategy(Project project) {
     super(project);
     try {
-      this.myOptions = project.getComponent(ProjectPluginManager.class).getPrefsComponent(PersistentOptions_PreferencesComponent.class);
+      myOptions = project.getComponent(ProjectPluginManager.class).getPrefsComponent(PersistentOptions_PreferencesComponent.class);
     } catch (NullPointerException e) {
     }
-    this.myCheckBox = new JCheckBox("Add @Override annotation");
-    this.myCheckBox.setSelected(this.myOptions.getStateObject().addOverrideAnnotation);
+    myCheckBox = new JCheckBox("Add @Override annotation");
+    myCheckBox.setSelected(myOptions.getStateObject().addOverrideAnnotation);
   }
 
   public void updateMethod(SNode sourceMethod, SNode method) {
     super.updateMethod(sourceMethod, method);
-    if (this.myOptions != null) {
-      this.myOptions.getStateObject().addOverrideAnnotation = this.myCheckBox.isSelected();
+    if (myOptions != null) {
+      myOptions.getStateObject().addOverrideAnnotation = myCheckBox.isSelected();
     }
-    if (this.myCheckBox.isSelected()) {
+    if (myCheckBox.isSelected()) {
       boolean isNeedAddAnnotation = true;
       for (SNode annotation : SLinkOperations.getTargets(method, "annotation", true)) {
         if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Override")) {
@@ -68,7 +68,7 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(new OverrideClassMethodStrategy.QuotationClass_px9rr4_a0a0a0h0a().createNode(superCallExpr));
     } else {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(this.getReturnStatement(superCallExpr));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(superCallExpr));
     }
   }
 
@@ -79,9 +79,9 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
   public JComponent createAdditionalOptionsComponent() {
     JPanel optPanel = new JPanel();
     optPanel.setLayout(new BoxLayout(optPanel, BoxLayout.Y_AXIS));
-    optPanel.add(this.getReturnCheckBox());
-    optPanel.add(this.getRemoveAttributes());
-    optPanel.add(this.myCheckBox);
+    optPanel.add(getReturnCheckBox());
+    optPanel.add(getRemoveAttributes());
+    optPanel.add(myCheckBox);
     return optPanel;
   }
 

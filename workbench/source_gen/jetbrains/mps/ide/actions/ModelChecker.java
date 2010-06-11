@@ -33,9 +33,9 @@ public class ModelChecker {
         SModel model = modelDescriptor.getSModel();
 
         for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers)) {
-          List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, ModelChecker.this.myProgressContext, ModelChecker.this.myOperationContext);
-          ModelChecker.this.myResults.getSearchResults().addAll(specificCheckerResults);
-          if (ModelChecker.this.isCancelled()) {
+          List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, myProgressContext, myOperationContext);
+          myResults.getSearchResults().addAll(specificCheckerResults);
+          if (isCancelled()) {
             break;
           }
         }
@@ -44,14 +44,14 @@ public class ModelChecker {
   }
 
   public SearchResults<ModelCheckerIssue> getSearchResults() {
-    return this.myResults;
+    return myResults;
   }
 
   public boolean isCancelled() {
-    return this.myProgressContext.getProgressIndicator().isCanceled();
+    return myProgressContext.getProgressIndicator().isCanceled();
   }
 
   public IOperationContext getOperationContext() {
-    return this.myOperationContext;
+    return myOperationContext;
   }
 }

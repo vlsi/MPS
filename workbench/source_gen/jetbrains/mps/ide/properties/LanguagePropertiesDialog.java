@@ -27,7 +27,7 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
   /*package*/ LanguagePropertiesDialog(final Language language, IOperationContext operationContext) {
     super(language.getModuleFqName() + " Properties", operationContext);
     myLanguage = language;
-    this.collectLanguageProperties();
+    collectLanguageProperties();
   }
 
   public JPanel createCheckboxPanel() {
@@ -48,7 +48,7 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
   }
 
   protected boolean doSaveChanges() {
-    if (!(this.checkValidity())) {
+    if (!(checkValidity())) {
       return false;
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -70,11 +70,11 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
 
   protected String getErrorString() {
     String errors;
-    errors = this.checkStubModels(myProperties.getStubModels());
+    errors = checkStubModels(myProperties.getStubModels());
     if (errors != null) {
       return errors;
     }
-    errors = this.checkStubModels(myProperties.getRuntimeStubModels());
+    errors = checkStubModels(myProperties.getRuntimeStubModels());
     if (errors != null) {
       return errors;
     }

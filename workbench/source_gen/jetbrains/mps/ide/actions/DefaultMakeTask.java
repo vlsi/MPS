@@ -29,10 +29,10 @@ public class DefaultMakeTask extends Task.Modal {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ModuleMaker maker = new ModuleMaker();
-        if (DefaultMakeTask.this.needClean) {
-          maker.clean(DefaultMakeTask.this.modules, indicator);
+        if (needClean) {
+          maker.clean(modules, indicator);
         }
-        CompilationResult compilationResult = maker.make(DefaultMakeTask.this.modules, indicator);
+        CompilationResult compilationResult = maker.make(modules, indicator);
         if (compilationResult.isReloadingNeeded()) {
           ClassLoaderManager.getInstance().reloadAll(indicator);
         }

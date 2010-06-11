@@ -139,8 +139,8 @@ public final class ListsFactory {
       if (o1 == o2) {
         return 0;
       }
-      String string1 = this.getPathString(o1);
-      String string2 = this.getPathString(o2);
+      String string1 = getPathString(o1);
+      String string2 = getPathString(o2);
       return string1.compareTo(string2);
     }
   };

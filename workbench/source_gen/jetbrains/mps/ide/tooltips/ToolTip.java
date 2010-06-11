@@ -60,20 +60,20 @@ public class ToolTip {
     private FocusListener myOwnerFocusListener = new FocusAdapter() {
       @Override
       public void focusLost(FocusEvent p0) {
-        MyDialog.this.dispose();
+        dispose();
 
       }
     };
     private MouseListener myOwnerMouseListener = new MouseAdapter() {
       @Override
       public void mousePressed(MouseEvent p0) {
-        MyDialog.this.dispose();
+        dispose();
       }
     };
     private KeyListener myOwnerKeyListener = new KeyAdapter() {
       @Override
       public void keyPressed(KeyEvent p0) {
-        MyDialog.this.dispose();
+        dispose();
       }
     };
 
@@ -81,25 +81,25 @@ public class ToolTip {
       super(owner);
       myPrevFocusOwner = owner.getFocusOwner();
 
-      this.setFocusableWindowState(false);
+      setFocusableWindowState(false);
 
       JScrollPane scrollPane = new JScrollPane(toolTipData.getComponent());
       scrollPane.setBorder(new LineBorder(Color.BLACK));
-      this.add(scrollPane);
+      add(scrollPane);
 
-      this.pack();
+      pack();
       if (rightAligned) {
-        location.x = Math.max(0, location.x - this.getWidth());
+        location.x = Math.max(0, location.x - getWidth());
       }
       Rectangle rect = WindowsUtil.findDeviceBoundsAt(location);
-      if (rect.x + rect.width < location.x + this.getWidth()) {
-        location.x = Math.max(0, rect.x + rect.width - this.getWidth());
+      if (rect.x + rect.width < location.x + getWidth()) {
+        location.x = Math.max(0, rect.x + rect.width - getWidth());
       }
-      if (rect.y + rect.height < location.y + this.getHeight()) {
-        location.y = Math.max(0, rect.y + rect.height - this.getHeight());
+      if (rect.y + rect.height < location.y + getHeight()) {
+        location.y = Math.max(0, rect.y + rect.height - getHeight());
       }
-      this.setLocation(location);
-      this.addListeners();
+      setLocation(location);
+      addListeners();
     }
 
     private void addListeners() {

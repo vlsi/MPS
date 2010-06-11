@@ -21,7 +21,7 @@ public abstract class ListEditAction extends BaseValidatedAction {
   }
 
   public final void doPerform(AnActionEvent e) {
-    this.doEdit();
+    doEdit();
   }
 
   protected abstract void doEdit();

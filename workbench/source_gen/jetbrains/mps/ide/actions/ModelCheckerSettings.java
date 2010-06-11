@@ -41,11 +41,11 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   }
 
   public ModelCheckerSettings.MyState getState() {
-    return this.myState;
+    return myState;
   }
 
   public void loadState(ModelCheckerSettings.MyState state) {
-    this.myState = state;
+    myState = state;
   }
 
   @Nls
@@ -65,15 +65,15 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   }
 
   public JComponent createComponent() {
-    return this.getPreferences().getComponent();
+    return getPreferences().getComponent();
   }
 
   public boolean isModified() {
-    return this.getPreferences().isModified();
+    return getPreferences().isModified();
   }
 
   public void apply() throws ConfigurationException {
-    this.getPreferences().commit();
+    getPreferences().commit();
   }
 
   public void reset() {
@@ -91,69 +91,69 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   }
 
   private ModelCheckerPreferencesPage getPreferences() {
-    if (this.myPreferences == null) {
-      this.myPreferences = new ModelCheckerPreferencesPage(this);
+    if (myPreferences == null) {
+      myPreferences = new ModelCheckerPreferencesPage(this);
     }
-    return this.myPreferences;
+    return myPreferences;
   }
 
   public List<SpecificChecker> getSpecificCheckers() {
     List<SpecificChecker> specificCheckers = ListSequence.fromList(new ArrayList<SpecificChecker>());
 
     ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker());
-    if (this.isCheckUnresolvedReferences()) {
+    if (isCheckUnresolvedReferences()) {
       ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
     }
-    if (this.isCheckConstraints()) {
+    if (isCheckConstraints()) {
       ListSequence.fromList(specificCheckers).addElement(new ConstraintsChecker());
     }
-    if (this.isCheckScopes()) {
+    if (isCheckScopes()) {
       ListSequence.fromList(specificCheckers).addElement(new SearchScopesChecker());
     }
-    if (this.isCheckTypesystem()) {
+    if (isCheckTypesystem()) {
       ListSequence.fromList(specificCheckers).addElement(new TypesystemChecker());
     }
     return specificCheckers;
   }
 
   public boolean isCheckUnresolvedReferences() {
-    return this.myState.myCheckUnresolvedReferences;
+    return myState.myCheckUnresolvedReferences;
   }
 
   public void setCheckUnresolvedReferences(boolean checkUnresolvedReferences) {
-    this.myState.myCheckUnresolvedReferences = checkUnresolvedReferences;
+    myState.myCheckUnresolvedReferences = checkUnresolvedReferences;
   }
 
   public boolean isCheckConstraints() {
-    return this.myState.myCheckConstraints;
+    return myState.myCheckConstraints;
   }
 
   public void setCheckConstraints(boolean checkConstraints) {
-    this.myState.myCheckConstraints = checkConstraints;
+    myState.myCheckConstraints = checkConstraints;
   }
 
   public boolean isCheckScopes() {
-    return this.myState.myCheckScopes;
+    return myState.myCheckScopes;
   }
 
   public void setCheckScopes(boolean checkScopes) {
-    this.myState.myCheckScopes = checkScopes;
+    myState.myCheckScopes = checkScopes;
   }
 
   public boolean isCheckTypesystem() {
-    return this.myState.myCheckTypesystem;
+    return myState.myCheckTypesystem;
   }
 
   public void setCheckTypesystem(boolean checkTypesystem) {
-    this.myState.myCheckTypesystem = checkTypesystem;
+    myState.myCheckTypesystem = checkTypesystem;
   }
 
   public boolean isCheckBeforeCommit() {
-    return this.myState.myCheckBeforeCommit;
+    return myState.myCheckBeforeCommit;
   }
 
   public void setCheckBeforeCommit(boolean checkBeforeCommit) {
-    this.myState.myCheckBeforeCommit = checkBeforeCommit;
+    myState.myCheckBeforeCommit = checkBeforeCommit;
   }
 
   public static ModelCheckerSettings getInstance() {
@@ -171,43 +171,43 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     }
 
     public boolean isCheckUnresolvedReferences() {
-      return this.myCheckUnresolvedReferences;
+      return myCheckUnresolvedReferences;
     }
 
     public void setCheckUnresolvedReferences(boolean checkUnresolvedReferences) {
-      this.myCheckUnresolvedReferences = checkUnresolvedReferences;
+      myCheckUnresolvedReferences = checkUnresolvedReferences;
     }
 
     public boolean isCheckConstraints() {
-      return this.myCheckConstraints;
+      return myCheckConstraints;
     }
 
     public void setCheckConstraints(boolean checkConstraints) {
-      this.myCheckConstraints = checkConstraints;
+      myCheckConstraints = checkConstraints;
     }
 
     public boolean isCheckScopes() {
-      return this.myCheckScopes;
+      return myCheckScopes;
     }
 
     public void setCheckScopes(boolean checkScopes) {
-      this.myCheckScopes = checkScopes;
+      myCheckScopes = checkScopes;
     }
 
     public boolean isCheckTypesystem() {
-      return this.myCheckTypesystem;
+      return myCheckTypesystem;
     }
 
     public void setCheckTypesystem(boolean checkTypesystem) {
-      this.myCheckTypesystem = checkTypesystem;
+      myCheckTypesystem = checkTypesystem;
     }
 
     public boolean isCheckBeforeCommit() {
-      return this.myCheckBeforeCommit;
+      return myCheckBeforeCommit;
     }
 
     public void setCheckBeforeCommit(boolean checkBeforeCommit) {
-      this.myCheckBeforeCommit = checkBeforeCommit;
+      myCheckBeforeCommit = checkBeforeCommit;
     }
   }
 }

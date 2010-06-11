@@ -25,7 +25,7 @@ public class SolutionPropertiesDialog extends BasePropertiesDialog {
   /*package*/ SolutionPropertiesDialog(Solution solution, IOperationContext operationContext) {
     super("Solution Properties", operationContext);
     mySolution = solution;
-    this.collectSolutionProperties();
+    collectSolutionProperties();
   }
 
   public JPanel createCheckboxPanel() {
@@ -45,7 +45,7 @@ public class SolutionPropertiesDialog extends BasePropertiesDialog {
   }
 
   protected boolean doSaveChanges() {
-    if (!(this.checkValidity())) {
+    if (!(checkValidity())) {
       return false;
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -60,7 +60,7 @@ public class SolutionPropertiesDialog extends BasePropertiesDialog {
   }
 
   protected String getErrorString() {
-    return this.checkStubModels(myProperties.getStubModels());
+    return checkStubModels(myProperties.getStubModels());
   }
 
   public void dispose() {

@@ -101,7 +101,7 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
       }
       i++;
     }
-    myTable.setSelectionMode((this.multipleChooserSet() ?
+    myTable.setSelectionMode((multipleChooserSet() ?
       ListSelectionModel.MULTIPLE_INTERVAL_SELECTION :
       ListSelectionModel.SINGLE_INTERVAL_SELECTION
     ));

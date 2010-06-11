@@ -30,15 +30,15 @@ public abstract class BaseMultiTab extends BaseMultitabbedTab {
   @Hack
   public List<Pair<SNode, IOperationContext>> tryToLoadNodes() {
     List<Pair<SNode, IOperationContext>> res = new ArrayList<Pair<SNode, IOperationContext>>();
-    SNode baseNode = this.getBaseNode();
+    SNode baseNode = getBaseNode();
     if (baseNode == null) {
       return res;
     }
-    for (SNode node : this.getNodes(baseNode)) {
+    for (SNode node : getNodes(baseNode)) {
       if (node == null) {
         continue;
       }
-      Project project = this.getOperationContext().getProject();
+      Project project = getOperationContext().getProject();
       IModule module = node.getModel().getModelDescriptor().getModule();
       IOperationContext context = new ModuleContext(module, project);
       res.add(new Pair<SNode, IOperationContext>(node, context));
@@ -47,20 +47,20 @@ public abstract class BaseMultiTab extends BaseMultitabbedTab {
   }
 
   protected Pair<SNode, IOperationContext> createLoadableNode(boolean ask, SNode concept) {
-    SNode node = this.createNode(this.getBaseNode(), ask, concept);
+    SNode node = createNode(getBaseNode(), ask, concept);
     if (node == null) {
-      JOptionPane.showMessageDialog(this.getComponent(), "Node creation finished with errors.", "Error", JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(getComponent(), "Node creation finished with errors.", "Error", JOptionPane.ERROR_MESSAGE);
       return null;
     }
-    return new Pair<SNode, IOperationContext>(node, this.getOperationContext());
+    return new Pair<SNode, IOperationContext>(node, getOperationContext());
   }
 
   public boolean askCreate() {
-    return this.askCreate(this.getBaseNode());
+    return askCreate(getBaseNode());
   }
 
   public boolean askCreate(SNode baseNode) {
-    String entity = NameUtil.singularize(this.getTitle());
+    String entity = NameUtil.singularize(getTitle());
     return TabHelper.ask("Do you want to create a new " + NameUtil.decapitalize(entity) + "?", "Create New " + entity);
   }
 

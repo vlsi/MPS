@@ -34,7 +34,7 @@ public class DiffRowTable extends JTable {
 
   public DiffRowTable(TableModel dm, TableColumnModel cm, ListSelectionModel sm) {
     super(dm, cm, sm);
-    this.setUI(new BasicDiffRowTableUI());
+    setUI(new BasicDiffRowTableUI());
   }
 
   public DiffRowTable(int numRows, int numColumns) {
@@ -43,8 +43,8 @@ public class DiffRowTable extends JTable {
 
   public DiffRowTable(final Vector rowData, final Vector columnNames) {
     super(rowData, columnNames);
-    this.setUI(new BasicDiffRowTableUI());
-    this.addComponentListener(new ComponentAdapter() {
+    setUI(new BasicDiffRowTableUI());
+    addComponentListener(new ComponentAdapter() {
       public void componentResized(ComponentEvent e) {
         DiffRowTable.this.revalidate();
       }
@@ -53,8 +53,8 @@ public class DiffRowTable extends JTable {
 
   public DiffRowTable(final Object[][] rowData, final Object[] columnNames) {
     super(rowData, columnNames);
-    this.setUI(new BasicDiffRowTableUI());
-    this.addComponentListener(new ComponentAdapter() {
+    setUI(new BasicDiffRowTableUI());
+    addComponentListener(new ComponentAdapter() {
       public void componentResized(ComponentEvent e) {
         DiffRowTable.this.revalidate();
       }
@@ -63,11 +63,11 @@ public class DiffRowTable extends JTable {
 
   public int rowAtPoint(Point point) {
     int y = point.y;
-    int rowSpacing = this.getIntercellSpacing().height;
-    int rowCount = this.getRowCount();
+    int rowSpacing = getIntercellSpacing().height;
+    int rowCount = getRowCount();
     int rowHeight = 0;
     for (int row = 0; row < rowCount; row++) {
-      rowHeight += this.getRowHeight(row) + rowSpacing;
+      rowHeight += getRowHeight(row) + rowSpacing;
       if (y < rowHeight) {
         return row;
       }
@@ -76,24 +76,24 @@ public class DiffRowTable extends JTable {
   }
 
   public int getHeight(Object obj, int colNum) {
-    TableCellRenderer tcr = this.getColumnModel().getColumn(colNum).getCellRenderer();
+    TableCellRenderer tcr = getColumnModel().getColumn(colNum).getCellRenderer();
     if (tcr != null) {
       Component rendererComponent = tcr.getTableCellRendererComponent(this, obj, true, true, 0, 0);
       return (int) Math.round(rendererComponent.getPreferredSize().getHeight());
     }
-    return this.getRowHeight();
+    return getRowHeight();
   }
 
   public int getRowHeight() {
-    return this.getFontMetrics(this.getFont()).getHeight();
+    return getFontMetrics(getFont()).getHeight();
   }
 
   public int getRowHeight(int row) {
-    TableModel tm = this.getModel();
-    int height = this.getFontMetrics(this.getFont()).getHeight();
-    for (int i = 0; i < this.getColumnModel().getColumnCount(); i++) {
+    TableModel tm = getModel();
+    int height = getFontMetrics(getFont()).getHeight();
+    for (int i = 0; i < getColumnModel().getColumnCount(); i++) {
       try {
-        height = Math.max(height, this.getHeight(tm.getValueAt(row, i), i));
+        height = Math.max(height, getHeight(tm.getValueAt(row, i), i));
       } catch (Exception e) {
       }
     }
@@ -104,14 +104,14 @@ public class DiffRowTable extends JTable {
     Rectangle cellFrame;
     TableColumn aColumn;
     cellFrame = new Rectangle();
-    cellFrame.height = this.getRowHeight(row) + rowMargin;
+    cellFrame.height = getRowHeight(row) + rowMargin;
     cellFrame.y = 0;
     for (int i = 0; i < row; i++) {
-      cellFrame.y += this.getRowHeight(i) + rowMargin;
+      cellFrame.y += getRowHeight(i) + rowMargin;
     }
     int index = 0;
-    int columnMargin = this.getColumnModel().getColumnMargin();
-    Enumeration enumeration = this.getColumnModel().getColumns();
+    int columnMargin = getColumnModel().getColumnMargin();
+    Enumeration enumeration = getColumnModel().getColumns();
     while (enumeration.hasMoreElements()) {
       aColumn = (TableColumn) enumeration.nextElement();
       cellFrame.width = aColumn.getWidth() + columnMargin;
@@ -122,32 +122,32 @@ public class DiffRowTable extends JTable {
       index++;
     }
     if (!(includeSpacing)) {
-      Dimension spacing = this.getIntercellSpacing();
+      Dimension spacing = getIntercellSpacing();
       cellFrame.setBounds(cellFrame.x + spacing.width / 2, cellFrame.y + spacing.height / 2, cellFrame.width - spacing.width, cellFrame.height - spacing.height);
     }
     return cellFrame;
   }
 
   public void columnSelectionChanged(ListSelectionEvent e) {
-    this.repaint();
+    repaint();
   }
 
   public void valueChanged(ListSelectionEvent e) {
     int firstIndex = e.getFirstIndex();
     int lastIndex = e.getLastIndex();
     if (firstIndex == -1 && lastIndex == -1) {
-      this.repaint();
+      repaint();
     }
-    Rectangle dirtyRegion = this.getCellRect(firstIndex, 0, false);
-    int numColumns = this.getColumnCount();
+    Rectangle dirtyRegion = getCellRect(firstIndex, 0, false);
+    int numColumns = getColumnCount();
     int index = firstIndex;
     for (int i = 0; i < numColumns; i++) {
-      dirtyRegion.add(this.getCellRect(index, i, false));
+      dirtyRegion.add(getCellRect(index, i, false));
     }
     index = lastIndex;
     for (int i = 0; i < numColumns; i++) {
-      dirtyRegion.add(this.getCellRect(index, i, false));
+      dirtyRegion.add(getCellRect(index, i, false));
     }
-    this.repaint(dirtyRegion.x, dirtyRegion.y, dirtyRegion.width, dirtyRegion.height);
+    repaint(dirtyRegion.x, dirtyRegion.y, dirtyRegion.width, dirtyRegion.height);
   }
 }

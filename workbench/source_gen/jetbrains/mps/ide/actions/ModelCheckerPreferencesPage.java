@@ -19,21 +19,21 @@ public class ModelCheckerPreferencesPage {
   private ModelCheckerSettings myModelCheckerSettings;
 
   public ModelCheckerPreferencesPage(ModelCheckerSettings settings) {
-    this.myModelCheckerSettings = settings;
-    this.myCheckUnresolvedReferencesCheckBox.setSelected(this.myModelCheckerSettings.isCheckUnresolvedReferences());
-    this.myCheckConstraintsCheckBox.setSelected(this.myModelCheckerSettings.isCheckConstraints());
-    this.myCheckScopesCheckBox.setSelected(this.myModelCheckerSettings.isCheckScopes());
-    this.myCheckTypesystemCheckBox.setSelected(this.myModelCheckerSettings.isCheckTypesystem());
+    myModelCheckerSettings = settings;
+    myCheckUnresolvedReferencesCheckBox.setSelected(myModelCheckerSettings.isCheckUnresolvedReferences());
+    myCheckConstraintsCheckBox.setSelected(myModelCheckerSettings.isCheckConstraints());
+    myCheckScopesCheckBox.setSelected(myModelCheckerSettings.isCheckScopes());
+    myCheckTypesystemCheckBox.setSelected(myModelCheckerSettings.isCheckTypesystem());
 
     JPanel optionsPanel = new JPanel(new GridLayout(0, 1));
-    optionsPanel.add(this.myCheckUnresolvedReferencesCheckBox);
-    optionsPanel.add(this.myCheckConstraintsCheckBox);
-    optionsPanel.add(this.myCheckScopesCheckBox);
-    optionsPanel.add(this.myCheckTypesystemCheckBox);
+    optionsPanel.add(myCheckUnresolvedReferencesCheckBox);
+    optionsPanel.add(myCheckConstraintsCheckBox);
+    optionsPanel.add(myCheckScopesCheckBox);
+    optionsPanel.add(myCheckTypesystemCheckBox);
 
-    this.myPage = new JPanel(new BorderLayout());
-    this.myPage.setBorder(new EmptyBorder(10, 10, 10, 10));
-    this.myPage.add(optionsPanel, BorderLayout.NORTH);
+    myPage = new JPanel(new BorderLayout());
+    myPage.setBorder(new EmptyBorder(10, 10, 10, 10));
+    myPage.add(optionsPanel, BorderLayout.NORTH);
   }
 
   public String getName() {
@@ -45,7 +45,7 @@ public class ModelCheckerPreferencesPage {
   }
 
   public JComponent getComponent() {
-    return this.myPage;
+    return myPage;
   }
 
   public boolean validate() {
@@ -53,23 +53,23 @@ public class ModelCheckerPreferencesPage {
   }
 
   public void commit() {
-    this.myModelCheckerSettings.setCheckUnresolvedReferences(this.myCheckUnresolvedReferencesCheckBox.isSelected());
-    this.myModelCheckerSettings.setCheckConstraints(this.myCheckConstraintsCheckBox.isSelected());
-    this.myModelCheckerSettings.setCheckScopes(this.myCheckScopesCheckBox.isSelected());
-    this.myModelCheckerSettings.setCheckTypesystem(this.myCheckTypesystemCheckBox.isSelected());
+    myModelCheckerSettings.setCheckUnresolvedReferences(myCheckUnresolvedReferencesCheckBox.isSelected());
+    myModelCheckerSettings.setCheckConstraints(myCheckConstraintsCheckBox.isSelected());
+    myModelCheckerSettings.setCheckScopes(myCheckScopesCheckBox.isSelected());
+    myModelCheckerSettings.setCheckTypesystem(myCheckTypesystemCheckBox.isSelected());
   }
 
   public boolean isModified() {
-    if (this.myModelCheckerSettings.isCheckUnresolvedReferences() != this.myCheckUnresolvedReferencesCheckBox.isSelected()) {
+    if (myModelCheckerSettings.isCheckUnresolvedReferences() != myCheckUnresolvedReferencesCheckBox.isSelected()) {
       return true;
     }
-    if (this.myModelCheckerSettings.isCheckConstraints() != this.myCheckConstraintsCheckBox.isSelected()) {
+    if (myModelCheckerSettings.isCheckConstraints() != myCheckConstraintsCheckBox.isSelected()) {
       return true;
     }
-    if (this.myModelCheckerSettings.isCheckScopes() != this.myCheckScopesCheckBox.isSelected()) {
+    if (myModelCheckerSettings.isCheckScopes() != myCheckScopesCheckBox.isSelected()) {
       return true;
     }
-    if (this.myModelCheckerSettings.isCheckTypesystem() != this.myCheckTypesystemCheckBox.isSelected()) {
+    if (myModelCheckerSettings.isCheckTypesystem() != myCheckTypesystemCheckBox.isSelected()) {
       return true;
     }
     return false;

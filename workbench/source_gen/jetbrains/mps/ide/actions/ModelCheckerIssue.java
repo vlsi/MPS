@@ -16,24 +16,24 @@ public abstract class ModelCheckerIssue {
   private IModelCheckerFix myFix;
 
   private ModelCheckerIssue(String message, IModelCheckerFix fix) {
-    this.myMessage = message;
-    this.myFix = fix;
+    myMessage = message;
+    myFix = fix;
   }
 
   public String getMessage() {
-    return this.myMessage;
+    return myMessage;
   }
 
   public boolean fix() {
-    if (this.myFix != null) {
-      return this.myFix.doFix();
+    if (myFix != null) {
+      return myFix.doFix();
     } else {
       return false;
     }
   }
 
   public boolean isFixable() {
-    return this.myFix != null;
+    return myFix != null;
   }
 
   public static SearchResult<ModelCheckerIssue> getSearchResult(SNode node, String message, IModelCheckerFix fix, String severity, String issueType) {
