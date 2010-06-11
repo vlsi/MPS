@@ -4,30 +4,20 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.messages.Icons;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
-public class ModelCheckerIssue {
+public abstract class ModelCheckerIssue {
   public static final CategoryKind CATEGORY_KIND_SEVERITY = new CategoryKind("Severity", Icons.ERROR_ICON, "Group by severity");
   public static final CategoryKind CATEGORY_KIND_ISSUE_TYPE = new CategoryKind("Issue type", jetbrains.mps.ide.findusages.view.icons.Icons.CATEGORY_ICON, "Group by issue type");
 
-  private SNode myNode;
   private String myMessage;
   private IModelCheckerFix myFix;
 
-  public ModelCheckerIssue(SNode node, String message, IModelCheckerFix fix) {
-    this.myNode = node;
+  private ModelCheckerIssue(String message, IModelCheckerFix fix) {
     this.myMessage = message;
     this.myFix = fix;
-  }
-
-  public ModelCheckerIssue(SNode node, String message) {
-    this(node, message, null);
-  }
-
-  public SNode getNode() {
-    return this.myNode;
   }
 
   public String getMessage() {
@@ -35,7 +25,7 @@ public class ModelCheckerIssue {
   }
 
   public boolean fix() {
-    if (this.myFix != null && !(this.myNode.isDeleted())) {
+    if (this.myFix != null) {
       return this.myFix.doFix();
     } else {
       return false;
@@ -47,7 +37,29 @@ public class ModelCheckerIssue {
   }
 
   public static SearchResult<ModelCheckerIssue> getSearchResult(SNode node, String message, IModelCheckerFix fix, String severity, String issueType) {
-    ModelCheckerIssue issue = new ModelCheckerIssue(node, message, fix);
+    ModelCheckerIssue issue = new ModelCheckerIssue.NodeIssue(node, message, fix);
     return new SearchResult<ModelCheckerIssue>(issue, node, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, severity), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
+  }
+
+  public static class NodeIssue extends ModelCheckerIssue {
+    private SNode myNode;
+
+    public NodeIssue(SNode node, String message, IModelCheckerFix fix) {
+      super(message, fix);
+      myNode = node;
+    }
+
+    @Override
+    public boolean fix() {
+      if (myNode.isDeleted()) {
+        return false;
+      } else {
+        return super.fix();
+      }
+    }
+
+    public SNode getNode() {
+      return myNode;
+    }
   }
 }

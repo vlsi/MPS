@@ -130,7 +130,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
           }
         }).where(new IWhereFilter<ModelCheckerIssue>() {
           public boolean accept(ModelCheckerIssue sr) {
-            return SetSequence.fromSet(includedResultNodes).contains(new SNodePointer(sr.getNode())) && sr.isFixable();
+            return sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.fromSet(includedResultNodes).contains(new SNodePointer(((ModelCheckerIssue.NodeIssue) sr).getNode())) && sr.isFixable();
           }
         }).toListSequence();
 
