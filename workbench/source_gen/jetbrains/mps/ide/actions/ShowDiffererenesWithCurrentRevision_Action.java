@@ -43,7 +43,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
 
   public boolean isApplicable(AnActionEvent event) {
     VirtualFile virtualFile = check_ahqk2l_a0a0b(ShowDiffererenesWithCurrentRevision_Action.this.model.getModelFile());
-    return ShowDiffererenesWithCurrentRevision_Action.this.node.isRoot() && ProjectLevelVcsManager.getInstance(ShowDiffererenesWithCurrentRevision_Action.this.project).getVcsFor(virtualFile) != null;
+    return ShowDiffererenesWithCurrentRevision_Action.this.node.isRoot() && virtualFile != null && ProjectLevelVcsManager.getInstance(ShowDiffererenesWithCurrentRevision_Action.this.project).getVcsFor(virtualFile) != null;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
