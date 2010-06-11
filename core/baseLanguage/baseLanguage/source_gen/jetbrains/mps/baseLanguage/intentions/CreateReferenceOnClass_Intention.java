@@ -41,11 +41,26 @@ public class CreateReferenceOnClass_Intention extends BaseIntention implements I
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SNodeOperations.getAncestor(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null);
+    SNode outerConcept = SNodeOperations.getAncestor(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    while ((outerConcept != null)) {
+      if (SNodeOperations.isInstanceOf(outerConcept, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        outerConcept = SNodeOperations.getAncestor(outerConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      } else {
+        break;
+      }
+    }
+    return (outerConcept != null);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode outerConcept = SNodeOperations.getAncestor(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    while ((outerConcept != null)) {
+      if (SNodeOperations.isInstanceOf(outerConcept, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        outerConcept = SNodeOperations.getAncestor(outerConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      } else {
+        break;
+      }
+    }
     SLinkOperations.setTarget(node, "classConcept", outerConcept, false);
   }
 
