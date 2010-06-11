@@ -47,8 +47,6 @@ public class SimpleCommandQueue {
   }
 
   private static class MyExecutorThread extends Thread {
-    protected static Log log = LogFactory.getLog(SimpleCommandQueue.MyExecutorThread.class);
-
     private final Queue<Runnable> myQueue;
 
     public MyExecutorThread(@NotNull Queue<Runnable> queue, @NotNull String name) {
