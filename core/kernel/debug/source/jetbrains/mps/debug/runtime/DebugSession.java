@@ -79,7 +79,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
 
   private void pause(SuspendContext suspendContext) {
     JavaUiState state = getUiState();
-    setState(state, state.paused(suspendContext));
+    setState(state, state.paused(suspendContext), false);
   }
 
   public JavaUiState refresh() {
@@ -91,7 +91,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
 
   private void resume(SuspendContext suspendContext) {
     JavaUiState state = getUiState();
-    setState(state, state.resumed(suspendContext));
+    setState(state, state.resumed(suspendContext), false);
   }
 
   @Override
@@ -126,7 +126,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
     @Override
     public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
       myExecutionState = ExecutionState.Stopped;
-      setState(getUiState(), new JavaUiState(null, DebugSession.this));
+      setState(getUiState(), new JavaUiState(null, DebugSession.this), false);
       fireSessionResumed(DebugSession.this); // TODO hack
       myProcessHandler.notifyTextAvailable("Disconnected from the target VM, " + process.getConnectionString() + "\n", ProcessOutputTypes.SYSTEM);
     }

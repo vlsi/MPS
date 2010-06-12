@@ -2,9 +2,6 @@ package jetbrains.mps.debug.api;
 
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.DebuggableFramesSelector;
-import jetbrains.mps.debug.api.IDebuggableFramesSelector;
-import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.NotNull;
@@ -48,11 +45,17 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
   public abstract void stepOut();
 
   protected void setState(State oldState, State newState) {
+    setState(oldState, newState, true);
+  }
+
+  protected void setState(State oldState, State newState, boolean fireEvents) {
     while (!myUiState.compareAndSet(oldState, newState)) {
       // TODO we do not care here if user selected something, we just replace old state. But we might do something more clever, like remember what user selected.
       oldState = getUiState();
     }
-    fireStateChanged();
+    if (fireEvents) {
+      fireStateChanged();
+    }
   }
 
   public boolean isPaused() {
@@ -109,7 +112,8 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
     myListeners.remove(listener);
   }
 
-    //use from AbstractUiState only
+  //use from AbstractUiState only
+
   @UseCarefully
   public void trySetState(State oldState, State newState) {
     if (myUiState.compareAndSet(oldState, newState)) {
