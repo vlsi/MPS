@@ -7,6 +7,7 @@ import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.IThread;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
@@ -21,10 +22,11 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class JavaThread extends ProxyForJava implements IThread {
-  private static Logger LOG = Logger.getLogger(JavaThread.class);
+  private static final Logger LOG = Logger.getLogger(JavaThread.class);
+  @NotNull
   private final ThreadReference myThreadReference;
 
-  public JavaThread(ThreadReference threadReference) {
+  public JavaThread(@NotNull ThreadReference threadReference) {
     super(threadReference);
     myThreadReference = threadReference;
   }
@@ -54,6 +56,7 @@ public class JavaThread extends ProxyForJava implements IThread {
     }
   }
 
+  @NotNull
   public ThreadReference getThread() {
     return myThreadReference;
   }
