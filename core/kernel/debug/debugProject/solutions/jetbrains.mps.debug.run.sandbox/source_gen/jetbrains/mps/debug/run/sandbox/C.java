@@ -31,6 +31,7 @@ public class C extends BaseC {
     i++;
     i--;
     i++;
+    i++;
     i = 0;
     List<Integer> list = ListSequence.fromList(new ArrayList<Integer>());
     ListSequence.fromList(list).addElement(1);
@@ -44,7 +45,7 @@ public class C extends BaseC {
     new C();
   }
 
-  private static int getOne() {
-    return 1;
+  public static int getOne() {
+    return 1 + 1;
   }
 }

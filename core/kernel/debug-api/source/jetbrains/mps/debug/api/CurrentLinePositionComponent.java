@@ -5,14 +5,10 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debug.api.SessionChangeListener;
-import jetbrains.mps.debug.api.StacktraceUtil2;
+import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionListener;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.CurrentLinePainter;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.IStackFrame;
-import jetbrains.mps.debug.api.DebugSessionManagerComponent;
-import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionListener;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -108,10 +104,14 @@ public class CurrentLinePositionComponent implements ProjectComponent {
   }
 
   private void detachPainter(AbstractDebugSession newDebugSession) {
+    final CurrentLinePainter painter;
+    
     synchronized (mySessionToContextPainterMap) {
-      final CurrentLinePainter painter = mySessionToContextPainterMap.get(newDebugSession);
+      painter = mySessionToContextPainterMap.get(newDebugSession);
       mySessionToContextPainterMap.remove(newDebugSession);
-      if (painter != null) {
+    }
+
+    if (painter != null) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           @Override
           public void run() {
@@ -119,7 +119,6 @@ public class CurrentLinePositionComponent implements ProjectComponent {
           }
         });
       }
-    }
   }
 
   private void detachPainter(@NotNull CurrentLinePainter painter) {
@@ -146,14 +145,16 @@ public class CurrentLinePositionComponent implements ProjectComponent {
   }
 
   private void attachPainter(AbstractDebugSession debugSession) {
-    synchronized (mySessionToContextPainterMap) {
-      IStackFrame stackFrame = debugSession.getUiState().getStackFrame();
-      if (stackFrame != null) {
-        ILocation location = stackFrame.getLocation();
-        if (location != null) {
-          SNode node = StacktraceUtil2.getNode(location);
-          if (node != null) {
-            final CurrentLinePainter newPainter = new CurrentLinePainter(node);
+    IStackFrame stackFrame = debugSession.getUiState().getStackFrame();
+    if (stackFrame != null) {
+      ILocation location = stackFrame.getLocation();
+      if (location != null) {
+        SNode node = StacktraceUtil2.getNode(location);
+        if (node != null) {
+          final CurrentLinePainter newPainter = new CurrentLinePainter(node);
+
+          // we lock here, since we do not want to acquire read lock inside while having mySessionToContextPainterMap 
+          synchronized (mySessionToContextPainterMap) {
             mySessionToContextPainterMap.put(debugSession, newPainter);
             ApplicationManager.getApplication().invokeLater(new Runnable() {
               @Override
@@ -162,6 +163,7 @@ public class CurrentLinePositionComponent implements ProjectComponent {
               }
             });
           }
+
         }
       }
     }

@@ -37,6 +37,7 @@ public class Main {
         }
       }
     }).start();
+    C.getOne();
     new Main() {
       public void foo() {
       }
