@@ -12,6 +12,7 @@ import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.IThread;
 import jetbrains.mps.debug.api.programState.NullLocation;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -208,7 +209,7 @@ public class DebuggerToolPanel extends JPanel {
     public void selected(int selectedIndex) {
       if (selectedIndex >= 0) {
         IStackFrame newFrame = myUiState.getStackFrames().get(selectedIndex);
-        if (myUiState.getStackFrame() != newFrame) {
+        if (!ObjectUtils.equals(newFrame, myUiState.getStackFrame())) {
           myUiState.selectFrame(newFrame);
         }
       }
