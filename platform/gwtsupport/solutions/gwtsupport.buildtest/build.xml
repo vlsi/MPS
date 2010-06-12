@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name="gwtsupport.buildtest" default="build" basedir=".">
+
+  <dirname property="buildtest.basedir" file="${ant.file.gwtsupport.buildtest}"/>
+  
   <!-- Configure path to GWT SDK -->
-  <property name="gwt.sdk" location="${ant.file}/../../../tools/gwt20" />
+  <property name="gwt.sdk" location="${buildtest.basedir}/../../tools/gwt20" />
   <!-- Path to MPS home dir -->
-  <property name="mps.home" value="${ant.file}/../../../../.."/>
+  <property name="mps.home" value="${buildtest.basedir}/../../../.."/>
 
   <path id="project.class.path">
     <pathelement location="classes_gen"/>
