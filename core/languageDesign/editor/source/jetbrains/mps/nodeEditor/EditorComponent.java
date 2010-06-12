@@ -2470,6 +2470,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return weakReference.get();
   }
 
+  @Nullable
   public EditorCell getBigValidCellForNode(SNode node) {
     EditorCell result = findNodeCell(node);
     if (isValid(result)) return result;

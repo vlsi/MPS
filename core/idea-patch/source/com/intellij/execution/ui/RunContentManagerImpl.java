@@ -615,16 +615,24 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
         }
       };
 
+      @Patch
       public void run() {
         myProgressIndicator = ProgressManager.getInstance().getProgressIndicator();
         if (myProgressIndicator != null) {
           myProgressIndicator.setText(ExecutionBundle.message("waiting.for.vm.detach.progress.text"));
         }
+        // MPS Patch Start
+        // mySemaphore.down was executed after pooled thread ops, moved here in order to fix
+        // MPS-8458 MPS hanged forever waiting for a process to die (while apparently the process is dead already).
+        // fixed in newest idea versions
+        // TODO remove hack after platform update
+        mySemaphore.down();
 
         ApplicationManager.getApplication().executeOnPooledThread(myWaitThread);
         ApplicationManager.getApplication().executeOnPooledThread(myCancelListener);
 
-        mySemaphore.down();
+        // MPS Patch End
+        
         mySemaphore.waitFor();
       }
     }, progressTitle, true, myProject);

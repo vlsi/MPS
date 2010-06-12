@@ -38,6 +38,7 @@ public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> 
     EditorCell_Label innerCell = null;
     if (node != null) {
       EditorCell bigCell = editorComponent.getBigValidCellForNode(node);
+      if (bigCell == null) return null;
       if (bigCell instanceof EditorCell_Label) {
         innerCell = (EditorCell_Label) bigCell;
       } else if (bigCell instanceof EditorCell_Collection) {
