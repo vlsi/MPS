@@ -32,8 +32,9 @@ public class RemoteSettingsEditor extends JPanel {
     myHostTextField = new JTextField();
     myHostTextField.addKeyListener(listener);
     DefaultFormatter formatter = new MyDefaultFormatter();
-    formatter.setAllowsInvalid(false);
+    formatter.setAllowsInvalid(true);
     formatter.setCommitsOnValidEdit(true);
+    formatter.setOverwriteMode(false);
     myPortTextField = new JFormattedTextField(formatter);
     myPortTextField.addPropertyChangeListener("value", listener);
     myCommandLineTextField = new JTextField();
@@ -43,7 +44,7 @@ public class RemoteSettingsEditor extends JPanel {
     add(myHostTextField, LayoutUtil.createFieldConstraints(1));
     add(new JLabel("Port:"), LayoutUtil.createLabelConstraints(2));
     add(myPortTextField, LayoutUtil.createFieldConstraints(3));
-    add(new JLabel("Client Command Line:"), LayoutUtil.createLabelConstraints(4));
+    add(new JLabel("Remote JVM Command Line Arguments:"), LayoutUtil.createLabelConstraints(4));
     add(myCommandLineTextField, LayoutUtil.createFieldConstraints(5));
   }
 
