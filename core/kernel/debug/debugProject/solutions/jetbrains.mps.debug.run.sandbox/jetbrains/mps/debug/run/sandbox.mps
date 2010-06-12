@@ -25,6 +25,23 @@
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1876713722539579910">
     <property name="name:3" value="Main" />
+    <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1523981646350722811">
+      <property name="nonStatic:3" value="false" />
+      <property name="name:3" value="Inner" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1523981646350722812" />
+      <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1523981646350722813">
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1523981646350722814" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1523981646350722815" />
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1523981646350722816">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1523981646350722817">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1523981646350722819">
+              <link role="baseMethodDeclaration:3" targetNodeId="5661655420496807176" resolveInfo="getOne" />
+              <link role="classConcept:3" targetNodeId="4060685206781456017" resolveInfo="C" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="4210312560528450747">
       <property name="name:3" value="myI" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="593670222062213380" />
@@ -209,10 +226,11 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8264620795689626290">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8264620795689626293">
-            <link role="baseMethodDeclaration:3" targetNodeId="5661655420496807176" resolveInfo="getOne" />
-            <link role="classConcept:3" targetNodeId="4060685206781456017" resolveInfo="C" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1523981646350722821">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1523981646350722822">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1523981646350722824">
+              <link role="baseMethodDeclaration:3" targetNodeId="1523981646350722813" resolveInfo="Main.Inner" />
+            </node>
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3376730230379816911">

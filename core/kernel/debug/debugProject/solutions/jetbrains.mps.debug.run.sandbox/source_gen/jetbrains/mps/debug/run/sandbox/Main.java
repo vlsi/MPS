@@ -37,7 +37,7 @@ public class Main {
         }
       }
     }).start();
-    C.getOne();
+    new Main.Inner();
     new Main() {
       public void foo() {
       }
@@ -69,5 +69,11 @@ public class Main {
   public static void doSomething() {
     System.err.println("doing something...");
     System.err.println("doing something once again...");
+  }
+
+  public static class Inner {
+    public Inner() {
+      C.getOne();
+    }
   }
 }

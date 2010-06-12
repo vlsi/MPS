@@ -81,12 +81,28 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
     });
     manager.addUnitConcept("jetbrains.mps.baseLanguage.structure.Interface", new Mapper<SNode, String>() {
       public String value(SNode unitNode) {
-        return INamedConcept_Behavior.call_getFqName_1213877404258(unitNode);
+        String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(unitNode);
+        if (SNodeOperations.getAncestor(unitNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == null) {
+          return fqName;
+        }
+        int index = fqName.lastIndexOf(".");
+        if (index <= 0) {
+          return fqName;
+        }
+        return fqName.substring(0, index) + "$" + fqName.substring(index + 1);
       }
     });
     manager.addUnitConcept("jetbrains.mps.baseLanguage.structure.ClassConcept", new Mapper<SNode, String>() {
       public String value(SNode unitNode) {
-        return INamedConcept_Behavior.call_getFqName_1213877404258(unitNode);
+        String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(unitNode);
+        if (SNodeOperations.getAncestor(unitNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == null) {
+          return fqName;
+        }
+        int index = fqName.lastIndexOf(".");
+        if (index <= 0) {
+          return fqName;
+        }
+        return fqName.substring(0, index) + "$" + fqName.substring(index + 1);
       }
     });
     BreakpointManagerComponent.notifyDebuggableConceptsAdded();
