@@ -85,4 +85,9 @@ public class RemoteConfiguration extends BaseRunConfig {
   @Override
   public void checkConfiguration() throws RuntimeConfigurationException {
   }
+
+  @Override
+  public boolean isDebuggable() {
+    return true;
+  }
 }

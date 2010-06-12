@@ -13,6 +13,7 @@
     <orderEntry type="module" module-name="MPS" exported="" />
     <orderEntry type="module" module-name="classifiers" />
     <orderEntry type="module" module-name="debug-api" />
+    <orderEntry type="module" module-name="debug" />
   </component>
 </module>
 
