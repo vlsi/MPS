@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.DefaultFormatter;
+import java.awt.Color;
 import java.awt.GridBagLayout;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -37,6 +38,7 @@ public class RemoteSettingsEditor extends JPanel {
     formatter.setOverwriteMode(false);
     myPortTextField = new JFormattedTextField(formatter);
     myPortTextField.addPropertyChangeListener("value", listener);
+    myPortTextField.addKeyListener(listener);
     myCommandLineTextField = new JTextField();
     myCommandLineTextField.setEditable(false);
 
@@ -81,6 +83,7 @@ public class RemoteSettingsEditor extends JPanel {
     @Override
     public void keyReleased(KeyEvent e) {
       updateFieldsFromUi();
+      myPortTextField.setForeground(myPortTextField.isEditValid() ? Color.BLACK : Color.RED);
     }
 
     @Override
