@@ -41,6 +41,7 @@ public class NavigationManager {
   public NavigationManager() {
     myHandlers.put(NodeWithContext.class, new NodeWithContextNavigationHandler());
     myHandlers.put(FileWithPosition.class, new FileWithPositionNavigationHandler());
+    myHandlers.put(FileWithLogicalPosition.class, new FileWithLogicalPositionNavigationHandler());
     myHandlers.put(SNodePointer.class, new NodePointerNavigationHandler());
     myHandlers.put(ModuleReference.class,new ModuleReferenceNavigationHandler());
 
