@@ -58,7 +58,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
       }
       return result;
     } catch (AbsentInformationException ex) {
-      LOG.error(ex);
+      LOG.warning("AbsentInformationException", ex);
       return Collections.emptyMap();
     }
   }
@@ -81,7 +81,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
 
       return result;
     } catch (AbsentInformationException ex) {
-      LOG.error(ex);
+      LOG.warning("AbsentInformationException", ex);
       return Collections.emptyList();
     }
   }
