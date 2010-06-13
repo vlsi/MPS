@@ -1,11 +1,11 @@
 <project name="mps.tests" default="all">
   <property name="mps.home" value="${ant.file}/../../../.."/>
-  <import file="${ant.file}/../../../../platform/gwtsupport/solutions/gwtsupport.buildtest/build.xml"/>
+  <import file="${mps.home}/platform/gwtsupport/solutions/gwtsupport.buildtest/build.xml"/>
 
   <taskdef resource="jetbrains/mps/build/ant/antlib.xml"
            classpath="${mps.home}/platform/buildlanguage/ant/classes"/>
 
-    <target name="all" depends="generation.tests,broken.references.test,gwtsupport.buildtest.build"/>
+  <target name="all" depends="generation.tests,broken.references.test,gwtsupport.buildtest.build"/>
 
   <jvmargs id="mps.args">
     <arg value="-Xss1024k"/>
