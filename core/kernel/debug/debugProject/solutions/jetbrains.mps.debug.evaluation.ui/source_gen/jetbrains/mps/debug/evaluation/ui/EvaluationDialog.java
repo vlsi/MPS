@@ -30,6 +30,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.debug.api.SessionChangeListener;
+import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -47,17 +49,21 @@ public class EvaluationDialog extends BaseDialog {
   private EvaluationDialog.MyTree myTree;
   private EmbeddableEditor myEditor;
   private EmbeddableEditor myResultEditor;
-  private final AbstractEvaluationLogic myEvaluationData;
+  private final AbstractEvaluationLogic myEvaluationLogic;
+  private final EvaluationDialog.MySessionChangeListener mySessionChangeListener;
 
-  public EvaluationDialog(final IOperationContext context, JavaUiState uiState, DebugSession debugSession) {
+  public EvaluationDialog(final IOperationContext context, JavaUiState uiState, final DebugSession debugSession) {
     super(context.getMainFrame(), "Evaluate");
     this.myContext = context;
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
 
-    this.myEvaluationData = AbstractEvaluationLogic.createInstance(context, uiState, debugSession);
-    if (myEvaluationData.isDeveloperMode()) {
-      myEvaluationData.addGenerationListener(new _FunctionTypes._void_P1_E0<SNode>() {
+    mySessionChangeListener = new EvaluationDialog.MySessionChangeListener();
+    debugSession.addChangeListener(mySessionChangeListener);
+
+    this.myEvaluationLogic = AbstractEvaluationLogic.createInstance(context, uiState, debugSession);
+    if (myEvaluationLogic.isDeveloperMode()) {
+      myEvaluationLogic.addGenerationListener(new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode result) {
           EvaluationDialog.this.updateGenerationResultTab(result);
         }
@@ -66,9 +72,9 @@ public class EvaluationDialog extends BaseDialog {
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        EvaluationDialog.this.myEditor = new EmbeddableEditor(new ModuleContext(EvaluationDialog.this.myEvaluationData.getModule(), EvaluationDialog.this.myEvaluationData.getModule().getMPSProject()), EvaluationDialog.this.myEvaluationData.getModule(), EvaluationDialog.this.myEvaluationData.getRootToShow(), myEvaluationData.getNodeToShow(), true);
+        EvaluationDialog.this.myEditor = new EmbeddableEditor(new ModuleContext(EvaluationDialog.this.myEvaluationLogic.getModule(), EvaluationDialog.this.myEvaluationLogic.getModule().getMPSProject()), EvaluationDialog.this.myEvaluationLogic.getModule(), EvaluationDialog.this.myEvaluationLogic.getRootToShow(), myEvaluationLogic.getNodeToShow(), true);
 
-        for (Language language : EvaluationDialog.this.myEvaluationData.getRequiredLanguages()) {
+        for (Language language : EvaluationDialog.this.myEvaluationLogic.getRequiredLanguages()) {
           EvaluationDialog.this.myEditor.addLanguage(language);
         }
       }
@@ -80,27 +86,28 @@ public class EvaluationDialog extends BaseDialog {
         d.value = myEditor.getModel();
       }
     });
-    myEvaluationData.setModel(d.value);
+    myEvaluationLogic.setModel(d.value);
 
     myPanel.add(this.myEditor.getComponenet(), BorderLayout.NORTH);
     myTree = new EvaluationDialog.MyTree();
     myPanel.add(new JScrollPane(myTree), BorderLayout.CENTER);
 
-    if (myEvaluationData.isDeveloperMode()) {
+    if (myEvaluationLogic.isDeveloperMode()) {
       this.myTabbedPane.addTab("Main", myPanel);
     }
 
     addWindowListener(new WindowAdapter() {
       @Override
       public void windowClosed(WindowEvent event) {
+        debugSession.removeChangeListener(mySessionChangeListener);
         EvaluationDialog.this.myEditor.disposeEditor();
-        EvaluationDialog.this.myEvaluationData.getModule().dispose();
+        EvaluationDialog.this.myEvaluationLogic.getModule().dispose();
       }
     });
   }
 
   protected JComponent getMainComponent() {
-    if (myEvaluationData.isDeveloperMode()) {
+    if (myEvaluationLogic.isDeveloperMode()) {
       return this.myTabbedPane;
     } else {
       return myPanel;
@@ -109,8 +116,12 @@ public class EvaluationDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "Evaluate", mnemonic = 'E', defaultButton = true)
   public void buttonEvaluate() {
+    if (!(myEvaluationLogic.getDebugSession().isStepEnabled())) {
+      setErrorText("Program should be paused on breakpoint to evaluate.");
+      return;
+    }
     try {
-      IValueProxy evaluatedValue = myEvaluationData.evaluate();
+      IValueProxy evaluatedValue = myEvaluationLogic.evaluate();
       if (evaluatedValue != null) {
         setSuccess(evaluatedValue);
       } else {
@@ -149,7 +160,7 @@ public class EvaluationDialog extends BaseDialog {
         if (EvaluationDialog.this.myResultEditor == null) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              EvaluationDialog.this.myResultEditor = new EmbeddableEditor(new ModuleContext(myEvaluationData.getModule(), myEvaluationData.getModule().getMPSProject()), myEvaluationData.getModule(), generatedResult, generatedResult, false);
+              EvaluationDialog.this.myResultEditor = new EmbeddableEditor(new ModuleContext(myEvaluationLogic.getModule(), myEvaluationLogic.getModule().getMPSProject()), myEvaluationLogic.getModule(), generatedResult, generatedResult, false);
             }
           });
           EvaluationDialog.this.myTabbedPane.add("Generated Result", EvaluationDialog.this.myResultEditor.getComponenet());
@@ -163,6 +174,27 @@ public class EvaluationDialog extends BaseDialog {
         }
       }
     }, ModalityState.NON_MODAL);
+  }
+
+  private class MySessionChangeListener implements SessionChangeListener {
+    public MySessionChangeListener() {
+    }
+
+    public void resumed(AbstractDebugSession session) {
+    }
+
+    public void paused(AbstractDebugSession session) {
+      if (myEvaluationLogic.getDebugSession() == session) {
+        setErrorText("");
+        myEvaluationLogic.updateState();
+      }
+    }
+
+    public void stateChanged(AbstractDebugSession session) {
+      if (myEvaluationLogic.getDebugSession() == session) {
+        myEvaluationLogic.updateState();
+      }
+    }
   }
 
   private static class MyTree extends MPSTree {

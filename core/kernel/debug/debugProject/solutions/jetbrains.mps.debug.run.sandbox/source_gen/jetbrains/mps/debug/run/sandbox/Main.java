@@ -73,6 +73,7 @@ public class Main {
 
   public static class Inner {
     public Inner() {
+      int internal = 1;
       C.getOne();
     }
   }

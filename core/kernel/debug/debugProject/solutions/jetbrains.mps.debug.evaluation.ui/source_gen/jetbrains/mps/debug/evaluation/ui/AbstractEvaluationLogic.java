@@ -53,7 +53,7 @@ public abstract class AbstractEvaluationLogic {
   private static final Logger LOG = Logger.getLogger(AbstractEvaluationLogic.class);
   private static final String EVALUATOR_NAME = "EvaluatorInstance";
   private static final boolean IS_IN_HIGHLEVEL_MODE = false;
-  private static final boolean IS_DEVELOPER_MODE = true;
+  private static final boolean IS_DEVELOPER_MODE = false;
 
   protected JavaUiState myUiState;
   protected final DebugSession myDebugSession;
@@ -151,6 +151,10 @@ public abstract class AbstractEvaluationLogic {
     return IS_DEVELOPER_MODE;
   }
 
+  public void updateState() {
+    myUiState = myDebugSession.getUiState();
+  }
+
   @Nullable
   public IValueProxy evaluate() throws EvaluationException {
     try {
@@ -187,7 +191,6 @@ public abstract class AbstractEvaluationLogic {
         Class clazz = Class.forName(fullClassName, true, loader);
         Evaluator evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
         IValueProxy value = evaluator.evaluate();
-        this.myUiState = this.myDebugSession.refresh();
         return value;
       } else {
         throw new EvaluationException("Errors during generation.");

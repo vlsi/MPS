@@ -209,6 +209,11 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
   }
 
   @Override
+  public void updateState() {
+    super.updateState();
+  }
+
+  @Override
   public void setModel(SModelDescriptor model) {
     super.setModel(model);
 

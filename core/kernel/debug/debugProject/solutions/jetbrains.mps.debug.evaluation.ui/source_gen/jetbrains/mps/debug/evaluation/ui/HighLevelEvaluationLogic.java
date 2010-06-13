@@ -72,4 +72,10 @@ public class HighLevelEvaluationLogic extends AbstractEvaluationLogic {
   public SNode getRootToShow() {
     return myLocationRootCopy;
   }
+
+  @Override
+  public void updateState() {
+    super.updateState();
+    throw new RuntimeException("update state unimplemented!");
+  }
 }

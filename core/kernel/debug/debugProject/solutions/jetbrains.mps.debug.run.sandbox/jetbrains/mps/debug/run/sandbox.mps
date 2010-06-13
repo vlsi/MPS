@@ -33,6 +33,15 @@
         <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1523981646350722814" />
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1523981646350722815" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1523981646350722816">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="34597247923202835">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="34597247923202836">
+              <property name="name:3" value="internal" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="34597247923202837" />
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="34597247923202839">
+                <property name="value:3" value="1" />
+              </node>
+            </node>
+          </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1523981646350722817">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1523981646350722819">
               <link role="baseMethodDeclaration:3" targetNodeId="5661655420496807176" resolveInfo="getOne" />
