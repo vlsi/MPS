@@ -41,7 +41,7 @@ public class JavaThread extends ProxyForJava implements IThread {
       }
       return frames;
     } catch (IncompatibleThreadStateException ex) {
-      LOG.error(ex);
+      LOG.warning("IncompatibleThreadStateException", ex);
       return Collections.emptyList();
     }
   }
@@ -51,7 +51,7 @@ public class JavaThread extends ProxyForJava implements IThread {
     try {
       return myThreadReference.frameCount();
     } catch (IncompatibleThreadStateException ex) {
-      LOG.error(ex);
+      LOG.warning("IncompatibleThreadStateException", ex);
       return 0;
     }
   }
