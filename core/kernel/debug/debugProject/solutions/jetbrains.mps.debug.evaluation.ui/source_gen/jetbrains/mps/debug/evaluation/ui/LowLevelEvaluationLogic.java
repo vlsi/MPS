@@ -271,8 +271,8 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
           // create vars 
           List<LocalVariable> variables = stackFrame.visibleVariables();
           for (LocalVariable variable : ListSequence.fromList(variables)) {
+            String name = variable.name();
             try {
-              String name = variable.name();
               SNode lowLevelVarNode;
               if (!(MapSequence.fromMap(myUsedVars).containsKey(name))) {
                 lowLevelVarNode = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", null);
@@ -290,7 +290,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
               SLinkOperations.setTarget(lowLevelVarNode, "type", deducedType, true);
               SetSequence.fromSet(foundVars).addElement(lowLevelVarNode);
             } catch (ClassNotLoadedException cne) {
-              LOG.error(cne);
+              LOG.warning("Exception when creating variable " + name, cne);
             }
 
           }
