@@ -68,6 +68,10 @@
       <link role="target:0" targetNodeId="3v.1068431790189:3" resolveInfo="Type" />
       <link role="specializedLink:0" targetNodeId="3v.5680397130376446158:3" />
     </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="6146091894852355121">
+      <property name="name:0" value="isOutOfScope" />
+      <link role="dataType:0" targetNodeId="2v.1082983657063:0" resolveInfo="boolean" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6036237525966315974">
     <property name="name:0" value="EvaluatorsThisExpression" />

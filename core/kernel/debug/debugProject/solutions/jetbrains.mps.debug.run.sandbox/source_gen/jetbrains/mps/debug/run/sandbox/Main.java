@@ -75,6 +75,7 @@ public class Main {
     public Inner() {
       int internal = 1;
       C.getOne();
+      internal++;
     }
   }
 }

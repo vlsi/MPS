@@ -183,17 +183,25 @@ public class EvaluationDialog extends BaseDialog {
     public void resumed(AbstractDebugSession session) {
     }
 
-    public void paused(AbstractDebugSession session) {
-      if (myEvaluationLogic.getDebugSession() == session) {
-        setErrorText("");
-        myEvaluationLogic.updateState();
-      }
+    public void paused(final AbstractDebugSession session) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          if (myEvaluationLogic.getDebugSession() == session) {
+            setErrorText("");
+            myEvaluationLogic.updateState();
+          }
+        }
+      });
     }
 
-    public void stateChanged(AbstractDebugSession session) {
-      if (myEvaluationLogic.getDebugSession() == session) {
-        myEvaluationLogic.updateState();
-      }
+    public void stateChanged(final AbstractDebugSession session) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          if (myEvaluationLogic.getDebugSession() == session) {
+            myEvaluationLogic.updateState();
+          }
+        }
+      });
     }
   }
 

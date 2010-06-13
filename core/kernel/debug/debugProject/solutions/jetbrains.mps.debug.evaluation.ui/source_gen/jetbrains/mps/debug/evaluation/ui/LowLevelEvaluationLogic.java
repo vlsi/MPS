@@ -4,6 +4,10 @@ package jetbrains.mps.debug.evaluation.ui;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.baseLanguage.search.AbstractClassifiersScope;
+import java.util.Map;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.debug.runtime.JavaUiState;
@@ -20,7 +24,6 @@ import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.stubs.StubReloadManager;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
 import com.sun.jdi.Type;
 import com.sun.jdi.ClassNotLoadedException;
 import com.sun.jdi.PrimitiveType;
@@ -50,10 +53,13 @@ import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import com.sun.jdi.StackFrame;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import com.sun.jdi.LocalVariable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.Set;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
@@ -64,10 +70,10 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
   private static final Logger LOG = Logger.getLogger(LowLevelEvaluationLogic.class);
 
   private AbstractClassifiersScope myScope;
+  private final Map<String, SNode> myUsedVars = MapSequence.fromMap(new HashMap<String, SNode>());
 
   public LowLevelEvaluationLogic(@NotNull IOperationContext context, @NotNull JavaUiState state, @NotNull DebugSession debugSession) {
     super(context, state, debugSession);
-
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -211,6 +217,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
   @Override
   public void updateState() {
     super.updateState();
+    updateVariables();
   }
 
   @Override
@@ -242,6 +249,10 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
       }
     });
 
+    this.updateVariables();
+  }
+
+  private void updateVariables() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         fillVariables();
@@ -256,25 +267,40 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
       if (stackFrame != null) {
         try {
 
+          final Set<SNode> foundVars = SetSequence.fromSet(new HashSet<SNode>());
           // create vars 
           List<LocalVariable> variables = stackFrame.visibleVariables();
           for (LocalVariable variable : ListSequence.fromList(variables)) {
             try {
-              SNode lowLevelVarNode = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", null);
-              String name = ((LocalVariable) variable).name();
-              SPropertyOperations.set(lowLevelVarNode, "name", name);
+              String name = variable.name();
+              SNode lowLevelVarNode;
+              if (!(MapSequence.fromMap(myUsedVars).containsKey(name))) {
+                lowLevelVarNode = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", null);
+                SPropertyOperations.set(lowLevelVarNode, "name", name);
+                ListSequence.fromList(SLinkOperations.getTargets(myEvaluator, "variables", true)).addElement(lowLevelVarNode);
+                MapSequence.fromMap(myUsedVars).put(name, lowLevelVarNode);
+              } else {
+                lowLevelVarNode = MapSequence.fromMap(myUsedVars).get(name);
+              }
               SNode deducedType = getMpsTypeFromJdiType(((LocalVariable) variable).type());
               if (deducedType == null) {
                 LOG.warning("Could not deduce type for variable " + name);
                 continue;
               }
               SLinkOperations.setTarget(lowLevelVarNode, "type", deducedType, true);
-              ListSequence.fromList(SLinkOperations.getTargets(myEvaluator, "variables", true)).addElement(lowLevelVarNode);
+              SetSequence.fromSet(foundVars).addElement(lowLevelVarNode);
             } catch (ClassNotLoadedException cne) {
               LOG.error(cne);
             }
 
           }
+
+          // now mark vars which are currently out of scope 
+          Sequence.fromIterable(MapSequence.fromMap(myUsedVars).values()).visitAll(new IVisitor<SNode>() {
+            public void visit(SNode it) {
+              SPropertyOperations.set(it, "isOutOfScope", "" + (!(SetSequence.fromSet(foundVars).contains(it))));
+            }
+          });
 
           // create static context type 
           SLinkOperations.setTarget(myEvaluator, "staticContextType", createStaticContextType(), true);

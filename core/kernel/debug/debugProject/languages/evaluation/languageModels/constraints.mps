@@ -186,5 +186,70 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="6146091894852365519">
+    <link role="concept:8" targetNodeId="1.9050639307831392587" resolveInfo="LowLevelVariableReference" />
+    <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="6146091894852365520">
+      <link role="applicableLink:8" targetNodeId="1.9050639307831393059" />
+      <node role="searchScopeFactory:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory:8" id="6146091894852366819">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6146091894852366820">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6146091894852366821">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6146091894852366837">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6146091894852366832">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6146091894852366823">
+                  <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode:8" id="6146091894852366822" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="6146091894852366827">
+                    <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="6146091894852366828">
+                      <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="6146091894852366831">
+                        <link role="conceptDeclaration:16" targetNodeId="1.6036237525966182693" resolveInfo="EvaluatorConcept" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="6146091894852366836">
+                  <link role="link:16" targetNodeId="1.6036237525966243735" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation:7" id="6146091894852366841">
+                <node role="closure:7" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="6146091894852366842">
+                  <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6146091894852366843">
+                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6146091894852366846">
+                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="6146091894852366853">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6146091894852366848">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6146091894852366847">
+                            <link role="variableDeclaration:3" targetNodeId="6146091894852366844" resolveInfo="it" />
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="6146091894852366852">
+                            <link role="property:16" targetNodeId="1.6146091894852355121" resolveInfo="isOutOfScope" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="6146091894852366844">
+                    <property name="name:7" value="it" />
+                    <node role="type:7" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="6146091894852366845" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="validator:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator:8" id="6146091894852366855">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6146091894852366856">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6146091894852366857">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="6146091894852366864">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6146091894852366859">
+                <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_checkedNode:8" id="6146091894852366858" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="6146091894852366863">
+                  <link role="property:16" targetNodeId="1.6146091894852355121" resolveInfo="isOutOfScope" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

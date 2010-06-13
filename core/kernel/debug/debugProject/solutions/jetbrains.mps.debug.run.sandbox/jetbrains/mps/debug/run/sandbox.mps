@@ -48,6 +48,13 @@
               <link role="classConcept:3" targetNodeId="4060685206781456017" resolveInfo="C" />
             </node>
           </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6146091894852346195">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression:3" id="6146091894852346197">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6146091894852346198">
+                <link role="variableDeclaration:3" targetNodeId="34597247923202836" resolveInfo="internal" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

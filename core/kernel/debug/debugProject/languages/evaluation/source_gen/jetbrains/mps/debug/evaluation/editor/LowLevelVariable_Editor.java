@@ -8,11 +8,16 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class LowLevelVariable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -24,8 +29,11 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_f5bzsg_a");
     editorCell.addEditorCell(this.createConstant_f5bzsg_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_f5bzsg_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_f5bzsg_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_f5bzsg_d0(editorContext, node));
+    if (renderingCondition_f5bzsg_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_f5bzsg_c0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createConstant_f5bzsg_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_f5bzsg_e0(editorContext, node));
     return editorCell;
   }
 
@@ -37,8 +45,19 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_f5bzsg_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(out of scope)");
     editorCell.setCellId("Constant_f5bzsg_c0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_f5bzsg_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    editorCell.setCellId("Constant_f5bzsg_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -61,7 +80,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_f5bzsg_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_f5bzsg_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("deducedType");
     provider.setNoTargetText("<no deducedType>");
@@ -76,5 +95,9 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean renderingCondition_f5bzsg_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isOutOfScope");
   }
 }

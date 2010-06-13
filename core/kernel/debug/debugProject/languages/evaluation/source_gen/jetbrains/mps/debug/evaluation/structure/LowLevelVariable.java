@@ -11,9 +11,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LowLevelVariable extends BaseVariableDeclaration {
   public static final String concept = "jetbrains.mps.debug.evaluation.structure.LowLevelVariable";
+  public static final String IS_OUT_OF_SCOPE = "isOutOfScope";
 
   public LowLevelVariable(SNode node) {
     super(node);
+  }
+
+  public boolean getIsOutOfScope() {
+    return this.getBooleanProperty(LowLevelVariable.IS_OUT_OF_SCOPE);
+  }
+
+  public void setIsOutOfScope(boolean value) {
+    this.setBooleanProperty(LowLevelVariable.IS_OUT_OF_SCOPE, value);
   }
 
   public Type getDeducedType() {
