@@ -2264,6 +2264,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return true;
       }
     }
+    if (getNodeRangeSelection().isSelectionKeystroke(keyEvent)) {
+      return true;
+    }
     return false;
   }
 
