@@ -36,10 +36,7 @@ public class CopyThisDown_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    if (ListSequence.fromList(CopyThisDown_Action.this.inputNodes).count() == 0) {
-      return false;
-    }
-    return true;
+    return ListSequence.fromList(CopyThisDown_Action.this.inputNodes).count() > 0 && !(CopyThisDown_Action.this.editor.isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

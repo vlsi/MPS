@@ -39,9 +39,16 @@ public class DeleteLine_Action extends GeneratedAction {
     return "ctrl Y";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    return !(DeleteLine_Action.this.editor.isReadOnly());
+  }
+
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "DeleteLine", t);
       this.disable(event.getPresentation());

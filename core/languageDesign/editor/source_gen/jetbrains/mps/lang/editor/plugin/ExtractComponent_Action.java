@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -18,6 +19,7 @@ public class ExtractComponent_Action extends GeneratedAction {
 
   private SNode node;
   private EditorContext editorContext;
+  private EditorComponent editor;
 
   public ExtractComponent_Action() {
     super("Extract Component", "", ICON);
@@ -30,9 +32,16 @@ public class ExtractComponent_Action extends GeneratedAction {
     return "ctrl alt C";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    return !(ExtractComponent_Action.this.editor.isReadOnly());
+  }
+
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "ExtractComponent", t);
       this.disable(event.getPresentation());
@@ -59,6 +68,10 @@ public class ExtractComponent_Action extends GeneratedAction {
     if (this.editorContext == null) {
       return false;
     }
+    this.editor = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.editor == null) {
+      return false;
+    }
     return true;
   }
 
@@ -66,6 +79,7 @@ public class ExtractComponent_Action extends GeneratedAction {
     super.cleanup();
     this.node = null;
     this.editorContext = null;
+    this.editor = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
