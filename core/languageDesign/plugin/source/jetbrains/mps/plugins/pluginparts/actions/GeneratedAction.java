@@ -33,7 +33,7 @@ public abstract class GeneratedAction extends BaseAction {
   }
 
   @Deprecated
-  public void cleanup() {
+  protected void cleanup() {
 
 
   }
