@@ -30,8 +30,8 @@ public class GenerationFilter {
     myGenerationContext = generationContext;
     myProject = project;
     myUnchangedRoots = Collections.emptySet();
-    init();
     myConditionalsUnchanged = false;
+    init();
   }
 
   private void init() {
@@ -104,7 +104,55 @@ public class GenerationFilter {
 
     // closure using saved dependencies graph
     myConditionalsUnchanged = true;
-    Map<String, Set<String>> dep = getDependenciesWithoutOrientation(dependencies, myUnchangedRoots);
+    Map<String, Set<String>> savedDep = getDependenciesWithoutOrientation(dependencies, myUnchangedRoots);
+    closureUsingSavedDependencies(savedDep);
+
+    if(myUnchangedRoots.isEmpty()) {
+      return;
+    }
+
+    // closure using current dependencies
+    ConnectedComponentPartitioner partitioner = new ConnectedComponentPartitioner(rootsList);
+    List<SNode[]> components = partitioner.partition();
+    boolean changed = closureUsingReferences(components, savedDep);
+
+    // repeat
+    while(changed) {
+      if(myUnchangedRoots.isEmpty() && myConditionalsUnchanged == false) {
+        return;
+      }
+      changed = closureUsingSavedDependencies(savedDep);
+      if(changed) {
+        changed = closureUsingReferences(components, savedDep);
+      }
+    }
+  }
+
+  private boolean closureUsingReferences(List<SNode[]> components, Map<String, Set<String>> dep) {
+    boolean result = false;
+    for(SNode[] component : components) {
+      boolean hasUnchanged = false;
+      boolean hasChanged = false;
+      for(SNode n : component) {
+        if(myUnchangedRoots.contains(n)) {
+          hasUnchanged = true;
+        } else {
+          hasChanged = true;
+        }
+      }
+      if(hasUnchanged && hasChanged) {
+        for(SNode n : component) {
+          myUnchangedRoots.remove(n);
+          dep.remove(n.getId());
+          result = true;
+        }
+      }
+    }
+    return result;
+  }
+
+  private boolean closureUsingSavedDependencies(Map<String, Set<String>> dep) {
+    boolean result = false;
     boolean changed = true;
     while(changed) {
       changed = false;
@@ -136,31 +184,9 @@ public class GenerationFilter {
           }
         }
       }
+      result |= changed;
     }
-
-    if(myUnchangedRoots.isEmpty()) {
-      return;
-    }
-
-    // closure using current dependencies
-    ConnectedComponentPartitioner partitioner = new ConnectedComponentPartitioner(rootsList);
-    List<SNode[]> components = partitioner.partition();
-    for(SNode[] component : components) {
-      boolean hasUnchanged = false;
-      boolean hasChanged = false;
-      for(SNode n : component) {
-        if(myUnchangedRoots.contains(n)) {
-          hasUnchanged = true;
-        } else {
-          hasChanged = true;
-        }
-      }
-      if(hasUnchanged && hasChanged) {
-        for(SNode n : component) {
-          myUnchangedRoots.remove(n);
-        }
-      }
-    }
+    return result;
   }
 
   private static Map<String,Set<String>> getDependenciesWithoutOrientation(GenerationDependencies dependencies, Set<SNode> selectedRoots) {
@@ -180,6 +206,10 @@ public class GenerationFilter {
         if(rd.isDependsOnConditionals()) {
           currentDeps.add(CONDITIONALS_ID);
         }
+      }
+      // reversed
+      if(rd.isDependsOnConditionals()) {
+        graph.get(CONDITIONALS_ID).add(id);
       }
       for(String s : rd.getLocal()) {
         Set<String> r = graph.get(s);
