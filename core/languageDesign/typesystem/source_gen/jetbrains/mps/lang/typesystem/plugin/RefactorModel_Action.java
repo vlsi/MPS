@@ -6,6 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -18,6 +19,7 @@ public class RefactorModel_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(RefactorModel_Action.class);
 
   private SModelDescriptor model;
+  private EditorComponent editorComponent;
 
   public RefactorModel_Action() {
     super("Refactor Helgins Model", "", ICON);
@@ -32,7 +34,7 @@ public class RefactorModel_Action extends GeneratedAction {
 
   public boolean isApplicable(AnActionEvent event) {
     LanguageAspect languageAspect = Language.getModelAspect(RefactorModel_Action.this.model);
-    return languageAspect == LanguageAspect.TYPESYSTEM;
+    return languageAspect == LanguageAspect.TYPESYSTEM && !(RefactorModel_Action.this.editorComponent.isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -55,12 +57,17 @@ public class RefactorModel_Action extends GeneratedAction {
     if (this.model == null) {
       return false;
     }
+    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.editorComponent == null) {
+      return false;
+    }
     return true;
   }
 
   protected void cleanup() {
     super.cleanup();
     this.model = null;
+    this.editorComponent = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

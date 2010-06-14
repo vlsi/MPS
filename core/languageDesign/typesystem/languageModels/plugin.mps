@@ -855,13 +855,28 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1206109315368">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1206109318421">
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1206109330249">
-              <link role="enumClass:3" targetNodeId="8.~LanguageAspect" resolveInfo="LanguageAspect" />
-              <link role="enumConstantDeclaration:3" targetNodeId="8.~LanguageAspect.TYPESYSTEM" resolveInfo="TYPESYSTEM" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="8552932674754144826">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="8552932674754155164">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8552932674754150559">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8552932674754150556">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="8552932674754150557" />
+                  <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="8552932674754150558">
+                    <link role="member:23" targetNodeId="8552932674754144825" resolveInfo="editorComponent" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8552932674754155163">
+                  <link role="baseMethodDeclaration:3" targetNodeId="10.~EditorComponent.isReadOnly():boolean" resolveInfo="isReadOnly" />
+                </node>
+              </node>
             </node>
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1206109317356">
-              <link role="variableDeclaration:3" targetNodeId="1206109279884" resolveInfo="languageAspect" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1206109318421">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1206109330249">
+                <link role="enumClass:3" targetNodeId="8.~LanguageAspect" resolveInfo="LanguageAspect" />
+                <link role="enumConstantDeclaration:3" targetNodeId="8.~LanguageAspect.TYPESYSTEM" resolveInfo="TYPESYSTEM" />
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1206109317356">
+                <link role="variableDeclaration:3" targetNodeId="1206109279884" resolveInfo="languageAspect" />
+              </node>
             </node>
           </node>
         </node>
@@ -870,6 +885,10 @@
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1217420647889">
       <property name="name:23" value="model" />
       <link role="key:23" targetNodeId="34.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+    </node>
+    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="8552932674754144825">
+      <property name="name:23" value="editorComponent" />
+      <link role="key:23" targetNodeId="34.~MPSDataKeys.EDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1206184013394">
