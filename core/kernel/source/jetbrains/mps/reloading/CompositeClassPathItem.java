@@ -121,10 +121,11 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
       if (item instanceof JarFileClassPathItem) {
         JarFileClassPathItem jfcp = (JarFileClassPathItem) item;
-        if (alreadyVisited.contains(jfcp.getFile().getAbsolutePath())) {
+        String path = jfcp.getFile().getAbsolutePath();
+        if (alreadyVisited.contains(path)) {
           it.remove();
         } else {
-          alreadyVisited.add(jfcp.getFile().getAbsolutePath());
+          alreadyVisited.add(path);
         }
       }
     }

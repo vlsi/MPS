@@ -52,6 +52,14 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   protected JarFileClassPathItem(IFile file) {
     myIFile = file;
+
+    try {
+      myFile = transformFile(myIFile);
+      myPrefix = "jar:" + myFile.toURL() + "!/";
+      myZipFile = new ZipFile(myFile);
+    } catch (IOException e) {
+      LOG.error(e);
+    }
   }
 
   public IFile getIFile() {
@@ -61,7 +69,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   public File getFile() {
     checkValidity();
-    ensureInitialized();
     return myFile;
   }
 
@@ -93,7 +100,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   public URL getResource(String name) {
     checkValidity();
-    ensureInitialized();
     try {
       if (myZipFile.getEntry(name) == null) return null;
       return new URL(myPrefix + name);
@@ -116,7 +122,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   public long getClassesTimestamp(String namespace) {
     checkValidity();
-    ensureInitialized();
     long timestamp = 0;
     for (String cls : getAvailableClasses(namespace)) {
       timestamp = Math.max(timestamp, getClassTimestamp(namespace.equals("") ? cls : namespace + "." + cls));
@@ -147,16 +152,8 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   private void ensureInitialized(){
     if (myIsInitialized) return;
-
     myIsInitialized = true;
-    try {
-      myFile = transformFile(myIFile);
-      myPrefix = "jar:" + myFile.toURL() + "!/";
-      myZipFile = new ZipFile(myFile);
-      buildCaches();
-    } catch (IOException e) {
-      LOG.error(e);
-    }
+    buildCaches();
   }
 
   private long getClassTimestamp(String name) {
