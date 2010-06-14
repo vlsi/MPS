@@ -17,7 +17,6 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MissingDependenciesFixer;
 
 public class ModelProperties extends BaseBean {
   private List<SModelReference> myImportedModels;
@@ -84,7 +83,6 @@ public class ModelProperties extends BaseBean {
         myModelDescriptor.save();
       }
     });
-    addMissingDependenciesToModule();
   }
 
   private void addNewDevKits() {
@@ -167,9 +165,5 @@ public class ModelProperties extends BaseBean {
     for (SModelReference modelReference : modelsInModel) {
       myModelDescriptor.getSModel().deleteImportedModel(modelReference);
     }
-  }
-
-  private void addMissingDependenciesToModule() {
-    new MissingDependenciesFixer(myContext, myModelDescriptor).fix();
   }
 }

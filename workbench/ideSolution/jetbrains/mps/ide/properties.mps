@@ -12151,11 +12151,6 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5923576889075043129">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="1200564340082201777">
-            <link role="baseMethodDeclaration:3" targetNodeId="5923576889075043536" resolveInfo="addMissingDependenciesToModule" />
-          </node>
-        </node>
       </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5923576889075043133">
@@ -13056,31 +13051,6 @@
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5923576889075043536">
-      <property name="name:3" value="addMissingDependenciesToModule" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="5923576889075043537" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5923576889075043538" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5923576889075043539">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5923576889075043540">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5923576889075043541">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5923576889075043542">
-              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5923576889075043543">
-                <link role="baseMethodDeclaration:3" targetNodeId="31.~MissingDependenciesFixer.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,jetbrains.mps.smodel.SModelDescriptor)" resolveInfo="MissingDependenciesFixer" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148205055">
-                  <link role="variableDeclaration:3" targetNodeId="5923576889075042908" resolveInfo="myContext" />
-                </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204308">
-                  <link role="variableDeclaration:3" targetNodeId="5923576889075042905" resolveInfo="myModelDescriptor" />
-                </node>
-              </node>
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075043550">
-              <link role="baseMethodDeclaration:3" targetNodeId="31.~MissingDependenciesFixer.fix():void" resolveInfo="fix" />
             </node>
           </node>
         </node>
