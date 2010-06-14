@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -26,6 +27,7 @@ public class InlineMethod_Action extends GeneratedAction {
   private Frame frame;
   private Project project;
   private IOperationContext operationContext;
+  private EditorComponent editorComponent;
 
   public InlineMethod_Action() {
     super("Inline Method", "", ICON);
@@ -45,7 +47,7 @@ public class InlineMethod_Action extends GeneratedAction {
         b.value = MethodCallAdapter.isMethodCall(InlineMethod_Action.this.node) || SNodeOperations.isInstanceOf(InlineMethod_Action.this.node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       }
     });
-    return b.value;
+    return b.value && !(InlineMethod_Action.this.editorComponent.isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -85,6 +87,10 @@ public class InlineMethod_Action extends GeneratedAction {
     if (this.operationContext == null) {
       return false;
     }
+    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.editorComponent == null) {
+      return false;
+    }
     return true;
   }
 
@@ -94,6 +100,7 @@ public class InlineMethod_Action extends GeneratedAction {
     this.frame = null;
     this.project = null;
     this.operationContext = null;
+    this.editorComponent = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

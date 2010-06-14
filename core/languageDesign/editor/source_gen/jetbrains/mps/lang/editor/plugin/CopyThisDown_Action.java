@@ -21,7 +21,7 @@ public class CopyThisDown_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(CopyThisDown_Action.class);
 
-  private EditorComponent editor;
+  private EditorComponent editorComponent;
   private List<SNode> inputNodes;
 
   public CopyThisDown_Action() {
@@ -36,7 +36,7 @@ public class CopyThisDown_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return ListSequence.fromList(CopyThisDown_Action.this.inputNodes).count() > 0 && !(CopyThisDown_Action.this.editor.isReadOnly());
+    return ListSequence.fromList(CopyThisDown_Action.this.inputNodes).count() > 0 && !(CopyThisDown_Action.this.editorComponent.isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -69,8 +69,8 @@ public class CopyThisDown_Action extends GeneratedAction {
     if (this.inputNodes == null) {
       return false;
     }
-    this.editor = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editor == null) {
+    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.editorComponent == null) {
       return false;
     }
     return true;
@@ -79,7 +79,7 @@ public class CopyThisDown_Action extends GeneratedAction {
   protected void cleanup() {
     super.cleanup();
     this.inputNodes = null;
-    this.editor = null;
+    this.editorComponent = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
@@ -96,8 +96,8 @@ public class CopyThisDown_Action extends GeneratedAction {
           if (!(LinkDeclaration_Behavior.call_isSingular_1213877254557(link))) {
             SNode copy = SNodeOperations.copyNode(nodeToCopy);
             parent.insertChild(nodeToCopy, role, copy);
-            CopyThisDown_Action.this.editor.getEditorContext().selectWRTFocusPolicy(copy);
-            CopyThisDown_Action.this.editor.selectNode(copy);
+            CopyThisDown_Action.this.editorComponent.getEditorContext().selectWRTFocusPolicy(copy);
+            CopyThisDown_Action.this.editorComponent.selectNode(copy);
             return;
           }
           nodeToCopy = parent;
@@ -114,7 +114,7 @@ public class CopyThisDown_Action extends GeneratedAction {
         for (SNode node : ListSequence.fromList(CopyThisDown_Action.this.inputNodes).reversedList()) {
           parent.insertChild(lastNode, role, SNodeOperations.copyNode(node));
         }
-        CopyThisDown_Action.this.editor.getEditorContext().selectRange(firstNode, lastNode);
+        CopyThisDown_Action.this.editorComponent.getEditorContext().selectRange(firstNode, lastNode);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CopyThisDown", t);

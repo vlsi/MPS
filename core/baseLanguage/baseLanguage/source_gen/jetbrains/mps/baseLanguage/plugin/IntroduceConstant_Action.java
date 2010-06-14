@@ -39,7 +39,7 @@ public class IntroduceConstant_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return IntroduceConstantRefactoring.isApplicable(IntroduceConstant_Action.this.node);
+    return IntroduceConstantRefactoring.isApplicable(IntroduceConstant_Action.this.node) && !(IntroduceConstant_Action.this.component.isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

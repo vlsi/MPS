@@ -39,7 +39,7 @@ public class IntroduceField_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return IntroduceFieldRefactoring.isApplicable(IntroduceField_Action.this.node);
+    return IntroduceFieldRefactoring.isApplicable(IntroduceField_Action.this.node) && !(IntroduceField_Action.this.component.isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

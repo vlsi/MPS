@@ -421,7 +421,7 @@
       <property name="keycode:23" value="VK_D" />
     </node>
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1217420648498">
-      <property name="name:23" value="editor" />
+      <property name="name:23" value="editorComponent" />
       <link role="key:23" targetNodeId="13.~MPSDataKeys.EDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
     </node>
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration:23" id="1207226167041">
@@ -620,7 +620,7 @@
     <property name="name:23" value="DeleteLine" />
     <property name="caption:23" value="Delete Line" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="2969742747086834033">
-      <property name="name:23" value="editor" />
+      <property name="name:23" value="editorComponent" />
       <link role="key:23" targetNodeId="13.~MPSDataKeys.EDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
     </node>
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="2969742747086835691">
@@ -1242,7 +1242,7 @@
       <link role="key:23" targetNodeId="13.~MPSDataKeys.EDITOR_CONTEXT" resolveInfo="EDITOR_CONTEXT" />
     </node>
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="3993568175834622690">
-      <property name="name:23" value="editor" />
+      <property name="name:23" value="editorComponent" />
       <link role="key:23" targetNodeId="13.~MPSDataKeys.EDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
     </node>
     <node role="updateBlock:23" type="jetbrains.mps.lang.plugin.structure.IsApplicableBlock:23" id="3993568175834620250">

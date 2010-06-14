@@ -8,6 +8,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -22,6 +23,7 @@ public class InlineLocalVariable_Action extends GeneratedAction {
   private EditorContext editorContext;
   private SNode node;
   private Frame frame;
+  private EditorComponent editorComponent;
 
   public InlineLocalVariable_Action() {
     super("Inline Local Variable", "", ICON);
@@ -41,7 +43,7 @@ public class InlineLocalVariable_Action extends GeneratedAction {
         result.value = InlineVariableRefactoring.isApplicable(InlineLocalVariable_Action.this.node);
       }
     });
-    return result.value;
+    return result.value && !(InlineLocalVariable_Action.this.editorComponent.isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -77,6 +79,10 @@ public class InlineLocalVariable_Action extends GeneratedAction {
     if (this.frame == null) {
       return false;
     }
+    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.editorComponent == null) {
+      return false;
+    }
     return true;
   }
 
@@ -85,6 +91,7 @@ public class InlineLocalVariable_Action extends GeneratedAction {
     this.node = null;
     this.editorContext = null;
     this.frame = null;
+    this.editorComponent = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

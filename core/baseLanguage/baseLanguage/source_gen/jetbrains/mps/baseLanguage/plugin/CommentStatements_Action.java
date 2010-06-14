@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -20,6 +21,7 @@ public class CommentStatements_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(CommentStatements_Action.class);
 
   private List<SNode> nodes;
+  private EditorComponent editorComponent;
 
   public CommentStatements_Action() {
     super("Comment Statements", "", ICON);
@@ -33,7 +35,7 @@ public class CommentStatements_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return (SNodeOperations.getAncestor(ListSequence.fromList(CommentStatements_Action.this.nodes).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) == null);
+    return (SNodeOperations.getAncestor(ListSequence.fromList(CommentStatements_Action.this.nodes).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) == null) && !(CommentStatements_Action.this.editorComponent.isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -72,12 +74,17 @@ public class CommentStatements_Action extends GeneratedAction {
     if (this.nodes == null) {
       return false;
     }
+    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.editorComponent == null) {
+      return false;
+    }
     return true;
   }
 
   protected void cleanup() {
     super.cleanup();
     this.nodes = null;
+    this.editorComponent = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

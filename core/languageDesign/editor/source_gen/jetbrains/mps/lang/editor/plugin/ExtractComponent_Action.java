@@ -19,7 +19,7 @@ public class ExtractComponent_Action extends GeneratedAction {
 
   private SNode node;
   private EditorContext editorContext;
-  private EditorComponent editor;
+  private EditorComponent editorComponent;
 
   public ExtractComponent_Action() {
     super("Extract Component", "", ICON);
@@ -33,7 +33,7 @@ public class ExtractComponent_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return !(ExtractComponent_Action.this.editor.isReadOnly());
+    return !(ExtractComponent_Action.this.editorComponent.isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -68,8 +68,8 @@ public class ExtractComponent_Action extends GeneratedAction {
     if (this.editorContext == null) {
       return false;
     }
-    this.editor = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editor == null) {
+    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.editorComponent == null) {
       return false;
     }
     return true;
@@ -79,7 +79,7 @@ public class ExtractComponent_Action extends GeneratedAction {
     super.cleanup();
     this.node = null;
     this.editorContext = null;
-    this.editor = null;
+    this.editorComponent = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

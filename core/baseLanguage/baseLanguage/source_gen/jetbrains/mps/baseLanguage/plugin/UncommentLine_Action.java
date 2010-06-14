@@ -6,6 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -18,6 +19,7 @@ public class UncommentLine_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(UncommentLine_Action.class);
 
   private SNode selectedNode;
+  private EditorComponent editorComponent;
 
   public UncommentLine_Action() {
     super("Uncomment Line", "", ICON);
@@ -32,7 +34,7 @@ public class UncommentLine_Action extends GeneratedAction {
 
   public boolean isApplicable(AnActionEvent event) {
     SNode comment = UncommentLine_Action.this.getCommentStatement();
-    return comment != null && ListSequence.fromList(SLinkOperations.getTargets(comment, "commentPart", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(comment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+    return comment != null && ListSequence.fromList(SLinkOperations.getTargets(comment, "commentPart", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(comment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart") && !(UncommentLine_Action.this.editorComponent.isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -60,12 +62,17 @@ public class UncommentLine_Action extends GeneratedAction {
     if (this.selectedNode == null) {
       return false;
     }
+    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.editorComponent == null) {
+      return false;
+    }
     return true;
   }
 
   protected void cleanup() {
     super.cleanup();
     this.selectedNode = null;
+    this.editorComponent = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

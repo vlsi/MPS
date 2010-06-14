@@ -39,7 +39,7 @@ public class IntroduceVariable_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return IntroduceLocalVariableRefactoring.isApplicable(IntroduceVariable_Action.this.node);
+    return IntroduceLocalVariableRefactoring.isApplicable(IntroduceVariable_Action.this.node) && !(IntroduceVariable_Action.this.component.isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

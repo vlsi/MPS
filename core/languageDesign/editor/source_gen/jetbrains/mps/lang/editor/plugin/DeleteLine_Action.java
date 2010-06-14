@@ -25,7 +25,7 @@ public class DeleteLine_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(DeleteLine_Action.class);
 
-  private EditorComponent editor;
+  private EditorComponent editorComponent;
   private EditorCell currentCell;
 
   public DeleteLine_Action() {
@@ -40,7 +40,7 @@ public class DeleteLine_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return !(DeleteLine_Action.this.editor.isReadOnly());
+    return !(DeleteLine_Action.this.editorComponent.isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -59,8 +59,8 @@ public class DeleteLine_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.editor = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editor == null) {
+    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.editorComponent == null) {
       return false;
     }
     this.currentCell = event.getData(MPSDataKeys.EDITOR_CELL);
@@ -72,7 +72,7 @@ public class DeleteLine_Action extends GeneratedAction {
 
   protected void cleanup() {
     super.cleanup();
-    this.editor = null;
+    this.editorComponent = null;
     this.currentCell = null;
   }
 

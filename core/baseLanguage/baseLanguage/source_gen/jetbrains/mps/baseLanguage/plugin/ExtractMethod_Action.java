@@ -9,6 +9,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
@@ -28,6 +29,7 @@ public class ExtractMethod_Action extends GeneratedAction {
   private List<SNode> nodes;
   private Frame frame;
   private EditorContext context;
+  private EditorComponent editorComponent;
 
   public ExtractMethod_Action() {
     super("Extract Method", "", ICON);
@@ -41,7 +43,7 @@ public class ExtractMethod_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return ExtractMethodFactory.isRefactoringAvailable(ExtractMethod_Action.this.nodes);
+    return ExtractMethodFactory.isRefactoringAvailable(ExtractMethod_Action.this.nodes) && !(ExtractMethod_Action.this.editorComponent.isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -82,6 +84,10 @@ public class ExtractMethod_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
+    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.editorComponent == null) {
+      return false;
+    }
     return true;
   }
 
@@ -90,6 +96,7 @@ public class ExtractMethod_Action extends GeneratedAction {
     this.nodes = null;
     this.frame = null;
     this.context = null;
+    this.editorComponent = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {

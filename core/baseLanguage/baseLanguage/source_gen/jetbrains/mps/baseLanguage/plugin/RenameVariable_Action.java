@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -22,6 +23,7 @@ public class RenameVariable_Action extends GeneratedAction {
 
   private SNode node;
   private Frame frame;
+  private EditorComponent editorComponent;
 
   public RenameVariable_Action() {
     super("Rename Variable", "", ICON);
@@ -34,9 +36,16 @@ public class RenameVariable_Action extends GeneratedAction {
     return "shift F6";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    return !(RenameVariable_Action.this.editorComponent.isReadOnly());
+  }
+
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "RenameVariable", t);
       this.disable(event.getPresentation());
@@ -63,6 +72,10 @@ public class RenameVariable_Action extends GeneratedAction {
     if (this.frame == null) {
       return false;
     }
+    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.editorComponent == null) {
+      return false;
+    }
     return true;
   }
 
@@ -70,6 +83,7 @@ public class RenameVariable_Action extends GeneratedAction {
     super.cleanup();
     this.node = null;
     this.frame = null;
+    this.editorComponent = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
