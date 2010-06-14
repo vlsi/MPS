@@ -192,8 +192,9 @@ public class FileGenerationManager implements ApplicationComponent {
     for (SNode outputNode : status.getOutputModel().getRoots()) {
       try {
         TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
-        fillDebugInfo(info, outputNode, result);
-        fillDependencies(dependRoot, outputNode, result);
+        String fileName = outputNode.getName() + "." + TextGenManager.instance().getExtension(outputNode);
+        fillDebugInfo(info, outputNode, fileName, result);
+        fillDependencies(dependRoot, outputNode, fileName, result);
 
         hasErrors |= result.hasErrors();
         outputNodeContents.put(outputNode, result.getText());
@@ -204,14 +205,13 @@ public class FileGenerationManager implements ApplicationComponent {
     return !hasErrors;
   }
 
-  private void fillDebugInfo(DebugInfo info, SNode outputNode, TextGenerationResult result) {
+  private void fillDebugInfo(DebugInfo info, SNode outputNode, String fileName, TextGenerationResult result) {
     Map<SNode, PositionInfo> positions = result.getPositions();
     Map<SNode, ScopePositionInfo> scopePositions = result.getScopePositions();
     Map<SNode, UnitPositionInfo> unitPositions = result.getUnitPositions();
     if (positions == null && scopePositions == null && unitPositions == null) {
       return;
     }
-    String fileName = outputNode.getName() + "." + TextGenManager.instance().getExtension(outputNode);
     if (positions != null) {
       for (SNode out : positions.keySet()) {
         SNode input = out;
@@ -285,9 +285,9 @@ public class FileGenerationManager implements ApplicationComponent {
     return input;
   }
 
-  private void fillDependencies(ModelDependencies root, SNode outputNode, TextGenerationResult result) {
+  private void fillDependencies(ModelDependencies root, SNode outputNode, String fileName, TextGenerationResult result) {
     if (result.hasDependencies()) {
-      root.addDependencies(new RootDependencies(NameUtil.nodeFQName(outputNode), result.getDependencies(TextGenManager.DEPENDENCY),
+      root.addDependencies(new RootDependencies(NameUtil.nodeFQName(outputNode), fileName, result.getDependencies(TextGenManager.DEPENDENCY),
         result.getDependencies(TextGenManager.EXTENDS)));
     }
   }

@@ -20,19 +20,19 @@ public class ModelDependencies {
   }
 
   public void addDependencies(RootDependencies newDependency) {
-    MapSequence.fromMap(myDependencies).put(newDependency.getClassName(), newDependency);
+    MapSequence.fromMap(myDependencies).put(newDependency.getFileName(), newDependency);
   }
 
   public Iterable<RootDependencies> getDependencies() {
     return MapSequence.fromMap(myDependencies).values();
   }
 
-  public RootDependencies getDependency(String className) {
-    return MapSequence.fromMap(myDependencies).get(className);
+  public RootDependencies getDependency(String fileName) {
+    return MapSequence.fromMap(myDependencies).get(fileName);
   }
 
   public void replaceRoot(RootDependencies rootDependencies) {
-    MapSequence.fromMap(myDependencies).put(rootDependencies.getClassName(), rootDependencies);
+    MapSequence.fromMap(myDependencies).put(rootDependencies.getFileName(), rootDependencies);
   }
 
   public Element toXml() {

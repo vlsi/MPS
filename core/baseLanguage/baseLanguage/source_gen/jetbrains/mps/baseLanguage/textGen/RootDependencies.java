@@ -6,6 +6,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jdom.Element;
+import org.jdom.Attribute;
 import jetbrains.mps.util.InternUtil;
 import java.util.Set;
 import java.util.HashSet;
@@ -13,6 +14,7 @@ import java.util.Collection;
 
 public class RootDependencies implements Comparable<RootDependencies> {
   private static final String CLASS_NAME = "className";
+  private static final String FILE_NAME = "file";
   private static final String DEPEND_CLASS = "classNode";
   private static final String DEPEND_CLASS_NAME = "dependClassName";
   private static final String EXTENDS_CLASS_NAME = "extendsClassName";
@@ -20,9 +22,11 @@ public class RootDependencies implements Comparable<RootDependencies> {
   private List<String> myDependNodes = ListSequence.fromList(new ArrayList<String>(0));
   private List<String> myExtendsNodes = ListSequence.fromList(new ArrayList<String>(0));
   private String myClassName;
+  private String myFileName;
 
-  public RootDependencies(String nodeName, List<String> dependNodes, List<String> extendsNodes) {
+  public RootDependencies(String nodeName, String fileName, List<String> dependNodes, List<String> extendsNodes) {
     this.myClassName = nodeName;
+    this.myFileName = fileName;
     if (dependNodes != null) {
       ListSequence.fromList(this.myDependNodes).addSequence(ListSequence.fromList(dependNodes));
     }
@@ -32,7 +36,11 @@ public class RootDependencies implements Comparable<RootDependencies> {
   }
 
   public RootDependencies(Element element) {
-    this.myClassName = element.getAttribute(CLASS_NAME).getValue();
+    myClassName = element.getAttribute(CLASS_NAME).getValue();
+    Attribute attr = element.getAttribute(FILE_NAME);
+    if (attr != null) {
+      myFileName = attr.getValue();
+    }
     for (Element e : ((List<Element>) element.getChildren(DEPEND_CLASS))) {
       if (e == null) {
         continue;
@@ -47,7 +55,10 @@ public class RootDependencies implements Comparable<RootDependencies> {
   }
 
   public void saveTo(Element element) {
-    element.setAttribute(CLASS_NAME, this.myClassName);
+    element.setAttribute(CLASS_NAME, myClassName);
+    if (myClassName != null) {
+      element.setAttribute(FILE_NAME, myFileName);
+    }
     for (String dependNodeName : this.myDependNodes) {
       Element e = new Element(DEPEND_CLASS);
       e.setAttribute(DEPEND_CLASS_NAME, dependNodeName);
@@ -69,7 +80,14 @@ public class RootDependencies implements Comparable<RootDependencies> {
   }
 
   public String getClassName() {
-    return this.myClassName;
+    return myClassName;
+  }
+
+  public String getFileName() {
+    return (myFileName == null ?
+      myClassName :
+      myFileName
+    );
   }
 
   public int compareTo(RootDependencies p0) {
