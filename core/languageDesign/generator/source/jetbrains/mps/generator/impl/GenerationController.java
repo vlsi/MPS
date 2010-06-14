@@ -68,7 +68,8 @@ public class GenerationController {
                               IGenerationTracer generationTracer,
                               ProgressIndicator progress,
                               IMessageHandler messages,
-                              boolean saveTransientModels) {
+                              boolean saveTransientModels,
+                              boolean rebuildAll) {
 
     myNotifierHelper = notifierHelper;
     myInputModels = _inputModels;
@@ -76,7 +77,7 @@ public class GenerationController {
     myProgress = progress;
     myLogger = new GeneratorLoggerAdapter(messages, settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings());
     myGenerationContext = new GenerationProcessContext(
-      saveTransientModels, settings.isParallelGenerator(), settings.isStrictMode(), settings.isGenerateDependencies(),
+      saveTransientModels, settings.isParallelGenerator(), settings.isStrictMode(), rebuildAll, settings.isGenerateDependencies(),
       !settings.isShowWarnings() && !settings.isShowInfo(),
       progress, generationTracer, settings.getNumberOfParallelThreads(), settings.getPerformanceTracingLevel());
   }
@@ -205,6 +206,9 @@ public class GenerationController {
       progressHelper.startLeafTask(taskName);
       if (myLogger.needsInfo()) {
         myLogger.info("[model " + inputModel.getSModelFqName() +
+          (myGenerationContext.isRebuildAll()
+            ? ", rebuilding" 
+            : "" ) +
           (myGenerationContext.isGenerateInParallel()
             ? ", using " + myGenerationContext.getNumberOfThreads() + " threads]"
             : "]"));

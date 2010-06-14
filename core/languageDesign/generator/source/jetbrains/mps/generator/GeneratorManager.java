@@ -97,7 +97,8 @@ public class GeneratorManager {
 
       generatorManager.generateModelsWithProgressWindow(
         modelsWithContext,
-        generationHandler
+        generationHandler,
+        true /* rebuild all */
       );
     } catch (Throwable t) {
       LOG.error(t);
@@ -119,7 +120,8 @@ public class GeneratorManager {
 
     return generateModelsWithProgressWindow(
       inputModelPairs,
-      generationHandler
+      generationHandler,
+      true /* rebuild all */
     );
   }
 
@@ -127,7 +129,8 @@ public class GeneratorManager {
    * @return false if canceled
    */
   private boolean generateModelsWithProgressWindow(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
-                                                   final IGenerationHandler generationHandler
+                                                   final IGenerationHandler generationHandler,
+                                                   final boolean rebuildAll
   ) {
     if (inputModels.isEmpty()) {
       return true;
@@ -217,7 +220,7 @@ public class GeneratorManager {
     final boolean[] result = new boolean[]{false};
     ProgressManager.getInstance().run(new Modal(invocationContext.getProject(), "Generation", true) {
       public void run(@NotNull ProgressIndicator progress) {
-        result[0] = generateModels(inputModels, generationHandler, progress, messages, saveTransientModels);
+        result[0] = generateModels(inputModels, generationHandler, progress, messages, saveTransientModels, rebuildAll);
       }
     });
     return result[0];
@@ -263,7 +266,20 @@ public class GeneratorManager {
                                 final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages) {
-    return generateModels(inputModels, invocationContext, generationHandler, progress, messages, false);
+    return generateModels(inputModels, invocationContext, generationHandler, progress, messages, false, true);
+  }
+
+  /**
+   * @return false if canceled
+   */
+  @Deprecated
+  public boolean generateModels(final List<SModelDescriptor> inputModels,
+                                final IOperationContext invocationContext,
+                                final IGenerationHandler generationHandler,
+                                final ProgressIndicator progress,
+                                final IMessageHandler messages,
+                                boolean saveTransientModels) {
+    return generateModels(inputModels, invocationContext, generationHandler, progress, messages, saveTransientModels, true);
   }
 
   /**
@@ -274,7 +290,8 @@ public class GeneratorManager {
                                 final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages,
-                                boolean saveTransientModels) {
+                                boolean saveTransientModels,
+                                boolean rebuildAll) {
     List<Pair<SModelDescriptor, IOperationContext>> inputModelPairs = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
     for (SModelDescriptor model : inputModels) {
       inputModelPairs.add(new Pair<SModelDescriptor, IOperationContext>(model, invocationContext));
@@ -284,7 +301,17 @@ public class GeneratorManager {
       generationHandler,
       progress,
       messages,
-      saveTransientModels);
+      saveTransientModels,
+      rebuildAll);
+  }
+
+  @Deprecated
+  public boolean generateModels(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
+                                final IGenerationHandler generationHandler,
+                                final ProgressIndicator progress,
+                                final IMessageHandler messages,
+                                final boolean saveTransientModels) {
+    return generateModels(inputModels, generationHandler, progress, messages, saveTransientModels, true);
   }
 
   /**
@@ -294,7 +321,8 @@ public class GeneratorManager {
                                 final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages,
-                                final boolean saveTransientModels
+                                final boolean saveTransientModels,
+                                final boolean rebuildAll
   ) {
     final boolean[] result = new boolean[1];
     ModelAccess.instance().runWriteAction(new Runnable() {
@@ -311,7 +339,7 @@ public class GeneratorManager {
         tracer.startTracing();
 
         fireBeforeGeneration(inputModels);
-        GenerationController gc = new GenerationController(new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, tracer, progress, messages, saveTransientModels);
+        GenerationController gc = new GenerationController(new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, tracer, progress, messages, saveTransientModels, rebuildAll);
         result[0] = gc.generate();
         tracer.finishTracing();
         fireAfterGeneration(inputModels);

@@ -12,24 +12,26 @@ public class GenerationProcessContext {
 
   public static /*final*/ boolean USE_PARALLEL_POOL = true;
 
-  boolean mySaveTransientModels;
-  boolean myStrictMode;
-  private boolean myGenerateDependencies;
-  boolean myShowErrorsOnly;
-  boolean myGenerateInParallel;
-  int myNumberOfThreads;
-  int myTracingMode;
+  private final boolean mySaveTransientModels;
+  private final boolean myStrictMode;
+  private final boolean myRebuildAll;
+  private final boolean myGenerateDependencies;
+  private final boolean myShowErrorsOnly;
+  private final boolean myGenerateInParallel;
+  private final int myNumberOfThreads;
+  private final int myTracingMode;
 
   ProgressIndicator myProgressIndicator;
   IGenerationTracer myGenerationTracer;
   IGenerationTaskPool myParallelTaskPool;
 
-  public GenerationProcessContext(boolean saveTransientModels, boolean generateInParallel, boolean strictMode,
+  public GenerationProcessContext(boolean saveTransientModels, boolean generateInParallel, boolean strictMode, boolean rebuildAll,
                                   boolean generateDependencies, boolean showErrorsOnly, ProgressIndicator progressIndicator,
                                   IGenerationTracer generationTracer, int numberOfThreads, int tracingMode) {
     mySaveTransientModels = saveTransientModels;
     myGenerateInParallel = generateInParallel;
     myStrictMode = strictMode;
+    myRebuildAll = rebuildAll;
     myGenerateDependencies = generateDependencies;
     myShowErrorsOnly = showErrorsOnly;
     myGenerationTracer = generationTracer;
@@ -48,6 +50,10 @@ public class GenerationProcessContext {
 
   public boolean isStrictMode() {
     return myStrictMode;
+  }
+
+  public boolean isRebuildAll() {
+    return myRebuildAll;
   }
 
   public boolean isShowErrorsOnly() {

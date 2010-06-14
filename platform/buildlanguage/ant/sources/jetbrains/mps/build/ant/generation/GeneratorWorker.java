@@ -230,7 +230,7 @@ public class GeneratorWorker extends MpsWorker {
           modelsToContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
         }
       }
-      gm.generateModels(modelsToContext, generationHandler, new EmptyProgressIndicator(), messageHandler, false);
+      gm.generateModels(modelsToContext, generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);
     }
 
     @Override

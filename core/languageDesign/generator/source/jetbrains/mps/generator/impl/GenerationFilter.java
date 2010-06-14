@@ -35,7 +35,7 @@ public class GenerationFilter {
   }
 
   private void init() {
-    if(!myGenerationContext.isGenerateDependencies()) {
+    if(!myGenerationContext.isGenerateDependencies() || myGenerationContext.isRebuildAll()) {
       return;
     }
 

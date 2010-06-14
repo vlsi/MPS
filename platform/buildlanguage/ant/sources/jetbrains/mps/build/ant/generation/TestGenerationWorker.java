@@ -516,7 +516,8 @@ public class TestGenerationWorker extends GeneratorWorker {
         generationHandler,
         new EmptyProgressIndicator(),
         messageHandler,
-        isInvokeTestsSet());
+        isInvokeTestsSet(),
+        true);
     }
 
     private List<File> classPathItemToFiles(IClassPathItem cp) {
