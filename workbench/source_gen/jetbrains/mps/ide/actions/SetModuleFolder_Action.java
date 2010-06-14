@@ -7,12 +7,11 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import javax.swing.JOptionPane;
@@ -22,9 +21,9 @@ public class SetModuleFolder_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(SetModuleFolder_Action.class);
 
   private Frame frame;
-  private IOperationContext context;
   private Project ideaProject;
   private MPSProject project;
+  private IModule module;
 
   public SetModuleFolder_Action() {
     super("Set Folder", "", ICON);
@@ -38,8 +37,7 @@ public class SetModuleFolder_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    IModule module = SetModuleFolder_Action.this.context.getModule();
-    return SetModuleFolder_Action.this.project.isProjectModule(module);
+    return SetModuleFolder_Action.this.project.isProjectModule(SetModuleFolder_Action.this.module);
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -64,10 +62,6 @@ public class SetModuleFolder_Action extends GeneratedAction {
     if (this.frame == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
-      return false;
-    }
     this.ideaProject = event.getData(MPSDataKeys.PROJECT);
     if (this.ideaProject == null) {
       return false;
@@ -76,22 +70,25 @@ public class SetModuleFolder_Action extends GeneratedAction {
     if (this.project == null) {
       return false;
     }
+    this.module = event.getData(MPSDataKeys.MODULE);
+    if (this.module == null) {
+      return false;
+    }
     return true;
   }
 
   protected void cleanup() {
     super.cleanup();
     this.frame = null;
-    this.context = null;
     this.ideaProject = null;
     this.project = null;
+    this.module = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ProjectPane pane = ProjectPane.getInstance(SetModuleFolder_Action.this.ideaProject);
-      IModule module = SetModuleFolder_Action.this.context.getModule();
-      String oldFolder = SetModuleFolder_Action.this.project.getFolderFor(module);
+      String oldFolder = SetModuleFolder_Action.this.project.getFolderFor(SetModuleFolder_Action.this.module);
       String newFolder = JOptionPane.showInputDialog(SetModuleFolder_Action.this.frame, "Enter new folder", oldFolder);
       if (newFolder != null) {
         if (newFolder.equals("")) {
