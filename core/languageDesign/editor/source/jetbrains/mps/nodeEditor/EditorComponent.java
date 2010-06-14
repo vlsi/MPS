@@ -3133,7 +3133,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public boolean isCutEnabled(DataContext dataContext) {
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
-          if (isDisposed() || isInvalid() || getSelectedCell() == null) {
+          if (isDisposed() || isInvalid() || getSelectedCell() == null || isReadOnly()) {
             return false;
           }
           return getSelectedCell().canExecuteAction(CellActionType.CUT);
@@ -3187,7 +3187,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public boolean isPastePossible(DataContext dataContext) {
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
-          if (isDisposed() || isInvalid() || getSelectedCell() == null || getEditorContext().getModel().isNotEditable()) {
+          if (isDisposed() || isInvalid() || getSelectedCell() == null || isReadOnly()) {
             return false;
           }
           return getSelectedCell().canExecuteAction(CellActionType.PASTE);
