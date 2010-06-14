@@ -59,7 +59,8 @@ public class RMIHandler {
         String client = getClientHost();
         String localhost = InetAddress.getLocalHost().getHostAddress();
 
-        if (client.equals(localhost)) return;
+        boolean equals = client == null ? localhost == null : client.equals(localhost);
+        if (equals) return;
 
         System.out.println("localhost is " + localhost);
         System.out.println("client is " + client);
