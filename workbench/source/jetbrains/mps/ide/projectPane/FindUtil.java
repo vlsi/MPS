@@ -31,9 +31,12 @@ public class FindUtil {
     }
 
     //accessories models in languages
-    for (Language l : project.getProjectLanguages()) {
-      if (l.isAccessoryModel(model.getSModelReference())) return l;
-    }
+    /*
+      //with this enabled, alt-f1 does not work in case node is in non-owned accessory model to a project language
+      for (Language l : project.getProjectLanguages()) {
+        if (l.isAccessoryModel(model.getSModelReference())) return l;
+      }
+    */
 
     //runtime models in languages
     for (Language l : project.getProjectLanguages()) {
