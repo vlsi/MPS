@@ -367,6 +367,11 @@ public abstract class AbstractSearchPanel extends JPanel {
         myText);
     }
 
+    @Override
+    public void update(AnActionEvent e) {
+      e.getPresentation().setEnabled(!myText.completionIsVisible() && myText.getText().length() > 0);
+    }
+
     public void actionPerformed(final AnActionEvent e) {
       goToPrevious();
     }
@@ -388,6 +393,11 @@ public abstract class AbstractSearchPanel extends JPanel {
       registerCustomShortcutSet(
         new CustomShortcutSet(shortcuts.toArray(new Shortcut[shortcuts.size()])),
         myText);
+    }
+
+    @Override
+    public void update(AnActionEvent e) {
+      e.getPresentation().setEnabled(!myText.completionIsVisible() && myText.getText().length() > 0);
     }
 
     public void actionPerformed(final AnActionEvent e) {
