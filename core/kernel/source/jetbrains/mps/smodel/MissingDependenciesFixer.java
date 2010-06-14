@@ -54,11 +54,10 @@ public class MissingDependenciesFixer {
         for (SModelReference modelImport : myModelDescriptor.getSModel().getImportedModelUIDs()) {
           if (moduleScope[0].getModelDescriptor(modelImport) == null) {
             SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(modelImport);
-            if (sm != null) {
-              IModule anotherModule = chooseModule(sm, new ArrayList<IModule>(sm.getModules()));
-              if (anotherModule != null && anotherModule != module[0]) {
-                newImports.add(anotherModule);
-              }
+            if (sm == null) continue;
+            IModule anotherModule = chooseModule(sm, new ArrayList<IModule>(sm.getModules()));
+            if (anotherModule != null && anotherModule != module[0]) {
+              newImports.add(anotherModule);
             }
           }
         }
@@ -108,13 +107,8 @@ public class MissingDependenciesFixer {
   }
 
   protected IModule chooseModule(SModelDescriptor sm, List<IModule> modules) {
-    if (modules.isEmpty()) {
-      return null;
-    }
-
-    if (modules.size() == 1) {
-      return modules.get(0);
-    }
+    if (modules.isEmpty()) return null;
+    if (modules.size() == 1) return modules.get(0);
 
     ChooseModuleDialog dialog = new ChooseModuleDialog("Choose Module to Import Model " + sm.getSModelReference() + " from", myContext.getMainFrame(), modules);
     dialog.showDialog();
