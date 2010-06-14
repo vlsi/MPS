@@ -73,7 +73,11 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     myMultipleChooser = false;
     myChooser = new Computable<List<T>>() {
       public List<T> compute() {
-        return Collections.singletonList(chooser.compute());
+        T result = chooser.compute();
+        if (result == null) {
+          return null;
+        }
+        return Collections.singletonList(result);
       }
     };
   }
