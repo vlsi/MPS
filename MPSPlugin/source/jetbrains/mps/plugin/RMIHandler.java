@@ -64,10 +64,9 @@ public class RMIHandler {
         System.out.println("localhost is " + localhost);
         System.out.println("client is " + client);
         System.out.println("access denied");
-      } catch (Exception e) {
-        throw new RuntimeException("Access Denied", e);
+      } catch (Throwable t) {
+        throw new RuntimeException("Access Denied", t);
       }
-      throw new RuntimeException("Access Denied");
     }
 
     public IProjectHandler getProjectHandler() throws RemoteException {
