@@ -48,7 +48,7 @@ public abstract class BaseAction extends AnAction implements DumbAware {
   }
 
   /**
-   * Is caslled only by ancestors if getShortcut depends on constructor parameters
+   * Is called only by ancestors if getShortcut depends on constructor parameters
    */
   protected void updateShortcuts() {
     setEnabledInModalContext(false);
@@ -106,38 +106,30 @@ public abstract class BaseAction extends AnAction implements DumbAware {
           disable(e.getPresentation());
           return;
         }
-        try {
-          if (!collectActionData(e)) {
-            disable(e.getPresentation());
-            return;
-          }
-          doUpdate(e);
-        } finally {
-          cleanup();
+        if (!collectActionData(e)) {
+          disable(e.getPresentation());
+          return;
         }
+        doUpdate(e);
       }
     });
   }
 
   public final void actionPerformed(final AnActionEvent e) {
-    try {
-      ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        collectActionData(e);
+      }
+    });
+    final ModelAccess access = ModelAccess.instance();
+    if (myExecuteOutsideCommand) {
+      doExecute(e);
+    } else {
+      access.runWriteActionInCommand(new Runnable() {
         public void run() {
-          collectActionData(e);
+          doExecute(e);
         }
       });
-      final ModelAccess access = ModelAccess.instance();
-      if (myExecuteOutsideCommand) {
-        doExecute(e);
-      } else {
-        access.runWriteActionInCommand(new Runnable() {
-          public void run() {
-            doExecute(e);
-          }
-        });
-      }
-    } finally {
-      //cleanup();
     }
   }
 
@@ -178,10 +170,6 @@ public abstract class BaseAction extends AnAction implements DumbAware {
    */
   protected boolean collectActionData(AnActionEvent e) {
     return true;
-  }
-
-  protected void cleanup() {
-
   }
 
   /**

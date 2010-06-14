@@ -31,4 +31,10 @@ public abstract class GeneratedAction extends BaseAction {
   protected GeneratedAction(String text, String description, Icon icon) {
     super(text, description, icon);
   }
+
+  @Deprecated
+  public void cleanup() {
+
+
+  }
 }
