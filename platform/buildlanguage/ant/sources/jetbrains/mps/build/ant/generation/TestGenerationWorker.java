@@ -6,6 +6,7 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.build.ant.IBuildServerMessageFormat;
+import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestAdapter;
@@ -104,13 +105,16 @@ public class TestGenerationWorker extends GeneratorWorker {
       dispose();
     }
 
-    MPSProject project = createDummyProject();
-
     LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
     LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
     collectFromModuleFiles(modules);
     collectFromModelFiles(models);
-    executeTask(project, new ObjectsToProcess(Collections.EMPTY_SET, modules, models));
+
+    MpsWorker.ObjectsToProcess go = new ObjectsToProcess(Collections.EMPTY_SET, modules, models);
+    if (go.hasAnythingToGenerate()) {
+      MPSProject project = createDummyProject();
+      executeTask(project, go);
+    }
 
     generatePerformanceReport();
 
