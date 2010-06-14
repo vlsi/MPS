@@ -79,7 +79,18 @@ public class GeneratorManager {
     return new JavaGenerationHandler();
   }
 
-  public void generateModelsFromDifferentModules(final IOperationContext operationContext, final List<SModelDescriptor> inputModels, final IGenerationHandler generationHandler) {
+  @Deprecated
+  public void generateModelsFromDifferentModules(final IOperationContext operationContext,
+                                                 final List<SModelDescriptor> inputModels,
+                                                 final IGenerationHandler generationHandler) {
+    generateModelsFromDifferentModules(operationContext, inputModels, generationHandler, true);
+  }
+
+
+  public void generateModelsFromDifferentModules(final IOperationContext operationContext,
+                                                 final List<SModelDescriptor> inputModels,
+                                                 final IGenerationHandler generationHandler,
+                                                 boolean rebuildAll) {
     try {
       GeneratorManager generatorManager = operationContext.getComponent(GeneratorManager.class);
       List<Pair<SModelDescriptor, IOperationContext>> modelsWithContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
@@ -98,20 +109,27 @@ public class GeneratorManager {
       generatorManager.generateModelsWithProgressWindow(
         modelsWithContext,
         generationHandler,
-        true /* rebuild all */
+        rebuildAll
       );
     } catch (Throwable t) {
       LOG.error(t);
     }
   }
 
+  @Deprecated
+  public boolean generateModelsWithProgressWindow(final List<SModelDescriptor> inputModels,
+                                                  final IOperationContext invocationContext,
+                                                  final IGenerationHandler generationHandler,
+                                                  boolean closeOnExit) {
+    return generateModelsWithProgressWindow(inputModels, invocationContext, generationHandler, closeOnExit, true);
+  }
   /**
    * @return false if canceled
    */
   public boolean generateModelsWithProgressWindow(final List<SModelDescriptor> inputModels,
                                                   final IOperationContext invocationContext,
                                                   final IGenerationHandler generationHandler,
-                                                  boolean closeOnExit) {
+                                                  boolean closeOnExit, boolean rebuildAll) {
     List<Pair<SModelDescriptor, IOperationContext>> inputModelPairs = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
 
     for (SModelDescriptor model : inputModels) {
@@ -121,7 +139,7 @@ public class GeneratorManager {
     return generateModelsWithProgressWindow(
       inputModelPairs,
       generationHandler,
-      true /* rebuild all */
+      rebuildAll
     );
   }
 
