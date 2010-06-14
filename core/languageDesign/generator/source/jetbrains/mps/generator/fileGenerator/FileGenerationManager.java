@@ -23,6 +23,7 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
+import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.debug.api.info.*;
@@ -321,18 +322,33 @@ public class FileGenerationManager implements ApplicationComponent {
     }
 
     DebugInfo debugInfoCache = null;
+    ModelDependencies modelDep = null;
 
     GenerationDependencies dependencies = status.getDependencies();
     if(dependencies != null) {
       File outputDir = FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputRootDirectory);
+
+      // process unchanged files
       for(GenerationRootDependencies rdep : dependencies.getUnchangedDependencies()) {
         for(String filename : rdep.getFiles()) {
           File file = new File(outputDir, filename);
           if(file.exists()) {
             generatedFiles.add(file);
+
+            // re-register baselanguage dependencies
+            if(modelDep == null) {
+              modelDep = BLDependenciesCache.getInstance().get(status.getOriginalInputModel());
+            }
+            if(modelDep != null) {
+              RootDependencies root = modelDep.getDependency(filename);
+              if(root != null) {
+                status.getBLDependencies().replaceRoot(root);
+              }
+            }
           }
         }
 
+        // re-register debug
         if(debugInfoCache == null) {
           debugInfoCache = BLDebugInfoCache.getInstance().get(status.getOriginalInputModel());
         }
