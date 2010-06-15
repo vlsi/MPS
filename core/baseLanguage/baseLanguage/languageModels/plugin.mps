@@ -4538,10 +4538,11 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="6173548178016197173">
     <property name="name:23" value="AnalyzeStacktrace" />
-    <property name="caption:23" value="Analyze Stacktrace" />
-    <property name="description:23" value="Analyze Stacktrace" />
+    <property name="caption:23" value="Analyze Stacktrace..." />
+    <property name="description:23" value="Open console with the navigation stacktrace" />
     <property name="outsideCommandExecution:23" value="true" />
     <property name="package:23" value="analyzeStacktrace" />
+    <property name="mnemonic:23" value="s" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="6173548178016197174">
       <property name="name:23" value="frame" />
       <link role="key:23" targetNodeId="54.~MPSDataKeys.FRAME" resolveInfo="FRAME" />
@@ -4733,6 +4734,28 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2041710844543775952">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2041710844543775954">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2041710844543775953">
+              <link role="variableDeclaration:3" targetNodeId="9122476450169646997" resolveInfo="panel" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2041710844543775958">
+              <link role="baseMethodDeclaration:3" targetNodeId="17.~Container.add(java.awt.Component,java.lang.Object):void" resolveInfo="add" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2041710844543775959">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2041710844543776069">
+                  <link role="baseMethodDeclaration:3" targetNodeId="16.~JLabel.&lt;init&gt;(java.lang.String)" resolveInfo="JLabel" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2041710844543776070">
+                    <property name="value:3" value="Put a stack trace here:" />
+                  </node>
+                </node>
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2041710844543776072">
+                <link role="classifier:3" targetNodeId="17.~BorderLayout" resolveInfo="BorderLayout" />
+                <link role="variableDeclaration:3" targetNodeId="17.~BorderLayout.NORTH" resolveInfo="NORTH" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9122476450169646978">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="9122476450169646979">
             <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9122476450169646980">
@@ -4788,12 +4811,16 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9122476450169646986">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9122476450169646987">
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9122476450169646991">
-              <link role="baseMethodDeclaration:3" targetNodeId="17.~Container.add(java.awt.Component):java.awt.Component" resolveInfo="add" />
+              <link role="baseMethodDeclaration:3" targetNodeId="17.~Container.add(java.awt.Component,java.lang.Object):void" resolveInfo="add" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9122476450169646992">
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="9122476450169646993">
                   <link role="fieldDeclaration:3" targetNodeId="6173548178016197201" resolveInfo="myText" />
                 </node>
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="9122476450169646994" />
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2041710844543775950">
+                <link role="classifier:3" targetNodeId="17.~BorderLayout" resolveInfo="BorderLayout" />
+                <link role="variableDeclaration:3" targetNodeId="17.~BorderLayout.CENTER" resolveInfo="CENTER" />
               </node>
             </node>
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="9122476450169647004">
@@ -4896,7 +4923,7 @@
                 <property name="value:3" value="200" />
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5318473047306188838">
-                <property name="value:3" value="400" />
+                <property name="value:3" value="700" />
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5318473047306188842">
                 <property name="value:3" value="600" />
@@ -4999,7 +5026,7 @@
         <node role="value:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue:3" id="6173548178016197396">
           <link role="key:3" targetNodeId="55.~BaseDialog$Button.defaultButton()" resolveInfo="defaultButton" />
           <node role="value:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="6173548178016197397">
-            <property name="value:3" value="false" />
+            <property name="value:3" value="true" />
           </node>
         </node>
       </node>
@@ -5040,9 +5067,7 @@
         </node>
         <node role="value:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue:3" id="6173548178016197411">
           <link role="key:3" targetNodeId="55.~BaseDialog$Button.defaultButton()" resolveInfo="defaultButton" />
-          <node role="value:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="6173548178016197412">
-            <property name="value:3" value="true" />
-          </node>
+          <node role="value:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="6173548178016197412" />
         </node>
       </node>
     </node>

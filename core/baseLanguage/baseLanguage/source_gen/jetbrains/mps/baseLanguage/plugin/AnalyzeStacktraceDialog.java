@@ -10,6 +10,7 @@ import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import javax.swing.JLabel;
 import jetbrains.mps.datatransfer.TextPasteUtil;
 import javax.swing.JScrollPane;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
@@ -32,12 +33,13 @@ public class AnalyzeStacktraceDialog extends BaseDialog {
 
   public JComponent createPanel() {
     JPanel panel = new JPanel(new BorderLayout());
+    panel.add(new JLabel("Put a stack trace here:"), BorderLayout.NORTH);
     this.myText = new JTextArea("");
     String str = TextPasteUtil.getStringFromClipboard();
     if (str != null) {
       this.myText.setText(str);
     }
-    panel.add(this.myText);
+    panel.add(this.myText, BorderLayout.CENTER);
     JScrollPane scrollPane = new JScrollPane(panel);
     scrollPane.getVerticalScrollBar().setBlockIncrement(40);
     scrollPane.getVerticalScrollBar().setUnitIncrement(20);
@@ -47,10 +49,10 @@ public class AnalyzeStacktraceDialog extends BaseDialog {
 
   @Override
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensionsSettings.DialogDimensions(100, 200, 400, 600);
+    return new DialogDimensionsSettings.DialogDimensions(100, 200, 700, 600);
   }
 
-  @BaseDialog.Button(name = "OK", mnemonic = 'O', position = 0, defaultButton = false)
+  @BaseDialog.Button(name = "OK", mnemonic = 'O', position = 0, defaultButton = true)
   public void onOk() {
     AnalyzeStacktrace_Tool tool = this.myProject.getComponent(ProjectPluginManager.class).getTool(AnalyzeStacktrace_Tool.class);
     tool.setStackTrace(this.myText.getText());
@@ -58,7 +60,7 @@ public class AnalyzeStacktraceDialog extends BaseDialog {
     this.dispose();
   }
 
-  @BaseDialog.Button(name = "Cancel", mnemonic = 'C', position = 1, defaultButton = true)
+  @BaseDialog.Button(name = "Cancel", mnemonic = 'C', position = 1, defaultButton = false)
   public void onCancel() {
     this.dispose();
   }

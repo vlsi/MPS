@@ -21,9 +21,10 @@ public class AnalyzeStacktrace_Action extends GeneratedAction {
   private Project project;
 
   public AnalyzeStacktrace_Action() {
-    super("Analyze Stacktrace", "Analyze Stacktrace", ICON);
+    super("Analyze Stacktrace...", "Open console with the navigation stacktrace", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
+    this.setMnemonic("s".charAt(0));
   }
 
   @NotNull
