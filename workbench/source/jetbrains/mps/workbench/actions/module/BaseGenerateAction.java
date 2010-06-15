@@ -28,7 +28,6 @@ import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.projectPane.ModuleChangingOperationContext;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
@@ -38,20 +37,19 @@ import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
-import javax.swing.tree.TreeNode;
 import java.awt.Frame;
 import java.util.*;
 
 public abstract class BaseGenerateAction extends BaseAction {
-  private boolean myRegenerate;
+  private boolean myRebuildAll;
   private IOperationContext myOperationContext;
   private Project myProject;
   private Frame myFrame;
   Set<IModule> myModules;
 
-  public BaseGenerateAction(boolean regenerate) {
+  public BaseGenerateAction(boolean rebuildAll) {
     super("");
-    myRegenerate = regenerate;
+    myRebuildAll = rebuildAll;
     setIsAlwaysVisible(false);
     setExecuteOutsideCommand(true);
     addPlace(null);
@@ -69,7 +67,7 @@ public abstract class BaseGenerateAction extends BaseAction {
     }
     enable(e.getPresentation());
     String obj = getObject();
-    String newText = (myRegenerate ? "Regenerate" : "Generate") + " " + obj;
+    String newText = (myRebuildAll ? "Regenerate" : "Generate") + " " + obj;
     e.getPresentation().setText(newText);
   }
 
@@ -86,7 +84,7 @@ public abstract class BaseGenerateAction extends BaseAction {
   }
 
   public String getActionId() {
-    return BaseGenerateAction.class.getName() + "#" + myRegenerate;
+    return BaseGenerateAction.class.getName() + "#" + myRebuildAll;
   }
 
   protected void doExecute(AnActionEvent e) {
@@ -123,7 +121,8 @@ public abstract class BaseGenerateAction extends BaseAction {
           generatorManager.generateModelsFromDifferentModules(
             invocationContext1,
             modelsToGenerate,
-            generationHandler);
+            generationHandler,
+            myRebuildAll);
         }
       });
     if (!checkSuccessful) {
@@ -135,7 +134,8 @@ public abstract class BaseGenerateAction extends BaseAction {
     generatorManager.generateModelsFromDifferentModules(
       invocationContext,
       modelsToGenerate,
-      generationHandler);
+      generationHandler,
+      myRebuildAll);
   }
 
   @NotNull
@@ -165,7 +165,7 @@ public abstract class BaseGenerateAction extends BaseAction {
         assert conf != null;
 
         try {
-          return conf.getGenParams(myProject, myRegenerate);
+          return conf.getGenParams(myProject, myRebuildAll);
         } catch (IllegalGeneratorConfigurationException e) {
           JOptionPane.showMessageDialog(myFrame, e.getMessage());
           return null;

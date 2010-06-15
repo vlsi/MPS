@@ -19,8 +19,8 @@ import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 
 public class GenerateFilesFromModelsAction extends GenerateModelsAction {
-  public GenerateFilesFromModelsAction() {
-    super("");
+  public GenerateFilesFromModelsAction(boolean rebuildAll) {
+    super("", rebuildAll);
     addPlace(null);
   }
 

@@ -49,7 +49,8 @@ public class GenerateFavorites_ActionGroup extends GeneratedActionGroup {
       }
       TreeNode treeNode = event.getData(MPSDataKeys.LOGICAL_VIEW_NODE);
       if (treeNode instanceof SNodeTreeNode) {
-        GenerateFavorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateFilesFromModel_Action", "jetbrains.mps.ide", new GenerateFilesFromModelsAction());
+        GenerateFavorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateFilesFromModel_Action", "jetbrains.mps.ide", new GenerateFilesFromModelsAction(false));
+        GenerateFavorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RegenerateFilesFromModel_Action", "jetbrains.mps.ide", new GenerateFilesFromModelsAction(true));
         GenerateFavorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateTextFromModel_Action", "jetbrains.mps.ide", new GenerateTextFromModelsAction());
       }
     } catch (Throwable t) {

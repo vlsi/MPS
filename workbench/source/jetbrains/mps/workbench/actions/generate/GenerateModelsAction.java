@@ -35,9 +35,11 @@ public abstract class GenerateModelsAction extends BaseAction {
   private IOperationContext myContext;
   private GeneratorManager myGenManager;
   private ProjectPluginManager myPluginManager;
+  private final boolean myRebuildAll;
 
-  public GenerateModelsAction(@NotNull String name) {
+  public GenerateModelsAction(@NotNull String name, boolean rebuildAll) {
     super(name);
+    myRebuildAll = rebuildAll;
     setExecuteOutsideCommand(true);
   }
 
@@ -51,7 +53,8 @@ public abstract class GenerateModelsAction extends BaseAction {
           myGenManager.generateModelsFromDifferentModules(
             myContext,
             myModels,
-            getGenerationHandler()
+            getGenerationHandler(),
+            myRebuildAll
           );
         }
       });
@@ -62,7 +65,8 @@ public abstract class GenerateModelsAction extends BaseAction {
     myGenManager.generateModelsFromDifferentModules(
       myContext,
       myModels,
-      getGenerationHandler()
+      getGenerationHandler(),
+      myRebuildAll
     );
   }
 

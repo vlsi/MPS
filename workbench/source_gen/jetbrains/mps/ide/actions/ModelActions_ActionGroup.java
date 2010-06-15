@@ -38,8 +38,9 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModel_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addSeparator();
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", new JavaGenerationHandler());
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", new OutputViewGenerationHandler());
+      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", new JavaGenerationHandler(), false);
+      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", new JavaGenerationHandler(), true);
+      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", new OutputViewGenerationHandler(), false);
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowMappingsPartitioning_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowDifferencesWithModelOnDisk_Action", "jetbrains.mps.ide");

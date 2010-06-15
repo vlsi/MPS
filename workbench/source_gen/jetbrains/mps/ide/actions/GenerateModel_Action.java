@@ -28,10 +28,12 @@ public class GenerateModel_Action extends GeneratedAction {
   private List<SModelDescriptor> models;
   private SModelDescriptor model;
   private IGenerationHandler generationHandler;
+  private boolean rebuildAll;
 
-  public GenerateModel_Action(IGenerationHandler generationHandler_par) {
+  public GenerateModel_Action(IGenerationHandler generationHandler_par, boolean rebuildAll_par) {
     super("Generate Model", "", ICON);
     this.generationHandler = generationHandler_par;
+    this.rebuildAll = rebuildAll_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -44,7 +46,10 @@ public class GenerateModel_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
-        event.getPresentation().setText(GenerateModel_Action.this.generationHandler.toString());
+        event.getPresentation().setText((GenerateModel_Action.this.rebuildAll ?
+          "Regenerate Files" :
+          GenerateModel_Action.this.generationHandler.toString()
+        ));
         boolean applicable = ListSequence.fromList(GenerateModel_Action.this.getModels()).isNotEmpty();
         for (SModelDescriptor model : ListSequence.fromList(GenerateModel_Action.this.getModels())) {
           if (!(GenerateModel_Action.this.generationHandler.canHandle(model))) {
@@ -92,13 +97,13 @@ public class GenerateModel_Action extends GeneratedAction {
       final GeneratorManager manager = GenerateModel_Action.this.project.getComponent(GeneratorManager.class);
       boolean checkSuccessful = GenerateModel_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeGenerationIfNeeded(GenerateModel_Action.this.context, GenerateModel_Action.this.models, new Runnable() {
         public void run() {
-          manager.generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationHandler);
+          manager.generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll);
         }
       });
       if (!(checkSuccessful)) {
         return;
       }
-      manager.generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationHandler);
+      manager.generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateModel", t);
@@ -112,6 +117,8 @@ public class GenerateModel_Action extends GeneratedAction {
     res.append(GenerateModel_Action.class.getName());
     res.append("#");
     res.append(generationHandler_State((IGenerationHandler) this.generationHandler));
+    res.append("!");
+    res.append(((Object) this.rebuildAll).toString());
     res.append("!");
     return res.toString();
   }

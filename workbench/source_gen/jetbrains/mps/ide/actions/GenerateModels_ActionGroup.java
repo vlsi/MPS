@@ -16,7 +16,8 @@ public class GenerateModels_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      GenerateModels_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateFilesFromModel_Action", "jetbrains.mps.ide", new GenerateFilesFromModelsAction());
+      GenerateModels_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateFilesFromModel_Action", "jetbrains.mps.ide", new GenerateFilesFromModelsAction(false));
+      GenerateModels_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RegenerateFilesFromModel_Action", "jetbrains.mps.ide", new GenerateFilesFromModelsAction(true));
       GenerateModels_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateTextFromModel_Action", "jetbrains.mps.ide", new GenerateTextFromModelsAction());
     } catch (Throwable t) {
       LOG.error("User group error", t);

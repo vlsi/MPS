@@ -20,7 +20,7 @@ import jetbrains.mps.generator.generationTypes.OutputViewGenerationHandler;
 
 public class GenerateTextFromModelsAction extends GenerateModelsAction {
   public GenerateTextFromModelsAction() {
-    super("");
+    super("", true);
     addPlace(null);
   }
 
