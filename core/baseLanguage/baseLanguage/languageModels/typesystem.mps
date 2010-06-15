@@ -42,7 +42,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="65" />
+  <maxImportIndex value="68" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" version="-1" />
@@ -75,6 +75,8 @@
   <import index="61" modelUID="f:java_stub#jetbrains.mps.baseLanguage.constraints(jetbrains.mps.baseLanguage.constraints@java_stub)" version="-1" />
   <import index="62" modelUID="r:6a4f00d3-a72e-48b0-96be-a5139db9536c(jetbrains.mps.baseLanguage.closures)" version="-1" />
   <import index="63" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
+  <import index="66" modelUID="f:java_stub#production.analyzers.jetbrains.mps.analyzers.mpsAnalyzers.nullable(production.analyzers.jetbrains.mps.analyzers.mpsAnalyzers.nullable@java_stub)" version="-1" />
+  <import index="67" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework.analyzers(jetbrains.mps.lang.dataFlow.framework.analyzers@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1175495245176">
     <property name="name:3" value="typeOf_andExpression" />
     <property name="overrides:3" value="true" />
@@ -25506,6 +25508,14 @@
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="3073231036166000667">
       <property name="name:3" value="usingStatement" />
       <link role="concept:3" targetNodeId="1.1224071180699:3" resolveInfo="UsingStatement" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="2045671745393263417">
+    <property name="name:3" value="check_Nullable" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2045671745393263418" />
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="2045671745393271684">
+      <property name="name:3" value="statementList" />
+      <link role="concept:3" targetNodeId="1.1068580123136:3" resolveInfo="StatementList" />
     </node>
   </node>
 </model>
