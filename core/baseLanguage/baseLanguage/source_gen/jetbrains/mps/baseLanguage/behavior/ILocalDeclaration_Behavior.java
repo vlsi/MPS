@@ -15,7 +15,7 @@ public class ILocalDeclaration_Behavior {
   }
 
   public static boolean virtual_isReferencedInClosure_3262277503800823422(SNode thisNode) {
-    SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
+    SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     {
       SNode ref;
       Iterator<SNode> ref_iterator = ListSequence.fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.ILocalReference", false, new String[]{})).iterator();
@@ -25,8 +25,8 @@ public class ILocalDeclaration_Behavior {
         }
         ref = ref_iterator.next();
         if (ILocalReference_Behavior.call_getDeclaration_3262277503800831941(ref) == thisNode) {
-          SNode referenceContainer = SNodeOperations.getAncestor(ref, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
-          if (referenceContainer != container && IStatementListContainer_Behavior.call_isClosure_3262277503800835439(referenceContainer)) {
+          SNode referenceContainer = SNodeOperations.getAncestor(ref, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+          if (referenceContainer != container && IStatementListContainer_Behavior.call_isClosure_3262277503800835439(SNodeOperations.getAncestor(referenceContainer, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false))) {
             return true;
           }
         }
