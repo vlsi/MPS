@@ -32,6 +32,18 @@ public class ResolveResult {
     myRole = role;
   }
 
+  public SNode getTargetNode() {
+    return myTargetNode;
+  }
+
+  public SNode getSourceNode() {
+    return mySourceNode;
+  }
+
+  public String getRole() {
+    return myRole;
+  }
+
   public void setTarget() {
     if (mySmartRefConcept == null) {
       mySourceNode.setReferent(myRole, myTargetNode, false);

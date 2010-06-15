@@ -20,10 +20,7 @@ import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.IEditorChecker;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
@@ -53,6 +50,13 @@ public class AutoResolver extends EditorCheckerAdapter {
       Set<SReference> badReferences = collectBadReferences(rootNode);
       if (!badReferences.isEmpty()) {
         yetBadReferences = Resolver.resolveReferences(badReferences, operationContext, resolveResultArrayList, false);
+        for (Iterator<ResolveResult> it = resolveResultArrayList.iterator(); it.hasNext(); ) {
+          ResolveResult resolveResult = it.next();
+          if (isNewTargetFromAnotherModel(resolveResult)) {
+            yetBadReferences.add(getResolvedReference(resolveResult));
+            it.remove();
+          }
+        }
       }
     } finally {
       SReference.enableLogging();
@@ -82,6 +86,28 @@ public class AutoResolver extends EditorCheckerAdapter {
       messages.add(message);
     }
     return messages;
+  }
+
+  private boolean isNewTargetFromAnotherModel(ResolveResult resolveResult) {
+    SNode newTargetNode = resolveResult.getTargetNode();
+    if (newTargetNode == null || newTargetNode.getModel() == null) {
+      return false;
+    }
+    SReference reference = getResolvedReference(resolveResult);
+    if (reference == null) {
+      return false;
+    }
+    SModelReference sModelRef = reference.getTargetSModelReference();
+    return sModelRef != null && !sModelRef.getSModelFqName().equals(newTargetNode.getModel().getSModelFqName());
+  }
+
+  private SReference getResolvedReference(ResolveResult resolveResult) {
+    SNode sourceNode = resolveResult.getSourceNode();
+    if (sourceNode == null) {
+      return null;
+    }
+    String referenceRole = resolveResult.getRole();
+    return referenceRole == null ? null : sourceNode.getReference(referenceRole);
   }
 
   private Set<SReference> collectBadReferences(SNode cellNode) {
