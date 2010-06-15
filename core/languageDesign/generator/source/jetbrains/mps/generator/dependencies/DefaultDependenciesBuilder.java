@@ -1,5 +1,6 @@
 package jetbrains.mps.generator.dependencies;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.index.ModelDigestUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -128,7 +129,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   }
 
   @Override
-  public GenerationDependencies getResult() {
-    return GenerationDependencies.fromData(currentToOriginalMap, myAllBuilders, myModelHash);
+  public GenerationDependencies getResult(Project project) {
+    return GenerationDependencies.fromData(currentToOriginalMap, myAllBuilders, myModelHash, project);
   }
 }

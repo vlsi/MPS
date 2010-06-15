@@ -1,5 +1,6 @@
 package jetbrains.mps.generator.dependencies;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
@@ -20,7 +21,7 @@ public interface DependenciesBuilder {
 
   void dropModel();
 
-  GenerationDependencies getResult();
+  GenerationDependencies getResult(Project project);
 
   public static class NullDependenciesBuilder implements DependenciesBuilder {
 
@@ -50,7 +51,7 @@ public interface DependenciesBuilder {
     }
 
     @Override
-    public GenerationDependencies getResult() {
+    public GenerationDependencies getResult(Project project) {
       return null;
     }
   }

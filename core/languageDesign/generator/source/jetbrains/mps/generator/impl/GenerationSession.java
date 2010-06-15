@@ -121,7 +121,7 @@ public class GenerationSession {
       }
 
       return new GenerationStatus(myOriginalInputModel.getSModel(), currOutput,
-        myDependenciesBuilder.getResult(), myLogger.getErrorCount() > 0,
+        myDependenciesBuilder.getResult(myInvocationContext.getProject()), myLogger.getErrorCount() > 0,
         myLogger.getWarningCount() > 0, false);
 
     } catch (GenerationCanceledException gce) {

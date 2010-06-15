@@ -35,11 +35,16 @@ public class GenerationFilter {
   }
 
   private void init() {
-    if(!myGenerationContext.isGenerateDependencies() || myGenerationContext.isRebuildAll()) {
+    if(!myGenerationContext.isGenerateDependencies()) {
       return;
     }
 
     myGenerationHashes = ModelDigestUtil.getGenerationHashes(myModel, myProject);
+
+    if(myGenerationContext.isRebuildAll()) {
+      return;
+    }
+
     GenerationDependencies dependencies = GenerationDependenciesCache.getInstance().get(myModel);
     if(dependencies != null && myGenerationHashes != null) {
       analyzeDependencies(dependencies);
