@@ -7,10 +7,10 @@ import jetbrains.mps.smodel.SNode;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DefaultJavaAppFromClass extends BaseConfigCreator<SNode> implements Cloneable {
   private RunConfiguration myConfig;
@@ -25,20 +25,24 @@ public class DefaultJavaAppFromClass extends BaseConfigCreator<SNode> implements
   }
 
   private void createConfig(final SNode parameter) {
-    SNode mainMethod = ClassConcept_Behavior.call_getMainMethod_1213877355884(parameter);
+    SNode classConcept = SNodeOperations.getAncestor(parameter, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, true);
+    if (classConcept == null) {
+      return;
+    }
+    SNode mainMethod = ClassConcept_Behavior.call_getMainMethod_1213877355884(classConcept);
 
     if ((mainMethod == null)) {
       return;
     }
 
-    DefaultJavaAppFromClass.this.setSourceElement(new MPSPsiElement(parameter));
+    DefaultJavaAppFromClass.this.setSourceElement(new MPSPsiElement(classConcept));
 
     {
       JavaApplication_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JavaApplication_ConfigurationType.CONFIGURATION_TYPE_EP), JavaApplication_ConfigurationType.class);
       DefaultJavaApplication_Configuration _config = new DefaultJavaApplication_Configuration(DefaultJavaAppFromClass.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig");
-      _config.setName(SPropertyOperations.getString(parameter, "name"));
-      _config.getStateObject().nodeId = parameter.getId();
-      _config.getStateObject().modelId = parameter.getModel().getModelDescriptor().getSModelReference().toString();
+      _config.setName(SPropertyOperations.getString(classConcept, "name"));
+      _config.getStateObject().nodeId = classConcept.getId();
+      _config.getStateObject().modelId = classConcept.getModel().getModelDescriptor().getSModelReference().toString();
       DefaultJavaAppFromClass.this.myConfig = _config;
     }
   }
@@ -49,6 +53,6 @@ public class DefaultJavaAppFromClass extends BaseConfigCreator<SNode> implements
   }
 
   protected boolean isApplicable(final Object element) {
-    return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.lang.core.structure.BaseConcept");
   }
 }
