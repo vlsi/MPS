@@ -119,6 +119,8 @@ public class ModelAssert {
   }
 
   private static <C> void assertListsEqual(List<C> expectedList, List<C> actualList, Comparator<C> comparator, String name) {
+    List<C> notFoundExpected = new ArrayList<C>();
+    List<C> notFoundActual = new ArrayList<C>();
     for (C expected : expectedList) {
       boolean found = false;
       for (C actual : actualList) {
@@ -128,7 +130,7 @@ public class ModelAssert {
         }
       }
       if (!found) {
-        fail("Not found expected " + name + " " + expected);
+        notFoundExpected.add(expected);
       }
     }
 
@@ -141,8 +143,16 @@ public class ModelAssert {
         }
       }
       if (!found) {
-        fail("Not expected " + name + " " + actual);
+        notFoundActual.add(actual);
       }
+    }
+
+    if (!notFoundExpected.isEmpty()){
+      fail("Not found expected " + name + " " + Arrays.toString(notFoundExpected.toArray()));
+    }
+
+    if (!notFoundActual.isEmpty()){
+      fail("Not expected " + name + " " + Arrays.toString(notFoundActual.toArray()));
     }
   }
 
