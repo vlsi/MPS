@@ -21,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.awt.BorderLayout;
-import javax.swing.AbstractListModel;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -35,6 +34,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.JScrollPane;
 import javax.swing.JLabel;
+import javax.swing.AbstractListModel;
 
 public class ListPanel extends JPanel {
   private JList myList;
@@ -42,6 +42,7 @@ public class ListPanel extends JPanel {
   private List<SNode> myCandidates;
   private boolean myIsTestMethods;
   private ActionListener myListener;
+  private ListPanel.MyAbstractListModel myListModel;
 
   public ListPanel() {
   }
@@ -105,15 +106,8 @@ public class ListPanel extends JPanel {
     this.myIsTestMethods = isTestMethods;
     this.setLayout(new BorderLayout());
     this.myValues = nodes;
-    this.myList = new JList(new AbstractListModel() {
-      public Object getElementAt(int p0) {
-        return ListPanel.this.getPresentation(ListSequence.fromList(ListPanel.this.myValues).getElement(p0));
-      }
-
-      public int getSize() {
-        return ListSequence.fromList(ListPanel.this.myValues).count();
-      }
-    });
+    this.myListModel = new ListPanel.MyAbstractListModel();
+    this.myList = new JList(this.myListModel);
     AnAction add = new ListAddAction(this.myList) {
       protected int doAdd(AnActionEvent p0) {
         if (ListPanel.this.myCandidates == null) {
@@ -129,6 +123,7 @@ public class ListPanel extends JPanel {
           ListPanel.this.myListener.actionPerformed(null);
         }
         ListPanel.this.myList.updateUI();
+        ListPanel.this.myListModel.fireSomethingChanged();
         return ListSequence.fromList(ListPanel.this.myValues).indexOf(resultNode);
       }
     };
@@ -146,6 +141,7 @@ public class ListPanel extends JPanel {
           ListPanel.this.myListener.actionPerformed(null);
         }
         ListPanel.this.myList.updateUI();
+        ListPanel.this.myListModel.fireSomethingChanged();
       }
     };
 
@@ -164,5 +160,22 @@ public class ListPanel extends JPanel {
       "Classes"
     )), BorderLayout.PAGE_START);
     this.myList.updateUI();
+  }
+
+  private class MyAbstractListModel extends AbstractListModel {
+    public MyAbstractListModel() {
+    }
+
+    public Object getElementAt(int p0) {
+      return ListPanel.this.getPresentation(ListSequence.fromList(ListPanel.this.myValues).getElement(p0));
+    }
+
+    public int getSize() {
+      return ListSequence.fromList(ListPanel.this.myValues).count();
+    }
+
+    public void fireSomethingChanged() {
+      fireContentsChanged(this, 0, ListSequence.fromList(myValues).count());
+    }
   }
 }
