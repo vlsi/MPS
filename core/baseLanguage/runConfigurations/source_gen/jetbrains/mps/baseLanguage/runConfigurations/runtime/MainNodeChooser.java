@@ -20,8 +20,13 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
   @NotNull
@@ -30,12 +35,14 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
   private final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myAcceptor;
   private SNode myNode;
   private final List<IJavaNodeChangeListener> myListeners = ListSequence.fromList(new ArrayList<IJavaNodeChangeListener>());
+  private final GlobalFileteredScope myScope;
 
   public MainNodeChooser(@NotNull C targetConcept, @Nullable _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> acceptor) {
     super();
 
     this.myTargetConcept = targetConcept;
     this.myAcceptor = acceptor;
+    myScope = GlobalFileteredScope.getInstance();
 
     this.init(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {
@@ -46,7 +53,7 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
         final Wrappers._T<List<SNode>> toChooseFrom = new Wrappers._T<List<SNode>>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            Set<SNode> instances = findUsegesManager.findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(MainNodeChooser.this.myTargetConcept)), GlobalFileteredScope.getInstance(), progressAdapter, false);
+            Set<SNode> instances = findUsegesManager.findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(MainNodeChooser.this.myTargetConcept)), myScope, progressAdapter, false);
             if (MainNodeChooser.this.myAcceptor == null) {
               toChooseFrom.value = ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), instances)).toListSequence();
             } else {
@@ -63,6 +70,51 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
         MainNodeChooser.this.setNode(selectedNode);
       }
     });
+
+    addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        final String text = getText();
+        if (StringUtils.isEmpty(text)) {
+          setNode(null);
+          return;
+        }
+        int lastDot = text.lastIndexOf(".");
+        if (lastDot <= 0) {
+          setNode(null);
+          return;
+        }
+
+        List<SModelDescriptor> descriptors = myScope.getModelDescriptors(text.substring(0, lastDot));
+        ListSequence.fromList(descriptors).visitAll(new IVisitor<SModelDescriptor>() {
+          public void visit(final SModelDescriptor descriptor) {
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                SModel smodel = descriptor.getSModel();
+                Iterable<SNode> nodes = ListSequence.fromList(SModelOperations.getNodes(smodel, null)).where(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode it) {
+                    if (!(it.isInstanceOfConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(MainNodeChooser.this.myTargetConcept))))) {
+                      return false;
+                    }
+                    if (myAcceptor == null) {
+                      return getFqName(it).equals(text);
+                    } else {
+                      return myAcceptor.invoke(it) && getFqName(it).equals(text);
+                    }
+                  }
+                });
+                if (Sequence.fromIterable(nodes).isEmpty()) {
+                  setNode(null);
+                } else {
+                  setNode(Sequence.fromIterable(nodes).first());
+                }
+              }
+            });
+          }
+        });
+      }
+    });
+
+    // <node> 
   }
 
   public SNode getNode() {
@@ -76,16 +128,31 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
     if (node == null) {
       if (this.myNode == null) {
         this.setText(null);
+        return;
+      } else {
+        myNode = null;
       }
     } else {
       this.myNode = node;
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          MainNodeChooser.this.setText(INamedConcept_Behavior.call_getFqName_1213877404258(node));
+          MainNodeChooser.this.setText(getFqName(node));
         }
       });
     }
     this.fireNodeChanged();
+  }
+
+  public String getFqName(SNode node) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
+      return INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"));
+    } else {
+      String longName = SNodeOperations.getModel(node).getLongName();
+      if (longName.equals("")) {
+        return node.getSNodeId().toString();
+      }
+      return longName + "." + node.getSNodeId().toString();
+    }
   }
 
   public void addNodeChangeListener(@NotNull IJavaNodeChangeListener listener) {

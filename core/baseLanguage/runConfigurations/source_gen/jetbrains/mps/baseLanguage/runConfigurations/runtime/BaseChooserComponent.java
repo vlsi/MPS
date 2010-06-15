@@ -18,8 +18,8 @@ public class BaseChooserComponent extends BaseFieldWithButtonComponent {
     return this.myFieldWithButton[0].getTextField();
   }
 
-  public void init(final ActionListener listener) {
-    this.myFieldWithButton[0] = new TextFieldWithBrowseButton.NoPathCompletion(listener);
+  public void init(final ActionListener browseListener) {
+    this.myFieldWithButton[0] = new TextFieldWithBrowseButton.NoPathCompletion(browseListener);
     this.setLayout(new BorderLayout());
     this.add(this.myFieldWithButton[0], BorderLayout.CENTER);
   }
