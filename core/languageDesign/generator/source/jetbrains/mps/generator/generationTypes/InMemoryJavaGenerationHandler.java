@@ -67,8 +67,9 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ITaskProgressHelper progressHelper) {
     info("handling output...");
 
-    if (status.getOutputModel() != null) {
-      boolean result = collectSources(module, inputModel, invocationContext, status.getOutputModel());
+    SModel outputModel = status.getOutputModel();
+    if (outputModel != null) {
+      boolean result = collectSources(module, inputModel, invocationContext, outputModel);
 
       if (!result) {
         info("there were errors.");

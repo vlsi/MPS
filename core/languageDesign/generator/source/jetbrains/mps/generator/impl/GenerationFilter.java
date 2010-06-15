@@ -22,6 +22,7 @@ public class GenerationFilter {
   private GenerationProcessContext myGenerationContext;
   private Project myProject;
   private Set<SNode> myUnchangedRoots;
+  private int myRootsCount;
   private boolean myConditionalsUnchanged;
   private Map<String, String> myGenerationHashes;
   private GenerationDependencies mySavedDependencies;
@@ -67,6 +68,10 @@ public class GenerationFilter {
     return !myConditionalsUnchanged;
   }
 
+  public int getRootsCount() {
+    return myRootsCount;
+  }
+
   private void analyzeDependencies(@NotNull GenerationDependencies dependencies) {
 
     GenerationRootDependencies commonDeps = dependencies.getDependenciesFor(ModelDigestUtil.HEADER);
@@ -110,6 +115,7 @@ public class GenerationFilter {
 
     // check roots
     List<SNode> rootsList = myModel.getSModel().getRoots();
+    myRootsCount = rootsList.size();
     Map<String, SNode> rootById = new HashMap<String, SNode>();
 
     myUnchangedRoots = new HashSet<SNode>();

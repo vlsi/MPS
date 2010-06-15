@@ -21,6 +21,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.output.OutputViewTool;
@@ -42,7 +43,8 @@ public class OutputViewGenerationHandler extends TextGenerationHandler {
     final OutputViewTool viewTool = OutputViewTool.getOutputViewTool(context.getProject());
     viewTool.clear();
 
-    List<SNode> roots = new ArrayList<SNode>(status.getOutputModel().getRoots());
+    SModel outputModel = status.getOutputModel();
+    List<SNode> roots = new ArrayList<SNode>(outputModel != null ? outputModel.getRoots() : Collections.<SNode>emptyList());
     Collections.sort(roots, new Comparator<SNode>() {
       public int compare(SNode o1, SNode o2) {
         String name1 = o1.getName();

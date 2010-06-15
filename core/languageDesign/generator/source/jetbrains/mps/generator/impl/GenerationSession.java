@@ -88,8 +88,16 @@ public class GenerationSession {
     GenerationFilter filter = new GenerationFilter(myOriginalInputModel, myInvocationContext.getProject(), myGenerationContext);
     myDependenciesBuilder = filter.createDependenciesBuilder();
 
-    if(!filter.getUnchangedRoots().isEmpty()) {
-      myLogger.info(filter.getUnchangedRoots().size() + " roots are unchanged");
+    if(!filter.getUnchangedRoots().isEmpty() || !filter.areConditionalsDirty()) {
+      int unchanged = filter.getUnchangedRoots().size();
+      int total = filter.getRootsCount();
+      myLogger.info((filter.areConditionalsDirty() ? "" : "descriptors and ") + unchanged + " of " + total + " roots are unchanged");
+
+      if(total > 0 && unchanged == total && !filter.areConditionalsDirty()) {
+        myLogger.info("generated files are up-to-date");
+        return new GenerationStatus(myOriginalInputModel.getSModel(), null,
+          myDependenciesBuilder.getResult(myInvocationContext.getProject()), false, false, false);
+      }
     }
 
     try {
@@ -282,19 +290,19 @@ public class GenerationSession {
     }
 
     // need to clone input model?
-    boolean needToCloneInputMode = !myDiscardTransients;  // clone model if save transients (needed for tracing)
-    if (!needToCloneInputMode) {
+    boolean needToCloneInputModel = !myDiscardTransients;  // clone model if save transients (needed for tracing)
+    if (!needToCloneInputModel) {
       for (MappingScript preMappingScript : preMappingScripts) {
         if (preMappingScript.getScriptKind() == MappingScriptKind.pre_process_input_model) {
           if (preMappingScript.getModifiesModel()) {
-            needToCloneInputMode = true;
+            needToCloneInputModel = true;
             break;
           }
         }
       }
     }
     SModel toRecycle = null;
-    if (needToCloneInputMode) {
+    if (needToCloneInputModel) {
       ttrace.push("model clone", false);
       SModel currentInputModel_clone = createTransientModel();
       if (myLogger.needsInfo()) {
@@ -325,7 +333,7 @@ public class GenerationSession {
       templateGenerator.getDefaultExecutionContext(null).executeMappingScript(preMappingScript, currentInputModel);
       preProcessed = true;
     }
-    if(needToCloneInputMode) {
+    if(needToCloneInputModel) {
       myDependenciesBuilder.scriptApplied(currentInputModel);
       recycleWasteModel(toRecycle);
     }

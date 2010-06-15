@@ -189,17 +189,21 @@ public class FileGenerationManager implements ApplicationComponent {
     DebugInfo info = new DebugInfo();
     status.setDebugInfo(info);
     status.setBLDependencies(dependRoot);
-    for (SNode outputNode : status.getOutputModel().getRoots()) {
-      try {
-        TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
-        String fileName = outputNode.getName() + "." + TextGenManager.instance().getExtension(outputNode);
-        fillDebugInfo(info, outputNode, fileName, result);
-        fillDependencies(dependRoot, outputNode, fileName, result);
 
-        hasErrors |= result.hasErrors();
-        outputNodeContents.put(outputNode, result.getText());
-      } finally {
-        TextGenManager.reset();
+    SModel outputModel = status.getOutputModel();
+    if(outputModel != null) {
+      for (SNode outputNode : outputModel.getRoots()) {
+        try {
+          TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
+          String fileName = outputNode.getName() + "." + TextGenManager.instance().getExtension(outputNode);
+          fillDebugInfo(info, outputNode, fileName, result);
+          fillDependencies(dependRoot, outputNode, fileName, result);
+
+          hasErrors |= result.hasErrors();
+          outputNodeContents.put(outputNode, result.getText());
+        } finally {
+          TextGenManager.reset();
+        }
       }
     }
     return !hasErrors;

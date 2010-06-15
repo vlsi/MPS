@@ -8,16 +8,14 @@ import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Pair;
 
 import java.io.File;
 import java.rmi.RemoteException;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -37,7 +35,8 @@ public class TextGenerationHandler extends GenerationHandlerBase {
 
   public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext ocontext, ITaskProgressHelper progressHelper) {
     String targetDir = module.getOutputFor(inputModel);
-    List<SNode> roots = status.getOutputModel().getRoots();
+    SModel outputModel = status.getOutputModel();
+    List<SNode> roots = outputModel != null ? outputModel.getRoots() : Collections.<SNode>emptyList();
     boolean generatedOk = true;
     // generate files
     for (SNode output : ListSequence.fromList(roots)) {

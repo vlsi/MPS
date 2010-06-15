@@ -21,6 +21,7 @@ import jetbrains.mps.generator.dependencies.GenerationDependencies;
 import jetbrains.mps.ide.Status;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Igor Alshannikov
@@ -58,6 +59,7 @@ public class GenerationStatus extends Status {
     return myWarnings;
   }
 
+  @Nullable
   public SModel getOutputModel() {
     return myOutputModel;
   }
