@@ -18,7 +18,10 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.project.AbstractModule;
+import java.util.Collections;
 import jetbrains.mps.reloading.EachClassPathItemVisitor;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
@@ -89,7 +92,8 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
             // add classpath to module to be able to see classes in evaluation 
-            IClassPathItem cpItem = getLocationModel().getModelDescriptor().getModule().getClassPathItem();
+            IModule module = getLocationModel().getModelDescriptor().getModule();
+            IClassPathItem cpItem = AbstractModule.getDependenciesClasspath(Collections.singleton(module), true);
             cpItem.accept(new EachClassPathItemVisitor() {
               @Override
               public void visit(JarFileClassPathItem item) {

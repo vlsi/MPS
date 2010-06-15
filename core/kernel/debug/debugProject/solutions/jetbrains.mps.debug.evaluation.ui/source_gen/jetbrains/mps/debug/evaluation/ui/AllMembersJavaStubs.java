@@ -34,7 +34,7 @@ public class AllMembersJavaStubs extends JavaStubs {
     new ASMModelLoader(item, model, false) {
       @Override
       public SModelReference getModelReferenceFor(String packageName) {
-        return StubHelper.uidForPackageInStubs(packageName);
+        return StubHelper.uidForPackageInStubs(packageName, AllMembersJavaStubs.DEBUG_JAVA_ID);
       }
 
       @Override
