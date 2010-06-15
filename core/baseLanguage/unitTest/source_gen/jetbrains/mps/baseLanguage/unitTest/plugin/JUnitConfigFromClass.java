@@ -38,7 +38,7 @@ public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cl
       DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromClass.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig");
       _config.setName(SPropertyOperations.getString(parameter, "name"));
       _config.getStateObject().type = JUnitRunTypes.NODE;
-      _config.getStateObject().node = INamedConcept_Behavior.call_getFqName_1213877404258(parameter);
+      _config.getStateObject().nodes = new ClonableList<String>(INamedConcept_Behavior.call_getFqName_1213877404258(parameter));
       JUnitConfigFromClass.this.myConfig = _config;
     }
   }

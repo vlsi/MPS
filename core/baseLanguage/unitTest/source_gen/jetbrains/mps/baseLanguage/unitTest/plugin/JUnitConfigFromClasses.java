@@ -58,7 +58,7 @@ public class JUnitConfigFromClasses extends BaseConfigCreator<List> implements C
       };
       _config.setName(SPropertyOperations.getString(SNodeOperations.cast(Sequence.fromIterable(parameter).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "name") + ",...");
       _config.getStateObject().type = JUnitRunTypes.NODE;
-      _config.getStateObject().nodes = new ClonableList<String>();
+      _config.getStateObject().nodes = new ClonableList<String>(nodeNames);
       JUnitConfigFromClasses.this.myConfig = _config;
     }
   }

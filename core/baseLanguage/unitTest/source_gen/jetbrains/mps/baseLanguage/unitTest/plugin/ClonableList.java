@@ -11,11 +11,15 @@ public class ClonableList<T> extends AbstractList<T> implements Cloneable {
   private List<T> myData;
 
   public ClonableList() {
-    this.myData = ListSequence.fromList(new ArrayList<T>());
+    this(ListSequence.fromList(new ArrayList<T>()));
   }
 
   public ClonableList(List<T> inner) {
     this.myData = inner;
+  }
+
+  public ClonableList(T value) {
+    this(ListSequence.fromListAndArray(new ArrayList<T>(), value));
   }
 
   public T get(int index) {

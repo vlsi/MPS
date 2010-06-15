@@ -441,19 +441,20 @@ public class JUnitConfigEditor extends JPanel {
   public void apply(final DefaultJUnit_Configuration config) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        config.getStateObject().node = null;
+        config.getStateObject().method = null;
+
         if (ListSequence.fromList(myThis.getMethods()).isNotEmpty()) {
           config.getStateObject().methods = new ClonableList<String>();
           for (SNode testMethod : myThis.getMethods()) {
             config.getStateObject().methods.add(ITestMethod_Behavior.call_getTestName_1216136419751(testMethod));
           }
-          config.getStateObject().method = null;
         }
         if (ListSequence.fromList(myThis.getNodes()).isNotEmpty()) {
           config.getStateObject().nodes = new ClonableList<String>();
           for (SNode testCase : myThis.getNodes()) {
             config.getStateObject().nodes.add(INamedConcept_Behavior.call_getFqName_1213877404258(testCase));
           }
-          config.getStateObject().node = null;
         }
         config.getStateObject().model = (myThis.getModel() != null ?
           config.getStateObject().model = myThis.getModel().getSModelFqName().toString() :
