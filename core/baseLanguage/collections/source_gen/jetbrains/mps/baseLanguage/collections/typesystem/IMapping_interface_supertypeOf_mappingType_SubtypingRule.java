@@ -51,7 +51,7 @@ public class IMapping_interface_supertypeOf_mappingType_SubtypingRule extends Su
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
-        quotedNode1_4.addReference(SReference.create("classifier", quotedNode1_4, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~IMapping")));
+        quotedNode1_4.addReference(SReference.create("classifier", quotedNode1_4, SModelReference.fromString("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)"), SNodeId.fromString("6543581031674030190")));
         {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
@@ -92,7 +92,7 @@ public class IMapping_interface_supertypeOf_mappingType_SubtypingRule extends Su
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
-        quotedNode1_4.addReference(SReference.create("classifier", quotedNode1_4, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~IMapping")));
+        quotedNode1_4.addReference(SReference.create("classifier", quotedNode1_4, SModelReference.fromString("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)"), SNodeId.fromString("6543581031674030190")));
         {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;

@@ -19,10 +19,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="7" />
   <import index="1" modelUID="f:java_stub#junit.framework(junit.framework@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="6" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
+  <import index="7" modelUID="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1170283270068">
     <property name="name:3" value="ForEach_Test1" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1170283334848">
@@ -865,8 +865,8 @@
               </node>
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1571838961922998561">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1571838961922998562">
-                  <link role="baseMethodDeclaration:3" targetNodeId="1.~Assert.assertEquals(java.lang.Object,java.lang.Object):void" resolveInfo="assertEquals" />
                   <link role="classConcept:3" targetNodeId="1.~Assert" resolveInfo="Assert" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="1.~Assert.assertEquals(int,int):void" resolveInfo="assertEquals" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1571838961922998563">
                     <property name="value:3" value="0" />
                   </node>
@@ -880,8 +880,8 @@
               </node>
             </node>
             <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1571838961923394386">
-              <link role="classifier:3" targetNodeId="6.~Sequence" resolveInfo="Sequence" />
-              <link role="variableDeclaration:3" targetNodeId="6.~Sequence.IGNORE_NULL_VALUES" resolveInfo="IGNORE_NULL_VALUES" />
+              <link role="classifier:3" targetNodeId="7.6543581031674023524" resolveInfo="Sequence" />
+              <link role="variableDeclaration:3" targetNodeId="7.6543581031674023535" resolveInfo="IGNORE_NULL_VALUES" />
             </node>
             <node role="ifFalseStatement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1571838961923394387">
               <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1571838961923394388">
@@ -935,8 +935,8 @@
                 </node>
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1571838961923394416">
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1571838961923394417">
-                    <link role="baseMethodDeclaration:3" targetNodeId="1.~Assert.assertEquals(java.lang.Object,java.lang.Object):void" resolveInfo="assertEquals" />
                     <link role="classConcept:3" targetNodeId="1.~Assert" resolveInfo="Assert" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="1.~Assert.assertEquals(int,int):void" resolveInfo="assertEquals" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1571838961923394418">
                       <property name="value:3" value="1" />
                     </node>
@@ -1021,7 +1021,7 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1571838961922998591">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1571838961922998592">
               <link role="classConcept:3" targetNodeId="1.~Assert" resolveInfo="Assert" />
-              <link role="baseMethodDeclaration:3" targetNodeId="1.~Assert.assertEquals(java.lang.Object,java.lang.Object):void" resolveInfo="assertEquals" />
+              <link role="baseMethodDeclaration:3" targetNodeId="1.~Assert.assertEquals(int,int):void" resolveInfo="assertEquals" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1571838961922998593">
                 <property name="value:3" value="0" />
               </node>
@@ -1457,8 +1457,8 @@
               </node>
             </node>
             <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1571838961923391133">
-              <link role="classifier:3" targetNodeId="6.~Sequence" resolveInfo="Sequence" />
-              <link role="variableDeclaration:3" targetNodeId="6.~Sequence.IGNORE_NULL_VALUES" resolveInfo="IGNORE_NULL_VALUES" />
+              <link role="classifier:3" targetNodeId="7.6543581031674023524" resolveInfo="Sequence" />
+              <link role="variableDeclaration:3" targetNodeId="7.6543581031674023535" resolveInfo="IGNORE_NULL_VALUES" />
             </node>
             <node role="ifFalseStatement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1571838961923391134">
               <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1571838961923391135">

@@ -21,11 +21,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="7" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="5" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="7" modelUID="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1207738853400">
     <property name="testCaseName" value="NullSequence" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1207738853401" />
@@ -182,8 +182,8 @@
               </node>
             </node>
             <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1207739150185">
-              <link role="classifier:3" targetNodeId="5.~Sequence" resolveInfo="Sequence" />
-              <link role="variableDeclaration:3" targetNodeId="5.~Sequence.USE_NULL_SEQUENCE" resolveInfo="USE_NULL_SEQUENCE" />
+              <link role="classifier:3" targetNodeId="7.6543581031674023524" resolveInfo="Sequence" />
+              <link role="variableDeclaration:3" targetNodeId="7.6543581031674023531" resolveInfo="USE_NULL_SEQUENCE" />
             </node>
           </node>
         </node>
@@ -322,8 +322,8 @@
               </node>
             </node>
             <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1207739264586">
-              <link role="classifier:3" targetNodeId="5.~Sequence" resolveInfo="Sequence" />
-              <link role="variableDeclaration:3" targetNodeId="5.~Sequence.USE_NULL_SEQUENCE" resolveInfo="USE_NULL_SEQUENCE" />
+              <link role="classifier:3" targetNodeId="7.6543581031674023524" resolveInfo="Sequence" />
+              <link role="variableDeclaration:3" targetNodeId="7.6543581031674023531" resolveInfo="USE_NULL_SEQUENCE" />
             </node>
           </node>
         </node>
@@ -372,7 +372,7 @@
                               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1207741710869">
                                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1207741710870" />
                                 <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1207741713841">
-                                  <link role="classifier:3" targetNodeId="5.~ISequence" resolveInfo="ISequence" />
+                                  <link role="classifier:3" targetNodeId="7.6543581031674024311" resolveInfo="ISequence" />
                                   <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225196719734" />
                                 </node>
                               </node>
@@ -408,8 +408,8 @@
               </node>
             </node>
             <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1207741364186">
-              <link role="classifier:3" targetNodeId="5.~Sequence" resolveInfo="Sequence" />
-              <link role="variableDeclaration:3" targetNodeId="5.~Sequence.USE_NULL_SEQUENCE" resolveInfo="USE_NULL_SEQUENCE" />
+              <link role="classifier:3" targetNodeId="7.6543581031674023524" resolveInfo="Sequence" />
+              <link role="variableDeclaration:3" targetNodeId="7.6543581031674023531" resolveInfo="USE_NULL_SEQUENCE" />
             </node>
           </node>
         </node>
@@ -496,8 +496,8 @@
               </node>
             </node>
             <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1207743174305">
-              <link role="classifier:3" targetNodeId="5.~Sequence" resolveInfo="Sequence" />
-              <link role="variableDeclaration:3" targetNodeId="5.~Sequence.USE_NULL_SEQUENCE" resolveInfo="USE_NULL_SEQUENCE" />
+              <link role="classifier:3" targetNodeId="7.6543581031674023524" resolveInfo="Sequence" />
+              <link role="variableDeclaration:3" targetNodeId="7.6543581031674023531" resolveInfo="USE_NULL_SEQUENCE" />
             </node>
           </node>
         </node>
@@ -533,8 +533,8 @@
               </node>
             </node>
             <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1225731160298">
-              <link role="classifier:3" targetNodeId="5.~Sequence" resolveInfo="Sequence" />
-              <link role="variableDeclaration:3" targetNodeId="5.~Sequence.USE_NULL_SEQUENCE" resolveInfo="USE_NULL_SEQUENCE" />
+              <link role="classifier:3" targetNodeId="7.6543581031674023524" resolveInfo="Sequence" />
+              <link role="variableDeclaration:3" targetNodeId="7.6543581031674023531" resolveInfo="USE_NULL_SEQUENCE" />
             </node>
           </node>
         </node>
@@ -704,8 +704,8 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1207742102354">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1207743634282">
             <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1207743635689">
-              <link role="classifier:3" targetNodeId="5.~Sequence" resolveInfo="Sequence" />
-              <link role="variableDeclaration:3" targetNodeId="5.~Sequence.IGNORE_NULL_VALUES" resolveInfo="IGNORE_NULL_VALUES" />
+              <link role="classifier:3" targetNodeId="7.6543581031674023524" resolveInfo="Sequence" />
+              <link role="variableDeclaration:3" targetNodeId="7.6543581031674023535" resolveInfo="IGNORE_NULL_VALUES" />
             </node>
             <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1207743634284">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1207743649434">
@@ -1159,8 +1159,8 @@
               </node>
             </node>
             <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1207744083258">
-              <link role="classifier:3" targetNodeId="5.~Sequence" resolveInfo="Sequence" />
-              <link role="variableDeclaration:3" targetNodeId="5.~Sequence.IGNORE_NULL_VALUES" resolveInfo="IGNORE_NULL_VALUES" />
+              <link role="classifier:3" targetNodeId="7.6543581031674023524" resolveInfo="Sequence" />
+              <link role="variableDeclaration:3" targetNodeId="7.6543581031674023535" resolveInfo="IGNORE_NULL_VALUES" />
             </node>
             <node role="ifFalseStatement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="7556115255731760070">
               <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7556115255731760071">
@@ -1589,8 +1589,8 @@
               </node>
             </node>
             <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1241099383090">
-              <link role="classifier:3" targetNodeId="5.~Sequence" resolveInfo="Sequence" />
-              <link role="variableDeclaration:3" targetNodeId="5.~Sequence.IGNORE_NULL_VALUES" resolveInfo="IGNORE_NULL_VALUES" />
+              <link role="classifier:3" targetNodeId="7.6543581031674023524" resolveInfo="Sequence" />
+              <link role="variableDeclaration:3" targetNodeId="7.6543581031674023535" resolveInfo="IGNORE_NULL_VALUES" />
             </node>
             <node role="ifFalseStatement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1571838961923397783">
               <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1571838961923397784">
@@ -1832,8 +1832,8 @@
               </node>
             </node>
             <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1207745738998">
-              <link role="classifier:3" targetNodeId="5.~Sequence" resolveInfo="Sequence" />
-              <link role="variableDeclaration:3" targetNodeId="5.~Sequence.NULL_WHEN_EMPTY" resolveInfo="NULL_WHEN_EMPTY" />
+              <link role="classifier:3" targetNodeId="7.6543581031674023524" resolveInfo="Sequence" />
+              <link role="variableDeclaration:3" targetNodeId="7.6543581031674023539" resolveInfo="NULL_WHEN_EMPTY" />
             </node>
           </node>
         </node>

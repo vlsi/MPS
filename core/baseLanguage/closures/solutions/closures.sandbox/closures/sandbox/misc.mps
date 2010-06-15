@@ -26,11 +26,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="10" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="6" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="11" modelUID="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1221651112606">
     <property name="name:3" value="Debug" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1221651191297">
@@ -54,8 +54,8 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1222765912053">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1222765452530">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1222765452531">
-                <link role="baseMethodDeclaration:3" targetNodeId="6.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
-                <link role="classConcept:3" targetNodeId="6.~Sequence" resolveInfo="Sequence" />
+                <link role="classConcept:3" targetNodeId="11.6543581031674023524" resolveInfo="Sequence" />
+                <link role="baseMethodDeclaration:3" targetNodeId="11.6543581031674023610" resolveInfo="fromIterable" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1222765996269">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator:7" id="1227876790336">
                     <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1227876790337" />
@@ -72,14 +72,14 @@
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1222765452535">
-                <link role="baseMethodDeclaration:3" targetNodeId="6.~ISequence.select(jetbrains.mps.internal.collections.runtime.ISelector):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="select" />
+                <link role="baseMethodDeclaration:3" targetNodeId="11.6543581031674024374" resolveInfo="select" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1222775672914">
                   <link role="variableDeclaration:3" targetNodeId="1222775672899" resolveInfo="meet" />
                 </node>
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1222765914152">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
+              <link role="baseMethodDeclaration:3" targetNodeId="11.6543581031674024364" resolveInfo="translate" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="1222765975373">
                 <node role="parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="1222765975374">
                   <property name="name:7" value="it" />

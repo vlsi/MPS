@@ -17,6 +17,7 @@
         <dependency reexport="false">83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</dependency>
         <dependency reexport="false">df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</dependency>
         <dependency reexport="false">7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)</dependency>
+        <dependency reexport="false">9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguage>5dc5fc0d-37ef-4782-8192-8b5ce1f69f80(jetbrains.mps.baseLanguage.extensionMethods)</usedLanguage>
@@ -40,15 +41,25 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <classPath>
-    <entry path="${language_descriptor}/classes" include="false" />
-    <entry path="${language_descriptor}/runtime/classes" include="false" />
-  </classPath>
-  <languageRuntimeClassPath>
-    <entry path="${language_descriptor}/runtime/classes" include="false" />
-    <entry path="${language_descriptor}/runtime/source" include="true" />
-    <entry path="${language_descriptor}/runtime/source_gen" include="true" />
-  </languageRuntimeClassPath>
+  <stubModelEntries>
+    <stubModelEntry path="${language_descriptor}/classes" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${language_descriptor}/runtime/classes" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+  </stubModelEntries>
+  <runtimeStubModels>
+    <stubModelEntry path="${language_descriptor}/runtime/classes" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${language_descriptor}/runtime/source" include="true">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${language_descriptor}/runtime/source_gen" include="true">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+  </runtimeStubModels>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>

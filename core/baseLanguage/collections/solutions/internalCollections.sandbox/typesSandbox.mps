@@ -28,11 +28,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <maxImportIndex value="12" />
+  <maxImportIndex value="13" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" version="-1" />
-  <import index="6" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="13" modelUID="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1210602261632">
     <property name="testCaseName" value="Sort" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1210602261633" />
@@ -43,8 +43,8 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1210602261852">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1210608533655">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1210608533656">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~CaseInsensitiveStringComparison.compare(java.lang.Object,java.lang.Object,jetbrains.mps.internal.collections.runtime.ISelector):int" resolveInfo="compare" />
-              <link role="classConcept:3" targetNodeId="6.~CaseInsensitiveStringComparison" resolveInfo="CaseInsensitiveStringComparison" />
+              <link role="classConcept:3" targetNodeId="13.6543581031674025245" resolveInfo="CaseInsensitiveStringComparison" />
+              <link role="baseMethodDeclaration:3" targetNodeId="13.6543581031674025251" resolveInfo="compare" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1210608533657">
                 <property name="value:3" value="a" />
               </node>
@@ -104,7 +104,7 @@
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1223466668367">
               <property name="name:3" value="seq" />
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1223466668368">
-                <link role="classifier:3" targetNodeId="6.~ISequence" resolveInfo="ISequence" />
+                <link role="classifier:3" targetNodeId="13.6543581031674024311" resolveInfo="ISequence" />
                 <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4859441577819191818" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1223466672569" />
@@ -183,7 +183,7 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1223557028161">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1223557028433">
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1223557030357">
-                <link role="baseMethodDeclaration:3" targetNodeId="6.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator2):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.6543581031674024364" resolveInfo="translate" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="1223557032297">
                   <node role="parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="1223557036345">
                     <property name="name:7" value="it" />
@@ -213,7 +213,7 @@
                 <link role="variableDeclaration:3" targetNodeId="1223466668367" resolveInfo="seq" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1223466687545">
-                <link role="baseMethodDeclaration:3" targetNodeId="6.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator2):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.6543581031674024364" resolveInfo="translate" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="1223469226410">
                   <node role="parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="1223469226411">
                     <property name="name:7" value="it" />

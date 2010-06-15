@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRule_Runtime {
-  private static SNodePointer SNODE_POINTER_9xe6am_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime.backports(jetbrains.mps.internal.collections.runtime.backports@java_stub)", "~Deque");
+  private static SNodePointer SNODE_POINTER_9xe6am_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~Deque");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 

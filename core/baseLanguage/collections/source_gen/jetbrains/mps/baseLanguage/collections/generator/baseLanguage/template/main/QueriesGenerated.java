@@ -40,17 +40,17 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a0v = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ISequence");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a36 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IListSequence");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a66 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IMapSequence");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a27 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ISetSequence");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a48 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IEnumerator$Iterator");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a68 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ISortedMapSequence");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a09 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ISortedSetSequence");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a49 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IQueueSequence");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a89 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ICollectionSequence");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a901 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IDequeSequence");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a561 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ILinkedListSequence");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a0v = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024311");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a36 = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674030017");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a66 = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674036653");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a27 = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674036081");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a48 = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024974");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a68 = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674025209");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a09 = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674036880");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a49 = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674036013");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a89 = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674026272");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a901 = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024899");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a561 = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024810");
 
   public static boolean baseMappingRule_Condition_1208621031113(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation");
@@ -990,7 +990,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "closure", true);
   }
 
-  public static SNode sourceNodeQuery_1226316536986(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_250186026864277989(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "closure", true);
   }
 
@@ -1062,11 +1062,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "ascending", true);
   }
 
-  public static SNode sourceNodeQuery_1209674929745(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_5206942920581686670(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "closure", true);
   }
 
-  public static SNode sourceNodeQuery_1209673629643(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_5206942920581686678(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "ascending", true);
   }
 
@@ -1568,7 +1568,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "rValue", true);
   }
 
-  public static SNode sourceNodeQuery_5499565529811206624(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_8827130215347578184(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
   }
 

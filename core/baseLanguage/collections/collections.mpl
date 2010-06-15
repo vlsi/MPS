@@ -51,18 +51,21 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <classPath>
-    <entry path="${language_descriptor}/classes" include="false" />
-    <entry path="${language_descriptor}/runtime/classes" include="false" />
-  </classPath>
-  <languageRuntimeClassPath>
-    <entry path="${language_descriptor}/runtime/classes" />
-    <entry path="${language_descriptor}/runtime/source" />
-    <entry path="${language_descriptor}/runtime/source_gen" />
-  </languageRuntimeClassPath>
+  <runtimeStubModels>
+    <stubModelEntry path="${language_descriptor}/runtime/classes" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${language_descriptor}/runtime/classes_gen" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${language_descriptor}/runtime/source_gen" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+  </runtimeStubModels>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
+    <dependency reexport="false">134ef213-c518-42b0-b12c-c109aa13d320(collections_trove.runtime)</dependency>
     <dependency reexport="true">fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</dependency>
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
   </dependencies>

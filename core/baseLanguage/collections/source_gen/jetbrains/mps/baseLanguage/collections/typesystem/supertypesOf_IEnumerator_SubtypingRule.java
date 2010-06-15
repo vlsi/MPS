@@ -18,7 +18,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_24ecqj_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IEnumerator");
+  private static SNodePointer SNODE_POINTER_24ecqj_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024971");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
