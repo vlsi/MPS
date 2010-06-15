@@ -36,8 +36,8 @@ public class DefaultJavaAppFromMainMethod extends BaseConfigCreator<SNode> imple
       JavaApplication_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JavaApplication_ConfigurationType.CONFIGURATION_TYPE_EP), JavaApplication_ConfigurationType.class);
       DefaultJavaApplication_Configuration _config = new DefaultJavaApplication_Configuration(DefaultJavaAppFromMainMethod.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig");
       _config.setName(SPropertyOperations.getString(classifier, "name"));
-      _config.getStateObject().nodeId = parameter.getId();
-      _config.getStateObject().modelId = parameter.getModel().getModelDescriptor().getSModelReference().toString();
+      _config.getStateObject().nodeId = classifier.getId();
+      _config.getStateObject().modelId = classifier.getModel().getModelDescriptor().getSModelReference().toString();
       DefaultJavaAppFromMainMethod.this.myConfig = _config;
     }
   }

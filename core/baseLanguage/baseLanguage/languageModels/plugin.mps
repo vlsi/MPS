@@ -9808,7 +9808,9 @@
             </node>
           </node>
           <node role="property:23" type="jetbrains.mps.baseLanguage.runConfigurations.structure.NodeRunConfigPropertyInstance:0" id="3361586479361490330">
-            <node role="propertyValue:0" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter:23" id="3361586479361490332" />
+            <node role="propertyValue:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7253856276259904668">
+              <link role="variableDeclaration:3" targetNodeId="4606119813988120968" resolveInfo="classifier" />
+            </node>
           </node>
         </node>
       </node>
