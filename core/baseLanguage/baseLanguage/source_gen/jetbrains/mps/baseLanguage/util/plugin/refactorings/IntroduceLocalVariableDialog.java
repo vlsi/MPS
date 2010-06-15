@@ -17,11 +17,14 @@ public class IntroduceLocalVariableDialog extends IntroduceVariableDialog {
     this.myRefactoring = refactoring;
     this.initPanel();
     int gridy = 1;
+    GridBagConstraints c = new GridBagConstraints();
+    c.gridy = gridy;
+    c.fill = GridBagConstraints.HORIZONTAL;
+    addIsFinal(c);
+    gridy++;
     if (getRefactoring().hasDuplicates()) {
       addReplacingAll(gridy++);
     }
-    GridBagConstraints c;
-    c = new GridBagConstraints();
     c.gridy = gridy;
     c.weighty = 1;
     this.myPanel.add(new JPanel(), c);

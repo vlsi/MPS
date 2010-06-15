@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
@@ -34,9 +35,12 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     } else {
       newDeclaration = new IntroduceFieldRefactoring.QuotationClass_baxqxe_a0a0a0c0b().createNode(myVisibilityLevel.getNode(), SNodeOperations.copyNode(this.getExpressionType()), this.getName());
     }
+    if (myIsFinal) {
+      SPropertyOperations.set(newDeclaration, "isFinal", "" + true);
+    }
     SNode classConcept = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).addElement(newDeclaration);
-    SNode assignStatement = new IntroduceFieldRefactoring.QuotationClass_baxqxe_a0a5a1().createNode(newDeclaration, SNodeOperations.copyNode(this.getExpression()));
+    SNode assignStatement = new IntroduceFieldRefactoring.QuotationClass_baxqxe_a0a6a1().createNode(newDeclaration, SNodeOperations.copyNode(this.getExpression()));
     if (this.myFieldInitialization == FieldInitializationPlace.METHOD) {
       SNodeOperations.insertPrevSiblingChild(SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.Statement", false, false), SNodeOperations.copyNode(assignStatement));
     }
@@ -188,8 +192,8 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     }
   }
 
-  public static class QuotationClass_baxqxe_a0a5a1 {
-    public QuotationClass_baxqxe_a0a5a1() {
+  public static class QuotationClass_baxqxe_a0a6a1 {
+    public QuotationClass_baxqxe_a0a6a1() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14) {

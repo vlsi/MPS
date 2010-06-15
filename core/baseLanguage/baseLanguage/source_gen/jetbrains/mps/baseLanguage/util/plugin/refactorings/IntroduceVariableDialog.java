@@ -29,6 +29,7 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
   protected JPanel myPanel;
   protected SNode myResult;
   protected JCheckBox myReplaceAll = null;
+  protected JCheckBox myIsFinal = null;
   protected VisibilityPanel myVisibilityPanel = null;
   private JComboBox myName;
 
@@ -78,6 +79,11 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
     this.myPanel.add(this.myReplaceAll, c);
   }
 
+  public void addIsFinal(GridBagConstraints c) {
+    myIsFinal = new JCheckBox("declare final");
+    myPanel.add(myIsFinal, c);
+  }
+
   public void addVisibilityPanel(final GridBagConstraints c) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -104,7 +110,10 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
       getRefactoring().setVisibilityLevel(this.myVisibilityPanel.getResult());
     }
     if (myReplaceAll != null) {
-      getRefactoring().setReplacingAll(this.myReplaceAll != null && this.myReplaceAll.isSelected());
+      getRefactoring().setReplacingAll(this.myReplaceAll.isSelected());
+    }
+    if (myIsFinal != null) {
+      getRefactoring().setIsFinal(myIsFinal.isSelected());
     }
     this.doRefactoring();
   }

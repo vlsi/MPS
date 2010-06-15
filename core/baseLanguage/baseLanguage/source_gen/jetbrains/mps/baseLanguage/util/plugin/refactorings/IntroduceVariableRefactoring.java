@@ -32,6 +32,7 @@ public abstract class IntroduceVariableRefactoring {
   private List<String> myExpectedNames;
   protected SNode myContainer;
   protected boolean myIsReplacingAll;
+  protected boolean myIsFinal = false;
   protected VisibilityLevel myVisibilityLevel;
   protected List<SNode> myDuplicates = new ArrayList<SNode>();
 
@@ -103,6 +104,10 @@ public abstract class IntroduceVariableRefactoring {
 
   public void setReplacingAll(boolean b) {
     this.myIsReplacingAll = b;
+  }
+
+  public void setIsFinal(boolean b) {
+    myIsFinal = b;
   }
 
   public boolean hasDuplicates() {

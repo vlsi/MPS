@@ -27,6 +27,11 @@ public class IntroduceFieldDialog extends IntroduceVariableDialog {
     int gridy = 1;
     GridBagConstraints c;
     c = new GridBagConstraints();
+    c.fill = GridBagConstraints.HORIZONTAL;
+    c.gridx = 1;
+    c.gridy = 0;
+    addIsFinal(c);
+    c = new GridBagConstraints();
     c.fill = GridBagConstraints.BOTH;
     c.insets = new Insets(3, 3, 3, 3);
     c.gridx = 0;
