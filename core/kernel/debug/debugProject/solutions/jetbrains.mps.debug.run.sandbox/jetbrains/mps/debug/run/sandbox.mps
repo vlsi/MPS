@@ -55,6 +55,11 @@
               </node>
             </node>
           </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3103915350025339065">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3103915350025339066">
+              <property name="value:3" value="3" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

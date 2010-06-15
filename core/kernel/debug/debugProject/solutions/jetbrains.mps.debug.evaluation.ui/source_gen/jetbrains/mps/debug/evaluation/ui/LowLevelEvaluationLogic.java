@@ -184,7 +184,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     }
 
     List<SNode> classifiers = myScope.getNodes(new Condition<SNode>() {
-      public boolean met(SNode node) {
+      public boolean met(@NotNull SNode node) {
         if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
           return false;
         }
@@ -217,7 +217,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
   @Override
   public void updateState() {
     super.updateState();
-    updateVariables();
+    createVars();
   }
 
   @Override
@@ -242,17 +242,15 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
   }
 
   private void createVars() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        // creating scope 
-        myScope = new ReachableClassifiersScope(myAuxModel.getSModel(), IClassifiersSearchScope.CLASSIFFIER, getModule().getScope());
-      }
-    });
+    if (myScope == null) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          // creating scope 
+          myScope = new ReachableClassifiersScope(myAuxModel.getSModel(), IClassifiersSearchScope.CLASSIFFIER, getModule().getScope());
+        }
+      });
+    }
 
-    this.updateVariables();
-  }
-
-  private void updateVariables() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         fillVariables();
