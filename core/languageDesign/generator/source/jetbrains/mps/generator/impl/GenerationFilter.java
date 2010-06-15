@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * Evgeny Gryaznov, Jun 3, 2010
@@ -48,7 +49,7 @@ public class GenerationFilter {
     GenerationDependencies dependencies = GenerationDependenciesCache.getInstance().get(myModel);
     if(dependencies != null && myGenerationHashes != null) {
       analyzeDependencies(dependencies);
-      if(!myUnchangedRoots.isEmpty()) {
+      if(!myUnchangedRoots.isEmpty() || myConditionalsUnchanged) {
         mySavedDependencies = dependencies;
       }
     }
@@ -73,6 +74,7 @@ public class GenerationFilter {
       return;
     }
 
+    // check model header
     {
       String oldHash = commonDeps.getHash();
       String newHash = myGenerationHashes.get(ModelDigestUtil.HEADER);
@@ -81,6 +83,32 @@ public class GenerationFilter {
       }
     }
 
+    // check external dependencies
+    Set<String> changedModels = new HashSet<String>();
+    Map<String,String> externalHashes = dependencies.getExternalHashes();
+    for(Entry<String,String> entry : externalHashes.entrySet()) {
+      String modelReference = entry.getKey();
+      SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
+      if(sm == null) {
+        changedModels.add(modelReference);
+        continue;
+      }
+      String oldHash = entry.getValue();
+      if(oldHash == null) {
+        // TODO hash for packaged models
+        if(!sm.isPackaged() && !SModelStereotype.isStubModelStereotype(sm.getStereotype())) {
+          changedModels.add(modelReference);
+        }
+        continue;
+      }
+      Map<String, String> map = ModelDigestUtil.getGenerationHashes(sm, myProject);
+      String newHash = map != null ? map.get(ModelDigestUtil.FILE) : null;
+      if(newHash == null || !oldHash.equals(newHash)) {
+        changedModels.add(modelReference);
+      }
+    }
+
+    // check roots
     List<SNode> rootsList = myModel.getSModel().getRoots();
     Map<String, SNode> rootById = new HashMap<String, SNode>();
 
@@ -96,7 +124,16 @@ public class GenerationFilter {
       if(newHash == null || !newHash.equals(oldHash)) {
         continue;
       }
-      myUnchangedRoots.add(root);
+      boolean isDirty = false;
+      for(String m : rd.getExternal()) {
+        if(changedModels.contains(m)) {
+          isDirty = true;
+          break;
+        }
+      }
+      if(!isDirty) {
+        myUnchangedRoots.add(root);
+      }
     }
 
     if(myUnchangedRoots.isEmpty()) {
