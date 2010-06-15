@@ -27,7 +27,10 @@ public class ClassCreator_constructorDeclaration_ReferentConstraint extends Base
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new VisibleClassConstructorsScope(_context.getEnclosingNode(), operationContext.getScope());
+    return new VisibleClassConstructorsScope(((_context.getReferenceNode() == null) ?
+      _context.getEnclosingNode() :
+      _context.getReferenceNode()
+    ), operationContext.getScope());
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

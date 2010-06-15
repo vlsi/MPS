@@ -36,15 +36,15 @@ public final class VisibilityUtil {
       return true;
     }
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(name, "visibility", true), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
-      //  checkspecial cases of protected access 
+      //  check special cases of protected access 
       SNode classifier = SNodeOperations.getAncestor(name, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       for (SNode cls : ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
         if (BaseLanguageUtil.isAssignable(((Classifier) SNodeOperations.getAdapter(cls)), ((Classifier) SNodeOperations.getAdapter(classifier)))) {
           if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") && SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation") || SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
             // check ExpressionName or PrimaryExpression is subclass of cls, works only with right context 
             //  will not work in the case: otherClass.method(protectedMethod()) with enclosed node as context 
-            SNode qualifierType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(context), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(qualifierType, new VisibilityUtil.QuotationClass_v8uv56_a1a0d0a0a0c0g0a().createNode(cls))) {
+            SNode qualifier = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(context), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(qualifier), new VisibilityUtil.QuotationClass_v8uv56_a1a0d0a0a0c0g0a().createNode(cls))) {
               return true;
             }
           } else if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {

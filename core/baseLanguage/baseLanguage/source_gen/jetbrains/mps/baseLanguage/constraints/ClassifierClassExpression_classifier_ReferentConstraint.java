@@ -26,7 +26,10 @@ public class ClassifierClassExpression_classifier_ReferentConstraint extends Bas
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new VisibleClassifiersScope(_context.getEnclosingNode(), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope());
+    return new VisibleClassifiersScope(((_context.getReferenceNode() == null) ?
+      _context.getEnclosingNode() :
+      _context.getReferenceNode()
+    ), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope());
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

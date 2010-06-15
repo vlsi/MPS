@@ -36,7 +36,7 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
     super(model, CONSTRUCTOR, scope);
   }
 
-  public VisibleClassConstructorsScope(SNode contextNode, IScope scope) {
+  public VisibleClassConstructorsScope(@NotNull SNode contextNode, IScope scope) {
     super(contextNode, CONSTRUCTOR, scope);
   }
 

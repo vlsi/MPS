@@ -34,21 +34,13 @@ public class VisibleClassifiersScope extends ReachableClassifiersScope {
       if (VisibilityUtil.isVisible(myContextNode, SNodeOperations.cast(BaseAdapter.fromAdapter(classifier), "jetbrains.mps.baseLanguage.structure.IVisible"))) {
         result.add(classifier);
       }
-      /*
-        String clsNamespace = classifier.getModel().getSModelFqName().getNamespace();
-        String modelNamespace = this.getModel().getSModelFqName().getNamespace();
-        if (classifier.getVisibility() == null && !(clsNamespace.equals(modelNamespace))) {
-          continue;
-        }
-        result.add(classifier);
-      */
     }
     return result;
   }
 
   public boolean isInScope(SNode node) {
     // speed up IVisible nodes with context 
-    if (myContextNode == null || !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IVisible"))) {
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IVisible"))) {
       return super.isInScope(node);
     }
     // check only NON_FINAL constraint, other constraints should be enforced by the reference type 

@@ -30,7 +30,10 @@ public class NamedTupleType_tupleDeclaration_ReferentConstraint extends BaseNode
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new VisibleClassifiersScope(_context.getEnclosingNode(), IClassifiersSearchScope.ANYTHING, operationContext.getScope()) {
+    return new VisibleClassifiersScope(((_context.getReferenceNode() == null) ?
+      _context.getEnclosingNode() :
+      _context.getReferenceNode()
+    ), IClassifiersSearchScope.ANYTHING, operationContext.getScope()) {
       protected List<INodeAdapter> getNodesFormClassifiersList(List<Classifier> classifiers, int constraint, Condition<INodeAdapter> condition) {
         List<INodeAdapter> result = new ArrayList<INodeAdapter>();
         for (Classifier classifier : classifiers) {

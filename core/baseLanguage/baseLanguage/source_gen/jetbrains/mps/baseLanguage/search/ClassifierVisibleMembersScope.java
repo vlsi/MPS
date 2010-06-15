@@ -65,7 +65,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode memberNode : members) {
       SNode member = SNodeOperations.cast(memberNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
-      if (VisibilityUtil.isVisible(this.myContextNode, member)) {
+      if (myContextNode == null || VisibilityUtil.isVisible(myContextNode, member)) {
         ListSequence.fromList(result).addElement(member);
       }
     }
