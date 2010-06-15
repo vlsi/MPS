@@ -65,7 +65,6 @@ public abstract class MpsWorker {
   protected final List<String> myWarnings = new ArrayList<String>();
   protected final WhatToDo myWhatToDo;
   private final AntLogger myLogger;
-  private final Set<Library> myCompiledLibraries = new LinkedHashSet<Library>();
 
   private MpsWorker() {
     this(null, (AntLogger) null);
@@ -157,48 +156,18 @@ public abstract class MpsWorker {
   }
 
   protected void make() {
-    final Set<IModule> toCompile = new LinkedHashSet<IModule>();
-    for (final Library l : myCompiledLibraries) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          List<IModule> moduleList = MPSModuleRepository.getInstance().getAllModulesInDirectory(new File(l.getPath()));
-          for (IModule module : moduleList) {
-            if (!module.isPackaged() && module.isCompileInMPS()) {
-              toCompile.add(module);
-            }
-          }
-        }
-      });
-    }
-    if (toCompile.isEmpty()) return;
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        EmptyProgressIndicator indicator = new EmptyProgressIndicator();
 
-    startMake(myCompiledLibraries, toCompile);
+        ClassLoaderManager.getInstance().updateClassPath();
 
-    CompilationResult result = null;
-    try {
-      result = ModelAccess.instance().runReadAction(new Computable<CompilationResult>() {
-        public CompilationResult compute() {
-          return new ModuleMaker().make(toCompile, new InfoProgressIndicator());
-        }
-      });
-    } catch (Throwable t) {
-      log(t);
-    }
+        ModuleMaker maker = new ModuleMaker();
+        maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator);
 
-    if (result != null) {
-      finishMake(myCompiledLibraries, result);
-
-      if (result.isReloadingNeeded()) {
-        info("Reloading classes...");
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            ClassLoaderManager.getInstance().reloadAll(new InfoProgressIndicator());
-          }
-        });
-        info("Classes reloaded");
+        ClassLoaderManager.getInstance().reloadAll(indicator);
       }
-    }
+    });
   }
 
   protected void startMake(Set<Library> compiledLibraries, Set<IModule> toCompile) {
@@ -269,10 +238,6 @@ public abstract class MpsWorker {
       library.setName(libName);
       library.setPath(myWhatToDo.getLibraries().get(libName).getAbsolutePath());
       libraries.put(libName, library);
-
-      if (myWhatToDo.getCompiledLibraries().contains(libName)) {
-        myCompiledLibraries.add(library);
-      }
     }
 
     LibraryManager.getInstance().loadState(state);

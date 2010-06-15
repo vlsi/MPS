@@ -53,20 +53,6 @@ public class TestBrokenReferencesWorker extends MpsWorker {
   public void work() {
     setupEnvironment();
 
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        EmptyProgressIndicator indicator = new EmptyProgressIndicator();
-
-        ClassLoaderManager.getInstance().updateClassPath();
-
-        ModuleMaker maker = new ModuleMaker();
-        maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator);
-
-        ClassLoaderManager.getInstance().reloadAll(indicator);
-      }
-    });
-
-
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     File projectFile = FileUtil.createTmpFile();
     final MPSProject project = new MPSProject(ideaProject);
