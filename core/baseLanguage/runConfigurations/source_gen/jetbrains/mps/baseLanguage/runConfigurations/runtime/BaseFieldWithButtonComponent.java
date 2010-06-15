@@ -54,9 +54,19 @@ public class BaseFieldWithButtonComponent extends JPanel implements Disposable {
         it.actionPerformed(null);
       }
     });
+
+    // I have no clue, which purpose do next lines serve 
+
     int cp = this.getTextField().getCaretPosition();
+    int selStart = this.getTextField().getSelectionStart();
+    int selEnd = this.getTextField().getSelectionEnd();
+
     this.getTextField().setText(this.getText());
     this.getTextField().setCaretPosition(cp);
+    // except for those lines: they fix selection, broken by previous line 
+    this.getTextField().setSelectionStart(selStart);
+    this.getTextField().setSelectionEnd(selEnd);
+
     this.myText = null;
   }
 

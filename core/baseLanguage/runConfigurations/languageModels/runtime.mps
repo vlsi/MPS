@@ -2973,6 +2973,13 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="6820300573416479207" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="6820300573416479211">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="6820300573416479212">
+            <property name="text:3" value="I have no clue, which purpose do next lines serve" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="6820300573416479209" />
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1447676209063504131">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1447676209063504132">
             <property name="name:3" value="cp" />
@@ -2990,6 +2997,41 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6820300573416479157">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6820300573416479158">
+            <property name="name:3" value="selStart" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="6820300573416479159" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6820300573416479160">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6820300573416479161">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="6820300573416479162" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6820300573416479163">
+                  <link role="baseMethodDeclaration:3" targetNodeId="1447676209063504180" resolveInfo="getTextField" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6820300573416479164">
+                <link role="baseMethodDeclaration:3" targetNodeId="25.~JTextComponent.getSelectionStart():int" resolveInfo="getSelectionStart" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6820300573416479166">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6820300573416479167">
+            <property name="name:3" value="selEnd" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="6820300573416479168" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6820300573416479169">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6820300573416479170">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="6820300573416479171" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6820300573416479172">
+                  <link role="baseMethodDeclaration:3" targetNodeId="1447676209063504180" resolveInfo="getTextField" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6820300573416479173">
+                <link role="baseMethodDeclaration:3" targetNodeId="25.~JTextComponent.getSelectionEnd():int" resolveInfo="getSelectionEnd" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="6820300573416479206" />
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1447676209063504139">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1447676209063504140">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1447676209063504141">
@@ -3025,6 +3067,44 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="8118615065191452077">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="8118615065191452078">
+            <property name="text:3" value="except for those lines: they fix selection, broken by previous line" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6820300573416479176">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6820300573416479186">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6820300573416479181">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="6820300573416479177" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6820300573416479185">
+                <link role="baseMethodDeclaration:3" targetNodeId="1447676209063504180" resolveInfo="getTextField" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6820300573416479190">
+              <link role="baseMethodDeclaration:3" targetNodeId="25.~JTextComponent.setSelectionStart(int):void" resolveInfo="setSelectionStart" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6820300573416479191">
+                <link role="variableDeclaration:3" targetNodeId="6820300573416479158" resolveInfo="selStart" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6820300573416479193">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6820300573416479200">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6820300573416479195">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="6820300573416479194" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6820300573416479199">
+                <link role="baseMethodDeclaration:3" targetNodeId="1447676209063504180" resolveInfo="getTextField" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6820300573416479204">
+              <link role="baseMethodDeclaration:3" targetNodeId="25.~JTextComponent.setSelectionEnd(int):void" resolveInfo="setSelectionEnd" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6820300573416479205">
+                <link role="variableDeclaration:3" targetNodeId="6820300573416479167" resolveInfo="selEnd" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="6820300573416479208" />
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1447676209063504155">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1447676209063504156">
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1447676209063504157" />
