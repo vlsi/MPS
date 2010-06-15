@@ -513,6 +513,7 @@ public class SModel implements Iterable<SNode> {
 
     myLanguages.remove(ref);
     myVersionedLanguages.remove(ref);
+    removeUnusedLanguageAspectModelElements();
     fireLanguageRemovedEvent(ref);
   }
 
@@ -709,6 +710,15 @@ public class SModel implements Iterable<SNode> {
     return new ArrayList<ImportElement>(myAdditionalModelsVersions);
   }
 
+  public void removeUnusedLanguageAspectModelElements() {
+    Set<SModelReference> dependencies = getDependenciesModelUIDs();
+    for (Iterator<ImportElement> iter = myAdditionalModelsVersions.iterator(); iter.hasNext(); ) {
+      ImportElement elem = iter.next();
+      if (!dependencies.contains(elem.getModelReference())) {
+        iter.remove();
+      }
+    }
+  }
 
   public void deleteImportedModel(@NotNull SModelReference modelReference) {
     ModelChange.assertLegalChange(this);
@@ -721,13 +731,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void deleteImportedModel(@NotNull SModel model) {
-    ModelChange.assertLegalChange(this);
-
-    ImportElement importElement = getImportElement(model.getSModelReference());
-    if (importElement != null) {
-      myImports.remove(importElement);
-      fireImportRemovedEvent(model.getSModelReference());
-    }
+    deleteImportedModel(model.getSModelReference());
   }
 
   @NotNull
