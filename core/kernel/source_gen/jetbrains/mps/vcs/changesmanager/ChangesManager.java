@@ -77,6 +77,7 @@ public class ChangesManager extends AbstractProjectComponent {
           modelChangesManager.dispose();
         }
         MapSequence.fromMap(myModelChanges).clear();
+        myCommandQueue.dispose();
       }
     });
   }

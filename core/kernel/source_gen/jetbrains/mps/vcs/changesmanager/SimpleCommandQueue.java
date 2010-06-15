@@ -34,6 +34,10 @@ public class SimpleCommandQueue {
     }
   }
 
+  public void dispose() {
+    myThread.interrupt();
+  }
+
   public void assertIsCommandThread() {
     assert Thread.currentThread() == myThread;
   }
@@ -57,6 +61,9 @@ public class SimpleCommandQueue {
     @Override
     public void run() {
       while (true) {
+        if (isInterrupted()) {
+          return;
+        }
         Runnable task;
         synchronized (myQueue) {
           while (myQueue.isEmpty()) {

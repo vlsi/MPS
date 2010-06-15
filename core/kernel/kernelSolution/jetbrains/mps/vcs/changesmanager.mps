@@ -697,6 +697,16 @@
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.MapClearOperation:7" id="1848579765482163880" />
                     </node>
                   </node>
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6669546492594119363">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6669546492594119365">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6669546492594119364">
+                        <link role="variableDeclaration:3" targetNodeId="3722815385094376477" resolveInfo="myCommandQueue" />
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6669546492594119369">
+                        <link role="baseMethodDeclaration:3" targetNodeId="6669546492594067000" resolveInfo="dispose" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -24905,6 +24915,23 @@
         </node>
       </node>
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="6669546492594067000">
+      <property name="name:3" value="dispose" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6669546492594067001" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6669546492594067002" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6669546492594067003">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6669546492594083149">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6669546492594083156">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6669546492594083150">
+              <link role="variableDeclaration:3" targetNodeId="3722815385094206094" resolveInfo="myThread" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6669546492594083160">
+              <link role="baseMethodDeclaration:3" targetNodeId="49.~Thread.interrupt():void" resolveInfo="interrupt" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3722815385094288809">
       <property name="name:3" value="assertIsCommandThread" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3722815385094288810" />
@@ -25044,6 +25071,14 @@
               <property name="value:3" value="true" />
             </node>
             <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3722815385094360870">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6669546492594083167">
+                <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6669546492594083168">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6669546492594119026" />
+                </node>
+                <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="6669546492594119025">
+                  <link role="baseMethodDeclaration:3" targetNodeId="49.~Thread.isInterrupted():boolean" resolveInfo="isInterrupted" />
+                </node>
+              </node>
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3722815385094360871">
                 <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3722815385094360872">
                   <property name="name:3" value="task" />
