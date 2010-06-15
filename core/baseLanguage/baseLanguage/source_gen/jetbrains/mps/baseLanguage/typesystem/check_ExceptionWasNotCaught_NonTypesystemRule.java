@@ -9,14 +9,20 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.ITryCatchStatement_Behavior;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class check_ExceptionWasNotCaught_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ExceptionWasNotCaught_NonTypesystemRule() {
@@ -25,16 +31,19 @@ public class check_ExceptionWasNotCaught_NonTypesystemRule extends AbstractNonTy
   public void applyRule(final SNode iTryCatchStatement, final TypeCheckingContext typeCheckingContext) {
     List<SNode> caughtExceptions = new ArrayList<SNode>();
     for (SNode catchClause : ITryCatchStatement_Behavior.call_getCatchClauses_3718132079121388582(iTryCatchStatement)) {
-      for (SNode caughtType : caughtExceptions) {
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true), caughtType)) {
-          {
-            BaseIntentionProvider intentionProvider = null;
-            IErrorTarget errorTarget = new NodeErrorTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(catchClause, "throwable", true), "\"" + Type_Behavior.call_getClassExpression_1213877337357(SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true)) + "\" has already been caught", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2089334432679065952", intentionProvider, errorTarget);
+      SNode catchType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(catchType, new check_ExceptionWasNotCaught_NonTypesystemRule.QuotationClass_6gl2l4_a1a0b0b0a().createNode(typeCheckingContext))) {
+        for (SNode caughtType : caughtExceptions) {
+          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(catchType, caughtType)) {
+            {
+              BaseIntentionProvider intentionProvider = null;
+              IErrorTarget errorTarget = new NodeErrorTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(catchClause, "throwable", true), "\"" + Type_Behavior.call_getClassExpression_1213877337357(SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true)) + "\" has already been caught", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2248407684786323918", intentionProvider, errorTarget);
+            }
           }
         }
+        caughtExceptions.add(catchType);
       }
-      caughtExceptions.add(SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true));
     }
   }
 
@@ -48,5 +57,36 @@ public class check_ExceptionWasNotCaught_NonTypesystemRule extends AbstractNonTy
 
   public boolean overrides() {
     return false;
+  }
+
+  public static class QuotationClass_6gl2l4_a1a0b0b0a {
+    public QuotationClass_6gl2l4_a1a0b0b0a() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Throwable")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Throwable")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }
