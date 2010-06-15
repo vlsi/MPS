@@ -195,7 +195,6 @@
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1178981885128">
       <property name="vertical:32" value="false" />
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor:32" id="1226062536173">
-        <link role="styleClass:32" targetNodeId="43.1215707981329" resolveInfo="Operation" />
         <node role="modelAccessor:32" type="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor:32" id="1226062536174">
           <node role="getter:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter:32" id="1226062536175">
             <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1226062536176">

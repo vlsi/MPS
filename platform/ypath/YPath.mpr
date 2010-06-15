@@ -142,6 +142,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
     <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
     <mapping directory="$PROJECT_DIR$/../../.." vcs="svn" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
   </component>

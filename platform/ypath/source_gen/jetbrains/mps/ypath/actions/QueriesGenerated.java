@@ -85,7 +85,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1168893690367(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    SNode nono = SNodeOperations.getAncestorWhereConceptInList(_context.getSourceNode(), new String[]{"jetbrains.mps.ypath.structure.ParentBlock","jetbrains.mps.ypath.structure.ChildrenBlock","jetbrains.mps.ypath.structure.WhereBlock","jetbrains.mps.ypath.structure.TreePathAdapterExpression","jetbrains.mps.ypath.structure.TreePathOperationExpression"}, true, false);
+    SNode nono = SNodeOperations.getAncestorWhereConceptInList(_context.getSourceNode(), new String[]{"jetbrains.mps.ypath.structure.ParentBlock", "jetbrains.mps.ypath.structure.ChildrenBlock", "jetbrains.mps.ypath.structure.WhereBlock", "jetbrains.mps.ypath.structure.TreePathAdapterExpression", "jetbrains.mps.ypath.structure.TreePathOperationExpression"}, true, false);
     if (nono != null) {
       return false;
     }
@@ -106,7 +106,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1198013853577(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    SNode nono = SNodeOperations.getAncestorWhereConceptInList(_context.getSourceNode(), new String[]{"jetbrains.mps.ypath.structure.ParentBlock","jetbrains.mps.ypath.structure.ChildrenBlock","jetbrains.mps.ypath.structure.WhereBlock","jetbrains.mps.ypath.structure.TreePathAdapterExpression","jetbrains.mps.ypath.structure.TreePathOperationExpression"}, true, false);
+    SNode nono = SNodeOperations.getAncestorWhereConceptInList(_context.getSourceNode(), new String[]{"jetbrains.mps.ypath.structure.ParentBlock", "jetbrains.mps.ypath.structure.ChildrenBlock", "jetbrains.mps.ypath.structure.WhereBlock", "jetbrains.mps.ypath.structure.TreePathAdapterExpression", "jetbrains.mps.ypath.structure.TreePathOperationExpression"}, true, false);
     if (nono != null) {
       return false;
     }

@@ -60,13 +60,19 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <classPath>
-    <entry path="${language_descriptor}/classes_gen" include="false" />
-    <entry path="${language_descriptor}/runtime/classes" include="false" />
-  </classPath>
-  <languageRuntimeClassPath>
-    <entry path="${language_descriptor}/runtime/classes" include="false" />
-  </languageRuntimeClassPath>
+  <stubModelEntries>
+    <stubModelEntry path="${language_descriptor}/classes_gen" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${language_descriptor}/runtime/classes" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+  </stubModelEntries>
+  <runtimeStubModels>
+    <stubModelEntry path="${language_descriptor}/runtime/classes" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+  </runtimeStubModels>
   <sourcePath>
     <source path="${language_descriptor}/source" />
   </sourcePath>

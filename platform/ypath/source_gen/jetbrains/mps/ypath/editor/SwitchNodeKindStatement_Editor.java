@@ -167,10 +167,6 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
-
     private EditorCell createConstant_g3hzyr_a5a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no cases>");
       editorCell.setCellId("Constant_g3hzyr_a5a");

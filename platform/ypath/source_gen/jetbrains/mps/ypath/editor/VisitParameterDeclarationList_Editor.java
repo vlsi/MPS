@@ -97,10 +97,6 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
-
     private EditorCell createConstant_4m7tk9_a1a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no parameters>");
       editorCell.setCellId("Constant_4m7tk9_a1a");

@@ -21,7 +21,6 @@ import jetbrains.mps.ypath.behavior.IterateOperation_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
-import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -184,7 +183,6 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     editorCell.setCellId("ReadOnlyModelAccessor_wgzfn3_a0");
-    Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, false);
@@ -224,7 +222,6 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     }
     IterateOperation_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_a0d1a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -261,7 +258,6 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new IterateOperation_Editor._Inline_wgzfn3_a2b0());
     editorCell = provider.createEditorCell(editorContext);
     IterateOperation_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_a0c1a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
