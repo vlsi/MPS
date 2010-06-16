@@ -2,6 +2,7 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
@@ -15,12 +16,23 @@ public class ClassPathFactory {
   private static final Logger LOG = Logger.getLogger(ClassPathFactory.class);
   private static final ClassPathFactory ourInstance = new ClassPathFactory();
 
-
+  @UseCarefully
+  //this is supposed to be used only on class reloading
   public void update() {
     for (RealClassPathItem p : myCache.values()) {
       p.invalidate();
     }
     myCache.clear();
+  }
+
+  @UseCarefully
+  //this should be used only from modules to invalidate their classpaths
+  public void invalidate(Set<String> paths) {
+    for (String path : paths) {
+      if (myCache.containsKey(path)) {
+        myCache.remove(path).invalidate();
+      }
+    }
   }
 
   public static ClassPathFactory getInstance() {
@@ -41,14 +53,6 @@ public class ClassPathFactory {
     }
 
     return myCache.get(path);
-  }
-
-  public void invalidate(Set<String> paths) {
-    for (String path : paths) {
-      if (myCache.containsKey(path)) {
-        myCache.remove(path).invalidate();
-      }
-    }
   }
 
   //--------------------------
