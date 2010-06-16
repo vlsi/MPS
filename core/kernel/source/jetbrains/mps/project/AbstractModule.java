@@ -179,6 +179,21 @@ public abstract class AbstractModule implements IModule {
         errors.add("Can't find used language: " + reference.getModuleFqName());
       }
     }
+    for (ModuleReference reference : getUsedDevkitReferences()) {
+      if (MPSModuleRepository.getInstance().getModule(reference) == null) {
+        errors.add("Can't find used devkit: " + reference.getModuleFqName());
+      }
+    }
+    for (StubModelsEntry stubModelsEntry : getModuleDescriptor().getStubModelEntries()) {
+      if (!new File(stubModelsEntry.getPath()).exists()) {
+        errors.add("Can't find library: " + stubModelsEntry.getPath());
+      }
+    }
+    for (String sourcePath : getModuleDescriptor().getSourcePaths()) {
+      if (!new File(sourcePath).exists()) {
+        errors.add("Can't find source path: " + sourcePath);
+      }
+    }
     return errors;
   }
 

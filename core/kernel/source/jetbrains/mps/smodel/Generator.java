@@ -255,6 +255,17 @@ public class Generator extends AbstractModule{
     return result;
   }
 
+  @Override
+  public List<String> validate() {
+    List<String> errors = new ArrayList<String>(super.validate());
+    for (ModuleReference gen : getModuleDescriptor().getDepGenerators()) {
+      if (MPSModuleRepository.getInstance().getModule(gen) == null) {
+        errors.add("Can't find generator dependency: " + gen.getModuleFqName());
+      }
+    }
+    return errors;
+  }
+
   public String getGeneratorOutputPath() {
     return mySourceLanguage.getGeneratorOutputPath();
   }
