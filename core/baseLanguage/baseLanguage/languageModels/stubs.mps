@@ -179,7 +179,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="6.~ClassPathFactory.getInstance():jetbrains.mps.reloading.ClassPathFactory" resolveInfo="getInstance" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="420611614541944085">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~ClassPathFactory.createFromPath(java.lang.String):jetbrains.mps.reloading.IClassPathItem" resolveInfo="createFromPath" />
+              <link role="baseMethodDeclaration:3" targetNodeId="6.~ClassPathFactory.createFromPath(java.lang.String):jetbrains.mps.reloading.RealClassPathItem" resolveInfo="createFromPath" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1249780529025998829">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="420611614541944086">
                   <link role="variableDeclaration:3" targetNodeId="5516999836375009822" resolveInfo="location" />
