@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
+import jetbrains.mps.smodel.SModelReference;
+
 public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
   private String myModelUID;
   private String myNodeID;
@@ -47,6 +49,15 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
     if (myModelUID == null) return true;
     if (myModelUID.equals("*")) return false;
     if (myNodeID == null) return true;
+    return false;
+  }
+
+  @Override
+  public boolean removeModelReference(SModelReference ref, boolean[] mappingsChanged) {
+    if(myModelUID != null && myModelUID.equals(ref.toString())) {
+      mappingsChanged[0] = true;
+      return true;
+    }
     return false;
   }
 }

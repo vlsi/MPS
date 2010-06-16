@@ -145,7 +145,7 @@ public class DeleteModelHelper {
   }
 
   private static void deleteModelFromGenerator(Generator generator, SModelDescriptor modelDescriptor) {
-
+    generator.deleteReferenceFromPriorities(modelDescriptor.getSModelReference());
   }
 
   private static class SafeDeleteModelRefactoring extends AbstractLoggableRefactoring {

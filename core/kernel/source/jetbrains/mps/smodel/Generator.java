@@ -326,4 +326,18 @@ public class Generator extends AbstractModule{
     }
     return result;
   }
+
+  public boolean deleteReferenceFromPriorities(SModelReference ref) {
+    boolean[] descriptorChanged = new boolean[]{false};
+    Iterator<MappingPriorityRule> it = myGeneratorDescriptor.getPriorityRules().iterator();
+    while(it.hasNext()) {
+      MappingPriorityRule rule = it.next();
+      MappingConfig_AbstractRef right = rule.getRight();
+      MappingConfig_AbstractRef left = rule.getLeft();
+      if (right.removeModelReference(ref, descriptorChanged) || left.removeModelReference(ref, descriptorChanged)) {
+        it.remove();
+      }
+    }
+    return descriptorChanged[0];
+  }
 }

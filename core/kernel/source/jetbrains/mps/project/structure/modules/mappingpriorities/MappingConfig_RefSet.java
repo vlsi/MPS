@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
+import jetbrains.mps.smodel.SModelReference;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class MappingConfig_RefSet extends MappingConfig_AbstractRef {
@@ -55,5 +58,22 @@ public class MappingConfig_RefSet extends MappingConfig_AbstractRef {
     }
 
     return result;
+  }
+
+  @Override
+  public boolean removeModelReference(SModelReference ref, boolean[] mappingsChanged) {
+    Iterator<MappingConfig_AbstractRef> it = myRefs.iterator();
+    boolean affected = false;
+    while(it.hasNext()) {
+      MappingConfig_AbstractRef curr = it.next();
+      if(curr.removeModelReference(ref, mappingsChanged)) {
+        it.remove();
+        affected = true;
+      }
+    }
+    if(affected && myRefs.size() == 0) {
+      return true;
+    }
+    return false;
   }
 }

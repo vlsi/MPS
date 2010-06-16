@@ -17,6 +17,7 @@ package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
+import jetbrains.mps.smodel.SModelReference;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -65,5 +66,15 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
     boolean result = RefUpdateUtil.updateModuleRefs(list);
     myGenerator = list.get(0);
     return result;
+  }
+
+  @Override
+  public boolean removeModelReference(SModelReference ref, boolean[] mappingsChanged) {
+    if(myMappingConfig != null) {
+      if(myMappingConfig.removeModelReference(ref, mappingsChanged)) {
+        return true;
+      }
+    }
+    return false;
   }
 }

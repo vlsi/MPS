@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
+import jetbrains.mps.smodel.SModelReference;
+
 public class MappingConfig_AbstractRef {
   public MappingConfig_AbstractRef getCopy() {
     return new MappingConfig_AbstractRef();
@@ -25,6 +27,10 @@ public class MappingConfig_AbstractRef {
   }
 
   public boolean updateModuleReferences() {
+    return false;
+  }
+
+  public boolean removeModelReference(SModelReference ref, boolean[] mappingsChanged) {
     return false;
   }
 }
