@@ -17,7 +17,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 
 public class ViewBreakpoints_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/core/kernel/debug-api/source/jetbrains/mps/debug/api/integration/ui/icons/db_view_breakpoints.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/debug/viewBreakpoints.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ViewBreakpoints_Action.class);
 
   private IOperationContext context;

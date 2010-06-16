@@ -16,7 +16,7 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class EvaluateExpression_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/compile.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/debug/evaluate.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(EvaluateExpression_Action.class);
 
   private Project project;
