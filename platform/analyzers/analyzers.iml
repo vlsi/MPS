@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.analyzers.runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/sandbox/jetbrains.mps.analyzers.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.analyzers.mpsAnalyzers/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/languages/testLang/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

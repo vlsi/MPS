@@ -234,7 +234,22 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="178770917832494464">
     <property name="name:3" value="typeof_AnalyzerRunnerCreator" />
     <property name="package:3" value="Analyzer" />
-    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="178770917832494465" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="178770917832494465">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="178770917832644953">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="178770917832644957">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="178770917832644958">
+            <node role="quotedNode:0" type="jetbrains.mps.analyzers.structure.AnalyzerRunnerType:0" id="178770917832644960" />
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="178770917832644956">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="178770917832644950">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="178770917832644952">
+              <link role="applicableNode:3" targetNodeId="178770917832494466" resolveInfo="analyzerRunnerCreator" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="178770917832494466">
       <property name="name:3" value="analyzerRunnerCreator" />
       <link role="concept:3" targetNodeId="1.95073643532950038:0" resolveInfo="AnalyzerRunnerCreator" />

@@ -326,6 +326,15 @@
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="178770917832494476">
         <property name="text:32" value="analyzer" />
       </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="178770917832625315">
+        <property name="text:32" value="(" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="178770917832625319">
+        <link role="relationDeclaration:32" targetNodeId="1.178770917832625312:0" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="178770917832625318">
+        <property name="text:32" value=")" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="7857205188090882492">

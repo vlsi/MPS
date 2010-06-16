@@ -9,9 +9,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -25,6 +26,9 @@ public class AnalyzerRunnerCreator_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_u2jyfv_a");
     editorCell.addEditorCell(this.createRefCell_u2jyfv_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_u2jyfv_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_u2jyfv_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_u2jyfv_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_u2jyfv_e0(editorContext, node));
     return editorCell;
   }
 
@@ -32,6 +36,37 @@ public class AnalyzerRunnerCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "analyzer");
     editorCell.setCellId("Constant_u2jyfv_b0");
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_u2jyfv_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    editorCell.setCellId("Constant_u2jyfv_c0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_u2jyfv_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    editorCell.setCellId("Constant_u2jyfv_e0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_u2jyfv_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("nodeToCheck");
+    provider.setNoTargetText("<no nodeToCheck>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 

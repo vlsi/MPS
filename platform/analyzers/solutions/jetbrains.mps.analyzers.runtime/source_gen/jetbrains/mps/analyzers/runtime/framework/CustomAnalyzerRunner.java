@@ -13,4 +13,8 @@ public abstract class CustomAnalyzerRunner<E> extends AnalyzerRunner<E> {
   public CustomAnalyzerRunner(Program program, DataFlowAnalyzer<E> analyzer) {
     super(program, analyzer);
   }
+
+  public CustomAnalyzerRunner() {
+    super(null, null);
+  }
 }

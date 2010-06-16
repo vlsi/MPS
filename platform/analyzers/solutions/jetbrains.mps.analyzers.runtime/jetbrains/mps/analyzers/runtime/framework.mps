@@ -15,55 +15,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)" version="-1" />
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4270140510007423375">
-    <property name="name:3" value="CustomAnalyzerRunner" />
-    <property name="abstractClass:3" value="true" />
-    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="7685333756920153766">
-      <property name="name:3" value="myNode" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="7685333756920153769" />
-      <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7685333756920153770" />
-    </node>
-    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4270140510007423376" />
-    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="4270140510007423377">
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4270140510007423378" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4270140510007423379" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4270140510007423380">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="4270140510007432778">
-          <link role="baseMethodDeclaration:3" targetNodeId="1.~AnalyzerRunner.&lt;init&gt;(jetbrains.mps.lang.dataFlow.framework.Program,jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer)" resolveInfo="AnalyzerRunner" />
-          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4270140510007432779">
-            <link role="variableDeclaration:3" targetNodeId="4270140510007432773" resolveInfo="program" />
-          </node>
-          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4270140510007432781">
-            <link role="variableDeclaration:3" targetNodeId="4270140510007432775" resolveInfo="result" />
-          </node>
-        </node>
-      </node>
-      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4270140510007432773">
-        <property name="name:3" value="program" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4270140510007432774">
-          <link role="classifier:3" targetNodeId="1.~Program" resolveInfo="Program" />
-        </node>
-      </node>
-      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4270140510007432775">
-        <property name="name:3" value="analyzer" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4270140510007432782">
-          <link role="classifier:3" targetNodeId="1.~DataFlowAnalyzer" resolveInfo="DataFlowAnalyzer" />
-          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="4270140510007435743">
-            <link role="typeVariableDeclaration:3" targetNodeId="4270140510007432784" resolveInfo="E" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="4270140510007432784">
-      <property name="name:3" value="E" />
-    </node>
-    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6225185639889071935">
-      <link role="classifier:3" targetNodeId="1.~AnalyzerRunner" resolveInfo="AnalyzerRunner" />
-      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="7685333756920159340">
-        <link role="typeVariableDeclaration:3" targetNodeId="4270140510007432784" resolveInfo="E" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="752944717341761987">
     <property name="abstractClass:3" value="true" />
     <property name="name:3" value="DataFlowConstructor" />
@@ -96,6 +47,66 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="752944717341761990" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="752944717341761991" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="752944717341761992" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="178770917832659559">
+    <property name="abstractClass:3" value="true" />
+    <property name="name:3" value="CustomAnalyzerRunner" />
+    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="178770917832659582">
+      <property name="name:3" value="myNode" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="178770917832659583" />
+      <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="178770917832659584" />
+    </node>
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="178770917832659560" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="178770917832659570">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="178770917832659571" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="178770917832659572" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="178770917832659573">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="178770917832659574">
+          <link role="baseMethodDeclaration:3" targetNodeId="1.~AnalyzerRunner.&lt;init&gt;(jetbrains.mps.lang.dataFlow.framework.Program,jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer)" resolveInfo="AnalyzerRunner" />
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="178770917832659575">
+            <link role="variableDeclaration:3" targetNodeId="178770917832659577" resolveInfo="program" />
+          </node>
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="178770917832659576">
+            <link role="variableDeclaration:3" targetNodeId="178770917832659579" resolveInfo="analyzer" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="178770917832659577">
+        <property name="name:3" value="program" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="178770917832659578">
+          <link role="classifier:3" targetNodeId="1.~Program" resolveInfo="Program" />
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="178770917832659579">
+        <property name="name:3" value="analyzer" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="178770917832659580">
+          <link role="classifier:3" targetNodeId="1.~DataFlowAnalyzer" resolveInfo="DataFlowAnalyzer" />
+          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="178770917832659581">
+            <link role="typeVariableDeclaration:3" targetNodeId="178770917832659565" resolveInfo="E" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="178770917832664359">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="178770917832664360" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="178770917832664361" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="178770917832664362">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="178770917832664363">
+          <link role="baseMethodDeclaration:3" targetNodeId="1.~AnalyzerRunner.&lt;init&gt;(jetbrains.mps.lang.dataFlow.framework.Program,jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer)" resolveInfo="AnalyzerRunner" />
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="178770917832664366" />
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="178770917832664367" />
+        </node>
+      </node>
+    </node>
+    <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="178770917832659565">
+      <property name="name:3" value="E" />
+    </node>
+    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="178770917832659566">
+      <link role="classifier:3" targetNodeId="1.~AnalyzerRunner" resolveInfo="AnalyzerRunner" />
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="178770917832659567">
+        <link role="typeVariableDeclaration:3" targetNodeId="178770917832659565" resolveInfo="E" />
+      </node>
     </node>
   </node>
 </model>
