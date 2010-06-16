@@ -318,6 +318,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     public String module;
     public String method;
     public ClonableList<String> methods = new ClonableList<String>();
+    public ClonableList<String> fullMethodNames = new ClonableList<String>();
     public JUnitRunTypes type;
 
     public MyState() {
@@ -333,6 +334,9 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
       }
       if (this.methods != null) {
         object.methods = (ClonableList) this.methods.clone();
+      }
+      if (this.fullMethodNames != null) {
+        object.fullMethodNames = (ClonableList) this.fullMethodNames.clone();
       }
       return object;
     }

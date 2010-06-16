@@ -7,8 +7,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.MPSProject;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
@@ -18,25 +18,40 @@ public enum JUnitRunTypes {
 
     public List<SNode> collect(DefaultJUnit_Configuration configuration, MPSProject project) {
       List<SNode> all = new ArrayList<SNode>();
-      if (configuration.getStateObject().node != null) {
+      // legacy 
+      if (configuration.getStateObject().node != null && configuration.getStateObject().method != null) {
         ListSequence.fromList(all).addElement(TestRunUtil.getTestMethod(configuration.getStateObject().node, configuration.getStateObject().method));
       }
-      if (configuration.getStateObject().nodes != null) {
-        for (int i = 0; i < configuration.getStateObject().nodes.size(); i++) {
+      if (configuration.getStateObject().nodes != null && configuration.getStateObject().methods != null) {
+        for (int i = 0; i < configuration.getStateObject().methods.size(); i++) {
           ListSequence.fromList(all).addElement(TestRunUtil.getTestMethod(configuration.getStateObject().nodes.get(i), configuration.getStateObject().methods.get(i)));
+        }
+      }
+      if (configuration.getStateObject().fullMethodNames != null) {
+        for (String methodName : ListSequence.fromList(configuration.getStateObject().fullMethodNames)) {
+          int separatorIndex = methodName.lastIndexOf(TestRunUtil.SEPARATOR);
+          ListSequence.fromList(all).addElement(TestRunUtil.getTestMethod(methodName.substring(0, separatorIndex), methodName.substring(separatorIndex + 1)));
         }
       }
       return all;
     }
 
     public String check(DefaultJUnit_Configuration configuration) {
-      String errorReport = null;
-      if (ListSequence.fromList(TestRunUtil.getValues(configuration.getStateObject().method, configuration.getStateObject().methods)).isEmpty()) {
-        errorReport = "methods list is empty";
-      } else if (!(TestRunUtil.validateMethods(configuration.getStateObject().node, configuration.getStateObject().nodes, configuration.getStateObject().method, configuration.getStateObject().methods))) {
-        errorReport = "methods are not valid";
+      if (configuration.getStateObject().fullMethodNames != null) {
+        if (TestRunUtil.validateMethods(configuration.getStateObject().fullMethodNames)) {
+          return null;
+        } else {
+          return "methods are not valid";
+        }
       }
-      return errorReport;
+
+      if (Sequence.fromIterable(TestRunUtil.getValues(configuration.getStateObject().method, configuration.getStateObject().methods)).isEmpty()) {
+        return "methods list is empty";
+      } else if (!(TestRunUtil.validateMethods(configuration.getStateObject().node, configuration.getStateObject().nodes, configuration.getStateObject().method, configuration.getStateObject().methods))) {
+        return "methods are not valid";
+      }
+
+      return null;
     }
 
   },
@@ -63,7 +78,7 @@ public enum JUnitRunTypes {
 
     public String check(DefaultJUnit_Configuration configuration) {
       String errorReport = null;
-      if (ListSequence.fromList(TestRunUtil.getValues(configuration.getStateObject().node, configuration.getStateObject().nodes)).isEmpty()) {
+      if (Sequence.fromIterable(TestRunUtil.getValues(configuration.getStateObject().node, configuration.getStateObject().nodes)).isEmpty()) {
         errorReport = "classes list is empty";
       } else if (!(TestRunUtil.validateNodes(configuration.getStateObject().node, configuration.getStateObject().nodes))) {
         errorReport = "nodes are not valid";

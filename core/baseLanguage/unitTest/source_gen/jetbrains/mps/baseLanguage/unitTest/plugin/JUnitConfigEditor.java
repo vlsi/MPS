@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import javax.swing.JRadioButton;
 import org.jdesktop.beansbinding.AutoBinding;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -26,8 +27,10 @@ import javax.swing.border.TitledBorder;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JUnitConfigEditor extends JPanel {
@@ -58,6 +61,7 @@ public class JUnitConfigEditor extends JPanel {
   private IModule myModule;
   private List<SNode> myNodes;
   private List<SNode> myMethods;
+  private JRadioButton[] myButtons;
   public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
   private Events myEvents = new Events(null) {
     {
@@ -90,6 +94,12 @@ public class JUnitConfigEditor extends JPanel {
     this.myEvents.initialize();
     myThis.myTestCases_d0.init(myThis.getNodes(), false);
     myThis.myTestMethods_e0.init(myThis.getMethods(), true);
+    myThis.setButtons(new JRadioButton[JUnitRunTypes.values().length]);
+    myThis.getButtons()[JUnitRunTypes.METHOD.ordinal()] = myThis.myIsMethod_h1a;
+    myThis.getButtons()[JUnitRunTypes.MODEL.ordinal()] = myThis.myIsModel_f1a;
+    myThis.getButtons()[JUnitRunTypes.MODULE.ordinal()] = myThis.myIsModule_e1a;
+    myThis.getButtons()[JUnitRunTypes.NODE.ordinal()] = myThis.myIsClass_g1a;
+    myThis.getButtons()[JUnitRunTypes.PROJECT.ordinal()] = myThis.myIsProject_d1a;
   }
 
   public Events getEvents() {
@@ -343,6 +353,10 @@ public class JUnitConfigEditor extends JPanel {
     return this.myMethods;
   }
 
+  public JRadioButton[] getButtons() {
+    return this.myButtons;
+  }
+
   public void setProject(MPSProject newValue) {
     MPSProject oldValue = this.myProject;
     this.myProject = newValue;
@@ -385,6 +399,12 @@ public class JUnitConfigEditor extends JPanel {
     this.firePropertyChange("methods", oldValue, newValue);
   }
 
+  public void setButtons(JRadioButton[] newValue) {
+    JRadioButton[] oldValue = this.myButtons;
+    this.myButtons = newValue;
+    this.firePropertyChange("buttons", oldValue, newValue);
+  }
+
   private MPSProject findProjectFromContext() {
     return MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
   }
@@ -425,37 +445,34 @@ public class JUnitConfigEditor extends JPanel {
     });
   }
 
-  private JUnitRunTypes getType(boolean isModule, boolean isModel, boolean isTest, boolean isMethod) {
-    if (isModule) {
-      return JUnitRunTypes.MODULE;
-    } else if (isModel) {
-      return JUnitRunTypes.MODEL;
-    } else if (isTest) {
-      return JUnitRunTypes.NODE;
-    } else if (isMethod) {
-      return JUnitRunTypes.METHOD;
-    }
-    return JUnitRunTypes.PROJECT;
-  }
-
   public void apply(final DefaultJUnit_Configuration config) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        // clear legacy properties 
         config.getStateObject().node = null;
         config.getStateObject().method = null;
+        config.getStateObject().methods = null;
 
-        if (ListSequence.fromList(myThis.getMethods()).isNotEmpty()) {
-          config.getStateObject().methods = new ClonableList<String>();
-          for (SNode testMethod : myThis.getMethods()) {
-            config.getStateObject().methods.add(ITestMethod_Behavior.call_getTestName_1216136419751(testMethod));
+        // five of them, so we do not mind going twice 
+        int index = Sequence.fromIterable(Sequence.fromArray(myThis.getButtons())).indexOf(Sequence.fromIterable(Sequence.fromArray(myThis.getButtons())).findFirst(new IWhereFilter<JRadioButton>() {
+          public boolean accept(JRadioButton it) {
+            return it.isSelected();
           }
+        }));
+        if (index >= 0) {
+          config.getStateObject().type = JUnitRunTypes.values()[index];
         }
-        if (ListSequence.fromList(myThis.getNodes()).isNotEmpty()) {
-          config.getStateObject().nodes = new ClonableList<String>();
-          for (SNode testCase : myThis.getNodes()) {
-            config.getStateObject().nodes.add(INamedConcept_Behavior.call_getFqName_1213877404258(testCase));
-          }
+
+        config.getStateObject().fullMethodNames = new ClonableList<String>();
+        for (SNode testMethod : myThis.getMethods()) {
+          config.getStateObject().fullMethodNames.add(INamedConcept_Behavior.call_getFqName_1213877404258(ITestMethod_Behavior.call_getTestCase_1216134500045(testMethod)) + TestRunUtil.SEPARATOR + ITestMethod_Behavior.call_getTestName_1216136419751(testMethod));
         }
+
+        config.getStateObject().nodes = new ClonableList<String>();
+        for (SNode testCase : myThis.getNodes()) {
+          config.getStateObject().nodes.add(INamedConcept_Behavior.call_getFqName_1213877404258(testCase));
+        }
+
         config.getStateObject().model = (myThis.getModel() != null ?
           config.getStateObject().model = myThis.getModel().getSModelFqName().toString() :
           null
@@ -465,42 +482,21 @@ public class JUnitConfigEditor extends JPanel {
         } else {
           config.getStateObject().module = null;
         }
-        JUnitRunTypes type = myThis.getType(myThis.myIsModule_e1a.isSelected(), myThis.myIsModel_f1a.isSelected(), myThis.myIsClass_g1a.isSelected(), myThis.myIsMethod_h1a.isSelected());
-        if (type != null) {
-          config.getStateObject().type = type;
-        }
       }
     });
   }
 
   public void reset(final DefaultJUnit_Configuration config) {
     if (config.getStateObject().type != null) {
-      switch (config.getStateObject().type) {
-        case METHOD:
-          myThis.myIsMethod_h1a.setSelected(true);
-          break;
-        case NODE:
-          myThis.myIsClass_g1a.setSelected(true);
-          break;
-        case MODEL:
-          myThis.myIsModel_f1a.setSelected(true);
-          break;
-        case MODULE:
-          myThis.myIsModule_e1a.setSelected(true);
-          break;
-        case PROJECT:
-          myThis.myIsProject_d1a.setSelected(true);
-        default:
-      }
+      myThis.getButtons()[config.getStateObject().type.ordinal()].setSelected(true);
     } else {
       myThis.myIsProject_d1a.setSelected(true);
     }
-    List<String> nodes = TestRunUtil.getValues(config.getStateObject().node, config.getStateObject().nodes);
-    List<String> methods = TestRunUtil.getValues(config.getStateObject().method, config.getStateObject().methods);
+
+    // nodes 
+    List<String> nodes = Sequence.fromIterable(TestRunUtil.getValues(config.getStateObject().node, config.getStateObject().nodes)).toListSequence();
     myThis.setNodes(new ArrayList<SNode>());
-    myThis.setMethods(new ArrayList<SNode>());
     myThis.myTestCases_d0.clear();
-    myThis.myTestMethods_e0.clear();
     for (String nodeName : nodes) {
       myThis.addNodeValue(nodeName);
       if (ListSequence.fromList(nodes).first().equals(nodeName)) {
@@ -520,9 +516,21 @@ public class JUnitConfigEditor extends JPanel {
         });
       }
     }
-    for (int i = 0; i < ListSequence.fromList(methods).count(); i++) {
+
+    // methods 
+    myThis.setMethods(new ArrayList<SNode>());
+    // legacy: in case config has methods instead of full methods 
+    List<String> methods = Sequence.fromIterable(TestRunUtil.getValues(config.getStateObject().method, config.getStateObject().methods)).toListSequence();
+    myThis.myTestMethods_e0.clear();
+    for (int i = 0; i < Math.min(ListSequence.fromList(methods).count(), ListSequence.fromList(nodes).count()); i++) {
       myThis.addMethodValue(ListSequence.fromList(nodes).getElement(i), ListSequence.fromList(methods).getElement(i));
     }
+    for (String methodName : ListSequence.fromList(config.getStateObject().fullMethodNames)) {
+      int separatorIndex = methodName.lastIndexOf(TestRunUtil.SEPARATOR);
+      myThis.addMethodValue(methodName.substring(0, separatorIndex), methodName.substring(separatorIndex + 1));
+    }
+
+    // models 
     if (config.getStateObject().model != null) {
       myThis.setModelValue(config.getStateObject().model);
       if (myThis.getModel() != null && myThis.getModel().getModelDescriptor() != null && myThis.getModel().getModelDescriptor().getModule() != null) {
@@ -536,10 +544,14 @@ public class JUnitConfigEditor extends JPanel {
         });
       }
     }
+
+    // modules 
     if (config.getStateObject().module != null) {
       myThis.setModuleValue(config.getStateObject().module);
       myThis.myModuleName_d4c0.setText(config.getStateObject().module);
     }
+
+    // on select?? 
     myThis.onSelect();
   }
 

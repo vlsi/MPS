@@ -24,10 +24,11 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.MPSProject;
 import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TestRunUtil {
+  public static final String SEPARATOR = "#";
+
   public TestRunUtil() {
   }
 
@@ -132,20 +133,24 @@ public class TestRunUtil {
     return null;
   }
 
-  public static List<String> getValues(String simple, List<String> collection) {
-    List<String> result = ListSequence.fromList(new ArrayList<String>());
-    if (simple != null) {
-      ListSequence.fromList(result).addElement(simple);
-    }
+  public static Iterable<String> getValues(String simple, final List<String> collection) {
+    Iterable<String> result = Sequence.fromIterable(Collections.<String>emptyList());
     if (collection != null) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(collection));
+      result = Sequence.fromClosure(new ISequenceClosure<String>() {
+        public Iterable<String> iterable() {
+          return collection;
+        }
+      });
+    }
+    if (simple != null) {
+      Sequence.fromIterable(result).union(Sequence.fromIterable(Sequence.<String>singleton(simple)));
     }
     return result;
   }
 
   public static boolean validateMethods(String simpleNode, List<String> listNode, String simpleMethod, List<String> listMethod) {
-    List<String> nodes = getValues(simpleNode, listNode);
-    List<String> methods = getValues(simpleMethod, listMethod);
+    List<String> nodes = Sequence.fromIterable(getValues(simpleNode, listNode)).toListSequence();
+    List<String> methods = Sequence.fromIterable(getValues(simpleMethod, listMethod)).toListSequence();
     if (ListSequence.fromList(nodes).count() != ListSequence.fromList(methods).count()) {
       return false;
     }
@@ -157,8 +162,21 @@ public class TestRunUtil {
     return true;
   }
 
+  public static boolean validateMethods(List<String> methods) {
+    if (methods == null) {
+      return false;
+    }
+    for (String methodName : ListSequence.fromList(methods)) {
+      int separatorIndex = methodName.lastIndexOf(SEPARATOR);
+      if ((getTestMethod(methodName.substring(0, separatorIndex), methodName.substring(separatorIndex + 1)) == null)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public static boolean validateNodes(String simple, List<String> collection) {
-    List<String> nodes = getValues(simple, collection);
+    Iterable<String> nodes = getValues(simple, collection);
     for (String node : nodes) {
       if ((getTestNode(node) == null)) {
         return false;

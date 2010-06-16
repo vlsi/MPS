@@ -166,6 +166,9 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     public Object getData(@NonNls String dataId) {
       if (dataId.equals(Location.LOCATION)) {
         MPSTreeNode currentNode = UnitTestViewComponent.this.myTreeComponent.getCurrentNode();
+        if (currentNode == null) {
+          return null;
+        }
         return new MPSLocation(UnitTestViewComponent.this.myProject, currentNode.getUserObject());
       }
       return null;
