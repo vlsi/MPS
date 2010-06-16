@@ -30,22 +30,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <maxImportIndex value="33" />
-  <import index="14" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="18" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="19" modelUID="f:java_stub#jetbrains.mps.cache(jetbrains.mps.cache@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="21" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
-  <import index="22" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
-  <import index="23" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
-  <import index="24" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
-  <import index="25" modelUID="f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
-  <import index="26" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <import index="27" modelUID="f:java_stub#jetbrains.mps.lang.structure.refactorings(jetbrains.mps.lang.structure.refactorings@java_stub)" version="-1" />
-  <import index="28" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="29" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
-  <import index="30" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
-  <import index="31" modelUID="f:java_stub#jetbrains.mps.lang.core.structure(jetbrains.mps.lang.core.structure@java_stub)" version="-1" />
-  <import index="32" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="33" modelUID="r:00000000-0000-4000-0000-011c89590395(jetbrains.mps.baseLanguage.sandbox.helginsTest)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3073231036166300536">
     <property name="name:3" value="Foo" />
