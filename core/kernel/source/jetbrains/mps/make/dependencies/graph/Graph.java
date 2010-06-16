@@ -33,7 +33,7 @@ public class Graph<V extends IVertex> {
     for (IVertex next : vertex.getNexts()) {
       if (next == null) {
         LOG.error("Next of vertex " + vertex + " is null.");
-      } else if (!myData.contains(next)) {
+      } else if (!myData.contains((V) next)) {
         add((V) next);
       }
     }
@@ -53,27 +53,27 @@ public class Graph<V extends IVertex> {
    * @param walker - walker handling search events.
    */
   public void dfsValk(@NotNull IDFSWalker<V> walker) {
-    TreeSet<V> vertexes = new TreeSet<V>(walker.getVertexComparator());
-    vertexes.addAll(myData);
+    TreeSet<V> toVisit = new TreeSet<V>(walker.getVertexComparator());
+    toVisit.addAll(myData);
 
-    while (!vertexes.isEmpty()) {
-      V v = vertexes.first();
+    while (!toVisit.isEmpty()) {
+      V v = toVisit.first();
       walker.enterTree(v);
 
-      dfs(v, vertexes, walker);
+      dfs(v, toVisit, walker);
 
       walker.leaveTree(v);
     }
   }
 
-  private void dfs(@NotNull V v, @NotNull TreeSet<V> vertexes, @NotNull IDFSWalker<V> walker) {
-    vertexes.remove(v);
+  private void dfs(@NotNull V v, @NotNull TreeSet<V> toVisit, @NotNull IDFSWalker<V> walker) {
+    toVisit.remove(v);
 
     walker.enter(v);
 
     for (IVertex next : v.getNexts()) {
-      if (vertexes.contains(next)) {
-        dfs((V) next, vertexes, walker);
+      if (toVisit.contains((V) next)) {
+        dfs((V) next, toVisit, walker);
       }
     }
 

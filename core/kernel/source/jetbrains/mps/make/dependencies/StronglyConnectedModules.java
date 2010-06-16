@@ -46,26 +46,26 @@ public class StronglyConnectedModules {
   public <M extends IModule, D extends IModuleDecorator<M>> List<Set<M>> getStronglyConnectedComponents(Set<M> modules, IModuleDecoratorBuilder<M, D> decoratorBuilder) {
     List<Set<M>> result = new LinkedList<Set<M>>();
 
-    Graph<IModuleDecorator<M>> g = new Graph<IModuleDecorator<M>>();
+    Graph<IModuleDecorator<M>> graph = new Graph<IModuleDecorator<M>>();
 
     Map<IModule, IModuleDecorator<M>> moduleToDecorator = new LinkedHashMap<IModule, IModuleDecorator<M>>();
-    for (M m : modules) {
-      IModuleDecorator<M> dec = decoratorBuilder.decorate(m);
-      moduleToDecorator.put(m, dec);
-      g.add(dec);
+    for (M module : modules) {
+      IModuleDecorator<M> decorator = decoratorBuilder.decorate(module);
+      moduleToDecorator.put(module, decorator);
+      graph.add(decorator);
     }
 
-    for (IModuleDecorator<M> m : g.getData()) {
-      m.fill(moduleToDecorator);
+    for (IModuleDecorator<M> decorator : graph.getData()) {
+      decorator.fill(moduleToDecorator);
     }
 
-    List<Set<IModuleDecorator<M>>> sets = Graphs.getInstance().findStronglyConnectedComponents(g);
+    List<Set<IModuleDecorator<M>>> sets = Graphs.getInstance().findStronglyConnectedComponents(graph);
 
     for (Set<IModuleDecorator<M>> set : sets) {
       Set<M> mset = new LinkedHashSet<M>();
       result.add(mset);
-      for (IModuleDecorator<M> md : set) {
-        mset.add(md.getModule());
+      for (IModuleDecorator<M> decorator : set) {
+        mset.add(decorator.getModule());
       }
     }
 
@@ -76,7 +76,6 @@ public class StronglyConnectedModules {
 
   public static interface IModuleDecorator<M extends IModule> extends IVertex, Comparable<IModuleDecorator<M>> {
     public M getModule();
-
     public void fill(Map<IModule, IModuleDecorator<M>> map);
   }
 
@@ -117,9 +116,12 @@ public class StronglyConnectedModules {
           return o1.getModuleFqName().compareTo(o2.getModuleFqName());
         }
       });
-      for (IModule m : dependencyCopy) {
-        DefaultModuleDecorator<M> next = (DefaultModuleDecorator<M>) map.get(m);
-        if (next != null) myNext.add(next);
+      for (IModule module : dependencyCopy) {
+        DefaultModuleDecorator<M> next = (DefaultModuleDecorator<M>) map.get(module);
+        if (next != null) {
+          assert next.getModule() == module;
+          myNext.add(next);
+        }
       }
     }
 

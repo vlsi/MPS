@@ -138,19 +138,20 @@ public class Graphs {
       return new Comparator<VertexDecorator<V>>() {
         public int compare(@NotNull VertexDecorator<V> o1, @NotNull VertexDecorator<V> o2) {
           // minus, since we need to walk through vertexes in exit time descending order
-          Integer exitTime1 = myExitTimes.get(o1.getVertex());
-          Integer exitTime2 = myExitTimes.get(o2.getVertex());
-          if (exitTime1 == null) {
-            LOG.error("Exit time for vertex " + o1.getVertex() + " is null.");
-            return 1;
-          }
-          if (exitTime2 == null) {
-            LOG.error("Exit time for vertex " + o2.getVertex() + " is null.");
-            return -1;
-          }
-          return -exitTime1.compareTo(exitTime2);
+          return -getExitTime(o1).compareTo(getExitTime(o2));
         }
       };
+    }
+
+    @NotNull
+    private Integer getExitTime(@NotNull VertexDecorator<V> vertexDecorator) {
+      Integer exitTime = myExitTimes.get(vertexDecorator.getVertex());
+      if (exitTime == null) {
+        LOG.error("Exit time for vertex " + vertexDecorator.getVertex() + " is null.");
+        // impossible vertex were visited the last and left the first
+        exitTime = Integer.MIN_VALUE;
+      }
+      return exitTime;
     }
 
     public List<Set<V>> getComponents() {
