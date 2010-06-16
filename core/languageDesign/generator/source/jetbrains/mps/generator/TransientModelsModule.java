@@ -17,7 +17,6 @@ package jetbrains.mps.generator;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
-
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -29,7 +28,10 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TransientModelsModule extends AbstractModule implements ProjectComponent {
@@ -176,6 +178,11 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
 
     SModelRepository.getInstance().registerModelDescriptor(result, this);
     return result;
+  }
+
+  @Override
+  public List<String> validate() {
+    return new ArrayList<String>();
   }
 
   @NotNull
