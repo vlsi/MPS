@@ -11,12 +11,12 @@
     <mkdir dir="${tmp}" />
   </target>
   <target name="download" depends="prepare">
-    <get src="${main.url}/platform15/platform-api.jar" dest="${idea.platform.dir}/platform-api.jar" />
-    <get src="${main.url}/platform15/platform.jar" dest="${idea.platform.dir}/platform.jar" />
-    <get src="${main.url}/platform15/resources.jar" dest="${idea.platform.dir}/resources.jar" />
-    <get src="${main.url}/platform15/resources_en.jar" dest="${idea.platform.dir}/resources_en.jar" />
+    <get src="${main.url}/platform16/platform-api.jar" dest="${idea.platform.dir}/platform-api.jar" />
+    <get src="${main.url}/platform16/platform.jar" dest="${idea.platform.dir}/platform.jar" />
+    <get src="${main.url}/platform16/resources.jar" dest="${idea.platform.dir}/resources.jar" />
+    <get src="${main.url}/platform16/resources_en.jar" dest="${idea.platform.dir}/resources_en.jar" />
     <get src="${main.url}/sources.zip" dest="${idea.platform.dir}/sources.zip" />
-    <get src="${main.url}/ideaIU-{build.number}-jdk15.zip" dest="${tmp}/idea-jdk15.zip" />
+    <get src="${main.url}/ideaIU-{build.number}.zip" dest="${tmp}/idea.zip" />
   </target>
   <target name="clean.license.classes" depends="download,replace.libraries">
     <property name="platform.jar" value="${idea.platform.dir}/platform.jar" />
@@ -35,7 +35,7 @@
     <delete dir="${tmpdir}" />
   </target>
   <target name="replace.libraries" depends="download">
-    <unzip src="${tmp}/idea-jdk15.zip" dest="${tmp}/idea" />
+    <unzip src="${tmp}/idea.zip" dest="${tmp}/idea" />
     <copy file="${tmp}/idea/lib/commons-codec-1.3.jar" todir="${lib.dir}/commons-codec" overwrite="true" />
     <copy file="${tmp}/idea/lib/commons-collections.jar" todir="${lib.dir}/commons-collections" overwrite="true" />
     <copy todir="${lib.dir}/jdom" file="${tmp}/idea/lib/jdom.jar" overwrite="true" />
