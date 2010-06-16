@@ -231,5 +231,14 @@
       <link role="concept:3" targetNodeId="1.4217760266503638748:0" resolveInfo="InstructionReference" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="178770917832494464">
+    <property name="name:3" value="typeof_AnalyzerRunnerCreator" />
+    <property name="package:3" value="Analyzer" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="178770917832494465" />
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="178770917832494466">
+      <property name="name:3" value="analyzerRunnerCreator" />
+      <link role="concept:3" targetNodeId="1.95073643532950038:0" resolveInfo="AnalyzerRunnerCreator" />
+    </node>
+  </node>
 </model>
 

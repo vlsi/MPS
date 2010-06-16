@@ -329,5 +329,41 @@
       <link role="target:0" targetNodeId="430844094082168520:0" resolveInfo="Rule" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2045671745393426211">
+    <property name="package:0" value="Analyzer" />
+    <property name="name:0" value="AnalyzerRunnerType" />
+    <link role="extends:0" targetNodeId="2.1068431790189:3" resolveInfo="Type" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="95073643532921980">
+      <property name="value:0" value="analyzerRunner" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="95073643532950033">
+    <property name="package:0" value="Analyzer" />
+    <property name="name:0" value="AnalyzerRunnerAnalyzeOperation" />
+    <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="95073643533003337">
+      <link role="intfc:0" targetNodeId="2.1197027803184:3" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7857205188090882491">
+      <property name="value:0" value="analyze" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="95073643532950038">
+    <property name="name:0" value="AnalyzerRunnerCreator" />
+    <property name="package:0" value="Analyzer" />
+    <link role="extends:0" targetNodeId="2.1145552809883:3" resolveInfo="AbstractCreator" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="178770917832492200">
+      <property name="value:0" value="runner" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="95073643532950039">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="analyzer" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="6618572076229093257:0" resolveInfo="Analyzer" />
+    </node>
+  </node>
 </model>
 

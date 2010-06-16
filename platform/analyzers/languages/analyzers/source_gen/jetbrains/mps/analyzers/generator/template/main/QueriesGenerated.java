@@ -62,6 +62,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "instructionRef", true), "instruction", false), "instructionConstructor");
   }
 
+  public static Object referenceMacro_GetReferent_178770917832507356(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "analyzer", false), "analyzer");
+  }
+
   public static boolean ifMacro_Condition_8656002014371080657(final IOperationContext operationContext, final IfMacroContext _context) {
     return true;
   }
