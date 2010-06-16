@@ -15320,7 +15320,7 @@
                   <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4632317321135932965">
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="4632317321135932966">
                       <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="4632317321135932967">
-                        <property name="text:3" value="legacy" />
+                        <property name="text:3" value="legacy, we use fullMethodNames now" />
                       </node>
                     </node>
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4632317321135932968">

@@ -8,7 +8,7 @@ import com.intellij.openapi.util.Key;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 
 public class TestEventsDispatcher {
-  private static Pattern REPLREGEXP_a0a0 = Pattern.compile("\\n", 0);
+  private static Pattern REPLREGEXP_a0a0a = Pattern.compile("\\n", 0);
   private static Pattern REGEXP_d0rws9_a0a1a0 = Pattern.compile(".*\\s0(?:\\D+.*|$)", 0);
 
   private final TestRunState myState;
@@ -18,7 +18,7 @@ public class TestEventsDispatcher {
   }
 
   public void onProcessTerminated(String message) {
-    message = REPLREGEXP_a0a0.matcher(message).replaceAll("");
+    message = REPLREGEXP_a0a0a.matcher(message).replaceAll("");
     if (REGEXP_d0rws9_a0a1a0.matcher(message).matches()) {
       // message looks like "Process exited with code 0" 
       // something, space, zero, then non-digit and maybe something else, or line end 

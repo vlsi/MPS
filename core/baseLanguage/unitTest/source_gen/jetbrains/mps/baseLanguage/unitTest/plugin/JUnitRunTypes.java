@@ -96,7 +96,7 @@ __switch__:
                         this.yield(TestRunUtil.getTestMethod(_16_methodName.substring(0, _20_separatorIndex), _16_methodName.substring(_20_separatorIndex + 1)));
                         return true;
                       case 0:
-                        // legacy 
+                        // legacy, we use fullMethodNames now 
                         this.__CP__ = 3;
                         break;
                       case 8:
