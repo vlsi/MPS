@@ -8,6 +8,7 @@
     <projectSolutions>
       <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.graph/jetbrains.mps.graphLayout.graph.msd" />
       <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.layeredLayout/jetbrains.mps.graphLayout.layeredLayout.msd" folder="" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.test/jetbrains.mps.graphLayout.test.msd" folder="" />
     </projectSolutions>
     <projectLanguages />
     <projectDevkits />
