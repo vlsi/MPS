@@ -738,7 +738,7 @@ public abstract class AbstractModule implements IModule {
   public void invalidateClassPath() {
     Set<String> invalidate = new HashSet<String>();
     for (StubPath path : getAllStubPaths()) {
-      if (!ObjectUtils.equals(path.getManager().getClassName(), JavaStubs.class.getName())) continue;
+      if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
       invalidate.add(path.getPath());
     }
     ClassPathFactory.getInstance().invalidate(invalidate);
@@ -784,7 +784,7 @@ public abstract class AbstractModule implements IModule {
       myCachedClassPathItem = new CompositeClassPathItem();
       for (StubPath path : getAllStubPaths()) {
         //look for classes only in stub dirs with JavaStub manager
-        if (!ObjectUtils.equals(path.getManager().getClassName(), JavaStubs.class.getName())) continue;
+        if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
 
         try {
           IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path.getPath(), this);

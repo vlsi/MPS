@@ -835,7 +835,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     Set<String> invalidate = new HashSet<String>();
     for (StubPath path : getRuntimeStubPaths()) {
-      if (!ObjectUtils.equals(path.getManager().getClassName(), JavaStubs.class.getName())) continue;
+      if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
       invalidate.add(path.getPath());
     }
 
