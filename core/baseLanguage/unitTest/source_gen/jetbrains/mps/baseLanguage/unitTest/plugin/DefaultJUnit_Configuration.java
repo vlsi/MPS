@@ -9,7 +9,6 @@ import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
@@ -51,6 +50,8 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import javax.swing.JLabel;
 import com.intellij.execution.ui.ExecutionConsole;
 
@@ -81,14 +82,9 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
       }
       if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
         final Wrappers._T<String> errorReport = new Wrappers._T<String>();
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            errorReport.value = DefaultJUnit_Configuration.this.getStateObject().type.check(DefaultJUnit_Configuration.this);
-          }
-        });
-        // We do not check, if there is something to test, since it can be very slow 
+        // <node> 
+        // We do not validate, only check if there is something to test, since validating everything be very slow 
         // see MPS-8781 JUnit run configuration check method performance. 
-        // TODO might add a button, which does collect all tests in selected config 
         MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
         if (DefaultJUnit_Configuration.this.collectWhatToTest(mpsProject).isEmpty()) {
           errorReport.value = "could not find tests to run";
@@ -256,7 +252,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
-          ListSequence.fromList(all).addSequence(ListSequence.fromList(DefaultJUnit_Configuration.this.getStateObject().type.collect(DefaultJUnit_Configuration.this, mpsProject)));
+          ListSequence.fromList(all).addSequence(Sequence.fromIterable(DefaultJUnit_Configuration.this.getStateObject().type.collect(DefaultJUnit_Configuration.this, mpsProject)));
         }
       }
     });
