@@ -8176,7 +8176,7 @@
                       <link role="classConcept:3" targetNodeId="20.~ClassPathFactory" resolveInfo="ClassPathFactory" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6185141366360305771">
-                      <link role="baseMethodDeclaration:3" targetNodeId="20.~ClassPathFactory.createFromPath(java.lang.String):jetbrains.mps.reloading.IClassPathItem" resolveInfo="createFromPath" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="20.~ClassPathFactory.createFromPath(java.lang.String):jetbrains.mps.reloading.RealClassPathItem" resolveInfo="createFromPath" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6185141366360305772">
                         <link role="variableDeclaration:3" targetNodeId="6185141366360305757" resolveInfo="path" />
                       </node>
@@ -10907,7 +10907,7 @@
                 <link role="classConcept:3" targetNodeId="20.~ClassPathFactory" resolveInfo="ClassPathFactory" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="634073782578701781">
-                <link role="baseMethodDeclaration:3" targetNodeId="20.~ClassPathFactory.createFromPath(java.lang.String):jetbrains.mps.reloading.IClassPathItem" resolveInfo="createFromPath" />
+                <link role="baseMethodDeclaration:3" targetNodeId="20.~ClassPathFactory.createFromPath(java.lang.String):jetbrains.mps.reloading.RealClassPathItem" resolveInfo="createFromPath" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="634073782578701782">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="634073782578701783">
                     <link role="variableDeclaration:3" targetNodeId="634073782578701752" resolveInfo="location" />
