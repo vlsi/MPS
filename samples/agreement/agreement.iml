@@ -12,7 +12,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
-    <orderEntry type="library" name="spring" level="project" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="formulaLanguage" />
   </component>
