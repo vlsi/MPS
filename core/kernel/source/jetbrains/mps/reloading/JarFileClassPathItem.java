@@ -50,7 +50,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     this(FileSystem.getFile(path));
   }
 
-  protected JarFileClassPathItem(IFile file) {
+  private JarFileClassPathItem(IFile file) {
     myIFile = file;
 
     try {

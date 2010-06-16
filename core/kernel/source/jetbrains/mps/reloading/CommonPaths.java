@@ -311,7 +311,7 @@ public class CommonPaths {
     return result;
   }
 
-  private static JarFileClassPathItem findBootstrapJarByName(String name) {
+  private static RealClassPathItem findBootstrapJarByName(String name) {
     for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
       try {
         File file = new File(url.toURI());
@@ -319,7 +319,7 @@ public class CommonPaths {
         if (!file.exists()) continue;
 
         if (file.getPath().endsWith(name)) {
-          return new JarFileClassPathItem(new FileSystemFile(file));
+          return ClassPathFactory.getInstance().createFromPath(file.getCanonicalPath());
         }
       } catch (URISyntaxException e) {
         LOG.error(e);
@@ -343,7 +343,7 @@ public class CommonPaths {
   }
 
   private static void addJarForName(CompositeClassPathItem composite, String name) {
-    JarFileClassPathItem rtJar = findBootstrapJarByName(name);
+    RealClassPathItem rtJar = findBootstrapJarByName(name);
     if (rtJar != null) {
       composite.add(rtJar);
     } else {

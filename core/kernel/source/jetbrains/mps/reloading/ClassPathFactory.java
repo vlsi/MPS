@@ -31,7 +31,7 @@ public class ClassPathFactory {
 
   private Map<String, RealClassPathItem> myCache = new HashMap<String, RealClassPathItem>();
 
-  private IClassPathItem get(String path) {
+  private RealClassPathItem get(String path) {
     if (!myCache.containsKey(path)) {
       if (FileSystem.getFile(path).isDirectory()) {
         myCache.put(path, new FileClassPathItem(path));
@@ -53,7 +53,7 @@ public class ClassPathFactory {
 
   //--------------------------
 
-  public IClassPathItem createFromPath(String path) {
+  public RealClassPathItem createFromPath(String path) {
     try {
       return createFromPath(path, null);
     } catch (IOException e) {
@@ -62,7 +62,7 @@ public class ClassPathFactory {
     }
   }
 
-  public IClassPathItem createFromPath(String path, @Nullable IModule module) throws IOException {
+  public RealClassPathItem createFromPath(String path, @Nullable IModule module) throws IOException {
     IFile file = FileSystem.getFile(path);
 
     if (!file.exists()) {
