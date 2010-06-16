@@ -159,7 +159,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813387" resolveInfo="src" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393140">
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393141">
-              <property name="value:21" value="/platform15/platform-api.jar" />
+              <property name="value:21" value="/platform16/platform-api.jar" />
             </node>
             <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705916">
               <link role="propertyDeclaration:21" targetNodeId="1239364393103" resolveInfo="main.url" />
@@ -189,7 +189,7 @@
               <link role="propertyDeclaration:21" targetNodeId="1239364393103" resolveInfo="main.url" />
             </node>
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393152">
-              <property name="value:21" value="/platform15/platform.jar" />
+              <property name="value:21" value="/platform16/platform.jar" />
             </node>
           </node>
         </node>
@@ -216,7 +216,7 @@
               <link role="propertyDeclaration:21" targetNodeId="1239364393103" resolveInfo="main.url" />
             </node>
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393162">
-              <property name="value:21" value="/platform15/resources.jar" />
+              <property name="value:21" value="/platform16/resources.jar" />
             </node>
           </node>
         </node>
@@ -243,7 +243,7 @@
               <link role="propertyDeclaration:21" targetNodeId="1239364393103" resolveInfo="main.url" />
             </node>
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393172">
-              <property name="value:21" value="/platform15/resources_en.jar" />
+              <property name="value:21" value="/platform16/resources_en.jar" />
             </node>
           </node>
         </node>
@@ -294,7 +294,7 @@
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813387" resolveInfo="src" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393190">
             <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393191">
-              <property name="value:21" value="/ideaIU-{build.number}-jdk15.zip" />
+              <property name="value:21" value="/ideaIU-{build.number}.zip" />
             </node>
             <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="7502604942759705926">
               <link role="propertyDeclaration:21" targetNodeId="1239364393103" resolveInfo="main.url" />
@@ -309,7 +309,7 @@
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393197">
-                <property name="value:21" value="/idea-jdk15.zip" />
+                <property name="value:21" value="/idea.zip" />
               </node>
             </node>
           </node>
@@ -515,7 +515,7 @@
                 <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
               <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393253">
-                <property name="value:21" value="/idea-jdk15.zip" />
+                <property name="value:21" value="/idea.zip" />
               </node>
             </node>
           </node>
