@@ -389,18 +389,10 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
 
   protected NodeFileStatusListener createFileStatusListener() {
     return new NodeFileStatusListener() {
-      public void fileStatusChanged(final SNode node) {
-        final SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-          public SNodePointer compute() {
-            return new SNodePointer(node);
-          }
-        });
+      public void fileStatusChanged(@NotNull final SNode node) {
+        SNodePointer nodePointer = new SNodePointer(node);
         if (myLoadableNodes.contains(nodePointer)) {
-          int index = ModelAccess.instance().runReadAction(new Computable<Integer>() {
-            public Integer compute() {
-              return getIndexOfTabFor(nodePointer);
-            }
-          });
+          int index = getIndexOfTabFor(nodePointer);
           assert index >= 0 : "tab for node not found";
           updateTabColor(index);
         }

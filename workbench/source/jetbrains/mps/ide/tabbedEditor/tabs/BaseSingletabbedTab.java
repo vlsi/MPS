@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.tabbedEditor.tabs;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
@@ -161,11 +160,7 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
   protected NodeFileStatusListener createFileStatusListener() {
     return new NodeFileStatusListener() {
       public void fileStatusChanged(@NotNull final SNode node) {
-        SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-          public SNodePointer compute() {
-            return new SNodePointer(node);
-          }
-        });
+        SNodePointer nodePointer = new SNodePointer(node);
         if (ObjectUtils.equals(myLoadableNode, nodePointer)) {
           getTabbedEditor().updateTabColor(BaseSingletabbedTab.this, getBaseNodeVirtualFile());
         }
