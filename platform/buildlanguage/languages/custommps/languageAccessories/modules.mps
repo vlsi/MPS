@@ -81,6 +81,10 @@
         <property name="id" value="9b80526e-f0bf-4992-bdf5-cee39c1833f3" />
         <property name="name" value="collections.runtime" />
       </node>
+      <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="6249999483276015246">
+        <property name="id" value="134ef213-c518-42b0-b12c-c109aa13d320" />
+        <property name="name" value="collections_trove.runtime" />
+      </node>
       <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="7678729833318422638">
         <property name="id" value="927a8eff-b060-4b84-9bf9-95534382f566" />
         <property name="name" value="collections_samples" />
