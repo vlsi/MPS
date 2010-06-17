@@ -62,4 +62,6 @@ public interface EditorMessage {
   boolean isLongInGutter();
 
   Color getColorInGutter();
+
+  int getPriority();
 }

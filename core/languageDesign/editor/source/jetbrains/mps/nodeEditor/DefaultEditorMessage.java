@@ -33,6 +33,8 @@ import java.util.HashMap;
 * To change this template use File | Settings | File Templates.
 */
 public class DefaultEditorMessage implements EditorMessage {
+  private static final int DEFAULT_MESSAGE_PRIORITY = 0;
+
   private Color myColor;
   private String myMessage;
   private EditorMessageOwner myOwner;
@@ -180,5 +182,10 @@ public class DefaultEditorMessage implements EditorMessage {
   @Override
   public Color getColorInGutter() {
     return getColor();
+  }
+
+  @Override
+  public int getPriority() {
+    return DEFAULT_MESSAGE_PRIORITY;
   }
 }

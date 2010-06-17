@@ -468,8 +468,9 @@ public class TextLine {
       //drawing textual selection
       Rectangle2D selectedStringBounds = metrics.getStringBounds(getTextuallySelectedText(), g);
       g.setColor(myTextSelectedBackgroundColor);
+      // Filling smaller rectangle to not cover frames created by other nessages
       g.fillRect(shiftX + deltaShiftX_StartSelection + 1, shiftY + getPaddingTop() + 1,
-        (int) selectedStringBounds.getWidth() - 1, myTextHeight - 1);
+        (int) selectedStringBounds.getWidth() - 2, myTextHeight - 2);
 
       g.setColor(myTextSelectedTextColor);
       g.drawString(getTextuallySelectedText(), shiftX + deltaShiftX_StartSelection, baselineY);

@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.util.containers.SortedList;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -33,6 +34,13 @@ import java.util.Map.Entry;
 
 
 public class NodeHighlightManager implements EditorMessageOwner {
+  private static final Comparator<EditorMessage> EDITOR_MESSAGES_COPARATOR = new Comparator<EditorMessage>() {
+    @Override
+    public int compare(EditorMessage m1, EditorMessage m2) {
+      return m1.getPriority() - m2.getPriority();
+    }
+  };
+
   private final Object myMessagesLock = new Object();
 
   @NotNull
@@ -146,7 +154,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
    */
   private List<EditorMessage> calculateMessages(EditorCell cell) {
     final SNode node = cell.getSNode();
-    final List<EditorMessage> result = new ArrayList<EditorMessage>();
+    final List<EditorMessage> result = new SortedList<EditorMessage>(EDITOR_MESSAGES_COPARATOR);
     if (node == null) return result;
     Set<EditorMessage> messageSet = myMessagesToNodes.getBySecond(node);
     for (EditorMessage message : messageSet) {
