@@ -4222,6 +4222,7 @@
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1225551170076">
     <property name="name:3" value="typeof_SmartClosureParameterDeclaration" />
+    <property name="overrides:3" value="true" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225551170077">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1225884471784">
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1230315828648">

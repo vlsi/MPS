@@ -50,7 +50,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
   public static class QuotationClass_5rdbtv_a0a1a0a0 {
