@@ -17010,7 +17010,9 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1213877522945">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1213877522946">
             <property name="name:3" value="ourConcept" />
-            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SConceptType:16" id="1213877522947" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SConceptType:16" id="1213877522947">
+              <link role="conceptDeclaraton:16" targetNodeId="1.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+            </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213877522948">
               <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877522949" />
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation:16" id="1213877522950" />
