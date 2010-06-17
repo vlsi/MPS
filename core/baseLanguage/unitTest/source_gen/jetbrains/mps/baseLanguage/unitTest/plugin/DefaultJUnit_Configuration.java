@@ -31,7 +31,6 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import com.intellij.execution.executors.DefaultDebugExecutor;
 import jetbrains.mps.debug.DebuggerKeys;
@@ -40,6 +39,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
@@ -116,9 +117,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
         Runnable consoleDispose_22042010 = null;
         final List<AnAction> actions_22042010 = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler_22042010 = null;
-        final Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
-        final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
-        final IOperationContext operationContext = MPSDataKeys.OPERATION_CONTEXT.getData(environment.getDataContext());
+        final Project project_22042010 = environment.getProject();
 
         // user's execute code 
         try {
@@ -138,10 +137,11 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             // calculate parameter 
             final UnitTestExecutionController parameter = new _FunctionTypes._return_P0_E0<UnitTestExecutionController>() {
               public UnitTestExecutionController invoke() {
+                MPSProject mpsProject = project_22042010.getComponent(MPSProject.class);
                 List<SNode> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTest(mpsProject);
 
                 if (javaRunParameters.getMake()) {
-                  RunUtil.makeBeforeRun(project, stuffToTest);
+                  RunUtil.makeBeforeRun(project_22042010, stuffToTest);
                 }
 
                 return new UnitTestExecutionController(stuffToTest, javaRunParameters);
@@ -162,7 +162,8 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             // create console component 
             final Tuples._2<JComponent, _FunctionTypes._void_P0_E0> component = (Tuples._2<JComponent, _FunctionTypes._void_P0_E0>) (new _FunctionTypes._return_P0_E0<Tuples._2<JComponent, _FunctionTypes._void_P0_E0>>() {
               public Tuples._2<JComponent, _FunctionTypes._void_P0_E0> invoke() {
-                final UnitTestViewComponent runComponent = new UnitTestViewComponent(project, operationContext, consoleView_22042010, parameter);
+                IOperationContext operationContext = ProjectOperationContext.get(project_22042010);
+                final UnitTestViewComponent runComponent = new UnitTestViewComponent(project_22042010, operationContext, consoleView_22042010, parameter);
                 return MultiTuple.<JComponent,_FunctionTypes._void_P0_E0>from((JComponent) runComponent, new _FunctionTypes._void_P0_E0() {
                   public void invoke() {
                     runComponent.dispose();

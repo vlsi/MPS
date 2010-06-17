@@ -43,7 +43,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <maxImportIndex value="48" />
+  <maxImportIndex value="49" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="18" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
@@ -66,6 +66,7 @@
   <import index="46" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <import index="47" modelUID="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" version="-1" />
   <import index="48" modelUID="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" version="-1" />
+  <import index="49" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1204039255253">
     <property name="name:3" value="typeof_ConceptFunctionParameter_node" />
     <property name="package:3" value="Shared" />
@@ -3507,6 +3508,32 @@
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="9017024590937198707">
       <property name="name:3" value="prepareReturnType_FunctionParameter" />
       <link role="concept:3" targetNodeId="4.9017024590937198702:23" resolveInfo="PrepareReturnType_FunctionParameter" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="3680762252127977525">
+    <property name="name:3" value="typeof_ProjectExpression" />
+    <property name="package:3" value="RunConfigs.Configuration.Execute.Statements" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3680762252127977526">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="3680762252127977695">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3680762252127977699">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="3680762252127977700">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3680762252127977703">
+              <link role="classifier:3" targetNodeId="49.~Project" resolveInfo="Project" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3680762252127977698">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="3680762252127977692">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="3680762252127977694">
+              <link role="applicableNode:3" targetNodeId="3680762252127977527" resolveInfo="projectExpression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="3680762252127977527">
+      <property name="name:3" value="projectExpression" />
+      <link role="concept:3" targetNodeId="4.3680762252127977523:23" resolveInfo="ProjectExpression" />
     </node>
   </node>
 </model>

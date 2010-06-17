@@ -4031,6 +4031,7 @@
       <link role="conceptLinkDeclaration:0" targetNodeId="14.1205921683134:0" resolveInfo="operationConcept" />
       <link role="target:0" targetNodeId="8179323502814656936:23" resolveInfo="RunConfigParameterReferenceOperation" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="3680762252128105704" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8179323502814656936">
     <property name="package:0" value="RunConfigs" />
@@ -4456,6 +4457,18 @@
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="9017024590937198704">
       <property name="value:0" value="preparedValue" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3680762252127977523">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Statements" />
+    <property name="name:0" value="ProjectExpression" />
+    <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="3680762252127977524">
+      <link role="intfc:0" targetNodeId="678887849223527750:23" resolveInfo="ExecuteSpecific" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3680762252127977704">
+      <property name="value:0" value="project" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>

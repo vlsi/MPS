@@ -4503,14 +4503,6 @@
     <link role="stateTypeParameter:0" targetNodeId="58.~RunProfileState" resolveInfo="RunProfileState" />
     <link role="configType:0" targetNodeId="7234763849538443893:0" resolveInfo="Ant" />
     <link role="conceptDeclaration:0" targetNodeId="3v.1196851066733:21" resolveInfo="Project" />
-    <node role="executionParameter:0" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="823693461259251894">
-      <property name="name:23" value="project" />
-      <link role="key:23" targetNodeId="52.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
-    </node>
-    <node role="executionParameter:0" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="823693461259264894">
-      <property name="name:23" value="context" />
-      <link role="key:23" targetNodeId="33.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
-    </node>
     <node role="executeBlock:0" type="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteBlock:23" id="9185618041547065135">
       <node role="executeProcess:23" type="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteProcess:23" id="9185618041547065138">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9185618041547065139">

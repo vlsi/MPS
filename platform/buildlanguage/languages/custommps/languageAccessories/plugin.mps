@@ -1643,14 +1643,10 @@
   <node type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeRunConfiguration:0" id="1325286122617526157">
     <property name="name:0" value="DefaultCustomMpsApplication" />
     <property name="caption:0" value="Custom MPS Build Script" />
-    <property name="package:0" value="newRunner" />
+    <property name="package:0" value="runner" />
     <link role="stateTypeParameter:0" targetNodeId="35.~BaseRunProfileState" resolveInfo="BaseRunProfileState" />
     <link role="configType:0" targetNodeId="1325286122617526190" resolveInfo="CustomMPSConfigurationType" />
     <link role="conceptDeclaration:0" targetNodeId="4v.1202916958754:7" resolveInfo="MPSLayout" />
-    <node role="executionParameter:0" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="1325286122617722973">
-      <property name="name:23" value="project" />
-      <link role="key:23" targetNodeId="3.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
-    </node>
     <node role="methodDeclaration:0" type="jetbrains.mps.lang.plugin.structure.RunConfigurationMethodDeclaration:23" id="1325286122617554887">
       <property name="name:23" value="getConfiguration" />
       <node role="returnType:23" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1325286122617554888">
@@ -1849,12 +1845,7 @@
                             <link role="baseMethodDeclaration:3" targetNodeId="21.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
                           </node>
                         </node>
-                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5171649595115867078">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="5171649595115867079" />
-                          <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.RunConfigParameterReferenceOperation:23" id="5171649595115867084">
-                            <link role="member:23" targetNodeId="1325286122617722973" resolveInfo="project" />
-                          </node>
-                        </node>
+                        <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.ProjectExpression:23" id="3680762252128105706" />
                       </node>
                     </node>
                     <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5171649595115867081">
@@ -1883,12 +1874,7 @@
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5171649595115867083">
                   <link role="variableDeclaration:3" targetNodeId="5171649595115867068" resolveInfo="context" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1325286122617618150">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1325286122617618151" />
-                  <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.RunConfigParameterReferenceOperation:23" id="1325286122617745269">
-                    <link role="member:23" targetNodeId="1325286122617722973" resolveInfo="project" />
-                  </node>
-                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.ProjectExpression:23" id="3680762252128105708" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1325286122617618153">
                   <property name="value:3" value="true" />
                 </node>
@@ -2220,11 +2206,11 @@
     <property name="name:23" value="CustomMPSConfigurationType" />
     <property name="caption:23" value="Custom MPS Script" />
     <property name="iconPath:23" value="${language_descriptor}/icons/build.png" />
-    <property name="package:23" value="newRunner" />
+    <property name="package:23" value="runner" />
   </node>
   <visible index="5" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="1325286122618317652">
-    <property name="package:23" value="newRunner" />
+    <property name="package:23" value="runner" />
     <property name="name:23" value="DefaultCustomMpsLanguageConfigurationFromConfiguration" />
     <link role="rcType:23" targetNodeId="1325286122617526190" resolveInfo="CustomMPSConfigurationType" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="1325286122618317653">
@@ -2374,7 +2360,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="1325286122618317720">
-    <property name="package:23" value="newRunner" />
+    <property name="package:23" value="runner" />
     <property name="name:23" value="DefaultCustomMpsLanguageConfigurationFromMPSLayout" />
     <link role="rcType:23" targetNodeId="1325286122617526190" resolveInfo="CustomMPSConfigurationType" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="1325286122618317721">
@@ -2486,7 +2472,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="1325286122618391251">
-    <property name="package:23" value="newRunner" />
+    <property name="package:23" value="runner" />
     <property name="name:23" value="DefaultCustomMpsLanguageConfigurationFromMPSBuild" />
     <link role="rcType:23" targetNodeId="1325286122617526190" resolveInfo="CustomMPSConfigurationType" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="1325286122618391252">

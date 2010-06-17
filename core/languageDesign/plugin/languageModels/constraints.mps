@@ -622,8 +622,8 @@
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="678887849223536792">
                 <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion:16" id="678887849223773476" />
                 <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="678887849223536793">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="678887849223536796">
-                    <link role="conceptDeclaration:16" targetNodeId="7.678887849223472884:23" resolveInfo="ExecuteConfigBlock" />
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="3680762252128102949">
+                    <link role="conceptDeclaration:16" targetNodeId="7.8376523923662591983:23" resolveInfo="IExecuteConfigBlock" />
                   </node>
                 </node>
               </node>

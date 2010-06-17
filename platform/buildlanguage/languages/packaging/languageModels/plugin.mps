@@ -12159,10 +12159,6 @@
       <property name="name:23" value="configurationId" />
       <node role="type:23" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="7584047889594878297" />
     </node>
-    <node role="executionParameter:0" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="2864298211886201798">
-      <property name="name:23" value="project" />
-      <link role="key:23" targetNodeId="66.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
-    </node>
     <node role="executeBlock:0" type="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteBlock:23" id="2864298211886180660">
       <node role="executeProcess:23" type="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteProcess:23" id="2864298211886180661">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2864298211886180662">
@@ -12253,12 +12249,7 @@
                             <link role="baseMethodDeclaration:3" targetNodeId="4.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
                           </node>
                         </node>
-                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5171649595115889392">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="5171649595115889393" />
-                          <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.RunConfigParameterReferenceOperation:23" id="5171649595115889394">
-                            <link role="member:23" targetNodeId="2864298211886201798" resolveInfo="project" />
-                          </node>
-                        </node>
+                        <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.ProjectExpression:23" id="3680762252128109356" />
                       </node>
                     </node>
                     <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5171649595115889397">
@@ -12287,12 +12278,7 @@
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5171649595115889402">
                   <link role="variableDeclaration:3" targetNodeId="5171649595115889399" resolveInfo="context" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2864298211886201463">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="2864298211886201464" />
-                  <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.RunConfigParameterReferenceOperation:23" id="2864298211886201835">
-                    <link role="member:23" targetNodeId="2864298211886201798" resolveInfo="project" />
-                  </node>
-                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.ProjectExpression:23" id="3680762252128109358" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2864298211886201466">
                   <property name="value:3" value="true" />
                 </node>

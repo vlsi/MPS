@@ -123,7 +123,7 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
         Runnable consoleDispose_22042010 = null;
         final List<AnAction> actions_22042010 = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler_22042010 = null;
-        final Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
+        final Project project_22042010 = environment.getProject();
 
         // user's execute code 
         try {
@@ -165,10 +165,10 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
                       model.value = SNodeOperations.getModel(node).getModelDescriptor();
-                      context.value = new ModuleContext(model.value.getModule(), project);
+                      context.value = new ModuleContext(model.value.getModule(), project_22042010);
                     }
                   });
-                  File file = GenerateTextFromBuild.generate(configuration, model.value, context.value, project, true);
+                  File file = GenerateTextFromBuild.generate(configuration, model.value, context.value, project_22042010, true);
 
                   if (file == null) {
                     throw new ExecutionException("No executable file were generated.");

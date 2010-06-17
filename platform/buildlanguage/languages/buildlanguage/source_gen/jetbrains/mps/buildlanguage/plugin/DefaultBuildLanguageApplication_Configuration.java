@@ -29,7 +29,6 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
@@ -114,8 +113,7 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
         Runnable consoleDispose_22042010 = null;
         final List<AnAction> actions_22042010 = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler_22042010 = null;
-        Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
-        IOperationContext context = MPSDataKeys.OPERATION_CONTEXT.getData(environment.getDataContext());
+        final Project project_22042010 = environment.getProject();
 
         // user's execute code 
         try {

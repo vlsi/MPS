@@ -6309,5 +6309,13 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3680762252127977705">
+    <property name="package:32" value="RunConfigs.Configuration.Execute.Statements" />
+    <link role="conceptDeclaration:32" targetNodeId="1.3680762252127977523:23" resolveInfo="ProjectExpression" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="3680762252127977707">
+      <link role="relationDeclaration:32" targetNodeId="14.1137473891462:0" resolveInfo="alias" />
+      <link role="styleClass:32" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
 </model>
 
