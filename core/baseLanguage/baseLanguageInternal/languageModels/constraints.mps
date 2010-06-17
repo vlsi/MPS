@@ -249,5 +249,22 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="9034046336081513337">
+    <link role="concept:8" targetNodeId="1.1174294166120:1" resolveInfo="InternalPartialInstanceMethodCall" />
+    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="9034046336081513338">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9034046336081513339">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="9034046336081513343">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="9034046336081513344">
+            <property name="text:3" value="override IOperation.canBeChild" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9034046336081513340">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="9034046336081513341">
+            <property name="value:3" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

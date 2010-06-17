@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="InternalClassExpression" conceptFQName="jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression" featureKind="CONCEPT" />
@@ -51,6 +52,7 @@
     <refactoringContext modelVersion="1">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="InternalClassExpression" conceptFQName="jetbrains.mps.baseLanguage.internal.structure.InternalClassExpression" featureKind="CONCEPT" />
@@ -203,6 +205,9 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174294824069">
       <property name="value:0" value="_method call" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="9119834982593092554">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1241531154556:3" resolveInfo="legalAsStatement" />
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1174313653259">
       <property name="metaClass:0" value="aggregation" />
