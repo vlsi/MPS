@@ -80,6 +80,9 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
       }
 
       return result;
+    } catch (InvalidStackFrameException ex) {
+      LOG.warning("InvalidStackFrameException", ex); // TODO something should be done here. See, for instance, how idea deals with those exceptions
+      return Collections.emptyList();
     } catch (AbsentInformationException ex) {
       LOG.warning("AbsentInformationException", ex);
       return Collections.emptyList();

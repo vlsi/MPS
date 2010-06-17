@@ -63,6 +63,7 @@ import com.sun.jdi.LocalVariable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import com.sun.jdi.InvalidStackFrameException;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
@@ -308,6 +309,8 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
           SLinkOperations.setTarget(myEvaluator, "staticContextType", createStaticContextType(), true);
           // create this 
           SLinkOperations.setTarget(myEvaluator, "thisType", createThisClassifierType(), true);
+        } catch (InvalidStackFrameException e) {
+          LOG.warning("InvalidStackFrameException", e);
         } catch (AbsentInformationException e) {
           LOG.error(e);
         }
