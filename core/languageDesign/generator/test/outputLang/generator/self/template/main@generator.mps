@@ -285,11 +285,11 @@
         <node role="actualArgument:2" type="jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression:2" id="4816349095291000367">
           <node role="query:2" type="jetbrains.mps.lang.generator.structure.TemplateArgumentQuery:2" id="4816349095291000368">
             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4816349095291000369">
-              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4816349095291000370">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4816349095291000372">
-                  <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="4816349095291000371" />
-                  <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef:0" id="4816349095291000376">
-                    <link role="propertyPatternVar:0" targetNodeId="2681305894288686805" resolveInfo="$jobName" />
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2581715795166750426">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2581715795166770273">
+                  <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="2581715795166750427" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="2581715795166791608">
+                    <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
                   </node>
                 </node>
               </node>

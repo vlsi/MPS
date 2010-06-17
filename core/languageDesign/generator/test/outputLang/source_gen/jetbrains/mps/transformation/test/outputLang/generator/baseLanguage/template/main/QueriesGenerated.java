@@ -83,7 +83,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_4816349095291000368(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((String) _context.getPatternVariable("PatternVar_jobName"));
+    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static GeneratedMatchingPattern patternRule_Condition_4146564171992608883(final IOperationContext operationContext, final PatternRuleContext _context) {
@@ -254,6 +254,10 @@ public class QueriesGenerated {
       }
       return null;
     }
+
+    public void performActions(Object o) {
+
+    }
   }
 
   public static class Pattern_x583g4_a0a0a81 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -315,6 +319,10 @@ public class QueriesGenerated {
         return this.PatternVar_right;
       }
       return null;
+    }
+
+    public void performActions(Object o) {
+
     }
   }
 
@@ -394,6 +402,10 @@ public class QueriesGenerated {
       }
       return null;
     }
+
+    public void performActions(Object o) {
+
+    }
   }
 
   public static class Pattern_x583g4_a0a0a02 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -446,6 +458,10 @@ public class QueriesGenerated {
       }
       return null;
     }
+
+    public void performActions(Object o) {
+
+    }
   }
 
   public static class Pattern_x583g4_a0a0a12 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -491,6 +507,10 @@ public class QueriesGenerated {
       }
       return null;
     }
+
+    public void performActions(Object o) {
+
+    }
   }
 
   public static class Pattern_x583g4_a0a0a22 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -530,6 +550,10 @@ public class QueriesGenerated {
       }
       return null;
     }
+
+    public void performActions(Object o) {
+
+    }
   }
 
   public static class Pattern_x583g4_a0a0a32 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -568,6 +592,10 @@ public class QueriesGenerated {
         return this.PatternVar_ref;
       }
       return null;
+    }
+
+    public void performActions(Object o) {
+
     }
   }
 }

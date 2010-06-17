@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
-import jetbrains.mps.nodeEditor.InspectorTool;
 
 public class AddReferenceMacro_Intention extends BaseIntention implements Intention {
   public AddReferenceMacro_Intention() {
@@ -53,9 +52,7 @@ public class AddReferenceMacro_Intention extends BaseIntention implements Intent
     SNode referenceMacro = QueriesUtil.addReferenceMacro(node, editorContext.getSelectedCell());
     // set caret 
     editorContext.selectAndSetCaret(referenceMacro, 2);
-    InspectorTool inspector = editorContext.getOperationContext().getComponent(InspectorTool.class);
-    assert inspector != null;
-    inspector.openTool(true);
+    editorContext.openInspector();
   }
 
   public String getLocationString() {

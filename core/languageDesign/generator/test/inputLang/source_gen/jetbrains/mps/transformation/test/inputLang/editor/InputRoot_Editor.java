@@ -206,9 +206,5 @@ public class InputRoot_Editor extends DefaultNodeEditor {
         }
       }
     }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
   }
 }

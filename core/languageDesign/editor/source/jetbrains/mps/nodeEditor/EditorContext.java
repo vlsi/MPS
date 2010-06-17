@@ -220,6 +220,13 @@ public class EditorContext {
     }
   }
 
+  public void openInspector() {
+    InspectorTool inspector = getOperationContext().getComponent(InspectorTool.class);
+    if(inspector != null) {
+      inspector.openTool(true);
+    }
+  }
+
   public void selectAndSetCaret(final SNode node, final int position) {
     flushEvents();
 

@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.lang.generator.behavior.PatternReduction_MappingRule_Behavior;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -248,9 +249,12 @@ __switch__:
   }
 
   public static SNode getApplicableConcept_fromEnvironment(SNode node) {
-    SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.BaseMappingRule"}, false, false);
+    SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.BaseMappingRule", "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"}, false, false);
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false);
+    }
+    if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule")) {
+      return PatternReduction_MappingRule_Behavior.call_getConcept_1805153994417064763(SNodeOperations.cast(ancestor, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"));
     }
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.generator.structure.BaseMappingRule")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "applicableConcept", false);

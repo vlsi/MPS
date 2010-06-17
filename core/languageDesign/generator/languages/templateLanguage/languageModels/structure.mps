@@ -1661,6 +1661,10 @@
     <property name="package:0" value="rule.argument" />
     <property name="name:0" value="TemplateArgumentQuery" />
     <link role="extends:0" targetNodeId="1216768419888:2" resolveInfo="TemplateQueryBase" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2581715795166875531">
+      <property name="value:0" value="query" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1137473891462:0" resolveInfo="alias" />
+    </node>
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="8421689336187651546">
       <link role="conceptLinkDeclaration:0" targetNodeId="6.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target:0" targetNodeId="1167169188348:2" resolveInfo="TemplateFunctionParameter_sourceNode" />
@@ -1672,6 +1676,9 @@
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="8421689336187654036">
       <link role="conceptLinkDeclaration:0" targetNodeId="6.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target:0" targetNodeId="8.1161622753914:0" resolveInfo="ConceptFunctionParameter_operationContext" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="2581715795166875529">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1199874763892:3" resolveInfo="usesParameterObject" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4665309944889425032">
