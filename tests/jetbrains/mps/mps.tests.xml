@@ -34,11 +34,25 @@
     <jvmargs refid="profile.args"/>
   </jvmargs>
 
+  <patternset id="excluded.modules">
+    <exclude name="**/classes/**"/>
+    <exclude name="**/classes_gen/**"/>
+    <exclude name="**/lib/**"/>
+    <exclude name="**/testMaterial/**"/>
+    <exclude name="**/**sandbox**/**"/>
+    <exclude name="**/**Sandbox**/**"/>
+    <include name="**/**.mpl"/>
+    <include name="**/**.msd"/>
+  </patternset>
+
   <target name="test.test">
     <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
                          useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
       <jvmargs refid="mps.debug.args"/>
-      <model file="${mps.home}/core/languageDesign/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains/mps/smodel/test/smodelOperations.mps"/>
+      <modules dir="${mps.home}/core/baseLanguage/">
+        <patternset refid="excluded.modules"/>
+      </modules>
+      <!--<model file="${mps.home}/core/languageDesign/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains/mps/smodel/test/smodelOperations.mps"/>-->
       <!--<project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>-->
     </mps.test.generation>
   </target>
@@ -62,8 +76,7 @@
       <perfomancereport file="${mps.home}/generation.baseLanguage.perfomance"/>
 
       <modules dir="${mps.home}/core/baseLanguage/">
-        <exclude name="**/classes_gen/**"/>
-        <exclude name="**/**sandbox**"/>
+        <patternset refid="excluded.modules"/>
       </modules>
     </mps.test.generation>
     <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
@@ -71,8 +84,7 @@
       <jvmargs refid="mps.args"/>
       <perfomancereport file="${mps.home}/generation.languageDesign.perfomance"/>
       <modules dir="${mps.home}/core/languageDesign/">
-        <exclude name="**/classes_gen/**"/>
-        <exclude name="**/**sandbox**"/>
+        <patternset refid="excluded.modules"/>
       </modules>
     </mps.test.generation>
     <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
@@ -80,8 +92,7 @@
       <jvmargs refid="mps.args"/>
       <perfomancereport file="${mps.home}/generation.platform.perfomance"/>
       <modules dir="${mps.home}/platform/">
-        <exclude name="**/classes_gen/**"/>
-        <exclude name="**/**sandbox**"/>
+        <patternset refid="excluded.modules"/>
       </modules>
     </mps.test.generation>
     <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
@@ -89,12 +100,10 @@
       <jvmargs refid="mps.args"/>
       <perfomancereport file="${mps.home}/generation.kernel.samples.perfomance"/>
       <modules dir="${mps.home}/core/kernel/">
-        <exclude name="**/classes_gen/**"/>
-        <exclude name="**/**sandbox**"/>
+        <patternset refid="excluded.modules"/>
       </modules>
       <modules dir="${mps.home}/samples/">
-        <exclude name="**/classes_gen/**"/>
-        <exclude name="**/**sandbox**"/>
+        <patternset refid="excluded.modules"/>
       </modules>
     </mps.test.generation>
   </target>
@@ -184,10 +193,7 @@
     <mps.test.broken.references fork="true" loglevel="info">
       <jvmargs refid="mps.args"/>
       <modules dir="${mps.home}">
-        <exclude name="**/classes/**"/>
-        <exclude name="**/classes_gen/**"/>
-        <exclude name="**/lib/**"/>
-        <exclude name="**/testMaterial/**"/>
+        <patternset refid="excluded.modules"/>
       </modules>
     </mps.test.broken.references>
   </target>
