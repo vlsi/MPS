@@ -129,6 +129,9 @@ public class EvaluationDialog extends BaseDialog {
       }
     } catch (InvalidEvaluatedExpressionException e) {
       setFailure(e.getCause(), null);
+    } catch (InvocationTargetEvaluationException e) {
+      setFailure(e.getCause(), null);
+      LOG.error(e.getCause());
     } catch (EvaluationException e) {
       setFailure(e, null);
       LOG.error(e);

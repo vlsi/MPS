@@ -44,6 +44,7 @@ import com.intellij.openapi.progress.util.ProgressWindow;
 import com.intellij.openapi.util.Disposer;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.debug.evaluation.Evaluator;
+import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.generator.GenerationStatus;
@@ -189,12 +190,28 @@ public abstract class AbstractEvaluationLogic {
         }
         ClassLoader loader = handler.getCompiler().getClassLoader(this.myUiState.getClass().getClassLoader());
         Class clazz = Class.forName(fullClassName, true, loader);
-        Evaluator evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
+        Evaluator evaluator;
+        try {
+          evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
+        } catch (InvocationTargetException e) {
+          // try again 
+          myUiState = myDebugSession.refresh();
+          evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
+        }
         IValueProxy value = evaluator.evaluate();
         return value;
       } else {
         throw new EvaluationException("Errors during generation.");
       }
+    } catch (InvocationTargetException e) {
+      // invocation target exceptions from newInstance method call via reflection 
+      // second time, which means refresh did not help 
+      // this is bad 
+      // I personally think something should be done with all those exceptions 
+      // other then hiding them from user 
+      // but I do not know what 
+      // TODO think 
+      throw new InvocationTargetEvaluationException(e.getCause());
     } catch (EvaluationException e) {
       throw e;
     } catch (Throwable t) {
