@@ -23,6 +23,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.InternalFlag;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;
@@ -118,6 +119,7 @@ public class ModelAccess {
       r.run();
       return;
     }
+    assertNotWriteFromRead();
     Runnable runnable = new Runnable() {
       public void run() {
         getWriteLock().lock();
@@ -132,6 +134,12 @@ public class ModelAccess {
       ApplicationManager.getApplication().runWriteAction(runnable);
     } else {
       ApplicationManager.getApplication().runReadAction(runnable);
+    }
+  }
+
+  private void assertNotWriteFromRead() {
+    if (InternalFlag.isInternalMode()) {
+      assert !canRead() : "Deadlock: Write action should not be executed from within read.";
     }
   }
 
@@ -163,6 +171,7 @@ public class ModelAccess {
     if (canWrite()) {
       return c.compute();
     }
+    assertNotWriteFromRead();
     Computable<T> computable = new Computable<T>() {
       public T compute() {
         getWriteLock().lock();
