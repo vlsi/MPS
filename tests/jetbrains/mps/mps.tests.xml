@@ -93,7 +93,13 @@
       <perfomancereport file="${mps.home}/generation.platform.perfomance"/>
       <modules dir="${mps.home}/platform/">
         <patternset refid="excluded.modules"/>
+        <exclude name="**/**mpsautobuild.msd"/>
       </modules>
+    </mps.test.generation>
+    <mps.test.generation fork="true" compile="false" showdiff="false" invoketests="false" loglevel="info"
+                         useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
+      <jvmargs refid="mps.args"/>
+      <model file="${mps.home}/platform/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains/mps/build/mpsautobuild.mps"/>
     </mps.test.generation>
     <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
                          useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
