@@ -10,7 +10,7 @@
   <jvmargs id="mps.args">
     <arg value="-Xss1024k"/>
     <arg value="-Xmx1000m"/>
-        <arg value="-XX:MaxPermSize=92m"/>
+    <arg value="-XX:MaxPermSize=92m"/>
     <arg value="-XX:+HeapDumpOnOutOfMemoryError"/>
   </jvmargs>
 
@@ -19,9 +19,18 @@
     <arg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"/>
   </jvmargs>
 
+  <jvmargs id="profile.args">
+    <arg value="-agentlib:yjpagent"/>
+  </jvmargs>
+
   <jvmargs id="mps.debug.args">
     <jvmargs refid="mps.args"/>
     <jvmargs refid="debug.args"/>
+  </jvmargs>
+
+  <jvmargs id="mps.profile.args">
+    <jvmargs refid="mps.args"/>
+    <jvmargs refid="profile.args"/>
   </jvmargs>
 
   <target name="test.test">
@@ -33,7 +42,7 @@
     </mps.test.generation>
   </target>
 
-  <target name="generation.tests">
+  <target name="make">
     <mps.make fork="true" loglevel="info">
       <jvmargs refid="mps.args"/>
       <modules dir="${mps.home}">
@@ -43,6 +52,54 @@
         <exclude name="**/testMaterial/**"/>
       </modules>
     </mps.make>
+  </target>
+
+  <target name="bymodule.generation.tests" depends="make">
+    <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
+                         useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
+      <jvmargs refid="mps.args"/>
+      <perfomancereport file="${mps.home}/generation.baseLanguage.perfomance"/>
+
+      <modules dir="${mps.home}/core/baseLanguage/">
+        <exclude name="**/classes_gen/**"/>
+        <exclude name="**/**sandbox**"/>
+      </modules>
+    </mps.test.generation>
+    <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
+                         useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
+      <jvmargs refid="mps.args"/>
+      <perfomancereport file="${mps.home}/generation.languageDesign.perfomance"/>
+      <modules dir="${mps.home}/core/languageDesign/">
+        <exclude name="**/classes_gen/**"/>
+        <exclude name="**/**sandbox**"/>
+      </modules>
+    </mps.test.generation>
+    <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
+                         useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
+      <jvmargs refid="mps.args"/>
+      <perfomancereport file="${mps.home}/generation.platform.perfomance"/>
+      <modules dir="${mps.home}/platform/">
+        <exclude name="**/classes_gen/**"/>
+        <exclude name="**/**sandbox**"/>
+      </modules>
+    </mps.test.generation>
+    <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
+                         useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
+      <jvmargs refid="mps.args"/>
+      <perfomancereport file="${mps.home}/generation.kernel.samples.perfomance"/>
+      <modules dir="${mps.home}/core/kernel/">
+        <exclude name="**/classes_gen/**"/>
+        <exclude name="**/**sandbox**"/>
+      </modules>
+      <modules dir="${mps.home}/samples/">
+        <exclude name="**/classes_gen/**"/>
+        <exclude name="**/**sandbox**"/>
+      </modules>
+    </mps.test.generation>
+  </target>
+
+
+  <target name="generation.tests" depends="make">
     <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
                          useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
       <jvmargs refid="mps.args"/>
