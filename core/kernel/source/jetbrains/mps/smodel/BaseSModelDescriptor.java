@@ -17,13 +17,10 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
 import org.jetbrains.annotations.NotNull;
@@ -153,7 +150,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
     for (SModelReference reference : model.getImportedModelUIDs()) {
       if (scope.getModelDescriptor(reference) == null) {
-        errors.add("Can't find model " + reference.getLongName());
+        errors.add("Can't find model: " + reference.getLongName());
       }
     }
 
@@ -162,13 +159,13 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     langsToCheck.addAll(model.getEngagedOnGenerationLanguages());
     for (ModuleReference lang : langsToCheck) {
       if (scope.getLanguage(lang) == null) {
-        errors.add("Can't find language " + lang.getModuleFqName());
+        errors.add("Can't find language: " + lang.getModuleFqName());
       }
     }
 
     for (ModuleReference devKit : model.getDevKitRefs()) {
       if (scope.getDevKit(devKit) == null) {
-        errors.add("Can't find devkit " + devKit.getModuleFqName());
+        errors.add("Can't find devkit: " + devKit.getModuleFqName());
       }
     }
 
