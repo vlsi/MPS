@@ -181,45 +181,47 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   private void applySafeMoves(final List<Change> changes) {
     // Safe moves means moving nodes when the role is the same, the parent is the same,
     // but roles of children in parent node are ordered in different way.
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      @Override
-      public void run() {
-        ArrayList<MoveNodeChange> movesToApply = new ArrayList<MoveNodeChange>();
-        for (Change change : changes) {
-          if (change instanceof MoveNodeChange) {
-            MoveNodeChange moveNodeChange = (MoveNodeChange) change;
-            SNode newNode = myNewModel.getNodeById(change.getAffectedNodeId());
-            SNode oldNode = myOldModel.getNodeById(change.getAffectedNodeId());
-            assert newNode != null && oldNode != null;
-            if (ObjectUtils.equals(newNode.getRole_(), oldNode.getRole_())
-              && SNodeOperations.getIndexInParent(newNode) == SNodeOperations.getIndexInParent(oldNode)) {
-              movesToApply.add(moveNodeChange);
-            }
-          }
+
+    // This should be run in write action
+    ArrayList<MoveNodeChange> movesToApply = new ArrayList<MoveNodeChange>();
+    for (Change change : changes) {
+      if (change instanceof MoveNodeChange) {
+        MoveNodeChange moveNodeChange = (MoveNodeChange) change;
+        SNode newNode = myNewModel.getNodeById(change.getAffectedNodeId());
+        SNode oldNode = myOldModel.getNodeById(change.getAffectedNodeId());
+        assert newNode != null && oldNode != null;
+        if (ObjectUtils.equals(newNode.getRole_(), oldNode.getRole_())
+          && SNodeOperations.getIndexInParent(newNode) == SNodeOperations.getIndexInParent(oldNode)) {
+          movesToApply.add(moveNodeChange);
         }
-        HashSet<SNodeId> nodesToSortChildren = new HashSet<SNodeId>();
-        for (MoveNodeChange moveNodeChange : movesToApply) {
-          nodesToSortChildren.add(moveNodeChange.getNewParent());
-        }
-        for (SNodeId nodeId : nodesToSortChildren) {
-          sortChildren(nodeId);
-        }
-        changes.removeAll(movesToApply);
       }
-    }, myOldEditorComponent.getOperationContext().getProject());
+    }
+    HashSet<SNodeId> nodesToSortChildren = new HashSet<SNodeId>();
+    for (MoveNodeChange moveNodeChange : movesToApply) {
+      nodesToSortChildren.add(moveNodeChange.getNewParent());
+    }
+    for (SNodeId nodeId : nodesToSortChildren) {
+      sortChildren(nodeId);
+    }
+    changes.removeAll(movesToApply);
   }
 
   private void rebuildChangeBlocks() {
     myNewEditorComponent.removeAllChanges();
     myOldEditorComponent.removeAllChanges();
 
-    List<Change> revertChanges = new DiffBuilder(myNewModel, myOldModel).getChanges();
-    applySafeMoves(revertChanges);
-    myNewEditorComponent.hightlight(revertChanges, true, true);
-    myOldEditorComponent.hightlight(revertChanges, false, true);
+    final List<Change> revertChanges = new DiffBuilder(myNewModel, myOldModel).getChanges();
+    ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
+      @Override
+      public void run() {
+        applySafeMoves(revertChanges);
+        myNewEditorComponent.hightlight(revertChanges, true, true);
+        myOldEditorComponent.hightlight(revertChanges, false, true);
 
-    myNewEditorComponent.makeChangeBlocks();
-    myOldEditorComponent.makeChangeBlocks();
+        myNewEditorComponent.makeChangeBlocks();
+        myOldEditorComponent.makeChangeBlocks();
+      }
+    }, myOldEditorComponent.getOperationContext().getProject());
   }
 
   protected JComponent getMainComponent() {
