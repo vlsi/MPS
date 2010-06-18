@@ -4,6 +4,7 @@ import com.sun.jdi.*;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.integration.Icons;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaArrayItem;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaField;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.Nullable;
@@ -26,6 +27,7 @@ public class JavaValue extends ProxyForJava implements IValue {
 
   @Nullable
   private final Value myValue;
+  private static final int MAX_ARRAY_VALUES = 100;
 
   public JavaValue(Value value) {
     super(value);
@@ -74,10 +76,9 @@ public class JavaValue extends ProxyForJava implements IValue {
           ArrayReference arrayRef = (ArrayReference) ref;
           if (arrayRef.length() > 0) {
             int len = arrayRef.length();
-            if (len > 100) len = 10;
+            if (len > MAX_ARRAY_VALUES) len = MAX_ARRAY_VALUES;
             for (int i = 0; i < len; i++) {
-              //todo not implemented yet
-        //      watchables.add(new JavaArrayItem(arrayRef, i));
+              watchables.add(new JavaArrayItem(arrayRef, i));
             }
           }
         } else {
