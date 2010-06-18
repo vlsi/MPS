@@ -39,6 +39,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.buildlanguage.behavior.Project_Behavior;
+import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.openapi.util.JDOMExternalizable;
@@ -49,7 +50,6 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import javax.swing.JLabel;
@@ -152,6 +152,9 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
                       file.value = new File(file.value, Project_Behavior.call_getFileName_1213877351819(node));
                     }
                   });
+                  if (javaRunParameters.getMake()) {
+                    RunUtil.makeBeforeRun(project_22042010, node);
+                  }
                   Process process = runner.run(file.value);
                   return new DefaultProcessHandler(consoleView_22042010, process, runner.getCommandString());
                 } catch (ExecutionException e) {
