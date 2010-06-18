@@ -15781,6 +15781,20 @@
                         </node>
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2487769997674780518">
                           <property name="value:3" value="true" />
+                          <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="8251517099537646371">
+                            <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="8251517099537646372">
+                              <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8251517099537646373">
+                                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8251517099537646374">
+                                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8251517099537646380">
+                                    <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="8251517099537646378" />
+                                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="8251517099537675929">
+                                      <link role="property:16" targetNodeId="38.8251517099537646385:32" resolveInfo="allowEmptyText" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                         </node>
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2487769997674780519">
                           <link role="variableDeclaration:3" targetNodeId="1237452593694" resolveInfo="editorContext" />

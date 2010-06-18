@@ -3661,6 +3661,11 @@
       <property name="name:0" value="runInCommand" />
       <link role="dataType:0" targetNodeId="3.1082983657063:0" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="8251517099537646385">
+      <property name="name:0" value="allowEmptyText" />
+      <property name="propertyType:0" value="boolean" />
+      <link role="dataType:0" targetNodeId="3.1082983657063:0" resolveInfo="boolean" />
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1216385453572">
       <property name="value:0" value="{T &lt;{property}&gt; T}" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473891462:0" resolveInfo="alias" />

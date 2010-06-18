@@ -67,6 +67,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_hop3er_a3a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_hop3er_b3a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_hop3er_c3a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_hop3er_d3a(editorContext, node));
     return editorCell;
   }
 
@@ -105,6 +106,18 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_hop3er_a2d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_hop3er_b2d0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_hop3er_d3a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_hop3er_d3a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_hop3er_a3d0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_hop3er_b3d0(editorContext, node));
     return editorCell;
   }
 
@@ -178,6 +191,14 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_hop3er_a3d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "allow empty");
+    editorCell.setCellId("Constant_hop3er_a3d0");
+    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createProperty_hop3er_b1d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("runInCommand");
@@ -185,6 +206,28 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_runInCommand");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_hop3er_b3d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("allowEmptyText");
+    provider.setNoTargetText("<no allowEmptyText>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_allowEmptyText");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.DRAW_BORDER, true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

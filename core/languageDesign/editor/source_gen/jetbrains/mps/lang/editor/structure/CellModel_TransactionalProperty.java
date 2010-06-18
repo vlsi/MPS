@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class CellModel_TransactionalProperty extends CellModel_AbstractLabel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty";
   public static final String RUN_IN_COMMAND = "runInCommand";
+  public static final String ALLOW_EMPTY_TEXT = "allowEmptyText";
   public static final String PROPERTY = "property";
   public static final String HANDLER_BLOCK = "handlerBlock";
 
@@ -24,6 +25,14 @@ public class CellModel_TransactionalProperty extends CellModel_AbstractLabel {
 
   public void setRunInCommand(boolean value) {
     this.setBooleanProperty(CellModel_TransactionalProperty.RUN_IN_COMMAND, value);
+  }
+
+  public boolean getAllowEmptyText() {
+    return this.getBooleanProperty(CellModel_TransactionalProperty.ALLOW_EMPTY_TEXT);
+  }
+
+  public void setAllowEmptyText(boolean value) {
+    this.setBooleanProperty(CellModel_TransactionalProperty.ALLOW_EMPTY_TEXT, value);
   }
 
   public PropertyDeclaration getProperty() {

@@ -8292,6 +8292,22 @@
           </node>
           <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1239878594035" />
         </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8251517099537675920">
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="8251517099537675921">
+            <property name="flag:32" value="false" />
+          </node>
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8251517099537675924">
+            <property name="text:32" value="allow empty" />
+            <link role="styleClass:32" targetNodeId="1214480913160" resolveInfo="property" />
+          </node>
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8251517099537675926">
+            <link role="relationDeclaration:32" targetNodeId="2.8251517099537646385:32" resolveInfo="allowEmptyText" />
+            <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem:32" id="8251517099537675927">
+              <property name="flag:32" value="true" />
+            </node>
+          </node>
+          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8251517099537675923" />
+        </node>
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem:32" id="1216382040455">
           <property name="flag:32" value="true" />
         </node>
