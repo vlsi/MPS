@@ -52,7 +52,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -74,7 +74,7 @@ __skip__:
             break __skip__;
           }
           System.out.println(n);
-        } while(false);
+        } while (false);
       }
     });
   }

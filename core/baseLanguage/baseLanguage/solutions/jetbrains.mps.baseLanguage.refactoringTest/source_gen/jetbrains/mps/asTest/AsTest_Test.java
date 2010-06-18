@@ -10,42 +10,42 @@ public class AsTest_Test extends TestCase {
     String str = "a string";
     int i = 42;
     Object o = new Object();
-    Assert.assertNull(as5363_0(str, Integer.class));
-    Assert.assertNotNull(as5363_1(i, Integer.class));
-    Assert.assertNull(as5363_2(o, String.class));
-    Assert.assertSame(str, as5363_3(str, String.class));
-    Assert.assertSame(str, as5363_4(str, Object.class));
+    Assert.assertNull(as_q3h6h2_a0a3a0(str, Integer.class));
+    Assert.assertNotNull(as_q3h6h2_a0a4a0(i, Integer.class));
+    Assert.assertNull(as_q3h6h2_a0a5a0(o, String.class));
+    Assert.assertSame(str, as_q3h6h2_a1a6a0(str, String.class));
+    Assert.assertSame(str, as_q3h6h2_a1a7a0(str, Object.class));
   }
 
-  private static <T> T as5363_0(Object o, Class<T> type) {
+  private static <T> T as_q3h6h2_a0a3a0(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as5363_1(Object o, Class<T> type) {
+  private static <T> T as_q3h6h2_a0a4a0(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as5363_2(Object o, Class<T> type) {
+  private static <T> T as_q3h6h2_a0a5a0(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as5363_3(Object o, Class<T> type) {
+  private static <T> T as_q3h6h2_a1a6a0(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as5363_4(Object o, Class<T> type) {
+  private static <T> T as_q3h6h2_a1a7a0(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

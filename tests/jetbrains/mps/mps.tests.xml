@@ -39,6 +39,7 @@
     <exclude name="**/classes_gen/**"/>
     <exclude name="**/lib/**"/>
     <exclude name="**/testMaterial/**"/>
+    <exclude name="**/**transformationTest**/**"/>
     <exclude name="**/**sandbox**/**"/>
     <exclude name="**/**Sandbox**/**"/>
     <include name="**/**.mpl"/>
@@ -61,10 +62,7 @@
     <mps.make fork="true" loglevel="info">
       <jvmargs refid="mps.args"/>
       <modules dir="${mps.home}">
-        <exclude name="**/classes/**"/>
-        <exclude name="**/classes_gen/**"/>
-        <exclude name="**/lib/**"/>
-        <exclude name="**/testMaterial/**"/>
+        <patternset refid="excluded.modules"/>
       </modules>
     </mps.make>
   </target>
