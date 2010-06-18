@@ -1273,10 +1273,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && shiftDown(keyEvent)) {
       return CellActionType.SELECT_RIGHT;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && ctrlDown(keyEvent)) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && (SystemInfo.isMac ? altDown(keyEvent) : ctrlDown(keyEvent))) {
       return CellActionType.LOCAL_HOME;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && ctrlDown(keyEvent)) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && (SystemInfo.isMac ? altDown(keyEvent) : ctrlDown(keyEvent))) {
       return CellActionType.LOCAL_END;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && ctrlShiftDown(keyEvent)) {
@@ -1438,6 +1438,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private boolean ctrlDown(KeyEvent keyEvent) {
     return keyEvent.getModifiers() == KeyEvent.CTRL_MASK;
+  }
+
+  private boolean altDown(KeyEvent keyEvent) {
+    return keyEvent.getModifiers() == KeyEvent.ALT_MASK;
   }
 
   boolean executeComponentAction(CellActionType type) {
