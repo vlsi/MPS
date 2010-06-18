@@ -15,25 +15,25 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MinusExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_htom6q_a(editorContext, node);
+    return this.createCollection_2588_0(editorContext, node);
   }
 
-  private EditorCell createCollection_htom6q_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2588_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_htom6q_a");
-    editorCell.addEditorCell(this.createConstant_htom6q_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_htom6q_b0(editorContext, node));
+    editorCell.setCellId("Collection_2588_0");
+    editorCell.addEditorCell(this.createConstant_2588_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2588_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_htom6q_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2588_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
-    editorCell.setCellId("Constant_htom6q_a0");
+    editorCell.setCellId("Constant_2588_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_htom6q_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_2588_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expr");
     provider.setNoTargetText("<no expr>");

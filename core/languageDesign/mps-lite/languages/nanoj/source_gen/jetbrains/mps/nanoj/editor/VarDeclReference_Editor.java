@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class VarDeclReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_kyygu1_a(editorContext, node);
+    return this.createCollection_0126_0(editorContext, node);
   }
 
-  private EditorCell createCollection_kyygu1_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0126_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_kyygu1_a");
-    editorCell.addEditorCell(this.createRefCell_kyygu1_a0(editorContext, node));
+    editorCell.setCellId("Collection_0126_0");
+    editorCell.addEditorCell(this.createRefCell_0126_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_kyygu1_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_0126_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new VarDeclReference_Editor._Inline_kyygu1_a0a());
+    provider.setAuxiliaryCellProvider(new VarDeclReference_Editor._Inline0126_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class VarDeclReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_kyygu1_a0a extends InlineCellProvider {
-    public _Inline_kyygu1_a0a() {
+  public static class _Inline0126_0 extends InlineCellProvider {
+    public _Inline0126_0() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class VarDeclReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_kyygu1_a0a0(editorContext, node);
+      return this.createProperty_0126_0(editorContext, node);
     }
 
-    private EditorCell createProperty_kyygu1_a0a0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_0126_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("varName");
       provider.setNoTargetText("<no varName>");

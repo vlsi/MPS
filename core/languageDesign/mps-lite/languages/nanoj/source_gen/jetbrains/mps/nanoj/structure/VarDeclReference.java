@@ -16,18 +16,20 @@ public class VarDeclReference extends NanoExpression {
   }
 
   public VarDecl getDeclaration() {
-    return (VarDecl) this.getReferent(VarDecl.class, VarDeclReference.DECLARATION);
+    return (VarDecl)this.getReferent(VarDecl.class, VarDeclReference.DECLARATION);
   }
 
   public void setDeclaration(VarDecl node) {
     super.setReferent(VarDeclReference.DECLARATION, node);
   }
 
+
   public static VarDeclReference newInstance(SModel sm, boolean init) {
-    return (VarDeclReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.nanoj.structure.VarDeclReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VarDeclReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.nanoj.structure.VarDeclReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VarDeclReference newInstance(SModel sm) {
     return VarDeclReference.newInstance(sm, false);
   }
+
 }

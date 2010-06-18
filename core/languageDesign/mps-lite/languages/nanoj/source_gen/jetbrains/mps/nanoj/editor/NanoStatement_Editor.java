@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class NanoStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_5f70dk_a(editorContext, node);
+    return this.createError_4401_0(editorContext, node);
   }
 
-  private EditorCell createError_5f70dk_a(EditorContext editorContext, SNode node) {
+  private EditorCell createError_4401_0(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<abstract statement>");
-    editorCell.setCellId("Error_5f70dk_a");
+    editorCell.setCellId("Error_4401_0");
     return editorCell;
   }
 }

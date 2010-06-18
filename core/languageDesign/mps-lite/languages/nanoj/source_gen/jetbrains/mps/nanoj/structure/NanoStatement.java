@@ -16,10 +16,11 @@ public class NanoStatement extends BaseConcept {
   }
 
   public static NanoStatement newInstance(SModel sm, boolean init) {
-    return (NanoStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.nanoj.structure.NanoStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NanoStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.nanoj.structure.NanoStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NanoStatement newInstance(SModel sm) {
     return NanoStatement.newInstance(sm, false);
   }
+
 }
