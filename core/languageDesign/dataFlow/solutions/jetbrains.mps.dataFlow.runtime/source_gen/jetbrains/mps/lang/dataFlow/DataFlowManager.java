@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -18,7 +19,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import com.intellij.openapi.application.ApplicationManager;
-import org.jetbrains.annotations.NotNull;
 
 public class DataFlowManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(DataFlowManager.class);
