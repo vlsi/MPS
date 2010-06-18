@@ -15,7 +15,9 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -59,16 +61,19 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
     }
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new CopySrcNodeMacro_Editor.CopySrcNodeMacro_Editor_replaceWith_NodeMacro_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new CopySrcNodeMacro_Editor.CopySrcNodeMacro_component_cellMenu_a0a0()}));
     return editorCell;
   }
 
-  public static class CopySrcNodeMacro_Editor_replaceWith_NodeMacro_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public CopySrcNodeMacro_Editor_replaceWith_NodeMacro_cellMenu_a0a0() {
+  public static class CopySrcNodeMacro_component_cellMenu_a0a0 implements SubstituteInfoPart {
+    private replace_node_macro myComponent;
+
+    public CopySrcNodeMacro_component_cellMenu_a0a0() {
+      this.myComponent = new replace_node_macro();
     }
 
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.generator.structure.NodeMacro";
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 }

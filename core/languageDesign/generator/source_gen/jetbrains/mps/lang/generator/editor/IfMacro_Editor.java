@@ -25,7 +25,9 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class IfMacro_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -263,7 +265,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     }
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IfMacro_Editor.IfMacro_Editor_replaceWith_NodeMacro_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IfMacro_Editor.IfMacro_component_cellMenu_a0a0()}));
     return editorCell;
   }
 
@@ -419,12 +421,15 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class IfMacro_Editor_replaceWith_NodeMacro_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public IfMacro_Editor_replaceWith_NodeMacro_cellMenu_a0a0() {
+  public static class IfMacro_component_cellMenu_a0a0 implements SubstituteInfoPart {
+    private replace_node_macro myComponent;
+
+    public IfMacro_component_cellMenu_a0a0() {
+      this.myComponent = new replace_node_macro();
     }
 
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.generator.structure.NodeMacro";
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 }
