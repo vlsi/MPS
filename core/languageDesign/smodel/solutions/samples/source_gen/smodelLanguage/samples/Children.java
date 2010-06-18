@@ -61,7 +61,7 @@ public class Children {
   }
 
   public void accessToChildren_4(SNode statement) {
-    List<SNode> children1 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant","jetbrains.mps.baseLanguage.structure.IntegerConstant"}, false, new String[]{});
-    List<SNode> children2 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant","jetbrains.mps.baseLanguage.structure.IntegerConstant"}, true, new String[]{});
+    List<SNode> children1 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.IntegerConstant"}, false, new String[]{});
+    List<SNode> children2 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.IntegerConstant"}, true, new String[]{});
   }
 }

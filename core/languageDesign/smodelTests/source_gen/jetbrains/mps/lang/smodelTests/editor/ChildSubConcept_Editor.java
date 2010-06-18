@@ -260,10 +260,6 @@ public class ChildSubConcept_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
-
     private EditorCell createConstant_d4chl0_a1c1b0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<empty>");
       editorCell.setCellId("Constant_d4chl0_a1c1b0");

@@ -76,7 +76,7 @@ public class Child_Referent_Parent {
   }
 
   public void accessToAncestorNode_2(SNode expression) {
-    SNode parent_If_or_WhileStatement = SNodeOperations.getAncestorWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement","jetbrains.mps.baseLanguage.structure.WhileStatement"}, false, false);
+    SNode parent_If_or_WhileStatement = SNodeOperations.getAncestorWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement", "jetbrains.mps.baseLanguage.structure.WhileStatement"}, false, false);
   }
 
   public void accessToAncestorNodes_1(SNode expression) {
@@ -84,6 +84,6 @@ public class Child_Referent_Parent {
   }
 
   public void accessToAncestorNodes_2(SNode expression) {
-    List<SNode> allAncestor_If_or_WhileStatements = SNodeOperations.getAncestorsWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement","jetbrains.mps.baseLanguage.structure.WhileStatement"}, true);
+    List<SNode> allAncestor_If_or_WhileStatements = SNodeOperations.getAncestorsWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement", "jetbrains.mps.baseLanguage.structure.WhileStatement"}, true);
   }
 }

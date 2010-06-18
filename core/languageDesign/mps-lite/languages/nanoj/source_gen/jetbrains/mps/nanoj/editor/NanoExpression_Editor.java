@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class NanoExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_7200_0(editorContext, node);
+    return this.createError_90hbgw_a(editorContext, node);
   }
 
-  private EditorCell createError_7200_0(EditorContext editorContext, SNode node) {
+  private EditorCell createError_90hbgw_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<abstract expression>");
-    editorCell.setCellId("Error_7200_0");
+    editorCell.setCellId("Error_90hbgw_a");
     return editorCell;
   }
 }

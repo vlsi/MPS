@@ -79,10 +79,6 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
-
     private EditorCell createConstant_nhnpdb_a0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no statements");
       editorCell.setCellId("Constant_nhnpdb_a0a");

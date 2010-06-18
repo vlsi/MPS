@@ -16,11 +16,10 @@ public class NanoExpression extends BaseConcept {
   }
 
   public static NanoExpression newInstance(SModel sm, boolean init) {
-    return (NanoExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.nanoj.structure.NanoExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NanoExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.nanoj.structure.NanoExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NanoExpression newInstance(SModel sm) {
     return NanoExpression.newInstance(sm, false);
   }
-
 }

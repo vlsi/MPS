@@ -302,10 +302,6 @@ public class Root_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
-
     private EditorCell createConstant_30aiet_a1b1b0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<empty>");
       editorCell.setCellId("Constant_30aiet_a1b1b0");
@@ -359,10 +355,6 @@ public class Root_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
-
     private EditorCell createConstant_30aiet_a1d1b0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<empty>");
       editorCell.setCellId("Constant_30aiet_a1d1b0");
@@ -410,10 +402,6 @@ public class Root_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
-    }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
     }
   }
 }
