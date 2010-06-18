@@ -49,6 +49,9 @@ public class IMacroHolder_Behavior {
     if (macroName.equals(MPSLayout_Behavior.getMPSHomeName_1226508944077())) {
       return PathManager.getHomePath();
     }
+    if (macroName.equals(MPSLayout_Behavior.getSamplesHomeName_2409558632330510491())) {
+      return PathManager.getSamplesPath();
+    }
     return PathMacros.getInstance().getValue(macroName);
   }
 

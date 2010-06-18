@@ -43,6 +43,7 @@ public class GenerateTextFromBuild {
       @Override
       protected void fileGenerated(String targetDir, String fileName, TextGenerationUtil.TextGenerationResult result) {
         File target = new File(basedir + File.separator + fileName);
+        new File(basedir + File.separator).mkdirs();
         FileUtil.write(target, result.getText());
         if (target.getName().equals(Configuration_Behavior.call_getBuildFileName_1230217425313(configuration) + ".xml")) {
           fileToRun[0] = target;

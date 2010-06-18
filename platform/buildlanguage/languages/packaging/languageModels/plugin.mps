@@ -11815,6 +11815,27 @@
                           </node>
                         </node>
                       </node>
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="689680155166286341">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="689680155166286353">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="689680155166286342">
+                            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="689680155166286344">
+                              <link role="baseMethodDeclaration:3" targetNodeId="16.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="689680155166286346">
+                                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="689680155166286349">
+                                  <link role="classifier:3" targetNodeId="16.~File" resolveInfo="File" />
+                                  <link role="variableDeclaration:3" targetNodeId="16.~File.separator" resolveInfo="separator" />
+                                </node>
+                                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="689680155166286345">
+                                  <link role="variableDeclaration:3" targetNodeId="1224851586127" resolveInfo="basedir" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="689680155166286357">
+                            <link role="baseMethodDeclaration:3" targetNodeId="16.~File.mkdirs():boolean" resolveInfo="mkdirs" />
+                          </node>
+                        </node>
+                      </node>
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6053328609845221196">
                         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6053328609845221780">
                           <link role="baseMethodDeclaration:3" targetNodeId="55.~FileUtil.write(java.io.File,java.lang.String):void" resolveInfo="write" />
@@ -12096,7 +12117,7 @@
   <node type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeRunConfiguration:0" id="2864298211886144956">
     <property name="name:0" value="DefaultPackagingLanguageApplication" />
     <property name="caption:0" value="Packaging Build Script" />
-    <property name="package:0" value="newRunner" />
+    <property name="package:0" value="runner" />
     <link role="stateTypeParameter:0" targetNodeId="92.~RunProfileState" resolveInfo="RunProfileState" />
     <link role="conceptDeclaration:0" targetNodeId="1.1202916958754:7" resolveInfo="MPSLayout" />
     <link role="configType:0" targetNodeId="2823216123682107217" resolveInfo="PackagingConfigurationType" />
@@ -12527,13 +12548,13 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration:23" id="2823216123682107217">
-    <property name="package:23" value="newRunner" />
+    <property name="package:23" value="runner" />
     <property name="name:23" value="PackagingConfigurationType" />
     <property name="caption:23" value="Packaging Script" />
     <property name="iconPath:23" value="${language_descriptor}/icons/build.png" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5842104767988515740">
-    <property name="package:3" value="newRunner" />
+    <property name="package:3" value="runner" />
     <property name="name:3" value="ConfigurationChoosePanel" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2178855608171202011">
       <property name="name:3" value="nodeChanged" />
@@ -13217,7 +13238,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="1325286122618155431">
-    <property name="package:23" value="newRunner" />
+    <property name="package:23" value="runner" />
     <property name="name:23" value="DefaultPackagingLanguageConfigurationFromMPSLayout" />
     <link role="rcType:23" targetNodeId="2823216123682107217" resolveInfo="PackagingConfigurationType" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="1325286122618175273">
@@ -13331,7 +13352,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="1325286122618219198">
-    <property name="package:23" value="newRunner" />
+    <property name="package:23" value="runner" />
     <property name="name:23" value="DefaultPackagingLanguageConfigurationFromConfiguration" />
     <link role="rcType:23" targetNodeId="2823216123682107217" resolveInfo="PackagingConfigurationType" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="1325286122618219202">
