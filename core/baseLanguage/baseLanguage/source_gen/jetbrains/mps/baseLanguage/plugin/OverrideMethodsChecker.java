@@ -23,18 +23,18 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Iterator;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class OverrideMethodsChecker extends EditorCheckerAdapter {
@@ -84,7 +84,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
           "Implements"
         ));
         tooltip.append(" method in '");
-        tooltip.append(getPresentation(overridenClassifier));
+        tooltip.append(getClassifierPresentation(overridenClassifier));
         tooltip.append("'");
         if (it.hasNext()) {
           tooltip.append(LF);
@@ -126,7 +126,13 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
       ));
       for (SNode subClassifier : Sequence.fromIterable(derivedClassifiers)) {
         superClassifierTooltip.append(TOOLTIP_INDENT);
-        superClassifierTooltip.append(getPresentation(subClassifier));
+        superClassifierTooltip.append(getClassifierPresentation(subClassifier));
+        if (SNodeOperations.isInstanceOf(subClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+          for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(subClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
+            superClassifierTooltip.append(TOOLTIP_INDENT);
+            superClassifierTooltip.append(getEnumConstantPresentation(enumConstant));
+          }
+        }
       }
     }
     SetSequence.fromSet(messages).addElement(new SubclassedClassifierEditorMessage(container, this, superClassifierTooltip.toString(), isInterface));
@@ -142,7 +148,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     if (MapSequence.fromMap(nameToMethodsMap).isEmpty()) {
       return;
     }
-    Map<SNode, Set<Tuples._2<SNode, SNode>>> overridenToOverridingMethodsMap = createOverridenToOverridingMethodsMap(nameToMethodsMap, derivedClassifiers);
+    Map<SNode, Set<SNode>> overridenToOverridingMethodsMap = createOverridenToOverridingMethodsMap(nameToMethodsMap, derivedClassifiers);
     for (SNode overridenMethod : SetSequence.fromSet(MapSequence.fromMap(overridenToOverridingMethodsMap).keySet())) {
       boolean overriden = !(SPropertyOperations.getBoolean(overridenMethod, "isAbstract"));
       StringBuffer tooltip = new StringBuffer("Is ");
@@ -152,10 +158,10 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
       ));
       tooltip.append(" in");
       int messageCounter = 0;
-      for (Iterator<Tuples._2<SNode, SNode>> it = SetSequence.fromSet(MapSequence.fromMap(overridenToOverridingMethodsMap).get(overridenMethod)).iterator(); it.hasNext();) {
-        SNode overridingClassifier = it.next()._1();
+      for (Iterator<SNode> it = SetSequence.fromSet(MapSequence.fromMap(overridenToOverridingMethodsMap).get(overridenMethod)).iterator(); it.hasNext();) {
+        SNode overridingMethod = it.next();
         tooltip.append(TOOLTIP_INDENT);
-        tooltip.append(getPresentation(overridingClassifier));
+        tooltip.append(getPresentation(SNodeOperations.getParent(overridingMethod)));
         if (++messageCounter == MAX_MESSAGE_NUMBER && it.hasNext()) {
           tooltip.append(TOOLTIP_INDENT);
           tooltip.append("...");
@@ -166,10 +172,10 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     }
   }
 
-  private Map<SNode, Set<Tuples._2<SNode, SNode>>> createOverridenToOverridingMethodsMap(Map<String, Set<SNode>> nameToMethodsMap, Iterable<SNode> derivedClassifiers) {
-    Map<SNode, Set<Tuples._2<SNode, SNode>>> result = MapSequence.fromMap(new HashMap<SNode, Set<Tuples._2<SNode, SNode>>>());
+  private Map<SNode, Set<SNode>> createOverridenToOverridingMethodsMap(Map<String, Set<SNode>> nameToMethodsMap, Iterable<SNode> derivedClassifiers) {
+    Map<SNode, Set<SNode>> result = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
     for (SNode derivedClassifier : Sequence.fromIterable(derivedClassifiers)) {
-      for (final SNode derivedClassifierMethod : ListSequence.fromList(SLinkOperations.getTargets(derivedClassifier, "method", true)).where(new IWhereFilter<SNode>() {
+      for (final SNode derivedClassifierMethod : Sequence.fromIterable(OverridingMethodsFinder.getInstanceMethods(derivedClassifier)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return OverridingMethodsFinder.canOverride(it);
         }
@@ -184,12 +190,12 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
           }
         });
         if (overridenMethod != null) {
-          Set<Tuples._2<SNode, SNode>> overridingMethods = OverridingMethodsFinder.safeGet(result, overridenMethod);
-          SetSequence.fromSet(overridingMethods).addElement(MultiTuple.<SNode,SNode>from(derivedClassifierMethod, derivedClassifier));
+          Set<SNode> overridingMethods = OverridingMethodsFinder.safeGet(result, overridenMethod);
+          SetSequence.fromSet(overridingMethods).addElement(derivedClassifierMethod);
           if (SetSequence.fromSet(overridingMethods).count() > MAX_MESSAGE_NUMBER) {
             SetSequence.fromSet(similarMethods).removeElement(overridenMethod);
             if (SetSequence.fromSet(similarMethods).isEmpty()) {
-              MapSequence.fromMap(nameToMethodsMap).put(SPropertyOperations.getString(derivedClassifierMethod, "name"), null);
+              MapSequence.fromMap(nameToMethodsMap).removeKey(SPropertyOperations.getString(derivedClassifierMethod, "name"));
               if (MapSequence.fromMap(nameToMethodsMap).isEmpty()) {
                 return result;
               }
@@ -260,8 +266,22 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     return false;
   }
 
-  private String getPresentation(SNode classifier) {
+  private String getPresentation(SNode node) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      return getClassifierPresentation(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"));
+    }
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
+      return getEnumConstantPresentation(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"));
+    }
+    return BaseConcept_Behavior.call_getPresentation_1213877396640(node);
+  }
+
+  private String getClassifierPresentation(SNode classifier) {
     return INamedConcept_Behavior.call_getFqName_1213877404258(classifier);
+  }
+
+  private String getEnumConstantPresentation(SNode enumConstantDeclaration) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(enumConstantDeclaration);
   }
 
   private static boolean isParameterType(SNode type) {

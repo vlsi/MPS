@@ -8,29 +8,31 @@ import java.util.Set;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.LinkedHashSet;
 
 public class OverridingMethodsFinder {
   private Map<SNode, Set<Tuples._2<SNode, SNode>>> myOverridingToOverridenMethodsMap = MapSequence.fromMap(new HashMap<SNode, Set<Tuples._2<SNode, SNode>>>());
 
   public OverridingMethodsFinder(SNode container) {
-    this(container, SLinkOperations.getTargets(container, "method", true));
+    this(container, getInstanceMethods(container));
   }
 
   public OverridingMethodsFinder(SNode container, Iterable<SNode> methods) {
-    assert ListSequence.fromList(SLinkOperations.getTargets(container, "method", true)).containsSequence(Sequence.fromIterable(methods)) : "All passed methods should be contained inside containing classifiers";
     Map<String, Set<SNode>> nameToMethodsMap = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
     for (SNode methodToCheck : Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -111,22 +113,37 @@ public class OverridingMethodsFinder {
       if (similarMethods == null) {
         continue;
       }
-      SNode overridingMethod = SetSequence.fromSet(similarMethods).findFirst(new IWhereFilter<SNode>() {
+      List<SNode> overridingMethods = new ArrayList<SNode>();
+      for (SNode overridingMethod : SetSequence.fromSet(similarMethods).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(classifierMethod, it);
         }
-      });
-      if (overridingMethod != null) {
+      })) {
         SetSequence.fromSet(safeGet(this.myOverridingToOverridenMethodsMap, overridingMethod)).addElement(MultiTuple.<SNode,SNode>from(classifierMethod, classifier));
-        SetSequence.fromSet(similarMethods).removeElement(overridingMethod);
-        if (SetSequence.fromSet(similarMethods).isEmpty()) {
-          MapSequence.fromMap(methodNameToMethodMapCopy).removeKey(SPropertyOperations.getString(classifierMethod, "name"));
-        }
+        ListSequence.fromList(overridingMethods).addElement(overridingMethod);
+      }
+      SetSequence.fromSet(similarMethods).removeSequence(ListSequence.fromList(overridingMethods));
+      if (SetSequence.fromSet(similarMethods).isEmpty()) {
+        MapSequence.fromMap(methodNameToMethodMapCopy).removeKey(SPropertyOperations.getString(classifierMethod, "name"));
       }
     }
     if (!(MapSequence.fromMap(methodNameToMethodMapCopy).isEmpty())) {
       collectOverridingMethodsInClassifierHierarchy(classifier, methodNameToMethodMapCopy, visitedClassifiers);
     }
+  }
+
+  public static Iterable<SNode> getInstanceMethods(final SNode containingClassifier) {
+    Iterable<SNode> result = Sequence.fromClosure(new ISequenceClosure<SNode>() {
+      public Iterable<SNode> iterable() {
+        return SLinkOperations.getTargets(containingClassifier, "method", true);
+      }
+    });
+    if (SNodeOperations.isInstanceOf(containingClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+      for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(containingClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
+        result = Sequence.fromIterable(result).concat(ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "method", true)));
+      }
+    }
+    return result;
   }
 
   public static boolean canOverride(SNode method) {

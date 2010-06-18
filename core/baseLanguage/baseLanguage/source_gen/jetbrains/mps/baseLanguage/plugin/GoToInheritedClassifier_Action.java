@@ -24,10 +24,12 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.ui.awt.RelativePoint;
 import java.awt.event.MouseEvent;
 import java.awt.Rectangle;
 import java.awt.Point;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class GoToInheritedClassifier_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -142,6 +144,12 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
           });
         }
       });
+      final Wrappers._T<List<SNode>> nodesIncludingEnumConstants = new Wrappers._T<List<SNode>>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          nodesIncludingEnumConstants.value = GoToInheritedClassifier_Action.this.appendEnumConstants(nodes);
+        }
+      });
 
       RelativePoint relativePoint;
       if (event.getInputEvent() instanceof MouseEvent) {
@@ -151,9 +159,22 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
         Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
         relativePoint = new RelativePoint(GoToInheritedClassifier_Action.this.editorComponent, point);
       }
-      GoToHelper.showInheritedClassesMenu(nodes, relativePoint, GoToInheritedClassifier_Action.this.project);
+      GoToHelper.showInheritedClassesMenu(nodesIncludingEnumConstants.value, relativePoint, GoToInheritedClassifier_Action.this.project);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToInheritedClassifier", t);
     }
+  }
+
+  private List<SNode> appendEnumConstants(List<SNode> nodes) {
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode node : ListSequence.fromList(nodes)) {
+      ListSequence.fromList(result).addElement(node);
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+        for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
+          ListSequence.fromList(result).addElement(enumConstant);
+        }
+      }
+    }
+    return result;
   }
 }

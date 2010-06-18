@@ -58,6 +58,19 @@ public class DerivedMethods_Finder extends GeneratedFinder {
           ListSequence.fromList(_results).addElement(it);
         }
       });
+      if (SNodeOperations.isInstanceOf(derivedClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+        for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(derivedClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
+          ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "method", true)).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(instanceMethod, it);
+            }
+          }).visitAll(new IVisitor<SNode>() {
+            public void visit(SNode it) {
+              ListSequence.fromList(_results).addElement(it);
+            }
+          });
+        }
+      }
     }
   }
 }

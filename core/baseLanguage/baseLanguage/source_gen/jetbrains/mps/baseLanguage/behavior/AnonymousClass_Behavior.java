@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -63,30 +64,22 @@ public class AnonymousClass_Behavior {
   }
 
   public static String virtual_getNestedName_8540045600162184125(SNode thisNode) {
-    String anonymousClassPresentation = AnonymousClass_Behavior.call_getAnonymousClassPresentation_7523932196475740197(thisNode);
-    if (anonymousClassPresentation != null) {
-      SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-      assert containingClassifier != null;
-      return anonymousClassPresentation + Classifier_Behavior.call_getNestedName_8540045600162184125(containingClassifier);
-    }
-    return Classifier_Behavior.callSuper_getNestedName_8540045600162184125(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass");
+    SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    return (containingClassifier != null ?
+      AnonymousClass_Behavior.call_getAnonymousClassPresentation_7523932196475740197(thisNode, containingClassifier) + Classifier_Behavior.call_getNestedName_8540045600162184125(containingClassifier) :
+      Classifier_Behavior.callSuper_getNestedName_8540045600162184125(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass")
+    );
   }
 
   public static String virtual_getFqName_1213877404258(SNode thisNode) {
-    String anonymousClassPresentation = AnonymousClass_Behavior.call_getAnonymousClassPresentation_7523932196475740197(thisNode);
-    if (anonymousClassPresentation != null) {
-      SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-      assert containingClassifier != null;
-      return anonymousClassPresentation + INamedConcept_Behavior.call_getFqName_1213877404258(containingClassifier);
-    }
-    return INamedConcept_Behavior.callSuper_getFqName_1213877404258(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass");
+    SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    return (containingClassifier != null ?
+      AnonymousClass_Behavior.call_getAnonymousClassPresentation_7523932196475740197(thisNode, containingClassifier) + INamedConcept_Behavior.call_getFqName_1213877404258(containingClassifier) :
+      INamedConcept_Behavior.callSuper_getFqName_1213877404258(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass")
+    );
   }
 
-  public static String call_getAnonymousClassPresentation_7523932196475740197(SNode thisNode) {
-    SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    if (containingClassifier == null) {
-      return null;
-    }
+  public static String call_getAnonymousClassPresentation_7523932196475740197(SNode thisNode, @NotNull SNode containingClassifier) {
     String result = "Anonymous in ";
     SNode containingMethod = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     if (containingMethod != null && SNodeOperations.getParent(containingMethod) == containingClassifier) {
