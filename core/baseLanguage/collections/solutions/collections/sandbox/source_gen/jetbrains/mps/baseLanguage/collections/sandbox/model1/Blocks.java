@@ -53,7 +53,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -105,7 +105,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -119,7 +119,7 @@ __skip__:
         do {
           throw new StopIteratingException();
           break __skip__;
-        } while(false);
+        } while (false);
       }
     });
   }

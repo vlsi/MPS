@@ -12,7 +12,6 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 public class DemoApp {
-
   public static void main(String[] args) {
     JFrame frame = new JFrame("Demo");
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,19 +24,19 @@ public class DemoApp {
   }
 
   public static void addContent(Container container) {
-    container.add(createComponent0());
-    container.add(createComponent1());
-    container.add(createComponent4());
+    container.add(createComponent_a());
+    container.add(createComponent_a_0());
+    container.add(createComponent_a_1());
   }
 
-  public static Component createComponent0() {
+  public static Component createComponent_a() {
     JButton component = new JButton();
     component.setText("Hello");
     component.setEnabled(false);
     return component;
   }
 
-  public static Component createComponent1() {
+  public static Component createComponent_a_0() {
     JLabel component = new JLabel();
     component.setText("world!");
     component.setOpaque(true);
@@ -45,26 +44,25 @@ public class DemoApp {
     return component;
   }
 
-  public static Component createComponent2() {
+  public static Component createComponent_a0() {
     JLabel component = new JLabel();
     component.setText("Hello");
     return component;
   }
 
-  public static Component createComponent3() {
+  public static Component createComponent_b0() {
     JLabel component = new JLabel();
     component.setText("MPS!");
     return component;
   }
 
-  public static Component createComponent4() {
+  public static Component createComponent_a_1() {
     JPanel component = new JPanel();
     component.setOpaque(true);
     component.setBackground(Color.white);
-    //  add children
-    component.add(createComponent2());
-    component.add(createComponent3());
+    //  add children 
+    component.add(createComponent_a0());
+    component.add(createComponent_b0());
     return component;
   }
-
 }

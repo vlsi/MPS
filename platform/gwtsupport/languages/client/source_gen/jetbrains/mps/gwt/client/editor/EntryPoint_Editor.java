@@ -8,27 +8,45 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class EntryPoint_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4754_0(editorContext, node);
+    return this.createCollection_qle4av_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4754_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_qle4av_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4754_0");
-    editorCell.addEditorCell(this.createConceptProperty_4754_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_4754_0(editorContext, node));
+    editorCell.setCellId("Collection_qle4av_a");
+    editorCell.addEditorCell(this.createConceptProperty_qle4av_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_qle4av_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_4754_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_qle4av_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("entryPoint");
+    provider.setNoTargetText("<no entryPoint>");
+    EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new EntryPoint_Editor._Inline_qle4av_a1a());
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConceptProperty_qle4av_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -46,26 +64,8 @@ public class EntryPoint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_4754_0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("entryPoint");
-    provider.setNoTargetText("<no entryPoint>");
-    EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EntryPoint_Editor._Inline4754_0());
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  public static class _Inline4754_0 extends InlineCellProvider {
-    public _Inline4754_0() {
+  public static class _Inline_qle4av_a1a extends InlineCellProvider {
+    public _Inline_qle4av_a1a() {
       super();
     }
 
@@ -74,10 +74,10 @@ public class EntryPoint_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_4754_0(editorContext, node);
+      return this.createProperty_qle4av_a0b0(editorContext, node);
     }
 
-    private EditorCell createProperty_4754_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_qle4av_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

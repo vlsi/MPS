@@ -22,23 +22,23 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 
 public class Inherits_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9060_0(editorContext, node);
+    return this.createCollection_2duhcq_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9060_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2duhcq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9060_0");
-    editorCell.addEditorCell(this.createConceptProperty_9060_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_9060_0(editorContext, node));
+    editorCell.setCellId("Collection_2duhcq_a");
+    editorCell.addEditorCell(this.createConceptProperty_2duhcq_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_2duhcq_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_9060_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_2duhcq_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("module");
     provider.setNoTargetText("<no module>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Inherits_Editor._Inline9060_0());
+    provider.setAuxiliaryCellProvider(new Inherits_Editor._Inline_2duhcq_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -51,7 +51,7 @@ public class Inherits_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_9060_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_2duhcq_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -69,8 +69,8 @@ public class Inherits_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline9060_0 extends InlineCellProvider {
-    public _Inline9060_0() {
+  public static class _Inline_2duhcq_a1a extends InlineCellProvider {
+    public _Inline_2duhcq_a1a() {
       super();
     }
 
@@ -79,10 +79,10 @@ public class Inherits_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createReadOnlyModelAccessor_9060_0(editorContext, node);
+      return this.createReadOnlyModelAccessor_2duhcq_a0b0(editorContext, node);
     }
 
-    private EditorCell createReadOnlyModelAccessor_9060_0(final EditorContext editorContext, final SNode node) {
+    private EditorCell createReadOnlyModelAccessor_2duhcq_a0b0(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
           return GWTModule_Behavior.call_getLogicalName_1572321421814401058(node);
@@ -96,7 +96,7 @@ public class Inherits_Editor extends DefaultNodeEditor {
         }
       }, node);
       editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-      editorCell.setCellId("ReadOnlyModelAccessor_9060_0");
+      editorCell.setCellId("ReadOnlyModelAccessor_2duhcq_a0b0");
       return editorCell;
     }
   }

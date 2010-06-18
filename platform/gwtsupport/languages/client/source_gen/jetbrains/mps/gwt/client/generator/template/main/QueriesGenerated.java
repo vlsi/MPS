@@ -5,11 +5,11 @@ package jetbrains.mps.gwt.client.generator.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.gwt.client.behavior.Element_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.gwt.client.behavior.Attr_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.gwt.client.behavior.Element_Behavior;
+import jetbrains.mps.gwt.client.behavior.Attr_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -31,6 +31,18 @@ public class QueriesGenerated {
     return _context.getSessionObject("jetbrains.mps.gwt.client.generator.runtime-weaving.done" + _context.getNode().getId()) == null;
   }
 
+  public static Object propertyMacro_GetPropertyValue_3852159904898263055(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2968360207536881430(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "entryPoint", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2968360207536881446(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "module", false));
+  }
+
   public static Object propertyMacro_GetPropertyValue_2968360207536878967(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return Element_Behavior.call_getXmlElement_3852159904898386595(_context.getNode());
   }
@@ -42,28 +54,12 @@ public class QueriesGenerated {
     );
   }
 
-  public static Object propertyMacro_GetPropertyValue_2968360207536879017(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Attr_Behavior.call_getXmlAttr_3852159904898525999(_context.getNode());
-  }
-
   public static Object propertyMacro_GetPropertyValue_2968360207536881405(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return Element_Behavior.call_getXmlElement_3852159904898386595(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_2968360207536881415(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "pattern", true), "value");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_2968360207536881430(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "entryPoint", false));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_2968360207536881446(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "module", false));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3852159904898263055(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_3852159904898549806(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -92,12 +88,28 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "value");
   }
 
+  public static Object propertyMacro_GetPropertyValue_2968360207536879017(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Attr_Behavior.call_getXmlAttr_3852159904898525999(_context.getNode());
+  }
+
   public static Object referenceMacro_GetReferent_1220369573364066224(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getNode();
   }
 
   public static SNode sourceNodeQuery_3852159904898824953(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "renameTo", true);
+  }
+
+  public static Iterable sourceNodesQuery_2968360207536985234(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "element", true);
+  }
+
+  public static Iterable sourceNodesQuery_2968360207536878995(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "attr", true);
+  }
+
+  public static Iterable sourceNodesQuery_2968360207537115113(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "pattern", true);
   }
 
   public static Iterable sourceNodesQuery_1220369573364040170(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -113,18 +125,6 @@ public class QueriesGenerated {
       }
     }
     return result;
-  }
-
-  public static Iterable sourceNodesQuery_2968360207536878995(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "attr", true);
-  }
-
-  public static Iterable sourceNodesQuery_2968360207536985234(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "element", true);
-  }
-
-  public static Iterable sourceNodesQuery_2968360207537115113(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "pattern", true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1220369573364066232(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {

@@ -8,7 +8,6 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 
 public class Button {
-
   public static void main(String[] args) {
     JFrame frame = new JFrame("Demo");
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -19,5 +18,4 @@ public class Button {
     frame.setLocationRelativeTo(null);
     frame.setVisible(true);
   }
-
 }

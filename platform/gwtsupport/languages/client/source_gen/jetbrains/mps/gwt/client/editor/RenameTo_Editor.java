@@ -9,55 +9,55 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 
 public class RenameTo_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4989_0(editorContext, node);
+    return this.createCollection_v1b1ft_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4989_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_v1b1ft_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4989_0");
-    editorCell.addEditorCell(this.createConceptProperty_4989_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4989_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4989_1(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4989_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4989_2(editorContext, node));
+    editorCell.setCellId("Collection_v1b1ft_a");
+    editorCell.addEditorCell(this.createConceptProperty_v1b1ft_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_v1b1ft_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_v1b1ft_c0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_v1b1ft_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_v1b1ft_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4989_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_v1b1ft_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
-    editorCell.setCellId("Constant_4989_0");
+    editorCell.setCellId("Constant_v1b1ft_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4989_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_v1b1ft_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
-    editorCell.setCellId("Constant_4989_1");
+    editorCell.setCellId("Constant_v1b1ft_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4989_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_v1b1ft_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
-    editorCell.setCellId("Constant_4989_2");
+    editorCell.setCellId("Constant_v1b1ft_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_4989_0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
+  private EditorCell createProperty_v1b1ft_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("value");
+    provider.setNoTargetText("<no value>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
+    editorCell.setCellId("property_value");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -69,13 +69,13 @@ public class RenameTo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_4989_0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("value");
-    provider.setNoTargetText("<no value>");
+  private EditorCell createConceptProperty_v1b1ft_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
+    provider.setRole("alias");
+    provider.setNoTargetText("<no alias>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_value");
+    editorCell.setCellId("conceptProperty_alias");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
