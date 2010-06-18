@@ -6,9 +6,11 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 /*package*/ class Options {
+  private static Pattern REGEXP_3flcu7_a0a0a0a = Pattern.compile("abcde", 32);
+
   /*package*/ void test() {
     {
-      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP10;
+      Pattern _pattern_0 = REGEXP_3flcu7_a0a0a0a;
       Matcher _matcher_0 = _pattern_0.matcher("abc");
       if (_matcher_0.matches()) {
       }

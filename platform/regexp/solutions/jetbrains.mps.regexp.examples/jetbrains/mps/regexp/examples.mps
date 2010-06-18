@@ -373,7 +373,7 @@
                   <link role="variableDeclaration:3" targetNodeId="1.~System.out" resolveInfo="out" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217628896561">
-                  <link role="baseMethodDeclaration:3" targetNodeId="2.~PrintStream.println(java.lang.Object):void" resolveInfo="println" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="2.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1178535102802">
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference:0" id="1178535102803">
                       <link role="match:0" targetNodeId="1178535102784" resolveInfo="user" />

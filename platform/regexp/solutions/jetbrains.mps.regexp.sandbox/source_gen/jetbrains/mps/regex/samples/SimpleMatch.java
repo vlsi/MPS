@@ -6,10 +6,14 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 /*package*/ class SimpleMatch {
+  private static Pattern REGEXP_1x0l1l_a0a0b0a = Pattern.compile("a|b", 0);
+  private static Pattern REGEXP_1x0l1l_a0a0b0b = Pattern.compile("(\\w+)@(\\w+)", 0);
+  private static Pattern REGEXP_1x0l1l_a0a0b0c = Pattern.compile("(\\w+)\\1", 0);
+
   /*package*/ void simplestRegexp() {
     String s = "";
     {
-      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP0;
+      Pattern _pattern_0 = REGEXP_1x0l1l_a0a0b0a;
       Matcher _matcher_0 = _pattern_0.matcher(s);
       if (_matcher_0.matches()) {
       }
@@ -19,7 +23,7 @@ import java.util.regex.Matcher;
   /*package*/ void matchingGroup() {
     String email = "";
     {
-      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP1;
+      Pattern _pattern_0 = REGEXP_1x0l1l_a0a0b0b;
       Matcher _matcher_0 = _pattern_0.matcher(email);
       if (_matcher_0.matches()) {
         System.out.println("user = " + _matcher_0.group(1));
@@ -31,7 +35,7 @@ import java.util.regex.Matcher;
   /*package*/ void memory() {
     String rep = "quaqua";
     {
-      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP2;
+      Pattern _pattern_0 = REGEXP_1x0l1l_a0a0b0c;
       Matcher _matcher_0 = _pattern_0.matcher(rep);
       if (_matcher_0.matches()) {
       }

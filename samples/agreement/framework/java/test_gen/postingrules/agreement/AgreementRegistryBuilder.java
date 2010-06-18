@@ -26,7 +26,6 @@ import formulaAdapter.UsageQuantity;
 import formulaAdapter.ValueQuantity;
 
 public class AgreementRegistryBuilder {
-
   public void setUp(AgreementRegistry registry) {
     registry.register("regular", this.setUpRegular());
     registry.register("lowPay", this.setUpLowPay());
@@ -58,5 +57,4 @@ public class AgreementRegistryBuilder {
     result.addPostingRule(EventType.TAX, new PostingRule_Formula(AccountType.TAX, false, new MoneyMultiplyOperation(new FeeMoney(), null)), new MfDate(1999, 10, 1));
     return result;
   }
-
 }
