@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.lang.structure.generator_new.util.QueriesUtil;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior;
@@ -15,7 +16,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_Behavior;
 import jetbrains.mps.lang.structure.generator_new.util.LinkDeclarationUtil;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -48,23 +48,28 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_3345876218930170217(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+    Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
+    return inputLanguage != null && inputLanguage.isGenerateAdapters();
   }
 
   public static boolean baseMappingRule_Condition_3345876218930171382(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+    Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
+    return inputLanguage != null && inputLanguage.isGenerateAdapters();
   }
 
   public static boolean baseMappingRule_Condition_3345876218930171391(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+    Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
+    return inputLanguage != null && inputLanguage.isGenerateAdapters();
   }
 
   public static boolean baseMappingRule_Condition_3345876218930171400(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+    Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
+    return inputLanguage != null && inputLanguage.isGenerateAdapters();
   }
 
   public static boolean baseMappingRule_Condition_1167266219124(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+    Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
+    if (inputLanguage == null || !(inputLanguage.isGenerateAdapters())) {
       return false;
     }
     SNode type = SLinkOperations.getTarget(_context.getNode(), "memberDataType", false);
@@ -72,7 +77,8 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1167266685049(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+    Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
+    if (inputLanguage == null || !(inputLanguage.isGenerateAdapters())) {
       return false;
     }
     SNode type = SLinkOperations.getTarget(_context.getNode(), "memberDataType", false);
@@ -80,7 +86,8 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1167266687532(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+    Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
+    if (inputLanguage == null || !(inputLanguage.isGenerateAdapters())) {
       return false;
     }
     SNode type = SLinkOperations.getTarget(_context.getNode(), "memberDataType", false);
