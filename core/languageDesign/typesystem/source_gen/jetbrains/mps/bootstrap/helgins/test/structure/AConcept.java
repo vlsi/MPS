@@ -18,7 +18,7 @@ public class AConcept extends BaseConcept {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, AConcept.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, AConcept.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -26,7 +26,7 @@ public class AConcept extends BaseConcept {
   }
 
   public static AConcept newInstance(SModel sm, boolean init) {
-    return (AConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.test.structure.AConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.test.structure.AConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AConcept newInstance(SModel sm) {

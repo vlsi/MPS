@@ -16,7 +16,7 @@ public class BConcept extends Expression {
   }
 
   public static BConcept newInstance(SModel sm, boolean init) {
-    return (BConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.test.structure.BConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.test.structure.BConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BConcept newInstance(SModel sm) {

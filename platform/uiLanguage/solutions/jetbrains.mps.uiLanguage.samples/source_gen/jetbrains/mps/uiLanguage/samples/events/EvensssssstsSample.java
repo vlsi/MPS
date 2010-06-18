@@ -22,8 +22,8 @@ import org.jdesktop.beansbinding.Bindings;
 
 public class EvensssssstsSample extends JDialog {
   public EvensssssstsSample myThis;
-  private JLabel myComponent0;
-  private JButton myBtn0;
+  private JLabel myComponent_b0;
+  private JButton myBtn_c0;
   private Integer myMyCount;
   public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
   private Events myEvents = new Events(null) {
@@ -32,7 +32,7 @@ public class EvensssssstsSample extends JDialog {
     }
 
     public void initialize() {
-      myThis.myBtn0.addActionListener(new ActionListener() {
+      myThis.myBtn_c0.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
           myEvents.getEvent("onAction").raise(e);
         }
@@ -44,15 +44,15 @@ public class EvensssssstsSample extends JDialog {
     this.myThis = this;
     EvensssssstsSample component = this;
     component.setLayout(new FlowLayout());
-    component.add(this.createComponent0());
-    component.add(this.createComponent1());
+    component.add(this.createComponent_b0());
+    component.add(this.createComponent_c0());
     this.myEvents.initialize();
     myThis.getEvents().getEvent("onAction").addListener(new IListener() {
       public void invoke(Object o) {
         if (!(o instanceof ActionEvent)) {
           throw new IllegalArgumentException();
         }
-        myThis.pressHandler((ActionEvent)o);
+        myThis.pressHandler((ActionEvent) o);
       }
     }, new ListenerId(this, "pressHandler"));
     myThis.setMyCount(new Integer(0));
@@ -76,7 +76,7 @@ public class EvensssssstsSample extends JDialog {
     {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("myCount");
-      Object targetObject = this.myComponent0;
+      Object targetObject = this.myComponent_b0;
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
@@ -92,15 +92,15 @@ public class EvensssssstsSample extends JDialog {
     }
   }
 
-  private JLabel createComponent0() {
+  private JLabel createComponent_b0() {
     JLabel component = new JLabel();
-    this.myComponent0 = component;
+    this.myComponent_b0 = component;
     return component;
   }
 
-  private JButton createComponent1() {
+  private JButton createComponent_c0() {
     JButton component = new JButton();
-    this.myBtn0 = component;
+    this.myBtn_c0 = component;
     component.setText("click me");
     return component;
   }
