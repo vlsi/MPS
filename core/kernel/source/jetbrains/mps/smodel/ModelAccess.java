@@ -139,7 +139,7 @@ public class ModelAccess {
 
   private void assertNotWriteFromRead() {
     if (InternalFlag.isInternalMode()) {
-      assert !canRead() : "Deadlock: Write action should not be executed from within read.";
+//      assert !canRead() : "Deadlock: Write action should not be executed from within read.";
     }
   }
 
