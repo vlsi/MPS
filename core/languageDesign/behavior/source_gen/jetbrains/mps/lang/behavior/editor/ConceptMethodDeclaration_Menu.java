@@ -13,6 +13,7 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 public class ConceptMethodDeclaration_Menu extends AbstractCellMenuComponent {
   public ConceptMethodDeclaration_Menu() {
@@ -27,11 +28,11 @@ public class ConceptMethodDeclaration_Menu extends AbstractCellMenuComponent {
       return AbstractConceptDeclaration_Behavior.call_getVirtualConceptMethods_1213877394290(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), "concept", false), scope);
     }
 
-    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SLinkOperations.setTarget(node, "overriddenMethod", parameterObject, false);
       SLinkOperations.setTarget(node, "visibility", SNodeOperations.copyNode(SLinkOperations.getTarget(parameterObject, "visibility", true)), true);
     }

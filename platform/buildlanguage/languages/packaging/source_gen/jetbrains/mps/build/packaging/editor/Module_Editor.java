@@ -100,11 +100,11 @@ public class Module_Editor extends DefaultNodeEditor {
       return Module_Behavior.getAllAvailableModules_1222444746697();
     }
 
-    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((IModule) parameterObject, node, model, scope, operationContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((IModule) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(IModule parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction_impl(IModule parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "id", parameterObject.getModuleId().toString());
       SPropertyOperations.set(node, "name", parameterObject.getModuleReference().getModuleFqName());
     }
