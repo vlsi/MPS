@@ -179,6 +179,21 @@ public class RefactoringContext {
     myIsLocal = local;
   }
 
+  public List<SModel> getModelsFromUsages(SModel firstModel) {
+    List<SModel> result = new ArrayList<SModel>();
+    if (firstModel != null) {
+      result.add(firstModel);
+    }
+    if (myUsages != null) {
+      for (SModel m : (Set<SModel>)myUsages.getModelsWithResults()) {
+        if (m != firstModel) {
+          result.add(m);
+        }
+      }
+    }
+    return result;
+  }
+
   public SNode moveNodeToNode(SNode sourceNode, String role, SNode targetNode) {
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(sourceNode);

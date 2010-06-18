@@ -1753,7 +1753,9 @@
     <link role="extends:0" targetNodeId="4413749148913695136:1" resolveInfo="MPSParameterType" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="4413749148913757063">
       <link role="conceptLinkDeclaration:0" targetNodeId="4413749148913757059:1" resolveInfo="paramType" />
-      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="4413749148913757065" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4955044055727155844">
+        <link role="classifier:3" targetNodeId="7.~Boolean" resolveInfo="Boolean" />
+      </node>
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3673527736022208472">
       <property name="value:0" value="boolean" />
@@ -1806,6 +1808,15 @@
     <link role="extends:0" targetNodeId="7953996722066252909:1" resolveInfo="ContextMemberOperation" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8113680833395644311">
       <property name="value:0" value="project" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4347648036456711197">
+    <property name="package:0" value="RefDecl.Methods" />
+    <property name="name:0" value="ModelsToGenerateByDefault" />
+    <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4347648036456711198">
+      <property name="value:0" value="models from usages" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>

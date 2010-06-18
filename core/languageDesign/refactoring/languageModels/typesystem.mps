@@ -1749,5 +1749,31 @@
       <link role="concept:3" targetNodeId="1.7953996722066252909:1" resolveInfo="ContextMemberOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="4347648036456857058">
+    <property name="name:3" value="typeof_ModelsToGenerateByDefault" />
+    <property name="package:3" value="RefDecl.Methods" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4347648036456857059">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="4347648036456861906">
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4347648036456861909">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="4347648036456861736">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4347648036456861905">
+              <link role="applicableNode:3" targetNodeId="4347648036456857060" resolveInfo="modelsToGenerateByDefault" />
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4347648036456861910">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4347648036456861911">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="4347648036456861915">
+              <node role="elementType:7" type="jetbrains.mps.lang.smodel.structure.SModelType:16" id="4347648036456861917" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="4347648036456857060">
+      <property name="name:3" value="modelsToGenerateByDefault" />
+      <link role="concept:3" targetNodeId="1.4347648036456711197:1" resolveInfo="ModelsToGenerateByDefault" />
+    </node>
+  </node>
 </model>
 

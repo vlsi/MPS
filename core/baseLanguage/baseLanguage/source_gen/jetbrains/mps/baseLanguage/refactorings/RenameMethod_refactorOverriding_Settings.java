@@ -12,4 +12,8 @@ public class RenameMethod_refactorOverriding_Settings extends IChooserSettings.B
     super("Overriding Methods");
     this.myRefactoringContext = context;
   }
+
+  public Boolean getInitialValue() {
+    return true;
+  }
 }

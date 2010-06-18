@@ -23,6 +23,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -185,14 +186,16 @@ public class RefactoringProcessor {
           }
         });
 
-        if (refactoringContext.getDoesGenerateModels() && !modelsToGenerate.isEmpty()) {
+        if (refactoringContext.getDoesGenerateModels()) {
           generateModels(modelsToGenerate, refactoringContext);
+        } else {
+          // mark "generation required"
         }
 
         try {
           refactoring.doWhenDone(refactoringContext);
         } catch (Throwable t) {
-          LOG.error("An error occured in doWhenDone(), refactoring: " + refactoring.getUserFriendlyName(), t);
+          LOG.error("An error occurred in doWhenDone(), refactoring: " + refactoring.getUserFriendlyName(), t);
         }
       }
     };
@@ -200,6 +203,7 @@ public class RefactoringProcessor {
     ThreadUtils.runInUIThreadNoWait(runnable);
   }
 
+  @NotNull
   private List<SModel> getModelsToGenerate(final IRefactoring refactoring, final RefactoringContext refactoringContext) {
     return ModelAccess.instance().runReadAction(new Computable<List<SModel>>() {
       public List<SModel> compute() {
@@ -213,8 +217,8 @@ public class RefactoringProcessor {
     });
   }
 
-  private void generateModels(final List<SModel> sourceModels, final RefactoringContext refactoringContext) {
-    assert !sourceModels.isEmpty();
+  private void generateModels(final @NotNull List<SModel> sourceModels, final @NotNull RefactoringContext refactoringContext) {
+    if (sourceModels.isEmpty())  return;
 
     final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier();
 

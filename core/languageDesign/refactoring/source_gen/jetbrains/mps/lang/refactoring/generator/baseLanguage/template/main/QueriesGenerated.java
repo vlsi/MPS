@@ -24,6 +24,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.refactoring.behavior.RequiredAdditionalArgument_Behavior;
+import jetbrains.mps.lang.refactoring.behavior.RefactoringArgument_Behavior;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import java.util.Set;
 import java.util.HashSet;
@@ -163,16 +164,19 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_478744034994714568(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return KeyMapKeystroke_Behavior.call_getKeyStroke_1213877278942(SLinkOperations.getTarget(_context.getNode(), "keystroke", true));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_478744034994714595(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6215884973916329887(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode overriden = SLinkOperations.getTarget(_context.getNode(), "overrides", false);
     if (overriden == null) {
       return null;
     }
     return SNodeOperations.getModel(overriden).getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6215884973916329851(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((SLinkOperations.getTarget(_context.getNode(), "keystroke", true) == null) ?
+      "" :
+      KeyMapKeystroke_Behavior.call_getKeyStroke_1213877278942(SLinkOperations.getTarget(_context.getNode(), "keystroke", true))
+    );
   }
 
   public static Object propertyMacro_GetPropertyValue_478744034994714810(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -268,7 +272,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(classifierType, "classifier", false);
   }
 
-  public static Object referenceMacro_GetReferent_7573235936722758704(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_6215884973916316575(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "target", true), "refactoringTargetConstructor");
   }
 
@@ -467,16 +471,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "searchScope", true) == null;
   }
 
-  public static boolean ifMacro_Condition_478744034994714551(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "overrides", false) == null) && (SLinkOperations.getTarget(_context.getNode(), "keystroke", true) == null);
-  }
-
-  public static boolean ifMacro_Condition_478744034994714577(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "overrides", false) == null) && (SLinkOperations.getTarget(_context.getNode(), "keystroke", true) != null);
-  }
-
-  public static boolean ifMacro_Condition_478744034994714624(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "overrides", false) != null);
+  public static boolean ifMacro_Condition_6215884973916329838(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "overrides", false) == null);
   }
 
   public static boolean ifMacro_Condition_478744034994714858(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -846,7 +842,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_478744034994714500(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode argument : SLinkOperations.getTargets(_context.getNode(), "parameter", true)) {
-      if (RequiredAdditionalArgument_Behavior.call_isTransient_1213877343864(argument)) {
+      if (RefactoringArgument_Behavior.call_isTransient_478744034994716004(argument)) {
         ListSequence.fromList(result).addElement(argument);
       }
     }
@@ -856,7 +852,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_7573235936722710654(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode argument : SLinkOperations.getTargets(_context.getNode(), "field", true)) {
-      if (RequiredAdditionalArgument_Behavior.call_isTransient_1213877343864(argument)) {
+      if (RefactoringArgument_Behavior.call_isTransient_478744034994716004(argument)) {
         ListSequence.fromList(result).addElement(argument);
       }
     }

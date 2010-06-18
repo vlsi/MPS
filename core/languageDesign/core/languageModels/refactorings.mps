@@ -175,7 +175,7 @@
                   <link role="variableDeclaration:3" targetNodeId="8537071608806078684" resolveInfo="frame" />
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8537071608806078694">
-                  <property name="value:3" value="Nodes with getter for the &quot;name&quot; property can't be renamed" />
+                  <property name="value:3" value="Nodes with getter for the \&quot;name\&quot; property can't be renamed" />
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8537071608806078699">
                   <property name="value:3" value="Node can't be renamed" />
@@ -215,6 +215,13 @@
               <link role="finderDeclaration:1" targetNodeId="3.1198430852441" resolveInfo="NodeAndDescendantsUsages" />
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+    <node role="modelsToGenerateBlock:1" type="jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause:1" id="6253304210158143009">
+      <node role="body:1" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6253304210158143010">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6253304210158147116">
+          <node role="expression:3" type="jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault:1" id="6253304210158147117" />
         </node>
       </node>
     </node>

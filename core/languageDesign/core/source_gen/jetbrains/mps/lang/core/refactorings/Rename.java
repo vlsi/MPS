@@ -13,6 +13,8 @@ import com.intellij.openapi.wm.WindowManager;
 import javax.swing.JOptionPane;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -52,6 +54,10 @@ public class Rename extends BaseRefactoring {
 
   public void refactor(final RefactoringContext refactoringContext) {
     SPropertyOperations.set(refactoringContext.getSelectedNode(), "name", ((String) refactoringContext.getParameter("newName")));
+  }
+
+  public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
+    return (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel().getSModel());
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
