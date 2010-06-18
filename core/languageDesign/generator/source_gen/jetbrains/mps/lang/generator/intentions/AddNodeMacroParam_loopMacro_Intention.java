@@ -7,6 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
@@ -50,7 +51,8 @@ public class AddNodeMacroParam_loopMacro_Intention extends BaseIntention impleme
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (!(SNodeOperations.getModel(node).getModelDescriptor().getModule() instanceof Generator)) {
+    SModelDescriptor sm = SNodeOperations.getModel(node).getModelDescriptor();
+    if (sm == null || !(sm.getModule() instanceof Generator)) {
       return false;
     }
     return QueriesUtil.isNodeMacroApplicable(node);

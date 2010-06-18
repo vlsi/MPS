@@ -6,6 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
@@ -42,7 +43,8 @@ public class AddReferenceMacro_Intention extends BaseIntention implements Intent
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (!(SNodeOperations.getModel(node).getModelDescriptor().getModule() instanceof Generator)) {
+    SModelDescriptor sm = SNodeOperations.getModel(node).getModelDescriptor();
+    if (sm == null || !(sm.getModule() instanceof Generator)) {
       return false;
     }
     return QueriesUtil.isReferenceMacroApplicable(node, editorContext.getSelectedCell());
