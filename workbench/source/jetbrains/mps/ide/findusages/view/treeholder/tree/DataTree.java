@@ -209,7 +209,11 @@ public class DataTree implements IExternalizeable, IChangeListener {
           data = new ModuleNodeData(creator, (IModule) o, isResult, results);
         }
       } else if (o instanceof SModel) {
-        data = new ModelNodeData(creator, (SModel) o, isResult, results);
+        if (result != null && isResult) {
+          data = new ModelNodeData(creator, result, isResult, nodeRepresentator, results);
+        } else {
+          data = new ModelNodeData(creator, (SModel) o, isResult, results);
+        }
       } else if (o instanceof SNode) {
         if (result != null && isResult) {
           data = new NodeNodeData(creator, result, isResult, nodeRepresentator, results);

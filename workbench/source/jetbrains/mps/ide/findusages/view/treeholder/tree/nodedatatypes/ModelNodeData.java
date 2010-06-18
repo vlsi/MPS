@@ -18,7 +18,9 @@ package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SModel;
@@ -34,6 +36,12 @@ public class ModelNodeData extends BaseNodeData {
   private static final String UID = "uid";
 
   public SModelReference myModelReference = SModelReference.fromString("");
+
+  public ModelNodeData(PathItemRole role, SearchResult result, boolean isResult,
+                       INodeRepresentator nodeRepresentator, boolean resultsSection) {
+    super(role, (isResult && nodeRepresentator != null) ? nodeRepresentator.getPresentation(result.getObject()) : ((SModel) result.getPathObject()).getModelDescriptor().getLongName(), "", false, isResult, resultsSection);
+    myModelReference = ((SModel) result.getPathObject()).getModelDescriptor().getSModelReference();
+  }
 
   public ModelNodeData(PathItemRole role, SModel model, boolean isResult, boolean resultsSection) {
     super(role, model.getModelDescriptor().getLongName(), "", false, isResult, resultsSection);
