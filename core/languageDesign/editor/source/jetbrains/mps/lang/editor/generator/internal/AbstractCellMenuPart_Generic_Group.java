@@ -36,7 +36,7 @@ import java.util.List;
  */
 public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteInfoPart {
 
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+  public List<INodeSubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     final SNode node = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
     final IOperationContext context = editorContext.getOperationContext();
     List parameterObjects = createParameterObjects(node, context.getScope(), context);
@@ -57,7 +57,7 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
         }
 
         public SNode doSubstitute(String pattern) {
-          handleAction(parameterObject, node, node.getModel(), context.getScope(), context);
+          handleAction(parameterObject, node, node.getModel(), context.getScope(), context, editorContext);
           return null;
         }
       });
@@ -83,7 +83,14 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
 
   protected abstract List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext);
 
-  protected abstract void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext);
+  @Deprecated
+  protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    throw new UnsupportedOperationException();
+  }
+
+  protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    handleAction(parameterObject, node, model, scope, operationContext);
+  }
 
   protected abstract boolean isReferentPresentation();
 }

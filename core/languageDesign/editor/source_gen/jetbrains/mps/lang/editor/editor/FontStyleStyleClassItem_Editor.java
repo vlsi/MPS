@@ -127,11 +127,11 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"));
     }
 
-    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "style", SEnumOperations.getEnumMemberValue(parameterObject));
       if (ObjectUtils.equals(parameterObject, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query"))) {
         SLinkOperations.setTarget(node, "query", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", null), true);
@@ -151,11 +151,11 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"));
     }
 
-    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
       SPropertyOperations.set(node, "style", SEnumOperations.getEnumMemberValue(parameterObject));
     }

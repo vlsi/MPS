@@ -1060,11 +1060,11 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       return result;
     }
 
-    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SLinkOperations.setTarget(node, "separatorTextQuery", parameterObject, true);
     }
 
@@ -1091,11 +1091,11 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       return result;
     }
 
-    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "separatorTextQuery", true));
     }
 

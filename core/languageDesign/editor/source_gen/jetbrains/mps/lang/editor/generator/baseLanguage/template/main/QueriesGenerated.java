@@ -1603,7 +1603,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parametersFunction", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1200438784565(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_7140126992650410647(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "parameterObjectType", true);
   }
 

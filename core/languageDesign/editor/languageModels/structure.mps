@@ -2468,6 +2468,10 @@
       <link role="target:0" targetNodeId="37.1161622753914:0" />
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1161119487665:3" />
     </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="2265407187494681810">
+      <link role="conceptLinkDeclaration:0" targetNodeId="4.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="1161622981231:32" resolveInfo="ConceptFunctionParameter_editorContext" />
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1165420626562">
       <property name="value:0" value="generic handler" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473891462:0" />
