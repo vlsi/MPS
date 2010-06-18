@@ -6,14 +6,15 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelFqName;
 import java.util.List;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -26,20 +27,24 @@ public class BuildGeneratorUtil {
   public BuildGeneratorUtil() {
   }
 
-  public static SModelDescriptor createModel(String modelName, Solution solution) {
-    SModelFqName newModelFQName = SModelFqName.fromString(modelName);
+  public static SModelDescriptor createModel(String modelName, final Solution solution) {
+    final SModelFqName newModelFQName = SModelFqName.fromString(modelName);
     List<SModelDescriptor> ownModelDescriptors = solution.getOwnModelDescriptors();
-    SModelDescriptor modelDescriptor = null;
+    final Wrappers._T<SModelDescriptor> modelDescriptor = new Wrappers._T<SModelDescriptor>(null);
     for (SModelDescriptor descriptor : ListSequence.fromList(ownModelDescriptors)) {
       if (descriptor.getSModelFqName().equals(newModelFQName)) {
-        modelDescriptor = descriptor;
+        modelDescriptor.value = descriptor;
         break;
       }
     }
-    if (modelDescriptor == null) {
-      modelDescriptor = solution.createModel(newModelFQName, solution.getSModelRoots().get(0));
+    if (modelDescriptor.value == null) {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          modelDescriptor.value = solution.createModel(newModelFQName, solution.getSModelRoots().get(0));
+        }
+      });
     }
-    return modelDescriptor;
+    return modelDescriptor.value;
   }
 
   public static Solution createSolution(MPSProject mpsProject, String solutionName, String solutionBaseDir) {
