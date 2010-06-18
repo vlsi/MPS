@@ -163,7 +163,7 @@ public class QueriesGenerated {
     {
       Calculable calc = new Calculable() {
         public Object calculate() {
-          final SNode ctx = SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.ui.structure.UIObjectStatement","jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, true, false);
+          final SNode ctx = SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.ui.structure.UIObjectStatement", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, true, false);
           if (SNodeOperations.isInstanceOf(ctx, "jetbrains.mps.ui.structure.UIObjectStatement")) {
             return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.ui.modeling.structure.UIObject")).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode uio) {

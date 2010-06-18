@@ -18,7 +18,7 @@ public class UIObjectProviderStatement_Behavior {
   }
 
   public static boolean virtual_shouldReturnValue_8923564134259848103(SNode thisNode) {
-    SNode anc = SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.ui.structure.UIObjectStatement"}, false, false);
+    SNode anc = SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.ui.structure.UIObjectStatement"}, false, false);
     if (!(SNodeOperations.isInstanceOf(anc, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
       return false;
     }

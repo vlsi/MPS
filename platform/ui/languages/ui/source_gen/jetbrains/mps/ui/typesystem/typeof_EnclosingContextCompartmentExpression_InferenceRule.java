@@ -28,7 +28,7 @@ public class typeof_EnclosingContextCompartmentExpression_InferenceRule extends 
       SNodeOperations.getParent(enclosingCtx) :
       enclosingCtx
     ));
-    SNode ctx = SNodeOperations.getAncestorWhereConceptInList(anchor, new String[]{"jetbrains.mps.ui.structure.ContainerCompartment","jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false, false);
+    SNode ctx = SNodeOperations.getAncestorWhereConceptInList(anchor, new String[]{"jetbrains.mps.ui.structure.ContainerCompartment", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false, false);
     if (!(SNodeOperations.isInstanceOf(ctx, "jetbrains.mps.ui.structure.ContainerCompartment"))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();

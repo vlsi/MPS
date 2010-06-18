@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class HorizontalAlignment_Chooser extends AbstractCellMenuComponent {
   public HorizontalAlignment_Chooser() {
-    super(new SubstituteInfoPart[]{new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_a0(),new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_b0(),new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_c0(),new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_d0()});
+    super(new SubstituteInfoPart[]{new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_a0(), new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_b0(), new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_c0(), new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_d0()});
   }
 
   public static class HorizontalAlignment_generic_cellMenu_a0 extends AbstractCellMenuPart_Generic_Item {
