@@ -463,7 +463,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("name");
     EditorCell_Property editorCell = null;
     {
-      ModelAccessor modelAccessor = new TransactionalPropertyAccessor(node, "name", false, true, editorContext) {
+      ModelAccessor modelAccessor = new TransactionalPropertyAccessor(node, "name", false, false, editorContext) {
         public void doCommit(final String oldValue, final String newValue) {
           this.doCommitImpl(oldValue, newValue);
         }
