@@ -44,6 +44,7 @@
     <exclude name="**/**Sandbox**/**"/>
     <include name="**/**.mpl"/>
     <include name="**/**.msd"/>
+    <exclude name="**/resolve.msd"/>
   </patternset>
 
   <target name="test.test">

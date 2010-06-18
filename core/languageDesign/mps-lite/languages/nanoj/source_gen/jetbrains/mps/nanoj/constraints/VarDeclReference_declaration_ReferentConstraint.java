@@ -73,6 +73,6 @@ public class VarDeclReference_declaration_ReferentConstraint extends BaseNodeRef
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c895905dc(jetbrains.mps.nanoj.constraints)", "689680155165910767");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895905dc(jetbrains.mps.nanoj.constraints)", "689680155165915394");
   }
 }

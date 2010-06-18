@@ -610,7 +610,7 @@
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1230493125775">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1230493119834" />
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1230493126638">
-              <link role="baseMethodDeclaration:3" targetNodeId="5.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+              <link role="baseMethodDeclaration:3" targetNodeId="5.~Enum.equals(java.lang.Object):boolean" resolveInfo="equals" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1230493140671">
                 <link role="enumConstantDeclaration:3" targetNodeId="1230466601089" resolveInfo="NOT_INIT" />
                 <link role="enumClass:3" targetNodeId="1230466569958" resolveInfo="NullableVariableState" />
@@ -629,7 +629,7 @@
               <link role="variableDeclaration:3" targetNodeId="1230493096297" resolveInfo="state" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1230493264158">
-              <link role="baseMethodDeclaration:3" targetNodeId="5.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+              <link role="baseMethodDeclaration:3" targetNodeId="5.~Enum.equals(java.lang.Object):boolean" resolveInfo="equals" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1230493264159">
                 <link role="enumClass:3" targetNodeId="1230466569958" resolveInfo="NullableVariableState" />
                 <link role="enumConstantDeclaration:3" targetNodeId="1230466601089" resolveInfo="NOT_INIT" />
@@ -646,7 +646,7 @@
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1230493189037">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1230493187505" />
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1230493189431">
-              <link role="baseMethodDeclaration:3" targetNodeId="5.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+              <link role="baseMethodDeclaration:3" targetNodeId="5.~Enum.equals(java.lang.Object):boolean" resolveInfo="equals" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1230493192557">
                 <link role="variableDeclaration:3" targetNodeId="1230493096297" resolveInfo="state" />
               </node>
@@ -666,7 +666,7 @@
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1230550815839">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1230550812588" />
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1230550818998">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~Enum.equals(java.lang.Object):boolean" resolveInfo="equals" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1230550833328">
                   <link role="enumConstantDeclaration:3" targetNodeId="1230550705523" resolveInfo="NOT_NULL" />
                   <link role="enumClass:3" targetNodeId="1230466569958" resolveInfo="NullableVariableState" />
@@ -678,7 +678,7 @@
                 <link role="variableDeclaration:3" targetNodeId="1230493096297" resolveInfo="state" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1230550779472">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~Enum.equals(java.lang.Object):boolean" resolveInfo="equals" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1230550798880">
                   <link role="enumConstantDeclaration:3" targetNodeId="1230466696500" resolveInfo="UNKNOWN" />
                   <link role="enumClass:3" targetNodeId="1230466569958" resolveInfo="NullableVariableState" />
@@ -700,7 +700,7 @@
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1230550854385">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1230550854386" />
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1230550854387">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~Enum.equals(java.lang.Object):boolean" resolveInfo="equals" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1230550868520">
                   <link role="enumConstantDeclaration:3" targetNodeId="1230466696500" resolveInfo="UNKNOWN" />
                   <link role="enumClass:3" targetNodeId="1230466569958" resolveInfo="NullableVariableState" />
@@ -712,7 +712,7 @@
                 <link role="variableDeclaration:3" targetNodeId="1230493096297" resolveInfo="state" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1230550854391">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~Enum.equals(java.lang.Object):boolean" resolveInfo="equals" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1230550861315">
                   <link role="enumConstantDeclaration:3" targetNodeId="1230550705523" resolveInfo="NOT_NULL" />
                   <link role="enumClass:3" targetNodeId="1230466569958" resolveInfo="NullableVariableState" />
@@ -783,18 +783,23 @@
     </node>
     <node role="enumConstant:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration:3" id="1230466601089">
       <property name="name:3" value="NOT_INIT" />
+      <link role="baseMethodDeclaration:3" targetNodeId="1230466569960" resolveInfo="NullableVariableState" />
     </node>
     <node role="enumConstant:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration:3" id="1230466608293">
       <property name="name:3" value="NULL" />
+      <link role="baseMethodDeclaration:3" targetNodeId="1230466569960" resolveInfo="NullableVariableState" />
     </node>
     <node role="enumConstant:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration:3" id="1230466696500">
       <property name="name:3" value="UNKNOWN" />
+      <link role="baseMethodDeclaration:3" targetNodeId="1230466569960" resolveInfo="NullableVariableState" />
     </node>
     <node role="enumConstant:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration:3" id="1230550705523">
       <property name="name:3" value="NOT_NULL" />
+      <link role="baseMethodDeclaration:3" targetNodeId="1230466569960" resolveInfo="NullableVariableState" />
     </node>
     <node role="enumConstant:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration:3" id="1230466710001">
       <property name="name:3" value="NULLABLE" />
+      <link role="baseMethodDeclaration:3" targetNodeId="1230466569960" resolveInfo="NullableVariableState" />
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1230466569959" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1230466569960">
