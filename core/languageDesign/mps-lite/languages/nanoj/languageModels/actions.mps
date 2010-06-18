@@ -34,7 +34,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="7" />
-  <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1239982506077">
+  <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="2051756933333172752">
     <property name="name:23" value="_BinaryOperations_SideTransform" />
   </node>
 </model>
