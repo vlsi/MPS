@@ -17,6 +17,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.FileStatus;
+import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.vfs.IFile;
 
@@ -43,7 +45,11 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
 
   public boolean isApplicable(AnActionEvent event) {
     VirtualFile virtualFile = check_ahqk2l_a0a0b(ShowDiffererenesWithCurrentRevision_Action.this.model.getModelFile());
-    return ShowDiffererenesWithCurrentRevision_Action.this.node.isRoot() && virtualFile != null && ProjectLevelVcsManager.getInstance(ShowDiffererenesWithCurrentRevision_Action.this.project).getVcsFor(virtualFile) != null;
+    if (ShowDiffererenesWithCurrentRevision_Action.this.node.isRoot() && virtualFile != null && ProjectLevelVcsManager.getInstance(ShowDiffererenesWithCurrentRevision_Action.this.project).getVcsFor(virtualFile) != null) {
+      FileStatus fileStatus = ShowDiffererenesWithCurrentRevision_Action.this.project.getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
+      return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
+    }
+    return false;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
