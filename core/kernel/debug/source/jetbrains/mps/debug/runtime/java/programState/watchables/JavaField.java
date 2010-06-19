@@ -29,7 +29,7 @@ public class JavaField implements IWatchable {
   public JavaField(Field field, ObjectReference parent) {
     myField = field;
     myParent = parent;
-    myCachedValue = new JavaValue(myParent.getValue(myField));
+    myCachedValue = JavaValue.fromJDIValue(myParent.getValue(myField));
   }
 
   public Field getField() {

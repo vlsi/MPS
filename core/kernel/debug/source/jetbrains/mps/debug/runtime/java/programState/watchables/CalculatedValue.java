@@ -21,7 +21,7 @@ public class CalculatedValue implements IWatchable {
   private final JavaValue myValue;
 
   public CalculatedValue(Value value) {
-    myValue = new JavaValue(value);
+    myValue = JavaValue.fromJDIValue(value);
   }
 
   @Override

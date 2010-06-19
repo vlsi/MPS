@@ -36,7 +36,7 @@ public class JavaArrayItem implements IWatchable {
 
   @Override
   public IValue getValue() {
-    return new JavaValue(myArray.getValue(myIndex));
+    return JavaValue.fromJDIValue(myArray.getValue(myIndex));
   }
 
   @Override

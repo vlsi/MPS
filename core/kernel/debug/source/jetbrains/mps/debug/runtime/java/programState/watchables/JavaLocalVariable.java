@@ -32,7 +32,7 @@ public class JavaLocalVariable implements IWatchable {
   public JavaLocalVariable(LocalVariable variable, StackFrame stackFrame) {
     myLocalVariable = variable;
     myStackFrame = stackFrame;
-    myCachedValue = new JavaValue(myStackFrame.getValue(myLocalVariable));
+    myCachedValue = JavaValue.fromJDIValue(myStackFrame.getValue(myLocalVariable));
   }
 
   public LocalVariable getLocalVariable() {

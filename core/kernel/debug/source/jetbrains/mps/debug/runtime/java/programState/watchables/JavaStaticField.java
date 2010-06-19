@@ -16,7 +16,7 @@ public class JavaStaticField implements IWatchable {
 
   public JavaStaticField(Field field) {
     myField = field;
-    myCachedValue = new JavaValue(field.declaringType().getValue(myField));
+    myCachedValue = JavaValue.fromJDIValue(field.declaringType().getValue(myField));
   }
 
   @Override

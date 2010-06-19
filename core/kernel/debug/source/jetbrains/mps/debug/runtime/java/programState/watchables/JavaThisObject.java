@@ -44,7 +44,7 @@ public class JavaThisObject implements IWatchable {
 
   @Override
   public IValue getValue() {
-    return new JavaValue(myThisObject);
+    return JavaValue.fromJDIValue(myThisObject);
   }
 
   @Override
