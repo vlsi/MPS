@@ -14,14 +14,21 @@ import jetbrains.mps.smodel.SNode;
  */
 public abstract class CustomJavaWatchable implements IWatchable {
   private JavaValue myCachedValue;
+  private String myVisibleName;
 
-  public CustomJavaWatchable(JavaValue value) {
+  public CustomJavaWatchable(JavaValue value, String name) {
     myCachedValue = value;
+    myVisibleName = name;
   }
 
   @Override
   public IValue getValue() {
     return myCachedValue;
+  }
+
+  @Override
+  public String getName() {
+    return myVisibleName;
   }
 
   @Override
