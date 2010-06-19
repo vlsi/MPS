@@ -48,6 +48,7 @@
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1167240570149">
     <property name="name:2" value="main_logging" />
     <node role="weavingMappingRule:2" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule:2" id="1169464520732">
+      <property name="applyToConceptInheritors:2" value="true" />
       <link role="applicableConcept:2" targetNodeId="2.1068390468198:3" />
       <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="1169464530672">
         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1169464530673">
@@ -136,6 +137,7 @@
       </node>
     </node>
     <node role="weavingMappingRule:2" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule:2" id="1232620727243">
+      <property name="applyToConceptInheritors:2" value="true" />
       <link role="applicableConcept:2" targetNodeId="2.1068390468198:3" resolveInfo="ClassConcept" />
       <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="1232620727244">
         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1232620727245">
