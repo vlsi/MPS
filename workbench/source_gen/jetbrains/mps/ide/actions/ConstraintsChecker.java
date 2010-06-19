@@ -113,7 +113,7 @@ public class ConstraintsChecker extends SpecificChecker {
           continue;
         }
         String value = ps.fromInternalValue(node.getProperty(propertyName));
-        if (!(ps.canSetValue(node, p.getName(), value, operationContext.getScope()))) {
+        if (!(ps.canSetValue(node, p.getName(), value, operationContext.getScope(), false))) {
           addIssue(results, node, "Property constraint violation for property \"" + p.getName() + "\"", ModelChecker.SEVERITY_WARNING, "property constraint", null);
         }
       }

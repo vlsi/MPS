@@ -40,14 +40,19 @@ public abstract class PropertySupport {
   /**
    * new validation method
    */
-  public boolean canSetValue(SNode node, String propertyName, String value, IScope scope) {
-    if (value == null) return true;  // can always remove property
+  public boolean canSetValue(SNode node, String propertyName, String value, IScope scope, boolean nullsAlwaysAllowed) {
+    if (value == null && nullsAlwaysAllowed) return true;  // can always remove property
+    if (value == null) value = "";
     if (!canSetValue(value)) return false;
     INodePropertyValidator propertyValidator = ModelConstraintsManager.getInstance().getNodePropertyValidator(node, propertyName);
     if (propertyValidator != null) {
       return propertyValidator.checkPropertyValue(node, propertyName, value, scope);
     }
     return true;
+  }
+
+  public boolean canSetValue(SNode node, String propertyName, String value, IScope scope) {
+    return canSetValue(node, propertyName, value, scope, true);
   }
 
   /**
