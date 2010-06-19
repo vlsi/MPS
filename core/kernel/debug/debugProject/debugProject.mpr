@@ -27,6 +27,7 @@
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
       <languagePath path="${project}/languages/evaluation/evaluation.mpl" folder="" />
+      <languagePath path="${project}/languages/sampleLanguage/sampleLanguage.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>

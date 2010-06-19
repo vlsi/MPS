@@ -5,7 +5,6 @@ package jetbrains.mps.debug.run.sandbox;
 
 public class BaseC {
   public BaseC() {
-    System.err.print(1);
   }
 
   public int getZero(int arg) {
