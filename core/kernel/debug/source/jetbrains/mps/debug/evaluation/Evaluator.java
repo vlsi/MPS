@@ -84,18 +84,18 @@ public abstract class Evaluator {
   }
 
   @NotNull
-  protected IValueProxy invokeConstructor(String className, String jniSignature, Object... args) throws EvaluationException {
+  protected IObjectValueProxy invokeConstructor(String className, String jniSignature, Object... args) throws EvaluationException {
     // TODO duplication in code
     final ClassType referenceType = findClassType(className, getVM());
     final Method constructor = findConstructor(referenceType, jniSignature);
 
     final List<Value> argValues = MirrorUtil.getValues(getThreadReference(), args);
 
-    return handleInvocationExceptions(new Invocatable<IValueProxy>() {
+    return handleInvocationExceptions(new Invocatable<IObjectValueProxy>() {
       @Override
-      public IValueProxy invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException {
+      public IObjectValueProxy invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException {
         Value result = referenceType.newInstance(getThreadReference(), constructor, argValues, 0);
-        return MirrorUtil.getValueProxy(result, getThreadReference());
+        return (IObjectValueProxy) MirrorUtil.getValueProxy(result, getThreadReference());
       }
     });
   }

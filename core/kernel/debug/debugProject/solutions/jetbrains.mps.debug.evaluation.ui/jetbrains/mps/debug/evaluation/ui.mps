@@ -6606,6 +6606,11 @@
         </node>
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7688572620285927611">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="3551783886728598781">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="3551783886728598782">
+            <property name="text:3" value="why subtyping?" />
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7688572620285927612">
           <node role="condition:3" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression:3" id="7688572620285927613">
             <node role="subtypeExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7688572620285927774">
