@@ -12385,8 +12385,8 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4462513030605203763">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4462513030605203765">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3601049815485700562">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3601049815485700563">
             <link role="variableDeclaration:3" targetNodeId="4462513030605202744" resolveInfo="hasMainMethod" />
           </node>
         </node>
