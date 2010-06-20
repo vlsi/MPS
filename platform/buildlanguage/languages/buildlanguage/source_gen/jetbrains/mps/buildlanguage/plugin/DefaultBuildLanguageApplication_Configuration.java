@@ -152,7 +152,7 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
                       file.value = new File(file.value, Project_Behavior.call_getFileName_1213877351819(node));
                     }
                   });
-                  if (javaRunParameters.getMake()) {
+                  if (javaRunParameters.getMake() || !(file.value.exists())) {
                     RunUtil.makeBeforeRun(project_22042010, node);
                   }
                   Process process = runner.run(file.value);

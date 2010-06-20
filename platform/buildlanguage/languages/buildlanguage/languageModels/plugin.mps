@@ -4607,10 +4607,22 @@
                 </node>
               </node>
             </node>
-            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5522848303920887447">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaConfigurationRunParameters_FunctionParameter:0" id="5522848303920887446" />
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5522848303920887451">
-                <link role="baseMethodDeclaration:3" targetNodeId="56.8492459591399148823" resolveInfo="getMake" />
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="9192672578696385267">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="9192672578696387704">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9192672578696387699">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="9192672578696387698">
+                    <link role="variableDeclaration:3" targetNodeId="809981953580477384:0" resolveInfo="file" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9192672578696387703">
+                    <link role="baseMethodDeclaration:3" targetNodeId="21.~File.exists():boolean" resolveInfo="exists" />
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5522848303920887447">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaConfigurationRunParameters_FunctionParameter:0" id="5522848303920887446" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5522848303920887451">
+                  <link role="baseMethodDeclaration:3" targetNodeId="56.8492459591399148823" resolveInfo="getMake" />
+                </node>
               </node>
             </node>
           </node>
