@@ -88,6 +88,19 @@
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104841300">
     <link role="concept:8" targetNodeId="1.1071489288298:0" resolveInfo="LinkDeclaration" />
+    <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="4049502122675870324">
+      <link role="applicableProperty:8" targetNodeId="1.1071599776563:0" resolveInfo="role" />
+      <node role="propertyValidator:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator:8" id="4049502122675870325">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4049502122675870326">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4049502122675876454">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4049502122675876456">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue:8" id="4049502122675876455" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation:3" id="4049502122675876460" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1213104841301">
       <link role="applicableLink:8" targetNodeId="1.1071599698500:0" />
       <node role="searchScopeFactory:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory:8" id="1213104841302">
@@ -558,6 +571,22 @@
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1227087700413">
               <link role="baseMethodDeclaration:3" targetNodeId="28.~LanguageAspect.is(jetbrains.mps.smodel.SModel):boolean" resolveInfo="is" />
               <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model:0" id="1227087700414" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="4049502122675881775">
+    <link role="concept:8" targetNodeId="1.1105736576531:0" resolveInfo="ConceptLinkDeclaration" />
+    <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="4049502122675881776">
+      <link role="applicableProperty:8" targetNodeId="8.1169194664001:0" resolveInfo="name" />
+      <node role="propertyValidator:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator:8" id="4049502122675881777">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4049502122675881778">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4049502122675881779">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4049502122675881781">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue:8" id="4049502122675881780" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation:3" id="4049502122675881785" />
             </node>
           </node>
         </node>
