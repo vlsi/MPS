@@ -2255,6 +2255,7 @@
     <node role="parameter:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameter:1" id="3068114543317980044">
       <property name="name:1" value="targetConcept" />
       <node role="chooser:1" type="jetbrains.mps.lang.refactoring.structure.CustomParameterChooser:1" id="6188135140808771200">
+        <property name="stretch:1" value="true" />
         <node role="entityType:1" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="6188135140808771205">
           <link role="concept:16" targetNodeId="1.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
         </node>

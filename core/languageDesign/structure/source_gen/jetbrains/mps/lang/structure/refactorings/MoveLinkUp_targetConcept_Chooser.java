@@ -19,7 +19,7 @@ public class MoveLinkUp_targetConcept_Chooser extends BaseChooser {
   }
 
   public boolean isStretchable() {
-    return false;
+    return true;
   }
 
   public JComponent getMainComponent() {
