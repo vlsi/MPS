@@ -10,13 +10,14 @@ import jetbrains.mps.smodel.SNode;
 
 import javax.swing.Icon;
 
-public class JavaStaticField implements IWatchable {
+public class JavaStaticField extends JavaBreakpointWatchable implements IWatchable {
   private final Field myField;
   private final JavaValue myCachedValue;
 
-  public JavaStaticField(Field field) {
+  public JavaStaticField(Field field, String classFqName) {
+    super(classFqName);
     myField = field;
-    myCachedValue = JavaValue.fromJDIValue(field.declaringType().getValue(myField));
+    myCachedValue = JavaValue.fromJDIValue(field.declaringType().getValue(myField), myClassFQName);
   }
 
   @Override

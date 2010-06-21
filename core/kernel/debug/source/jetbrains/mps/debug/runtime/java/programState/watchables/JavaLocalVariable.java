@@ -22,17 +22,18 @@ import javax.swing.Icon;
  * Time: 18:43:09
  * To change this template use File | Settings | File Templates.
  */
-public class JavaLocalVariable implements IWatchable {
+public class JavaLocalVariable extends JavaBreakpointWatchable implements IWatchable {
   private static Logger LOG = Logger.getLogger(JavaLocalVariable.class);
 
   private final LocalVariable myLocalVariable;
   private final StackFrame myStackFrame;
   private JavaValue myCachedValue;
 
-  public JavaLocalVariable(LocalVariable variable, StackFrame stackFrame) {
+  public JavaLocalVariable(LocalVariable variable, StackFrame stackFrame, String classFqName) {
+    super(classFqName);
     myLocalVariable = variable;
     myStackFrame = stackFrame;
-    myCachedValue = JavaValue.fromJDIValue(myStackFrame.getValue(myLocalVariable));
+    myCachedValue = JavaValue.fromJDIValue(myStackFrame.getValue(myLocalVariable), classFqName);
   }
 
   public LocalVariable getLocalVariable() {

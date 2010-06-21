@@ -16,11 +16,12 @@ import javax.swing.Icon;
  * Time: 18:39:04
  * To change this template use File | Settings | File Templates.
  */
-public class JavaArrayItem implements IWatchable {
+public class JavaArrayItem extends JavaBreakpointWatchable implements IWatchable {
   private final ArrayReference myArray;
   private final int myIndex;
 
-  public JavaArrayItem(ArrayReference arrayReference, int index) {
+  public JavaArrayItem(ArrayReference arrayReference, int index, String classFqName) {
+    super(classFqName);
     myArray = arrayReference;
     myIndex = index;
   }
@@ -36,7 +37,7 @@ public class JavaArrayItem implements IWatchable {
 
   @Override
   public IValue getValue() {
-    return JavaValue.fromJDIValue(myArray.getValue(myIndex));
+    return JavaValue.fromJDIValue(myArray.getValue(myIndex), myClassFQName);
   }
 
   @Override

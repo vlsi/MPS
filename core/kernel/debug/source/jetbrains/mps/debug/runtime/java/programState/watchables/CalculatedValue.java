@@ -17,11 +17,12 @@ import javax.swing.Icon;
  * Time: 21:40:25
  * To change this template use File | Settings | File Templates.
  */
-public class CalculatedValue implements IWatchable {
+public class CalculatedValue extends JavaBreakpointWatchable implements IWatchable {
   private final JavaValue myValue;
 
-  public CalculatedValue(Value value) {
-    myValue = JavaValue.fromJDIValue(value);
+  public CalculatedValue(Value value, String classFqName) {
+    super(classFqName);
+    myValue = JavaValue.fromJDIValue(value, myClassFQName);
   }
 
   @Override

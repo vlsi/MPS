@@ -19,17 +19,18 @@ import javax.swing.Icon;
  * Time: 21:12:08
  * To change this template use File | Settings | File Templates.
  */
-public class JavaField implements IWatchable {
+public class JavaField extends JavaBreakpointWatchable implements IWatchable {
   private static Logger LOG = Logger.getLogger(ProxyForJava.class);
 
   private final Field myField;
   private final ObjectReference myParent;
   private JavaValue myCachedValue;
 
-  public JavaField(Field field, ObjectReference parent) {
+  public JavaField(Field field, ObjectReference parent, String classFqName) {
+    super(classFqName);
     myField = field;
     myParent = parent;
-    myCachedValue = JavaValue.fromJDIValue(myParent.getValue(myField));
+    myCachedValue = JavaValue.fromJDIValue(myParent.getValue(myField), classFqName);
   }
 
   public Field getField() {

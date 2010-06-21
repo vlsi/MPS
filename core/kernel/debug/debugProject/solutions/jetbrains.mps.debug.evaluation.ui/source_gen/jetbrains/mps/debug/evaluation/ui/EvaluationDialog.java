@@ -51,10 +51,12 @@ public class EvaluationDialog extends BaseDialog {
   private EmbeddableEditor myResultEditor;
   private final AbstractEvaluationLogic myEvaluationLogic;
   private final EvaluationDialog.MySessionChangeListener mySessionChangeListener;
+  protected String myClassFQName;
 
   public EvaluationDialog(final IOperationContext context, JavaUiState uiState, final DebugSession debugSession) {
     super(context.getMainFrame(), "Evaluate");
     this.myContext = context;
+    myClassFQName = uiState.getStackFrame().getLocation().getUnitName();
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
 
@@ -89,7 +91,7 @@ public class EvaluationDialog extends BaseDialog {
     myEvaluationLogic.setModel(d.value);
 
     myPanel.add(this.myEditor.getComponenet(), BorderLayout.NORTH);
-    myTree = new EvaluationDialog.MyTree();
+    myTree = new EvaluationDialog.MyTree(myClassFQName);
     myPanel.add(new JScrollPane(myTree), BorderLayout.CENTER);
 
     if (myEvaluationLogic.isDeveloperMode()) {
@@ -213,9 +215,11 @@ public class EvaluationDialog extends BaseDialog {
     private IValueProxy myValueProxy;
     @Nullable
     private String myErrorText;
+    private String myClassFqName;
 
-    public MyTree() {
+    public MyTree(String classFqName) {
       super();
+      myClassFqName = classFqName;
       this.rebuildNow();
     }
 
@@ -233,7 +237,7 @@ public class EvaluationDialog extends BaseDialog {
     protected MPSTreeNode rebuild() {
       MPSTreeNode rootTreeNode = new TextTreeNode("Evaluation Result");
       if (myValueProxy != null) {
-        rootTreeNode.add(new WatchableNode(new CalculatedValue(this.myValueProxy.getJDIValue())));
+        rootTreeNode.add(new WatchableNode(new CalculatedValue(this.myValueProxy.getJDIValue(), myClassFqName)));
       } else if (myErrorText != null) {
         rootTreeNode.add(new EvaluationDialog.ErrorTreeNode(myErrorText));
       }

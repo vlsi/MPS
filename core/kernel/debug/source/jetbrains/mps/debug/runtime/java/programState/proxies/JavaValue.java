@@ -2,18 +2,9 @@ package jetbrains.mps.debug.runtime.java.programState.proxies;
 
 import com.sun.jdi.*;
 import jetbrains.mps.debug.api.programState.IValue;
-import jetbrains.mps.debug.api.programState.IWatchable;
-import jetbrains.mps.debug.integration.Icons;
-import jetbrains.mps.debug.runtime.java.programState.watchables.JavaArrayItem;
-import jetbrains.mps.debug.runtime.java.programState.watchables.JavaField;
+import jetbrains.mps.debug.customViewers.CustomViewersManager;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.Nullable;
-
-import javax.swing.Icon;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,27 +18,41 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
 
   @Nullable
   protected final Value myValue;
+  protected String myClassFQName;
 
-  public JavaValue(Value value) {
+  public JavaValue(Value value, String classFQname) {
     super(value);
     myValue = value;
+    myClassFQName = classFQname;
   }
 
-  public static JavaValue fromJDIValue(Value value) {
-    if (value == null) return new JavaPrimitiveValue(value);
+  public static JavaValue fromJDIValue(Value value, String classFQname) {
+    JavaValue javaValue = fromJDIValueRaw(value, classFQname);
+    CustomViewersManager customViewersManager = CustomViewersManager.getInstance();
+    ValueWrapper wrapper = customViewersManager.getValueWrapper(javaValue, classFQname);
+    if (wrapper == null) return javaValue;
+    return wrapper;
+  }
+
+  public static JavaValue fromJDIValueRaw(Value value, String classFQname) {
+    if (value == null) return new JavaPrimitiveValue(value, classFQname);
     if (value instanceof ObjectReference) {
       if (value instanceof ArrayReference) {
-        return new JavaArrayValue(value);
+        return new JavaArrayValue(value, classFQname);
       } else {
-        return new JavaObjectValue(value);
+        return new JavaObjectValue(value, classFQname);
       }
     } else {
-      return new JavaPrimitiveValue(value);
+      return new JavaPrimitiveValue(value, classFQname);
     }
   }
 
   @Nullable
   public Value getValue() {
     return myValue;
+  }
+
+  public String getClassFQName() {
+    return myClassFQName;
   }
 }

@@ -16,8 +16,8 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class JavaPrimitiveValue extends JavaValue {
-  public JavaPrimitiveValue(Value value) {
-    super(value);
+  public JavaPrimitiveValue(Value value, String classFQname) {
+    super(value, classFQname);
   }
 
   @Override

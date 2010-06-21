@@ -22,13 +22,14 @@ import javax.swing.Icon;
  * Time: 19:05:54
  * To change this template use File | Settings | File Templates.
  */
-public class JavaThisObject implements IWatchable {
+public class JavaThisObject extends JavaBreakpointWatchable implements IWatchable {
   private static Logger LOG = Logger.getLogger(JavaLocalVariable.class);
 
   private final ObjectReference myThisObject;
   private final StackFrame myStackFrame;
 
-  public JavaThisObject(ObjectReference objectReference, StackFrame stackFrame) {
+  public JavaThisObject(ObjectReference objectReference, StackFrame stackFrame, String classFqName) {
+    super(classFqName);
     myThisObject = objectReference;
     myStackFrame = stackFrame;
   }
@@ -44,7 +45,7 @@ public class JavaThisObject implements IWatchable {
 
   @Override
   public IValue getValue() {
-    return JavaValue.fromJDIValue(myThisObject);
+    return JavaValue.fromJDIValue(myThisObject, myClassFQName);
   }
 
   @Override

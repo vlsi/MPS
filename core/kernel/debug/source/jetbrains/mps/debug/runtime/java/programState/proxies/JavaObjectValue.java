@@ -24,8 +24,8 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class JavaObjectValue extends JavaValue {
-  public JavaObjectValue(Value value) {
-    super(value);
+  public JavaObjectValue(Value value, String classFQname) {
+    super(value, classFQname);
   }
 
   @Override
@@ -41,7 +41,7 @@ public class JavaObjectValue extends JavaValue {
         }
       });
       for (Field f : fieldList) {
-        watchables.add(new JavaField(f, ref));
+        watchables.add(new JavaField(f, ref, myClassFQName));
       }
     }
     return watchables;
@@ -66,7 +66,7 @@ public class JavaObjectValue extends JavaValue {
     ObjectReference ref = (ObjectReference) myValue;
     Field field = ref.referenceType().fieldByName(fieldName);
     if (field == null) return null;
-    return JavaValue.fromJDIValue(ref.getValue(field));
+    return JavaValue.fromJDIValueRaw(ref.getValue(field), myClassFQName);
   }
 
   public List<JavaValue> getFieldValues() {
@@ -74,7 +74,7 @@ public class JavaObjectValue extends JavaValue {
     List<Field> fieldList = ref.referenceType().fields();
     List<JavaValue> result = new ArrayList<JavaValue>();
     for (Field f : fieldList) {
-      result.add(JavaValue.fromJDIValue(ref.getValue(f)));
+      result.add(JavaValue.fromJDIValueRaw(ref.getValue(f), myClassFQName));
     }
     return result;
   }

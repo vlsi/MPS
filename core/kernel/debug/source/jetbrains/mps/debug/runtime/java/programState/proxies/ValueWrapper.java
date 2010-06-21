@@ -11,10 +11,11 @@ import javax.swing.Icon;
  * Time: 16:43:53
  * To change this template use File | Settings | File Templates.
  */
-public abstract class ValueWrapper implements IValue {
+public abstract class ValueWrapper extends JavaValue implements IValue {
   protected JavaValue myWrappedValue;
 
   public ValueWrapper(JavaValue value) {
+    super(value.getValue(), value.getClassFQName());
     myWrappedValue = value;
   }
 

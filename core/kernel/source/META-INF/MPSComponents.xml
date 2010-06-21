@@ -234,6 +234,10 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.debug.customViewers.CustomViewersManager</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.typesystem.inference.TypeChecker</implementation-class>
         </component>
 

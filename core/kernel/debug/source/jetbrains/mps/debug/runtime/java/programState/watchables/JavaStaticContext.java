@@ -13,10 +13,11 @@ import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JavaStaticContext implements IWatchable {
+public class JavaStaticContext extends JavaBreakpointWatchable implements IWatchable {
   private final ReferenceType myStaticType;
 
-  public JavaStaticContext(ReferenceType staticType) {
+  public JavaStaticContext(ReferenceType staticType, String classFqName) {
+    super(classFqName);
     myStaticType = staticType;
   }
 
@@ -66,7 +67,7 @@ public class JavaStaticContext implements IWatchable {
       List<IWatchable> result = new ArrayList<IWatchable>();
       for (Field field : myStaticType.fields()) {
         if (!field.isStatic()) continue;
-        result.add(new JavaStaticField(field));
+        result.add(new JavaStaticField(field, myClassFQName));
       }
       return result;
     }
