@@ -29,7 +29,7 @@ public class TypesystemIntentionArgument_quickFixArgument_ReferentConstraint ext
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    SNode helginsIntention = SNodeOperations.getAncestor(_context.getReferenceNode(), "jetbrains.mps.lang.typesystem.structure.TypesystemIntention", false, false);
+    SNode helginsIntention = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.TypesystemIntention", true, false);
     if (helginsIntention != null) {
       ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(helginsIntention, "quickFix", false), "quickFixArgument", true)));
     }

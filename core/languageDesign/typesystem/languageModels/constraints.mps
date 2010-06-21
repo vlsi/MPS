@@ -1787,13 +1787,14 @@
                 <link role="concept:16" targetNodeId="1.1210784285454:3" resolveInfo="HelginsIntention" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216387794927">
-                <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode:8" id="1216387794928" />
+                <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode:8" id="5476035322658123644" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="1216387794929">
                   <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1216387794930">
                     <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1216387794931">
                       <link role="conceptDeclaration:16" targetNodeId="1.1210784285454:3" resolveInfo="HelginsIntention" />
                     </node>
                   </node>
+                  <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion:16" id="5476035322658123646" />
                 </node>
               </node>
             </node>
