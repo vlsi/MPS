@@ -70,6 +70,7 @@
     <orderEntry type="library" exported="" name="jfcUnit" level="project" />
     <orderEntry type="library" name="jakarta regexp" level="project" />
     <orderEntry type="module" module-name="debug-api" exported="" />
+    <orderEntry type="module" module-name="debug" exported="" />
   </component>
   <component name="copyright">
     <Base>

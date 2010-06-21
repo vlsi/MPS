@@ -1,8 +1,12 @@
 package jetbrains.mps.debug.runtime.java.programState.proxies;
 
 import jetbrains.mps.debug.api.programState.IValue;
+import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable;
 
 import javax.swing.Icon;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,6 +32,17 @@ public abstract class ValueWrapper extends JavaValue implements IValue {
   public String getValuePresentation() {
     return myWrappedValue.getValuePresentation();
   }
+
+  @Override
+  public List<IWatchable> getSubvalues() {
+    List<IWatchable> result = new ArrayList<IWatchable>();
+    for (IWatchable watchable : getSubvaluesImpl()) {
+      result.add(watchable);
+    }
+    return result;
+  }
+
+  protected abstract List<CustomJavaWatchable> getSubvaluesImpl();
 
   @Override
   public boolean isStructure() {
