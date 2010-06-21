@@ -16,10 +16,9 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior;
-import jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Validator_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
@@ -204,9 +203,8 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3595467341488130141(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode validator = ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_getValidator_2990203945683058946(_context.getNode());
-    return _context.getOriginalCopiedInputNode(((validator != null) && ConstraintFunction_ReferentSearchScope_Validator_Behavior.call_isGenerated_2990203945683058807(validator) ?
-      validator :
+    return _context.getOriginalCopiedInputNode((ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_isValidatorGenerated_522233044824082130(_context.getNode()) ?
+      ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_getValidator_2990203945683058946(_context.getNode()) :
       _context.getNode()
     )).getId();
   }
@@ -267,12 +265,8 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "defaultConcreteConcept", false) != null);
   }
 
-  public static boolean ifMacro_Condition_2990203945683059328(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_getValidator_2990203945683058946(_context.getNode()) != null);
-  }
-
   public static boolean ifMacro_Condition_2990203945683058652(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_isISearchScopeReturned_2990203945683056978(_context.getNode()));
+    return ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_isValidatorGenerated_522233044824082130(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1184609613810(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

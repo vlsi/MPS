@@ -986,24 +986,58 @@
     <property name="name:3" value="check_ConstraintFunction_ReferentSearchScope_Validator" />
     <property name="package:3" value="Functions" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2990203945683059233">
-      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2990203945683059235">
-        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="2990203945683059244">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2990203945683059239">
-            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2990203945683059238">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="522233044824080405">
+        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="522233044824080406">
+          <property name="name:3" value="factory" />
+          <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="522233044824080407">
+            <link role="concept:16" targetNodeId="1.1148684180339:8" resolveInfo="ConstraintFunction_ReferentSearchScope_Factory" />
+          </node>
+          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="522233044824080410">
+            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="522233044824080409">
               <link role="applicableNode:3" targetNodeId="2990203945683059234" resolveInfo="validator" />
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="2990203945683059243">
-              <link role="baseMethodDeclaration:16" targetNodeId="15.2990203945683058807" resolveInfo="isValidatorGenerated" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="522233044824080414">
+              <link role="baseMethodDeclaration:16" targetNodeId="15.2990203945683059022" resolveInfo="getSearchScopeFactory" />
             </node>
           </node>
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2990203945683059235">
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="522233044824080417">
+          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="522233044824080416">
+            <link role="variableDeclaration:3" targetNodeId="522233044824080406" resolveInfo="factory" />
+          </node>
+          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation:16" id="522233044824080421" />
         </node>
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2990203945683059237">
           <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WarningStatement:3" id="2990203945683059246">
             <node role="warningText:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2990203945683059247">
-              <property name="value:3" value="Validator function is not used when ISearchScope is used for search scope or no search scope defined" />
+              <property name="value:3" value="Validator function is not used when no search scope defined" />
             </node>
             <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2990203945683059252">
               <link role="applicableNode:3" targetNodeId="2990203945683059234" resolveInfo="validator" />
+            </node>
+          </node>
+        </node>
+        <node role="elsifClauses:3" type="jetbrains.mps.baseLanguage.structure.ElsifClause:3" id="522233044824080400">
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1078571766473311655">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="522233044824080423">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="522233044824080422">
+                <link role="variableDeclaration:3" targetNodeId="522233044824080406" resolveInfo="factory" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="522233044824080427">
+                <link role="baseMethodDeclaration:16" targetNodeId="15.2990203945683056978" resolveInfo="isNodeSequenceReturned" />
+              </node>
+            </node>
+          </node>
+          <node role="statementList:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="522233044824080402">
+            <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WarningStatement:3" id="522233044824080428">
+              <node role="warningText:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="522233044824080429">
+                <property name="value:3" value="Validator function is not used when ISearchScope interface returned as search scope" />
+              </node>
+              <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="522233044824080430">
+                <link role="applicableNode:3" targetNodeId="2990203945683059234" resolveInfo="validator" />
+              </node>
             </node>
           </node>
         </node>

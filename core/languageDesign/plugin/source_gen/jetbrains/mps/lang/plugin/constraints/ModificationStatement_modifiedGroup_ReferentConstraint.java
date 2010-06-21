@@ -13,11 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.AbstractSearchScope;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.Condition;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ModificationStatement_modifiedGroup_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -42,24 +37,6 @@ public class ModificationStatement_modifiedGroup_ReferentConstraint extends Base
     }).toListSequence());
     ListSequence.fromList(thisGroupChildGroups).addElement(groupDeclaration);
     return ListSequence.fromList(actionGroupDeclarations).subtract(ListSequence.fromList(thisGroupChildGroups)).toListSequence();
-  }
-
-  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new AbstractSearchScope() {
-      @NotNull
-      public List<SNode> getNodes(Condition<SNode> condition) {
-        Iterable<SNode> seq = (Iterable<SNode>) createSearchScopeOrListOfNodes(operationContext, _context);
-        List<SNode> result = new ArrayList<SNode>();
-        if (seq != null) {
-          for (SNode node : seq) {
-            if (condition.met(node)) {
-              result.add(node);
-            }
-          }
-        }
-        return result;
-      }
-    };
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

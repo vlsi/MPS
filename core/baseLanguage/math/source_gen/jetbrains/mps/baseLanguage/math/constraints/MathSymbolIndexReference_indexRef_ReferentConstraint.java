@@ -11,11 +11,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.math.behavior.MathSymbol_Behavior;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.AbstractSearchScope;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.Condition;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class MathSymbolIndexReference_indexRef_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -35,24 +30,6 @@ public class MathSymbolIndexReference_indexRef_ReferentConstraint extends BaseNo
     List<SNode> msi = MathSymbol_Behavior.call_getEmptyIndexList_1237828382992(ms);
     MathSymbol_Behavior.call_getVisibleIndices_1236440390782(ms, _context.getEnclosingNode(), msi);
     return msi;
-  }
-
-  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new AbstractSearchScope() {
-      @NotNull
-      public List<SNode> getNodes(Condition<SNode> condition) {
-        Iterable<SNode> seq = (Iterable<SNode>) createSearchScopeOrListOfNodes(operationContext, _context);
-        List<SNode> result = new ArrayList<SNode>();
-        if (seq != null) {
-          for (SNode node : seq) {
-            if (condition.met(node)) {
-              result.add(node);
-            }
-          }
-        }
-        return result;
-      }
-    };
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

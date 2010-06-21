@@ -25,21 +25,25 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
     return new ConstraintFunction_ReferentSearchScope_Factory_Behavior.QuotationClass_q6xvx3_a0a0b().createNode();
   }
 
-  public static boolean call_isISearchScopeReturned_2990203945683056978(SNode thisNode) {
+  public static boolean call_isNodeSequenceReturned_2990203945683056978(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "body", true) == null)) {
       return false;
     }
     SNode sequenceType = new ConstraintFunction_ReferentSearchScope_Factory_Behavior.QuotationClass_q6xvx3_a0a1a2().createNode();
     for (SNode returnStatement : Sequence.fromIterable(RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(thisNode, "body", true)))) {
       if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(returnStatement, "expression", true)), sequenceType))) {
-        return true;
+        return false;
       }
     }
     SNode lastStmt = IMethodLike_Behavior.call_getLastStatement_1239354409446(thisNode);
-    if (SNodeOperations.isInstanceOf(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)), sequenceType))) {
-      return true;
+    if (SNodeOperations.isInstanceOf(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
+      return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)), sequenceType);
     }
-    return false;
+    return true;
+  }
+
+  public static boolean call_isValidatorGenerated_522233044824082130(SNode thisNode) {
+    return (ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_getValidator_2990203945683058946(thisNode) != null) && ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_isNodeSequenceReturned_2990203945683056978(thisNode);
   }
 
   public static SNode call_getValidator_2990203945683058946(SNode thisNode) {

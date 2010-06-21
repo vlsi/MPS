@@ -13,12 +13,6 @@ import jetbrains.mps.baseLanguage.collections.behavior.CustomContainersUtil;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.AbstractSearchScope;
-import org.jetbrains.annotations.NotNull;
-import java.util.List;
-import jetbrains.mps.util.Condition;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class CustomMapCreator_containerDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -39,24 +33,6 @@ public class CustomMapCreator_containerDeclaration_ReferentConstraint extends Ba
       CustomContainersUtil.containerDeclarations(SNodeOperations.getModel(expr), TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(expr), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), expr)) :
       Sequence.fromIterable(Collections.<SNode>emptyList())
     );
-  }
-
-  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new AbstractSearchScope() {
-      @NotNull
-      public List<SNode> getNodes(Condition<SNode> condition) {
-        Iterable<SNode> seq = (Iterable<SNode>) createSearchScopeOrListOfNodes(operationContext, _context);
-        List<SNode> result = new ArrayList<SNode>();
-        if (seq != null) {
-          for (SNode node : seq) {
-            if (condition.met(node)) {
-              result.add(node);
-            }
-          }
-        }
-        return result;
-      }
-    };
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

@@ -34,14 +34,6 @@ public abstract class BaseNodeReferenceSearchScopeProvider implements INodeRefer
     return new UndefinedSearchScope();
   }
 
-  public boolean hasValidator() {
-    return false;
-  }
-
-  public boolean validate(final IOperationContext operationContext, final ValidatorReferentConstraintContext _context) {
-    throw new UnsupportedOperationException();
-  }
-
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     Object searchScopeOrListOfNodes = this.createSearchScopeOrListOfNodes(operationContext, _context);
     if (searchScopeOrListOfNodes == null) {

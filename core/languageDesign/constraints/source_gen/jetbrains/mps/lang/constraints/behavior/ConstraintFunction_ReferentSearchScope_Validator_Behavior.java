@@ -10,10 +10,6 @@ public class ConstraintFunction_ReferentSearchScope_Validator_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static boolean call_isGenerated_2990203945683058807(SNode thisNode) {
-    return !(ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_isISearchScopeReturned_2990203945683056978(ConstraintFunction_ReferentSearchScope_Validator_Behavior.call_getSearchScopeFactory_2990203945683059022(thisNode)));
-  }
-
   public static SNode call_getSearchScopeFactory_2990203945683059022(SNode thisNode) {
     return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope") ?
       SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"), "searchScopeFactory", true) :

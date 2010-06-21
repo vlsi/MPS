@@ -10,13 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.packaging.behavior.Variable_Behavior;
 import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.AbstractSearchScope;
-import org.jetbrains.annotations.NotNull;
-import java.util.List;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Condition;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class Variable_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
@@ -33,24 +26,6 @@ public class Variable_DefaultSearchScope extends BaseNodeReferenceSearchScopePro
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return ListSequence.fromList(Variable_Behavior.getDefaultVariables_7323449223785133410()).union(ListSequence.fromList(IVariableHolder_Behavior.call_getAllVariable_1234864693585(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.build.packaging.structure.IVariableHolder", true, false))));
-  }
-
-  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new AbstractSearchScope() {
-      @NotNull
-      public List<SNode> getNodes(Condition<SNode> condition) {
-        Iterable<SNode> seq = (Iterable<SNode>) createSearchScopeOrListOfNodes(operationContext, _context);
-        List<SNode> result = new ArrayList<SNode>();
-        if (seq != null) {
-          for (SNode node : seq) {
-            if (condition.met(node)) {
-              result.add(node);
-            }
-          }
-        }
-        return result;
-      }
-    };
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

@@ -10,13 +10,6 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ui.behavior.IUIObjectContextProvider_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.AbstractSearchScope;
-import org.jetbrains.annotations.NotNull;
-import java.util.List;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Condition;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ChildAspect_definition_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -33,24 +26,6 @@ public class ChildAspect_definition_ReferentConstraint extends BaseNodeReference
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return SLinkOperations.getTargets(IUIObjectContextProvider_Behavior.call_getContainer_8923564134258257521(SNodeOperations.as(SNodeOperations.getAncestorWhereConceptInList(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ui.structure.UIObjectStatement", true, false), new String[]{"jetbrains.mps.ui.structure.IUIObjectContextProvider", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false, false), "jetbrains.mps.ui.structure.IUIObjectContextProvider")), "requiredAspect", true);
-  }
-
-  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new AbstractSearchScope() {
-      @NotNull
-      public List<SNode> getNodes(Condition<SNode> condition) {
-        Iterable<SNode> seq = (Iterable<SNode>) createSearchScopeOrListOfNodes(operationContext, _context);
-        List<SNode> result = new ArrayList<SNode>();
-        if (seq != null) {
-          for (SNode node : seq) {
-            if (condition.met(node)) {
-              result.add(node);
-            }
-          }
-        }
-        return result;
-      }
-    };
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {
