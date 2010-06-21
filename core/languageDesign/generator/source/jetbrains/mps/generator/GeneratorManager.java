@@ -21,6 +21,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.cleanup.CleanupManager;
@@ -186,6 +187,11 @@ public class GeneratorManager {
       }
     } else {
       saveTransientModels = false;
+    }
+
+    if (DumbService.getInstance(myProject).isDumb()) {
+      DumbService.getInstance(myProject).showDumbModeNotification("Generation is not available until indices are built.");
+      return false;
     }
 
     if (generateRequirements()) {
