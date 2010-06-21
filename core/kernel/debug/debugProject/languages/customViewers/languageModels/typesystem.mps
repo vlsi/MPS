@@ -113,5 +113,63 @@
       <link role="concept:3" targetNodeId="1.5117350825036234473" resolveInfo="ObjectValueType" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="2488554353950312724">
+    <property name="name:3" value="typeof_FieldOperation" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2488554353950312725">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="2488554353950312736">
+        <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="2488554353950312737" />
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2488554353950312741">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2488554353950312742">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2488554353950312744" />
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2488554353950312740">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="2488554353950312728">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2488554353950312731">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2488554353950312730">
+                <link role="applicableNode:3" targetNodeId="2488554353950312726" resolveInfo="fieldOperation" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2488554353950312735">
+                <link role="link:16" targetNodeId="1.2488554353950312694" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="2488554353950312726">
+      <property name="name:3" value="fieldOperation" />
+      <link role="concept:3" targetNodeId="1.2488554353950312668" resolveInfo="FieldOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="2488554353950312780">
+    <property name="name:3" value="typeof_ElementOperation" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2488554353950312781">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="2488554353950312792">
+        <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="2488554353950312793" />
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2488554353950312797">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2488554353950312798">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="2488554353950312800" />
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2488554353950312796">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="2488554353950312784">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2488554353950312787">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2488554353950312786">
+                <link role="applicableNode:3" targetNodeId="2488554353950312782" resolveInfo="elementOperation" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2488554353950312791">
+                <link role="link:16" targetNodeId="1.2488554353950312753" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="2488554353950312782">
+      <property name="name:3" value="elementOperation" />
+      <link role="concept:3" targetNodeId="1.2488554353950312745" resolveInfo="ElementOperation" />
+    </node>
+  </node>
 </model>
 

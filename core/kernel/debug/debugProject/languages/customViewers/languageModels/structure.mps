@@ -84,6 +84,9 @@
       <property name="role:0" value="watchable" />
       <link role="target:0" targetNodeId="5117350825036234483" resolveInfo="CustomWatchable" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="4089989733346843028">
+      <link role="intfc:0" targetNodeId="3v.1169194658468:0" resolveInfo="INamedConcept" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5117350825036256331">
     <property name="name:0" value="CustomViewer" />
@@ -94,6 +97,17 @@
       <property name="role:0" value="getWatchables" />
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="5264817233616806004" resolveInfo="GetWatchablesBlock_ConceptFunction" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4089989733346839779">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="canWrapBlock" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="4089989733346839773" resolveInfo="CanWrapValue_ConceptFunction" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4089989733346803665">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="getPresentation" />
+      <link role="target:0" targetNodeId="4089989733346803658" resolveInfo="GetValuePresentation_ConceptFunction" />
     </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5264817233616809562">
       <link role="intfc:0" targetNodeId="3v.1169194658468:0" resolveInfo="INamedConcept" />
@@ -151,6 +165,97 @@
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="5264817233616809559">
       <link role="conceptLinkDeclaration:0" targetNodeId="2v.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
       <node role="target:0" type="jetbrains.mps.debug.customViewers.structure.ValueType" id="5264817233616809561" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2488554353950280317">
+    <property name="name:0" value="FieldsListOperation" />
+    <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="2488554353950280318">
+      <link role="intfc:0" targetNodeId="2v.1197027803184:3" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2488554353950280319">
+      <property name="value:0" value="fields" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="2488554353950280320">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1217022095863:3" resolveInfo="returnType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="2488554353950283278">
+        <node role="elementType:7" type="jetbrains.mps.debug.customViewers.structure.ValueType" id="2488554353950283280" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2488554353950312668">
+    <property name="name:0" value="FieldOperation" />
+    <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="2488554353950312694">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="fieldName" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2v.1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="2488554353950312691">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1217022095863:3" resolveInfo="returnType" />
+      <node role="target:0" type="jetbrains.mps.debug.customViewers.structure.ValueType" id="2488554353950312693" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="2488554353950312689">
+      <link role="intfc:0" targetNodeId="2v.1197027803184:3" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2488554353950312695">
+      <property name="value:0" value="field" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2488554353950312697">
+      <property name="value:0" value="field value by name" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2488554353950312745">
+    <property name="name:0" value="ElementOperation" />
+    <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="2488554353950312753">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="index" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2v.1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="2488554353950312746">
+      <link role="intfc:0" targetNodeId="2v.1197027803184:3" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="2488554353950312747">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1217022095863:3" resolveInfo="returnType" />
+      <node role="target:0" type="jetbrains.mps.debug.customViewers.structure.ValueType" id="2488554353950312749" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2488554353950312750">
+      <property name="value:0" value="element" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2488554353950312752">
+      <property name="value:0" value="array element value by index" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4089989733346803658">
+    <property name="name:0" value="GetValuePresentation_ConceptFunction" />
+    <link role="extends:0" targetNodeId="2v.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="4089989733346803660">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="5264817233616809557" resolveInfo="OriginalValue_ConceptFunctionParameter" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="4089989733346803662">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4089989733346803664" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4089989733346839773">
+    <property name="name:0" value="CanWrapValue_ConceptFunction" />
+    <link role="extends:0" targetNodeId="2v.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="4089989733346839774">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="4089989733346839776" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="4089989733346839778">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="5264817233616809557" resolveInfo="OriginalValue_ConceptFunctionParameter" />
     </node>
   </node>
 </model>

@@ -8,6 +8,7 @@ import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.integration.Icons;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaArrayItem;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaField;
+import jetbrains.mps.util.NameUtil;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
@@ -66,5 +67,23 @@ public class JavaObjectValue extends JavaValue {
     Field field = ref.referenceType().fieldByName(fieldName);
     if (field == null) return null;
     return JavaValue.fromJDIValue(ref.getValue(field));
+  }
+
+  public List<JavaValue> getFieldValues() {
+    ObjectReference ref = (ObjectReference) myValue;
+    List<Field> fieldList = ref.referenceType().fields();
+    List<JavaValue> result = new ArrayList<JavaValue>();
+    for (Field f : fieldList) {
+      result.add(JavaValue.fromJDIValue(ref.getValue(f)));
+    }
+    return result;
+  }
+
+  public String getClassFqName() {
+    return ((ObjectReference)myValue).referenceType().name();
+  }
+
+  public String getClassName() {
+    return NameUtil.shortNameFromLongName(getClassFqName());
   }
 }

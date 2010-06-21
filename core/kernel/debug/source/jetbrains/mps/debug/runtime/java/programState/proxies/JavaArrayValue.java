@@ -29,13 +29,13 @@ public class JavaArrayValue extends JavaValue {
     List<IWatchable> watchables = new ArrayList<IWatchable>();
     ArrayReference arrayRef = (ArrayReference) myValue;
     if (arrayRef != null) {
-          if (arrayRef.length() > 0) {
-            int len = arrayRef.length();
-            if (len > MAX_ARRAY_VALUES) len = MAX_ARRAY_VALUES;
-            for (int i = 0; i < len; i++) {
-              watchables.add(new JavaArrayItem(arrayRef, i));
-            }
-          }
+      if (arrayRef.length() > 0) {
+        int len = arrayRef.length();
+        if (len > MAX_ARRAY_VALUES) len = MAX_ARRAY_VALUES;
+        for (int i = 0; i < len; i++) {
+          watchables.add(new JavaArrayItem(arrayRef, i));
+        }
+      }
     }
     return watchables;
   }
@@ -59,5 +59,31 @@ public class JavaArrayValue extends JavaValue {
     ArrayReference arrayReference = (ArrayReference) myValue;
     if (index >= arrayReference.length()) return null;
     return JavaValue.fromJDIValue(arrayReference.getValue(index));
+  }
+
+  public int getSize() {
+    return ((ArrayReference)myValue).length();
+  }
+
+  public List<JavaValue> getAllElements() {
+    ArrayReference arrayReference = (ArrayReference) myValue;
+    List<Value> valueList = arrayReference.getValues();
+    List<JavaValue> result = new ArrayList<JavaValue>();
+    for (Value v : valueList) {
+      result.add(JavaValue.fromJDIValue(v));
+    }
+    return result;
+  }
+
+  public List<JavaValue> getElements(int startIndex, int endIndex) {
+    if (startIndex > endIndex) return null; //todo throw special kind of exception
+    ArrayReference arrayReference = (ArrayReference) myValue;
+    if (startIndex < 0 || endIndex >= arrayReference.length()) return null;
+    List<Value> valueList = arrayReference.getValues(startIndex, endIndex);
+    List<JavaValue> result = new ArrayList<JavaValue>();
+    for (Value v : valueList) {
+      result.add(JavaValue.fromJDIValue(v));
+    }
+    return result;
   }
 }

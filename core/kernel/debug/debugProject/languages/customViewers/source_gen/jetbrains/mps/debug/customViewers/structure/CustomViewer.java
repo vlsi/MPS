@@ -16,6 +16,8 @@ public class CustomViewer extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String GET_WATCHABLES = "getWatchables";
+  public static final String CAN_WRAP_BLOCK = "canWrapBlock";
+  public static final String GET_PRESENTATION = "getPresentation";
 
   public CustomViewer(SNode node) {
     super(node);
@@ -59,6 +61,22 @@ public class CustomViewer extends BaseConcept implements INamedConcept {
 
   public void setGetWatchables(GetWatchablesBlock_ConceptFunction node) {
     super.setChild(CustomViewer.GET_WATCHABLES, node);
+  }
+
+  public CanWrapValue_ConceptFunction getCanWrapBlock() {
+    return (CanWrapValue_ConceptFunction) this.getChild(CanWrapValue_ConceptFunction.class, CustomViewer.CAN_WRAP_BLOCK);
+  }
+
+  public void setCanWrapBlock(CanWrapValue_ConceptFunction node) {
+    super.setChild(CustomViewer.CAN_WRAP_BLOCK, node);
+  }
+
+  public GetValuePresentation_ConceptFunction getGetPresentation() {
+    return (GetValuePresentation_ConceptFunction) this.getChild(GetValuePresentation_ConceptFunction.class, CustomViewer.GET_PRESENTATION);
+  }
+
+  public void setGetPresentation(GetValuePresentation_ConceptFunction node) {
+    super.setChild(CustomViewer.GET_PRESENTATION, node);
   }
 
   public static CustomViewer newInstance(SModel sm, boolean init) {

@@ -28,6 +28,12 @@ public class CustomViewer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_oi6s6c_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_oi6s6c_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_oi6s6c_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_oi6s6c_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_oi6s6c_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_oi6s6c_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_oi6s6c_h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_oi6s6c_i0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_oi6s6c_j0(editorContext, node));
     return editorCell;
   }
 
@@ -58,8 +64,36 @@ public class CustomViewer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_oi6s6c_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get custom watchables:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get value presentation:");
     editorCell.setCellId("Constant_oi6s6c_c0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_oi6s6c_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_oi6s6c_e0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_oi6s6c_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can wrap value:");
+    editorCell.setCellId("Constant_oi6s6c_f0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_oi6s6c_h0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_oi6s6c_h0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_oi6s6c_i0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get custom watchables:");
+    editorCell.setCellId("Constant_oi6s6c_i0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -83,6 +117,40 @@ public class CustomViewer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNode_oi6s6c_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("getPresentation");
+    provider.setNoTargetText("original presentation");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_oi6s6c_g0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("canWrapBlock");
+    provider.setNoTargetText("<no canWrapBlock>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_oi6s6c_j0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("getWatchables");
     provider.setNoTargetText("<no getWatchables>");
