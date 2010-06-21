@@ -301,7 +301,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
    */
   @Nullable
   protected QueryExecutionContext getExecutionContext(SNode inputNode) {
-    RootDependenciesBuilder builder = myDependenciesBuilder.getListener(inputNode);
+    RootDependenciesBuilder builder = myDependenciesBuilder.getRootBuilder(inputNode);
     if (builder != null) {
       if (builder.isUnchanged()) {
         return null;

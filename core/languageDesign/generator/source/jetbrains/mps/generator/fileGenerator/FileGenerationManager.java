@@ -225,7 +225,7 @@ public class FileGenerationManager implements ApplicationComponent {
           positionInfo.setNodeId(input.getId());
           info.setModel(input.getModel());
           positionInfo.setFileName(fileName);
-          info.addPosition(positionInfo, input.getTopParent().getId());
+          info.addPosition(positionInfo, input.getTopmostAncestor().getId());
         }
       }
     }
@@ -250,7 +250,7 @@ public class FileGenerationManager implements ApplicationComponent {
             }
           }
           //    positionInfo.clearTempVarInfoMap();
-          info.addScopePosition(positionInfo, input.getTopParent().getId());
+          info.addScopePosition(positionInfo, input.getTopmostAncestor().getId());
         }
       }
     }
@@ -264,7 +264,7 @@ public class FileGenerationManager implements ApplicationComponent {
           info.setModel(input.getModel());
           positionInfo.setFileName(fileName);
 
-          info.addUnitPosition(positionInfo, input.getTopParent().getId());
+          info.addUnitPosition(positionInfo, input.getTopmostAncestor().getId());
         }
       }
     }

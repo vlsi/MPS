@@ -125,7 +125,7 @@ public class WeavingProcessor {
         } catch (DismissTopMappingRuleException e) {
           myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "dismission of weaving rule is not supported");
         } catch (TemplateProcessingFailureException e) {
-          myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "error pocessing template fragment");
+          myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "error processing template fragment");
           myGenerator.showInformationMessage(contextParentNode, " -- was output context node:");
         }
       } else {

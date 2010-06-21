@@ -258,11 +258,12 @@ public final class SNode {
     return isAncestorOf(parentOfChild);
   }
 
-  public SNode getTopmostAncestor() {
+  @NotNull
+  public final SNode getTopmostAncestor() {
     SNode current = this;
-    while (current.getParent() != null) {
-      assert current != current.getParent();
-      current = current.getParent();
+    while (current.myParent != null) {
+      assert current != current.myParent;
+      current = current.myParent;
     }
     return current;
   }
@@ -792,15 +793,6 @@ public final class SNode {
 
   final public SNode getParent() {
     return myParent;
-  }
-
-  @NotNull
-  final public SNode getTopParent() {
-    SNode result = this;
-    while(result.myParent != null) {
-      result = result.myParent;
-    }
-    return result;
   }
 
   public void setChild(String role, SNode childNode) {

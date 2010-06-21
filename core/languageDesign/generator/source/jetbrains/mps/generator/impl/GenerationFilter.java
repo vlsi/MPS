@@ -288,10 +288,10 @@ public class GenerationFilter {
     }
 
     for(SNode root : myUnchangedRoots) {
-      propagateDependencies(result.getListener(root), mySavedDependencies.getDependenciesFor(root.getId()));
+      propagateDependencies(result.getRootBuilder(root), mySavedDependencies.getDependenciesFor(root.getId()));
     }
     if(myConditionalsUnchanged) {
-      propagateDependencies(result.getListener(null), mySavedDependencies.getDependenciesFor(ModelDigestUtil.HEADER));
+      propagateDependencies(result.getRootBuilder(null), mySavedDependencies.getDependenciesFor(ModelDigestUtil.HEADER));
     }
 
     return result;

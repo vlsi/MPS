@@ -82,7 +82,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
       nextStepToOriginalMap.put(outputRoot, null);
       return;
     }
-    SNode originalRoot = currentToOriginalMap.get(inputNode.getTopParent());
+    SNode originalRoot = currentToOriginalMap.get(inputNode.getTopmostAncestor());
     nextStepToOriginalMap.put(outputRoot, originalRoot);
   }
 
@@ -113,11 +113,11 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   }
 
   @Override
-  public RootDependenciesBuilder getListener(SNode inputNode) {
+  public RootDependenciesBuilder getRootBuilder(SNode inputNode) {
     if(inputNode == null || !inputNode.isRegistered()) {
       return myConditionalsBuilder;
     }
-    inputNode = inputNode.getTopParent();
+    inputNode = inputNode.getTopmostAncestor();
     SNode originalRoot = currentToOriginalMap.get(inputNode);
     if(originalRoot != null) {
       return myRootBuilders.get(originalRoot);

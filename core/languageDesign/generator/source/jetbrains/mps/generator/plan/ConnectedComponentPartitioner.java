@@ -61,14 +61,14 @@ public class ConnectedComponentPartitioner {
 
   private void buildNodeDependencies(SNode node, int[] dependsOn, Map<SNode, Integer> rootIndex) {
     for(SReference ref : node.getReferences()) {
+      if(ref.isExternal()) {
+        continue;
+      }
       SNode targetNode = ref.getTargetNode();
       if(targetNode != null) {
-        SNode targetRoot = targetNode.getContainingRoot();
-        if(targetRoot != null) {
-          Integer targetIndex = rootIndex.get(targetRoot);
-          if(targetIndex != null) {
-            dependsOn[targetIndex] = 1;
-          }
+        Integer targetIndex = rootIndex.get(targetNode.getTopmostAncestor());
+        if(targetIndex != null) {
+          dependsOn[targetIndex] = 1;
         }
       }
     }
