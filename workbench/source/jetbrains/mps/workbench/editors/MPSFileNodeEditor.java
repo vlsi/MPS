@@ -31,6 +31,7 @@ import com.intellij.openapi.application.Application;
 
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
@@ -48,6 +49,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor, DocumentsEditor {
+  private static final Logger LOG = Logger.getLogger(MPSFileNodeEditor.class);
+
   private IEditor myNodeEditor;
   private JPanel myComponent = new MPSFileNodeEditorComponent();
   private Project myProject;
@@ -241,7 +244,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
     assert sm != null : "Model descriptor is null for model: " + myFile.getNode().getModel();
 
     IOperationContext result = new ModuleContext(sm.getModule(), myProject);
-    assert result.getModule() == sm.getModule() : "Different modules: " + result.getModule() + "/" + sm.getModule();
+    LOG.assertLog(result.getModule() == sm.getModule(), "Different modules: " + result.getModule() + "/" + sm.getModule());
     return result;
   }
 
