@@ -51,11 +51,11 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
       Map<LocalVariable, Value> map = myStackFrame.getValues(myStackFrame.visibleVariables());
       Map<IWatchable, IValue> result = new HashMap<IWatchable, IValue>();
       for (LocalVariable variable : map.keySet()) {
-        result.put(new JavaLocalVariable(variable, myStackFrame, myClassFqName), JavaValue.fromJDIValue(map.get(variable), myClassFqName));
+        result.put(new JavaLocalVariable(variable, myStackFrame, myClassFqName, myStackFrame.thread()), JavaValue.fromJDIValue(map.get(variable), myClassFqName, myStackFrame.thread()));
       }
       ObjectReference thisObject = myStackFrame.thisObject();
       if (thisObject != null) {
-        JavaThisObject object = new JavaThisObject(thisObject, myStackFrame, myClassFqName);
+        JavaThisObject object = new JavaThisObject(thisObject, myStackFrame, myClassFqName, myStackFrame.thread());
         result.put(object, object.getValue());
       }
       return result;
@@ -71,14 +71,14 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
       List<IWatchable> result = new ArrayList<IWatchable>();
 
       for (LocalVariable variable : myStackFrame.visibleVariables()) {
-        result.add(new JavaLocalVariable(variable, myStackFrame, myClassFqName));
+        result.add(new JavaLocalVariable(variable, myStackFrame, myClassFqName, myStackFrame.thread()));
       }
 
       ObjectReference thisObject = myStackFrame.thisObject();
       if (thisObject != null) {
-        result.add(new JavaThisObject(thisObject, myStackFrame, myClassFqName));
+        result.add(new JavaThisObject(thisObject, myStackFrame, myClassFqName, myStackFrame.thread()));
       } else {
-        result.add(new JavaStaticContext(myStackFrame.location().declaringType(), myClassFqName));
+        result.add(new JavaStaticContext(myStackFrame.location().declaringType(), myClassFqName, myStackFrame.thread()));
       }
 
       return result;
@@ -95,7 +95,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   public IValue getValue(IWatchable watchable) {
     if (watchable instanceof JavaLocalVariable) {
       JavaLocalVariable localVariable = (JavaLocalVariable) watchable;
-      return JavaValue.fromJDIValue(myStackFrame.getValue(localVariable.getLocalVariable()), myClassFqName);
+      return JavaValue.fromJDIValue(myStackFrame.getValue(localVariable.getLocalVariable()), myClassFqName, myStackFrame.thread());
     }
     return null;
   }

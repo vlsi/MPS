@@ -19,31 +19,33 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
   @Nullable
   protected final Value myValue;
   protected String myClassFQName;
+  protected ThreadReference myThreadReference;
 
-  public JavaValue(Value value, String classFQname) {
+  public JavaValue(Value value, String classFQname, ThreadReference threadReference) {
     super(value);
     myValue = value;
     myClassFQName = classFQname;
+    myThreadReference = threadReference;
   }
 
-  public static JavaValue fromJDIValue(Value value, String classFQname) {
-    JavaValue javaValue = fromJDIValueRaw(value, classFQname);
+  public static JavaValue fromJDIValue(Value value, String classFQname, ThreadReference threadReference) {
+    JavaValue javaValue = fromJDIValueRaw(value, classFQname, threadReference);
     CustomViewersManager customViewersManager = CustomViewersManager.getInstance();
     ValueWrapper wrapper = customViewersManager.getValueWrapper(javaValue, classFQname);
     if (wrapper == null) return javaValue;
     return wrapper;
   }
 
-  public static JavaValue fromJDIValueRaw(Value value, String classFQname) {
-    if (value == null) return new JavaPrimitiveValue(value, classFQname);
+  public static JavaValue fromJDIValueRaw(Value value, String classFQname, ThreadReference threadReference) {
+    if (value == null) return new JavaPrimitiveValue(value, classFQname, threadReference);
     if (value instanceof ObjectReference) {
       if (value instanceof ArrayReference) {
-        return new JavaArrayValue(value, classFQname);
+        return new JavaArrayValue(value, classFQname, threadReference);
       } else {
-        return new JavaObjectValue(value, classFQname);
+        return new JavaObjectValue(value, classFQname, threadReference);
       }
     } else {
-      return new JavaPrimitiveValue(value, classFQname);
+      return new JavaPrimitiveValue(value, classFQname, threadReference);
     }
   }
 

@@ -1,10 +1,8 @@
 package jetbrains.mps.debug.runtime.java.programState.proxies;
 
-import com.sun.jdi.ArrayReference;
-import com.sun.jdi.Field;
-import com.sun.jdi.ObjectReference;
-import com.sun.jdi.Value;
+import com.sun.jdi.*;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 import jetbrains.mps.debug.integration.Icons;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaArrayItem;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaField;
@@ -24,8 +22,8 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class JavaObjectValue extends JavaValue {
-  public JavaObjectValue(Value value, String classFQname) {
-    super(value, classFQname);
+  public JavaObjectValue(Value value, String classFQname, ThreadReference threadReference) {
+    super(value, classFQname, threadReference);
   }
 
   @Override
@@ -41,7 +39,7 @@ public class JavaObjectValue extends JavaValue {
         }
       });
       for (Field f : fieldList) {
-        watchables.add(new JavaField(f, ref, myClassFQName));
+        watchables.add(new JavaField(f, ref, myClassFQName, myThreadReference));
       }
     }
     return watchables;
@@ -66,7 +64,7 @@ public class JavaObjectValue extends JavaValue {
     ObjectReference ref = (ObjectReference) myValue;
     Field field = ref.referenceType().fieldByName(fieldName);
     if (field == null) return null;
-    return JavaValue.fromJDIValueRaw(ref.getValue(field), myClassFQName);
+    return JavaValue.fromJDIValueRaw(ref.getValue(field), myClassFQName, myThreadReference);
   }
 
   public List<JavaValue> getFieldValues() {
@@ -74,9 +72,25 @@ public class JavaObjectValue extends JavaValue {
     List<Field> fieldList = ref.referenceType().fields();
     List<JavaValue> result = new ArrayList<JavaValue>();
     for (Field f : fieldList) {
-      result.add(JavaValue.fromJDIValueRaw(ref.getValue(f), myClassFQName));
+      result.add(JavaValue.fromJDIValueRaw(ref.getValue(f), myClassFQName, myThreadReference));
     }
     return result;
+  }
+
+  public JavaValue executeMethod(String methodName, String jniSignature, Object... args) {
+    ObjectReference ref = (ObjectReference) myValue;
+    ClassType classType = (ClassType) ref.referenceType();
+    Method method = classType.concreteMethodByName(methodName, jniSignature);
+    if (method == null) {
+      return null; //todo
+    }
+    final List<Value> argValues = MirrorUtil.getValues(myThreadReference, args);
+    try {
+      Value value = ref.invokeMethod(myThreadReference, method, argValues, 0);
+      return JavaValue.fromJDIValueRaw(value, jniSignature, myThreadReference);
+    } catch (Throwable t) {
+      return null; //todo
+    }
   }
 
   public String getClassFqName() {

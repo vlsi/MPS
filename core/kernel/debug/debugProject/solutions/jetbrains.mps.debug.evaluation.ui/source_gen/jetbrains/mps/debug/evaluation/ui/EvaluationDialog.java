@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import javax.swing.JTabbedPane;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
+import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugSession;
 import java.awt.Dimension;
@@ -52,11 +53,13 @@ public class EvaluationDialog extends BaseDialog {
   private final AbstractEvaluationLogic myEvaluationLogic;
   private final EvaluationDialog.MySessionChangeListener mySessionChangeListener;
   protected String myClassFQName;
+  protected ThreadReference myThreadReference;
 
   public EvaluationDialog(final IOperationContext context, JavaUiState uiState, final DebugSession debugSession) {
     super(context.getMainFrame(), "Evaluate");
     this.myContext = context;
     myClassFQName = uiState.getStackFrame().getLocation().getUnitName();
+    myThreadReference = uiState.getThread().getThread();
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
 
@@ -91,7 +94,7 @@ public class EvaluationDialog extends BaseDialog {
     myEvaluationLogic.setModel(d.value);
 
     myPanel.add(this.myEditor.getComponenet(), BorderLayout.NORTH);
-    myTree = new EvaluationDialog.MyTree(myClassFQName);
+    myTree = new EvaluationDialog.MyTree(myClassFQName, myThreadReference);
     myPanel.add(new JScrollPane(myTree), BorderLayout.CENTER);
 
     if (myEvaluationLogic.isDeveloperMode()) {
@@ -216,10 +219,12 @@ public class EvaluationDialog extends BaseDialog {
     @Nullable
     private String myErrorText;
     private String myClassFqName;
+    private ThreadReference myThreadReference;
 
-    public MyTree(String classFqName) {
+    public MyTree(String classFqName, ThreadReference threadReference) {
       super();
       myClassFqName = classFqName;
+      myThreadReference = threadReference;
       this.rebuildNow();
     }
 
@@ -237,7 +242,7 @@ public class EvaluationDialog extends BaseDialog {
     protected MPSTreeNode rebuild() {
       MPSTreeNode rootTreeNode = new TextTreeNode("Evaluation Result");
       if (myValueProxy != null) {
-        rootTreeNode.add(new WatchableNode(new CalculatedValue(this.myValueProxy.getJDIValue(), myClassFqName)));
+        rootTreeNode.add(new WatchableNode(new CalculatedValue(this.myValueProxy.getJDIValue(), myClassFqName, myThreadReference)));
       } else if (myErrorText != null) {
         rootTreeNode.add(new EvaluationDialog.ErrorTreeNode(myErrorText));
       }

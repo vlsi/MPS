@@ -1,7 +1,9 @@
 package jetbrains.mps.debug.runtime.java.programState.proxies;
 
+import com.sun.jdi.ThreadReference;
 import com.sun.jdi.Value;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 import jetbrains.mps.debug.integration.Icons;
 
 import javax.swing.Icon;
@@ -16,8 +18,8 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class JavaPrimitiveValue extends JavaValue {
-  public JavaPrimitiveValue(Value value, String classFQname) {
-    super(value, classFQname);
+  public JavaPrimitiveValue(Value value, String classFQname, ThreadReference threadReference) {
+    super(value, classFQname, threadReference);
   }
 
   @Override
@@ -39,5 +41,10 @@ public class JavaPrimitiveValue extends JavaValue {
   public String getValuePresentation() {
     if (myValue == null) return "null";
     return myValue.toString();
+  }
+
+  public Object getJavaValue() {
+    if (myValue == null) return null;
+    return MirrorUtil.getJavaValue(myValue);
   }
 }

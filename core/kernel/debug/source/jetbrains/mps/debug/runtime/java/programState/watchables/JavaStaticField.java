@@ -1,6 +1,7 @@
 package jetbrains.mps.debug.runtime.java.programState.watchables;
 
 import com.sun.jdi.Field;
+import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
@@ -14,10 +15,10 @@ public class JavaStaticField extends JavaBreakpointWatchable implements IWatchab
   private final Field myField;
   private final JavaValue myCachedValue;
 
-  public JavaStaticField(Field field, String classFqName) {
-    super(classFqName);
+  public JavaStaticField(Field field, String classFqName, ThreadReference threadReference) {
+    super(classFqName, threadReference);
     myField = field;
-    myCachedValue = JavaValue.fromJDIValue(field.declaringType().getValue(myField), myClassFQName);
+    myCachedValue = JavaValue.fromJDIValue(field.declaringType().getValue(myField), myClassFQName, threadReference);
   }
 
   @Override

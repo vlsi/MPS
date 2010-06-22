@@ -306,6 +306,13 @@
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="5929582948463205087" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="5929582948463205089" />
       </node>
+      <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="7744028807302998868">
+        <property name="name:3" value="myThreadReference" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="7744028807302998869" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7744028807302998871">
+          <link role="classifier:3" targetNodeId="13.~ThreadReference" resolveInfo="ThreadReference" />
+        </node>
+      </node>
       <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="5849716370568348291">
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5849716370568348292" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5849716370568348692">
@@ -322,6 +329,16 @@
               </node>
             </node>
           </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7744028807302998876">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="7744028807302998878">
+              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7744028807302998881">
+                <link role="variableDeclaration:3" targetNodeId="7744028807302998872" resolveInfo="threadReference" />
+              </node>
+              <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7744028807302998877">
+                <link role="variableDeclaration:3" targetNodeId="7744028807302998868" resolveInfo="myThreadReference" />
+              </node>
+            </node>
+          </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5849716370568348694">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5849716370568348695">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5849716370568348696" />
@@ -334,6 +351,12 @@
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="5929582948463243187">
           <property name="name:3" value="classFqName" />
           <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="5929582948463243188" />
+        </node>
+        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7744028807302998872">
+          <property name="name:3" value="threadReference" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7744028807302998874">
+            <link role="classifier:3" targetNodeId="13.~ThreadReference" resolveInfo="ThreadReference" />
+          </node>
         </node>
       </node>
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5849716370568348293">
@@ -439,7 +462,7 @@
                         <link role="baseMethodDeclaration:3" targetNodeId="37.~WatchableNode.&lt;init&gt;(jetbrains.mps.debug.api.programState.IWatchable)" resolveInfo="WatchableNode" />
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8638521523002110212">
                           <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8638521523002110213">
-                            <link role="baseMethodDeclaration:3" targetNodeId="73.~CalculatedValue.&lt;init&gt;(com.sun.jdi.Value,java.lang.String)" resolveInfo="CalculatedValue" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="73.~CalculatedValue.&lt;init&gt;(com.sun.jdi.Value,java.lang.String,com.sun.jdi.ThreadReference)" resolveInfo="CalculatedValue" />
                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8638521523002110214">
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8638521523002110215">
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="8638521523002110216">
@@ -453,6 +476,9 @@
                             </node>
                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="5929582948463243191">
                               <link role="variableDeclaration:3" targetNodeId="5929582948463205086" resolveInfo="myClassFqName" />
+                            </node>
+                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7744028807302998883">
+                              <link role="variableDeclaration:3" targetNodeId="7744028807302998868" resolveInfo="myThreadReference" />
                             </node>
                           </node>
                         </node>
@@ -760,6 +786,26 @@
             </node>
             <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="5929582948463205065">
               <link role="variableDeclaration:3" targetNodeId="5929582948463205058" resolveInfo="myClassFQName" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7744028807302963191">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="7744028807302963193">
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7744028807302998861">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7744028807302998856">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7744028807302998855">
+                  <link role="variableDeclaration:3" targetNodeId="5849716370568348353" resolveInfo="uiState" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7744028807302998860">
+                  <link role="baseMethodDeclaration:3" targetNodeId="12.~JavaUiState.getThread():jetbrains.mps.debug.runtime.java.programState.proxies.JavaThread" resolveInfo="getThread" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7744028807302998865">
+                <link role="baseMethodDeclaration:3" targetNodeId="72.~JavaThread.getThread():com.sun.jdi.ThreadReference" resolveInfo="getThread" />
+              </node>
+            </node>
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7744028807302963192">
+              <link role="variableDeclaration:3" targetNodeId="7744028807302963181" resolveInfo="myThreadReference" />
             </node>
           </node>
         </node>
@@ -1086,6 +1132,9 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="5849716370568348291" resolveInfo="EvaluationDialog.MyTree" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="5929582948463205085">
                   <link role="variableDeclaration:3" targetNodeId="5929582948463205058" resolveInfo="myClassFQName" />
+                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7744028807302998867">
+                  <link role="variableDeclaration:3" targetNodeId="7744028807302963181" resolveInfo="myThreadReference" />
                 </node>
               </node>
             </node>
@@ -1845,6 +1894,13 @@
       <property name="name:3" value="myClassFQName" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="5929582948463205061" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="5929582948463205062" />
+    </node>
+    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="7744028807302963181">
+      <property name="name:3" value="myThreadReference" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="7744028807302963184" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7744028807302963189">
+        <link role="classifier:3" targetNodeId="13.~ThreadReference" resolveInfo="ThreadReference" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5849716370568348887">

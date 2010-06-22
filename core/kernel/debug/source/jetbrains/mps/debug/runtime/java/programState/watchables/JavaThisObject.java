@@ -1,9 +1,6 @@
 package jetbrains.mps.debug.runtime.java.programState.watchables;
 
-import com.sun.jdi.AbsentInformationException;
-import com.sun.jdi.Location;
-import com.sun.jdi.ObjectReference;
-import com.sun.jdi.StackFrame;
+import com.sun.jdi.*;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
@@ -28,8 +25,8 @@ public class JavaThisObject extends JavaBreakpointWatchable implements IWatchabl
   private final ObjectReference myThisObject;
   private final StackFrame myStackFrame;
 
-  public JavaThisObject(ObjectReference objectReference, StackFrame stackFrame, String classFqName) {
-    super(classFqName);
+  public JavaThisObject(ObjectReference objectReference, StackFrame stackFrame, String classFqName, ThreadReference threadReference) {
+    super(classFqName, threadReference);
     myThisObject = objectReference;
     myStackFrame = stackFrame;
   }
@@ -45,7 +42,7 @@ public class JavaThisObject extends JavaBreakpointWatchable implements IWatchabl
 
   @Override
   public IValue getValue() {
-    return JavaValue.fromJDIValue(myThisObject, myClassFQName);
+    return JavaValue.fromJDIValue(myThisObject, myClassFQName, myThreadReference);
   }
 
   @Override

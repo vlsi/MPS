@@ -103,11 +103,27 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "endIndex", true);
   }
 
+  public static SNode sourceNodeQuery_7744028807303024898(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "methodName", true);
+  }
+
+  public static SNode sourceNodeQuery_7744028807303028965(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "signature", true);
+  }
+
+  public static SNode sourceNodeQuery_8358947785871508152(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode();
+  }
+
   public static Iterable sourceNodesQuery_4089989733346843285(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "watchable", true);
   }
 
   public static Iterable sourceNodesQuery_2844414625304366120(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debug.customViewers.structure.CustomViewer");
+  }
+
+  public static Iterable sourceNodesQuery_7744028807303024912(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "arguments", true);
   }
 }

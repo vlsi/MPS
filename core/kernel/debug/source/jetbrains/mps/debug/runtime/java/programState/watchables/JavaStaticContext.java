@@ -2,6 +2,7 @@ package jetbrains.mps.debug.runtime.java.programState.watchables;
 
 import com.sun.jdi.Field;
 import com.sun.jdi.ReferenceType;
+import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
@@ -16,8 +17,8 @@ import java.util.List;
 public class JavaStaticContext extends JavaBreakpointWatchable implements IWatchable {
   private final ReferenceType myStaticType;
 
-  public JavaStaticContext(ReferenceType staticType, String classFqName) {
-    super(classFqName);
+  public JavaStaticContext(ReferenceType staticType, String classFqName, ThreadReference threadReference) {
+    super(classFqName, threadReference);
     myStaticType = staticType;
   }
 
@@ -67,7 +68,7 @@ public class JavaStaticContext extends JavaBreakpointWatchable implements IWatch
       List<IWatchable> result = new ArrayList<IWatchable>();
       for (Field field : myStaticType.fields()) {
         if (!field.isStatic()) continue;
-        result.add(new JavaStaticField(field, myClassFQName));
+        result.add(new JavaStaticField(field, myClassFQName, myThreadReference));
       }
       return result;
     }

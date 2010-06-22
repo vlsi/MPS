@@ -1,5 +1,6 @@
 package jetbrains.mps.debug.runtime.java.programState.watchables;
 
+import com.sun.jdi.ThreadReference;
 import com.sun.jdi.Value;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
@@ -20,9 +21,9 @@ import javax.swing.Icon;
 public class CalculatedValue extends JavaBreakpointWatchable implements IWatchable {
   private final JavaValue myValue;
 
-  public CalculatedValue(Value value, String classFqName) {
-    super(classFqName);
-    myValue = JavaValue.fromJDIValue(value, myClassFQName);
+  public CalculatedValue(Value value, String classFqName, ThreadReference threadReference) {
+    super(classFqName, threadReference);
+    myValue = JavaValue.fromJDIValue(value, myClassFQName, threadReference);
   }
 
   @Override

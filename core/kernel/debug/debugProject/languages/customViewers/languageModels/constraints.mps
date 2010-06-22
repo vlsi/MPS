@@ -315,5 +315,59 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="7744028807303023760">
+    <link role="concept:8" targetNodeId="1.7744028807303021417" resolveInfo="CallMethodOperation" />
+    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="7744028807303023761">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7744028807303023762">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7744028807303023763">
+          <node role="expression:3" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression:3" id="7744028807303023764">
+            <node role="supertypeExpression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="7744028807303023765">
+              <node role="quotedNode:0" type="jetbrains.mps.debug.customViewers.structure.ObjectValueType" id="7744028807303023766" />
+            </node>
+            <node role="subtypeExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7744028807303023767">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7744028807303023768">
+                <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="7744028807303023769">
+                  <property name="asCast:16" value="true" />
+                  <link role="concept:16" targetNodeId="2v.1197027756228:3" resolveInfo="DotExpression" />
+                  <node role="leftExpression:16" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode:8" id="7744028807303023770" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7744028807303023771">
+                  <link role="link:16" targetNodeId="2v.1197027771414:3" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation:3" id="7744028807303023772" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="7744028807303050614">
+    <link role="concept:8" targetNodeId="1.7744028807303050605" resolveInfo="JavaValueOperation" />
+    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="7744028807303050615">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7744028807303050616">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7744028807303050618">
+          <node role="expression:3" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression:3" id="7744028807303050619">
+            <node role="supertypeExpression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="7744028807303050620">
+              <node role="quotedNode:0" type="jetbrains.mps.debug.customViewers.structure.PrimitiveValueType" id="7744028807303050628" />
+            </node>
+            <node role="subtypeExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7744028807303050622">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7744028807303050623">
+                <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="7744028807303050624">
+                  <property name="asCast:16" value="true" />
+                  <link role="concept:16" targetNodeId="2v.1197027756228:3" resolveInfo="DotExpression" />
+                  <node role="leftExpression:16" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode:8" id="7744028807303050625" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7744028807303050626">
+                  <link role="link:16" targetNodeId="2v.1197027771414:3" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation:3" id="7744028807303050627" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

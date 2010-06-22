@@ -19,7 +19,7 @@ public abstract class ValueWrapper extends JavaValue implements IValue {
   protected JavaValue myWrappedValue;
 
   public ValueWrapper(JavaValue value) {
-    super(value.getValue(), value.getClassFQName());
+    super(value.getValue(), value.getClassFQName(), value.myThreadReference);
     myWrappedValue = value;
   }
 
