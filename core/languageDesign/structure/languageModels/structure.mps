@@ -165,17 +165,14 @@
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1071599776563">
       <property name="name:0" value="role" />
-      <property name="propertyType:0" value="string" />
       <link role="dataType:0" targetNodeId="1.1082983041843:0" />
     </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1071599937831">
       <property name="name:0" value="metaClass" />
-      <property name="propertyType:0" value="string" />
       <link role="dataType:0" targetNodeId="1084199179703:0" resolveInfo="LinkMetaclass" />
     </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1071599893252">
       <property name="name:0" value="sourceCardinality" />
-      <property name="propertyType:0" value="string" />
       <link role="dataType:0" targetNodeId="1084197782722:0" resolveInfo="Cardinality" />
     </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="3236994869861844876">
