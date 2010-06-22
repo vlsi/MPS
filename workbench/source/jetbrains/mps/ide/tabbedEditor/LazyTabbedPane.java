@@ -78,6 +78,7 @@ public class LazyTabbedPane extends JPanel implements Disposable {
   public void updateTabComponent(ILazyTab tab) {
     int index = myLazyTabs.indexOf(tab);
     myTabbedPane.setComponentAt(index, tab.getComponent());
+    myTabbedPane.setSelectedIndex(index);
   }
 
   public int getCurrentTabIndex() {
