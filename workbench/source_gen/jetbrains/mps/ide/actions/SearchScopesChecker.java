@@ -23,7 +23,9 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 
+@Deprecated
 public class SearchScopesChecker extends SpecificChecker {
+  @Deprecated
   public SearchScopesChecker() {
   }
 

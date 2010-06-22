@@ -28,7 +28,9 @@ public class ModelCheckerPreferencesPage {
     JPanel optionsPanel = new JPanel(new GridLayout(0, 1));
     optionsPanel.add(myCheckUnresolvedReferencesCheckBox);
     optionsPanel.add(myCheckConstraintsCheckBox);
-    optionsPanel.add(myCheckScopesCheckBox);
+    /*
+      optionsPanel.add(myCheckScopesCheckBox);
+    */
     optionsPanel.add(myCheckTypesystemCheckBox);
 
     myPage = new JPanel(new BorderLayout());
