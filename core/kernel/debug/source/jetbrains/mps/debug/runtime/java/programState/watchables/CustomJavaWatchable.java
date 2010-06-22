@@ -46,6 +46,6 @@ public abstract class CustomJavaWatchable implements IWatchable {
 
   @Override
   public Icon getPresentationIcon() {
-    return null;
+    return myCachedValue.getPresentationIcon();
   }
 }
