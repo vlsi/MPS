@@ -1297,8 +1297,18 @@
     <node role="descriptionBlock:3" type="jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock:3" id="5476035322658116505">
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5476035322658116506">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5476035322658116507">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5476035322658116508">
-            <property name="value:3" value="" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1365037020946002843">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1365037020946002848">
+              <property name="value:3" value="'" />
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1365037020946002839">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5476035322658116508">
+                <property name="value:3" value="Remove undeclared property '" />
+              </node>
+              <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference:3" id="1365037020946002842">
+                <link role="quickFixArgument:3" targetNodeId="3618120580763130710" resolveInfo="propertyName" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
