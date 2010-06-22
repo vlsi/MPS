@@ -120,10 +120,12 @@ public class RootNodeFileStatusManager extends AbstractProjectComponent {
           public void run() {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
-                SModelDescriptor modelDescriptor = SNodeOperations.getModel(root).getModelDescriptor();
-                if (modelDescriptor != null) {
-                  ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(modelDescriptor);
-                  modelChangesManager.setEnabled(true);
+                if (!(root.isDisposed() && SNodeOperations.getModel(root).isDisposed())) {
+                  SModelDescriptor modelDescriptor = SNodeOperations.getModel(root).getModelDescriptor();
+                  if (modelDescriptor != null) {
+                    ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(modelDescriptor);
+                    modelChangesManager.setEnabled(true);
+                  }
                 }
               }
             });
