@@ -84,6 +84,7 @@ public class Serializer {
         serialize(childElement, o);
         element.addContent(childElement);
       }
+      return;
     }
     {
       element.setAttribute(OBJECT_TYPE, DEFAULT);
