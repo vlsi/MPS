@@ -50,7 +50,7 @@ public class ClosureLiteralUtil {
   }
 
   public static SNode fillParams(SNode ctNoParams, SNode ft) {
-    Map<String, SNode> map = null;
+    Map<SNode, SNode> map = null;
     List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "method", true);
     if (ListSequence.fromList(imds).count() > 0) {
       SNode method = ListSequence.fromList(imds).getElement(0);
@@ -67,7 +67,7 @@ public class ClosureLiteralUtil {
     SNode ctWithParams = SNodeOperations.copyNode(ctNoParams);
     if (map != null) {
       for (SNode tvd : SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "typeVariableDeclaration", true)) {
-        ListSequence.fromList(SLinkOperations.getTargets(ctWithParams, "parameter", true)).addElement(SNodeOperations.cast(MapSequence.fromMap(map).get(SPropertyOperations.getString(tvd, "name")), "jetbrains.mps.baseLanguage.structure.Type"));
+        ListSequence.fromList(SLinkOperations.getTargets(ctWithParams, "parameter", true)).addElement(SNodeOperations.cast(MapSequence.fromMap(map).get(tvd), "jetbrains.mps.baseLanguage.structure.Type"));
       }
     }
     return ctWithParams;
@@ -82,7 +82,7 @@ public class ClosureLiteralUtil {
   }
 
   private static void matchParameters(TemplateQueryContext genContext, SNode origCT, SNode ctNoParams, SNode ft, SNode literal) {
-    Map<String, SNode> map = null;
+    Map<SNode, SNode> map = null;
     List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "method", true);
     SNode absRetCT = null;
     if (ListSequence.fromList(imds).count() > 0) {
@@ -140,14 +140,14 @@ public class ClosureLiteralUtil {
       while (!(ListSequence.fromList(queue).isEmpty())) {
         SNode n = ListSequence.fromList(queue).removeElementAt(0);
         if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-          if (idx < ListSequence.fromList(varDecls).count()) {
+          if (idx < ListSequence.fromList(varDecls).count() && map != null && MapSequence.fromMap(map).containsKey(ListSequence.fromList(varDecls).getElement(idx))) {
             n = SNodeOperations.replaceWithAnother(n, (map != null ?
-              MapSequence.fromMap(map).get(SPropertyOperations.getString(ListSequence.fromList(varDecls).getElement(idx), "name")) :
+              MapSequence.fromMap(map).get(ListSequence.fromList(varDecls).getElement(idx)) :
               null
             ));
           }
         } else {
-          if (n != null) {
+          if (n != null && (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
             ListSequence.fromList(queue).addSequence(ListSequence.fromList(SNodeOperations.getChildren(n)));
           }
         }
@@ -156,7 +156,7 @@ public class ClosureLiteralUtil {
     }
   }
 
-  public static Map<String, SNode> matchReturnType(SNode absType, SNode realType, Map<String, SNode> map) {
+  public static Map<SNode, SNode> matchReturnType(SNode absType, SNode realType, Map<SNode, SNode> map) {
     Set<String> visited = SetSequence.fromSet(new HashSet<String>());
     List<SNode> queue = new ArrayList<SNode>();
     if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
@@ -226,7 +226,7 @@ public class ClosureLiteralUtil {
     return false;
   }
 
-  private static Map<String, SNode> matchType(SNode absType, SNode realType, Map<String, SNode> map) {
+  private static Map<SNode, SNode> matchType(SNode absType, SNode realType, Map<SNode, SNode> map) {
     SNode matched = null;
     if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       matched = whichTypeMatching(SLinkOperations.getTargets(SNodeOperations.cast(realType, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true), absType);
@@ -235,7 +235,7 @@ public class ClosureLiteralUtil {
     }
     if ((matched != null)) {
       if (SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-        MapSequence.fromMap((map = getMap(map))).put(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(absType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), "name"), SNodeOperations.copyNode(matched));
+        MapSequence.fromMap((map = getMap(map))).put(SLinkOperations.getTarget(SNodeOperations.cast(absType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), SNodeOperations.copyNode(matched));
       } else {
         int idx = 0;
         List<SNode> mptypes = SLinkOperations.getTargets(SNodeOperations.as(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
@@ -248,9 +248,9 @@ public class ClosureLiteralUtil {
     return map;
   }
 
-  private static Map<String, SNode> getMap(Map<String, SNode> map) {
+  private static Map<SNode, SNode> getMap(Map<SNode, SNode> map) {
     if (map == null) {
-      map = MapSequence.fromMap(new HashMap<String, SNode>());
+      map = MapSequence.fromMap(new HashMap<SNode, SNode>());
     }
     return map;
   }
