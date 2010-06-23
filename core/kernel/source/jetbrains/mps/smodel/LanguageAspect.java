@@ -33,7 +33,6 @@ import jetbrains.mps.lang.refactoring.structure.Refactoring_Language;
 import jetbrains.mps.lang.stubs.structure.Stubs_Language;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mpslite.behavior.Mpslite_Language;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
@@ -258,16 +257,6 @@ public enum LanguageAspect {
 
     public Icon getIcon() {
       return Icons.STUBS_MODEL_ICON;
-    }
-
-    public String getHelpURL() {
-      return "";
-    }
-  },
-
-  MPSLITE("mpslite") {
-    public ModuleReference getMainLanguage() {
-      return Mpslite_Language.MODULE_REFERENCE;
     }
 
     public String getHelpURL() {

@@ -44,7 +44,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    VirtualFile virtualFile = check_ahqk2l_a0a0b(ShowDiffererenesWithCurrentRevision_Action.this.model.getModelFile());
+    VirtualFile virtualFile = check_4tx4z1_a0a0a(ShowDiffererenesWithCurrentRevision_Action.this.model.getModelFile());
     if (ShowDiffererenesWithCurrentRevision_Action.this.node.isRoot() && virtualFile != null && ProjectLevelVcsManager.getInstance(ShowDiffererenesWithCurrentRevision_Action.this.project).getVcsFor(virtualFile) != null) {
       FileStatus fileStatus = ShowDiffererenesWithCurrentRevision_Action.this.project.getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
       return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
@@ -112,7 +112,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
     }
   }
 
-  private static VirtualFile check_ahqk2l_a0a0b(IFile p) {
+  private static VirtualFile check_4tx4z1_a0a0a(IFile p) {
     if (null == p) {
       return null;
     }
