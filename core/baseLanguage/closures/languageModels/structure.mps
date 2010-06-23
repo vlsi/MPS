@@ -421,5 +421,13 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="2.1241531154556:3" resolveInfo="legalAsStatement" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4816492477345855364">
+    <property name="name:0" value="FunctionMethodDeclaration" />
+    <link role="extends:0" targetNodeId="2.1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4816492477345855366">
+      <property name="value:0" value="function" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

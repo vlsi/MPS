@@ -142,7 +142,11 @@
       </node>
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225209590533" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1222958686693" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1222958686694" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1222958686694">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4816492477345853494">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="4816492477345853495" />
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3329614760086819472">

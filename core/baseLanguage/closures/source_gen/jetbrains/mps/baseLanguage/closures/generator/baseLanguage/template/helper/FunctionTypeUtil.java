@@ -23,6 +23,7 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.baseLanguage.closures.util.Constants;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -30,6 +31,9 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class FunctionTypeUtil {
   public static String getRuntimeSignature(SNode ft) {
@@ -202,7 +206,25 @@ with_meet:
       Values.PREP_DATA.set(genContext, rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(lFType), "classifier", false)));
     } else
     if ((lFType != null) && (rFType != null)) {
-      if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(lFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType") || ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).all(new IWhereFilter<SNode>() {
+      final SNode adapterAnn = SLinkOperations.getTarget(new FunctionTypeUtil.QuotationClass_2t0coq_a0a0a0a0j0h().createNode(), "annotation", false);
+      final SNode annInst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(rexpr), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "parameter", true)).getElement(SNodeOperations.getIndexInParent(rexpr)), "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode ann) {
+          return SLinkOperations.getTarget(ann, "annotation", false) == adapterAnn;
+        }
+      });
+      if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (annInst != null)) {
+        SNode cls = ListSequence.fromList(SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(rexpr), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false)), genContext.getScope(), "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode cls) {
+            return SPropertyOperations.getString(cls, "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(annInst, "value", true)).first(), "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value"));
+          }
+        });
+        SNode ct = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+        SLinkOperations.setTarget(ct, "classifier", cls, false);
+        for (SNode pt : SLinkOperations.getTargets(FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(rFType), "parameter", true)) {
+          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(SNodeOperations.copyNode(pt));
+        }
+        ClosureLiteralUtil.addAdaptableClosureLiteralTarget(genContext, SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), ct);
+      } else if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(lFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType") || ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).all(new IWhereFilter<SNode>() {
         public boolean accept(SNode rs) {
           return (SLinkOperations.getTarget(rs, "expression", true) == null);
         }
@@ -294,6 +316,24 @@ with_meet:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_2t0coq_a0a0a0a0j0h {
+    public QuotationClass_2t0coq_a0a0a0a0j0h() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("annotation", quotedNode1_2, SModelReference.fromString("r:c8f09818-27d0-4e31-9cdf-dedd92fee7ef(jetbrains.mps.baseLanguage.closures.util)"), SNodeId.fromString("4816492477345845749")));
         result = quotedNode1_2;
       }
       return result;
