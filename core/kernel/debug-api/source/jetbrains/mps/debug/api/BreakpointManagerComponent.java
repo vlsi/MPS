@@ -22,14 +22,11 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.debug.api.info.BLDebugInfoCache;
-import jetbrains.mps.debug.api.integration.ui.breakpoint.MPSBreakpointPainter;
-import jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointIconRenderer;
-import jetbrains.mps.debug.api.info.DebugInfo;
 import jetbrains.mps.debug.api.BreakpointManagerComponent.MyState;
-import jetbrains.mps.debug.api.BreakpointInfo;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
+import jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointIconRenderer;
+import jetbrains.mps.debug.api.integration.ui.breakpoint.MPSBreakpointPainter;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.LeftMarginMouseListener;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -39,7 +36,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.highlighter.EditorOpenListener;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -267,10 +263,10 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           breakpointsForRoot.add(breakpoint);
 
           for (IEditor editor : myEditorsProvider.getSelectedEditors()) {
-            SNode editedNode = editor.getEditedNode();
-            if (root == editedNode) {
-              EditorComponent editorComponent = editor.getCurrentEditorComponent();
-              if (editorComponent != null) {
+            EditorComponent editorComponent = editor.getCurrentEditorComponent();
+            if (editorComponent != null) {
+              SNode editedNode = editorComponent.getEditedNode();
+              if (root == editedNode) {
                 editorComponent.addAdditionalPainter(new MPSBreakpointPainter(breakpoint));
                 editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint));
                 editorComponent.repaint(); //todo should it be executed in ED thread?
@@ -426,6 +422,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   }
 
   //this is called when a breakpoint is hit
+
   public void processBreakpointHit(AbstractMPSBreakpoint breakpoint) {
     //todo do something later if necessary (like highlihgting a line, etc)
   }
