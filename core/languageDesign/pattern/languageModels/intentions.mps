@@ -464,8 +464,8 @@
                 <link role="variableDeclaration:3" targetNodeId="4413230749907743486" resolveInfo="currentNode" />
               </node>
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation:16" id="4413230749907743495">
-                <node role="attributeQualifier:16" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier:16" id="4413230749907743500">
-                  <link role="annotationLink:16" targetNodeId="2v.4413230749907733335:0" resolveInfo="actionAsPattern" />
+                <node role="attributeQualifier:16" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier:16" id="6672886161226170439">
+                  <link role="annotationLink:16" targetNodeId="2v.1152030745648:0" resolveInfo="asPattern" />
                 </node>
               </node>
             </node>

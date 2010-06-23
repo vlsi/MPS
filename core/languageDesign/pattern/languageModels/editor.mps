@@ -1145,7 +1145,10 @@
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem:32" id="4413230749907807509">
           <property name="flag:32" value="true" />
         </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="4413230749907807510">
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="6672886161226135037">
+        <link role="relationDeclaration:32" targetNodeId="1.1136720037780:0" resolveInfo="varName" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="6672886161226135038">
           <property name="flag:32" value="true" />
         </node>
       </node>

@@ -47,7 +47,7 @@ public class CreateActionAsPattern_Intention extends BaseIntention implements In
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode currentNode = editorContext.getSelectedNode();
-    SLinkOperations.setNewChild(currentNode, AttributesRolesUtil.childRoleFromAttributeRole("actionAsPattern"), "jetbrains.mps.lang.pattern.structure.ActionAsPattern");
+    SLinkOperations.setNewChild(currentNode, AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), "jetbrains.mps.lang.pattern.structure.ActionAsPattern");
   }
 
   public String getLocationString() {
