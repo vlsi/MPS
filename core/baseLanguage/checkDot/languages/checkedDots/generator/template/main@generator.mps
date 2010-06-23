@@ -42,6 +42,7 @@
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="4549711462050000012">
     <property name="name:2" value="main" />
+    <property name="topPriorityGroup:2" value="true" />
     <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="7907427828436736392">
       <property name="name:2" value="param" />
       <link role="targetConcept:2" targetNodeId="2v.1068581242874:3" resolveInfo="ParameterReference" />
