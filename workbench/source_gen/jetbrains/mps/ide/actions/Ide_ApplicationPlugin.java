@@ -77,6 +77,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.SolutionRefactoring_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Tools_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.TransientModulesActions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.VCS_ActionGroup");
     return groups;
   }
 
