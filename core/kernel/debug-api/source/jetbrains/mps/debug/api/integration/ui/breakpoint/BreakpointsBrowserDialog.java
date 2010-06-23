@@ -18,6 +18,8 @@ import javax.swing.*;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.*;
 
 public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider {
@@ -101,6 +103,19 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         myBreakpointsListModel.reloadBreakpoints();
       }
     }, KeyStroke.getKeyStroke("DELETE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+    // open on double click
+    myBreakpointsList.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        if (e.getClickCount() == 2) {
+          AbstractMPSBreakpoint breakpoint = (AbstractMPSBreakpoint) myBreakpointsList.getSelectedValue();
+          if (breakpoint == null) return;
+          dispose();
+          openNode(breakpoint, true, true);
+        }
+      }
+    });
   }
 
   private void openNode(final AbstractMPSBreakpoint breakpoint, final boolean focus, final boolean select) {
