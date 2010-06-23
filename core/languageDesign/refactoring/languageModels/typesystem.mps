@@ -1654,6 +1654,7 @@
       <link role="concept:3" targetNodeId="1.7573235936722759511:1" resolveInfo="InitialPropertyValueClause" />
     </node>
   </node>
+  <visible index="5" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="4312073247720489870">
     <property name="name:3" value="typeof_AskBooleanExpression" />
     <property name="package:3" value="RefDecl.Arg.Parameters" />
@@ -1661,7 +1662,9 @@
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="4312073247720489873">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4312073247720489874">
           <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4312073247720489875">
-            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="4312073247720489876" />
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="600920621286163769">
+              <link role="classifier:3" targetNodeId="5v.~Boolean" resolveInfo="Boolean" />
+            </node>
           </node>
         </node>
         <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4312073247720489877">
@@ -1697,7 +1700,9 @@
         <property name="checkOnly:3" value="true" />
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4312073247720714587">
           <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4312073247720714588">
-            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="4312073247720714590" />
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="600920621286163768">
+              <link role="classifier:3" targetNodeId="5v.~Boolean" resolveInfo="Boolean" />
+            </node>
           </node>
         </node>
         <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4312073247720714586">
@@ -1720,7 +1725,7 @@
       <link role="concept:3" targetNodeId="1.4312073247720468747:1" resolveInfo="AskBooleanExpression" />
     </node>
   </node>
-  <visible index="5" modelUID="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)" />
+  <visible index="6" modelUID="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="7012097027058652457">
     <property name="name:3" value="typeof_ContextMemberOperation" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7012097027058652458">
@@ -1738,7 +1743,7 @@
               <link role="applicableNode:3" targetNodeId="7012097027058652459" resolveInfo="contextMemberOperation" />
             </node>
             <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="7012097027058652474">
-              <link role="baseMethodDeclaration:16" targetNodeId="5v.7012097027058652452" resolveInfo="createType" />
+              <link role="baseMethodDeclaration:16" targetNodeId="6v.7012097027058652452" resolveInfo="createType" />
             </node>
           </node>
         </node>

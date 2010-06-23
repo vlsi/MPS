@@ -30,6 +30,8 @@ import jetbrains.mps.project.GlobalScope;
 public class MoveLinkUp extends BaseLoggableRefactoring {
   public MoveLinkUp() {
     this.addTransientParameter("targetConcept");
+    this.addTransientParameter("mergeLinks");
+    this.addTransientParameter("linkToReplace");
   }
 
   public String getUserFriendlyName() {
@@ -59,21 +61,34 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
       return false;
     }
 
-    return MoveLinkUp.this.ask(refactoringContext, new MoveLinkUp_targetConcept_Chooser(refactoringContext));
+    if (!(MoveLinkUp.this.ask(refactoringContext, new MoveLinkUp_targetConcept_Chooser(refactoringContext)))) {
+      return false;
+    }
+    // check if merge possible 
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        refactoringContext.setParameter("linkToReplace", RefUtil.findLinkToMerge(((SNode) refactoringContext.getParameter("targetConcept")), refactoringContext.getSelectedNode()));
+      }
+    });
+    if ((((SNode) refactoringContext.getParameter("linkToReplace")) != null)) {
+      if (!(MoveLinkUp.this.askBool(refactoringContext, "Merge to link with the same name?", "mergeLinks", new MoveLinkUp_mergeLinks_Settings(refactoringContext)))) {
+        return false;
+      }
+      if (!(((Boolean) refactoringContext.getParameter("mergeLinks")))) {
+        refactoringContext.setParameter("linkToReplace", null);
+      }
+    }
+    return true;
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
-    /*
-      SNode linkToReplace = RefUtil.findLinkToMerge(((SNode) refactoringContext.getParameter("targetConcept")), node);
-      if ((linkToReplace != null)) {
-        refactoringContext.replaceRefsToNodeWithNode(node, linkToReplace);
-      } else {
-        refactoringContext.moveNodeToNode(node, node.getRole_(), ((SNode) refactoringContext.getParameter("targetConcept")));
-      }
-    */
-    refactoringContext.moveNodeToNode(node, node.getRole_(), ((SNode) refactoringContext.getParameter("targetConcept")));
     refactoringContext.changeFeatureName(node, SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode) refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(node, "role"));
+    if ((((SNode) refactoringContext.getParameter("linkToReplace")) != null)) {
+      refactoringContext.replaceRefsToNodeWithNode(node, ((SNode) refactoringContext.getParameter("linkToReplace")));
+    } else {
+      refactoringContext.moveNodeToNode(node, node.getRole_(), ((SNode) refactoringContext.getParameter("targetConcept")));
+    }
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {

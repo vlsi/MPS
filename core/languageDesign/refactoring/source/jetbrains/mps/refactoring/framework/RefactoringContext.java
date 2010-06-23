@@ -229,6 +229,7 @@ public class RefactoringContext {
 
   public void replaceRefsToNodeWithNode(SNode whatNode, SNode withNode) {
     myMoveMap.put(new FullNodeId(whatNode), new FullNodeId(withNode));
+    mySourceMap.put(new FullNodeId(withNode), new FullNodeId(whatNode.getParent()));
     whatNode.delete();
     myCachesAreUpToDate = false;
   }

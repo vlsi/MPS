@@ -6,11 +6,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.NameUtil;
 
 public class RefUtil {
   public static SNode findLinkToMerge(SNode concept, SNode linkNode) {
     for (SNode linkDecl : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
-      if (SPropertyOperations.getString_def(linkDecl, "metaClass", "reference") == SPropertyOperations.getString_def(linkNode, "metaClass", "reference") && SPropertyOperations.getString(linkDecl, "role").equals(SPropertyOperations.getString(linkNode, "role"))) {
+      if (SPropertyOperations.getString_def(linkDecl, "metaClass", "reference") == SPropertyOperations.getString_def(linkNode, "metaClass", "reference") && SPropertyOperations.getString(linkDecl, "role").equals(SPropertyOperations.getString(linkNode, "role")) && SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(linkDecl, "target", false), NameUtil.nodeFQName(SLinkOperations.getTarget(linkNode, "target", false)))) {
         return linkDecl;
       }
     }
