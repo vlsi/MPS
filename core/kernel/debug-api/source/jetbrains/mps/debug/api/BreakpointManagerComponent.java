@@ -293,10 +293,10 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           }
 
           for (IEditor editor : myEditorsProvider.getSelectedEditors()) {
-            SNode editedNode = editor.getEditedNode();
-            if (root == editedNode) {
-              EditorComponent editorComponent = editor.getCurrentEditorComponent();
-              if (editorComponent != null) {
+            EditorComponent editorComponent = editor.getCurrentEditorComponent();
+            if (editorComponent != null) {
+              SNode editedNode = editorComponent.getEditedNode();
+              if (root == editedNode) {
                 editorComponent.removeAdditionalPainterByItem(breakpoint);
                 editorComponent.getLeftEditorHighlighter().removeIconRenderer(breakpoint.getSNode(), BreakpointIconRenderer.TYPE);
                 editorComponent.repaint(); //todo should it be executed in ED thread?

@@ -120,6 +120,8 @@ public class DebuggerManagerThread implements IDebuggerManagerThread {
 
     @Override
     public void run() {
+      LOG.debug("Worker thread started.");
+
       while (true) {
         try {
           processCommand(myCommandQueue.get());

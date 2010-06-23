@@ -43,7 +43,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class MPSBreakpoint extends AbstractMPSBreakpoint implements ClassPrepareRequestor, LocatableEventRequestor {
-  private static Logger LOG = Logger.getLogger(MPSBreakpoint.class);
+  private static final Logger LOG = Logger.getLogger(MPSBreakpoint.class);
 
   public MPSBreakpoint(SNodePointer nodePointer, Project project) {
     super(nodePointer, project);

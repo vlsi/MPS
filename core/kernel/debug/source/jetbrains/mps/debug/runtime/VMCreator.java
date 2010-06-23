@@ -168,6 +168,7 @@ public class VMCreator extends AbstractDebugSessionCreator {
     final DebugProcessMulticaster processMulticaster = myDebugVMEventsProcessor.getMulticaster();
     processMulticaster.addListener(new DebugProcessAdapter() {
       public void connectorIsReady() {
+        LOG.debug("Connector is ready.");
         connectorIsReady[0] = true;
         semaphore.up();
         processMulticaster.removeListener(this);
@@ -183,6 +184,7 @@ public class VMCreator extends AbstractDebugSessionCreator {
           while (System.currentTimeMillis() - time < LOCAL_START_TIMEOUT) {
             try {
               vm = doCreateVirtualMachine();
+              LOG.debug("Created VM " + vm);
               break;
             } catch (Throwable t) {
               fail();
@@ -198,6 +200,7 @@ public class VMCreator extends AbstractDebugSessionCreator {
           final VirtualMachine vm1 = vm;
           executeAfterProcessStarted(new Runnable() {
             public void run() {
+              LOG.debug("Schedule commit command.");
               myDebuggerManagerThread.schedule(new DebuggerCommand() {
                 protected void action() throws Exception {
                   myDebugVMEventsProcessor.commitVM(vm1);
@@ -205,12 +208,15 @@ public class VMCreator extends AbstractDebugSessionCreator {
               });
             }
           });
+        } else {
+          LOG.debug("VM is null.");
         }
       }
 
       protected void commandCancelled() {
         try {
           super.commandCancelled();
+          LOG.debug("Command cancelled.");
         }
         finally {
           semaphore.up();
@@ -228,13 +234,17 @@ public class VMCreator extends AbstractDebugSessionCreator {
       }
 
       if (myConnectionSettings.isServerMode()) {
+        LOG.debug("Virtual Machine creation: server mode.");
+
         ListeningConnector connector = (ListeningConnector) findConnector(
           myConnectionSettings.isUseSockets() ? SOCKET_LISTENING_CONNECTOR_NAME : SHMEM_LISTENING_CONNECTOR_NAME);
         fillConnectorArguments(connector);
 
+        LOG.debug("Start listening");
         connector.startListening(myArguments);
         myDebugVMEventsProcessor.getMulticaster().connectorIsReady();
         try {
+          LOG.debug("Start accepting.");
           return connector.accept(myArguments);
         } catch (IOException ex) {
           LOG.error(ex);
