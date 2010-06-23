@@ -9,6 +9,7 @@ import jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticContex
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticField;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaThisObject;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
@@ -22,40 +23,48 @@ import java.util.*;
 public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   private static Logger LOG = Logger.getLogger(JavaStackFrame.class);
 
-  private final StackFrame myStackFrame;
   private final String myClassFqName;
+  private final int myIndex;
+  private final ThreadReference myThreadReference;
 
-  public JavaStackFrame(StackFrame stackFrame) {
-    super(stackFrame);
-    myStackFrame = stackFrame;
-    myClassFqName = stackFrame.location().declaringType().name();
+  public JavaStackFrame(ThreadReference threadReference, int i) {
+    super(new Pair<ThreadReference, Integer>(threadReference, i));
+    myIndex = i;
+    myThreadReference = threadReference;
+    myClassFqName = getLocation().getUnitName();
   }
 
   @Override
   public JavaLocation getLocation() {
-    return new JavaLocation(myStackFrame.location());
+    return new JavaLocation(getStackFrame().location());
   }
 
   @Override
   public JavaThread getThread() {
-    return new JavaThread(myStackFrame.thread());
+    return new JavaThread(getStackFrame().thread());
   }
 
   public StackFrame getStackFrame() {
-    return myStackFrame;
+    try {
+      return myThreadReference.frame(myIndex);
+    } catch (Throwable t) {
+      LOG.error(t);
+      return null;
+    }
   }
 
   @Override
   public Map<IWatchable, IValue> getWatchableValues() {
     try {
-      Map<LocalVariable, Value> map = myStackFrame.getValues(myStackFrame.visibleVariables());
+      StackFrame stackFrame = getStackFrame();
+      Map<LocalVariable, Value> map = stackFrame.getValues(stackFrame.visibleVariables());
       Map<IWatchable, IValue> result = new HashMap<IWatchable, IValue>();
       for (LocalVariable variable : map.keySet()) {
-        result.put(new JavaLocalVariable(variable, myStackFrame, myClassFqName, myStackFrame.thread()), JavaValue.fromJDIValue(map.get(variable), myClassFqName, myStackFrame.thread()));
+        result.put(new JavaLocalVariable(variable, this, myClassFqName, stackFrame.thread()), JavaValue.fromJDIValue(map.get(variable), myClassFqName, stackFrame.thread()));
       }
-      ObjectReference thisObject = myStackFrame.thisObject();
+      ObjectReference thisObject = stackFrame.thisObject();
       if (thisObject != null) {
-        JavaThisObject object = new JavaThisObject(thisObject, myStackFrame, myClassFqName, myStackFrame.thread());
+        JavaThisObject object = new JavaThisObject(thisObject, this, myClassFqName, stackFrame.thread());
         result.put(object, object.getValue());
       }
       return result;
@@ -68,17 +77,18 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   @Override
   public List<IWatchable> getVisibleWatchables() {
     try {
+      StackFrame stackFrame = getStackFrame();
       List<IWatchable> result = new ArrayList<IWatchable>();
 
-      for (LocalVariable variable : myStackFrame.visibleVariables()) {
-        result.add(new JavaLocalVariable(variable, myStackFrame, myClassFqName, myStackFrame.thread()));
+      for (LocalVariable variable : stackFrame.visibleVariables()) {
+        result.add(new JavaLocalVariable(variable, this, myClassFqName, myThreadReference));
       }
 
-      ObjectReference thisObject = myStackFrame.thisObject();
+      ObjectReference thisObject = stackFrame.thisObject();
       if (thisObject != null) {
-        result.add(new JavaThisObject(thisObject, myStackFrame, myClassFqName, myStackFrame.thread()));
+        result.add(new JavaThisObject(thisObject, this, myClassFqName, myThreadReference));
       } else {
-        result.add(new JavaStaticContext(myStackFrame.location().declaringType(), myClassFqName, myStackFrame.thread()));
+        result.add(new JavaStaticContext(getStackFrame().location().declaringType(), myClassFqName, myThreadReference));
       }
 
       return result;
@@ -95,7 +105,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   public IValue getValue(IWatchable watchable) {
     if (watchable instanceof JavaLocalVariable) {
       JavaLocalVariable localVariable = (JavaLocalVariable) watchable;
-      return JavaValue.fromJDIValue(myStackFrame.getValue(localVariable.getLocalVariable()), myClassFqName, myStackFrame.thread());
+      return JavaValue.fromJDIValue(getStackFrame().getValue(localVariable.getLocalVariable()), myClassFqName, myThreadReference);
     }
     return null;
   }
@@ -108,7 +118,8 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
 
     JavaStackFrame that = (JavaStackFrame) o;
 
-    if (!myStackFrame.equals(that.myStackFrame)) return false;
+    if (myIndex != that.myIndex) return false;
+    if (!myThreadReference.equals(that.myThreadReference)) return false;
 
     return true;
   }
@@ -116,7 +127,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   @Override
   public int hashCode() {
     int result = super.hashCode();
-    result = 31 * result + myStackFrame.hashCode();
+    result = 31 * result + myThreadReference.hashCode() * 31 + myIndex;
     return result;
   }
 }

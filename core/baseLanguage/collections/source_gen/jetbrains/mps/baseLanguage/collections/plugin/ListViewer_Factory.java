@@ -10,6 +10,7 @@ import java.util.List;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.debug.runtime.java.programState.proxies.JavaPrimitiveValue;
 
 public class ListViewer_Factory extends ValueWrapperFactory {
   public ListViewer_Factory() {
@@ -37,7 +38,12 @@ public class ListViewer_Factory extends ValueWrapperFactory {
     public List<CustomJavaWatchable> getSubvaluesImpl() {
       JavaObjectValue ov = (JavaObjectValue) myWrappedValue;
       List<CustomJavaWatchable> result = ListSequence.fromList(new ArrayList<CustomJavaWatchable>());
-      ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_list(ov.getFieldValue("list"), "list"));
+      JavaObjectValue listValue = (JavaObjectValue) ov.getFieldValue("list");
+      int size = (Integer) ((JavaPrimitiveValue) listValue.executeMethod("size", "()I")).getJavaValue();
+      for (int index = 0; index < size; index++) {
+        JavaValue v = listValue.executeMethod("get", "(I)Ljava/lang/Object;", index);
+        ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_element(v, "element"));
+      }
       return result;
     }
   }

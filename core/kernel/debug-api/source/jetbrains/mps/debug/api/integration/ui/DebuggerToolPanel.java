@@ -128,8 +128,8 @@ public class DebuggerToolPanel extends JPanel {
         myUiState = myDebugSession.getUiState();
         myThreadsComboBoxModel.updateThreads();
         myStackFramesListModel.updateFrames();
-        myFramesList.setSelectedValue(myDebugSession.getUiState().getStackFrame(), true); // TODO not good
-        myVariablesTree.setUiState(myDebugSession.getUiState());
+        myFramesList.setSelectedValue(myUiState.getStackFrame(), true); // TODO not good
+        myVariablesTree.setUiState(myUiState);
         myVariablesTree.rebuildNow();
       }
     });

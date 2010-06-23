@@ -6,6 +6,7 @@ import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.api.info.StacktraceUtil;
 import jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory;
+import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
@@ -23,9 +24,9 @@ public class JavaThisObject extends JavaBreakpointWatchable implements IWatchabl
   private static Logger LOG = Logger.getLogger(JavaLocalVariable.class);
 
   private final ObjectReference myThisObject;
-  private final StackFrame myStackFrame;
+  private final JavaStackFrame myStackFrame;
 
-  public JavaThisObject(ObjectReference objectReference, StackFrame stackFrame, String classFqName, ThreadReference threadReference) {
+  public JavaThisObject(ObjectReference objectReference, JavaStackFrame stackFrame, String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myThisObject = objectReference;
     myStackFrame = stackFrame;
@@ -53,7 +54,7 @@ public class JavaThisObject extends JavaBreakpointWatchable implements IWatchabl
   @Override
   public SNode getNode() {
     try {
-      Location location = myStackFrame.location();
+      Location location = myStackFrame.getStackFrame().location();
       SNode snode = StacktraceUtil.getUnitNode(location.declaringType().name(),
         location.sourceName(), location.lineNumber());
       return snode;

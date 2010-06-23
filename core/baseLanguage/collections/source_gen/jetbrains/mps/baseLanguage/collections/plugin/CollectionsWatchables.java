@@ -10,10 +10,10 @@ public class CollectionsWatchables {
   public CollectionsWatchables() {
   }
 
-  public static class MyWatchable_list extends CustomJavaWatchable {
-    private static WatchablesCategory ourCategory = new WatchablesCategory("list");
+  public static class MyWatchable_element extends CustomJavaWatchable {
+    private static WatchablesCategory ourCategory = new WatchablesCategory("element");
 
-    public MyWatchable_list(JavaValue value, String name) {
+    public MyWatchable_element(JavaValue value, String name) {
       super(value, name);
     }
 

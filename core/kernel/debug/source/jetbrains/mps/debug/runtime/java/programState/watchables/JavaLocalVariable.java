@@ -5,6 +5,7 @@ import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.api.info.StacktraceUtil;
+import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
 import jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory;
 import jetbrains.mps.logging.Logger;
@@ -23,14 +24,14 @@ public class JavaLocalVariable extends JavaBreakpointWatchable implements IWatch
   private static Logger LOG = Logger.getLogger(JavaLocalVariable.class);
 
   private final LocalVariable myLocalVariable;
-  private final StackFrame myStackFrame;
+  private final JavaStackFrame myStackFrame;
   private JavaValue myCachedValue;
 
-  public JavaLocalVariable(LocalVariable variable, StackFrame stackFrame, String classFqName, ThreadReference threadReference) {
+  public JavaLocalVariable(LocalVariable variable, JavaStackFrame stackFrame, String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myLocalVariable = variable;
     myStackFrame = stackFrame;
-    myCachedValue = JavaValue.fromJDIValue(myStackFrame.getValue(myLocalVariable), classFqName, threadReference);
+    myCachedValue = JavaValue.fromJDIValue(myStackFrame.getStackFrame().getValue(myLocalVariable), classFqName, threadReference);
   }
 
   public LocalVariable getLocalVariable() {
@@ -55,7 +56,7 @@ public class JavaLocalVariable extends JavaBreakpointWatchable implements IWatch
   @Override
   public SNode getNode() {
     try {
-      Location location = myStackFrame.location();
+      Location location = myStackFrame.getStackFrame().location();
       SNode snode = StacktraceUtil.getVar(location.declaringType().name(),
         location.sourceName(), location.lineNumber(), myLocalVariable.name());
       return snode;
