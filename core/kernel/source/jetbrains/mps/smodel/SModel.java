@@ -1002,7 +1002,8 @@ public class SModel implements Iterable<SNode> {
     ModelChange.assertLegalChange(this);
     
     GlobalScope scope = GlobalScope.getInstance();
-    IModule module = this.getModelDescriptor().getModule();
+    SModelDescriptor modelDescriptor = this.getModelDescriptor();
+    IModule module = modelDescriptor == null ? null : modelDescriptor.getModule();
     Set<ModuleReference> usedLanguages = getLanguageRefs(scope);
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
     for (SModelDescriptor sm : allImportedModels(scope)) {
@@ -1018,8 +1019,10 @@ public class SModel implements Iterable<SNode> {
       ModuleReference ref = lang.getModuleReference();
       if (!usedLanguages.contains(ref)) {
 
-        if (respectModulesScopes && !module.getAllUsedLanguages().contains(lang)) {
-            module.addUsedLanguage(ref);
+        if (module != null) {
+          if (respectModulesScopes && !module.getAllUsedLanguages().contains(lang)) {
+              module.addUsedLanguage(ref);
+          }
         }
 
         usedLanguages.add(ref);
@@ -1031,7 +1034,7 @@ public class SModel implements Iterable<SNode> {
         if (reference.isExternal()) {
           SModelReference targetModelReference = reference.getTargetSModelReference();
           if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
-            if (respectModulesScopes) {
+            if (respectModulesScopes && module != null) {
               IModule targetModule = SModelRepository.getInstance().getModelDescriptor(targetModelReference).getModule();
               if (!module.getAllDependOnModules().contains(targetModule)) {
                 module.addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
