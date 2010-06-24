@@ -185,7 +185,7 @@ public abstract class AbstractModule implements IModule {
       }
     }
     if (getModuleDescriptor() != null) {
-      if (getModuleDescriptor().getSourcePaths() != null) {
+      if (getModuleDescriptor().getSourcePaths() != null && !isPackaged()) {
         for (String sourcePath : getModuleDescriptor().getSourcePaths()) {
           if (!new File(sourcePath).exists()) {
             errors.add("Can't find source path: " + sourcePath);
