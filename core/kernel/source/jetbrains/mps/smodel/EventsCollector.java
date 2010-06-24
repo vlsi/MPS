@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -85,14 +86,14 @@ public class EventsCollector {
     );
   }
 
-  public void add(SModelDescriptor sm) {
+  public void add(@NotNull SModelDescriptor sm) {
     checkDisposed();
 
     myModelDescriptors.add(sm);
     sm.addModelListener(myListener);
   }
 
-  public void remove(SModelDescriptor sm) {
+  public void remove(@NotNull SModelDescriptor sm) {
     checkDisposed();
 
     myModelDescriptors.remove(sm);
