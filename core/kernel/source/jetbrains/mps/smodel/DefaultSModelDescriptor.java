@@ -359,6 +359,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       return;
     }
 
+    // Paranoid check to avoid saving model during update (hack for MPS-6772)
+    if (needsReloading()) {
+      return;
+    }
     SModelRepository.getInstance().markUnchanged(mySModel);
     myModelRootManager.saveModel(this);
 
