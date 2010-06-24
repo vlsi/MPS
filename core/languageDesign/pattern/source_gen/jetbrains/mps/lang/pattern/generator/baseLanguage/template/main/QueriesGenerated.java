@@ -352,11 +352,7 @@ public class QueriesGenerated {
     if (SNodeOperations.getParent(_context.getNode()) != SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PatternExpression", false, false)) {
       return false;
     }
-    SNode attribute = _context.getNode().getAttribute();
-    if (attribute == null) {
-      attribute = SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), true);
-    }
-    return attribute != null;
+    return SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), true) != null;
   }
 
   public static boolean ifMacro_Condition_1190931376999(final IOperationContext operationContext, final IfMacroContext _context) {
