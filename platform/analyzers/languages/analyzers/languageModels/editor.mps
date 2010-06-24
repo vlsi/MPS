@@ -262,6 +262,9 @@
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4217760266503650653">
         <link role="relationDeclaration:32" targetNodeId="1.4217760266503650651:0" />
       </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4072414341992381727">
+        <link role="relationDeclaration:32" targetNodeId="1.4072414341992381726:0" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4217760266503638750">
@@ -273,6 +276,9 @@
           <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="4217760266503638762">
             <property name="readOnly:32" value="true" />
             <link role="relationDeclaration:32" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+            <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="4072414341992398127">
+              <property name="flag:32" value="true" />
+            </node>
           </node>
         </node>
       </node>
@@ -324,16 +330,25 @@
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="178770917832494476">
-        <property name="text:32" value="analyzer" />
+        <property name="text:32" value="analyzerRunner" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="4072414341992351810">
+          <property name="flag:32" value="true" />
+        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="178770917832625315">
         <property name="text:32" value="(" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="4072414341992351811">
+          <property name="flag:32" value="true" />
+        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="178770917832625319">
         <link role="relationDeclaration:32" targetNodeId="1.178770917832625312:0" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="178770917832625318">
         <property name="text:32" value=")" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="4072414341992351812">
+          <property name="flag:32" value="true" />
+        </node>
       </node>
     </node>
   </node>
@@ -351,6 +366,13 @@
         <property name="text:32" value=")" />
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="7857205188090947125" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4072414341992373216">
+    <property name="package:32" value="Positions" />
+    <link role="conceptDeclaration:32" targetNodeId="1.4072414341992373211:0" resolveInfo="InsertPosition" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="4072414341992389927">
+      <link role="relationDeclaration:32" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
 </model>

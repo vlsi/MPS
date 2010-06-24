@@ -32,7 +32,7 @@
       <link role="rule:0" targetNodeId="1936451686726656874" resolveInfo="RuleNotEqualsNull" />
     </node>
     <node role="ruleReference:0" type="jetbrains.mps.analyzers.structure.RuleReference:0" id="1936451686726661224">
-      <link role="rule:0" targetNodeId="1665527126811217309" resolveInfo="RuleNullNotEquals" />
+      <link role="rule:0" targetNodeId="4072414341992373193" resolveInfo="RuleNullNotEquals" />
     </node>
     <node role="instruction:0" type="jetbrains.mps.analyzers.structure.Instruction:0" id="1665527126811217322">
       <property name="name:0" value="notNull" />
@@ -147,35 +147,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.analyzers.structure.Rule:0" id="1665527126811217309">
-    <property name="name:0" value="RuleNullNotEquals" />
-    <node role="condition:0" type="jetbrains.mps.analyzers.structure.PatternCondition:0" id="1665527126811217310">
-      <node role="pattern:0" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="1665527126811217311">
-        <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1665527126811217312">
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="1665527126811217313">
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1665527126811217314">
-              <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="1665527126811217315">
-                <property name="varName:0" value="p" />
-              </node>
-            </node>
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1665527126811217316" />
-          </node>
-          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1665527126811217317">
-            <node role="actionAsPattern$attribute:3" type="jetbrains.mps.lang.pattern.structure.ActionAsPattern:0" id="1665527126811217318">
-              <node role="action:0" type="jetbrains.mps.analyzers.structure.EmitInstruction:0" id="1665527126811217319">
-                <node role="instructionRef:0" type="jetbrains.mps.analyzers.structure.InstructionReference:0" id="1665527126811217320">
-                  <link role="instruction:0" targetNodeId="1665527126811217322" resolveInfo="notNull" />
-                  <node role="argument:0" type="jetbrains.mps.lang.pattern.structure.PatternVariableReference:0" id="1665527126811217321">
-                    <link role="variable:0" targetNodeId="1665527126811217315" resolveInfo="#p" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.baseLanguage.structure.EnumClass:3" id="1665527126811217334">
     <property name="name:3" value="NullableState" />
     <node role="enumConstant:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration:3" id="1665527126811217340">
@@ -211,15 +182,72 @@
             </node>
           </node>
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1936451686726656880">
-            <node role="actionAsPattern$attribute:3" type="jetbrains.mps.lang.pattern.structure.ActionAsPattern:0" id="1936451686726659843">
-              <node role="action:0" type="jetbrains.mps.analyzers.structure.EmitInstruction:0" id="1936451686726659845">
-                <node role="instructionRef:0" type="jetbrains.mps.analyzers.structure.InstructionReference:0" id="1936451686726659847">
+            <node role="asPattern$attribute:3" type="jetbrains.mps.lang.pattern.structure.ActionAsPattern:0" id="6672886161226171798">
+              <property name="varName:0" value="ifTrue" />
+              <node role="action:0" type="jetbrains.mps.analyzers.structure.EmitInstruction:0" id="6672886161226174756">
+                <node role="instructionRef:0" type="jetbrains.mps.analyzers.structure.InstructionReference:0" id="6672886161226174758">
                   <link role="instruction:0" targetNodeId="1665527126811217322" resolveInfo="notNull" />
-                  <node role="argument:0" type="jetbrains.mps.lang.pattern.structure.PatternVariableReference:0" id="1936451686726659848">
+                  <node role="argument:0" type="jetbrains.mps.lang.pattern.structure.PatternVariableReference:0" id="6672886161226174759">
                     <link role="variable:0" targetNodeId="1936451686726656886" resolveInfo="#p" />
                   </node>
                 </node>
+                <node role="position:0" type="jetbrains.mps.analyzers.structure.InsertBeforePosition:0" id="4072414341992398128" />
               </node>
+            </node>
+          </node>
+          <node role="asPattern$attribute:3" type="jetbrains.mps.lang.pattern.structure.ActionAsPattern:0" id="4072414341992398129">
+            <property name="varName:0" value="ifStatement" />
+            <node role="action:0" type="jetbrains.mps.analyzers.structure.EmitInstruction:0" id="4072414341992398131">
+              <node role="instructionRef:0" type="jetbrains.mps.analyzers.structure.InstructionReference:0" id="4072414341992398135">
+                <link role="instruction:0" targetNodeId="1665527126811217326" resolveInfo="nullable" />
+                <node role="argument:0" type="jetbrains.mps.lang.pattern.structure.PatternVariableReference:0" id="4072414341992398136">
+                  <link role="variable:0" targetNodeId="1936451686726656886" resolveInfo="#p" />
+                </node>
+              </node>
+              <node role="position:0" type="jetbrains.mps.analyzers.structure.InsertAfterPosition:0" id="4072414341992398134" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.analyzers.structure.Rule:0" id="4072414341992373193">
+    <property name="name:0" value="RuleNullNotEquals" />
+    <node role="condition:0" type="jetbrains.mps.analyzers.structure.PatternCondition:0" id="4072414341992373195">
+      <node role="pattern:0" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="4072414341992373196">
+        <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4072414341992373197">
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="4072414341992373201">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="4072414341992373202">
+              <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="4072414341992373204">
+                <property name="varName:0" value="p" />
+              </node>
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="4072414341992373200" />
+          </node>
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4072414341992373199">
+            <node role="asPattern$attribute:3" type="jetbrains.mps.lang.pattern.structure.ActionAsPattern:0" id="4072414341992373205">
+              <property name="varName:0" value="ifTrue" />
+              <node role="action:0" type="jetbrains.mps.analyzers.structure.EmitInstruction:0" id="4072414341992373207">
+                <node role="instructionRef:0" type="jetbrains.mps.analyzers.structure.InstructionReference:0" id="4072414341992373209">
+                  <link role="instruction:0" targetNodeId="1665527126811217322" resolveInfo="notNull" />
+                  <node role="argument:0" type="jetbrains.mps.lang.pattern.structure.PatternVariableReference:0" id="4072414341992373210">
+                    <link role="variable:0" targetNodeId="4072414341992373204" resolveInfo="#p" />
+                  </node>
+                </node>
+                <node role="position:0" type="jetbrains.mps.analyzers.structure.InsertBeforePosition:0" id="4072414341992398126" />
+              </node>
+            </node>
+          </node>
+          <node role="asPattern$attribute:3" type="jetbrains.mps.lang.pattern.structure.ActionAsPattern:0" id="4072414341992417241">
+            <property name="varName:0" value="node" />
+            <node role="action:0" type="jetbrains.mps.analyzers.structure.EmitInstruction:0" id="4072414341992417243">
+              <node role="instructionRef:0" type="jetbrains.mps.analyzers.structure.InstructionReference:0" id="4072414341992417246">
+                <link role="instruction:0" targetNodeId="1665527126811217326" resolveInfo="nullable" />
+                <node role="argument:0" type="jetbrains.mps.lang.pattern.structure.PatternVariableReference:0" id="4072414341992417247">
+                  <link role="variable:0" targetNodeId="4072414341992373204" resolveInfo="#p" />
+                </node>
+              </node>
+              <node role="position:0" type="jetbrains.mps.analyzers.structure.InsertAfterPosition:0" id="4072414341992417248" />
             </node>
           </node>
         </node>

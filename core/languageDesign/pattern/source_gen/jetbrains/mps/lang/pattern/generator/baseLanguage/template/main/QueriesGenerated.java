@@ -154,6 +154,18 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode()), "matchMethodParameter");
   }
 
+  public static Object referenceMacro_GetReferent_4072414341992405776(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeToMatch"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+  }
+
+  public static Object referenceMacro_GetReferent_4072414341992405755(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode attribute = _context.getNode().getAttribute();
+    if (attribute == null) {
+      attribute = SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), true);
+    }
+    return _context.getOutputNodeByInputNodeAndMappingLabel(attribute, "patternVarField");
+  }
+
   public static Object referenceMacro_GetReferent_3527005385733066951(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeToMatch"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
   }
@@ -334,6 +346,17 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1190931376975(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.getParent(_context.getNode()) == SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PatternExpression", false, false);
+  }
+
+  public static boolean ifMacro_Condition_4072414341992405436(final IOperationContext operationContext, final IfMacroContext _context) {
+    if (SNodeOperations.getParent(_context.getNode()) != SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PatternExpression", false, false)) {
+      return false;
+    }
+    SNode attribute = _context.getNode().getAttribute();
+    if (attribute == null) {
+      attribute = SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), true);
+    }
+    return attribute != null;
   }
 
   public static boolean ifMacro_Condition_1190931376999(final IOperationContext operationContext, final IfMacroContext _context) {

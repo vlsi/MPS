@@ -29,6 +29,10 @@ public class JumpInstruction extends Instruction {
   public JumpInstruction() {
   }
 
+  public int getJumpTo() {
+    return myJumpTo;
+  }
+
   public void setJumpTo(int jumpTo) {
     myJumpTo = jumpTo;
   }

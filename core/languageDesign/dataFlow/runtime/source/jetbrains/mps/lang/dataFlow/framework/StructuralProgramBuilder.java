@@ -98,7 +98,10 @@ public abstract class StructuralProgramBuilder<N> {
     }
   }
 
-
+  public void insertInstruction(Instruction instruction, int position) {
+    updateLabelsOnInsert(position);
+    myProgram.insert(instruction, position, false);
+  }
 
   private NopInstruction emitNopCommon() {
     NopInstruction instruction = new NopInstruction();
@@ -107,8 +110,7 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   public void emitNop(final int insertPosition) {
-    updateLabelsOnInsert(insertPosition);
-    myProgram.insert(emitNopCommon(), insertPosition);
+    insertInstruction(emitNopCommon(), insertPosition);
   }
 
   public void emitNop() {
@@ -166,8 +168,7 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   public void emitIfJump(final Position position, int insertPosition) {
-    updateLabelsOnInsert(insertPosition);
-    myProgram.insert(emitIfJumpCommon(position), insertPosition);
+    insertInstruction(emitIfJumpCommon(position),insertPosition);
   }
 
   public void emitTry() {
@@ -200,7 +201,7 @@ public abstract class StructuralProgramBuilder<N> {
     if (position == null) {
       myProgram.add(instruction);
     } else {
-      myProgram.insert(instruction, position.getPosition());
+      insertInstruction(instruction, position.getPosition());
     }
   }
 

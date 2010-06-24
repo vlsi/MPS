@@ -24,7 +24,8 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
 
   public static class Pattern_yrsk32_a0a extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_p;
-    /*package*/ SNode PatternVar_null;
+    /*package*/ SNode PatternVar_ifTrue;
+    /*package*/ SNode PatternVar_ifStatement;
 
     public Pattern_yrsk32_a0a() {
     }
@@ -33,6 +34,7 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
       {
         SNode nodeToMatch_yrsk32_a0a;
         nodeToMatch_yrsk32_a0a = nodeToMatch;
+        PatternVar_ifStatement = nodeToMatch_yrsk32_a0a;
         if (!("jetbrains.mps.baseLanguage.structure.IfStatement".equals(nodeToMatch_yrsk32_a0a.getConceptFqName()))) {
           return false;
         }
@@ -42,6 +44,7 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
             return false;
           }
           {
+            this.PatternVar_ifTrue = null;
             SNode childVar_yrsk32_a0a0 = nodeToMatch_yrsk32_a0a.getChildren(childRole_yrsk32_).get(0);
             {
               SNode nodeToMatch_yrsk32_a0a0;
@@ -50,6 +53,7 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
                 return false;
               }
             }
+            this.PatternVar_ifTrue = childVar_yrsk32_a0a0;
           }
         }
         {
@@ -106,7 +110,8 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
-        this.PatternVar_null = (SNode) pattern.getFieldValue("PatternVar_null");
+        this.PatternVar_ifTrue = (SNode) pattern.getFieldValue("PatternVar_ifTrue");
+        this.PatternVar_ifStatement = (SNode) pattern.getFieldValue("PatternVar_ifStatement");
       }
     }
 
@@ -114,8 +119,11 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
       if ("PatternVar_p".equals(fieldName)) {
         return this.PatternVar_p;
       }
-      if ("PatternVar_null".equals(fieldName)) {
-        return this.PatternVar_null;
+      if ("PatternVar_ifTrue".equals(fieldName)) {
+        return this.PatternVar_ifTrue;
+      }
+      if ("PatternVar_ifStatement".equals(fieldName)) {
+        return this.PatternVar_ifStatement;
       }
       return null;
     }
@@ -123,13 +131,14 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
     public void performActions(Object o) {
 
       {
-        int position = ((Program) (o)).getStart(null);
-        System.out.println("");
-        System.out.println("jetbrains.mps.baseLanguage.structure.StatementList");
-        System.out.println("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-        System.out.println("jetbrains.mps.baseLanguage.structure.StatementList");
-        System.out.println("EmitInstruction");
-        ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position);
+        int position = 0;
+        position = ((Program) (o)).getStart(getFieldValue("PatternVar_ifTrue"));
+        ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+      }
+      {
+        int position = 0;
+        position = ((Program) (o)).getEnd(getFieldValue("PatternVar_ifStatement"));
+        ((Program) (o)).insert(new nullableInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
       }
     }
   }

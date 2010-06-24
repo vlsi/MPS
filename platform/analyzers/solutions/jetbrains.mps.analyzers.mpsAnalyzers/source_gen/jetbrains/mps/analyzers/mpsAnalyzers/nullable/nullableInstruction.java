@@ -7,13 +7,22 @@ import jetbrains.mps.smodel.SNode;
 
 public class nullableInstruction extends Instruction {
   private SNode mynode;
+  private String myPresentation;
 
   public nullableInstruction(SNode node) {
+    StringBuilder sb = new StringBuilder();
+    sb.append("nullable");
     mynode = node;
+    sb.append(" " + node);
+    myPresentation = sb.toString();
   }
 
   @Override
   public String commandPresentation() {
-    return "nullable";
+    return myPresentation;
+  }
+
+  public SNode getnode() {
+    return mynode;
   }
 }

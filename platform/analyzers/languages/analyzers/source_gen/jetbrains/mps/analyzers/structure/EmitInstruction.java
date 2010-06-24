@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class EmitInstruction extends ActionStatement {
   public static final String concept = "jetbrains.mps.analyzers.structure.EmitInstruction";
   public static final String INSTRUCTION_REF = "instructionRef";
+  public static final String POSITION = "position";
 
   public EmitInstruction(SNode node) {
     super(node);
@@ -22,6 +23,14 @@ public class EmitInstruction extends ActionStatement {
 
   public void setInstructionRef(InstructionReference node) {
     super.setChild(EmitInstruction.INSTRUCTION_REF, node);
+  }
+
+  public InsertPosition getPosition() {
+    return (InsertPosition) this.getChild(InsertPosition.class, EmitInstruction.POSITION);
+  }
+
+  public void setPosition(InsertPosition node) {
+    super.setChild(EmitInstruction.POSITION, node);
   }
 
   public static EmitInstruction newInstance(SModel sm, boolean init) {

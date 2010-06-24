@@ -24,7 +24,8 @@ public class RuleNullNotEquals extends DataFlowConstructor {
 
   public static class Pattern_o8jvxz_a0a extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_p;
-    /*package*/ SNode PatternVar_null;
+    /*package*/ SNode PatternVar_ifTrue;
+    /*package*/ SNode PatternVar_node;
 
     public Pattern_o8jvxz_a0a() {
     }
@@ -33,6 +34,7 @@ public class RuleNullNotEquals extends DataFlowConstructor {
       {
         SNode nodeToMatch_o8jvxz_a0a;
         nodeToMatch_o8jvxz_a0a = nodeToMatch;
+        PatternVar_node = nodeToMatch_o8jvxz_a0a;
         if (!("jetbrains.mps.baseLanguage.structure.IfStatement".equals(nodeToMatch_o8jvxz_a0a.getConceptFqName()))) {
           return false;
         }
@@ -42,6 +44,7 @@ public class RuleNullNotEquals extends DataFlowConstructor {
             return false;
           }
           {
+            this.PatternVar_ifTrue = null;
             SNode childVar_o8jvxz_a0a0 = nodeToMatch_o8jvxz_a0a.getChildren(childRole_o8jvxz_).get(0);
             {
               SNode nodeToMatch_o8jvxz_a0a0;
@@ -50,6 +53,7 @@ public class RuleNullNotEquals extends DataFlowConstructor {
                 return false;
               }
             }
+            this.PatternVar_ifTrue = childVar_o8jvxz_a0a0;
           }
         }
         {
@@ -62,7 +66,7 @@ public class RuleNullNotEquals extends DataFlowConstructor {
             {
               SNode nodeToMatch_o8jvxz_a0a0_0;
               nodeToMatch_o8jvxz_a0a0_0 = childVar_o8jvxz_a0a0_0;
-              if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_o8jvxz_a0a0_0.getConceptFqName()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.EqualsExpression".equals(nodeToMatch_o8jvxz_a0a0_0.getConceptFqName()))) {
                 return false;
               }
               {
@@ -106,7 +110,8 @@ public class RuleNullNotEquals extends DataFlowConstructor {
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
-        this.PatternVar_null = (SNode) pattern.getFieldValue("PatternVar_null");
+        this.PatternVar_ifTrue = (SNode) pattern.getFieldValue("PatternVar_ifTrue");
+        this.PatternVar_node = (SNode) pattern.getFieldValue("PatternVar_node");
       }
     }
 
@@ -114,8 +119,11 @@ public class RuleNullNotEquals extends DataFlowConstructor {
       if ("PatternVar_p".equals(fieldName)) {
         return this.PatternVar_p;
       }
-      if ("PatternVar_null".equals(fieldName)) {
-        return this.PatternVar_null;
+      if ("PatternVar_ifTrue".equals(fieldName)) {
+        return this.PatternVar_ifTrue;
+      }
+      if ("PatternVar_node".equals(fieldName)) {
+        return this.PatternVar_node;
       }
       return null;
     }
@@ -123,13 +131,14 @@ public class RuleNullNotEquals extends DataFlowConstructor {
     public void performActions(Object o) {
 
       {
-        int position = ((Program) (o)).getStart(null);
-        System.out.println("");
-        System.out.println("jetbrains.mps.baseLanguage.structure.StatementList");
-        System.out.println("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-        System.out.println("jetbrains.mps.baseLanguage.structure.StatementList");
-        System.out.println("EmitInstruction");
-        ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position);
+        int position = 0;
+        position = ((Program) (o)).getStart(getFieldValue("PatternVar_ifTrue"));
+        ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+      }
+      {
+        int position = 0;
+        position = ((Program) (o)).getEnd(getFieldValue("PatternVar_node"));
+        ((Program) (o)).insert(new nullableInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
       }
     }
   }

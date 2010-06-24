@@ -95,7 +95,7 @@ public class Program {
     myInstructions.add(instruction);
   }
 
-  public void insert(Instruction instruction, int position) {
+  public void insert(Instruction instruction, int position, boolean update) {
     instruction.setProgram(this);
     instruction.setSource(myInstructions.get(position-1).getSource());
     instruction.setIndex(position);
@@ -113,6 +113,9 @@ public class Program {
         }
     }
     myInstructions.add(position, instruction);
+    if (update) {
+      updateJumpsOnInsert(position);
+    }
   }
 
   void start(Object o) {
@@ -384,5 +387,23 @@ public class Program {
      Instruction i = null;
      myInstructions.indexOf(i);
       return myStarts.containsKey(o);
+   }
+
+   public void updateJumpsOnInsert(int position) {
+     for (Instruction i : myInstructions) {
+       if (i instanceof IfJumpInstruction) {
+         IfJumpInstruction ifJump = ((IfJumpInstruction)i);
+         int jumpTo = ifJump.getJumpTo();
+         if (jumpTo >= position) {
+           ifJump.setJumpTo(jumpTo + 1);
+         }
+       } else if (i instanceof JumpInstruction) {
+         JumpInstruction jump = ((JumpInstruction)i);
+         int jumpTo = jump.getJumpTo();
+         if (jumpTo >= position) {
+           jump.setJumpTo(jumpTo + 1);
+         }
+       }
+     }
    }
 }

@@ -236,15 +236,34 @@
     <property name="package:3" value="Analyzer" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="178770917832494465">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="178770917832644953">
-        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="178770917832644957">
-          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="178770917832644958">
-            <node role="quotedNode:0" type="jetbrains.mps.analyzers.structure.AnalyzerRunnerType:0" id="178770917832644960" />
-          </node>
-        </node>
         <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="178770917832644956">
           <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="178770917832644950">
             <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="178770917832644952">
               <link role="applicableNode:3" targetNodeId="178770917832494466" resolveInfo="analyzerRunnerCreator" />
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4072414341992344846">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4072414341992344847">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4072414341992344849">
+              <link role="classifier:3" targetNodeId="2.~AnalyzerRunner" resolveInfo="AnalyzerRunner" />
+              <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="4072414341992344850">
+                <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="4072414341992344851">
+                  <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4072414341992346223">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4072414341992344854">
+                      <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4072414341992344853">
+                        <link role="applicableNode:3" targetNodeId="178770917832494466" resolveInfo="analyzerRunnerCreator" />
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4072414341992346222">
+                        <link role="link:16" targetNodeId="1.95073643532950039:0" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4072414341992346227">
+                      <link role="link:16" targetNodeId="1.9177062368042359739:0" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
