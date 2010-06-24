@@ -95,9 +95,9 @@ public class GenericRefactoringAction extends BaseAction {
   }
 
   @NotNull
-  private <T> List<T> getEntities(AnActionEvent e, boolean oneEntity, DataKey<T> singleKey, DataKey<List<T>> listKey) {
-    T single     = e.getData(singleKey);
-    List<T> list = e.getData(listKey);
+  private <T> List<T> getEntities(AnActionEvent e, boolean oneEntity, DataKey<T> keySingle, DataKey<List<T>> keyList) {
+    T single     = e.getData(keySingle);
+    List<T> list = e.getData(keyList);
 
     List<T> res = new ArrayList<T>(list==null ? 1 : list.size()+1);
 
