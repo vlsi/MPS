@@ -108,26 +108,27 @@ public class FileGenerationManager implements ApplicationComponent {
     touchOutputDir(status, outputDir);
   }
 
-  private void processGeneratedFiles(GenerationStatus status, File outputRoot, final IOperationContext context,
+  private void processGeneratedFiles(GenerationStatus status, final File outputRoot, final IOperationContext context,
                                      Set<File> generatedFiles, boolean cleanUp) {
 
     MPSVCSManager manager = context.getProject().getComponent(MPSVCSManager.class);
     manager.addFilesToVcs(new ArrayList<File>(generatedFiles), false, false);
 
-    refreshGeneratedFiles(generatedFiles);
-
-    final List<VirtualFile> generatedVirtualFiles = new ArrayList<VirtualFile>();
-    for (File generatedFile : generatedFiles) {
-      generatedVirtualFiles.add(LocalFileSystem.getInstance().findFileByIoFile(generatedFile));
-    }
-    RefreshSession session = RefreshQueue.getInstance().createSession(true, true, new Runnable() {
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       @Override
       public void run() {
-        VcsDirtyScopeManager.getInstance(context.getProject()).filesDirty(generatedVirtualFiles, null);
+        final VirtualFile outputRootVirtualFile = VFileSystem.refreshAndGetFile(outputRoot);
+
+        RefreshSession session = RefreshQueue.getInstance().createSession(true, true, new Runnable() {
+          @Override
+          public void run() {
+            VcsDirtyScopeManager.getInstance(context.getProject()).filesDirty(null, Arrays.asList(outputRootVirtualFile));
+          }
+        });
+        session.addAllFiles(Arrays.asList(outputRootVirtualFile));
+        session.launch();
       }
     });
-    session.addAllFiles(generatedVirtualFiles);
-    session.launch();
 
     if (cleanUp) {
       cleanUp(status.getInputModel(), context, outputRoot, generatedFiles);
@@ -167,20 +168,6 @@ public class FileGenerationManager implements ApplicationComponent {
     }
     MPSVCSManager manager = context.getComponent(MPSVCSManager.class);
     manager.deleteFromDiskAndRemoveFromVcs(filesToDelete, false);
-  }
-
-  private void refreshGeneratedFiles(final Set<File> generatedFiles) {
-    if (IdeMain.getTestMode().equals(IdeMain.TestMode.NO_TEST)) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          for (File f : generatedFiles) {
-            VirtualFile file = VFileSystem.refreshAndGetFile(f);
-            if (file == null) continue;
-            file.refresh(true, true);
-          }
-        }
-      }, ModalityState.NON_MODAL);
-    }
   }
 
   private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents) {
