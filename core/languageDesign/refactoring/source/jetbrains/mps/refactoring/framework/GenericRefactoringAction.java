@@ -17,6 +17,7 @@ package jetbrains.mps.refactoring.framework;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 
+import com.intellij.openapi.actionSystem.DataKey;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget.TargetType;
@@ -52,13 +53,13 @@ public class GenericRefactoringAction extends BaseAction {
     context.setCurrentOperationContext(e.getData(MPSDataKeys.OPERATION_CONTEXT));
 
     context.setSelectedNode(e.getData(MPSDataKeys.NODE));
-    context.setSelectedNodes(toList(getNodes(e, isOneTarget)));
+    context.setSelectedNodes(getNodes(e, isOneTarget));
 
     context.setSelectedModel(e.getData(MPSDataKeys.CONTEXT_MODEL));
-    context.setSelectedModels(toList(getModels(e, isOneTarget)));
+    context.setSelectedModels(getModels(e, isOneTarget));
 
     context.setSelectedModule(e.getData(MPSDataKeys.MODULE));
-    context.setSelectedModules(toList(getModules(e, isOneTarget)));
+    context.setSelectedModules(getModules(e, isOneTarget));
 
     //noinspection ConstantConditions
     context.setSelectedProject(e.getData(MPSDataKeys.PROJECT));
@@ -93,71 +94,52 @@ public class GenericRefactoringAction extends BaseAction {
     }
   }
 
-  private <T> List<T> toList(Collection<T> c) {
-    return new ArrayList<T>(c);
-  }
+  @NotNull
+  private <T> List<T> getEntities(AnActionEvent e, boolean oneEntity, DataKey<T> singleKey, DataKey<List<T>> listKey) {
+    T single     = e.getData(singleKey);
+    List<T> list = e.getData(listKey);
 
-  private <T> Set<T> getEntities(boolean oneEntity, T single, List<T> list) {
-    Set<T> result = new HashSet<T>();
+    List<T> res = new ArrayList<T>(list==null ? 1 : list.size()+1);
 
-    if (single != null) {
-      result.add(single);
+    if (list != null) {
+      res.addAll(list);
+    }
+    if (single != null && !res.contains(single)) {
+      res.add(single);
+    }
+    if (oneEntity && res.size() > 1) {
+      res.clear();
     }
 
-    if (oneEntity) {
-      if (list != null && !list.isEmpty() && !(list.size() == 1 && list.contains(single))) {
-        result.clear();
-      }
-    } else {
-      if (list != null) {
-        result.addAll(list);
-      }
-    }
-
-    return result;
+    return res;
   }
 
-  private Set<SNode> getNodes(AnActionEvent e, boolean oneEntity) {
-    SNode node = e.getData(MPSDataKeys.NODE);
-    List<SNode> nodes = e.getData(MPSDataKeys.NODES);
-    return getEntities(oneEntity, node, nodes);
+  @NotNull
+  private List<SNode> getNodes(AnActionEvent e, boolean oneEntity) {
+    return getEntities(e, oneEntity, MPSDataKeys.NODE, MPSDataKeys.NODES);
   }
-
-  private Set<SModelDescriptor> getModels(AnActionEvent e, boolean oneEntity) {
-    SModelDescriptor node = e.getData(MPSDataKeys.CONTEXT_MODEL);
-    List<SModelDescriptor> nodes = e.getData(MPSDataKeys.MODELS);
-    return getEntities(oneEntity, node, nodes);
+  @NotNull
+  private List<SModelDescriptor> getModels(AnActionEvent e, boolean oneEntity) {
+    return getEntities(e, oneEntity, MPSDataKeys.CONTEXT_MODEL, MPSDataKeys.MODELS);
   }
-
-  private Set<IModule> getModules(AnActionEvent e, boolean oneEntity) {
-    IModule node = e.getData(MPSDataKeys.MODULE);
-    List<IModule> nodes = e.getData(MPSDataKeys.MODULES);
-    return getEntities(oneEntity, node, nodes);
+  @NotNull
+  private List<IModule> getModules(AnActionEvent e, boolean oneEntity) {
+    return getEntities(e, oneEntity, MPSDataKeys.MODULE, MPSDataKeys.MODULES);
   }
 
   protected void doUpdate(AnActionEvent e) {
     IRefactoringTarget refTarget = myRefactoring.getRefactoringTarget();
     boolean oneEntity = !refTarget.allowMultipleTargets();
-
-    Set entities;
-    if (refTarget.getTarget() == TargetType.NODE) {
-      entities = getNodes(e, oneEntity);
-    } else if (refTarget.getTarget() == TargetType.MODEL) {
-      entities = getModels(e, oneEntity);
-    } else if (refTarget.getTarget() == TargetType.MODULE) {
-      entities = getModules(e, oneEntity);
-    } else {
-      throw new IllegalArgumentException("Wrong refatctoring type" + refTarget.getTarget().getClass().getName());
+    List entities;
+    switch (refTarget.getTarget()) {
+      case NODE:   entities = getNodes  (e, oneEntity);  break;
+      case MODEL:  entities = getModels (e, oneEntity);  break;
+      case MODULE: entities = getModules(e, oneEntity);  break;
+      default:
+        throw new IllegalArgumentException("Wrong refactoring type " + refTarget.getTarget().getClass().getName());
     }
-
-    boolean enabled;
-    if (entities == null || entities.isEmpty()) {
-      enabled = false;
-    } else {
-      enabled = !(RefactoringUtil.getApplicability(myRefactoring, entities).lessThan(getMinApplicabilityLevel()));
-    }
-
-    setEnabledState(e.getPresentation(), enabled);
+    boolean disabled = entities.isEmpty() || RefactoringUtil.getApplicability(myRefactoring, entities).lessThan(getMinApplicabilityLevel());
+    setEnabledState(e.getPresentation(), !disabled);
   }
 
   protected Applicability getMinApplicabilityLevel() {
