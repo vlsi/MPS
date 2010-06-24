@@ -24,6 +24,7 @@ public class DebugRunMenu_ActionGroup extends GeneratedActionGroup {
       DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ExportThreads_Action", "jetbrains.mps.ide");
       DebugRunMenu_ActionGroup.this.addSeparator();
       DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ToggleBreakpoint_Action", "jetbrains.mps.ide");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ViewBreakpoints_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
