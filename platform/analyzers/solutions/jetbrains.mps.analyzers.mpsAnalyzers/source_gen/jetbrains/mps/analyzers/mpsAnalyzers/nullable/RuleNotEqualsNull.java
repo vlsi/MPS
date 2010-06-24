@@ -44,7 +44,6 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
             return false;
           }
           {
-            this.PatternVar_ifTrue = null;
             SNode childVar_yrsk32_a0a0 = nodeToMatch_yrsk32_a0a.getChildren(childRole_yrsk32_).get(0);
             {
               SNode nodeToMatch_yrsk32_a0a0;
@@ -75,7 +74,6 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
                   return false;
                 }
                 {
-                  this.PatternVar_p = null;
                   SNode childVar_yrsk32_a0a0a = nodeToMatch_yrsk32_a0a0_0.getChildren(childRole_yrsk32__1).get(0);
                   this.PatternVar_p = childVar_yrsk32_a0a0a;
                 }

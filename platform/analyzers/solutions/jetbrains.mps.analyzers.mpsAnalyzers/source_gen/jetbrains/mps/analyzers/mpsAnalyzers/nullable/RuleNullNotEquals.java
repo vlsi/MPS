@@ -44,7 +44,6 @@ public class RuleNullNotEquals extends DataFlowConstructor {
             return false;
           }
           {
-            this.PatternVar_ifTrue = null;
             SNode childVar_o8jvxz_a0a0 = nodeToMatch_o8jvxz_a0a.getChildren(childRole_o8jvxz_).get(0);
             {
               SNode nodeToMatch_o8jvxz_a0a0;
@@ -91,7 +90,6 @@ public class RuleNullNotEquals extends DataFlowConstructor {
                   return false;
                 }
                 {
-                  this.PatternVar_p = null;
                   SNode childVar_o8jvxz_a0a0a_0 = nodeToMatch_o8jvxz_a0a0_0.getChildren(childRole_o8jvxz__2).get(0);
                   this.PatternVar_p = childVar_o8jvxz_a0a0a_0;
                 }

@@ -4,19 +4,20 @@ package jetbrains.mps.analyzers.mpsAnalyzers.nullable;
 
 import jetbrains.mps.lang.dataFlow.framework.AnalyzerRunner;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor;
 import java.util.HashMap;
+import jetbrains.mps.smodel.SNode;
 import java.util.LinkedList;
 import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
+import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 
-public class NullableAnalyzerRunner extends AnalyzerRunner<Map<SNode, NullableState>> {
+public class NullableAnalyzerRunner extends AnalyzerRunner<Map<Object, NullableState>> {
   private Map<String, List<DataFlowConstructor>> myApplicableMap = new HashMap<String, List<DataFlowConstructor>>();
   private SNode myNode;
 
@@ -33,6 +34,30 @@ public class NullableAnalyzerRunner extends AnalyzerRunner<Map<SNode, NullableSt
     }
     {
       DataFlowConstructor rule = new RuleNullNotEquals();
+      String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
+      if (!(myApplicableMap.containsKey(conceptName))) {
+        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
+      }
+      myApplicableMap.get(conceptName).add(rule);
+    }
+    {
+      DataFlowConstructor rule = new RuleNotEqualsNullAnd();
+      String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
+      if (!(myApplicableMap.containsKey(conceptName))) {
+        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
+      }
+      myApplicableMap.get(conceptName).add(rule);
+    }
+    {
+      DataFlowConstructor rule = new RuleIfNullReturn();
+      String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
+      if (!(myApplicableMap.containsKey(conceptName))) {
+        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
+      }
+      myApplicableMap.get(conceptName).add(rule);
+    }
+    {
+      DataFlowConstructor rule = new RuleVoidIfNullReturn();
       String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
       if (!(myApplicableMap.containsKey(conceptName))) {
         myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
@@ -57,22 +82,27 @@ public class NullableAnalyzerRunner extends AnalyzerRunner<Map<SNode, NullableSt
     }
   }
 
-  public static class NullableAnalyzer implements DataFlowAnalyzer<Map<SNode, NullableState>> {
+  public static class NullableAnalyzer implements DataFlowAnalyzer<Map<Object, NullableState>> {
     public NullableAnalyzer() {
     }
 
-    public Map<SNode, NullableState> initial(Program program) {
-      Map<SNode, NullableState> result = new HashMap<SNode, NullableState>();
+    public Map<Object, NullableState> initial(Program program) {
+      Map<Object, NullableState> result = new HashMap<Object, NullableState>();
+      for (Object var : program.getVariables()) {
+        result.put(var, NullableState.UNKNOWN);
+      }
       return result;
     }
 
-    public Map<SNode, NullableState> merge(Program program, List<Map<SNode, NullableState>> list) {
-      Map<SNode, NullableState> result = new HashMap<SNode, NullableState>();
+    public Map<Object, NullableState> merge(Program program, List<Map<Object, NullableState>> list) {
+      Map<Object, NullableState> result = new HashMap<Object, NullableState>();
+
       return result;
     }
 
-    public Map<SNode, NullableState> fun(Map<SNode, NullableState> input, ProgramState state) {
-      Map<SNode, NullableState> result = new HashMap<SNode, NullableState>();
+    public Map<Object, NullableState> fun(Map<Object, NullableState> input, ProgramState state) {
+      Map<Object, NullableState> result = new HashMap<Object, NullableState>();
+      Instruction instruction = state.getInstruction();
       return result;
     }
 

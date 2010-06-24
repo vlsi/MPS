@@ -278,7 +278,6 @@ public class Program {
 
   public boolean isInitializedRewritten(WriteInstruction instruction) {
     AnalysisResult<VarSet> analysisResult = analyze(new MayBeInitializedVariablesAnalyzer(instruction));
-    Set<ReadInstruction> result = new HashSet<ReadInstruction>();
     VarSet initializedVars = analysisResult.get(instruction);
     return initializedVars.contains(instruction.getVariableIndex());
   }
