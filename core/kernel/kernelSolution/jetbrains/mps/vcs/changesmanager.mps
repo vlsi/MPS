@@ -16591,6 +16591,20 @@
                                 </node>
                               </node>
                             </node>
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6080400160196253646">
+                              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="6080400160196253654">
+                                <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3531050000760639225">
+                                  <link role="variableDeclaration:3" targetNodeId="6080400160196253616" resolveInfo="myChangeListener" />
+                                </node>
+                                <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4366048675740426751">
+                                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="4366048675740426752">
+                                    <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5264204858747865445">
+                                      <link role="baseMethodDeclaration:3" targetNodeId="5264204858747865439" resolveInfo="EditorComponentChangesHighligher.MyChangeListener" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
                           </node>
                           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="5643745088231029824">
                             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="5643745088231029820">
@@ -16618,20 +16632,6 @@
                           </node>
                         </node>
                         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="3544903338194823671" />
-                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6080400160196253646">
-                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="6080400160196253654">
-                            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3531050000760639225">
-                              <link role="variableDeclaration:3" targetNodeId="6080400160196253616" resolveInfo="myChangeListener" />
-                            </node>
-                            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4366048675740426751">
-                              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="4366048675740426752">
-                                <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5264204858747865445">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="5264204858747865439" resolveInfo="EditorComponentChangesHighligher.MyChangeListener" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
                       </node>
                     </node>
                   </node>

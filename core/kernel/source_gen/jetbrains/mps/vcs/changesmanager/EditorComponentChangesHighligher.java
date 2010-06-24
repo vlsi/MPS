@@ -71,14 +71,14 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            final SModel model = check_7ugudc_a0a0a0a0a0a0f0a(editorComponent.getEditedNode());
+            final SModel model = check_7ugudc_a0a0a0a0a0f0a(editorComponent.getEditedNode());
             if (model != null && model.getModelDescriptor() != null) {
               myModelChangesManager = ChangesManager.getInstance(project).getModelChangesManager(model);
+              myChangeListener = new EditorComponentChangesHighligher.MyChangeListener();
             } else {
               return;
             }
 
-            myChangeListener = new EditorComponentChangesHighligher.MyChangeListener();
           }
         });
         if (myChangeListener != null) {
@@ -299,7 +299,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     }
   }
 
-  private static SModel check_7ugudc_a0a0a0a0a0a0f0a(SNode p) {
+  private static SModel check_7ugudc_a0a0a0a0a0f0a(SNode p) {
     if (null == p) {
       return null;
     }

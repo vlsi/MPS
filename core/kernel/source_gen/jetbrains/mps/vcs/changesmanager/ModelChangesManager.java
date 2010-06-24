@@ -421,10 +421,10 @@ public class ModelChangesManager {
                 ListSequence.fromList(changeList.value).addElement(new AddRootChange(conceptFqName, nodeId));
               } else if (LinkDeclaration_Behavior.call_isSingular_1213877254557(SNodeOperations.getContainingLinkDeclaration(node))) {
                 SNode thisNodeInBase = myBaseVersionModel.getNodeById(nodeId);
-                if (thisNodeInBase != null && parent.getSNodeId().equals(check_fh1co9_a0a0a1a0a0h0c0a6a0a0e0y(SNodeOperations.getParent(thisNodeInBase))) && SNodeOperations.getContainingLinkRole(node).equals(SNodeOperations.getContainingLinkRole(thisNodeInBase))) {
+                if (thisNodeInBase != null && parent.getSNodeId().equals(check_fh1co9_a0a0a1a0a0h0c0a6a0e0y(SNodeOperations.getParent(thisNodeInBase))) && SNodeOperations.getContainingLinkRole(node).equals(SNodeOperations.getContainingLinkRole(thisNodeInBase))) {
                   continue;
                 }
-                ListSequence.fromList(changeList.value).addElement(new SetNodeChange(conceptFqName, nodeId, SNodeOperations.getContainingLinkRole(node), parent.getSNodeId(), check_fh1co9_e0a0a2a0a0h0c0a6a0a0e0y(check_fh1co9_a4a0a0c0a0a7a2a0g0a0a4a42(myBaseVersionModel.getNodeById(SNodeOperations.getParent(node).getSNodeId()), node)), SNodeOperations.getContainingLinkRole(SNodeOperations.getPrevSibling(node))));
+                ListSequence.fromList(changeList.value).addElement(new SetNodeChange(conceptFqName, nodeId, SNodeOperations.getContainingLinkRole(node), parent.getSNodeId(), check_fh1co9_e0a0a2a0a0h0c0a6a0e0y(check_fh1co9_a4a0a0c0a0a7a2a0g0a4a42(myBaseVersionModel.getNodeById(SNodeOperations.getParent(node).getSNodeId()), node)), SNodeOperations.getContainingLinkRole(SNodeOperations.getPrevSibling(node))));
               } else {
                 // TODO null in prevSibling and prevRole 
                 ListSequence.fromList(changeList.value).addElement(new AddNodeChange(conceptFqName, nodeId, SNodeOperations.getContainingLinkRole(node), parent.getSNodeId(), null, null));
@@ -498,7 +498,7 @@ __switch__:
             if (ch instanceof DeleteNodeChange) {
               SNode deletedNode = myBaseVersionModel.getNodeById(ch.getAffectedNodeId());
               if (LinkDeclaration_Behavior.call_isSingular_1213877254557(SNodeOperations.getContainingLinkDeclaration(deletedNode))) {
-                newCh = new DeleteNodeChange(ch.getAffectedNodeId(), ((DeleteNodeChange) ch).getChildren(), check_fh1co9_c0a0a0b0b0a0a0a9a0a0e0y(SNodeOperations.getParent(deletedNode)), SNodeOperations.getContainingLinkRole(deletedNode), -1);
+                newCh = new DeleteNodeChange(ch.getAffectedNodeId(), ((DeleteNodeChange) ch).getChildren(), check_fh1co9_c0a0a0b0b0a0a0a9a0e0y(SNodeOperations.getParent(deletedNode)), SNodeOperations.getContainingLinkRole(deletedNode), -1);
               }
             }
             return newCh;
@@ -506,6 +506,7 @@ __switch__:
         }).toListSequence();
         ListSequence.fromList(myChangeList).clear();
         ListSequence.fromList(myChangeList).addSequence(ListSequence.fromList(changeList.value));
+        // avoid returning value 
       }
     });
   }
@@ -944,28 +945,28 @@ __switch__:
     }
   }
 
-  private static SNodeId check_fh1co9_a0a0a1a0a0h0c0a6a0a0e0y(SNode p) {
+  private static SNodeId check_fh1co9_a0a0a1a0a0h0c0a6a0e0y(SNode p) {
     if (null == p) {
       return null;
     }
     return p.getSNodeId();
   }
 
-  private static SNodeId check_fh1co9_e0a0a2a0a0h0c0a6a0a0e0y(SNode p) {
+  private static SNodeId check_fh1co9_e0a0a2a0a0h0c0a6a0e0y(SNode p) {
     if (null == p) {
       return null;
     }
     return p.getSNodeId();
   }
 
-  private static SNode check_fh1co9_a4a0a0c0a0a7a2a0g0a0a4a42(SNode p, SNode node) {
+  private static SNode check_fh1co9_a4a0a0c0a0a7a2a0g0a4a42(SNode p, SNode node) {
     if (null == p) {
       return null;
     }
     return p.getChild(SNodeOperations.getContainingLinkRole(node));
   }
 
-  private static SNodeId check_fh1co9_c0a0a0b0b0a0a0a9a0a0e0y(SNode p) {
+  private static SNodeId check_fh1co9_c0a0a0b0b0a0a0a9a0e0y(SNode p) {
     if (null == p) {
       return null;
     }
@@ -1063,42 +1064,42 @@ __switch__:
     return p.getSNodeId();
   }
 
-  private static String check_fh1co9_a0h0a0a3a0a0b0m0(SNode p, SModelPropertyEvent e) {
+  private static String check_fh1co9_a0h0a3a0a0b0m0(SNode p, SModelPropertyEvent e) {
     if (null == p) {
       return null;
     }
     return p.getProperty(e.getPropertyName());
   }
 
-  private static SNode check_fh1co9_a0j0a0a3a0a0b0o0(SNode p, SReference reference) {
+  private static SNode check_fh1co9_a0j0a3a0a0b0o0(SNode p, SReference reference) {
     if (null == p) {
       return null;
     }
     return p.getReferent(reference.getRole());
   }
 
-  private static SNodeId check_fh1co9_c0a0a0a0j0a0a3a0a0c0r0(SNode p) {
+  private static SNodeId check_fh1co9_c0a0a0a0j0a3a0a0c0r0(SNode p) {
     if (null == p) {
       return null;
     }
     return p.getSNodeId();
   }
 
-  private static SNodeId check_fh1co9_a0a0a0c0i0a0a3a0a0c0t0(SNode p) {
+  private static SNodeId check_fh1co9_a0a0a0c0i0a3a0a0c0t0(SNode p) {
     if (null == p) {
       return null;
     }
     return p.getSNodeId();
   }
 
-  private static SNodeId check_fh1co9_e0a0f0i0a0a3a0a0c0t0(SNode p) {
+  private static SNodeId check_fh1co9_e0a0f0i0a3a0a0c0t0(SNode p) {
     if (null == p) {
       return null;
     }
     return p.getSNodeId();
   }
 
-  private static SNode check_fh1co9_a4a0a5a8a0a0d0a0a2a91a(SNode p, SModelChildEvent e) {
+  private static SNode check_fh1co9_a4a0a5a8a0d0a0a2a91a(SNode p, SModelChildEvent e) {
     if (null == p) {
       return null;
     }
@@ -1270,7 +1271,7 @@ __switch__:
                 }
               });
 
-              String baseValue = check_fh1co9_a0h0a0a3a0a0b0m0(myBaseVersionModel.getNodeById(nodeId), e);
+              String baseValue = check_fh1co9_a0h0a3a0a0b0m0(myBaseVersionModel.getNodeById(nodeId), e);
               PropertyDeclaration propertyDeclaration = e.getNode().getPropertyDeclaration(e.getPropertyName());
               if (propertyDeclaration == null) {
                 if (ObjectUtils.equals(baseValue, e.getNewPropertyValue())) {
@@ -1353,7 +1354,7 @@ __switch__:
               });
 
               // Do not add change for this reference, if it is actually unchanged 
-              SNode baseTargetNode = check_fh1co9_a0j0a0a3a0a0b0o0(myBaseVersionModel.getNodeById(sourceNodeId), reference);
+              SNode baseTargetNode = check_fh1co9_a0j0a3a0a0b0o0(myBaseVersionModel.getNodeById(sourceNodeId), reference);
               if (baseTargetNode != null && new SNodePointer(baseTargetNode).equals(new SNodePointer(reference.getTargetSModelReference(), reference.getTargetNodeId()))) {
                 return;
               }
@@ -1464,7 +1465,7 @@ __switch__:
                 }
               }) == 0) {
                 if (isSingle) {
-                  addChange(new DeleteNodeChange(e.getChild().getSNodeId(), SModelUtils.getNodeIds(e.getChild().getChildren()), check_fh1co9_c0a0a0a0j0a0a3a0a0c0r0(e.getParent()), e.getChildRole(), -1), e.getAffectedRoot());
+                  addChange(new DeleteNodeChange(e.getChild().getSNodeId(), SModelUtils.getNodeIds(e.getChild().getChildren()), check_fh1co9_c0a0a0a0j0a3a0a0c0r0(e.getParent()), e.getChildRole(), -1), e.getAffectedRoot());
                 } else {
                   refreshMultipleChildChanges(e.getParent(), e.getChildRole(), currentChildren, false);
                 }
@@ -1531,7 +1532,7 @@ __switch__:
                 }
                 SNode thisNodeInBase = myBaseVersionModel.getNodeById(e.getChild().getSNodeId());
                 if (thisNodeInBase != null) {
-                  if (e.getParent().getSNodeId().equals(check_fh1co9_a0a0a0c0i0a0a3a0a0c0t0(SNodeOperations.getParent(thisNodeInBase))) && e.getChildRole().equals(SNodeOperations.getContainingLinkRole(thisNodeInBase))) {
+                  if (e.getParent().getSNodeId().equals(check_fh1co9_a0a0a0c0i0a3a0a0c0t0(SNodeOperations.getParent(thisNodeInBase))) && e.getChildRole().equals(SNodeOperations.getContainingLinkRole(thisNodeInBase))) {
                     return;
                   }
                 }
@@ -1545,7 +1546,7 @@ __switch__:
                     return ObjectUtils.equals(ch.getNodeParent(), e.getParent().getSNodeId()) && e.getChildRole().equals(ch.getNodeRole());
                   }
                 });
-                addChange(new SetNodeChange(child.getConceptFqName(), child.getSNodeId(), e.getChildRole(), e.getParent().getSNodeId(), check_fh1co9_e0a0f0i0a0a3a0a0c0t0(check_fh1co9_a4a0a5a8a0a0d0a0a2a91a(myBaseVersionModel.getNodeById(e.getParent().getSNodeId()), e)), prevRole), e.getAffectedRoot());
+                addChange(new SetNodeChange(child.getConceptFqName(), child.getSNodeId(), e.getChildRole(), e.getParent().getSNodeId(), check_fh1co9_e0a0f0i0a3a0a0c0t0(check_fh1co9_a4a0a5a8a0d0a0a2a91a(myBaseVersionModel.getNodeById(e.getParent().getSNodeId()), e)), prevRole), e.getAffectedRoot());
               } else {
                 refreshMultipleChildChanges(e.getParent(), e.getChildRole(), currentChildren, false);
               }
