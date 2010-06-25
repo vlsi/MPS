@@ -681,7 +681,7 @@ public class MPSModuleRepository implements ApplicationComponent {
         needSaving = true;
       }
 
-      if (needSaving && module.getDescriptorFile() != null && !module.isPackaged()) {
+      if (needSaving && !module.isPackaged()) {
         module.save();
       }
     }

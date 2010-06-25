@@ -60,4 +60,18 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
     }
     return false;
   }
+
+  @Override
+  public boolean updateReferences() {
+    if(myModelUID.equals("*")) {
+      return false;
+    }
+    SModelReference ref = SModelReference.fromString(myModelUID);
+    SModelReference newRef = ref.update();
+    if (ref.differs(newRef)) {
+      myModelUID = newRef.toString();
+      return true;
+    }
+    return false;
+  }
 }

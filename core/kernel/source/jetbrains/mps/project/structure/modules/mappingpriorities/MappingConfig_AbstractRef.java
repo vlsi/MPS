@@ -26,7 +26,7 @@ public class MappingConfig_AbstractRef {
     return true;
   }
 
-  public boolean updateModuleReferences() {
+  public boolean updateReferences() {
     return false;
   }
 

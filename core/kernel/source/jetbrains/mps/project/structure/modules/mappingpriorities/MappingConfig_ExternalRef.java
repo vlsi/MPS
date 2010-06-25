@@ -60,11 +60,14 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
   }
 
   @Override
-  public boolean updateModuleReferences() {
+  public boolean updateReferences() {
     List<ModuleReference> list = new ArrayList<ModuleReference>();
     list.add(myGenerator);
     boolean result = RefUpdateUtil.updateModuleRefs(list);
     myGenerator = list.get(0);
+    if(myMappingConfig != null) {
+      result |= myMappingConfig.updateReferences();
+    }
     return result;
   }
 

@@ -30,7 +30,6 @@ public class RefUpdateUtil {
       SModelReference newRef = ref.update();
       if (ref.differs(newRef)) {
         changed = true;
-        ref.update();
         refs.set(i, newRef);
       }
     }
@@ -44,7 +43,6 @@ public class RefUpdateUtil {
       ModuleReference newRef = ref.update();
       if (ref.differs(newRef)) {
         changed = true;
-        ref.update();
         refs.set(i, newRef);
       }
     }
@@ -58,7 +56,6 @@ public class RefUpdateUtil {
       @NotNull ModuleReference newRef = ref.update();
       if (ref.differs(newRef)) {
         changed = true;
-        ref.update();
         dep.setModuleRef(newRef);
       }
     }
@@ -68,7 +65,7 @@ public class RefUpdateUtil {
   public static boolean updateMappingPriorityRules(List<MappingPriorityRule> rules) {
     boolean changed = false;
     for (MappingPriorityRule rule : rules) {
-      boolean result = rule.updateModuleReferences();
+      boolean result = rule.updateReferences();
       changed = changed || result;
     }
     return changed;

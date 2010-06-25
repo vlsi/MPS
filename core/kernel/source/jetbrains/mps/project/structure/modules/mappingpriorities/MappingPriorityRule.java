@@ -65,10 +65,10 @@ public class MappingPriorityRule {
     return result;
   }
 
-  public boolean updateModuleReferences() {
+  public boolean updateReferences() {
     return RefUpdateUtil.composeUpdates(
-      myRight.updateModuleReferences(),
-      myLeft.updateModuleReferences()
+      myRight.updateReferences(),
+      myLeft.updateReferences()
     );
   }
 }

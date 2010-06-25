@@ -49,11 +49,11 @@ public class MappingConfig_RefSet extends MappingConfig_AbstractRef {
   }
 
   @Override
-  public boolean updateModuleReferences() {
+  public boolean updateReferences() {
     boolean result = false;
 
     for (MappingConfig_AbstractRef ref : myRefs) {
-      boolean res = ref.updateModuleReferences();
+      boolean res = ref.updateReferences();
       result = result || res;
     }
 

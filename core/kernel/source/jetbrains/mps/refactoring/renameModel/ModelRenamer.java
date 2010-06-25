@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.refactoring.renameModel;
 
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
@@ -37,6 +38,7 @@ public class ModelRenamer {
   public void updateReferencesIfNeeded() {
     if (!myLazy) {
       SModelRepository.getInstance().updateReferences();
+      MPSModuleRepository.getInstance().updateReferences();
     }
   }
 }
