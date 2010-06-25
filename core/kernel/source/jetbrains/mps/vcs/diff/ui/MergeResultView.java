@@ -221,8 +221,8 @@ class MergeResultView extends JPanel {
     public ConflictNode(Conflict conflict) {
       super(null);
       myConflict = conflict;
-      addNode(conflict.getC1());
-      addNode(conflict.getC2());
+      addNode(conflict.getChange1());
+      addNode(conflict.getChange2());
 
       setNodeIdentifier("Conflict" + ((getParent() != null) ? getParent().getIndex(this) : ""));
       setText("Conflict");

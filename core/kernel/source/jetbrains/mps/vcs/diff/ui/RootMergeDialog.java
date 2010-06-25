@@ -140,7 +140,6 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     final SModel resultModel = merger.getResultModel();
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
       public void run() {
         change1Node[0] = myChange1Model.getNodeById(node.getSNodeId());
         resultNode[0] = resultModel.getNodeById(node.getSNodeId());
@@ -195,21 +194,19 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     }));
 
     controlPanel.add(new JButton(new AbstractAction("Apply all") {
-
       public void actionPerformed(ActionEvent e) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
           public void run() {
             Set<SNodeId> ids = collectRootIds();
 
             ArrayList<Change> changes = new ArrayList<Change>();
-            changes.addAll(myMerger.getBaseMineChange());
-            changes.addAll(myMerger.getBaseRepoChange());
+            changes.addAll(myMerger.getBaseMineChanges());
+            changes.addAll(myMerger.getBaseRepoChanges());
 
             changes.removeAll(myMerger.getExcludedChanges());
             for (Conflict conflict : myMerger.getUnresolvedConflicts()) {
-              changes.remove(conflict.getC1());
-              changes.remove(conflict.getC2());
+              changes.remove(conflict.getChange1());
+              changes.remove(conflict.getChange2());
             }
 
             for (Change change : changes) {
@@ -282,11 +279,10 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
 
     protected void apply() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
         public void run() {
           for (ChangeEditorMessage m : myChanges) {
             if (myMerger.getConflictingChanges().contains(m.getChange())) {
-              for (Change ch : myMerger.getConflictsOf(m.getChange())) {
+              for (Change ch : myMerger.getConflictedWith(m.getChange())) {
                 myMerger.excludeChange(ch);
               }
             }
@@ -334,11 +330,10 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
 
     private void exclude() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
         public void run() {
           for (ChangeEditorMessage m : myChanges) {
             if (myMerger.getConflictingChanges().contains(m.getChange())) {
-              for (Change ch : myMerger.getConflictsOf(m.getChange())) {
+              for (Change ch : myMerger.getConflictedWith(m.getChange())) {
                 myMerger.getAppliedChanges().add(ch);
               }
             }
@@ -380,20 +375,20 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
 
     myResultEditorComponent.editNode(resultNode[0], myContext);
 
-    List<Change> mineChange = new ArrayList<Change>(myMerger.getBaseMineChange());
+    List<Change> mineChange = new ArrayList<Change>(myMerger.getBaseMineChanges());
     mineChange.removeAll(myMerger.getAppliedChanges());
     mineChange.removeAll(myMerger.getExcludedChanges());
     myChange1EditorComponent.hightlight(mineChange, false, false);
     myChange1EditorComponent.makeChangeBlocks();
 
     ArrayList<Change> removedNodes = new ArrayList<Change>();
-    removedNodes.addAll(CollectionUtil.filter(DeleteNodeChange.class, myMerger.getBaseMineChange()));
-    removedNodes.addAll(CollectionUtil.filter(DeleteNodeChange.class, myMerger.getBaseRepoChange()));
+    removedNodes.addAll(CollectionUtil.filter(DeleteNodeChange.class, myMerger.getBaseMineChanges()));
+    removedNodes.addAll(CollectionUtil.filter(DeleteNodeChange.class, myMerger.getBaseRepoChanges()));
     removedNodes.removeAll(myMerger.getExcludedChanges());
     myResultEditorComponent.hightlight(removedNodes, true, false);
     myResultEditorComponent.makeChangeBlocks();
 
-    List<Change> repoChange = new ArrayList<Change>(myMerger.getBaseRepoChange());
+    List<Change> repoChange = new ArrayList<Change>(myMerger.getBaseRepoChanges());
     repoChange.removeAll(myMerger.getAppliedChanges());
     repoChange.removeAll(myMerger.getExcludedChanges());
     myChange2EditorComponent.hightlight(repoChange, false, false);

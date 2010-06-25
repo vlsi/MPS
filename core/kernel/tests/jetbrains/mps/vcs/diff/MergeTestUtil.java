@@ -36,7 +36,7 @@ public class MergeTestUtil {
   }
 
   public static enum TestVersion implements Version {
-    MYNE("mine"),
+    MINE("mine"),
     BASE("base"),
     REPO("repository"),
     EXPECTED("exp");

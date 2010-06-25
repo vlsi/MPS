@@ -34,7 +34,7 @@ public class MergeTestCase extends TestCase {
     URL resource = MergeReferencesTest.class.getResource(pathToZip);
     final File zipfile = new File(resource.getFile());
     final SModel[] models = MergeTestUtil.loadTestModels(zipfile);
-    Merger merger = new Merger(getBase(models), getMyne(models), getRepo(models));
+    Merger merger = new Merger(getBase(models), getMine(models), getRepo(models));
     merger.doRebuild(new Runnable() {
       public void run() {
       }
@@ -60,8 +60,8 @@ public class MergeTestCase extends TestCase {
     return models[TestVersion.REPO.ordinal()];
   }
 
-  private SModel getMyne(SModel[] models) {
-    return models[TestVersion.MYNE.ordinal()];
+  private SModel getMine(SModel[] models) {
+    return models[TestVersion.MINE.ordinal()];
   }
 
   private SModel getBase(SModel[] models) {

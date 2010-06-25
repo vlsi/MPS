@@ -18,19 +18,19 @@ package jetbrains.mps.vcs.diff;
 import jetbrains.mps.vcs.diff.changes.Change;
 
 public class Conflict {
-  private Change myC1;
-  private Change myC2;
+  private Change myChange1;
+  private Change myChange2;
 
-  public Conflict(Change c1, Change c2) {
-    myC1 = c1;
-    myC2 = c2;
+  public Conflict(Change change1, Change change2) {
+    myChange1 = change1;
+    myChange2 = change2;
   }
 
-  public Change getC1() {
-    return myC1;
+  public Change getChange1() {
+    return myChange1;
   }
 
-  public Change getC2() {
-    return myC2;
+  public Change getChange2() {
+    return myChange2;
   }
 }
