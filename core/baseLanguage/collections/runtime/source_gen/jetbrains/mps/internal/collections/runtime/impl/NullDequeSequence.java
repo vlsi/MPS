@@ -6,7 +6,7 @@ import jetbrains.mps.internal.collections.runtime.IDequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class NullDequeSequence<T> extends NullQueueSequence<T> implements IDequeSequence<T>, Deque<T> {
   private static final NullDequeSequence<Object> INSTANCE = new NullDequeSequence<Object>();
@@ -110,7 +110,7 @@ public class NullDequeSequence<T> extends NullQueueSequence<T> implements IDeque
   }
 
   @Override
-  public IDequeSequence<T> removeWhere(IWhereFilter<T> filter) {
+  public IDequeSequence<T> removeWhere(_FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return (IDequeSequence<T>) super.removeWhere(filter);
   }
 

@@ -6,6 +6,8 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import java.util.Iterator;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import jetbrains.mps.baseLanguage.closures.runtime.AdapterClass;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.impl.NullLinkedListSequence;
 import java.util.Collection;
 import java.util.List;
@@ -180,8 +182,8 @@ public class LinkedListSequence<T> extends ListSequence<T> implements ILinkedLis
   }
 
   @Override
-  public ILinkedListSequence<T> removeWhere(IWhereFilter<T> tiWhereFilter) {
-    return (ILinkedListSequence<T>) super.removeWhere(tiWhereFilter);
+  public ILinkedListSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
+    return (ILinkedListSequence<T>) super.removeWhere(filter);
   }
 
   @Override

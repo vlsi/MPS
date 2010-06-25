@@ -404,7 +404,6 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_2857237956452406728(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    System.out.println("*** Checking flag: " + Flags.FUNCTION_METHOD.isFlagged(_context, _context.getNode()));
     return !(Flags.FUNCTION_METHOD.isFlagged(_context, _context.getNode())) && ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "method", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode m) {
         return SNodeOperations.isInstanceOf(m, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration");
@@ -3929,9 +3928,7 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_2857237956452406726(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    System.out.println("*** Setting");
     Flags.FUNCTION_METHOD.flag(_context, _context.getNode());
-    System.out.println("*** Set flag: " + Flags.FUNCTION_METHOD.isFlagged(_context, _context.getNode()));
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
 

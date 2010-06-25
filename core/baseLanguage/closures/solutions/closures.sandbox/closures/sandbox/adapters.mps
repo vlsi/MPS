@@ -11,8 +11,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <maxImportIndex value="1" />
+  <maxImportIndex value="2" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="2" modelUID="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4816492477345854027">
     <property name="name:3" value="AdapterDemo" />
     <property name="abstractClass:3" value="true" />
@@ -66,7 +67,6 @@
       <property name="name:3" value="P" />
     </node>
   </node>
-  <visible index="2" modelUID="r:c8f09818-27d0-4e31-9cdf-dedd92fee7ef(jetbrains.mps.baseLanguage.closures.util)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="2857237956452676071">
     <property name="name:3" value="Consumer" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2857237956452676077">
@@ -78,9 +78,9 @@
           <node role="resultType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="2857237956452676088" />
         </node>
         <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2857237956452676089">
-          <link role="annotation:3" targetNodeId="2v.4816492477345845749" resolveInfo="AdapterClass" />
+          <link role="annotation:3" targetNodeId="2.8649343297855554552" resolveInfo="AdapterClass" />
           <node role="value:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue:3" id="2857237956452676090">
-            <link role="key:3" targetNodeId="2v.4816492477345845751" resolveInfo="value" />
+            <link role="key:3" targetNodeId="2.8649343297855554553" resolveInfo="value" />
             <node role="value:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2857237956452676092">
               <property name="value:3" value="AdapterDemo" />
             </node>
@@ -104,9 +104,9 @@
           </node>
         </node>
         <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2411622665278502141">
-          <link role="annotation:3" targetNodeId="2v.4816492477345845749" resolveInfo="AdapterClass" />
+          <link role="annotation:3" targetNodeId="2.8649343297855554552" resolveInfo="AdapterClass" />
           <node role="value:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue:3" id="2411622665278502142">
-            <link role="key:3" targetNodeId="2v.4816492477345845751" resolveInfo="value" />
+            <link role="key:3" targetNodeId="2.8649343297855554553" resolveInfo="value" />
             <node role="value:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2411622665278502144">
               <property name="value:3" value="GenericAdapter" />
             </node>

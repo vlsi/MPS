@@ -7,11 +7,11 @@ import jetbrains.mps.baseLanguage.structure.ClassifierMember;
 import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.baseLanguage.structure.HasAnnotation;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.StatementList;
-import jetbrains.mps.baseLanguage.structure.Visibility;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
 import java.util.List;
+import jetbrains.mps.baseLanguage.structure.StatementList;
+import jetbrains.mps.baseLanguage.structure.Visibility;
 import jetbrains.mps.baseLanguage.structure.AnnotationInstance;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -23,9 +23,9 @@ public class ControlAbstractionDeclaration extends GenericDeclaration implements
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RESOLVE_INFO = "resolveInfo";
+  public static final String PARAMETER = "parameter";
   public static final String BODY = "body";
   public static final String VISIBILITY = "visibility";
-  public static final String PARAMETER = "parameter";
   public static final String ANNOTATION = "annotation";
 
   public ControlAbstractionDeclaration(SNode node) {
@@ -64,22 +64,6 @@ public class ControlAbstractionDeclaration extends GenericDeclaration implements
     this.setProperty(ControlAbstractionDeclaration.RESOLVE_INFO, value);
   }
 
-  public StatementList getBody() {
-    return (StatementList) this.getChild(StatementList.class, ControlAbstractionDeclaration.BODY);
-  }
-
-  public void setBody(StatementList node) {
-    super.setChild(ControlAbstractionDeclaration.BODY, node);
-  }
-
-  public Visibility getVisibility() {
-    return (Visibility) this.getChild(Visibility.class, ControlAbstractionDeclaration.VISIBILITY);
-  }
-
-  public void setVisibility(Visibility node) {
-    super.setChild(ControlAbstractionDeclaration.VISIBILITY, node);
-  }
-
   public int getParametersCount() {
     return this.getChildCount(ControlAbstractionDeclaration.PARAMETER);
   }
@@ -98,6 +82,22 @@ public class ControlAbstractionDeclaration extends GenericDeclaration implements
 
   public void insertParameter(ParameterDeclaration prev, ParameterDeclaration node) {
     this.insertChild(prev, ControlAbstractionDeclaration.PARAMETER, node);
+  }
+
+  public StatementList getBody() {
+    return (StatementList) this.getChild(StatementList.class, ControlAbstractionDeclaration.BODY);
+  }
+
+  public void setBody(StatementList node) {
+    super.setChild(ControlAbstractionDeclaration.BODY, node);
+  }
+
+  public Visibility getVisibility() {
+    return (Visibility) this.getChild(Visibility.class, ControlAbstractionDeclaration.VISIBILITY);
+  }
+
+  public void setVisibility(Visibility node) {
+    super.setChild(ControlAbstractionDeclaration.VISIBILITY, node);
   }
 
   public int getAnnotationsCount() {

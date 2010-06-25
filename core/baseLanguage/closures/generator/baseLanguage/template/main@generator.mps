@@ -37345,20 +37345,6 @@
       </node>
       <node role="contextNodeQuery:2" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery:2" id="2857237956452406726">
         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2857237956452406727">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2857237956452495791">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2857237956452495792">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2857237956452495793">
-                <link role="classifier:3" targetNodeId="2.~System" />
-                <link role="variableDeclaration:3" targetNodeId="2.~System.out" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2857237956452495794">
-                <link role="baseMethodDeclaration:3" targetNodeId="28.~PrintStream.println(java.lang.String):void" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2857237956452495795">
-                  <property name="value:3" value="*** Setting" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2857237956452471908">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2857237956452471911">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="2857237956452471910">
@@ -37369,33 +37355,6 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="13.1240908584952" resolveInfo="flag" />
                 <node role="actualArgument:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="2857237956452569644" />
                 <node role="actualArgument:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="2857237956452471916" />
-              </node>
-            </node>
-          </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2857237956452519648">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2857237956452519649">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2857237956452519650">
-                <link role="classifier:3" targetNodeId="2.~System" resolveInfo="System" />
-                <link role="variableDeclaration:3" targetNodeId="2.~System.out" resolveInfo="out" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2857237956452519651">
-                <link role="baseMethodDeclaration:3" targetNodeId="28.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="2857237956452519652">
-                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2857237956452519653">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="2857237956452519654">
-                      <link role="enumClass:3" targetNodeId="13.1240908386453" resolveInfo="Flags" />
-                      <link role="enumConstantDeclaration:3" targetNodeId="13.2857237956452466287" resolveInfo="FUNCTION_METHOD" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2857237956452519655">
-                      <link role="baseMethodDeclaration:3" targetNodeId="13.1240908592713" resolveInfo="isFlagged" />
-                      <node role="actualArgument:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="2857237956452569648" />
-                      <node role="actualArgument:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="2857237956452519656" />
-                    </node>
-                  </node>
-                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2857237956452519657">
-                    <property name="value:3" value="*** Set flag: " />
-                  </node>
-                </node>
               </node>
             </node>
           </node>
@@ -37411,33 +37370,6 @@
       </node>
       <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="2857237956452406728">
         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2857237956452406729">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2857237956452495774">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2857237956452495775">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2857237956452495776">
-                <link role="classifier:3" targetNodeId="2.~System" />
-                <link role="variableDeclaration:3" targetNodeId="2.~System.out" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2857237956452495777">
-                <link role="baseMethodDeclaration:3" targetNodeId="28.~PrintStream.println(java.lang.String):void" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="2857237956452495779">
-                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2857237956452495784">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="2857237956452495783">
-                      <link role="enumConstantDeclaration:3" targetNodeId="13.2857237956452466287" resolveInfo="FUNCTION_METHOD" />
-                      <link role="enumClass:3" targetNodeId="13.1240908386453" resolveInfo="Flags" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2857237956452495788">
-                      <link role="baseMethodDeclaration:3" targetNodeId="13.1240908592713" resolveInfo="isFlagged" />
-                      <node role="actualArgument:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="2857237956452569646" />
-                      <node role="actualArgument:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="2857237956452495789" />
-                    </node>
-                  </node>
-                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2857237956452495778">
-                    <property name="value:3" value="*** Checking flag: " />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2857237956452406730">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="2857237956452466284">
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2857237956452406737">

@@ -32,7 +32,11 @@ public class ReduceFold_Test extends Util_Test {
     Iterable<Integer> empty = Sequence.fromIterable(Collections.<Integer>emptyList());
     Assert.assertNull(Sequence.fromIterable(empty).reduceLeft(new ILeftCombinator<Integer, Integer>() {
       public Integer combine(Integer a, Integer b) {
-        throw new RuntimeException();
+        int i = 0;
+        if (i == 0) {
+          throw new RuntimeException();
+        }
+        return i;
       }
     }));
   }
@@ -60,7 +64,11 @@ public class ReduceFold_Test extends Util_Test {
     Iterable<Integer> empty = Sequence.fromIterable(Collections.<Integer>emptyList());
     Assert.assertNull(Sequence.fromIterable(empty).reduceRight(new IRightCombinator<Integer, Integer>() {
       public Integer combine(Integer b, Integer a) {
-        throw new RuntimeException();
+        int i = 0;
+        if (i == 0) {
+          throw new RuntimeException();
+        }
+        return i;
       }
     }));
   }
@@ -82,7 +90,11 @@ public class ReduceFold_Test extends Util_Test {
     Iterable<Integer> empty = Sequence.fromIterable(Collections.<Integer>emptyList());
     Assert.assertEquals("ack", Sequence.fromIterable(empty).foldLeft("ack", new ILeftCombinator<Integer, String>() {
       public String combine(String s, Integer it) {
-        throw new RuntimeException();
+        int i = 0;
+        if (i == 0) {
+          throw new RuntimeException();
+        }
+        return "foo";
       }
     }));
   }
@@ -104,7 +116,11 @@ public class ReduceFold_Test extends Util_Test {
     Iterable<Integer> empty = Sequence.fromIterable(Collections.<Integer>emptyList());
     Assert.assertEquals("ack", Sequence.fromIterable(empty).foldRight("ack", new IRightCombinator<Integer, String>() {
       public String combine(Integer it, String s) {
-        throw new RuntimeException();
+        int i = 0;
+        if (i == 0) {
+          throw new RuntimeException();
+        }
+        return "foo";
       }
     }));
   }

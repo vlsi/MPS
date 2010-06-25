@@ -5,7 +5,7 @@ package jetbrains.mps.internal.collections.runtime.impl;
 import jetbrains.mps.internal.collections.runtime.IQueueSequence;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class NullQueueSequence<T> extends NullCollectionSequence<T> implements IQueueSequence<T>, Queue<T> {
   private static final NullQueueSequence<Object> INSTANCE = new NullQueueSequence<Object>();
@@ -34,7 +34,7 @@ public class NullQueueSequence<T> extends NullCollectionSequence<T> implements I
   }
 
   @Override
-  public IQueueSequence<T> removeWhere(IWhereFilter<T> filter) {
+  public IQueueSequence<T> removeWhere(_FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return (IQueueSequence<T>) super.removeWhere(filter);
   }
 

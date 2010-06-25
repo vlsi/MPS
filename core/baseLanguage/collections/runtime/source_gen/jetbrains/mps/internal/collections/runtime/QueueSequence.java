@@ -4,6 +4,8 @@ package jetbrains.mps.internal.collections.runtime;
 
 import java.util.Queue;
 import java.io.Serializable;
+import jetbrains.mps.baseLanguage.closures.runtime.AdapterClass;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.impl.NullQueueSequence;
 import java.util.LinkedList;
@@ -69,7 +71,7 @@ public class QueueSequence<T> extends CollectionSequence<T> implements Queue<T>,
   }
 
   @Override
-  public IQueueSequence<T> removeWhere(IWhereFilter<T> filter) {
+  public IQueueSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return (IQueueSequence<T>) super.removeWhere(filter);
   }
 

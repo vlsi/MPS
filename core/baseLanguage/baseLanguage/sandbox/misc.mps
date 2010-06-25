@@ -516,7 +516,7 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5766921824837040055">
             <property name="name:3" value="trans" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5766921824837040056">
-              <link role="classifier:3" targetNodeId="164.6543581031674034629" resolveInfo="ITranslator2" />
+              <link role="classifier:3" targetNodeId="164.3473971317150294883" resolveInfo="ITranslator2" />
               <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5766921824837040057">
                 <link role="classifier:3" targetNodeId="150.~Integer" resolveInfo="Integer" />
               </node>

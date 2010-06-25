@@ -5,7 +5,7 @@ package jetbrains.mps.internal.collections.runtime.impl;
 import jetbrains.mps.internal.collections.runtime.ICollectionSequence;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public abstract class NullCollectionSequence<T> extends NullSequence<T> implements ICollectionSequence<T>, Collection<T> {
   protected static Object[] EMPTY_ARRAY = new Object[0];
@@ -29,7 +29,7 @@ public abstract class NullCollectionSequence<T> extends NullSequence<T> implemen
     return this;
   }
 
-  public ICollectionSequence<T> removeWhere(IWhereFilter<T> filter) {
+  public ICollectionSequence<T> removeWhere(_FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return this;
   }
 

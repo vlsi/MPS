@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.SelectComparator;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,7 +42,7 @@ public class SortingSequence<U> extends Sequence<U> implements Iterable<U> {
   }
 
   @Override
-  public ISequence<U> alsoSort(ISelector<U, Comparable<?>> selector, boolean ascending) {
+  public ISequence<U> alsoSort(_FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super U> selector, boolean ascending) {
     SelectComparator<U> selectComparator = new SelectComparator<U>(selector);
     return new SortingSequence<U>(input, new SortingSequence.CompoundComparator<U>(comparator, (ascending ?
       selectComparator :

@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.collections.structure;
 import jetbrains.mps.baseLanguage.structure.AbstractCreator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
-import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.Iterator;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -17,9 +17,9 @@ public class AbstractContainerCreator extends AbstractCreator {
   public static final String CPR_HasInitSize = "hasInitSize";
   public static final String CLNK_AvailableFor = "availableFor";
   public static final String ELEMENT_TYPE = "elementType";
+  public static final String INIT_VALUE = "initValue";
   public static final String COPY_FROM = "copyFrom";
   public static final String INIT_SIZE = "initSize";
-  public static final String INIT_VALUE = "initValue";
 
   public AbstractContainerCreator(SNode node) {
     super(node);
@@ -31,22 +31,6 @@ public class AbstractContainerCreator extends AbstractCreator {
 
   public void setElementType(Type node) {
     super.setChild(AbstractContainerCreator.ELEMENT_TYPE, node);
-  }
-
-  public Expression getCopyFrom() {
-    return (Expression) this.getChild(Expression.class, AbstractContainerCreator.COPY_FROM);
-  }
-
-  public void setCopyFrom(Expression node) {
-    super.setChild(AbstractContainerCreator.COPY_FROM, node);
-  }
-
-  public Expression getInitSize() {
-    return (Expression) this.getChild(Expression.class, AbstractContainerCreator.INIT_SIZE);
-  }
-
-  public void setInitSize(Expression node) {
-    super.setChild(AbstractContainerCreator.INIT_SIZE, node);
   }
 
   public int getInitValuesCount() {
@@ -67,6 +51,22 @@ public class AbstractContainerCreator extends AbstractCreator {
 
   public void insertInitValue(Expression prev, Expression node) {
     this.insertChild(prev, AbstractContainerCreator.INIT_VALUE, node);
+  }
+
+  public Expression getCopyFrom() {
+    return (Expression) this.getChild(Expression.class, AbstractContainerCreator.COPY_FROM);
+  }
+
+  public void setCopyFrom(Expression node) {
+    super.setChild(AbstractContainerCreator.COPY_FROM, node);
+  }
+
+  public Expression getInitSize() {
+    return (Expression) this.getChild(Expression.class, AbstractContainerCreator.INIT_SIZE);
+  }
+
+  public void setInitSize(Expression node) {
+    super.setChild(AbstractContainerCreator.INIT_SIZE, node);
   }
 
   public static AbstractContainerCreator newInstance(SModel sm, boolean init) {

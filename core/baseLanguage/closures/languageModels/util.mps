@@ -49,19 +49,5 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
-  <node type="jetbrains.mps.baseLanguage.structure.Annotation:3" id="4816492477345845749">
-    <property name="name:3" value="AdapterClass" />
-    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration:3" id="4816492477345845751">
-      <property name="isAbstract:3" value="true" />
-      <property name="name:3" value="value" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4816492477345845752" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4816492477345845753">
-        <link role="classifier:3" targetNodeId="2v.~String" resolveInfo="String" />
-      </node>
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4816492477345845754" />
-    </node>
-    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4816492477345845750" />
-  </node>
 </model>
 

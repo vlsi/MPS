@@ -10,14 +10,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
+import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import java.util.Iterator;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
-import java.util.Iterator;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -41,73 +42,75 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
         ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(SNodeOperations.copyNode(pt));
       }
     }
-    if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
+    if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
       List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
-      if (methods != null) {
-        if (ListSequence.fromList(methods).count() > 1) {
-          //  dirty hack 
-          errorMsg = ": interface must have only one method";
-          {
-            BaseIntentionProvider intentionProvider = null;
-            IErrorTarget errorTarget = new NodeErrorTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype) + errorMsg, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1225908155523", intentionProvider, errorTarget);
-            _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
+      if (ListSequence.fromList(methods).isNotEmpty()) {
+        SNode mtd = null;
+        for (SNode m : methods) {
+          if (!("equals".equals(SPropertyOperations.getString(m, "name")) || !(SPropertyOperations.getBoolean(m, "isAbstract")))) {
+            mtd = m;
+            break;
           }
         }
-        SNode md = ListSequence.fromList(methods).getElement(0);
-        if (ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).count()) {
-          SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype);
-          if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-            {
-              SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-              BaseIntentionProvider intentionProvider = null;
-              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742499735", 0, intentionProvider);
-              _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-              _info_12389875345.setInequationGroup("priority_4_1759628044690732301");
-              _info_12389875345.addInequationGroupBefore("priority_3_1759628044690732300");
-              _info_12389875345.addInequationGroupBefore("priority_2_1759628044690732299");
-              _info_12389875345.addInequationGroupBefore("priority_1_1759628044690732298");
-              _info_12389875345.addInequationGroupBefore("default");
-              typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(subtype, "resultType", true), (SNode) retType, false, _info_12389875345);
-            }
-          }
-          {
-            SNode fpt;
-            SNode mpt;
-            Iterator<SNode> fpt_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
-            Iterator<SNode> mpt_iterator = ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).iterator();
-            while (true) {
-              if (!(fpt_iterator.hasNext())) {
-                break;
-              }
-              if (!(mpt_iterator.hasNext())) {
-                break;
-              }
-              fpt = fpt_iterator.next();
-              mpt = mpt_iterator.next();
+        if (mtd != null) {
+          SNode md = ListSequence.fromList(methods).getElement(0);
+          if (ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).count()) {
+            SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype);
+            if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
               {
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                 BaseIntentionProvider intentionProvider = null;
-                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202746383183", 0, intentionProvider);
+                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742499735", 0, intentionProvider);
                 _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
                 _info_12389875345.setInequationGroup("priority_4_1759628044690732301");
                 _info_12389875345.addInequationGroupBefore("priority_3_1759628044690732300");
                 _info_12389875345.addInequationGroupBefore("priority_2_1759628044690732299");
                 _info_12389875345.addInequationGroupBefore("priority_1_1759628044690732298");
                 _info_12389875345.addInequationGroupBefore("default");
-                typeCheckingContext.createLessThanInequation((SNode) ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), (SNode) fpt, false, _info_12389875345);
+                typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(subtype, "resultType", true), (SNode) retType, false, _info_12389875345);
               }
             }
+            {
+              SNode fpt;
+              SNode mpt;
+              Iterator<SNode> fpt_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
+              Iterator<SNode> mpt_iterator = ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).iterator();
+              while (true) {
+                if (!(fpt_iterator.hasNext())) {
+                  break;
+                }
+                if (!(mpt_iterator.hasNext())) {
+                  break;
+                }
+                fpt = fpt_iterator.next();
+                mpt = mpt_iterator.next();
+                {
+                  SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+                  BaseIntentionProvider intentionProvider = null;
+                  EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202746383183", 0, intentionProvider);
+                  _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
+                  _info_12389875345.setInequationGroup("priority_4_1759628044690732301");
+                  _info_12389875345.addInequationGroupBefore("priority_3_1759628044690732300");
+                  _info_12389875345.addInequationGroupBefore("priority_2_1759628044690732299");
+                  _info_12389875345.addInequationGroupBefore("priority_1_1759628044690732298");
+                  _info_12389875345.addInequationGroupBefore("default");
+                  typeCheckingContext.createLessThanInequation((SNode) ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), (SNode) fpt, false, _info_12389875345);
+                }
+              }
+            }
+            return;
+          } else {
+            errorMsg = ": wrong parameter number";
           }
-          return;
         } else {
-          errorMsg = ": wrong parameter number";
+          //  dirty hack 
+          errorMsg = ": no abstract method";
         }
       } else {
-        errorMsg = ": interface must define a method";
+        errorMsg = ": must define a method";
       }
     } else {
-      errorMsg = ": not an interface";
+      errorMsg = ": not an interface or an abstract class";
     }
     {
       BaseIntentionProvider intentionProvider = null;
@@ -132,46 +135,53 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
           ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(SNodeOperations.copyNode(pt));
         }
       }
-      if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
+      if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
         List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
-        if (methods != null) {
-          if (ListSequence.fromList(methods).count() > 1) {
-            //  dirty hack 
-            errorMsg = ": interface must have only one method";
-            // generated from warning statement 
+        if (ListSequence.fromList(methods).isNotEmpty()) {
+          SNode mtd = null;
+          for (SNode m : methods) {
+            if (!("equals".equals(SPropertyOperations.getString(m, "name")) || !(SPropertyOperations.getBoolean(m, "isAbstract")))) {
+              mtd = m;
+              break;
+            }
           }
-          SNode md = ListSequence.fromList(methods).getElement(0);
-          if (ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).count()) {
-            SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype);
-            if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-              result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "resultType", true), (SNode) retType, true);
-            }
-            {
-              SNode fpt;
-              SNode mpt;
-              Iterator<SNode> fpt_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
-              Iterator<SNode> mpt_iterator = ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).iterator();
-              while (true) {
-                if (!(fpt_iterator.hasNext())) {
-                  break;
-                }
-                if (!(mpt_iterator.hasNext())) {
-                  break;
-                }
-                fpt = fpt_iterator.next();
-                mpt = mpt_iterator.next();
-                result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), (SNode) fpt, true);
+          if (mtd != null) {
+            SNode md = ListSequence.fromList(methods).getElement(0);
+            if (ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).count()) {
+              SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype);
+              if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+                result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "resultType", true), (SNode) retType, true);
               }
+              {
+                SNode fpt;
+                SNode mpt;
+                Iterator<SNode> fpt_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
+                Iterator<SNode> mpt_iterator = ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).iterator();
+                while (true) {
+                  if (!(fpt_iterator.hasNext())) {
+                    break;
+                  }
+                  if (!(mpt_iterator.hasNext())) {
+                    break;
+                  }
+                  fpt = fpt_iterator.next();
+                  mpt = mpt_iterator.next();
+                  result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), (SNode) fpt, true);
+                }
+              }
+              return result_14532009;
+            } else {
+              errorMsg = ": wrong parameter number";
             }
-            return result_14532009;
           } else {
-            errorMsg = ": wrong parameter number";
+            //  dirty hack 
+            errorMsg = ": no abstract method";
           }
         } else {
-          errorMsg = ": interface must define a method";
+          errorMsg = ": must define a method";
         }
       } else {
-        errorMsg = ": not an interface";
+        errorMsg = ": not an interface or an abstract class";
       }
       result_14532009 = false;
     }
