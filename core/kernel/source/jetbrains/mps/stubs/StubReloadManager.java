@@ -261,13 +261,7 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   private boolean equalStubPaths(StubPath os, StubPath ns) {
-    if (os == ns) return true;
-    if (ns == null || os.getClass() != ns.getClass()) return false;
-
-    boolean pathsEqual = ObjectUtils.equals(ns.getPath(), os.getPath());
-    boolean managersEqual = ObjectUtils.equals(ns.getManager(), os.getManager());
-    boolean equalSP = pathsEqual && managersEqual;
-    return equalSP;
+    return ObjectUtils.equals(os, ns);
   }
 
   private boolean isUnder(String path, String mainPath) {
