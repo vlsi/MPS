@@ -536,7 +536,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     public List<SNode> getAvailableConcepts(final SNode node) {
       List<SNode> result = ConceptEditorHelper.getAvailableConceptAspects(SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateSwitch")), node);
       ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"));
-      if (SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "rootable")) {
+      ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"));
+      if (SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "rootable")) {
         boolean isNeedRootTemplate = true;
         for (SNode genFragment : AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(node, ConceptEditorHelper.getScope(Generator_Tab.this))) {
           if ((SLinkOperations.getTarget(genFragment, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true) != null)) {
@@ -641,7 +642,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
           if (SNodeOperations.isInstanceOf(result.value, "jetbrains.mps.lang.structure.structure.IConceptAspect")) {
             result.value = ConceptEditorHelper.createNewConceptAspectInstance(node, concept, model);
             MappingConfiguration_Behavior.call_addMember_3166264919334415805(mapping.value, result.value);
-          } else if (SNodeOperations.isInstanceOf(result.value, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")) {
+          } else if (SNodeOperations.isInstanceOf(result.value, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence") || SNodeOperations.isInstanceOf(result.value, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
             SNode mappingRule = SLinkOperations.addNewChild(mapping.value, "reductionMappingRule", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule");
             SLinkOperations.setTarget(mappingRule, "applicableConcept", node, false);
             SLinkOperations.setTarget(mappingRule, "ruleConsequence", SNodeOperations.cast(result.value, "jetbrains.mps.lang.generator.structure.RuleConsequence"), true);
