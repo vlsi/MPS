@@ -3561,7 +3561,6 @@ parametersLoop:
             return false;
           }
           {
-            this.PatternVar_p = null;
             SNode childVar_x583g4_a0a0a0a3a2a0a7a5a0a305 = nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0jt.getChildren(childRole_x583g4_).get(0);
             this.PatternVar_p = childVar_x583g4_a0a0a0a3a2a0a7a5a0a305;
           }
