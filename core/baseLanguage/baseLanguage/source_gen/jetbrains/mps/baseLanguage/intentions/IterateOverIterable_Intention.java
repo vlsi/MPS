@@ -102,7 +102,6 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
             return false;
           }
           {
-            this.PatternVar_elem = null;
             SNode childVar_6isygg_a0a0a0a0a = nodeToMatch_6isygg_a0a0a0a0.getChildren(childRole_6isygg__0).get(0);
             this.PatternVar_elem = childVar_6isygg_a0a0a0a0a;
           }
@@ -159,7 +158,6 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
             return false;
           }
           {
-            this.PatternVar_elem = null;
             SNode childVar_6isygg_a0a0a0a = nodeToMatch_6isygg_a0a0a0.getChildren(childRole_6isygg_).get(0);
             this.PatternVar_elem = childVar_6isygg_a0a0a0a;
           }

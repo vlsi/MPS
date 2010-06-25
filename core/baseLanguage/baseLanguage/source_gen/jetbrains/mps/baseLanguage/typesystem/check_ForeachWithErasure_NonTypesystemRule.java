@@ -91,7 +91,6 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
             return false;
           }
           {
-            this.PatternVar_p = null;
             SNode childVar_gn1qzs_a0a0c0 = nodeToMatch_gn1qzs_a0a2a.getChildren(childRole_gn1qzs_).get(0);
             this.PatternVar_p = childVar_gn1qzs_a0a0c0;
           }
