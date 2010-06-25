@@ -25,10 +25,6 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.vcs.diff.Conflict;
@@ -45,7 +41,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.tree.TreeNode;
 import java.awt.BorderLayout;
-import java.awt.Frame;
 
 class MergeResultView extends JPanel {
   private static final Logger LOG = Logger.getLogger(MergeResultView.class);
@@ -239,7 +234,7 @@ class MergeResultView extends JPanel {
     }
 
     private void addNode(Change change) {
-      add(new ChangeNode(change, myMerger.isMyne(change) ? "mine" : "theirs"));
+      add(new ChangeNode(change, myMerger.isMine(change) ? "mine" : "theirs"));
     }
   }
 

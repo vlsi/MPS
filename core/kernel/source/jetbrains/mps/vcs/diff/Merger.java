@@ -31,7 +31,7 @@ import java.util.*;
 import com.intellij.openapi.util.Pair;
 
 public class Merger {
-  private final SModel[] mySourceModels = new SModel[VERSION.values().length];
+  private final SModel[] mySourceModels = new SModel[Version.values().length];
   private SModel myResultModel;
 
   private List<Change> myBaseMineChange;
@@ -47,13 +47,13 @@ public class Merger {
   private boolean myPreviewMode = false;
 
   public Merger(SModel base, SModel mine, SModel repo) {
-    mySourceModels[VERSION.BASE.ordinal()] = base;
-    mySourceModels[VERSION.MYNE.ordinal()] = mine;
-    mySourceModels[VERSION.REPO.ordinal()] = repo;
+    mySourceModels[Version.BASE.ordinal()] = base;
+    mySourceModels[Version.MINE.ordinal()] = mine;
+    mySourceModels[Version.REPO.ordinal()] = repo;
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        DiffBuilder mineDiffBuilder = new DiffBuilder(getBase(mySourceModels), getMyne(mySourceModels));
+        DiffBuilder mineDiffBuilder = new DiffBuilder(getBase(mySourceModels), getMine(mySourceModels));
         myBaseMineChange = mineDiffBuilder.getChanges();
         myChangeGroups.putAll(mineDiffBuilder.getChangeGroups());
         DiffBuilder repoDiffBuilder = new DiffBuilder(getBase(mySourceModels), getRepo(mySourceModels));
@@ -119,15 +119,15 @@ public class Merger {
   }
 
   private SModel getRepo(SModel[] models) {
-    return models[VERSION.REPO.ordinal()];
+    return models[Version.REPO.ordinal()];
   }
 
-  private SModel getMyne(SModel[] models) {
-    return models[VERSION.MYNE.ordinal()];
+  private SModel getMine(SModel[] models) {
+    return models[Version.MINE.ordinal()];
   }
 
   private SModel getBase(SModel[] models) {
-    return models[VERSION.BASE.ordinal()];
+    return models[Version.BASE.ordinal()];
   }
 
   private void collectConflicts() {
@@ -297,8 +297,8 @@ public class Merger {
     for (MoveNodeChange mnc : getChanges(MoveNodeChange.class)) {
       String newRole = mnc.getNewRole();
 
-      for (SNode newParent : CollectionUtil.set(getMyne(mySourceModels).getNodeById(mnc.getNewParent()),
-        getMyne(mySourceModels).getNodeById(mnc.getNewParent()))) {
+      for (SNode newParent : CollectionUtil.set(getMine(mySourceModels).getNodeById(mnc.getNewParent()),
+        getMine(mySourceModels).getNodeById(mnc.getNewParent()))) {
         while (newParent != null) {
           if (changes.containsKey(new Pair(newParent.getId(), newRole))) {
             List<SetNodeChange> cs = new ArrayList<SetNodeChange>(changes.get(new Pair(newParent.getId(), newRole)));
@@ -324,7 +324,7 @@ public class Merger {
   }
 
   private SNode getNodeByIdAndChange(SetNodeChange spc, SNodeId nodeId) {
-    return isMyne(spc) ? getMyne(mySourceModels).getNodeById(nodeId) :
+    return isMine(spc) ? getMine(mySourceModels).getNodeById(nodeId) :
       getRepo(mySourceModels).getNodeById(nodeId);
   }
 
@@ -616,7 +616,7 @@ public class Merger {
     return myUnresolved.isEmpty();
   }
 
-  public boolean isMyne(Change change) {
+  public boolean isMine(Change change) {
     return myBaseMineChange.contains(change);
   }
 
@@ -650,8 +650,8 @@ public class Merger {
     return myUnresolved;
   }
 
-  public static enum VERSION {
-    MYNE,
+  private enum Version {
+    MINE,
     BASE,
     REPO
   }
