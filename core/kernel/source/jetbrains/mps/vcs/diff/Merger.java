@@ -34,16 +34,16 @@ public class Merger {
   private final SModel[] mySourceModels = new SModel[VERSION.values().length];
   private SModel myResultModel;
 
-  private List<Change> myBaseMyneChange;
+  private List<Change> myBaseMineChange;
   private Map<Change, SNode> myChangeGroups = new HashMap<Change, SNode>();
   private List<Change> myBaseRepoChange;
 
   private Set<Change> myExcludedChanges = new HashSet<Change>();
-  private Set<Change> myApplyedChanges = new HashSet<Change>();
+  private Set<Change> myAppliedChanges = new HashSet<Change>();
   private List<Conflict> myConflicts = new ArrayList<Conflict>();
   private List<Warning> myWarnings = new ArrayList<Warning>();
   private Set<Change> myUnresolved;
-  private Set<Change> myConflicted = new HashSet<Change>();
+  private Set<Change> myConflictingChanges = new HashSet<Change>();
   private boolean myPreviewMode = false;
 
   public Merger(SModel base, SModel mine, SModel repo) {
@@ -54,7 +54,7 @@ public class Merger {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         DiffBuilder mineDiffBuilder = new DiffBuilder(getBase(mySourceModels), getMyne(mySourceModels));
-        myBaseMyneChange = mineDiffBuilder.getChanges();
+        myBaseMineChange = mineDiffBuilder.getChanges();
         myChangeGroups.putAll(mineDiffBuilder.getChangeGroups());
         DiffBuilder repoDiffBuilder = new DiffBuilder(getBase(mySourceModels), getRepo(mySourceModels));
         myBaseRepoChange = repoDiffBuilder.getChanges();
@@ -110,8 +110,8 @@ public class Merger {
     });
   }
 
-  public List<Change> getBaseMyneChange() {
-    return myBaseMyneChange;
+  public List<Change> getBaseMineChange() {
+    return myBaseMineChange;
   }
 
   public List<Change> getBaseRepoChange() {
@@ -132,7 +132,7 @@ public class Merger {
 
   private void collectConflicts() {
     myConflicts.clear();
-    myConflicted.clear();
+    myConflictingChanges.clear();
 
     collectLanguageAspectChangeConflict();
     collectPropertyConflicts();
@@ -142,8 +142,8 @@ public class Merger {
     collectMoveConflicts();
     collectConceptConflicts();
 
-    for (Change change : new ArrayList<Change>(myConflicted)) {
-      myConflicted.addAll(getChangeGroupOf(change));
+    for (Change change : new ArrayList<Change>(myConflictingChanges)) {
+      myConflictingChanges.addAll(getChangeGroupOf(change));
     }
   }
 
@@ -160,8 +160,8 @@ public class Merger {
     return result;
   }
 
-  public Set<Change> getConflictedChanges() {
-    return myConflicted;
+  public Set<Change> getConflictingChanges() {
+    return myConflictingChanges;
   }
 
   private void collectLanguageAspectChangeConflict() {
@@ -184,8 +184,8 @@ public class Merger {
         AddLanguageAspectChange last = changeList.get(1);
         if (!first.equals(last)) {
           myConflicts.add(new Conflict(first, last));
-          myConflicted.add(first);
-          myConflicted.add(last);
+          myConflictingChanges.add(first);
+          myConflictingChanges.add(last);
         }
       }
     }
@@ -211,8 +211,8 @@ public class Merger {
         ChangeConceptChange last = changeList.get(1);
         if (!first.equals(last)) {
           myConflicts.add(new Conflict(first, last));
-          myConflicted.add(first);
-          myConflicted.add(last);
+          myConflictingChanges.add(first);
+          myConflictingChanges.add(last);
         }
       }
     }
@@ -249,8 +249,8 @@ public class Merger {
         List<SetPropertyChange> cs = new ArrayList<SetPropertyChange>(changes.get(p));
         assert cs.size() == 2;
         myConflicts.add(new Conflict(cs.get(0), cs.get(1)));
-        myConflicted.add(cs.get(0));
-        myConflicted.add(cs.get(1));
+        myConflictingChanges.add(cs.get(0));
+        myConflictingChanges.add(cs.get(1));
       }
     }
   }
@@ -273,8 +273,8 @@ public class Merger {
         List<SetReferenceChange> cs = new ArrayList<SetReferenceChange>(changes.get(p));
         assert cs.size() == 2;
         myConflicts.add(new Conflict(cs.get(0), cs.get(1)));
-        myConflicted.add(cs.get(0));
-        myConflicted.add(cs.get(1));
+        myConflictingChanges.add(cs.get(0));
+        myConflictingChanges.add(cs.get(1));
       }
     }
   }
@@ -303,8 +303,8 @@ public class Merger {
           if (changes.containsKey(new Pair(newParent.getId(), newRole))) {
             List<SetNodeChange> cs = new ArrayList<SetNodeChange>(changes.get(new Pair(newParent.getId(), newRole)));
             myConflicts.add(new Conflict(cs.get(0), mnc));
-            myConflicted.add(cs.get(0));
-            myConflicted.add(mnc);
+            myConflictingChanges.add(cs.get(0));
+            myConflictingChanges.add(mnc);
           }
           newRole = newParent.getRole_();
           newParent = newParent.getParent();
@@ -317,8 +317,8 @@ public class Merger {
         List<SetNodeChange> cs = new ArrayList<SetNodeChange>(changes.get(p));
         assert cs.size() == 2;
         myConflicts.add(new Conflict(cs.get(0), cs.get(1)));
-        myConflicted.add(cs.get(0));
-        myConflicted.add(cs.get(1));
+        myConflictingChanges.add(cs.get(0));
+        myConflictingChanges.add(cs.get(1));
       }
     }
   }
@@ -341,8 +341,8 @@ public class Merger {
       for (DeleteNodeChange d : getChanges(DeleteNodeChange.class)) {
         if (d.getAffectedNodeId().equals(c.getNodeParent())) {
           myConflicts.add(new Conflict(c, d));
-          myConflicted.add(c);
-          myConflicted.add(d);
+          myConflictingChanges.add(c);
+          myConflictingChanges.add(d);
         }
       }
     }
@@ -360,8 +360,8 @@ public class Merger {
       for (AddNodeChange ac : getChanges(AddNodeChange.class)) {
         if (ac.getNodeParent().equals(prevId)) {
           myConflicts.add(new Conflict(c, ac));
-          myConflicted.add(c);
-          myConflicted.add(ac);
+          myConflictingChanges.add(c);
+          myConflictingChanges.add(ac);
         }
       }
     }
@@ -375,8 +375,8 @@ public class Merger {
         MoveNodeChange mnc2 = moves.get(j);
         if (mnc1.getAffectedNodeId().equals(mnc2.getAffectedNodeId())) {
           myConflicts.add(new Conflict(mnc1, mnc2));
-          myConflicted.add(mnc1);
-          myConflicted.add(mnc2);
+          myConflictingChanges.add(mnc1);
+          myConflictingChanges.add(mnc2);
         }
       }
     }
@@ -384,7 +384,7 @@ public class Merger {
 
   private <C extends Change> List<C> getChanges(Class<C> changeClass) {
     List<C> result = new ArrayList<C>();
-    result.addAll(CollectionUtil.filter(changeClass, myBaseMyneChange));
+    result.addAll(CollectionUtil.filter(changeClass, myBaseMineChange));
     result.addAll(CollectionUtil.filter(changeClass, myBaseRepoChange));
     return result;
   }
@@ -468,7 +468,7 @@ public class Merger {
     List<ChangeConceptChange> conceptChangeList = getChanges(ChangeConceptChange.class);
     for (ChangeConceptChange ch : conceptChangeList) {
       if (!myExcludedChanges.contains(ch)) {
-        if (myPreviewMode && !myApplyedChanges.contains(ch)) continue;
+        if (myPreviewMode && !myAppliedChanges.contains(ch)) continue;
         if (isChangeUnResolved(ch)) continue;
         ch.apply(myResultModel);
       }
@@ -489,7 +489,7 @@ public class Merger {
 
     Map<SNodeId, NewNodeChange> changesMap = new HashMap<SNodeId, NewNodeChange>();
     for (NewNodeChange c : newNodeChanges) {
-      if (myPreviewMode && !myApplyedChanges.contains(c)) continue;
+      if (myPreviewMode && !myAppliedChanges.contains(c)) continue;
       if (myExcludedChanges.contains(c) || isChangeUnResolved(c)) continue;
       changesMap.put(c.getAffectedNodeId(), c);
     }
@@ -500,7 +500,7 @@ public class Merger {
   }
 
   private void applyNewNodeChange(NewNodeChange change, Map<SNodeId, NewNodeChange> affectedNodeToChangeMap) {
-    if (myPreviewMode && !myApplyedChanges.contains(change)) {
+    if (myPreviewMode && !myAppliedChanges.contains(change)) {
       return;
     }
     if (myExcludedChanges.contains(change) || isChangeUnResolved(change)) {
@@ -549,7 +549,7 @@ public class Merger {
   private void applyProperties() {
     List<SetPropertyChange> sets = getChanges(SetPropertyChange.class);
     for (SetPropertyChange sp : sets) {
-      if (myPreviewMode && !myApplyedChanges.contains(sp)) continue;
+      if (myPreviewMode && !myAppliedChanges.contains(sp)) continue;
       if (myExcludedChanges.contains(sp)) continue;
       if (isChangeUnResolved(sp)) continue;
       sp.apply(myResultModel);
@@ -559,7 +559,7 @@ public class Merger {
   private void applyReferences() {
     List<SetReferenceChange> refs = getChanges(SetReferenceChange.class);
     for (SetReferenceChange ref : refs) {
-      if (myPreviewMode && !myApplyedChanges.contains(ref)) continue;
+      if (myPreviewMode && !myAppliedChanges.contains(ref)) continue;
       if (myExcludedChanges.contains(ref)) continue;
       if (isChangeUnResolved(ref)) continue;
       ref.apply(myResultModel);
@@ -569,7 +569,7 @@ public class Merger {
 
   private void applyDeletes() {
     for (DeleteNodeChange del : getChanges(DeleteNodeChange.class)) {
-      if (myPreviewMode && !myApplyedChanges.contains(del)) continue;
+      if (myPreviewMode && !myAppliedChanges.contains(del)) continue;
       if (myExcludedChanges.contains(del)) continue;
       if (isChangeUnResolved(del)) continue;
       del.apply(myResultModel);
@@ -606,9 +606,9 @@ public class Merger {
     // we allow changes which are not involved in unresolved conflicts
     // or, if involved, are outgoing changes
     if (myPreviewMode) {
-      return myConflicted.contains(ch) && myUnresolved.contains(ch);
+      return myConflictingChanges.contains(ch) && myUnresolved.contains(ch);
     } else {
-      return myConflicted.contains(ch) && myUnresolved.contains(ch) && myBaseRepoChange.contains(ch);
+      return myConflictingChanges.contains(ch) && myUnresolved.contains(ch) && myBaseRepoChange.contains(ch);
     }
   }
 
@@ -617,20 +617,20 @@ public class Merger {
   }
 
   public boolean isMyne(Change change) {
-    return myBaseMyneChange.contains(change);
+    return myBaseMineChange.contains(change);
   }
 
   public void setPreviewMode(boolean b) {
     myPreviewMode = b;
   }
 
-  public Set<Change> getApplyedChanges() {
-    return myApplyedChanges;
+  public Set<Change> getAppliedChanges() {
+    return myAppliedChanges;
   }
 
   public Set<Change> getConflictsOf(Change change) {
     Set<Change> result = new HashSet<Change>();
-    if (!myConflicted.contains(change)) {
+    if (!myConflictingChanges.contains(change)) {
       return result;
     }
     for (Conflict c : myConflicts) {

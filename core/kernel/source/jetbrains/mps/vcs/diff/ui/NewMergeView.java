@@ -54,7 +54,7 @@ public class NewMergeView extends JPanel {
         });
 
         ModelDifferenceComponent mineModelDiff = new ModelDifferenceComponent(context);
-        mineModelDiff.showDifference(baseModel, mine, myMerger.getBaseMyneChange());
+        mineModelDiff.showDifference(baseModel, mine, myMerger.getBaseMineChange());
         myMineChangesTree = mineModelDiff.getModelTree();
         panel.add(new HeaderWrapper("My Changes", mineModelDiff));
         myResultView = new MergeResultView(context, baseModel, mine, repo, myMerger) {
