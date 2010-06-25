@@ -6,6 +6,7 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Arrays;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -55,12 +56,17 @@ public class SelectTest_Test extends Util_Test {
   }
 
   public void test_selectOperation() throws Exception {
-    Iterable<Integer> test = Sequence.fromIterable(this.input5()).select(new ISelector<Integer, Integer>() {
+    this.assertIterableEquals(this.expectEven10(), Sequence.fromIterable(this.input5()).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return it * 2;
       }
-    });
-    this.assertIterableEquals(this.expectEven10(), test);
+    }));
+    _FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> cl = new _FunctionTypes._return_P1_E0<Integer, Integer>() {
+      public Integer invoke(Integer it) {
+        return it * 2;
+      }
+    };
+    this.assertIterableEquals(this.expectEven10(), Sequence.fromIterable(this.input5()).select(cl));
   }
 
   public void test_legacySelector() throws Exception {

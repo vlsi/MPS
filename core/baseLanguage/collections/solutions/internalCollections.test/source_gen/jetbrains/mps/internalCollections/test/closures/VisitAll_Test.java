@@ -6,6 +6,7 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import java.util.Arrays;
 import java.util.List;
@@ -44,6 +45,17 @@ public class VisitAll_Test extends Util_Test {
         res.add(it * 2);
       }
     });
+    this.assertIterableEquals(this.expectEven10(), res);
+  }
+
+  public void test_visitorVarOperation() throws Exception {
+    final ArrayList<Integer> res = new ArrayList<Integer>();
+    _FunctionTypes._void_P1_E0<? super Integer> cl = new _FunctionTypes._void_P1_E0<Integer>() {
+      public void invoke(Integer it) {
+        res.add(it * 2);
+      }
+    };
+    Sequence.fromIterable(this.input5()).visitAll(cl);
     this.assertIterableEquals(this.expectEven10(), res);
   }
 

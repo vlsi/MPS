@@ -11,6 +11,8 @@ import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import junit.framework.Assert;
 import java.util.Collections;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -548,21 +550,45 @@ __switch__:
         return it.as;
       }
     });
+    _FunctionTypes._return_P1_E0<? extends List<A>, ? super B> cl = new _FunctionTypes._return_P1_E0<List<A>, B>() {
+      public List<A> invoke(B it) {
+        return it.as;
+      }
+    };
+    Sequence.fromIterable(bs).translate(cl);
     Sequence.fromIterable(bs).translate(new ITranslator2<B, A>() {
       public Iterable<A> translate(B it) {
         return it.listofa;
       }
     });
+    _FunctionTypes._return_P1_E0<? extends List<A>, ? super B> cl2 = new _FunctionTypes._return_P1_E0<List<A>, B>() {
+      public List<A> invoke(B it) {
+        return it.listofa;
+      }
+    };
+    Sequence.fromIterable(bs).translate(cl2);
     Sequence.fromIterable(bs).translate(new ITranslator2<B, A>() {
       public Iterable<A> translate(B it) {
         return it.seqofa;
       }
     });
+    _FunctionTypes._return_P1_E0<? extends Iterable<A>, ? super B> cl3 = new _FunctionTypes._return_P1_E0<Iterable<A>, B>() {
+      public Iterable<A> invoke(B it) {
+        return it.seqofa;
+      }
+    };
+    Sequence.fromIterable(bs).translate(cl3);
     Sequence.fromIterable(bs).translate(new ITranslator2<B, A>() {
       public Iterable<A> translate(B it) {
         return it.iterableofa;
       }
     });
+    _FunctionTypes._return_P1_E0<? extends Iterable<A>, ? super B> cl4 = new _FunctionTypes._return_P1_E0<Iterable<A>, B>() {
+      public Iterable<A> invoke(B it) {
+        return it.iterableofa;
+      }
+    };
+    Sequence.fromIterable(bs).translate(cl4);
   }
 
   public void test_nextWithoutHasNext() throws Exception {

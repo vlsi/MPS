@@ -6,6 +6,7 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Arrays;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -36,13 +37,18 @@ public class Where_Test extends Util_Test {
 
   public void test_whereOperation() throws Exception {
     Iterable<Integer> seq = this.input5();
-    Iterable<Integer> test = Sequence.fromIterable(seq).where(new IWhereFilter<Integer>() {
+    Iterable<Integer> expected = Arrays.asList(1, 3, 5);
+    this.assertIterableEquals(expected, Sequence.fromIterable(seq).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer it) {
         return it % 2 == 1;
       }
-    });
-    Iterable<Integer> expected = Arrays.asList(1, 3, 5);
-    this.assertIterableEquals(expected, test);
+    }));
+    _FunctionTypes._return_P1_E0<? extends Boolean, ? super Integer> cl = new _FunctionTypes._return_P1_E0<Boolean, Integer>() {
+      public Boolean invoke(Integer it) {
+        return it % 2 == 1;
+      }
+    };
+    this.assertIterableEquals(expected, Sequence.fromIterable(seq).where(cl));
   }
 
   public void test_nextWithoutHasNext() throws Exception {

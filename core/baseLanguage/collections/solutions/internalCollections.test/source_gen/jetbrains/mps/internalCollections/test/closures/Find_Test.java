@@ -6,8 +6,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import junit.framework.Assert;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Collections;
 
 public class Find_Test extends Util_Test {
@@ -62,18 +63,28 @@ __switch__:
         };
       }
     });
-    int found = Sequence.fromIterable(test).findFirst(new IWhereFilter<Integer>() {
+    Assert.assertSame(2, Sequence.fromIterable(test).findFirst(new IWhereFilter<Integer>() {
       public boolean accept(Integer it) {
         return it % 2 == 0;
       }
-    });
-    Assert.assertEquals(2, found);
-    int found2 = Sequence.fromIterable(test).findLast(new IWhereFilter<Integer>() {
+    }));
+    _FunctionTypes._return_P1_E0<? extends Boolean, ? super Integer> cl = new _FunctionTypes._return_P1_E0<Boolean, Integer>() {
+      public Boolean invoke(Integer it) {
+        return it % 2 == 0;
+      }
+    };
+    Assert.assertSame(2, Sequence.fromIterable(test).findFirst(cl));
+    Assert.assertSame(10, Sequence.fromIterable(test).findLast(new IWhereFilter<Integer>() {
       public boolean accept(Integer it) {
         return it % 2 == 0;
       }
-    });
-    Assert.assertEquals(10, found2);
+    }));
+    _FunctionTypes._return_P1_E0<? extends Boolean, ? super Integer> cl2 = new _FunctionTypes._return_P1_E0<Boolean, Integer>() {
+      public Boolean invoke(Integer it) {
+        return it % 2 == 0;
+      }
+    };
+    Assert.assertSame(2, Sequence.fromIterable(test).findFirst(cl2));
   }
 
   public void test_anyAll() throws Exception {
@@ -132,11 +143,23 @@ __switch__:
         return it % 2 == 0;
       }
     }));
+    _FunctionTypes._return_P1_E0<? extends Boolean, ? super Integer> cl = new _FunctionTypes._return_P1_E0<Boolean, Integer>() {
+      public Boolean invoke(Integer it) {
+        return it % 2 == 0;
+      }
+    };
+    Assert.assertTrue(Sequence.fromIterable(test).any(cl));
     Assert.assertFalse(Sequence.fromIterable(test).all(new IWhereFilter<Integer>() {
       public boolean accept(Integer it) {
         return it % 2 == 1;
       }
     }));
+    _FunctionTypes._return_P1_E0<? extends Boolean, ? super Integer> cl2 = new _FunctionTypes._return_P1_E0<Boolean, Integer>() {
+      public Boolean invoke(Integer it) {
+        return it % 2 == 1;
+      }
+    };
+    Assert.assertFalse(Sequence.fromIterable(test).all(cl2));
     Assert.assertTrue(Sequence.fromIterable(test).all(new IWhereFilter<Integer>() {
       public boolean accept(Integer it) {
         return it >= 1 && it <= 10;

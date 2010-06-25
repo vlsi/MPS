@@ -6,6 +6,7 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Arrays;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Comparator;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -48,18 +49,23 @@ public class Sort_Test extends Util_Test {
         return it.length();
       }
     }, false);
-    Iterable<String> test2 = Sequence.fromIterable(input).sort(new Comparator<String>() {
-      public int compare(String a, String b) {
-        return a.length() - b.length();
-      }
-    }, false);
     this.assertIterableEquals(Arrays.asList("WWWW", "XXX", "YY", "Z"), test);
-    this.assertIterableEquals(Arrays.asList("WWWW", "XXX", "YY", "Z"), test2);
     this.assertIterableEquals(input, Sequence.fromIterable(test).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
         return it.length();
       }
     }, true));
+    _FunctionTypes._return_P1_E0<? extends Integer, ? super String> cl = new _FunctionTypes._return_P1_E0<Integer, String>() {
+      public Integer invoke(String it) {
+        return it.length();
+      }
+    };
+    this.assertIterableEquals(input, Sequence.fromIterable(test).sort(cl, true));
+    this.assertIterableEquals(Arrays.asList("WWWW", "XXX", "YY", "Z"), Sequence.fromIterable(input).sort(new Comparator<String>() {
+      public int compare(String a, String b) {
+        return a.length() - b.length();
+      }
+    }, false));
   }
 
   public void test_caseSensitive() throws Exception {
