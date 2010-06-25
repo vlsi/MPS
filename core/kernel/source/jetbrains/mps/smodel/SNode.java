@@ -195,19 +195,7 @@ public final class SNode {
   }
 
   public Set<String> getChildRoles(boolean includeAttributeRoles) {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    Set<String> result = new HashSet<String>();
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      String roleOf = child.getRole_();
-      assert roleOf != null;
-      if (includeAttributeRoles || !(roleOf.contains(AttributesRolesUtil.STEREOTYPE_DELIM))) {
-        result.add(roleOf);
-      }
-    }
-    return result;
+    return addChildRoles(new HashSet<String>(), includeAttributeRoles);
   }
 
   public Set<String> addChildRoles(final Set<String> augend, boolean includeAttributeRoles) {
