@@ -125,7 +125,6 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
             return false;
           }
           {
-            this.PatternVar_p = null;
             SNode childVar_4sudxd_a0a0 = nodeToMatch_4sudxd_a0a.getChildren(childRole_4sudxd_).get(0);
             this.PatternVar_p = childVar_4sudxd_a0a0;
           }

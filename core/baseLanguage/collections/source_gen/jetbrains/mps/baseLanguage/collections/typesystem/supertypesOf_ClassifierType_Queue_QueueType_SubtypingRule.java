@@ -125,7 +125,6 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
             return false;
           }
           {
-            this.PatternVar_ELEMENT_TYPE = null;
             SNode childVar_jsixhd_a0a0 = nodeToMatch_jsixhd_a0a.getChildren(childRole_jsixhd_).get(0);
             this.PatternVar_ELEMENT_TYPE = childVar_jsixhd_a0a0;
           }

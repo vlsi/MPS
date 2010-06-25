@@ -154,12 +154,10 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
             return false;
           }
           {
-            this.PatternVar_KEY = null;
             SNode childVar_1q5lf6_a0a0 = nodeToMatch_1q5lf6_a0a.getChildren(childRole_1q5lf6_).get(0);
             this.PatternVar_KEY = childVar_1q5lf6_a0a0;
           }
           {
-            this.PatternVar_VALUE = null;
             SNode childVar_1q5lf6_b0a0 = nodeToMatch_1q5lf6_a0a.getChildren(childRole_1q5lf6_).get(1);
             this.PatternVar_VALUE = childVar_1q5lf6_b0a0;
           }

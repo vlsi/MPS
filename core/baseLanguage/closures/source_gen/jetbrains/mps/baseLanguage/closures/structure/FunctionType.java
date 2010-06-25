@@ -15,8 +15,8 @@ import jetbrains.mps.project.GlobalScope;
 public class FunctionType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.closures.structure.FunctionType";
   public static final String RUNTIME_IFACE = "runtimeIface";
-  public static final String PARAMETER_TYPE = "parameterType";
   public static final String RESULT_TYPE = "resultType";
+  public static final String PARAMETER_TYPE = "parameterType";
   public static final String THROWS_TYPE = "throwsType";
 
   public FunctionType(SNode node) {
@@ -29,6 +29,14 @@ public class FunctionType extends Type {
 
   public void setRuntimeIface(Interface node) {
     super.setReferent(FunctionType.RUNTIME_IFACE, node);
+  }
+
+  public Type getResultType() {
+    return (Type) this.getChild(Type.class, FunctionType.RESULT_TYPE);
+  }
+
+  public void setResultType(Type node) {
+    super.setChild(FunctionType.RESULT_TYPE, node);
   }
 
   public int getParameterTypesCount() {
@@ -49,14 +57,6 @@ public class FunctionType extends Type {
 
   public void insertParameterType(Type prev, Type node) {
     this.insertChild(prev, FunctionType.PARAMETER_TYPE, node);
-  }
-
-  public Type getResultType() {
-    return (Type) this.getChild(Type.class, FunctionType.RESULT_TYPE);
-  }
-
-  public void setResultType(Type node) {
-    super.setChild(FunctionType.RESULT_TYPE, node);
   }
 
   public int getThrowsTypesCount() {

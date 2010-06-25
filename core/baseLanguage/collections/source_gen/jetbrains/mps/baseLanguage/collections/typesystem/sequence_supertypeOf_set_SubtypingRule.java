@@ -115,7 +115,6 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
             return false;
           }
           {
-            this.PatternVar_elementType = null;
             SNode childVar_twopzc_a0a0 = nodeToMatch_twopzc_a0a.getChildren(childRole_twopzc_).get(0);
             this.PatternVar_elementType = childVar_twopzc_a0a0;
           }

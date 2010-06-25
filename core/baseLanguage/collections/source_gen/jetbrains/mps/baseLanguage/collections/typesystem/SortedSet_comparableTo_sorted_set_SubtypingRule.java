@@ -125,7 +125,6 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
             return false;
           }
           {
-            this.PatternVar_ELEMENT = null;
             SNode childVar_h9rz5k_a0a0 = nodeToMatch_h9rz5k_a0a.getChildren(childRole_h9rz5k_).get(0);
             this.PatternVar_ELEMENT = childVar_h9rz5k_a0a0;
           }

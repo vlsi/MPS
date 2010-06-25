@@ -16,20 +16,20 @@ public class SortOperation extends InternalSequenceOperation {
     super(node);
   }
 
-  public Expression getToComparable() {
-    return this.ensureAdapter(Expression.class, "closure", this.getClosure());
-  }
-
-  public void setToComparable(Expression node) {
-    this.setClosure(node);
-  }
-
   public Expression getAscending() {
     return (Expression) this.getChild(Expression.class, SortOperation.ASCENDING);
   }
 
   public void setAscending(Expression node) {
     super.setChild(SortOperation.ASCENDING, node);
+  }
+
+  public Expression getToComparable() {
+    return this.ensureAdapter(Expression.class, "closure", this.getClosure());
+  }
+
+  public void setToComparable(Expression node) {
+    this.setClosure(node);
   }
 
   public static SortOperation newInstance(SModel sm, boolean init) {

@@ -68,7 +68,6 @@ public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRu
             return false;
           }
           {
-            this.PatternVar_ELEMENT_TYPE = null;
             SNode childVar_jt8ol0_a0a0 = nodeToMatch_jt8ol0_a0a.getChildren(childRole_jt8ol0_).get(0);
             this.PatternVar_ELEMENT_TYPE = childVar_jt8ol0_a0a0;
           }

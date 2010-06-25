@@ -154,12 +154,10 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
             return false;
           }
           {
-            this.PatternVar_KEY = null;
             SNode childVar_6v7ed2_a0a0 = nodeToMatch_6v7ed2_a0a.getChildren(childRole_6v7ed2_).get(0);
             this.PatternVar_KEY = childVar_6v7ed2_a0a0;
           }
           {
-            this.PatternVar_VALUE = null;
             SNode childVar_6v7ed2_b0a0 = nodeToMatch_6v7ed2_a0a.getChildren(childRole_6v7ed2_).get(1);
             this.PatternVar_VALUE = childVar_6v7ed2_b0a0;
           }

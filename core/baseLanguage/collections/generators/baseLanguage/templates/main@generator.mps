@@ -147,39 +147,6 @@
         </node>
       </node>
     </node>
-    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1208621001675">
-      <link role="applicableConcept:2" targetNodeId="8.1201792049884:7" resolveInfo="TranslateOperation" />
-      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1208621008713">
-        <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1208621011979">
-          <link role="baseMethodDeclaration:3" targetNodeId="35.6543581031674024354" resolveInfo="translate" />
-          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1208621011980">
-            <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1208621011981">
-              <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1208621011982">
-                <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1208621011983">
-                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1208621011984">
-                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1208621011985">
-                      <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1208621011986" />
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1208621011987">
-                        <link role="link:16" targetNodeId="8.1201885182287:7" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="1226316484720">
-        <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1226316484721">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1226316486781">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1226316486782">
-              <property name="value:3" value="false" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1226316472550">
       <link role="applicableConcept:2" targetNodeId="8.1201792049884:7" resolveInfo="TranslateOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1226316491096">

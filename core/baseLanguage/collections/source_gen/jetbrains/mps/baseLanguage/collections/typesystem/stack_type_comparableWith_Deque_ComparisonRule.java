@@ -68,7 +68,6 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
             return false;
           }
           {
-            this.PatternVar_ELEMENT_TYPE = null;
             SNode childVar_h34l93_a0a0 = nodeToMatch_h34l93_a0a.getChildren(childRole_h34l93_).get(0);
             this.PatternVar_ELEMENT_TYPE = childVar_h34l93_a0a0;
           }

@@ -125,7 +125,6 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
             return false;
           }
           {
-            this.PatternVar_p = null;
             SNode childVar_z7dq1d_a0a0 = nodeToMatch_z7dq1d_a0a.getChildren(childRole_z7dq1d_).get(0);
             this.PatternVar_p = childVar_z7dq1d_a0a0;
           }

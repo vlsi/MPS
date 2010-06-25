@@ -68,7 +68,6 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
             return false;
           }
           {
-            this.PatternVar_ELEMENT = null;
             SNode childVar_plg4lh_a0a0 = nodeToMatch_plg4lh_a0a.getChildren(childRole_plg4lh_).get(0);
             this.PatternVar_ELEMENT = childVar_plg4lh_a0a0;
           }

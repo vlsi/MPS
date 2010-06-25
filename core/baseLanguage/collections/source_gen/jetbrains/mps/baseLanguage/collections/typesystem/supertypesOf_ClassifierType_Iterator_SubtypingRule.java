@@ -125,7 +125,6 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
             return false;
           }
           {
-            this.PatternVar_p = null;
             SNode childVar_2lqiec_a0a0 = nodeToMatch_2lqiec_a0a.getChildren(childRole_2lqiec_).get(0);
             this.PatternVar_p = childVar_2lqiec_a0a0;
           }

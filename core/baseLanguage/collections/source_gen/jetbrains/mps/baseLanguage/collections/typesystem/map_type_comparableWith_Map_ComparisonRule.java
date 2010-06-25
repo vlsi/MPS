@@ -69,12 +69,10 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
             return false;
           }
           {
-            this.PatternVar_KEY = null;
             SNode childVar_a1tqv3_a0a0 = nodeToMatch_a1tqv3_a0a.getChildren(childRole_a1tqv3_).get(0);
             this.PatternVar_KEY = childVar_a1tqv3_a0a0;
           }
           {
-            this.PatternVar_VALUE = null;
             SNode childVar_a1tqv3_b0a0 = nodeToMatch_a1tqv3_a0a.getChildren(childRole_a1tqv3_).get(1);
             this.PatternVar_VALUE = childVar_a1tqv3_b0a0;
           }

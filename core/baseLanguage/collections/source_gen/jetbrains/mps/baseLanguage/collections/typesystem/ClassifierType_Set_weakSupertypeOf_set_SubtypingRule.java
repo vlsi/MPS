@@ -120,7 +120,6 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
             return false;
           }
           {
-            this.PatternVar_elementType = null;
             SNode childVar_nbr2nf_a0a0 = nodeToMatch_nbr2nf_a0a.getChildren(childRole_nbr2nf_).get(0);
             this.PatternVar_elementType = childVar_nbr2nf_a0a0;
           }

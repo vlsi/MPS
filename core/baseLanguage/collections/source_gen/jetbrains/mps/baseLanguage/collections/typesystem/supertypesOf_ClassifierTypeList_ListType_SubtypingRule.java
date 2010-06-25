@@ -125,7 +125,6 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
             return false;
           }
           {
-            this.PatternVar_elemType = null;
             SNode childVar_h8kiwa_a0a0 = nodeToMatch_h8kiwa_a0a.getChildren(childRole_h8kiwa_).get(0);
             this.PatternVar_elemType = childVar_h8kiwa_a0a0;
           }

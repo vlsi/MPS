@@ -16,20 +16,20 @@ public class FoldLeftOperation extends InternalSequenceOperation {
     super(node);
   }
 
-  public Expression getComb() {
-    return this.ensureAdapter(Expression.class, "closure", this.getClosure());
-  }
-
-  public void setComb(Expression node) {
-    this.setClosure(node);
-  }
-
   public Expression getSeed() {
     return (Expression) this.getChild(Expression.class, FoldLeftOperation.SEED);
   }
 
   public void setSeed(Expression node) {
     super.setChild(FoldLeftOperation.SEED, node);
+  }
+
+  public Expression getComb() {
+    return this.ensureAdapter(Expression.class, "closure", this.getClosure());
+  }
+
+  public void setComb(Expression node) {
+    this.setClosure(node);
   }
 
   public static FoldLeftOperation newInstance(SModel sm, boolean init) {
