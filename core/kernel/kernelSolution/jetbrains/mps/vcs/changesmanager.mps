@@ -22955,6 +22955,52 @@
                                       </node>
                                     </node>
                                   </node>
+                                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="365157171029572563">
+                                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="365157171029572565">
+                                      <link role="baseMethodDeclaration:3" targetNodeId="28.~ThreadUtils.runInUIThreadNoWait(java.lang.Runnable):void" resolveInfo="runInUIThreadNoWait" />
+                                      <link role="classConcept:3" targetNodeId="28.~ThreadUtils" resolveInfo="ThreadUtils" />
+                                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="365157171029572566">
+                                        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="365157171029572567">
+                                          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="365157171029572527">
+                                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="365157171029572541">
+                                              <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.MapElement:7" id="365157171029572533">
+                                                <node role="key:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="365157171029572536">
+                                                  <link role="variable:7" targetNodeId="3935103675993769248" resolveInfo="node" />
+                                                </node>
+                                                <node role="map:7" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="365157171029572528">
+                                                  <link role="variableDeclaration:3" targetNodeId="5052922865790854032" resolveInfo="mySNodesToTreeNodes" />
+                                                </node>
+                                              </node>
+                                              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation:7" id="365157171029572545">
+                                                <node role="closure:7" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="365157171029572546">
+                                                  <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="365157171029572547">
+                                                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="365157171029572552">
+                                                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="365157171029572554">
+                                                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="365157171029572553">
+                                                          <link role="variableDeclaration:3" targetNodeId="365157171029572548" resolveInfo="tn" />
+                                                        </node>
+                                                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="365157171029572558">
+                                                          <link role="baseMethodDeclaration:3" targetNodeId="45.~MPSTreeNode.removeTreeMessages(jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner,boolean):void" resolveInfo="removeTreeMessages" />
+                                                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="365157171029572568" />
+                                                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="365157171029572560">
+                                                            <property name="value:3" value="true" />
+                                                          </node>
+                                                        </node>
+                                                      </node>
+                                                    </node>
+                                                  </node>
+                                                  <node role="parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="365157171029572548">
+                                                    <property name="name:7" value="tn" />
+                                                    <node role="type:7" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="365157171029572549" />
+                                                  </node>
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
                                 </node>
                                 <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3935103675993769251">
                                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3935103675993769252">

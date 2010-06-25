@@ -42,6 +42,8 @@ import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class ProjectTreeChangesHighlighter extends AbstractProjectComponent implements TreeMessageOwner {
   private static final boolean EXTRA_CHECKS_ENABLED = true;
@@ -468,10 +470,19 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           if (EXTRA_CHECKS_ENABLED && fileStatus == FileStatus.NOT_CHANGED) {
             SModel model = modelDescriptor.getSModel();
             if (model != null && !(model.isDisposed())) {
-              for (SNode node : Sequence.fromIterable(model.getAllNodesWithIds())) {
+              for (final SNode node : Sequence.fromIterable(model.getAllNodesWithIds())) {
                 myChangeCountForNode.zeroizeKey(node);
                 myPropertyChangeCountForNode.zeroizeKey(node);
                 myReferenceChangeCountForNode.zeroizeKey(node);
+                ThreadUtils.runInUIThreadNoWait(new Runnable() {
+                  public void run() {
+                    ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node)).visitAll(new IVisitor<SNodeTreeNode>() {
+                      public void visit(SNodeTreeNode tn) {
+                        tn.removeTreeMessages(ProjectTreeChangesHighlighter.this, true);
+                      }
+                    });
+                  }
+                });
               }
             }
           }
