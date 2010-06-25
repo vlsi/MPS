@@ -20,6 +20,7 @@ import java.util.List;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.PropertySupport;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.typesystem.inference.PropertyErrorTarget;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -125,6 +126,11 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
       }
       String value = ps.fromInternalValue(node.getProperty(propertyName));
       if (!(ps.canSetValue(node, p.getName(), value, operationContext.getScope(), false))) {
+        // TODO this is a hack for anonymous classes 
+        if ("name".equals(p.getName()) && "AnonymousClass".equals(SPropertyOperations.getString(concept, "name"))) {
+          continue;
+        }
+
         {
           BaseIntentionProvider intentionProvider = null;
           intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.core.typesystem.RemoveUndeclaredProperty_QuickFix", false);
