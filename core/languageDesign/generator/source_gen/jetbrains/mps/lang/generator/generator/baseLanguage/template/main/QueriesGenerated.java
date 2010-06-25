@@ -339,4 +339,17 @@ public class QueriesGenerated {
       }
     }
   }
+
+  public static void mappingScript_CodeBlock_6342833957791858286(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for (SNode n : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule")) {
+      if ((SLinkOperations.getTarget(n, "ruleConsequence", true) == null) || SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(n, "ruleConsequence", true)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RuleConsequence")) {
+        _context.showErrorMessage(_context.getOriginalCopiedInputNode(n), "Empty rule consequence");
+      }
+    }
+    for (SNode n : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.structure.Reduction_MappingRule")) {
+      if ((SLinkOperations.getTarget(n, "ruleConsequence", true) == null) || SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(n, "ruleConsequence", true)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RuleConsequence")) {
+        _context.showErrorMessage(_context.getOriginalCopiedInputNode(n), "Empty rule consequence");
+      }
+    }
+  }
 }

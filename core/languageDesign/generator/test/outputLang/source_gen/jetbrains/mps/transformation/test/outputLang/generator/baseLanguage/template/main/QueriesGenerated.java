@@ -180,7 +180,6 @@ public class QueriesGenerated {
                   return false;
                 }
                 {
-                  this.PatternVar_yy = null;
                   SNode childVar_x583g4_a0a0a0a71 = nodeToMatch_x583g4_a0a0a0r.getChildren(childRole_x583g4__0).get(0);
                   this.PatternVar_yy = childVar_x583g4_a0a0a0a71;
                 }
@@ -204,7 +203,6 @@ public class QueriesGenerated {
                         return false;
                       }
                       {
-                        this.PatternVar_xx = null;
                         SNode childVar_x583g4_a0a0a0a0r = nodeToMatch_x583g4_a0a0a0a71.getChildren(childRole_x583g4__2).get(0);
                         this.PatternVar_xx = childVar_x583g4_a0a0a0a0r;
                       }
@@ -215,7 +213,6 @@ public class QueriesGenerated {
                         return false;
                       }
                       {
-                        this.PatternVar_right = null;
                         SNode childVar_x583g4_a0a0a0a0r_0 = nodeToMatch_x583g4_a0a0a0a71.getChildren(childRole_x583g4__3).get(0);
                         this.PatternVar_right = childVar_x583g4_a0a0a0a0r_0;
                       }
@@ -280,7 +277,6 @@ public class QueriesGenerated {
             return false;
           }
           {
-            this.PatternVar_left = null;
             SNode childVar_x583g4_a0a0a0s = nodeToMatch_x583g4_a0a0a81.getChildren(childRole_x583g4__4).get(0);
             this.PatternVar_left = childVar_x583g4_a0a0a0s;
           }
@@ -291,7 +287,6 @@ public class QueriesGenerated {
             return false;
           }
           {
-            this.PatternVar_right = null;
             SNode childVar_x583g4_a0a0a0s_0 = nodeToMatch_x583g4_a0a0a81.getChildren(childRole_x583g4__5).get(0);
             this.PatternVar_right = childVar_x583g4_a0a0a0s_0;
           }
@@ -359,7 +354,6 @@ public class QueriesGenerated {
                   return false;
                 }
                 {
-                  this.PatternVar_left = null;
                   SNode childVar_x583g4_a0a0a0a91 = nodeToMatch_x583g4_a0a0a0t.getChildren(childRole_x583g4__7).get(0);
                   this.PatternVar_left = childVar_x583g4_a0a0a0a91;
                 }
@@ -370,7 +364,6 @@ public class QueriesGenerated {
                   return false;
                 }
                 {
-                  this.PatternVar_right = null;
                   SNode childVar_x583g4_a0a0a0a91_0 = nodeToMatch_x583g4_a0a0a0t.getChildren(childRole_x583g4__8).get(0);
                   this.PatternVar_right = childVar_x583g4_a0a0a0a91_0;
                 }
@@ -429,7 +422,6 @@ public class QueriesGenerated {
             return false;
           }
           {
-            this.PatternVar_myExpr = null;
             SNode childVar_x583g4_a0a0a0u = nodeToMatch_x583g4_a0a0a02.getChildren(childRole_x583g4__9).get(0);
             this.PatternVar_myExpr = childVar_x583g4_a0a0a0u;
           }
