@@ -254,7 +254,7 @@ public class DiffBuilder {
       String role = node.getRole_();
 
       if (role != null) {
-        if (!isCardinalityTooBig(node.getParent().getConceptFqName(), role)) {
+        if (!isMultipleCardinality(node.getParent().getConceptFqName(), role)) {
           SNodeId parentId = node.getParent().getSNodeId();
           SNode oldParent = myOldModel.getNodeById(parentId);
           SNodeId oldChildId = null;
@@ -409,7 +409,7 @@ public class DiffBuilder {
         Set<String> roles = new HashSet<String>(newNode.getReferenceRoles());
         roles.addAll(oldNode.getReferenceRoles());
         for (String role : roles) {
-          if (!isCardinalityTooBig(newNode.getConceptFqName(), role)) {
+          if (!isMultipleCardinality(newNode.getConceptFqName(), role)) {
             if (oldNode.getReference(role) != null && newNode.getReference(role) == null) {
               myChanges.add(new DeleteReferenceChange(id, myNewModel, oldNode.getReference(role)));
             } else {
@@ -421,7 +421,7 @@ public class DiffBuilder {
             System.out.println("we have too many references : " + newNode + " " + newNode.getId());
             System.out.println("role : " + role);
             System.out.println("not supported!");
-            isCardinalityTooBig(newNode.getConceptFqName(), role);
+            isMultipleCardinality(newNode.getConceptFqName(), role);
           }
         }
       }
@@ -435,7 +435,7 @@ public class DiffBuilder {
     return id.toString();
   }
 
-  private boolean isCardinalityTooBig(String fqName, String role) {
+  private boolean isMultipleCardinality(String fqName, String role) {
     LinkDeclaration ld = SModelSearchUtil.findLinkDeclaration(SModelUtil_new.findConceptDeclaration(fqName, GlobalScope.getInstance()), role);
     if (ld == null) {
       return false;
