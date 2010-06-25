@@ -17,7 +17,6 @@ import java.lang.reflect.Method;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.typesystem.ResolveUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -145,11 +144,6 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static boolean call_hasSameParameters_855369272314187138(SNode thisNode, SNode checked) {
-    SNode searchedReturnType = SLinkOperations.getTarget(checked, "returnType", true);
-    SNode foundReturnType = SLinkOperations.getTarget(thisNode, "returnType", true);
-    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(searchedReturnType, foundReturnType))) {
-      return false;
-    }
     boolean same = true;
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count(); i++) {
       String searchedParamType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(checked, "parameter", true)).getElement(i), "type", true));
