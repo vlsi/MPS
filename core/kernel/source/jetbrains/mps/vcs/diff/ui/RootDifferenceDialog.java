@@ -157,7 +157,9 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   private void sortChildren(SNodeId nodeId) {
     SNode newNode = myNewModel.getNodeById(nodeId);
     SNode oldNode = myOldModel.getNodeById(nodeId);
-    assert newNode != null && oldNode != null;
+    if (newNode == null || oldNode == null) {
+      return;
+    }
 
     LinkedHashSet<String> rolesOrder = new LinkedHashSet<String>();
     for (SNode child : oldNode.getChildrenIterable()) {
