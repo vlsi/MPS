@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
@@ -24,6 +25,10 @@ public class check_Cardinalities_NonTypesystemRule extends AbstractNonTypesystem
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
+    if (BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(node) != 0) {
+      return;
+    }
+
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     for (SNode link : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
       if (LinkDeclaration_Behavior.call_isAtLeastOneCardinality_3386205146660812199(link)) {

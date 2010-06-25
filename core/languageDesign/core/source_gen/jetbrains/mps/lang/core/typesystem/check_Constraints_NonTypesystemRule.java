@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -33,6 +34,10 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
+    if (BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(node) != 0) {
+      return;
+    }
+
     IOperationContext operationContext = typeCheckingContext.getOperationContext();
     if (operationContext == null) {
       return;
