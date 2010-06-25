@@ -21,6 +21,7 @@ public abstract class SModelRepositoryAdapter implements SModelRepositoryListene
 
   public void modelCreated(SModelDescriptor modelDescriptor) {
     modelRepositoryChanged();
+    modelRepositoryChanged(modelDescriptor);
   }
 
   public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
@@ -28,10 +29,12 @@ public abstract class SModelRepositoryAdapter implements SModelRepositoryListene
 
   public void modelDeleted(SModelDescriptor modelDescriptor) {
     modelRepositoryChanged();
+    modelRepositoryChanged(modelDescriptor);
   }
 
   public void modelRemoved(SModelDescriptor modelDescriptor) {
     modelRepositoryChanged();
+    modelRepositoryChanged(modelDescriptor);
   }
 
   public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
@@ -39,28 +42,37 @@ public abstract class SModelRepositoryAdapter implements SModelRepositoryListene
 
   public void modelAdded(SModelDescriptor modelDescriptor) {
     modelRepositoryChanged();
+    modelRepositoryChanged(modelDescriptor);
   }
 
   public void modelRenamed(SModelDescriptor modelDescriptor) {
     modelRepositoryChanged();
+    modelRepositoryChanged(modelDescriptor);
   }
 
   public void modelOwnerAdded(SModelDescriptor modelDescriptor, ModelOwner owner) {
     modelRepositoryChanged();
+    modelRepositoryChanged(modelDescriptor);
   }
 
   public void modelOwnerRemoved(SModelDescriptor modelDescriptor, ModelOwner owner) {
     modelRepositoryChanged();
+    modelRepositoryChanged(modelDescriptor);
   }
 
   public void modelFileChanged(SModelDescriptor modelDescriptor, IFile from) {
     modelRepositoryChanged();
+    modelRepositoryChanged(modelDescriptor);
   }
 
   public void beforeModelFileChanged(SModelDescriptor modelDescriptor) {
     modelRepositoryChanged();
+    modelRepositoryChanged(modelDescriptor);
   }
 
   public void modelRepositoryChanged() {
+  }
+
+  public void modelRepositoryChanged(SModelDescriptor modelDescriptor) {
   }
 }

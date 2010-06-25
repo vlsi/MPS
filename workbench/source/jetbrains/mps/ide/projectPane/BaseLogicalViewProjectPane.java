@@ -496,8 +496,10 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   //----listeners----
 
   private class MyModelRepositoryAdapter extends SModelRepositoryAdapter {
-    public void modelRepositoryChanged() {
-      myNeedRebuild = true;
+    public void modelRepositoryChanged(SModelDescriptor modelDescriptor) {
+      if (!SModelStereotype.INTERNAL.equals(modelDescriptor.getStereotype())) {
+        myNeedRebuild = true;
+      }
     }
 
     public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
