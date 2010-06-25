@@ -64,6 +64,14 @@ public class NullableAnalyzerRunner extends AnalyzerRunner<Map<Object, NullableS
       }
       myApplicableMap.get(conceptName).add(rule);
     }
+    {
+      DataFlowConstructor rule = new RuleIfNullEqualsReturn();
+      String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
+      if (!(myApplicableMap.containsKey(conceptName))) {
+        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
+      }
+      myApplicableMap.get(conceptName).add(rule);
+    }
     myProgram = new MPSProgramBuilder(DataFlowManager.getInstance()).buildProgram(myNode);
     prepareProgram();
     myAnalyzer = new NullableAnalyzerRunner.NullableAnalyzer();
@@ -96,7 +104,6 @@ public class NullableAnalyzerRunner extends AnalyzerRunner<Map<Object, NullableS
 
     public Map<Object, NullableState> merge(Program program, List<Map<Object, NullableState>> list) {
       Map<Object, NullableState> result = new HashMap<Object, NullableState>();
-
       return result;
     }
 
