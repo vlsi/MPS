@@ -19,7 +19,9 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SReference;
 
+@Deprecated
 public class ConstraintsChecker extends SpecificChecker {
+  @Deprecated
   public ConstraintsChecker() {
   }
 

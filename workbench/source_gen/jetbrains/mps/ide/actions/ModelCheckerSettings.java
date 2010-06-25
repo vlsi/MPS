@@ -105,9 +105,6 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     if (isCheckUnresolvedReferences()) {
       ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
     }
-    if (isCheckConstraints()) {
-      ListSequence.fromList(specificCheckers).addElement(new ConstraintsChecker());
-    }
     if (isCheckTypesystem()) {
       ListSequence.fromList(specificCheckers).addElement(new TypesystemChecker());
     }
@@ -122,18 +119,22 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     myState.myCheckUnresolvedReferences = checkUnresolvedReferences;
   }
 
+  @Deprecated
   public boolean isCheckConstraints() {
     return myState.myCheckConstraints;
   }
 
+  @Deprecated
   public void setCheckConstraints(boolean checkConstraints) {
     myState.myCheckConstraints = checkConstraints;
   }
 
+  @Deprecated
   public boolean isCheckScopes() {
     return myState.myCheckScopes;
   }
 
+  @Deprecated
   public void setCheckScopes(boolean checkScopes) {
     myState.myCheckScopes = checkScopes;
   }
@@ -160,7 +161,9 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
 
   public static class MyState {
     private boolean myCheckUnresolvedReferences = true;
+    @Deprecated
     private boolean myCheckConstraints = true;
+    @Deprecated
     private boolean myCheckScopes = true;
     private boolean myCheckTypesystem = true;
     private boolean myCheckBeforeCommit = true;
@@ -176,18 +179,22 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
       myCheckUnresolvedReferences = checkUnresolvedReferences;
     }
 
+    @Deprecated
     public boolean isCheckConstraints() {
       return myCheckConstraints;
     }
 
+    @Deprecated
     public void setCheckConstraints(boolean checkConstraints) {
       myCheckConstraints = checkConstraints;
     }
 
+    @Deprecated
     public boolean isCheckScopes() {
       return myCheckScopes;
     }
 
+    @Deprecated
     public void setCheckScopes(boolean checkScopes) {
       myCheckScopes = checkScopes;
     }
