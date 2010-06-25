@@ -72,7 +72,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
 
     }
   };
-  private boolean veiwportSetInPorgress = false;
+  private boolean myVeiwportSetInProgress = false;
 
 
   public RootMergeDialog(IOperationContext context, SModel change1, SModel change2, boolean modal) {
@@ -111,16 +111,16 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     result.getViewport().addChangeListener(new ChangeListener() {
 
       public void stateChanged(ChangeEvent e) {
-        if (veiwportSetInPorgress) {
+        if (myVeiwportSetInProgress) {
           return;
         }
-        veiwportSetInPorgress = true;
+        myVeiwportSetInProgress = true;
 
         result.synchronizeViewWith(myChange1EditorComponent);
         result.synchronizeViewWith(myResultEditorComponent);
         result.synchronizeViewWith(myChange2EditorComponent);
 
-        veiwportSetInPorgress = false;
+        myVeiwportSetInProgress = false;
       }
     });
 
