@@ -85,4 +85,9 @@ public class AnalyzerRunner<E> {
 
     return stateValues;
   }
+
+  public Program getProgramCopy() {
+    //only instructions
+    return myProgram.copy();
+  }
 }

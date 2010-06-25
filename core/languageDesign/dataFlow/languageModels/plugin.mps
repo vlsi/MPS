@@ -27,7 +27,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="24" />
+  <maxImportIndex value="25" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
@@ -38,6 +38,7 @@
   <import index="22" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow(jetbrains.mps.lang.dataFlow@java_stub)" version="-1" />
   <import index="23" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.presentation(jetbrains.mps.lang.dataFlow.presentation@java_stub)" version="-1" />
   <import index="24" modelUID="r:6fb1beb5-17d5-44c1-a541-c95672dc4233(jetbrains.mps.dataFlow.runtime)" version="-1" />
+  <import index="25" modelUID="r:b5150f5d-52b5-4155-abfa-86e03379b2ca(jetbrains.mps.analyzers.plugin)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1206459480619">
     <property name="name:23" value="PrintDFAResult" />
     <property name="caption:23" value="Print DFA" />
@@ -116,6 +117,9 @@
       </node>
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="1206642561766">
         <link role="action:23" targetNodeId="1206642260578" resolveInfo="ShowDFA" />
+      </node>
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="6333521875704387283">
+        <link role="action:23" targetNodeId="25.6333521875704386728" resolveInfo="ShowNullDFA" />
       </node>
     </node>
   </node>
