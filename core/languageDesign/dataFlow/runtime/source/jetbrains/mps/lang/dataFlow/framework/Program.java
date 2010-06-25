@@ -393,13 +393,13 @@ public class Program {
        if (i instanceof IfJumpInstruction) {
          IfJumpInstruction ifJump = ((IfJumpInstruction)i);
          int jumpTo = ifJump.getJumpTo();
-         if (jumpTo >= position) {
+         if (jumpTo > position) {
            ifJump.setJumpTo(jumpTo + 1);
          }
        } else if (i instanceof JumpInstruction) {
          JumpInstruction jump = ((JumpInstruction)i);
          int jumpTo = jump.getJumpTo();
-         if (jumpTo >= position) {
+         if (jumpTo > position) {
            jump.setJumpTo(jumpTo + 1);
          }
        }
