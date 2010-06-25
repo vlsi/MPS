@@ -43,7 +43,7 @@ public class NewTemplateFragment_Intention extends BaseIntention implements Inte
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false) == null) {
+    if (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"}, false, false) == null) {
       return false;
     }
     if (ListSequence.fromList(SNodeOperations.getAncestors(node, null, false)).where(new IWhereFilter<SNode>() {

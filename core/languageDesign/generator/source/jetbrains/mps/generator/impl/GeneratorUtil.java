@@ -86,8 +86,20 @@ public class GeneratorUtil {
   /*package*/
 
   static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
+    // FIXME rewrite
     List<TemplateFragment> templateFragments = new LinkedList<TemplateFragment>();
     for (INodeAdapter subnode : template.getDescendants()) {
+      if (subnode instanceof TemplateFragment) {
+        templateFragments.add((TemplateFragment) subnode);
+      }
+    }
+    return templateFragments;
+  }
+
+  static List<TemplateFragment> getTemplateFragments(InlineTemplateWithContext_RuleConsequence inlineTemplate) {
+    // FIXME rewrite
+    List<TemplateFragment> templateFragments = new LinkedList<TemplateFragment>();
+    for (INodeAdapter subnode : inlineTemplate.getDescendants()) {
       if (subnode instanceof TemplateFragment) {
         templateFragments.add((TemplateFragment) subnode);
       }
@@ -113,9 +125,9 @@ public class GeneratorUtil {
 
   /*package*/
 
-  static boolean checkIfOneOrMaryAdjacentFragments(List<TemplateFragment> fragments, TemplateDeclaration template, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
+  static boolean checkIfOneOrMaryAdjacentFragments(List<TemplateFragment> fragments, SNode templateContainer, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     if (fragments.isEmpty()) {
-      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't process template: no template fragments found");
+      generator.showErrorMessage(inputNode, templateContainer, ruleNode, "couldn't process template: no template fragments found");
       return false;
     }
     if (fragments.size() > 1) {
@@ -126,7 +138,7 @@ public class GeneratorUtil {
       for (TemplateFragment fragment : fragments) {
         templateNode = fragment.getParent();
         if (!(parent == templateNode.getParent() && role.equals(templateNode.getRole_()))) {
-          generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't process template: all template fragments must reside in the same parent node");
+          generator.showErrorMessage(inputNode, templateContainer, ruleNode, "couldn't process template: all template fragments must reside in the same parent node");
           return false;
         }
       }
@@ -152,16 +164,20 @@ public class GeneratorUtil {
     } else if (ruleConsequence instanceof AbandonInput_RuleConsequence) {
       throw new AbandonRuleInputException();
 
-    } else if (ruleConsequence instanceof TemplateDeclarationReference) {
-      TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
-/*
-      TemplateFragment fragment = getFragmentFromTemplate(template, inputNode, ruleNode, generator);
-      if (fragment != null) {
-        return new Pair<SNode, String>(fragment.getParent().getNode(), fragment.getName());
+    } else if (ruleConsequence instanceof TemplateDeclarationReference || ruleConsequence instanceof InlineTemplateWithContext_RuleConsequence) {
+
+      List<TemplateFragment> fragments;
+      SNode templateContainer;
+      if(ruleConsequence instanceof TemplateDeclarationReference) {
+        final TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
+        templateContainer = BaseAdapter.fromAdapter(template);
+        fragments = getTemplateFragments(template);
+      } else {
+        templateContainer = BaseAdapter.fromAdapter(ruleConsequence);
+        fragments = getTemplateFragments((InlineTemplateWithContext_RuleConsequence)ruleConsequence);
       }
-*/
-      List<TemplateFragment> fragments = getTemplateFragments(template);
-      if (checkIfOneOrMaryAdjacentFragments(fragments, template, inputNode, ruleNode, generator)) {
+
+      if (checkIfOneOrMaryAdjacentFragments(fragments, templateContainer, inputNode, ruleNode, generator)) {
         List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>(fragments.size());
         for (TemplateFragment fragment : fragments) {
           result.add(new Pair<SNode, String>(fragment.getParent().getNode(), getMappingName(fragment, null)));

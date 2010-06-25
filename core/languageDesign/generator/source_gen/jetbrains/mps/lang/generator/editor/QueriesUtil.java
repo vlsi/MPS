@@ -58,10 +58,10 @@ public class QueriesUtil {
       return false;
     }
     //  not inside any kind of macro (code shown in inspector) but OK on a macro node itself 
-    SNode ancestorMacro = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"}, true, false);
+    SNode ancestorMacro = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"}, true, false);
     if (ancestorMacro != null) {
       //  exception: can be inside 'alternativeConsequence' in IF-macro 
-      if (SNodeOperations.isInstanceOf(ancestorMacro, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")) {
+      if (SNodeOperations.isInstanceOf(ancestorMacro, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence") || SNodeOperations.isInstanceOf(ancestorMacro, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
         return true;
       }
       return false;
@@ -71,7 +71,7 @@ public class QueriesUtil {
       return true;
     }
     //  inside template declaration  
-    if (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"}, false, false) != null) {
+    if (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"}, false, false) != null) {
       return true;
     }
     return false;
@@ -85,12 +85,10 @@ public class QueriesUtil {
       }
     }).first();
     // surround with <TF> if necessary 
-    if (SNodeOperations.getAncestor(applyToNode, "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false) != null) {
+    if (SNodeOperations.getAncestorWhereConceptInList(applyToNode, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"}, false, false) != null) {
       if (!(QueriesUtil.isInsideTemplateFragment(applyToNode))) {
         QueriesUtil.createTemplateFragment(applyToNode);
       }
-    }
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false) != null) {
     }
     SNode nodeMacro = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.NodeMacro", null);
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.NodeMacro") && ListSequence.fromList(SNodeOperations.getChildren(applyToNode)).contains(node)) {
@@ -103,7 +101,7 @@ public class QueriesUtil {
 
   public static SNode addPropertyMacro(SNode node, EditorCell cell) {
     // surround with <TF> if necessary 
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false) != null) {
+    if (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"}, false, false) != null) {
       if (!(QueriesUtil.isInsideTemplateFragment(node))) {
         QueriesUtil.createTemplateFragment(node);
       }
@@ -117,7 +115,7 @@ public class QueriesUtil {
     String linkRole = QueriesUtil.getEditedLinkRole(cell);
     SNode referentNode = QueriesUtil.getEditedLinkReferentNode(cell);
     // surround with <TF> if necessary 
-    if (SNodeOperations.getAncestor(referentNode, "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false) != null) {
+    if (SNodeOperations.getAncestorWhereConceptInList(referentNode, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"}, false, false) != null) {
       if (!(QueriesUtil.isInsideTemplateFragment(referentNode))) {
         QueriesUtil.createTemplateFragment(referentNode);
       }

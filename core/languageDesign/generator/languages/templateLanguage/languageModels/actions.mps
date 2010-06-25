@@ -47,6 +47,9 @@
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.RemovePart:23" id="1177412906732">
         <link role="conceptToRemove:23" targetNodeId="1.1177093525992:2" />
       </node>
+      <node role="part:23" type="jetbrains.mps.lang.actions.structure.RemovePart:23" id="8900764248744228861">
+        <link role="conceptToRemove:23" targetNodeId="1.8900764248744213868:2" resolveInfo="InlineTemplateWithContext_RuleConsequence" />
+      </node>
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.RemovePart:23" id="1202777025214">
         <link role="conceptToRemove:23" targetNodeId="1.1202776937179:2" resolveInfo="AbandonInput_RuleConsequence" />
       </node>

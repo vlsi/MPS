@@ -76,7 +76,7 @@ public class QueriesUtil {
     if (node == null) {
       return null;
     }
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
       return null;
     }
     List<SNode> attributes = SNodeOperations.getAllAttributes(node);

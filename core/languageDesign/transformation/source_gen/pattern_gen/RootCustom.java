@@ -39,6 +39,8 @@ public class RootCustom {
       int e31 = 58 + ("extraWork".length());
       int e30 = 42;
       int e29 = (12 + 58 + ("myWork2".length()));
+      int ya1;
+      int ya2 = ya1 * 2;
     }
   }
 }

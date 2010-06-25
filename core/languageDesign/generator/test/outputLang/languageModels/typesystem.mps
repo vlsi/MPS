@@ -25,9 +25,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="-1" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="0" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="6266395626234257711">
     <property name="name:3" value="typeof_CustomStatement" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6266395626234257712">
@@ -44,7 +45,7 @@
                 <link role="applicableNode:3" targetNodeId="6266395626234257713" resolveInfo="customStatement" />
               </node>
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6266395626234295839">
-                <link role="link:16" targetNodeId="1.2681305894288486349" />
+                <link role="link:16" targetNodeId="1.2681305894288486349:0" />
               </node>
             </node>
           </node>
@@ -53,7 +54,7 @@
     </node>
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="6266395626234257713">
       <property name="name:3" value="customStatement" />
-      <link role="concept:3" targetNodeId="1.2681305894288486346" resolveInfo="CustomStatement" />
+      <link role="concept:3" targetNodeId="1.2681305894288486346:0" resolveInfo="CustomStatement" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="2163819695913379860">
@@ -76,7 +77,7 @@
     </node>
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="2163819695913379862">
       <property name="name:3" value="customStatementRef" />
-      <link role="concept:3" targetNodeId="1.2163819695913378074" resolveInfo="CustomStatementRef" />
+      <link role="concept:3" targetNodeId="1.2163819695913378074:0" resolveInfo="CustomStatementRef" />
     </node>
   </node>
 </model>

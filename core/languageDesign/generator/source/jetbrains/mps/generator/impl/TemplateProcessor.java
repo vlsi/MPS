@@ -409,7 +409,7 @@ public class TemplateProcessor {
       }
 */
       List<TemplateFragment> fragments = GeneratorUtil.getTemplateFragments(includeTemplate);
-      if (!GeneratorUtil.checkIfOneOrMaryAdjacentFragments(fragments, includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator)) {
+      if (!GeneratorUtil.checkIfOneOrMaryAdjacentFragments(fragments, BaseAdapter.fromAdapter(includeTemplate), newInputNode, nodeMacro.getNode(), myGenerator)) {
         myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLUDE$");
         return null;
       }
@@ -458,7 +458,7 @@ public class TemplateProcessor {
       }
 */
       List<TemplateFragment> fragments = GeneratorUtil.getTemplateFragments(template);
-      if (!GeneratorUtil.checkIfOneOrMaryAdjacentFragments(fragments, template, newInputNode, nodeMacro.getNode(), myGenerator)) {
+      if (!GeneratorUtil.checkIfOneOrMaryAdjacentFragments(fragments, BaseAdapter.fromAdapter(template), newInputNode, nodeMacro.getNode(), myGenerator)) {
         myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $CALL$");
         return null;
       }

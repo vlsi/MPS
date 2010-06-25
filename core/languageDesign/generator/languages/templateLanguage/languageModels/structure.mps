@@ -1748,5 +1748,20 @@
       <link role="intfc:0" targetNodeId="1722980698497626400:2" resolveInfo="ITemplateCall" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8900764248744213868">
+    <property name="package:0" value="rule.consequence" />
+    <property name="name:0" value="InlineTemplateWithContext_RuleConsequence" />
+    <link role="extends:0" targetNodeId="1168559098955:2" resolveInfo="RuleConsequence" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8900764248744213871">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="contentNode" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8900764248744213870">
+      <property name="value:0" value="&lt;in-line template with context&gt;" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

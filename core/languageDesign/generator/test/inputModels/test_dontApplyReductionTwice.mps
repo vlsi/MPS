@@ -11,16 +11,17 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="0" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.transformation.test.inputLang.structure.InputRoot" id="1209605989135">
     <property name="name" value="Input_root_1" />
     <property name="useInTest" value="dontApplyReductionTwice" />
   </node>
-  <node type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" id="1209658576147">
-    <property name="name" value="Root_ToCopy" />
-    <property name="text" value="this root will be copied to output " />
-    <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test" id="1209658659867">
-      <property name="text" value="this node will be reduced to itself but that must not lead to a cycling" />
+  <node type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot:0" id="1209658576147">
+    <property name="name:0" value="Root_ToCopy" />
+    <property name="text:0" value="this root will be copied to output " />
+    <node role="outputChild:0" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test:0" id="1209658659867">
+      <property name="text:0" value="this node will be reduced to itself but that must not lead to a cycling" />
     </node>
   </node>
 </model>

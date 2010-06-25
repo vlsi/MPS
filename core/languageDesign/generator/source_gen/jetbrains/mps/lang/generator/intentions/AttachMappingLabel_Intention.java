@@ -79,6 +79,14 @@ public class AttachMappingLabel_Intention extends BaseIntention implements Inten
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", false, false) != null) {
       return true;
     }
+    //  in in-line template with context 
+    if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", false, false) != null) {
+      return ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true) != null;
+        }
+      }) != null;
+    }
     //  in template fragment - ok 
     if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
       return ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {

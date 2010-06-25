@@ -2273,9 +2273,12 @@
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1205859852816">
                 <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode:32" id="1205863472249" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="1205859870414">
-                  <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1205859874245">
-                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1207675648316">
-                      <link role="conceptDeclaration:16" targetNodeId="1.1092059087312:2" resolveInfo="TemplateDeclaration" />
+                  <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList:16" id="8900764248744330106">
+                    <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="8900764248744330109">
+                      <link role="concept:16" targetNodeId="1.1092059087312:2" resolveInfo="TemplateDeclaration" />
+                    </node>
+                    <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="8900764248744330111">
+                      <link role="concept:16" targetNodeId="1.8900764248744213868:2" resolveInfo="InlineTemplateWithContext_RuleConsequence" />
                     </node>
                   </node>
                 </node>
@@ -4916,6 +4919,9 @@
                   <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="1225741791251">
                     <link role="concept:16" targetNodeId="1.1177093525992:2" resolveInfo="InlineTemplate_RuleConsequence" />
                   </node>
+                  <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="8900764248744330044">
+                    <link role="concept:16" targetNodeId="1.8900764248744213868:2" resolveInfo="InlineTemplateWithContext_RuleConsequence" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -4936,13 +4942,25 @@
                   </node>
                 </node>
               </node>
-              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1225741922916">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1225741920009">
-                  <link role="variableDeclaration:3" targetNodeId="1225741743297" resolveInfo="ancestorMacro" />
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="8900764248744330045">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8900764248744330049">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8900764248744330048">
+                    <link role="variableDeclaration:3" targetNodeId="1225741743297" resolveInfo="ancestorMacro" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="8900764248744330053">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8900764248744330055">
+                      <link role="conceptDeclaration:16" targetNodeId="1.8900764248744213868:2" resolveInfo="InlineTemplateWithContext_RuleConsequence" />
+                    </node>
+                  </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1225741930560">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1225741943014">
-                    <link role="conceptDeclaration:16" targetNodeId="1.1177093525992:2" resolveInfo="InlineTemplate_RuleConsequence" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1225741922916">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1225741920009">
+                    <link role="variableDeclaration:3" targetNodeId="1225741743297" resolveInfo="ancestorMacro" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1225741930560">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1225741943014">
+                      <link role="conceptDeclaration:16" targetNodeId="1.1177093525992:2" resolveInfo="InlineTemplate_RuleConsequence" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -5015,6 +5033,9 @@
                   </node>
                   <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="1216147931939">
                     <link role="concept:16" targetNodeId="1.1177093525992:2" resolveInfo="InlineTemplate_RuleConsequence" />
+                  </node>
+                  <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="8900764248744330057">
+                    <link role="concept:16" targetNodeId="1.8900764248744213868:2" resolveInfo="InlineTemplateWithContext_RuleConsequence" />
                   </node>
                 </node>
               </node>
@@ -5118,9 +5139,12 @@
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="1216154257861">
             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216154257862">
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="1216154257863">
-                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1216154257864">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1216154257865">
-                    <link role="conceptDeclaration:16" targetNodeId="1.1092059087312:2" resolveInfo="TemplateDeclaration" />
+                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList:16" id="8900764248744330076">
+                  <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="8900764248744330079">
+                    <link role="concept:16" targetNodeId="1.1092059087312:2" resolveInfo="TemplateDeclaration" />
+                  </node>
+                  <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="8900764248744330081">
+                    <link role="concept:16" targetNodeId="1.8900764248744213868:2" resolveInfo="InlineTemplateWithContext_RuleConsequence" />
                   </node>
                 </node>
               </node>
@@ -5129,24 +5153,6 @@
               </node>
             </node>
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1216154257867" />
-          </node>
-        </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1216154257868">
-          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216154257869" />
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="1216154257870">
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216154257871">
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="1216154257872">
-                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1216154257873">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1216154257874">
-                    <link role="conceptDeclaration:16" targetNodeId="1.1092059087312:2" resolveInfo="TemplateDeclaration" />
-                  </node>
-                </node>
-              </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1216154266718">
-                <link role="variableDeclaration:3" targetNodeId="1216154233965" resolveInfo="node" />
-              </node>
-            </node>
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1216154257876" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1216154257877">
@@ -5277,19 +5283,22 @@
             </node>
           </node>
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="1216154409466">
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216154409467">
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="1216154409468">
-                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1216154409469">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1216154409470">
-                    <link role="conceptDeclaration:16" targetNodeId="1.1092059087312:2" resolveInfo="TemplateDeclaration" />
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1216154409472" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8900764248744330082">
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="8900764248744330083">
+                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList:16" id="8900764248744330084">
+                  <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="8900764248744330085">
+                    <link role="concept:16" targetNodeId="1.1092059087312:2" resolveInfo="TemplateDeclaration" />
+                  </node>
+                  <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="8900764248744330086">
+                    <link role="concept:16" targetNodeId="1.8900764248744213868:2" resolveInfo="InlineTemplateWithContext_RuleConsequence" />
                   </node>
                 </node>
               </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1216154413807">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8900764248744330088">
                 <link role="variableDeclaration:3" targetNodeId="1216154377369" resolveInfo="node" />
               </node>
             </node>
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1216154409472" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1216154409479">
@@ -5412,16 +5421,19 @@
             </node>
           </node>
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="1216154550434">
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216154550435">
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="1216154550436">
-                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1216154550437">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1216154550438">
-                    <link role="conceptDeclaration:16" targetNodeId="1.1092059087312:2" resolveInfo="TemplateDeclaration" />
-                  </node>
-                </node>
-              </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8900764248744330089">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1216154550439">
                 <link role="variableDeclaration:3" targetNodeId="1216154550419" resolveInfo="referentNode" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="8900764248744330093">
+                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList:16" id="8900764248744330094">
+                  <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="8900764248744330095">
+                    <link role="concept:16" targetNodeId="1.1092059087312:2" resolveInfo="TemplateDeclaration" />
+                  </node>
+                  <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="8900764248744330096">
+                    <link role="concept:16" targetNodeId="1.8900764248744213868:2" resolveInfo="InlineTemplateWithContext_RuleConsequence" />
+                  </node>
+                </node>
               </node>
             </node>
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1216154550440" />
@@ -6708,6 +6720,26 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="8900764248744242392">
+    <property name="package:32" value="rule.consequence" />
+    <link role="conceptDeclaration:32" targetNodeId="1.8900764248744213868:2" resolveInfo="InlineTemplateWithContext_RuleConsequence" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8900764248744242394">
+      <property name="vertical:32" value="true" />
+      <property name="name:32" value="nodeBox" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8900764248744242462">
+        <property name="text:32" value="content node:" />
+        <link role="styleClass:32" targetNodeId="1224774992290" resolveInfo="GeneratorKeyWord" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="8900764248744242463">
+          <property name="flag:32" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="8900764248744242464">
+        <property name="noTargetText:32" value="&lt;no content node&gt;" />
+        <link role="relationDeclaration:32" targetNodeId="1.8900764248744213871:2" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="8900764248744242465" />
     </node>
   </node>
 </model>
