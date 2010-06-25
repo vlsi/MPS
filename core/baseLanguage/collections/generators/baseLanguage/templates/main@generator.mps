@@ -4088,33 +4088,6 @@
         </node>
       </node>
     </node>
-    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1240826522124">
-      <link role="applicableConcept:2" targetNodeId="6.1197027756228:3" resolveInfo="DotExpression" />
-      <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="1240826531792">
-        <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240826531793">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1240826532653">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1240855318538">
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1240855319923">
-                <property name="value:3" value="false" />
-              </node>
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240826532654">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240826532655">
-                  <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1240826532656" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1240826532657">
-                    <link role="link:16" targetNodeId="6.1197027833540:3" />
-                  </node>
-                </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1240826532658">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1240826538609">
-                    <link role="conceptDeclaration:16" targetNodeId="8.1240824716764:7" resolveInfo="AbstractMappingOperation" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1237490803780">
       <link role="applicableConcept:2" targetNodeId="6.1197027756228:3" resolveInfo="DotExpression" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1237490822855">
