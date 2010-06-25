@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -30,22 +32,19 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
     SNode classifier = SLinkOperations.getTarget(ct, "classifier", false);
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
       List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
-      if (ListSequence.fromList(methods).isNotEmpty()) {
-        SNode mtd = null;
-        for (SNode m : methods) {
-          if (!("equals".equals(SPropertyOperations.getString(m, "name")) || !(SPropertyOperations.getBoolean(m, "isAbstract")))) {
-            mtd = m;
-            break;
-          }
+      Iterable<SNode> cands = ListSequence.fromList(methods).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode m) {
+          return !("equals".equals(SPropertyOperations.getString(m, "name"))) && SPropertyOperations.getBoolean(m, "isAbstract");
         }
-        if (mtd != null) {
-          List<SNode> paramTypes = ListSequence.fromList(new ArrayList<SNode>());
-          for (SNode p : SLinkOperations.getTargets(mtd, "parameter", true)) {
-            ListSequence.fromList(paramTypes).addElement(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(p, "type", true), ct));
-          }
-          SNode resType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mtd, "returnType", true), ct);
-          supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), new supertypesOf_ClassifierType_SubtypingRule.QuotationClass_qen718_a1a0d0c0b0c0a().createNode(paramTypes, resType, typeCheckingContext));
+      });
+      SNode mtd = Sequence.fromIterable(cands).first();
+      if (Sequence.fromIterable(cands).isEmpty() && (mtd != null)) {
+        List<SNode> paramTypes = ListSequence.fromList(new ArrayList<SNode>());
+        for (SNode p : SLinkOperations.getTargets(mtd, "parameter", true)) {
+          ListSequence.fromList(paramTypes).addElement(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(p, "type", true), ct));
         }
+        SNode resType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mtd, "returnType", true), ct);
+        supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), new supertypesOf_ClassifierType_SubtypingRule.QuotationClass_qen718_a1a0d0d0c0a().createNode(paramTypes, resType, typeCheckingContext));
       }
     }
     return supertypes;
@@ -63,8 +62,8 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
     return true;
   }
 
-  public static class QuotationClass_qen718_a1a0d0c0b0c0a {
-    public QuotationClass_qen718_a1a0d0c0b0c0a() {
+  public static class QuotationClass_qen718_a1a0d0d0c0a {
+    public QuotationClass_qen718_a1a0d0d0c0a() {
     }
 
     public SNode createNode(Object parameter_6, Object parameter_7, final TypeCheckingContext typeCheckingContext) {
