@@ -67,7 +67,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   public void initComponent() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().addModule(TransientModelsModule.this, myProject.getComponent(MPSProject.class));
+        MPSModuleRepository.getInstance().addModule(TransientModelsModule.this, new MPSModuleOwner(){});
       }
     });
   }
