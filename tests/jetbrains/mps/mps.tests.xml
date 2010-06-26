@@ -180,7 +180,7 @@
       <project file="${mps.home}/samples/matrixLanguage/jetbrains.mps.matrixLanguage.mpr"/>
       <project file="${mps.home}/samples/xmlLiterals/jetbrains.mps.samples.xmlLiterals.mpr"/>
       <project file="${mps.home}/samples/agreement/agreement.mpr"/>
-      <project file="${mps.home}/samples/calculator/calculator.mpr"/>
+      <project file="${mps.home}/samples/calculator-tutorial/calculator-tutorial.mpr"/>
       <project file="${mps.home}/samples/dslbook_example/dslbook_example.mpr"/>
       <project file="${mps.home}/samples/fixedLengthReader/fixedLengthReader.mpr"/>
       <project file="${mps.home}/samples/formulaLanguage/formulaLanguage.mpr"/>
