@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="ConceptFunctionParameter_node" conceptFQName="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" featureKind="CONCEPT" />
@@ -36,6 +37,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="2522969319638091385" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="isErrorIntention" featureKind="PROPERTY" />
@@ -51,6 +53,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="2522969319638091386" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="isAvailableInChildNodes" featureKind="PROPERTY" />
@@ -66,6 +69,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="2522969319638093993" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="descriptionFunction" featureKind="CHILD" />
@@ -81,6 +85,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="2522969319638093994" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="childFilterFunction" featureKind="CHILD" />
@@ -96,6 +101,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="2522969319638093995" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="isApplicableFunction" featureKind="CHILD" />
@@ -111,6 +117,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="2522969319638198290" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="forConcept" featureKind="REFERENCE" />
@@ -126,6 +133,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="2522969319638198291" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="executeFunction" featureKind="CHILD" />
@@ -136,6 +144,7 @@
     <refactoringContext modelVersion="8">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="SuroundWithIntentionDeclaration" conceptFQName="jetbrains.mps.lang.intentions.structure.SuroundWithIntentionDeclaration" featureKind="CONCEPT" />
@@ -427,6 +436,7 @@
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="4359456199356557608">
       <property name="name:0" value="isAlwaysVisible" />
       <link role="dataType:0" targetNodeId="1.1082983657063:0" resolveInfo="boolean" />
+      <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="2192675361909415787" />
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5180116501957618330">
       <property name="metaClass:0" value="aggregation" />
