@@ -325,8 +325,6 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
-          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnusedParameters" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -1495,33 +1493,6 @@
             </SvnBranchConfiguration>
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/samples/calculator">
-          <value>
-            <SvnBranchConfiguration>
-              <option name="branchMap">
-                <map>
-                  <entry key="http://svn.jetbrains.org/mps/branches">
-                    <value>
-                      <list />
-                    </value>
-                  </entry>
-                  <entry key="http://svn.jetbrains.org/mps/tags">
-                    <value>
-                      <list />
-                    </value>
-                  </entry>
-                </map>
-              </option>
-              <option name="branchUrls">
-                <list>
-                  <option value="http://svn.jetbrains.org/mps/branches" />
-                  <option value="http://svn.jetbrains.org/mps/tags" />
-                </list>
-              </option>
-              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
-            </SvnBranchConfiguration>
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/samples/complexLanguage">
           <value>
             <SvnBranchConfiguration>
@@ -1585,7 +1556,7 @@
     <option name="myRelativeRootDirectory" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="svn" />
+    <mapping directory="" vcs="Git" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
