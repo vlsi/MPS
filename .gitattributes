@@ -3,8 +3,10 @@
 *.ipr text
 *.xml text
 *.java text
-*.mps text
+*.mps eol=lf
 *.mpl text
 *.msd text
 *.css text
 *.html text
+.debug text
+.dependencies text
