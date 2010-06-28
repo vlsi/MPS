@@ -59,7 +59,6 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   private static final String SAMPLES_IN_MPS_HOME_DIR = "samples";
   public static final String SAMPLES_IN_MPS_HOME_ZIP = "samples.zip";
   public static final String SAMPLES_IN_USER_HOME_DIR = "MPSSamples";
-  private String myLastBuildNumber;
   private static final String MPS = "MPS";
 
   public static SamplesExtractor getInstance() {
@@ -151,7 +150,14 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
     File samplesZipFile = new File(PathManager.getHomePath() + File.separator + SAMPLES_IN_MPS_HOME_ZIP);
     if (samplesZipFile.exists()) {
       File samplesDir = new File(getSamplesPathInUserHome());
-      if (!samplesDir.exists()) {
+
+      if (samplesDir.exists()) {
+        int answer = Messages.showOkCancelDialog("Do you want to replace directory\n" + samplesDir + "\n with version " + currentBuildNumberString() + " (old directory contents will be deleted)?", "Replace MPS Samples?", Messages.getQuestionIcon());
+        if (answer == 0) {
+          FileUtil.delete(samplesDir);
+          actuallyExtractSamples(samplesZipFile);
+        }
+      } else {
         actuallyExtractSamples(samplesZipFile);
       }
     }

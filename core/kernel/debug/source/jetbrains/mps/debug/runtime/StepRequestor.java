@@ -16,6 +16,7 @@ public class StepRequestor implements Requestor {
   private String myDeclaringType;
   private int myLineNumber;
   private int myFrameCount;
+  private String mySourceName;
 
   private final IDebuggableFramesSelector myFramesSelector;
 
@@ -30,9 +31,12 @@ public class StepRequestor implements Requestor {
         if (frame != null) {
           myDeclaringType = frame.location().declaringType().name();
           myLineNumber = frame.location().lineNumber();
+          mySourceName = frame.location().sourceName();
         }
       }
     } catch (IncompatibleThreadStateException e) {
+      LOG.error(e);
+    } catch (AbsentInformationException e) {
       LOG.error(e);
     }
   }
@@ -61,7 +65,8 @@ public class StepRequestor implements Requestor {
       }
       boolean filesEqual = myDeclaringType.equals(location.declaringType().name());
       // if we are on the same place we should step again
-      if (filesEqual && myLineNumber == location.lineNumber() && myFrameCount == frameCount) {
+      if (myFramesSelector.isSamePosition(myDeclaringType, mySourceName, myLineNumber, myFrameCount,
+        location.declaringType().name(), sourceName, location.lineNumber(), frameCount)) {
         return myStepType;
       }
     }

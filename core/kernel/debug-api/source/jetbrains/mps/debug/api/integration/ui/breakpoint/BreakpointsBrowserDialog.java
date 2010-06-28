@@ -6,6 +6,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
@@ -132,6 +133,11 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   @Override
   protected JComponent getMainComponent() {
     return myMainPanel;
+  }
+
+  @Override
+  public DialogDimensions getDefaultDimensionSettings() {
+    return new DialogDimensions(100, 200, 500, 200);
   }
 
   @BaseDialog.Button(position = 0, name = "Close", mnemonic = 'C', defaultButton = true)

@@ -6,6 +6,8 @@ import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.IDebuggableFramesSelector;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.EqualUtil;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -39,5 +41,16 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
       return true;
     }
     return false;
+  }
+
+  @Override
+  public boolean isSamePosition(String lastUnitName, String lastFileName, int lastLineNumber, int lastFrameCount, String nextUnitName, String nextFileName, int nextLineNumber, int nextFrameCount) {
+    if (ObjectUtils.equals(lastUnitName, nextUnitName) && lastLineNumber == nextLineNumber && lastFrameCount == nextFrameCount) {
+      return true;
+    }
+
+    SNode lastNode = StacktraceUtil2.getNode(lastUnitName, lastFileName, lastLineNumber);
+    SNode nextNode = StacktraceUtil2.getNode(nextUnitName, nextFileName, nextLineNumber);
+    return lastNode == nextNode;
   }
 }
