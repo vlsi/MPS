@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1217271585523">
+    <nodeInfo nodeId="1225979304340" fileName="ForLoop_Test.java" startLine="22" startPosition="49" endLine="23" endPosition="40" />
+    <nodeInfo nodeId="1215444253193" fileName="ForLoop_Test.java" startLine="23" startPosition="40" endLine="24" endPosition="163" />
+    <nodeInfo nodeId="1225979304340" fileName="ForLoop_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1225979304340" fileName="ForLoop_Test.java" startLine="22" startPosition="49" endLine="24" endPosition="163" />
+    <scopeInfo nodeId="1225979304340" fileName="ForLoop_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
+  </root>
+  <root nodeId="1217271585641">
+    <nodeInfo nodeId="1225979305378" fileName="MethodParametersTest_Test.java" startLine="22" startPosition="62" endLine="23" endPosition="40" />
+    <nodeInfo nodeId="1215444224366" fileName="MethodParametersTest_Test.java" startLine="23" startPosition="40" endLine="24" endPosition="160" />
+    <nodeInfo nodeId="1225979305378" fileName="MethodParametersTest_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1225979305378" fileName="MethodParametersTest_Test.java" startLine="22" startPosition="62" endLine="24" endPosition="160" />
+    <scopeInfo nodeId="1225979305378" fileName="MethodParametersTest_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
+  </root>
+  <root nodeId="1217271585692">
+    <nodeInfo nodeId="1225979305996" fileName="UnusedAssignment_Test.java" startLine="22" startPosition="58" endLine="23" endPosition="40" />
+    <nodeInfo nodeId="1215444198405" fileName="UnusedAssignment_Test.java" startLine="23" startPosition="40" endLine="24" endPosition="160" />
+    <nodeInfo nodeId="1225979305996" fileName="UnusedAssignment_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1225979305996" fileName="UnusedAssignment_Test.java" startLine="22" startPosition="58" endLine="24" endPosition="160" />
+    <scopeInfo nodeId="1225979305996" fileName="UnusedAssignment_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
+  </root>
+  <root nodeId="1217271586324">
+    <nodeInfo nodeId="1225979300041" fileName="ReadAction_Test.java" startLine="29" startPosition="52" endLine="30" endPosition="40" />
+    <nodeInfo nodeId="1225979300041" fileName="ReadAction_Test.java" startLine="28" startPosition="53" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1225979300041" fileName="ReadAction_Test.java" startLine="29" startPosition="52" endLine="30" endPosition="40" />
+    <scopeInfo nodeId="1225979300041" fileName="ReadAction_Test.java" startLine="28" startPosition="53" endLine="32" endPosition="0" />
+  </root>
+  <root nodeId="1217271586411">
+    <nodeInfo nodeId="1225979301883" fileName="DataFlowInClosure_Test.java" startLine="22" startPosition="59" endLine="23" endPosition="40" />
+    <nodeInfo nodeId="1215444268436" fileName="DataFlowInClosure_Test.java" startLine="23" startPosition="40" endLine="24" endPosition="160" />
+    <nodeInfo nodeId="1225979301883" fileName="DataFlowInClosure_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1225979301883" fileName="DataFlowInClosure_Test.java" startLine="22" startPosition="59" endLine="24" endPosition="160" />
+    <scopeInfo nodeId="1225979301883" fileName="DataFlowInClosure_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
+  </root>
+  <root nodeId="1217271586585">
+    <nodeInfo nodeId="1225979304892" fileName="UnexpectedReturnInAnonymousClass_Test.java" startLine="22" startPosition="74" endLine="23" endPosition="40" />
+    <nodeInfo nodeId="1215444400381" fileName="UnexpectedReturnInAnonymousClass_Test.java" startLine="23" startPosition="40" endLine="24" endPosition="150" />
+    <nodeInfo nodeId="1225979304892" fileName="UnexpectedReturnInAnonymousClass_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1225979304892" fileName="UnexpectedReturnInAnonymousClass_Test.java" startLine="22" startPosition="74" endLine="24" endPosition="150" />
+    <scopeInfo nodeId="1225979304892" fileName="UnexpectedReturnInAnonymousClass_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
+  </root>
+  <root nodeId="1217271587023">
+    <nodeInfo nodeId="1225979305492" fileName="UnusedVariableDeclaration_Test.java" startLine="29" startPosition="67" endLine="30" endPosition="40" />
+    <nodeInfo nodeId="1225979305492" fileName="UnusedVariableDeclaration_Test.java" startLine="28" startPosition="53" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1225979305492" fileName="UnusedVariableDeclaration_Test.java" startLine="29" startPosition="67" endLine="30" endPosition="40" />
+    <scopeInfo nodeId="1225979305492" fileName="UnusedVariableDeclaration_Test.java" startLine="28" startPosition="53" endLine="32" endPosition="0" />
+  </root>
+  <root nodeId="1217271587074">
+    <nodeInfo nodeId="1225979303691" fileName="AnonymousClass_Test.java" startLine="22" startPosition="56" endLine="23" endPosition="40" />
+    <nodeInfo nodeId="1215444376244" fileName="AnonymousClass_Test.java" startLine="23" startPosition="40" endLine="24" endPosition="160" />
+    <nodeInfo nodeId="1225979303691" fileName="AnonymousClass_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1225979303691" fileName="AnonymousClass_Test.java" startLine="22" startPosition="56" endLine="24" endPosition="160" />
+    <scopeInfo nodeId="1225979303691" fileName="AnonymousClass_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
+  </root>
+  <root nodeId="1217271587656">
+    <nodeInfo nodeId="1225979303302" fileName="VariableUninitialized_Test.java" startLine="29" startPosition="63" endLine="30" endPosition="40" />
+    <nodeInfo nodeId="1225979303302" fileName="VariableUninitialized_Test.java" startLine="28" startPosition="53" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1225979303302" fileName="VariableUninitialized_Test.java" startLine="29" startPosition="63" endLine="30" endPosition="40" />
+    <scopeInfo nodeId="1225979303302" fileName="VariableUninitialized_Test.java" startLine="28" startPosition="53" endLine="32" endPosition="0" />
+  </root>
+  <root nodeId="1217271587918">
+    <nodeInfo nodeId="1225979303578" fileName="IfStatementDataFlow_Test.java" startLine="22" startPosition="61" endLine="23" endPosition="40" />
+    <nodeInfo nodeId="1215444237482" fileName="IfStatementDataFlow_Test.java" startLine="23" startPosition="40" endLine="24" endPosition="160" />
+    <nodeInfo nodeId="1225979303578" fileName="IfStatementDataFlow_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1225979303578" fileName="IfStatementDataFlow_Test.java" startLine="22" startPosition="61" endLine="24" endPosition="160" />
+    <scopeInfo nodeId="1225979303578" fileName="IfStatementDataFlow_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
+  </root>
+  <root nodeId="1230544103882">
+    <nodeInfo nodeId="1230544200866" fileName="NullableDataFlow_Test.java" startLine="33" startPosition="58" endLine="34" endPosition="40" />
+    <nodeInfo nodeId="1230544270996" fileName="NullableDataFlow_Test.java" startLine="34" startPosition="40" endLine="35" endPosition="175" />
+    <nodeInfo nodeId="1230544492760" fileName="NullableDataFlow_Test.java" startLine="35" startPosition="175" endLine="36" endPosition="106" />
+    <nodeInfo nodeId="1230544609652" fileName="NullableDataFlow_Test.java" startLine="36" startPosition="106" endLine="37" endPosition="258" />
+    <nodeInfo nodeId="1230544639256" fileName="NullableDataFlow_Test.java" startLine="37" startPosition="258" endLine="38" endPosition="210" />
+    <nodeInfo nodeId="1230544200866" fileName="NullableDataFlow_Test.java" startLine="32" startPosition="53" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1230544200866" fileName="NullableDataFlow_Test.java" startLine="33" startPosition="58" endLine="38" endPosition="210">
+      <varInfo nodeId="1230544492761" varName="result" />
+      <varInfo nodeId="1230544270997" varName="p" />
+      <varInfo nodeId="1230544609653" varName="map" />
+    </scopeInfo>
+    <scopeInfo nodeId="1230544200866" fileName="NullableDataFlow_Test.java" startLine="32" startPosition="53" endLine="40" endPosition="0" />
+  </root>
+  <root nodeId="1230558053036">
+    <nodeInfo nodeId="1230558242107" fileName="NullableAnnotations_Test.java" startLine="33" startPosition="61" endLine="34" endPosition="40" />
+    <nodeInfo nodeId="1230558243485" fileName="NullableAnnotations_Test.java" startLine="34" startPosition="40" endLine="35" endPosition="175" />
+    <nodeInfo nodeId="1230558243492" fileName="NullableAnnotations_Test.java" startLine="35" startPosition="175" endLine="36" endPosition="106" />
+    <nodeInfo nodeId="1230558243504" fileName="NullableAnnotations_Test.java" startLine="36" startPosition="106" endLine="37" endPosition="258" />
+    <nodeInfo nodeId="1230558243519" fileName="NullableAnnotations_Test.java" startLine="37" startPosition="258" endLine="38" endPosition="210" />
+    <nodeInfo nodeId="1230558242107" fileName="NullableAnnotations_Test.java" startLine="32" startPosition="53" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1230558242107" fileName="NullableAnnotations_Test.java" startLine="33" startPosition="61" endLine="38" endPosition="210">
+      <varInfo nodeId="1230558243493" varName="result" />
+      <varInfo nodeId="1230558243486" varName="p" />
+      <varInfo nodeId="1230558243505" varName="map" />
+    </scopeInfo>
+    <scopeInfo nodeId="1230558242107" fileName="NullableAnnotations_Test.java" startLine="32" startPosition="53" endLine="40" endPosition="0" />
+  </root>
+</debugInfo>
+
