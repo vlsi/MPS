@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1209308509191">
+    <nodeInfo nodeId="1217420645601" fileName="FindModelUsages_Action.java" startLine="27" startPosition="0" endLine="28" endPosition="23" />
+    <nodeInfo nodeId="1217420647958" fileName="FindModelUsages_Action.java" startLine="28" startPosition="23" endLine="29" endPosition="36" />
+    <nodeInfo nodeId="1217420648077" fileName="FindModelUsages_Action.java" startLine="29" startPosition="36" endLine="30" endPosition="33" />
+    <nodeInfo nodeId="1212510263877" fileName="FindModelUsages_Action.java" startLine="79" startPosition="9" endLine="80" endPosition="53" />
+    <nodeInfo nodeId="1212510263886" fileName="FindModelUsages_Action.java" startLine="80" startPosition="53" endLine="81" endPosition="64" />
+    <nodeInfo nodeId="1213881488061" fileName="FindModelUsages_Action.java" startLine="81" startPosition="64" endLine="82" endPosition="73" />
+    <nodeInfo nodeId="1213881499688" fileName="FindModelUsages_Action.java" startLine="82" startPosition="73" endLine="83" endPosition="61" />
+    <nodeInfo nodeId="1212510263908" fileName="FindModelUsages_Action.java" startLine="85" startPosition="27" endLine="86" endPosition="51" />
+    <nodeInfo nodeId="1212510263918" fileName="FindModelUsages_Action.java" startLine="86" startPosition="51" endLine="87" endPosition="72" />
+    <nodeInfo nodeId="1212510263925" fileName="FindModelUsages_Action.java" startLine="89" startPosition="9" endLine="90" endPosition="153" />
+    <nodeInfo nodeId="1212510263906" fileName="FindModelUsages_Action.java" startLine="84" startPosition="59" endLine="89" endPosition="0" />
+    <nodeInfo nodeId="1212510263905" fileName="FindModelUsages_Action.java" startLine="83" startPosition="61" endLine="89" endPosition="9" />
+    <scopeInfo nodeId="1212510263907" fileName="FindModelUsages_Action.java" startLine="85" startPosition="27" endLine="87" endPosition="72" />
+    <scopeInfo nodeId="1212510263906" fileName="FindModelUsages_Action.java" startLine="84" startPosition="59" endLine="89" endPosition="0" />
+    <unitInfo nodeId="1212510263906" fileName="FindModelUsages_Action.java" startLine="84" startPosition="47" endLine="89" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.FindModelUsages_Action$1" />
+  </root>
+  <root nodeId="1209309487963">
+    <nodeInfo nodeId="1209309503949" fileName="FindModelUsages_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="133" />
+  </root>
+  <root nodeId="1209824745368">
+    <nodeInfo nodeId="1217420647991" fileName="FindLanguageUsages_Action.java" startLine="27" startPosition="0" endLine="28" endPosition="25" />
+    <nodeInfo nodeId="1217420648179" fileName="FindLanguageUsages_Action.java" startLine="28" startPosition="25" endLine="29" endPosition="36" />
+    <nodeInfo nodeId="1217420648398" fileName="FindLanguageUsages_Action.java" startLine="29" startPosition="36" endLine="30" endPosition="23" />
+    <nodeInfo nodeId="1209825243697" fileName="FindLanguageUsages_Action.java" startLine="43" startPosition="52" endLine="44" endPosition="69" />
+    <nodeInfo nodeId="1212508818624" fileName="FindLanguageUsages_Action.java" startLine="86" startPosition="9" endLine="87" endPosition="53" />
+    <nodeInfo nodeId="1212508818627" fileName="FindLanguageUsages_Action.java" startLine="87" startPosition="53" endLine="88" endPosition="64" />
+    <nodeInfo nodeId="1212509212700" fileName="FindLanguageUsages_Action.java" startLine="88" startPosition="64" endLine="89" endPosition="67" />
+    <nodeInfo nodeId="1213881523711" fileName="FindLanguageUsages_Action.java" startLine="89" startPosition="67" endLine="90" endPosition="64" />
+    <nodeInfo nodeId="1212509902424" fileName="FindLanguageUsages_Action.java" startLine="92" startPosition="27" endLine="93" endPosition="52" />
+    <nodeInfo nodeId="1212509902434" fileName="FindLanguageUsages_Action.java" startLine="93" startPosition="52" endLine="94" endPosition="75" />
+    <nodeInfo nodeId="1209824745404" fileName="FindLanguageUsages_Action.java" startLine="96" startPosition="9" endLine="97" endPosition="159" />
+    <nodeInfo nodeId="1212509897276" fileName="FindLanguageUsages_Action.java" startLine="91" startPosition="59" endLine="96" endPosition="0" />
+    <nodeInfo nodeId="1212509897275" fileName="FindLanguageUsages_Action.java" startLine="90" startPosition="64" endLine="96" endPosition="9" />
+    <scopeInfo nodeId="1209825222421" fileName="FindLanguageUsages_Action.java" startLine="43" startPosition="52" endLine="44" endPosition="69" />
+    <scopeInfo nodeId="1212509897277" fileName="FindLanguageUsages_Action.java" startLine="92" startPosition="27" endLine="94" endPosition="75" />
+    <scopeInfo nodeId="1212509897276" fileName="FindLanguageUsages_Action.java" startLine="91" startPosition="59" endLine="96" endPosition="0" />
+    <unitInfo nodeId="1212509897276" fileName="FindLanguageUsages_Action.java" startLine="91" startPosition="47" endLine="96" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.FindLanguageUsages_Action$1" />
+  </root>
+  <root nodeId="1209825453635">
+    <nodeInfo nodeId="1209825453638" fileName="FindLanguageUsages_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="139" />
+    <nodeInfo nodeId="1225978251202" fileName="FindLanguageUsages_ActionGroup.java" startLine="18" startPosition="139" endLine="19" endPosition="147" />
+  </root>
+  <root nodeId="1210951952325">
+    <nodeInfo nodeId="8711271696997803813" fileName="ShowNodeMessages_Action.java" startLine="23" startPosition="0" endLine="24" endPosition="26" />
+    <nodeInfo nodeId="1217420648896" fileName="ShowNodeMessages_Action.java" startLine="24" startPosition="26" endLine="25" endPosition="21" />
+    <nodeInfo nodeId="1217420648994" fileName="ShowNodeMessages_Action.java" startLine="25" startPosition="21" endLine="26" endPosition="42" />
+    <nodeInfo nodeId="7100928452798599336" fileName="ShowNodeMessages_Action.java" startLine="26" startPosition="42" endLine="27" endPosition="22" />
+    <nodeInfo nodeId="1210953046695" fileName="ShowNodeMessages_Action.java" startLine="88" startPosition="9" endLine="89" endPosition="154" />
+    <nodeInfo nodeId="1210953376370" fileName="ShowNodeMessages_Action.java" startLine="89" startPosition="154" endLine="90" endPosition="45" />
+    <nodeInfo nodeId="1210953446377" fileName="ShowNodeMessages_Action.java" startLine="91" startPosition="46" endLine="92" endPosition="40" />
+    <nodeInfo nodeId="1210953498759" fileName="ShowNodeMessages_Action.java" startLine="92" startPosition="40" endLine="93" endPosition="33" />
+    <nodeInfo nodeId="1210953523715" fileName="ShowNodeMessages_Action.java" startLine="93" startPosition="33" endLine="94" endPosition="38" />
+    <nodeInfo nodeId="1210953540140" fileName="ShowNodeMessages_Action.java" startLine="94" startPosition="38" endLine="95" endPosition="24" />
+    <nodeInfo nodeId="8711271696997803357" fileName="ShowNodeMessages_Action.java" startLine="96" startPosition="7" endLine="97" endPosition="134" />
+    <nodeInfo nodeId="1210953414956" fileName="ShowNodeMessages_Action.java" startLine="90" startPosition="45" endLine="96" endPosition="7" />
+    <scopeInfo nodeId="1210952584862" fileName="ShowNodeMessages_Action.java" startLine="40" startPosition="52" endLine="41" endPosition="188" />
+    <scopeInfo nodeId="1210953414957" fileName="ShowNodeMessages_Action.java" startLine="91" startPosition="46" endLine="95" endPosition="24" />
+    <scopeInfo nodeId="1210953414956" fileName="ShowNodeMessages_Action.java" startLine="90" startPosition="45" endLine="96" endPosition="7">
+      <varInfo nodeId="1210953414960" varName="message" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1210953591078">
+    <nodeInfo nodeId="1210953638916" fileName="CoreActions_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="130" />
+  </root>
+  <root nodeId="1225978220759">
+    <nodeInfo nodeId="1225978220840" fileName="FindLanguageConceptsUsages_Action.java" startLine="31" startPosition="0" endLine="32" endPosition="25" />
+    <nodeInfo nodeId="1225978220841" fileName="FindLanguageConceptsUsages_Action.java" startLine="32" startPosition="25" endLine="33" endPosition="36" />
+    <nodeInfo nodeId="1225978220842" fileName="FindLanguageConceptsUsages_Action.java" startLine="33" startPosition="36" endLine="34" endPosition="23" />
+    <nodeInfo nodeId="1225979441294" fileName="FindLanguageConceptsUsages_Action.java" startLine="48" startPosition="79" endLine="49" endPosition="19" />
+    <nodeInfo nodeId="1225979453804" fileName="FindLanguageConceptsUsages_Action.java" startLine="50" startPosition="5" endLine="51" endPosition="81" />
+    <nodeInfo nodeId="1225979524713" fileName="FindLanguageConceptsUsages_Action.java" startLine="51" startPosition="81" endLine="52" endPosition="87" />
+    <nodeInfo nodeId="1225979502798" fileName="FindLanguageConceptsUsages_Action.java" startLine="53" startPosition="43" endLine="54" endPosition="19" />
+    <nodeInfo nodeId="1225979544421" fileName="FindLanguageConceptsUsages_Action.java" startLine="56" startPosition="107" endLine="57" endPosition="19" />
+    <nodeInfo nodeId="1225978220834" fileName="FindLanguageConceptsUsages_Action.java" startLine="58" startPosition="5" endLine="59" endPosition="16" />
+    <nodeInfo nodeId="1225978220762" fileName="FindLanguageConceptsUsages_Action.java" startLine="101" startPosition="9" endLine="102" endPosition="53" />
+    <nodeInfo nodeId="1225978220771" fileName="FindLanguageConceptsUsages_Action.java" startLine="102" startPosition="53" endLine="103" endPosition="64" />
+    <nodeInfo nodeId="1225978220780" fileName="FindLanguageConceptsUsages_Action.java" startLine="103" startPosition="64" endLine="104" endPosition="75" />
+    <nodeInfo nodeId="1225978220786" fileName="FindLanguageConceptsUsages_Action.java" startLine="104" startPosition="75" endLine="105" endPosition="72" />
+    <nodeInfo nodeId="1225978220795" fileName="FindLanguageConceptsUsages_Action.java" startLine="107" startPosition="27" endLine="108" endPosition="52" />
+    <nodeInfo nodeId="1225978220804" fileName="FindLanguageConceptsUsages_Action.java" startLine="108" startPosition="52" endLine="109" endPosition="83" />
+    <nodeInfo nodeId="1225978220812" fileName="FindLanguageConceptsUsages_Action.java" startLine="111" startPosition="9" endLine="112" endPosition="187" />
+    <nodeInfo nodeId="1225978353908" fileName="FindLanguageConceptsUsages_Action.java" startLine="47" startPosition="52" endLine="50" endPosition="5" />
+    <nodeInfo nodeId="1225979445830" fileName="FindLanguageConceptsUsages_Action.java" startLine="52" startPosition="87" endLine="55" endPosition="5" />
+    <nodeInfo nodeId="1225979507209" fileName="FindLanguageConceptsUsages_Action.java" startLine="55" startPosition="5" endLine="58" endPosition="5" />
+    <nodeInfo nodeId="1225978220793" fileName="FindLanguageConceptsUsages_Action.java" startLine="106" startPosition="59" endLine="111" endPosition="0" />
+    <nodeInfo nodeId="1225978220792" fileName="FindLanguageConceptsUsages_Action.java" startLine="105" startPosition="72" endLine="111" endPosition="9" />
+    <scopeInfo nodeId="1225978353909" fileName="FindLanguageConceptsUsages_Action.java" startLine="48" startPosition="79" endLine="49" endPosition="19" />
+    <scopeInfo nodeId="1225979445831" fileName="FindLanguageConceptsUsages_Action.java" startLine="53" startPosition="43" endLine="54" endPosition="19" />
+    <scopeInfo nodeId="1225979507210" fileName="FindLanguageConceptsUsages_Action.java" startLine="56" startPosition="107" endLine="57" endPosition="19" />
+    <scopeInfo nodeId="1225978220794" fileName="FindLanguageConceptsUsages_Action.java" startLine="107" startPosition="27" endLine="109" endPosition="83" />
+    <scopeInfo nodeId="1225978220793" fileName="FindLanguageConceptsUsages_Action.java" startLine="106" startPosition="59" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="1225978220833" fileName="FindLanguageConceptsUsages_Action.java" startLine="47" startPosition="52" endLine="59" endPosition="16">
+      <varInfo nodeId="1225979524714" varName="structureModelDescriptor" />
+      <varInfo nodeId="1225979453805" varName="language" />
+    </scopeInfo>
+    <unitInfo nodeId="1225978220793" fileName="FindLanguageConceptsUsages_Action.java" startLine="106" startPosition="47" endLine="111" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action$1" />
+  </root>
+</debugInfo>
+

@@ -6,6 +6,7 @@
 *.mps text
 *.mpl text
 *.msd text
+*.mpr text
 *.css text
 *.html text
 .debug text
