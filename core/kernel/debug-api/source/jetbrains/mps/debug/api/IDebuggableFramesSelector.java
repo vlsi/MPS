@@ -20,4 +20,9 @@ public interface IDebuggableFramesSelector {
   IStackFrame findDeepestDebuggableFrame(List<IStackFrame> frames);
   boolean isDebuggableFrame(@NotNull IStackFrame frame);
   boolean isDebuggablePosition(String unitName, String fileName, int position);
+  /**
+   * Tells if two position in code correspond to the same node.
+   */
+  boolean isSamePosition(String lastUnitName, String lastFileName, int lastLineNumber, int lastFrameCount,
+                         String nextUnitName, String nextFileName, int nextLineNumber, int nextFrameCount);
 }

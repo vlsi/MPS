@@ -9,16 +9,19 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.execution.filters.HyperlinkInfo;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SModelDescriptor;
-import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -61,14 +64,84 @@ public class StacktraceUtil {
     });
   }
 
+  @Nullable
   private static <T> T findInDebugInfo(@NotNull String className, @NotNull final _FunctionTypes._return_P2_E0<? extends T, ? super DebugInfo, ? super SModelDescriptor> nodeGetter) {
     int lastDot = className.lastIndexOf(".");
-    String pkg = (lastDot == -1 ?
+    final String pkg = (lastDot == -1 ?
       "" :
       className.substring(0, lastDot)
     );
-    List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptorsByModelName(pkg);
-    for (final SModelDescriptor descriptor : ListSequence.fromList(list)) {
+    Iterable<SModelDescriptor> descritptors = Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
+      public Iterable<SModelDescriptor> iterable() {
+        return new Iterable<SModelDescriptor>() {
+          public Iterator<SModelDescriptor> iterator() {
+            return new YieldingIterator<SModelDescriptor>() {
+              private int __CP__ = 0;
+              private SModelDescriptor _3_descriptor;
+              private SModelDescriptor _8__yield_2me9q7_f0a0a2a2;
+              private Iterator<SModelDescriptor> _8__yield_2me9q7_f0a0a2a2_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 8:
+                      this._8__yield_2me9q7_f0a0a2a2_it = SModelRepository.getInstance().getModelDescriptorsByModelName(pkg).iterator();
+                    case 9:
+                      if (!(this._8__yield_2me9q7_f0a0a2a2_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._8__yield_2me9q7_f0a0a2a2 = this._8__yield_2me9q7_f0a0a2a2_it.next();
+                      this.__CP__ = 10;
+                      break;
+                    case 4:
+                      if (_3_descriptor != null) {
+                        this.__CP__ = 5;
+                        break;
+                      }
+                      this.__CP__ = 6;
+                      break;
+                    case 7:
+                      this.__CP__ = 6;
+                      this.yield(_3_descriptor);
+                      return true;
+                    case 11:
+                      this.__CP__ = 9;
+                      this.yield(_8__yield_2me9q7_f0a0a2a2);
+                      return true;
+                    case 0:
+                      this._3_descriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(pkg));
+                      this.__CP__ = 4;
+                      break;
+                    case 6:
+                      // we do not know stereotype, so we have to search by long name 
+                      // todo could we find out stereotype somehow? 
+                      // I want this code to be really fast 
+                      this.__CP__ = 8;
+                      break;
+                    case 5:
+                      this.__CP__ = 7;
+                      break;
+                    case 10:
+                      this.__CP__ = 11;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while (true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    });
+    for (final SModelDescriptor descriptor : Sequence.fromIterable(descritptors)) {
       if (SModelStereotype.isStubModelStereotype(descriptor.getStereotype())) {
         continue;
       }

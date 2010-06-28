@@ -139,6 +139,10 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
 
   }
 
+  public void sessionUnregistered(DebugSessionManagerComponent manager) {
+
+  }
+
   public Project getProject() {
     return myProject;
   }

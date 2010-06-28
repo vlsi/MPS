@@ -6,10 +6,10 @@ import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaLocalVariable;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticContext;
-import jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticField;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaThisObject;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -21,7 +21,7 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class JavaStackFrame extends ProxyForJava implements IStackFrame {
-  private static Logger LOG = Logger.getLogger(JavaStackFrame.class);
+  private static final Logger LOG = Logger.getLogger(JavaStackFrame.class);
 
   private final String myClassFqName;
   private final int myIndex;
@@ -44,6 +44,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     return new JavaThread(getStackFrame().thread());
   }
 
+  @Nullable
   public StackFrame getStackFrame() {
     try {
       return myThreadReference.frame(myIndex);
@@ -57,15 +58,17 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   public Map<IWatchable, IValue> getWatchableValues() {
     try {
       StackFrame stackFrame = getStackFrame();
-      Map<LocalVariable, Value> map = stackFrame.getValues(stackFrame.visibleVariables());
       Map<IWatchable, IValue> result = new HashMap<IWatchable, IValue>();
-      for (LocalVariable variable : map.keySet()) {
-        result.put(new JavaLocalVariable(variable, this, myClassFqName, stackFrame.thread()), JavaValue.fromJDIValue(map.get(variable), myClassFqName, stackFrame.thread()));
-      }
-      ObjectReference thisObject = stackFrame.thisObject();
-      if (thisObject != null) {
-        JavaThisObject object = new JavaThisObject(thisObject, this, myClassFqName, stackFrame.thread());
-        result.put(object, object.getValue());
+      if (stackFrame != null) {
+        Map<LocalVariable, Value> map = stackFrame.getValues(stackFrame.visibleVariables());
+        for (LocalVariable variable : map.keySet()) {
+          result.put(new JavaLocalVariable(variable, this, myClassFqName, stackFrame.thread()), JavaValue.fromJDIValue(map.get(variable), myClassFqName, stackFrame.thread()));
+        }
+        ObjectReference thisObject = stackFrame.thisObject();
+        if (thisObject != null) {
+          JavaThisObject object = new JavaThisObject(thisObject, this, myClassFqName, stackFrame.thread());
+          result.put(object, object.getValue());
+        }
       }
       return result;
     } catch (AbsentInformationException ex) {
@@ -80,15 +83,17 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
       StackFrame stackFrame = getStackFrame();
       List<IWatchable> result = new ArrayList<IWatchable>();
 
-      for (LocalVariable variable : stackFrame.visibleVariables()) {
-        result.add(new JavaLocalVariable(variable, this, myClassFqName, myThreadReference));
-      }
+      if (stackFrame != null) {
+        for (LocalVariable variable : stackFrame.visibleVariables()) {
+          result.add(new JavaLocalVariable(variable, this, myClassFqName, myThreadReference));
+        }
 
-      ObjectReference thisObject = stackFrame.thisObject();
-      if (thisObject != null) {
-        result.add(new JavaThisObject(thisObject, this, myClassFqName, myThreadReference));
-      } else {
-        result.add(new JavaStaticContext(getStackFrame().location().declaringType(), myClassFqName, myThreadReference));
+        ObjectReference thisObject = stackFrame.thisObject();
+        if (thisObject != null) {
+          result.add(new JavaThisObject(thisObject, this, myClassFqName, myThreadReference));
+        } else {
+          result.add(new JavaStaticContext(getStackFrame().location().declaringType(), myClassFqName, myThreadReference));
+        }
       }
 
       return result;

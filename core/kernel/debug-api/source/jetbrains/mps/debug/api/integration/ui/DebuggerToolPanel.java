@@ -173,8 +173,9 @@ public class DebuggerToolPanel extends JPanel {
 
     @Override
     public Object getElementAt(int index) {
-      if (index >= getSize()) return null;
-      return getThreads().get(index);
+      List<IThread> threads = getThreads();
+      if (index >= threads.size()) return null;
+      return threads.get(index);
     }
 
     public void updateThreads() {
@@ -194,8 +195,9 @@ public class DebuggerToolPanel extends JPanel {
 
     @Override
     public Object getElementAt(int index) {
-      if (index >= getSize()) return null;
-      return getFrames().get(index);
+      List<IStackFrame> frames = getFrames();
+      if (index >= frames.size()) return null;
+      return frames.get(index);
     }
 
     public void updateFrames() {

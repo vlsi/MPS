@@ -29,7 +29,7 @@ public class BuildNumber implements Comparable<BuildNumber> {
   private static final String BUILD_NUMBER = "__BUILD_NUMBER__";
 
   @Patch
-  private static final int TOP_BASELINE_VERSION = 11;
+  private static final int TOP_BASELINE_VERSION = 15;
 
   public BuildNumber(String productCode, int baselineVersion, int buildNumber) {
     myProductCode = productCode;

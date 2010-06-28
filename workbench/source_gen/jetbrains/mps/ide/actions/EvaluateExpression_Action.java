@@ -23,7 +23,7 @@ public class EvaluateExpression_Action extends GeneratedAction {
   private IOperationContext operationContext;
 
   public EvaluateExpression_Action() {
-    super("EvaluateExpression", "", ICON);
+    super("Evaluate Expression", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }

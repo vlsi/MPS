@@ -122,6 +122,7 @@ public class DebugSessionManagerComponent implements ProjectComponent {
 
  public void removeDebugSession(AbstractDebugSession session) {
    fireSessionDetached(session);
+   session.sessionUnregistered(this);
    myProcessesToSessions.remove(session.getProcessHandler());
  }
 

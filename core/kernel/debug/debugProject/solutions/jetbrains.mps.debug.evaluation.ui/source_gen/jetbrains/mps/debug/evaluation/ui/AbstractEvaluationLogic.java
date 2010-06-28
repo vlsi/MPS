@@ -71,14 +71,7 @@ public abstract class AbstractEvaluationLogic {
     myContext = context;
 
     // creating module 
-    final Wrappers._T<EvaluationAuxModule> module = new Wrappers._T<EvaluationAuxModule>();
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        module.value = new EvaluationAuxModule(AbstractEvaluationLogic.this.myContext.getProject());
-        module.value.setInvocationContext(AbstractEvaluationLogic.this.myContext.getModule());
-      }
-    });
-    myAuxModule = module.value;
+    myAuxModule = myDebugSession.getAuxModule();
 
     // creating evaluator node 
     final Wrappers._T<SNode> evaluatorConcept = new Wrappers._T<SNode>();

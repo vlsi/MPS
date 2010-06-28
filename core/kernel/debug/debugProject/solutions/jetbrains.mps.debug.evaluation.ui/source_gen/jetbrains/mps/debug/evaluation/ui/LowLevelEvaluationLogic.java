@@ -16,16 +16,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.project.AbstractModule;
-import java.util.Collections;
-import jetbrains.mps.reloading.EachClassPathItemVisitor;
-import jetbrains.mps.reloading.JarFileClassPathItem;
-import jetbrains.mps.reloading.FileClassPathItem;
-import jetbrains.mps.stubs.StubReloadManager;
 import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.Type;
 import com.sun.jdi.ClassNotLoadedException;
@@ -87,36 +77,6 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
       }
     });
 
-    ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
-      public void run() {
-        final ProgressIndicator indicator = ProgressManager.getInstance().getProgressIndicator();
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            // add classpath to module to be able to see classes in evaluation 
-            IModule module = getLocationModel().getModelDescriptor().getModule();
-            IClassPathItem cpItem = AbstractModule.getDependenciesClasspath(Collections.singleton(module), true);
-            cpItem.accept(new EachClassPathItemVisitor() {
-              @Override
-              public void visit(JarFileClassPathItem item) {
-                String path = item.getFile().getAbsolutePath();
-                getModule().addStubPath(path);
-                indicator.setText2("Added " + path);
-              }
-
-              @Override
-              public void visit(FileClassPathItem item) {
-                String path = item.getClassPath();
-                getModule().addStubPath(path);
-                indicator.setText2("Added " + path);
-              }
-            });
-
-            indicator.setText2("Reloading stubs...");
-            StubReloadManager.getInstance().reload();
-          }
-        });
-      }
-    }, "Loading stubs", false, myContext.getProject());
   }
 
   @Nullable

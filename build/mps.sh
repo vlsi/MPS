@@ -1,6 +1,11 @@
 #!/bin/sh
 
-SCRIPT_PATH=`readlink -f "$0"`
+UNAME=`uname`
+SCRIPT_PATH="$0"
+if [ "${UNAME}" = "Linux" ]; then
+  # readlink resolves symbolic links, but on linux only
+  SCRIPT_PATH=`readlink -f "$0"`
+fi
 PROJECT_HOME=`dirname "${SCRIPT_PATH}"`
 PROJECT_HOME_FROM_STARTUP_DIR=..
 
@@ -33,7 +38,6 @@ CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/log4j/log4j.jar
 
 cd ${PROJECT_HOME}
 cd bin
-UNAME=`uname`
 if [ "${UNAME}" = "Darwin" ]; then
   if [ -z ${DYLD_LIBRARY_PATH} ]; then
     DYLD_LIBRARY_PATH=${PWD}

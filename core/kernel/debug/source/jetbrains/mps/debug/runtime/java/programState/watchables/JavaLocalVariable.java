@@ -21,7 +21,7 @@ import javax.swing.Icon;
  * To change this template use File | Settings | File Templates.
  */
 public class JavaLocalVariable extends JavaBreakpointWatchable implements IWatchable {
-  private static Logger LOG = Logger.getLogger(JavaLocalVariable.class);
+  private static final Logger LOG = Logger.getLogger(JavaLocalVariable.class);
 
   private final LocalVariable myLocalVariable;
   private final JavaStackFrame myStackFrame;
@@ -31,7 +31,10 @@ public class JavaLocalVariable extends JavaBreakpointWatchable implements IWatch
     super(classFqName, threadReference);
     myLocalVariable = variable;
     myStackFrame = stackFrame;
-    myCachedValue = JavaValue.fromJDIValue(myStackFrame.getStackFrame().getValue(myLocalVariable), classFqName, threadReference);
+    StackFrame javaStackFrame = myStackFrame.getStackFrame();
+    if (javaStackFrame != null) {
+      myCachedValue = JavaValue.fromJDIValue(javaStackFrame.getValue(myLocalVariable), classFqName, threadReference);
+    }
   }
 
   public LocalVariable getLocalVariable() {

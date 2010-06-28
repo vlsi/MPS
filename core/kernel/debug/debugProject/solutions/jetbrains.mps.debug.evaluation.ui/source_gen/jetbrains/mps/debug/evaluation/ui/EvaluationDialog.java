@@ -106,7 +106,6 @@ public class EvaluationDialog extends BaseDialog {
       public void windowClosed(WindowEvent event) {
         debugSession.removeChangeListener(mySessionChangeListener);
         EvaluationDialog.this.myEditor.disposeEditor();
-        EvaluationDialog.this.myEvaluationLogic.getModule().dispose();
       }
     });
   }

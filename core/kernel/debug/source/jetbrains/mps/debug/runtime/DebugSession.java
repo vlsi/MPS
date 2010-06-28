@@ -4,23 +4,39 @@ import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
+import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import jetbrains.mps.debug.evaluation.ui.EvaluationDialog;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.reloading.EachClassPathItemVisitor;
+import jetbrains.mps.reloading.FileClassPathItem;
+import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.stubs.StubReloadManager;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Collections;
 
 public class DebugSession extends AbstractDebugSession<JavaUiState> {
   //todo extract abstract superclass to allow suspend/resume/etc. any process if developer implements it
   private static final Logger LOG = Logger.getLogger(DebugSession.class);
   private final DebugVMEventsProcessor myEventsProcessor;
+  private EvaluationAuxModule myAuxModule;
 
   public DebugSession(DebugVMEventsProcessor eventsProcessor, Project p) {
     super(p);
     myEventsProcessor = eventsProcessor;
     myEventsProcessor.setDebuggableFramesSelector(getDebuggableFramesSelector());
     eventsProcessor.getMulticaster().addListener(new MyDebugProcessAdapter());
+  }
+
+  public EvaluationAuxModule getAuxModule() {
+    return myAuxModule;
   }
 
   protected JavaUiState createUiState() {
@@ -99,6 +115,36 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
     VMEventsProcessorManagerComponent vmManager
       = manager.getProject().getComponent(VMEventsProcessorManagerComponent.class);
     vmManager.addDebugSession(this);
+     ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            myAuxModule = new EvaluationAuxModule(myProject);
+
+            // add classpath to module to be able to see classes in evaluation
+            IModule module = null; //todo invocation module
+            IClassPathItem cpItem = AbstractModule.getDependenciesClasspath(Collections.singleton(module), true);
+            cpItem.accept(new EachClassPathItemVisitor() {
+              @Override
+              public void visit(JarFileClassPathItem item) {
+                String path = item.getFile().getAbsolutePath();
+                myAuxModule.addStubPath(path);
+              }
+
+              @Override
+              public void visit(FileClassPathItem item) {
+                String path = item.getClassPath();
+                myAuxModule.addStubPath(path);
+              }
+            });
+            StubReloadManager.getInstance().reload();
+          }
+        });
+
+  }
+
+  @Override
+  public void sessionUnregistered(DebugSessionManagerComponent manager) {
+    myAuxModule.dispose();
+    myAuxModule = null;
   }
 
   private class MyDebugProcessAdapter extends DebugProcessAdapter {
