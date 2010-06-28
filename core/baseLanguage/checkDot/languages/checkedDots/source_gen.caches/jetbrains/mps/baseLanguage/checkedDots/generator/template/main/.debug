@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="4549711462050000016">
+    <nodeInfo nodeId="5227621747122336713" fileName="QueriesGenerated.java" startLine="38" startPosition="150" endLine="39" endPosition="119" />
+    <scopeInfo nodeId="4549711462050029099" fileName="QueriesGenerated.java" startLine="18" startPosition="154" endLine="19" endPosition="66" />
+    <scopeInfo nodeId="3391577739833458954" fileName="QueriesGenerated.java" startLine="22" startPosition="154" endLine="23" endPosition="126" />
+    <scopeInfo nodeId="8921542504326913813" fileName="QueriesGenerated.java" startLine="26" startPosition="136" endLine="27" endPosition="195" />
+    <scopeInfo nodeId="4549711462050028769" fileName="QueriesGenerated.java" startLine="30" startPosition="150" endLine="31" endPosition="76" />
+    <scopeInfo nodeId="824701331935845598" fileName="QueriesGenerated.java" startLine="34" startPosition="149" endLine="35" endPosition="76" />
+    <scopeInfo nodeId="7907427828436736379" fileName="QueriesGenerated.java" startLine="43" startPosition="150" endLine="44" endPosition="111" />
+    <scopeInfo nodeId="3391577739833458930" fileName="QueriesGenerated.java" startLine="47" startPosition="150" endLine="48" endPosition="67" />
+    <scopeInfo nodeId="7907427828436735259" fileName="QueriesGenerated.java" startLine="51" startPosition="150" endLine="52" endPosition="74" />
+    <scopeInfo nodeId="3391577739833596066" fileName="QueriesGenerated.java" startLine="55" startPosition="150" endLine="56" endPosition="30" />
+    <scopeInfo nodeId="3391577739833431907" fileName="QueriesGenerated.java" startLine="59" startPosition="155" endLine="60" endPosition="189" />
+    <scopeInfo nodeId="3391577739833596042" fileName="QueriesGenerated.java" startLine="63" startPosition="155" endLine="64" endPosition="189" />
+    <scopeInfo nodeId="5227621747122194588" fileName="QueriesGenerated.java" startLine="38" startPosition="150" endLine="40" endPosition="176">
+      <varInfo nodeId="5227621747122336714" varName="type" />
+    </scopeInfo>
+  </root>
+</debugInfo>
+

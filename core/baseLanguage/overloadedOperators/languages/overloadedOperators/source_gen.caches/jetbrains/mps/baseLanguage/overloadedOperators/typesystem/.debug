@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="6136676636350205595">
+    <nodeInfo nodeId="8861433211215309469" fileName="TypesystemDescriptor.java" startLine="51" startPosition="296" endLine="55" endPosition="0" />
+    <nodeInfo nodeId="5277715307557177118" fileName="TypesystemDescriptor.java" startLine="60" startPosition="296" endLine="64" endPosition="0" />
+    <nodeInfo nodeId="8861433211215307899" fileName="TypesystemDescriptor.java" startLine="50" startPosition="99" endLine="55" endPosition="9" />
+    <nodeInfo nodeId="5277715307557177107" fileName="TypesystemDescriptor.java" startLine="59" startPosition="132" endLine="64" endPosition="9" />
+    <scopeInfo nodeId="8861433211215309469" fileName="TypesystemDescriptor.java" startLine="52" startPosition="52" endLine="53" endPosition="67" />
+    <scopeInfo nodeId="5277715307557177118" fileName="TypesystemDescriptor.java" startLine="61" startPosition="52" endLine="62" endPosition="67" />
+    <scopeInfo nodeId="8861433211215309469" fileName="TypesystemDescriptor.java" startLine="51" startPosition="296" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="5277715307557177118" fileName="TypesystemDescriptor.java" startLine="60" startPosition="296" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="6136676636350205601" fileName="TypesystemDescriptor.java" startLine="50" startPosition="99" endLine="56" endPosition="198">
+      <varInfo nodeId="8861433211215307900" varName="operators" />
+    </scopeInfo>
+    <scopeInfo nodeId="6136676636350307649" fileName="TypesystemDescriptor.java" startLine="59" startPosition="132" endLine="65" endPosition="153">
+      <varInfo nodeId="5277715307557177108" varName="operators" />
+    </scopeInfo>
+    <unitInfo nodeId="8861433211215309469" fileName="TypesystemDescriptor.java" startLine="51" startPosition="266" endLine="55" endPosition="7" unitName="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.TypesystemDescriptor$1" />
+    <unitInfo nodeId="5277715307557177118" fileName="TypesystemDescriptor.java" startLine="60" startPosition="266" endLine="64" endPosition="7" unitName="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.TypesystemDescriptor$2" />
+  </root>
+  <root nodeId="6677452554239169670">
+    <nodeInfo nodeId="6677452554239169677" fileName="typeof_LeftOperand_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="53" />
+    <nodeInfo nodeId="6677452554239169677" fileName="typeof_LeftOperand_InferenceRule.java" startLine="21" startPosition="53" endLine="22" endPosition="53" />
+    <nodeInfo nodeId="6677452554239169677" fileName="typeof_LeftOperand_InferenceRule.java" startLine="22" startPosition="53" endLine="23" endPosition="236" />
+    <nodeInfo nodeId="6677452554239169677" fileName="typeof_LeftOperand_InferenceRule.java" startLine="23" startPosition="236" endLine="24" endPosition="448" />
+    <nodeInfo nodeId="6677452554239169677" fileName="typeof_LeftOperand_InferenceRule.java" startLine="19" startPosition="97" endLine="25" endPosition="5" />
+    <scopeInfo nodeId="6677452554239169677" fileName="typeof_LeftOperand_InferenceRule.java" startLine="20" startPosition="5" endLine="24" endPosition="448" />
+    <scopeInfo nodeId="6677452554239169671" fileName="typeof_LeftOperand_InferenceRule.java" startLine="19" startPosition="97" endLine="25" endPosition="5" />
+  </root>
+  <root nodeId="6677452554239170996">
+    <nodeInfo nodeId="6677452554239173961" fileName="typeof_RightOperand_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="54" />
+    <nodeInfo nodeId="6677452554239173961" fileName="typeof_RightOperand_InferenceRule.java" startLine="21" startPosition="54" endLine="22" endPosition="53" />
+    <nodeInfo nodeId="6677452554239173961" fileName="typeof_RightOperand_InferenceRule.java" startLine="22" startPosition="53" endLine="23" endPosition="236" />
+    <nodeInfo nodeId="6677452554239173961" fileName="typeof_RightOperand_InferenceRule.java" startLine="23" startPosition="236" endLine="24" endPosition="450" />
+    <nodeInfo nodeId="6677452554239173961" fileName="typeof_RightOperand_InferenceRule.java" startLine="19" startPosition="98" endLine="25" endPosition="5" />
+    <scopeInfo nodeId="6677452554239173961" fileName="typeof_RightOperand_InferenceRule.java" startLine="20" startPosition="5" endLine="24" endPosition="450" />
+    <scopeInfo nodeId="6677452554239170997" fileName="typeof_RightOperand_InferenceRule.java" startLine="19" startPosition="98" endLine="25" endPosition="5" />
+  </root>
+</debugInfo>
+

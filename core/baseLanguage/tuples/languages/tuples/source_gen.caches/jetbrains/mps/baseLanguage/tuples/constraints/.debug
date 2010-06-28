@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1239537193957">
+    <nodeInfo nodeId="1239726276929" fileName="NamedTupleDeclaration_DefaultSearchScope.java" startLine="30" startPosition="132" endLine="31" endPosition="82" />
+    <nodeInfo nodeId="1239726234084" fileName="NamedTupleDeclaration_DefaultSearchScope.java" startLine="32" startPosition="229" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1239555370905" fileName="NamedTupleDeclaration_resolveInfo_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="73" />
+    <scopeInfo nodeId="1239726234085" fileName="NamedTupleDeclaration_DefaultSearchScope.java" startLine="33" startPosition="40" endLine="34" endPosition="121" />
+    <scopeInfo nodeId="1239726234084" fileName="NamedTupleDeclaration_DefaultSearchScope.java" startLine="32" startPosition="229" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1239537196772" fileName="NamedTupleDeclaration_DefaultSearchScope.java" startLine="30" startPosition="132" endLine="36" endPosition="7">
+      <varInfo nodeId="1239726276930" varName="refModel" />
+    </scopeInfo>
+    <unitInfo nodeId="1239726234084" fileName="NamedTupleDeclaration_DefaultSearchScope.java" startLine="32" startPosition="206" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.IWhereFilter$anonymous" />
+  </root>
+  <root nodeId="1239575916907">
+    <scopeInfo nodeId="1239575924539" fileName="NamedTupleComponentReference_componentDeclaration_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="225" />
+  </root>
+  <root nodeId="1239576894334">
+    <scopeInfo nodeId="1239576963985" fileName="NamedTupleComponentAccessOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="369" />
+    <scopeInfo nodeId="1239577074261" fileName="NamedTupleComponentAccessOperation_alias_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="102" />
+    <scopeInfo nodeId="1239576899059" fileName="NamedTupleComponentAccessOperation_component_ReferentConstraint.java" startLine="27" startPosition="132" endLine="28" endPosition="371" />
+  </root>
+  <root nodeId="1240488415103">
+    <nodeInfo nodeId="1240573408991" fileName="TupleIntefaceUtils.java" startLine="22" startPosition="53" endLine="23" endPosition="74" />
+    <nodeInfo nodeId="1240573261715" fileName="TupleIntefaceUtils.java" startLine="26" startPosition="84" endLine="27" endPosition="118" />
+    <nodeInfo nodeId="1240573261723" fileName="TupleIntefaceUtils.java" startLine="27" startPosition="118" endLine="28" endPosition="117" />
+    <nodeInfo nodeId="1240573261730" fileName="TupleIntefaceUtils.java" startLine="28" startPosition="117" endLine="29" endPosition="20" />
+    <nodeInfo nodeId="1240573261757" fileName="TupleIntefaceUtils.java" startLine="31" startPosition="241" endLine="32" endPosition="193" />
+    <nodeInfo nodeId="1240573261792" fileName="TupleIntefaceUtils.java" startLine="33" startPosition="294" endLine="34" endPosition="192" />
+    <nodeInfo nodeId="1240573261807" fileName="TupleIntefaceUtils.java" startLine="35" startPosition="314" endLine="36" endPosition="18" />
+    <nodeInfo nodeId="1240573261855" fileName="TupleIntefaceUtils.java" startLine="37" startPosition="316" endLine="38" endPosition="18" />
+    <nodeInfo nodeId="1240573382659" fileName="TupleIntefaceUtils.java" startLine="40" startPosition="5" endLine="41" endPosition="52" />
+    <nodeInfo nodeId="1240573937726" fileName="TupleIntefaceUtils.java" startLine="51" startPosition="26" endLine="52" endPosition="41" />
+    <nodeInfo nodeId="1240573479682" fileName="TupleIntefaceUtils.java" startLine="54" startPosition="27" endLine="55" endPosition="85" />
+    <nodeInfo nodeId="1240574032662" fileName="TupleIntefaceUtils.java" startLine="57" startPosition="87" endLine="58" endPosition="37" />
+    <nodeInfo nodeId="1240574122956" fileName="TupleIntefaceUtils.java" startLine="61" startPosition="85" endLine="62" endPosition="22" />
+    <nodeInfo nodeId="1240574095466" fileName="TupleIntefaceUtils.java" startLine="63" startPosition="9" endLine="64" endPosition="37" />
+    <nodeInfo nodeId="1240573498636" fileName="TupleIntefaceUtils.java" startLine="65" startPosition="7" endLine="66" endPosition="62" />
+    <nodeInfo nodeId="1240574251973" fileName="TupleIntefaceUtils.java" startLine="68" startPosition="25" endLine="69" endPosition="18" />
+    <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="75" startPosition="23" endLine="76" endPosition="14" />
+    <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="79" startPosition="63" endLine="80" endPosition="33" />
+    <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="95" startPosition="30" endLine="96" endPosition="24" />
+    <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="99" startPosition="26" endLine="100" endPosition="24" />
+    <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="103" startPosition="25" endLine="104" endPosition="24" />
+    <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="108" startPosition="91" endLine="109" endPosition="62" />
+    <nodeInfo nodeId="1240488415105" fileName="TupleIntefaceUtils.java" startLine="18" startPosition="33" endLine="20" endPosition="3" />
+    <nodeInfo nodeId="1240573451132" fileName="TupleIntefaceUtils.java" startLine="53" startPosition="28" endLine="56" endPosition="7" />
+    <nodeInfo nodeId="1240574007130" fileName="TupleIntefaceUtils.java" startLine="56" startPosition="7" endLine="59" endPosition="7" />
+    <nodeInfo nodeId="1240574107023" fileName="TupleIntefaceUtils.java" startLine="60" startPosition="77" endLine="63" endPosition="9" />
+    <nodeInfo nodeId="1240574223367" fileName="TupleIntefaceUtils.java" startLine="67" startPosition="5" endLine="70" endPosition="5" />
+    <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="74" startPosition="78" endLine="77" endPosition="5" />
+    <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="78" startPosition="0" endLine="81" endPosition="5" />
+    <nodeInfo nodeId="1240488428955" fileName="TupleIntefaceUtils.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <nodeInfo nodeId="1240573332428" fileName="TupleIntefaceUtils.java" startLine="42" startPosition="150" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="1240573353690" fileName="TupleIntefaceUtils.java" startLine="47" startPosition="149" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
+    <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
+    <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
+    <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
+    <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
+    <nodeInfo nodeId="1240573332420" fileName="TupleIntefaceUtils.java" startLine="41" startPosition="52" endLine="46" endPosition="26" />
+    <nodeInfo nodeId="1240573353682" fileName="TupleIntefaceUtils.java" startLine="46" startPosition="26" endLine="51" endPosition="26" />
+    <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="106" startPosition="0" endLine="111" endPosition="0" />
+    <nodeInfo nodeId="1240573514603" fileName="TupleIntefaceUtils.java" startLine="59" startPosition="7" endLine="65" endPosition="7" />
+    <nodeInfo nodeId="1240573261740" fileName="TupleIntefaceUtils.java" startLine="30" startPosition="97" endLine="39" endPosition="7" />
+    <nodeInfo nodeId="1240573261734" fileName="TupleIntefaceUtils.java" startLine="29" startPosition="20" endLine="40" endPosition="5" />
+    <nodeInfo nodeId="1240573356266" fileName="TupleIntefaceUtils.java" startLine="52" startPosition="41" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="1240573211676" fileName="TupleIntefaceUtils.java" startLine="25" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1240488415108" fileName="TupleIntefaceUtils.java" startLine="19" startPosition="31" endLine="19" endPosition="31" />
+    <scopeInfo nodeId="1240488428958" fileName="TupleIntefaceUtils.java" startLine="22" startPosition="53" endLine="23" endPosition="74" />
+    <scopeInfo nodeId="1240573261756" fileName="TupleIntefaceUtils.java" startLine="31" startPosition="241" endLine="32" endPosition="193" />
+    <scopeInfo nodeId="1240573261791" fileName="TupleIntefaceUtils.java" startLine="33" startPosition="294" endLine="34" endPosition="192" />
+    <scopeInfo nodeId="1240573261806" fileName="TupleIntefaceUtils.java" startLine="35" startPosition="314" endLine="36" endPosition="18" />
+    <scopeInfo nodeId="1240573261854" fileName="TupleIntefaceUtils.java" startLine="37" startPosition="316" endLine="38" endPosition="18" />
+    <scopeInfo nodeId="1240573332429" fileName="TupleIntefaceUtils.java" startLine="43" startPosition="66" endLine="44" endPosition="24" />
+    <scopeInfo nodeId="1240573353691" fileName="TupleIntefaceUtils.java" startLine="48" startPosition="66" endLine="49" endPosition="24" />
+    <scopeInfo nodeId="1240573451134" fileName="TupleIntefaceUtils.java" startLine="54" startPosition="27" endLine="55" endPosition="85" />
+    <scopeInfo nodeId="1240574007132" fileName="TupleIntefaceUtils.java" startLine="57" startPosition="87" endLine="58" endPosition="37" />
+    <scopeInfo nodeId="1240574107024" fileName="TupleIntefaceUtils.java" startLine="61" startPosition="85" endLine="62" endPosition="22" />
+    <scopeInfo nodeId="1240574223368" fileName="TupleIntefaceUtils.java" startLine="68" startPosition="25" endLine="69" endPosition="18" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="75" startPosition="23" endLine="76" endPosition="14" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="79" startPosition="63" endLine="80" endPosition="33" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="83" startPosition="43" endLine="84" endPosition="29" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="87" startPosition="38" endLine="88" endPosition="29" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="91" startPosition="36" endLine="92" endPosition="29" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="95" startPosition="30" endLine="96" endPosition="24" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="99" startPosition="26" endLine="100" endPosition="24" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="103" startPosition="25" endLine="104" endPosition="24" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="108" startPosition="91" endLine="109" endPosition="62" />
+    <scopeInfo nodeId="1240488415105" fileName="TupleIntefaceUtils.java" startLine="18" startPosition="33" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="74" startPosition="78" endLine="77" endPosition="5" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="78" startPosition="0" endLine="81" endPosition="5" />
+    <scopeInfo nodeId="1240488428955" fileName="TupleIntefaceUtils.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1240488439728" varName="ifc" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240573332428" fileName="TupleIntefaceUtils.java" startLine="42" startPosition="150" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1240573353690" fileName="TupleIntefaceUtils.java" startLine="47" startPosition="149" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1240573514604" fileName="TupleIntefaceUtils.java" startLine="60" startPosition="77" endLine="64" endPosition="37" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="106" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="1240573261739" fileName="TupleIntefaceUtils.java" startLine="30" startPosition="97" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="1240573261734" fileName="TupleIntefaceUtils.java" startLine="29" startPosition="20" endLine="40" endPosition="5" />
+    <scopeInfo nodeId="1240573356268" fileName="TupleIntefaceUtils.java" startLine="53" startPosition="28" endLine="66" endPosition="62" />
+    <scopeInfo nodeId="1240573211679" fileName="TupleIntefaceUtils.java" startLine="26" startPosition="84" endLine="71" endPosition="18">
+      <varInfo nodeId="1240573382660" varName="result" />
+      <varInfo nodeId="1240573261731" varName="ignored" />
+      <varInfo nodeId="1240573261724" varName="mutators" />
+      <varInfo nodeId="1240573353683" varName="mit" />
+      <varInfo nodeId="1240573261716" varName="accessors" />
+      <varInfo nodeId="1240573332421" varName="ait" />
+      <varInfo nodeId="1240573937727" varName="hasMutators" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240573211676" fileName="TupleIntefaceUtils.java" startLine="25" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="1240573246422" varName="ifc" />
+    </scopeInfo>
+    <unitInfo nodeId="1240573332428" fileName="TupleIntefaceUtils.java" startLine="42" startPosition="93" endLine="46" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils$1" />
+    <unitInfo nodeId="1240573353690" fileName="TupleIntefaceUtils.java" startLine="47" startPosition="92" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils$2" />
+    <unitInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="74" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils$Property" />
+    <unitInfo nodeId="1240488415103" fileName="TupleIntefaceUtils.java" startLine="18" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils" />
+  </root>
+  <root nodeId="1652220223504359701">
+    <nodeInfo nodeId="1652220223504375560" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="37" startPosition="145" endLine="38" endPosition="66" />
+    <nodeInfo nodeId="1652220223504375592" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="40" startPosition="60" endLine="41" endPosition="35" />
+    <nodeInfo nodeId="1652220223504376199" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="43" startPosition="9" endLine="44" endPosition="22" />
+    <nodeInfo nodeId="1652220223504375590" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="39" startPosition="51" endLine="42" endPosition="11" />
+    <nodeInfo nodeId="1652220223504375574" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="38" startPosition="66" endLine="43" endPosition="9" />
+    <nodeInfo nodeId="1652220223504375449" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="36" startPosition="71" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="1652220223504359859" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="46" endPosition="6" />
+    <scopeInfo nodeId="1652220223504375591" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="40" startPosition="60" endLine="41" endPosition="35" />
+    <scopeInfo nodeId="1652220223504375575" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="39" startPosition="51" endLine="42" endPosition="11" />
+    <scopeInfo nodeId="1652220223504375574" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="38" startPosition="66" endLine="43" endPosition="9">
+      <varInfo nodeId="1652220223504375579" varName="classifier" />
+    </scopeInfo>
+    <scopeInfo nodeId="1652220223504375461" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="37" startPosition="145" endLine="44" endPosition="22">
+      <varInfo nodeId="1652220223504375561" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1652220223504375449" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="36" startPosition="71" endLine="46" endPosition="0">
+      <varInfo nodeId="1652220223504375453" varName="classifiers" />
+      <varInfo nodeId="1652220223504375458" varName="condition" />
+      <varInfo nodeId="1652220223504375456" varName="constraint" />
+    </scopeInfo>
+    <scopeInfo nodeId="1652220223504359704" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="46" endPosition="6" />
+    <unitInfo nodeId="1652220223504374047" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="33" startPosition="15" endLine="46" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleType_tupleDeclaration_ReferentConstraint$1" />
+  </root>
+</debugInfo>
+

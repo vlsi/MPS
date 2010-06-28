@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1894531970723323135">
+    <nodeInfo nodeId="4006340295321214066" fileName="TypeExtension_Editor.java" startLine="182" startPosition="111" endLine="183" endPosition="112" />
+    <scopeInfo nodeId="4006340295321214065" fileName="TypeExtension_Editor.java" startLine="182" startPosition="111" endLine="183" endPosition="112" />
+  </root>
+  <root nodeId="1973189701691198687">
+    <scopeInfo nodeId="1713017043371093242" fileName="ExtensionStaticFieldDeclaration_Editor.java" startLine="150" startPosition="111" endLine="151" endPosition="99" />
+  </root>
+  <root nodeId="6513744873655832108">
+    <nodeInfo nodeId="1082537205635903145" fileName="ExtensionMethodDeclaration_Actions.java" startLine="30" startPosition="101" endLine="31" endPosition="101" />
+    <nodeInfo nodeId="1082537205635903121" fileName="ExtensionMethodDeclaration_Actions.java" startLine="29" startPosition="75" endLine="32" endPosition="7" />
+    <scopeInfo nodeId="1082537205635903122" fileName="ExtensionMethodDeclaration_Actions.java" startLine="30" startPosition="101" endLine="31" endPosition="101" />
+    <scopeInfo nodeId="6513744873655832111" fileName="ExtensionMethodDeclaration_Actions.java" startLine="29" startPosition="75" endLine="32" endPosition="7" />
+  </root>
+  <root nodeId="7353029842736914602">
+    <nodeInfo nodeId="3897935848304631878" fileName="ExtensionMethodDeclaration_Editor.java" startLine="280" startPosition="111" endLine="281" endPosition="112" />
+    <nodeInfo nodeId="1082537205635902553" fileName="ExtensionMethodDeclaration_Editor.java" startLine="292" startPosition="111" endLine="293" endPosition="99" />
+    <scopeInfo nodeId="3897935848304631877" fileName="ExtensionMethodDeclaration_Editor.java" startLine="280" startPosition="111" endLine="281" endPosition="112" />
+    <scopeInfo nodeId="7353029842738567568" fileName="ExtensionMethodDeclaration_Editor.java" startLine="284" startPosition="111" endLine="285" endPosition="99" />
+    <scopeInfo nodeId="7353029842738567578" fileName="ExtensionMethodDeclaration_Editor.java" startLine="288" startPosition="111" endLine="289" endPosition="96" />
+    <scopeInfo nodeId="1082537205635902552" fileName="ExtensionMethodDeclaration_Editor.java" startLine="292" startPosition="111" endLine="293" endPosition="99" />
+    <scopeInfo nodeId="8022092943109749238" fileName="ExtensionMethodDeclaration_Editor.java" startLine="296" startPosition="111" endLine="297" endPosition="158" />
+  </root>
+</debugInfo>
+

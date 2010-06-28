@@ -23,6 +23,7 @@ import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponent {
   public menu_SubstituteFeatureAndParameter() {
@@ -55,11 +56,11 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
       return res;
     }
 
-    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((Pair) parameterObject, node, model, scope, operationContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((Pair) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(Pair parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction_impl(Pair parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNode fe = (SNode) parameterObject.o1;
       SNode pw = (SNode) parameterObject.o2;
       SLinkOperations.setTarget(node, "paramObject", pw, true);

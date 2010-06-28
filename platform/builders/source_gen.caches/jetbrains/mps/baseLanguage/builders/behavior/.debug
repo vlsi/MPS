@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="2679357232284040708">
+    <nodeInfo nodeId="2679357232284045690" fileName="BeanPropertyBuilder_Behavior.java" startLine="63" startPosition="79" endLine="64" endPosition="26" />
+    <nodeInfo nodeId="2679357232284060656" fileName="BeanPropertyBuilder_Behavior.java" startLine="65" startPosition="29" endLine="66" endPosition="18" />
+    <nodeInfo nodeId="2679357232284060659" fileName="BeanPropertyBuilder_Behavior.java" startLine="68" startPosition="43" endLine="69" endPosition="18" />
+    <nodeInfo nodeId="2679357232284060685" fileName="BeanPropertyBuilder_Behavior.java" startLine="71" startPosition="49" endLine="72" endPosition="18" />
+    <nodeInfo nodeId="2679357232284060690" fileName="BeanPropertyBuilder_Behavior.java" startLine="73" startPosition="5" endLine="74" endPosition="58" />
+    <nodeInfo nodeId="2679357232284060647" fileName="BeanPropertyBuilder_Behavior.java" startLine="64" startPosition="26" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="2679357232284045696" fileName="BeanPropertyBuilder_Behavior.java" startLine="67" startPosition="5" endLine="70" endPosition="5" />
+    <nodeInfo nodeId="2679357232284060663" fileName="BeanPropertyBuilder_Behavior.java" startLine="70" startPosition="5" endLine="73" endPosition="5" />
+    <scopeInfo nodeId="2679357232284040710" fileName="BeanPropertyBuilder_Behavior.java" startLine="24" startPosition="43" endLine="24" endPosition="43" />
+    <scopeInfo nodeId="2679357232284060727" fileName="BeanPropertyBuilder_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="229" />
+    <scopeInfo nodeId="2679357232284060739" fileName="BeanPropertyBuilder_Behavior.java" startLine="31" startPosition="105" endLine="32" endPosition="62" />
+    <scopeInfo nodeId="4797501453850342019" fileName="BeanPropertyBuilder_Behavior.java" startLine="35" startPosition="145" endLine="36" endPosition="160" />
+    <scopeInfo nodeId="2679357232284060648" fileName="BeanPropertyBuilder_Behavior.java" startLine="65" startPosition="29" endLine="66" endPosition="18" />
+    <scopeInfo nodeId="2679357232284045697" fileName="BeanPropertyBuilder_Behavior.java" startLine="68" startPosition="43" endLine="69" endPosition="18" />
+    <scopeInfo nodeId="2679357232284060664" fileName="BeanPropertyBuilder_Behavior.java" startLine="71" startPosition="49" endLine="72" endPosition="18" />
+    <scopeInfo nodeId="2679357232284040714" fileName="BeanPropertyBuilder_Behavior.java" startLine="63" startPosition="79" endLine="75" endPosition="73">
+      <varInfo nodeId="2679357232284045691" varName="prefix" />
+      <varInfo nodeId="2679357232284060691" varName="suffix" />
+    </scopeInfo>
+  </root>
+  <root nodeId="3816167865390595154">
+    <nodeInfo nodeId="8969040284892403104" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="20" startPosition="59" endLine="21" endPosition="18" />
+    <nodeInfo nodeId="8969040284892403123" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="23" startPosition="74" endLine="24" endPosition="134" />
+    <nodeInfo nodeId="3816167865390604204" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="30" startPosition="24" endLine="31" endPosition="18" />
+    <nodeInfo nodeId="3816167865390609193" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="33" startPosition="74" endLine="34" endPosition="19" />
+    <nodeInfo nodeId="5199967550912567401" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="39" startPosition="113" endLine="40" endPosition="48" />
+    <nodeInfo nodeId="3816167865390609219" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="40" startPosition="48" endLine="41" endPosition="138" />
+    <nodeInfo nodeId="7782956297805866133" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="44" startPosition="308" endLine="45" endPosition="152" />
+    <nodeInfo nodeId="7782956297805865297" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="52" startPosition="83" endLine="53" endPosition="48" />
+    <nodeInfo nodeId="7782956297805865310" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="53" startPosition="48" endLine="54" endPosition="29" />
+    <nodeInfo nodeId="7782956297805865337" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="55" startPosition="29" endLine="56" endPosition="56" />
+    <nodeInfo nodeId="7782956297805865326" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="56" startPosition="56" endLine="57" endPosition="69" />
+    <nodeInfo nodeId="7782956297805904008" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="62" startPosition="112" endLine="63" endPosition="48" />
+    <nodeInfo nodeId="7782956297805903936" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="63" startPosition="48" endLine="64" endPosition="110" />
+    <nodeInfo nodeId="7782956297805903949" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="64" startPosition="110" endLine="65" endPosition="137" />
+    <nodeInfo nodeId="7782956297805904028" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="68" startPosition="332" endLine="69" endPosition="161" />
+    <nodeInfo nodeId="3816167865390856315" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="76" startPosition="110" endLine="77" endPosition="48" />
+    <nodeInfo nodeId="7782956297805940239" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="78" startPosition="103" endLine="79" endPosition="117" />
+    <nodeInfo nodeId="7782956297805940313" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="81" startPosition="120" endLine="82" endPosition="119" />
+    <nodeInfo nodeId="5389689214217081377" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="87" startPosition="112" endLine="88" endPosition="48" />
+    <nodeInfo nodeId="7782956297805865431" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="89" startPosition="103" endLine="90" endPosition="120" />
+    <nodeInfo nodeId="7782956297805904088" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="92" startPosition="120" endLine="93" endPosition="122" />
+    <nodeInfo nodeId="8969040284892403095" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="19" startPosition="73" endLine="22" endPosition="5" />
+    <nodeInfo nodeId="8969040284892403108" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="22" startPosition="5" endLine="25" endPosition="5" />
+    <nodeInfo nodeId="3816167865390595164" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="29" startPosition="88" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="3816167865390604208" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="32" startPosition="5" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="7782956297805866109" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="43" startPosition="78" endLine="46" endPosition="9" />
+    <nodeInfo nodeId="7782956297805903962" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="67" startPosition="73" endLine="70" endPosition="9" />
+    <nodeInfo nodeId="7782956297805940214" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="77" startPosition="48" endLine="80" endPosition="5" />
+    <nodeInfo nodeId="7782956297805940271" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="80" startPosition="5" endLine="83" endPosition="5" />
+    <nodeInfo nodeId="7782956297805865382" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="88" startPosition="48" endLine="91" endPosition="5" />
+    <nodeInfo nodeId="7782956297805904045" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="91" startPosition="5" endLine="94" endPosition="5" />
+    <nodeInfo nodeId="7782956297805865316" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="54" startPosition="29" endLine="58" endPosition="5" />
+    <nodeInfo nodeId="7782956297805866079" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="42" startPosition="116" endLine="47" endPosition="7" />
+    <nodeInfo nodeId="7782956297805903960" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="66" startPosition="111" endLine="71" endPosition="7" />
+    <nodeInfo nodeId="5199967550912567490" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="41" startPosition="138" endLine="48" endPosition="5" />
+    <nodeInfo nodeId="7782956297805903958" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="65" startPosition="137" endLine="72" endPosition="5" />
+    <scopeInfo nodeId="3816167865390595156" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="8969040284892403097" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="20" startPosition="59" endLine="21" endPosition="18" />
+    <scopeInfo nodeId="8969040284892403109" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="23" startPosition="74" endLine="24" endPosition="134" />
+    <scopeInfo nodeId="3816167865390595166" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="30" startPosition="24" endLine="31" endPosition="18" />
+    <scopeInfo nodeId="3816167865390604209" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="33" startPosition="74" endLine="34" endPosition="19" />
+    <scopeInfo nodeId="7782956297805866110" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="44" startPosition="308" endLine="45" endPosition="152" />
+    <scopeInfo nodeId="7782956297805903963" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="68" startPosition="332" endLine="69" endPosition="161" />
+    <scopeInfo nodeId="7782956297805940215" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="78" startPosition="103" endLine="79" endPosition="117" />
+    <scopeInfo nodeId="7782956297805940272" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="81" startPosition="120" endLine="82" endPosition="119" />
+    <scopeInfo nodeId="7782956297805865383" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="89" startPosition="103" endLine="90" endPosition="120" />
+    <scopeInfo nodeId="7782956297805904046" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="92" startPosition="120" endLine="93" endPosition="122" />
+    <scopeInfo nodeId="6254726786820574414" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="98" startPosition="89" endLine="99" endPosition="20" />
+    <scopeInfo nodeId="7782956297805865318" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="55" startPosition="29" endLine="57" endPosition="69" />
+    <scopeInfo nodeId="7782956297805866080" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="43" startPosition="78" endLine="46" endPosition="9" />
+    <scopeInfo nodeId="7782956297805903961" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="67" startPosition="73" endLine="70" endPosition="9" />
+    <scopeInfo nodeId="7782956297805940214" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="77" startPosition="48" endLine="80" endPosition="5">
+      <varInfo nodeId="7782956297805940218" varName="a" />
+    </scopeInfo>
+    <scopeInfo nodeId="7782956297805940271" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="80" startPosition="5" endLine="83" endPosition="5">
+      <varInfo nodeId="7782956297805940275" varName="ext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7782956297805865382" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="88" startPosition="48" endLine="91" endPosition="5">
+      <varInfo nodeId="7782956297805865386" varName="a" />
+    </scopeInfo>
+    <scopeInfo nodeId="7782956297805904045" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="91" startPosition="5" endLine="94" endPosition="5">
+      <varInfo nodeId="7782956297805904049" varName="ext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5199967550912567491" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="42" startPosition="116" endLine="47" endPosition="7" />
+    <scopeInfo nodeId="7782956297805866079" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="42" startPosition="116" endLine="47" endPosition="7">
+      <varInfo nodeId="7782956297805866083" varName="dcl" />
+    </scopeInfo>
+    <scopeInfo nodeId="7782956297805903959" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="66" startPosition="111" endLine="71" endPosition="7" />
+    <scopeInfo nodeId="7782956297805903960" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="66" startPosition="111" endLine="71" endPosition="7">
+      <varInfo nodeId="7782956297805903987" varName="dcl" />
+    </scopeInfo>
+    <scopeInfo nodeId="8969040284892403081" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="19" startPosition="73" endLine="26" endPosition="17" />
+    <scopeInfo nodeId="3816167865390595160" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="29" startPosition="88" endLine="36" endPosition="141" />
+    <scopeInfo nodeId="5199967550912567490" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="41" startPosition="138" endLine="48" endPosition="5">
+      <varInfo nodeId="5199967550912567494" varName="builder" />
+    </scopeInfo>
+    <scopeInfo nodeId="7782956297805865275" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="52" startPosition="83" endLine="59" endPosition="18">
+      <varInfo nodeId="7782956297805865298" varName="result" />
+      <varInfo nodeId="7782956297805865311" varName="current" />
+    </scopeInfo>
+    <scopeInfo nodeId="7782956297805903958" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="65" startPosition="137" endLine="72" endPosition="5">
+      <varInfo nodeId="7782956297805903994" varName="sb" />
+    </scopeInfo>
+    <scopeInfo nodeId="3816167865390856301" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="76" startPosition="110" endLine="84" endPosition="18">
+      <varInfo nodeId="3816167865390856316" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="5389689214217081376" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="87" startPosition="112" endLine="95" endPosition="18">
+      <varInfo nodeId="5389689214217081378" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3816167865390609217" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="39" startPosition="113" endLine="49" endPosition="18">
+      <varInfo nodeId="5199967550912567402" varName="result" />
+      <varInfo nodeId="3816167865390609220" varName="container" />
+    </scopeInfo>
+    <scopeInfo nodeId="7782956297805903918" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="62" startPosition="112" endLine="73" endPosition="18">
+      <varInfo nodeId="7782956297805904009" varName="result" />
+      <varInfo nodeId="7782956297805903950" varName="container" />
+      <varInfo nodeId="7782956297805903937" varName="ancestors" />
+    </scopeInfo>
+  </root>
+  <root nodeId="5199967550912384282">
+    <nodeInfo nodeId="5199967550912479719" fileName="SimpleBuilders_Behavior.java" startLine="19" startPosition="24" endLine="20" endPosition="18" />
+    <nodeInfo nodeId="5199967550912479723" fileName="SimpleBuilders_Behavior.java" startLine="22" startPosition="81" endLine="23" endPosition="19" />
+    <nodeInfo nodeId="5199967550912479748" fileName="SimpleBuilders_Behavior.java" startLine="28" startPosition="115" endLine="29" endPosition="48" />
+    <nodeInfo nodeId="5199967550912479793" fileName="SimpleBuilders_Behavior.java" startLine="31" startPosition="88" endLine="32" endPosition="53" />
+    <nodeInfo nodeId="6211769134875410559" fileName="SimpleBuilders_Behavior.java" startLine="38" startPosition="83" endLine="39" endPosition="48" />
+    <nodeInfo nodeId="6211769134875410570" fileName="SimpleBuilders_Behavior.java" startLine="39" startPosition="48" endLine="40" endPosition="29" />
+    <nodeInfo nodeId="6211769134875410603" fileName="SimpleBuilders_Behavior.java" startLine="41" startPosition="29" endLine="42" endPosition="56" />
+    <nodeInfo nodeId="6211769134875410591" fileName="SimpleBuilders_Behavior.java" startLine="42" startPosition="56" endLine="43" endPosition="76" />
+    <nodeInfo nodeId="5199967550912479714" fileName="SimpleBuilders_Behavior.java" startLine="18" startPosition="88" endLine="21" endPosition="5" />
+    <nodeInfo nodeId="5199967550912479721" fileName="SimpleBuilders_Behavior.java" startLine="21" startPosition="5" endLine="24" endPosition="5" />
+    <nodeInfo nodeId="5199967550912479791" fileName="SimpleBuilders_Behavior.java" startLine="30" startPosition="145" endLine="33" endPosition="7" />
+    <nodeInfo nodeId="6211769134875410582" fileName="SimpleBuilders_Behavior.java" startLine="40" startPosition="29" endLine="44" endPosition="5" />
+    <nodeInfo nodeId="5199967550912479771" fileName="SimpleBuilders_Behavior.java" startLine="29" startPosition="48" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="5199967550912384284" fileName="SimpleBuilders_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="5199967550912479718" fileName="SimpleBuilders_Behavior.java" startLine="19" startPosition="24" endLine="20" endPosition="18" />
+    <scopeInfo nodeId="5199967550912479722" fileName="SimpleBuilders_Behavior.java" startLine="22" startPosition="81" endLine="23" endPosition="19" />
+    <scopeInfo nodeId="5199967550912479792" fileName="SimpleBuilders_Behavior.java" startLine="31" startPosition="88" endLine="32" endPosition="53" />
+    <scopeInfo nodeId="6211769134875410584" fileName="SimpleBuilders_Behavior.java" startLine="41" startPosition="29" endLine="43" endPosition="76" />
+    <scopeInfo nodeId="5199967550912479772" fileName="SimpleBuilders_Behavior.java" startLine="30" startPosition="145" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="5199967550912479771" fileName="SimpleBuilders_Behavior.java" startLine="29" startPosition="48" endLine="34" endPosition="5">
+      <varInfo nodeId="5199967550912479775" varName="sb" />
+    </scopeInfo>
+    <scopeInfo nodeId="5199967550912479713" fileName="SimpleBuilders_Behavior.java" startLine="18" startPosition="88" endLine="25" endPosition="138" />
+    <scopeInfo nodeId="5199967550912479744" fileName="SimpleBuilders_Behavior.java" startLine="28" startPosition="115" endLine="35" endPosition="18">
+      <varInfo nodeId="5199967550912479749" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="6211769134875410557" fileName="SimpleBuilders_Behavior.java" startLine="38" startPosition="83" endLine="45" endPosition="18">
+      <varInfo nodeId="6211769134875410560" varName="result" />
+      <varInfo nodeId="6211769134875410571" varName="current" />
+    </scopeInfo>
+  </root>
+  <root nodeId="5389689214216563777">
+    <nodeInfo nodeId="5389689214216563795" fileName="AsTypeBuilder_Behavior.java" startLine="17" startPosition="105" endLine="18" endPosition="46" />
+    <scopeInfo nodeId="5389689214216563779" fileName="AsTypeBuilder_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="5389689214216563782" fileName="AsTypeBuilder_Behavior.java" startLine="17" startPosition="105" endLine="18" endPosition="46" />
+    <scopeInfo nodeId="5389689214216563786" fileName="AsTypeBuilder_Behavior.java" startLine="21" startPosition="81" endLine="22" endPosition="61" />
+  </root>
+  <root nodeId="5389689214217569803">
+    <nodeInfo nodeId="5389689214217667252" fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="32" startPosition="145" endLine="33" endPosition="0" />
+    <nodeInfo nodeId="5389689214217667254" fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="33" startPosition="0" endLine="34" endPosition="143" />
+    <nodeInfo nodeId="5389689214217667324" fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="35" startPosition="160" endLine="36" endPosition="81" />
+    <nodeInfo nodeId="5389689214217667373" fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="38" startPosition="159" endLine="39" endPosition="80" />
+    <nodeInfo nodeId="5389689214217667282" fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="34" startPosition="143" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="5389689214217667340" fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="37" startPosition="5" endLine="40" endPosition="5" />
+    <scopeInfo nodeId="5389689214217569805" fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
+    <scopeInfo nodeId="5389689214217569808" fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="20" startPosition="76" endLine="21" endPosition="16" />
+    <scopeInfo nodeId="5389689214217665423" fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="24" startPosition="81" endLine="25" endPosition="156" />
+    <scopeInfo nodeId="5389689214217665419" fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="28" startPosition="105" endLine="29" endPosition="62" />
+    <scopeInfo nodeId="5389689214217667283" fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="35" startPosition="160" endLine="36" endPosition="81" />
+    <scopeInfo nodeId="5389689214217667341" fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="38" startPosition="159" endLine="39" endPosition="80" />
+    <scopeInfo nodeId="5389689214217667282" fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="34" startPosition="143" endLine="37" endPosition="5">
+      <varInfo nodeId="5389689214217667288" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="5389689214217667340" fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="37" startPosition="5" endLine="40" endPosition="5">
+      <varInfo nodeId="5389689214217667344" varName="v" />
+    </scopeInfo>
+    <scopeInfo nodeId="5389689214217667236" fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="32" startPosition="145" endLine="41" endPosition="18">
+      <varInfo nodeId="5389689214217667255" varName="result" />
+    </scopeInfo>
+  </root>
+  <root nodeId="6254726786820551252">
+    <scopeInfo nodeId="6254726786820551254" fileName="BaseSimpleBuilderDeclaration_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+  </root>
+  <root nodeId="6254726786820574439">
+    <scopeInfo nodeId="6254726786820574441" fileName="SimpleBuilderExtensionDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="6254726786820574445" fileName="SimpleBuilderExtensionDeclaration_Behavior.java" startLine="12" startPosition="89" endLine="13" endPosition="66" />
+  </root>
+  <root nodeId="6666322667909649857">
+    <scopeInfo nodeId="6666322667909649859" fileName="BeanBuilder_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
+    <scopeInfo nodeId="6666322667909649862" fileName="BeanBuilder_Behavior.java" startLine="24" startPosition="105" endLine="25" endPosition="208" />
+    <scopeInfo nodeId="6666322667909649866" fileName="BeanBuilder_Behavior.java" startLine="28" startPosition="81" endLine="29" endPosition="248" />
+  </root>
+  <root nodeId="7057666463730306574">
+    <nodeInfo nodeId="4797501453850305576" fileName="Builder_Behavior.java" startLine="41" startPosition="145" endLine="42" endPosition="46" />
+    <nodeInfo nodeId="4737519895010426861" fileName="Builder_Behavior.java" startLine="85" startPosition="76" endLine="86" endPosition="139" />
+    <nodeInfo nodeId="4737519895010426883" fileName="Builder_Behavior.java" startLine="87" startPosition="98" endLine="91" endPosition="0" />
+    <nodeInfo nodeId="4737519895010426876" fileName="Builder_Behavior.java" startLine="86" startPosition="139" endLine="91" endPosition="7" />
+    <scopeInfo nodeId="7057666463730306576" fileName="Builder_Behavior.java" startLine="22" startPosition="43" endLine="22" endPosition="43" />
+    <scopeInfo nodeId="7057666463730306580" fileName="Builder_Behavior.java" startLine="25" startPosition="82" endLine="26" endPosition="103" />
+    <scopeInfo nodeId="7057666463730595162" fileName="Builder_Behavior.java" startLine="29" startPosition="76" endLine="30" endPosition="67" />
+    <scopeInfo nodeId="7057666463730718254" fileName="Builder_Behavior.java" startLine="33" startPosition="81" endLine="34" endPosition="16" />
+    <scopeInfo nodeId="7288041816792215498" fileName="Builder_Behavior.java" startLine="37" startPosition="139" endLine="38" endPosition="122" />
+    <scopeInfo nodeId="4797501453850305566" fileName="Builder_Behavior.java" startLine="41" startPosition="145" endLine="42" endPosition="46" />
+    <scopeInfo nodeId="4737519895010426884" fileName="Builder_Behavior.java" startLine="88" startPosition="39" endLine="89" endPosition="79" />
+    <scopeInfo nodeId="4737519895010426883" fileName="Builder_Behavior.java" startLine="87" startPosition="98" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="7057666463730366735" fileName="Builder_Behavior.java" startLine="85" startPosition="76" endLine="92" endPosition="96">
+      <varInfo nodeId="4737519895010426862" varName="ancestors" />
+      <varInfo nodeId="4737519895010426877" varName="nonLeaves" />
+    </scopeInfo>
+    <unitInfo nodeId="4737519895010426883" fileName="Builder_Behavior.java" startLine="87" startPosition="75" endLine="91" endPosition="5" unitName="jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior$1" />
+  </root>
+  <root nodeId="7288041816793071804">
+    <nodeInfo nodeId="8969040284892333069" fileName="SimpleBuilder_Behavior.java" startLine="35" startPosition="118" endLine="36" endPosition="50" />
+    <nodeInfo nodeId="4315270135340702019" fileName="SimpleBuilder_Behavior.java" startLine="47" startPosition="105" endLine="48" endPosition="147" />
+    <nodeInfo nodeId="4315270135340702030" fileName="SimpleBuilder_Behavior.java" startLine="48" startPosition="147" endLine="49" endPosition="0" />
+    <nodeInfo nodeId="4315270135340702033" fileName="SimpleBuilder_Behavior.java" startLine="49" startPosition="0" endLine="50" endPosition="130" />
+    <nodeInfo nodeId="4315270135340702041" fileName="SimpleBuilder_Behavior.java" startLine="50" startPosition="130" endLine="51" endPosition="78" />
+    <nodeInfo nodeId="4315270135340702049" fileName="SimpleBuilder_Behavior.java" startLine="52" startPosition="87" endLine="53" endPosition="35" />
+    <nodeInfo nodeId="4315270135340702059" fileName="SimpleBuilder_Behavior.java" startLine="54" startPosition="5" endLine="55" endPosition="0" />
+    <nodeInfo nodeId="4315270135340702062" fileName="SimpleBuilder_Behavior.java" startLine="56" startPosition="166" endLine="57" endPosition="108" />
+    <nodeInfo nodeId="4315270135340702071" fileName="SimpleBuilder_Behavior.java" startLine="57" startPosition="108" endLine="58" endPosition="119" />
+    <nodeInfo nodeId="4315270135340710723" fileName="SimpleBuilder_Behavior.java" startLine="59" startPosition="5" endLine="60" endPosition="0" />
+    <nodeInfo nodeId="7288041816793075512" fileName="SimpleBuilder_Behavior.java" startLine="64" startPosition="139" endLine="65" endPosition="0" />
+    <nodeInfo nodeId="4797501453850479348" fileName="SimpleBuilder_Behavior.java" startLine="66" startPosition="116" endLine="67" endPosition="126" />
+    <nodeInfo nodeId="4797501453850479357" fileName="SimpleBuilder_Behavior.java" startLine="69" startPosition="200" endLine="70" endPosition="109" />
+    <nodeInfo nodeId="4797501453850479367" fileName="SimpleBuilder_Behavior.java" startLine="71" startPosition="173" endLine="72" endPosition="92" />
+    <nodeInfo nodeId="4797501453850479383" fileName="SimpleBuilder_Behavior.java" startLine="74" startPosition="172" endLine="75" endPosition="91" />
+    <nodeInfo nodeId="4797501453850479398" fileName="SimpleBuilder_Behavior.java" startLine="76" startPosition="11" endLine="77" endPosition="24" />
+    <nodeInfo nodeId="7288041816793075549" fileName="SimpleBuilder_Behavior.java" startLine="80" startPosition="5" endLine="81" endPosition="0" />
+    <nodeInfo nodeId="4315270135340702047" fileName="SimpleBuilder_Behavior.java" startLine="51" startPosition="78" endLine="54" endPosition="5" />
+    <nodeInfo nodeId="4797501453850479365" fileName="SimpleBuilder_Behavior.java" startLine="70" startPosition="109" endLine="73" endPosition="11" />
+    <nodeInfo nodeId="4797501453850479381" fileName="SimpleBuilder_Behavior.java" startLine="73" startPosition="11" endLine="76" endPosition="11" />
+    <nodeInfo nodeId="8969040284892333088" fileName="SimpleBuilder_Behavior.java" startLine="38" startPosition="244" endLine="42" endPosition="0" />
+    <nodeInfo nodeId="4315270135340702060" fileName="SimpleBuilder_Behavior.java" startLine="55" startPosition="0" endLine="59" endPosition="5" />
+    <nodeInfo nodeId="8969040284892333077" fileName="SimpleBuilder_Behavior.java" startLine="37" startPosition="169" endLine="42" endPosition="10" />
+    <nodeInfo nodeId="8969040284892333075" fileName="SimpleBuilder_Behavior.java" startLine="36" startPosition="50" endLine="43" endPosition="5" />
+    <nodeInfo nodeId="4797501453850479355" fileName="SimpleBuilder_Behavior.java" startLine="68" startPosition="220" endLine="78" endPosition="9" />
+    <nodeInfo nodeId="4797501453850479353" fileName="SimpleBuilder_Behavior.java" startLine="67" startPosition="126" endLine="79" endPosition="7" />
+    <nodeInfo nodeId="4797501453850479331" fileName="SimpleBuilder_Behavior.java" startLine="65" startPosition="0" endLine="80" endPosition="5" />
+    <scopeInfo nodeId="7288041816793071806" fileName="SimpleBuilder_Behavior.java" startLine="24" startPosition="43" endLine="24" endPosition="43" />
+    <scopeInfo nodeId="7288041816793071819" fileName="SimpleBuilder_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="110" />
+    <scopeInfo nodeId="7288041816793416229" fileName="SimpleBuilder_Behavior.java" startLine="31" startPosition="76" endLine="32" endPosition="109" />
+    <scopeInfo nodeId="8969040284892333089" fileName="SimpleBuilder_Behavior.java" startLine="39" startPosition="41" endLine="40" endPosition="69" />
+    <scopeInfo nodeId="4315270135340702048" fileName="SimpleBuilder_Behavior.java" startLine="52" startPosition="87" endLine="53" endPosition="35" />
+    <scopeInfo nodeId="4797501453850479366" fileName="SimpleBuilder_Behavior.java" startLine="71" startPosition="173" endLine="72" endPosition="92" />
+    <scopeInfo nodeId="4797501453850479382" fileName="SimpleBuilder_Behavior.java" startLine="74" startPosition="172" endLine="75" endPosition="91" />
+    <scopeInfo nodeId="4315270135340702061" fileName="SimpleBuilder_Behavior.java" startLine="56" startPosition="166" endLine="58" endPosition="119">
+      <varInfo nodeId="4315270135340702063" varName="index" />
+    </scopeInfo>
+    <scopeInfo nodeId="4797501453850479365" fileName="SimpleBuilder_Behavior.java" startLine="70" startPosition="109" endLine="73" endPosition="11">
+      <varInfo nodeId="4797501453850479379" varName="parent" />
+    </scopeInfo>
+    <scopeInfo nodeId="4797501453850479381" fileName="SimpleBuilder_Behavior.java" startLine="73" startPosition="11" endLine="76" endPosition="11">
+      <varInfo nodeId="4797501453850479395" varName="parent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8969040284892333088" fileName="SimpleBuilder_Behavior.java" startLine="38" startPosition="244" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="4315270135340702060" fileName="SimpleBuilder_Behavior.java" startLine="55" startPosition="0" endLine="59" endPosition="5">
+      <varInfo nodeId="4315270135340702085" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="8969040284892333076" fileName="SimpleBuilder_Behavior.java" startLine="37" startPosition="169" endLine="42" endPosition="10" />
+    <scopeInfo nodeId="8969040284892333075" fileName="SimpleBuilder_Behavior.java" startLine="36" startPosition="50" endLine="43" endPosition="5">
+      <varInfo nodeId="8969040284892333102" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="4797501453850479356" fileName="SimpleBuilder_Behavior.java" startLine="69" startPosition="200" endLine="77" endPosition="24">
+      <varInfo nodeId="4797501453850479358" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8969040284892300235" fileName="SimpleBuilder_Behavior.java" startLine="35" startPosition="118" endLine="44" endPosition="20">
+      <varInfo nodeId="8969040284892333070" varName="builders" />
+    </scopeInfo>
+    <scopeInfo nodeId="4797501453850479354" fileName="SimpleBuilder_Behavior.java" startLine="68" startPosition="220" endLine="78" endPosition="9" />
+    <scopeInfo nodeId="4797501453850479353" fileName="SimpleBuilder_Behavior.java" startLine="67" startPosition="126" endLine="79" endPosition="7">
+      <varInfo nodeId="4797501453850479414" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="4797501453850479332" fileName="SimpleBuilder_Behavior.java" startLine="66" startPosition="116" endLine="79" endPosition="7">
+      <varInfo nodeId="4797501453850479349" varName="simpleBuilder" />
+    </scopeInfo>
+    <scopeInfo nodeId="7288041816793071815" fileName="SimpleBuilder_Behavior.java" startLine="47" startPosition="105" endLine="61" endPosition="18">
+      <varInfo nodeId="4315270135340702020" varName="result" />
+      <varInfo nodeId="4315270135340702042" varName="args" />
+      <varInfo nodeId="4315270135340702034" varName="params" />
+    </scopeInfo>
+    <scopeInfo nodeId="7288041816793075495" fileName="SimpleBuilder_Behavior.java" startLine="64" startPosition="139" endLine="82" endPosition="185" />
+    <unitInfo nodeId="8969040284892333088" fileName="SimpleBuilder_Behavior.java" startLine="38" startPosition="221" endLine="42" endPosition="7" unitName="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilder_Behavior$1" />
+  </root>
+  <root nodeId="7802271442981792255">
+    <scopeInfo nodeId="7802271442981792257" fileName="BuilderCreator_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+  </root>
+  <root nodeId="7802271442981792270">
+    <scopeInfo nodeId="7802271442981792272" fileName="BuilderStatement_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="932644095877881881" fileName="BuilderStatement_Behavior.java" startLine="12" startPosition="75" endLine="13" endPosition="114" />
+  </root>
+  <root nodeId="7802271442981792284">
+    <scopeInfo nodeId="7802271442981792286" fileName="AsBuilderStatement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+  </root>
+  <root nodeId="932644095877881868">
+    <scopeInfo nodeId="932644095877881870" fileName="BuilderContainer_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="932644095877881874" fileName="BuilderContainer_Behavior.java" startLine="15" startPosition="75" endLine="16" endPosition="17" />
+  </root>
+</debugInfo>
+

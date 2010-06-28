@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.ypath.behavior.IFeature_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -46,11 +47,11 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
       return res;
     }
 
-    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((Pair) parameterObject, node, model, scope, operationContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((Pair) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(Pair parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction_impl(Pair parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNode fe = (SNode) parameterObject.o1;
       Boolean mu = (Boolean) parameterObject.o2;
       IFeature_Behavior.call_setOpposite_1213877499629(node, fe, mu);

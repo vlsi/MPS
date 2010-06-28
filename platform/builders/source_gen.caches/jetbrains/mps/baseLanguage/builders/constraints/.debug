@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="2679357232283750109">
+    <nodeInfo nodeId="2679357232283837725" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="38" startPosition="132" endLine="39" endPosition="111" />
+    <nodeInfo nodeId="2679357232283837714" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="39" startPosition="111" endLine="40" endPosition="260" />
+    <nodeInfo nodeId="2679357232283837747" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="41" startPosition="33" endLine="42" endPosition="36" />
+    <nodeInfo nodeId="2679357232283876010" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="43" startPosition="5" endLine="44" endPosition="49" />
+    <nodeInfo nodeId="2679357232283880354" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="45" startPosition="212" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="2679357232283880414" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="46" startPosition="0" endLine="47" endPosition="111" />
+    <nodeInfo nodeId="2679357232283880484" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="48" startPosition="225" endLine="49" endPosition="58" />
+    <nodeInfo nodeId="2679357232283837738" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="40" startPosition="260" endLine="43" endPosition="5" />
+    <nodeInfo nodeId="2679357232283880403" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="47" startPosition="111" endLine="50" endPosition="7" />
+    <nodeInfo nodeId="2679357232283880352" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="44" startPosition="49" endLine="51" endPosition="5" />
+    <scopeInfo nodeId="2679357232283837739" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="41" startPosition="33" endLine="42" endPosition="36" />
+    <scopeInfo nodeId="2679357232283880404" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="48" startPosition="225" endLine="49" endPosition="58" />
+    <scopeInfo nodeId="2679357232283969427" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="63" startPosition="129" endLine="64" endPosition="144" />
+    <scopeInfo nodeId="2679357232283880353" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="45" startPosition="212" endLine="50" endPosition="7">
+      <varInfo nodeId="2679357232283880415" varName="method" />
+    </scopeInfo>
+    <scopeInfo nodeId="2679357232283880352" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="44" startPosition="49" endLine="51" endPosition="5">
+      <varInfo nodeId="2679357232283880356" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="2679357232283837713" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="38" startPosition="132" endLine="52" endPosition="19">
+      <varInfo nodeId="2679357232283876011" varName="methods" />
+      <varInfo nodeId="2679357232283837715" varName="classifierType" />
+      <varInfo nodeId="2679357232283837726" varName="contextBuilder" />
+    </scopeInfo>
+  </root>
+  <root nodeId="5389689214217242852">
+    <scopeInfo nodeId="5389689214217242854" fileName="SimpleBuilderPropertyExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="159" />
+  </root>
+  <root nodeId="5389689214217448670">
+    <nodeInfo nodeId="5389689214217476120" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="111" />
+    <nodeInfo nodeId="5389689214217481125" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="32" startPosition="118" endLine="33" endPosition="286" />
+    <nodeInfo nodeId="5389689214217476141" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="34" startPosition="12" endLine="35" endPosition="36" />
+    <nodeInfo nodeId="5389689214217476138" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="34" startPosition="10" endLine="36" endPosition="5" />
+    <nodeInfo nodeId="5389689214217476126" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="31" startPosition="111" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="5389689214217476127" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="32" startPosition="118" endLine="33" endPosition="286" />
+    <scopeInfo nodeId="5389689214217476139" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="34" startPosition="12" endLine="35" endPosition="36" />
+    <scopeInfo nodeId="5389689214217448673" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="36" endPosition="5">
+      <varInfo nodeId="5389689214217476121" varName="contextBuilder" />
+    </scopeInfo>
+  </root>
+  <root nodeId="5425713840853785836">
+    <scopeInfo nodeId="5425713840853785839" fileName="SimpleBuilderParameterReference_parameter_ReferentConstraint.java" startLine="27" startPosition="132" endLine="28" endPosition="292" />
+  </root>
+  <root nodeId="6211769134875412271">
+    <nodeInfo nodeId="6211769134875412275" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="48" />
+    <nodeInfo nodeId="6211769134875412288" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="32" startPosition="48" endLine="33" endPosition="156" />
+    <nodeInfo nodeId="7782956297805865610" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="36" startPosition="122" endLine="37" endPosition="152" />
+    <nodeInfo nodeId="7782956297805865598" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="35" startPosition="79" endLine="38" endPosition="9" />
+    <nodeInfo nodeId="7782956297805865574" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="34" startPosition="101" endLine="39" endPosition="7" />
+    <nodeInfo nodeId="6211769134875412306" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="33" startPosition="156" endLine="40" endPosition="5" />
+    <scopeInfo nodeId="7782956297805865599" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="36" startPosition="122" endLine="37" endPosition="152" />
+    <scopeInfo nodeId="7782956297805865575" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="35" startPosition="79" endLine="38" endPosition="9" />
+    <scopeInfo nodeId="6211769134875412307" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="34" startPosition="101" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="7782956297805865574" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="34" startPosition="101" endLine="39" endPosition="7">
+      <varInfo nodeId="7782956297805865578" varName="dcl" />
+    </scopeInfo>
+    <scopeInfo nodeId="6211769134875412306" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="33" startPosition="156" endLine="40" endPosition="5">
+      <varInfo nodeId="6211769134875412310" varName="builders" />
+    </scopeInfo>
+    <scopeInfo nodeId="6211769134875412274" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="31" startPosition="132" endLine="41" endPosition="18">
+      <varInfo nodeId="6211769134875412276" varName="result" />
+      <varInfo nodeId="6211769134875412289" varName="container" />
+    </scopeInfo>
+  </root>
+  <root nodeId="6666322667909634552">
+    <scopeInfo nodeId="6666322667909634555" fileName="BeanBuilder_constructor_ReferentConstraint.java" startLine="25" startPosition="132" endLine="29" endPosition="36" />
+  </root>
+  <root nodeId="7288041816792309049">
+    <scopeInfo nodeId="7288041816792309051" fileName="ResultExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="100" />
+  </root>
+  <root nodeId="7288041816792577346">
+    <scopeInfo nodeId="7288041816792577348" fileName="SimpleBuilderExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="156" />
+  </root>
+  <root nodeId="7288041816793179319">
+    <nodeInfo nodeId="7288041816793199840" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="35" startPosition="132" endLine="36" endPosition="111" />
+    <nodeInfo nodeId="8969040284892333264" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="37" startPosition="118" endLine="38" endPosition="232" />
+    <nodeInfo nodeId="7782956297805865643" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="39" startPosition="418" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="7782956297805865655" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="40" startPosition="0" endLine="41" endPosition="50" />
+    <nodeInfo nodeId="7782956297805865645" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="41" startPosition="50" endLine="42" endPosition="0" />
+    <nodeInfo nodeId="7782956297805866005" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="48" startPosition="292" endLine="49" endPosition="152" />
+    <nodeInfo nodeId="7782956297805865708" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="51" startPosition="7" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="7782956297805865710" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="52" startPosition="0" endLine="53" endPosition="20" />
+    <nodeInfo nodeId="8969040284892333740" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="54" startPosition="12" endLine="55" endPosition="36" />
+    <nodeInfo nodeId="8969040284892333720" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="54" startPosition="10" endLine="56" endPosition="5" />
+    <nodeInfo nodeId="7782956297805865828" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="47" startPosition="11" endLine="50" endPosition="9" />
+    <nodeInfo nodeId="7782956297805865810" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="43" startPosition="247" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="7782956297805865746" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="42" startPosition="0" endLine="51" endPosition="7" />
+    <nodeInfo nodeId="8969040284892333192" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="36" startPosition="111" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="8969040284892333193" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="37" startPosition="118" endLine="38" endPosition="232" />
+    <scopeInfo nodeId="7782956297805865810" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="44" startPosition="52" endLine="45" endPosition="65" />
+    <scopeInfo nodeId="7782956297805865829" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="48" startPosition="292" endLine="49" endPosition="152" />
+    <scopeInfo nodeId="8969040284892333721" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="54" startPosition="12" endLine="55" endPosition="36" />
+    <scopeInfo nodeId="7782956297805865747" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="47" startPosition="11" endLine="50" endPosition="9" />
+    <scopeInfo nodeId="7782956297805865810" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="43" startPosition="247" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="7782956297805865746" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="42" startPosition="0" endLine="51" endPosition="7">
+      <varInfo nodeId="7782956297805865750" varName="dcl" />
+    </scopeInfo>
+    <scopeInfo nodeId="8969040284892333326" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="39" startPosition="418" endLine="53" endPosition="20">
+      <varInfo nodeId="7782956297805865656" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7288041816793179322" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="35" startPosition="132" endLine="56" endPosition="5">
+      <varInfo nodeId="7288041816793199841" varName="contextBuilder" />
+    </scopeInfo>
+    <unitInfo nodeId="7782956297805865810" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="43" startPosition="217" endLine="47" endPosition="7" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_declaration_ReferentConstraint$1" />
+  </root>
+</debugInfo>
+

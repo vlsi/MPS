@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1238852249419">
+    <nodeInfo nodeId="1238852742863" fileName="IndexedTupleType_Behavior.java" startLine="17" startPosition="78" endLine="18" endPosition="43" />
+    <nodeInfo nodeId="1238852750399" fileName="IndexedTupleType_Behavior.java" startLine="18" startPosition="43" endLine="19" endPosition="77" />
+    <nodeInfo nodeId="1238852762137" fileName="IndexedTupleType_Behavior.java" startLine="19" startPosition="77" endLine="20" endPosition="20" />
+    <nodeInfo nodeId="1238852783897" fileName="IndexedTupleType_Behavior.java" startLine="21" startPosition="82" endLine="22" endPosition="89" />
+    <nodeInfo nodeId="1238852923050" fileName="IndexedTupleType_Behavior.java" startLine="22" startPosition="89" endLine="23" endPosition="17" />
+    <nodeInfo nodeId="1238852947460" fileName="IndexedTupleType_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="78" />
+    <nodeInfo nodeId="1238852929721" fileName="IndexedTupleType_Behavior.java" startLine="25" startPosition="78" endLine="26" endPosition="25" />
+    <nodeInfo nodeId="1238853507542" fileName="IndexedTupleType_Behavior.java" startLine="29" startPosition="88" endLine="30" endPosition="75" />
+    <nodeInfo nodeId="1238853527213" fileName="IndexedTupleType_Behavior.java" startLine="32" startPosition="13" endLine="33" endPosition="59" />
+    <nodeInfo nodeId="1238853535457" fileName="IndexedTupleType_Behavior.java" startLine="33" startPosition="59" endLine="34" endPosition="14" />
+    <nodeInfo nodeId="1238853541227" fileName="IndexedTupleType_Behavior.java" startLine="35" startPosition="13" endLine="36" endPosition="61" />
+    <nodeInfo nodeId="1238853549192" fileName="IndexedTupleType_Behavior.java" startLine="36" startPosition="61" endLine="37" endPosition="14" />
+    <nodeInfo nodeId="1238853552169" fileName="IndexedTupleType_Behavior.java" startLine="38" startPosition="13" endLine="39" endPosition="59" />
+    <nodeInfo nodeId="1238853559135" fileName="IndexedTupleType_Behavior.java" startLine="39" startPosition="59" endLine="40" endPosition="14" />
+    <nodeInfo nodeId="1238853566185" fileName="IndexedTupleType_Behavior.java" startLine="41" startPosition="13" endLine="42" endPosition="61" />
+    <nodeInfo nodeId="1238853574672" fileName="IndexedTupleType_Behavior.java" startLine="42" startPosition="61" endLine="43" endPosition="14" />
+    <nodeInfo nodeId="1238853580827" fileName="IndexedTupleType_Behavior.java" startLine="44" startPosition="13" endLine="45" endPosition="64" />
+    <nodeInfo nodeId="1238853592033" fileName="IndexedTupleType_Behavior.java" startLine="45" startPosition="64" endLine="46" endPosition="14" />
+    <nodeInfo nodeId="1238853597976" fileName="IndexedTupleType_Behavior.java" startLine="47" startPosition="14" endLine="48" endPosition="176" />
+    <nodeInfo nodeId="1238853648689" fileName="IndexedTupleType_Behavior.java" startLine="49" startPosition="5" endLine="50" endPosition="20" />
+    <nodeInfo nodeId="1238852772705" fileName="IndexedTupleType_Behavior.java" startLine="20" startPosition="20" endLine="24" endPosition="5" />
+    <nodeInfo nodeId="1238853360775" fileName="IndexedTupleType_Behavior.java" startLine="30" startPosition="75" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="1238852249421" fileName="IndexedTupleType_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1238853360777" fileName="IndexedTupleType_Behavior.java" startLine="47" startPosition="14" endLine="48" endPosition="176" />
+    <scopeInfo nodeId="1238852772706" fileName="IndexedTupleType_Behavior.java" startLine="21" startPosition="82" endLine="23" endPosition="17" />
+    <scopeInfo nodeId="1238853368126" fileName="IndexedTupleType_Behavior.java" startLine="32" startPosition="13" endLine="34" endPosition="14" />
+    <scopeInfo nodeId="1238853414448" fileName="IndexedTupleType_Behavior.java" startLine="35" startPosition="13" endLine="37" endPosition="14" />
+    <scopeInfo nodeId="1238853481664" fileName="IndexedTupleType_Behavior.java" startLine="38" startPosition="13" endLine="40" endPosition="14" />
+    <scopeInfo nodeId="1238853561918" fileName="IndexedTupleType_Behavior.java" startLine="41" startPosition="13" endLine="43" endPosition="14" />
+    <scopeInfo nodeId="1238853576735" fileName="IndexedTupleType_Behavior.java" startLine="44" startPosition="13" endLine="46" endPosition="14" />
+    <scopeInfo nodeId="1238852772705" fileName="IndexedTupleType_Behavior.java" startLine="20" startPosition="20" endLine="24" endPosition="5">
+      <varInfo nodeId="1238852772710" varName="mt" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238852661528" fileName="IndexedTupleType_Behavior.java" startLine="17" startPosition="78" endLine="26" endPosition="25">
+      <varInfo nodeId="1238852742864" varName="sb" />
+      <varInfo nodeId="1238852762138" varName="sep" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238853000864" fileName="IndexedTupleType_Behavior.java" startLine="29" startPosition="88" endLine="50" endPosition="20">
+      <varInfo nodeId="1238853507543" varName="suffixes" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1238855618942">
+    <nodeInfo nodeId="1238855653960" fileName="IndexedTupleLiteral_Behavior.java" startLine="15" startPosition="69" endLine="16" endPosition="21" />
+    <nodeInfo nodeId="1238855660492" fileName="IndexedTupleLiteral_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="16" />
+    <nodeInfo nodeId="1238855643944" fileName="IndexedTupleLiteral_Behavior.java" startLine="14" startPosition="80" endLine="17" endPosition="7" />
+    <nodeInfo nodeId="1238855631404" fileName="IndexedTupleLiteral_Behavior.java" startLine="13" startPosition="72" endLine="18" endPosition="5" />
+    <scopeInfo nodeId="1238855618944" fileName="IndexedTupleLiteral_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="1238855643946" fileName="IndexedTupleLiteral_Behavior.java" startLine="15" startPosition="69" endLine="16" endPosition="21" />
+    <scopeInfo nodeId="1238855631408" fileName="IndexedTupleLiteral_Behavior.java" startLine="14" startPosition="80" endLine="17" endPosition="7" />
+    <scopeInfo nodeId="1238855631404" fileName="IndexedTupleLiteral_Behavior.java" startLine="13" startPosition="72" endLine="18" endPosition="5">
+      <varInfo nodeId="1238855631406" varName="mexp" />
+    </scopeInfo>
+    <scopeInfo nodeId="1238855621289" fileName="IndexedTupleLiteral_Behavior.java" startLine="13" startPosition="72" endLine="19" endPosition="16" />
+  </root>
+  <root nodeId="1239537338572">
+    <nodeInfo nodeId="1239546071767" fileName="NamedTupleDeclaration_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="104" />
+    <nodeInfo nodeId="1239546136704" fileName="NamedTupleDeclaration_Behavior.java" startLine="15" startPosition="104" endLine="16" endPosition="20" />
+    <nodeInfo nodeId="1239546191552" fileName="NamedTupleDeclaration_Behavior.java" startLine="17" startPosition="79" endLine="18" endPosition="72" />
+    <nodeInfo nodeId="1239546590610" fileName="NamedTupleDeclaration_Behavior.java" startLine="18" startPosition="72" endLine="19" endPosition="17" />
+    <nodeInfo nodeId="1239546596561" fileName="NamedTupleDeclaration_Behavior.java" startLine="20" startPosition="5" endLine="21" endPosition="170" />
+    <nodeInfo nodeId="1239546142330" fileName="NamedTupleDeclaration_Behavior.java" startLine="16" startPosition="20" endLine="20" endPosition="5" />
+    <scopeInfo nodeId="1239537338574" fileName="NamedTupleDeclaration_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="1239546142331" fileName="NamedTupleDeclaration_Behavior.java" startLine="17" startPosition="79" endLine="19" endPosition="17" />
+    <scopeInfo nodeId="1239546142330" fileName="NamedTupleDeclaration_Behavior.java" startLine="16" startPosition="20" endLine="20" endPosition="5">
+      <varInfo nodeId="1239546142334" varName="cmp" />
+    </scopeInfo>
+    <scopeInfo nodeId="1239537340706" fileName="NamedTupleDeclaration_Behavior.java" startLine="14" startPosition="78" endLine="21" endPosition="170">
+      <varInfo nodeId="1239546071768" varName="sb" />
+      <varInfo nodeId="1239546136705" varName="sep" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1239617398721">
+    <nodeInfo nodeId="1239617445677" fileName="NamedTupleType_Behavior.java" startLine="15" startPosition="78" endLine="16" endPosition="104" />
+    <nodeInfo nodeId="1239617445682" fileName="NamedTupleType_Behavior.java" startLine="16" startPosition="104" endLine="17" endPosition="20" />
+    <nodeInfo nodeId="1239617445689" fileName="NamedTupleType_Behavior.java" startLine="18" startPosition="128" endLine="19" endPosition="196" />
+    <nodeInfo nodeId="1239617445699" fileName="NamedTupleType_Behavior.java" startLine="19" startPosition="196" endLine="20" endPosition="17" />
+    <nodeInfo nodeId="1239617445708" fileName="NamedTupleType_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="194" />
+    <nodeInfo nodeId="1239883600622" fileName="NamedTupleType_Behavior.java" startLine="22" startPosition="194" endLine="23" endPosition="14" />
+    <nodeInfo nodeId="1239883799711" fileName="NamedTupleType_Behavior.java" startLine="23" startPosition="14" endLine="24" endPosition="23" />
+    <nodeInfo nodeId="1239883754737" fileName="NamedTupleType_Behavior.java" startLine="25" startPosition="77" endLine="26" endPosition="88" />
+    <nodeInfo nodeId="1239883775726" fileName="NamedTupleType_Behavior.java" startLine="26" startPosition="88" endLine="27" endPosition="17" />
+    <nodeInfo nodeId="1239883818843" fileName="NamedTupleType_Behavior.java" startLine="27" startPosition="17" endLine="28" endPosition="19" />
+    <nodeInfo nodeId="1239617445686" fileName="NamedTupleType_Behavior.java" startLine="17" startPosition="20" endLine="21" endPosition="5" />
+    <nodeInfo nodeId="1239883610747" fileName="NamedTupleType_Behavior.java" startLine="24" startPosition="23" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="1239617398723" fileName="NamedTupleType_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="1239617445688" fileName="NamedTupleType_Behavior.java" startLine="18" startPosition="128" endLine="20" endPosition="17" />
+    <scopeInfo nodeId="1239883610748" fileName="NamedTupleType_Behavior.java" startLine="25" startPosition="77" endLine="28" endPosition="19" />
+    <scopeInfo nodeId="1239617445686" fileName="NamedTupleType_Behavior.java" startLine="17" startPosition="20" endLine="21" endPosition="5">
+      <varInfo nodeId="1239617445706" varName="ntcd" />
+    </scopeInfo>
+    <scopeInfo nodeId="1239883610747" fileName="NamedTupleType_Behavior.java" startLine="24" startPosition="23" endLine="29" endPosition="5">
+      <varInfo nodeId="1239883610751" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="1239617400196" fileName="NamedTupleType_Behavior.java" startLine="15" startPosition="78" endLine="30" endPosition="40">
+      <varInfo nodeId="1239617445678" varName="sb" />
+      <varInfo nodeId="1239617445683" varName="sep" />
+      <varInfo nodeId="1239883799712" varName="suffix" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1239700191747">
+    <scopeInfo nodeId="1239700191749" fileName="IndexedTupleMemberAccessExpression_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="1239700193442" fileName="IndexedTupleMemberAccessExpression_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="162" />
+  </root>
+  <root nodeId="1240400869906">
+    <nodeInfo nodeId="1240400876312" fileName="NamedTupleComponentDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="59" />
+    <scopeInfo nodeId="1240400869908" fileName="NamedTupleComponentDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="59" />
+  </root>
+  <root nodeId="1240402235406">
+    <scopeInfo nodeId="1240402235408" fileName="NamedTupleComponentAccessOperation_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="1240402237485" fileName="NamedTupleComponentAccessOperation_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="111" />
+  </root>
+  <root nodeId="1240700522950">
+    <nodeInfo nodeId="1240700555587" fileName="InterfaceTupleType_Behavior.java" startLine="19" startPosition="272" endLine="23" endPosition="0" />
+    <nodeInfo nodeId="1240702301847" fileName="InterfaceTupleType_Behavior.java" startLine="24" startPosition="153" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1240700522952" fileName="InterfaceTupleType_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1240700555588" fileName="InterfaceTupleType_Behavior.java" startLine="20" startPosition="59" endLine="21" endPosition="98" />
+    <scopeInfo nodeId="1240702301848" fileName="InterfaceTupleType_Behavior.java" startLine="25" startPosition="40" endLine="26" endPosition="77" />
+    <scopeInfo nodeId="1240700555587" fileName="InterfaceTupleType_Behavior.java" startLine="19" startPosition="272" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1240702301847" fileName="InterfaceTupleType_Behavior.java" startLine="24" startPosition="153" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1240700524566" fileName="InterfaceTupleType_Behavior.java" startLine="18" startPosition="78" endLine="30" endPosition="72" />
+    <unitInfo nodeId="1240700555587" fileName="InterfaceTupleType_Behavior.java" startLine="19" startPosition="222" endLine="23" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.behavior.ISelector$anonymous" />
+    <unitInfo nodeId="1240702301847" fileName="InterfaceTupleType_Behavior.java" startLine="24" startPosition="125" endLine="28" endPosition="7" unitName="jetbrains.mps.baseLanguage.tuples.behavior.ISelector$anonymous" />
+  </root>
+</debugInfo>
+

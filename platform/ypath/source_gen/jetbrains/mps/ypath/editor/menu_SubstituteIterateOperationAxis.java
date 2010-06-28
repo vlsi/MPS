@@ -23,6 +23,7 @@ import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuComponent {
   public menu_SubstituteIterateOperationAxis() {
@@ -59,11 +60,11 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
       return res;
     }
 
-    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((Triplet) parameterObject, node, model, scope, operationContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((Triplet) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(Triplet parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction_impl(Triplet parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       TraversalAxis axis = (TraversalAxis) parameterObject.first();
       SNode feat = (SNode) parameterObject.second();
       SNode pw = (SNode) parameterObject.third();

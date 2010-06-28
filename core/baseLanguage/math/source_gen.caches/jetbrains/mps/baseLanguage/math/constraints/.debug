@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1236430656078">
+    <nodeInfo nodeId="1237828450002" fileName="MathSymbolIndexReference_indexRef_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="141" />
+    <nodeInfo nodeId="1237825752846" fileName="MathSymbolIndexReference_indexRef_ReferentConstraint.java" startLine="29" startPosition="141" endLine="30" endPosition="83" />
+    <nodeInfo nodeId="1237825752852" fileName="MathSymbolIndexReference_indexRef_ReferentConstraint.java" startLine="30" startPosition="83" endLine="31" endPosition="99" />
+    <nodeInfo nodeId="1237825752863" fileName="MathSymbolIndexReference_indexRef_ReferentConstraint.java" startLine="31" startPosition="99" endLine="32" endPosition="15" />
+    <scopeInfo nodeId="1237825752100" fileName="MathSymbolIndexReference_indexRef_ReferentConstraint.java" startLine="28" startPosition="132" endLine="32" endPosition="15">
+      <varInfo nodeId="1237828450003" varName="ms" />
+      <varInfo nodeId="1237825752847" varName="msi" />
+    </scopeInfo>
+  </root>
+  <root nodeId="6219660258344759919">
+    <nodeInfo nodeId="6219660258344773969" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="155" />
+    <nodeInfo nodeId="6219660258344773979" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="32" startPosition="155" endLine="33" endPosition="49" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="35" startPosition="10" endLine="36" endPosition="44" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="37" startPosition="9" endLine="38" endPosition="49" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="39" startPosition="11" endLine="40" endPosition="50" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="41" startPosition="54" endLine="42" endPosition="185" />
+    <nodeInfo nodeId="6219660258345571162" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="45" startPosition="39" endLine="46" endPosition="126" />
+    <nodeInfo nodeId="6219660258345571169" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="46" startPosition="126" endLine="47" endPosition="126" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="47" startPosition="126" endLine="48" endPosition="18" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="51" startPosition="9" endLine="52" endPosition="49" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="53" startPosition="11" endLine="54" endPosition="50" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="55" startPosition="54" endLine="56" endPosition="185" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="59" startPosition="39" endLine="60" endPosition="126" />
+    <nodeInfo nodeId="6219660258345571182" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="59" startPosition="39" endLine="60" endPosition="126" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="60" startPosition="126" endLine="61" endPosition="18" />
+    <nodeInfo nodeId="6219660258344774076" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="64" startPosition="22" endLine="65" endPosition="126" />
+    <nodeInfo nodeId="6219660258344774050" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="66" startPosition="5" endLine="67" endPosition="19" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="45" startPosition="39" endLine="47" endPosition="126" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="40" startPosition="50" endLine="43" endPosition="13" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="54" startPosition="50" endLine="57" endPosition="13" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="58" startPosition="11" endLine="62" endPosition="11" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="44" startPosition="11" endLine="49" endPosition="11" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="38" startPosition="49" endLine="44" endPosition="11" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="52" startPosition="49" endLine="58" endPosition="11" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="50" startPosition="9" endLine="63" endPosition="9" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="36" startPosition="44" endLine="50" endPosition="9" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="34" startPosition="23" endLine="64" endPosition="22" />
+    <nodeInfo nodeId="6219660258344774054" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="33" startPosition="49" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="41" startPosition="54" endLine="42" endPosition="185" />
+    <scopeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="55" startPosition="54" endLine="56" endPosition="185" />
+    <scopeInfo nodeId="6219660258345571160" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="59" startPosition="39" endLine="60" endPosition="126" />
+    <scopeInfo nodeId="6219660258345571155" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="45" startPosition="39" endLine="47" endPosition="126" />
+    <scopeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="59" startPosition="39" endLine="61" endPosition="18" />
+    <scopeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="45" startPosition="39" endLine="48" endPosition="18" />
+    <scopeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="39" startPosition="11" endLine="43" endPosition="13" />
+    <scopeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="53" startPosition="11" endLine="57" endPosition="13" />
+    <scopeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="51" startPosition="9" endLine="62" endPosition="11" />
+    <scopeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="37" startPosition="9" endLine="49" endPosition="11" />
+    <scopeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="35" startPosition="10" endLine="63" endPosition="9" />
+    <scopeInfo nodeId="6219660258344774056" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="34" startPosition="23" endLine="65" endPosition="126" />
+    <scopeInfo nodeId="6219660258344759924" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="31" startPosition="132" endLine="67" endPosition="19">
+      <varInfo nodeId="6219660258344773970" varName="n" />
+      <varInfo nodeId="6219660258344773980" varName="indices" />
+    </scopeInfo>
+  </root>
+  <root nodeId="964810815943407926">
+    <nodeInfo nodeId="964810815943408825" fileName="MatrixIndexWildcard_Constraints.java" startLine="14" startPosition="143" endLine="15" endPosition="19" />
+    <nodeInfo nodeId="964810815943408830" fileName="MatrixIndexWildcard_Constraints.java" startLine="16" startPosition="12" endLine="17" endPosition="141" />
+    <nodeInfo nodeId="964810815943408843" fileName="MatrixIndexWildcard_Constraints.java" startLine="17" startPosition="141" endLine="18" endPosition="191" />
+    <nodeInfo nodeId="964810815943408828" fileName="MatrixIndexWildcard_Constraints.java" startLine="16" startPosition="10" endLine="19" endPosition="5" />
+    <nodeInfo nodeId="964810815943408815" fileName="MatrixIndexWildcard_Constraints.java" startLine="13" startPosition="114" endLine="19" endPosition="5" />
+    <scopeInfo nodeId="964810815943408816" fileName="MatrixIndexWildcard_Constraints.java" startLine="14" startPosition="143" endLine="15" endPosition="19" />
+    <scopeInfo nodeId="964810815943408829" fileName="MatrixIndexWildcard_Constraints.java" startLine="16" startPosition="12" endLine="18" endPosition="191">
+      <varInfo nodeId="964810815943408831" varName="expr" />
+    </scopeInfo>
+    <scopeInfo nodeId="964810815943407928" fileName="MatrixIndexWildcard_Constraints.java" startLine="13" startPosition="114" endLine="19" endPosition="5" />
+  </root>
+</debugInfo>
+
