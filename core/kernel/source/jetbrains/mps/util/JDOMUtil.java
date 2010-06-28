@@ -161,7 +161,7 @@ public class JDOMUtil {
 
   public static XMLOutputter createOutputter() {
     XMLOutputter xmlOutputter = new MyXMLOutputter();
-    xmlOutputter.setFormat(Format.getPrettyFormat());
+    xmlOutputter.setFormat(Format.getPrettyFormat().setLineSeparator("\n"));
     return xmlOutputter;
   }
 

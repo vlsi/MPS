@@ -24,6 +24,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1206459766745">
@@ -32,8 +33,8 @@
       <property name="applyToConceptInheritors:2" value="true" />
       <link role="applicableConcept:2" targetNodeId="1.1195169091918" resolveInfo="InputNode" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1206460405394">
-        <node role="templateNode:2" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1206460409521">
-          <property name="text" value="output from base InputNode" />
+        <node role="templateNode:2" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode:0" id="1206460409521">
+          <property name="text:0" value="output from base InputNode" />
         </node>
       </node>
       <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="1206461124351">
@@ -68,8 +69,8 @@
       <property name="applyToConceptInheritors:2" value="true" />
       <link role="applicableConcept:2" targetNodeId="1.1206459872650" resolveInfo="InputNode_B" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1206461864723">
-        <node role="templateNode:2" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1206461864724">
-          <property name="text" value="output from InputNode_B" />
+        <node role="templateNode:2" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode:0" id="1206461864724">
+          <property name="text:0" value="output from InputNode_B" />
         </node>
       </node>
       <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="1206461877475">
@@ -104,8 +105,8 @@
       <property name="applyToConceptInheritors:2" value="true" />
       <link role="applicableConcept:2" targetNodeId="1.1195171011194" resolveInfo="InputNode_A" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1206460444835">
-        <node role="templateNode:2" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1206460444836">
-          <property name="text" value="output from InputNode_A" />
+        <node role="templateNode:2" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode:0" id="1206460444836">
+          <property name="text:0" value="output from InputNode_A" />
         </node>
       </node>
       <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="1206461190505">
@@ -160,14 +161,14 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" id="1206460153890">
-    <property name="name" value="OutputRoot" />
-    <property name="text" value="root in Reduce Inheritors test (expect: A, B, B)" />
-    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1206460183016">
+  <node type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot:0" id="1206460153890">
+    <property name="name:0" value="OutputRoot" />
+    <property name="text:0" value="root in Reduce Inheritors test (expect: A, B, B)" />
+    <node role="rootTemplateAnnotation$attribute:0" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1206460183016">
       <link role="applicableConcept:2" targetNodeId="1.1195168316083" resolveInfo="InputRoot" />
     </node>
-    <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1206460235939">
-      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro:2" id="1206460249785">
+    <node role="outputChild:0" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode:0" id="1206460235939">
+      <node role="nodeMacro$attribute:0" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro:2" id="1206460249785">
         <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1206460249786">
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1206460249787">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1206460269944">

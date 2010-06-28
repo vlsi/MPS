@@ -24,6 +24,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1209604518979">
@@ -52,14 +53,14 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" id="1209605205934">
-    <property name="name" value="outputRoot" />
-    <property name="text" value="output for 'don't apply reduction rule twice' test" />
-    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1209605205935">
+  <node type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot:0" id="1209605205934">
+    <property name="name:0" value="outputRoot" />
+    <property name="text:0" value="output for 'don't apply reduction rule twice' test" />
+    <node role="rootTemplateAnnotation$attribute:0" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1209605205935">
       <link role="applicableConcept:2" targetNodeId="1.1195168316083" resolveInfo="InputRoot" />
     </node>
-    <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test" id="1209605724998">
-      <property name="text" value="this is OutputNode_forDontApplyReductionTwice_test actually" />
+    <node role="outputChild:0" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test:0" id="1209605724998">
+      <property name="text:0" value="this is OutputNode_forDontApplyReductionTwice_test actually" />
     </node>
   </node>
 </model>

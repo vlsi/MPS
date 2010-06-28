@@ -29,26 +29,27 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="0" />
   <maxImportIndex value="8" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)" version="-1" />
-  <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="-1" />
+  <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="0" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1202255161944">
     <property name="name:2" value="main" />
     <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="1202256252478">
       <property name="name:2" value="ROOT INPUT" />
       <link role="sourceConcept:2" targetNodeId="2.1195168316083" resolveInfo="InputRoot" />
-      <link role="targetConcept:2" targetNodeId="3.1195164668463" resolveInfo="OutputRoot" />
+      <link role="targetConcept:2" targetNodeId="3.1195164668463:0" resolveInfo="OutputRoot" />
     </node>
     <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="1202256320043">
       <property name="name:2" value="LEVEL 1" />
       <link role="sourceConcept:2" targetNodeId="2.1195169091918" resolveInfo="InputNode" />
-      <link role="targetConcept:2" targetNodeId="3.1195165132070" resolveInfo="OutputNode" />
+      <link role="targetConcept:2" targetNodeId="3.1195165132070:0" resolveInfo="OutputNode" />
     </node>
     <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="1202256351154">
       <property name="name:2" value="LEVEL 2" />
       <link role="sourceConcept:2" targetNodeId="2.1195169091918" resolveInfo="InputNode" />
-      <link role="targetConcept:2" targetNodeId="3.1195165132070" resolveInfo="OutputNode" />
+      <link role="targetConcept:2" targetNodeId="3.1195165132070:0" resolveInfo="OutputNode" />
     </node>
     <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="1207677237285">
       <property name="name:2" value="AAA" />
@@ -102,14 +103,14 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" id="1202255620269">
-    <property name="name" value="OutputRoot_1" />
-    <property name="text" value="'getPrevInputTest' output root (1)" />
-    <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1202256495546">
-      <property name="text" value="_text_" />
-      <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1202327206676">
-        <property name="text" value="_root_level_was_" />
-        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1202327274818">
+  <node type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot:0" id="1202255620269">
+    <property name="name:0" value="OutputRoot_1" />
+    <property name="text:0" value="'getPrevInputTest' output root (1)" />
+    <node role="outputChild:0" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode:0" id="1202256495546">
+      <property name="text:0" value="_text_" />
+      <node role="outputChild:0" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode:0" id="1202327206676">
+        <property name="text:0" value="_root_level_was_" />
+        <node role="propertyMacro$property_attribute$text:0" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1202327274818">
           <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1202327274819">
             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202327274820">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1202327335093">
@@ -146,9 +147,9 @@
           </node>
         </node>
       </node>
-      <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1202327778745">
-        <property name="text" value="_level_1_was_" />
-        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1202327887567">
+      <node role="outputChild:0" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode:0" id="1202327778745">
+        <property name="text:0" value="_level_1_was_" />
+        <node role="propertyMacro$property_attribute$text:0" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1202327887567">
           <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1202327887568">
             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202327887569">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1217884047365">
@@ -183,7 +184,7 @@
             </node>
           </node>
         </node>
-        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro:2" id="1202332796046">
+        <node role="nodeMacro$attribute:0" type="jetbrains.mps.lang.generator.structure.IfMacro:2" id="1202332796046">
           <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition:2" id="1202332796047">
             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202332796048">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1202332813034">
@@ -195,9 +196,9 @@
           </node>
         </node>
       </node>
-      <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1202327949446">
-        <property name="text" value="_level_2_was_" />
-        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1202327970030">
+      <node role="outputChild:0" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode:0" id="1202327949446">
+        <property name="text:0" value="_level_2_was_" />
+        <node role="propertyMacro$property_attribute$text:0" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1202327970030">
           <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1202327970031">
             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202327970032">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1217884029386">
@@ -233,7 +234,7 @@
           </node>
         </node>
       </node>
-      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.MapSrcListMacro:2" id="1233603475877">
+      <node role="nodeMacro$attribute:0" type="jetbrains.mps.lang.generator.structure.MapSrcListMacro:2" id="1233603475877">
         <link role="mappingLabel:2" targetNodeId="1202256320043" resolveInfo="LEVEL 1" />
         <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1233603475878">
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1233603475879">
@@ -290,7 +291,7 @@
           </node>
         </node>
       </node>
-      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1202256587516">
+      <node role="nodeMacro$attribute:0" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1202256587516">
         <link role="mappingLabel:2" targetNodeId="1202256351154" resolveInfo="LEVEL 2" />
         <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1202256587517">
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202256587518">
@@ -305,7 +306,7 @@
           </node>
         </node>
       </node>
-      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1202256594379">
+      <node role="nodeMacro$attribute:0" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1202256594379">
         <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1202256594380">
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202256594381">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1202326344380">
@@ -319,7 +320,7 @@
           </node>
         </node>
       </node>
-      <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1202326517570">
+      <node role="propertyMacro$property_attribute$text:0" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1202326517570">
         <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1202326517571">
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202326517572">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1202326541682">
@@ -338,7 +339,7 @@
           </node>
         </node>
       </node>
-      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro:2" id="1202337434278">
+      <node role="nodeMacro$attribute:0" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro:2" id="1202337434278">
         <node role="postMapperFunction:2" type="jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction:2" id="1225236165359">
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225236165360">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1233601644391">
@@ -367,30 +368,30 @@
         </node>
       </node>
     </node>
-    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1202255620286">
+    <node role="rootTemplateAnnotation$attribute:0" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1202255620286">
       <link role="applicableConcept:2" targetNodeId="2.1195168316083" resolveInfo="InputRoot" />
     </node>
   </node>
-  <node type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" id="1202338159177">
-    <property name="name" value="OutputRoot_2" />
-    <property name="text" value="'getPrevInputTest' output root (2)" />
-    <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1202338467041">
-      <property name="text" value="_text_" />
-      <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1202338467042">
-        <property name="text" value="_root_level_was_" />
-        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro:2" id="1202338527050">
+  <node type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot:0" id="1202338159177">
+    <property name="name:0" value="OutputRoot_2" />
+    <property name="text:0" value="'getPrevInputTest' output root (2)" />
+    <node role="outputChild:0" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode:0" id="1202338467041">
+      <property name="text:0" value="_text_" />
+      <node role="outputChild:0" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode:0" id="1202338467042">
+        <property name="text:0" value="_root_level_was_" />
+        <node role="nodeMacro$attribute:0" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro:2" id="1202338527050">
           <node role="mapperFunction:2" type="jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction:2" id="1202338546473">
             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202338546474">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1202338576714">
                 <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1202338576715">
                   <property name="name:3" value="result" />
                   <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1202338576716">
-                    <link role="concept:16" targetNodeId="3.1195165132070" resolveInfo="OutputNode" />
+                    <link role="concept:16" targetNodeId="3.1195165132070:0" resolveInfo="OutputNode" />
                   </node>
                   <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1202338576717">
                     <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="1202338576718">
                       <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1202338576719">
-                        <link role="concept:16" targetNodeId="3.1195165132070" resolveInfo="OutputNode" />
+                        <link role="concept:16" targetNodeId="3.1195165132070:0" resolveInfo="OutputNode" />
                       </node>
                     </node>
                   </node>
@@ -437,7 +438,7 @@
                       <link role="variableDeclaration:3" targetNodeId="1202338576715" resolveInfo="result" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1202338628021">
-                      <link role="property:16" targetNodeId="3.1195170441111" resolveInfo="text" />
+                      <link role="property:16" targetNodeId="3.1195170441111:0" resolveInfo="text" />
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation:16" id="1202338634087">
@@ -482,21 +483,21 @@
           </node>
         </node>
       </node>
-      <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1202338467061">
-        <property name="text" value="_level_1_was_" />
-        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro:2" id="1202338676108">
+      <node role="outputChild:0" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode:0" id="1202338467061">
+        <property name="text:0" value="_level_1_was_" />
+        <node role="nodeMacro$attribute:0" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro:2" id="1202338676108">
           <node role="mapperFunction:2" type="jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction:2" id="1202338683284">
             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202338683285">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1202338683286">
                 <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1202338683287">
                   <property name="name:3" value="result" />
                   <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1202338683288">
-                    <link role="concept:16" targetNodeId="3.1195165132070" resolveInfo="OutputNode" />
+                    <link role="concept:16" targetNodeId="3.1195165132070:0" resolveInfo="OutputNode" />
                   </node>
                   <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1202338683289">
                     <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="1202338683290">
                       <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1202338683291">
-                        <link role="concept:16" targetNodeId="3.1195165132070" resolveInfo="OutputNode" />
+                        <link role="concept:16" targetNodeId="3.1195165132070:0" resolveInfo="OutputNode" />
                       </node>
                     </node>
                   </node>
@@ -543,7 +544,7 @@
                       <link role="variableDeclaration:3" targetNodeId="1202338683287" resolveInfo="result" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1202338713693">
-                      <link role="property:16" targetNodeId="3.1195170441111" resolveInfo="text" />
+                      <link role="property:16" targetNodeId="3.1195170441111:0" resolveInfo="text" />
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation:16" id="1202338683311">
@@ -562,21 +563,21 @@
           </node>
         </node>
       </node>
-      <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1202338467085">
-        <property name="text" value="_level_2_was_" />
-        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro:2" id="1202338727992">
+      <node role="outputChild:0" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode:0" id="1202338467085">
+        <property name="text:0" value="_level_2_was_" />
+        <node role="nodeMacro$attribute:0" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro:2" id="1202338727992">
           <node role="mapperFunction:2" type="jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction:2" id="1202338740199">
             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202338740200">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1202338740201">
                 <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1202338740202">
                   <property name="name:3" value="result" />
                   <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1202338740203">
-                    <link role="concept:16" targetNodeId="3.1195165132070" resolveInfo="OutputNode" />
+                    <link role="concept:16" targetNodeId="3.1195165132070:0" resolveInfo="OutputNode" />
                   </node>
                   <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1202338740204">
                     <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="1202338740205">
                       <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1202338740206">
-                        <link role="concept:16" targetNodeId="3.1195165132070" resolveInfo="OutputNode" />
+                        <link role="concept:16" targetNodeId="3.1195165132070:0" resolveInfo="OutputNode" />
                       </node>
                     </node>
                   </node>
@@ -623,7 +624,7 @@
                       <link role="variableDeclaration:3" targetNodeId="1202338740202" resolveInfo="result" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1202338749499">
-                      <link role="property:16" targetNodeId="3.1195170441111" resolveInfo="text" />
+                      <link role="property:16" targetNodeId="3.1195170441111:0" resolveInfo="text" />
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation:16" id="1202338740226">
@@ -657,7 +658,7 @@
           </node>
         </node>
       </node>
-      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1202338467104">
+      <node role="nodeMacro$attribute:0" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1202338467104">
         <link role="mappingLabel:2" targetNodeId="1202256320043" resolveInfo="LEVEL 1" />
         <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1202338467105">
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202338467106">
@@ -672,7 +673,7 @@
           </node>
         </node>
       </node>
-      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1202338467111">
+      <node role="nodeMacro$attribute:0" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1202338467111">
         <link role="mappingLabel:2" targetNodeId="1202256351154" resolveInfo="LEVEL 2" />
         <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1202338467112">
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202338467113">
@@ -687,7 +688,7 @@
           </node>
         </node>
       </node>
-      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1202338467118">
+      <node role="nodeMacro$attribute:0" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1202338467118">
         <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1202338467119">
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202338467120">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1202338467121">
@@ -701,7 +702,7 @@
           </node>
         </node>
       </node>
-      <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1202338467125">
+      <node role="propertyMacro$property_attribute$text:0" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1202338467125">
         <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1202338467126">
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202338467127">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1202338467128">
@@ -721,7 +722,7 @@
         </node>
       </node>
     </node>
-    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1202338159193">
+    <node role="rootTemplateAnnotation$attribute:0" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1202338159193">
       <link role="applicableConcept:2" targetNodeId="2.1195168316083" resolveInfo="InputRoot" />
     </node>
   </node>

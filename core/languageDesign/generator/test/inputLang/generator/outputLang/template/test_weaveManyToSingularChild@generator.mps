@@ -25,8 +25,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="0" />
   <maxImportIndex value="3" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="-1" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1218738629621">
@@ -108,29 +109,29 @@
     <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="1218739483594">
       <property name="name:2" value="generated_root" />
       <link role="sourceConcept:2" targetNodeId="2.1195168316083" resolveInfo="InputRoot" />
-      <link role="targetConcept:2" targetNodeId="1.1195164668463" resolveInfo="OutputRoot" />
+      <link role="targetConcept:2" targetNodeId="1.1195164668463:0" resolveInfo="OutputRoot" />
     </node>
   </node>
-  <node type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" id="1218738789586">
-    <property name="name" value="map_outputNode" />
-    <property name="text" value="output root" />
-    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1218738789587">
+  <node type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot:0" id="1218738789586">
+    <property name="name:0" value="map_outputNode" />
+    <property name="text:0" value="output root" />
+    <node role="rootTemplateAnnotation$attribute:0" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1218738789587">
       <link role="applicableConcept:2" targetNodeId="2.1195168316083" resolveInfo="InputRoot" />
     </node>
-    <node role="specialChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1218738814182">
-      <property name="text" value="this is 'special child' in root template" />
+    <node role="specialChild:0" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode:0" id="1218738814182">
+      <property name="text:0" value="this is 'special child' in root template" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1218738992784">
     <property name="name:2" value="weave_InputNode_A" />
     <link role="applicableConcept:2" targetNodeId="2.1195171011194" resolveInfo="InputNode_A" />
-    <node role="contentNode:2" type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" id="1218740015248">
-      <property name="name" value="Output_root_1" />
-      <property name="text" value="..." />
-      <node role="specialChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1218740073391">
-        <property name="text" value="_text_" />
-        <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1218740112298" />
-        <node role="propertyMacro$property_attribute$text" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1218740165111">
+    <node role="contentNode:2" type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot:0" id="1218740015248">
+      <property name="name:0" value="Output_root_1" />
+      <property name="text:0" value="..." />
+      <node role="specialChild:0" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode:0" id="1218740073391">
+        <property name="text:0" value="_text_" />
+        <node role="templateFragment$attribute:0" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1218740112298" />
+        <node role="propertyMacro$property_attribute$text:0" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1218740165111">
           <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1218740165112">
             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1218740165113">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1218740174302">
