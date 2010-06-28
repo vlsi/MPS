@@ -8,5 +8,5 @@
 *.msd text
 *.css text
 *.html text
-.debug text
-.dependencies text
+.debug eol=lf
+.dependencies eol=lf
