@@ -13,22 +13,19 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.text.Collator;
-import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.baseLanguage.closures.util.Constants;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
+import java.util.ArrayList;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -77,33 +74,6 @@ public class FunctionTypeUtil {
     return trg;
   }
 
-  public static List<SNode> getAllFunctionTypes(SModel sourceModel) {
-    List<SNode> cls = SModelOperations.getNodes(sourceModel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
-    List<SNode> typesList = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode cl : cls) {
-      ListSequence.fromList(typesList).addElement(TypeChecker.getInstance().getTypeOf(cl));
-    }
-    List<SNode> funTypes = SModelOperations.getNodes(sourceModel, "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
-    ListSequence.fromList(typesList).addSequence(ListSequence.fromList(funTypes));
-    ListSequence.fromList(typesList).sort(new Comparator<SNode>() {
-      public int compare(SNode a, SNode b) {
-        return Collator.getInstance().compare(FunctionType_Behavior.call_getSignature_1213877405047(SNodeOperations.cast(a, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")), FunctionType_Behavior.call_getSignature_1213877405047(SNodeOperations.cast(b, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")));
-      }
-    }, true);
-    SNode prev = null;
-    for (Iterator<SNode> it = ListSequence.fromList(typesList).iterator(); it.hasNext();) {
-      SNode next = it.next();
-      if (prev != null) {
-        if (Collator.getInstance().compare(FunctionType_Behavior.call_getSignature_1213877405047(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")), FunctionType_Behavior.call_getSignature_1213877405047(SNodeOperations.cast(next, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"))) == 0) {
-          it.remove();
-          continue;
-        }
-      }
-      prev = next;
-    }
-    return typesList;
-  }
-
   public static SNode unmeet(SNode possiblyMeet) {
     SNode tmp = possiblyMeet;
 with_meet:
@@ -114,7 +84,7 @@ with_meet:
           continue with_meet;
         }
       }
-      return new FunctionTypeUtil.QuotationClass_2t0coq_a0b0b0e().createNode();
+      return new FunctionTypeUtil.QuotationClass_2t0coq_a0b0b0d().createNode();
     }
     if (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
@@ -210,7 +180,7 @@ with_meet:
       Values.PREP_DATA.set(genContext, rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(lFType), "classifier", false)));
     } else
     if ((lFType != null) && (rFType != null)) {
-      final SNode adapterAnn = SLinkOperations.getTarget(new FunctionTypeUtil.QuotationClass_2t0coq_a0a0a0a0j0h().createNode(), "annotation", false);
+      final SNode adapterAnn = SLinkOperations.getTarget(new FunctionTypeUtil.QuotationClass_2t0coq_a0a0a0a0j0g().createNode(), "annotation", false);
       final SNode annInst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(rexpr), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "parameter", true)).getElement(SNodeOperations.getIndexInParent(rexpr)), "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode ann) {
           return SLinkOperations.getTarget(ann, "annotation", false) == adapterAnn;
@@ -242,7 +212,7 @@ with_tvd:
               }
             }
           }
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(new FunctionTypeUtil.QuotationClass_2t0coq_a0a0b0e0c0a0j0h().createNode(tvd));
+          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(new FunctionTypeUtil.QuotationClass_2t0coq_a0a0b0e0c0a0j0g().createNode(tvd));
         }
         ClosureLiteralUtil.addAdaptableClosureLiteralTarget(genContext, SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), ct);
       } else if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(lFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType") || ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).all(new IWhereFilter<SNode>() {
@@ -251,7 +221,7 @@ with_tvd:
         }
       }))) {
         ClosureLiteralUtil.addAdaptableClosureLiteralTarget(genContext, SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), FunctionType_Behavior.call_getDeclarationRuntimeType_811905832257074290(lFType, rFType));
-      } else if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") || ListSequence.fromList(SLinkOperations.getTargets(lFType, "throwsType", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(rFType, "throwsType", true)).count()) {
+      } else if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") || ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(lFType)).count() != ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(rFType)).count()) {
         FunctionTypeUtil.addAdaptableClassifierTypeTarget(genContext, FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(rFType), FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(lFType));
         Values.PREP_DATA.set(genContext, rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(lFType), "classifier", false)));
       }
@@ -326,8 +296,8 @@ with_tvd:
     }
   }
 
-  public static class QuotationClass_2t0coq_a0b0b0e {
-    public QuotationClass_2t0coq_a0b0b0e() {
+  public static class QuotationClass_2t0coq_a0b0b0d {
+    public QuotationClass_2t0coq_a0b0b0d() {
     }
 
     public SNode createNode() {
@@ -343,8 +313,8 @@ with_tvd:
     }
   }
 
-  public static class QuotationClass_2t0coq_a0a0a0a0j0h {
-    public QuotationClass_2t0coq_a0a0a0a0j0h() {
+  public static class QuotationClass_2t0coq_a0a0a0a0j0g {
+    public QuotationClass_2t0coq_a0a0a0a0j0g() {
     }
 
     public SNode createNode() {
@@ -361,8 +331,8 @@ with_tvd:
     }
   }
 
-  public static class QuotationClass_2t0coq_a0a0b0e0c0a0j0h {
-    public QuotationClass_2t0coq_a0a0b0e0c0a0j0h() {
+  public static class QuotationClass_2t0coq_a0a0b0e0c0a0j0g {
+    public QuotationClass_2t0coq_a0a0b0e0c0a0j0g() {
     }
 
     public SNode createNode(Object parameter_3) {

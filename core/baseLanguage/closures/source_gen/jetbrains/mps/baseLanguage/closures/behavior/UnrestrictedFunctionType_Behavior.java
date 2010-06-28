@@ -8,8 +8,11 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class UnrestrictedFunctionType_Behavior {
+  private static Class[] PARAMETERS_3841277577642912754 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -22,6 +25,10 @@ public class UnrestrictedFunctionType_Behavior {
     }
     sb.append("==>").append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "terminateType", true)));
     return sb.append("}").toString();
+  }
+
+  public static String virtual_getRuntimeClassName_1230472987259(SNode thisNode) {
+    return "_UnrestrictedFunctionTypes";
   }
 
   public static String virtual_getRuntimeSignature_1213877404927(SNode thisNode) {
@@ -37,12 +44,8 @@ public class UnrestrictedFunctionType_Behavior {
       sb.append("_void");
     }
     sb.append("_P").append(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterType", true)).count());
-    sb.append("_E").append(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "throwsType", true)).count());
+    sb.append("_E").append(ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).count());
     return sb.toString();
-  }
-
-  public static String virtual_getRuntimeClassName_1230472987259(SNode thisNode) {
-    return "_UnrestrictedFunctionTypes";
   }
 
   public static String call_getRuntimeAdapterClassName_1231423631922(SNode thisNode) {
@@ -59,5 +62,13 @@ public class UnrestrictedFunctionType_Behavior {
       tt :
       null
     );
+  }
+
+  public static String call_getRuntimeSignature_3841277577642912754(SNode thisNode) {
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getRuntimeSignature_1213877404927", PARAMETERS_3841277577642912754);
+  }
+
+  public static String callSuper_getRuntimeSignature_3841277577642912754(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), callerConceptFqName, "virtual_getRuntimeSignature_1213877404927", PARAMETERS_3841277577642912754);
   }
 }

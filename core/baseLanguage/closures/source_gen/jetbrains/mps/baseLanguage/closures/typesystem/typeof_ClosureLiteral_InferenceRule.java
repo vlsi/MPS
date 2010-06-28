@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -80,7 +79,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
       if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement")) {
         ListSequence.fromList(allYlds).addElement(stmt);
       } else {
-        if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ThrowStatement") && !(Classifier_Behavior.call_isDescendant_7165541881557222913(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.ThrowStatement"), "throwable", true), "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SLinkOperations.getTarget(new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a0a0a0a0a0a1a8a0().createNode(typeCheckingContext), "classifier", false)))) {
+        if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ThrowStatement")) {
           final SNode tt_typevar_1221579075612 = typeCheckingContext.createNewRuntimeTypesVariable();
           {
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.ThrowStatement"), "throwable", true);
@@ -309,37 +308,6 @@ with_allThrows:
 
   public boolean overrides() {
     return false;
-  }
-
-  public static class QuotationClass_nx7618_a0a0a0a0a0a1a8a0 {
-    public QuotationClass_nx7618_a0a0a0a0a0a1a8a0() {
-    }
-
-    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
   }
 
   public static class QuotationClass_nx7618_a0a0a0a01a0 {
