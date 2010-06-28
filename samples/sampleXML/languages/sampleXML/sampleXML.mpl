@@ -17,11 +17,7 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath />
-  <languageRuntimeClassPath />
-  <sourcePath>
-    <source path="${language_descriptor}/source" />
-  </sourcePath>
+  <sourcePath />
   <dependencies>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
   </dependencies>
