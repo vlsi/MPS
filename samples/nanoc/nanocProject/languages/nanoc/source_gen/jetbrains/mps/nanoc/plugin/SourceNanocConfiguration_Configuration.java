@@ -185,7 +185,7 @@ public class SourceNanocConfiguration_Configuration extends BaseRunConfig {
         return new SourceNanocConfiguration_Configuration.MyExecutionResult(handler_22042010, ListSequence.fromList(actions_22042010).toGenericArray(AnAction.class), new SourceNanocConfiguration_Configuration.MyExecutionConsole(consoleComponent_22042010, consoleDispose_22042010));
       }
 
-      public AbstractDebugSessionCreator createDebugSessionCreator(Project p) {
+      public AbstractDebugSessionCreator createDebugSessionCreator(Project project) {
         return new CppGDBCreator(SourceNanocConfiguration_Configuration.this.getStateObject().nodeId, SourceNanocConfiguration_Configuration.this.getStateObject().modelRef);
       }
 
