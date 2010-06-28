@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.logging.Logger;
 import java.util.List;
-import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.FunctionTypeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
@@ -103,71 +102,8 @@ public class ClassifierTypeUtil {
     return type;
   }
 
-  @Deprecated
-  public static SNode getDeclarationClassifierType(SNode ft) {
-    String rtSig = "_FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(ft);
-    for (SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a1a3().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
-      if (rtSig.equals(SPropertyOperations.getString(SNodeOperations.cast(ice, "jetbrains.mps.baseLanguage.structure.Interface"), "name"))) {
-        SNode ct = new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a1a3().createNode(ice);
-        if ((SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ft, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(ft, "resultType", true)), true));
-        }
-        for (SNode pt : SLinkOperations.getTargets(ft, "parameterType", true)) {
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(pt), false));
-        }
-        for (SNode tt : SLinkOperations.getTargets(ft, "throwsType", true)) {
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(tt, true));
-        }
-        return ct;
-      }
-    }
-    return null;
-  }
-
-  @Deprecated
-  public static SNode getClassifierType(SNode ft) {
-    String rtSig = "_FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(ft);
-    for (SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a1a4().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
-      if (rtSig.equals(SPropertyOperations.getString(SNodeOperations.cast(ice, "jetbrains.mps.baseLanguage.structure.Interface"), "name"))) {
-        SNode ct = new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a1a4().createNode(ice);
-        if ((SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ft, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(ft, "resultType", true))));
-        }
-        for (SNode pt : SLinkOperations.getTargets(ft, "parameterType", true)) {
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(pt)));
-        }
-        for (SNode tt : SLinkOperations.getTargets(ft, "throwsType", true)) {
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(tt));
-        }
-        return ct;
-      }
-    }
-    return null;
-  }
-
-  @Deprecated
-  public static SNode getClassifierType(SNode ft, List<SNode> parameterType) {
-    String rtSig = "_FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(ft);
-    for (SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a1a5().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
-      if (rtSig.equals(SPropertyOperations.getString(SNodeOperations.cast(ice, "jetbrains.mps.baseLanguage.structure.Interface"), "name"))) {
-        SNode ct = new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a1a5().createNode(ice);
-        if ((SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ft, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(copyTypeRecursively(getTypeCoercedToClassifierType(SLinkOperations.getTarget(ft, "resultType", true))));
-        }
-        for (SNode pt : parameterType) {
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(copyTypeRecursively(getTypeCoercedToClassifierType(pt)));
-        }
-        for (SNode tt : SLinkOperations.getTargets(ft, "throwsType", true)) {
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(copyTypeRecursively(tt));
-        }
-        return ct;
-      }
-    }
-    return null;
-  }
-
   public static boolean isFunctionTypeClassifier(SNode classifier) {
-    for (SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a6().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
+    for (SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a3().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
       if (ice == classifier) {
         return true;
       }
@@ -176,7 +112,7 @@ public class ClassifierTypeUtil {
   }
 
   public static boolean isFunctionTypeClassifierReturningValue(SNode classifier) {
-    for (SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a7().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
+    for (SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a4().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
       if (ice == classifier) {
         String cname = SPropertyOperations.getString(classifier, "name");
         int ldi = cname.lastIndexOf(".");
@@ -203,10 +139,10 @@ public class ClassifierTypeUtil {
       ListSequence.fromList(visitedClassifiers).addElement(SLinkOperations.getTarget(ct, "classifier", false));
       for (SNode sup : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(ct)) {
         {
-          IMatchingPattern pattern_zgotlq_a0d0e0i = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
-          SNode coercedNode_zgotlq_a0d0e0i = TypeChecker.getInstance().getRuntimeSupport().coerce_(sup, pattern_zgotlq_a0d0e0i);
-          if (coercedNode_zgotlq_a0d0e0i != null) {
-            ListSequence.fromList(concretes).addElement(coercedNode_zgotlq_a0d0e0i);
+          IMatchingPattern pattern_zgotlq_a0d0e0f = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+          SNode coercedNode_zgotlq_a0d0e0f = TypeChecker.getInstance().getRuntimeSupport().coerce_(sup, pattern_zgotlq_a0d0e0f);
+          if (coercedNode_zgotlq_a0d0e0f != null) {
+            ListSequence.fromList(concretes).addElement(coercedNode_zgotlq_a0d0e0f);
           } else {
           }
         }
@@ -261,23 +197,23 @@ public class ClassifierTypeUtil {
       if (covariant || isFunctionTypeClassifier(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false))) {
         return (SNodeOperations.isInstanceOf(copy, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ?
           copy :
-          new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a4a0a11().createNode(copy)
+          new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a4a0a8().createNode(copy)
         );
       } else {
         return (SNodeOperations.isInstanceOf(copy, "jetbrains.mps.baseLanguage.structure.LowerBoundType") ?
           copy :
-          new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0e0a0l().createNode(copy)
+          new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0e0a0i().createNode(copy)
         );
       }
     } else if (covariant) {
       return (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ?
         SNodeOperations.copyNode(type) :
-        new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a0l().createNode(SNodeOperations.copyNode(type))
+        new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a0i().createNode(SNodeOperations.copyNode(type))
       );
     } else {
       return (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType") ?
         SNodeOperations.copyNode(type) :
-        new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a0l_0().createNode(SNodeOperations.copyNode(type))
+        new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a0i_0().createNode(SNodeOperations.copyNode(type))
       );
     }
   }
@@ -325,26 +261,8 @@ public class ClassifierTypeUtil {
     return cType;
   }
 
-  public static class QuotationClass_zgotlq_a0a0a0a1a3 {
-    public QuotationClass_zgotlq_a0a0a0a1a3() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_zgotlq_a0a0a1a3 {
-    public QuotationClass_zgotlq_a0a0a1a3() {
+  public static class QuotationClass_zgotlq_a0a0a0a3 {
+    public QuotationClass_zgotlq_a0a0a0a3() {
     }
 
     public SNode createNode() {
@@ -361,26 +279,8 @@ public class ClassifierTypeUtil {
     }
   }
 
-  public static class QuotationClass_zgotlq_a0a0a0a1a4 {
-    public QuotationClass_zgotlq_a0a0a0a1a4() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_zgotlq_a0a0a1a4 {
-    public QuotationClass_zgotlq_a0a0a1a4() {
+  public static class QuotationClass_zgotlq_a0a0a0a4 {
+    public QuotationClass_zgotlq_a0a0a0a4() {
     }
 
     public SNode createNode() {
@@ -397,80 +297,8 @@ public class ClassifierTypeUtil {
     }
   }
 
-  public static class QuotationClass_zgotlq_a0a0a0a1a5 {
-    public QuotationClass_zgotlq_a0a0a0a1a5() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_zgotlq_a0a0a1a5 {
-    public QuotationClass_zgotlq_a0a0a1a5() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~FunctionTypes")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_zgotlq_a0a0a0a6 {
-    public QuotationClass_zgotlq_a0a0a0a6() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~FunctionTypes")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_zgotlq_a0a0a0a7 {
-    public QuotationClass_zgotlq_a0a0a0a7() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~FunctionTypes")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_zgotlq_a0a0a4a0a11 {
-    public QuotationClass_zgotlq_a0a0a4a0a11() {
+  public static class QuotationClass_zgotlq_a0a0a4a0a8 {
+    public QuotationClass_zgotlq_a0a0a4a0a8() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -500,8 +328,8 @@ public class ClassifierTypeUtil {
     }
   }
 
-  public static class QuotationClass_zgotlq_a0a0a0e0a0l {
-    public QuotationClass_zgotlq_a0a0a0e0a0l() {
+  public static class QuotationClass_zgotlq_a0a0a0e0a0i {
+    public QuotationClass_zgotlq_a0a0a0e0a0i() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -531,8 +359,8 @@ public class ClassifierTypeUtil {
     }
   }
 
-  public static class QuotationClass_zgotlq_a0a0a0a0l {
-    public QuotationClass_zgotlq_a0a0a0a0l() {
+  public static class QuotationClass_zgotlq_a0a0a0a0i {
+    public QuotationClass_zgotlq_a0a0a0a0i() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -562,8 +390,8 @@ public class ClassifierTypeUtil {
     }
   }
 
-  public static class QuotationClass_zgotlq_a0a0a0a0l_0 {
-    public QuotationClass_zgotlq_a0a0a0a0l_0() {
+  public static class QuotationClass_zgotlq_a0a0a0a0i_0 {
+    public QuotationClass_zgotlq_a0a0a0a0i_0() {
     }
 
     public SNode createNode(Object parameter_5) {
