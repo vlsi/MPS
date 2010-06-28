@@ -13,10 +13,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import java.util.Iterator;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -51,8 +51,12 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
           return !("equals".equals(SPropertyOperations.getString(m, "name"))) && SPropertyOperations.getBoolean(m, "isAbstract");
         }
       });
-      SNode mtd = Sequence.fromIterable(cands).first();
-      if (Sequence.fromIterable(cands).isNotEmpty()) {
+      Iterator<SNode> it = Sequence.fromIterable(cands).iterator();
+      SNode mtd = (it.hasNext() ?
+        it.next() :
+        null
+      );
+      if (it.hasNext()) {
         errorMsg = ": more than one abstract method";
       } else if (mtd != null) {
         SNode md = ListSequence.fromList(methods).getElement(0);
@@ -140,8 +144,12 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
             return !("equals".equals(SPropertyOperations.getString(m, "name"))) && SPropertyOperations.getBoolean(m, "isAbstract");
           }
         });
-        SNode mtd = Sequence.fromIterable(cands).first();
-        if (Sequence.fromIterable(cands).isNotEmpty()) {
+        Iterator<SNode> it = Sequence.fromIterable(cands).iterator();
+        SNode mtd = (it.hasNext() ?
+          it.next() :
+          null
+        );
+        if (it.hasNext()) {
           errorMsg = ": more than one abstract method";
         } else if (mtd != null) {
           SNode md = ListSequence.fromList(methods).getElement(0);
