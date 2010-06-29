@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1560298786499489241">
+    <nodeInfo nodeId="1560298786499489245" fileName="StubSolutionChooser.java" startLine="11" startPosition="70" endLine="12" endPosition="38" />
+    <nodeInfo nodeId="1560298786499489253" fileName="StubSolutionChooser.java" startLine="14" startPosition="51" endLine="15" endPosition="20" />
+    <nodeInfo nodeId="1560298786499489263" fileName="StubSolutionChooser.java" startLine="18" startPosition="33" endLine="19" endPosition="61" />
+    <nodeInfo nodeId="1560298786499489274" fileName="StubSolutionChooser.java" startLine="20" startPosition="23" endLine="21" endPosition="18" />
+    <nodeInfo nodeId="1560298786499489276" fileName="StubSolutionChooser.java" startLine="22" startPosition="5" endLine="23" endPosition="47" />
+    <nodeInfo nodeId="1560298786499489281" fileName="StubSolutionChooser.java" startLine="23" startPosition="47" endLine="24" endPosition="27" />
+    <nodeInfo nodeId="1560298786499489286" fileName="StubSolutionChooser.java" startLine="24" startPosition="27" endLine="25" endPosition="40" />
+    <nodeInfo nodeId="1560298786499489291" fileName="StubSolutionChooser.java" startLine="25" startPosition="40" endLine="26" endPosition="20" />
+    <nodeInfo nodeId="1560298786499489248" fileName="StubSolutionChooser.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <nodeInfo nodeId="1560298786499489269" fileName="StubSolutionChooser.java" startLine="19" startPosition="61" endLine="22" endPosition="5" />
+    <nodeInfo nodeId="1560298786499489259" fileName="StubSolutionChooser.java" startLine="17" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1560298786499489252" fileName="StubSolutionChooser.java" startLine="14" startPosition="51" endLine="15" endPosition="20" />
+    <scopeInfo nodeId="1560298786499489273" fileName="StubSolutionChooser.java" startLine="20" startPosition="23" endLine="21" endPosition="18" />
+    <scopeInfo nodeId="1560298786499489248" fileName="StubSolutionChooser.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1560298786499489250" varName="owner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499489262" fileName="StubSolutionChooser.java" startLine="18" startPosition="33" endLine="26" endPosition="20">
+      <varInfo nodeId="1560298786499489264" varName="name" />
+      <varInfo nodeId="1560298786499489277" varName="solution" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499489259" fileName="StubSolutionChooser.java" startLine="17" startPosition="0" endLine="28" endPosition="0" />
+    <unitInfo nodeId="1560298786499489241" fileName="StubSolutionChooser.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubSolutionChooser" />
+  </root>
+  <root nodeId="1560298786499489975">
+    <nodeInfo nodeId="1560298786499489978" fileName="SourcePathChooser.java" startLine="10" startPosition="54" endLine="11" endPosition="38" />
+    <nodeInfo nodeId="1560298786499489986" fileName="SourcePathChooser.java" startLine="13" startPosition="49" endLine="14" endPosition="20" />
+    <nodeInfo nodeId="1560298786499489996" fileName="SourcePathChooser.java" startLine="17" startPosition="27" endLine="18" endPosition="52" />
+    <nodeInfo nodeId="1560298786499490001" fileName="SourcePathChooser.java" startLine="18" startPosition="52" endLine="19" endPosition="54" />
+    <nodeInfo nodeId="1560298786499490006" fileName="SourcePathChooser.java" startLine="19" startPosition="54" endLine="20" endPosition="66" />
+    <nodeInfo nodeId="1560298786499490022" fileName="SourcePathChooser.java" startLine="21" startPosition="25" endLine="22" endPosition="18" />
+    <nodeInfo nodeId="1560298786499490024" fileName="SourcePathChooser.java" startLine="23" startPosition="5" endLine="24" endPosition="36" />
+    <nodeInfo nodeId="1560298786499489981" fileName="SourcePathChooser.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <nodeInfo nodeId="1560298786499490017" fileName="SourcePathChooser.java" startLine="20" startPosition="66" endLine="23" endPosition="5" />
+    <nodeInfo nodeId="1560298786499489992" fileName="SourcePathChooser.java" startLine="16" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1560298786499489985" fileName="SourcePathChooser.java" startLine="13" startPosition="49" endLine="14" endPosition="20" />
+    <scopeInfo nodeId="1560298786499490021" fileName="SourcePathChooser.java" startLine="21" startPosition="25" endLine="22" endPosition="18" />
+    <scopeInfo nodeId="1560298786499489981" fileName="SourcePathChooser.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="1560298786499489983" varName="owner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499489995" fileName="SourcePathChooser.java" startLine="17" startPosition="27" endLine="24" endPosition="36">
+      <varInfo nodeId="1560298786499490007" varName="result" />
+      <varInfo nodeId="1560298786499489997" varName="chooser" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499489992" fileName="SourcePathChooser.java" startLine="16" startPosition="0" endLine="26" endPosition="0" />
+    <unitInfo nodeId="1560298786499489975" fileName="SourcePathChooser.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.SourcePathChooser" />
+  </root>
+  <root nodeId="1560298786499490215">
+    <nodeInfo nodeId="1560298786499490220" fileName="ModelChooser.java" startLine="15" startPosition="72" endLine="16" endPosition="38" />
+    <nodeInfo nodeId="1560298786499490228" fileName="ModelChooser.java" startLine="18" startPosition="44" endLine="19" endPosition="20" />
+    <nodeInfo nodeId="1560298786499490296" fileName="ModelChooser.java" startLine="24" startPosition="47" endLine="25" endPosition="63" />
+    <nodeInfo nodeId="1560298786499490255" fileName="ModelChooser.java" startLine="27" startPosition="7" endLine="28" endPosition="136" />
+    <nodeInfo nodeId="1560298786499490272" fileName="ModelChooser.java" startLine="29" startPosition="35" endLine="30" endPosition="18" />
+    <nodeInfo nodeId="1560298786499490274" fileName="ModelChooser.java" startLine="31" startPosition="5" endLine="32" endPosition="72" />
+    <nodeInfo nodeId="1560298786499490286" fileName="ModelChooser.java" startLine="33" startPosition="50" endLine="34" endPosition="46" />
+    <nodeInfo nodeId="1560298786499490293" fileName="ModelChooser.java" startLine="35" startPosition="5" endLine="36" endPosition="22" />
+    <nodeInfo nodeId="1560298786499490223" fileName="ModelChooser.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
+    <nodeInfo nodeId="1560298786499490267" fileName="ModelChooser.java" startLine="28" startPosition="136" endLine="31" endPosition="5" />
+    <nodeInfo nodeId="1560298786499490281" fileName="ModelChooser.java" startLine="32" startPosition="72" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="1560298786499490251" fileName="ModelChooser.java" startLine="23" startPosition="115" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="1560298786499490239" fileName="ModelChooser.java" startLine="22" startPosition="42" endLine="27" endPosition="7" />
+    <nodeInfo nodeId="1560298786499490234" fileName="ModelChooser.java" startLine="21" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1560298786499490227" fileName="ModelChooser.java" startLine="18" startPosition="44" endLine="19" endPosition="20" />
+    <scopeInfo nodeId="1560298786499490295" fileName="ModelChooser.java" startLine="24" startPosition="47" endLine="25" endPosition="63" />
+    <scopeInfo nodeId="1560298786499490271" fileName="ModelChooser.java" startLine="29" startPosition="35" endLine="30" endPosition="18" />
+    <scopeInfo nodeId="1560298786499490285" fileName="ModelChooser.java" startLine="33" startPosition="50" endLine="34" endPosition="46" />
+    <scopeInfo nodeId="1560298786499490223" fileName="ModelChooser.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="1560298786499490225" varName="owner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499490281" fileName="ModelChooser.java" startLine="32" startPosition="72" endLine="35" endPosition="5">
+      <varInfo nodeId="1560298786499490283" varName="md" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499490251" fileName="ModelChooser.java" startLine="23" startPosition="115" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1560298786499490238" fileName="ModelChooser.java" startLine="22" startPosition="42" endLine="36" endPosition="22">
+      <varInfo nodeId="1560298786499490240" varName="models" />
+      <varInfo nodeId="1560298786499490275" varName="references" />
+      <varInfo nodeId="1560298786499490256" varName="sModelDescriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499490234" fileName="ModelChooser.java" startLine="21" startPosition="0" endLine="38" endPosition="0" />
+    <unitInfo nodeId="1560298786499490248" fileName="ModelChooser.java" startLine="23" startPosition="77" endLine="27" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelChooser$1" />
+    <unitInfo nodeId="1560298786499490215" fileName="ModelChooser.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelChooser" />
+  </root>
+  <root nodeId="1560298786499490300">
+    <nodeInfo nodeId="1560298786499490305" fileName="LanguageChooser.java" startLine="15" startPosition="75" endLine="16" endPosition="38" />
+    <nodeInfo nodeId="1560298786499490313" fileName="LanguageChooser.java" startLine="18" startPosition="47" endLine="19" endPosition="20" />
+    <nodeInfo nodeId="1560298786499490382" fileName="LanguageChooser.java" startLine="24" startPosition="39" endLine="25" endPosition="63" />
+    <nodeInfo nodeId="1560298786499490340" fileName="LanguageChooser.java" startLine="27" startPosition="7" endLine="28" endPosition="136" />
+    <nodeInfo nodeId="1560298786499490358" fileName="LanguageChooser.java" startLine="29" startPosition="27" endLine="30" endPosition="18" />
+    <nodeInfo nodeId="1560298786499490360" fileName="LanguageChooser.java" startLine="31" startPosition="5" endLine="32" endPosition="72" />
+    <nodeInfo nodeId="1560298786499490372" fileName="LanguageChooser.java" startLine="33" startPosition="33" endLine="34" endPosition="45" />
+    <nodeInfo nodeId="1560298786499490379" fileName="LanguageChooser.java" startLine="35" startPosition="5" endLine="36" endPosition="22" />
+    <nodeInfo nodeId="1560298786499490308" fileName="LanguageChooser.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
+    <nodeInfo nodeId="1560298786499490353" fileName="LanguageChooser.java" startLine="28" startPosition="136" endLine="31" endPosition="5" />
+    <nodeInfo nodeId="1560298786499490367" fileName="LanguageChooser.java" startLine="32" startPosition="72" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="1560298786499490336" fileName="LanguageChooser.java" startLine="23" startPosition="102" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="1560298786499490324" fileName="LanguageChooser.java" startLine="22" startPosition="42" endLine="27" endPosition="7" />
+    <nodeInfo nodeId="1560298786499490319" fileName="LanguageChooser.java" startLine="21" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1560298786499490312" fileName="LanguageChooser.java" startLine="18" startPosition="47" endLine="19" endPosition="20" />
+    <scopeInfo nodeId="1560298786499490381" fileName="LanguageChooser.java" startLine="24" startPosition="39" endLine="25" endPosition="63" />
+    <scopeInfo nodeId="1560298786499490357" fileName="LanguageChooser.java" startLine="29" startPosition="27" endLine="30" endPosition="18" />
+    <scopeInfo nodeId="1560298786499490371" fileName="LanguageChooser.java" startLine="33" startPosition="33" endLine="34" endPosition="45" />
+    <scopeInfo nodeId="1560298786499490308" fileName="LanguageChooser.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="1560298786499490310" varName="owner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499490367" fileName="LanguageChooser.java" startLine="32" startPosition="72" endLine="35" endPosition="5">
+      <varInfo nodeId="1560298786499490369" varName="l" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499490336" fileName="LanguageChooser.java" startLine="23" startPosition="102" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1560298786499490323" fileName="LanguageChooser.java" startLine="22" startPosition="42" endLine="36" endPosition="22">
+      <varInfo nodeId="1560298786499490325" varName="languages" />
+      <varInfo nodeId="1560298786499490361" varName="references" />
+      <varInfo nodeId="1560298786499490341" varName="language" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499490319" fileName="LanguageChooser.java" startLine="21" startPosition="0" endLine="38" endPosition="0" />
+    <unitInfo nodeId="1560298786499490333" fileName="LanguageChooser.java" startLine="23" startPosition="72" endLine="27" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.LanguageChooser$1" />
+    <unitInfo nodeId="1560298786499490300" fileName="LanguageChooser.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.LanguageChooser" />
+  </root>
+  <root nodeId="1560298786499491378">
+    <nodeInfo nodeId="1560298786499491383" fileName="DevKitChooser.java" startLine="15" startPosition="73" endLine="16" endPosition="38" />
+    <nodeInfo nodeId="1560298786499491391" fileName="DevKitChooser.java" startLine="18" startPosition="45" endLine="19" endPosition="20" />
+    <nodeInfo nodeId="1560298786499491460" fileName="DevKitChooser.java" startLine="24" startPosition="37" endLine="25" endPosition="61" />
+    <nodeInfo nodeId="1560298786499491418" fileName="DevKitChooser.java" startLine="27" startPosition="7" endLine="28" endPosition="128" />
+    <nodeInfo nodeId="1560298786499491436" fileName="DevKitChooser.java" startLine="29" startPosition="25" endLine="30" endPosition="18" />
+    <nodeInfo nodeId="1560298786499491438" fileName="DevKitChooser.java" startLine="31" startPosition="5" endLine="32" endPosition="72" />
+    <nodeInfo nodeId="1560298786499491450" fileName="DevKitChooser.java" startLine="33" startPosition="30" endLine="34" endPosition="46" />
+    <nodeInfo nodeId="1560298786499491457" fileName="DevKitChooser.java" startLine="35" startPosition="5" endLine="36" endPosition="22" />
+    <nodeInfo nodeId="1560298786499491386" fileName="DevKitChooser.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
+    <nodeInfo nodeId="1560298786499491431" fileName="DevKitChooser.java" startLine="28" startPosition="128" endLine="31" endPosition="5" />
+    <nodeInfo nodeId="1560298786499491445" fileName="DevKitChooser.java" startLine="32" startPosition="72" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="1560298786499491414" fileName="DevKitChooser.java" startLine="23" startPosition="96" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="1560298786499491402" fileName="DevKitChooser.java" startLine="22" startPosition="42" endLine="27" endPosition="7" />
+    <nodeInfo nodeId="1560298786499491397" fileName="DevKitChooser.java" startLine="21" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1560298786499491390" fileName="DevKitChooser.java" startLine="18" startPosition="45" endLine="19" endPosition="20" />
+    <scopeInfo nodeId="1560298786499491459" fileName="DevKitChooser.java" startLine="24" startPosition="37" endLine="25" endPosition="61" />
+    <scopeInfo nodeId="1560298786499491435" fileName="DevKitChooser.java" startLine="29" startPosition="25" endLine="30" endPosition="18" />
+    <scopeInfo nodeId="1560298786499491449" fileName="DevKitChooser.java" startLine="33" startPosition="30" endLine="34" endPosition="46" />
+    <scopeInfo nodeId="1560298786499491386" fileName="DevKitChooser.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="1560298786499491388" varName="owner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499491445" fileName="DevKitChooser.java" startLine="32" startPosition="72" endLine="35" endPosition="5">
+      <varInfo nodeId="1560298786499491447" varName="dk" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499491414" fileName="DevKitChooser.java" startLine="23" startPosition="96" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1560298786499491401" fileName="DevKitChooser.java" startLine="22" startPosition="42" endLine="36" endPosition="22">
+      <varInfo nodeId="1560298786499491439" varName="references" />
+      <varInfo nodeId="1560298786499491403" varName="devkits" />
+      <varInfo nodeId="1560298786499491419" varName="devKit" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499491397" fileName="DevKitChooser.java" startLine="21" startPosition="0" endLine="38" endPosition="0" />
+    <unitInfo nodeId="1560298786499491411" fileName="DevKitChooser.java" startLine="23" startPosition="68" endLine="27" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.DevKitChooser$1" />
+    <unitInfo nodeId="1560298786499491378" fileName="DevKitChooser.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.DevKitChooser" />
+  </root>
+  <root nodeId="1560298786499492327">
+    <nodeInfo nodeId="1560298786499492332" fileName="GeneratorChooser.java" startLine="16" startPosition="76" endLine="17" endPosition="38" />
+    <nodeInfo nodeId="1560298786499492340" fileName="GeneratorChooser.java" startLine="19" startPosition="48" endLine="20" endPosition="20" />
+    <nodeInfo nodeId="1560298786499492409" fileName="GeneratorChooser.java" startLine="25" startPosition="40" endLine="26" endPosition="60" />
+    <nodeInfo nodeId="1560298786499492428" fileName="GeneratorChooser.java" startLine="28" startPosition="39" endLine="29" endPosition="38" />
+    <nodeInfo nodeId="1560298786499492435" fileName="GeneratorChooser.java" startLine="31" startPosition="9" endLine="32" endPosition="22" />
+    <nodeInfo nodeId="1560298786499492367" fileName="GeneratorChooser.java" startLine="34" startPosition="7" endLine="35" endPosition="140" />
+    <nodeInfo nodeId="1560298786499492385" fileName="GeneratorChooser.java" startLine="36" startPosition="28" endLine="37" endPosition="18" />
+    <nodeInfo nodeId="1560298786499492387" fileName="GeneratorChooser.java" startLine="38" startPosition="5" endLine="39" endPosition="72" />
+    <nodeInfo nodeId="1560298786499492399" fileName="GeneratorChooser.java" startLine="40" startPosition="35" endLine="41" endPosition="45" />
+    <nodeInfo nodeId="1560298786499492406" fileName="GeneratorChooser.java" startLine="42" startPosition="5" endLine="43" endPosition="22" />
+    <nodeInfo nodeId="1560298786499492335" fileName="GeneratorChooser.java" startLine="18" startPosition="0" endLine="21" endPosition="3" />
+    <nodeInfo nodeId="1560298786499492423" fileName="GeneratorChooser.java" startLine="27" startPosition="73" endLine="30" endPosition="11" />
+    <nodeInfo nodeId="1560298786499492380" fileName="GeneratorChooser.java" startLine="35" startPosition="140" endLine="38" endPosition="5" />
+    <nodeInfo nodeId="1560298786499492394" fileName="GeneratorChooser.java" startLine="39" startPosition="72" endLine="42" endPosition="5" />
+    <nodeInfo nodeId="1560298786499492416" fileName="GeneratorChooser.java" startLine="26" startPosition="60" endLine="31" endPosition="9" />
+    <nodeInfo nodeId="1560298786499492363" fileName="GeneratorChooser.java" startLine="24" startPosition="105" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="1560298786499492351" fileName="GeneratorChooser.java" startLine="23" startPosition="42" endLine="34" endPosition="7" />
+    <nodeInfo nodeId="1560298786499492346" fileName="GeneratorChooser.java" startLine="22" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1560298786499492339" fileName="GeneratorChooser.java" startLine="19" startPosition="48" endLine="20" endPosition="20" />
+    <scopeInfo nodeId="1560298786499492427" fileName="GeneratorChooser.java" startLine="28" startPosition="39" endLine="29" endPosition="38" />
+    <scopeInfo nodeId="1560298786499492384" fileName="GeneratorChooser.java" startLine="36" startPosition="28" endLine="37" endPosition="18" />
+    <scopeInfo nodeId="1560298786499492398" fileName="GeneratorChooser.java" startLine="40" startPosition="35" endLine="41" endPosition="45" />
+    <scopeInfo nodeId="1560298786499492335" fileName="GeneratorChooser.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
+      <varInfo nodeId="1560298786499492337" varName="owner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499492422" fileName="GeneratorChooser.java" startLine="27" startPosition="73" endLine="30" endPosition="11" />
+    <scopeInfo nodeId="1560298786499492394" fileName="GeneratorChooser.java" startLine="39" startPosition="72" endLine="42" endPosition="5">
+      <varInfo nodeId="1560298786499492396" varName="g" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499492416" fileName="GeneratorChooser.java" startLine="26" startPosition="60" endLine="31" endPosition="9">
+      <varInfo nodeId="1560298786499492420" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499492408" fileName="GeneratorChooser.java" startLine="25" startPosition="40" endLine="32" endPosition="22">
+      <varInfo nodeId="1560298786499492410" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499492363" fileName="GeneratorChooser.java" startLine="24" startPosition="105" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1560298786499492350" fileName="GeneratorChooser.java" startLine="23" startPosition="42" endLine="43" endPosition="22">
+      <varInfo nodeId="1560298786499492352" varName="generators" />
+      <varInfo nodeId="1560298786499492388" varName="references" />
+      <varInfo nodeId="1560298786499492368" varName="generator" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499492346" fileName="GeneratorChooser.java" startLine="22" startPosition="0" endLine="45" endPosition="0" />
+    <unitInfo nodeId="1560298786499492360" fileName="GeneratorChooser.java" startLine="24" startPosition="74" endLine="34" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.GeneratorChooser$1" />
+    <unitInfo nodeId="1560298786499492327" fileName="GeneratorChooser.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.GeneratorChooser" />
+  </root>
+  <root nodeId="1560298786499492785">
+    <nodeInfo nodeId="1560298786499492796" fileName="MappingRuleCreator.java" startLine="12" startPosition="40" endLine="13" endPosition="37" />
+    <nodeInfo nodeId="1560298786499492789" fileName="MappingRuleCreator.java" startLine="8" startPosition="76" endLine="10" endPosition="3" />
+    <nodeInfo nodeId="1560298786499492792" fileName="MappingRuleCreator.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="1560298786499492791" fileName="MappingRuleCreator.java" startLine="9" startPosition="31" endLine="9" endPosition="31" />
+    <scopeInfo nodeId="1560298786499492795" fileName="MappingRuleCreator.java" startLine="12" startPosition="40" endLine="13" endPosition="37" />
+    <scopeInfo nodeId="1560298786499492789" fileName="MappingRuleCreator.java" startLine="8" startPosition="76" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="1560298786499492792" fileName="MappingRuleCreator.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
+    <unitInfo nodeId="1560298786499492785" fileName="MappingRuleCreator.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.MappingRuleCreator" />
+  </root>
+  <root nodeId="1560298786499493081">
+    <nodeInfo nodeId="1560298786499493086" fileName="ClassPathChooser.java" startLine="13" startPosition="75" endLine="14" endPosition="38" />
+    <nodeInfo nodeId="1560298786499493094" fileName="ClassPathChooser.java" startLine="16" startPosition="48" endLine="17" endPosition="20" />
+    <nodeInfo nodeId="1560298786499493105" fileName="ClassPathChooser.java" startLine="20" startPosition="41" endLine="21" endPosition="52" />
+    <nodeInfo nodeId="1560298786499493110" fileName="ClassPathChooser.java" startLine="21" startPosition="52" endLine="22" endPosition="64" />
+    <nodeInfo nodeId="1560298786499493115" fileName="ClassPathChooser.java" startLine="22" startPosition="64" endLine="23" endPosition="85" />
+    <nodeInfo nodeId="1560298786499493127" fileName="ClassPathChooser.java" startLine="23" startPosition="85" endLine="24" endPosition="66" />
+    <nodeInfo nodeId="1560298786499493139" fileName="ClassPathChooser.java" startLine="25" startPosition="30" endLine="26" endPosition="48" />
+    <nodeInfo nodeId="1560298786499493144" fileName="ClassPathChooser.java" startLine="26" startPosition="48" endLine="27" endPosition="42" />
+    <nodeInfo nodeId="1560298786499493151" fileName="ClassPathChooser.java" startLine="27" startPosition="42" endLine="28" endPosition="22" />
+    <nodeInfo nodeId="1560298786499493156" fileName="ClassPathChooser.java" startLine="29" startPosition="5" endLine="30" endPosition="18" />
+    <nodeInfo nodeId="1560298786499493089" fileName="ClassPathChooser.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <nodeInfo nodeId="1560298786499493134" fileName="ClassPathChooser.java" startLine="24" startPosition="66" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1560298786499493100" fileName="ClassPathChooser.java" startLine="19" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1560298786499493093" fileName="ClassPathChooser.java" startLine="16" startPosition="48" endLine="17" endPosition="20" />
+    <scopeInfo nodeId="1560298786499493089" fileName="ClassPathChooser.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="1560298786499493091" varName="owner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499493138" fileName="ClassPathChooser.java" startLine="25" startPosition="30" endLine="28" endPosition="22">
+      <varInfo nodeId="1560298786499493140" varName="cpe" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499493134" fileName="ClassPathChooser.java" startLine="24" startPosition="66" endLine="29" endPosition="5">
+      <varInfo nodeId="1560298786499493136" varName="file" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499493104" fileName="ClassPathChooser.java" startLine="20" startPosition="41" endLine="30" endPosition="18">
+      <varInfo nodeId="1560298786499493128" varName="result" />
+      <varInfo nodeId="1560298786499493116" varName="files" />
+      <varInfo nodeId="1560298786499493106" varName="chooser" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499493100" fileName="ClassPathChooser.java" startLine="19" startPosition="0" endLine="32" endPosition="0" />
+    <unitInfo nodeId="1560298786499493081" fileName="ClassPathChooser.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ClassPathChooser" />
+  </root>
+  <root nodeId="1560298786499493158">
+    <nodeInfo nodeId="1560298786499493163" fileName="SolutionChooser.java" startLine="16" startPosition="75" endLine="17" endPosition="38" />
+    <nodeInfo nodeId="1560298786499493171" fileName="SolutionChooser.java" startLine="19" startPosition="47" endLine="20" endPosition="20" />
+    <nodeInfo nodeId="1560298786499493240" fileName="SolutionChooser.java" startLine="25" startPosition="39" endLine="26" endPosition="63" />
+    <nodeInfo nodeId="1560298786499493259" fileName="SolutionChooser.java" startLine="28" startPosition="38" endLine="29" endPosition="37" />
+    <nodeInfo nodeId="1560298786499493266" fileName="SolutionChooser.java" startLine="31" startPosition="9" endLine="32" endPosition="22" />
+    <nodeInfo nodeId="1560298786499493198" fileName="SolutionChooser.java" startLine="34" startPosition="7" endLine="35" endPosition="136" />
+    <nodeInfo nodeId="1560298786499493216" fileName="SolutionChooser.java" startLine="36" startPosition="27" endLine="37" endPosition="18" />
+    <nodeInfo nodeId="1560298786499493218" fileName="SolutionChooser.java" startLine="38" startPosition="5" endLine="39" endPosition="72" />
+    <nodeInfo nodeId="1560298786499493230" fileName="SolutionChooser.java" startLine="40" startPosition="33" endLine="41" endPosition="45" />
+    <nodeInfo nodeId="1560298786499493237" fileName="SolutionChooser.java" startLine="42" startPosition="5" endLine="43" endPosition="22" />
+    <nodeInfo nodeId="1560298786499493166" fileName="SolutionChooser.java" startLine="18" startPosition="0" endLine="21" endPosition="3" />
+    <nodeInfo nodeId="1560298786499493254" fileName="SolutionChooser.java" startLine="27" startPosition="73" endLine="30" endPosition="11" />
+    <nodeInfo nodeId="1560298786499493211" fileName="SolutionChooser.java" startLine="35" startPosition="136" endLine="38" endPosition="5" />
+    <nodeInfo nodeId="1560298786499493225" fileName="SolutionChooser.java" startLine="39" startPosition="72" endLine="42" endPosition="5" />
+    <nodeInfo nodeId="1560298786499493247" fileName="SolutionChooser.java" startLine="26" startPosition="63" endLine="31" endPosition="9" />
+    <nodeInfo nodeId="1560298786499493194" fileName="SolutionChooser.java" startLine="24" startPosition="102" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="1560298786499493182" fileName="SolutionChooser.java" startLine="23" startPosition="42" endLine="34" endPosition="7" />
+    <nodeInfo nodeId="1560298786499493177" fileName="SolutionChooser.java" startLine="22" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1560298786499493170" fileName="SolutionChooser.java" startLine="19" startPosition="47" endLine="20" endPosition="20" />
+    <scopeInfo nodeId="1560298786499493258" fileName="SolutionChooser.java" startLine="28" startPosition="38" endLine="29" endPosition="37" />
+    <scopeInfo nodeId="1560298786499493215" fileName="SolutionChooser.java" startLine="36" startPosition="27" endLine="37" endPosition="18" />
+    <scopeInfo nodeId="1560298786499493229" fileName="SolutionChooser.java" startLine="40" startPosition="33" endLine="41" endPosition="45" />
+    <scopeInfo nodeId="1560298786499493166" fileName="SolutionChooser.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
+      <varInfo nodeId="1560298786499493168" varName="owner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499493253" fileName="SolutionChooser.java" startLine="27" startPosition="73" endLine="30" endPosition="11" />
+    <scopeInfo nodeId="1560298786499493225" fileName="SolutionChooser.java" startLine="39" startPosition="72" endLine="42" endPosition="5">
+      <varInfo nodeId="1560298786499493227" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499493247" fileName="SolutionChooser.java" startLine="26" startPosition="63" endLine="31" endPosition="9">
+      <varInfo nodeId="1560298786499493251" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499493239" fileName="SolutionChooser.java" startLine="25" startPosition="39" endLine="32" endPosition="22">
+      <varInfo nodeId="1560298786499493241" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499493194" fileName="SolutionChooser.java" startLine="24" startPosition="102" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1560298786499493181" fileName="SolutionChooser.java" startLine="23" startPosition="42" endLine="43" endPosition="22">
+      <varInfo nodeId="1560298786499493219" varName="references" />
+      <varInfo nodeId="1560298786499493183" varName="solutions" />
+      <varInfo nodeId="1560298786499493199" varName="solution" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499493177" fileName="SolutionChooser.java" startLine="22" startPosition="0" endLine="45" endPosition="0" />
+    <unitInfo nodeId="1560298786499493191" fileName="SolutionChooser.java" startLine="24" startPosition="72" endLine="34" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.SolutionChooser$1" />
+    <unitInfo nodeId="1560298786499493158" fileName="SolutionChooser.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.SolutionChooser" />
+  </root>
+  <root nodeId="1560298786499495733">
+    <nodeInfo nodeId="1560298786499495738" fileName="StubRootChooser.java" startLine="14" startPosition="75" endLine="15" endPosition="38" />
+    <nodeInfo nodeId="1560298786499495746" fileName="StubRootChooser.java" startLine="17" startPosition="47" endLine="18" endPosition="20" />
+    <nodeInfo nodeId="1560298786499495757" fileName="StubRootChooser.java" startLine="21" startPosition="42" endLine="22" endPosition="52" />
+    <nodeInfo nodeId="1560298786499495762" fileName="StubRootChooser.java" startLine="22" startPosition="52" endLine="23" endPosition="64" />
+    <nodeInfo nodeId="1560298786499495767" fileName="StubRootChooser.java" startLine="23" startPosition="64" endLine="24" endPosition="85" />
+    <nodeInfo nodeId="1560298786499495779" fileName="StubRootChooser.java" startLine="24" startPosition="85" endLine="25" endPosition="68" />
+    <nodeInfo nodeId="1560298786499495791" fileName="StubRootChooser.java" startLine="26" startPosition="30" endLine="27" endPosition="50" />
+    <nodeInfo nodeId="1560298786499495796" fileName="StubRootChooser.java" startLine="27" startPosition="50" endLine="28" endPosition="42" />
+    <nodeInfo nodeId="8571970830724245316" fileName="StubRootChooser.java" startLine="28" startPosition="42" endLine="29" endPosition="46" />
+    <nodeInfo nodeId="1560298786499495803" fileName="StubRootChooser.java" startLine="29" startPosition="46" endLine="30" endPosition="22" />
+    <nodeInfo nodeId="1560298786499495808" fileName="StubRootChooser.java" startLine="31" startPosition="5" endLine="32" endPosition="18" />
+    <nodeInfo nodeId="1560298786499495741" fileName="StubRootChooser.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <nodeInfo nodeId="1560298786499495786" fileName="StubRootChooser.java" startLine="25" startPosition="68" endLine="31" endPosition="5" />
+    <nodeInfo nodeId="1560298786499495752" fileName="StubRootChooser.java" startLine="20" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1560298786499495745" fileName="StubRootChooser.java" startLine="17" startPosition="47" endLine="18" endPosition="20" />
+    <scopeInfo nodeId="1560298786499495741" fileName="StubRootChooser.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="1560298786499495743" varName="owner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499495790" fileName="StubRootChooser.java" startLine="26" startPosition="30" endLine="30" endPosition="22">
+      <varInfo nodeId="1560298786499495792" varName="sme" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499495786" fileName="StubRootChooser.java" startLine="25" startPosition="68" endLine="31" endPosition="5">
+      <varInfo nodeId="1560298786499495788" varName="file" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499495756" fileName="StubRootChooser.java" startLine="21" startPosition="42" endLine="32" endPosition="18">
+      <varInfo nodeId="1560298786499495780" varName="result" />
+      <varInfo nodeId="1560298786499495768" varName="files" />
+      <varInfo nodeId="1560298786499495758" varName="chooser" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499495752" fileName="StubRootChooser.java" startLine="20" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="1560298786499495733" fileName="StubRootChooser.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser" />
+  </root>
+  <root nodeId="1560298786499495913">
+    <nodeInfo nodeId="1560298786499495918" fileName="DependencyChooser.java" startLine="15" startPosition="72" endLine="16" endPosition="38" />
+    <nodeInfo nodeId="1560298786499495926" fileName="DependencyChooser.java" startLine="18" startPosition="49" endLine="19" endPosition="20" />
+    <nodeInfo nodeId="1560298786499496002" fileName="DependencyChooser.java" startLine="24" startPosition="34" endLine="25" endPosition="80" />
+    <nodeInfo nodeId="1560298786499495950" fileName="DependencyChooser.java" startLine="27" startPosition="7" endLine="28" endPosition="129" />
+    <nodeInfo nodeId="1560298786499495968" fileName="DependencyChooser.java" startLine="29" startPosition="25" endLine="30" endPosition="18" />
+    <nodeInfo nodeId="1560298786499495970" fileName="DependencyChooser.java" startLine="31" startPosition="5" endLine="32" endPosition="58" />
+    <nodeInfo nodeId="1560298786499495982" fileName="DependencyChooser.java" startLine="33" startPosition="30" endLine="34" endPosition="47" />
+    <nodeInfo nodeId="1560298786499495987" fileName="DependencyChooser.java" startLine="34" startPosition="47" endLine="35" endPosition="54" />
+    <nodeInfo nodeId="1560298786499495994" fileName="DependencyChooser.java" startLine="35" startPosition="54" endLine="36" endPosition="29" />
+    <nodeInfo nodeId="1560298786499495999" fileName="DependencyChooser.java" startLine="37" startPosition="5" endLine="38" endPosition="18" />
+    <nodeInfo nodeId="1560298786499495921" fileName="DependencyChooser.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
+    <nodeInfo nodeId="1560298786499495963" fileName="DependencyChooser.java" startLine="28" startPosition="129" endLine="31" endPosition="5" />
+    <nodeInfo nodeId="1560298786499495947" fileName="DependencyChooser.java" startLine="23" startPosition="90" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="1560298786499495937" fileName="DependencyChooser.java" startLine="22" startPosition="37" endLine="27" endPosition="7" />
+    <nodeInfo nodeId="1560298786499495977" fileName="DependencyChooser.java" startLine="32" startPosition="58" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="1560298786499495932" fileName="DependencyChooser.java" startLine="21" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1560298786499495925" fileName="DependencyChooser.java" startLine="18" startPosition="49" endLine="19" endPosition="20" />
+    <scopeInfo nodeId="1560298786499496001" fileName="DependencyChooser.java" startLine="24" startPosition="34" endLine="25" endPosition="80" />
+    <scopeInfo nodeId="1560298786499495967" fileName="DependencyChooser.java" startLine="29" startPosition="25" endLine="30" endPosition="18" />
+    <scopeInfo nodeId="1560298786499495921" fileName="DependencyChooser.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="1560298786499495923" varName="owner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499495981" fileName="DependencyChooser.java" startLine="33" startPosition="30" endLine="36" endPosition="29">
+      <varInfo nodeId="1560298786499495983" varName="dependency" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499495947" fileName="DependencyChooser.java" startLine="23" startPosition="90" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1560298786499495977" fileName="DependencyChooser.java" startLine="32" startPosition="58" endLine="37" endPosition="5">
+      <varInfo nodeId="1560298786499495979" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499495936" fileName="DependencyChooser.java" startLine="22" startPosition="37" endLine="38" endPosition="18">
+      <varInfo nodeId="1560298786499495971" varName="result" />
+      <varInfo nodeId="1560298786499495951" varName="module" />
+      <varInfo nodeId="1560298786499495938" varName="modules" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499495932" fileName="DependencyChooser.java" startLine="21" startPosition="0" endLine="40" endPosition="0" />
+    <unitInfo nodeId="1560298786499495945" fileName="DependencyChooser.java" startLine="23" startPosition="65" endLine="27" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.DependencyChooser$1" />
+    <unitInfo nodeId="1560298786499495913" fileName="DependencyChooser.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.DependencyChooser" />
+  </root>
+  <root nodeId="1560298786499496008">
+    <nodeInfo nodeId="1560298786499496012" fileName="ModelRootChooser.java" startLine="11" startPosition="64" endLine="12" endPosition="38" />
+    <nodeInfo nodeId="1560298786499496020" fileName="ModelRootChooser.java" startLine="14" startPosition="48" endLine="15" endPosition="20" />
+    <nodeInfo nodeId="1560298786499496030" fileName="ModelRootChooser.java" startLine="18" startPosition="30" endLine="19" endPosition="52" />
+    <nodeInfo nodeId="1560298786499496035" fileName="ModelRootChooser.java" startLine="19" startPosition="52" endLine="20" endPosition="54" />
+    <nodeInfo nodeId="1560298786499496040" fileName="ModelRootChooser.java" startLine="20" startPosition="54" endLine="21" endPosition="63" />
+    <nodeInfo nodeId="1560298786499496056" fileName="ModelRootChooser.java" startLine="22" startPosition="22" endLine="23" endPosition="18" />
+    <nodeInfo nodeId="1560298786499496058" fileName="ModelRootChooser.java" startLine="24" startPosition="5" endLine="25" endPosition="39" />
+    <nodeInfo nodeId="1560298786499496063" fileName="ModelRootChooser.java" startLine="25" startPosition="39" endLine="26" endPosition="42" />
+    <nodeInfo nodeId="1560298786499496070" fileName="ModelRootChooser.java" startLine="26" startPosition="42" endLine="27" endPosition="18" />
+    <nodeInfo nodeId="1560298786499496015" fileName="ModelRootChooser.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <nodeInfo nodeId="1560298786499496051" fileName="ModelRootChooser.java" startLine="21" startPosition="63" endLine="24" endPosition="5" />
+    <nodeInfo nodeId="1560298786499496026" fileName="ModelRootChooser.java" startLine="17" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1560298786499496019" fileName="ModelRootChooser.java" startLine="14" startPosition="48" endLine="15" endPosition="20" />
+    <scopeInfo nodeId="1560298786499496055" fileName="ModelRootChooser.java" startLine="22" startPosition="22" endLine="23" endPosition="18" />
+    <scopeInfo nodeId="1560298786499496015" fileName="ModelRootChooser.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1560298786499496017" varName="owner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499496029" fileName="ModelRootChooser.java" startLine="18" startPosition="30" endLine="27" endPosition="18">
+      <varInfo nodeId="1560298786499496059" varName="result" />
+      <varInfo nodeId="1560298786499496041" varName="dir" />
+      <varInfo nodeId="1560298786499496031" varName="chooser" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499496026" fileName="ModelRootChooser.java" startLine="17" startPosition="0" endLine="29" endPosition="0" />
+    <unitInfo nodeId="1560298786499496008" fileName="ModelRootChooser.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelRootChooser" />
+  </root>
+  <root nodeId="1560298786499497434">
+    <nodeInfo nodeId="1560298786499497438" fileName="ModulePathChooser.java" startLine="11" startPosition="60" endLine="12" endPosition="35" />
+    <nodeInfo nodeId="1560298786499497441" fileName="ModulePathChooser.java" startLine="12" startPosition="35" endLine="13" endPosition="38" />
+    <nodeInfo nodeId="1560298786499497451" fileName="ModulePathChooser.java" startLine="15" startPosition="67" endLine="16" endPosition="28" />
+    <nodeInfo nodeId="1560298786499497457" fileName="ModulePathChooser.java" startLine="16" startPosition="28" endLine="17" endPosition="20" />
+    <nodeInfo nodeId="1560298786499497467" fileName="ModulePathChooser.java" startLine="20" startPosition="25" endLine="21" endPosition="52" />
+    <nodeInfo nodeId="1560298786499497472" fileName="ModulePathChooser.java" startLine="21" startPosition="52" endLine="22" endPosition="48" />
+    <nodeInfo nodeId="1560298786499497479" fileName="ModulePathChooser.java" startLine="22" startPosition="48" endLine="23" endPosition="64" />
+    <nodeInfo nodeId="1560298786499497495" fileName="ModulePathChooser.java" startLine="24" startPosition="23" endLine="25" endPosition="18" />
+    <nodeInfo nodeId="1560298786499497497" fileName="ModulePathChooser.java" startLine="26" startPosition="5" endLine="27" endPosition="44" />
+    <nodeInfo nodeId="1560298786499497490" fileName="ModulePathChooser.java" startLine="23" startPosition="64" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="1560298786499497444" fileName="ModulePathChooser.java" startLine="14" startPosition="0" endLine="18" endPosition="3" />
+    <nodeInfo nodeId="1560298786499497463" fileName="ModulePathChooser.java" startLine="19" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1560298786499497494" fileName="ModulePathChooser.java" startLine="24" startPosition="23" endLine="25" endPosition="18" />
+    <scopeInfo nodeId="1560298786499497450" fileName="ModulePathChooser.java" startLine="15" startPosition="67" endLine="17" endPosition="20" />
+    <scopeInfo nodeId="1560298786499497444" fileName="ModulePathChooser.java" startLine="14" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="1560298786499497446" varName="extension" />
+      <varInfo nodeId="1560298786499497448" varName="owner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499497466" fileName="ModulePathChooser.java" startLine="20" startPosition="25" endLine="27" endPosition="44">
+      <varInfo nodeId="1560298786499497480" varName="file" />
+      <varInfo nodeId="1560298786499497468" varName="chooser" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499497463" fileName="ModulePathChooser.java" startLine="19" startPosition="0" endLine="29" endPosition="0" />
+    <unitInfo nodeId="1560298786499497434" fileName="ModulePathChooser.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser" />
+  </root>
+</debugInfo>
+
