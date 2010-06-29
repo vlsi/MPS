@@ -171,9 +171,6 @@
       <fileset dir="${mps_home}/source" excludes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html" includes="**/*.java" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp">
-      <fileset dir="${mps_home}/source_gen" excludes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html" includes="**/*.java" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp">
       <fileset dir="${mps_home}/tests" excludes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html" includes="**/*.java" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/core">
