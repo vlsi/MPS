@@ -145,6 +145,10 @@ public interface SModelDescriptor {
 
   IModule getModule();
 
+  /**
+   * use getModule() instead 
+   */
+  @Deprecated
   Set<IModule> getModules();
 
   List<String> validate(IScope scope);

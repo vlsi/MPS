@@ -92,7 +92,7 @@ public class PathProvider {
   }
 
   public static IModule getModelModule(SModel model) {
-    Set<IModule> owningModules = SModelRepository.getInstance().getOwners(model.getModelDescriptor(), IModule.class);
+    Set<IModule> owningModules = model.getModelDescriptor().getModules();
     if (owningModules.isEmpty()) {
       return null;
     }

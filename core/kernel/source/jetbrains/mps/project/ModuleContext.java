@@ -110,7 +110,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
     Set<IModule> owningModules = ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
       public Set<IModule> compute() {
-        return SModelRepository.getInstance().getOwners(model, IModule.class);
+        return model.getModules();
       }
     });
 
