@@ -103,11 +103,9 @@ public class EditorUtil {
     if (modelLang != null) {
       module = modelLang;
     } else {
-      Set<IModule> ownerSet = new LinkedHashSet<IModule>();
-      ownerSet.addAll(SModelRepository.getInstance().getOwners(modelDescriptor, Solution.class));
-      ownerSet.addAll(SModelRepository.getInstance().getOwners(modelDescriptor, Generator.class));
-      if (!(ownerSet.isEmpty())) {
-        module = ownerSet.iterator().next();
+      module = modelDescriptor.getModule();
+      if(!(module instanceof Solution || module instanceof Generator)) {
+        module = null;
       }
     }
     return module;

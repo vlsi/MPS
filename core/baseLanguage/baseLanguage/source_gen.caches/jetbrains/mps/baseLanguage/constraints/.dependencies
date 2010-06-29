@@ -227,6 +227,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.LocalVariableReference_localVariableDeclaration_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.LoopLabelReference_loopLabel_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.ParameterReference_parameterDeclaration_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.PlaceholderMethodDeclaration_name_PropertyConstraint" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.PropertyReference_property_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.Property_alias_PropertyConstraint" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.Property_name_PropertyConstraint" />
@@ -528,6 +529,16 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.constraints.PlaceholderMethodDeclaration_name_PropertyConstraint" file="PlaceholderMethodDeclaration_name_PropertyConstraint.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.INodePropertyValidator" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.constraints.PropertyImplementation_Constraints" file="PropertyImplementation_Constraints.java">
     <classNode dependClassName="java.lang.String" />

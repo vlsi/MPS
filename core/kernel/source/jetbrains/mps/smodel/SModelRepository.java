@@ -19,11 +19,11 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.ManyToManyMap;
-import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -124,12 +124,6 @@ public class SModelRepository implements ApplicationComponent {
       }
     }
     return result;
-  }
-
-  public boolean isRegisteredModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
-    synchronized (myModelsLock) {
-      return !myModelsToOwners.getByFirst(modelDescriptor).isEmpty();
-    }
   }
 
   /**
@@ -473,12 +467,12 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
-  public <M extends ModelOwner> Set<M> getOwners(SModelDescriptor modelDescriptor, Class<M> cls) {
+  public Set<IModule> getModules(SModelDescriptor modelDescriptor) {
     synchronized (myModelsLock) {
-      Set<M> result = new HashSet<M>();
+      Set<IModule> result = new HashSet<IModule>(1);
       for (ModelOwner o : myModelsToOwners.getByFirst(modelDescriptor)) {
-        if (cls.isInstance(o)) {
-          result.add((M) o);
+        if (o instanceof IModule) {
+          result.add((IModule) o);
         }
       }
       return result;

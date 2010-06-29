@@ -37,14 +37,6 @@ import java.util.Map.Entry;
 public class CopyPasteUtil {
   private static final Logger LOG = Logger.getLogger(CopyPasteUtil.class);
 
-  private static final ModelOwner ourModelOwner = new ModelOwner() {
-  };
-
-  static ModelOwner getCopyPasteOwner() {
-    return ourModelOwner;
-  }
-
-
   private static void processImportsAndLanguages(
     Set<SModelReference> necessaryImports,
     Set<ModuleReference> necessaryLanguages,

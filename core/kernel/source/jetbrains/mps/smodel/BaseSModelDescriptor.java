@@ -110,7 +110,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public Set<IModule> getModules() {
-    return SModelRepository.getInstance().getOwners(this, IModule.class);
+    return SModelRepository.getInstance().getModules(this);
   }
 
   @Nullable
