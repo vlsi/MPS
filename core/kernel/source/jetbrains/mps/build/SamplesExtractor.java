@@ -34,6 +34,8 @@ import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.ide.AppLifecycleListener;
 import com.intellij.ide.AppLifecycleListener.Adapter;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.build.SamplesExtractor.MyState;
 import jetbrains.mps.util.PathManager;
@@ -82,8 +84,10 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
     if (myState == null) {
       myState = new MyState();
     }
-
     updateSamplesLocation();
+
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+
     checkSamplesAndUpdateIfNeeded();
   }
 
