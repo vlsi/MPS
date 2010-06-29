@@ -763,6 +763,18 @@
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Block:32" id="1218985001298">
       <node role="body:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1218985001299">
         <property name="vertical:32" value="true" />
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4122894582844987034">
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4122894582844987035">
+            <property name="flag:32" value="false" />
+          </node>
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4122894582844987036">
+            <property name="text:32" value="execute outside command:" />
+          </node>
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="4122894582844987037">
+            <link role="relationDeclaration:32" targetNodeId="1.8538762981200303653:23" resolveInfo="outsideCommand" />
+          </node>
+          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="4122894582844987038" />
+        </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1218985001300">
           <property name="vertical:32" value="false" />
           <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1218985001301">
@@ -858,6 +870,18 @@
       </node>
       <node role="body:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1218984978347">
         <property name="vertical:32" value="true" />
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4122894582844987026">
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4122894582844987027">
+            <property name="flag:32" value="false" />
+          </node>
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4122894582844987030">
+            <property name="text:32" value="execute outside command:" />
+          </node>
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="4122894582844987032">
+            <link role="relationDeclaration:32" targetNodeId="1.8538762981200303653:23" resolveInfo="outsideCommand" />
+          </node>
+          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="4122894582844987029" />
+        </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1218984978348">
           <property name="vertical:32" value="false" />
           <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1218984978349">

@@ -96,6 +96,10 @@ public abstract class AbstractLazyTab implements ILazyTab {
     created.setProperty(SNode.PACK, mainPack);
   }
 
+  protected boolean isOutsideCommandExecution() {
+    return false;
+  }
+
   protected abstract NodeFileStatusListener createFileStatusListener();
 
   protected abstract void onImportantRootRemoved(SNodePointer node);

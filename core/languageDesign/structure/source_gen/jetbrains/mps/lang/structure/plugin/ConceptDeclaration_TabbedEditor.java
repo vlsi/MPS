@@ -658,6 +658,10 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
       });
       return result.value;
     }
+
+    public boolean isOutsideCommandExecution() {
+      return true;
+    }
   }
 
   public static class Textgen_Tab extends BaseSingleTab {

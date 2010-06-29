@@ -93,11 +93,11 @@
     <scopeInfo nodeId="1240665767494" fileName="ActionGroupDeclaration_Editor.java" startLine="397" startPosition="111" endLine="398" endPosition="41" />
   </root>
   <root nodeId="1203852140718">
-    <scopeInfo nodeId="5703381818025949428" fileName="SingletabbedEditorTab_Editor.java" startLine="288" startPosition="113" endLine="289" endPosition="74" />
+    <scopeInfo nodeId="5703381818025949428" fileName="SingletabbedEditorTab_Editor.java" startLine="326" startPosition="113" endLine="327" endPosition="74" />
   </root>
   <root nodeId="1203852144441">
-    <scopeInfo nodeId="5703381818025949402" fileName="MultitabbedEditorTab_Editor.java" startLine="352" startPosition="114" endLine="353" endPosition="143" />
-    <scopeInfo nodeId="9196263109209935114" fileName="MultitabbedEditorTab_Editor.java" startLine="356" startPosition="114" endLine="357" endPosition="74" />
+    <scopeInfo nodeId="5703381818025949402" fileName="MultitabbedEditorTab_Editor.java" startLine="390" startPosition="114" endLine="391" endPosition="143" />
+    <scopeInfo nodeId="9196263109209935114" fileName="MultitabbedEditorTab_Editor.java" startLine="394" startPosition="114" endLine="395" endPosition="74" />
   </root>
   <root nodeId="1204464304511">
     <nodeInfo nodeId="1214668866251" fileName="ToolDeclaration_Editor.java" startLine="578" startPosition="114" endLine="579" endPosition="23" />
