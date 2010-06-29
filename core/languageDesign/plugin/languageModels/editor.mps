@@ -4760,7 +4760,7 @@
           <property name="text:32" value="config type:" />
         </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="3856910426407529566">
-          <link role="relationDeclaration:32" targetNodeId="1.8415911927033051518:23" />
+          <link role="relationDeclaration:32" targetNodeId="1.3856910426407528296:23" />
           <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="3856910426407529567">
             <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="3856910426407529568">
               <property name="readOnly:32" value="true" />
@@ -4781,7 +4781,11 @@
         </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="3856910426407529573" />
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3856910426407529583" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3856910426407529583">
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="3504103241311240581">
+          <property name="flag:32" value="false" />
+        </node>
+      </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="3856910426407529585">
         <link role="relationDeclaration:32" targetNodeId="1.3856910426407529582:23" />
       </node>
