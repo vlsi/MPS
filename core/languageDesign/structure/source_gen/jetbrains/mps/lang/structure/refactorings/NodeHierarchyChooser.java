@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.hierarchy.ChildHierarchyTreeNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.ide.hierarchy.ChildHierarchyTreeNode;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
 import jetbrains.mps.lang.core.structure.BaseConcept;
@@ -37,11 +37,18 @@ public class NodeHierarchyChooser extends JScrollPane {
   }
 
   public SNode getSelectedObject() {
-    final Object selection = this.myTree.getSelectionPath().getLastPathComponent();
-    final Wrappers._T<Object> result = new Wrappers._T<Object>();
+    final ChildHierarchyTreeNode treeNode = (ChildHierarchyTreeNode) myTree.getSelectionPath().getLastPathComponent();
+    if (treeNode == null) {
+      return null;
+    }
+    final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = ((INodeAdapter) ((ChildHierarchyTreeNode) selection).getNode()).getNode();
+        INodeAdapter nodeAdapter = (INodeAdapter) treeNode.getNode();
+        result.value = (nodeAdapter == null ?
+          null :
+          nodeAdapter.getNode()
+        );
       }
     });
     return ((SNode) result.value);
