@@ -154,8 +154,8 @@ public class DefaultCustomMpsApplication_Configuration extends BaseRunConfig {
 
             final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
             // create process handler 
-            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E2<DefaultProcessHandler, ExecutionException, ExecutionException>() {
-              public DefaultProcessHandler invoke() throws ExecutionException, ExecutionException {
+            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E1<DefaultProcessHandler, ExecutionException>() {
+              public DefaultProcessHandler invoke() throws ExecutionException {
                 try {
                   final SNode configuration = DefaultCustomMpsApplication_Configuration.this.getConfiguration(node);
 
