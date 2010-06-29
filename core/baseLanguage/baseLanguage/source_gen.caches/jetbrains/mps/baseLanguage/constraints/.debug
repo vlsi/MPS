@@ -410,6 +410,7 @@
   </root>
   <root nodeId="4898614932449980391">
     <scopeInfo nodeId="4898614932449996452" fileName="PlaceholderMethodDeclaration_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="116" />
+    <scopeInfo nodeId="837104315318470399" fileName="PlaceholderMethodDeclaration_name_PropertyConstraint.java" startLine="25" startPosition="130" endLine="26" endPosition="79" />
   </root>
   <root nodeId="5205855332950450152">
     <nodeInfo nodeId="5205855332950450155" fileName="ArrayCloneOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="27" />

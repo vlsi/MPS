@@ -2283,6 +2283,19 @@
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="4898614932449980391">
     <link role="concept:8" targetNodeId="1.4898614932449915862:3" resolveInfo="PlaceholderMethodDeclaration" />
+    <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="837104315318470397">
+      <link role="applicableProperty:8" targetNodeId="2.1169194664001:0" resolveInfo="name" />
+      <node role="propertyValidator:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator:8" id="837104315318470398">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="837104315318470399">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="837104315318498488">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5498257398664178490">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue:8" id="5498257398664178489" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.IsEmptyOperation:3" id="5498257398664179303" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="4898614932449980392">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4898614932449996452">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4898614932449996453">
