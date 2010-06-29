@@ -23,9 +23,11 @@ import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.vcs.changesmanager.NodeFileStatusListener;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
@@ -136,14 +138,24 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
     if (!canCreate()) return;
     if (!askCreate()) return;
 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    Runnable runnable = new Runnable() {
       public void run() {
-        SNode node = createLoadableNode();
+        final SNode node = createLoadableNode();
         if (node == null) return;
 
-        onCreate(node);
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            onCreate(node);
+          }
+        });
       }
-    });
+    };
+
+    if (isOutsideCommandExecution()) {
+      runnable.run();
+    } else {
+      ModelAccess.instance().runWriteActionInCommand(runnable);
+    }
   }
 
   //------------model listening

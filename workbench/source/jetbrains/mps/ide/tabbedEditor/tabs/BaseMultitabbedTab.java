@@ -311,14 +311,22 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
   private void createLoadableNodeChecked(final SNode concept) {
     Runnable runnable = new Runnable() {
       public void run() {
-        Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode(true, concept);
-        if (nodeAndContext != null) {
-          onCreate(nodeAndContext.o1);
-        }
+        final Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode(true, concept);
+        if (nodeAndContext == null) return;
+
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            onCreate(nodeAndContext.o1);
+          }
+        });
       }
     };
 
-    ModelAccess.instance().runWriteActionInCommand(runnable);
+    if (isOutsideCommandExecution()) {
+      runnable.run();
+    } else {
+      ModelAccess.instance().runWriteActionInCommand(runnable);
+    }
   }
 
   private void createAnyone(final RelativePoint relativePoint) {
