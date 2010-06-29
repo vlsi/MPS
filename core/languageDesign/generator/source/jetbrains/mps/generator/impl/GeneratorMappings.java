@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * Evgeny Gryaznov, Feb 16, 2010
@@ -13,7 +15,7 @@ import java.util.*;
 public class GeneratorMappings {
 
   /* mapping,input -> output */
-  private final Map<String, Map<SNode, Object>> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<String, Map<SNode, Object>>();
+  private final ConcurrentMap<String, Map<SNode, Object>> myMappingNameAndInputNodeToOutputNodeMap = new ConcurrentHashMap<String, Map<SNode, Object>>();
 
   /* input -> output */
   private final Map<SNode, Object> myCopiedOutputNodeForInputNode;
@@ -22,7 +24,7 @@ public class GeneratorMappings {
   private final Map<SNode, SNode> myTemplateNodeToOutputNodeMap = new HashMap<SNode, SNode>();
 
   /* template,input -> output */
-  private final Map<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
+  private final ConcurrentMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new ConcurrentHashMap<Pair<SNode, SNode>, SNode>();
 
   public GeneratorMappings(int numberOfNodesInModel) {
     /* we use non-default load factor to reduce memory usage */ 
@@ -37,23 +39,25 @@ public class GeneratorMappings {
     myTemplateNodeToOutputNodeMap.put(templateNode, outputNode);
   }
 
-  synchronized void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
+  void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
     if (mappingName == null) return;
     Map<SNode, Object> currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
     if (currentMapping == null) {
-      currentMapping = new HashMap<SNode, Object>();
-      myMappingNameAndInputNodeToOutputNodeMap.put(mappingName, currentMapping);
+      myMappingNameAndInputNodeToOutputNodeMap.putIfAbsent(mappingName, new HashMap<SNode, Object>());
+      currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName); 
     }
-    Object o = currentMapping.get(inputNode);
-    if (o == null) {
-      currentMapping.put(inputNode, outputNode);
-    } else if (o instanceof List) {
-      ((List<SNode>) o).add(outputNode);
-    } else {
-      List<SNode> list = new ArrayList<SNode>(4);
-      list.add((SNode) o);
-      list.add(outputNode);
-      currentMapping.put(inputNode, list);
+    synchronized (currentMapping) {
+      Object o = currentMapping.get(inputNode);
+      if (o == null) {
+        currentMapping.put(inputNode, outputNode);
+      } else if (o instanceof List) {
+        ((List<SNode>) o).add(outputNode);
+      } else {
+        List<SNode> list = new ArrayList<SNode>(4);
+        list.add((SNode) o);
+        list.add(outputNode);
+        currentMapping.put(inputNode, list);
+      }
     }
   }
 
@@ -71,7 +75,7 @@ public class GeneratorMappings {
     }
   }
 
-  synchronized void addOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode, SNode outputNode) {
+  void addOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
     // todo: generator should report error on attempt to obtain not unique output-node
@@ -79,14 +83,12 @@ public class GeneratorMappings {
     myTemplateNodeAndInputNodeToOutputNodeMap.put(new Pair(templateNode, inputNode), outputNode);
   }
 
-  synchronized void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, SNode templateNode, SNode outputNode) {
+  void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, SNode templateNode, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
     // todo: generator should report error on attempt to obtain not unique output-node
     Pair key = new Pair(templateNode, inditectInputNode);
-    if (!myTemplateNodeAndInputNodeToOutputNodeMap.containsKey(key)) {
-      myTemplateNodeAndInputNodeToOutputNodeMap.put(key, outputNode);
-    }
+    myTemplateNodeAndInputNodeToOutputNodeMap.putIfAbsent(key, outputNode);
   }
 
   // find methods
