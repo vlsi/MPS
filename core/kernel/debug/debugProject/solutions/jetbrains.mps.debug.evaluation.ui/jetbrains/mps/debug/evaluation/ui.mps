@@ -1241,7 +1241,10 @@
                             </node>
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5181580596494446040">
-                            <link role="baseMethodDeclaration:3" targetNodeId="10.1219672383771" resolveInfo="disposeEditor" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="10.5602187481573650797" resolveInfo="disposeEditor" />
+                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="5602187481573762324">
+                              <property name="value:3" value="false" />
+                            </node>
                           </node>
                         </node>
                       </node>
