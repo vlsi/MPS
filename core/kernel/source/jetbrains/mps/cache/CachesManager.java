@@ -25,19 +25,21 @@ import jetbrains.mps.smodel.event.*;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 public class CachesManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(CachesManager.class);
 
-  private ClassLoaderManager myClassLoaderManager;
-  private SModelRepository mySModelRepository;
+  private final ClassLoaderManager myClassLoaderManager;
+  private final SModelRepository mySModelRepository;
 
-  private final Object myLock = new Object();
-
-  private Map<Object, AbstractCache> myCaches = new HashMap<Object, AbstractCache>();
-  private Map<AbstractCache, ModelEventRouter> myModelEventRouters = new HashMap<AbstractCache, ModelEventRouter>();
-  private Map<Object, List<SModelDescriptor>> myDependsOnModels = new HashMap<Object, List<SModelDescriptor>>();
+  private ConcurrentMap<Object, AbstractCache> myCaches = new ConcurrentHashMap<Object, AbstractCache>();
+  private ConcurrentMap<AbstractCache, ModelEventRouter> myModelEventRouters = new ConcurrentHashMap<AbstractCache, ModelEventRouter>();
+  private ConcurrentMap<Object, List<SModelDescriptor>> myDependsOnModels = new ConcurrentHashMap<Object, List<SModelDescriptor>>();
 
   public static CachesManager getInstance() {
     return ApplicationManager.getApplication().getComponent(CachesManager.class);
@@ -53,13 +55,14 @@ public class CachesManager implements ApplicationComponent {
       public void modelRemoved(SModelDescriptor modelDescriptor) {
         List<Object> keysToRemove = new ArrayList<Object>();
         SModelReference reference = modelDescriptor.getSModelReference();
-        synchronized (myLock) {
-          for (Object key : myDependsOnModels.keySet()) {
-            List<SModelDescriptor> dependsOnModels = myDependsOnModels.get(key);
-            for (SModelDescriptor dependsOnModel : dependsOnModels) {
-              if (dependsOnModel.getSModelReference().equals(reference)) {
-                keysToRemove.add(key);
-              }
+        for (Object key : myDependsOnModels.keySet()) {
+          List<SModelDescriptor> dependsOnModels = myDependsOnModels.get(key);
+          if(dependsOnModels == null) {
+            continue;
+          }
+          for (SModelDescriptor dependsOnModel : dependsOnModels) {
+            if (dependsOnModel.getSModelReference().equals(reference)) {
+              keysToRemove.add(key);
             }
           }
         }
@@ -86,53 +89,61 @@ public class CachesManager implements ApplicationComponent {
   public void disposeComponent() {
   }
 
-  private void putCache(Object key, AbstractCache cache, List<SModelDescriptor> dependsOnModels) {
-    myCaches.put(key, cache);
+  private AbstractCache putCache(Object key, AbstractCache cache, List<SModelDescriptor> dependsOnModels) {
+    // register
     myDependsOnModels.put(key, dependsOnModels);
     ModelEventRouter eventRouter = new ModelEventRouter(cache);
     myModelEventRouters.put(cache, eventRouter);
-
     for (SModelDescriptor dependsOnModel : dependsOnModels) {
       dependsOnModel.addModelListener(eventRouter);
     }
-    cache.cacheAttached();
+
+    // publish
+    AbstractCache existing = myCaches.putIfAbsent(key, cache);
+    if(existing != null) {
+      // already exists => cleanup
+      myModelEventRouters.remove(cache);
+      myDependsOnModels.remove(key);
+      for (SModelDescriptor dependsOnModel : dependsOnModels) {
+        dependsOnModel.removeModelListener(eventRouter);
+      }
+      cache.clearCache();
+      return existing;
+    }
+    return cache;
   }
 
   public <T> AbstractCache getCache(Object key, T element, CacheCreator<T> creator) {
-    synchronized (myLock) {
-      AbstractCache result = myCaches.get(key);
-      if (result != null || element == null || creator == null) {
-        return result;
-      }
-      result = creator.create(key, element);
-      Set<SModelDescriptor> descriptorSet = result.getDependsOnModels(element);
-      if (descriptorSet.contains(null)){
-        LOG.error("Dependent models for cache contains null",new Throwable());
-        descriptorSet.remove(null);
-      }
-      putCache(key, result, new ArrayList<SModelDescriptor>(descriptorSet));
+    AbstractCache result = myCaches.get(key);
+    if (result != null || element == null || creator == null) {
       return result;
     }
+    result = creator.create(key, element);
+    Set<SModelDescriptor> descriptorSet = result.getDependsOnModels(element);
+    if (descriptorSet.contains(null)){
+      LOG.error("Dependent models for cache contains null",new Throwable());
+      descriptorSet.remove(null);
+    }
+    return putCache(key, result, new ArrayList<SModelDescriptor>(descriptorSet));
   }
 
   public void removeCache(Object key) {
-    AbstractCache cache;
-    synchronized (myLock) {
-      if (!myCaches.containsKey(key)) {
-        return;
-      }
-      cache = myCaches.remove(key);
-      ModelEventRouter eventRouter = myModelEventRouters.remove(cache);
-      List<SModelDescriptor> dependsOnModels = myDependsOnModels.remove(key);
+    AbstractCache cache = myCaches.remove(key);
+    if(cache == null) {
+      return;
+    }
+    ModelEventRouter eventRouter = myModelEventRouters.remove(cache);
+    List<SModelDescriptor> dependsOnModels = myDependsOnModels.remove(key);
+    if(eventRouter != null && dependsOnModels != null) {
       for (SModelDescriptor dependsOnModel : dependsOnModels) {
         dependsOnModel.removeModelListener(eventRouter);
       }
     }
-    cache.cacheRemoved();
+    cache.clearCache();
   }
 
   private void removeAllCaches() {
-    synchronized (myLock) {
+    while(!myCaches.isEmpty()) {
       List keys = new ArrayList(myCaches.keySet());
       for (Object key : keys) {
         removeCache(key);

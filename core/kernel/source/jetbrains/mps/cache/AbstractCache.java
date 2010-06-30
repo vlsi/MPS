@@ -15,24 +15,23 @@
  */
 package jetbrains.mps.cache;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.event.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * Igor Alshannikov
  * Aug 28, 2007
  */
 public abstract class AbstractCache extends SModelAdapter {
-  private static final Logger LOG = Logger.getLogger(AbstractCache.class);
-
   private final Object myKey;
-  private final Map<String, DataSet> myDataSets = new HashMap<String, DataSet>();
-
-  private final Set<String> myInitializingDataSetKeys = new HashSet<String>();
+  private final ConcurrentMap<String, DataSet> myDataSets = new ConcurrentHashMap<String, DataSet>();
 
   protected AbstractCache(Object key) {
     super(SModelListenerPriority.PLATFORM);
@@ -43,13 +42,8 @@ public abstract class AbstractCache extends SModelAdapter {
     return myKey;
   }
 
-  protected void cacheAttached() {
-  }
-
-  protected void cacheRemoved() {
-    synchronized (myDataSets) {
-      myDataSets.clear();
-    }
+  protected void clearCache() {
+    myDataSets.clear();
   }
 
   public boolean isAttached() {
@@ -58,43 +52,28 @@ public abstract class AbstractCache extends SModelAdapter {
 
   public abstract Set<SModelDescriptor> getDependsOnModels(Object element);
 
-  private void addDataSet(DataSet dataSet) {
-    String dataSetId = dataSet.getId();
-    if (myDataSets.containsKey(dataSetId)) {
-      throw new RuntimeException("couldn't put another data set by key " + dataSetId);
-    }
-    LOG.assertLog(!myInitializingDataSetKeys.contains(dataSetId), "cache data set initialization re-enter : " + dataSetId);
-    myInitializingDataSetKeys.add(dataSetId);
-    try {
-      dataSet.init();
-      myDataSets.put(dataSetId, dataSet);
-    } finally {
-      myInitializingDataSetKeys.remove(dataSetId);
-    }
-  }
-
   public void removeDataSet(DataSet dataSet) {
-    synchronized (myDataSets) {
-      myDataSets.remove(dataSet.getId());
-    }
+    myDataSets.remove(dataSet.getId());
   }
 
   protected DataSet getDataSet(String dataSetId, DataSetCreator creator) {
-    synchronized (myDataSets) {
-      DataSet result = myDataSets.get(dataSetId);
-      if(result != null || creator == null) {
-        return result;
-      }
-      result = creator.create(this);
-      addDataSet(result);
+    DataSet result = myDataSets.get(dataSetId);
+    if(result != null || creator == null) {
       return result;
     }
+    result = creator.create(this);
+    assert result.getId().equals(dataSetId);
+    result.init();
+    DataSet existing = myDataSets.putIfAbsent(dataSetId, result);
+    if(existing != null) {
+      // ignored, drop dataSet
+      return existing;
+    }
+    return result;
   }
 
   public List<DataSet> getDataSets() {
-    synchronized (myDataSets) {
-      return new ArrayList<DataSet>(myDataSets.values());
-    }
+    return new ArrayList<DataSet>(myDataSets.values());
   }
 
   // model listener
