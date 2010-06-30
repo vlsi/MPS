@@ -24,12 +24,13 @@ import javax.swing.JScrollPane;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JComponent;
+import jetbrains.mps.debug.evaluation.Evaluator;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
-import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
 import jetbrains.mps.debug.evaluation.EvaluationException;
+import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.debug.api.SessionChangeListener;
 import jetbrains.mps.debug.api.AbstractDebugSession;
@@ -125,12 +126,23 @@ public class EvaluationDialog extends BaseDialog {
       return;
     }
     try {
-      IValueProxy evaluatedValue = myEvaluationLogic.evaluate();
-      if (evaluatedValue != null) {
-        setSuccess(evaluatedValue);
-      } else {
-        setFailure(null, "Evaluation returned null.");
-      }
+      final Evaluator evaluator = myEvaluationLogic.evaluate();
+      setEvaluating();
+      ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+        public void run() {
+          try {
+            IValueProxy evaluatedValue = evaluator.evaluate();
+            if (evaluatedValue != null) {
+              setSuccess(evaluatedValue);
+            } else {
+              setFailure(null, "Evaluation returned null.");
+            }
+          } catch (EvaluationException ex) {
+            setFailure(ex, null);
+            EvaluationDialog.LOG.error(ex);
+          }
+        }
+      });
     } catch (InvalidEvaluatedExpressionException e) {
       setFailure(e.getCause(), null);
     } catch (InvocationTargetEvaluationException e) {
@@ -149,6 +161,11 @@ public class EvaluationDialog extends BaseDialog {
 
   private void setSuccess(@NotNull IValueProxy evaluatedValue) {
     myTree.setResultProxy(evaluatedValue);
+    myTree.rebuildLater();
+  }
+
+  private void setEvaluating() {
+    myTree.setEvaluating();
     myTree.rebuildLater();
   }
 
@@ -218,6 +235,7 @@ public class EvaluationDialog extends BaseDialog {
     @Nullable
     private String myErrorText;
     private String myClassFqName;
+    private boolean myEvaluating = false;
     private ThreadReference myThreadReference;
 
     public MyTree(String classFqName, ThreadReference threadReference) {
@@ -230,11 +248,19 @@ public class EvaluationDialog extends BaseDialog {
     public void setResultProxy(IValueProxy valueProxy) {
       myValueProxy = valueProxy;
       myErrorText = null;
+      myEvaluating = false;
     }
 
     private void setError(String text) {
       myErrorText = text;
       myValueProxy = null;
+      myEvaluating = false;
+    }
+
+    private void setEvaluating() {
+      myErrorText = null;
+      myValueProxy = null;
+      myEvaluating = true;
     }
 
     @Override
@@ -244,6 +270,8 @@ public class EvaluationDialog extends BaseDialog {
         rootTreeNode.add(new WatchableNode(new CalculatedValue(this.myValueProxy.getJDIValue(), myClassFqName, myThreadReference)));
       } else if (myErrorText != null) {
         rootTreeNode.add(new EvaluationDialog.ErrorTreeNode(myErrorText));
+      } else if (myEvaluating) {
+        rootTreeNode.add(new EvaluationDialog.EvaluatingTreeNode());
       }
       this.setRootVisible(false);
       this.setShowsRootHandles(true);
@@ -269,6 +297,25 @@ public class EvaluationDialog extends BaseDialog {
 
       setColor(Color.RED);
       setIcon(Icons.ERROR_ICON);
+    }
+  }
+
+  private static class EvaluatingTreeNode extends TextTreeNode {
+    public EvaluatingTreeNode() {
+      super("evaluating...");
+      updatePresentation();
+    }
+
+    @Override
+    public boolean isLeaf() {
+      return true;
+    }
+
+    @Override
+    protected void updatePresentation() {
+      super.updatePresentation();
+      setColor(Color.GRAY);
+      setIcon(Icons.INFORMATION_ICON);
     }
   }
 }

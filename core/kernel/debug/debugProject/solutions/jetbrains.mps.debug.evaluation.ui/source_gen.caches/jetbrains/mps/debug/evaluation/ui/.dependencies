@@ -23,7 +23,6 @@
     <classNode dependClassName="jetbrains.mps.debug.api.info.StacktraceUtil" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.Evaluator" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.HighLevelEvaluationLogic" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.InvocationTargetEvaluationException" />
@@ -99,6 +98,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.integration.ui.WatchableNode" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.Evaluator" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.AbstractEvaluationLogic" />

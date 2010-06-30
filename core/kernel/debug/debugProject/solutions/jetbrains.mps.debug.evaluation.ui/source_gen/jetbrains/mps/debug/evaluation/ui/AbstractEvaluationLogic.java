@@ -27,7 +27,7 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.Location;
 import jetbrains.mps.debug.api.info.StacktraceUtil;
-import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
+import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import java.util.Set;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -43,7 +43,6 @@ import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
 import com.intellij.openapi.util.Disposer;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.debug.evaluation.Evaluator;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
@@ -150,7 +149,7 @@ public abstract class AbstractEvaluationLogic {
   }
 
   @Nullable
-  public IValueProxy evaluate() throws EvaluationException {
+  public Evaluator evaluate() throws EvaluationException {
     try {
       final Set<IClassPathItem> classpaths = new HashSet<IClassPathItem>();
       for (Language language : this.myLanguages) {
@@ -191,8 +190,7 @@ public abstract class AbstractEvaluationLogic {
           myUiState = myDebugSession.refresh();
           evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
         }
-        IValueProxy value = evaluator.evaluate();
-        return value;
+        return evaluator;
       } else {
         throw new EvaluationException("Errors during generation.");
       }
