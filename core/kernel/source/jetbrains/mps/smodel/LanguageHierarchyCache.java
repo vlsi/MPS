@@ -34,6 +34,8 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class LanguageHierarchyCache implements ApplicationComponent {
@@ -41,8 +43,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(LanguageHierarchyCache.class);
   }
 
-  private Object myAncestorsLock = new Object();
-  private Map<String, Set<String>> myAncestorsNamesMap = new HashMap<String, Set<String>>();
+  private ConcurrentMap<String, Set<String>> myAncestorsNamesMap = new ConcurrentHashMap<String, Set<String>>();
 
   private Object myParentsNamesLock = new Object();
   private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
@@ -127,9 +128,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     synchronized (myParentsNamesLock) {
       myParentsNamesMap = new HashMap<String, Set<String>>();
     }
-    synchronized (myAncestorsLock) {
-      myAncestorsNamesMap = new HashMap<String, Set<String>>();
-    }
+    myAncestorsNamesMap.clear();
     synchronized (myLanguageLock) {
       myLanguageSpecificCaches = new HashMap<Language, LanguageConceptsCache>();
     }
@@ -185,20 +184,18 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
   private Set<String> getAncestorsNames_internal(final String conceptFqName) {
     fireReadAccessPerformed();
-    synchronized (myAncestorsLock) {
-      Set<String> result = myAncestorsNamesMap.get(conceptFqName);
-      if (result == null) {
-        result = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Set<String>>() {
-          public Set<String> compute() {
-            Set<String> result = new HashSet<String>();
-            collectAncestorNames(conceptFqName, result);
-            return result;
-          }
-        });
-        myAncestorsNamesMap.put(InternUtil.intern(conceptFqName), result);
-      }
-      return result;
+    Set<String> result = myAncestorsNamesMap.get(conceptFqName);
+    if (result == null) {
+      result = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Set<String>>() {
+        public Set<String> compute() {
+          Set<String> result = new HashSet<String>();
+          collectAncestorNames(conceptFqName, result);
+          return result;
+        }
+      });
+      myAncestorsNamesMap.putIfAbsent(InternUtil.intern(conceptFqName), result);
     }
+    return result;
   }
 
   private void collectAncestorNames(String conceptFqName, Set<String> result) {
