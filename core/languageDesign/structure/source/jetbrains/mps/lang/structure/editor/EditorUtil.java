@@ -102,7 +102,8 @@ public class EditorUtil {
     Language modelLang = Language.getLanguageFor(modelDescriptor);
     if (modelLang != null) {
       module = modelLang;
-    } else {
+    } else if (modelDescriptor != null) {
+      //modelDescriptor can be null if sourceModel came from VCS as prev. version in diff dialog
       module = modelDescriptor.getModule();
       if(!(module instanceof Solution || module instanceof Generator)) {
         module = null;
