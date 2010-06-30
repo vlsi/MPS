@@ -243,8 +243,8 @@ public final class BehaviorManager implements ApplicationComponent {
 
         if (method != null) {
           method.setAccessible(true);
+          mm = myMethods.putIfAbsent(mi, method);
         }
-        mm = myMethods.putIfAbsent(mi, method);
 
         return mm != null ? mm : method;
       }
