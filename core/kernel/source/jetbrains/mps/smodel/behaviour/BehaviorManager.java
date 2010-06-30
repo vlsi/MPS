@@ -39,6 +39,8 @@ import org.jetbrains.annotations.NotNull;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -64,7 +66,7 @@ public final class BehaviorManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(BehaviorManager.class);
   }
 
-  private Map<MethodInfo, Method> myMethods = new HashMap<MethodInfo, Method>();
+  private ConcurrentMap<MethodInfo, Method> myMethods = new ConcurrentHashMap<MethodInfo, Method>();
   private Map<String, List<Method>> myConstructors = new HashMap<String, List<Method>>();
 
   private ClassLoaderManager myClassLoaderManager;
@@ -225,29 +227,26 @@ public final class BehaviorManager implements ApplicationComponent {
 
         MethodInfo mi = new MethodInfo(fqName, methodName, parameterTypes);
 
-        synchronized (myMethods) {
-          if (myMethods.containsKey(mi)) {
-            return myMethods.get(mi);
-          }
+        Method mm = myMethods.get(mi);
+        if (mm != null) return mm;
 
-          String behaviorClass = behaviorClassByConceptFqName(fqName);
+        String behaviorClass = behaviorClassByConceptFqName(fqName);
 
-          try {
-            Class cls = l.getClass(behaviorClass);
-            if (cls != null) {
-              method = cls.getMethod(methodName, parameterTypes);
-            }
-          } catch (NoSuchMethodException e) {
-            //ignore too
+        try {
+          Class cls = l.getClass(behaviorClass);
+          if (cls != null) {
+            method = cls.getMethod(methodName, parameterTypes);
           }
-
-          if (method != null) {
-            method.setAccessible(true);
-          }
-          myMethods.put(mi, method);
+        } catch (NoSuchMethodException e) {
+          //ignore too
         }
 
-        return method;
+        if (method != null) {
+          method.setAccessible(true);
+        }
+        mm = myMethods.putIfAbsent(mi, method);
+
+        return mm != null ? mm : method;
       }
     });
   }
