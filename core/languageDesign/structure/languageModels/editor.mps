@@ -876,17 +876,6 @@
             </node>
           </node>
         </node>
-        <node role="modelAcessor:32" type="jetbrains.mps.lang.editor.structure.ModelAccessor:32" id="1226062528141">
-          <node role="getter:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter:32" id="1226062528142">
-            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1226062528143" />
-          </node>
-          <node role="setter:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter:32" id="1226062528144">
-            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1226062528145" />
-          </node>
-          <node role="validator:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator:32" id="1226062528146">
-            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1226062528147" />
-          </node>
-        </node>
         <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="1226075073645">
           <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1226075073646">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1226075102141">
