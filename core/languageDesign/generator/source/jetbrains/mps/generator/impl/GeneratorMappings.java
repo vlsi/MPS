@@ -4,6 +4,7 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -20,23 +21,25 @@ public class GeneratorMappings {
   /* input -> output */
   private final Map<SNode, Object> myCopiedOutputNodeForInputNode;
 
-  /* null value means multiple nodes for the template */
-  private final Map<SNode, SNode> myTemplateNodeToOutputNodeMap = new HashMap<SNode, SNode>();
+  /* Object means multiple nodes for the template */
+  private final ConcurrentMap<SNode, Object> myTemplateNodeToOutputNodeMap = new ConcurrentHashMap<SNode, Object>();
 
   /* template,input -> output */
   private final ConcurrentMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new ConcurrentHashMap<Pair<SNode, SNode>, SNode>();
 
   public GeneratorMappings(int numberOfNodesInModel) {
     /* we use non-default load factor to reduce memory usage */ 
-    myCopiedOutputNodeForInputNode = new HashMap<SNode, Object>(numberOfNodesInModel, 2);
+    myCopiedOutputNodeForInputNode = new ConcurrentHashMap<SNode, Object>(numberOfNodesInModel, 2);
   }
 
-  synchronized void addOutputNodeByTemplateNode(SNode templateNode, SNode outputNode) {
-    if (myTemplateNodeToOutputNodeMap.containsKey(templateNode)) {
-      myTemplateNodeToOutputNodeMap.put(templateNode, null);
-      return;
+  void addOutputNodeByTemplateNode(SNode templateNode, @NotNull SNode outputNode) {
+    synchronized (templateNode) {
+      if (myTemplateNodeToOutputNodeMap.containsKey(templateNode)) {
+        myTemplateNodeToOutputNodeMap.put(templateNode, this);
+        return;
+      }
+      myTemplateNodeToOutputNodeMap.put(templateNode, outputNode);
     }
-    myTemplateNodeToOutputNodeMap.put(templateNode, outputNode);
   }
 
   void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
@@ -61,17 +64,22 @@ public class GeneratorMappings {
     }
   }
 
-  synchronized void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
-    Object o = myCopiedOutputNodeForInputNode.get(inputNode);
-    if(o == null) {
-      myCopiedOutputNodeForInputNode.put(inputNode, outputNode);
-    } else if (o instanceof List) {
-      ((List<SNode>) o).add(outputNode);
-    } else {
-      List<SNode> list = new ArrayList<SNode>(2);
-      list.add((SNode) o);
-      list.add(outputNode);
-      myCopiedOutputNodeForInputNode.put(inputNode, list);
+  void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
+    if(outputNode == null) {
+      return;
+    }
+    synchronized (inputNode) {
+      Object o = myCopiedOutputNodeForInputNode.get(inputNode);
+      if(o == null) {
+        myCopiedOutputNodeForInputNode.put(inputNode, outputNode);
+      } else if (o instanceof List) {
+        ((List<SNode>) o).add(outputNode);
+      } else {
+        List<SNode> list = new ArrayList<SNode>(2);
+        list.add((SNode) o);
+        list.add(outputNode);
+        myCopiedOutputNodeForInputNode.put(inputNode, list);
+      }
     }
   }
 
@@ -94,7 +102,8 @@ public class GeneratorMappings {
   // find methods
 
   public SNode findOutputNodeByTemplateNodeUnique(SNode templateNode) {
-    return myTemplateNodeToOutputNodeMap.get(templateNode);
+    Object o = myTemplateNodeToOutputNodeMap.get(templateNode);
+    return o instanceof SNode ? (SNode) o : null;
   }
 
   public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, IGeneratorLogger logger) {
