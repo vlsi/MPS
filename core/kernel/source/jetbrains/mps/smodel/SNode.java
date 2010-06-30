@@ -1804,31 +1804,35 @@ public final class SNode {
     return scope.getLanguage(languageNamespace);
   }
 
-  public synchronized BaseAdapter getAdapter() {
+  public BaseAdapter getAdapter() {
     ModelAccess.assertLegalRead(this);
-    if (myAdapter != null) return myAdapter;
-    try {
-      Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
-      if (c != null) {
-        myAdapter = (BaseAdapter) c.newInstance(this);
-        assert myAdapter.getNode() == this;
+    BaseAdapter adapter = myAdapter;
+    if(adapter != null) return adapter;
+    Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
+    if (c != null) {
+      synchronized (this) {
+        adapter = myAdapter;
+        if (adapter != null) return adapter;
+        try {
+          adapter = (BaseAdapter) c.newInstance(this);
+          assert adapter.getNode() == this;
 
-        if (!myRegisteredInModelFlag) {
-          UnregisteredNodesWithAdapters.getInstance().add(this);
+          if (!myRegisteredInModelFlag) {
+            UnregisteredNodesWithAdapters.getInstance().add(this);
+          }
+          myAdapter = adapter;
+          return adapter;
+        } catch (IllegalAccessException e) {
+          LOG.error(e);
+        } catch (InvocationTargetException e) {
+          LOG.error(e);
+        } catch (InstantiationException e) {
+          LOG.error(e);
+        } catch (Throwable t) {
+          LOG.error(t);
         }
-
-        return myAdapter;
       }
-    } catch (IllegalAccessException e) {
-      LOG.error(e);
-    } catch (InvocationTargetException e) {
-      LOG.error(e);
-    } catch (InstantiationException e) {
-      LOG.error(e);
-    } catch (Throwable t) {
-      LOG.error(t);
     }
-
     return new BaseConcept(this);
   }
 
