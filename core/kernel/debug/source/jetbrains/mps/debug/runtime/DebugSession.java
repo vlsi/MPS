@@ -115,30 +115,11 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
     VMEventsProcessorManagerComponent vmManager
       = manager.getProject().getComponent(VMEventsProcessorManagerComponent.class);
     vmManager.addDebugSession(this);
-     ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            myAuxModule = new EvaluationAuxModule(myProject);
-
-            // add classpath to module to be able to see classes in evaluation
-            IModule module = null; //todo invocation module
-            IClassPathItem cpItem = AbstractModule.getDependenciesClasspath(Collections.singleton(module), true);
-            cpItem.accept(new EachClassPathItemVisitor() {
-              @Override
-              public void visit(JarFileClassPathItem item) {
-                String path = item.getFile().getAbsolutePath();
-                myAuxModule.addStubPath(path);
-              }
-
-              @Override
-              public void visit(FileClassPathItem item) {
-                String path = item.getClassPath();
-                myAuxModule.addStubPath(path);
-              }
-            });
-            StubReloadManager.getInstance().reload();
-          }
-        });
-
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        myAuxModule = new EvaluationAuxModule(myProject);
+      }
+    });
   }
 
   @Override

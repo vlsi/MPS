@@ -60,7 +60,7 @@ public abstract class AbstractEvaluationLogic {
   protected final DebugSession myDebugSession;
   protected final IOperationContext myContext;
   protected SModelDescriptor myAuxModel;
-  private final EvaluationAuxModule myAuxModule;
+  protected final EvaluationAuxModule myAuxModule;
   private final List<Language> myLanguages = ListSequence.fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation"));
   protected SNode myEvaluator;
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());

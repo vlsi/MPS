@@ -16,6 +16,17 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.project.AbstractModule;
+import java.util.Collections;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.reloading.EachClassPathItemVisitor;
+import jetbrains.mps.reloading.JarFileClassPathItem;
+import jetbrains.mps.reloading.FileClassPathItem;
+import jetbrains.mps.stubs.StubReloadManager;
 import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.Type;
 import com.sun.jdi.ClassNotLoadedException;
@@ -46,9 +57,6 @@ import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import com.sun.jdi.StackFrame;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import com.sun.jdi.LocalVariable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -76,7 +84,33 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
         SPropertyOperations.set(myEvaluator, "isRuntime", "" + (true));
       }
     });
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        IModule locationModule = getLocationModel().getModelDescriptor().getModule();
+        IClassPathItem classPath = AbstractModule.getDependenciesClasspath(Collections.singleton(locationModule), true);
+        final Set<AbstractModule.StubPath> pathsToAdd = SetSequence.fromSet(new HashSet<AbstractModule.StubPath>());
+        classPath.accept(new EachClassPathItemVisitor() {
+          @Override
+          public void visit(JarFileClassPathItem item) {
+            String path = item.getFile().getAbsolutePath();
+            AbstractModule.StubPath stubPath = myAuxModule.addStubPath(path);
+            if (stubPath != null) {
+              SetSequence.fromSet(pathsToAdd).addElement(stubPath);
+            }
+          }
 
+          @Override
+          public void visit(FileClassPathItem item) {
+            String path = item.getClassPath();
+            AbstractModule.StubPath stubPath = myAuxModule.addStubPath(path);
+            if (stubPath != null) {
+              SetSequence.fromSet(pathsToAdd).addElement(stubPath);
+            }
+          }
+        });
+        StubReloadManager.getInstance().loadImmediately(myAuxModule, pathsToAdd);
+      }
+    });
   }
 
   @Nullable

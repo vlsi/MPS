@@ -103,8 +103,14 @@ public class EvaluationAuxModule extends AbstractModule {
     return myStubPaths;
   }
 
-  public void addStubPath(String stubPath) {
-    ListSequence.fromList(myStubPaths).addElement(new AbstractModule.StubPath(stubPath, STUBS_MANAGER));
+  public StubPath addStubPath(String stubPath) {
+    StubPath path = new StubPath(stubPath, STUBS_MANAGER);
+    if (myStubPaths.contains(path)) {
+      return null;
+    } else {
+      myStubPaths.add(path);
+      return path;
+    }
   }
 
   public void clearAll() {

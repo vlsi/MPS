@@ -213,8 +213,8 @@
     </scopeInfo>
   </root>
   <root nodeId="678887849223563997">
-    <scopeInfo nodeId="8255351389869730394" fileName="RunConfigurationDeclaration_Editor.java" startLine="274" startPosition="113" endLine="275" endPosition="64" />
-    <scopeInfo nodeId="9017024590936660435" fileName="RunConfigurationDeclaration_Editor.java" startLine="282" startPosition="111" endLine="283" endPosition="77" />
+    <scopeInfo nodeId="8255351389869730394" fileName="RunConfigurationDeclaration_Editor.java" startLine="305" startPosition="113" endLine="306" endPosition="64" />
+    <scopeInfo nodeId="9017024590936660435" fileName="RunConfigurationDeclaration_Editor.java" startLine="313" startPosition="111" endLine="314" endPosition="77" />
   </root>
   <root nodeId="7035278950562850671">
     <nodeInfo nodeId="8415911927033050362" fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="321" startPosition="114" endLine="322" endPosition="23" />
