@@ -1,5 +1,6 @@
 package jetbrains.mps.debug.evaluation.ui;
 
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
@@ -13,6 +14,7 @@ import java.util.UUID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
@@ -44,17 +46,8 @@ public class EvaluationAuxModule extends AbstractModule {
       public void run() {
         EvaluationAuxModule.this.clearAll();
         MPSModuleRepository.getInstance().removeModule(EvaluationAuxModule.this);
-        if (ListSequence.fromList(myStubPaths).isNotEmpty()) {
-          ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-            public void run() {
-              ModelAccess.instance().runWriteAction(new Runnable() {
-                public void run() {
-                  StubReloadManager.getInstance().reload();
-                }
-              });
-            }
-          });
-        }
+        SModelRepository.getInstance().unRegisterModelDescriptors(EvaluationAuxModule.this);
+        CleanupManager.getInstance().cleanup(); //loaded stubs are removed from model repository
       }
     });
   }
