@@ -160,14 +160,18 @@ public class NameUtil {
   }
 
   public static String capitalize(String s) {
-    if (s == null || s.length() == 0 || s.charAt(0) == Character.toUpperCase(s.charAt(0))) {
+    if (isEmpty(s) || s.charAt(0) == Character.toUpperCase(s.charAt(0))) {
       return s;
     }
     return "" + Character.toUpperCase(s.charAt(0)) + s.substring(1);
   }
 
+  private static boolean isEmpty(String s) {
+    return s == null || s.length() == 0;
+  }
+
   public static String multiWordCapitalize(String s) {
-    if (s == null || s.length() == 0) {
+    if (isEmpty(s)) {
       return s;
     }
     StringBuilder result = new StringBuilder(s.length());
@@ -179,7 +183,7 @@ public class NameUtil {
   }
 
   public static String decapitalize(String s) {
-    if (s == null || s.length() == 0 || s.charAt(0) == Character.toLowerCase(s.charAt(0))) {
+    if (isEmpty(s) || s.charAt(0) == Character.toLowerCase(s.charAt(0))) {
       return s;
     } else
     if (s.length() == 1 || Character.isLowerCase(s.charAt(1))) {
@@ -199,7 +203,7 @@ public class NameUtil {
   }
 
   public static String multiWordDecapitalize(String s) {
-    if (s == null || s.length() == 0) {
+    if (isEmpty(s)) {
       return s;
     }
     StringBuilder result = new StringBuilder(s.length());
@@ -215,6 +219,7 @@ public class NameUtil {
   }
 
   public static String pluralize(String singular) {
+    if (isEmpty(singular)) return singular;
     // This condition may seem non-trivial
     // It means that pluralized "berry" is "berries",
     // but pluralized "array" is "arrays"
@@ -231,6 +236,8 @@ public class NameUtil {
   }
 
   public static String singularize(String plural) {
+    if (isEmpty(plural)) return plural;
+
     if (plural.endsWith("ies")) {
       return plural.substring(0, plural.length() - 3) + "y";
     }
@@ -355,7 +362,7 @@ public class NameUtil {
   }
 
   public static String longNameFromNamespaceAndShortName(String namespace, String name) {
-    if (namespace == null || namespace.length() == 0) {
+    if (isEmpty(namespace)) {
       return name;
     }
     return namespace + '.' + name;
