@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1572321421814401055">
+    <scopeInfo nodeId="1572321421814401057" fileName="GWTModule_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="1572321421814401061" fileName="GWTModule_Behavior.java" startLine="14" startPosition="80" endLine="18" endPosition="6" />
+  </root>
+  <root nodeId="3852159904898379984">
+    <scopeInfo nodeId="3852159904898379986" fileName="PatternFilter_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+  </root>
+  <root nodeId="3852159904898379992">
+    <scopeInfo nodeId="3852159904898379994" fileName="Public_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="3852159904898379998" fileName="Public_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="20" />
+  </root>
+  <root nodeId="3852159904898380003">
+    <scopeInfo nodeId="3852159904898380005" fileName="Source_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="3852159904898380009" fileName="Source_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="20" />
+  </root>
+  <root nodeId="3852159904898380014">
+    <scopeInfo nodeId="3852159904898380016" fileName="SuperSource_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="3852159904898380020" fileName="SuperSource_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="26" />
+  </root>
+  <root nodeId="3852159904898386592">
+    <scopeInfo nodeId="3852159904898386594" fileName="Element_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+  </root>
+  <root nodeId="3852159904898386599">
+    <scopeInfo nodeId="3852159904898386601" fileName="Exclude_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="3852159904898386605" fileName="Exclude_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="21" />
+  </root>
+  <root nodeId="3852159904898386610">
+    <scopeInfo nodeId="3852159904898386612" fileName="Include_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="3852159904898386616" fileName="Include_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="21" />
+  </root>
+  <root nodeId="3852159904898525996">
+    <scopeInfo nodeId="3852159904898525998" fileName="Attr_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+  </root>
+  <root nodeId="3852159904898526004">
+    <scopeInfo nodeId="3852159904898526006" fileName="CaseSensitive_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="3852159904898526010" fileName="CaseSensitive_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="27" />
+  </root>
+  <root nodeId="3852159904898547375">
+    <scopeInfo nodeId="3852159904898547377" fileName="DefaultExcludes_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="3852159904898547381" fileName="DefaultExcludes_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="29" />
+  </root>
+  <root nodeId="3852159904898547386">
+    <scopeInfo nodeId="3852159904898547388" fileName="Excludes_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="3852159904898547392" fileName="Excludes_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="22" />
+  </root>
+  <root nodeId="3852159904898547397">
+    <scopeInfo nodeId="3852159904898547399" fileName="Includes_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="3852159904898547403" fileName="Includes_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="22" />
+  </root>
+  <root nodeId="3852159904898824962">
+    <scopeInfo nodeId="3852159904898824964" fileName="RenameTo_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="3852159904898824968" fileName="RenameTo_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="23" />
+  </root>
+</debugInfo>
+
