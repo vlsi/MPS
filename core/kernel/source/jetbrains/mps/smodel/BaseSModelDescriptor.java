@@ -45,7 +45,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
   private SModelCommandListener[] myModelCommandListenersCopy;
 
-  public BaseSModelDescriptor(IModelRootManager manager, IFile modelFile,@NotNull SModelReference modelReference) {
+  public BaseSModelDescriptor(IModelRootManager manager, IFile modelFile, @NotNull SModelReference modelReference) {
     myModelReference = modelReference;
     myModelFile = modelFile;
     myModelRootManager = manager;
@@ -91,14 +91,14 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public void putUserObject(String key, Object value) {
-    if(myUserObjects == null) {
+    if (myUserObjects == null) {
       myUserObjects = new HashMap<String, Object>();
     }
     myUserObjects.put(key, value);
   }
 
   public void removeUserObject(String key) {
-    if(myUserObjects == null) return;
+    if (myUserObjects == null) return;
     myUserObjects.remove(key);
   }
 
@@ -117,6 +117,14 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   public IModule getModule() {
     Set<IModule> modules = getModules();
     if (modules.isEmpty()) return null;
+    if (modules.size() > 1) {
+      StringBuilder sb = new StringBuilder();
+      for (IModule m : modules) {
+        sb.append(m.getModuleFqName()).append(" ");
+      }
+
+      LOG.error("getModule() is used on model (" + this.getLongName() + ") with multiple owning modules (" + sb.toString() + ")");
+    }
     return modules.iterator().next();
   }
 
