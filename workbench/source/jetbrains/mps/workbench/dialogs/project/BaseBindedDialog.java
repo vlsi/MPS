@@ -116,7 +116,7 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         try {
-          ModelAccess.instance().runReadAction(new Runnable() {
+          ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
               CleanupManager.getInstance().cleanup();
             }
