@@ -79,6 +79,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
           readCustomBuiltInLibraries();
           updatePredefinedLibraries();
           update();
+          ClassLoaderManager.getInstance().updateClassPath();          
         }
       });
     } finally {
