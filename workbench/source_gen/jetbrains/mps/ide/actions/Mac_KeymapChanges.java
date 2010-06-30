@@ -20,6 +20,12 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
     this.addAction("jetbrains.mps.ide.actions.GoToBookmark7_Action", "jetbrains.mps.ide", "ctrl 7");
     this.addAction("jetbrains.mps.ide.actions.GoToBookmark8_Action", "jetbrains.mps.ide", "ctrl 8");
     this.addAction("jetbrains.mps.ide.actions.GoToBookmark9_Action", "jetbrains.mps.ide", "ctrl 9");
+    this.addAction("jetbrains.mps.ide.actions.LocalHome_Action", "jetbrains.mps.ide", "alt LEFT");
+    this.addAction("jetbrains.mps.ide.actions.LocalEnd_Action", "jetbrains.mps.ide", "alt RIGHT");
+    this.addAction("jetbrains.mps.ide.actions.SelectLocalHome_Action", "jetbrains.mps.ide", "alt shift LEFT");
+    this.addAction("jetbrains.mps.ide.actions.SelectLocalEnd_Action", "jetbrains.mps.ide", "alt shift RIGHT");
+    this.addAction("jetbrains.mps.ide.actions.Home_Action", "jetbrains.mps.ide", "meta LEFT");
+    this.addAction("jetbrains.mps.ide.actions.End_Action", "jetbrains.mps.ide", "meta RIGHT");
   }
 
   public String getScheme() {

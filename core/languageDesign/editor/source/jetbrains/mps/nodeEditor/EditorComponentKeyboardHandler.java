@@ -96,16 +96,6 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       }
 
       if (!keyEvent.isConsumed()) {
-        if (editorContext.getNodeEditorComponent().getNodeRangeSelection().isSelectionKeystroke(keyEvent)) {
-          final NodeRangeSelection selection = editorContext.getNodeEditorComponent().getNodeRangeSelection();
-          boolean b = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-            public Boolean compute() {
-              return selection.activate(keyEvent);
-            }
-          });
-          if (b) return true;
-        }
-
         // allow selected cell to process event.
         if (selectedCell.processKeyPressed(keyEvent, true)) {
           return true;

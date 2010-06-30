@@ -1273,18 +1273,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && shiftDown(keyEvent)) {
       return CellActionType.SELECT_RIGHT;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && (SystemInfo.isMac ? altDown(keyEvent) : ctrlDown(keyEvent))) {
-      return CellActionType.LOCAL_HOME;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && (SystemInfo.isMac ? altDown(keyEvent) : ctrlDown(keyEvent))) {
-      return CellActionType.LOCAL_END;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && (SystemInfo.isMac ? altShiftDown(keyEvent) : ctrlShiftDown(keyEvent))) {
-      return CellActionType.SELECT_LOCAL_HOME;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && (SystemInfo.isMac ? altShiftDown(keyEvent) : ctrlShiftDown(keyEvent))) {
-      return CellActionType.SELECT_LOCAL_END;
-    }
     if (keyEvent.getKeyCode() == KeyEvent.VK_UP && ctrlDown(keyEvent)) {
       return CellActionType.SELECT_UP;
     }
@@ -1296,24 +1284,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_W && ctrlShiftDown(keyEvent)) {
       return CellActionType.SELECT_DOWN;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && (SystemInfo.isMac ? metaDown(keyEvent) : ctrlDown(keyEvent))) {
-      return CellActionType.ROOT_HOME;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_END && (SystemInfo.isMac ? metaDown(keyEvent) : ctrlDown(keyEvent))) {
-      return CellActionType.ROOT_END;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && noKeysDown(keyEvent)) {
-      return CellActionType.HOME;
-    }
-    if (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_LEFT && metaDown(keyEvent)) {
-      return CellActionType.HOME;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_END && noKeysDown(keyEvent)) {
-      return CellActionType.END;
-    }
-    if (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && metaDown(keyEvent)) {
-      return CellActionType.END;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && shiftDown(keyEvent)) {
       return CellActionType.SELECT_HOME;
