@@ -185,17 +185,18 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   private Set<String> getAncestorsNames_internal(final String conceptFqName) {
     fireReadAccessPerformed();
     Set<String> result = myAncestorsNamesMap.get(conceptFqName);
-    if (result == null) {
-      result = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Set<String>>() {
-        public Set<String> compute() {
-          Set<String> result = new HashSet<String>();
-          collectAncestorNames(conceptFqName, result);
-          return result;
-        }
-      });
-      myAncestorsNamesMap.putIfAbsent(InternUtil.intern(conceptFqName), result);
+    if (result != null) {
+      return result;
     }
-    return result;
+    Set<String> set = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Set<String>>() {
+      public Set<String> compute() {
+        Set<String> res = new HashSet<String>();
+        collectAncestorNames(conceptFqName, res);
+        return res;
+      }
+    });
+    result = myAncestorsNamesMap.putIfAbsent(InternUtil.intern(conceptFqName), set);
+    return result != null ? result : set;
   }
 
   private void collectAncestorNames(String conceptFqName, Set<String> result) {
