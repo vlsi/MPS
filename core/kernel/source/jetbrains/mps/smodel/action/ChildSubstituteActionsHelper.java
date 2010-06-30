@@ -442,11 +442,6 @@ public class ChildSubstituteActionsHelper {
       super(referenceNodeConcept, referentNode, parentNode, currentChild, childSetter, scope);
       myReferentNode = referentNode;
       myParentNode = parentNode;
-
-      SModelDescriptor modelDescriptor = myParentNode.getModel().getModelDescriptor();
-      assert modelDescriptor != null : "model descriptor is null for node: " + myParentNode;
-      assert modelDescriptor.getModule() != null : "module is null for modelDescriptor: " + modelDescriptor;
-
       myCurrentChild = currentChild;
       myReferenceNodeConcept = referenceNodeConcept;
       myReferenceLink_final = referenceLink_final;

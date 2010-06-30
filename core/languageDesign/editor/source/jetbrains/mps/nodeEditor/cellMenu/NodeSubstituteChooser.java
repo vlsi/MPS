@@ -89,7 +89,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (myEditorComponent.isShowing()) {
       Point anchor = myEditorComponent.getLocationOnScreen();
       getPopupWindow().setRelativeCell(cell);
-      getPopupWindow().relayout();
       myPatternEditorLocation = new Point(anchor.x + cell.getX() + cell.getLeftInset(), anchor.y + cell.getY() + cell.getTopInset());
       myPatternEditorSize = new Dimension(
         cell.getWidth() - cell.getLeftInset() - cell.getRightInset() + 1,
@@ -572,6 +571,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       public void componentMoved(ComponentEvent e) {
         if (myRelativeCell == null) return;
         NodeSubstituteChooser.this.setLocationRelative(myRelativeCell);
+        getPopupWindow().relayout();
         getPatternEditor().setLocation(myPatternEditorLocation);
       }
     };

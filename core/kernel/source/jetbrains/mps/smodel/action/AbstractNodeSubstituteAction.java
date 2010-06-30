@@ -45,9 +45,6 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
 
   @Deprecated
   protected AbstractNodeSubstituteAction(Object parameterObject, SNode sourceNode) {
-    SModelDescriptor modelDescriptor = sourceNode.getModel().getModelDescriptor();
-    assert modelDescriptor != null : "model descriptor is null for node: " + sourceNode;
-    assert modelDescriptor.getModule() != null : "module is null for modelDescriptor: " + modelDescriptor;
     myParameterObject = parameterObject;
     if (parameterObject instanceof SNode && ((SNode) parameterObject).getAdapter() instanceof AbstractConceptDeclaration) {
       myOutputConcept = (SNode) parameterObject;
@@ -57,9 +54,6 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
 
   protected AbstractNodeSubstituteAction(SNode outputConcept, Object parameterObject, SNode sourceNode) {
     assert outputConcept == null || outputConcept.getAdapter() instanceof AbstractConceptDeclaration;
-    SModelDescriptor modelDescriptor = sourceNode.getModel().getModelDescriptor();
-    assert modelDescriptor != null : "model descriptor is null for node: " + sourceNode;
-    assert modelDescriptor.getModule() != null : "module is null for modelDescriptor: " + modelDescriptor;
     myOutputConcept = outputConcept;
     myParameterObject = parameterObject;
     mySourceNode = sourceNode;
