@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)">
   <persistence version="4" />
   <refactoringHistory />
@@ -15323,66 +15324,6 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="7448855087283424810" />
-    </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8767021959483237007">
-      <property name="isVirtual" value="true" />
-      <property name="name" value="getPresentation" />
-      <property name="isPrivate" value="false" />
-      <link role="overriddenMethod" targetNodeId="20.1213877396640" resolveInfo="getPresentation" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8767021959483237008" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8767021959483237009">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8767021959483237016">
-          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8767021959483237017">
-            <property name="name:3" value="containingEnum" />
-            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8767021959483237018">
-              <link role="concept:16" targetNodeId="1.1083245097125:3" resolveInfo="EnumClass" />
-            </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8767021959483237019">
-              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8767021959483237020" />
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="8767021959483237021">
-                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="8767021959483237022">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8767021959483237023">
-                    <link role="conceptDeclaration:16" targetNodeId="1.1083245097125:3" resolveInfo="EnumClass" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8767021959483237025">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="8767021959483237032">
-            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="8767021959483237073">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8767021959483237077">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8767021959483237076">
-                  <link role="variableDeclaration:3" targetNodeId="8767021959483237017" resolveInfo="containingEnum" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="8767021959483237081">
-                  <link role="baseMethodDeclaration:16" targetNodeId="20.1213877396640" resolveInfo="getPresentation" />
-                </node>
-              </node>
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8767021959483237070">
-                <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8767021959483237071" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="8767021959483237072">
-                  <link role="baseMethodDeclaration:16" targetNodeId="8767021959483237039" resolveInfo="getEnumConstantDeclarationPresentation" />
-                </node>
-              </node>
-            </node>
-            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="8767021959483237028">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8767021959483237031" />
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8767021959483237027">
-                <link role="variableDeclaration:3" targetNodeId="8767021959483237017" resolveInfo="containingEnum" />
-              </node>
-            </node>
-            <node role="ifFalse:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8767021959483237036">
-              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.SuperNodeExpression" id="8767021959483237037" />
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="8767021959483237038">
-                <link role="baseMethodDeclaration:16" targetNodeId="20.1213877396640" resolveInfo="getPresentation" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8767021959483237010" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8767021959483237039">
       <property name="name" value="getEnumConstantDeclarationPresentation" />

@@ -19,7 +19,6 @@ public class EnumConstantDeclaration_Behavior {
   private static Class[] PARAMETERS_8986964027630472402 = {SNode.class};
   private static Class[] PARAMETERS_8884554759541376072 = {SNode.class};
   private static Class[] PARAMETERS_7448855087283424807 = {SNode.class};
-  private static Class[] PARAMETERS_8767021959483237007 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -52,14 +51,6 @@ public class EnumConstantDeclaration_Behavior {
     );
   }
 
-  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    SNode containingEnum = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
-    return (containingEnum != null ?
-      EnumConstantDeclaration_Behavior.call_getEnumConstantDeclarationPresentation_8767021959483237039(thisNode) + BaseConcept_Behavior.call_getPresentation_1213877396640(containingEnum) :
-      BaseConcept_Behavior.callSuper_getPresentation_1213877396640(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")
-    );
-  }
-
   public static String call_getEnumConstantDeclarationPresentation_8767021959483237039(SNode thisNode) {
     return "Enum constant '" + SPropertyOperations.getString(thisNode, "name") + "' in ";
   }
@@ -80,10 +71,6 @@ public class EnumConstantDeclaration_Behavior {
     return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "virtual_getFqName_1213877404258", PARAMETERS_7448855087283424807);
   }
 
-  public static String call_getPresentation_8767021959483237007(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "virtual_getPresentation_1213877396640", PARAMETERS_8767021959483237007);
-  }
-
   public static List<Icon> callSuper_getMarkIcons_5039675756633083396(SNode thisNode, String callerConceptFqName) {
     return (List<Icon>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633083396);
   }
@@ -98,9 +85,5 @@ public class EnumConstantDeclaration_Behavior {
 
   public static String callSuper_getFqName_7448855087283424807(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_7448855087283424807);
-  }
-
-  public static String callSuper_getPresentation_8767021959483237007(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_8767021959483237007);
   }
 }
