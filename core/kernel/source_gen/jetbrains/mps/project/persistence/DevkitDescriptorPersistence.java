@@ -91,20 +91,19 @@ public class DevkitDescriptorPersistence {
         }
 
         if (!(descriptor.getExtendedDevkits().isEmpty())) {
-
-          final Element result_raojav_a1a8a0a0a0b = new Element("extendedDevKits");
+          final Element result_raojav_a0a8a0a0a0b = new Element("extendedDevKits");
           for (ModuleReference ref : ListSequence.fromList(descriptor.getExtendedDevkits())) {
-            final Element result_raojav_a0a0a1a8a0a0a0b = new Element("extendedDevKit");
-            final String result_raojav_a0a0a0a1a8a0a0a0b = ref.toString();
-            result_raojav_a0a0a1a8a0a0a0b.setText(result_raojav_a0a0a0a1a8a0a0a0b);
-            result_raojav_a1a8a0a0a0b.addContent(result_raojav_a0a0a1a8a0a0a0b);
+            final Element result_raojav_a0a0a0a8a0a0a0b = new Element("extendedDevKit");
+            final String result_raojav_a0a0a0a0a8a0a0a0b = ref.toString();
+            result_raojav_a0a0a0a8a0a0a0b.setText(result_raojav_a0a0a0a0a8a0a0a0b);
+            result_raojav_a0a8a0a0a0b.addContent(result_raojav_a0a0a0a8a0a0a0b);
           }
-          result_raojav_a0a0a0b.addContent(result_raojav_a1a8a0a0a0b);
+          result_raojav_a0a0a0b.addContent(result_raojav_a0a8a0a0a0b);
         }
 
         if (!(descriptor.getExportedSolutions().isEmpty())) {
           final Element result_raojav_a0a01a0a0a0b = new Element("exported-solutions");
-          for (ModuleReference ref : ListSequence.fromList(descriptor.getExtendedDevkits())) {
+          for (ModuleReference ref : ListSequence.fromList(descriptor.getExportedSolutions())) {
             final Element result_raojav_a0a0a0a01a0a0a0b = new Element("exported-solution");
             final String result_raojav_a0a0a0a0a01a0a0a0b = ref.toString();
             result_raojav_a0a0a0a01a0a0a0b.setText(result_raojav_a0a0a0a0a01a0a0a0b);

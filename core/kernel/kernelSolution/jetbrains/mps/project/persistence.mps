@@ -1763,7 +1763,6 @@
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="842994667883030368" />
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="842994667883030369">
                     <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="842994667883030370">
-                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="7279892444184757225" />
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement:0" id="842994667883030371">
                         <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="842994667883030372">
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="842994667883030373">
@@ -1837,7 +1836,7 @@
                                 <link role="variableDeclaration:3" targetNodeId="842994667883030494" resolveInfo="descriptor" />
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="842994667883030404">
-                                <link role="baseMethodDeclaration:3" targetNodeId="11.~DevkitDescriptor.getExtendedDevkits():java.util.List" resolveInfo="getExtendedDevkits" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="11.~DevkitDescriptor.getExportedSolutions():java.util.List" resolveInfo="getExportedSolutions" />
                               </node>
                             </node>
                             <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="842994667883030405">
