@@ -38,14 +38,16 @@ import java.util.*;
 class ConceptAndSuperConceptsCache extends AbstractCache {
   private static final KeyProducer keyProducer = new KeyProducer();
 
+  private static final CacheCreator<AbstractConceptDeclaration> CREATOR = new CacheCreator<AbstractConceptDeclaration>() {
+    public AbstractCache create(Object key, AbstractConceptDeclaration element) {
+      return new ConceptAndSuperConceptsCache(key, element);
+    }
+  };
+
   public static ConceptAndSuperConceptsCache getInstance(AbstractConceptDeclaration topConcept) {
     SNode node = topConcept.getNode();
     Object key = keyProducer.createKey(node);
-    return (ConceptAndSuperConceptsCache) CachesManager.getInstance().getCache(key, topConcept, new CacheCreator<AbstractConceptDeclaration>() {
-      public AbstractCache create(Object key, AbstractConceptDeclaration element) {
-        return new ConceptAndSuperConceptsCache(key, element);
-      }
-    });
+    return (ConceptAndSuperConceptsCache) CachesManager.getInstance().getCache(key, topConcept, CREATOR);
   }
 
   @Override
