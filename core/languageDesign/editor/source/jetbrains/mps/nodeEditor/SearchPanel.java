@@ -457,7 +457,9 @@ public class SearchPanel extends AbstractSearchPanel {
     public void select() {
       TextRange range = getFirstRange();
       myEditor.changeSelection(range.getLabel());
-      range.getLabel().setCaretPosition(range.getStartPosition());
+      if (range.getLabel().isCaretPositionAllowed(range.getStartPosition())) {
+        range.getLabel().setCaretPosition(range.getStartPosition());
+      }
       if (range.getLabel().isCaretPositionAllowed(range.getEndPosition())) {
         range.getLabel().setCaretPosition(range.getEndPosition(), true);
       }
