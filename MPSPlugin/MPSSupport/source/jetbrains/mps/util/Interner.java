@@ -58,20 +58,24 @@ public class Interner {
       purge();
 
       SubstituteKeyHolder<K> substituteKeyHolder = myThreadKey.get();
-      assert substituteKeyHolder.myKey == null;
       substituteKeyHolder.myKey = k;
 
+      K res;
       try {
-        KeyHolder<K> keyHolder = myMap.putIfAbsent(substituteKeyHolder, substituteKeyHolder);
+        KeyHolder<K> keyHolder = myMap.get(substituteKeyHolder);
         if (keyHolder == null) {
           keyHolder = new SoftKeyHolder<K>(canonic(k), myRefQueue);
-          myMap.replace(keyHolder, keyHolder);
+          KeyHolder<K> skh = myMap.putIfAbsent(keyHolder, keyHolder);
+          keyHolder = skh != null ? skh : keyHolder;
         }
-        return keyHolder.get();
+        res = keyHolder.get();
+        assert res.equals(k);
       }
       finally {
         substituteKeyHolder.myKey = null;
       }
+      
+      return res;
     }
 
     public K canonic(K k) {
@@ -123,6 +127,11 @@ public class Interner {
       @Override
       public int hashCode() {
         return myHash;
+      }
+
+      @Override
+      public T get() {
+        return super.get ();
       }
 
       @Override
