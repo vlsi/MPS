@@ -9,6 +9,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
+import jetbrains.mps.ide.embeddableEditor.TemporaryModelOwner;
 import javax.swing.JLabel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -26,7 +27,6 @@ import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.ModelOwner;
 import com.intellij.openapi.ui.Splitter;
 import javax.swing.JScrollPane;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
@@ -48,6 +48,7 @@ public class InformationDialogWithEditor extends InformationDialog {
   private SNode myFirstValidNode;
   private Set<SNode> myFirstValidNodeChilds = SetSequence.fromSet(new HashSet<SNode>());
   private EmbeddableEditor myEditor;
+  private TemporaryModelOwner myTMPModelOwner;
   private JLabel myEditorLabel = new JLabel();
   private JPanel myMainPanel;
 
@@ -107,7 +108,8 @@ public class InformationDialogWithEditor extends InformationDialog {
         if (myFirstValidNode != null) {
           if (myEditor == null) {
             SNode copiedRoot = SNodeOperations.copyNode(myFirstValidNode);
-            myEditor = new EmbeddableEditor(getOperationContext(), new ModelOwner() {}, copiedRoot, false);
+
+            myEditor = new EmbeddableEditor(getOperationContext(), myTMPModelOwner = new TemporaryModelOwner(), copiedRoot, false);
             setEditorNode(myFirstValidNode);
             highlightChanges(getCopiedNodes(myFirstValidNodeChilds, myFirstValidNode, copiedRoot));
           }
@@ -227,6 +229,7 @@ public class InformationDialogWithEditor extends InformationDialog {
   public void buttonOk() {
     if (myEditor != null) {
       myEditor.disposeEditor();
+      myTMPModelOwner.unregisterModelOwner();
     }
     super.buttonOk();
   }

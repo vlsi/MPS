@@ -845,7 +845,7 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1219671314486">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1219671314487">
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1219671314488">
-              <link role="baseMethodDeclaration:3" targetNodeId="30.~Window.dispose():void" resolveInfo="dispose" />
+              <link role="baseMethodDeclaration:3" targetNodeId="3939031372534980280" resolveInfo="dispose" />
             </node>
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1219671314489" />
           </node>
@@ -1087,6 +1087,18 @@
         <link role="concept:16" targetNodeId="1.1218793502081" resolveInfo="ModelQuery" />
       </node>
     </node>
+    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="3939031372534980293">
+      <property name="name:3" value="myModelOwner" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3939031372534980294" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3939031372534980297">
+        <link role="classifier:3" targetNodeId="35.3939031372534916902" resolveInfo="TemporaryModelOwner" />
+      </node>
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3939031372534980299">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3939031372534980301">
+          <link role="baseMethodDeclaration:3" targetNodeId="35.3939031372534916904" resolveInfo="TemporaryModelOwner" />
+        </node>
+      </node>
+    </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219405656219" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1219405656220">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1219405656221" />
@@ -1295,18 +1307,12 @@
                   </node>
                   <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9161136784551423152">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9161136784551423153">
-                      <link role="baseMethodDeclaration:3" targetNodeId="35.1219405202225" resolveInfo="EmbeddableEditor" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="35.5367124414732055990" resolveInfo="EmbeddableEditor" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="9161136784551423154">
                         <link role="variableDeclaration:3" targetNodeId="1219405698827" resolveInfo="context" />
                       </node>
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9161136784551423155">
-                        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="9161136784551423156">
-                          <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="9161136784551423157">
-                            <link role="classifier:3" targetNodeId="5.~ModelOwner" resolveInfo="ModelOwner" />
-                            <link role="baseMethodDeclaration:3" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
-                            <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="9161136784551423158" />
-                          </node>
-                        </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3939031372534980303">
+                        <link role="variableDeclaration:3" targetNodeId="3939031372534980293" resolveInfo="myModelOwner" />
                       </node>
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9161136784551423159">
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="9161136784551423160">
@@ -1512,6 +1518,31 @@
     </node>
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1219405677029">
       <link role="classifier:3" targetNodeId="28.~BaseDialog" resolveInfo="BaseDialog" />
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3939031372534980280">
+      <property name="name:3" value="dispose" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3939031372534980281" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3939031372534980282" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3939031372534980283">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3939031372534980285">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall:3" id="3939031372534980286">
+            <link role="baseMethodDeclaration:3" targetNodeId="30.~Window.dispose():void" resolveInfo="dispose" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3939031372534980305">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3939031372534980307">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3939031372534980306">
+              <link role="variableDeclaration:3" targetNodeId="3939031372534980293" resolveInfo="myModelOwner" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3939031372534980311">
+              <link role="baseMethodDeclaration:3" targetNodeId="35.3939031372534977711" resolveInfo="disposeModelOwner" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3939031372534980284">
+        <link role="annotation:3" targetNodeId="2.~Override" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1219746306448">
@@ -1894,7 +1925,7 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1220439044870">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1220439044871">
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1220439044872">
-                  <link role="baseMethodDeclaration:3" targetNodeId="30.~Window.dispose():void" resolveInfo="dispose" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="9187915919898141330" resolveInfo="dispose" />
                 </node>
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1220439044873" />
               </node>
@@ -1971,7 +2002,7 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5567550172873246152">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5567550172873246153">
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5567550172873246154">
-              <link role="baseMethodDeclaration:3" targetNodeId="30.~Window.dispose():void" resolveInfo="dispose" />
+              <link role="baseMethodDeclaration:3" targetNodeId="9187915919898141330" resolveInfo="dispose" />
             </node>
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5567550172873246155" />
           </node>
@@ -2133,6 +2164,31 @@
         </node>
       </node>
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="9187915919898141330">
+      <property name="name:3" value="dispose" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="9187915919898141331" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="9187915919898141332" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9187915919898141333">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9187915919898141335">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall:3" id="9187915919898141336">
+            <link role="baseMethodDeclaration:3" targetNodeId="30.~Window.dispose():void" resolveInfo="dispose" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9187915919898141339">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9187915919898141341">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="9187915919898141340">
+              <link role="variableDeclaration:3" targetNodeId="9187915919898140233" resolveInfo="myModelOwner" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9187915919898141345">
+              <link role="baseMethodDeclaration:3" targetNodeId="35.3939031372534977711" resolveInfo="unregisterModelOwner" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="9187915919898141334">
+        <link role="annotation:3" targetNodeId="2.~Override" />
+      </node>
+    </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1219746458485">
       <property name="name:3" value="myEditor" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1219746458486" />
@@ -2175,6 +2231,18 @@
               <link role="baseMethodDeclaration:3" targetNodeId="30.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="9187915919898140233">
+      <property name="name:3" value="myModelOwner" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="9187915919898140234" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9187915919898140235">
+        <link role="classifier:3" targetNodeId="35.3939031372534916902" resolveInfo="TemporaryModelOwner" />
+      </node>
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9187915919898140236">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9187915919898140237">
+          <link role="baseMethodDeclaration:3" targetNodeId="35.3939031372534916904" resolveInfo="TemporaryModelOwner" />
         </node>
       </node>
     </node>
@@ -2239,14 +2307,8 @@
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2268726300190430264">
                         <link role="variableDeclaration:3" targetNodeId="1219746535418" resolveInfo="context" />
                       </node>
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2268726300190430265">
-                        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="2268726300190430266">
-                          <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="2268726300190430267">
-                            <link role="classifier:3" targetNodeId="5.~ModelOwner" resolveInfo="ModelOwner" />
-                            <link role="baseMethodDeclaration:3" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
-                            <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2268726300190430268" />
-                          </node>
-                        </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="9187915919898140241">
+                        <link role="variableDeclaration:3" targetNodeId="9187915919898140233" resolveInfo="myModelOwner" />
                       </node>
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2268726300190430269">
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="2268726300190430270">
