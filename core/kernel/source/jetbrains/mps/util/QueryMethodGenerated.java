@@ -119,8 +119,8 @@ public class QueryMethodGenerated implements ApplicationComponent {
 
     method.setAccessible(true);
 
-    ourMethods.putIfAbsent(key, method);
-    return method;
+    result = ourMethods.putIfAbsent(key, method);
+    return result != null ? result : method;
   }
 
   public static Object invoke(String methodName, IOperationContext context, Object contextObject, SModel sourceModel) throws ClassNotFoundException, NoSuchMethodException {
@@ -149,45 +149,48 @@ public class QueryMethodGenerated implements ApplicationComponent {
 
   public static Constructor getAdapterConstructor(String className) {
     Constructor result = ourAdaptorsConstructors.get(className);
-    if (result == null) {
-      try {
-        String adapterName = className;
-
-        String namespace = NameUtil.namespaceFromLongName(className);
-
-        assert namespace.endsWith(".structure");
-        String languageNamespace = className.substring(0, namespace.length() - ".structure".length());
-        Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
-
-
-        Class cls;
-        if (l == null) {
-          return null;
-        }
-        cls = l.getClass(adapterName);
-
-        if (cls == null) {
-          throw new ClassNotFoundException(adapterName);
-        }
-
-        if (cls.isInterface()) {
-          result = BaseConcept.class.getConstructor(SNode.class);
-        } else {
-          result = cls.getConstructor(SNode.class);
-        }
-        result.setAccessible(true);
-        ourAdaptorsConstructors.putIfAbsent(className, result);
-      } catch (NoSuchMethodException e) {
-        LOG.error(e);
-      } catch (ClassNotFoundException e) {
-        if (needReport(className)) {
-          LOG.error("Can't find a class : " + e.getMessage());
-        }
-      } catch (NoClassDefFoundError e) {
-        LOG.error("no class def found : " + e.getMessage() + " because of " + className);
-      }
+    if (result != null) {
+      return result;
     }
-    return result;
+    try {
+      String adapterName = className;
+
+      String namespace = NameUtil.namespaceFromLongName(className);
+
+      assert namespace.endsWith(".structure");
+      String languageNamespace = className.substring(0, namespace.length() - ".structure".length());
+      Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+
+
+      Class cls;
+      if (l == null) {
+        return null;
+      }
+      cls = l.getClass(adapterName);
+
+      if (cls == null) {
+        throw new ClassNotFoundException(adapterName);
+      }
+
+      Constructor ctor = cls.isInterface() ?
+        BaseConcept.class.getConstructor(SNode.class) :
+        cls.getConstructor(SNode.class);
+
+      if (ctor != null) {
+        ctor.setAccessible(true);
+        result = ourAdaptorsConstructors.putIfAbsent(className, ctor);
+      }
+      return result != null ? result : ctor;
+    } catch (NoSuchMethodException e) {
+      LOG.error(e);
+    } catch (ClassNotFoundException e) {
+      if (needReport(className)) {
+        LOG.error("Can't find a class : " + e.getMessage());
+      }
+    } catch (NoClassDefFoundError e) {
+      LOG.error("no class def found : " + e.getMessage() + " because of " + className);
+    }
+    return null;
   }
 
   private ClassLoaderManager myClassLoaderManager;
