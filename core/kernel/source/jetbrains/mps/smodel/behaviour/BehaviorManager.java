@@ -41,6 +41,7 @@ import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -66,7 +67,7 @@ public final class BehaviorManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(BehaviorManager.class);
   }
 
-  private ConcurrentMap<MethodInfo, Method> myMethods = new ConcurrentHashMap<MethodInfo, Method>();
+  private ConcurrentHashMap<MethodInfo, Method> myMethods = new ConcurrentHashMap<MethodInfo, Method>();
   private Map<String, List<Method>> myConstructors = new HashMap<String, List<Method>>();
 
   private ClassLoaderManager myClassLoaderManager;
@@ -336,9 +337,14 @@ public final class BehaviorManager implements ApplicationComponent {
       return true;
     }
 
-
     public int hashCode() {
-      return myConceptFqName.hashCode() * 239 + myMethodName.hashCode() * 7 + myParameters.length;
+      int h = 13;
+      h += myConceptFqName.hashCode() * 17;
+      h += myMethodName.hashCode() * 23;
+      for (Class c: myParameters) {
+        h += c.hashCode() * 11;
+      }
+      return h;
     }
   }
 }
