@@ -65,4 +65,9 @@ class ArrayValueProxy extends ValueProxy implements IArrayValueProxy, IObjectVal
   public IValueProxy invokeSuperMethod(String name, String jniSignature, Object... args) {
     throw new UnsupportedOperationException("Can't invoke super for an array");
   }
+
+  @Override
+  public boolean isInstanceOf(String typename) throws EvaluationException {
+    return Evaluator.isInstanceOf(myValue.type(), typename, myThreadReference.virtualMachine());
+  }
 }

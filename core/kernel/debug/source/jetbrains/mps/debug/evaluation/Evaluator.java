@@ -157,8 +157,36 @@ public abstract class Evaluator {
     }
   }
 
+  public static boolean isInstanceOf(final Type what, final String ofWhat, final VirtualMachine machine) throws EvaluationException {
+    if (ofWhat.equals("Ljava/lang/Object;")) return true;
+    return handleInvocationExceptions(new Invocatable<Boolean>() {
+      @Override
+      public Boolean invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException, EvaluationException {
+        if (ofWhat.startsWith("[")) {
+          if (!(what instanceof ArrayType)) {
+            return false;
+          }
+          return isInstanceOf(((ArrayType) what).componentType(), ofWhat.substring(1), machine);
+        } else if (ofWhat.startsWith("L")) {
+          if (!(what instanceof ClassType)) {
+            return false;
+          }
+          ClassType type = findClassType(ofWhat.substring(1, ofWhat.length() - 1), machine);
+
+          ClassType whatClassType = (ClassType) what;
+          do {
+            if (type.equals(whatClassType)) return true;
+            whatClassType = whatClassType.superclass();
+          } while (whatClassType != null);
+          return false;
+        }
+        return false; 
+      }
+    });
+  }
+
   public static interface Invocatable<T> {
-    T invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException;
+    T invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException, EvaluationException;
   }
 
   public abstract IValueProxy evaluate() throws EvaluationException;

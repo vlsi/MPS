@@ -29,6 +29,11 @@ class NullValueProxy implements INullValueProxy {
   }
 
   @Override
+  public boolean isInstanceOf(String typename) {
+    return false;
+  }
+
+  @Override
   public Value getJDIValue() {
     return null;
   }

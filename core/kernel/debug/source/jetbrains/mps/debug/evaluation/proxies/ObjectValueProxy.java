@@ -14,13 +14,6 @@ import java.util.List;
 
 import static jetbrains.mps.debug.evaluation.Evaluator.handleInvocationExceptions;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 07.03.2010
- * Time: 16:41:09
- * To change this template use File | Settings | File Templates.
- */
 class ObjectValueProxy extends ValueProxy implements IObjectValueProxy {
   private static final Logger LOG = Logger.getLogger(ObjectValueProxy.class);
   private ClassType myReferenceType;
@@ -59,6 +52,11 @@ class ObjectValueProxy extends ValueProxy implements IObjectValueProxy {
     }
     int options = ObjectReference.INVOKE_NONVIRTUAL;
     return invoke(name, jniSignature, superclass, options, args);
+  }
+
+  @Override
+  public boolean isInstanceOf(String typename) throws EvaluationException {
+    return Evaluator.isInstanceOf(myReferenceType, typename, myThreadReference.virtualMachine());
   }
 
   protected IValueProxy invoke(String name, String jniSignature, ClassType classType, final int options, Object[] args) throws EvaluationException {
