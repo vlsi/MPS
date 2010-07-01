@@ -8,25 +8,25 @@
     <scopeInfo nodeId="1483902774837524580" fileName="RuleIfNullEqualsReturn.java" startLine="141" startPosition="7" endLine="144" endPosition="110" />
   </root>
   <root nodeId="1665527126811217298">
-    <nodeInfo nodeId="1261570916635558897" fileName="NullableAnalyzerRunner.java" startLine="90" startPosition="64" endLine="91" endPosition="79" />
-    <nodeInfo nodeId="3762983614228136209" fileName="NullableAnalyzerRunner.java" startLine="92" startPosition="49" endLine="93" endPosition="47" />
-    <nodeInfo nodeId="3762983614228136227" fileName="NullableAnalyzerRunner.java" startLine="98" startPosition="101" endLine="99" endPosition="79" />
-    <nodeInfo nodeId="6942119419517295942" fileName="NullableAnalyzerRunner.java" startLine="99" startPosition="79" endLine="100" endPosition="0" />
-    <nodeInfo nodeId="3762983614228136236" fileName="NullableAnalyzerRunner.java" startLine="104" startPosition="97" endLine="105" endPosition="79" />
-    <nodeInfo nodeId="3762983614228137828" fileName="NullableAnalyzerRunner.java" startLine="105" startPosition="79" endLine="106" endPosition="55" />
-    <nodeInfo nodeId="3762983614228136197" fileName="NullableAnalyzerRunner.java" startLine="91" startPosition="79" endLine="94" endPosition="7" />
-    <scopeInfo nodeId="3762983614228136199" fileName="NullableAnalyzerRunner.java" startLine="92" startPosition="49" endLine="93" endPosition="47" />
-    <scopeInfo nodeId="3762983614228136197" fileName="NullableAnalyzerRunner.java" startLine="91" startPosition="79" endLine="94" endPosition="7">
+    <nodeInfo nodeId="1261570916635558897" fileName="NullableAnalyzerRunner.java" startLine="89" startPosition="64" endLine="90" endPosition="79" />
+    <nodeInfo nodeId="3762983614228136209" fileName="NullableAnalyzerRunner.java" startLine="91" startPosition="49" endLine="92" endPosition="47" />
+    <nodeInfo nodeId="3762983614228136227" fileName="NullableAnalyzerRunner.java" startLine="97" startPosition="101" endLine="98" endPosition="79" />
+    <nodeInfo nodeId="6942119419517295942" fileName="NullableAnalyzerRunner.java" startLine="98" startPosition="79" endLine="99" endPosition="0" />
+    <nodeInfo nodeId="3762983614228136236" fileName="NullableAnalyzerRunner.java" startLine="103" startPosition="97" endLine="104" endPosition="79" />
+    <nodeInfo nodeId="3762983614228137828" fileName="NullableAnalyzerRunner.java" startLine="104" startPosition="79" endLine="105" endPosition="55" />
+    <nodeInfo nodeId="3762983614228136197" fileName="NullableAnalyzerRunner.java" startLine="90" startPosition="79" endLine="93" endPosition="7" />
+    <scopeInfo nodeId="3762983614228136199" fileName="NullableAnalyzerRunner.java" startLine="91" startPosition="49" endLine="92" endPosition="47" />
+    <scopeInfo nodeId="3762983614228136197" fileName="NullableAnalyzerRunner.java" startLine="90" startPosition="79" endLine="93" endPosition="7">
       <varInfo nodeId="3762983614228136198" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="1665527126811217302" fileName="NullableAnalyzerRunner.java" startLine="98" startPosition="101" endLine="101" endPosition="20">
+    <scopeInfo nodeId="1665527126811217302" fileName="NullableAnalyzerRunner.java" startLine="97" startPosition="101" endLine="100" endPosition="20">
       <varInfo nodeId="3762983614228136228" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1665527126811217304" fileName="NullableAnalyzerRunner.java" startLine="104" startPosition="97" endLine="107" endPosition="20">
+    <scopeInfo nodeId="1665527126811217304" fileName="NullableAnalyzerRunner.java" startLine="103" startPosition="97" endLine="106" endPosition="20">
       <varInfo nodeId="3762983614228136237" varName="result" />
       <varInfo nodeId="3762983614228137829" varName="instruction" />
     </scopeInfo>
-    <scopeInfo nodeId="1665527126811217300" fileName="NullableAnalyzerRunner.java" startLine="90" startPosition="64" endLine="95" endPosition="20">
+    <scopeInfo nodeId="1665527126811217300" fileName="NullableAnalyzerRunner.java" startLine="89" startPosition="64" endLine="94" endPosition="20">
       <varInfo nodeId="1261570916635558898" varName="result" />
     </scopeInfo>
   </root>

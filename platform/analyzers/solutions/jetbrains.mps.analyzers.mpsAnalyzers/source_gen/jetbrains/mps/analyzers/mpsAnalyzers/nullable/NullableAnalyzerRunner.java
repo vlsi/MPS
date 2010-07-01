@@ -66,7 +66,6 @@ public class NullableAnalyzerRunner extends AnalyzerRunner<Map<Object, NullableS
     }
     myProgram = new MPSProgramBuilder(DataFlowManager.getInstance()).buildProgram(myNode);
     prepareProgram();
-    System.out.println(myProgram.getInstructions());
     myAnalyzer = new NullableAnalyzerRunner.NullableAnalyzer();
   }
 
