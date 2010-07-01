@@ -80,8 +80,8 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
         repository.registerModelDescriptor(descriptor, module);
 
         if (repository.getOwners(descriptor).size() > 1) {
-          String error = "Loading the same stub package twice : " + descriptor.getLongName() + " from " + repository.getOwners(descriptor);
-          throw new IllegalStateException(error);
+          String error = "Loading the same stub package twice : " + descriptor.getLongName() + " from " + repository.getOwners(descriptor) + ". This will not work in later versions";
+          LOG.error(error);
         }
       } else {
         descriptor = (BaseStubModelDescriptor) oldDescr;
