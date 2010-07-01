@@ -44,7 +44,36 @@
       <property name="name:3" value="foo" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5205855332950439102" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5205855332950439103" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5205855332950439104" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5205855332950439104">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7335767529742502243">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="7335767529742502245">
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7335767529742502248" />
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7335767529742502244">
+              <link role="variableDeclaration:3" targetNodeId="5205855332950439105" resolveInfo="t" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7335767529742502252">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7335767529742502253">
+            <property name="name:3" value="o" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7335767529742502254">
+              <link role="classifier:3" targetNodeId="2v.~Object" resolveInfo="Object" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7335767529742502256" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7335767529742502258">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7335767529742502259">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="7335767529742502260" />
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="7335767529742502263">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7335767529742502266" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7335767529742502262">
+              <link role="variableDeclaration:3" targetNodeId="7335767529742502253" resolveInfo="o" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="5205855332950439105">
         <property name="name:3" value="t" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="5205855332950439106">

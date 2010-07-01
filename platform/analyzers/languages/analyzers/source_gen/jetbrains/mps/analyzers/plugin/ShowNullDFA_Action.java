@@ -5,8 +5,8 @@ package jetbrains.mps.analyzers.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -21,8 +21,8 @@ public class ShowNullDFA_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowNullDFA_Action.class);
 
-  private IOperationContext context;
   private SNode node;
+  private IOperationContext context;
   private Frame frame;
 
   public ShowNullDFA_Action() {
@@ -78,8 +78,8 @@ public class ShowNullDFA_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      AnalyzerRunner<Map<Object, NullableState>> nu = new NullableAnalyzerRunner(ShowNullDFA_Action.this.node);
-      new ShowCFGDialog(nu.getProgramCopy(), ShowNullDFA_Action.this.context, ShowNullDFA_Action.this.frame);
+      AnalyzerRunner<Map<Object, NullableState>> runner = new NullableAnalyzerRunner(ShowNullDFA_Action.this.node);
+      new ShowCFGDialog(runner.getProgramCopy(), ShowNullDFA_Action.this.context, ShowNullDFA_Action.this.frame);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowNullDFA", t);
     }
