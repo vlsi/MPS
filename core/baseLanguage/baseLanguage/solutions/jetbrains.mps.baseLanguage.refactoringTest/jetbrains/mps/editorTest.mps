@@ -2022,10 +2022,12 @@
           <property name="keycode:23" value="VK_UP" />
         </node>
       </node>
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="1232980788138">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="1232980788139">
-          <property name="keycode:23" value="VK_END" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="5394298559859263510">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="5394298559859263511">
+          <property name="actionId:4" value="jetbrains.mps.ide#action#jetbrains.mps.ide.actions.End_Action" />
         </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="1232980788138">
         <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="1232981000801">
           <property name="keycode:23" value="VK_LEFT" />
         </node>
@@ -2178,9 +2180,9 @@
       </node>
     </node>
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235221901284">
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="1235221901285">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="1235221901286">
-          <property name="keycode:23" value="VK_END" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="5394298559859255194">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="5394298559859255195">
+          <property name="actionId:4" value="jetbrains.mps.ide#action#jetbrains.mps.ide.actions.End_Action" />
         </node>
       </node>
     </node>
