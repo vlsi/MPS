@@ -67,7 +67,7 @@ public final class BehaviorManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(BehaviorManager.class);
   }
 
-  private ConcurrentHashMap<MethodInfo, Method> myMethods = new ConcurrentHashMap<MethodInfo, Method>();
+  private ConcurrentHashMap<MethodInfo, Object> myMethods = new ConcurrentHashMap<MethodInfo, Object>();
   private Map<String, List<Method>> myConstructors = new HashMap<String, List<Method>>();
 
   private ClassLoaderManager myClassLoaderManager;
@@ -95,9 +95,7 @@ public final class BehaviorManager implements ApplicationComponent {
   }
 
   public void clear() {
-    synchronized (myMethods) {
-      myMethods.clear();
-    }
+    myMethods.clear();
     synchronized (myConstructors) {
       myConstructors.clear();
     }
@@ -228,8 +226,10 @@ public final class BehaviorManager implements ApplicationComponent {
 
         MethodInfo mi = new MethodInfo(fqName, methodName, parameterTypes);
 
-        Method mm = myMethods.get(mi);
-        if (mm != null) return mm;
+        Object mm = myMethods.get(mi);
+        if (mm != null) {
+          return mm instanceof Method ? (Method) mm : null;
+        }
 
         String behaviorClass = behaviorClassByConceptFqName(fqName);
 
@@ -244,10 +244,10 @@ public final class BehaviorManager implements ApplicationComponent {
 
         if (method != null) {
           method.setAccessible(true);
-          mm = myMethods.putIfAbsent(mi, method);
         }
+        mm = myMethods.putIfAbsent(mi, method != null ? method : this);
 
-        return mm != null ? mm : method;
+        return mm instanceof Method ? (Method) mm : method;
       }
     });
   }
