@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
@@ -27,6 +28,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
@@ -39,7 +41,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   protected final GeneratorMappings myMappings;
 
-  private HashSet<SNode> myFailedRules;
+  private Set<SNode> myFailedRules = new ConcurrentHashSet<SNode>();
 
   protected AbstractTemplateGenerator(IOperationContext operationContext,
                                       ProgressIndicator progressMonitor, IGeneratorLogger logger,
@@ -88,17 +90,9 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   public void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
-    synchronized (myLogger) {
-      if (ruleNode != null) {
-        if (myFailedRules == null) {
-          myFailedRules = new HashSet<SNode>();
-        }
-        if (myFailedRules.contains(ruleNode)) {
-          // do not show duplicating messages
-          return;
-        }
-        myFailedRules.add(ruleNode);
-      }
+    if(ruleNode != null && !myFailedRules.add(ruleNode)) {
+      // do not show duplicating messages
+      return;
     }
 
     myLogger.error((templateNode != null ? templateNode : ruleNode), message,

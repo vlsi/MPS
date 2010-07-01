@@ -117,13 +117,13 @@ public class TemplateProcessor {
     outputNode.putProperties(templateNode);
 
     SModel templateModel = templateNode.getModel();
-    for (SReference reference : templateNode.getReferencesArray()) {
+    for (SReference reference : templateNode.getReferencesIterable()) {
       if (templateNode.getLinkAttribute(ReferenceMacro_AnnotationLink.REFERENCE_MACRO, reference.getRole()) != null) {
         continue;
       }
       SNode templateReferentNode = reference.getTargetNode();
       if (templateReferentNode == null) {
-        myGenerator.showErrorMessage(null, templateNode, "'createOutputNodesForTemplateNode()' referent '" + reference.getRole() + "' is null in template model");
+        myGenerator.getLogger().error(templateNode, "cannot resolve reference in template model; role: " + reference.getRole() + " in " + templateNode.getDebugText());
         continue;
       }
       if (templateReferentNode.getModel() == templateModel) { // internal reference

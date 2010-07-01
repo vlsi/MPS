@@ -139,7 +139,7 @@ public class WeavingProcessor {
 
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
-      myGenerator.showErrorMessage(null, rule.getNode(), "rule has no applicable concept defined");
+      myGenerator.showErrorMessage(null, null, rule.getNode(), "rule has no applicable concept defined");
       return;
     }
     boolean includeInheritors = rule.getApplyToConceptInheritors();

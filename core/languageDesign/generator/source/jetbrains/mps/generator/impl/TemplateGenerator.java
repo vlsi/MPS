@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.dependencies.RootDependenciesBuilder;
@@ -514,7 +515,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         // dynamic & external references don't need validation => replace input model with output
         SModelReference targetModelReference = inputReference.isExternal() ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();
         if (targetModelReference == null) {
-          showErrorMessage(inputNode, templateNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (target model is null)");
+          myLogger.error(templateNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (target model is null)",
+            GeneratorUtil.describeIfExists(inputNode, "input node"),
+            GeneratorUtil.describeIfExists(templateNode, "template"));
           continue;
         }
 
@@ -532,15 +535,17 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             targetModelReference,
             inputReference.getResolveInfo()));
         } else {
-          LOG.error("internal error: can't clone reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
-          LOG.error(" -- was reference class : " + inputReference.getClass().getName());
+          myLogger.error(inputNode, "internal error: can't clone reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText(),
+            new ProblemDescription(inputNode, " -- was reference class: " + inputReference.getClass().getName()));
         }
         continue;
       }
 
       SNode inputTargetNode = inputReference.getTargetNode();
       if (inputTargetNode == null) {
-        showErrorMessage(inputNode, templateNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText());
+        myLogger.error(templateNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText(),
+          GeneratorUtil.describeIfExists(inputNode, "input node"),
+          GeneratorUtil.describeIfExists(templateNode, "template"));
         continue;
       }
       if (inputTargetNode.isRegistered() && inputTargetNode.getModel().equals(myInputModel) || myAdditionalInputNodes.containsKey(inputTargetNode)) {
@@ -557,7 +562,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       } else if (inputTargetNode.isRegistered()) {
         outputNode.setReferent(inputReference.getRole(), inputTargetNode);
       } else {
-        showErrorMessage(inputNode, templateNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (unregistered target node)");
+        myLogger.error(templateNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (unregistered target node)",
+          GeneratorUtil.describeIfExists(inputNode, "input node"),
+          GeneratorUtil.describeIfExists(templateNode, "template"));
       }
     }
 

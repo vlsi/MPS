@@ -89,9 +89,9 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   }
 
   public void showErrorMessage(ITemplateGenerator generator) {
-    generator.getLogger().error(getOutputSourceNode(), "couldn't resolve reference '" + getReferenceRole() + "' in output node " + getOutputSourceNode().getDebugText());
-    generator.getLogger().error(myTemplateSourceNode, "-- original reference was " + myTemplateSourceNode.getDebugText());
     SNode inputNode = getInputNode();
-    generator.getLogger().error(inputNode, "-- input node was " + (inputNode != null ? inputNode.getDebugText() : "NULL"));
+    generator.getLogger().error(getOutputSourceNode(), "cannot resolve reference; role: '" + getReferenceRole() + "' in output node " + getOutputSourceNode().getDebugText(),
+      GeneratorUtil.describe(inputNode, "input node"),
+      GeneratorUtil.describe(myTemplateSourceNode, "original reference"));
   }
 }
