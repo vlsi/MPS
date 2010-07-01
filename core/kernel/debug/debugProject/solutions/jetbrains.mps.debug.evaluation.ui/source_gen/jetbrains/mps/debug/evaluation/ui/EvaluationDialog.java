@@ -10,8 +10,8 @@ import javax.swing.JTabbedPane;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import com.sun.jdi.ThreadReference;
-import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugSession;
+import jetbrains.mps.debug.runtime.JavaUiState;
 import java.awt.Dimension;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
@@ -25,7 +25,9 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JComponent;
 import jetbrains.mps.debug.evaluation.Evaluator;
+import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.debug.runtime.SuspendContext;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
@@ -55,12 +57,14 @@ public class EvaluationDialog extends BaseDialog {
   private final EvaluationDialog.MySessionChangeListener mySessionChangeListener;
   protected String myClassFQName;
   protected ThreadReference myThreadReference;
+  protected DebugSession myDebugSession;
 
   public EvaluationDialog(final IOperationContext context, JavaUiState uiState, final DebugSession debugSession) {
     super(context.getMainFrame(), "Evaluate");
     this.myContext = context;
     myClassFQName = uiState.getStackFrame().getLocation().getUnitName();
     myThreadReference = uiState.getThread().getThread();
+    myDebugSession = debugSession;
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
 
@@ -128,9 +132,13 @@ public class EvaluationDialog extends BaseDialog {
     try {
       final Evaluator evaluator = myEvaluationLogic.evaluate();
       setEvaluating();
+      final DebugVMEventsProcessor eventsProcessor = myDebugSession.getEventsProcessor();
       ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
         public void run() {
+          SuspendContext suspendContext = eventsProcessor.getSuspendManager().getPausedContext();
+          assert suspendContext != null;
           try {
+            suspendContext.setIsEvaluating(true);
             IValueProxy evaluatedValue = evaluator.evaluate();
             if (evaluatedValue != null) {
               setSuccess(evaluatedValue);
@@ -140,6 +148,8 @@ public class EvaluationDialog extends BaseDialog {
           } catch (EvaluationException ex) {
             setFailure(ex, null);
             EvaluationDialog.LOG.error(ex);
+          } finally {
+            suspendContext.setIsEvaluating(false);
           }
         }
       });
