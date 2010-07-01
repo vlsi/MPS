@@ -117,7 +117,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   public IModule getModule() {
     Set<IModule> modules = getModules();
     if (modules.isEmpty()) return null;
-    if (modules.size() > 1 && SModelStereotype.isStubModelStereotype(getStereotype())) {
+    if (modules.size() > 1 && !SModelStereotype.isStubModelStereotype(getStereotype())) {
       StringBuilder sb = new StringBuilder();
       for (IModule m : modules) {
         sb.append(m.getModuleFqName()).append(" ");
