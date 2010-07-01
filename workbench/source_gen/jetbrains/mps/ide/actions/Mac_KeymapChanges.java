@@ -24,8 +24,8 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
     this.addAction("jetbrains.mps.ide.actions.LocalEnd_Action", "jetbrains.mps.ide", "alt RIGHT");
     this.addAction("jetbrains.mps.ide.actions.SelectLocalHome_Action", "jetbrains.mps.ide", "alt shift LEFT");
     this.addAction("jetbrains.mps.ide.actions.SelectLocalEnd_Action", "jetbrains.mps.ide", "alt shift RIGHT");
-    this.addAction("jetbrains.mps.ide.actions.Home_Action", "jetbrains.mps.ide", "meta LEFT");
-    this.addAction("jetbrains.mps.ide.actions.End_Action", "jetbrains.mps.ide", "meta RIGHT");
+    this.addAction("jetbrains.mps.ide.actions.Home_Action", "jetbrains.mps.ide", " HOME", "meta LEFT");
+    this.addAction("jetbrains.mps.ide.actions.End_Action", "jetbrains.mps.ide", " END", "meta RIGHT");
   }
 
   public String getScheme() {
