@@ -17,6 +17,7 @@ package jetbrains.mps.generator.template;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -49,19 +50,15 @@ public interface ITemplateGenerator {
 
   SNode findCopiedOutputNodeForInputNode(SNode inputNode);
 
-  void showInformationMessage(SNode node, String message);
-
-  void showWarningMessage(SNode node, String message);
-
-  void showErrorMessage(SNode node, String message);
-
-  void showErrorMessage(SNode inputNode, SNode templateNode, String message);
-
-  void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message);
-
   GenerationSessionContext getGeneratorSessionContext();
 
   IScope getScope();
 
   boolean isStrict();
+
+  IGeneratorLogger getLogger();
+
+  void showErrorMessage(SNode inputNode, SNode templateNode, String message);
+
+  void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message);
 }

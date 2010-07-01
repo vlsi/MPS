@@ -67,7 +67,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   }
 
   public void showErrorMessage(ITemplateGenerator generator) {
-    generator.showErrorMessage(getOutputSourceNode(), "couldn't resolve reference '" + myReferenceRole + "' in output node " + getOutputSourceNode().getDebugText());
-    generator.showErrorMessage(myInputNode, "-- input node was " + myInputNode.getDebugText());
+    generator.getLogger().error(getOutputSourceNode(), "couldn't resolve reference '" + myReferenceRole + "' in output node " + getOutputSourceNode().getDebugText());
+    generator.getLogger().error(myInputNode, "-- input node was " + myInputNode.getDebugText());
   }
 }

@@ -126,7 +126,7 @@ public class WeavingProcessor {
           myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "dismission of weaving rule is not supported");
         } catch (TemplateProcessingFailureException e) {
           myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "error processing template fragment");
-          myGenerator.showInformationMessage(contextParentNode, " -- was output context node:");
+          myGenerator.getLogger().info(contextParentNode, " -- was output context node:");
         }
       } else {
         myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "couldn't define 'context' for template fragment");

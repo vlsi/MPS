@@ -219,7 +219,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             }
             createRootNodeFromTemplate(GeneratorUtil.getMappingName(rule, null), templateNode, inputNode, copyRootOnFailure, executionContext);
           } else {
-            showErrorMessage(BaseAdapter.fromAdapter(rule), "no template is defined for the rule");
+            myLogger.error(BaseAdapter.fromAdapter(rule), "no template is defined for the rule");
           }
         } finally {
           myGenerationTracer.closeInputNode(inputNode);
@@ -382,11 +382,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (ex.isLoggingNeeded()) {
         String messageText = "-- dismissed reduction rule: " + reductionRule.getDebugText();
         if (ex.isInfo()) {
-          showInformationMessage(reductionRule.getNode(), messageText);
+          myLogger.info(reductionRule.getNode(), messageText);
         } else if (ex.isWarning()) {
-          showWarningMessage(reductionRule.getNode(), messageText);
+          myLogger.warning(reductionRule.getNode(), messageText);
         } else {
-          showErrorMessage(reductionRule.getNode(), messageText);
+          myLogger.error(reductionRule.getNode(), messageText);
         }
       }
     }

@@ -102,7 +102,7 @@ public class TemplateQueryContext {
 
   public SNode getOutputNodeByMappingLabel(String label) {
     if(!myGenerator.areMappingsAvailable()) {
-      myGenerator.showErrorMessage(getTemplateNodeForLogging(), "'get output by label' cannot be used here");
+      myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get output by label' cannot be used here");
     }
     return myGenerator.findOutputNodeByInputNodeAndMappingName(null, label);
   }
@@ -110,7 +110,7 @@ public class TemplateQueryContext {
   public SNode getOutputNodeByInputNodeAndMappingLabel(SNode inputNode, String label) {
     if (inputNode == null) return null;
     if(!myGenerator.areMappingsAvailable()) {
-      myGenerator.showErrorMessage(getTemplateNodeForLogging(), "'get output by input and label' cannot be used here");
+      myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get output by input and label' cannot be used here");
     }
     return myGenerator.findOutputNodeByInputNodeAndMappingName(inputNode, label);
   }
@@ -124,7 +124,7 @@ public class TemplateQueryContext {
   public List<SNode> getAllOutputNodesByInputNodeAndMappingLabel(SNode inputNode, String label) {
     if (inputNode == null) return null;
     if(!myGenerator.areMappingsAvailable()) {
-      myGenerator.showErrorMessage(getTemplateNodeForLogging(), "'get all output by input and label' cannot be used here");
+      myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get all output by input and label' cannot be used here");
     }
     return myGenerator.findAllOutputNodesByInputNodeAndMappingName(inputNode, label);
   }
@@ -136,7 +136,7 @@ public class TemplateQueryContext {
   public SNode getCopiedOutputNodeForInputNode(SNode inputNode) {
     if (inputNode == null) return null;
     if(!myGenerator.areMappingsAvailable()) {
-      myGenerator.showErrorMessage(getTemplateNodeForLogging(), "'get copied node for input' cannot be used here");
+      myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get copied node for input' cannot be used here");
     }
     return myGenerator.findCopiedOutputNodeForInputNode(inputNode);
   }
@@ -197,11 +197,11 @@ public class TemplateQueryContext {
   }
 
   public void showInformationMessage(SNode node, String message) {
-    myGenerator.showInformationMessage(node, message);
+    myGenerator.getLogger().info(node, message);
   }
 
   public void showWarningMessage(SNode node, String message) {
-    myGenerator.showWarningMessage(node, message);
+    myGenerator.getLogger().warning(node, message);
   }
 
   public void showErrorMessage(SNode node, String message) {

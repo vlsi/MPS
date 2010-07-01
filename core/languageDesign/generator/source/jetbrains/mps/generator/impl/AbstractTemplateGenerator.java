@@ -32,7 +32,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   private IOperationContext myOperationContext;
   private ProgressIndicator myProgressMonitor;
-  private IGeneratorLogger myLogger;
+  protected final IGeneratorLogger myLogger;
 
   protected final SModel myInputModel;
   protected final SModel myOutputModel;
@@ -75,24 +75,12 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myProgressMonitor.isCanceled();
   }
 
-  public void showInformationMessage(SNode node, String message) {
-    myLogger.info(node, message);
-  }
-
-  public void showWarningMessage(SNode node, String message) {
-    myLogger.warning(node, message);
-  }
-
   public void showErrorIfStrict(SNode node, String message) {
     if (isStrict()) {
       myLogger.error(node, message);
     } else {
       myLogger.warning(node, message);
     }
-  }
-
-  public void showErrorMessage(SNode node, String message) {
-    myLogger.error(node, message);
   }
 
   public void showErrorMessage(SNode inputNode, SNode templateNode, String message) {

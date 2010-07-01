@@ -137,18 +137,18 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
         myOutputTargetNode = outputTargetNode_output;
       } else {
         // FIXME showErrorIfStrict
-        generator.showWarningMessage(getOutputSourceNode(), "reference '" + linkRole + "' to input model in output node " + getOutputSourceNode().getDebugText());
-        generator.showInformationMessage(myOutputTargetNode, " -- referent node: " + myOutputTargetNode.getDebugText());
-        generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node: " + myReferenceMacro.getNode().getDebugText());
+        generator.getLogger().warning(getOutputSourceNode(), "reference '" + linkRole + "' to input model in output node " + getOutputSourceNode().getDebugText());
+        generator.getLogger().info(myOutputTargetNode, " -- referent node: " + myOutputTargetNode.getDebugText());
+        generator.getLogger().info(myReferenceMacro.getNode(), " -- template node: " + myReferenceMacro.getNode().getDebugText());
         generator.getGeneratorSessionContext().keepTransientModel(generator.getInputModel(), true);
       }
     }
   }
 
   public void showErrorMessage(ITemplateGenerator generator) {
-    generator.showErrorMessage(getOutputSourceNode(), "couldn't resolve reference '" + getReferenceRole() + "' in output node " + getOutputSourceNode().getDebugText());
-    generator.showErrorMessage(myReferenceMacro.getParent().getNode(), "-- original reference was " + myReferenceMacro.getParent().getNode().getDebugText());
+    generator.getLogger().error(getOutputSourceNode(), "couldn't resolve reference '" + getReferenceRole() + "' in output node " + getOutputSourceNode().getDebugText());
+    generator.getLogger().error(myReferenceMacro.getParent().getNode(), "-- original reference was " + myReferenceMacro.getParent().getNode().getDebugText());
     SNode inputNode = getInputNode();
-    generator.showErrorMessage(inputNode, "-- input node was " + (inputNode != null ? inputNode.getDebugText() : "NULL"));
+    generator.getLogger().error(inputNode, "-- input node was " + (inputNode != null ? inputNode.getDebugText() : "NULL"));
   }
 }

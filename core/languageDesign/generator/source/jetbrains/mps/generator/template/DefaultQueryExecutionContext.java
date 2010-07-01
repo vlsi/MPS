@@ -50,9 +50,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+      generator.getLogger().warning(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+      generator.getLogger().warning(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (Throwable t) {
       throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
     }
@@ -70,9 +70,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(patternRule), "couldn't find condition method '" + methodName + "' : not applied");
+      generator.getLogger().warning(BaseAdapter.fromAdapter(patternRule), "couldn't find condition method '" + methodName + "' : not applied");
     } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(patternRule), "couldn't find condition method '" + methodName + "' : not applied");
+      generator.getLogger().warning(BaseAdapter.fromAdapter(patternRule), "couldn't find condition method '" + methodName + "' : not applied");
     } catch (Throwable t) {
       throw new GenerationFailureException("error executing pattern/condition ", BaseAdapter.fromAdapter(patternRule), t);
     }
@@ -94,9 +94,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         createRootRule.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(createRootRule), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+      generator.getLogger().warning(BaseAdapter.fromAdapter(createRootRule), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(createRootRule), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+      generator.getLogger().warning(BaseAdapter.fromAdapter(createRootRule), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (Throwable t) {
       throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(createRootRule), t);
     }
@@ -119,9 +119,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to TRUE");
+      generator.getLogger().warning(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to TRUE");
     } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to TRUE");
+      generator.getLogger().warning(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to TRUE");
     } catch (Throwable t) {
       throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
     }
@@ -145,9 +145,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         ifMacro.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(ifMacro), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+      generator.getLogger().warning(BaseAdapter.fromAdapter(ifMacro), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(ifMacro), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
+      generator.getLogger().warning(BaseAdapter.fromAdapter(ifMacro), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (Throwable t) {
       throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(ifMacro), t);
     }
@@ -159,7 +159,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   public void executeMappingScript(MappingScript mappingScript, SModel model) throws GenerationFailureException {
     MappingScript_CodeBlock codeBlock = mappingScript.getCodeBlock();
     if (codeBlock == null) {
-      generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no code-block");
+      generator.getLogger().warning(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no code-block");
       return;
     }
 
@@ -172,9 +172,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         mappingScript.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no generated code found");
+      generator.getLogger().warning(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no generated code found");
     } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no generated code found");
+      generator.getLogger().warning(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no generated code found");
     } catch (Throwable t) {
       throw new GenerationFailureException("error executing script '" + mappingScript.getName() + "'", codeBlock.getNode(), t);
     }
@@ -261,7 +261,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         new SourceSubstituteMacroNodeContext(inputNode, macroNode, context, generator),
         query.getModel());
     } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(macroNode, "couldn't find nodes query '" + methodName + "' : evaluate to null");
+      generator.getLogger().warning(macroNode, "couldn't find nodes query '" + methodName + "' : evaluate to null");
       return null;
     } catch (Exception e) {
       generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
@@ -280,7 +280,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         new TemplateQueryContext(inputNode, query.getNode().getParent(), context, generator),
         query.getModel());
     } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(query.getNode().getParent(), "couldn't find nodes query '" + methodName + "' : evaluate to null");
+      generator.getLogger().warning(query.getNode().getParent(), "couldn't find nodes query '" + methodName + "' : evaluate to null");
       return null;
     } catch (Exception e) {
       generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
@@ -313,7 +313,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
       return resultList;
     } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(macroNode, "couldn't find nodes query '" + methodName + "' : evaluate to empty list");
+      generator.getLogger().warning(macroNode, "couldn't find nodes query '" + methodName + "' : evaluate to empty list");
       return new ArrayList<SNode>();
     } catch (Exception e) {
       generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
@@ -336,7 +336,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
           new TemplateFragmentContext(mainContextNode, templateFragmentNode, context, generator),
           query.getModel());
       } catch (NoSuchMethodException e) {
-        generator.showWarningMessage(templateFragmentNode, "couldn't find context node method for template fragment '" + methodName + "' : evaluate to null");
+        generator.getLogger().warning(templateFragmentNode, "couldn't find context node method for template fragment '" + methodName + "' : evaluate to null");
         return null;
       } catch (Exception e) {
         generator.showErrorMessage(context.getInput(), null, templateFragmentNode, "couldn't evaluate template fragment context query");
@@ -361,7 +361,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
           new WeavingMappingRuleContext(inputNode, rule.getNode(), generator),
           query.getModel());
       } catch (NoSuchMethodException e) {
-        generator.showWarningMessage(BaseAdapter.fromAdapter(rule), "couldn't find context node query '" + methodName + "' : evaluate to null");
+        generator.getLogger().warning(BaseAdapter.fromAdapter(rule), "couldn't find context node query '" + methodName + "' : evaluate to null");
         return null;
       } catch (Exception e) {
         generator.showErrorMessage(inputNode, null, rule.getNode(), "couldn't evaluate rule context query");
