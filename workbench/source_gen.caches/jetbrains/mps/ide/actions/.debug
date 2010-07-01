@@ -6540,259 +6540,261 @@
     <nodeInfo nodeId="3806413106061110325" fileName="InformationDialogWithEditor.java" startLine="47" startPosition="64" endLine="48" endPosition="33" />
     <nodeInfo nodeId="5367124414732097011" fileName="InformationDialogWithEditor.java" startLine="48" startPosition="33" endLine="49" endPosition="88" />
     <nodeInfo nodeId="5205337318266023902" fileName="InformationDialogWithEditor.java" startLine="49" startPosition="88" endLine="50" endPosition="36" />
-    <nodeInfo nodeId="2789948715283394372" fileName="InformationDialogWithEditor.java" startLine="50" startPosition="36" endLine="51" endPosition="46" />
-    <nodeInfo nodeId="8646824093010740029" fileName="InformationDialogWithEditor.java" startLine="51" startPosition="46" endLine="52" endPosition="29" />
-    <nodeInfo nodeId="413582328332537217" fileName="InformationDialogWithEditor.java" startLine="54" startPosition="104" endLine="55" endPosition="39" />
-    <nodeInfo nodeId="2789948715283394386" fileName="InformationDialogWithEditor.java" startLine="59" startPosition="27" endLine="60" endPosition="58" />
-    <nodeInfo nodeId="2789948715283394462" fileName="InformationDialogWithEditor.java" startLine="60" startPosition="58" endLine="61" endPosition="62" />
-    <nodeInfo nodeId="2789948715283394687" fileName="InformationDialogWithEditor.java" startLine="61" startPosition="62" endLine="62" endPosition="69" />
-    <nodeInfo nodeId="3806413106061039388" fileName="InformationDialogWithEditor.java" startLine="62" startPosition="69" endLine="63" endPosition="25" />
-    <nodeInfo nodeId="4566166847887223624" fileName="InformationDialogWithEditor.java" startLine="64" startPosition="5" endLine="65" endPosition="32" />
-    <nodeInfo nodeId="4566166847887289320" fileName="InformationDialogWithEditor.java" startLine="65" startPosition="32" endLine="66" endPosition="38" />
-    <nodeInfo nodeId="4566166847887223632" fileName="InformationDialogWithEditor.java" startLine="66" startPosition="38" endLine="67" endPosition="17" />
-    <nodeInfo nodeId="2789948715283394948" fileName="InformationDialogWithEditor.java" startLine="70" startPosition="42" endLine="71" endPosition="42" />
-    <nodeInfo nodeId="2789948715283394961" fileName="InformationDialogWithEditor.java" startLine="71" startPosition="42" endLine="72" endPosition="56" />
-    <nodeInfo nodeId="5367124414732056209" fileName="InformationDialogWithEditor.java" startLine="75" startPosition="52" endLine="76" endPosition="89" />
-    <nodeInfo nodeId="5367124414732057126" fileName="InformationDialogWithEditor.java" startLine="77" startPosition="30" endLine="78" endPosition="186" />
-    <nodeInfo nodeId="5367124414732056219" fileName="InformationDialogWithEditor.java" startLine="79" startPosition="5" endLine="80" endPosition="28" />
-    <nodeInfo nodeId="3806413106060974169" fileName="InformationDialogWithEditor.java" startLine="85" startPosition="25" endLine="86" endPosition="84" />
-    <nodeInfo nodeId="3806413106061039252" fileName="InformationDialogWithEditor.java" startLine="86" startPosition="84" endLine="87" endPosition="86" />
-    <nodeInfo nodeId="7679229946881847687" fileName="InformationDialogWithEditor.java" startLine="88" startPosition="35" endLine="89" endPosition="32" />
-    <nodeInfo nodeId="6919976393144194510" fileName="InformationDialogWithEditor.java" startLine="90" startPosition="16" endLine="91" endPosition="74" />
-    <nodeInfo nodeId="7679229946881847708" fileName="InformationDialogWithEditor.java" startLine="93" startPosition="36" endLine="94" endPosition="31" />
-    <nodeInfo nodeId="6919976393144194519" fileName="InformationDialogWithEditor.java" startLine="95" startPosition="16" endLine="96" endPosition="73" />
-    <nodeInfo nodeId="6919976393144194528" fileName="InformationDialogWithEditor.java" startLine="97" startPosition="9" endLine="98" endPosition="73" />
-    <nodeInfo nodeId="3806413106061110374" fileName="InformationDialogWithEditor.java" startLine="99" startPosition="38" endLine="100" endPosition="70" />
-    <nodeInfo nodeId="5367124414732097024" fileName="InformationDialogWithEditor.java" startLine="100" startPosition="70" endLine="101" endPosition="68" />
-    <nodeInfo nodeId="6240238740742679916" fileName="InformationDialogWithEditor.java" startLine="108" startPosition="33" endLine="109" endPosition="74" />
-    <nodeInfo nodeId="1476208411437215572" fileName="InformationDialogWithEditor.java" startLine="109" startPosition="74" endLine="110" endPosition="107" />
-    <nodeInfo nodeId="2789948715283394980" fileName="InformationDialogWithEditor.java" startLine="110" startPosition="107" endLine="111" endPosition="44" />
-    <nodeInfo nodeId="5367124414732097005" fileName="InformationDialogWithEditor.java" startLine="111" startPosition="44" endLine="112" endPosition="99" />
-    <nodeInfo nodeId="2379976468390991234" fileName="InformationDialogWithEditor.java" startLine="116" startPosition="7" endLine="117" endPosition="54" />
-    <nodeInfo nodeId="4851221810212141400" fileName="InformationDialogWithEditor.java" startLine="117" startPosition="54" endLine="118" endPosition="56" />
-    <nodeInfo nodeId="2379976468390762935" fileName="InformationDialogWithEditor.java" startLine="118" startPosition="56" endLine="119" endPosition="44" />
-    <nodeInfo nodeId="2379976468390762946" fileName="InformationDialogWithEditor.java" startLine="119" startPosition="44" endLine="120" endPosition="66" />
-    <nodeInfo nodeId="2379976468390762951" fileName="InformationDialogWithEditor.java" startLine="120" startPosition="66" endLine="121" endPosition="50" />
-    <nodeInfo nodeId="8646824093010791331" fileName="InformationDialogWithEditor.java" startLine="121" startPosition="50" endLine="122" endPosition="27" />
-    <nodeInfo nodeId="8646824093010791349" fileName="InformationDialogWithEditor.java" startLine="122" startPosition="27" endLine="123" endPosition="23" />
-    <nodeInfo nodeId="7469930712745302929" fileName="InformationDialogWithEditor.java" startLine="132" startPosition="41" endLine="133" endPosition="50" />
-    <nodeInfo nodeId="1191337958881405970" fileName="InformationDialogWithEditor.java" startLine="137" startPosition="6" endLine="138" endPosition="60" />
-    <nodeInfo nodeId="7469930712745302942" fileName="InformationDialogWithEditor.java" startLine="139" startPosition="33" endLine="140" endPosition="38" />
-    <nodeInfo nodeId="7469930712745302950" fileName="InformationDialogWithEditor.java" startLine="142" startPosition="32" endLine="143" endPosition="37" />
-    <nodeInfo nodeId="7469930712745302958" fileName="InformationDialogWithEditor.java" startLine="144" startPosition="5" endLine="145" endPosition="63" />
-    <nodeInfo nodeId="7162437776731648831" fileName="InformationDialogWithEditor.java" startLine="145" startPosition="63" endLine="146" endPosition="48" />
-    <nodeInfo nodeId="7469930712745302966" fileName="InformationDialogWithEditor.java" startLine="146" startPosition="48" endLine="147" endPosition="17" />
-    <nodeInfo nodeId="6240238740742679705" fileName="InformationDialogWithEditor.java" startLine="150" startPosition="73" endLine="151" endPosition="52" />
-    <nodeInfo nodeId="6240238740742679731" fileName="InformationDialogWithEditor.java" startLine="152" startPosition="22" endLine="153" endPosition="18" />
-    <nodeInfo nodeId="6240238740742679735" fileName="InformationDialogWithEditor.java" startLine="154" startPosition="5" endLine="155" endPosition="50" />
-    <nodeInfo nodeId="6240238740742679785" fileName="InformationDialogWithEditor.java" startLine="158" startPosition="86" endLine="159" endPosition="48" />
-    <nodeInfo nodeId="6240238740742679813" fileName="InformationDialogWithEditor.java" startLine="160" startPosition="30" endLine="161" endPosition="63" />
-    <nodeInfo nodeId="6240238740742679836" fileName="InformationDialogWithEditor.java" startLine="162" startPosition="33" endLine="163" endPosition="17" />
-    <nodeInfo nodeId="6240238740742679838" fileName="InformationDialogWithEditor.java" startLine="164" startPosition="7" endLine="165" endPosition="59" />
-    <nodeInfo nodeId="6240238740742679793" fileName="InformationDialogWithEditor.java" startLine="166" startPosition="5" endLine="167" endPosition="18" />
-    <nodeInfo nodeId="6919976393144194109" fileName="InformationDialogWithEditor.java" startLine="171" startPosition="33" endLine="172" endPosition="13" />
-    <nodeInfo nodeId="6626782640936486793" fileName="InformationDialogWithEditor.java" startLine="173" startPosition="5" endLine="174" endPosition="31" />
-    <nodeInfo nodeId="1151557420604381008" fileName="InformationDialogWithEditor.java" startLine="176" startPosition="39" endLine="177" endPosition="57" />
-    <nodeInfo nodeId="7469930712745424548" fileName="InformationDialogWithEditor.java" startLine="177" startPosition="57" endLine="178" endPosition="48" />
-    <nodeInfo nodeId="1151557420604381208" fileName="InformationDialogWithEditor.java" startLine="184" startPosition="13" endLine="185" endPosition="41" />
-    <nodeInfo nodeId="1151557420604381016" fileName="InformationDialogWithEditor.java" startLine="186" startPosition="9" endLine="187" endPosition="28" />
-    <nodeInfo nodeId="1151557420604381137" fileName="InformationDialogWithEditor.java" startLine="192" startPosition="54" endLine="193" endPosition="17" />
-    <nodeInfo nodeId="1151557420604381143" fileName="InformationDialogWithEditor.java" startLine="194" startPosition="9" endLine="195" endPosition="68" />
-    <nodeInfo nodeId="1151557420604381155" fileName="InformationDialogWithEditor.java" startLine="196" startPosition="27" endLine="197" endPosition="17" />
-    <nodeInfo nodeId="1151557420604381159" fileName="InformationDialogWithEditor.java" startLine="198" startPosition="9" endLine="199" endPosition="58" />
-    <nodeInfo nodeId="1151557420604381182" fileName="InformationDialogWithEditor.java" startLine="200" startPosition="55" endLine="201" endPosition="17" />
-    <nodeInfo nodeId="1151557420604381186" fileName="InformationDialogWithEditor.java" startLine="202" startPosition="9" endLine="203" endPosition="69" />
-    <nodeInfo nodeId="7469930712745424583" fileName="InformationDialogWithEditor.java" startLine="205" startPosition="29" endLine="206" endPosition="50" />
-    <nodeInfo nodeId="6240238740742679682" fileName="InformationDialogWithEditor.java" startLine="206" startPosition="50" endLine="207" endPosition="62" />
-    <nodeInfo nodeId="1476208411437215925" fileName="InformationDialogWithEditor.java" startLine="207" startPosition="62" endLine="208" endPosition="41" />
-    <nodeInfo nodeId="2789948715283394988" fileName="InformationDialogWithEditor.java" startLine="208" startPosition="41" endLine="209" endPosition="32" />
-    <nodeInfo nodeId="413582328332455476" fileName="InformationDialogWithEditor.java" startLine="209" startPosition="32" endLine="210" endPosition="87" />
-    <nodeInfo nodeId="7469930712745424610" fileName="InformationDialogWithEditor.java" startLine="211" startPosition="31" endLine="212" endPosition="73" />
-    <nodeInfo nodeId="8646824093010791366" fileName="InformationDialogWithEditor.java" startLine="216" startPosition="34" endLine="217" endPosition="33" />
-    <nodeInfo nodeId="2789948715283104552" fileName="InformationDialogWithEditor.java" startLine="220" startPosition="7" endLine="221" endPosition="24" />
-    <nodeInfo nodeId="6626782640936488275" fileName="InformationDialogWithEditor.java" startLine="221" startPosition="24" endLine="222" endPosition="41" />
-    <nodeInfo nodeId="413582328332648966" fileName="InformationDialogWithEditor.java" startLine="228" startPosition="27" endLine="229" endPosition="31" />
-    <nodeInfo nodeId="413582328332648949" fileName="InformationDialogWithEditor.java" startLine="230" startPosition="5" endLine="231" endPosition="21" />
-    <nodeInfo nodeId="7679229946881847695" fileName="InformationDialogWithEditor.java" startLine="90" startPosition="14" endLine="92" endPosition="9" />
-    <nodeInfo nodeId="7679229946881847716" fileName="InformationDialogWithEditor.java" startLine="95" startPosition="14" endLine="97" endPosition="9" />
-    <nodeInfo nodeId="6919976393144119256" fileName="InformationDialogWithEditor.java" startLine="53" startPosition="0" endLine="56" endPosition="3" />
-    <nodeInfo nodeId="5367124414732056182" fileName="InformationDialogWithEditor.java" startLine="76" startPosition="89" endLine="79" endPosition="5" />
-    <nodeInfo nodeId="8388168668420115677" fileName="InformationDialogWithEditor.java" startLine="138" startPosition="60" endLine="141" endPosition="5" />
-    <nodeInfo nodeId="8388168668420180452" fileName="InformationDialogWithEditor.java" startLine="141" startPosition="5" endLine="144" endPosition="5" />
-    <nodeInfo nodeId="6240238740742679722" fileName="InformationDialogWithEditor.java" startLine="151" startPosition="52" endLine="154" endPosition="5" />
-    <nodeInfo nodeId="6240238740742679826" fileName="InformationDialogWithEditor.java" startLine="161" startPosition="63" endLine="164" endPosition="7" />
-    <nodeInfo nodeId="6919976393144194107" fileName="InformationDialogWithEditor.java" startLine="170" startPosition="108" endLine="173" endPosition="5" />
-    <nodeInfo nodeId="1151557420604381135" fileName="InformationDialogWithEditor.java" startLine="191" startPosition="58" endLine="194" endPosition="9" />
-    <nodeInfo nodeId="1151557420604381153" fileName="InformationDialogWithEditor.java" startLine="195" startPosition="68" endLine="198" endPosition="9" />
-    <nodeInfo nodeId="1151557420604381169" fileName="InformationDialogWithEditor.java" startLine="199" startPosition="58" endLine="202" endPosition="9" />
-    <nodeInfo nodeId="7469930712745424601" fileName="InformationDialogWithEditor.java" startLine="210" startPosition="87" endLine="213" endPosition="13" />
-    <nodeInfo nodeId="8646824093010791355" fileName="InformationDialogWithEditor.java" startLine="215" startPosition="11" endLine="218" endPosition="9" />
-    <nodeInfo nodeId="7469930712745343879" fileName="InformationDialogWithEditor.java" startLine="227" startPosition="26" endLine="230" endPosition="5" />
-    <nodeInfo nodeId="2379976468390696170" fileName="InformationDialogWithEditor.java" startLine="98" startPosition="73" endLine="102" endPosition="9" />
-    <nodeInfo nodeId="3175344875905474697" fileName="InformationDialogWithEditor.java" startLine="133" startPosition="50" endLine="137" endPosition="6" />
-    <nodeInfo nodeId="1151557420604381083" fileName="InformationDialogWithEditor.java" startLine="180" startPosition="149" endLine="184" endPosition="0" />
-    <nodeInfo nodeId="2789948715283394937" fileName="InformationDialogWithEditor.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
-    <nodeInfo nodeId="7679229946881782914" fileName="InformationDialogWithEditor.java" startLine="87" startPosition="86" endLine="92" endPosition="9" />
-    <nodeInfo nodeId="7679229946881847698" fileName="InformationDialogWithEditor.java" startLine="92" startPosition="9" endLine="97" endPosition="9" />
-    <nodeInfo nodeId="7469930712745343839" fileName="InformationDialogWithEditor.java" startLine="125" startPosition="0" endLine="130" endPosition="0" />
-    <nodeInfo nodeId="1151557420604381022" fileName="InformationDialogWithEditor.java" startLine="179" startPosition="56" endLine="184" endPosition="13" />
-    <nodeInfo nodeId="3806413106061039377" fileName="InformationDialogWithEditor.java" startLine="58" startPosition="39" endLine="64" endPosition="5" />
-    <nodeInfo nodeId="2379976468390847466" fileName="InformationDialogWithEditor.java" startLine="107" startPosition="39" endLine="113" endPosition="11" />
-    <nodeInfo nodeId="6240238740742679797" fileName="InformationDialogWithEditor.java" startLine="159" startPosition="48" endLine="166" endPosition="5" />
-    <nodeInfo nodeId="5367124414732056158" fileName="InformationDialogWithEditor.java" startLine="74" startPosition="0" endLine="82" endPosition="0" />
-    <nodeInfo nodeId="3806413106061110353" fileName="InformationDialogWithEditor.java" startLine="106" startPosition="25" endLine="114" endPosition="9" />
-    <nodeInfo nodeId="6240238740742679658" fileName="InformationDialogWithEditor.java" startLine="149" startPosition="0" endLine="157" endPosition="0" />
-    <nodeInfo nodeId="6919976393144194122" fileName="InformationDialogWithEditor.java" startLine="178" startPosition="48" endLine="186" endPosition="9" />
-    <nodeInfo nodeId="413582328332648935" fileName="InformationDialogWithEditor.java" startLine="224" startPosition="0" endLine="233" endPosition="0" />
-    <nodeInfo nodeId="1476208411437215923" fileName="InformationDialogWithEditor.java" startLine="105" startPosition="67" endLine="116" endPosition="0" />
-    <nodeInfo nodeId="7539501582667569831" fileName="InformationDialogWithEditor.java" startLine="204" startPosition="71" endLine="215" endPosition="0" />
-    <nodeInfo nodeId="5205337318266024095" fileName="InformationDialogWithEditor.java" startLine="57" startPosition="0" endLine="69" endPosition="0" />
-    <nodeInfo nodeId="1476208411437215922" fileName="InformationDialogWithEditor.java" startLine="104" startPosition="7" endLine="116" endPosition="7" />
-    <nodeInfo nodeId="6240238740742679751" fileName="InformationDialogWithEditor.java" startLine="157" startPosition="0" endLine="169" endPosition="0" />
-    <nodeInfo nodeId="7539501582667569830" fileName="InformationDialogWithEditor.java" startLine="203" startPosition="69" endLine="215" endPosition="11" />
-    <nodeInfo nodeId="1151557420604359363" fileName="InformationDialogWithEditor.java" startLine="175" startPosition="40" endLine="189" endPosition="0" />
-    <nodeInfo nodeId="1151557420604273815" fileName="InformationDialogWithEditor.java" startLine="174" startPosition="31" endLine="189" endPosition="6" />
-    <nodeInfo nodeId="7469930712745302913" fileName="InformationDialogWithEditor.java" startLine="130" startPosition="0" endLine="149" endPosition="0" />
-    <nodeInfo nodeId="6919976393144194548" fileName="InformationDialogWithEditor.java" startLine="84" startPosition="57" endLine="104" endPosition="0" />
-    <nodeInfo nodeId="6919976393144194547" fileName="InformationDialogWithEditor.java" startLine="83" startPosition="43" endLine="104" endPosition="7" />
-    <nodeInfo nodeId="1151557420604381118" fileName="InformationDialogWithEditor.java" startLine="190" startPosition="63" endLine="220" endPosition="0" />
-    <nodeInfo nodeId="1151557420604381104" fileName="InformationDialogWithEditor.java" startLine="189" startPosition="6" endLine="220" endPosition="7" />
-    <nodeInfo nodeId="6919976393144190835" fileName="InformationDialogWithEditor.java" startLine="82" startPosition="0" endLine="125" endPosition="0" />
-    <nodeInfo nodeId="6919976393144194103" fileName="InformationDialogWithEditor.java" startLine="169" startPosition="0" endLine="224" endPosition="0" />
-    <scopeInfo nodeId="6919976393144119259" fileName="InformationDialogWithEditor.java" startLine="54" startPosition="104" endLine="55" endPosition="39" />
-    <scopeInfo nodeId="5367124414732056186" fileName="InformationDialogWithEditor.java" startLine="77" startPosition="30" endLine="78" endPosition="186" />
-    <scopeInfo nodeId="7679229946881782915" fileName="InformationDialogWithEditor.java" startLine="88" startPosition="35" endLine="89" endPosition="32" />
-    <scopeInfo nodeId="7679229946881847696" fileName="InformationDialogWithEditor.java" startLine="90" startPosition="16" endLine="91" endPosition="74" />
-    <scopeInfo nodeId="7679229946881847699" fileName="InformationDialogWithEditor.java" startLine="93" startPosition="36" endLine="94" endPosition="31" />
-    <scopeInfo nodeId="7679229946881847717" fileName="InformationDialogWithEditor.java" startLine="95" startPosition="16" endLine="96" endPosition="73" />
-    <scopeInfo nodeId="7469930712745343842" fileName="InformationDialogWithEditor.java" startLine="127" startPosition="82" endLine="128" endPosition="78" />
-    <scopeInfo nodeId="8388168668420115678" fileName="InformationDialogWithEditor.java" startLine="139" startPosition="33" endLine="140" endPosition="38" />
-    <scopeInfo nodeId="8388168668420180453" fileName="InformationDialogWithEditor.java" startLine="142" startPosition="32" endLine="143" endPosition="37" />
-    <scopeInfo nodeId="6240238740742679723" fileName="InformationDialogWithEditor.java" startLine="152" startPosition="22" endLine="153" endPosition="18" />
-    <scopeInfo nodeId="6240238740742679827" fileName="InformationDialogWithEditor.java" startLine="162" startPosition="33" endLine="163" endPosition="17" />
-    <scopeInfo nodeId="6919976393144194108" fileName="InformationDialogWithEditor.java" startLine="171" startPosition="33" endLine="172" endPosition="13" />
-    <scopeInfo nodeId="1151557420604381088" fileName="InformationDialogWithEditor.java" startLine="181" startPosition="49" endLine="182" endPosition="64" />
-    <scopeInfo nodeId="1151557420604381136" fileName="InformationDialogWithEditor.java" startLine="192" startPosition="54" endLine="193" endPosition="17" />
-    <scopeInfo nodeId="1151557420604381154" fileName="InformationDialogWithEditor.java" startLine="196" startPosition="27" endLine="197" endPosition="17" />
-    <scopeInfo nodeId="1151557420604381170" fileName="InformationDialogWithEditor.java" startLine="200" startPosition="55" endLine="201" endPosition="17" />
-    <scopeInfo nodeId="7469930712745424602" fileName="InformationDialogWithEditor.java" startLine="211" startPosition="31" endLine="212" endPosition="73" />
-    <scopeInfo nodeId="8646824093010791356" fileName="InformationDialogWithEditor.java" startLine="216" startPosition="34" endLine="217" endPosition="33" />
-    <scopeInfo nodeId="7469930712745343880" fileName="InformationDialogWithEditor.java" startLine="228" startPosition="27" endLine="229" endPosition="31" />
-    <scopeInfo nodeId="2789948715283394940" fileName="InformationDialogWithEditor.java" startLine="70" startPosition="42" endLine="72" endPosition="56" />
-    <scopeInfo nodeId="2379976468390696171" fileName="InformationDialogWithEditor.java" startLine="99" startPosition="38" endLine="101" endPosition="68" />
-    <scopeInfo nodeId="6919976393144119256" fileName="InformationDialogWithEditor.java" startLine="53" startPosition="0" endLine="56" endPosition="3">
+    <nodeInfo nodeId="9187915919897991603" fileName="InformationDialogWithEditor.java" startLine="50" startPosition="36" endLine="51" endPosition="46" />
+    <nodeInfo nodeId="2789948715283394372" fileName="InformationDialogWithEditor.java" startLine="51" startPosition="46" endLine="52" endPosition="46" />
+    <nodeInfo nodeId="8646824093010740029" fileName="InformationDialogWithEditor.java" startLine="52" startPosition="46" endLine="53" endPosition="29" />
+    <nodeInfo nodeId="413582328332537217" fileName="InformationDialogWithEditor.java" startLine="55" startPosition="104" endLine="56" endPosition="39" />
+    <nodeInfo nodeId="2789948715283394386" fileName="InformationDialogWithEditor.java" startLine="60" startPosition="27" endLine="61" endPosition="58" />
+    <nodeInfo nodeId="2789948715283394462" fileName="InformationDialogWithEditor.java" startLine="61" startPosition="58" endLine="62" endPosition="62" />
+    <nodeInfo nodeId="2789948715283394687" fileName="InformationDialogWithEditor.java" startLine="62" startPosition="62" endLine="63" endPosition="69" />
+    <nodeInfo nodeId="3806413106061039388" fileName="InformationDialogWithEditor.java" startLine="63" startPosition="69" endLine="64" endPosition="25" />
+    <nodeInfo nodeId="4566166847887223624" fileName="InformationDialogWithEditor.java" startLine="65" startPosition="5" endLine="66" endPosition="32" />
+    <nodeInfo nodeId="4566166847887289320" fileName="InformationDialogWithEditor.java" startLine="66" startPosition="32" endLine="67" endPosition="38" />
+    <nodeInfo nodeId="4566166847887223632" fileName="InformationDialogWithEditor.java" startLine="67" startPosition="38" endLine="68" endPosition="17" />
+    <nodeInfo nodeId="2789948715283394948" fileName="InformationDialogWithEditor.java" startLine="71" startPosition="42" endLine="72" endPosition="42" />
+    <nodeInfo nodeId="2789948715283394961" fileName="InformationDialogWithEditor.java" startLine="72" startPosition="42" endLine="73" endPosition="56" />
+    <nodeInfo nodeId="5367124414732056209" fileName="InformationDialogWithEditor.java" startLine="76" startPosition="52" endLine="77" endPosition="89" />
+    <nodeInfo nodeId="5367124414732057126" fileName="InformationDialogWithEditor.java" startLine="78" startPosition="30" endLine="79" endPosition="186" />
+    <nodeInfo nodeId="5367124414732056219" fileName="InformationDialogWithEditor.java" startLine="80" startPosition="5" endLine="81" endPosition="28" />
+    <nodeInfo nodeId="3806413106060974169" fileName="InformationDialogWithEditor.java" startLine="86" startPosition="25" endLine="87" endPosition="84" />
+    <nodeInfo nodeId="3806413106061039252" fileName="InformationDialogWithEditor.java" startLine="87" startPosition="84" endLine="88" endPosition="86" />
+    <nodeInfo nodeId="7679229946881847687" fileName="InformationDialogWithEditor.java" startLine="89" startPosition="35" endLine="90" endPosition="32" />
+    <nodeInfo nodeId="6919976393144194510" fileName="InformationDialogWithEditor.java" startLine="91" startPosition="16" endLine="92" endPosition="74" />
+    <nodeInfo nodeId="7679229946881847708" fileName="InformationDialogWithEditor.java" startLine="94" startPosition="36" endLine="95" endPosition="31" />
+    <nodeInfo nodeId="6919976393144194519" fileName="InformationDialogWithEditor.java" startLine="96" startPosition="16" endLine="97" endPosition="73" />
+    <nodeInfo nodeId="6919976393144194528" fileName="InformationDialogWithEditor.java" startLine="98" startPosition="9" endLine="99" endPosition="73" />
+    <nodeInfo nodeId="3806413106061110374" fileName="InformationDialogWithEditor.java" startLine="100" startPosition="38" endLine="101" endPosition="70" />
+    <nodeInfo nodeId="5367124414732097024" fileName="InformationDialogWithEditor.java" startLine="101" startPosition="70" endLine="102" endPosition="68" />
+    <nodeInfo nodeId="6240238740742679916" fileName="InformationDialogWithEditor.java" startLine="109" startPosition="33" endLine="110" endPosition="74" />
+    <nodeInfo nodeId="9187915919897991602" fileName="InformationDialogWithEditor.java" startLine="110" startPosition="74" endLine="111" endPosition="0" />
+    <nodeInfo nodeId="1476208411437215572" fileName="InformationDialogWithEditor.java" startLine="111" startPosition="0" endLine="112" endPosition="131" />
+    <nodeInfo nodeId="2789948715283394980" fileName="InformationDialogWithEditor.java" startLine="112" startPosition="131" endLine="113" endPosition="44" />
+    <nodeInfo nodeId="5367124414732097005" fileName="InformationDialogWithEditor.java" startLine="113" startPosition="44" endLine="114" endPosition="99" />
+    <nodeInfo nodeId="2379976468390991234" fileName="InformationDialogWithEditor.java" startLine="118" startPosition="7" endLine="119" endPosition="54" />
+    <nodeInfo nodeId="4851221810212141400" fileName="InformationDialogWithEditor.java" startLine="119" startPosition="54" endLine="120" endPosition="56" />
+    <nodeInfo nodeId="2379976468390762935" fileName="InformationDialogWithEditor.java" startLine="120" startPosition="56" endLine="121" endPosition="44" />
+    <nodeInfo nodeId="2379976468390762946" fileName="InformationDialogWithEditor.java" startLine="121" startPosition="44" endLine="122" endPosition="66" />
+    <nodeInfo nodeId="2379976468390762951" fileName="InformationDialogWithEditor.java" startLine="122" startPosition="66" endLine="123" endPosition="50" />
+    <nodeInfo nodeId="8646824093010791331" fileName="InformationDialogWithEditor.java" startLine="123" startPosition="50" endLine="124" endPosition="27" />
+    <nodeInfo nodeId="8646824093010791349" fileName="InformationDialogWithEditor.java" startLine="124" startPosition="27" endLine="125" endPosition="23" />
+    <nodeInfo nodeId="7469930712745302929" fileName="InformationDialogWithEditor.java" startLine="134" startPosition="41" endLine="135" endPosition="50" />
+    <nodeInfo nodeId="1191337958881405970" fileName="InformationDialogWithEditor.java" startLine="139" startPosition="6" endLine="140" endPosition="60" />
+    <nodeInfo nodeId="7469930712745302942" fileName="InformationDialogWithEditor.java" startLine="141" startPosition="33" endLine="142" endPosition="38" />
+    <nodeInfo nodeId="7469930712745302950" fileName="InformationDialogWithEditor.java" startLine="144" startPosition="32" endLine="145" endPosition="37" />
+    <nodeInfo nodeId="7469930712745302958" fileName="InformationDialogWithEditor.java" startLine="146" startPosition="5" endLine="147" endPosition="63" />
+    <nodeInfo nodeId="7162437776731648831" fileName="InformationDialogWithEditor.java" startLine="147" startPosition="63" endLine="148" endPosition="48" />
+    <nodeInfo nodeId="7469930712745302966" fileName="InformationDialogWithEditor.java" startLine="148" startPosition="48" endLine="149" endPosition="17" />
+    <nodeInfo nodeId="6240238740742679705" fileName="InformationDialogWithEditor.java" startLine="152" startPosition="73" endLine="153" endPosition="52" />
+    <nodeInfo nodeId="6240238740742679731" fileName="InformationDialogWithEditor.java" startLine="154" startPosition="22" endLine="155" endPosition="18" />
+    <nodeInfo nodeId="6240238740742679735" fileName="InformationDialogWithEditor.java" startLine="156" startPosition="5" endLine="157" endPosition="50" />
+    <nodeInfo nodeId="6240238740742679785" fileName="InformationDialogWithEditor.java" startLine="160" startPosition="86" endLine="161" endPosition="48" />
+    <nodeInfo nodeId="6240238740742679813" fileName="InformationDialogWithEditor.java" startLine="162" startPosition="30" endLine="163" endPosition="63" />
+    <nodeInfo nodeId="6240238740742679836" fileName="InformationDialogWithEditor.java" startLine="164" startPosition="33" endLine="165" endPosition="17" />
+    <nodeInfo nodeId="6240238740742679838" fileName="InformationDialogWithEditor.java" startLine="166" startPosition="7" endLine="167" endPosition="59" />
+    <nodeInfo nodeId="6240238740742679793" fileName="InformationDialogWithEditor.java" startLine="168" startPosition="5" endLine="169" endPosition="18" />
+    <nodeInfo nodeId="6919976393144194109" fileName="InformationDialogWithEditor.java" startLine="173" startPosition="33" endLine="174" endPosition="13" />
+    <nodeInfo nodeId="6626782640936486793" fileName="InformationDialogWithEditor.java" startLine="175" startPosition="5" endLine="176" endPosition="31" />
+    <nodeInfo nodeId="1151557420604381008" fileName="InformationDialogWithEditor.java" startLine="178" startPosition="39" endLine="179" endPosition="57" />
+    <nodeInfo nodeId="7469930712745424548" fileName="InformationDialogWithEditor.java" startLine="179" startPosition="57" endLine="180" endPosition="48" />
+    <nodeInfo nodeId="1151557420604381208" fileName="InformationDialogWithEditor.java" startLine="186" startPosition="13" endLine="187" endPosition="41" />
+    <nodeInfo nodeId="1151557420604381016" fileName="InformationDialogWithEditor.java" startLine="188" startPosition="9" endLine="189" endPosition="28" />
+    <nodeInfo nodeId="1151557420604381137" fileName="InformationDialogWithEditor.java" startLine="194" startPosition="54" endLine="195" endPosition="17" />
+    <nodeInfo nodeId="1151557420604381143" fileName="InformationDialogWithEditor.java" startLine="196" startPosition="9" endLine="197" endPosition="68" />
+    <nodeInfo nodeId="1151557420604381155" fileName="InformationDialogWithEditor.java" startLine="198" startPosition="27" endLine="199" endPosition="17" />
+    <nodeInfo nodeId="1151557420604381159" fileName="InformationDialogWithEditor.java" startLine="200" startPosition="9" endLine="201" endPosition="58" />
+    <nodeInfo nodeId="1151557420604381182" fileName="InformationDialogWithEditor.java" startLine="202" startPosition="55" endLine="203" endPosition="17" />
+    <nodeInfo nodeId="1151557420604381186" fileName="InformationDialogWithEditor.java" startLine="204" startPosition="9" endLine="205" endPosition="69" />
+    <nodeInfo nodeId="7469930712745424583" fileName="InformationDialogWithEditor.java" startLine="207" startPosition="29" endLine="208" endPosition="50" />
+    <nodeInfo nodeId="6240238740742679682" fileName="InformationDialogWithEditor.java" startLine="208" startPosition="50" endLine="209" endPosition="62" />
+    <nodeInfo nodeId="1476208411437215925" fileName="InformationDialogWithEditor.java" startLine="209" startPosition="62" endLine="210" endPosition="41" />
+    <nodeInfo nodeId="2789948715283394988" fileName="InformationDialogWithEditor.java" startLine="210" startPosition="41" endLine="211" endPosition="32" />
+    <nodeInfo nodeId="413582328332455476" fileName="InformationDialogWithEditor.java" startLine="211" startPosition="32" endLine="212" endPosition="87" />
+    <nodeInfo nodeId="7469930712745424610" fileName="InformationDialogWithEditor.java" startLine="213" startPosition="31" endLine="214" endPosition="73" />
+    <nodeInfo nodeId="8646824093010791366" fileName="InformationDialogWithEditor.java" startLine="218" startPosition="34" endLine="219" endPosition="33" />
+    <nodeInfo nodeId="2789948715283104552" fileName="InformationDialogWithEditor.java" startLine="222" startPosition="7" endLine="223" endPosition="24" />
+    <nodeInfo nodeId="6626782640936488275" fileName="InformationDialogWithEditor.java" startLine="223" startPosition="24" endLine="224" endPosition="41" />
+    <nodeInfo nodeId="413582328332648966" fileName="InformationDialogWithEditor.java" startLine="230" startPosition="27" endLine="231" endPosition="31" />
+    <nodeInfo nodeId="9187915919897992371" fileName="InformationDialogWithEditor.java" startLine="231" startPosition="31" endLine="232" endPosition="45" />
+    <nodeInfo nodeId="413582328332648949" fileName="InformationDialogWithEditor.java" startLine="233" startPosition="5" endLine="234" endPosition="21" />
+    <nodeInfo nodeId="7679229946881847695" fileName="InformationDialogWithEditor.java" startLine="91" startPosition="14" endLine="93" endPosition="9" />
+    <nodeInfo nodeId="7679229946881847716" fileName="InformationDialogWithEditor.java" startLine="96" startPosition="14" endLine="98" endPosition="9" />
+    <nodeInfo nodeId="6919976393144119256" fileName="InformationDialogWithEditor.java" startLine="54" startPosition="0" endLine="57" endPosition="3" />
+    <nodeInfo nodeId="5367124414732056182" fileName="InformationDialogWithEditor.java" startLine="77" startPosition="89" endLine="80" endPosition="5" />
+    <nodeInfo nodeId="8388168668420115677" fileName="InformationDialogWithEditor.java" startLine="140" startPosition="60" endLine="143" endPosition="5" />
+    <nodeInfo nodeId="8388168668420180452" fileName="InformationDialogWithEditor.java" startLine="143" startPosition="5" endLine="146" endPosition="5" />
+    <nodeInfo nodeId="6240238740742679722" fileName="InformationDialogWithEditor.java" startLine="153" startPosition="52" endLine="156" endPosition="5" />
+    <nodeInfo nodeId="6240238740742679826" fileName="InformationDialogWithEditor.java" startLine="163" startPosition="63" endLine="166" endPosition="7" />
+    <nodeInfo nodeId="6919976393144194107" fileName="InformationDialogWithEditor.java" startLine="172" startPosition="108" endLine="175" endPosition="5" />
+    <nodeInfo nodeId="1151557420604381135" fileName="InformationDialogWithEditor.java" startLine="193" startPosition="58" endLine="196" endPosition="9" />
+    <nodeInfo nodeId="1151557420604381153" fileName="InformationDialogWithEditor.java" startLine="197" startPosition="68" endLine="200" endPosition="9" />
+    <nodeInfo nodeId="1151557420604381169" fileName="InformationDialogWithEditor.java" startLine="201" startPosition="58" endLine="204" endPosition="9" />
+    <nodeInfo nodeId="7469930712745424601" fileName="InformationDialogWithEditor.java" startLine="212" startPosition="87" endLine="215" endPosition="13" />
+    <nodeInfo nodeId="8646824093010791355" fileName="InformationDialogWithEditor.java" startLine="217" startPosition="11" endLine="220" endPosition="9" />
+    <nodeInfo nodeId="2379976468390696170" fileName="InformationDialogWithEditor.java" startLine="99" startPosition="73" endLine="103" endPosition="9" />
+    <nodeInfo nodeId="3175344875905474697" fileName="InformationDialogWithEditor.java" startLine="135" startPosition="50" endLine="139" endPosition="6" />
+    <nodeInfo nodeId="1151557420604381083" fileName="InformationDialogWithEditor.java" startLine="182" startPosition="149" endLine="186" endPosition="0" />
+    <nodeInfo nodeId="7469930712745343879" fileName="InformationDialogWithEditor.java" startLine="229" startPosition="26" endLine="233" endPosition="5" />
+    <nodeInfo nodeId="2789948715283394937" fileName="InformationDialogWithEditor.java" startLine="70" startPosition="0" endLine="75" endPosition="0" />
+    <nodeInfo nodeId="7679229946881782914" fileName="InformationDialogWithEditor.java" startLine="88" startPosition="86" endLine="93" endPosition="9" />
+    <nodeInfo nodeId="7679229946881847698" fileName="InformationDialogWithEditor.java" startLine="93" startPosition="9" endLine="98" endPosition="9" />
+    <nodeInfo nodeId="7469930712745343839" fileName="InformationDialogWithEditor.java" startLine="127" startPosition="0" endLine="132" endPosition="0" />
+    <nodeInfo nodeId="1151557420604381022" fileName="InformationDialogWithEditor.java" startLine="181" startPosition="56" endLine="186" endPosition="13" />
+    <nodeInfo nodeId="3806413106061039377" fileName="InformationDialogWithEditor.java" startLine="59" startPosition="39" endLine="65" endPosition="5" />
+    <nodeInfo nodeId="2379976468390847466" fileName="InformationDialogWithEditor.java" startLine="108" startPosition="39" endLine="115" endPosition="11" />
+    <nodeInfo nodeId="6240238740742679797" fileName="InformationDialogWithEditor.java" startLine="161" startPosition="48" endLine="168" endPosition="5" />
+    <nodeInfo nodeId="5367124414732056158" fileName="InformationDialogWithEditor.java" startLine="75" startPosition="0" endLine="83" endPosition="0" />
+    <nodeInfo nodeId="6240238740742679658" fileName="InformationDialogWithEditor.java" startLine="151" startPosition="0" endLine="159" endPosition="0" />
+    <nodeInfo nodeId="6919976393144194122" fileName="InformationDialogWithEditor.java" startLine="180" startPosition="48" endLine="188" endPosition="9" />
+    <nodeInfo nodeId="3806413106061110353" fileName="InformationDialogWithEditor.java" startLine="107" startPosition="25" endLine="116" endPosition="9" />
+    <nodeInfo nodeId="413582328332648935" fileName="InformationDialogWithEditor.java" startLine="226" startPosition="0" endLine="236" endPosition="0" />
+    <nodeInfo nodeId="7539501582667569831" fileName="InformationDialogWithEditor.java" startLine="206" startPosition="71" endLine="217" endPosition="0" />
+    <nodeInfo nodeId="5205337318266024095" fileName="InformationDialogWithEditor.java" startLine="58" startPosition="0" endLine="70" endPosition="0" />
+    <nodeInfo nodeId="1476208411437215923" fileName="InformationDialogWithEditor.java" startLine="106" startPosition="67" endLine="118" endPosition="0" />
+    <nodeInfo nodeId="6240238740742679751" fileName="InformationDialogWithEditor.java" startLine="159" startPosition="0" endLine="171" endPosition="0" />
+    <nodeInfo nodeId="7539501582667569830" fileName="InformationDialogWithEditor.java" startLine="205" startPosition="69" endLine="217" endPosition="11" />
+    <nodeInfo nodeId="1476208411437215922" fileName="InformationDialogWithEditor.java" startLine="105" startPosition="7" endLine="118" endPosition="7" />
+    <nodeInfo nodeId="1151557420604359363" fileName="InformationDialogWithEditor.java" startLine="177" startPosition="40" endLine="191" endPosition="0" />
+    <nodeInfo nodeId="1151557420604273815" fileName="InformationDialogWithEditor.java" startLine="176" startPosition="31" endLine="191" endPosition="6" />
+    <nodeInfo nodeId="7469930712745302913" fileName="InformationDialogWithEditor.java" startLine="132" startPosition="0" endLine="151" endPosition="0" />
+    <nodeInfo nodeId="6919976393144194548" fileName="InformationDialogWithEditor.java" startLine="85" startPosition="57" endLine="105" endPosition="0" />
+    <nodeInfo nodeId="6919976393144194547" fileName="InformationDialogWithEditor.java" startLine="84" startPosition="43" endLine="105" endPosition="7" />
+    <nodeInfo nodeId="1151557420604381118" fileName="InformationDialogWithEditor.java" startLine="192" startPosition="63" endLine="222" endPosition="0" />
+    <nodeInfo nodeId="1151557420604381104" fileName="InformationDialogWithEditor.java" startLine="191" startPosition="6" endLine="222" endPosition="7" />
+    <nodeInfo nodeId="6919976393144190835" fileName="InformationDialogWithEditor.java" startLine="83" startPosition="0" endLine="127" endPosition="0" />
+    <nodeInfo nodeId="6919976393144194103" fileName="InformationDialogWithEditor.java" startLine="171" startPosition="0" endLine="226" endPosition="0" />
+    <scopeInfo nodeId="6919976393144119259" fileName="InformationDialogWithEditor.java" startLine="55" startPosition="104" endLine="56" endPosition="39" />
+    <scopeInfo nodeId="5367124414732056186" fileName="InformationDialogWithEditor.java" startLine="78" startPosition="30" endLine="79" endPosition="186" />
+    <scopeInfo nodeId="7679229946881782915" fileName="InformationDialogWithEditor.java" startLine="89" startPosition="35" endLine="90" endPosition="32" />
+    <scopeInfo nodeId="7679229946881847696" fileName="InformationDialogWithEditor.java" startLine="91" startPosition="16" endLine="92" endPosition="74" />
+    <scopeInfo nodeId="7679229946881847699" fileName="InformationDialogWithEditor.java" startLine="94" startPosition="36" endLine="95" endPosition="31" />
+    <scopeInfo nodeId="7679229946881847717" fileName="InformationDialogWithEditor.java" startLine="96" startPosition="16" endLine="97" endPosition="73" />
+    <scopeInfo nodeId="7469930712745343842" fileName="InformationDialogWithEditor.java" startLine="129" startPosition="82" endLine="130" endPosition="78" />
+    <scopeInfo nodeId="8388168668420115678" fileName="InformationDialogWithEditor.java" startLine="141" startPosition="33" endLine="142" endPosition="38" />
+    <scopeInfo nodeId="8388168668420180453" fileName="InformationDialogWithEditor.java" startLine="144" startPosition="32" endLine="145" endPosition="37" />
+    <scopeInfo nodeId="6240238740742679723" fileName="InformationDialogWithEditor.java" startLine="154" startPosition="22" endLine="155" endPosition="18" />
+    <scopeInfo nodeId="6240238740742679827" fileName="InformationDialogWithEditor.java" startLine="164" startPosition="33" endLine="165" endPosition="17" />
+    <scopeInfo nodeId="6919976393144194108" fileName="InformationDialogWithEditor.java" startLine="173" startPosition="33" endLine="174" endPosition="13" />
+    <scopeInfo nodeId="1151557420604381088" fileName="InformationDialogWithEditor.java" startLine="183" startPosition="49" endLine="184" endPosition="64" />
+    <scopeInfo nodeId="1151557420604381136" fileName="InformationDialogWithEditor.java" startLine="194" startPosition="54" endLine="195" endPosition="17" />
+    <scopeInfo nodeId="1151557420604381154" fileName="InformationDialogWithEditor.java" startLine="198" startPosition="27" endLine="199" endPosition="17" />
+    <scopeInfo nodeId="1151557420604381170" fileName="InformationDialogWithEditor.java" startLine="202" startPosition="55" endLine="203" endPosition="17" />
+    <scopeInfo nodeId="7469930712745424602" fileName="InformationDialogWithEditor.java" startLine="213" startPosition="31" endLine="214" endPosition="73" />
+    <scopeInfo nodeId="8646824093010791356" fileName="InformationDialogWithEditor.java" startLine="218" startPosition="34" endLine="219" endPosition="33" />
+    <scopeInfo nodeId="2789948715283394940" fileName="InformationDialogWithEditor.java" startLine="71" startPosition="42" endLine="73" endPosition="56" />
+    <scopeInfo nodeId="2379976468390696171" fileName="InformationDialogWithEditor.java" startLine="100" startPosition="38" endLine="102" endPosition="68" />
+    <scopeInfo nodeId="7469930712745343880" fileName="InformationDialogWithEditor.java" startLine="230" startPosition="27" endLine="232" endPosition="45" />
+    <scopeInfo nodeId="6919976393144119256" fileName="InformationDialogWithEditor.java" startLine="54" startPosition="0" endLine="57" endPosition="3">
       <varInfo nodeId="6919976393144193990" varName="refactoringContext" />
       <varInfo nodeId="6919976393144194030" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="5367124414732056182" fileName="InformationDialogWithEditor.java" startLine="76" startPosition="89" endLine="79" endPosition="5">
+    <scopeInfo nodeId="5367124414732056182" fileName="InformationDialogWithEditor.java" startLine="77" startPosition="89" endLine="80" endPosition="5">
       <varInfo nodeId="5367124414732056184" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3806413106061039378" fileName="InformationDialogWithEditor.java" startLine="59" startPosition="27" endLine="63" endPosition="25">
+    <scopeInfo nodeId="3806413106061039378" fileName="InformationDialogWithEditor.java" startLine="60" startPosition="27" endLine="64" endPosition="25">
       <varInfo nodeId="2789948715283394387" varName="editorPanel" />
     </scopeInfo>
-    <scopeInfo nodeId="2379976468390847467" fileName="InformationDialogWithEditor.java" startLine="108" startPosition="33" endLine="112" endPosition="99">
-      <varInfo nodeId="6240238740742679917" varName="copiedRoot" />
-    </scopeInfo>
-    <scopeInfo nodeId="1151557420604381083" fileName="InformationDialogWithEditor.java" startLine="180" startPosition="149" endLine="184" endPosition="0">
+    <scopeInfo nodeId="1151557420604381083" fileName="InformationDialogWithEditor.java" startLine="182" startPosition="149" endLine="186" endPosition="0">
       <varInfo nodeId="1151557420604381086" varName="candidate" />
     </scopeInfo>
-    <scopeInfo nodeId="413582328332648947" fileName="InformationDialogWithEditor.java" startLine="227" startPosition="26" endLine="231" endPosition="21" />
-    <scopeInfo nodeId="2789948715283394937" fileName="InformationDialogWithEditor.java" startLine="69" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="2789948715283394937" fileName="InformationDialogWithEditor.java" startLine="70" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="2789948715283394946" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5367124414732056161" fileName="InformationDialogWithEditor.java" startLine="75" startPosition="52" endLine="80" endPosition="28">
+    <scopeInfo nodeId="5367124414732056161" fileName="InformationDialogWithEditor.java" startLine="76" startPosition="52" endLine="81" endPosition="28">
       <varInfo nodeId="5367124414732056210" varName="messages" />
     </scopeInfo>
-    <scopeInfo nodeId="7469930712745343839" fileName="InformationDialogWithEditor.java" startLine="125" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="6240238740742679661" fileName="InformationDialogWithEditor.java" startLine="150" startPosition="73" endLine="155" endPosition="50">
+    <scopeInfo nodeId="2379976468390847467" fileName="InformationDialogWithEditor.java" startLine="109" startPosition="33" endLine="114" endPosition="99">
+      <varInfo nodeId="6240238740742679917" varName="copiedRoot" />
+    </scopeInfo>
+    <scopeInfo nodeId="7469930712745343839" fileName="InformationDialogWithEditor.java" startLine="127" startPosition="0" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="6240238740742679661" fileName="InformationDialogWithEditor.java" startLine="152" startPosition="73" endLine="157" endPosition="50">
       <varInfo nodeId="6240238740742679706" varName="index" />
     </scopeInfo>
-    <scopeInfo nodeId="6240238740742679798" fileName="InformationDialogWithEditor.java" startLine="160" startPosition="30" endLine="165" endPosition="59">
+    <scopeInfo nodeId="6240238740742679798" fileName="InformationDialogWithEditor.java" startLine="162" startPosition="30" endLine="167" endPosition="59">
       <varInfo nodeId="6240238740742679814" varName="copiedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3806413106061110354" fileName="InformationDialogWithEditor.java" startLine="107" startPosition="39" endLine="113" endPosition="11" />
-    <scopeInfo nodeId="6919976393144194123" fileName="InformationDialogWithEditor.java" startLine="179" startPosition="56" endLine="185" endPosition="41">
+    <scopeInfo nodeId="413582328332648947" fileName="InformationDialogWithEditor.java" startLine="229" startPosition="26" endLine="234" endPosition="21" />
+    <scopeInfo nodeId="6919976393144194123" fileName="InformationDialogWithEditor.java" startLine="181" startPosition="56" endLine="187" endPosition="41">
       <varInfo nodeId="1151557420604381023" varName="nodeTreeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6240238740742679797" fileName="InformationDialogWithEditor.java" startLine="159" startPosition="48" endLine="166" endPosition="5">
+    <scopeInfo nodeId="3806413106061110354" fileName="InformationDialogWithEditor.java" startLine="108" startPosition="39" endLine="115" endPosition="11" />
+    <scopeInfo nodeId="6240238740742679797" fileName="InformationDialogWithEditor.java" startLine="161" startPosition="48" endLine="168" endPosition="5">
       <varInfo nodeId="6240238740742679801" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5367124414732056158" fileName="InformationDialogWithEditor.java" startLine="74" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="5367124414732056158" fileName="InformationDialogWithEditor.java" startLine="75" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="6240238740742679891" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1476208411437215924" fileName="InformationDialogWithEditor.java" startLine="106" startPosition="25" endLine="114" endPosition="9" />
-    <scopeInfo nodeId="6240238740742679658" fileName="InformationDialogWithEditor.java" startLine="149" startPosition="0" endLine="157" endPosition="0">
+    <scopeInfo nodeId="6240238740742679658" fileName="InformationDialogWithEditor.java" startLine="151" startPosition="0" endLine="159" endPosition="0">
       <varInfo nodeId="6240238740742679696" varName="node" />
       <varInfo nodeId="6240238740742679702" varName="copiedRoot" />
       <varInfo nodeId="6240238740742679699" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="6919976393144194122" fileName="InformationDialogWithEditor.java" startLine="178" startPosition="48" endLine="186" endPosition="9">
+    <scopeInfo nodeId="6919976393144194122" fileName="InformationDialogWithEditor.java" startLine="180" startPosition="48" endLine="188" endPosition="9">
       <varInfo nodeId="6919976393144194173" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="7539501582667569832" fileName="InformationDialogWithEditor.java" startLine="205" startPosition="29" endLine="213" endPosition="13">
+    <scopeInfo nodeId="7539501582667569832" fileName="InformationDialogWithEditor.java" startLine="207" startPosition="29" endLine="215" endPosition="13">
       <varInfo nodeId="6240238740742679683" varName="copiedRoot" />
       <varInfo nodeId="7469930712745424584" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="5205337318266024098" fileName="InformationDialogWithEditor.java" startLine="58" startPosition="39" endLine="67" endPosition="17">
+    <scopeInfo nodeId="5205337318266024098" fileName="InformationDialogWithEditor.java" startLine="59" startPosition="39" endLine="68" endPosition="17">
       <varInfo nodeId="4566166847887223625" varName="panel" />
     </scopeInfo>
-    <scopeInfo nodeId="6240238740742679754" fileName="InformationDialogWithEditor.java" startLine="158" startPosition="86" endLine="167" endPosition="18">
+    <scopeInfo nodeId="1476208411437215924" fileName="InformationDialogWithEditor.java" startLine="107" startPosition="25" endLine="116" endPosition="9" />
+    <scopeInfo nodeId="6240238740742679754" fileName="InformationDialogWithEditor.java" startLine="160" startPosition="86" endLine="169" endPosition="18">
       <varInfo nodeId="6240238740742679786" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="413582328332648935" fileName="InformationDialogWithEditor.java" startLine="224" startPosition="0" endLine="233" endPosition="0" />
-    <scopeInfo nodeId="1476208411437215923" fileName="InformationDialogWithEditor.java" startLine="105" startPosition="67" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="1151557420604359366" fileName="InformationDialogWithEditor.java" startLine="176" startPosition="39" endLine="187" endPosition="28">
+    <scopeInfo nodeId="413582328332648935" fileName="InformationDialogWithEditor.java" startLine="226" startPosition="0" endLine="236" endPosition="0" />
+    <scopeInfo nodeId="1151557420604359366" fileName="InformationDialogWithEditor.java" startLine="178" startPosition="39" endLine="189" endPosition="28">
       <varInfo nodeId="1151557420604381009" varName="rootTreeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7539501582667569831" fileName="InformationDialogWithEditor.java" startLine="204" startPosition="71" endLine="215" endPosition="0" />
-    <scopeInfo nodeId="5205337318266024095" fileName="InformationDialogWithEditor.java" startLine="57" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="6240238740742679751" fileName="InformationDialogWithEditor.java" startLine="157" startPosition="0" endLine="169" endPosition="0">
+    <scopeInfo nodeId="7539501582667569831" fileName="InformationDialogWithEditor.java" startLine="206" startPosition="71" endLine="217" endPosition="0" />
+    <scopeInfo nodeId="5205337318266024095" fileName="InformationDialogWithEditor.java" startLine="58" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="1476208411437215923" fileName="InformationDialogWithEditor.java" startLine="106" startPosition="67" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="6240238740742679751" fileName="InformationDialogWithEditor.java" startLine="159" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="6240238740742679778" varName="copiedRoot" />
       <varInfo nodeId="6240238740742679775" varName="root" />
       <varInfo nodeId="6240238740742679771" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1151557420604359363" fileName="InformationDialogWithEditor.java" startLine="175" startPosition="40" endLine="189" endPosition="0" />
-    <scopeInfo nodeId="7469930712745302916" fileName="InformationDialogWithEditor.java" startLine="132" startPosition="41" endLine="147" endPosition="17">
+    <scopeInfo nodeId="1151557420604359363" fileName="InformationDialogWithEditor.java" startLine="177" startPosition="40" endLine="191" endPosition="0" />
+    <scopeInfo nodeId="7469930712745302916" fileName="InformationDialogWithEditor.java" startLine="134" startPosition="41" endLine="149" endPosition="17">
       <varInfo nodeId="7469930712745302930" varName="panel" />
       <varInfo nodeId="1191337958881405971" varName="centerPanel" />
       <varInfo nodeId="3175344875905474698" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="6919976393144194549" fileName="InformationDialogWithEditor.java" startLine="85" startPosition="25" endLine="102" endPosition="9">
+    <scopeInfo nodeId="6919976393144194549" fileName="InformationDialogWithEditor.java" startLine="86" startPosition="25" endLine="103" endPosition="9">
       <varInfo nodeId="3806413106060974170" varName="movedNodes" />
       <varInfo nodeId="3806413106061039253" varName="sourceNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="7469930712745302913" fileName="InformationDialogWithEditor.java" startLine="130" startPosition="0" endLine="149" endPosition="0" />
-    <scopeInfo nodeId="6919976393144194548" fileName="InformationDialogWithEditor.java" startLine="84" startPosition="57" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="1151557420604381123" fileName="InformationDialogWithEditor.java" startLine="191" startPosition="58" endLine="218" endPosition="9">
+    <scopeInfo nodeId="7469930712745302913" fileName="InformationDialogWithEditor.java" startLine="132" startPosition="0" endLine="151" endPosition="0" />
+    <scopeInfo nodeId="6919976393144194548" fileName="InformationDialogWithEditor.java" startLine="85" startPosition="57" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="1151557420604381123" fileName="InformationDialogWithEditor.java" startLine="193" startPosition="58" endLine="220" endPosition="9">
       <varInfo nodeId="1151557420604381187" varName="node" />
       <varInfo nodeId="1151557420604381144" varName="path" />
       <varInfo nodeId="1151557420604381160" varName="nodeTreeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1151557420604381118" fileName="InformationDialogWithEditor.java" startLine="190" startPosition="63" endLine="220" endPosition="0">
+    <scopeInfo nodeId="1151557420604381118" fileName="InformationDialogWithEditor.java" startLine="192" startPosition="63" endLine="222" endPosition="0">
       <varInfo nodeId="1151557420604381121" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6919976393144190838" fileName="InformationDialogWithEditor.java" startLine="83" startPosition="43" endLine="123" endPosition="23">
+    <scopeInfo nodeId="6919976393144190838" fileName="InformationDialogWithEditor.java" startLine="84" startPosition="43" endLine="125" endPosition="23">
       <varInfo nodeId="2379976468390991235" varName="mainPanel" />
       <varInfo nodeId="2379976468390762936" varName="splitter" />
     </scopeInfo>
-    <scopeInfo nodeId="6919976393144190835" fileName="InformationDialogWithEditor.java" startLine="82" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="6919976393144194106" fileName="InformationDialogWithEditor.java" startLine="170" startPosition="108" endLine="222" endPosition="41">
+    <scopeInfo nodeId="6919976393144190835" fileName="InformationDialogWithEditor.java" startLine="83" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="6919976393144194106" fileName="InformationDialogWithEditor.java" startLine="172" startPosition="108" endLine="224" endPosition="41">
       <varInfo nodeId="1151557420604273816" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="6919976393144194103" fileName="InformationDialogWithEditor.java" startLine="169" startPosition="0" endLine="224" endPosition="0">
+    <scopeInfo nodeId="6919976393144194103" fileName="InformationDialogWithEditor.java" startLine="171" startPosition="0" endLine="226" endPosition="0">
       <varInfo nodeId="6626782640936486825" varName="panel" />
       <varInfo nodeId="6919976393144194180" varName="rootToChilds" />
       <varInfo nodeId="6919976393144194187" varName="caption" />
     </scopeInfo>
-    <unitInfo nodeId="5367124414732096992" fileName="InformationDialogWithEditor.java" startLine="78" startPosition="160" endLine="78" endPosition="183" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor$1" />
-    <unitInfo nodeId="1476208411437215584" fileName="InformationDialogWithEditor.java" startLine="110" startPosition="71" endLine="110" endPosition="86" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor$4" />
-    <unitInfo nodeId="1151557420604381081" fileName="InformationDialogWithEditor.java" startLine="180" startPosition="129" endLine="184" endPosition="11" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor$5" />
-    <unitInfo nodeId="1476208411437215923" fileName="InformationDialogWithEditor.java" startLine="105" startPosition="55" endLine="116" endPosition="5" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor$3" />
-    <unitInfo nodeId="7539501582667569831" fileName="InformationDialogWithEditor.java" startLine="204" startPosition="59" endLine="215" endPosition="9" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor$6" />
-    <unitInfo nodeId="1151557420604359361" fileName="InformationDialogWithEditor.java" startLine="175" startPosition="29" endLine="189" endPosition="5" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor$4" />
-    <unitInfo nodeId="6919976393144194548" fileName="InformationDialogWithEditor.java" startLine="84" startPosition="45" endLine="104" endPosition="5" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor$2" />
-    <unitInfo nodeId="1151557420604381116" fileName="InformationDialogWithEditor.java" startLine="190" startPosition="38" endLine="220" endPosition="5" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor$5" />
-    <unitInfo nodeId="6919976393144119254" fileName="InformationDialogWithEditor.java" startLine="45" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor" />
+    <unitInfo nodeId="5367124414732096992" fileName="InformationDialogWithEditor.java" startLine="79" startPosition="160" endLine="79" endPosition="183" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor$1" />
+    <unitInfo nodeId="1151557420604381081" fileName="InformationDialogWithEditor.java" startLine="182" startPosition="129" endLine="186" endPosition="11" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor$5" />
+    <unitInfo nodeId="7539501582667569831" fileName="InformationDialogWithEditor.java" startLine="206" startPosition="59" endLine="217" endPosition="9" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor$6" />
+    <unitInfo nodeId="1476208411437215923" fileName="InformationDialogWithEditor.java" startLine="106" startPosition="55" endLine="118" endPosition="5" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor$3" />
+    <unitInfo nodeId="1151557420604359361" fileName="InformationDialogWithEditor.java" startLine="177" startPosition="29" endLine="191" endPosition="5" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor$4" />
+    <unitInfo nodeId="6919976393144194548" fileName="InformationDialogWithEditor.java" startLine="85" startPosition="45" endLine="105" endPosition="5" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor$2" />
+    <unitInfo nodeId="1151557420604381116" fileName="InformationDialogWithEditor.java" startLine="192" startPosition="38" endLine="222" endPosition="5" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor$5" />
+    <unitInfo nodeId="6919976393144119254" fileName="InformationDialogWithEditor.java" startLine="45" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor" />
   </root>
   <root nodeId="695595565023324568">
     <nodeInfo nodeId="304332558009517204" fileName="IgnoreInVcs_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="32" />

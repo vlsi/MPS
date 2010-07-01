@@ -89,7 +89,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
     myEventsProcessor.step(type, context);
   }
 
-  DebugVMEventsProcessor getEventsProcessor() {
+  public DebugVMEventsProcessor getEventsProcessor() {
     return myEventsProcessor;
   }
 

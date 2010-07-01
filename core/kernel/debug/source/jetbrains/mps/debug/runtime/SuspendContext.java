@@ -54,6 +54,7 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
   protected int myVotesToVote;
   private volatile boolean  myIsResumed;
   public volatile boolean  myInProgress;
+  private boolean myIsEvaluating = false;
 
   SuspendContext(@NotNull DebugVMEventsProcessor debugProcess,
                  int suspendPolicy, int eventVotes, @Nullable EventSet set) {
@@ -141,5 +142,13 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
 
   public boolean isResumed() {
     return myIsResumed;
+  }
+
+  public void setIsEvaluating(boolean b) {
+    myIsEvaluating = b;
+  }
+
+  public boolean isEvaluating() {
+    return myIsEvaluating;
   }
 }

@@ -126,7 +126,7 @@ public class WeavingProcessor {
           myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "dismission of weaving rule is not supported");
         } catch (TemplateProcessingFailureException e) {
           myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "error processing template fragment");
-          myGenerator.showInformationMessage(contextParentNode, " -- was output context node:");
+          myGenerator.getLogger().info(contextParentNode, " -- was output context node:");
         }
       } else {
         myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "couldn't define 'context' for template fragment");
@@ -139,7 +139,7 @@ public class WeavingProcessor {
 
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
-      myGenerator.showErrorMessage(null, rule.getNode(), "rule has no applicable concept defined");
+      myGenerator.showErrorMessage(null, null, rule.getNode(), "rule has no applicable concept defined");
       return;
     }
     boolean includeInheritors = rule.getApplyToConceptInheritors();

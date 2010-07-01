@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="178770917832460637">
+    <scopeInfo nodeId="178770917832460640" fileName="AnalyzerRunnerCreator_analyzer_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="150" />
+  </root>
+  <root nodeId="4217760266503650622">
+    <nodeInfo nodeId="4217760266503650628" fileName="InstructionReference_DefaultSearchScope.java" startLine="29" startPosition="132" endLine="30" endPosition="48" />
+    <nodeInfo nodeId="4217760266503650638" fileName="InstructionReference_DefaultSearchScope.java" startLine="31" startPosition="167" endLine="32" endPosition="130" />
+    <nodeInfo nodeId="4217760266503650634" fileName="InstructionReference_DefaultSearchScope.java" startLine="30" startPosition="48" endLine="33" endPosition="5" />
+    <scopeInfo nodeId="4217760266503650637" fileName="InstructionReference_DefaultSearchScope.java" startLine="31" startPosition="167" endLine="32" endPosition="130" />
+    <scopeInfo nodeId="4217760266503650634" fileName="InstructionReference_DefaultSearchScope.java" startLine="30" startPosition="48" endLine="33" endPosition="5">
+      <varInfo nodeId="4217760266503650635" varName="analyzer" />
+    </scopeInfo>
+    <scopeInfo nodeId="4217760266503650627" fileName="InstructionReference_DefaultSearchScope.java" startLine="29" startPosition="132" endLine="34" endPosition="18">
+      <varInfo nodeId="4217760266503650629" varName="result" />
+    </scopeInfo>
+  </root>
+  <root nodeId="95073643532950051">
+    <scopeInfo nodeId="95073643532950053" fileName="AnalyzerRunnerAnalyzeOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="474" />
+  </root>
+</debugInfo>
+

@@ -117,13 +117,13 @@ public class TemplateProcessor {
     outputNode.putProperties(templateNode);
 
     SModel templateModel = templateNode.getModel();
-    for (SReference reference : templateNode.getReferencesArray()) {
+    for (SReference reference : templateNode.getReferencesIterable()) {
       if (templateNode.getLinkAttribute(ReferenceMacro_AnnotationLink.REFERENCE_MACRO, reference.getRole()) != null) {
         continue;
       }
       SNode templateReferentNode = reference.getTargetNode();
       if (templateReferentNode == null) {
-        myGenerator.showErrorMessage(null, templateNode, "'createOutputNodesForTemplateNode()' referent '" + reference.getRole() + "' is null in template model");
+        myGenerator.getLogger().error(templateNode, "cannot resolve reference in template model; role: " + reference.getRole() + " in " + templateNode.getDebugText());
         continue;
       }
       if (templateReferentNode.getModel() == templateModel) { // internal reference
@@ -228,10 +228,10 @@ public class TemplateProcessor {
             Language outputNodeLang = outputNode.getNodeLanguage();
             if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(outputNodeLang)) {
               if (!outputNodeLang.getGenerators().isEmpty()) {
-                myGenerator.showErrorMessage(outputNode, "language of output node is '" + outputNodeLang.getNamespace() + "' - this language did not show up when computing generation steps!");
-                myGenerator.showErrorMessage(templateContext.getInput(), " -- was input: " + templateContext.getInput().getDebugText());
-                myGenerator.showErrorMessage(nodeMacro.getNode(), " -- was template: " + nodeMacro.getDebugText());
-                myGenerator.showErrorMessage(null, " -- workaround: add the language '" + outputNodeLang.getNamespace() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'");
+                myGenerator.getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getNamespace() + "' - this language did not show up when computing generation steps!");
+                myGenerator.getLogger().error(templateContext.getInput(), " -- was input: " + templateContext.getInput().getDebugText());
+                myGenerator.getLogger().error(nodeMacro.getNode(), " -- was template: " + nodeMacro.getDebugText());
+                myGenerator.getLogger().error(null, " -- workaround: add the language '" + outputNodeLang.getNamespace() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'");
               }
             }
           }

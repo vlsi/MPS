@@ -137,18 +137,18 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
         myOutputTargetNode = outputTargetNode_output;
       } else {
         // FIXME showErrorIfStrict
-        generator.showWarningMessage(getOutputSourceNode(), "reference '" + linkRole + "' to input model in output node " + getOutputSourceNode().getDebugText());
-        generator.showInformationMessage(myOutputTargetNode, " -- referent node: " + myOutputTargetNode.getDebugText());
-        generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node: " + myReferenceMacro.getNode().getDebugText());
+        generator.getLogger().warning(getOutputSourceNode(), "reference macro returned node from input model; role: " + linkRole + " in " + getOutputSourceNode().getDebugText(),
+          GeneratorUtil.describeIfExists(myOutputTargetNode, "target node in input model"),
+          GeneratorUtil.describeIfExists(myReferenceMacro.getNode(), "reference macro"));
         generator.getGeneratorSessionContext().keepTransientModel(generator.getInputModel(), true);
       }
     }
   }
 
   public void showErrorMessage(ITemplateGenerator generator) {
-    generator.showErrorMessage(getOutputSourceNode(), "couldn't resolve reference '" + getReferenceRole() + "' in output node " + getOutputSourceNode().getDebugText());
-    generator.showErrorMessage(myReferenceMacro.getParent().getNode(), "-- original reference was " + myReferenceMacro.getParent().getNode().getDebugText());
     SNode inputNode = getInputNode();
-    generator.showErrorMessage(inputNode, "-- input node was " + (inputNode != null ? inputNode.getDebugText() : "NULL"));
+    generator.getLogger().error(getOutputSourceNode(), "cannot resolve reference; role: '" + getReferenceRole() + "' in output node " + getOutputSourceNode().getDebugText(),
+      GeneratorUtil.describe(inputNode, "input node"),
+      GeneratorUtil.describe(myReferenceMacro.getNode(), "reference macro"));
   }
 }

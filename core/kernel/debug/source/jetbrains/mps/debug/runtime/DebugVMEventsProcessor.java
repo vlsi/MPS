@@ -275,6 +275,11 @@ public class DebugVMEventsProcessor {
 
 
     //todo - check if inside evaluation later; no evaluation currently implemented
+    SuspendContext pausedContext = getSuspendManager().getPausedContext();
+    if (pausedContext != null && pausedContext.isEvaluating()) {
+      suspendManager.voteResume(suspendContext);
+      return;
+    }
     // SuspendContext evaluatingContext = SuspendManagerUtil.getEvaluatingContext(suspendManager, getSuspendContext().getThread());
     //if(evaluatingContext != null) {
     // is inside evaluation, so ignore any breakpoints

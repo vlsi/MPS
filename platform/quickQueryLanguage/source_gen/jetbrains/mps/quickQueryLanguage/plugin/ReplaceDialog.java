@@ -9,10 +9,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import jetbrains.mps.ide.embeddableEditor.TemporaryModelOwner;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
@@ -38,6 +38,7 @@ public class ReplaceDialog extends BaseDialog {
   private IOperationContext myContext;
   private SNode myNode;
   private JPanel myPanel = new JPanel(new BorderLayout());
+  private TemporaryModelOwner myModelOwner = new TemporaryModelOwner();
 
   public ReplaceDialog(final IOperationContext context, final Language language) {
     super(context.getMainFrame(), "Modify Instances by condition");
@@ -45,7 +46,7 @@ public class ReplaceDialog extends BaseDialog {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         ReplaceDialog.this.myNode = SConceptOperations.createNewNode("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", null);
-        ReplaceDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {}, ReplaceDialog.this.myNode);
+        ReplaceDialog.this.myEditor = new EmbeddableEditor(context, myModelOwner, ReplaceDialog.this.myNode);
         ReplaceDialog.this.myScope = new ScopeEditor(new ScopeOptions());
         ReplaceDialog.this.myPanel.add(ReplaceDialog.this.myScope.getComponent(), BorderLayout.SOUTH);
       }
@@ -122,5 +123,11 @@ public class ReplaceDialog extends BaseDialog {
       }
     });
     project.getComponent(ProjectPluginManager.class).getTool(RunReplacement_Tool.class).addTab(searchQuery.value, query);
+  }
+
+  @Override
+  public void dispose() {
+    super.dispose();
+    myModelOwner.unregisterModelOwner();
   }
 }

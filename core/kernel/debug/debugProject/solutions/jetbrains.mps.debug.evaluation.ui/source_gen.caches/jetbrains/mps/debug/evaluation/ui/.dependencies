@@ -104,7 +104,9 @@
     <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.AbstractEvaluationLogic" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.InvocationTargetEvaluationException" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugVMEventsProcessor" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.JavaUiState" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.SuspendContext" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedValue" />
     <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
     <classNode dependClassName="jetbrains.mps.ide.messages.Icons" />

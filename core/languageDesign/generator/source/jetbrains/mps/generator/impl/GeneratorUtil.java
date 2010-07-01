@@ -321,9 +321,9 @@ public class GeneratorUtil {
       if (messageType == GeneratorMessageType.error) {
         generator.showErrorMessage(inputNode, templateNode, ruleNode, text);
       } else if (messageType == GeneratorMessageType.warning) {
-        generator.showWarningMessage(inputNode, text);
+        generator.getLogger().warning(inputNode, text);
       } else {
-        generator.showInformationMessage(inputNode, text);
+        generator.getLogger().info(inputNode, text);
       }
     }
     return messageType;

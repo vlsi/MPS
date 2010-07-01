@@ -1035,8 +1035,9 @@ public class SModel implements Iterable<SNode> {
           SModelReference targetModelReference = reference.getTargetSModelReference();
           if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
             if (respectModulesScopes && module != null) {
-              IModule targetModule = SModelRepository.getInstance().getModelDescriptor(targetModelReference).getModule();
-              if (!module.getAllDependOnModules().contains(targetModule)) {
+              SModelDescriptor targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
+              IModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
+              if (targetModule != null && !module.getAllDependOnModules().contains(targetModule)) {
                 module.addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
               }
             }

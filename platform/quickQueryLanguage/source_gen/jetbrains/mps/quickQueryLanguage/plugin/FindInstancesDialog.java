@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.embeddableEditor.TemporaryModelOwner;
 import jetbrains.mps.smodel.Language;
 import java.awt.Dimension;
 import jetbrains.mps.smodel.ModelAccess;
@@ -16,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.BootstrapLanguages;
@@ -41,6 +41,7 @@ public class FindInstancesDialog extends BaseDialog {
   private EmbeddableEditor myEditor;
   private ScopeEditor myScope;
   private SNode myNode;
+  private TemporaryModelOwner myModelOwner = new TemporaryModelOwner();
 
   public FindInstancesDialog(final IOperationContext context, final Language language) {
     super(context.getMainFrame(), "Find Instances by condition");
@@ -57,7 +58,7 @@ public class FindInstancesDialog extends BaseDialog {
         SLinkOperations.setTarget(expressionStatement, "expression", defaultCondition, true);
         ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(expressionStatement);
         SLinkOperations.setTarget(SLinkOperations.getTarget(FindInstancesDialog.this.myNode, "condition", true), "body", statementList, true);
-        FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {}, FindInstancesDialog.this.myNode);
+        FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, myModelOwner, FindInstancesDialog.this.myNode);
       }
     });
     final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();
@@ -135,5 +136,11 @@ public class FindInstancesDialog extends BaseDialog {
     });
     UsagesViewTool tool = project.getComponent(UsagesViewTool.class);
     tool.findUsages(FindUtils.makeProvider(new QueryFinder(query)), searchQuery.value, true, true, false, "No usages for that node");
+  }
+
+  @Override
+  public void dispose() {
+    super.dispose();
+    myModelOwner.unregisterModelOwner();
   }
 }

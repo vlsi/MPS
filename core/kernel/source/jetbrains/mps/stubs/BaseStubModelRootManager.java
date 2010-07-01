@@ -78,11 +78,6 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
       SModelDescriptor oldDescr = repository.getModelDescriptor(descriptor.getSModelReference());
       if (oldDescr == null) {
         repository.registerModelDescriptor(descriptor, module);
-
-        if (repository.getOwners(descriptor).size() > 1) {
-          String error = "Loading the same stub package twice : " + descriptor.getLongName() + " from " + repository.getOwners(descriptor) + ". This will not work in later versions";
-          LOG.error(error);
-        }
       } else {
         descriptor = (BaseStubModelDescriptor) oldDescr;
       }

@@ -139,12 +139,12 @@ public class PostponedReference extends SReference {
     if (referentNodeModel != outputNode.getModel()) {
       if (SModelStereotype.isGeneratorModel(referentNodeModel)) {
         // references on template nodes are not acceptable
-        myGenerator.showErrorMessage(outputNode, "unacceptable referent [template node]: " + outputTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
+        myGenerator.getLogger().error(outputNode, "unacceptable referent [template node]: " + outputTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
         return false;
       }
       if (referentNodeModel instanceof TransientSModel) {
         // references on transient nodes are not acceptable
-        myGenerator.showErrorMessage(outputNode, "unacceptable referent [transient node]: " + outputTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
+        myGenerator.getLogger().error(outputNode, "unacceptable referent [transient node]: " + outputTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
         return false;
       }
     }
