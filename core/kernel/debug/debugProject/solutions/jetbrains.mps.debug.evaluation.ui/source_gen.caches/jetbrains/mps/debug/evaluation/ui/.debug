@@ -354,7 +354,7 @@
     <nodeInfo nodeId="6185141366360271745" fileName="AbstractEvaluationLogic.java" startLine="52" startPosition="47" endLine="53" endPosition="84" />
     <nodeInfo nodeId="6185141366360320945" fileName="AbstractEvaluationLogic.java" startLine="53" startPosition="84" endLine="54" endPosition="67" />
     <nodeInfo nodeId="672157982583399721" fileName="AbstractEvaluationLogic.java" startLine="54" startPosition="67" endLine="55" endPosition="60" />
-    <nodeInfo nodeId="672360099287494394" fileName="AbstractEvaluationLogic.java" startLine="55" startPosition="60" endLine="56" endPosition="57" />
+    <nodeInfo nodeId="672360099287494394" fileName="AbstractEvaluationLogic.java" startLine="55" startPosition="60" endLine="56" endPosition="56" />
     <nodeInfo nodeId="6185141366360271590" fileName="AbstractEvaluationLogic.java" startLine="57" startPosition="0" endLine="58" endPosition="34" />
     <nodeInfo nodeId="6185141366360271593" fileName="AbstractEvaluationLogic.java" startLine="58" startPosition="34" endLine="59" endPosition="46" />
     <nodeInfo nodeId="6185141366360320968" fileName="AbstractEvaluationLogic.java" startLine="59" startPosition="46" endLine="60" endPosition="46" />
@@ -1361,7 +1361,7 @@
     <nodeInfo nodeId="6084657294691540433" fileName="TransformationUtil.java" startLine="282" startPosition="314" endLine="283" endPosition="25" />
     <nodeInfo nodeId="6854451783047781516" fileName="TransformationUtil.java" startLine="285" startPosition="5" endLine="286" endPosition="20" />
     <nodeInfo nodeId="3905649626142670063" fileName="TransformationUtil.java" startLine="289" startPosition="62" endLine="290" endPosition="161" />
-    <nodeInfo nodeId="3905649626142724575" fileName="TransformationUtil.java" startLine="292" startPosition="251" endLine="293" endPosition="323" />
+    <nodeInfo nodeId="3905649626142724575" fileName="TransformationUtil.java" startLine="292" startPosition="413" endLine="293" endPosition="323" />
     <nodeInfo nodeId="2960002797019070861" fileName="TransformationUtil.java" startLine="298" startPosition="71" endLine="299" endPosition="80" />
     <nodeInfo nodeId="2960002797019070863" fileName="TransformationUtil.java" startLine="299" startPosition="80" endLine="300" endPosition="53" />
     <nodeInfo nodeId="2960002797019070870" fileName="TransformationUtil.java" startLine="301" startPosition="167" endLine="302" endPosition="96" />
@@ -2370,7 +2370,7 @@
     <nodeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1620" startPosition="57" endLine="1622" endPosition="5" />
     <nodeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1677" startPosition="55" endLine="1679" endPosition="5" />
     <nodeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1695" startPosition="57" endLine="1697" endPosition="5" />
-    <nodeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1766" startPosition="55" endLine="1768" endPosition="5" />
+    <nodeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1766" startPosition="57" endLine="1768" endPosition="5" />
     <nodeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1784" startPosition="53" endLine="1786" endPosition="5" />
     <nodeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1802" startPosition="61" endLine="1804" endPosition="5" />
     <nodeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1820" startPosition="53" endLine="1822" endPosition="5" />
@@ -2832,7 +2832,7 @@
     <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1621" startPosition="48" endLine="1621" endPosition="48" />
     <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1678" startPosition="46" endLine="1678" endPosition="46" />
     <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1696" startPosition="48" endLine="1696" endPosition="48" />
-    <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1767" startPosition="46" endLine="1767" endPosition="46" />
+    <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1767" startPosition="48" endLine="1767" endPosition="48" />
     <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1785" startPosition="44" endLine="1785" endPosition="44" />
     <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1803" startPosition="52" endLine="1803" endPosition="52" />
     <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1821" startPosition="44" endLine="1821" endPosition="44" />
@@ -2870,7 +2870,7 @@
     <scopeInfo nodeId="2960002797019071492" fileName="TransformationUtil.java" startLine="254" startPosition="62" endLine="255" endPosition="180" />
     <scopeInfo nodeId="3398683006042884619" fileName="TransformationUtil.java" startLine="261" startPosition="190" endLine="262" endPosition="134" />
     <scopeInfo nodeId="6084657294691540335" fileName="TransformationUtil.java" startLine="272" startPosition="185" endLine="273" endPosition="263" />
-    <scopeInfo nodeId="3905649626142724548" fileName="TransformationUtil.java" startLine="292" startPosition="251" endLine="293" endPosition="323" />
+    <scopeInfo nodeId="3905649626142724548" fileName="TransformationUtil.java" startLine="292" startPosition="413" endLine="293" endPosition="323" />
     <scopeInfo nodeId="2960002797019070869" fileName="TransformationUtil.java" startLine="301" startPosition="167" endLine="302" endPosition="96" />
     <scopeInfo nodeId="4175388117836510259" fileName="TransformationUtil.java" startLine="318" startPosition="122" endLine="319" endPosition="18" />
     <scopeInfo nodeId="2960002797019071516" fileName="TransformationUtil.java" startLine="321" startPosition="219" endLine="322" endPosition="134" />
@@ -3069,7 +3069,7 @@
     <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1695" startPosition="57" endLine="1697" endPosition="5" />
     <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1718" startPosition="18" endLine="1720" endPosition="41" />
     <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1742" startPosition="22" endLine="1744" endPosition="46" />
-    <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1766" startPosition="55" endLine="1768" endPosition="5" />
+    <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1766" startPosition="57" endLine="1768" endPosition="5" />
     <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1784" startPosition="53" endLine="1786" endPosition="5" />
     <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1802" startPosition="61" endLine="1804" endPosition="5" />
     <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1820" startPosition="53" endLine="1822" endPosition="5" />
@@ -3749,7 +3749,7 @@
     <unitInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1479" startPosition="0" endLine="1496" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.TransformationUtil$QuotationClass_crriw5_a0a0a0a2a01" />
     <unitInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1602" startPosition="0" endLine="1619" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.TransformationUtil$QuotationClass_crriw5_a1a0a0c0k" />
     <unitInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1677" startPosition="0" endLine="1694" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.TransformationUtil$QuotationClass_crriw5_a1a0a0e0k" />
-    <unitInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1766" startPosition="0" endLine="1783" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.TransformationUtil$QuotationClass_crriw5_a1a0a0b0l" />
+    <unitInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1766" startPosition="0" endLine="1783" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.TransformationUtil$QuotationClass_crriw5_a1a0a0a1a11" />
     <unitInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1784" startPosition="0" endLine="1801" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.TransformationUtil$QuotationClass_crriw5_a1a0b0n" />
     <unitInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1802" startPosition="0" endLine="1819" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.TransformationUtil$QuotationClass_crriw5_a1a0a0a0a0a0c0o" />
     <unitInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="1820" startPosition="0" endLine="1837" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.TransformationUtil$QuotationClass_crriw5_a0a0d0u" />

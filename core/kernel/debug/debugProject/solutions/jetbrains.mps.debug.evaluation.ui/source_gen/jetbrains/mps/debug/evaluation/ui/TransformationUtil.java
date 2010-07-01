@@ -289,7 +289,7 @@ public class TransformationUtil {
   public static void replaceInstanceof(SNode evaluateMethod) {
     List<SNode> instanceofs = SNodeOperations.getDescendants(evaluateMethod, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression", false, new String[]{});
     for (SNode instanceofExpression : ListSequence.fromList(instanceofs)) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(instanceofExpression, "leftExpression", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a0b0l().createNode())) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(instanceofExpression, "leftExpression", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a0a1a11().createNode()) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(instanceofExpression, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.NullLiteral"))) {
         SNodeOperations.replaceWithAnother(instanceofExpression, new TransformationUtil.QuotationClass_crriw5_a0a0a0a0b0l().createNode(createStringLiteral(getJniSignatureFromType(SLinkOperations.getTarget(instanceofExpression, "classType", true))), SLinkOperations.getTarget(instanceofExpression, "leftExpression", true)));
       }
     }
@@ -1763,8 +1763,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a1a0a0b0l {
-    public QuotationClass_crriw5_a1a0a0b0l() {
+  public static class QuotationClass_crriw5_a1a0a0a1a11 {
+    public QuotationClass_crriw5_a1a0a0a1a11() {
     }
 
     public SNode createNode() {
