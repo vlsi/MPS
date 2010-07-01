@@ -2636,49 +2636,49 @@
     <nodeInfo nodeId="4759505090531800554" fileName="DebugRunMenu_ActionGroup.java" startLine="26" startPosition="120" endLine="27" endPosition="119" />
   </root>
   <root nodeId="2589658255268083871">
-    <nodeInfo nodeId="2589658255268083876" fileName="RenameFileOrDirectory_Action.java" startLine="26" startPosition="0" endLine="27" endPosition="35" />
-    <nodeInfo nodeId="1557895745570914102" fileName="RenameFileOrDirectory_Action.java" startLine="27" startPosition="35" endLine="28" endPosition="26" />
-    <nodeInfo nodeId="6134778262076357745" fileName="RenameFileOrDirectory_Action.java" startLine="28" startPosition="26" endLine="29" endPosition="22" />
-    <nodeInfo nodeId="4044729767330001563" fileName="RenameFileOrDirectory_Action.java" startLine="80" startPosition="9" endLine="81" endPosition="80" />
-    <nodeInfo nodeId="1025587571450947934" fileName="RenameFileOrDirectory_Action.java" startLine="81" startPosition="80" endLine="82" endPosition="167" />
-    <nodeInfo nodeId="4044729767330001529" fileName="RenameFileOrDirectory_Action.java" startLine="82" startPosition="167" endLine="83" endPosition="20" />
-    <nodeInfo nodeId="1557895745570983223" fileName="RenameFileOrDirectory_Action.java" startLine="84" startPosition="29" endLine="85" endPosition="15" />
-    <nodeInfo nodeId="859814836892083629" fileName="RenameFileOrDirectory_Action.java" startLine="86" startPosition="7" endLine="87" endPosition="47" />
-    <nodeInfo nodeId="1720891269475779226" fileName="RenameFileOrDirectory_Action.java" startLine="91" startPosition="71" endLine="92" endPosition="21" />
-    <nodeInfo nodeId="859814836892159704" fileName="RenameFileOrDirectory_Action.java" startLine="93" startPosition="13" endLine="94" endPosition="80" />
-    <nodeInfo nodeId="3812855676554060506" fileName="RenameFileOrDirectory_Action.java" startLine="94" startPosition="80" endLine="95" endPosition="89" />
-    <nodeInfo nodeId="3812855676554060517" fileName="RenameFileOrDirectory_Action.java" startLine="97" startPosition="33" endLine="98" endPosition="202" />
-    <nodeInfo nodeId="6134778262076357764" fileName="RenameFileOrDirectory_Action.java" startLine="113" startPosition="49" endLine="114" endPosition="97" />
-    <nodeInfo nodeId="7454493598691787148" fileName="RenameFileOrDirectory_Action.java" startLine="114" startPosition="97" endLine="115" endPosition="18" />
-    <nodeInfo nodeId="6134778262076353731" fileName="RenameFileOrDirectory_Action.java" startLine="117" startPosition="95" endLine="118" endPosition="105" />
-    <nodeInfo nodeId="6134778262076357780" fileName="RenameFileOrDirectory_Action.java" startLine="118" startPosition="105" endLine="119" endPosition="18" />
-    <nodeInfo nodeId="7454493598691787152" fileName="RenameFileOrDirectory_Action.java" startLine="120" startPosition="5" endLine="121" endPosition="17" />
-    <nodeInfo nodeId="1557895745570983212" fileName="RenameFileOrDirectory_Action.java" startLine="83" startPosition="20" endLine="86" endPosition="7" />
-    <nodeInfo nodeId="1720891269475708583" fileName="RenameFileOrDirectory_Action.java" startLine="90" startPosition="15" endLine="93" endPosition="13" />
-    <nodeInfo nodeId="3812855676554060515" fileName="RenameFileOrDirectory_Action.java" startLine="96" startPosition="55" endLine="100" endPosition="0" />
-    <nodeInfo nodeId="7454493598691787140" fileName="RenameFileOrDirectory_Action.java" startLine="112" startPosition="49" endLine="116" endPosition="5" />
-    <nodeInfo nodeId="6134778262076353710" fileName="RenameFileOrDirectory_Action.java" startLine="116" startPosition="5" endLine="120" endPosition="5" />
-    <nodeInfo nodeId="3812855676554060513" fileName="RenameFileOrDirectory_Action.java" startLine="95" startPosition="89" endLine="100" endPosition="15" />
-    <nodeInfo nodeId="7454493598691787134" fileName="RenameFileOrDirectory_Action.java" startLine="111" startPosition="0" endLine="123" endPosition="0" />
-    <nodeInfo nodeId="835030696107935357" fileName="RenameFileOrDirectory_Action.java" startLine="89" startPosition="27" endLine="102" endPosition="11" />
-    <nodeInfo nodeId="835030696107857551" fileName="RenameFileOrDirectory_Action.java" startLine="88" startPosition="69" endLine="104" endPosition="0" />
-    <nodeInfo nodeId="835030696107857550" fileName="RenameFileOrDirectory_Action.java" startLine="87" startPosition="47" endLine="104" endPosition="9" />
-    <scopeInfo nodeId="835030696107935363" fileName="RenameFileOrDirectory_Action.java" startLine="101" startPosition="35" endLine="101" endPosition="35" />
-    <scopeInfo nodeId="1557895745570983213" fileName="RenameFileOrDirectory_Action.java" startLine="84" startPosition="29" endLine="85" endPosition="15" />
-    <scopeInfo nodeId="1720891269475708584" fileName="RenameFileOrDirectory_Action.java" startLine="91" startPosition="71" endLine="92" endPosition="21" />
-    <scopeInfo nodeId="3812855676554060516" fileName="RenameFileOrDirectory_Action.java" startLine="97" startPosition="33" endLine="98" endPosition="202" />
-    <scopeInfo nodeId="7454493598691787142" fileName="RenameFileOrDirectory_Action.java" startLine="113" startPosition="49" endLine="115" endPosition="18" />
-    <scopeInfo nodeId="6134778262076353711" fileName="RenameFileOrDirectory_Action.java" startLine="117" startPosition="95" endLine="119" endPosition="18" />
-    <scopeInfo nodeId="3812855676554060515" fileName="RenameFileOrDirectory_Action.java" startLine="96" startPosition="55" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="7454493598691787136" fileName="RenameFileOrDirectory_Action.java" startLine="112" startPosition="49" endLine="121" endPosition="17" />
-    <scopeInfo nodeId="835030696107935358" fileName="RenameFileOrDirectory_Action.java" startLine="90" startPosition="15" endLine="100" endPosition="15" />
-    <scopeInfo nodeId="7454493598691787134" fileName="RenameFileOrDirectory_Action.java" startLine="111" startPosition="0" endLine="123" endPosition="0">
+    <nodeInfo nodeId="2589658255268083876" fileName="RenameFileOrDirectory_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="35" />
+    <nodeInfo nodeId="1557895745570914102" fileName="RenameFileOrDirectory_Action.java" startLine="26" startPosition="35" endLine="27" endPosition="26" />
+    <nodeInfo nodeId="6134778262076357745" fileName="RenameFileOrDirectory_Action.java" startLine="27" startPosition="26" endLine="28" endPosition="22" />
+    <nodeInfo nodeId="4044729767330001563" fileName="RenameFileOrDirectory_Action.java" startLine="79" startPosition="9" endLine="80" endPosition="80" />
+    <nodeInfo nodeId="1025587571450947934" fileName="RenameFileOrDirectory_Action.java" startLine="80" startPosition="80" endLine="81" endPosition="167" />
+    <nodeInfo nodeId="4044729767330001529" fileName="RenameFileOrDirectory_Action.java" startLine="81" startPosition="167" endLine="82" endPosition="20" />
+    <nodeInfo nodeId="1557895745570983223" fileName="RenameFileOrDirectory_Action.java" startLine="83" startPosition="29" endLine="84" endPosition="15" />
+    <nodeInfo nodeId="859814836892083629" fileName="RenameFileOrDirectory_Action.java" startLine="85" startPosition="7" endLine="86" endPosition="47" />
+    <nodeInfo nodeId="1720891269475779226" fileName="RenameFileOrDirectory_Action.java" startLine="90" startPosition="71" endLine="91" endPosition="21" />
+    <nodeInfo nodeId="859814836892159704" fileName="RenameFileOrDirectory_Action.java" startLine="92" startPosition="13" endLine="93" endPosition="80" />
+    <nodeInfo nodeId="3812855676554060506" fileName="RenameFileOrDirectory_Action.java" startLine="93" startPosition="80" endLine="94" endPosition="89" />
+    <nodeInfo nodeId="7694845294337390390" fileName="RenameFileOrDirectory_Action.java" startLine="96" startPosition="33" endLine="97" endPosition="178" />
+    <nodeInfo nodeId="6134778262076357764" fileName="RenameFileOrDirectory_Action.java" startLine="112" startPosition="49" endLine="113" endPosition="97" />
+    <nodeInfo nodeId="7454493598691787148" fileName="RenameFileOrDirectory_Action.java" startLine="113" startPosition="97" endLine="114" endPosition="18" />
+    <nodeInfo nodeId="6134778262076353731" fileName="RenameFileOrDirectory_Action.java" startLine="116" startPosition="95" endLine="117" endPosition="105" />
+    <nodeInfo nodeId="6134778262076357780" fileName="RenameFileOrDirectory_Action.java" startLine="117" startPosition="105" endLine="118" endPosition="18" />
+    <nodeInfo nodeId="7454493598691787152" fileName="RenameFileOrDirectory_Action.java" startLine="119" startPosition="5" endLine="120" endPosition="17" />
+    <nodeInfo nodeId="1557895745570983212" fileName="RenameFileOrDirectory_Action.java" startLine="82" startPosition="20" endLine="85" endPosition="7" />
+    <nodeInfo nodeId="1720891269475708583" fileName="RenameFileOrDirectory_Action.java" startLine="89" startPosition="15" endLine="92" endPosition="13" />
+    <nodeInfo nodeId="3812855676554060515" fileName="RenameFileOrDirectory_Action.java" startLine="95" startPosition="55" endLine="99" endPosition="0" />
+    <nodeInfo nodeId="7454493598691787140" fileName="RenameFileOrDirectory_Action.java" startLine="111" startPosition="49" endLine="115" endPosition="5" />
+    <nodeInfo nodeId="6134778262076353710" fileName="RenameFileOrDirectory_Action.java" startLine="115" startPosition="5" endLine="119" endPosition="5" />
+    <nodeInfo nodeId="3812855676554060513" fileName="RenameFileOrDirectory_Action.java" startLine="94" startPosition="89" endLine="99" endPosition="15" />
+    <nodeInfo nodeId="7454493598691787134" fileName="RenameFileOrDirectory_Action.java" startLine="110" startPosition="0" endLine="122" endPosition="0" />
+    <nodeInfo nodeId="835030696107935357" fileName="RenameFileOrDirectory_Action.java" startLine="88" startPosition="27" endLine="101" endPosition="11" />
+    <nodeInfo nodeId="835030696107857551" fileName="RenameFileOrDirectory_Action.java" startLine="87" startPosition="69" endLine="103" endPosition="0" />
+    <nodeInfo nodeId="835030696107857550" fileName="RenameFileOrDirectory_Action.java" startLine="86" startPosition="47" endLine="103" endPosition="9" />
+    <scopeInfo nodeId="835030696107935363" fileName="RenameFileOrDirectory_Action.java" startLine="100" startPosition="35" endLine="100" endPosition="35" />
+    <scopeInfo nodeId="1557895745570983213" fileName="RenameFileOrDirectory_Action.java" startLine="83" startPosition="29" endLine="84" endPosition="15" />
+    <scopeInfo nodeId="1720891269475708584" fileName="RenameFileOrDirectory_Action.java" startLine="90" startPosition="71" endLine="91" endPosition="21" />
+    <scopeInfo nodeId="3812855676554060516" fileName="RenameFileOrDirectory_Action.java" startLine="96" startPosition="33" endLine="97" endPosition="178" />
+    <scopeInfo nodeId="7454493598691787142" fileName="RenameFileOrDirectory_Action.java" startLine="112" startPosition="49" endLine="114" endPosition="18" />
+    <scopeInfo nodeId="6134778262076353711" fileName="RenameFileOrDirectory_Action.java" startLine="116" startPosition="95" endLine="118" endPosition="18" />
+    <scopeInfo nodeId="3812855676554060515" fileName="RenameFileOrDirectory_Action.java" startLine="95" startPosition="55" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="7454493598691787136" fileName="RenameFileOrDirectory_Action.java" startLine="111" startPosition="49" endLine="120" endPosition="17" />
+    <scopeInfo nodeId="835030696107935358" fileName="RenameFileOrDirectory_Action.java" startLine="89" startPosition="15" endLine="99" endPosition="15" />
+    <scopeInfo nodeId="7454493598691787134" fileName="RenameFileOrDirectory_Action.java" startLine="110" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="7454493598691787138" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="835030696107857552" fileName="RenameFileOrDirectory_Action.java" startLine="89" startPosition="27" endLine="102" endPosition="11" />
-    <scopeInfo nodeId="835030696107857551" fileName="RenameFileOrDirectory_Action.java" startLine="88" startPosition="69" endLine="104" endPosition="0" />
-    <unitInfo nodeId="3812855676554060515" fileName="RenameFileOrDirectory_Action.java" startLine="96" startPosition="43" endLine="100" endPosition="13" unitName="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action$2" />
-    <unitInfo nodeId="835030696107857551" fileName="RenameFileOrDirectory_Action.java" startLine="88" startPosition="57" endLine="104" endPosition="7" unitName="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action$1" />
+    <scopeInfo nodeId="835030696107857552" fileName="RenameFileOrDirectory_Action.java" startLine="88" startPosition="27" endLine="101" endPosition="11" />
+    <scopeInfo nodeId="835030696107857551" fileName="RenameFileOrDirectory_Action.java" startLine="87" startPosition="69" endLine="103" endPosition="0" />
+    <unitInfo nodeId="3812855676554060515" fileName="RenameFileOrDirectory_Action.java" startLine="95" startPosition="43" endLine="99" endPosition="13" unitName="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action$2" />
+    <unitInfo nodeId="835030696107857551" fileName="RenameFileOrDirectory_Action.java" startLine="87" startPosition="57" endLine="103" endPosition="7" unitName="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action$1" />
   </root>
   <root nodeId="2589658255268083877">
     <nodeInfo nodeId="4044729767330008710" fileName="MoveFileOrDirectory_Action.java" startLine="28" startPosition="0" endLine="29" endPosition="35" />
