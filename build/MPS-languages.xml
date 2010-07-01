@@ -727,7 +727,15 @@
       <zipfileset dir="core/kernel/debug/debugProject/solutions/jetbrains.mps.debug.evaluation.ui" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.kernel_i5a">
+  <target name="pack.jetbrains.mps.debug.customViewers_i5a">
+    <mkdir dir="core/kernel/debug/debugProject/languages/customViewers/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.debug.customViewers.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/kernel/debug/debugProject/languages/customViewers/customViewers.mpl" prefix="module" />
+      <zipfileset dir="core/kernel/debug/debugProject/languages/customViewers/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="core/kernel/debug/debugProject/languages/customViewers" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.kernel_j5a">
     <mkdir dir="core/kernel/source_gen.caches" />
     <mkdir dir="core/kernel/kernelSolution/test_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.kernel.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
