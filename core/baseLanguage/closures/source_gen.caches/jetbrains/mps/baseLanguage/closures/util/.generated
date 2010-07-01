@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2sf5b9uygh1g1r6or3gmjmeqipv60ti">
-  <common hash="-16362ah5wtv3rifa0o7bem3bn8lyltt" />
-  <source id="1225980323340" name="Constants" hash="7bpo1pj7t67ao5askshb58ll5lx46hu">
-    <file name="Constants.java" />
-  </source>
-</dependencies>
-
