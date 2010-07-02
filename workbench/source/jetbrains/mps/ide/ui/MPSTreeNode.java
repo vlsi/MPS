@@ -39,10 +39,7 @@ import javax.swing.tree.MutableTreeNode;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Kostik
@@ -389,25 +386,33 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public void removeTreeMessage(TreeMessage message, boolean updatePresentation) {
+    final boolean[] b = new boolean[]{false};
     synchronized (myTreeMessagesLock) {
       if (myTreeMessages != null) {
-        myTreeMessages.remove(message);
+        b[0] = myTreeMessages.remove(message);
       }
     }
-    treeMessagesChanged(updatePresentation);
+    if (b[0]) {
+      treeMessagesChanged(updatePresentation);
+    }
   }
 
-  public void removeTreeMessages(TreeMessageOwner owner, boolean updatePresentation) {
-    if (owner == null) return;
+  public Set<TreeMessage> removeTreeMessages(TreeMessageOwner owner, boolean updatePresentation) {
+    Set<TreeMessage> result = new HashSet<TreeMessage>(1);
+    if (owner == null) return result;
     synchronized (myTreeMessagesLock) {
-      if (myTreeMessages == null) return;
+      if (myTreeMessages == null) return result;
       for (TreeMessage message : new ArrayList<TreeMessage>(myTreeMessages)) {
         if (owner.equals(message.getOwner())) {
+          result.add(message);
           myTreeMessages.remove(message);
         }
       }
     }
-    treeMessagesChanged(updatePresentation);
+    if (!result.isEmpty()) {
+      treeMessagesChanged(updatePresentation);
+    }
+    return result;
   }
 
   protected void doUpdatePresentation() {

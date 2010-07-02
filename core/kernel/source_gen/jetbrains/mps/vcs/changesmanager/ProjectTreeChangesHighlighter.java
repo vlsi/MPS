@@ -42,6 +42,7 @@ import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
+import java.util.Set;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
@@ -466,8 +467,8 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
         FileStatus fileStatus = check_ybywwq_a0a0a0a2a01(myChangesManager.getModelChangesManager(modelDescriptor));
         Color color = check_ybywwq_a0b0a0a2a01(fileStatus);
         for (SModelTreeNode modelTreeNode : ListSequence.fromList(MapSequence.fromMap(mySModelDescriptorsToTreeNodes).get(modelDescriptor))) {
-          modelTreeNode.removeTreeMessages(ProjectTreeChangesHighlighter.this, true);
-          if (EXTRA_CHECKS_ENABLED && fileStatus == FileStatus.NOT_CHANGED) {
+          Set<TreeMessage> wereMessages = modelTreeNode.removeTreeMessages(ProjectTreeChangesHighlighter.this, true);
+          if (EXTRA_CHECKS_ENABLED && !(wereMessages.isEmpty()) && fileStatus == FileStatus.NOT_CHANGED) {
             SModel model = modelDescriptor.getSModel();
             if (model != null && !(model.isDisposed())) {
               for (final SNode node : Sequence.fromIterable(model.getAllNodesWithIds())) {

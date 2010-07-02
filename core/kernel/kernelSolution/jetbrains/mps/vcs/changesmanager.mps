@@ -22877,16 +22877,25 @@
                       <property name="name:7" value="modelTreeNode" />
                     </node>
                     <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5962623969496448896">
-                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5962623969496448897">
-                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5962623969496448898">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="5962623969496448899">
-                            <link role="variable:7" targetNodeId="5962623969496448895" resolveInfo="modelTreeNode" />
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7430908097350477915">
+                        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7430908097350477916">
+                          <property name="name:3" value="wereMessages" />
+                          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7430908097350477917">
+                            <link role="classifier:3" targetNodeId="23.~Set" resolveInfo="Set" />
+                            <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7430908097350477918">
+                              <link role="classifier:3" targetNodeId="44.~TreeMessage" resolveInfo="TreeMessage" />
+                            </node>
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5962623969496448900">
-                            <link role="baseMethodDeclaration:3" targetNodeId="45.~MPSTreeNode.removeTreeMessages(jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner,boolean):void" resolveInfo="removeTreeMessages" />
-                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5962623969496448901" />
-                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="5962623969496448902">
-                              <property name="value:3" value="true" />
+                          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7430908097350477919">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="7430908097350477920">
+                              <link role="variable:7" targetNodeId="5962623969496448895" resolveInfo="modelTreeNode" />
+                            </node>
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7430908097350477921">
+                              <link role="baseMethodDeclaration:3" targetNodeId="45.~MPSTreeNode.removeTreeMessages(jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner,boolean):java.util.Set" resolveInfo="removeTreeMessages" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="7430908097350477922" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7430908097350477923">
+                                <property name="value:3" value="true" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -22980,7 +22989,7 @@
                                                           <link role="variableDeclaration:3" targetNodeId="365157171029572548" resolveInfo="tn" />
                                                         </node>
                                                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="365157171029572558">
-                                                          <link role="baseMethodDeclaration:3" targetNodeId="45.~MPSTreeNode.removeTreeMessages(jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner,boolean):void" resolveInfo="removeTreeMessages" />
+                                                          <link role="baseMethodDeclaration:3" targetNodeId="45.~MPSTreeNode.removeTreeMessages(jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner,boolean):java.util.Set" resolveInfo="removeTreeMessages" />
                                                           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="365157171029572568" />
                                                           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="365157171029572560">
                                                             <property name="value:3" value="true" />
@@ -23032,10 +23041,7 @@
                             </node>
                           </node>
                         </node>
-                        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="2261642348366527717">
-                          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference:3" id="2261642348366527718">
-                            <link role="variableDeclaration:3" targetNodeId="4344428334011818010" resolveInfo="EXTRA_CHECKS_ENABLED" />
-                          </node>
+                        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="7430908097350477924">
                           <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="2261642348366527719">
                             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2261642348366527720">
                               <link role="classifier:3" targetNodeId="11.~FileStatus" resolveInfo="FileStatus" />
@@ -23043,6 +23049,21 @@
                             </node>
                             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2261642348366527721">
                               <link role="variableDeclaration:3" targetNodeId="2261642348366451461" resolveInfo="fileStatus" />
+                            </node>
+                          </node>
+                          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="2261642348366527717">
+                            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference:3" id="2261642348366527718">
+                              <link role="variableDeclaration:3" targetNodeId="4344428334011818010" resolveInfo="EXTRA_CHECKS_ENABLED" />
+                            </node>
+                            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="7430908097350504685">
+                              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7430908097350504688">
+                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7430908097350504687">
+                                  <link role="variableDeclaration:3" targetNodeId="7430908097350477916" resolveInfo="wereMessages" />
+                                </node>
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7430908097350504692">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="23.~Set.isEmpty():boolean" resolveInfo="isEmpty" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>
