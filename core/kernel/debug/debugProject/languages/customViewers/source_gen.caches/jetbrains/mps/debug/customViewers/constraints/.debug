@@ -37,6 +37,9 @@
       <varInfo nodeId="5264817233616809533" varName="result" />
     </scopeInfo>
   </root>
+  <root nodeId="7471356136626020363">
+    <scopeInfo nodeId="7471356136626020365" fileName="StringValueOperation_Constraints.java" startLine="17" startPosition="114" endLine="18" endPosition="333" />
+  </root>
   <root nodeId="7744028807303023760">
     <scopeInfo nodeId="7744028807303023762" fileName="CallMethodOperation_Constraints.java" startLine="17" startPosition="114" endLine="18" endPosition="332" />
   </root>
