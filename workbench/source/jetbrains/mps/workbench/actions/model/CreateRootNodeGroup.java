@@ -39,6 +39,7 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -100,7 +101,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     List<Language> modelLanguages = modelDescriptor.getSModel().getLanguages(scope);
     if (modelLanguages.size() == 0) {
-      add(new AddLanguageImport_Action());
+      add(ActionFactory.getInstance().acquireRegisteredAction("jetbrains.mps.ide.actions.AddLanguageImport_Action", "jetbrains.mps.ide"));
     }
 
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
