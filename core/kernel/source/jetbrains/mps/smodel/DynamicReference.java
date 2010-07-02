@@ -55,7 +55,7 @@ public class DynamicReference extends SReferenceBase {
 
     if (getResolveInfo() == null) {
       if (!silently) {
-        error("no resolve info");
+        error("bad reference: no resolve info");
       }
       return null;
     }
@@ -71,7 +71,7 @@ public class DynamicReference extends SReferenceBase {
       new GlobalOperationContext());
     if (status.isError()) {
       if (!silently) {
-        error("can't obtain search scope: " + status.getMessage());
+        error("cannot obtain search scope: " + status.getMessage());
       }
       return null;
     }
@@ -79,7 +79,7 @@ public class DynamicReference extends SReferenceBase {
     LinkDeclaration mostSpecificForRole = new ConceptAndSuperConceptsScope(referenceNodeConcept).getMostSpecificLinkDeclarationByRole(getRole());
     if (mostSpecificForRole == null) {
       if (!silently) {
-        error("couldn't find link declaration '" + getRole() + "' in concept '" + referenceNode.getConceptFqName() + "'");
+        error("cannot find link declaration '" + getRole() + "' in concept '" + referenceNode.getConceptFqName() + "'");
       }
       return null;
     }
@@ -88,7 +88,7 @@ public class DynamicReference extends SReferenceBase {
     IReferenceInfoResolver infoResolver = searchScope.getReferenceInfoResolver(referenceNode, mostSpecificForRole.getTarget());
     if (infoResolver == null) {
       if (!silently) {
-        error("can't obtain resolve info resolver: '" + getRole() + "'");
+        error("cannot obtain resolver for reference: '" + getRole() + "'");
       }
       return null;
     }
@@ -96,7 +96,7 @@ public class DynamicReference extends SReferenceBase {
     SNode targetNode = infoResolver.resolve(getResolveInfo(), getTargetSModelReference());
     if (targetNode == null) {
       if (!silently) {
-        error("can't find target by resolve info: '" + getResolveInfo() + "'");
+        error("cannot resolve reference by string: '" + getResolveInfo() + "'");
       }
 //      infoResolver.resolve(getResolveInfo(), getTargetSModelReference());
     }

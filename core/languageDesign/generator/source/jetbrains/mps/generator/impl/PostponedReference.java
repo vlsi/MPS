@@ -99,11 +99,13 @@ public class PostponedReference extends SReference {
           // ok
           myReplacementReference = new StaticReference(role, outputSourceNode, outputTargetNode);
         } else {
-          myReferenceInfo.showErrorMessage(myGenerator);
           myReplacementReference = new StaticReference(role, outputSourceNode, targetModelReference, null, myReferenceInfo.getResolveInfoForNothing());
         }
       } else if (myReferenceInfo.isRequired()) {
-        myReferenceInfo.showErrorMessage(myGenerator);
+        myGenerator.getLogger().error(myReferenceInfo.getOutputSourceNode(),
+          "cannot resolve required reference; role: '" + myReferenceInfo.getReferenceRole() + "' in output node " + myReferenceInfo.getOutputSourceNode().getDebugText(),
+          myReferenceInfo.getErrorDescriptions());
+
         myReplacementReference = new StaticReference(role, outputSourceNode, targetModelReference, null, myReferenceInfo.getResolveInfoForNothing());
       } else {
         // not resolved and not required
@@ -131,7 +133,7 @@ public class PostponedReference extends SReference {
   private boolean checkResolvedTarget(SNode outputNode, String role, SNode outputTargetNode) {
     RoleValidationStatus status = myGenerator.validateReferent(outputNode, role, outputTargetNode);
     if (status != null) {
-      status.reportProblem(true);
+      status.reportProblem(true, "bad reference: ", myReferenceInfo.getErrorDescriptions());
       return false;
     }
 
@@ -139,12 +141,14 @@ public class PostponedReference extends SReference {
     if (referentNodeModel != outputNode.getModel()) {
       if (SModelStereotype.isGeneratorModel(referentNodeModel)) {
         // references on template nodes are not acceptable
-        myGenerator.getLogger().error(outputNode, "unacceptable referent [template node]: " + outputTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
+        myGenerator.getLogger().error(outputNode, "bad reference, cannot refer to a generator model: " + outputTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText(),
+          myReferenceInfo.getErrorDescriptions());
         return false;
       }
       if (referentNodeModel instanceof TransientSModel) {
         // references on transient nodes are not acceptable
-        myGenerator.getLogger().error(outputNode, "unacceptable referent [transient node]: " + outputTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
+        myGenerator.getLogger().error(outputNode, "bad reference, cannot refer to a transient model: " + outputTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText(),
+          myReferenceInfo.getErrorDescriptions());
         return false;
       }
     }

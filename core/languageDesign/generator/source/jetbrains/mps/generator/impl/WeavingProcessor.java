@@ -2,6 +2,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.template.QueryExecutionContext;
@@ -15,6 +16,7 @@ import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -59,26 +61,7 @@ public class WeavingProcessor {
     }
 
     // check fragments: all fragments with <default context> should have the same parent
-    boolean allFragmentsWhichUseDefaultContextHaveSameParent = true;
-    SNode defaultContext = null;
-    for (TemplateFragment templateFragment : templateFragments) {
-      if (templateFragment.getContextNodeQuery() == null) { // uses <default context>
-        SNode fragmentContextNode = BaseAdapter.fromAdapter(templateFragment.getParent().getParent());
-        if (defaultContext == null) {
-          defaultContext = fragmentContextNode;
-        } else if (defaultContext != fragmentContextNode) {
-          allFragmentsWhichUseDefaultContextHaveSameParent = false;
-          break;
-        }
-      }
-    }
-    if (!allFragmentsWhichUseDefaultContextHaveSameParent) {
-      for (TemplateFragment templateFragment : templateFragments) {
-        if (templateFragment.getContextNodeQuery() == null) { // uses <default context>
-          myGenerator.showErrorMessage(null, templateFragment.getNode(), null, "template fragment uses <default context>: conflicts with other fragments which use <default context>");
-        }
-      }
-    }
+    checkTemplateFragmentsForWeaving(template, templateFragments);
 
     String ruleMappingName = GeneratorUtil.getMappingName(rule, null);
     // for each template fragment create output nodes
@@ -101,7 +84,7 @@ public class WeavingProcessor {
             // check child
             RoleValidationStatus status = myGenerator.validateChild(contextParentNode, childRole, outputNodeToWeave);
             if (status != null) {
-              status.reportProblem(false,
+              status.reportProblem(false, "",
                 GeneratorUtil.describe(context.getInput(), "input"),
                 GeneratorUtil.describe(templateFragment.getNode(), "template"),
                 GeneratorUtil.describe(rule.getNode(), "rule"));
@@ -123,14 +106,43 @@ public class WeavingProcessor {
             }
           }
         } catch (DismissTopMappingRuleException e) {
-          myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "dismission of weaving rule is not supported");
+          myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "wrong template: dismission of weaving rule is not supported");
         } catch (TemplateProcessingFailureException e) {
+          // FIXME
           myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "error processing template fragment");
           myGenerator.getLogger().info(contextParentNode, " -- was output context node:");
         }
       } else {
         myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "couldn't define 'context' for template fragment");
       }
+    }
+  }
+
+  private void checkTemplateFragmentsForWeaving(TemplateDeclaration template, List<TemplateFragment> templateFragments) {
+
+    // all fragments with <default context> should have the same parent
+    boolean sameParent = true;
+    SNode defaultContext = null;
+    for (TemplateFragment templateFragment : templateFragments) {
+      if (templateFragment.getContextNodeQuery() == null) { // uses <default context>
+        SNode fragmentContextNode = BaseAdapter.fromAdapter(templateFragment.getParent().getParent());
+        if (defaultContext == null) {
+          defaultContext = fragmentContextNode;
+        } else if (defaultContext != fragmentContextNode) {
+          sameParent = false;
+          break;
+        }
+      }
+    }
+    if (!sameParent) {
+      List<ProblemDescription> list = new ArrayList<ProblemDescription>();
+      for (TemplateFragment templateFragment : templateFragments) {
+        if (templateFragment.getContextNodeQuery() == null) { // uses <default context>
+          list.add(GeneratorUtil.describe(templateFragment.getNode(), "template fragment"));
+        }
+      }
+      myGenerator.getLogger().error(template.getNode(), "all fragments with <default context> should have the same parent",
+        list.toArray(new ProblemDescription[list.size()]));
     }
   }
 
@@ -163,7 +175,7 @@ public class WeavingProcessor {
         try {
           RuleConsequence ruleConsequence = rule.getRuleConsequence();
           if (ruleConsequence == null) {
-            myGenerator.showErrorMessage(applicableNode, null, rule.getNode(), "no rule consequence");
+            myGenerator.showErrorMessage(applicableNode, null, rule.getNode(), "weaving rule: no rule consequence");
           } else {
             myGenerationTracer.pushRuleConsequence(ruleConsequence.getNode());
             if (ruleConsequence instanceof TemplateDeclarationReference) {
@@ -175,7 +187,7 @@ public class WeavingProcessor {
               WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
               SourceSubstituteMacro_SourceNodesQuery query = weaveEach.getSourceNodesQuery();
               if (query == null) {
-                myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't create list of source nodes");
+                myGenerator.showErrorMessage(applicableNode, rule.getNode(), "weaving rule: cannot create list of source nodes");
                 break;
               }
               TemplateDeclaration template = weaveEach.getTemplate();
@@ -188,7 +200,7 @@ public class WeavingProcessor {
                   GeneratorUtil.createTemplateContext(queryNode, null, reductionContext, ruleConsequence, queryNode, myGenerator), reductionContext);
               }
             } else {
-              myGenerator.showErrorMessage(applicableNode, null, ruleConsequence.getNode(), "unsupported rule consequence");
+              myGenerator.showErrorMessage(applicableNode, null, ruleConsequence.getNode(), "weaving rule: unsupported rule consequence");
             }
           }
         } finally {
@@ -204,7 +216,7 @@ public class WeavingProcessor {
 
   private boolean checkContext(Weaving_MappingRule rule, SNode applicableNode, SNode contextNode) {
     if (contextNode == null) {
-      myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
+      myGenerator.showErrorMessage(applicableNode, rule.getNode(), "weaving rule: cannot find context node");
       return false;
     }
 

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
@@ -73,5 +74,5 @@ public abstract class ReferenceInfo {
     return true;
   }
 
-  public abstract void showErrorMessage(ITemplateGenerator generator);
+  public abstract ProblemDescription[] getErrorDescriptions();
 }

@@ -580,7 +580,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             // check child
             RoleValidationStatus status = validateChild(outputNode, childRole, outputChildNode);
             if (status != null) {
-              status.reportProblem(false,
+              status.reportProblem(false, "",
                 GeneratorUtil.describe(inputNode, "input"),
                 templateNode != null && SModelStereotype.isGeneratorModel(templateNode.getModel()) ?
                   GeneratorUtil.describe(templateNode, "template") : null);

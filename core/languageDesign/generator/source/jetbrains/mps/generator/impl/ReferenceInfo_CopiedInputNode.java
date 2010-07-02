@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 
@@ -66,8 +67,10 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     return myInputTargetNode.getResolveInfo();
   }
 
-  public void showErrorMessage(ITemplateGenerator generator) {
-    generator.getLogger().error(getOutputSourceNode(), "cannot resolve reference; role: '" + getReferenceRole() + "' in output node " + getOutputSourceNode().getDebugText(),
-      GeneratorUtil.describe(myInputNode, "input node"));
+  @Override
+  public ProblemDescription[] getErrorDescriptions() {
+    return new ProblemDescription[] {
+      GeneratorUtil.describe(myInputNode, "input node")
+    };
   }
 }

@@ -128,7 +128,7 @@ public class DelayedChanges {
             String childRole = parent.getRoleOf(myChildToReplace);
             RoleValidationStatus status = myGenerator.validateChild(parent, childRole, child);
             if (status != null) {
-              status.reportProblem(false,
+              status.reportProblem(false, "",
                 GeneratorUtil.describe(myContext.getInput(), "input"),
                 GeneratorUtil.describe(myMapSrcMacro, "template"));
             }

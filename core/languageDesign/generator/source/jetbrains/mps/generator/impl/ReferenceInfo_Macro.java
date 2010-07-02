@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -145,10 +146,12 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     }
   }
 
-  public void showErrorMessage(ITemplateGenerator generator) {
+  @Override
+  public ProblemDescription[] getErrorDescriptions() {
     SNode inputNode = getInputNode();
-    generator.getLogger().error(getOutputSourceNode(), "cannot resolve reference; role: '" + getReferenceRole() + "' in output node " + getOutputSourceNode().getDebugText(),
+    return new ProblemDescription[] {
       GeneratorUtil.describe(inputNode, "input node"),
-      GeneratorUtil.describe(myReferenceMacro.getNode(), "reference macro"));
+      GeneratorUtil.describe(myReferenceMacro.getNode(), "reference macro")
+    };
   }
 }

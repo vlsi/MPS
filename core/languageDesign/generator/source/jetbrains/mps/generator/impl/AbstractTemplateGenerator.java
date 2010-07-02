@@ -195,7 +195,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     }
     LinkDeclaration link = SModelSearchUtil.findMostSpecificLinkDeclaration(concept, role);
     if (link == null) {
-      return new RoleValidationStatus(sourceNode, "concept '" + concept.getName() + "' can't have " + relationKind + " with role '" + role + "'",
+      return new RoleValidationStatus(sourceNode, "concept '" + concept.getName() + "' cannot have " + relationKind + " with role '" + role + "'",
         GeneratorUtil.describe(targetNode, relationKind + (child ? "" : " (hidden in editor)")));
     }
     if (!SModelUtil_new.isAcceptableTarget(link, targetNode)) {
@@ -218,11 +218,11 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       this.descriptions = descriptions;
     }
 
-    public void reportProblem(boolean isError, ProblemDescription...descriptions) {
+    public void reportProblem(boolean isError, String prefix, ProblemDescription...descriptions) {
       if(isError) {
-        myLogger.error(sourceNode, message, GeneratorUtil.concat(this.descriptions, descriptions));
+        myLogger.error(sourceNode, prefix + message, GeneratorUtil.concat(this.descriptions, descriptions));
       } else {
-        myLogger.warning(sourceNode, message, GeneratorUtil.concat(this.descriptions, descriptions));
+        myLogger.warning(sourceNode, prefix + message, GeneratorUtil.concat(this.descriptions, descriptions));
       }
     }
   }

@@ -172,7 +172,7 @@ public class TemplateProcessor {
             // check child
             RoleValidationStatus status = myGenerator.validateChild(outputNode, role, outputChildNode);
             if (status != null) {
-              status.reportProblem(false,
+              status.reportProblem(false, "",
                 GeneratorUtil.describe(context.getInput(), "input"),
                 GeneratorUtil.describe(templateNode, "parent in template"),
                 GeneratorUtil.describe(templateChildNode.getNode(), "child in template"));
