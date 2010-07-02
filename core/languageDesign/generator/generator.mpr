@@ -16,6 +16,7 @@
       <languagePath path="${project}/test/outputLang/outputLang.mpl" />
       <languagePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
       <languagePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" />
+      <languagePath path="${project}/languages/errorReporting/errorReporting.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
