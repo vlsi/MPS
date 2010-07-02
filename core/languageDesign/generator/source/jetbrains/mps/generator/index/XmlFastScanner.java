@@ -50,7 +50,7 @@ public class XmlFastScanner {
     assert Character.isJavaIdentifierStart(chr);
     int start = currOffset;
     shift();
-    while(Character.isJavaIdentifierPart(chr)) {
+    while (Character.isJavaIdentifierPart(chr)) {
       shift();
     }
     name = new String(data, start, currOffset - start);
@@ -128,7 +128,7 @@ public class XmlFastScanner {
   private static char[] getCharacters(byte[] content) {
     try {
       Reader r = new InputStreamReader(new ByteArrayInputStream(content), "UTF-8");
-      StringBuilder sb = new StringBuilder(content.length + content.length/4);
+      StringBuilder sb = new StringBuilder(content.length + content.length / 4);
       char[] c = new char[1024];
       int size;
       while ((size = r.read(c)) != -1) {

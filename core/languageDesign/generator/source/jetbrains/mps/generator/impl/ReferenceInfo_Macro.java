@@ -149,7 +149,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   @Override
   public ProblemDescription[] getErrorDescriptions() {
     SNode inputNode = getInputNode();
-    return new ProblemDescription[] {
+    return new ProblemDescription[]{
       GeneratorUtil.describe(inputNode, "input node"),
       GeneratorUtil.describe(myReferenceMacro.getNode(), "reference macro")
     };

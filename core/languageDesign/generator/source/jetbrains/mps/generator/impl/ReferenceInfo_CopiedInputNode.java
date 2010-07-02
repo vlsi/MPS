@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 
 /**
@@ -69,7 +68,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
   @Override
   public ProblemDescription[] getErrorDescriptions() {
-    return new ProblemDescription[] {
+    return new ProblemDescription[]{
       GeneratorUtil.describe(myInputNode, "input node")
     };
   }

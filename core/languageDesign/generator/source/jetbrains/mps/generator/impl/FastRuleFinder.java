@@ -99,7 +99,7 @@ public class FastRuleFinder {
 
     public void blockReductionsForCopiedNode(SNode inputNode, SNode outputNode, ReductionContext reductionContext) {
       Object o;
-      if(reductionContext != null) {
+      if (reductionContext != null) {
         o = ReductionContext.combineRuleSets(myCurrentReductionData.get(inputNode), reductionContext.getBlockedRules(inputNode));
       } else {
         o = myCurrentReductionData.get(inputNode);
@@ -109,7 +109,7 @@ public class FastRuleFinder {
         myNextReductionData.put(outputNode, o);
       }
     }
-    
+
     public void advanceStep() {
       myCurrentReductionData = myNextReductionData;
       myNextReductionData = new HashMap<SNode, Object>();

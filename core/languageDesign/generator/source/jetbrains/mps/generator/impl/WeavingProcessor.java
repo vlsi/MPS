@@ -158,7 +158,7 @@ public class WeavingProcessor {
     Iterable<SNode> nodes = myFastNodeFinder.getNodes(applicableConcept, includeInheritors);
     for (SNode applicableNode : nodes) {
       QueryExecutionContext executionContext = myGenerator.getExecutionContext(applicableNode);
-      if(executionContext == null) {
+      if (executionContext == null) {
         continue;
       }
       ReductionContext reductionContext = new ReductionContext(executionContext);

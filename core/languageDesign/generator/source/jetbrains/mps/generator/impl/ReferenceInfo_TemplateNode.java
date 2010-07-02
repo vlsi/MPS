@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 
@@ -92,7 +91,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   @Override
   public ProblemDescription[] getErrorDescriptions() {
     SNode inputNode = getInputNode();
-    return new ProblemDescription[] {
+    return new ProblemDescription[]{
       GeneratorUtil.describe(inputNode, "input node"),
       GeneratorUtil.describe(myTemplateSourceNode, "original reference")
     };

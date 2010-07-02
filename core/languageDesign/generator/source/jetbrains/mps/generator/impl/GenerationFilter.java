@@ -37,20 +37,20 @@ public class GenerationFilter {
   }
 
   private void init() {
-    if(!myGenerationContext.isGenerateDependencies()) {
+    if (!myGenerationContext.isGenerateDependencies()) {
       return;
     }
 
     myGenerationHashes = ModelDigestUtil.getGenerationHashes(myModel, myProject);
 
-    if(myGenerationContext.isRebuildAll()) {
+    if (myGenerationContext.isRebuildAll()) {
       return;
     }
 
     GenerationDependencies dependencies = GenerationDependenciesCache.getInstance().get(myModel);
-    if(dependencies != null && myGenerationHashes != null) {
+    if (dependencies != null && myGenerationHashes != null) {
       analyzeDependencies(dependencies);
-      if(!myUnchangedRoots.isEmpty() || myConditionalsUnchanged) {
+      if (!myUnchangedRoots.isEmpty() || myConditionalsUnchanged) {
         mySavedDependencies = dependencies;
       }
     }
@@ -75,7 +75,7 @@ public class GenerationFilter {
   private void analyzeDependencies(@NotNull GenerationDependencies dependencies) {
 
     GenerationRootDependencies commonDeps = dependencies.getDependenciesFor(ModelDigestUtil.HEADER);
-    if(commonDeps == null) {
+    if (commonDeps == null) {
       return;
     }
 
@@ -83,32 +83,32 @@ public class GenerationFilter {
     {
       String oldHash = commonDeps.getHash();
       String newHash = myGenerationHashes.get(ModelDigestUtil.HEADER);
-      if(oldHash == null || newHash == null || !newHash.equals(oldHash)) {
+      if (oldHash == null || newHash == null || !newHash.equals(oldHash)) {
         return;
       }
     }
 
     // check external dependencies
     Set<String> changedModels = new HashSet<String>();
-    Map<String,String> externalHashes = dependencies.getExternalHashes();
-    for(Entry<String,String> entry : externalHashes.entrySet()) {
+    Map<String, String> externalHashes = dependencies.getExternalHashes();
+    for (Entry<String, String> entry : externalHashes.entrySet()) {
       String modelReference = entry.getKey();
       SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
-      if(sm == null) {
+      if (sm == null) {
         changedModels.add(modelReference);
         continue;
       }
       String oldHash = entry.getValue();
-      if(oldHash == null) {
+      if (oldHash == null) {
         // TODO hash for packaged models
-        if(!sm.isPackaged() && !SModelStereotype.isStubModelStereotype(sm.getStereotype())) {
+        if (!sm.isPackaged() && !SModelStereotype.isStubModelStereotype(sm.getStereotype())) {
           changedModels.add(modelReference);
         }
         continue;
       }
       Map<String, String> map = ModelDigestUtil.getGenerationHashes(sm, myProject);
       String newHash = map != null ? map.get(ModelDigestUtil.FILE) : null;
-      if(newHash == null || !oldHash.equals(newHash)) {
+      if (newHash == null || !oldHash.equals(newHash)) {
         changedModels.add(modelReference);
       }
     }
@@ -119,34 +119,34 @@ public class GenerationFilter {
     Map<String, SNode> rootById = new HashMap<String, SNode>();
 
     myUnchangedRoots = new HashSet<SNode>();
-    for(SNode root : rootsList) {
+    for (SNode root : rootsList) {
       String id = root.getId();
       GenerationRootDependencies rd = dependencies.getDependenciesFor(id);
       String oldHash;
-      if(rd == null || (oldHash = rd.getHash()) == null) {
+      if (rd == null || (oldHash = rd.getHash()) == null) {
         continue;
       }
       String newHash = myGenerationHashes.get(id);
-      if(newHash == null || !newHash.equals(oldHash)) {
+      if (newHash == null || !newHash.equals(oldHash)) {
         continue;
       }
       boolean isDirty = false;
-      for(String m : rd.getExternal()) {
-        if(changedModels.contains(m)) {
+      for (String m : rd.getExternal()) {
+        if (changedModels.contains(m)) {
           isDirty = true;
           break;
         }
       }
-      if(!isDirty) {
+      if (!isDirty) {
         myUnchangedRoots.add(root);
       }
     }
 
-    if(myUnchangedRoots.isEmpty()) {
+    if (myUnchangedRoots.isEmpty()) {
       return;
     }
 
-    for(SNode root : rootsList) {
+    for (SNode root : rootsList) {
       rootById.put(root.getId(), root);
     }
 
@@ -155,7 +155,7 @@ public class GenerationFilter {
     Map<String, Set<String>> savedDep = getDependenciesWithoutOrientation(dependencies, myUnchangedRoots);
     closureUsingSavedDependencies(savedDep);
 
-    if(myUnchangedRoots.isEmpty()) {
+    if (myUnchangedRoots.isEmpty()) {
       return;
     }
 
@@ -165,12 +165,12 @@ public class GenerationFilter {
     boolean changed = closureUsingReferences(components, savedDep);
 
     // repeat
-    while(changed) {
-      if(myUnchangedRoots.isEmpty() && myConditionalsUnchanged == false) {
+    while (changed) {
+      if (myUnchangedRoots.isEmpty() && myConditionalsUnchanged == false) {
         return;
       }
       changed = closureUsingSavedDependencies(savedDep);
-      if(changed) {
+      if (changed) {
         changed = closureUsingReferences(components, savedDep);
       }
     }
@@ -178,18 +178,18 @@ public class GenerationFilter {
 
   private boolean closureUsingReferences(List<SNode[]> components, Map<String, Set<String>> dep) {
     boolean result = false;
-    for(SNode[] component : components) {
+    for (SNode[] component : components) {
       boolean hasUnchanged = false;
       boolean hasChanged = false;
-      for(SNode n : component) {
-        if(myUnchangedRoots.contains(n)) {
+      for (SNode n : component) {
+        if (myUnchangedRoots.contains(n)) {
           hasUnchanged = true;
         } else {
           hasChanged = true;
         }
       }
-      if(hasUnchanged && hasChanged) {
-        for(SNode n : component) {
+      if (hasUnchanged && hasChanged) {
+        for (SNode n : component) {
           myUnchangedRoots.remove(n);
           dep.remove(n.getId());
           result = true;
@@ -202,29 +202,29 @@ public class GenerationFilter {
   private boolean closureUsingSavedDependencies(Map<String, Set<String>> dep) {
     boolean result = false;
     boolean changed = true;
-    while(changed) {
+    while (changed) {
       changed = false;
       Iterator<SNode> it = myUnchangedRoots.iterator();
-      while(it.hasNext()) {
+      while (it.hasNext()) {
         SNode root = it.next();
         Set<String> rootDeps = dep.get(root.getId());
         boolean dirty = false;
-        for(String localRootId : rootDeps) {
-          if(!dep.containsKey(localRootId)) {
+        for (String localRootId : rootDeps) {
+          if (!dep.containsKey(localRootId)) {
             dirty = true;
             break;
           }
         }
-        if(dirty) {
+        if (dirty) {
           it.remove();
           dep.remove(root.getId());
           changed = true;
         }
       }
-      if(myConditionalsUnchanged) {
+      if (myConditionalsUnchanged) {
         Set<String> conditionalsDeps = dep.get(CONDITIONALS_ID);
-        for(String localRootId : conditionalsDeps) {
-          if(!dep.containsKey(localRootId)) {
+        for (String localRootId : conditionalsDeps) {
+          if (!dep.containsKey(localRootId)) {
             dep.remove(CONDITIONALS_ID);
             myConditionalsUnchanged = false;
             changed = true;
@@ -237,31 +237,31 @@ public class GenerationFilter {
     return result;
   }
 
-  private static Map<String,Set<String>> getDependenciesWithoutOrientation(GenerationDependencies dependencies, Set<SNode> selectedRoots) {
-    Map<String,Set<String>> graph = new HashMap<String, Set<String>>();
-    for(SNode n : selectedRoots) {
+  private static Map<String, Set<String>> getDependenciesWithoutOrientation(GenerationDependencies dependencies, Set<SNode> selectedRoots) {
+    Map<String, Set<String>> graph = new HashMap<String, Set<String>>();
+    for (SNode n : selectedRoots) {
       graph.put(n.getId(), new HashSet<String>());
     }
     graph.put(CONDITIONALS_ID, new HashSet<String>());
-    for(GenerationRootDependencies rd : dependencies.getRootDependencies()) {
+    for (GenerationRootDependencies rd : dependencies.getRootDependencies()) {
       String id = rd.getRootId();
-      if(id == null) {
+      if (id == null) {
         id = CONDITIONALS_ID;
       }
       Set<String> currentDeps = graph.get(id);
-      if(currentDeps != null) {
+      if (currentDeps != null) {
         currentDeps.addAll(rd.getLocal());
-        if(rd.isDependsOnConditionals()) {
+        if (rd.isDependsOnConditionals()) {
           currentDeps.add(CONDITIONALS_ID);
         }
       }
       // reversed
-      if(rd.isDependsOnConditionals()) {
+      if (rd.isDependsOnConditionals()) {
         graph.get(CONDITIONALS_ID).add(id);
       }
-      for(String s : rd.getLocal()) {
+      for (String s : rd.getLocal()) {
         Set<String> r = graph.get(s);
-        if(r != null) {
+        if (r != null) {
           r.add(id);
         }
       }
@@ -276,21 +276,21 @@ public class GenerationFilter {
   public GenerationProcessContext getGenerationContext() {
     return myGenerationContext;
   }
-  
+
   public DependenciesBuilder createDependenciesBuilder() {
-    if(!myGenerationContext.isGenerateDependencies()) {
+    if (!myGenerationContext.isGenerateDependencies()) {
       return new NullDependenciesBuilder();
     }
 
     DefaultDependenciesBuilder result = new DefaultDependenciesBuilder(myModel.getSModel(), myGenerationHashes);
-    if(myUnchangedRoots.isEmpty() && myConditionalsUnchanged == false) {
+    if (myUnchangedRoots.isEmpty() && myConditionalsUnchanged == false) {
       return result;
     }
 
-    for(SNode root : myUnchangedRoots) {
+    for (SNode root : myUnchangedRoots) {
       propagateDependencies(result.getRootBuilder(root), mySavedDependencies.getDependenciesFor(root.getId()));
     }
-    if(myConditionalsUnchanged) {
+    if (myConditionalsUnchanged) {
       propagateDependencies(result.getRootBuilder(null), mySavedDependencies.getDependenciesFor(ModelDigestUtil.HEADER));
     }
 

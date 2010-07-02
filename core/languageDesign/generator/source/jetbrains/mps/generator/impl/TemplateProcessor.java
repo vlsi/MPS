@@ -393,10 +393,10 @@ public class TemplateProcessor {
       }
 
       final List<TemplateParameterDeclaration> parameterDeclarations = includeTemplate.getParameters();
-      if(parameterDeclarations != null && parameterDeclarations.size() > 0) {
-        for(TemplateParameterDeclaration decl : parameterDeclarations) {
+      if (parameterDeclarations != null && parameterDeclarations.size() > 0) {
+        for (TemplateParameterDeclaration decl : parameterDeclarations) {
           String name = decl.getName();
-          if(name != null && !templateContext.hasVariable(name)) {
+          if (name != null && !templateContext.hasVariable(name)) {
             myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLUDE$: parameter `" + name + "' is missing");
           }
         }

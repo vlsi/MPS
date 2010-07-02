@@ -36,23 +36,23 @@ public class ModelDigestUtil {
     String rootId = null;
     boolean firstNode = true;
 
-    while((token = scanner.next()) != XmlFastScanner.EOI) {
-      switch(token) {
+    while ((token = scanner.next()) != XmlFastScanner.EOI) {
+      switch (token) {
         case XmlFastScanner.OPEN_TAG:
           deep++;
-          if(deep == 2 && ModelPersistence.NODE.equals(scanner.getName())) {
+          if (deep == 2 && ModelPersistence.NODE.equals(scanner.getName())) {
             rootStart = scanner.getTokenOffset();
             rootId = extractId(scanner.token());
-            if(rootId != null && firstNode) {
+            if (rootId != null && firstNode) {
               rootHashes.put(HEADER, hash(scanner.getText(0, rootStart)));
               firstNode = false;
             }
           }
           break;
         case XmlFastScanner.SIMPLE_TAG:
-          if(deep == 1 && ModelPersistence.NODE.equals(scanner.getName())) {
+          if (deep == 1 && ModelPersistence.NODE.equals(scanner.getName())) {
             rootId = extractId(scanner.token());
-            if(rootId != null) {
+            if (rootId != null) {
               String s = scanner.getText(scanner.getTokenOffset(), scanner.getOffset());
               rootHashes.put(rootId, hash(s));
             }
@@ -60,8 +60,8 @@ public class ModelDigestUtil {
           break;
 
         case XmlFastScanner.CLOSE_TAG:
-          if(deep == 2) {
-            if(rootId != null && ModelPersistence.NODE.equals(scanner.getName())) {
+          if (deep == 2) {
+            if (rootId != null && ModelPersistence.NODE.equals(scanner.getName())) {
               String s = scanner.getText(rootStart, scanner.getOffset());
               rootHashes.put(rootId, hash(s));
             }
@@ -72,10 +72,10 @@ public class ModelDigestUtil {
           break;
       }
     }
-    if(deep != 0) {
+    if (deep != 0) {
       LOG.error("xml: bad data");
     }
-    if(firstNode) {
+    if (firstNode) {
       rootHashes.put(HEADER, ModelDigestIndex.hash(content));
     }
   }
@@ -102,24 +102,24 @@ public class ModelDigestUtil {
   }
 
   private static String extractId(String tag) {
-    if(tag == null) {
+    if (tag == null) {
       return null;
     }
     int index = tag.lastIndexOf("id=\"");
-    if(index >= 0) {
+    if (index >= 0) {
       int offset = index + 4;
       index = offset;
-      while(index < tag.length() && Character.isDigit(tag.codePointAt(index))) {
+      while (index < tag.length() && Character.isDigit(tag.codePointAt(index))) {
         index++;
       }
-      if(index < tag.length() && tag.charAt(index) == '"') {
+      if (index < tag.length() && tag.charAt(index) == '"') {
         return tag.substring(offset, index);
       }
     }
     return null;
   }
 
-  public static Map<String,String> getGenerationHashes(SModelDescriptor sm, Project project) {
+  public static Map<String, String> getGenerationHashes(SModelDescriptor sm, Project project) {
     if (sm.isPackaged()) return null;
     if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return null;
 
@@ -139,9 +139,9 @@ public class ModelDigestUtil {
   }
 
   private static Map<String, String> getGenerationHashes(final Project project, @NotNull VirtualFile f) {
-    final Map<String,String>[] valueArray = new Map[1];
-    FileBasedIndex.getInstance().processValues(ModelDigestIndex.NAME, FileBasedIndex.getFileId(f), f, new ValueProcessor<Map<String,String>>() {
-      public boolean process(VirtualFile file, Map<String,String> values) {
+    final Map<String, String>[] valueArray = new Map[1];
+    FileBasedIndex.getInstance().processValues(ModelDigestIndex.NAME, FileBasedIndex.getFileId(f), f, new ValueProcessor<Map<String, String>>() {
+      public boolean process(VirtualFile file, Map<String, String> values) {
         valueArray[0] = values;
         return true;
       }

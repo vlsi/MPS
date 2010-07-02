@@ -161,7 +161,7 @@ public class GenerationController {
       }
 
       for (SModelDescriptor inputModel : inputModels) {
-        currentGenerationOK = currentGenerationOK && generateModel(inputModel, module, invocationContext, progressHelper); 
+        currentGenerationOK = currentGenerationOK && generateModel(inputModel, module, invocationContext, progressHelper);
       }
     } finally {
       if (wasLoggingThreshold != null) {
@@ -177,10 +177,10 @@ public class GenerationController {
 
     return currentGenerationOK;
   }
-  
+
   private boolean generateModel(SModelDescriptor inputModel, IModule module, IOperationContext invocationContext, ITaskProgressHelper progressHelper) throws GenerationCanceledException {
     boolean currentGenerationOK;
-    
+
     IPerformanceTracer ttrace = myGenerationContext.getTracingMode() != GenerationSettings.TRACE_OFF
       ? new PerformanceTracer("model " + NameUtil.shortNameFromLongName(inputModel.getLongName()))
       : new NullPerformanceTracer();
@@ -198,7 +198,7 @@ public class GenerationController {
         return true;
       }
 
-      if(myLogger.needsInfo()) {
+      if (myLogger.needsInfo()) {
         myLogger.info("");
       }
       String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
@@ -207,8 +207,8 @@ public class GenerationController {
       if (myLogger.needsInfo()) {
         myLogger.info("[model " + inputModel.getSModelFqName() +
           (myGenerationContext.isRebuildAll()
-            ? ", rebuilding" 
-            : "" ) +
+            ? ", rebuilding"
+            : "") +
           (myGenerationContext.isGenerateInParallel()
             ? ", using " + myGenerationContext.getNumberOfThreads() + " threads]"
             : "]"));
@@ -239,7 +239,7 @@ public class GenerationController {
     String report = ttrace.report();
     if (report != null) {
       myLogger.trace(report);
-    }  
+    }
     return currentGenerationOK;
   }
 

@@ -28,7 +28,7 @@ public class GeneratorMappings {
   private final ConcurrentMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new ConcurrentHashMap<Pair<SNode, SNode>, SNode>();
 
   public GeneratorMappings(int numberOfNodesInModel) {
-    /* we use non-default load factor to reduce memory usage */ 
+    /* we use non-default load factor to reduce memory usage */
     myCopiedOutputNodeForInputNode = new ConcurrentHashMap<SNode, Object>(numberOfNodesInModel, 2);
   }
 
@@ -47,7 +47,7 @@ public class GeneratorMappings {
     Map<SNode, Object> currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
     if (currentMapping == null) {
       myMappingNameAndInputNodeToOutputNodeMap.putIfAbsent(mappingName, new HashMap<SNode, Object>());
-      currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName); 
+      currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
     }
     synchronized (currentMapping) {
       Object o = currentMapping.get(inputNode);
@@ -65,12 +65,12 @@ public class GeneratorMappings {
   }
 
   void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
-    if(outputNode == null) {
+    if (outputNode == null) {
       return;
     }
     synchronized (inputNode) {
       Object o = myCopiedOutputNodeForInputNode.get(inputNode);
-      if(o == null) {
+      if (o == null) {
         myCopiedOutputNodeForInputNode.put(inputNode, outputNode);
       } else if (o instanceof List) {
         ((List<SNode>) o).add(outputNode);
@@ -136,11 +136,11 @@ public class GeneratorMappings {
 
   public SNode findCopiedOutputNodeForInputNode(SNode inputNode) {
     Object o = myCopiedOutputNodeForInputNode.get(inputNode);
-    if(o instanceof SNode) {
+    if (o instanceof SNode) {
       return (SNode) o;
     }
-    if(o instanceof List) {
-      return (SNode) ((List)o).get(0);
+    if (o instanceof List) {
+      return (SNode) ((List) o).get(0);
     }
     return null;
   }

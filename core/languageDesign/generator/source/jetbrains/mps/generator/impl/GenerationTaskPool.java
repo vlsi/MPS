@@ -87,16 +87,16 @@ public class GenerationTaskPool implements IGenerationTaskPool {
   public GenerationTaskPool(ProgressIndicator progressMonitor, int numberOfThreads) {
     this.progressMonitor = progressMonitor;
     myExecutor = new ThreadPoolExecutor(numberOfThreads, numberOfThreads, 10, TimeUnit.SECONDS, queue, new ModelReadThreadFactory()) {
-    @Override
-    protected void afterExecute(Runnable r, Throwable t) {
-      long tasksLeft = tasksInQueue.decrementAndGet();
-      if (tasksLeft == 0) {
-        synchronized (objectLock) {
-          objectLock.notifyAll();
+      @Override
+      protected void afterExecute(Runnable r, Throwable t) {
+        long tasksLeft = tasksInQueue.decrementAndGet();
+        if (tasksLeft == 0) {
+          synchronized (objectLock) {
+            objectLock.notifyAll();
+          }
         }
       }
-    }
-  };
+    };
   }
 
   final BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>();
@@ -107,7 +107,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
 
   @Override
   public void addTask(GenerationTask r) {
-    if(isCancelled) return;
+    if (isCancelled) return;
     tasksInQueue.incrementAndGet();
     myExecutor.execute(new GenerationTaskAdapter(r));
   }
@@ -129,7 +129,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
         th = new GenerationCanceledException();
       }
 
-      if(th != null) {
+      if (th != null) {
         isCancelled = true;
         while (tasksInQueue.get() != 0) {
           try {

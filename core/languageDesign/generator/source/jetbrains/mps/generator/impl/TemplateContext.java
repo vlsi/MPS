@@ -22,14 +22,14 @@ public class TemplateContext {
   private final Map<String, Object> variables;
 
   /**
-   *  Only context node.
+   * Only context node.
    */
   public TemplateContext(SNode inputNode) {
-    this((GeneratedMatchingPattern)null, null, inputNode);
+    this((GeneratedMatchingPattern) null, null, inputNode);
   }
 
   /**
-   *  Creates a new context for template declaration.
+   * Creates a new context for template declaration.
    */
   public TemplateContext(GeneratedMatchingPattern pattern, Map<String, Object> variables, SNode inputNode) {
     this.pattern = pattern;
@@ -41,7 +41,7 @@ public class TemplateContext {
   }
 
   /**
-   *  Creates a new context for loop. 
+   * Creates a new context for loop.
    */
   private TemplateContext(@NotNull TemplateContext parent, String inputName, SNode inputNode) {
     this.parent = parent;
@@ -64,8 +64,8 @@ public class TemplateContext {
   }
 
   public Object getPatternVariable(String id) {
-    for(TemplateContext current = this; current != null; current = current.parent) {
-      if(current.pattern != null) {
+    for (TemplateContext current = this; current != null; current = current.parent) {
+      if (current.pattern != null) {
         return current.pattern.getFieldValue(id);
       }
     }
@@ -73,8 +73,8 @@ public class TemplateContext {
   }
 
   public Object getVariable(String name) {
-    for(TemplateContext current = this; current != null; current = current.parent) {
-      if(current.variables != null && current.variables.containsKey(name)) {
+    for (TemplateContext current = this; current != null; current = current.parent) {
+      if (current.variables != null && current.variables.containsKey(name)) {
         return current.variables.get(name);
       }
     }
@@ -82,8 +82,8 @@ public class TemplateContext {
   }
 
   public boolean hasVariable(String name) {
-    for(TemplateContext current = this; current != null; current = current.parent) {
-      if(current.variables != null && current.variables.containsKey(name)) {
+    for (TemplateContext current = this; current != null; current = current.parent) {
+      if (current.variables != null && current.variables.containsKey(name)) {
         return true;
       }
     }
@@ -91,8 +91,8 @@ public class TemplateContext {
   }
 
   public SNode getNamedInput(String name) {
-    for(TemplateContext current = this; current != null; current = current.parent) {
-      if(current.inputName != null && current.inputName.equals(name)) {
+    for (TemplateContext current = this; current != null; current = current.parent) {
+      if (current.inputName != null && current.inputName.equals(name)) {
         return current.inputNode;
       }
     }
@@ -109,7 +109,7 @@ public class TemplateContext {
 
           {
             current = TemplateContext.this;
-            while(current != null && current.inputNode == null) {
+            while (current != null && current.inputNode == null) {
               current = current.parent;
             }
             previous = current != null ? current.inputNode : null;
@@ -124,7 +124,7 @@ public class TemplateContext {
           @Override
           public SNode next() {
             skipOdd();
-            if(current != null) {
+            if (current != null) {
               previous = current.inputNode;
               current = current.parent;
               return previous;
@@ -133,7 +133,7 @@ public class TemplateContext {
           }
 
           private void skipOdd() {
-            while(current != null && (current.inputNode == null || current.inputNode == previous)) {
+            while (current != null && (current.inputNode == null || current.inputNode == previous)) {
               current = current.parent;
             }
           }
@@ -149,7 +149,7 @@ public class TemplateContext {
 
   @NotNull
   public static TemplateContext getContext(@NotNull TemplateContext parent, String inputName, SNode inputNode) {
-    if(inputNode == parent.getInput() && (inputName == null || inputName.equals(parent.getInputName()))) {
+    if (inputNode == parent.getInput() && (inputName == null || inputName.equals(parent.getInputName()))) {
       return parent;
     }
     return new TemplateContext(parent, inputName, inputNode);
@@ -157,7 +157,7 @@ public class TemplateContext {
 
   @NotNull
   public static TemplateContext getContext(@NotNull TemplateContext parent, String inputName) {
-    if(inputName == null || inputName.equals(parent.getInputName())) {
+    if (inputName == null || inputName.equals(parent.getInputName())) {
       return parent;
     }
     return new TemplateContext(parent, inputName, parent.getInput());

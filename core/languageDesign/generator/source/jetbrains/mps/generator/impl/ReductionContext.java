@@ -33,8 +33,8 @@ public class ReductionContext {
   }
 
   boolean isBlocked(SNode inputNode, ReductionRule rule) {
-    for(ReductionContext current = this; current != null; current = current.myParent) {
-      if(current.myInputNode == inputNode && current.myReductionRule == rule) {
+    for (ReductionContext current = this; current != null; current = current.myParent) {
+      if (current.myInputNode == inputNode && current.myReductionRule == rule) {
         return true;
       }
     }
@@ -43,8 +43,8 @@ public class ReductionContext {
 
   Object getBlockedRules(SNode inputNode) {
     Object currentSet = null;
-    for(ReductionContext current = this; current != null; current = current.myParent) {
-      if(current.myInputNode == inputNode) {
+    for (ReductionContext current = this; current != null; current = current.myParent) {
+      if (current.myInputNode == inputNode) {
         currentSet = combineRuleSets(currentSet, current.myReductionRule);
       }
     }
@@ -56,32 +56,32 @@ public class ReductionContext {
   }
 
   static Object combineRuleSets(Object set1, Object set2) {
-    if(set1 == null)
+    if (set1 == null)
       return set2;
-    if(set2 == null)
+    if (set2 == null)
       return set1;
-    if(set1 instanceof ReductionRule) {
-      if(set2 instanceof ReductionRule) {
+    if (set1 instanceof ReductionRule) {
+      if (set2 instanceof ReductionRule) {
         Set<Object> set = new HashSet<Object>(2);
         set.add(set1);
         set.add(set2);
         return set;
       } else {
-        Set<Object> set = new HashSet<Object>(((Set)set2).size() + 1);
-        set.addAll((Set)set2);
+        Set<Object> set = new HashSet<Object>(((Set) set2).size() + 1);
+        set.addAll((Set) set2);
         set.add(set1);
         return set;
       }
     } else {
-      if(set2 instanceof ReductionRule) {
-        Set<Object> set = new HashSet<Object>(((Set)set1).size() + 1);
-        set.addAll((Set)set1);
+      if (set2 instanceof ReductionRule) {
+        Set<Object> set = new HashSet<Object>(((Set) set1).size() + 1);
+        set.addAll((Set) set1);
         set.add(set2);
         return set;
       } else {
-        Set<Object> set = new HashSet<Object>(((Set)set2).size() + ((Set)set1).size());
-        set.addAll((Set)set1);
-        set.addAll((Set)set2);
+        Set<Object> set = new HashSet<Object>(((Set) set2).size() + ((Set) set1).size());
+        set.addAll((Set) set1);
+        set.addAll((Set) set2);
         return set;
       }
     }

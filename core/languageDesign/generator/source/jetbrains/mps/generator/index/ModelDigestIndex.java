@@ -25,7 +25,6 @@ import com.intellij.util.io.DataExternalizer;
 import com.intellij.util.io.EnumeratorStringDescriptor;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;

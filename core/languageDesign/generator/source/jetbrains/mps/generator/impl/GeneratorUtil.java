@@ -27,7 +27,10 @@ import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -168,13 +171,13 @@ public class GeneratorUtil {
 
       List<TemplateFragment> fragments;
       SNode templateContainer;
-      if(ruleConsequence instanceof TemplateDeclarationReference) {
+      if (ruleConsequence instanceof TemplateDeclarationReference) {
         final TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
         templateContainer = BaseAdapter.fromAdapter(template);
         fragments = getTemplateFragments(template);
       } else {
         templateContainer = BaseAdapter.fromAdapter(ruleConsequence);
-        fragments = getTemplateFragments((InlineTemplateWithContext_RuleConsequence)ruleConsequence);
+        fragments = getTemplateFragments((InlineTemplateWithContext_RuleConsequence) ruleConsequence);
       }
 
       if (checkIfOneOrMaryAdjacentFragments(fragments, templateContainer, inputNode, ruleNode, generator)) {
@@ -215,17 +218,17 @@ public class GeneratorUtil {
   }
 
   static RuleConsequence getReductionConsequence(ReductionRule rule) {
-    if(rule instanceof Reduction_MappingRule) {
-      return ((Reduction_MappingRule)rule).getRuleConsequence();
-    } else if(rule instanceof PatternReduction_MappingRule) {
-      return ((PatternReduction_MappingRule)rule).getRuleConsequence();
+    if (rule instanceof Reduction_MappingRule) {
+      return ((Reduction_MappingRule) rule).getRuleConsequence();
+    } else if (rule instanceof PatternReduction_MappingRule) {
+      return ((PatternReduction_MappingRule) rule).getRuleConsequence();
     }
     return null;
   }
 
   private static Expression[] getArguments(ITemplateCall templateCall) {
     final List<Expression> args = templateCall.getActualArguments();
-    if(args == null || args.size() == 0) {
+    if (args == null || args.size() == 0) {
       return null;
     }
     return args.toArray(new Expression[args.size()]);
@@ -233,22 +236,22 @@ public class GeneratorUtil {
 
   private static TemplateParameterDeclaration[] getParameters(ITemplateCall templateCall) {
     final TemplateDeclaration template = templateCall.getTemplate();
-    if(template == null) {
+    if (template == null) {
       return null;
     }
     final List<TemplateParameterDeclaration> parameterDeclarations = template.getParameters();
-    if(parameterDeclarations == null || parameterDeclarations.size() == 0) {
+    if (parameterDeclarations == null || parameterDeclarations.size() == 0) {
       return null;
     }
     return parameterDeclarations.toArray(new TemplateParameterDeclaration[parameterDeclarations.size()]);
   }
 
   static BaseConcept getPatternVariable(TemplateArgumentPatternRef argument) {
-    if(argument instanceof TemplateArgumentPatternVarRefExpression) {
+    if (argument instanceof TemplateArgumentPatternVarRefExpression) {
       return ((TemplateArgumentPatternVarRefExpression) argument).getPatternVarDecl();
-    } else if(argument instanceof TemplateArgumentLinkPatternRefExpression) {
+    } else if (argument instanceof TemplateArgumentLinkPatternRefExpression) {
       return ((TemplateArgumentLinkPatternRefExpression) argument).getPatternVar();
-    } else if(argument instanceof TemplateArgumentPropertyPatternRefExpression) {
+    } else if (argument instanceof TemplateArgumentPropertyPatternRefExpression) {
       return ((TemplateArgumentPropertyPatternRefExpression) argument).getPropertyPattern();
     }
     return null;
@@ -256,8 +259,8 @@ public class GeneratorUtil {
 
   @NotNull
   static TemplateContext createTemplateContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, RuleConsequence consequence, SNode newInputNode, ITemplateGenerator generator) {
-    if(consequence instanceof ITemplateCall) {
-      return createTemplateContext(inputNode, outerContext, reductionContext, (ITemplateCall)consequence, newInputNode, generator);
+    if (consequence instanceof ITemplateCall) {
+      return createTemplateContext(inputNode, outerContext, reductionContext, (ITemplateCall) consequence, newInputNode, generator);
     }
     return outerContext != null ? outerContext : new TemplateContext(newInputNode);
   }
@@ -267,46 +270,46 @@ public class GeneratorUtil {
     final Expression[] arguments = getArguments(templateCall);
     final TemplateParameterDeclaration[] parameters = getParameters(templateCall);
 
-    if(arguments == null && parameters == null) {
+    if (arguments == null && parameters == null) {
       return new TemplateContext(newInputNode);
     }
-    if(arguments == null || parameters == null || arguments.length != parameters.length) {
+    if (arguments == null || parameters == null || arguments.length != parameters.length) {
       generator.showErrorMessage(inputNode, templateCall.getNode(), "number of arguments doesn't match template");
       return new TemplateContext(newInputNode);
     }
 
-    final Map<String,Object> vars = new HashMap<String, Object>(arguments.length);
-    for(int i = 0; i < arguments.length; i++) {
+    final Map<String, Object> vars = new HashMap<String, Object>(arguments.length);
+    for (int i = 0; i < arguments.length; i++) {
       Expression expr = arguments[i];
       String name = parameters[i].getName();
       Object value = null;
-      if(expr instanceof BooleanConstant) {
+      if (expr instanceof BooleanConstant) {
         value = ((BooleanConstant) expr).getValue();
-      } else if(expr instanceof IntegerConstant) {
+      } else if (expr instanceof IntegerConstant) {
         value = ((IntegerConstant) expr).getValue();
-      } else if(expr instanceof StringLiteral) {
+      } else if (expr instanceof StringLiteral) {
         value = ((StringLiteral) expr).getValue();
-      } else if(expr instanceof NullLiteral) {
+      } else if (expr instanceof NullLiteral) {
         /* ok */
-      } else if(expr instanceof TemplateArgumentPatternRef && outerContext != null) {
+      } else if (expr instanceof TemplateArgumentPatternRef && outerContext != null) {
         BaseConcept patternVar = getPatternVariable((TemplateArgumentPatternRef) expr);
-        if(patternVar == null) {
-          generator.showErrorMessage(inputNode, expr.getNode(), "cannot evaluate template argument #" + (i+1) + ": invalid pattern reference");
+        if (patternVar == null) {
+          generator.showErrorMessage(inputNode, expr.getNode(), "cannot evaluate template argument #" + (i + 1) + ": invalid pattern reference");
         } else {
           // TODO FIXME using PatternVarsUtil directly, which is loaded by MPS
           value = outerContext.getPatternVariable(PatternVarsUtil.getFieldName(patternVar.getNode()));
         }
-      } else if(expr instanceof TemplateArgumentQueryExpression) {
+      } else if (expr instanceof TemplateArgumentQueryExpression) {
         TemplateArgumentQuery query = ((TemplateArgumentQueryExpression) expr).getQuery();
         value = reductionContext.getQueryExecutor().evaluateArgumentQuery(inputNode, query, outerContext);
       } else {
-        generator.showErrorMessage(inputNode, templateCall.getNode(), "cannot evaluate template argument #" + (i+1));
+        generator.showErrorMessage(inputNode, templateCall.getNode(), "cannot evaluate template argument #" + (i + 1));
       }
 
       vars.put(name, value);
     }
     return new TemplateContext(null, vars, newInputNode);
-}
+  }
 
   /**
    * @return message type or null if no message have been sent
@@ -363,13 +366,13 @@ public class GeneratorUtil {
   }
 
   public static <T> T[] concat(T[] arr1, T[] arr2) {
-    if(arr1 == null || arr1.length == 0) return arr2;
-    if(arr2 == null || arr2.length == 0) return arr1;
+    if (arr1 == null || arr1.length == 0) return arr2;
+    if (arr2 == null || arr2.length == 0) return arr1;
     T[] result = Arrays.copyOf(arr1, arr1.length + arr2.length);
     System.arraycopy(arr2, 0, result, arr1.length, arr2.length);
     return result;
   }
-  
+
   public static <T> T runReadInWrite(final GenerationComputable<T> c) throws GenerationCanceledException, GenerationFailureException {
     try {
       return ModelAccess.instance().runReadInWriteAction(new Computable<T>() {

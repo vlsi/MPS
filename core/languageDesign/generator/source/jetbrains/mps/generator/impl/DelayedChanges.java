@@ -47,7 +47,7 @@ public class DelayedChanges {
     myGenerator = generator;
     myLogger = generator.getLogger();
   }
-  
+
   public boolean isEmpty() {
     return myExecuteMapSrcNodeMacroChanges.isEmpty() && myExecuteMapSrcNodeMacroPostProcChanges.isEmpty();
   }
@@ -123,7 +123,7 @@ public class DelayedChanges {
             if (myChildToReplace.isRoot()) {
               myChildToReplace.getModel().addRoot(child);
               myChildToReplace.getModel().removeRoot(myChildToReplace);
-            }            
+            }
           } else {
             String childRole = parent.getRoleOf(myChildToReplace);
             RoleValidationStatus status = myGenerator.validateChild(parent, childRole, child);

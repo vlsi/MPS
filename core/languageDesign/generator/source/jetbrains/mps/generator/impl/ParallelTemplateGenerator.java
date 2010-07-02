@@ -29,8 +29,8 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
 
   private IGenerationTaskPool myPool;
   private List<RootGenerationTask> myTasks;
-  private Map<Pair<SNode,SNode>, RootGenerationTask> myInputToTask;
-  private Map<SNode,RootBasedQueryExectionContext> myRootContext;
+  private Map<Pair<SNode, SNode>, RootGenerationTask> myInputToTask;
+  private Map<SNode, RootBasedQueryExectionContext> myRootContext;
   private Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
   public ParallelTemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
@@ -47,11 +47,11 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   protected void applyReductions(boolean isPrimary)
     throws GenerationCanceledException, GenerationFailureException {
     super.applyReductions(isPrimary);
-    
+
     myPool.waitForCompletion();
     contextToTask = null;
     myRootContext = null;
-    for(RootGenerationTask task : myTasks) {
+    for (RootGenerationTask task : myTasks) {
       task.registerGeneratedRoot();
     }
   }
@@ -79,20 +79,20 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
 
   @Override
   protected QueryExecutionContext getDefaultExecutionContext(SNode inputNode) {
-    if(ROOT_PER_THREAD) {
-      if(inputNode == null || !inputNode.isRegistered()) {
+    if (ROOT_PER_THREAD) {
+      if (inputNode == null || !inputNode.isRegistered()) {
         return super.getDefaultExecutionContext(null);
       }
       inputNode = inputNode.getTopmostAncestor();
-      if(inputNode.getModel() == getInputModel()) {
+      if (inputNode.getModel() == getInputModel()) {
         RootBasedQueryExectionContext context;
-        if(myRootContext == null) {
+        if (myRootContext == null) {
           myRootContext = new HashMap<SNode, RootBasedQueryExectionContext>();
           context = null;
         } else {
           context = myRootContext.get(inputNode);
         }
-        if(context == null) {
+        if (context == null) {
           context = new RootBasedQueryExectionContext(inputNode, this);
           myRootContext.put(inputNode, context);
         }
@@ -105,7 +105,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   private void pushTask(RootGenerationTask task, Pair<SNode, SNode> pair, QueryExecutionContext executionContext) {
     myInputToTask.put(pair, task);
     myTasks.add(task);
-    if(executionContext.isMultithreaded()) {
+    if (executionContext.isMultithreaded()) {
       myPool.addTask(task);
     } else {
       runTaskWithContext(task, executionContext);
@@ -116,7 +116,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     CompositeGenerationTask compositeTask;
     synchronized (contextToTask) {
       compositeTask = contextToTask.get(executionContext);
-      if(compositeTask != null && compositeTask.addTask(task)) {
+      if (compositeTask != null && compositeTask.addTask(task)) {
         return;
       }
       compositeTask = new CompositeGenerationTask();
@@ -129,7 +129,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   @Override
   protected void registerInModel(SNode outputRoot, SNode inputNode, SNode templateNode) {
     RootGenerationTask task = myInputToTask.get(new Pair(inputNode, templateNode));
-    if(task == null) {
+    if (task == null) {
       showErrorMessage(inputNode, templateNode, "internal: cannot find task for generated root");
     } else {
       task.addGeneratedRoot(outputRoot);
@@ -138,13 +138,13 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
 
   @Override
   protected void checkGenerationCanceledFast() throws GenerationCanceledException {
-    if(myPool.isCancelled()) throw new GenerationCanceledException();
+    if (myPool.isCancelled()) throw new GenerationCanceledException();
   }
 
   @Override
   protected void checkMonitorCanceled() throws GenerationCanceledException {
     super.checkMonitorCanceled();
-    if(myPool.isCancelled()) throw new GenerationCanceledException();
+    if (myPool.isCancelled()) throw new GenerationCanceledException();
   }
 
   public abstract class RootGenerationTask implements GenerationTask {
@@ -157,9 +157,9 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     }
 
     public void addGeneratedRoot(SNode root) {
-      if(generated == null) {
+      if (generated == null) {
         generated = Collections.singletonList(root);
-      } else if(generated.size() == 1) {
+      } else if (generated.size() == 1) {
         generated = new ArrayList<SNode>(generated);
         generated.add(root);
       } else {
@@ -168,10 +168,10 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     }
 
     public void registerGeneratedRoot() {
-      if(generated == null) {
+      if (generated == null) {
         return;
       }
-      for(SNode root : generated) {
+      for (SNode root : generated) {
         myOutputRoots.add(root);
       }
     }
@@ -183,14 +183,14 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     private boolean isInShutdownMode = false;
 
     public synchronized boolean addTask(RootGenerationTask task) {
-      if(isInShutdownMode) {
+      if (isInShutdownMode) {
         return false;
       }
       return list.add(task);
     }
 
     private synchronized RootGenerationTask next() {
-      if(list.isEmpty()) {
+      if (list.isEmpty()) {
         isInShutdownMode = true;
         return null;
       }
@@ -200,7 +200,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     @Override
     public void run() throws GenerationCanceledException, GenerationFailureException {
       RootGenerationTask next;
-      while((next = next()) != null) {
+      while ((next = next()) != null) {
         next.run();
       }
     }
@@ -210,7 +210,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       return true;
     }
   }
-  
+
   private static class RootBasedQueryExectionContext extends DefaultQueryExecutionContext {
 
     public RootBasedQueryExectionContext(SNode root, ITemplateGenerator generator) {

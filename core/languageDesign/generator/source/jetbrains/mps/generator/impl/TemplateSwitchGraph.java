@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 public class TemplateSwitchGraph {
-  
+
   private Map<TemplateSwitch, TemplateSwitchGraphNode> myTemplateSwitchToGraphNodeMap = new HashMap<TemplateSwitch, TemplateSwitchGraphNode>();
 
   public TemplateSwitchGraph(List<SModelDescriptor> templateModels) {

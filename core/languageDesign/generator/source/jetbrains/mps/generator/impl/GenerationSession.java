@@ -88,12 +88,12 @@ public class GenerationSession {
     GenerationFilter filter = new GenerationFilter(myOriginalInputModel, myInvocationContext.getProject(), myGenerationContext);
     myDependenciesBuilder = filter.createDependenciesBuilder();
 
-    if(!filter.getUnchangedRoots().isEmpty() || !filter.areConditionalsDirty()) {
+    if (!filter.getUnchangedRoots().isEmpty() || !filter.areConditionalsDirty()) {
       int unchanged = filter.getUnchangedRoots().size();
       int total = filter.getRootsCount();
       myLogger.info((filter.areConditionalsDirty() ? "" : "descriptors and ") + unchanged + " of " + total + " roots are unchanged");
 
-      if(total > 0 && unchanged == total && !filter.areConditionalsDirty()) {
+      if (total > 0 && unchanged == total && !filter.areConditionalsDirty()) {
         myLogger.info("generated files are up-to-date");
         return new GenerationStatus(myOriginalInputModel.getSModel(), null,
           myDependenciesBuilder.getResult(myInvocationContext.getProject()), false, false, false);
@@ -272,7 +272,7 @@ public class GenerationSession {
       myGenerationContext.isGenerateInParallel()
         ? new ParallelTemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationContext, myDependenciesBuilder, ttrace)
         : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationContext, myDependenciesBuilder, ttrace);
-    if(tg instanceof ParallelTemplateGenerator) {
+    if (tg instanceof ParallelTemplateGenerator) {
       return GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {
         @Override
         public Boolean compute() throws GenerationCanceledException, GenerationFailureException {
@@ -334,11 +334,11 @@ public class GenerationSession {
       templateGenerator.getDefaultExecutionContext(null).executeMappingScript(preMappingScript, currentInputModel);
       preProcessed = true;
     }
-    if(needToCloneInputModel) {
+    if (needToCloneInputModel) {
       myDependenciesBuilder.scriptApplied(currentInputModel);
       recycleWasteModel(toRecycle);
     }
-    if(myLogger.needsInfo() && preProcessed) {
+    if (myLogger.needsInfo() && preProcessed) {
       myLogger.info("pre-processing finished");
     }
     return currentInputModel;
@@ -346,7 +346,7 @@ public class GenerationSession {
 
   private SModel postProcessModel(RuleManager ruleManager, SModel currentModel) throws GenerationFailureException {
     List<MappingScript> postMappingScripts = ruleManager.getPostMappingScripts();
-    if(postMappingScripts.isEmpty()) {
+    if (postMappingScripts.isEmpty()) {
       return currentModel;
     }
 
@@ -379,11 +379,11 @@ public class GenerationSession {
       templateGenerator.getDefaultExecutionContext(null).executeMappingScript(postMappingScript, currentModel);
       postProcessed = true;
     }
-    if(needToCloneModel) {
+    if (needToCloneModel) {
       myDependenciesBuilder.scriptApplied(currentModel);
       recycleWasteModel(toRecycle);
     }
-    if(myLogger.needsInfo() && postProcessed) {
+    if (myLogger.needsInfo() && postProcessed) {
       myLogger.info("post-processing finished");
     }
     return currentModel;
@@ -392,7 +392,7 @@ public class GenerationSession {
 
   private SModel createTransientModel() {
     String longName = myOriginalInputModel.getLongName();
-    String stereotype = Integer.toString(myMajorStep+1) + "_" + myTransientModelsCount;
+    String stereotype = Integer.toString(myMajorStep + 1) + "_" + myTransientModelsCount;
     while (SModelRepository.getInstance().getModelDescriptor(new SModelFqName(longName, stereotype)) != null) {
       stereotype += "_";
     }
@@ -465,7 +465,7 @@ public class GenerationSession {
     if (myLoggingHandler == null) {
       myLoggingHandler = new LoggingHandlerAdapter() {
         public void addLogEntry(LogEntry e) {
-          if(mySessionContext == null) return;
+          if (mySessionContext == null) return;
           Object o = e.getHintObject();
           if (o instanceof SNode) {
             mySessionContext.keepTransientModel(((SNode) o).getModel(), false);

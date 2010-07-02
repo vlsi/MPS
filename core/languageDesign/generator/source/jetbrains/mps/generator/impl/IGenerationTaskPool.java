@@ -13,14 +13,14 @@ public interface IGenerationTaskPool {
 
   public interface GenerationTask {
     void run() throws GenerationCanceledException, GenerationFailureException;
-    
+
     boolean requiresReadAccess();
   }
 
   void addTask(GenerationTask r);
 
   void waitForCompletion() throws GenerationCanceledException, GenerationFailureException;
-  
+
   boolean isCancelled();
 
   void dispose();
@@ -35,7 +35,7 @@ public interface IGenerationTaskPool {
     public void waitForCompletion() throws GenerationCanceledException, GenerationFailureException {
       GenerationTask next;
       try {
-        while((next = queue.poll()) != null) {
+        while ((next = queue.poll()) != null) {
           next.run();
         }
       } finally {

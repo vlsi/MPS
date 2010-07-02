@@ -26,7 +26,6 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -90,7 +89,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   public void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
-    if(ruleNode != null && !myFailedRules.add(ruleNode)) {
+    if (ruleNode != null && !myFailedRules.add(ruleNode)) {
       // do not show duplicating messages
       return;
     }
@@ -191,7 +190,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     String relationKind = child ? "child" : "referent";
     AbstractConceptDeclaration concept = sourceNode.getConceptDeclarationAdapter();
     if (concept == null) {
-      return new RoleValidationStatus(sourceNode, "cannot find concept '" + sourceNode.getConceptFqName()+ "'");
+      return new RoleValidationStatus(sourceNode, "cannot find concept '" + sourceNode.getConceptFqName() + "'");
     }
     LinkDeclaration link = SModelSearchUtil.findMostSpecificLinkDeclaration(concept, role);
     if (link == null) {
@@ -212,14 +211,14 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     private String message;
     private ProblemDescription[] descriptions;
 
-    public RoleValidationStatus(SNode sourceNode, String message, ProblemDescription...descriptions) {
+    public RoleValidationStatus(SNode sourceNode, String message, ProblemDescription... descriptions) {
       this.sourceNode = sourceNode;
       this.message = message;
       this.descriptions = descriptions;
     }
 
-    public void reportProblem(boolean isError, String prefix, ProblemDescription...descriptions) {
-      if(isError) {
+    public void reportProblem(boolean isError, String prefix, ProblemDescription... descriptions) {
+      if (isError) {
         myLogger.error(sourceNode, prefix + message, GeneratorUtil.concat(this.descriptions, descriptions));
       } else {
         myLogger.warning(sourceNode, prefix + message, GeneratorUtil.concat(this.descriptions, descriptions));

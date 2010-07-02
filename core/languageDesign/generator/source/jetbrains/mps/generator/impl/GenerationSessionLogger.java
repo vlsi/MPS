@@ -118,18 +118,18 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     }
   }
 
-  private void report(MessageKind kind, String text, SNode node, ProblemDescription ...descriptions) {
+  private void report(MessageKind kind, String text, SNode node, ProblemDescription... descriptions) {
     List<Message> messages = new ArrayList<Message>(descriptions == null ? 1 : descriptions.length + 1);
     messages.add(prepare(kind, text, node));
-    if(descriptions != null) {
-      for(ProblemDescription d : descriptions) {
-        if(d != null) {
+    if (descriptions != null) {
+      for (ProblemDescription d : descriptions) {
+        if (d != null) {
           messages.add(prepare(kind, "-- " + d.getMessage(), d.getNode()));
         }
       }
     }
     synchronized (myMessageHandler) {
-      for(Message m : messages) {
+      for (Message m : messages) {
         myMessageHandler.handle(m);
       }
     }
@@ -140,11 +140,11 @@ public class GenerationSessionLogger implements IGeneratorLogger {
 
     if (node != null) {
       if (myOperationContext != null) {
-        if(keepModel(node.getModel(), kind != MessageKind.ERROR)) {
+        if (keepModel(node.getModel(), kind != MessageKind.ERROR)) {
           NodeWithContext context = new NodeWithContext(node, myOperationContext.getInvocationContext());
           message.setHintObject(context);
         }
-      } else if(node.isRegistered() && node.getModel() != null && !node.getModel().isTransient()) {
+      } else if (node.isRegistered() && node.getModel() != null && !node.getModel().isTransient()) {
         message.setHintObject(new SNodePointer(node));
       }
     }
@@ -153,11 +153,11 @@ public class GenerationSessionLogger implements IGeneratorLogger {
 
 
   private boolean keepModel(SModel model, boolean isWarning) {
-    if(model == null) {
+    if (model == null) {
       return false;
     }
-    if(model.isTransient()) {
-      if(isWarning && !myKeepModelsWithWarnings) {
+    if (model.isTransient()) {
+      if (isWarning && !myKeepModelsWithWarnings) {
         return false;
       }
       return myOperationContext.keepTransientModel(model, false);
