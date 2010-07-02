@@ -128,9 +128,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public void keyPressed(final KeyEvent keyEvent) {
-    if (!(keyEvent.isAltDown() && (
-      (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
-        (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP)))) return;
+    boolean altDown = keyEvent.isAltDown();
+    boolean ctrlDown = keyEvent.isControlDown();
+    boolean insert = keyEvent.getKeyCode() == KeyEvent.VK_INSERT;
+    boolean n = keyEvent.getKeyCode() == KeyEvent.VK_N;
+    boolean rightKey = ((!SystemInfo.isMac) & altDown && insert) ||
+      (SystemInfo.isMac & ctrlDown && n);
+
+    if (!rightKey) return;
 
     final DataContext dataContext = DataManager.getInstance().getDataContext(this.getTree());
     ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
