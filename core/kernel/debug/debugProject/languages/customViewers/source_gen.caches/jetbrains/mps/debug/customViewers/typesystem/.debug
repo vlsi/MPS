@@ -65,6 +65,10 @@
     <nodeInfo nodeId="5264817233616806000" fileName="supertypesOfObjectValueType_SubtypingRule.java" startLine="19" startPosition="98" endLine="20" endPosition="119" />
     <scopeInfo nodeId="5264817233616805999" fileName="supertypesOfObjectValueType_SubtypingRule.java" startLine="19" startPosition="98" endLine="20" endPosition="119" />
   </root>
+  <root nodeId="7430908097350531688">
+    <nodeInfo nodeId="7430908097350531691" fileName="supertypesOfStringValueType_SubtypingRule.java" startLine="19" startPosition="98" endLine="20" endPosition="119" />
+    <scopeInfo nodeId="7430908097350531689" fileName="supertypesOfStringValueType_SubtypingRule.java" startLine="19" startPosition="98" endLine="20" endPosition="119" />
+  </root>
   <root nodeId="7744028807303023773">
     <nodeInfo nodeId="7744028807303023776" fileName="typeof_CallMethodOperation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="108" />
     <nodeInfo nodeId="7744028807303023776" fileName="typeof_CallMethodOperation_InferenceRule.java" startLine="24" startPosition="108" endLine="25" endPosition="53" />

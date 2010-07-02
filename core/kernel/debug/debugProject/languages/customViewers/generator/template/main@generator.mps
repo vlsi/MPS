@@ -248,6 +248,18 @@
         <link role="template:2" targetNodeId="7744028807303050629" resolveInfo="reduce_JavaValueOperation" />
       </node>
     </node>
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="7430908097350531698">
+      <link role="applicableConcept:2" targetNodeId="1.7430908097350531683" resolveInfo="StringValueType" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="7430908097350531700">
+        <link role="template:2" targetNodeId="7430908097350531696" resolveInfo="reduce_StringValueType" />
+      </node>
+    </node>
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="7471356136626023335">
+      <link role="applicableConcept:2" targetNodeId="1.7471356136625957315" resolveInfo="StringValueOperation" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="7471356136626023337">
+        <link role="template:2" targetNodeId="7471356136626023333" resolveInfo="reduce_StringValueOperation" />
+      </node>
+    </node>
   </node>
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4089989733346808997">
@@ -1193,6 +1205,32 @@
       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7744028807303050639">
         <link role="baseMethodDeclaration:3" targetNodeId="3.~JavaPrimitiveValue.getJavaValue():java.lang.Object" resolveInfo="getJavaValue" />
         <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="7744028807303050648" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="7430908097350531696">
+    <property name="name:2" value="reduce_StringValueType" />
+    <link role="applicableConcept:2" targetNodeId="1.7430908097350531683" resolveInfo="StringValueType" />
+    <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7430908097350533923">
+      <link role="classifier:3" targetNodeId="3.~JavaStringValue" resolveInfo="JavaStringValue" />
+      <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="7430908097350533924" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="7471356136626023333">
+    <property name="name:2" value="reduce_StringValueOperation" />
+    <link role="applicableConcept:2" targetNodeId="1.7471356136625957315" resolveInfo="StringValueOperation" />
+    <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7471356136626023338">
+      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="7471356136626023339">
+        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="7471356136626023340">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7471356136626023341" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7471356136626023345">
+            <link role="classifier:3" targetNodeId="3.~JavaStringValue" resolveInfo="JavaStringValue" />
+          </node>
+        </node>
+      </node>
+      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7471356136626023343">
+        <link role="baseMethodDeclaration:3" targetNodeId="3.~JavaStringValue.getJavaStringValue():java.lang.String" resolveInfo="getJavaStringValue" />
+        <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="7471356136626023344" />
       </node>
     </node>
   </node>

@@ -452,5 +452,17 @@
       <link role="relationDeclaration:32" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="7430908097350531685">
+    <link role="conceptDeclaration:32" targetNodeId="1.7430908097350531683" resolveInfo="StringValueType" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="7430908097350531687">
+      <link role="relationDeclaration:32" targetNodeId="2v.1156235010670:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="7471356136625957321">
+    <link role="conceptDeclaration:32" targetNodeId="1.7471356136625957315" resolveInfo="StringValueOperation" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="7471356136625957323">
+      <link role="relationDeclaration:32" targetNodeId="2v.1156235010670:0" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

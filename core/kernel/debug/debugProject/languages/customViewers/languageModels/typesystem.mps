@@ -269,5 +269,19 @@
       <link role="concept:3" targetNodeId="1.7744028807303021417" resolveInfo="CallMethodOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="7430908097350531688">
+    <property name="name:3" value="supertypesOfStringValueType" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7430908097350531689">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7430908097350531691">
+        <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="7430908097350531693">
+          <node role="quotedNode:0" type="jetbrains.mps.debug.customViewers.structure.ObjectValueType" id="7430908097350531695" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="7430908097350531690">
+      <property name="name:3" value="stringValueType" />
+      <link role="concept:3" targetNodeId="1.7430908097350531683" resolveInfo="StringValueType" />
+    </node>
+  </node>
 </model>
 

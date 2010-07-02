@@ -41,6 +41,8 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
     if (value instanceof ObjectReference) {
       if (value instanceof ArrayReference) {
         return new JavaArrayValue(value, classFQname, threadReference);
+      } else if (value instanceof StringReference) {
+        return new JavaStringValue(value, classFQname, threadReference);
       } else {
         return new JavaObjectValue(value, classFQname, threadReference);
       }

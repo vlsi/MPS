@@ -400,5 +400,28 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7430908097350531683">
+    <property name="name:0" value="StringValueType" />
+    <link role="extends:0" targetNodeId="2v.1068431790189:3" resolveInfo="Type" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7430908097350531684">
+      <property name="value:0" value="stringValue" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7471356136625957315">
+    <property name="name:0" value="StringValueOperation" />
+    <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="7471356136625957316">
+      <link role="intfc:0" targetNodeId="2v.1197027803184:3" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7471356136625957317">
+      <property name="value:0" value="javaStringValue" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="7471356136625957318">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1217022095863:3" resolveInfo="returnType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="7471356136625957320" />
+    </node>
+  </node>
 </model>
 
