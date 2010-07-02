@@ -21,9 +21,7 @@ import com.intellij.openapi.ui.popup.PopupChooserBuilder;
 import com.intellij.openapi.util.Computable;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.baseLanguage.icons.Icons;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -126,6 +124,21 @@ public class GoToHelper {
   }
 
   public static class MethodCellRenderer extends DefaultNodeNavigationItemCellRenderer {
+    @Override
+    public String getElementText(final NodeNavigationItem element) {
+      return ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          SNode labelNode = getLabelNode(element);
+          if (labelNode.getAdapter() instanceof EnumConstantDeclaration) {
+            if (labelNode.getParent().getAdapter() instanceof EnumClass) {
+              return "Enum constant '" + labelNode.getName() + "' in " + labelNode.getParent().getPresentation();
+            }
+          }
+          return labelNode.getPresentation();
+        }
+      });
+    }
+
     protected SNode getLabelNode(NodeNavigationItem element) {
       SNode parentNode = element.getNode().getParent();
       assert parentNode != null;
