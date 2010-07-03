@@ -15,7 +15,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -65,17 +64,12 @@ public class StacktraceUtil {
   @Nullable
   private static <T> T findInDebugInfo(@NotNull String className, @NotNull final _FunctionTypes._return_P2_E0<? extends T, ? super DebugInfo, ? super SModelDescriptor> nodeGetter) {
     int lastDot = className.lastIndexOf(".");
-    final String pkg = (lastDot == -1 ?
+    String pkg = (lastDot == -1 ?
       "" :
       className.substring(0, lastDot)
     );
-    Iterable<SModelDescriptor> descritptors = Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values)).select(new ISelector<String, SModelDescriptor>() {
-      public SModelDescriptor select(String stereotype) {
-        SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(new SModelFqName(pkg, stereotype));
-        return descriptor;
-      }
-    });
-    for (final SModelDescriptor descriptor : Sequence.fromIterable(descritptors)) {
+    for (String stereotype : Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values))) {
+      final SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(new SModelFqName(pkg, stereotype));
       if (descriptor == null) {
         continue;
       }

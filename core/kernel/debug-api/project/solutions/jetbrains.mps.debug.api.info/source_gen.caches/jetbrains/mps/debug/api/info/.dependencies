@@ -87,7 +87,6 @@
     <classNode dependClassName="com.intellij.execution.ui.ConsoleViewContentType" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
@@ -95,7 +94,6 @@
     <classNode dependClassName="jetbrains.mps.debug.api.info.BLDebugInfoCache" />
     <classNode dependClassName="jetbrains.mps.debug.api.info.DebugInfo" />
     <classNode dependClassName="jetbrains.mps.debug.api.info.PositionInfo" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
