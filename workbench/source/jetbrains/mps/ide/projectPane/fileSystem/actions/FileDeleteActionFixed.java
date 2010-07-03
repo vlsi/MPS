@@ -93,8 +93,8 @@ public class FileDeleteActionFixed extends DeleteAction {
     private static String createConfirmationMessage(VirtualFile[] filesToDelete) {
       if (filesToDelete.length == 1) {
         if (filesToDelete[0].isDirectory())
-          return "Are you sure you want to delete selected folder?";
-        else return "Are you sure you want to delete selected file?";
+          return "Are you sure you want to delete this folder?\n" + filesToDelete[0];
+        else return "Are you sure you want to delete this file?\n" + filesToDelete[0];
       } else {
         boolean hasFiles = false;
         boolean hasFolders = false;
