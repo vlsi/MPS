@@ -14,12 +14,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
@@ -71,77 +69,16 @@ public class StacktraceUtil {
       "" :
       className.substring(0, lastDot)
     );
-    Iterable<SModelDescriptor> descritptors = Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
-      public Iterable<SModelDescriptor> iterable() {
-        return new Iterable<SModelDescriptor>() {
-          public Iterator<SModelDescriptor> iterator() {
-            return new YieldingIterator<SModelDescriptor>() {
-              private int __CP__ = 0;
-              private SModelDescriptor _3_descriptor;
-              private SModelDescriptor _8__yield_2me9q7_f0a0a2a2;
-              private Iterator<SModelDescriptor> _8__yield_2me9q7_f0a0a2a2_it;
-
-              protected boolean moveToNext() {
-__loop__:
-                do {
-__switch__:
-                  switch (this.__CP__) {
-                    case -1:
-                      assert false : "Internal error";
-                      return false;
-                    case 8:
-                      this._8__yield_2me9q7_f0a0a2a2_it = SModelRepository.getInstance().getModelDescriptorsByModelName(pkg).iterator();
-                    case 9:
-                      if (!(this._8__yield_2me9q7_f0a0a2a2_it.hasNext())) {
-                        this.__CP__ = 1;
-                        break;
-                      }
-                      this._8__yield_2me9q7_f0a0a2a2 = this._8__yield_2me9q7_f0a0a2a2_it.next();
-                      this.__CP__ = 10;
-                      break;
-                    case 4:
-                      if (_3_descriptor != null) {
-                        this.__CP__ = 5;
-                        break;
-                      }
-                      this.__CP__ = 6;
-                      break;
-                    case 7:
-                      this.__CP__ = 6;
-                      this.yield(_3_descriptor);
-                      return true;
-                    case 11:
-                      this.__CP__ = 9;
-                      this.yield(_8__yield_2me9q7_f0a0a2a2);
-                      return true;
-                    case 0:
-                      this._3_descriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(pkg));
-                      this.__CP__ = 4;
-                      break;
-                    case 6:
-                      // we do not know stereotype, so we have to search by long name 
-                      // todo could we find out stereotype somehow? 
-                      // I want this code to be really fast 
-                      this.__CP__ = 8;
-                      break;
-                    case 5:
-                      this.__CP__ = 7;
-                      break;
-                    case 10:
-                      this.__CP__ = 11;
-                      break;
-                    default:
-                      break __loop__;
-                  }
-                } while (true);
-                return false;
-              }
-            };
-          }
-        };
+    Iterable<SModelDescriptor> descritptors = Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values)).select(new ISelector<String, SModelDescriptor>() {
+      public SModelDescriptor select(String stereotype) {
+        SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(new SModelFqName(pkg, stereotype));
+        return descriptor;
       }
     });
     for (final SModelDescriptor descriptor : Sequence.fromIterable(descritptors)) {
+      if (descriptor == null) {
+        continue;
+      }
       if (SModelStereotype.isStubModelStereotype(descriptor.getStereotype())) {
         continue;
       }

@@ -1,0 +1,1151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="2278004790372667628">
+    <nodeInfo nodeId="2278004790372668569" fileName="UnitPositionInfo.java" startLine="8" startPosition="52" endLine="9" endPosition="53" />
+    <nodeInfo nodeId="2278004790372668576" fileName="UnitPositionInfo.java" startLine="10" startPosition="0" endLine="11" endPosition="28" />
+    <nodeInfo nodeId="2278004790372684024" fileName="UnitPositionInfo.java" startLine="16" startPosition="75" endLine="17" endPosition="19" />
+    <nodeInfo nodeId="2278004790372684037" fileName="UnitPositionInfo.java" startLine="17" startPosition="19" endLine="18" endPosition="77" />
+    <nodeInfo nodeId="2278004790372684064" fileName="UnitPositionInfo.java" startLine="22" startPosition="39" endLine="23" endPosition="26" />
+    <nodeInfo nodeId="2278004790372684094" fileName="UnitPositionInfo.java" startLine="23" startPosition="26" endLine="24" endPosition="48" />
+    <nodeInfo nodeId="2278004790372685246" fileName="UnitPositionInfo.java" startLine="27" startPosition="31" endLine="28" endPosition="22" />
+    <nodeInfo nodeId="2278004790372685827" fileName="UnitPositionInfo.java" startLine="31" startPosition="44" endLine="32" endPosition="26" />
+    <nodeInfo nodeId="2278004790372667630" fileName="UnitPositionInfo.java" startLine="12" startPosition="0" endLine="14" endPosition="3" />
+    <nodeInfo nodeId="2278004790372668580" fileName="UnitPositionInfo.java" startLine="15" startPosition="0" endLine="19" endPosition="3" />
+    <nodeInfo nodeId="2278004790372685241" fileName="UnitPositionInfo.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="2278004790372685820" fileName="UnitPositionInfo.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="2278004790372684058" fileName="UnitPositionInfo.java" startLine="20" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="2278004790372667633" fileName="UnitPositionInfo.java" startLine="13" startPosition="29" endLine="13" endPosition="29" />
+    <scopeInfo nodeId="2278004790372685244" fileName="UnitPositionInfo.java" startLine="27" startPosition="31" endLine="28" endPosition="22" />
+    <scopeInfo nodeId="2278004790372685823" fileName="UnitPositionInfo.java" startLine="31" startPosition="44" endLine="32" endPosition="26" />
+    <scopeInfo nodeId="2278004790372667630" fileName="UnitPositionInfo.java" startLine="12" startPosition="0" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="2278004790372668583" fileName="UnitPositionInfo.java" startLine="16" startPosition="75" endLine="18" endPosition="77" />
+    <scopeInfo nodeId="2278004790372684063" fileName="UnitPositionInfo.java" startLine="22" startPosition="39" endLine="24" endPosition="48" />
+    <scopeInfo nodeId="2278004790372668580" fileName="UnitPositionInfo.java" startLine="15" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="2278004790372668584" varName="element" />
+    </scopeInfo>
+    <scopeInfo nodeId="2278004790372685241" fileName="UnitPositionInfo.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="2278004790372685820" fileName="UnitPositionInfo.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="2278004790372685824" varName="unitName" />
+    </scopeInfo>
+    <scopeInfo nodeId="2278004790372684058" fileName="UnitPositionInfo.java" startLine="20" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="2278004790372684061" varName="element" />
+    </scopeInfo>
+    <unitInfo nodeId="2278004790372667628" fileName="UnitPositionInfo.java" startLine="8" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.debug.api.info.UnitPositionInfo" />
+  </root>
+  <root nodeId="4494976841093370185">
+    <nodeInfo nodeId="4494976841093370296" fileName="DebugInfoRoot.java" startLine="17" startPosition="28" endLine="18" endPosition="53" />
+    <nodeInfo nodeId="8964322333104049262" fileName="DebugInfoRoot.java" startLine="18" startPosition="53" endLine="19" endPosition="51" />
+    <nodeInfo nodeId="4837185610456268253" fileName="DebugInfoRoot.java" startLine="19" startPosition="51" endLine="20" endPosition="55" />
+    <nodeInfo nodeId="5981880872161905493" fileName="DebugInfoRoot.java" startLine="20" startPosition="55" endLine="21" endPosition="53" />
+    <nodeInfo nodeId="4494976841093370300" fileName="DebugInfoRoot.java" startLine="21" startPosition="53" endLine="22" endPosition="68" />
+    <nodeInfo nodeId="5166158193670391570" fileName="DebugInfoRoot.java" startLine="23" startPosition="0" endLine="24" endPosition="26" />
+    <nodeInfo nodeId="4872275249399726689" fileName="DebugInfoRoot.java" startLine="24" startPosition="26" endLine="25" endPosition="40" />
+    <nodeInfo nodeId="4837185610456268548" fileName="DebugInfoRoot.java" startLine="25" startPosition="40" endLine="26" endPosition="50" />
+    <nodeInfo nodeId="5981880872161923323" fileName="DebugInfoRoot.java" startLine="26" startPosition="50" endLine="27" endPosition="48" />
+    <nodeInfo nodeId="5166158193670391574" fileName="DebugInfoRoot.java" startLine="29" startPosition="39" endLine="30" endPosition="27" />
+    <nodeInfo nodeId="4872275249399768735" fileName="DebugInfoRoot.java" startLine="34" startPosition="30" endLine="35" endPosition="69" />
+    <nodeInfo nodeId="4872275249399839674" fileName="DebugInfoRoot.java" startLine="36" startPosition="5" endLine="37" endPosition="58" />
+    <nodeInfo nodeId="4837185610456269837" fileName="DebugInfoRoot.java" startLine="41" startPosition="35" endLine="42" endPosition="79" />
+    <nodeInfo nodeId="4837185610456269854" fileName="DebugInfoRoot.java" startLine="43" startPosition="5" endLine="44" endPosition="63" />
+    <nodeInfo nodeId="5981880872161934032" fileName="DebugInfoRoot.java" startLine="48" startPosition="34" endLine="49" endPosition="77" />
+    <nodeInfo nodeId="5981880872161934049" fileName="DebugInfoRoot.java" startLine="50" startPosition="5" endLine="51" endPosition="66" />
+    <nodeInfo nodeId="4872275249399840466" fileName="DebugInfoRoot.java" startLine="72" startPosition="49" endLine="73" endPosition="43" />
+    <nodeInfo nodeId="4872275249399840472" fileName="DebugInfoRoot.java" startLine="73" startPosition="43" endLine="74" endPosition="27" />
+    <nodeInfo nodeId="4872275249399840477" fileName="DebugInfoRoot.java" startLine="74" startPosition="27" endLine="75" endPosition="32" />
+    <nodeInfo nodeId="4837185610456268743" fileName="DebugInfoRoot.java" startLine="79" startPosition="59" endLine="80" endPosition="44" />
+    <nodeInfo nodeId="4837185610456268749" fileName="DebugInfoRoot.java" startLine="80" startPosition="44" endLine="81" endPosition="27" />
+    <nodeInfo nodeId="4837185610456268754" fileName="DebugInfoRoot.java" startLine="81" startPosition="27" endLine="82" endPosition="32" />
+    <nodeInfo nodeId="5981880872161946792" fileName="DebugInfoRoot.java" startLine="86" startPosition="57" endLine="87" endPosition="43" />
+    <nodeInfo nodeId="5981880872161946798" fileName="DebugInfoRoot.java" startLine="87" startPosition="43" endLine="88" endPosition="27" />
+    <nodeInfo nodeId="5981880872161946803" fileName="DebugInfoRoot.java" startLine="88" startPosition="27" endLine="89" endPosition="32" />
+    <nodeInfo nodeId="4494976841093370190" fileName="DebugInfoRoot.java" startLine="94" startPosition="98" endLine="95" endPosition="27" />
+    <nodeInfo nodeId="4494976841093370194" fileName="DebugInfoRoot.java" startLine="95" startPosition="27" endLine="96" endPosition="49" />
+    <nodeInfo nodeId="5166158193670442774" fileName="DebugInfoRoot.java" startLine="97" startPosition="69" endLine="98" endPosition="46" />
+    <nodeInfo nodeId="5166158193670442794" fileName="DebugInfoRoot.java" startLine="100" startPosition="70" endLine="101" endPosition="56" />
+    <nodeInfo nodeId="5166158193670442816" fileName="DebugInfoRoot.java" startLine="103" startPosition="69" endLine="104" endPosition="54" />
+    <nodeInfo nodeId="4494976841093370228" fileName="DebugInfoRoot.java" startLine="105" startPosition="5" endLine="106" endPosition="18" />
+    <nodeInfo nodeId="4494976841093370236" fileName="DebugInfoRoot.java" startLine="109" startPosition="85" endLine="110" endPosition="72" />
+    <nodeInfo nodeId="4494976841093370246" fileName="DebugInfoRoot.java" startLine="110" startPosition="72" endLine="111" endPosition="94" />
+    <nodeInfo nodeId="4494976841093370260" fileName="DebugInfoRoot.java" startLine="111" startPosition="94" endLine="112" endPosition="70" />
+    <nodeInfo nodeId="4494976841093370524" fileName="DebugInfoRoot.java" startLine="28" startPosition="0" endLine="31" endPosition="3" />
+    <nodeInfo nodeId="4872275249399768725" fileName="DebugInfoRoot.java" startLine="33" startPosition="50" endLine="36" endPosition="5" />
+    <nodeInfo nodeId="4837185610456269835" fileName="DebugInfoRoot.java" startLine="40" startPosition="60" endLine="43" endPosition="5" />
+    <nodeInfo nodeId="5981880872161934030" fileName="DebugInfoRoot.java" startLine="47" startPosition="62" endLine="50" endPosition="5" />
+    <nodeInfo nodeId="5166158193670442772" fileName="DebugInfoRoot.java" startLine="96" startPosition="49" endLine="99" endPosition="5" />
+    <nodeInfo nodeId="5166158193670442792" fileName="DebugInfoRoot.java" startLine="99" startPosition="5" endLine="102" endPosition="5" />
+    <nodeInfo nodeId="5166158193670442812" fileName="DebugInfoRoot.java" startLine="102" startPosition="5" endLine="105" endPosition="5" />
+    <nodeInfo nodeId="5166158193670463133" fileName="DebugInfoRoot.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="5166158193670440215" fileName="DebugInfoRoot.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <nodeInfo nodeId="5166158193670440224" fileName="DebugInfoRoot.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <nodeInfo nodeId="5166158193670440233" fileName="DebugInfoRoot.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <nodeInfo nodeId="4872275249399840464" fileName="DebugInfoRoot.java" startLine="71" startPosition="30" endLine="76" endPosition="7" />
+    <nodeInfo nodeId="4837185610456268741" fileName="DebugInfoRoot.java" startLine="78" startPosition="35" endLine="83" endPosition="7" />
+    <nodeInfo nodeId="5981880872161946790" fileName="DebugInfoRoot.java" startLine="85" startPosition="34" endLine="90" endPosition="7" />
+    <nodeInfo nodeId="4494976841093370232" fileName="DebugInfoRoot.java" startLine="108" startPosition="0" endLine="114" endPosition="0" />
+    <nodeInfo nodeId="4872275249399768624" fileName="DebugInfoRoot.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
+    <nodeInfo nodeId="4837185610456269813" fileName="DebugInfoRoot.java" startLine="39" startPosition="0" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="5981880872161934001" fileName="DebugInfoRoot.java" startLine="46" startPosition="0" endLine="53" endPosition="0" />
+    <nodeInfo nodeId="4872275249399840453" fileName="DebugInfoRoot.java" startLine="70" startPosition="40" endLine="77" endPosition="5" />
+    <nodeInfo nodeId="4837185610456268739" fileName="DebugInfoRoot.java" startLine="77" startPosition="5" endLine="84" endPosition="5" />
+    <nodeInfo nodeId="5981880872161946788" fileName="DebugInfoRoot.java" startLine="84" startPosition="5" endLine="91" endPosition="5" />
+    <nodeInfo nodeId="4494976841093370186" fileName="DebugInfoRoot.java" startLine="93" startPosition="0" endLine="108" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370318" fileName="DebugInfoRoot.java" startLine="69" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="4494976841093370527" fileName="DebugInfoRoot.java" startLine="29" startPosition="39" endLine="30" endPosition="27" />
+    <scopeInfo nodeId="4872275249399768726" fileName="DebugInfoRoot.java" startLine="34" startPosition="30" endLine="35" endPosition="69" />
+    <scopeInfo nodeId="4837185610456269836" fileName="DebugInfoRoot.java" startLine="41" startPosition="35" endLine="42" endPosition="79" />
+    <scopeInfo nodeId="5981880872161934031" fileName="DebugInfoRoot.java" startLine="48" startPosition="34" endLine="49" endPosition="77" />
+    <scopeInfo nodeId="5166158193670463136" fileName="DebugInfoRoot.java" startLine="54" startPosition="29" endLine="55" endPosition="25" />
+    <scopeInfo nodeId="5166158193670440219" fileName="DebugInfoRoot.java" startLine="58" startPosition="43" endLine="59" endPosition="28" />
+    <scopeInfo nodeId="5166158193670440228" fileName="DebugInfoRoot.java" startLine="62" startPosition="53" endLine="63" endPosition="33" />
+    <scopeInfo nodeId="5166158193670440237" fileName="DebugInfoRoot.java" startLine="66" startPosition="51" endLine="67" endPosition="32" />
+    <scopeInfo nodeId="5166158193670442773" fileName="DebugInfoRoot.java" startLine="97" startPosition="69" endLine="98" endPosition="46" />
+    <scopeInfo nodeId="5166158193670442793" fileName="DebugInfoRoot.java" startLine="100" startPosition="70" endLine="101" endPosition="56" />
+    <scopeInfo nodeId="5166158193670442815" fileName="DebugInfoRoot.java" startLine="103" startPosition="69" endLine="104" endPosition="54" />
+    <scopeInfo nodeId="4494976841093370524" fileName="DebugInfoRoot.java" startLine="28" startPosition="0" endLine="31" endPosition="3">
+      <varInfo nodeId="5166158193670390634" varName="rootId" />
+    </scopeInfo>
+    <scopeInfo nodeId="4872275249399840465" fileName="DebugInfoRoot.java" startLine="72" startPosition="49" endLine="75" endPosition="32">
+      <varInfo nodeId="4872275249399840467" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="4837185610456268742" fileName="DebugInfoRoot.java" startLine="79" startPosition="59" endLine="82" endPosition="32">
+      <varInfo nodeId="4837185610456268744" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="5981880872161946791" fileName="DebugInfoRoot.java" startLine="86" startPosition="57" endLine="89" endPosition="32">
+      <varInfo nodeId="5981880872161946793" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670442772" fileName="DebugInfoRoot.java" startLine="96" startPosition="49" endLine="99" endPosition="5">
+      <varInfo nodeId="5166158193670442781" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670442792" fileName="DebugInfoRoot.java" startLine="99" startPosition="5" endLine="102" endPosition="5">
+      <varInfo nodeId="5166158193670442801" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670442812" fileName="DebugInfoRoot.java" startLine="102" startPosition="5" endLine="105" endPosition="5">
+      <varInfo nodeId="5166158193670442813" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370235" fileName="DebugInfoRoot.java" startLine="109" startPosition="85" endLine="112" endPosition="70">
+      <varInfo nodeId="4494976841093370247" varName="debugPath" />
+      <varInfo nodeId="4494976841093370237" varName="modelName" />
+    </scopeInfo>
+    <scopeInfo nodeId="4872275249399768627" fileName="DebugInfoRoot.java" startLine="33" startPosition="50" endLine="37" endPosition="58" />
+    <scopeInfo nodeId="4837185610456269816" fileName="DebugInfoRoot.java" startLine="40" startPosition="60" endLine="44" endPosition="63" />
+    <scopeInfo nodeId="5981880872161934004" fileName="DebugInfoRoot.java" startLine="47" startPosition="62" endLine="51" endPosition="66" />
+    <scopeInfo nodeId="5166158193670463133" fileName="DebugInfoRoot.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="5166158193670440215" fileName="DebugInfoRoot.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="5166158193670440224" fileName="DebugInfoRoot.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="5166158193670440233" fileName="DebugInfoRoot.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="4872275249399840454" fileName="DebugInfoRoot.java" startLine="71" startPosition="30" endLine="76" endPosition="7" />
+    <scopeInfo nodeId="4872275249399840464" fileName="DebugInfoRoot.java" startLine="71" startPosition="30" endLine="76" endPosition="7">
+      <varInfo nodeId="4872275249399840485" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="4837185610456268740" fileName="DebugInfoRoot.java" startLine="78" startPosition="35" endLine="83" endPosition="7" />
+    <scopeInfo nodeId="4837185610456268741" fileName="DebugInfoRoot.java" startLine="78" startPosition="35" endLine="83" endPosition="7">
+      <varInfo nodeId="4837185610456268760" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="5981880872161946789" fileName="DebugInfoRoot.java" startLine="85" startPosition="34" endLine="90" endPosition="7" />
+    <scopeInfo nodeId="5981880872161946790" fileName="DebugInfoRoot.java" startLine="85" startPosition="34" endLine="90" endPosition="7">
+      <varInfo nodeId="5981880872161946809" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370232" fileName="DebugInfoRoot.java" startLine="108" startPosition="0" endLine="114" endPosition="0">
+      <varInfo nodeId="4494976841093370267" varName="outputDir" />
+      <varInfo nodeId="4494976841093370269" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="4872275249399768624" fileName="DebugInfoRoot.java" startLine="32" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="4872275249399768641" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="4837185610456269813" fileName="DebugInfoRoot.java" startLine="39" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="4837185610456269859" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="5981880872161934001" fileName="DebugInfoRoot.java" startLine="46" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="5981880872161934005" varName="unitPosition" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370189" fileName="DebugInfoRoot.java" startLine="94" startPosition="98" endLine="106" endPosition="18">
+      <varInfo nodeId="4494976841093370195" varName="result" />
+      <varInfo nodeId="4494976841093370191" varName="root" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370186" fileName="DebugInfoRoot.java" startLine="93" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="5166158193670442764" varName="id" />
+      <varInfo nodeId="4494976841093370230" varName="element" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370321" fileName="DebugInfoRoot.java" startLine="70" startPosition="40" endLine="91" endPosition="5" />
+    <scopeInfo nodeId="4494976841093370318" fileName="DebugInfoRoot.java" startLine="69" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="5166158193670391602" varName="container" />
+    </scopeInfo>
+    <unitInfo nodeId="4494976841093370185" fileName="DebugInfoRoot.java" startLine="17" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.debug.api.info.DebugInfoRoot" />
+  </root>
+  <root nodeId="4494976841093370548">
+    <nodeInfo nodeId="4494976841093370549" fileName="PositionInfo.java" startLine="9" startPosition="63" endLine="10" endPosition="47" />
+    <nodeInfo nodeId="4494976841093370553" fileName="PositionInfo.java" startLine="10" startPosition="47" endLine="11" endPosition="49" />
+    <nodeInfo nodeId="4494976841093370557" fileName="PositionInfo.java" startLine="11" startPosition="49" endLine="12" endPosition="57" />
+    <nodeInfo nodeId="4494976841093370561" fileName="PositionInfo.java" startLine="12" startPosition="57" endLine="13" endPosition="45" />
+    <nodeInfo nodeId="4494976841093370565" fileName="PositionInfo.java" startLine="13" startPosition="45" endLine="14" endPosition="53" />
+    <nodeInfo nodeId="4494976841093370569" fileName="PositionInfo.java" startLine="14" startPosition="53" endLine="15" endPosition="43" />
+    <nodeInfo nodeId="4494976841093370802" fileName="PositionInfo.java" startLine="16" startPosition="0" endLine="17" endPosition="28" />
+    <nodeInfo nodeId="4494976841093370805" fileName="PositionInfo.java" startLine="17" startPosition="28" endLine="18" endPosition="26" />
+    <nodeInfo nodeId="4494976841093370808" fileName="PositionInfo.java" startLine="18" startPosition="26" endLine="19" endPosition="26" />
+    <nodeInfo nodeId="4494976841093370811" fileName="PositionInfo.java" startLine="19" startPosition="26" endLine="20" endPosition="30" />
+    <nodeInfo nodeId="4494976841093370814" fileName="PositionInfo.java" startLine="20" startPosition="30" endLine="21" endPosition="24" />
+    <nodeInfo nodeId="4494976841093370817" fileName="PositionInfo.java" startLine="21" startPosition="24" endLine="22" endPosition="28" />
+    <nodeInfo nodeId="4494976841093370829" fileName="PositionInfo.java" startLine="27" startPosition="71" endLine="28" endPosition="61" />
+    <nodeInfo nodeId="4494976841093370840" fileName="PositionInfo.java" startLine="28" startPosition="61" endLine="29" endPosition="65" />
+    <nodeInfo nodeId="4494976841093370851" fileName="PositionInfo.java" startLine="29" startPosition="65" endLine="30" endPosition="70" />
+    <nodeInfo nodeId="4494976841093370862" fileName="PositionInfo.java" startLine="30" startPosition="70" endLine="31" endPosition="78" />
+    <nodeInfo nodeId="4494976841093370873" fileName="PositionInfo.java" startLine="31" startPosition="78" endLine="32" endPosition="66" />
+    <nodeInfo nodeId="4494976841093370884" fileName="PositionInfo.java" startLine="32" startPosition="66" endLine="33" endPosition="74" />
+    <nodeInfo nodeId="4494976841093370577" fileName="PositionInfo.java" startLine="36" startPosition="31" endLine="37" endPosition="27" />
+    <nodeInfo nodeId="4494976841093370585" fileName="PositionInfo.java" startLine="40" startPosition="29" endLine="41" endPosition="25" />
+    <nodeInfo nodeId="4494976841093370593" fileName="PositionInfo.java" startLine="44" startPosition="29" endLine="45" endPosition="28" />
+    <nodeInfo nodeId="4494976841093370601" fileName="PositionInfo.java" startLine="48" startPosition="33" endLine="49" endPosition="32" />
+    <nodeInfo nodeId="4494976841093370609" fileName="PositionInfo.java" startLine="52" startPosition="27" endLine="53" endPosition="26" />
+    <nodeInfo nodeId="4494976841093370617" fileName="PositionInfo.java" startLine="56" startPosition="31" endLine="57" endPosition="30" />
+    <nodeInfo nodeId="4494976841093370625" fileName="PositionInfo.java" startLine="60" startPosition="44" endLine="61" endPosition="31" />
+    <nodeInfo nodeId="4494976841093370637" fileName="PositionInfo.java" startLine="64" startPosition="40" endLine="65" endPosition="27" />
+    <nodeInfo nodeId="4494976841093370649" fileName="PositionInfo.java" startLine="68" startPosition="43" endLine="69" endPosition="33" />
+    <nodeInfo nodeId="4494976841093370661" fileName="PositionInfo.java" startLine="72" startPosition="51" endLine="73" endPosition="41" />
+    <nodeInfo nodeId="4494976841093370675" fileName="PositionInfo.java" startLine="76" startPosition="39" endLine="77" endPosition="29" />
+    <nodeInfo nodeId="4494976841093370687" fileName="PositionInfo.java" startLine="80" startPosition="47" endLine="81" endPosition="37" />
+    <nodeInfo nodeId="4494976841093370697" fileName="PositionInfo.java" startLine="84" startPosition="34" endLine="85" endPosition="58" />
+    <nodeInfo nodeId="2625573555591617315" fileName="PositionInfo.java" startLine="88" startPosition="32" endLine="89" endPosition="45" />
+    <nodeInfo nodeId="4494976841093370714" fileName="PositionInfo.java" startLine="92" startPosition="39" endLine="93" endPosition="49" />
+    <nodeInfo nodeId="4494976841093370722" fileName="PositionInfo.java" startLine="93" startPosition="49" endLine="94" endPosition="53" />
+    <nodeInfo nodeId="4494976841093370730" fileName="PositionInfo.java" startLine="94" startPosition="53" endLine="95" endPosition="73" />
+    <nodeInfo nodeId="4494976841093370739" fileName="PositionInfo.java" startLine="95" startPosition="73" endLine="96" endPosition="81" />
+    <nodeInfo nodeId="4494976841093370748" fileName="PositionInfo.java" startLine="96" startPosition="81" endLine="97" endPosition="69" />
+    <nodeInfo nodeId="4494976841093370757" fileName="PositionInfo.java" startLine="97" startPosition="69" endLine="98" endPosition="77" />
+    <nodeInfo nodeId="4494976841093370772" fileName="PositionInfo.java" startLine="101" startPosition="28" endLine="102" endPosition="137" />
+    <nodeInfo nodeId="6871054088935083339" fileName="PositionInfo.java" startLine="108" startPosition="74" endLine="109" endPosition="53" />
+    <nodeInfo nodeId="4494976841093370917" fileName="PositionInfo.java" startLine="110" startPosition="16" endLine="111" endPosition="58" />
+    <nodeInfo nodeId="4494976841093370934" fileName="PositionInfo.java" startLine="113" startPosition="14" endLine="114" endPosition="48" />
+    <nodeInfo nodeId="4494976841093370944" fileName="PositionInfo.java" startLine="116" startPosition="12" endLine="117" endPosition="58" />
+    <nodeInfo nodeId="792512149229739714" fileName="PositionInfo.java" startLine="121" startPosition="55" endLine="122" endPosition="224" />
+    <nodeInfo nodeId="2129893304035244568" fileName="PositionInfo.java" startLine="125" startPosition="47" endLine="126" endPosition="38" />
+    <nodeInfo nodeId="2129893304035244580" fileName="PositionInfo.java" startLine="126" startPosition="38" endLine="127" endPosition="42" />
+    <nodeInfo nodeId="2129893304035244592" fileName="PositionInfo.java" startLine="127" startPosition="42" endLine="128" endPosition="44" />
+    <nodeInfo nodeId="2129893304035244604" fileName="PositionInfo.java" startLine="128" startPosition="44" endLine="129" endPosition="52" />
+    <nodeInfo nodeId="2129893304035244616" fileName="PositionInfo.java" startLine="129" startPosition="52" endLine="130" endPosition="40" />
+    <nodeInfo nodeId="2129893304035244628" fileName="PositionInfo.java" startLine="130" startPosition="40" endLine="131" endPosition="48" />
+    <nodeInfo nodeId="4494976841093370821" fileName="PositionInfo.java" startLine="23" startPosition="0" endLine="25" endPosition="3" />
+    <nodeInfo nodeId="6871054088935083356" fileName="PositionInfo.java" startLine="110" startPosition="14" endLine="112" endPosition="9" />
+    <nodeInfo nodeId="4494976841093370932" fileName="PositionInfo.java" startLine="113" startPosition="12" endLine="115" endPosition="7" />
+    <nodeInfo nodeId="4494976841093370942" fileName="PositionInfo.java" startLine="116" startPosition="10" endLine="118" endPosition="5" />
+    <nodeInfo nodeId="4494976841093370573" fileName="PositionInfo.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370581" fileName="PositionInfo.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370589" fileName="PositionInfo.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370597" fileName="PositionInfo.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370605" fileName="PositionInfo.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370613" fileName="PositionInfo.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370621" fileName="PositionInfo.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370633" fileName="PositionInfo.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370645" fileName="PositionInfo.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370657" fileName="PositionInfo.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370669" fileName="PositionInfo.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370681" fileName="PositionInfo.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370693" fileName="PositionInfo.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <nodeInfo nodeId="2625573555591607411" fileName="PositionInfo.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370768" fileName="PositionInfo.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <nodeInfo nodeId="792512149229739640" fileName="PositionInfo.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
+    <nodeInfo nodeId="6871054088935083321" fileName="PositionInfo.java" startLine="107" startPosition="64" endLine="112" endPosition="9" />
+    <nodeInfo nodeId="4494976841093370825" fileName="PositionInfo.java" startLine="26" startPosition="0" endLine="34" endPosition="3" />
+    <nodeInfo nodeId="4494976841093370710" fileName="PositionInfo.java" startLine="91" startPosition="0" endLine="100" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370915" fileName="PositionInfo.java" startLine="106" startPosition="74" endLine="115" endPosition="7" />
+    <nodeInfo nodeId="2129893304035244564" fileName="PositionInfo.java" startLine="124" startPosition="0" endLine="133" endPosition="0" />
+    <nodeInfo nodeId="4494976841093370906" fileName="PositionInfo.java" startLine="105" startPosition="40" endLine="118" endPosition="5" />
+    <nodeInfo nodeId="4494976841093370900" fileName="PositionInfo.java" startLine="104" startPosition="0" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="4494976841093370824" fileName="PositionInfo.java" startLine="24" startPosition="25" endLine="24" endPosition="25" />
+    <scopeInfo nodeId="4494976841093370576" fileName="PositionInfo.java" startLine="36" startPosition="31" endLine="37" endPosition="27" />
+    <scopeInfo nodeId="4494976841093370584" fileName="PositionInfo.java" startLine="40" startPosition="29" endLine="41" endPosition="25" />
+    <scopeInfo nodeId="4494976841093370592" fileName="PositionInfo.java" startLine="44" startPosition="29" endLine="45" endPosition="28" />
+    <scopeInfo nodeId="4494976841093370600" fileName="PositionInfo.java" startLine="48" startPosition="33" endLine="49" endPosition="32" />
+    <scopeInfo nodeId="4494976841093370608" fileName="PositionInfo.java" startLine="52" startPosition="27" endLine="53" endPosition="26" />
+    <scopeInfo nodeId="4494976841093370616" fileName="PositionInfo.java" startLine="56" startPosition="31" endLine="57" endPosition="30" />
+    <scopeInfo nodeId="4494976841093370624" fileName="PositionInfo.java" startLine="60" startPosition="44" endLine="61" endPosition="31" />
+    <scopeInfo nodeId="4494976841093370636" fileName="PositionInfo.java" startLine="64" startPosition="40" endLine="65" endPosition="27" />
+    <scopeInfo nodeId="4494976841093370648" fileName="PositionInfo.java" startLine="68" startPosition="43" endLine="69" endPosition="33" />
+    <scopeInfo nodeId="4494976841093370660" fileName="PositionInfo.java" startLine="72" startPosition="51" endLine="73" endPosition="41" />
+    <scopeInfo nodeId="4494976841093370674" fileName="PositionInfo.java" startLine="76" startPosition="39" endLine="77" endPosition="29" />
+    <scopeInfo nodeId="4494976841093370686" fileName="PositionInfo.java" startLine="80" startPosition="47" endLine="81" endPosition="37" />
+    <scopeInfo nodeId="4494976841093370696" fileName="PositionInfo.java" startLine="84" startPosition="34" endLine="85" endPosition="58" />
+    <scopeInfo nodeId="2625573555591607414" fileName="PositionInfo.java" startLine="88" startPosition="32" endLine="89" endPosition="45" />
+    <scopeInfo nodeId="4494976841093370771" fileName="PositionInfo.java" startLine="101" startPosition="28" endLine="102" endPosition="137" />
+    <scopeInfo nodeId="6871054088935083322" fileName="PositionInfo.java" startLine="108" startPosition="74" endLine="109" endPosition="53" />
+    <scopeInfo nodeId="6871054088935083357" fileName="PositionInfo.java" startLine="110" startPosition="16" endLine="111" endPosition="58" />
+    <scopeInfo nodeId="4494976841093370933" fileName="PositionInfo.java" startLine="113" startPosition="14" endLine="114" endPosition="48" />
+    <scopeInfo nodeId="4494976841093370943" fileName="PositionInfo.java" startLine="116" startPosition="12" endLine="117" endPosition="58" />
+    <scopeInfo nodeId="792512149229739643" fileName="PositionInfo.java" startLine="121" startPosition="55" endLine="122" endPosition="224" />
+    <scopeInfo nodeId="4494976841093370821" fileName="PositionInfo.java" startLine="23" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="4494976841093370573" fileName="PositionInfo.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="4494976841093370581" fileName="PositionInfo.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="4494976841093370589" fileName="PositionInfo.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="4494976841093370597" fileName="PositionInfo.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="4494976841093370605" fileName="PositionInfo.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="4494976841093370613" fileName="PositionInfo.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="4494976841093370621" fileName="PositionInfo.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="4494976841093370631" varName="fileName" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370633" fileName="PositionInfo.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="4494976841093370643" varName="nodeIf" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370645" fileName="PositionInfo.java" startLine="67" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="4494976841093370655" varName="startLine" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370657" fileName="PositionInfo.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="4494976841093370667" varName="startPosition" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370669" fileName="PositionInfo.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="4494976841093370670" varName="endLine" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370681" fileName="PositionInfo.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="4494976841093370682" varName="endPosition" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370693" fileName="PositionInfo.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="2625573555591607411" fileName="PositionInfo.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="4494976841093370768" fileName="PositionInfo.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="792512149229739640" fileName="PositionInfo.java" startLine="120" startPosition="0" endLine="124" endPosition="0">
+      <varInfo nodeId="792512149229739645" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370916" fileName="PositionInfo.java" startLine="107" startPosition="64" endLine="112" endPosition="9" />
+    <scopeInfo nodeId="4494976841093370828" fileName="PositionInfo.java" startLine="27" startPosition="71" endLine="33" endPosition="74" />
+    <scopeInfo nodeId="4494976841093370713" fileName="PositionInfo.java" startLine="92" startPosition="39" endLine="98" endPosition="77" />
+    <scopeInfo nodeId="2129893304035244567" fileName="PositionInfo.java" startLine="125" startPosition="47" endLine="131" endPosition="48" />
+    <scopeInfo nodeId="4494976841093370825" fileName="PositionInfo.java" startLine="26" startPosition="0" endLine="34" endPosition="3">
+      <varInfo nodeId="4494976841093370895" varName="element" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370710" fileName="PositionInfo.java" startLine="91" startPosition="0" endLine="100" endPosition="0">
+      <varInfo nodeId="4494976841093370766" varName="element" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370914" fileName="PositionInfo.java" startLine="106" startPosition="74" endLine="115" endPosition="7" />
+    <scopeInfo nodeId="2129893304035244564" fileName="PositionInfo.java" startLine="124" startPosition="0" endLine="133" endPosition="0">
+      <varInfo nodeId="2129893304035246275" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370905" fileName="PositionInfo.java" startLine="105" startPosition="40" endLine="118" endPosition="5" />
+    <scopeInfo nodeId="4494976841093370900" fileName="PositionInfo.java" startLine="104" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="4494976841093370903" varName="p" />
+    </scopeInfo>
+    <unitInfo nodeId="4494976841093370548" fileName="PositionInfo.java" startLine="9" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.debug.api.info.PositionInfo" />
+  </root>
+  <root nodeId="4494976841093370953">
+    <nodeInfo nodeId="4494976841093370954" fileName="StacktraceUtil.java" startLine="27" startPosition="29" endLine="28" endPosition="45" />
+    <nodeInfo nodeId="1412418657078270176" fileName="StacktraceUtil.java" startLine="30" startPosition="119" endLine="31" endPosition="34" />
+    <nodeInfo nodeId="4494976841093371008" fileName="StacktraceUtil.java" startLine="35" startPosition="61" endLine="36" endPosition="18" />
+    <nodeInfo nodeId="4494976841093371010" fileName="StacktraceUtil.java" startLine="37" startPosition="5" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="4494976841093371011" fileName="StacktraceUtil.java" startLine="38" startPosition="0" endLine="39" endPosition="67" />
+    <nodeInfo nodeId="4494976841093371022" fileName="StacktraceUtil.java" startLine="39" startPosition="67" endLine="40" endPosition="42" />
+    <nodeInfo nodeId="4494976841093371029" fileName="StacktraceUtil.java" startLine="40" startPosition="42" endLine="41" endPosition="41" />
+    <nodeInfo nodeId="4494976841093371038" fileName="StacktraceUtil.java" startLine="42" startPosition="27" endLine="43" endPosition="18" />
+    <nodeInfo nodeId="4494976841093371043" fileName="StacktraceUtil.java" startLine="44" startPosition="5" endLine="45" endPosition="0" />
+    <nodeInfo nodeId="4494976841093371044" fileName="StacktraceUtil.java" startLine="45" startPosition="0" endLine="46" endPosition="56" />
+    <nodeInfo nodeId="4494976841093371052" fileName="StacktraceUtil.java" startLine="46" startPosition="56" endLine="47" endPosition="48" />
+    <nodeInfo nodeId="4494976841093371061" fileName="StacktraceUtil.java" startLine="48" startPosition="34" endLine="49" endPosition="18" />
+    <nodeInfo nodeId="4494976841093371066" fileName="StacktraceUtil.java" startLine="50" startPosition="5" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="4494976841093371067" fileName="StacktraceUtil.java" startLine="51" startPosition="0" endLine="52" endPosition="74" />
+    <nodeInfo nodeId="4494976841093371077" fileName="StacktraceUtil.java" startLine="52" startPosition="74" endLine="53" endPosition="60" />
+    <nodeInfo nodeId="4494976841093371085" fileName="StacktraceUtil.java" startLine="54" startPosition="29" endLine="55" endPosition="18" />
+    <nodeInfo nodeId="4494976841093371090" fileName="StacktraceUtil.java" startLine="56" startPosition="5" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="1412418657078270227" fileName="StacktraceUtil.java" startLine="59" startPosition="40" endLine="60" endPosition="48" />
+    <nodeInfo nodeId="8872603428594898379" fileName="StacktraceUtil.java" startLine="66" startPosition="181" endLine="67" endPosition="45" />
+    <nodeInfo nodeId="7317047074821394890" fileName="StacktraceUtil.java" startLine="73" startPosition="57" endLine="74" endPosition="123" />
+    <nodeInfo nodeId="7317047074821394900" fileName="StacktraceUtil.java" startLine="74" startPosition="123" endLine="75" endPosition="26" />
+    <nodeInfo nodeId="7317047074821394914" fileName="StacktraceUtil.java" startLine="79" startPosition="31" endLine="80" endPosition="17" />
+    <nodeInfo nodeId="20378878102242527" fileName="StacktraceUtil.java" startLine="82" startPosition="79" endLine="83" endPosition="17" />
+    <nodeInfo nodeId="20378878102242488" fileName="StacktraceUtil.java" startLine="84" startPosition="7" endLine="85" endPosition="0" />
+    <nodeInfo nodeId="20378878102242489" fileName="StacktraceUtil.java" startLine="85" startPosition="0" endLine="86" endPosition="76" />
+    <nodeInfo nodeId="20378878102242529" fileName="StacktraceUtil.java" startLine="87" startPosition="25" endLine="88" endPosition="17" />
+    <nodeInfo nodeId="20378878102242503" fileName="StacktraceUtil.java" startLine="89" startPosition="7" endLine="90" endPosition="0" />
+    <nodeInfo nodeId="20378878102242504" fileName="StacktraceUtil.java" startLine="90" startPosition="0" endLine="91" endPosition="57" />
+    <nodeInfo nodeId="20378878102242510" fileName="StacktraceUtil.java" startLine="93" startPosition="27" endLine="94" endPosition="61" />
+    <nodeInfo nodeId="20378878102242518" fileName="StacktraceUtil.java" startLine="96" startPosition="9" endLine="97" endPosition="0" />
+    <nodeInfo nodeId="20378878102242521" fileName="StacktraceUtil.java" startLine="98" startPosition="33" endLine="99" endPosition="28" />
+    <nodeInfo nodeId="8872603428594898458" fileName="StacktraceUtil.java" startLine="101" startPosition="5" endLine="102" endPosition="0" />
+    <nodeInfo nodeId="8872603428594898459" fileName="StacktraceUtil.java" startLine="102" startPosition="0" endLine="103" endPosition="16" />
+    <nodeInfo nodeId="6898698421143350821" fileName="StacktraceUtil.java" startLine="142" startPosition="73" endLine="143" endPosition="50" />
+    <nodeInfo nodeId="2046879656472309119" fileName="StacktraceUtil.java" startLine="147" startPosition="6" endLine="148" endPosition="41" />
+    <nodeInfo nodeId="2046879656472316899" fileName="StacktraceUtil.java" startLine="149" startPosition="28" endLine="150" endPosition="64" />
+    <nodeInfo nodeId="345788149183085991" fileName="StacktraceUtil.java" startLine="151" startPosition="5" endLine="152" endPosition="16" />
+    <nodeInfo nodeId="5865703536373446455" fileName="StacktraceUtil.java" startLine="155" startPosition="57" endLine="156" endPosition="33" />
+    <nodeInfo nodeId="5865703536373446500" fileName="StacktraceUtil.java" startLine="156" startPosition="33" endLine="157" endPosition="36" />
+    <nodeInfo nodeId="5865703536373442937" fileName="StacktraceUtil.java" startLine="157" startPosition="36" endLine="158" endPosition="89" />
+    <nodeInfo nodeId="5865703536373446424" fileName="StacktraceUtil.java" startLine="159" startPosition="28" endLine="160" endPosition="18" />
+    <nodeInfo nodeId="5865703536373446470" fileName="StacktraceUtil.java" startLine="161" startPosition="5" endLine="162" endPosition="76" />
+    <nodeInfo nodeId="5865703536373446494" fileName="StacktraceUtil.java" startLine="163" startPosition="31" endLine="164" endPosition="18" />
+    <nodeInfo nodeId="5865703536373446498" fileName="StacktraceUtil.java" startLine="165" startPosition="5" endLine="166" endPosition="66" />
+    <nodeInfo nodeId="4494976841093371260" fileName="StacktraceUtil.java" startLine="169" startPosition="55" endLine="170" endPosition="78" />
+    <nodeInfo nodeId="4494976841093371266" fileName="StacktraceUtil.java" startLine="170" startPosition="78" endLine="171" endPosition="67" />
+    <nodeInfo nodeId="4494976841093371273" fileName="StacktraceUtil.java" startLine="171" startPosition="67" endLine="172" endPosition="44" />
+    <nodeInfo nodeId="1412418657078211213" fileName="StacktraceUtil.java" startLine="175" startPosition="68" endLine="176" endPosition="65" />
+    <nodeInfo nodeId="1412418657078266196" fileName="StacktraceUtil.java" startLine="176" startPosition="65" endLine="177" endPosition="67" />
+    <nodeInfo nodeId="1412418657078266192" fileName="StacktraceUtil.java" startLine="177" startPosition="67" endLine="178" endPosition="18" />
+    <nodeInfo nodeId="1412418657078270161" fileName="StacktraceUtil.java" startLine="186" startPosition="63" endLine="187" endPosition="58" />
+    <nodeInfo nodeId="1412418657078270045" fileName="StacktraceUtil.java" startLine="181" startPosition="58" endLine="183" endPosition="5" />
+    <nodeInfo nodeId="4494976841093370999" fileName="StacktraceUtil.java" startLine="34" startPosition="72" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="4494976841093371036" fileName="StacktraceUtil.java" startLine="41" startPosition="41" endLine="44" endPosition="5" />
+    <nodeInfo nodeId="4494976841093371059" fileName="StacktraceUtil.java" startLine="47" startPosition="48" endLine="50" endPosition="5" />
+    <nodeInfo nodeId="4494976841093371083" fileName="StacktraceUtil.java" startLine="53" startPosition="60" endLine="56" endPosition="5" />
+    <nodeInfo nodeId="7317047074821394905" fileName="StacktraceUtil.java" startLine="78" startPosition="83" endLine="81" endPosition="7" />
+    <nodeInfo nodeId="20378878102242480" fileName="StacktraceUtil.java" startLine="81" startPosition="7" endLine="84" endPosition="7" />
+    <nodeInfo nodeId="20378878102242496" fileName="StacktraceUtil.java" startLine="86" startPosition="76" endLine="89" endPosition="7" />
+    <nodeInfo nodeId="20378878102242519" fileName="StacktraceUtil.java" startLine="97" startPosition="0" endLine="100" endPosition="7" />
+    <nodeInfo nodeId="2046879656472316863" fileName="StacktraceUtil.java" startLine="148" startPosition="41" endLine="151" endPosition="5" />
+    <nodeInfo nodeId="5865703536373446413" fileName="StacktraceUtil.java" startLine="158" startPosition="89" endLine="161" endPosition="5" />
+    <nodeInfo nodeId="5865703536373446480" fileName="StacktraceUtil.java" startLine="162" startPosition="76" endLine="165" endPosition="5" />
+    <nodeInfo nodeId="4494976841093370958" fileName="StacktraceUtil.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <nodeInfo nodeId="1412418657078270221" fileName="StacktraceUtil.java" startLine="58" startPosition="119" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="8872603428594898386" fileName="StacktraceUtil.java" startLine="67" startPosition="45" endLine="71" endPosition="6" />
+    <nodeInfo nodeId="20378878102242508" fileName="StacktraceUtil.java" startLine="92" startPosition="59" endLine="96" endPosition="0" />
+    <nodeInfo nodeId="5274620501708253305" fileName="StacktraceUtil.java" startLine="108" startPosition="111" endLine="112" endPosition="0" />
+    <nodeInfo nodeId="8872603428594911058" fileName="StacktraceUtil.java" startLine="117" startPosition="110" endLine="121" endPosition="0" />
+    <nodeInfo nodeId="4736057464620485554" fileName="StacktraceUtil.java" startLine="126" startPosition="110" endLine="130" endPosition="0" />
+    <nodeInfo nodeId="4736057464620485501" fileName="StacktraceUtil.java" startLine="135" startPosition="110" endLine="139" endPosition="0" />
+    <nodeInfo nodeId="6898698421143350838" fileName="StacktraceUtil.java" startLine="143" startPosition="50" endLine="147" endPosition="6" />
+    <nodeInfo nodeId="1412418657078270191" fileName="StacktraceUtil.java" startLine="57" startPosition="0" endLine="62" endPosition="7" />
+    <nodeInfo nodeId="7317047074821394888" fileName="StacktraceUtil.java" startLine="72" startPosition="163" endLine="77" endPosition="0" />
+    <nodeInfo nodeId="20378878102242507" fileName="StacktraceUtil.java" startLine="91" startPosition="57" endLine="96" endPosition="9" />
+    <nodeInfo nodeId="1412418657078270050" fileName="StacktraceUtil.java" startLine="184" startPosition="0" endLine="189" endPosition="0" />
+    <nodeInfo nodeId="20378878102242443" fileName="StacktraceUtil.java" startLine="71" startPosition="6" endLine="77" endPosition="7" />
+    <nodeInfo nodeId="4494976841093371243" fileName="StacktraceUtil.java" startLine="168" startPosition="0" endLine="174" endPosition="0" />
+    <nodeInfo nodeId="1412418657078202477" fileName="StacktraceUtil.java" startLine="174" startPosition="0" endLine="180" endPosition="0" />
+    <nodeInfo nodeId="5274620501708243148" fileName="StacktraceUtil.java" startLine="105" startPosition="0" endLine="114" endPosition="0" />
+    <nodeInfo nodeId="788938741468859956" fileName="StacktraceUtil.java" startLine="114" startPosition="0" endLine="123" endPosition="0" />
+    <nodeInfo nodeId="4816127341449495079" fileName="StacktraceUtil.java" startLine="123" startPosition="0" endLine="132" endPosition="0" />
+    <nodeInfo nodeId="4736057464620481657" fileName="StacktraceUtil.java" startLine="132" startPosition="0" endLine="141" endPosition="0" />
+    <nodeInfo nodeId="4494976841093371146" fileName="StacktraceUtil.java" startLine="141" startPosition="0" endLine="154" endPosition="0" />
+    <nodeInfo nodeId="5865703536373431392" fileName="StacktraceUtil.java" startLine="154" startPosition="0" endLine="168" endPosition="0" />
+    <nodeInfo nodeId="20378878102242473" fileName="StacktraceUtil.java" startLine="77" startPosition="7" endLine="101" endPosition="5" />
+    <nodeInfo nodeId="4494976841093370995" fileName="StacktraceUtil.java" startLine="33" startPosition="0" endLine="64" endPosition="0" />
+    <nodeInfo nodeId="8872603428594894534" fileName="StacktraceUtil.java" startLine="64" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="1412418657078270048" fileName="StacktraceUtil.java" startLine="182" startPosition="31" endLine="182" endPosition="31" />
+    <scopeInfo nodeId="4494976841093370961" fileName="StacktraceUtil.java" startLine="30" startPosition="119" endLine="31" endPosition="34" />
+    <scopeInfo nodeId="4494976841093371007" fileName="StacktraceUtil.java" startLine="35" startPosition="61" endLine="36" endPosition="18" />
+    <scopeInfo nodeId="4494976841093371037" fileName="StacktraceUtil.java" startLine="42" startPosition="27" endLine="43" endPosition="18" />
+    <scopeInfo nodeId="4494976841093371060" fileName="StacktraceUtil.java" startLine="48" startPosition="34" endLine="49" endPosition="18" />
+    <scopeInfo nodeId="4494976841093371084" fileName="StacktraceUtil.java" startLine="54" startPosition="29" endLine="55" endPosition="18" />
+    <scopeInfo nodeId="1412418657078270226" fileName="StacktraceUtil.java" startLine="59" startPosition="40" endLine="60" endPosition="48" />
+    <scopeInfo nodeId="7317047074821394906" fileName="StacktraceUtil.java" startLine="79" startPosition="31" endLine="80" endPosition="17" />
+    <scopeInfo nodeId="20378878102242481" fileName="StacktraceUtil.java" startLine="82" startPosition="79" endLine="83" endPosition="17" />
+    <scopeInfo nodeId="20378878102242497" fileName="StacktraceUtil.java" startLine="87" startPosition="25" endLine="88" endPosition="17" />
+    <scopeInfo nodeId="20378878102242509" fileName="StacktraceUtil.java" startLine="93" startPosition="27" endLine="94" endPosition="61" />
+    <scopeInfo nodeId="20378878102242520" fileName="StacktraceUtil.java" startLine="98" startPosition="33" endLine="99" endPosition="28" />
+    <scopeInfo nodeId="5274620501708253306" fileName="StacktraceUtil.java" startLine="109" startPosition="73" endLine="110" endPosition="55" />
+    <scopeInfo nodeId="8872603428594911059" fileName="StacktraceUtil.java" startLine="118" startPosition="74" endLine="119" endPosition="81" />
+    <scopeInfo nodeId="4736057464620485559" fileName="StacktraceUtil.java" startLine="127" startPosition="74" endLine="128" endPosition="77" />
+    <scopeInfo nodeId="4736057464620485506" fileName="StacktraceUtil.java" startLine="136" startPosition="74" endLine="137" endPosition="85" />
+    <scopeInfo nodeId="2046879656472316864" fileName="StacktraceUtil.java" startLine="149" startPosition="28" endLine="150" endPosition="64" />
+    <scopeInfo nodeId="5865703536373446414" fileName="StacktraceUtil.java" startLine="159" startPosition="28" endLine="160" endPosition="18" />
+    <scopeInfo nodeId="5865703536373446481" fileName="StacktraceUtil.java" startLine="163" startPosition="31" endLine="164" endPosition="18" />
+    <scopeInfo nodeId="1412418657078270058" fileName="StacktraceUtil.java" startLine="186" startPosition="63" endLine="187" endPosition="58" />
+    <scopeInfo nodeId="7317047074821394889" fileName="StacktraceUtil.java" startLine="73" startPosition="57" endLine="75" endPosition="26">
+      <varInfo nodeId="7317047074821394891" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412418657078270045" fileName="StacktraceUtil.java" startLine="181" startPosition="58" endLine="183" endPosition="5" />
+    <scopeInfo nodeId="4494976841093371246" fileName="StacktraceUtil.java" startLine="169" startPosition="55" endLine="172" endPosition="44">
+      <varInfo nodeId="4494976841093371267" varName="opener" />
+      <varInfo nodeId="4494976841093371261" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412418657078202480" fileName="StacktraceUtil.java" startLine="175" startPosition="68" endLine="178" endPosition="18">
+      <varInfo nodeId="1412418657078211214" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370958" fileName="StacktraceUtil.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="4494976841093370991" varName="text" />
+      <varInfo nodeId="4494976841093370989" varName="consoleView" />
+      <varInfo nodeId="4494976841093370993" varName="type" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412418657078270221" fileName="StacktraceUtil.java" startLine="58" startPosition="119" endLine="62" endPosition="0">
+      <varInfo nodeId="1412418657078270224" varName="p0" />
+    </scopeInfo>
+    <scopeInfo nodeId="20378878102242508" fileName="StacktraceUtil.java" startLine="92" startPosition="59" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="5274620501708253305" fileName="StacktraceUtil.java" startLine="108" startPosition="111" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="8872603428594911058" fileName="StacktraceUtil.java" startLine="117" startPosition="110" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="4736057464620485554" fileName="StacktraceUtil.java" startLine="126" startPosition="110" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="4736057464620485501" fileName="StacktraceUtil.java" startLine="135" startPosition="110" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="7317047074821394888" fileName="StacktraceUtil.java" startLine="72" startPosition="163" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="5274620501708243151" fileName="StacktraceUtil.java" startLine="107" startPosition="102" endLine="112" endPosition="7" />
+    <scopeInfo nodeId="788938741468859959" fileName="StacktraceUtil.java" startLine="116" startPosition="101" endLine="121" endPosition="7" />
+    <scopeInfo nodeId="4816127341449495082" fileName="StacktraceUtil.java" startLine="125" startPosition="97" endLine="130" endPosition="7" />
+    <scopeInfo nodeId="4736057464620481660" fileName="StacktraceUtil.java" startLine="134" startPosition="127" endLine="139" endPosition="7" />
+    <scopeInfo nodeId="1412418657078270050" fileName="StacktraceUtil.java" startLine="184" startPosition="0" endLine="189" endPosition="0">
+      <varInfo nodeId="1412418657078270055" varName="length" />
+      <varInfo nodeId="1412418657078270053" varName="line" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093371243" fileName="StacktraceUtil.java" startLine="168" startPosition="0" endLine="174" endPosition="0">
+      <varInfo nodeId="4494976841093371279" varName="node" />
+      <varInfo nodeId="3339131993541448505" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412418657078202477" fileName="StacktraceUtil.java" startLine="174" startPosition="0" endLine="180" endPosition="0">
+      <varInfo nodeId="1412418657078211211" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="5274620501708243148" fileName="StacktraceUtil.java" startLine="105" startPosition="0" endLine="114" endPosition="0">
+      <varInfo nodeId="5274620501708253293" varName="position" />
+      <varInfo nodeId="5274620501708253290" varName="file" />
+      <varInfo nodeId="5274620501708243153" varName="className" />
+    </scopeInfo>
+    <scopeInfo nodeId="788938741468859956" fileName="StacktraceUtil.java" startLine="114" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="788938741468863091" varName="position" />
+      <varInfo nodeId="788938741468863088" varName="file" />
+      <varInfo nodeId="788938741468863086" varName="className" />
+    </scopeInfo>
+    <scopeInfo nodeId="4816127341449495079" fileName="StacktraceUtil.java" startLine="123" startPosition="0" endLine="132" endPosition="0">
+      <varInfo nodeId="4816127341449495089" varName="position" />
+      <varInfo nodeId="4816127341449495086" varName="file" />
+      <varInfo nodeId="4816127341449495084" varName="className" />
+    </scopeInfo>
+    <scopeInfo nodeId="4736057464620481657" fileName="StacktraceUtil.java" startLine="132" startPosition="0" endLine="141" endPosition="0">
+      <varInfo nodeId="4736057464620485490" varName="position" />
+      <varInfo nodeId="4736057464620485493" varName="varName" />
+      <varInfo nodeId="4736057464620485487" varName="file" />
+      <varInfo nodeId="4736057464620485485" varName="className" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093371153" fileName="StacktraceUtil.java" startLine="142" startPosition="73" endLine="152" endPosition="16">
+      <varInfo nodeId="6898698421143350839" varName="pkg" />
+      <varInfo nodeId="2046879656472309120" varName="split" />
+      <varInfo nodeId="6898698421143350822" varName="lastDot" />
+    </scopeInfo>
+    <scopeInfo nodeId="5865703536373431395" fileName="StacktraceUtil.java" startLine="155" startPosition="57" endLine="166" endPosition="66">
+      <varInfo nodeId="5865703536373446471" varName="positionInfo" />
+      <varInfo nodeId="5865703536373446501" varName="model" />
+      <varInfo nodeId="5865703536373442938" varName="debugInfo" />
+      <varInfo nodeId="5865703536373446456" varName="snode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093371146" fileName="StacktraceUtil.java" startLine="141" startPosition="0" endLine="154" endPosition="0">
+      <varInfo nodeId="4494976841093371149" varName="position" />
+      <varInfo nodeId="4494976841093371147" varName="stacktraceLine" />
+    </scopeInfo>
+    <scopeInfo nodeId="5865703536373431392" fileName="StacktraceUtil.java" startLine="154" startPosition="0" endLine="168" endPosition="0">
+      <varInfo nodeId="5865703536373442935" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="20378878102242476" fileName="StacktraceUtil.java" startLine="78" startPosition="83" endLine="100" endPosition="7">
+      <varInfo nodeId="20378878102242505" varName="result" />
+      <varInfo nodeId="20378878102242490" varName="info" />
+    </scopeInfo>
+    <scopeInfo nodeId="20378878102242473" fileName="StacktraceUtil.java" startLine="77" startPosition="7" endLine="101" endPosition="5" />
+    <scopeInfo nodeId="4494976841093370998" fileName="StacktraceUtil.java" startLine="34" startPosition="72" endLine="62" endPosition="7">
+      <varInfo nodeId="4494976841093371068" varName="position" />
+      <varInfo nodeId="4494976841093371023" varName="tmpStr" />
+      <varInfo nodeId="4494976841093371012" varName="start" />
+      <varInfo nodeId="4494976841093371030" varName="parenIndex" />
+      <varInfo nodeId="4494976841093371053" varName="closingParenIndex" />
+      <varInfo nodeId="4494976841093371078" varName="nodeToShow" />
+      <varInfo nodeId="4494976841093371045" varName="methodName" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093370995" fileName="StacktraceUtil.java" startLine="33" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="4494976841093371144" varName="line" />
+      <varInfo nodeId="1412418657078270187" varName="offset" />
+    </scopeInfo>
+    <scopeInfo nodeId="8872603428594894537" fileName="StacktraceUtil.java" startLine="66" startPosition="181" endLine="103" endPosition="16">
+      <varInfo nodeId="8872603428594898387" varName="pkg" />
+      <varInfo nodeId="8872603428594898380" varName="lastDot" />
+      <varInfo nodeId="20378878102242444" varName="descritptors" />
+    </scopeInfo>
+    <scopeInfo nodeId="8872603428594894534" fileName="StacktraceUtil.java" startLine="64" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="8872603428594898461" varName="nodeGetter" />
+      <varInfo nodeId="8872603428594898362" varName="className" />
+    </scopeInfo>
+    <unitInfo nodeId="1412418657078270219" fileName="StacktraceUtil.java" startLine="58" startPosition="102" endLine="62" endPosition="5" unitName="jetbrains.mps.debug.api.info.StacktraceUtil$1" />
+    <unitInfo nodeId="20378878102242508" fileName="StacktraceUtil.java" startLine="92" startPosition="47" endLine="96" endPosition="7" unitName="jetbrains.mps.debug.api.info.StacktraceUtil$3" />
+    <unitInfo nodeId="5274620501708253305" fileName="StacktraceUtil.java" startLine="108" startPosition="42" endLine="112" endPosition="5" unitName="jetbrains.mps.debug.api.info._FunctionTypes._return_P2_E0$anonymous" />
+    <unitInfo nodeId="8872603428594911058" fileName="StacktraceUtil.java" startLine="117" startPosition="42" endLine="121" endPosition="5" unitName="jetbrains.mps.debug.api.info._FunctionTypes._return_P2_E0$anonymous" />
+    <unitInfo nodeId="4736057464620485554" fileName="StacktraceUtil.java" startLine="126" startPosition="42" endLine="130" endPosition="5" unitName="jetbrains.mps.debug.api.info._FunctionTypes._return_P2_E0$anonymous" />
+    <unitInfo nodeId="4736057464620485501" fileName="StacktraceUtil.java" startLine="135" startPosition="42" endLine="139" endPosition="5" unitName="jetbrains.mps.debug.api.info._FunctionTypes._return_P2_E0$anonymous" />
+    <unitInfo nodeId="7317047074821394888" fileName="StacktraceUtil.java" startLine="72" startPosition="124" endLine="77" endPosition="5" unitName="jetbrains.mps.debug.api.info.StacktraceUtil$2" />
+    <unitInfo nodeId="1412418657078270043" fileName="StacktraceUtil.java" startLine="181" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.debug.api.info.StacktraceUtil$StackTraceFilter" />
+    <unitInfo nodeId="4494976841093370953" fileName="StacktraceUtil.java" startLine="27" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.debug.api.info.StacktraceUtil" />
+  </root>
+  <root nodeId="4494976841093543348">
+    <nodeInfo nodeId="4494976841093550700" fileName="BLDebugInfoCache.java" startLine="15" startPosition="92" endLine="16" endPosition="43" />
+    <nodeInfo nodeId="4494976841093543976" fileName="BLDebugInfoCache.java" startLine="21" startPosition="36" endLine="22" endPosition="33" />
+    <nodeInfo nodeId="4494976841093543350" fileName="BLDebugInfoCache.java" startLine="14" startPosition="69" endLine="17" endPosition="3" />
+    <nodeInfo nodeId="4494976841093543968" fileName="BLDebugInfoCache.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="4494976841093543944" fileName="BLDebugInfoCache.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="4494976841093543950" fileName="BLDebugInfoCache.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <nodeInfo nodeId="4494976841093543962" fileName="BLDebugInfoCache.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="4494976841093543993" fileName="BLDebugInfoCache.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="4494976841093543956" fileName="BLDebugInfoCache.java" startLine="18" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="4494976841093543353" fileName="BLDebugInfoCache.java" startLine="15" startPosition="92" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="4494976841093543961" fileName="BLDebugInfoCache.java" startLine="21" startPosition="36" endLine="22" endPosition="33" />
+    <scopeInfo nodeId="4494976841093543971" fileName="BLDebugInfoCache.java" startLine="25" startPosition="39" endLine="26" endPosition="20" />
+    <scopeInfo nodeId="4494976841093543949" fileName="BLDebugInfoCache.java" startLine="29" startPosition="41" endLine="30" endPosition="22" />
+    <scopeInfo nodeId="4494976841093543955" fileName="BLDebugInfoCache.java" startLine="33" startPosition="42" endLine="34" endPosition="32" />
+    <scopeInfo nodeId="4494976841093543967" fileName="BLDebugInfoCache.java" startLine="37" startPosition="65" endLine="38" endPosition="30" />
+    <scopeInfo nodeId="4494976841093543996" fileName="BLDebugInfoCache.java" startLine="41" startPosition="48" endLine="42" endPosition="84" />
+    <scopeInfo nodeId="4494976841093543350" fileName="BLDebugInfoCache.java" startLine="14" startPosition="69" endLine="17" endPosition="3">
+      <varInfo nodeId="4494976841093550698" varName="fileGeneratorManager" />
+      <varInfo nodeId="240828470629826867" varName="allCaches" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093543968" fileName="BLDebugInfoCache.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="4494976841093543944" fileName="BLDebugInfoCache.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="4494976841093543947" varName="di" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093543950" fileName="BLDebugInfoCache.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="4494976841093543953" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093543962" fileName="BLDebugInfoCache.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="4494976841093543965" varName="ctx" />
+    </scopeInfo>
+    <scopeInfo nodeId="4494976841093543993" fileName="BLDebugInfoCache.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4494976841093543956" fileName="BLDebugInfoCache.java" startLine="18" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.debug.api.info.BLDebugInfoCache" />
+  </root>
+  <root nodeId="4837185610456219360">
+    <nodeInfo nodeId="4837185610456241392" fileName="ScopePositionInfo.java" startLine="15" startPosition="53" endLine="16" endPosition="45" />
+    <nodeInfo nodeId="4837185610456219360" fileName="ScopePositionInfo.java" startLine="16" startPosition="45" endLine="17" endPosition="72" />
+    <nodeInfo nodeId="4837185610456241379" fileName="ScopePositionInfo.java" startLine="18" startPosition="0" endLine="19" endPosition="92" />
+    <nodeInfo nodeId="3764553758271128821" fileName="ScopePositionInfo.java" startLine="19" startPosition="92" endLine="20" endPosition="102" />
+    <nodeInfo nodeId="4837185610456231804" fileName="ScopePositionInfo.java" startLine="25" startPosition="76" endLine="26" endPosition="19" />
+    <nodeInfo nodeId="4837185610456267652" fileName="ScopePositionInfo.java" startLine="27" startPosition="66" endLine="28" endPosition="57" />
+    <nodeInfo nodeId="4837185610456267714" fileName="ScopePositionInfo.java" startLine="28" startPosition="57" endLine="29" endPosition="52" />
+    <nodeInfo nodeId="4837185610456267722" fileName="ScopePositionInfo.java" startLine="29" startPosition="52" endLine="30" endPosition="74" />
+    <nodeInfo nodeId="4837185610456267766" fileName="ScopePositionInfo.java" startLine="35" startPosition="39" endLine="36" endPosition="26" />
+    <nodeInfo nodeId="4837185610456267812" fileName="ScopePositionInfo.java" startLine="37" startPosition="71" endLine="38" endPosition="44" />
+    <nodeInfo nodeId="4837185610456267819" fileName="ScopePositionInfo.java" startLine="38" startPosition="44" endLine="39" endPosition="28" />
+    <nodeInfo nodeId="4837185610456267828" fileName="ScopePositionInfo.java" startLine="39" startPosition="28" endLine="40" endPosition="32" />
+    <nodeInfo nodeId="4837185610456267880" fileName="ScopePositionInfo.java" startLine="44" startPosition="57" endLine="45" endPosition="68" />
+    <nodeInfo nodeId="4837185610456267908" fileName="ScopePositionInfo.java" startLine="46" startPosition="26" endLine="47" endPosition="18" />
+    <nodeInfo nodeId="4837185610456267860" fileName="ScopePositionInfo.java" startLine="48" startPosition="5" endLine="49" endPosition="50" />
+    <nodeInfo nodeId="3073231036165953252" fileName="ScopePositionInfo.java" startLine="52" startPosition="38" endLine="53" endPosition="36" />
+    <nodeInfo nodeId="4837185610456267977" fileName="ScopePositionInfo.java" startLine="54" startPosition="26" endLine="55" endPosition="38" />
+    <nodeInfo nodeId="4837185610456268053" fileName="ScopePositionInfo.java" startLine="55" startPosition="38" endLine="56" endPosition="41" />
+    <nodeInfo nodeId="3764553758271143529" fileName="ScopePositionInfo.java" startLine="56" startPosition="41" endLine="57" endPosition="70" />
+    <nodeInfo nodeId="6127114859620899804" fileName="ScopePositionInfo.java" startLine="57" startPosition="70" endLine="58" endPosition="74" />
+    <nodeInfo nodeId="3073231036165953261" fileName="ScopePositionInfo.java" startLine="60" startPosition="32" endLine="61" endPosition="67" />
+    <nodeInfo nodeId="3764553758271143599" fileName="ScopePositionInfo.java" startLine="66" startPosition="50" endLine="67" endPosition="84" />
+    <nodeInfo nodeId="3764553758271143610" fileName="ScopePositionInfo.java" startLine="67" startPosition="84" endLine="68" endPosition="64" />
+    <nodeInfo nodeId="3764553758271143581" fileName="ScopePositionInfo.java" startLine="68" startPosition="64" endLine="69" endPosition="18" />
+    <nodeInfo nodeId="3764553758271143646" fileName="ScopePositionInfo.java" startLine="72" startPosition="37" endLine="73" endPosition="57" />
+    <nodeInfo nodeId="3764553758271143682" fileName="ScopePositionInfo.java" startLine="76" startPosition="46" endLine="77" endPosition="69" />
+    <nodeInfo nodeId="4837185610456219362" fileName="ScopePositionInfo.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
+    <nodeInfo nodeId="4837185610456267895" fileName="ScopePositionInfo.java" startLine="45" startPosition="68" endLine="48" endPosition="5" />
+    <nodeInfo nodeId="3073231036165953261" fileName="ScopePositionInfo.java" startLine="59" startPosition="12" endLine="62" endPosition="7" />
+    <nodeInfo nodeId="3073231036165953259" fileName="ScopePositionInfo.java" startLine="59" startPosition="10" endLine="63" endPosition="5" />
+    <nodeInfo nodeId="3764553758271143625" fileName="ScopePositionInfo.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
+    <nodeInfo nodeId="3764553758271143657" fileName="ScopePositionInfo.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <nodeInfo nodeId="4837185610456267610" fileName="ScopePositionInfo.java" startLine="26" startPosition="19" endLine="31" endPosition="5" />
+    <nodeInfo nodeId="4837185610456267777" fileName="ScopePositionInfo.java" startLine="36" startPosition="26" endLine="41" endPosition="5" />
+    <nodeInfo nodeId="3764553758271143557" fileName="ScopePositionInfo.java" startLine="65" startPosition="0" endLine="71" endPosition="0" />
+    <nodeInfo nodeId="4837185610456231798" fileName="ScopePositionInfo.java" startLine="24" startPosition="0" endLine="32" endPosition="3" />
+    <nodeInfo nodeId="4837185610456267847" fileName="ScopePositionInfo.java" startLine="43" startPosition="0" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="4837185610456267759" fileName="ScopePositionInfo.java" startLine="33" startPosition="0" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="3073231036165953238" fileName="ScopePositionInfo.java" startLine="53" startPosition="36" endLine="63" endPosition="5" />
+    <nodeInfo nodeId="4837185610456267958" fileName="ScopePositionInfo.java" startLine="51" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="4837185610456219365" fileName="ScopePositionInfo.java" startLine="22" startPosition="30" endLine="22" endPosition="30" />
+    <scopeInfo nodeId="4837185610456267896" fileName="ScopePositionInfo.java" startLine="46" startPosition="26" endLine="47" endPosition="18" />
+    <scopeInfo nodeId="3073231036165953261" fileName="ScopePositionInfo.java" startLine="60" startPosition="32" endLine="61" endPosition="67" />
+    <scopeInfo nodeId="3764553758271143628" fileName="ScopePositionInfo.java" startLine="72" startPosition="37" endLine="73" endPosition="57" />
+    <scopeInfo nodeId="3764553758271143660" fileName="ScopePositionInfo.java" startLine="76" startPosition="46" endLine="77" endPosition="69" />
+    <scopeInfo nodeId="4837185610456219362" fileName="ScopePositionInfo.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
+    <scopeInfo nodeId="4837185610456267611" fileName="ScopePositionInfo.java" startLine="27" startPosition="66" endLine="30" endPosition="74">
+      <varInfo nodeId="4837185610456267715" varName="varInfo" />
+      <varInfo nodeId="4837185610456267653" varName="varInfoElement" />
+    </scopeInfo>
+    <scopeInfo nodeId="4837185610456267778" fileName="ScopePositionInfo.java" startLine="37" startPosition="71" endLine="40" endPosition="32">
+      <varInfo nodeId="4837185610456267813" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="3073231036165953260" fileName="ScopePositionInfo.java" startLine="59" startPosition="12" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="3073231036165953261" fileName="ScopePositionInfo.java" startLine="59" startPosition="12" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="3764553758271143560" fileName="ScopePositionInfo.java" startLine="66" startPosition="50" endLine="69" endPosition="18">
+      <varInfo nodeId="3764553758271143600" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3073231036165953239" fileName="ScopePositionInfo.java" startLine="54" startPosition="26" endLine="58" endPosition="74">
+      <varInfo nodeId="4837185610456267978" varName="varInfo" />
+    </scopeInfo>
+    <scopeInfo nodeId="3764553758271143625" fileName="ScopePositionInfo.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="3764553758271143657" fileName="ScopePositionInfo.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="3764553758271143680" varName="varInfo" />
+    </scopeInfo>
+    <scopeInfo nodeId="4837185610456267610" fileName="ScopePositionInfo.java" startLine="26" startPosition="19" endLine="31" endPosition="5">
+      <varInfo nodeId="4837185610456267614" varName="varInfoElement_" />
+    </scopeInfo>
+    <scopeInfo nodeId="4837185610456267777" fileName="ScopePositionInfo.java" startLine="36" startPosition="26" endLine="41" endPosition="5">
+      <varInfo nodeId="4837185610456267781" varName="varInfo" />
+    </scopeInfo>
+    <scopeInfo nodeId="4837185610456267850" fileName="ScopePositionInfo.java" startLine="44" startPosition="57" endLine="49" endPosition="50">
+      <varInfo nodeId="4837185610456267881" varName="varInfo" />
+    </scopeInfo>
+    <scopeInfo nodeId="4837185610456231801" fileName="ScopePositionInfo.java" startLine="25" startPosition="76" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="4837185610456267764" fileName="ScopePositionInfo.java" startLine="35" startPosition="39" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="3764553758271143557" fileName="ScopePositionInfo.java" startLine="65" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="4837185610456231798" fileName="ScopePositionInfo.java" startLine="24" startPosition="0" endLine="32" endPosition="3">
+      <varInfo nodeId="4837185610456231802" varName="element" />
+    </scopeInfo>
+    <scopeInfo nodeId="4837185610456267847" fileName="ScopePositionInfo.java" startLine="43" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="4837185610456267891" varName="model" />
+      <varInfo nodeId="4837185610456267858" varName="varName" />
+    </scopeInfo>
+    <scopeInfo nodeId="4837185610456267759" fileName="ScopePositionInfo.java" startLine="33" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="4837185610456267762" varName="element" />
+    </scopeInfo>
+    <scopeInfo nodeId="4837185610456267961" fileName="ScopePositionInfo.java" startLine="52" startPosition="38" endLine="63" endPosition="5">
+      <varInfo nodeId="3073231036165953253" varName="varName" />
+    </scopeInfo>
+    <scopeInfo nodeId="4837185610456267958" fileName="ScopePositionInfo.java" startLine="51" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="4837185610456267973" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="4837185610456219360" fileName="ScopePositionInfo.java" startLine="15" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.debug.api.info.ScopePositionInfo" />
+  </root>
+  <root nodeId="4837185610456221859">
+    <nodeInfo nodeId="4837185610456221898" fileName="VarInfo.java" startLine="7" startPosition="22" endLine="8" endPosition="45" />
+    <nodeInfo nodeId="4837185610456231704" fileName="VarInfo.java" startLine="8" startPosition="45" endLine="9" endPosition="43" />
+    <nodeInfo nodeId="4837185610456221865" fileName="VarInfo.java" startLine="10" startPosition="0" endLine="11" endPosition="27" />
+    <nodeInfo nodeId="4837185610456221875" fileName="VarInfo.java" startLine="11" startPosition="27" endLine="12" endPosition="26" />
+    <nodeInfo nodeId="4837185610456221884" fileName="VarInfo.java" startLine="17" startPosition="35" endLine="18" endPosition="61" />
+    <nodeInfo nodeId="4837185610456231718" fileName="VarInfo.java" startLine="18" startPosition="61" endLine="19" endPosition="63" />
+    <nodeInfo nodeId="4837185610456231745" fileName="VarInfo.java" startLine="22" startPosition="29" endLine="23" endPosition="25" />
+    <nodeInfo nodeId="4837185610456231755" fileName="VarInfo.java" startLine="26" startPosition="30" endLine="27" endPosition="26" />
+    <nodeInfo nodeId="4837185610456268009" fileName="VarInfo.java" startLine="30" startPosition="42" endLine="31" endPosition="29" />
+    <nodeInfo nodeId="4837185610456268034" fileName="VarInfo.java" startLine="34" startPosition="40" endLine="35" endPosition="27" />
+    <nodeInfo nodeId="4837185610456231770" fileName="VarInfo.java" startLine="38" startPosition="39" endLine="39" endPosition="49" />
+    <nodeInfo nodeId="4837185610456231786" fileName="VarInfo.java" startLine="39" startPosition="49" endLine="40" endPosition="51" />
+    <nodeInfo nodeId="4837185610456221861" fileName="VarInfo.java" startLine="13" startPosition="0" endLine="15" endPosition="3" />
+    <nodeInfo nodeId="4837185610456221878" fileName="VarInfo.java" startLine="16" startPosition="0" endLine="20" endPosition="3" />
+    <nodeInfo nodeId="4837185610456231740" fileName="VarInfo.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <nodeInfo nodeId="4837185610456231750" fileName="VarInfo.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <nodeInfo nodeId="4837185610456267992" fileName="VarInfo.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <nodeInfo nodeId="4837185610456268017" fileName="VarInfo.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="4837185610456231764" fileName="VarInfo.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="4837185610456221864" fileName="VarInfo.java" startLine="14" startPosition="20" endLine="14" endPosition="20" />
+    <scopeInfo nodeId="4837185610456231743" fileName="VarInfo.java" startLine="22" startPosition="29" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="4837185610456231753" fileName="VarInfo.java" startLine="26" startPosition="30" endLine="27" endPosition="26" />
+    <scopeInfo nodeId="4837185610456267995" fileName="VarInfo.java" startLine="30" startPosition="42" endLine="31" endPosition="29" />
+    <scopeInfo nodeId="4837185610456268020" fileName="VarInfo.java" startLine="34" startPosition="40" endLine="35" endPosition="27" />
+    <scopeInfo nodeId="4837185610456221861" fileName="VarInfo.java" startLine="13" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="4837185610456221881" fileName="VarInfo.java" startLine="17" startPosition="35" endLine="19" endPosition="63" />
+    <scopeInfo nodeId="4837185610456231767" fileName="VarInfo.java" startLine="38" startPosition="39" endLine="40" endPosition="51" />
+    <scopeInfo nodeId="4837185610456221878" fileName="VarInfo.java" startLine="16" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="4837185610456221882" varName="element" />
+    </scopeInfo>
+    <scopeInfo nodeId="4837185610456231740" fileName="VarInfo.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="4837185610456231750" fileName="VarInfo.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="4837185610456267992" fileName="VarInfo.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="4837185610456268007" varName="varName" />
+    </scopeInfo>
+    <scopeInfo nodeId="4837185610456268017" fileName="VarInfo.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="4837185610456268032" varName="nodeId" />
+    </scopeInfo>
+    <scopeInfo nodeId="4837185610456231764" fileName="VarInfo.java" startLine="37" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="4837185610456231768" varName="element" />
+    </scopeInfo>
+    <unitInfo nodeId="4837185610456221859" fileName="VarInfo.java" startLine="7" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.debug.api.info.VarInfo" />
+  </root>
+  <root nodeId="5166158193670371780">
+    <nodeInfo nodeId="5166158193670392013" fileName="DebugInfo.java" startLine="24" startPosition="24" endLine="25" endPosition="44" />
+    <nodeInfo nodeId="5166158193670391998" fileName="DebugInfo.java" startLine="25" startPosition="44" endLine="26" endPosition="55" />
+    <nodeInfo nodeId="5166158193670440170" fileName="DebugInfo.java" startLine="26" startPosition="55" endLine="27" endPosition="54" />
+    <nodeInfo nodeId="5166158193670462693" fileName="DebugInfo.java" startLine="27" startPosition="54" endLine="28" endPosition="52" />
+    <nodeInfo nodeId="5166158193670463171" fileName="DebugInfo.java" startLine="29" startPosition="0" endLine="30" endPosition="25" />
+    <nodeInfo nodeId="5166158193670392724" fileName="DebugInfo.java" startLine="30" startPosition="25" endLine="31" endPosition="105" />
+    <nodeInfo nodeId="5166158193670463154" fileName="DebugInfo.java" startLine="36" startPosition="28" endLine="37" endPosition="24" />
+    <nodeInfo nodeId="5166158193670463164" fileName="DebugInfo.java" startLine="40" startPosition="38" endLine="41" endPosition="25" />
+    <nodeInfo nodeId="5166158193670462861" fileName="DebugInfo.java" startLine="45" startPosition="25" endLine="46" endPosition="32" />
+    <nodeInfo nodeId="5166158193670462839" fileName="DebugInfo.java" startLine="47" startPosition="5" endLine="48" endPosition="70" />
+    <nodeInfo nodeId="5166158193670462881" fileName="DebugInfo.java" startLine="49" startPosition="27" endLine="50" endPosition="43" />
+    <nodeInfo nodeId="5166158193670462902" fileName="DebugInfo.java" startLine="50" startPosition="43" endLine="51" endPosition="57" />
+    <nodeInfo nodeId="5166158193670462917" fileName="DebugInfo.java" startLine="52" startPosition="5" endLine="53" endPosition="35" />
+    <nodeInfo nodeId="5166158193670462929" fileName="DebugInfo.java" startLine="57" startPosition="25" endLine="58" endPosition="32" />
+    <nodeInfo nodeId="5166158193670462937" fileName="DebugInfo.java" startLine="59" startPosition="5" endLine="60" endPosition="70" />
+    <nodeInfo nodeId="5166158193670462945" fileName="DebugInfo.java" startLine="61" startPosition="27" endLine="62" endPosition="43" />
+    <nodeInfo nodeId="5166158193670462951" fileName="DebugInfo.java" startLine="62" startPosition="43" endLine="63" endPosition="57" />
+    <nodeInfo nodeId="5166158193670462961" fileName="DebugInfo.java" startLine="64" startPosition="5" endLine="65" endPosition="40" />
+    <nodeInfo nodeId="5166158193670462971" fileName="DebugInfo.java" startLine="69" startPosition="25" endLine="70" endPosition="32" />
+    <nodeInfo nodeId="5166158193670462979" fileName="DebugInfo.java" startLine="71" startPosition="5" endLine="72" endPosition="70" />
+    <nodeInfo nodeId="5166158193670462987" fileName="DebugInfo.java" startLine="73" startPosition="27" endLine="74" endPosition="43" />
+    <nodeInfo nodeId="5166158193670462993" fileName="DebugInfo.java" startLine="74" startPosition="43" endLine="75" endPosition="57" />
+    <nodeInfo nodeId="5166158193670463003" fileName="DebugInfo.java" startLine="76" startPosition="5" endLine="77" endPosition="43" />
+    <nodeInfo nodeId="5166158193670463119" fileName="DebugInfo.java" startLine="87" startPosition="47" endLine="88" endPosition="61" />
+    <nodeInfo nodeId="5166158193670392080" fileName="DebugInfo.java" startLine="91" startPosition="64" endLine="92" endPosition="48" />
+    <nodeInfo nodeId="5166158193670440431" fileName="DebugInfo.java" startLine="98" startPosition="62" endLine="99" endPosition="44" />
+    <nodeInfo nodeId="5166158193670440437" fileName="DebugInfo.java" startLine="99" startPosition="44" endLine="100" endPosition="47" />
+    <nodeInfo nodeId="5166158193670440444" fileName="DebugInfo.java" startLine="100" startPosition="47" endLine="101" endPosition="55" />
+    <nodeInfo nodeId="5166158193670392126" fileName="DebugInfo.java" startLine="103" startPosition="5" endLine="104" endPosition="18" />
+    <nodeInfo nodeId="5166158193670392135" fileName="DebugInfo.java" startLine="107" startPosition="68" endLine="108" endPosition="89" />
+    <nodeInfo nodeId="5166158193670440479" fileName="DebugInfo.java" startLine="114" startPosition="126" endLine="115" endPosition="62" />
+    <nodeInfo nodeId="5166158193670392183" fileName="DebugInfo.java" startLine="118" startPosition="54" endLine="119" endPosition="18" />
+    <nodeInfo nodeId="5166158193670392202" fileName="DebugInfo.java" startLine="125" startPosition="13" endLine="126" endPosition="81" />
+    <nodeInfo nodeId="5166158193670392208" fileName="DebugInfo.java" startLine="126" startPosition="81" endLine="127" endPosition="50" />
+    <nodeInfo nodeId="5166158193670392214" fileName="DebugInfo.java" startLine="127" startPosition="50" endLine="128" endPosition="55" />
+    <nodeInfo nodeId="5166158193670392216" fileName="DebugInfo.java" startLine="128" startPosition="55" endLine="129" endPosition="72" />
+    <nodeInfo nodeId="5166158193670392218" fileName="DebugInfo.java" startLine="129" startPosition="72" endLine="130" endPosition="74" />
+    <nodeInfo nodeId="5166158193670392220" fileName="DebugInfo.java" startLine="130" startPosition="74" endLine="131" endPosition="23" />
+    <nodeInfo nodeId="5166158193670392222" fileName="DebugInfo.java" startLine="131" startPosition="23" endLine="132" endPosition="28" />
+    <nodeInfo nodeId="5166158193670392224" fileName="DebugInfo.java" startLine="132" startPosition="28" endLine="133" endPosition="13" />
+    <nodeInfo nodeId="5166158193670392226" fileName="DebugInfo.java" startLine="133" startPosition="13" endLine="134" endPosition="69" />
+    <nodeInfo nodeId="5166158193670392228" fileName="DebugInfo.java" startLine="134" startPosition="69" endLine="135" endPosition="72" />
+    <nodeInfo nodeId="5166158193670392230" fileName="DebugInfo.java" startLine="135" startPosition="72" endLine="136" endPosition="73" />
+    <nodeInfo nodeId="5166158193670392234" fileName="DebugInfo.java" startLine="137" startPosition="139" endLine="138" endPosition="111" />
+    <nodeInfo nodeId="5166158193670392262" fileName="DebugInfo.java" startLine="139" startPosition="5" endLine="140" endPosition="61" />
+    <nodeInfo nodeId="5166158193670392264" fileName="DebugInfo.java" startLine="140" startPosition="61" endLine="141" endPosition="38" />
+    <nodeInfo nodeId="5166158193670392266" fileName="DebugInfo.java" startLine="141" startPosition="38" endLine="142" endPosition="115" />
+    <nodeInfo nodeId="5166158193670392268" fileName="DebugInfo.java" startLine="142" startPosition="115" endLine="143" endPosition="33" />
+    <nodeInfo nodeId="5166158193670392270" fileName="DebugInfo.java" startLine="143" startPosition="33" endLine="144" endPosition="12" />
+    <nodeInfo nodeId="5166158193670392272" fileName="DebugInfo.java" startLine="144" startPosition="12" endLine="145" endPosition="20" />
+    <nodeInfo nodeId="5166158193670392274" fileName="DebugInfo.java" startLine="145" startPosition="20" endLine="146" endPosition="12" />
+    <nodeInfo nodeId="5166158193670392276" fileName="DebugInfo.java" startLine="146" startPosition="12" endLine="147" endPosition="94" />
+    <nodeInfo nodeId="5166158193670392278" fileName="DebugInfo.java" startLine="147" startPosition="94" endLine="148" endPosition="20" />
+    <nodeInfo nodeId="5166158193670392280" fileName="DebugInfo.java" startLine="148" startPosition="20" endLine="149" endPosition="31" />
+    <nodeInfo nodeId="5166158193670392282" fileName="DebugInfo.java" startLine="149" startPosition="31" endLine="150" endPosition="63" />
+    <nodeInfo nodeId="5166158193670392304" fileName="DebugInfo.java" startLine="157" startPosition="66" endLine="158" endPosition="77" />
+    <nodeInfo nodeId="5166158193670392313" fileName="DebugInfo.java" startLine="158" startPosition="77" endLine="159" endPosition="33" />
+    <nodeInfo nodeId="5166158193670392321" fileName="DebugInfo.java" startLine="160" startPosition="29" endLine="161" endPosition="26" />
+    <nodeInfo nodeId="5166158193670392329" fileName="DebugInfo.java" startLine="162" startPosition="83" endLine="163" endPosition="70" />
+    <nodeInfo nodeId="5166158193670392340" fileName="DebugInfo.java" startLine="164" startPosition="86" endLine="165" endPosition="38" />
+    <nodeInfo nodeId="5166158193670392344" fileName="DebugInfo.java" startLine="165" startPosition="38" endLine="166" endPosition="31" />
+    <nodeInfo nodeId="5166158193670392348" fileName="DebugInfo.java" startLine="166" startPosition="31" endLine="167" endPosition="20" />
+    <nodeInfo nodeId="5166158193670392360" fileName="DebugInfo.java" startLine="170" startPosition="9" endLine="171" endPosition="27" />
+    <nodeInfo nodeId="5166158193670392372" fileName="DebugInfo.java" startLine="173" startPosition="5" endLine="174" endPosition="80" />
+    <nodeInfo nodeId="5166158193670392374" fileName="DebugInfo.java" startLine="174" startPosition="80" endLine="175" endPosition="37" />
+    <nodeInfo nodeId="5166158193670392389" fileName="DebugInfo.java" startLine="178" startPosition="83" endLine="179" endPosition="99" />
+    <nodeInfo nodeId="5166158193670440538" fileName="DebugInfo.java" startLine="185" startPosition="126" endLine="186" endPosition="62" />
+    <nodeInfo nodeId="5166158193670392437" fileName="DebugInfo.java" startLine="189" startPosition="54" endLine="190" endPosition="18" />
+    <nodeInfo nodeId="5166158193670392458" fileName="DebugInfo.java" startLine="197" startPosition="43" endLine="198" endPosition="50" />
+    <nodeInfo nodeId="5166158193670392468" fileName="DebugInfo.java" startLine="199" startPosition="24" endLine="200" endPosition="19" />
+    <nodeInfo nodeId="5166158193670392476" fileName="DebugInfo.java" startLine="202" startPosition="5" endLine="203" endPosition="16" />
+    <nodeInfo nodeId="5166158193670440616" fileName="DebugInfo.java" startLine="212" startPosition="60" endLine="213" endPosition="23" />
+    <nodeInfo nodeId="5166158193670392514" fileName="DebugInfo.java" startLine="215" startPosition="5" endLine="216" endPosition="16" />
+    <nodeInfo nodeId="5166158193670392526" fileName="DebugInfo.java" startLine="219" startPosition="59" endLine="220" endPosition="25" />
+    <nodeInfo nodeId="5166158193670392528" fileName="DebugInfo.java" startLine="220" startPosition="25" endLine="221" endPosition="97" />
+    <nodeInfo nodeId="5166158193670440657" fileName="DebugInfo.java" startLine="227" startPosition="126" endLine="228" endPosition="62" />
+    <nodeInfo nodeId="5166158193670392576" fileName="DebugInfo.java" startLine="231" startPosition="54" endLine="232" endPosition="18" />
+    <nodeInfo nodeId="5166158193670392595" fileName="DebugInfo.java" startLine="238" startPosition="13" endLine="239" endPosition="79" />
+    <nodeInfo nodeId="5166158193670392601" fileName="DebugInfo.java" startLine="239" startPosition="79" endLine="240" endPosition="43" />
+    <nodeInfo nodeId="5166158193670392616" fileName="DebugInfo.java" startLine="243" startPosition="72" endLine="244" endPosition="32" />
+    <nodeInfo nodeId="5166158193670392618" fileName="DebugInfo.java" startLine="244" startPosition="32" endLine="245" endPosition="97" />
+    <nodeInfo nodeId="5166158193670440732" fileName="DebugInfo.java" startLine="251" startPosition="126" endLine="252" endPosition="62" />
+    <nodeInfo nodeId="5166158193670392666" fileName="DebugInfo.java" startLine="255" startPosition="54" endLine="256" endPosition="18" />
+    <nodeInfo nodeId="5166158193670392685" fileName="DebugInfo.java" startLine="262" startPosition="14" endLine="263" endPosition="79" />
+    <nodeInfo nodeId="5166158193670392701" fileName="DebugInfo.java" startLine="267" startPosition="34" endLine="268" endPosition="92" />
+    <nodeInfo nodeId="5166158193670440782" fileName="DebugInfo.java" startLine="271" startPosition="56" endLine="272" endPosition="75" />
+    <nodeInfo nodeId="5166158193670391637" fileName="DebugInfo.java" startLine="279" startPosition="26" endLine="280" endPosition="43" />
+    <nodeInfo nodeId="5166158193670440001" fileName="DebugInfo.java" startLine="281" startPosition="26" endLine="282" endPosition="111" />
+    <nodeInfo nodeId="5166158193670440010" fileName="DebugInfo.java" startLine="282" startPosition="111" endLine="283" endPosition="25" />
+    <nodeInfo nodeId="5166158193670440029" fileName="DebugInfo.java" startLine="284" startPosition="31" endLine="285" endPosition="65" />
+    <nodeInfo nodeId="5166158193670463105" fileName="DebugInfo.java" startLine="286" startPosition="42" endLine="287" endPosition="26" />
+    <nodeInfo nodeId="5166158193670463081" fileName="DebugInfo.java" startLine="288" startPosition="16" endLine="289" endPosition="40" />
+    <nodeInfo nodeId="5166158193670463088" fileName="DebugInfo.java" startLine="289" startPosition="40" endLine="290" endPosition="43" />
+    <nodeInfo nodeId="5166158193670463095" fileName="DebugInfo.java" startLine="290" startPosition="43" endLine="291" endPosition="23" />
+    <nodeInfo nodeId="5166158193670463100" fileName="DebugInfo.java" startLine="291" startPosition="23" endLine="292" endPosition="29" />
+    <nodeInfo nodeId="5166158193670440842" fileName="DebugInfo.java" startLine="299" startPosition="49" endLine="300" endPosition="37" />
+    <nodeInfo nodeId="5166158193670463052" fileName="DebugInfo.java" startLine="301" startPosition="9" endLine="302" endPosition="80" />
+    <nodeInfo nodeId="5166158193670462737" fileName="DebugInfo.java" startLine="303" startPosition="32" endLine="304" endPosition="77" />
+    <nodeInfo nodeId="5166158193670442742" fileName="DebugInfo.java" startLine="305" startPosition="7" endLine="306" endPosition="0" />
+    <nodeInfo nodeId="5166158193670442628" fileName="DebugInfo.java" startLine="307" startPosition="67" endLine="308" endPosition="59" />
+    <nodeInfo nodeId="5166158193670462700" fileName="DebugInfo.java" startLine="308" startPosition="59" endLine="309" endPosition="89" />
+    <nodeInfo nodeId="5166158193670442709" fileName="DebugInfo.java" startLine="311" startPosition="41" endLine="312" endPosition="36" />
+    <nodeInfo nodeId="5166158193670371782" fileName="DebugInfo.java" startLine="32" startPosition="0" endLine="34" endPosition="3" />
+    <nodeInfo nodeId="5166158193670462852" fileName="DebugInfo.java" startLine="44" startPosition="65" endLine="47" endPosition="5" />
+    <nodeInfo nodeId="5166158193670462927" fileName="DebugInfo.java" startLine="56" startPosition="75" endLine="59" endPosition="5" />
+    <nodeInfo nodeId="5166158193670462969" fileName="DebugInfo.java" startLine="68" startPosition="77" endLine="71" endPosition="5" />
+    <nodeInfo nodeId="5166158193670440477" fileName="DebugInfo.java" startLine="113" startPosition="9" endLine="116" endPosition="7" />
+    <nodeInfo nodeId="5166158193670392181" fileName="DebugInfo.java" startLine="117" startPosition="5" endLine="120" endPosition="5" />
+    <nodeInfo nodeId="5166158193670392232" fileName="DebugInfo.java" startLine="136" startPosition="73" endLine="139" endPosition="5" />
+    <nodeInfo nodeId="5166158193670440536" fileName="DebugInfo.java" startLine="184" startPosition="9" endLine="187" endPosition="7" />
+    <nodeInfo nodeId="5166158193670392435" fileName="DebugInfo.java" startLine="188" startPosition="5" endLine="191" endPosition="5" />
+    <nodeInfo nodeId="5166158193670392466" fileName="DebugInfo.java" startLine="198" startPosition="50" endLine="201" endPosition="7" />
+    <nodeInfo nodeId="5166158193670440614" fileName="DebugInfo.java" startLine="211" startPosition="9" endLine="214" endPosition="7" />
+    <nodeInfo nodeId="5166158193670440655" fileName="DebugInfo.java" startLine="226" startPosition="9" endLine="229" endPosition="7" />
+    <nodeInfo nodeId="5166158193670392574" fileName="DebugInfo.java" startLine="230" startPosition="5" endLine="233" endPosition="5" />
+    <nodeInfo nodeId="5166158193670440730" fileName="DebugInfo.java" startLine="250" startPosition="9" endLine="253" endPosition="7" />
+    <nodeInfo nodeId="5166158193670392664" fileName="DebugInfo.java" startLine="254" startPosition="5" endLine="257" endPosition="5" />
+    <nodeInfo nodeId="5166158193670462723" fileName="DebugInfo.java" startLine="302" startPosition="80" endLine="305" endPosition="7" />
+    <nodeInfo nodeId="5166158193670463151" fileName="DebugInfo.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <nodeInfo nodeId="5166158193670463159" fileName="DebugInfo.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="5166158193670462872" fileName="DebugInfo.java" startLine="48" startPosition="70" endLine="52" endPosition="5" />
+    <nodeInfo nodeId="5166158193670462943" fileName="DebugInfo.java" startLine="60" startPosition="70" endLine="64" endPosition="5" />
+    <nodeInfo nodeId="5166158193670462985" fileName="DebugInfo.java" startLine="72" startPosition="70" endLine="76" endPosition="5" />
+    <nodeInfo nodeId="5166158193670463035" fileName="DebugInfo.java" startLine="80" startPosition="51" endLine="84" endPosition="7" />
+    <nodeInfo nodeId="5166158193670463113" fileName="DebugInfo.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
+    <nodeInfo nodeId="5166158193670440419" fileName="DebugInfo.java" startLine="93" startPosition="152" endLine="97" endPosition="0" />
+    <nodeInfo nodeId="5166158193670440469" fileName="DebugInfo.java" startLine="109" startPosition="152" endLine="113" endPosition="0" />
+    <nodeInfo nodeId="5166158193670392195" fileName="DebugInfo.java" startLine="121" startPosition="121" endLine="125" endPosition="0" />
+    <nodeInfo nodeId="5166158193670392293" fileName="DebugInfo.java" startLine="152" startPosition="120" endLine="156" endPosition="0" />
+    <nodeInfo nodeId="5166158193670440525" fileName="DebugInfo.java" startLine="180" startPosition="162" endLine="184" endPosition="0" />
+    <nodeInfo nodeId="5166158193670392449" fileName="DebugInfo.java" startLine="192" startPosition="131" endLine="196" endPosition="0" />
+    <nodeInfo nodeId="5166158193670440606" fileName="DebugInfo.java" startLine="207" startPosition="152" endLine="211" endPosition="0" />
+    <nodeInfo nodeId="5166158193670440647" fileName="DebugInfo.java" startLine="222" startPosition="160" endLine="226" endPosition="0" />
+    <nodeInfo nodeId="5166158193670392588" fileName="DebugInfo.java" startLine="234" startPosition="129" endLine="238" endPosition="0" />
+    <nodeInfo nodeId="5166158193670440722" fileName="DebugInfo.java" startLine="246" startPosition="160" endLine="250" endPosition="0" />
+    <nodeInfo nodeId="5166158193670392678" fileName="DebugInfo.java" startLine="258" startPosition="129" endLine="262" endPosition="0" />
+    <nodeInfo nodeId="5166158193670392698" fileName="DebugInfo.java" startLine="266" startPosition="0" endLine="270" endPosition="0" />
+    <nodeInfo nodeId="5166158193670440796" fileName="DebugInfo.java" startLine="272" startPosition="75" endLine="276" endPosition="6" />
+    <nodeInfo nodeId="5166158193670442626" fileName="DebugInfo.java" startLine="306" startPosition="0" endLine="310" endPosition="7" />
+    <nodeInfo nodeId="5166158193670440429" fileName="DebugInfo.java" startLine="97" startPosition="9" endLine="102" endPosition="7" />
+    <nodeInfo nodeId="5166158193670392188" fileName="DebugInfo.java" startLine="120" startPosition="5" endLine="125" endPosition="13" />
+    <nodeInfo nodeId="5166158193670392286" fileName="DebugInfo.java" startLine="151" startPosition="52" endLine="156" endPosition="9" />
+    <nodeInfo nodeId="5166158193670392338" fileName="DebugInfo.java" startLine="163" startPosition="70" endLine="168" endPosition="13" />
+    <nodeInfo nodeId="5166158193670392442" fileName="DebugInfo.java" startLine="191" startPosition="5" endLine="196" endPosition="13" />
+    <nodeInfo nodeId="5166158193670392581" fileName="DebugInfo.java" startLine="233" startPosition="5" endLine="238" endPosition="13" />
+    <nodeInfo nodeId="5166158193670392671" fileName="DebugInfo.java" startLine="257" startPosition="5" endLine="262" endPosition="14" />
+    <nodeInfo nodeId="5166158193670463078" fileName="DebugInfo.java" startLine="288" startPosition="14" endLine="293" endPosition="9" />
+    <nodeInfo nodeId="5166158193670392456" fileName="DebugInfo.java" startLine="196" startPosition="13" endLine="202" endPosition="5" />
+    <nodeInfo nodeId="5166158193670463011" fileName="DebugInfo.java" startLine="79" startPosition="0" endLine="86" endPosition="0" />
+    <nodeInfo nodeId="5166158193670392325" fileName="DebugInfo.java" startLine="161" startPosition="26" endLine="169" endPosition="11" />
+    <nodeInfo nodeId="5166158193670392711" fileName="DebugInfo.java" startLine="270" startPosition="0" endLine="278" endPosition="0" />
+    <nodeInfo nodeId="5166158193670463067" fileName="DebugInfo.java" startLine="285" startPosition="65" endLine="293" endPosition="9" />
+    <nodeInfo nodeId="5166158193670440459" fileName="DebugInfo.java" startLine="108" startPosition="89" endLine="117" endPosition="5" />
+    <nodeInfo nodeId="5166158193670440510" fileName="DebugInfo.java" startLine="179" startPosition="99" endLine="188" endPosition="5" />
+    <nodeInfo nodeId="5166158193670440573" fileName="DebugInfo.java" startLine="206" startPosition="57" endLine="215" endPosition="5" />
+    <nodeInfo nodeId="5166158193670440630" fileName="DebugInfo.java" startLine="221" startPosition="97" endLine="230" endPosition="5" />
+    <nodeInfo nodeId="5166158193670440690" fileName="DebugInfo.java" startLine="245" startPosition="97" endLine="254" endPosition="5" />
+    <nodeInfo nodeId="5166158193670440409" fileName="DebugInfo.java" startLine="92" startPosition="48" endLine="103" endPosition="5" />
+    <nodeInfo nodeId="5166158193670392317" fileName="DebugInfo.java" startLine="159" startPosition="33" endLine="170" endPosition="9" />
+    <nodeInfo nodeId="5166158193670440020" fileName="DebugInfo.java" startLine="283" startPosition="25" endLine="294" endPosition="7" />
+    <nodeInfo nodeId="5166158193670462764" fileName="DebugInfo.java" startLine="43" startPosition="0" endLine="55" endPosition="0" />
+    <nodeInfo nodeId="5166158193670462786" fileName="DebugInfo.java" startLine="55" startPosition="0" endLine="67" endPosition="0" />
+    <nodeInfo nodeId="5166158193670462808" fileName="DebugInfo.java" startLine="67" startPosition="0" endLine="79" endPosition="0" />
+    <nodeInfo nodeId="5166158193670392487" fileName="DebugInfo.java" startLine="205" startPosition="0" endLine="218" endPosition="0" />
+    <nodeInfo nodeId="5166158193670442564" fileName="DebugInfo.java" startLine="300" startPosition="37" endLine="313" endPosition="5" />
+    <nodeInfo nodeId="5166158193670439991" fileName="DebugInfo.java" startLine="280" startPosition="43" endLine="295" endPosition="5" />
+    <nodeInfo nodeId="5166158193670392076" fileName="DebugInfo.java" startLine="90" startPosition="0" endLine="106" endPosition="0" />
+    <nodeInfo nodeId="5166158193670392302" fileName="DebugInfo.java" startLine="156" startPosition="9" endLine="172" endPosition="7" />
+    <nodeInfo nodeId="5166158193670440833" fileName="DebugInfo.java" startLine="298" startPosition="0" endLine="316" endPosition="0" />
+    <nodeInfo nodeId="5166158193670391633" fileName="DebugInfo.java" startLine="278" startPosition="0" endLine="298" endPosition="0" />
+    <nodeInfo nodeId="5166158193670392284" fileName="DebugInfo.java" startLine="150" startPosition="63" endLine="173" endPosition="5" />
+    <nodeInfo nodeId="5166158193670392519" fileName="DebugInfo.java" startLine="218" startPosition="0" endLine="242" endPosition="0" />
+    <nodeInfo nodeId="5166158193670392606" fileName="DebugInfo.java" startLine="242" startPosition="0" endLine="266" endPosition="0" />
+    <nodeInfo nodeId="5166158193670392386" fileName="DebugInfo.java" startLine="177" startPosition="0" endLine="205" endPosition="0" />
+    <nodeInfo nodeId="5166158193670392132" fileName="DebugInfo.java" startLine="106" startPosition="0" endLine="177" endPosition="0" />
+    <scopeInfo nodeId="5166158193670371785" fileName="DebugInfo.java" startLine="33" startPosition="22" endLine="33" endPosition="22" />
+    <scopeInfo nodeId="5166158193670463153" fileName="DebugInfo.java" startLine="36" startPosition="28" endLine="37" endPosition="24" />
+    <scopeInfo nodeId="5166158193670463163" fileName="DebugInfo.java" startLine="40" startPosition="38" endLine="41" endPosition="25" />
+    <scopeInfo nodeId="5166158193670462853" fileName="DebugInfo.java" startLine="45" startPosition="25" endLine="46" endPosition="32" />
+    <scopeInfo nodeId="5166158193670462928" fileName="DebugInfo.java" startLine="57" startPosition="25" endLine="58" endPosition="32" />
+    <scopeInfo nodeId="5166158193670462970" fileName="DebugInfo.java" startLine="69" startPosition="25" endLine="70" endPosition="32" />
+    <scopeInfo nodeId="5166158193670463116" fileName="DebugInfo.java" startLine="87" startPosition="47" endLine="88" endPosition="61" />
+    <scopeInfo nodeId="5166158193670440420" fileName="DebugInfo.java" startLine="94" startPosition="65" endLine="95" endPosition="33" />
+    <scopeInfo nodeId="5166158193670440470" fileName="DebugInfo.java" startLine="110" startPosition="65" endLine="111" endPosition="33" />
+    <scopeInfo nodeId="5166158193670440478" fileName="DebugInfo.java" startLine="114" startPosition="126" endLine="115" endPosition="62" />
+    <scopeInfo nodeId="5166158193670392182" fileName="DebugInfo.java" startLine="118" startPosition="54" endLine="119" endPosition="18" />
+    <scopeInfo nodeId="5166158193670392196" fileName="DebugInfo.java" startLine="122" startPosition="52" endLine="123" endPosition="18" />
+    <scopeInfo nodeId="5166158193670392233" fileName="DebugInfo.java" startLine="137" startPosition="139" endLine="138" endPosition="111" />
+    <scopeInfo nodeId="5166158193670392294" fileName="DebugInfo.java" startLine="153" startPosition="48" endLine="154" endPosition="60" />
+    <scopeInfo nodeId="5166158193670440526" fileName="DebugInfo.java" startLine="181" startPosition="70" endLine="182" endPosition="38" />
+    <scopeInfo nodeId="5166158193670440537" fileName="DebugInfo.java" startLine="185" startPosition="126" endLine="186" endPosition="62" />
+    <scopeInfo nodeId="5166158193670392436" fileName="DebugInfo.java" startLine="189" startPosition="54" endLine="190" endPosition="18" />
+    <scopeInfo nodeId="5166158193670392450" fileName="DebugInfo.java" startLine="193" startPosition="57" endLine="194" endPosition="18" />
+    <scopeInfo nodeId="5166158193670392467" fileName="DebugInfo.java" startLine="199" startPosition="24" endLine="200" endPosition="19" />
+    <scopeInfo nodeId="5166158193670440607" fileName="DebugInfo.java" startLine="208" startPosition="65" endLine="209" endPosition="33" />
+    <scopeInfo nodeId="5166158193670440615" fileName="DebugInfo.java" startLine="212" startPosition="60" endLine="213" endPosition="23" />
+    <scopeInfo nodeId="5166158193670440648" fileName="DebugInfo.java" startLine="223" startPosition="69" endLine="224" endPosition="37" />
+    <scopeInfo nodeId="5166158193670440656" fileName="DebugInfo.java" startLine="227" startPosition="126" endLine="228" endPosition="62" />
+    <scopeInfo nodeId="5166158193670392575" fileName="DebugInfo.java" startLine="231" startPosition="54" endLine="232" endPosition="18" />
+    <scopeInfo nodeId="5166158193670392589" fileName="DebugInfo.java" startLine="235" startPosition="56" endLine="236" endPosition="18" />
+    <scopeInfo nodeId="5166158193670440723" fileName="DebugInfo.java" startLine="247" startPosition="69" endLine="248" endPosition="37" />
+    <scopeInfo nodeId="5166158193670440731" fileName="DebugInfo.java" startLine="251" startPosition="126" endLine="252" endPosition="62" />
+    <scopeInfo nodeId="5166158193670392665" fileName="DebugInfo.java" startLine="255" startPosition="54" endLine="256" endPosition="18" />
+    <scopeInfo nodeId="5166158193670392679" fileName="DebugInfo.java" startLine="259" startPosition="56" endLine="260" endPosition="18" />
+    <scopeInfo nodeId="5166158193670392700" fileName="DebugInfo.java" startLine="267" startPosition="34" endLine="268" endPosition="92" />
+    <scopeInfo nodeId="5166158193670463068" fileName="DebugInfo.java" startLine="286" startPosition="42" endLine="287" endPosition="26" />
+    <scopeInfo nodeId="5166158193670462724" fileName="DebugInfo.java" startLine="303" startPosition="32" endLine="304" endPosition="77" />
+    <scopeInfo nodeId="5166158193670442708" fileName="DebugInfo.java" startLine="311" startPosition="41" endLine="312" endPosition="36" />
+    <scopeInfo nodeId="5166158193670371782" fileName="DebugInfo.java" startLine="32" startPosition="0" endLine="34" endPosition="3" />
+    <scopeInfo nodeId="5166158193670462873" fileName="DebugInfo.java" startLine="49" startPosition="27" endLine="51" endPosition="57" />
+    <scopeInfo nodeId="5166158193670462944" fileName="DebugInfo.java" startLine="61" startPosition="27" endLine="63" endPosition="57" />
+    <scopeInfo nodeId="5166158193670462986" fileName="DebugInfo.java" startLine="73" startPosition="27" endLine="75" endPosition="57" />
+    <scopeInfo nodeId="5166158193670442627" fileName="DebugInfo.java" startLine="307" startPosition="67" endLine="309" endPosition="89">
+      <varInfo nodeId="5166158193670442629" varName="rootId" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670440430" fileName="DebugInfo.java" startLine="98" startPosition="62" endLine="101" endPosition="55">
+      <varInfo nodeId="5166158193670440438" varName="node" />
+      <varInfo nodeId="5166158193670440432" varName="nodeId" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670440462" fileName="DebugInfo.java" startLine="113" startPosition="9" endLine="116" endPosition="7" />
+    <scopeInfo nodeId="5166158193670392339" fileName="DebugInfo.java" startLine="164" startPosition="86" endLine="167" endPosition="20" />
+    <scopeInfo nodeId="5166158193670440513" fileName="DebugInfo.java" startLine="184" startPosition="9" endLine="187" endPosition="7" />
+    <scopeInfo nodeId="5166158193670440575" fileName="DebugInfo.java" startLine="211" startPosition="9" endLine="214" endPosition="7" />
+    <scopeInfo nodeId="5166158193670440632" fileName="DebugInfo.java" startLine="226" startPosition="9" endLine="229" endPosition="7" />
+    <scopeInfo nodeId="5166158193670440692" fileName="DebugInfo.java" startLine="250" startPosition="9" endLine="253" endPosition="7" />
+    <scopeInfo nodeId="5166158193670463151" fileName="DebugInfo.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="5166158193670463159" fileName="DebugInfo.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="5166158193670463161" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670463014" fileName="DebugInfo.java" startLine="80" startPosition="51" endLine="84" endPosition="7" />
+    <scopeInfo nodeId="5166158193670463113" fileName="DebugInfo.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="5166158193670463117" varName="root" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670440419" fileName="DebugInfo.java" startLine="93" startPosition="152" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="5166158193670440469" fileName="DebugInfo.java" startLine="109" startPosition="152" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="5166158193670392195" fileName="DebugInfo.java" startLine="121" startPosition="121" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="5166158193670392293" fileName="DebugInfo.java" startLine="152" startPosition="120" endLine="156" endPosition="0" />
+    <scopeInfo nodeId="5166158193670440525" fileName="DebugInfo.java" startLine="180" startPosition="162" endLine="184" endPosition="0" />
+    <scopeInfo nodeId="5166158193670392449" fileName="DebugInfo.java" startLine="192" startPosition="131" endLine="196" endPosition="0" />
+    <scopeInfo nodeId="5166158193670392457" fileName="DebugInfo.java" startLine="197" startPosition="43" endLine="201" endPosition="7">
+      <varInfo nodeId="5166158193670392459" varName="var" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670440606" fileName="DebugInfo.java" startLine="207" startPosition="152" endLine="211" endPosition="0" />
+    <scopeInfo nodeId="5166158193670440647" fileName="DebugInfo.java" startLine="222" startPosition="160" endLine="226" endPosition="0" />
+    <scopeInfo nodeId="5166158193670392588" fileName="DebugInfo.java" startLine="234" startPosition="129" endLine="238" endPosition="0" />
+    <scopeInfo nodeId="5166158193670440722" fileName="DebugInfo.java" startLine="246" startPosition="160" endLine="250" endPosition="0" />
+    <scopeInfo nodeId="5166158193670392678" fileName="DebugInfo.java" startLine="258" startPosition="129" endLine="262" endPosition="0" />
+    <scopeInfo nodeId="5166158193670392698" fileName="DebugInfo.java" startLine="266" startPosition="0" endLine="270" endPosition="0" />
+    <scopeInfo nodeId="5166158193670463079" fileName="DebugInfo.java" startLine="288" startPosition="16" endLine="292" endPosition="29">
+      <varInfo nodeId="5166158193670463082" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670442626" fileName="DebugInfo.java" startLine="306" startPosition="0" endLine="310" endPosition="7">
+      <varInfo nodeId="5166158193670442703" varName="re" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670440412" fileName="DebugInfo.java" startLine="97" startPosition="9" endLine="102" endPosition="7" />
+    <scopeInfo nodeId="5166158193670392715" fileName="DebugInfo.java" startLine="271" startPosition="56" endLine="276" endPosition="6">
+      <varInfo nodeId="5166158193670440783" varName="infoRoot" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392328" fileName="DebugInfo.java" startLine="162" startPosition="83" endLine="168" endPosition="13">
+      <varInfo nodeId="5166158193670392330" varName="otherNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392456" fileName="DebugInfo.java" startLine="196" startPosition="13" endLine="202" endPosition="5">
+      <varInfo nodeId="5166158193670392474" varName="info" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670463011" fileName="DebugInfo.java" startLine="79" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="5166158193670463032" varName="rootId" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392325" fileName="DebugInfo.java" startLine="161" startPosition="26" endLine="169" endPosition="11" />
+    <scopeInfo nodeId="5166158193670392711" fileName="DebugInfo.java" startLine="270" startPosition="0" endLine="278" endPosition="0">
+      <varInfo nodeId="5166158193670392722" varName="rootId" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670462767" fileName="DebugInfo.java" startLine="44" startPosition="65" endLine="53" endPosition="35">
+      <varInfo nodeId="5166158193670462840" varName="infoRoot" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670462789" fileName="DebugInfo.java" startLine="56" startPosition="75" endLine="65" endPosition="40">
+      <varInfo nodeId="5166158193670462938" varName="infoRoot" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670462811" fileName="DebugInfo.java" startLine="68" startPosition="77" endLine="77" endPosition="43">
+      <varInfo nodeId="5166158193670462980" varName="infoRoot" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670440459" fileName="DebugInfo.java" startLine="108" startPosition="89" endLine="117" endPosition="5" />
+    <scopeInfo nodeId="5166158193670392320" fileName="DebugInfo.java" startLine="160" startPosition="29" endLine="169" endPosition="11" />
+    <scopeInfo nodeId="5166158193670440510" fileName="DebugInfo.java" startLine="179" startPosition="99" endLine="188" endPosition="5" />
+    <scopeInfo nodeId="5166158193670440573" fileName="DebugInfo.java" startLine="206" startPosition="57" endLine="215" endPosition="5" />
+    <scopeInfo nodeId="5166158193670440630" fileName="DebugInfo.java" startLine="221" startPosition="97" endLine="230" endPosition="5" />
+    <scopeInfo nodeId="5166158193670440690" fileName="DebugInfo.java" startLine="245" startPosition="97" endLine="254" endPosition="5" />
+    <scopeInfo nodeId="5166158193670440022" fileName="DebugInfo.java" startLine="284" startPosition="31" endLine="293" endPosition="9">
+      <varInfo nodeId="5166158193670440030" varName="dir" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670442565" fileName="DebugInfo.java" startLine="301" startPosition="9" endLine="310" endPosition="7">
+      <varInfo nodeId="5166158193670463053" varName="unspecified" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392489" fileName="DebugInfo.java" startLine="206" startPosition="57" endLine="216" endPosition="16" />
+    <scopeInfo nodeId="5166158193670440409" fileName="DebugInfo.java" startLine="92" startPosition="48" endLine="103" endPosition="5" />
+    <scopeInfo nodeId="5166158193670440020" fileName="DebugInfo.java" startLine="283" startPosition="25" endLine="294" endPosition="7">
+      <varInfo nodeId="5166158193670440021" varName="id" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670462764" fileName="DebugInfo.java" startLine="43" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="5166158193670462784" varName="position" />
+      <varInfo nodeId="5166158193670462830" varName="rootId" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670462786" fileName="DebugInfo.java" startLine="55" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="5166158193670462806" varName="position" />
+      <varInfo nodeId="5166158193670462833" varName="rootId" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670462808" fileName="DebugInfo.java" startLine="67" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="5166158193670462828" varName="unitPosition" />
+      <varInfo nodeId="5166158193670462835" varName="rootId" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392079" fileName="DebugInfo.java" startLine="91" startPosition="64" endLine="104" endPosition="18">
+      <varInfo nodeId="5166158193670392081" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392487" fileName="DebugInfo.java" startLine="205" startPosition="0" endLine="218" endPosition="0">
+      <varInfo nodeId="5166158193670392516" varName="nodeId" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670439992" fileName="DebugInfo.java" startLine="281" startPosition="26" endLine="294" endPosition="7">
+      <varInfo nodeId="5166158193670440002" varName="roots" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392303" fileName="DebugInfo.java" startLine="157" startPosition="66" endLine="171" endPosition="27">
+      <varInfo nodeId="5166158193670392305" varName="currentNode" />
+      <varInfo nodeId="5166158193670392314" varName="finished" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670440832" fileName="DebugInfo.java" startLine="299" startPosition="49" endLine="314" endPosition="16">
+      <varInfo nodeId="5166158193670440843" varName="info" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392076" fileName="DebugInfo.java" startLine="90" startPosition="0" endLine="106" endPosition="0">
+      <varInfo nodeId="5166158193670392130" varName="model" />
+      <varInfo nodeId="5166158193670392128" varName="str" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670391636" fileName="DebugInfo.java" startLine="279" startPosition="26" endLine="296" endPosition="16">
+      <varInfo nodeId="5166158193670391638" varName="root" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670440833" fileName="DebugInfo.java" startLine="298" startPosition="0" endLine="316" endPosition="0">
+      <varInfo nodeId="5166158193670440838" varName="root" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670391633" fileName="DebugInfo.java" startLine="278" startPosition="0" endLine="298" endPosition="0" />
+    <scopeInfo nodeId="5166158193670392285" fileName="DebugInfo.java" startLine="151" startPosition="52" endLine="172" endPosition="7">
+      <varInfo nodeId="5166158193670392287" varName="sameSpacePositions" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392525" fileName="DebugInfo.java" startLine="219" startPosition="59" endLine="240" endPosition="43">
+      <varInfo nodeId="5166158193670392596" varName="firstPositionInfo" />
+      <varInfo nodeId="5166158193670392582" varName="sorted" />
+      <varInfo nodeId="5166158193670392529" varName="resultList" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392615" fileName="DebugInfo.java" startLine="243" startPosition="72" endLine="264" endPosition="60">
+      <varInfo nodeId="5166158193670392686" varName="firstPositionInfo" />
+      <varInfo nodeId="5166158193670392672" varName="sorted" />
+      <varInfo nodeId="5166158193670392619" varName="resultList" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392519" fileName="DebugInfo.java" startLine="218" startPosition="0" endLine="242" endPosition="0">
+      <varInfo nodeId="5166158193670392520" varName="file" />
+      <varInfo nodeId="5166158193670392522" varName="line" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392606" fileName="DebugInfo.java" startLine="242" startPosition="0" endLine="266" endPosition="0">
+      <varInfo nodeId="5166158193670392611" varName="model" />
+      <varInfo nodeId="5166158193670392607" varName="file" />
+      <varInfo nodeId="5166158193670392609" varName="line" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392388" fileName="DebugInfo.java" startLine="178" startPosition="83" endLine="203" endPosition="16">
+      <varInfo nodeId="5166158193670392443" varName="sorted" />
+      <varInfo nodeId="5166158193670392390" varName="resultList" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392386" fileName="DebugInfo.java" startLine="177" startPosition="0" endLine="205" endPosition="0">
+      <varInfo nodeId="5166158193670392482" varName="model" />
+      <varInfo nodeId="5166158193670392484" varName="varName" />
+      <varInfo nodeId="5166158193670392478" varName="file" />
+      <varInfo nodeId="5166158193670392480" varName="line" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392134" fileName="DebugInfo.java" startLine="107" startPosition="68" endLine="175" endPosition="37">
+      <varInfo nodeId="5166158193670392209" varName="nodeId" />
+      <varInfo nodeId="5166158193670392203" varName="firstPositionInfo" />
+      <varInfo nodeId="5166158193670392189" varName="sorted" />
+      <varInfo nodeId="5166158193670392136" varName="resultList" />
+    </scopeInfo>
+    <scopeInfo nodeId="5166158193670392132" fileName="DebugInfo.java" startLine="106" startPosition="0" endLine="177" endPosition="0">
+      <varInfo nodeId="5166158193670392383" varName="model" />
+      <varInfo nodeId="5166158193670392379" varName="file" />
+      <varInfo nodeId="5166158193670392381" varName="line" />
+    </scopeInfo>
+    <unitInfo nodeId="5166158193670440419" fileName="DebugInfo.java" startLine="93" startPosition="107" endLine="97" endPosition="5" unitName="jetbrains.mps.debug.api.info.DebugInfo$1" />
+    <unitInfo nodeId="5166158193670440469" fileName="DebugInfo.java" startLine="109" startPosition="107" endLine="113" endPosition="5" unitName="jetbrains.mps.debug.api.info.DebugInfo$2" />
+    <unitInfo nodeId="5166158193670392195" fileName="DebugInfo.java" startLine="121" startPosition="79" endLine="125" endPosition="5" unitName="jetbrains.mps.debug.api.info.DebugInfo$3" />
+    <unitInfo nodeId="5166158193670392293" fileName="DebugInfo.java" startLine="152" startPosition="90" endLine="156" endPosition="7" unitName="jetbrains.mps.debug.api.info.DebugInfo$4" />
+    <unitInfo nodeId="5166158193670440525" fileName="DebugInfo.java" startLine="180" startPosition="112" endLine="184" endPosition="5" unitName="jetbrains.mps.debug.api.info.DebugInfo$5" />
+    <unitInfo nodeId="5166158193670392449" fileName="DebugInfo.java" startLine="192" startPosition="84" endLine="196" endPosition="5" unitName="jetbrains.mps.debug.api.info.DebugInfo$6" />
+    <unitInfo nodeId="5166158193670440606" fileName="DebugInfo.java" startLine="207" startPosition="107" endLine="211" endPosition="5" unitName="jetbrains.mps.debug.api.info.DebugInfo$7" />
+    <unitInfo nodeId="5166158193670440647" fileName="DebugInfo.java" startLine="222" startPosition="111" endLine="226" endPosition="5" unitName="jetbrains.mps.debug.api.info.DebugInfo$8" />
+    <unitInfo nodeId="5166158193670392588" fileName="DebugInfo.java" startLine="234" startPosition="83" endLine="238" endPosition="5" unitName="jetbrains.mps.debug.api.info.DebugInfo$9" />
+    <unitInfo nodeId="5166158193670440722" fileName="DebugInfo.java" startLine="246" startPosition="111" endLine="250" endPosition="5" unitName="jetbrains.mps.debug.api.info.DebugInfo$10" />
+    <unitInfo nodeId="5166158193670392678" fileName="DebugInfo.java" startLine="258" startPosition="83" endLine="262" endPosition="5" unitName="jetbrains.mps.debug.api.info.DebugInfo$11" />
+    <unitInfo nodeId="5166158193670371780" fileName="DebugInfo.java" startLine="24" startPosition="0" endLine="317" endPosition="0" unitName="jetbrains.mps.debug.api.info.DebugInfo" />
+  </root>
+  <root nodeId="8964322333104011100">
+    <nodeInfo nodeId="8964322333104017952" fileName="VarPositionInfo.java" startLine="8" startPosition="51" endLine="9" endPosition="45" />
+    <nodeInfo nodeId="8964322333104017970" fileName="VarPositionInfo.java" startLine="10" startPosition="0" endLine="11" endPosition="27" />
+    <nodeInfo nodeId="8964322333104039877" fileName="VarPositionInfo.java" startLine="16" startPosition="74" endLine="17" endPosition="19" />
+    <nodeInfo nodeId="8964322333104048095" fileName="VarPositionInfo.java" startLine="17" startPosition="19" endLine="18" endPosition="63" />
+    <nodeInfo nodeId="8964322333104017967" fileName="VarPositionInfo.java" startLine="22" startPosition="39" endLine="23" endPosition="26" />
+    <nodeInfo nodeId="8964322333104048120" fileName="VarPositionInfo.java" startLine="23" startPosition="26" endLine="24" endPosition="51" />
+    <nodeInfo nodeId="8964322333104048137" fileName="VarPositionInfo.java" startLine="27" startPosition="30" endLine="28" endPosition="26" />
+    <nodeInfo nodeId="8964322333104048153" fileName="VarPositionInfo.java" startLine="31" startPosition="42" endLine="32" endPosition="29" />
+    <nodeInfo nodeId="8964322333104048142" fileName="VarPositionInfo.java" startLine="12" startPosition="0" endLine="14" endPosition="3" />
+    <nodeInfo nodeId="8964322333104011102" fileName="VarPositionInfo.java" startLine="15" startPosition="0" endLine="19" endPosition="3" />
+    <nodeInfo nodeId="8964322333104048132" fileName="VarPositionInfo.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="8964322333104048146" fileName="VarPositionInfo.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="8964322333104017960" fileName="VarPositionInfo.java" startLine="20" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="8964322333104048145" fileName="VarPositionInfo.java" startLine="13" startPosition="28" endLine="13" endPosition="28" />
+    <scopeInfo nodeId="8964322333104048135" fileName="VarPositionInfo.java" startLine="27" startPosition="30" endLine="28" endPosition="26" />
+    <scopeInfo nodeId="8964322333104048149" fileName="VarPositionInfo.java" startLine="31" startPosition="42" endLine="32" endPosition="29" />
+    <scopeInfo nodeId="8964322333104048142" fileName="VarPositionInfo.java" startLine="12" startPosition="0" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="8964322333104011105" fileName="VarPositionInfo.java" startLine="16" startPosition="74" endLine="18" endPosition="63" />
+    <scopeInfo nodeId="8964322333104017965" fileName="VarPositionInfo.java" startLine="22" startPosition="39" endLine="24" endPosition="51" />
+    <scopeInfo nodeId="8964322333104011102" fileName="VarPositionInfo.java" startLine="15" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="8964322333104017973" varName="element" />
+    </scopeInfo>
+    <scopeInfo nodeId="8964322333104048132" fileName="VarPositionInfo.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="8964322333104048146" fileName="VarPositionInfo.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="8964322333104048151" varName="varName" />
+    </scopeInfo>
+    <scopeInfo nodeId="8964322333104017960" fileName="VarPositionInfo.java" startLine="20" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="8964322333104017963" varName="element" />
+    </scopeInfo>
+    <unitInfo nodeId="8964322333104011100" fileName="VarPositionInfo.java" startLine="8" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.debug.api.info.VarPositionInfo" />
+  </root>
+</debugInfo>
+
