@@ -1,5 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="1549837254988609872">
+    <nodeInfo nodeId="1549837254988609887" fileName="MapEntryViewer_Factory.java" startLine="26" startPosition="43" endLine="27" endPosition="51" />
+    <nodeInfo nodeId="1549837254988609924" fileName="MapEntryViewer_Factory.java" startLine="27" startPosition="51" endLine="28" endPosition="15" />
+    <nodeInfo nodeId="1549837254988609893" fileName="MapEntryViewer_Factory.java" startLine="28" startPosition="15" endLine="29" endPosition="120" />
+    <nodeInfo nodeId="1549837254988609905" fileName="MapEntryViewer_Factory.java" startLine="30" startPosition="12" endLine="31" endPosition="19" />
+    <nodeInfo nodeId="1549837254988610003" fileName="MapEntryViewer_Factory.java" startLine="40" startPosition="57" endLine="41" endPosition="101" />
+    <nodeInfo nodeId="1549837254988609966" fileName="MapEntryViewer_Factory.java" startLine="41" startPosition="101" endLine="42" endPosition="60" />
+    <nodeInfo nodeId="1549837254988609972" fileName="MapEntryViewer_Factory.java" startLine="42" startPosition="60" endLine="43" endPosition="73" />
+    <nodeInfo nodeId="1549837254988609984" fileName="MapEntryViewer_Factory.java" startLine="43" startPosition="73" endLine="44" endPosition="77" />
+    <nodeInfo nodeId="1549837254988610013" fileName="MapEntryViewer_Factory.java" startLine="44" startPosition="77" endLine="45" endPosition="102" />
+    <nodeInfo nodeId="1549837254988610027" fileName="MapEntryViewer_Factory.java" startLine="45" startPosition="102" endLine="46" endPosition="108" />
+    <nodeInfo nodeId="1549837254988609879" fileName="MapEntryViewer_Factory.java" startLine="46" startPosition="108" endLine="47" endPosition="20" />
+    <nodeInfo nodeId="5510975828073782166" fileName="MapEntryViewer_Factory.java" startLine="51" startPosition="42" endLine="52" endPosition="60" />
+    <nodeInfo nodeId="5510975828073782172" fileName="MapEntryViewer_Factory.java" startLine="52" startPosition="60" endLine="53" endPosition="73" />
+    <nodeInfo nodeId="5510975828073782180" fileName="MapEntryViewer_Factory.java" startLine="53" startPosition="73" endLine="54" endPosition="77" />
+    <nodeInfo nodeId="5510975828073791300" fileName="MapEntryViewer_Factory.java" startLine="54" startPosition="77" endLine="55" endPosition="26" />
+    <nodeInfo nodeId="5510975828073839085" fileName="MapEntryViewer_Factory.java" startLine="55" startPosition="26" endLine="56" endPosition="0" />
+    <nodeInfo nodeId="5510975828073791320" fileName="MapEntryViewer_Factory.java" startLine="57" startPosition="43" endLine="58" endPosition="141" />
+    <nodeInfo nodeId="5510975828073839057" fileName="MapEntryViewer_Factory.java" startLine="59" startPosition="14" endLine="60" endPosition="68" />
+    <nodeInfo nodeId="5510975828073843676" fileName="MapEntryViewer_Factory.java" startLine="61" startPosition="7" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="5510975828073843678" fileName="MapEntryViewer_Factory.java" startLine="62" startPosition="0" endLine="63" endPosition="23" />
+    <nodeInfo nodeId="5510975828073839080" fileName="MapEntryViewer_Factory.java" startLine="63" startPosition="23" endLine="64" endPosition="0" />
+    <nodeInfo nodeId="5510975828073839090" fileName="MapEntryViewer_Factory.java" startLine="65" startPosition="45" endLine="66" endPosition="143" />
+    <nodeInfo nodeId="5510975828073839111" fileName="MapEntryViewer_Factory.java" startLine="67" startPosition="14" endLine="68" endPosition="70" />
+    <nodeInfo nodeId="5510975828073839086" fileName="MapEntryViewer_Factory.java" startLine="69" startPosition="7" endLine="70" endPosition="0" />
+    <nodeInfo nodeId="5510975828073839082" fileName="MapEntryViewer_Factory.java" startLine="70" startPosition="0" endLine="71" endPosition="20" />
+    <nodeInfo nodeId="1549837254988609903" fileName="MapEntryViewer_Factory.java" startLine="30" startPosition="10" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="5510975828073839055" fileName="MapEntryViewer_Factory.java" startLine="59" startPosition="12" endLine="61" endPosition="7" />
+    <nodeInfo nodeId="5510975828073839109" fileName="MapEntryViewer_Factory.java" startLine="67" startPosition="12" endLine="69" endPosition="7" />
+    <nodeInfo nodeId="5510975828073791306" fileName="MapEntryViewer_Factory.java" startLine="56" startPosition="0" endLine="61" endPosition="7" />
+    <nodeInfo nodeId="5510975828073839088" fileName="MapEntryViewer_Factory.java" startLine="64" startPosition="0" endLine="69" endPosition="7" />
+    <nodeInfo nodeId="1549837254988609885" fileName="MapEntryViewer_Factory.java" startLine="25" startPosition="48" endLine="32" endPosition="5" />
+    <scopeInfo nodeId="1549837254988609904" fileName="MapEntryViewer_Factory.java" startLine="30" startPosition="12" endLine="31" endPosition="19" />
+    <scopeInfo nodeId="5510975828073791307" fileName="MapEntryViewer_Factory.java" startLine="57" startPosition="43" endLine="58" endPosition="141" />
+    <scopeInfo nodeId="5510975828073839056" fileName="MapEntryViewer_Factory.java" startLine="59" startPosition="14" endLine="60" endPosition="68" />
+    <scopeInfo nodeId="5510975828073839089" fileName="MapEntryViewer_Factory.java" startLine="65" startPosition="45" endLine="66" endPosition="143" />
+    <scopeInfo nodeId="5510975828073839110" fileName="MapEntryViewer_Factory.java" startLine="67" startPosition="14" endLine="68" endPosition="70" />
+    <scopeInfo nodeId="1549837254988609886" fileName="MapEntryViewer_Factory.java" startLine="26" startPosition="43" endLine="29" endPosition="120">
+      <varInfo nodeId="1549837254988609888" varName="ov" />
+    </scopeInfo>
+    <scopeInfo nodeId="1549837254988609876" fileName="MapEntryViewer_Factory.java" startLine="25" startPosition="48" endLine="32" endPosition="5" />
+    <scopeInfo nodeId="1549837254988609874" fileName="MapEntryViewer_Factory.java" startLine="40" startPosition="57" endLine="47" endPosition="20">
+      <varInfo nodeId="1549837254988610004" varName="result" />
+      <varInfo nodeId="1549837254988609967" varName="ov" />
+      <varInfo nodeId="1549837254988609985" varName="value" />
+      <varInfo nodeId="1549837254988609973" varName="key" />
+    </scopeInfo>
+    <scopeInfo nodeId="5510975828073782164" fileName="MapEntryViewer_Factory.java" startLine="51" startPosition="42" endLine="71" endPosition="20">
+      <varInfo nodeId="5510975828073791301" varName="result" />
+      <varInfo nodeId="5510975828073782167" varName="ov" />
+      <varInfo nodeId="5510975828073782181" varName="value" />
+      <varInfo nodeId="5510975828073782173" varName="key" />
+    </scopeInfo>
+  </root>
+  <root nodeId="482057844544938052">
+    <nodeInfo nodeId="482057844544938062" fileName="MapViewer_Factory.java" startLine="25" startPosition="43" endLine="26" endPosition="51" />
+    <nodeInfo nodeId="482057844544938068" fileName="MapViewer_Factory.java" startLine="26" startPosition="51" endLine="27" endPosition="98" />
+    <nodeInfo nodeId="482057844544938080" fileName="MapViewer_Factory.java" startLine="28" startPosition="12" endLine="29" endPosition="19" />
+    <nodeInfo nodeId="482057844544938867" fileName="MapViewer_Factory.java" startLine="38" startPosition="57" endLine="39" endPosition="77" />
+    <nodeInfo nodeId="482057844544938873" fileName="MapViewer_Factory.java" startLine="39" startPosition="77" endLine="40" endPosition="101" />
+    <nodeInfo nodeId="482057844544938948" fileName="MapViewer_Factory.java" startLine="40" startPosition="101" endLine="41" endPosition="118" />
+    <nodeInfo nodeId="1549837254988595579" fileName="MapViewer_Factory.java" startLine="41" startPosition="118" endLine="42" endPosition="112" />
+    <nodeInfo nodeId="1549837254988606619" fileName="MapViewer_Factory.java" startLine="43" startPosition="104" endLine="44" endPosition="81" />
+    <nodeInfo nodeId="1549837254988606628" fileName="MapViewer_Factory.java" startLine="44" startPosition="81" endLine="45" endPosition="110" />
+    <nodeInfo nodeId="482057844544938934" fileName="MapViewer_Factory.java" startLine="46" startPosition="7" endLine="47" endPosition="20" />
+    <nodeInfo nodeId="482057844544938078" fileName="MapViewer_Factory.java" startLine="28" startPosition="10" endLine="30" endPosition="5" />
+    <nodeInfo nodeId="1549837254988595593" fileName="MapViewer_Factory.java" startLine="42" startPosition="112" endLine="46" endPosition="7" />
+    <nodeInfo nodeId="482057844544938060" fileName="MapViewer_Factory.java" startLine="24" startPosition="48" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="482057844544938079" fileName="MapViewer_Factory.java" startLine="28" startPosition="12" endLine="29" endPosition="19" />
+    <scopeInfo nodeId="482057844544938061" fileName="MapViewer_Factory.java" startLine="25" startPosition="43" endLine="27" endPosition="98">
+      <varInfo nodeId="482057844544938063" varName="ov" />
+    </scopeInfo>
+    <scopeInfo nodeId="1549837254988595595" fileName="MapViewer_Factory.java" startLine="43" startPosition="104" endLine="45" endPosition="110">
+      <varInfo nodeId="1549837254988606620" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="482057844544938056" fileName="MapViewer_Factory.java" startLine="24" startPosition="48" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="482057844544938054" fileName="MapViewer_Factory.java" startLine="38" startPosition="57" endLine="47" endPosition="20">
+      <varInfo nodeId="482057844544938874" varName="result" />
+      <varInfo nodeId="1549837254988595580" varName="iterator" />
+      <varInfo nodeId="482057844544938868" varName="objectOriginalValue" />
+      <varInfo nodeId="482057844544938949" varName="entrySet" />
+    </scopeInfo>
+  </root>
   <root nodeId="8423890115754358687">
     <nodeInfo nodeId="8423890115754358696" fileName="ListViewer_Factory.java" startLine="25" startPosition="43" endLine="26" endPosition="51" />
     <nodeInfo nodeId="8423890115754358702" fileName="ListViewer_Factory.java" startLine="26" startPosition="51" endLine="27" endPosition="99" />
