@@ -179,50 +179,61 @@
     <unitInfo nodeId="4060685206781456017" fileName="C.java" startLine="10" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.debug.run.sandbox.C" />
   </root>
   <root nodeId="4495133539197110684">
-    <nodeInfo nodeId="6084657294691509231" fileName="DebugCollections.java" startLine="15" startPosition="42" endLine="16" endPosition="21" />
-    <nodeInfo nodeId="3337698516783057945" fileName="DebugCollections.java" startLine="16" startPosition="21" endLine="17" endPosition="14" />
-    <nodeInfo nodeId="1549837254988521221" fileName="DebugCollections.java" startLine="17" startPosition="14" endLine="18" endPosition="32" />
-    <nodeInfo nodeId="1549837254988521228" fileName="DebugCollections.java" startLine="18" startPosition="32" endLine="19" endPosition="31" />
-    <nodeInfo nodeId="5510975828073867573" fileName="DebugCollections.java" startLine="19" startPosition="31" endLine="20" endPosition="37" />
-    <nodeInfo nodeId="1549837254988521231" fileName="DebugCollections.java" startLine="23" startPosition="32" endLine="24" endPosition="85" />
-    <nodeInfo nodeId="1549837254988521247" fileName="DebugCollections.java" startLine="24" startPosition="85" endLine="25" endPosition="49" />
-    <nodeInfo nodeId="1549837254988521258" fileName="DebugCollections.java" startLine="25" startPosition="49" endLine="26" endPosition="49" />
-    <nodeInfo nodeId="1549837254988521264" fileName="DebugCollections.java" startLine="26" startPosition="49" endLine="27" endPosition="51" />
-    <nodeInfo nodeId="1549837254988521271" fileName="DebugCollections.java" startLine="27" startPosition="51" endLine="28" endPosition="32" />
-    <nodeInfo nodeId="5510975828073867298" fileName="DebugCollections.java" startLine="31" startPosition="38" endLine="32" endPosition="91" />
-    <nodeInfo nodeId="5510975828073867307" fileName="DebugCollections.java" startLine="32" startPosition="91" endLine="33" endPosition="49" />
-    <nodeInfo nodeId="5510975828073867313" fileName="DebugCollections.java" startLine="33" startPosition="49" endLine="34" endPosition="49" />
-    <nodeInfo nodeId="5510975828073867319" fileName="DebugCollections.java" startLine="34" startPosition="49" endLine="35" endPosition="51" />
-    <nodeInfo nodeId="5510975828073867325" fileName="DebugCollections.java" startLine="35" startPosition="51" endLine="36" endPosition="32" />
-    <nodeInfo nodeId="1549837254988521195" fileName="DebugCollections.java" startLine="39" startPosition="34" endLine="40" endPosition="74" />
-    <nodeInfo nodeId="1549837254988521201" fileName="DebugCollections.java" startLine="40" startPosition="74" endLine="41" endPosition="55" />
-    <nodeInfo nodeId="1549837254988521206" fileName="DebugCollections.java" startLine="41" startPosition="55" endLine="42" endPosition="54" />
-    <nodeInfo nodeId="1549837254988521211" fileName="DebugCollections.java" startLine="42" startPosition="54" endLine="43" endPosition="55" />
-    <nodeInfo nodeId="1549837254988521216" fileName="DebugCollections.java" startLine="43" startPosition="55" endLine="44" endPosition="32" />
-    <nodeInfo nodeId="4495133539197110698" fileName="DebugCollections.java" startLine="14" startPosition="31" endLine="22" endPosition="0" />
-    <nodeInfo nodeId="1549837254988521223" fileName="DebugCollections.java" startLine="22" startPosition="0" endLine="30" endPosition="0" />
-    <nodeInfo nodeId="5510975828073867294" fileName="DebugCollections.java" startLine="30" startPosition="0" endLine="38" endPosition="0" />
-    <nodeInfo nodeId="1549837254988521191" fileName="DebugCollections.java" startLine="38" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="4495133539197110701" fileName="DebugCollections.java" startLine="15" startPosition="42" endLine="20" endPosition="37">
+    <nodeInfo nodeId="6084657294691509231" fileName="DebugCollections.java" startLine="18" startPosition="42" endLine="19" endPosition="21" />
+    <nodeInfo nodeId="3337698516783057945" fileName="DebugCollections.java" startLine="19" startPosition="21" endLine="20" endPosition="14" />
+    <nodeInfo nodeId="1549837254988521221" fileName="DebugCollections.java" startLine="20" startPosition="14" endLine="21" endPosition="32" />
+    <nodeInfo nodeId="1549837254988521228" fileName="DebugCollections.java" startLine="21" startPosition="32" endLine="22" endPosition="31" />
+    <nodeInfo nodeId="5510975828073867573" fileName="DebugCollections.java" startLine="22" startPosition="31" endLine="23" endPosition="37" />
+    <nodeInfo nodeId="9119835640346929381" fileName="DebugCollections.java" startLine="23" startPosition="37" endLine="24" endPosition="38" />
+    <nodeInfo nodeId="1549837254988521231" fileName="DebugCollections.java" startLine="27" startPosition="32" endLine="28" endPosition="85" />
+    <nodeInfo nodeId="1549837254988521247" fileName="DebugCollections.java" startLine="28" startPosition="85" endLine="29" endPosition="49" />
+    <nodeInfo nodeId="1549837254988521258" fileName="DebugCollections.java" startLine="29" startPosition="49" endLine="30" endPosition="49" />
+    <nodeInfo nodeId="1549837254988521264" fileName="DebugCollections.java" startLine="30" startPosition="49" endLine="31" endPosition="51" />
+    <nodeInfo nodeId="1549837254988521271" fileName="DebugCollections.java" startLine="31" startPosition="51" endLine="32" endPosition="32" />
+    <nodeInfo nodeId="5510975828073867298" fileName="DebugCollections.java" startLine="35" startPosition="38" endLine="36" endPosition="91" />
+    <nodeInfo nodeId="5510975828073867307" fileName="DebugCollections.java" startLine="36" startPosition="91" endLine="37" endPosition="49" />
+    <nodeInfo nodeId="5510975828073867313" fileName="DebugCollections.java" startLine="37" startPosition="49" endLine="38" endPosition="49" />
+    <nodeInfo nodeId="5510975828073867319" fileName="DebugCollections.java" startLine="38" startPosition="49" endLine="39" endPosition="51" />
+    <nodeInfo nodeId="5510975828073867325" fileName="DebugCollections.java" startLine="39" startPosition="51" endLine="40" endPosition="32" />
+    <nodeInfo nodeId="1549837254988521195" fileName="DebugCollections.java" startLine="43" startPosition="34" endLine="44" endPosition="74" />
+    <nodeInfo nodeId="1549837254988521201" fileName="DebugCollections.java" startLine="44" startPosition="74" endLine="45" endPosition="55" />
+    <nodeInfo nodeId="1549837254988521206" fileName="DebugCollections.java" startLine="45" startPosition="55" endLine="46" endPosition="54" />
+    <nodeInfo nodeId="1549837254988521211" fileName="DebugCollections.java" startLine="46" startPosition="54" endLine="47" endPosition="55" />
+    <nodeInfo nodeId="1549837254988521216" fileName="DebugCollections.java" startLine="47" startPosition="55" endLine="48" endPosition="32" />
+    <nodeInfo nodeId="3485234895530210252" fileName="DebugCollections.java" startLine="51" startPosition="40" endLine="52" endPosition="88" />
+    <nodeInfo nodeId="3485234895530210259" fileName="DebugCollections.java" startLine="52" startPosition="88" endLine="53" endPosition="67" />
+    <nodeInfo nodeId="3485234895530210264" fileName="DebugCollections.java" startLine="53" startPosition="67" endLine="54" endPosition="66" />
+    <nodeInfo nodeId="3485234895530210269" fileName="DebugCollections.java" startLine="54" startPosition="66" endLine="55" endPosition="67" />
+    <nodeInfo nodeId="3485234895530210274" fileName="DebugCollections.java" startLine="55" startPosition="67" endLine="56" endPosition="32" />
+    <nodeInfo nodeId="1549837254988521223" fileName="DebugCollections.java" startLine="26" startPosition="0" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="5510975828073867294" fileName="DebugCollections.java" startLine="34" startPosition="0" endLine="42" endPosition="0" />
+    <nodeInfo nodeId="1549837254988521191" fileName="DebugCollections.java" startLine="42" startPosition="0" endLine="50" endPosition="0" />
+    <nodeInfo nodeId="3485234895530210248" fileName="DebugCollections.java" startLine="50" startPosition="0" endLine="58" endPosition="0" />
+    <nodeInfo nodeId="4495133539197110698" fileName="DebugCollections.java" startLine="17" startPosition="31" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1549837254988521226" fileName="DebugCollections.java" startLine="27" startPosition="32" endLine="32" endPosition="32">
+      <varInfo nodeId="1549837254988521232" varName="strings" />
+    </scopeInfo>
+    <scopeInfo nodeId="5510975828073867297" fileName="DebugCollections.java" startLine="35" startPosition="38" endLine="40" endPosition="32">
+      <varInfo nodeId="5510975828073867299" varName="strings" />
+    </scopeInfo>
+    <scopeInfo nodeId="1549837254988521194" fileName="DebugCollections.java" startLine="43" startPosition="34" endLine="48" endPosition="32">
+      <varInfo nodeId="1549837254988521190" varName="strings" />
+    </scopeInfo>
+    <scopeInfo nodeId="3485234895530210251" fileName="DebugCollections.java" startLine="51" startPosition="40" endLine="56" endPosition="32">
+      <varInfo nodeId="3485234895530210253" varName="strings" />
+    </scopeInfo>
+    <scopeInfo nodeId="4495133539197110701" fileName="DebugCollections.java" startLine="18" startPosition="42" endLine="24" endPosition="38">
       <varInfo nodeId="3337698516783057946" varName="k" />
       <varInfo nodeId="6084657294691509232" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1549837254988521226" fileName="DebugCollections.java" startLine="23" startPosition="32" endLine="28" endPosition="32">
-      <varInfo nodeId="1549837254988521232" varName="strings" />
-    </scopeInfo>
-    <scopeInfo nodeId="5510975828073867297" fileName="DebugCollections.java" startLine="31" startPosition="38" endLine="36" endPosition="32">
-      <varInfo nodeId="5510975828073867299" varName="strings" />
-    </scopeInfo>
-    <scopeInfo nodeId="1549837254988521194" fileName="DebugCollections.java" startLine="39" startPosition="34" endLine="44" endPosition="32">
-      <varInfo nodeId="1549837254988521190" varName="strings" />
-    </scopeInfo>
-    <scopeInfo nodeId="4495133539197110698" fileName="DebugCollections.java" startLine="14" startPosition="31" endLine="22" endPosition="0">
+    <scopeInfo nodeId="1549837254988521223" fileName="DebugCollections.java" startLine="26" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="5510975828073867294" fileName="DebugCollections.java" startLine="34" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1549837254988521191" fileName="DebugCollections.java" startLine="42" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="3485234895530210248" fileName="DebugCollections.java" startLine="50" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="4495133539197110698" fileName="DebugCollections.java" startLine="17" startPosition="31" endLine="26" endPosition="0">
       <varInfo nodeId="4495133539197113658" varName="args" />
     </scopeInfo>
-    <scopeInfo nodeId="1549837254988521223" fileName="DebugCollections.java" startLine="22" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="5510975828073867294" fileName="DebugCollections.java" startLine="30" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1549837254988521191" fileName="DebugCollections.java" startLine="38" startPosition="0" endLine="46" endPosition="0" />
-    <unitInfo nodeId="4495133539197110684" fileName="DebugCollections.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.debug.run.sandbox.DebugCollections" />
+    <unitInfo nodeId="4495133539197110684" fileName="DebugCollections.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.debug.run.sandbox.DebugCollections" />
   </root>
   <root nodeId="6272435620521812604">
     <nodeInfo nodeId="6272435620521812654" fileName="Cls.java" startLine="6" startPosition="18" endLine="7" endPosition="27" />

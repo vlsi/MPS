@@ -10,6 +10,9 @@ import java.util.TreeMap;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import jetbrains.mps.internal.collections.runtime.LinkedListSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public class DebugCollections {
   public static void main(String[] args) {
@@ -18,6 +21,7 @@ public class DebugCollections {
     DebugCollections.testList();
     DebugCollections.testMap();
     DebugCollections.testSortedMap();
+    DebugCollections.testLinkedList();
   }
 
   public static void testMap() {
@@ -41,6 +45,14 @@ public class DebugCollections {
     ListSequence.fromList(strings).addElement("alpha");
     ListSequence.fromList(strings).addElement("beta");
     ListSequence.fromList(strings).addElement("gamma");
+    System.out.println(strings);
+  }
+
+  private static void testLinkedList() {
+    Deque<String> strings = LinkedListSequence.fromLinkedList(new LinkedList<String>());
+    LinkedListSequence.fromLinkedList(strings).addElement("alpha");
+    LinkedListSequence.fromLinkedList(strings).addElement("beta");
+    LinkedListSequence.fromLinkedList(strings).addElement("gamma");
     System.out.println(strings);
   }
 }

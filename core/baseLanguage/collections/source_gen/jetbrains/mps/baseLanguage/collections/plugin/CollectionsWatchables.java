@@ -57,4 +57,16 @@ public class CollectionsWatchables {
       return ourCategory;
     }
   }
+
+  public static class MyWatchable_size extends CustomJavaWatchable {
+    private static WatchablesCategory ourCategory = new WatchablesCategory("size");
+
+    public MyWatchable_size(JavaValue value, String name) {
+      super(value, name);
+    }
+
+    public WatchablesCategory getCategory() {
+      return ourCategory;
+    }
+  }
 }

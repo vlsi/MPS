@@ -4,6 +4,7 @@ import com.sun.jdi.*;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.customViewers.CustomViewersManager;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -33,7 +34,11 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
     return tryToWrap(classFQname, javaValue);
   }
 
-  public static JavaValue tryToWrap(String classFQname, JavaValue javaValue) {
+  public static JavaValue tryToWrap(@NotNull JavaValue javaValue) {
+    return tryToWrap(javaValue.getClassFQName(), javaValue);  
+  }
+
+  private static JavaValue tryToWrap(String classFQname, JavaValue javaValue) {
     CustomViewersManager customViewersManager = CustomViewersManager.getInstance();
     ValueWrapper wrapper = customViewersManager.getValueWrapper(javaValue, classFQname);
     if (wrapper == null) return javaValue;

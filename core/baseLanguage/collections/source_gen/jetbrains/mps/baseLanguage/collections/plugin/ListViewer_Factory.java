@@ -39,10 +39,14 @@ public class ListViewer_Factory extends ValueWrapperFactory {
       JavaObjectValue ov = (JavaObjectValue) myWrappedValue;
       List<CustomJavaWatchable> result = ListSequence.fromList(new ArrayList<CustomJavaWatchable>());
       JavaObjectValue listValue = (JavaObjectValue) ov.getFieldValue("list");
-      int size = (Integer) ((JavaPrimitiveValue) listValue.executeMethod("size", "()I")).getJavaValue();
+
+      JavaPrimitiveValue sizeValue = ((JavaPrimitiveValue) listValue.executeMethod("size", "()I"));
+      ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_size(JavaObjectValue.tryToWrap(sizeValue), "size"));
+
+      int size = (Integer) sizeValue.getJavaValue();
       for (int index = 0; index < size; index++) {
         JavaValue v = listValue.executeMethod("get", "(I)Ljava/lang/Object;", index);
-        ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_element(v, "element"));
+        ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_element(JavaObjectValue.tryToWrap(v), "element"));
       }
       return result;
     }
