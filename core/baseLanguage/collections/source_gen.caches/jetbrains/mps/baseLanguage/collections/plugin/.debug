@@ -53,6 +53,41 @@
       <varInfo nodeId="5510975828073782173" varName="key" />
     </scopeInfo>
   </root>
+  <root nodeId="2608445015225444665">
+    <nodeInfo nodeId="2608445015225479415" fileName="SetViewer_Factory.java" startLine="25" startPosition="43" endLine="26" endPosition="51" />
+    <nodeInfo nodeId="2608445015225479421" fileName="SetViewer_Factory.java" startLine="26" startPosition="51" endLine="27" endPosition="46" />
+    <nodeInfo nodeId="2608445015225479439" fileName="SetViewer_Factory.java" startLine="28" startPosition="12" endLine="29" endPosition="19" />
+    <nodeInfo nodeId="2608445015225480444" fileName="SetViewer_Factory.java" startLine="38" startPosition="57" endLine="39" endPosition="66" />
+    <nodeInfo nodeId="2608445015225479337" fileName="SetViewer_Factory.java" startLine="39" startPosition="66" endLine="40" endPosition="77" />
+    <nodeInfo nodeId="2608445015225479343" fileName="SetViewer_Factory.java" startLine="40" startPosition="77" endLine="41" endPosition="101" />
+    <nodeInfo nodeId="2608445015225479350" fileName="SetViewer_Factory.java" startLine="41" startPosition="101" endLine="42" endPosition="0" />
+    <nodeInfo nodeId="2608445015225479351" fileName="SetViewer_Factory.java" startLine="42" startPosition="0" endLine="43" endPosition="102" />
+    <nodeInfo nodeId="2608445015225479361" fileName="SetViewer_Factory.java" startLine="43" startPosition="102" endLine="44" endPosition="132" />
+    <nodeInfo nodeId="2608445015225479368" fileName="SetViewer_Factory.java" startLine="44" startPosition="132" endLine="45" endPosition="0" />
+    <nodeInfo nodeId="2608445015225479369" fileName="SetViewer_Factory.java" startLine="45" startPosition="0" endLine="46" endPosition="123" />
+    <nodeInfo nodeId="2608445015225479379" fileName="SetViewer_Factory.java" startLine="46" startPosition="123" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="2608445015225479394" fileName="SetViewer_Factory.java" startLine="48" startPosition="104" endLine="49" endPosition="81" />
+    <nodeInfo nodeId="2608445015225479402" fileName="SetViewer_Factory.java" startLine="49" startPosition="81" endLine="50" endPosition="141" />
+    <nodeInfo nodeId="2608445015225479409" fileName="SetViewer_Factory.java" startLine="51" startPosition="7" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="2608445015225479410" fileName="SetViewer_Factory.java" startLine="52" startPosition="0" endLine="53" endPosition="20" />
+    <nodeInfo nodeId="2608445015225479437" fileName="SetViewer_Factory.java" startLine="28" startPosition="10" endLine="30" endPosition="5" />
+    <nodeInfo nodeId="2608445015225479380" fileName="SetViewer_Factory.java" startLine="47" startPosition="0" endLine="51" endPosition="7" />
+    <nodeInfo nodeId="2608445015225479413" fileName="SetViewer_Factory.java" startLine="24" startPosition="48" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="2608445015225479438" fileName="SetViewer_Factory.java" startLine="28" startPosition="12" endLine="29" endPosition="19" />
+    <scopeInfo nodeId="2608445015225479414" fileName="SetViewer_Factory.java" startLine="25" startPosition="43" endLine="27" endPosition="46">
+      <varInfo nodeId="2608445015225479416" varName="ov" />
+    </scopeInfo>
+    <scopeInfo nodeId="2608445015225479393" fileName="SetViewer_Factory.java" startLine="48" startPosition="104" endLine="50" endPosition="141">
+      <varInfo nodeId="2608445015225479395" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2608445015225444669" fileName="SetViewer_Factory.java" startLine="24" startPosition="48" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="2608445015225444667" fileName="SetViewer_Factory.java" startLine="38" startPosition="57" endLine="53" endPosition="20">
+      <varInfo nodeId="2608445015225479344" varName="result" />
+      <varInfo nodeId="2608445015225479370" varName="iterator" />
+      <varInfo nodeId="2608445015225479338" varName="objectOriginalValue" />
+      <varInfo nodeId="2608445015225479352" varName="size" />
+    </scopeInfo>
+  </root>
   <root nodeId="4489446533979525985">
     <nodeInfo nodeId="4489446533979525993" fileName="SequentialListViewer_Factory.java" startLine="25" startPosition="43" endLine="26" endPosition="51" />
     <nodeInfo nodeId="4489446533979525999" fileName="SequentialListViewer_Factory.java" startLine="26" startPosition="51" endLine="27" endPosition="139" />

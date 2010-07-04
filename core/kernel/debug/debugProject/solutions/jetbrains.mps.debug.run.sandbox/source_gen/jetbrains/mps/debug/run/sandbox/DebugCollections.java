@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.internal.collections.runtime.LinkedListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 
 public class DebugCollections {
   public static void main(String[] args) {
@@ -22,6 +25,7 @@ public class DebugCollections {
     DebugCollections.testMap();
     DebugCollections.testSortedMap();
     DebugCollections.testLinkedList();
+    DebugCollections.testSet();
   }
 
   public static void testMap() {
@@ -53,6 +57,14 @@ public class DebugCollections {
     LinkedListSequence.fromLinkedList(strings).addElement("alpha");
     LinkedListSequence.fromLinkedList(strings).addElement("beta");
     LinkedListSequence.fromLinkedList(strings).addElement("gamma");
+    System.out.println(strings);
+  }
+
+  public static void testSet() {
+    Set<String> strings = SetSequence.fromSet(new HashSet<String>());
+    SetSequence.fromSet(strings).addElement("alpha");
+    SetSequence.fromSet(strings).addElement("beta");
+    SetSequence.fromSet(strings).addElement("gamma");
     System.out.println(strings);
   }
 }

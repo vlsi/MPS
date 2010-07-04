@@ -54,6 +54,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_Factory" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.MapViewer_Factory" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.SequentialListViewer_Factory" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.SetViewer_Factory" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory" />
     <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.CustomViewersDescriptor" />
   </dependency>
@@ -116,6 +117,20 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.plugin.SequentialListViewer_Factory" file="SequentialListViewer_Factory.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaPrimitiveValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapper" />
+    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.SetViewer_Factory" file="SetViewer_Factory.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
