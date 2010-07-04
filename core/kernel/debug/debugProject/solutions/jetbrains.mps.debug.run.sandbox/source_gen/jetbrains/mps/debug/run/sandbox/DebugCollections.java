@@ -5,6 +5,8 @@ package jetbrains.mps.debug.run.sandbox;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.SortedMapSequence;
+import java.util.TreeMap;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -15,10 +17,19 @@ public class DebugCollections {
     int k = 0;
     DebugCollections.testList();
     DebugCollections.testMap();
+    DebugCollections.testSortedMap();
   }
 
   public static void testMap() {
     Map<String, String> strings = MapSequence.fromMap(new HashMap<String, String>());
+    MapSequence.fromMap(strings).put("one", "1");
+    MapSequence.fromMap(strings).put("two", "2");
+    MapSequence.fromMap(strings).put("three", "3");
+    System.out.println(strings);
+  }
+
+  public static void testSortedMap() {
+    Map<String, String> strings = SortedMapSequence.fromMap(new TreeMap<String, String>());
     MapSequence.fromMap(strings).put("one", "1");
     MapSequence.fromMap(strings).put("two", "2");
     MapSequence.fromMap(strings).put("three", "3");

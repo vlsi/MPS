@@ -3,7 +3,7 @@
   <root nodeId="1549837254988609872">
     <nodeInfo nodeId="1549837254988609887" fileName="MapEntryViewer_Factory.java" startLine="26" startPosition="43" endLine="27" endPosition="51" />
     <nodeInfo nodeId="1549837254988609924" fileName="MapEntryViewer_Factory.java" startLine="27" startPosition="51" endLine="28" endPosition="15" />
-    <nodeInfo nodeId="1549837254988609893" fileName="MapEntryViewer_Factory.java" startLine="28" startPosition="15" endLine="29" endPosition="120" />
+    <nodeInfo nodeId="1549837254988609893" fileName="MapEntryViewer_Factory.java" startLine="28" startPosition="15" endLine="29" endPosition="177" />
     <nodeInfo nodeId="1549837254988609905" fileName="MapEntryViewer_Factory.java" startLine="30" startPosition="12" endLine="31" endPosition="19" />
     <nodeInfo nodeId="1549837254988610003" fileName="MapEntryViewer_Factory.java" startLine="40" startPosition="57" endLine="41" endPosition="101" />
     <nodeInfo nodeId="1549837254988609966" fileName="MapEntryViewer_Factory.java" startLine="41" startPosition="101" endLine="42" endPosition="60" />
@@ -37,7 +37,7 @@
     <scopeInfo nodeId="5510975828073839056" fileName="MapEntryViewer_Factory.java" startLine="59" startPosition="14" endLine="60" endPosition="68" />
     <scopeInfo nodeId="5510975828073839089" fileName="MapEntryViewer_Factory.java" startLine="65" startPosition="45" endLine="66" endPosition="143" />
     <scopeInfo nodeId="5510975828073839110" fileName="MapEntryViewer_Factory.java" startLine="67" startPosition="14" endLine="68" endPosition="70" />
-    <scopeInfo nodeId="1549837254988609886" fileName="MapEntryViewer_Factory.java" startLine="26" startPosition="43" endLine="29" endPosition="120">
+    <scopeInfo nodeId="1549837254988609886" fileName="MapEntryViewer_Factory.java" startLine="26" startPosition="43" endLine="29" endPosition="177">
       <varInfo nodeId="1549837254988609888" varName="ov" />
     </scopeInfo>
     <scopeInfo nodeId="1549837254988609876" fileName="MapEntryViewer_Factory.java" startLine="25" startPosition="48" endLine="32" endPosition="5" />
@@ -56,7 +56,7 @@
   </root>
   <root nodeId="482057844544938052">
     <nodeInfo nodeId="482057844544938062" fileName="MapViewer_Factory.java" startLine="25" startPosition="43" endLine="26" endPosition="51" />
-    <nodeInfo nodeId="482057844544938068" fileName="MapViewer_Factory.java" startLine="26" startPosition="51" endLine="27" endPosition="98" />
+    <nodeInfo nodeId="482057844544938068" fileName="MapViewer_Factory.java" startLine="26" startPosition="51" endLine="27" endPosition="192" />
     <nodeInfo nodeId="482057844544938080" fileName="MapViewer_Factory.java" startLine="28" startPosition="12" endLine="29" endPosition="19" />
     <nodeInfo nodeId="482057844544938867" fileName="MapViewer_Factory.java" startLine="38" startPosition="57" endLine="39" endPosition="77" />
     <nodeInfo nodeId="482057844544938873" fileName="MapViewer_Factory.java" startLine="39" startPosition="77" endLine="40" endPosition="101" />
@@ -69,7 +69,7 @@
     <nodeInfo nodeId="1549837254988595593" fileName="MapViewer_Factory.java" startLine="42" startPosition="112" endLine="46" endPosition="7" />
     <nodeInfo nodeId="482057844544938060" fileName="MapViewer_Factory.java" startLine="24" startPosition="48" endLine="30" endPosition="5" />
     <scopeInfo nodeId="482057844544938079" fileName="MapViewer_Factory.java" startLine="28" startPosition="12" endLine="29" endPosition="19" />
-    <scopeInfo nodeId="482057844544938061" fileName="MapViewer_Factory.java" startLine="25" startPosition="43" endLine="27" endPosition="98">
+    <scopeInfo nodeId="482057844544938061" fileName="MapViewer_Factory.java" startLine="25" startPosition="43" endLine="27" endPosition="192">
       <varInfo nodeId="482057844544938063" varName="ov" />
     </scopeInfo>
     <scopeInfo nodeId="1549837254988595595" fileName="MapViewer_Factory.java" startLine="43" startPosition="104" endLine="45" endPosition="110">

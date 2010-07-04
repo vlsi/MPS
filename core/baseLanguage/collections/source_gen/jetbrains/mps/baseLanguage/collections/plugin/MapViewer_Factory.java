@@ -24,7 +24,7 @@ public class MapViewer_Factory extends ValueWrapperFactory {
   public boolean canWrapValue(JavaValue value) {
     if (value instanceof JavaObjectValue) {
       JavaObjectValue ov = (JavaObjectValue) value;
-      return "jetbrains.mps.internal.collections.runtime.MapSequence".equals(ov.getClassFqName());
+      return "jetbrains.mps.internal.collections.runtime.MapSequence".equals(ov.getClassFqName()) || "jetbrains.mps.internal.collections.runtime.SortedMapSequence".equals(ov.getClassFqName());
     } else {
       return false;
     }

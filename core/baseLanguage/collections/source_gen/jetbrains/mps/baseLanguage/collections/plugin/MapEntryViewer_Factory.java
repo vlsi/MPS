@@ -26,7 +26,7 @@ public class MapEntryViewer_Factory extends ValueWrapperFactory {
     if (value instanceof JavaObjectValue) {
       JavaObjectValue ov = (JavaObjectValue) value;
       // todo! 
-      return "java.util.Map$Entry".equals(ov.getClassFqName()) || "java.util.HashMap$Entry".equals(ov.getClassFqName());
+      return "java.util.Map$Entry".equals(ov.getClassFqName()) || "java.util.HashMap$Entry".equals(ov.getClassFqName()) || "java.util.TreeMap$Entry".equals(ov.getClassFqName());
     } else {
       return false;
     }
