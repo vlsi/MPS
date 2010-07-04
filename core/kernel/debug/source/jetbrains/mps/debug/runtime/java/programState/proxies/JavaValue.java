@@ -30,13 +30,17 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
 
   public static JavaValue fromJDIValue(Value value, String classFQname, ThreadReference threadReference) {
     JavaValue javaValue = fromJDIValueRaw(value, classFQname, threadReference);
+    return tryToWrap(classFQname, javaValue);
+  }
+
+  public static JavaValue tryToWrap(String classFQname, JavaValue javaValue) {
     CustomViewersManager customViewersManager = CustomViewersManager.getInstance();
     ValueWrapper wrapper = customViewersManager.getValueWrapper(javaValue, classFQname);
     if (wrapper == null) return javaValue;
     return wrapper;
   }
 
-  private static JavaValue fromJDIValueRaw(Value value, String classFQname, ThreadReference threadReference) {
+  public static JavaValue fromJDIValueRaw(Value value, String classFQname, ThreadReference threadReference) {
     if (value == null) return new JavaPrimitiveValue(value, classFQname, threadReference);
     if (value instanceof ObjectReference) {
       if (value instanceof ArrayReference) {
