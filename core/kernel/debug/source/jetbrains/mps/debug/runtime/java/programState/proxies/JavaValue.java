@@ -36,7 +36,7 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
     return wrapper;
   }
 
-  public static JavaValue fromJDIValueRaw(Value value, String classFQname, ThreadReference threadReference) {
+  private static JavaValue fromJDIValueRaw(Value value, String classFQname, ThreadReference threadReference) {
     if (value == null) return new JavaPrimitiveValue(value, classFQname, threadReference);
     if (value instanceof ObjectReference) {
       if (value instanceof ArrayReference) {
