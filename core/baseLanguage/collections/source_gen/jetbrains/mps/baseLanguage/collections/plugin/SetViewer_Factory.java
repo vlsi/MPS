@@ -12,42 +12,44 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaPrimitiveValue;
 
-public class ListViewer_Factory extends ValueWrapperFactory {
-  public ListViewer_Factory() {
+public class SetViewer_Factory extends ValueWrapperFactory {
+  public SetViewer_Factory() {
   }
 
   public ValueWrapper createValueWrapper(JavaValue value) {
-    return new ListViewer_Factory.ListViewer_Wrapper(value);
+    return new SetViewer_Factory.SetViewer_Wrapper(value);
   }
 
   @Override
   public boolean canWrapValue(JavaValue value) {
     if (value instanceof JavaObjectValue) {
       JavaObjectValue ov = (JavaObjectValue) value;
-      return "jetbrains.mps.internal.collections.runtime.ListSequence".equals(ov.getClassFqName());
+      return ov.isInstanceOf("java.util.Set");
     } else {
       return false;
     }
   }
 
-  public static class ListViewer_Wrapper extends ValueWrapper {
-    public ListViewer_Wrapper(JavaValue value) {
+  public static class SetViewer_Wrapper extends ValueWrapper {
+    public SetViewer_Wrapper(JavaValue value) {
       super(value);
     }
 
     public List<CustomJavaWatchable> getSubvaluesImpl() {
-      JavaObjectValue ov = (JavaObjectValue) myWrappedValue;
+      // Todo: currently the same as SequentialListViewer. Reuse? 
+      JavaObjectValue objectOriginalValue = (JavaObjectValue) myWrappedValue;
       List<CustomJavaWatchable> result = ListSequence.fromList(new ArrayList<CustomJavaWatchable>());
-      JavaObjectValue listValue = (JavaObjectValue) ov.getFieldValue("list");
 
-      JavaPrimitiveValue sizeValue = ((JavaPrimitiveValue) listValue.executeMethod("size", "()I"));
-      ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_size(JavaObjectValue.tryToWrap(sizeValue), "size"));
+      JavaPrimitiveValue size = (JavaPrimitiveValue) objectOriginalValue.executeMethod("size", "()I");
+      ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_size(JavaObjectValue.tryToWrap(size), "size"));
 
-      int size = (Integer) sizeValue.getJavaValue();
-      for (int index = 0; index < size; index++) {
-        JavaValue v = listValue.executeMethod("get", "(I)Ljava/lang/Object;", index);
-        ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_element(JavaObjectValue.tryToWrap(v), "element"));
+      JavaObjectValue iterator = (JavaObjectValue) objectOriginalValue.executeMethod("iterator", "()Ljava/util/Iterator;");
+
+      while ((Boolean) ((JavaPrimitiveValue) iterator.executeMethod("hasNext", "()Z")).getJavaValue()) {
+        JavaValue value = iterator.executeMethod("next", "()Ljava/lang/Object;");
+        ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_element(JavaObjectValue.tryToWrap(value), "element"));
       }
+
       return result;
     }
   }

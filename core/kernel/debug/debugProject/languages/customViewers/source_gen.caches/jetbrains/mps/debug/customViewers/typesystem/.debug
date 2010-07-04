@@ -86,5 +86,15 @@
     <scopeInfo nodeId="7744028807303028951" fileName="typeof_CallMethodOperation_InferenceRule.java" startLine="30" startPosition="5" endLine="35" endPosition="375" />
     <scopeInfo nodeId="7744028807303023774" fileName="typeof_CallMethodOperation_InferenceRule.java" startLine="22" startPosition="105" endLine="36" endPosition="5" />
   </root>
+  <root nodeId="929171734855792317">
+    <nodeInfo nodeId="929171734855794574" fileName="typeof_IsInstanceOfOperation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="109" />
+    <nodeInfo nodeId="929171734855794574" fileName="typeof_IsInstanceOfOperation_InferenceRule.java" startLine="24" startPosition="109" endLine="25" endPosition="53" />
+    <nodeInfo nodeId="929171734855794574" fileName="typeof_IsInstanceOfOperation_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="222" />
+    <nodeInfo nodeId="929171734855794574" fileName="typeof_IsInstanceOfOperation_InferenceRule.java" startLine="26" startPosition="222" endLine="27" endPosition="54" />
+    <nodeInfo nodeId="929171734855794574" fileName="typeof_IsInstanceOfOperation_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="376" />
+    <nodeInfo nodeId="929171734855794574" fileName="typeof_IsInstanceOfOperation_InferenceRule.java" startLine="22" startPosition="107" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="929171734855794574" fileName="typeof_IsInstanceOfOperation_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="376" />
+    <scopeInfo nodeId="929171734855792318" fileName="typeof_IsInstanceOfOperation_InferenceRule.java" startLine="22" startPosition="107" endLine="29" endPosition="5" />
+  </root>
 </debugInfo>
 

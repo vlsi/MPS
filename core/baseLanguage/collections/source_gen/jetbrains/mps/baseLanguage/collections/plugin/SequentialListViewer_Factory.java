@@ -12,26 +12,26 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaPrimitiveValue;
 
-public class MapViewer_Factory extends ValueWrapperFactory {
-  public MapViewer_Factory() {
+public class SequentialListViewer_Factory extends ValueWrapperFactory {
+  public SequentialListViewer_Factory() {
   }
 
   public ValueWrapper createValueWrapper(JavaValue value) {
-    return new MapViewer_Factory.MapViewer_Wrapper(value);
+    return new SequentialListViewer_Factory.SequentialListViewer_Wrapper(value);
   }
 
   @Override
   public boolean canWrapValue(JavaValue value) {
     if (value instanceof JavaObjectValue) {
       JavaObjectValue ov = (JavaObjectValue) value;
-      return ov.isInstanceOf("java.util.Map");
+      return !("jetbrains.mps.internal.collections.runtime.ListSequence".equals(ov.getClassFqName())) && ov.isInstanceOf("java.util.List");
     } else {
       return false;
     }
   }
 
-  public static class MapViewer_Wrapper extends ValueWrapper {
-    public MapViewer_Wrapper(JavaValue value) {
+  public static class SequentialListViewer_Wrapper extends ValueWrapper {
+    public SequentialListViewer_Wrapper(JavaValue value) {
       super(value);
     }
 
@@ -42,12 +42,11 @@ public class MapViewer_Factory extends ValueWrapperFactory {
       JavaPrimitiveValue size = (JavaPrimitiveValue) objectOriginalValue.executeMethod("size", "()I");
       ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_size(JavaObjectValue.tryToWrap(size), "size"));
 
-      JavaObjectValue entrySet = (JavaObjectValue) objectOriginalValue.executeMethod("entrySet", "()Ljava/util/Set;");
-      JavaObjectValue iterator = (JavaObjectValue) entrySet.executeMethod("iterator", "()Ljava/util/Iterator;");
+      JavaObjectValue iterator = (JavaObjectValue) objectOriginalValue.executeMethod("iterator", "()Ljava/util/Iterator;");
 
       while ((Boolean) ((JavaPrimitiveValue) iterator.executeMethod("hasNext", "()Z")).getJavaValue()) {
         JavaValue value = iterator.executeMethod("next", "()Ljava/lang/Object;");
-        ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_entry(JavaObjectValue.tryToWrap(value), "entry"));
+        ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_element(JavaObjectValue.tryToWrap(value), "element"));
       }
 
       return result;

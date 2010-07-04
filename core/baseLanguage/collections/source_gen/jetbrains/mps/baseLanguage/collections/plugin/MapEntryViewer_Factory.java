@@ -25,8 +25,7 @@ public class MapEntryViewer_Factory extends ValueWrapperFactory {
   public boolean canWrapValue(JavaValue value) {
     if (value instanceof JavaObjectValue) {
       JavaObjectValue ov = (JavaObjectValue) value;
-      // todo! 
-      return "java.util.Map$Entry".equals(ov.getClassFqName()) || "java.util.HashMap$Entry".equals(ov.getClassFqName());
+      return ov.isInstanceOf("java.util.Map$Entry");
     } else {
       return false;
     }
@@ -42,8 +41,8 @@ public class MapEntryViewer_Factory extends ValueWrapperFactory {
       JavaObjectValue ov = (JavaObjectValue) myWrappedValue;
       JavaValue key = ov.executeMethod("getKey", "()Ljava/lang/Object;");
       JavaValue value = ov.executeMethod("getValue", "()Ljava/lang/Object;");
-      ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_key(key, "key"));
-      ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_value(value, "value"));
+      ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_key(JavaObjectValue.tryToWrap(key), "key"));
+      ListSequence.fromList(result).addElement(new CollectionsWatchables.MyWatchable_value(JavaObjectValue.tryToWrap(value), "value"));
       return result;
     }
 

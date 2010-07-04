@@ -4,7 +4,6 @@ import com.sun.jdi.*;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 import jetbrains.mps.debug.integration.Icons;
-import jetbrains.mps.debug.runtime.java.programState.watchables.JavaArrayItem;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaField;
 import jetbrains.mps.util.NameUtil;
 
@@ -30,7 +29,7 @@ public class JavaObjectValue extends JavaValue {
   public List<IWatchable> getSubvalues() {
     List<IWatchable> watchables = new ArrayList<IWatchable>();
     ObjectReference ref = (ObjectReference) myValue;
-    if(ref != null) {
+    if (ref != null) {
       List<Field> fieldList = ref.referenceType().allFields();
       Collections.sort(fieldList, new Comparator<Field>() {
         @Override
@@ -94,10 +93,29 @@ public class JavaObjectValue extends JavaValue {
   }
 
   public String getClassFqName() {
-    return ((ObjectReference)myValue).referenceType().name();
+    return ((ObjectReference) myValue).referenceType().name();
   }
 
   public String getClassName() {
     return NameUtil.shortNameFromLongName(getClassFqName());
+  }
+
+  public boolean isInstanceOf(String className) {
+    ClassType whatClassType = (ClassType) ((ObjectReference)myValue).referenceType();
+
+    List<ReferenceType> classes = myThreadReference.virtualMachine().classesByName(className);
+    if (classes.isEmpty()) return false;
+
+    ReferenceType type = classes.get(0);
+
+    if (type instanceof InterfaceType) {
+      return whatClassType.allInterfaces().contains((InterfaceType)type);
+    }
+
+    do {
+      if (type.equals(whatClassType)) return true;
+      whatClassType = whatClassType.superclass();
+    } while (whatClassType != null);
+    return false;
   }
 }

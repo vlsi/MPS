@@ -30,6 +30,7 @@
   <import index="1" modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debug.customViewers.structure)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="5117350825036256355">
     <property name="name:3" value="typeof_WatchableCreator" />
+    <property name="package:3" value="types" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5117350825036256356">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="5117350825036256362">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5264817233616805960">
@@ -73,6 +74,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="5264817233616805983">
     <property name="name:3" value="supertypesOfArrayValueType" />
+    <property name="package:3" value="types" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5264817233616805984">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5264817233616805987">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="5264817233616805989">
@@ -87,6 +89,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="5264817233616805992">
     <property name="name:3" value="supertypesOfPrimitiveValueType" />
+    <property name="package:3" value="types" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5264817233616805993">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5264817233616805994">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="5264817233616805995">
@@ -101,6 +104,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="5264817233616805998">
     <property name="name:3" value="supertypesOfObjectValueType" />
+    <property name="package:3" value="types" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5264817233616805999">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5264817233616806000">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="5264817233616806001">
@@ -115,6 +119,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="2488554353950312724">
     <property name="name:3" value="typeof_FieldOperation" />
+    <property name="package:3" value="operations.object" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2488554353950312725">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="2488554353950312736">
         <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="2488554353950312737" />
@@ -144,6 +149,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="2488554353950312780">
     <property name="name:3" value="typeof_ElementOperation" />
+    <property name="package:3" value="operations.array" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2488554353950312781">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="2488554353950312792">
         <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="2488554353950312793" />
@@ -173,6 +179,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1843851250586697609">
     <property name="name:3" value="typeof_ElementsRangeOperation" />
+    <property name="package:3" value="operations.array" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1843851250586697610">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="1843851250586699805">
         <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="1843851250586699806" />
@@ -222,6 +229,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="7744028807303023773">
     <property name="name:3" value="typeof_CallMethodOperation" />
+    <property name="package:3" value="operations.object" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7744028807303023774">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="7744028807303023776">
         <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="7744028807303023777" />
@@ -271,6 +279,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="7430908097350531688">
     <property name="name:3" value="supertypesOfStringValueType" />
+    <property name="package:3" value="types" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7430908097350531689">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7430908097350531691">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="7430908097350531693">
@@ -281,6 +290,36 @@
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="7430908097350531690">
       <property name="name:3" value="stringValueType" />
       <link role="concept:3" targetNodeId="1.7430908097350531683" resolveInfo="StringValueType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="929171734855792317">
+    <property name="name:3" value="typeof_IsInstanceOfOperation" />
+    <property name="package:3" value="operations.object" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="929171734855792318">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="929171734855794574">
+        <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="929171734855794575" />
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="929171734855794579">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="929171734855794580">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="929171734855794583" />
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="929171734855794578">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="929171734855794564">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="929171734855794567">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="929171734855794566">
+                <link role="applicableNode:3" targetNodeId="929171734855792319" resolveInfo="isInstanceOfOperation" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="929171734855794571">
+                <link role="link:16" targetNodeId="1.929171734855790188" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="929171734855792319">
+      <property name="name:3" value="isInstanceOfOperation" />
+      <link role="concept:3" targetNodeId="1.929171734855789933" resolveInfo="IsInstanceOfOperation" />
     </node>
   </node>
 </model>
