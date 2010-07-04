@@ -64,7 +64,7 @@ public class JavaObjectValue extends JavaValue {
     ObjectReference ref = (ObjectReference) myValue;
     Field field = ref.referenceType().fieldByName(fieldName);
     if (field == null) return null;
-    return JavaValue.fromJDIValueRaw(ref.getValue(field), myClassFQName, myThreadReference);
+    return JavaValue.fromJDIValue(ref.getValue(field), myClassFQName, myThreadReference);
   }
 
   public List<JavaValue> getFieldValues() {
@@ -72,7 +72,7 @@ public class JavaObjectValue extends JavaValue {
     List<Field> fieldList = ref.referenceType().fields();
     List<JavaValue> result = new ArrayList<JavaValue>();
     for (Field f : fieldList) {
-      result.add(JavaValue.fromJDIValueRaw(ref.getValue(f), myClassFQName, myThreadReference));
+      result.add(JavaValue.fromJDIValue(ref.getValue(f), myClassFQName, myThreadReference));
     }
     return result;
   }
@@ -87,7 +87,7 @@ public class JavaObjectValue extends JavaValue {
     final List<Value> argValues = MirrorUtil.getValues(myThreadReference, args);
     try {
       Value value = ref.invokeMethod(myThreadReference, method, argValues, 0);
-      return JavaValue.fromJDIValueRaw(value, jniSignature, myThreadReference);
+      return JavaValue.fromJDIValue(value, jniSignature, myThreadReference);
     } catch (Throwable t) {
       return null; //todo
     }
