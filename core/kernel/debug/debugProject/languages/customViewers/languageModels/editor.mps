@@ -482,5 +482,24 @@
       <link role="relationDeclaration:32" targetNodeId="2v.1156235010670:0" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="929171734855790864">
+    <property name="package:32" value="operations.object" />
+    <link role="conceptDeclaration:32" targetNodeId="1.929171734855789933" resolveInfo="IsInstanceOfOperation" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="929171734855790866">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="929171734855790869">
+        <link role="relationDeclaration:32" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="929171734855790871">
+        <property name="text:32" value="(" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="929171734855790875">
+        <link role="relationDeclaration:32" targetNodeId="1.929171734855790188" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="929171734855790873">
+        <property name="text:32" value=")" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="929171734855790868" />
+    </node>
+  </node>
 </model>
 

@@ -278,6 +278,12 @@
         <link role="template:2" targetNodeId="7471356136626023333" resolveInfo="reduce_StringValueOperation" />
       </node>
     </node>
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="111018263013071704">
+      <link role="applicableConcept:2" targetNodeId="1.929171734855789933" resolveInfo="IsInstanceOfOperation" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="111018263013071708">
+        <link role="template:2" targetNodeId="111018263013071706" resolveInfo="reduce_IsInstanceOfOperation" />
+      </node>
+    </node>
   </node>
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4089989733346808997">
@@ -1267,6 +1273,43 @@
       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7471356136626023343">
         <link role="baseMethodDeclaration:3" targetNodeId="3.~JavaStringValue.getJavaStringValue():java.lang.String" resolveInfo="getJavaStringValue" />
         <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="7471356136626023344" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="111018263013071706">
+    <property name="name:2" value="reduce_IsInstanceOfOperation" />
+    <link role="applicableConcept:2" targetNodeId="1.929171734855789933" resolveInfo="IsInstanceOfOperation" />
+    <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="111018263013072381">
+      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="111018263013072389">
+        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="111018263013072387">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="111018263013072383">
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="111018263013072386">
+              <link role="classifier:3" targetNodeId="3.~JavaObjectValue" resolveInfo="JavaObjectValue" />
+            </node>
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="111018263013072382" />
+          </node>
+        </node>
+        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="111018263013073616">
+          <link role="baseMethodDeclaration:3" targetNodeId="3.~JavaObjectValue.isInstanceOf(java.lang.String):boolean" resolveInfo="isInstanceOf" />
+          <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="111018263013073620" />
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="111018263013073624">
+            <property name="value:3" value="className" />
+            <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="111018263013073626">
+              <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="111018263013073627">
+                <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="111018263013073628">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="111018263013073629">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="111018263013073631">
+                      <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="111018263013073630" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="111018263013073635">
+                        <link role="link:16" targetNodeId="1.929171734855790188" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

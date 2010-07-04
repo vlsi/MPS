@@ -46,5 +46,8 @@
   <root nodeId="7744028807303050614">
     <scopeInfo nodeId="7744028807303050616" fileName="JavaValueOperation_Constraints.java" startLine="17" startPosition="114" endLine="18" endPosition="331" />
   </root>
+  <root nodeId="929171734855790876">
+    <scopeInfo nodeId="929171734855790878" fileName="IsInstanceOfOperation_Constraints.java" startLine="17" startPosition="114" endLine="18" endPosition="334" />
+  </root>
 </debugInfo>
 
