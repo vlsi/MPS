@@ -54,7 +54,7 @@ public abstract class Evaluator {
 
   @NotNull
   protected IValueProxy invokeStatic(String className, String name, String jniSignature, Object... args) throws EvaluationException {
-    final ClassType referenceType = findClassType(className, getVM());
+    final ClassType referenceType = (ClassType) findClassType(className, getVM());
     final Method method = findMethod(referenceType, name, jniSignature);
 
     final List<Value> argValues = MirrorUtil.getValues(getThreadReference(), args);
@@ -70,7 +70,7 @@ public abstract class Evaluator {
 
   @NotNull
   protected IValueProxy getStaticFieldValue(String className, String fieldName) throws InvalidEvaluatedExpressionException {
-    ClassType referenceType = findClassType(className, getVM());
+    ClassType referenceType = (ClassType)findClassType(className, getVM());
     Field field = findField(referenceType, fieldName);
     assert field.isStatic();
     Value result = referenceType.getValue(field);
@@ -86,7 +86,7 @@ public abstract class Evaluator {
   @NotNull
   protected IObjectValueProxy invokeConstructor(String className, String jniSignature, Object... args) throws EvaluationException {
     // TODO duplication in code
-    final ClassType referenceType = findClassType(className, getVM());
+    final ClassType referenceType = (ClassType)findClassType(className, getVM());
     final Method constructor = findConstructor(referenceType, jniSignature);
 
     final List<Value> argValues = MirrorUtil.getValues(getThreadReference(), args);
@@ -134,13 +134,12 @@ public abstract class Evaluator {
     return methods.get(0);
   }
 
-  public static ClassType findClassType(String className, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException {
+  public static ReferenceType findClassType(String className, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException {
     List<ReferenceType> classes = virtualMachine.classesByName(className);
     if (classes.size() == 0) {
       throw new InvalidEvaluatedExpressionException("Could not find class " + className + ".");
     }
-    ClassType referenceType = (ClassType) classes.get(0);
-    return referenceType;
+    return classes.get(0);
   }
 
   public static <T> T handleInvocationExceptions(Invocatable<T> invocatable) throws EvaluationException {
@@ -171,9 +170,13 @@ public abstract class Evaluator {
           if (!(what instanceof ClassType)) {
             return false;
           }
-          ClassType type = findClassType(ofWhat.substring(1, ofWhat.length() - 1), machine);
+          ReferenceType type = findClassType(ofWhat.substring(1, ofWhat.length() - 1), machine);
 
           ClassType whatClassType = (ClassType) what;
+          if (type instanceof InterfaceType) {
+            return whatClassType.allInterfaces().contains((InterfaceType)type);
+          }
+
           do {
             if (type.equals(whatClassType)) return true;
             whatClassType = whatClassType.superclass();
