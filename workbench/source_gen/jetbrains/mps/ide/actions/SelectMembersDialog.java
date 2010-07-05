@@ -100,6 +100,7 @@ public abstract class SelectMembersDialog<T extends SNode> extends BaseDialog {
       MPSNodeInSelectDialog<T> newNode = new MPSNodeInSelectDialog<T>(member);
       newNode.setIcon(IconManager.getIconFor(member));
       newNode.setText(getPresentation(member));
+      newNode.setNodeIdentifier(getPresentation(member));
       root.add(newNode);
     }
     return root;

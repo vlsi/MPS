@@ -8644,28 +8644,29 @@
     <nodeInfo nodeId="9078697818357582247" fileName="SelectMembersDialog.java" startLine="99" startPosition="41" endLine="100" endPosition="78" />
     <nodeInfo nodeId="9078697818357582257" fileName="SelectMembersDialog.java" startLine="100" startPosition="78" endLine="101" endPosition="54" />
     <nodeInfo nodeId="9078697818357582263" fileName="SelectMembersDialog.java" startLine="101" startPosition="54" endLine="102" endPosition="47" />
-    <nodeInfo nodeId="9078697818357582270" fileName="SelectMembersDialog.java" startLine="102" startPosition="47" endLine="103" endPosition="24" />
-    <nodeInfo nodeId="9078697818357582282" fileName="SelectMembersDialog.java" startLine="104" startPosition="5" endLine="105" endPosition="16" />
-    <nodeInfo nodeId="5271503632533891857" fileName="SelectMembersDialog.java" startLine="108" startPosition="39" endLine="109" endPosition="82" />
-    <nodeInfo nodeId="9078697818357962297" fileName="SelectMembersDialog.java" startLine="112" startPosition="30" endLine="113" endPosition="20" />
+    <nodeInfo nodeId="3575136188461815501" fileName="SelectMembersDialog.java" startLine="102" startPosition="47" endLine="103" endPosition="57" />
+    <nodeInfo nodeId="9078697818357582270" fileName="SelectMembersDialog.java" startLine="103" startPosition="57" endLine="104" endPosition="24" />
+    <nodeInfo nodeId="9078697818357582282" fileName="SelectMembersDialog.java" startLine="105" startPosition="5" endLine="106" endPosition="16" />
+    <nodeInfo nodeId="5271503632533891857" fileName="SelectMembersDialog.java" startLine="109" startPosition="39" endLine="110" endPosition="82" />
+    <nodeInfo nodeId="9078697818357962297" fileName="SelectMembersDialog.java" startLine="113" startPosition="30" endLine="114" endPosition="20" />
     <nodeInfo nodeId="9078697818357583291" fileName="SelectMembersDialog.java" startLine="90" startPosition="0" endLine="92" endPosition="0" />
     <nodeInfo nodeId="6708838774400335713" fileName="SelectMembersDialog.java" startLine="51" startPosition="49" endLine="54" endPosition="9" />
     <nodeInfo nodeId="5271503632533890896" fileName="SelectMembersDialog.java" startLine="64" startPosition="20" endLine="67" endPosition="5" />
     <nodeInfo nodeId="1352851301411498659" fileName="SelectMembersDialog.java" startLine="74" startPosition="21" endLine="77" endPosition="5" />
     <nodeInfo nodeId="9078697818357582110" fileName="SelectMembersDialog.java" startLine="32" startPosition="42" endLine="36" endPosition="0" />
     <nodeInfo nodeId="9078697818357963403" fileName="SelectMembersDialog.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
-    <nodeInfo nodeId="9078697818357582284" fileName="SelectMembersDialog.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
-    <nodeInfo nodeId="9078697818357962279" fileName="SelectMembersDialog.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
+    <nodeInfo nodeId="9078697818357582284" fileName="SelectMembersDialog.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
+    <nodeInfo nodeId="9078697818357962279" fileName="SelectMembersDialog.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
     <nodeInfo nodeId="9078697818357582103" fileName="SelectMembersDialog.java" startLine="31" startPosition="80" endLine="36" endPosition="4" />
     <nodeInfo nodeId="9078697818357582203" fileName="SelectMembersDialog.java" startLine="80" startPosition="0" endLine="85" endPosition="0" />
     <nodeInfo nodeId="9078697818357582220" fileName="SelectMembersDialog.java" startLine="85" startPosition="0" endLine="90" endPosition="0" />
     <nodeInfo nodeId="6708838774400334782" fileName="SelectMembersDialog.java" startLine="50" startPosition="44" endLine="56" endPosition="0" />
-    <nodeInfo nodeId="9078697818357582245" fileName="SelectMembersDialog.java" startLine="98" startPosition="83" endLine="104" endPosition="5" />
     <nodeInfo nodeId="9078697818357582118" fileName="SelectMembersDialog.java" startLine="37" startPosition="0" endLine="44" endPosition="3" />
     <nodeInfo nodeId="6708838774400274982" fileName="SelectMembersDialog.java" startLine="49" startPosition="29" endLine="56" endPosition="7" />
+    <nodeInfo nodeId="9078697818357582245" fileName="SelectMembersDialog.java" startLine="98" startPosition="83" endLine="105" endPosition="5" />
     <nodeInfo nodeId="9078697818357962311" fileName="SelectMembersDialog.java" startLine="62" startPosition="0" endLine="70" endPosition="0" />
     <nodeInfo nodeId="9078697818357582191" fileName="SelectMembersDialog.java" startLine="70" startPosition="0" endLine="80" endPosition="0" />
-    <nodeInfo nodeId="9078697818357582235" fileName="SelectMembersDialog.java" startLine="96" startPosition="0" endLine="107" endPosition="0" />
+    <nodeInfo nodeId="9078697818357582235" fileName="SelectMembersDialog.java" startLine="96" startPosition="0" endLine="108" endPosition="0" />
     <nodeInfo nodeId="9078697818357582146" fileName="SelectMembersDialog.java" startLine="45" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="9078697818357582113" fileName="SelectMembersDialog.java" startLine="33" startPosition="37" endLine="34" endPosition="30" />
     <scopeInfo nodeId="6708838774400335714" fileName="SelectMembersDialog.java" startLine="52" startPosition="57" endLine="53" endPosition="24" />
@@ -8674,8 +8675,8 @@
     <scopeInfo nodeId="9078697818357582206" fileName="SelectMembersDialog.java" startLine="82" startPosition="22" endLine="83" endPosition="18" />
     <scopeInfo nodeId="9078697818357582223" fileName="SelectMembersDialog.java" startLine="87" startPosition="26" endLine="88" endPosition="14" />
     <scopeInfo nodeId="9078697818357963406" fileName="SelectMembersDialog.java" startLine="93" startPosition="46" endLine="94" endPosition="57" />
-    <scopeInfo nodeId="9078697818357582286" fileName="SelectMembersDialog.java" startLine="108" startPosition="39" endLine="109" endPosition="82" />
-    <scopeInfo nodeId="9078697818357962282" fileName="SelectMembersDialog.java" startLine="112" startPosition="30" endLine="113" endPosition="20" />
+    <scopeInfo nodeId="9078697818357582286" fileName="SelectMembersDialog.java" startLine="109" startPosition="39" endLine="110" endPosition="82" />
+    <scopeInfo nodeId="9078697818357962282" fileName="SelectMembersDialog.java" startLine="113" startPosition="30" endLine="114" endPosition="20" />
     <scopeInfo nodeId="9078697818357583291" fileName="SelectMembersDialog.java" startLine="90" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="6708838774400334787" fileName="SelectMembersDialog.java" startLine="51" startPosition="49" endLine="54" endPosition="9" />
     <scopeInfo nodeId="5271503632533890896" fileName="SelectMembersDialog.java" startLine="64" startPosition="20" endLine="67" endPosition="5">
@@ -8685,15 +8686,15 @@
     <scopeInfo nodeId="9078697818357963403" fileName="SelectMembersDialog.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="9078697818357963427" varName="member" />
     </scopeInfo>
-    <scopeInfo nodeId="9078697818357582246" fileName="SelectMembersDialog.java" startLine="99" startPosition="41" endLine="103" endPosition="24">
-      <varInfo nodeId="9078697818357582248" varName="newNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="9078697818357582284" fileName="SelectMembersDialog.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="9078697818357962279" fileName="SelectMembersDialog.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="9078697818357582284" fileName="SelectMembersDialog.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="9078697818357962279" fileName="SelectMembersDialog.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
     <scopeInfo nodeId="9078697818357582121" fileName="SelectMembersDialog.java" startLine="38" startPosition="114" endLine="43" endPosition="32" />
     <scopeInfo nodeId="9078697818357962314" fileName="SelectMembersDialog.java" startLine="63" startPosition="30" endLine="68" endPosition="14" />
     <scopeInfo nodeId="9078697818357582203" fileName="SelectMembersDialog.java" startLine="80" startPosition="0" endLine="85" endPosition="0" />
     <scopeInfo nodeId="9078697818357582220" fileName="SelectMembersDialog.java" startLine="85" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="9078697818357582246" fileName="SelectMembersDialog.java" startLine="99" startPosition="41" endLine="104" endPosition="24">
+      <varInfo nodeId="9078697818357582248" varName="newNode" />
+    </scopeInfo>
     <scopeInfo nodeId="6708838774400334782" fileName="SelectMembersDialog.java" startLine="50" startPosition="44" endLine="56" endPosition="0">
       <varInfo nodeId="6708838774400334785" varName="keyEvent" />
     </scopeInfo>
@@ -8701,21 +8702,21 @@
       <varInfo nodeId="9078697818357963349" varName="height" />
       <varInfo nodeId="9078697818357963344" varName="width" />
     </scopeInfo>
-    <scopeInfo nodeId="9078697818357582245" fileName="SelectMembersDialog.java" startLine="98" startPosition="83" endLine="104" endPosition="5">
-      <varInfo nodeId="9078697818357582275" varName="member" />
-    </scopeInfo>
     <scopeInfo nodeId="9078697818357582118" fileName="SelectMembersDialog.java" startLine="37" startPosition="0" endLine="44" endPosition="3">
       <varInfo nodeId="9078697818357582367" varName="memberDescription" />
       <varInfo nodeId="9078697818357582142" varName="node" />
       <varInfo nodeId="9078697818357582138" varName="editorContext" />
       <varInfo nodeId="9078697818357582140" varName="mainFrame" />
     </scopeInfo>
+    <scopeInfo nodeId="9078697818357582245" fileName="SelectMembersDialog.java" startLine="98" startPosition="83" endLine="105" endPosition="5">
+      <varInfo nodeId="9078697818357582275" varName="member" />
+    </scopeInfo>
     <scopeInfo nodeId="9078697818357962311" fileName="SelectMembersDialog.java" startLine="62" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="9078697818357582238" fileName="SelectMembersDialog.java" startLine="97" startPosition="40" endLine="105" endPosition="16">
+    <scopeInfo nodeId="9078697818357582238" fileName="SelectMembersDialog.java" startLine="97" startPosition="40" endLine="106" endPosition="16">
       <varInfo nodeId="9078697818357582240" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="9078697818357582191" fileName="SelectMembersDialog.java" startLine="70" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="9078697818357582235" fileName="SelectMembersDialog.java" startLine="96" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="9078697818357582235" fileName="SelectMembersDialog.java" startLine="96" startPosition="0" endLine="108" endPosition="0" />
     <scopeInfo nodeId="9078697818357582149" fileName="SelectMembersDialog.java" startLine="46" startPosition="43" endLine="60" endPosition="21">
       <varInfo nodeId="9078697818357582177" varName="mainPanel" />
       <varInfo nodeId="9078697818357582169" varName="scrollPane" />
@@ -8724,7 +8725,7 @@
     <unitInfo nodeId="9078697818357582253" fileName="SelectMembersDialog.java" startLine="100" startPosition="45" endLine="100" endPosition="77" unitName="jetbrains.mps.ide.actions.SelectMembersDialog$3" />
     <unitInfo nodeId="9078697818357582108" fileName="SelectMembersDialog.java" startLine="32" startPosition="31" endLine="36" endPosition="3" unitName="jetbrains.mps.ide.actions.SelectMembersDialog$1" />
     <unitInfo nodeId="6708838774400334780" fileName="SelectMembersDialog.java" startLine="50" startPosition="30" endLine="56" endPosition="5" unitName="jetbrains.mps.ide.actions.SelectMembersDialog$2" />
-    <unitInfo nodeId="9078697818357582099" fileName="SelectMembersDialog.java" startLine="26" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.ide.actions.SelectMembersDialog" />
+    <unitInfo nodeId="9078697818357582099" fileName="SelectMembersDialog.java" startLine="26" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ide.actions.SelectMembersDialog" />
   </root>
   <root nodeId="954487605981801033">
     <nodeInfo nodeId="954487605981803000" fileName="GenerateModule_Action.java" startLine="16" startPosition="0" endLine="17" endPosition="26" />
