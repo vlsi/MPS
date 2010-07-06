@@ -147,7 +147,7 @@ public abstract class Evaluator {
     try {
       return invocatable.invoke();
     } catch (InvocationException e) {
-      throw new TargetVMEvaluationException(e.getCause());
+      throw new TargetVMEvaluationException(e);
     } catch (IllegalArgumentException e) {
       throw new InvalidEvaluatedExpressionException(e);
     } catch (InvalidTypeException e) {
