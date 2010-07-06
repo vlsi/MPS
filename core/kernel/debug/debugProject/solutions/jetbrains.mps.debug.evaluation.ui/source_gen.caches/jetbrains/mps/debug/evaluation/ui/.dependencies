@@ -121,6 +121,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.debug.api.SessionChangeListener" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.ui.EvaluationState" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTree" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.TextTreeNode" />

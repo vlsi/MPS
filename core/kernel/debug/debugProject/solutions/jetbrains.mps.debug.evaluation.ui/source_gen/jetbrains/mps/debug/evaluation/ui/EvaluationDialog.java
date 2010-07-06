@@ -36,11 +36,11 @@ import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.debug.api.SessionChangeListener;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.debug.api.integration.ui.WatchableNode;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedValue;
+import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.TextTreeNode;
 import java.awt.Color;
 import jetbrains.mps.ide.messages.Icons;
 
@@ -169,23 +169,47 @@ public class EvaluationDialog extends BaseDialog {
     this.dispose();
   }
 
-  private void setSuccess(@NotNull IValueProxy evaluatedValue) {
-    myTree.setResultProxy(evaluatedValue);
-    myTree.rebuildLater();
+  private void setSuccess(@NotNull final IValueProxy evaluatedValue) {
+    invokeLaterIfNeeded(new Runnable() {
+      public void run() {
+        myTree.setResultProxy(evaluatedValue);
+        myTree.rebuildLater();
+      }
+    });
   }
 
   private void setEvaluating() {
-    myTree.setEvaluating();
-    myTree.rebuildLater();
+    invokeLaterIfNeeded(new Runnable() {
+      public void run() {
+        myTree.setEvaluating();
+        myTree.rebuildLater();
+      }
+    });
   }
 
-  private void setFailure(@Nullable Throwable error, @Nullable String message) {
-    if (error != null) {
-      myTree.setError(error.getMessage());
+  private void setFailure(@Nullable final Throwable error, @Nullable final String message) {
+    invokeLaterIfNeeded(new Runnable() {
+      public void run() {
+        if (error != null) {
+          if (error.getMessage() != null) {
+            myTree.setError(error.getMessage());
+          } else {
+            myTree.setError(error.toString());
+          }
+        } else {
+          myTree.setError(message);
+        }
+        myTree.rebuildLater();
+      }
+    });
+  }
+
+  private void invokeLaterIfNeeded(Runnable runnable) {
+    if (ApplicationManager.getApplication().isDispatchThread()) {
+      runnable.run();
     } else {
-      myTree.setError(message);
+      ApplicationManager.getApplication().invokeLater(runnable, ModalityState.NON_MODAL);
     }
-    myTree.rebuildLater();
   }
 
   public void updateGenerationResultTab(final SNode generatedResult) {
@@ -239,14 +263,66 @@ public class EvaluationDialog extends BaseDialog {
     }
   }
 
+  private static abstract class EvaluationState {
+    public EvaluationState() {
+    }
+
+    public abstract void rebuild(MPSTreeNode rootTreeNode);
+  }
+
+  private static class InitializedState extends EvaluationDialog.EvaluationState {
+    public InitializedState() {
+    }
+
+    public void rebuild(MPSTreeNode rootTreeNode) {
+      // doing nothing 
+    }
+  }
+
+  private static class EvaluationInProgressState extends EvaluationDialog.EvaluationState {
+    public EvaluationInProgressState() {
+    }
+
+    public void rebuild(MPSTreeNode rootTreeNode) {
+      rootTreeNode.add(new EvaluationDialog.EvaluatingTreeNode());
+    }
+  }
+
+  private static class ResultState extends EvaluationDialog.EvaluationState {
+    @NotNull
+    private final IValueProxy myValueProxy;
+    @NotNull
+    private final String myClassFqName;
+    private final ThreadReference myThreadReference;
+
+    public ResultState(IValueProxy proxy, String classFqName, ThreadReference threadReference) {
+      myValueProxy = proxy;
+      myClassFqName = classFqName;
+      myThreadReference = threadReference;
+    }
+
+    public void rebuild(MPSTreeNode rootTreeNode) {
+      rootTreeNode.add(new WatchableNode(new CalculatedValue(this.myValueProxy.getJDIValue(), myClassFqName, myThreadReference)));
+    }
+  }
+
+  private static class FailureState extends EvaluationDialog.EvaluationState {
+    @NotNull
+    private final String myErrorText;
+
+    public FailureState(String errorText) {
+      myErrorText = errorText;
+    }
+
+    public void rebuild(MPSTreeNode rootTreeNode) {
+      rootTreeNode.add(new EvaluationDialog.ErrorTreeNode(myErrorText));
+    }
+  }
+
   private static class MyTree extends MPSTree {
-    @Nullable
-    private IValueProxy myValueProxy;
-    @Nullable
-    private String myErrorText;
     private String myClassFqName;
-    private boolean myEvaluating = false;
     private ThreadReference myThreadReference;
+    private EvaluationDialog.EvaluationState myState = new EvaluationDialog.InitializedState();
 
     public MyTree(String classFqName, ThreadReference threadReference) {
       super();
@@ -256,33 +332,21 @@ public class EvaluationDialog extends BaseDialog {
     }
 
     public void setResultProxy(IValueProxy valueProxy) {
-      myValueProxy = valueProxy;
-      myErrorText = null;
-      myEvaluating = false;
+      myState = new EvaluationDialog.ResultState(valueProxy, myClassFqName, myThreadReference);
     }
 
-    private void setError(String text) {
-      myErrorText = text;
-      myValueProxy = null;
-      myEvaluating = false;
+    private void setError(@NotNull String text) {
+      myState = new EvaluationDialog.FailureState(text);
     }
 
     private void setEvaluating() {
-      myErrorText = null;
-      myValueProxy = null;
-      myEvaluating = true;
+      myState = new EvaluationDialog.EvaluationInProgressState();
     }
 
     @Override
     protected MPSTreeNode rebuild() {
       MPSTreeNode rootTreeNode = new TextTreeNode("Evaluation Result");
-      if (myValueProxy != null) {
-        rootTreeNode.add(new WatchableNode(new CalculatedValue(this.myValueProxy.getJDIValue(), myClassFqName, myThreadReference)));
-      } else if (myErrorText != null) {
-        rootTreeNode.add(new EvaluationDialog.ErrorTreeNode(myErrorText));
-      } else if (myEvaluating) {
-        rootTreeNode.add(new EvaluationDialog.EvaluatingTreeNode());
-      }
+      myState.rebuild(rootTreeNode);
       this.setRootVisible(false);
       this.setShowsRootHandles(true);
       return rootTreeNode;
