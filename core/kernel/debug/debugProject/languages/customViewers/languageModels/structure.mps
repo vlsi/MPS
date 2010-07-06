@@ -33,6 +33,7 @@
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5117350825036234462">
     <property name="name:0" value="ValueType" />
+    <property name="package:0" value="types" />
     <link role="extends:0" targetNodeId="2v.1068431790189:3" resolveInfo="Type" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5117350825036234463">
       <property name="value:0" value="value" />
@@ -41,6 +42,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5117350825036234467">
     <property name="name:0" value="ArrayValueType" />
+    <property name="package:0" value="types" />
     <link role="extends:0" targetNodeId="2v.1068431790189:3" resolveInfo="Type" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5117350825036234469">
       <property name="value:0" value="arrayValue" />
@@ -49,6 +51,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5117350825036234473">
     <property name="name:0" value="ObjectValueType" />
+    <property name="package:0" value="types" />
     <link role="extends:0" targetNodeId="2v.1068431790189:3" resolveInfo="Type" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5117350825036234474">
       <property name="value:0" value="objectValue" />
@@ -57,6 +60,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5117350825036234478">
     <property name="name:0" value="PrimitiveValueType" />
+    <property name="package:0" value="types" />
     <link role="extends:0" targetNodeId="2v.1068431790189:3" resolveInfo="Type" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5117350825036234479">
       <property name="value:0" value="primitiveValue" />
@@ -115,6 +119,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5117350825036256333">
     <property name="name:0" value="WatchableType" />
+    <property name="package:0" value="types" />
     <link role="extends:0" targetNodeId="2v.1068431790189:3" resolveInfo="Type" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5117350825036256334">
       <property name="value:0" value="watchable" />
@@ -123,6 +128,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5117350825036256338">
     <property name="name:0" value="WatchableCreator" />
+    <property name="package:0" value="types" />
     <link role="extends:0" targetNodeId="2v.1145552809883:3" resolveInfo="AbstractCreator" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5264817233616806010">
       <property name="metaClass:0" value="reference" />
@@ -169,6 +175,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2488554353950280317">
     <property name="name:0" value="FieldsListOperation" />
+    <property name="package:0" value="operations.object" />
     <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="2488554353950280318">
       <link role="intfc:0" targetNodeId="2v.1197027803184:3" resolveInfo="IOperation" />
@@ -186,6 +193,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2488554353950312668">
     <property name="name:0" value="FieldOperation" />
+    <property name="package:0" value="operations.object" />
     <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="2488554353950312694">
       <property name="metaClass:0" value="aggregation" />
@@ -211,6 +219,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2488554353950312745">
     <property name="name:0" value="ElementOperation" />
+    <property name="package:0" value="operations.array" />
     <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="2488554353950312753">
       <property name="metaClass:0" value="aggregation" />
@@ -260,6 +269,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1843851250586690702">
     <property name="name:0" value="ClassNameOperation" />
+    <property name="package:0" value="operations.object" />
     <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1843851250586690706">
       <link role="conceptLinkDeclaration:0" targetNodeId="2v.1217022095863:3" resolveInfo="returnType" />
@@ -275,6 +285,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1843851250586694536">
     <property name="name:0" value="ClassFqNameOperation" />
+    <property name="package:0" value="operations.object" />
     <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1843851250586694540">
       <link role="conceptLinkDeclaration:0" targetNodeId="2v.1217022095863:3" resolveInfo="returnType" />
@@ -290,6 +301,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1843851250586694559">
     <property name="name:0" value="SizeOperation" />
+    <property name="package:0" value="operations.array" />
     <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1843851250586694560">
       <link role="intfc:0" targetNodeId="2v.1197027803184:3" resolveInfo="IOperation" />
@@ -305,6 +317,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1843851250586697538">
     <property name="name:0" value="AllElementsOperation" />
+    <property name="package:0" value="operations.object" />
     <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1843851250586697542">
       <link role="conceptLinkDeclaration:0" targetNodeId="2v.1217022095863:3" resolveInfo="returnType" />
@@ -322,6 +335,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1843851250586697564">
     <property name="name:0" value="ElementsRangeOperation" />
+    <property name="package:0" value="operations.array" />
     <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1843851250586697572">
       <link role="conceptLinkDeclaration:0" targetNodeId="2v.1217022095863:3" resolveInfo="returnType" />
@@ -351,6 +365,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7744028807303021417">
     <property name="name:0" value="CallMethodOperation" />
+    <property name="package:0" value="operations.object" />
     <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7744028807303021419">
       <property name="metaClass:0" value="aggregation" />
@@ -385,6 +400,7 @@
   <visible index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7744028807303050605">
     <property name="name:0" value="JavaValueOperation" />
+    <property name="package:0" value="operations.primitive" />
     <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="7744028807303050606">
       <link role="intfc:0" targetNodeId="2v.1197027803184:3" resolveInfo="IOperation" />
@@ -397,6 +413,53 @@
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7744028807303050613">
       <property name="value:0" value="javaValue" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7430908097350531683">
+    <property name="name:0" value="StringValueType" />
+    <property name="package:0" value="types" />
+    <link role="extends:0" targetNodeId="2v.1068431790189:3" resolveInfo="Type" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7430908097350531684">
+      <property name="value:0" value="stringValue" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7471356136625957315">
+    <property name="name:0" value="StringValueOperation" />
+    <property name="package:0" value="operations.string" />
+    <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="7471356136625957316">
+      <link role="intfc:0" targetNodeId="2v.1197027803184:3" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7471356136625957317">
+      <property name="value:0" value="javaStringValue" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="7471356136625957318">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1217022095863:3" resolveInfo="returnType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="7471356136625957320" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="929171734855789933">
+    <property name="package:0" value="operations.object" />
+    <property name="name:0" value="IsInstanceOfOperation" />
+    <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="929171734855790190">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1217022095863:3" resolveInfo="returnType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="929171734855790863" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="929171734855790188">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="className" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2v.1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="929171734855789934">
+      <link role="intfc:0" targetNodeId="2v.1197027803184:3" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="929171734855790187">
+      <property name="value:0" value="is instance of" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>

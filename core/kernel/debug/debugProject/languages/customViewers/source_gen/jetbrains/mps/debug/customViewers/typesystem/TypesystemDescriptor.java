@@ -25,6 +25,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_IsInstanceOfOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_WatchableCreator_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -38,6 +42,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       SubtypingRule_Runtime subtypingRule = new supertypesOfPrimitiveValueType_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOfStringValueType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
   }

@@ -47,7 +47,7 @@ class ArrayValueProxy extends ValueProxy implements IArrayValueProxy, IObjectVal
   @Override
   public IValueProxy invokeMethod(String name, String jniSignature, Object... args) throws EvaluationException {
     // we can't use Evaluators similar method cause we find methods in Object, but invoke them for Array
-    ClassType objectType = Evaluator.findClassType("java.lang.Object", myThreadReference.virtualMachine());
+    ClassType objectType = (ClassType)Evaluator.findClassType("java.lang.Object", myThreadReference.virtualMachine());
     final Method method = Evaluator.findMethod(objectType, name, jniSignature);
 
     final List<Value> argValues = MirrorUtil.getValues(myThreadReference, args);
