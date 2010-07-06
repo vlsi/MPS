@@ -19,7 +19,6 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
-import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
@@ -38,10 +37,7 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.JarFileEntryFile;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.vfs.*;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -54,10 +50,13 @@ import java.util.*;
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
-  public static final String RUNTIME_JAR_SUFFIX = "runtime.jar";
+  @Deprecated
+  public static final String RUNTIME_JAR_SUFFIX = MPSExtentions.RUNTIME_ARCH;
+  @Deprecated
+  public static final String PACKAGE_SUFFIX = MPSExtentions.MPS_ARCH;
+
   public static final String MODULE_DIR = "module";
   public static final String CACHES_DIR = "caches";
-  public static final String PACKAGE_SUFFIX = "mpsarch.jar";
 
   private static Set<ModelCreationListener> ourModelCreationListeners = new HashSet<ModelCreationListener>();
 
