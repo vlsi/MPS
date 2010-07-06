@@ -608,14 +608,14 @@
                               <link role="variableDeclaration:3" targetNodeId="1239550803956" resolveInfo="sb" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1239550920616">
-                              <link role="baseMethodDeclaration:3" targetNodeId="5.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="5.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1239550923922">
                                 <link role="variableDeclaration:3" targetNodeId="1239550910319" resolveInfo="sep" />
                               </node>
                             </node>
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1239550895320">
-                            <link role="baseMethodDeclaration:3" targetNodeId="5.~StringBuilder.append(java.lang.Object):java.lang.StringBuilder" resolveInfo="append" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="5.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1239550897841">
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1239550897657">
                                 <link role="variableDeclaration:3" targetNodeId="1239550874598" resolveInfo="ntcd" />

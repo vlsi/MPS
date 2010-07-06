@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.tuples.plugin.CustomViewersDescriptor" file="CustomViewersDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.plugin.IndexedTupleViewer_Factory" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory" />
+    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.CustomViewersDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.tuples.plugin.IndexedTupleViewer_Factory" file="IndexedTupleViewer_Factory.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.plugin.TuplesWatchables" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaArrayValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaPrimitiveValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStringValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapper" />
+    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.tuples.plugin.TuplesWatchables" file="TuplesWatchables.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
+    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable" />
+  </dependency>
+</dependenciesRoot>
+
