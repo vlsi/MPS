@@ -31,6 +31,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debug.runtime.SuspendContext;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
+import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ModalityState;
