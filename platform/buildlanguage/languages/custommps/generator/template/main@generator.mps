@@ -3308,7 +3308,7 @@
         </node>
       </node>
       <node role="settingsDir:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1241015675910">
-        <property name="path:0" value=".MPS10" />
+        <property name="path:0" value=".MPS1x" />
       </node>
       <node role="examplesDir:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1241015683677">
         <property name="path:0" value="MPSSamples" />
