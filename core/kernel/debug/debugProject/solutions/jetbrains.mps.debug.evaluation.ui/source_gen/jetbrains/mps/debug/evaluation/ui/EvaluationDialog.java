@@ -196,10 +196,8 @@ public class EvaluationDialog extends BaseDialog {
           } else {
             myTree.setError(error.toString());
           }
-        } else if (message != null) {
-          myTree.setError(message);
         } else {
-          myTree.setError("Evaluation failed for an unknown reason.");
+          myTree.setError(message);
         }
         myTree.rebuildLater();
       }
