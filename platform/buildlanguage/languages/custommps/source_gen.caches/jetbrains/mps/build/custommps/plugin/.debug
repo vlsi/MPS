@@ -410,9 +410,30 @@
     <unitInfo nodeId="1325286122618400431" fileName="DefaultCustomMpsLanguageConfigurationFromMPSBuild.java" startLine="41" startPosition="131" endLine="45" endPosition="9" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsLanguageConfigurationFromMPSBuild$2" />
     <unitInfo nodeId="1325286122618391265" fileName="DefaultCustomMpsLanguageConfigurationFromMPSBuild.java" startLine="37" startPosition="45" endLine="48" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsLanguageConfigurationFromMPSBuild$1" />
   </root>
+  <root nodeId="5735046895052034082">
+    <nodeInfo nodeId="5735046895052040562" fileName="CheckIncludedLanguages_Action.java" startLine="56" startPosition="9" endLine="57" endPosition="81" />
+    <nodeInfo nodeId="5735046895052040607" fileName="CheckIncludedLanguages_Action.java" startLine="58" startPosition="297" endLine="59" endPosition="82" />
+    <nodeInfo nodeId="5735046895052040625" fileName="CheckIncludedLanguages_Action.java" startLine="60" startPosition="44" endLine="61" endPosition="19" />
+    <nodeInfo nodeId="5735046895052040626" fileName="CheckIncludedLanguages_Action.java" startLine="62" startPosition="9" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="5735046895052040628" fileName="CheckIncludedLanguages_Action.java" startLine="63" startPosition="0" endLine="64" endPosition="29" />
+    <nodeInfo nodeId="5735046895052040636" fileName="CheckIncludedLanguages_Action.java" startLine="65" startPosition="7" endLine="66" endPosition="0" />
+    <nodeInfo nodeId="5735046895052046864" fileName="CheckIncludedLanguages_Action.java" startLine="66" startPosition="0" endLine="67" endPosition="33" />
+    <nodeInfo nodeId="5735046895052046872" fileName="CheckIncludedLanguages_Action.java" startLine="68" startPosition="55" endLine="69" endPosition="41" />
+    <nodeInfo nodeId="5735046895052040614" fileName="CheckIncludedLanguages_Action.java" startLine="59" startPosition="82" endLine="62" endPosition="9" />
+    <nodeInfo nodeId="5735046895052046868" fileName="CheckIncludedLanguages_Action.java" startLine="67" startPosition="33" endLine="70" endPosition="7" />
+    <nodeInfo nodeId="5735046895052040591" fileName="CheckIncludedLanguages_Action.java" startLine="57" startPosition="81" endLine="65" endPosition="7" />
+    <scopeInfo nodeId="5735046895052040615" fileName="CheckIncludedLanguages_Action.java" startLine="60" startPosition="44" endLine="61" endPosition="19" />
+    <scopeInfo nodeId="5735046895052046871" fileName="CheckIncludedLanguages_Action.java" startLine="68" startPosition="55" endLine="69" endPosition="41" />
+    <scopeInfo nodeId="5735046895052046868" fileName="CheckIncludedLanguages_Action.java" startLine="67" startPosition="33" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="5735046895052040594" fileName="CheckIncludedLanguages_Action.java" startLine="58" startPosition="297" endLine="64" endPosition="29">
+      <varInfo nodeId="5735046895052040608" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="5735046895052040591" fileName="CheckIncludedLanguages_Action.java" startLine="57" startPosition="81" endLine="65" endPosition="7" />
+  </root>
   <root nodeId="7482942963841965839">
     <nodeInfo nodeId="7482942963841967337" fileName="InternalChecks_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="141" />
     <nodeInfo nodeId="7482942963841969135" fileName="InternalChecks_ActionGroup.java" startLine="18" startPosition="141" endLine="19" endPosition="149" />
+    <nodeInfo nodeId="5735046895052035574" fileName="InternalChecks_ActionGroup.java" startLine="19" startPosition="149" endLine="20" endPosition="151" />
   </root>
   <root nodeId="7482942963841967330">
     <nodeInfo nodeId="7482942963841967340" fileName="CheckSamples_Action.java" startLine="55" startPosition="59" endLine="56" endPosition="15" />
