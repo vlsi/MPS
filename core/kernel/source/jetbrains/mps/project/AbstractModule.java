@@ -744,38 +744,38 @@ public abstract class AbstractModule implements IModule {
   }
 
   //todo check this code. Wy not to do it where we add jars?
-
   protected void updatePackagedDescriptorClasspath() {
     if (!isPackaged()) return;
 
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
-      List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
-      for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
-        IFile cp = FileSystem.getFile(entry.getPath());
-        if ((!cp.exists()) || cp.isDirectory() || visited.contains(entry)) {
-          remove.add(entry);
-        }
-        visited.add(entry);
-      }
-      descriptor.getStubModelEntries().removeAll(remove);
+    if (descriptor == null) return;
 
-      File bundleHomeFile = getBundleHome();
-      if (bundleHomeFile == null) return;
-      String bundleHomePath = bundleHomeFile.getPath();
-      boolean contains = false;
-      for (StubModelsEntry v : visited) {
-        if (EqualUtil.equals(v.getPath(), bundleHomePath)) {
-          contains = true;
-        }
+    Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
+    List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
+    for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
+      IFile cp = FileSystem.getFile(entry.getPath());
+      if ((!cp.exists()) || cp.isDirectory() || visited.contains(entry)) {
+        remove.add(entry);
       }
-      if (!contains) {
-        ClassPathEntry bundleHome = new ClassPathEntry();
-        bundleHome.setPath(bundleHomePath);
-        descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(bundleHome));
+      visited.add(entry);
+    }
+    descriptor.getStubModelEntries().removeAll(remove);
+
+    File bundleHomeFile = getBundleHome();
+    if (bundleHomeFile == null) return;
+
+    String bundleHomePath = bundleHomeFile.getPath();
+    boolean contains = false;
+    for (StubModelsEntry v : visited) {
+      if (EqualUtil.equals(v.getPath(), bundleHomePath)) {
+        contains = true;
       }
     }
+    if (contains) return;
+
+    ClassPathEntry bundleHome = new ClassPathEntry();
+    bundleHome.setPath(bundleHomePath);
+    descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(bundleHome));
   }
 
   public IClassPathItem getClassPathItem() {
