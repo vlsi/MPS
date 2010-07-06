@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="6036237525966667270">
+    <nodeInfo nodeId="3551783886728564471" fileName="AClass.java" startLine="7" startPosition="37" endLine="8" endPosition="21" />
+    <nodeInfo nodeId="8648282773492226969" fileName="AClass.java" startLine="10" startPosition="19" endLine="11" endPosition="0" />
+    <nodeInfo nodeId="6036237525966670239" fileName="AClass.java" startLine="14" startPosition="31" endLine="15" endPosition="16" />
+    <nodeInfo nodeId="7335767529742502243" fileName="AClass.java" startLine="18" startPosition="24" endLine="19" endPosition="13" />
+    <nodeInfo nodeId="7335767529742502252" fileName="AClass.java" startLine="19" startPosition="13" endLine="20" endPosition="20" />
+    <nodeInfo nodeId="7335767529742502260" fileName="AClass.java" startLine="21" startPosition="20" endLine="22" endPosition="0" />
+    <nodeInfo nodeId="6036237525966667272" fileName="AClass.java" startLine="9" startPosition="0" endLine="12" endPosition="3" />
+    <nodeInfo nodeId="7335767529742502258" fileName="AClass.java" startLine="20" startPosition="20" endLine="23" endPosition="5" />
+    <nodeInfo nodeId="5205855332950439111" fileName="AClass.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="6036237525966667276" fileName="AClass.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <nodeInfo nodeId="5205855332950439101" fileName="AClass.java" startLine="17" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="5205855332950439114" fileName="AClass.java" startLine="26" startPosition="21" endLine="26" endPosition="21" />
+    <scopeInfo nodeId="6036237525966667275" fileName="AClass.java" startLine="10" startPosition="19" endLine="11" endPosition="0" />
+    <scopeInfo nodeId="6036237525966667279" fileName="AClass.java" startLine="14" startPosition="31" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="7335767529742502259" fileName="AClass.java" startLine="21" startPosition="20" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6036237525966667272" fileName="AClass.java" startLine="9" startPosition="0" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="5205855332950439111" fileName="AClass.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="6036237525966667276" fileName="AClass.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="6036237525966667280" varName="o" />
+    </scopeInfo>
+    <scopeInfo nodeId="5205855332950439104" fileName="AClass.java" startLine="18" startPosition="24" endLine="23" endPosition="5">
+      <varInfo nodeId="7335767529742502253" varName="o" />
+    </scopeInfo>
+    <scopeInfo nodeId="5205855332950439101" fileName="AClass.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5205855332950439105" varName="t" />
+    </scopeInfo>
+    <unitInfo nodeId="6036237525966667270" fileName="AClass.java" startLine="7" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.debug.evaluation.sandbox.sandbox.AClass" />
+  </root>
+  <root nodeId="6036237525966670242">
+    <nodeInfo nodeId="5147977527584460761" fileName="BClass.java" startLine="6" startPosition="36" endLine="7" endPosition="17" />
+    <nodeInfo nodeId="6036237525966670260" fileName="BClass.java" startLine="12" startPosition="31" endLine="13" endPosition="16" />
+    <nodeInfo nodeId="6036237525966670244" fileName="BClass.java" startLine="8" startPosition="0" endLine="10" endPosition="3" />
+    <nodeInfo nodeId="6036237525966670253" fileName="BClass.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="6036237525966670247" fileName="BClass.java" startLine="9" startPosition="19" endLine="9" endPosition="19" />
+    <scopeInfo nodeId="6036237525966670256" fileName="BClass.java" startLine="12" startPosition="31" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="6036237525966670244" fileName="BClass.java" startLine="8" startPosition="0" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="6036237525966670253" fileName="BClass.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="6036237525966670257" varName="o" />
+    </scopeInfo>
+    <unitInfo nodeId="6036237525966670242" fileName="BClass.java" startLine="6" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debug.evaluation.sandbox.sandbox.BClass" />
+  </root>
+</debugInfo>
+

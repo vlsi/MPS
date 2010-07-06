@@ -116,7 +116,7 @@ public class MirrorUtil {
     for (Object arg : args) {
       Value v;
       if (arg instanceof ValueProxy) {
-        v = ((ValueProxy) arg).getJDIValue();
+        v = ((IValueProxy) arg).getJDIValue();
       } else {
         v = MirrorUtil.getJDIValueFromRaw(arg, threadReference.virtualMachine());
       }

@@ -2,16 +2,14 @@ package jetbrains.mps.debug.evaluation.proxies;
 
 import com.sun.jdi.*;
 import jetbrains.mps.debug.evaluation.EvaluationException;
+import jetbrains.mps.debug.evaluation.EvaluationUtils;
 import jetbrains.mps.debug.evaluation.Evaluator;
-import jetbrains.mps.debug.evaluation.Evaluator.Invocatable;
-import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
-import jetbrains.mps.debug.evaluation.TargetVMEvaluationException;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.debug.evaluation.EvaluationUtils.Invocatable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-import static jetbrains.mps.debug.evaluation.Evaluator.handleInvocationExceptions;
+import static jetbrains.mps.debug.evaluation.EvaluationUtils.handleInvocationExceptions;
 
 class ArrayValueProxy extends ValueProxy implements IArrayValueProxy, IObjectValueProxy {
 
@@ -47,8 +45,8 @@ class ArrayValueProxy extends ValueProxy implements IArrayValueProxy, IObjectVal
   @Override
   public IValueProxy invokeMethod(String name, String jniSignature, Object... args) throws EvaluationException {
     // we can't use Evaluators similar method cause we find methods in Object, but invoke them for Array
-    ClassType objectType = (ClassType)Evaluator.findClassType("java.lang.Object", myThreadReference.virtualMachine());
-    final Method method = Evaluator.findMethod(objectType, name, jniSignature);
+    ClassType objectType = (ClassType) EvaluationUtils.findClassType("java.lang.Object", myThreadReference.virtualMachine());
+    final Method method = EvaluationUtils.findMethod(objectType, name, jniSignature);
 
     final List<Value> argValues = MirrorUtil.getValues(myThreadReference, args);
 

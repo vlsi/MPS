@@ -15,8 +15,6 @@ import org.jetbrains.annotations.Nullable;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class JavaValue extends ProxyForJava implements IValue {
-  private static Logger LOG = Logger.getLogger(JavaValue.class);
-
   @Nullable
   protected final Value myValue;
   protected String myClassFQName;
