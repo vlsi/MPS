@@ -21,6 +21,7 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -68,7 +69,7 @@ public class ClasspathCollector {
     return myPaths.get(item);
   }
 
-  private void doCollect(IModule current, boolean includeStubSolutions) {
+  private void doCollect(@NotNull IModule current, boolean includeStubSolutions) {
     try {
       myStack.push(current);
 
