@@ -19,7 +19,6 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
-import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
@@ -38,10 +37,7 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.JarFileEntryFile;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.vfs.*;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -54,10 +50,13 @@ import java.util.*;
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
-  public static final String RUNTIME_JAR_SUFFIX = "runtime.jar";
+  @Deprecated
+  public static final String RUNTIME_JAR_SUFFIX = MPSExtentions.RUNTIME_ARCH;
+  @Deprecated
+  public static final String PACKAGE_SUFFIX = MPSExtentions.MPS_ARCH;
+
   public static final String MODULE_DIR = "module";
   public static final String CACHES_DIR = "caches";
-  public static final String PACKAGE_SUFFIX = "mpsarch.jar";
 
   private static Set<ModelCreationListener> ourModelCreationListeners = new HashSet<ModelCreationListener>();
 
@@ -187,14 +186,14 @@ public abstract class AbstractModule implements IModule {
     if (getModuleDescriptor() != null) {
       if (getModuleDescriptor().getSourcePaths() != null && !isPackaged()) {
         for (String sourcePath : getModuleDescriptor().getSourcePaths()) {
-          if (!new File(sourcePath).exists()) {
+          if (!VFileSystem.getFile(sourcePath).exists()) {
             errors.add("Can't find source path: " + sourcePath);
           }
         }
       }
       if (getModuleDescriptor().getStubModelEntries() != null) {
         for (StubModelsEntry stubModelsEntry : getModuleDescriptor().getStubModelEntries()) {
-          if (!new File(stubModelsEntry.getPath()).exists()) {
+          if (!VFileSystem.getFile(stubModelsEntry.getPath()).exists()) {
             errors.add("Can't find library: " + stubModelsEntry.getPath());
           }
         }
@@ -745,38 +744,38 @@ public abstract class AbstractModule implements IModule {
   }
 
   //todo check this code. Wy not to do it where we add jars?
-
   protected void updatePackagedDescriptorClasspath() {
     if (!isPackaged()) return;
 
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
-      List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
-      for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
-        IFile cp = FileSystem.getFile(entry.getPath());
-        if ((!cp.exists()) || cp.isDirectory() || visited.contains(entry)) {
-          remove.add(entry);
-        }
-        visited.add(entry);
-      }
-      descriptor.getStubModelEntries().removeAll(remove);
+    if (descriptor == null) return;
 
-      File bundleHomeFile = getBundleHome();
-      if (bundleHomeFile == null) return;
-      String bundleHomePath = bundleHomeFile.getPath();
-      boolean contains = false;
-      for (StubModelsEntry v : visited) {
-        if (EqualUtil.equals(v.getPath(), bundleHomePath)) {
-          contains = true;
-        }
+    Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
+    List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
+    for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
+      IFile cp = FileSystem.getFile(entry.getPath());
+      if ((!cp.exists()) || cp.isDirectory() || visited.contains(entry)) {
+        remove.add(entry);
       }
-      if (!contains) {
-        ClassPathEntry bundleHome = new ClassPathEntry();
-        bundleHome.setPath(bundleHomePath);
-        descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(bundleHome));
+      visited.add(entry);
+    }
+    descriptor.getStubModelEntries().removeAll(remove);
+
+    File bundleHomeFile = getBundleHome();
+    if (bundleHomeFile == null) return;
+
+    String bundleHomePath = bundleHomeFile.getPath();
+    boolean contains = false;
+    for (StubModelsEntry v : visited) {
+      if (EqualUtil.equals(v.getPath(), bundleHomePath)) {
+        contains = true;
       }
     }
+    if (contains) return;
+
+    ClassPathEntry bundleHome = new ClassPathEntry();
+    bundleHome.setPath(bundleHomePath);
+    descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(bundleHome));
   }
 
   public IClassPathItem getClassPathItem() {
