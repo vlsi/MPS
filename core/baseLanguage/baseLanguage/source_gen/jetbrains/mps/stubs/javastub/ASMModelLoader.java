@@ -828,7 +828,7 @@ public abstract class ASMModelLoader {
     Iterator<String> it = classes.iterator();
     while (it.hasNext()) {
       String s = it.next();
-      if (ASMModelLoader.isAnonymous(s)) {
+      if (ASMModelLoader.isAnonymous(s) && mySkipPrivate) {
         it.remove();
       }
     }

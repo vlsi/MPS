@@ -799,7 +799,7 @@
     <nodeInfo nodeId="4592086915999591595" fileName="LowLevelEvaluationLogic.java" startLine="178" startPosition="63" endLine="179" endPosition="46" />
     <nodeInfo nodeId="4592086915999591674" fileName="LowLevelEvaluationLogic.java" startLine="180" startPosition="22" endLine="181" endPosition="60" />
     <nodeInfo nodeId="4592086915999644553" fileName="LowLevelEvaluationLogic.java" startLine="181" startPosition="60" endLine="182" endPosition="39" />
-    <nodeInfo nodeId="4592086915999591210" fileName="LowLevelEvaluationLogic.java" startLine="183" startPosition="5" endLine="184" endPosition="0" />
+    <nodeInfo nodeId="2226937592981412310" fileName="LowLevelEvaluationLogic.java" startLine="183" startPosition="5" endLine="184" endPosition="69" />
     <nodeInfo nodeId="672360099287477326" fileName="LowLevelEvaluationLogic.java" startLine="187" startPosition="103" endLine="188" endPosition="23" />
     <nodeInfo nodeId="672360099287477333" fileName="LowLevelEvaluationLogic.java" startLine="189" startPosition="9" endLine="190" endPosition="0" />
     <nodeInfo nodeId="672360099287477334" fileName="LowLevelEvaluationLogic.java" startLine="190" startPosition="0" endLine="191" endPosition="80" />
@@ -995,7 +995,7 @@
     <nodeInfo nodeId="672360099287442275" fileName="LowLevelEvaluationLogic.java" startLine="404" startPosition="0" endLine="416" endPosition="0" />
     <nodeInfo nodeId="672360099287442275" fileName="LowLevelEvaluationLogic.java" startLine="421" startPosition="0" endLine="433" endPosition="0" />
     <nodeInfo nodeId="672360099287442275" fileName="LowLevelEvaluationLogic.java" startLine="438" startPosition="0" endLine="450" endPosition="0" />
-    <nodeInfo nodeId="672360099287477307" fileName="LowLevelEvaluationLogic.java" startLine="184" startPosition="0" endLine="197" endPosition="7" />
+    <nodeInfo nodeId="672360099287477307" fileName="LowLevelEvaluationLogic.java" startLine="184" startPosition="69" endLine="197" endPosition="7" />
     <nodeInfo nodeId="672360099287442275" fileName="LowLevelEvaluationLogic.java" startLine="463" startPosition="43" endLine="476" endPosition="9" />
     <nodeInfo nodeId="672360099287477505" fileName="LowLevelEvaluationLogic.java" startLine="149" startPosition="0" endLine="166" endPosition="0" />
     <nodeInfo nodeId="4592086915999590144" fileName="LowLevelEvaluationLogic.java" startLine="242" startPosition="0" endLine="259" endPosition="0" />
@@ -1119,7 +1119,7 @@
     <scopeInfo nodeId="6785881341670047455" fileName="LowLevelEvaluationLogic.java" startLine="101" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="6785881341670047458" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="672360099287477323" fileName="LowLevelEvaluationLogic.java" startLine="186" startPosition="47" endLine="195" endPosition="48">
+    <scopeInfo nodeId="672360099287477323" fileName="LowLevelEvaluationLogic.java" startLine="186" startPosition="47" endLine="195" endPosition="58">
       <varInfo nodeId="672360099287477335" varName="nodesUnitName" />
     </scopeInfo>
     <scopeInfo nodeId="4592086915999591134" fileName="LowLevelEvaluationLogic.java" startLine="233" startPosition="0" endLine="242" endPosition="0">
@@ -1180,6 +1180,7 @@
       <varInfo nodeId="672360099287477362" varName="classifierType" />
       <varInfo nodeId="672360099287477308" varName="classifiers" />
       <varInfo nodeId="4592086915999591596" varName="lastDot" />
+      <varInfo nodeId="2226937592981412311" varName="normalizedUnitFqName" />
     </scopeInfo>
     <scopeInfo nodeId="6785881341670078358" fileName="LowLevelEvaluationLogic.java" startLine="87" startPosition="58" endLine="113" endPosition="0" />
     <scopeInfo nodeId="672360099287442275" fileName="LowLevelEvaluationLogic.java" startLine="455" startPosition="0" endLine="481" endPosition="0" />
