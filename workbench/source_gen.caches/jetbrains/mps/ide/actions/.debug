@@ -5619,11 +5619,16 @@
     <nodeInfo nodeId="304332558009517397" fileName="VCS_ActionGroup.java" startLine="17" startPosition="103" endLine="18" endPosition="106" />
   </root>
   <root nodeId="5917436512126845231">
-    <nodeInfo nodeId="304332558009517411" fileName="AddToVcs_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="26" />
-    <nodeInfo nodeId="304332558009517413" fileName="AddToVcs_Action.java" startLine="22" startPosition="26" endLine="23" endPosition="32" />
-    <nodeInfo nodeId="304332558009542098" fileName="AddToVcs_Action.java" startLine="76" startPosition="9" endLine="77" endPosition="116" />
-    <nodeInfo nodeId="304332558009517415" fileName="AddToVcs_Action.java" startLine="77" startPosition="116" endLine="78" endPosition="194" />
-    <scopeInfo nodeId="304332558009517399" fileName="AddToVcs_Action.java" startLine="36" startPosition="52" endLine="37" endPosition="154" />
+    <nodeInfo nodeId="304332558009517411" fileName="AddToVcs_Action.java" startLine="23" startPosition="0" endLine="24" endPosition="26" />
+    <nodeInfo nodeId="304332558009517413" fileName="AddToVcs_Action.java" startLine="24" startPosition="26" endLine="25" endPosition="32" />
+    <nodeInfo nodeId="7698736058960002332" fileName="AddToVcs_Action.java" startLine="78" startPosition="9" endLine="79" endPosition="150" />
+    <nodeInfo nodeId="7698736058960005641" fileName="AddToVcs_Action.java" startLine="80" startPosition="62" endLine="81" endPosition="95" />
+    <nodeInfo nodeId="7698736058960002357" fileName="AddToVcs_Action.java" startLine="81" startPosition="95" endLine="82" endPosition="15" />
+    <nodeInfo nodeId="304332558009542098" fileName="AddToVcs_Action.java" startLine="83" startPosition="7" endLine="84" endPosition="116" />
+    <nodeInfo nodeId="304332558009517415" fileName="AddToVcs_Action.java" startLine="84" startPosition="116" endLine="85" endPosition="104" />
+    <nodeInfo nodeId="7698736058960002346" fileName="AddToVcs_Action.java" startLine="79" startPosition="150" endLine="83" endPosition="7" />
+    <scopeInfo nodeId="304332558009517399" fileName="AddToVcs_Action.java" startLine="38" startPosition="52" endLine="39" endPosition="16" />
+    <scopeInfo nodeId="7698736058960002347" fileName="AddToVcs_Action.java" startLine="80" startPosition="62" endLine="82" endPosition="15" />
   </root>
   <root nodeId="5999020322563339950">
     <nodeInfo nodeId="5999020322563339951" fileName="NewAccessoryModel_Action.java" startLine="28" startPosition="0" endLine="29" endPosition="22" />
@@ -6797,10 +6802,15 @@
     <unitInfo nodeId="6919976393144119254" fileName="InformationDialogWithEditor.java" startLine="45" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.ide.actions.InformationDialogWithEditor" />
   </root>
   <root nodeId="695595565023324568">
-    <nodeInfo nodeId="304332558009517204" fileName="IgnoreInVcs_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="32" />
-    <nodeInfo nodeId="304332558009517210" fileName="IgnoreInVcs_Action.java" startLine="22" startPosition="32" endLine="23" endPosition="26" />
-    <nodeInfo nodeId="304332558009517206" fileName="IgnoreInVcs_Action.java" startLine="76" startPosition="9" endLine="77" endPosition="197" />
-    <scopeInfo nodeId="304332558009517382" fileName="IgnoreInVcs_Action.java" startLine="36" startPosition="52" endLine="37" endPosition="160" />
+    <nodeInfo nodeId="304332558009517204" fileName="IgnoreInVcs_Action.java" startLine="23" startPosition="0" endLine="24" endPosition="32" />
+    <nodeInfo nodeId="304332558009517210" fileName="IgnoreInVcs_Action.java" startLine="24" startPosition="32" endLine="25" endPosition="26" />
+    <nodeInfo nodeId="7698736058960005663" fileName="IgnoreInVcs_Action.java" startLine="78" startPosition="9" endLine="79" endPosition="156" />
+    <nodeInfo nodeId="7698736058960005692" fileName="IgnoreInVcs_Action.java" startLine="80" startPosition="62" endLine="81" endPosition="99" />
+    <nodeInfo nodeId="7698736058960005691" fileName="IgnoreInVcs_Action.java" startLine="81" startPosition="99" endLine="82" endPosition="15" />
+    <nodeInfo nodeId="304332558009517206" fileName="IgnoreInVcs_Action.java" startLine="83" startPosition="7" endLine="84" endPosition="101" />
+    <nodeInfo nodeId="7698736058960005680" fileName="IgnoreInVcs_Action.java" startLine="79" startPosition="156" endLine="83" endPosition="7" />
+    <scopeInfo nodeId="304332558009517382" fileName="IgnoreInVcs_Action.java" startLine="38" startPosition="52" endLine="39" endPosition="16" />
+    <scopeInfo nodeId="7698736058960005681" fileName="IgnoreInVcs_Action.java" startLine="80" startPosition="62" endLine="82" endPosition="15" />
   </root>
   <root nodeId="7054831363147542055">
     <nodeInfo nodeId="7054831363147658711" fileName="MappingDialog.java" startLine="37" startPosition="47" endLine="38" endPosition="66" />
