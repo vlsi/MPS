@@ -46,6 +46,7 @@ import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.vfs.VFileSystem;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -280,7 +281,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       }
     }
     for (StubModelsEntry stubModelsEntry : getModuleDescriptor().getRuntimeStubModels()) {
-      if (!new File(stubModelsEntry.getPath()).exists()) {
+      if (!VFileSystem.getFile(stubModelsEntry.getPath()).exists()) {
         errors.add("Can't find runtime library: " + stubModelsEntry.getPath());
       }
     }

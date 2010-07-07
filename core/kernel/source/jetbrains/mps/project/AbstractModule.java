@@ -172,7 +172,7 @@ public abstract class AbstractModule implements IModule {
       if (MPSModuleRepository.getInstance().getModule(moduleRef) == null) {
         errors.add("Can't find dependency: " + moduleRef.getModuleFqName());
       }
-    }
+    }                             
     for (ModuleReference reference : getUsedLanguagesReferences()) {
       if (MPSModuleRepository.getInstance().getLanguage(reference) == null) {
         errors.add("Can't find used language: " + reference.getModuleFqName());
