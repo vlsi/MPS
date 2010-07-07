@@ -69,8 +69,8 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     startupManager.registerPreStartupActivity(new Runnable() {
       public void run() {
         startupManager.registerCacheUpdater(updater);
-        DumbServiceImpl.getInstance(myProject).queueCacheUpdate(Collections.<CacheUpdater>singletonList(new MPSUnindexedFilesUpdater(myIndex)));
         myIndex.registerIndexableSet(MPSFileBasedIndexProjectHandler.this);
+        DumbServiceImpl.getInstance(myProject).queueCacheUpdate(Collections.<CacheUpdater>singletonList(new MPSUnindexedFilesUpdater(myIndex)));
       }
     });
   }
