@@ -16,6 +16,8 @@ public class Edit_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       Edit_ActionGroup.this.addSeparator();
+      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.QuickCreate_Action", "jetbrains.mps.ide");
+      Edit_ActionGroup.this.addSeparator();
       Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNodeReference_Action", "jetbrains.mps.ide");
       Edit_ActionGroup.this.addSeparator();
       Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModelImport_Action", "jetbrains.mps.ide");
