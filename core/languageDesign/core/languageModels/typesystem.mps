@@ -268,8 +268,10 @@
                       <link role="variableDeclaration:3" targetNodeId="5622704259074608655" resolveInfo="operationContext" />
                     </node>
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8856236746934088978">
-                      <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4049502122675886283">
-                        <link role="applicableNode:3" targetNodeId="4950342498455564876" resolveInfo="node" />
+                      <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="169011195923774163">
+                        <node role="leftExpression:16" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4049502122675886283">
+                          <link role="applicableNode:3" targetNodeId="4950342498455564876" resolveInfo="node" />
+                        </node>
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8856236746934088982">
                         <link role="baseMethodDeclaration:3" targetNodeId="4.~SNode.getConceptFqName():java.lang.String" resolveInfo="getConceptFqName" />
@@ -357,8 +359,10 @@
                     <link role="variableDeclaration:3" targetNodeId="5622704259074608655" resolveInfo="operationContext" />
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5622704259074610980">
-                    <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4049502122675886320">
-                      <link role="applicableNode:3" targetNodeId="4950342498455564876" resolveInfo="node" />
+                    <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="169011195923774259">
+                      <node role="leftExpression:16" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4049502122675886320">
+                        <link role="applicableNode:3" targetNodeId="4950342498455564876" resolveInfo="node" />
+                      </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5622704259074610984">
                       <link role="baseMethodDeclaration:3" targetNodeId="4.~SNode.getConceptFqName():java.lang.String" resolveInfo="getConceptFqName" />
@@ -393,8 +397,10 @@
                       <link role="variableDeclaration:3" targetNodeId="5622704259074608655" resolveInfo="operationContext" />
                     </node>
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8856236746934088993">
-                      <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4049502122675886421">
-                        <link role="applicableNode:3" targetNodeId="4950342498455564876" resolveInfo="node" />
+                      <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="169011195923774195">
+                        <node role="leftExpression:16" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4049502122675886421">
+                          <link role="applicableNode:3" targetNodeId="4950342498455564876" resolveInfo="node" />
+                        </node>
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8856236746934088997">
                         <link role="baseMethodDeclaration:3" targetNodeId="4.~SNode.getConceptFqName():java.lang.String" resolveInfo="getConceptFqName" />
@@ -412,8 +418,10 @@
           </node>
         </node>
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5622704259074610961">
-          <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4049502122675886244">
-            <link role="applicableNode:3" targetNodeId="4950342498455564876" resolveInfo="node" />
+          <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="169011195923774227">
+            <node role="leftExpression:16" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4049502122675886244">
+              <link role="applicableNode:3" targetNodeId="4950342498455564876" resolveInfo="node" />
+            </node>
           </node>
           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5622704259074610965">
             <link role="baseMethodDeclaration:3" targetNodeId="4.~SNode.isRoot():boolean" resolveInfo="isRoot" />

@@ -371,19 +371,19 @@
     <nodeInfo nodeId="1209916572216" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="44" startPosition="7" endLine="45" endPosition="55" />
     <nodeInfo nodeId="1209916572216" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="45" startPosition="55" endLine="46" endPosition="57" />
     <nodeInfo nodeId="1209916572216" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="46" startPosition="57" endLine="47" endPosition="298" />
-    <nodeInfo nodeId="1193835024461" fileName="TypesystemDescriptor.java" startLine="858" startPosition="60" endLine="859" endPosition="57" />
-    <nodeInfo nodeId="1193834998365" fileName="TypesystemDescriptor.java" startLine="860" startPosition="11" endLine="861" endPosition="22" />
-    <nodeInfo nodeId="1193834966925" fileName="TypesystemDescriptor.java" startLine="857" startPosition="54" endLine="860" endPosition="11" />
+    <nodeInfo nodeId="1193835024461" fileName="TypesystemDescriptor.java" startLine="854" startPosition="60" endLine="855" endPosition="57" />
+    <nodeInfo nodeId="1193834998365" fileName="TypesystemDescriptor.java" startLine="856" startPosition="11" endLine="857" endPosition="22" />
+    <nodeInfo nodeId="1193834966925" fileName="TypesystemDescriptor.java" startLine="853" startPosition="54" endLine="856" endPosition="11" />
     <nodeInfo nodeId="1209916572216" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="43" startPosition="133" endLine="48" endPosition="7" />
     <nodeInfo nodeId="1203030934664" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="35" startPosition="12" endLine="41" endPosition="7" />
     <nodeInfo nodeId="1203030927267" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="35" startPosition="10" endLine="42" endPosition="5" />
     <nodeInfo nodeId="1209916480535" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="42" startPosition="5" endLine="49" endPosition="5" />
     <nodeInfo nodeId="1203026955244" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="23" startPosition="137" endLine="34" endPosition="7" />
     <nodeInfo nodeId="1203030907645" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="22" startPosition="88" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="1193834966927" fileName="TypesystemDescriptor.java" startLine="858" startPosition="60" endLine="859" endPosition="57" />
+    <scopeInfo nodeId="1193834966927" fileName="TypesystemDescriptor.java" startLine="854" startPosition="60" endLine="855" endPosition="57" />
     <scopeInfo nodeId="1209916572216" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="44" startPosition="7" endLine="47" endPosition="298" />
     <scopeInfo nodeId="1203030934664" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="36" startPosition="7" endLine="40" endPosition="283" />
-    <scopeInfo nodeId="1193834940539" fileName="TypesystemDescriptor.java" startLine="857" startPosition="54" endLine="861" endPosition="22" />
+    <scopeInfo nodeId="1193834940539" fileName="TypesystemDescriptor.java" startLine="853" startPosition="54" endLine="857" endPosition="22" />
     <scopeInfo nodeId="1209916480536" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="43" startPosition="133" endLine="48" endPosition="7" />
     <scopeInfo nodeId="1203030927268" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="35" startPosition="12" endLine="41" endPosition="7" />
     <scopeInfo nodeId="1203026955244" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="24" startPosition="7" endLine="33" endPosition="300" />
@@ -466,13 +466,13 @@
     <nodeInfo nodeId="1197929386564" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="20" startPosition="51" endLine="21" endPosition="53" />
     <nodeInfo nodeId="1197929386564" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="21" startPosition="53" endLine="22" endPosition="210" />
     <nodeInfo nodeId="1197929386564" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="22" startPosition="210" endLine="23" endPosition="423" />
-    <nodeInfo nodeId="1193845791625" fileName="TypesystemDescriptor.java" startLine="877" startPosition="56" endLine="878" endPosition="57" />
-    <nodeInfo nodeId="1193845780013" fileName="TypesystemDescriptor.java" startLine="879" startPosition="11" endLine="880" endPosition="22" />
-    <nodeInfo nodeId="1193845734653" fileName="TypesystemDescriptor.java" startLine="876" startPosition="54" endLine="879" endPosition="11" />
+    <nodeInfo nodeId="1193845791625" fileName="TypesystemDescriptor.java" startLine="873" startPosition="56" endLine="874" endPosition="57" />
+    <nodeInfo nodeId="1193845780013" fileName="TypesystemDescriptor.java" startLine="875" startPosition="11" endLine="876" endPosition="22" />
+    <nodeInfo nodeId="1193845734653" fileName="TypesystemDescriptor.java" startLine="872" startPosition="54" endLine="875" endPosition="11" />
     <nodeInfo nodeId="1197929386564" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="18" startPosition="95" endLine="24" endPosition="5" />
-    <scopeInfo nodeId="1193845734655" fileName="TypesystemDescriptor.java" startLine="877" startPosition="56" endLine="878" endPosition="57" />
+    <scopeInfo nodeId="1193845734655" fileName="TypesystemDescriptor.java" startLine="873" startPosition="56" endLine="874" endPosition="57" />
     <scopeInfo nodeId="1197929386564" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="23" endPosition="423" />
-    <scopeInfo nodeId="1193845700396" fileName="TypesystemDescriptor.java" startLine="876" startPosition="54" endLine="880" endPosition="22" />
+    <scopeInfo nodeId="1193845700396" fileName="TypesystemDescriptor.java" startLine="872" startPosition="54" endLine="876" endPosition="22" />
     <scopeInfo nodeId="1176896957097" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="18" startPosition="95" endLine="24" endPosition="5" />
   </root>
   <root nodeId="1176897069499">
@@ -2456,65 +2456,65 @@
     <nodeInfo nodeId="684456904423890539" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="55" startPosition="366" endLine="56" endPosition="282" />
     <nodeInfo nodeId="684456904423890533" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="57" startPosition="20" endLine="58" endPosition="232" />
     <nodeInfo nodeId="684456904423971150" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="63" startPosition="12" endLine="64" endPosition="224" />
-    <nodeInfo nodeId="1207648751664" fileName="TypesystemDescriptor.java" startLine="895" startPosition="60" endLine="896" endPosition="114" />
-    <nodeInfo nodeId="1207648823977" fileName="TypesystemDescriptor.java" startLine="896" startPosition="114" endLine="897" endPosition="124" />
-    <nodeInfo nodeId="1207648848489" fileName="TypesystemDescriptor.java" startLine="897" startPosition="124" endLine="898" endPosition="72" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="900" startPosition="13" endLine="901" endPosition="26" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="901" startPosition="26" endLine="902" endPosition="24" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="902" startPosition="24" endLine="903" endPosition="154" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="903" startPosition="154" endLine="904" endPosition="142" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="906" startPosition="50" endLine="907" endPosition="24" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="909" startPosition="48" endLine="910" endPosition="24" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="911" startPosition="17" endLine="912" endPosition="46" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="912" startPosition="46" endLine="913" endPosition="42" />
-    <nodeInfo nodeId="6295887419091357456" fileName="TypesystemDescriptor.java" startLine="914" startPosition="198" endLine="915" endPosition="111" />
-    <nodeInfo nodeId="1207650127432" fileName="TypesystemDescriptor.java" startLine="916" startPosition="90" endLine="917" endPosition="64" />
-    <nodeInfo nodeId="1207648893602" fileName="TypesystemDescriptor.java" startLine="922" startPosition="11" endLine="923" endPosition="24" />
+    <nodeInfo nodeId="1207648751664" fileName="TypesystemDescriptor.java" startLine="891" startPosition="60" endLine="892" endPosition="114" />
+    <nodeInfo nodeId="1207648823977" fileName="TypesystemDescriptor.java" startLine="892" startPosition="114" endLine="893" endPosition="124" />
+    <nodeInfo nodeId="1207648848489" fileName="TypesystemDescriptor.java" startLine="893" startPosition="124" endLine="894" endPosition="72" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="896" startPosition="13" endLine="897" endPosition="26" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="897" startPosition="26" endLine="898" endPosition="24" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="898" startPosition="24" endLine="899" endPosition="154" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="899" startPosition="154" endLine="900" endPosition="142" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="902" startPosition="50" endLine="903" endPosition="24" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="905" startPosition="48" endLine="906" endPosition="24" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="907" startPosition="17" endLine="908" endPosition="46" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="908" startPosition="46" endLine="909" endPosition="42" />
+    <nodeInfo nodeId="6295887419091357456" fileName="TypesystemDescriptor.java" startLine="910" startPosition="198" endLine="911" endPosition="111" />
+    <nodeInfo nodeId="1207650127432" fileName="TypesystemDescriptor.java" startLine="912" startPosition="90" endLine="913" endPosition="64" />
+    <nodeInfo nodeId="1207648893602" fileName="TypesystemDescriptor.java" startLine="918" startPosition="11" endLine="919" endPosition="24" />
     <nodeInfo nodeId="684456904423890531" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="57" startPosition="18" endLine="59" endPosition="13" />
     <nodeInfo nodeId="684456904423889813" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="63" startPosition="10" endLine="65" endPosition="5" />
     <nodeInfo nodeId="1204064574539" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="27" startPosition="90" endLine="30" endPosition="5" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="905" startPosition="28" endLine="908" endPosition="17" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="908" startPosition="17" endLine="911" endPosition="17" />
-    <nodeInfo nodeId="1207650094263" fileName="TypesystemDescriptor.java" startLine="915" startPosition="111" endLine="918" endPosition="19" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="901" startPosition="28" endLine="904" endPosition="17" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="904" startPosition="17" endLine="907" endPosition="17" />
+    <nodeInfo nodeId="1207650094263" fileName="TypesystemDescriptor.java" startLine="911" startPosition="111" endLine="914" endPosition="19" />
     <nodeInfo nodeId="702942408396860204" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="54" startPosition="29" endLine="59" endPosition="13" />
     <nodeInfo nodeId="1204064763142" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="33" startPosition="105" endLine="39" endPosition="5" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="913" startPosition="42" endLine="919" endPosition="17" />
-    <nodeInfo nodeId="1207649079698" fileName="TypesystemDescriptor.java" startLine="913" startPosition="42" endLine="919" endPosition="17" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="909" startPosition="42" endLine="915" endPosition="17" />
+    <nodeInfo nodeId="1207649079698" fileName="TypesystemDescriptor.java" startLine="909" startPosition="42" endLine="915" endPosition="17" />
     <nodeInfo nodeId="1204065906120" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="39" startPosition="5" endLine="46" endPosition="5" />
     <nodeInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="53" startPosition="61" endLine="61" endPosition="0" />
     <nodeInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="52" startPosition="119" endLine="61" endPosition="127" />
     <nodeInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="50" startPosition="386" endLine="62" endPosition="7" />
     <nodeInfo nodeId="684456904423889785" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="49" startPosition="140" endLine="65" endPosition="5" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="904" startPosition="142" endLine="920" endPosition="15" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="899" startPosition="65" endLine="921" endPosition="13" />
-    <nodeInfo nodeId="1207648654826" fileName="TypesystemDescriptor.java" startLine="898" startPosition="72" endLine="922" endPosition="11" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="900" startPosition="142" endLine="916" endPosition="15" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="895" startPosition="65" endLine="917" endPosition="13" />
+    <nodeInfo nodeId="1207648654826" fileName="TypesystemDescriptor.java" startLine="894" startPosition="72" endLine="918" endPosition="11" />
     <scopeInfo nodeId="1204064574540" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="28" startPosition="82" endLine="29" endPosition="13" />
     <scopeInfo nodeId="702942408396860206" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="55" startPosition="366" endLine="56" endPosition="282" />
     <scopeInfo nodeId="684456904423890532" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="57" startPosition="20" endLine="58" endPosition="232" />
     <scopeInfo nodeId="684456904423889814" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="63" startPosition="12" endLine="64" endPosition="224" />
-    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="906" startPosition="50" endLine="907" endPosition="24" />
-    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="909" startPosition="48" endLine="910" endPosition="24" />
-    <scopeInfo nodeId="1207650094265" fileName="TypesystemDescriptor.java" startLine="916" startPosition="90" endLine="917" endPosition="64" />
+    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="902" startPosition="50" endLine="903" endPosition="24" />
+    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="905" startPosition="48" endLine="906" endPosition="24" />
+    <scopeInfo nodeId="1207650094265" fileName="TypesystemDescriptor.java" startLine="912" startPosition="90" endLine="913" endPosition="64" />
     <scopeInfo nodeId="1204064763142" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="34" startPosition="5" endLine="38" endPosition="332" />
-    <scopeInfo nodeId="1207649079702" fileName="TypesystemDescriptor.java" startLine="914" startPosition="198" endLine="918" endPosition="19">
+    <scopeInfo nodeId="1207649079702" fileName="TypesystemDescriptor.java" startLine="910" startPosition="198" endLine="914" endPosition="19">
       <varInfo nodeId="6295887419091357457" varName="variableDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="1204065906120" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="40" startPosition="5" endLine="45" endPosition="328" />
     <scopeInfo nodeId="702942408396860199" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="54" startPosition="29" endLine="59" endPosition="13" />
-    <scopeInfo nodeId="1207649010712" fileName="TypesystemDescriptor.java" startLine="913" startPosition="42" endLine="919" endPosition="17" />
-    <scopeInfo nodeId="1207649079698" fileName="TypesystemDescriptor.java" startLine="913" startPosition="42" endLine="919" endPosition="17">
+    <scopeInfo nodeId="1207649010712" fileName="TypesystemDescriptor.java" startLine="909" startPosition="42" endLine="915" endPosition="17" />
+    <scopeInfo nodeId="1207649079698" fileName="TypesystemDescriptor.java" startLine="909" startPosition="42" endLine="915" endPosition="17">
       <varInfo nodeId="1207649079700" varName="tvr" />
     </scopeInfo>
     <scopeInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="53" startPosition="61" endLine="61" endPosition="0" />
     <scopeInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="51" startPosition="7" endLine="61" endPosition="127" />
     <scopeInfo nodeId="684456904423889786" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="50" startPosition="386" endLine="62" endPosition="7" />
-    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="905" startPosition="28" endLine="919" endPosition="17" />
-    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="900" startPosition="13" endLine="920" endPosition="15">
+    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="901" startPosition="28" endLine="915" endPosition="17" />
+    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="896" startPosition="13" endLine="916" endPosition="15">
       <varInfo nodeId="1207649032454" varName="arg" />
       <varInfo nodeId="1207649010709" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1207648654828" fileName="TypesystemDescriptor.java" startLine="899" startPosition="65" endLine="921" endPosition="13" />
-    <scopeInfo nodeId="1207648619836" fileName="TypesystemDescriptor.java" startLine="895" startPosition="60" endLine="923" endPosition="24">
+    <scopeInfo nodeId="1207648654828" fileName="TypesystemDescriptor.java" startLine="895" startPosition="65" endLine="917" endPosition="13" />
+    <scopeInfo nodeId="1207648619836" fileName="TypesystemDescriptor.java" startLine="891" startPosition="60" endLine="919" endPosition="24">
       <varInfo nodeId="1207648848490" varName="result" />
       <varInfo nodeId="1207648751665" varName="instanceMethodDeclaration" />
       <varInfo nodeId="1207648823978" varName="declarations" />
@@ -2744,149 +2744,149 @@
     </scopeInfo>
   </root>
   <root nodeId="1216647860300">
-    <nodeInfo nodeId="7778014252725745877" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="37" startPosition="8" endLine="38" endPosition="268" />
-    <nodeInfo nodeId="2504554539198932808" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="40" startPosition="37" endLine="41" endPosition="207" />
-    <nodeInfo nodeId="2504554539199088514" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="42" startPosition="29" endLine="43" endPosition="44" />
-    <nodeInfo nodeId="2504554539198933325" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="44" startPosition="11" endLine="45" endPosition="23" />
-    <nodeInfo nodeId="5505770415436817941" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="53" startPosition="11" endLine="54" endPosition="203" />
-    <nodeInfo nodeId="7778014252725745972" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="55" startPosition="19" endLine="56" endPosition="166" />
-    <nodeInfo nodeId="7778014252725745979" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="56" startPosition="166" endLine="57" endPosition="17" />
-    <nodeInfo nodeId="7778014252725745866" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="59" startPosition="7" endLine="60" endPosition="13" />
-    <nodeInfo nodeId="1227260064085" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="62" startPosition="349" endLine="63" endPosition="190" />
-    <nodeInfo nodeId="1227260084609" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="63" startPosition="190" endLine="64" endPosition="187" />
-    <nodeInfo nodeId="1227260121545" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="64" startPosition="187" endLine="65" endPosition="87" />
-    <nodeInfo nodeId="1228409269832" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="66" startPosition="49" endLine="67" endPosition="305" />
-    <nodeInfo nodeId="5505770415436818063" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="67" startPosition="305" endLine="68" endPosition="134" />
-    <nodeInfo nodeId="1227260121590" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="69" startPosition="19" endLine="70" endPosition="109" />
-    <nodeInfo nodeId="1227260121597" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="70" startPosition="109" endLine="71" endPosition="17" />
-    <nodeInfo nodeId="1241540817844" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="74" startPosition="374" endLine="75" endPosition="187" />
-    <nodeInfo nodeId="1241540855226" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="75" startPosition="187" endLine="76" endPosition="208" />
-    <nodeInfo nodeId="1241540808061" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="76" startPosition="208" endLine="77" endPosition="87" />
-    <nodeInfo nodeId="1241540808075" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="78" startPosition="49" endLine="79" endPosition="83" />
-    <nodeInfo nodeId="1241542501829" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="80" startPosition="103" endLine="81" endPosition="137" />
-    <nodeInfo nodeId="5505770415436818081" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="82" startPosition="9" endLine="83" endPosition="134" />
-    <nodeInfo nodeId="1241540808113" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="84" startPosition="19" endLine="85" endPosition="109" />
-    <nodeInfo nodeId="1241540808120" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="85" startPosition="109" endLine="86" endPosition="17" />
-    <nodeInfo nodeId="1241004635741" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="89" startPosition="364" endLine="90" endPosition="205" />
-    <nodeInfo nodeId="1241004635746" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="90" startPosition="205" endLine="91" endPosition="181" />
-    <nodeInfo nodeId="1241004635751" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="91" startPosition="181" endLine="92" endPosition="84" />
-    <nodeInfo nodeId="1241004635765" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="93" startPosition="49" endLine="94" endPosition="309" />
-    <nodeInfo nodeId="5505770415436818108" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="94" startPosition="309" endLine="95" endPosition="138" />
-    <nodeInfo nodeId="1241004635808" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="96" startPosition="19" endLine="97" endPosition="113" />
-    <nodeInfo nodeId="1241004635815" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="97" startPosition="113" endLine="98" endPosition="17" />
-    <nodeInfo nodeId="1239698509671" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="101" startPosition="213" endLine="102" endPosition="295" />
-    <nodeInfo nodeId="1239698549478" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="103" startPosition="112" endLine="104" endPosition="15" />
-    <nodeInfo nodeId="1239133820032" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="105" startPosition="7" endLine="106" endPosition="116" />
-    <nodeInfo nodeId="1239133820044" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="106" startPosition="116" endLine="107" endPosition="193" />
-    <nodeInfo nodeId="1239806044352" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="107" startPosition="193" endLine="108" endPosition="271" />
-    <nodeInfo nodeId="1239133820091" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="109" startPosition="39" endLine="110" endPosition="176" />
-    <nodeInfo nodeId="5505770415436818120" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="110" startPosition="176" endLine="111" endPosition="203" />
-    <nodeInfo nodeId="1239133820126" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="112" startPosition="19" endLine="113" endPosition="166" />
-    <nodeInfo nodeId="1239133820133" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="113" startPosition="166" endLine="114" endPosition="17" />
-    <nodeInfo nodeId="2504554539198933308" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="41" startPosition="207" endLine="44" endPosition="11" />
-    <nodeInfo nodeId="1241542455338" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="79" startPosition="83" endLine="82" endPosition="9" />
-    <nodeInfo nodeId="1239698517585" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="102" startPosition="295" endLine="105" endPosition="7" />
-    <nodeInfo nodeId="6958036945086235646" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="33" startPosition="362" endLine="37" endPosition="8" />
-    <nodeInfo nodeId="7778014252725745937" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="49" startPosition="160" endLine="53" endPosition="0" />
-    <nodeInfo nodeId="7778014252725745970" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="54" startPosition="203" endLine="58" endPosition="9" />
-    <nodeInfo nodeId="1227260121588" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="68" startPosition="134" endLine="72" endPosition="9" />
-    <nodeInfo nodeId="1241540808111" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="83" startPosition="134" endLine="87" endPosition="9" />
-    <nodeInfo nodeId="1241004635806" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="95" startPosition="138" endLine="99" endPosition="9" />
-    <nodeInfo nodeId="1239133820124" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="111" startPosition="203" endLine="115" endPosition="9" />
-    <nodeInfo nodeId="7778014252725745928" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="48" startPosition="39" endLine="53" endPosition="11" />
-    <nodeInfo nodeId="7778014252725745901" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="39" startPosition="81" endLine="47" endPosition="0" />
-    <nodeInfo nodeId="1227260121551" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="65" startPosition="87" endLine="73" endPosition="7" />
-    <nodeInfo nodeId="1241004635757" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="92" startPosition="84" endLine="100" endPosition="7" />
-    <nodeInfo nodeId="1239133820068" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="108" startPosition="271" endLine="116" endPosition="7" />
-    <nodeInfo nodeId="7778014252725745889" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="38" startPosition="268" endLine="47" endPosition="10" />
-    <nodeInfo nodeId="1241540808067" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="77" startPosition="87" endLine="88" endPosition="7" />
-    <nodeInfo nodeId="7778014252725745920" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="47" startPosition="10" endLine="59" endPosition="7" />
-    <nodeInfo nodeId="7778014252725745853" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="32" startPosition="35" endLine="61" endPosition="5" />
-    <nodeInfo nodeId="1227259990329" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="61" startPosition="5" endLine="117" endPosition="5" />
-    <scopeInfo nodeId="1216647932971" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="28" startPosition="34" endLine="29" endPosition="51" />
-    <scopeInfo nodeId="2504554539198933309" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="42" startPosition="29" endLine="43" endPosition="44" />
-    <scopeInfo nodeId="7778014252725745938" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="50" startPosition="41" endLine="51" endPosition="63" />
-    <scopeInfo nodeId="1241542455339" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="80" startPosition="103" endLine="81" endPosition="137" />
-    <scopeInfo nodeId="1239698517586" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="103" startPosition="112" endLine="104" endPosition="15" />
-    <scopeInfo nodeId="7778014252725745971" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="55" startPosition="19" endLine="57" endPosition="17" />
-    <scopeInfo nodeId="1227260121589" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="69" startPosition="19" endLine="71" endPosition="17" />
-    <scopeInfo nodeId="1241540808112" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="84" startPosition="19" endLine="86" endPosition="17" />
-    <scopeInfo nodeId="1241004635807" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="96" startPosition="19" endLine="98" endPosition="17" />
-    <scopeInfo nodeId="1239133820125" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="112" startPosition="19" endLine="114" endPosition="17" />
-    <scopeInfo nodeId="1241542455338" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="79" startPosition="83" endLine="82" endPosition="9">
+    <nodeInfo nodeId="7778014252725745877" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="36" startPosition="8" endLine="37" endPosition="223" />
+    <nodeInfo nodeId="2504554539198932808" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="39" startPosition="37" endLine="40" endPosition="207" />
+    <nodeInfo nodeId="2504554539199088514" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="41" startPosition="29" endLine="42" endPosition="44" />
+    <nodeInfo nodeId="2504554539198933325" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="43" startPosition="11" endLine="44" endPosition="23" />
+    <nodeInfo nodeId="5505770415436817941" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="52" startPosition="11" endLine="53" endPosition="203" />
+    <nodeInfo nodeId="7778014252725745972" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="54" startPosition="19" endLine="55" endPosition="166" />
+    <nodeInfo nodeId="7778014252725745979" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="55" startPosition="166" endLine="56" endPosition="17" />
+    <nodeInfo nodeId="7778014252725745866" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="58" startPosition="7" endLine="59" endPosition="13" />
+    <nodeInfo nodeId="1227260064085" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="61" startPosition="349" endLine="62" endPosition="190" />
+    <nodeInfo nodeId="1227260084609" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="62" startPosition="190" endLine="63" endPosition="187" />
+    <nodeInfo nodeId="1227260121545" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="63" startPosition="187" endLine="64" endPosition="87" />
+    <nodeInfo nodeId="1228409269832" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="65" startPosition="49" endLine="66" endPosition="305" />
+    <nodeInfo nodeId="5505770415436818063" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="66" startPosition="305" endLine="67" endPosition="134" />
+    <nodeInfo nodeId="1227260121590" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="68" startPosition="19" endLine="69" endPosition="109" />
+    <nodeInfo nodeId="1227260121597" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="69" startPosition="109" endLine="70" endPosition="17" />
+    <nodeInfo nodeId="1241540817844" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="73" startPosition="374" endLine="74" endPosition="187" />
+    <nodeInfo nodeId="1241540855226" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="74" startPosition="187" endLine="75" endPosition="208" />
+    <nodeInfo nodeId="1241540808061" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="75" startPosition="208" endLine="76" endPosition="87" />
+    <nodeInfo nodeId="1241540808075" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="77" startPosition="49" endLine="78" endPosition="83" />
+    <nodeInfo nodeId="1241542501829" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="79" startPosition="103" endLine="80" endPosition="137" />
+    <nodeInfo nodeId="5505770415436818081" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="81" startPosition="9" endLine="82" endPosition="134" />
+    <nodeInfo nodeId="1241540808113" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="83" startPosition="19" endLine="84" endPosition="109" />
+    <nodeInfo nodeId="1241540808120" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="84" startPosition="109" endLine="85" endPosition="17" />
+    <nodeInfo nodeId="1241004635741" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="88" startPosition="364" endLine="89" endPosition="205" />
+    <nodeInfo nodeId="1241004635746" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="89" startPosition="205" endLine="90" endPosition="181" />
+    <nodeInfo nodeId="1241004635751" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="90" startPosition="181" endLine="91" endPosition="84" />
+    <nodeInfo nodeId="1241004635765" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="92" startPosition="49" endLine="93" endPosition="309" />
+    <nodeInfo nodeId="5505770415436818108" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="93" startPosition="309" endLine="94" endPosition="138" />
+    <nodeInfo nodeId="1241004635808" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="95" startPosition="19" endLine="96" endPosition="113" />
+    <nodeInfo nodeId="1241004635815" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="96" startPosition="113" endLine="97" endPosition="17" />
+    <nodeInfo nodeId="1239698509671" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="100" startPosition="213" endLine="101" endPosition="295" />
+    <nodeInfo nodeId="1239698549478" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="102" startPosition="112" endLine="103" endPosition="15" />
+    <nodeInfo nodeId="1239133820032" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="104" startPosition="7" endLine="105" endPosition="116" />
+    <nodeInfo nodeId="1239133820044" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="105" startPosition="116" endLine="106" endPosition="193" />
+    <nodeInfo nodeId="1239806044352" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="106" startPosition="193" endLine="107" endPosition="271" />
+    <nodeInfo nodeId="1239133820091" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="108" startPosition="39" endLine="109" endPosition="176" />
+    <nodeInfo nodeId="5505770415436818120" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="109" startPosition="176" endLine="110" endPosition="203" />
+    <nodeInfo nodeId="1239133820126" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="111" startPosition="19" endLine="112" endPosition="166" />
+    <nodeInfo nodeId="1239133820133" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="112" startPosition="166" endLine="113" endPosition="17" />
+    <nodeInfo nodeId="2504554539198933308" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="40" startPosition="207" endLine="43" endPosition="11" />
+    <nodeInfo nodeId="1241542455338" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="78" startPosition="83" endLine="81" endPosition="9" />
+    <nodeInfo nodeId="1239698517585" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="101" startPosition="295" endLine="104" endPosition="7" />
+    <nodeInfo nodeId="6958036945086235646" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="32" startPosition="362" endLine="36" endPosition="8" />
+    <nodeInfo nodeId="7778014252725745937" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="48" startPosition="160" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="7778014252725745970" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="53" startPosition="203" endLine="57" endPosition="9" />
+    <nodeInfo nodeId="1227260121588" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="67" startPosition="134" endLine="71" endPosition="9" />
+    <nodeInfo nodeId="1241540808111" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="82" startPosition="134" endLine="86" endPosition="9" />
+    <nodeInfo nodeId="1241004635806" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="94" startPosition="138" endLine="98" endPosition="9" />
+    <nodeInfo nodeId="1239133820124" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="110" startPosition="203" endLine="114" endPosition="9" />
+    <nodeInfo nodeId="7778014252725745928" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="47" startPosition="39" endLine="52" endPosition="11" />
+    <nodeInfo nodeId="7778014252725745901" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="38" startPosition="80" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="1227260121551" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="64" startPosition="87" endLine="72" endPosition="7" />
+    <nodeInfo nodeId="1241004635757" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="91" startPosition="84" endLine="99" endPosition="7" />
+    <nodeInfo nodeId="1239133820068" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="107" startPosition="271" endLine="115" endPosition="7" />
+    <nodeInfo nodeId="7778014252725745889" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="37" startPosition="223" endLine="46" endPosition="9" />
+    <nodeInfo nodeId="1241540808067" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="76" startPosition="87" endLine="87" endPosition="7" />
+    <nodeInfo nodeId="7778014252725745920" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="46" startPosition="9" endLine="58" endPosition="7" />
+    <nodeInfo nodeId="7778014252725745853" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="31" startPosition="35" endLine="60" endPosition="5" />
+    <nodeInfo nodeId="1227259990329" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="60" startPosition="5" endLine="116" endPosition="5" />
+    <scopeInfo nodeId="1216647932971" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="27" startPosition="34" endLine="28" endPosition="51" />
+    <scopeInfo nodeId="2504554539198933309" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="41" startPosition="29" endLine="42" endPosition="44" />
+    <scopeInfo nodeId="7778014252725745938" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="49" startPosition="41" endLine="50" endPosition="63" />
+    <scopeInfo nodeId="1241542455339" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="79" startPosition="103" endLine="80" endPosition="137" />
+    <scopeInfo nodeId="1239698517586" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="102" startPosition="112" endLine="103" endPosition="15" />
+    <scopeInfo nodeId="7778014252725745971" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="54" startPosition="19" endLine="56" endPosition="17" />
+    <scopeInfo nodeId="1227260121589" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="68" startPosition="19" endLine="70" endPosition="17" />
+    <scopeInfo nodeId="1241540808112" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="83" startPosition="19" endLine="85" endPosition="17" />
+    <scopeInfo nodeId="1241004635807" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="95" startPosition="19" endLine="97" endPosition="17" />
+    <scopeInfo nodeId="1239133820125" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="111" startPosition="19" endLine="113" endPosition="17" />
+    <scopeInfo nodeId="1241542455338" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="78" startPosition="83" endLine="81" endPosition="9">
       <varInfo nodeId="1241542455342" varName="parameter" />
     </scopeInfo>
-    <scopeInfo nodeId="7778014252725745937" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="49" startPosition="160" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="7778014252725745906" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="40" startPosition="37" endLine="45" endPosition="23">
+    <scopeInfo nodeId="7778014252725745937" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="48" startPosition="160" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="7778014252725745906" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="39" startPosition="37" endLine="44" endPosition="23">
       <varInfo nodeId="2504554539198932809" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="1227260121552" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="66" startPosition="49" endLine="72" endPosition="9">
+    <scopeInfo nodeId="1227260121552" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="65" startPosition="49" endLine="71" endPosition="9">
       <varInfo nodeId="5505770415436818064" varName="good" />
       <varInfo nodeId="1228409269833" varName="parameterTypes" />
     </scopeInfo>
-    <scopeInfo nodeId="1241004635758" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="93" startPosition="49" endLine="99" endPosition="9">
+    <scopeInfo nodeId="1241004635758" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="92" startPosition="49" endLine="98" endPosition="9">
       <varInfo nodeId="5505770415436818109" varName="good" />
       <varInfo nodeId="1241004635766" varName="parameterTypes" />
     </scopeInfo>
-    <scopeInfo nodeId="1239133820069" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="109" startPosition="39" endLine="115" endPosition="9">
+    <scopeInfo nodeId="1239133820069" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="108" startPosition="39" endLine="114" endPosition="9">
       <varInfo nodeId="5505770415436818121" varName="good" />
       <varInfo nodeId="1239133820092" varName="parameterTypes" />
     </scopeInfo>
-    <scopeInfo nodeId="7778014252725745901" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="39" startPosition="81" endLine="47" endPosition="0">
+    <scopeInfo nodeId="7778014252725745901" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="38" startPosition="80" endLine="46" endPosition="0">
       <varInfo nodeId="7778014252725745904" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1227260121551" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="65" startPosition="87" endLine="73" endPosition="7">
+    <scopeInfo nodeId="1227260121551" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="64" startPosition="87" endLine="72" endPosition="7">
       <varInfo nodeId="1227260121611" varName="constructorDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1241004635757" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="92" startPosition="84" endLine="100" endPosition="7">
+    <scopeInfo nodeId="1241004635757" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="91" startPosition="84" endLine="99" endPosition="7">
       <varInfo nodeId="1241004635829" varName="constructorDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1239133820068" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="108" startPosition="271" endLine="116" endPosition="7">
+    <scopeInfo nodeId="1239133820068" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="107" startPosition="271" endLine="115" endPosition="7">
       <varInfo nodeId="1239133820147" varName="methodDecl" />
     </scopeInfo>
-    <scopeInfo nodeId="1241540808068" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="78" startPosition="49" endLine="87" endPosition="9">
+    <scopeInfo nodeId="1241540808068" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="77" startPosition="49" endLine="86" endPosition="9">
       <varInfo nodeId="5505770415436818082" varName="good" />
       <varInfo nodeId="1241540808076" varName="parameterTypes" />
     </scopeInfo>
-    <scopeInfo nodeId="7778014252725745921" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="48" startPosition="39" endLine="58" endPosition="9">
+    <scopeInfo nodeId="7778014252725745921" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="47" startPosition="39" endLine="57" endPosition="9">
       <varInfo nodeId="5505770415436817942" varName="good" />
       <varInfo nodeId="7778014252725745929" varName="parameterTypes" />
     </scopeInfo>
-    <scopeInfo nodeId="1227259990330" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="62" startPosition="349" endLine="73" endPosition="7">
+    <scopeInfo nodeId="1227259990330" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="61" startPosition="349" endLine="72" endPosition="7">
       <varInfo nodeId="1227260064086" varName="constructorCall" />
       <varInfo nodeId="1227260121546" varName="list" />
       <varInfo nodeId="1227260084610" varName="classConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1241540808067" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="77" startPosition="87" endLine="88" endPosition="7">
+    <scopeInfo nodeId="1241540808067" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="76" startPosition="87" endLine="87" endPosition="7">
       <varInfo nodeId="1241540808134" varName="constructorDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1241004524986" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="89" startPosition="364" endLine="100" endPosition="7">
+    <scopeInfo nodeId="1241004524986" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="88" startPosition="364" endLine="99" endPosition="7">
       <varInfo nodeId="1241004635747" varName="enumClass" />
       <varInfo nodeId="1241004635742" varName="constantDeclaration" />
       <varInfo nodeId="1241004635752" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="7778014252725745920" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="47" startPosition="10" endLine="59" endPosition="7">
+    <scopeInfo nodeId="7778014252725745920" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="46" startPosition="9" endLine="58" endPosition="7">
       <varInfo nodeId="7778014252725745993" varName="methodDecl" />
     </scopeInfo>
-    <scopeInfo nodeId="1241540742248" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="74" startPosition="374" endLine="88" endPosition="7">
+    <scopeInfo nodeId="1241540742248" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="73" startPosition="374" endLine="87" endPosition="7">
       <varInfo nodeId="1241540855227" varName="constructorCall" />
       <varInfo nodeId="1241540808062" varName="list" />
       <varInfo nodeId="1241540817845" varName="classConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1239133820031" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="101" startPosition="213" endLine="116" endPosition="7">
+    <scopeInfo nodeId="1239133820031" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="100" startPosition="213" endLine="115" endPosition="7">
       <varInfo nodeId="1239133820033" varName="instanceType" />
       <varInfo nodeId="1239133820045" varName="scope" />
       <varInfo nodeId="1239806044353" varName="mDecls" />
       <varInfo nodeId="1239698509672" varName="operandType" />
     </scopeInfo>
-    <scopeInfo nodeId="7778014252725745854" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="33" startPosition="362" endLine="60" endPosition="13">
+    <scopeInfo nodeId="7778014252725745854" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="32" startPosition="362" endLine="59" endPosition="13">
       <varInfo nodeId="7778014252725745878" varName="scope" />
       <varInfo nodeId="7778014252725745890" varName="mDecls" />
       <varInfo nodeId="6958036945086235647" varName="classConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1216647860302" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="32" startPosition="35" endLine="117" endPosition="5" />
-    <unitInfo nodeId="7778014252725745937" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="49" startPosition="133" endLine="53" endPosition="9" unitName="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix$2" />
-    <unitInfo nodeId="7778014252725745899" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="39" startPosition="61" endLine="47" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix$1" />
+    <scopeInfo nodeId="1216647860302" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="31" startPosition="35" endLine="116" endPosition="5" />
+    <unitInfo nodeId="7778014252725745937" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="48" startPosition="133" endLine="52" endPosition="9" unitName="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix$2" />
+    <unitInfo nodeId="7778014252725745899" fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="38" startPosition="60" endLine="46" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix$1" />
   </root>
   <root nodeId="1216647988572">
     <nodeInfo nodeId="1241544086934" fileName="SetConstructorDeclaration_QuickFix.java" startLine="17" startPosition="35" endLine="18" endPosition="239" />
@@ -4045,21 +4045,21 @@
     <scopeInfo nodeId="1230476723780" fileName="Class_Void_weak_supertypeof_void_SubtypingRule.java" startLine="22" startPosition="91" endLine="23" endPosition="124" />
   </root>
   <root nodeId="1236166392793">
-    <nodeInfo nodeId="7447106258752476412" fileName="TypesystemDescriptor.java" startLine="845" startPosition="103" endLine="846" endPosition="98" />
-    <nodeInfo nodeId="1236617969358" fileName="TypesystemDescriptor.java" startLine="965" startPosition="206" endLine="966" endPosition="20" />
-    <nodeInfo nodeId="1236617995671" fileName="TypesystemDescriptor.java" startLine="967" startPosition="14" endLine="968" endPosition="81" />
-    <nodeInfo nodeId="1239449491701" fileName="TypesystemDescriptor.java" startLine="1020" startPosition="99" endLine="1021" endPosition="124" />
-    <nodeInfo nodeId="3860149536565525602" fileName="TypesystemDescriptor.java" startLine="1089" startPosition="99" endLine="1090" endPosition="29" />
-    <nodeInfo nodeId="6361444434083817749" fileName="TypesystemDescriptor.java" startLine="1141" startPosition="99" endLine="1142" endPosition="124" />
-    <nodeInfo nodeId="1236617781626" fileName="TypesystemDescriptor.java" startLine="967" startPosition="12" endLine="969" endPosition="7" />
-    <nodeInfo nodeId="1236617781612" fileName="TypesystemDescriptor.java" startLine="964" startPosition="99" endLine="969" endPosition="7" />
-    <scopeInfo nodeId="1533154877881631952" fileName="TypesystemDescriptor.java" startLine="845" startPosition="103" endLine="846" endPosition="98" />
-    <scopeInfo nodeId="1236617781613" fileName="TypesystemDescriptor.java" startLine="965" startPosition="206" endLine="966" endPosition="20" />
-    <scopeInfo nodeId="1236617781627" fileName="TypesystemDescriptor.java" startLine="967" startPosition="14" endLine="968" endPosition="81" />
-    <scopeInfo nodeId="1239449442589" fileName="TypesystemDescriptor.java" startLine="1020" startPosition="99" endLine="1021" endPosition="124" />
-    <scopeInfo nodeId="3860149536565525575" fileName="TypesystemDescriptor.java" startLine="1089" startPosition="99" endLine="1090" endPosition="29" />
-    <scopeInfo nodeId="6361444434083801799" fileName="TypesystemDescriptor.java" startLine="1141" startPosition="99" endLine="1142" endPosition="124" />
-    <scopeInfo nodeId="1236166412688" fileName="TypesystemDescriptor.java" startLine="964" startPosition="99" endLine="969" endPosition="7" />
+    <nodeInfo nodeId="7447106258752476412" fileName="TypesystemDescriptor.java" startLine="841" startPosition="103" endLine="842" endPosition="98" />
+    <nodeInfo nodeId="1236617969358" fileName="TypesystemDescriptor.java" startLine="961" startPosition="206" endLine="962" endPosition="20" />
+    <nodeInfo nodeId="1236617995671" fileName="TypesystemDescriptor.java" startLine="963" startPosition="14" endLine="964" endPosition="81" />
+    <nodeInfo nodeId="1239449491701" fileName="TypesystemDescriptor.java" startLine="1016" startPosition="99" endLine="1017" endPosition="124" />
+    <nodeInfo nodeId="3860149536565525602" fileName="TypesystemDescriptor.java" startLine="1085" startPosition="99" endLine="1086" endPosition="29" />
+    <nodeInfo nodeId="6361444434083817749" fileName="TypesystemDescriptor.java" startLine="1137" startPosition="99" endLine="1138" endPosition="124" />
+    <nodeInfo nodeId="1236617781626" fileName="TypesystemDescriptor.java" startLine="963" startPosition="12" endLine="965" endPosition="7" />
+    <nodeInfo nodeId="1236617781612" fileName="TypesystemDescriptor.java" startLine="960" startPosition="99" endLine="965" endPosition="7" />
+    <scopeInfo nodeId="1533154877881631952" fileName="TypesystemDescriptor.java" startLine="841" startPosition="103" endLine="842" endPosition="98" />
+    <scopeInfo nodeId="1236617781613" fileName="TypesystemDescriptor.java" startLine="961" startPosition="206" endLine="962" endPosition="20" />
+    <scopeInfo nodeId="1236617781627" fileName="TypesystemDescriptor.java" startLine="963" startPosition="14" endLine="964" endPosition="81" />
+    <scopeInfo nodeId="1239449442589" fileName="TypesystemDescriptor.java" startLine="1016" startPosition="99" endLine="1017" endPosition="124" />
+    <scopeInfo nodeId="3860149536565525575" fileName="TypesystemDescriptor.java" startLine="1085" startPosition="99" endLine="1086" endPosition="29" />
+    <scopeInfo nodeId="6361444434083801799" fileName="TypesystemDescriptor.java" startLine="1137" startPosition="99" endLine="1138" endPosition="124" />
+    <scopeInfo nodeId="1236166412688" fileName="TypesystemDescriptor.java" startLine="960" startPosition="99" endLine="965" endPosition="7" />
   </root>
   <root nodeId="1236695950918">
     <nodeInfo nodeId="1236697384391" fileName="typeof_VarVariableReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="51" />
@@ -4421,19 +4421,6 @@
   <root nodeId="2792650810919436247">
     <nodeInfo nodeId="2792650810919441670" fileName="typevar_comparable_with_classifier_type_ComparisonRule.java" startLine="13" startPosition="58" endLine="14" endPosition="16" />
     <scopeInfo nodeId="2792650810919436249" fileName="typevar_comparable_with_classifier_type_ComparisonRule.java" startLine="13" startPosition="58" endLine="14" endPosition="16" />
-  </root>
-  <root nodeId="2913480580301821154">
-    <nodeInfo nodeId="2913480580301828893" fileName="check_StaticMethodScope_NonTypesystemRule.java" startLine="26" startPosition="102" endLine="27" endPosition="267" />
-    <nodeInfo nodeId="2913480580301828959" fileName="check_StaticMethodScope_NonTypesystemRule.java" startLine="29" startPosition="7" endLine="30" endPosition="55" />
-    <nodeInfo nodeId="2913480580301828959" fileName="check_StaticMethodScope_NonTypesystemRule.java" startLine="30" startPosition="55" endLine="31" endPosition="57" />
-    <nodeInfo nodeId="2913480580301828959" fileName="check_StaticMethodScope_NonTypesystemRule.java" startLine="31" startPosition="57" endLine="32" endPosition="266" />
-    <nodeInfo nodeId="2913480580301828959" fileName="check_StaticMethodScope_NonTypesystemRule.java" startLine="28" startPosition="136" endLine="33" endPosition="7" />
-    <nodeInfo nodeId="2913480580301828910" fileName="check_StaticMethodScope_NonTypesystemRule.java" startLine="27" startPosition="267" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="2913480580301828959" fileName="check_StaticMethodScope_NonTypesystemRule.java" startLine="29" startPosition="7" endLine="32" endPosition="266" />
-    <scopeInfo nodeId="2913480580301828911" fileName="check_StaticMethodScope_NonTypesystemRule.java" startLine="28" startPosition="136" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="2913480580301821155" fileName="check_StaticMethodScope_NonTypesystemRule.java" startLine="26" startPosition="102" endLine="34" endPosition="5">
-      <varInfo nodeId="2913480580301828894" varName="staticMethods" />
-    </scopeInfo>
   </root>
   <root nodeId="2925336694746290132">
     <nodeInfo nodeId="2925336694746295064" fileName="check_AnonymousClassHasConstructorDeclaration_NonTypesystemRule.java" startLine="20" startPosition="100" endLine="21" endPosition="109" />
@@ -5104,13 +5091,13 @@
     <nodeInfo nodeId="554301099359820442" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="22" startPosition="55" endLine="23" endPosition="217" />
     <nodeInfo nodeId="554301099359820442" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="23" startPosition="217" endLine="24" endPosition="56" />
     <nodeInfo nodeId="554301099359820442" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="24" startPosition="56" endLine="25" endPosition="418" />
-    <nodeInfo nodeId="554301099359820389" fileName="TypesystemDescriptor.java" startLine="939" startPosition="60" endLine="940" endPosition="57" />
-    <nodeInfo nodeId="554301099359820393" fileName="TypesystemDescriptor.java" startLine="941" startPosition="11" endLine="942" endPosition="22" />
-    <nodeInfo nodeId="554301099359820380" fileName="TypesystemDescriptor.java" startLine="938" startPosition="54" endLine="941" endPosition="11" />
+    <nodeInfo nodeId="554301099359820389" fileName="TypesystemDescriptor.java" startLine="935" startPosition="60" endLine="936" endPosition="57" />
+    <nodeInfo nodeId="554301099359820393" fileName="TypesystemDescriptor.java" startLine="937" startPosition="11" endLine="938" endPosition="22" />
+    <nodeInfo nodeId="554301099359820380" fileName="TypesystemDescriptor.java" startLine="934" startPosition="54" endLine="937" endPosition="11" />
     <nodeInfo nodeId="554301099359820442" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="19" startPosition="88" endLine="26" endPosition="7" />
     <nodeInfo nodeId="554301099359820435" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="18" startPosition="105" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="554301099359820388" fileName="TypesystemDescriptor.java" startLine="939" startPosition="60" endLine="940" endPosition="57" />
-    <scopeInfo nodeId="554301099359820379" fileName="TypesystemDescriptor.java" startLine="938" startPosition="54" endLine="942" endPosition="22" />
+    <scopeInfo nodeId="554301099359820388" fileName="TypesystemDescriptor.java" startLine="935" startPosition="60" endLine="936" endPosition="57" />
+    <scopeInfo nodeId="554301099359820379" fileName="TypesystemDescriptor.java" startLine="934" startPosition="54" endLine="938" endPosition="22" />
     <scopeInfo nodeId="554301099359820442" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="20" startPosition="7" endLine="25" endPosition="418" />
     <scopeInfo nodeId="554301099359820441" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="19" startPosition="88" endLine="26" endPosition="7" />
     <scopeInfo nodeId="554301099359820395" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="18" startPosition="105" endLine="27" endPosition="5" />

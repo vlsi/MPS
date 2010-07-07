@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.smodel.SNodePointer;
@@ -27,7 +25,10 @@ public class StaticMethodCall_staticMethodDeclaration_ReferentConstraint extends
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new ClassifierVisibleStaticMembersScope(((ClassConcept) SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getReferenceNode(), "classConcept", false))), _context.getReferenceNode(), IClassifiersSearchScope.STATIC_METHOD);
+    return new ClassifierVisibleStaticMembersScope(SLinkOperations.getTarget(_context.getReferenceNode(), "classConcept", false), ((_context.getReferenceNode() == null) ?
+      _context.getEnclosingNode() :
+      _context.getReferenceNode()
+    ), IClassifiersSearchScope.STATIC_METHOD);
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

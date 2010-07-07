@@ -41,7 +41,7 @@ public class AllSubclassifiersScope extends AbstractClassifiersScope {
     return this.foundClassifiers;
   }
 
-  @SuppressWarnings(value = "unchecked")
+  @SuppressWarnings(value = {"unchecked"})
   private void init() {
     if (this.foundClassifiers == null) {
       this.visitedClassifiersMap = new HashMap<Classifier, Boolean>();

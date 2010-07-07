@@ -8,7 +8,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1213104836770">
-    <scopeInfo nodeId="1213104837313" fileName="StaticMethodCall_staticMethodDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="243" />
+    <scopeInfo nodeId="1213104837313" fileName="StaticMethodCall_staticMethodDeclaration_ReferentConstraint.java" startLine="27" startPosition="132" endLine="31" endPosition="46" />
   </root>
   <root nodeId="1213104840445">
     <scopeInfo nodeId="1236696046359" fileName="LocalVariableReference_localVariableDeclaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="64" />
@@ -73,7 +73,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1213104847359">
-    <nodeInfo nodeId="7376433222636454175" fileName="StaticFieldReference_staticFieldDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="55" />
+    <nodeInfo nodeId="7376433222636454175" fileName="StaticFieldReference_staticFieldDeclaration_ReferentConstraint.java" startLine="27" startPosition="132" endLine="28" endPosition="55" />
     <nodeInfo nodeId="2917735983971165994" fileName="StaticFieldReference_classifier_ReferentConstraint.java" startLine="45" startPosition="48" endLine="46" endPosition="92" />
     <nodeInfo nodeId="2917735983971166007" fileName="StaticFieldReference_classifier_ReferentConstraint.java" startLine="46" startPosition="92" endLine="47" endPosition="210" />
     <nodeInfo nodeId="2917735983971217874" fileName="StaticFieldReference_classifier_ReferentConstraint.java" startLine="47" startPosition="210" endLine="48" endPosition="0" />
@@ -98,8 +98,8 @@
     <scopeInfo nodeId="2917735983971148572" fileName="StaticFieldReference_classifier_ReferentConstraint.java" startLine="54" startPosition="53" endLine="55" endPosition="21" />
     <scopeInfo nodeId="7708004186056151469" fileName="StaticFieldReference_classifier_ReferentConstraint.java" startLine="63" startPosition="45" endLine="64" endPosition="108" />
     <scopeInfo nodeId="7708004186056133462" fileName="StaticFieldReference_classifier_ReferentConstraint.java" startLine="66" startPosition="135" endLine="67" endPosition="21" />
-    <scopeInfo nodeId="1213104847362" fileName="StaticFieldReference_staticFieldDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="31" endPosition="238" />
     <scopeInfo nodeId="7708004186056151468" fileName="StaticFieldReference_classifier_ReferentConstraint.java" startLine="62" startPosition="80" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1213104847362" fileName="StaticFieldReference_staticFieldDeclaration_ReferentConstraint.java" startLine="27" startPosition="132" endLine="32" endPosition="45" />
     <scopeInfo nodeId="4074304533012453632" fileName="StaticFieldReference_classifier_ReferentConstraint.java" startLine="50" startPosition="85" endLine="69" endPosition="33">
       <varInfo nodeId="7708004186056132086" varName="ancestors" />
     </scopeInfo>
@@ -136,9 +136,9 @@
   </root>
   <root nodeId="1213104855712">
     <nodeInfo nodeId="1213104855716" fileName="SuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="150" />
-    <nodeInfo nodeId="1213104855725" fileName="SuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="29" startPosition="150" endLine="30" endPosition="199" />
+    <nodeInfo nodeId="1213104855725" fileName="SuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="29" startPosition="150" endLine="33" endPosition="7" />
     <scopeInfo nodeId="2043122710974594131" fileName="SuperMethodCall_Constraints.java" startLine="9" startPosition="114" endLine="10" endPosition="85" />
-    <scopeInfo nodeId="1213104855715" fileName="SuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="30" endPosition="199">
+    <scopeInfo nodeId="1213104855715" fileName="SuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="33" endPosition="7">
       <varInfo nodeId="1213104855717" varName="enclosingClass" />
     </scopeInfo>
   </root>
@@ -174,8 +174,8 @@
     <scopeInfo nodeId="1213104856608" fileName="IValidIdentifier_name_PropertyConstraint.java" startLine="24" startPosition="130" endLine="25" endPosition="97" />
   </root>
   <root nodeId="1213104856628">
-    <nodeInfo nodeId="7376433222636453335" fileName="EnumConstantReference_enumConstantDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="49" />
-    <scopeInfo nodeId="1213104856631" fileName="EnumConstantReference_enumConstantDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="31" endPosition="237" />
+    <nodeInfo nodeId="7376433222636453335" fileName="EnumConstantReference_enumConstantDeclaration_ReferentConstraint.java" startLine="27" startPosition="132" endLine="28" endPosition="49" />
+    <scopeInfo nodeId="1213104856631" fileName="EnumConstantReference_enumConstantDeclaration_ReferentConstraint.java" startLine="27" startPosition="132" endLine="32" endPosition="46" />
   </root>
   <root nodeId="1213104856698">
     <nodeInfo nodeId="7376433222636453953" fileName="ParameterReference_parameterDeclaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="47" />
@@ -207,9 +207,9 @@
     </scopeInfo>
   </root>
   <root nodeId="1213104858632">
-    <nodeInfo nodeId="1213104858636" fileName="LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="145" />
-    <nodeInfo nodeId="1213104858644" fileName="LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint.java" startLine="30" startPosition="145" endLine="31" endPosition="173" />
-    <scopeInfo nodeId="1213104858635" fileName="LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="31" endPosition="173">
+    <nodeInfo nodeId="1213104858636" fileName="LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="145" />
+    <nodeInfo nodeId="1213104858644" fileName="LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint.java" startLine="29" startPosition="145" endLine="33" endPosition="45" />
+    <scopeInfo nodeId="1213104858635" fileName="LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="33" endPosition="45">
       <varInfo nodeId="1213104858637" varName="classifier" />
     </scopeInfo>
   </root>
@@ -245,11 +245,11 @@
     </scopeInfo>
   </root>
   <root nodeId="1213104860474">
-    <nodeInfo nodeId="7376433222636454083" fileName="FieldReferenceOperation_fieldDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="33" endPosition="124" />
-    <nodeInfo nodeId="1213104860478" fileName="FieldReferenceOperation_fieldDeclaration_ReferentConstraint.java" startLine="33" startPosition="124" endLine="34" endPosition="169" />
-    <nodeInfo nodeId="1213104860485" fileName="FieldReferenceOperation_fieldDeclaration_ReferentConstraint.java" startLine="34" startPosition="169" endLine="35" endPosition="234" />
-    <nodeInfo nodeId="1213104860493" fileName="FieldReferenceOperation_fieldDeclaration_ReferentConstraint.java" startLine="35" startPosition="234" endLine="36" endPosition="177" />
-    <scopeInfo nodeId="1213104860477" fileName="FieldReferenceOperation_fieldDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="36" endPosition="177">
+    <nodeInfo nodeId="7376433222636454083" fileName="FieldReferenceOperation_fieldDeclaration_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="124" />
+    <nodeInfo nodeId="1213104860478" fileName="FieldReferenceOperation_fieldDeclaration_ReferentConstraint.java" startLine="32" startPosition="124" endLine="33" endPosition="169" />
+    <nodeInfo nodeId="1213104860485" fileName="FieldReferenceOperation_fieldDeclaration_ReferentConstraint.java" startLine="33" startPosition="169" endLine="34" endPosition="234" />
+    <nodeInfo nodeId="1213104860493" fileName="FieldReferenceOperation_fieldDeclaration_ReferentConstraint.java" startLine="34" startPosition="234" endLine="38" endPosition="47" />
+    <scopeInfo nodeId="1213104860477" fileName="FieldReferenceOperation_fieldDeclaration_ReferentConstraint.java" startLine="31" startPosition="132" endLine="38" endPosition="47">
       <varInfo nodeId="1213104860486" varName="classifierType" />
       <varInfo nodeId="1213104860479" varName="instance" />
     </scopeInfo>

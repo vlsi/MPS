@@ -2756,12 +2756,9 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1213877306275">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1213877306276">
-                <link role="baseMethodDeclaration:3" targetNodeId="7.~ClassifierVisibleMembersScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.ClassifierType,jetbrains.mps.smodel.SNode,int)" resolveInfo="ClassifierVisibleMembersScope" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213877306277">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1213877306278">
-                    <link role="variableDeclaration:3" targetNodeId="1213877306261" resolveInfo="ct" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation:16" id="1213877306279" />
+                <link role="baseMethodDeclaration:3" targetNodeId="7.~ClassifierVisibleMembersScope.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,int)" resolveInfo="ClassifierVisibleMembersScope" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1213877306278">
+                  <link role="variableDeclaration:3" targetNodeId="1213877306261" resolveInfo="ct" />
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1213877306280">
                   <link role="variableDeclaration:3" targetNodeId="1213877306288" resolveInfo="contextNode" />

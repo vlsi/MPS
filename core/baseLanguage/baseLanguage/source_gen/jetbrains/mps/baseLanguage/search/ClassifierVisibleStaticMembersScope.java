@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.search;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -15,7 +13,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ClassifierVisibleStaticMembersScope extends ClassifierVisibleMembersScope {
   public ClassifierVisibleStaticMembersScope(@Nullable Classifier classifier, @Nullable SNode contextNode, int constraint) {
-    super(((ClassifierType) SNodeOperations.getAdapter(ClassifierVisibleStaticMembersScope.toClassifierType(classifier))), contextNode, constraint);
+    super(ClassifierVisibleStaticMembersScope.toClassifierType(classifier), contextNode, constraint);
     if ((constraint & IClassifiersSearchScope.STATIC_MEMBER) != constraint) {
       throw new IllegalArgumentException("only static members are applicable");
     }

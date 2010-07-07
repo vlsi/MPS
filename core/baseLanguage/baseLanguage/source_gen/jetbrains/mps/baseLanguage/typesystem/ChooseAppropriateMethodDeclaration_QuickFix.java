@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import java.util.List;
 import jetbrains.mps.util.Condition;
@@ -35,8 +34,8 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
         SLinkOperations.getTarget(SNodeOperations.cast(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false) :
         SNodeOperations.getAncestor(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)
       );
-      ClassifierVisibleMembersScope scope = new ClassifierVisibleStaticMembersScope(((ClassConcept) SNodeOperations.getAdapter(classConcept)), ((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), IClassifiersSearchScope.STATIC_METHOD);
-      List<SNode> mDecls = ((List<SNode>) scope.getNodes(new Condition<SNode>() {
+      ClassifierVisibleMembersScope scope = new ClassifierVisibleStaticMembersScope(classConcept, ((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), IClassifiersSearchScope.STATIC_METHOD);
+      List<SNode> mDecls = (List<SNode>) scope.getNodes(new Condition<SNode>() {
         public boolean met(SNode n) {
           String name = SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name");
           if (name != null) {
@@ -44,7 +43,7 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
           }
           return false;
         }
-      }));
+      });
       for (SNode methodDecl : mDecls) {
         Iterable<SNode> parameterTypes = ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "parameter", true)).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {

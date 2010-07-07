@@ -14,7 +14,6 @@ import jetbrains.mps.baseLanguage.icons.Icons;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -47,7 +46,7 @@ public class Classifier_Behavior {
   public static List<SNode> call_getVisibleMembers_1213877306257(SNode thisNode, SNode contextNode, int constraint) {
     SNode ct = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(ct, "classifier", thisNode, false);
-    ISearchScope ss = new ClassifierVisibleMembersScope(((ClassifierType) SNodeOperations.getAdapter(ct)), contextNode, constraint);
+    ISearchScope ss = new ClassifierVisibleMembersScope(ct, contextNode, constraint);
     return (List<SNode>) ss.getNodes();
   }
 

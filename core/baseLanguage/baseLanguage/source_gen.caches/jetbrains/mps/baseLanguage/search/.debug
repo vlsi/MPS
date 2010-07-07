@@ -2419,118 +2419,87 @@
     <unitInfo nodeId="3161373106581142361" fileName="MethodResolveUtil.java" startLine="32" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.MethodResolveUtil" />
   </root>
   <root nodeId="3161373106581143187">
-    <nodeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="28" startPosition="72" endLine="29" endPosition="84" />
-    <nodeInfo nodeId="3161373106581143190" fileName="ClassifierVisibleMembersScope.java" startLine="30" startPosition="0" endLine="31" endPosition="36" />
-    <nodeInfo nodeId="3161373106581143193" fileName="ClassifierVisibleMembersScope.java" startLine="31" startPosition="36" endLine="32" endPosition="69" />
-    <nodeInfo nodeId="3161373106581143196" fileName="ClassifierVisibleMembersScope.java" startLine="32" startPosition="69" endLine="33" endPosition="33" />
-    <nodeInfo nodeId="3573019447813594794" fileName="ClassifierVisibleMembersScope.java" startLine="36" startPosition="126" endLine="37" endPosition="147" />
-    <nodeInfo nodeId="3573019447813594750" fileName="ClassifierVisibleMembersScope.java" startLine="40" startPosition="117" endLine="41" endPosition="43" />
-    <nodeInfo nodeId="3573019447813594756" fileName="ClassifierVisibleMembersScope.java" startLine="41" startPosition="43" endLine="42" endPosition="37" />
-    <nodeInfo nodeId="3573019447813594762" fileName="ClassifierVisibleMembersScope.java" startLine="42" startPosition="37" endLine="43" endPosition="187" />
-    <nodeInfo nodeId="3161373106581143246" fileName="ClassifierVisibleMembersScope.java" startLine="47" startPosition="59" endLine="48" endPosition="48" />
-    <nodeInfo nodeId="3161373106581143268" fileName="ClassifierVisibleMembersScope.java" startLine="50" startPosition="34" endLine="51" endPosition="57" />
-    <nodeInfo nodeId="3161373106581143275" fileName="ClassifierVisibleMembersScope.java" startLine="53" startPosition="5" endLine="54" endPosition="18" />
-    <nodeInfo nodeId="796630260765131582" fileName="ClassifierVisibleMembersScope.java" startLine="59" startPosition="33" endLine="60" endPosition="87" />
-    <nodeInfo nodeId="9012409529533527644" fileName="ClassifierVisibleMembersScope.java" startLine="61" startPosition="7" endLine="62" endPosition="35" />
-    <nodeInfo nodeId="9012409529533527661" fileName="ClassifierVisibleMembersScope.java" startLine="63" startPosition="5" endLine="64" endPosition="287" />
-    <nodeInfo nodeId="3573019447813594424" fileName="ClassifierVisibleMembersScope.java" startLine="67" startPosition="46" endLine="68" endPosition="57" />
-    <nodeInfo nodeId="3161373106581143293" fileName="ClassifierVisibleMembersScope.java" startLine="68" startPosition="57" endLine="69" endPosition="48" />
-    <nodeInfo nodeId="3573019447813594507" fileName="ClassifierVisibleMembersScope.java" startLine="70" startPosition="38" endLine="71" endPosition="111" />
-    <nodeInfo nodeId="3161373106581143313" fileName="ClassifierVisibleMembersScope.java" startLine="72" startPosition="85" endLine="73" endPosition="57" />
-    <nodeInfo nodeId="3161373106581143318" fileName="ClassifierVisibleMembersScope.java" startLine="75" startPosition="5" endLine="76" endPosition="18" />
-    <nodeInfo nodeId="3161373106581143369" fileName="ClassifierVisibleMembersScope.java" startLine="89" startPosition="95" endLine="90" endPosition="97" />
-    <nodeInfo nodeId="3161373106581143388" fileName="ClassifierVisibleMembersScope.java" startLine="91" startPosition="207" endLine="92" endPosition="245" />
-    <nodeInfo nodeId="3161373106581143351" fileName="ClassifierVisibleMembersScope.java" startLine="96" startPosition="95" endLine="97" endPosition="247" />
-    <nodeInfo nodeId="3161373106581143405" fileName="ClassifierVisibleMembersScope.java" startLine="100" startPosition="5" endLine="101" endPosition="89" />
-    <nodeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="105" startPosition="20" endLine="106" endPosition="18" />
-    <nodeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="107" startPosition="5" endLine="108" endPosition="23" />
-    <nodeInfo nodeId="3161373106581143260" fileName="ClassifierVisibleMembersScope.java" startLine="49" startPosition="54" endLine="52" endPosition="7" />
-    <nodeInfo nodeId="796630260765131582" fileName="ClassifierVisibleMembersScope.java" startLine="58" startPosition="130" endLine="61" endPosition="7" />
-    <nodeInfo nodeId="3161373106581143305" fileName="ClassifierVisibleMembersScope.java" startLine="71" startPosition="111" endLine="74" endPosition="7" />
-    <nodeInfo nodeId="3161373106581143377" fileName="ClassifierVisibleMembersScope.java" startLine="90" startPosition="97" endLine="93" endPosition="9" />
-    <nodeInfo nodeId="3161373106581143344" fileName="ClassifierVisibleMembersScope.java" startLine="95" startPosition="97" endLine="98" endPosition="9" />
-    <nodeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="104" startPosition="61" endLine="107" endPosition="5" />
-    <nodeInfo nodeId="3161373106581143199" fileName="ClassifierVisibleMembersScope.java" startLine="34" startPosition="0" endLine="38" endPosition="3" />
-    <nodeInfo nodeId="3580083550116336458" fileName="ClassifierVisibleMembersScope.java" startLine="80" startPosition="67" endLine="84" endPosition="0" />
-    <nodeInfo nodeId="3573019447813594739" fileName="ClassifierVisibleMembersScope.java" startLine="39" startPosition="0" endLine="44" endPosition="3" />
-    <nodeInfo nodeId="3161373106581143253" fileName="ClassifierVisibleMembersScope.java" startLine="48" startPosition="48" endLine="53" endPosition="5" />
-    <nodeInfo nodeId="3580083550116336469" fileName="ClassifierVisibleMembersScope.java" startLine="79" startPosition="51" endLine="84" endPosition="7" />
-    <nodeInfo nodeId="3161373106581143339" fileName="ClassifierVisibleMembersScope.java" startLine="94" startPosition="12" endLine="99" endPosition="7" />
-    <nodeInfo nodeId="9012409529533527622" fileName="ClassifierVisibleMembersScope.java" startLine="57" startPosition="40" endLine="63" endPosition="5" />
-    <nodeInfo nodeId="3161373106581143300" fileName="ClassifierVisibleMembersScope.java" startLine="69" startPosition="48" endLine="75" endPosition="5" />
-    <nodeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="103" startPosition="0" endLine="110" endPosition="0" />
-    <nodeInfo nodeId="3580083550116336441" fileName="ClassifierVisibleMembersScope.java" startLine="78" startPosition="0" endLine="86" endPosition="0" />
-    <nodeInfo nodeId="9012409529533519518" fileName="ClassifierVisibleMembersScope.java" startLine="56" startPosition="0" endLine="66" endPosition="0" />
-    <nodeInfo nodeId="3161373106581143238" fileName="ClassifierVisibleMembersScope.java" startLine="45" startPosition="0" endLine="56" endPosition="0" />
-    <nodeInfo nodeId="3161373106581143335" fileName="ClassifierVisibleMembersScope.java" startLine="88" startPosition="40" endLine="99" endPosition="7" />
-    <nodeInfo nodeId="3161373106581143278" fileName="ClassifierVisibleMembersScope.java" startLine="66" startPosition="0" endLine="78" endPosition="0" />
-    <nodeInfo nodeId="3161373106581143328" fileName="ClassifierVisibleMembersScope.java" startLine="87" startPosition="121" endLine="100" endPosition="5" />
-    <nodeInfo nodeId="3161373106581143320" fileName="ClassifierVisibleMembersScope.java" startLine="86" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="3161373106581143209" fileName="ClassifierVisibleMembersScope.java" startLine="36" startPosition="126" endLine="37" endPosition="147" />
-    <scopeInfo nodeId="3161373106581143267" fileName="ClassifierVisibleMembersScope.java" startLine="50" startPosition="34" endLine="51" endPosition="57" />
-    <scopeInfo nodeId="796630260765131582" fileName="ClassifierVisibleMembersScope.java" startLine="59" startPosition="33" endLine="60" endPosition="87" />
-    <scopeInfo nodeId="3161373106581143312" fileName="ClassifierVisibleMembersScope.java" startLine="72" startPosition="85" endLine="73" endPosition="57" />
-    <scopeInfo nodeId="3580083550116336462" fileName="ClassifierVisibleMembersScope.java" startLine="81" startPosition="38" endLine="82" endPosition="107" />
-    <scopeInfo nodeId="3161373106581143387" fileName="ClassifierVisibleMembersScope.java" startLine="91" startPosition="207" endLine="92" endPosition="245" />
-    <scopeInfo nodeId="3161373106581143350" fileName="ClassifierVisibleMembersScope.java" startLine="96" startPosition="95" endLine="97" endPosition="247" />
-    <scopeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="105" startPosition="20" endLine="106" endPosition="18" />
-    <scopeInfo nodeId="3573019447813594749" fileName="ClassifierVisibleMembersScope.java" startLine="40" startPosition="117" endLine="43" endPosition="187" />
-    <scopeInfo nodeId="3161373106581143259" fileName="ClassifierVisibleMembersScope.java" startLine="49" startPosition="54" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="796630260765131582" fileName="ClassifierVisibleMembersScope.java" startLine="58" startPosition="130" endLine="61" endPosition="7" />
-    <scopeInfo nodeId="3161373106581143343" fileName="ClassifierVisibleMembersScope.java" startLine="95" startPosition="97" endLine="98" endPosition="9" />
-    <scopeInfo nodeId="3161373106581143199" fileName="ClassifierVisibleMembersScope.java" startLine="34" startPosition="0" endLine="38" endPosition="3">
+    <nodeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="26" startPosition="72" endLine="27" endPosition="84" />
+    <nodeInfo nodeId="169011195923766810" fileName="ClassifierVisibleMembersScope.java" startLine="28" startPosition="0" endLine="29" endPosition="33" />
+    <nodeInfo nodeId="3161373106581143190" fileName="ClassifierVisibleMembersScope.java" startLine="29" startPosition="33" endLine="30" endPosition="36" />
+    <nodeInfo nodeId="3161373106581143193" fileName="ClassifierVisibleMembersScope.java" startLine="30" startPosition="36" endLine="31" endPosition="69" />
+    <nodeInfo nodeId="3573019447813594794" fileName="ClassifierVisibleMembersScope.java" startLine="34" startPosition="126" endLine="35" endPosition="147" />
+    <nodeInfo nodeId="3573019447813594750" fileName="ClassifierVisibleMembersScope.java" startLine="38" startPosition="117" endLine="39" endPosition="43" />
+    <nodeInfo nodeId="3573019447813594756" fileName="ClassifierVisibleMembersScope.java" startLine="39" startPosition="43" endLine="40" endPosition="37" />
+    <nodeInfo nodeId="3573019447813594762" fileName="ClassifierVisibleMembersScope.java" startLine="40" startPosition="37" endLine="41" endPosition="187" />
+    <nodeInfo nodeId="169011195923765461" fileName="ClassifierVisibleMembersScope.java" startLine="47" startPosition="38" endLine="48" endPosition="105" />
+    <nodeInfo nodeId="169011195923766841" fileName="ClassifierVisibleMembersScope.java" startLine="48" startPosition="105" endLine="49" endPosition="135" />
+    <nodeInfo nodeId="796630260765131582" fileName="ClassifierVisibleMembersScope.java" startLine="56" startPosition="33" endLine="57" endPosition="87" />
+    <nodeInfo nodeId="9012409529533527644" fileName="ClassifierVisibleMembersScope.java" startLine="58" startPosition="7" endLine="59" endPosition="35" />
+    <nodeInfo nodeId="9012409529533527661" fileName="ClassifierVisibleMembersScope.java" startLine="60" startPosition="5" endLine="61" endPosition="287" />
+    <nodeInfo nodeId="3161373106581143369" fileName="ClassifierVisibleMembersScope.java" startLine="66" startPosition="95" endLine="67" endPosition="97" />
+    <nodeInfo nodeId="3161373106581143388" fileName="ClassifierVisibleMembersScope.java" startLine="68" startPosition="207" endLine="69" endPosition="245" />
+    <nodeInfo nodeId="3161373106581143351" fileName="ClassifierVisibleMembersScope.java" startLine="73" startPosition="95" endLine="74" endPosition="247" />
+    <nodeInfo nodeId="3161373106581143405" fileName="ClassifierVisibleMembersScope.java" startLine="77" startPosition="5" endLine="78" endPosition="89" />
+    <nodeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="82" startPosition="20" endLine="83" endPosition="18" />
+    <nodeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="84" startPosition="5" endLine="85" endPosition="23" />
+    <nodeInfo nodeId="796630260765131582" fileName="ClassifierVisibleMembersScope.java" startLine="55" startPosition="130" endLine="58" endPosition="7" />
+    <nodeInfo nodeId="3161373106581143377" fileName="ClassifierVisibleMembersScope.java" startLine="67" startPosition="97" endLine="70" endPosition="9" />
+    <nodeInfo nodeId="3161373106581143344" fileName="ClassifierVisibleMembersScope.java" startLine="72" startPosition="97" endLine="75" endPosition="9" />
+    <nodeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="81" startPosition="61" endLine="84" endPosition="5" />
+    <nodeInfo nodeId="3161373106581143199" fileName="ClassifierVisibleMembersScope.java" startLine="32" startPosition="0" endLine="36" endPosition="3" />
+    <nodeInfo nodeId="3573019447813594739" fileName="ClassifierVisibleMembersScope.java" startLine="37" startPosition="0" endLine="42" endPosition="3" />
+    <nodeInfo nodeId="169011195923765452" fileName="ClassifierVisibleMembersScope.java" startLine="46" startPosition="62" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="3161373106581143339" fileName="ClassifierVisibleMembersScope.java" startLine="71" startPosition="12" endLine="76" endPosition="7" />
+    <nodeInfo nodeId="169011195923754439" fileName="ClassifierVisibleMembersScope.java" startLine="45" startPosition="65" endLine="51" endPosition="7" />
+    <nodeInfo nodeId="9012409529533527622" fileName="ClassifierVisibleMembersScope.java" startLine="54" startPosition="40" endLine="60" endPosition="5" />
+    <nodeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="80" startPosition="0" endLine="87" endPosition="0" />
+    <nodeInfo nodeId="3161373106581143238" fileName="ClassifierVisibleMembersScope.java" startLine="43" startPosition="0" endLine="53" endPosition="0" />
+    <nodeInfo nodeId="9012409529533519518" fileName="ClassifierVisibleMembersScope.java" startLine="53" startPosition="0" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="3161373106581143335" fileName="ClassifierVisibleMembersScope.java" startLine="65" startPosition="40" endLine="76" endPosition="7" />
+    <nodeInfo nodeId="3161373106581143328" fileName="ClassifierVisibleMembersScope.java" startLine="64" startPosition="121" endLine="77" endPosition="5" />
+    <nodeInfo nodeId="3161373106581143320" fileName="ClassifierVisibleMembersScope.java" startLine="63" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="3161373106581143209" fileName="ClassifierVisibleMembersScope.java" startLine="34" startPosition="126" endLine="35" endPosition="147" />
+    <scopeInfo nodeId="796630260765131582" fileName="ClassifierVisibleMembersScope.java" startLine="56" startPosition="33" endLine="57" endPosition="87" />
+    <scopeInfo nodeId="3161373106581143387" fileName="ClassifierVisibleMembersScope.java" startLine="68" startPosition="207" endLine="69" endPosition="245" />
+    <scopeInfo nodeId="3161373106581143350" fileName="ClassifierVisibleMembersScope.java" startLine="73" startPosition="95" endLine="74" endPosition="247" />
+    <scopeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="82" startPosition="20" endLine="83" endPosition="18" />
+    <scopeInfo nodeId="169011195923765457" fileName="ClassifierVisibleMembersScope.java" startLine="47" startPosition="38" endLine="49" endPosition="135">
+      <varInfo nodeId="169011195923765462" varName="member" />
+    </scopeInfo>
+    <scopeInfo nodeId="3573019447813594749" fileName="ClassifierVisibleMembersScope.java" startLine="38" startPosition="117" endLine="41" endPosition="187" />
+    <scopeInfo nodeId="796630260765131582" fileName="ClassifierVisibleMembersScope.java" startLine="55" startPosition="130" endLine="58" endPosition="7" />
+    <scopeInfo nodeId="3161373106581143343" fileName="ClassifierVisibleMembersScope.java" startLine="72" startPosition="97" endLine="75" endPosition="9" />
+    <scopeInfo nodeId="3161373106581143199" fileName="ClassifierVisibleMembersScope.java" startLine="32" startPosition="0" endLine="36" endPosition="3">
       <varInfo nodeId="3161373106581143204" varName="contextNode" />
       <varInfo nodeId="3161373106581143201" varName="classifierType" />
       <varInfo nodeId="3161373106581143207" varName="constraint" />
     </scopeInfo>
-    <scopeInfo nodeId="9012409529533527624" fileName="ClassifierVisibleMembersScope.java" startLine="58" startPosition="130" endLine="62" endPosition="35" />
-    <scopeInfo nodeId="3161373106581143304" fileName="ClassifierVisibleMembersScope.java" startLine="70" startPosition="38" endLine="74" endPosition="7">
-      <varInfo nodeId="3573019447813594508" varName="member" />
-    </scopeInfo>
-    <scopeInfo nodeId="3580083550116336458" fileName="ClassifierVisibleMembersScope.java" startLine="80" startPosition="67" endLine="84" endPosition="0">
-      <varInfo nodeId="3580083550116336439" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="3161373106581143368" fileName="ClassifierVisibleMembersScope.java" startLine="89" startPosition="95" endLine="93" endPosition="9">
+    <scopeInfo nodeId="9012409529533527624" fileName="ClassifierVisibleMembersScope.java" startLine="55" startPosition="130" endLine="59" endPosition="35" />
+    <scopeInfo nodeId="3161373106581143368" fileName="ClassifierVisibleMembersScope.java" startLine="66" startPosition="95" endLine="70" endPosition="9">
       <varInfo nodeId="3161373106581143370" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="104" startPosition="61" endLine="108" endPosition="23" />
-    <scopeInfo nodeId="3573019447813594739" fileName="ClassifierVisibleMembersScope.java" startLine="39" startPosition="0" endLine="44" endPosition="3">
+    <scopeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="81" startPosition="61" endLine="85" endPosition="23" />
+    <scopeInfo nodeId="3573019447813594739" fileName="ClassifierVisibleMembersScope.java" startLine="37" startPosition="0" endLine="42" endPosition="3">
       <varInfo nodeId="3573019447813594744" varName="contextNode" />
       <varInfo nodeId="3573019447813594741" varName="classifierType" />
       <varInfo nodeId="3573019447813594747" varName="constraint" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581143253" fileName="ClassifierVisibleMembersScope.java" startLine="48" startPosition="48" endLine="53" endPosition="5">
-      <varInfo nodeId="3161373106581143257" varName="member" />
+    <scopeInfo nodeId="169011195923765452" fileName="ClassifierVisibleMembersScope.java" startLine="46" startPosition="62" endLine="51" endPosition="0">
+      <varInfo nodeId="169011195923765455" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3580083550116336445" fileName="ClassifierVisibleMembersScope.java" startLine="79" startPosition="51" endLine="84" endPosition="7" />
-    <scopeInfo nodeId="3161373106581143300" fileName="ClassifierVisibleMembersScope.java" startLine="69" startPosition="48" endLine="75" endPosition="5">
-      <varInfo nodeId="3161373106581143302" varName="memberNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="3161373106581143245" fileName="ClassifierVisibleMembersScope.java" startLine="47" startPosition="59" endLine="54" endPosition="18">
-      <varInfo nodeId="3161373106581143247" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="9012409529533519521" fileName="ClassifierVisibleMembersScope.java" startLine="57" startPosition="40" endLine="64" endPosition="287" />
-    <scopeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="103" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="3580083550116336441" fileName="ClassifierVisibleMembersScope.java" startLine="78" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="3161373106581143282" fileName="ClassifierVisibleMembersScope.java" startLine="67" startPosition="46" endLine="76" endPosition="18">
-      <varInfo nodeId="3161373106581143294" varName="result" />
-      <varInfo nodeId="3573019447813594425" varName="members" />
-    </scopeInfo>
-    <scopeInfo nodeId="9012409529533519518" fileName="ClassifierVisibleMembersScope.java" startLine="56" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="9012409529533527617" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="3161373106581143238" fileName="ClassifierVisibleMembersScope.java" startLine="45" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="3161373106581143245" fileName="ClassifierVisibleMembersScope.java" startLine="45" startPosition="65" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="9012409529533519521" fileName="ClassifierVisibleMembersScope.java" startLine="54" startPosition="40" endLine="61" endPosition="287" />
+    <scopeInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="80" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="3161373106581143238" fileName="ClassifierVisibleMembersScope.java" startLine="43" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="3161373106581143242" varName="condition" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581143334" fileName="ClassifierVisibleMembersScope.java" startLine="88" startPosition="40" endLine="99" endPosition="7" />
-    <scopeInfo nodeId="3161373106581143278" fileName="ClassifierVisibleMembersScope.java" startLine="66" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="3161373106581143327" fileName="ClassifierVisibleMembersScope.java" startLine="87" startPosition="121" endLine="101" endPosition="89" />
-    <scopeInfo nodeId="3161373106581143320" fileName="ClassifierVisibleMembersScope.java" startLine="86" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="9012409529533519518" fileName="ClassifierVisibleMembersScope.java" startLine="53" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="9012409529533527617" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3161373106581143334" fileName="ClassifierVisibleMembersScope.java" startLine="65" startPosition="40" endLine="76" endPosition="7" />
+    <scopeInfo nodeId="3161373106581143327" fileName="ClassifierVisibleMembersScope.java" startLine="64" startPosition="121" endLine="78" endPosition="89" />
+    <scopeInfo nodeId="3161373106581143320" fileName="ClassifierVisibleMembersScope.java" startLine="63" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="3161373106581143323" varName="referenceNode" />
       <varInfo nodeId="3161373106581143325" varName="targetConcept" />
     </scopeInfo>
-    <unitInfo nodeId="3580083550116336456" fileName="ClassifierVisibleMembersScope.java" startLine="80" startPosition="47" endLine="84" endPosition="5" unitName="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope$1" />
-    <unitInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="28" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope" />
+    <unitInfo nodeId="169011195923765450" fileName="ClassifierVisibleMembersScope.java" startLine="46" startPosition="42" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope$1" />
+    <unitInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="26" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope" />
   </root>
   <root nodeId="3161373106581143413">
     <nodeInfo nodeId="3161373106581143425" fileName="VisibleThrowablesScope.java" startLine="16" startPosition="91" endLine="17" endPosition="42" />
@@ -2561,62 +2530,62 @@
     <unitInfo nodeId="3161373106581143413" fileName="VisibleThrowablesScope.java" startLine="15" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.VisibleThrowablesScope" />
   </root>
   <root nodeId="3161373106581143470">
-    <nodeInfo nodeId="3161373106581143484" fileName="ClassifierVisibleStaticMembersScope.java" startLine="17" startPosition="124" endLine="18" endPosition="148" />
-    <nodeInfo nodeId="3161373106581143497" fileName="ClassifierVisibleStaticMembersScope.java" startLine="19" startPosition="77" endLine="20" endPosition="79" />
-    <nodeInfo nodeId="3573019447813594675" fileName="ClassifierVisibleStaticMembersScope.java" startLine="24" startPosition="119" endLine="25" endPosition="65" />
-    <nodeInfo nodeId="3161373106581143512" fileName="ClassifierVisibleStaticMembersScope.java" startLine="29" startPosition="29" endLine="30" endPosition="18" />
-    <nodeInfo nodeId="3573019447813594653" fileName="ClassifierVisibleStaticMembersScope.java" startLine="31" startPosition="5" endLine="32" endPosition="104" />
-    <nodeInfo nodeId="3573019447813594704" fileName="ClassifierVisibleStaticMembersScope.java" startLine="36" startPosition="29" endLine="37" endPosition="18" />
-    <nodeInfo nodeId="3573019447813594706" fileName="ClassifierVisibleStaticMembersScope.java" startLine="38" startPosition="5" endLine="39" endPosition="58" />
-    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="46" startPosition="49" endLine="47" endPosition="26" />
-    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="47" startPosition="26" endLine="48" endPosition="67" />
-    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="48" startPosition="67" endLine="49" endPosition="32" />
-    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="50" startPosition="7" endLine="51" endPosition="207" />
-    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="51" startPosition="207" endLine="52" endPosition="43" />
-    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="52" startPosition="43" endLine="53" endPosition="69" />
-    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="53" startPosition="69" endLine="54" endPosition="31" />
-    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="55" startPosition="7" endLine="56" endPosition="20" />
-    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="42" startPosition="51" endLine="44" endPosition="5" />
-    <nodeInfo nodeId="3161373106581143489" fileName="ClassifierVisibleStaticMembersScope.java" startLine="18" startPosition="148" endLine="21" endPosition="5" />
-    <nodeInfo nodeId="3573019447813594661" fileName="ClassifierVisibleStaticMembersScope.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
-    <nodeInfo nodeId="3161373106581143507" fileName="ClassifierVisibleStaticMembersScope.java" startLine="28" startPosition="59" endLine="31" endPosition="5" />
-    <nodeInfo nodeId="3573019447813594699" fileName="ClassifierVisibleStaticMembersScope.java" startLine="35" startPosition="64" endLine="38" endPosition="5" />
-    <nodeInfo nodeId="3161373106581143473" fileName="ClassifierVisibleStaticMembersScope.java" startLine="16" startPosition="88" endLine="22" endPosition="3" />
-    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="49" startPosition="32" endLine="55" endPosition="7" />
-    <nodeInfo nodeId="3161373106581143501" fileName="ClassifierVisibleStaticMembersScope.java" startLine="27" startPosition="0" endLine="34" endPosition="0" />
-    <nodeInfo nodeId="3573019447813594693" fileName="ClassifierVisibleStaticMembersScope.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
-    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="45" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="43" startPosition="42" endLine="43" endPosition="42" />
-    <scopeInfo nodeId="3161373106581143496" fileName="ClassifierVisibleStaticMembersScope.java" startLine="19" startPosition="77" endLine="20" endPosition="79" />
-    <scopeInfo nodeId="3573019447813594664" fileName="ClassifierVisibleStaticMembersScope.java" startLine="24" startPosition="119" endLine="25" endPosition="65" />
-    <scopeInfo nodeId="3161373106581143511" fileName="ClassifierVisibleStaticMembersScope.java" startLine="29" startPosition="29" endLine="30" endPosition="18" />
-    <scopeInfo nodeId="3573019447813594703" fileName="ClassifierVisibleStaticMembersScope.java" startLine="36" startPosition="29" endLine="37" endPosition="18" />
-    <scopeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="42" startPosition="51" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="3573019447813594661" fileName="ClassifierVisibleStaticMembersScope.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+    <nodeInfo nodeId="3161373106581143484" fileName="ClassifierVisibleStaticMembersScope.java" startLine="15" startPosition="124" endLine="16" endPosition="101" />
+    <nodeInfo nodeId="3161373106581143497" fileName="ClassifierVisibleStaticMembersScope.java" startLine="17" startPosition="77" endLine="18" endPosition="79" />
+    <nodeInfo nodeId="3573019447813594675" fileName="ClassifierVisibleStaticMembersScope.java" startLine="22" startPosition="119" endLine="23" endPosition="65" />
+    <nodeInfo nodeId="3161373106581143512" fileName="ClassifierVisibleStaticMembersScope.java" startLine="27" startPosition="29" endLine="28" endPosition="18" />
+    <nodeInfo nodeId="3573019447813594653" fileName="ClassifierVisibleStaticMembersScope.java" startLine="29" startPosition="5" endLine="30" endPosition="104" />
+    <nodeInfo nodeId="3573019447813594704" fileName="ClassifierVisibleStaticMembersScope.java" startLine="34" startPosition="29" endLine="35" endPosition="18" />
+    <nodeInfo nodeId="3573019447813594706" fileName="ClassifierVisibleStaticMembersScope.java" startLine="36" startPosition="5" endLine="37" endPosition="58" />
+    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="44" startPosition="49" endLine="45" endPosition="26" />
+    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="45" startPosition="26" endLine="46" endPosition="67" />
+    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="46" startPosition="67" endLine="47" endPosition="32" />
+    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="48" startPosition="7" endLine="49" endPosition="207" />
+    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="49" startPosition="207" endLine="50" endPosition="43" />
+    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="50" startPosition="43" endLine="51" endPosition="69" />
+    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="51" startPosition="69" endLine="52" endPosition="31" />
+    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="53" startPosition="7" endLine="54" endPosition="20" />
+    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="40" startPosition="51" endLine="42" endPosition="5" />
+    <nodeInfo nodeId="3161373106581143489" fileName="ClassifierVisibleStaticMembersScope.java" startLine="16" startPosition="101" endLine="19" endPosition="5" />
+    <nodeInfo nodeId="3573019447813594661" fileName="ClassifierVisibleStaticMembersScope.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
+    <nodeInfo nodeId="3161373106581143507" fileName="ClassifierVisibleStaticMembersScope.java" startLine="26" startPosition="59" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="3573019447813594699" fileName="ClassifierVisibleStaticMembersScope.java" startLine="33" startPosition="64" endLine="36" endPosition="5" />
+    <nodeInfo nodeId="3161373106581143473" fileName="ClassifierVisibleStaticMembersScope.java" startLine="14" startPosition="88" endLine="20" endPosition="3" />
+    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="47" startPosition="32" endLine="53" endPosition="7" />
+    <nodeInfo nodeId="3161373106581143501" fileName="ClassifierVisibleStaticMembersScope.java" startLine="25" startPosition="0" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="3573019447813594693" fileName="ClassifierVisibleStaticMembersScope.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
+    <nodeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="41" startPosition="42" endLine="41" endPosition="42" />
+    <scopeInfo nodeId="3161373106581143496" fileName="ClassifierVisibleStaticMembersScope.java" startLine="17" startPosition="77" endLine="18" endPosition="79" />
+    <scopeInfo nodeId="3573019447813594664" fileName="ClassifierVisibleStaticMembersScope.java" startLine="22" startPosition="119" endLine="23" endPosition="65" />
+    <scopeInfo nodeId="3161373106581143511" fileName="ClassifierVisibleStaticMembersScope.java" startLine="27" startPosition="29" endLine="28" endPosition="18" />
+    <scopeInfo nodeId="3573019447813594703" fileName="ClassifierVisibleStaticMembersScope.java" startLine="34" startPosition="29" endLine="35" endPosition="18" />
+    <scopeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="40" startPosition="51" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="3573019447813594661" fileName="ClassifierVisibleStaticMembersScope.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
       <varInfo nodeId="3573019447813594668" varName="contextNode" />
       <varInfo nodeId="3573019447813594671" varName="constraint" />
       <varInfo nodeId="3573019447813594665" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581143483" fileName="ClassifierVisibleStaticMembersScope.java" startLine="17" startPosition="124" endLine="21" endPosition="5" />
-    <scopeInfo nodeId="3161373106581143506" fileName="ClassifierVisibleStaticMembersScope.java" startLine="28" startPosition="59" endLine="32" endPosition="104" />
-    <scopeInfo nodeId="3573019447813594698" fileName="ClassifierVisibleStaticMembersScope.java" startLine="35" startPosition="64" endLine="39" endPosition="58" />
-    <scopeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="50" startPosition="7" endLine="54" endPosition="31" />
-    <scopeInfo nodeId="3161373106581143473" fileName="ClassifierVisibleStaticMembersScope.java" startLine="16" startPosition="88" endLine="22" endPosition="3">
+    <scopeInfo nodeId="3161373106581143483" fileName="ClassifierVisibleStaticMembersScope.java" startLine="15" startPosition="124" endLine="19" endPosition="5" />
+    <scopeInfo nodeId="3161373106581143506" fileName="ClassifierVisibleStaticMembersScope.java" startLine="26" startPosition="59" endLine="30" endPosition="104" />
+    <scopeInfo nodeId="3573019447813594698" fileName="ClassifierVisibleStaticMembersScope.java" startLine="33" startPosition="64" endLine="37" endPosition="58" />
+    <scopeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="48" startPosition="7" endLine="52" endPosition="31" />
+    <scopeInfo nodeId="3161373106581143473" fileName="ClassifierVisibleStaticMembersScope.java" startLine="14" startPosition="88" endLine="20" endPosition="3">
       <varInfo nodeId="3161373106581143478" varName="contextNode" />
       <varInfo nodeId="3161373106581143481" varName="constraint" />
       <varInfo nodeId="3161373106581143475" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="49" startPosition="32" endLine="55" endPosition="7" />
-    <scopeInfo nodeId="3161373106581143501" fileName="ClassifierVisibleStaticMembersScope.java" startLine="27" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="47" startPosition="32" endLine="53" endPosition="7" />
+    <scopeInfo nodeId="3161373106581143501" fileName="ClassifierVisibleStaticMembersScope.java" startLine="25" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="3161373106581143504" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3573019447813594693" fileName="ClassifierVisibleStaticMembersScope.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="3573019447813594693" fileName="ClassifierVisibleStaticMembersScope.java" startLine="32" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="3573019447813594696" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="46" startPosition="49" endLine="56" endPosition="20" />
-    <scopeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="45" startPosition="0" endLine="58" endPosition="0" />
-    <unitInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="42" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope$QuotationClass_ctg1ot_a0b0a" />
-    <unitInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="16" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope" />
+    <scopeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="44" startPosition="49" endLine="54" endPosition="20" />
+    <scopeInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
+    <unitInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="40" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope$QuotationClass_ctg1ot_a0b0a" />
+    <unitInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope" />
   </root>
   <root nodeId="4579166930940566542">
     <nodeInfo nodeId="4579166930940578066" fileName="ParameterScope.java" startLine="14" startPosition="57" endLine="15" endPosition="29" />
