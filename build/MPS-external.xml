@@ -353,17 +353,20 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp_r6a" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.examples_s6a" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.methodExtension_t6a" />
-    <antcall target="MPS-languages.pack.ypath.main_u6a" />
-    <antcall target="MPS-languages.pack.ypath.test_v6a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.ypath_w6a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.bash_x6a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.quickQueryLanguage_y6a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.gwt.client_z6a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.gtext_ab6a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.gtext.runtime_bb6a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.analyzers_cb6a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.analyzers.runtime_db6a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.analyzers.mpsAnalyzers_eb6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections.trove_u6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.contracts_v6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.overloadedOperators_w6a" />
+    <antcall target="MPS-languages.pack.ypath.main_x6a" />
+    <antcall target="MPS-languages.pack.ypath.test_y6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.ypath_z6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.bash_ab6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.quickQueryLanguage_bb6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.gwt.client_cb6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.gtext_db6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.gtext.runtime_eb6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.analyzers_fb6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.analyzers.runtime_gb6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.analyzers.mpsAnalyzers_hb6a" />
     <copy todir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp">
       <fileset dir="${mps_home}/platform/buildlanguage/ant/classes" excludes="**/*.iml, **/*.iws" includes="**/*.class, **/*.xml, " />
     </copy>

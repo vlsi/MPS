@@ -517,6 +517,18 @@
       <property name="id" value="5dc5fc0d-37ef-4782-8192-8b5ce1f69f80" />
       <property name="name" value="jetbrains.mps.baseLanguage.methodExtension" />
     </node>
+    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="5735046895052097743">
+      <property name="id" value="73736c50-f124-433b-b789-2828a15a0adc" />
+      <property name="name" value="jetbrains.mps.baseLanguage.collections.trove" />
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="5735046895052097745">
+      <property name="id" value="c1b26490-e316-44a3-bb8e-c9120732af93" />
+      <property name="name" value="jetbrains.mps.baseLanguage.contracts" />
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="5735046895052097747">
+      <property name="id" value="fc8d557e-5de6-4dd8-b749-aab2fb23aefc" />
+      <property name="name" value="jetbrains.mps.baseLanguage.overloadedOperators" />
+    </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="7678729833318422573">
     <property name="package:7" value="platform" />
