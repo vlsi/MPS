@@ -53,104 +53,7 @@ class FastFindUsagesManager extends FindUsagesManager {
   }
 
   public void initComponent() {
-    IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_FILE_TYPE, new FileTypeIdIndexer() {
-      @NotNull
-      public Map<IdIndexEntry, Integer> map(FileContent inputData) {
-        CharSequence data = inputData.getContentAsText();
-        char[] charsArray = CharArrayUtil.fromSequenceWithoutCopying(data);
-        int len = data.length();
-        if (charsArray == null) {
-          charsArray = CharArrayUtil.fromSequence(data);
-        }
-
-        Map<IdIndexEntry, Integer> result = new HashMap<IdIndexEntry, Integer>();
-        int wordStart = -1;
-        for (int i = 0; i < len; i++) {
-          char c = charsArray[i];
-          if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
-            if (wordStart == -1) {
-              wordStart = i;
-            }
-          } else if (wordStart >= 0) {
-            processWord(result, charsArray, len, wordStart, i - wordStart);
-            wordStart = -1;
-          }
-        }
-        return result;
-      }
-
-      private void processWord(Map<IdIndexEntry, Integer> result, char[] chars, int charsLength, int offset, int len) {
-        if (chars[offset + len] != '=' || chars[offset] != 't') {
-          return; // optimization: ignore
-        }
-
-        if (contains(chars, charsLength, offset, TARGET_NODE_ID_PREFIX)) {
-          // check pattern "targetNodeId=\"(?:[0-9]+v?\\.)?(.+?)\""
-          offset += TARGET_NODE_ID_PREFIX.length();
-          int end = indexOfQuoteAndVersionColon(chars, charsLength, offset)[0];
-          if (end > offset) {
-            int e = offset;
-            while (e < end && chars[e] >= '0' && chars[e] <= '9') {
-              e++;
-            }
-            if (e > offset) {
-              if (e < end && chars[e] == 'v') {
-                e++;
-              }
-              if (e + 1 < end && chars[e] == '.') {
-                offset = e + 1;
-              }
-            }
-            result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
-          }
-        } else if (contains(chars, charsLength, offset, TYPE_PREFIX)) {
-          // check pattern "type=\"(.+?)\" id=\".+?\""
-          offset += TYPE_PREFIX.length();
-          int[] indices = indexOfQuoteAndVersionColon(chars, charsLength, offset);
-          int end = indices[0];
-          int qend = indices[1];
-          if (end > offset && contains(chars, charsLength, qend + 1, " id=\"")) {
-            // report
-            result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
-          }
-        }
-      }
-
-      // result[0] - first index; result[1] - index of quote
-      private int[] indexOfQuoteAndVersionColon(char[] chars, int charsLength, int start) {
-        int[] result = {-1, -1};
-        for (int i = start; i < charsLength; i++) {
-          if (chars[i] == '"') {
-            if (result[0] == -1) result[0] = i;
-            result[1] = i;
-            return result;
-          }
-          if (chars[i] == ':' && (i+1 < charsLength) && chars[i+1] >= '0' && chars[i+1] <= '9') {
-            result[0] = i;
-          }
-          if (chars[i] == '\n') {
-            return new int[]{-1, -1};
-          }
-        }
-        return new int[]{-1, -1};
-      }
-
-      private boolean contains(char[] chars, int charsLength, int offset, String s) {
-        if (offset + s.length() >= charsLength) {
-          return false;
-        }
-        for (int i = 0; i < s.length(); i++) {
-          if (chars[offset + i] != s.charAt(i)) {
-            return false;
-          }
-        }
-        return true;
-      }
-
-      private String unescape(String s) {
-        return StringEscapeUtils.unescapeXml(s);
-      }
-    });
+    IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_FILE_TYPE, new MyFileTypeIdIndexer());
   }
 
   public void disposeComponent() {
@@ -336,5 +239,104 @@ class FastFindUsagesManager extends FindUsagesManager {
       result.addAll(sm.findUsages(node));
     }
     return result;
+  }
+
+  private static class MyFileTypeIdIndexer extends FileTypeIdIndexer {
+    @NotNull
+    public Map<IdIndexEntry, Integer> map(FileContent inputData) {
+      CharSequence data = inputData.getContentAsText();
+      char[] charsArray = CharArrayUtil.fromSequenceWithoutCopying(data);
+      int len = data.length();
+      if (charsArray == null) {
+        charsArray = CharArrayUtil.fromSequence(data);
+      }
+
+      Map<IdIndexEntry, Integer> result = new HashMap<IdIndexEntry, Integer>();
+      int wordStart = -1;
+      for (int i = 0; i < len; i++) {
+        char c = charsArray[i];
+        if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
+          if (wordStart == -1) {
+            wordStart = i;
+          }
+        } else if (wordStart >= 0) {
+          processWord(result, charsArray, len, wordStart, i - wordStart);
+          wordStart = -1;
+        }
+      }
+      return result;
+    }
+
+    private void processWord(Map<IdIndexEntry, Integer> result, char[] chars, int charsLength, int offset, int len) {
+      if (chars[offset + len] != '=' || chars[offset] != 't') {
+        return; // optimization: ignore
+      }
+
+      if (contains(chars, charsLength, offset, TARGET_NODE_ID_PREFIX)) {
+        // check pattern "targetNodeId=\"(?:[0-9]+v?\\.)?(.+?)\""
+        offset += TARGET_NODE_ID_PREFIX.length();
+        int end = indexOfQuoteAndVersionColon(chars, charsLength, offset)[0];
+        if (end > offset) {
+          int e = offset;
+          while (e < end && chars[e] >= '0' && chars[e] <= '9') {
+            e++;
+          }
+          if (e > offset) {
+            if (e < end && chars[e] == 'v') {
+              e++;
+            }
+            if (e + 1 < end && chars[e] == '.') {
+              offset = e + 1;
+            }
+          }
+          result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
+        }
+      } else if (contains(chars, charsLength, offset, TYPE_PREFIX)) {
+        // check pattern "type=\"(.+?)\" id=\".+?\""
+        offset += TYPE_PREFIX.length();
+        int[] indices = indexOfQuoteAndVersionColon(chars, charsLength, offset);
+        int end = indices[0];
+        int qend = indices[1];
+        if (end > offset && contains(chars, charsLength, qend + 1, " id=\"")) {
+          // report
+          result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
+        }
+      }
+    }
+
+    // result[0] - first index; result[1] - index of quote
+    private int[] indexOfQuoteAndVersionColon(char[] chars, int charsLength, int start) {
+      int[] result = {-1, -1};
+      for (int i = start; i < charsLength; i++) {
+        if (chars[i] == '"') {
+          if (result[0] == -1) result[0] = i;
+          result[1] = i;
+          return result;
+        }
+        if (chars[i] == ':' && (i+1 < charsLength) && chars[i+1] >= '0' && chars[i+1] <= '9') {
+          result[0] = i;
+        }
+        if (chars[i] == '\n') {
+          return new int[]{-1, -1};
+        }
+      }
+      return new int[]{-1, -1};
+    }
+
+    private boolean contains(char[] chars, int charsLength, int offset, String s) {
+      if (offset + s.length() >= charsLength) {
+        return false;
+      }
+      for (int i = 0; i < s.length(); i++) {
+        if (chars[offset + i] != s.charAt(i)) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    private String unescape(String s) {
+      return StringEscapeUtils.unescapeXml(s);
+    }
   }
 }
