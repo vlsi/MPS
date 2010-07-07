@@ -1526,7 +1526,14 @@
                   </node>
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation:16" id="1213104856759" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode:8" id="1213104856760" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="9049506802439929539">
+                  <node role="ifTrue:3" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode:8" id="9049506802439929544" />
+                  <node role="ifFalse:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode:8" id="9049506802439929546" />
+                  <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9049506802439929080">
+                    <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode:8" id="9049506802439929078" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation:16" id="9049506802439929537" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

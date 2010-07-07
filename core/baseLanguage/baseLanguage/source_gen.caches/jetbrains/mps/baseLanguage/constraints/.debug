@@ -186,10 +186,10 @@
     <nodeInfo nodeId="3944301644568957179" fileName="InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="33" startPosition="125" endLine="34" endPosition="52" />
     <nodeInfo nodeId="1213104856739" fileName="InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="169" />
     <nodeInfo nodeId="1213104856746" fileName="InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="36" startPosition="169" endLine="37" endPosition="234" />
-    <nodeInfo nodeId="1213104856754" fileName="InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="37" startPosition="234" endLine="38" endPosition="146" />
     <nodeInfo nodeId="3944301644568957157" fileName="InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="1213104856754" fileName="InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="37" startPosition="234" endLine="41" endPosition="7" />
     <scopeInfo nodeId="3944301644568957158" fileName="InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="33" startPosition="125" endLine="34" endPosition="52" />
-    <scopeInfo nodeId="1213104856738" fileName="InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="38" endPosition="146">
+    <scopeInfo nodeId="1213104856738" fileName="InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="41" endPosition="7">
       <varInfo nodeId="1213104856747" varName="classifierType" />
       <varInfo nodeId="1213104856740" varName="instance" />
     </scopeInfo>

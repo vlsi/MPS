@@ -108,6 +108,10 @@ public final class VisibilityUtil {
     return false;
   }
 
+  public static boolean isMember(@Nullable SNode classifier, @NotNull SNode member) {
+    return new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(classifier))).getClassifierNodes().contains(SNodeOperations.getAncestor(member, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
+  }
+
   public static boolean isAccessible(@NotNull SNode refNode, @NotNull SNode name) {
     // check if name is visible and valid member in the context 
     if (!(isVisible(refNode, name))) {

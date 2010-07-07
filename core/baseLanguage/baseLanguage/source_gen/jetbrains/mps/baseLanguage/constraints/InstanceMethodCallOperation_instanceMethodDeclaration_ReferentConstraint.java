@@ -35,7 +35,10 @@ public class InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConst
     }
     SNode instance = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-    return new InstanceMethodCall_InstanceMethodScope(((ClassifierType) SNodeOperations.getAdapter(classifierType)), _context.getEnclosingNode());
+    return new InstanceMethodCall_InstanceMethodScope(((ClassifierType) SNodeOperations.getAdapter(classifierType)), ((_context.getReferenceNode() == null) ?
+      _context.getEnclosingNode() :
+      _context.getReferenceNode()
+    ));
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {
