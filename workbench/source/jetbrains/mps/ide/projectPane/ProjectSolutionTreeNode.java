@@ -63,7 +63,7 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
     return mySolution;
   }
 
-  protected ActionGroup getQuickCreateGroup(boolean plain) {
+  public ActionGroup getQuickCreateGroup(boolean plain) {
     return ActionUtils.getGroup(ProjectPaneActionGroups.SOLUTION_NEW_ACTIONS);
   }
 

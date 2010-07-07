@@ -189,7 +189,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     myTimer.setRepeats(false);
     myTimer.setInitialDelay(DELAY);
 
-    // Looks like thid method can be called from different threads
+    // Looks like this method can be called from different threads
     if (ModelAccess.instance().isInEDT()) {
       ModelAccess.instance().executeCommand(new Runnable() {
         public void run() {

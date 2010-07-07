@@ -325,7 +325,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_MODEL_ACTIONS);
   }
 
-  protected CreateRootNodeGroup getQuickCreateGroup(boolean plain) {
+  public CreateRootNodeGroup getQuickCreateGroup(boolean plain) {
     return new CreateRootNodeGroup(plain);
   }
 

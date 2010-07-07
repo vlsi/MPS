@@ -51,7 +51,7 @@ class ProjectTreeNode extends MPSTreeNode {
     setTooltipText(myProject.getErrors());
   }
 
-  protected ActionGroup getQuickCreateGroup(boolean plain) {
+  public ActionGroup getQuickCreateGroup(boolean plain) {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_NEW_ACTIONS);
   }
 

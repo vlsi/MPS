@@ -80,7 +80,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     return myLanguage;
   }
 
-  protected ActionGroup getQuickCreateGroup(boolean plain) {
+  public ActionGroup getQuickCreateGroup(boolean plain) {
     return ActionUtils.getGroup(ProjectPaneActionGroups.LANGUAGE_NEW_ACTIONS);
   }
 
