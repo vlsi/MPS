@@ -51,7 +51,7 @@ public class SNodeGroupTreeNode extends TextTreeNode {
     setColor(Color.BLACK);
   }
 
-  protected ActionGroup getQuickCreateGroup(boolean plain) {
+  public ActionGroup getQuickCreateGroup(boolean plain) {
     return getActionGroup();
   }
 
