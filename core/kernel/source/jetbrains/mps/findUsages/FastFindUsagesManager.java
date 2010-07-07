@@ -116,21 +116,6 @@ class FastFindUsagesManager extends FindUsagesManager {
         }
       }
 
-      private int indexOfQuoteOrVersionColon(char[] chars, int charsLength, int start) {
-        for (int i = start; i < charsLength; i++) {
-          if (chars[i] == '"') {
-            return i;
-          }
-          if (chars[i] == ':' && (i+1 < charsLength) && chars[i+1] >= '0' && chars[i+1] <= '9') {
-            return i;
-          }
-          if (chars[i] == '\n') {
-            return -1;
-          }
-        }
-        return -1;
-      }
-
       // result[0] - first index; result[1] - index of quote
       private int[] indexOfQuoteAndVersionColon(char[] chars, int charsLength, int start) {
         int[] result = {-1, -1};
