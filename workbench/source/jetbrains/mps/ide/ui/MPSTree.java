@@ -151,20 +151,6 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       }
     });
 
-    addKeyListener(new KeyAdapter() {
-      public void keyPressed(final KeyEvent e) {
-        TreePath[] paths = getSelectionPaths();
-        TreePath selPath = getSelectionPath();
-        if (selPath == null) return;
-        final MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
-        if (selNode == null) return;
-        for (TreePath path : paths) {
-          MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-          node.keyPressed(e);
-        }
-      }
-    });
-
     AbstractAction openNodeAction = new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         TreePath selPath = getSelectionPath();

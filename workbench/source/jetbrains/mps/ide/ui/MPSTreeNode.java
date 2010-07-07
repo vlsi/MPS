@@ -120,42 +120,11 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return null;
   }
 
-  protected ActionGroup getQuickCreateGroup(boolean plain) {
+  public ActionGroup getQuickCreateGroup(boolean plain) {
     return null;
   }
 
   public void doubleClick() {
-  }
-
-  public void keyPressed(final KeyEvent keyEvent) {
-    boolean altDown = keyEvent.isAltDown();
-    boolean ctrlDown = keyEvent.isControlDown();
-    boolean insert = keyEvent.getKeyCode() == KeyEvent.VK_INSERT;
-    boolean n = keyEvent.getKeyCode() == KeyEvent.VK_N;
-    boolean rightKey = ((!SystemInfo.isMac) & altDown && insert) ||
-      (SystemInfo.isMac & ctrlDown && n);
-
-    if (!rightKey) return;
-
-    final DataContext dataContext = DataManager.getInstance().getDataContext(this.getTree());
-    ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
-      public ListPopup compute() {
-        ActionGroup group = getQuickCreateGroup(keyEvent.isControlDown());
-        if (group == null) return null;
-        Presentation presentation = new Presentation();
-        AnActionEvent event = new AnActionEvent(keyEvent, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
-        ActionUtils.updateGroup(group, event);
-        return JBPopupFactory.getInstance()
-          .createActionGroupPopup("New",
-            group,
-            dataContext,
-            JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
-            false);
-
-      }
-    });
-    if (popup == null) return;
-    popup.showInBestPositionFor(dataContext);
   }
 
   protected void onRemove() {
