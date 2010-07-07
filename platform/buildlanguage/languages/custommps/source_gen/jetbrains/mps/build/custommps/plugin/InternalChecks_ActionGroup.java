@@ -17,6 +17,7 @@ public class InternalChecks_ActionGroup extends GeneratedActionGroup {
     try {
       InternalChecks_ActionGroup.this.addAction("jetbrains.mps.build.custommps.plugin.CheckSamples_Action", "jetbrains.mps.build.custommps");
       InternalChecks_ActionGroup.this.addAction("jetbrains.mps.build.custommps.plugin.CheckCoreRuntimeDeps_Action", "jetbrains.mps.build.custommps");
+      InternalChecks_ActionGroup.this.addAction("jetbrains.mps.build.custommps.plugin.CheckIncludedLanguages_Action", "jetbrains.mps.build.custommps");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
