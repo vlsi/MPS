@@ -11,8 +11,10 @@ import java.util.List;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
 
 public class AddToVcs_Action extends GeneratedAction {
@@ -34,7 +36,7 @@ public class AddToVcs_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return ListSequence.fromList(VcsActionsHelper.getUnversionedFilesForModules(AddToVcs_Action.this.project, AddToVcs_Action.this.modules)).isNotEmpty();
+    return true;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -74,8 +76,13 @@ public class AddToVcs_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
+      List<VirtualFile> unversionedFiles = VcsActionsHelper.getUnversionedFilesForModules(AddToVcs_Action.this.project, AddToVcs_Action.this.modules);
+      if (ListSequence.fromList(unversionedFiles).isEmpty()) {
+        Messages.showInfoMessage(AddToVcs_Action.this.project, "Nothing to add", "Add to VCS");
+        return;
+      }
       ChangeListManagerImpl changeListManager = ChangeListManagerImpl.getInstanceImpl(AddToVcs_Action.this.project);
-      changeListManager.addUnversionedFiles(changeListManager.getDefaultChangeList(), VcsActionsHelper.getUnversionedFilesForModules(AddToVcs_Action.this.project, AddToVcs_Action.this.modules));
+      changeListManager.addUnversionedFiles(changeListManager.getDefaultChangeList(), unversionedFiles);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddToVcs", t);

@@ -11,8 +11,10 @@ import jetbrains.mps.project.IModule;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vcs.changes.ui.IgnoreUnversionedDialog;
 
 public class IgnoreInVcs_Action extends GeneratedAction {
@@ -34,7 +36,7 @@ public class IgnoreInVcs_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return ListSequence.fromList(VcsActionsHelper.getUnversionedFilesForModules(IgnoreInVcs_Action.this.project, IgnoreInVcs_Action.this.modules)).isNotEmpty();
+    return true;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -74,7 +76,12 @@ public class IgnoreInVcs_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      IgnoreUnversionedDialog.ignoreSelectedFiles(IgnoreInVcs_Action.this.project, VcsActionsHelper.getUnversionedFilesForModules(IgnoreInVcs_Action.this.project, IgnoreInVcs_Action.this.modules));
+      List<VirtualFile> unversionedFiles = VcsActionsHelper.getUnversionedFilesForModules(IgnoreInVcs_Action.this.project, IgnoreInVcs_Action.this.modules);
+      if (ListSequence.fromList(unversionedFiles).isEmpty()) {
+        Messages.showInfoMessage(IgnoreInVcs_Action.this.project, "Nothing to ignore", "Ignore..");
+        return;
+      }
+      IgnoreUnversionedDialog.ignoreSelectedFiles(IgnoreInVcs_Action.this.project, unversionedFiles);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "IgnoreInVcs", t);
