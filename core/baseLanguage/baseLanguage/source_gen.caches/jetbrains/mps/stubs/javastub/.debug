@@ -367,7 +367,7 @@
     <nodeInfo nodeId="7241381882860005622" fileName="ASMModelLoader.java" startLine="826" startPosition="61" endLine="827" endPosition="71" />
     <nodeInfo nodeId="7241381882860005632" fileName="ASMModelLoader.java" startLine="827" startPosition="71" endLine="828" endPosition="45" />
     <nodeInfo nodeId="7241381882860005644" fileName="ASMModelLoader.java" startLine="829" startPosition="26" endLine="830" endPosition="27" />
-    <nodeInfo nodeId="7241381882860005654" fileName="ASMModelLoader.java" startLine="831" startPosition="42" endLine="832" endPosition="20" />
+    <nodeInfo nodeId="7241381882860005654" fileName="ASMModelLoader.java" startLine="831" startPosition="59" endLine="832" endPosition="20" />
     <nodeInfo nodeId="7241381882860005658" fileName="ASMModelLoader.java" startLine="834" startPosition="5" endLine="835" endPosition="19" />
     <nodeInfo nodeId="7241381882860005686" fileName="ASMModelLoader.java" startLine="841" startPosition="35" endLine="842" endPosition="22" />
     <nodeInfo nodeId="7241381882860005688" fileName="ASMModelLoader.java" startLine="845" startPosition="5" endLine="846" endPosition="17" />
@@ -622,7 +622,7 @@
     <scopeInfo nodeId="7241381882860005125" fileName="ASMModelLoader.java" startLine="718" startPosition="54" endLine="719" endPosition="49" />
     <scopeInfo nodeId="7241381882860005266" fileName="ASMModelLoader.java" startLine="751" startPosition="28" endLine="752" endPosition="31" />
     <scopeInfo nodeId="7241381882860005448" fileName="ASMModelLoader.java" startLine="793" startPosition="49" endLine="794" endPosition="102" />
-    <scopeInfo nodeId="7241381882860005653" fileName="ASMModelLoader.java" startLine="831" startPosition="42" endLine="832" endPosition="20" />
+    <scopeInfo nodeId="7241381882860005653" fileName="ASMModelLoader.java" startLine="831" startPosition="59" endLine="832" endPosition="20" />
     <scopeInfo nodeId="7241381882860005685" fileName="ASMModelLoader.java" startLine="841" startPosition="35" endLine="842" endPosition="22" />
     <scopeInfo nodeId="7241381882860003113" fileName="ASMModelLoader.java" startLine="277" startPosition="52" endLine="279" endPosition="49">
       <varInfo nodeId="7241381882860003115" varName="classifierType" />
