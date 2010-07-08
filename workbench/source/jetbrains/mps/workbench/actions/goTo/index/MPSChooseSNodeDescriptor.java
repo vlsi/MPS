@@ -16,38 +16,23 @@
 package jetbrains.mps.workbench.actions.goTo.index;
 
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
-import com.intellij.psi.search.ProjectAndLibrariesScope;
-import com.intellij.util.Processor;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
-import com.intellij.psi.search.EverythingGlobalScope;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.stubs.BaseStubModelRootManager;
-import jetbrains.mps.stubs.StubLocation;
-import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import jetbrains.mps.stubs.javastub.classpath.StubHelper;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.Annotation;
-import jetbrains.mps.baseLanguage.structure.Interface;
-import jetbrains.mps.baseLanguage.structure.EnumClass;
-import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor> {
   public BaseSNodeDescriptorIndex myIndex;
@@ -76,8 +61,10 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       }
 
       IFile modelFile = sm.getModelFile();
-      assert modelFile != null;
+      if (modelFile == null) continue; // e.g. model was deleted
       VirtualFile vf = modelFile.toVirtualFile();
+      if (vf == null) continue; // e.g. model was deleted
+      
       int fileId = FileBasedIndex.getFileId(vf);
 
       List<List<SNodeDescriptor>> descriptors = fileBasedIndex.getValues(indexName, fileId, GlobalSearchScope.fileScope(getProject(), vf));
