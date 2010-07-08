@@ -96,6 +96,9 @@ public class MirrorUtil {
     if (value == null) {
       return new NullValueProxy();
     }
+    if (value instanceof VoidValue) {
+      return new VoidValueProxy(value, threadReference);
+    }
     if (value instanceof ArrayReference) {
       return new ArrayValueProxy((ArrayReference) value, threadReference);
     } else if (value instanceof ObjectReference) {
