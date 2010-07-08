@@ -38,6 +38,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 class AddOperation extends VcsOperation {
@@ -45,7 +46,7 @@ class AddOperation extends VcsOperation {
   private final List<File> myFilesToAdd = new ArrayList<File>();
   private final List<VirtualFile> myVirtualFilesToAdd = new ArrayList<VirtualFile>();
   private boolean myRecursive;
-  private final List<VirtualFile> myVirtualFilesToRevert = new ArrayList<VirtualFile>();
+  private final Map<VirtualFile, Change> myVirtualFilesToRevertDeletedStatus = new HashMap<VirtualFile, Change>();
   private final VcsShowConfirmationOption myConfirmationOption;
   private boolean mySilently;
   private final VcsDirtyScopeManager myVcsDirtyScopeManager;
@@ -98,7 +99,7 @@ class AddOperation extends VcsOperation {
     }
 
     // calculate unversioned and deleted
-    reliablyGetUnversionedFiles(filesToCheckStatuses, myVirtualFilesToAdd, myVirtualFilesToRevert);
+    reliablyGetUnversionedFiles(filesToCheckStatuses, myVirtualFilesToAdd, myVirtualFilesToRevertDeletedStatus);
 
     // PROFIT!
     askAndPerform();
@@ -122,13 +123,14 @@ class AddOperation extends VcsOperation {
    * Here we ask user (or do not ask) what to do with the files we found.
    */
   private void askAndPerform() {
+    List<VirtualFile> filesToRevert = new ArrayList<VirtualFile>(myVirtualFilesToRevertDeletedStatus.keySet());
     if (mySilently || myConfirmationOption.getValue() == VcsShowConfirmationOption.Value.DO_ACTION_SILENTLY) {
-      reallyPerform(myVirtualFilesToRevert, myVirtualFilesToAdd);
+      reallyPerform(filesToRevert, myVirtualFilesToAdd);
     } else if (myConfirmationOption.getValue() == VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY) {
       return;
     } else {
       final Collection<VirtualFile> filesToProcess = new ArrayList<VirtualFile>();
-      final List<VirtualFile> virtualFileList = CollectionUtil.union(myVirtualFilesToAdd, myVirtualFilesToRevert);
+      final List<VirtualFile> virtualFileList = CollectionUtil.union(myVirtualFilesToAdd, filesToRevert);
       if (!virtualFileList.isEmpty()) {
         final AbstractVcsHelper helper = AbstractVcsHelper.getInstance(myProject);
         ThreadUtils.runInUIThreadAndWait(new Runnable() {
@@ -145,7 +147,7 @@ class AddOperation extends VcsOperation {
         });
       }
       if (!filesToProcess.isEmpty()) {
-        reallyPerform(CollectionUtil.intersect(myVirtualFilesToRevert, filesToProcess),
+        reallyPerform(CollectionUtil.intersect(filesToRevert, filesToProcess),
           CollectionUtil.intersect(myVirtualFilesToAdd, filesToProcess));
       }
     }
@@ -197,7 +199,7 @@ class AddOperation extends VcsOperation {
    * @param unversioned
    * @param deleted
    */
-  private void reliablyGetUnversionedFiles(final Set<VirtualFile> files, final List<VirtualFile> unversioned, List<VirtualFile> deleted) {
+  private void reliablyGetUnversionedFiles(final Set<VirtualFile> files, final List<VirtualFile> unversioned, Map<VirtualFile, Change> deleted) {
     myMpsVcsManager.ensureVcssInitialized();
 
     Map<AbstractVcs, List<VirtualFile>> vcsToFiles = new HashMap<AbstractVcs, List<VirtualFile>>();
@@ -212,7 +214,7 @@ class AddOperation extends VcsOperation {
       filesList.add(f);
     }
 
-    final List<FilePath> deletedPaths = new ArrayList<FilePath>();
+    final List<Change> deletedChange = new ArrayList<Change>();
 
     for (AbstractVcs vcs : vcsToFiles.keySet()) {
       VcsDirtyScopeImpl scope = new VcsDirtyScopeImpl(vcs, myProject); // TODO don't use Impl classes
@@ -241,10 +243,7 @@ class AddOperation extends VcsOperation {
           @Override
           public void processChange(Change change, VcsKey vcsKey) {
             if (change.getFileStatus().equals(FileStatus.DELETED)) {
-              ContentRevision contentRevision = change.getBeforeRevision();
-              if (contentRevision != null) {
-                deletedPaths.add(contentRevision.getFile());
-              }
+              deletedChange.add(change);
             }
           }
 
@@ -261,14 +260,17 @@ class AddOperation extends VcsOperation {
       }
     }
 
-    for (FilePath path : deletedPaths) {
-      for (VirtualFile f : files) {
-        if (f.getPresentableUrl().equals(path.getPresentableUrl())) {
-          deleted.add(f);
+    for (Change change : deletedChange) {
+      ContentRevision contentRevision = change.getBeforeRevision();
+      if (contentRevision != null) {
+        FilePath path = contentRevision.getFile();
+        for (VirtualFile f : files) {
+          if (f.getPresentableUrl().equals(path.getPresentableUrl())) {
+            deleted.put(f, change);
+          }
         }
       }
     }
-
   }
 
   private void scheduleUnversionedFileForAdditionInternal(@NotNull VirtualFile vf) {
@@ -291,19 +293,38 @@ class AddOperation extends VcsOperation {
     }
   }
 
-  private void scheduleDeletedFileForRevertInternal(@NotNull VirtualFile vf) {
-    if (vf.exists()) {
-      AbstractVcs vcs = myManager.getVcsFor(vf);
+  private void scheduleDeletedFileForRevertInternal(@NotNull VirtualFile file) {
+    /*
+    In this method we deal with the situation when file was scheduled for deletion in vcs, and then was scheduled for addition.
+    So we save it contents, revert the file and then restore the contents back.
+    */
+
+    if (file.exists()) {
+      AbstractVcs vcs = myManager.getVcsFor(file);
       if (vcs != null) {
         RollbackEnvironment ri = vcs.getRollbackEnvironment();
         if (ri != null) {
-          FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOn(vf);
           ArrayList<VcsException> result = new ArrayList<VcsException>();
-          ri.rollbackMissingFileDeletion(Collections.singletonList(path), result, RollbackProgressListener.EMPTY);
-          for (VcsException e : result) {
-            LOG.error(e);
+          Change change = myVirtualFilesToRevertDeletedStatus.get(file);
+          if (change != null) {
+            try {
+              byte[] contents = file.contentsToByteArray();
+
+              ri.rollbackChanges(Collections.singletonList(change), result, RollbackProgressListener.EMPTY);
+              for (VcsException e : result) {
+                LOG.error(e);
+              }
+
+              file.setBinaryContent(contents);
+
+              myVcsDirtyScopeManager.fileDirty(file);
+            } catch (IOException e) {
+              LOG.error("Could not add file " + file + ": it was scheduled for deletion.", e);
+            }
+
+          } else {
+            LOG.error("Could not add file " + file + ": it was scheduled for deletion.");
           }
-          myVcsDirtyScopeManager.fileDirty(vf);
         }
       }
     }
