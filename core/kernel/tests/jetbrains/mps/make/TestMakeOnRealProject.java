@@ -64,8 +64,12 @@ public class TestMakeOnRealProject {
 
   @After
   public void tearDown() throws Exception {
-    MPSModuleRepository.getInstance().unRegisterModules(myModuleOwner);
-    CleanupManager.getInstance().cleanup();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        MPSModuleRepository.getInstance().unRegisterModules(myModuleOwner);
+        CleanupManager.getInstance().cleanup();
+      }
+    });
 
     ModelAccess.instance().flushEventQueue();
     FileUtil.delete(myTmpDir);
@@ -199,7 +203,7 @@ public class TestMakeOnRealProject {
 
     myTmpDir = FileUtil.createTmpDir();
 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         myCreatedLanguage = createNewLanguage();
         createJavaFiles(myCreatedLanguage);
