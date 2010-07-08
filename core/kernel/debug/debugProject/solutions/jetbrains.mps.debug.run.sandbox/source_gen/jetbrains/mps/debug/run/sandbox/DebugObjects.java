@@ -26,7 +26,13 @@ public class DebugObjects {
   }
 
   public static void main(String[] args) {
-    DebugObjects object = new DebugObjects();
-    object.doStrangeThings();
+    new DebugObjects() {
+      public Object answerToTheUltimateQuestionofLifeUniverseAndEverything() {
+        return 42;
+      }
+
+      public void foo() {
+      }
+    }.answerToTheUltimateQuestionofLifeUniverseAndEverything();
   }
 }
