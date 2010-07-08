@@ -680,8 +680,11 @@
               <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1237318862788" />
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1237318864662">
                 <link role="baseMethodDeclaration:16" targetNodeId="1237318764946" resolveInfo="unmeet" />
-                <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1237318867293">
-                  <link role="variableDeclaration:3" targetNodeId="1230630466257" resolveInfo="rt" />
+                <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6967328415140948975">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1237318867293">
+                    <link role="variableDeclaration:3" targetNodeId="1230630466257" resolveInfo="rt" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_CopyOperation:16" id="6967328415140948979" />
                 </node>
               </node>
             </node>
