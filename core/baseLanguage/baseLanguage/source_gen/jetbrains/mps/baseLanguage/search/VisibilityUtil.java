@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.BaseLanguageUtil;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -67,22 +68,7 @@ public final class VisibilityUtil {
     return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last();
   }
 
-  @Nullable
-  public static SNode getQualifier(@NotNull SNode refNode) {
-    if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.baseLanguage.structure.EnumConstantReference")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(refNode, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"), "enumClass", false);
-    } else if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation") || SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(refNode), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
-    } else if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.baseLanguage.structure.StaticFieldReference")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(refNode, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), "classifier", false);
-    } else if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(refNode, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false);
-    } else {
-      return null;
-    }
-  }
-
-  public static boolean isClassifierAccessible(@NotNull SNode context, @Nullable SNode classifier) {
+  private static boolean isClassifierAccessible(@NotNull SNode context, @Nullable SNode classifier) {
     //  check "static" accessibility here 
     if ((classifier == null)) {
       return true;
@@ -108,28 +94,18 @@ public final class VisibilityUtil {
     return false;
   }
 
-  public static boolean isMember(@Nullable SNode classifier, @NotNull SNode member) {
+  public static boolean isMember(SNode classifier, @NotNull SNode member) {
+    // hiding is not checked here 
     return new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(classifier))).getClassifierNodes().contains(SNodeOperations.getAncestor(member, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
   }
 
-  public static boolean isAccessible(@NotNull SNode refNode, @NotNull SNode name) {
-    // check if name is visible and valid member in the context 
-    if (!(isVisible(refNode, name))) {
-      return false;
-    }
-    SNode clsMember = SNodeOperations.getAncestor(name, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    SNode qualifier = getQualifier(refNode);
-    if ((qualifier == null)) {
-      // member of "this" 
-      for (SNode cls : ListSequence.fromList(SNodeOperations.getAncestors(refNode, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
-        if (new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(cls))).getClassifierNodes().contains(clsMember)) {
-          return true;
-        }
+  public static boolean isLocalMember(@NotNull SNode context, @NotNull final SNode member) {
+    // hiding and shadowing are not checked here 
+    return ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode cls) {
+        return isMember(cls, member);
       }
-      return false;
-    } else {
-      return new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(qualifier))).getClassifierNodes().contains(clsMember);
-    }
+    });
   }
 
   public static class QuotationClass_v8uv56_a1a0d0a0a0c0g0a {

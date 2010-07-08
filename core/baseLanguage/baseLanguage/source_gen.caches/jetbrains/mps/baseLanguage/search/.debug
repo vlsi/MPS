@@ -1004,172 +1004,139 @@
     <unitInfo nodeId="3161373106581136688" fileName="ClassifiersCache.java" startLine="23" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifiersCache" />
   </root>
   <root nodeId="3161373106581137350">
-    <nodeInfo nodeId="2990203945682755988" fileName="VisibilityUtil.java" startLine="23" startPosition="80" endLine="24" endPosition="115" />
-    <nodeInfo nodeId="2990203945682755992" fileName="VisibilityUtil.java" startLine="25" startPosition="96" endLine="26" endPosition="124" />
-    <nodeInfo nodeId="2990203945682756003" fileName="VisibilityUtil.java" startLine="28" startPosition="251" endLine="29" endPosition="18" />
-    <nodeInfo nodeId="2990203945682756018" fileName="VisibilityUtil.java" startLine="31" startPosition="150" endLine="32" endPosition="59" />
-    <nodeInfo nodeId="2990203945682756030" fileName="VisibilityUtil.java" startLine="33" startPosition="5" endLine="34" endPosition="35" />
-    <nodeInfo nodeId="2990203945682756034" fileName="VisibilityUtil.java" startLine="35" startPosition="57" endLine="36" endPosition="18" />
-    <nodeInfo nodeId="2990203945682756043" fileName="VisibilityUtil.java" startLine="38" startPosition="152" endLine="39" endPosition="50" />
-    <nodeInfo nodeId="2990203945682756045" fileName="VisibilityUtil.java" startLine="39" startPosition="50" endLine="40" endPosition="124" />
-    <nodeInfo nodeId="2990203945682756139" fileName="VisibilityUtil.java" startLine="43" startPosition="426" endLine="44" endPosition="107" />
-    <nodeInfo nodeId="46179992838786363" fileName="VisibilityUtil.java" startLine="44" startPosition="107" endLine="45" endPosition="110" />
-    <nodeInfo nodeId="546439919561133653" fileName="VisibilityUtil.java" startLine="45" startPosition="110" endLine="46" endPosition="185" />
-    <nodeInfo nodeId="546439919561133701" fileName="VisibilityUtil.java" startLine="47" startPosition="200" endLine="48" endPosition="26" />
-    <nodeInfo nodeId="2990203945682756163" fileName="VisibilityUtil.java" startLine="50" startPosition="121" endLine="51" endPosition="98" />
-    <nodeInfo nodeId="2990203945682756165" fileName="VisibilityUtil.java" startLine="51" startPosition="98" endLine="52" endPosition="323" />
-    <nodeInfo nodeId="2990203945682756184" fileName="VisibilityUtil.java" startLine="53" startPosition="18" endLine="54" endPosition="24" />
-    <nodeInfo nodeId="2990203945682756199" fileName="VisibilityUtil.java" startLine="58" startPosition="5" endLine="59" endPosition="17" />
-    <nodeInfo nodeId="3192866263144677118" fileName="VisibilityUtil.java" startLine="62" startPosition="57" endLine="63" endPosition="74" />
-    <nodeInfo nodeId="3192866263144677178" fileName="VisibilityUtil.java" startLine="66" startPosition="58" endLine="67" endPosition="133" />
-    <nodeInfo nodeId="2990203945683232992" fileName="VisibilityUtil.java" startLine="72" startPosition="110" endLine="73" endPosition="152" />
-    <nodeInfo nodeId="2990203945683233010" fileName="VisibilityUtil.java" startLine="74" startPosition="228" endLine="75" endPosition="330" />
-    <nodeInfo nodeId="2990203945683233026" fileName="VisibilityUtil.java" startLine="76" startPosition="116" endLine="77" endPosition="152" />
-    <nodeInfo nodeId="2990203945683233033" fileName="VisibilityUtil.java" startLine="78" startPosition="112" endLine="79" endPosition="150" />
-    <nodeInfo nodeId="2990203945683233044" fileName="VisibilityUtil.java" startLine="80" startPosition="12" endLine="81" endPosition="18" />
-    <nodeInfo nodeId="2684528044289749171" fileName="VisibilityUtil.java" startLine="85" startPosition="100" endLine="86" endPosition="42" />
-    <nodeInfo nodeId="2684528044289748980" fileName="VisibilityUtil.java" startLine="87" startPosition="31" endLine="88" endPosition="18" />
-    <nodeInfo nodeId="2684528044289748956" fileName="VisibilityUtil.java" startLine="90" startPosition="156" endLine="91" endPosition="65" />
-    <nodeInfo nodeId="6139857295094308053" fileName="VisibilityUtil.java" startLine="92" startPosition="5" endLine="93" endPosition="124" />
-    <nodeInfo nodeId="2684528044289798057" fileName="VisibilityUtil.java" startLine="94" startPosition="53" endLine="95" endPosition="19" />
-    <nodeInfo nodeId="2684528044289749000" fileName="VisibilityUtil.java" startLine="97" startPosition="211" endLine="98" endPosition="18" />
-    <nodeInfo nodeId="6139857295094308117" fileName="VisibilityUtil.java" startLine="100" startPosition="158" endLine="101" endPosition="36" />
-    <nodeInfo nodeId="2684528044289749116" fileName="VisibilityUtil.java" startLine="103" startPosition="186" endLine="104" endPosition="22" />
-    <nodeInfo nodeId="2684528044289749121" fileName="VisibilityUtil.java" startLine="107" startPosition="5" endLine="108" endPosition="17" />
-    <nodeInfo nodeId="9049506802439959956" fileName="VisibilityUtil.java" startLine="111" startPosition="85" endLine="112" endPosition="237" />
-    <nodeInfo nodeId="2990203945682756334" fileName="VisibilityUtil.java" startLine="115" startPosition="83" endLine="116" endPosition="64" />
-    <nodeInfo nodeId="46179992838786883" fileName="VisibilityUtil.java" startLine="117" startPosition="38" endLine="118" endPosition="19" />
-    <nodeInfo nodeId="46179992838814614" fileName="VisibilityUtil.java" startLine="119" startPosition="5" endLine="120" endPosition="121" />
-    <nodeInfo nodeId="46179992838814648" fileName="VisibilityUtil.java" startLine="120" startPosition="121" endLine="121" endPosition="44" />
-    <nodeInfo nodeId="46179992838786892" fileName="VisibilityUtil.java" startLine="122" startPosition="30" endLine="123" endPosition="26" />
-    <nodeInfo nodeId="46179992838786946" fileName="VisibilityUtil.java" startLine="125" startPosition="142" endLine="126" endPosition="22" />
-    <nodeInfo nodeId="46179992838786979" fileName="VisibilityUtil.java" startLine="128" startPosition="7" endLine="129" endPosition="19" />
-    <nodeInfo nodeId="46179992838786982" fileName="VisibilityUtil.java" startLine="130" startPosition="12" endLine="131" endPosition="147" />
-    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="139" startPosition="49" endLine="140" endPosition="26" />
-    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="140" startPosition="26" endLine="141" endPosition="67" />
-    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="141" startPosition="67" endLine="142" endPosition="32" />
-    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="143" startPosition="7" endLine="144" endPosition="207" />
-    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="144" startPosition="207" endLine="145" endPosition="43" />
-    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="145" startPosition="43" endLine="146" endPosition="69" />
-    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="146" startPosition="69" endLine="147" endPosition="31" />
-    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="148" startPosition="7" endLine="149" endPosition="20" />
-    <nodeInfo nodeId="3161373106581137352" fileName="VisibilityUtil.java" startLine="19" startPosition="35" endLine="21" endPosition="3" />
-    <nodeInfo nodeId="2990203945682756180" fileName="VisibilityUtil.java" startLine="53" startPosition="16" endLine="55" endPosition="11" />
-    <nodeInfo nodeId="2990203945683233042" fileName="VisibilityUtil.java" startLine="80" startPosition="10" endLine="82" endPosition="5" />
-    <nodeInfo nodeId="46179992838786976" fileName="VisibilityUtil.java" startLine="130" startPosition="10" endLine="132" endPosition="5" />
-    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="135" startPosition="61" endLine="137" endPosition="5" />
-    <nodeInfo nodeId="2990203945682755990" fileName="VisibilityUtil.java" startLine="24" startPosition="115" endLine="27" endPosition="5" />
-    <nodeInfo nodeId="2990203945682756001" fileName="VisibilityUtil.java" startLine="27" startPosition="5" endLine="30" endPosition="5" />
-    <nodeInfo nodeId="2990203945682756016" fileName="VisibilityUtil.java" startLine="30" startPosition="5" endLine="33" endPosition="5" />
-    <nodeInfo nodeId="2990203945682756032" fileName="VisibilityUtil.java" startLine="34" startPosition="35" endLine="37" endPosition="5" />
-    <nodeInfo nodeId="546439919561133667" fileName="VisibilityUtil.java" startLine="46" startPosition="185" endLine="49" endPosition="13" />
-    <nodeInfo nodeId="2684528044289748970" fileName="VisibilityUtil.java" startLine="86" startPosition="42" endLine="89" endPosition="5" />
-    <nodeInfo nodeId="2684528044289748939" fileName="VisibilityUtil.java" startLine="89" startPosition="5" endLine="92" endPosition="5" />
-    <nodeInfo nodeId="2684528044289798020" fileName="VisibilityUtil.java" startLine="93" startPosition="124" endLine="96" endPosition="5" />
-    <nodeInfo nodeId="2684528044289748983" fileName="VisibilityUtil.java" startLine="96" startPosition="5" endLine="99" endPosition="5" />
-    <nodeInfo nodeId="2684528044289749091" fileName="VisibilityUtil.java" startLine="102" startPosition="143" endLine="105" endPosition="9" />
-    <nodeInfo nodeId="46179992838786873" fileName="VisibilityUtil.java" startLine="116" startPosition="64" endLine="119" endPosition="5" />
-    <nodeInfo nodeId="46179992838786934" fileName="VisibilityUtil.java" startLine="124" startPosition="143" endLine="127" endPosition="9" />
-    <nodeInfo nodeId="3192866263144677099" fileName="VisibilityUtil.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <nodeInfo nodeId="3192866263144677170" fileName="VisibilityUtil.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <nodeInfo nodeId="9049506802439948323" fileName="VisibilityUtil.java" startLine="110" startPosition="0" endLine="114" endPosition="0" />
-    <nodeInfo nodeId="2684528044289749072" fileName="VisibilityUtil.java" startLine="101" startPosition="36" endLine="106" endPosition="7" />
-    <nodeInfo nodeId="46179992838786925" fileName="VisibilityUtil.java" startLine="123" startPosition="26" endLine="128" endPosition="7" />
-    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="142" startPosition="32" endLine="148" endPosition="7" />
-    <nodeInfo nodeId="2684528044289749053" fileName="VisibilityUtil.java" startLine="99" startPosition="5" endLine="107" endPosition="5" />
-    <nodeInfo nodeId="2990203945683232864" fileName="VisibilityUtil.java" startLine="71" startPosition="60" endLine="82" endPosition="5" />
-    <nodeInfo nodeId="46179992838786868" fileName="VisibilityUtil.java" startLine="121" startPosition="44" endLine="132" endPosition="5" />
-    <nodeInfo nodeId="2990203945682756128" fileName="VisibilityUtil.java" startLine="42" startPosition="147" endLine="55" endPosition="11" />
-    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="138" startPosition="0" endLine="151" endPosition="0" />
-    <nodeInfo nodeId="2990203945682756126" fileName="VisibilityUtil.java" startLine="41" startPosition="143" endLine="56" endPosition="9" />
-    <nodeInfo nodeId="2990203945683227759" fileName="VisibilityUtil.java" startLine="69" startPosition="0" endLine="84" endPosition="0" />
-    <nodeInfo nodeId="2990203945682756117" fileName="VisibilityUtil.java" startLine="40" startPosition="124" endLine="57" endPosition="7" />
-    <nodeInfo nodeId="3192866263144675490" fileName="VisibilityUtil.java" startLine="114" startPosition="0" endLine="134" endPosition="0" />
-    <nodeInfo nodeId="2990203945682756041" fileName="VisibilityUtil.java" startLine="37" startPosition="5" endLine="58" endPosition="5" />
-    <nodeInfo nodeId="2684528044289748349" fileName="VisibilityUtil.java" startLine="84" startPosition="0" endLine="110" endPosition="0" />
-    <nodeInfo nodeId="3161373106581137355" fileName="VisibilityUtil.java" startLine="22" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="3161373106581137354" fileName="VisibilityUtil.java" startLine="20" startPosition="28" endLine="20" endPosition="28" />
-    <scopeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="136" startPosition="52" endLine="136" endPosition="52" />
-    <scopeInfo nodeId="2990203945682755991" fileName="VisibilityUtil.java" startLine="25" startPosition="96" endLine="26" endPosition="124" />
-    <scopeInfo nodeId="2990203945682756002" fileName="VisibilityUtil.java" startLine="28" startPosition="251" endLine="29" endPosition="18" />
-    <scopeInfo nodeId="2990203945682756017" fileName="VisibilityUtil.java" startLine="31" startPosition="150" endLine="32" endPosition="59" />
-    <scopeInfo nodeId="2990203945682756033" fileName="VisibilityUtil.java" startLine="35" startPosition="57" endLine="36" endPosition="18" />
-    <scopeInfo nodeId="546439919561133668" fileName="VisibilityUtil.java" startLine="47" startPosition="200" endLine="48" endPosition="26" />
-    <scopeInfo nodeId="2990203945682756181" fileName="VisibilityUtil.java" startLine="53" startPosition="18" endLine="54" endPosition="24" />
-    <scopeInfo nodeId="3192866263144677102" fileName="VisibilityUtil.java" startLine="62" startPosition="57" endLine="63" endPosition="74" />
-    <scopeInfo nodeId="3192866263144677173" fileName="VisibilityUtil.java" startLine="66" startPosition="58" endLine="67" endPosition="133" />
-    <scopeInfo nodeId="2990203945683232865" fileName="VisibilityUtil.java" startLine="72" startPosition="110" endLine="73" endPosition="152" />
-    <scopeInfo nodeId="2990203945683232917" fileName="VisibilityUtil.java" startLine="74" startPosition="228" endLine="75" endPosition="330" />
-    <scopeInfo nodeId="2990203945683232937" fileName="VisibilityUtil.java" startLine="76" startPosition="116" endLine="77" endPosition="152" />
-    <scopeInfo nodeId="2990203945683232950" fileName="VisibilityUtil.java" startLine="78" startPosition="112" endLine="79" endPosition="150" />
-    <scopeInfo nodeId="2990203945683233043" fileName="VisibilityUtil.java" startLine="80" startPosition="12" endLine="81" endPosition="18" />
-    <scopeInfo nodeId="2684528044289748971" fileName="VisibilityUtil.java" startLine="87" startPosition="31" endLine="88" endPosition="18" />
-    <scopeInfo nodeId="2684528044289748940" fileName="VisibilityUtil.java" startLine="90" startPosition="156" endLine="91" endPosition="65" />
-    <scopeInfo nodeId="2684528044289798021" fileName="VisibilityUtil.java" startLine="94" startPosition="53" endLine="95" endPosition="19" />
-    <scopeInfo nodeId="2684528044289748984" fileName="VisibilityUtil.java" startLine="97" startPosition="211" endLine="98" endPosition="18" />
-    <scopeInfo nodeId="2684528044289749093" fileName="VisibilityUtil.java" startLine="103" startPosition="186" endLine="104" endPosition="22" />
-    <scopeInfo nodeId="9049506802439948326" fileName="VisibilityUtil.java" startLine="111" startPosition="85" endLine="112" endPosition="237" />
-    <scopeInfo nodeId="46179992838786874" fileName="VisibilityUtil.java" startLine="117" startPosition="38" endLine="118" endPosition="19" />
-    <scopeInfo nodeId="46179992838786945" fileName="VisibilityUtil.java" startLine="125" startPosition="142" endLine="126" endPosition="22" />
-    <scopeInfo nodeId="46179992838786977" fileName="VisibilityUtil.java" startLine="130" startPosition="12" endLine="131" endPosition="147" />
-    <scopeInfo nodeId="3161373106581137352" fileName="VisibilityUtil.java" startLine="19" startPosition="35" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="2990203945682756162" fileName="VisibilityUtil.java" startLine="50" startPosition="121" endLine="52" endPosition="323" />
-    <scopeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="135" startPosition="61" endLine="137" endPosition="5" />
-    <scopeInfo nodeId="2684528044289749075" fileName="VisibilityUtil.java" startLine="102" startPosition="143" endLine="105" endPosition="9" />
-    <scopeInfo nodeId="46179992838786933" fileName="VisibilityUtil.java" startLine="124" startPosition="143" endLine="127" endPosition="9" />
-    <scopeInfo nodeId="3192866263144677099" fileName="VisibilityUtil.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+    <nodeInfo nodeId="2990203945682755988" fileName="VisibilityUtil.java" startLine="24" startPosition="80" endLine="25" endPosition="115" />
+    <nodeInfo nodeId="2990203945682755992" fileName="VisibilityUtil.java" startLine="26" startPosition="96" endLine="27" endPosition="124" />
+    <nodeInfo nodeId="2990203945682756003" fileName="VisibilityUtil.java" startLine="29" startPosition="251" endLine="30" endPosition="18" />
+    <nodeInfo nodeId="2990203945682756018" fileName="VisibilityUtil.java" startLine="32" startPosition="150" endLine="33" endPosition="59" />
+    <nodeInfo nodeId="2990203945682756030" fileName="VisibilityUtil.java" startLine="34" startPosition="5" endLine="35" endPosition="35" />
+    <nodeInfo nodeId="2990203945682756034" fileName="VisibilityUtil.java" startLine="36" startPosition="57" endLine="37" endPosition="18" />
+    <nodeInfo nodeId="2990203945682756043" fileName="VisibilityUtil.java" startLine="39" startPosition="152" endLine="40" endPosition="50" />
+    <nodeInfo nodeId="2990203945682756045" fileName="VisibilityUtil.java" startLine="40" startPosition="50" endLine="41" endPosition="124" />
+    <nodeInfo nodeId="2990203945682756139" fileName="VisibilityUtil.java" startLine="44" startPosition="426" endLine="45" endPosition="107" />
+    <nodeInfo nodeId="46179992838786363" fileName="VisibilityUtil.java" startLine="45" startPosition="107" endLine="46" endPosition="110" />
+    <nodeInfo nodeId="546439919561133653" fileName="VisibilityUtil.java" startLine="46" startPosition="110" endLine="47" endPosition="185" />
+    <nodeInfo nodeId="546439919561133701" fileName="VisibilityUtil.java" startLine="48" startPosition="200" endLine="49" endPosition="26" />
+    <nodeInfo nodeId="2990203945682756163" fileName="VisibilityUtil.java" startLine="51" startPosition="121" endLine="52" endPosition="98" />
+    <nodeInfo nodeId="2990203945682756165" fileName="VisibilityUtil.java" startLine="52" startPosition="98" endLine="53" endPosition="323" />
+    <nodeInfo nodeId="2990203945682756184" fileName="VisibilityUtil.java" startLine="54" startPosition="18" endLine="55" endPosition="24" />
+    <nodeInfo nodeId="2990203945682756199" fileName="VisibilityUtil.java" startLine="59" startPosition="5" endLine="60" endPosition="17" />
+    <nodeInfo nodeId="3192866263144677118" fileName="VisibilityUtil.java" startLine="63" startPosition="57" endLine="64" endPosition="74" />
+    <nodeInfo nodeId="3192866263144677178" fileName="VisibilityUtil.java" startLine="67" startPosition="58" endLine="68" endPosition="133" />
+    <nodeInfo nodeId="2684528044289749171" fileName="VisibilityUtil.java" startLine="71" startPosition="101" endLine="72" endPosition="42" />
+    <nodeInfo nodeId="2684528044289748980" fileName="VisibilityUtil.java" startLine="73" startPosition="31" endLine="74" endPosition="18" />
+    <nodeInfo nodeId="2684528044289748956" fileName="VisibilityUtil.java" startLine="76" startPosition="156" endLine="77" endPosition="65" />
+    <nodeInfo nodeId="6139857295094308053" fileName="VisibilityUtil.java" startLine="78" startPosition="5" endLine="79" endPosition="124" />
+    <nodeInfo nodeId="2684528044289798057" fileName="VisibilityUtil.java" startLine="80" startPosition="53" endLine="81" endPosition="19" />
+    <nodeInfo nodeId="2684528044289749000" fileName="VisibilityUtil.java" startLine="83" startPosition="211" endLine="84" endPosition="18" />
+    <nodeInfo nodeId="6139857295094308117" fileName="VisibilityUtil.java" startLine="86" startPosition="158" endLine="87" endPosition="36" />
+    <nodeInfo nodeId="2684528044289749116" fileName="VisibilityUtil.java" startLine="89" startPosition="186" endLine="90" endPosition="22" />
+    <nodeInfo nodeId="2684528044289749121" fileName="VisibilityUtil.java" startLine="93" startPosition="5" endLine="94" endPosition="17" />
+    <nodeInfo nodeId="4228096044112584960" fileName="VisibilityUtil.java" startLine="97" startPosition="75" endLine="98" endPosition="34" />
+    <nodeInfo nodeId="9049506802439959956" fileName="VisibilityUtil.java" startLine="98" startPosition="34" endLine="99" endPosition="237" />
+    <nodeInfo nodeId="4228096044112585445" fileName="VisibilityUtil.java" startLine="102" startPosition="92" endLine="103" endPosition="49" />
+    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="115" startPosition="49" endLine="116" endPosition="26" />
+    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="116" startPosition="26" endLine="117" endPosition="67" />
+    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="117" startPosition="67" endLine="118" endPosition="32" />
+    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="119" startPosition="7" endLine="120" endPosition="207" />
+    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="120" startPosition="207" endLine="121" endPosition="43" />
+    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="121" startPosition="43" endLine="122" endPosition="69" />
+    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="122" startPosition="69" endLine="123" endPosition="31" />
+    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="124" startPosition="7" endLine="125" endPosition="20" />
+    <nodeInfo nodeId="3161373106581137352" fileName="VisibilityUtil.java" startLine="20" startPosition="35" endLine="22" endPosition="3" />
+    <nodeInfo nodeId="2990203945682756180" fileName="VisibilityUtil.java" startLine="54" startPosition="16" endLine="56" endPosition="11" />
+    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="111" startPosition="61" endLine="113" endPosition="5" />
+    <nodeInfo nodeId="2990203945682755990" fileName="VisibilityUtil.java" startLine="25" startPosition="115" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="2990203945682756001" fileName="VisibilityUtil.java" startLine="28" startPosition="5" endLine="31" endPosition="5" />
+    <nodeInfo nodeId="2990203945682756016" fileName="VisibilityUtil.java" startLine="31" startPosition="5" endLine="34" endPosition="5" />
+    <nodeInfo nodeId="2990203945682756032" fileName="VisibilityUtil.java" startLine="35" startPosition="35" endLine="38" endPosition="5" />
+    <nodeInfo nodeId="546439919561133667" fileName="VisibilityUtil.java" startLine="47" startPosition="185" endLine="50" endPosition="13" />
+    <nodeInfo nodeId="2684528044289748970" fileName="VisibilityUtil.java" startLine="72" startPosition="42" endLine="75" endPosition="5" />
+    <nodeInfo nodeId="2684528044289748939" fileName="VisibilityUtil.java" startLine="75" startPosition="5" endLine="78" endPosition="5" />
+    <nodeInfo nodeId="2684528044289798020" fileName="VisibilityUtil.java" startLine="79" startPosition="124" endLine="82" endPosition="5" />
+    <nodeInfo nodeId="2684528044289748983" fileName="VisibilityUtil.java" startLine="82" startPosition="5" endLine="85" endPosition="5" />
+    <nodeInfo nodeId="2684528044289749091" fileName="VisibilityUtil.java" startLine="88" startPosition="143" endLine="91" endPosition="9" />
+    <nodeInfo nodeId="3192866263144677099" fileName="VisibilityUtil.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <nodeInfo nodeId="3192866263144677170" fileName="VisibilityUtil.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <nodeInfo nodeId="4228096044112618479" fileName="VisibilityUtil.java" startLine="104" startPosition="160" endLine="108" endPosition="0" />
+    <nodeInfo nodeId="2684528044289749072" fileName="VisibilityUtil.java" startLine="87" startPosition="36" endLine="92" endPosition="7" />
+    <nodeInfo nodeId="9049506802439948323" fileName="VisibilityUtil.java" startLine="96" startPosition="0" endLine="101" endPosition="0" />
+    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="118" startPosition="32" endLine="124" endPosition="7" />
+    <nodeInfo nodeId="2684528044289749053" fileName="VisibilityUtil.java" startLine="85" startPosition="5" endLine="93" endPosition="5" />
+    <nodeInfo nodeId="4228096044112585437" fileName="VisibilityUtil.java" startLine="101" startPosition="0" endLine="110" endPosition="0" />
+    <nodeInfo nodeId="2990203945682756128" fileName="VisibilityUtil.java" startLine="43" startPosition="147" endLine="56" endPosition="11" />
+    <nodeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="114" startPosition="0" endLine="127" endPosition="0" />
+    <nodeInfo nodeId="2990203945682756126" fileName="VisibilityUtil.java" startLine="42" startPosition="143" endLine="57" endPosition="9" />
+    <nodeInfo nodeId="2990203945682756117" fileName="VisibilityUtil.java" startLine="41" startPosition="124" endLine="58" endPosition="7" />
+    <nodeInfo nodeId="2990203945682756041" fileName="VisibilityUtil.java" startLine="38" startPosition="5" endLine="59" endPosition="5" />
+    <nodeInfo nodeId="2684528044289748349" fileName="VisibilityUtil.java" startLine="70" startPosition="0" endLine="96" endPosition="0" />
+    <nodeInfo nodeId="3161373106581137355" fileName="VisibilityUtil.java" startLine="23" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="3161373106581137354" fileName="VisibilityUtil.java" startLine="21" startPosition="28" endLine="21" endPosition="28" />
+    <scopeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="112" startPosition="52" endLine="112" endPosition="52" />
+    <scopeInfo nodeId="2990203945682755991" fileName="VisibilityUtil.java" startLine="26" startPosition="96" endLine="27" endPosition="124" />
+    <scopeInfo nodeId="2990203945682756002" fileName="VisibilityUtil.java" startLine="29" startPosition="251" endLine="30" endPosition="18" />
+    <scopeInfo nodeId="2990203945682756017" fileName="VisibilityUtil.java" startLine="32" startPosition="150" endLine="33" endPosition="59" />
+    <scopeInfo nodeId="2990203945682756033" fileName="VisibilityUtil.java" startLine="36" startPosition="57" endLine="37" endPosition="18" />
+    <scopeInfo nodeId="546439919561133668" fileName="VisibilityUtil.java" startLine="48" startPosition="200" endLine="49" endPosition="26" />
+    <scopeInfo nodeId="2990203945682756181" fileName="VisibilityUtil.java" startLine="54" startPosition="18" endLine="55" endPosition="24" />
+    <scopeInfo nodeId="3192866263144677102" fileName="VisibilityUtil.java" startLine="63" startPosition="57" endLine="64" endPosition="74" />
+    <scopeInfo nodeId="3192866263144677173" fileName="VisibilityUtil.java" startLine="67" startPosition="58" endLine="68" endPosition="133" />
+    <scopeInfo nodeId="2684528044289748971" fileName="VisibilityUtil.java" startLine="73" startPosition="31" endLine="74" endPosition="18" />
+    <scopeInfo nodeId="2684528044289748940" fileName="VisibilityUtil.java" startLine="76" startPosition="156" endLine="77" endPosition="65" />
+    <scopeInfo nodeId="2684528044289798021" fileName="VisibilityUtil.java" startLine="80" startPosition="53" endLine="81" endPosition="19" />
+    <scopeInfo nodeId="2684528044289748984" fileName="VisibilityUtil.java" startLine="83" startPosition="211" endLine="84" endPosition="18" />
+    <scopeInfo nodeId="2684528044289749093" fileName="VisibilityUtil.java" startLine="89" startPosition="186" endLine="90" endPosition="22" />
+    <scopeInfo nodeId="4228096044112618480" fileName="VisibilityUtil.java" startLine="105" startPosition="40" endLine="106" endPosition="37" />
+    <scopeInfo nodeId="3161373106581137352" fileName="VisibilityUtil.java" startLine="20" startPosition="35" endLine="22" endPosition="3" />
+    <scopeInfo nodeId="2990203945682756162" fileName="VisibilityUtil.java" startLine="51" startPosition="121" endLine="53" endPosition="323" />
+    <scopeInfo nodeId="9049506802439948326" fileName="VisibilityUtil.java" startLine="97" startPosition="75" endLine="99" endPosition="237" />
+    <scopeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="111" startPosition="61" endLine="113" endPosition="5" />
+    <scopeInfo nodeId="2684528044289749075" fileName="VisibilityUtil.java" startLine="88" startPosition="143" endLine="91" endPosition="9" />
+    <scopeInfo nodeId="3192866263144677099" fileName="VisibilityUtil.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="3192866263144677104" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3192866263144677170" fileName="VisibilityUtil.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="3192866263144677170" fileName="VisibilityUtil.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="3192866263144677175" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="9049506802439948323" fileName="VisibilityUtil.java" startLine="110" startPosition="0" endLine="114" endPosition="0">
+    <scopeInfo nodeId="4228096044112618479" fileName="VisibilityUtil.java" startLine="104" startPosition="160" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="119" startPosition="7" endLine="123" endPosition="31" />
+    <scopeInfo nodeId="2684528044289749072" fileName="VisibilityUtil.java" startLine="87" startPosition="36" endLine="92" endPosition="7" />
+    <scopeInfo nodeId="9049506802439948323" fileName="VisibilityUtil.java" startLine="96" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="9049506802439959939" varName="member" />
       <varInfo nodeId="9049506802439959933" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="143" startPosition="7" endLine="147" endPosition="31" />
-    <scopeInfo nodeId="2684528044289749072" fileName="VisibilityUtil.java" startLine="101" startPosition="36" endLine="106" endPosition="7" />
-    <scopeInfo nodeId="46179992838786925" fileName="VisibilityUtil.java" startLine="123" startPosition="26" endLine="128" endPosition="7" />
-    <scopeInfo nodeId="2990203945682756138" fileName="VisibilityUtil.java" startLine="43" startPosition="426" endLine="49" endPosition="13">
+    <scopeInfo nodeId="2990203945682756138" fileName="VisibilityUtil.java" startLine="44" startPosition="426" endLine="50" endPosition="13">
       <varInfo nodeId="546439919561133654" varName="qualifier" />
     </scopeInfo>
-    <scopeInfo nodeId="2684528044289749054" fileName="VisibilityUtil.java" startLine="100" startPosition="158" endLine="106" endPosition="7" />
-    <scopeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="142" startPosition="32" endLine="148" endPosition="7" />
-    <scopeInfo nodeId="46179992838786869" fileName="VisibilityUtil.java" startLine="122" startPosition="30" endLine="129" endPosition="19" />
-    <scopeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="139" startPosition="49" endLine="149" endPosition="20" />
-    <scopeInfo nodeId="2990203945683227762" fileName="VisibilityUtil.java" startLine="71" startPosition="60" endLine="82" endPosition="5" />
-    <scopeInfo nodeId="2990203945682756127" fileName="VisibilityUtil.java" startLine="42" startPosition="147" endLine="55" endPosition="11" />
-    <scopeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="138" startPosition="0" endLine="151" endPosition="0" />
-    <scopeInfo nodeId="2990203945682756125" fileName="VisibilityUtil.java" startLine="41" startPosition="143" endLine="56" endPosition="9" />
-    <scopeInfo nodeId="2990203945683227759" fileName="VisibilityUtil.java" startLine="69" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="2990203945683232859" varName="refNode" />
+    <scopeInfo nodeId="2684528044289749054" fileName="VisibilityUtil.java" startLine="86" startPosition="158" endLine="92" endPosition="7" />
+    <scopeInfo nodeId="4228096044112585440" fileName="VisibilityUtil.java" startLine="102" startPosition="92" endLine="108" endPosition="7" />
+    <scopeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="118" startPosition="32" endLine="124" endPosition="7" />
+    <scopeInfo nodeId="4228096044112585437" fileName="VisibilityUtil.java" startLine="101" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="4228096044112585442" varName="member" />
+      <varInfo nodeId="4228096044112585460" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="2990203945682756117" fileName="VisibilityUtil.java" startLine="40" startPosition="124" endLine="57" endPosition="7" />
-    <scopeInfo nodeId="3192866263144675493" fileName="VisibilityUtil.java" startLine="115" startPosition="83" endLine="132" endPosition="5">
-      <varInfo nodeId="46179992838814649" varName="qualifier" />
-      <varInfo nodeId="46179992838814615" varName="clsMember" />
-    </scopeInfo>
-    <scopeInfo nodeId="2990203945682756042" fileName="VisibilityUtil.java" startLine="38" startPosition="152" endLine="57" endPosition="7">
+    <scopeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="115" startPosition="49" endLine="125" endPosition="20" />
+    <scopeInfo nodeId="2990203945682756127" fileName="VisibilityUtil.java" startLine="43" startPosition="147" endLine="56" endPosition="11" />
+    <scopeInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="114" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="2990203945682756125" fileName="VisibilityUtil.java" startLine="42" startPosition="143" endLine="57" endPosition="9" />
+    <scopeInfo nodeId="2990203945682756117" fileName="VisibilityUtil.java" startLine="41" startPosition="124" endLine="58" endPosition="7" />
+    <scopeInfo nodeId="2990203945682756042" fileName="VisibilityUtil.java" startLine="39" startPosition="152" endLine="58" endPosition="7">
       <varInfo nodeId="2990203945682756046" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3192866263144675490" fileName="VisibilityUtil.java" startLine="114" startPosition="0" endLine="134" endPosition="0">
-      <varInfo nodeId="3192866263144675495" varName="refNode" />
-      <varInfo nodeId="3192866263144675497" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="2684528044289748352" fileName="VisibilityUtil.java" startLine="85" startPosition="100" endLine="108" endPosition="17">
+    <scopeInfo nodeId="2684528044289748352" fileName="VisibilityUtil.java" startLine="71" startPosition="101" endLine="94" endPosition="17">
       <varInfo nodeId="6139857295094308054" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="2684528044289748349" fileName="VisibilityUtil.java" startLine="84" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="2684528044289748349" fileName="VisibilityUtil.java" startLine="70" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="2684528044289748354" varName="context" />
       <varInfo nodeId="2684528044289748356" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137361" fileName="VisibilityUtil.java" startLine="23" startPosition="80" endLine="59" endPosition="17" />
-    <scopeInfo nodeId="3161373106581137355" fileName="VisibilityUtil.java" startLine="22" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="3161373106581137361" fileName="VisibilityUtil.java" startLine="24" startPosition="80" endLine="60" endPosition="17" />
+    <scopeInfo nodeId="3161373106581137355" fileName="VisibilityUtil.java" startLine="23" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="3161373106581137359" varName="name" />
       <varInfo nodeId="3161373106581137357" varName="context" />
     </scopeInfo>
-    <unitInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="135" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.VisibilityUtil$QuotationClass_v8uv56_a1a0d0a0a0c0g0a" />
-    <unitInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="19" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.VisibilityUtil" />
+    <unitInfo nodeId="4228096044112618479" fileName="VisibilityUtil.java" startLine="104" startPosition="137" endLine="108" endPosition="5" unitName="jetbrains.mps.baseLanguage.search.IWhereFilter$anonymous" />
+    <unitInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="111" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.VisibilityUtil$QuotationClass_v8uv56_a1a0d0a0a0c0g0a" />
+    <unitInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="20" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.VisibilityUtil" />
   </root>
   <root nodeId="3161373106581139670">
     <nodeInfo nodeId="3161373106581139695" fileName="ReachableClassifiersScope.java" startLine="19" startPosition="73" endLine="20" endPosition="25" />
