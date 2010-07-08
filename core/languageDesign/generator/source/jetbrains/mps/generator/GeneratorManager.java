@@ -29,6 +29,8 @@ import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
@@ -218,7 +220,10 @@ public class GeneratorManager {
             message += "\n" + sm.getSModelFqName();
           }
 
-          int result = Messages.showYesNoCancelDialog(myProject, message, "Generate Required Models", Messages.getWarningIcon());
+          int result = 1;
+          if (IdeMain.getTestMode()!=TestMode.CORE_TEST){
+            result = Messages.showYesNoCancelDialog(myProject, message, "Generate Required Models", Messages.getWarningIcon());
+          }
 
           //idea don't have constants for YES/NO
           if (result == -1 || result == 2) return false;
