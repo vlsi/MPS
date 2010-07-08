@@ -25,6 +25,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -63,6 +64,9 @@ public class TestMakeOnRealProject {
 
   @After
   public void tearDown() throws Exception {
+    MPSModuleRepository.getInstance().unRegisterModules(myModuleOwner);
+    CleanupManager.getInstance().cleanup();
+
     ModelAccess.instance().flushEventQueue();
     FileUtil.delete(myTmpDir);
   }
