@@ -28,7 +28,7 @@
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
       <languagePath path="${project}/languages/evaluation/evaluation.mpl" folder="" />
-      <languagePath path="${mps_home}/samples/sampleLanguage/sampleLanguage.mpl" folder="" />
+      <languagePath path="${samples_home}/sampleLanguage/sampleLanguage.mpl" folder="" />
       <languagePath path="${project}/languages/customViewers/customViewers.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
