@@ -8750,11 +8750,16 @@
               </node>
             </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7241381882860005650">
-              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7241381882860005651">
-                <link role="classConcept:3" targetNodeId="7241381882860001930" resolveInfo="ASMModelLoader" />
-                <link role="baseMethodDeclaration:3" targetNodeId="7241381882860005660" resolveInfo="isAnonymous" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7241381882860005652">
-                  <link role="variableDeclaration:3" targetNodeId="7241381882860005645" resolveInfo="s" />
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="6941184271277327295">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6941184271277327969">
+                  <link role="variableDeclaration:3" targetNodeId="634073782578834048" resolveInfo="mySkipPrivate" />
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7241381882860005651">
+                  <link role="classConcept:3" targetNodeId="7241381882860001930" resolveInfo="ASMModelLoader" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="7241381882860005660" resolveInfo="isAnonymous" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7241381882860005652">
+                    <link role="variableDeclaration:3" targetNodeId="7241381882860005645" resolveInfo="s" />
+                  </node>
                 </node>
               </node>
               <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7241381882860005653">
