@@ -19,6 +19,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.hierarchy.icons.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
@@ -312,7 +313,13 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
 
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(MPSDataKeys.NODE.getName())) return getSelectedConcept().getNode();
+    if (dataId.equals(MPSDataKeys.NODE.getName())){
+      return ModelAccess.instance().runReadAction(new Computable<Object>() {
+        public Object compute() {
+          return getSelectedConcept().getNode();
+        }
+      });
+    }
     if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return myOperationContext;
 
     return null;
@@ -357,9 +364,14 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
           if (e.isPopupTrigger()) {
             myComponent.processPopupMenu(e);
           } else {
-            projectPane.selectNode(BaseAdapter.fromAdapter(getNode()));
+            SNode node = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+              public SNode compute() {
+                return BaseAdapter.fromAdapter(getNode());
+              }
+            });
+            projectPane.selectNode(node);
             if (e.getClickCount() == 2) {
-              myOperationContext.getComponent(MPSEditorOpener.class).editNode(BaseAdapter.fromAdapter(getNode()), myOperationContext);
+              myOperationContext.getComponent(MPSEditorOpener.class).editNode(node, myOperationContext);
             }
           }
         }
@@ -408,10 +420,14 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
 
     @NotNull
     public String getText() {
-      ConceptDeclaration conceptDeclaration = getNode();
-      if (conceptDeclaration == null) return "";
-      String name = conceptDeclaration.getName();
-      return name != null ? name : "";
+      return ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          ConceptDeclaration conceptDeclaration = getNode();
+          if (conceptDeclaration == null) return "";
+          String name = conceptDeclaration.getName();
+          return name != null ? name : "";
+        }
+      });
     }
 
     public List<ConceptContainer> getChildren() {
