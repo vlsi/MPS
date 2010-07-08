@@ -17,7 +17,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class ShowInProject_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/project.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/project.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ShowInProject_Action.class);
 
   private Project project;

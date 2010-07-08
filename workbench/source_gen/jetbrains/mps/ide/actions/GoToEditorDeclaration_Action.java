@@ -34,7 +34,7 @@ import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class GoToEditorDeclaration_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/core/languageDesign/editor/icons/editor.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/editor.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(GoToEditorDeclaration_Action.class);
 
   private Project ideaProject;

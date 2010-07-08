@@ -28,7 +28,7 @@ import java.util.List;
 import jetbrains.mps.ide.projectPane.SortUtil;
 
 public class NewSubTestModel_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/testModel.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/testModel.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(NewSubTestModel_Action.class);
 
   private Project ideaProject;

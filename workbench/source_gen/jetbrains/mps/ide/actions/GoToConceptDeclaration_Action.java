@@ -17,14 +17,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class GoToConceptDeclaration_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/core/languageDesign/structure/icons/structure.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/structure.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(GoToConceptDeclaration_Action.class);
 
   private SNode node;
   private IOperationContext context;
 
   public GoToConceptDeclaration_Action() {
-    super("Go To Concept Declaration", "", ICON);
+    super("Go to Concept Declaration", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }

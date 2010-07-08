@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewSubModel_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/model.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/model.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(NewSubModel_Action.class);
 
   private Project ideaProject;

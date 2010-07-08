@@ -21,7 +21,7 @@ import com.intellij.openapi.ui.InputValidator;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 
 public class AddToNewFavoritesList_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/other/addFavoritesList.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/addFavoritesList.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(AddToNewFavoritesList_Action.class);
 
   private List<TreeNode> treeNodes;

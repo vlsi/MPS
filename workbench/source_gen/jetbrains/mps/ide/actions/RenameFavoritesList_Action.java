@@ -20,7 +20,7 @@ import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import java.util.List;
 
 public class RenameFavoritesList_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/other/menu-replace.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/menu-replace.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(RenameFavoritesList_Action.class);
 
   private Project project;
