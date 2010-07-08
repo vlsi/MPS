@@ -40,10 +40,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.*;
 import junit.framework.TestCase;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 
 public class TestMakeOnRealProject {
   private static final String TEST_JAVA_FILE = "Test.java";
@@ -56,12 +53,12 @@ public class TestMakeOnRealProject {
   };
 
 
-  @Before
+  @BeforeClass
   public void setUp() throws IOException {
     createTmpModules();
   }
 
-  @After
+  @AfterClass
   public void tearDown() throws Exception {
     ModelAccess.instance().flushEventQueue();
     FileUtil.delete(myTmpDir);
