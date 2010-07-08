@@ -67,7 +67,7 @@ public class FunctionType_Behavior {
 
   public static SNode virtual_getResultType_1230475757059(SNode thisNode) {
     SNode rt = SLinkOperations.getTarget(thisNode, "resultType", true);
-    rt = FunctionType_Behavior.call_unmeet_1237318764946(thisNode, rt);
+    rt = FunctionType_Behavior.call_unmeet_1237318764946(thisNode, SNodeOperations.copyNode(rt));
     if (SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.VoidType")) {
       return null;
     }
