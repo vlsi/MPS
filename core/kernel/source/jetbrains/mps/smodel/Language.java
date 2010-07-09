@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.baseLanguage.stubs.JavaStubs;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.lang.core.structure.Core_Language;
 import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.lang.refactoring.structure.OldRefactoring;
@@ -281,7 +281,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       }
     }
     for (StubModelsEntry stubModelsEntry : getModuleDescriptor().getRuntimeStubModels()) {
-      if (!VFileSystem.getFile(stubModelsEntry.getPath()).exists()) {
+      VirtualFile vfile = VFileSystem.getFile(stubModelsEntry.getPath());
+      if (vfile == null || !vfile.exists()) {
         errors.add("Can't find runtime library: " + stubModelsEntry.getPath());
       }
     }
