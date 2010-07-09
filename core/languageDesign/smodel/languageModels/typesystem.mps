@@ -3310,36 +3310,47 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="1227545687775">
-          <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1227545696956">
-            <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1227545696957">
-              <node role="quotedNode:0" type="jetbrains.mps.lang.typesystem.structure.JoinType:3" id="1228212386120">
-                <node role="argument:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1228212394245">
-                  <node role="referenceAntiquotation$link_attribute$concept:16" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="1228212427030">
-                    <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1228212431487">
-                      <link role="variableDeclaration:3" targetNodeId="1208202100439" resolveInfo="TypeToEquate" />
+        <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement:3" id="8844001996561701137">
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8844001996561701138">
+            <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="1227545687775">
+              <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1227545696956">
+                <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1227545696957">
+                  <node role="quotedNode:0" type="jetbrains.mps.lang.typesystem.structure.JoinType:3" id="1228212386120">
+                    <node role="argument:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1228212394245">
+                      <node role="referenceAntiquotation$link_attribute$concept:16" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="1228212427030">
+                        <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1228212431487">
+                          <link role="variableDeclaration:3" targetNodeId="1208202100439" resolveInfo="TypeToEquate" />
+                        </node>
+                      </node>
                     </node>
-                  </node>
-                </node>
-                <node role="argument:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="1228212421018">
-                  <node role="referenceAntiquotation$link_attribute$elementConcept:16" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="1228212423236">
-                    <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1228212438109">
-                      <link role="variableDeclaration:3" targetNodeId="1208202100439" resolveInfo="TypeToEquate" />
+                    <node role="argument:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="1228212421018">
+                      <node role="referenceAntiquotation$link_attribute$elementConcept:16" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="1228212423236">
+                        <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1228212438109">
+                          <link role="variableDeclaration:3" targetNodeId="1208202100439" resolveInfo="TypeToEquate" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-          <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1227545687779">
-            <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1227545671650">
-              <property name="skipDependencyOnCurrent:3" value="true" />
-              <node role="term:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1227545673989">
-                <link role="variableDeclaration:3" targetNodeId="1208202100442" resolveInfo="leftExpression" />
+              <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="8844001996561706203">
+                <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference:3" id="8844001996561706204">
+                  <link role="whenConcreteVar:3" targetNodeId="8844001996561701143" resolveInfo="LeftType" />
+                </node>
               </node>
+              <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="5970100369440882528" />
             </node>
           </node>
-          <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="5970100369440882528" />
+          <node role="argument:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="8844001996561701140">
+            <property name="skipDependencyOnCurrent:3" value="true" />
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8844001996561701142">
+              <link role="variableDeclaration:3" targetNodeId="1208202100442" resolveInfo="leftExpression" />
+            </node>
+          </node>
+          <node role="argumentRepresentator:3" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration:3" id="8844001996561701143">
+            <property name="name:3" value="LeftType" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="8844001996561701144" />
+          </node>
         </node>
       </node>
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1208202100436" />
