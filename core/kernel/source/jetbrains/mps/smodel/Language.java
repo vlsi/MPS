@@ -814,7 +814,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   //-----------stubs--------------
 
   public boolean areJavaStubsEnabled() {
-    return getModuleDescriptor().getEnableJavaStubs();
+    return getModuleDescriptor().getEnableJavaStubs() || !getModuleDescriptor().getSourcePaths().isEmpty();
   }
 
   public List<StubPath> getRuntimeStubPaths() {
