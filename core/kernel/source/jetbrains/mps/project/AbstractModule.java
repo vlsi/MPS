@@ -172,7 +172,7 @@ public abstract class AbstractModule implements IModule {
       if (MPSModuleRepository.getInstance().getModule(moduleRef) == null) {
         errors.add("Can't find dependency: " + moduleRef.getModuleFqName());
       }
-    }                             
+    }
     for (ModuleReference reference : getUsedLanguagesReferences()) {
       if (MPSModuleRepository.getInstance().getLanguage(reference) == null) {
         errors.add("Can't find used language: " + reference.getModuleFqName());
@@ -186,14 +186,16 @@ public abstract class AbstractModule implements IModule {
     if (getModuleDescriptor() != null) {
       if (getModuleDescriptor().getSourcePaths() != null && !isPackaged()) {
         for (String sourcePath : getModuleDescriptor().getSourcePaths()) {
-          if (!VFileSystem.getFile(sourcePath).exists()) {
+          VirtualFile vfile = VFileSystem.getFile(sourcePath);
+          if (vfile == null || !vfile.exists()) {
             errors.add("Can't find source path: " + sourcePath);
           }
         }
       }
       if (getModuleDescriptor().getStubModelEntries() != null) {
         for (StubModelsEntry stubModelsEntry : getModuleDescriptor().getStubModelEntries()) {
-          if (!VFileSystem.getFile(stubModelsEntry.getPath()).exists()) {
+          VirtualFile vfile = VFileSystem.getFile(stubModelsEntry.getPath());
+          if (vfile == null || !vfile.exists()) {
             errors.add("Can't find library: " + stubModelsEntry.getPath());
           }
         }
