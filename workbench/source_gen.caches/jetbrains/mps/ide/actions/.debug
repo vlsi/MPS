@@ -2535,10 +2535,10 @@
     <nodeInfo nodeId="227146524086812215" fileName="HighlightInstances_Action.java" startLine="98" startPosition="115" endLine="99" endPosition="115" />
     <nodeInfo nodeId="227146524086812463" fileName="HighlightInstances_Action.java" startLine="101" startPosition="133" endLine="102" endPosition="96" />
     <nodeInfo nodeId="1709218712959265252" fileName="HighlightInstances_Action.java" startLine="104" startPosition="7" endLine="105" endPosition="57" />
-    <nodeInfo nodeId="227146524086812401" fileName="HighlightInstances_Action.java" startLine="100" startPosition="270" endLine="103" endPosition="9" />
+    <nodeInfo nodeId="227146524086812401" fileName="HighlightInstances_Action.java" startLine="100" startPosition="255" endLine="103" endPosition="9" />
     <nodeInfo nodeId="227146524086812381" fileName="HighlightInstances_Action.java" startLine="99" startPosition="115" endLine="104" endPosition="7" />
     <scopeInfo nodeId="227146524086812403" fileName="HighlightInstances_Action.java" startLine="101" startPosition="133" endLine="102" endPosition="96" />
-    <scopeInfo nodeId="227146524086812384" fileName="HighlightInstances_Action.java" startLine="100" startPosition="270" endLine="103" endPosition="9" />
+    <scopeInfo nodeId="227146524086812384" fileName="HighlightInstances_Action.java" startLine="100" startPosition="255" endLine="103" endPosition="9" />
     <scopeInfo nodeId="227146524086812381" fileName="HighlightInstances_Action.java" startLine="99" startPosition="115" endLine="104" endPosition="7" />
   </root>
   <root nodeId="2337689001241469705">
@@ -4437,118 +4437,126 @@
     <nodeInfo nodeId="5246419582055649805" fileName="End_Action.java" startLine="60" startPosition="9" endLine="61" endPosition="67" />
   </root>
   <root nodeId="5357294907628536183">
-    <nodeInfo nodeId="5357294907628538957" fileName="GoByCurrentReference_Action.java" startLine="32" startPosition="0" endLine="33" endPosition="26" />
-    <nodeInfo nodeId="5357294907628538964" fileName="GoByCurrentReference_Action.java" startLine="33" startPosition="26" endLine="34" endPosition="42" />
-    <nodeInfo nodeId="5357294907628542276" fileName="GoByCurrentReference_Action.java" startLine="34" startPosition="42" endLine="35" endPosition="26" />
-    <nodeInfo nodeId="5357294907628538959" fileName="GoByCurrentReference_Action.java" startLine="35" startPosition="26" endLine="36" endPosition="36" />
-    <nodeInfo nodeId="5357294907628538961" fileName="GoByCurrentReference_Action.java" startLine="36" startPosition="36" endLine="37" endPosition="21" />
-    <nodeInfo nodeId="5357294907628571324" fileName="GoByCurrentReference_Action.java" startLine="50" startPosition="52" endLine="51" endPosition="84" />
-    <nodeInfo nodeId="5357294907628571334" fileName="GoByCurrentReference_Action.java" startLine="52" startPosition="29" endLine="53" endPosition="19" />
-    <nodeInfo nodeId="5357294907628571340" fileName="GoByCurrentReference_Action.java" startLine="55" startPosition="73" endLine="56" endPosition="19" />
-    <nodeInfo nodeId="5357294907628574045" fileName="GoByCurrentReference_Action.java" startLine="58" startPosition="69" endLine="59" endPosition="19" />
-    <nodeInfo nodeId="5357294907628571320" fileName="GoByCurrentReference_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="16" />
-    <nodeInfo nodeId="5357294907628571355" fileName="GoByCurrentReference_Action.java" startLine="115" startPosition="9" endLine="116" endPosition="86" />
-    <nodeInfo nodeId="5357294907628574154" fileName="GoByCurrentReference_Action.java" startLine="118" startPosition="78" endLine="119" endPosition="17" />
-    <nodeInfo nodeId="5357294907628574048" fileName="GoByCurrentReference_Action.java" startLine="121" startPosition="7" endLine="122" endPosition="150" />
-    <nodeInfo nodeId="5357294907628574030" fileName="GoByCurrentReference_Action.java" startLine="130" startPosition="45" endLine="131" endPosition="88" />
-    <nodeInfo nodeId="6289945658608798439" fileName="GoByCurrentReference_Action.java" startLine="134" startPosition="52" endLine="135" endPosition="56" />
-    <nodeInfo nodeId="5357294907628574108" fileName="GoByCurrentReference_Action.java" startLine="138" startPosition="56" endLine="139" endPosition="84" />
-    <nodeInfo nodeId="6105093990493768706" fileName="GoByCurrentReference_Action.java" startLine="139" startPosition="84" endLine="140" endPosition="119" />
-    <nodeInfo nodeId="6105093990493768658" fileName="GoByCurrentReference_Action.java" startLine="140" startPosition="119" endLine="141" endPosition="132" />
-    <nodeInfo nodeId="6105093990493768691" fileName="GoByCurrentReference_Action.java" startLine="141" startPosition="132" endLine="142" endPosition="248" />
-    <nodeInfo nodeId="6105093990493768736" fileName="GoByCurrentReference_Action.java" startLine="142" startPosition="248" endLine="143" endPosition="351" />
-    <nodeInfo nodeId="6105093990493768776" fileName="GoByCurrentReference_Action.java" startLine="144" startPosition="66" endLine="145" endPosition="19" />
-    <nodeInfo nodeId="7236590470026152818" fileName="GoByCurrentReference_Action.java" startLine="146" startPosition="5" endLine="147" endPosition="12" />
-    <nodeInfo nodeId="6105093990493768558" fileName="GoByCurrentReference_Action.java" startLine="147" startPosition="12" endLine="148" endPosition="119" />
-    <nodeInfo nodeId="6105093990493768576" fileName="GoByCurrentReference_Action.java" startLine="150" startPosition="33" endLine="151" endPosition="70" />
-    <nodeInfo nodeId="6105093990493768579" fileName="GoByCurrentReference_Action.java" startLine="152" startPosition="7" endLine="153" endPosition="19" />
-    <nodeInfo nodeId="7236590470026152810" fileName="GoByCurrentReference_Action.java" startLine="154" startPosition="5" endLine="155" endPosition="12" />
-    <nodeInfo nodeId="6105093990493768991" fileName="GoByCurrentReference_Action.java" startLine="157" startPosition="25" endLine="158" endPosition="173" />
-    <nodeInfo nodeId="6105093990493769174" fileName="GoByCurrentReference_Action.java" startLine="158" startPosition="173" endLine="159" endPosition="34" />
-    <nodeInfo nodeId="6105093990493769022" fileName="GoByCurrentReference_Action.java" startLine="160" startPosition="33" endLine="161" endPosition="100" />
-    <nodeInfo nodeId="6105093990493769030" fileName="GoByCurrentReference_Action.java" startLine="161" startPosition="100" endLine="162" endPosition="199" />
-    <nodeInfo nodeId="6105093990493769162" fileName="GoByCurrentReference_Action.java" startLine="162" startPosition="199" endLine="163" endPosition="42" />
-    <nodeInfo nodeId="6105093990493769167" fileName="GoByCurrentReference_Action.java" startLine="163" startPosition="42" endLine="164" endPosition="60" />
-    <nodeInfo nodeId="6105093990493769062" fileName="GoByCurrentReference_Action.java" startLine="165" startPosition="28" endLine="166" endPosition="100" />
-    <nodeInfo nodeId="6105093990493769143" fileName="GoByCurrentReference_Action.java" startLine="166" startPosition="100" endLine="167" endPosition="118" />
-    <nodeInfo nodeId="6105093990493769148" fileName="GoByCurrentReference_Action.java" startLine="167" startPosition="118" endLine="168" endPosition="176" />
-    <nodeInfo nodeId="6105093990493769099" fileName="GoByCurrentReference_Action.java" startLine="169" startPosition="14" endLine="170" endPosition="100" />
-    <nodeInfo nodeId="6105093990493769132" fileName="GoByCurrentReference_Action.java" startLine="170" startPosition="100" endLine="171" endPosition="64" />
-    <nodeInfo nodeId="6105093990493769128" fileName="GoByCurrentReference_Action.java" startLine="174" startPosition="33" endLine="175" endPosition="25" />
-    <nodeInfo nodeId="6105093990493768782" fileName="GoByCurrentReference_Action.java" startLine="177" startPosition="5" endLine="178" endPosition="16" />
-    <nodeInfo nodeId="6105093990493768793" fileName="GoByCurrentReference_Action.java" startLine="181" startPosition="75" endLine="182" endPosition="134" />
-    <nodeInfo nodeId="6105093990493768800" fileName="GoByCurrentReference_Action.java" startLine="182" startPosition="134" endLine="183" endPosition="30" />
-    <nodeInfo nodeId="6105093990493768816" fileName="GoByCurrentReference_Action.java" startLine="183" startPosition="30" endLine="184" endPosition="87" />
-    <nodeInfo nodeId="5357294907628571332" fileName="GoByCurrentReference_Action.java" startLine="51" startPosition="84" endLine="54" endPosition="5" />
-    <nodeInfo nodeId="5357294907628571338" fileName="GoByCurrentReference_Action.java" startLine="54" startPosition="5" endLine="57" endPosition="5" />
-    <nodeInfo nodeId="5357294907628573017" fileName="GoByCurrentReference_Action.java" startLine="57" startPosition="5" endLine="60" endPosition="5" />
-    <nodeInfo nodeId="5357294907628574146" fileName="GoByCurrentReference_Action.java" startLine="117" startPosition="230" endLine="120" endPosition="9" />
-    <nodeInfo nodeId="6105093990493768757" fileName="GoByCurrentReference_Action.java" startLine="143" startPosition="351" endLine="146" endPosition="5" />
-    <nodeInfo nodeId="6105093990493768576" fileName="GoByCurrentReference_Action.java" startLine="149" startPosition="26" endLine="152" endPosition="7" />
-    <nodeInfo nodeId="6105093990493769097" fileName="GoByCurrentReference_Action.java" startLine="169" startPosition="12" endLine="172" endPosition="7" />
-    <nodeInfo nodeId="6105093990493769128" fileName="GoByCurrentReference_Action.java" startLine="173" startPosition="33" endLine="176" endPosition="7" />
-    <nodeInfo nodeId="5357294907628574026" fileName="GoByCurrentReference_Action.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
-    <nodeInfo nodeId="6289945658608723821" fileName="GoByCurrentReference_Action.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
-    <nodeInfo nodeId="5357294907628571364" fileName="GoByCurrentReference_Action.java" startLine="116" startPosition="86" endLine="121" endPosition="7" />
-    <nodeInfo nodeId="6105093990493768567" fileName="GoByCurrentReference_Action.java" startLine="148" startPosition="119" endLine="154" endPosition="5" />
-    <nodeInfo nodeId="6105093990493768785" fileName="GoByCurrentReference_Action.java" startLine="180" startPosition="0" endLine="186" endPosition="0" />
-    <nodeInfo nodeId="6105093990493768989" fileName="GoByCurrentReference_Action.java" startLine="156" startPosition="9" endLine="172" endPosition="7" />
-    <nodeInfo nodeId="6105093990493768972" fileName="GoByCurrentReference_Action.java" startLine="155" startPosition="12" endLine="177" endPosition="5" />
-    <nodeInfo nodeId="5357294907628574083" fileName="GoByCurrentReference_Action.java" startLine="137" startPosition="0" endLine="180" endPosition="0" />
-    <scopeInfo nodeId="5357294907628571333" fileName="GoByCurrentReference_Action.java" startLine="52" startPosition="29" endLine="53" endPosition="19" />
-    <scopeInfo nodeId="5357294907628571339" fileName="GoByCurrentReference_Action.java" startLine="55" startPosition="73" endLine="56" endPosition="19" />
-    <scopeInfo nodeId="5357294907628573018" fileName="GoByCurrentReference_Action.java" startLine="58" startPosition="69" endLine="59" endPosition="19" />
-    <scopeInfo nodeId="5357294907628574147" fileName="GoByCurrentReference_Action.java" startLine="118" startPosition="78" endLine="119" endPosition="17" />
-    <scopeInfo nodeId="5357294907628574029" fileName="GoByCurrentReference_Action.java" startLine="130" startPosition="45" endLine="131" endPosition="88" />
-    <scopeInfo nodeId="6289945658608723823" fileName="GoByCurrentReference_Action.java" startLine="134" startPosition="52" endLine="135" endPosition="56" />
-    <scopeInfo nodeId="6105093990493768758" fileName="GoByCurrentReference_Action.java" startLine="144" startPosition="66" endLine="145" endPosition="19" />
-    <scopeInfo nodeId="6105093990493768576" fileName="GoByCurrentReference_Action.java" startLine="150" startPosition="33" endLine="151" endPosition="70" />
-    <scopeInfo nodeId="6105093990493769128" fileName="GoByCurrentReference_Action.java" startLine="174" startPosition="33" endLine="175" endPosition="25" />
-    <scopeInfo nodeId="6105093990493768990" fileName="GoByCurrentReference_Action.java" startLine="157" startPosition="25" endLine="159" endPosition="34">
+    <nodeInfo nodeId="5357294907628538957" fileName="GoByCurrentReference_Action.java" startLine="34" startPosition="0" endLine="35" endPosition="26" />
+    <nodeInfo nodeId="5357294907628538964" fileName="GoByCurrentReference_Action.java" startLine="35" startPosition="26" endLine="36" endPosition="42" />
+    <nodeInfo nodeId="5357294907628542276" fileName="GoByCurrentReference_Action.java" startLine="36" startPosition="42" endLine="37" endPosition="26" />
+    <nodeInfo nodeId="5357294907628538959" fileName="GoByCurrentReference_Action.java" startLine="37" startPosition="26" endLine="38" endPosition="36" />
+    <nodeInfo nodeId="5357294907628538961" fileName="GoByCurrentReference_Action.java" startLine="38" startPosition="36" endLine="39" endPosition="21" />
+    <nodeInfo nodeId="5357294907628571324" fileName="GoByCurrentReference_Action.java" startLine="52" startPosition="52" endLine="53" endPosition="84" />
+    <nodeInfo nodeId="5357294907628571334" fileName="GoByCurrentReference_Action.java" startLine="54" startPosition="29" endLine="55" endPosition="19" />
+    <nodeInfo nodeId="5357294907628571340" fileName="GoByCurrentReference_Action.java" startLine="57" startPosition="73" endLine="58" endPosition="19" />
+    <nodeInfo nodeId="5357294907628574045" fileName="GoByCurrentReference_Action.java" startLine="60" startPosition="69" endLine="61" endPosition="19" />
+    <nodeInfo nodeId="5357294907628571320" fileName="GoByCurrentReference_Action.java" startLine="62" startPosition="5" endLine="63" endPosition="16" />
+    <nodeInfo nodeId="1686314534853471706" fileName="GoByCurrentReference_Action.java" startLine="119" startPosition="27" endLine="120" endPosition="126" />
+    <nodeInfo nodeId="1686314534853471715" fileName="GoByCurrentReference_Action.java" startLine="120" startPosition="126" endLine="121" endPosition="0" />
+    <nodeInfo nodeId="1686314534853521559" fileName="GoByCurrentReference_Action.java" startLine="125" startPosition="35" endLine="126" endPosition="98" />
+    <nodeInfo nodeId="1686314534853521567" fileName="GoByCurrentReference_Action.java" startLine="126" startPosition="98" endLine="127" endPosition="172" />
+    <nodeInfo nodeId="1686314534853521584" fileName="GoByCurrentReference_Action.java" startLine="127" startPosition="172" endLine="128" endPosition="0" />
+    <nodeInfo nodeId="1686314534853521587" fileName="GoByCurrentReference_Action.java" startLine="129" startPosition="31" endLine="130" endPosition="93" />
+    <nodeInfo nodeId="1686314534853521596" fileName="GoByCurrentReference_Action.java" startLine="131" startPosition="26" endLine="132" endPosition="164" />
+    <nodeInfo nodeId="5357294907628574030" fileName="GoByCurrentReference_Action.java" startLine="147" startPosition="45" endLine="148" endPosition="88" />
+    <nodeInfo nodeId="5357294907628574108" fileName="GoByCurrentReference_Action.java" startLine="151" startPosition="90" endLine="152" endPosition="84" />
+    <nodeInfo nodeId="6105093990493768706" fileName="GoByCurrentReference_Action.java" startLine="152" startPosition="84" endLine="153" endPosition="119" />
+    <nodeInfo nodeId="6105093990493768658" fileName="GoByCurrentReference_Action.java" startLine="153" startPosition="119" endLine="154" endPosition="132" />
+    <nodeInfo nodeId="6105093990493768691" fileName="GoByCurrentReference_Action.java" startLine="154" startPosition="132" endLine="155" endPosition="248" />
+    <nodeInfo nodeId="6105093990493768736" fileName="GoByCurrentReference_Action.java" startLine="155" startPosition="248" endLine="156" endPosition="351" />
+    <nodeInfo nodeId="6105093990493768776" fileName="GoByCurrentReference_Action.java" startLine="157" startPosition="66" endLine="158" endPosition="19" />
+    <nodeInfo nodeId="6105093990493768991" fileName="GoByCurrentReference_Action.java" startLine="161" startPosition="25" endLine="162" endPosition="173" />
+    <nodeInfo nodeId="6105093990493769174" fileName="GoByCurrentReference_Action.java" startLine="162" startPosition="173" endLine="163" endPosition="34" />
+    <nodeInfo nodeId="6105093990493769022" fileName="GoByCurrentReference_Action.java" startLine="164" startPosition="33" endLine="165" endPosition="100" />
+    <nodeInfo nodeId="6105093990493769030" fileName="GoByCurrentReference_Action.java" startLine="165" startPosition="100" endLine="166" endPosition="199" />
+    <nodeInfo nodeId="6105093990493769162" fileName="GoByCurrentReference_Action.java" startLine="166" startPosition="199" endLine="167" endPosition="42" />
+    <nodeInfo nodeId="6105093990493769167" fileName="GoByCurrentReference_Action.java" startLine="167" startPosition="42" endLine="168" endPosition="60" />
+    <nodeInfo nodeId="6105093990493769062" fileName="GoByCurrentReference_Action.java" startLine="169" startPosition="28" endLine="170" endPosition="100" />
+    <nodeInfo nodeId="6105093990493769143" fileName="GoByCurrentReference_Action.java" startLine="170" startPosition="100" endLine="171" endPosition="118" />
+    <nodeInfo nodeId="6105093990493769148" fileName="GoByCurrentReference_Action.java" startLine="171" startPosition="118" endLine="172" endPosition="176" />
+    <nodeInfo nodeId="6105093990493769099" fileName="GoByCurrentReference_Action.java" startLine="173" startPosition="14" endLine="174" endPosition="100" />
+    <nodeInfo nodeId="6105093990493769132" fileName="GoByCurrentReference_Action.java" startLine="174" startPosition="100" endLine="175" endPosition="64" />
+    <nodeInfo nodeId="6105093990493769128" fileName="GoByCurrentReference_Action.java" startLine="178" startPosition="33" endLine="179" endPosition="25" />
+    <nodeInfo nodeId="6105093990493768782" fileName="GoByCurrentReference_Action.java" startLine="181" startPosition="5" endLine="182" endPosition="16" />
+    <nodeInfo nodeId="6105093990493768793" fileName="GoByCurrentReference_Action.java" startLine="185" startPosition="75" endLine="186" endPosition="134" />
+    <nodeInfo nodeId="6105093990493768800" fileName="GoByCurrentReference_Action.java" startLine="186" startPosition="134" endLine="187" endPosition="30" />
+    <nodeInfo nodeId="6105093990493768816" fileName="GoByCurrentReference_Action.java" startLine="187" startPosition="30" endLine="188" endPosition="87" />
+    <nodeInfo nodeId="1686314534853521594" fileName="GoByCurrentReference_Action.java" startLine="131" startPosition="24" endLine="133" endPosition="19" />
+    <nodeInfo nodeId="5357294907628571332" fileName="GoByCurrentReference_Action.java" startLine="53" startPosition="84" endLine="56" endPosition="5" />
+    <nodeInfo nodeId="5357294907628571338" fileName="GoByCurrentReference_Action.java" startLine="56" startPosition="5" endLine="59" endPosition="5" />
+    <nodeInfo nodeId="5357294907628573017" fileName="GoByCurrentReference_Action.java" startLine="59" startPosition="5" endLine="62" endPosition="5" />
+    <nodeInfo nodeId="6105093990493768757" fileName="GoByCurrentReference_Action.java" startLine="156" startPosition="351" endLine="159" endPosition="5" />
+    <nodeInfo nodeId="6105093990493769097" fileName="GoByCurrentReference_Action.java" startLine="173" startPosition="12" endLine="176" endPosition="7" />
+    <nodeInfo nodeId="6105093990493769128" fileName="GoByCurrentReference_Action.java" startLine="177" startPosition="33" endLine="180" endPosition="7" />
+    <nodeInfo nodeId="5357294907628574026" fileName="GoByCurrentReference_Action.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
+    <nodeInfo nodeId="1686314534853521585" fileName="GoByCurrentReference_Action.java" startLine="128" startPosition="0" endLine="133" endPosition="19" />
+    <nodeInfo nodeId="6105093990493768785" fileName="GoByCurrentReference_Action.java" startLine="184" startPosition="0" endLine="190" endPosition="0" />
+    <nodeInfo nodeId="1686314534853521557" fileName="GoByCurrentReference_Action.java" startLine="124" startPosition="68" endLine="135" endPosition="0" />
+    <nodeInfo nodeId="1686314534853521556" fileName="GoByCurrentReference_Action.java" startLine="123" startPosition="31" endLine="135" endPosition="17" />
+    <nodeInfo nodeId="1686314534853471718" fileName="GoByCurrentReference_Action.java" startLine="122" startPosition="53" endLine="137" endPosition="0" />
+    <nodeInfo nodeId="1686314534853471716" fileName="GoByCurrentReference_Action.java" startLine="121" startPosition="0" endLine="137" endPosition="13" />
+    <nodeInfo nodeId="6105093990493768989" fileName="GoByCurrentReference_Action.java" startLine="160" startPosition="9" endLine="176" endPosition="7" />
+    <nodeInfo nodeId="1686314534853471699" fileName="GoByCurrentReference_Action.java" startLine="118" startPosition="20" endLine="139" endPosition="0" />
+    <nodeInfo nodeId="1686314534853338076" fileName="GoByCurrentReference_Action.java" startLine="117" startPosition="9" endLine="139" endPosition="16" />
+    <nodeInfo nodeId="6105093990493768972" fileName="GoByCurrentReference_Action.java" startLine="159" startPosition="5" endLine="181" endPosition="5" />
+    <nodeInfo nodeId="5357294907628574083" fileName="GoByCurrentReference_Action.java" startLine="150" startPosition="0" endLine="184" endPosition="0" />
+    <scopeInfo nodeId="5357294907628571333" fileName="GoByCurrentReference_Action.java" startLine="54" startPosition="29" endLine="55" endPosition="19" />
+    <scopeInfo nodeId="5357294907628571339" fileName="GoByCurrentReference_Action.java" startLine="57" startPosition="73" endLine="58" endPosition="19" />
+    <scopeInfo nodeId="5357294907628573018" fileName="GoByCurrentReference_Action.java" startLine="60" startPosition="69" endLine="61" endPosition="19" />
+    <scopeInfo nodeId="1686314534853521586" fileName="GoByCurrentReference_Action.java" startLine="129" startPosition="31" endLine="130" endPosition="93" />
+    <scopeInfo nodeId="1686314534853521595" fileName="GoByCurrentReference_Action.java" startLine="131" startPosition="26" endLine="132" endPosition="164" />
+    <scopeInfo nodeId="5357294907628574029" fileName="GoByCurrentReference_Action.java" startLine="147" startPosition="45" endLine="148" endPosition="88" />
+    <scopeInfo nodeId="6105093990493768758" fileName="GoByCurrentReference_Action.java" startLine="157" startPosition="66" endLine="158" endPosition="19" />
+    <scopeInfo nodeId="6105093990493769128" fileName="GoByCurrentReference_Action.java" startLine="178" startPosition="33" endLine="179" endPosition="25" />
+    <scopeInfo nodeId="6105093990493768990" fileName="GoByCurrentReference_Action.java" startLine="161" startPosition="25" endLine="163" endPosition="34">
       <varInfo nodeId="6105093990493768992" varName="fqName" />
     </scopeInfo>
-    <scopeInfo nodeId="6105093990493769098" fileName="GoByCurrentReference_Action.java" startLine="169" startPosition="14" endLine="171" endPosition="64">
+    <scopeInfo nodeId="6105093990493769098" fileName="GoByCurrentReference_Action.java" startLine="173" startPosition="14" endLine="175" endPosition="64">
       <varInfo nodeId="6105093990493769100" varName="classifierName" />
     </scopeInfo>
-    <scopeInfo nodeId="5357294907628571365" fileName="GoByCurrentReference_Action.java" startLine="117" startPosition="230" endLine="120" endPosition="9" />
-    <scopeInfo nodeId="6105093990493768576" fileName="GoByCurrentReference_Action.java" startLine="149" startPosition="26" endLine="152" endPosition="7" />
-    <scopeInfo nodeId="6105093990493769061" fileName="GoByCurrentReference_Action.java" startLine="165" startPosition="28" endLine="168" endPosition="176">
+    <scopeInfo nodeId="6105093990493769061" fileName="GoByCurrentReference_Action.java" startLine="169" startPosition="28" endLine="172" endPosition="176">
       <varInfo nodeId="6105093990493769063" varName="classifierName" />
       <varInfo nodeId="6105093990493769144" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="6105093990493768978" fileName="GoByCurrentReference_Action.java" startLine="173" startPosition="33" endLine="176" endPosition="7" />
-    <scopeInfo nodeId="6105093990493769128" fileName="GoByCurrentReference_Action.java" startLine="173" startPosition="33" endLine="176" endPosition="7" />
-    <scopeInfo nodeId="6105093990493768792" fileName="GoByCurrentReference_Action.java" startLine="181" startPosition="75" endLine="184" endPosition="87">
+    <scopeInfo nodeId="6105093990493768978" fileName="GoByCurrentReference_Action.java" startLine="177" startPosition="33" endLine="180" endPosition="7" />
+    <scopeInfo nodeId="6105093990493769128" fileName="GoByCurrentReference_Action.java" startLine="177" startPosition="33" endLine="180" endPosition="7" />
+    <scopeInfo nodeId="6105093990493768792" fileName="GoByCurrentReference_Action.java" startLine="185" startPosition="75" endLine="188" endPosition="87">
       <varInfo nodeId="6105093990493768794" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="5357294907628574026" fileName="GoByCurrentReference_Action.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="6289945658608723821" fileName="GoByCurrentReference_Action.java" startLine="133" startPosition="0" endLine="137" endPosition="0">
-      <varInfo nodeId="6289945658608798437" varName="p" />
-    </scopeInfo>
-    <scopeInfo nodeId="6105093990493768568" fileName="GoByCurrentReference_Action.java" startLine="149" startPosition="26" endLine="153" endPosition="19" />
-    <scopeInfo nodeId="6105093990493769021" fileName="GoByCurrentReference_Action.java" startLine="160" startPosition="33" endLine="164" endPosition="60">
+    <scopeInfo nodeId="5357294907628574026" fileName="GoByCurrentReference_Action.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
+    <scopeInfo nodeId="6105093990493769021" fileName="GoByCurrentReference_Action.java" startLine="164" startPosition="33" endLine="168" endPosition="60">
       <varInfo nodeId="6105093990493769023" varName="classifierName" />
       <varInfo nodeId="6105093990493769031" varName="paramCount" />
     </scopeInfo>
-    <scopeInfo nodeId="6105093990493768785" fileName="GoByCurrentReference_Action.java" startLine="180" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="6105093990493768785" fileName="GoByCurrentReference_Action.java" startLine="184" startPosition="0" endLine="190" endPosition="0">
       <varInfo nodeId="6105093990493768790" varName="ref" />
       <varInfo nodeId="6105093990493768788" varName="targetNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5357294907628544821" fileName="GoByCurrentReference_Action.java" startLine="50" startPosition="52" endLine="61" endPosition="16">
+    <scopeInfo nodeId="1686314534853521558" fileName="GoByCurrentReference_Action.java" startLine="125" startPosition="35" endLine="133" endPosition="19">
+      <varInfo nodeId="1686314534853521560" varName="targetNode" />
+      <varInfo nodeId="1686314534853521568" varName="inIdea" />
+    </scopeInfo>
+    <scopeInfo nodeId="5357294907628544821" fileName="GoByCurrentReference_Action.java" startLine="52" startPosition="52" endLine="63" endPosition="16">
       <varInfo nodeId="5357294907628571325" varName="targetNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6105093990493768973" fileName="GoByCurrentReference_Action.java" startLine="156" startPosition="9" endLine="172" endPosition="7" />
-    <scopeInfo nodeId="5357294907628574085" fileName="GoByCurrentReference_Action.java" startLine="138" startPosition="56" endLine="178" endPosition="16">
+    <scopeInfo nodeId="1686314534853521557" fileName="GoByCurrentReference_Action.java" startLine="124" startPosition="68" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="1686314534853471719" fileName="GoByCurrentReference_Action.java" startLine="123" startPosition="31" endLine="135" endPosition="17" />
+    <scopeInfo nodeId="1686314534853471718" fileName="GoByCurrentReference_Action.java" startLine="122" startPosition="53" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="6105093990493768973" fileName="GoByCurrentReference_Action.java" startLine="160" startPosition="9" endLine="176" endPosition="7" />
+    <scopeInfo nodeId="1686314534853471702" fileName="GoByCurrentReference_Action.java" startLine="119" startPosition="27" endLine="137" endPosition="13">
+      <varInfo nodeId="1686314534853471707" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="1686314534853471699" fileName="GoByCurrentReference_Action.java" startLine="118" startPosition="20" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="5357294907628574085" fileName="GoByCurrentReference_Action.java" startLine="151" startPosition="90" endLine="182" endPosition="16">
       <varInfo nodeId="6105093990493768692" varName="isMethod" />
       <varInfo nodeId="5357294907628574109" varName="ref" />
       <varInfo nodeId="6105093990493768659" varName="isConstructor" />
       <varInfo nodeId="6105093990493768707" varName="isClassifier" />
-      <varInfo nodeId="6105093990493768559" varName="handler" />
       <varInfo nodeId="6105093990493768737" varName="isField" />
     </scopeInfo>
-    <scopeInfo nodeId="5357294907628574083" fileName="GoByCurrentReference_Action.java" startLine="137" startPosition="0" endLine="180" endPosition="0">
+    <scopeInfo nodeId="5357294907628574083" fileName="GoByCurrentReference_Action.java" startLine="150" startPosition="0" endLine="184" endPosition="0">
       <varInfo nodeId="5357294907628574088" varName="targetNode" />
+      <varInfo nodeId="1686314534853253655" varName="handler" />
     </scopeInfo>
+    <unitInfo nodeId="1686314534853521557" fileName="GoByCurrentReference_Action.java" startLine="124" startPosition="56" endLine="135" endPosition="15" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action$3" />
+    <unitInfo nodeId="1686314534853471718" fileName="GoByCurrentReference_Action.java" startLine="122" startPosition="41" endLine="137" endPosition="11" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action$2" />
+    <unitInfo nodeId="1686314534853338094" fileName="GoByCurrentReference_Action.java" startLine="118" startPosition="10" endLine="139" endPosition="7" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action$1" />
   </root>
   <root nodeId="5408201126509038596">
     <nodeInfo nodeId="4393431345216734597" fileName="GetModuleContentsFromSource_Action.java" startLine="23" startPosition="0" endLine="24" endPosition="22" />

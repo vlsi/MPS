@@ -14,12 +14,14 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.plugin.MPSPlugin;
+import javax.swing.SwingUtilities;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.plugin.IProjectHandler;
-import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -39,7 +41,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
   public GoByCurrentReference_Action() {
     super("Go by Current Reference", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull
@@ -113,13 +115,28 @@ public class GoByCurrentReference_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      SNode targetNode = GoByCurrentReference_Action.this.cell.getSNodeWRTReference();
-      if (SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(SNodeOperations.getModel(targetNode).getStereotype()) && GoByCurrentReference_Action.this.getHandlerFor(GoByCurrentReference_Action.this.project) != null) {
-        if (GoByCurrentReference_Action.this.navigateToJavaStub(targetNode)) {
-          return;
+      new Thread() {
+        public void run() {
+          final IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(GoByCurrentReference_Action.this.project);
+
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              ModelAccess.instance().runWriteAction(new Runnable() {
+                public void run() {
+                  SNode targetNode = GoByCurrentReference_Action.this.cell.getSNodeWRTReference();
+                  boolean inIdea = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(SNodeOperations.getModel(targetNode).getStereotype()) && handler != null;
+
+                  if (inIdea) {
+                    GoByCurrentReference_Action.this.navigateToJavaStub(handler, targetNode);
+                  } else {
+                    GoByCurrentReference_Action.this.getEditorOpener().openNode(targetNode, GoByCurrentReference_Action.this.context, true, !(targetNode.isRoot()));
+                  }
+                }
+              });
+            }
+          });
         }
-      }
-      GoByCurrentReference_Action.this.getEditorOpener().openNode(targetNode, GoByCurrentReference_Action.this.context, true, !(targetNode.isRoot()));
+      }.start();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoByCurrentReference", t);
@@ -131,11 +148,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     return GoByCurrentReference_Action.this.context.getComponent(MPSEditorOpener.class);
   }
 
-  private IProjectHandler getHandlerFor(Project p) {
-    return MPSPlugin.getInstance().getProjectHandler(p);
-  }
-
-  private boolean navigateToJavaStub(SNode targetNode) {
+  private boolean navigateToJavaStub(@NotNull IProjectHandler handler, SNode targetNode) {
     SModelReference ref = SNodeOperations.getModel(targetNode).getSModelReference();
     boolean isClassifier = SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier");
     boolean isConstructor = SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
@@ -144,15 +157,6 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     if (!(isClassifier || isConstructor || isMethod || isField)) {
       return false;
     }
-    // ---- 
-    IProjectHandler handler = GoByCurrentReference_Action.this.getHandlerFor(GoByCurrentReference_Action.this.project);
-    if (handler == null) {
-      if (log.isErrorEnabled()) {
-        log.error("Project handle is null. Trying to open in MPS...");
-      }
-      return false;
-    }
-    // ---- 
     try {
       if (isClassifier) {
         String fqName = ref.getLongName() + "." + SPropertyOperations.getString(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
