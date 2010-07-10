@@ -59,15 +59,13 @@ public class NodeExplorerComponent {
 
   private class MyTree extends MPSTree {
     private IOperationContext myOperationContext;
-    private AncestorNodeContext myAncestorNodeContext;
 
     protected MPSTreeNode rebuild() {
-      myAncestorNodeContext = new AncestorNodeContext(myNode, myOperationContext);
       if (myNode == null || myNode.getNode() == null) {
         return new TextTreeNode("no node");
       } else {
         TextTreeNode textTreeNode = new TextTreeNode("node");
-        SNodeTreeNode sNodeTreeNode = new MySNodeTreeNode(myNode.getNode(), myOperationContext, myAncestorNodeContext);
+        SNodeTreeNode sNodeTreeNode = new MySNodeTreeNode(myNode.getNode(), myOperationContext);
         textTreeNode.add(sNodeTreeNode);
         return textTreeNode;
       }
@@ -80,32 +78,14 @@ public class NodeExplorerComponent {
 
   }
 
-  private class AncestorNodeContext {
-    private SNodePointer myNode;
-    private IOperationContext myOperationContext;
-
-    public AncestorNodeContext(SNode ancestorNode, IOperationContext operationContext) {
-      myNode = new SNodePointer(ancestorNode);
-      myOperationContext = operationContext;
-    }
-
-    public AncestorNodeContext(SNodePointer ancestorNode, IOperationContext operationContext) {
-      myNode = ancestorNode;
-      myOperationContext = operationContext;
-    }
-  }
-
   private class MySNodeTreeNode extends SNodeTreeNode {
-    AncestorNodeContext myAncestorNodeContext;
 
-    public MySNodeTreeNode(SNode node, IOperationContext operationContext, AncestorNodeContext ancestorNodeContext) {
+    public MySNodeTreeNode(SNode node, IOperationContext operationContext) {
       super(node, operationContext);
-      myAncestorNodeContext = ancestorNodeContext;
     }
 
-    public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext, AncestorNodeContext ancestorNodeContext) {
+    public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
       super(node, role, operationContext);
-      myAncestorNodeContext = ancestorNodeContext;
     }
 
     protected void doUpdatePresentation_internal() {
@@ -122,7 +102,7 @@ public class NodeExplorerComponent {
 
       if (getSNode() == null) return;
       for (SNode childNode : getSNode().getChildren()) {
-        add(new MySNodeTreeNode(childNode, childNode.getRole_(), getOperationContext(), myAncestorNodeContext));
+        add(new MySNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));
       }
       add(new MyPropertiesNode(getSNode(), getOperationContext()));
       add(new MyReferentsNode(getSNode(), getOperationContext()));
@@ -143,8 +123,7 @@ public class NodeExplorerComponent {
       for (SReference reference : myNode.getNode().getReferences()) {
         SNode referent = reference.getTargetNode();
         if (referent != null) {
-          AncestorNodeContext ancestorNodeContext = new AncestorNodeContext(referent, getOperationContext());
-          add(new MySNodeTreeNode(referent, reference.getRole(), getOperationContext(), ancestorNodeContext));
+          add(new MySNodeTreeNode(referent, reference.getRole(), getOperationContext()));
         }
       }
       myIsInitialized = true;
