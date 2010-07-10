@@ -20,7 +20,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.StatusBar;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.icons.Icons;
 import org.jetbrains.annotations.NonNls;
@@ -61,9 +60,11 @@ public class PluginStateMonitor implements ProjectComponent {
   }
 
   public void initComponent() {
+
   }
 
   public void disposeComponent() {
+
   }
 
   public void projectOpened() {
@@ -72,7 +73,6 @@ public class PluginStateMonitor implements ProjectComponent {
 
     myLabel = new JLabel();
     myListener = new MouseAdapter() {
-      @Override
       public void mouseClicked(MouseEvent e) {
         if (myState == State.DISCONNECTED) {
           setNewState(State.TRYING_TO_CONNECT);
@@ -107,29 +107,50 @@ public class PluginStateMonitor implements ProjectComponent {
   }
 
   private void tick() {
-    LOG.assertLog(!ThreadUtils.isEventDispatchThread());
-    if (myState == State.CONNECTED && isConnected()) return;
-
-    if (myState == State.DISCONNECTED) {
-      if (MPSPlugin.getInstance().checkIsConnected()) {
-        setNewState(State.CONNECTED);
-        myTimer.setNewDelay(INITIAL_DELAY);
+    LOG.assertNotInEDT();
+    if (myState == State.CONNECTED) {
+      if (isConnected()) {
+        if (canOperate()) {
+          return;
+        } else {
+          setNewState(State.CONNECTED_BAD_PROJECT);
+        }
+      } else {
+        setNewState(State.TRYING_TO_CONNECT);
       }
-    } else if (myState == State.CONNECTED) {
-      //isConnected = false
-      setNewState(State.TRYING_TO_CONNECT);
-      myTimer.setNewDelay(INITIAL_DELAY);
+    } else if (myState == State.CONNECTED_BAD_PROJECT) {
+      if (isConnected()) {
+        if (canOperate()) {
+          setNewState(State.CONNECTED);
+        } else {
+          return;
+        }
+      } else {
+        setNewState(State.TRYING_TO_CONNECT);
+      }
+    } else if (myState == State.DISCONNECTED) {
+      if (MPSPlugin.getInstance().openConnectionPresent()) {
+        if (isConnected()) {
+          if (canOperate()) {
+            setNewState(State.CONNECTED);
+          } else {
+            setNewState(State.CONNECTED_BAD_PROJECT);
+          }
+        }
+      }
     } else if (myState == State.TRYING_TO_CONNECT) {
       if (isConnected()) {
-        setNewState(State.CONNECTED);
-        myTimer.setNewDelay(INITIAL_DELAY);
+        if (canOperate()) {
+          setNewState(State.CONNECTED);
+        } else {
+          setNewState(State.CONNECTED_BAD_PROJECT);
+        }
       } else {
         int newDelay = (int) (myTimer.getDelay() * DELAY_MUL);
         if (newDelay <= CRITICAL_DELAY) {
           myTimer.setNewDelay(newDelay);
         } else {
           setNewState(State.DISCONNECTED);
-          myTimer.setNewDelay(INITIAL_DELAY);
         }
       }
     }
@@ -139,6 +160,7 @@ public class PluginStateMonitor implements ProjectComponent {
     assert myState != state;
 
     myState = state;
+    myTimer.setNewDelay(state.getDefaultDelay());
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
@@ -152,6 +174,10 @@ public class PluginStateMonitor implements ProjectComponent {
     return MPSPlugin.getInstance().isIDEAPresent();
   }
 
+  private boolean canOperate() {
+    return MPSPlugin.getInstance().getProjectHandler(myProject) != null;
+  }
+
   @Nullable
   private StatusBar getStatusBar() {
     IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(myProject);
@@ -160,17 +186,20 @@ public class PluginStateMonitor implements ProjectComponent {
   }
 
   private enum State {
-    DISCONNECTED(Icons.DISCONNECTED, "Not connected to IDEA. Click to reconnect."),
-    TRYING_TO_CONNECT(Icons.TRYING_TO_CONNECT, "Connecting to IDEA..."),
-    CONNECTED(Icons.CONNECTED, "Connected to IDEA");
+    DISCONNECTED(Icons.DISCONNECTED, "Not connected to IDEA. Click to reconnect.", INITIAL_DELAY),
+    TRYING_TO_CONNECT(Icons.TRYING_TO_CONNECT, "Connecting to IDEA...", INITIAL_DELAY),
+    CONNECTED_BAD_PROJECT(Icons.CONNECTED, "Connected to IDEA, Project does not match", CRITICAL_DELAY),
+    CONNECTED(Icons.CONNECTED, "Connected to IDEA", INITIAL_DELAY);
 
 
     private Icon myIcon;
     private String myHelpText;
+    private int myDefaultDelay;
 
-    private State(Icon icon, String helpText) {
+    private State(Icon icon, String helpText, int defaultDelay) {
       myIcon = icon;
       myHelpText = helpText;
+      myDefaultDelay = defaultDelay;
     }
 
     public Icon getIcon() {
@@ -179,6 +208,10 @@ public class PluginStateMonitor implements ProjectComponent {
 
     public String getHelpText() {
       return myHelpText;
+    }
+
+    public int getDefaultDelay() {
+      return myDefaultDelay;
     }
   }
 
