@@ -278,12 +278,20 @@ public class TabbedEditor implements IEditor {
 
   public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState result = new MyFileEditorState();
-    if (getEditorContext() != null) {
+    EditorContext editorContext = getEditorContext();
+    if (editorContext != null) {
       boolean full = level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL;
-      result.myMemento = getEditorContext().createMemento(full);
+      result.myMemento = editorContext.createMemento(full);
       EditorComponent editorComponent = getCurrentEditorComponent();
-      if (editorComponent != null) {
-        result.myInspectorMemento = ((NodeEditorComponent) editorComponent).getInspector().getEditorContext().createMemento(full);
+      if (editorComponent instanceof NodeEditorComponent) {
+        NodeEditorComponent nodeEditorComponent = (NodeEditorComponent) editorComponent;
+        EditorComponent inspector = nodeEditorComponent.getInspector();
+        if (inspector!=null){
+          EditorContext inspectorContext = inspector.getEditorContext();
+          if (inspectorContext!=null){
+            result.myInspectorMemento = inspectorContext.createMemento(full);
+          }
+        }
       }
     }
     result.myCurrentTab = myTabbedPane.getCurrentTabIndex();
