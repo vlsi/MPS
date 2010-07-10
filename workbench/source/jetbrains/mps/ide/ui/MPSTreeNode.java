@@ -313,10 +313,10 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private void treeMessagesChanged(boolean updatePresentation) {
     if (updatePresentation) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
-        @Override
         public void run() {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
+              if (getOperationContext().getProject().isDisposed()) return;
               updatePresentation();
               updateNodePresentationInTree();
             }

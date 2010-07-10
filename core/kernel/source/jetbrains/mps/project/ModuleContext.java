@@ -71,10 +71,9 @@ public class ModuleContext extends StandaloneMPSContext {
 
   @NotNull
   public IScope getScope() {
-    if (getModule() == null) {
-      throw new IllegalStateException();
-    }
-    return getModule().getScope();
+    IModule module = getModule();
+    if (module == null) throw new IllegalStateException();
+    return module.getScope();
   }
 
   public String toString() {
