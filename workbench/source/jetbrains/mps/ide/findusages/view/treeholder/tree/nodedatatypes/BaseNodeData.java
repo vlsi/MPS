@@ -22,6 +22,7 @@ import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
@@ -50,7 +51,7 @@ public abstract class BaseNodeData implements IExternalizeable {
     read(element, project);
   }
 
-  public BaseNodeData(PathItemRole role, String caption, String additionalInfo, boolean isExpanded, boolean isResultNode, boolean resultsSection) {
+  public BaseNodeData(PathItemRole role,@NotNull String caption, String additionalInfo, boolean isExpanded, boolean isResultNode, boolean resultsSection) {
     myRole = role;
     myCaption = caption;
     myAdditionalInfo = additionalInfo;

@@ -19,11 +19,13 @@ import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.List;
 
 public interface INodeRepresentator<N> extends IExternalizeable {
+  @NotNull
   public String getPresentation(N node);
 
   public String getResultsText(TextOptions options);

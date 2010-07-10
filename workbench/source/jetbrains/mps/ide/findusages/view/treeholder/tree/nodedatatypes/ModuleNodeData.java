@@ -38,7 +38,9 @@ public class ModuleNodeData extends BaseNodeData {
 
   public ModuleNodeData(PathItemRole role, SearchResult result, boolean isResult, INodeRepresentator nodeRepresentator, boolean resultsSection) {
     super(role,
-          (isResult && nodeRepresentator != null) ? nodeRepresentator.getPresentation(result.getObject()) : getCaption((IModule) result.getPathObject()),
+          (isResult && nodeRepresentator != null) ?
+            nodeRepresentator.getPresentation(result.getObject()) :
+            getCaption((IModule) result.getPathObject()),
           "", true, isResult, resultsSection);
     myModuleReference = ((IModule) result.getPathObject()).getModuleReference();
   }

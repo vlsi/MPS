@@ -46,7 +46,9 @@ public class NodeNodeData extends BaseNodeData {
   public NodeNodeData(PathItemRole role, SNode node, boolean isResultNode, INodeRepresentator nodeRepresentator, boolean resultsSection) {
     super(
       role,
-      (isResultNode && nodeRepresentator != null) ? nodeRepresentator.getPresentation(node) : snodeRepresentation(node),
+      (isResultNode && nodeRepresentator != null) ?
+        nodeRepresentator.getPresentation(node) :
+        snodeRepresentation(node),
       nodeAdditionalInfo(node),
       false,
       isResultNode,
@@ -58,7 +60,9 @@ public class NodeNodeData extends BaseNodeData {
   public NodeNodeData(PathItemRole role, SearchResult result, boolean isResultNode, INodeRepresentator nodeRepresentator, boolean resultsSection) {
     super(
       role,
-      (isResultNode && nodeRepresentator != null) ? nodeRepresentator.getPresentation(result.getObject()) : snodeRepresentation((SNode) result.getPathObject()),
+      (isResultNode && nodeRepresentator != null) ?
+        nodeRepresentator.getPresentation(result.getObject()) :
+        snodeRepresentation((SNode) result.getPathObject()),
       nodeAdditionalInfo((SNode) result.getPathObject()),
       false,
       isResultNode,
@@ -113,6 +117,7 @@ public class NodeNodeData extends BaseNodeData {
         try {
           String presentation = BaseConcept_Behavior.call_getPresentation_1213877396640(node);
           String result = (presentation != null) ? presentation : node.toString();
+          LOG.assertLog(result != null);
           result = StringEscapeUtils.escapeHtml(result);
           return result;
         } catch (Throwable t) {

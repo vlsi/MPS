@@ -39,7 +39,14 @@ public class ModelNodeData extends BaseNodeData {
 
   public ModelNodeData(PathItemRole role, SearchResult result, boolean isResult,
                        INodeRepresentator nodeRepresentator, boolean resultsSection) {
-    super(role, (isResult && nodeRepresentator != null) ? nodeRepresentator.getPresentation(result.getObject()) : ((SModel) result.getPathObject()).getModelDescriptor().getLongName(), "", false, isResult, resultsSection);
+    super(role,
+      (isResult && nodeRepresentator != null) ?
+        nodeRepresentator.getPresentation(result.getObject()) :
+        ((SModel) result.getPathObject()).getModelDescriptor().getLongName(),
+      "",
+      false,
+      isResult,
+      resultsSection);
     myModelReference = ((SModel) result.getPathObject()).getModelDescriptor().getSModelReference();
   }
 

@@ -5378,16 +5378,16 @@
     <nodeInfo nodeId="9037591448026784274" fileName="ModelCheckerViewer.java" startLine="254" startPosition="72" endLine="255" endPosition="63" />
     <nodeInfo nodeId="9037591448026784276" fileName="ModelCheckerViewer.java" startLine="256" startPosition="69" endLine="257" endPosition="67" />
     <nodeInfo nodeId="4196298100962963137" fileName="ModelCheckerViewer.java" startLine="259" startPosition="7" endLine="260" endPosition="33" />
-    <nodeInfo nodeId="4196298100962963156" fileName="ModelCheckerViewer.java" startLine="263" startPosition="60" endLine="264" endPosition="62" />
-    <nodeInfo nodeId="3019223609674726715" fileName="ModelCheckerViewer.java" startLine="267" startPosition="50" endLine="268" endPosition="113" />
+    <nodeInfo nodeId="4196298100962963156" fileName="ModelCheckerViewer.java" startLine="264" startPosition="60" endLine="265" endPosition="62" />
+    <nodeInfo nodeId="3019223609674726715" fileName="ModelCheckerViewer.java" startLine="268" startPosition="50" endLine="269" endPosition="113" />
     <nodeInfo nodeId="2555598330999290972" fileName="ModelCheckerViewer.java" startLine="113" startPosition="0" endLine="115" endPosition="0" />
     <nodeInfo nodeId="4196298100962962941" fileName="ModelCheckerViewer.java" startLine="229" startPosition="92" endLine="231" endPosition="5" />
     <nodeInfo nodeId="5511553970541093740" fileName="ModelCheckerViewer.java" startLine="118" startPosition="243" endLine="121" endPosition="5" />
     <nodeInfo nodeId="2768397531436385602" fileName="ModelCheckerViewer.java" startLine="146" startPosition="11" endLine="149" endPosition="11" />
     <nodeInfo nodeId="5511553970541093814" fileName="ModelCheckerViewer.java" startLine="156" startPosition="181" endLine="159" endPosition="7" />
     <nodeInfo nodeId="4196298100962963030" fileName="ModelCheckerViewer.java" startLine="243" startPosition="26" endLine="246" endPosition="7" />
-    <nodeInfo nodeId="4196298100962963161" fileName="ModelCheckerViewer.java" startLine="270" startPosition="0" endLine="273" endPosition="0" />
-    <nodeInfo nodeId="4196298100962963219" fileName="ModelCheckerViewer.java" startLine="273" startPosition="0" endLine="276" endPosition="0" />
+    <nodeInfo nodeId="4196298100962963161" fileName="ModelCheckerViewer.java" startLine="271" startPosition="0" endLine="274" endPosition="0" />
+    <nodeInfo nodeId="4196298100962963219" fileName="ModelCheckerViewer.java" startLine="274" startPosition="0" endLine="277" endPosition="0" />
     <nodeInfo nodeId="5792297515476889201" fileName="ModelCheckerViewer.java" startLine="74" startPosition="57" endLine="78" endPosition="0" />
     <nodeInfo nodeId="1353297780420046180" fileName="ModelCheckerViewer.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
     <nodeInfo nodeId="8128884522622702408" fileName="ModelCheckerViewer.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
@@ -5403,14 +5403,14 @@
     <nodeInfo nodeId="2120158148121596477" fileName="ModelCheckerViewer.java" startLine="220" startPosition="0" endLine="224" endPosition="0" />
     <nodeInfo nodeId="2120158148121596481" fileName="ModelCheckerViewer.java" startLine="224" startPosition="0" endLine="228" endPosition="0" />
     <nodeInfo nodeId="4196298100962963016" fileName="ModelCheckerViewer.java" startLine="237" startPosition="0" endLine="241" endPosition="0" />
-    <nodeInfo nodeId="4196298100962963141" fileName="ModelCheckerViewer.java" startLine="262" startPosition="0" endLine="266" endPosition="0" />
-    <nodeInfo nodeId="3019223609674726708" fileName="ModelCheckerViewer.java" startLine="266" startPosition="0" endLine="270" endPosition="0" />
+    <nodeInfo nodeId="3019223609674726708" fileName="ModelCheckerViewer.java" startLine="267" startPosition="0" endLine="271" endPosition="0" />
     <nodeInfo nodeId="9055452654631886739" fileName="ModelCheckerViewer.java" startLine="93" startPosition="61" endLine="98" endPosition="0" />
     <nodeInfo nodeId="5511553970541093016" fileName="ModelCheckerViewer.java" startLine="102" startPosition="120" endLine="107" endPosition="7" />
     <nodeInfo nodeId="1849395252811796207" fileName="ModelCheckerViewer.java" startLine="165" startPosition="27" endLine="170" endPosition="7" />
     <nodeInfo nodeId="8560641068482546283" fileName="ModelCheckerViewer.java" startLine="194" startPosition="0" endLine="199" endPosition="0" />
     <nodeInfo nodeId="9055452654631893405" fileName="ModelCheckerViewer.java" startLine="199" startPosition="0" endLine="204" endPosition="0" />
     <nodeInfo nodeId="4196298100962962984" fileName="ModelCheckerViewer.java" startLine="232" startPosition="0" endLine="237" endPosition="0" />
+    <nodeInfo nodeId="4196298100962963141" fileName="ModelCheckerViewer.java" startLine="262" startPosition="0" endLine="267" endPosition="0" />
     <nodeInfo nodeId="9055452654631827508" fileName="ModelCheckerViewer.java" startLine="92" startPosition="47" endLine="98" endPosition="7" />
     <nodeInfo nodeId="2768397531436385612" fileName="ModelCheckerViewer.java" startLine="140" startPosition="45" endLine="146" endPosition="11" />
     <nodeInfo nodeId="9037591448026784255" fileName="ModelCheckerViewer.java" startLine="251" startPosition="45" endLine="258" endPosition="9" />
@@ -5429,8 +5429,8 @@
     <nodeInfo nodeId="5792297515476886379" fileName="ModelCheckerViewer.java" startLine="65" startPosition="0" endLine="112" endPosition="3" />
     <nodeInfo nodeId="5511553970541093440" fileName="ModelCheckerViewer.java" startLine="115" startPosition="0" endLine="164" endPosition="0" />
     <scopeInfo nodeId="4196298100962962944" fileName="ModelCheckerViewer.java" startLine="230" startPosition="34" endLine="230" endPosition="34" />
-    <scopeInfo nodeId="4196298100962963169" fileName="ModelCheckerViewer.java" startLine="271" startPosition="91" endLine="271" endPosition="91" />
-    <scopeInfo nodeId="4196298100962963227" fileName="ModelCheckerViewer.java" startLine="274" startPosition="90" endLine="274" endPosition="90" />
+    <scopeInfo nodeId="4196298100962963169" fileName="ModelCheckerViewer.java" startLine="272" startPosition="91" endLine="272" endPosition="91" />
+    <scopeInfo nodeId="4196298100962963227" fileName="ModelCheckerViewer.java" startLine="275" startPosition="90" endLine="275" endPosition="90" />
     <scopeInfo nodeId="5792297515476889204" fileName="ModelCheckerViewer.java" startLine="75" startPosition="27" endLine="76" endPosition="40" />
     <scopeInfo nodeId="1353297780420046183" fileName="ModelCheckerViewer.java" startLine="79" startPosition="48" endLine="80" endPosition="25" />
     <scopeInfo nodeId="8128884522622702411" fileName="ModelCheckerViewer.java" startLine="83" startPosition="49" endLine="84" endPosition="36" />
@@ -5452,8 +5452,8 @@
     <scopeInfo nodeId="9037591448026784256" fileName="ModelCheckerViewer.java" startLine="252" startPosition="63" endLine="253" endPosition="61" />
     <scopeInfo nodeId="9037591448026784270" fileName="ModelCheckerViewer.java" startLine="254" startPosition="72" endLine="255" endPosition="63" />
     <scopeInfo nodeId="9037591448026784273" fileName="ModelCheckerViewer.java" startLine="256" startPosition="69" endLine="257" endPosition="67" />
-    <scopeInfo nodeId="4196298100962963146" fileName="ModelCheckerViewer.java" startLine="263" startPosition="60" endLine="264" endPosition="62" />
-    <scopeInfo nodeId="3019223609674726711" fileName="ModelCheckerViewer.java" startLine="267" startPosition="50" endLine="268" endPosition="113" />
+    <scopeInfo nodeId="4196298100962963146" fileName="ModelCheckerViewer.java" startLine="264" startPosition="60" endLine="265" endPosition="62" />
+    <scopeInfo nodeId="3019223609674726711" fileName="ModelCheckerViewer.java" startLine="268" startPosition="50" endLine="269" endPosition="113" />
     <scopeInfo nodeId="9055452654631886744" fileName="ModelCheckerViewer.java" startLine="94" startPosition="54" endLine="96" endPosition="33" />
     <scopeInfo nodeId="2555598330999290972" fileName="ModelCheckerViewer.java" startLine="113" startPosition="0" endLine="115" endPosition="0" />
     <scopeInfo nodeId="2768397531436385621" fileName="ModelCheckerViewer.java" startLine="142" startPosition="30" endLine="144" endPosition="70" />
@@ -5463,11 +5463,11 @@
     <scopeInfo nodeId="4196298100962962987" fileName="ModelCheckerViewer.java" startLine="233" startPosition="55" endLine="235" endPosition="92">
       <varInfo nodeId="4196298100962962989" varName="size" />
     </scopeInfo>
-    <scopeInfo nodeId="4196298100962963161" fileName="ModelCheckerViewer.java" startLine="270" startPosition="0" endLine="273" endPosition="0">
+    <scopeInfo nodeId="4196298100962963161" fileName="ModelCheckerViewer.java" startLine="271" startPosition="0" endLine="274" endPosition="0">
       <varInfo nodeId="4196298100962963166" varName="project" />
       <varInfo nodeId="4196298100962963164" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="4196298100962963219" fileName="ModelCheckerViewer.java" startLine="273" startPosition="0" endLine="276" endPosition="0">
+    <scopeInfo nodeId="4196298100962963219" fileName="ModelCheckerViewer.java" startLine="274" startPosition="0" endLine="277" endPosition="0">
       <varInfo nodeId="4196298100962963224" varName="project" />
       <varInfo nodeId="4196298100962963222" varName="element" />
     </scopeInfo>
@@ -5490,10 +5490,7 @@
     <scopeInfo nodeId="2120158148121596477" fileName="ModelCheckerViewer.java" startLine="220" startPosition="0" endLine="224" endPosition="0" />
     <scopeInfo nodeId="2120158148121596481" fileName="ModelCheckerViewer.java" startLine="224" startPosition="0" endLine="228" endPosition="0" />
     <scopeInfo nodeId="4196298100962963016" fileName="ModelCheckerViewer.java" startLine="237" startPosition="0" endLine="241" endPosition="0" />
-    <scopeInfo nodeId="4196298100962963141" fileName="ModelCheckerViewer.java" startLine="262" startPosition="0" endLine="266" endPosition="0">
-      <varInfo nodeId="4196298100962963144" varName="issue" />
-    </scopeInfo>
-    <scopeInfo nodeId="3019223609674726708" fileName="ModelCheckerViewer.java" startLine="266" startPosition="0" endLine="270" endPosition="0" />
+    <scopeInfo nodeId="3019223609674726708" fileName="ModelCheckerViewer.java" startLine="267" startPosition="0" endLine="271" endPosition="0" />
     <scopeInfo nodeId="9055452654631886739" fileName="ModelCheckerViewer.java" startLine="93" startPosition="61" endLine="98" endPosition="0">
       <varInfo nodeId="9055452654631886742" varName="event" />
     </scopeInfo>
@@ -5510,6 +5507,9 @@
     </scopeInfo>
     <scopeInfo nodeId="4196298100962963025" fileName="ModelCheckerViewer.java" startLine="242" startPosition="99" endLine="247" endPosition="59">
       <varInfo nodeId="4196298100962963027" varName="counter" />
+    </scopeInfo>
+    <scopeInfo nodeId="4196298100962963141" fileName="ModelCheckerViewer.java" startLine="262" startPosition="0" endLine="267" endPosition="0">
+      <varInfo nodeId="4196298100962963144" varName="issue" />
     </scopeInfo>
     <scopeInfo nodeId="2768397531436385612" fileName="ModelCheckerViewer.java" startLine="140" startPosition="45" endLine="146" endPosition="11" />
     <scopeInfo nodeId="5511553970541093518" fileName="ModelCheckerViewer.java" startLine="155" startPosition="32" endLine="161" endPosition="17">
@@ -5572,8 +5572,8 @@
     <unitInfo nodeId="9055452654631886737" fileName="ModelCheckerViewer.java" startLine="93" startPosition="43" endLine="98" endPosition="5" unitName="jetbrains.mps.ide.actions.ModelCheckerViewer$4" />
     <unitInfo nodeId="5792297515476889199" fileName="ModelCheckerViewer.java" startLine="74" startPosition="23" endLine="86" endPosition="5" unitName="jetbrains.mps.ide.actions.ModelCheckerViewer$3" />
     <unitInfo nodeId="5511553970541093756" fileName="ModelCheckerViewer.java" startLine="125" startPosition="55" endLine="152" endPosition="5" unitName="jetbrains.mps.ide.actions.ModelCheckerViewer$1" />
-    <unitInfo nodeId="4196298100962962919" fileName="ModelCheckerViewer.java" startLine="229" startPosition="0" endLine="277" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelCheckerViewer$MyNodeRepresentator" />
-    <unitInfo nodeId="5792297515476886377" fileName="ModelCheckerViewer.java" startLine="55" startPosition="0" endLine="278" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelCheckerViewer" />
+    <unitInfo nodeId="4196298100962962919" fileName="ModelCheckerViewer.java" startLine="229" startPosition="0" endLine="278" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelCheckerViewer$MyNodeRepresentator" />
+    <unitInfo nodeId="5792297515476886377" fileName="ModelCheckerViewer.java" startLine="55" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelCheckerViewer" />
   </root>
   <root nodeId="5817196281476553125">
     <nodeInfo nodeId="9165393648219124259" fileName="DebugActionsUtil.java" startLine="20" startPosition="75" endLine="21" endPosition="53" />

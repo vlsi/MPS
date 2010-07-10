@@ -260,6 +260,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
       return Icons.CLOSED_FOLDER;
     }
 
+    @NotNull
     public String getPresentation(ModelCheckerIssue issue) {
       return StringEscapeUtils.escapeHtml(issue.getMessage());
     }
