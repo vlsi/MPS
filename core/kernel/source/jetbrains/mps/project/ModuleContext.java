@@ -72,7 +72,7 @@ public class ModuleContext extends StandaloneMPSContext {
   @NotNull
   public IScope getScope() {
     IModule module = getModule();
-    if (module == null) throw new IllegalStateException();
+    if (module == null) throw new IllegalStateException("Mostly happens when some actions are performed 'later'. Look for 'later' invocations in stacktrace");
     return module.getScope();
   }
 
