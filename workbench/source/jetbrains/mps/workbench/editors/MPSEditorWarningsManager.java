@@ -109,29 +109,19 @@ public class MPSEditorWarningsManager implements ProjectComponent {
       myWarnings.remove(editor);
     }
     IEditor nodeEditor = editor.getNodeEditor();
-    if (nodeEditor == null) {
-      return;
-    }
+    if (nodeEditor == null) return;
+
     EditorComponent editorComponent = nodeEditor.getCurrentEditorComponent();
-    if (editorComponent != null && editorComponent.isDisposed()) {
-      return;
-    }
+    if (editorComponent != null && editorComponent.isDisposed()) return;
 
     SNode node = editor.getFile().getNode();
-    if (node == null) {
-      return;
-    }
-    SModel smodel = node.getModel();
+    if (node == null) return;
 
-    if (smodel == null) {
-      return;
-    }
+    SModel smodel = node.getModel();
+    if (smodel == null) return;
 
     final SModelDescriptor model = smodel.getModelDescriptor();
-
-    if (model == null) {
-      return;
-    }
+    if (model == null) return;
 
     if (model.isTransient()) {
       addWarningPanel(editor, "Warning: the node is in a transient model. Your changes won't be saved.");
