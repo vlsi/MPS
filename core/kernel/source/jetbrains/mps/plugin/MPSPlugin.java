@@ -16,7 +16,6 @@
 package jetbrains.mps.plugin;
 
 import com.intellij.openapi.project.Project;
-
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -48,7 +47,7 @@ public class MPSPlugin {
   private boolean myMessageShown = false;
 
   public IProjectHandler getProjectHandler(Project project) {
-   //todo enable LOG.assertLog(!ThreadUtils.isEventDispatchThread());
+    LOG.assertNotInEDT();
 
     File mpsProject = project.getComponent(MPSProject.class).getProjectFile();
 
@@ -64,40 +63,42 @@ public class MPSPlugin {
     }
   }
 
+  //NOTE: this can return true while project in Idea does not match project in MPS
   public boolean isIDEAPresent() {
-    LOG.assertLog(!ThreadUtils.isEventDispatchThread());
+    LOG.assertNotInEDT();
+
     try {
       IMPSPlugin plugin = getPlugin();
-      IIDEAHandler handler = plugin == null ? null : plugin.getProjectCreator();
+      if (plugin == null) return false;
 
-      boolean result = handler != null;
-      if (result) {
-        handler.ping();
-      }
+      IIDEAHandler handler = plugin.getProjectCreator();
+      if (handler == null) return false;
 
-      return result;
+      handler.ping();
+      return true;
     } catch (RemoteException e) {
       return false;
     }
   }
 
-  public boolean checkIsConnected() {
-   //todo enable LOG.assertLog(!ThreadUtils.isEventDispatchThread());
+  public boolean openConnectionPresent() {
+    LOG.assertNotInEDT();
 
-    if (myPlugin != null) {
-      try {
-        myPlugin.getProjectCreator().ping();
-      } catch (RemoteException e) {
-        myPlugin = null;
+    if (myPlugin == null) return false;
+
+    try {
+      IIDEAHandler handler = myPlugin.getProjectCreator();
+      if (handler != null) {
+        handler.ping();
       }
+    } catch (RemoteException e) {
+      myPlugin = null;
     }
 
     return myPlugin != null;
   }
 
   private IMPSPlugin getPlugin() {
-   //todo enable if (checkIsConnected()) return myPlugin;
-
     try {
       myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2390/MPSPlugin");
     } catch (Exception e) {
