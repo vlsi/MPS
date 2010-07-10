@@ -19,8 +19,8 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import jetbrains.mps.util.misc.ObjectCache;
+import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -63,20 +63,22 @@ public class NameUtil {
 
 
   //todo make it return textual representation of an error
-  public static boolean satisfiesNamingPolicy(@NotNull String s) {
-    return captionWithNamingPolicy(s).equals(s);
+
+  public static boolean satisfiesNamingPolicy(String s) {
+    return EqualUtil.equals(captionWithNamingPolicy(s), s);
   }
 
-  public static boolean satisfiesPartNamingPolicy(@NotNull String s) {
-    return captionPartWithNamingPolicy(s).equals(s);
+  public static boolean satisfiesPartNamingPolicy(String s) {
+    return EqualUtil.equals(captionPartWithNamingPolicy(s), s);
   }
 
-  public static String captionWithNamingPolicy(@NotNull String s) {
+  public static String captionWithNamingPolicy(String s) {
+    if (s == null) return null;
     return captionPartWithNamingPolicy(s).trim();
   }
 
-  public static String captionPartWithNamingPolicy(@NotNull String s) {
-    if (s.length() == 0) return s;
+  public static String captionPartWithNamingPolicy(String s) {
+    if (s == null || s.length() == 0) return s;
 
     final String quote = "'";
 
@@ -185,13 +187,12 @@ public class NameUtil {
   public static String decapitalize(String s) {
     if (isEmpty(s) || s.charAt(0) == Character.toLowerCase(s.charAt(0))) {
       return s;
-    } else
-    if (s.length() == 1 || Character.isLowerCase(s.charAt(1))) {
+    } else if (s.length() == 1 || Character.isLowerCase(s.charAt(1))) {
       return "" + Character.toLowerCase(s.charAt(0)) + s.substring(1);
     } else {
       StringBuilder result = new StringBuilder(s.length());
       int i = 0;
-      while ( i < s.length() && !(i + 1 < s.length() && Character.isLowerCase(s.charAt(i + 1))) ) {
+      while (i < s.length() && !(i + 1 < s.length() && Character.isLowerCase(s.charAt(i + 1)))) {
         result.append(Character.toLowerCase(s.charAt(i)));
         i++;
       }
@@ -224,7 +225,7 @@ public class NameUtil {
     // It means that pluralized "berry" is "berries",
     // but pluralized "array" is "arrays"
     if (singular.endsWith("y") && singular.length() > 1
-        && isConsonant(singular.charAt(singular.length() - 2))) {
+      && isConsonant(singular.charAt(singular.length() - 2))) {
       return singular.substring(0, singular.length() - 1) + "ies";
     }
 
@@ -457,6 +458,7 @@ public class NameUtil {
   }
 
   //platform-dependent path string
+
   public static String pathFromNamespace(String namespace) {
     return namespace.replace('.', File.separatorChar);
   }
