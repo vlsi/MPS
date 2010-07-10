@@ -46,6 +46,7 @@ public class MPSPlugin {
   private IMPSPlugin myPlugin = null;
   private boolean myMessageShown = false;
 
+  @Deprecated
   public IProjectHandler getProjectHandler(Project project) {
     LOG.assertNotInEDT();
 
@@ -54,6 +55,10 @@ public class MPSPlugin {
     File projectFile = mpsProject.getParentFile();
     String projectPath = projectFile.getAbsolutePath();
 
+    return getProjectHandler(projectPath);
+  }
+
+  public IProjectHandler getProjectHandler(String projectPath) {
     try {
       IMPSPlugin plugin = getPlugin();
       if (plugin == null) return null;

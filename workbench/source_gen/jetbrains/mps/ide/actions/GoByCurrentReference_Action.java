@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
@@ -14,13 +13,20 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.LanguageID;
+import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.smodel.SModel;
+import java.util.Set;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -32,7 +38,6 @@ public class GoByCurrentReference_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GoByCurrentReference_Action.class);
 
-  private Project project;
   private EditorComponent editorComponent;
   private EditorCell cell;
   private IOperationContext context;
@@ -41,7 +46,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
   public GoByCurrentReference_Action() {
     super("Go by Current Reference", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   @NotNull
@@ -55,9 +60,6 @@ public class GoByCurrentReference_Action extends GeneratedAction {
       return false;
     }
     if (targetNode == GoByCurrentReference_Action.this.cell.getSNode()) {
-      return false;
-    }
-    if (GoByCurrentReference_Action.this.getEditorOpener() == null) {
       return false;
     }
     return true;
@@ -81,10 +83,6 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
-      return false;
-    }
     this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
     if (this.editorComponent == null) {
       return false;
@@ -106,7 +104,6 @@ public class GoByCurrentReference_Action extends GeneratedAction {
 
   protected void cleanup() {
     super.cleanup();
-    this.project = null;
     this.editorComponent = null;
     this.cell = null;
     this.context = null;
@@ -115,28 +112,44 @@ public class GoByCurrentReference_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      new Thread() {
-        public void run() {
-          final IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(GoByCurrentReference_Action.this.project);
+      final SNode targetNode = GoByCurrentReference_Action.this.cell.getSNodeWRTReference();
+      String targetSter = SNodeOperations.getModel(targetNode).getStereotype();
+      String stubSter = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
 
-          SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-              ModelAccess.instance().runWriteAction(new Runnable() {
-                public void run() {
-                  SNode targetNode = GoByCurrentReference_Action.this.cell.getSNodeWRTReference();
-                  boolean inIdea = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(SNodeOperations.getModel(targetNode).getStereotype()) && handler != null;
-
-                  if (inIdea) {
-                    GoByCurrentReference_Action.this.navigateToJavaStub(handler, targetNode);
-                  } else {
-                    GoByCurrentReference_Action.this.getEditorOpener().openNode(targetNode, GoByCurrentReference_Action.this.context, true, !(targetNode.isRoot()));
-                  }
-                }
-              });
-            }
-          });
+      if (!(ObjectUtils.equals(stubSter, targetSter))) {
+        GoByCurrentReference_Action.this.open(targetNode);
+      } else {
+        SNode node = GoByCurrentReference_Action.this.cell.getSNodeWRTReference();
+        SModel model = node.getModel();
+        Set<IModule> modules = model.getModelDescriptor().getModules();
+        assert !(modules.isEmpty());
+        IModule module = modules.iterator().next();
+        if (module instanceof Solution && ((Solution) module).isStub()) {
+          Set<MPSModuleOwner> owners = MPSModuleRepository.getInstance().getOwners(module);
+          assert !(owners.isEmpty());
+          module = ((IModule) owners.iterator().next());
         }
-      }.start();
+        final String modulePath = module.getDescriptorFile().getAbsolutePath();
+
+        new Thread() {
+          public void run() {
+            final IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(modulePath);
+            SwingUtilities.invokeLater(new Runnable() {
+              public void run() {
+                ModelAccess.instance().runWriteAction(new Runnable() {
+                  public void run() {
+                    if (handler != null) {
+                      GoByCurrentReference_Action.this.navigateToJavaStub(handler, targetNode);
+                    } else {
+                      GoByCurrentReference_Action.this.open(targetNode);
+                    }
+                  }
+                });
+              }
+            });
+          }
+        }.start();
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoByCurrentReference", t);
@@ -144,8 +157,8 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     }
   }
 
-  private MPSEditorOpener getEditorOpener() {
-    return GoByCurrentReference_Action.this.context.getComponent(MPSEditorOpener.class);
+  private void open(SNode targetNode) {
+    GoByCurrentReference_Action.this.context.getComponent(MPSEditorOpener.class).openNode(targetNode, GoByCurrentReference_Action.this.context, true, !(targetNode.isRoot()));
   }
 
   private boolean navigateToJavaStub(@NotNull IProjectHandler handler, SNode targetNode) {
