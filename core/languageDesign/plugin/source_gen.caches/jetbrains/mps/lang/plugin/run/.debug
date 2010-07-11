@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="242278890011773407">
-    <nodeInfo nodeId="242278890011773456" fileName="DefaultOsProcessHandler.java" startLine="15" startPosition="63" endLine="16" endPosition="46" />
-    <nodeInfo nodeId="242278890011773464" fileName="DefaultOsProcessHandler.java" startLine="18" startPosition="91" endLine="19" endPosition="27" />
+    <nodeInfo nodeId="242278890011773456" fileName="DefaultOsProcessHandler.java" startLine="15" startPosition="63" endLine="16" endPosition="42" />
+    <nodeInfo nodeId="242278890011773464" fileName="DefaultOsProcessHandler.java" startLine="18" startPosition="87" endLine="19" endPosition="27" />
     <nodeInfo nodeId="242278890011773467" fileName="DefaultOsProcessHandler.java" startLine="19" startPosition="27" endLine="20" endPosition="33" />
     <nodeInfo nodeId="242278890011773473" fileName="DefaultOsProcessHandler.java" startLine="20" startPosition="33" endLine="21" endPosition="0" />
     <nodeInfo nodeId="242278890011773490" fileName="DefaultOsProcessHandler.java" startLine="23" startPosition="62" endLine="24" endPosition="64" />
@@ -24,7 +24,7 @@
       <varInfo nodeId="242278890011773487" varName="k" />
     </scopeInfo>
     <scopeInfo nodeId="242278890011773413" fileName="DefaultOsProcessHandler.java" startLine="30" startPosition="40" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="242278890011773463" fileName="DefaultOsProcessHandler.java" startLine="18" startPosition="91" endLine="27" endPosition="43" />
+    <scopeInfo nodeId="242278890011773463" fileName="DefaultOsProcessHandler.java" startLine="18" startPosition="87" endLine="27" endPosition="43" />
     <scopeInfo nodeId="242278890011773408" fileName="DefaultOsProcessHandler.java" startLine="29" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="242278890011773409" varName="s" />
       <varInfo nodeId="242278890011773411" varName="k" />
@@ -38,8 +38,8 @@
     <unitInfo nodeId="242278890011773407" fileName="DefaultOsProcessHandler.java" startLine="15" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.plugin.run.DefaultOsProcessHandler" />
   </root>
   <root nodeId="242278890011773508">
-    <nodeInfo nodeId="242278890011773557" fileName="DefaultProcessHandler.java" startLine="16" startPosition="70" endLine="17" endPosition="46" />
-    <nodeInfo nodeId="242278890011773565" fileName="DefaultProcessHandler.java" startLine="19" startPosition="89" endLine="20" endPosition="53" />
+    <nodeInfo nodeId="242278890011773557" fileName="DefaultProcessHandler.java" startLine="16" startPosition="70" endLine="17" endPosition="42" />
+    <nodeInfo nodeId="242278890011773565" fileName="DefaultProcessHandler.java" startLine="19" startPosition="85" endLine="20" endPosition="53" />
     <nodeInfo nodeId="242278890011773569" fileName="DefaultProcessHandler.java" startLine="20" startPosition="53" endLine="21" endPosition="33" />
     <nodeInfo nodeId="242278890011773575" fileName="DefaultProcessHandler.java" startLine="21" startPosition="33" endLine="22" endPosition="0" />
     <nodeInfo nodeId="242278890011773592" fileName="DefaultProcessHandler.java" startLine="24" startPosition="62" endLine="25" endPosition="62" />
@@ -61,7 +61,7 @@
       <varInfo nodeId="242278890011773589" varName="k" />
     </scopeInfo>
     <scopeInfo nodeId="242278890011773514" fileName="DefaultProcessHandler.java" startLine="31" startPosition="40" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="242278890011773564" fileName="DefaultProcessHandler.java" startLine="19" startPosition="89" endLine="28" endPosition="43" />
+    <scopeInfo nodeId="242278890011773564" fileName="DefaultProcessHandler.java" startLine="19" startPosition="85" endLine="28" endPosition="43" />
     <scopeInfo nodeId="242278890011773509" fileName="DefaultProcessHandler.java" startLine="30" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="242278890011773510" varName="s" />
       <varInfo nodeId="242278890011773512" varName="k" />

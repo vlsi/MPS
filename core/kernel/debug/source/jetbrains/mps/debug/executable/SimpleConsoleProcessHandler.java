@@ -2,6 +2,7 @@ package jetbrains.mps.debug.executable;
 
 import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.execution.process.*;
+import com.intellij.execution.ui.ConsoleView;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.debug.api.info.StacktraceUtil;
@@ -18,12 +19,12 @@ import java.io.OutputStreamWriter;
  * To change this template use File | Settings | File Templates.
  */
 public class SimpleConsoleProcessHandler extends OSProcessHandler {
-  private static Logger LOG = Logger.getLogger(SimpleConsoleProcessHandler.class);
+  private static final Logger LOG = Logger.getLogger(SimpleConsoleProcessHandler.class);
 
-  private ConsoleViewImpl myConsoleView;
+  private ConsoleView myConsoleView;
   public OutputStreamWriter myOutputStreamWriter;
 
-  public SimpleConsoleProcessHandler(ConsoleViewImpl console, Process process, String params) {
+  public SimpleConsoleProcessHandler(ConsoleView console, Process process, String params) {
     super(process, params);
     this.myConsoleView = console;
 

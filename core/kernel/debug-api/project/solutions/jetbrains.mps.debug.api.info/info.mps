@@ -2037,7 +2037,7 @@
               <link role="variableDeclaration:3" targetNodeId="4494976841093370989" resolveInfo="consoleView" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1412418657078270182">
-              <link role="baseMethodDeclaration:3" targetNodeId="11.~ConsoleViewImpl.print(java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="print" />
+              <link role="baseMethodDeclaration:3" targetNodeId="12.~ConsoleView.print(java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="print" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1412418657078270183">
                 <link role="variableDeclaration:3" targetNodeId="4494976841093370991" resolveInfo="text" />
               </node>
@@ -2050,8 +2050,8 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4494976841093370989">
         <property name="name:3" value="consoleView" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4494976841093370990">
-          <link role="classifier:3" targetNodeId="11.~ConsoleViewImpl" resolveInfo="ConsoleViewImpl" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5236594288019578091">
+          <link role="classifier:3" targetNodeId="12.~ConsoleView" resolveInfo="ConsoleView" />
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4494976841093370991">

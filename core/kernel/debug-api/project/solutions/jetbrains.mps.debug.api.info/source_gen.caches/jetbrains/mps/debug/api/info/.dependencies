@@ -84,6 +84,7 @@
   <dependency className="jetbrains.mps.debug.api.info.StacktraceUtil" file="StacktraceUtil.java">
     <classNode dependClassName="com.intellij.execution.filters.HyperlinkInfo" />
     <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
+    <classNode dependClassName="com.intellij.execution.ui.ConsoleView" />
     <classNode dependClassName="com.intellij.execution.ui.ConsoleViewContentType" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Integer" />

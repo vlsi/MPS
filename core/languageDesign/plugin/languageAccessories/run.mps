@@ -144,7 +144,7 @@
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="242278890011773450" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="242278890011773451">
-                    <link role="baseMethodDeclaration:3" targetNodeId="5.~ConsoleViewImpl.print(java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="print" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="4.~ConsoleView.print(java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="print" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="242278890011773452">
                       <link role="variableDeclaration:3" targetNodeId="242278890011773409" resolveInfo="s" />
                     </node>
@@ -166,8 +166,8 @@
       <property name="name:3" value="myConsoleView" />
       <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="242278890011773457" />
-      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="242278890011773458">
-        <link role="classifier:3" targetNodeId="5.~ConsoleViewImpl" resolveInfo="ConsoleViewImpl" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5236594288019578143">
+        <link role="classifier:3" targetNodeId="4.~ConsoleView" resolveInfo="ConsoleView" />
       </node>
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="242278890011773459" />
@@ -265,8 +265,8 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="242278890011773501">
         <property name="name:3" value="console" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="242278890011773502">
-          <link role="classifier:3" targetNodeId="5.~ConsoleViewImpl" resolveInfo="ConsoleViewImpl" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5236594288019578144">
+          <link role="classifier:3" targetNodeId="4.~ConsoleView" resolveInfo="ConsoleView" />
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="242278890011773503">
@@ -302,19 +302,19 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="242278890011773515">
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="242278890011773516">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="242278890011773517">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="242278890011773518">
-                <link role="classConcept:3" targetNodeId="6.~StacktraceUtil" resolveInfo="StacktraceUtil" />
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5236594288019578137">
                 <link role="baseMethodDeclaration:3" targetNodeId="6.~StacktraceUtil.appendStacktraceToConsole(com.intellij.execution.impl.ConsoleViewImpl,java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="appendStacktraceToConsole" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="242278890011773519">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="242278890011773520">
+                <link role="classConcept:3" targetNodeId="6.~StacktraceUtil" resolveInfo="StacktraceUtil" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5236594288019578138">
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5236594288019578139">
                     <link role="fieldDeclaration:3" targetNodeId="242278890011773557" resolveInfo="myConsoleView" />
                   </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="242278890011773521" />
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5236594288019578140" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="242278890011773522">
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5236594288019578141">
                   <link role="variableDeclaration:3" targetNodeId="242278890011773510" resolveInfo="s" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="242278890011773523">
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5236594288019578142">
                   <link role="classifier:3" targetNodeId="4.~ConsoleViewContentType" resolveInfo="ConsoleViewContentType" />
                   <link role="variableDeclaration:3" targetNodeId="4.~ConsoleViewContentType.ERROR_OUTPUT" resolveInfo="ERROR_OUTPUT" />
                 </node>
@@ -391,7 +391,7 @@
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="242278890011773551" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="242278890011773552">
-                    <link role="baseMethodDeclaration:3" targetNodeId="5.~ConsoleViewImpl.print(java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="print" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="4.~ConsoleView.print(java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="print" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="242278890011773553">
                       <link role="variableDeclaration:3" targetNodeId="242278890011773510" resolveInfo="s" />
                     </node>
@@ -413,8 +413,8 @@
       <property name="name:3" value="myConsoleView" />
       <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="242278890011773558" />
-      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="242278890011773559">
-        <link role="classifier:3" targetNodeId="5.~ConsoleViewImpl" resolveInfo="ConsoleViewImpl" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5236594288019577414">
+        <link role="classifier:3" targetNodeId="4.~ConsoleView" resolveInfo="ConsoleView" />
       </node>
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="242278890011773560" />
@@ -516,8 +516,8 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="242278890011773603">
         <property name="name:3" value="console" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="242278890011773604">
-          <link role="classifier:3" targetNodeId="5.~ConsoleViewImpl" resolveInfo="ConsoleViewImpl" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5236594288019577415">
+          <link role="classifier:3" targetNodeId="4.~ConsoleView" resolveInfo="ConsoleView" />
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="242278890011773605">
