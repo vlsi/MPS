@@ -45,7 +45,7 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
   public void setStackTrace(String str) {
     AnalyzeStacktrace_Tool.this.myStackTrace = str;
     AnalyzeStacktrace_Tool.this.myConsoleView.clear();
-    StacktraceUtil.appendStacktraceToConsole(AnalyzeStacktrace_Tool.this.myConsoleView, str, ConsoleViewContentType.ERROR_OUTPUT);
+    this.myConsoleView.print(str, ConsoleViewContentType.ERROR_OUTPUT);
   }
 
   public JComponent getComponent() {

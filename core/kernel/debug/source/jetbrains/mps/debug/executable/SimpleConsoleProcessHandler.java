@@ -1,11 +1,9 @@
 package jetbrains.mps.debug.executable;
 
-import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.execution.process.*;
 import com.intellij.execution.ui.ConsoleView;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.util.Key;
-import jetbrains.mps.debug.api.info.StacktraceUtil;
 import jetbrains.mps.logging.Logger;
 
 import java.io.IOException;
@@ -38,9 +36,9 @@ public class SimpleConsoleProcessHandler extends OSProcessHandler {
 
   private void append(String s, Key k) {
     if (ProcessOutputTypes.STDERR.equals(k)) {
-      StacktraceUtil.appendStacktraceToConsole(this.myConsoleView, s, ConsoleViewContentType.ERROR_OUTPUT);
+      this.myConsoleView.print(s, ConsoleViewContentType.ERROR_OUTPUT);
     } else if (ProcessOutputTypes.SYSTEM.equals(k)) {
-      StacktraceUtil.appendStacktraceToConsole(this.myConsoleView, s, ConsoleViewContentType.SYSTEM_OUTPUT);
+      this.myConsoleView.print(s, ConsoleViewContentType.SYSTEM_OUTPUT);
     } else if (ProcessOutputTypes.STDOUT.equals(k)) {
       this.myConsoleView.print(s, ConsoleViewContentType.NORMAL_OUTPUT);
     }

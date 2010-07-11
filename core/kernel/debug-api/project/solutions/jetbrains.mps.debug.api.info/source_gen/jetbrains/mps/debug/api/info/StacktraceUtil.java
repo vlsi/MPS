@@ -27,7 +27,9 @@ import com.intellij.execution.impl.ConsoleViewImpl;
 public class StacktraceUtil {
   private static String STRING_START = "at ";
 
+  @Deprecated
   public static void appendStacktraceToConsole(ConsoleView consoleView, String text, ConsoleViewContentType type) {
+    // would be removed 
     consoleView.print(text, type);
   }
 

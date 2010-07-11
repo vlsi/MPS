@@ -2018,19 +2018,16 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4494976841093370953">
     <property name="name:3" value="StacktraceUtil" />
-    <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="4494976841093370954">
-      <property name="name:3" value="STRING_START" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="4494976841093370955" />
-      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4494976841093370956" />
-      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4494976841093370957">
-        <property name="value:3" value="at " />
-      </node>
-    </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="4494976841093370958">
       <property name="name:3" value="appendStacktraceToConsole" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4494976841093370959" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4494976841093370960" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4494976841093370961">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="5236594288019599300">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="5236594288019599301">
+            <property name="text:3" value="would be removed" />
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1412418657078270176">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1412418657078270178">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1412418657078270177">
@@ -2042,7 +2039,7 @@
                 <link role="variableDeclaration:3" targetNodeId="4494976841093370991" resolveInfo="text" />
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1412418657078270185">
-                <link role="variableDeclaration:3" targetNodeId="4494976841093370993" resolveInfo="defaultType" />
+                <link role="variableDeclaration:3" targetNodeId="4494976841093370993" resolveInfo="type" />
               </node>
             </node>
           </node>
@@ -2063,6 +2060,17 @@
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4494976841093370994">
           <link role="classifier:3" targetNodeId="12.~ConsoleViewContentType" resolveInfo="ConsoleViewContentType" />
         </node>
+      </node>
+      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="5236594288019599286">
+        <link role="annotation:3" targetNodeId="9.~Deprecated" resolveInfo="Deprecated" />
+      </node>
+    </node>
+    <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="4494976841093370954">
+      <property name="name:3" value="STRING_START" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="4494976841093370955" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4494976841093370956" />
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4494976841093370957">
+        <property name="value:3" value="at " />
       </node>
     </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="4494976841093370995">

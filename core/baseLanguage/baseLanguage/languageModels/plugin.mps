@@ -5130,22 +5130,34 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8466352011359114342">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8466352011359114343">
-            <link role="baseMethodDeclaration:3" targetNodeId="132.4494976841093370958" resolveInfo="appendStacktraceToConsole" />
-            <link role="classConcept:3" targetNodeId="132.4494976841093370953" resolveInfo="StacktraceUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8466352011359114344">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5236594288019599225">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5236594288019599226">
+            <property name="name:3" value="consoleView" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5236594288019599227">
+              <link role="classifier:3" targetNodeId="41.~ConsoleView" resolveInfo="ConsoleView" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8466352011359114344">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="8466352011359114345" />
               <node role="operation:3" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation:0" id="8466352011359114346">
                 <link role="member:0" targetNodeId="6173548178016197417" resolveInfo="myConsoleView" />
               </node>
             </node>
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8466352011359135443">
-              <link role="variableDeclaration:3" targetNodeId="6173548178016197423" resolveInfo="str" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5236594288019599228">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5236594288019599229">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5236594288019599230">
+              <link role="variableDeclaration:3" targetNodeId="5236594288019599226" resolveInfo="consoleView" />
             </node>
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="8466352011359114350">
-              <link role="classifier:3" targetNodeId="41.~ConsoleViewContentType" resolveInfo="ConsoleViewContentType" />
-              <link role="variableDeclaration:3" targetNodeId="41.~ConsoleViewContentType.ERROR_OUTPUT" resolveInfo="ERROR_OUTPUT" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5236594288019599231">
+              <link role="baseMethodDeclaration:3" targetNodeId="41.~ConsoleView.print(java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="print" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5236594288019599232">
+                <link role="variableDeclaration:3" targetNodeId="6173548178016197423" resolveInfo="str" />
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5236594288019599233">
+                <link role="classifier:3" targetNodeId="41.~ConsoleViewContentType" resolveInfo="ConsoleViewContentType" />
+                <link role="variableDeclaration:3" targetNodeId="41.~ConsoleViewContentType.ERROR_OUTPUT" resolveInfo="ERROR_OUTPUT" />
+              </node>
             </node>
           </node>
         </node>
