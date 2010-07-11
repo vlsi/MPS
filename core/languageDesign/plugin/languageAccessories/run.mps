@@ -57,7 +57,7 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="242278890011773416">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="242278890011773417">
                 <link role="classConcept:3" targetNodeId="6.~StacktraceUtil" resolveInfo="StacktraceUtil" />
-                <link role="baseMethodDeclaration:3" targetNodeId="6.~StacktraceUtil.appendStacktraceToConsole(com.intellij.execution.impl.ConsoleViewImpl,java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="appendStacktraceToConsole" />
+                <link role="baseMethodDeclaration:3" targetNodeId="6.~StacktraceUtil.appendStacktraceToConsole(com.intellij.execution.ui.ConsoleView,java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="appendStacktraceToConsole" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="242278890011773418">
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="242278890011773419">
                     <link role="fieldDeclaration:3" targetNodeId="242278890011773456" resolveInfo="myConsoleView" />
@@ -91,7 +91,7 @@
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="242278890011773429">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="242278890011773430">
                   <link role="classConcept:3" targetNodeId="6.~StacktraceUtil" resolveInfo="StacktraceUtil" />
-                  <link role="baseMethodDeclaration:3" targetNodeId="6.~StacktraceUtil.appendStacktraceToConsole(com.intellij.execution.impl.ConsoleViewImpl,java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="appendStacktraceToConsole" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~StacktraceUtil.appendStacktraceToConsole(com.intellij.execution.ui.ConsoleView,java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="appendStacktraceToConsole" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="242278890011773431">
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="242278890011773432">
                       <link role="fieldDeclaration:3" targetNodeId="242278890011773456" resolveInfo="myConsoleView" />
@@ -303,8 +303,8 @@
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="242278890011773516">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="242278890011773517">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5236594288019578137">
-                <link role="baseMethodDeclaration:3" targetNodeId="6.~StacktraceUtil.appendStacktraceToConsole(com.intellij.execution.impl.ConsoleViewImpl,java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="appendStacktraceToConsole" />
                 <link role="classConcept:3" targetNodeId="6.~StacktraceUtil" resolveInfo="StacktraceUtil" />
+                <link role="baseMethodDeclaration:3" targetNodeId="6.~StacktraceUtil.appendStacktraceToConsole(com.intellij.execution.ui.ConsoleView,java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="appendStacktraceToConsole" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5236594288019578138">
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5236594288019578139">
                     <link role="fieldDeclaration:3" targetNodeId="242278890011773557" resolveInfo="myConsoleView" />
@@ -338,7 +338,7 @@
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="242278890011773530">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="242278890011773531">
                   <link role="classConcept:3" targetNodeId="6.~StacktraceUtil" resolveInfo="StacktraceUtil" />
-                  <link role="baseMethodDeclaration:3" targetNodeId="6.~StacktraceUtil.appendStacktraceToConsole(com.intellij.execution.impl.ConsoleViewImpl,java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="appendStacktraceToConsole" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~StacktraceUtil.appendStacktraceToConsole(com.intellij.execution.ui.ConsoleView,java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="appendStacktraceToConsole" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="242278890011773532">
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="242278890011773533">
                       <link role="fieldDeclaration:3" targetNodeId="242278890011773557" resolveInfo="myConsoleView" />
