@@ -15,6 +15,7 @@ import jetbrains.mps.workbench.tools.CloseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.util.Disposer;
+import com.intellij.execution.ui.ConsoleView;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import javax.swing.JComponent;
 
@@ -45,7 +46,8 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
   public void setStackTrace(String str) {
     AnalyzeStacktrace_Tool.this.myStackTrace = str;
     AnalyzeStacktrace_Tool.this.myConsoleView.clear();
-    this.myConsoleView.print(str, ConsoleViewContentType.ERROR_OUTPUT);
+    ConsoleView consoleView = AnalyzeStacktrace_Tool.this.myConsoleView;
+    consoleView.print(str, ConsoleViewContentType.ERROR_OUTPUT);
   }
 
   public JComponent getComponent() {

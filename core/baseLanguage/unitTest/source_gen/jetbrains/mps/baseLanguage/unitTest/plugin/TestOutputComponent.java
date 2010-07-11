@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import javax.swing.JComponent;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import java.util.List;
-
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -14,6 +13,7 @@ import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
 import javax.swing.SwingUtilities;
 import org.apache.commons.lang.ObjectUtils;
+import com.intellij.execution.ui.ConsoleView;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.util.Disposer;
 
@@ -100,7 +100,9 @@ public class TestOutputComponent implements TestView {
   private void append(TestOutputComponent.Message message) {
     if (message.matches(this.filterClass, this.filterMethod)) {
       if (ProcessOutputTypes.STDERR.equals(message.getType())) {
-        this.consoleView.print(message.getMessage(), ConsoleViewContentType.ERROR_OUTPUT);
+        ConsoleView consoleView = this.consoleView;
+        String text = message.getMessage();
+        consoleView.print(text, ConsoleViewContentType.ERROR_OUTPUT);
       } else if (ProcessOutputTypes.SYSTEM.equals(message.getType())) {
         this.consoleView.print(message.getMessage(), ConsoleViewContentType.SYSTEM_OUTPUT);
       } else if (ProcessOutputTypes.STDOUT.equals(message.getType())) {

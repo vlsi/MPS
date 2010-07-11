@@ -58,6 +58,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Tool" file="AnalyzeStacktrace_Tool.java">
     <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
+    <classNode dependClassName="com.intellij.execution.ui.ConsoleView" />
     <classNode dependClassName="com.intellij.execution.ui.ConsoleViewContentType" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />

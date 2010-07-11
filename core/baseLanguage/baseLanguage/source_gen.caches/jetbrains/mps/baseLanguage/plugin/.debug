@@ -1465,23 +1465,26 @@
     <unitInfo nodeId="6173548178016197197" fileName="AnalyzeStacktraceDialog.java" startLine="19" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktraceDialog" />
   </root>
   <root nodeId="6173548178016197413">
-    <nodeInfo nodeId="6173548178016197414" fileName="AnalyzeStacktrace_Tool.java" startLine="21" startPosition="59" endLine="22" endPosition="30" />
-    <nodeInfo nodeId="6173548178016197417" fileName="AnalyzeStacktrace_Tool.java" startLine="22" startPosition="30" endLine="23" endPosition="40" />
-    <nodeInfo nodeId="451934581190459050" fileName="AnalyzeStacktrace_Tool.java" startLine="23" startPosition="40" endLine="24" endPosition="29" />
-    <nodeInfo nodeId="8466352011358433512" fileName="AnalyzeStacktrace_Tool.java" startLine="31" startPosition="24" endLine="32" endPosition="123" />
-    <nodeInfo nodeId="451934581190488963" fileName="AnalyzeStacktrace_Tool.java" startLine="32" startPosition="123" endLine="33" endPosition="77" />
-    <nodeInfo nodeId="451934581190493149" fileName="AnalyzeStacktrace_Tool.java" startLine="33" startPosition="77" endLine="34" endPosition="106" />
-    <nodeInfo nodeId="4935428628789551448" fileName="AnalyzeStacktrace_Tool.java" startLine="34" startPosition="106" endLine="35" endPosition="58" />
-    <nodeInfo nodeId="4935428628789551455" fileName="AnalyzeStacktrace_Tool.java" startLine="35" startPosition="58" endLine="36" endPosition="62" />
-    <nodeInfo nodeId="451934581190500066" fileName="AnalyzeStacktrace_Tool.java" startLine="36" startPosition="62" endLine="37" endPosition="175" />
-    <nodeInfo nodeId="8136820323456515392" fileName="AnalyzeStacktrace_Tool.java" startLine="40" startPosition="25" endLine="41" endPosition="64" />
-    <nodeInfo nodeId="6173548178016197426" fileName="AnalyzeStacktrace_Tool.java" startLine="45" startPosition="41" endLine="46" endPosition="51" />
-    <nodeInfo nodeId="451934581189758156" fileName="AnalyzeStacktrace_Tool.java" startLine="46" startPosition="51" endLine="47" endPosition="54" />
-    <nodeInfo nodeId="8466352011359114342" fileName="AnalyzeStacktrace_Tool.java" startLine="47" startPosition="54" endLine="48" endPosition="130" />
-    <nodeInfo nodeId="6173548178016197420" fileName="AnalyzeStacktrace_Tool.java" startLine="44" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="6173548178016197433" fileName="AnalyzeStacktrace_Tool.java" startLine="51" startPosition="36" endLine="52" endPosition="51" />
-    <scopeInfo nodeId="6173548178016197425" fileName="AnalyzeStacktrace_Tool.java" startLine="45" startPosition="41" endLine="48" endPosition="130" />
-    <scopeInfo nodeId="6173548178016197420" fileName="AnalyzeStacktrace_Tool.java" startLine="44" startPosition="0" endLine="50" endPosition="0">
+    <nodeInfo nodeId="6173548178016197414" fileName="AnalyzeStacktrace_Tool.java" startLine="22" startPosition="59" endLine="23" endPosition="30" />
+    <nodeInfo nodeId="6173548178016197417" fileName="AnalyzeStacktrace_Tool.java" startLine="23" startPosition="30" endLine="24" endPosition="40" />
+    <nodeInfo nodeId="451934581190459050" fileName="AnalyzeStacktrace_Tool.java" startLine="24" startPosition="40" endLine="25" endPosition="29" />
+    <nodeInfo nodeId="8466352011358433512" fileName="AnalyzeStacktrace_Tool.java" startLine="32" startPosition="24" endLine="33" endPosition="123" />
+    <nodeInfo nodeId="451934581190488963" fileName="AnalyzeStacktrace_Tool.java" startLine="33" startPosition="123" endLine="34" endPosition="77" />
+    <nodeInfo nodeId="451934581190493149" fileName="AnalyzeStacktrace_Tool.java" startLine="34" startPosition="77" endLine="35" endPosition="106" />
+    <nodeInfo nodeId="4935428628789551448" fileName="AnalyzeStacktrace_Tool.java" startLine="35" startPosition="106" endLine="36" endPosition="58" />
+    <nodeInfo nodeId="4935428628789551455" fileName="AnalyzeStacktrace_Tool.java" startLine="36" startPosition="58" endLine="37" endPosition="62" />
+    <nodeInfo nodeId="451934581190500066" fileName="AnalyzeStacktrace_Tool.java" startLine="37" startPosition="62" endLine="38" endPosition="175" />
+    <nodeInfo nodeId="8136820323456515392" fileName="AnalyzeStacktrace_Tool.java" startLine="41" startPosition="25" endLine="42" endPosition="64" />
+    <nodeInfo nodeId="6173548178016197426" fileName="AnalyzeStacktrace_Tool.java" startLine="46" startPosition="41" endLine="47" endPosition="51" />
+    <nodeInfo nodeId="451934581189758156" fileName="AnalyzeStacktrace_Tool.java" startLine="47" startPosition="51" endLine="48" endPosition="54" />
+    <nodeInfo nodeId="5236594288019599225" fileName="AnalyzeStacktrace_Tool.java" startLine="48" startPosition="54" endLine="49" endPosition="72" />
+    <nodeInfo nodeId="5236594288019599228" fileName="AnalyzeStacktrace_Tool.java" startLine="49" startPosition="72" endLine="50" endPosition="64" />
+    <nodeInfo nodeId="6173548178016197420" fileName="AnalyzeStacktrace_Tool.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="6173548178016197433" fileName="AnalyzeStacktrace_Tool.java" startLine="53" startPosition="36" endLine="54" endPosition="51" />
+    <scopeInfo nodeId="6173548178016197425" fileName="AnalyzeStacktrace_Tool.java" startLine="46" startPosition="41" endLine="50" endPosition="64">
+      <varInfo nodeId="5236594288019599226" varName="consoleView" />
+    </scopeInfo>
+    <scopeInfo nodeId="6173548178016197420" fileName="AnalyzeStacktrace_Tool.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="6173548178016197423" varName="str" />
     </scopeInfo>
   </root>
