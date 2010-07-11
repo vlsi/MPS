@@ -460,7 +460,7 @@
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7243599812675939339">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7243599812675939340">
-                  <link role="baseMethodDeclaration:3" targetNodeId="17.~SimpleConsoleProcessHandler.&lt;init&gt;(com.intellij.execution.impl.ConsoleViewImpl,java.lang.Process,java.lang.String)" resolveInfo="SimpleConsoleProcessHandler" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="17.~SimpleConsoleProcessHandler.&lt;init&gt;(com.intellij.execution.ui.ConsoleView,java.lang.Process,java.lang.String)" resolveInfo="SimpleConsoleProcessHandler" />
                   <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.Console_FunctionParameter:23" id="7243599812675939341" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7243599812675939342">
                     <link role="variableDeclaration:3" targetNodeId="7243599812675939317" resolveInfo="process" />
