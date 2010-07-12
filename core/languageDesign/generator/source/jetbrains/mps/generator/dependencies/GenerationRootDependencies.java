@@ -71,6 +71,10 @@ public class GenerationRootDependencies {
     return Collections.unmodifiableList(myGeneratedFiles);
   }
 
+  public void addGeneratedFile(String name) {
+    myGeneratedFiles.add(name);
+  }
+
   public void saveTo(Element element) {
     if(myRootId != null) {
       element.setAttribute(ATTR_ID, this.myRootId);

@@ -16,10 +16,8 @@
 package jetbrains.mps.generator.fileGenerator;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
-import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
@@ -34,7 +32,6 @@ import jetbrains.mps.generator.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
@@ -51,6 +48,8 @@ import java.util.*;
 
 public class FileGenerationManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(FileGenerationManager.class);
+
+  private final List<FileGenerationListener> myGenerationListeners = new ArrayList<FileGenerationListener>();
 
   public static FileGenerationManager getInstance() {
     return ApplicationManager.getApplication().getComponent(FileGenerationManager.class);
@@ -178,7 +177,7 @@ public class FileGenerationManager implements ApplicationComponent {
     status.setBLDependencies(dependRoot);
 
     SModel outputModel = status.getOutputModel();
-    if(outputModel != null) {
+    if (outputModel != null) {
       for (SNode outputNode : outputModel.getRoots()) {
         try {
           TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
@@ -297,6 +296,7 @@ public class FileGenerationManager implements ApplicationComponent {
 
   private Set<File> generateFiles(GenerationStatus status, File outputRootDirectory, Map<SNode, String> outputNodeContents) {
     Set<File> generatedFiles = new HashSet<File>();
+    Map<String, GenerationRootDependencies> dependenciesByFile = null;
 
     DefaultFileGenerator fileGenerator = new DefaultFileGenerator();
     for (SNode outputRootNode : outputNodeContents.keySet()) {
@@ -306,6 +306,33 @@ public class FileGenerationManager implements ApplicationComponent {
 
         if (generatedFile != null) {
           generatedFiles.add(generatedFile);
+
+          // invoke post processing 
+          Set<File> newfiles = fireFileGenerated(generatedFile);
+          if(newfiles != null) {
+            for(File n : newfiles) {
+              if(generatedFiles.add(n)) {
+                GenerationDependencies dependencies = status.getDependencies();
+                if (dependencies != null) {
+                  // calc map
+                  if(dependenciesByFile == null) {
+                    dependenciesByFile = new HashMap<String, GenerationRootDependencies>();
+                    for(GenerationRootDependencies rd : dependencies.getRootDependencies()) {
+                      for(String file : rd.getFiles()) {
+                        dependenciesByFile.put(file, rd);
+                      }
+                    }
+                  }
+
+                  // register as generated file
+                  GenerationRootDependencies rdep = dependenciesByFile.get(generatedFile.getName());
+                  if(rdep != null) {
+                    rdep.addGeneratedFile(n.getName());
+                  }
+                }
+              }
+            }
+          }
         }
       } catch (IOException e) {
         LOG.error(e);
@@ -316,23 +343,23 @@ public class FileGenerationManager implements ApplicationComponent {
     ModelDependencies modelDep = null;
 
     GenerationDependencies dependencies = status.getDependencies();
-    if(dependencies != null) {
+    if (dependencies != null) {
       File outputDir = FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputRootDirectory);
 
       // process unchanged files
-      for(GenerationRootDependencies rdep : dependencies.getUnchangedDependencies()) {
-        for(String filename : rdep.getFiles()) {
+      for (GenerationRootDependencies rdep : dependencies.getUnchangedDependencies()) {
+        for (String filename : rdep.getFiles()) {
           File file = new File(outputDir, filename);
-          if(file.exists()) {
+          if (file.exists()) {
             generatedFiles.add(file);
 
             // re-register baselanguage dependencies
-            if(modelDep == null) {
+            if (modelDep == null) {
               modelDep = BLDependenciesCache.getInstance().get(status.getOriginalInputModel());
             }
-            if(modelDep != null) {
+            if (modelDep != null) {
               RootDependencies root = modelDep.getDependency(filename);
-              if(root != null) {
+              if (root != null) {
                 status.getBLDependencies().replaceRoot(root);
               }
             }
@@ -340,12 +367,12 @@ public class FileGenerationManager implements ApplicationComponent {
         }
 
         // re-register debug
-        if(debugInfoCache == null) {
+        if (debugInfoCache == null) {
           debugInfoCache = BLDebugInfoCache.getInstance().get(status.getOriginalInputModel());
         }
-        if(debugInfoCache != null) {
+        if (debugInfoCache != null) {
           DebugInfoRoot infoRoot = debugInfoCache.getRootInfo(rdep.getRootId());
-          if(infoRoot != null) {
+          if (infoRoot != null) {
             status.getDebugInfo().replaceRoot(infoRoot);
           }
         }
@@ -377,5 +404,45 @@ public class FileGenerationManager implements ApplicationComponent {
     }
 
     return generatedCaches;
+  }
+
+  public Set<File> fireFileGenerated(File file) {
+    Set<File> generated = null;
+    synchronized (myGenerationListeners) {
+      for (FileGenerationListener l : myGenerationListeners) {
+        try {
+          Set<File> res = l.fileGenerated(file);
+          if(res != null && !res.isEmpty()) {
+            if(generated == null) {
+              generated = res;
+            } else {
+              if(!(generated instanceof HashSet)) {
+                generated = new HashSet<File>(generated);
+              }
+              generated.addAll(res);
+            }
+          }
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
+      }
+    }
+    return generated;
+  }
+
+  public void addGenerationListener(FileGenerationListener l) {
+    synchronized (myGenerationListeners) {
+      myGenerationListeners.add(l);
+    }
+  }
+
+  public void removeGenerationListener(FileGenerationListener l) {
+    synchronized (myGenerationListeners) {
+      myGenerationListeners.remove(l);
+    }
+  }
+
+  public interface FileGenerationListener {
+    Set<File> fileGenerated(File file);
   }
 }
