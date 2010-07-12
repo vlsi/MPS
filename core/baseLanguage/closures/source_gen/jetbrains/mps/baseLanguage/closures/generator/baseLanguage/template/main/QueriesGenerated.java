@@ -4122,6 +4122,24 @@ public class QueriesGenerated {
     }
   }
 
+  public static void mappingScript_CodeBlock_5988816933596133427(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for (SNode ac : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+      List<SNode> args = SLinkOperations.getTargets(ac, "actualArgument", true);
+      List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(ac, "baseMethodDeclaration", false), "parameter", true);
+      if ((SLinkOperations.getTarget(ac, "baseMethodDeclaration", false) != null) && ListSequence.fromList(args).count() != ListSequence.fromList(pdecls).count()) {
+        _context.showInformationMessage(ac, "Actual arguments count != parameter declarations count");
+      }
+      int idx = 0;
+      for (SNode pdecl : pdecls) {
+        if (idx < ListSequence.fromList(args).count()) {
+          SNode arg = ListSequence.fromList(args).getElement(idx);
+          FunctionTypeUtil.prepAdaptations(_context, TypeDerivable_Behavior.call_deriveType_1213877435747(ac, arg), arg);
+        }
+        idx++;
+      }
+    }
+  }
+
   public static class QuotationClass_x583g4_a0a0a2a212 {
     public QuotationClass_x583g4_a0a0a2a212() {
     }
