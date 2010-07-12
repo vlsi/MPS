@@ -196,7 +196,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     myInnerTabbedPane = new JTabbedPane();
     myInnerTabbedPane.addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
-        getTabbedEditor().onSelectInnerTab();
+        getTabbedEditor().tabStructureChanged();
       }
     });
     myInnerTabbedPane.addMouseListener(new MouseAdapter() {
