@@ -4,12 +4,13 @@
   so I should not be doing this-->
   <property name="mps.home" value="${mps_home}"/>
   <property name="real.deploy.dir" value="${mps_home}/artifacts"/>
-  <property file="${mps_home}/build/sign/ftppassword"/>  
+  <property file="${mps_home}/build/sign/ftppassword"/>
+  <available classname="org.apache.commons.net.ftp.FTPClientConfig" property="commons-net.present"/>
   <import file="${ant.file}/../MPS-external-dist.xml"/>
   <import file="${ant.file}/../../tests/jetbrains/mps/mps.tests.xml"/>
   <target name="test.and.build" depends="test, build"/>
   <target name="test" depends="mps.tests.all"/>
-  <target name="upload" depends="MPS-external-dist.default">
+  <target name="upload" depends="MPS-external-dist.default" if="commons-net.present">
     <ftp server="upload.cds.intellij.net"
            userid="mps"
            password="${ftp.password}">
