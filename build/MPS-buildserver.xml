@@ -10,7 +10,7 @@
   <target name="test.and.build" depends="test, build"/>
   <target name="test" depends="mps.tests.all"/>
   <target name="upload" depends="MPS-external-dist.default"> 
-    <java jar="${mps.home}/tools/ant/ant-launcher.jar"
+    <java jar="${mps.home}/tools/ant/lib/ant-launcher.jar"
             fork="true"
             dir="${mps.home}/build"
             clonevm="true">
