@@ -2801,8 +2801,8 @@
   <root nodeId="1202741841877">
     <nodeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="93" startPosition="27" endLine="93" endPosition="27" />
     <nodeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="143" startPosition="27" endLine="143" endPosition="27" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="353" startPosition="27" endLine="353" endPosition="27" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="398" startPosition="27" endLine="398" endPosition="27" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="368" startPosition="27" endLine="368" endPosition="27" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="413" startPosition="27" endLine="413" endPosition="27" />
     <nodeInfo nodeId="1202778531750" fileName="ClassifierAdapters_Test.java" startLine="27" startPosition="39" endLine="28" endPosition="45" />
     <nodeInfo nodeId="1226491448528" fileName="ClassifierAdapters_Test.java" startLine="31" startPosition="61" endLine="32" endPosition="36" />
     <nodeInfo nodeId="1202741965046" fileName="ClassifierAdapters_Test.java" startLine="33" startPosition="8" endLine="34" endPosition="81" />
@@ -2870,69 +2870,74 @@
     <nodeInfo nodeId="1219743647948" fileName="ClassifierAdapters_Test.java" startLine="218" startPosition="7" endLine="219" endPosition="16" />
     <nodeInfo nodeId="1219743687367" fileName="ClassifierAdapters_Test.java" startLine="220" startPosition="9" endLine="221" endPosition="17" />
     <nodeInfo nodeId="1219743675218" fileName="ClassifierAdapters_Test.java" startLine="222" startPosition="15" endLine="223" endPosition="41" />
-    <nodeInfo nodeId="1215520963534" fileName="ClassifierAdapters_Test.java" startLine="235" startPosition="53" endLine="236" endPosition="37" />
-    <nodeInfo nodeId="1215526271371" fileName="ClassifierAdapters_Test.java" startLine="239" startPosition="56" endLine="240" endPosition="43" />
-    <nodeInfo nodeId="1215526288906" fileName="ClassifierAdapters_Test.java" startLine="241" startPosition="9" endLine="242" endPosition="28" />
-    <nodeInfo nodeId="1215526287560" fileName="ClassifierAdapters_Test.java" startLine="242" startPosition="28" endLine="243" endPosition="20" />
-    <nodeInfo nodeId="1215526287560" fileName="ClassifierAdapters_Test.java" startLine="244" startPosition="37" endLine="245" endPosition="28" />
-    <nodeInfo nodeId="876385242039332967" fileName="ClassifierAdapters_Test.java" startLine="254" startPosition="8" endLine="255" endPosition="19" />
-    <nodeInfo nodeId="876385242039333148" fileName="ClassifierAdapters_Test.java" startLine="260" startPosition="6" endLine="261" endPosition="26" />
-    <nodeInfo nodeId="4073449185570422577" fileName="ClassifierAdapters_Test.java" startLine="265" startPosition="53" endLine="266" endPosition="53" />
-    <nodeInfo nodeId="4073449185570422624" fileName="ClassifierAdapters_Test.java" startLine="271" startPosition="6" endLine="272" endPosition="16" />
-    <nodeInfo nodeId="4073449185570422634" fileName="ClassifierAdapters_Test.java" startLine="272" startPosition="16" endLine="273" endPosition="38" />
-    <nodeInfo nodeId="4073449185570422662" fileName="ClassifierAdapters_Test.java" startLine="278" startPosition="15" endLine="279" endPosition="38" />
-    <nodeInfo nodeId="4073449185570422685" fileName="ClassifierAdapters_Test.java" startLine="281" startPosition="60" endLine="282" endPosition="47" />
-    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="286" startPosition="5" endLine="287" endPosition="73" />
-    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="289" startPosition="26" endLine="290" endPosition="27" />
-    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="291" startPosition="25" endLine="292" endPosition="17" />
-    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="293" startPosition="19" endLine="294" endPosition="16" />
-    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="295" startPosition="29" endLine="296" endPosition="16" />
-    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="297" startPosition="16" endLine="298" endPosition="16" />
-    <nodeInfo nodeId="4073449185570422731" fileName="ClassifierAdapters_Test.java" startLine="300" startPosition="6" endLine="301" endPosition="38" />
-    <nodeInfo nodeId="4073449185570422769" fileName="ClassifierAdapters_Test.java" startLine="305" startPosition="62" endLine="306" endPosition="49" />
-    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="310" startPosition="26" endLine="311" endPosition="27" />
-    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="312" startPosition="25" endLine="313" endPosition="17" />
-    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="314" startPosition="19" endLine="315" endPosition="16" />
-    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="316" startPosition="29" endLine="317" endPosition="16" />
-    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="318" startPosition="16" endLine="319" endPosition="16" />
-    <nodeInfo nodeId="4073449185570422776" fileName="ClassifierAdapters_Test.java" startLine="321" startPosition="6" endLine="322" endPosition="38" />
-    <nodeInfo nodeId="3294521177951978007" fileName="ClassifierAdapters_Test.java" startLine="322" startPosition="38" endLine="323" endPosition="27" />
-    <nodeInfo nodeId="3294521177951977999" fileName="ClassifierAdapters_Test.java" startLine="330" startPosition="30" endLine="331" endPosition="20" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="338" startPosition="51" endLine="339" endPosition="37" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="346" startPosition="28" endLine="347" endPosition="54" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="347" startPosition="54" endLine="348" endPosition="35" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="349" startPosition="27" endLine="350" endPosition="38" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="350" startPosition="38" endLine="351" endPosition="39" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="351" startPosition="39" endLine="352" endPosition="34" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="353" startPosition="27" endLine="354" endPosition="38" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="354" startPosition="38" endLine="355" endPosition="28" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="356" startPosition="28" endLine="357" endPosition="37" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="359" startPosition="31" endLine="360" endPosition="29" />
-    <nodeInfo nodeId="4923436771430621974" fileName="ClassifierAdapters_Test.java" startLine="369" startPosition="47" endLine="370" endPosition="32" />
-    <nodeInfo nodeId="4923436771430844011" fileName="ClassifierAdapters_Test.java" startLine="370" startPosition="32" endLine="371" endPosition="41" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="379" startPosition="91" endLine="380" endPosition="37" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="387" startPosition="28" endLine="388" endPosition="54" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="388" startPosition="54" endLine="389" endPosition="35" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="390" startPosition="27" endLine="391" endPosition="38" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="396" startPosition="25" endLine="397" endPosition="34" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="398" startPosition="27" endLine="399" endPosition="38" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="399" startPosition="38" endLine="400" endPosition="28" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="401" startPosition="28" endLine="402" endPosition="37" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="404" startPosition="31" endLine="405" endPosition="29" />
-    <nodeInfo nodeId="811905832257268819" fileName="ClassifierAdapters_Test.java" startLine="416" startPosition="7" endLine="417" endPosition="61" />
-    <nodeInfo nodeId="811905832257268830" fileName="ClassifierAdapters_Test.java" startLine="417" startPosition="61" endLine="418" endPosition="67" />
-    <nodeInfo nodeId="4600621396854791273" fileName="ClassifierAdapters_Test.java" startLine="425" startPosition="32" endLine="426" endPosition="41" />
-    <nodeInfo nodeId="4600621396854788292" fileName="ClassifierAdapters_Test.java" startLine="430" startPosition="9" endLine="431" endPosition="20" />
-    <nodeInfo nodeId="4600621396854788292" fileName="ClassifierAdapters_Test.java" startLine="432" startPosition="34" endLine="433" endPosition="28" />
-    <nodeInfo nodeId="1204637150548" fileName="ClassifierAdapters_Test.java" startLine="443" startPosition="49" endLine="444" endPosition="25" />
-    <nodeInfo nodeId="1214828703177" fileName="ClassifierAdapters_Test.java" startLine="447" startPosition="78" endLine="448" endPosition="30" />
-    <nodeInfo nodeId="1215526222957" fileName="ClassifierAdapters_Test.java" startLine="461" startPosition="65" endLine="462" endPosition="43" />
+    <nodeInfo nodeId="5988816933596123635" fileName="ClassifierAdapters_Test.java" startLine="227" startPosition="81" endLine="228" endPosition="52" />
+    <nodeInfo nodeId="5988816933596123646" fileName="ClassifierAdapters_Test.java" startLine="230" startPosition="25" endLine="231" endPosition="23" />
+    <nodeInfo nodeId="5988816933596123650" fileName="ClassifierAdapters_Test.java" startLine="233" startPosition="7" endLine="234" endPosition="16" />
+    <nodeInfo nodeId="5988816933596123656" fileName="ClassifierAdapters_Test.java" startLine="235" startPosition="9" endLine="236" endPosition="17" />
+    <nodeInfo nodeId="5988816933596123661" fileName="ClassifierAdapters_Test.java" startLine="237" startPosition="15" endLine="238" endPosition="41" />
+    <nodeInfo nodeId="1215520963534" fileName="ClassifierAdapters_Test.java" startLine="250" startPosition="53" endLine="251" endPosition="37" />
+    <nodeInfo nodeId="1215526271371" fileName="ClassifierAdapters_Test.java" startLine="254" startPosition="56" endLine="255" endPosition="43" />
+    <nodeInfo nodeId="1215526288906" fileName="ClassifierAdapters_Test.java" startLine="256" startPosition="9" endLine="257" endPosition="28" />
+    <nodeInfo nodeId="1215526287560" fileName="ClassifierAdapters_Test.java" startLine="257" startPosition="28" endLine="258" endPosition="20" />
+    <nodeInfo nodeId="1215526287560" fileName="ClassifierAdapters_Test.java" startLine="259" startPosition="37" endLine="260" endPosition="28" />
+    <nodeInfo nodeId="876385242039332967" fileName="ClassifierAdapters_Test.java" startLine="269" startPosition="8" endLine="270" endPosition="19" />
+    <nodeInfo nodeId="876385242039333148" fileName="ClassifierAdapters_Test.java" startLine="275" startPosition="6" endLine="276" endPosition="26" />
+    <nodeInfo nodeId="4073449185570422577" fileName="ClassifierAdapters_Test.java" startLine="280" startPosition="53" endLine="281" endPosition="53" />
+    <nodeInfo nodeId="4073449185570422624" fileName="ClassifierAdapters_Test.java" startLine="286" startPosition="6" endLine="287" endPosition="16" />
+    <nodeInfo nodeId="4073449185570422634" fileName="ClassifierAdapters_Test.java" startLine="287" startPosition="16" endLine="288" endPosition="38" />
+    <nodeInfo nodeId="4073449185570422662" fileName="ClassifierAdapters_Test.java" startLine="293" startPosition="15" endLine="294" endPosition="38" />
+    <nodeInfo nodeId="4073449185570422685" fileName="ClassifierAdapters_Test.java" startLine="296" startPosition="60" endLine="297" endPosition="47" />
+    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="301" startPosition="5" endLine="302" endPosition="73" />
+    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="304" startPosition="26" endLine="305" endPosition="27" />
+    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="306" startPosition="25" endLine="307" endPosition="17" />
+    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="308" startPosition="19" endLine="309" endPosition="16" />
+    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="310" startPosition="29" endLine="311" endPosition="16" />
+    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="312" startPosition="16" endLine="313" endPosition="16" />
+    <nodeInfo nodeId="4073449185570422731" fileName="ClassifierAdapters_Test.java" startLine="315" startPosition="6" endLine="316" endPosition="38" />
+    <nodeInfo nodeId="4073449185570422769" fileName="ClassifierAdapters_Test.java" startLine="320" startPosition="62" endLine="321" endPosition="49" />
+    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="325" startPosition="26" endLine="326" endPosition="27" />
+    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="327" startPosition="25" endLine="328" endPosition="17" />
+    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="329" startPosition="19" endLine="330" endPosition="16" />
+    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="331" startPosition="29" endLine="332" endPosition="16" />
+    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="333" startPosition="16" endLine="334" endPosition="16" />
+    <nodeInfo nodeId="4073449185570422776" fileName="ClassifierAdapters_Test.java" startLine="336" startPosition="6" endLine="337" endPosition="38" />
+    <nodeInfo nodeId="3294521177951978007" fileName="ClassifierAdapters_Test.java" startLine="337" startPosition="38" endLine="338" endPosition="27" />
+    <nodeInfo nodeId="3294521177951977999" fileName="ClassifierAdapters_Test.java" startLine="345" startPosition="30" endLine="346" endPosition="20" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="353" startPosition="51" endLine="354" endPosition="37" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="361" startPosition="28" endLine="362" endPosition="54" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="362" startPosition="54" endLine="363" endPosition="35" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="364" startPosition="27" endLine="365" endPosition="38" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="365" startPosition="38" endLine="366" endPosition="39" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="366" startPosition="39" endLine="367" endPosition="34" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="368" startPosition="27" endLine="369" endPosition="38" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="369" startPosition="38" endLine="370" endPosition="28" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="371" startPosition="28" endLine="372" endPosition="37" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="374" startPosition="31" endLine="375" endPosition="29" />
+    <nodeInfo nodeId="4923436771430621974" fileName="ClassifierAdapters_Test.java" startLine="384" startPosition="47" endLine="385" endPosition="32" />
+    <nodeInfo nodeId="4923436771430844011" fileName="ClassifierAdapters_Test.java" startLine="385" startPosition="32" endLine="386" endPosition="41" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="394" startPosition="91" endLine="395" endPosition="37" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="402" startPosition="28" endLine="403" endPosition="54" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="403" startPosition="54" endLine="404" endPosition="35" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="405" startPosition="27" endLine="406" endPosition="38" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="411" startPosition="25" endLine="412" endPosition="34" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="413" startPosition="27" endLine="414" endPosition="38" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="414" startPosition="38" endLine="415" endPosition="28" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="416" startPosition="28" endLine="417" endPosition="37" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="419" startPosition="31" endLine="420" endPosition="29" />
+    <nodeInfo nodeId="811905832257268819" fileName="ClassifierAdapters_Test.java" startLine="431" startPosition="7" endLine="432" endPosition="61" />
+    <nodeInfo nodeId="811905832257268830" fileName="ClassifierAdapters_Test.java" startLine="432" startPosition="61" endLine="433" endPosition="67" />
+    <nodeInfo nodeId="4600621396854791273" fileName="ClassifierAdapters_Test.java" startLine="440" startPosition="32" endLine="441" endPosition="41" />
+    <nodeInfo nodeId="4600621396854788292" fileName="ClassifierAdapters_Test.java" startLine="445" startPosition="9" endLine="446" endPosition="20" />
+    <nodeInfo nodeId="4600621396854788292" fileName="ClassifierAdapters_Test.java" startLine="447" startPosition="34" endLine="448" endPosition="28" />
+    <nodeInfo nodeId="1204637150548" fileName="ClassifierAdapters_Test.java" startLine="458" startPosition="49" endLine="459" endPosition="25" />
+    <nodeInfo nodeId="1214828703177" fileName="ClassifierAdapters_Test.java" startLine="462" startPosition="78" endLine="463" endPosition="30" />
+    <nodeInfo nodeId="1215526222957" fileName="ClassifierAdapters_Test.java" startLine="476" startPosition="65" endLine="477" endPosition="43" />
     <nodeInfo nodeId="1214829349068" fileName="ClassifierAdapters_Test.java" startLine="181" startPosition="69" endLine="184" endPosition="11" />
-    <nodeInfo nodeId="876385242039332960" fileName="ClassifierAdapters_Test.java" startLine="251" startPosition="123" endLine="254" endPosition="0" />
-    <nodeInfo nodeId="8829749091878915295" fileName="ClassifierAdapters_Test.java" startLine="259" startPosition="47" endLine="262" endPosition="6" />
-    <nodeInfo nodeId="4600621396854791266" fileName="ClassifierAdapters_Test.java" startLine="424" startPosition="40" endLine="427" endPosition="11" />
-    <nodeInfo nodeId="1202928326902" fileName="ClassifierAdapters_Test.java" startLine="436" startPosition="0" endLine="439" endPosition="0" />
-    <nodeInfo nodeId="1202929413117" fileName="ClassifierAdapters_Test.java" startLine="439" startPosition="0" endLine="442" endPosition="0" />
+    <nodeInfo nodeId="876385242039332960" fileName="ClassifierAdapters_Test.java" startLine="266" startPosition="123" endLine="269" endPosition="0" />
+    <nodeInfo nodeId="8829749091878915295" fileName="ClassifierAdapters_Test.java" startLine="274" startPosition="47" endLine="277" endPosition="6" />
+    <nodeInfo nodeId="4600621396854791266" fileName="ClassifierAdapters_Test.java" startLine="439" startPosition="40" endLine="442" endPosition="11" />
+    <nodeInfo nodeId="1202928326902" fileName="ClassifierAdapters_Test.java" startLine="451" startPosition="0" endLine="454" endPosition="0" />
+    <nodeInfo nodeId="1202929413117" fileName="ClassifierAdapters_Test.java" startLine="454" startPosition="0" endLine="457" endPosition="0" />
     <nodeInfo nodeId="1202778460041" fileName="ClassifierAdapters_Test.java" startLine="26" startPosition="31" endLine="30" endPosition="0" />
     <nodeInfo nodeId="1202778862220" fileName="ClassifierAdapters_Test.java" startLine="42" startPosition="127" endLine="46" endPosition="0" />
     <nodeInfo nodeId="1225980924741" fileName="ClassifierAdapters_Test.java" startLine="48" startPosition="36" endLine="52" endPosition="8" />
@@ -2943,23 +2948,24 @@
     <nodeInfo nodeId="1204637282822" fileName="ClassifierAdapters_Test.java" startLine="171" startPosition="60" endLine="175" endPosition="0" />
     <nodeInfo nodeId="1202780600123" fileName="ClassifierAdapters_Test.java" startLine="204" startPosition="53" endLine="208" endPosition="0" />
     <nodeInfo nodeId="1219743569116" fileName="ClassifierAdapters_Test.java" startLine="214" startPosition="44" endLine="218" endPosition="0" />
-    <nodeInfo nodeId="1202928346611" fileName="ClassifierAdapters_Test.java" startLine="228" startPosition="36" endLine="232" endPosition="0" />
-    <nodeInfo nodeId="1215520948177" fileName="ClassifierAdapters_Test.java" startLine="234" startPosition="0" endLine="238" endPosition="0" />
-    <nodeInfo nodeId="876385242039332954" fileName="ClassifierAdapters_Test.java" startLine="250" startPosition="6" endLine="254" endPosition="8" />
-    <nodeInfo nodeId="4073449185570422616" fileName="ClassifierAdapters_Test.java" startLine="267" startPosition="102" endLine="271" endPosition="0" />
-    <nodeInfo nodeId="4073449185570422652" fileName="ClassifierAdapters_Test.java" startLine="274" startPosition="49" endLine="278" endPosition="0" />
-    <nodeInfo nodeId="4073449185570422683" fileName="ClassifierAdapters_Test.java" startLine="280" startPosition="175" endLine="284" endPosition="0" />
-    <nodeInfo nodeId="4073449185570422767" fileName="ClassifierAdapters_Test.java" startLine="304" startPosition="124" endLine="308" endPosition="0" />
-    <nodeInfo nodeId="3294521177951870054" fileName="ClassifierAdapters_Test.java" startLine="324" startPosition="48" endLine="328" endPosition="0" />
-    <nodeInfo nodeId="3294521177951977997" fileName="ClassifierAdapters_Test.java" startLine="329" startPosition="48" endLine="333" endPosition="0" />
-    <nodeInfo nodeId="811905832257259140" fileName="ClassifierAdapters_Test.java" startLine="392" startPosition="77" endLine="396" endPosition="0" />
-    <nodeInfo nodeId="811905832257259151" fileName="ClassifierAdapters_Test.java" startLine="412" startPosition="140" endLine="416" endPosition="0" />
-    <nodeInfo nodeId="1204637135743" fileName="ClassifierAdapters_Test.java" startLine="442" startPosition="0" endLine="446" endPosition="0" />
-    <nodeInfo nodeId="1214828672037" fileName="ClassifierAdapters_Test.java" startLine="446" startPosition="0" endLine="450" endPosition="0" />
-    <nodeInfo nodeId="1215520889970" fileName="ClassifierAdapters_Test.java" startLine="452" startPosition="25" endLine="456" endPosition="0" />
-    <nodeInfo nodeId="1215526194217" fileName="ClassifierAdapters_Test.java" startLine="460" startPosition="28" endLine="464" endPosition="0" />
-    <nodeInfo nodeId="4923436771430621964" fileName="ClassifierAdapters_Test.java" startLine="468" startPosition="26" endLine="472" endPosition="0" />
-    <nodeInfo nodeId="1659062322706257965" fileName="ClassifierAdapters_Test.java" startLine="474" startPosition="0" endLine="478" endPosition="0" />
+    <nodeInfo nodeId="5988816933596123644" fileName="ClassifierAdapters_Test.java" startLine="229" startPosition="44" endLine="233" endPosition="0" />
+    <nodeInfo nodeId="1202928346611" fileName="ClassifierAdapters_Test.java" startLine="243" startPosition="36" endLine="247" endPosition="0" />
+    <nodeInfo nodeId="1215520948177" fileName="ClassifierAdapters_Test.java" startLine="249" startPosition="0" endLine="253" endPosition="0" />
+    <nodeInfo nodeId="876385242039332954" fileName="ClassifierAdapters_Test.java" startLine="265" startPosition="6" endLine="269" endPosition="8" />
+    <nodeInfo nodeId="4073449185570422616" fileName="ClassifierAdapters_Test.java" startLine="282" startPosition="102" endLine="286" endPosition="0" />
+    <nodeInfo nodeId="4073449185570422652" fileName="ClassifierAdapters_Test.java" startLine="289" startPosition="49" endLine="293" endPosition="0" />
+    <nodeInfo nodeId="4073449185570422683" fileName="ClassifierAdapters_Test.java" startLine="295" startPosition="175" endLine="299" endPosition="0" />
+    <nodeInfo nodeId="4073449185570422767" fileName="ClassifierAdapters_Test.java" startLine="319" startPosition="124" endLine="323" endPosition="0" />
+    <nodeInfo nodeId="3294521177951870054" fileName="ClassifierAdapters_Test.java" startLine="339" startPosition="48" endLine="343" endPosition="0" />
+    <nodeInfo nodeId="3294521177951977997" fileName="ClassifierAdapters_Test.java" startLine="344" startPosition="48" endLine="348" endPosition="0" />
+    <nodeInfo nodeId="811905832257259140" fileName="ClassifierAdapters_Test.java" startLine="407" startPosition="77" endLine="411" endPosition="0" />
+    <nodeInfo nodeId="811905832257259151" fileName="ClassifierAdapters_Test.java" startLine="427" startPosition="140" endLine="431" endPosition="0" />
+    <nodeInfo nodeId="1204637135743" fileName="ClassifierAdapters_Test.java" startLine="457" startPosition="0" endLine="461" endPosition="0" />
+    <nodeInfo nodeId="1214828672037" fileName="ClassifierAdapters_Test.java" startLine="461" startPosition="0" endLine="465" endPosition="0" />
+    <nodeInfo nodeId="1215520889970" fileName="ClassifierAdapters_Test.java" startLine="467" startPosition="25" endLine="471" endPosition="0" />
+    <nodeInfo nodeId="1215526194217" fileName="ClassifierAdapters_Test.java" startLine="475" startPosition="28" endLine="479" endPosition="0" />
+    <nodeInfo nodeId="4923436771430621964" fileName="ClassifierAdapters_Test.java" startLine="483" startPosition="26" endLine="487" endPosition="0" />
+    <nodeInfo nodeId="1659062322706257965" fileName="ClassifierAdapters_Test.java" startLine="489" startPosition="0" endLine="493" endPosition="0" />
     <nodeInfo nodeId="1202741950603" fileName="ClassifierAdapters_Test.java" startLine="25" startPosition="63" endLine="30" endPosition="6" />
     <nodeInfo nodeId="1225980954423" fileName="ClassifierAdapters_Test.java" startLine="32" startPosition="36" endLine="37" endPosition="8" />
     <nodeInfo nodeId="1202778847068" fileName="ClassifierAdapters_Test.java" startLine="41" startPosition="63" endLine="46" endPosition="6" />
@@ -2969,92 +2975,95 @@
     <nodeInfo nodeId="1202780592476" fileName="ClassifierAdapters_Test.java" startLine="203" startPosition="75" endLine="208" endPosition="7" />
     <nodeInfo nodeId="1219743555638" fileName="ClassifierAdapters_Test.java" startLine="213" startPosition="52" endLine="218" endPosition="7" />
     <nodeInfo nodeId="1219743665756" fileName="ClassifierAdapters_Test.java" startLine="219" startPosition="16" endLine="224" endPosition="5" />
-    <nodeInfo nodeId="1202928345074" fileName="ClassifierAdapters_Test.java" startLine="227" startPosition="61" endLine="232" endPosition="7" />
-    <nodeInfo nodeId="4073449185570422612" fileName="ClassifierAdapters_Test.java" startLine="266" startPosition="53" endLine="271" endPosition="6" />
-    <nodeInfo nodeId="4073449185570422640" fileName="ClassifierAdapters_Test.java" startLine="273" startPosition="38" endLine="278" endPosition="15" />
-    <nodeInfo nodeId="4073449185570422678" fileName="ClassifierAdapters_Test.java" startLine="279" startPosition="38" endLine="284" endPosition="6" />
-    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="303" startPosition="5" endLine="308" endPosition="29" />
-    <nodeInfo nodeId="3294521177951870035" fileName="ClassifierAdapters_Test.java" startLine="323" startPosition="27" endLine="328" endPosition="15" />
-    <nodeInfo nodeId="3294521177951977984" fileName="ClassifierAdapters_Test.java" startLine="328" startPosition="15" endLine="333" endPosition="15" />
-    <nodeInfo nodeId="4923436771430617547" fileName="ClassifierAdapters_Test.java" startLine="368" startPosition="0" endLine="373" endPosition="0" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="391" startPosition="38" endLine="396" endPosition="25" />
-    <nodeInfo nodeId="811905832257259144" fileName="ClassifierAdapters_Test.java" startLine="411" startPosition="7" endLine="416" endPosition="7" />
-    <nodeInfo nodeId="1215520881972" fileName="ClassifierAdapters_Test.java" startLine="451" startPosition="32" endLine="456" endPosition="6" />
-    <nodeInfo nodeId="1215526192621" fileName="ClassifierAdapters_Test.java" startLine="459" startPosition="38" endLine="464" endPosition="6" />
-    <nodeInfo nodeId="1215526287560" fileName="ClassifierAdapters_Test.java" startLine="240" startPosition="43" endLine="246" endPosition="5" />
-    <nodeInfo nodeId="876385242039333145" fileName="ClassifierAdapters_Test.java" startLine="258" startPosition="0" endLine="264" endPosition="0" />
+    <nodeInfo nodeId="5988816933596123639" fileName="ClassifierAdapters_Test.java" startLine="228" startPosition="52" endLine="233" endPosition="7" />
+    <nodeInfo nodeId="5988816933596123654" fileName="ClassifierAdapters_Test.java" startLine="234" startPosition="16" endLine="239" endPosition="5" />
+    <nodeInfo nodeId="1202928345074" fileName="ClassifierAdapters_Test.java" startLine="242" startPosition="61" endLine="247" endPosition="7" />
+    <nodeInfo nodeId="4073449185570422612" fileName="ClassifierAdapters_Test.java" startLine="281" startPosition="53" endLine="286" endPosition="6" />
+    <nodeInfo nodeId="4073449185570422640" fileName="ClassifierAdapters_Test.java" startLine="288" startPosition="38" endLine="293" endPosition="15" />
+    <nodeInfo nodeId="4073449185570422678" fileName="ClassifierAdapters_Test.java" startLine="294" startPosition="38" endLine="299" endPosition="6" />
+    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="318" startPosition="5" endLine="323" endPosition="29" />
+    <nodeInfo nodeId="3294521177951870035" fileName="ClassifierAdapters_Test.java" startLine="338" startPosition="27" endLine="343" endPosition="15" />
+    <nodeInfo nodeId="3294521177951977984" fileName="ClassifierAdapters_Test.java" startLine="343" startPosition="15" endLine="348" endPosition="15" />
+    <nodeInfo nodeId="4923436771430617547" fileName="ClassifierAdapters_Test.java" startLine="383" startPosition="0" endLine="388" endPosition="0" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="406" startPosition="38" endLine="411" endPosition="25" />
+    <nodeInfo nodeId="811905832257259144" fileName="ClassifierAdapters_Test.java" startLine="426" startPosition="7" endLine="431" endPosition="7" />
+    <nodeInfo nodeId="1215520881972" fileName="ClassifierAdapters_Test.java" startLine="466" startPosition="32" endLine="471" endPosition="6" />
+    <nodeInfo nodeId="1215526192621" fileName="ClassifierAdapters_Test.java" startLine="474" startPosition="38" endLine="479" endPosition="6" />
+    <nodeInfo nodeId="1215526287560" fileName="ClassifierAdapters_Test.java" startLine="255" startPosition="43" endLine="261" endPosition="5" />
+    <nodeInfo nodeId="876385242039333145" fileName="ClassifierAdapters_Test.java" startLine="273" startPosition="0" endLine="279" endPosition="0" />
     <nodeInfo nodeId="1225980912045" fileName="ClassifierAdapters_Test.java" startLine="46" startPosition="6" endLine="53" endPosition="5" />
     <nodeInfo nodeId="1214828754112" fileName="ClassifierAdapters_Test.java" startLine="180" startPosition="36" endLine="187" endPosition="0" />
-    <nodeInfo nodeId="876385242039333144" fileName="ClassifierAdapters_Test.java" startLine="249" startPosition="47" endLine="256" endPosition="6" />
-    <nodeInfo nodeId="4600621396854791262" fileName="ClassifierAdapters_Test.java" startLine="423" startPosition="78" endLine="430" endPosition="0" />
+    <nodeInfo nodeId="876385242039333144" fileName="ClassifierAdapters_Test.java" startLine="264" startPosition="47" endLine="271" endPosition="6" />
+    <nodeInfo nodeId="4600621396854791262" fileName="ClassifierAdapters_Test.java" startLine="438" startPosition="78" endLine="445" endPosition="0" />
     <nodeInfo nodeId="1225980941611" fileName="ClassifierAdapters_Test.java" startLine="30" startPosition="6" endLine="38" endPosition="5" />
     <nodeInfo nodeId="1214828740939" fileName="ClassifierAdapters_Test.java" startLine="179" startPosition="9" endLine="187" endPosition="15" />
-    <nodeInfo nodeId="1202928341317" fileName="ClassifierAdapters_Test.java" startLine="226" startPosition="0" endLine="234" endPosition="0" />
-    <nodeInfo nodeId="4600621396854791258" fileName="ClassifierAdapters_Test.java" startLine="422" startPosition="9" endLine="430" endPosition="9" />
-    <nodeInfo nodeId="1215520845523" fileName="ClassifierAdapters_Test.java" startLine="450" startPosition="0" endLine="458" endPosition="0" />
-    <nodeInfo nodeId="1215526179878" fileName="ClassifierAdapters_Test.java" startLine="458" startPosition="0" endLine="466" endPosition="0" />
-    <nodeInfo nodeId="4923436771430617551" fileName="ClassifierAdapters_Test.java" startLine="466" startPosition="0" endLine="474" endPosition="0" />
+    <nodeInfo nodeId="1202928341317" fileName="ClassifierAdapters_Test.java" startLine="241" startPosition="0" endLine="249" endPosition="0" />
+    <nodeInfo nodeId="4600621396854791258" fileName="ClassifierAdapters_Test.java" startLine="437" startPosition="9" endLine="445" endPosition="9" />
+    <nodeInfo nodeId="1215520845523" fileName="ClassifierAdapters_Test.java" startLine="465" startPosition="0" endLine="473" endPosition="0" />
+    <nodeInfo nodeId="1215526179878" fileName="ClassifierAdapters_Test.java" startLine="473" startPosition="0" endLine="481" endPosition="0" />
+    <nodeInfo nodeId="4923436771430617551" fileName="ClassifierAdapters_Test.java" startLine="481" startPosition="0" endLine="489" endPosition="0" />
     <nodeInfo nodeId="1202822564646" fileName="ClassifierAdapters_Test.java" startLine="55" startPosition="0" endLine="64" endPosition="0" />
-    <nodeInfo nodeId="1215526259409" fileName="ClassifierAdapters_Test.java" startLine="238" startPosition="0" endLine="248" endPosition="0" />
-    <nodeInfo nodeId="876385242039332334" fileName="ClassifierAdapters_Test.java" startLine="248" startPosition="0" endLine="258" endPosition="0" />
-    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="287" startPosition="73" endLine="299" endPosition="7" />
-    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="308" startPosition="29" endLine="320" endPosition="7" />
+    <nodeInfo nodeId="1215526259409" fileName="ClassifierAdapters_Test.java" startLine="253" startPosition="0" endLine="263" endPosition="0" />
+    <nodeInfo nodeId="876385242039332334" fileName="ClassifierAdapters_Test.java" startLine="263" startPosition="0" endLine="273" endPosition="0" />
+    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="302" startPosition="73" endLine="314" endPosition="7" />
+    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="323" startPosition="29" endLine="335" endPosition="7" />
     <nodeInfo nodeId="1204637019115" fileName="ClassifierAdapters_Test.java" startLine="164" startPosition="0" endLine="177" endPosition="0" />
     <nodeInfo nodeId="1214828648349" fileName="ClassifierAdapters_Test.java" startLine="178" startPosition="50" endLine="191" endPosition="5" />
-    <nodeInfo nodeId="4600621396854788292" fileName="ClassifierAdapters_Test.java" startLine="421" startPosition="47" endLine="434" endPosition="5" />
+    <nodeInfo nodeId="4600621396854788292" fileName="ClassifierAdapters_Test.java" startLine="436" startPosition="47" endLine="449" endPosition="5" />
     <nodeInfo nodeId="1202778440637" fileName="ClassifierAdapters_Test.java" startLine="40" startPosition="0" endLine="55" endPosition="0" />
     <nodeInfo nodeId="1219743529567" fileName="ClassifierAdapters_Test.java" startLine="211" startPosition="0" endLine="226" endPosition="0" />
-    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="285" startPosition="4" endLine="300" endPosition="5" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="343" startPosition="20" endLine="358" endPosition="19" />
+    <nodeInfo nodeId="5988816933596123632" fileName="ClassifierAdapters_Test.java" startLine="226" startPosition="0" endLine="241" endPosition="0" />
+    <nodeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="300" startPosition="4" endLine="315" endPosition="5" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="358" startPosition="20" endLine="373" endPosition="19" />
     <nodeInfo nodeId="1202741857090" fileName="ClassifierAdapters_Test.java" startLine="24" startPosition="55" endLine="40" endPosition="0" />
     <nodeInfo nodeId="1214828622501" fileName="ClassifierAdapters_Test.java" startLine="177" startPosition="0" endLine="193" endPosition="0" />
-    <nodeInfo nodeId="4073449185570422692" fileName="ClassifierAdapters_Test.java" startLine="284" startPosition="6" endLine="300" endPosition="6" />
-    <nodeInfo nodeId="1659062322706260947" fileName="ClassifierAdapters_Test.java" startLine="420" startPosition="0" endLine="436" endPosition="0" />
+    <nodeInfo nodeId="4073449185570422692" fileName="ClassifierAdapters_Test.java" startLine="299" startPosition="6" endLine="315" endPosition="6" />
+    <nodeInfo nodeId="1659062322706260947" fileName="ClassifierAdapters_Test.java" startLine="435" startPosition="0" endLine="451" endPosition="0" />
     <nodeInfo nodeId="1202780473356" fileName="ClassifierAdapters_Test.java" startLine="193" startPosition="0" endLine="211" endPosition="0" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="341" startPosition="46" endLine="359" endPosition="31" />
-    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="302" startPosition="4" endLine="321" endPosition="5" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="384" startPosition="20" endLine="403" endPosition="19" />
-    <nodeInfo nodeId="4073449185570422737" fileName="ClassifierAdapters_Test.java" startLine="301" startPosition="38" endLine="321" endPosition="6" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="340" startPosition="0" endLine="362" endPosition="0" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="382" startPosition="46" endLine="404" endPosition="31" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="356" startPosition="46" endLine="374" endPosition="31" />
+    <nodeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="317" startPosition="4" endLine="336" endPosition="5" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="399" startPosition="20" endLine="418" endPosition="19" />
+    <nodeInfo nodeId="4073449185570422737" fileName="ClassifierAdapters_Test.java" startLine="316" startPosition="38" endLine="336" endPosition="6" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="355" startPosition="0" endLine="377" endPosition="0" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="397" startPosition="46" endLine="419" endPosition="31" />
     <nodeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="75" startPosition="20" endLine="98" endPosition="19" />
     <nodeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="125" startPosition="20" endLine="148" endPosition="19" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="337" startPosition="46" endLine="362" endPosition="14" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="352" startPosition="46" endLine="377" endPosition="14" />
     <nodeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="73" startPosition="46" endLine="99" endPosition="31" />
     <nodeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="123" startPosition="46" endLine="149" endPosition="31" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="381" startPosition="0" endLine="407" endPosition="0" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="336" startPosition="39" endLine="364" endPosition="0" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="335" startPosition="40" endLine="364" endPosition="10" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="378" startPosition="86" endLine="407" endPosition="14" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="396" startPosition="0" endLine="422" endPosition="0" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="351" startPosition="39" endLine="379" endPosition="0" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="350" startPosition="40" endLine="379" endPosition="10" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="393" startPosition="86" endLine="422" endPosition="14" />
     <nodeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="72" startPosition="0" endLine="102" endPosition="0" />
     <nodeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="122" startPosition="0" endLine="152" endPosition="0" />
-    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="334" startPosition="58" endLine="366" endPosition="0" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="377" startPosition="79" endLine="409" endPosition="0" />
+    <nodeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="349" startPosition="58" endLine="381" endPosition="0" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="392" startPosition="79" endLine="424" endPosition="0" />
     <nodeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="69" startPosition="47" endLine="102" endPosition="14" />
     <nodeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="119" startPosition="47" endLine="152" endPosition="14" />
-    <nodeInfo nodeId="3294521177951978010" fileName="ClassifierAdapters_Test.java" startLine="333" startPosition="15" endLine="366" endPosition="15" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="376" startPosition="82" endLine="409" endPosition="10" />
+    <nodeInfo nodeId="3294521177951978010" fileName="ClassifierAdapters_Test.java" startLine="348" startPosition="15" endLine="381" endPosition="15" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="391" startPosition="82" endLine="424" endPosition="10" />
     <nodeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="68" startPosition="40" endLine="104" endPosition="0" />
     <nodeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="118" startPosition="40" endLine="154" endPosition="0" />
-    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="375" startPosition="160" endLine="411" endPosition="0" />
+    <nodeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="390" startPosition="160" endLine="426" endPosition="0" />
     <nodeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="67" startPosition="43" endLine="104" endPosition="10" />
     <nodeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="117" startPosition="43" endLine="154" endPosition="10" />
-    <nodeInfo nodeId="811905832256893852" fileName="ClassifierAdapters_Test.java" startLine="374" startPosition="49" endLine="411" endPosition="7" />
+    <nodeInfo nodeId="811905832256893852" fileName="ClassifierAdapters_Test.java" startLine="389" startPosition="49" endLine="426" endPosition="7" />
     <nodeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="66" startPosition="48" endLine="106" endPosition="0" />
     <nodeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="116" startPosition="53" endLine="156" endPosition="0" />
     <nodeInfo nodeId="1203187287818" fileName="ClassifierAdapters_Test.java" startLine="65" startPosition="70" endLine="106" endPosition="6" />
     <nodeInfo nodeId="1203268538961" fileName="ClassifierAdapters_Test.java" startLine="115" startPosition="63" endLine="156" endPosition="6" />
-    <nodeInfo nodeId="811905832256893848" fileName="ClassifierAdapters_Test.java" startLine="373" startPosition="0" endLine="420" endPosition="0" />
+    <nodeInfo nodeId="811905832256893848" fileName="ClassifierAdapters_Test.java" startLine="388" startPosition="0" endLine="435" endPosition="0" />
     <nodeInfo nodeId="1203187203247" fileName="ClassifierAdapters_Test.java" startLine="64" startPosition="0" endLine="114" endPosition="0" />
     <nodeInfo nodeId="1203268525739" fileName="ClassifierAdapters_Test.java" startLine="114" startPosition="0" endLine="164" endPosition="0" />
-    <nodeInfo nodeId="4073449185570421959" fileName="ClassifierAdapters_Test.java" startLine="264" startPosition="0" endLine="368" endPosition="0" />
+    <nodeInfo nodeId="4073449185570421959" fileName="ClassifierAdapters_Test.java" startLine="279" startPosition="0" endLine="383" endPosition="0" />
     <scopeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="93" startPosition="27" endLine="93" endPosition="27" />
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="143" startPosition="27" endLine="143" endPosition="27" />
-    <scopeInfo nodeId="876385242039332961" fileName="ClassifierAdapters_Test.java" startLine="252" startPosition="53" endLine="252" endPosition="53" />
-    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="353" startPosition="27" endLine="353" endPosition="27" />
-    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="398" startPosition="27" endLine="398" endPosition="27" />
-    <scopeInfo nodeId="1202928326905" fileName="ClassifierAdapters_Test.java" startLine="437" startPosition="52" endLine="437" endPosition="52" />
-    <scopeInfo nodeId="1202929413120" fileName="ClassifierAdapters_Test.java" startLine="440" startPosition="40" endLine="440" endPosition="40" />
+    <scopeInfo nodeId="876385242039332961" fileName="ClassifierAdapters_Test.java" startLine="267" startPosition="53" endLine="267" endPosition="53" />
+    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="368" startPosition="27" endLine="368" endPosition="27" />
+    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="413" startPosition="27" endLine="413" endPosition="27" />
+    <scopeInfo nodeId="1202928326905" fileName="ClassifierAdapters_Test.java" startLine="452" startPosition="52" endLine="452" endPosition="52" />
+    <scopeInfo nodeId="1202929413120" fileName="ClassifierAdapters_Test.java" startLine="455" startPosition="40" endLine="455" endPosition="40" />
     <scopeInfo nodeId="1202778460044" fileName="ClassifierAdapters_Test.java" startLine="27" startPosition="39" endLine="28" endPosition="45" />
     <scopeInfo nodeId="1202778862221" fileName="ClassifierAdapters_Test.java" startLine="43" startPosition="41" endLine="44" endPosition="30" />
     <scopeInfo nodeId="1202822583245" fileName="ClassifierAdapters_Test.java" startLine="58" startPosition="41" endLine="59" endPosition="30" />
@@ -3068,67 +3077,70 @@
     <scopeInfo nodeId="1219743569117" fileName="ClassifierAdapters_Test.java" startLine="215" startPosition="25" endLine="216" endPosition="23" />
     <scopeInfo nodeId="1219743665757" fileName="ClassifierAdapters_Test.java" startLine="220" startPosition="9" endLine="221" endPosition="17" />
     <scopeInfo nodeId="1219743665759" fileName="ClassifierAdapters_Test.java" startLine="222" startPosition="15" endLine="223" endPosition="41" />
-    <scopeInfo nodeId="1202928346612" fileName="ClassifierAdapters_Test.java" startLine="229" startPosition="39" endLine="230" endPosition="33" />
-    <scopeInfo nodeId="1215520948179" fileName="ClassifierAdapters_Test.java" startLine="235" startPosition="53" endLine="236" endPosition="37">
+    <scopeInfo nodeId="5988816933596123645" fileName="ClassifierAdapters_Test.java" startLine="230" startPosition="25" endLine="231" endPosition="23" />
+    <scopeInfo nodeId="5988816933596123655" fileName="ClassifierAdapters_Test.java" startLine="235" startPosition="9" endLine="236" endPosition="17" />
+    <scopeInfo nodeId="5988816933596123660" fileName="ClassifierAdapters_Test.java" startLine="237" startPosition="15" endLine="238" endPosition="41" />
+    <scopeInfo nodeId="1202928346612" fileName="ClassifierAdapters_Test.java" startLine="244" startPosition="39" endLine="245" endPosition="33" />
+    <scopeInfo nodeId="1215520948179" fileName="ClassifierAdapters_Test.java" startLine="250" startPosition="53" endLine="251" endPosition="37">
       <varInfo nodeId="1215520963535" varName="wrk" />
     </scopeInfo>
-    <scopeInfo nodeId="1215526287560" fileName="ClassifierAdapters_Test.java" startLine="244" startPosition="37" endLine="245" endPosition="28" />
-    <scopeInfo nodeId="4073449185570422617" fileName="ClassifierAdapters_Test.java" startLine="268" startPosition="31" endLine="269" endPosition="29" />
-    <scopeInfo nodeId="4073449185570422653" fileName="ClassifierAdapters_Test.java" startLine="275" startPosition="31" endLine="276" endPosition="29" />
-    <scopeInfo nodeId="4073449185570422684" fileName="ClassifierAdapters_Test.java" startLine="281" startPosition="60" endLine="282" endPosition="47" />
-    <scopeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="289" startPosition="26" endLine="290" endPosition="27" />
-    <scopeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="291" startPosition="25" endLine="292" endPosition="17" />
-    <scopeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="293" startPosition="19" endLine="294" endPosition="16" />
-    <scopeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="295" startPosition="29" endLine="296" endPosition="16" />
-    <scopeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="297" startPosition="16" endLine="298" endPosition="16" />
-    <scopeInfo nodeId="4073449185570422768" fileName="ClassifierAdapters_Test.java" startLine="305" startPosition="62" endLine="306" endPosition="49" />
-    <scopeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="310" startPosition="26" endLine="311" endPosition="27" />
-    <scopeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="312" startPosition="25" endLine="313" endPosition="17" />
-    <scopeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="314" startPosition="19" endLine="315" endPosition="16" />
-    <scopeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="316" startPosition="29" endLine="317" endPosition="16" />
-    <scopeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="318" startPosition="16" endLine="319" endPosition="16" />
-    <scopeInfo nodeId="3294521177951870055" fileName="ClassifierAdapters_Test.java" startLine="325" startPosition="30" endLine="326" endPosition="20" />
-    <scopeInfo nodeId="3294521177951977998" fileName="ClassifierAdapters_Test.java" startLine="330" startPosition="30" endLine="331" endPosition="20" />
-    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="356" startPosition="28" endLine="357" endPosition="37" />
-    <scopeInfo nodeId="811905832257259141" fileName="ClassifierAdapters_Test.java" startLine="393" startPosition="48" endLine="394" endPosition="39" />
-    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="401" startPosition="28" endLine="402" endPosition="37" />
-    <scopeInfo nodeId="811905832257259152" fileName="ClassifierAdapters_Test.java" startLine="413" startPosition="91" endLine="414" endPosition="54" />
-    <scopeInfo nodeId="4600621396854791272" fileName="ClassifierAdapters_Test.java" startLine="425" startPosition="32" endLine="426" endPosition="41" />
-    <scopeInfo nodeId="4600621396854788292" fileName="ClassifierAdapters_Test.java" startLine="432" startPosition="34" endLine="433" endPosition="28" />
-    <scopeInfo nodeId="1204637135746" fileName="ClassifierAdapters_Test.java" startLine="443" startPosition="49" endLine="444" endPosition="25" />
-    <scopeInfo nodeId="1214828672040" fileName="ClassifierAdapters_Test.java" startLine="447" startPosition="78" endLine="448" endPosition="30" />
-    <scopeInfo nodeId="1215520889971" fileName="ClassifierAdapters_Test.java" startLine="453" startPosition="39" endLine="454" endPosition="33" />
-    <scopeInfo nodeId="1215526194218" fileName="ClassifierAdapters_Test.java" startLine="461" startPosition="65" endLine="462" endPosition="43" />
-    <scopeInfo nodeId="4923436771430621965" fileName="ClassifierAdapters_Test.java" startLine="469" startPosition="42" endLine="470" endPosition="21" />
-    <scopeInfo nodeId="1659062322706257968" fileName="ClassifierAdapters_Test.java" startLine="475" startPosition="100" endLine="476" endPosition="29" />
+    <scopeInfo nodeId="1215526287560" fileName="ClassifierAdapters_Test.java" startLine="259" startPosition="37" endLine="260" endPosition="28" />
+    <scopeInfo nodeId="4073449185570422617" fileName="ClassifierAdapters_Test.java" startLine="283" startPosition="31" endLine="284" endPosition="29" />
+    <scopeInfo nodeId="4073449185570422653" fileName="ClassifierAdapters_Test.java" startLine="290" startPosition="31" endLine="291" endPosition="29" />
+    <scopeInfo nodeId="4073449185570422684" fileName="ClassifierAdapters_Test.java" startLine="296" startPosition="60" endLine="297" endPosition="47" />
+    <scopeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="304" startPosition="26" endLine="305" endPosition="27" />
+    <scopeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="306" startPosition="25" endLine="307" endPosition="17" />
+    <scopeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="308" startPosition="19" endLine="309" endPosition="16" />
+    <scopeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="310" startPosition="29" endLine="311" endPosition="16" />
+    <scopeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="312" startPosition="16" endLine="313" endPosition="16" />
+    <scopeInfo nodeId="4073449185570422768" fileName="ClassifierAdapters_Test.java" startLine="320" startPosition="62" endLine="321" endPosition="49" />
+    <scopeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="325" startPosition="26" endLine="326" endPosition="27" />
+    <scopeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="327" startPosition="25" endLine="328" endPosition="17" />
+    <scopeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="329" startPosition="19" endLine="330" endPosition="16" />
+    <scopeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="331" startPosition="29" endLine="332" endPosition="16" />
+    <scopeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="333" startPosition="16" endLine="334" endPosition="16" />
+    <scopeInfo nodeId="3294521177951870055" fileName="ClassifierAdapters_Test.java" startLine="340" startPosition="30" endLine="341" endPosition="20" />
+    <scopeInfo nodeId="3294521177951977998" fileName="ClassifierAdapters_Test.java" startLine="345" startPosition="30" endLine="346" endPosition="20" />
+    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="371" startPosition="28" endLine="372" endPosition="37" />
+    <scopeInfo nodeId="811905832257259141" fileName="ClassifierAdapters_Test.java" startLine="408" startPosition="48" endLine="409" endPosition="39" />
+    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="416" startPosition="28" endLine="417" endPosition="37" />
+    <scopeInfo nodeId="811905832257259152" fileName="ClassifierAdapters_Test.java" startLine="428" startPosition="91" endLine="429" endPosition="54" />
+    <scopeInfo nodeId="4600621396854791272" fileName="ClassifierAdapters_Test.java" startLine="440" startPosition="32" endLine="441" endPosition="41" />
+    <scopeInfo nodeId="4600621396854788292" fileName="ClassifierAdapters_Test.java" startLine="447" startPosition="34" endLine="448" endPosition="28" />
+    <scopeInfo nodeId="1204637135746" fileName="ClassifierAdapters_Test.java" startLine="458" startPosition="49" endLine="459" endPosition="25" />
+    <scopeInfo nodeId="1214828672040" fileName="ClassifierAdapters_Test.java" startLine="462" startPosition="78" endLine="463" endPosition="30" />
+    <scopeInfo nodeId="1215520889971" fileName="ClassifierAdapters_Test.java" startLine="468" startPosition="39" endLine="469" endPosition="33" />
+    <scopeInfo nodeId="1215526194218" fileName="ClassifierAdapters_Test.java" startLine="476" startPosition="65" endLine="477" endPosition="43" />
+    <scopeInfo nodeId="4923436771430621965" fileName="ClassifierAdapters_Test.java" startLine="484" startPosition="42" endLine="485" endPosition="21" />
+    <scopeInfo nodeId="1659062322706257968" fileName="ClassifierAdapters_Test.java" startLine="490" startPosition="100" endLine="491" endPosition="29" />
     <scopeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="78" startPosition="28" endLine="80" endPosition="35" />
     <scopeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="93" startPosition="27" endLine="95" endPosition="28" />
     <scopeInfo nodeId="1203187378281" fileName="ClassifierAdapters_Test.java" startLine="109" startPosition="38" endLine="111" endPosition="10" />
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="128" startPosition="28" endLine="130" endPosition="35" />
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="143" startPosition="27" endLine="145" endPosition="28" />
     <scopeInfo nodeId="1203268570324" fileName="ClassifierAdapters_Test.java" startLine="158" startPosition="36" endLine="160" endPosition="12" />
-    <scopeInfo nodeId="1215526287560" fileName="ClassifierAdapters_Test.java" startLine="241" startPosition="9" endLine="243" endPosition="20" />
-    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="346" startPosition="28" endLine="348" endPosition="35" />
-    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="353" startPosition="27" endLine="355" endPosition="28" />
-    <scopeInfo nodeId="4923436771430617550" fileName="ClassifierAdapters_Test.java" startLine="369" startPosition="47" endLine="371" endPosition="41">
+    <scopeInfo nodeId="1215526287560" fileName="ClassifierAdapters_Test.java" startLine="256" startPosition="9" endLine="258" endPosition="20" />
+    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="361" startPosition="28" endLine="363" endPosition="35" />
+    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="368" startPosition="27" endLine="370" endPosition="28" />
+    <scopeInfo nodeId="4923436771430617550" fileName="ClassifierAdapters_Test.java" startLine="384" startPosition="47" endLine="386" endPosition="41">
       <varInfo nodeId="4923436771430621975" varName="flt" />
     </scopeInfo>
-    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="387" startPosition="28" endLine="389" endPosition="35" />
-    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="398" startPosition="27" endLine="400" endPosition="28" />
+    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="402" startPosition="28" endLine="404" endPosition="35" />
+    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="413" startPosition="27" endLine="415" endPosition="28" />
     <scopeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="81" startPosition="27" endLine="84" endPosition="34" />
     <scopeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="85" startPosition="27" endLine="88" endPosition="34" />
     <scopeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="89" startPosition="27" endLine="92" endPosition="34" />
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="131" startPosition="27" endLine="134" endPosition="34" />
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="135" startPosition="27" endLine="138" endPosition="34" />
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="139" startPosition="27" endLine="142" endPosition="34" />
-    <scopeInfo nodeId="876385242039332960" fileName="ClassifierAdapters_Test.java" startLine="251" startPosition="123" endLine="254" endPosition="0" />
-    <scopeInfo nodeId="876385242039333147" fileName="ClassifierAdapters_Test.java" startLine="259" startPosition="47" endLine="262" endPosition="6" />
-    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="349" startPosition="27" endLine="352" endPosition="34" />
-    <scopeInfo nodeId="1202928326902" fileName="ClassifierAdapters_Test.java" startLine="436" startPosition="0" endLine="439" endPosition="0">
+    <scopeInfo nodeId="876385242039332960" fileName="ClassifierAdapters_Test.java" startLine="266" startPosition="123" endLine="269" endPosition="0" />
+    <scopeInfo nodeId="876385242039333147" fileName="ClassifierAdapters_Test.java" startLine="274" startPosition="47" endLine="277" endPosition="6" />
+    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="364" startPosition="27" endLine="367" endPosition="34" />
+    <scopeInfo nodeId="1202928326902" fileName="ClassifierAdapters_Test.java" startLine="451" startPosition="0" endLine="454" endPosition="0">
       <varInfo nodeId="1202929605169" varName="two" />
       <varInfo nodeId="1202929603379" varName="one" />
     </scopeInfo>
-    <scopeInfo nodeId="1202929413117" fileName="ClassifierAdapters_Test.java" startLine="439" startPosition="0" endLine="442" endPosition="0">
+    <scopeInfo nodeId="1202929413117" fileName="ClassifierAdapters_Test.java" startLine="454" startPosition="0" endLine="457" endPosition="0">
       <varInfo nodeId="1202929615963" varName="one" />
     </scopeInfo>
     <scopeInfo nodeId="1202778460041" fileName="ClassifierAdapters_Test.java" startLine="26" startPosition="31" endLine="30" endPosition="0">
@@ -3147,59 +3159,60 @@
     <scopeInfo nodeId="1214828754113" fileName="ClassifierAdapters_Test.java" startLine="181" startPosition="69" endLine="185" endPosition="19" />
     <scopeInfo nodeId="1202780600123" fileName="ClassifierAdapters_Test.java" startLine="204" startPosition="53" endLine="208" endPosition="0" />
     <scopeInfo nodeId="1219743569116" fileName="ClassifierAdapters_Test.java" startLine="214" startPosition="44" endLine="218" endPosition="0" />
-    <scopeInfo nodeId="1202928346611" fileName="ClassifierAdapters_Test.java" startLine="228" startPosition="36" endLine="232" endPosition="0" />
-    <scopeInfo nodeId="1215520948177" fileName="ClassifierAdapters_Test.java" startLine="234" startPosition="0" endLine="238" endPosition="0" />
-    <scopeInfo nodeId="4073449185570422616" fileName="ClassifierAdapters_Test.java" startLine="267" startPosition="102" endLine="271" endPosition="0" />
-    <scopeInfo nodeId="4073449185570422652" fileName="ClassifierAdapters_Test.java" startLine="274" startPosition="49" endLine="278" endPosition="0" />
-    <scopeInfo nodeId="4073449185570422683" fileName="ClassifierAdapters_Test.java" startLine="280" startPosition="175" endLine="284" endPosition="0" />
-    <scopeInfo nodeId="4073449185570422767" fileName="ClassifierAdapters_Test.java" startLine="304" startPosition="124" endLine="308" endPosition="0" />
-    <scopeInfo nodeId="3294521177951870054" fileName="ClassifierAdapters_Test.java" startLine="324" startPosition="48" endLine="328" endPosition="0" />
-    <scopeInfo nodeId="3294521177951977997" fileName="ClassifierAdapters_Test.java" startLine="329" startPosition="48" endLine="333" endPosition="0" />
-    <scopeInfo nodeId="811905832257259140" fileName="ClassifierAdapters_Test.java" startLine="392" startPosition="77" endLine="396" endPosition="0" />
-    <scopeInfo nodeId="811905832257259151" fileName="ClassifierAdapters_Test.java" startLine="412" startPosition="140" endLine="416" endPosition="0" />
-    <scopeInfo nodeId="4600621396854791265" fileName="ClassifierAdapters_Test.java" startLine="424" startPosition="40" endLine="428" endPosition="22" />
-    <scopeInfo nodeId="1204637135743" fileName="ClassifierAdapters_Test.java" startLine="442" startPosition="0" endLine="446" endPosition="0">
+    <scopeInfo nodeId="5988816933596123644" fileName="ClassifierAdapters_Test.java" startLine="229" startPosition="44" endLine="233" endPosition="0" />
+    <scopeInfo nodeId="1202928346611" fileName="ClassifierAdapters_Test.java" startLine="243" startPosition="36" endLine="247" endPosition="0" />
+    <scopeInfo nodeId="1215520948177" fileName="ClassifierAdapters_Test.java" startLine="249" startPosition="0" endLine="253" endPosition="0" />
+    <scopeInfo nodeId="4073449185570422616" fileName="ClassifierAdapters_Test.java" startLine="282" startPosition="102" endLine="286" endPosition="0" />
+    <scopeInfo nodeId="4073449185570422652" fileName="ClassifierAdapters_Test.java" startLine="289" startPosition="49" endLine="293" endPosition="0" />
+    <scopeInfo nodeId="4073449185570422683" fileName="ClassifierAdapters_Test.java" startLine="295" startPosition="175" endLine="299" endPosition="0" />
+    <scopeInfo nodeId="4073449185570422767" fileName="ClassifierAdapters_Test.java" startLine="319" startPosition="124" endLine="323" endPosition="0" />
+    <scopeInfo nodeId="3294521177951870054" fileName="ClassifierAdapters_Test.java" startLine="339" startPosition="48" endLine="343" endPosition="0" />
+    <scopeInfo nodeId="3294521177951977997" fileName="ClassifierAdapters_Test.java" startLine="344" startPosition="48" endLine="348" endPosition="0" />
+    <scopeInfo nodeId="811905832257259140" fileName="ClassifierAdapters_Test.java" startLine="407" startPosition="77" endLine="411" endPosition="0" />
+    <scopeInfo nodeId="811905832257259151" fileName="ClassifierAdapters_Test.java" startLine="427" startPosition="140" endLine="431" endPosition="0" />
+    <scopeInfo nodeId="4600621396854791265" fileName="ClassifierAdapters_Test.java" startLine="439" startPosition="40" endLine="443" endPosition="22" />
+    <scopeInfo nodeId="1204637135743" fileName="ClassifierAdapters_Test.java" startLine="457" startPosition="0" endLine="461" endPosition="0">
       <varInfo nodeId="1204637147524" varName="wrk" />
       <varInfo nodeId="1204637152916" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1214828672037" fileName="ClassifierAdapters_Test.java" startLine="446" startPosition="0" endLine="450" endPosition="0">
+    <scopeInfo nodeId="1214828672037" fileName="ClassifierAdapters_Test.java" startLine="461" startPosition="0" endLine="465" endPosition="0">
       <varInfo nodeId="1214828687751" varName="prc" />
       <varInfo nodeId="1214828680157" varName="instr" />
     </scopeInfo>
-    <scopeInfo nodeId="1215520889970" fileName="ClassifierAdapters_Test.java" startLine="452" startPosition="25" endLine="456" endPosition="0" />
-    <scopeInfo nodeId="1215526194217" fileName="ClassifierAdapters_Test.java" startLine="460" startPosition="28" endLine="464" endPosition="0" />
-    <scopeInfo nodeId="4923436771430621964" fileName="ClassifierAdapters_Test.java" startLine="468" startPosition="26" endLine="472" endPosition="0" />
-    <scopeInfo nodeId="1659062322706257965" fileName="ClassifierAdapters_Test.java" startLine="474" startPosition="0" endLine="478" endPosition="0">
+    <scopeInfo nodeId="1215520889970" fileName="ClassifierAdapters_Test.java" startLine="467" startPosition="25" endLine="471" endPosition="0" />
+    <scopeInfo nodeId="1215526194217" fileName="ClassifierAdapters_Test.java" startLine="475" startPosition="28" endLine="479" endPosition="0" />
+    <scopeInfo nodeId="4923436771430621964" fileName="ClassifierAdapters_Test.java" startLine="483" startPosition="26" endLine="487" endPosition="0" />
+    <scopeInfo nodeId="1659062322706257965" fileName="ClassifierAdapters_Test.java" startLine="489" startPosition="0" endLine="493" endPosition="0">
       <varInfo nodeId="1659062322706257969" varName="fff" />
     </scopeInfo>
     <scopeInfo nodeId="1225980912046" fileName="ClassifierAdapters_Test.java" startLine="47" startPosition="61" endLine="52" endPosition="8" />
-    <scopeInfo nodeId="1202928341319" fileName="ClassifierAdapters_Test.java" startLine="227" startPosition="61" endLine="232" endPosition="7" />
-    <scopeInfo nodeId="4923436771430617547" fileName="ClassifierAdapters_Test.java" startLine="368" startPosition="0" endLine="373" endPosition="0" />
-    <scopeInfo nodeId="1215520845526" fileName="ClassifierAdapters_Test.java" startLine="451" startPosition="32" endLine="456" endPosition="6" />
-    <scopeInfo nodeId="1215526179881" fileName="ClassifierAdapters_Test.java" startLine="459" startPosition="38" endLine="464" endPosition="6" />
-    <scopeInfo nodeId="4923436771430617554" fileName="ClassifierAdapters_Test.java" startLine="467" startPosition="27" endLine="472" endPosition="6" />
+    <scopeInfo nodeId="1202928341319" fileName="ClassifierAdapters_Test.java" startLine="242" startPosition="61" endLine="247" endPosition="7" />
+    <scopeInfo nodeId="4923436771430617547" fileName="ClassifierAdapters_Test.java" startLine="383" startPosition="0" endLine="388" endPosition="0" />
+    <scopeInfo nodeId="1215520845526" fileName="ClassifierAdapters_Test.java" startLine="466" startPosition="32" endLine="471" endPosition="6" />
+    <scopeInfo nodeId="1215526179881" fileName="ClassifierAdapters_Test.java" startLine="474" startPosition="38" endLine="479" endPosition="6" />
+    <scopeInfo nodeId="4923436771430617554" fileName="ClassifierAdapters_Test.java" startLine="482" startPosition="27" endLine="487" endPosition="6" />
     <scopeInfo nodeId="1225980941612" fileName="ClassifierAdapters_Test.java" startLine="31" startPosition="61" endLine="37" endPosition="8" />
     <scopeInfo nodeId="1202822564648" fileName="ClassifierAdapters_Test.java" startLine="56" startPosition="65" endLine="62" endPosition="56">
       <varInfo nodeId="1202822578134" varName="wrk" />
     </scopeInfo>
-    <scopeInfo nodeId="876385242039333145" fileName="ClassifierAdapters_Test.java" startLine="258" startPosition="0" endLine="264" endPosition="0" />
+    <scopeInfo nodeId="876385242039333145" fileName="ClassifierAdapters_Test.java" startLine="273" startPosition="0" endLine="279" endPosition="0" />
     <scopeInfo nodeId="1214828754112" fileName="ClassifierAdapters_Test.java" startLine="180" startPosition="36" endLine="187" endPosition="0" />
-    <scopeInfo nodeId="1215526259411" fileName="ClassifierAdapters_Test.java" startLine="239" startPosition="56" endLine="246" endPosition="5">
+    <scopeInfo nodeId="1215526259411" fileName="ClassifierAdapters_Test.java" startLine="254" startPosition="56" endLine="261" endPosition="5">
       <varInfo nodeId="1215526271372" varName="prc" />
     </scopeInfo>
-    <scopeInfo nodeId="876385242039332336" fileName="ClassifierAdapters_Test.java" startLine="249" startPosition="47" endLine="256" endPosition="6" />
-    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="390" startPosition="27" endLine="397" endPosition="34" />
-    <scopeInfo nodeId="4600621396854791262" fileName="ClassifierAdapters_Test.java" startLine="423" startPosition="78" endLine="430" endPosition="0" />
-    <scopeInfo nodeId="1202928341317" fileName="ClassifierAdapters_Test.java" startLine="226" startPosition="0" endLine="234" endPosition="0" />
-    <scopeInfo nodeId="1215520845523" fileName="ClassifierAdapters_Test.java" startLine="450" startPosition="0" endLine="458" endPosition="0" />
-    <scopeInfo nodeId="1215526179878" fileName="ClassifierAdapters_Test.java" startLine="458" startPosition="0" endLine="466" endPosition="0" />
-    <scopeInfo nodeId="4923436771430617551" fileName="ClassifierAdapters_Test.java" startLine="466" startPosition="0" endLine="474" endPosition="0" />
+    <scopeInfo nodeId="876385242039332336" fileName="ClassifierAdapters_Test.java" startLine="264" startPosition="47" endLine="271" endPosition="6" />
+    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="405" startPosition="27" endLine="412" endPosition="34" />
+    <scopeInfo nodeId="4600621396854791262" fileName="ClassifierAdapters_Test.java" startLine="438" startPosition="78" endLine="445" endPosition="0" />
+    <scopeInfo nodeId="1202928341317" fileName="ClassifierAdapters_Test.java" startLine="241" startPosition="0" endLine="249" endPosition="0" />
+    <scopeInfo nodeId="1215520845523" fileName="ClassifierAdapters_Test.java" startLine="465" startPosition="0" endLine="473" endPosition="0" />
+    <scopeInfo nodeId="1215526179878" fileName="ClassifierAdapters_Test.java" startLine="473" startPosition="0" endLine="481" endPosition="0" />
+    <scopeInfo nodeId="4923436771430617551" fileName="ClassifierAdapters_Test.java" startLine="481" startPosition="0" endLine="489" endPosition="0" />
     <scopeInfo nodeId="1202822564646" fileName="ClassifierAdapters_Test.java" startLine="55" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="1214828648349" fileName="ClassifierAdapters_Test.java" startLine="179" startPosition="9" endLine="188" endPosition="20" />
-    <scopeInfo nodeId="4600621396854788292" fileName="ClassifierAdapters_Test.java" startLine="422" startPosition="9" endLine="431" endPosition="20" />
+    <scopeInfo nodeId="4600621396854788292" fileName="ClassifierAdapters_Test.java" startLine="437" startPosition="9" endLine="446" endPosition="20" />
     <scopeInfo nodeId="1204637019117" fileName="ClassifierAdapters_Test.java" startLine="165" startPosition="58" endLine="175" endPosition="14" />
-    <scopeInfo nodeId="1215526259409" fileName="ClassifierAdapters_Test.java" startLine="238" startPosition="0" endLine="248" endPosition="0" />
-    <scopeInfo nodeId="876385242039332334" fileName="ClassifierAdapters_Test.java" startLine="248" startPosition="0" endLine="258" endPosition="0" />
+    <scopeInfo nodeId="1215526259409" fileName="ClassifierAdapters_Test.java" startLine="253" startPosition="0" endLine="263" endPosition="0" />
+    <scopeInfo nodeId="876385242039332334" fileName="ClassifierAdapters_Test.java" startLine="263" startPosition="0" endLine="273" endPosition="0" />
     <scopeInfo nodeId="1202778440639" fileName="ClassifierAdapters_Test.java" startLine="41" startPosition="63" endLine="53" endPosition="5">
       <varInfo nodeId="1202778847069" varName="cls" />
     </scopeInfo>
@@ -3207,52 +3220,57 @@
       <varInfo nodeId="1219743555639" varName="trd" />
       <varInfo nodeId="1219743614847" varName="foo" />
     </scopeInfo>
+    <scopeInfo nodeId="5988816933596123634" fileName="ClassifierAdapters_Test.java" startLine="227" startPosition="81" endLine="239" endPosition="5">
+      <varInfo nodeId="5988816933596123640" varName="trd" />
+      <varInfo nodeId="5988816933596123636" varName="foo" />
+    </scopeInfo>
     <scopeInfo nodeId="1202741857092" fileName="ClassifierAdapters_Test.java" startLine="25" startPosition="63" endLine="38" endPosition="5">
       <varInfo nodeId="1202741950604" varName="wrk" />
     </scopeInfo>
     <scopeInfo nodeId="1204637019115" fileName="ClassifierAdapters_Test.java" startLine="164" startPosition="0" endLine="177" endPosition="0" />
     <scopeInfo nodeId="1214828622503" fileName="ClassifierAdapters_Test.java" startLine="178" startPosition="50" endLine="191" endPosition="5" />
-    <scopeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="286" startPosition="5" endLine="299" endPosition="7" />
-    <scopeInfo nodeId="1659062322706260950" fileName="ClassifierAdapters_Test.java" startLine="421" startPosition="47" endLine="434" endPosition="5" />
+    <scopeInfo nodeId="4073449185570422727" fileName="ClassifierAdapters_Test.java" startLine="301" startPosition="5" endLine="314" endPosition="7" />
+    <scopeInfo nodeId="1659062322706260950" fileName="ClassifierAdapters_Test.java" startLine="436" startPosition="47" endLine="449" endPosition="5" />
     <scopeInfo nodeId="1202778440637" fileName="ClassifierAdapters_Test.java" startLine="40" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="1202780473358" fileName="ClassifierAdapters_Test.java" startLine="194" startPosition="66" endLine="209" endPosition="75">
       <varInfo nodeId="1202780487399" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="1219743529567" fileName="ClassifierAdapters_Test.java" startLine="211" startPosition="0" endLine="226" endPosition="0" />
-    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="343" startPosition="20" endLine="358" endPosition="19" />
+    <scopeInfo nodeId="5988816933596123632" fileName="ClassifierAdapters_Test.java" startLine="226" startPosition="0" endLine="241" endPosition="0" />
+    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="358" startPosition="20" endLine="373" endPosition="19" />
     <scopeInfo nodeId="1202741857090" fileName="ClassifierAdapters_Test.java" startLine="24" startPosition="55" endLine="40" endPosition="0" />
     <scopeInfo nodeId="1214828622501" fileName="ClassifierAdapters_Test.java" startLine="177" startPosition="0" endLine="193" endPosition="0" />
-    <scopeInfo nodeId="1659062322706260947" fileName="ClassifierAdapters_Test.java" startLine="420" startPosition="0" endLine="436" endPosition="0" />
-    <scopeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="303" startPosition="5" endLine="320" endPosition="7" />
+    <scopeInfo nodeId="1659062322706260947" fileName="ClassifierAdapters_Test.java" startLine="435" startPosition="0" endLine="451" endPosition="0" />
+    <scopeInfo nodeId="4073449185570422766" fileName="ClassifierAdapters_Test.java" startLine="318" startPosition="5" endLine="335" endPosition="7" />
     <scopeInfo nodeId="1202780473356" fileName="ClassifierAdapters_Test.java" startLine="193" startPosition="0" endLine="211" endPosition="0" />
-    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="341" startPosition="46" endLine="360" endPosition="29" />
-    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="384" startPosition="20" endLine="403" endPosition="19" />
-    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="340" startPosition="0" endLine="362" endPosition="0" />
+    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="356" startPosition="46" endLine="375" endPosition="29" />
+    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="399" startPosition="20" endLine="418" endPosition="19" />
+    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="355" startPosition="0" endLine="377" endPosition="0" />
     <scopeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="75" startPosition="20" endLine="98" endPosition="19" />
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="125" startPosition="20" endLine="148" endPosition="19" />
-    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="382" startPosition="46" endLine="405" endPosition="29" />
-    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="337" startPosition="46" endLine="362" endPosition="14" />
-    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="381" startPosition="0" endLine="407" endPosition="0" />
+    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="397" startPosition="46" endLine="420" endPosition="29" />
+    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="352" startPosition="46" endLine="377" endPosition="14" />
+    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="396" startPosition="0" endLine="422" endPosition="0" />
     <scopeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="73" startPosition="46" endLine="100" endPosition="29" />
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="123" startPosition="46" endLine="150" endPosition="29" />
-    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="336" startPosition="39" endLine="364" endPosition="0" />
-    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="335" startPosition="40" endLine="364" endPosition="10" />
-    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="378" startPosition="86" endLine="407" endPosition="14" />
+    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="351" startPosition="39" endLine="379" endPosition="0" />
+    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="350" startPosition="40" endLine="379" endPosition="10" />
+    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="393" startPosition="86" endLine="422" endPosition="14" />
     <scopeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="72" startPosition="0" endLine="102" endPosition="0" />
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="122" startPosition="0" endLine="152" endPosition="0" />
-    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="334" startPosition="58" endLine="366" endPosition="0" />
-    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="377" startPosition="79" endLine="409" endPosition="0" />
+    <scopeInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="349" startPosition="58" endLine="381" endPosition="0" />
+    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="392" startPosition="79" endLine="424" endPosition="0" />
     <scopeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="69" startPosition="47" endLine="102" endPosition="14" />
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="119" startPosition="47" endLine="152" endPosition="14" />
-    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="376" startPosition="82" endLine="409" endPosition="10" />
+    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="391" startPosition="82" endLine="424" endPosition="10" />
     <scopeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="68" startPosition="40" endLine="104" endPosition="0" />
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="118" startPosition="40" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="375" startPosition="160" endLine="411" endPosition="0" />
+    <scopeInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="390" startPosition="160" endLine="426" endPosition="0" />
     <scopeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="67" startPosition="43" endLine="104" endPosition="10" />
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="117" startPosition="43" endLine="154" endPosition="10" />
     <scopeInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="66" startPosition="48" endLine="106" endPosition="0" />
     <scopeInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="116" startPosition="53" endLine="156" endPosition="0" />
-    <scopeInfo nodeId="811905832256893851" fileName="ClassifierAdapters_Test.java" startLine="374" startPosition="49" endLine="418" endPosition="67">
+    <scopeInfo nodeId="811905832256893851" fileName="ClassifierAdapters_Test.java" startLine="389" startPosition="49" endLine="433" endPosition="67">
       <varInfo nodeId="811905832257259145" varName="res" />
       <varInfo nodeId="811905832256893853" varName="seq" />
     </scopeInfo>
@@ -3265,16 +3283,16 @@
       <varInfo nodeId="1203268597871" varName="exp" />
       <varInfo nodeId="1203268538962" varName="g" />
     </scopeInfo>
-    <scopeInfo nodeId="811905832256893848" fileName="ClassifierAdapters_Test.java" startLine="373" startPosition="0" endLine="420" endPosition="0" />
+    <scopeInfo nodeId="811905832256893848" fileName="ClassifierAdapters_Test.java" startLine="388" startPosition="0" endLine="435" endPosition="0" />
     <scopeInfo nodeId="1203187203247" fileName="ClassifierAdapters_Test.java" startLine="64" startPosition="0" endLine="114" endPosition="0" />
     <scopeInfo nodeId="1203268525739" fileName="ClassifierAdapters_Test.java" startLine="114" startPosition="0" endLine="164" endPosition="0" />
-    <scopeInfo nodeId="4073449185570421961" fileName="ClassifierAdapters_Test.java" startLine="265" startPosition="53" endLine="366" endPosition="15">
+    <scopeInfo nodeId="4073449185570421961" fileName="ClassifierAdapters_Test.java" startLine="280" startPosition="53" endLine="381" endPosition="15">
       <varInfo nodeId="4073449185570422578" varName="count" />
       <varInfo nodeId="4073449185570422613" varName="cl" />
       <varInfo nodeId="4073449185570422679" varName="ucl" />
     </scopeInfo>
-    <scopeInfo nodeId="4073449185570421959" fileName="ClassifierAdapters_Test.java" startLine="264" startPosition="0" endLine="368" endPosition="0" />
-    <unitInfo nodeId="876385242039332960" fileName="ClassifierAdapters_Test.java" startLine="251" startPosition="76" endLine="254" endPosition="7" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$12" />
+    <scopeInfo nodeId="4073449185570421959" fileName="ClassifierAdapters_Test.java" startLine="279" startPosition="0" endLine="383" endPosition="0" />
+    <unitInfo nodeId="876385242039332960" fileName="ClassifierAdapters_Test.java" startLine="266" startPosition="76" endLine="269" endPosition="7" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$13" />
     <unitInfo nodeId="1202778458188" fileName="ClassifierAdapters_Test.java" startLine="26" startPosition="21" endLine="30" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$1" />
     <unitInfo nodeId="1202778862220" fileName="ClassifierAdapters_Test.java" startLine="42" startPosition="78" endLine="46" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$2" />
     <unitInfo nodeId="1202822583244" fileName="ClassifierAdapters_Test.java" startLine="57" startPosition="21" endLine="61" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$3" />
@@ -3282,30 +3300,32 @@
     <unitInfo nodeId="1204637282822" fileName="ClassifierAdapters_Test.java" startLine="171" startPosition="50" endLine="175" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$7" />
     <unitInfo nodeId="1202780600123" fileName="ClassifierAdapters_Test.java" startLine="204" startPosition="31" endLine="208" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$9" />
     <unitInfo nodeId="1219743569116" fileName="ClassifierAdapters_Test.java" startLine="214" startPosition="32" endLine="218" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$10" />
-    <unitInfo nodeId="1202928346611" fileName="ClassifierAdapters_Test.java" startLine="228" startPosition="26" endLine="232" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$11" />
-    <unitInfo nodeId="4073449185570422616" fileName="ClassifierAdapters_Test.java" startLine="267" startPosition="61" endLine="271" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$13" />
-    <unitInfo nodeId="4073449185570422652" fileName="ClassifierAdapters_Test.java" startLine="274" startPosition="8" endLine="278" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$14" />
-    <unitInfo nodeId="4073449185570422683" fileName="ClassifierAdapters_Test.java" startLine="280" startPosition="103" endLine="284" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$15" />
-    <unitInfo nodeId="4073449185570422767" fileName="ClassifierAdapters_Test.java" startLine="304" startPosition="52" endLine="308" endPosition="7" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$16" />
-    <unitInfo nodeId="3294521177951870054" fileName="ClassifierAdapters_Test.java" startLine="324" startPosition="8" endLine="328" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$17" />
-    <unitInfo nodeId="3294521177951977997" fileName="ClassifierAdapters_Test.java" startLine="329" startPosition="8" endLine="333" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$18" />
-    <unitInfo nodeId="811905832257259140" fileName="ClassifierAdapters_Test.java" startLine="392" startPosition="37" endLine="396" endPosition="23" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$23" />
-    <unitInfo nodeId="811905832257259151" fileName="ClassifierAdapters_Test.java" startLine="412" startPosition="68" endLine="416" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$21" />
-    <unitInfo nodeId="1215520889970" fileName="ClassifierAdapters_Test.java" startLine="452" startPosition="15" endLine="456" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$23" />
-    <unitInfo nodeId="1215526194217" fileName="ClassifierAdapters_Test.java" startLine="460" startPosition="15" endLine="464" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$24" />
-    <unitInfo nodeId="4923436771430621964" fileName="ClassifierAdapters_Test.java" startLine="468" startPosition="15" endLine="472" endPosition="5" unitName="jetbrains.mps.closures.test.IFilter$anonymous" />
+    <unitInfo nodeId="5988816933596123665" fileName="ClassifierAdapters_Test.java" startLine="229" startPosition="21" endLine="233" endPosition="6" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$11" />
+    <unitInfo nodeId="5988816933596123644" fileName="ClassifierAdapters_Test.java" startLine="229" startPosition="32" endLine="233" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$12" />
+    <unitInfo nodeId="1202928346611" fileName="ClassifierAdapters_Test.java" startLine="243" startPosition="26" endLine="247" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$12" />
+    <unitInfo nodeId="4073449185570422616" fileName="ClassifierAdapters_Test.java" startLine="282" startPosition="61" endLine="286" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$14" />
+    <unitInfo nodeId="4073449185570422652" fileName="ClassifierAdapters_Test.java" startLine="289" startPosition="8" endLine="293" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$15" />
+    <unitInfo nodeId="4073449185570422683" fileName="ClassifierAdapters_Test.java" startLine="295" startPosition="103" endLine="299" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$16" />
+    <unitInfo nodeId="4073449185570422767" fileName="ClassifierAdapters_Test.java" startLine="319" startPosition="52" endLine="323" endPosition="7" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$17" />
+    <unitInfo nodeId="3294521177951870054" fileName="ClassifierAdapters_Test.java" startLine="339" startPosition="8" endLine="343" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$18" />
+    <unitInfo nodeId="3294521177951977997" fileName="ClassifierAdapters_Test.java" startLine="344" startPosition="8" endLine="348" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$19" />
+    <unitInfo nodeId="811905832257259140" fileName="ClassifierAdapters_Test.java" startLine="407" startPosition="37" endLine="411" endPosition="23" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$24" />
+    <unitInfo nodeId="811905832257259151" fileName="ClassifierAdapters_Test.java" startLine="427" startPosition="68" endLine="431" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$22" />
+    <unitInfo nodeId="1215520889970" fileName="ClassifierAdapters_Test.java" startLine="467" startPosition="15" endLine="471" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$24" />
+    <unitInfo nodeId="1215526194217" fileName="ClassifierAdapters_Test.java" startLine="475" startPosition="15" endLine="479" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$25" />
+    <unitInfo nodeId="4923436771430621964" fileName="ClassifierAdapters_Test.java" startLine="483" startPosition="15" endLine="487" endPosition="5" unitName="jetbrains.mps.closures.test.IFilter$anonymous" />
     <unitInfo nodeId="1214828754112" fileName="ClassifierAdapters_Test.java" startLine="180" startPosition="23" endLine="187" endPosition="7" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$8" />
-    <unitInfo nodeId="4600621396854791262" fileName="ClassifierAdapters_Test.java" startLine="423" startPosition="30" endLine="430" endPosition="7" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$22" />
-    <unitInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="338" startPosition="23" endLine="362" endPosition="13" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$21" />
-    <unitInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="336" startPosition="19" endLine="364" endPosition="9" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$20" />
-    <unitInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="379" startPosition="23" endLine="407" endPosition="13" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$22" />
+    <unitInfo nodeId="4600621396854791262" fileName="ClassifierAdapters_Test.java" startLine="438" startPosition="30" endLine="445" endPosition="7" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$23" />
+    <unitInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="353" startPosition="23" endLine="377" endPosition="13" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$22" />
+    <unitInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="351" startPosition="19" endLine="379" endPosition="9" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$21" />
+    <unitInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="394" startPosition="23" endLine="422" endPosition="13" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$23" />
     <unitInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="70" startPosition="23" endLine="102" endPosition="13" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$6" />
     <unitInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="120" startPosition="23" endLine="152" endPosition="13" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$7" />
-    <unitInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="334" startPosition="8" endLine="366" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$19" />
-    <unitInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="377" startPosition="19" endLine="409" endPosition="9" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$21" />
+    <unitInfo nodeId="3294521177951978021" fileName="ClassifierAdapters_Test.java" startLine="349" startPosition="8" endLine="381" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$20" />
+    <unitInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="392" startPosition="19" endLine="424" endPosition="9" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$22" />
     <unitInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="68" startPosition="19" endLine="104" endPosition="9" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$5" />
     <unitInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="118" startPosition="19" endLine="154" endPosition="9" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$6" />
-    <unitInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="375" startPosition="92" endLine="411" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$20" />
+    <unitInfo nodeId="811905832257259120" fileName="ClassifierAdapters_Test.java" startLine="390" startPosition="92" endLine="426" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$21" />
     <unitInfo nodeId="1203187295149" fileName="ClassifierAdapters_Test.java" startLine="66" startPosition="29" endLine="106" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$4" />
     <unitInfo nodeId="1203270587979" fileName="ClassifierAdapters_Test.java" startLine="116" startPosition="31" endLine="156" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$5" />
   </root>

@@ -224,6 +224,21 @@ __switch__:
     }
   }
 
+  public void test_closureLiteralAsParameterToAnonymousClass() throws Exception {
+    final Wrappers._int foo = new Wrappers._int(-1);
+    Thread trd = new Thread(new Runnable() {
+      public void run() {
+        foo.value = 42;
+      }
+    });
+    trd.start();
+    try {
+      trd.join();
+    } finally {
+      Assert.assertEquals(42, foo.value);
+    }
+  }
+
   public void test_wrongParametersNumber() throws Exception {
     this.acceptWorker(new Worker() {
       public String doWork(Integer i) {
