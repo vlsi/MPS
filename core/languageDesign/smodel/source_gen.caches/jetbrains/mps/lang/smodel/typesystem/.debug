@@ -364,7 +364,7 @@
     <nodeInfo nodeId="1205265953624" fileName="RulesUtil.java" startLine="66" startPosition="170" endLine="75" endPosition="7" />
     <nodeInfo nodeId="1178301920923" fileName="RulesUtil.java" startLine="166" startPosition="106" endLine="176" endPosition="5" />
     <nodeInfo nodeId="8844001996561701137" fileName="RulesUtil.java" startLine="190" startPosition="65" endLine="200" endPosition="0" />
-    <nodeInfo nodeId="8844001996561701137" fileName="RulesUtil.java" startLine="189" startPosition="182" endLine="200" endPosition="126" />
+    <nodeInfo nodeId="8844001996561701137" fileName="RulesUtil.java" startLine="189" startPosition="182" endLine="200" endPosition="125" />
     <nodeInfo nodeId="1222429119606" fileName="RulesUtil.java" startLine="258" startPosition="12" endLine="269" endPosition="7" />
     <nodeInfo nodeId="1205265613065" fileName="RulesUtil.java" startLine="64" startPosition="19" endLine="76" endPosition="5" />
     <nodeInfo nodeId="1178287490323" fileName="RulesUtil.java" startLine="233" startPosition="0" endLine="245" endPosition="0" />
@@ -581,7 +581,7 @@
     <scopeInfo nodeId="1222434308317" fileName="RulesUtil.java" startLine="385" startPosition="105" endLine="396" endPosition="7">
       <varInfo nodeId="1222434353527" varName="superTypes" />
     </scopeInfo>
-    <scopeInfo nodeId="8844001996561701137" fileName="RulesUtil.java" startLine="188" startPosition="5" endLine="200" endPosition="126" />
+    <scopeInfo nodeId="8844001996561701137" fileName="RulesUtil.java" startLine="188" startPosition="5" endLine="200" endPosition="125" />
     <scopeInfo nodeId="1178287490323" fileName="RulesUtil.java" startLine="233" startPosition="0" endLine="245" endPosition="0">
       <varInfo nodeId="1178287490310" varName="op" />
       <varInfo nodeId="1206098953154" varName="TypeToEquate" />

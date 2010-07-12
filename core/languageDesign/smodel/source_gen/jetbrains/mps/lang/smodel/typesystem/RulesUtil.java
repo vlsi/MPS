@@ -197,7 +197,7 @@ public class RulesUtil {
             typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.getEquationManager().getRepresentator(LeftType), (SNode) new RulesUtil.QuotationClass_yxkngc_a0a0a1a6().createNode(TypeToEquate, TypeToEquate, typeCheckingContext), false, _info_12389875345);
           }
         }
-      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8844001996561701137", false, false);
+      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8844001996561701137", true, false);
     }
   }
 
