@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.smodel.SModelReference;
@@ -134,17 +133,14 @@ public class GoByCurrentReference_Action extends GeneratedAction {
         new Thread() {
           public void run() {
             final IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(modulePath);
-            SwingUtilities.invokeLater(new Runnable() {
+            // todo command here is ust for read action. Without it, openNode will be deadlocked for now 
+            ModelAccess.instance().runCommandInEDT(new Runnable() {
               public void run() {
-                ModelAccess.instance().runWriteAction(new Runnable() {
-                  public void run() {
-                    if (handler != null) {
-                      GoByCurrentReference_Action.this.navigateToJavaStub(handler, targetNode);
-                    } else {
-                      GoByCurrentReference_Action.this.open(targetNode);
-                    }
-                  }
-                });
+                if (handler != null) {
+                  GoByCurrentReference_Action.this.navigateToJavaStub(handler, targetNode);
+                } else {
+                  GoByCurrentReference_Action.this.open(targetNode);
+                }
               }
             });
           }
