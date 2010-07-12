@@ -8,8 +8,9 @@
     <projectSolutions>
       <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.graph/jetbrains.mps.graphLayout.graph.msd" />
       <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.layeredLayout/jetbrains.mps.graphLayout.layeredLayout.msd" folder="" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.test/jetbrains.mps.graphLayout.test.msd" folder="" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.orthogonalLayout/jetbrains.mps.graphLayout.orthogonalLayout.msd" />
       <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.planarization/jetbrains.mps.graphLayout.planarization.msd" folder="" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.test/jetbrains.mps.graphLayout.test.msd" folder="" />
     </projectSolutions>
     <projectLanguages />
     <projectDevkits />
@@ -55,7 +56,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>
 
