@@ -13,6 +13,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.execution.configurations.ConfigurationFactory;
+import com.intellij.execution.configurations.ConfigurationType;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class DefaultCustomMpsLanguageConfigurationFromConfiguration extends BaseConfigCreator<SNode> implements Cloneable {
   private RunConfiguration myConfig;
@@ -44,7 +48,7 @@ public class DefaultCustomMpsLanguageConfigurationFromConfiguration extends Base
     DefaultCustomMpsLanguageConfigurationFromConfiguration.this.setSourceElement(new MPSPsiElement(parameter));
     {
       CustomMPSConfigurationType_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(CustomMPSConfigurationType_ConfigurationType.CONFIGURATION_TYPE_EP), CustomMPSConfigurationType_ConfigurationType.class);
-      DefaultCustomMpsApplication_Configuration _config = new DefaultCustomMpsApplication_Configuration(DefaultCustomMpsLanguageConfigurationFromConfiguration.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig");
+      DefaultCustomMpsApplication_Configuration _config = new DefaultCustomMpsApplication_Configuration(DefaultCustomMpsLanguageConfigurationFromConfiguration.this.getContext().getProject(), findFactory(configType, "DefaultCustomMpsApplication"), "NewConfig");
       _config.setName(SPropertyOperations.getString(layout.value, "name") + "." + SPropertyOperations.getString(parameter, "name"));
       _config.getStateObject().nodeId = layout.value.getId();
       _config.getStateObject().modelId = layout.value.getModel().getModelDescriptor().getSModelReference().toString();
@@ -60,5 +64,15 @@ public class DefaultCustomMpsLanguageConfigurationFromConfiguration extends Base
 
   protected boolean isApplicable(final Object element) {
     return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.build.packaging.structure.Configuration");
+  }
+
+  @Nullable
+  public ConfigurationFactory findFactory(ConfigurationType configurationType, String configurationName) {
+    for (ConfigurationFactory factory : Sequence.fromIterable(Sequence.fromArray(configurationType.getConfigurationFactories()))) {
+      if (factory.getClass().getName().contains(configurationName)) {
+        return factory;
+      }
+    }
+    return null;
   }
 }

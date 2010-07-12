@@ -13,6 +13,10 @@ import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.execution.configurations.ConfigurationFactory;
+import com.intellij.execution.configurations.ConfigurationType;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cloneable {
   private RunConfiguration myConfig;
@@ -35,7 +39,7 @@ public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cl
 
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
-      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromClass.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig");
+      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromClass.this.getContext().getProject(), findFactory(configType, "DefaultJUnit"), "NewConfig");
       _config.setName(SPropertyOperations.getString(parameter, "name"));
       _config.getStateObject().type = JUnitRunTypes.NODE;
       _config.getStateObject().nodes = new ClonableList<String>(INamedConcept_Behavior.call_getFqName_1213877404258(parameter));
@@ -50,5 +54,15 @@ public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cl
 
   protected boolean isApplicable(final Object element) {
     return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
+  }
+
+  @Nullable
+  public ConfigurationFactory findFactory(ConfigurationType configurationType, String configurationName) {
+    for (ConfigurationFactory factory : Sequence.fromIterable(Sequence.fromArray(configurationType.getConfigurationFactories()))) {
+      if (factory.getClass().getName().contains(configurationName)) {
+        return factory;
+      }
+    }
+    return null;
   }
 }

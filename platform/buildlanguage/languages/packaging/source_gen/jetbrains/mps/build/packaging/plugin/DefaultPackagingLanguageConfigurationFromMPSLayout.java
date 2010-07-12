@@ -14,6 +14,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.execution.configurations.ConfigurationFactory;
+import com.intellij.execution.configurations.ConfigurationType;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class DefaultPackagingLanguageConfigurationFromMPSLayout extends BaseConfigCreator<SNode> implements Cloneable {
   private RunConfiguration myConfig;
@@ -48,7 +52,7 @@ public class DefaultPackagingLanguageConfigurationFromMPSLayout extends BaseConf
     DefaultPackagingLanguageConfigurationFromMPSLayout.this.setSourceElement(new MPSPsiElement(parameter));
     {
       PackagingConfigurationType_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(PackagingConfigurationType_ConfigurationType.CONFIGURATION_TYPE_EP), PackagingConfigurationType_ConfigurationType.class);
-      DefaultPackagingLanguageApplication_Configuration _config = new DefaultPackagingLanguageApplication_Configuration(DefaultPackagingLanguageConfigurationFromMPSLayout.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig");
+      DefaultPackagingLanguageApplication_Configuration _config = new DefaultPackagingLanguageApplication_Configuration(DefaultPackagingLanguageConfigurationFromMPSLayout.this.getContext().getProject(), findFactory(configType, "DefaultPackagingLanguageApplication"), "NewConfig");
       _config.setName(SPropertyOperations.getString(parameter, "name"));
       _config.getStateObject().nodeId = parameter.getId();
       _config.getStateObject().modelId = parameter.getModel().getModelDescriptor().getSModelReference().toString();
@@ -64,5 +68,15 @@ public class DefaultPackagingLanguageConfigurationFromMPSLayout extends BaseConf
 
   protected boolean isApplicable(final Object element) {
     return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.build.packaging.structure.MPSLayout");
+  }
+
+  @Nullable
+  public ConfigurationFactory findFactory(ConfigurationType configurationType, String configurationName) {
+    for (ConfigurationFactory factory : Sequence.fromIterable(Sequence.fromArray(configurationType.getConfigurationFactories()))) {
+      if (factory.getClass().getName().contains(configurationName)) {
+        return factory;
+      }
+    }
+    return null;
   }
 }

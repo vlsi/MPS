@@ -8,6 +8,10 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.execution.configurations.ConfigurationFactory;
+import com.intellij.execution.configurations.ConfigurationType;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class JUnitConfigFromProject extends BaseConfigCreator<MPSProject> implements Cloneable {
   private RunConfiguration myConfig;
@@ -31,7 +35,7 @@ public class JUnitConfigFromProject extends BaseConfigCreator<MPSProject> implem
     final String name = parameter.getProject().getName();
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
-      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromProject.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig") {
+      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromProject.this.getContext().getProject(), findFactory(configType, "DefaultJUnit"), "NewConfig") {
         @Override
         public String suggestedName() {
           return "All Tests in Project";
@@ -50,5 +54,15 @@ public class JUnitConfigFromProject extends BaseConfigCreator<MPSProject> implem
 
   protected boolean isApplicable(final Object element) {
     return element instanceof MPSProject;
+  }
+
+  @Nullable
+  public ConfigurationFactory findFactory(ConfigurationType configurationType, String configurationName) {
+    for (ConfigurationFactory factory : Sequence.fromIterable(Sequence.fromArray(configurationType.getConfigurationFactories()))) {
+      if (factory.getClass().getName().contains(configurationName)) {
+        return factory;
+      }
+    }
+    return null;
   }
 }

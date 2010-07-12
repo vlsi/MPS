@@ -15,6 +15,9 @@ import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.execution.configurations.ConfigurationFactory;
+import com.intellij.execution.configurations.ConfigurationType;
 
 public class JUnitConfigFromMethods extends BaseConfigCreator<List> implements Cloneable {
   private RunConfiguration myConfig;
@@ -43,7 +46,7 @@ public class JUnitConfigFromMethods extends BaseConfigCreator<List> implements C
 
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
-      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromMethods.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig") {
+      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromMethods.this.getContext().getProject(), findFactory(configType, "DefaultJUnit"), "NewConfig") {
         @Override
         public String suggestedName() {
           return "Several Test Methods";
@@ -72,5 +75,15 @@ public class JUnitConfigFromMethods extends BaseConfigCreator<List> implements C
       }
     }
     return true;
+  }
+
+  @Nullable
+  public ConfigurationFactory findFactory(ConfigurationType configurationType, String configurationName) {
+    for (ConfigurationFactory factory : Sequence.fromIterable(Sequence.fromArray(configurationType.getConfigurationFactories()))) {
+      if (factory.getClass().getName().contains(configurationName)) {
+        return factory;
+      }
+    }
+    return null;
   }
 }

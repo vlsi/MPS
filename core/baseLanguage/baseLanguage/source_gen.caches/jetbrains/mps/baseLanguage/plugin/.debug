@@ -866,31 +866,31 @@
     <unitInfo nodeId="3836499504550260330" fileName="SubclassedClassifierEditorMessage.java" startLine="19" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.SubclassedClassifierEditorMessage" />
   </root>
   <root nodeId="3856910426407913103">
-    <nodeInfo nodeId="6194849458308484474" fileName="DefaultJavaAppFromClass.java" startLine="27" startPosition="52" endLine="28" endPosition="129" />
-    <nodeInfo nodeId="6194849458308484494" fileName="DefaultJavaAppFromClass.java" startLine="29" startPosition="31" endLine="30" endPosition="13" />
-    <nodeInfo nodeId="3856910426407931756" fileName="DefaultJavaAppFromClass.java" startLine="31" startPosition="5" endLine="32" endPosition="92" />
-    <nodeInfo nodeId="3856910426407931763" fileName="DefaultJavaAppFromClass.java" startLine="32" startPosition="92" endLine="33" endPosition="0" />
-    <nodeInfo nodeId="3856910426407931766" fileName="DefaultJavaAppFromClass.java" startLine="34" startPosition="31" endLine="35" endPosition="13" />
-    <nodeInfo nodeId="3856910426407931770" fileName="DefaultJavaAppFromClass.java" startLine="36" startPosition="5" endLine="37" endPosition="0" />
-    <nodeInfo nodeId="3856910426407931771" fileName="DefaultJavaAppFromClass.java" startLine="37" startPosition="0" endLine="38" endPosition="83" />
-    <nodeInfo nodeId="3856910426407931793" fileName="DefaultJavaAppFromClass.java" startLine="38" startPosition="83" endLine="39" endPosition="0" />
-    <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="40" startPosition="5" endLine="41" endPosition="204" />
-    <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="41" startPosition="204" endLine="42" endPosition="206" />
-    <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="42" startPosition="206" endLine="43" endPosition="75" />
-    <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="43" startPosition="75" endLine="44" endPosition="61" />
-    <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="44" startPosition="61" endLine="45" endPosition="118" />
-    <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="45" startPosition="118" endLine="46" endPosition="54" />
-    <nodeInfo nodeId="6194849458308484485" fileName="DefaultJavaAppFromClass.java" startLine="28" startPosition="129" endLine="31" endPosition="5" />
-    <nodeInfo nodeId="3856910426407931764" fileName="DefaultJavaAppFromClass.java" startLine="33" startPosition="0" endLine="36" endPosition="5" />
-    <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="39" startPosition="0" endLine="47" endPosition="5" />
-    <scopeInfo nodeId="6194849458308484486" fileName="DefaultJavaAppFromClass.java" startLine="29" startPosition="31" endLine="30" endPosition="13" />
-    <scopeInfo nodeId="3856910426407931765" fileName="DefaultJavaAppFromClass.java" startLine="34" startPosition="31" endLine="35" endPosition="13" />
-    <scopeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="40" startPosition="5" endLine="46" endPosition="54" />
-    <scopeInfo nodeId="3856910426407913106" fileName="DefaultJavaAppFromClass.java" startLine="27" startPosition="52" endLine="47" endPosition="5">
+    <nodeInfo nodeId="6194849458308484474" fileName="DefaultJavaAppFromClass.java" startLine="31" startPosition="52" endLine="32" endPosition="129" />
+    <nodeInfo nodeId="6194849458308484494" fileName="DefaultJavaAppFromClass.java" startLine="33" startPosition="31" endLine="34" endPosition="13" />
+    <nodeInfo nodeId="3856910426407931756" fileName="DefaultJavaAppFromClass.java" startLine="35" startPosition="5" endLine="36" endPosition="92" />
+    <nodeInfo nodeId="3856910426407931763" fileName="DefaultJavaAppFromClass.java" startLine="36" startPosition="92" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="3856910426407931766" fileName="DefaultJavaAppFromClass.java" startLine="38" startPosition="31" endLine="39" endPosition="13" />
+    <nodeInfo nodeId="3856910426407931770" fileName="DefaultJavaAppFromClass.java" startLine="40" startPosition="5" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="3856910426407931771" fileName="DefaultJavaAppFromClass.java" startLine="41" startPosition="0" endLine="42" endPosition="83" />
+    <nodeInfo nodeId="3856910426407931793" fileName="DefaultJavaAppFromClass.java" startLine="42" startPosition="83" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="44" startPosition="5" endLine="45" endPosition="204" />
+    <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="45" startPosition="204" endLine="46" endPosition="214" />
+    <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="46" startPosition="214" endLine="47" endPosition="75" />
+    <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="47" startPosition="75" endLine="48" endPosition="61" />
+    <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="48" startPosition="61" endLine="49" endPosition="118" />
+    <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="49" startPosition="118" endLine="50" endPosition="54" />
+    <nodeInfo nodeId="6194849458308484485" fileName="DefaultJavaAppFromClass.java" startLine="32" startPosition="129" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="3856910426407931764" fileName="DefaultJavaAppFromClass.java" startLine="37" startPosition="0" endLine="40" endPosition="5" />
+    <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="43" startPosition="0" endLine="51" endPosition="5" />
+    <scopeInfo nodeId="6194849458308484486" fileName="DefaultJavaAppFromClass.java" startLine="33" startPosition="31" endLine="34" endPosition="13" />
+    <scopeInfo nodeId="3856910426407931765" fileName="DefaultJavaAppFromClass.java" startLine="38" startPosition="31" endLine="39" endPosition="13" />
+    <scopeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="44" startPosition="5" endLine="50" endPosition="54" />
+    <scopeInfo nodeId="3856910426407913106" fileName="DefaultJavaAppFromClass.java" startLine="31" startPosition="52" endLine="51" endPosition="5">
       <varInfo nodeId="3856910426407931757" varName="mainMethod" />
       <varInfo nodeId="6194849458308484475" varName="classConcept" />
     </scopeInfo>
-    <unitInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="42" startPosition="57" endLine="42" endPosition="205" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaAppFromClass$1" />
+    <unitInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="46" startPosition="57" endLine="46" endPosition="213" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaAppFromClass$1" />
   </root>
   <root nodeId="401697226377603546">
     <nodeInfo nodeId="401697226377603551" fileName="CommentLine_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="29" />
@@ -951,25 +951,25 @@
     <unitInfo nodeId="4291694139627064709" fileName="OverridingMethodEditorMessage.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.OverridingMethodEditorMessage" />
   </root>
   <root nodeId="4606119813988084135">
-    <nodeInfo nodeId="4606119813988120960" fileName="DefaultJavaAppFromMainMethod.java" startLine="28" startPosition="89" endLine="29" endPosition="13" />
-    <nodeInfo nodeId="4606119813988096155" fileName="DefaultJavaAppFromMainMethod.java" startLine="30" startPosition="5" endLine="31" endPosition="0" />
-    <nodeInfo nodeId="4606119813988120967" fileName="DefaultJavaAppFromMainMethod.java" startLine="31" startPosition="0" endLine="32" endPosition="127" />
-    <nodeInfo nodeId="4606119813988096156" fileName="DefaultJavaAppFromMainMethod.java" startLine="32" startPosition="127" endLine="33" endPosition="86" />
-    <nodeInfo nodeId="4606119813988096178" fileName="DefaultJavaAppFromMainMethod.java" startLine="33" startPosition="86" endLine="34" endPosition="0" />
-    <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="35" startPosition="5" endLine="36" endPosition="204" />
-    <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="36" startPosition="204" endLine="37" endPosition="211" />
-    <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="37" startPosition="211" endLine="38" endPosition="73" />
-    <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="38" startPosition="73" endLine="39" endPosition="59" />
-    <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="39" startPosition="59" endLine="40" endPosition="116" />
-    <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="40" startPosition="116" endLine="41" endPosition="59" />
-    <nodeInfo nodeId="4606119813988120946" fileName="DefaultJavaAppFromMainMethod.java" startLine="27" startPosition="52" endLine="30" endPosition="5" />
-    <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="34" startPosition="0" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="4606119813988120947" fileName="DefaultJavaAppFromMainMethod.java" startLine="28" startPosition="89" endLine="29" endPosition="13" />
-    <scopeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="35" startPosition="5" endLine="41" endPosition="59" />
-    <scopeInfo nodeId="4606119813988084138" fileName="DefaultJavaAppFromMainMethod.java" startLine="27" startPosition="52" endLine="42" endPosition="5">
+    <nodeInfo nodeId="4606119813988120960" fileName="DefaultJavaAppFromMainMethod.java" startLine="32" startPosition="89" endLine="33" endPosition="13" />
+    <nodeInfo nodeId="4606119813988096155" fileName="DefaultJavaAppFromMainMethod.java" startLine="34" startPosition="5" endLine="35" endPosition="0" />
+    <nodeInfo nodeId="4606119813988120967" fileName="DefaultJavaAppFromMainMethod.java" startLine="35" startPosition="0" endLine="36" endPosition="127" />
+    <nodeInfo nodeId="4606119813988096156" fileName="DefaultJavaAppFromMainMethod.java" startLine="36" startPosition="127" endLine="37" endPosition="86" />
+    <nodeInfo nodeId="4606119813988096178" fileName="DefaultJavaAppFromMainMethod.java" startLine="37" startPosition="86" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="39" startPosition="5" endLine="40" endPosition="204" />
+    <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="40" startPosition="204" endLine="41" endPosition="219" />
+    <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="41" startPosition="219" endLine="42" endPosition="73" />
+    <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="42" startPosition="73" endLine="43" endPosition="59" />
+    <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="43" startPosition="59" endLine="44" endPosition="116" />
+    <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="44" startPosition="116" endLine="45" endPosition="59" />
+    <nodeInfo nodeId="4606119813988120946" fileName="DefaultJavaAppFromMainMethod.java" startLine="31" startPosition="52" endLine="34" endPosition="5" />
+    <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="38" startPosition="0" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="4606119813988120947" fileName="DefaultJavaAppFromMainMethod.java" startLine="32" startPosition="89" endLine="33" endPosition="13" />
+    <scopeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="39" startPosition="5" endLine="45" endPosition="59" />
+    <scopeInfo nodeId="4606119813988084138" fileName="DefaultJavaAppFromMainMethod.java" startLine="31" startPosition="52" endLine="46" endPosition="5">
       <varInfo nodeId="4606119813988120968" varName="classifier" />
     </scopeInfo>
-    <unitInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="37" startPosition="57" endLine="37" endPosition="210" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaAppFromMainMethod$1" />
+    <unitInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="41" startPosition="57" endLine="41" endPosition="218" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaAppFromMainMethod$1" />
   </root>
   <root nodeId="5002400195357779994">
     <nodeInfo nodeId="6268328477151491179" fileName="OverrideMethodsChecker.java" startLine="40" startPosition="66" endLine="41" endPosition="50" />

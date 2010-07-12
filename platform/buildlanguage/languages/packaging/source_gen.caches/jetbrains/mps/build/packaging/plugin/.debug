@@ -1912,73 +1912,73 @@
     <unitInfo nodeId="1224851548023" fileName="GenerateTextFromBuild.java" startLine="27" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.GenerateTextFromBuild" />
   </root>
   <root nodeId="1325286122618155431">
-    <nodeInfo nodeId="1325286122618219140" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="30" startPosition="52" endLine="31" endPosition="67" />
-    <nodeInfo nodeId="1325286122618219163" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="33" startPosition="25" endLine="34" endPosition="199" />
-    <nodeInfo nodeId="1325286122618176653" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="37" startPosition="32" endLine="38" endPosition="13" />
-    <nodeInfo nodeId="1325286122618219184" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="39" startPosition="5" endLine="40" endPosition="0" />
-    <nodeInfo nodeId="1325286122618219105" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="40" startPosition="0" endLine="41" endPosition="61" />
-    <nodeInfo nodeId="1325286122618219128" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="43" startPosition="25" endLine="44" endPosition="119" />
-    <nodeInfo nodeId="1325286122618219186" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="46" startPosition="7" endLine="47" endPosition="0" />
-    <nodeInfo nodeId="1325286122618217629" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="47" startPosition="0" endLine="48" endPosition="107" />
-    <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="49" startPosition="5" endLine="50" endPosition="237" />
-    <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="50" startPosition="237" endLine="51" endPosition="259" />
-    <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="51" startPosition="259" endLine="52" endPosition="72" />
-    <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="52" startPosition="72" endLine="53" endPosition="58" />
-    <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="53" startPosition="58" endLine="54" endPosition="115" />
-    <nodeInfo nodeId="1325286122618217638" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="54" startPosition="115" endLine="55" endPosition="58" />
-    <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="55" startPosition="58" endLine="56" endPosition="81" />
-    <nodeInfo nodeId="1325286122618176635" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="36" startPosition="7" endLine="39" endPosition="5" />
-    <nodeInfo nodeId="1325286122618219159" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="32" startPosition="57" endLine="36" endPosition="0" />
-    <nodeInfo nodeId="1325286122618219125" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="42" startPosition="57" endLine="46" endPosition="0" />
-    <nodeInfo nodeId="1325286122618219158" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="31" startPosition="67" endLine="36" endPosition="7" />
-    <nodeInfo nodeId="1325286122618219124" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="41" startPosition="61" endLine="46" endPosition="7" />
-    <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="48" startPosition="107" endLine="57" endPosition="5" />
-    <scopeInfo nodeId="1325286122618219160" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="33" startPosition="25" endLine="34" endPosition="199" />
-    <scopeInfo nodeId="1325286122618176637" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="37" startPosition="32" endLine="38" endPosition="13" />
-    <scopeInfo nodeId="1325286122618219126" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="43" startPosition="25" endLine="44" endPosition="119" />
-    <scopeInfo nodeId="1325286122618219159" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="32" startPosition="57" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1325286122618219125" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="42" startPosition="57" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="49" startPosition="5" endLine="56" endPosition="81" />
-    <scopeInfo nodeId="1325286122618155434" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="30" startPosition="52" endLine="57" endPosition="5">
+    <nodeInfo nodeId="1325286122618219140" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="34" startPosition="52" endLine="35" endPosition="67" />
+    <nodeInfo nodeId="1325286122618219163" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="37" startPosition="25" endLine="38" endPosition="199" />
+    <nodeInfo nodeId="1325286122618176653" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="41" startPosition="32" endLine="42" endPosition="13" />
+    <nodeInfo nodeId="1325286122618219184" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="43" startPosition="5" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="1325286122618219105" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="44" startPosition="0" endLine="45" endPosition="61" />
+    <nodeInfo nodeId="1325286122618219128" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="47" startPosition="25" endLine="48" endPosition="119" />
+    <nodeInfo nodeId="1325286122618219186" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="50" startPosition="7" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="1325286122618217629" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="51" startPosition="0" endLine="52" endPosition="107" />
+    <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="53" startPosition="5" endLine="54" endPosition="237" />
+    <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="54" startPosition="237" endLine="55" endPosition="280" />
+    <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="55" startPosition="280" endLine="56" endPosition="72" />
+    <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="56" startPosition="72" endLine="57" endPosition="58" />
+    <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="57" startPosition="58" endLine="58" endPosition="115" />
+    <nodeInfo nodeId="1325286122618217638" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="58" startPosition="115" endLine="59" endPosition="58" />
+    <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="59" startPosition="58" endLine="60" endPosition="81" />
+    <nodeInfo nodeId="1325286122618176635" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="40" startPosition="7" endLine="43" endPosition="5" />
+    <nodeInfo nodeId="1325286122618219159" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="36" startPosition="57" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="1325286122618219125" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="46" startPosition="57" endLine="50" endPosition="0" />
+    <nodeInfo nodeId="1325286122618219158" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="35" startPosition="67" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="1325286122618219124" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="45" startPosition="61" endLine="50" endPosition="7" />
+    <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="52" startPosition="107" endLine="61" endPosition="5" />
+    <scopeInfo nodeId="1325286122618219160" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="37" startPosition="25" endLine="38" endPosition="199" />
+    <scopeInfo nodeId="1325286122618176637" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="41" startPosition="32" endLine="42" endPosition="13" />
+    <scopeInfo nodeId="1325286122618219126" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="47" startPosition="25" endLine="48" endPosition="119" />
+    <scopeInfo nodeId="1325286122618219159" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="36" startPosition="57" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1325286122618219125" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="46" startPosition="57" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="53" startPosition="5" endLine="60" endPosition="81" />
+    <scopeInfo nodeId="1325286122618155434" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="34" startPosition="52" endLine="61" endPosition="5">
       <varInfo nodeId="1325286122618219106" varName="id" />
       <varInfo nodeId="1325286122618219141" varName="isApplicable" />
     </scopeInfo>
-    <unitInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="51" startPosition="70" endLine="51" endPosition="258" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageConfigurationFromMPSLayout$3" />
-    <unitInfo nodeId="1325286122618219159" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="32" startPosition="45" endLine="36" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageConfigurationFromMPSLayout$1" />
-    <unitInfo nodeId="1325286122618219125" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="42" startPosition="45" endLine="46" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageConfigurationFromMPSLayout$2" />
+    <unitInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="55" startPosition="70" endLine="55" endPosition="279" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageConfigurationFromMPSLayout$3" />
+    <unitInfo nodeId="1325286122618219159" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="36" startPosition="45" endLine="40" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageConfigurationFromMPSLayout$1" />
+    <unitInfo nodeId="1325286122618219125" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="46" startPosition="45" endLine="50" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageConfigurationFromMPSLayout$2" />
   </root>
   <root nodeId="1325286122618219198">
-    <nodeInfo nodeId="1325286122618219203" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="29" startPosition="52" endLine="30" endPosition="63" />
-    <nodeInfo nodeId="1325286122618219241" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="30" startPosition="63" endLine="31" endPosition="67" />
-    <nodeInfo nodeId="1325286122618219319" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="31" startPosition="67" endLine="32" endPosition="74" />
-    <nodeInfo nodeId="1325286122618219229" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="34" startPosition="25" endLine="35" endPosition="128" />
-    <nodeInfo nodeId="1325286122618219249" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="35" startPosition="128" endLine="36" endPosition="222" />
-    <nodeInfo nodeId="1325286122618219323" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="36" startPosition="222" endLine="37" endPosition="50" />
-    <nodeInfo nodeId="1325286122618219286" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="40" startPosition="32" endLine="41" endPosition="13" />
-    <nodeInfo nodeId="1325286122618219289" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="42" startPosition="5" endLine="43" endPosition="0" />
-    <nodeInfo nodeId="1325286122618219291" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="43" startPosition="0" endLine="44" endPosition="111" />
-    <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="45" startPosition="5" endLine="46" endPosition="237" />
-    <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="46" startPosition="237" endLine="47" endPosition="263" />
-    <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="47" startPosition="263" endLine="48" endPosition="132" />
-    <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="48" startPosition="132" endLine="49" endPosition="61" />
-    <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="49" startPosition="61" endLine="50" endPosition="118" />
-    <nodeInfo nodeId="1325286122618219334" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="50" startPosition="118" endLine="51" endPosition="71" />
-    <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="51" startPosition="71" endLine="52" endPosition="85" />
-    <nodeInfo nodeId="1325286122618219279" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="39" startPosition="7" endLine="42" endPosition="5" />
-    <nodeInfo nodeId="1325286122618219208" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="33" startPosition="57" endLine="39" endPosition="0" />
-    <nodeInfo nodeId="1325286122618219207" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="32" startPosition="74" endLine="39" endPosition="7" />
-    <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="44" startPosition="111" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="1325286122618219280" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="40" startPosition="32" endLine="41" endPosition="13" />
-    <scopeInfo nodeId="1325286122618219209" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="34" startPosition="25" endLine="37" endPosition="50" />
-    <scopeInfo nodeId="1325286122618219208" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="33" startPosition="57" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="45" startPosition="5" endLine="52" endPosition="85" />
-    <scopeInfo nodeId="1325286122618219201" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="29" startPosition="52" endLine="53" endPosition="5">
+    <nodeInfo nodeId="1325286122618219203" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="33" startPosition="52" endLine="34" endPosition="63" />
+    <nodeInfo nodeId="1325286122618219241" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="34" startPosition="63" endLine="35" endPosition="67" />
+    <nodeInfo nodeId="1325286122618219319" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="35" startPosition="67" endLine="36" endPosition="74" />
+    <nodeInfo nodeId="1325286122618219229" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="38" startPosition="25" endLine="39" endPosition="128" />
+    <nodeInfo nodeId="1325286122618219249" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="39" startPosition="128" endLine="40" endPosition="222" />
+    <nodeInfo nodeId="1325286122618219323" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="40" startPosition="222" endLine="41" endPosition="50" />
+    <nodeInfo nodeId="1325286122618219286" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="44" startPosition="32" endLine="45" endPosition="13" />
+    <nodeInfo nodeId="1325286122618219289" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="46" startPosition="5" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="1325286122618219291" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="47" startPosition="0" endLine="48" endPosition="111" />
+    <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="49" startPosition="5" endLine="50" endPosition="237" />
+    <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="50" startPosition="237" endLine="51" endPosition="284" />
+    <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="51" startPosition="284" endLine="52" endPosition="132" />
+    <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="52" startPosition="132" endLine="53" endPosition="61" />
+    <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="53" startPosition="61" endLine="54" endPosition="118" />
+    <nodeInfo nodeId="1325286122618219334" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="54" startPosition="118" endLine="55" endPosition="71" />
+    <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="55" startPosition="71" endLine="56" endPosition="85" />
+    <nodeInfo nodeId="1325286122618219279" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="43" startPosition="7" endLine="46" endPosition="5" />
+    <nodeInfo nodeId="1325286122618219208" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="37" startPosition="57" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="1325286122618219207" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="36" startPosition="74" endLine="43" endPosition="7" />
+    <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="48" startPosition="111" endLine="57" endPosition="5" />
+    <scopeInfo nodeId="1325286122618219280" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="44" startPosition="32" endLine="45" endPosition="13" />
+    <scopeInfo nodeId="1325286122618219209" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="38" startPosition="25" endLine="41" endPosition="50" />
+    <scopeInfo nodeId="1325286122618219208" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="37" startPosition="57" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="49" startPosition="5" endLine="56" endPosition="85" />
+    <scopeInfo nodeId="1325286122618219201" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="33" startPosition="52" endLine="57" endPosition="5">
       <varInfo nodeId="1325286122618219204" varName="layout" />
       <varInfo nodeId="1325286122618219320" varName="configurationId" />
       <varInfo nodeId="1325286122618219242" varName="isApplicable" />
     </scopeInfo>
-    <unitInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="47" startPosition="70" endLine="47" endPosition="262" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageConfigurationFromConfiguration$2" />
-    <unitInfo nodeId="1325286122618219208" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="33" startPosition="45" endLine="39" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageConfigurationFromConfiguration$1" />
+    <unitInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="51" startPosition="70" endLine="51" endPosition="283" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageConfigurationFromConfiguration$2" />
+    <unitInfo nodeId="1325286122618219208" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="37" startPosition="45" endLine="43" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageConfigurationFromConfiguration$1" />
   </root>
   <root nodeId="2864298211886144956">
     <nodeInfo nodeId="7802616240287692959" fileName="DefaultPackagingLanguageApplication_Editor.java" startLine="36" startPosition="11" endLine="37" endPosition="71" />

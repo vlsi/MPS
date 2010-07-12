@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="7323449223785111020">
+    <nodeInfo nodeId="7323449223785135348" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="43" startPosition="15" endLine="44" endPosition="75" />
+    <nodeInfo nodeId="7323449223785151914" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="46" startPosition="9" endLine="47" endPosition="97" />
+    <nodeInfo nodeId="7323449223785135327" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="39" startPosition="152" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="7323449223785135321" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="38" startPosition="157" endLine="43" endPosition="15" />
+    <nodeInfo nodeId="7323449223785132386" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="37" startPosition="177" endLine="45" endPosition="11" />
+    <nodeInfo nodeId="7323449223785132368" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="36" startPosition="52" endLine="46" endPosition="9" />
+    <scopeInfo nodeId="7323449223785111025" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="109" />
+    <scopeInfo nodeId="7323449223785135328" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="40" startPosition="48" endLine="41" endPosition="163" />
+    <scopeInfo nodeId="7323449223785135327" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="39" startPosition="152" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="7323449223785132388" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="38" startPosition="157" endLine="44" endPosition="75">
+      <varInfo nodeId="7323449223785135322" varName="newVariable" />
+    </scopeInfo>
+    <scopeInfo nodeId="7323449223785132371" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="37" startPosition="177" endLine="45" endPosition="11" />
+    <scopeInfo nodeId="7323449223785132368" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="36" startPosition="52" endLine="46" endPosition="9" />
+    <scopeInfo nodeId="7323449223785111023" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="36" startPosition="52" endLine="47" endPosition="97" />
+    <unitInfo nodeId="7323449223785135327" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="39" startPosition="129" endLine="43" endPosition="13" unitName="jetbrains.mps.build.packaging.scripts.RemoveBuiltInVariables_MigrationScript$2" />
+  </root>
+</debugInfo>
+

@@ -9,6 +9,9 @@ import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.execution.configurations.ConfigurationFactory;
+import com.intellij.execution.configurations.ConfigurationType;
 
 public class JUnitConfigFromModule extends BaseConfigCreator<IModule> implements Cloneable {
   private RunConfiguration myConfig;
@@ -30,7 +33,7 @@ public class JUnitConfigFromModule extends BaseConfigCreator<IModule> implements
     JUnitConfigFromModule.this.setSourceElement(new MPSPsiElement(parameter));
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
-      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromModule.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig") {
+      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromModule.this.getContext().getProject(), findFactory(configType, "DefaultJUnit"), "NewConfig") {
         @Override
         public String suggestedName() {
           return "Tests in '" + name + "'";
@@ -50,5 +53,15 @@ public class JUnitConfigFromModule extends BaseConfigCreator<IModule> implements
 
   protected boolean isApplicable(final Object element) {
     return element instanceof IModule;
+  }
+
+  @Nullable
+  public ConfigurationFactory findFactory(ConfigurationType configurationType, String configurationName) {
+    for (ConfigurationFactory factory : Sequence.fromIterable(Sequence.fromArray(configurationType.getConfigurationFactories()))) {
+      if (factory.getClass().getName().contains(configurationName)) {
+        return factory;
+      }
+    }
+    return null;
   }
 }
