@@ -61,7 +61,9 @@ public class ModuleNodeData extends BaseNodeData {
       if (name == null || name.equals("")) name = "no name";
       return generator.getSourceLanguage().getModuleNamespace() + " (generator/" + name + ")";
     } else {
-      return module.getModuleNamespace();
+      String namespace = module.getModuleNamespace();
+      if (namespace == null) return "null";
+      return namespace;
     }
   }
 
