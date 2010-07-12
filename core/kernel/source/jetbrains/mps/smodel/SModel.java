@@ -471,10 +471,8 @@ public class SModel implements Iterable<SNode> {
 
   public void addAspectModelsVersions(@NotNull Language language, boolean firstVersion) {
     ModelChange.assertLegalChange(this);
+    if (myVersionedLanguages.contains(language.getModuleReference())) return;
 
-    if (myVersionedLanguages.contains(language.getModuleReference())) {
-      return;
-    }
     for (SModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
       addAdditionalModelVersion(modelDescriptor.getSModelReference(), firstVersion ? -1 : modelDescriptor.getVersion());
     }
@@ -493,10 +491,7 @@ public class SModel implements Iterable<SNode> {
 
   public void addLanguage_internal(@NotNull ModuleReference ref) {
     ModelChange.assertLegalChange(this);
-
-    if (hasLanguage(ref)) {
-      return;
-    }
+    if (hasLanguage(ref)) return;
 
     if (ref.getModuleId() == null) {
       LOG.warning("Attempt to add language reference to a language without id in model " + getSModelFqName() + ". Language = " + ref);

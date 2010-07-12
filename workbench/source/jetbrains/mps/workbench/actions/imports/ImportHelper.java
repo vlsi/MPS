@@ -147,11 +147,11 @@ public class ImportHelper {
     public void navigate(boolean requestFocus) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          if (!myContextModule.getScope().getVisibleLanguages().contains(getModule())) {
-            myContextModule.addUsedLanguage(getModule().getModuleReference());
+          Language lang = (Language) getModule();
+          if (!myContextModule.getScope().getVisibleLanguages().contains(lang)) {
+            myContextModule.addUsedLanguage(lang.getModuleReference());
           }
-
-          myModel.getSModel().addLanguage((Language) getModule());
+          myModel.getSModel().addLanguage(lang);
         }
       });
     }

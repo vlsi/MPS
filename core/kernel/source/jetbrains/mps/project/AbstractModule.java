@@ -220,6 +220,8 @@ public abstract class AbstractModule implements IModule {
 
   public void addUsedLanguage(ModuleReference langRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor.getUsedLanguages().contains(langRef)) return;
+    
     descriptor.getUsedLanguages().add(langRef);
     setModuleDescriptor(descriptor, true);
     save();
