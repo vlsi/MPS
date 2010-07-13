@@ -48,6 +48,8 @@ class VariablesTree extends MPSTree implements DataProvider {
         }
       }
     });
+    setRootVisible(false);
+    setShowsRootHandles(true);
   }
 
   public void setUiState(@NotNull AbstractUiState uiState) {
@@ -60,10 +62,16 @@ class VariablesTree extends MPSTree implements DataProvider {
     List<IWatchable> watchables = myUiState.getWatchables();
 
     if (watchables.isEmpty()) {
-      TextTreeNode messageNode = new TextTreeNode("No local variables available");
+      TextTreeNode rootNode = new TextTreeNode("");
+      TextTreeNode messageNode = new TextTreeNode("No local variables available") {
+        @Override
+        public boolean isLeaf() {
+          return true;
+        }
+      };
       messageNode.setIcon(jetbrains.mps.ide.messages.Icons.INFORMATION_ICON);
-      setRootVisible(true);
-      return messageNode;
+      rootNode.add(messageNode);
+      return rootNode;
     }
 
     MPSTreeNode rootTreeNode = new TextTreeNode("Local Variables");
@@ -144,8 +152,6 @@ class VariablesTree extends MPSTree implements DataProvider {
         rootTreeNode.add(new WatchableNode(myContext, watchable));
       }
     }
-    setRootVisible(false);
-    setShowsRootHandles(true);
     return rootTreeNode;
   }
 
