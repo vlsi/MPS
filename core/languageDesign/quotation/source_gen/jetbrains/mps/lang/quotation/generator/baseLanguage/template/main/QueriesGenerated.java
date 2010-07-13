@@ -298,7 +298,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "quotedNode", true);
   }
 
-  public static SNode sourceNodeQuery_1196351886773(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4462183154303727939(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
   }
 
