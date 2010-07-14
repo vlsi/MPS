@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2441084687258581572">
-    <nodeInfo nodeId="2441084687258581583" fileName="Variant_CustomApplicationPlugin.java" startLine="30" startPosition="41" endLine="31" endPosition="242" />
-    <nodeInfo nodeId="2441084687258581578" fileName="Variant_CustomApplicationPlugin.java" startLine="29" startPosition="66" endLine="33" endPosition="0" />
-    <nodeInfo nodeId="2441084687258581575" fileName="Variant_CustomApplicationPlugin.java" startLine="28" startPosition="24" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="2441084687258581579" fileName="Variant_CustomApplicationPlugin.java" startLine="30" startPosition="41" endLine="31" endPosition="242" />
-    <scopeInfo nodeId="2441084687258581578" fileName="Variant_CustomApplicationPlugin.java" startLine="29" startPosition="66" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="2441084687258581574" fileName="Variant_CustomApplicationPlugin.java" startLine="28" startPosition="24" endLine="33" endPosition="7" />
-    <unitInfo nodeId="2441084687258581578" fileName="Variant_CustomApplicationPlugin.java" startLine="29" startPosition="26" endLine="33" endPosition="5" unitName="jetbrains.mps.ui.swing.plugin.Variant_CustomApplicationPlugin$1" />
+    <nodeInfo nodeId="2441084687258581583" fileName="Variant_CustomApplicationPlugin.java" startLine="29" startPosition="41" endLine="30" endPosition="242" />
+    <nodeInfo nodeId="2441084687258581578" fileName="Variant_CustomApplicationPlugin.java" startLine="28" startPosition="66" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="2441084687258581575" fileName="Variant_CustomApplicationPlugin.java" startLine="27" startPosition="24" endLine="32" endPosition="7" />
+    <scopeInfo nodeId="2441084687258581579" fileName="Variant_CustomApplicationPlugin.java" startLine="29" startPosition="41" endLine="30" endPosition="242" />
+    <scopeInfo nodeId="2441084687258581578" fileName="Variant_CustomApplicationPlugin.java" startLine="28" startPosition="66" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="2441084687258581574" fileName="Variant_CustomApplicationPlugin.java" startLine="27" startPosition="24" endLine="32" endPosition="7" />
+    <unitInfo nodeId="2441084687258581578" fileName="Variant_CustomApplicationPlugin.java" startLine="28" startPosition="26" endLine="32" endPosition="5" unitName="jetbrains.mps.ui.swing.plugin.Variant_CustomApplicationPlugin$1" />
   </root>
   <root nodeId="6661832029303965065">
     <nodeInfo nodeId="6661832029303965066" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="11" startPosition="0" endLine="12" endPosition="39" />

@@ -86,10 +86,10 @@
     <scopeInfo nodeId="5263857617435826130" fileName="EventHandlerTemplate_Editor.java" startLine="291" startPosition="113" endLine="292" endPosition="105" />
   </root>
   <root nodeId="8115675450774859615">
-    <nodeInfo nodeId="8115675450774864528" fileName="EventHandlerSetup_Editor.java" startLine="166" startPosition="31" endLine="167" endPosition="173" />
-    <nodeInfo nodeId="8115675450774895973" fileName="EventHandlerSetup_Editor.java" startLine="167" startPosition="173" endLine="168" endPosition="104" />
-    <scopeInfo nodeId="5703963167136663961" fileName="EventHandlerSetup_Editor.java" startLine="148" startPosition="31" endLine="149" endPosition="229" />
-    <scopeInfo nodeId="8115675450774864492" fileName="EventHandlerSetup_Editor.java" startLine="166" startPosition="31" endLine="169" endPosition="76">
+    <nodeInfo nodeId="8115675450774864528" fileName="EventHandlerSetup_Editor.java" startLine="165" startPosition="31" endLine="166" endPosition="173" />
+    <nodeInfo nodeId="8115675450774895973" fileName="EventHandlerSetup_Editor.java" startLine="166" startPosition="173" endLine="167" endPosition="104" />
+    <scopeInfo nodeId="5703963167136663961" fileName="EventHandlerSetup_Editor.java" startLine="147" startPosition="31" endLine="148" endPosition="229" />
+    <scopeInfo nodeId="8115675450774864492" fileName="EventHandlerSetup_Editor.java" startLine="165" startPosition="31" endLine="168" endPosition="76">
       <varInfo nodeId="8115675450774895974" varName="res" />
       <varInfo nodeId="8115675450774864529" varName="et" />
     </scopeInfo>
@@ -119,9 +119,9 @@
     <scopeInfo nodeId="2183143780361929157" fileName="RowLayoutConstraint_Editor.java" startLine="89" startPosition="111" endLine="90" endPosition="71" />
   </root>
   <root nodeId="8938819815716165295">
-    <nodeInfo nodeId="8938819815716373309" fileName="PropertyChangeHandlerSetup_Editor.java" startLine="146" startPosition="31" endLine="147" endPosition="226" />
-    <nodeInfo nodeId="8938819815716373319" fileName="PropertyChangeHandlerSetup_Editor.java" startLine="147" startPosition="226" endLine="148" endPosition="113" />
-    <scopeInfo nodeId="8938819815716373308" fileName="PropertyChangeHandlerSetup_Editor.java" startLine="146" startPosition="31" endLine="149" endPosition="76">
+    <nodeInfo nodeId="8938819815716373309" fileName="PropertyChangeHandlerSetup_Editor.java" startLine="145" startPosition="31" endLine="146" endPosition="226" />
+    <nodeInfo nodeId="8938819815716373319" fileName="PropertyChangeHandlerSetup_Editor.java" startLine="146" startPosition="226" endLine="147" endPosition="113" />
+    <scopeInfo nodeId="8938819815716373308" fileName="PropertyChangeHandlerSetup_Editor.java" startLine="145" startPosition="31" endLine="148" endPosition="76">
       <varInfo nodeId="8938819815716373320" varName="res" />
       <varInfo nodeId="8938819815716373310" varName="pt" />
     </scopeInfo>

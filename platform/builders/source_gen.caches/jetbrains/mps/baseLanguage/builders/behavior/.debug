@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2679357232284040708">
-    <nodeInfo nodeId="2679357232284045690" fileName="BeanPropertyBuilder_Behavior.java" startLine="63" startPosition="79" endLine="64" endPosition="26" />
-    <nodeInfo nodeId="2679357232284060656" fileName="BeanPropertyBuilder_Behavior.java" startLine="65" startPosition="29" endLine="66" endPosition="18" />
-    <nodeInfo nodeId="2679357232284060659" fileName="BeanPropertyBuilder_Behavior.java" startLine="68" startPosition="43" endLine="69" endPosition="18" />
-    <nodeInfo nodeId="2679357232284060685" fileName="BeanPropertyBuilder_Behavior.java" startLine="71" startPosition="49" endLine="72" endPosition="18" />
-    <nodeInfo nodeId="2679357232284060690" fileName="BeanPropertyBuilder_Behavior.java" startLine="73" startPosition="5" endLine="74" endPosition="58" />
-    <nodeInfo nodeId="2679357232284060647" fileName="BeanPropertyBuilder_Behavior.java" startLine="64" startPosition="26" endLine="67" endPosition="5" />
-    <nodeInfo nodeId="2679357232284045696" fileName="BeanPropertyBuilder_Behavior.java" startLine="67" startPosition="5" endLine="70" endPosition="5" />
-    <nodeInfo nodeId="2679357232284060663" fileName="BeanPropertyBuilder_Behavior.java" startLine="70" startPosition="5" endLine="73" endPosition="5" />
-    <scopeInfo nodeId="2679357232284040710" fileName="BeanPropertyBuilder_Behavior.java" startLine="24" startPosition="43" endLine="24" endPosition="43" />
-    <scopeInfo nodeId="2679357232284060727" fileName="BeanPropertyBuilder_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="229" />
-    <scopeInfo nodeId="2679357232284060739" fileName="BeanPropertyBuilder_Behavior.java" startLine="31" startPosition="105" endLine="32" endPosition="62" />
-    <scopeInfo nodeId="4797501453850342019" fileName="BeanPropertyBuilder_Behavior.java" startLine="35" startPosition="145" endLine="36" endPosition="160" />
-    <scopeInfo nodeId="2679357232284060648" fileName="BeanPropertyBuilder_Behavior.java" startLine="65" startPosition="29" endLine="66" endPosition="18" />
-    <scopeInfo nodeId="2679357232284045697" fileName="BeanPropertyBuilder_Behavior.java" startLine="68" startPosition="43" endLine="69" endPosition="18" />
-    <scopeInfo nodeId="2679357232284060664" fileName="BeanPropertyBuilder_Behavior.java" startLine="71" startPosition="49" endLine="72" endPosition="18" />
-    <scopeInfo nodeId="2679357232284040714" fileName="BeanPropertyBuilder_Behavior.java" startLine="63" startPosition="79" endLine="75" endPosition="73">
+    <nodeInfo nodeId="2679357232284045690" fileName="BeanPropertyBuilder_Behavior.java" startLine="62" startPosition="79" endLine="63" endPosition="26" />
+    <nodeInfo nodeId="2679357232284060656" fileName="BeanPropertyBuilder_Behavior.java" startLine="64" startPosition="29" endLine="65" endPosition="18" />
+    <nodeInfo nodeId="2679357232284060659" fileName="BeanPropertyBuilder_Behavior.java" startLine="67" startPosition="43" endLine="68" endPosition="18" />
+    <nodeInfo nodeId="2679357232284060685" fileName="BeanPropertyBuilder_Behavior.java" startLine="70" startPosition="49" endLine="71" endPosition="18" />
+    <nodeInfo nodeId="2679357232284060690" fileName="BeanPropertyBuilder_Behavior.java" startLine="72" startPosition="5" endLine="73" endPosition="58" />
+    <nodeInfo nodeId="2679357232284060647" fileName="BeanPropertyBuilder_Behavior.java" startLine="63" startPosition="26" endLine="66" endPosition="5" />
+    <nodeInfo nodeId="2679357232284045696" fileName="BeanPropertyBuilder_Behavior.java" startLine="66" startPosition="5" endLine="69" endPosition="5" />
+    <nodeInfo nodeId="2679357232284060663" fileName="BeanPropertyBuilder_Behavior.java" startLine="69" startPosition="5" endLine="72" endPosition="5" />
+    <scopeInfo nodeId="2679357232284040710" fileName="BeanPropertyBuilder_Behavior.java" startLine="23" startPosition="43" endLine="23" endPosition="43" />
+    <scopeInfo nodeId="2679357232284060727" fileName="BeanPropertyBuilder_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="229" />
+    <scopeInfo nodeId="2679357232284060739" fileName="BeanPropertyBuilder_Behavior.java" startLine="30" startPosition="105" endLine="31" endPosition="62" />
+    <scopeInfo nodeId="4797501453850342019" fileName="BeanPropertyBuilder_Behavior.java" startLine="34" startPosition="145" endLine="35" endPosition="160" />
+    <scopeInfo nodeId="2679357232284060648" fileName="BeanPropertyBuilder_Behavior.java" startLine="64" startPosition="29" endLine="65" endPosition="18" />
+    <scopeInfo nodeId="2679357232284045697" fileName="BeanPropertyBuilder_Behavior.java" startLine="67" startPosition="43" endLine="68" endPosition="18" />
+    <scopeInfo nodeId="2679357232284060664" fileName="BeanPropertyBuilder_Behavior.java" startLine="70" startPosition="49" endLine="71" endPosition="18" />
+    <scopeInfo nodeId="2679357232284040714" fileName="BeanPropertyBuilder_Behavior.java" startLine="62" startPosition="79" endLine="74" endPosition="73">
       <varInfo nodeId="2679357232284045691" varName="prefix" />
       <varInfo nodeId="2679357232284060691" varName="suffix" />
     </scopeInfo>
@@ -190,9 +190,9 @@
     <scopeInfo nodeId="6254726786820574445" fileName="SimpleBuilderExtensionDeclaration_Behavior.java" startLine="12" startPosition="89" endLine="13" endPosition="66" />
   </root>
   <root nodeId="6666322667909649857">
-    <scopeInfo nodeId="6666322667909649859" fileName="BeanBuilder_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
-    <scopeInfo nodeId="6666322667909649862" fileName="BeanBuilder_Behavior.java" startLine="24" startPosition="105" endLine="25" endPosition="208" />
-    <scopeInfo nodeId="6666322667909649866" fileName="BeanBuilder_Behavior.java" startLine="28" startPosition="81" endLine="29" endPosition="248" />
+    <scopeInfo nodeId="6666322667909649859" fileName="BeanBuilder_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
+    <scopeInfo nodeId="6666322667909649862" fileName="BeanBuilder_Behavior.java" startLine="23" startPosition="105" endLine="24" endPosition="208" />
+    <scopeInfo nodeId="6666322667909649866" fileName="BeanBuilder_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="248" />
   </root>
   <root nodeId="7057666463730306574">
     <nodeInfo nodeId="4797501453850305576" fileName="Builder_Behavior.java" startLine="41" startPosition="145" endLine="42" endPosition="46" />

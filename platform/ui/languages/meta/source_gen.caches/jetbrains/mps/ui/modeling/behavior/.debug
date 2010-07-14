@@ -233,9 +233,9 @@
     </scopeInfo>
   </root>
   <root nodeId="7798684637310718699">
-    <nodeInfo nodeId="7798684637310724160" fileName="ContainerItemIterator_Behavior.java" startLine="23" startPosition="83" endLine="24" endPosition="172" />
-    <scopeInfo nodeId="7798684637310718701" fileName="ContainerItemIterator_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="7798684637310718749" fileName="ContainerItemIterator_Behavior.java" startLine="23" startPosition="83" endLine="25" endPosition="94">
+    <nodeInfo nodeId="7798684637310724160" fileName="ContainerItemIterator_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="172" />
+    <scopeInfo nodeId="7798684637310718701" fileName="ContainerItemIterator_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="7798684637310718749" fileName="ContainerItemIterator_Behavior.java" startLine="22" startPosition="83" endLine="24" endPosition="94">
       <varInfo nodeId="7798684637310724161" varName="itype" />
     </scopeInfo>
   </root>

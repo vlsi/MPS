@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="6136676636350205595">
-    <nodeInfo nodeId="8861433211215309469" fileName="TypesystemDescriptor.java" startLine="51" startPosition="296" endLine="55" endPosition="0" />
-    <nodeInfo nodeId="5277715307557177118" fileName="TypesystemDescriptor.java" startLine="60" startPosition="296" endLine="64" endPosition="0" />
-    <nodeInfo nodeId="8861433211215307899" fileName="TypesystemDescriptor.java" startLine="50" startPosition="99" endLine="55" endPosition="9" />
-    <nodeInfo nodeId="5277715307557177107" fileName="TypesystemDescriptor.java" startLine="59" startPosition="132" endLine="64" endPosition="9" />
-    <scopeInfo nodeId="8861433211215309469" fileName="TypesystemDescriptor.java" startLine="52" startPosition="52" endLine="53" endPosition="67" />
-    <scopeInfo nodeId="5277715307557177118" fileName="TypesystemDescriptor.java" startLine="61" startPosition="52" endLine="62" endPosition="67" />
-    <scopeInfo nodeId="8861433211215309469" fileName="TypesystemDescriptor.java" startLine="51" startPosition="296" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="5277715307557177118" fileName="TypesystemDescriptor.java" startLine="60" startPosition="296" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="6136676636350205601" fileName="TypesystemDescriptor.java" startLine="50" startPosition="99" endLine="56" endPosition="198">
+    <nodeInfo nodeId="8861433211215309469" fileName="TypesystemDescriptor.java" startLine="50" startPosition="296" endLine="54" endPosition="0" />
+    <nodeInfo nodeId="5277715307557177118" fileName="TypesystemDescriptor.java" startLine="59" startPosition="296" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="8861433211215307899" fileName="TypesystemDescriptor.java" startLine="49" startPosition="99" endLine="54" endPosition="9" />
+    <nodeInfo nodeId="5277715307557177107" fileName="TypesystemDescriptor.java" startLine="58" startPosition="132" endLine="63" endPosition="9" />
+    <scopeInfo nodeId="8861433211215309469" fileName="TypesystemDescriptor.java" startLine="51" startPosition="52" endLine="52" endPosition="67" />
+    <scopeInfo nodeId="5277715307557177118" fileName="TypesystemDescriptor.java" startLine="60" startPosition="52" endLine="61" endPosition="67" />
+    <scopeInfo nodeId="8861433211215309469" fileName="TypesystemDescriptor.java" startLine="50" startPosition="296" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="5277715307557177118" fileName="TypesystemDescriptor.java" startLine="59" startPosition="296" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="6136676636350205601" fileName="TypesystemDescriptor.java" startLine="49" startPosition="99" endLine="55" endPosition="198">
       <varInfo nodeId="8861433211215307900" varName="operators" />
     </scopeInfo>
-    <scopeInfo nodeId="6136676636350307649" fileName="TypesystemDescriptor.java" startLine="59" startPosition="132" endLine="65" endPosition="153">
+    <scopeInfo nodeId="6136676636350307649" fileName="TypesystemDescriptor.java" startLine="58" startPosition="132" endLine="64" endPosition="153">
       <varInfo nodeId="5277715307557177108" varName="operators" />
     </scopeInfo>
-    <unitInfo nodeId="8861433211215309469" fileName="TypesystemDescriptor.java" startLine="51" startPosition="266" endLine="55" endPosition="7" unitName="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.TypesystemDescriptor$1" />
-    <unitInfo nodeId="5277715307557177118" fileName="TypesystemDescriptor.java" startLine="60" startPosition="266" endLine="64" endPosition="7" unitName="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.TypesystemDescriptor$2" />
+    <unitInfo nodeId="8861433211215309469" fileName="TypesystemDescriptor.java" startLine="50" startPosition="266" endLine="54" endPosition="7" unitName="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.TypesystemDescriptor$1" />
+    <unitInfo nodeId="5277715307557177118" fileName="TypesystemDescriptor.java" startLine="59" startPosition="266" endLine="63" endPosition="7" unitName="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.TypesystemDescriptor$2" />
   </root>
   <root nodeId="6677452554239169670">
     <nodeInfo nodeId="6677452554239169677" fileName="typeof_LeftOperand_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="53" />

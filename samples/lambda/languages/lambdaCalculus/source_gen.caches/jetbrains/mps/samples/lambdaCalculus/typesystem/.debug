@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1888188276221754553">
-    <nodeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="105" />
-    <nodeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="24" startPosition="105" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="226" />
-    <nodeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="26" startPosition="226" endLine="27" endPosition="364" />
-    <nodeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="22" startPosition="108" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="23" startPosition="5" endLine="27" endPosition="364" />
-    <scopeInfo nodeId="1888188276221754554" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="22" startPosition="108" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="105" />
+    <nodeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="23" startPosition="105" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="226" />
+    <nodeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="25" startPosition="226" endLine="26" endPosition="364" />
+    <nodeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="21" startPosition="108" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="364" />
+    <scopeInfo nodeId="1888188276221754554" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="21" startPosition="108" endLine="27" endPosition="5" />
   </root>
   <root nodeId="1888188276221891147">
-    <nodeInfo nodeId="1888188276221891155" fileName="typeof_BinaryStringOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="63" />
-    <nodeInfo nodeId="1888188276221891155" fileName="typeof_BinaryStringOperation_InferenceRule.java" startLine="23" startPosition="63" endLine="24" endPosition="53" />
-    <nodeInfo nodeId="1888188276221891155" fileName="typeof_BinaryStringOperation_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="226" />
-    <nodeInfo nodeId="1888188276221891155" fileName="typeof_BinaryStringOperation_InferenceRule.java" startLine="25" startPosition="226" endLine="26" endPosition="363" />
-    <nodeInfo nodeId="1888188276221891155" fileName="typeof_BinaryStringOperation_InferenceRule.java" startLine="21" startPosition="107" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="1888188276221891155" fileName="typeof_BinaryStringOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="363" />
-    <scopeInfo nodeId="1888188276221891148" fileName="typeof_BinaryStringOperation_InferenceRule.java" startLine="21" startPosition="107" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1888188276221891155" fileName="typeof_BinaryStringOperation_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="63" />
+    <nodeInfo nodeId="1888188276221891155" fileName="typeof_BinaryStringOperation_InferenceRule.java" startLine="22" startPosition="63" endLine="23" endPosition="53" />
+    <nodeInfo nodeId="1888188276221891155" fileName="typeof_BinaryStringOperation_InferenceRule.java" startLine="23" startPosition="53" endLine="24" endPosition="226" />
+    <nodeInfo nodeId="1888188276221891155" fileName="typeof_BinaryStringOperation_InferenceRule.java" startLine="24" startPosition="226" endLine="25" endPosition="363" />
+    <nodeInfo nodeId="1888188276221891155" fileName="typeof_BinaryStringOperation_InferenceRule.java" startLine="20" startPosition="107" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="1888188276221891155" fileName="typeof_BinaryStringOperation_InferenceRule.java" startLine="21" startPosition="5" endLine="25" endPosition="363" />
+    <scopeInfo nodeId="1888188276221891148" fileName="typeof_BinaryStringOperation_InferenceRule.java" startLine="20" startPosition="107" endLine="26" endPosition="5" />
   </root>
   <root nodeId="3777111214477754429">
     <nodeInfo nodeId="3777111214477757400" fileName="typeof_MultipleExpression_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="60" />
@@ -28,60 +28,60 @@
     <scopeInfo nodeId="3777111214477754430" fileName="typeof_MultipleExpression_InferenceRule.java" startLine="19" startPosition="104" endLine="25" endPosition="5" />
   </root>
   <root nodeId="4530871765544527018">
-    <nodeInfo nodeId="4530871765544543924" fileName="typeof_NumericConstant_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="57" />
-    <nodeInfo nodeId="4530871765544543924" fileName="typeof_NumericConstant_InferenceRule.java" startLine="23" startPosition="57" endLine="24" endPosition="53" />
-    <nodeInfo nodeId="4530871765544543924" fileName="typeof_NumericConstant_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="226" />
-    <nodeInfo nodeId="4530871765544543924" fileName="typeof_NumericConstant_InferenceRule.java" startLine="25" startPosition="226" endLine="26" endPosition="357" />
-    <nodeInfo nodeId="4530871765544543924" fileName="typeof_NumericConstant_InferenceRule.java" startLine="21" startPosition="101" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="4530871765544543924" fileName="typeof_NumericConstant_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="357" />
-    <scopeInfo nodeId="4530871765544527019" fileName="typeof_NumericConstant_InferenceRule.java" startLine="21" startPosition="101" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="4530871765544543924" fileName="typeof_NumericConstant_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="57" />
+    <nodeInfo nodeId="4530871765544543924" fileName="typeof_NumericConstant_InferenceRule.java" startLine="22" startPosition="57" endLine="23" endPosition="53" />
+    <nodeInfo nodeId="4530871765544543924" fileName="typeof_NumericConstant_InferenceRule.java" startLine="23" startPosition="53" endLine="24" endPosition="226" />
+    <nodeInfo nodeId="4530871765544543924" fileName="typeof_NumericConstant_InferenceRule.java" startLine="24" startPosition="226" endLine="25" endPosition="357" />
+    <nodeInfo nodeId="4530871765544543924" fileName="typeof_NumericConstant_InferenceRule.java" startLine="20" startPosition="101" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="4530871765544543924" fileName="typeof_NumericConstant_InferenceRule.java" startLine="21" startPosition="5" endLine="25" endPosition="357" />
+    <scopeInfo nodeId="4530871765544527019" fileName="typeof_NumericConstant_InferenceRule.java" startLine="20" startPosition="101" endLine="26" endPosition="5" />
   </root>
   <root nodeId="4530871765544527021">
-    <nodeInfo nodeId="4530871765544529988" fileName="typeof_StringConstant_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="56" />
-    <nodeInfo nodeId="4530871765544529988" fileName="typeof_StringConstant_InferenceRule.java" startLine="23" startPosition="56" endLine="24" endPosition="53" />
-    <nodeInfo nodeId="4530871765544529988" fileName="typeof_StringConstant_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="226" />
-    <nodeInfo nodeId="4530871765544529988" fileName="typeof_StringConstant_InferenceRule.java" startLine="25" startPosition="226" endLine="26" endPosition="356" />
-    <nodeInfo nodeId="4530871765544529988" fileName="typeof_StringConstant_InferenceRule.java" startLine="21" startPosition="100" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="4530871765544529988" fileName="typeof_StringConstant_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="356" />
-    <scopeInfo nodeId="4530871765544527022" fileName="typeof_StringConstant_InferenceRule.java" startLine="21" startPosition="100" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="4530871765544529988" fileName="typeof_StringConstant_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="56" />
+    <nodeInfo nodeId="4530871765544529988" fileName="typeof_StringConstant_InferenceRule.java" startLine="22" startPosition="56" endLine="23" endPosition="53" />
+    <nodeInfo nodeId="4530871765544529988" fileName="typeof_StringConstant_InferenceRule.java" startLine="23" startPosition="53" endLine="24" endPosition="226" />
+    <nodeInfo nodeId="4530871765544529988" fileName="typeof_StringConstant_InferenceRule.java" startLine="24" startPosition="226" endLine="25" endPosition="356" />
+    <nodeInfo nodeId="4530871765544529988" fileName="typeof_StringConstant_InferenceRule.java" startLine="20" startPosition="100" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="4530871765544529988" fileName="typeof_StringConstant_InferenceRule.java" startLine="21" startPosition="5" endLine="25" endPosition="356" />
+    <scopeInfo nodeId="4530871765544527022" fileName="typeof_StringConstant_InferenceRule.java" startLine="20" startPosition="100" endLine="26" endPosition="5" />
   </root>
   <root nodeId="4530871765544543935">
-    <nodeInfo nodeId="247065157659474768" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="27" startPosition="103" endLine="28" endPosition="99" />
-    <nodeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="29" startPosition="5" endLine="30" endPosition="59" />
-    <nodeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="30" startPosition="59" endLine="31" endPosition="53" />
-    <nodeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="31" startPosition="53" endLine="32" endPosition="225" />
-    <nodeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="32" startPosition="225" endLine="33" endPosition="340" />
-    <nodeInfo nodeId="247065157659474777" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="34" startPosition="5" endLine="35" endPosition="107" />
-    <nodeInfo nodeId="247065157659474781" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="35" startPosition="107" endLine="36" endPosition="25" />
-    <nodeInfo nodeId="247065157659474785" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="36" startPosition="25" endLine="37" endPosition="55" />
-    <nodeInfo nodeId="247065157659474793" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="38" startPosition="88" endLine="39" endPosition="66" />
-    <nodeInfo nodeId="247065157659474805" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="41" startPosition="38" endLine="42" endPosition="101" />
-    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="43" startPosition="7" endLine="44" endPosition="48" />
-    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="44" startPosition="48" endLine="45" endPosition="55" />
-    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="45" startPosition="55" endLine="46" endPosition="227" />
-    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="46" startPosition="227" endLine="47" endPosition="342" />
-    <nodeInfo nodeId="247065157659474812" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="48" startPosition="7" endLine="49" endPosition="220" />
-    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="51" startPosition="5" endLine="52" endPosition="104" />
-    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="52" startPosition="104" endLine="53" endPosition="53" />
-    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="53" startPosition="53" endLine="54" endPosition="225" />
-    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="54" startPosition="225" endLine="55" endPosition="259" />
-    <nodeInfo nodeId="247065157659474791" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="37" startPosition="55" endLine="40" endPosition="5" />
-    <nodeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="28" startPosition="99" endLine="34" endPosition="5" />
-    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="42" startPosition="101" endLine="48" endPosition="7" />
-    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="50" startPosition="5" endLine="56" endPosition="5" />
-    <nodeInfo nodeId="247065157659474803" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="40" startPosition="5" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="247065157659474792" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="38" startPosition="88" endLine="39" endPosition="66" />
-    <scopeInfo nodeId="247065157659474791" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="37" startPosition="55" endLine="40" endPosition="5">
+    <nodeInfo nodeId="247065157659474768" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="26" startPosition="103" endLine="27" endPosition="99" />
+    <nodeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="28" startPosition="5" endLine="29" endPosition="59" />
+    <nodeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="29" startPosition="59" endLine="30" endPosition="53" />
+    <nodeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="30" startPosition="53" endLine="31" endPosition="225" />
+    <nodeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="31" startPosition="225" endLine="32" endPosition="340" />
+    <nodeInfo nodeId="247065157659474777" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="33" startPosition="5" endLine="34" endPosition="107" />
+    <nodeInfo nodeId="247065157659474781" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="34" startPosition="107" endLine="35" endPosition="25" />
+    <nodeInfo nodeId="247065157659474785" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="35" startPosition="25" endLine="36" endPosition="55" />
+    <nodeInfo nodeId="247065157659474793" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="37" startPosition="88" endLine="38" endPosition="66" />
+    <nodeInfo nodeId="247065157659474805" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="40" startPosition="38" endLine="41" endPosition="101" />
+    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="42" startPosition="7" endLine="43" endPosition="48" />
+    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="43" startPosition="48" endLine="44" endPosition="55" />
+    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="44" startPosition="55" endLine="45" endPosition="227" />
+    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="45" startPosition="227" endLine="46" endPosition="342" />
+    <nodeInfo nodeId="247065157659474812" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="47" startPosition="7" endLine="48" endPosition="220" />
+    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="50" startPosition="5" endLine="51" endPosition="104" />
+    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="51" startPosition="104" endLine="52" endPosition="53" />
+    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="52" startPosition="53" endLine="53" endPosition="225" />
+    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="53" startPosition="225" endLine="54" endPosition="259" />
+    <nodeInfo nodeId="247065157659474791" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="36" startPosition="55" endLine="39" endPosition="5" />
+    <nodeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="27" startPosition="99" endLine="33" endPosition="5" />
+    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="41" startPosition="101" endLine="47" endPosition="7" />
+    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="49" startPosition="5" endLine="55" endPosition="5" />
+    <nodeInfo nodeId="247065157659474803" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="39" startPosition="5" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="247065157659474792" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="37" startPosition="88" endLine="38" endPosition="66" />
+    <scopeInfo nodeId="247065157659474791" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="36" startPosition="55" endLine="39" endPosition="5">
       <varInfo nodeId="247065157659474801" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="29" startPosition="5" endLine="33" endPosition="340" />
-    <scopeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="43" startPosition="7" endLine="47" endPosition="342" />
-    <scopeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="51" startPosition="5" endLine="55" endPosition="259" />
-    <scopeInfo nodeId="247065157659474804" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="41" startPosition="38" endLine="49" endPosition="220" />
-    <scopeInfo nodeId="247065157659474803" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="40" startPosition="5" endLine="50" endPosition="5">
+    <scopeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="28" startPosition="5" endLine="32" endPosition="340" />
+    <scopeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="42" startPosition="7" endLine="46" endPosition="342" />
+    <scopeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="50" startPosition="5" endLine="54" endPosition="259" />
+    <scopeInfo nodeId="247065157659474804" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="40" startPosition="38" endLine="48" endPosition="220" />
+    <scopeInfo nodeId="247065157659474803" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="39" startPosition="5" endLine="49" endPosition="5">
       <varInfo nodeId="247065157659474824" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4530871765544543936" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="27" startPosition="103" endLine="56" endPosition="5">
+    <scopeInfo nodeId="4530871765544543936" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="26" startPosition="103" endLine="55" endPosition="5">
       <varInfo nodeId="247065157659474778" varName="result" />
       <varInfo nodeId="247065157659474786" varName="reversedNodes" />
       <varInfo nodeId="247065157659474782" varName="first" />
@@ -103,42 +103,42 @@
     <scopeInfo nodeId="6645816968628516759" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="18" startPosition="101" endLine="30" endPosition="5" />
   </root>
   <root nodeId="6645816968628542130">
-    <nodeInfo nodeId="627759474950188093" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="27" startPosition="103" endLine="28" endPosition="99" />
-    <nodeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="29" startPosition="5" endLine="30" endPosition="100" />
-    <nodeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="30" startPosition="100" endLine="31" endPosition="53" />
-    <nodeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="31" startPosition="53" endLine="32" endPosition="225" />
-    <nodeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="32" startPosition="225" endLine="33" endPosition="340" />
-    <nodeInfo nodeId="627759474950193488" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="34" startPosition="5" endLine="35" endPosition="107" />
-    <nodeInfo nodeId="627759474950193562" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="35" startPosition="107" endLine="36" endPosition="25" />
-    <nodeInfo nodeId="6997567109318329761" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="36" startPosition="25" endLine="37" endPosition="55" />
-    <nodeInfo nodeId="6997567109318355510" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="38" startPosition="88" endLine="39" endPosition="66" />
-    <nodeInfo nodeId="6115593414628019700" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="41" startPosition="38" endLine="42" endPosition="102" />
-    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="43" startPosition="7" endLine="44" endPosition="48" />
-    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="44" startPosition="48" endLine="45" endPosition="55" />
-    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="45" startPosition="55" endLine="46" endPosition="227" />
-    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="46" startPosition="227" endLine="47" endPosition="343" />
-    <nodeInfo nodeId="6997567109318355518" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="48" startPosition="7" endLine="49" endPosition="221" />
-    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="51" startPosition="5" endLine="52" endPosition="59" />
-    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="52" startPosition="59" endLine="53" endPosition="53" />
-    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="53" startPosition="53" endLine="54" endPosition="226" />
-    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="54" startPosition="226" endLine="55" endPosition="260" />
-    <nodeInfo nodeId="6997567109318334060" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="37" startPosition="55" endLine="40" endPosition="5" />
-    <nodeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="28" startPosition="99" endLine="34" endPosition="5" />
-    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="42" startPosition="102" endLine="48" endPosition="7" />
-    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="50" startPosition="5" endLine="56" endPosition="5" />
-    <nodeInfo nodeId="627759474950185098" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="40" startPosition="5" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="6997567109318334061" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="38" startPosition="88" endLine="39" endPosition="66" />
-    <scopeInfo nodeId="6997567109318334060" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="37" startPosition="55" endLine="40" endPosition="5">
+    <nodeInfo nodeId="627759474950188093" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="26" startPosition="103" endLine="27" endPosition="99" />
+    <nodeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="28" startPosition="5" endLine="29" endPosition="100" />
+    <nodeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="29" startPosition="100" endLine="30" endPosition="53" />
+    <nodeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="30" startPosition="53" endLine="31" endPosition="225" />
+    <nodeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="31" startPosition="225" endLine="32" endPosition="340" />
+    <nodeInfo nodeId="627759474950193488" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="33" startPosition="5" endLine="34" endPosition="107" />
+    <nodeInfo nodeId="627759474950193562" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="34" startPosition="107" endLine="35" endPosition="25" />
+    <nodeInfo nodeId="6997567109318329761" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="35" startPosition="25" endLine="36" endPosition="55" />
+    <nodeInfo nodeId="6997567109318355510" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="37" startPosition="88" endLine="38" endPosition="66" />
+    <nodeInfo nodeId="6115593414628019700" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="40" startPosition="38" endLine="41" endPosition="102" />
+    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="42" startPosition="7" endLine="43" endPosition="48" />
+    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="43" startPosition="48" endLine="44" endPosition="55" />
+    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="44" startPosition="55" endLine="45" endPosition="227" />
+    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="45" startPosition="227" endLine="46" endPosition="343" />
+    <nodeInfo nodeId="6997567109318355518" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="47" startPosition="7" endLine="48" endPosition="221" />
+    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="50" startPosition="5" endLine="51" endPosition="59" />
+    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="51" startPosition="59" endLine="52" endPosition="53" />
+    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="52" startPosition="53" endLine="53" endPosition="226" />
+    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="53" startPosition="226" endLine="54" endPosition="260" />
+    <nodeInfo nodeId="6997567109318334060" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="36" startPosition="55" endLine="39" endPosition="5" />
+    <nodeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="27" startPosition="99" endLine="33" endPosition="5" />
+    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="41" startPosition="102" endLine="47" endPosition="7" />
+    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="49" startPosition="5" endLine="55" endPosition="5" />
+    <nodeInfo nodeId="627759474950185098" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="39" startPosition="5" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="6997567109318334061" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="37" startPosition="88" endLine="38" endPosition="66" />
+    <scopeInfo nodeId="6997567109318334060" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="36" startPosition="55" endLine="39" endPosition="5">
       <varInfo nodeId="6997567109318334064" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="29" startPosition="5" endLine="33" endPosition="340" />
-    <scopeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="43" startPosition="7" endLine="47" endPosition="343" />
-    <scopeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="51" startPosition="5" endLine="55" endPosition="260" />
-    <scopeInfo nodeId="627759474950185099" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="41" startPosition="38" endLine="49" endPosition="221" />
-    <scopeInfo nodeId="627759474950185098" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="40" startPosition="5" endLine="50" endPosition="5">
+    <scopeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="28" startPosition="5" endLine="32" endPosition="340" />
+    <scopeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="42" startPosition="7" endLine="46" endPosition="343" />
+    <scopeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="50" startPosition="5" endLine="54" endPosition="260" />
+    <scopeInfo nodeId="627759474950185099" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="40" startPosition="38" endLine="48" endPosition="221" />
+    <scopeInfo nodeId="627759474950185098" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="39" startPosition="5" endLine="49" endPosition="5">
       <varInfo nodeId="627759474950185102" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6645816968628542131" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="27" startPosition="103" endLine="56" endPosition="5">
+    <scopeInfo nodeId="6645816968628542131" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="26" startPosition="103" endLine="55" endPosition="5">
       <varInfo nodeId="627759474950193489" varName="result" />
       <varInfo nodeId="6997567109318329762" varName="reversedNodes" />
       <varInfo nodeId="627759474950193563" varName="first" />

@@ -22,67 +22,67 @@
     </scopeInfo>
   </root>
   <root nodeId="8905126934806239993">
-    <nodeInfo nodeId="2441084687258555592" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="58" startPosition="76" endLine="59" endPosition="159" />
-    <nodeInfo nodeId="2441084687258555646" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="65" startPosition="24" endLine="66" endPosition="193" />
-    <nodeInfo nodeId="2441084687258555685" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="67" startPosition="5" endLine="68" endPosition="380" />
-    <nodeInfo nodeId="8717063129899257758" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="68" startPosition="380" endLine="69" endPosition="71" />
-    <nodeInfo nodeId="8717063129899258315" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="69" startPosition="71" endLine="70" endPosition="66" />
-    <nodeInfo nodeId="8717063129899258350" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="72" startPosition="36" endLine="73" endPosition="25" />
-    <nodeInfo nodeId="8717063129899258358" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="73" startPosition="25" endLine="74" endPosition="14" />
-    <nodeInfo nodeId="8717063129899257778" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="77" startPosition="28" endLine="78" endPosition="123" />
-    <nodeInfo nodeId="8717063129899258324" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="81" startPosition="37" endLine="82" endPosition="28" />
-    <nodeInfo nodeId="8717063129899258331" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="82" startPosition="28" endLine="83" endPosition="14" />
-    <nodeInfo nodeId="8717063129899258342" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="86" startPosition="31" endLine="87" endPosition="82" />
-    <nodeInfo nodeId="2441084687258535817" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="95" startPosition="94" endLine="96" endPosition="159" />
-    <nodeInfo nodeId="2441084687258555636" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="64" startPosition="7" endLine="67" endPosition="5" />
-    <nodeInfo nodeId="8717063129899258360" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="76" startPosition="5" endLine="79" endPosition="5" />
-    <nodeInfo nodeId="8717063129899258333" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="85" startPosition="5" endLine="88" endPosition="5" />
-    <nodeInfo nodeId="2441084687258555625" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="60" startPosition="129" endLine="64" endPosition="0" />
-    <nodeInfo nodeId="8717063129899257766" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="71" startPosition="112" endLine="75" endPosition="7" />
-    <nodeInfo nodeId="8717063129899258290" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="80" startPosition="98" endLine="84" endPosition="7" />
-    <nodeInfo nodeId="2441084687258535894" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="97" startPosition="191" endLine="101" endPosition="0" />
-    <nodeInfo nodeId="2441084687258555026" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="101" startPosition="68" endLine="105" endPosition="0" />
-    <nodeInfo nodeId="2441084687258535906" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="105" startPosition="46" endLine="109" endPosition="0" />
-    <nodeInfo nodeId="2441084687258555617" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="59" startPosition="159" endLine="64" endPosition="7" />
-    <nodeInfo nodeId="8717063129899256929" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="70" startPosition="66" endLine="76" endPosition="5" />
-    <nodeInfo nodeId="8717063129899258283" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="79" startPosition="5" endLine="85" endPosition="5" />
-    <nodeInfo nodeId="2441084687258535883" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="96" startPosition="159" endLine="109" endPosition="7" />
-    <scopeInfo nodeId="8905126934806239995" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="54" startPosition="85" endLine="55" endPosition="57" />
-    <scopeInfo nodeId="2441084687258555626" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="61" startPosition="40" endLine="62" endPosition="73" />
-    <scopeInfo nodeId="2441084687258555637" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="65" startPosition="24" endLine="66" endPosition="193" />
-    <scopeInfo nodeId="8717063129899258361" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="77" startPosition="28" endLine="78" endPosition="123" />
-    <scopeInfo nodeId="8717063129899258334" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="86" startPosition="31" endLine="87" endPosition="82" />
-    <scopeInfo nodeId="2441084687258535895" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="98" startPosition="40" endLine="99" endPosition="73" />
-    <scopeInfo nodeId="2441084687258555027" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="102" startPosition="50" endLine="103" endPosition="175" />
-    <scopeInfo nodeId="2441084687258535907" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="106" startPosition="38" endLine="107" endPosition="132" />
-    <scopeInfo nodeId="8717063129899257768" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="72" startPosition="36" endLine="74" endPosition="14" />
-    <scopeInfo nodeId="8717063129899258292" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="81" startPosition="37" endLine="83" endPosition="14" />
-    <scopeInfo nodeId="2441084687258555625" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="60" startPosition="129" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="8717063129899256930" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="71" startPosition="112" endLine="75" endPosition="7" />
-    <scopeInfo nodeId="8717063129899258284" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="80" startPosition="98" endLine="84" endPosition="7" />
-    <scopeInfo nodeId="2441084687258535894" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="97" startPosition="191" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="2441084687258555026" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="101" startPosition="68" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="2441084687258535906" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="105" startPosition="46" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="8717063129899256929" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="70" startPosition="66" endLine="76" endPosition="5">
+    <nodeInfo nodeId="2441084687258555592" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="57" startPosition="76" endLine="58" endPosition="159" />
+    <nodeInfo nodeId="2441084687258555646" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="64" startPosition="24" endLine="65" endPosition="193" />
+    <nodeInfo nodeId="2441084687258555685" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="66" startPosition="5" endLine="67" endPosition="380" />
+    <nodeInfo nodeId="8717063129899257758" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="67" startPosition="380" endLine="68" endPosition="71" />
+    <nodeInfo nodeId="8717063129899258315" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="68" startPosition="71" endLine="69" endPosition="66" />
+    <nodeInfo nodeId="8717063129899258350" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="71" startPosition="36" endLine="72" endPosition="25" />
+    <nodeInfo nodeId="8717063129899258358" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="72" startPosition="25" endLine="73" endPosition="14" />
+    <nodeInfo nodeId="8717063129899257778" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="76" startPosition="28" endLine="77" endPosition="123" />
+    <nodeInfo nodeId="8717063129899258324" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="80" startPosition="37" endLine="81" endPosition="28" />
+    <nodeInfo nodeId="8717063129899258331" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="81" startPosition="28" endLine="82" endPosition="14" />
+    <nodeInfo nodeId="8717063129899258342" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="85" startPosition="31" endLine="86" endPosition="82" />
+    <nodeInfo nodeId="2441084687258535817" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="94" startPosition="94" endLine="95" endPosition="159" />
+    <nodeInfo nodeId="2441084687258555636" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="63" startPosition="7" endLine="66" endPosition="5" />
+    <nodeInfo nodeId="8717063129899258360" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="75" startPosition="5" endLine="78" endPosition="5" />
+    <nodeInfo nodeId="8717063129899258333" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="84" startPosition="5" endLine="87" endPosition="5" />
+    <nodeInfo nodeId="2441084687258555625" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="59" startPosition="129" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="8717063129899257766" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="70" startPosition="112" endLine="74" endPosition="7" />
+    <nodeInfo nodeId="8717063129899258290" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="79" startPosition="98" endLine="83" endPosition="7" />
+    <nodeInfo nodeId="2441084687258535894" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="96" startPosition="191" endLine="100" endPosition="0" />
+    <nodeInfo nodeId="2441084687258555026" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="100" startPosition="68" endLine="104" endPosition="0" />
+    <nodeInfo nodeId="2441084687258535906" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="104" startPosition="46" endLine="108" endPosition="0" />
+    <nodeInfo nodeId="2441084687258555617" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="58" startPosition="159" endLine="63" endPosition="7" />
+    <nodeInfo nodeId="8717063129899256929" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="69" startPosition="66" endLine="75" endPosition="5" />
+    <nodeInfo nodeId="8717063129899258283" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="78" startPosition="5" endLine="84" endPosition="5" />
+    <nodeInfo nodeId="2441084687258535883" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="95" startPosition="159" endLine="108" endPosition="7" />
+    <scopeInfo nodeId="8905126934806239995" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="53" startPosition="85" endLine="54" endPosition="57" />
+    <scopeInfo nodeId="2441084687258555626" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="60" startPosition="40" endLine="61" endPosition="73" />
+    <scopeInfo nodeId="2441084687258555637" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="64" startPosition="24" endLine="65" endPosition="193" />
+    <scopeInfo nodeId="8717063129899258361" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="76" startPosition="28" endLine="77" endPosition="123" />
+    <scopeInfo nodeId="8717063129899258334" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="85" startPosition="31" endLine="86" endPosition="82" />
+    <scopeInfo nodeId="2441084687258535895" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="97" startPosition="40" endLine="98" endPosition="73" />
+    <scopeInfo nodeId="2441084687258555027" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="101" startPosition="50" endLine="102" endPosition="175" />
+    <scopeInfo nodeId="2441084687258535907" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="105" startPosition="38" endLine="106" endPosition="132" />
+    <scopeInfo nodeId="8717063129899257768" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="71" startPosition="36" endLine="73" endPosition="14" />
+    <scopeInfo nodeId="8717063129899258292" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="80" startPosition="37" endLine="82" endPosition="14" />
+    <scopeInfo nodeId="2441084687258555625" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="59" startPosition="129" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="8717063129899256930" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="70" startPosition="112" endLine="74" endPosition="7" />
+    <scopeInfo nodeId="8717063129899258284" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="79" startPosition="98" endLine="83" endPosition="7" />
+    <scopeInfo nodeId="2441084687258535894" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="96" startPosition="191" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="2441084687258555026" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="100" startPosition="68" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="2441084687258535906" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="104" startPosition="46" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="8717063129899256929" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="69" startPosition="66" endLine="75" endPosition="5">
       <varInfo nodeId="8717063129899256931" varName="depOn" />
     </scopeInfo>
-    <scopeInfo nodeId="8717063129899258283" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="79" startPosition="5" endLine="85" endPosition="5">
+    <scopeInfo nodeId="8717063129899258283" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="78" startPosition="5" endLine="84" endPosition="5">
       <varInfo nodeId="8717063129899258285" varName="eng" />
     </scopeInfo>
-    <scopeInfo nodeId="8905126934806239999" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="95" startPosition="94" endLine="110" endPosition="119">
+    <scopeInfo nodeId="8905126934806239999" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="94" startPosition="94" endLine="109" endPosition="119">
       <varInfo nodeId="2441084687258535884" varName="setgv" />
       <varInfo nodeId="2441084687258535818" varName="gv" />
     </scopeInfo>
-    <scopeInfo nodeId="8905126934806239997" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="58" startPosition="76" endLine="88" endPosition="5">
+    <scopeInfo nodeId="8905126934806239997" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="57" startPosition="76" endLine="87" endPosition="5">
       <varInfo nodeId="8717063129899257759" varName="langToDep" />
       <varInfo nodeId="2441084687258555593" varName="gv" />
       <varInfo nodeId="2441084687258555618" varName="ann" />
       <varInfo nodeId="8717063129899258316" varName="langRefToEng" />
     </scopeInfo>
-    <unitInfo nodeId="2441084687258555625" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="60" startPosition="106" endLine="64" endPosition="5" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$4" />
-    <unitInfo nodeId="2441084687258535894" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="97" startPosition="168" endLine="101" endPosition="5" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$1" />
-    <unitInfo nodeId="2441084687258555026" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="101" startPosition="38" endLine="105" endPosition="5" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$2" />
-    <unitInfo nodeId="2441084687258535906" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="105" startPosition="18" endLine="109" endPosition="5" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$3" />
+    <unitInfo nodeId="2441084687258555625" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="59" startPosition="106" endLine="63" endPosition="5" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$4" />
+    <unitInfo nodeId="2441084687258535894" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="96" startPosition="168" endLine="100" endPosition="5" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$1" />
+    <unitInfo nodeId="2441084687258555026" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="100" startPosition="38" endLine="104" endPosition="5" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$2" />
+    <unitInfo nodeId="2441084687258535906" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="104" startPosition="18" endLine="108" endPosition="5" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$3" />
   </root>
 </debugInfo>
 

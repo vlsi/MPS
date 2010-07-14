@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
@@ -42,7 +41,7 @@ public class Variant_CustomApplicationPlugin extends BaseCustomApplicationPlugin
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ApplicationPluginType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ApplicationPluginType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.addReference(SReference.create("plugin", quotedNode1_2, SModelReference.fromString("r:bf61c05e-83e1-433e-ab90-8fab5d35e6e3(jetbrains.mps.ui.gwt.plugin)"), SNodeId.fromString("8717063129899228997")));
         result = quotedNode1_2;
