@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1178176661263">
-    <nodeInfo nodeId="1178176661265" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="24" startPosition="90" endLine="25" endPosition="28" />
-    <nodeInfo nodeId="1382946559831657853" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="26" startPosition="150" endLine="27" endPosition="182" />
-    <nodeInfo nodeId="1382946559831657827" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="28" startPosition="12" endLine="29" endPosition="214" />
-    <nodeInfo nodeId="1212093388352" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="32" startPosition="7" endLine="33" endPosition="48" />
-    <nodeInfo nodeId="1212093388352" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="33" startPosition="48" endLine="34" endPosition="55" />
-    <nodeInfo nodeId="1212093388352" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="34" startPosition="55" endLine="35" endPosition="216" />
-    <nodeInfo nodeId="1212093388352" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="35" startPosition="216" endLine="36" endPosition="367" />
-    <nodeInfo nodeId="1212093393090" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="39" startPosition="7" endLine="40" endPosition="48" />
-    <nodeInfo nodeId="1212093393090" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="40" startPosition="48" endLine="41" endPosition="55" />
-    <nodeInfo nodeId="1212093393090" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="41" startPosition="55" endLine="42" endPosition="216" />
-    <nodeInfo nodeId="1212093393090" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="42" startPosition="216" endLine="43" endPosition="387" />
-    <nodeInfo nodeId="1382946559831657851" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="28" startPosition="10" endLine="30" endPosition="5" />
-    <nodeInfo nodeId="1382946559831657831" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="25" startPosition="28" endLine="30" endPosition="5" />
-    <nodeInfo nodeId="1212093388352" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="31" startPosition="38" endLine="37" endPosition="7" />
-    <nodeInfo nodeId="1212093393090" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="38" startPosition="12" endLine="44" endPosition="7" />
-    <nodeInfo nodeId="1178176661282" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="38" startPosition="10" endLine="45" endPosition="5" />
-    <nodeInfo nodeId="1178176661273" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="30" startPosition="5" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="1382946559831657832" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="26" startPosition="150" endLine="27" endPosition="182" />
-    <scopeInfo nodeId="1382946559831657852" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="28" startPosition="12" endLine="29" endPosition="214" />
-    <scopeInfo nodeId="1212093388352" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="32" startPosition="7" endLine="36" endPosition="367" />
-    <scopeInfo nodeId="1212093393090" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="39" startPosition="7" endLine="43" endPosition="387" />
-    <scopeInfo nodeId="1178176661277" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="31" startPosition="38" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="1178176661283" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="38" startPosition="12" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="1178176661264" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="24" startPosition="90" endLine="45" endPosition="5">
+    <nodeInfo nodeId="1178176661265" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="23" startPosition="90" endLine="24" endPosition="28" />
+    <nodeInfo nodeId="1382946559831657853" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="25" startPosition="150" endLine="26" endPosition="182" />
+    <nodeInfo nodeId="1382946559831657827" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="27" startPosition="12" endLine="28" endPosition="214" />
+    <nodeInfo nodeId="1212093388352" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="31" startPosition="7" endLine="32" endPosition="48" />
+    <nodeInfo nodeId="1212093388352" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="32" startPosition="48" endLine="33" endPosition="55" />
+    <nodeInfo nodeId="1212093388352" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="33" startPosition="55" endLine="34" endPosition="216" />
+    <nodeInfo nodeId="1212093388352" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="34" startPosition="216" endLine="35" endPosition="367" />
+    <nodeInfo nodeId="1212093393090" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="38" startPosition="7" endLine="39" endPosition="48" />
+    <nodeInfo nodeId="1212093393090" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="39" startPosition="48" endLine="40" endPosition="55" />
+    <nodeInfo nodeId="1212093393090" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="40" startPosition="55" endLine="41" endPosition="216" />
+    <nodeInfo nodeId="1212093393090" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="41" startPosition="216" endLine="42" endPosition="387" />
+    <nodeInfo nodeId="1382946559831657851" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="27" startPosition="10" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1382946559831657831" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="24" startPosition="28" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1212093388352" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="30" startPosition="38" endLine="36" endPosition="7" />
+    <nodeInfo nodeId="1212093393090" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="37" startPosition="12" endLine="43" endPosition="7" />
+    <nodeInfo nodeId="1178176661282" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="37" startPosition="10" endLine="44" endPosition="5" />
+    <nodeInfo nodeId="1178176661273" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="29" startPosition="5" endLine="44" endPosition="5" />
+    <scopeInfo nodeId="1382946559831657832" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="25" startPosition="150" endLine="26" endPosition="182" />
+    <scopeInfo nodeId="1382946559831657852" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="27" startPosition="12" endLine="28" endPosition="214" />
+    <scopeInfo nodeId="1212093388352" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="31" startPosition="7" endLine="35" endPosition="367" />
+    <scopeInfo nodeId="1212093393090" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="38" startPosition="7" endLine="42" endPosition="387" />
+    <scopeInfo nodeId="1178176661277" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="30" startPosition="38" endLine="36" endPosition="7" />
+    <scopeInfo nodeId="1178176661283" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="37" startPosition="12" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="1178176661264" fileName="typeof_ConstraintsFunctionParameter_node_InferenceRule.java" startLine="23" startPosition="90" endLine="44" endPosition="5">
       <varInfo nodeId="1178176661248" varName="applicableConcept" />
     </scopeInfo>
   </root>
@@ -47,83 +47,83 @@
     </scopeInfo>
   </root>
   <root nodeId="1178176661324">
-    <nodeInfo nodeId="1178176661326" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="24" startPosition="90" endLine="25" endPosition="218" />
-    <nodeInfo nodeId="3906442776579710312" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="26" startPosition="38" endLine="27" endPosition="212" />
-    <nodeInfo nodeId="1212097655290" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="30" startPosition="7" endLine="31" endPosition="48" />
-    <nodeInfo nodeId="1212097655290" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="31" startPosition="48" endLine="32" endPosition="55" />
-    <nodeInfo nodeId="1212097655290" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="32" startPosition="55" endLine="33" endPosition="216" />
-    <nodeInfo nodeId="1212097655290" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="33" startPosition="216" endLine="34" endPosition="375" />
-    <nodeInfo nodeId="1212097660325" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="37" startPosition="7" endLine="38" endPosition="48" />
-    <nodeInfo nodeId="1212097660325" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="38" startPosition="48" endLine="39" endPosition="55" />
-    <nodeInfo nodeId="1212097660325" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="39" startPosition="55" endLine="40" endPosition="216" />
-    <nodeInfo nodeId="1212097660325" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="40" startPosition="216" endLine="41" endPosition="395" />
-    <nodeInfo nodeId="3906442776579710302" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="25" startPosition="218" endLine="28" endPosition="5" />
-    <nodeInfo nodeId="1212097655290" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="29" startPosition="38" endLine="35" endPosition="7" />
-    <nodeInfo nodeId="1212097660325" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="36" startPosition="12" endLine="42" endPosition="7" />
-    <nodeInfo nodeId="1178176661343" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="36" startPosition="10" endLine="43" endPosition="5" />
-    <nodeInfo nodeId="1178176661334" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="28" startPosition="5" endLine="43" endPosition="5" />
-    <scopeInfo nodeId="3906442776579710303" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="26" startPosition="38" endLine="27" endPosition="212" />
-    <scopeInfo nodeId="1212097655290" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="30" startPosition="7" endLine="34" endPosition="375" />
-    <scopeInfo nodeId="1212097660325" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="37" startPosition="7" endLine="41" endPosition="395" />
-    <scopeInfo nodeId="1178176661338" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="29" startPosition="38" endLine="35" endPosition="7" />
-    <scopeInfo nodeId="1178176661344" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="36" startPosition="12" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="1178176661325" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="24" startPosition="90" endLine="43" endPosition="5">
+    <nodeInfo nodeId="1178176661326" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="23" startPosition="90" endLine="24" endPosition="218" />
+    <nodeInfo nodeId="3906442776579710312" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="25" startPosition="38" endLine="26" endPosition="212" />
+    <nodeInfo nodeId="1212097655290" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="29" startPosition="7" endLine="30" endPosition="48" />
+    <nodeInfo nodeId="1212097655290" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="30" startPosition="48" endLine="31" endPosition="55" />
+    <nodeInfo nodeId="1212097655290" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="31" startPosition="55" endLine="32" endPosition="216" />
+    <nodeInfo nodeId="1212097655290" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="32" startPosition="216" endLine="33" endPosition="375" />
+    <nodeInfo nodeId="1212097660325" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="36" startPosition="7" endLine="37" endPosition="48" />
+    <nodeInfo nodeId="1212097660325" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="37" startPosition="48" endLine="38" endPosition="55" />
+    <nodeInfo nodeId="1212097660325" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="38" startPosition="55" endLine="39" endPosition="216" />
+    <nodeInfo nodeId="1212097660325" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="39" startPosition="216" endLine="40" endPosition="395" />
+    <nodeInfo nodeId="3906442776579710302" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="24" startPosition="218" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1212097655290" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="28" startPosition="38" endLine="34" endPosition="7" />
+    <nodeInfo nodeId="1212097660325" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="35" startPosition="12" endLine="41" endPosition="7" />
+    <nodeInfo nodeId="1178176661343" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="35" startPosition="10" endLine="42" endPosition="5" />
+    <nodeInfo nodeId="1178176661334" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="27" startPosition="5" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="3906442776579710303" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="25" startPosition="38" endLine="26" endPosition="212" />
+    <scopeInfo nodeId="1212097655290" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="29" startPosition="7" endLine="33" endPosition="375" />
+    <scopeInfo nodeId="1212097660325" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="36" startPosition="7" endLine="40" endPosition="395" />
+    <scopeInfo nodeId="1178176661338" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="28" startPosition="38" endLine="34" endPosition="7" />
+    <scopeInfo nodeId="1178176661344" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="35" startPosition="12" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="1178176661325" fileName="typeof_ConstraintFunctionParameter_referenceNode_InferenceRule.java" startLine="23" startPosition="90" endLine="42" endPosition="5">
       <varInfo nodeId="1178176661255" varName="applicableConcept" />
     </scopeInfo>
   </root>
   <root nodeId="1178176661351">
-    <nodeInfo nodeId="1178176661353" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="23" startPosition="90" endLine="24" endPosition="237" />
-    <nodeInfo nodeId="1212097641578" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="26" startPosition="7" endLine="27" endPosition="48" />
-    <nodeInfo nodeId="1212097641578" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="27" startPosition="48" endLine="28" endPosition="55" />
-    <nodeInfo nodeId="1212097641578" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="28" startPosition="55" endLine="29" endPosition="216" />
-    <nodeInfo nodeId="1212097641578" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="29" startPosition="216" endLine="30" endPosition="377" />
-    <nodeInfo nodeId="1212097647395" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="33" startPosition="7" endLine="34" endPosition="48" />
-    <nodeInfo nodeId="1212097647395" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="34" startPosition="48" endLine="35" endPosition="55" />
-    <nodeInfo nodeId="1212097647395" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="35" startPosition="55" endLine="36" endPosition="216" />
-    <nodeInfo nodeId="1212097647395" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="36" startPosition="216" endLine="37" endPosition="393" />
-    <nodeInfo nodeId="1212097641578" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="25" startPosition="34" endLine="31" endPosition="7" />
-    <nodeInfo nodeId="1212097647395" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="32" startPosition="12" endLine="38" endPosition="7" />
-    <nodeInfo nodeId="1178176661372" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="32" startPosition="10" endLine="39" endPosition="5" />
-    <nodeInfo nodeId="1178176661363" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="24" startPosition="237" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="1212097641578" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="26" startPosition="7" endLine="30" endPosition="377" />
-    <scopeInfo nodeId="1212097647395" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="33" startPosition="7" endLine="37" endPosition="393" />
-    <scopeInfo nodeId="1178176661367" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="25" startPosition="34" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="1178176661373" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="32" startPosition="12" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="1178176661352" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="23" startPosition="90" endLine="39" endPosition="5">
+    <nodeInfo nodeId="1178176661353" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="22" startPosition="90" endLine="23" endPosition="237" />
+    <nodeInfo nodeId="1212097641578" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="25" startPosition="7" endLine="26" endPosition="48" />
+    <nodeInfo nodeId="1212097641578" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="26" startPosition="48" endLine="27" endPosition="55" />
+    <nodeInfo nodeId="1212097641578" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="27" startPosition="55" endLine="28" endPosition="216" />
+    <nodeInfo nodeId="1212097641578" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="28" startPosition="216" endLine="29" endPosition="377" />
+    <nodeInfo nodeId="1212097647395" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="32" startPosition="7" endLine="33" endPosition="48" />
+    <nodeInfo nodeId="1212097647395" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="33" startPosition="48" endLine="34" endPosition="55" />
+    <nodeInfo nodeId="1212097647395" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="34" startPosition="55" endLine="35" endPosition="216" />
+    <nodeInfo nodeId="1212097647395" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="35" startPosition="216" endLine="36" endPosition="393" />
+    <nodeInfo nodeId="1212097641578" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="24" startPosition="34" endLine="30" endPosition="7" />
+    <nodeInfo nodeId="1212097647395" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="31" startPosition="12" endLine="37" endPosition="7" />
+    <nodeInfo nodeId="1178176661372" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="31" startPosition="10" endLine="38" endPosition="5" />
+    <nodeInfo nodeId="1178176661363" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="23" startPosition="237" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="1212097641578" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="25" startPosition="7" endLine="29" endPosition="377" />
+    <scopeInfo nodeId="1212097647395" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="32" startPosition="7" endLine="36" endPosition="393" />
+    <scopeInfo nodeId="1178176661367" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="24" startPosition="34" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="1178176661373" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="31" startPosition="12" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="1178176661352" fileName="typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule.java" startLine="22" startPosition="90" endLine="38" endPosition="5">
       <varInfo nodeId="1178176661257" varName="targetConcept" />
     </scopeInfo>
   </root>
   <root nodeId="1178176661380">
-    <nodeInfo nodeId="1178176661382" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="23" startPosition="90" endLine="24" endPosition="237" />
-    <nodeInfo nodeId="1208198552377" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="26" startPosition="7" endLine="27" endPosition="48" />
-    <nodeInfo nodeId="1208198552377" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="27" startPosition="48" endLine="28" endPosition="55" />
-    <nodeInfo nodeId="1208198552377" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="28" startPosition="55" endLine="29" endPosition="216" />
-    <nodeInfo nodeId="1208198552377" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="29" startPosition="216" endLine="30" endPosition="377" />
-    <nodeInfo nodeId="1208198556678" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="33" startPosition="7" endLine="34" endPosition="48" />
-    <nodeInfo nodeId="1208198556678" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="34" startPosition="48" endLine="35" endPosition="55" />
-    <nodeInfo nodeId="1208198556678" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="35" startPosition="55" endLine="36" endPosition="216" />
-    <nodeInfo nodeId="1208198556678" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="36" startPosition="216" endLine="37" endPosition="393" />
-    <nodeInfo nodeId="1208198552377" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="25" startPosition="34" endLine="31" endPosition="7" />
-    <nodeInfo nodeId="1208198556678" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="32" startPosition="12" endLine="38" endPosition="7" />
-    <nodeInfo nodeId="1178176661401" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="32" startPosition="10" endLine="39" endPosition="5" />
-    <nodeInfo nodeId="1178176661392" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="24" startPosition="237" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="1208198552377" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="26" startPosition="7" endLine="30" endPosition="377" />
-    <scopeInfo nodeId="1208198556678" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="33" startPosition="7" endLine="37" endPosition="393" />
-    <scopeInfo nodeId="1178176661396" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="25" startPosition="34" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="1178176661402" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="32" startPosition="12" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="1178176661381" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="23" startPosition="90" endLine="39" endPosition="5">
+    <nodeInfo nodeId="1178176661382" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="22" startPosition="90" endLine="23" endPosition="237" />
+    <nodeInfo nodeId="1208198552377" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="25" startPosition="7" endLine="26" endPosition="48" />
+    <nodeInfo nodeId="1208198552377" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="26" startPosition="48" endLine="27" endPosition="55" />
+    <nodeInfo nodeId="1208198552377" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="27" startPosition="55" endLine="28" endPosition="216" />
+    <nodeInfo nodeId="1208198552377" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="28" startPosition="216" endLine="29" endPosition="377" />
+    <nodeInfo nodeId="1208198556678" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="32" startPosition="7" endLine="33" endPosition="48" />
+    <nodeInfo nodeId="1208198556678" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="33" startPosition="48" endLine="34" endPosition="55" />
+    <nodeInfo nodeId="1208198556678" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="34" startPosition="55" endLine="35" endPosition="216" />
+    <nodeInfo nodeId="1208198556678" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="35" startPosition="216" endLine="36" endPosition="393" />
+    <nodeInfo nodeId="1208198552377" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="24" startPosition="34" endLine="30" endPosition="7" />
+    <nodeInfo nodeId="1208198556678" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="31" startPosition="12" endLine="37" endPosition="7" />
+    <nodeInfo nodeId="1178176661401" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="31" startPosition="10" endLine="38" endPosition="5" />
+    <nodeInfo nodeId="1178176661392" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="23" startPosition="237" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="1208198552377" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="25" startPosition="7" endLine="29" endPosition="377" />
+    <scopeInfo nodeId="1208198556678" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="32" startPosition="7" endLine="36" endPosition="393" />
+    <scopeInfo nodeId="1178176661396" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="24" startPosition="34" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="1178176661402" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="31" startPosition="12" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="1178176661381" fileName="typeof_ConstraintFunctionParameter_newReferentNode_InferenceRule.java" startLine="22" startPosition="90" endLine="38" endPosition="5">
       <varInfo nodeId="1178176661260" varName="targetConcept" />
     </scopeInfo>
   </root>
   <root nodeId="1178176661409">
-    <nodeInfo nodeId="1178176661411" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="23" startPosition="94" endLine="24" endPosition="130" />
-    <nodeInfo nodeId="1212097673896" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="50" />
-    <nodeInfo nodeId="1212097673896" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="26" startPosition="50" endLine="27" endPosition="53" />
-    <nodeInfo nodeId="1212097673896" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="27" startPosition="53" endLine="28" endPosition="214" />
-    <nodeInfo nodeId="1212097673896" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="28" startPosition="214" endLine="29" endPosition="404" />
-    <nodeInfo nodeId="1212097673896" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="24" startPosition="130" endLine="30" endPosition="5" />
-    <scopeInfo nodeId="1212097673896" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="25" startPosition="5" endLine="29" endPosition="404" />
-    <scopeInfo nodeId="1178176661410" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="23" startPosition="94" endLine="30" endPosition="5">
+    <nodeInfo nodeId="1178176661411" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="22" startPosition="94" endLine="23" endPosition="130" />
+    <nodeInfo nodeId="1212097673896" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="50" />
+    <nodeInfo nodeId="1212097673896" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="25" startPosition="50" endLine="26" endPosition="53" />
+    <nodeInfo nodeId="1212097673896" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="26" startPosition="53" endLine="27" endPosition="214" />
+    <nodeInfo nodeId="1212097673896" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="27" startPosition="214" endLine="28" endPosition="404" />
+    <nodeInfo nodeId="1212097673896" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="23" startPosition="130" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="1212097673896" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="28" endPosition="404" />
+    <scopeInfo nodeId="1178176661410" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="22" startPosition="94" endLine="29" endPosition="5">
       <varInfo nodeId="1178176661262" varName="behaviour" />
     </scopeInfo>
   </root>
@@ -191,68 +191,68 @@
     </scopeInfo>
   </root>
   <root nodeId="2990203945683059376">
-    <nodeInfo nodeId="2990203945683059383" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="25" startPosition="135" endLine="26" endPosition="140" />
-    <nodeInfo nodeId="2990203945683059391" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="27" startPosition="7" endLine="28" endPosition="48" />
-    <nodeInfo nodeId="2990203945683059391" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="28" startPosition="48" endLine="29" endPosition="55" />
-    <nodeInfo nodeId="2990203945683059391" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="29" startPosition="55" endLine="30" endPosition="222" />
-    <nodeInfo nodeId="2990203945683059391" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="30" startPosition="222" endLine="31" endPosition="487" />
-    <nodeInfo nodeId="2990203945683059420" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="33" startPosition="142" endLine="34" endPosition="142" />
-    <nodeInfo nodeId="2990203945683059428" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="35" startPosition="7" endLine="36" endPosition="48" />
-    <nodeInfo nodeId="2990203945683059428" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="36" startPosition="48" endLine="37" endPosition="55" />
-    <nodeInfo nodeId="2990203945683059428" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="37" startPosition="55" endLine="38" endPosition="222" />
-    <nodeInfo nodeId="2990203945683059428" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="38" startPosition="222" endLine="39" endPosition="465" />
-    <nodeInfo nodeId="2990203945683059441" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="42" startPosition="7" endLine="43" endPosition="48" />
-    <nodeInfo nodeId="2990203945683059441" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="43" startPosition="48" endLine="44" endPosition="55" />
-    <nodeInfo nodeId="2990203945683059441" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="44" startPosition="55" endLine="45" endPosition="222" />
-    <nodeInfo nodeId="2990203945683059441" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="45" startPosition="222" endLine="46" endPosition="380" />
-    <nodeInfo nodeId="2990203945683059391" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="26" startPosition="140" endLine="32" endPosition="7" />
-    <nodeInfo nodeId="2990203945683059428" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="34" startPosition="142" endLine="40" endPosition="7" />
-    <nodeInfo nodeId="2990203945683059441" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="41" startPosition="12" endLine="47" endPosition="7" />
-    <nodeInfo nodeId="2990203945683059439" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="41" startPosition="10" endLine="48" endPosition="5" />
-    <nodeInfo nodeId="2990203945683059381" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="24" startPosition="90" endLine="48" endPosition="5" />
-    <scopeInfo nodeId="2990203945683059391" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="27" startPosition="7" endLine="31" endPosition="487" />
-    <scopeInfo nodeId="2990203945683059428" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="35" startPosition="7" endLine="39" endPosition="465" />
-    <scopeInfo nodeId="2990203945683059441" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="42" startPosition="7" endLine="46" endPosition="380" />
-    <scopeInfo nodeId="2990203945683059440" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="41" startPosition="12" endLine="47" endPosition="7" />
-    <scopeInfo nodeId="2990203945683059382" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="25" startPosition="135" endLine="32" endPosition="7">
+    <nodeInfo nodeId="2990203945683059383" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="24" startPosition="135" endLine="25" endPosition="140" />
+    <nodeInfo nodeId="2990203945683059391" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="26" startPosition="7" endLine="27" endPosition="48" />
+    <nodeInfo nodeId="2990203945683059391" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="27" startPosition="48" endLine="28" endPosition="55" />
+    <nodeInfo nodeId="2990203945683059391" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="28" startPosition="55" endLine="29" endPosition="222" />
+    <nodeInfo nodeId="2990203945683059391" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="29" startPosition="222" endLine="30" endPosition="487" />
+    <nodeInfo nodeId="2990203945683059420" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="32" startPosition="142" endLine="33" endPosition="142" />
+    <nodeInfo nodeId="2990203945683059428" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="34" startPosition="7" endLine="35" endPosition="48" />
+    <nodeInfo nodeId="2990203945683059428" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="35" startPosition="48" endLine="36" endPosition="55" />
+    <nodeInfo nodeId="2990203945683059428" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="36" startPosition="55" endLine="37" endPosition="222" />
+    <nodeInfo nodeId="2990203945683059428" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="37" startPosition="222" endLine="38" endPosition="465" />
+    <nodeInfo nodeId="2990203945683059441" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="41" startPosition="7" endLine="42" endPosition="48" />
+    <nodeInfo nodeId="2990203945683059441" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="42" startPosition="48" endLine="43" endPosition="55" />
+    <nodeInfo nodeId="2990203945683059441" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="43" startPosition="55" endLine="44" endPosition="222" />
+    <nodeInfo nodeId="2990203945683059441" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="44" startPosition="222" endLine="45" endPosition="380" />
+    <nodeInfo nodeId="2990203945683059391" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="25" startPosition="140" endLine="31" endPosition="7" />
+    <nodeInfo nodeId="2990203945683059428" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="33" startPosition="142" endLine="39" endPosition="7" />
+    <nodeInfo nodeId="2990203945683059441" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="40" startPosition="12" endLine="46" endPosition="7" />
+    <nodeInfo nodeId="2990203945683059439" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="40" startPosition="10" endLine="47" endPosition="5" />
+    <nodeInfo nodeId="2990203945683059381" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="23" startPosition="90" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="2990203945683059391" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="26" startPosition="7" endLine="30" endPosition="487" />
+    <scopeInfo nodeId="2990203945683059428" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="34" startPosition="7" endLine="38" endPosition="465" />
+    <scopeInfo nodeId="2990203945683059441" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="41" startPosition="7" endLine="45" endPosition="380" />
+    <scopeInfo nodeId="2990203945683059440" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="40" startPosition="12" endLine="46" endPosition="7" />
+    <scopeInfo nodeId="2990203945683059382" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="24" startPosition="135" endLine="31" endPosition="7">
       <varInfo nodeId="2990203945683059384" varName="constraint" />
     </scopeInfo>
-    <scopeInfo nodeId="2990203945683059419" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="33" startPosition="142" endLine="40" endPosition="7">
+    <scopeInfo nodeId="2990203945683059419" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="32" startPosition="142" endLine="39" endPosition="7">
       <varInfo nodeId="2990203945683059421" varName="defaultScope" />
     </scopeInfo>
-    <scopeInfo nodeId="2990203945683059377" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="24" startPosition="90" endLine="48" endPosition="5" />
+    <scopeInfo nodeId="2990203945683059377" fileName="typeof_ConstraintFunctionParameter_checkedNode_InferenceRule.java" startLine="23" startPosition="90" endLine="47" endPosition="5" />
   </root>
   <root nodeId="3906442776579556508">
-    <nodeInfo nodeId="6768994795311836908" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="25" startPosition="135" endLine="26" endPosition="140" />
-    <nodeInfo nodeId="6768994795311836922" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="27" startPosition="7" endLine="28" endPosition="48" />
-    <nodeInfo nodeId="6768994795311836922" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="28" startPosition="48" endLine="29" endPosition="55" />
-    <nodeInfo nodeId="6768994795311836922" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="29" startPosition="55" endLine="30" endPosition="222" />
-    <nodeInfo nodeId="6768994795311836922" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="30" startPosition="222" endLine="31" endPosition="489" />
-    <nodeInfo nodeId="6768994795311836976" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="33" startPosition="142" endLine="34" endPosition="142" />
-    <nodeInfo nodeId="6768994795311836990" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="35" startPosition="7" endLine="36" endPosition="48" />
-    <nodeInfo nodeId="6768994795311836990" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="36" startPosition="48" endLine="37" endPosition="55" />
-    <nodeInfo nodeId="6768994795311836990" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="37" startPosition="55" endLine="38" endPosition="222" />
-    <nodeInfo nodeId="6768994795311836990" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="38" startPosition="222" endLine="39" endPosition="467" />
-    <nodeInfo nodeId="6768994795311837016" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="42" startPosition="7" endLine="43" endPosition="48" />
-    <nodeInfo nodeId="6768994795311837016" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="43" startPosition="48" endLine="44" endPosition="55" />
-    <nodeInfo nodeId="6768994795311837016" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="44" startPosition="55" endLine="45" endPosition="222" />
-    <nodeInfo nodeId="6768994795311837016" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="45" startPosition="222" endLine="46" endPosition="382" />
-    <nodeInfo nodeId="6768994795311836922" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="26" startPosition="140" endLine="32" endPosition="7" />
-    <nodeInfo nodeId="6768994795311836990" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="34" startPosition="142" endLine="40" endPosition="7" />
-    <nodeInfo nodeId="6768994795311837016" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="41" startPosition="12" endLine="47" endPosition="7" />
-    <nodeInfo nodeId="6768994795311837010" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="41" startPosition="10" endLine="48" endPosition="5" />
-    <nodeInfo nodeId="6768994795311836889" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="24" startPosition="90" endLine="48" endPosition="5" />
-    <scopeInfo nodeId="6768994795311836922" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="27" startPosition="7" endLine="31" endPosition="489" />
-    <scopeInfo nodeId="6768994795311836990" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="35" startPosition="7" endLine="39" endPosition="467" />
-    <scopeInfo nodeId="6768994795311837016" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="42" startPosition="7" endLine="46" endPosition="382" />
-    <scopeInfo nodeId="6768994795311837011" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="41" startPosition="12" endLine="47" endPosition="7" />
-    <scopeInfo nodeId="6768994795311836890" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="25" startPosition="135" endLine="32" endPosition="7">
+    <nodeInfo nodeId="6768994795311836908" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="24" startPosition="135" endLine="25" endPosition="140" />
+    <nodeInfo nodeId="6768994795311836922" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="26" startPosition="7" endLine="27" endPosition="48" />
+    <nodeInfo nodeId="6768994795311836922" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="27" startPosition="48" endLine="28" endPosition="55" />
+    <nodeInfo nodeId="6768994795311836922" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="28" startPosition="55" endLine="29" endPosition="222" />
+    <nodeInfo nodeId="6768994795311836922" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="29" startPosition="222" endLine="30" endPosition="489" />
+    <nodeInfo nodeId="6768994795311836976" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="32" startPosition="142" endLine="33" endPosition="142" />
+    <nodeInfo nodeId="6768994795311836990" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="34" startPosition="7" endLine="35" endPosition="48" />
+    <nodeInfo nodeId="6768994795311836990" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="35" startPosition="48" endLine="36" endPosition="55" />
+    <nodeInfo nodeId="6768994795311836990" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="36" startPosition="55" endLine="37" endPosition="222" />
+    <nodeInfo nodeId="6768994795311836990" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="37" startPosition="222" endLine="38" endPosition="467" />
+    <nodeInfo nodeId="6768994795311837016" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="41" startPosition="7" endLine="42" endPosition="48" />
+    <nodeInfo nodeId="6768994795311837016" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="42" startPosition="48" endLine="43" endPosition="55" />
+    <nodeInfo nodeId="6768994795311837016" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="43" startPosition="55" endLine="44" endPosition="222" />
+    <nodeInfo nodeId="6768994795311837016" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="44" startPosition="222" endLine="45" endPosition="382" />
+    <nodeInfo nodeId="6768994795311836922" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="25" startPosition="140" endLine="31" endPosition="7" />
+    <nodeInfo nodeId="6768994795311836990" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="33" startPosition="142" endLine="39" endPosition="7" />
+    <nodeInfo nodeId="6768994795311837016" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="40" startPosition="12" endLine="46" endPosition="7" />
+    <nodeInfo nodeId="6768994795311837010" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="40" startPosition="10" endLine="47" endPosition="5" />
+    <nodeInfo nodeId="6768994795311836889" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="23" startPosition="90" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="6768994795311836922" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="26" startPosition="7" endLine="30" endPosition="489" />
+    <scopeInfo nodeId="6768994795311836990" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="34" startPosition="7" endLine="38" endPosition="467" />
+    <scopeInfo nodeId="6768994795311837016" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="41" startPosition="7" endLine="45" endPosition="382" />
+    <scopeInfo nodeId="6768994795311837011" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="40" startPosition="12" endLine="46" endPosition="7" />
+    <scopeInfo nodeId="6768994795311836890" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="24" startPosition="135" endLine="31" endPosition="7">
       <varInfo nodeId="6768994795311836909" varName="constraint" />
     </scopeInfo>
-    <scopeInfo nodeId="6768994795311836960" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="33" startPosition="142" endLine="40" endPosition="7">
+    <scopeInfo nodeId="6768994795311836960" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="32" startPosition="142" endLine="39" endPosition="7">
       <varInfo nodeId="6768994795311836977" varName="defaultScope" />
     </scopeInfo>
-    <scopeInfo nodeId="3906442776579556509" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="24" startPosition="90" endLine="48" endPosition="5" />
+    <scopeInfo nodeId="3906442776579556509" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="23" startPosition="90" endLine="47" endPosition="5" />
   </root>
 </debugInfo>
 

@@ -44,15 +44,15 @@
     <scopeInfo nodeId="1213877399324" fileName="NodeReferentConstraint_Behavior.java" startLine="13" startPosition="79" endLine="20" endPosition="16" />
   </root>
   <root nodeId="1213877530539">
-    <nodeInfo nodeId="1213877530542" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="150" />
-    <nodeInfo nodeId="1213877530550" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="20" startPosition="150" endLine="21" endPosition="96" />
-    <nodeInfo nodeId="1213877530556" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="21" startPosition="96" endLine="22" endPosition="76" />
-    <nodeInfo nodeId="1213877530564" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="23" startPosition="27" endLine="24" endPosition="90" />
-    <nodeInfo nodeId="1213877530571" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="101" />
-    <nodeInfo nodeId="1213877530562" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="22" startPosition="76" endLine="25" endPosition="5" />
-    <scopeInfo nodeId="1213877530576" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="1213877530563" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="23" startPosition="27" endLine="24" endPosition="90" />
-    <scopeInfo nodeId="1213877530541" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="19" startPosition="83" endLine="26" endPosition="101">
+    <nodeInfo nodeId="1213877530542" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="150" />
+    <nodeInfo nodeId="1213877530550" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="19" startPosition="150" endLine="20" endPosition="96" />
+    <nodeInfo nodeId="1213877530556" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="20" startPosition="96" endLine="21" endPosition="76" />
+    <nodeInfo nodeId="1213877530564" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="22" startPosition="27" endLine="23" endPosition="90" />
+    <nodeInfo nodeId="1213877530571" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="101" />
+    <nodeInfo nodeId="1213877530562" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="21" startPosition="76" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="1213877530576" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1213877530563" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="22" startPosition="27" endLine="23" endPosition="90" />
+    <scopeInfo nodeId="1213877530541" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="18" startPosition="83" endLine="25" endPosition="101">
       <varInfo nodeId="1213877530557" varName="dataType" />
       <varInfo nodeId="1213877530543" varName="propertyConstraint" />
       <varInfo nodeId="1213877530551" varName="property" />

@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1213877338503">
-    <nodeInfo nodeId="1213877338506" fileName="ClosureLiteral_Behavior.java" startLine="31" startPosition="78" endLine="32" endPosition="46" />
-    <nodeInfo nodeId="1213877338511" fileName="ClosureLiteral_Behavior.java" startLine="32" startPosition="46" endLine="33" endPosition="21" />
-    <nodeInfo nodeId="1213877338517" fileName="ClosureLiteral_Behavior.java" startLine="34" startPosition="78" endLine="35" endPosition="89" />
-    <nodeInfo nodeId="1213877338527" fileName="ClosureLiteral_Behavior.java" startLine="35" startPosition="89" endLine="36" endPosition="17" />
-    <nodeInfo nodeId="1213877338536" fileName="ClosureLiteral_Behavior.java" startLine="37" startPosition="5" endLine="38" endPosition="48" />
-    <nodeInfo nodeId="1237540583054" fileName="ClosureLiteral_Behavior.java" startLine="49" startPosition="90" endLine="50" endPosition="73" />
-    <nodeInfo nodeId="1239707798336" fileName="ClosureLiteral_Behavior.java" startLine="53" startPosition="69" endLine="54" endPosition="61" />
-    <nodeInfo nodeId="7376433222636453369" fileName="ClosureLiteral_Behavior.java" startLine="57" startPosition="80" endLine="58" endPosition="54" />
-    <nodeInfo nodeId="7376433222636453345" fileName="ClosureLiteral_Behavior.java" startLine="58" startPosition="54" endLine="59" endPosition="52" />
-    <nodeInfo nodeId="1239707831830" fileName="ClosureLiteral_Behavior.java" startLine="59" startPosition="52" endLine="60" endPosition="82" />
-    <nodeInfo nodeId="6204026822017058574" fileName="ClosureLiteral_Behavior.java" startLine="63" startPosition="91" endLine="64" endPosition="34" />
-    <nodeInfo nodeId="1213877338515" fileName="ClosureLiteral_Behavior.java" startLine="33" startPosition="21" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="1213877338557" fileName="ClosureLiteral_Behavior.java" startLine="28" startPosition="43" endLine="28" endPosition="43" />
-    <scopeInfo nodeId="1213877338546" fileName="ClosureLiteral_Behavior.java" startLine="41" startPosition="84" endLine="42" endPosition="53" />
-    <scopeInfo nodeId="1229718192189" fileName="ClosureLiteral_Behavior.java" startLine="45" startPosition="170" endLine="46" endPosition="117" />
-    <scopeInfo nodeId="1237540575570" fileName="ClosureLiteral_Behavior.java" startLine="49" startPosition="90" endLine="50" endPosition="73" />
-    <scopeInfo nodeId="1239707739905" fileName="ClosureLiteral_Behavior.java" startLine="53" startPosition="69" endLine="54" endPosition="61" />
-    <scopeInfo nodeId="6204026822017058571" fileName="ClosureLiteral_Behavior.java" startLine="63" startPosition="91" endLine="64" endPosition="34" />
-    <scopeInfo nodeId="3262277503800835451" fileName="ClosureLiteral_Behavior.java" startLine="67" startPosition="79" endLine="68" endPosition="16" />
-    <scopeInfo nodeId="1213877338516" fileName="ClosureLiteral_Behavior.java" startLine="34" startPosition="78" endLine="36" endPosition="17" />
-    <scopeInfo nodeId="1239707822366" fileName="ClosureLiteral_Behavior.java" startLine="57" startPosition="80" endLine="60" endPosition="82" />
-    <scopeInfo nodeId="1213877338515" fileName="ClosureLiteral_Behavior.java" startLine="33" startPosition="21" endLine="37" endPosition="5">
+    <nodeInfo nodeId="1213877338506" fileName="ClosureLiteral_Behavior.java" startLine="30" startPosition="78" endLine="31" endPosition="46" />
+    <nodeInfo nodeId="1213877338511" fileName="ClosureLiteral_Behavior.java" startLine="31" startPosition="46" endLine="32" endPosition="21" />
+    <nodeInfo nodeId="1213877338517" fileName="ClosureLiteral_Behavior.java" startLine="33" startPosition="78" endLine="34" endPosition="89" />
+    <nodeInfo nodeId="1213877338527" fileName="ClosureLiteral_Behavior.java" startLine="34" startPosition="89" endLine="35" endPosition="17" />
+    <nodeInfo nodeId="1213877338536" fileName="ClosureLiteral_Behavior.java" startLine="36" startPosition="5" endLine="37" endPosition="48" />
+    <nodeInfo nodeId="1237540583054" fileName="ClosureLiteral_Behavior.java" startLine="48" startPosition="90" endLine="49" endPosition="73" />
+    <nodeInfo nodeId="1239707798336" fileName="ClosureLiteral_Behavior.java" startLine="52" startPosition="69" endLine="53" endPosition="61" />
+    <nodeInfo nodeId="7376433222636453369" fileName="ClosureLiteral_Behavior.java" startLine="56" startPosition="80" endLine="57" endPosition="54" />
+    <nodeInfo nodeId="7376433222636453345" fileName="ClosureLiteral_Behavior.java" startLine="57" startPosition="54" endLine="58" endPosition="52" />
+    <nodeInfo nodeId="1239707831830" fileName="ClosureLiteral_Behavior.java" startLine="58" startPosition="52" endLine="59" endPosition="82" />
+    <nodeInfo nodeId="6204026822017058574" fileName="ClosureLiteral_Behavior.java" startLine="62" startPosition="91" endLine="63" endPosition="34" />
+    <nodeInfo nodeId="1213877338515" fileName="ClosureLiteral_Behavior.java" startLine="32" startPosition="21" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="1213877338557" fileName="ClosureLiteral_Behavior.java" startLine="27" startPosition="43" endLine="27" endPosition="43" />
+    <scopeInfo nodeId="1213877338546" fileName="ClosureLiteral_Behavior.java" startLine="40" startPosition="84" endLine="41" endPosition="53" />
+    <scopeInfo nodeId="1229718192189" fileName="ClosureLiteral_Behavior.java" startLine="44" startPosition="170" endLine="45" endPosition="117" />
+    <scopeInfo nodeId="1237540575570" fileName="ClosureLiteral_Behavior.java" startLine="48" startPosition="90" endLine="49" endPosition="73" />
+    <scopeInfo nodeId="1239707739905" fileName="ClosureLiteral_Behavior.java" startLine="52" startPosition="69" endLine="53" endPosition="61" />
+    <scopeInfo nodeId="6204026822017058571" fileName="ClosureLiteral_Behavior.java" startLine="62" startPosition="91" endLine="63" endPosition="34" />
+    <scopeInfo nodeId="3262277503800835451" fileName="ClosureLiteral_Behavior.java" startLine="66" startPosition="79" endLine="67" endPosition="16" />
+    <scopeInfo nodeId="1213877338516" fileName="ClosureLiteral_Behavior.java" startLine="33" startPosition="78" endLine="35" endPosition="17" />
+    <scopeInfo nodeId="1239707822366" fileName="ClosureLiteral_Behavior.java" startLine="56" startPosition="80" endLine="59" endPosition="82" />
+    <scopeInfo nodeId="1213877338515" fileName="ClosureLiteral_Behavior.java" startLine="32" startPosition="21" endLine="36" endPosition="5">
       <varInfo nodeId="1213877338534" varName="pd" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877338505" fileName="ClosureLiteral_Behavior.java" startLine="31" startPosition="78" endLine="38" endPosition="48">
+    <scopeInfo nodeId="1213877338505" fileName="ClosureLiteral_Behavior.java" startLine="30" startPosition="78" endLine="37" endPosition="48">
       <varInfo nodeId="1213877338507" varName="sb" />
       <varInfo nodeId="1213877338512" varName="sep" />
     </scopeInfo>
@@ -507,60 +507,60 @@
     </scopeInfo>
   </root>
   <root nodeId="1229718424142">
-    <scopeInfo nodeId="1229718424144" fileName="UnrestrictedClosureLiteral_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="1229718428853" fileName="UnrestrictedClosureLiteral_Behavior.java" startLine="19" startPosition="170" endLine="20" endPosition="139" />
+    <scopeInfo nodeId="1229718424144" fileName="UnrestrictedClosureLiteral_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1229718428853" fileName="UnrestrictedClosureLiteral_Behavior.java" startLine="18" startPosition="170" endLine="19" endPosition="139" />
   </root>
   <root nodeId="1231426116476">
-    <nodeInfo nodeId="1231426287306" fileName="RuntimeUtils.java" startLine="25" startPosition="27" endLine="26" endPosition="62" />
-    <nodeInfo nodeId="1231426508378" fileName="RuntimeUtils.java" startLine="37" startPosition="39" endLine="38" endPosition="79" />
-    <nodeInfo nodeId="1231429345360" fileName="RuntimeUtils.java" startLine="39" startPosition="123" endLine="40" endPosition="103" />
-    <nodeInfo nodeId="1231426672459" fileName="RuntimeUtils.java" startLine="44" startPosition="47" endLine="45" endPosition="53" />
-    <nodeInfo nodeId="1231426655282" fileName="RuntimeUtils.java" startLine="46" startPosition="13" endLine="47" endPosition="71" />
-    <nodeInfo nodeId="1231426746932" fileName="RuntimeUtils.java" startLine="51" startPosition="5" endLine="52" endPosition="30" />
-    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="59" startPosition="31" endLine="60" endPosition="26" />
-    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="60" startPosition="26" endLine="61" endPosition="67" />
-    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="61" startPosition="67" endLine="62" endPosition="32" />
-    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="63" startPosition="7" endLine="64" endPosition="207" />
-    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="64" startPosition="207" endLine="65" endPosition="43" />
-    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="65" startPosition="43" endLine="66" endPosition="266" />
-    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="66" startPosition="266" endLine="67" endPosition="31" />
-    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="68" startPosition="7" endLine="69" endPosition="20" />
-    <nodeInfo nodeId="1231426116478" fileName="RuntimeUtils.java" startLine="27" startPosition="0" endLine="29" endPosition="3" />
-    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="55" startPosition="53" endLine="57" endPosition="5" />
-    <nodeInfo nodeId="1231429332115" fileName="RuntimeUtils.java" startLine="38" startPosition="79" endLine="41" endPosition="9" />
-    <nodeInfo nodeId="1231426699852" fileName="RuntimeUtils.java" startLine="43" startPosition="34" endLine="46" endPosition="13" />
-    <nodeInfo nodeId="1231426126521" fileName="RuntimeUtils.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="62" startPosition="32" endLine="68" endPosition="7" />
-    <nodeInfo nodeId="1231426655274" fileName="RuntimeUtils.java" startLine="42" startPosition="79" endLine="49" endPosition="0" />
-    <nodeInfo nodeId="1231426655266" fileName="RuntimeUtils.java" startLine="41" startPosition="9" endLine="49" endPosition="11" />
-    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="58" startPosition="0" endLine="71" endPosition="0" />
-    <nodeInfo nodeId="1231426299651" fileName="RuntimeUtils.java" startLine="36" startPosition="39" endLine="50" endPosition="7" />
-    <nodeInfo nodeId="1231426474781" fileName="RuntimeUtils.java" startLine="35" startPosition="63" endLine="51" endPosition="5" />
-    <nodeInfo nodeId="1231426266998" fileName="RuntimeUtils.java" startLine="34" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1231426116481" fileName="RuntimeUtils.java" startLine="28" startPosition="25" endLine="28" endPosition="25" />
-    <scopeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="56" startPosition="44" endLine="56" endPosition="44" />
-    <scopeInfo nodeId="1231426126524" fileName="RuntimeUtils.java" startLine="31" startPosition="42" endLine="32" endPosition="147" />
-    <scopeInfo nodeId="1231429332116" fileName="RuntimeUtils.java" startLine="39" startPosition="123" endLine="40" endPosition="103" />
-    <scopeInfo nodeId="1231426699854" fileName="RuntimeUtils.java" startLine="44" startPosition="47" endLine="45" endPosition="53" />
-    <scopeInfo nodeId="1231426116478" fileName="RuntimeUtils.java" startLine="27" startPosition="0" endLine="29" endPosition="3" />
-    <scopeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="55" startPosition="53" endLine="57" endPosition="5" />
-    <scopeInfo nodeId="1231429332115" fileName="RuntimeUtils.java" startLine="38" startPosition="79" endLine="41" endPosition="9">
+    <nodeInfo nodeId="1231426287306" fileName="RuntimeUtils.java" startLine="24" startPosition="27" endLine="25" endPosition="62" />
+    <nodeInfo nodeId="1231426508378" fileName="RuntimeUtils.java" startLine="36" startPosition="39" endLine="37" endPosition="79" />
+    <nodeInfo nodeId="1231429345360" fileName="RuntimeUtils.java" startLine="38" startPosition="123" endLine="39" endPosition="103" />
+    <nodeInfo nodeId="1231426672459" fileName="RuntimeUtils.java" startLine="43" startPosition="47" endLine="44" endPosition="53" />
+    <nodeInfo nodeId="1231426655282" fileName="RuntimeUtils.java" startLine="45" startPosition="13" endLine="46" endPosition="71" />
+    <nodeInfo nodeId="1231426746932" fileName="RuntimeUtils.java" startLine="50" startPosition="5" endLine="51" endPosition="30" />
+    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="58" startPosition="31" endLine="59" endPosition="26" />
+    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="59" startPosition="26" endLine="60" endPosition="67" />
+    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="60" startPosition="67" endLine="61" endPosition="32" />
+    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="62" startPosition="7" endLine="63" endPosition="163" />
+    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="63" startPosition="163" endLine="64" endPosition="43" />
+    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="64" startPosition="43" endLine="65" endPosition="266" />
+    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="65" startPosition="266" endLine="66" endPosition="31" />
+    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="67" startPosition="7" endLine="68" endPosition="20" />
+    <nodeInfo nodeId="1231426116478" fileName="RuntimeUtils.java" startLine="26" startPosition="0" endLine="28" endPosition="3" />
+    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="54" startPosition="53" endLine="56" endPosition="5" />
+    <nodeInfo nodeId="1231429332115" fileName="RuntimeUtils.java" startLine="37" startPosition="79" endLine="40" endPosition="9" />
+    <nodeInfo nodeId="1231426699852" fileName="RuntimeUtils.java" startLine="42" startPosition="34" endLine="45" endPosition="13" />
+    <nodeInfo nodeId="1231426126521" fileName="RuntimeUtils.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="61" startPosition="32" endLine="67" endPosition="7" />
+    <nodeInfo nodeId="1231426655274" fileName="RuntimeUtils.java" startLine="41" startPosition="79" endLine="48" endPosition="0" />
+    <nodeInfo nodeId="1231426655266" fileName="RuntimeUtils.java" startLine="40" startPosition="9" endLine="48" endPosition="11" />
+    <nodeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="57" startPosition="0" endLine="70" endPosition="0" />
+    <nodeInfo nodeId="1231426299651" fileName="RuntimeUtils.java" startLine="35" startPosition="39" endLine="49" endPosition="7" />
+    <nodeInfo nodeId="1231426474781" fileName="RuntimeUtils.java" startLine="34" startPosition="63" endLine="50" endPosition="5" />
+    <nodeInfo nodeId="1231426266998" fileName="RuntimeUtils.java" startLine="33" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1231426116481" fileName="RuntimeUtils.java" startLine="27" startPosition="25" endLine="27" endPosition="25" />
+    <scopeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="55" startPosition="44" endLine="55" endPosition="44" />
+    <scopeInfo nodeId="1231426126524" fileName="RuntimeUtils.java" startLine="30" startPosition="42" endLine="31" endPosition="147" />
+    <scopeInfo nodeId="1231429332116" fileName="RuntimeUtils.java" startLine="38" startPosition="123" endLine="39" endPosition="103" />
+    <scopeInfo nodeId="1231426699854" fileName="RuntimeUtils.java" startLine="43" startPosition="47" endLine="44" endPosition="53" />
+    <scopeInfo nodeId="1231426116478" fileName="RuntimeUtils.java" startLine="26" startPosition="0" endLine="28" endPosition="3" />
+    <scopeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="54" startPosition="53" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="1231429332115" fileName="RuntimeUtils.java" startLine="37" startPosition="79" endLine="40" endPosition="9">
       <varInfo nodeId="1231429332119" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="1231426126521" fileName="RuntimeUtils.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1231426655277" fileName="RuntimeUtils.java" startLine="43" startPosition="34" endLine="47" endPosition="71" />
-    <scopeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="63" startPosition="7" endLine="67" endPosition="31" />
-    <scopeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="62" startPosition="32" endLine="68" endPosition="7" />
-    <scopeInfo nodeId="1231426655274" fileName="RuntimeUtils.java" startLine="42" startPosition="79" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="59" startPosition="31" endLine="69" endPosition="20" />
-    <scopeInfo nodeId="1231426299653" fileName="RuntimeUtils.java" startLine="37" startPosition="39" endLine="49" endPosition="11" />
-    <scopeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="58" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1231426474783" fileName="RuntimeUtils.java" startLine="36" startPosition="39" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="1231426267001" fileName="RuntimeUtils.java" startLine="35" startPosition="63" endLine="52" endPosition="30" />
-    <scopeInfo nodeId="1231426266998" fileName="RuntimeUtils.java" startLine="34" startPosition="0" endLine="54" endPosition="0" />
-    <unitInfo nodeId="1231426655272" fileName="RuntimeUtils.java" startLine="42" startPosition="62" endLine="49" endPosition="9" unitName="jetbrains.mps.baseLanguage.closures.behavior.RuntimeUtils$1" />
-    <unitInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="55" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.RuntimeUtils$QuotationClass_hadnfw_a0a0a0a" />
-    <unitInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="25" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.RuntimeUtils" />
+    <scopeInfo nodeId="1231426126521" fileName="RuntimeUtils.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1231426655277" fileName="RuntimeUtils.java" startLine="42" startPosition="34" endLine="46" endPosition="71" />
+    <scopeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="62" startPosition="7" endLine="66" endPosition="31" />
+    <scopeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="61" startPosition="32" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="1231426655274" fileName="RuntimeUtils.java" startLine="41" startPosition="79" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="58" startPosition="31" endLine="68" endPosition="20" />
+    <scopeInfo nodeId="1231426299653" fileName="RuntimeUtils.java" startLine="36" startPosition="39" endLine="48" endPosition="11" />
+    <scopeInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="57" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="1231426474783" fileName="RuntimeUtils.java" startLine="35" startPosition="39" endLine="49" endPosition="7" />
+    <scopeInfo nodeId="1231426267001" fileName="RuntimeUtils.java" startLine="34" startPosition="63" endLine="51" endPosition="30" />
+    <scopeInfo nodeId="1231426266998" fileName="RuntimeUtils.java" startLine="33" startPosition="0" endLine="53" endPosition="0" />
+    <unitInfo nodeId="1231426655272" fileName="RuntimeUtils.java" startLine="41" startPosition="62" endLine="48" endPosition="9" unitName="jetbrains.mps.baseLanguage.closures.behavior.RuntimeUtils$1" />
+    <unitInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="54" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.RuntimeUtils$QuotationClass_hadnfw_a0a0a0a" />
+    <unitInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="24" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.RuntimeUtils" />
   </root>
   <root nodeId="1237548240741">
     <nodeInfo nodeId="1237548246261" fileName="YieldAllStatement_Behavior.java" startLine="11" startPosition="86" endLine="12" endPosition="16" />
@@ -573,15 +573,15 @@
     <scopeInfo nodeId="1237548259222" fileName="YieldStatement_Behavior.java" startLine="11" startPosition="86" endLine="12" endPosition="16" />
   </root>
   <root nodeId="2857237956452412448">
-    <nodeInfo nodeId="2857237956452413111" fileName="FunctionMethodDeclaration_Behavior.java" startLine="24" startPosition="142" endLine="28" endPosition="0" />
-    <nodeInfo nodeId="2857237956452413101" fileName="FunctionMethodDeclaration_Behavior.java" startLine="23" startPosition="77" endLine="28" endPosition="24" />
-    <scopeInfo nodeId="2857237956452412450" fileName="FunctionMethodDeclaration_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="2857237956452413112" fileName="FunctionMethodDeclaration_Behavior.java" startLine="25" startPosition="37" endLine="26" endPosition="85" />
-    <scopeInfo nodeId="2857237956452413111" fileName="FunctionMethodDeclaration_Behavior.java" startLine="24" startPosition="142" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="2857237956452412454" fileName="FunctionMethodDeclaration_Behavior.java" startLine="23" startPosition="77" endLine="29" endPosition="182">
+    <nodeInfo nodeId="2857237956452413111" fileName="FunctionMethodDeclaration_Behavior.java" startLine="23" startPosition="142" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="2857237956452413101" fileName="FunctionMethodDeclaration_Behavior.java" startLine="22" startPosition="77" endLine="27" endPosition="24" />
+    <scopeInfo nodeId="2857237956452412450" fileName="FunctionMethodDeclaration_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="2857237956452413112" fileName="FunctionMethodDeclaration_Behavior.java" startLine="24" startPosition="37" endLine="25" endPosition="85" />
+    <scopeInfo nodeId="2857237956452413111" fileName="FunctionMethodDeclaration_Behavior.java" startLine="23" startPosition="142" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2857237956452412454" fileName="FunctionMethodDeclaration_Behavior.java" startLine="22" startPosition="77" endLine="28" endPosition="182">
       <varInfo nodeId="2857237956452413102" varName="params" />
     </scopeInfo>
-    <unitInfo nodeId="2857237956452413111" fileName="FunctionMethodDeclaration_Behavior.java" startLine="24" startPosition="115" endLine="28" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior$1" />
+    <unitInfo nodeId="2857237956452413111" fileName="FunctionMethodDeclaration_Behavior.java" startLine="23" startPosition="115" endLine="27" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior$1" />
   </root>
   <root nodeId="418758558327452978">
     <nodeInfo nodeId="418758558327453309" fileName="InvokeFunctionOperation_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="210" />

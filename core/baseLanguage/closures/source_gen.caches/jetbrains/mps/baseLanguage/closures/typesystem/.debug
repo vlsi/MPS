@@ -38,60 +38,60 @@
     <scopeInfo nodeId="100821637069280484" fileName="check_FunctionType_NonTypesystemRule.java" startLine="23" startPosition="88" endLine="52" endPosition="5" />
   </root>
   <root nodeId="1199547501670">
-    <nodeInfo nodeId="1225470166975" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="27" startPosition="92" endLine="28" endPosition="71" />
-    <nodeInfo nodeId="1225470166984" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="29" startPosition="75" endLine="30" endPosition="191" />
-    <nodeInfo nodeId="1225470166995" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="96" />
-    <nodeInfo nodeId="1225470166996" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="33" startPosition="5" endLine="34" endPosition="48" />
-    <nodeInfo nodeId="1225470166996" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="34" startPosition="48" endLine="35" endPosition="53" />
-    <nodeInfo nodeId="1225470166996" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="35" startPosition="53" endLine="36" endPosition="219" />
-    <nodeInfo nodeId="1225470166996" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="36" startPosition="219" endLine="37" endPosition="331" />
-    <nodeInfo nodeId="1225470167002" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="39" startPosition="5" endLine="40" endPosition="93" />
-    <nodeInfo nodeId="1225470167002" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="40" startPosition="93" endLine="41" endPosition="53" />
-    <nodeInfo nodeId="1225470167002" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="41" startPosition="53" endLine="42" endPosition="219" />
-    <nodeInfo nodeId="1225470167002" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="42" startPosition="219" endLine="43" endPosition="54" />
-    <nodeInfo nodeId="1225470167002" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="43" startPosition="54" endLine="44" endPosition="470" />
-    <nodeInfo nodeId="1225470166982" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="28" startPosition="71" endLine="31" endPosition="5" />
-    <nodeInfo nodeId="1225470166996" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="32" startPosition="96" endLine="38" endPosition="5" />
-    <nodeInfo nodeId="1225470167002" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="38" startPosition="5" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="1225470166983" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="29" startPosition="75" endLine="30" endPosition="191" />
-    <scopeInfo nodeId="1225470166982" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="28" startPosition="71" endLine="31" endPosition="5">
+    <nodeInfo nodeId="1225470166975" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="26" startPosition="92" endLine="27" endPosition="71" />
+    <nodeInfo nodeId="1225470166984" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="28" startPosition="75" endLine="29" endPosition="191" />
+    <nodeInfo nodeId="1225470166995" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="30" startPosition="5" endLine="31" endPosition="96" />
+    <nodeInfo nodeId="1225470166996" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="32" startPosition="5" endLine="33" endPosition="48" />
+    <nodeInfo nodeId="1225470166996" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="33" startPosition="48" endLine="34" endPosition="53" />
+    <nodeInfo nodeId="1225470166996" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="34" startPosition="53" endLine="35" endPosition="219" />
+    <nodeInfo nodeId="1225470166996" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="35" startPosition="219" endLine="36" endPosition="331" />
+    <nodeInfo nodeId="1225470167002" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="38" startPosition="5" endLine="39" endPosition="93" />
+    <nodeInfo nodeId="1225470167002" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="39" startPosition="93" endLine="40" endPosition="53" />
+    <nodeInfo nodeId="1225470167002" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="40" startPosition="53" endLine="41" endPosition="219" />
+    <nodeInfo nodeId="1225470167002" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="41" startPosition="219" endLine="42" endPosition="54" />
+    <nodeInfo nodeId="1225470167002" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="42" startPosition="54" endLine="43" endPosition="470" />
+    <nodeInfo nodeId="1225470166982" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="27" startPosition="71" endLine="30" endPosition="5" />
+    <nodeInfo nodeId="1225470166996" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="31" startPosition="96" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="1225470167002" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="37" startPosition="5" endLine="44" endPosition="5" />
+    <scopeInfo nodeId="1225470166983" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="28" startPosition="75" endLine="29" endPosition="191" />
+    <scopeInfo nodeId="1225470166982" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="27" startPosition="71" endLine="30" endPosition="5">
       <varInfo nodeId="1225470166993" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="1225470166996" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="33" startPosition="5" endLine="37" endPosition="331" />
-    <scopeInfo nodeId="1225470167002" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="39" startPosition="5" endLine="44" endPosition="470" />
-    <scopeInfo nodeId="1199547501671" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="27" startPosition="92" endLine="45" endPosition="5">
+    <scopeInfo nodeId="1225470166996" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="32" startPosition="5" endLine="36" endPosition="331" />
+    <scopeInfo nodeId="1225470167002" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="38" startPosition="5" endLine="43" endPosition="470" />
+    <scopeInfo nodeId="1199547501671" fileName="typeof_InvokeFunctionExpression_InferenceRule.java" startLine="26" startPosition="92" endLine="44" endPosition="5">
       <varInfo nodeId="1225470166976" varName="ptypes" />
     </scopeInfo>
   </root>
   <root nodeId="1199711537847">
-    <nodeInfo nodeId="1199711574725" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="31" startPosition="92" endLine="32" endPosition="135" />
-    <nodeInfo nodeId="1199711581032" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="33" startPosition="26" endLine="34" endPosition="53" />
-    <nodeInfo nodeId="1199711581032" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="34" startPosition="53" endLine="35" endPosition="55" />
-    <nodeInfo nodeId="1199711581032" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="35" startPosition="55" endLine="36" endPosition="260" />
-    <nodeInfo nodeId="1225469510771" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="37" startPosition="5" endLine="38" endPosition="71" />
-    <nodeInfo nodeId="1225469563197" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="39" startPosition="75" endLine="40" endPosition="191" />
-    <nodeInfo nodeId="1225469708846" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="41" startPosition="5" endLine="42" endPosition="96" />
-    <nodeInfo nodeId="1225469813196" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="43" startPosition="5" endLine="44" endPosition="48" />
-    <nodeInfo nodeId="1225469813196" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="44" startPosition="48" endLine="45" endPosition="53" />
-    <nodeInfo nodeId="1225469813196" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="45" startPosition="53" endLine="46" endPosition="219" />
-    <nodeInfo nodeId="1225469813196" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="46" startPosition="219" endLine="47" endPosition="331" />
-    <nodeInfo nodeId="1225469753779" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="49" startPosition="5" endLine="50" endPosition="44" />
-    <nodeInfo nodeId="1225469753779" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="50" startPosition="44" endLine="51" endPosition="53" />
-    <nodeInfo nodeId="1225469753779" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="51" startPosition="53" endLine="52" endPosition="219" />
-    <nodeInfo nodeId="1225469753779" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="52" startPosition="219" endLine="53" endPosition="54" />
-    <nodeInfo nodeId="1225469753779" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="53" startPosition="54" endLine="54" endPosition="462" />
-    <nodeInfo nodeId="1225469547083" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="38" startPosition="71" endLine="41" endPosition="5" />
-    <nodeInfo nodeId="1199711581032" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="32" startPosition="135" endLine="37" endPosition="5" />
-    <nodeInfo nodeId="1225469813196" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="42" startPosition="96" endLine="48" endPosition="5" />
-    <nodeInfo nodeId="1225469753779" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="48" startPosition="5" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="1225469547084" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="39" startPosition="75" endLine="40" endPosition="191" />
-    <scopeInfo nodeId="1199711581032" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="33" startPosition="26" endLine="36" endPosition="260" />
-    <scopeInfo nodeId="1225469547083" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="38" startPosition="71" endLine="41" endPosition="5">
+    <nodeInfo nodeId="1199711574725" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="30" startPosition="92" endLine="31" endPosition="135" />
+    <nodeInfo nodeId="1199711581032" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="32" startPosition="26" endLine="33" endPosition="53" />
+    <nodeInfo nodeId="1199711581032" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="33" startPosition="53" endLine="34" endPosition="55" />
+    <nodeInfo nodeId="1199711581032" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="34" startPosition="55" endLine="35" endPosition="260" />
+    <nodeInfo nodeId="1225469510771" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="36" startPosition="5" endLine="37" endPosition="71" />
+    <nodeInfo nodeId="1225469563197" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="38" startPosition="75" endLine="39" endPosition="191" />
+    <nodeInfo nodeId="1225469708846" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="40" startPosition="5" endLine="41" endPosition="96" />
+    <nodeInfo nodeId="1225469813196" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="42" startPosition="5" endLine="43" endPosition="48" />
+    <nodeInfo nodeId="1225469813196" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="43" startPosition="48" endLine="44" endPosition="53" />
+    <nodeInfo nodeId="1225469813196" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="44" startPosition="53" endLine="45" endPosition="219" />
+    <nodeInfo nodeId="1225469813196" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="45" startPosition="219" endLine="46" endPosition="331" />
+    <nodeInfo nodeId="1225469753779" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="48" startPosition="5" endLine="49" endPosition="44" />
+    <nodeInfo nodeId="1225469753779" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="49" startPosition="44" endLine="50" endPosition="53" />
+    <nodeInfo nodeId="1225469753779" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="50" startPosition="53" endLine="51" endPosition="219" />
+    <nodeInfo nodeId="1225469753779" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="51" startPosition="219" endLine="52" endPosition="54" />
+    <nodeInfo nodeId="1225469753779" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="52" startPosition="54" endLine="53" endPosition="462" />
+    <nodeInfo nodeId="1225469547083" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="37" startPosition="71" endLine="40" endPosition="5" />
+    <nodeInfo nodeId="1199711581032" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="31" startPosition="135" endLine="36" endPosition="5" />
+    <nodeInfo nodeId="1225469813196" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="41" startPosition="96" endLine="47" endPosition="5" />
+    <nodeInfo nodeId="1225469753779" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="47" startPosition="5" endLine="54" endPosition="5" />
+    <scopeInfo nodeId="1225469547084" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="38" startPosition="75" endLine="39" endPosition="191" />
+    <scopeInfo nodeId="1199711581032" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="32" startPosition="26" endLine="35" endPosition="260" />
+    <scopeInfo nodeId="1225469547083" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="37" startPosition="71" endLine="40" endPosition="5">
       <varInfo nodeId="1225469547087" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="1225469813196" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="43" startPosition="5" endLine="47" endPosition="331" />
-    <scopeInfo nodeId="1225469753779" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="49" startPosition="5" endLine="54" endPosition="462" />
-    <scopeInfo nodeId="1199711537848" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="31" startPosition="92" endLine="55" endPosition="5">
+    <scopeInfo nodeId="1225469813196" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="42" startPosition="5" endLine="46" endPosition="331" />
+    <scopeInfo nodeId="1225469753779" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="48" startPosition="5" endLine="53" endPosition="462" />
+    <scopeInfo nodeId="1199711537848" fileName="typeof_InvokeExpression_InferenceRule.java" startLine="30" startPosition="92" endLine="54" endPosition="5">
       <varInfo nodeId="1199711574726" varName="cl" />
       <varInfo nodeId="1225469510772" varName="ptypes" />
     </scopeInfo>
@@ -267,42 +267,42 @@
     <unitInfo nodeId="1237814165989" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="65" startPosition="61" endLine="78" endPosition="9" unitName="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_subtypeOf_FunctionType_InequationReplacementRule$1" />
   </root>
   <root nodeId="1202212837508">
-    <nodeInfo nodeId="1202745678705" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="31" startPosition="92" endLine="32" endPosition="75" />
-    <nodeInfo nodeId="1202212965865" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="32" startPosition="75" endLine="33" endPosition="74" />
-    <nodeInfo nodeId="1202741408806" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="34" startPosition="237" endLine="35" endPosition="83" />
-    <nodeInfo nodeId="1983923772552990131" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="40" startPosition="9" endLine="41" endPosition="67" />
-    <nodeInfo nodeId="1202741469355" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="46" startPosition="45" endLine="47" endPosition="79" />
-    <nodeInfo nodeId="1202741511689" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="48" startPosition="76" endLine="49" endPosition="135" />
-    <nodeInfo nodeId="1202741535643" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="50" startPosition="9" endLine="51" endPosition="111" />
-    <nodeInfo nodeId="1240235274483" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="51" startPosition="111" endLine="52" endPosition="211" />
-    <nodeInfo nodeId="1202742759568" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="54" startPosition="5" endLine="55" endPosition="22" />
-    <nodeInfo nodeId="1202741494410" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="47" startPosition="79" endLine="50" endPosition="9" />
-    <nodeInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="36" startPosition="94" endLine="40" endPosition="0" />
-    <nodeInfo nodeId="4616312228468046991" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="41" startPosition="67" endLine="45" endPosition="8" />
-    <nodeInfo nodeId="4616312228468046968" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="35" startPosition="83" endLine="40" endPosition="9" />
-    <nodeInfo nodeId="4616312228468046998" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="45" startPosition="8" endLine="53" endPosition="7" />
-    <nodeInfo nodeId="1202212971747" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="33" startPosition="74" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="4616312228468046976" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="37" startPosition="40" endLine="38" endPosition="129" />
-    <scopeInfo nodeId="1202741494411" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="48" startPosition="76" endLine="49" endPosition="135" />
-    <scopeInfo nodeId="1202741494410" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="47" startPosition="79" endLine="50" endPosition="9">
+    <nodeInfo nodeId="1202745678705" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="30" startPosition="92" endLine="31" endPosition="75" />
+    <nodeInfo nodeId="1202212965865" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="31" startPosition="75" endLine="32" endPosition="74" />
+    <nodeInfo nodeId="1202741408806" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="33" startPosition="237" endLine="34" endPosition="83" />
+    <nodeInfo nodeId="1983923772552990131" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="39" startPosition="9" endLine="40" endPosition="67" />
+    <nodeInfo nodeId="1202741469355" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="45" startPosition="45" endLine="46" endPosition="79" />
+    <nodeInfo nodeId="1202741511689" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="47" startPosition="76" endLine="48" endPosition="135" />
+    <nodeInfo nodeId="1202741535643" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="49" startPosition="9" endLine="50" endPosition="111" />
+    <nodeInfo nodeId="1240235274483" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="50" startPosition="111" endLine="51" endPosition="211" />
+    <nodeInfo nodeId="1202742759568" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="53" startPosition="5" endLine="54" endPosition="22" />
+    <nodeInfo nodeId="1202741494410" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="46" startPosition="79" endLine="49" endPosition="9" />
+    <nodeInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="35" startPosition="94" endLine="39" endPosition="0" />
+    <nodeInfo nodeId="4616312228468046991" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="40" startPosition="67" endLine="44" endPosition="8" />
+    <nodeInfo nodeId="4616312228468046968" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="34" startPosition="83" endLine="39" endPosition="9" />
+    <nodeInfo nodeId="4616312228468046998" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="44" startPosition="8" endLine="52" endPosition="7" />
+    <nodeInfo nodeId="1202212971747" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="32" startPosition="74" endLine="53" endPosition="5" />
+    <scopeInfo nodeId="4616312228468046976" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="36" startPosition="40" endLine="37" endPosition="129" />
+    <scopeInfo nodeId="1202741494411" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="47" startPosition="76" endLine="48" endPosition="135" />
+    <scopeInfo nodeId="1202741494410" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="46" startPosition="79" endLine="49" endPosition="9">
       <varInfo nodeId="1202741494414" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="36" startPosition="94" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="4616312228468046999" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="46" startPosition="45" endLine="52" endPosition="211">
+    <scopeInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="35" startPosition="94" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="4616312228468046999" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="45" startPosition="45" endLine="51" endPosition="211">
       <varInfo nodeId="1202741469356" varName="paramTypes" />
       <varInfo nodeId="1202741535644" varName="resType" />
     </scopeInfo>
-    <scopeInfo nodeId="1202212971748" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="34" startPosition="237" endLine="53" endPosition="7">
+    <scopeInfo nodeId="1202212971748" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="33" startPosition="237" endLine="52" endPosition="7">
       <varInfo nodeId="4616312228468046992" varName="mtd" />
       <varInfo nodeId="1202741408807" varName="methods" />
       <varInfo nodeId="1983923772552990132" varName="it" />
       <varInfo nodeId="4616312228468046969" varName="cands" />
     </scopeInfo>
-    <scopeInfo nodeId="1202212837509" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="31" startPosition="92" endLine="55" endPosition="22">
+    <scopeInfo nodeId="1202212837509" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="30" startPosition="92" endLine="54" endPosition="22">
       <varInfo nodeId="1202745678706" varName="supertypes" />
       <varInfo nodeId="1202212965866" varName="classifier" />
     </scopeInfo>
-    <unitInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="36" startPosition="71" endLine="40" endPosition="7" unitName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule$1" />
+    <unitInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="35" startPosition="71" endLine="39" endPosition="7" unitName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule$1" />
   </root>
   <root nodeId="1202742148675">
     <nodeInfo nodeId="1202742329255" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="34" startPosition="157" endLine="35" endPosition="81" />
@@ -504,35 +504,35 @@
     <unitInfo nodeId="4616312228468046913" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="142" startPosition="73" endLine="146" endPosition="9" unitName="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_subtypeOf_ClassifierType_InequationReplacementRule$2" />
   </root>
   <root nodeId="1202756468112">
-    <nodeInfo nodeId="1202757030093" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="28" startPosition="92" endLine="29" endPosition="34" />
-    <nodeInfo nodeId="100821637069109816" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="29" startPosition="34" endLine="30" endPosition="20" />
-    <nodeInfo nodeId="1202756513375" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="32" startPosition="8" endLine="33" endPosition="161" />
-    <nodeInfo nodeId="1235082156478" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="33" startPosition="161" endLine="34" endPosition="92" />
-    <nodeInfo nodeId="100821637069109850" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="35" startPosition="98" endLine="36" endPosition="132" />
-    <nodeInfo nodeId="1235082202309" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="39" startPosition="85" endLine="40" endPosition="182" />
-    <nodeInfo nodeId="1235082202328" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="42" startPosition="82" endLine="43" endPosition="126" />
-    <nodeInfo nodeId="1235082202342" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="44" startPosition="11" endLine="45" endPosition="81" />
-    <nodeInfo nodeId="3618788446922193351" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="47" startPosition="8" endLine="48" endPosition="145" />
-    <nodeInfo nodeId="100821637069150650" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="49" startPosition="12" endLine="50" endPosition="211" />
-    <nodeInfo nodeId="100821637069109927" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="50" startPosition="211" endLine="51" endPosition="77" />
-    <nodeInfo nodeId="1202756513407" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="52" startPosition="5" endLine="53" endPosition="22" />
-    <nodeInfo nodeId="1235082168904" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="34" startPosition="92" endLine="37" endPosition="9" />
-    <nodeInfo nodeId="1235082202307" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="38" startPosition="27" endLine="41" endPosition="11" />
-    <nodeInfo nodeId="1235082202326" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="41" startPosition="11" endLine="44" endPosition="11" />
-    <nodeInfo nodeId="100821637069106816" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="49" startPosition="10" endLine="52" endPosition="5" />
-    <nodeInfo nodeId="100821637069109837" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="37" startPosition="9" endLine="46" endPosition="9" />
-    <nodeInfo nodeId="3618788446922189245" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="31" startPosition="73" endLine="47" endPosition="8" />
-    <nodeInfo nodeId="100821637069106799" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="30" startPosition="20" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="1235082168905" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="35" startPosition="98" endLine="36" endPosition="132" />
-    <scopeInfo nodeId="1235082202308" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="39" startPosition="85" endLine="40" endPosition="182" />
-    <scopeInfo nodeId="1235082202327" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="42" startPosition="82" endLine="43" endPosition="126" />
-    <scopeInfo nodeId="100821637069106817" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="49" startPosition="12" endLine="51" endPosition="77" />
-    <scopeInfo nodeId="1235082202326" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="41" startPosition="11" endLine="44" endPosition="11">
+    <nodeInfo nodeId="1202757030093" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="27" startPosition="92" endLine="28" endPosition="34" />
+    <nodeInfo nodeId="100821637069109816" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="28" startPosition="34" endLine="29" endPosition="20" />
+    <nodeInfo nodeId="1202756513375" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="31" startPosition="8" endLine="32" endPosition="161" />
+    <nodeInfo nodeId="1235082156478" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="32" startPosition="161" endLine="33" endPosition="92" />
+    <nodeInfo nodeId="100821637069109850" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="34" startPosition="98" endLine="35" endPosition="132" />
+    <nodeInfo nodeId="1235082202309" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="38" startPosition="85" endLine="39" endPosition="182" />
+    <nodeInfo nodeId="1235082202328" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="41" startPosition="82" endLine="42" endPosition="126" />
+    <nodeInfo nodeId="1235082202342" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="43" startPosition="11" endLine="44" endPosition="81" />
+    <nodeInfo nodeId="3618788446922193351" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="46" startPosition="8" endLine="47" endPosition="145" />
+    <nodeInfo nodeId="100821637069150650" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="48" startPosition="12" endLine="49" endPosition="211" />
+    <nodeInfo nodeId="100821637069109927" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="49" startPosition="211" endLine="50" endPosition="77" />
+    <nodeInfo nodeId="1202756513407" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="51" startPosition="5" endLine="52" endPosition="22" />
+    <nodeInfo nodeId="1235082168904" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="33" startPosition="92" endLine="36" endPosition="9" />
+    <nodeInfo nodeId="1235082202307" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="37" startPosition="27" endLine="40" endPosition="11" />
+    <nodeInfo nodeId="1235082202326" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="40" startPosition="11" endLine="43" endPosition="11" />
+    <nodeInfo nodeId="100821637069106816" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="48" startPosition="10" endLine="51" endPosition="5" />
+    <nodeInfo nodeId="100821637069109837" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="36" startPosition="9" endLine="45" endPosition="9" />
+    <nodeInfo nodeId="3618788446922189245" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="30" startPosition="73" endLine="46" endPosition="8" />
+    <nodeInfo nodeId="100821637069106799" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="29" startPosition="20" endLine="51" endPosition="5" />
+    <scopeInfo nodeId="1235082168905" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="34" startPosition="98" endLine="35" endPosition="132" />
+    <scopeInfo nodeId="1235082202308" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="38" startPosition="85" endLine="39" endPosition="182" />
+    <scopeInfo nodeId="1235082202327" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="41" startPosition="82" endLine="42" endPosition="126" />
+    <scopeInfo nodeId="100821637069106817" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="48" startPosition="12" endLine="50" endPosition="77" />
+    <scopeInfo nodeId="1235082202326" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="40" startPosition="11" endLine="43" endPosition="11">
       <varInfo nodeId="1235082202340" varName="pt" />
     </scopeInfo>
-    <scopeInfo nodeId="100821637069109838" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="38" startPosition="27" endLine="45" endPosition="81" />
-    <scopeInfo nodeId="100821637069106800" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="31" startPosition="73" endLine="48" endPosition="145" />
-    <scopeInfo nodeId="1202756468113" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="28" startPosition="92" endLine="53" endPosition="22">
+    <scopeInfo nodeId="100821637069109838" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="37" startPosition="27" endLine="44" endPosition="81" />
+    <scopeInfo nodeId="100821637069106800" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="30" startPosition="73" endLine="47" endPosition="145" />
+    <scopeInfo nodeId="1202756468113" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="27" startPosition="92" endLine="52" endPosition="22">
       <varInfo nodeId="1202757030094" varName="supertypes" />
       <varInfo nodeId="100821637069109817" varName="ct" />
     </scopeInfo>
@@ -542,325 +542,325 @@
     <scopeInfo nodeId="1203019074090" fileName="wildcardtype_comparable_ComparisonRule.java" startLine="13" startPosition="58" endLine="14" endPosition="16" />
   </root>
   <root nodeId="1210844937702">
-    <nodeInfo nodeId="1210844990240" fileName="RulesUtil_Closures.java" startLine="21" startPosition="33" endLine="22" endPosition="47" />
-    <nodeInfo nodeId="1210845050031" fileName="RulesUtil_Closures.java" startLine="25" startPosition="32" endLine="26" endPosition="244" />
-    <nodeInfo nodeId="1210845369328" fileName="RulesUtil_Closures.java" startLine="28" startPosition="32" endLine="29" endPosition="50" />
-    <nodeInfo nodeId="1210845414016" fileName="RulesUtil_Closures.java" startLine="29" startPosition="50" endLine="30" endPosition="69" />
-    <nodeInfo nodeId="1210845072936" fileName="RulesUtil_Closures.java" startLine="33" startPosition="5" endLine="34" endPosition="25" />
-    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="41" startPosition="31" endLine="42" endPosition="26" />
-    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="42" startPosition="26" endLine="43" endPosition="67" />
-    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="43" startPosition="67" endLine="44" endPosition="32" />
-    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="45" startPosition="7" endLine="46" endPosition="207" />
-    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="46" startPosition="207" endLine="47" endPosition="43" />
-    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="47" startPosition="43" endLine="48" endPosition="263" />
-    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="48" startPosition="263" endLine="49" endPosition="31" />
-    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="50" startPosition="7" endLine="51" endPosition="20" />
-    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="37" startPosition="56" endLine="39" endPosition="5" />
-    <nodeInfo nodeId="1210845337679" fileName="RulesUtil_Closures.java" startLine="27" startPosition="77" endLine="32" endPosition="0" />
-    <nodeInfo nodeId="1210845254525" fileName="RulesUtil_Closures.java" startLine="26" startPosition="244" endLine="32" endPosition="9" />
-    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="44" startPosition="32" endLine="50" endPosition="7" />
-    <nodeInfo nodeId="1210845040787" fileName="RulesUtil_Closures.java" startLine="24" startPosition="45" endLine="33" endPosition="5" />
-    <nodeInfo nodeId="1210844975767" fileName="RulesUtil_Closures.java" startLine="23" startPosition="0" endLine="36" endPosition="0" />
-    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="40" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="38" startPosition="47" endLine="38" endPosition="47" />
-    <scopeInfo nodeId="1210845337682" fileName="RulesUtil_Closures.java" startLine="28" startPosition="32" endLine="30" endPosition="69" />
-    <scopeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="37" startPosition="56" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="45" startPosition="7" endLine="49" endPosition="31" />
-    <scopeInfo nodeId="1210845337679" fileName="RulesUtil_Closures.java" startLine="27" startPosition="77" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="44" startPosition="32" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="1210845040788" fileName="RulesUtil_Closures.java" startLine="25" startPosition="32" endLine="32" endPosition="9" />
-    <scopeInfo nodeId="1210844975770" fileName="RulesUtil_Closures.java" startLine="24" startPosition="45" endLine="34" endPosition="25" />
-    <scopeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="41" startPosition="31" endLine="51" endPosition="20" />
-    <scopeInfo nodeId="1210844975767" fileName="RulesUtil_Closures.java" startLine="23" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="40" startPosition="0" endLine="53" endPosition="0" />
-    <unitInfo nodeId="1210845267379" fileName="RulesUtil_Closures.java" startLine="27" startPosition="60" endLine="32" endPosition="7" unitName="jetbrains.mps.baseLanguage.closures.typesystem.RulesUtil_Closures$1" />
-    <unitInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="37" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.RulesUtil_Closures$QuotationClass_6hhi7_a0a0a0a0a0a" />
-    <unitInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="21" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.RulesUtil_Closures" />
+    <nodeInfo nodeId="1210844990240" fileName="RulesUtil_Closures.java" startLine="20" startPosition="33" endLine="21" endPosition="47" />
+    <nodeInfo nodeId="1210845050031" fileName="RulesUtil_Closures.java" startLine="24" startPosition="32" endLine="25" endPosition="244" />
+    <nodeInfo nodeId="1210845369328" fileName="RulesUtil_Closures.java" startLine="27" startPosition="32" endLine="28" endPosition="50" />
+    <nodeInfo nodeId="1210845414016" fileName="RulesUtil_Closures.java" startLine="28" startPosition="50" endLine="29" endPosition="69" />
+    <nodeInfo nodeId="1210845072936" fileName="RulesUtil_Closures.java" startLine="32" startPosition="5" endLine="33" endPosition="25" />
+    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="40" startPosition="31" endLine="41" endPosition="26" />
+    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="41" startPosition="26" endLine="42" endPosition="67" />
+    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="42" startPosition="67" endLine="43" endPosition="32" />
+    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="44" startPosition="7" endLine="45" endPosition="163" />
+    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="45" startPosition="163" endLine="46" endPosition="43" />
+    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="46" startPosition="43" endLine="47" endPosition="263" />
+    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="47" startPosition="263" endLine="48" endPosition="31" />
+    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="49" startPosition="7" endLine="50" endPosition="20" />
+    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="36" startPosition="56" endLine="38" endPosition="5" />
+    <nodeInfo nodeId="1210845337679" fileName="RulesUtil_Closures.java" startLine="26" startPosition="77" endLine="31" endPosition="0" />
+    <nodeInfo nodeId="1210845254525" fileName="RulesUtil_Closures.java" startLine="25" startPosition="244" endLine="31" endPosition="9" />
+    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="43" startPosition="32" endLine="49" endPosition="7" />
+    <nodeInfo nodeId="1210845040787" fileName="RulesUtil_Closures.java" startLine="23" startPosition="45" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="1210844975767" fileName="RulesUtil_Closures.java" startLine="22" startPosition="0" endLine="35" endPosition="0" />
+    <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="39" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="37" startPosition="47" endLine="37" endPosition="47" />
+    <scopeInfo nodeId="1210845337682" fileName="RulesUtil_Closures.java" startLine="27" startPosition="32" endLine="29" endPosition="69" />
+    <scopeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="36" startPosition="56" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="44" startPosition="7" endLine="48" endPosition="31" />
+    <scopeInfo nodeId="1210845337679" fileName="RulesUtil_Closures.java" startLine="26" startPosition="77" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="43" startPosition="32" endLine="49" endPosition="7" />
+    <scopeInfo nodeId="1210845040788" fileName="RulesUtil_Closures.java" startLine="24" startPosition="32" endLine="31" endPosition="9" />
+    <scopeInfo nodeId="1210844975770" fileName="RulesUtil_Closures.java" startLine="23" startPosition="45" endLine="33" endPosition="25" />
+    <scopeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="40" startPosition="31" endLine="50" endPosition="20" />
+    <scopeInfo nodeId="1210844975767" fileName="RulesUtil_Closures.java" startLine="22" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="39" startPosition="0" endLine="52" endPosition="0" />
+    <unitInfo nodeId="1210845267379" fileName="RulesUtil_Closures.java" startLine="26" startPosition="60" endLine="31" endPosition="7" unitName="jetbrains.mps.baseLanguage.closures.typesystem.RulesUtil_Closures$1" />
+    <unitInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="36" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.RulesUtil_Closures$QuotationClass_6hhi7_a0a0a0a0a0a" />
+    <unitInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="20" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.RulesUtil_Closures" />
   </root>
   <root nodeId="1221579075452">
-    <nodeInfo nodeId="1221579075454" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="38" startPosition="93" endLine="39" endPosition="75" />
-    <nodeInfo nodeId="1221579075465" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="41" startPosition="142" endLine="42" endPosition="99" />
-    <nodeInfo nodeId="1221579075466" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="43" startPosition="9" endLine="44" endPosition="51" />
-    <nodeInfo nodeId="1221579075466" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="44" startPosition="51" endLine="45" endPosition="57" />
-    <nodeInfo nodeId="1221579075466" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="45" startPosition="57" endLine="46" endPosition="223" />
-    <nodeInfo nodeId="1221579075466" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="46" startPosition="223" endLine="47" endPosition="334" />
-    <nodeInfo nodeId="1221579075472" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="48" startPosition="9" endLine="49" endPosition="138" />
-    <nodeInfo nodeId="1229279829877" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="50" startPosition="76" endLine="51" endPosition="101" />
-    <nodeInfo nodeId="1221579075497" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="53" startPosition="5" endLine="54" endPosition="72" />
-    <nodeInfo nodeId="1221579075504" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="54" startPosition="72" endLine="55" endPosition="72" />
-    <nodeInfo nodeId="1228998509554" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="55" startPosition="72" endLine="56" endPosition="75" />
-    <nodeInfo nodeId="1221579075511" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="56" startPosition="75" endLine="57" endPosition="74" />
-    <nodeInfo nodeId="1221579075518" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="57" startPosition="74" endLine="58" endPosition="74" />
-    <nodeInfo nodeId="1221579075533" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="60" startPosition="100" endLine="61" endPosition="53" />
-    <nodeInfo nodeId="1221579075540" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="62" startPosition="115" endLine="63" endPosition="53" />
-    <nodeInfo nodeId="1228999908466" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="64" startPosition="118" endLine="65" endPosition="56" />
-    <nodeInfo nodeId="1221579075551" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="66" startPosition="221" endLine="67" endPosition="54" />
-    <nodeInfo nodeId="1221579075580" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="70" startPosition="58" endLine="71" endPosition="70" />
-    <nodeInfo nodeId="1221579075588" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="72" startPosition="103" endLine="73" endPosition="56" />
-    <nodeInfo nodeId="1228999965373" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="74" startPosition="118" endLine="75" endPosition="56" />
-    <nodeInfo nodeId="1228999984789" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="76" startPosition="121" endLine="77" endPosition="59" />
-    <nodeInfo nodeId="1221579075599" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="79" startPosition="111" endLine="80" endPosition="56" />
-    <nodeInfo nodeId="1221579075612" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="82" startPosition="104" endLine="83" endPosition="101" />
-    <nodeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="84" startPosition="11" endLine="85" endPosition="175" />
-    <nodeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="85" startPosition="175" endLine="86" endPosition="59" />
-    <nodeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="86" startPosition="59" endLine="87" endPosition="225" />
-    <nodeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="87" startPosition="225" endLine="88" endPosition="336" />
-    <nodeInfo nodeId="1221579075622" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="89" startPosition="11" endLine="90" endPosition="139" />
-    <nodeInfo nodeId="1221579075642" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="93" startPosition="238" endLine="94" endPosition="87" />
-    <nodeInfo nodeId="1237288028844" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="96" startPosition="9" endLine="97" endPosition="81" />
-    <nodeInfo nodeId="1237288342395" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="97" startPosition="81" endLine="98" endPosition="113" />
-    <nodeInfo nodeId="1237288605389" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="99" startPosition="65" endLine="100" endPosition="74" />
-    <nodeInfo nodeId="1221579075661" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="103" startPosition="230" endLine="104" endPosition="66" />
-    <nodeInfo nodeId="1237371422002" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="107" startPosition="122" endLine="108" endPosition="114" />
-    <nodeInfo nodeId="1221579075692" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="112" startPosition="5" endLine="113" endPosition="97" />
-    <nodeInfo nodeId="3294521177951941138" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="116" startPosition="9" endLine="117" endPosition="53" />
-    <nodeInfo nodeId="3294521177951941138" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="117" startPosition="53" endLine="118" endPosition="57" />
-    <nodeInfo nodeId="3294521177951941138" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="118" startPosition="57" endLine="119" endPosition="229" />
-    <nodeInfo nodeId="3294521177951941138" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="119" startPosition="229" endLine="120" endPosition="58" />
-    <nodeInfo nodeId="3294521177951941138" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="120" startPosition="58" endLine="121" endPosition="296" />
-    <nodeInfo nodeId="1221579075710" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="124" startPosition="9" endLine="125" endPosition="53" />
-    <nodeInfo nodeId="1221579075710" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="125" startPosition="53" endLine="126" endPosition="57" />
-    <nodeInfo nodeId="1221579075710" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="126" startPosition="57" endLine="127" endPosition="223" />
-    <nodeInfo nodeId="1221579075710" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="127" startPosition="223" endLine="128" endPosition="58" />
-    <nodeInfo nodeId="1221579075693" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="135" startPosition="5" endLine="136" endPosition="97" />
-    <nodeInfo nodeId="1221579075724" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="138" startPosition="7" endLine="139" endPosition="51" />
-    <nodeInfo nodeId="1221579075724" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="139" startPosition="51" endLine="140" endPosition="55" />
-    <nodeInfo nodeId="1221579075724" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="140" startPosition="55" endLine="141" endPosition="221" />
-    <nodeInfo nodeId="1221579075724" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="141" startPosition="221" endLine="142" endPosition="56" />
-    <nodeInfo nodeId="1229000934873" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="148" startPosition="5" endLine="149" endPosition="98" />
-    <nodeInfo nodeId="1229000969704" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="150" startPosition="34" endLine="151" endPosition="106" />
-    <nodeInfo nodeId="1229000989981" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="152" startPosition="7" endLine="153" endPosition="183" />
-    <nodeInfo nodeId="1229000989981" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="153" startPosition="183" endLine="154" endPosition="55" />
-    <nodeInfo nodeId="1229000989981" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="154" startPosition="55" endLine="155" endPosition="221" />
-    <nodeInfo nodeId="1229000989981" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="155" startPosition="221" endLine="156" endPosition="56" />
-    <nodeInfo nodeId="1229000989981" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="156" startPosition="56" endLine="157" endPosition="559" />
-    <nodeInfo nodeId="1229001090979" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="159" startPosition="7" endLine="160" endPosition="51" />
-    <nodeInfo nodeId="1229001090979" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="160" startPosition="51" endLine="161" endPosition="55" />
-    <nodeInfo nodeId="1229001090979" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="161" startPosition="55" endLine="162" endPosition="221" />
-    <nodeInfo nodeId="1229001090979" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="162" startPosition="221" endLine="163" endPosition="56" />
-    <nodeInfo nodeId="1229001090979" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="163" startPosition="56" endLine="164" endPosition="280" />
-    <nodeInfo nodeId="1221579075736" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="166" startPosition="5" endLine="167" endPosition="120" />
-    <nodeInfo nodeId="1221579075694" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="171" startPosition="6" endLine="172" endPosition="71" />
-    <nodeInfo nodeId="1226055847954" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="172" startPosition="71" endLine="173" endPosition="217" />
-    <nodeInfo nodeId="1221579075701" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="173" startPosition="217" endLine="174" endPosition="70" />
-    <nodeInfo nodeId="1229001367389" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="176" startPosition="13" endLine="177" endPosition="14" />
-    <nodeInfo nodeId="1229001395729" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="179" startPosition="92" endLine="180" endPosition="30" />
-    <nodeInfo nodeId="1229001407669" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="181" startPosition="11" endLine="182" endPosition="55" />
-    <nodeInfo nodeId="1229001407669" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="182" startPosition="55" endLine="183" endPosition="59" />
-    <nodeInfo nodeId="1229001407669" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="183" startPosition="59" endLine="184" endPosition="225" />
-    <nodeInfo nodeId="1229001407669" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="184" startPosition="225" endLine="185" endPosition="60" />
-    <nodeInfo nodeId="1229001407669" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="185" startPosition="60" endLine="186" endPosition="386" />
-    <nodeInfo nodeId="1229001379501" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="187" startPosition="11" endLine="188" endPosition="16" />
-    <nodeInfo nodeId="7376433222636453611" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="189" startPosition="9" endLine="190" endPosition="25" />
-    <nodeInfo nodeId="1229010820332" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="191" startPosition="14" endLine="192" endPosition="27" />
-    <nodeInfo nodeId="1229010820337" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="193" startPosition="9" endLine="194" endPosition="53" />
-    <nodeInfo nodeId="1229010820337" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="194" startPosition="53" endLine="195" endPosition="57" />
-    <nodeInfo nodeId="1229010820337" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="195" startPosition="57" endLine="196" endPosition="223" />
-    <nodeInfo nodeId="1229010820337" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="196" startPosition="223" endLine="197" endPosition="58" />
-    <nodeInfo nodeId="1229010820337" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="197" startPosition="58" endLine="198" endPosition="275" />
-    <nodeInfo nodeId="1221579592331" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="200" startPosition="5" endLine="201" endPosition="99" />
-    <nodeInfo nodeId="1232125235963" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="201" startPosition="99" endLine="202" endPosition="99" />
-    <nodeInfo nodeId="1232105622932" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="202" startPosition="99" endLine="203" endPosition="102" />
-    <nodeInfo nodeId="1232131392781" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="204" startPosition="5" endLine="205" endPosition="49" />
-    <nodeInfo nodeId="1232131392781" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="205" startPosition="49" endLine="206" endPosition="53" />
-    <nodeInfo nodeId="1232131392781" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="206" startPosition="53" endLine="207" endPosition="219" />
-    <nodeInfo nodeId="1232131392781" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="207" startPosition="219" endLine="208" endPosition="54" />
-    <nodeInfo nodeId="1232131392781" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="208" startPosition="54" endLine="209" endPosition="272" />
-    <nodeInfo nodeId="3294521177951941153" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="212" startPosition="7" endLine="213" endPosition="51" />
-    <nodeInfo nodeId="3294521177951941153" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="213" startPosition="51" endLine="214" endPosition="55" />
-    <nodeInfo nodeId="3294521177951941153" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="214" startPosition="55" endLine="215" endPosition="227" />
-    <nodeInfo nodeId="1232125197501" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="220" startPosition="7" endLine="221" endPosition="107" />
-    <nodeInfo nodeId="1232125205435" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="222" startPosition="7" endLine="223" endPosition="51" />
-    <nodeInfo nodeId="1232125205435" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="223" startPosition="51" endLine="224" endPosition="55" />
-    <nodeInfo nodeId="1232125205435" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="224" startPosition="55" endLine="225" endPosition="221" />
-    <nodeInfo nodeId="1232125205435" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="225" startPosition="221" endLine="226" endPosition="56" />
-    <nodeInfo nodeId="1232125205435" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="226" startPosition="56" endLine="227" endPosition="280" />
-    <nodeInfo nodeId="1221579075770" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="229" startPosition="7" endLine="230" endPosition="51" />
-    <nodeInfo nodeId="1221579075770" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="230" startPosition="51" endLine="231" endPosition="55" />
-    <nodeInfo nodeId="1221579075770" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="231" startPosition="55" endLine="232" endPosition="221" />
-    <nodeInfo nodeId="1221579075770" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="232" startPosition="221" endLine="233" endPosition="56" />
-    <nodeInfo nodeId="1221579075770" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="233" startPosition="56" endLine="234" endPosition="285" />
-    <nodeInfo nodeId="1221663085197" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="236" startPosition="7" endLine="237" endPosition="51" />
-    <nodeInfo nodeId="1221663085197" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="237" startPosition="51" endLine="238" endPosition="55" />
-    <nodeInfo nodeId="1221663085197" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="238" startPosition="55" endLine="239" endPosition="221" />
-    <nodeInfo nodeId="1221663085197" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="239" startPosition="221" endLine="240" endPosition="262" />
-    <nodeInfo nodeId="1232131979682" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="243" startPosition="7" endLine="244" endPosition="51" />
-    <nodeInfo nodeId="1232131979682" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="244" startPosition="51" endLine="245" endPosition="55" />
-    <nodeInfo nodeId="1232131979682" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="245" startPosition="55" endLine="246" endPosition="221" />
-    <nodeInfo nodeId="1232131979682" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="246" startPosition="221" endLine="247" endPosition="279" />
-    <nodeInfo nodeId="1221663751995" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="249" startPosition="7" endLine="250" endPosition="51" />
-    <nodeInfo nodeId="1221663751995" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="250" startPosition="51" endLine="251" endPosition="55" />
-    <nodeInfo nodeId="1221663751995" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="251" startPosition="55" endLine="252" endPosition="221" />
-    <nodeInfo nodeId="1221663751995" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="252" startPosition="221" endLine="253" endPosition="254" />
-    <nodeInfo nodeId="1221579075807" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="255" startPosition="5" endLine="256" endPosition="75" />
-    <nodeInfo nodeId="1221579075820" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="260" startPosition="467" endLine="261" endPosition="34" />
-    <nodeInfo nodeId="1221579075842" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="263" startPosition="52" endLine="264" endPosition="34" />
-    <nodeInfo nodeId="1221579075849" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="266" startPosition="7" endLine="267" endPosition="60" />
-    <nodeInfo nodeId="1221579075859" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="270" startPosition="21" endLine="271" endPosition="55" />
-    <nodeInfo nodeId="1221579075859" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="271" startPosition="55" endLine="272" endPosition="57" />
-    <nodeInfo nodeId="1221579075859" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="272" startPosition="57" endLine="273" endPosition="275" />
-    <nodeInfo nodeId="1229718163909" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="277" startPosition="7" endLine="278" endPosition="51" />
-    <nodeInfo nodeId="1229718163909" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="278" startPosition="51" endLine="279" endPosition="55" />
-    <nodeInfo nodeId="1229718163909" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="279" startPosition="55" endLine="280" endPosition="221" />
-    <nodeInfo nodeId="1229718163909" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="280" startPosition="221" endLine="281" endPosition="602" />
-    <nodeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="285" startPosition="7" endLine="286" endPosition="51" />
-    <nodeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="286" startPosition="51" endLine="287" endPosition="55" />
-    <nodeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="287" startPosition="55" endLine="288" endPosition="221" />
-    <nodeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="288" startPosition="221" endLine="289" endPosition="542" />
-    <nodeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="292" startPosition="7" endLine="293" endPosition="51" />
-    <nodeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="293" startPosition="51" endLine="294" endPosition="55" />
-    <nodeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="294" startPosition="55" endLine="295" endPosition="221" />
-    <nodeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="295" startPosition="221" endLine="296" endPosition="668" />
-    <nodeInfo nodeId="1221579075633" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="92" startPosition="101" endLine="95" endPosition="11" />
-    <nodeInfo nodeId="1221579075659" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="102" startPosition="158" endLine="105" endPosition="15" />
-    <nodeInfo nodeId="1221579075818" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="259" startPosition="36" endLine="262" endPosition="9" />
-    <nodeInfo nodeId="1221579075840" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="262" startPosition="9" endLine="265" endPosition="9" />
-    <nodeInfo nodeId="1221579075710" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="128" startPosition="58" endLine="132" endPosition="39" />
-    <nodeInfo nodeId="1221579075724" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="142" startPosition="56" endLine="146" endPosition="37" />
-    <nodeInfo nodeId="1221579075745" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="167" startPosition="120" endLine="171" endPosition="6" />
-    <nodeInfo nodeId="3294521177951941153" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="215" startPosition="227" endLine="219" endPosition="30" />
-    <nodeInfo nodeId="1221579075631" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="91" startPosition="14" endLine="96" endPosition="9" />
-    <nodeInfo nodeId="1221579075657" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="101" startPosition="102" endLine="106" endPosition="13" />
-    <nodeInfo nodeId="1221579075859" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="269" startPosition="38" endLine="274" endPosition="7" />
-    <nodeInfo nodeId="1221579075466" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="42" startPosition="99" endLine="48" endPosition="9" />
-    <nodeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="83" startPosition="101" endLine="89" endPosition="11" />
-    <nodeInfo nodeId="1221663085197" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="235" startPosition="7" endLine="241" endPosition="7" />
-    <nodeInfo nodeId="1232131979682" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="242" startPosition="12" endLine="248" endPosition="7" />
-    <nodeInfo nodeId="1221663751995" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="248" startPosition="7" endLine="254" endPosition="7" />
-    <nodeInfo nodeId="1229718163909" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="276" startPosition="62" endLine="282" endPosition="7" />
-    <nodeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="284" startPosition="22" endLine="290" endPosition="7" />
-    <nodeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="291" startPosition="12" endLine="297" endPosition="7" />
-    <nodeInfo nodeId="3294521177951941138" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="115" startPosition="222" endLine="122" endPosition="9" />
-    <nodeInfo nodeId="1229000989981" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="151" startPosition="106" endLine="158" endPosition="7" />
-    <nodeInfo nodeId="1229001090979" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="158" startPosition="7" endLine="165" endPosition="7" />
-    <nodeInfo nodeId="1229001407669" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="180" startPosition="30" endLine="187" endPosition="11" />
-    <nodeInfo nodeId="1229010820337" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="192" startPosition="27" endLine="199" endPosition="9" />
-    <nodeInfo nodeId="1232131392781" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="203" startPosition="102" endLine="210" endPosition="5" />
-    <nodeInfo nodeId="1232125205435" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="221" startPosition="107" endLine="228" endPosition="7" />
-    <nodeInfo nodeId="1221579075770" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="228" startPosition="7" endLine="235" endPosition="7" />
-    <nodeInfo nodeId="1221579075918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="291" startPosition="10" endLine="298" endPosition="5" />
-    <nodeInfo nodeId="1221579075816" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="258" startPosition="37" endLine="266" endPosition="7" />
-    <nodeInfo nodeId="1221579075527" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="59" startPosition="99" endLine="68" endPosition="7" />
-    <nodeInfo nodeId="1221579075655" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="100" startPosition="74" endLine="109" endPosition="11" />
-    <nodeInfo nodeId="3294521177951941153" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="211" startPosition="44" endLine="220" endPosition="7" />
-    <nodeInfo nodeId="1221579075710" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="123" startPosition="14" endLine="133" endPosition="9" />
-    <nodeInfo nodeId="1221579075724" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="137" startPosition="30" endLine="147" endPosition="7" />
-    <nodeInfo nodeId="1221579075525" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="58" startPosition="74" endLine="69" endPosition="5" />
-    <nodeInfo nodeId="3294521177951941148" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="123" startPosition="12" endLine="134" endPosition="7" />
-    <nodeInfo nodeId="1229001381216" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="178" startPosition="13" endLine="189" endPosition="9" />
-    <nodeInfo nodeId="1221579075463" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="40" startPosition="80" endLine="52" endPosition="7" />
-    <nodeInfo nodeId="1237288585834" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="98" startPosition="113" endLine="110" endPosition="9" />
-    <nodeInfo nodeId="1221579075722" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="136" startPosition="97" endLine="148" endPosition="5" />
-    <nodeInfo nodeId="1221579075814" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="256" startPosition="75" endLine="268" endPosition="5" />
-    <nodeInfo nodeId="1221663683711" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="242" startPosition="10" endLine="255" endPosition="5" />
-    <nodeInfo nodeId="1221579075461" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="39" startPosition="75" endLine="53" endPosition="5" />
-    <nodeInfo nodeId="1221579075610" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="81" startPosition="14" endLine="96" endPosition="9" />
-    <nodeInfo nodeId="1221579075885" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="283" startPosition="10" endLine="298" endPosition="5" />
-    <nodeInfo nodeId="1229000947250" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="149" startPosition="98" endLine="166" endPosition="5" />
-    <nodeInfo nodeId="3294521177951941121" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="114" startPosition="30" endLine="134" endPosition="7" />
-    <nodeInfo nodeId="1221579075708" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="113" startPosition="97" endLine="135" endPosition="5" />
-    <nodeInfo nodeId="1221579075866" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="275" startPosition="10" endLine="298" endPosition="5" />
-    <nodeInfo nodeId="1229001355011" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="174" startPosition="70" endLine="200" endPosition="5" />
-    <nodeInfo nodeId="1221579075608" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="81" startPosition="12" endLine="111" endPosition="7" />
-    <nodeInfo nodeId="1221579075857" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="268" startPosition="5" endLine="298" endPosition="5" />
-    <nodeInfo nodeId="1221579075597" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="78" startPosition="12" endLine="111" endPosition="7" />
-    <nodeInfo nodeId="1221579075586" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="71" startPosition="70" endLine="111" endPosition="7" />
-    <nodeInfo nodeId="1221579075574" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="69" startPosition="5" endLine="112" endPosition="5" />
-    <nodeInfo nodeId="1221579075767" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="210" startPosition="5" endLine="255" endPosition="5" />
-    <scopeInfo nodeId="1229279829876" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="50" startPosition="76" endLine="51" endPosition="101" />
-    <scopeInfo nodeId="1221579075532" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="60" startPosition="100" endLine="61" endPosition="53" />
-    <scopeInfo nodeId="1228999475018" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="62" startPosition="115" endLine="63" endPosition="53" />
-    <scopeInfo nodeId="1228999896031" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="64" startPosition="118" endLine="65" endPosition="56" />
-    <scopeInfo nodeId="1221579075550" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="66" startPosition="221" endLine="67" endPosition="54" />
-    <scopeInfo nodeId="1221579075587" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="72" startPosition="103" endLine="73" endPosition="56" />
-    <scopeInfo nodeId="1228999942581" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="74" startPosition="118" endLine="75" endPosition="56" />
-    <scopeInfo nodeId="1228999966532" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="76" startPosition="121" endLine="77" endPosition="59" />
-    <scopeInfo nodeId="1221579075598" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="79" startPosition="111" endLine="80" endPosition="56" />
+    <nodeInfo nodeId="1221579075454" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="37" startPosition="93" endLine="38" endPosition="75" />
+    <nodeInfo nodeId="1221579075465" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="40" startPosition="142" endLine="41" endPosition="99" />
+    <nodeInfo nodeId="1221579075466" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="42" startPosition="9" endLine="43" endPosition="51" />
+    <nodeInfo nodeId="1221579075466" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="43" startPosition="51" endLine="44" endPosition="57" />
+    <nodeInfo nodeId="1221579075466" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="44" startPosition="57" endLine="45" endPosition="223" />
+    <nodeInfo nodeId="1221579075466" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="45" startPosition="223" endLine="46" endPosition="334" />
+    <nodeInfo nodeId="1221579075472" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="47" startPosition="9" endLine="48" endPosition="138" />
+    <nodeInfo nodeId="1229279829877" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="49" startPosition="76" endLine="50" endPosition="101" />
+    <nodeInfo nodeId="1221579075497" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="52" startPosition="5" endLine="53" endPosition="72" />
+    <nodeInfo nodeId="1221579075504" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="53" startPosition="72" endLine="54" endPosition="72" />
+    <nodeInfo nodeId="1228998509554" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="54" startPosition="72" endLine="55" endPosition="75" />
+    <nodeInfo nodeId="1221579075511" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="55" startPosition="75" endLine="56" endPosition="74" />
+    <nodeInfo nodeId="1221579075518" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="56" startPosition="74" endLine="57" endPosition="74" />
+    <nodeInfo nodeId="1221579075533" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="59" startPosition="100" endLine="60" endPosition="53" />
+    <nodeInfo nodeId="1221579075540" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="61" startPosition="115" endLine="62" endPosition="53" />
+    <nodeInfo nodeId="1228999908466" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="63" startPosition="118" endLine="64" endPosition="56" />
+    <nodeInfo nodeId="1221579075551" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="65" startPosition="221" endLine="66" endPosition="54" />
+    <nodeInfo nodeId="1221579075580" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="69" startPosition="58" endLine="70" endPosition="70" />
+    <nodeInfo nodeId="1221579075588" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="71" startPosition="103" endLine="72" endPosition="56" />
+    <nodeInfo nodeId="1228999965373" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="73" startPosition="118" endLine="74" endPosition="56" />
+    <nodeInfo nodeId="1228999984789" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="75" startPosition="121" endLine="76" endPosition="59" />
+    <nodeInfo nodeId="1221579075599" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="78" startPosition="111" endLine="79" endPosition="56" />
+    <nodeInfo nodeId="1221579075612" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="81" startPosition="104" endLine="82" endPosition="101" />
+    <nodeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="83" startPosition="11" endLine="84" endPosition="175" />
+    <nodeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="84" startPosition="175" endLine="85" endPosition="59" />
+    <nodeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="85" startPosition="59" endLine="86" endPosition="225" />
+    <nodeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="86" startPosition="225" endLine="87" endPosition="336" />
+    <nodeInfo nodeId="1221579075622" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="88" startPosition="11" endLine="89" endPosition="139" />
+    <nodeInfo nodeId="1221579075642" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="92" startPosition="238" endLine="93" endPosition="87" />
+    <nodeInfo nodeId="1237288028844" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="95" startPosition="9" endLine="96" endPosition="81" />
+    <nodeInfo nodeId="1237288342395" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="96" startPosition="81" endLine="97" endPosition="113" />
+    <nodeInfo nodeId="1237288605389" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="98" startPosition="65" endLine="99" endPosition="74" />
+    <nodeInfo nodeId="1221579075661" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="102" startPosition="230" endLine="103" endPosition="66" />
+    <nodeInfo nodeId="1237371422002" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="106" startPosition="122" endLine="107" endPosition="114" />
+    <nodeInfo nodeId="1221579075692" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="111" startPosition="5" endLine="112" endPosition="97" />
+    <nodeInfo nodeId="3294521177951941138" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="115" startPosition="9" endLine="116" endPosition="53" />
+    <nodeInfo nodeId="3294521177951941138" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="116" startPosition="53" endLine="117" endPosition="57" />
+    <nodeInfo nodeId="3294521177951941138" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="117" startPosition="57" endLine="118" endPosition="229" />
+    <nodeInfo nodeId="3294521177951941138" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="118" startPosition="229" endLine="119" endPosition="58" />
+    <nodeInfo nodeId="3294521177951941138" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="119" startPosition="58" endLine="120" endPosition="296" />
+    <nodeInfo nodeId="1221579075710" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="123" startPosition="9" endLine="124" endPosition="53" />
+    <nodeInfo nodeId="1221579075710" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="124" startPosition="53" endLine="125" endPosition="57" />
+    <nodeInfo nodeId="1221579075710" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="125" startPosition="57" endLine="126" endPosition="223" />
+    <nodeInfo nodeId="1221579075710" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="126" startPosition="223" endLine="127" endPosition="58" />
+    <nodeInfo nodeId="1221579075693" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="134" startPosition="5" endLine="135" endPosition="97" />
+    <nodeInfo nodeId="1221579075724" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="137" startPosition="7" endLine="138" endPosition="51" />
+    <nodeInfo nodeId="1221579075724" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="138" startPosition="51" endLine="139" endPosition="55" />
+    <nodeInfo nodeId="1221579075724" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="139" startPosition="55" endLine="140" endPosition="221" />
+    <nodeInfo nodeId="1221579075724" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="140" startPosition="221" endLine="141" endPosition="56" />
+    <nodeInfo nodeId="1229000934873" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="147" startPosition="5" endLine="148" endPosition="98" />
+    <nodeInfo nodeId="1229000969704" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="149" startPosition="34" endLine="150" endPosition="106" />
+    <nodeInfo nodeId="1229000989981" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="151" startPosition="7" endLine="152" endPosition="183" />
+    <nodeInfo nodeId="1229000989981" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="152" startPosition="183" endLine="153" endPosition="55" />
+    <nodeInfo nodeId="1229000989981" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="153" startPosition="55" endLine="154" endPosition="221" />
+    <nodeInfo nodeId="1229000989981" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="154" startPosition="221" endLine="155" endPosition="56" />
+    <nodeInfo nodeId="1229000989981" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="155" startPosition="56" endLine="156" endPosition="559" />
+    <nodeInfo nodeId="1229001090979" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="158" startPosition="7" endLine="159" endPosition="51" />
+    <nodeInfo nodeId="1229001090979" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="159" startPosition="51" endLine="160" endPosition="55" />
+    <nodeInfo nodeId="1229001090979" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="160" startPosition="55" endLine="161" endPosition="221" />
+    <nodeInfo nodeId="1229001090979" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="161" startPosition="221" endLine="162" endPosition="56" />
+    <nodeInfo nodeId="1229001090979" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="162" startPosition="56" endLine="163" endPosition="280" />
+    <nodeInfo nodeId="1221579075736" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="165" startPosition="5" endLine="166" endPosition="120" />
+    <nodeInfo nodeId="1221579075694" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="170" startPosition="6" endLine="171" endPosition="71" />
+    <nodeInfo nodeId="1226055847954" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="171" startPosition="71" endLine="172" endPosition="217" />
+    <nodeInfo nodeId="1221579075701" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="172" startPosition="217" endLine="173" endPosition="70" />
+    <nodeInfo nodeId="1229001367389" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="175" startPosition="13" endLine="176" endPosition="14" />
+    <nodeInfo nodeId="1229001395729" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="178" startPosition="92" endLine="179" endPosition="30" />
+    <nodeInfo nodeId="1229001407669" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="180" startPosition="11" endLine="181" endPosition="55" />
+    <nodeInfo nodeId="1229001407669" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="181" startPosition="55" endLine="182" endPosition="59" />
+    <nodeInfo nodeId="1229001407669" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="182" startPosition="59" endLine="183" endPosition="225" />
+    <nodeInfo nodeId="1229001407669" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="183" startPosition="225" endLine="184" endPosition="60" />
+    <nodeInfo nodeId="1229001407669" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="184" startPosition="60" endLine="185" endPosition="386" />
+    <nodeInfo nodeId="1229001379501" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="186" startPosition="11" endLine="187" endPosition="16" />
+    <nodeInfo nodeId="7376433222636453611" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="188" startPosition="9" endLine="189" endPosition="25" />
+    <nodeInfo nodeId="1229010820332" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="190" startPosition="14" endLine="191" endPosition="27" />
+    <nodeInfo nodeId="1229010820337" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="192" startPosition="9" endLine="193" endPosition="53" />
+    <nodeInfo nodeId="1229010820337" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="193" startPosition="53" endLine="194" endPosition="57" />
+    <nodeInfo nodeId="1229010820337" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="194" startPosition="57" endLine="195" endPosition="223" />
+    <nodeInfo nodeId="1229010820337" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="195" startPosition="223" endLine="196" endPosition="58" />
+    <nodeInfo nodeId="1229010820337" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="196" startPosition="58" endLine="197" endPosition="275" />
+    <nodeInfo nodeId="1221579592331" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="199" startPosition="5" endLine="200" endPosition="99" />
+    <nodeInfo nodeId="1232125235963" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="200" startPosition="99" endLine="201" endPosition="99" />
+    <nodeInfo nodeId="1232105622932" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="201" startPosition="99" endLine="202" endPosition="102" />
+    <nodeInfo nodeId="1232131392781" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="203" startPosition="5" endLine="204" endPosition="49" />
+    <nodeInfo nodeId="1232131392781" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="204" startPosition="49" endLine="205" endPosition="53" />
+    <nodeInfo nodeId="1232131392781" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="205" startPosition="53" endLine="206" endPosition="219" />
+    <nodeInfo nodeId="1232131392781" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="206" startPosition="219" endLine="207" endPosition="54" />
+    <nodeInfo nodeId="1232131392781" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="207" startPosition="54" endLine="208" endPosition="272" />
+    <nodeInfo nodeId="3294521177951941153" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="211" startPosition="7" endLine="212" endPosition="51" />
+    <nodeInfo nodeId="3294521177951941153" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="212" startPosition="51" endLine="213" endPosition="55" />
+    <nodeInfo nodeId="3294521177951941153" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="213" startPosition="55" endLine="214" endPosition="227" />
+    <nodeInfo nodeId="1232125197501" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="219" startPosition="7" endLine="220" endPosition="107" />
+    <nodeInfo nodeId="1232125205435" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="221" startPosition="7" endLine="222" endPosition="51" />
+    <nodeInfo nodeId="1232125205435" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="222" startPosition="51" endLine="223" endPosition="55" />
+    <nodeInfo nodeId="1232125205435" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="223" startPosition="55" endLine="224" endPosition="221" />
+    <nodeInfo nodeId="1232125205435" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="224" startPosition="221" endLine="225" endPosition="56" />
+    <nodeInfo nodeId="1232125205435" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="225" startPosition="56" endLine="226" endPosition="280" />
+    <nodeInfo nodeId="1221579075770" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="228" startPosition="7" endLine="229" endPosition="51" />
+    <nodeInfo nodeId="1221579075770" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="229" startPosition="51" endLine="230" endPosition="55" />
+    <nodeInfo nodeId="1221579075770" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="230" startPosition="55" endLine="231" endPosition="221" />
+    <nodeInfo nodeId="1221579075770" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="231" startPosition="221" endLine="232" endPosition="56" />
+    <nodeInfo nodeId="1221579075770" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="232" startPosition="56" endLine="233" endPosition="285" />
+    <nodeInfo nodeId="1221663085197" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="235" startPosition="7" endLine="236" endPosition="51" />
+    <nodeInfo nodeId="1221663085197" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="236" startPosition="51" endLine="237" endPosition="55" />
+    <nodeInfo nodeId="1221663085197" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="237" startPosition="55" endLine="238" endPosition="221" />
+    <nodeInfo nodeId="1221663085197" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="238" startPosition="221" endLine="239" endPosition="262" />
+    <nodeInfo nodeId="1232131979682" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="242" startPosition="7" endLine="243" endPosition="51" />
+    <nodeInfo nodeId="1232131979682" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="243" startPosition="51" endLine="244" endPosition="55" />
+    <nodeInfo nodeId="1232131979682" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="244" startPosition="55" endLine="245" endPosition="221" />
+    <nodeInfo nodeId="1232131979682" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="245" startPosition="221" endLine="246" endPosition="279" />
+    <nodeInfo nodeId="1221663751995" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="248" startPosition="7" endLine="249" endPosition="51" />
+    <nodeInfo nodeId="1221663751995" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="249" startPosition="51" endLine="250" endPosition="55" />
+    <nodeInfo nodeId="1221663751995" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="250" startPosition="55" endLine="251" endPosition="221" />
+    <nodeInfo nodeId="1221663751995" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="251" startPosition="221" endLine="252" endPosition="254" />
+    <nodeInfo nodeId="1221579075807" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="254" startPosition="5" endLine="255" endPosition="75" />
+    <nodeInfo nodeId="1221579075820" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="259" startPosition="467" endLine="260" endPosition="34" />
+    <nodeInfo nodeId="1221579075842" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="262" startPosition="52" endLine="263" endPosition="34" />
+    <nodeInfo nodeId="1221579075849" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="265" startPosition="7" endLine="266" endPosition="60" />
+    <nodeInfo nodeId="1221579075859" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="269" startPosition="21" endLine="270" endPosition="55" />
+    <nodeInfo nodeId="1221579075859" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="270" startPosition="55" endLine="271" endPosition="57" />
+    <nodeInfo nodeId="1221579075859" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="271" startPosition="57" endLine="272" endPosition="275" />
+    <nodeInfo nodeId="1229718163909" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="276" startPosition="7" endLine="277" endPosition="51" />
+    <nodeInfo nodeId="1229718163909" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="277" startPosition="51" endLine="278" endPosition="55" />
+    <nodeInfo nodeId="1229718163909" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="278" startPosition="55" endLine="279" endPosition="221" />
+    <nodeInfo nodeId="1229718163909" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="279" startPosition="221" endLine="280" endPosition="602" />
+    <nodeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="284" startPosition="7" endLine="285" endPosition="51" />
+    <nodeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="285" startPosition="51" endLine="286" endPosition="55" />
+    <nodeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="286" startPosition="55" endLine="287" endPosition="221" />
+    <nodeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="287" startPosition="221" endLine="288" endPosition="542" />
+    <nodeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="291" startPosition="7" endLine="292" endPosition="51" />
+    <nodeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="292" startPosition="51" endLine="293" endPosition="55" />
+    <nodeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="293" startPosition="55" endLine="294" endPosition="221" />
+    <nodeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="294" startPosition="221" endLine="295" endPosition="668" />
+    <nodeInfo nodeId="1221579075633" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="91" startPosition="101" endLine="94" endPosition="11" />
+    <nodeInfo nodeId="1221579075659" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="101" startPosition="158" endLine="104" endPosition="15" />
+    <nodeInfo nodeId="1221579075818" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="258" startPosition="36" endLine="261" endPosition="9" />
+    <nodeInfo nodeId="1221579075840" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="261" startPosition="9" endLine="264" endPosition="9" />
+    <nodeInfo nodeId="1221579075710" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="127" startPosition="58" endLine="131" endPosition="39" />
+    <nodeInfo nodeId="1221579075724" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="141" startPosition="56" endLine="145" endPosition="37" />
+    <nodeInfo nodeId="1221579075745" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="166" startPosition="120" endLine="170" endPosition="6" />
+    <nodeInfo nodeId="3294521177951941153" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="214" startPosition="227" endLine="218" endPosition="30" />
+    <nodeInfo nodeId="1221579075631" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="90" startPosition="14" endLine="95" endPosition="9" />
+    <nodeInfo nodeId="1221579075657" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="100" startPosition="102" endLine="105" endPosition="13" />
+    <nodeInfo nodeId="1221579075859" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="268" startPosition="38" endLine="273" endPosition="7" />
+    <nodeInfo nodeId="1221579075466" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="41" startPosition="99" endLine="47" endPosition="9" />
+    <nodeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="82" startPosition="101" endLine="88" endPosition="11" />
+    <nodeInfo nodeId="1221663085197" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="234" startPosition="7" endLine="240" endPosition="7" />
+    <nodeInfo nodeId="1232131979682" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="241" startPosition="12" endLine="247" endPosition="7" />
+    <nodeInfo nodeId="1221663751995" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="247" startPosition="7" endLine="253" endPosition="7" />
+    <nodeInfo nodeId="1229718163909" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="275" startPosition="62" endLine="281" endPosition="7" />
+    <nodeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="283" startPosition="22" endLine="289" endPosition="7" />
+    <nodeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="290" startPosition="12" endLine="296" endPosition="7" />
+    <nodeInfo nodeId="3294521177951941138" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="114" startPosition="222" endLine="121" endPosition="9" />
+    <nodeInfo nodeId="1229000989981" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="150" startPosition="106" endLine="157" endPosition="7" />
+    <nodeInfo nodeId="1229001090979" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="157" startPosition="7" endLine="164" endPosition="7" />
+    <nodeInfo nodeId="1229001407669" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="179" startPosition="30" endLine="186" endPosition="11" />
+    <nodeInfo nodeId="1229010820337" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="191" startPosition="27" endLine="198" endPosition="9" />
+    <nodeInfo nodeId="1232131392781" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="202" startPosition="102" endLine="209" endPosition="5" />
+    <nodeInfo nodeId="1232125205435" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="220" startPosition="107" endLine="227" endPosition="7" />
+    <nodeInfo nodeId="1221579075770" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="227" startPosition="7" endLine="234" endPosition="7" />
+    <nodeInfo nodeId="1221579075918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="290" startPosition="10" endLine="297" endPosition="5" />
+    <nodeInfo nodeId="1221579075816" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="257" startPosition="37" endLine="265" endPosition="7" />
+    <nodeInfo nodeId="1221579075527" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="58" startPosition="99" endLine="67" endPosition="7" />
+    <nodeInfo nodeId="1221579075655" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="99" startPosition="74" endLine="108" endPosition="11" />
+    <nodeInfo nodeId="3294521177951941153" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="210" startPosition="44" endLine="219" endPosition="7" />
+    <nodeInfo nodeId="1221579075710" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="122" startPosition="14" endLine="132" endPosition="9" />
+    <nodeInfo nodeId="1221579075724" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="136" startPosition="30" endLine="146" endPosition="7" />
+    <nodeInfo nodeId="1221579075525" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="57" startPosition="74" endLine="68" endPosition="5" />
+    <nodeInfo nodeId="3294521177951941148" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="122" startPosition="12" endLine="133" endPosition="7" />
+    <nodeInfo nodeId="1229001381216" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="177" startPosition="13" endLine="188" endPosition="9" />
+    <nodeInfo nodeId="1221579075463" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="39" startPosition="80" endLine="51" endPosition="7" />
+    <nodeInfo nodeId="1237288585834" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="97" startPosition="113" endLine="109" endPosition="9" />
+    <nodeInfo nodeId="1221579075722" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="135" startPosition="97" endLine="147" endPosition="5" />
+    <nodeInfo nodeId="1221579075814" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="255" startPosition="75" endLine="267" endPosition="5" />
+    <nodeInfo nodeId="1221663683711" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="241" startPosition="10" endLine="254" endPosition="5" />
+    <nodeInfo nodeId="1221579075461" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="38" startPosition="75" endLine="52" endPosition="5" />
+    <nodeInfo nodeId="1221579075610" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="80" startPosition="14" endLine="95" endPosition="9" />
+    <nodeInfo nodeId="1221579075885" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="282" startPosition="10" endLine="297" endPosition="5" />
+    <nodeInfo nodeId="1229000947250" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="148" startPosition="98" endLine="165" endPosition="5" />
+    <nodeInfo nodeId="3294521177951941121" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="113" startPosition="30" endLine="133" endPosition="7" />
+    <nodeInfo nodeId="1221579075708" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="112" startPosition="97" endLine="134" endPosition="5" />
+    <nodeInfo nodeId="1221579075866" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="274" startPosition="10" endLine="297" endPosition="5" />
+    <nodeInfo nodeId="1229001355011" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="173" startPosition="70" endLine="199" endPosition="5" />
+    <nodeInfo nodeId="1221579075608" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="80" startPosition="12" endLine="110" endPosition="7" />
+    <nodeInfo nodeId="1221579075857" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="267" startPosition="5" endLine="297" endPosition="5" />
+    <nodeInfo nodeId="1221579075597" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="77" startPosition="12" endLine="110" endPosition="7" />
+    <nodeInfo nodeId="1221579075586" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="70" startPosition="70" endLine="110" endPosition="7" />
+    <nodeInfo nodeId="1221579075574" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="68" startPosition="5" endLine="111" endPosition="5" />
+    <nodeInfo nodeId="1221579075767" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="209" startPosition="5" endLine="254" endPosition="5" />
+    <scopeInfo nodeId="1229279829876" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="49" startPosition="76" endLine="50" endPosition="101" />
+    <scopeInfo nodeId="1221579075532" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="59" startPosition="100" endLine="60" endPosition="53" />
+    <scopeInfo nodeId="1228999475018" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="61" startPosition="115" endLine="62" endPosition="53" />
+    <scopeInfo nodeId="1228999896031" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="63" startPosition="118" endLine="64" endPosition="56" />
+    <scopeInfo nodeId="1221579075550" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="65" startPosition="221" endLine="66" endPosition="54" />
+    <scopeInfo nodeId="1221579075587" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="71" startPosition="103" endLine="72" endPosition="56" />
+    <scopeInfo nodeId="1228999942581" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="73" startPosition="118" endLine="74" endPosition="56" />
+    <scopeInfo nodeId="1228999966532" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="75" startPosition="121" endLine="76" endPosition="59" />
+    <scopeInfo nodeId="1221579075598" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="78" startPosition="111" endLine="79" endPosition="56" />
     <scopeInfo nodeId="1227198933076" fileName="TypesystemDescriptor.java" startLine="84" startPosition="54" endLine="85" endPosition="55" />
-    <scopeInfo nodeId="1221579075641" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="93" startPosition="238" endLine="94" endPosition="87" />
-    <scopeInfo nodeId="1221579075660" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="103" startPosition="230" endLine="104" endPosition="66" />
-    <scopeInfo nodeId="1237371422001" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="107" startPosition="122" endLine="108" endPosition="114" />
-    <scopeInfo nodeId="1229001361549" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="176" startPosition="13" endLine="177" endPosition="14" />
-    <scopeInfo nodeId="1221579075819" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="260" startPosition="467" endLine="261" endPosition="34" />
-    <scopeInfo nodeId="1221579075841" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="263" startPosition="52" endLine="264" endPosition="34" />
-    <scopeInfo nodeId="1221579075632" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="92" startPosition="101" endLine="95" endPosition="11" />
-    <scopeInfo nodeId="1221579075633" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="92" startPosition="101" endLine="95" endPosition="11" />
-    <scopeInfo nodeId="1221579075658" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="102" startPosition="158" endLine="105" endPosition="15" />
-    <scopeInfo nodeId="1221579075859" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="270" startPosition="21" endLine="273" endPosition="275" />
-    <scopeInfo nodeId="1221579075466" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="43" startPosition="9" endLine="47" endPosition="334" />
-    <scopeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="84" startPosition="11" endLine="88" endPosition="336" />
-    <scopeInfo nodeId="1221663085197" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="236" startPosition="7" endLine="240" endPosition="262" />
-    <scopeInfo nodeId="1232131979682" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="243" startPosition="7" endLine="247" endPosition="279" />
-    <scopeInfo nodeId="1221663751995" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="249" startPosition="7" endLine="253" endPosition="254" />
-    <scopeInfo nodeId="1229718163909" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="277" startPosition="7" endLine="281" endPosition="602" />
-    <scopeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="285" startPosition="7" endLine="289" endPosition="542" />
-    <scopeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="292" startPosition="7" endLine="296" endPosition="668" />
-    <scopeInfo nodeId="1221579075656" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="101" startPosition="102" endLine="106" endPosition="13" />
-    <scopeInfo nodeId="1221579075657" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="101" startPosition="102" endLine="106" endPosition="13">
+    <scopeInfo nodeId="1221579075641" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="92" startPosition="238" endLine="93" endPosition="87" />
+    <scopeInfo nodeId="1221579075660" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="102" startPosition="230" endLine="103" endPosition="66" />
+    <scopeInfo nodeId="1237371422001" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="106" startPosition="122" endLine="107" endPosition="114" />
+    <scopeInfo nodeId="1229001361549" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="175" startPosition="13" endLine="176" endPosition="14" />
+    <scopeInfo nodeId="1221579075819" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="259" startPosition="467" endLine="260" endPosition="34" />
+    <scopeInfo nodeId="1221579075841" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="262" startPosition="52" endLine="263" endPosition="34" />
+    <scopeInfo nodeId="1221579075632" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="91" startPosition="101" endLine="94" endPosition="11" />
+    <scopeInfo nodeId="1221579075633" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="91" startPosition="101" endLine="94" endPosition="11" />
+    <scopeInfo nodeId="1221579075658" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="101" startPosition="158" endLine="104" endPosition="15" />
+    <scopeInfo nodeId="1221579075859" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="269" startPosition="21" endLine="272" endPosition="275" />
+    <scopeInfo nodeId="1221579075466" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="42" startPosition="9" endLine="46" endPosition="334" />
+    <scopeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="83" startPosition="11" endLine="87" endPosition="336" />
+    <scopeInfo nodeId="1221663085197" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="235" startPosition="7" endLine="239" endPosition="262" />
+    <scopeInfo nodeId="1232131979682" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="242" startPosition="7" endLine="246" endPosition="279" />
+    <scopeInfo nodeId="1221663751995" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="248" startPosition="7" endLine="252" endPosition="254" />
+    <scopeInfo nodeId="1229718163909" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="276" startPosition="7" endLine="280" endPosition="602" />
+    <scopeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="284" startPosition="7" endLine="288" endPosition="542" />
+    <scopeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="291" startPosition="7" endLine="295" endPosition="668" />
+    <scopeInfo nodeId="1221579075656" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="100" startPosition="102" endLine="105" endPosition="13" />
+    <scopeInfo nodeId="1221579075657" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="100" startPosition="102" endLine="105" endPosition="13">
       <varInfo nodeId="1221579075681" varName="cstmt" />
     </scopeInfo>
-    <scopeInfo nodeId="3294521177951941138" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="116" startPosition="9" endLine="121" endPosition="296" />
-    <scopeInfo nodeId="1229000989981" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="152" startPosition="7" endLine="157" endPosition="559" />
-    <scopeInfo nodeId="1229001090979" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="159" startPosition="7" endLine="164" endPosition="280" />
-    <scopeInfo nodeId="1229001407669" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="181" startPosition="11" endLine="186" endPosition="386" />
-    <scopeInfo nodeId="1229010820337" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="193" startPosition="9" endLine="198" endPosition="275" />
-    <scopeInfo nodeId="1232131392781" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="204" startPosition="5" endLine="209" endPosition="272" />
-    <scopeInfo nodeId="1232125205435" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="222" startPosition="7" endLine="227" endPosition="280" />
-    <scopeInfo nodeId="1221579075770" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="229" startPosition="7" endLine="234" endPosition="285" />
-    <scopeInfo nodeId="1221579075858" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="269" startPosition="38" endLine="274" endPosition="7" />
-    <scopeInfo nodeId="1221579075817" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="259" startPosition="36" endLine="265" endPosition="9" />
-    <scopeInfo nodeId="1221579075867" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="276" startPosition="62" endLine="282" endPosition="7" />
-    <scopeInfo nodeId="1221579075886" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="284" startPosition="22" endLine="290" endPosition="7" />
-    <scopeInfo nodeId="1221579075919" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="291" startPosition="12" endLine="297" endPosition="7" />
-    <scopeInfo nodeId="3294521177951941122" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="115" startPosition="222" endLine="122" endPosition="9" />
-    <scopeInfo nodeId="3294521177951941153" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="212" startPosition="7" endLine="219" endPosition="30" />
-    <scopeInfo nodeId="1221579075464" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="41" startPosition="142" endLine="49" endPosition="138" />
-    <scopeInfo nodeId="1221579075611" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="82" startPosition="104" endLine="90" endPosition="139" />
-    <scopeInfo nodeId="1221579075710" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="124" startPosition="9" endLine="132" endPosition="39" />
-    <scopeInfo nodeId="1221579075724" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="138" startPosition="7" endLine="146" endPosition="37" />
-    <scopeInfo nodeId="1229001355013" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="191" startPosition="14" endLine="199" endPosition="9" />
-    <scopeInfo nodeId="1221579075816" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="258" startPosition="37" endLine="266" endPosition="7">
+    <scopeInfo nodeId="3294521177951941138" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="115" startPosition="9" endLine="120" endPosition="296" />
+    <scopeInfo nodeId="1229000989981" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="151" startPosition="7" endLine="156" endPosition="559" />
+    <scopeInfo nodeId="1229001090979" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="158" startPosition="7" endLine="163" endPosition="280" />
+    <scopeInfo nodeId="1229001407669" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="180" startPosition="11" endLine="185" endPosition="386" />
+    <scopeInfo nodeId="1229010820337" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="192" startPosition="9" endLine="197" endPosition="275" />
+    <scopeInfo nodeId="1232131392781" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="203" startPosition="5" endLine="208" endPosition="272" />
+    <scopeInfo nodeId="1232125205435" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="221" startPosition="7" endLine="226" endPosition="280" />
+    <scopeInfo nodeId="1221579075770" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="228" startPosition="7" endLine="233" endPosition="285" />
+    <scopeInfo nodeId="1221579075858" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="268" startPosition="38" endLine="273" endPosition="7" />
+    <scopeInfo nodeId="1221579075817" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="258" startPosition="36" endLine="264" endPosition="9" />
+    <scopeInfo nodeId="1221579075867" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="275" startPosition="62" endLine="281" endPosition="7" />
+    <scopeInfo nodeId="1221579075886" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="283" startPosition="22" endLine="289" endPosition="7" />
+    <scopeInfo nodeId="1221579075919" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="290" startPosition="12" endLine="296" endPosition="7" />
+    <scopeInfo nodeId="3294521177951941122" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="114" startPosition="222" endLine="121" endPosition="9" />
+    <scopeInfo nodeId="3294521177951941153" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="211" startPosition="7" endLine="218" endPosition="30" />
+    <scopeInfo nodeId="1221579075464" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="40" startPosition="142" endLine="48" endPosition="138" />
+    <scopeInfo nodeId="1221579075611" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="81" startPosition="104" endLine="89" endPosition="139" />
+    <scopeInfo nodeId="1221579075710" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="123" startPosition="9" endLine="131" endPosition="39" />
+    <scopeInfo nodeId="1221579075724" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="137" startPosition="7" endLine="145" endPosition="37" />
+    <scopeInfo nodeId="1229001355013" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="190" startPosition="14" endLine="198" endPosition="9" />
+    <scopeInfo nodeId="1221579075816" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="257" startPosition="37" endLine="265" endPosition="7">
       <varInfo nodeId="1221579075847" varName="one" />
     </scopeInfo>
-    <scopeInfo nodeId="1221579075526" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="59" startPosition="99" endLine="68" endPosition="7" />
-    <scopeInfo nodeId="1229001381217" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="179" startPosition="92" endLine="188" endPosition="16" />
-    <scopeInfo nodeId="1221579075815" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="258" startPosition="37" endLine="267" endPosition="60" />
-    <scopeInfo nodeId="1237288585836" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="99" startPosition="65" endLine="109" endPosition="11">
+    <scopeInfo nodeId="1221579075526" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="58" startPosition="99" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="1229001381217" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="178" startPosition="92" endLine="187" endPosition="16" />
+    <scopeInfo nodeId="1221579075815" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="257" startPosition="37" endLine="266" endPosition="60" />
+    <scopeInfo nodeId="1237288585836" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="98" startPosition="65" endLine="108" endPosition="11">
       <varInfo nodeId="1237288605390" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="3294521177951941149" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="123" startPosition="14" endLine="133" endPosition="9" />
-    <scopeInfo nodeId="1221579075723" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="137" startPosition="30" endLine="147" endPosition="7" />
-    <scopeInfo nodeId="1221579075525" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="58" startPosition="74" endLine="69" endPosition="5">
+    <scopeInfo nodeId="3294521177951941149" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="122" startPosition="14" endLine="132" endPosition="9" />
+    <scopeInfo nodeId="1221579075723" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="136" startPosition="30" endLine="146" endPosition="7" />
+    <scopeInfo nodeId="1221579075525" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="57" startPosition="74" endLine="68" endPosition="5">
       <varInfo nodeId="1221579075572" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="1221579075462" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="40" startPosition="80" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="1221579075722" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="136" startPosition="97" endLine="148" endPosition="5">
+    <scopeInfo nodeId="1221579075462" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="39" startPosition="80" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="1221579075722" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="135" startPosition="97" endLine="147" endPosition="5">
       <varInfo nodeId="1221579075734" varName="ys" />
     </scopeInfo>
-    <scopeInfo nodeId="1229001373607" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="178" startPosition="13" endLine="190" endPosition="25" />
-    <scopeInfo nodeId="1221663683712" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="242" startPosition="12" endLine="254" endPosition="7" />
-    <scopeInfo nodeId="1221579075814" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="256" startPosition="75" endLine="268" endPosition="5">
+    <scopeInfo nodeId="1229001373607" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="177" startPosition="13" endLine="189" endPosition="25" />
+    <scopeInfo nodeId="1221663683712" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="241" startPosition="12" endLine="253" endPosition="7" />
+    <scopeInfo nodeId="1221579075814" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="255" startPosition="75" endLine="267" endPosition="5">
       <varInfo nodeId="1221579075855" varName="another" />
     </scopeInfo>
-    <scopeInfo nodeId="1221579075461" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="39" startPosition="75" endLine="53" endPosition="5">
+    <scopeInfo nodeId="1221579075461" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="38" startPosition="75" endLine="52" endPosition="5">
       <varInfo nodeId="1221579075495" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1229000947251" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="150" startPosition="34" endLine="165" endPosition="7" />
-    <scopeInfo nodeId="1229000947250" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="149" startPosition="98" endLine="166" endPosition="5">
+    <scopeInfo nodeId="1229000947251" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="149" startPosition="34" endLine="164" endPosition="7" />
+    <scopeInfo nodeId="1229000947250" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="148" startPosition="98" endLine="165" endPosition="5">
       <varInfo nodeId="1229000947254" varName="yas" />
     </scopeInfo>
-    <scopeInfo nodeId="1221579075709" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="114" startPosition="30" endLine="134" endPosition="7" />
-    <scopeInfo nodeId="1221579075708" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="113" startPosition="97" endLine="135" endPosition="5">
+    <scopeInfo nodeId="1221579075709" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="113" startPosition="30" endLine="133" endPosition="7" />
+    <scopeInfo nodeId="1221579075708" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="112" startPosition="97" endLine="134" endPosition="5">
       <varInfo nodeId="1221579075720" varName="rs" />
     </scopeInfo>
-    <scopeInfo nodeId="1221579075609" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="81" startPosition="14" endLine="110" endPosition="9">
+    <scopeInfo nodeId="1221579075609" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="80" startPosition="14" endLine="109" endPosition="9">
       <varInfo nodeId="1237288028845" varName="allChildren" />
     </scopeInfo>
-    <scopeInfo nodeId="1221579075768" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="211" startPosition="44" endLine="241" endPosition="7" />
-    <scopeInfo nodeId="1221579075579" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="70" startPosition="58" endLine="111" endPosition="7">
+    <scopeInfo nodeId="1221579075768" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="210" startPosition="44" endLine="240" endPosition="7" />
+    <scopeInfo nodeId="1221579075579" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="69" startPosition="58" endLine="110" endPosition="7">
       <varInfo nodeId="1221579075581" varName="stmt" />
     </scopeInfo>
-    <scopeInfo nodeId="1221579075453" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="38" startPosition="93" endLine="298" endPosition="5">
+    <scopeInfo nodeId="1221579075453" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="37" startPosition="93" endLine="297" endPosition="5">
       <varInfo nodeId="1221579075808" varName="realThrows" />
       <varInfo nodeId="1221579075702" varName="yieldsValue" />
       <varInfo nodeId="1228998509555" varName="allYldAlls" />
@@ -876,53 +876,53 @@
     </scopeInfo>
   </root>
   <root nodeId="1225797528199">
-    <nodeInfo nodeId="1225797542575" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="28" startPosition="92" endLine="29" endPosition="72" />
-    <nodeInfo nodeId="1230049150921" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="29" startPosition="72" endLine="30" endPosition="72" />
-    <nodeInfo nodeId="1240926882799" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="31" startPosition="75" endLine="32" endPosition="96" />
-    <nodeInfo nodeId="1225797542584" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="32" startPosition="96" endLine="33" endPosition="132" />
-    <nodeInfo nodeId="1230049159293" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="33" startPosition="132" endLine="34" endPosition="132" />
-    <nodeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="35" startPosition="7" endLine="36" endPosition="45" />
-    <nodeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="36" startPosition="45" endLine="37" endPosition="55" />
-    <nodeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="37" startPosition="55" endLine="38" endPosition="221" />
-    <nodeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="38" startPosition="221" endLine="39" endPosition="56" />
-    <nodeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="39" startPosition="56" endLine="40" endPosition="348" />
-    <nodeInfo nodeId="1225797542595" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="42" startPosition="5" endLine="43" endPosition="96" />
-    <nodeInfo nodeId="1230048995510" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="43" startPosition="96" endLine="44" endPosition="97" />
-    <nodeInfo nodeId="1237374285371" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="45" startPosition="5" endLine="46" endPosition="48" />
-    <nodeInfo nodeId="1237374285371" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="46" startPosition="48" endLine="47" endPosition="53" />
-    <nodeInfo nodeId="1237374285371" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="47" startPosition="53" endLine="48" endPosition="219" />
-    <nodeInfo nodeId="1237374285371" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="48" startPosition="219" endLine="49" endPosition="331" />
-    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="51" startPosition="5" endLine="52" endPosition="48" />
-    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="52" startPosition="48" endLine="53" endPosition="53" />
-    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="53" startPosition="53" endLine="54" endPosition="266" />
-    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="54" startPosition="266" endLine="55" endPosition="54" />
-    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="55" startPosition="54" endLine="56" endPosition="689" />
-    <nodeInfo nodeId="1237374285371" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="44" startPosition="97" endLine="50" endPosition="5" />
-    <nodeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="34" startPosition="132" endLine="41" endPosition="7" />
-    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="50" startPosition="5" endLine="57" endPosition="5" />
-    <nodeInfo nodeId="1225797542582" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="30" startPosition="72" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="1237374285371" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="45" startPosition="5" endLine="49" endPosition="331" />
-    <scopeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="35" startPosition="7" endLine="40" endPosition="348" />
-    <scopeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="51" startPosition="5" endLine="56" endPosition="689" />
-    <scopeInfo nodeId="1225797542583" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="31" startPosition="75" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="1225797542582" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="30" startPosition="72" endLine="42" endPosition="5">
+    <nodeInfo nodeId="1225797542575" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="27" startPosition="92" endLine="28" endPosition="72" />
+    <nodeInfo nodeId="1230049150921" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="28" startPosition="72" endLine="29" endPosition="72" />
+    <nodeInfo nodeId="1240926882799" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="30" startPosition="75" endLine="31" endPosition="96" />
+    <nodeInfo nodeId="1225797542584" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="31" startPosition="96" endLine="32" endPosition="132" />
+    <nodeInfo nodeId="1230049159293" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="32" startPosition="132" endLine="33" endPosition="132" />
+    <nodeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="34" startPosition="7" endLine="35" endPosition="45" />
+    <nodeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="35" startPosition="45" endLine="36" endPosition="55" />
+    <nodeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="36" startPosition="55" endLine="37" endPosition="221" />
+    <nodeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="37" startPosition="221" endLine="38" endPosition="56" />
+    <nodeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="38" startPosition="56" endLine="39" endPosition="348" />
+    <nodeInfo nodeId="1225797542595" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="41" startPosition="5" endLine="42" endPosition="96" />
+    <nodeInfo nodeId="1230048995510" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="42" startPosition="96" endLine="43" endPosition="97" />
+    <nodeInfo nodeId="1237374285371" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="44" startPosition="5" endLine="45" endPosition="48" />
+    <nodeInfo nodeId="1237374285371" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="45" startPosition="48" endLine="46" endPosition="53" />
+    <nodeInfo nodeId="1237374285371" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="46" startPosition="53" endLine="47" endPosition="219" />
+    <nodeInfo nodeId="1237374285371" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="47" startPosition="219" endLine="48" endPosition="331" />
+    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="50" startPosition="5" endLine="51" endPosition="48" />
+    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="51" startPosition="48" endLine="52" endPosition="53" />
+    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="52" startPosition="53" endLine="53" endPosition="266" />
+    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="53" startPosition="266" endLine="54" endPosition="54" />
+    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="54" startPosition="54" endLine="55" endPosition="689" />
+    <nodeInfo nodeId="1237374285371" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="43" startPosition="97" endLine="49" endPosition="5" />
+    <nodeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="33" startPosition="132" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="49" startPosition="5" endLine="56" endPosition="5" />
+    <nodeInfo nodeId="1225797542582" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="29" startPosition="72" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="1237374285371" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="44" startPosition="5" endLine="48" endPosition="331" />
+    <scopeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="34" startPosition="7" endLine="39" endPosition="348" />
+    <scopeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="50" startPosition="5" endLine="55" endPosition="689" />
+    <scopeInfo nodeId="1225797542583" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="30" startPosition="75" endLine="40" endPosition="7" />
+    <scopeInfo nodeId="1225797542582" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="29" startPosition="72" endLine="41" endPosition="5">
       <varInfo nodeId="1225797542593" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="1225797528200" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="28" startPosition="92" endLine="57" endPosition="5">
+    <scopeInfo nodeId="1225797528200" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="27" startPosition="92" endLine="56" endPosition="5">
       <varInfo nodeId="1230049150922" varName="ptypes2" />
       <varInfo nodeId="1225797542576" varName="ptypes1" />
     </scopeInfo>
   </root>
   <root nodeId="1228998025048">
-    <nodeInfo nodeId="1228998160752" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="24" startPosition="95" endLine="25" endPosition="104" />
-    <nodeInfo nodeId="1228998112076" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="26" startPosition="5" endLine="27" endPosition="98" />
-    <nodeInfo nodeId="1228998112076" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="27" startPosition="98" endLine="28" endPosition="53" />
-    <nodeInfo nodeId="1228998112076" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="28" startPosition="53" endLine="29" endPosition="219" />
-    <nodeInfo nodeId="1228998112076" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="29" startPosition="219" endLine="30" endPosition="54" />
-    <nodeInfo nodeId="1228998112076" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="30" startPosition="54" endLine="31" endPosition="557" />
-    <nodeInfo nodeId="1228998112076" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="25" startPosition="104" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="1228998112076" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="26" startPosition="5" endLine="31" endPosition="557" />
-    <scopeInfo nodeId="1228998025049" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="24" startPosition="95" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="1228998160752" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="23" startPosition="95" endLine="24" endPosition="104" />
+    <nodeInfo nodeId="1228998112076" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="98" />
+    <nodeInfo nodeId="1228998112076" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="26" startPosition="98" endLine="27" endPosition="53" />
+    <nodeInfo nodeId="1228998112076" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="27" startPosition="53" endLine="28" endPosition="219" />
+    <nodeInfo nodeId="1228998112076" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="28" startPosition="219" endLine="29" endPosition="54" />
+    <nodeInfo nodeId="1228998112076" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="29" startPosition="54" endLine="30" endPosition="557" />
+    <nodeInfo nodeId="1228998112076" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="24" startPosition="104" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="1228998112076" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="25" startPosition="5" endLine="30" endPosition="557" />
+    <scopeInfo nodeId="1228998025049" fileName="typeof_YieldAllStatement_InferenceRule.java" startLine="23" startPosition="95" endLine="31" endPosition="5" />
   </root>
   <root nodeId="1232453816874">
     <nodeInfo nodeId="1232453885508" fileName="typeof_ClosureControlStatement_InferenceRule.java" startLine="25" startPosition="89" endLine="26" endPosition="119" />
@@ -997,39 +997,39 @@
     </scopeInfo>
   </root>
   <root nodeId="1235747312129">
-    <nodeInfo nodeId="7246115176735293254" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="27" startPosition="92" endLine="28" endPosition="72" />
-    <nodeInfo nodeId="7246115176735293261" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="28" startPosition="72" endLine="29" endPosition="72" />
-    <nodeInfo nodeId="7246115176735293270" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="30" startPosition="75" endLine="31" endPosition="102" />
-    <nodeInfo nodeId="7246115176735293271" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="31" startPosition="102" endLine="32" endPosition="138" />
-    <nodeInfo nodeId="7246115176735293276" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="32" startPosition="138" endLine="33" endPosition="138" />
-    <nodeInfo nodeId="7246115176735293281" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="34" startPosition="7" endLine="35" endPosition="45" />
-    <nodeInfo nodeId="7246115176735293281" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="35" startPosition="45" endLine="36" endPosition="55" />
-    <nodeInfo nodeId="7246115176735293281" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="36" startPosition="55" endLine="37" endPosition="227" />
-    <nodeInfo nodeId="7246115176735293281" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="37" startPosition="227" endLine="38" endPosition="56" />
-    <nodeInfo nodeId="7246115176735293281" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="38" startPosition="56" endLine="39" endPosition="360" />
-    <nodeInfo nodeId="7246115176735293292" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="41" startPosition="5" endLine="42" endPosition="102" />
-    <nodeInfo nodeId="7246115176735293293" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="42" startPosition="102" endLine="43" endPosition="103" />
-    <nodeInfo nodeId="7246115176735293294" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="44" startPosition="5" endLine="45" endPosition="48" />
-    <nodeInfo nodeId="7246115176735293294" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="45" startPosition="48" endLine="46" endPosition="53" />
-    <nodeInfo nodeId="7246115176735293294" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="46" startPosition="53" endLine="47" endPosition="225" />
-    <nodeInfo nodeId="7246115176735293294" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="47" startPosition="225" endLine="48" endPosition="343" />
-    <nodeInfo nodeId="7246115176735293300" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="50" startPosition="5" endLine="51" endPosition="48" />
-    <nodeInfo nodeId="7246115176735293300" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="51" startPosition="48" endLine="52" endPosition="53" />
-    <nodeInfo nodeId="7246115176735293300" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="52" startPosition="53" endLine="53" endPosition="272" />
-    <nodeInfo nodeId="7246115176735293300" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="53" startPosition="272" endLine="54" endPosition="54" />
-    <nodeInfo nodeId="7246115176735293300" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="54" startPosition="54" endLine="55" endPosition="715" />
-    <nodeInfo nodeId="7246115176735293294" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="43" startPosition="103" endLine="49" endPosition="5" />
-    <nodeInfo nodeId="7246115176735293281" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="33" startPosition="138" endLine="40" endPosition="7" />
-    <nodeInfo nodeId="7246115176735293300" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="49" startPosition="5" endLine="56" endPosition="5" />
-    <nodeInfo nodeId="7246115176735293268" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="29" startPosition="72" endLine="41" endPosition="5" />
-    <scopeInfo nodeId="7246115176735293294" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="44" startPosition="5" endLine="48" endPosition="343" />
-    <scopeInfo nodeId="7246115176735293281" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="34" startPosition="7" endLine="39" endPosition="360" />
-    <scopeInfo nodeId="7246115176735293300" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="50" startPosition="5" endLine="55" endPosition="715" />
-    <scopeInfo nodeId="7246115176735293269" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="30" startPosition="75" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="7246115176735293268" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="29" startPosition="72" endLine="41" endPosition="5">
+    <nodeInfo nodeId="7246115176735293254" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="26" startPosition="92" endLine="27" endPosition="72" />
+    <nodeInfo nodeId="7246115176735293261" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="27" startPosition="72" endLine="28" endPosition="72" />
+    <nodeInfo nodeId="7246115176735293270" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="29" startPosition="75" endLine="30" endPosition="102" />
+    <nodeInfo nodeId="7246115176735293271" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="30" startPosition="102" endLine="31" endPosition="138" />
+    <nodeInfo nodeId="7246115176735293276" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="31" startPosition="138" endLine="32" endPosition="138" />
+    <nodeInfo nodeId="7246115176735293281" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="33" startPosition="7" endLine="34" endPosition="45" />
+    <nodeInfo nodeId="7246115176735293281" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="34" startPosition="45" endLine="35" endPosition="55" />
+    <nodeInfo nodeId="7246115176735293281" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="35" startPosition="55" endLine="36" endPosition="227" />
+    <nodeInfo nodeId="7246115176735293281" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="36" startPosition="227" endLine="37" endPosition="56" />
+    <nodeInfo nodeId="7246115176735293281" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="37" startPosition="56" endLine="38" endPosition="360" />
+    <nodeInfo nodeId="7246115176735293292" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="40" startPosition="5" endLine="41" endPosition="102" />
+    <nodeInfo nodeId="7246115176735293293" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="41" startPosition="102" endLine="42" endPosition="103" />
+    <nodeInfo nodeId="7246115176735293294" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="43" startPosition="5" endLine="44" endPosition="48" />
+    <nodeInfo nodeId="7246115176735293294" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="44" startPosition="48" endLine="45" endPosition="53" />
+    <nodeInfo nodeId="7246115176735293294" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="45" startPosition="53" endLine="46" endPosition="225" />
+    <nodeInfo nodeId="7246115176735293294" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="46" startPosition="225" endLine="47" endPosition="343" />
+    <nodeInfo nodeId="7246115176735293300" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="49" startPosition="5" endLine="50" endPosition="48" />
+    <nodeInfo nodeId="7246115176735293300" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="50" startPosition="48" endLine="51" endPosition="53" />
+    <nodeInfo nodeId="7246115176735293300" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="51" startPosition="53" endLine="52" endPosition="272" />
+    <nodeInfo nodeId="7246115176735293300" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="52" startPosition="272" endLine="53" endPosition="54" />
+    <nodeInfo nodeId="7246115176735293300" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="53" startPosition="54" endLine="54" endPosition="715" />
+    <nodeInfo nodeId="7246115176735293294" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="42" startPosition="103" endLine="48" endPosition="5" />
+    <nodeInfo nodeId="7246115176735293281" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="32" startPosition="138" endLine="39" endPosition="7" />
+    <nodeInfo nodeId="7246115176735293300" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="48" startPosition="5" endLine="55" endPosition="5" />
+    <nodeInfo nodeId="7246115176735293268" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="28" startPosition="72" endLine="40" endPosition="5" />
+    <scopeInfo nodeId="7246115176735293294" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="43" startPosition="5" endLine="47" endPosition="343" />
+    <scopeInfo nodeId="7246115176735293281" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="33" startPosition="7" endLine="38" endPosition="360" />
+    <scopeInfo nodeId="7246115176735293300" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="49" startPosition="5" endLine="54" endPosition="715" />
+    <scopeInfo nodeId="7246115176735293269" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="29" startPosition="75" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="7246115176735293268" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="28" startPosition="72" endLine="40" endPosition="5">
       <varInfo nodeId="7246115176735293290" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747312130" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="27" startPosition="92" endLine="56" endPosition="5">
+    <scopeInfo nodeId="1235747312130" fileName="typeof_CompactInvokeFunctionExpression_InferenceRule.java" startLine="26" startPosition="92" endLine="55" endPosition="5">
       <varInfo nodeId="7246115176735293262" varName="ptypes2" />
       <varInfo nodeId="7246115176735293255" varName="ptypes1" />
     </scopeInfo>

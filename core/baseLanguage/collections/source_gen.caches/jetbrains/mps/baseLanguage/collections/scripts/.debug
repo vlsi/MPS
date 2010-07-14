@@ -436,40 +436,40 @@
     </scopeInfo>
   </root>
   <root nodeId="2521829804648627629">
-    <nodeInfo nodeId="2521829804648670199" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="43" startPosition="52" endLine="44" endPosition="52" />
-    <nodeInfo nodeId="2521829804648670207" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="44" startPosition="52" endLine="45" endPosition="198" />
-    <nodeInfo nodeId="2521829804648670220" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="45" startPosition="198" endLine="46" endPosition="198" />
-    <nodeInfo nodeId="2521829804648670230" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="46" startPosition="198" endLine="47" endPosition="198" />
-    <nodeInfo nodeId="2521829804648670240" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="47" startPosition="198" endLine="48" endPosition="198" />
-    <nodeInfo nodeId="8039910219375446547" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="48" startPosition="198" endLine="49" endPosition="198" />
-    <nodeInfo nodeId="2521829804648670250" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="49" startPosition="198" endLine="50" endPosition="198" />
-    <nodeInfo nodeId="4934883045047952206" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="50" startPosition="198" endLine="51" endPosition="198" />
-    <nodeInfo nodeId="2521829804648670260" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="51" startPosition="198" endLine="52" endPosition="198" />
-    <nodeInfo nodeId="4934883045047952887" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="52" startPosition="198" endLine="53" endPosition="198" />
-    <nodeInfo nodeId="2521829804648638155" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="53" startPosition="198" endLine="54" endPosition="53" />
-    <nodeInfo nodeId="2521829804648638145" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="55" startPosition="30" endLine="56" endPosition="39" />
-    <nodeInfo nodeId="2521829804648638235" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="61" startPosition="94" endLine="62" endPosition="87" />
-    <nodeInfo nodeId="2521829804648638252" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="62" startPosition="87" endLine="63" endPosition="33" />
-    <nodeInfo nodeId="2521829804648638208" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="60" startPosition="82" endLine="64" endPosition="17" />
-    <nodeInfo nodeId="2521829804648638201" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="59" startPosition="39" endLine="65" endPosition="15" />
-    <nodeInfo nodeId="2521829804648670272" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="57" startPosition="44" endLine="66" endPosition="13" />
-    <nodeInfo nodeId="2521829804648638180" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="56" startPosition="39" endLine="67" endPosition="11" />
-    <nodeInfo nodeId="2521829804648638165" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="54" startPosition="53" endLine="68" endPosition="9" />
-    <scopeInfo nodeId="2521829804648637093" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="39" startPosition="59" endLine="40" endPosition="89" />
-    <scopeInfo nodeId="2521829804648638210" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="61" startPosition="94" endLine="63" endPosition="33" />
-    <scopeInfo nodeId="2521829804648638202" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="60" startPosition="82" endLine="64" endPosition="17" />
-    <scopeInfo nodeId="2521829804648638201" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="59" startPosition="39" endLine="65" endPosition="15">
+    <nodeInfo nodeId="2521829804648670199" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="42" startPosition="52" endLine="43" endPosition="52" />
+    <nodeInfo nodeId="2521829804648670207" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="43" startPosition="52" endLine="44" endPosition="198" />
+    <nodeInfo nodeId="2521829804648670220" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="44" startPosition="198" endLine="45" endPosition="198" />
+    <nodeInfo nodeId="2521829804648670230" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="45" startPosition="198" endLine="46" endPosition="198" />
+    <nodeInfo nodeId="2521829804648670240" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="46" startPosition="198" endLine="47" endPosition="198" />
+    <nodeInfo nodeId="8039910219375446547" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="47" startPosition="198" endLine="48" endPosition="198" />
+    <nodeInfo nodeId="2521829804648670250" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="48" startPosition="198" endLine="49" endPosition="198" />
+    <nodeInfo nodeId="4934883045047952206" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="49" startPosition="198" endLine="50" endPosition="198" />
+    <nodeInfo nodeId="2521829804648670260" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="50" startPosition="198" endLine="51" endPosition="198" />
+    <nodeInfo nodeId="4934883045047952887" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="51" startPosition="198" endLine="52" endPosition="198" />
+    <nodeInfo nodeId="2521829804648638155" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="52" startPosition="198" endLine="53" endPosition="53" />
+    <nodeInfo nodeId="2521829804648638145" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="54" startPosition="30" endLine="55" endPosition="39" />
+    <nodeInfo nodeId="2521829804648638235" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="60" startPosition="94" endLine="61" endPosition="87" />
+    <nodeInfo nodeId="2521829804648638252" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="61" startPosition="87" endLine="62" endPosition="33" />
+    <nodeInfo nodeId="2521829804648638208" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="59" startPosition="82" endLine="63" endPosition="17" />
+    <nodeInfo nodeId="2521829804648638201" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="58" startPosition="39" endLine="64" endPosition="15" />
+    <nodeInfo nodeId="2521829804648670272" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="56" startPosition="44" endLine="65" endPosition="13" />
+    <nodeInfo nodeId="2521829804648638180" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="55" startPosition="39" endLine="66" endPosition="11" />
+    <nodeInfo nodeId="2521829804648638165" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="53" startPosition="53" endLine="67" endPosition="9" />
+    <scopeInfo nodeId="2521829804648637093" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="38" startPosition="59" endLine="39" endPosition="89" />
+    <scopeInfo nodeId="2521829804648638210" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="60" startPosition="94" endLine="62" endPosition="33" />
+    <scopeInfo nodeId="2521829804648638202" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="59" startPosition="82" endLine="63" endPosition="17" />
+    <scopeInfo nodeId="2521829804648638201" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="58" startPosition="39" endLine="64" endPosition="15">
       <varInfo nodeId="2521829804648638203" varName="imd" />
     </scopeInfo>
-    <scopeInfo nodeId="2521829804648670273" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="59" startPosition="39" endLine="65" endPosition="15" />
-    <scopeInfo nodeId="2521829804648638181" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="57" startPosition="44" endLine="66" endPosition="13" />
-    <scopeInfo nodeId="2521829804648670272" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="57" startPosition="44" endLine="66" endPosition="13">
+    <scopeInfo nodeId="2521829804648670273" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="58" startPosition="39" endLine="64" endPosition="15" />
+    <scopeInfo nodeId="2521829804648638181" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="56" startPosition="44" endLine="65" endPosition="13" />
+    <scopeInfo nodeId="2521829804648670272" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="56" startPosition="44" endLine="65" endPosition="13">
       <varInfo nodeId="2521829804648670274" varName="iseq" />
     </scopeInfo>
-    <scopeInfo nodeId="2521829804648638166" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="55" startPosition="30" endLine="67" endPosition="11">
+    <scopeInfo nodeId="2521829804648638166" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="54" startPosition="30" endLine="66" endPosition="11">
       <varInfo nodeId="2521829804648638146" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="2521829804648627632" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="43" startPosition="52" endLine="68" endPosition="9">
+    <scopeInfo nodeId="2521829804648627632" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="42" startPosition="52" endLine="67" endPosition="9">
       <varInfo nodeId="2521829804648638156" varName="refs" />
       <varInfo nodeId="2521829804648670200" varName="seqCls" />
     </scopeInfo>

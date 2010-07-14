@@ -46,10 +46,10 @@
     <scopeInfo nodeId="1237739246405" fileName="add_copy_from_Intention.java" startLine="48" startPosition="76" endLine="49" endPosition="101" />
   </root>
   <root nodeId="2261417478149151571">
-    <nodeInfo nodeId="2261417478149254068" fileName="Add_Comparator_Intention.java" startLine="54" startPosition="76" endLine="55" endPosition="289" />
-    <scopeInfo nodeId="2261417478149151573" fileName="Add_Comparator_Intention.java" startLine="39" startPosition="85" endLine="40" endPosition="32" />
-    <scopeInfo nodeId="2261417478149232696" fileName="Add_Comparator_Intention.java" startLine="50" startPosition="90" endLine="51" endPosition="199" />
-    <scopeInfo nodeId="2261417478149151575" fileName="Add_Comparator_Intention.java" startLine="54" startPosition="76" endLine="55" endPosition="289" />
+    <nodeInfo nodeId="2261417478149254068" fileName="Add_Comparator_Intention.java" startLine="53" startPosition="76" endLine="54" endPosition="289" />
+    <scopeInfo nodeId="2261417478149151573" fileName="Add_Comparator_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="32" />
+    <scopeInfo nodeId="2261417478149232696" fileName="Add_Comparator_Intention.java" startLine="49" startPosition="90" endLine="50" endPosition="199" />
+    <scopeInfo nodeId="2261417478149151575" fileName="Add_Comparator_Intention.java" startLine="53" startPosition="76" endLine="54" endPosition="289" />
   </root>
   <root nodeId="2826767102480497650">
     <nodeInfo nodeId="2826767102480498800" fileName="add_sequence_initializer_Intention.java" startLine="46" startPosition="76" endLine="47" endPosition="117" />

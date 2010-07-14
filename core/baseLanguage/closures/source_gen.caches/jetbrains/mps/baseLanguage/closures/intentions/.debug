@@ -81,11 +81,11 @@
     </scopeInfo>
   </root>
   <root nodeId="1235748072133">
-    <nodeInfo nodeId="1235748160606" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="55" startPosition="76" endLine="56" endPosition="127" />
-    <nodeInfo nodeId="1235748167372" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="56" startPosition="127" endLine="57" endPosition="396" />
-    <scopeInfo nodeId="1235748072135" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="40" startPosition="85" endLine="41" endPosition="52" />
-    <scopeInfo nodeId="1235748113063" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="51" startPosition="90" endLine="52" endPosition="127" />
-    <scopeInfo nodeId="1235748072138" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="55" startPosition="76" endLine="57" endPosition="396">
+    <nodeInfo nodeId="1235748160606" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="54" startPosition="76" endLine="55" endPosition="127" />
+    <nodeInfo nodeId="1235748167372" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="55" startPosition="127" endLine="56" endPosition="396" />
+    <scopeInfo nodeId="1235748072135" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="39" startPosition="85" endLine="40" endPosition="52" />
+    <scopeInfo nodeId="1235748113063" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="50" startPosition="90" endLine="51" endPosition="127" />
+    <scopeInfo nodeId="1235748072138" fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="54" startPosition="76" endLine="56" endPosition="396">
       <varInfo nodeId="1235748160607" varName="parent" />
     </scopeInfo>
   </root>
