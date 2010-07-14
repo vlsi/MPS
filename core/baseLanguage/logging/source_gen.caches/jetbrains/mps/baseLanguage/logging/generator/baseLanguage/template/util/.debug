@@ -1,77 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1210176650661">
-    <nodeInfo nodeId="1210176706163" fileName="LoggingGenerationUtil.java" startLine="20" startPosition="59" endLine="21" endPosition="24" />
-    <nodeInfo nodeId="1210176706177" fileName="LoggingGenerationUtil.java" startLine="22" startPosition="62" endLine="23" endPosition="88" />
-    <nodeInfo nodeId="1210176706192" fileName="LoggingGenerationUtil.java" startLine="24" startPosition="83" endLine="25" endPosition="139" />
-    <nodeInfo nodeId="1232620462439" fileName="LoggingGenerationUtil.java" startLine="31" startPosition="54" endLine="32" endPosition="40" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="39" startPosition="69" endLine="40" endPosition="26" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="40" startPosition="26" endLine="41" endPosition="67" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="41" startPosition="67" endLine="42" endPosition="32" />
+    <nodeInfo nodeId="1210176706163" fileName="LoggingGenerationUtil.java" startLine="19" startPosition="59" endLine="20" endPosition="24" />
+    <nodeInfo nodeId="1210176706177" fileName="LoggingGenerationUtil.java" startLine="21" startPosition="62" endLine="22" endPosition="88" />
+    <nodeInfo nodeId="1210176706192" fileName="LoggingGenerationUtil.java" startLine="23" startPosition="83" endLine="24" endPosition="139" />
+    <nodeInfo nodeId="1232620462439" fileName="LoggingGenerationUtil.java" startLine="30" startPosition="54" endLine="31" endPosition="40" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="38" startPosition="69" endLine="39" endPosition="26" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="39" startPosition="26" endLine="40" endPosition="67" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="40" startPosition="67" endLine="41" endPosition="32" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="41" startPosition="32" endLine="42" endPosition="32" />
     <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="42" startPosition="32" endLine="43" endPosition="32" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="43" startPosition="32" endLine="44" endPosition="32" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="45" startPosition="7" endLine="46" endPosition="207" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="46" startPosition="207" endLine="47" endPosition="43" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="48" startPosition="9" endLine="49" endPosition="45" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="49" startPosition="45" endLine="50" endPosition="30" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="51" startPosition="66" endLine="52" endPosition="56" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="53" startPosition="18" endLine="54" endPosition="57" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="54" startPosition="57" endLine="55" endPosition="41" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="57" startPosition="38" endLine="58" endPosition="91" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="61" startPosition="9" endLine="62" endPosition="45" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="62" startPosition="45" endLine="63" endPosition="30" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="64" startPosition="66" endLine="65" endPosition="56" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="66" startPosition="18" endLine="67" endPosition="57" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="67" startPosition="57" endLine="68" endPosition="41" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="70" startPosition="38" endLine="71" endPosition="90" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="73" startPosition="9" endLine="74" endPosition="31" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="75" startPosition="7" endLine="76" endPosition="20" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="35" startPosition="56" endLine="37" endPosition="5" />
-    <nodeInfo nodeId="1210176706185" fileName="LoggingGenerationUtil.java" startLine="23" startPosition="88" endLine="26" endPosition="7" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="53" startPosition="16" endLine="56" endPosition="11" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="56" startPosition="11" endLine="59" endPosition="11" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="66" startPosition="16" endLine="69" endPosition="11" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="69" startPosition="11" endLine="72" endPosition="11" />
-    <nodeInfo nodeId="1232620450176" fileName="LoggingGenerationUtil.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <nodeInfo nodeId="1210176706175" fileName="LoggingGenerationUtil.java" startLine="21" startPosition="24" endLine="27" endPosition="5" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="50" startPosition="30" endLine="56" endPosition="11" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="63" startPosition="30" endLine="69" endPosition="11" />
-    <nodeInfo nodeId="1210176660531" fileName="LoggingGenerationUtil.java" startLine="19" startPosition="36" endLine="30" endPosition="0" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="47" startPosition="43" endLine="60" endPosition="9" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="60" startPosition="9" endLine="73" endPosition="9" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="44" startPosition="32" endLine="75" endPosition="7" />
-    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="38" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="36" startPosition="47" endLine="36" endPosition="47" />
-    <scopeInfo nodeId="1210176706191" fileName="LoggingGenerationUtil.java" startLine="24" startPosition="83" endLine="25" endPosition="139" />
-    <scopeInfo nodeId="1232620450179" fileName="LoggingGenerationUtil.java" startLine="31" startPosition="54" endLine="32" endPosition="40" />
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="51" startPosition="66" endLine="52" endPosition="56" />
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="57" startPosition="38" endLine="58" endPosition="91" />
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="64" startPosition="66" endLine="65" endPosition="56" />
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="70" startPosition="38" endLine="71" endPosition="90" />
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="35" startPosition="56" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="53" startPosition="18" endLine="55" endPosition="41" />
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="66" startPosition="18" endLine="68" endPosition="41" />
-    <scopeInfo nodeId="1210176706185" fileName="LoggingGenerationUtil.java" startLine="23" startPosition="88" endLine="26" endPosition="7" />
-    <scopeInfo nodeId="1210176706176" fileName="LoggingGenerationUtil.java" startLine="22" startPosition="62" endLine="26" endPosition="7" />
-    <scopeInfo nodeId="1232620450176" fileName="LoggingGenerationUtil.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="44" startPosition="7" endLine="45" endPosition="163" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="45" startPosition="163" endLine="46" endPosition="43" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="47" startPosition="9" endLine="48" endPosition="45" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="48" startPosition="45" endLine="49" endPosition="30" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="50" startPosition="66" endLine="51" endPosition="56" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="52" startPosition="18" endLine="53" endPosition="57" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="53" startPosition="57" endLine="54" endPosition="41" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="56" startPosition="38" endLine="57" endPosition="91" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="60" startPosition="9" endLine="61" endPosition="45" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="61" startPosition="45" endLine="62" endPosition="30" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="63" startPosition="66" endLine="64" endPosition="56" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="65" startPosition="18" endLine="66" endPosition="57" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="66" startPosition="57" endLine="67" endPosition="41" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="69" startPosition="38" endLine="70" endPosition="90" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="72" startPosition="9" endLine="73" endPosition="31" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="74" startPosition="7" endLine="75" endPosition="20" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="34" startPosition="56" endLine="36" endPosition="5" />
+    <nodeInfo nodeId="1210176706185" fileName="LoggingGenerationUtil.java" startLine="22" startPosition="88" endLine="25" endPosition="7" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="52" startPosition="16" endLine="55" endPosition="11" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="55" startPosition="11" endLine="58" endPosition="11" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="65" startPosition="16" endLine="68" endPosition="11" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="68" startPosition="11" endLine="71" endPosition="11" />
+    <nodeInfo nodeId="1232620450176" fileName="LoggingGenerationUtil.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <nodeInfo nodeId="1210176706175" fileName="LoggingGenerationUtil.java" startLine="20" startPosition="24" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="49" startPosition="30" endLine="55" endPosition="11" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="62" startPosition="30" endLine="68" endPosition="11" />
+    <nodeInfo nodeId="1210176660531" fileName="LoggingGenerationUtil.java" startLine="18" startPosition="36" endLine="29" endPosition="0" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="46" startPosition="43" endLine="59" endPosition="9" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="59" startPosition="9" endLine="72" endPosition="9" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="43" startPosition="32" endLine="74" endPosition="7" />
+    <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="37" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="35" startPosition="47" endLine="35" endPosition="47" />
+    <scopeInfo nodeId="1210176706191" fileName="LoggingGenerationUtil.java" startLine="23" startPosition="83" endLine="24" endPosition="139" />
+    <scopeInfo nodeId="1232620450179" fileName="LoggingGenerationUtil.java" startLine="30" startPosition="54" endLine="31" endPosition="40" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="50" startPosition="66" endLine="51" endPosition="56" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="56" startPosition="38" endLine="57" endPosition="91" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="63" startPosition="66" endLine="64" endPosition="56" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="69" startPosition="38" endLine="70" endPosition="90" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="34" startPosition="56" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="52" startPosition="18" endLine="54" endPosition="41" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="65" startPosition="18" endLine="67" endPosition="41" />
+    <scopeInfo nodeId="1210176706185" fileName="LoggingGenerationUtil.java" startLine="22" startPosition="88" endLine="25" endPosition="7" />
+    <scopeInfo nodeId="1210176706176" fileName="LoggingGenerationUtil.java" startLine="21" startPosition="62" endLine="25" endPosition="7" />
+    <scopeInfo nodeId="1232620450176" fileName="LoggingGenerationUtil.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="1232620459891" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="1210176660534" fileName="LoggingGenerationUtil.java" startLine="20" startPosition="59" endLine="28" endPosition="18">
+    <scopeInfo nodeId="1210176660534" fileName="LoggingGenerationUtil.java" startLine="19" startPosition="59" endLine="27" endPosition="18">
       <varInfo nodeId="1210176706164" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1210176660531" fileName="LoggingGenerationUtil.java" startLine="19" startPosition="36" endLine="30" endPosition="0">
+    <scopeInfo nodeId="1210176660531" fileName="LoggingGenerationUtil.java" startLine="18" startPosition="36" endLine="29" endPosition="0">
       <varInfo nodeId="1210176685775" varName="textExpressions" />
     </scopeInfo>
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="48" startPosition="9" endLine="59" endPosition="11" />
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="61" startPosition="9" endLine="72" endPosition="11" />
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="47" startPosition="43" endLine="60" endPosition="9" />
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="60" startPosition="9" endLine="73" endPosition="9" />
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="45" startPosition="7" endLine="74" endPosition="31" />
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="44" startPosition="32" endLine="75" endPosition="7" />
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="39" startPosition="69" endLine="76" endPosition="20" />
-    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="38" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="35" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.util.LoggingGenerationUtil$QuotationClass_gd2srw_a0a0a1a1a0" />
-    <unitInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="19" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.util.LoggingGenerationUtil" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="47" startPosition="9" endLine="58" endPosition="11" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="60" startPosition="9" endLine="71" endPosition="11" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="46" startPosition="43" endLine="59" endPosition="9" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="59" startPosition="9" endLine="72" endPosition="9" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="44" startPosition="7" endLine="73" endPosition="31" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="43" startPosition="32" endLine="74" endPosition="7" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="38" startPosition="69" endLine="75" endPosition="20" />
+    <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="37" startPosition="0" endLine="77" endPosition="0" />
+    <unitInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="34" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.util.LoggingGenerationUtil$QuotationClass_gd2srw_a0a0a1a1a0" />
+    <unitInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="18" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.util.LoggingGenerationUtil" />
   </root>
 </debugInfo>
 
