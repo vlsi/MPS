@@ -60,14 +60,14 @@
     <scopeInfo nodeId="1213104846937" fileName="ThisExpression_classConcept_ReferentConstraint.java" startLine="29" startPosition="132" endLine="33" endPosition="183" />
   </root>
   <root nodeId="1213104847239">
-    <nodeInfo nodeId="7376433222636454363" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="35" startPosition="132" endLine="36" endPosition="73" />
-    <nodeInfo nodeId="1213104847244" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="36" startPosition="73" endLine="37" endPosition="147" />
-    <nodeInfo nodeId="1213104847253" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="37" startPosition="147" endLine="38" endPosition="205" />
-    <nodeInfo nodeId="1213104847264" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="39" startPosition="29" endLine="40" endPosition="263" />
-    <nodeInfo nodeId="1213104847275" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="41" startPosition="5" endLine="42" endPosition="71" />
-    <nodeInfo nodeId="1213104847262" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="38" startPosition="205" endLine="41" endPosition="5" />
-    <scopeInfo nodeId="1213104847263" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="39" startPosition="29" endLine="40" endPosition="263" />
-    <scopeInfo nodeId="1213104847242" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="35" startPosition="132" endLine="42" endPosition="71">
+    <nodeInfo nodeId="7376433222636454363" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="34" startPosition="132" endLine="35" endPosition="73" />
+    <nodeInfo nodeId="1213104847244" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="35" startPosition="73" endLine="36" endPosition="147" />
+    <nodeInfo nodeId="1213104847253" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="36" startPosition="147" endLine="37" endPosition="205" />
+    <nodeInfo nodeId="1213104847264" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="38" startPosition="29" endLine="39" endPosition="263" />
+    <nodeInfo nodeId="1213104847275" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="40" startPosition="5" endLine="41" endPosition="71" />
+    <nodeInfo nodeId="1213104847262" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="37" startPosition="205" endLine="40" endPosition="5" />
+    <scopeInfo nodeId="1213104847263" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="38" startPosition="29" endLine="39" endPosition="263" />
+    <scopeInfo nodeId="1213104847242" fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="34" startPosition="132" endLine="41" endPosition="71">
       <varInfo nodeId="1213104847254" varName="superClass" />
       <varInfo nodeId="1213104847245" varName="thisConcept" />
     </scopeInfo>

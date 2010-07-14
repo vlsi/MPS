@@ -113,97 +113,97 @@
     <scopeInfo nodeId="3427990840445203145" fileName="SetReturnTypeInConstructors_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="105" />
   </root>
   <root nodeId="4581730695772514123">
-    <nodeInfo nodeId="4581730695772516758" fileName="BaseLanguageMigration_MigrationScript.java" startLine="43" startPosition="52" endLine="44" endPosition="121" />
-    <nodeInfo nodeId="4581730695772516788" fileName="BaseLanguageMigration_MigrationScript.java" startLine="44" startPosition="121" endLine="45" endPosition="150" />
-    <nodeInfo nodeId="4581730695772516798" fileName="BaseLanguageMigration_MigrationScript.java" startLine="45" startPosition="150" endLine="46" endPosition="58" />
-    <nodeInfo nodeId="4581730695772516811" fileName="BaseLanguageMigration_MigrationScript.java" startLine="46" startPosition="58" endLine="47" endPosition="136" />
-    <nodeInfo nodeId="4581730695772516761" fileName="BaseLanguageMigration_MigrationScript.java" startLine="71" startPosition="52" endLine="72" endPosition="121" />
-    <nodeInfo nodeId="2255131707090781378" fileName="BaseLanguageMigration_MigrationScript.java" startLine="72" startPosition="121" endLine="73" endPosition="58" />
-    <nodeInfo nodeId="2255131707090781353" fileName="BaseLanguageMigration_MigrationScript.java" startLine="74" startPosition="83" endLine="75" endPosition="142" />
-    <nodeInfo nodeId="2255131707090781366" fileName="BaseLanguageMigration_MigrationScript.java" startLine="75" startPosition="142" endLine="76" endPosition="105" />
-    <nodeInfo nodeId="4900012836837561091" fileName="BaseLanguageMigration_MigrationScript.java" startLine="98" startPosition="158" endLine="99" endPosition="23" />
-    <nodeInfo nodeId="4900012836837561093" fileName="BaseLanguageMigration_MigrationScript.java" startLine="100" startPosition="9" endLine="101" endPosition="218" />
-    <nodeInfo nodeId="4900012836837561104" fileName="BaseLanguageMigration_MigrationScript.java" startLine="102" startPosition="150" endLine="103" endPosition="23" />
-    <nodeInfo nodeId="4900012836837561113" fileName="BaseLanguageMigration_MigrationScript.java" startLine="104" startPosition="9" endLine="105" endPosition="150" />
-    <nodeInfo nodeId="4900012836837561122" fileName="BaseLanguageMigration_MigrationScript.java" startLine="106" startPosition="170" endLine="107" endPosition="23" />
-    <nodeInfo nodeId="4900012836837561133" fileName="BaseLanguageMigration_MigrationScript.java" startLine="109" startPosition="231" endLine="110" endPosition="23" />
-    <nodeInfo nodeId="4900012836837561145" fileName="BaseLanguageMigration_MigrationScript.java" startLine="112" startPosition="164" endLine="113" endPosition="23" />
-    <nodeInfo nodeId="4900012836837561156" fileName="BaseLanguageMigration_MigrationScript.java" startLine="115" startPosition="199" endLine="116" endPosition="23" />
-    <nodeInfo nodeId="4900012836837561166" fileName="BaseLanguageMigration_MigrationScript.java" startLine="117" startPosition="9" endLine="118" endPosition="20" />
-    <nodeInfo nodeId="4900012836837561042" fileName="BaseLanguageMigration_MigrationScript.java" startLine="121" startPosition="52" endLine="122" endPosition="218" />
-    <nodeInfo nodeId="4900012836837561051" fileName="BaseLanguageMigration_MigrationScript.java" startLine="122" startPosition="218" endLine="123" endPosition="122" />
-    <nodeInfo nodeId="4900012836837561057" fileName="BaseLanguageMigration_MigrationScript.java" startLine="123" startPosition="122" endLine="124" endPosition="82" />
-    <nodeInfo nodeId="4900012836837561063" fileName="BaseLanguageMigration_MigrationScript.java" startLine="124" startPosition="82" endLine="125" endPosition="126" />
-    <nodeInfo nodeId="4900012836837561069" fileName="BaseLanguageMigration_MigrationScript.java" startLine="125" startPosition="126" endLine="126" endPosition="64" />
-    <nodeInfo nodeId="4900012836837561075" fileName="BaseLanguageMigration_MigrationScript.java" startLine="126" startPosition="64" endLine="127" endPosition="54" />
-    <nodeInfo nodeId="4900012836837561220" fileName="BaseLanguageMigration_MigrationScript.java" startLine="148" startPosition="158" endLine="149" endPosition="23" />
-    <nodeInfo nodeId="4900012836837561222" fileName="BaseLanguageMigration_MigrationScript.java" startLine="150" startPosition="9" endLine="151" endPosition="218" />
-    <nodeInfo nodeId="4900012836837561233" fileName="BaseLanguageMigration_MigrationScript.java" startLine="152" startPosition="151" endLine="153" endPosition="23" />
-    <nodeInfo nodeId="4900012836837561242" fileName="BaseLanguageMigration_MigrationScript.java" startLine="154" startPosition="9" endLine="155" endPosition="152" />
-    <nodeInfo nodeId="4900012836837561251" fileName="BaseLanguageMigration_MigrationScript.java" startLine="156" startPosition="171" endLine="157" endPosition="23" />
-    <nodeInfo nodeId="4900012836837561262" fileName="BaseLanguageMigration_MigrationScript.java" startLine="159" startPosition="232" endLine="160" endPosition="23" />
-    <nodeInfo nodeId="4900012836837561274" fileName="BaseLanguageMigration_MigrationScript.java" startLine="162" startPosition="165" endLine="163" endPosition="23" />
-    <nodeInfo nodeId="4900012836837561285" fileName="BaseLanguageMigration_MigrationScript.java" startLine="165" startPosition="200" endLine="166" endPosition="23" />
-    <nodeInfo nodeId="4900012836837561295" fileName="BaseLanguageMigration_MigrationScript.java" startLine="167" startPosition="9" endLine="168" endPosition="20" />
-    <nodeInfo nodeId="4900012836837561171" fileName="BaseLanguageMigration_MigrationScript.java" startLine="171" startPosition="52" endLine="172" endPosition="218" />
-    <nodeInfo nodeId="4900012836837561180" fileName="BaseLanguageMigration_MigrationScript.java" startLine="172" startPosition="218" endLine="173" endPosition="122" />
-    <nodeInfo nodeId="4900012836837561186" fileName="BaseLanguageMigration_MigrationScript.java" startLine="173" startPosition="122" endLine="174" endPosition="82" />
-    <nodeInfo nodeId="4900012836837561192" fileName="BaseLanguageMigration_MigrationScript.java" startLine="174" startPosition="82" endLine="175" endPosition="126" />
-    <nodeInfo nodeId="4900012836837561198" fileName="BaseLanguageMigration_MigrationScript.java" startLine="175" startPosition="126" endLine="176" endPosition="64" />
-    <nodeInfo nodeId="4900012836837561204" fileName="BaseLanguageMigration_MigrationScript.java" startLine="176" startPosition="64" endLine="177" endPosition="54" />
-    <nodeInfo nodeId="4900012836837561419" fileName="BaseLanguageMigration_MigrationScript.java" startLine="201" startPosition="52" endLine="202" endPosition="101" />
-    <nodeInfo nodeId="4900012836837561082" fileName="BaseLanguageMigration_MigrationScript.java" startLine="97" startPosition="59" endLine="100" endPosition="9" />
-    <nodeInfo nodeId="4900012836837561102" fileName="BaseLanguageMigration_MigrationScript.java" startLine="101" startPosition="218" endLine="104" endPosition="9" />
-    <nodeInfo nodeId="4900012836837561120" fileName="BaseLanguageMigration_MigrationScript.java" startLine="105" startPosition="150" endLine="108" endPosition="9" />
-    <nodeInfo nodeId="4900012836837561131" fileName="BaseLanguageMigration_MigrationScript.java" startLine="108" startPosition="9" endLine="111" endPosition="9" />
-    <nodeInfo nodeId="4900012836837561143" fileName="BaseLanguageMigration_MigrationScript.java" startLine="111" startPosition="9" endLine="114" endPosition="9" />
-    <nodeInfo nodeId="4900012836837561154" fileName="BaseLanguageMigration_MigrationScript.java" startLine="114" startPosition="9" endLine="117" endPosition="9" />
-    <nodeInfo nodeId="4900012836837561211" fileName="BaseLanguageMigration_MigrationScript.java" startLine="147" startPosition="59" endLine="150" endPosition="9" />
-    <nodeInfo nodeId="4900012836837561231" fileName="BaseLanguageMigration_MigrationScript.java" startLine="151" startPosition="218" endLine="154" endPosition="9" />
-    <nodeInfo nodeId="4900012836837561249" fileName="BaseLanguageMigration_MigrationScript.java" startLine="155" startPosition="152" endLine="158" endPosition="9" />
-    <nodeInfo nodeId="4900012836837561260" fileName="BaseLanguageMigration_MigrationScript.java" startLine="158" startPosition="9" endLine="161" endPosition="9" />
-    <nodeInfo nodeId="4900012836837561272" fileName="BaseLanguageMigration_MigrationScript.java" startLine="161" startPosition="9" endLine="164" endPosition="9" />
-    <nodeInfo nodeId="4900012836837561283" fileName="BaseLanguageMigration_MigrationScript.java" startLine="164" startPosition="9" endLine="167" endPosition="9" />
-    <nodeInfo nodeId="2255131707090781335" fileName="BaseLanguageMigration_MigrationScript.java" startLine="73" startPosition="58" endLine="77" endPosition="9" />
-    <scopeInfo nodeId="4900012836837561090" fileName="BaseLanguageMigration_MigrationScript.java" startLine="98" startPosition="158" endLine="99" endPosition="23" />
-    <scopeInfo nodeId="4900012836837561103" fileName="BaseLanguageMigration_MigrationScript.java" startLine="102" startPosition="150" endLine="103" endPosition="23" />
-    <scopeInfo nodeId="4900012836837561121" fileName="BaseLanguageMigration_MigrationScript.java" startLine="106" startPosition="170" endLine="107" endPosition="23" />
-    <scopeInfo nodeId="4900012836837561132" fileName="BaseLanguageMigration_MigrationScript.java" startLine="109" startPosition="231" endLine="110" endPosition="23" />
-    <scopeInfo nodeId="4900012836837561144" fileName="BaseLanguageMigration_MigrationScript.java" startLine="112" startPosition="164" endLine="113" endPosition="23" />
-    <scopeInfo nodeId="4900012836837561155" fileName="BaseLanguageMigration_MigrationScript.java" startLine="115" startPosition="199" endLine="116" endPosition="23" />
-    <scopeInfo nodeId="4900012836837561219" fileName="BaseLanguageMigration_MigrationScript.java" startLine="148" startPosition="158" endLine="149" endPosition="23" />
-    <scopeInfo nodeId="4900012836837561232" fileName="BaseLanguageMigration_MigrationScript.java" startLine="152" startPosition="151" endLine="153" endPosition="23" />
-    <scopeInfo nodeId="4900012836837561250" fileName="BaseLanguageMigration_MigrationScript.java" startLine="156" startPosition="171" endLine="157" endPosition="23" />
-    <scopeInfo nodeId="4900012836837561261" fileName="BaseLanguageMigration_MigrationScript.java" startLine="159" startPosition="232" endLine="160" endPosition="23" />
-    <scopeInfo nodeId="4900012836837561273" fileName="BaseLanguageMigration_MigrationScript.java" startLine="162" startPosition="165" endLine="163" endPosition="23" />
-    <scopeInfo nodeId="4900012836837561284" fileName="BaseLanguageMigration_MigrationScript.java" startLine="165" startPosition="200" endLine="166" endPosition="23" />
-    <scopeInfo nodeId="4900012836837561424" fileName="BaseLanguageMigration_MigrationScript.java" startLine="197" startPosition="59" endLine="198" endPosition="214" />
-    <scopeInfo nodeId="4900012836837561418" fileName="BaseLanguageMigration_MigrationScript.java" startLine="201" startPosition="52" endLine="202" endPosition="101" />
-    <scopeInfo nodeId="2255131707090781336" fileName="BaseLanguageMigration_MigrationScript.java" startLine="74" startPosition="83" endLine="76" endPosition="105">
+    <nodeInfo nodeId="4581730695772516758" fileName="BaseLanguageMigration_MigrationScript.java" startLine="42" startPosition="52" endLine="43" endPosition="121" />
+    <nodeInfo nodeId="4581730695772516788" fileName="BaseLanguageMigration_MigrationScript.java" startLine="43" startPosition="121" endLine="44" endPosition="150" />
+    <nodeInfo nodeId="4581730695772516798" fileName="BaseLanguageMigration_MigrationScript.java" startLine="44" startPosition="150" endLine="45" endPosition="58" />
+    <nodeInfo nodeId="4581730695772516811" fileName="BaseLanguageMigration_MigrationScript.java" startLine="45" startPosition="58" endLine="46" endPosition="136" />
+    <nodeInfo nodeId="4581730695772516761" fileName="BaseLanguageMigration_MigrationScript.java" startLine="70" startPosition="52" endLine="71" endPosition="121" />
+    <nodeInfo nodeId="2255131707090781378" fileName="BaseLanguageMigration_MigrationScript.java" startLine="71" startPosition="121" endLine="72" endPosition="58" />
+    <nodeInfo nodeId="2255131707090781353" fileName="BaseLanguageMigration_MigrationScript.java" startLine="73" startPosition="83" endLine="74" endPosition="142" />
+    <nodeInfo nodeId="2255131707090781366" fileName="BaseLanguageMigration_MigrationScript.java" startLine="74" startPosition="142" endLine="75" endPosition="105" />
+    <nodeInfo nodeId="4900012836837561091" fileName="BaseLanguageMigration_MigrationScript.java" startLine="97" startPosition="158" endLine="98" endPosition="23" />
+    <nodeInfo nodeId="4900012836837561093" fileName="BaseLanguageMigration_MigrationScript.java" startLine="99" startPosition="9" endLine="100" endPosition="218" />
+    <nodeInfo nodeId="4900012836837561104" fileName="BaseLanguageMigration_MigrationScript.java" startLine="101" startPosition="150" endLine="102" endPosition="23" />
+    <nodeInfo nodeId="4900012836837561113" fileName="BaseLanguageMigration_MigrationScript.java" startLine="103" startPosition="9" endLine="104" endPosition="150" />
+    <nodeInfo nodeId="4900012836837561122" fileName="BaseLanguageMigration_MigrationScript.java" startLine="105" startPosition="170" endLine="106" endPosition="23" />
+    <nodeInfo nodeId="4900012836837561133" fileName="BaseLanguageMigration_MigrationScript.java" startLine="108" startPosition="231" endLine="109" endPosition="23" />
+    <nodeInfo nodeId="4900012836837561145" fileName="BaseLanguageMigration_MigrationScript.java" startLine="111" startPosition="164" endLine="112" endPosition="23" />
+    <nodeInfo nodeId="4900012836837561156" fileName="BaseLanguageMigration_MigrationScript.java" startLine="114" startPosition="199" endLine="115" endPosition="23" />
+    <nodeInfo nodeId="4900012836837561166" fileName="BaseLanguageMigration_MigrationScript.java" startLine="116" startPosition="9" endLine="117" endPosition="20" />
+    <nodeInfo nodeId="4900012836837561042" fileName="BaseLanguageMigration_MigrationScript.java" startLine="120" startPosition="52" endLine="121" endPosition="218" />
+    <nodeInfo nodeId="4900012836837561051" fileName="BaseLanguageMigration_MigrationScript.java" startLine="121" startPosition="218" endLine="122" endPosition="122" />
+    <nodeInfo nodeId="4900012836837561057" fileName="BaseLanguageMigration_MigrationScript.java" startLine="122" startPosition="122" endLine="123" endPosition="82" />
+    <nodeInfo nodeId="4900012836837561063" fileName="BaseLanguageMigration_MigrationScript.java" startLine="123" startPosition="82" endLine="124" endPosition="126" />
+    <nodeInfo nodeId="4900012836837561069" fileName="BaseLanguageMigration_MigrationScript.java" startLine="124" startPosition="126" endLine="125" endPosition="64" />
+    <nodeInfo nodeId="4900012836837561075" fileName="BaseLanguageMigration_MigrationScript.java" startLine="125" startPosition="64" endLine="126" endPosition="54" />
+    <nodeInfo nodeId="4900012836837561220" fileName="BaseLanguageMigration_MigrationScript.java" startLine="147" startPosition="158" endLine="148" endPosition="23" />
+    <nodeInfo nodeId="4900012836837561222" fileName="BaseLanguageMigration_MigrationScript.java" startLine="149" startPosition="9" endLine="150" endPosition="218" />
+    <nodeInfo nodeId="4900012836837561233" fileName="BaseLanguageMigration_MigrationScript.java" startLine="151" startPosition="151" endLine="152" endPosition="23" />
+    <nodeInfo nodeId="4900012836837561242" fileName="BaseLanguageMigration_MigrationScript.java" startLine="153" startPosition="9" endLine="154" endPosition="152" />
+    <nodeInfo nodeId="4900012836837561251" fileName="BaseLanguageMigration_MigrationScript.java" startLine="155" startPosition="171" endLine="156" endPosition="23" />
+    <nodeInfo nodeId="4900012836837561262" fileName="BaseLanguageMigration_MigrationScript.java" startLine="158" startPosition="232" endLine="159" endPosition="23" />
+    <nodeInfo nodeId="4900012836837561274" fileName="BaseLanguageMigration_MigrationScript.java" startLine="161" startPosition="165" endLine="162" endPosition="23" />
+    <nodeInfo nodeId="4900012836837561285" fileName="BaseLanguageMigration_MigrationScript.java" startLine="164" startPosition="200" endLine="165" endPosition="23" />
+    <nodeInfo nodeId="4900012836837561295" fileName="BaseLanguageMigration_MigrationScript.java" startLine="166" startPosition="9" endLine="167" endPosition="20" />
+    <nodeInfo nodeId="4900012836837561171" fileName="BaseLanguageMigration_MigrationScript.java" startLine="170" startPosition="52" endLine="171" endPosition="218" />
+    <nodeInfo nodeId="4900012836837561180" fileName="BaseLanguageMigration_MigrationScript.java" startLine="171" startPosition="218" endLine="172" endPosition="122" />
+    <nodeInfo nodeId="4900012836837561186" fileName="BaseLanguageMigration_MigrationScript.java" startLine="172" startPosition="122" endLine="173" endPosition="82" />
+    <nodeInfo nodeId="4900012836837561192" fileName="BaseLanguageMigration_MigrationScript.java" startLine="173" startPosition="82" endLine="174" endPosition="126" />
+    <nodeInfo nodeId="4900012836837561198" fileName="BaseLanguageMigration_MigrationScript.java" startLine="174" startPosition="126" endLine="175" endPosition="64" />
+    <nodeInfo nodeId="4900012836837561204" fileName="BaseLanguageMigration_MigrationScript.java" startLine="175" startPosition="64" endLine="176" endPosition="54" />
+    <nodeInfo nodeId="4900012836837561419" fileName="BaseLanguageMigration_MigrationScript.java" startLine="200" startPosition="52" endLine="201" endPosition="101" />
+    <nodeInfo nodeId="4900012836837561082" fileName="BaseLanguageMigration_MigrationScript.java" startLine="96" startPosition="59" endLine="99" endPosition="9" />
+    <nodeInfo nodeId="4900012836837561102" fileName="BaseLanguageMigration_MigrationScript.java" startLine="100" startPosition="218" endLine="103" endPosition="9" />
+    <nodeInfo nodeId="4900012836837561120" fileName="BaseLanguageMigration_MigrationScript.java" startLine="104" startPosition="150" endLine="107" endPosition="9" />
+    <nodeInfo nodeId="4900012836837561131" fileName="BaseLanguageMigration_MigrationScript.java" startLine="107" startPosition="9" endLine="110" endPosition="9" />
+    <nodeInfo nodeId="4900012836837561143" fileName="BaseLanguageMigration_MigrationScript.java" startLine="110" startPosition="9" endLine="113" endPosition="9" />
+    <nodeInfo nodeId="4900012836837561154" fileName="BaseLanguageMigration_MigrationScript.java" startLine="113" startPosition="9" endLine="116" endPosition="9" />
+    <nodeInfo nodeId="4900012836837561211" fileName="BaseLanguageMigration_MigrationScript.java" startLine="146" startPosition="59" endLine="149" endPosition="9" />
+    <nodeInfo nodeId="4900012836837561231" fileName="BaseLanguageMigration_MigrationScript.java" startLine="150" startPosition="218" endLine="153" endPosition="9" />
+    <nodeInfo nodeId="4900012836837561249" fileName="BaseLanguageMigration_MigrationScript.java" startLine="154" startPosition="152" endLine="157" endPosition="9" />
+    <nodeInfo nodeId="4900012836837561260" fileName="BaseLanguageMigration_MigrationScript.java" startLine="157" startPosition="9" endLine="160" endPosition="9" />
+    <nodeInfo nodeId="4900012836837561272" fileName="BaseLanguageMigration_MigrationScript.java" startLine="160" startPosition="9" endLine="163" endPosition="9" />
+    <nodeInfo nodeId="4900012836837561283" fileName="BaseLanguageMigration_MigrationScript.java" startLine="163" startPosition="9" endLine="166" endPosition="9" />
+    <nodeInfo nodeId="2255131707090781335" fileName="BaseLanguageMigration_MigrationScript.java" startLine="72" startPosition="58" endLine="76" endPosition="9" />
+    <scopeInfo nodeId="4900012836837561090" fileName="BaseLanguageMigration_MigrationScript.java" startLine="97" startPosition="158" endLine="98" endPosition="23" />
+    <scopeInfo nodeId="4900012836837561103" fileName="BaseLanguageMigration_MigrationScript.java" startLine="101" startPosition="150" endLine="102" endPosition="23" />
+    <scopeInfo nodeId="4900012836837561121" fileName="BaseLanguageMigration_MigrationScript.java" startLine="105" startPosition="170" endLine="106" endPosition="23" />
+    <scopeInfo nodeId="4900012836837561132" fileName="BaseLanguageMigration_MigrationScript.java" startLine="108" startPosition="231" endLine="109" endPosition="23" />
+    <scopeInfo nodeId="4900012836837561144" fileName="BaseLanguageMigration_MigrationScript.java" startLine="111" startPosition="164" endLine="112" endPosition="23" />
+    <scopeInfo nodeId="4900012836837561155" fileName="BaseLanguageMigration_MigrationScript.java" startLine="114" startPosition="199" endLine="115" endPosition="23" />
+    <scopeInfo nodeId="4900012836837561219" fileName="BaseLanguageMigration_MigrationScript.java" startLine="147" startPosition="158" endLine="148" endPosition="23" />
+    <scopeInfo nodeId="4900012836837561232" fileName="BaseLanguageMigration_MigrationScript.java" startLine="151" startPosition="151" endLine="152" endPosition="23" />
+    <scopeInfo nodeId="4900012836837561250" fileName="BaseLanguageMigration_MigrationScript.java" startLine="155" startPosition="171" endLine="156" endPosition="23" />
+    <scopeInfo nodeId="4900012836837561261" fileName="BaseLanguageMigration_MigrationScript.java" startLine="158" startPosition="232" endLine="159" endPosition="23" />
+    <scopeInfo nodeId="4900012836837561273" fileName="BaseLanguageMigration_MigrationScript.java" startLine="161" startPosition="165" endLine="162" endPosition="23" />
+    <scopeInfo nodeId="4900012836837561284" fileName="BaseLanguageMigration_MigrationScript.java" startLine="164" startPosition="200" endLine="165" endPosition="23" />
+    <scopeInfo nodeId="4900012836837561424" fileName="BaseLanguageMigration_MigrationScript.java" startLine="196" startPosition="59" endLine="197" endPosition="214" />
+    <scopeInfo nodeId="4900012836837561418" fileName="BaseLanguageMigration_MigrationScript.java" startLine="200" startPosition="52" endLine="201" endPosition="101" />
+    <scopeInfo nodeId="2255131707090781336" fileName="BaseLanguageMigration_MigrationScript.java" startLine="73" startPosition="83" endLine="75" endPosition="105">
       <varInfo nodeId="2255131707090781354" varName="textCommentPart" />
     </scopeInfo>
-    <scopeInfo nodeId="4581730695772514126" fileName="BaseLanguageMigration_MigrationScript.java" startLine="43" startPosition="52" endLine="47" endPosition="136">
+    <scopeInfo nodeId="4581730695772514126" fileName="BaseLanguageMigration_MigrationScript.java" startLine="42" startPosition="52" endLine="46" endPosition="136">
       <varInfo nodeId="4581730695772516789" varName="statementCommentPart" />
       <varInfo nodeId="4581730695772516759" varName="comment" />
     </scopeInfo>
-    <scopeInfo nodeId="4581730695772514248" fileName="BaseLanguageMigration_MigrationScript.java" startLine="71" startPosition="52" endLine="77" endPosition="9">
+    <scopeInfo nodeId="4581730695772514248" fileName="BaseLanguageMigration_MigrationScript.java" startLine="70" startPosition="52" endLine="76" endPosition="9">
       <varInfo nodeId="4581730695772516762" varName="comment" />
     </scopeInfo>
-    <scopeInfo nodeId="4900012836837561041" fileName="BaseLanguageMigration_MigrationScript.java" startLine="121" startPosition="52" endLine="127" endPosition="54">
+    <scopeInfo nodeId="4900012836837561041" fileName="BaseLanguageMigration_MigrationScript.java" startLine="120" startPosition="52" endLine="126" endPosition="54">
       <varInfo nodeId="4900012836837561052" varName="ref" />
       <varInfo nodeId="4900012836837561043" varName="declaration" />
       <varInfo nodeId="4900012836837561064" varName="inc" />
     </scopeInfo>
-    <scopeInfo nodeId="4900012836837561170" fileName="BaseLanguageMigration_MigrationScript.java" startLine="171" startPosition="52" endLine="177" endPosition="54">
+    <scopeInfo nodeId="4900012836837561170" fileName="BaseLanguageMigration_MigrationScript.java" startLine="170" startPosition="52" endLine="176" endPosition="54">
       <varInfo nodeId="4900012836837561181" varName="ref" />
       <varInfo nodeId="4900012836837561193" varName="dec" />
       <varInfo nodeId="4900012836837561172" varName="declaration" />
     </scopeInfo>
-    <scopeInfo nodeId="4900012836837561081" fileName="BaseLanguageMigration_MigrationScript.java" startLine="97" startPosition="59" endLine="118" endPosition="20">
+    <scopeInfo nodeId="4900012836837561081" fileName="BaseLanguageMigration_MigrationScript.java" startLine="96" startPosition="59" endLine="117" endPosition="20">
       <varInfo nodeId="4900012836837561094" varName="declaration" />
       <varInfo nodeId="4900012836837561114" varName="plusExpr" />
     </scopeInfo>
-    <scopeInfo nodeId="4900012836837561210" fileName="BaseLanguageMigration_MigrationScript.java" startLine="147" startPosition="59" endLine="168" endPosition="20">
+    <scopeInfo nodeId="4900012836837561210" fileName="BaseLanguageMigration_MigrationScript.java" startLine="146" startPosition="59" endLine="167" endPosition="20">
       <varInfo nodeId="4900012836837561243" varName="minusExpr" />
       <varInfo nodeId="4900012836837561223" varName="declaration" />
     </scopeInfo>

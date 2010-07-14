@@ -142,67 +142,67 @@
     <unitInfo nodeId="7874812549549919795" fileName="RenameMethod.java" startLine="47" startPosition="45" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.refactorings.RenameMethod$1" />
   </root>
   <root nodeId="9118878263582100185">
-    <nodeInfo nodeId="9118878263582108275" fileName="MakeFieldStatic.java" startLine="46" startPosition="68" endLine="47" endPosition="60" />
-    <nodeInfo nodeId="9118878263582108370" fileName="MakeFieldStatic.java" startLine="50" startPosition="106" endLine="51" endPosition="142" />
-    <nodeInfo nodeId="9118878263582108381" fileName="MakeFieldStatic.java" startLine="52" startPosition="16" endLine="53" endPosition="220" />
-    <nodeInfo nodeId="9118878263582108395" fileName="MakeFieldStatic.java" startLine="54" startPosition="9" endLine="55" endPosition="253" />
-    <nodeInfo nodeId="9118878263582111387" fileName="MakeFieldStatic.java" startLine="55" startPosition="253" endLine="56" endPosition="68" />
-    <nodeInfo nodeId="9118878263582111512" fileName="MakeFieldStatic.java" startLine="58" startPosition="165" endLine="59" endPosition="71" />
-    <nodeInfo nodeId="9118878263582108302" fileName="MakeFieldStatic.java" startLine="63" startPosition="7" endLine="64" endPosition="16" />
-    <nodeInfo nodeId="9118878263582123087" fileName="MakeFieldStatic.java" startLine="67" startPosition="69" endLine="68" endPosition="442" />
-    <nodeInfo nodeId="9118878263582143904" fileName="MakeFieldStatic.java" startLine="68" startPosition="442" endLine="69" endPosition="185" />
-    <nodeInfo nodeId="9118878263582111531" fileName="MakeFieldStatic.java" startLine="69" startPosition="185" endLine="70" endPosition="125" />
-    <nodeInfo nodeId="9118878263582164023" fileName="MakeFieldStatic.java" startLine="71" startPosition="149" endLine="72" endPosition="39" />
-    <nodeInfo nodeId="9118878263582143832" fileName="MakeFieldStatic.java" startLine="72" startPosition="39" endLine="73" endPosition="22" />
-    <nodeInfo nodeId="9118878263582143838" fileName="MakeFieldStatic.java" startLine="74" startPosition="112" endLine="75" endPosition="53" />
-    <nodeInfo nodeId="9118878263582143851" fileName="MakeFieldStatic.java" startLine="76" startPosition="14" endLine="77" endPosition="26" />
-    <nodeInfo nodeId="9118878263582143858" fileName="MakeFieldStatic.java" startLine="78" startPosition="7" endLine="79" endPosition="25" />
-    <nodeInfo nodeId="9118878263582143889" fileName="MakeFieldStatic.java" startLine="80" startPosition="137" endLine="81" endPosition="128" />
-    <nodeInfo nodeId="9118878263582143924" fileName="MakeFieldStatic.java" startLine="82" startPosition="14" endLine="83" endPosition="106" />
-    <nodeInfo nodeId="9118878263582143957" fileName="MakeFieldStatic.java" startLine="84" startPosition="7" endLine="85" endPosition="66" />
-    <nodeInfo nodeId="9118878263582153982" fileName="MakeFieldStatic.java" startLine="86" startPosition="5" endLine="87" endPosition="89" />
-    <nodeInfo nodeId="9118878263582111524" fileName="MakeFieldStatic.java" startLine="91" startPosition="78" endLine="92" endPosition="18" />
-    <nodeInfo nodeId="9118878263582111528" fileName="MakeFieldStatic.java" startLine="93" startPosition="5" endLine="94" endPosition="78" />
-    <nodeInfo nodeId="9118878263582108379" fileName="MakeFieldStatic.java" startLine="52" startPosition="14" endLine="54" endPosition="9" />
-    <nodeInfo nodeId="9118878263582143849" fileName="MakeFieldStatic.java" startLine="76" startPosition="12" endLine="78" endPosition="7" />
-    <nodeInfo nodeId="9118878263582143922" fileName="MakeFieldStatic.java" startLine="82" startPosition="12" endLine="84" endPosition="7" />
-    <nodeInfo nodeId="9118878263582111464" fileName="MakeFieldStatic.java" startLine="57" startPosition="153" endLine="60" endPosition="11" />
-    <nodeInfo nodeId="9118878263582111520" fileName="MakeFieldStatic.java" startLine="90" startPosition="86" endLine="93" endPosition="5" />
-    <nodeInfo nodeId="9118878263582108368" fileName="MakeFieldStatic.java" startLine="49" startPosition="25" endLine="54" endPosition="9" />
-    <nodeInfo nodeId="9118878263582111376" fileName="MakeFieldStatic.java" startLine="56" startPosition="68" endLine="61" endPosition="9" />
-    <nodeInfo nodeId="9118878263582143821" fileName="MakeFieldStatic.java" startLine="73" startPosition="22" endLine="78" endPosition="7" />
-    <nodeInfo nodeId="9118878263582143862" fileName="MakeFieldStatic.java" startLine="79" startPosition="25" endLine="84" endPosition="7" />
-    <nodeInfo nodeId="9118878263582108366" fileName="MakeFieldStatic.java" startLine="48" startPosition="57" endLine="63" endPosition="0" />
-    <nodeInfo nodeId="9118878263582108365" fileName="MakeFieldStatic.java" startLine="47" startPosition="60" endLine="63" endPosition="7" />
-    <nodeInfo nodeId="9118878263582143804" fileName="MakeFieldStatic.java" startLine="70" startPosition="125" endLine="86" endPosition="5" />
+    <nodeInfo nodeId="9118878263582108275" fileName="MakeFieldStatic.java" startLine="45" startPosition="68" endLine="46" endPosition="60" />
+    <nodeInfo nodeId="9118878263582108370" fileName="MakeFieldStatic.java" startLine="49" startPosition="106" endLine="50" endPosition="142" />
+    <nodeInfo nodeId="9118878263582108381" fileName="MakeFieldStatic.java" startLine="51" startPosition="16" endLine="52" endPosition="220" />
+    <nodeInfo nodeId="9118878263582108395" fileName="MakeFieldStatic.java" startLine="53" startPosition="9" endLine="54" endPosition="253" />
+    <nodeInfo nodeId="9118878263582111387" fileName="MakeFieldStatic.java" startLine="54" startPosition="253" endLine="55" endPosition="68" />
+    <nodeInfo nodeId="9118878263582111512" fileName="MakeFieldStatic.java" startLine="57" startPosition="165" endLine="58" endPosition="71" />
+    <nodeInfo nodeId="9118878263582108302" fileName="MakeFieldStatic.java" startLine="62" startPosition="7" endLine="63" endPosition="16" />
+    <nodeInfo nodeId="9118878263582123087" fileName="MakeFieldStatic.java" startLine="66" startPosition="69" endLine="67" endPosition="442" />
+    <nodeInfo nodeId="9118878263582143904" fileName="MakeFieldStatic.java" startLine="67" startPosition="442" endLine="68" endPosition="185" />
+    <nodeInfo nodeId="9118878263582111531" fileName="MakeFieldStatic.java" startLine="68" startPosition="185" endLine="69" endPosition="125" />
+    <nodeInfo nodeId="9118878263582164023" fileName="MakeFieldStatic.java" startLine="70" startPosition="149" endLine="71" endPosition="39" />
+    <nodeInfo nodeId="9118878263582143832" fileName="MakeFieldStatic.java" startLine="71" startPosition="39" endLine="72" endPosition="22" />
+    <nodeInfo nodeId="9118878263582143838" fileName="MakeFieldStatic.java" startLine="73" startPosition="112" endLine="74" endPosition="53" />
+    <nodeInfo nodeId="9118878263582143851" fileName="MakeFieldStatic.java" startLine="75" startPosition="14" endLine="76" endPosition="26" />
+    <nodeInfo nodeId="9118878263582143858" fileName="MakeFieldStatic.java" startLine="77" startPosition="7" endLine="78" endPosition="25" />
+    <nodeInfo nodeId="9118878263582143889" fileName="MakeFieldStatic.java" startLine="79" startPosition="137" endLine="80" endPosition="128" />
+    <nodeInfo nodeId="9118878263582143924" fileName="MakeFieldStatic.java" startLine="81" startPosition="14" endLine="82" endPosition="106" />
+    <nodeInfo nodeId="9118878263582143957" fileName="MakeFieldStatic.java" startLine="83" startPosition="7" endLine="84" endPosition="66" />
+    <nodeInfo nodeId="9118878263582153982" fileName="MakeFieldStatic.java" startLine="85" startPosition="5" endLine="86" endPosition="89" />
+    <nodeInfo nodeId="9118878263582111524" fileName="MakeFieldStatic.java" startLine="90" startPosition="78" endLine="91" endPosition="18" />
+    <nodeInfo nodeId="9118878263582111528" fileName="MakeFieldStatic.java" startLine="92" startPosition="5" endLine="93" endPosition="78" />
+    <nodeInfo nodeId="9118878263582108379" fileName="MakeFieldStatic.java" startLine="51" startPosition="14" endLine="53" endPosition="9" />
+    <nodeInfo nodeId="9118878263582143849" fileName="MakeFieldStatic.java" startLine="75" startPosition="12" endLine="77" endPosition="7" />
+    <nodeInfo nodeId="9118878263582143922" fileName="MakeFieldStatic.java" startLine="81" startPosition="12" endLine="83" endPosition="7" />
+    <nodeInfo nodeId="9118878263582111464" fileName="MakeFieldStatic.java" startLine="56" startPosition="153" endLine="59" endPosition="11" />
+    <nodeInfo nodeId="9118878263582111520" fileName="MakeFieldStatic.java" startLine="89" startPosition="86" endLine="92" endPosition="5" />
+    <nodeInfo nodeId="9118878263582108368" fileName="MakeFieldStatic.java" startLine="48" startPosition="25" endLine="53" endPosition="9" />
+    <nodeInfo nodeId="9118878263582111376" fileName="MakeFieldStatic.java" startLine="55" startPosition="68" endLine="60" endPosition="9" />
+    <nodeInfo nodeId="9118878263582143821" fileName="MakeFieldStatic.java" startLine="72" startPosition="22" endLine="77" endPosition="7" />
+    <nodeInfo nodeId="9118878263582143862" fileName="MakeFieldStatic.java" startLine="78" startPosition="25" endLine="83" endPosition="7" />
+    <nodeInfo nodeId="9118878263582108366" fileName="MakeFieldStatic.java" startLine="47" startPosition="57" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="9118878263582108365" fileName="MakeFieldStatic.java" startLine="46" startPosition="60" endLine="62" endPosition="7" />
+    <nodeInfo nodeId="9118878263582143804" fileName="MakeFieldStatic.java" startLine="69" startPosition="125" endLine="85" endPosition="5" />
     <scopeInfo nodeId="9118878263582108239" fileName="MakeFieldStatic_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="347" />
-    <scopeInfo nodeId="9118878263582108369" fileName="MakeFieldStatic.java" startLine="50" startPosition="106" endLine="51" endPosition="142" />
-    <scopeInfo nodeId="9118878263582108380" fileName="MakeFieldStatic.java" startLine="52" startPosition="16" endLine="53" endPosition="220" />
-    <scopeInfo nodeId="9118878263582111465" fileName="MakeFieldStatic.java" startLine="58" startPosition="165" endLine="59" endPosition="71" />
-    <scopeInfo nodeId="9118878263582143823" fileName="MakeFieldStatic.java" startLine="74" startPosition="112" endLine="75" endPosition="53" />
-    <scopeInfo nodeId="9118878263582143850" fileName="MakeFieldStatic.java" startLine="76" startPosition="14" endLine="77" endPosition="26" />
-    <scopeInfo nodeId="9118878263582143863" fileName="MakeFieldStatic.java" startLine="80" startPosition="137" endLine="81" endPosition="128" />
-    <scopeInfo nodeId="9118878263582143923" fileName="MakeFieldStatic.java" startLine="82" startPosition="14" endLine="83" endPosition="106" />
-    <scopeInfo nodeId="9118878263582111522" fileName="MakeFieldStatic.java" startLine="91" startPosition="78" endLine="92" endPosition="18" />
-    <scopeInfo nodeId="9118878263582111379" fileName="MakeFieldStatic.java" startLine="57" startPosition="153" endLine="60" endPosition="11" />
-    <scopeInfo nodeId="9118878263582111519" fileName="MakeFieldStatic.java" startLine="90" startPosition="86" endLine="94" endPosition="78" />
-    <scopeInfo nodeId="9118878263582111376" fileName="MakeFieldStatic.java" startLine="56" startPosition="68" endLine="61" endPosition="9" />
-    <scopeInfo nodeId="9118878263582108367" fileName="MakeFieldStatic.java" startLine="49" startPosition="25" endLine="61" endPosition="9" />
-    <scopeInfo nodeId="9118878263582143807" fileName="MakeFieldStatic.java" startLine="71" startPosition="149" endLine="85" endPosition="66">
+    <scopeInfo nodeId="9118878263582108369" fileName="MakeFieldStatic.java" startLine="49" startPosition="106" endLine="50" endPosition="142" />
+    <scopeInfo nodeId="9118878263582108380" fileName="MakeFieldStatic.java" startLine="51" startPosition="16" endLine="52" endPosition="220" />
+    <scopeInfo nodeId="9118878263582111465" fileName="MakeFieldStatic.java" startLine="57" startPosition="165" endLine="58" endPosition="71" />
+    <scopeInfo nodeId="9118878263582143823" fileName="MakeFieldStatic.java" startLine="73" startPosition="112" endLine="74" endPosition="53" />
+    <scopeInfo nodeId="9118878263582143850" fileName="MakeFieldStatic.java" startLine="75" startPosition="14" endLine="76" endPosition="26" />
+    <scopeInfo nodeId="9118878263582143863" fileName="MakeFieldStatic.java" startLine="79" startPosition="137" endLine="80" endPosition="128" />
+    <scopeInfo nodeId="9118878263582143923" fileName="MakeFieldStatic.java" startLine="81" startPosition="14" endLine="82" endPosition="106" />
+    <scopeInfo nodeId="9118878263582111522" fileName="MakeFieldStatic.java" startLine="90" startPosition="78" endLine="91" endPosition="18" />
+    <scopeInfo nodeId="9118878263582111379" fileName="MakeFieldStatic.java" startLine="56" startPosition="153" endLine="59" endPosition="11" />
+    <scopeInfo nodeId="9118878263582111519" fileName="MakeFieldStatic.java" startLine="89" startPosition="86" endLine="93" endPosition="78" />
+    <scopeInfo nodeId="9118878263582111376" fileName="MakeFieldStatic.java" startLine="55" startPosition="68" endLine="60" endPosition="9" />
+    <scopeInfo nodeId="9118878263582108367" fileName="MakeFieldStatic.java" startLine="48" startPosition="25" endLine="60" endPosition="9" />
+    <scopeInfo nodeId="9118878263582143807" fileName="MakeFieldStatic.java" startLine="70" startPosition="149" endLine="84" endPosition="66">
       <varInfo nodeId="9118878263582143859" varName="newReference" />
       <varInfo nodeId="9118878263582143833" varName="replacing" />
       <varInfo nodeId="9118878263582164024" varName="usage" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582108366" fileName="MakeFieldStatic.java" startLine="48" startPosition="57" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="9118878263582143804" fileName="MakeFieldStatic.java" startLine="70" startPosition="125" endLine="86" endPosition="5" />
-    <scopeInfo nodeId="9118878263582108235" fileName="MakeFieldStatic.java" startLine="46" startPosition="68" endLine="64" endPosition="16">
+    <scopeInfo nodeId="9118878263582108366" fileName="MakeFieldStatic.java" startLine="47" startPosition="57" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="9118878263582143804" fileName="MakeFieldStatic.java" startLine="69" startPosition="125" endLine="85" endPosition="5" />
+    <scopeInfo nodeId="9118878263582108235" fileName="MakeFieldStatic.java" startLine="45" startPosition="68" endLine="63" endPosition="16">
       <varInfo nodeId="9118878263582108276" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582100188" fileName="MakeFieldStatic.java" startLine="67" startPosition="69" endLine="87" endPosition="89">
+    <scopeInfo nodeId="9118878263582100188" fileName="MakeFieldStatic.java" startLine="66" startPosition="69" endLine="86" endPosition="89">
       <varInfo nodeId="9118878263582143905" varName="declarationClassifier" />
       <varInfo nodeId="9118878263582123088" varName="newDeclaration" />
     </scopeInfo>
-    <unitInfo nodeId="9118878263582108366" fileName="MakeFieldStatic.java" startLine="48" startPosition="45" endLine="63" endPosition="5" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic$1" />
+    <unitInfo nodeId="9118878263582108366" fileName="MakeFieldStatic.java" startLine="47" startPosition="45" endLine="62" endPosition="5" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic$1" />
   </root>
 </debugInfo>
 

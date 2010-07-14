@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1213877208326">
-    <nodeInfo nodeId="8847328628797640265" fileName="LongType_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="15" />
-    <scopeInfo nodeId="1213877208340" fileName="LongType_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="1213877208328" fileName="LongType_Behavior.java" startLine="19" startPosition="76" endLine="20" endPosition="76" />
-    <scopeInfo nodeId="1213877208334" fileName="LongType_Behavior.java" startLine="23" startPosition="80" endLine="24" endPosition="76" />
-    <scopeInfo nodeId="8847328628797640262" fileName="LongType_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="15" />
+    <nodeInfo nodeId="8847328628797640265" fileName="LongType_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="15" />
+    <scopeInfo nodeId="1213877208340" fileName="LongType_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1213877208328" fileName="LongType_Behavior.java" startLine="18" startPosition="76" endLine="19" endPosition="76" />
+    <scopeInfo nodeId="1213877208334" fileName="LongType_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="76" />
+    <scopeInfo nodeId="8847328628797640262" fileName="LongType_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="15" />
   </root>
   <root nodeId="1213877220084">
-    <nodeInfo nodeId="5681636232673824702" fileName="AnonymousClass_Behavior.java" startLine="26" startPosition="43" endLine="27" endPosition="62" />
-    <nodeInfo nodeId="1240936666103" fileName="AnonymousClass_Behavior.java" startLine="30" startPosition="75" endLine="31" endPosition="199" />
-    <nodeInfo nodeId="4814759296880331798" fileName="AnonymousClass_Behavior.java" startLine="34" startPosition="123" endLine="35" endPosition="80" />
-    <nodeInfo nodeId="4814759296880331818" fileName="AnonymousClass_Behavior.java" startLine="36" startPosition="104" endLine="37" endPosition="148" />
-    <nodeInfo nodeId="4814759296880331842" fileName="AnonymousClass_Behavior.java" startLine="38" startPosition="12" endLine="39" endPosition="143" />
-    <nodeInfo nodeId="2977939203456928004" fileName="AnonymousClass_Behavior.java" startLine="43" startPosition="77" endLine="44" endPosition="123" />
-    <nodeInfo nodeId="4164197659856373774" fileName="AnonymousClass_Behavior.java" startLine="45" startPosition="29" endLine="46" endPosition="75" />
-    <nodeInfo nodeId="2977939203456928111" fileName="AnonymousClass_Behavior.java" startLine="47" startPosition="5" endLine="48" endPosition="166" />
-    <nodeInfo nodeId="4164197659856373647" fileName="AnonymousClass_Behavior.java" startLine="51" startPosition="88" endLine="52" endPosition="130" />
-    <nodeInfo nodeId="4164197659856373716" fileName="AnonymousClass_Behavior.java" startLine="52" startPosition="130" endLine="53" endPosition="14" />
-    <nodeInfo nodeId="4164197659856373660" fileName="AnonymousClass_Behavior.java" startLine="54" startPosition="104" endLine="55" endPosition="180" />
-    <nodeInfo nodeId="4164197659856373754" fileName="AnonymousClass_Behavior.java" startLine="62" startPosition="5" endLine="63" endPosition="17" />
-    <nodeInfo nodeId="7448855087283494959" fileName="AnonymousClass_Behavior.java" startLine="66" startPosition="82" endLine="67" endPosition="136" />
-    <nodeInfo nodeId="7448855087283456781" fileName="AnonymousClass_Behavior.java" startLine="74" startPosition="72" endLine="75" endPosition="136" />
-    <nodeInfo nodeId="7523932196475740222" fileName="AnonymousClass_Behavior.java" startLine="82" startPosition="132" endLine="83" endPosition="36" />
-    <nodeInfo nodeId="7523932196475740226" fileName="AnonymousClass_Behavior.java" startLine="83" startPosition="36" endLine="84" endPosition="143" />
-    <nodeInfo nodeId="7523932196475740236" fileName="AnonymousClass_Behavior.java" startLine="85" startPosition="106" endLine="86" endPosition="83" />
-    <nodeInfo nodeId="4814759296880331832" fileName="AnonymousClass_Behavior.java" startLine="38" startPosition="10" endLine="40" endPosition="5" />
-    <nodeInfo nodeId="4164197659856373764" fileName="AnonymousClass_Behavior.java" startLine="44" startPosition="123" endLine="47" endPosition="5" />
-    <nodeInfo nodeId="7523932196475740234" fileName="AnonymousClass_Behavior.java" startLine="84" startPosition="143" endLine="87" endPosition="5" />
-    <nodeInfo nodeId="4164197659856373740" fileName="AnonymousClass_Behavior.java" startLine="57" startPosition="189" endLine="61" endPosition="0" />
-    <nodeInfo nodeId="7448855087283494968" fileName="AnonymousClass_Behavior.java" startLine="67" startPosition="136" endLine="71" endPosition="6" />
-    <nodeInfo nodeId="7448855087283456816" fileName="AnonymousClass_Behavior.java" startLine="75" startPosition="136" endLine="79" endPosition="6" />
-    <nodeInfo nodeId="4814759296880331806" fileName="AnonymousClass_Behavior.java" startLine="35" startPosition="80" endLine="40" endPosition="5" />
-    <nodeInfo nodeId="4164197659856373724" fileName="AnonymousClass_Behavior.java" startLine="56" startPosition="12" endLine="61" endPosition="31" />
-    <nodeInfo nodeId="4164197659856373671" fileName="AnonymousClass_Behavior.java" startLine="56" startPosition="10" endLine="62" endPosition="5" />
-    <nodeInfo nodeId="4164197659856373658" fileName="AnonymousClass_Behavior.java" startLine="53" startPosition="14" endLine="62" endPosition="5" />
-    <scopeInfo nodeId="1213877220086" fileName="AnonymousClass_Behavior.java" startLine="26" startPosition="43" endLine="27" endPosition="62" />
-    <scopeInfo nodeId="1240936659088" fileName="AnonymousClass_Behavior.java" startLine="30" startPosition="75" endLine="31" endPosition="199" />
-    <scopeInfo nodeId="4814759296880331807" fileName="AnonymousClass_Behavior.java" startLine="36" startPosition="104" endLine="37" endPosition="148" />
-    <scopeInfo nodeId="4814759296880331833" fileName="AnonymousClass_Behavior.java" startLine="38" startPosition="12" endLine="39" endPosition="143" />
-    <scopeInfo nodeId="4164197659856373765" fileName="AnonymousClass_Behavior.java" startLine="45" startPosition="29" endLine="46" endPosition="75" />
-    <scopeInfo nodeId="4164197659856373659" fileName="AnonymousClass_Behavior.java" startLine="54" startPosition="104" endLine="55" endPosition="180" />
-    <scopeInfo nodeId="4164197659856373741" fileName="AnonymousClass_Behavior.java" startLine="58" startPosition="41" endLine="59" endPosition="126" />
-    <scopeInfo nodeId="7523932196475740235" fileName="AnonymousClass_Behavior.java" startLine="85" startPosition="106" endLine="86" endPosition="83" />
-    <scopeInfo nodeId="4164197659856373740" fileName="AnonymousClass_Behavior.java" startLine="57" startPosition="189" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="2977939203456914074" fileName="AnonymousClass_Behavior.java" startLine="43" startPosition="77" endLine="48" endPosition="166">
+    <nodeInfo nodeId="5681636232673824702" fileName="AnonymousClass_Behavior.java" startLine="25" startPosition="43" endLine="26" endPosition="62" />
+    <nodeInfo nodeId="1240936666103" fileName="AnonymousClass_Behavior.java" startLine="29" startPosition="75" endLine="30" endPosition="199" />
+    <nodeInfo nodeId="4814759296880331798" fileName="AnonymousClass_Behavior.java" startLine="33" startPosition="123" endLine="34" endPosition="80" />
+    <nodeInfo nodeId="4814759296880331818" fileName="AnonymousClass_Behavior.java" startLine="35" startPosition="104" endLine="36" endPosition="148" />
+    <nodeInfo nodeId="4814759296880331842" fileName="AnonymousClass_Behavior.java" startLine="37" startPosition="12" endLine="38" endPosition="143" />
+    <nodeInfo nodeId="2977939203456928004" fileName="AnonymousClass_Behavior.java" startLine="42" startPosition="77" endLine="43" endPosition="123" />
+    <nodeInfo nodeId="4164197659856373774" fileName="AnonymousClass_Behavior.java" startLine="44" startPosition="29" endLine="45" endPosition="75" />
+    <nodeInfo nodeId="2977939203456928111" fileName="AnonymousClass_Behavior.java" startLine="46" startPosition="5" endLine="47" endPosition="166" />
+    <nodeInfo nodeId="4164197659856373647" fileName="AnonymousClass_Behavior.java" startLine="50" startPosition="88" endLine="51" endPosition="130" />
+    <nodeInfo nodeId="4164197659856373716" fileName="AnonymousClass_Behavior.java" startLine="51" startPosition="130" endLine="52" endPosition="14" />
+    <nodeInfo nodeId="4164197659856373660" fileName="AnonymousClass_Behavior.java" startLine="53" startPosition="104" endLine="54" endPosition="180" />
+    <nodeInfo nodeId="4164197659856373754" fileName="AnonymousClass_Behavior.java" startLine="61" startPosition="5" endLine="62" endPosition="17" />
+    <nodeInfo nodeId="7448855087283494959" fileName="AnonymousClass_Behavior.java" startLine="65" startPosition="82" endLine="66" endPosition="136" />
+    <nodeInfo nodeId="7448855087283456781" fileName="AnonymousClass_Behavior.java" startLine="73" startPosition="72" endLine="74" endPosition="136" />
+    <nodeInfo nodeId="7523932196475740222" fileName="AnonymousClass_Behavior.java" startLine="81" startPosition="132" endLine="82" endPosition="36" />
+    <nodeInfo nodeId="7523932196475740226" fileName="AnonymousClass_Behavior.java" startLine="82" startPosition="36" endLine="83" endPosition="143" />
+    <nodeInfo nodeId="7523932196475740236" fileName="AnonymousClass_Behavior.java" startLine="84" startPosition="106" endLine="85" endPosition="83" />
+    <nodeInfo nodeId="4814759296880331832" fileName="AnonymousClass_Behavior.java" startLine="37" startPosition="10" endLine="39" endPosition="5" />
+    <nodeInfo nodeId="4164197659856373764" fileName="AnonymousClass_Behavior.java" startLine="43" startPosition="123" endLine="46" endPosition="5" />
+    <nodeInfo nodeId="7523932196475740234" fileName="AnonymousClass_Behavior.java" startLine="83" startPosition="143" endLine="86" endPosition="5" />
+    <nodeInfo nodeId="4164197659856373740" fileName="AnonymousClass_Behavior.java" startLine="56" startPosition="189" endLine="60" endPosition="0" />
+    <nodeInfo nodeId="7448855087283494968" fileName="AnonymousClass_Behavior.java" startLine="66" startPosition="136" endLine="70" endPosition="6" />
+    <nodeInfo nodeId="7448855087283456816" fileName="AnonymousClass_Behavior.java" startLine="74" startPosition="136" endLine="78" endPosition="6" />
+    <nodeInfo nodeId="4814759296880331806" fileName="AnonymousClass_Behavior.java" startLine="34" startPosition="80" endLine="39" endPosition="5" />
+    <nodeInfo nodeId="4164197659856373724" fileName="AnonymousClass_Behavior.java" startLine="55" startPosition="12" endLine="60" endPosition="31" />
+    <nodeInfo nodeId="4164197659856373671" fileName="AnonymousClass_Behavior.java" startLine="55" startPosition="10" endLine="61" endPosition="5" />
+    <nodeInfo nodeId="4164197659856373658" fileName="AnonymousClass_Behavior.java" startLine="52" startPosition="14" endLine="61" endPosition="5" />
+    <scopeInfo nodeId="1213877220086" fileName="AnonymousClass_Behavior.java" startLine="25" startPosition="43" endLine="26" endPosition="62" />
+    <scopeInfo nodeId="1240936659088" fileName="AnonymousClass_Behavior.java" startLine="29" startPosition="75" endLine="30" endPosition="199" />
+    <scopeInfo nodeId="4814759296880331807" fileName="AnonymousClass_Behavior.java" startLine="35" startPosition="104" endLine="36" endPosition="148" />
+    <scopeInfo nodeId="4814759296880331833" fileName="AnonymousClass_Behavior.java" startLine="37" startPosition="12" endLine="38" endPosition="143" />
+    <scopeInfo nodeId="4164197659856373765" fileName="AnonymousClass_Behavior.java" startLine="44" startPosition="29" endLine="45" endPosition="75" />
+    <scopeInfo nodeId="4164197659856373659" fileName="AnonymousClass_Behavior.java" startLine="53" startPosition="104" endLine="54" endPosition="180" />
+    <scopeInfo nodeId="4164197659856373741" fileName="AnonymousClass_Behavior.java" startLine="57" startPosition="41" endLine="58" endPosition="126" />
+    <scopeInfo nodeId="7523932196475740235" fileName="AnonymousClass_Behavior.java" startLine="84" startPosition="106" endLine="85" endPosition="83" />
+    <scopeInfo nodeId="4164197659856373740" fileName="AnonymousClass_Behavior.java" startLine="56" startPosition="189" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="2977939203456914074" fileName="AnonymousClass_Behavior.java" startLine="42" startPosition="77" endLine="47" endPosition="166">
       <varInfo nodeId="2977939203456928005" varName="ancestor" />
     </scopeInfo>
-    <scopeInfo nodeId="4164197659856373672" fileName="AnonymousClass_Behavior.java" startLine="56" startPosition="12" endLine="61" endPosition="31" />
-    <scopeInfo nodeId="2193927380279967695" fileName="AnonymousClass_Behavior.java" startLine="66" startPosition="82" endLine="71" endPosition="6">
+    <scopeInfo nodeId="4164197659856373672" fileName="AnonymousClass_Behavior.java" startLine="55" startPosition="12" endLine="60" endPosition="31" />
+    <scopeInfo nodeId="2193927380279967695" fileName="AnonymousClass_Behavior.java" startLine="65" startPosition="82" endLine="70" endPosition="6">
       <varInfo nodeId="7448855087283494960" varName="containingClassifier" />
     </scopeInfo>
-    <scopeInfo nodeId="7523932196475787024" fileName="AnonymousClass_Behavior.java" startLine="74" startPosition="72" endLine="79" endPosition="6">
+    <scopeInfo nodeId="7523932196475787024" fileName="AnonymousClass_Behavior.java" startLine="73" startPosition="72" endLine="78" endPosition="6">
       <varInfo nodeId="7448855087283456782" varName="containingClassifier" />
     </scopeInfo>
-    <scopeInfo nodeId="4814759296880331000" fileName="AnonymousClass_Behavior.java" startLine="34" startPosition="123" endLine="40" endPosition="5">
+    <scopeInfo nodeId="4814759296880331000" fileName="AnonymousClass_Behavior.java" startLine="33" startPosition="123" endLine="39" endPosition="5">
       <varInfo nodeId="4814759296880331799" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="7523932196475740200" fileName="AnonymousClass_Behavior.java" startLine="82" startPosition="132" endLine="88" endPosition="18">
+    <scopeInfo nodeId="7523932196475740200" fileName="AnonymousClass_Behavior.java" startLine="81" startPosition="132" endLine="87" endPosition="18">
       <varInfo nodeId="7523932196475740223" varName="result" />
       <varInfo nodeId="7523932196475740227" varName="containingMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="4164197659856373646" fileName="AnonymousClass_Behavior.java" startLine="51" startPosition="88" endLine="63" endPosition="17">
+    <scopeInfo nodeId="4164197659856373646" fileName="AnonymousClass_Behavior.java" startLine="50" startPosition="88" endLine="62" endPosition="17">
       <varInfo nodeId="4164197659856373717" varName="index" />
       <varInfo nodeId="4164197659856373648" varName="ancestor" />
     </scopeInfo>
-    <unitInfo nodeId="4164197659856373740" fileName="AnonymousClass_Behavior.java" startLine="57" startPosition="166" endLine="61" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.AnonymousClass_Behavior$1" />
+    <unitInfo nodeId="4164197659856373740" fileName="AnonymousClass_Behavior.java" startLine="56" startPosition="166" endLine="60" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.AnonymousClass_Behavior$1" />
   </root>
   <root nodeId="1213877221089">
     <scopeInfo nodeId="1213877221091" fileName="IValidIdentifier_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
@@ -236,48 +236,48 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877270650">
-    <nodeInfo nodeId="8847328628797640256" fileName="IntegerType_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="15" />
-    <scopeInfo nodeId="1213877270664" fileName="IntegerType_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="1213877270652" fileName="IntegerType_Behavior.java" startLine="19" startPosition="76" endLine="20" endPosition="79" />
-    <scopeInfo nodeId="1213877270658" fileName="IntegerType_Behavior.java" startLine="23" startPosition="80" endLine="24" endPosition="79" />
-    <scopeInfo nodeId="8847328628797640253" fileName="IntegerType_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="15" />
+    <nodeInfo nodeId="8847328628797640256" fileName="IntegerType_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="15" />
+    <scopeInfo nodeId="1213877270664" fileName="IntegerType_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1213877270652" fileName="IntegerType_Behavior.java" startLine="18" startPosition="76" endLine="19" endPosition="79" />
+    <scopeInfo nodeId="1213877270658" fileName="IntegerType_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="79" />
+    <scopeInfo nodeId="8847328628797640253" fileName="IntegerType_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="15" />
   </root>
   <root nodeId="1213877271259">
     <scopeInfo nodeId="1213877271266" fileName="DefaultPropertyImplementation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1213877271261" fileName="DefaultPropertyImplementation_Behavior.java" startLine="11" startPosition="73" endLine="12" endPosition="16" />
   </root>
   <root nodeId="1213877272873">
-    <nodeInfo nodeId="1213877272876" fileName="TypeVariableReference_Behavior.java" startLine="22" startPosition="78" endLine="23" endPosition="87" />
-    <nodeInfo nodeId="1213877272887" fileName="TypeVariableReference_Behavior.java" startLine="24" startPosition="23" endLine="25" endPosition="57" />
-    <nodeInfo nodeId="1213877272891" fileName="TypeVariableReference_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="27" />
-    <nodeInfo nodeId="2830572026627911512" fileName="TypeVariableReference_Behavior.java" startLine="31" startPosition="132" endLine="32" endPosition="179" />
-    <nodeInfo nodeId="2830572026627911481" fileName="TypeVariableReference_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="30" />
-    <nodeInfo nodeId="702942408396828257" fileName="TypeVariableReference_Behavior.java" startLine="38" startPosition="132" endLine="39" endPosition="175" />
-    <nodeInfo nodeId="702942408396828274" fileName="TypeVariableReference_Behavior.java" startLine="40" startPosition="5" endLine="41" endPosition="89" />
-    <nodeInfo nodeId="5744862332972841131" fileName="TypeVariableReference_Behavior.java" startLine="45" startPosition="132" endLine="46" endPosition="123" />
-    <nodeInfo nodeId="5744862332972841138" fileName="TypeVariableReference_Behavior.java" startLine="46" startPosition="123" endLine="47" endPosition="229" />
-    <nodeInfo nodeId="5744862332972841166" fileName="TypeVariableReference_Behavior.java" startLine="47" startPosition="229" endLine="48" endPosition="28" />
-    <nodeInfo nodeId="5744862332972811692" fileName="TypeVariableReference_Behavior.java" startLine="49" startPosition="12" endLine="50" endPosition="105" />
-    <nodeInfo nodeId="5744862332972841164" fileName="TypeVariableReference_Behavior.java" startLine="51" startPosition="5" endLine="52" endPosition="0" />
-    <nodeInfo nodeId="5744862332972811690" fileName="TypeVariableReference_Behavior.java" startLine="49" startPosition="10" endLine="51" endPosition="5" />
-    <nodeInfo nodeId="1213877272882" fileName="TypeVariableReference_Behavior.java" startLine="23" startPosition="87" endLine="26" endPosition="5" />
-    <nodeInfo nodeId="2830572026627911492" fileName="TypeVariableReference_Behavior.java" startLine="30" startPosition="82" endLine="33" endPosition="5" />
-    <nodeInfo nodeId="702942408396828255" fileName="TypeVariableReference_Behavior.java" startLine="37" startPosition="77" endLine="40" endPosition="5" />
-    <nodeInfo nodeId="5744862332972811664" fileName="TypeVariableReference_Behavior.java" startLine="44" startPosition="80" endLine="51" endPosition="5" />
-    <scopeInfo nodeId="1213877272895" fileName="TypeVariableReference_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
-    <scopeInfo nodeId="1213877272886" fileName="TypeVariableReference_Behavior.java" startLine="24" startPosition="23" endLine="25" endPosition="57" />
-    <scopeInfo nodeId="2830572026627911493" fileName="TypeVariableReference_Behavior.java" startLine="31" startPosition="132" endLine="32" endPosition="179" />
-    <scopeInfo nodeId="702942408396828256" fileName="TypeVariableReference_Behavior.java" startLine="38" startPosition="132" endLine="39" endPosition="175" />
-    <scopeInfo nodeId="5744862332972811691" fileName="TypeVariableReference_Behavior.java" startLine="49" startPosition="12" endLine="50" endPosition="105" />
-    <scopeInfo nodeId="5744862332972811666" fileName="TypeVariableReference_Behavior.java" startLine="45" startPosition="132" endLine="48" endPosition="28">
+    <nodeInfo nodeId="1213877272876" fileName="TypeVariableReference_Behavior.java" startLine="21" startPosition="78" endLine="22" endPosition="87" />
+    <nodeInfo nodeId="1213877272887" fileName="TypeVariableReference_Behavior.java" startLine="23" startPosition="23" endLine="24" endPosition="57" />
+    <nodeInfo nodeId="1213877272891" fileName="TypeVariableReference_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="27" />
+    <nodeInfo nodeId="2830572026627911512" fileName="TypeVariableReference_Behavior.java" startLine="30" startPosition="132" endLine="31" endPosition="179" />
+    <nodeInfo nodeId="2830572026627911481" fileName="TypeVariableReference_Behavior.java" startLine="32" startPosition="5" endLine="33" endPosition="30" />
+    <nodeInfo nodeId="702942408396828257" fileName="TypeVariableReference_Behavior.java" startLine="37" startPosition="132" endLine="38" endPosition="175" />
+    <nodeInfo nodeId="702942408396828274" fileName="TypeVariableReference_Behavior.java" startLine="39" startPosition="5" endLine="40" endPosition="89" />
+    <nodeInfo nodeId="5744862332972841131" fileName="TypeVariableReference_Behavior.java" startLine="44" startPosition="132" endLine="45" endPosition="123" />
+    <nodeInfo nodeId="5744862332972841138" fileName="TypeVariableReference_Behavior.java" startLine="45" startPosition="123" endLine="46" endPosition="229" />
+    <nodeInfo nodeId="5744862332972841166" fileName="TypeVariableReference_Behavior.java" startLine="46" startPosition="229" endLine="47" endPosition="28" />
+    <nodeInfo nodeId="5744862332972811692" fileName="TypeVariableReference_Behavior.java" startLine="48" startPosition="12" endLine="49" endPosition="105" />
+    <nodeInfo nodeId="5744862332972841164" fileName="TypeVariableReference_Behavior.java" startLine="50" startPosition="5" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="5744862332972811690" fileName="TypeVariableReference_Behavior.java" startLine="48" startPosition="10" endLine="50" endPosition="5" />
+    <nodeInfo nodeId="1213877272882" fileName="TypeVariableReference_Behavior.java" startLine="22" startPosition="87" endLine="25" endPosition="5" />
+    <nodeInfo nodeId="2830572026627911492" fileName="TypeVariableReference_Behavior.java" startLine="29" startPosition="82" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="702942408396828255" fileName="TypeVariableReference_Behavior.java" startLine="36" startPosition="77" endLine="39" endPosition="5" />
+    <nodeInfo nodeId="5744862332972811664" fileName="TypeVariableReference_Behavior.java" startLine="43" startPosition="80" endLine="50" endPosition="5" />
+    <scopeInfo nodeId="1213877272895" fileName="TypeVariableReference_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
+    <scopeInfo nodeId="1213877272886" fileName="TypeVariableReference_Behavior.java" startLine="23" startPosition="23" endLine="24" endPosition="57" />
+    <scopeInfo nodeId="2830572026627911493" fileName="TypeVariableReference_Behavior.java" startLine="30" startPosition="132" endLine="31" endPosition="179" />
+    <scopeInfo nodeId="702942408396828256" fileName="TypeVariableReference_Behavior.java" startLine="37" startPosition="132" endLine="38" endPosition="175" />
+    <scopeInfo nodeId="5744862332972811691" fileName="TypeVariableReference_Behavior.java" startLine="48" startPosition="12" endLine="49" endPosition="105" />
+    <scopeInfo nodeId="5744862332972811666" fileName="TypeVariableReference_Behavior.java" startLine="44" startPosition="132" endLine="47" endPosition="28">
       <varInfo nodeId="5744862332972841132" varName="upperBoundType" />
     </scopeInfo>
-    <scopeInfo nodeId="2830572026627911478" fileName="TypeVariableReference_Behavior.java" startLine="30" startPosition="82" endLine="34" endPosition="30" />
-    <scopeInfo nodeId="702942408396828249" fileName="TypeVariableReference_Behavior.java" startLine="37" startPosition="77" endLine="41" endPosition="89" />
-    <scopeInfo nodeId="1213877272875" fileName="TypeVariableReference_Behavior.java" startLine="22" startPosition="78" endLine="27" endPosition="27">
+    <scopeInfo nodeId="2830572026627911478" fileName="TypeVariableReference_Behavior.java" startLine="29" startPosition="82" endLine="33" endPosition="30" />
+    <scopeInfo nodeId="702942408396828249" fileName="TypeVariableReference_Behavior.java" startLine="36" startPosition="77" endLine="40" endPosition="89" />
+    <scopeInfo nodeId="1213877272875" fileName="TypeVariableReference_Behavior.java" startLine="21" startPosition="78" endLine="26" endPosition="27">
       <varInfo nodeId="1213877272877" varName="decl" />
     </scopeInfo>
-    <scopeInfo nodeId="5744862332972811661" fileName="TypeVariableReference_Behavior.java" startLine="44" startPosition="80" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="5744862332972811661" fileName="TypeVariableReference_Behavior.java" startLine="43" startPosition="80" endLine="51" endPosition="0" />
   </root>
   <root nodeId="1213877278336">
     <nodeInfo nodeId="1213877278339" fileName="DefaultSetAccessor_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="114" />
@@ -494,11 +494,11 @@
     <scopeInfo nodeId="1213877308093" fileName="UpperBoundType_Behavior.java" startLine="14" startPosition="78" endLine="19" endPosition="5" />
   </root>
   <root nodeId="1213877308679">
-    <nodeInfo nodeId="8847328628797640274" fileName="ShortType_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="15" />
-    <scopeInfo nodeId="1213877308693" fileName="ShortType_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="1213877308681" fileName="ShortType_Behavior.java" startLine="19" startPosition="76" endLine="20" endPosition="77" />
-    <scopeInfo nodeId="1213877308687" fileName="ShortType_Behavior.java" startLine="23" startPosition="80" endLine="24" endPosition="77" />
-    <scopeInfo nodeId="8847328628797640271" fileName="ShortType_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="15" />
+    <nodeInfo nodeId="8847328628797640274" fileName="ShortType_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="15" />
+    <scopeInfo nodeId="1213877308693" fileName="ShortType_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1213877308681" fileName="ShortType_Behavior.java" startLine="18" startPosition="76" endLine="19" endPosition="77" />
+    <scopeInfo nodeId="1213877308687" fileName="ShortType_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="77" />
+    <scopeInfo nodeId="8847328628797640271" fileName="ShortType_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="15" />
   </root>
   <root nodeId="1213877315813">
     <nodeInfo nodeId="1213877315816" fileName="ClassifierType_Behavior.java" startLine="35" startPosition="78" endLine="36" endPosition="80" />
@@ -673,11 +673,11 @@
     <scopeInfo nodeId="1220439505800" fileName="ClassifierType_Behavior.java" startLine="120" startPosition="85" endLine="168" endPosition="130" />
   </root>
   <root nodeId="1213877322506">
-    <nodeInfo nodeId="8847328628797640228" fileName="CharType_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="15" />
-    <scopeInfo nodeId="1213877322520" fileName="CharType_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="1213877322508" fileName="CharType_Behavior.java" startLine="19" startPosition="76" endLine="20" endPosition="76" />
-    <scopeInfo nodeId="1213877322514" fileName="CharType_Behavior.java" startLine="23" startPosition="80" endLine="24" endPosition="76" />
-    <scopeInfo nodeId="8847328628797640225" fileName="CharType_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="15" />
+    <nodeInfo nodeId="8847328628797640228" fileName="CharType_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="15" />
+    <scopeInfo nodeId="1213877322520" fileName="CharType_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1213877322508" fileName="CharType_Behavior.java" startLine="18" startPosition="76" endLine="19" endPosition="76" />
+    <scopeInfo nodeId="1213877322514" fileName="CharType_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="76" />
+    <scopeInfo nodeId="8847328628797640225" fileName="CharType_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="15" />
   </root>
   <root nodeId="1213877327381">
     <nodeInfo nodeId="1214501228158" fileName="StatementList_Behavior.java" startLine="18" startPosition="96" endLine="19" endPosition="72" />
@@ -741,13 +741,13 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877329503">
-    <nodeInfo nodeId="9011026350741579297" fileName="BooleanType_Behavior.java" startLine="31" startPosition="95" endLine="32" endPosition="79" />
-    <nodeInfo nodeId="8847328628797640210" fileName="BooleanType_Behavior.java" startLine="35" startPosition="81" endLine="36" endPosition="15" />
-    <scopeInfo nodeId="1213877329517" fileName="BooleanType_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="1213877329505" fileName="BooleanType_Behavior.java" startLine="23" startPosition="76" endLine="24" endPosition="79" />
-    <scopeInfo nodeId="1213877329511" fileName="BooleanType_Behavior.java" startLine="27" startPosition="80" endLine="28" endPosition="79" />
-    <scopeInfo nodeId="9011026350741579294" fileName="BooleanType_Behavior.java" startLine="31" startPosition="95" endLine="32" endPosition="79" />
-    <scopeInfo nodeId="8847328628797640207" fileName="BooleanType_Behavior.java" startLine="35" startPosition="81" endLine="36" endPosition="15" />
+    <nodeInfo nodeId="9011026350741579297" fileName="BooleanType_Behavior.java" startLine="30" startPosition="95" endLine="31" endPosition="79" />
+    <nodeInfo nodeId="8847328628797640210" fileName="BooleanType_Behavior.java" startLine="34" startPosition="81" endLine="35" endPosition="15" />
+    <scopeInfo nodeId="1213877329517" fileName="BooleanType_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="1213877329505" fileName="BooleanType_Behavior.java" startLine="22" startPosition="76" endLine="23" endPosition="79" />
+    <scopeInfo nodeId="1213877329511" fileName="BooleanType_Behavior.java" startLine="26" startPosition="80" endLine="27" endPosition="79" />
+    <scopeInfo nodeId="9011026350741579294" fileName="BooleanType_Behavior.java" startLine="30" startPosition="95" endLine="31" endPosition="79" />
+    <scopeInfo nodeId="8847328628797640207" fileName="BooleanType_Behavior.java" startLine="34" startPosition="81" endLine="35" endPosition="15" />
   </root>
   <root nodeId="1213877337303">
     <nodeInfo nodeId="702942408396828243" fileName="Type_Behavior.java" startLine="54" startPosition="77" endLine="55" endPosition="20" />
@@ -1198,147 +1198,147 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877355772">
-    <nodeInfo nodeId="1213877355775" fileName="ClassConcept_Behavior.java" startLine="44" startPosition="78" endLine="45" endPosition="150" />
-    <nodeInfo nodeId="1213877355781" fileName="ClassConcept_Behavior.java" startLine="45" startPosition="150" endLine="46" endPosition="123" />
-    <nodeInfo nodeId="1213877355788" fileName="ClassConcept_Behavior.java" startLine="46" startPosition="123" endLine="47" endPosition="130" />
-    <nodeInfo nodeId="1213877355795" fileName="ClassConcept_Behavior.java" startLine="47" startPosition="130" endLine="48" endPosition="129" />
-    <nodeInfo nodeId="1213877355802" fileName="ClassConcept_Behavior.java" startLine="48" startPosition="129" endLine="49" endPosition="140" />
-    <nodeInfo nodeId="5039675756632924568" fileName="ClassConcept_Behavior.java" startLine="57" startPosition="85" endLine="58" endPosition="175" />
-    <nodeInfo nodeId="5039675756632959825" fileName="ClassConcept_Behavior.java" startLine="59" startPosition="85" endLine="60" endPosition="46" />
-    <nodeInfo nodeId="5039675756633080875" fileName="ClassConcept_Behavior.java" startLine="62" startPosition="62" endLine="63" endPosition="43" />
-    <nodeInfo nodeId="5039675756632959831" fileName="ClassConcept_Behavior.java" startLine="64" startPosition="5" endLine="65" endPosition="21" />
-    <nodeInfo nodeId="7165541881557263776" fileName="ClassConcept_Behavior.java" startLine="69" startPosition="58" endLine="70" endPosition="112" />
-    <nodeInfo nodeId="7165541881557221649" fileName="ClassConcept_Behavior.java" startLine="70" startPosition="112" endLine="71" endPosition="19" />
-    <nodeInfo nodeId="7165541881557221628" fileName="ClassConcept_Behavior.java" startLine="73" startPosition="36" endLine="74" endPosition="18" />
-    <nodeInfo nodeId="7165541881557221702" fileName="ClassConcept_Behavior.java" startLine="76" startPosition="74" endLine="77" endPosition="19" />
-    <nodeInfo nodeId="7165541881557221653" fileName="ClassConcept_Behavior.java" startLine="78" startPosition="5" endLine="79" endPosition="54" />
-    <nodeInfo nodeId="7165541881557221708" fileName="ClassConcept_Behavior.java" startLine="79" startPosition="54" endLine="80" endPosition="209" />
-    <nodeInfo nodeId="1214840503996" fileName="ClassConcept_Behavior.java" startLine="91" startPosition="81" endLine="92" endPosition="233" />
-    <nodeInfo nodeId="5418393554803775317" fileName="ClassConcept_Behavior.java" startLine="95" startPosition="95" endLine="96" endPosition="49" />
-    <nodeInfo nodeId="5418393554803775323" fileName="ClassConcept_Behavior.java" startLine="96" startPosition="49" endLine="97" endPosition="182" />
-    <nodeInfo nodeId="5418393554803775332" fileName="ClassConcept_Behavior.java" startLine="97" startPosition="182" endLine="98" endPosition="52" />
-    <nodeInfo nodeId="5418393554803775336" fileName="ClassConcept_Behavior.java" startLine="99" startPosition="59" endLine="100" endPosition="35" />
-    <nodeInfo nodeId="5418393554803775340" fileName="ClassConcept_Behavior.java" startLine="100" startPosition="35" endLine="101" endPosition="151" />
-    <nodeInfo nodeId="5418393554803775353" fileName="ClassConcept_Behavior.java" startLine="102" startPosition="71" endLine="103" endPosition="313" />
-    <nodeInfo nodeId="5418393554803775377" fileName="ClassConcept_Behavior.java" startLine="105" startPosition="25" endLine="106" endPosition="17" />
-    <nodeInfo nodeId="5418393554803775379" fileName="ClassConcept_Behavior.java" startLine="107" startPosition="7" endLine="108" endPosition="0" />
-    <nodeInfo nodeId="5418393554803775380" fileName="ClassConcept_Behavior.java" startLine="108" startPosition="0" endLine="109" endPosition="125" />
-    <nodeInfo nodeId="5418393554803775390" fileName="ClassConcept_Behavior.java" startLine="110" startPosition="55" endLine="111" endPosition="17" />
-    <nodeInfo nodeId="5418393554803775400" fileName="ClassConcept_Behavior.java" startLine="113" startPosition="158" endLine="114" endPosition="58" />
-    <nodeInfo nodeId="5418393554803775422" fileName="ClassConcept_Behavior.java" startLine="116" startPosition="5" endLine="117" endPosition="19" />
-    <nodeInfo nodeId="5418393554803775150" fileName="ClassConcept_Behavior.java" startLine="120" startPosition="94" endLine="121" endPosition="49" />
-    <nodeInfo nodeId="5418393554803775156" fileName="ClassConcept_Behavior.java" startLine="121" startPosition="49" endLine="122" endPosition="182" />
-    <nodeInfo nodeId="5418393554803775165" fileName="ClassConcept_Behavior.java" startLine="122" startPosition="182" endLine="123" endPosition="109" />
-    <nodeInfo nodeId="5418393554803775176" fileName="ClassConcept_Behavior.java" startLine="124" startPosition="61" endLine="125" endPosition="119" />
-    <nodeInfo nodeId="5418393554803775186" fileName="ClassConcept_Behavior.java" startLine="126" startPosition="28" endLine="127" endPosition="17" />
-    <nodeInfo nodeId="5418393554803775197" fileName="ClassConcept_Behavior.java" startLine="129" startPosition="102" endLine="130" endPosition="17" />
-    <nodeInfo nodeId="5418393554803775200" fileName="ClassConcept_Behavior.java" startLine="132" startPosition="62" endLine="133" endPosition="17" />
-    <nodeInfo nodeId="5418393554803775206" fileName="ClassConcept_Behavior.java" startLine="135" startPosition="65" endLine="136" endPosition="17" />
-    <nodeInfo nodeId="5418393554803775210" fileName="ClassConcept_Behavior.java" startLine="137" startPosition="7" endLine="138" endPosition="0" />
-    <nodeInfo nodeId="5418393554803775211" fileName="ClassConcept_Behavior.java" startLine="138" startPosition="0" endLine="139" endPosition="56" />
-    <nodeInfo nodeId="5418393554803775223" fileName="ClassConcept_Behavior.java" startLine="140" startPosition="5" endLine="141" endPosition="19" />
-    <nodeInfo nodeId="1906502351318575038" fileName="ClassConcept_Behavior.java" startLine="151" startPosition="87" endLine="152" endPosition="64" />
-    <nodeInfo nodeId="4445983753874464621" fileName="ClassConcept_Behavior.java" startLine="152" startPosition="64" endLine="153" endPosition="139" />
-    <nodeInfo nodeId="1906502351318575048" fileName="ClassConcept_Behavior.java" startLine="153" startPosition="139" endLine="154" endPosition="145" />
-    <nodeInfo nodeId="1906502351318575045" fileName="ClassConcept_Behavior.java" startLine="154" startPosition="145" endLine="155" endPosition="34" />
-    <nodeInfo nodeId="8008512149545173418" fileName="ClassConcept_Behavior.java" startLine="182" startPosition="71" endLine="183" endPosition="29" />
-    <nodeInfo nodeId="8008512149545173422" fileName="ClassConcept_Behavior.java" startLine="183" startPosition="29" endLine="184" endPosition="118" />
-    <nodeInfo nodeId="8957285799233233547" fileName="ClassConcept_Behavior.java" startLine="185" startPosition="102" endLine="186" endPosition="48" />
-    <nodeInfo nodeId="8957285799233233555" fileName="ClassConcept_Behavior.java" startLine="186" startPosition="48" endLine="187" endPosition="201" />
-    <nodeInfo nodeId="8957285799233233582" fileName="ClassConcept_Behavior.java" startLine="187" startPosition="201" endLine="188" endPosition="206" />
-    <nodeInfo nodeId="8008512149545173434" fileName="ClassConcept_Behavior.java" startLine="190" startPosition="128" endLine="191" endPosition="31" />
-    <nodeInfo nodeId="8008512149545173438" fileName="ClassConcept_Behavior.java" startLine="191" startPosition="31" endLine="192" endPosition="16" />
-    <nodeInfo nodeId="8008512149545173470" fileName="ClassConcept_Behavior.java" startLine="195" startPosition="5" endLine="196" endPosition="119" />
-    <nodeInfo nodeId="5039675756632930647" fileName="ClassConcept_Behavior.java" startLine="58" startPosition="175" endLine="61" endPosition="5" />
-    <nodeInfo nodeId="5039675756633079217" fileName="ClassConcept_Behavior.java" startLine="61" startPosition="5" endLine="64" endPosition="5" />
-    <nodeInfo nodeId="7165541881557221620" fileName="ClassConcept_Behavior.java" startLine="72" startPosition="5" endLine="75" endPosition="5" />
-    <nodeInfo nodeId="7165541881557221682" fileName="ClassConcept_Behavior.java" startLine="75" startPosition="5" endLine="78" endPosition="5" />
-    <nodeInfo nodeId="5418393554803775351" fileName="ClassConcept_Behavior.java" startLine="101" startPosition="151" endLine="104" endPosition="7" />
-    <nodeInfo nodeId="5418393554803775375" fileName="ClassConcept_Behavior.java" startLine="104" startPosition="7" endLine="107" endPosition="7" />
-    <nodeInfo nodeId="5418393554803775388" fileName="ClassConcept_Behavior.java" startLine="109" startPosition="125" endLine="112" endPosition="7" />
-    <nodeInfo nodeId="5418393554803775398" fileName="ClassConcept_Behavior.java" startLine="112" startPosition="7" endLine="115" endPosition="7" />
-    <nodeInfo nodeId="5418393554803775184" fileName="ClassConcept_Behavior.java" startLine="125" startPosition="119" endLine="128" endPosition="7" />
-    <nodeInfo nodeId="5418393554803775190" fileName="ClassConcept_Behavior.java" startLine="128" startPosition="7" endLine="131" endPosition="7" />
-    <nodeInfo nodeId="5418393554803775198" fileName="ClassConcept_Behavior.java" startLine="131" startPosition="7" endLine="134" endPosition="7" />
-    <nodeInfo nodeId="5418393554803775204" fileName="ClassConcept_Behavior.java" startLine="134" startPosition="7" endLine="137" endPosition="7" />
-    <nodeInfo nodeId="7165541881557221632" fileName="ClassConcept_Behavior.java" startLine="68" startPosition="134" endLine="72" endPosition="5" />
-    <nodeInfo nodeId="1227876799444" fileName="ClassConcept_Behavior.java" startLine="84" startPosition="126" endLine="88" endPosition="0" />
-    <nodeInfo nodeId="1240936592687" fileName="ClassConcept_Behavior.java" startLine="144" startPosition="75" endLine="148" endPosition="6" />
-    <nodeInfo nodeId="8008512149545173432" fileName="ClassConcept_Behavior.java" startLine="189" startPosition="32" endLine="193" endPosition="9" />
-    <nodeInfo nodeId="1213877355887" fileName="ClassConcept_Behavior.java" startLine="83" startPosition="72" endLine="88" endPosition="15" />
-    <nodeInfo nodeId="8008512149545173430" fileName="ClassConcept_Behavior.java" startLine="188" startPosition="206" endLine="194" endPosition="7" />
-    <nodeInfo nodeId="8008512149545173428" fileName="ClassConcept_Behavior.java" startLine="184" startPosition="118" endLine="195" endPosition="5" />
-    <nodeInfo nodeId="5418393554803775174" fileName="ClassConcept_Behavior.java" startLine="123" startPosition="109" endLine="140" endPosition="5" />
-    <nodeInfo nodeId="5418393554803775334" fileName="ClassConcept_Behavior.java" startLine="98" startPosition="52" endLine="116" endPosition="5" />
-    <scopeInfo nodeId="1213877355903" fileName="ClassConcept_Behavior.java" startLine="41" startPosition="43" endLine="41" endPosition="43" />
-    <scopeInfo nodeId="7941158526576616768" fileName="ClassConcept_Behavior.java" startLine="53" startPosition="80" endLine="54" endPosition="86" />
-    <scopeInfo nodeId="5039675756632930648" fileName="ClassConcept_Behavior.java" startLine="59" startPosition="85" endLine="60" endPosition="46" />
-    <scopeInfo nodeId="5039675756633079218" fileName="ClassConcept_Behavior.java" startLine="62" startPosition="62" endLine="63" endPosition="43" />
-    <scopeInfo nodeId="7165541881557221622" fileName="ClassConcept_Behavior.java" startLine="73" startPosition="36" endLine="74" endPosition="18" />
-    <scopeInfo nodeId="7165541881557221683" fileName="ClassConcept_Behavior.java" startLine="76" startPosition="74" endLine="77" endPosition="19" />
-    <scopeInfo nodeId="1227876799447" fileName="ClassConcept_Behavior.java" startLine="85" startPosition="39" endLine="86" endPosition="84" />
-    <scopeInfo nodeId="1214840497919" fileName="ClassConcept_Behavior.java" startLine="91" startPosition="81" endLine="92" endPosition="233" />
-    <scopeInfo nodeId="5418393554803775352" fileName="ClassConcept_Behavior.java" startLine="102" startPosition="71" endLine="103" endPosition="313" />
-    <scopeInfo nodeId="5418393554803775376" fileName="ClassConcept_Behavior.java" startLine="105" startPosition="25" endLine="106" endPosition="17" />
-    <scopeInfo nodeId="5418393554803775389" fileName="ClassConcept_Behavior.java" startLine="110" startPosition="55" endLine="111" endPosition="17" />
-    <scopeInfo nodeId="5418393554803775399" fileName="ClassConcept_Behavior.java" startLine="113" startPosition="158" endLine="114" endPosition="58" />
-    <scopeInfo nodeId="5418393554803775185" fileName="ClassConcept_Behavior.java" startLine="126" startPosition="28" endLine="127" endPosition="17" />
-    <scopeInfo nodeId="5418393554803775196" fileName="ClassConcept_Behavior.java" startLine="129" startPosition="102" endLine="130" endPosition="17" />
-    <scopeInfo nodeId="5418393554803775199" fileName="ClassConcept_Behavior.java" startLine="132" startPosition="62" endLine="133" endPosition="17" />
-    <scopeInfo nodeId="5418393554803775205" fileName="ClassConcept_Behavior.java" startLine="135" startPosition="65" endLine="136" endPosition="17" />
-    <scopeInfo nodeId="7165541881557221633" fileName="ClassConcept_Behavior.java" startLine="69" startPosition="58" endLine="71" endPosition="19" />
-    <scopeInfo nodeId="8008512149545173433" fileName="ClassConcept_Behavior.java" startLine="190" startPosition="128" endLine="192" endPosition="16" />
-    <scopeInfo nodeId="5418393554803775351" fileName="ClassConcept_Behavior.java" startLine="101" startPosition="151" endLine="104" endPosition="7">
+    <nodeInfo nodeId="1213877355775" fileName="ClassConcept_Behavior.java" startLine="43" startPosition="78" endLine="44" endPosition="150" />
+    <nodeInfo nodeId="1213877355781" fileName="ClassConcept_Behavior.java" startLine="44" startPosition="150" endLine="45" endPosition="123" />
+    <nodeInfo nodeId="1213877355788" fileName="ClassConcept_Behavior.java" startLine="45" startPosition="123" endLine="46" endPosition="130" />
+    <nodeInfo nodeId="1213877355795" fileName="ClassConcept_Behavior.java" startLine="46" startPosition="130" endLine="47" endPosition="129" />
+    <nodeInfo nodeId="1213877355802" fileName="ClassConcept_Behavior.java" startLine="47" startPosition="129" endLine="48" endPosition="140" />
+    <nodeInfo nodeId="5039675756632924568" fileName="ClassConcept_Behavior.java" startLine="56" startPosition="85" endLine="57" endPosition="175" />
+    <nodeInfo nodeId="5039675756632959825" fileName="ClassConcept_Behavior.java" startLine="58" startPosition="85" endLine="59" endPosition="46" />
+    <nodeInfo nodeId="5039675756633080875" fileName="ClassConcept_Behavior.java" startLine="61" startPosition="62" endLine="62" endPosition="43" />
+    <nodeInfo nodeId="5039675756632959831" fileName="ClassConcept_Behavior.java" startLine="63" startPosition="5" endLine="64" endPosition="21" />
+    <nodeInfo nodeId="7165541881557263776" fileName="ClassConcept_Behavior.java" startLine="68" startPosition="58" endLine="69" endPosition="112" />
+    <nodeInfo nodeId="7165541881557221649" fileName="ClassConcept_Behavior.java" startLine="69" startPosition="112" endLine="70" endPosition="19" />
+    <nodeInfo nodeId="7165541881557221628" fileName="ClassConcept_Behavior.java" startLine="72" startPosition="36" endLine="73" endPosition="18" />
+    <nodeInfo nodeId="7165541881557221702" fileName="ClassConcept_Behavior.java" startLine="75" startPosition="74" endLine="76" endPosition="19" />
+    <nodeInfo nodeId="7165541881557221653" fileName="ClassConcept_Behavior.java" startLine="77" startPosition="5" endLine="78" endPosition="54" />
+    <nodeInfo nodeId="7165541881557221708" fileName="ClassConcept_Behavior.java" startLine="78" startPosition="54" endLine="79" endPosition="209" />
+    <nodeInfo nodeId="1214840503996" fileName="ClassConcept_Behavior.java" startLine="90" startPosition="81" endLine="91" endPosition="233" />
+    <nodeInfo nodeId="5418393554803775317" fileName="ClassConcept_Behavior.java" startLine="94" startPosition="95" endLine="95" endPosition="49" />
+    <nodeInfo nodeId="5418393554803775323" fileName="ClassConcept_Behavior.java" startLine="95" startPosition="49" endLine="96" endPosition="182" />
+    <nodeInfo nodeId="5418393554803775332" fileName="ClassConcept_Behavior.java" startLine="96" startPosition="182" endLine="97" endPosition="52" />
+    <nodeInfo nodeId="5418393554803775336" fileName="ClassConcept_Behavior.java" startLine="98" startPosition="59" endLine="99" endPosition="35" />
+    <nodeInfo nodeId="5418393554803775340" fileName="ClassConcept_Behavior.java" startLine="99" startPosition="35" endLine="100" endPosition="151" />
+    <nodeInfo nodeId="5418393554803775353" fileName="ClassConcept_Behavior.java" startLine="101" startPosition="71" endLine="102" endPosition="313" />
+    <nodeInfo nodeId="5418393554803775377" fileName="ClassConcept_Behavior.java" startLine="104" startPosition="25" endLine="105" endPosition="17" />
+    <nodeInfo nodeId="5418393554803775379" fileName="ClassConcept_Behavior.java" startLine="106" startPosition="7" endLine="107" endPosition="0" />
+    <nodeInfo nodeId="5418393554803775380" fileName="ClassConcept_Behavior.java" startLine="107" startPosition="0" endLine="108" endPosition="125" />
+    <nodeInfo nodeId="5418393554803775390" fileName="ClassConcept_Behavior.java" startLine="109" startPosition="55" endLine="110" endPosition="17" />
+    <nodeInfo nodeId="5418393554803775400" fileName="ClassConcept_Behavior.java" startLine="112" startPosition="158" endLine="113" endPosition="58" />
+    <nodeInfo nodeId="5418393554803775422" fileName="ClassConcept_Behavior.java" startLine="115" startPosition="5" endLine="116" endPosition="19" />
+    <nodeInfo nodeId="5418393554803775150" fileName="ClassConcept_Behavior.java" startLine="119" startPosition="94" endLine="120" endPosition="49" />
+    <nodeInfo nodeId="5418393554803775156" fileName="ClassConcept_Behavior.java" startLine="120" startPosition="49" endLine="121" endPosition="182" />
+    <nodeInfo nodeId="5418393554803775165" fileName="ClassConcept_Behavior.java" startLine="121" startPosition="182" endLine="122" endPosition="109" />
+    <nodeInfo nodeId="5418393554803775176" fileName="ClassConcept_Behavior.java" startLine="123" startPosition="61" endLine="124" endPosition="119" />
+    <nodeInfo nodeId="5418393554803775186" fileName="ClassConcept_Behavior.java" startLine="125" startPosition="28" endLine="126" endPosition="17" />
+    <nodeInfo nodeId="5418393554803775197" fileName="ClassConcept_Behavior.java" startLine="128" startPosition="102" endLine="129" endPosition="17" />
+    <nodeInfo nodeId="5418393554803775200" fileName="ClassConcept_Behavior.java" startLine="131" startPosition="62" endLine="132" endPosition="17" />
+    <nodeInfo nodeId="5418393554803775206" fileName="ClassConcept_Behavior.java" startLine="134" startPosition="65" endLine="135" endPosition="17" />
+    <nodeInfo nodeId="5418393554803775210" fileName="ClassConcept_Behavior.java" startLine="136" startPosition="7" endLine="137" endPosition="0" />
+    <nodeInfo nodeId="5418393554803775211" fileName="ClassConcept_Behavior.java" startLine="137" startPosition="0" endLine="138" endPosition="56" />
+    <nodeInfo nodeId="5418393554803775223" fileName="ClassConcept_Behavior.java" startLine="139" startPosition="5" endLine="140" endPosition="19" />
+    <nodeInfo nodeId="1906502351318575038" fileName="ClassConcept_Behavior.java" startLine="150" startPosition="87" endLine="151" endPosition="64" />
+    <nodeInfo nodeId="4445983753874464621" fileName="ClassConcept_Behavior.java" startLine="151" startPosition="64" endLine="152" endPosition="139" />
+    <nodeInfo nodeId="1906502351318575048" fileName="ClassConcept_Behavior.java" startLine="152" startPosition="139" endLine="153" endPosition="145" />
+    <nodeInfo nodeId="1906502351318575045" fileName="ClassConcept_Behavior.java" startLine="153" startPosition="145" endLine="154" endPosition="34" />
+    <nodeInfo nodeId="8008512149545173418" fileName="ClassConcept_Behavior.java" startLine="181" startPosition="71" endLine="182" endPosition="29" />
+    <nodeInfo nodeId="8008512149545173422" fileName="ClassConcept_Behavior.java" startLine="182" startPosition="29" endLine="183" endPosition="118" />
+    <nodeInfo nodeId="8957285799233233547" fileName="ClassConcept_Behavior.java" startLine="184" startPosition="102" endLine="185" endPosition="48" />
+    <nodeInfo nodeId="8957285799233233555" fileName="ClassConcept_Behavior.java" startLine="185" startPosition="48" endLine="186" endPosition="201" />
+    <nodeInfo nodeId="8957285799233233582" fileName="ClassConcept_Behavior.java" startLine="186" startPosition="201" endLine="187" endPosition="206" />
+    <nodeInfo nodeId="8008512149545173434" fileName="ClassConcept_Behavior.java" startLine="189" startPosition="128" endLine="190" endPosition="31" />
+    <nodeInfo nodeId="8008512149545173438" fileName="ClassConcept_Behavior.java" startLine="190" startPosition="31" endLine="191" endPosition="16" />
+    <nodeInfo nodeId="8008512149545173470" fileName="ClassConcept_Behavior.java" startLine="194" startPosition="5" endLine="195" endPosition="119" />
+    <nodeInfo nodeId="5039675756632930647" fileName="ClassConcept_Behavior.java" startLine="57" startPosition="175" endLine="60" endPosition="5" />
+    <nodeInfo nodeId="5039675756633079217" fileName="ClassConcept_Behavior.java" startLine="60" startPosition="5" endLine="63" endPosition="5" />
+    <nodeInfo nodeId="7165541881557221620" fileName="ClassConcept_Behavior.java" startLine="71" startPosition="5" endLine="74" endPosition="5" />
+    <nodeInfo nodeId="7165541881557221682" fileName="ClassConcept_Behavior.java" startLine="74" startPosition="5" endLine="77" endPosition="5" />
+    <nodeInfo nodeId="5418393554803775351" fileName="ClassConcept_Behavior.java" startLine="100" startPosition="151" endLine="103" endPosition="7" />
+    <nodeInfo nodeId="5418393554803775375" fileName="ClassConcept_Behavior.java" startLine="103" startPosition="7" endLine="106" endPosition="7" />
+    <nodeInfo nodeId="5418393554803775388" fileName="ClassConcept_Behavior.java" startLine="108" startPosition="125" endLine="111" endPosition="7" />
+    <nodeInfo nodeId="5418393554803775398" fileName="ClassConcept_Behavior.java" startLine="111" startPosition="7" endLine="114" endPosition="7" />
+    <nodeInfo nodeId="5418393554803775184" fileName="ClassConcept_Behavior.java" startLine="124" startPosition="119" endLine="127" endPosition="7" />
+    <nodeInfo nodeId="5418393554803775190" fileName="ClassConcept_Behavior.java" startLine="127" startPosition="7" endLine="130" endPosition="7" />
+    <nodeInfo nodeId="5418393554803775198" fileName="ClassConcept_Behavior.java" startLine="130" startPosition="7" endLine="133" endPosition="7" />
+    <nodeInfo nodeId="5418393554803775204" fileName="ClassConcept_Behavior.java" startLine="133" startPosition="7" endLine="136" endPosition="7" />
+    <nodeInfo nodeId="7165541881557221632" fileName="ClassConcept_Behavior.java" startLine="67" startPosition="134" endLine="71" endPosition="5" />
+    <nodeInfo nodeId="1227876799444" fileName="ClassConcept_Behavior.java" startLine="83" startPosition="126" endLine="87" endPosition="0" />
+    <nodeInfo nodeId="1240936592687" fileName="ClassConcept_Behavior.java" startLine="143" startPosition="75" endLine="147" endPosition="6" />
+    <nodeInfo nodeId="8008512149545173432" fileName="ClassConcept_Behavior.java" startLine="188" startPosition="32" endLine="192" endPosition="9" />
+    <nodeInfo nodeId="1213877355887" fileName="ClassConcept_Behavior.java" startLine="82" startPosition="72" endLine="87" endPosition="15" />
+    <nodeInfo nodeId="8008512149545173430" fileName="ClassConcept_Behavior.java" startLine="187" startPosition="206" endLine="193" endPosition="7" />
+    <nodeInfo nodeId="8008512149545173428" fileName="ClassConcept_Behavior.java" startLine="183" startPosition="118" endLine="194" endPosition="5" />
+    <nodeInfo nodeId="5418393554803775174" fileName="ClassConcept_Behavior.java" startLine="122" startPosition="109" endLine="139" endPosition="5" />
+    <nodeInfo nodeId="5418393554803775334" fileName="ClassConcept_Behavior.java" startLine="97" startPosition="52" endLine="115" endPosition="5" />
+    <scopeInfo nodeId="1213877355903" fileName="ClassConcept_Behavior.java" startLine="40" startPosition="43" endLine="40" endPosition="43" />
+    <scopeInfo nodeId="7941158526576616768" fileName="ClassConcept_Behavior.java" startLine="52" startPosition="80" endLine="53" endPosition="86" />
+    <scopeInfo nodeId="5039675756632930648" fileName="ClassConcept_Behavior.java" startLine="58" startPosition="85" endLine="59" endPosition="46" />
+    <scopeInfo nodeId="5039675756633079218" fileName="ClassConcept_Behavior.java" startLine="61" startPosition="62" endLine="62" endPosition="43" />
+    <scopeInfo nodeId="7165541881557221622" fileName="ClassConcept_Behavior.java" startLine="72" startPosition="36" endLine="73" endPosition="18" />
+    <scopeInfo nodeId="7165541881557221683" fileName="ClassConcept_Behavior.java" startLine="75" startPosition="74" endLine="76" endPosition="19" />
+    <scopeInfo nodeId="1227876799447" fileName="ClassConcept_Behavior.java" startLine="84" startPosition="39" endLine="85" endPosition="84" />
+    <scopeInfo nodeId="1214840497919" fileName="ClassConcept_Behavior.java" startLine="90" startPosition="81" endLine="91" endPosition="233" />
+    <scopeInfo nodeId="5418393554803775352" fileName="ClassConcept_Behavior.java" startLine="101" startPosition="71" endLine="102" endPosition="313" />
+    <scopeInfo nodeId="5418393554803775376" fileName="ClassConcept_Behavior.java" startLine="104" startPosition="25" endLine="105" endPosition="17" />
+    <scopeInfo nodeId="5418393554803775389" fileName="ClassConcept_Behavior.java" startLine="109" startPosition="55" endLine="110" endPosition="17" />
+    <scopeInfo nodeId="5418393554803775399" fileName="ClassConcept_Behavior.java" startLine="112" startPosition="158" endLine="113" endPosition="58" />
+    <scopeInfo nodeId="5418393554803775185" fileName="ClassConcept_Behavior.java" startLine="125" startPosition="28" endLine="126" endPosition="17" />
+    <scopeInfo nodeId="5418393554803775196" fileName="ClassConcept_Behavior.java" startLine="128" startPosition="102" endLine="129" endPosition="17" />
+    <scopeInfo nodeId="5418393554803775199" fileName="ClassConcept_Behavior.java" startLine="131" startPosition="62" endLine="132" endPosition="17" />
+    <scopeInfo nodeId="5418393554803775205" fileName="ClassConcept_Behavior.java" startLine="134" startPosition="65" endLine="135" endPosition="17" />
+    <scopeInfo nodeId="7165541881557221633" fileName="ClassConcept_Behavior.java" startLine="68" startPosition="58" endLine="70" endPosition="19" />
+    <scopeInfo nodeId="8008512149545173433" fileName="ClassConcept_Behavior.java" startLine="189" startPosition="128" endLine="191" endPosition="16" />
+    <scopeInfo nodeId="5418393554803775351" fileName="ClassConcept_Behavior.java" startLine="100" startPosition="151" endLine="103" endPosition="7">
       <varInfo nodeId="5418393554803775368" varName="overridingMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876799444" fileName="ClassConcept_Behavior.java" startLine="84" startPosition="126" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="1240936569953" fileName="ClassConcept_Behavior.java" startLine="144" startPosition="75" endLine="148" endPosition="6" />
-    <scopeInfo nodeId="1906502351318575012" fileName="ClassConcept_Behavior.java" startLine="151" startPosition="87" endLine="155" endPosition="34">
+    <scopeInfo nodeId="1227876799444" fileName="ClassConcept_Behavior.java" startLine="83" startPosition="126" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="1240936569953" fileName="ClassConcept_Behavior.java" startLine="143" startPosition="75" endLine="147" endPosition="6" />
+    <scopeInfo nodeId="1906502351318575012" fileName="ClassConcept_Behavior.java" startLine="150" startPosition="87" endLine="154" endPosition="34">
       <varInfo nodeId="1906502351318575039" varName="baseMethodDeclarations" />
     </scopeInfo>
-    <scopeInfo nodeId="8008512149545173431" fileName="ClassConcept_Behavior.java" startLine="189" startPosition="32" endLine="193" endPosition="9" />
-    <scopeInfo nodeId="1213877355886" fileName="ClassConcept_Behavior.java" startLine="83" startPosition="72" endLine="88" endPosition="15" />
-    <scopeInfo nodeId="1213877355774" fileName="ClassConcept_Behavior.java" startLine="44" startPosition="78" endLine="50" endPosition="19">
+    <scopeInfo nodeId="8008512149545173431" fileName="ClassConcept_Behavior.java" startLine="188" startPosition="32" endLine="192" endPosition="9" />
+    <scopeInfo nodeId="1213877355886" fileName="ClassConcept_Behavior.java" startLine="82" startPosition="72" endLine="87" endPosition="15" />
+    <scopeInfo nodeId="1213877355774" fileName="ClassConcept_Behavior.java" startLine="43" startPosition="78" endLine="49" endPosition="19">
       <varInfo nodeId="1213877355776" varName="members" />
     </scopeInfo>
-    <scopeInfo nodeId="8008512149545173430" fileName="ClassConcept_Behavior.java" startLine="188" startPosition="206" endLine="194" endPosition="7">
+    <scopeInfo nodeId="8008512149545173430" fileName="ClassConcept_Behavior.java" startLine="187" startPosition="206" endLine="193" endPosition="7">
       <varInfo nodeId="8008512149545173446" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="5039675756632924555" fileName="ClassConcept_Behavior.java" startLine="57" startPosition="85" endLine="65" endPosition="21">
+    <scopeInfo nodeId="5039675756632924555" fileName="ClassConcept_Behavior.java" startLine="56" startPosition="85" endLine="64" endPosition="21">
       <varInfo nodeId="5039675756632924569" varName="markIcons" />
     </scopeInfo>
-    <scopeInfo nodeId="8008512149545173429" fileName="ClassConcept_Behavior.java" startLine="185" startPosition="102" endLine="194" endPosition="7">
+    <scopeInfo nodeId="8008512149545173429" fileName="ClassConcept_Behavior.java" startLine="184" startPosition="102" endLine="193" endPosition="7">
       <varInfo nodeId="8957285799233233548" varName="args" />
     </scopeInfo>
-    <scopeInfo nodeId="7165541881557195883" fileName="ClassConcept_Behavior.java" startLine="68" startPosition="134" endLine="80" endPosition="209" />
-    <scopeInfo nodeId="8008512149545173405" fileName="ClassConcept_Behavior.java" startLine="182" startPosition="71" endLine="196" endPosition="119">
+    <scopeInfo nodeId="7165541881557195883" fileName="ClassConcept_Behavior.java" startLine="67" startPosition="134" endLine="79" endPosition="209" />
+    <scopeInfo nodeId="8008512149545173405" fileName="ClassConcept_Behavior.java" startLine="181" startPosition="71" endLine="195" endPosition="119">
       <varInfo nodeId="8008512149545173419" varName="contextNode" />
       <varInfo nodeId="8008512149545173423" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="5418393554803775175" fileName="ClassConcept_Behavior.java" startLine="124" startPosition="61" endLine="139" endPosition="56">
+    <scopeInfo nodeId="5418393554803775175" fileName="ClassConcept_Behavior.java" startLine="123" startPosition="61" endLine="138" endPosition="56">
       <varInfo nodeId="5418393554803775177" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="5418393554803775335" fileName="ClassConcept_Behavior.java" startLine="99" startPosition="59" endLine="115" endPosition="7">
+    <scopeInfo nodeId="5418393554803775335" fileName="ClassConcept_Behavior.java" startLine="98" startPosition="59" endLine="114" endPosition="7">
       <varInfo nodeId="5418393554803775337" varName="isOverridden" />
       <varInfo nodeId="5418393554803775381" varName="container" />
       <varInfo nodeId="5418393554803775341" varName="overridenMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="5418393554803775174" fileName="ClassConcept_Behavior.java" startLine="123" startPosition="109" endLine="140" endPosition="5">
+    <scopeInfo nodeId="5418393554803775174" fileName="ClassConcept_Behavior.java" startLine="122" startPosition="109" endLine="139" endPosition="5">
       <varInfo nodeId="5418393554803775216" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="5418393554803775334" fileName="ClassConcept_Behavior.java" startLine="98" startPosition="52" endLine="116" endPosition="5">
+    <scopeInfo nodeId="5418393554803775334" fileName="ClassConcept_Behavior.java" startLine="97" startPosition="52" endLine="115" endPosition="5">
       <varInfo nodeId="5418393554803775420" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="5418393554803775119" fileName="ClassConcept_Behavior.java" startLine="120" startPosition="94" endLine="141" endPosition="19">
+    <scopeInfo nodeId="5418393554803775119" fileName="ClassConcept_Behavior.java" startLine="119" startPosition="94" endLine="140" endPosition="19">
       <varInfo nodeId="5418393554803775151" varName="methods" />
       <varInfo nodeId="5418393554803775157" varName="scope" />
       <varInfo nodeId="5418393554803775166" varName="methodDeclarations" />
     </scopeInfo>
-    <scopeInfo nodeId="5418393554803775284" fileName="ClassConcept_Behavior.java" startLine="95" startPosition="95" endLine="117" endPosition="19">
+    <scopeInfo nodeId="5418393554803775284" fileName="ClassConcept_Behavior.java" startLine="94" startPosition="95" endLine="116" endPosition="19">
       <varInfo nodeId="5418393554803775318" varName="methods" />
       <varInfo nodeId="5418393554803775324" varName="scope" />
     </scopeInfo>
-    <unitInfo nodeId="1227876799444" fileName="ClassConcept_Behavior.java" startLine="84" startPosition="103" endLine="88" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior$1" />
+    <unitInfo nodeId="1227876799444" fileName="ClassConcept_Behavior.java" startLine="83" startPosition="103" endLine="87" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior$1" />
   </root>
   <root nodeId="1213877360520">
     <nodeInfo nodeId="1213877360524" fileName="ElsifClause_Behavior.java" startLine="14" startPosition="73" endLine="15" endPosition="121" />
@@ -1579,11 +1579,11 @@
     <scopeInfo nodeId="1228124415662" fileName="AnnotationInstance_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
   <root nodeId="1213877420728">
-    <nodeInfo nodeId="8847328628797640219" fileName="ByteType_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="15" />
-    <scopeInfo nodeId="1213877420742" fileName="ByteType_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="1213877420730" fileName="ByteType_Behavior.java" startLine="19" startPosition="76" endLine="20" endPosition="76" />
-    <scopeInfo nodeId="1213877420736" fileName="ByteType_Behavior.java" startLine="23" startPosition="80" endLine="24" endPosition="76" />
-    <scopeInfo nodeId="8847328628797640216" fileName="ByteType_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="15" />
+    <nodeInfo nodeId="8847328628797640219" fileName="ByteType_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="15" />
+    <scopeInfo nodeId="1213877420742" fileName="ByteType_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1213877420730" fileName="ByteType_Behavior.java" startLine="18" startPosition="76" endLine="19" endPosition="76" />
+    <scopeInfo nodeId="1213877420736" fileName="ByteType_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="76" />
+    <scopeInfo nodeId="8847328628797640216" fileName="ByteType_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="15" />
   </root>
   <root nodeId="1213877421700">
     <nodeInfo nodeId="1213877421705" fileName="LowerBoundType_Behavior.java" startLine="14" startPosition="69" endLine="15" endPosition="134" />
@@ -2147,11 +2147,11 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877518813">
-    <nodeInfo nodeId="8847328628797640237" fileName="DoubleType_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="15" />
-    <scopeInfo nodeId="1213877518827" fileName="DoubleType_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="1213877518815" fileName="DoubleType_Behavior.java" startLine="19" startPosition="76" endLine="20" endPosition="78" />
-    <scopeInfo nodeId="1213877518821" fileName="DoubleType_Behavior.java" startLine="23" startPosition="80" endLine="24" endPosition="78" />
-    <scopeInfo nodeId="8847328628797640234" fileName="DoubleType_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="15" />
+    <nodeInfo nodeId="8847328628797640237" fileName="DoubleType_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="15" />
+    <scopeInfo nodeId="1213877518827" fileName="DoubleType_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1213877518815" fileName="DoubleType_Behavior.java" startLine="18" startPosition="76" endLine="19" endPosition="78" />
+    <scopeInfo nodeId="1213877518821" fileName="DoubleType_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="78" />
+    <scopeInfo nodeId="8847328628797640234" fileName="DoubleType_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="15" />
   </root>
   <root nodeId="1213877519768">
     <nodeInfo nodeId="1213877519772" fileName="Expression_Behavior.java" startLine="24" startPosition="83" endLine="25" endPosition="69" />
@@ -2264,11 +2264,11 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877529126">
-    <nodeInfo nodeId="8847328628797640246" fileName="FloatType_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="15" />
-    <scopeInfo nodeId="1213877529140" fileName="FloatType_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="1213877529128" fileName="FloatType_Behavior.java" startLine="19" startPosition="76" endLine="20" endPosition="77" />
-    <scopeInfo nodeId="1213877529134" fileName="FloatType_Behavior.java" startLine="23" startPosition="80" endLine="24" endPosition="77" />
-    <scopeInfo nodeId="8847328628797640243" fileName="FloatType_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="15" />
+    <nodeInfo nodeId="8847328628797640246" fileName="FloatType_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="15" />
+    <scopeInfo nodeId="1213877529140" fileName="FloatType_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1213877529128" fileName="FloatType_Behavior.java" startLine="18" startPosition="76" endLine="19" endPosition="77" />
+    <scopeInfo nodeId="1213877529134" fileName="FloatType_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="77" />
+    <scopeInfo nodeId="8847328628797640243" fileName="FloatType_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="15" />
   </root>
   <root nodeId="1213877530968">
     <nodeInfo nodeId="1221565478455" fileName="StringLiteral_Behavior.java" startLine="17" startPosition="70" endLine="18" endPosition="33" />
@@ -2377,17 +2377,17 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877539511">
-    <nodeInfo nodeId="8008512149545173503" fileName="SuperMethodCall_Behavior.java" startLine="21" startPosition="83" endLine="22" endPosition="88" />
-    <nodeInfo nodeId="8008512149545173552" fileName="SuperMethodCall_Behavior.java" startLine="22" startPosition="88" endLine="23" endPosition="53" />
-    <nodeInfo nodeId="8008512149545173558" fileName="SuperMethodCall_Behavior.java" startLine="24" startPosition="92" endLine="25" endPosition="132" />
-    <nodeInfo nodeId="4859441577819567605" fileName="SuperMethodCall_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="103" />
-    <nodeInfo nodeId="8008512149545173523" fileName="SuperMethodCall_Behavior.java" startLine="23" startPosition="53" endLine="26" endPosition="5" />
-    <scopeInfo nodeId="1213877539513" fileName="SuperMethodCall_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="8008512149545173524" fileName="SuperMethodCall_Behavior.java" startLine="24" startPosition="92" endLine="25" endPosition="132" />
-    <scopeInfo nodeId="8008512149545173523" fileName="SuperMethodCall_Behavior.java" startLine="23" startPosition="53" endLine="26" endPosition="5">
+    <nodeInfo nodeId="8008512149545173503" fileName="SuperMethodCall_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="88" />
+    <nodeInfo nodeId="8008512149545173552" fileName="SuperMethodCall_Behavior.java" startLine="21" startPosition="88" endLine="22" endPosition="53" />
+    <nodeInfo nodeId="8008512149545173558" fileName="SuperMethodCall_Behavior.java" startLine="23" startPosition="92" endLine="24" endPosition="132" />
+    <nodeInfo nodeId="4859441577819567605" fileName="SuperMethodCall_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="103" />
+    <nodeInfo nodeId="8008512149545173523" fileName="SuperMethodCall_Behavior.java" startLine="22" startPosition="53" endLine="25" endPosition="5" />
+    <scopeInfo nodeId="1213877539513" fileName="SuperMethodCall_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
+    <scopeInfo nodeId="8008512149545173524" fileName="SuperMethodCall_Behavior.java" startLine="23" startPosition="92" endLine="24" endPosition="132" />
+    <scopeInfo nodeId="8008512149545173523" fileName="SuperMethodCall_Behavior.java" startLine="22" startPosition="53" endLine="25" endPosition="5">
       <varInfo nodeId="8008512149545173527" varName="tvd" />
     </scopeInfo>
-    <scopeInfo nodeId="8008512149545162901" fileName="SuperMethodCall_Behavior.java" startLine="21" startPosition="83" endLine="27" endPosition="103">
+    <scopeInfo nodeId="8008512149545162901" fileName="SuperMethodCall_Behavior.java" startLine="20" startPosition="83" endLine="26" endPosition="103">
       <varInfo nodeId="8008512149545173553" varName="typeVarRefs" />
       <varInfo nodeId="8008512149545173504" varName="concept" />
     </scopeInfo>
@@ -2505,10 +2505,10 @@
     <scopeInfo nodeId="1224848547767" fileName="IBLDeprecatable_Behavior.java" startLine="15" startPosition="76" endLine="29" endPosition="17" />
   </root>
   <root nodeId="1225271178070">
-    <nodeInfo nodeId="3148306863810674526" fileName="StringType_Behavior.java" startLine="23" startPosition="82" endLine="24" endPosition="133" />
-    <scopeInfo nodeId="1225271178078" fileName="StringType_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="1225271178072" fileName="StringType_Behavior.java" startLine="19" startPosition="78" endLine="20" endPosition="20" />
-    <scopeInfo nodeId="3148306863810674379" fileName="StringType_Behavior.java" startLine="23" startPosition="82" endLine="24" endPosition="133" />
+    <nodeInfo nodeId="3148306863810674526" fileName="StringType_Behavior.java" startLine="22" startPosition="82" endLine="23" endPosition="133" />
+    <scopeInfo nodeId="1225271178078" fileName="StringType_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1225271178072" fileName="StringType_Behavior.java" startLine="18" startPosition="78" endLine="19" endPosition="20" />
+    <scopeInfo nodeId="3148306863810674379" fileName="StringType_Behavior.java" startLine="22" startPosition="82" endLine="23" endPosition="133" />
   </root>
   <root nodeId="1225271315970">
     <scopeInfo nodeId="1225271315972" fileName="BaseStringOperation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
@@ -2733,10 +2733,10 @@
     <scopeInfo nodeId="5412515780383134265" fileName="CommentedStatementsBlock_Behavior.java" startLine="18" startPosition="152" endLine="19" endPosition="18" />
   </root>
   <root nodeId="2102329369853775247">
-    <nodeInfo nodeId="8847328628797640283" fileName="VoidType_Behavior.java" startLine="23" startPosition="81" endLine="24" endPosition="15" />
-    <scopeInfo nodeId="2102329369853775249" fileName="VoidType_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="2102329369853775253" fileName="VoidType_Behavior.java" startLine="19" startPosition="76" endLine="20" endPosition="76" />
-    <scopeInfo nodeId="8847328628797640280" fileName="VoidType_Behavior.java" startLine="23" startPosition="81" endLine="24" endPosition="15" />
+    <nodeInfo nodeId="8847328628797640283" fileName="VoidType_Behavior.java" startLine="22" startPosition="81" endLine="23" endPosition="15" />
+    <scopeInfo nodeId="2102329369853775249" fileName="VoidType_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="2102329369853775253" fileName="VoidType_Behavior.java" startLine="18" startPosition="76" endLine="19" endPosition="76" />
+    <scopeInfo nodeId="8847328628797640280" fileName="VoidType_Behavior.java" startLine="22" startPosition="81" endLine="23" endPosition="15" />
   </root>
   <root nodeId="3262277503800823419">
     <nodeInfo nodeId="3262277503800831885" fileName="ILocalDeclaration_Behavior.java" startLine="17" startPosition="91" endLine="18" endPosition="128" />
@@ -2865,48 +2865,48 @@
     <scopeInfo nodeId="4313092516462065723" fileName="UsingStatement_Behavior.java" startLine="14" startPosition="152" endLine="20" endPosition="164" />
   </root>
   <root nodeId="4346214032091504644">
-    <nodeInfo nodeId="4346214032091509926" fileName="TypeVariableDeclaration_Behavior.java" startLine="29" startPosition="86" endLine="30" endPosition="144" />
-    <nodeInfo nodeId="4346214032091509716" fileName="TypeVariableDeclaration_Behavior.java" startLine="34" startPosition="62" endLine="35" endPosition="95" />
-    <nodeInfo nodeId="4346214032091509723" fileName="TypeVariableDeclaration_Behavior.java" startLine="36" startPosition="5" endLine="37" endPosition="58" />
-    <nodeInfo nodeId="4346214032091509734" fileName="TypeVariableDeclaration_Behavior.java" startLine="38" startPosition="71" endLine="39" endPosition="162" />
-    <nodeInfo nodeId="4346214032091509680" fileName="TypeVariableDeclaration_Behavior.java" startLine="40" startPosition="12" endLine="41" endPosition="96" />
-    <nodeInfo nodeId="1775412259244842063" fileName="TypeVariableDeclaration_Behavior.java" startLine="45" startPosition="78" endLine="46" endPosition="43" />
-    <nodeInfo nodeId="1775412259244902354" fileName="TypeVariableDeclaration_Behavior.java" startLine="46" startPosition="43" endLine="47" endPosition="65" />
-    <nodeInfo nodeId="1775412259244902393" fileName="TypeVariableDeclaration_Behavior.java" startLine="48" startPosition="71" endLine="49" endPosition="147" />
-    <nodeInfo nodeId="1775412259244902442" fileName="TypeVariableDeclaration_Behavior.java" startLine="51" startPosition="104" endLine="52" endPosition="96" />
-    <nodeInfo nodeId="1775412259244902374" fileName="TypeVariableDeclaration_Behavior.java" startLine="53" startPosition="5" endLine="54" endPosition="27" />
-    <nodeInfo nodeId="6741023880188222681" fileName="TypeVariableDeclaration_Behavior.java" startLine="66" startPosition="112" endLine="67" endPosition="288" />
-    <nodeInfo nodeId="3463236706575532212" fileName="TypeVariableDeclaration_Behavior.java" startLine="68" startPosition="5" endLine="69" endPosition="77" />
-    <nodeInfo nodeId="3463236706575532272" fileName="TypeVariableDeclaration_Behavior.java" startLine="70" startPosition="104" endLine="71" endPosition="115" />
-    <nodeInfo nodeId="3463236706575532298" fileName="TypeVariableDeclaration_Behavior.java" startLine="71" startPosition="115" endLine="72" endPosition="196" />
-    <nodeInfo nodeId="3463236706575532374" fileName="TypeVariableDeclaration_Behavior.java" startLine="72" startPosition="196" endLine="73" endPosition="20" />
-    <nodeInfo nodeId="3463236706575532353" fileName="TypeVariableDeclaration_Behavior.java" startLine="74" startPosition="12" endLine="75" endPosition="48" />
-    <nodeInfo nodeId="4346214032091509678" fileName="TypeVariableDeclaration_Behavior.java" startLine="40" startPosition="10" endLine="42" endPosition="5" />
-    <nodeInfo nodeId="3463236706575532349" fileName="TypeVariableDeclaration_Behavior.java" startLine="74" startPosition="10" endLine="76" endPosition="5" />
-    <nodeInfo nodeId="4346214032091509699" fileName="TypeVariableDeclaration_Behavior.java" startLine="33" startPosition="110" endLine="36" endPosition="5" />
-    <nodeInfo nodeId="1775412259244902369" fileName="TypeVariableDeclaration_Behavior.java" startLine="47" startPosition="65" endLine="50" endPosition="5" />
-    <nodeInfo nodeId="1775412259244902413" fileName="TypeVariableDeclaration_Behavior.java" startLine="50" startPosition="5" endLine="53" endPosition="5" />
-    <nodeInfo nodeId="6741023880188222656" fileName="TypeVariableDeclaration_Behavior.java" startLine="65" startPosition="115" endLine="68" endPosition="5" />
-    <nodeInfo nodeId="4346214032091509664" fileName="TypeVariableDeclaration_Behavior.java" startLine="37" startPosition="58" endLine="42" endPosition="5" />
-    <nodeInfo nodeId="3463236706575518247" fileName="TypeVariableDeclaration_Behavior.java" startLine="69" startPosition="77" endLine="76" endPosition="5" />
-    <scopeInfo nodeId="4346214032091504646" fileName="TypeVariableDeclaration_Behavior.java" startLine="26" startPosition="43" endLine="26" endPosition="43" />
-    <scopeInfo nodeId="4346214032091509923" fileName="TypeVariableDeclaration_Behavior.java" startLine="29" startPosition="86" endLine="30" endPosition="144" />
-    <scopeInfo nodeId="4346214032091509700" fileName="TypeVariableDeclaration_Behavior.java" startLine="34" startPosition="62" endLine="35" endPosition="95" />
-    <scopeInfo nodeId="4346214032091509666" fileName="TypeVariableDeclaration_Behavior.java" startLine="38" startPosition="71" endLine="39" endPosition="162" />
-    <scopeInfo nodeId="4346214032091509679" fileName="TypeVariableDeclaration_Behavior.java" startLine="40" startPosition="12" endLine="41" endPosition="96" />
-    <scopeInfo nodeId="1775412259244902370" fileName="TypeVariableDeclaration_Behavior.java" startLine="48" startPosition="71" endLine="49" endPosition="147" />
-    <scopeInfo nodeId="1775412259244902416" fileName="TypeVariableDeclaration_Behavior.java" startLine="51" startPosition="104" endLine="52" endPosition="96" />
-    <scopeInfo nodeId="6741023880188222657" fileName="TypeVariableDeclaration_Behavior.java" startLine="66" startPosition="112" endLine="67" endPosition="288" />
-    <scopeInfo nodeId="3463236706575532350" fileName="TypeVariableDeclaration_Behavior.java" startLine="74" startPosition="12" endLine="75" endPosition="48" />
-    <scopeInfo nodeId="1775412259244902413" fileName="TypeVariableDeclaration_Behavior.java" startLine="50" startPosition="5" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="3463236706575518248" fileName="TypeVariableDeclaration_Behavior.java" startLine="70" startPosition="104" endLine="73" endPosition="20">
+    <nodeInfo nodeId="4346214032091509926" fileName="TypeVariableDeclaration_Behavior.java" startLine="28" startPosition="86" endLine="29" endPosition="144" />
+    <nodeInfo nodeId="4346214032091509716" fileName="TypeVariableDeclaration_Behavior.java" startLine="33" startPosition="62" endLine="34" endPosition="95" />
+    <nodeInfo nodeId="4346214032091509723" fileName="TypeVariableDeclaration_Behavior.java" startLine="35" startPosition="5" endLine="36" endPosition="58" />
+    <nodeInfo nodeId="4346214032091509734" fileName="TypeVariableDeclaration_Behavior.java" startLine="37" startPosition="71" endLine="38" endPosition="162" />
+    <nodeInfo nodeId="4346214032091509680" fileName="TypeVariableDeclaration_Behavior.java" startLine="39" startPosition="12" endLine="40" endPosition="96" />
+    <nodeInfo nodeId="1775412259244842063" fileName="TypeVariableDeclaration_Behavior.java" startLine="44" startPosition="78" endLine="45" endPosition="43" />
+    <nodeInfo nodeId="1775412259244902354" fileName="TypeVariableDeclaration_Behavior.java" startLine="45" startPosition="43" endLine="46" endPosition="65" />
+    <nodeInfo nodeId="1775412259244902393" fileName="TypeVariableDeclaration_Behavior.java" startLine="47" startPosition="71" endLine="48" endPosition="147" />
+    <nodeInfo nodeId="1775412259244902442" fileName="TypeVariableDeclaration_Behavior.java" startLine="50" startPosition="104" endLine="51" endPosition="96" />
+    <nodeInfo nodeId="1775412259244902374" fileName="TypeVariableDeclaration_Behavior.java" startLine="52" startPosition="5" endLine="53" endPosition="27" />
+    <nodeInfo nodeId="6741023880188222681" fileName="TypeVariableDeclaration_Behavior.java" startLine="65" startPosition="112" endLine="66" endPosition="288" />
+    <nodeInfo nodeId="3463236706575532212" fileName="TypeVariableDeclaration_Behavior.java" startLine="67" startPosition="5" endLine="68" endPosition="77" />
+    <nodeInfo nodeId="3463236706575532272" fileName="TypeVariableDeclaration_Behavior.java" startLine="69" startPosition="104" endLine="70" endPosition="115" />
+    <nodeInfo nodeId="3463236706575532298" fileName="TypeVariableDeclaration_Behavior.java" startLine="70" startPosition="115" endLine="71" endPosition="196" />
+    <nodeInfo nodeId="3463236706575532374" fileName="TypeVariableDeclaration_Behavior.java" startLine="71" startPosition="196" endLine="72" endPosition="20" />
+    <nodeInfo nodeId="3463236706575532353" fileName="TypeVariableDeclaration_Behavior.java" startLine="73" startPosition="12" endLine="74" endPosition="48" />
+    <nodeInfo nodeId="4346214032091509678" fileName="TypeVariableDeclaration_Behavior.java" startLine="39" startPosition="10" endLine="41" endPosition="5" />
+    <nodeInfo nodeId="3463236706575532349" fileName="TypeVariableDeclaration_Behavior.java" startLine="73" startPosition="10" endLine="75" endPosition="5" />
+    <nodeInfo nodeId="4346214032091509699" fileName="TypeVariableDeclaration_Behavior.java" startLine="32" startPosition="110" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="1775412259244902369" fileName="TypeVariableDeclaration_Behavior.java" startLine="46" startPosition="65" endLine="49" endPosition="5" />
+    <nodeInfo nodeId="1775412259244902413" fileName="TypeVariableDeclaration_Behavior.java" startLine="49" startPosition="5" endLine="52" endPosition="5" />
+    <nodeInfo nodeId="6741023880188222656" fileName="TypeVariableDeclaration_Behavior.java" startLine="64" startPosition="115" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="4346214032091509664" fileName="TypeVariableDeclaration_Behavior.java" startLine="36" startPosition="58" endLine="41" endPosition="5" />
+    <nodeInfo nodeId="3463236706575518247" fileName="TypeVariableDeclaration_Behavior.java" startLine="68" startPosition="77" endLine="75" endPosition="5" />
+    <scopeInfo nodeId="4346214032091504646" fileName="TypeVariableDeclaration_Behavior.java" startLine="25" startPosition="43" endLine="25" endPosition="43" />
+    <scopeInfo nodeId="4346214032091509923" fileName="TypeVariableDeclaration_Behavior.java" startLine="28" startPosition="86" endLine="29" endPosition="144" />
+    <scopeInfo nodeId="4346214032091509700" fileName="TypeVariableDeclaration_Behavior.java" startLine="33" startPosition="62" endLine="34" endPosition="95" />
+    <scopeInfo nodeId="4346214032091509666" fileName="TypeVariableDeclaration_Behavior.java" startLine="37" startPosition="71" endLine="38" endPosition="162" />
+    <scopeInfo nodeId="4346214032091509679" fileName="TypeVariableDeclaration_Behavior.java" startLine="39" startPosition="12" endLine="40" endPosition="96" />
+    <scopeInfo nodeId="1775412259244902370" fileName="TypeVariableDeclaration_Behavior.java" startLine="47" startPosition="71" endLine="48" endPosition="147" />
+    <scopeInfo nodeId="1775412259244902416" fileName="TypeVariableDeclaration_Behavior.java" startLine="50" startPosition="104" endLine="51" endPosition="96" />
+    <scopeInfo nodeId="6741023880188222657" fileName="TypeVariableDeclaration_Behavior.java" startLine="65" startPosition="112" endLine="66" endPosition="288" />
+    <scopeInfo nodeId="3463236706575532350" fileName="TypeVariableDeclaration_Behavior.java" startLine="73" startPosition="12" endLine="74" endPosition="48" />
+    <scopeInfo nodeId="1775412259244902413" fileName="TypeVariableDeclaration_Behavior.java" startLine="49" startPosition="5" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="3463236706575518248" fileName="TypeVariableDeclaration_Behavior.java" startLine="69" startPosition="104" endLine="72" endPosition="20">
       <varInfo nodeId="3463236706575532273" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4346214032091504650" fileName="TypeVariableDeclaration_Behavior.java" startLine="33" startPosition="110" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="1775412259244835272" fileName="TypeVariableDeclaration_Behavior.java" startLine="45" startPosition="78" endLine="54" endPosition="27">
+    <scopeInfo nodeId="4346214032091504650" fileName="TypeVariableDeclaration_Behavior.java" startLine="32" startPosition="110" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="1775412259244835272" fileName="TypeVariableDeclaration_Behavior.java" startLine="44" startPosition="78" endLine="53" endPosition="27">
       <varInfo nodeId="1775412259244842064" varName="buff" />
     </scopeInfo>
-    <scopeInfo nodeId="4346214032091504654" fileName="TypeVariableDeclaration_Behavior.java" startLine="65" startPosition="115" endLine="76" endPosition="5">
+    <scopeInfo nodeId="4346214032091504654" fileName="TypeVariableDeclaration_Behavior.java" startLine="64" startPosition="115" endLine="75" endPosition="5">
       <varInfo nodeId="3463236706575532213" varName="javaType" />
     </scopeInfo>
   </root>
@@ -2979,19 +2979,19 @@
     </scopeInfo>
   </root>
   <root nodeId="8008512149545173647">
-    <nodeInfo nodeId="8008512149545173656" fileName="ConstructorInvocationStatement_Behavior.java" startLine="26" startPosition="83" endLine="27" endPosition="125" />
-    <nodeInfo nodeId="8008512149545173664" fileName="ConstructorInvocationStatement_Behavior.java" startLine="27" startPosition="125" endLine="28" endPosition="53" />
-    <nodeInfo nodeId="8008512149545173672" fileName="ConstructorInvocationStatement_Behavior.java" startLine="29" startPosition="92" endLine="30" endPosition="147" />
-    <nodeInfo nodeId="4859441577819369314" fileName="ConstructorInvocationStatement_Behavior.java" startLine="31" startPosition="5" endLine="32" endPosition="118" />
-    <nodeInfo nodeId="4800098105724354628" fileName="ConstructorInvocationStatement_Behavior.java" startLine="35" startPosition="114" endLine="36" endPosition="56" />
-    <nodeInfo nodeId="8008512149545173670" fileName="ConstructorInvocationStatement_Behavior.java" startLine="28" startPosition="53" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="8008512149545173649" fileName="ConstructorInvocationStatement_Behavior.java" startLine="23" startPosition="43" endLine="23" endPosition="43" />
-    <scopeInfo nodeId="8008512149545173671" fileName="ConstructorInvocationStatement_Behavior.java" startLine="29" startPosition="92" endLine="30" endPosition="147" />
-    <scopeInfo nodeId="4800098105724349646" fileName="ConstructorInvocationStatement_Behavior.java" startLine="35" startPosition="114" endLine="36" endPosition="56" />
-    <scopeInfo nodeId="8008512149545173670" fileName="ConstructorInvocationStatement_Behavior.java" startLine="28" startPosition="53" endLine="31" endPosition="5">
+    <nodeInfo nodeId="8008512149545173656" fileName="ConstructorInvocationStatement_Behavior.java" startLine="25" startPosition="83" endLine="26" endPosition="125" />
+    <nodeInfo nodeId="8008512149545173664" fileName="ConstructorInvocationStatement_Behavior.java" startLine="26" startPosition="125" endLine="27" endPosition="53" />
+    <nodeInfo nodeId="8008512149545173672" fileName="ConstructorInvocationStatement_Behavior.java" startLine="28" startPosition="92" endLine="29" endPosition="147" />
+    <nodeInfo nodeId="4859441577819369314" fileName="ConstructorInvocationStatement_Behavior.java" startLine="30" startPosition="5" endLine="31" endPosition="118" />
+    <nodeInfo nodeId="4800098105724354628" fileName="ConstructorInvocationStatement_Behavior.java" startLine="34" startPosition="114" endLine="35" endPosition="56" />
+    <nodeInfo nodeId="8008512149545173670" fileName="ConstructorInvocationStatement_Behavior.java" startLine="27" startPosition="53" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="8008512149545173649" fileName="ConstructorInvocationStatement_Behavior.java" startLine="22" startPosition="43" endLine="22" endPosition="43" />
+    <scopeInfo nodeId="8008512149545173671" fileName="ConstructorInvocationStatement_Behavior.java" startLine="28" startPosition="92" endLine="29" endPosition="147" />
+    <scopeInfo nodeId="4800098105724349646" fileName="ConstructorInvocationStatement_Behavior.java" startLine="34" startPosition="114" endLine="35" endPosition="56" />
+    <scopeInfo nodeId="8008512149545173670" fileName="ConstructorInvocationStatement_Behavior.java" startLine="27" startPosition="53" endLine="30" endPosition="5">
       <varInfo nodeId="8008512149545173683" varName="tvd" />
     </scopeInfo>
-    <scopeInfo nodeId="8008512149545173653" fileName="ConstructorInvocationStatement_Behavior.java" startLine="26" startPosition="83" endLine="32" endPosition="118">
+    <scopeInfo nodeId="8008512149545173653" fileName="ConstructorInvocationStatement_Behavior.java" startLine="25" startPosition="83" endLine="31" endPosition="118">
       <varInfo nodeId="8008512149545173665" varName="typeVarRefs" />
       <varInfo nodeId="8008512149545173657" varName="concept" />
     </scopeInfo>

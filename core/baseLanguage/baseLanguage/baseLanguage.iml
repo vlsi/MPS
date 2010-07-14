@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/refactoring/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sandbox/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
