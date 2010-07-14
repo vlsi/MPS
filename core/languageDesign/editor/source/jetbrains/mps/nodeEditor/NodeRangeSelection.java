@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.ModelAccess;
@@ -175,7 +176,24 @@ public class NodeRangeSelection implements KeyboardHandler {
         List<SNode> children = myParentNode.getChildren(myRole);
         LinkedList<SNode> resultList = new LinkedList<SNode>();
         int i1 = children.indexOf(myFirstNode);
+        if (i1 == -1) {
+          Logger.getLogger(this.getClass()).error("First node was not found in parent node (myParentNode = " + myParentNode +
+            ", role = " + myRole +
+            ") node: " + myFirstNode +
+            ", role in parent: " + myFirstNode.getRole_() +
+            ", parent: " + myFirstNode.getParent(), new Throwable());
+          return resultList;
+        }
         int i2 = children.indexOf(myLastNode);
+        if (i2 == -1) {
+          Logger.getLogger(this.getClass()).error("Last node was not found in parent node (myParentNode = " + myParentNode +
+            ", role = " + myRole +
+            ") node: " + myLastNode +
+            ", role in parent: " + myLastNode.getRole_() +
+            ", parent: " + myLastNode.getParent(), new Throwable());
+
+          return resultList;
+        }
         for (int index = Math.min(i1, i2); index <= Math.max(i1, i2); index++) {
           resultList.add(children.get(index));
         }
