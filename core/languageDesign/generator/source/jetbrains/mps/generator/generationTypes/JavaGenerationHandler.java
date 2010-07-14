@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.generationTypes;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
@@ -28,6 +29,7 @@ import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
@@ -78,8 +80,10 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     return true;
   }
 
-  public void startModule(IModule module, List<SModelDescriptor> inputModels, IProjectHandler projectHandler, ITaskProgressHelper progressHelper) {
+  public void startModule(IModule module, List<SModelDescriptor> inputModels, Project project, ITaskProgressHelper progressHelper) {
     progressHelper.setText2("module " + module);
+
+    IProjectHandler projectHandler = getProjectHandler(project);
 
     String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
     prepareOutputFolder(projectHandler, outputFolder);
@@ -94,10 +98,17 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     }
   }
 
+  protected IProjectHandler getProjectHandler(Project p) {
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return null;
+    return MPSPlugin.getInstance().getProjectHandler(p);
+  }
+
   @Override
-  public boolean compile(IProjectHandler projectHandler, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+  public boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
     boolean compiledSuccessfully = generationOK;
     boolean[] ideaIsFresh = new boolean[] { false };
+
+    IProjectHandler projectHandler = getProjectHandler(p);
 
     if(generationOK) {
       long compilationStart = System.currentTimeMillis();

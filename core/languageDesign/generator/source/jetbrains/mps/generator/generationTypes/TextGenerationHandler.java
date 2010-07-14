@@ -1,5 +1,6 @@
 package jetbrains.mps.generator.generationTypes;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
@@ -58,7 +59,7 @@ public class TextGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public void startModule(IModule module, List<SModelDescriptor> inputModels, IProjectHandler projectHandler, ITaskProgressHelper progressHelper) {
+  public void startModule(IModule module, List<SModelDescriptor> inputModels, Project project, ITaskProgressHelper progressHelper) {
     String message = "module " + module;
     progressHelper.setText2(message);
     info(message);
@@ -70,7 +71,7 @@ public class TextGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean compile(IProjectHandler projectHandler, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+  public boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
     return true;
   }
 

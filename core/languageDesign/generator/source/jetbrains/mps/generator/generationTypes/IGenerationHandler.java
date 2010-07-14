@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.generationTypes;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
@@ -42,7 +43,7 @@ public interface IGenerationHandler {
   /*
    * Next module started.
    */
-  void startModule(IModule module, List<SModelDescriptor> inputModels, IProjectHandler projectHandler, ITaskProgressHelper progressHelper);
+  void startModule(IModule module, List<SModelDescriptor> inputModels, Project project, ITaskProgressHelper progressHelper);
 
   /*
    * Handle generation result of a model.
@@ -57,5 +58,5 @@ public interface IGenerationHandler {
   /*
    * Post-process generated output: compile, reload, etc. Once per generation cycle. 
    */
-  boolean compile(IProjectHandler projectHandler, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException;
+  boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException;
 }

@@ -1,6 +1,7 @@
 package jetbrains.mps.generator.generationTypes;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.structure.Annotation;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.EnumClass;
@@ -80,12 +81,12 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public void startModule(IModule module, List<SModelDescriptor> inputModels, IProjectHandler projectHandler, ITaskProgressHelper progressHelper) {
+  public void startModule(IModule module, List<SModelDescriptor> inputModels, Project project, ITaskProgressHelper progressHelper) {
     progressHelper.setText2("module " + module);
   }
 
   @Override
-  public boolean compile(IProjectHandler projectHandler, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+  public boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
     myResult = compile(progressHelper);
     return myResult != null;
   }

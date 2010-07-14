@@ -142,7 +142,7 @@ public class GenerationController {
 
   private boolean compile(ITaskProgressHelper progressHelper, boolean generationOK) throws RemoteException, GenerationCanceledException {
     fireBeforeModelsCompiled(generationOK);
-    generationOK = generationOK && myGenerationHandler.compile(getProjectHandler(), myModuleSequence, generationOK, progressHelper);
+    generationOK = generationOK && myGenerationHandler.compile(getProject(), myModuleSequence, generationOK, progressHelper);
     fireAfterModelsCompiled(generationOK);
     return generationOK;
   }
@@ -151,7 +151,7 @@ public class GenerationController {
     boolean currentGenerationOK = true;
 
     IOperationContext invocationContext = myModulesToContexts.get(module);
-    myGenerationHandler.startModule(module, inputModels, getProjectHandler(), progressHelper);
+    myGenerationHandler.startModule(module, inputModels, getProject(), progressHelper);
 
     //++ generation
     String wasLoggingThreshold = null;
@@ -270,11 +270,6 @@ public class GenerationController {
 
   private IOperationContext getFirstContext() {
     return myInputModels.get(0).o2;
-  }
-
-  protected IProjectHandler getProjectHandler() {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return null;
-    return MPSPlugin.getInstance().getProjectHandler(getProject());
   }
 
   private Project getProject() {

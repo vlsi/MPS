@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.tester;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
@@ -52,7 +53,7 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
   }
 
   @Override
-  public boolean compile(IProjectHandler projectHandler, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+  public boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
     return true;
   }
 
