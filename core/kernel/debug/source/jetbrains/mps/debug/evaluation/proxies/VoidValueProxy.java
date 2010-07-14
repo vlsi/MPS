@@ -37,4 +37,9 @@ public class VoidValueProxy extends ValueProxy implements IObjectValueProxy {
   public boolean isInstanceOf(String typename) throws EvaluationException {
     return false;
   }
+
+  @Override
+  public boolean javaEquals(IObjectValueProxy proxy) {
+    return false;
+  }
 }

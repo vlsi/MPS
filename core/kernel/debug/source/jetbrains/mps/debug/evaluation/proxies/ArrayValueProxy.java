@@ -70,4 +70,9 @@ class ArrayValueProxy extends ValueProxy implements IArrayValueProxy, IObjectVal
   public boolean isInstanceOf(String typename) throws EvaluationException {
     return Evaluator.isInstanceOf(myValue.type(), typename, myThreadReference.virtualMachine());
   }
+
+  @Override
+  public boolean javaEquals(IObjectValueProxy proxy) {
+    return myValue.equals(proxy.getJDIValue());
+  }
 }
