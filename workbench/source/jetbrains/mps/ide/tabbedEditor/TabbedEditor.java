@@ -16,15 +16,13 @@
 package jetbrains.mps.ide.tabbedEditor;
 
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.sun.corba.se.spi.orbutil.fsm.FSM;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab;
@@ -38,8 +36,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -49,6 +47,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.AbstractAction;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
+import javax.swing.SwingUtilities;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
@@ -127,24 +126,45 @@ public class TabbedEditor implements IEditor {
     component.requestFocus();
   }
 
-  public void onSelectInnerTab() {
-    Project project = myOperationContext.getProject();
+  public void tabStructureChanged() {
+    final Project project = myOperationContext.getProject();
     FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
     VirtualFile virtualFile = manager.getCurrentFile();
     if (virtualFile == null) return;
-    List<SNode> thisNodes = this.getEditedNodes();
-    if (thisNodes.size() > 1) {
-      for (FileEditor openedEditor : manager.getAllEditors()) {
-        if (openedEditor instanceof MPSFileNodeEditor) {
-          MPSFileNodeEditor openedMPSEditor = (MPSFileNodeEditor) openedEditor;
-          if (ObjectUtils.equals(this, openedMPSEditor.getNodeEditor())) continue;
-          List<SNode> openedNodes = openedMPSEditor.getNodeEditor().getEditedNodes();
-          if (openedNodes.size() == 1 && thisNodes.contains(openedNodes.get(0))) {
-            manager.closeFile(openedMPSEditor.getFile());
+
+    for (FileEditor openedEditor : manager.getAllEditors()) {
+      if (!(openedEditor instanceof MPSFileNodeEditor)) continue;
+
+      MPSFileNodeEditor openedMPSEditor = (MPSFileNodeEditor) openedEditor;
+      if (ObjectUtils.equals(this, openedMPSEditor.getNodeEditor())) continue;
+
+      final IEditor mpsNodeEditor = openedMPSEditor.getNodeEditor();
+      List<SNode> openedNodes = mpsNodeEditor.getEditedNodes();
+      if (mpsNodeEditor instanceof TabbedEditor || !getEditedNodes().contains(openedNodes.get(0))) continue;
+
+      boolean needToSelect = virtualFile == openedMPSEditor.getFile();
+      if (!needToSelect) {
+        manager.closeFile(openedMPSEditor.getFile());
+      } else {
+        //we need rthis "invoke later" because we need a memento after the editor is opened and its state is stable
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            Object memento = null;
+            EditorComponent editorComponent = mpsNodeEditor.getCurrentEditorComponent();
+            if (editorComponent != null) {
+              memento = editorComponent.getEditorContext().createMemento(true);
+            }
+
+            SNode node = myNodePointer.getNode();
+            new MPSEditorOpener(project).editNode(node, myOperationContext);
+            final EditorComponent component = selectLinkedEditor(mpsNodeEditor.getEditedNode());
+
+            component.getEditorContext().setMemento(memento);
           }
-        }
+        });
       }
     }
+
     FileStatusManager.getInstance(project).fileStatusChanged(virtualFile);
     manager.updateFilePresentation(virtualFile);
   }
@@ -278,12 +298,20 @@ public class TabbedEditor implements IEditor {
 
   public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState result = new MyFileEditorState();
-    if (getEditorContext() != null) {
+    EditorContext editorContext = getEditorContext();
+    if (editorContext != null) {
       boolean full = level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL;
-      result.myMemento = getEditorContext().createMemento(full);
+      result.myMemento = editorContext.createMemento(full);
       EditorComponent editorComponent = getCurrentEditorComponent();
-      if (editorComponent != null) {
-        result.myInspectorMemento = ((NodeEditorComponent) editorComponent).getInspector().getEditorContext().createMemento(full);
+      if (editorComponent instanceof NodeEditorComponent) {
+        NodeEditorComponent nodeEditorComponent = (NodeEditorComponent) editorComponent;
+        EditorComponent inspector = nodeEditorComponent.getInspector();
+        if (inspector != null) {
+          EditorContext inspectorContext = inspector.getEditorContext();
+          if (inspectorContext != null) {
+            result.myInspectorMemento = inspectorContext.createMemento(full);
+          }
+        }
       }
     }
     result.myCurrentTab = myTabbedPane.getCurrentTabIndex();
