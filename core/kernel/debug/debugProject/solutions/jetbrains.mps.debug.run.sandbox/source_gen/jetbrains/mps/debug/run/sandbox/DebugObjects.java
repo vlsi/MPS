@@ -9,6 +9,7 @@ public class DebugObjects {
   private static int myStaticField = 1;
 
   private int myNonStaticField;
+  private Object myNonStaticField2 = new Object();
 
   public DebugObjects() {
     myStaticField++;

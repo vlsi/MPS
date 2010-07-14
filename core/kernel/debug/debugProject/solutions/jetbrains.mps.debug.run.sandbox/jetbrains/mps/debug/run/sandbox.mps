@@ -987,6 +987,18 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3337698516783078496" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3337698516783078498" />
     </node>
+    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="761495697519362703">
+      <property name="name:3" value="myNonStaticField2" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="761495697519362704" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="761495697519362710">
+        <link role="classifier:3" targetNodeId="2.~Object" resolveInfo="Object" />
+      </node>
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="761495697519362707">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="761495697519362709">
+          <link role="baseMethodDeclaration:3" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
+        </node>
+      </node>
+    </node>
     <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="3337698516783078485">
       <property name="name:3" value="myStaticField" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3337698516783078486" />
