@@ -29,7 +29,6 @@ import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debug.runtime.SuspendContext;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
-import jetbrains.mps.debug.evaluation.EvaluationException;
 import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -145,9 +144,9 @@ public class EvaluationDialog extends BaseDialog {
             } else {
               setFailure(null, "Evaluation returned null.");
             }
-          } catch (EvaluationException ex) {
-            setFailure(ex, null);
-            EvaluationDialog.LOG.error(ex);
+          } catch (Throwable t) {
+            setFailure(t, null);
+            EvaluationDialog.LOG.error(t);
           } finally {
             suspendContext.setIsEvaluating(false);
           }
@@ -158,9 +157,9 @@ public class EvaluationDialog extends BaseDialog {
     } catch (InvocationTargetEvaluationException e) {
       setFailure(e.getCause(), null);
       LOG.error(e.getCause());
-    } catch (EvaluationException e) {
-      setFailure(e, null);
-      LOG.error(e);
+    } catch (Throwable t) {
+      setFailure(t, null);
+      LOG.error(t);
     }
   }
 

@@ -258,8 +258,9 @@ public class TransformationUtil {
   }
 
   private static void replaceReturnedExpressionIfNeeded(SNode expression) {
-    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(expression), new TransformationUtil.QuotationClass_crriw5_a1a0a0a9().createNode()))) {
-      SNodeOperations.replaceWithAnother(expression, new TransformationUtil.QuotationClass_crriw5_a0a0a0a0j().createNode(expression));
+    SNode type = TypeChecker.getInstance().getTypeOf(expression);
+    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new TransformationUtil.QuotationClass_crriw5_a1a0a0b0j().createNode())) || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.NullType")) {
+      SNodeOperations.replaceWithAnother(expression, new TransformationUtil.QuotationClass_crriw5_a0a0a0b0j().createNode(expression));
     }
   }
 
@@ -1374,8 +1375,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a0a0a0a0j {
-    public QuotationClass_crriw5_a0a0a0a0j() {
+  public static class QuotationClass_crriw5_a0a0a0b0j {
+    public QuotationClass_crriw5_a0a0a0b0j() {
     }
 
     public SNode createNode(Object parameter_11) {
@@ -1427,8 +1428,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a1a0a0a9 {
-    public QuotationClass_crriw5_a1a0a0a9() {
+  public static class QuotationClass_crriw5_a1a0a0b0j {
+    public QuotationClass_crriw5_a1a0a0b0j() {
     }
 
     public SNode createNode() {
