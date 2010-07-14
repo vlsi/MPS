@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1213877228937">
-    <nodeInfo nodeId="1213877228946" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="20" startPosition="128" endLine="21" endPosition="19" />
-    <nodeInfo nodeId="1213877228948" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="177" />
-    <nodeInfo nodeId="1213877228958" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="26" startPosition="83" endLine="27" endPosition="125" />
-    <nodeInfo nodeId="1213877228966" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="27" startPosition="125" endLine="28" endPosition="74" />
-    <nodeInfo nodeId="1213877228972" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="28" startPosition="74" endLine="29" endPosition="107" />
-    <nodeInfo nodeId="1213877228940" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="19" startPosition="103" endLine="22" endPosition="5" />
-    <scopeInfo nodeId="1213877228979" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="1213877228945" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="20" startPosition="128" endLine="21" endPosition="19" />
-    <scopeInfo nodeId="1213877228957" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="26" startPosition="83" endLine="29" endPosition="107">
+    <nodeInfo nodeId="1213877228946" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="19" startPosition="128" endLine="20" endPosition="19" />
+    <nodeInfo nodeId="1213877228948" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="177" />
+    <nodeInfo nodeId="1213877228958" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="25" startPosition="83" endLine="26" endPosition="125" />
+    <nodeInfo nodeId="1213877228966" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="26" startPosition="125" endLine="27" endPosition="74" />
+    <nodeInfo nodeId="1213877228972" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="27" startPosition="74" endLine="28" endPosition="107" />
+    <nodeInfo nodeId="1213877228940" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="18" startPosition="103" endLine="21" endPosition="5" />
+    <scopeInfo nodeId="1213877228979" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1213877228945" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="19" startPosition="128" endLine="20" endPosition="19" />
+    <scopeInfo nodeId="1213877228957" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="25" startPosition="83" endLine="28" endPosition="107">
       <varInfo nodeId="1213877228967" varName="concept" />
       <varInfo nodeId="1213877228959" varName="ancestor" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877228939" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="19" startPosition="103" endLine="23" endPosition="177" />
+    <scopeInfo nodeId="1213877228939" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="18" startPosition="103" endLine="22" endPosition="177" />
   </root>
   <root nodeId="1213877247276">
-    <nodeInfo nodeId="1213877247281" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="19" startPosition="123" endLine="20" endPosition="19" />
-    <nodeInfo nodeId="1213877247287" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="16" />
-    <nodeInfo nodeId="1213877247294" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="25" startPosition="83" endLine="26" endPosition="125" />
-    <nodeInfo nodeId="1213877247302" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="26" startPosition="125" endLine="27" endPosition="97" />
-    <nodeInfo nodeId="1213877247308" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="27" startPosition="97" endLine="28" endPosition="103" />
-    <nodeInfo nodeId="1213877247279" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="18" startPosition="103" endLine="21" endPosition="5" />
-    <scopeInfo nodeId="1213877247315" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1213877247280" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="19" startPosition="123" endLine="20" endPosition="19" />
-    <scopeInfo nodeId="1213877247293" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="25" startPosition="83" endLine="28" endPosition="103">
+    <nodeInfo nodeId="1213877247281" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="18" startPosition="123" endLine="19" endPosition="19" />
+    <nodeInfo nodeId="1213877247287" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="20" startPosition="5" endLine="21" endPosition="16" />
+    <nodeInfo nodeId="1213877247294" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="24" startPosition="83" endLine="25" endPosition="125" />
+    <nodeInfo nodeId="1213877247302" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="25" startPosition="125" endLine="26" endPosition="97" />
+    <nodeInfo nodeId="1213877247308" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="26" startPosition="97" endLine="27" endPosition="103" />
+    <nodeInfo nodeId="1213877247279" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="17" startPosition="103" endLine="20" endPosition="5" />
+    <scopeInfo nodeId="1213877247315" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1213877247280" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="18" startPosition="123" endLine="19" endPosition="19" />
+    <scopeInfo nodeId="1213877247293" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="24" startPosition="83" endLine="27" endPosition="103">
       <varInfo nodeId="1213877247303" varName="conceptOfNodeReturnedByHandler" />
       <varInfo nodeId="1213877247295" varName="ancestor" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877247278" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="18" startPosition="103" endLine="22" endPosition="16" />
+    <scopeInfo nodeId="1213877247278" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="17" startPosition="103" endLine="21" endPosition="16" />
   </root>
   <root nodeId="1213877273936">
     <nodeInfo nodeId="1213877273945" fileName="QueryFunction_ParameterizedSideTransform_Handler_Behavior.java" startLine="13" startPosition="123" endLine="14" endPosition="19" />
@@ -58,22 +58,22 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877372965">
-    <nodeInfo nodeId="1213877372974" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="19" startPosition="126" endLine="20" endPosition="19" />
-    <nodeInfo nodeId="1213877372978" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="22" startPosition="128" endLine="23" endPosition="19" />
-    <nodeInfo nodeId="1213877372984" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="16" />
-    <nodeInfo nodeId="1213877372991" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="28" startPosition="83" endLine="29" endPosition="129" />
-    <nodeInfo nodeId="1213877372999" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="29" startPosition="129" endLine="30" endPosition="78" />
-    <nodeInfo nodeId="1213877373005" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="30" startPosition="78" endLine="31" endPosition="106" />
-    <nodeInfo nodeId="1213877372968" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="18" startPosition="103" endLine="21" endPosition="5" />
-    <nodeInfo nodeId="1213877372976" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="21" startPosition="5" endLine="24" endPosition="5" />
-    <scopeInfo nodeId="1213877373012" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1213877372973" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="19" startPosition="126" endLine="20" endPosition="19" />
-    <scopeInfo nodeId="1213877372977" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="22" startPosition="128" endLine="23" endPosition="19" />
-    <scopeInfo nodeId="1213877372990" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="28" startPosition="83" endLine="31" endPosition="106">
+    <nodeInfo nodeId="1213877372974" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="18" startPosition="126" endLine="19" endPosition="19" />
+    <nodeInfo nodeId="1213877372978" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="21" startPosition="128" endLine="22" endPosition="19" />
+    <nodeInfo nodeId="1213877372984" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="16" />
+    <nodeInfo nodeId="1213877372991" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="27" startPosition="83" endLine="28" endPosition="129" />
+    <nodeInfo nodeId="1213877372999" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="28" startPosition="129" endLine="29" endPosition="78" />
+    <nodeInfo nodeId="1213877373005" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="29" startPosition="78" endLine="30" endPosition="106" />
+    <nodeInfo nodeId="1213877372968" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="17" startPosition="103" endLine="20" endPosition="5" />
+    <nodeInfo nodeId="1213877372976" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="20" startPosition="5" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="1213877373012" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1213877372973" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="18" startPosition="126" endLine="19" endPosition="19" />
+    <scopeInfo nodeId="1213877372977" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="21" startPosition="128" endLine="22" endPosition="19" />
+    <scopeInfo nodeId="1213877372990" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="27" startPosition="83" endLine="30" endPosition="106">
       <varInfo nodeId="1213877373000" varName="concept" />
       <varInfo nodeId="1213877372992" varName="hostMenuPart" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877372967" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="18" startPosition="103" endLine="25" endPosition="16" />
+    <scopeInfo nodeId="1213877372967" fileName="QueryFunction_SubstituteWrapper_Behavior.java" startLine="17" startPosition="103" endLine="24" endPosition="16" />
   </root>
   <root nodeId="1213877380314">
     <nodeInfo nodeId="1213877380317" fileName="QueryFunction_SideTransform_Icon_Behavior.java" startLine="16" startPosition="81" endLine="17" endPosition="171" />
@@ -92,39 +92,39 @@
     <scopeInfo nodeId="1213877395200" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="12" startPosition="103" endLine="13" endPosition="127" />
   </root>
   <root nodeId="1213877415648">
-    <nodeInfo nodeId="1213877415651" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="229" />
-    <nodeInfo nodeId="1213877415662" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="22" startPosition="101" endLine="23" endPosition="242" />
-    <nodeInfo nodeId="1213877415675" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="30" />
-    <nodeInfo nodeId="1213877415681" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="26" startPosition="121" endLine="27" endPosition="165" />
-    <nodeInfo nodeId="7376433222636454135" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="28" startPosition="5" endLine="29" endPosition="18" />
-    <nodeInfo nodeId="1213877415695" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="30" startPosition="31" endLine="31" endPosition="115" />
-    <nodeInfo nodeId="1213877415702" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="32" startPosition="5" endLine="33" endPosition="123" />
-    <nodeInfo nodeId="1213877415660" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="21" startPosition="229" endLine="24" endPosition="5" />
-    <nodeInfo nodeId="1213877415679" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="25" startPosition="30" endLine="28" endPosition="5" />
-    <nodeInfo nodeId="1213877415693" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="29" startPosition="18" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="1213877415710" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="1213877415661" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="22" startPosition="101" endLine="23" endPosition="242" />
-    <scopeInfo nodeId="1213877415680" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="26" startPosition="121" endLine="27" endPosition="165" />
-    <scopeInfo nodeId="1213877415694" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="30" startPosition="31" endLine="31" endPosition="115" />
-    <scopeInfo nodeId="1213877415650" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="20" startPosition="83" endLine="33" endPosition="123">
+    <nodeInfo nodeId="1213877415651" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="229" />
+    <nodeInfo nodeId="1213877415662" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="21" startPosition="101" endLine="22" endPosition="242" />
+    <nodeInfo nodeId="1213877415675" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="30" />
+    <nodeInfo nodeId="1213877415681" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="25" startPosition="121" endLine="26" endPosition="165" />
+    <nodeInfo nodeId="7376433222636454135" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="27" startPosition="5" endLine="28" endPosition="18" />
+    <nodeInfo nodeId="1213877415695" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="29" startPosition="31" endLine="30" endPosition="115" />
+    <nodeInfo nodeId="1213877415702" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="31" startPosition="5" endLine="32" endPosition="123" />
+    <nodeInfo nodeId="1213877415660" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="20" startPosition="229" endLine="23" endPosition="5" />
+    <nodeInfo nodeId="1213877415679" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="24" startPosition="30" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1213877415693" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="28" startPosition="18" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="1213877415710" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="1213877415661" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="21" startPosition="101" endLine="22" endPosition="242" />
+    <scopeInfo nodeId="1213877415680" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="25" startPosition="121" endLine="26" endPosition="165" />
+    <scopeInfo nodeId="1213877415694" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="29" startPosition="31" endLine="30" endPosition="115" />
+    <scopeInfo nodeId="1213877415650" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="19" startPosition="83" endLine="32" endPosition="123">
       <varInfo nodeId="1213877415676" varName="expectedType" />
       <varInfo nodeId="1213877415652" varName="ancestor" />
     </scopeInfo>
   </root>
   <root nodeId="1213877437021">
-    <nodeInfo nodeId="1213877437030" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="20" startPosition="128" endLine="21" endPosition="19" />
-    <nodeInfo nodeId="1213877437032" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="190" />
-    <nodeInfo nodeId="1213877437042" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="26" startPosition="83" endLine="27" endPosition="125" />
-    <nodeInfo nodeId="1213877437050" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="27" startPosition="125" endLine="28" endPosition="97" />
-    <nodeInfo nodeId="1213877437056" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="28" startPosition="97" endLine="29" endPosition="143" />
-    <nodeInfo nodeId="1213877437024" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="19" startPosition="103" endLine="22" endPosition="5" />
-    <scopeInfo nodeId="1213877437063" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="1213877437029" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="20" startPosition="128" endLine="21" endPosition="19" />
-    <scopeInfo nodeId="1213877437041" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="26" startPosition="83" endLine="29" endPosition="143">
+    <nodeInfo nodeId="1213877437030" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="19" startPosition="128" endLine="20" endPosition="19" />
+    <nodeInfo nodeId="1213877437032" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="190" />
+    <nodeInfo nodeId="1213877437042" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="25" startPosition="83" endLine="26" endPosition="125" />
+    <nodeInfo nodeId="1213877437050" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="26" startPosition="125" endLine="27" endPosition="97" />
+    <nodeInfo nodeId="1213877437056" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="27" startPosition="97" endLine="28" endPosition="143" />
+    <nodeInfo nodeId="1213877437024" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="18" startPosition="103" endLine="21" endPosition="5" />
+    <scopeInfo nodeId="1213877437063" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1213877437029" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="19" startPosition="128" endLine="20" endPosition="19" />
+    <scopeInfo nodeId="1213877437041" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="25" startPosition="83" endLine="28" endPosition="143">
       <varInfo nodeId="1213877437051" varName="conceptOfNodeReturnedByHandler" />
       <varInfo nodeId="1213877437043" varName="ancestor" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877437023" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="19" startPosition="103" endLine="23" endPosition="190" />
+    <scopeInfo nodeId="1213877437023" fileName="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" startLine="18" startPosition="103" endLine="22" endPosition="190" />
   </root>
   <root nodeId="1213877437423">
     <nodeInfo nodeId="1213877437426" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="13" startPosition="103" endLine="14" endPosition="16" />
@@ -137,30 +137,30 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877477288">
-    <nodeInfo nodeId="1213877477293" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="19" startPosition="123" endLine="20" endPosition="19" />
-    <nodeInfo nodeId="1213877477301" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="22" startPosition="122" endLine="23" endPosition="19" />
-    <nodeInfo nodeId="1213877477307" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="16" />
-    <nodeInfo nodeId="1213877477314" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="28" startPosition="83" endLine="29" endPosition="139" />
-    <nodeInfo nodeId="1213877477322" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="29" startPosition="139" endLine="30" endPosition="163" />
-    <nodeInfo nodeId="1213877477291" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="18" startPosition="103" endLine="21" endPosition="5" />
-    <nodeInfo nodeId="1213877477299" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="21" startPosition="5" endLine="24" endPosition="5" />
-    <scopeInfo nodeId="1213877477331" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1213877477292" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="19" startPosition="123" endLine="20" endPosition="19" />
-    <scopeInfo nodeId="1213877477300" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="22" startPosition="122" endLine="23" endPosition="19" />
-    <scopeInfo nodeId="1213877477313" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="28" startPosition="83" endLine="30" endPosition="163">
+    <nodeInfo nodeId="1213877477293" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="18" startPosition="123" endLine="19" endPosition="19" />
+    <nodeInfo nodeId="1213877477301" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="21" startPosition="122" endLine="22" endPosition="19" />
+    <nodeInfo nodeId="1213877477307" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="16" />
+    <nodeInfo nodeId="1213877477314" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="27" startPosition="83" endLine="28" endPosition="139" />
+    <nodeInfo nodeId="1213877477322" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="28" startPosition="139" endLine="29" endPosition="163" />
+    <nodeInfo nodeId="1213877477291" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="17" startPosition="103" endLine="20" endPosition="5" />
+    <nodeInfo nodeId="1213877477299" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="20" startPosition="5" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="1213877477331" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1213877477292" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="18" startPosition="123" endLine="19" endPosition="19" />
+    <scopeInfo nodeId="1213877477300" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="21" startPosition="122" endLine="22" endPosition="19" />
+    <scopeInfo nodeId="1213877477313" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="27" startPosition="83" endLine="29" endPosition="163">
       <varInfo nodeId="1213877477315" varName="ancestor" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877477290" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="18" startPosition="103" endLine="25" endPosition="16" />
+    <scopeInfo nodeId="1213877477290" fileName="QueryFunction_SideTransform_ConceptHandler_Behavior.java" startLine="17" startPosition="103" endLine="24" endPosition="16" />
   </root>
   <root nodeId="1213877533502">
-    <nodeInfo nodeId="1213877533505" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="158" />
-    <nodeInfo nodeId="1213877533512" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="21" startPosition="158" endLine="22" endPosition="80" />
-    <nodeInfo nodeId="1213877533520" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="23" startPosition="32" endLine="24" endPosition="131" />
-    <nodeInfo nodeId="1213877533529" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="114" />
-    <nodeInfo nodeId="1213877533518" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="22" startPosition="80" endLine="25" endPosition="5" />
-    <scopeInfo nodeId="1213877533535" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="1213877533519" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="23" startPosition="32" endLine="24" endPosition="131" />
-    <scopeInfo nodeId="1213877533504" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="20" startPosition="83" endLine="26" endPosition="114">
+    <nodeInfo nodeId="1213877533505" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="158" />
+    <nodeInfo nodeId="1213877533512" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="20" startPosition="158" endLine="21" endPosition="80" />
+    <nodeInfo nodeId="1213877533520" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="22" startPosition="32" endLine="23" endPosition="131" />
+    <nodeInfo nodeId="1213877533529" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="114" />
+    <nodeInfo nodeId="1213877533518" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="21" startPosition="80" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="1213877533535" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="1213877533519" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="22" startPosition="32" endLine="23" endPosition="131" />
+    <scopeInfo nodeId="1213877533504" fileName="QueryFunction_ParameterizedSideTransform_Query_Behavior.java" startLine="19" startPosition="83" endLine="25" endPosition="114">
       <varInfo nodeId="1213877533513" varName="parameterType" />
       <varInfo nodeId="1213877533506" varName="hostMenuPart" />
     </scopeInfo>
@@ -216,11 +216,11 @@
     <scopeInfo nodeId="1221137356131" fileName="ConceptFunctionParameter_nodeToPasteWrap_Behavior.java" startLine="12" startPosition="69" endLine="13" endPosition="116" />
   </root>
   <root nodeId="1221137518235">
-    <nodeInfo nodeId="1221137525728" fileName="QueryFunction_PasteWrapper_Behavior.java" startLine="18" startPosition="69" endLine="19" endPosition="116" />
-    <nodeInfo nodeId="1221137536479" fileName="QueryFunction_PasteWrapper_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="220" />
-    <scopeInfo nodeId="1221137518237" fileName="QueryFunction_PasteWrapper_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1221137519382" fileName="QueryFunction_PasteWrapper_Behavior.java" startLine="18" startPosition="69" endLine="19" endPosition="116" />
-    <scopeInfo nodeId="1221137533289" fileName="QueryFunction_PasteWrapper_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="220" />
+    <nodeInfo nodeId="1221137525728" fileName="QueryFunction_PasteWrapper_Behavior.java" startLine="17" startPosition="69" endLine="18" endPosition="116" />
+    <nodeInfo nodeId="1221137536479" fileName="QueryFunction_PasteWrapper_Behavior.java" startLine="21" startPosition="83" endLine="22" endPosition="220" />
+    <scopeInfo nodeId="1221137518237" fileName="QueryFunction_PasteWrapper_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1221137519382" fileName="QueryFunction_PasteWrapper_Behavior.java" startLine="17" startPosition="69" endLine="18" endPosition="116" />
+    <scopeInfo nodeId="1221137533289" fileName="QueryFunction_PasteWrapper_Behavior.java" startLine="21" startPosition="83" endLine="22" endPosition="220" />
   </root>
   <root nodeId="1235663595514">
     <nodeInfo nodeId="1235663607028" fileName="SmartActionParameterReference_Behavior.java" startLine="11" startPosition="72" endLine="12" endPosition="16" />
@@ -228,12 +228,12 @@
     <scopeInfo nodeId="1235663597175" fileName="SmartActionParameterReference_Behavior.java" startLine="11" startPosition="72" endLine="12" endPosition="16" />
   </root>
   <root nodeId="3146964333471402253">
-    <nodeInfo nodeId="3146964333471402292" fileName="QueryFunction_STVariableInitializer_Behavior.java" startLine="22" startPosition="149" endLine="23" endPosition="211" />
-    <nodeInfo nodeId="3146964333471403442" fileName="QueryFunction_STVariableInitializer_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="103" />
-    <nodeInfo nodeId="3146964333471402275" fileName="QueryFunction_STVariableInitializer_Behavior.java" startLine="21" startPosition="83" endLine="24" endPosition="5" />
-    <scopeInfo nodeId="3146964333471402255" fileName="QueryFunction_STVariableInitializer_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="3146964333471402276" fileName="QueryFunction_STVariableInitializer_Behavior.java" startLine="22" startPosition="149" endLine="23" endPosition="211" />
-    <scopeInfo nodeId="3146964333471402259" fileName="QueryFunction_STVariableInitializer_Behavior.java" startLine="21" startPosition="83" endLine="25" endPosition="103" />
+    <nodeInfo nodeId="3146964333471402292" fileName="QueryFunction_STVariableInitializer_Behavior.java" startLine="21" startPosition="149" endLine="22" endPosition="211" />
+    <nodeInfo nodeId="3146964333471403442" fileName="QueryFunction_STVariableInitializer_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="103" />
+    <nodeInfo nodeId="3146964333471402275" fileName="QueryFunction_STVariableInitializer_Behavior.java" startLine="20" startPosition="83" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="3146964333471402255" fileName="QueryFunction_STVariableInitializer_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
+    <scopeInfo nodeId="3146964333471402276" fileName="QueryFunction_STVariableInitializer_Behavior.java" startLine="21" startPosition="149" endLine="22" endPosition="211" />
+    <scopeInfo nodeId="3146964333471402259" fileName="QueryFunction_STVariableInitializer_Behavior.java" startLine="20" startPosition="83" endLine="24" endPosition="103" />
   </root>
   <root nodeId="5270353093116089375">
     <nodeInfo nodeId="5270353093116089621" fileName="NodeFactories_Behavior.java" startLine="21" startPosition="98" endLine="22" endPosition="48" />

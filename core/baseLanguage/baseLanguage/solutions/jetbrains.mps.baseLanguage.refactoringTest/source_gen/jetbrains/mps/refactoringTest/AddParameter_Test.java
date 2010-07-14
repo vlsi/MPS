@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 
 @MPSLaunch
@@ -51,11 +50,11 @@ public class AddParameter_Test extends BaseTransformationTest {
         SNode quotedNode_1 = null;
         SNode quotedNode_2 = null;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_3 = quotedNode_1;
           quotedNode1_3.setProperty("name", "a");
           {
-            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_4 = quotedNode_2;
             quotedNode_1.addChild("type", quotedNode1_4);
           }
