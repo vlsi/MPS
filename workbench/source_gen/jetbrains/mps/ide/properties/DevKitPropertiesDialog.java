@@ -8,11 +8,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import java.util.List;
-import jetbrains.mps.plugin.IProjectHandler;
-import jetbrains.mps.plugin.MPSPlugin;
-import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
-import java.util.Collections;
 
 public class DevKitPropertiesDialog extends BasePropertiesDialog {
   public DevKit myDevKit;
@@ -46,16 +41,5 @@ public class DevKitPropertiesDialog extends BasePropertiesDialog {
       }
     }, getOperationContext().getProject());
     return true;
-  }
-
-  public static List<String> getProjectPluginClassNames(IOperationContext context) {
-    IProjectHandler projectHandler = MPSPlugin.getInstance().getProjectHandler(context.getProject());
-    if (projectHandler != null) {
-      try {
-        return projectHandler.findInheritors(BaseProjectPlugin.class.getName());
-      } catch (Exception e) {
-      }
-    }
-    return Collections.emptyList();
   }
 }

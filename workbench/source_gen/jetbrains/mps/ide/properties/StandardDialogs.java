@@ -234,12 +234,6 @@ public class StandardDialogs {
         final BaseBindedDialog.ConstraintsType result_960thj_a1a4a1a0a0a2 = BaseBindedDialog.ConstraintsType.LIST;
         result_960thj_a4a1a0a0a2.setConstraints(result_960thj_a1a4a1a0a0a2);
         result_960thj_a1a0a0a2.addComponent(result_960thj_a4a1a0a0a2);
-        final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a5a1a0a0a2 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a5a1a0a0a2 = StandardComponents.createStringSelectionPanel(dialog, "Plugin", DevKitPropertiesDialog.getProjectPluginClassNames(dialog.getOperationContext()), dialog.myProperties, DevkitProperties.PLUGIN);
-        result_960thj_a5a1a0a0a2.setComponent(result_960thj_a0a5a1a0a0a2);
-        final BaseBindedDialog.ConstraintsType result_960thj_a1a5a1a0a0a2 = BaseBindedDialog.ConstraintsType.FIELD;
-        result_960thj_a5a1a0a0a2.setConstraints(result_960thj_a1a5a1a0a0a2);
-        result_960thj_a1a0a0a2.addComponent(result_960thj_a5a1a0a0a2);
         result_960thj_a0a0a2.addTab(result_960thj_a1a0a0a2);
         final BaseTabbedBindedDialog.DialogTab result_960thj_a2a0a0a2 = new BaseTabbedBindedDialog.DialogTab("Dependencies");
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a2a0a0a2 = new BaseTabbedBindedDialog.ComponentDescriptor();
