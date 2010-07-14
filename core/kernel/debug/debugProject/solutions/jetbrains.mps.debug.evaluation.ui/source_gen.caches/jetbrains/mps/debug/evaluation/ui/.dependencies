@@ -97,7 +97,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.integration.ui.WatchableNode" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.Evaluator" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
