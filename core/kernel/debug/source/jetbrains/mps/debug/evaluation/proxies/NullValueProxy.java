@@ -53,4 +53,9 @@ class NullValueProxy implements INullValueProxy {
   public int getLength() {
     throw new NullPointerException("NPE; Getting length of null array.");
   }
+
+  @Override
+  public boolean javaEquals(IObjectValueProxy proxy) {
+    return proxy instanceof NullValueProxy;
+  }
 }
