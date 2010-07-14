@@ -19,7 +19,7 @@
        <sysproperty key="deploy.dir" value="${deploy.dir}"/>
        <sysproperty key="build.number" value="${build.number}"/>
        <arg value="-lib"/>
-       <arg value="${mps.home}/tools/apache-commons"/>
+       <arg value="${mps.home}/build/tools/apache-commons"/>
        <arg value="-buildfile"/>
        <arg value="${mps.home}/build/upload.xml"/>
     </java>
