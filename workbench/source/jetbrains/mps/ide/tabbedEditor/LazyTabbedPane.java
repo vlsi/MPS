@@ -137,7 +137,7 @@ public class LazyTabbedPane extends JPanel implements Disposable {
   }
 
   public void initTab(final ILazyTab tab) {
-    myTabbedEditor.onSelectInnerTab();
+    myTabbedEditor.tabStructureChanged();
     if (myInitializedTabs.contains(tab)) return;
 
     final JPanel panel = (JPanel) myTabbedPane.getComponentAt(myLazyTabs.indexOf(tab));
