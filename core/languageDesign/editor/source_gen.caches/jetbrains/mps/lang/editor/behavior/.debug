@@ -65,15 +65,15 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877280244">
-    <nodeInfo nodeId="1213877280252" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="19" startPosition="27" endLine="20" endPosition="18" />
-    <nodeInfo nodeId="1213877280254" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="138" />
-    <nodeInfo nodeId="1213877280269" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="22" startPosition="138" endLine="23" endPosition="101" />
-    <nodeInfo nodeId="1213877280274" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="23" startPosition="101" endLine="24" endPosition="82" />
-    <nodeInfo nodeId="1213877280280" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="24" startPosition="82" endLine="25" endPosition="120" />
-    <nodeInfo nodeId="1213877280247" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="18" startPosition="83" endLine="21" endPosition="5" />
-    <scopeInfo nodeId="1213877280287" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1213877280251" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="19" startPosition="27" endLine="20" endPosition="18" />
-    <scopeInfo nodeId="1213877280246" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="18" startPosition="83" endLine="25" endPosition="120">
+    <nodeInfo nodeId="1213877280252" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="18" startPosition="27" endLine="19" endPosition="18" />
+    <nodeInfo nodeId="1213877280254" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="20" startPosition="5" endLine="21" endPosition="138" />
+    <nodeInfo nodeId="1213877280269" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="21" startPosition="138" endLine="22" endPosition="101" />
+    <nodeInfo nodeId="1213877280274" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="22" startPosition="101" endLine="23" endPosition="82" />
+    <nodeInfo nodeId="1213877280280" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="23" startPosition="82" endLine="24" endPosition="120" />
+    <nodeInfo nodeId="1213877280247" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="17" startPosition="83" endLine="20" endPosition="5" />
+    <scopeInfo nodeId="1213877280287" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1213877280251" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="18" startPosition="27" endLine="19" endPosition="18" />
+    <scopeInfo nodeId="1213877280246" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="17" startPosition="83" endLine="24" endPosition="120">
       <varInfo nodeId="1213877280255" varName="hostMenuPart" />
       <varInfo nodeId="1213877280270" varName="editedLink" />
       <varInfo nodeId="1213877280275" varName="conceptOfChild" />
@@ -107,14 +107,14 @@
     <scopeInfo nodeId="1213877313329" fileName="CellMenuComponentFeature_Link_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
   <root nodeId="1213877323455">
-    <nodeInfo nodeId="1213877323458" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="154" />
-    <nodeInfo nodeId="1213877323465" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="21" startPosition="154" endLine="22" endPosition="101" />
-    <nodeInfo nodeId="1213877323473" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="23" startPosition="38" endLine="24" endPosition="109" />
-    <nodeInfo nodeId="1213877323480" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="151" />
-    <nodeInfo nodeId="1213877323471" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="22" startPosition="101" endLine="25" endPosition="5" />
-    <scopeInfo nodeId="1213877323490" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="1213877323472" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="23" startPosition="38" endLine="24" endPosition="109" />
-    <scopeInfo nodeId="1213877323457" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="20" startPosition="83" endLine="26" endPosition="151">
+    <nodeInfo nodeId="1213877323458" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="154" />
+    <nodeInfo nodeId="1213877323465" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="20" startPosition="154" endLine="21" endPosition="101" />
+    <nodeInfo nodeId="1213877323473" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="22" startPosition="38" endLine="23" endPosition="109" />
+    <nodeInfo nodeId="1213877323480" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="151" />
+    <nodeInfo nodeId="1213877323471" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="21" startPosition="101" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="1213877323490" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="1213877323472" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="22" startPosition="38" endLine="23" endPosition="109" />
+    <scopeInfo nodeId="1213877323457" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="19" startPosition="83" endLine="25" endPosition="151">
       <varInfo nodeId="1213877323459" varName="hostMenuPart" />
       <varInfo nodeId="1213877323466" varName="parameterObjectType" />
     </scopeInfo>
@@ -382,15 +382,15 @@
     <unitInfo nodeId="1227876801318" fileName="SelectOperation_Behavior.java" startLine="25" startPosition="111" endLine="29" endPosition="5" unitName="jetbrains.mps.lang.editor.behavior.SelectOperation_Behavior$2" />
   </root>
   <root nodeId="1213877438486">
-    <nodeInfo nodeId="1213877438494" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="19" startPosition="27" endLine="20" endPosition="18" />
-    <nodeInfo nodeId="1213877438496" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="138" />
-    <nodeInfo nodeId="1213877438511" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="22" startPosition="138" endLine="23" endPosition="101" />
-    <nodeInfo nodeId="1213877438516" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="23" startPosition="101" endLine="24" endPosition="82" />
-    <nodeInfo nodeId="1213877438522" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="24" startPosition="82" endLine="25" endPosition="119" />
-    <nodeInfo nodeId="1213877438489" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="18" startPosition="83" endLine="21" endPosition="5" />
-    <scopeInfo nodeId="1213877438529" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1213877438493" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="19" startPosition="27" endLine="20" endPosition="18" />
-    <scopeInfo nodeId="1213877438488" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="18" startPosition="83" endLine="25" endPosition="119">
+    <nodeInfo nodeId="1213877438494" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="18" startPosition="27" endLine="19" endPosition="18" />
+    <nodeInfo nodeId="1213877438496" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="20" startPosition="5" endLine="21" endPosition="138" />
+    <nodeInfo nodeId="1213877438511" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="21" startPosition="138" endLine="22" endPosition="101" />
+    <nodeInfo nodeId="1213877438516" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="22" startPosition="101" endLine="23" endPosition="82" />
+    <nodeInfo nodeId="1213877438522" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="23" startPosition="82" endLine="24" endPosition="119" />
+    <nodeInfo nodeId="1213877438489" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="17" startPosition="83" endLine="20" endPosition="5" />
+    <scopeInfo nodeId="1213877438529" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1213877438493" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="18" startPosition="27" endLine="19" endPosition="18" />
+    <scopeInfo nodeId="1213877438488" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="17" startPosition="83" endLine="24" endPosition="119">
       <varInfo nodeId="1213877438497" varName="hostMenuPart" />
       <varInfo nodeId="1213877438512" varName="editedLink" />
       <varInfo nodeId="1213877438517" varName="conceptOfChild" />
@@ -429,14 +429,14 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877516036">
-    <nodeInfo nodeId="1213877516039" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="144" />
-    <nodeInfo nodeId="1213877516047" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="21" startPosition="144" endLine="22" endPosition="102" />
-    <nodeInfo nodeId="1213877516055" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="23" startPosition="38" endLine="24" endPosition="18" />
-    <nodeInfo nodeId="1213877516060" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="119" />
-    <nodeInfo nodeId="1213877516053" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="22" startPosition="102" endLine="25" endPosition="5" />
-    <scopeInfo nodeId="1213877516068" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="1213877516054" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="23" startPosition="38" endLine="24" endPosition="18" />
-    <scopeInfo nodeId="1213877516038" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="20" startPosition="83" endLine="26" endPosition="119">
+    <nodeInfo nodeId="1213877516039" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="144" />
+    <nodeInfo nodeId="1213877516047" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="20" startPosition="144" endLine="21" endPosition="102" />
+    <nodeInfo nodeId="1213877516055" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="22" startPosition="38" endLine="23" endPosition="18" />
+    <nodeInfo nodeId="1213877516060" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="119" />
+    <nodeInfo nodeId="1213877516053" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="21" startPosition="102" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="1213877516068" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="1213877516054" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="22" startPosition="38" endLine="23" endPosition="18" />
+    <scopeInfo nodeId="1213877516038" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="19" startPosition="83" endLine="25" endPosition="119">
       <varInfo nodeId="1213877516048" varName="parameterObjectType" />
       <varInfo nodeId="1213877516040" varName="hostMenuGroup" />
     </scopeInfo>
@@ -821,14 +821,14 @@
     <scopeInfo nodeId="7055725856388840251" fileName="InlineEditorComponent_Behavior.java" startLine="13" startPosition="89" endLine="14" endPosition="227" />
   </root>
   <root nodeId="7806530711846755629">
-    <nodeInfo nodeId="7806530711846849288" fileName="QueryFunction_ParametersList_Behavior.java" startLine="23" startPosition="83" endLine="24" endPosition="139" />
-    <nodeInfo nodeId="7806530711846849312" fileName="QueryFunction_ParametersList_Behavior.java" startLine="24" startPosition="139" endLine="25" endPosition="75" />
-    <nodeInfo nodeId="7806530711846849332" fileName="QueryFunction_ParametersList_Behavior.java" startLine="26" startPosition="31" endLine="27" endPosition="100" />
-    <nodeInfo nodeId="6552123473822749317" fileName="QueryFunction_ParametersList_Behavior.java" startLine="28" startPosition="5" endLine="29" endPosition="108" />
-    <nodeInfo nodeId="7806530711846849330" fileName="QueryFunction_ParametersList_Behavior.java" startLine="25" startPosition="75" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="7806530711846755631" fileName="QueryFunction_ParametersList_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="7806530711846849331" fileName="QueryFunction_ParametersList_Behavior.java" startLine="26" startPosition="31" endLine="27" endPosition="100" />
-    <scopeInfo nodeId="7806530711846755634" fileName="QueryFunction_ParametersList_Behavior.java" startLine="23" startPosition="83" endLine="29" endPosition="108">
+    <nodeInfo nodeId="7806530711846849288" fileName="QueryFunction_ParametersList_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="139" />
+    <nodeInfo nodeId="7806530711846849312" fileName="QueryFunction_ParametersList_Behavior.java" startLine="23" startPosition="139" endLine="24" endPosition="75" />
+    <nodeInfo nodeId="7806530711846849332" fileName="QueryFunction_ParametersList_Behavior.java" startLine="25" startPosition="31" endLine="26" endPosition="100" />
+    <nodeInfo nodeId="6552123473822749317" fileName="QueryFunction_ParametersList_Behavior.java" startLine="27" startPosition="5" endLine="28" endPosition="108" />
+    <nodeInfo nodeId="7806530711846849330" fileName="QueryFunction_ParametersList_Behavior.java" startLine="24" startPosition="75" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="7806530711846755631" fileName="QueryFunction_ParametersList_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="7806530711846849331" fileName="QueryFunction_ParametersList_Behavior.java" startLine="25" startPosition="31" endLine="26" endPosition="100" />
+    <scopeInfo nodeId="7806530711846755634" fileName="QueryFunction_ParametersList_Behavior.java" startLine="22" startPosition="83" endLine="28" endPosition="108">
       <varInfo nodeId="7806530711846849313" varName="expectedType" />
       <varInfo nodeId="7806530711846849289" varName="ancestor" />
     </scopeInfo>

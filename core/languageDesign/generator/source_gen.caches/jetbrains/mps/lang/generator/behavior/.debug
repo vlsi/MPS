@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1213877219536">
-    <nodeInfo nodeId="1213877219539" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="24" startPosition="83" endLine="25" endPosition="136" />
-    <nodeInfo nodeId="1213877219547" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="25" startPosition="136" endLine="26" endPosition="69" />
-    <nodeInfo nodeId="1213877219553" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="26" startPosition="69" endLine="27" endPosition="102" />
-    <nodeInfo nodeId="1213877219561" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="27" startPosition="102" endLine="28" endPosition="198" />
-    <nodeInfo nodeId="1213877219570" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="28" startPosition="198" endLine="29" endPosition="91" />
-    <nodeInfo nodeId="1213877219577" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="29" startPosition="91" endLine="30" endPosition="128" />
-    <nodeInfo nodeId="1213877219584" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="30" startPosition="128" endLine="31" endPosition="75" />
-    <nodeInfo nodeId="1213877219590" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="31" startPosition="75" endLine="32" endPosition="126" />
-    <nodeInfo nodeId="7376433222636453131" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="32" startPosition="126" endLine="33" endPosition="46" />
-    <nodeInfo nodeId="1213877219600" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="34" startPosition="109" endLine="35" endPosition="111" />
-    <nodeInfo nodeId="1213877219611" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="36" startPosition="5" endLine="37" endPosition="28" />
-    <nodeInfo nodeId="1213877219598" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="33" startPosition="46" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="1213877219615" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
-    <scopeInfo nodeId="1213877219599" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="34" startPosition="109" endLine="35" endPosition="111" />
-    <scopeInfo nodeId="1213877219538" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="24" startPosition="83" endLine="37" endPosition="28">
+    <nodeInfo nodeId="1213877219539" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="23" startPosition="83" endLine="24" endPosition="136" />
+    <nodeInfo nodeId="1213877219547" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="24" startPosition="136" endLine="25" endPosition="69" />
+    <nodeInfo nodeId="1213877219553" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="25" startPosition="69" endLine="26" endPosition="102" />
+    <nodeInfo nodeId="1213877219561" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="26" startPosition="102" endLine="27" endPosition="198" />
+    <nodeInfo nodeId="1213877219570" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="27" startPosition="198" endLine="28" endPosition="91" />
+    <nodeInfo nodeId="1213877219577" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="28" startPosition="91" endLine="29" endPosition="128" />
+    <nodeInfo nodeId="1213877219584" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="29" startPosition="128" endLine="30" endPosition="75" />
+    <nodeInfo nodeId="1213877219590" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="30" startPosition="75" endLine="31" endPosition="126" />
+    <nodeInfo nodeId="7376433222636453131" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="31" startPosition="126" endLine="32" endPosition="46" />
+    <nodeInfo nodeId="1213877219600" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="33" startPosition="109" endLine="34" endPosition="111" />
+    <nodeInfo nodeId="1213877219611" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="35" startPosition="5" endLine="36" endPosition="28" />
+    <nodeInfo nodeId="1213877219598" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="32" startPosition="46" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="1213877219615" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
+    <scopeInfo nodeId="1213877219599" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="33" startPosition="109" endLine="34" endPosition="111" />
+    <scopeInfo nodeId="1213877219538" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="23" startPosition="83" endLine="36" endPosition="28">
       <varInfo nodeId="1213877219562" varName="linkSearchScope" />
       <varInfo nodeId="1213877219554" varName="linkRole" />
       <varInfo nodeId="1213877219578" varName="link" />
@@ -233,23 +233,23 @@
     <scopeInfo nodeId="1213877426760" fileName="CopySrcNodeMacro_Behavior.java" startLine="15" startPosition="91" endLine="24" endPosition="16" />
   </root>
   <root nodeId="1213877472999">
-    <nodeInfo nodeId="1213877473002" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="23" startPosition="83" endLine="24" endPosition="134" />
-    <nodeInfo nodeId="1213877473010" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="24" startPosition="134" endLine="25" endPosition="68" />
-    <nodeInfo nodeId="1213877473016" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="25" startPosition="68" endLine="26" endPosition="113" />
-    <nodeInfo nodeId="1213877473024" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="26" startPosition="113" endLine="27" endPosition="205" />
-    <nodeInfo nodeId="1213877473036" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="28" startPosition="28" endLine="29" endPosition="127" />
-    <nodeInfo nodeId="1213877473044" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="29" startPosition="127" endLine="30" endPosition="78" />
-    <nodeInfo nodeId="1213877473052" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="31" startPosition="29" endLine="32" endPosition="92" />
-    <nodeInfo nodeId="1213877473062" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="34" startPosition="5" endLine="35" endPosition="98" />
-    <nodeInfo nodeId="1213877473050" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="30" startPosition="78" endLine="33" endPosition="7" />
-    <nodeInfo nodeId="1213877473034" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="27" startPosition="205" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="1213877473067" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="1213877473051" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="31" startPosition="29" endLine="32" endPosition="92" />
-    <scopeInfo nodeId="1213877473035" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="28" startPosition="28" endLine="33" endPosition="7">
+    <nodeInfo nodeId="1213877473002" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="134" />
+    <nodeInfo nodeId="1213877473010" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="23" startPosition="134" endLine="24" endPosition="68" />
+    <nodeInfo nodeId="1213877473016" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="24" startPosition="68" endLine="25" endPosition="113" />
+    <nodeInfo nodeId="1213877473024" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="25" startPosition="113" endLine="26" endPosition="205" />
+    <nodeInfo nodeId="1213877473036" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="27" startPosition="28" endLine="28" endPosition="127" />
+    <nodeInfo nodeId="1213877473044" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="28" startPosition="127" endLine="29" endPosition="78" />
+    <nodeInfo nodeId="1213877473052" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="30" startPosition="29" endLine="31" endPosition="92" />
+    <nodeInfo nodeId="1213877473062" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="98" />
+    <nodeInfo nodeId="1213877473050" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="29" startPosition="78" endLine="32" endPosition="7" />
+    <nodeInfo nodeId="1213877473034" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="26" startPosition="205" endLine="33" endPosition="5" />
+    <scopeInfo nodeId="1213877473067" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="1213877473051" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="30" startPosition="29" endLine="31" endPosition="92" />
+    <scopeInfo nodeId="1213877473035" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="27" startPosition="28" endLine="32" endPosition="7">
       <varInfo nodeId="1213877473045" varName="dataType" />
       <varInfo nodeId="1213877473037" varName="property" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877473001" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="23" startPosition="83" endLine="35" endPosition="98">
+    <scopeInfo nodeId="1213877473001" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="22" startPosition="83" endLine="34" endPosition="98">
       <varInfo nodeId="1213877473017" varName="propertyName" />
       <varInfo nodeId="1213877473011" varName="attributedNode" />
       <varInfo nodeId="1213877473003" varName="propertyMacro" />
@@ -340,18 +340,18 @@
     <scopeInfo nodeId="1805153994417064766" fileName="PatternReduction_MappingRule_Behavior.java" startLine="13" startPosition="75" endLine="17" endPosition="6" />
   </root>
   <root nodeId="4035562641222622440">
-    <nodeInfo nodeId="4035562641222637925" fileName="TemplateArgumentQuery_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="143" />
-    <nodeInfo nodeId="4035562641222665302" fileName="TemplateArgumentQuery_Behavior.java" startLine="23" startPosition="143" endLine="24" endPosition="127" />
-    <nodeInfo nodeId="4035562641222665315" fileName="TemplateArgumentQuery_Behavior.java" startLine="24" startPosition="127" endLine="25" endPosition="55" />
-    <nodeInfo nodeId="4035562641222665443" fileName="TemplateArgumentQuery_Behavior.java" startLine="26" startPosition="380" endLine="27" endPosition="171" />
-    <nodeInfo nodeId="4035562641222665469" fileName="TemplateArgumentQuery_Behavior.java" startLine="27" startPosition="171" endLine="28" endPosition="98" />
-    <nodeInfo nodeId="4035562641222645875" fileName="TemplateArgumentQuery_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="89" />
-    <nodeInfo nodeId="4035562641222665327" fileName="TemplateArgumentQuery_Behavior.java" startLine="25" startPosition="55" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="4035562641222622442" fileName="TemplateArgumentQuery_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
-    <scopeInfo nodeId="4035562641222665328" fileName="TemplateArgumentQuery_Behavior.java" startLine="26" startPosition="380" endLine="28" endPosition="98">
+    <nodeInfo nodeId="4035562641222637925" fileName="TemplateArgumentQuery_Behavior.java" startLine="21" startPosition="83" endLine="22" endPosition="143" />
+    <nodeInfo nodeId="4035562641222665302" fileName="TemplateArgumentQuery_Behavior.java" startLine="22" startPosition="143" endLine="23" endPosition="127" />
+    <nodeInfo nodeId="4035562641222665315" fileName="TemplateArgumentQuery_Behavior.java" startLine="23" startPosition="127" endLine="24" endPosition="55" />
+    <nodeInfo nodeId="4035562641222665443" fileName="TemplateArgumentQuery_Behavior.java" startLine="25" startPosition="380" endLine="26" endPosition="171" />
+    <nodeInfo nodeId="4035562641222665469" fileName="TemplateArgumentQuery_Behavior.java" startLine="26" startPosition="171" endLine="27" endPosition="98" />
+    <nodeInfo nodeId="4035562641222645875" fileName="TemplateArgumentQuery_Behavior.java" startLine="28" startPosition="5" endLine="29" endPosition="89" />
+    <nodeInfo nodeId="4035562641222665327" fileName="TemplateArgumentQuery_Behavior.java" startLine="24" startPosition="55" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="4035562641222622442" fileName="TemplateArgumentQuery_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
+    <scopeInfo nodeId="4035562641222665328" fileName="TemplateArgumentQuery_Behavior.java" startLine="25" startPosition="380" endLine="27" endPosition="98">
       <varInfo nodeId="4035562641222665444" varName="templateParameter" />
     </scopeInfo>
-    <scopeInfo nodeId="4035562641222622445" fileName="TemplateArgumentQuery_Behavior.java" startLine="22" startPosition="83" endLine="30" endPosition="89">
+    <scopeInfo nodeId="4035562641222622445" fileName="TemplateArgumentQuery_Behavior.java" startLine="21" startPosition="83" endLine="29" endPosition="89">
       <varInfo nodeId="4035562641222665303" varName="call" />
       <varInfo nodeId="4035562641222665316" varName="index" />
       <varInfo nodeId="4035562641222637926" varName="expr" />

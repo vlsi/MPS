@@ -106,7 +106,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_Abstract_Behavior" file="CellMenuPart_Abstract_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellMenuUtil" />
@@ -124,7 +123,6 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Query_Behavior" file="CellMenuPart_ReplaceChild_Group_Query_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
@@ -137,7 +135,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Item_Create_Behavior" file="CellMenuPart_ReplaceChild_Item_Create_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
@@ -149,7 +146,6 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceNode_CustomNodeConcept_Behavior" file="CellMenuPart_ReplaceNode_CustomNodeConcept_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -411,7 +407,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_Behavior" file="QueryFunction_StyleParameter_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
