@@ -7,19 +7,19 @@ import jetbrains.mps.smodel.SNode;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
+import com.intellij.execution.configurations.ConfigurationType;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.ConfigurationFactory;
-import com.intellij.execution.configurations.ConfigurationType;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class DefaultLambdaCalculusFromProgram extends BaseConfigCreator<SNode> implements Cloneable {
   private RunConfiguration myConfig;
 
   public DefaultLambdaCalculusFromProgram() {
-    super(ContainerUtil.findInstance(Extensions.getExtensions(LambdaCalculus_ConfigurationType.CONFIGURATION_TYPE_EP), LambdaCalculus_ConfigurationType.class));
+    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), LambdaCalculus_ConfigurationType.class));
   }
 
   protected RunConfiguration doCreateConfiguration(SNode node) {
@@ -30,7 +30,7 @@ public class DefaultLambdaCalculusFromProgram extends BaseConfigCreator<SNode> i
   private void createConfig(final SNode parameter) {
     DefaultLambdaCalculusFromProgram.this.setSourceElement(new MPSPsiElement(parameter));
     {
-      LambdaCalculus_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(LambdaCalculus_ConfigurationType.CONFIGURATION_TYPE_EP), LambdaCalculus_ConfigurationType.class);
+      LambdaCalculus_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), LambdaCalculus_ConfigurationType.class);
       DefaultLambdaCalculusProgram_Configuration _config = new DefaultLambdaCalculusProgram_Configuration(DefaultLambdaCalculusFromProgram.this.getContext().getProject(), findFactory(configType, "DefaultLambdaCalculusProgram"), "NewConfig");
       _config.setName(SPropertyOperations.getString(parameter, "name"));
       _config.getStateObject().nodeId = parameter.getId();

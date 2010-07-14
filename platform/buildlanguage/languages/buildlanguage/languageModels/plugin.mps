@@ -4670,7 +4670,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration:23" id="7234763849538443893">
     <property name="name:23" value="BuildLanguage" />
-    <property name="caption:23" value="Build" />
+    <property name="caption:23" value="Ant" />
     <property name="iconPath:23" value="${language_descriptor}/icons/build.png" />
     <property name="package:23" value="newRunner" />
   </node>

@@ -248,6 +248,7 @@
     <scopeInfo nodeId="162872405267677847" fileName="typeof_ConfigurationEditorDeclaration_InferenceRule.java" startLine="24" startPosition="92" endLine="31" endPosition="5" />
   </root>
   <root nodeId="1628770029971140613">
+    <nodeInfo nodeId="5003188907305524502" fileName="FixNamingPolicy_QuickFix.java" startLine="16" startPosition="34" endLine="17" endPosition="31" />
     <nodeInfo nodeId="1628770029971140620" fileName="FixNamingPolicy_QuickFix.java" startLine="21" startPosition="162" endLine="22" endPosition="123" />
     <nodeInfo nodeId="1628770029971140637" fileName="FixNamingPolicy_QuickFix.java" startLine="24" startPosition="173" endLine="25" endPosition="62" />
     <nodeInfo nodeId="1628770029971140648" fileName="FixNamingPolicy_QuickFix.java" startLine="25" startPosition="62" endLine="26" endPosition="64" />
@@ -269,11 +270,13 @@
     <scopeInfo nodeId="1628770029971140617" fileName="FixNamingPolicy_QuickFix.java" startLine="20" startPosition="35" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1628770029971140674">
+    <nodeInfo nodeId="1628770029971140693" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="14" startPosition="34" endLine="15" endPosition="88" />
     <nodeInfo nodeId="1628770029971140681" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="18" startPosition="35" endLine="19" endPosition="269" />
     <scopeInfo nodeId="1628770029971140692" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="14" startPosition="34" endLine="15" endPosition="88" />
     <scopeInfo nodeId="1628770029971140680" fileName="FixNamingPolicy_literal_once_QuickFix.java" startLine="18" startPosition="35" endLine="19" endPosition="269" />
   </root>
   <root nodeId="1628770029971140695">
+    <nodeInfo nodeId="1628770029971140712" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="14" startPosition="34" endLine="15" endPosition="89" />
     <nodeInfo nodeId="1628770029971140702" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="18" startPosition="35" endLine="19" endPosition="239" />
     <scopeInfo nodeId="1628770029971140711" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="14" startPosition="34" endLine="15" endPosition="89" />
     <scopeInfo nodeId="1628770029971140701" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="18" startPosition="35" endLine="19" endPosition="239" />

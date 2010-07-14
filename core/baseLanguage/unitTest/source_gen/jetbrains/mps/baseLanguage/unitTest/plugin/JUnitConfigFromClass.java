@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
+import com.intellij.execution.configurations.ConfigurationType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
@@ -15,14 +16,13 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.ConfigurationFactory;
-import com.intellij.execution.configurations.ConfigurationType;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cloneable {
   private RunConfiguration myConfig;
 
   public JUnitConfigFromClass() {
-    super(ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class));
+    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class));
   }
 
   protected RunConfiguration doCreateConfiguration(SNode node) {
@@ -38,7 +38,7 @@ public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cl
     JUnitConfigFromClass.this.setSourceElement(new MPSPsiElement(parameter));
 
     {
-      JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
+      JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
       DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromClass.this.getContext().getProject(), findFactory(configType, "DefaultJUnit"), "NewConfig");
       _config.setName(SPropertyOperations.getString(parameter, "name"));
       _config.getStateObject().type = JUnitRunTypes.NODE;

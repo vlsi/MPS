@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.SNode;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
+import com.intellij.execution.configurations.ConfigurationType;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -18,14 +20,21 @@ import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.ConfigurationFactory;
-import com.intellij.execution.configurations.ConfigurationType;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class DefaultCustomMpsLanguageConfigurationFromMPSBuild extends BaseConfigCreator<SNode> implements Cloneable {
   private RunConfiguration myConfig;
 
   public DefaultCustomMpsLanguageConfigurationFromMPSBuild() {
-    super(ContainerUtil.findInstance(Extensions.getExtensions(CustomMPSConfigurationType_ConfigurationType.CONFIGURATION_TYPE_EP), CustomMPSConfigurationType_ConfigurationType.class));
+    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), new _FunctionTypes._return_P0_E0<Class<ConfigurationType>>() {
+      public Class<ConfigurationType> invoke() {
+        try {
+          return (Class<ConfigurationType>) getClass().getClassLoader().loadClass("jetbrains.mps.buildlanguage.plugin.BuildLanguage_ConfigurationType");
+        } catch (ClassNotFoundException cl) {
+          return (Class<ConfigurationType>) null;
+        }
+      }
+    }.invoke()));
   }
 
   protected RunConfiguration doCreateConfiguration(SNode node) {
@@ -56,9 +65,17 @@ public class DefaultCustomMpsLanguageConfigurationFromMPSBuild extends BaseConfi
 
     DefaultCustomMpsLanguageConfigurationFromMPSBuild.this.setSourceElement(new MPSPsiElement(parameter));
     {
-      CustomMPSConfigurationType_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(CustomMPSConfigurationType_ConfigurationType.CONFIGURATION_TYPE_EP), CustomMPSConfigurationType_ConfigurationType.class);
+      ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), new _FunctionTypes._return_P0_E0<Class<ConfigurationType>>() {
+        public Class<ConfigurationType> invoke() {
+          try {
+            return (Class<ConfigurationType>) getClass().getClassLoader().loadClass("jetbrains.mps.buildlanguage.plugin.BuildLanguage_ConfigurationType");
+          } catch (ClassNotFoundException cl) {
+            return (Class<ConfigurationType>) null;
+          }
+        }
+      }.invoke());
       DefaultCustomMpsApplication_Configuration _config = new DefaultCustomMpsApplication_Configuration(DefaultCustomMpsLanguageConfigurationFromMPSBuild.this.getContext().getProject(), findFactory(configType, "DefaultCustomMpsApplication"), "NewConfig");
-      _config.setName(SPropertyOperations.getString(layout.value, "name") + ".mpsbuild." + SPropertyOperations.getString(configuration.value, "name"));
+      _config.setName(SPropertyOperations.getString(layout.value, "") + ".mpsbuild." + SPropertyOperations.getString(configuration.value, ""));
       _config.getStateObject().nodeId = layout.value.getId();
       _config.getStateObject().modelId = layout.value.getModel().getModelDescriptor().getSModelReference().toString();
       _config.getStateObject().configurationId = configurationId.value;

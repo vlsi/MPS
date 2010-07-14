@@ -72,6 +72,8 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877309619">
+    <nodeInfo nodeId="1213877309622" fileName="ToolType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="114" />
+    <nodeInfo nodeId="1213877309633" fileName="ToolType_Behavior.java" startLine="18" startPosition="80" endLine="19" endPosition="16" />
     <scopeInfo nodeId="1213877309637" fileName="ToolType_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="1213877309621" fileName="ToolType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="114" />
     <scopeInfo nodeId="1213877309632" fileName="ToolType_Behavior.java" startLine="18" startPosition="80" endLine="19" endPosition="16" />
@@ -82,6 +84,7 @@
     <scopeInfo nodeId="1213877319166" fileName="GroupType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="134" />
   </root>
   <root nodeId="1213877322092">
+    <nodeInfo nodeId="1213877322098" fileName="PreferencesComponentDeclaration_Behavior.java" startLine="17" startPosition="72" endLine="18" endPosition="85" />
     <nodeInfo nodeId="1213877322114" fileName="PreferencesComponentDeclaration_Behavior.java" startLine="21" startPosition="72" endLine="22" endPosition="120" />
     <nodeInfo nodeId="1213877322120" fileName="PreferencesComponentDeclaration_Behavior.java" startLine="22" startPosition="120" endLine="23" endPosition="77" />
     <nodeInfo nodeId="1217674787105" fileName="PreferencesComponentDeclaration_Behavior.java" startLine="23" startPosition="77" endLine="24" endPosition="16" />
@@ -103,6 +106,7 @@
     <nodeInfo nodeId="1213877371972" fileName="ActionDeclaration_Behavior.java" startLine="25" startPosition="72" endLine="26" endPosition="106" />
     <nodeInfo nodeId="1213877371978" fileName="ActionDeclaration_Behavior.java" startLine="26" startPosition="106" endLine="27" endPosition="63" />
     <nodeInfo nodeId="1213877371985" fileName="ActionDeclaration_Behavior.java" startLine="27" startPosition="63" endLine="28" endPosition="16" />
+    <nodeInfo nodeId="5003188907305392394" fileName="ActionDeclaration_Behavior.java" startLine="31" startPosition="98" endLine="32" endPosition="54" />
     <scopeInfo nodeId="1213877371871" fileName="ActionDeclaration_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="1213877371944" fileName="ActionDeclaration_Behavior.java" startLine="17" startPosition="76" endLine="18" endPosition="99" />
     <scopeInfo nodeId="1213877371954" fileName="ActionDeclaration_Behavior.java" startLine="21" startPosition="83" endLine="22" endPosition="141" />
@@ -112,6 +116,8 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877431630">
+    <nodeInfo nodeId="1213877431634" fileName="GenerationListenerDeclaration_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="83" />
+    <nodeInfo nodeId="1213877431643" fileName="GenerationListenerDeclaration_Behavior.java" startLine="17" startPosition="72" endLine="18" endPosition="115" />
     <scopeInfo nodeId="1213877431649" fileName="GenerationListenerDeclaration_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1213877431633" fileName="GenerationListenerDeclaration_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="83" />
     <scopeInfo nodeId="1213877431642" fileName="GenerationListenerDeclaration_Behavior.java" startLine="17" startPosition="72" endLine="18" endPosition="115" />
@@ -132,6 +138,7 @@
     <nodeInfo nodeId="1213877494326" fileName="ActionGroupDeclaration_Behavior.java" startLine="38" startPosition="72" endLine="39" endPosition="105" />
     <nodeInfo nodeId="1213877494332" fileName="ActionGroupDeclaration_Behavior.java" startLine="39" startPosition="105" endLine="40" endPosition="68" />
     <nodeInfo nodeId="1213877494339" fileName="ActionGroupDeclaration_Behavior.java" startLine="40" startPosition="68" endLine="41" endPosition="16" />
+    <nodeInfo nodeId="5003188907305392409" fileName="ActionGroupDeclaration_Behavior.java" startLine="44" startPosition="98" endLine="45" endPosition="54" />
     <nodeInfo nodeId="1213877494257" fileName="ActionGroupDeclaration_Behavior.java" startLine="19" startPosition="138" endLine="22" endPosition="5" />
     <scopeInfo nodeId="1213877494241" fileName="ActionGroupDeclaration_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="1213877494258" fileName="ActionGroupDeclaration_Behavior.java" startLine="20" startPosition="30" endLine="21" endPosition="147" />
@@ -148,6 +155,8 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877531574">
+    <nodeInfo nodeId="1213877531577" fileName="PreferencesComponentType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="143" />
+    <nodeInfo nodeId="1213877531589" fileName="PreferencesComponentType_Behavior.java" startLine="18" startPosition="80" endLine="19" endPosition="16" />
     <scopeInfo nodeId="1213877531593" fileName="PreferencesComponentType_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="1213877531576" fileName="PreferencesComponentType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="143" />
     <scopeInfo nodeId="1213877531588" fileName="PreferencesComponentType_Behavior.java" startLine="18" startPosition="80" endLine="19" endPosition="16" />
@@ -193,7 +202,9 @@
     <nodeInfo nodeId="1171743928472823389" fileName="ActionDataParameterDeclaration_Behavior.java" startLine="36" startPosition="337" endLine="37" endPosition="198" />
     <nodeInfo nodeId="1171743928472823413" fileName="ActionDataParameterDeclaration_Behavior.java" startLine="37" startPosition="198" endLine="38" endPosition="198" />
     <nodeInfo nodeId="1227641889592" fileName="ActionDataParameterDeclaration_Behavior.java" startLine="38" startPosition="198" endLine="39" endPosition="20" />
+    <nodeInfo nodeId="47694270442130530" fileName="ActionDataParameterDeclaration_Behavior.java" startLine="44" startPosition="39" endLine="45" endPosition="372" />
     <nodeInfo nodeId="47694270442130548" fileName="ActionDataParameterDeclaration_Behavior.java" startLine="48" startPosition="29" endLine="49" endPosition="16" />
+    <nodeInfo nodeId="47694270442130566" fileName="ActionDataParameterDeclaration_Behavior.java" startLine="52" startPosition="39" endLine="53" endPosition="120" />
     <nodeInfo nodeId="47694270442130578" fileName="ActionDataParameterDeclaration_Behavior.java" startLine="56" startPosition="24" endLine="57" endPosition="16" />
     <nodeInfo nodeId="47694270442130583" fileName="ActionDataParameterDeclaration_Behavior.java" startLine="58" startPosition="5" endLine="59" endPosition="175" />
     <nodeInfo nodeId="47694270442130546" fileName="ActionDataParameterDeclaration_Behavior.java" startLine="47" startPosition="15" endLine="50" endPosition="5" />
@@ -225,6 +236,7 @@
     <nodeInfo nodeId="1217680615664" fileName="PreferencePage_Behavior.java" startLine="15" startPosition="76" endLine="16" endPosition="189" />
     <nodeInfo nodeId="1217680685471" fileName="PreferencePage_Behavior.java" startLine="16" startPosition="189" endLine="17" endPosition="103" />
     <nodeInfo nodeId="1217679841475" fileName="PreferencePage_Behavior.java" startLine="17" startPosition="103" endLine="18" endPosition="63" />
+    <nodeInfo nodeId="5003188907305392417" fileName="PreferencePage_Behavior.java" startLine="21" startPosition="98" endLine="22" endPosition="51" />
     <scopeInfo nodeId="1217679807204" fileName="PreferencePage_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="5003188907305392416" fileName="PreferencePage_Behavior.java" startLine="21" startPosition="98" endLine="22" endPosition="51" />
     <scopeInfo nodeId="1217679829879" fileName="PreferencePage_Behavior.java" startLine="15" startPosition="76" endLine="18" endPosition="63">
@@ -256,10 +268,12 @@
     <scopeInfo nodeId="1230213600261" fileName="CommandClosureLiteral_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="148" />
   </root>
   <root nodeId="144706109457730959">
+    <nodeInfo nodeId="144706109457735801" fileName="SingletabbedEditorTab_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="89" />
     <scopeInfo nodeId="144706109457730961" fileName="SingletabbedEditorTab_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="144706109457730964" fileName="SingletabbedEditorTab_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="89" />
   </root>
   <root nodeId="144706109457735805">
+    <nodeInfo nodeId="144706109457735811" fileName="MultitabbedEditorTab_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="88" />
     <scopeInfo nodeId="144706109457735807" fileName="MultitabbedEditorTab_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="144706109457735810" fileName="MultitabbedEditorTab_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="88" />
   </root>
@@ -351,16 +365,22 @@
     <scopeInfo nodeId="5528847031674340390" fileName="RunConfigCreator_Behavior.java" startLine="20" startPosition="79" endLine="21" endPosition="16" />
   </root>
   <root nodeId="5528847031674334461">
+    <nodeInfo nodeId="5528847031674340350" fileName="RunModelConfigCreator_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="114" />
+    <nodeInfo nodeId="5528847031674340403" fileName="RunModelConfigCreator_Behavior.java" startLine="17" startPosition="79" endLine="18" endPosition="82" />
     <scopeInfo nodeId="5528847031674334463" fileName="RunModelConfigCreator_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="5528847031674334473" fileName="RunModelConfigCreator_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="114" />
     <scopeInfo nodeId="5528847031674340400" fileName="RunModelConfigCreator_Behavior.java" startLine="17" startPosition="79" endLine="18" endPosition="82" />
   </root>
   <root nodeId="5528847031674340330">
+    <nodeInfo nodeId="5528847031674340347" fileName="RunModuleConfigCreator_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="117" />
+    <nodeInfo nodeId="5528847031674340416" fileName="RunModuleConfigCreator_Behavior.java" startLine="17" startPosition="79" endLine="18" endPosition="83" />
     <scopeInfo nodeId="5528847031674340332" fileName="RunModuleConfigCreator_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="5528847031674340336" fileName="RunModuleConfigCreator_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="117" />
     <scopeInfo nodeId="5528847031674340413" fileName="RunModuleConfigCreator_Behavior.java" startLine="17" startPosition="79" endLine="18" endPosition="83" />
   </root>
   <root nodeId="5528847031674340355">
+    <nodeInfo nodeId="5528847031674340364" fileName="RunNodeConfigCreator_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="113" />
+    <nodeInfo nodeId="5528847031674340429" fileName="RunNodeConfigCreator_Behavior.java" startLine="17" startPosition="79" endLine="18" endPosition="81" />
     <scopeInfo nodeId="5528847031674340357" fileName="RunNodeConfigCreator_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="5528847031674340361" fileName="RunNodeConfigCreator_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="113" />
     <scopeInfo nodeId="5528847031674340426" fileName="RunNodeConfigCreator_Behavior.java" startLine="17" startPosition="79" endLine="18" endPosition="81" />
@@ -375,6 +395,7 @@
   <root nodeId="6547237850567463421">
     <nodeInfo nodeId="6547237850567463430" fileName="BaseToolDeclaration_Behavior.java" startLine="27" startPosition="82" endLine="28" endPosition="97" />
     <nodeInfo nodeId="6547237850567463441" fileName="BaseToolDeclaration_Behavior.java" startLine="31" startPosition="89" endLine="32" endPosition="149" />
+    <nodeInfo nodeId="6547237850567463458" fileName="BaseToolDeclaration_Behavior.java" startLine="35" startPosition="76" endLine="36" endPosition="69" />
     <nodeInfo nodeId="6547237850567463469" fileName="BaseToolDeclaration_Behavior.java" startLine="39" startPosition="72" endLine="40" endPosition="104" />
     <nodeInfo nodeId="6547237850567463475" fileName="BaseToolDeclaration_Behavior.java" startLine="40" startPosition="104" endLine="41" endPosition="61" />
     <nodeInfo nodeId="6547237850567463481" fileName="BaseToolDeclaration_Behavior.java" startLine="41" startPosition="61" endLine="42" endPosition="16" />
@@ -382,6 +403,7 @@
     <nodeInfo nodeId="6547237850567463495" fileName="BaseToolDeclaration_Behavior.java" startLine="49" startPosition="85" endLine="50" endPosition="59" />
     <nodeInfo nodeId="6547237850567463505" fileName="BaseToolDeclaration_Behavior.java" startLine="51" startPosition="25" endLine="52" endPosition="18" />
     <nodeInfo nodeId="6547237850567463507" fileName="BaseToolDeclaration_Behavior.java" startLine="53" startPosition="5" endLine="54" endPosition="131" />
+    <nodeInfo nodeId="6547237850567463521" fileName="BaseToolDeclaration_Behavior.java" startLine="57" startPosition="98" endLine="58" endPosition="54" />
     <nodeInfo nodeId="6547237850567463500" fileName="BaseToolDeclaration_Behavior.java" startLine="50" startPosition="59" endLine="53" endPosition="5" />
     <scopeInfo nodeId="6547237850567463423" fileName="BaseToolDeclaration_Behavior.java" startLine="24" startPosition="43" endLine="24" endPosition="43" />
     <scopeInfo nodeId="6547237850567463429" fileName="BaseToolDeclaration_Behavior.java" startLine="27" startPosition="82" endLine="28" endPosition="97" />
@@ -398,57 +420,72 @@
     </scopeInfo>
   </root>
   <root nodeId="7559322914920376280">
+    <nodeInfo nodeId="7559322914920403258" fileName="BaseCreatorTarget_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="16" />
     <scopeInfo nodeId="7559322914920376282" fileName="BaseCreatorTarget_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="7559322914920378171" fileName="BaseCreatorTarget_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="16" />
   </root>
   <root nodeId="7559322914920403624">
+    <nodeInfo nodeId="7559322914920418718" fileName="NodesCreatorTarget_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="113" />
     <scopeInfo nodeId="7559322914920403626" fileName="NodesCreatorTarget_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="7559322914920403630" fileName="NodesCreatorTarget_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="113" />
   </root>
   <root nodeId="7840798570674946775">
     <nodeInfo nodeId="7840798570674947569" fileName="RunConfigurationTypeDeclaration_Behavior.java" startLine="15" startPosition="82" endLine="16" endPosition="110" />
     <nodeInfo nodeId="7840798570674947580" fileName="RunConfigurationTypeDeclaration_Behavior.java" startLine="19" startPosition="89" endLine="20" endPosition="161" />
+    <nodeInfo nodeId="5003188907305392441" fileName="RunConfigurationTypeDeclaration_Behavior.java" startLine="23" startPosition="98" endLine="24" endPosition="54" />
     <scopeInfo nodeId="7840798570674946777" fileName="RunConfigurationTypeDeclaration_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="7840798570674947568" fileName="RunConfigurationTypeDeclaration_Behavior.java" startLine="15" startPosition="82" endLine="16" endPosition="110" />
     <scopeInfo nodeId="7840798570674947579" fileName="RunConfigurationTypeDeclaration_Behavior.java" startLine="19" startPosition="89" endLine="20" endPosition="161" />
     <scopeInfo nodeId="5003188907305392440" fileName="RunConfigurationTypeDeclaration_Behavior.java" startLine="23" startPosition="98" endLine="24" endPosition="54" />
   </root>
   <root nodeId="7840798570674951624">
-    <nodeInfo nodeId="7840798570674951659" fileName="RunConfigurationDeclaration_Behavior.java" startLine="32" startPosition="82" endLine="33" endPosition="106" />
-    <nodeInfo nodeId="7840798570674951670" fileName="RunConfigurationDeclaration_Behavior.java" startLine="36" startPosition="89" endLine="37" endPosition="157" />
-    <nodeInfo nodeId="7840798570674951631" fileName="RunConfigurationDeclaration_Behavior.java" startLine="40" startPosition="89" endLine="41" endPosition="100" />
-    <nodeInfo nodeId="7840798570674951642" fileName="RunConfigurationDeclaration_Behavior.java" startLine="44" startPosition="96" endLine="45" endPosition="164" />
-    <nodeInfo nodeId="7974234327424532524" fileName="RunConfigurationDeclaration_Behavior.java" startLine="52" startPosition="72" endLine="53" endPosition="103" />
-    <nodeInfo nodeId="453992125913307446" fileName="RunConfigurationDeclaration_Behavior.java" startLine="56" startPosition="103" endLine="57" endPosition="172" />
-    <nodeInfo nodeId="9017024590936657802" fileName="RunConfigurationDeclaration_Behavior.java" startLine="66" startPosition="85" endLine="67" endPosition="123" />
-    <nodeInfo nodeId="9017024590936657810" fileName="RunConfigurationDeclaration_Behavior.java" startLine="67" startPosition="123" endLine="68" endPosition="135" />
-    <nodeInfo nodeId="9017024590936636666" fileName="RunConfigurationDeclaration_Behavior.java" startLine="68" startPosition="135" endLine="69" endPosition="28" />
-    <nodeInfo nodeId="9017024590936625379" fileName="RunConfigurationDeclaration_Behavior.java" startLine="71" startPosition="67" endLine="72" endPosition="99" />
-    <nodeInfo nodeId="9017024590936602510" fileName="RunConfigurationDeclaration_Behavior.java" startLine="73" startPosition="5" endLine="74" endPosition="95" />
-    <nodeInfo nodeId="9017024590936609135" fileName="RunConfigurationDeclaration_Behavior.java" startLine="70" startPosition="5" endLine="73" endPosition="5" />
-    <nodeInfo nodeId="453992125913893387" fileName="RunConfigurationDeclaration_Behavior.java" startLine="58" startPosition="75" endLine="62" endPosition="0" />
-    <nodeInfo nodeId="453992125913307454" fileName="RunConfigurationDeclaration_Behavior.java" startLine="57" startPosition="172" endLine="62" endPosition="24" />
-    <nodeInfo nodeId="9017024590936636651" fileName="RunConfigurationDeclaration_Behavior.java" startLine="65" startPosition="80" endLine="70" endPosition="5" />
-    <scopeInfo nodeId="7840798570674951626" fileName="RunConfigurationDeclaration_Behavior.java" startLine="29" startPosition="43" endLine="29" endPosition="43" />
-    <scopeInfo nodeId="7840798570674951658" fileName="RunConfigurationDeclaration_Behavior.java" startLine="32" startPosition="82" endLine="33" endPosition="106" />
-    <scopeInfo nodeId="7840798570674951669" fileName="RunConfigurationDeclaration_Behavior.java" startLine="36" startPosition="89" endLine="37" endPosition="157" />
-    <scopeInfo nodeId="7840798570674951630" fileName="RunConfigurationDeclaration_Behavior.java" startLine="40" startPosition="89" endLine="41" endPosition="100" />
-    <scopeInfo nodeId="7840798570674951641" fileName="RunConfigurationDeclaration_Behavior.java" startLine="44" startPosition="96" endLine="45" endPosition="164" />
-    <scopeInfo nodeId="5003188907305392431" fileName="RunConfigurationDeclaration_Behavior.java" startLine="48" startPosition="98" endLine="49" endPosition="54" />
-    <scopeInfo nodeId="7974234327424532521" fileName="RunConfigurationDeclaration_Behavior.java" startLine="52" startPosition="72" endLine="53" endPosition="103" />
-    <scopeInfo nodeId="453992125913893388" fileName="RunConfigurationDeclaration_Behavior.java" startLine="59" startPosition="41" endLine="60" endPosition="96" />
-    <scopeInfo nodeId="9017024590936609136" fileName="RunConfigurationDeclaration_Behavior.java" startLine="71" startPosition="67" endLine="72" endPosition="99" />
-    <scopeInfo nodeId="9017024590936636652" fileName="RunConfigurationDeclaration_Behavior.java" startLine="66" startPosition="85" endLine="69" endPosition="28">
+    <nodeInfo nodeId="7840798570674951659" fileName="RunConfigurationDeclaration_Behavior.java" startLine="33" startPosition="82" endLine="34" endPosition="106" />
+    <nodeInfo nodeId="7840798570674951670" fileName="RunConfigurationDeclaration_Behavior.java" startLine="37" startPosition="89" endLine="38" endPosition="157" />
+    <nodeInfo nodeId="7840798570674951631" fileName="RunConfigurationDeclaration_Behavior.java" startLine="41" startPosition="89" endLine="42" endPosition="100" />
+    <nodeInfo nodeId="7840798570674951642" fileName="RunConfigurationDeclaration_Behavior.java" startLine="45" startPosition="96" endLine="46" endPosition="164" />
+    <nodeInfo nodeId="5003188907305392432" fileName="RunConfigurationDeclaration_Behavior.java" startLine="49" startPosition="98" endLine="50" endPosition="54" />
+    <nodeInfo nodeId="7974234327424532524" fileName="RunConfigurationDeclaration_Behavior.java" startLine="53" startPosition="72" endLine="54" endPosition="103" />
+    <nodeInfo nodeId="453992125913307446" fileName="RunConfigurationDeclaration_Behavior.java" startLine="57" startPosition="103" endLine="58" endPosition="172" />
+    <nodeInfo nodeId="453992125913893394" fileName="RunConfigurationDeclaration_Behavior.java" startLine="60" startPosition="41" endLine="61" endPosition="96" />
+    <nodeInfo nodeId="9017024590936657802" fileName="RunConfigurationDeclaration_Behavior.java" startLine="67" startPosition="85" endLine="68" endPosition="123" />
+    <nodeInfo nodeId="9017024590936657810" fileName="RunConfigurationDeclaration_Behavior.java" startLine="68" startPosition="123" endLine="69" endPosition="135" />
+    <nodeInfo nodeId="9017024590936636666" fileName="RunConfigurationDeclaration_Behavior.java" startLine="69" startPosition="135" endLine="70" endPosition="28" />
+    <nodeInfo nodeId="9017024590936625379" fileName="RunConfigurationDeclaration_Behavior.java" startLine="72" startPosition="67" endLine="73" endPosition="99" />
+    <nodeInfo nodeId="9017024590936602510" fileName="RunConfigurationDeclaration_Behavior.java" startLine="74" startPosition="5" endLine="75" endPosition="95" />
+    <nodeInfo nodeId="5236594288019753890" fileName="RunConfigurationDeclaration_Behavior.java" startLine="78" startPosition="76" endLine="79" endPosition="74" />
+    <nodeInfo nodeId="5236594288019753907" fileName="RunConfigurationDeclaration_Behavior.java" startLine="80" startPosition="23" endLine="81" endPosition="19" />
+    <nodeInfo nodeId="5236594288019753858" fileName="RunConfigurationDeclaration_Behavior.java" startLine="82" startPosition="5" endLine="83" endPosition="158" />
+    <nodeInfo nodeId="9017024590936609135" fileName="RunConfigurationDeclaration_Behavior.java" startLine="71" startPosition="5" endLine="74" endPosition="5" />
+    <nodeInfo nodeId="5236594288019753898" fileName="RunConfigurationDeclaration_Behavior.java" startLine="79" startPosition="74" endLine="82" endPosition="5" />
+    <nodeInfo nodeId="453992125913893387" fileName="RunConfigurationDeclaration_Behavior.java" startLine="59" startPosition="75" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="453992125913307454" fileName="RunConfigurationDeclaration_Behavior.java" startLine="58" startPosition="172" endLine="63" endPosition="24" />
+    <nodeInfo nodeId="9017024590936636651" fileName="RunConfigurationDeclaration_Behavior.java" startLine="66" startPosition="80" endLine="71" endPosition="5" />
+    <scopeInfo nodeId="7840798570674951626" fileName="RunConfigurationDeclaration_Behavior.java" startLine="30" startPosition="43" endLine="30" endPosition="43" />
+    <scopeInfo nodeId="7840798570674951658" fileName="RunConfigurationDeclaration_Behavior.java" startLine="33" startPosition="82" endLine="34" endPosition="106" />
+    <scopeInfo nodeId="7840798570674951669" fileName="RunConfigurationDeclaration_Behavior.java" startLine="37" startPosition="89" endLine="38" endPosition="157" />
+    <scopeInfo nodeId="7840798570674951630" fileName="RunConfigurationDeclaration_Behavior.java" startLine="41" startPosition="89" endLine="42" endPosition="100" />
+    <scopeInfo nodeId="7840798570674951641" fileName="RunConfigurationDeclaration_Behavior.java" startLine="45" startPosition="96" endLine="46" endPosition="164" />
+    <scopeInfo nodeId="5003188907305392431" fileName="RunConfigurationDeclaration_Behavior.java" startLine="49" startPosition="98" endLine="50" endPosition="54" />
+    <scopeInfo nodeId="7974234327424532521" fileName="RunConfigurationDeclaration_Behavior.java" startLine="53" startPosition="72" endLine="54" endPosition="103" />
+    <scopeInfo nodeId="453992125913893388" fileName="RunConfigurationDeclaration_Behavior.java" startLine="60" startPosition="41" endLine="61" endPosition="96" />
+    <scopeInfo nodeId="9017024590936609136" fileName="RunConfigurationDeclaration_Behavior.java" startLine="72" startPosition="67" endLine="73" endPosition="99" />
+    <scopeInfo nodeId="5236594288019753899" fileName="RunConfigurationDeclaration_Behavior.java" startLine="80" startPosition="23" endLine="81" endPosition="19" />
+    <scopeInfo nodeId="9017024590936636652" fileName="RunConfigurationDeclaration_Behavior.java" startLine="67" startPosition="85" endLine="70" endPosition="28">
       <varInfo nodeId="9017024590936657803" varName="classifierType" />
     </scopeInfo>
-    <scopeInfo nodeId="453992125913893387" fileName="RunConfigurationDeclaration_Behavior.java" startLine="58" startPosition="75" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="444169778578531743" fileName="RunConfigurationDeclaration_Behavior.java" startLine="56" startPosition="103" endLine="62" endPosition="24">
+    <scopeInfo nodeId="453992125913893387" fileName="RunConfigurationDeclaration_Behavior.java" startLine="59" startPosition="75" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="5236594288019752591" fileName="RunConfigurationDeclaration_Behavior.java" startLine="78" startPosition="76" endLine="83" endPosition="158">
+      <varInfo nodeId="5236594288019753891" varName="type" />
+    </scopeInfo>
+    <scopeInfo nodeId="444169778578531743" fileName="RunConfigurationDeclaration_Behavior.java" startLine="57" startPosition="103" endLine="63" endPosition="24">
       <varInfo nodeId="453992125913307447" varName="members" />
     </scopeInfo>
-    <scopeInfo nodeId="9017024590936598179" fileName="RunConfigurationDeclaration_Behavior.java" startLine="65" startPosition="80" endLine="74" endPosition="95" />
-    <unitInfo nodeId="453992125913893387" fileName="RunConfigurationDeclaration_Behavior.java" startLine="58" startPosition="52" endLine="62" endPosition="5" unitName="jetbrains.mps.lang.plugin.behavior.RunConfigurationDeclaration_Behavior$1" />
+    <scopeInfo nodeId="9017024590936598179" fileName="RunConfigurationDeclaration_Behavior.java" startLine="66" startPosition="80" endLine="75" endPosition="95" />
+    <unitInfo nodeId="453992125913893387" fileName="RunConfigurationDeclaration_Behavior.java" startLine="59" startPosition="52" endLine="63" endPosition="5" unitName="jetbrains.mps.lang.plugin.behavior.RunConfigurationDeclaration_Behavior$1" />
   </root>
   <root nodeId="7974234327424528832">
+    <nodeInfo nodeId="7974234327424528837" fileName="RunConfigType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="119" />
+    <nodeInfo nodeId="7974234327424528849" fileName="RunConfigType_Behavior.java" startLine="18" startPosition="80" endLine="19" endPosition="16" />
     <scopeInfo nodeId="7974234327424528834" fileName="RunConfigType_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="7974234327424528836" fileName="RunConfigType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="119" />
     <scopeInfo nodeId="7974234327424528848" fileName="RunConfigType_Behavior.java" startLine="18" startPosition="80" endLine="19" endPosition="16" />

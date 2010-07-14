@@ -12139,7 +12139,7 @@
     <property name="package:0" value="runner" />
     <link role="stateTypeParameter:0" targetNodeId="92.~RunProfileState" resolveInfo="RunProfileState" />
     <link role="conceptDeclaration:0" targetNodeId="1.1202916958754:7" resolveInfo="MPSLayout" />
-    <link role="configType:0" targetNodeId="2823216123682107217" resolveInfo="PackagingConfigurationType" />
+    <link role="configType:0" targetNodeId="73.7234763849538443893:0" resolveInfo="BuildLanguage" />
     <node role="methodDeclaration:0" type="jetbrains.mps.lang.plugin.structure.RunConfigurationMethodDeclaration:23" id="2047676454991375186">
       <property name="name:23" value="getConfiguration" />
       <node role="returnType:23" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="2047676454991375191">
@@ -12572,12 +12572,6 @@
         </node>
       </node>
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration:23" id="2823216123682107217">
-    <property name="package:23" value="runner" />
-    <property name="name:23" value="PackagingConfigurationType" />
-    <property name="caption:23" value="Packaging Script" />
-    <property name="iconPath:23" value="${language_descriptor}/icons/build.png" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5842104767988515740">
     <property name="package:3" value="runner" />
@@ -13266,7 +13260,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="1325286122618155431">
     <property name="package:23" value="runner" />
     <property name="name:23" value="DefaultPackagingLanguageConfigurationFromMPSLayout" />
-    <link role="rcType:23" targetNodeId="2823216123682107217" resolveInfo="PackagingConfigurationType" />
+    <link role="rcType:23" targetNodeId="73.7234763849538443893:0" resolveInfo="BuildLanguage" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="1325286122618175273">
       <link role="concept:23" targetNodeId="1.1202916958754:7" resolveInfo="MPSLayout" />
     </node>
@@ -13380,7 +13374,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="1325286122618219198">
     <property name="package:23" value="runner" />
     <property name="name:23" value="DefaultPackagingLanguageConfigurationFromConfiguration" />
-    <link role="rcType:23" targetNodeId="2823216123682107217" resolveInfo="PackagingConfigurationType" />
+    <link role="rcType:23" targetNodeId="73.7234763849538443893:0" resolveInfo="BuildLanguage" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="1325286122618219202">
       <link role="concept:23" targetNodeId="1.1204115658627:7" resolveInfo="Configuration" />
     </node>

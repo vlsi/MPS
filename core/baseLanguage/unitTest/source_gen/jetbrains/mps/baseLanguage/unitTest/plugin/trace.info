@@ -2612,14 +2612,14 @@
     <nodeInfo nodeId="1969840607717542436" fileName="JUnitConfigFromProject.java" startLine="32" startPosition="0" endLine="33" endPosition="79" />
     <nodeInfo nodeId="1969840607717542438" fileName="JUnitConfigFromProject.java" startLine="33" startPosition="79" endLine="34" endPosition="0" />
     <nodeInfo nodeId="1969840607717542959" fileName="JUnitConfigFromProject.java" startLine="34" startPosition="0" endLine="35" endPosition="57" />
-    <nodeInfo nodeId="1969840607717542452" fileName="JUnitConfigFromProject.java" startLine="36" startPosition="5" endLine="37" endPosition="174" />
+    <nodeInfo nodeId="1969840607717542452" fileName="JUnitConfigFromProject.java" startLine="36" startPosition="5" endLine="37" endPosition="168" />
     <nodeInfo nodeId="1969840607717542452" fileName="JUnitConfigFromProject.java" startLine="43" startPosition="8" endLine="44" endPosition="28" />
     <nodeInfo nodeId="1969840607717542456" fileName="JUnitConfigFromProject.java" startLine="44" startPosition="28" endLine="45" endPosition="60" />
     <nodeInfo nodeId="1969840607717542452" fileName="JUnitConfigFromProject.java" startLine="45" startPosition="60" endLine="46" endPosition="53" />
     <nodeInfo nodeId="5380552589326058899" fileName="JUnitConfigFromProject.java" startLine="55" startPosition="56" endLine="56" endPosition="41" />
     <nodeInfo nodeId="5380552589325860307" fileName="JUnitConfigFromProject.java" startLine="28" startPosition="57" endLine="31" endPosition="5" />
     <nodeInfo nodeId="1969840607717542452" fileName="JUnitConfigFromProject.java" startLine="38" startPosition="184" endLine="43" endPosition="0" />
-    <nodeInfo nodeId="1969840607717542452" fileName="JUnitConfigFromProject.java" startLine="37" startPosition="174" endLine="43" endPosition="8" />
+    <nodeInfo nodeId="1969840607717542452" fileName="JUnitConfigFromProject.java" startLine="37" startPosition="168" endLine="43" endPosition="8" />
     <nodeInfo nodeId="1969840607717542452" fileName="JUnitConfigFromProject.java" startLine="35" startPosition="57" endLine="47" endPosition="5" />
     <scopeInfo nodeId="5380552589325860308" fileName="JUnitConfigFromProject.java" startLine="29" startPosition="49" endLine="30" endPosition="13" />
     <scopeInfo nodeId="1969840607717542452" fileName="JUnitConfigFromProject.java" startLine="40" startPosition="39" endLine="41" endPosition="40" />
@@ -3284,7 +3284,7 @@
     <nodeInfo nodeId="7009731661573604689" fileName="JUnitConfigFromClasses.java" startLine="48" startPosition="0" endLine="49" endPosition="76" />
     <nodeInfo nodeId="7009731661573604716" fileName="JUnitConfigFromClasses.java" startLine="50" startPosition="38" endLine="51" endPosition="113" />
     <nodeInfo nodeId="8208276292079953618" fileName="JUnitConfigFromClasses.java" startLine="52" startPosition="5" endLine="53" endPosition="0" />
-    <nodeInfo nodeId="441707825122313818" fileName="JUnitConfigFromClasses.java" startLine="54" startPosition="5" endLine="55" endPosition="174" />
+    <nodeInfo nodeId="441707825122313818" fileName="JUnitConfigFromClasses.java" startLine="54" startPosition="5" endLine="55" endPosition="168" />
     <nodeInfo nodeId="441707825122313818" fileName="JUnitConfigFromClasses.java" startLine="61" startPosition="8" endLine="62" endPosition="193" />
     <nodeInfo nodeId="441707825122313822" fileName="JUnitConfigFromClasses.java" startLine="62" startPosition="193" endLine="63" endPosition="57" />
     <nodeInfo nodeId="441707825122313824" fileName="JUnitConfigFromClasses.java" startLine="63" startPosition="57" endLine="64" endPosition="75" />
@@ -3300,7 +3300,7 @@
     <nodeInfo nodeId="441707825122313818" fileName="JUnitConfigFromClasses.java" startLine="56" startPosition="184" endLine="61" endPosition="0" />
     <nodeInfo nodeId="471524871959925546" fileName="JUnitConfigFromClasses.java" startLine="77" startPosition="5" endLine="82" endPosition="5" />
     <nodeInfo nodeId="421400203262550835" fileName="JUnitConfigFromClasses.java" startLine="36" startPosition="33" endLine="42" endPosition="5" />
-    <nodeInfo nodeId="441707825122313818" fileName="JUnitConfigFromClasses.java" startLine="55" startPosition="174" endLine="61" endPosition="8" />
+    <nodeInfo nodeId="441707825122313818" fileName="JUnitConfigFromClasses.java" startLine="55" startPosition="168" endLine="61" endPosition="8" />
     <nodeInfo nodeId="471524871959925546" fileName="JUnitConfigFromClasses.java" startLine="74" startPosition="56" endLine="83" endPosition="16" />
     <nodeInfo nodeId="441707825122313818" fileName="JUnitConfigFromClasses.java" startLine="53" startPosition="0" endLine="66" endPosition="5" />
     <scopeInfo nodeId="421400203262550883" fileName="JUnitConfigFromClasses.java" startLine="43" startPosition="26" endLine="44" endPosition="13" />
@@ -3464,7 +3464,7 @@
     <nodeInfo nodeId="7009731661573607890" fileName="JUnitConfigFromMethods.java" startLine="41" startPosition="168" endLine="42" endPosition="17" />
     <nodeInfo nodeId="7009731661573604853" fileName="JUnitConfigFromMethods.java" startLine="43" startPosition="7" endLine="44" endPosition="164" />
     <nodeInfo nodeId="7009731661573604785" fileName="JUnitConfigFromMethods.java" startLine="45" startPosition="5" endLine="46" endPosition="0" />
-    <nodeInfo nodeId="441707825122384243" fileName="JUnitConfigFromMethods.java" startLine="47" startPosition="5" endLine="48" endPosition="174" />
+    <nodeInfo nodeId="441707825122384243" fileName="JUnitConfigFromMethods.java" startLine="47" startPosition="5" endLine="48" endPosition="168" />
     <nodeInfo nodeId="441707825122384243" fileName="JUnitConfigFromMethods.java" startLine="54" startPosition="8" endLine="55" endPosition="126" />
     <nodeInfo nodeId="441707825122384247" fileName="JUnitConfigFromMethods.java" startLine="55" startPosition="126" endLine="56" endPosition="59" />
     <nodeInfo nodeId="441707825122384249" fileName="JUnitConfigFromMethods.java" startLine="56" startPosition="59" endLine="57" endPosition="79" />
@@ -3478,7 +3478,7 @@
     <nodeInfo nodeId="7392318826504152730" fileName="JUnitConfigFromMethods.java" startLine="72" startPosition="39" endLine="75" endPosition="7" />
     <nodeInfo nodeId="441707825122384243" fileName="JUnitConfigFromMethods.java" startLine="49" startPosition="184" endLine="54" endPosition="0" />
     <nodeInfo nodeId="7392318826504152730" fileName="JUnitConfigFromMethods.java" startLine="71" startPosition="5" endLine="76" endPosition="5" />
-    <nodeInfo nodeId="441707825122384243" fileName="JUnitConfigFromMethods.java" startLine="48" startPosition="174" endLine="54" endPosition="8" />
+    <nodeInfo nodeId="441707825122384243" fileName="JUnitConfigFromMethods.java" startLine="48" startPosition="168" endLine="54" endPosition="8" />
     <nodeInfo nodeId="7009731661573604812" fileName="JUnitConfigFromMethods.java" startLine="38" startPosition="76" endLine="45" endPosition="5" />
     <nodeInfo nodeId="7392318826504152730" fileName="JUnitConfigFromMethods.java" startLine="68" startPosition="56" endLine="77" endPosition="16" />
     <nodeInfo nodeId="441707825122384243" fileName="JUnitConfigFromMethods.java" startLine="46" startPosition="0" endLine="60" endPosition="5" />
@@ -4577,8 +4577,8 @@
     <nodeInfo nodeId="421400203262550766" fileName="JUnitConfigFromClass.java" startLine="36" startPosition="5" endLine="37" endPosition="0" />
     <nodeInfo nodeId="8857400326959457743" fileName="JUnitConfigFromClass.java" startLine="37" startPosition="0" endLine="38" endPosition="77" />
     <nodeInfo nodeId="8857400326959457745" fileName="JUnitConfigFromClass.java" startLine="38" startPosition="77" endLine="39" endPosition="0" />
-    <nodeInfo nodeId="8857400326959457746" fileName="JUnitConfigFromClass.java" startLine="40" startPosition="5" endLine="41" endPosition="174" />
-    <nodeInfo nodeId="8857400326959457746" fileName="JUnitConfigFromClass.java" startLine="41" startPosition="174" endLine="42" endPosition="181" />
+    <nodeInfo nodeId="8857400326959457746" fileName="JUnitConfigFromClass.java" startLine="40" startPosition="5" endLine="41" endPosition="168" />
+    <nodeInfo nodeId="8857400326959457746" fileName="JUnitConfigFromClass.java" startLine="41" startPosition="168" endLine="42" endPosition="181" />
     <nodeInfo nodeId="8857400326959457746" fileName="JUnitConfigFromClass.java" startLine="42" startPosition="181" endLine="43" endPosition="72" />
     <nodeInfo nodeId="8857400326959457751" fileName="JUnitConfigFromClass.java" startLine="43" startPosition="72" endLine="44" endPosition="57" />
     <nodeInfo nodeId="4135486424550797225" fileName="JUnitConfigFromClass.java" startLine="44" startPosition="57" endLine="45" endPosition="128" />
@@ -4594,8 +4594,8 @@
   <root nodeId="8857400326959529623">
     <nodeInfo nodeId="8857400326959529627" fileName="JUnitConfigFromMethod.java" startLine="31" startPosition="52" endLine="32" endPosition="78" />
     <nodeInfo nodeId="8857400326959529629" fileName="JUnitConfigFromMethod.java" startLine="32" startPosition="78" endLine="33" endPosition="0" />
-    <nodeInfo nodeId="8857400326959529630" fileName="JUnitConfigFromMethod.java" startLine="34" startPosition="5" endLine="35" endPosition="174" />
-    <nodeInfo nodeId="8857400326959529630" fileName="JUnitConfigFromMethod.java" startLine="35" startPosition="174" endLine="36" endPosition="182" />
+    <nodeInfo nodeId="8857400326959529630" fileName="JUnitConfigFromMethod.java" startLine="34" startPosition="5" endLine="35" endPosition="168" />
+    <nodeInfo nodeId="8857400326959529630" fileName="JUnitConfigFromMethod.java" startLine="35" startPosition="168" endLine="36" endPosition="182" />
     <nodeInfo nodeId="8857400326959529630" fileName="JUnitConfigFromMethod.java" startLine="36" startPosition="182" endLine="37" endPosition="86" />
     <nodeInfo nodeId="8857400326959529635" fileName="JUnitConfigFromMethod.java" startLine="37" startPosition="86" endLine="38" endPosition="59" />
     <nodeInfo nodeId="4135486424550836089" fileName="JUnitConfigFromMethod.java" startLine="38" startPosition="59" endLine="39" endPosition="130" />
@@ -4611,7 +4611,7 @@
     <nodeInfo nodeId="8857400326959529678" fileName="JUnitConfigFromModel.java" startLine="30" startPosition="80" endLine="31" endPosition="13" />
     <nodeInfo nodeId="7228435333870069703" fileName="JUnitConfigFromModel.java" startLine="32" startPosition="5" endLine="33" endPosition="65" />
     <nodeInfo nodeId="8857400326959529661" fileName="JUnitConfigFromModel.java" startLine="33" startPosition="65" endLine="34" endPosition="77" />
-    <nodeInfo nodeId="8857400326959529664" fileName="JUnitConfigFromModel.java" startLine="35" startPosition="5" endLine="36" endPosition="174" />
+    <nodeInfo nodeId="8857400326959529664" fileName="JUnitConfigFromModel.java" startLine="35" startPosition="5" endLine="36" endPosition="168" />
     <nodeInfo nodeId="8857400326959529664" fileName="JUnitConfigFromModel.java" startLine="42" startPosition="8" endLine="43" endPosition="28" />
     <nodeInfo nodeId="8857400326959529665" fileName="JUnitConfigFromModel.java" startLine="43" startPosition="28" endLine="44" endPosition="58" />
     <nodeInfo nodeId="8857400326959529667" fileName="JUnitConfigFromModel.java" startLine="44" startPosition="58" endLine="45" endPosition="78" />
@@ -4619,7 +4619,7 @@
     <nodeInfo nodeId="8857400326959529684" fileName="JUnitConfigFromModel.java" startLine="55" startPosition="56" endLine="56" endPosition="37" />
     <nodeInfo nodeId="8857400326959529676" fileName="JUnitConfigFromModel.java" startLine="29" startPosition="53" endLine="32" endPosition="5" />
     <nodeInfo nodeId="8857400326959529664" fileName="JUnitConfigFromModel.java" startLine="37" startPosition="182" endLine="42" endPosition="0" />
-    <nodeInfo nodeId="8857400326959529664" fileName="JUnitConfigFromModel.java" startLine="36" startPosition="174" endLine="42" endPosition="8" />
+    <nodeInfo nodeId="8857400326959529664" fileName="JUnitConfigFromModel.java" startLine="36" startPosition="168" endLine="42" endPosition="8" />
     <nodeInfo nodeId="8857400326959529664" fileName="JUnitConfigFromModel.java" startLine="34" startPosition="77" endLine="47" endPosition="5" />
     <scopeInfo nodeId="8857400326959529677" fileName="JUnitConfigFromModel.java" startLine="30" startPosition="80" endLine="31" endPosition="13" />
     <scopeInfo nodeId="8857400326959529664" fileName="JUnitConfigFromModel.java" startLine="39" startPosition="39" endLine="40" endPosition="43" />
@@ -4634,7 +4634,7 @@
     <nodeInfo nodeId="8857400326959529696" fileName="JUnitConfigFromModule.java" startLine="29" startPosition="99" endLine="30" endPosition="13" />
     <nodeInfo nodeId="7228435333870069721" fileName="JUnitConfigFromModule.java" startLine="31" startPosition="5" endLine="32" endPosition="52" />
     <nodeInfo nodeId="8857400326959529704" fileName="JUnitConfigFromModule.java" startLine="32" startPosition="52" endLine="33" endPosition="78" />
-    <nodeInfo nodeId="8857400326959529707" fileName="JUnitConfigFromModule.java" startLine="34" startPosition="5" endLine="35" endPosition="174" />
+    <nodeInfo nodeId="8857400326959529707" fileName="JUnitConfigFromModule.java" startLine="34" startPosition="5" endLine="35" endPosition="168" />
     <nodeInfo nodeId="8857400326959529707" fileName="JUnitConfigFromModule.java" startLine="41" startPosition="8" endLine="42" endPosition="28" />
     <nodeInfo nodeId="8857400326959529708" fileName="JUnitConfigFromModule.java" startLine="42" startPosition="28" endLine="43" endPosition="59" />
     <nodeInfo nodeId="8857400326959529710" fileName="JUnitConfigFromModule.java" startLine="43" startPosition="59" endLine="44" endPosition="68" />
@@ -4642,7 +4642,7 @@
     <nodeInfo nodeId="8857400326959529693" fileName="JUnitConfigFromModule.java" startLine="54" startPosition="56" endLine="55" endPosition="38" />
     <nodeInfo nodeId="8857400326959529694" fileName="JUnitConfigFromModule.java" startLine="28" startPosition="54" endLine="31" endPosition="5" />
     <nodeInfo nodeId="8857400326959529707" fileName="JUnitConfigFromModule.java" startLine="36" startPosition="183" endLine="41" endPosition="0" />
-    <nodeInfo nodeId="8857400326959529707" fileName="JUnitConfigFromModule.java" startLine="35" startPosition="174" endLine="41" endPosition="8" />
+    <nodeInfo nodeId="8857400326959529707" fileName="JUnitConfigFromModule.java" startLine="35" startPosition="168" endLine="41" endPosition="8" />
     <nodeInfo nodeId="8857400326959529707" fileName="JUnitConfigFromModule.java" startLine="33" startPosition="78" endLine="46" endPosition="5" />
     <scopeInfo nodeId="8857400326959529695" fileName="JUnitConfigFromModule.java" startLine="29" startPosition="99" endLine="30" endPosition="13" />
     <scopeInfo nodeId="8857400326959529707" fileName="JUnitConfigFromModule.java" startLine="38" startPosition="39" endLine="39" endPosition="43" />

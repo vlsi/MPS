@@ -1675,8 +1675,7 @@
     <property name="caption:0" value="Custom MPS Build Script" />
     <property name="package:0" value="runner" />
     <link role="stateTypeParameter:0" targetNodeId="35.~BaseRunProfileState" resolveInfo="BaseRunProfileState" />
-    <link role="configType:0" targetNodeId="1325286122617526190" resolveInfo="CustomMPSConfigurationType" />
-    <link role="conceptDeclaration:0" targetNodeId="43.1202916958754:7" resolveInfo="MPSLayout" />
+    <link role="configType:0" targetNodeId="6.7234763849538443893:0" resolveInfo="BuildLanguage" />
     <node role="methodDeclaration:0" type="jetbrains.mps.lang.plugin.structure.RunConfigurationMethodDeclaration:23" id="1325286122617554887">
       <property name="name:23" value="getConfiguration" />
       <node role="returnType:23" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1325286122617554888">
@@ -2239,17 +2238,10 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration:23" id="1325286122617526190">
-    <property name="name:23" value="CustomMPSConfigurationType" />
-    <property name="caption:23" value="Custom MPS Script" />
-    <property name="iconPath:23" value="${language_descriptor}/icons/build.png" />
-    <property name="package:23" value="runner" />
-  </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="1325286122618317652">
     <property name="package:23" value="runner" />
     <property name="name:23" value="DefaultCustomMpsLanguageConfigurationFromConfiguration" />
-    <link role="rcType:23" targetNodeId="1325286122617526190" resolveInfo="CustomMPSConfigurationType" />
+    <link role="rcType:23" targetNodeId="6.7234763849538443893:0" resolveInfo="BuildLanguage" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="1325286122618317653">
       <link role="concept:23" targetNodeId="43.1204115658627:7" resolveInfo="Configuration" />
     </node>
@@ -2374,15 +2366,11 @@
           <node role="configName:23" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1325286122618317711">
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1325286122618317712">
               <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter:23" id="1325286122618317713" />
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1325286122618317714">
-                <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
-              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1325286122618317714" />
             </node>
             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1325286122618317715">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1325286122618317716">
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1325286122618317717">
-                  <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
-                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1325286122618317717" />
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1325286122618317718">
                   <link role="variableDeclaration:3" targetNodeId="1325286122618317657" resolveInfo="layout" />
                 </node>
@@ -2399,7 +2387,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="1325286122618317720">
     <property name="package:23" value="runner" />
     <property name="name:23" value="DefaultCustomMpsLanguageConfigurationFromMPSLayout" />
-    <link role="rcType:23" targetNodeId="1325286122617526190" resolveInfo="CustomMPSConfigurationType" />
+    <link role="rcType:23" targetNodeId="6.7234763849538443893:0" resolveInfo="BuildLanguage" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="1325286122618317721">
       <link role="concept:23" targetNodeId="43.1202916958754:7" resolveInfo="MPSLayout" />
     </node>
@@ -2500,9 +2488,7 @@
           </node>
           <node role="configName:23" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1325286122618317772">
             <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter:23" id="1325286122618317773" />
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1325286122618317774">
-              <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
-            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1325286122618317774" />
           </node>
         </node>
       </node>
@@ -2511,7 +2497,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="1325286122618391251">
     <property name="package:23" value="runner" />
     <property name="name:23" value="DefaultCustomMpsLanguageConfigurationFromMPSBuild" />
-    <link role="rcType:23" targetNodeId="1325286122617526190" resolveInfo="CustomMPSConfigurationType" />
+    <link role="rcType:23" targetNodeId="6.7234763849538443893:0" resolveInfo="BuildLanguage" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="1325286122618391252">
       <link role="concept:23" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
     </node>
@@ -2669,15 +2655,11 @@
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1325286122618449157">
                 <link role="variableDeclaration:3" targetNodeId="1325286122618400489" resolveInfo="configuration" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1325286122618449174">
-                <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
-              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1325286122618449174" />
             </node>
             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1325286122618391314">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1325286122618391315">
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1325286122618391316">
-                  <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
-                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1325286122618391316" />
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1325286122618391317">
                   <link role="variableDeclaration:3" targetNodeId="1325286122618391256" resolveInfo="layout" />
                 </node>
@@ -2691,7 +2673,7 @@
       </node>
     </node>
   </node>
-  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="7482942963841965839">
     <property name="package:23" value="wizard" />
     <property name="name:23" value="InternalChecks" />
@@ -2699,7 +2681,7 @@
     <property name="isPopup:23" value="true" />
     <property name="caption:23" value="Checks" />
     <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="7482942963841967329">
-      <link role="modifiedGroup:23" targetNodeId="3v.1215013255981" resolveInfo="Build" />
+      <link role="modifiedGroup:23" targetNodeId="2v.1215013255981" resolveInfo="Build" />
     </node>
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="7482942963841967336">
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="7482942963841967337">

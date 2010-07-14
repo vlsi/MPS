@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1204990433124">
+    <nodeInfo nodeId="1204990483179" fileName="ExtractGroup_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="27" />
+    <nodeInfo nodeId="1205510388542" fileName="ExtractGroup_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="51" />
     <nodeInfo nodeId="1204990880223" fileName="ExtractGroup_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="157" />
     <nodeInfo nodeId="1204990896326" fileName="ExtractGroup_Intention.java" startLine="50" startPosition="157" endLine="51" endPosition="92" />
     <nodeInfo nodeId="1204990992075" fileName="ExtractGroup_Intention.java" startLine="51" startPosition="92" endLine="52" endPosition="110" />

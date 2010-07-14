@@ -6,8 +6,8 @@ import com.intellij.execution.configurations.ConfigurationType;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
-import com.intellij.execution.configurations.ConfigurationFactory;
 import java.util.List;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NonNls;
@@ -18,9 +18,12 @@ import com.intellij.openapi.extensions.Extensions;
 public class JavaApplication_ConfigurationType implements ConfigurationType {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/runApp.png", "jetbrains.mps.lang.plugin"), true);
 
+  private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
+
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
     ListSequence.fromList(result).addElement(new DefaultJavaApplication_Factory(this));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(myForeignFactories));
     return ListSequence.fromList(result).toGenericArray(ConfigurationFactory.class);
   }
 
@@ -40,6 +43,10 @@ public class JavaApplication_ConfigurationType implements ConfigurationType {
   @NotNull
   public String getId() {
     return "JavaApplication";
+  }
+
+  public void addForeignFactory(ConfigurationFactory factory) {
+    ListSequence.fromList(myForeignFactories).addElement(factory);
   }
 
   public static JavaApplication_ConfigurationType getInstance() {

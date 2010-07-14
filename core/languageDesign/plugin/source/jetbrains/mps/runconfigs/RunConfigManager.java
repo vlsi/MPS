@@ -48,6 +48,8 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.*;
 
 public class RunConfigManager implements ProjectComponent {
@@ -256,6 +258,8 @@ public class RunConfigManager implements ProjectComponent {
       if (LanguageAspect.PLUGIN.get(language) != null) {
         SModel model = LanguageAspect.PLUGIN.get(language).getSModel();
 
+        addForeignConfigurations(language);
+
         for (RunConfigCreator creator : model.getRootsAdapters(RunConfigCreator.class)) {
           String creatorClassName = LanguageAspect.PLUGIN.get(language).getLongName() + "." + creator.getName();
           BaseConfigCreator configCreator = createCreator(language, creatorClassName);
@@ -273,6 +277,18 @@ public class RunConfigManager implements ProjectComponent {
     }
 
     return conTypes;
+  }
+
+  private void addForeignConfigurations(Language language) {
+    Class foreignConfigurations = language.getClass(LanguageAspect.PLUGIN.get(language).getLongName() + "." + "ForeignConfigurations");
+    if (foreignConfigurations != null) {
+      try {
+        Method method = foreignConfigurations.getMethod("connectForeignConfigurations");
+        method.invoke(null);
+      } catch (Throwable e) {
+        LOG.error(e);
+      }
+    }
   }
 
   private ConfigurationType createConfig(IModule module, String className) {
