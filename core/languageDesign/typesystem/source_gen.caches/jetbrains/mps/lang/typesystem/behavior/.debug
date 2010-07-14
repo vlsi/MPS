@@ -129,9 +129,9 @@
     <scopeInfo nodeId="1235492945931" fileName="RuntimeErrorType_Behavior.java" startLine="12" startPosition="78" endLine="13" endPosition="81" />
   </root>
   <root nodeId="160921426017537691">
-    <nodeInfo nodeId="160921426017537700" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="290" />
-    <scopeInfo nodeId="160921426017537693" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="160921426017537697" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="290" />
+    <nodeInfo nodeId="160921426017537700" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="290" />
+    <scopeInfo nodeId="160921426017537693" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="160921426017537697" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="290" />
   </root>
   <root nodeId="4214710807058415619">
     <nodeInfo nodeId="4214710807058415781" fileName="SubtypingRule_Behavior.java" startLine="14" startPosition="85" endLine="15" endPosition="161" />

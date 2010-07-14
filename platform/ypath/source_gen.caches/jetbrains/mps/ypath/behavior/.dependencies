@@ -29,7 +29,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.behavior.FeatureSizeFun_Behavior" file="FeatureSizeFun_Behavior.java">
     <classNode dependClassName="java.util.HashSet" />
@@ -37,7 +36,6 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.behavior.FeatureUtil" file="FeatureUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -70,7 +68,6 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.behavior.GFCardinalParamFun_Behavior" file="GFCardinalParamFun_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -84,7 +81,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.behavior.GFGetterParamFun_Behavior" file="GFGetterParamFun_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -189,7 +185,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.behavior.ParameterWrapper_Behavior" file="ParameterWrapper_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
@@ -211,7 +206,6 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.behavior.ToStringFun_Behavior" file="ToStringFun_Behavior.java">
     <classNode dependClassName="java.util.HashSet" />
@@ -219,7 +213,6 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.behavior.TreeNodeKindOccurrence_Behavior" file="TreeNodeKindOccurrence_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

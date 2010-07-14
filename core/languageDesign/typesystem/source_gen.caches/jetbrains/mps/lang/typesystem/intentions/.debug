@@ -54,19 +54,19 @@
     </scopeInfo>
   </root>
   <root nodeId="3302086321380606109">
-    <nodeInfo nodeId="3302086321380616666" fileName="CreateTypesystemIntention_Intention.java" startLine="51" startPosition="230" endLine="52" endPosition="19" />
-    <nodeInfo nodeId="3302086321380616677" fileName="CreateTypesystemIntention_Intention.java" startLine="53" startPosition="5" endLine="54" endPosition="77" />
-    <nodeInfo nodeId="3302086321380616754" fileName="CreateTypesystemIntention_Intention.java" startLine="57" startPosition="76" endLine="58" endPosition="109" />
-    <nodeInfo nodeId="3302086321380616796" fileName="CreateTypesystemIntention_Intention.java" startLine="58" startPosition="109" endLine="59" endPosition="0" />
-    <nodeInfo nodeId="3302086321380616787" fileName="CreateTypesystemIntention_Intention.java" startLine="59" startPosition="0" endLine="60" endPosition="121" />
-    <nodeInfo nodeId="3302086321380616795" fileName="CreateTypesystemIntention_Intention.java" startLine="60" startPosition="121" endLine="61" endPosition="0" />
-    <nodeInfo nodeId="3302086321380616744" fileName="CreateTypesystemIntention_Intention.java" startLine="61" startPosition="0" endLine="62" endPosition="79" />
-    <nodeInfo nodeId="3302086321380616722" fileName="CreateTypesystemIntention_Intention.java" startLine="62" startPosition="79" endLine="63" endPosition="76" />
-    <nodeInfo nodeId="3302086321380616664" fileName="CreateTypesystemIntention_Intention.java" startLine="50" startPosition="90" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="3302086321380606111" fileName="CreateTypesystemIntention_Intention.java" startLine="39" startPosition="85" endLine="40" endPosition="33" />
-    <scopeInfo nodeId="3302086321380616665" fileName="CreateTypesystemIntention_Intention.java" startLine="51" startPosition="230" endLine="52" endPosition="19" />
-    <scopeInfo nodeId="3302086321380616650" fileName="CreateTypesystemIntention_Intention.java" startLine="50" startPosition="90" endLine="54" endPosition="77" />
-    <scopeInfo nodeId="3302086321380606113" fileName="CreateTypesystemIntention_Intention.java" startLine="57" startPosition="76" endLine="63" endPosition="76">
+    <nodeInfo nodeId="3302086321380616666" fileName="CreateTypesystemIntention_Intention.java" startLine="50" startPosition="230" endLine="51" endPosition="19" />
+    <nodeInfo nodeId="3302086321380616677" fileName="CreateTypesystemIntention_Intention.java" startLine="52" startPosition="5" endLine="53" endPosition="77" />
+    <nodeInfo nodeId="3302086321380616754" fileName="CreateTypesystemIntention_Intention.java" startLine="56" startPosition="76" endLine="57" endPosition="109" />
+    <nodeInfo nodeId="3302086321380616796" fileName="CreateTypesystemIntention_Intention.java" startLine="57" startPosition="109" endLine="58" endPosition="0" />
+    <nodeInfo nodeId="3302086321380616787" fileName="CreateTypesystemIntention_Intention.java" startLine="58" startPosition="0" endLine="59" endPosition="121" />
+    <nodeInfo nodeId="3302086321380616795" fileName="CreateTypesystemIntention_Intention.java" startLine="59" startPosition="121" endLine="60" endPosition="0" />
+    <nodeInfo nodeId="3302086321380616744" fileName="CreateTypesystemIntention_Intention.java" startLine="60" startPosition="0" endLine="61" endPosition="79" />
+    <nodeInfo nodeId="3302086321380616722" fileName="CreateTypesystemIntention_Intention.java" startLine="61" startPosition="79" endLine="62" endPosition="76" />
+    <nodeInfo nodeId="3302086321380616664" fileName="CreateTypesystemIntention_Intention.java" startLine="49" startPosition="90" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="3302086321380606111" fileName="CreateTypesystemIntention_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="33" />
+    <scopeInfo nodeId="3302086321380616665" fileName="CreateTypesystemIntention_Intention.java" startLine="50" startPosition="230" endLine="51" endPosition="19" />
+    <scopeInfo nodeId="3302086321380616650" fileName="CreateTypesystemIntention_Intention.java" startLine="49" startPosition="90" endLine="53" endPosition="77" />
+    <scopeInfo nodeId="3302086321380606113" fileName="CreateTypesystemIntention_Intention.java" startLine="56" startPosition="76" endLine="62" endPosition="76">
       <varInfo nodeId="3302086321380616788" varName="quickFixCall" />
       <varInfo nodeId="3302086321380616755" varName="quickFixNode" />
     </scopeInfo>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1213877220697">
-    <nodeInfo nodeId="1213877220700" fileName="ParameterQueryFun_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="170" />
-    <nodeInfo nodeId="1213877220711" fileName="ParameterQueryFun_Behavior.java" startLine="22" startPosition="34" endLine="23" endPosition="18" />
-    <nodeInfo nodeId="1213877220716" fileName="ParameterQueryFun_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="228" />
-    <nodeInfo nodeId="1213877220709" fileName="ParameterQueryFun_Behavior.java" startLine="21" startPosition="170" endLine="24" endPosition="5" />
-    <scopeInfo nodeId="1213877220729" fileName="ParameterQueryFun_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="1213877220710" fileName="ParameterQueryFun_Behavior.java" startLine="22" startPosition="34" endLine="23" endPosition="18" />
-    <scopeInfo nodeId="1213877220699" fileName="ParameterQueryFun_Behavior.java" startLine="20" startPosition="83" endLine="25" endPosition="228">
+    <nodeInfo nodeId="1213877220700" fileName="ParameterQueryFun_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="170" />
+    <nodeInfo nodeId="1213877220711" fileName="ParameterQueryFun_Behavior.java" startLine="21" startPosition="34" endLine="22" endPosition="18" />
+    <nodeInfo nodeId="1213877220716" fileName="ParameterQueryFun_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="228" />
+    <nodeInfo nodeId="1213877220709" fileName="ParameterQueryFun_Behavior.java" startLine="20" startPosition="170" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="1213877220729" fileName="ParameterQueryFun_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="1213877220710" fileName="ParameterQueryFun_Behavior.java" startLine="21" startPosition="34" endLine="22" endPosition="18" />
+    <scopeInfo nodeId="1213877220699" fileName="ParameterQueryFun_Behavior.java" startLine="19" startPosition="83" endLine="24" endPosition="228">
       <varInfo nodeId="1213877220701" varName="parameterType" />
     </scopeInfo>
   </root>
@@ -92,9 +92,9 @@
     <scopeInfo nodeId="1213877249626" fileName="IGenericFeature_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
   </root>
   <root nodeId="1213877253691">
-    <nodeInfo nodeId="1213877253694" fileName="ToStringFun_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="79" />
-    <scopeInfo nodeId="1213877253699" fileName="ToStringFun_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1213877253693" fileName="ToStringFun_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="79" />
+    <nodeInfo nodeId="1213877253694" fileName="ToStringFun_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="79" />
+    <scopeInfo nodeId="1213877253699" fileName="ToStringFun_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="1213877253693" fileName="ToStringFun_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="79" />
   </root>
   <root nodeId="1213877259422">
     <scopeInfo nodeId="1213877259432" fileName="VisitChildrenExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -126,9 +126,9 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877312549">
-    <nodeInfo nodeId="1213877312552" fileName="FeatureSizeFun_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="82" />
-    <scopeInfo nodeId="1213877312557" fileName="FeatureSizeFun_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1213877312551" fileName="FeatureSizeFun_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="82" />
+    <nodeInfo nodeId="1213877312552" fileName="FeatureSizeFun_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="82" />
+    <scopeInfo nodeId="1213877312557" fileName="FeatureSizeFun_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="1213877312551" fileName="FeatureSizeFun_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="82" />
   </root>
   <root nodeId="1213877321020">
     <scopeInfo nodeId="1213877321022" fileName="GFCardinalParamFun_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
@@ -151,10 +151,10 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877339843">
-    <nodeInfo nodeId="1213877339846" fileName="FeatureSequenceFun_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="209" />
-    <nodeInfo nodeId="1213877339857" fileName="FeatureSequenceFun_Behavior.java" startLine="21" startPosition="209" endLine="22" endPosition="94" />
-    <scopeInfo nodeId="1213877339865" fileName="FeatureSequenceFun_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="1213877339845" fileName="FeatureSequenceFun_Behavior.java" startLine="20" startPosition="83" endLine="22" endPosition="94">
+    <nodeInfo nodeId="1213877339846" fileName="FeatureSequenceFun_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="209" />
+    <nodeInfo nodeId="1213877339857" fileName="FeatureSequenceFun_Behavior.java" startLine="20" startPosition="209" endLine="21" endPosition="94" />
+    <scopeInfo nodeId="1213877339865" fileName="FeatureSequenceFun_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="1213877339845" fileName="FeatureSequenceFun_Behavior.java" startLine="19" startPosition="83" endLine="21" endPosition="94">
       <varInfo nodeId="1213877339847" varName="nodeType" />
     </scopeInfo>
   </root>
@@ -260,9 +260,9 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877478085">
-    <nodeInfo nodeId="1213877478088" fileName="TargetTypeFun_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="81" />
-    <scopeInfo nodeId="1213877478093" fileName="TargetTypeFun_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1213877478087" fileName="TargetTypeFun_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="81" />
+    <nodeInfo nodeId="1213877478088" fileName="TargetTypeFun_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="81" />
+    <scopeInfo nodeId="1213877478093" fileName="TargetTypeFun_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="1213877478087" fileName="TargetTypeFun_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="81" />
   </root>
   <root nodeId="1213877481302">
     <nodeInfo nodeId="1213877481306" fileName="TreePath_Behavior.java" startLine="12" startPosition="70" endLine="13" endPosition="114" />
@@ -272,9 +272,9 @@
     <scopeInfo nodeId="1213877481317" fileName="TreePath_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="66" />
   </root>
   <root nodeId="1213877496588">
-    <nodeInfo nodeId="1213877496591" fileName="GFCardinalFun_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="81" />
-    <scopeInfo nodeId="1213877496596" fileName="GFCardinalFun_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1213877496590" fileName="GFCardinalFun_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="81" />
+    <nodeInfo nodeId="1213877496591" fileName="GFCardinalFun_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="81" />
+    <scopeInfo nodeId="1213877496596" fileName="GFCardinalFun_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="1213877496590" fileName="GFCardinalFun_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="81" />
   </root>
   <root nodeId="1213877496972">
     <nodeInfo nodeId="1213877496993" fileName="ITreePathExpression_Behavior.java" startLine="21" startPosition="7" endLine="22" endPosition="98" />
@@ -388,8 +388,8 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877514017">
-    <scopeInfo nodeId="1213877514025" fileName="GFGetterFun_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="1213877514019" fileName="GFGetterFun_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="79" />
+    <scopeInfo nodeId="1213877514025" fileName="GFGetterFun_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1213877514019" fileName="GFGetterFun_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="79" />
   </root>
   <root nodeId="1213877517064">
     <nodeInfo nodeId="1213877517067" fileName="TreePathType_Behavior.java" startLine="15" startPosition="78" endLine="16" endPosition="142" />

@@ -48,7 +48,6 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_Behavior" file="FindSourceBlock_Behavior.java">
     <classNode dependClassName="java.lang.Iterable" />

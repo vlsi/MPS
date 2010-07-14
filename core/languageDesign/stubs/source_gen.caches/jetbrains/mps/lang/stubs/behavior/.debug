@@ -6,14 +6,14 @@
     <scopeInfo nodeId="2974122604715185989" fileName="LibraryStubDescriptor_Behavior.java" startLine="12" startPosition="87" endLine="13" endPosition="79" />
   </root>
   <root nodeId="5516999836374123418">
-    <nodeInfo nodeId="5516999836374217714" fileName="StubsCreatorDeclaration_Behavior.java" startLine="20" startPosition="72" endLine="21" endPosition="109" />
-    <scopeInfo nodeId="5516999836374123420" fileName="StubsCreatorDeclaration_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="5516999836374144783" fileName="StubsCreatorDeclaration_Behavior.java" startLine="20" startPosition="72" endLine="21" endPosition="109" />
+    <nodeInfo nodeId="5516999836374217714" fileName="StubsCreatorDeclaration_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="109" />
+    <scopeInfo nodeId="5516999836374123420" fileName="StubsCreatorDeclaration_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="5516999836374144783" fileName="StubsCreatorDeclaration_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="109" />
   </root>
   <root nodeId="5553449326502622485">
-    <nodeInfo nodeId="5553449326502622491" fileName="ModelManagerDeclaration_Behavior.java" startLine="20" startPosition="72" endLine="21" endPosition="99" />
-    <scopeInfo nodeId="5553449326502622487" fileName="ModelManagerDeclaration_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="5553449326502622490" fileName="ModelManagerDeclaration_Behavior.java" startLine="20" startPosition="72" endLine="21" endPosition="99" />
+    <nodeInfo nodeId="5553449326502622491" fileName="ModelManagerDeclaration_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="99" />
+    <scopeInfo nodeId="5553449326502622487" fileName="ModelManagerDeclaration_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="5553449326502622490" fileName="ModelManagerDeclaration_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="99" />
   </root>
   <root nodeId="5553449326502623280">
     <nodeInfo nodeId="5553449326502623286" fileName="BaseCreatorType_Behavior.java" startLine="18" startPosition="97" endLine="19" endPosition="134" />

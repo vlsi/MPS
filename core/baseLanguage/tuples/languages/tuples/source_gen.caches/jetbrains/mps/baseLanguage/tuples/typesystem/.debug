@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1238853976031">
-    <nodeInfo nodeId="1238854144244" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="26" startPosition="91" endLine="27" endPosition="76" />
-    <nodeInfo nodeId="1238854211333" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="28" startPosition="76" endLine="29" endPosition="201" />
-    <nodeInfo nodeId="1238854056178" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="47" />
-    <nodeInfo nodeId="1238854056178" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="32" startPosition="47" endLine="33" endPosition="53" />
-    <nodeInfo nodeId="1238854056178" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="33" startPosition="53" endLine="34" endPosition="217" />
-    <nodeInfo nodeId="1238854056178" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="34" startPosition="217" endLine="35" endPosition="365" />
-    <nodeInfo nodeId="1238854160582" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="27" startPosition="76" endLine="30" endPosition="5" />
-    <nodeInfo nodeId="1238854056178" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="30" startPosition="5" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="1238854160583" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="28" startPosition="76" endLine="29" endPosition="201" />
-    <scopeInfo nodeId="1238854160582" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="27" startPosition="76" endLine="30" endPosition="5">
+    <nodeInfo nodeId="1238854144244" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="25" startPosition="91" endLine="26" endPosition="76" />
+    <nodeInfo nodeId="1238854211333" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="27" startPosition="76" endLine="28" endPosition="201" />
+    <nodeInfo nodeId="1238854056178" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="30" startPosition="5" endLine="31" endPosition="47" />
+    <nodeInfo nodeId="1238854056178" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="31" startPosition="47" endLine="32" endPosition="53" />
+    <nodeInfo nodeId="1238854056178" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="32" startPosition="53" endLine="33" endPosition="217" />
+    <nodeInfo nodeId="1238854056178" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="33" startPosition="217" endLine="34" endPosition="365" />
+    <nodeInfo nodeId="1238854160582" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="26" startPosition="76" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1238854056178" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="29" startPosition="5" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="1238854160583" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="27" startPosition="76" endLine="28" endPosition="201" />
+    <scopeInfo nodeId="1238854160582" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="26" startPosition="76" endLine="29" endPosition="5">
       <varInfo nodeId="1238854160586" varName="mbr" />
     </scopeInfo>
-    <scopeInfo nodeId="1238854056178" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="31" startPosition="5" endLine="35" endPosition="365" />
-    <scopeInfo nodeId="1238853976032" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="26" startPosition="91" endLine="36" endPosition="5">
+    <scopeInfo nodeId="1238854056178" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="30" startPosition="5" endLine="34" endPosition="365" />
+    <scopeInfo nodeId="1238853976032" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="25" startPosition="91" endLine="35" endPosition="5">
       <varInfo nodeId="1238854144245" varName="memberTypes" />
     </scopeInfo>
   </root>
@@ -84,96 +84,96 @@
     <scopeInfo nodeId="1238854440950" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="23" startPosition="157" endLine="53" endPosition="5" />
   </root>
   <root nodeId="1238857867840">
-    <nodeInfo nodeId="1238859427576" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="30" startPosition="121" endLine="31" endPosition="53" />
-    <nodeInfo nodeId="1238859427576" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="31" startPosition="53" endLine="32" endPosition="55" />
-    <nodeInfo nodeId="1238859427576" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="32" startPosition="55" endLine="33" endPosition="309" />
-    <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="35" startPosition="5" endLine="36" endPosition="87" />
-    <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="36" startPosition="87" endLine="37" endPosition="53" />
-    <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="37" startPosition="53" endLine="38" endPosition="217" />
-    <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="38" startPosition="217" endLine="39" endPosition="54" />
-    <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="39" startPosition="54" endLine="40" endPosition="384" />
-    <nodeInfo nodeId="1238863900100" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="42" startPosition="118" endLine="43" endPosition="244" />
-    <nodeInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="48" startPosition="7" endLine="49" endPosition="217" />
-    <nodeInfo nodeId="1238864218062" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="52" startPosition="278" endLine="53" endPosition="61" />
-    <nodeInfo nodeId="1238864218062" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="53" startPosition="61" endLine="54" endPosition="63" />
-    <nodeInfo nodeId="1238864218062" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="54" startPosition="63" endLine="55" endPosition="300" />
-    <nodeInfo nodeId="1238864556764" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="57" startPosition="275" endLine="58" endPosition="239" />
-    <nodeInfo nodeId="1238864299354" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="59" startPosition="15" endLine="60" endPosition="55" />
-    <nodeInfo nodeId="1238864299354" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="60" startPosition="55" endLine="61" endPosition="63" />
-    <nodeInfo nodeId="1238864299354" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="61" startPosition="63" endLine="62" endPosition="227" />
-    <nodeInfo nodeId="1238864299354" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="62" startPosition="227" endLine="63" endPosition="302" />
-    <nodeInfo nodeId="1238864106020" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="43" startPosition="244" endLine="47" endPosition="8" />
-    <nodeInfo nodeId="1238859427576" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="29" startPosition="89" endLine="34" endPosition="5" />
-    <nodeInfo nodeId="1238864218062" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="51" startPosition="29" endLine="56" endPosition="13" />
-    <nodeInfo nodeId="1238864299354" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="58" startPosition="239" endLine="64" endPosition="15" />
-    <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="34" startPosition="5" endLine="41" endPosition="5" />
-    <nodeInfo nodeId="1238864283553" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="56" startPosition="13" endLine="65" endPosition="13" />
-    <nodeInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="50" startPosition="68" endLine="67" endPosition="0" />
-    <nodeInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="49" startPosition="217" endLine="67" endPosition="130" />
-    <nodeInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="47" startPosition="8" endLine="68" endPosition="7" />
-    <nodeInfo nodeId="1238863666749" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="41" startPosition="5" endLine="69" endPosition="5" />
-    <scopeInfo nodeId="1238859427576" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="30" startPosition="121" endLine="33" endPosition="309" />
-    <scopeInfo nodeId="1238864218062" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="52" startPosition="278" endLine="55" endPosition="300" />
-    <scopeInfo nodeId="1238864299354" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="59" startPosition="15" endLine="63" endPosition="302" />
-    <scopeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="35" startPosition="5" endLine="40" endPosition="384" />
-    <scopeInfo nodeId="1238864283554" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="57" startPosition="275" endLine="64" endPosition="15">
+    <nodeInfo nodeId="1238859427576" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="29" startPosition="121" endLine="30" endPosition="53" />
+    <nodeInfo nodeId="1238859427576" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="30" startPosition="53" endLine="31" endPosition="55" />
+    <nodeInfo nodeId="1238859427576" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="31" startPosition="55" endLine="32" endPosition="309" />
+    <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="34" startPosition="5" endLine="35" endPosition="87" />
+    <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="35" startPosition="87" endLine="36" endPosition="53" />
+    <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="36" startPosition="53" endLine="37" endPosition="217" />
+    <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="37" startPosition="217" endLine="38" endPosition="54" />
+    <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="38" startPosition="54" endLine="39" endPosition="384" />
+    <nodeInfo nodeId="1238863900100" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="41" startPosition="118" endLine="42" endPosition="244" />
+    <nodeInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="47" startPosition="7" endLine="48" endPosition="217" />
+    <nodeInfo nodeId="1238864218062" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="51" startPosition="278" endLine="52" endPosition="61" />
+    <nodeInfo nodeId="1238864218062" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="52" startPosition="61" endLine="53" endPosition="63" />
+    <nodeInfo nodeId="1238864218062" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="53" startPosition="63" endLine="54" endPosition="300" />
+    <nodeInfo nodeId="1238864556764" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="56" startPosition="275" endLine="57" endPosition="239" />
+    <nodeInfo nodeId="1238864299354" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="58" startPosition="15" endLine="59" endPosition="55" />
+    <nodeInfo nodeId="1238864299354" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="59" startPosition="55" endLine="60" endPosition="63" />
+    <nodeInfo nodeId="1238864299354" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="60" startPosition="63" endLine="61" endPosition="227" />
+    <nodeInfo nodeId="1238864299354" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="61" startPosition="227" endLine="62" endPosition="302" />
+    <nodeInfo nodeId="1238864106020" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="42" startPosition="244" endLine="46" endPosition="8" />
+    <nodeInfo nodeId="1238859427576" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="28" startPosition="89" endLine="33" endPosition="5" />
+    <nodeInfo nodeId="1238864218062" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="50" startPosition="29" endLine="55" endPosition="13" />
+    <nodeInfo nodeId="1238864299354" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="57" startPosition="239" endLine="63" endPosition="15" />
+    <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="33" startPosition="5" endLine="40" endPosition="5" />
+    <nodeInfo nodeId="1238864283553" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="55" startPosition="13" endLine="64" endPosition="13" />
+    <nodeInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="49" startPosition="68" endLine="66" endPosition="0" />
+    <nodeInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="48" startPosition="217" endLine="66" endPosition="130" />
+    <nodeInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="46" startPosition="8" endLine="67" endPosition="7" />
+    <nodeInfo nodeId="1238863666749" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="40" startPosition="5" endLine="68" endPosition="5" />
+    <scopeInfo nodeId="1238859427576" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="29" startPosition="121" endLine="32" endPosition="309" />
+    <scopeInfo nodeId="1238864218062" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="51" startPosition="278" endLine="54" endPosition="300" />
+    <scopeInfo nodeId="1238864299354" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="58" startPosition="15" endLine="62" endPosition="302" />
+    <scopeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="34" startPosition="5" endLine="39" endPosition="384" />
+    <scopeInfo nodeId="1238864283554" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="56" startPosition="275" endLine="63" endPosition="15">
       <varInfo nodeId="1238864556765" varName="mtypes" />
     </scopeInfo>
-    <scopeInfo nodeId="1238864005361" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="51" startPosition="29" endLine="65" endPosition="13" />
-    <scopeInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="50" startPosition="68" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="48" startPosition="7" endLine="67" endPosition="130" />
-    <scopeInfo nodeId="1238863666750" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="42" startPosition="118" endLine="68" endPosition="7">
+    <scopeInfo nodeId="1238864005361" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="50" startPosition="29" endLine="64" endPosition="13" />
+    <scopeInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="49" startPosition="68" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="47" startPosition="7" endLine="66" endPosition="130" />
+    <scopeInfo nodeId="1238863666750" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="41" startPosition="118" endLine="67" endPosition="7">
       <varInfo nodeId="1238864106021" varName="index" />
       <varInfo nodeId="1238863900101" varName="idxValue" />
     </scopeInfo>
-    <scopeInfo nodeId="1238857867841" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="29" startPosition="89" endLine="69" endPosition="5" />
-    <unitInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="50" startPosition="56" endLine="67" endPosition="9" unitName="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_IndexedTupleMemberAccessExpression_InferenceRule$1" />
+    <scopeInfo nodeId="1238857867841" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="28" startPosition="89" endLine="68" endPosition="5" />
+    <unitInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="49" startPosition="56" endLine="66" endPosition="9" unitName="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_IndexedTupleMemberAccessExpression_InferenceRule$1" />
   </root>
   <root nodeId="1239579059907">
-    <nodeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="34" startPosition="245" endLine="35" endPosition="53" />
-    <nodeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="35" startPosition="53" endLine="36" endPosition="55" />
-    <nodeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="36" startPosition="55" endLine="37" endPosition="255" />
-    <nodeInfo nodeId="1239900353090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="38" startPosition="5" endLine="39" endPosition="90" />
-    <nodeInfo nodeId="1239900488863" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="40" startPosition="107" endLine="41" endPosition="225" />
-    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="42" startPosition="7" endLine="43" endPosition="92" />
-    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="43" startPosition="92" endLine="44" endPosition="55" />
-    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="44" startPosition="55" endLine="45" endPosition="225" />
-    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="45" startPosition="225" endLine="46" endPosition="56" />
-    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="46" startPosition="56" endLine="47" endPosition="281" />
-    <nodeInfo nodeId="1239895282057" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="49" startPosition="5" endLine="50" endPosition="48" />
-    <nodeInfo nodeId="1239967995591" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="51" startPosition="169" endLine="52" endPosition="61" />
-    <nodeInfo nodeId="1239968089672" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="52" startPosition="61" endLine="53" endPosition="100" />
-    <nodeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="55" startPosition="9" endLine="56" endPosition="53" />
-    <nodeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="56" startPosition="53" endLine="57" endPosition="57" />
-    <nodeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="57" startPosition="57" endLine="58" endPosition="221" />
-    <nodeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="58" startPosition="221" endLine="59" endPosition="206" />
-    <nodeInfo nodeId="1239968121987" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="61" startPosition="7" endLine="62" endPosition="135" />
-    <nodeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="64" startPosition="5" endLine="65" endPosition="49" />
-    <nodeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="65" startPosition="49" endLine="66" endPosition="53" />
-    <nodeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="66" startPosition="53" endLine="67" endPosition="217" />
-    <nodeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="67" startPosition="217" endLine="68" endPosition="421" />
-    <nodeInfo nodeId="1239901043357" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="69" startPosition="5" endLine="70" endPosition="97" />
-    <nodeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="33" startPosition="93" endLine="38" endPosition="5" />
-    <nodeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="54" startPosition="54" endLine="60" endPosition="9" />
-    <nodeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="63" startPosition="5" endLine="69" endPosition="5" />
-    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="41" startPosition="225" endLine="48" endPosition="7" />
-    <nodeInfo nodeId="1239968034088" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="53" startPosition="100" endLine="61" endPosition="7" />
-    <nodeInfo nodeId="1239894693058" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="39" startPosition="90" endLine="49" endPosition="5" />
-    <nodeInfo nodeId="1239967949947" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="50" startPosition="48" endLine="63" endPosition="5" />
-    <scopeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="34" startPosition="245" endLine="37" endPosition="255" />
-    <scopeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="55" startPosition="9" endLine="59" endPosition="206" />
-    <scopeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="64" startPosition="5" endLine="68" endPosition="421" />
-    <scopeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="42" startPosition="7" endLine="47" endPosition="281" />
-    <scopeInfo nodeId="1239968034089" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="54" startPosition="54" endLine="60" endPosition="9" />
-    <scopeInfo nodeId="1239894693061" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="40" startPosition="107" endLine="48" endPosition="7">
+    <nodeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="33" startPosition="245" endLine="34" endPosition="53" />
+    <nodeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="34" startPosition="53" endLine="35" endPosition="55" />
+    <nodeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="35" startPosition="55" endLine="36" endPosition="255" />
+    <nodeInfo nodeId="1239900353090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="37" startPosition="5" endLine="38" endPosition="90" />
+    <nodeInfo nodeId="1239900488863" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="39" startPosition="107" endLine="40" endPosition="225" />
+    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="41" startPosition="7" endLine="42" endPosition="92" />
+    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="42" startPosition="92" endLine="43" endPosition="55" />
+    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="43" startPosition="55" endLine="44" endPosition="225" />
+    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="44" startPosition="225" endLine="45" endPosition="56" />
+    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="45" startPosition="56" endLine="46" endPosition="281" />
+    <nodeInfo nodeId="1239895282057" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="48" startPosition="5" endLine="49" endPosition="48" />
+    <nodeInfo nodeId="1239967995591" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="50" startPosition="169" endLine="51" endPosition="61" />
+    <nodeInfo nodeId="1239968089672" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="51" startPosition="61" endLine="52" endPosition="100" />
+    <nodeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="54" startPosition="9" endLine="55" endPosition="53" />
+    <nodeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="55" startPosition="53" endLine="56" endPosition="57" />
+    <nodeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="56" startPosition="57" endLine="57" endPosition="221" />
+    <nodeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="57" startPosition="221" endLine="58" endPosition="206" />
+    <nodeInfo nodeId="1239968121987" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="60" startPosition="7" endLine="61" endPosition="135" />
+    <nodeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="63" startPosition="5" endLine="64" endPosition="49" />
+    <nodeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="64" startPosition="49" endLine="65" endPosition="53" />
+    <nodeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="65" startPosition="53" endLine="66" endPosition="217" />
+    <nodeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="66" startPosition="217" endLine="67" endPosition="421" />
+    <nodeInfo nodeId="1239901043357" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="68" startPosition="5" endLine="69" endPosition="97" />
+    <nodeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="32" startPosition="93" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="53" startPosition="54" endLine="59" endPosition="9" />
+    <nodeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="62" startPosition="5" endLine="68" endPosition="5" />
+    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="40" startPosition="225" endLine="47" endPosition="7" />
+    <nodeInfo nodeId="1239968034088" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="52" startPosition="100" endLine="60" endPosition="7" />
+    <nodeInfo nodeId="1239894693058" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="38" startPosition="90" endLine="48" endPosition="5" />
+    <nodeInfo nodeId="1239967949947" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="49" startPosition="48" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="33" startPosition="245" endLine="36" endPosition="255" />
+    <scopeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="54" startPosition="9" endLine="58" endPosition="206" />
+    <scopeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="63" startPosition="5" endLine="67" endPosition="421" />
+    <scopeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="41" startPosition="7" endLine="46" endPosition="281" />
+    <scopeInfo nodeId="1239968034089" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="53" startPosition="54" endLine="59" endPosition="9" />
+    <scopeInfo nodeId="1239894693061" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="39" startPosition="107" endLine="47" endPosition="7">
       <varInfo nodeId="1239900488864" varName="matchedType" />
     </scopeInfo>
-    <scopeInfo nodeId="1239894693058" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="39" startPosition="90" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="1239967949950" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="51" startPosition="169" endLine="62" endPosition="135">
+    <scopeInfo nodeId="1239894693058" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="38" startPosition="90" endLine="48" endPosition="5" />
+    <scopeInfo nodeId="1239967949950" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="50" startPosition="169" endLine="61" endPosition="135">
       <varInfo nodeId="1239967995592" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1239967949947" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="50" startPosition="48" endLine="63" endPosition="5" />
-    <scopeInfo nodeId="1239579059908" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="33" startPosition="93" endLine="70" endPosition="97">
+    <scopeInfo nodeId="1239967949947" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="49" startPosition="48" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="1239579059908" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="32" startPosition="93" endLine="69" endPosition="97">
       <varInfo nodeId="1239895282058" varName="PTYPES" />
       <varInfo nodeId="1239900353091" varName="mmap" />
     </scopeInfo>
@@ -253,99 +253,99 @@
     <scopeInfo nodeId="1239579497087" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="23" startPosition="157" endLine="59" endPosition="5" />
   </root>
   <root nodeId="1239579751280">
-    <nodeInfo nodeId="1239974175631" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="28" startPosition="95" endLine="29" endPosition="48" />
-    <nodeInfo nodeId="1239974402367" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="29" startPosition="48" endLine="30" endPosition="197" />
-    <nodeInfo nodeId="1239974367138" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="31" startPosition="117" endLine="32" endPosition="100" />
-    <nodeInfo nodeId="1239974375447" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="32" startPosition="100" endLine="33" endPosition="135" />
-    <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="35" startPosition="5" endLine="36" endPosition="102" />
-    <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="36" startPosition="102" endLine="37" endPosition="53" />
-    <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="37" startPosition="53" endLine="38" endPosition="223" />
-    <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="38" startPosition="223" endLine="39" endPosition="54" />
-    <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="39" startPosition="54" endLine="40" endPosition="415" />
-    <nodeInfo nodeId="3504058432724727903" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="41" startPosition="5" endLine="42" endPosition="143" />
-    <nodeInfo nodeId="3504058432724729120" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="43" startPosition="109" endLine="44" endPosition="202" />
-    <nodeInfo nodeId="3504058432724729132" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="44" startPosition="202" endLine="45" endPosition="61" />
-    <nodeInfo nodeId="3504058432724729057" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="46" startPosition="12" endLine="47" endPosition="163" />
-    <nodeInfo nodeId="3504058432724729066" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="47" startPosition="163" endLine="48" endPosition="48" />
-    <nodeInfo nodeId="3504058432724729074" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="48" startPosition="48" endLine="49" endPosition="89" />
-    <nodeInfo nodeId="3504058432724729092" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="50" startPosition="30" endLine="51" endPosition="117" />
-    <nodeInfo nodeId="3504058432724729103" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="52" startPosition="58" endLine="53" endPosition="97" />
-    <nodeInfo nodeId="1239579829277" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="57" startPosition="5" endLine="58" endPosition="51" />
-    <nodeInfo nodeId="1239579829277" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="58" startPosition="51" endLine="59" endPosition="53" />
-    <nodeInfo nodeId="1239579829277" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="59" startPosition="53" endLine="60" endPosition="217" />
-    <nodeInfo nodeId="1239579829277" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="60" startPosition="217" endLine="61" endPosition="251" />
-    <nodeInfo nodeId="3504058432724729101" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="51" startPosition="117" endLine="54" endPosition="9" />
-    <nodeInfo nodeId="1239974188214" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="30" startPosition="197" endLine="34" endPosition="5" />
-    <nodeInfo nodeId="3504058432724729013" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="49" startPosition="89" endLine="55" endPosition="7" />
-    <nodeInfo nodeId="1239579829277" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="56" startPosition="5" endLine="62" endPosition="5" />
-    <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="34" startPosition="5" endLine="41" endPosition="5" />
-    <nodeInfo nodeId="3504058432724729051" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="46" startPosition="10" endLine="56" endPosition="5" />
-    <nodeInfo nodeId="3504058432724729039" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="42" startPosition="143" endLine="56" endPosition="5" />
-    <scopeInfo nodeId="3504058432724729102" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="52" startPosition="58" endLine="53" endPosition="97" />
-    <scopeInfo nodeId="1239974188217" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="31" startPosition="117" endLine="33" endPosition="135" />
-    <scopeInfo nodeId="3504058432724729040" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="43" startPosition="109" endLine="45" endPosition="61">
+    <nodeInfo nodeId="1239974175631" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="27" startPosition="95" endLine="28" endPosition="48" />
+    <nodeInfo nodeId="1239974402367" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="28" startPosition="48" endLine="29" endPosition="197" />
+    <nodeInfo nodeId="1239974367138" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="30" startPosition="117" endLine="31" endPosition="100" />
+    <nodeInfo nodeId="1239974375447" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="31" startPosition="100" endLine="32" endPosition="135" />
+    <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="34" startPosition="5" endLine="35" endPosition="102" />
+    <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="35" startPosition="102" endLine="36" endPosition="53" />
+    <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="36" startPosition="53" endLine="37" endPosition="223" />
+    <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="37" startPosition="223" endLine="38" endPosition="54" />
+    <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="38" startPosition="54" endLine="39" endPosition="415" />
+    <nodeInfo nodeId="3504058432724727903" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="40" startPosition="5" endLine="41" endPosition="143" />
+    <nodeInfo nodeId="3504058432724729120" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="42" startPosition="109" endLine="43" endPosition="202" />
+    <nodeInfo nodeId="3504058432724729132" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="43" startPosition="202" endLine="44" endPosition="61" />
+    <nodeInfo nodeId="3504058432724729057" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="45" startPosition="12" endLine="46" endPosition="163" />
+    <nodeInfo nodeId="3504058432724729066" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="46" startPosition="163" endLine="47" endPosition="48" />
+    <nodeInfo nodeId="3504058432724729074" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="47" startPosition="48" endLine="48" endPosition="89" />
+    <nodeInfo nodeId="3504058432724729092" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="49" startPosition="30" endLine="50" endPosition="117" />
+    <nodeInfo nodeId="3504058432724729103" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="51" startPosition="58" endLine="52" endPosition="97" />
+    <nodeInfo nodeId="1239579829277" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="56" startPosition="5" endLine="57" endPosition="51" />
+    <nodeInfo nodeId="1239579829277" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="57" startPosition="51" endLine="58" endPosition="53" />
+    <nodeInfo nodeId="1239579829277" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="58" startPosition="53" endLine="59" endPosition="217" />
+    <nodeInfo nodeId="1239579829277" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="59" startPosition="217" endLine="60" endPosition="251" />
+    <nodeInfo nodeId="3504058432724729101" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="50" startPosition="117" endLine="53" endPosition="9" />
+    <nodeInfo nodeId="1239974188214" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="29" startPosition="197" endLine="33" endPosition="5" />
+    <nodeInfo nodeId="3504058432724729013" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="48" startPosition="89" endLine="54" endPosition="7" />
+    <nodeInfo nodeId="1239579829277" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="55" startPosition="5" endLine="61" endPosition="5" />
+    <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="33" startPosition="5" endLine="40" endPosition="5" />
+    <nodeInfo nodeId="3504058432724729051" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="45" startPosition="10" endLine="55" endPosition="5" />
+    <nodeInfo nodeId="3504058432724729039" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="41" startPosition="143" endLine="55" endPosition="5" />
+    <scopeInfo nodeId="3504058432724729102" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="51" startPosition="58" endLine="52" endPosition="97" />
+    <scopeInfo nodeId="1239974188217" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="30" startPosition="117" endLine="32" endPosition="135" />
+    <scopeInfo nodeId="3504058432724729040" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="42" startPosition="109" endLine="44" endPosition="61">
       <varInfo nodeId="3504058432724729121" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="1239974188214" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="30" startPosition="197" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="3504058432724729014" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="50" startPosition="30" endLine="54" endPosition="9">
+    <scopeInfo nodeId="1239974188214" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="29" startPosition="197" endLine="33" endPosition="5" />
+    <scopeInfo nodeId="3504058432724729014" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="49" startPosition="30" endLine="53" endPosition="9">
       <varInfo nodeId="3504058432724729093" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="1239579829277" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="57" startPosition="5" endLine="61" endPosition="251" />
-    <scopeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="35" startPosition="5" endLine="40" endPosition="415" />
-    <scopeInfo nodeId="3504058432724729013" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="49" startPosition="89" endLine="55" endPosition="7">
+    <scopeInfo nodeId="1239579829277" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="56" startPosition="5" endLine="60" endPosition="251" />
+    <scopeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="34" startPosition="5" endLine="39" endPosition="415" />
+    <scopeInfo nodeId="3504058432724729013" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="48" startPosition="89" endLine="54" endPosition="7">
       <varInfo nodeId="3504058432724729017" varName="tvr" />
     </scopeInfo>
-    <scopeInfo nodeId="3504058432724729052" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="46" startPosition="12" endLine="55" endPosition="7">
+    <scopeInfo nodeId="3504058432724729052" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="45" startPosition="12" endLine="54" endPosition="7">
       <varInfo nodeId="3504058432724729067" varName="tvrs" />
       <varInfo nodeId="3504058432724729058" varName="variableReferences" />
     </scopeInfo>
-    <scopeInfo nodeId="1239579751281" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="28" startPosition="95" endLine="62" endPosition="5">
+    <scopeInfo nodeId="1239579751281" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="27" startPosition="95" endLine="61" endPosition="5">
       <varInfo nodeId="1239974175632" varName="PTYPES" />
       <varInfo nodeId="3504058432724727904" varName="opType" />
       <varInfo nodeId="1239974402368" varName="tupleDecl" />
     </scopeInfo>
   </root>
   <root nodeId="1239617235022">
-    <nodeInfo nodeId="1239883377493" fileName="namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="23" startPosition="86" endLine="24" endPosition="300" />
-    <scopeInfo nodeId="1239617235023" fileName="namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="23" startPosition="86" endLine="24" endPosition="300" />
+    <nodeInfo nodeId="1239883377493" fileName="namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="22" startPosition="86" endLine="23" endPosition="300" />
+    <scopeInfo nodeId="1239617235023" fileName="namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="22" startPosition="86" endLine="23" endPosition="300" />
   </root>
   <root nodeId="1239722373118">
-    <nodeInfo nodeId="1239972432012" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="27" startPosition="86" endLine="28" endPosition="77" />
-    <nodeInfo nodeId="1239972674655" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="28" startPosition="77" endLine="29" endPosition="79" />
-    <nodeInfo nodeId="1239973336433" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="31" startPosition="38" endLine="32" endPosition="109" />
-    <nodeInfo nodeId="1239973452764" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="32" startPosition="109" endLine="33" endPosition="134" />
-    <nodeInfo nodeId="1239972928885" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="33" startPosition="134" endLine="34" endPosition="45" />
-    <nodeInfo nodeId="1239972928889" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="34" startPosition="45" endLine="35" endPosition="103" />
-    <nodeInfo nodeId="1239972928896" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="36" startPosition="59" endLine="37" endPosition="68" />
-    <nodeInfo nodeId="1239972928904" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="38" startPosition="110" endLine="39" endPosition="203" />
-    <nodeInfo nodeId="1239972928913" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="40" startPosition="59" endLine="41" endPosition="122" />
-    <nodeInfo nodeId="1239972928938" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="44" startPosition="83" endLine="45" endPosition="57" />
-    <nodeInfo nodeId="1239972928911" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="39" startPosition="203" endLine="42" endPosition="13" />
-    <nodeInfo nodeId="1239972928932" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="43" startPosition="18" endLine="46" endPosition="13" />
-    <nodeInfo nodeId="1239972928930" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="43" startPosition="16" endLine="47" endPosition="11" />
-    <nodeInfo nodeId="1239972928902" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="37" startPosition="68" endLine="47" endPosition="11" />
-    <nodeInfo nodeId="1239972928894" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="35" startPosition="103" endLine="48" endPosition="9" />
-    <nodeInfo nodeId="1239722441220" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="30" startPosition="274" endLine="51" endPosition="0" />
-    <nodeInfo nodeId="1239722401063" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="29" startPosition="79" endLine="51" endPosition="46" />
-    <scopeInfo nodeId="1239972928912" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="40" startPosition="59" endLine="41" endPosition="122" />
-    <scopeInfo nodeId="1239972928937" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="44" startPosition="83" endLine="45" endPosition="57" />
-    <scopeInfo nodeId="1239972928931" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="43" startPosition="18" endLine="46" endPosition="13" />
-    <scopeInfo nodeId="1239972928932" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="43" startPosition="18" endLine="46" endPosition="13" />
-    <scopeInfo nodeId="1239972928903" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="38" startPosition="110" endLine="42" endPosition="13">
+    <nodeInfo nodeId="1239972432012" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="26" startPosition="86" endLine="27" endPosition="77" />
+    <nodeInfo nodeId="1239972674655" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="27" startPosition="77" endLine="28" endPosition="79" />
+    <nodeInfo nodeId="1239973336433" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="30" startPosition="38" endLine="31" endPosition="109" />
+    <nodeInfo nodeId="1239973452764" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="31" startPosition="109" endLine="32" endPosition="134" />
+    <nodeInfo nodeId="1239972928885" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="32" startPosition="134" endLine="33" endPosition="45" />
+    <nodeInfo nodeId="1239972928889" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="33" startPosition="45" endLine="34" endPosition="103" />
+    <nodeInfo nodeId="1239972928896" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="35" startPosition="59" endLine="36" endPosition="68" />
+    <nodeInfo nodeId="1239972928904" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="37" startPosition="110" endLine="38" endPosition="203" />
+    <nodeInfo nodeId="1239972928913" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="39" startPosition="59" endLine="40" endPosition="122" />
+    <nodeInfo nodeId="1239972928938" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="43" startPosition="83" endLine="44" endPosition="57" />
+    <nodeInfo nodeId="1239972928911" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="38" startPosition="203" endLine="41" endPosition="13" />
+    <nodeInfo nodeId="1239972928932" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="42" startPosition="18" endLine="45" endPosition="13" />
+    <nodeInfo nodeId="1239972928930" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="42" startPosition="16" endLine="46" endPosition="11" />
+    <nodeInfo nodeId="1239972928902" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="36" startPosition="68" endLine="46" endPosition="11" />
+    <nodeInfo nodeId="1239972928894" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="34" startPosition="103" endLine="47" endPosition="9" />
+    <nodeInfo nodeId="1239722441220" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="29" startPosition="274" endLine="50" endPosition="0" />
+    <nodeInfo nodeId="1239722401063" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="28" startPosition="79" endLine="50" endPosition="46" />
+    <scopeInfo nodeId="1239972928912" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="39" startPosition="59" endLine="40" endPosition="122" />
+    <scopeInfo nodeId="1239972928937" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="43" startPosition="83" endLine="44" endPosition="57" />
+    <scopeInfo nodeId="1239972928931" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="42" startPosition="18" endLine="45" endPosition="13" />
+    <scopeInfo nodeId="1239972928932" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="42" startPosition="18" endLine="45" endPosition="13" />
+    <scopeInfo nodeId="1239972928903" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="37" startPosition="110" endLine="41" endPosition="13">
       <varInfo nodeId="1239972928905" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="1239972928895" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="36" startPosition="59" endLine="47" endPosition="11">
+    <scopeInfo nodeId="1239972928895" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="35" startPosition="59" endLine="46" endPosition="11">
       <varInfo nodeId="1239972928897" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="1239722441221" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="31" startPosition="38" endLine="49" endPosition="69">
+    <scopeInfo nodeId="1239722441221" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="30" startPosition="38" endLine="48" endPosition="69">
       <varInfo nodeId="1239973336434" varName="tmp" />
     </scopeInfo>
-    <scopeInfo nodeId="1239722441220" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="30" startPosition="274" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1239722373119" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="27" startPosition="86" endLine="51" endPosition="46">
+    <scopeInfo nodeId="1239722441220" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="29" startPosition="274" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1239722373119" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="26" startPosition="86" endLine="50" endPosition="46">
       <varInfo nodeId="1239972432013" varName="queue" />
       <varInfo nodeId="1239972674656" varName="pts" />
     </scopeInfo>
-    <unitInfo nodeId="1239722441220" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="30" startPosition="247" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.typesystem.indexedTupleType_supertypeOf_namedTupleType_SubtypingRule$1" />
+    <unitInfo nodeId="1239722441220" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="29" startPosition="247" endLine="50" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.typesystem.indexedTupleType_supertypeOf_namedTupleType_SubtypingRule$1" />
   </root>
   <root nodeId="1239724813932">
     <nodeInfo nodeId="1239724876893" fileName="null_NOT_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="20" startPosition="19" endLine="21" endPosition="53" />
@@ -406,25 +406,25 @@
     <unitInfo nodeId="1240403672572" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="33" startPosition="164" endLine="37" endPosition="11" unitName="jetbrains.mps.baseLanguage.tuples.typesystem.check_NamedTupleComponent_final_NonTypesystemRule$1" />
   </root>
   <root nodeId="1240576758528">
-    <nodeInfo nodeId="1240576811235" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="25" startPosition="104" endLine="26" endPosition="48" />
-    <nodeInfo nodeId="1240578275431" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="27" startPosition="153" endLine="28" endPosition="54" />
-    <nodeInfo nodeId="1240578288471" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="30" startPosition="109" endLine="31" endPosition="375" />
-    <nodeInfo nodeId="1240578334875" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="32" startPosition="16" endLine="33" endPosition="59" />
-    <nodeInfo nodeId="1240577723436" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="35" startPosition="7" endLine="36" endPosition="244" />
-    <nodeInfo nodeId="1240577771653" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="37" startPosition="5" endLine="38" endPosition="18" />
-    <nodeInfo nodeId="1240578332727" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="32" startPosition="14" endLine="34" endPosition="9" />
-    <nodeInfo nodeId="1240577587564" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="29" startPosition="97" endLine="34" endPosition="9" />
-    <nodeInfo nodeId="1240577552240" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="28" startPosition="54" endLine="35" endPosition="7" />
-    <nodeInfo nodeId="1240576843055" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="26" startPosition="48" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="1240577587566" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="30" startPosition="109" endLine="31" endPosition="375" />
-    <scopeInfo nodeId="1240578332728" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="32" startPosition="16" endLine="33" endPosition="59" />
-    <scopeInfo nodeId="1240577552244" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="29" startPosition="97" endLine="34" endPosition="9" />
-    <scopeInfo nodeId="1240577552240" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="28" startPosition="54" endLine="35" endPosition="7" />
-    <scopeInfo nodeId="1240576843058" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="27" startPosition="153" endLine="36" endPosition="244">
+    <nodeInfo nodeId="1240576811235" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="24" startPosition="104" endLine="25" endPosition="48" />
+    <nodeInfo nodeId="1240578275431" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="26" startPosition="153" endLine="27" endPosition="54" />
+    <nodeInfo nodeId="1240578288471" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="29" startPosition="109" endLine="30" endPosition="375" />
+    <nodeInfo nodeId="1240578334875" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="31" startPosition="16" endLine="32" endPosition="59" />
+    <nodeInfo nodeId="1240577723436" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="34" startPosition="7" endLine="35" endPosition="244" />
+    <nodeInfo nodeId="1240577771653" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="36" startPosition="5" endLine="37" endPosition="18" />
+    <nodeInfo nodeId="1240578332727" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="31" startPosition="14" endLine="33" endPosition="9" />
+    <nodeInfo nodeId="1240577587564" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="28" startPosition="97" endLine="33" endPosition="9" />
+    <nodeInfo nodeId="1240577552240" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="27" startPosition="54" endLine="34" endPosition="7" />
+    <nodeInfo nodeId="1240576843055" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="25" startPosition="48" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="1240577587566" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="29" startPosition="109" endLine="30" endPosition="375" />
+    <scopeInfo nodeId="1240578332728" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="31" startPosition="16" endLine="32" endPosition="59" />
+    <scopeInfo nodeId="1240577552244" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="28" startPosition="97" endLine="33" endPosition="9" />
+    <scopeInfo nodeId="1240577552240" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="27" startPosition="54" endLine="34" endPosition="7" />
+    <scopeInfo nodeId="1240576843058" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="26" startPosition="153" endLine="35" endPosition="244">
       <varInfo nodeId="1240578275432" varName="paramTypes" />
     </scopeInfo>
-    <scopeInfo nodeId="1240576843055" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="26" startPosition="48" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="1240576758529" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="25" startPosition="104" endLine="38" endPosition="18">
+    <scopeInfo nodeId="1240576843055" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="25" startPosition="48" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="1240576758529" fileName="extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" startLine="24" startPosition="104" endLine="37" endPosition="18">
       <varInfo nodeId="1240576811236" varName="result" />
     </scopeInfo>
   </root>
@@ -460,31 +460,31 @@
     <scopeInfo nodeId="1240706922776" fileName="interfaceTupleType_assignableTo_namedTupleType_InequationReplacementRule.java" startLine="21" startPosition="157" endLine="27" endPosition="5" />
   </root>
   <root nodeId="5264858465808079239">
-    <nodeInfo nodeId="5264858465808082927" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="31" startPosition="93" endLine="32" endPosition="48" />
-    <nodeInfo nodeId="5264858465808082939" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="32" startPosition="48" endLine="33" endPosition="119" />
-    <nodeInfo nodeId="5264858465808079267" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="33" startPosition="119" endLine="34" endPosition="224" />
-    <nodeInfo nodeId="5264858465808082895" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="36" startPosition="71" endLine="37" endPosition="161" />
-    <nodeInfo nodeId="5264858465808124463" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="37" startPosition="161" endLine="38" endPosition="60" />
-    <nodeInfo nodeId="974579920306770545" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="39" startPosition="87" endLine="40" endPosition="87" />
-    <nodeInfo nodeId="5264858465808082902" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="40" startPosition="87" endLine="41" endPosition="137" />
-    <nodeInfo nodeId="5264858465808082936" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="44" startPosition="5" endLine="45" endPosition="18" />
-    <nodeInfo nodeId="5264858465808082870" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="38" startPosition="60" endLine="42" endPosition="9" />
-    <nodeInfo nodeId="5264858465808079304" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="35" startPosition="108" endLine="43" endPosition="7" />
-    <nodeInfo nodeId="5264858465808079285" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="34" startPosition="224" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="5264858465808082871" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="39" startPosition="87" endLine="41" endPosition="137">
+    <nodeInfo nodeId="5264858465808082927" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="30" startPosition="93" endLine="31" endPosition="48" />
+    <nodeInfo nodeId="5264858465808082939" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="31" startPosition="48" endLine="32" endPosition="119" />
+    <nodeInfo nodeId="5264858465808079267" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="32" startPosition="119" endLine="33" endPosition="224" />
+    <nodeInfo nodeId="5264858465808082895" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="35" startPosition="71" endLine="36" endPosition="161" />
+    <nodeInfo nodeId="5264858465808124463" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="36" startPosition="161" endLine="37" endPosition="60" />
+    <nodeInfo nodeId="974579920306770545" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="38" startPosition="87" endLine="39" endPosition="87" />
+    <nodeInfo nodeId="5264858465808082902" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="39" startPosition="87" endLine="40" endPosition="137" />
+    <nodeInfo nodeId="5264858465808082936" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="43" startPosition="5" endLine="44" endPosition="18" />
+    <nodeInfo nodeId="5264858465808082870" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="37" startPosition="60" endLine="41" endPosition="9" />
+    <nodeInfo nodeId="5264858465808079304" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="34" startPosition="108" endLine="42" endPosition="7" />
+    <nodeInfo nodeId="5264858465808079285" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="33" startPosition="224" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="5264858465808082871" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="38" startPosition="87" endLine="40" endPosition="137">
       <varInfo nodeId="974579920306770546" varName="javatype" />
     </scopeInfo>
-    <scopeInfo nodeId="5264858465808082870" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="38" startPosition="60" endLine="42" endPosition="9">
+    <scopeInfo nodeId="5264858465808082870" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="37" startPosition="60" endLine="41" endPosition="9">
       <varInfo nodeId="5264858465808082874" varName="comptype" />
     </scopeInfo>
-    <scopeInfo nodeId="5264858465808079305" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="36" startPosition="71" endLine="42" endPosition="9">
+    <scopeInfo nodeId="5264858465808079305" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="35" startPosition="71" endLine="41" endPosition="9">
       <varInfo nodeId="5264858465808082896" varName="supertype" />
     </scopeInfo>
-    <scopeInfo nodeId="5264858465808079286" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="35" startPosition="108" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="5264858465808079285" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="34" startPosition="224" endLine="44" endPosition="5">
+    <scopeInfo nodeId="5264858465808079286" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="34" startPosition="108" endLine="42" endPosition="7" />
+    <scopeInfo nodeId="5264858465808079285" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="33" startPosition="224" endLine="43" endPosition="5">
       <varInfo nodeId="5264858465808079289" varName="ct" />
     </scopeInfo>
-    <scopeInfo nodeId="5264858465808079240" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="31" startPosition="93" endLine="45" endPosition="18">
+    <scopeInfo nodeId="5264858465808079240" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="30" startPosition="93" endLine="44" endPosition="18">
       <varInfo nodeId="5264858465808082928" varName="result" />
       <varInfo nodeId="5264858465808079268" varName="rtmodel" />
       <varInfo nodeId="5264858465808082940" varName="clname" />

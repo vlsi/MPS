@@ -11,22 +11,22 @@
     <scopeInfo nodeId="1035511193819763969" fileName="check_TypesystemIntentionWithoutDescription_NonTypesystemRule.java" startLine="21" startPosition="105" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1076452857760005713">
-    <nodeInfo nodeId="1076452857760008234" fileName="typeof_CaretPositionOperation_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="64" />
-    <nodeInfo nodeId="1076452857760008234" fileName="typeof_CaretPositionOperation_InferenceRule.java" startLine="26" startPosition="64" endLine="27" endPosition="53" />
-    <nodeInfo nodeId="1076452857760008234" fileName="typeof_CaretPositionOperation_InferenceRule.java" startLine="27" startPosition="53" endLine="28" endPosition="219" />
-    <nodeInfo nodeId="1076452857760008234" fileName="typeof_CaretPositionOperation_InferenceRule.java" startLine="28" startPosition="219" endLine="29" endPosition="357" />
-    <nodeInfo nodeId="1076452857760008234" fileName="typeof_CaretPositionOperation_InferenceRule.java" startLine="24" startPosition="108" endLine="30" endPosition="5" />
-    <scopeInfo nodeId="1076452857760008234" fileName="typeof_CaretPositionOperation_InferenceRule.java" startLine="25" startPosition="5" endLine="29" endPosition="357" />
-    <scopeInfo nodeId="1076452857760005714" fileName="typeof_CaretPositionOperation_InferenceRule.java" startLine="24" startPosition="108" endLine="30" endPosition="5" />
+    <nodeInfo nodeId="1076452857760008234" fileName="typeof_CaretPositionOperation_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="64" />
+    <nodeInfo nodeId="1076452857760008234" fileName="typeof_CaretPositionOperation_InferenceRule.java" startLine="25" startPosition="64" endLine="26" endPosition="53" />
+    <nodeInfo nodeId="1076452857760008234" fileName="typeof_CaretPositionOperation_InferenceRule.java" startLine="26" startPosition="53" endLine="27" endPosition="219" />
+    <nodeInfo nodeId="1076452857760008234" fileName="typeof_CaretPositionOperation_InferenceRule.java" startLine="27" startPosition="219" endLine="28" endPosition="357" />
+    <nodeInfo nodeId="1076452857760008234" fileName="typeof_CaretPositionOperation_InferenceRule.java" startLine="23" startPosition="108" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="1076452857760008234" fileName="typeof_CaretPositionOperation_InferenceRule.java" startLine="24" startPosition="5" endLine="28" endPosition="357" />
+    <scopeInfo nodeId="1076452857760005714" fileName="typeof_CaretPositionOperation_InferenceRule.java" startLine="23" startPosition="108" endLine="29" endPosition="5" />
   </root>
   <root nodeId="1076452857760008244">
-    <nodeInfo nodeId="1076452857760008247" fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="66" />
-    <nodeInfo nodeId="1076452857760008247" fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="23" startPosition="66" endLine="24" endPosition="53" />
-    <nodeInfo nodeId="1076452857760008247" fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="219" />
-    <nodeInfo nodeId="1076452857760008247" fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="25" startPosition="219" endLine="26" endPosition="359" />
-    <nodeInfo nodeId="1076452857760008247" fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="21" startPosition="110" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="1076452857760008247" fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="359" />
-    <scopeInfo nodeId="1076452857760008245" fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="21" startPosition="110" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1076452857760008247" fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="66" />
+    <nodeInfo nodeId="1076452857760008247" fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="22" startPosition="66" endLine="23" endPosition="53" />
+    <nodeInfo nodeId="1076452857760008247" fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="23" startPosition="53" endLine="24" endPosition="219" />
+    <nodeInfo nodeId="1076452857760008247" fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="24" startPosition="219" endLine="25" endPosition="359" />
+    <nodeInfo nodeId="1076452857760008247" fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="20" startPosition="110" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="1076452857760008247" fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="21" startPosition="5" endLine="25" endPosition="359" />
+    <scopeInfo nodeId="1076452857760008245" fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="20" startPosition="110" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1175521864623">
     <nodeInfo nodeId="1175521885595" fileName="typeOf_PatternCondition_InferenceRule.java" startLine="18" startPosition="88" endLine="19" endPosition="31" />
@@ -41,14 +41,14 @@
     </scopeInfo>
   </root>
   <root nodeId="1175521949694">
-    <nodeInfo nodeId="1175521972620" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="22" startPosition="88" endLine="23" endPosition="32" />
-    <nodeInfo nodeId="1201876231884" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="58" />
-    <nodeInfo nodeId="1201876231884" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="25" startPosition="58" endLine="26" endPosition="53" />
-    <nodeInfo nodeId="1201876231884" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="26" startPosition="53" endLine="27" endPosition="213" />
-    <nodeInfo nodeId="1201876231884" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="27" startPosition="213" endLine="28" endPosition="408" />
-    <nodeInfo nodeId="1201876231884" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="23" startPosition="32" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1201876231884" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="24" startPosition="5" endLine="28" endPosition="408" />
-    <scopeInfo nodeId="1175521949695" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="22" startPosition="88" endLine="29" endPosition="5">
+    <nodeInfo nodeId="1175521972620" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="21" startPosition="88" endLine="22" endPosition="32" />
+    <nodeInfo nodeId="1201876231884" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="58" />
+    <nodeInfo nodeId="1201876231884" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="24" startPosition="58" endLine="25" endPosition="53" />
+    <nodeInfo nodeId="1201876231884" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
+    <nodeInfo nodeId="1201876231884" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="408" />
+    <nodeInfo nodeId="1201876231884" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="22" startPosition="32" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1201876231884" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="23" startPosition="5" endLine="27" endPosition="408" />
+    <scopeInfo nodeId="1175521949695" fileName="typeOf_ConceptReference_InferenceRule.java" startLine="21" startPosition="88" endLine="28" endPosition="5">
       <varInfo nodeId="1175521972621" varName="conceptReference" />
     </scopeInfo>
   </root>
@@ -65,127 +65,127 @@
     </scopeInfo>
   </root>
   <root nodeId="1175595967252">
-    <nodeInfo nodeId="1223981205014" fileName="typeOf_TypeCheckerAccess_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="59" />
-    <nodeInfo nodeId="1223981205014" fileName="typeOf_TypeCheckerAccess_InferenceRule.java" startLine="26" startPosition="59" endLine="27" endPosition="53" />
-    <nodeInfo nodeId="1223981205014" fileName="typeOf_TypeCheckerAccess_InferenceRule.java" startLine="27" startPosition="53" endLine="28" endPosition="213" />
-    <nodeInfo nodeId="1223981205014" fileName="typeOf_TypeCheckerAccess_InferenceRule.java" startLine="28" startPosition="213" endLine="29" endPosition="346" />
-    <nodeInfo nodeId="1223981205014" fileName="typeOf_TypeCheckerAccess_InferenceRule.java" startLine="24" startPosition="103" endLine="30" endPosition="5" />
-    <scopeInfo nodeId="1223981205014" fileName="typeOf_TypeCheckerAccess_InferenceRule.java" startLine="25" startPosition="5" endLine="29" endPosition="346" />
-    <scopeInfo nodeId="1175595967253" fileName="typeOf_TypeCheckerAccess_InferenceRule.java" startLine="24" startPosition="103" endLine="30" endPosition="5" />
+    <nodeInfo nodeId="1223981205014" fileName="typeOf_TypeCheckerAccess_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="59" />
+    <nodeInfo nodeId="1223981205014" fileName="typeOf_TypeCheckerAccess_InferenceRule.java" startLine="25" startPosition="59" endLine="26" endPosition="53" />
+    <nodeInfo nodeId="1223981205014" fileName="typeOf_TypeCheckerAccess_InferenceRule.java" startLine="26" startPosition="53" endLine="27" endPosition="213" />
+    <nodeInfo nodeId="1223981205014" fileName="typeOf_TypeCheckerAccess_InferenceRule.java" startLine="27" startPosition="213" endLine="28" endPosition="346" />
+    <nodeInfo nodeId="1223981205014" fileName="typeOf_TypeCheckerAccess_InferenceRule.java" startLine="23" startPosition="103" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="1223981205014" fileName="typeOf_TypeCheckerAccess_InferenceRule.java" startLine="24" startPosition="5" endLine="28" endPosition="346" />
+    <scopeInfo nodeId="1175595967253" fileName="typeOf_TypeCheckerAccess_InferenceRule.java" startLine="23" startPosition="103" endLine="29" endPosition="5" />
   </root>
   <root nodeId="1176909247406">
-    <nodeInfo nodeId="1178192184638" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="99" />
-    <nodeInfo nodeId="1178192184638" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="24" startPosition="99" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1178192184638" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1178192184638" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1178192184638" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="362" />
-    <nodeInfo nodeId="1198582744235" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="30" startPosition="5" endLine="31" endPosition="58" />
-    <nodeInfo nodeId="1198582744235" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="31" startPosition="58" endLine="32" endPosition="53" />
-    <nodeInfo nodeId="1198582744235" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="32" startPosition="53" endLine="33" endPosition="213" />
-    <nodeInfo nodeId="1198582744235" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="33" startPosition="213" endLine="34" endPosition="345" />
-    <nodeInfo nodeId="1198582744235" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="29" startPosition="5" endLine="35" endPosition="5" />
-    <nodeInfo nodeId="1178192184638" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="22" startPosition="102" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1198582744235" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="30" startPosition="5" endLine="34" endPosition="345" />
-    <scopeInfo nodeId="1178192184638" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="362" />
-    <scopeInfo nodeId="1176909247407" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="22" startPosition="102" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="1178192184638" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="99" />
+    <nodeInfo nodeId="1178192184638" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="23" startPosition="99" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1178192184638" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1178192184638" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1178192184638" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="362" />
+    <nodeInfo nodeId="1198582744235" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="29" startPosition="5" endLine="30" endPosition="58" />
+    <nodeInfo nodeId="1198582744235" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="30" startPosition="58" endLine="31" endPosition="53" />
+    <nodeInfo nodeId="1198582744235" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="31" startPosition="53" endLine="32" endPosition="213" />
+    <nodeInfo nodeId="1198582744235" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="32" startPosition="213" endLine="33" endPosition="345" />
+    <nodeInfo nodeId="1198582744235" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="28" startPosition="5" endLine="34" endPosition="5" />
+    <nodeInfo nodeId="1178192184638" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="21" startPosition="102" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1198582744235" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="29" startPosition="5" endLine="33" endPosition="345" />
+    <scopeInfo nodeId="1178192184638" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="362" />
+    <scopeInfo nodeId="1176909247407" fileName="typeOf_TypeOfExpression_InferenceRule.java" startLine="21" startPosition="102" endLine="34" endPosition="5" />
   </root>
   <root nodeId="1177068733439">
-    <nodeInfo nodeId="1223981204989" fileName="typeOf_ImmediateSupertypes_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="65" />
-    <nodeInfo nodeId="1223981204989" fileName="typeOf_ImmediateSupertypes_InferenceRule.java" startLine="26" startPosition="65" endLine="27" endPosition="53" />
-    <nodeInfo nodeId="1223981204989" fileName="typeOf_ImmediateSupertypes_InferenceRule.java" startLine="27" startPosition="53" endLine="28" endPosition="213" />
-    <nodeInfo nodeId="1223981204989" fileName="typeOf_ImmediateSupertypes_InferenceRule.java" startLine="28" startPosition="213" endLine="29" endPosition="348" />
-    <nodeInfo nodeId="1223981204989" fileName="typeOf_ImmediateSupertypes_InferenceRule.java" startLine="24" startPosition="109" endLine="30" endPosition="5" />
-    <scopeInfo nodeId="1223981204989" fileName="typeOf_ImmediateSupertypes_InferenceRule.java" startLine="25" startPosition="5" endLine="29" endPosition="348" />
-    <scopeInfo nodeId="1177068733440" fileName="typeOf_ImmediateSupertypes_InferenceRule.java" startLine="24" startPosition="109" endLine="30" endPosition="5" />
+    <nodeInfo nodeId="1223981204989" fileName="typeOf_ImmediateSupertypes_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="65" />
+    <nodeInfo nodeId="1223981204989" fileName="typeOf_ImmediateSupertypes_InferenceRule.java" startLine="25" startPosition="65" endLine="26" endPosition="53" />
+    <nodeInfo nodeId="1223981204989" fileName="typeOf_ImmediateSupertypes_InferenceRule.java" startLine="26" startPosition="53" endLine="27" endPosition="213" />
+    <nodeInfo nodeId="1223981204989" fileName="typeOf_ImmediateSupertypes_InferenceRule.java" startLine="27" startPosition="213" endLine="28" endPosition="348" />
+    <nodeInfo nodeId="1223981204989" fileName="typeOf_ImmediateSupertypes_InferenceRule.java" startLine="23" startPosition="109" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="1223981204989" fileName="typeOf_ImmediateSupertypes_InferenceRule.java" startLine="24" startPosition="5" endLine="28" endPosition="348" />
+    <scopeInfo nodeId="1177068733440" fileName="typeOf_ImmediateSupertypes_InferenceRule.java" startLine="23" startPosition="109" endLine="29" endPosition="5" />
   </root>
   <root nodeId="1178192252710">
-    <nodeInfo nodeId="1178192320491" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="110" />
-    <nodeInfo nodeId="1178192320491" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="24" startPosition="110" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1178192320491" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1178192320491" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1178192320491" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="363" />
-    <nodeInfo nodeId="1178192339557" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="30" startPosition="5" endLine="31" endPosition="110" />
-    <nodeInfo nodeId="1178192339557" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="31" startPosition="110" endLine="32" endPosition="53" />
-    <nodeInfo nodeId="1178192339557" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="32" startPosition="53" endLine="33" endPosition="213" />
-    <nodeInfo nodeId="1178192339557" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="33" startPosition="213" endLine="34" endPosition="54" />
-    <nodeInfo nodeId="1178192339557" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="34" startPosition="54" endLine="35" endPosition="363" />
-    <nodeInfo nodeId="1178192320491" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="22" startPosition="103" endLine="29" endPosition="5" />
-    <nodeInfo nodeId="1178192339557" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="29" startPosition="5" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="1178192320491" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="363" />
-    <scopeInfo nodeId="1178192339557" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="30" startPosition="5" endLine="35" endPosition="363" />
-    <scopeInfo nodeId="1178192297561" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="22" startPosition="103" endLine="36" endPosition="5" />
+    <nodeInfo nodeId="1178192320491" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="110" />
+    <nodeInfo nodeId="1178192320491" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="23" startPosition="110" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1178192320491" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1178192320491" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1178192320491" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="363" />
+    <nodeInfo nodeId="1178192339557" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="29" startPosition="5" endLine="30" endPosition="110" />
+    <nodeInfo nodeId="1178192339557" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="30" startPosition="110" endLine="31" endPosition="53" />
+    <nodeInfo nodeId="1178192339557" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="31" startPosition="53" endLine="32" endPosition="213" />
+    <nodeInfo nodeId="1178192339557" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="32" startPosition="213" endLine="33" endPosition="54" />
+    <nodeInfo nodeId="1178192339557" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="33" startPosition="54" endLine="34" endPosition="363" />
+    <nodeInfo nodeId="1178192320491" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="21" startPosition="103" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="1178192339557" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="28" startPosition="5" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="1178192320491" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="363" />
+    <scopeInfo nodeId="1178192339557" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="29" startPosition="5" endLine="34" endPosition="363" />
+    <scopeInfo nodeId="1178192297561" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="21" startPosition="103" endLine="35" endPosition="5" />
   </root>
   <root nodeId="1178193992124">
-    <nodeInfo nodeId="1178194029472" fileName="erasure_SNodeType_SubtypingRule.java" startLine="19" startPosition="92" endLine="20" endPosition="109" />
-    <scopeInfo nodeId="1178193992125" fileName="erasure_SNodeType_SubtypingRule.java" startLine="19" startPosition="92" endLine="20" endPosition="109" />
+    <nodeInfo nodeId="1178194029472" fileName="erasure_SNodeType_SubtypingRule.java" startLine="18" startPosition="92" endLine="19" endPosition="109" />
+    <scopeInfo nodeId="1178193992125" fileName="erasure_SNodeType_SubtypingRule.java" startLine="18" startPosition="92" endLine="19" endPosition="109" />
   </root>
   <root nodeId="1178271564672">
-    <nodeInfo nodeId="1178271610359" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="103" />
-    <nodeInfo nodeId="1178271610359" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="24" startPosition="103" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1178271610359" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1178271610359" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1178271610359" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="361" />
-    <nodeInfo nodeId="1178271610359" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="22" startPosition="101" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1178271610359" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="361" />
-    <scopeInfo nodeId="1178271564673" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="22" startPosition="101" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1178271610359" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="103" />
+    <nodeInfo nodeId="1178271610359" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="23" startPosition="103" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1178271610359" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1178271610359" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1178271610359" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="361" />
+    <nodeInfo nodeId="1178271610359" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="21" startPosition="101" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1178271610359" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="361" />
+    <scopeInfo nodeId="1178271564673" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="21" startPosition="101" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1178819874368">
-    <nodeInfo nodeId="1223981205054" fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="46" />
-    <nodeInfo nodeId="1223981205054" fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="23" startPosition="46" endLine="24" endPosition="53" />
-    <nodeInfo nodeId="1223981205054" fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
-    <nodeInfo nodeId="1223981205054" fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="348" />
-    <nodeInfo nodeId="1223981205054" fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="21" startPosition="90" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="1223981205054" fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="348" />
-    <scopeInfo nodeId="1178819874369" fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="21" startPosition="90" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1223981205054" fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="46" />
+    <nodeInfo nodeId="1223981205054" fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="22" startPosition="46" endLine="23" endPosition="53" />
+    <nodeInfo nodeId="1223981205054" fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="23" startPosition="53" endLine="24" endPosition="213" />
+    <nodeInfo nodeId="1223981205054" fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="24" startPosition="213" endLine="25" endPosition="348" />
+    <nodeInfo nodeId="1223981205054" fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="20" startPosition="90" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="1223981205054" fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="25" endPosition="348" />
+    <scopeInfo nodeId="1178819874369" fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="20" startPosition="90" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1178872118846">
-    <nodeInfo nodeId="1178872602208" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="23" startPosition="102" endLine="24" endPosition="18" />
-    <nodeInfo nodeId="1178873356551" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="24" startPosition="18" endLine="25" endPosition="81" />
-    <nodeInfo nodeId="1178873431837" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="26" startPosition="108" endLine="27" endPosition="151" />
-    <nodeInfo nodeId="1239701773285" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="28" startPosition="115" endLine="29" endPosition="237" />
-    <nodeInfo nodeId="1239701810308" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="30" startPosition="12" endLine="31" endPosition="13" />
-    <nodeInfo nodeId="1195223916495" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="33" startPosition="5" endLine="34" endPosition="58" />
-    <nodeInfo nodeId="1195223916495" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="34" startPosition="58" endLine="35" endPosition="53" />
-    <nodeInfo nodeId="1195223916495" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="35" startPosition="53" endLine="36" endPosition="213" />
-    <nodeInfo nodeId="1195223916495" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="36" startPosition="213" endLine="37" endPosition="354" />
-    <nodeInfo nodeId="1239701807996" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="30" startPosition="10" endLine="32" endPosition="5" />
-    <nodeInfo nodeId="1195223916495" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="32" startPosition="5" endLine="38" endPosition="5" />
-    <nodeInfo nodeId="1178872656800" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="25" startPosition="81" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="1178872656801" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="26" startPosition="108" endLine="27" endPosition="151" />
-    <scopeInfo nodeId="1239701773284" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="28" startPosition="115" endLine="29" endPosition="237" />
-    <scopeInfo nodeId="1239701807997" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="30" startPosition="12" endLine="31" endPosition="13" />
-    <scopeInfo nodeId="1195223916495" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="33" startPosition="5" endLine="37" endPosition="354" />
-    <scopeInfo nodeId="1178872118847" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="23" startPosition="102" endLine="38" endPosition="5">
+    <nodeInfo nodeId="1178872602208" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="22" startPosition="102" endLine="23" endPosition="18" />
+    <nodeInfo nodeId="1178873356551" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="23" startPosition="18" endLine="24" endPosition="81" />
+    <nodeInfo nodeId="1178873431837" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="25" startPosition="108" endLine="26" endPosition="151" />
+    <nodeInfo nodeId="1239701773285" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="27" startPosition="115" endLine="28" endPosition="237" />
+    <nodeInfo nodeId="1239701810308" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="29" startPosition="12" endLine="30" endPosition="13" />
+    <nodeInfo nodeId="1195223916495" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="32" startPosition="5" endLine="33" endPosition="58" />
+    <nodeInfo nodeId="1195223916495" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="33" startPosition="58" endLine="34" endPosition="53" />
+    <nodeInfo nodeId="1195223916495" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="34" startPosition="53" endLine="35" endPosition="213" />
+    <nodeInfo nodeId="1195223916495" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="35" startPosition="213" endLine="36" endPosition="354" />
+    <nodeInfo nodeId="1239701807996" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="29" startPosition="10" endLine="31" endPosition="5" />
+    <nodeInfo nodeId="1195223916495" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="1178872656800" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="24" startPosition="81" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="1178872656801" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="25" startPosition="108" endLine="26" endPosition="151" />
+    <scopeInfo nodeId="1239701773284" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="27" startPosition="115" endLine="28" endPosition="237" />
+    <scopeInfo nodeId="1239701807997" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="29" startPosition="12" endLine="30" endPosition="13" />
+    <scopeInfo nodeId="1195223916495" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="32" startPosition="5" endLine="36" endPosition="354" />
+    <scopeInfo nodeId="1178872118847" fileName="typeOf_CoerceExpression_InferenceRule.java" startLine="22" startPosition="102" endLine="37" endPosition="5">
       <varInfo nodeId="1178872602209" varName="concept" />
       <varInfo nodeId="1178873356552" varName="pattern" />
     </scopeInfo>
   </root>
   <root nodeId="1185805331842">
-    <nodeInfo nodeId="1185805429689" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="110" />
-    <nodeInfo nodeId="1185805429689" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="24" startPosition="110" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1185805429689" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1185805429689" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1185805429689" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="366" />
-    <nodeInfo nodeId="1185805461349" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="30" startPosition="5" endLine="31" endPosition="111" />
-    <nodeInfo nodeId="1185805461349" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="31" startPosition="111" endLine="32" endPosition="53" />
-    <nodeInfo nodeId="1185805461349" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="32" startPosition="53" endLine="33" endPosition="213" />
-    <nodeInfo nodeId="1185805461349" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="33" startPosition="213" endLine="34" endPosition="54" />
-    <nodeInfo nodeId="1185805461349" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="34" startPosition="54" endLine="35" endPosition="366" />
-    <nodeInfo nodeId="1185805429689" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="22" startPosition="106" endLine="29" endPosition="5" />
-    <nodeInfo nodeId="1185805461349" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="29" startPosition="5" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="1185805429689" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="366" />
-    <scopeInfo nodeId="1185805461349" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="30" startPosition="5" endLine="35" endPosition="366" />
-    <scopeInfo nodeId="1185805331843" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="22" startPosition="106" endLine="36" endPosition="5" />
+    <nodeInfo nodeId="1185805429689" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="110" />
+    <nodeInfo nodeId="1185805429689" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="23" startPosition="110" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1185805429689" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1185805429689" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1185805429689" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="366" />
+    <nodeInfo nodeId="1185805461349" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="29" startPosition="5" endLine="30" endPosition="111" />
+    <nodeInfo nodeId="1185805461349" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="30" startPosition="111" endLine="31" endPosition="53" />
+    <nodeInfo nodeId="1185805461349" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="31" startPosition="53" endLine="32" endPosition="213" />
+    <nodeInfo nodeId="1185805461349" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="32" startPosition="213" endLine="33" endPosition="54" />
+    <nodeInfo nodeId="1185805461349" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="33" startPosition="54" endLine="34" endPosition="366" />
+    <nodeInfo nodeId="1185805429689" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="21" startPosition="106" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="1185805461349" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="28" startPosition="5" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="1185805429689" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="366" />
+    <scopeInfo nodeId="1185805461349" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="29" startPosition="5" endLine="34" endPosition="366" />
+    <scopeInfo nodeId="1185805331843" fileName="typeOf_ReportErrorStatement_InferenceRule.java" startLine="21" startPosition="106" endLine="35" endPosition="5" />
   </root>
   <root nodeId="1185805496668">
-    <nodeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="108" />
-    <nodeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="24" startPosition="108" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="367" />
-    <nodeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="22" startPosition="107" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="367" />
-    <scopeInfo nodeId="1185805496669" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="22" startPosition="107" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="108" />
+    <nodeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="23" startPosition="108" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="367" />
+    <nodeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="21" startPosition="107" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="367" />
+    <scopeInfo nodeId="1185805496669" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="21" startPosition="107" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1185873171746">
     <nodeInfo nodeId="1185873522778" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="23" startPosition="103" endLine="24" endPosition="147" />
@@ -230,154 +230,154 @@
     <scopeInfo nodeId="1185877934981" fileName="typeOf_TypeVarReference_InferenceRule.java" startLine="18" startPosition="102" endLine="24" endPosition="5" />
   </root>
   <root nodeId="1185877993556">
-    <nodeInfo nodeId="1185878029189" fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="60" />
-    <nodeInfo nodeId="1185878029189" fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="23" startPosition="60" endLine="24" endPosition="53" />
-    <nodeInfo nodeId="1185878029189" fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
-    <nodeInfo nodeId="1185878029189" fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="347" />
-    <nodeInfo nodeId="1185878029189" fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="21" startPosition="104" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="1185878029189" fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="347" />
-    <scopeInfo nodeId="1185877993557" fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="21" startPosition="104" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1185878029189" fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="60" />
+    <nodeInfo nodeId="1185878029189" fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="22" startPosition="60" endLine="23" endPosition="53" />
+    <nodeInfo nodeId="1185878029189" fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="23" startPosition="53" endLine="24" endPosition="213" />
+    <nodeInfo nodeId="1185878029189" fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="24" startPosition="213" endLine="25" endPosition="347" />
+    <nodeInfo nodeId="1185878029189" fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="20" startPosition="104" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="1185878029189" fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="21" startPosition="5" endLine="25" endPosition="347" />
+    <scopeInfo nodeId="1185877993557" fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="20" startPosition="104" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1186407270695">
-    <nodeInfo nodeId="1186407278853" fileName="RulesUtil.java" startLine="18" startPosition="24" endLine="19" endPosition="60" />
-    <nodeInfo nodeId="1196177522155" fileName="RulesUtil.java" startLine="22" startPosition="125" endLine="23" endPosition="18" />
-    <nodeInfo nodeId="1201608121455" fileName="RulesUtil.java" startLine="25" startPosition="137" endLine="26" endPosition="18" />
-    <nodeInfo nodeId="1196177522163" fileName="RulesUtil.java" startLine="27" startPosition="5" endLine="28" endPosition="188" />
-    <nodeInfo nodeId="1196177522176" fileName="RulesUtil.java" startLine="30" startPosition="183" endLine="31" endPosition="20" />
-    <nodeInfo nodeId="1196177522189" fileName="RulesUtil.java" startLine="33" startPosition="5" endLine="34" endPosition="17" />
-    <nodeInfo nodeId="1135966777630207185" fileName="RulesUtil.java" startLine="38" startPosition="141" endLine="39" endPosition="18" />
-    <nodeInfo nodeId="1135966777630207216" fileName="RulesUtil.java" startLine="41" startPosition="125" endLine="42" endPosition="18" />
-    <nodeInfo nodeId="1135966777630207240" fileName="RulesUtil.java" startLine="44" startPosition="126" endLine="45" endPosition="18" />
-    <nodeInfo nodeId="1135966777630207244" fileName="RulesUtil.java" startLine="46" startPosition="5" endLine="47" endPosition="17" />
-    <nodeInfo nodeId="5239146621999643631" fileName="RulesUtil.java" startLine="51" startPosition="132" endLine="52" endPosition="18" />
-    <nodeInfo nodeId="2386296566107170465" fileName="RulesUtil.java" startLine="54" startPosition="131" endLine="55" endPosition="18" />
-    <nodeInfo nodeId="5239146621999643509" fileName="RulesUtil.java" startLine="56" startPosition="5" endLine="57" endPosition="187" />
-    <nodeInfo nodeId="5239146621999643523" fileName="RulesUtil.java" startLine="59" startPosition="361" endLine="60" endPosition="20" />
-    <nodeInfo nodeId="5239146621999643536" fileName="RulesUtil.java" startLine="62" startPosition="5" endLine="63" endPosition="17" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="70" startPosition="31" endLine="71" endPosition="26" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="71" startPosition="26" endLine="72" endPosition="67" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="72" startPosition="67" endLine="73" endPosition="32" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="74" startPosition="7" endLine="75" endPosition="207" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="75" startPosition="207" endLine="76" endPosition="43" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="76" startPosition="43" endLine="77" endPosition="234" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="77" startPosition="234" endLine="78" endPosition="31" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="79" startPosition="7" endLine="80" endPosition="20" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="88" startPosition="31" endLine="89" endPosition="26" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="89" startPosition="26" endLine="90" endPosition="67" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="90" startPosition="67" endLine="91" endPosition="32" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="92" startPosition="7" endLine="93" endPosition="207" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="93" startPosition="207" endLine="94" endPosition="43" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="94" startPosition="43" endLine="95" endPosition="234" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="95" startPosition="234" endLine="96" endPosition="31" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="97" startPosition="7" endLine="98" endPosition="20" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="106" startPosition="31" endLine="107" endPosition="26" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="107" startPosition="26" endLine="108" endPosition="67" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="108" startPosition="67" endLine="109" endPosition="32" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="110" startPosition="7" endLine="111" endPosition="207" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="111" startPosition="207" endLine="112" endPosition="43" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="112" startPosition="43" endLine="113" endPosition="234" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="113" startPosition="234" endLine="114" endPosition="31" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="115" startPosition="7" endLine="116" endPosition="20" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="66" startPosition="55" endLine="68" endPosition="5" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="84" startPosition="56" endLine="86" endPosition="5" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="102" startPosition="58" endLine="104" endPosition="5" />
-    <nodeInfo nodeId="1196177522153" fileName="RulesUtil.java" startLine="21" startPosition="57" endLine="24" endPosition="5" />
-    <nodeInfo nodeId="1201608121453" fileName="RulesUtil.java" startLine="24" startPosition="5" endLine="27" endPosition="5" />
-    <nodeInfo nodeId="1196177522174" fileName="RulesUtil.java" startLine="29" startPosition="42" endLine="32" endPosition="7" />
-    <nodeInfo nodeId="1135966777630207183" fileName="RulesUtil.java" startLine="37" startPosition="60" endLine="40" endPosition="5" />
-    <nodeInfo nodeId="1135966777630207197" fileName="RulesUtil.java" startLine="40" startPosition="5" endLine="43" endPosition="5" />
-    <nodeInfo nodeId="1135966777630207221" fileName="RulesUtil.java" startLine="43" startPosition="5" endLine="46" endPosition="5" />
-    <nodeInfo nodeId="5239146621999643581" fileName="RulesUtil.java" startLine="50" startPosition="56" endLine="53" endPosition="5" />
-    <nodeInfo nodeId="2386296566107170463" fileName="RulesUtil.java" startLine="53" startPosition="5" endLine="56" endPosition="5" />
-    <nodeInfo nodeId="5239146621999643521" fileName="RulesUtil.java" startLine="58" startPosition="42" endLine="61" endPosition="7" />
-    <nodeInfo nodeId="1196177522172" fileName="RulesUtil.java" startLine="28" startPosition="188" endLine="33" endPosition="5" />
-    <nodeInfo nodeId="5239146621999643519" fileName="RulesUtil.java" startLine="57" startPosition="187" endLine="62" endPosition="5" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="73" startPosition="32" endLine="79" endPosition="7" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="91" startPosition="32" endLine="97" endPosition="7" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="109" startPosition="32" endLine="115" endPosition="7" />
-    <nodeInfo nodeId="1135966777630205022" fileName="RulesUtil.java" startLine="36" startPosition="0" endLine="49" endPosition="0" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="69" startPosition="0" endLine="82" endPosition="0" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="87" startPosition="0" endLine="100" endPosition="0" />
-    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="105" startPosition="0" endLine="118" endPosition="0" />
-    <nodeInfo nodeId="1196177509288" fileName="RulesUtil.java" startLine="20" startPosition="0" endLine="36" endPosition="0" />
-    <nodeInfo nodeId="5239146621999643483" fileName="RulesUtil.java" startLine="49" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="67" startPosition="46" endLine="67" endPosition="46" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="85" startPosition="47" endLine="85" endPosition="47" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="103" startPosition="49" endLine="103" endPosition="49" />
-    <scopeInfo nodeId="1196177522154" fileName="RulesUtil.java" startLine="22" startPosition="125" endLine="23" endPosition="18" />
-    <scopeInfo nodeId="1201608121454" fileName="RulesUtil.java" startLine="25" startPosition="137" endLine="26" endPosition="18" />
-    <scopeInfo nodeId="1196177522175" fileName="RulesUtil.java" startLine="30" startPosition="183" endLine="31" endPosition="20" />
-    <scopeInfo nodeId="1135966777630207184" fileName="RulesUtil.java" startLine="38" startPosition="141" endLine="39" endPosition="18" />
-    <scopeInfo nodeId="1135966777630207198" fileName="RulesUtil.java" startLine="41" startPosition="125" endLine="42" endPosition="18" />
-    <scopeInfo nodeId="1135966777630207222" fileName="RulesUtil.java" startLine="44" startPosition="126" endLine="45" endPosition="18" />
-    <scopeInfo nodeId="5239146621999643582" fileName="RulesUtil.java" startLine="51" startPosition="132" endLine="52" endPosition="18" />
-    <scopeInfo nodeId="2386296566107170464" fileName="RulesUtil.java" startLine="54" startPosition="131" endLine="55" endPosition="18" />
-    <scopeInfo nodeId="5239146621999643522" fileName="RulesUtil.java" startLine="59" startPosition="361" endLine="60" endPosition="20" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="66" startPosition="55" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="84" startPosition="56" endLine="86" endPosition="5" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="102" startPosition="58" endLine="104" endPosition="5" />
-    <scopeInfo nodeId="1196177522173" fileName="RulesUtil.java" startLine="29" startPosition="42" endLine="32" endPosition="7" />
-    <scopeInfo nodeId="5239146621999643520" fileName="RulesUtil.java" startLine="58" startPosition="42" endLine="61" endPosition="7" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="74" startPosition="7" endLine="78" endPosition="31" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="92" startPosition="7" endLine="96" endPosition="31" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="110" startPosition="7" endLine="114" endPosition="31" />
-    <scopeInfo nodeId="1196177522172" fileName="RulesUtil.java" startLine="28" startPosition="188" endLine="33" endPosition="5">
+    <nodeInfo nodeId="1186407278853" fileName="RulesUtil.java" startLine="17" startPosition="24" endLine="18" endPosition="60" />
+    <nodeInfo nodeId="1196177522155" fileName="RulesUtil.java" startLine="21" startPosition="125" endLine="22" endPosition="18" />
+    <nodeInfo nodeId="1201608121455" fileName="RulesUtil.java" startLine="24" startPosition="137" endLine="25" endPosition="18" />
+    <nodeInfo nodeId="1196177522163" fileName="RulesUtil.java" startLine="26" startPosition="5" endLine="27" endPosition="188" />
+    <nodeInfo nodeId="1196177522176" fileName="RulesUtil.java" startLine="29" startPosition="183" endLine="30" endPosition="20" />
+    <nodeInfo nodeId="1196177522189" fileName="RulesUtil.java" startLine="32" startPosition="5" endLine="33" endPosition="17" />
+    <nodeInfo nodeId="1135966777630207185" fileName="RulesUtil.java" startLine="37" startPosition="141" endLine="38" endPosition="18" />
+    <nodeInfo nodeId="1135966777630207216" fileName="RulesUtil.java" startLine="40" startPosition="125" endLine="41" endPosition="18" />
+    <nodeInfo nodeId="1135966777630207240" fileName="RulesUtil.java" startLine="43" startPosition="126" endLine="44" endPosition="18" />
+    <nodeInfo nodeId="1135966777630207244" fileName="RulesUtil.java" startLine="45" startPosition="5" endLine="46" endPosition="17" />
+    <nodeInfo nodeId="5239146621999643631" fileName="RulesUtil.java" startLine="50" startPosition="132" endLine="51" endPosition="18" />
+    <nodeInfo nodeId="2386296566107170465" fileName="RulesUtil.java" startLine="53" startPosition="131" endLine="54" endPosition="18" />
+    <nodeInfo nodeId="5239146621999643509" fileName="RulesUtil.java" startLine="55" startPosition="5" endLine="56" endPosition="187" />
+    <nodeInfo nodeId="5239146621999643523" fileName="RulesUtil.java" startLine="58" startPosition="361" endLine="59" endPosition="20" />
+    <nodeInfo nodeId="5239146621999643536" fileName="RulesUtil.java" startLine="61" startPosition="5" endLine="62" endPosition="17" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="69" startPosition="31" endLine="70" endPosition="26" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="70" startPosition="26" endLine="71" endPosition="67" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="71" startPosition="67" endLine="72" endPosition="32" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="73" startPosition="7" endLine="74" endPosition="163" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="74" startPosition="163" endLine="75" endPosition="43" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="75" startPosition="43" endLine="76" endPosition="234" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="76" startPosition="234" endLine="77" endPosition="31" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="78" startPosition="7" endLine="79" endPosition="20" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="87" startPosition="31" endLine="88" endPosition="26" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="88" startPosition="26" endLine="89" endPosition="67" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="89" startPosition="67" endLine="90" endPosition="32" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="91" startPosition="7" endLine="92" endPosition="163" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="92" startPosition="163" endLine="93" endPosition="43" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="93" startPosition="43" endLine="94" endPosition="234" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="94" startPosition="234" endLine="95" endPosition="31" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="96" startPosition="7" endLine="97" endPosition="20" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="105" startPosition="31" endLine="106" endPosition="26" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="106" startPosition="26" endLine="107" endPosition="67" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="107" startPosition="67" endLine="108" endPosition="32" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="109" startPosition="7" endLine="110" endPosition="163" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="110" startPosition="163" endLine="111" endPosition="43" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="111" startPosition="43" endLine="112" endPosition="234" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="112" startPosition="234" endLine="113" endPosition="31" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="114" startPosition="7" endLine="115" endPosition="20" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="65" startPosition="55" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="83" startPosition="56" endLine="85" endPosition="5" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="101" startPosition="58" endLine="103" endPosition="5" />
+    <nodeInfo nodeId="1196177522153" fileName="RulesUtil.java" startLine="20" startPosition="57" endLine="23" endPosition="5" />
+    <nodeInfo nodeId="1201608121453" fileName="RulesUtil.java" startLine="23" startPosition="5" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="1196177522174" fileName="RulesUtil.java" startLine="28" startPosition="42" endLine="31" endPosition="7" />
+    <nodeInfo nodeId="1135966777630207183" fileName="RulesUtil.java" startLine="36" startPosition="60" endLine="39" endPosition="5" />
+    <nodeInfo nodeId="1135966777630207197" fileName="RulesUtil.java" startLine="39" startPosition="5" endLine="42" endPosition="5" />
+    <nodeInfo nodeId="1135966777630207221" fileName="RulesUtil.java" startLine="42" startPosition="5" endLine="45" endPosition="5" />
+    <nodeInfo nodeId="5239146621999643581" fileName="RulesUtil.java" startLine="49" startPosition="56" endLine="52" endPosition="5" />
+    <nodeInfo nodeId="2386296566107170463" fileName="RulesUtil.java" startLine="52" startPosition="5" endLine="55" endPosition="5" />
+    <nodeInfo nodeId="5239146621999643521" fileName="RulesUtil.java" startLine="57" startPosition="42" endLine="60" endPosition="7" />
+    <nodeInfo nodeId="1196177522172" fileName="RulesUtil.java" startLine="27" startPosition="188" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="5239146621999643519" fileName="RulesUtil.java" startLine="56" startPosition="187" endLine="61" endPosition="5" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="72" startPosition="32" endLine="78" endPosition="7" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="90" startPosition="32" endLine="96" endPosition="7" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="108" startPosition="32" endLine="114" endPosition="7" />
+    <nodeInfo nodeId="1135966777630205022" fileName="RulesUtil.java" startLine="35" startPosition="0" endLine="48" endPosition="0" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="68" startPosition="0" endLine="81" endPosition="0" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="86" startPosition="0" endLine="99" endPosition="0" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="104" startPosition="0" endLine="117" endPosition="0" />
+    <nodeInfo nodeId="1196177509288" fileName="RulesUtil.java" startLine="19" startPosition="0" endLine="35" endPosition="0" />
+    <nodeInfo nodeId="5239146621999643483" fileName="RulesUtil.java" startLine="48" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="66" startPosition="46" endLine="66" endPosition="46" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="84" startPosition="47" endLine="84" endPosition="47" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="102" startPosition="49" endLine="102" endPosition="49" />
+    <scopeInfo nodeId="1196177522154" fileName="RulesUtil.java" startLine="21" startPosition="125" endLine="22" endPosition="18" />
+    <scopeInfo nodeId="1201608121454" fileName="RulesUtil.java" startLine="24" startPosition="137" endLine="25" endPosition="18" />
+    <scopeInfo nodeId="1196177522175" fileName="RulesUtil.java" startLine="29" startPosition="183" endLine="30" endPosition="20" />
+    <scopeInfo nodeId="1135966777630207184" fileName="RulesUtil.java" startLine="37" startPosition="141" endLine="38" endPosition="18" />
+    <scopeInfo nodeId="1135966777630207198" fileName="RulesUtil.java" startLine="40" startPosition="125" endLine="41" endPosition="18" />
+    <scopeInfo nodeId="1135966777630207222" fileName="RulesUtil.java" startLine="43" startPosition="126" endLine="44" endPosition="18" />
+    <scopeInfo nodeId="5239146621999643582" fileName="RulesUtil.java" startLine="50" startPosition="132" endLine="51" endPosition="18" />
+    <scopeInfo nodeId="2386296566107170464" fileName="RulesUtil.java" startLine="53" startPosition="131" endLine="54" endPosition="18" />
+    <scopeInfo nodeId="5239146621999643522" fileName="RulesUtil.java" startLine="58" startPosition="361" endLine="59" endPosition="20" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="65" startPosition="55" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="83" startPosition="56" endLine="85" endPosition="5" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="101" startPosition="58" endLine="103" endPosition="5" />
+    <scopeInfo nodeId="1196177522173" fileName="RulesUtil.java" startLine="28" startPosition="42" endLine="31" endPosition="7" />
+    <scopeInfo nodeId="5239146621999643520" fileName="RulesUtil.java" startLine="57" startPosition="42" endLine="60" endPosition="7" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="73" startPosition="7" endLine="77" endPosition="31" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="91" startPosition="7" endLine="95" endPosition="31" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="109" startPosition="7" endLine="113" endPosition="31" />
+    <scopeInfo nodeId="1196177522172" fileName="RulesUtil.java" startLine="27" startPosition="188" endLine="32" endPosition="5">
       <varInfo nodeId="1196177522187" varName="annotation" />
     </scopeInfo>
-    <scopeInfo nodeId="5239146621999643519" fileName="RulesUtil.java" startLine="57" startPosition="187" endLine="62" endPosition="5">
+    <scopeInfo nodeId="5239146621999643519" fileName="RulesUtil.java" startLine="56" startPosition="187" endLine="61" endPosition="5">
       <varInfo nodeId="5239146621999643534" varName="annotation" />
     </scopeInfo>
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="73" startPosition="32" endLine="79" endPosition="7" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="91" startPosition="32" endLine="97" endPosition="7" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="109" startPosition="32" endLine="115" endPosition="7" />
-    <scopeInfo nodeId="1135966777630205025" fileName="RulesUtil.java" startLine="37" startPosition="60" endLine="47" endPosition="17" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="70" startPosition="31" endLine="80" endPosition="20" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="88" startPosition="31" endLine="98" endPosition="20" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="106" startPosition="31" endLine="116" endPosition="20" />
-    <scopeInfo nodeId="1196177509291" fileName="RulesUtil.java" startLine="21" startPosition="57" endLine="34" endPosition="17">
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="72" startPosition="32" endLine="78" endPosition="7" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="90" startPosition="32" endLine="96" endPosition="7" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="108" startPosition="32" endLine="114" endPosition="7" />
+    <scopeInfo nodeId="1135966777630205025" fileName="RulesUtil.java" startLine="36" startPosition="60" endLine="46" endPosition="17" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="69" startPosition="31" endLine="79" endPosition="20" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="87" startPosition="31" endLine="97" endPosition="20" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="105" startPosition="31" endLine="115" endPosition="20" />
+    <scopeInfo nodeId="1196177509291" fileName="RulesUtil.java" startLine="20" startPosition="57" endLine="33" endPosition="17">
       <varInfo nodeId="1196177522164" varName="annotations" />
     </scopeInfo>
-    <scopeInfo nodeId="1135966777630205022" fileName="RulesUtil.java" startLine="36" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="1135966777630205022" fileName="RulesUtil.java" startLine="35" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1135966777630207194" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5239146621999643486" fileName="RulesUtil.java" startLine="50" startPosition="56" endLine="63" endPosition="17">
+    <scopeInfo nodeId="5239146621999643486" fileName="RulesUtil.java" startLine="49" startPosition="56" endLine="62" endPosition="17">
       <varInfo nodeId="5239146621999643510" varName="annotations" />
     </scopeInfo>
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="69" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="87" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="105" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="1196177509288" fileName="RulesUtil.java" startLine="20" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="68" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="86" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="104" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="1196177509288" fileName="RulesUtil.java" startLine="19" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="1196177540115" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5239146621999643483" fileName="RulesUtil.java" startLine="49" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="5239146621999643483" fileName="RulesUtil.java" startLine="48" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="5239146621999643538" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="66" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.RulesUtil$QuotationClass_yxkngc_a0a0a0d0a" />
-    <unitInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="84" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.RulesUtil$QuotationClass_yxkngc_a0a0a0a3a2" />
-    <unitInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="102" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.RulesUtil$QuotationClass_yxkngc_a0a0a0a3a2_0" />
-    <unitInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="18" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.RulesUtil" />
+    <unitInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="65" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.RulesUtil$QuotationClass_yxkngc_a0a0a0d0a" />
+    <unitInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="83" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.RulesUtil$QuotationClass_yxkngc_a0a0a0a3a2" />
+    <unitInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="101" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.RulesUtil$QuotationClass_yxkngc_a0a0a0a3a2_0" />
+    <unitInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="17" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.RulesUtil" />
   </root>
   <root nodeId="1188915188673">
-    <nodeInfo nodeId="1188915272415" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="97" />
-    <nodeInfo nodeId="1188915272415" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="24" startPosition="97" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1188915272415" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1188915272415" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1188915272415" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="360" />
-    <nodeInfo nodeId="1188915272415" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="22" startPosition="100" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1188915272415" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="360" />
-    <scopeInfo nodeId="1188915188674" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="22" startPosition="100" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1188915272415" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="97" />
+    <nodeInfo nodeId="1188915272415" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="23" startPosition="97" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1188915272415" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1188915272415" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1188915272415" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="360" />
+    <nodeInfo nodeId="1188915272415" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="21" startPosition="100" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1188915272415" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="360" />
+    <scopeInfo nodeId="1188915188674" fileName="typeof_ComparisonRule_InferenceRule.java" startLine="21" startPosition="100" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1193734278188">
-    <nodeInfo nodeId="1193734360050" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="23" startPosition="110" endLine="24" endPosition="145" />
-    <nodeInfo nodeId="1193734407570" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="26" startPosition="7" endLine="27" endPosition="68" />
-    <nodeInfo nodeId="1193734407570" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="27" startPosition="68" endLine="28" endPosition="55" />
-    <nodeInfo nodeId="1193734407570" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="28" startPosition="55" endLine="29" endPosition="215" />
-    <nodeInfo nodeId="1193734407570" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="29" startPosition="215" endLine="30" endPosition="420" />
-    <nodeInfo nodeId="1193734407570" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="25" startPosition="31" endLine="31" endPosition="7" />
-    <nodeInfo nodeId="1193734396123" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="24" startPosition="145" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="1193734407570" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="26" startPosition="7" endLine="30" endPosition="420" />
-    <scopeInfo nodeId="1193734396124" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="25" startPosition="31" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="1193734278189" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="23" startPosition="110" endLine="32" endPosition="5">
+    <nodeInfo nodeId="1193734360050" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="22" startPosition="110" endLine="23" endPosition="145" />
+    <nodeInfo nodeId="1193734407570" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="25" startPosition="7" endLine="26" endPosition="68" />
+    <nodeInfo nodeId="1193734407570" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="26" startPosition="68" endLine="27" endPosition="55" />
+    <nodeInfo nodeId="1193734407570" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="27" startPosition="55" endLine="28" endPosition="215" />
+    <nodeInfo nodeId="1193734407570" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="28" startPosition="215" endLine="29" endPosition="420" />
+    <nodeInfo nodeId="1193734407570" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="24" startPosition="31" endLine="30" endPosition="7" />
+    <nodeInfo nodeId="1193734396123" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="23" startPosition="145" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="1193734407570" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="25" startPosition="7" endLine="29" endPosition="420" />
+    <scopeInfo nodeId="1193734396124" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="24" startPosition="31" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="1193734278189" fileName="typeof_FindSourceBlockParameter_InferenceRule.java" startLine="22" startPosition="110" endLine="31" endPosition="5">
       <varInfo nodeId="1193734360051" varName="dependency" />
     </scopeInfo>
   </root>
@@ -427,46 +427,46 @@
     <scopeInfo nodeId="1196099050519" fileName="check_NodeInferTypeOperation_NonTypesystemRule.java" startLine="19" startPosition="95" endLine="24" endPosition="5" />
   </root>
   <root nodeId="1196178213544">
-    <nodeInfo nodeId="1196178341653" fileName="check_MethodCall_NonTypesystemRule.java" startLine="30" startPosition="63" endLine="31" endPosition="57" />
-    <nodeInfo nodeId="1196178341653" fileName="check_MethodCall_NonTypesystemRule.java" startLine="31" startPosition="57" endLine="32" endPosition="59" />
-    <nodeInfo nodeId="1196178341653" fileName="check_MethodCall_NonTypesystemRule.java" startLine="32" startPosition="59" endLine="33" endPosition="298" />
-    <nodeInfo nodeId="1196178381177" fileName="check_MethodCall_NonTypesystemRule.java" startLine="34" startPosition="9" endLine="35" endPosition="15" />
-    <nodeInfo nodeId="5239146621999661342" fileName="check_MethodCall_NonTypesystemRule.java" startLine="37" startPosition="62" endLine="38" endPosition="57" />
-    <nodeInfo nodeId="5239146621999661342" fileName="check_MethodCall_NonTypesystemRule.java" startLine="38" startPosition="57" endLine="39" endPosition="59" />
-    <nodeInfo nodeId="5239146621999661342" fileName="check_MethodCall_NonTypesystemRule.java" startLine="39" startPosition="59" endLine="40" endPosition="324" />
-    <nodeInfo nodeId="5239146621999661347" fileName="check_MethodCall_NonTypesystemRule.java" startLine="41" startPosition="9" endLine="42" endPosition="15" />
-    <nodeInfo nodeId="1196178341653" fileName="check_MethodCall_NonTypesystemRule.java" startLine="29" startPosition="235" endLine="34" endPosition="9" />
-    <nodeInfo nodeId="5239146621999661342" fileName="check_MethodCall_NonTypesystemRule.java" startLine="36" startPosition="243" endLine="41" endPosition="9" />
-    <nodeInfo nodeId="1196178272214" fileName="check_MethodCall_NonTypesystemRule.java" startLine="28" startPosition="160" endLine="43" endPosition="7" />
-    <nodeInfo nodeId="1196178272212" fileName="check_MethodCall_NonTypesystemRule.java" startLine="27" startPosition="100" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="1196178341653" fileName="check_MethodCall_NonTypesystemRule.java" startLine="30" startPosition="63" endLine="33" endPosition="298" />
-    <scopeInfo nodeId="5239146621999661342" fileName="check_MethodCall_NonTypesystemRule.java" startLine="37" startPosition="62" endLine="40" endPosition="324" />
-    <scopeInfo nodeId="1196178272215" fileName="check_MethodCall_NonTypesystemRule.java" startLine="29" startPosition="235" endLine="35" endPosition="15" />
-    <scopeInfo nodeId="5239146621999661325" fileName="check_MethodCall_NonTypesystemRule.java" startLine="36" startPosition="243" endLine="42" endPosition="15" />
-    <scopeInfo nodeId="1196178272213" fileName="check_MethodCall_NonTypesystemRule.java" startLine="28" startPosition="160" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="1196178213545" fileName="check_MethodCall_NonTypesystemRule.java" startLine="27" startPosition="100" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="1196178272212" fileName="check_MethodCall_NonTypesystemRule.java" startLine="27" startPosition="100" endLine="44" endPosition="5">
+    <nodeInfo nodeId="1196178341653" fileName="check_MethodCall_NonTypesystemRule.java" startLine="29" startPosition="63" endLine="30" endPosition="57" />
+    <nodeInfo nodeId="1196178341653" fileName="check_MethodCall_NonTypesystemRule.java" startLine="30" startPosition="57" endLine="31" endPosition="59" />
+    <nodeInfo nodeId="1196178341653" fileName="check_MethodCall_NonTypesystemRule.java" startLine="31" startPosition="59" endLine="32" endPosition="298" />
+    <nodeInfo nodeId="1196178381177" fileName="check_MethodCall_NonTypesystemRule.java" startLine="33" startPosition="9" endLine="34" endPosition="15" />
+    <nodeInfo nodeId="5239146621999661342" fileName="check_MethodCall_NonTypesystemRule.java" startLine="36" startPosition="62" endLine="37" endPosition="57" />
+    <nodeInfo nodeId="5239146621999661342" fileName="check_MethodCall_NonTypesystemRule.java" startLine="37" startPosition="57" endLine="38" endPosition="59" />
+    <nodeInfo nodeId="5239146621999661342" fileName="check_MethodCall_NonTypesystemRule.java" startLine="38" startPosition="59" endLine="39" endPosition="324" />
+    <nodeInfo nodeId="5239146621999661347" fileName="check_MethodCall_NonTypesystemRule.java" startLine="40" startPosition="9" endLine="41" endPosition="15" />
+    <nodeInfo nodeId="1196178341653" fileName="check_MethodCall_NonTypesystemRule.java" startLine="28" startPosition="235" endLine="33" endPosition="9" />
+    <nodeInfo nodeId="5239146621999661342" fileName="check_MethodCall_NonTypesystemRule.java" startLine="35" startPosition="243" endLine="40" endPosition="9" />
+    <nodeInfo nodeId="1196178272214" fileName="check_MethodCall_NonTypesystemRule.java" startLine="27" startPosition="160" endLine="42" endPosition="7" />
+    <nodeInfo nodeId="1196178272212" fileName="check_MethodCall_NonTypesystemRule.java" startLine="26" startPosition="100" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="1196178341653" fileName="check_MethodCall_NonTypesystemRule.java" startLine="29" startPosition="63" endLine="32" endPosition="298" />
+    <scopeInfo nodeId="5239146621999661342" fileName="check_MethodCall_NonTypesystemRule.java" startLine="36" startPosition="62" endLine="39" endPosition="324" />
+    <scopeInfo nodeId="1196178272215" fileName="check_MethodCall_NonTypesystemRule.java" startLine="28" startPosition="235" endLine="34" endPosition="15" />
+    <scopeInfo nodeId="5239146621999661325" fileName="check_MethodCall_NonTypesystemRule.java" startLine="35" startPosition="243" endLine="41" endPosition="15" />
+    <scopeInfo nodeId="1196178272213" fileName="check_MethodCall_NonTypesystemRule.java" startLine="27" startPosition="160" endLine="42" endPosition="7" />
+    <scopeInfo nodeId="1196178213545" fileName="check_MethodCall_NonTypesystemRule.java" startLine="26" startPosition="100" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="1196178272212" fileName="check_MethodCall_NonTypesystemRule.java" startLine="26" startPosition="100" endLine="43" endPosition="5">
       <varInfo nodeId="1196178272220" varName="annotationInstance" />
     </scopeInfo>
   </root>
   <root nodeId="1196960479928">
-    <nodeInfo nodeId="1196960500018" fileName="typeof_MatchStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="100" />
-    <nodeInfo nodeId="1196960500018" fileName="typeof_MatchStatement_InferenceRule.java" startLine="24" startPosition="100" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1196960500018" fileName="typeof_MatchStatement_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1196960500018" fileName="typeof_MatchStatement_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1196960500018" fileName="typeof_MatchStatement_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="360" />
-    <nodeInfo nodeId="1196960500018" fileName="typeof_MatchStatement_InferenceRule.java" startLine="22" startPosition="97" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1196960500018" fileName="typeof_MatchStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="360" />
-    <scopeInfo nodeId="1196960479929" fileName="typeof_MatchStatement_InferenceRule.java" startLine="22" startPosition="97" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1196960500018" fileName="typeof_MatchStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="100" />
+    <nodeInfo nodeId="1196960500018" fileName="typeof_MatchStatement_InferenceRule.java" startLine="23" startPosition="100" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1196960500018" fileName="typeof_MatchStatement_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1196960500018" fileName="typeof_MatchStatement_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1196960500018" fileName="typeof_MatchStatement_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="360" />
+    <nodeInfo nodeId="1196960500018" fileName="typeof_MatchStatement_InferenceRule.java" startLine="21" startPosition="97" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1196960500018" fileName="typeof_MatchStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="360" />
+    <scopeInfo nodeId="1196960479929" fileName="typeof_MatchStatement_InferenceRule.java" startLine="21" startPosition="97" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1201618373412">
-    <nodeInfo nodeId="1201618387152" fileName="typeof_ErrorInfoExpression_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="53" />
-    <nodeInfo nodeId="1201618387152" fileName="typeof_ErrorInfoExpression_InferenceRule.java" startLine="26" startPosition="53" endLine="27" endPosition="53" />
-    <nodeInfo nodeId="1201618387152" fileName="typeof_ErrorInfoExpression_InferenceRule.java" startLine="27" startPosition="53" endLine="28" endPosition="213" />
-    <nodeInfo nodeId="1201618387152" fileName="typeof_ErrorInfoExpression_InferenceRule.java" startLine="28" startPosition="213" endLine="29" endPosition="348" />
-    <nodeInfo nodeId="1201618387152" fileName="typeof_ErrorInfoExpression_InferenceRule.java" startLine="24" startPosition="97" endLine="30" endPosition="5" />
-    <scopeInfo nodeId="1201618387152" fileName="typeof_ErrorInfoExpression_InferenceRule.java" startLine="25" startPosition="5" endLine="29" endPosition="348" />
-    <scopeInfo nodeId="1201618373413" fileName="typeof_ErrorInfoExpression_InferenceRule.java" startLine="24" startPosition="97" endLine="30" endPosition="5" />
+    <nodeInfo nodeId="1201618387152" fileName="typeof_ErrorInfoExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="53" />
+    <nodeInfo nodeId="1201618387152" fileName="typeof_ErrorInfoExpression_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="53" />
+    <nodeInfo nodeId="1201618387152" fileName="typeof_ErrorInfoExpression_InferenceRule.java" startLine="26" startPosition="53" endLine="27" endPosition="213" />
+    <nodeInfo nodeId="1201618387152" fileName="typeof_ErrorInfoExpression_InferenceRule.java" startLine="27" startPosition="213" endLine="28" endPosition="348" />
+    <nodeInfo nodeId="1201618387152" fileName="typeof_ErrorInfoExpression_InferenceRule.java" startLine="23" startPosition="97" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="1201618387152" fileName="typeof_ErrorInfoExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="28" endPosition="348" />
+    <scopeInfo nodeId="1201618373413" fileName="typeof_ErrorInfoExpression_InferenceRule.java" startLine="23" startPosition="97" endLine="29" endPosition="5" />
   </root>
   <root nodeId="1201618417551">
     <nodeInfo nodeId="1201618438931" fileName="check_ErrorInfoExpression_NonTypesystemRule.java" startLine="21" startPosition="155" endLine="22" endPosition="53" />
@@ -504,13 +504,13 @@
     <scopeInfo nodeId="1202488968329" fileName="typeof_PatternVariableReference_InferenceRule.java" startLine="18" startPosition="97" endLine="24" endPosition="5" />
   </root>
   <root nodeId="1203432689363">
-    <nodeInfo nodeId="1203432712811" fileName="typeof_ListVarDeclaration_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="53" />
-    <nodeInfo nodeId="1203432712811" fileName="typeof_ListVarDeclaration_InferenceRule.java" startLine="23" startPosition="53" endLine="24" endPosition="53" />
-    <nodeInfo nodeId="1203432712811" fileName="typeof_ListVarDeclaration_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
-    <nodeInfo nodeId="1203432712811" fileName="typeof_ListVarDeclaration_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="347" />
-    <nodeInfo nodeId="1203432712811" fileName="typeof_ListVarDeclaration_InferenceRule.java" startLine="21" startPosition="97" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="1203432712811" fileName="typeof_ListVarDeclaration_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="347" />
-    <scopeInfo nodeId="1203432689364" fileName="typeof_ListVarDeclaration_InferenceRule.java" startLine="21" startPosition="97" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1203432712811" fileName="typeof_ListVarDeclaration_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="53" />
+    <nodeInfo nodeId="1203432712811" fileName="typeof_ListVarDeclaration_InferenceRule.java" startLine="22" startPosition="53" endLine="23" endPosition="53" />
+    <nodeInfo nodeId="1203432712811" fileName="typeof_ListVarDeclaration_InferenceRule.java" startLine="23" startPosition="53" endLine="24" endPosition="213" />
+    <nodeInfo nodeId="1203432712811" fileName="typeof_ListVarDeclaration_InferenceRule.java" startLine="24" startPosition="213" endLine="25" endPosition="347" />
+    <nodeInfo nodeId="1203432712811" fileName="typeof_ListVarDeclaration_InferenceRule.java" startLine="20" startPosition="97" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="1203432712811" fileName="typeof_ListVarDeclaration_InferenceRule.java" startLine="21" startPosition="5" endLine="25" endPosition="347" />
+    <scopeInfo nodeId="1203432689364" fileName="typeof_ListVarDeclaration_InferenceRule.java" startLine="20" startPosition="97" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1203432888152">
     <nodeInfo nodeId="1203432897938" fileName="typeof_ListVarReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="53" />
@@ -542,37 +542,37 @@
     <scopeInfo nodeId="1205767996647" fileName="typeof_WhenConcreteVariableDeclaration_InferenceRule.java" startLine="19" startPosition="97" endLine="27" endPosition="5" />
   </root>
   <root nodeId="1206297681151">
-    <nodeInfo nodeId="1206297717786" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="31" startPosition="165" endLine="32" endPosition="57" />
-    <nodeInfo nodeId="1206297717786" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="32" startPosition="57" endLine="33" endPosition="59" />
-    <nodeInfo nodeId="1206297717786" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="33" startPosition="59" endLine="34" endPosition="333" />
-    <nodeInfo nodeId="1206297717791" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="35" startPosition="9" endLine="36" endPosition="15" />
-    <nodeInfo nodeId="1206297717786" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="30" startPosition="242" endLine="35" endPosition="9" />
-    <nodeInfo nodeId="1206297717784" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="29" startPosition="108" endLine="37" endPosition="7" />
-    <nodeInfo nodeId="1206297717782" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="28" startPosition="107" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="1206297717786" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="31" startPosition="165" endLine="34" endPosition="333" />
-    <scopeInfo nodeId="1206297717785" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="30" startPosition="242" endLine="36" endPosition="15" />
-    <scopeInfo nodeId="1206297717783" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="29" startPosition="108" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="1206297681152" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="28" startPosition="107" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="1206297717782" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="28" startPosition="107" endLine="38" endPosition="5">
+    <nodeInfo nodeId="1206297717786" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="30" startPosition="165" endLine="31" endPosition="57" />
+    <nodeInfo nodeId="1206297717786" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="31" startPosition="57" endLine="32" endPosition="59" />
+    <nodeInfo nodeId="1206297717786" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="32" startPosition="59" endLine="33" endPosition="333" />
+    <nodeInfo nodeId="1206297717791" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="34" startPosition="9" endLine="35" endPosition="15" />
+    <nodeInfo nodeId="1206297717786" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="29" startPosition="242" endLine="34" endPosition="9" />
+    <nodeInfo nodeId="1206297717784" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="28" startPosition="108" endLine="36" endPosition="7" />
+    <nodeInfo nodeId="1206297717782" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="27" startPosition="107" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="1206297717786" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="30" startPosition="165" endLine="33" endPosition="333" />
+    <scopeInfo nodeId="1206297717785" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="29" startPosition="242" endLine="35" endPosition="15" />
+    <scopeInfo nodeId="1206297717783" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="28" startPosition="108" endLine="36" endPosition="7" />
+    <scopeInfo nodeId="1206297681152" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="27" startPosition="107" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="1206297717782" fileName="check_MethodDeclaration_NonTypesystemRule.java" startLine="27" startPosition="107" endLine="37" endPosition="5">
       <varInfo nodeId="1206297717805" varName="annotationInstance" />
     </scopeInfo>
   </root>
   <root nodeId="1207055628316">
-    <nodeInfo nodeId="1207055636648" fileName="typeof_WarningStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="101" />
-    <nodeInfo nodeId="1207055636648" fileName="typeof_WarningStatement_InferenceRule.java" startLine="24" startPosition="101" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1207055636648" fileName="typeof_WarningStatement_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1207055636648" fileName="typeof_WarningStatement_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1207055636648" fileName="typeof_WarningStatement_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="362" />
-    <nodeInfo nodeId="1207055636657" fileName="typeof_WarningStatement_InferenceRule.java" startLine="30" startPosition="5" endLine="31" endPosition="102" />
-    <nodeInfo nodeId="1207055636657" fileName="typeof_WarningStatement_InferenceRule.java" startLine="31" startPosition="102" endLine="32" endPosition="53" />
-    <nodeInfo nodeId="1207055636657" fileName="typeof_WarningStatement_InferenceRule.java" startLine="32" startPosition="53" endLine="33" endPosition="213" />
-    <nodeInfo nodeId="1207055636657" fileName="typeof_WarningStatement_InferenceRule.java" startLine="33" startPosition="213" endLine="34" endPosition="54" />
-    <nodeInfo nodeId="1207055636657" fileName="typeof_WarningStatement_InferenceRule.java" startLine="34" startPosition="54" endLine="35" endPosition="362" />
-    <nodeInfo nodeId="1207055636648" fileName="typeof_WarningStatement_InferenceRule.java" startLine="22" startPosition="97" endLine="29" endPosition="5" />
-    <nodeInfo nodeId="1207055636657" fileName="typeof_WarningStatement_InferenceRule.java" startLine="29" startPosition="5" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="1207055636648" fileName="typeof_WarningStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="362" />
-    <scopeInfo nodeId="1207055636657" fileName="typeof_WarningStatement_InferenceRule.java" startLine="30" startPosition="5" endLine="35" endPosition="362" />
-    <scopeInfo nodeId="1207055628317" fileName="typeof_WarningStatement_InferenceRule.java" startLine="22" startPosition="97" endLine="36" endPosition="5" />
+    <nodeInfo nodeId="1207055636648" fileName="typeof_WarningStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="101" />
+    <nodeInfo nodeId="1207055636648" fileName="typeof_WarningStatement_InferenceRule.java" startLine="23" startPosition="101" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1207055636648" fileName="typeof_WarningStatement_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1207055636648" fileName="typeof_WarningStatement_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1207055636648" fileName="typeof_WarningStatement_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="362" />
+    <nodeInfo nodeId="1207055636657" fileName="typeof_WarningStatement_InferenceRule.java" startLine="29" startPosition="5" endLine="30" endPosition="102" />
+    <nodeInfo nodeId="1207055636657" fileName="typeof_WarningStatement_InferenceRule.java" startLine="30" startPosition="102" endLine="31" endPosition="53" />
+    <nodeInfo nodeId="1207055636657" fileName="typeof_WarningStatement_InferenceRule.java" startLine="31" startPosition="53" endLine="32" endPosition="213" />
+    <nodeInfo nodeId="1207055636657" fileName="typeof_WarningStatement_InferenceRule.java" startLine="32" startPosition="213" endLine="33" endPosition="54" />
+    <nodeInfo nodeId="1207055636657" fileName="typeof_WarningStatement_InferenceRule.java" startLine="33" startPosition="54" endLine="34" endPosition="362" />
+    <nodeInfo nodeId="1207055636648" fileName="typeof_WarningStatement_InferenceRule.java" startLine="21" startPosition="97" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="1207055636657" fileName="typeof_WarningStatement_InferenceRule.java" startLine="28" startPosition="5" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="1207055636648" fileName="typeof_WarningStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="362" />
+    <scopeInfo nodeId="1207055636657" fileName="typeof_WarningStatement_InferenceRule.java" startLine="29" startPosition="5" endLine="34" endPosition="362" />
+    <scopeInfo nodeId="1207055628317" fileName="typeof_WarningStatement_InferenceRule.java" startLine="21" startPosition="97" endLine="35" endPosition="5" />
   </root>
   <root nodeId="1207314759346">
     <nodeInfo nodeId="1235663812110" fileName="check_AbstractCheckingRule_NonTypesystemRule.java" startLine="18" startPosition="80" endLine="19" endPosition="117" />
@@ -613,14 +613,14 @@
     <scopeInfo nodeId="1210785545107" fileName="typeof_TypesystemIntentionArgument_InferenceRule.java" startLine="18" startPosition="97" endLine="31" endPosition="5" />
   </root>
   <root nodeId="1220357503680">
-    <nodeInfo nodeId="1220357537248" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="98" />
-    <nodeInfo nodeId="1220357537248" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="24" startPosition="98" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1220357537248" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1220357537248" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1220357537248" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="368" />
-    <nodeInfo nodeId="1220357537248" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="22" startPosition="95" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1220357537248" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="368" />
-    <scopeInfo nodeId="1220357503681" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="22" startPosition="95" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1220357537248" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="98" />
+    <nodeInfo nodeId="1220357537248" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="23" startPosition="98" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1220357537248" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1220357537248" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1220357537248" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="368" />
+    <nodeInfo nodeId="1220357537248" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="21" startPosition="95" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1220357537248" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="368" />
+    <scopeInfo nodeId="1220357503681" fileName="typeof_AddDependencyStatement_InferenceRule.java" startLine="21" startPosition="95" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1220965287653">
     <nodeInfo nodeId="1220965298968" fileName="typeof_QuickFixArgument_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="50" />
@@ -632,34 +632,34 @@
     <scopeInfo nodeId="1220965287654" fileName="typeof_QuickFixArgument_InferenceRule.java" startLine="18" startPosition="94" endLine="24" endPosition="5" />
   </root>
   <root nodeId="1223036071356">
-    <nodeInfo nodeId="1223036087190" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="102" />
-    <nodeInfo nodeId="1223036087190" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="24" startPosition="102" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1223036087190" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1223036087190" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1223036087190" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="365" />
-    <nodeInfo nodeId="1223036087190" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="22" startPosition="95" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1223036087190" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="365" />
-    <scopeInfo nodeId="1223036071357" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="22" startPosition="95" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1223036087190" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="102" />
+    <nodeInfo nodeId="1223036087190" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="23" startPosition="102" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1223036087190" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1223036087190" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1223036087190" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="365" />
+    <nodeInfo nodeId="1223036087190" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="21" startPosition="95" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1223036087190" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="365" />
+    <scopeInfo nodeId="1223036071357" fileName="typeof_SimpleRule_Annotated_InferenceRule.java" startLine="21" startPosition="95" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1223036442337">
-    <nodeInfo nodeId="1223036505324" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="23" startPosition="95" endLine="24" endPosition="246" />
-    <nodeInfo nodeId="1223036522704" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="26" startPosition="7" endLine="27" endPosition="53" />
-    <nodeInfo nodeId="1223036522704" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="27" startPosition="53" endLine="28" endPosition="55" />
-    <nodeInfo nodeId="1223036522704" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="28" startPosition="55" endLine="29" endPosition="215" />
-    <nodeInfo nodeId="1223036522704" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="29" startPosition="215" endLine="30" endPosition="363" />
-    <nodeInfo nodeId="1223036547395" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="33" startPosition="7" endLine="34" endPosition="53" />
-    <nodeInfo nodeId="1223036547395" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="34" startPosition="53" endLine="35" endPosition="55" />
-    <nodeInfo nodeId="1223036547395" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="35" startPosition="55" endLine="36" endPosition="215" />
-    <nodeInfo nodeId="1223036547395" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="36" startPosition="215" endLine="37" endPosition="384" />
-    <nodeInfo nodeId="1223036522704" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="25" startPosition="39" endLine="31" endPosition="7" />
-    <nodeInfo nodeId="1223036547395" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="32" startPosition="12" endLine="38" endPosition="7" />
-    <nodeInfo nodeId="1223036533768" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="32" startPosition="10" endLine="39" endPosition="5" />
-    <nodeInfo nodeId="1223036510290" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="24" startPosition="246" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="1223036522704" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="26" startPosition="7" endLine="30" endPosition="363" />
-    <scopeInfo nodeId="1223036547395" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="33" startPosition="7" endLine="37" endPosition="384" />
-    <scopeInfo nodeId="1223036510291" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="25" startPosition="39" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="1223036533769" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="32" startPosition="12" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="1223036442338" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="23" startPosition="95" endLine="39" endPosition="5">
+    <nodeInfo nodeId="1223036505324" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="22" startPosition="95" endLine="23" endPosition="246" />
+    <nodeInfo nodeId="1223036522704" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="25" startPosition="7" endLine="26" endPosition="53" />
+    <nodeInfo nodeId="1223036522704" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="26" startPosition="53" endLine="27" endPosition="55" />
+    <nodeInfo nodeId="1223036522704" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="27" startPosition="55" endLine="28" endPosition="215" />
+    <nodeInfo nodeId="1223036522704" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="28" startPosition="215" endLine="29" endPosition="363" />
+    <nodeInfo nodeId="1223036547395" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="32" startPosition="7" endLine="33" endPosition="53" />
+    <nodeInfo nodeId="1223036547395" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="33" startPosition="53" endLine="34" endPosition="55" />
+    <nodeInfo nodeId="1223036547395" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="34" startPosition="55" endLine="35" endPosition="215" />
+    <nodeInfo nodeId="1223036547395" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="35" startPosition="215" endLine="36" endPosition="384" />
+    <nodeInfo nodeId="1223036522704" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="24" startPosition="39" endLine="30" endPosition="7" />
+    <nodeInfo nodeId="1223036547395" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="31" startPosition="12" endLine="37" endPosition="7" />
+    <nodeInfo nodeId="1223036533768" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="31" startPosition="10" endLine="38" endPosition="5" />
+    <nodeInfo nodeId="1223036510290" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="23" startPosition="246" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="1223036522704" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="25" startPosition="7" endLine="29" endPosition="363" />
+    <scopeInfo nodeId="1223036547395" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="32" startPosition="7" endLine="36" endPosition="384" />
+    <scopeInfo nodeId="1223036510291" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="24" startPosition="39" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="1223036533769" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="31" startPosition="12" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="1223036442338" fileName="typeof_SimpleRule_Annotated_Parameter_InferenceRule.java" startLine="22" startPosition="95" endLine="38" endPosition="5">
       <varInfo nodeId="1223036505325" varName="conceptDeclaration" />
     </scopeInfo>
   </root>
@@ -672,50 +672,50 @@
     <scopeInfo nodeId="1223036624535" fileName="check_SimpleRuleAnnotatedParameterApplicable_NonTypesystemRule.java" startLine="20" startPosition="95" endLine="25" endPosition="5" />
   </root>
   <root nodeId="1224760391346">
-    <nodeInfo nodeId="1224760393553" fileName="typeof_InfoStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="98" />
-    <nodeInfo nodeId="1224760393553" fileName="typeof_InfoStatement_InferenceRule.java" startLine="24" startPosition="98" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1224760393553" fileName="typeof_InfoStatement_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1224760393553" fileName="typeof_InfoStatement_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1224760393553" fileName="typeof_InfoStatement_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="359" />
-    <nodeInfo nodeId="1224760393562" fileName="typeof_InfoStatement_InferenceRule.java" startLine="30" startPosition="5" endLine="31" endPosition="102" />
-    <nodeInfo nodeId="1224760393562" fileName="typeof_InfoStatement_InferenceRule.java" startLine="31" startPosition="102" endLine="32" endPosition="53" />
-    <nodeInfo nodeId="1224760393562" fileName="typeof_InfoStatement_InferenceRule.java" startLine="32" startPosition="53" endLine="33" endPosition="213" />
-    <nodeInfo nodeId="1224760393562" fileName="typeof_InfoStatement_InferenceRule.java" startLine="33" startPosition="213" endLine="34" endPosition="54" />
-    <nodeInfo nodeId="1224760393562" fileName="typeof_InfoStatement_InferenceRule.java" startLine="34" startPosition="54" endLine="35" endPosition="359" />
-    <nodeInfo nodeId="1224760393553" fileName="typeof_InfoStatement_InferenceRule.java" startLine="22" startPosition="97" endLine="29" endPosition="5" />
-    <nodeInfo nodeId="1224760393562" fileName="typeof_InfoStatement_InferenceRule.java" startLine="29" startPosition="5" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="1224760393553" fileName="typeof_InfoStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="359" />
-    <scopeInfo nodeId="1224760393562" fileName="typeof_InfoStatement_InferenceRule.java" startLine="30" startPosition="5" endLine="35" endPosition="359" />
-    <scopeInfo nodeId="1224760391347" fileName="typeof_InfoStatement_InferenceRule.java" startLine="22" startPosition="97" endLine="36" endPosition="5" />
+    <nodeInfo nodeId="1224760393553" fileName="typeof_InfoStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="98" />
+    <nodeInfo nodeId="1224760393553" fileName="typeof_InfoStatement_InferenceRule.java" startLine="23" startPosition="98" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1224760393553" fileName="typeof_InfoStatement_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1224760393553" fileName="typeof_InfoStatement_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1224760393553" fileName="typeof_InfoStatement_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="359" />
+    <nodeInfo nodeId="1224760393562" fileName="typeof_InfoStatement_InferenceRule.java" startLine="29" startPosition="5" endLine="30" endPosition="102" />
+    <nodeInfo nodeId="1224760393562" fileName="typeof_InfoStatement_InferenceRule.java" startLine="30" startPosition="102" endLine="31" endPosition="53" />
+    <nodeInfo nodeId="1224760393562" fileName="typeof_InfoStatement_InferenceRule.java" startLine="31" startPosition="53" endLine="32" endPosition="213" />
+    <nodeInfo nodeId="1224760393562" fileName="typeof_InfoStatement_InferenceRule.java" startLine="32" startPosition="213" endLine="33" endPosition="54" />
+    <nodeInfo nodeId="1224760393562" fileName="typeof_InfoStatement_InferenceRule.java" startLine="33" startPosition="54" endLine="34" endPosition="359" />
+    <nodeInfo nodeId="1224760393553" fileName="typeof_InfoStatement_InferenceRule.java" startLine="21" startPosition="97" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="1224760393562" fileName="typeof_InfoStatement_InferenceRule.java" startLine="28" startPosition="5" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="1224760393553" fileName="typeof_InfoStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="359" />
+    <scopeInfo nodeId="1224760393562" fileName="typeof_InfoStatement_InferenceRule.java" startLine="29" startPosition="5" endLine="34" endPosition="359" />
+    <scopeInfo nodeId="1224760391347" fileName="typeof_InfoStatement_InferenceRule.java" startLine="21" startPosition="97" endLine="35" endPosition="5" />
   </root>
   <root nodeId="1226079508446">
-    <nodeInfo nodeId="1226079524187" fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="51" />
-    <nodeInfo nodeId="1226079524187" fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="23" startPosition="51" endLine="24" endPosition="53" />
-    <nodeInfo nodeId="1226079524187" fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
-    <nodeInfo nodeId="1226079524187" fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="358" />
-    <nodeInfo nodeId="1226079524187" fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="21" startPosition="95" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="1226079524187" fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="358" />
-    <scopeInfo nodeId="1226079508447" fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="21" startPosition="95" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1226079524187" fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="51" />
+    <nodeInfo nodeId="1226079524187" fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="22" startPosition="51" endLine="23" endPosition="53" />
+    <nodeInfo nodeId="1226079524187" fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="23" startPosition="53" endLine="24" endPosition="213" />
+    <nodeInfo nodeId="1226079524187" fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="24" startPosition="213" endLine="25" endPosition="358" />
+    <nodeInfo nodeId="1226079524187" fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="20" startPosition="95" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="1226079524187" fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="21" startPosition="5" endLine="25" endPosition="358" />
+    <scopeInfo nodeId="1226079508447" fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="20" startPosition="95" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1227107428899">
-    <nodeInfo nodeId="1227107440008" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="97" />
-    <nodeInfo nodeId="1227107440008" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="24" startPosition="97" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1227107440008" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1227107440008" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1227107440008" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="364" />
-    <nodeInfo nodeId="1227107440008" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="22" startPosition="92" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1227107440008" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="364" />
-    <scopeInfo nodeId="1227107428900" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="22" startPosition="92" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1227107440008" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="97" />
+    <nodeInfo nodeId="1227107440008" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="23" startPosition="97" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1227107440008" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1227107440008" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1227107440008" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="364" />
+    <nodeInfo nodeId="1227107440008" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="21" startPosition="92" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1227107440008" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="364" />
+    <scopeInfo nodeId="1227107428900" fileName="typeof_PropertyNameTarget_InferenceRule.java" startLine="21" startPosition="92" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1227107521323">
-    <nodeInfo nodeId="1227107530966" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="98" />
-    <nodeInfo nodeId="1227107530966" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="24" startPosition="98" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1227107530966" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1227107530966" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1227107530966" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="365" />
-    <nodeInfo nodeId="1227107530966" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="22" startPosition="92" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1227107530966" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="365" />
-    <scopeInfo nodeId="1227107521324" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="22" startPosition="92" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1227107530966" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="98" />
+    <nodeInfo nodeId="1227107530966" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="23" startPosition="98" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1227107530966" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1227107530966" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1227107530966" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="365" />
+    <nodeInfo nodeId="1227107530966" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="21" startPosition="92" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1227107530966" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="365" />
+    <scopeInfo nodeId="1227107521324" fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="21" startPosition="92" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1227257230254">
     <nodeInfo nodeId="1227257237871" fileName="typeof_QuickFixArgumentReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="51" />
@@ -727,199 +727,199 @@
     <scopeInfo nodeId="1227257230255" fileName="typeof_QuickFixArgumentReference_InferenceRule.java" startLine="18" startPosition="95" endLine="24" endPosition="5" />
   </root>
   <root nodeId="1236083321142">
-    <nodeInfo nodeId="1236083373599" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="23" startPosition="103" endLine="24" endPosition="152" />
-    <nodeInfo nodeId="1097880957047046546" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="25" startPosition="29" endLine="26" endPosition="102" />
-    <nodeInfo nodeId="1097880957047046547" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="27" startPosition="7" endLine="28" endPosition="105" />
-    <nodeInfo nodeId="1097880957047046547" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="28" startPosition="105" endLine="29" endPosition="55" />
-    <nodeInfo nodeId="1097880957047046547" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="29" startPosition="55" endLine="30" endPosition="221" />
-    <nodeInfo nodeId="1097880957047046547" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="30" startPosition="221" endLine="31" endPosition="56" />
-    <nodeInfo nodeId="1097880957047046547" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="31" startPosition="56" endLine="32" endPosition="475" />
-    <nodeInfo nodeId="1097880957047046558" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="34" startPosition="7" endLine="35" endPosition="61" />
-    <nodeInfo nodeId="1097880957047046558" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="35" startPosition="61" endLine="36" endPosition="55" />
-    <nodeInfo nodeId="1097880957047046558" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="36" startPosition="55" endLine="37" endPosition="221" />
-    <nodeInfo nodeId="1097880957047046558" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="37" startPosition="221" endLine="38" endPosition="458" />
-    <nodeInfo nodeId="3841122719873969717" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="41" startPosition="7" endLine="42" endPosition="61" />
-    <nodeInfo nodeId="3841122719873969717" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="42" startPosition="61" endLine="43" endPosition="55" />
-    <nodeInfo nodeId="3841122719873969717" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="43" startPosition="55" endLine="44" endPosition="221" />
-    <nodeInfo nodeId="3841122719873969717" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="44" startPosition="221" endLine="45" endPosition="369" />
-    <nodeInfo nodeId="1097880957047046558" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="33" startPosition="7" endLine="39" endPosition="7" />
-    <nodeInfo nodeId="3841122719873969717" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="40" startPosition="12" endLine="46" endPosition="7" />
-    <nodeInfo nodeId="1097880957047046547" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="26" startPosition="102" endLine="33" endPosition="7" />
-    <nodeInfo nodeId="3841122719873969711" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="40" startPosition="10" endLine="47" endPosition="5" />
-    <nodeInfo nodeId="1236083338754" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="24" startPosition="152" endLine="47" endPosition="5" />
-    <scopeInfo nodeId="1097880957047046558" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="34" startPosition="7" endLine="38" endPosition="458" />
-    <scopeInfo nodeId="3841122719873969717" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="41" startPosition="7" endLine="45" endPosition="369" />
-    <scopeInfo nodeId="1097880957047046547" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="27" startPosition="7" endLine="32" endPosition="475" />
-    <scopeInfo nodeId="3841122719873969712" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="40" startPosition="12" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="1236083338755" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="25" startPosition="29" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="1236083321143" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="23" startPosition="103" endLine="47" endPosition="5">
+    <nodeInfo nodeId="1236083373599" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="22" startPosition="103" endLine="23" endPosition="152" />
+    <nodeInfo nodeId="1097880957047046546" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="24" startPosition="29" endLine="25" endPosition="102" />
+    <nodeInfo nodeId="1097880957047046547" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="26" startPosition="7" endLine="27" endPosition="105" />
+    <nodeInfo nodeId="1097880957047046547" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="27" startPosition="105" endLine="28" endPosition="55" />
+    <nodeInfo nodeId="1097880957047046547" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="28" startPosition="55" endLine="29" endPosition="221" />
+    <nodeInfo nodeId="1097880957047046547" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="29" startPosition="221" endLine="30" endPosition="56" />
+    <nodeInfo nodeId="1097880957047046547" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="30" startPosition="56" endLine="31" endPosition="475" />
+    <nodeInfo nodeId="1097880957047046558" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="33" startPosition="7" endLine="34" endPosition="61" />
+    <nodeInfo nodeId="1097880957047046558" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="34" startPosition="61" endLine="35" endPosition="55" />
+    <nodeInfo nodeId="1097880957047046558" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="35" startPosition="55" endLine="36" endPosition="221" />
+    <nodeInfo nodeId="1097880957047046558" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="36" startPosition="221" endLine="37" endPosition="458" />
+    <nodeInfo nodeId="3841122719873969717" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="40" startPosition="7" endLine="41" endPosition="61" />
+    <nodeInfo nodeId="3841122719873969717" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="41" startPosition="61" endLine="42" endPosition="55" />
+    <nodeInfo nodeId="3841122719873969717" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="42" startPosition="55" endLine="43" endPosition="221" />
+    <nodeInfo nodeId="3841122719873969717" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="43" startPosition="221" endLine="44" endPosition="369" />
+    <nodeInfo nodeId="1097880957047046558" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="32" startPosition="7" endLine="38" endPosition="7" />
+    <nodeInfo nodeId="3841122719873969717" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="39" startPosition="12" endLine="45" endPosition="7" />
+    <nodeInfo nodeId="1097880957047046547" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="25" startPosition="102" endLine="32" endPosition="7" />
+    <nodeInfo nodeId="3841122719873969711" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="39" startPosition="10" endLine="46" endPosition="5" />
+    <nodeInfo nodeId="1236083338754" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="23" startPosition="152" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="1097880957047046558" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="33" startPosition="7" endLine="37" endPosition="458" />
+    <scopeInfo nodeId="3841122719873969717" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="40" startPosition="7" endLine="44" endPosition="369" />
+    <scopeInfo nodeId="1097880957047046547" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="26" startPosition="7" endLine="31" endPosition="475" />
+    <scopeInfo nodeId="3841122719873969712" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="39" startPosition="12" endLine="45" endPosition="7" />
+    <scopeInfo nodeId="1236083338755" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="24" startPosition="29" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="1236083321143" fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="22" startPosition="103" endLine="46" endPosition="5">
       <varInfo nodeId="1236083373600" varName="typeRule" />
     </scopeInfo>
   </root>
   <root nodeId="1236083426633">
-    <nodeInfo nodeId="1236083427957" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="23" startPosition="103" endLine="24" endPosition="152" />
-    <nodeInfo nodeId="1097880957047046534" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="25" startPosition="29" endLine="26" endPosition="102" />
-    <nodeInfo nodeId="1097880957047046510" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="27" startPosition="7" endLine="28" endPosition="104" />
-    <nodeInfo nodeId="1097880957047046510" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="28" startPosition="104" endLine="29" endPosition="55" />
-    <nodeInfo nodeId="1097880957047046510" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="29" startPosition="55" endLine="30" endPosition="221" />
-    <nodeInfo nodeId="1097880957047046510" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="30" startPosition="221" endLine="31" endPosition="56" />
-    <nodeInfo nodeId="1097880957047046510" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="31" startPosition="56" endLine="32" endPosition="474" />
-    <nodeInfo nodeId="1236083427968" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="34" startPosition="7" endLine="35" endPosition="61" />
-    <nodeInfo nodeId="1236083427968" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="35" startPosition="61" endLine="36" endPosition="55" />
-    <nodeInfo nodeId="1236083427968" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="36" startPosition="55" endLine="37" endPosition="215" />
-    <nodeInfo nodeId="1236083427968" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="37" startPosition="215" endLine="38" endPosition="451" />
-    <nodeInfo nodeId="3841122719873946001" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="41" startPosition="7" endLine="42" endPosition="61" />
-    <nodeInfo nodeId="3841122719873946001" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="42" startPosition="61" endLine="43" endPosition="55" />
-    <nodeInfo nodeId="3841122719873946001" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="43" startPosition="55" endLine="44" endPosition="221" />
-    <nodeInfo nodeId="3841122719873946001" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="44" startPosition="221" endLine="45" endPosition="368" />
-    <nodeInfo nodeId="1236083427968" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="33" startPosition="7" endLine="39" endPosition="7" />
-    <nodeInfo nodeId="3841122719873946001" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="40" startPosition="12" endLine="46" endPosition="7" />
-    <nodeInfo nodeId="1097880957047046510" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="26" startPosition="102" endLine="33" endPosition="7" />
-    <nodeInfo nodeId="3841122719873945996" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="40" startPosition="10" endLine="47" endPosition="5" />
-    <nodeInfo nodeId="1236083427966" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="24" startPosition="152" endLine="47" endPosition="5" />
-    <scopeInfo nodeId="1236083427968" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="34" startPosition="7" endLine="38" endPosition="451" />
-    <scopeInfo nodeId="3841122719873946001" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="41" startPosition="7" endLine="45" endPosition="368" />
-    <scopeInfo nodeId="1097880957047046510" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="27" startPosition="7" endLine="32" endPosition="474" />
-    <scopeInfo nodeId="3841122719873945997" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="40" startPosition="12" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="1236083427967" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="25" startPosition="29" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="1236083426634" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="23" startPosition="103" endLine="47" endPosition="5">
+    <nodeInfo nodeId="1236083427957" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="22" startPosition="103" endLine="23" endPosition="152" />
+    <nodeInfo nodeId="1097880957047046534" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="24" startPosition="29" endLine="25" endPosition="102" />
+    <nodeInfo nodeId="1097880957047046510" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="26" startPosition="7" endLine="27" endPosition="104" />
+    <nodeInfo nodeId="1097880957047046510" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="27" startPosition="104" endLine="28" endPosition="55" />
+    <nodeInfo nodeId="1097880957047046510" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="28" startPosition="55" endLine="29" endPosition="221" />
+    <nodeInfo nodeId="1097880957047046510" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="29" startPosition="221" endLine="30" endPosition="56" />
+    <nodeInfo nodeId="1097880957047046510" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="30" startPosition="56" endLine="31" endPosition="474" />
+    <nodeInfo nodeId="1236083427968" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="33" startPosition="7" endLine="34" endPosition="61" />
+    <nodeInfo nodeId="1236083427968" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="34" startPosition="61" endLine="35" endPosition="55" />
+    <nodeInfo nodeId="1236083427968" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="35" startPosition="55" endLine="36" endPosition="215" />
+    <nodeInfo nodeId="1236083427968" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="36" startPosition="215" endLine="37" endPosition="451" />
+    <nodeInfo nodeId="3841122719873946001" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="40" startPosition="7" endLine="41" endPosition="61" />
+    <nodeInfo nodeId="3841122719873946001" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="41" startPosition="61" endLine="42" endPosition="55" />
+    <nodeInfo nodeId="3841122719873946001" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="42" startPosition="55" endLine="43" endPosition="221" />
+    <nodeInfo nodeId="3841122719873946001" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="43" startPosition="221" endLine="44" endPosition="368" />
+    <nodeInfo nodeId="1236083427968" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="32" startPosition="7" endLine="38" endPosition="7" />
+    <nodeInfo nodeId="3841122719873946001" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="39" startPosition="12" endLine="45" endPosition="7" />
+    <nodeInfo nodeId="1097880957047046510" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="25" startPosition="102" endLine="32" endPosition="7" />
+    <nodeInfo nodeId="3841122719873945996" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="39" startPosition="10" endLine="46" endPosition="5" />
+    <nodeInfo nodeId="1236083427966" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="23" startPosition="152" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="1236083427968" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="33" startPosition="7" endLine="37" endPosition="451" />
+    <scopeInfo nodeId="3841122719873946001" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="40" startPosition="7" endLine="44" endPosition="368" />
+    <scopeInfo nodeId="1097880957047046510" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="26" startPosition="7" endLine="31" endPosition="474" />
+    <scopeInfo nodeId="3841122719873945997" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="39" startPosition="12" endLine="45" endPosition="7" />
+    <scopeInfo nodeId="1236083427967" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="24" startPosition="29" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="1236083426634" fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="22" startPosition="103" endLine="46" endPosition="5">
       <varInfo nodeId="1236083427958" varName="typeRule" />
     </scopeInfo>
   </root>
   <root nodeId="1236083447582">
-    <nodeInfo nodeId="1236083449667" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="23" startPosition="103" endLine="24" endPosition="155" />
-    <nodeInfo nodeId="1236083449677" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="26" startPosition="7" endLine="27" endPosition="61" />
-    <nodeInfo nodeId="1236083449677" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="27" startPosition="61" endLine="28" endPosition="55" />
-    <nodeInfo nodeId="1236083449677" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="28" startPosition="55" endLine="29" endPosition="215" />
-    <nodeInfo nodeId="1236083449677" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="29" startPosition="215" endLine="30" endPosition="467" />
-    <nodeInfo nodeId="1236083449677" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="25" startPosition="29" endLine="31" endPosition="7" />
-    <nodeInfo nodeId="1236083449675" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="24" startPosition="155" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="1236083449677" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="26" startPosition="7" endLine="30" endPosition="467" />
-    <scopeInfo nodeId="1236083449676" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="25" startPosition="29" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="1236083447583" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="23" startPosition="103" endLine="32" endPosition="5">
+    <nodeInfo nodeId="1236083449667" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="22" startPosition="103" endLine="23" endPosition="155" />
+    <nodeInfo nodeId="1236083449677" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="25" startPosition="7" endLine="26" endPosition="61" />
+    <nodeInfo nodeId="1236083449677" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="26" startPosition="61" endLine="27" endPosition="55" />
+    <nodeInfo nodeId="1236083449677" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="27" startPosition="55" endLine="28" endPosition="215" />
+    <nodeInfo nodeId="1236083449677" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="28" startPosition="215" endLine="29" endPosition="467" />
+    <nodeInfo nodeId="1236083449677" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="24" startPosition="29" endLine="30" endPosition="7" />
+    <nodeInfo nodeId="1236083449675" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="23" startPosition="155" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="1236083449677" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="25" startPosition="7" endLine="29" endPosition="467" />
+    <scopeInfo nodeId="1236083449676" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="24" startPosition="29" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="1236083447583" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="22" startPosition="103" endLine="31" endPosition="5">
       <varInfo nodeId="1236083449668" varName="typeRule" />
     </scopeInfo>
   </root>
   <root nodeId="1236163379378">
-    <nodeInfo nodeId="1236163396217" fileName="typeof_GetOperationType_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="58" />
-    <nodeInfo nodeId="1236163396217" fileName="typeof_GetOperationType_InferenceRule.java" startLine="24" startPosition="58" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1236163396217" fileName="typeof_GetOperationType_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1236163396217" fileName="typeof_GetOperationType_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="345" />
-    <nodeInfo nodeId="1236163430940" fileName="typeof_GetOperationType_InferenceRule.java" startLine="29" startPosition="5" endLine="30" endPosition="104" />
-    <nodeInfo nodeId="1236163430940" fileName="typeof_GetOperationType_InferenceRule.java" startLine="30" startPosition="104" endLine="31" endPosition="53" />
-    <nodeInfo nodeId="1236163430940" fileName="typeof_GetOperationType_InferenceRule.java" startLine="31" startPosition="53" endLine="32" endPosition="213" />
-    <nodeInfo nodeId="1236163430940" fileName="typeof_GetOperationType_InferenceRule.java" startLine="32" startPosition="213" endLine="33" endPosition="54" />
-    <nodeInfo nodeId="1236163430940" fileName="typeof_GetOperationType_InferenceRule.java" startLine="33" startPosition="54" endLine="34" endPosition="362" />
-    <nodeInfo nodeId="1236163433943" fileName="typeof_GetOperationType_InferenceRule.java" startLine="36" startPosition="5" endLine="37" endPosition="110" />
-    <nodeInfo nodeId="1236163433943" fileName="typeof_GetOperationType_InferenceRule.java" startLine="37" startPosition="110" endLine="38" endPosition="53" />
-    <nodeInfo nodeId="1236163433943" fileName="typeof_GetOperationType_InferenceRule.java" startLine="38" startPosition="53" endLine="39" endPosition="213" />
-    <nodeInfo nodeId="1236163433943" fileName="typeof_GetOperationType_InferenceRule.java" startLine="39" startPosition="213" endLine="40" endPosition="54" />
-    <nodeInfo nodeId="1236163433943" fileName="typeof_GetOperationType_InferenceRule.java" startLine="40" startPosition="54" endLine="41" endPosition="362" />
-    <nodeInfo nodeId="1236163436073" fileName="typeof_GetOperationType_InferenceRule.java" startLine="43" startPosition="5" endLine="44" endPosition="111" />
-    <nodeInfo nodeId="1236163436073" fileName="typeof_GetOperationType_InferenceRule.java" startLine="44" startPosition="111" endLine="45" endPosition="53" />
-    <nodeInfo nodeId="1236163436073" fileName="typeof_GetOperationType_InferenceRule.java" startLine="45" startPosition="53" endLine="46" endPosition="213" />
-    <nodeInfo nodeId="1236163436073" fileName="typeof_GetOperationType_InferenceRule.java" startLine="46" startPosition="213" endLine="47" endPosition="54" />
-    <nodeInfo nodeId="1236163436073" fileName="typeof_GetOperationType_InferenceRule.java" startLine="47" startPosition="54" endLine="48" endPosition="362" />
-    <nodeInfo nodeId="1236163396217" fileName="typeof_GetOperationType_InferenceRule.java" startLine="22" startPosition="102" endLine="28" endPosition="5" />
-    <nodeInfo nodeId="1236163430940" fileName="typeof_GetOperationType_InferenceRule.java" startLine="28" startPosition="5" endLine="35" endPosition="5" />
-    <nodeInfo nodeId="1236163433943" fileName="typeof_GetOperationType_InferenceRule.java" startLine="35" startPosition="5" endLine="42" endPosition="5" />
-    <nodeInfo nodeId="1236163436073" fileName="typeof_GetOperationType_InferenceRule.java" startLine="42" startPosition="5" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="1236163396217" fileName="typeof_GetOperationType_InferenceRule.java" startLine="23" startPosition="5" endLine="27" endPosition="345" />
-    <scopeInfo nodeId="1236163430940" fileName="typeof_GetOperationType_InferenceRule.java" startLine="29" startPosition="5" endLine="34" endPosition="362" />
-    <scopeInfo nodeId="1236163433943" fileName="typeof_GetOperationType_InferenceRule.java" startLine="36" startPosition="5" endLine="41" endPosition="362" />
-    <scopeInfo nodeId="1236163436073" fileName="typeof_GetOperationType_InferenceRule.java" startLine="43" startPosition="5" endLine="48" endPosition="362" />
-    <scopeInfo nodeId="1236163379379" fileName="typeof_GetOperationType_InferenceRule.java" startLine="22" startPosition="102" endLine="49" endPosition="5" />
+    <nodeInfo nodeId="1236163396217" fileName="typeof_GetOperationType_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="58" />
+    <nodeInfo nodeId="1236163396217" fileName="typeof_GetOperationType_InferenceRule.java" startLine="23" startPosition="58" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1236163396217" fileName="typeof_GetOperationType_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1236163396217" fileName="typeof_GetOperationType_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="345" />
+    <nodeInfo nodeId="1236163430940" fileName="typeof_GetOperationType_InferenceRule.java" startLine="28" startPosition="5" endLine="29" endPosition="104" />
+    <nodeInfo nodeId="1236163430940" fileName="typeof_GetOperationType_InferenceRule.java" startLine="29" startPosition="104" endLine="30" endPosition="53" />
+    <nodeInfo nodeId="1236163430940" fileName="typeof_GetOperationType_InferenceRule.java" startLine="30" startPosition="53" endLine="31" endPosition="213" />
+    <nodeInfo nodeId="1236163430940" fileName="typeof_GetOperationType_InferenceRule.java" startLine="31" startPosition="213" endLine="32" endPosition="54" />
+    <nodeInfo nodeId="1236163430940" fileName="typeof_GetOperationType_InferenceRule.java" startLine="32" startPosition="54" endLine="33" endPosition="362" />
+    <nodeInfo nodeId="1236163433943" fileName="typeof_GetOperationType_InferenceRule.java" startLine="35" startPosition="5" endLine="36" endPosition="110" />
+    <nodeInfo nodeId="1236163433943" fileName="typeof_GetOperationType_InferenceRule.java" startLine="36" startPosition="110" endLine="37" endPosition="53" />
+    <nodeInfo nodeId="1236163433943" fileName="typeof_GetOperationType_InferenceRule.java" startLine="37" startPosition="53" endLine="38" endPosition="213" />
+    <nodeInfo nodeId="1236163433943" fileName="typeof_GetOperationType_InferenceRule.java" startLine="38" startPosition="213" endLine="39" endPosition="54" />
+    <nodeInfo nodeId="1236163433943" fileName="typeof_GetOperationType_InferenceRule.java" startLine="39" startPosition="54" endLine="40" endPosition="362" />
+    <nodeInfo nodeId="1236163436073" fileName="typeof_GetOperationType_InferenceRule.java" startLine="42" startPosition="5" endLine="43" endPosition="111" />
+    <nodeInfo nodeId="1236163436073" fileName="typeof_GetOperationType_InferenceRule.java" startLine="43" startPosition="111" endLine="44" endPosition="53" />
+    <nodeInfo nodeId="1236163436073" fileName="typeof_GetOperationType_InferenceRule.java" startLine="44" startPosition="53" endLine="45" endPosition="213" />
+    <nodeInfo nodeId="1236163436073" fileName="typeof_GetOperationType_InferenceRule.java" startLine="45" startPosition="213" endLine="46" endPosition="54" />
+    <nodeInfo nodeId="1236163436073" fileName="typeof_GetOperationType_InferenceRule.java" startLine="46" startPosition="54" endLine="47" endPosition="362" />
+    <nodeInfo nodeId="1236163396217" fileName="typeof_GetOperationType_InferenceRule.java" startLine="21" startPosition="102" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1236163430940" fileName="typeof_GetOperationType_InferenceRule.java" startLine="27" startPosition="5" endLine="34" endPosition="5" />
+    <nodeInfo nodeId="1236163433943" fileName="typeof_GetOperationType_InferenceRule.java" startLine="34" startPosition="5" endLine="41" endPosition="5" />
+    <nodeInfo nodeId="1236163436073" fileName="typeof_GetOperationType_InferenceRule.java" startLine="41" startPosition="5" endLine="48" endPosition="5" />
+    <scopeInfo nodeId="1236163396217" fileName="typeof_GetOperationType_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="345" />
+    <scopeInfo nodeId="1236163430940" fileName="typeof_GetOperationType_InferenceRule.java" startLine="28" startPosition="5" endLine="33" endPosition="362" />
+    <scopeInfo nodeId="1236163433943" fileName="typeof_GetOperationType_InferenceRule.java" startLine="35" startPosition="5" endLine="40" endPosition="362" />
+    <scopeInfo nodeId="1236163436073" fileName="typeof_GetOperationType_InferenceRule.java" startLine="42" startPosition="5" endLine="47" endPosition="362" />
+    <scopeInfo nodeId="1236163379379" fileName="typeof_GetOperationType_InferenceRule.java" startLine="21" startPosition="102" endLine="48" endPosition="5" />
   </root>
   <root nodeId="1236265200113">
-    <nodeInfo nodeId="1236265244130" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="98" />
-    <nodeInfo nodeId="1236265244130" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="24" startPosition="98" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1236265244130" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1236265244130" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1236265244130" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="372" />
-    <nodeInfo nodeId="1236265251600" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="30" startPosition="5" endLine="31" endPosition="99" />
-    <nodeInfo nodeId="1236265251600" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="31" startPosition="99" endLine="32" endPosition="53" />
-    <nodeInfo nodeId="1236265251600" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="32" startPosition="53" endLine="33" endPosition="213" />
-    <nodeInfo nodeId="1236265251600" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="33" startPosition="213" endLine="34" endPosition="54" />
-    <nodeInfo nodeId="1236265251600" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="34" startPosition="54" endLine="35" endPosition="372" />
-    <nodeInfo nodeId="1236265244130" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="22" startPosition="90" endLine="29" endPosition="5" />
-    <nodeInfo nodeId="1236265251600" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="29" startPosition="5" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="1236265244130" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="372" />
-    <scopeInfo nodeId="1236265251600" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="30" startPosition="5" endLine="35" endPosition="372" />
-    <scopeInfo nodeId="1236265200114" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="22" startPosition="90" endLine="36" endPosition="5" />
+    <nodeInfo nodeId="1236265244130" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="98" />
+    <nodeInfo nodeId="1236265244130" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="23" startPosition="98" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1236265244130" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1236265244130" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1236265244130" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="372" />
+    <nodeInfo nodeId="1236265251600" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="29" startPosition="5" endLine="30" endPosition="99" />
+    <nodeInfo nodeId="1236265251600" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="30" startPosition="99" endLine="31" endPosition="53" />
+    <nodeInfo nodeId="1236265251600" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="31" startPosition="53" endLine="32" endPosition="213" />
+    <nodeInfo nodeId="1236265251600" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="32" startPosition="213" endLine="33" endPosition="54" />
+    <nodeInfo nodeId="1236265251600" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="33" startPosition="54" endLine="34" endPosition="372" />
+    <nodeInfo nodeId="1236265244130" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="21" startPosition="90" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="1236265251600" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="28" startPosition="5" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="1236265244130" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="372" />
+    <scopeInfo nodeId="1236265251600" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="29" startPosition="5" endLine="34" endPosition="372" />
+    <scopeInfo nodeId="1236265200114" fileName="typeof_OverloadedOperatorTypeRule_InferenceRule.java" startLine="21" startPosition="90" endLine="35" endPosition="5" />
   </root>
   <root nodeId="1238849949315">
-    <nodeInfo nodeId="1239035985265" fileName="typeof_MeetOperation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="52" />
-    <nodeInfo nodeId="1239035985265" fileName="typeof_MeetOperation_InferenceRule.java" startLine="24" startPosition="52" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1239035985265" fileName="typeof_MeetOperation_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1239035985265" fileName="typeof_MeetOperation_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="409" />
-    <nodeInfo nodeId="1239036038281" fileName="typeof_MeetOperation_InferenceRule.java" startLine="30" startPosition="7" endLine="31" endPosition="52" />
-    <nodeInfo nodeId="1239036038281" fileName="typeof_MeetOperation_InferenceRule.java" startLine="31" startPosition="52" endLine="32" endPosition="55" />
-    <nodeInfo nodeId="1239036038281" fileName="typeof_MeetOperation_InferenceRule.java" startLine="32" startPosition="55" endLine="33" endPosition="215" />
-    <nodeInfo nodeId="1239036038281" fileName="typeof_MeetOperation_InferenceRule.java" startLine="33" startPosition="215" endLine="34" endPosition="56" />
-    <nodeInfo nodeId="1239036038281" fileName="typeof_MeetOperation_InferenceRule.java" startLine="34" startPosition="56" endLine="35" endPosition="363" />
-    <nodeInfo nodeId="1239035985265" fileName="typeof_MeetOperation_InferenceRule.java" startLine="22" startPosition="96" endLine="28" endPosition="5" />
-    <nodeInfo nodeId="1239036038281" fileName="typeof_MeetOperation_InferenceRule.java" startLine="29" startPosition="85" endLine="36" endPosition="7" />
-    <nodeInfo nodeId="1239036012124" fileName="typeof_MeetOperation_InferenceRule.java" startLine="28" startPosition="5" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="1239035985265" fileName="typeof_MeetOperation_InferenceRule.java" startLine="23" startPosition="5" endLine="27" endPosition="409" />
-    <scopeInfo nodeId="1239036038281" fileName="typeof_MeetOperation_InferenceRule.java" startLine="30" startPosition="7" endLine="35" endPosition="363" />
-    <scopeInfo nodeId="1239036012125" fileName="typeof_MeetOperation_InferenceRule.java" startLine="29" startPosition="85" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="1239036012124" fileName="typeof_MeetOperation_InferenceRule.java" startLine="28" startPosition="5" endLine="37" endPosition="5">
+    <nodeInfo nodeId="1239035985265" fileName="typeof_MeetOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="52" />
+    <nodeInfo nodeId="1239035985265" fileName="typeof_MeetOperation_InferenceRule.java" startLine="23" startPosition="52" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1239035985265" fileName="typeof_MeetOperation_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1239035985265" fileName="typeof_MeetOperation_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="409" />
+    <nodeInfo nodeId="1239036038281" fileName="typeof_MeetOperation_InferenceRule.java" startLine="29" startPosition="7" endLine="30" endPosition="52" />
+    <nodeInfo nodeId="1239036038281" fileName="typeof_MeetOperation_InferenceRule.java" startLine="30" startPosition="52" endLine="31" endPosition="55" />
+    <nodeInfo nodeId="1239036038281" fileName="typeof_MeetOperation_InferenceRule.java" startLine="31" startPosition="55" endLine="32" endPosition="215" />
+    <nodeInfo nodeId="1239036038281" fileName="typeof_MeetOperation_InferenceRule.java" startLine="32" startPosition="215" endLine="33" endPosition="56" />
+    <nodeInfo nodeId="1239036038281" fileName="typeof_MeetOperation_InferenceRule.java" startLine="33" startPosition="56" endLine="34" endPosition="363" />
+    <nodeInfo nodeId="1239035985265" fileName="typeof_MeetOperation_InferenceRule.java" startLine="21" startPosition="96" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1239036038281" fileName="typeof_MeetOperation_InferenceRule.java" startLine="28" startPosition="85" endLine="35" endPosition="7" />
+    <nodeInfo nodeId="1239036012124" fileName="typeof_MeetOperation_InferenceRule.java" startLine="27" startPosition="5" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="1239035985265" fileName="typeof_MeetOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="409" />
+    <scopeInfo nodeId="1239036038281" fileName="typeof_MeetOperation_InferenceRule.java" startLine="29" startPosition="7" endLine="34" endPosition="363" />
+    <scopeInfo nodeId="1239036012125" fileName="typeof_MeetOperation_InferenceRule.java" startLine="28" startPosition="85" endLine="35" endPosition="7" />
+    <scopeInfo nodeId="1239036012124" fileName="typeof_MeetOperation_InferenceRule.java" startLine="27" startPosition="5" endLine="36" endPosition="5">
       <varInfo nodeId="1239036012128" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="1238849949316" fileName="typeof_MeetOperation_InferenceRule.java" startLine="22" startPosition="96" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="1238849949316" fileName="typeof_MeetOperation_InferenceRule.java" startLine="21" startPosition="96" endLine="36" endPosition="5" />
   </root>
   <root nodeId="1238850010184">
-    <nodeInfo nodeId="1239038069330" fileName="typeof_JoinOperation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="52" />
-    <nodeInfo nodeId="1239038069330" fileName="typeof_JoinOperation_InferenceRule.java" startLine="24" startPosition="52" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1239038069330" fileName="typeof_JoinOperation_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1239038069330" fileName="typeof_JoinOperation_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="409" />
-    <nodeInfo nodeId="1239038069343" fileName="typeof_JoinOperation_InferenceRule.java" startLine="30" startPosition="7" endLine="31" endPosition="52" />
-    <nodeInfo nodeId="1239038069343" fileName="typeof_JoinOperation_InferenceRule.java" startLine="31" startPosition="52" endLine="32" endPosition="55" />
-    <nodeInfo nodeId="1239038069343" fileName="typeof_JoinOperation_InferenceRule.java" startLine="32" startPosition="55" endLine="33" endPosition="215" />
-    <nodeInfo nodeId="1239038069343" fileName="typeof_JoinOperation_InferenceRule.java" startLine="33" startPosition="215" endLine="34" endPosition="56" />
-    <nodeInfo nodeId="1239038069343" fileName="typeof_JoinOperation_InferenceRule.java" startLine="34" startPosition="56" endLine="35" endPosition="363" />
-    <nodeInfo nodeId="1239038069330" fileName="typeof_JoinOperation_InferenceRule.java" startLine="22" startPosition="96" endLine="28" endPosition="5" />
-    <nodeInfo nodeId="1239038069343" fileName="typeof_JoinOperation_InferenceRule.java" startLine="29" startPosition="85" endLine="36" endPosition="7" />
-    <nodeInfo nodeId="1239038069341" fileName="typeof_JoinOperation_InferenceRule.java" startLine="28" startPosition="5" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="1239038069330" fileName="typeof_JoinOperation_InferenceRule.java" startLine="23" startPosition="5" endLine="27" endPosition="409" />
-    <scopeInfo nodeId="1239038069343" fileName="typeof_JoinOperation_InferenceRule.java" startLine="30" startPosition="7" endLine="35" endPosition="363" />
-    <scopeInfo nodeId="1239038069342" fileName="typeof_JoinOperation_InferenceRule.java" startLine="29" startPosition="85" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="1239038069341" fileName="typeof_JoinOperation_InferenceRule.java" startLine="28" startPosition="5" endLine="37" endPosition="5">
+    <nodeInfo nodeId="1239038069330" fileName="typeof_JoinOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="52" />
+    <nodeInfo nodeId="1239038069330" fileName="typeof_JoinOperation_InferenceRule.java" startLine="23" startPosition="52" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1239038069330" fileName="typeof_JoinOperation_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1239038069330" fileName="typeof_JoinOperation_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="409" />
+    <nodeInfo nodeId="1239038069343" fileName="typeof_JoinOperation_InferenceRule.java" startLine="29" startPosition="7" endLine="30" endPosition="52" />
+    <nodeInfo nodeId="1239038069343" fileName="typeof_JoinOperation_InferenceRule.java" startLine="30" startPosition="52" endLine="31" endPosition="55" />
+    <nodeInfo nodeId="1239038069343" fileName="typeof_JoinOperation_InferenceRule.java" startLine="31" startPosition="55" endLine="32" endPosition="215" />
+    <nodeInfo nodeId="1239038069343" fileName="typeof_JoinOperation_InferenceRule.java" startLine="32" startPosition="215" endLine="33" endPosition="56" />
+    <nodeInfo nodeId="1239038069343" fileName="typeof_JoinOperation_InferenceRule.java" startLine="33" startPosition="56" endLine="34" endPosition="363" />
+    <nodeInfo nodeId="1239038069330" fileName="typeof_JoinOperation_InferenceRule.java" startLine="21" startPosition="96" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1239038069343" fileName="typeof_JoinOperation_InferenceRule.java" startLine="28" startPosition="85" endLine="35" endPosition="7" />
+    <nodeInfo nodeId="1239038069341" fileName="typeof_JoinOperation_InferenceRule.java" startLine="27" startPosition="5" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="1239038069330" fileName="typeof_JoinOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="409" />
+    <scopeInfo nodeId="1239038069343" fileName="typeof_JoinOperation_InferenceRule.java" startLine="29" startPosition="7" endLine="34" endPosition="363" />
+    <scopeInfo nodeId="1239038069342" fileName="typeof_JoinOperation_InferenceRule.java" startLine="28" startPosition="85" endLine="35" endPosition="7" />
+    <scopeInfo nodeId="1239038069341" fileName="typeof_JoinOperation_InferenceRule.java" startLine="27" startPosition="5" endLine="36" endPosition="5">
       <varInfo nodeId="1239038069353" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="1238850010185" fileName="typeof_JoinOperation_InferenceRule.java" startLine="22" startPosition="96" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="1238850010185" fileName="typeof_JoinOperation_InferenceRule.java" startLine="21" startPosition="96" endLine="36" endPosition="5" />
   </root>
   <root nodeId="1240325088693">
-    <nodeInfo nodeId="1240325103445" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="95" />
-    <nodeInfo nodeId="1240325103445" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="25" startPosition="95" endLine="26" endPosition="53" />
-    <nodeInfo nodeId="1240325103445" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="26" startPosition="53" endLine="27" endPosition="213" />
-    <nodeInfo nodeId="1240325103445" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="27" startPosition="213" endLine="28" endPosition="54" />
-    <nodeInfo nodeId="1240325103445" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="28" startPosition="54" endLine="29" endPosition="367" />
-    <nodeInfo nodeId="1240657997938" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="30" startPosition="5" endLine="31" endPosition="77" />
-    <nodeInfo nodeId="1240657953140" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="33" startPosition="7" endLine="34" endPosition="97" />
-    <nodeInfo nodeId="1240657953140" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="34" startPosition="97" endLine="35" endPosition="55" />
-    <nodeInfo nodeId="1240657953140" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="35" startPosition="55" endLine="36" endPosition="215" />
-    <nodeInfo nodeId="1240657953140" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="36" startPosition="215" endLine="37" endPosition="56" />
-    <nodeInfo nodeId="1240657953140" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="37" startPosition="56" endLine="38" endPosition="371" />
-    <nodeInfo nodeId="1240325103445" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="23" startPosition="92" endLine="30" endPosition="5" />
-    <nodeInfo nodeId="1240657953140" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="32" startPosition="177" endLine="39" endPosition="7" />
-    <nodeInfo nodeId="1240657961312" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="31" startPosition="77" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="1240325103445" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="24" startPosition="5" endLine="29" endPosition="367" />
-    <scopeInfo nodeId="1240657953140" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="33" startPosition="7" endLine="38" endPosition="371" />
-    <scopeInfo nodeId="1240657961313" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="32" startPosition="177" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="1240325088694" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="23" startPosition="92" endLine="40" endPosition="5">
+    <nodeInfo nodeId="1240325103445" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="95" />
+    <nodeInfo nodeId="1240325103445" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="24" startPosition="95" endLine="25" endPosition="53" />
+    <nodeInfo nodeId="1240325103445" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
+    <nodeInfo nodeId="1240325103445" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
+    <nodeInfo nodeId="1240325103445" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="367" />
+    <nodeInfo nodeId="1240657997938" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="29" startPosition="5" endLine="30" endPosition="77" />
+    <nodeInfo nodeId="1240657953140" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="32" startPosition="7" endLine="33" endPosition="97" />
+    <nodeInfo nodeId="1240657953140" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="33" startPosition="97" endLine="34" endPosition="55" />
+    <nodeInfo nodeId="1240657953140" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="34" startPosition="55" endLine="35" endPosition="215" />
+    <nodeInfo nodeId="1240657953140" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="35" startPosition="215" endLine="36" endPosition="56" />
+    <nodeInfo nodeId="1240657953140" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="36" startPosition="56" endLine="37" endPosition="371" />
+    <nodeInfo nodeId="1240325103445" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="22" startPosition="92" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1240657953140" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="31" startPosition="177" endLine="38" endPosition="7" />
+    <nodeInfo nodeId="1240657961312" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="30" startPosition="77" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="1240325103445" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="367" />
+    <scopeInfo nodeId="1240657953140" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="32" startPosition="7" endLine="37" endPosition="371" />
+    <scopeInfo nodeId="1240657961313" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="31" startPosition="177" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="1240325088694" fileName="typeof_ConceptClauseLinkInfo_InferenceRule.java" startLine="22" startPosition="92" endLine="39" endPosition="5">
       <varInfo nodeId="1240657997939" varName="link" />
     </scopeInfo>
   </root>
   <root nodeId="1240580117889">
-    <nodeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="48" />
-    <nodeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="24" startPosition="48" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="213" />
-    <nodeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="26" startPosition="213" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="389" />
-    <nodeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="22" startPosition="92" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="389" />
-    <scopeInfo nodeId="1240580117890" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="22" startPosition="92" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="48" />
+    <nodeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="23" startPosition="48" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="213" />
+    <nodeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="25" startPosition="213" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="389" />
+    <nodeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="21" startPosition="92" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="389" />
+    <scopeInfo nodeId="1240580117890" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="21" startPosition="92" endLine="28" endPosition="5" />
   </root>
   <root nodeId="5049504262569597078">
     <nodeInfo nodeId="5049504262569599329" fileName="check_MessageStatementWithinCheckingRule_NonTypesystemRule.java" startLine="20" startPosition="60" endLine="21" endPosition="53" />
@@ -930,13 +930,13 @@
     <scopeInfo nodeId="5049504262569597079" fileName="check_MessageStatementWithinCheckingRule_NonTypesystemRule.java" startLine="19" startPosition="102" endLine="24" endPosition="5" />
   </root>
   <root nodeId="5622704259074446614">
-    <nodeInfo nodeId="5622704259074446621" fileName="typeof_OperationContextExpression_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="52" />
-    <nodeInfo nodeId="5622704259074446621" fileName="typeof_OperationContextExpression_InferenceRule.java" startLine="26" startPosition="52" endLine="27" endPosition="53" />
-    <nodeInfo nodeId="5622704259074446621" fileName="typeof_OperationContextExpression_InferenceRule.java" startLine="27" startPosition="53" endLine="28" endPosition="219" />
-    <nodeInfo nodeId="5622704259074446621" fileName="typeof_OperationContextExpression_InferenceRule.java" startLine="28" startPosition="219" endLine="29" endPosition="361" />
-    <nodeInfo nodeId="5622704259074446621" fileName="typeof_OperationContextExpression_InferenceRule.java" startLine="24" startPosition="96" endLine="30" endPosition="5" />
-    <scopeInfo nodeId="5622704259074446621" fileName="typeof_OperationContextExpression_InferenceRule.java" startLine="25" startPosition="5" endLine="29" endPosition="361" />
-    <scopeInfo nodeId="5622704259074446615" fileName="typeof_OperationContextExpression_InferenceRule.java" startLine="24" startPosition="96" endLine="30" endPosition="5" />
+    <nodeInfo nodeId="5622704259074446621" fileName="typeof_OperationContextExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="52" />
+    <nodeInfo nodeId="5622704259074446621" fileName="typeof_OperationContextExpression_InferenceRule.java" startLine="25" startPosition="52" endLine="26" endPosition="53" />
+    <nodeInfo nodeId="5622704259074446621" fileName="typeof_OperationContextExpression_InferenceRule.java" startLine="26" startPosition="53" endLine="27" endPosition="219" />
+    <nodeInfo nodeId="5622704259074446621" fileName="typeof_OperationContextExpression_InferenceRule.java" startLine="27" startPosition="219" endLine="28" endPosition="361" />
+    <nodeInfo nodeId="5622704259074446621" fileName="typeof_OperationContextExpression_InferenceRule.java" startLine="23" startPosition="96" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="5622704259074446621" fileName="typeof_OperationContextExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="28" endPosition="361" />
+    <scopeInfo nodeId="5622704259074446615" fileName="typeof_OperationContextExpression_InferenceRule.java" startLine="23" startPosition="96" endLine="29" endPosition="5" />
   </root>
   <root nodeId="6359146168314207367">
     <nodeInfo nodeId="6359146168314207369" fileName="check_NodeTypeOperation_NonTypesystemRule.java" startLine="20" startPosition="66" endLine="21" endPosition="53" />
@@ -952,30 +952,30 @@
     <scopeInfo nodeId="6359146168314207368" fileName="check_NodeTypeOperation_NonTypesystemRule.java" startLine="19" startPosition="104" endLine="29" endPosition="5" />
   </root>
   <root nodeId="6807484249529698278">
-    <nodeInfo nodeId="6807484249529698282" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="23" startPosition="90" endLine="24" endPosition="153" />
-    <nodeInfo nodeId="6807484249529698295" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="26" startPosition="7" endLine="27" endPosition="48" />
-    <nodeInfo nodeId="6807484249529698295" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="27" startPosition="48" endLine="28" endPosition="55" />
-    <nodeInfo nodeId="6807484249529698295" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="28" startPosition="55" endLine="29" endPosition="221" />
-    <nodeInfo nodeId="6807484249529698295" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="29" startPosition="221" endLine="30" endPosition="470" />
-    <nodeInfo nodeId="6807484249529698295" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="25" startPosition="45" endLine="31" endPosition="7" />
-    <nodeInfo nodeId="6807484249529698290" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="24" startPosition="153" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="6807484249529698295" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="26" startPosition="7" endLine="30" endPosition="470" />
-    <scopeInfo nodeId="6807484249529698294" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="25" startPosition="45" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="6807484249529698279" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="23" startPosition="90" endLine="32" endPosition="5">
+    <nodeInfo nodeId="6807484249529698282" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="22" startPosition="90" endLine="23" endPosition="153" />
+    <nodeInfo nodeId="6807484249529698295" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="25" startPosition="7" endLine="26" endPosition="48" />
+    <nodeInfo nodeId="6807484249529698295" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="26" startPosition="48" endLine="27" endPosition="55" />
+    <nodeInfo nodeId="6807484249529698295" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="27" startPosition="55" endLine="28" endPosition="221" />
+    <nodeInfo nodeId="6807484249529698295" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="28" startPosition="221" endLine="29" endPosition="470" />
+    <nodeInfo nodeId="6807484249529698295" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="24" startPosition="45" endLine="30" endPosition="7" />
+    <nodeInfo nodeId="6807484249529698290" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="23" startPosition="153" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="6807484249529698295" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="25" startPosition="7" endLine="29" endPosition="470" />
+    <scopeInfo nodeId="6807484249529698294" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="24" startPosition="45" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="6807484249529698279" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="22" startPosition="90" endLine="31" endPosition="5">
       <varInfo nodeId="6807484249529698283" varName="dependentComputationItem" />
     </scopeInfo>
   </root>
   <root nodeId="8058965347377019251">
-    <nodeInfo nodeId="8058965347377044334" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="23" startPosition="90" endLine="24" endPosition="153" />
-    <nodeInfo nodeId="8058965347377049402" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="26" startPosition="7" endLine="27" endPosition="48" />
-    <nodeInfo nodeId="8058965347377049402" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="27" startPosition="48" endLine="28" endPosition="55" />
-    <nodeInfo nodeId="8058965347377049402" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="28" startPosition="55" endLine="29" endPosition="221" />
-    <nodeInfo nodeId="8058965347377049402" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="29" startPosition="221" endLine="30" endPosition="469" />
-    <nodeInfo nodeId="8058965347377049402" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="25" startPosition="45" endLine="31" endPosition="7" />
-    <nodeInfo nodeId="8058965347377021689" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="24" startPosition="153" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="8058965347377049402" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="26" startPosition="7" endLine="30" endPosition="469" />
-    <scopeInfo nodeId="8058965347377021691" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="25" startPosition="45" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="8058965347377019252" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="23" startPosition="90" endLine="32" endPosition="5">
+    <nodeInfo nodeId="8058965347377044334" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="22" startPosition="90" endLine="23" endPosition="153" />
+    <nodeInfo nodeId="8058965347377049402" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="25" startPosition="7" endLine="26" endPosition="48" />
+    <nodeInfo nodeId="8058965347377049402" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="26" startPosition="48" endLine="27" endPosition="55" />
+    <nodeInfo nodeId="8058965347377049402" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="27" startPosition="55" endLine="28" endPosition="221" />
+    <nodeInfo nodeId="8058965347377049402" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="28" startPosition="221" endLine="29" endPosition="469" />
+    <nodeInfo nodeId="8058965347377049402" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="24" startPosition="45" endLine="30" endPosition="7" />
+    <nodeInfo nodeId="8058965347377021689" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="23" startPosition="153" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="8058965347377049402" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="25" startPosition="7" endLine="29" endPosition="469" />
+    <scopeInfo nodeId="8058965347377021691" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="24" startPosition="45" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="8058965347377019252" fileName="typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.java" startLine="22" startPosition="90" endLine="31" endPosition="5">
       <varInfo nodeId="8058965347377044335" varName="dependentComputationItem" />
     </scopeInfo>
   </root>
@@ -998,14 +998,14 @@
     <scopeInfo nodeId="8090891477833133026" fileName="typeof_QuickFixFieldReference_InferenceRule.java" startLine="18" startPosition="100" endLine="24" endPosition="5" />
   </root>
   <root nodeId="8124453027370845367">
-    <nodeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="94" />
-    <nodeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="24" startPosition="94" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="219" />
-    <nodeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="26" startPosition="219" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="389" />
-    <nodeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="22" startPosition="90" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="389" />
-    <scopeInfo nodeId="8124453027370845368" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="22" startPosition="90" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="94" />
+    <nodeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="23" startPosition="94" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="219" />
+    <nodeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="25" startPosition="219" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="389" />
+    <nodeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="21" startPosition="90" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="389" />
+    <scopeInfo nodeId="8124453027370845368" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="21" startPosition="90" endLine="28" endPosition="5" />
   </root>
 </debugInfo>
 
