@@ -17,6 +17,7 @@
        <sysproperty key="ant.home" value="${ant.home}"/>
        <sysproperty key="mps.home" value="${mps.home}"/>
        <sysproperty key="deploy.dir" value="${deploy.dir}"/>
+       <sysproperty key="build.number" value="${build.number}"/>
        <arg value="-lib"/>
        <arg value="${mps.home}/tools/apache-commons"/>
        <arg value="-buildfile"/>

@@ -2,10 +2,10 @@
   <property file="${mps_home}/build/sign/ftppassword"/>
   <available classname="org.apache.commons.net.ftp.FTPClientConfig" property="commons-net.present"/>
   <target name="upload" if="commons-net.present">
-    <ftp server="upload.cds.intellij.net"
-           userid="mps"
+    <ftp server="${ftp.host}"
+           userid="${ftp.username}"
            password="${ftp.password}">
-      <fileset dir="${deploy.dir}"/>
+      <fileset dir="${deploy.dir}" includes="MPS-${build.number}*"/>
     </ftp>
   </target>
 </project>
