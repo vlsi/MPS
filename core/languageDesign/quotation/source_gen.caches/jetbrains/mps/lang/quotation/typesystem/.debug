@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1196352592946">
-    <nodeInfo nodeId="1196352592948" fileName="typeof_Quotation_InferenceRule.java" startLine="23" startPosition="95" endLine="24" endPosition="36" />
-    <nodeInfo nodeId="1196858483110" fileName="typeof_Quotation_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="55" />
-    <nodeInfo nodeId="1196858483110" fileName="typeof_Quotation_InferenceRule.java" startLine="26" startPosition="55" endLine="27" endPosition="53" />
-    <nodeInfo nodeId="1196858483110" fileName="typeof_Quotation_InferenceRule.java" startLine="27" startPosition="53" endLine="28" endPosition="212" />
-    <nodeInfo nodeId="1196858483110" fileName="typeof_Quotation_InferenceRule.java" startLine="28" startPosition="212" endLine="29" endPosition="438" />
-    <nodeInfo nodeId="1196858483110" fileName="typeof_Quotation_InferenceRule.java" startLine="24" startPosition="36" endLine="30" endPosition="5" />
-    <scopeInfo nodeId="1196858483110" fileName="typeof_Quotation_InferenceRule.java" startLine="25" startPosition="5" endLine="29" endPosition="438" />
-    <scopeInfo nodeId="1196352592947" fileName="typeof_Quotation_InferenceRule.java" startLine="23" startPosition="95" endLine="30" endPosition="5">
+    <nodeInfo nodeId="1196352592948" fileName="typeof_Quotation_InferenceRule.java" startLine="22" startPosition="95" endLine="23" endPosition="36" />
+    <nodeInfo nodeId="1196858483110" fileName="typeof_Quotation_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="55" />
+    <nodeInfo nodeId="1196858483110" fileName="typeof_Quotation_InferenceRule.java" startLine="25" startPosition="55" endLine="26" endPosition="53" />
+    <nodeInfo nodeId="1196858483110" fileName="typeof_Quotation_InferenceRule.java" startLine="26" startPosition="53" endLine="27" endPosition="212" />
+    <nodeInfo nodeId="1196858483110" fileName="typeof_Quotation_InferenceRule.java" startLine="27" startPosition="212" endLine="28" endPosition="438" />
+    <nodeInfo nodeId="1196858483110" fileName="typeof_Quotation_InferenceRule.java" startLine="23" startPosition="36" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="1196858483110" fileName="typeof_Quotation_InferenceRule.java" startLine="24" startPosition="5" endLine="28" endPosition="438" />
+    <scopeInfo nodeId="1196352592947" fileName="typeof_Quotation_InferenceRule.java" startLine="22" startPosition="95" endLine="29" endPosition="5">
       <varInfo nodeId="1196352592949" varName="quotationNode" />
     </scopeInfo>
   </root>
   <root nodeId="1196863835659">
-    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="100" />
-    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="24" startPosition="100" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="212" />
-    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="26" startPosition="212" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="358" />
-    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="22" startPosition="97" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="358" />
-    <scopeInfo nodeId="1196863835660" fileName="typeof_Antiquotation_InferenceRule.java" startLine="22" startPosition="97" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="100" />
+    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="23" startPosition="100" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="212" />
+    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="25" startPosition="212" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="358" />
+    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="21" startPosition="97" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="358" />
+    <scopeInfo nodeId="1196863835660" fileName="typeof_Antiquotation_InferenceRule.java" startLine="21" startPosition="97" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1196864098675">
-    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="100" />
-    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="24" startPosition="100" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="212" />
-    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="26" startPosition="212" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="367" />
-    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="22" startPosition="97" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="367" />
-    <scopeInfo nodeId="1196864098676" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="22" startPosition="97" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="100" />
+    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="23" startPosition="100" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="212" />
+    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="25" startPosition="212" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="367" />
+    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="21" startPosition="97" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="367" />
+    <scopeInfo nodeId="1196864098676" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="21" startPosition="97" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1196864120832">
-    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="100" />
-    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="24" startPosition="100" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="212" />
-    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="26" startPosition="212" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="362" />
-    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="22" startPosition="97" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="362" />
-    <scopeInfo nodeId="1196864120833" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="22" startPosition="97" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="100" />
+    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="23" startPosition="100" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="212" />
+    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="25" startPosition="212" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="362" />
+    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="21" startPosition="97" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="362" />
+    <scopeInfo nodeId="1196864120833" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="21" startPosition="97" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1196866827112">
-    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="100" />
-    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="24" startPosition="100" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="212" />
-    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="26" startPosition="212" endLine="27" endPosition="54" />
-    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="365" />
-    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="22" startPosition="97" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="365" />
-    <scopeInfo nodeId="1196866827113" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="22" startPosition="97" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="100" />
+    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="23" startPosition="100" endLine="24" endPosition="53" />
+    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="24" startPosition="53" endLine="25" endPosition="212" />
+    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="25" startPosition="212" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="365" />
+    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="21" startPosition="97" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="365" />
+    <scopeInfo nodeId="1196866827113" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="21" startPosition="97" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1202840492692">
     <nodeInfo nodeId="1202840626667" fileName="check_Antiquotation_NonTypesystemRule.java" startLine="21" startPosition="99" endLine="22" endPosition="67" />

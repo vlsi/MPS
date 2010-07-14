@@ -166,7 +166,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior" file="SNodeOperation_Behavior.java">
@@ -215,7 +214,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.SPropertyAccess_Behavior" file="SPropertyAccess_Behavior.java">
@@ -248,7 +246,6 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
 </dependenciesRoot>
 

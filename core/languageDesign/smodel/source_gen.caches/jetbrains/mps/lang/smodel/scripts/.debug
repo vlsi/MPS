@@ -98,50 +98,50 @@
     </scopeInfo>
   </root>
   <root nodeId="1240143495251">
-    <nodeInfo nodeId="1240143495259" fileName="AdapterElimination_MigrationScript.java" startLine="39" startPosition="148" endLine="40" endPosition="23" />
-    <nodeInfo nodeId="1240143495270" fileName="AdapterElimination_MigrationScript.java" startLine="42" startPosition="271" endLine="43" endPosition="23" />
-    <nodeInfo nodeId="1240143495282" fileName="AdapterElimination_MigrationScript.java" startLine="44" startPosition="9" endLine="45" endPosition="538" />
-    <nodeInfo nodeId="1240143495304" fileName="AdapterElimination_MigrationScript.java" startLine="69" startPosition="148" endLine="70" endPosition="23" />
-    <nodeInfo nodeId="1240143495315" fileName="AdapterElimination_MigrationScript.java" startLine="72" startPosition="268" endLine="73" endPosition="23" />
-    <nodeInfo nodeId="1240143495327" fileName="AdapterElimination_MigrationScript.java" startLine="74" startPosition="9" endLine="75" endPosition="532" />
-    <nodeInfo nodeId="1737294499102098758" fileName="AdapterElimination_MigrationScript.java" startLine="99" startPosition="53" endLine="100" endPosition="97" />
-    <nodeInfo nodeId="1737294499102098770" fileName="AdapterElimination_MigrationScript.java" startLine="101" startPosition="67" endLine="102" endPosition="24" />
-    <nodeInfo nodeId="1737294499102098782" fileName="AdapterElimination_MigrationScript.java" startLine="104" startPosition="9" endLine="105" endPosition="21" />
-    <nodeInfo nodeId="1737294499102100826" fileName="AdapterElimination_MigrationScript.java" startLine="129" startPosition="77" endLine="130" endPosition="23" />
-    <nodeInfo nodeId="1737294499102100833" fileName="AdapterElimination_MigrationScript.java" startLine="131" startPosition="9" endLine="132" endPosition="101" />
-    <nodeInfo nodeId="1737294499102100840" fileName="AdapterElimination_MigrationScript.java" startLine="132" startPosition="101" endLine="133" endPosition="69" />
-    <nodeInfo nodeId="1737294499102100845" fileName="AdapterElimination_MigrationScript.java" startLine="133" startPosition="69" endLine="134" endPosition="48" />
-    <nodeInfo nodeId="1240143495257" fileName="AdapterElimination_MigrationScript.java" startLine="38" startPosition="59" endLine="41" endPosition="9" />
-    <nodeInfo nodeId="1240143495268" fileName="AdapterElimination_MigrationScript.java" startLine="41" startPosition="9" endLine="44" endPosition="9" />
-    <nodeInfo nodeId="1240143495302" fileName="AdapterElimination_MigrationScript.java" startLine="68" startPosition="59" endLine="71" endPosition="9" />
-    <nodeInfo nodeId="1240143495313" fileName="AdapterElimination_MigrationScript.java" startLine="71" startPosition="9" endLine="74" endPosition="9" />
-    <nodeInfo nodeId="1737294499102098768" fileName="AdapterElimination_MigrationScript.java" startLine="100" startPosition="97" endLine="103" endPosition="11" />
-    <nodeInfo nodeId="1737294499102100824" fileName="AdapterElimination_MigrationScript.java" startLine="128" startPosition="59" endLine="131" endPosition="9" />
-    <nodeInfo nodeId="1737294499102098756" fileName="AdapterElimination_MigrationScript.java" startLine="98" startPosition="59" endLine="104" endPosition="9" />
-    <scopeInfo nodeId="1240143495254" fileName="AdapterElimination_MigrationScript.java" startLine="48" startPosition="52" endLine="48" endPosition="52" />
-    <scopeInfo nodeId="1240143495299" fileName="AdapterElimination_MigrationScript.java" startLine="78" startPosition="52" endLine="78" endPosition="52" />
-    <scopeInfo nodeId="1737294499102098753" fileName="AdapterElimination_MigrationScript.java" startLine="108" startPosition="52" endLine="108" endPosition="52" />
-    <scopeInfo nodeId="1737294499102100821" fileName="AdapterElimination_MigrationScript.java" startLine="137" startPosition="52" endLine="137" endPosition="52" />
-    <scopeInfo nodeId="1737294499102100852" fileName="AdapterElimination_MigrationScript.java" startLine="161" startPosition="52" endLine="161" endPosition="52" />
-    <scopeInfo nodeId="1240143495258" fileName="AdapterElimination_MigrationScript.java" startLine="39" startPosition="148" endLine="40" endPosition="23" />
-    <scopeInfo nodeId="1240143495269" fileName="AdapterElimination_MigrationScript.java" startLine="42" startPosition="271" endLine="43" endPosition="23" />
-    <scopeInfo nodeId="1240143495303" fileName="AdapterElimination_MigrationScript.java" startLine="69" startPosition="148" endLine="70" endPosition="23" />
-    <scopeInfo nodeId="1240143495314" fileName="AdapterElimination_MigrationScript.java" startLine="72" startPosition="268" endLine="73" endPosition="23" />
-    <scopeInfo nodeId="1737294499102098769" fileName="AdapterElimination_MigrationScript.java" startLine="101" startPosition="67" endLine="102" endPosition="24" />
-    <scopeInfo nodeId="1737294499102100825" fileName="AdapterElimination_MigrationScript.java" startLine="129" startPosition="77" endLine="130" endPosition="23" />
-    <scopeInfo nodeId="1737294499102098757" fileName="AdapterElimination_MigrationScript.java" startLine="99" startPosition="53" endLine="103" endPosition="11">
+    <nodeInfo nodeId="1240143495259" fileName="AdapterElimination_MigrationScript.java" startLine="38" startPosition="148" endLine="39" endPosition="23" />
+    <nodeInfo nodeId="1240143495270" fileName="AdapterElimination_MigrationScript.java" startLine="41" startPosition="271" endLine="42" endPosition="23" />
+    <nodeInfo nodeId="1240143495282" fileName="AdapterElimination_MigrationScript.java" startLine="43" startPosition="9" endLine="44" endPosition="538" />
+    <nodeInfo nodeId="1240143495304" fileName="AdapterElimination_MigrationScript.java" startLine="68" startPosition="148" endLine="69" endPosition="23" />
+    <nodeInfo nodeId="1240143495315" fileName="AdapterElimination_MigrationScript.java" startLine="71" startPosition="268" endLine="72" endPosition="23" />
+    <nodeInfo nodeId="1240143495327" fileName="AdapterElimination_MigrationScript.java" startLine="73" startPosition="9" endLine="74" endPosition="532" />
+    <nodeInfo nodeId="1737294499102098758" fileName="AdapterElimination_MigrationScript.java" startLine="98" startPosition="53" endLine="99" endPosition="97" />
+    <nodeInfo nodeId="1737294499102098770" fileName="AdapterElimination_MigrationScript.java" startLine="100" startPosition="67" endLine="101" endPosition="24" />
+    <nodeInfo nodeId="1737294499102098782" fileName="AdapterElimination_MigrationScript.java" startLine="103" startPosition="9" endLine="104" endPosition="21" />
+    <nodeInfo nodeId="1737294499102100826" fileName="AdapterElimination_MigrationScript.java" startLine="128" startPosition="77" endLine="129" endPosition="23" />
+    <nodeInfo nodeId="1737294499102100833" fileName="AdapterElimination_MigrationScript.java" startLine="130" startPosition="9" endLine="131" endPosition="101" />
+    <nodeInfo nodeId="1737294499102100840" fileName="AdapterElimination_MigrationScript.java" startLine="131" startPosition="101" endLine="132" endPosition="69" />
+    <nodeInfo nodeId="1737294499102100845" fileName="AdapterElimination_MigrationScript.java" startLine="132" startPosition="69" endLine="133" endPosition="48" />
+    <nodeInfo nodeId="1240143495257" fileName="AdapterElimination_MigrationScript.java" startLine="37" startPosition="59" endLine="40" endPosition="9" />
+    <nodeInfo nodeId="1240143495268" fileName="AdapterElimination_MigrationScript.java" startLine="40" startPosition="9" endLine="43" endPosition="9" />
+    <nodeInfo nodeId="1240143495302" fileName="AdapterElimination_MigrationScript.java" startLine="67" startPosition="59" endLine="70" endPosition="9" />
+    <nodeInfo nodeId="1240143495313" fileName="AdapterElimination_MigrationScript.java" startLine="70" startPosition="9" endLine="73" endPosition="9" />
+    <nodeInfo nodeId="1737294499102098768" fileName="AdapterElimination_MigrationScript.java" startLine="99" startPosition="97" endLine="102" endPosition="11" />
+    <nodeInfo nodeId="1737294499102100824" fileName="AdapterElimination_MigrationScript.java" startLine="127" startPosition="59" endLine="130" endPosition="9" />
+    <nodeInfo nodeId="1737294499102098756" fileName="AdapterElimination_MigrationScript.java" startLine="97" startPosition="59" endLine="103" endPosition="9" />
+    <scopeInfo nodeId="1240143495254" fileName="AdapterElimination_MigrationScript.java" startLine="47" startPosition="52" endLine="47" endPosition="52" />
+    <scopeInfo nodeId="1240143495299" fileName="AdapterElimination_MigrationScript.java" startLine="77" startPosition="52" endLine="77" endPosition="52" />
+    <scopeInfo nodeId="1737294499102098753" fileName="AdapterElimination_MigrationScript.java" startLine="107" startPosition="52" endLine="107" endPosition="52" />
+    <scopeInfo nodeId="1737294499102100821" fileName="AdapterElimination_MigrationScript.java" startLine="136" startPosition="52" endLine="136" endPosition="52" />
+    <scopeInfo nodeId="1737294499102100852" fileName="AdapterElimination_MigrationScript.java" startLine="160" startPosition="52" endLine="160" endPosition="52" />
+    <scopeInfo nodeId="1240143495258" fileName="AdapterElimination_MigrationScript.java" startLine="38" startPosition="148" endLine="39" endPosition="23" />
+    <scopeInfo nodeId="1240143495269" fileName="AdapterElimination_MigrationScript.java" startLine="41" startPosition="271" endLine="42" endPosition="23" />
+    <scopeInfo nodeId="1240143495303" fileName="AdapterElimination_MigrationScript.java" startLine="68" startPosition="148" endLine="69" endPosition="23" />
+    <scopeInfo nodeId="1240143495314" fileName="AdapterElimination_MigrationScript.java" startLine="71" startPosition="268" endLine="72" endPosition="23" />
+    <scopeInfo nodeId="1737294499102098769" fileName="AdapterElimination_MigrationScript.java" startLine="100" startPosition="67" endLine="101" endPosition="24" />
+    <scopeInfo nodeId="1737294499102100825" fileName="AdapterElimination_MigrationScript.java" startLine="128" startPosition="77" endLine="129" endPosition="23" />
+    <scopeInfo nodeId="1737294499102098757" fileName="AdapterElimination_MigrationScript.java" startLine="98" startPosition="53" endLine="102" endPosition="11">
       <varInfo nodeId="1737294499102098759" varName="targetModelFQName" />
     </scopeInfo>
-    <scopeInfo nodeId="1737294499102098756" fileName="AdapterElimination_MigrationScript.java" startLine="98" startPosition="59" endLine="104" endPosition="9">
+    <scopeInfo nodeId="1737294499102098756" fileName="AdapterElimination_MigrationScript.java" startLine="97" startPosition="59" endLine="103" endPosition="9">
       <varInfo nodeId="1737294499102098780" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="1737294499102100823" fileName="AdapterElimination_MigrationScript.java" startLine="128" startPosition="59" endLine="134" endPosition="48">
+    <scopeInfo nodeId="1737294499102100823" fileName="AdapterElimination_MigrationScript.java" startLine="127" startPosition="59" endLine="133" endPosition="48">
       <varInfo nodeId="1737294499102100834" varName="className" />
       <varInfo nodeId="1737294499102100841" varName="namespace" />
     </scopeInfo>
-    <scopeInfo nodeId="1240143495256" fileName="AdapterElimination_MigrationScript.java" startLine="38" startPosition="59" endLine="45" endPosition="538" />
-    <scopeInfo nodeId="1240143495301" fileName="AdapterElimination_MigrationScript.java" startLine="68" startPosition="59" endLine="75" endPosition="532" />
-    <scopeInfo nodeId="1737294499102098755" fileName="AdapterElimination_MigrationScript.java" startLine="98" startPosition="59" endLine="105" endPosition="21" />
+    <scopeInfo nodeId="1240143495256" fileName="AdapterElimination_MigrationScript.java" startLine="37" startPosition="59" endLine="44" endPosition="538" />
+    <scopeInfo nodeId="1240143495301" fileName="AdapterElimination_MigrationScript.java" startLine="67" startPosition="59" endLine="74" endPosition="532" />
+    <scopeInfo nodeId="1737294499102098755" fileName="AdapterElimination_MigrationScript.java" startLine="97" startPosition="59" endLine="104" endPosition="21" />
   </root>
   <root nodeId="4943859628564430280">
     <nodeInfo nodeId="4943859628564438222" fileName="Replace_ListType_with_collection_operations_MigrationScript.java" startLine="32" startPosition="52" endLine="33" endPosition="141" />

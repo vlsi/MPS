@@ -23,26 +23,26 @@
     <scopeInfo nodeId="2799938697970315262" fileName="MakeRootable_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" />
   </root>
   <root nodeId="6895093993902311021">
-    <nodeInfo nodeId="7376433222636453325" fileName="CreateReferenceConcept_Intention.java" startLine="63" startPosition="76" endLine="64" endPosition="17" />
-    <nodeInfo nodeId="6895093993902311040" fileName="CreateReferenceConcept_Intention.java" startLine="64" startPosition="17" endLine="65" endPosition="232" />
-    <nodeInfo nodeId="6895093993902318256" fileName="CreateReferenceConcept_Intention.java" startLine="65" startPosition="232" endLine="66" endPosition="74" />
-    <nodeInfo nodeId="1643988642622750509" fileName="CreateReferenceConcept_Intention.java" startLine="66" startPosition="74" endLine="67" endPosition="110" />
-    <nodeInfo nodeId="6895093993902318361" fileName="CreateReferenceConcept_Intention.java" startLine="67" startPosition="110" endLine="68" endPosition="109" />
-    <nodeInfo nodeId="6895093993902318324" fileName="CreateReferenceConcept_Intention.java" startLine="68" startPosition="109" endLine="69" endPosition="0" />
-    <nodeInfo nodeId="7376433222636453059" fileName="CreateReferenceConcept_Intention.java" startLine="69" startPosition="0" endLine="70" endPosition="25" />
-    <nodeInfo nodeId="6895093993902312304" fileName="CreateReferenceConcept_Intention.java" startLine="70" startPosition="25" endLine="71" endPosition="101" />
-    <nodeInfo nodeId="6895093993902312756" fileName="CreateReferenceConcept_Intention.java" startLine="71" startPosition="101" endLine="72" endPosition="73" />
-    <nodeInfo nodeId="6895093993902312768" fileName="CreateReferenceConcept_Intention.java" startLine="72" startPosition="73" endLine="73" endPosition="0" />
-    <nodeInfo nodeId="7376433222636453831" fileName="CreateReferenceConcept_Intention.java" startLine="73" startPosition="0" endLine="74" endPosition="14" />
-    <nodeInfo nodeId="6895093993902312782" fileName="CreateReferenceConcept_Intention.java" startLine="74" startPosition="14" endLine="75" endPosition="114" />
-    <nodeInfo nodeId="6895093993902318371" fileName="CreateReferenceConcept_Intention.java" startLine="75" startPosition="114" endLine="76" endPosition="54" />
-    <nodeInfo nodeId="1643988642622750519" fileName="CreateReferenceConcept_Intention.java" startLine="76" startPosition="54" endLine="77" endPosition="109" />
-    <nodeInfo nodeId="6895093993902312812" fileName="CreateReferenceConcept_Intention.java" startLine="77" startPosition="109" endLine="78" endPosition="0" />
-    <nodeInfo nodeId="6895093993902318181" fileName="CreateReferenceConcept_Intention.java" startLine="78" startPosition="0" endLine="79" endPosition="68" />
-    <nodeInfo nodeId="6895093993902315676" fileName="CreateReferenceConcept_Intention.java" startLine="79" startPosition="68" endLine="80" endPosition="73" />
-    <scopeInfo nodeId="6895093993902311023" fileName="CreateReferenceConcept_Intention.java" startLine="48" startPosition="85" endLine="49" endPosition="38" />
-    <scopeInfo nodeId="6895093993902318350" fileName="CreateReferenceConcept_Intention.java" startLine="59" startPosition="90" endLine="60" endPosition="97" />
-    <scopeInfo nodeId="6895093993902311025" fileName="CreateReferenceConcept_Intention.java" startLine="63" startPosition="76" endLine="80" endPosition="73">
+    <nodeInfo nodeId="7376433222636453325" fileName="CreateReferenceConcept_Intention.java" startLine="62" startPosition="76" endLine="63" endPosition="17" />
+    <nodeInfo nodeId="6895093993902311040" fileName="CreateReferenceConcept_Intention.java" startLine="63" startPosition="17" endLine="64" endPosition="232" />
+    <nodeInfo nodeId="6895093993902318256" fileName="CreateReferenceConcept_Intention.java" startLine="64" startPosition="232" endLine="65" endPosition="74" />
+    <nodeInfo nodeId="1643988642622750509" fileName="CreateReferenceConcept_Intention.java" startLine="65" startPosition="74" endLine="66" endPosition="110" />
+    <nodeInfo nodeId="6895093993902318361" fileName="CreateReferenceConcept_Intention.java" startLine="66" startPosition="110" endLine="67" endPosition="109" />
+    <nodeInfo nodeId="6895093993902318324" fileName="CreateReferenceConcept_Intention.java" startLine="67" startPosition="109" endLine="68" endPosition="0" />
+    <nodeInfo nodeId="7376433222636453059" fileName="CreateReferenceConcept_Intention.java" startLine="68" startPosition="0" endLine="69" endPosition="25" />
+    <nodeInfo nodeId="6895093993902312304" fileName="CreateReferenceConcept_Intention.java" startLine="69" startPosition="25" endLine="70" endPosition="101" />
+    <nodeInfo nodeId="6895093993902312756" fileName="CreateReferenceConcept_Intention.java" startLine="70" startPosition="101" endLine="71" endPosition="73" />
+    <nodeInfo nodeId="6895093993902312768" fileName="CreateReferenceConcept_Intention.java" startLine="71" startPosition="73" endLine="72" endPosition="0" />
+    <nodeInfo nodeId="7376433222636453831" fileName="CreateReferenceConcept_Intention.java" startLine="72" startPosition="0" endLine="73" endPosition="14" />
+    <nodeInfo nodeId="6895093993902312782" fileName="CreateReferenceConcept_Intention.java" startLine="73" startPosition="14" endLine="74" endPosition="114" />
+    <nodeInfo nodeId="6895093993902318371" fileName="CreateReferenceConcept_Intention.java" startLine="74" startPosition="114" endLine="75" endPosition="54" />
+    <nodeInfo nodeId="1643988642622750519" fileName="CreateReferenceConcept_Intention.java" startLine="75" startPosition="54" endLine="76" endPosition="109" />
+    <nodeInfo nodeId="6895093993902312812" fileName="CreateReferenceConcept_Intention.java" startLine="76" startPosition="109" endLine="77" endPosition="0" />
+    <nodeInfo nodeId="6895093993902318181" fileName="CreateReferenceConcept_Intention.java" startLine="77" startPosition="0" endLine="78" endPosition="68" />
+    <nodeInfo nodeId="6895093993902315676" fileName="CreateReferenceConcept_Intention.java" startLine="78" startPosition="68" endLine="79" endPosition="73" />
+    <scopeInfo nodeId="6895093993902311023" fileName="CreateReferenceConcept_Intention.java" startLine="47" startPosition="85" endLine="48" endPosition="38" />
+    <scopeInfo nodeId="6895093993902318350" fileName="CreateReferenceConcept_Intention.java" startLine="58" startPosition="90" endLine="59" endPosition="97" />
+    <scopeInfo nodeId="6895093993902311025" fileName="CreateReferenceConcept_Intention.java" startLine="62" startPosition="76" endLine="79" endPosition="73">
       <varInfo nodeId="6895093993902312783" varName="editor" />
       <varInfo nodeId="6895093993902311041" varName="concept" />
       <varInfo nodeId="6895093993902318362" varName="link" />

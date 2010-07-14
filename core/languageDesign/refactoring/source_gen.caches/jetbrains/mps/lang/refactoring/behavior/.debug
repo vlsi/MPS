@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1213877320624">
-    <nodeInfo nodeId="1213877320629" fileName="ChooseComponentClause_Behavior.java" startLine="23" startPosition="83" endLine="24" endPosition="203" />
-    <nodeInfo nodeId="1213877320638" fileName="ChooseComponentClause_Behavior.java" startLine="24" startPosition="203" endLine="25" endPosition="100" />
-    <scopeInfo nodeId="1213877320626" fileName="ChooseComponentClause_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="1213877320628" fileName="ChooseComponentClause_Behavior.java" startLine="23" startPosition="83" endLine="25" endPosition="100">
+    <nodeInfo nodeId="1213877320629" fileName="ChooseComponentClause_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="203" />
+    <nodeInfo nodeId="1213877320638" fileName="ChooseComponentClause_Behavior.java" startLine="23" startPosition="203" endLine="24" endPosition="100" />
+    <scopeInfo nodeId="1213877320626" fileName="ChooseComponentClause_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="1213877320628" fileName="ChooseComponentClause_Behavior.java" startLine="22" startPosition="83" endLine="24" endPosition="100">
       <varInfo nodeId="1213877320630" varName="elementType" />
     </scopeInfo>
   </root>
@@ -59,31 +59,31 @@
     <scopeInfo nodeId="4205271146524200394" fileName="Refactoring_Behavior.java" startLine="18" startPosition="82" endLine="22" endPosition="185" />
   </root>
   <root nodeId="4413749148913760549">
-    <scopeInfo nodeId="4413749148913760551" fileName="NodeMPSParameterType_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="4413749148913760567" fileName="NodeMPSParameterType_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="88" />
+    <scopeInfo nodeId="4413749148913760551" fileName="NodeMPSParameterType_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="4413749148913760567" fileName="NodeMPSParameterType_Behavior.java" startLine="22" startPosition="84" endLine="23" endPosition="88" />
   </root>
   <root nodeId="4413749148913760552">
     <scopeInfo nodeId="4413749148913760554" fileName="MPSParameterType_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
   </root>
   <root nodeId="4413749148913760574">
-    <scopeInfo nodeId="4413749148913760576" fileName="ModelMPSParameterType_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="4413749148913760579" fileName="ModelMPSParameterType_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="89" />
+    <scopeInfo nodeId="4413749148913760576" fileName="ModelMPSParameterType_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="4413749148913760579" fileName="ModelMPSParameterType_Behavior.java" startLine="22" startPosition="84" endLine="23" endPosition="89" />
   </root>
   <root nodeId="4413749148913760587">
-    <scopeInfo nodeId="4413749148913760589" fileName="ModuleMPSParameterType_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="4413749148913760592" fileName="ModuleMPSParameterType_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="90" />
+    <scopeInfo nodeId="4413749148913760589" fileName="ModuleMPSParameterType_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="4413749148913760592" fileName="ModuleMPSParameterType_Behavior.java" startLine="22" startPosition="84" endLine="23" endPosition="90" />
   </root>
   <root nodeId="4413749148913760600">
-    <scopeInfo nodeId="4413749148913760602" fileName="StringMPSParameterType_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="4413749148913760605" fileName="StringMPSParameterType_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="90" />
+    <scopeInfo nodeId="4413749148913760602" fileName="StringMPSParameterType_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="4413749148913760605" fileName="StringMPSParameterType_Behavior.java" startLine="22" startPosition="84" endLine="23" endPosition="90" />
   </root>
   <root nodeId="4413749148913760612">
-    <scopeInfo nodeId="4413749148913760614" fileName="IntMPSParameterType_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="4413749148913760617" fileName="IntMPSParameterType_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="87" />
+    <scopeInfo nodeId="4413749148913760614" fileName="IntMPSParameterType_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="4413749148913760617" fileName="IntMPSParameterType_Behavior.java" startLine="22" startPosition="84" endLine="23" endPosition="87" />
   </root>
   <root nodeId="4413749148913760624">
-    <scopeInfo nodeId="4413749148913760626" fileName="BooleanMPSParameterType_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="4413749148913760629" fileName="BooleanMPSParameterType_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="91" />
+    <scopeInfo nodeId="4413749148913760626" fileName="BooleanMPSParameterType_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="4413749148913760629" fileName="BooleanMPSParameterType_Behavior.java" startLine="22" startPosition="84" endLine="23" endPosition="91" />
   </root>
   <root nodeId="478744034994716001">
     <nodeInfo nodeId="478744034994716007" fileName="RefactoringArgument_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="132" />
@@ -116,50 +116,50 @@
     <scopeInfo nodeId="7012097027058652451" fileName="ContextMemberOperation_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
   </root>
   <root nodeId="7012097027058652475">
-    <scopeInfo nodeId="7012097027058652477" fileName="ModelDescriptorOperation_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="7012097027058652480" fileName="ModelDescriptorOperation_Behavior.java" startLine="23" startPosition="78" endLine="24" endPosition="92" />
+    <scopeInfo nodeId="7012097027058652477" fileName="ModelDescriptorOperation_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="7012097027058652480" fileName="ModelDescriptorOperation_Behavior.java" startLine="22" startPosition="78" endLine="23" endPosition="92" />
   </root>
   <root nodeId="7012097027058652491">
-    <scopeInfo nodeId="7012097027058652493" fileName="ModuleOperation_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="7012097027058652496" fileName="ModuleOperation_Behavior.java" startLine="23" startPosition="78" endLine="24" endPosition="83" />
+    <scopeInfo nodeId="7012097027058652493" fileName="ModuleOperation_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="7012097027058652496" fileName="ModuleOperation_Behavior.java" startLine="22" startPosition="78" endLine="23" endPosition="83" />
   </root>
   <root nodeId="7012097027058652503">
-    <nodeInfo nodeId="7012097027058652629" fileName="NodeOperation_Behavior.java" startLine="21" startPosition="78" endLine="22" endPosition="136" />
-    <nodeInfo nodeId="7012097027058652670" fileName="NodeOperation_Behavior.java" startLine="23" startPosition="154" endLine="24" endPosition="265" />
-    <nodeInfo nodeId="7012097027058652683" fileName="NodeOperation_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="81" />
-    <nodeInfo nodeId="7012097027058652637" fileName="NodeOperation_Behavior.java" startLine="22" startPosition="136" endLine="25" endPosition="5" />
-    <scopeInfo nodeId="7012097027058652505" fileName="NodeOperation_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="7012097027058652638" fileName="NodeOperation_Behavior.java" startLine="23" startPosition="154" endLine="24" endPosition="265" />
-    <scopeInfo nodeId="7012097027058652508" fileName="NodeOperation_Behavior.java" startLine="21" startPosition="78" endLine="26" endPosition="81">
+    <nodeInfo nodeId="7012097027058652629" fileName="NodeOperation_Behavior.java" startLine="20" startPosition="78" endLine="21" endPosition="136" />
+    <nodeInfo nodeId="7012097027058652670" fileName="NodeOperation_Behavior.java" startLine="22" startPosition="154" endLine="23" endPosition="265" />
+    <nodeInfo nodeId="7012097027058652683" fileName="NodeOperation_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="81" />
+    <nodeInfo nodeId="7012097027058652637" fileName="NodeOperation_Behavior.java" startLine="21" startPosition="136" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="7012097027058652505" fileName="NodeOperation_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
+    <scopeInfo nodeId="7012097027058652638" fileName="NodeOperation_Behavior.java" startLine="22" startPosition="154" endLine="23" endPosition="265" />
+    <scopeInfo nodeId="7012097027058652508" fileName="NodeOperation_Behavior.java" startLine="20" startPosition="78" endLine="25" endPosition="81">
       <varInfo nodeId="7012097027058652630" varName="refactoringNode" />
     </scopeInfo>
   </root>
   <root nodeId="7012097027058652510">
-    <nodeInfo nodeId="7012097027058652559" fileName="NodesOperation_Behavior.java" startLine="21" startPosition="78" endLine="22" endPosition="136" />
-    <nodeInfo nodeId="7012097027058652606" fileName="NodesOperation_Behavior.java" startLine="23" startPosition="154" endLine="24" endPosition="266" />
-    <nodeInfo nodeId="7012097027058652625" fileName="NodesOperation_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="82" />
-    <nodeInfo nodeId="7012097027058652567" fileName="NodesOperation_Behavior.java" startLine="22" startPosition="136" endLine="25" endPosition="5" />
-    <scopeInfo nodeId="7012097027058652512" fileName="NodesOperation_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="7012097027058652568" fileName="NodesOperation_Behavior.java" startLine="23" startPosition="154" endLine="24" endPosition="266" />
-    <scopeInfo nodeId="7012097027058652515" fileName="NodesOperation_Behavior.java" startLine="21" startPosition="78" endLine="26" endPosition="82">
+    <nodeInfo nodeId="7012097027058652559" fileName="NodesOperation_Behavior.java" startLine="20" startPosition="78" endLine="21" endPosition="136" />
+    <nodeInfo nodeId="7012097027058652606" fileName="NodesOperation_Behavior.java" startLine="22" startPosition="154" endLine="23" endPosition="266" />
+    <nodeInfo nodeId="7012097027058652625" fileName="NodesOperation_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="82" />
+    <nodeInfo nodeId="7012097027058652567" fileName="NodesOperation_Behavior.java" startLine="21" startPosition="136" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="7012097027058652512" fileName="NodesOperation_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
+    <scopeInfo nodeId="7012097027058652568" fileName="NodesOperation_Behavior.java" startLine="22" startPosition="154" endLine="23" endPosition="266" />
+    <scopeInfo nodeId="7012097027058652515" fileName="NodesOperation_Behavior.java" startLine="20" startPosition="78" endLine="25" endPosition="82">
       <varInfo nodeId="7012097027058652560" varName="refactoringNode" />
     </scopeInfo>
   </root>
   <root nodeId="7012097027058652517">
-    <scopeInfo nodeId="7012097027058652519" fileName="OperationContextOperation_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="7012097027058652522" fileName="OperationContextOperation_Behavior.java" startLine="23" startPosition="78" endLine="24" endPosition="93" />
+    <scopeInfo nodeId="7012097027058652519" fileName="OperationContextOperation_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="7012097027058652522" fileName="OperationContextOperation_Behavior.java" startLine="22" startPosition="78" endLine="23" endPosition="93" />
   </root>
   <root nodeId="7012097027058652533">
-    <scopeInfo nodeId="7012097027058652535" fileName="ProjectOperation_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="7012097027058652541" fileName="ProjectOperation_Behavior.java" startLine="23" startPosition="78" endLine="24" endPosition="84" />
+    <scopeInfo nodeId="7012097027058652535" fileName="ProjectOperation_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="7012097027058652541" fileName="ProjectOperation_Behavior.java" startLine="22" startPosition="78" endLine="23" endPosition="84" />
   </root>
   <root nodeId="7012097027058652547">
-    <scopeInfo nodeId="7012097027058652549" fileName="ScopeOperation_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="7012097027058652552" fileName="ScopeOperation_Behavior.java" startLine="23" startPosition="78" endLine="24" endPosition="82" />
+    <scopeInfo nodeId="7012097027058652549" fileName="ScopeOperation_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="7012097027058652552" fileName="ScopeOperation_Behavior.java" startLine="22" startPosition="78" endLine="23" endPosition="82" />
   </root>
   <root nodeId="8113680833395644312">
-    <scopeInfo nodeId="8113680833395644314" fileName="MainProjectOperation_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="8113680833395644317" fileName="MainProjectOperation_Behavior.java" startLine="23" startPosition="78" endLine="24" endPosition="88" />
+    <scopeInfo nodeId="8113680833395644314" fileName="MainProjectOperation_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="8113680833395644317" fileName="MainProjectOperation_Behavior.java" startLine="22" startPosition="78" endLine="23" endPosition="88" />
   </root>
 </debugInfo>
 

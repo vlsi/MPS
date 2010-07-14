@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.behavior.SEnumOperation_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 
 public class typeof_SEnum_MemberOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -49,7 +48,7 @@ public class typeof_SEnum_MemberOperation_InferenceRule extends AbstractInferenc
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferent("enum", (SNode) parameter_3);
         result = quotedNode1_2;
@@ -62,7 +61,7 @@ public class typeof_SEnum_MemberOperation_InferenceRule extends AbstractInferenc
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferent("enum", (SNode) parameter_3);
         result = quotedNode1_2;

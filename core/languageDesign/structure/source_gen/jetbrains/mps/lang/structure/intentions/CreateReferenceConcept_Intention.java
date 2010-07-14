@@ -19,7 +19,6 @@ import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
@@ -94,12 +93,12 @@ public class CreateReferenceConcept_Intention extends BaseIntention implements I
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setProperty("name", (String) parameter_7);
         quotedNode1_3.addReference(SReference.create("extends", quotedNode1_3, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), SNodeId.fromString("1068431790191")));
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("metaClass", "reference");
           quotedNode1_4.setProperty("sourceCardinality", "1");
@@ -125,18 +124,18 @@ public class CreateReferenceConcept_Intention extends BaseIntention implements I
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         quotedNode1_5.setReferent("conceptDeclaration", (SNode) parameter_9);
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_RefCell", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setReferent("relationDeclaration", (SNode) parameter_10);
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.InlineEditorComponent", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.InlineEditorComponent", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Property", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Property", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("readOnly", "true");
               quotedNode1_8.addReference(SReference.create("relationDeclaration", quotedNode1_8, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1169194664001")));
