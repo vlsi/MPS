@@ -127,7 +127,7 @@ public class TabbedEditor implements IEditor {
   }
 
   public void tabStructureChanged() {
-    Project project = myOperationContext.getProject();
+    final Project project = myOperationContext.getProject();
     FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
     VirtualFile virtualFile = manager.getCurrentFile();
     if (virtualFile == null) return;
@@ -138,17 +138,30 @@ public class TabbedEditor implements IEditor {
       MPSFileNodeEditor openedMPSEditor = (MPSFileNodeEditor) openedEditor;
       if (ObjectUtils.equals(this, openedMPSEditor.getNodeEditor())) continue;
 
-      IEditor mpsNodeEditor = openedMPSEditor.getNodeEditor();
+      final IEditor mpsNodeEditor = openedMPSEditor.getNodeEditor();
       List<SNode> openedNodes = mpsNodeEditor.getEditedNodes();
       if (mpsNodeEditor instanceof TabbedEditor || !getEditedNodes().contains(openedNodes.get(0))) continue;
 
       boolean needToSelect = virtualFile == openedMPSEditor.getFile();
-      manager.closeFile(openedMPSEditor.getFile());
+      if (!needToSelect) {
+        manager.closeFile(openedMPSEditor.getFile());
+      } else {
+        //we need rthis "invoke later" because we need a memento after the editor is opened and its state is stable
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            Object memento = null;
+            EditorComponent editorComponent = mpsNodeEditor.getCurrentEditorComponent();
+            if (editorComponent != null) {
+              memento = editorComponent.getEditorContext().createMemento(true);
+            }
 
-      if (needToSelect) {
-        SNode node = myNodePointer.getNode();
-        new MPSEditorOpener(project).editNode(node, myOperationContext);
-        selectLinkedEditor(mpsNodeEditor.getEditedNode());
+            SNode node = myNodePointer.getNode();
+            new MPSEditorOpener(project).editNode(node, myOperationContext);
+            final EditorComponent component = selectLinkedEditor(mpsNodeEditor.getEditedNode());
+
+            component.getEditorContext().setMemento(memento);
+          }
+        });
       }
     }
 
