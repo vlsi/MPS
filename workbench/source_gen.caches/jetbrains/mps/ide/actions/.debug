@@ -1412,9 +1412,6 @@
     <nodeInfo nodeId="1222856493078" fileName="MPSProjectPaths_Action.java" startLine="60" startPosition="9" endLine="61" endPosition="104" />
     <nodeInfo nodeId="1222856519168" fileName="MPSProjectPaths_Action.java" startLine="61" startPosition="104" endLine="62" endPosition="26" />
   </root>
-  <root nodeId="1222862438774">
-    <nodeInfo nodeId="1222862512702" fileName="ShowDefaultKeymap_Action.java" startLine="52" startPosition="9" endLine="53" endPosition="108" />
-  </root>
   <root nodeId="1223018726868">
     <nodeInfo nodeId="3734045384532079199" fileName="SolutionRefactoring_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="125" />
   </root>
@@ -4580,9 +4577,6 @@
     <nodeInfo nodeId="6800888824900112015" fileName="GoToNextChange_Action.java" startLine="38" startPosition="47" endLine="39" endPosition="179" />
     <nodeInfo nodeId="5444017747357180133" fileName="GoToNextChange_Action.java" startLine="70" startPosition="9" endLine="71" endPosition="136" />
     <scopeInfo nodeId="6800888824899957478" fileName="GoToNextChange_Action.java" startLine="37" startPosition="9" endLine="39" endPosition="179" />
-  </root>
-  <root nodeId="5529484399666091081">
-    <nodeInfo nodeId="5529484399666148345" fileName="HelpAddition_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="121" />
   </root>
   <root nodeId="5533671870987003804">
     <nodeInfo nodeId="5533671870987003865" fileName="HighlightUsages_Action.java" startLine="29" startPosition="0" endLine="30" endPosition="42" />
