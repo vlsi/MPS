@@ -103,7 +103,7 @@
 
     <group id="MPSWelcomeDocumentationMenu">
       <action id="ShowMPSDocumentation"
-              class="jetbrains.mps.workbench.actions.help.ShowMPSDocumentationSiteAction"
+              class="jetbrains.mps.workbench.actions.help.ShowDocumentationAction"
               text="Show MPS Documentation" description="You can read MPS Documentation here"/>
       <action id="ShowTheSimplestLanguageScreenCast"
               class="jetbrains.mps.workbench.actions.help.ShowTheSimplestLanguageScreenCastAction"
