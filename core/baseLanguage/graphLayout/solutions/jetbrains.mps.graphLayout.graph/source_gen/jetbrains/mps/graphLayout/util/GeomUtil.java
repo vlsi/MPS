@@ -54,4 +54,8 @@ public class GeomUtil {
     }
     return null;
   }
+
+  public static boolean intersects(int minX, int maxX, int minY, int maxY) {
+    return Math.min(maxX, maxY) >= Math.max(minX, minY);
+  }
 }
