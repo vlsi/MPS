@@ -93,6 +93,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
       getTabbedEditor().getTabbedPane().remove(this);
       getTabbedEditor().getTabbedPane().initTab(this);
     }
+
     // TODO remove model listener
     getTabbedEditor().updateTabColor(this, getBaseNodeVirtualFile());
   }
@@ -194,11 +195,6 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
 
     myComponent = new JPanel(new BorderLayout());
     myInnerTabbedPane = new JTabbedPane();
-    myInnerTabbedPane.addChangeListener(new ChangeListener() {
-      public void stateChanged(ChangeEvent e) {
-        getTabbedEditor().tabStructureChanged();
-      }
-    });
     myInnerTabbedPane.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         if (e.getButton() == MouseEvent.BUTTON3) {
@@ -262,6 +258,8 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     ToolWindowManager.getInstance(operationContext.getProject()).getFocusManager().requestFocus(component, false);
     aspectAdded(loadableNode);
     addNameListener(loadableNode.getModel().getModelDescriptor());
+
+    getTabbedEditor().tabStructureChanged();
 
     return jComponent;
   }

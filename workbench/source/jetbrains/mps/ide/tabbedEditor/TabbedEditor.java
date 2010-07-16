@@ -127,18 +127,30 @@ public class TabbedEditor implements IEditor {
   }
 
   public void tabStructureChanged() {
-    //this "invoke later" is needed for the opening editor to be completely opened 
+    final Project project = myOperationContext.getProject();
+    FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
+    VirtualFile virtualFile = manager.getCurrentFile();
+    if (virtualFile == null) return;
+
+    FileStatusManager.getInstance(project).fileStatusChanged(virtualFile);
+    manager.updateFilePresentation(virtualFile);
+
+    reorganizeTabs();
+  }
+
+  private void reorganizeTabs(){
+    //this "invoke later" is needed for the opening editor to be completely opened
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         final Project project = myOperationContext.getProject();
-        FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
+        final FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
         VirtualFile virtualFile = manager.getCurrentFile();
         if (virtualFile == null) return;
 
         for (FileEditor openedEditor : manager.getAllEditors()) {
           if (!(openedEditor instanceof MPSFileNodeEditor)) continue;
 
-          MPSFileNodeEditor openedMPSEditor = (MPSFileNodeEditor) openedEditor;
+          final MPSFileNodeEditor openedMPSEditor = (MPSFileNodeEditor) openedEditor;
           if (ObjectUtils.equals(this, openedMPSEditor.getNodeEditor())) continue;
 
           final IEditor mpsNodeEditor = openedMPSEditor.getNodeEditor();
@@ -163,13 +175,12 @@ public class TabbedEditor implements IEditor {
                 final EditorComponent component = selectLinkedEditor(mpsNodeEditor.getEditedNode());
 
                 component.getEditorContext().setMemento(memento);
+
+                manager.closeFile(openedMPSEditor.getFile());
               }
             });
           }
         }
-
-        FileStatusManager.getInstance(project).fileStatusChanged(virtualFile);
-        manager.updateFilePresentation(virtualFile);
       }
     });
   }

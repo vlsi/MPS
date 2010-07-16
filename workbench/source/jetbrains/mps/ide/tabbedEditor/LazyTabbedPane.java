@@ -137,7 +137,6 @@ public class LazyTabbedPane extends JPanel implements Disposable {
   }
 
   public void initTab(final ILazyTab tab) {
-    myTabbedEditor.tabStructureChanged();
     if (myInitializedTabs.contains(tab)) return;
 
     final JPanel panel = (JPanel) myTabbedPane.getComponentAt(myLazyTabs.indexOf(tab));
@@ -168,9 +167,9 @@ public class LazyTabbedPane extends JPanel implements Disposable {
       panel.add(label, BorderLayout.CENTER);
       panel.validate();
       panel.repaint();
-      updateTabColor(tab);
+      updateTabColor(tab); //todo why here?
     } else {
-      updateTabColor(tab);
+      updateTabColor(tab); //todo why here?
       myInitializedTabs.add(tab);
 
       if (panel!=component){
@@ -186,6 +185,8 @@ public class LazyTabbedPane extends JPanel implements Disposable {
         }
       }
     }
+
+    myTabbedEditor.tabStructureChanged();
   }
 
   @Override
