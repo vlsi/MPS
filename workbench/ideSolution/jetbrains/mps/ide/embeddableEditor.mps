@@ -475,6 +475,25 @@
         <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7469930712745424623" />
       </node>
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3094411788089107832">
+      <property name="name:3" value="getEditor" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3094411788089108007">
+        <link role="classifier:3" targetNodeId="33.~IEditor" resolveInfo="IEditor" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3094411788089107834" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3094411788089107835">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3094411788089108008">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3094411788089108011">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3094411788089108010">
+              <link role="variableDeclaration:3" targetNodeId="1220438174600" resolveInfo="myFileNodeEditor" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3094411788089108015">
+              <link role="baseMethodDeclaration:3" targetNodeId="18.~MPSFileNodeEditor.getNodeEditor():jetbrains.mps.ide.IEditor" resolveInfo="getNodeEditor" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1219412504349">
       <property name="name:3" value="generate" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1219412509590">

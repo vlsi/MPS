@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.runtime.DebugSession;
+import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import java.awt.Dimension;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -57,10 +58,12 @@ public class EvaluationDialog extends BaseDialog {
   protected String myClassFQName;
   protected ThreadReference myThreadReference;
   protected DebugSession myDebugSession;
+  private Highlighter myHighlighter;
 
   public EvaluationDialog(final IOperationContext context, JavaUiState uiState, final DebugSession debugSession) {
     super(context.getMainFrame(), "Evaluate");
     this.myContext = context;
+    this.myHighlighter = myContext.getProject().getComponent(Highlighter.class);
     myClassFQName = uiState.getStackFrame().getLocation().getUnitName();
     myThreadReference = uiState.getThread().getThread();
     myDebugSession = debugSession;
@@ -109,9 +112,11 @@ public class EvaluationDialog extends BaseDialog {
       @Override
       public void windowClosed(WindowEvent event) {
         debugSession.removeChangeListener(mySessionChangeListener);
-        EvaluationDialog.this.myEditor.disposeEditor(false);
+        myHighlighter.removeAdditionalEditor(myEditor.getEditor());
+        myEditor.disposeEditor(false);
       }
     });
+    this.myHighlighter.addAdditionalEditor(myEditor.getEditor());
   }
 
   protected JComponent getMainComponent() {
