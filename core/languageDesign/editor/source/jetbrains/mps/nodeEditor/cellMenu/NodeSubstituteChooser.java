@@ -131,9 +131,9 @@ public class NodeSubstituteChooser implements KeyboardHandler {
           getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
           myNodeSubstituteInfo.invalidateActions();
           rebuildMenuEntries();
-          getPopupWindow().setSelectionIndex(0);
           getPopupWindow().setVisible(true);
           getPopupWindow().relayout();
+          getPopupWindow().setSelectionIndex(0);
         } else {
           getPatternEditor().activate(null, myPatternEditorLocation, myPatternEditorSize);
           myNodeSubstituteInfo.invalidateActions();
