@@ -127,46 +127,51 @@ public class TabbedEditor implements IEditor {
   }
 
   public void tabStructureChanged() {
-    final Project project = myOperationContext.getProject();
-    FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
-    VirtualFile virtualFile = manager.getCurrentFile();
-    if (virtualFile == null) return;
+    //this "invoke later" is needed for the opening editor to be completely opened 
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        final Project project = myOperationContext.getProject();
+        FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
+        VirtualFile virtualFile = manager.getCurrentFile();
+        if (virtualFile == null) return;
 
-    for (FileEditor openedEditor : manager.getAllEditors()) {
-      if (!(openedEditor instanceof MPSFileNodeEditor)) continue;
+        for (FileEditor openedEditor : manager.getAllEditors()) {
+          if (!(openedEditor instanceof MPSFileNodeEditor)) continue;
 
-      MPSFileNodeEditor openedMPSEditor = (MPSFileNodeEditor) openedEditor;
-      if (ObjectUtils.equals(this, openedMPSEditor.getNodeEditor())) continue;
+          MPSFileNodeEditor openedMPSEditor = (MPSFileNodeEditor) openedEditor;
+          if (ObjectUtils.equals(this, openedMPSEditor.getNodeEditor())) continue;
 
-      final IEditor mpsNodeEditor = openedMPSEditor.getNodeEditor();
-      List<SNode> openedNodes = mpsNodeEditor.getEditedNodes();
-      if (mpsNodeEditor instanceof TabbedEditor || !getEditedNodes().contains(openedNodes.get(0))) continue;
+          final IEditor mpsNodeEditor = openedMPSEditor.getNodeEditor();
+          List<SNode> openedNodes = mpsNodeEditor.getEditedNodes();
+          if (mpsNodeEditor instanceof TabbedEditor || !getEditedNodes().contains(openedNodes.get(0))) continue;
 
-      boolean needToSelect = virtualFile == openedMPSEditor.getFile();
-      if (!needToSelect) {
-        manager.closeFile(openedMPSEditor.getFile());
-      } else {
-        //we need rthis "invoke later" because we need a memento after the editor is opened and its state is stable
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            Object memento = null;
-            EditorComponent editorComponent = mpsNodeEditor.getCurrentEditorComponent();
-            if (editorComponent != null) {
-              memento = editorComponent.getEditorContext().createMemento(true);
-            }
+          boolean needToSelect = virtualFile == openedMPSEditor.getFile();
+          if (!needToSelect) {
+            manager.closeFile(openedMPSEditor.getFile());
+          } else {
+            //we need this "invoke later" because we need a memento after the editor is opened and its state is stable
+            SwingUtilities.invokeLater(new Runnable() {
+              public void run() {
+                Object memento = null;
+                EditorComponent editorComponent = mpsNodeEditor.getCurrentEditorComponent();
+                if (editorComponent != null) {
+                  memento = editorComponent.getEditorContext().createMemento(true);
+                }
 
-            SNode node = myNodePointer.getNode();
-            new MPSEditorOpener(project).editNode(node, myOperationContext);
-            final EditorComponent component = selectLinkedEditor(mpsNodeEditor.getEditedNode());
+                SNode node = myNodePointer.getNode();
+                new MPSEditorOpener(project).editNode(node, myOperationContext);
+                final EditorComponent component = selectLinkedEditor(mpsNodeEditor.getEditedNode());
 
-            component.getEditorContext().setMemento(memento);
+                component.getEditorContext().setMemento(memento);
+              }
+            });
           }
-        });
-      }
-    }
+        }
 
-    FileStatusManager.getInstance(project).fileStatusChanged(virtualFile);
-    manager.updateFilePresentation(virtualFile);
+        FileStatusManager.getInstance(project).fileStatusChanged(virtualFile);
+        manager.updateFilePresentation(virtualFile);
+      }
+    });
   }
 
   public void updateTabColor(ILazyTab tab, VirtualFile baseVirtualFile) {
