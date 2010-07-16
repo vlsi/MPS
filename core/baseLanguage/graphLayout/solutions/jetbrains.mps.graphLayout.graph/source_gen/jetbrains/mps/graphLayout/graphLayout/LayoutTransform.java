@@ -31,6 +31,13 @@ public class LayoutTransform {
       }
       newLayout.setLayoutFor(edge, newList);
     }
+    Map<Edge, Rectangle> labelLayout = layout.getLabelLayout();
+    for (Edge edge : SetSequence.fromSet(MapSequence.fromMap(labelLayout).keySet())) {
+      Rectangle rect = MapSequence.fromMap(labelLayout).get(edge);
+      int newX = rect.x + xShift;
+      int newY = rect.y + yShift;
+      newLayout.setLabelLayout(edge, new Rectangle(newX, newY, rect.width, rect.height));
+    }
     return newLayout;
   }
 
@@ -52,6 +59,15 @@ public class LayoutTransform {
         ListSequence.fromList(newList).addElement(new Point((int) (p.x * xScale), (int) (p.y * yScale)));
       }
       newLayout.setLayoutFor(edge, newList);
+    }
+    Map<Edge, Rectangle> labelLayout = layout.getLabelLayout();
+    for (Edge edge : SetSequence.fromSet(MapSequence.fromMap(labelLayout).keySet())) {
+      Rectangle rect = MapSequence.fromMap(labelLayout).get(edge);
+      int newX = (int) (rect.x * xScale);
+      int newY = (int) (rect.y * yScale);
+      int newWidth = (int) (rect.width * xScale);
+      int newHeight = (int) (rect.height * yScale);
+      newLayout.setLabelLayout(edge, new Rectangle(newX, newY, newWidth, newHeight));
     }
     return newLayout;
   }
