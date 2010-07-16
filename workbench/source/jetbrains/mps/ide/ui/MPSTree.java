@@ -468,25 +468,12 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       throw new RuntimeException("Rebuild now can be only called from UI thread");
     }
 
-    Runnable r = new Runnable() {
+    runRebuildAction(new Runnable() {
       public void run() {
-        runRebuildAction(new Runnable() {
-          public void run() {
-            MPSTreeNode root = rebuild();
-            setRootNode(root);
-          }
-        }, true);
+        MPSTreeNode root = rebuild();
+        setRootNode(root);
       }
-    };
-
-    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-
-    r.run();
-
-    if (project == null) return;
-
-    //this should be done before the runnable will be run, or you can get "updating..." status after update is finished
-    DumbService.getInstance(project).smartInvokeLater(r);
+    }, true);
   }
 
   public void clear() {

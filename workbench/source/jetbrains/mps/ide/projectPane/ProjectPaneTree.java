@@ -1,10 +1,15 @@
 package jetbrains.mps.ide.projectPane;
 
+import com.intellij.ide.DataManager;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
+import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.DumbService.DumbModeListener;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.util.ArrayUtil;
+import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.lang.core.structure.BaseConcept;
@@ -13,6 +18,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.tree.TreePath;
 import java.awt.datatransfer.DataFlavor;
@@ -52,6 +58,10 @@ class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
     DragSource.getDefaultDragSource().createDefaultDragGestureRecognizer(this, DnDConstants.ACTION_MOVE, new MyDragGestureListener());
     new DropTarget(this, new ProjectPaneDnDListener(this, new MyTransferable(null).getTransferDataFlavors()[0]));
     this.enableDnd(myProjectPane);
+
+    MessageBusConnection connection = project.getMessageBus().connect();
+    Disposer.register(this, connection);
+    connection.subscribe(DumbService.DUMB_MODE, new MyDumbModeListener());
   }
 
   public void editNode(final SNode node, IOperationContext context, boolean focus) {
@@ -155,6 +165,26 @@ class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
         dge.startDrag(DragSource.DefaultMoveNoDrop, new MyTransferable(result), new MyDragSourceListener());
       } catch (InvalidDnDOperationException ignored) {
       }
+    }
+  }
+
+  private class MyDumbModeListener implements DumbModeListener {
+    public void enteredDumbMode() {
+
+    }
+
+    public void exitDumbMode() {
+      Project p = getProject();
+      if (p.isDisposed()) return;
+
+      DumbService.getInstance(p).smartInvokeLater(new Runnable() {
+        public void run() {
+          Project project = getProject();
+          if (project.isDisposed()) return;
+
+          rebuildNow();
+        }
+      });
     }
   }
 }
