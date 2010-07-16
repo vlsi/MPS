@@ -40,6 +40,7 @@ public class TypeCheckingContext {
 
   public final Object TYPECHECKING_LOCK = new Object();
 
+  private boolean myIsNonTypesystemComputation = false;
   private Stack<Boolean> myIsInEditorQueriesStack = new Stack<Boolean>();
   private Stack<NodeTypesComponent> myTemporaryComponentsStack = new Stack<NodeTypesComponent>();
   private Stack<SNode> myNodesToComputeDuringResolve = new Stack<SNode>();
@@ -81,13 +82,23 @@ public class TypeCheckingContext {
   }
 
   public void setInEditorQueriesMode() {
+    if (myIsNonTypesystemComputation) return;
     myIsInEditorQueriesStack.push(true);
   }
 
   public void resetIsInEditorQueriesMode() {
+    if (myIsNonTypesystemComputation) return;
     if (!myIsInEditorQueriesStack.isEmpty()) {
       myIsInEditorQueriesStack.pop();
     }
+  }
+
+  public void setIsNonTypesystemComputation() {
+    myIsNonTypesystemComputation = true;
+  }
+
+  public void resetIsNonTypesystemComputation() {
+    myIsNonTypesystemComputation = false;
   }
 
   public ISlicer getCurrentSlicer() {
