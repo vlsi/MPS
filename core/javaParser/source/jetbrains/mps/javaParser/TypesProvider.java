@@ -186,6 +186,10 @@ public class TypesProvider {
     return classFqNameFromCompoundName(binaryTypeBinding.compoundName);
   }
 
+  public SReference createErrorReference(String role, String resolveInfo, SNode sourceNode) {
+    return new StaticReference(role, sourceNode, sourceNode.getModel().getSModelReference(), null, resolveInfo);
+  }
+
   public SReference createMethodReference(MethodBinding binding, String role, SNode sourceNode) {
     if (binding instanceof ParameterizedMethodBinding) {
       binding = ((ParameterizedMethodBinding) binding).original();

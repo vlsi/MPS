@@ -71,18 +71,18 @@ public class JavaConverterTreeBuilder {
 
   private static final Logger LOG = Logger.getLogger(JavaConverterTreeBuilder.class);
 
-   private static Map<Character, String> ourEscapeMap = new HashMap<Character, String>();
+  private static Map<Character, String> ourEscapeMap = new HashMap<Character, String>();
 
   static {
-        ourEscapeMap.put('\b', "\\b");
-        ourEscapeMap.put('\t', "\\t");
-        ourEscapeMap.put('\n', "\\n");
-        ourEscapeMap.put('\f', "\\f");
-        ourEscapeMap.put('\r', "\\r");
-        ourEscapeMap.put('\"', "\\\"");
-        ourEscapeMap.put('\'', "\\'");
-        ourEscapeMap.put('\\', "\\\\");
-    }
+    ourEscapeMap.put('\b', "\\b");
+    ourEscapeMap.put('\t', "\\t");
+    ourEscapeMap.put('\n', "\\n");
+    ourEscapeMap.put('\f', "\\f");
+    ourEscapeMap.put('\r', "\\r");
+    ourEscapeMap.put('\"', "\\\"");
+    ourEscapeMap.put('\'', "\\'");
+    ourEscapeMap.put('\\', "\\\\");
+  }
 
   public jetbrains.mps.baseLanguage.structure.Expression processExpressionRefl(Expression expression) {
     jetbrains.mps.baseLanguage.structure.Expression result = null;
@@ -690,7 +690,7 @@ public class JavaConverterTreeBuilder {
     IMethodCall methodCall = null;
     jetbrains.mps.baseLanguage.structure.Expression result;
 
-    if (x.binding.isStatic()) {
+    if (x.binding != null && x.binding.isStatic()) {
       StaticMethodCall smc = StaticMethodCall.newInstance(myCurrentModel);
       methodCall = smc;
       result = smc;
@@ -719,7 +719,12 @@ public class JavaConverterTreeBuilder {
       }
     }
 
-    SReference methodReference = myTypesProvider.createMethodReference(x.binding, BaseMethodCall.BASE_METHOD_DECLARATION, methodCall.getNode());
+    SReference methodReference;
+    if (x.binding == null) {
+      methodReference = myTypesProvider.createErrorReference(BaseMethodCall.BASE_METHOD_DECLARATION, new String(x.selector), methodCall.getNode());
+    } else {
+      methodReference = myTypesProvider.createMethodReference(x.binding, BaseMethodCall.BASE_METHOD_DECLARATION, methodCall.getNode());
+    }
     if (methodReference != null) {
       methodCall.getNode().addReference(methodReference);
     }
@@ -872,6 +877,13 @@ public class JavaConverterTreeBuilder {
   }
 
   private jetbrains.mps.baseLanguage.structure.Expression varFromVariableBinding(Binding binding) {
+    if (binding instanceof ProblemBinding) { //no var found
+      LocalVariableReference varReference = LocalVariableReference.newInstance(myCurrentModel);
+      SReference reference = myTypesProvider.createErrorReference(LocalVariableReference.VARIABLE_DECLARATION,
+        new String(((ProblemBinding) binding).name), varReference.getNode());
+      varReference.getNode().addReference(reference);
+      return varReference;
+    }
     INodeAdapter target = myTypesProvider.getRaw(binding);
     if (!(target instanceof VariableDeclaration)) {
       return null;
@@ -1544,7 +1556,7 @@ public class JavaConverterTreeBuilder {
 
   // exec ==========================================================================
   public List<Classifier> exec(ReferentsCreator referentsCreator,
-                   Map<String, SModel> modelMap, boolean addtoModel) {
+                               Map<String, SModel> modelMap, boolean addtoModel) {
     List<Classifier> result = new ArrayList<Classifier>();
     // Construct the basic AST.
     myTypesProvider = referentsCreator.getTypesProvider();
