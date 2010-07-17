@@ -489,28 +489,30 @@
     <nodeInfo nodeId="5535460359399672328" fileName="EditorPopup_ActionGroup.java" startLine="30" startPosition="123" endLine="31" endPosition="125" />
     <nodeInfo nodeId="7397015581138676446" fileName="EditorPopup_ActionGroup.java" startLine="31" startPosition="125" endLine="32" endPosition="122" />
     <nodeInfo nodeId="5535460359399672329" fileName="EditorPopup_ActionGroup.java" startLine="32" startPosition="122" endLine="33" endPosition="89" />
-    <nodeInfo nodeId="1215112822585" fileName="EditorPopup_ActionGroup.java" startLine="33" startPosition="89" endLine="34" endPosition="50" />
-    <nodeInfo nodeId="1215609492264" fileName="EditorPopup_ActionGroup.java" startLine="34" startPosition="50" endLine="35" endPosition="125" />
-    <nodeInfo nodeId="3812525277597542062" fileName="EditorPopup_ActionGroup.java" startLine="35" startPosition="125" endLine="36" endPosition="124" />
-    <nodeInfo nodeId="7507499331037242275" fileName="EditorPopup_ActionGroup.java" startLine="36" startPosition="124" endLine="37" endPosition="112" />
-    <nodeInfo nodeId="1204980917260" fileName="EditorPopup_ActionGroup.java" startLine="37" startPosition="112" endLine="38" endPosition="50" />
-    <nodeInfo nodeId="2841218117793440883" fileName="EditorPopup_ActionGroup.java" startLine="38" startPosition="50" endLine="39" endPosition="93" />
-    <nodeInfo nodeId="2841218117793490402" fileName="EditorPopup_ActionGroup.java" startLine="39" startPosition="93" endLine="40" endPosition="127" />
-    <nodeInfo nodeId="1235660300971" fileName="EditorPopup_ActionGroup.java" startLine="40" startPosition="127" endLine="41" endPosition="50" />
-    <nodeInfo nodeId="8789567174723226952" fileName="EditorPopup_ActionGroup.java" startLine="41" startPosition="50" endLine="42" endPosition="122" />
-    <nodeInfo nodeId="1216128833258" fileName="EditorPopup_ActionGroup.java" startLine="42" startPosition="122" endLine="43" endPosition="126" />
-    <nodeInfo nodeId="1211230443709" fileName="EditorPopup_ActionGroup.java" startLine="43" startPosition="126" endLine="44" endPosition="50" />
-    <nodeInfo nodeId="5033107305426769608" fileName="EditorPopup_ActionGroup.java" startLine="44" startPosition="50" endLine="45" endPosition="125" />
-    <nodeInfo nodeId="5033107305426736160" fileName="EditorPopup_ActionGroup.java" startLine="45" startPosition="125" endLine="46" endPosition="121" />
-    <nodeInfo nodeId="1237990503495" fileName="EditorPopup_ActionGroup.java" startLine="46" startPosition="121" endLine="47" endPosition="94" />
-    <nodeInfo nodeId="1204981009795" fileName="EditorPopup_ActionGroup.java" startLine="47" startPosition="94" endLine="48" endPosition="50" />
-    <nodeInfo nodeId="1215875185472" fileName="EditorPopup_ActionGroup.java" startLine="48" startPosition="50" endLine="49" endPosition="112" />
-    <nodeInfo nodeId="6272596508835872976" fileName="EditorPopup_ActionGroup.java" startLine="49" startPosition="112" endLine="50" endPosition="117" />
-    <nodeInfo nodeId="5535460359399672331" fileName="EditorPopup_ActionGroup.java" startLine="50" startPosition="117" endLine="51" endPosition="115" />
-    <nodeInfo nodeId="1235220390263" fileName="EditorPopup_ActionGroup.java" startLine="51" startPosition="115" endLine="52" endPosition="128" />
-    <nodeInfo nodeId="1214581695123" fileName="EditorPopup_ActionGroup.java" startLine="52" startPosition="128" endLine="53" endPosition="50" />
-    <nodeInfo nodeId="1221753146354" fileName="EditorPopup_ActionGroup.java" startLine="53" startPosition="50" endLine="54" endPosition="83" />
-    <nodeInfo nodeId="1221753156362" fileName="EditorPopup_ActionGroup.java" startLine="54" startPosition="83" endLine="55" endPosition="50" />
+    <nodeInfo nodeId="5305133058614165010" fileName="EditorPopup_ActionGroup.java" startLine="33" startPosition="89" endLine="34" endPosition="50" />
+    <nodeInfo nodeId="5305133058614165012" fileName="EditorPopup_ActionGroup.java" startLine="34" startPosition="50" endLine="35" endPosition="114" />
+    <nodeInfo nodeId="1215112822585" fileName="EditorPopup_ActionGroup.java" startLine="35" startPosition="114" endLine="36" endPosition="50" />
+    <nodeInfo nodeId="1215609492264" fileName="EditorPopup_ActionGroup.java" startLine="36" startPosition="50" endLine="37" endPosition="125" />
+    <nodeInfo nodeId="3812525277597542062" fileName="EditorPopup_ActionGroup.java" startLine="37" startPosition="125" endLine="38" endPosition="124" />
+    <nodeInfo nodeId="7507499331037242275" fileName="EditorPopup_ActionGroup.java" startLine="38" startPosition="124" endLine="39" endPosition="112" />
+    <nodeInfo nodeId="1204980917260" fileName="EditorPopup_ActionGroup.java" startLine="39" startPosition="112" endLine="40" endPosition="50" />
+    <nodeInfo nodeId="2841218117793440883" fileName="EditorPopup_ActionGroup.java" startLine="40" startPosition="50" endLine="41" endPosition="93" />
+    <nodeInfo nodeId="2841218117793490402" fileName="EditorPopup_ActionGroup.java" startLine="41" startPosition="93" endLine="42" endPosition="127" />
+    <nodeInfo nodeId="1235660300971" fileName="EditorPopup_ActionGroup.java" startLine="42" startPosition="127" endLine="43" endPosition="50" />
+    <nodeInfo nodeId="8789567174723226952" fileName="EditorPopup_ActionGroup.java" startLine="43" startPosition="50" endLine="44" endPosition="122" />
+    <nodeInfo nodeId="1216128833258" fileName="EditorPopup_ActionGroup.java" startLine="44" startPosition="122" endLine="45" endPosition="126" />
+    <nodeInfo nodeId="1211230443709" fileName="EditorPopup_ActionGroup.java" startLine="45" startPosition="126" endLine="46" endPosition="50" />
+    <nodeInfo nodeId="5033107305426769608" fileName="EditorPopup_ActionGroup.java" startLine="46" startPosition="50" endLine="47" endPosition="125" />
+    <nodeInfo nodeId="5033107305426736160" fileName="EditorPopup_ActionGroup.java" startLine="47" startPosition="125" endLine="48" endPosition="121" />
+    <nodeInfo nodeId="1237990503495" fileName="EditorPopup_ActionGroup.java" startLine="48" startPosition="121" endLine="49" endPosition="94" />
+    <nodeInfo nodeId="1204981009795" fileName="EditorPopup_ActionGroup.java" startLine="49" startPosition="94" endLine="50" endPosition="50" />
+    <nodeInfo nodeId="1215875185472" fileName="EditorPopup_ActionGroup.java" startLine="50" startPosition="50" endLine="51" endPosition="112" />
+    <nodeInfo nodeId="6272596508835872976" fileName="EditorPopup_ActionGroup.java" startLine="51" startPosition="112" endLine="52" endPosition="117" />
+    <nodeInfo nodeId="5535460359399672331" fileName="EditorPopup_ActionGroup.java" startLine="52" startPosition="117" endLine="53" endPosition="115" />
+    <nodeInfo nodeId="1235220390263" fileName="EditorPopup_ActionGroup.java" startLine="53" startPosition="115" endLine="54" endPosition="128" />
+    <nodeInfo nodeId="1214581695123" fileName="EditorPopup_ActionGroup.java" startLine="54" startPosition="128" endLine="55" endPosition="50" />
+    <nodeInfo nodeId="1221753146354" fileName="EditorPopup_ActionGroup.java" startLine="55" startPosition="50" endLine="56" endPosition="83" />
+    <nodeInfo nodeId="1221753156362" fileName="EditorPopup_ActionGroup.java" startLine="56" startPosition="83" endLine="57" endPosition="50" />
   </root>
   <root nodeId="1204991232446">
     <nodeInfo nodeId="1215908585470" fileName="EditorInternal_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="118" />
@@ -4432,6 +4434,11 @@
   <root nodeId="5246419582055583191">
     <nodeInfo nodeId="5246419582055649737" fileName="End_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="32" />
     <nodeInfo nodeId="5246419582055649805" fileName="End_Action.java" startLine="60" startPosition="9" endLine="61" endPosition="67" />
+  </root>
+  <root nodeId="5305133058614091504">
+    <nodeInfo nodeId="5305133058614164971" fileName="PasteAsJava_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="45" />
+    <nodeInfo nodeId="5305133058614164973" fileName="PasteAsJava_Action.java" startLine="20" startPosition="45" endLine="21" endPosition="27" />
+    <nodeInfo nodeId="5305133058614164974" fileName="PasteAsJava_Action.java" startLine="67" startPosition="9" endLine="68" endPosition="111" />
   </root>
   <root nodeId="5357294907628536183">
     <nodeInfo nodeId="5357294907628538964" fileName="GoByCurrentReference_Action.java" startLine="39" startPosition="0" endLine="40" endPosition="42" />

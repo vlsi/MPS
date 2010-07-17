@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.javaParser;
 
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.compiler.MPSNameEnvironment;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.javaParser.UIComponents.MyDialog;
@@ -268,6 +270,31 @@ public class JavaCompiler {
 
   private void recompile() {
     showMessageView();
+    compileOnce();
+  }
+
+  public List<SNode> compileIsolated(String source) {
+    initClassPathItem(myModule);
+    SourceWrapper wrapper = SourceWrapper.wrapSource(source, myBaseModelToAddSource);
+    addSource(myBaseModelToAddSource.getLongName() + "." + wrapper.getShortClassName(), wrapper.getWrappedSource());
+    myPackageFQNamesToModels.put(myBaseModelToAddSource.getLongName(), myBaseModelToAddSource);
+    compileOnce();
+    List<Classifier> classifierList = ModelAccess.instance().runWriteActionInCommand(new Computable<List<Classifier>>() {
+      @Override
+      public List<Classifier> compute() {
+        return buildAST(false);
+      }
+    });
+    List<SNode> sNodeList = wrapper.getOurNodesFromClassifier(classifierList.get(0));
+    for (SNode node : sNodeList) {
+      node.getParent().removeChild(node);
+    }
+    return sNodeList;
+  }
+
+
+
+  private void compileOnce() {
     myCompilationUnitDeclarations = new ArrayList<CompilationUnitDeclaration>();
     myProcessedCompilationUnits = new HashSet<ICompilationUnit>();
     Compiler c = new CompilerImpl();
@@ -330,7 +357,7 @@ public class JavaCompiler {
     if (buildAstNow) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          buildAST();
+          createModelsAndBuildAST();
         }
       });
       addRequiredLanguagesToModule();
@@ -347,11 +374,15 @@ public class JavaCompiler {
     //no need, since BL is always used by any module (see AbstractModule.getUsedLanguages()).
   }
 
-  public void buildAST() {
+  private void createModelsAndBuildAST() {
     createModels();
+    buildAST(true);
+  }
+
+  private List<Classifier> buildAST(boolean addToModel) {
     ReferentsCreator referentsCreator = new ReferentsCreator(new HashMap<String, SModel>(myPackageFQNamesToModels));
     referentsCreator.exec(myCompilationUnitDeclarations.toArray(new CompilationUnitDeclaration[myCompilationUnitDeclarations.size()]));
-    new JavaConverterTreeBuilder().exec(referentsCreator, myPackageFQNamesToModels);
+    return new JavaConverterTreeBuilder().exec(referentsCreator, myPackageFQNamesToModels, addToModel);
   }
 
   public List<CompilationResult> getCompilationResults() {

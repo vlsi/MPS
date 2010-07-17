@@ -1543,8 +1543,9 @@ public class JavaConverterTreeBuilder {
   }
 
   // exec ==========================================================================
-  public void exec(ReferentsCreator referentsCreator,
-                   Map<String, SModel> modelMap) {
+  public List<Classifier> exec(ReferentsCreator referentsCreator,
+                   Map<String, SModel> modelMap, boolean addtoModel) {
+    List<Classifier> result = new ArrayList<Classifier>();
     // Construct the basic AST.
     myTypesProvider = referentsCreator.getTypesProvider();
     myModelMap = modelMap;
@@ -1556,11 +1557,15 @@ public class JavaConverterTreeBuilder {
       if (myCurrentModel != null) {
         Classifier classifier = processType(type);
         if (referentsCreator.isTopLevelClassifier(type)) {
-          myCurrentModel.addRoot(classifier);
+          if (addtoModel) {
+            myCurrentModel.addRoot(classifier);
+          }
+          result.add(classifier);
         }
       }
       myCurrentModel = null;
     }
+    return result;
   }
 
   public SModel getModelByTypeDeclaration(SourceTypeBinding typeBinding) {
