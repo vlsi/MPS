@@ -707,6 +707,9 @@ public class TypeCheckingContext {
   public Set<Pair<SNode, List<IErrorReporter>>> checkRootAndGetErrors(boolean refreshTypes) {
     synchronized (TYPECHECKING_LOCK) {
       checkRoot(refreshTypes);
+      //non-typesystem checks
+      getBaseNodeTypesComponent().applyNonTypesystemRulesToRoot(getOperationContext());
+
       Set<Pair<SNode, List<IErrorReporter>>> errors =
         new HashSet<Pair<SNode, List<IErrorReporter>>>(myNodeTypesComponent.getNodesWithErrors());
       return errors;

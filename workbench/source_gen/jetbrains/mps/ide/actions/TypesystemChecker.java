@@ -30,6 +30,7 @@ public class TypesystemChecker extends SpecificChecker {
         break;
       }
       TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(rootNode);
+      typeCheckingContext.setOperationContext(operationContext);
       Set<Pair<SNode, List<IErrorReporter>>> nodeWithErrors = typeCheckingContext.checkRootAndGetErrors(true);
       for (Pair<SNode, List<IErrorReporter>> nodeErrorReporters : SetSequence.fromSet(nodeWithErrors)) {
         SNode node = nodeErrorReporters.o1;
