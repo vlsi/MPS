@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1213877238815">
-    <nodeInfo nodeId="1216135819363" fileName="TestMethod_Behavior.java" startLine="13" startPosition="73" endLine="14" endPosition="28" />
-    <nodeInfo nodeId="1216136637489" fileName="TestMethod_Behavior.java" startLine="18" startPosition="74" endLine="19" endPosition="28" />
-    <scopeInfo nodeId="1213877238817" fileName="TestMethod_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="1216135731805" fileName="TestMethod_Behavior.java" startLine="13" startPosition="73" endLine="15" endPosition="120">
+    <nodeInfo nodeId="1216135819363" fileName="TestMethod_Behavior.java" startLine="24" startPosition="73" endLine="25" endPosition="28" />
+    <nodeInfo nodeId="1216136637489" fileName="TestMethod_Behavior.java" startLine="29" startPosition="74" endLine="30" endPosition="28" />
+    <nodeInfo nodeId="7727541049306221740" fileName="TestMethod_Behavior.java" startLine="34" startPosition="91" endLine="35" endPosition="48" />
+    <nodeInfo nodeId="7727541049306221748" fileName="TestMethod_Behavior.java" startLine="35" startPosition="48" endLine="36" endPosition="127" />
+    <nodeInfo nodeId="7727541049306221765" fileName="TestMethod_Behavior.java" startLine="36" startPosition="127" endLine="37" endPosition="115" />
+    <nodeInfo nodeId="7727541049306221733" fileName="TestMethod_Behavior.java" startLine="37" startPosition="115" endLine="38" endPosition="18" />
+    <scopeInfo nodeId="1213877238817" fileName="TestMethod_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
+    <scopeInfo nodeId="1216135731805" fileName="TestMethod_Behavior.java" startLine="24" startPosition="73" endLine="26" endPosition="120">
       <varInfo nodeId="1216135819364" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="1216136605796" fileName="TestMethod_Behavior.java" startLine="18" startPosition="74" endLine="20" endPosition="57">
+    <scopeInfo nodeId="1216136605796" fileName="TestMethod_Behavior.java" startLine="29" startPosition="74" endLine="31" endPosition="57">
       <varInfo nodeId="1216136637490" varName="method" />
+    </scopeInfo>
+    <scopeInfo nodeId="7727541049306221732" fileName="TestMethod_Behavior.java" startLine="34" startPosition="91" endLine="38" endPosition="18">
+      <varInfo nodeId="7727541049306221741" varName="result" />
     </scopeInfo>
   </root>
   <root nodeId="1213877487741">
