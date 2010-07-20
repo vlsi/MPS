@@ -722,6 +722,10 @@ public class JavaConverterTreeBuilder {
     SReference methodReference;
     if (x.binding == null) {
       methodReference = myTypesProvider.createErrorReference(BaseMethodCall.BASE_METHOD_DECLARATION, new String(x.selector), methodCall.getNode());
+    } else if (x.binding instanceof ProblemMethodBinding) {
+      ProblemMethodBinding problemMethodBinding = (ProblemMethodBinding) x.binding;
+      methodReference = myTypesProvider.createErrorReference(BaseMethodCall.BASE_METHOD_DECLARATION,
+        new String(problemMethodBinding.selector), methodCall.getNode());
     } else {
       methodReference = myTypesProvider.createMethodReference(x.binding, BaseMethodCall.BASE_METHOD_DECLARATION, methodCall.getNode());
     }

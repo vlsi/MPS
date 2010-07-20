@@ -4,7 +4,11 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Statement;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.ArrayList;
@@ -73,8 +77,17 @@ public abstract class SourceWrapper {
     sb.append("package ");
     sb.append(myModel.getLongName());
     sb.append(";\n\n");
+    imports(sb);
     //class
     sb.append("public class " + shortClassName + " {\n\n");
+  }
+
+  protected void imports(StringBuilder sb) {
+    sb.append("\n");
+    for (SModelDescriptor modelDescriptor : myModel.allImportedModels(GlobalScope.getInstance())) {
+      sb.append("import " + modelDescriptor.getLongName() + ".*;\n");
+    }
+    sb.append("\n");
   }
 
   protected String synthesizedClassName() {

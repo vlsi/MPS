@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.logging.Logger;
+import org.eclipse.jdt.internal.compiler.problem.AbortCompilationUnit;
 
 import java.util.*;
 
@@ -536,14 +537,60 @@ public class ReferentsCreator {
       if (unitDecl.hasErrors()) {
         LOG.warning("source file " + new String(unitDecl.getFileName()) + " has compilation errors");
       }
-      unitDecl.traverse(classesCreator, unitDecl.scope);
+      traverse(classesCreator, unitDecl);
     }
     // Traverse again to create our peers for each method, field,
     // parameter, and local
     DeclsCreator declsCreator = new DeclsCreator(this);
     for (CompilationUnitDeclaration unitDecl : unitDecls) {
-      unitDecl.traverse(declsCreator, unitDecl.scope);
+      traverse(declsCreator, unitDecl);
     }
   }
+
+  public void traverse(
+		ASTVisitor visitor,
+		CompilationUnitDeclaration unitDecl) {
+
+		try {
+			if (visitor.visit(unitDecl, unitDecl.scope)) {
+				if (unitDecl.types != null && unitDecl.isPackageInfo()) {
+		            // resolve synthetic type declaration
+					final TypeDeclaration syntheticTypeDeclaration = unitDecl.types[0];
+					// resolve javadoc package if any
+					final MethodScope methodScope = syntheticTypeDeclaration.staticInitializerScope;
+					if (unitDecl.javadoc != null) {
+						unitDecl.javadoc.traverse(visitor, methodScope);
+					}
+					if (unitDecl.currentPackage != null) {
+						final Annotation[] annotations = unitDecl.currentPackage.annotations;
+						if (annotations != null) {
+							int annotationsLength = annotations.length;
+							for (int i = 0; i < annotationsLength; i++) {
+								annotations[i].traverse(visitor, methodScope);
+							}
+						}
+					}
+				}
+				if (unitDecl.currentPackage != null) {
+					unitDecl.currentPackage.traverse(visitor, unitDecl.scope);
+				}
+				if (unitDecl.imports != null) {
+					int importLength = unitDecl.imports.length;
+					for (int i = 0; i < importLength; i++) {
+						unitDecl.imports[i].traverse(visitor, unitDecl.scope);
+					}
+				}
+				if (unitDecl.types != null) {
+					int typesLength = unitDecl.types.length;
+					for (int i = 0; i < typesLength; i++) {
+						unitDecl.types[i].traverse(visitor, unitDecl.scope);
+					}
+				}
+			}
+			visitor.endVisit(unitDecl, unitDecl.scope);
+		} catch (AbortCompilationUnit e) {
+			// ignore
+		}
+	}
 
 }

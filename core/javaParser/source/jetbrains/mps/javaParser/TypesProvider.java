@@ -173,6 +173,15 @@ public class TypesProvider {
         }
         return tvr;
       }
+      if (binding instanceof ProblemReferenceBinding) {
+        ClassifierType classifierType = ClassifierType.newInstance(model);
+        ProblemReferenceBinding problemReferenceBinding = (ProblemReferenceBinding) binding;
+        char[][] chars = problemReferenceBinding.compoundName;
+        char[] name = chars[chars.length - 1];
+        SReference reference = createErrorReference(ClassifierType.CLASSIFIER, new String(name), classifierType.getNode());
+        classifierType.getNode().addReference(reference);
+        return classifierType;
+      }
     }
     return null;
   }
