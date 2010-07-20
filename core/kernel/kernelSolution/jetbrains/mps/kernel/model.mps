@@ -434,6 +434,29 @@
         </node>
       </node>
     </node>
+    <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="6580059167812420601">
+      <property name="name:3" value="clearCaches" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6580059167812420602" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6580059167812420603" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6580059167812420604">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6580059167812420605">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6580059167812420606">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference:3" id="6580059167812420609">
+              <link role="variableDeclaration:3" targetNodeId="1237995590978" resolveInfo="myFQNameToConcepDecl" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.MapClearOperation:7" id="6580059167812420608" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6580059167812420610">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6580059167812420611">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference:3" id="6580059167812420614">
+              <link role="variableDeclaration:3" targetNodeId="1237995590987" resolveInfo="myConceptToLanguage" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.MapClearOperation:7" id="6580059167812420613" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1238267513315">
       <property name="name:3" value="findNodeByFQName" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1238267513317" />

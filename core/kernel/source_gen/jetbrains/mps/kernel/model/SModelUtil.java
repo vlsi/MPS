@@ -89,6 +89,11 @@ public class SModelUtil {
     });
   }
 
+  public static void clearCaches() {
+    MapSequence.fromMap(myFQNameToConcepDecl).clear();
+    MapSequence.fromMap(myConceptToLanguage).clear();
+  }
+
   public static SNode findNodeByFQName(String nodeFQName, SNode concept, IScope scope) {
     String modelName = NameUtil.namespaceFromLongName(nodeFQName);
     String name = NameUtil.shortNameFromLongName(nodeFQName);

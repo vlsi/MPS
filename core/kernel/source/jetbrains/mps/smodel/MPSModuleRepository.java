@@ -116,6 +116,7 @@ public class MPSModuleRepository implements ApplicationComponent {
         for (IModule m : getAllModules()) {
           m.invalidateCaches();
         }
+        SModelUtil_new.clearCaches();
       }
     });
   }

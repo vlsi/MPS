@@ -43,6 +43,10 @@ public class SModelUtil_new implements ApplicationComponent {
     SModelUtil.startListeningOnce(clManager, meManager);
   }
 
+  static void clearCaches() {
+    SModelUtil.clearCaches();
+  }
+
   public void initComponent() {
   }
 
