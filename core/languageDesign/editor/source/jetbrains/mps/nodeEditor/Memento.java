@@ -118,7 +118,8 @@ class Memento {
     }
     if (myFirstRangeSelectionNode != null &&
         editor.findNodeCell(myFirstRangeSelectionNode) != null &&
-        editor.findNodeCell(myLastRangeSelectionNode) != null) {
+        editor.findNodeCell(myLastRangeSelectionNode) != null &&
+        myFirstRangeSelectionNode.getParent() == myLastRangeSelectionNode.getParent()) {
         editor.getNodeRangeSelection().setRange(myFirstRangeSelectionNode, myLastRangeSelectionNode);
     }
 
