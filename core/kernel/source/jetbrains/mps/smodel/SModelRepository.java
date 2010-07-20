@@ -271,6 +271,7 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
+    if (modelReference == null) return null;
     synchronized (myModelsLock) {
       if (modelReference.getSModelId() != null) {
         return myIdToModelDescriptorMap.get(modelReference.getSModelId());
