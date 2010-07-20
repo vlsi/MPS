@@ -966,7 +966,7 @@
     <nodeInfo nodeId="1226918003883" fileName="ConvertToArrayType_Intention.java" startLine="50" startPosition="93" endLine="51" endPosition="53" />
     <nodeInfo nodeId="7875861893709140578" fileName="ConvertToArrayType_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="47" />
     <scopeInfo nodeId="1226917954180" fileName="ConvertToArrayType_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="35" />
-    <scopeInfo nodeId="1241450324706" fileName="ConvertToArrayType_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="331" />
+    <scopeInfo nodeId="1241450324706" fileName="ConvertToArrayType_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="435" />
     <scopeInfo nodeId="1226917954182" fileName="ConvertToArrayType_Intention.java" startLine="48" startPosition="76" endLine="52" endPosition="47">
       <varInfo nodeId="1226917984151" varName="result" />
     </scopeInfo>

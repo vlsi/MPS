@@ -8195,32 +8195,43 @@
     <node role="isApplicableFunction:8" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock:8" id="1241450324705">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241450324706">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241450349602">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1241450381776">
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1241450383498">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241450385095">
-                <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="1241450384969" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation:16" id="1241450386020">
-                  <link role="conceptOfParent:16" targetNodeId="1.1107796713796:3" resolveInfo="Interface" />
-                  <link role="linkInParent:16" targetNodeId="1.1107797138135:3" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="8422220630586808765">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="8422220630586819348">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8422220630586819351">
+                <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="8422220630586819350" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation:16" id="8422220630586819355">
+                  <link role="conceptOfParent:16" targetNodeId="1.1107535904670:3" resolveInfo="ClassifierType" />
+                  <link role="linkInParent:16" targetNodeId="1.1109201940907:3" />
                 </node>
               </node>
             </node>
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1241450368514">
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1241450366901">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241450366902">
-                  <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="1241450366903" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation:16" id="1241450366904">
-                    <link role="conceptOfParent:16" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
-                    <link role="linkInParent:16" targetNodeId="1.1095933932569:3" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1241450381776">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1241450383498">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241450385095">
+                  <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="1241450384969" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation:16" id="1241450386020">
+                    <link role="conceptOfParent:16" targetNodeId="1.1107796713796:3" resolveInfo="Interface" />
+                    <link role="linkInParent:16" targetNodeId="1.1107797138135:3" />
                   </node>
                 </node>
               </node>
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1241450369721">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241450370802">
-                  <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="1241450370738" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation:16" id="1241450371493">
-                    <link role="conceptOfParent:16" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
-                    <link role="linkInParent:16" targetNodeId="1.1165602531693:3" />
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1241450368514">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1241450366901">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241450366902">
+                    <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="1241450366903" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation:16" id="1241450366904">
+                      <link role="conceptOfParent:16" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
+                      <link role="linkInParent:16" targetNodeId="1.1095933932569:3" />
+                    </node>
+                  </node>
+                </node>
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1241450369721">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241450370802">
+                    <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="1241450370738" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation:16" id="1241450371493">
+                      <link role="conceptOfParent:16" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
+                      <link role="linkInParent:16" targetNodeId="1.1165602531693:3" />
+                    </node>
                   </node>
                 </node>
               </node>
