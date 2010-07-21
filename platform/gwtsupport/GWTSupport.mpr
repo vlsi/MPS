@@ -99,6 +99,9 @@
     <mapping directory="" vcs="" />
     <mapping directory="" vcs="" />
     <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
