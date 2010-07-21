@@ -295,9 +295,6 @@
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="7678729833318422575">
       <link role="block:7" targetNodeId="7678729833318422573" resolveInfo="platform.deprecated" />
     </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="4577526975411839130">
-      <link role="block:7" targetNodeId="4577526975411839127" resolveInfo="platform.ui" />
-    </node>
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="7678729833318422556">
       <link role="block:7" targetNodeId="7678729833318422546" resolveInfo="platform.build" />
     </node>
@@ -398,48 +395,6 @@
     <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4062013737453621625">
       <property name="id" value="2d3c70e9-aab2-4870-8d8d-6036800e4103" />
       <property name="name" value="jetbrains.mps.kernel" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.build.packaging.structure.Block:7" id="4577526975411839127">
-    <property name="name:7" value="platform.ui" />
-    <property name="package:7" value="platform" />
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="4577526975411839135">
-      <property name="excludes:7" value="" />
-      <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="4577526975411839139">
-        <property name="name:7" value="ui" />
-      </node>
-      <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4577526975411839142">
-        <property name="id" value="fb26dccf-fa54-4e9a-8ddb-b66311a34393" />
-        <property name="name" value="jetbrains.mps.ui" />
-      </node>
-      <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4577526975411839149">
-        <property name="id" value="8a448bd0-1380-4c01-9820-0f051d33888c" />
-        <property name="name" value="jetbrains.mps.ui.modeling" />
-      </node>
-      <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4577526975411839147">
-        <property name="id" value="b648a171-98f9-494b-b822-c3147ae7d330" />
-        <property name="name" value="jetbrains.mps.ui.internal" />
-      </node>
-      <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4577526975411839145">
-        <property name="id" value="e5c2a44a-6085-4aeb-a5b6-851cecd2d926" />
-        <property name="name" value="jetbrains.mps.ui.gwt" />
-      </node>
-      <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4577526975411839151">
-        <property name="id" value="51805413-e01e-4f51-bf62-a054ab51eb54" />
-        <property name="name" value="jetbrains.mps.ui.swing" />
-      </node>
-      <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4577526975411839153">
-        <property name="id" value="acc947bf-6778-444a-9dc7-4cc72d4eb3d0" />
-        <property name="name" value="jetbrains.mps.ui.swing.runtime" />
-      </node>
-      <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4577526975411839155">
-        <property name="id" value="71c80332-b17f-4f0a-be23-b5cba1d261f7" />
-        <property name="name" value="jetbrains.mps.ui.swt" />
-      </node>
-      <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4577526975411839157">
-        <property name="id" value="69934240-945d-492b-83e7-39bda70200e7" />
-        <property name="name" value="jetbrains.mps.ui.swt.runtime" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="7678729833318422546">
