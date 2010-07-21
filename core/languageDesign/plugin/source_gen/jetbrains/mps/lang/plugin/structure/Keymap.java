@@ -10,7 +10,8 @@ public enum Keymap {
   Mac_OS_X("Mac OS X", "Mac OS X"),
   XWin("XWin", "Default for XWin"),
   GNOME("GNOME", "Default for GNOME"),
-  KDE("KDE", "Default for KDE");
+  KDE("KDE", "Default for KDE"),
+  Default("Default", "$default");
 
   private String myName;
   private String myValue;
@@ -38,6 +39,7 @@ public enum Keymap {
     ListSequence.fromList(list).addElement(Keymap.XWin);
     ListSequence.fromList(list).addElement(Keymap.GNOME);
     ListSequence.fromList(list).addElement(Keymap.KDE);
+    ListSequence.fromList(list).addElement(Keymap.Default);
     return list;
   }
 
@@ -60,6 +62,9 @@ public enum Keymap {
     }
     if (value.equals(Keymap.KDE.getValueAsString())) {
       return Keymap.KDE;
+    }
+    if (value.equals(Keymap.Default.getValueAsString())) {
+      return Keymap.Default;
     }
     return Keymap.getDefault();
   }

@@ -2631,6 +2631,10 @@
       <property name="externalValue:0" value="KDE" />
       <property name="internalValue:0" value="Default for KDE" />
     </node>
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="2443880313834664128">
+      <property name="externalValue:0" value="Default" />
+      <property name="internalValue:0" value="$default" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6193305307616715384">
     <property name="package:0" value="Actions.Keymaps" />
