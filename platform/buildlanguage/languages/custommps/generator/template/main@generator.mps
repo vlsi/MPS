@@ -970,20 +970,6 @@
             <node role="targetReference:7" type="jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference:7" id="1234971270717" />
           </node>
         </node>
-        <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="1234971270718">
-          <property name="file:7" value="true" />
-          <property name="name:7" value="entryPoints.xml" />
-          <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="1234971270719">
-            <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="1234971270720">
-              <property name="name:7" value="mps_home" />
-            </node>
-            <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="1234971270721">
-              <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="1234971270722">
-                <property name="path:7" value="entryPoints.xml" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="1234971270723">
           <property name="file:7" value="true" />
           <property name="name:7" value="readme.txt" />
