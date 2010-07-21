@@ -1,4 +1,4 @@
-New Features in 1.1
+New Features in 1.5
 
 - Run Configurations DSL. Run configurations for main classes and unit tests.
 - Navigation from a stacktrace to corresponding part in MPS
