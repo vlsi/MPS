@@ -35,6 +35,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.awt.Component;
 import java.awt.Graphics;
+import java.awt.MediaTracker;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
@@ -49,6 +50,7 @@ import java.util.Map;
 public class IconManager {
 
   public static final Logger LOG = Logger.getLogger(IconManager.class);
+  private static final int IMAGE_LOADED = ~(MediaTracker.ABORTED | MediaTracker.ERRORED | MediaTracker.LOADING);
 
   private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
   public static final Icon EMPTY_ICON = new Icon() {
@@ -266,7 +268,7 @@ public class IconManager {
   }
 
   public static Icon getIconFor(IFile file) {
-    Icon icon = null;
+    ImageIcon icon = null;
     if (file.exists()) {
       byte[] image = new byte[(int) file.length()];
       InputStream is = null;
@@ -295,6 +297,9 @@ public class IconManager {
       }
 
       icon = new ImageIcon(image);
+      if ((icon.getImageLoadStatus() &  IMAGE_LOADED) == 0) {
+        icon = null;
+      }
     }
     return icon;
   }
