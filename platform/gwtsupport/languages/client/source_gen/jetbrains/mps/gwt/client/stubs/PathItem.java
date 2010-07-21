@@ -7,11 +7,17 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
+import java.io.File;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.io.InputStream;
 import java.io.IOException;
 import jetbrains.mps.vfs.IFileNameFilter;
+import jetbrains.mps.vfs.FileSystemFile;
+import java.io.OutputStream;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
 
 public abstract class PathItem {
   private static List<String> EMPTY_LIST = ListSequence.fromList(new ArrayList<String>());
@@ -19,10 +25,21 @@ public abstract class PathItem {
   private IFile file;
 
   public PathItem(String path) {
-    this.file = FileSystem.getFile((this.isJar(path) ?
-      path + "!/" :
-      path
-    ));
+    IFile container = null;
+    for (String p : path.split("!")) {
+      if (container == null) {
+        container = FileSystem.getFile((this.isJar(p) ?
+          p + "!/" :
+          p
+        ));
+      } else {
+        File cf = asFile(FileSystem.getFile(container.getPath() + p));
+        // '!' would have been added by JarFileEntryFile 
+        container = FileSystem.getFile(cf.getPath() + "!/");
+        // can't simply pass a file, must be a path with a '!' at the end 
+      }
+    }
+    this.file = container;
   }
 
   public List<String> subpackages(final String pkg) {
@@ -116,5 +133,39 @@ public abstract class PathItem {
 
   public boolean isJar(String path) {
     return path.endsWith(".jar") || path.endsWith(".JAR");
+  }
+
+  private static File asFile(IFile ifile) {
+    if (ifile instanceof FileSystemFile) {
+      return ((FileSystemFile) ifile).getFile();
+    }
+    OutputStream os = null;
+    InputStream is = null;
+    try {
+      File tmpFile = File.createTempFile(ifile.getName(), "tmp");
+      tmpFile.deleteOnExit();
+      is = new BufferedInputStream(ifile.openInputStream());
+      os = new BufferedOutputStream(new FileOutputStream(tmpFile));
+      int c;
+      while ((c = is.read()) != -1) {
+        os.write(c);
+      }
+      return tmpFile;
+    } catch (IOException ex) {
+      throw new RuntimeException(ex);
+    } finally {
+      try {
+        if (is != null) {
+          is.close();
+        }
+      } catch (IOException ignore) {
+      }
+      try {
+        if (os != null) {
+          os.close();
+        }
+      } catch (IOException ignore) {
+      }
+    }
   }
 }

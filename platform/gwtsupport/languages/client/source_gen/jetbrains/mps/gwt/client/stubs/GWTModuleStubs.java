@@ -60,7 +60,7 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
 
   protected void updateModel(final StubLocation location, final SModel model) {
     String pkg = model.getSModelFqName().getLongName();
-    PathItem pi = new GWTModulePathItem(location.getPath());
+    PathItem pi = PathItemsReloadableCache.getPathItem(location.getPath());
     List<Tuples._3<String, String, SNode>> modlst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.gwt.client.structure.GWTModule", null);
     for (String modres : ListSequence.fromList(pi.resources(pkg))) {
@@ -117,7 +117,7 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
 
   private void collectDescriptors(IModelRootManager mrm, StubLocation loc, Set<BaseStubModelDescriptor> result) {
     String pkg = loc.getPrefix();
-    PathItem pi = new GWTModulePathItem(loc.getPath());
+    PathItem pi = PathItemsReloadableCache.getPathItem(loc.getPath());
     for (String subpkg : ListSequence.fromList(pi.subpackages(pkg))) {
       if (ListSequence.fromList(pi.resources(subpkg)).isNotEmpty()) {
         SModelReference smref = GWTModuleStubs.this.smodelRefWithId(subpkg);
