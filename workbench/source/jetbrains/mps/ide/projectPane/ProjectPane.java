@@ -93,7 +93,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
           final SNode sNode = editorComponent.getEditedNode();
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
-              selectNode(sNode);
+              selectNodeWithoutExpansion(sNode);
             }
           });
         }
@@ -266,20 +266,22 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     activatePane(new PaneActivator(true) {
       @Override
       public void doOnPaneActivation() {
-        getTree().runWithoutExpansion(new Runnable() {
-          public void run() {
-            MPSTreeNodeEx sNodeNode = myFindHelper.findMostSuitableSNodeTreeNode(node);
-
-            if (sNodeNode == null) {
-              LOG.warning("Couldn't select node \"" + node.getName() + "\" : tree node not found.");
-              return;
-            }
-
-            getTree().selectNode(sNodeNode);
-          }
-        });
+        selectNodeWithoutExpansion(node);
       }
     }, false);
+  }
+
+  private void selectNodeWithoutExpansion(final SNode node) {
+    getTree().runWithoutExpansion(new Runnable() {
+      public void run() {
+        MPSTreeNodeEx sNodeNode = myFindHelper.findMostSuitableSNodeTreeNode(node);
+        if (sNodeNode == null) {
+          LOG.warning("Couldn't select node \"" + node.getName() + "\" : tree node not found.");
+          return;
+        }
+        getTree().selectNode(sNodeNode);
+      }
+    });
   }
 
   //----select next queries----
