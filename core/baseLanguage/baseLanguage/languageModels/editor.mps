@@ -17408,5 +17408,15 @@
       <link role="concept:16" targetNodeId="17.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="2948164764175055171">
+    <link role="conceptDeclaration:32" targetNodeId="17.2948164764175055168:3" resolveInfo="UnresolvedNameReference" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="2948164764175063176">
+      <link role="relationDeclaration:32" targetNodeId="17.2948164764175055169:3" resolveInfo="resolveName" />
+      <link role="styleClass:32" targetNodeId="1215090010725" resolveInfo="VariableName" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="2948164764175063177">
+        <property name="color:32" value="red" />
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -893,10 +893,8 @@ public class JavaConverterTreeBuilder {
 
   private jetbrains.mps.baseLanguage.structure.Expression varFromVariableBinding(Binding binding) {
     if (binding instanceof ProblemBinding) { //no var found
-      LocalVariableReference varReference = LocalVariableReference.newInstance(myCurrentModel);
-      SReference reference = myTypesProvider.createErrorReference(LocalVariableReference.VARIABLE_DECLARATION,
-        new String(((ProblemBinding) binding).name), varReference.getNode());
-      varReference.getNode().addReference(reference);
+      UnresolvedNameReference varReference = UnresolvedNameReference.newInstance(myCurrentModel);
+      varReference.setResolveName(new String(((ProblemBinding) binding).name));
       return varReference;
     }
     INodeAdapter target = myTypesProvider.getRaw(binding);

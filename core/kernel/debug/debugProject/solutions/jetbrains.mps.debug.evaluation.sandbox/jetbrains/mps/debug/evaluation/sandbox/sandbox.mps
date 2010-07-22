@@ -17,8 +17,6 @@
   <maxImportIndex value="6" />
   <import index="2" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <import index="5" modelUID="f:java_stub#(@java_stub)" version="-1" />
-  <import index="6" modelUID="r:d18e822e-520c-426b-a078-3a9da85e2c6e(1279625136663@$orphan-stuff$)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6036237525966667270">
     <property name="name:3" value="AClass" />

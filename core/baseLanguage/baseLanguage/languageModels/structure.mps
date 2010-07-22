@@ -3729,5 +3729,16 @@
       <link role="intfc:0" targetNodeId="1197027803184:3" resolveInfo="IOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2948164764175055168">
+    <property name="name:0" value="UnresolvedNameReference" />
+    <link role="extends:0" targetNodeId="1068431790191:3" resolveInfo="Expression" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="2948164764175055169">
+      <property name="name:0" value="resolveName" />
+      <link role="dataType:0" targetNodeId="4.1082983041843:0" resolveInfo="string" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="2948164764175055170">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
 </model>
 
