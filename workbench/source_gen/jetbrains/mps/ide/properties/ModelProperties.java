@@ -117,6 +117,9 @@ public class ModelProperties extends BaseBean {
     for (ModuleReference namespace : languagesInProps) {
       Language language = GlobalScope.getInstance().getLanguage(namespace);
       if (language != null) {
+        if (!myModelDescriptor.getModule().getScope().getVisibleLanguages().contains(language)) {
+          myModelDescriptor.getModule().addUsedLanguage(language.getModuleReference());
+        }
         myModelDescriptor.getSModel().addLanguage(language);
       }
     }
