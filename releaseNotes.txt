@@ -7,4 +7,4 @@ New Features in 1.5
 - DSL for creating and editing GWT client application manifests
 - Various MPS DSLs changes introducing more "sintactic sugar" there
 
-See more on MPS web site: http://confluence.jetbrains.net/display/MPS/What's+new+in+MPS+1.5
+See more on MPS web site: http://www.jetbrains.com/mps/whatsnew/index.html
