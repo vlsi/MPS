@@ -736,16 +736,14 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7602110602933086855">
               <link role="classifier:3" targetNodeId="4.~SModelDescriptor" resolveInfo="SModelDescriptor" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7602110602933086856">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7602110602933086857">
-                <link role="classConcept:3" targetNodeId="4.~SModelRepository" resolveInfo="SModelRepository" />
-                <link role="baseMethodDeclaration:3" targetNodeId="4.~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository" resolveInfo="getInstance" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7602110602933086858">
-                <link role="baseMethodDeclaration:3" targetNodeId="4.~SModelRepository.getModelDescriptor(jetbrains.mps.smodel.SModel):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7602110602933086859">
-                  <link role="variableDeclaration:3" targetNodeId="7602110602933086851" resolveInfo="fromModel" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2754724685431260763">
+              <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="2754724685431260761">
+                <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2754724685431260301">
+                  <link role="variableDeclaration:3" targetNodeId="7602110602933086851" resolveInfo="model" />
                 </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2754724685431266041">
+                <link role="baseMethodDeclaration:3" targetNodeId="4.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
               </node>
             </node>
           </node>

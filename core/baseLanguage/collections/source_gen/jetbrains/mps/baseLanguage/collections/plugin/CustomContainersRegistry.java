@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
 
 public class CustomContainersRegistry {
   /*package*/ static CustomContainersRegistry INSTANCE = new CustomContainersRegistry();
@@ -71,7 +70,7 @@ public class CustomContainersRegistry {
   }
 
   public IModule getOwningModule(SModel model) {
-    SModelDescriptor fmdesc = SModelRepository.getInstance().getModelDescriptor(model);
+    SModelDescriptor fmdesc = model.getModelDescriptor();
     return (fmdesc != null ?
       fmdesc.getModule() :
       null
