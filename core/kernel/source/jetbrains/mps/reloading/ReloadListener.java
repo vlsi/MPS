@@ -24,14 +24,14 @@ public interface ReloadListener {
    */
   void onBeforeReload();
 
+  void invalidateCaches();
+
   /**
    * If you want to clean caches/unload reloadable parts, do it here
    * <p/>
    * Postcondition : reloadable parts of current component are unloaded
    */
   void unload();
-
-  void invalidateCaches();
 
   /**
    * If you want to load reloadable parts, do it here
