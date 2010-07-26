@@ -238,67 +238,69 @@
     <nodeInfo nodeId="6388164970935848193" fileName="ConceptDeclaration_TabbedEditor.java" startLine="536" startPosition="63" endLine="537" endPosition="206" />
     <nodeInfo nodeId="6388164970935848202" fileName="ConceptDeclaration_TabbedEditor.java" startLine="537" startPosition="206" endLine="538" endPosition="163" />
     <nodeInfo nodeId="2015603967079055350" fileName="ConceptDeclaration_TabbedEditor.java" startLine="538" startPosition="163" endLine="539" endPosition="174" />
-    <nodeInfo nodeId="6388164970935848209" fileName="ConceptDeclaration_TabbedEditor.java" startLine="540" startPosition="144" endLine="541" endPosition="42" />
-    <nodeInfo nodeId="6388164970935848217" fileName="ConceptDeclaration_TabbedEditor.java" startLine="543" startPosition="145" endLine="544" endPosition="39" />
-    <nodeInfo nodeId="6388164970935848221" fileName="ConceptDeclaration_TabbedEditor.java" startLine="544" startPosition="39" endLine="545" endPosition="18" />
-    <nodeInfo nodeId="6388164970935848245" fileName="ConceptDeclaration_TabbedEditor.java" startLine="549" startPosition="109" endLine="550" endPosition="89" />
-    <nodeInfo nodeId="6388164970935848254" fileName="ConceptDeclaration_TabbedEditor.java" startLine="551" startPosition="35" endLine="552" endPosition="23" />
-    <nodeInfo nodeId="6388164970935848258" fileName="ConceptDeclaration_TabbedEditor.java" startLine="553" startPosition="13" endLine="554" endPosition="87" />
-    <nodeInfo nodeId="6388164970935848268" fileName="ConceptDeclaration_TabbedEditor.java" startLine="555" startPosition="140" endLine="556" endPosition="53" />
-    <nodeInfo nodeId="6388164970935848277" fileName="ConceptDeclaration_TabbedEditor.java" startLine="557" startPosition="74" endLine="558" endPosition="71" />
-    <nodeInfo nodeId="6388164970935848297" fileName="ConceptDeclaration_TabbedEditor.java" startLine="563" startPosition="7" endLine="564" endPosition="20" />
-    <nodeInfo nodeId="2606490174690342176" fileName="ConceptDeclaration_TabbedEditor.java" startLine="567" startPosition="87" endLine="568" endPosition="96" />
-    <nodeInfo nodeId="2955040059201614216" fileName="ConceptDeclaration_TabbedEditor.java" startLine="568" startPosition="96" endLine="569" endPosition="73" />
-    <nodeInfo nodeId="2955040059201614286" fileName="ConceptDeclaration_TabbedEditor.java" startLine="569" startPosition="73" endLine="570" endPosition="0" />
-    <nodeInfo nodeId="6388164970935848301" fileName="ConceptDeclaration_TabbedEditor.java" startLine="570" startPosition="0" endLine="571" endPosition="73" />
-    <nodeInfo nodeId="6388164970935848307" fileName="ConceptDeclaration_TabbedEditor.java" startLine="573" startPosition="27" endLine="574" endPosition="115" />
-    <nodeInfo nodeId="6388164970935848314" fileName="ConceptDeclaration_TabbedEditor.java" startLine="574" startPosition="115" endLine="575" endPosition="83" />
-    <nodeInfo nodeId="2955040059201580406" fileName="ConceptDeclaration_TabbedEditor.java" startLine="577" startPosition="9" endLine="578" endPosition="0" />
-    <nodeInfo nodeId="6388164970935848321" fileName="ConceptDeclaration_TabbedEditor.java" startLine="578" startPosition="0" endLine="579" endPosition="69" />
-    <nodeInfo nodeId="6388164970935848339" fileName="ConceptDeclaration_TabbedEditor.java" startLine="580" startPosition="53" endLine="581" endPosition="82" />
-    <nodeInfo nodeId="6388164970935848346" fileName="ConceptDeclaration_TabbedEditor.java" startLine="581" startPosition="82" endLine="582" endPosition="28" />
-    <nodeInfo nodeId="6388164970935848350" fileName="ConceptDeclaration_TabbedEditor.java" startLine="582" startPosition="28" endLine="583" endPosition="62" />
-    <nodeInfo nodeId="6388164970935848384" fileName="ConceptDeclaration_TabbedEditor.java" startLine="584" startPosition="39" endLine="585" endPosition="22" />
-    <nodeInfo nodeId="2955040059201570640" fileName="ConceptDeclaration_TabbedEditor.java" startLine="588" startPosition="29" endLine="589" endPosition="93" />
-    <nodeInfo nodeId="2955040059201570651" fileName="ConceptDeclaration_TabbedEditor.java" startLine="589" startPosition="93" endLine="590" endPosition="158" />
-    <nodeInfo nodeId="6388164970935848389" fileName="ConceptDeclaration_TabbedEditor.java" startLine="593" startPosition="7" endLine="594" endPosition="0" />
-    <nodeInfo nodeId="6388164970935848390" fileName="ConceptDeclaration_TabbedEditor.java" startLine="594" startPosition="0" endLine="595" endPosition="58" />
-    <nodeInfo nodeId="6388164970935848409" fileName="ConceptDeclaration_TabbedEditor.java" startLine="599" startPosition="72" endLine="600" endPosition="88" />
-    <nodeInfo nodeId="2955040059201615305" fileName="ConceptDeclaration_TabbedEditor.java" startLine="604" startPosition="9" endLine="605" endPosition="0" />
-    <nodeInfo nodeId="2955040059201579047" fileName="ConceptDeclaration_TabbedEditor.java" startLine="606" startPosition="54" endLine="607" endPosition="87" />
-    <nodeInfo nodeId="2955040059201581324" fileName="ConceptDeclaration_TabbedEditor.java" startLine="609" startPosition="29" endLine="610" endPosition="32" />
-    <nodeInfo nodeId="2955040059201583216" fileName="ConceptDeclaration_TabbedEditor.java" startLine="612" startPosition="63" endLine="613" endPosition="25" />
-    <nodeInfo nodeId="2955040059201583342" fileName="ConceptDeclaration_TabbedEditor.java" startLine="614" startPosition="15" endLine="615" endPosition="74" />
-    <nodeInfo nodeId="2955040059201584054" fileName="ConceptDeclaration_TabbedEditor.java" startLine="616" startPosition="13" endLine="617" endPosition="0" />
-    <nodeInfo nodeId="2955040059201609418" fileName="ConceptDeclaration_TabbedEditor.java" startLine="618" startPosition="32" endLine="619" endPosition="82" />
-    <nodeInfo nodeId="2955040059201584572" fileName="ConceptDeclaration_TabbedEditor.java" startLine="620" startPosition="13" endLine="621" endPosition="0" />
-    <nodeInfo nodeId="2955040059201616023" fileName="ConceptDeclaration_TabbedEditor.java" startLine="621" startPosition="0" endLine="622" endPosition="127" />
-    <nodeInfo nodeId="2955040059201609158" fileName="ConceptDeclaration_TabbedEditor.java" startLine="622" startPosition="127" endLine="623" endPosition="54" />
-    <nodeInfo nodeId="2955040059201615433" fileName="ConceptDeclaration_TabbedEditor.java" startLine="623" startPosition="54" endLine="624" endPosition="61" />
-    <nodeInfo nodeId="6388164970935848427" fileName="ConceptDeclaration_TabbedEditor.java" startLine="627" startPosition="7" endLine="628" endPosition="0" />
-    <nodeInfo nodeId="6388164970935848428" fileName="ConceptDeclaration_TabbedEditor.java" startLine="628" startPosition="0" endLine="629" endPosition="66" />
-    <nodeInfo nodeId="6388164970935848453" fileName="ConceptDeclaration_TabbedEditor.java" startLine="630" startPosition="56" endLine="631" endPosition="87" />
-    <nodeInfo nodeId="6388164970935848460" fileName="ConceptDeclaration_TabbedEditor.java" startLine="631" startPosition="87" endLine="632" endPosition="41" />
-    <nodeInfo nodeId="6388164970935848464" fileName="ConceptDeclaration_TabbedEditor.java" startLine="632" startPosition="41" endLine="633" endPosition="56" />
-    <nodeInfo nodeId="6388164970935848446" fileName="ConceptDeclaration_TabbedEditor.java" startLine="634" startPosition="14" endLine="635" endPosition="64" />
-    <nodeInfo nodeId="6388164970935848475" fileName="ConceptDeclaration_TabbedEditor.java" startLine="636" startPosition="7" endLine="637" endPosition="65" />
-    <nodeInfo nodeId="6388164970935848481" fileName="ConceptDeclaration_TabbedEditor.java" startLine="639" startPosition="27" endLine="640" endPosition="65" />
-    <nodeInfo nodeId="6388164970935848487" fileName="ConceptDeclaration_TabbedEditor.java" startLine="640" startPosition="65" endLine="641" endPosition="94" />
-    <nodeInfo nodeId="6388164970935848499" fileName="ConceptDeclaration_TabbedEditor.java" startLine="642" startPosition="116" endLine="643" endPosition="100" />
-    <nodeInfo nodeId="6388164970935848506" fileName="ConceptDeclaration_TabbedEditor.java" startLine="643" startPosition="100" endLine="644" endPosition="106" />
-    <nodeInfo nodeId="6388164970935848517" fileName="ConceptDeclaration_TabbedEditor.java" startLine="645" startPosition="269" endLine="646" endPosition="163" />
-    <nodeInfo nodeId="6388164970935848525" fileName="ConceptDeclaration_TabbedEditor.java" startLine="646" startPosition="163" endLine="647" endPosition="85" />
-    <nodeInfo nodeId="6388164970935848532" fileName="ConceptDeclaration_TabbedEditor.java" startLine="647" startPosition="85" endLine="648" endPosition="170" />
-    <nodeInfo nodeId="6388164970935848542" fileName="ConceptDeclaration_TabbedEditor.java" startLine="649" startPosition="18" endLine="650" endPosition="146" />
-    <nodeInfo nodeId="6388164970935848548" fileName="ConceptDeclaration_TabbedEditor.java" startLine="650" startPosition="146" endLine="651" endPosition="90" />
-    <nodeInfo nodeId="6388164970935848555" fileName="ConceptDeclaration_TabbedEditor.java" startLine="651" startPosition="90" endLine="652" endPosition="150" />
-    <nodeInfo nodeId="6388164970935848563" fileName="ConceptDeclaration_TabbedEditor.java" startLine="652" startPosition="150" endLine="653" endPosition="176" />
-    <nodeInfo nodeId="6388164970935848573" fileName="ConceptDeclaration_TabbedEditor.java" startLine="653" startPosition="176" endLine="654" endPosition="62" />
-    <nodeInfo nodeId="6388164970935848578" fileName="ConceptDeclaration_TabbedEditor.java" startLine="654" startPosition="62" endLine="655" endPosition="106" />
-    <nodeInfo nodeId="6388164970935848591" fileName="ConceptDeclaration_TabbedEditor.java" startLine="658" startPosition="9" endLine="659" endPosition="26" />
-    <nodeInfo nodeId="6388164970935848624" fileName="ConceptDeclaration_TabbedEditor.java" startLine="673" startPosition="24" endLine="674" endPosition="100" />
-    <nodeInfo nodeId="6388164970935848596" fileName="ConceptDeclaration_TabbedEditor.java" startLine="685" startPosition="38" endLine="686" endPosition="194" />
-    <nodeInfo nodeId="6388164970935848444" fileName="ConceptDeclaration_TabbedEditor.java" startLine="634" startPosition="12" endLine="636" endPosition="7" />
+    <nodeInfo nodeId="2599560207114353715" fileName="ConceptDeclaration_TabbedEditor.java" startLine="539" startPosition="174" endLine="540" endPosition="256" />
+    <nodeInfo nodeId="2599560207114353741" fileName="ConceptDeclaration_TabbedEditor.java" startLine="540" startPosition="256" endLine="541" endPosition="133" />
+    <nodeInfo nodeId="6388164970935848209" fileName="ConceptDeclaration_TabbedEditor.java" startLine="542" startPosition="36" endLine="543" endPosition="42" />
+    <nodeInfo nodeId="6388164970935848217" fileName="ConceptDeclaration_TabbedEditor.java" startLine="545" startPosition="145" endLine="546" endPosition="39" />
+    <nodeInfo nodeId="6388164970935848221" fileName="ConceptDeclaration_TabbedEditor.java" startLine="546" startPosition="39" endLine="547" endPosition="18" />
+    <nodeInfo nodeId="6388164970935848245" fileName="ConceptDeclaration_TabbedEditor.java" startLine="551" startPosition="109" endLine="552" endPosition="89" />
+    <nodeInfo nodeId="6388164970935848254" fileName="ConceptDeclaration_TabbedEditor.java" startLine="553" startPosition="35" endLine="554" endPosition="23" />
+    <nodeInfo nodeId="6388164970935848258" fileName="ConceptDeclaration_TabbedEditor.java" startLine="555" startPosition="13" endLine="556" endPosition="87" />
+    <nodeInfo nodeId="6388164970935848268" fileName="ConceptDeclaration_TabbedEditor.java" startLine="557" startPosition="140" endLine="558" endPosition="53" />
+    <nodeInfo nodeId="6388164970935848277" fileName="ConceptDeclaration_TabbedEditor.java" startLine="559" startPosition="74" endLine="560" endPosition="71" />
+    <nodeInfo nodeId="6388164970935848297" fileName="ConceptDeclaration_TabbedEditor.java" startLine="565" startPosition="7" endLine="566" endPosition="20" />
+    <nodeInfo nodeId="2606490174690342176" fileName="ConceptDeclaration_TabbedEditor.java" startLine="569" startPosition="87" endLine="570" endPosition="96" />
+    <nodeInfo nodeId="2955040059201614216" fileName="ConceptDeclaration_TabbedEditor.java" startLine="570" startPosition="96" endLine="571" endPosition="73" />
+    <nodeInfo nodeId="2955040059201614286" fileName="ConceptDeclaration_TabbedEditor.java" startLine="571" startPosition="73" endLine="572" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848301" fileName="ConceptDeclaration_TabbedEditor.java" startLine="572" startPosition="0" endLine="573" endPosition="73" />
+    <nodeInfo nodeId="6388164970935848307" fileName="ConceptDeclaration_TabbedEditor.java" startLine="575" startPosition="27" endLine="576" endPosition="115" />
+    <nodeInfo nodeId="6388164970935848314" fileName="ConceptDeclaration_TabbedEditor.java" startLine="576" startPosition="115" endLine="577" endPosition="83" />
+    <nodeInfo nodeId="2955040059201580406" fileName="ConceptDeclaration_TabbedEditor.java" startLine="579" startPosition="9" endLine="580" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848321" fileName="ConceptDeclaration_TabbedEditor.java" startLine="580" startPosition="0" endLine="581" endPosition="69" />
+    <nodeInfo nodeId="6388164970935848339" fileName="ConceptDeclaration_TabbedEditor.java" startLine="582" startPosition="53" endLine="583" endPosition="82" />
+    <nodeInfo nodeId="6388164970935848346" fileName="ConceptDeclaration_TabbedEditor.java" startLine="583" startPosition="82" endLine="584" endPosition="28" />
+    <nodeInfo nodeId="6388164970935848350" fileName="ConceptDeclaration_TabbedEditor.java" startLine="584" startPosition="28" endLine="585" endPosition="62" />
+    <nodeInfo nodeId="6388164970935848384" fileName="ConceptDeclaration_TabbedEditor.java" startLine="586" startPosition="39" endLine="587" endPosition="22" />
+    <nodeInfo nodeId="2955040059201570640" fileName="ConceptDeclaration_TabbedEditor.java" startLine="590" startPosition="29" endLine="591" endPosition="93" />
+    <nodeInfo nodeId="2955040059201570651" fileName="ConceptDeclaration_TabbedEditor.java" startLine="591" startPosition="93" endLine="592" endPosition="158" />
+    <nodeInfo nodeId="6388164970935848389" fileName="ConceptDeclaration_TabbedEditor.java" startLine="595" startPosition="7" endLine="596" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848390" fileName="ConceptDeclaration_TabbedEditor.java" startLine="596" startPosition="0" endLine="597" endPosition="58" />
+    <nodeInfo nodeId="6388164970935848409" fileName="ConceptDeclaration_TabbedEditor.java" startLine="601" startPosition="72" endLine="602" endPosition="88" />
+    <nodeInfo nodeId="2955040059201615305" fileName="ConceptDeclaration_TabbedEditor.java" startLine="606" startPosition="9" endLine="607" endPosition="0" />
+    <nodeInfo nodeId="2955040059201579047" fileName="ConceptDeclaration_TabbedEditor.java" startLine="608" startPosition="54" endLine="609" endPosition="87" />
+    <nodeInfo nodeId="2955040059201581324" fileName="ConceptDeclaration_TabbedEditor.java" startLine="611" startPosition="29" endLine="612" endPosition="32" />
+    <nodeInfo nodeId="2955040059201583216" fileName="ConceptDeclaration_TabbedEditor.java" startLine="614" startPosition="63" endLine="615" endPosition="25" />
+    <nodeInfo nodeId="2955040059201583342" fileName="ConceptDeclaration_TabbedEditor.java" startLine="616" startPosition="15" endLine="617" endPosition="74" />
+    <nodeInfo nodeId="2955040059201584054" fileName="ConceptDeclaration_TabbedEditor.java" startLine="618" startPosition="13" endLine="619" endPosition="0" />
+    <nodeInfo nodeId="2955040059201609418" fileName="ConceptDeclaration_TabbedEditor.java" startLine="620" startPosition="32" endLine="621" endPosition="82" />
+    <nodeInfo nodeId="2955040059201584572" fileName="ConceptDeclaration_TabbedEditor.java" startLine="622" startPosition="13" endLine="623" endPosition="0" />
+    <nodeInfo nodeId="2955040059201616023" fileName="ConceptDeclaration_TabbedEditor.java" startLine="623" startPosition="0" endLine="624" endPosition="127" />
+    <nodeInfo nodeId="2955040059201609158" fileName="ConceptDeclaration_TabbedEditor.java" startLine="624" startPosition="127" endLine="625" endPosition="54" />
+    <nodeInfo nodeId="2955040059201615433" fileName="ConceptDeclaration_TabbedEditor.java" startLine="625" startPosition="54" endLine="626" endPosition="61" />
+    <nodeInfo nodeId="6388164970935848427" fileName="ConceptDeclaration_TabbedEditor.java" startLine="629" startPosition="7" endLine="630" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848428" fileName="ConceptDeclaration_TabbedEditor.java" startLine="630" startPosition="0" endLine="631" endPosition="66" />
+    <nodeInfo nodeId="6388164970935848453" fileName="ConceptDeclaration_TabbedEditor.java" startLine="632" startPosition="56" endLine="633" endPosition="87" />
+    <nodeInfo nodeId="6388164970935848460" fileName="ConceptDeclaration_TabbedEditor.java" startLine="633" startPosition="87" endLine="634" endPosition="41" />
+    <nodeInfo nodeId="6388164970935848464" fileName="ConceptDeclaration_TabbedEditor.java" startLine="634" startPosition="41" endLine="635" endPosition="56" />
+    <nodeInfo nodeId="6388164970935848446" fileName="ConceptDeclaration_TabbedEditor.java" startLine="636" startPosition="14" endLine="637" endPosition="64" />
+    <nodeInfo nodeId="6388164970935848475" fileName="ConceptDeclaration_TabbedEditor.java" startLine="638" startPosition="7" endLine="639" endPosition="65" />
+    <nodeInfo nodeId="6388164970935848481" fileName="ConceptDeclaration_TabbedEditor.java" startLine="641" startPosition="27" endLine="642" endPosition="65" />
+    <nodeInfo nodeId="6388164970935848487" fileName="ConceptDeclaration_TabbedEditor.java" startLine="642" startPosition="65" endLine="643" endPosition="94" />
+    <nodeInfo nodeId="6388164970935848499" fileName="ConceptDeclaration_TabbedEditor.java" startLine="644" startPosition="116" endLine="645" endPosition="100" />
+    <nodeInfo nodeId="6388164970935848506" fileName="ConceptDeclaration_TabbedEditor.java" startLine="645" startPosition="100" endLine="646" endPosition="106" />
+    <nodeInfo nodeId="6388164970935848517" fileName="ConceptDeclaration_TabbedEditor.java" startLine="647" startPosition="269" endLine="648" endPosition="163" />
+    <nodeInfo nodeId="6388164970935848525" fileName="ConceptDeclaration_TabbedEditor.java" startLine="648" startPosition="163" endLine="649" endPosition="85" />
+    <nodeInfo nodeId="6388164970935848532" fileName="ConceptDeclaration_TabbedEditor.java" startLine="649" startPosition="85" endLine="650" endPosition="170" />
+    <nodeInfo nodeId="6388164970935848542" fileName="ConceptDeclaration_TabbedEditor.java" startLine="651" startPosition="18" endLine="652" endPosition="146" />
+    <nodeInfo nodeId="6388164970935848548" fileName="ConceptDeclaration_TabbedEditor.java" startLine="652" startPosition="146" endLine="653" endPosition="90" />
+    <nodeInfo nodeId="6388164970935848555" fileName="ConceptDeclaration_TabbedEditor.java" startLine="653" startPosition="90" endLine="654" endPosition="150" />
+    <nodeInfo nodeId="6388164970935848563" fileName="ConceptDeclaration_TabbedEditor.java" startLine="654" startPosition="150" endLine="655" endPosition="176" />
+    <nodeInfo nodeId="6388164970935848573" fileName="ConceptDeclaration_TabbedEditor.java" startLine="655" startPosition="176" endLine="656" endPosition="62" />
+    <nodeInfo nodeId="6388164970935848578" fileName="ConceptDeclaration_TabbedEditor.java" startLine="656" startPosition="62" endLine="657" endPosition="106" />
+    <nodeInfo nodeId="6388164970935848591" fileName="ConceptDeclaration_TabbedEditor.java" startLine="660" startPosition="9" endLine="661" endPosition="26" />
+    <nodeInfo nodeId="6388164970935848624" fileName="ConceptDeclaration_TabbedEditor.java" startLine="675" startPosition="24" endLine="676" endPosition="100" />
+    <nodeInfo nodeId="6388164970935848596" fileName="ConceptDeclaration_TabbedEditor.java" startLine="687" startPosition="38" endLine="688" endPosition="194" />
+    <nodeInfo nodeId="6388164970935848444" fileName="ConceptDeclaration_TabbedEditor.java" startLine="636" startPosition="12" endLine="638" endPosition="7" />
     <nodeInfo nodeId="6388164970935848634" fileName="Structure_ProjectPlugin.java" startLine="28" startPosition="30" endLine="31" endPosition="9" />
     <nodeInfo nodeId="6388164970935848647" fileName="Structure_ProjectPlugin.java" startLine="31" startPosition="9" endLine="34" endPosition="9" />
     <nodeInfo nodeId="6388164970935848658" fileName="Structure_ProjectPlugin.java" startLine="34" startPosition="9" endLine="37" endPosition="9" />
@@ -311,41 +313,41 @@
     <nodeInfo nodeId="6388164970935847913" fileName="ConceptDeclaration_TabbedEditor.java" startLine="241" startPosition="11" endLine="244" endPosition="11" />
     <nodeInfo nodeId="6388164970935847944" fileName="ConceptDeclaration_TabbedEditor.java" startLine="249" startPosition="209" endLine="252" endPosition="13" />
     <nodeInfo nodeId="6388164970935847953" fileName="ConceptDeclaration_TabbedEditor.java" startLine="252" startPosition="13" endLine="255" endPosition="13" />
-    <nodeInfo nodeId="6388164970935848252" fileName="ConceptDeclaration_TabbedEditor.java" startLine="550" startPosition="89" endLine="553" endPosition="13" />
-    <nodeInfo nodeId="6388164970935848275" fileName="ConceptDeclaration_TabbedEditor.java" startLine="556" startPosition="53" endLine="559" endPosition="15" />
-    <nodeInfo nodeId="6388164970935848356" fileName="ConceptDeclaration_TabbedEditor.java" startLine="583" startPosition="62" endLine="586" endPosition="9" />
-    <nodeInfo nodeId="6388164970935848404" fileName="ConceptDeclaration_TabbedEditor.java" startLine="598" startPosition="47" endLine="601" endPosition="13" />
-    <nodeInfo nodeId="2955040059201581639" fileName="ConceptDeclaration_TabbedEditor.java" startLine="611" startPosition="49" endLine="614" endPosition="15" />
-    <nodeInfo nodeId="2955040059201584119" fileName="ConceptDeclaration_TabbedEditor.java" startLine="617" startPosition="0" endLine="620" endPosition="13" />
+    <nodeInfo nodeId="6388164970935848252" fileName="ConceptDeclaration_TabbedEditor.java" startLine="552" startPosition="89" endLine="555" endPosition="13" />
+    <nodeInfo nodeId="6388164970935848275" fileName="ConceptDeclaration_TabbedEditor.java" startLine="558" startPosition="53" endLine="561" endPosition="15" />
+    <nodeInfo nodeId="6388164970935848356" fileName="ConceptDeclaration_TabbedEditor.java" startLine="585" startPosition="62" endLine="588" endPosition="9" />
+    <nodeInfo nodeId="6388164970935848404" fileName="ConceptDeclaration_TabbedEditor.java" startLine="600" startPosition="47" endLine="603" endPosition="13" />
+    <nodeInfo nodeId="2955040059201581639" fileName="ConceptDeclaration_TabbedEditor.java" startLine="613" startPosition="49" endLine="616" endPosition="15" />
+    <nodeInfo nodeId="2955040059201584119" fileName="ConceptDeclaration_TabbedEditor.java" startLine="619" startPosition="0" endLine="622" endPosition="13" />
     <nodeInfo nodeId="6388164970935847843" fileName="ConceptDeclaration_TabbedEditor.java" startLine="197" startPosition="195" endLine="201" endPosition="8" />
     <nodeInfo nodeId="6388164970935848136" fileName="ConceptDeclaration_TabbedEditor.java" startLine="479" startPosition="197" endLine="483" endPosition="8" />
     <nodeInfo nodeId="2165772098013669690" fileName="ConceptDeclaration_TabbedEditor.java" startLine="516" startPosition="203" endLine="520" endPosition="0" />
-    <nodeInfo nodeId="6388164970935848215" fileName="ConceptDeclaration_TabbedEditor.java" startLine="542" startPosition="175" endLine="546" endPosition="11" />
-    <nodeInfo nodeId="6388164970935848605" fileName="ConceptDeclaration_TabbedEditor.java" startLine="686" startPosition="194" endLine="690" endPosition="8" />
+    <nodeInfo nodeId="6388164970935848215" fileName="ConceptDeclaration_TabbedEditor.java" startLine="544" startPosition="175" endLine="548" endPosition="11" />
+    <nodeInfo nodeId="6388164970935848605" fileName="ConceptDeclaration_TabbedEditor.java" startLine="688" startPosition="194" endLine="692" endPosition="8" />
     <nodeInfo nodeId="2165772098013669644" fileName="ConceptDeclaration_TabbedEditor.java" startLine="515" startPosition="67" endLine="520" endPosition="10" />
-    <nodeInfo nodeId="6388164970935848305" fileName="ConceptDeclaration_TabbedEditor.java" startLine="572" startPosition="59" endLine="577" endPosition="0" />
-    <nodeInfo nodeId="2955040059201570638" fileName="ConceptDeclaration_TabbedEditor.java" startLine="587" startPosition="71" endLine="592" endPosition="0" />
-    <nodeInfo nodeId="6388164970935848399" fileName="ConceptDeclaration_TabbedEditor.java" startLine="597" startPosition="27" endLine="602" endPosition="11" />
-    <nodeInfo nodeId="6388164970935848213" fileName="ConceptDeclaration_TabbedEditor.java" startLine="541" startPosition="42" endLine="547" endPosition="9" />
-    <nodeInfo nodeId="6388164970935848266" fileName="ConceptDeclaration_TabbedEditor.java" startLine="554" startPosition="87" endLine="560" endPosition="13" />
-    <nodeInfo nodeId="6388164970935848304" fileName="ConceptDeclaration_TabbedEditor.java" startLine="571" startPosition="73" endLine="577" endPosition="9" />
-    <nodeInfo nodeId="2955040059201570637" fileName="ConceptDeclaration_TabbedEditor.java" startLine="586" startPosition="9" endLine="592" endPosition="11" />
-    <nodeInfo nodeId="2955040059201580708" fileName="ConceptDeclaration_TabbedEditor.java" startLine="610" startPosition="32" endLine="616" endPosition="13" />
-    <nodeInfo nodeId="6388164970935848443" fileName="ConceptDeclaration_TabbedEditor.java" startLine="629" startPosition="66" endLine="636" endPosition="7" />
-    <nodeInfo nodeId="6388164970935848540" fileName="ConceptDeclaration_TabbedEditor.java" startLine="649" startPosition="16" endLine="656" endPosition="11" />
-    <nodeInfo nodeId="6388164970935848397" fileName="ConceptDeclaration_TabbedEditor.java" startLine="596" startPosition="59" endLine="604" endPosition="0" />
-    <nodeInfo nodeId="6388164970935848396" fileName="ConceptDeclaration_TabbedEditor.java" startLine="595" startPosition="58" endLine="604" endPosition="9" />
+    <nodeInfo nodeId="6388164970935848305" fileName="ConceptDeclaration_TabbedEditor.java" startLine="574" startPosition="59" endLine="579" endPosition="0" />
+    <nodeInfo nodeId="2955040059201570638" fileName="ConceptDeclaration_TabbedEditor.java" startLine="589" startPosition="71" endLine="594" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848399" fileName="ConceptDeclaration_TabbedEditor.java" startLine="599" startPosition="27" endLine="604" endPosition="11" />
+    <nodeInfo nodeId="6388164970935848213" fileName="ConceptDeclaration_TabbedEditor.java" startLine="543" startPosition="42" endLine="549" endPosition="9" />
+    <nodeInfo nodeId="6388164970935848266" fileName="ConceptDeclaration_TabbedEditor.java" startLine="556" startPosition="87" endLine="562" endPosition="13" />
+    <nodeInfo nodeId="6388164970935848304" fileName="ConceptDeclaration_TabbedEditor.java" startLine="573" startPosition="73" endLine="579" endPosition="9" />
+    <nodeInfo nodeId="2955040059201570637" fileName="ConceptDeclaration_TabbedEditor.java" startLine="588" startPosition="9" endLine="594" endPosition="11" />
+    <nodeInfo nodeId="2955040059201580708" fileName="ConceptDeclaration_TabbedEditor.java" startLine="612" startPosition="32" endLine="618" endPosition="13" />
+    <nodeInfo nodeId="6388164970935848443" fileName="ConceptDeclaration_TabbedEditor.java" startLine="631" startPosition="66" endLine="638" endPosition="7" />
+    <nodeInfo nodeId="6388164970935848540" fileName="ConceptDeclaration_TabbedEditor.java" startLine="651" startPosition="16" endLine="658" endPosition="11" />
+    <nodeInfo nodeId="6388164970935848397" fileName="ConceptDeclaration_TabbedEditor.java" startLine="598" startPosition="59" endLine="606" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848396" fileName="ConceptDeclaration_TabbedEditor.java" startLine="597" startPosition="58" endLine="606" endPosition="9" />
     <nodeInfo nodeId="6388164970935847924" fileName="ConceptDeclaration_TabbedEditor.java" startLine="246" startPosition="70" endLine="256" endPosition="11" />
-    <nodeInfo nodeId="6388164970935848237" fileName="ConceptDeclaration_TabbedEditor.java" startLine="548" startPosition="33" endLine="561" endPosition="11" />
-    <nodeInfo nodeId="6388164970935848337" fileName="ConceptDeclaration_TabbedEditor.java" startLine="579" startPosition="69" endLine="593" endPosition="7" />
-    <nodeInfo nodeId="6388164970935848235" fileName="ConceptDeclaration_TabbedEditor.java" startLine="547" startPosition="9" endLine="562" endPosition="9" />
-    <nodeInfo nodeId="6388164970935848493" fileName="ConceptDeclaration_TabbedEditor.java" startLine="641" startPosition="94" endLine="656" endPosition="11" />
-    <nodeInfo nodeId="2955040059201580645" fileName="ConceptDeclaration_TabbedEditor.java" startLine="608" startPosition="71" endLine="626" endPosition="0" />
-    <nodeInfo nodeId="2955040059201580644" fileName="ConceptDeclaration_TabbedEditor.java" startLine="607" startPosition="87" endLine="626" endPosition="11" />
-    <nodeInfo nodeId="6388164970935848479" fileName="ConceptDeclaration_TabbedEditor.java" startLine="638" startPosition="69" endLine="658" endPosition="0" />
-    <nodeInfo nodeId="6388164970935848478" fileName="ConceptDeclaration_TabbedEditor.java" startLine="637" startPosition="65" endLine="658" endPosition="9" />
-    <nodeInfo nodeId="2955040059201578741" fileName="ConceptDeclaration_TabbedEditor.java" startLine="605" startPosition="0" endLine="627" endPosition="7" />
-    <nodeInfo nodeId="6388164970935848207" fileName="ConceptDeclaration_TabbedEditor.java" startLine="539" startPosition="174" endLine="563" endPosition="7" />
+    <nodeInfo nodeId="6388164970935848237" fileName="ConceptDeclaration_TabbedEditor.java" startLine="550" startPosition="33" endLine="563" endPosition="11" />
+    <nodeInfo nodeId="6388164970935848337" fileName="ConceptDeclaration_TabbedEditor.java" startLine="581" startPosition="69" endLine="595" endPosition="7" />
+    <nodeInfo nodeId="6388164970935848235" fileName="ConceptDeclaration_TabbedEditor.java" startLine="549" startPosition="9" endLine="564" endPosition="9" />
+    <nodeInfo nodeId="6388164970935848493" fileName="ConceptDeclaration_TabbedEditor.java" startLine="643" startPosition="94" endLine="658" endPosition="11" />
+    <nodeInfo nodeId="2955040059201580645" fileName="ConceptDeclaration_TabbedEditor.java" startLine="610" startPosition="71" endLine="628" endPosition="0" />
+    <nodeInfo nodeId="2955040059201580644" fileName="ConceptDeclaration_TabbedEditor.java" startLine="609" startPosition="87" endLine="628" endPosition="11" />
+    <nodeInfo nodeId="6388164970935848479" fileName="ConceptDeclaration_TabbedEditor.java" startLine="640" startPosition="69" endLine="660" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848478" fileName="ConceptDeclaration_TabbedEditor.java" startLine="639" startPosition="65" endLine="660" endPosition="9" />
+    <nodeInfo nodeId="2955040059201578741" fileName="ConceptDeclaration_TabbedEditor.java" startLine="607" startPosition="0" endLine="629" endPosition="7" />
+    <nodeInfo nodeId="6388164970935848207" fileName="ConceptDeclaration_TabbedEditor.java" startLine="541" startPosition="133" endLine="565" endPosition="7" />
     <nodeInfo nodeId="6388164970935847882" fileName="ConceptDeclaration_TabbedEditor.java" startLine="233" startPosition="72" endLine="260" endPosition="0" />
     <nodeInfo nodeId="6388164970935847877" fileName="ConceptDeclaration_TabbedEditor.java" startLine="232" startPosition="174" endLine="260" endPosition="33" />
     <scopeInfo nodeId="6388164970935848635" fileName="Structure_ProjectPlugin.java" startLine="29" startPosition="106" endLine="30" endPosition="170" />
@@ -393,29 +395,29 @@
     <scopeInfo nodeId="6388164970935848146" fileName="ConceptDeclaration_TabbedEditor.java" startLine="490" startPosition="47" endLine="491" endPosition="227" />
     <scopeInfo nodeId="822887956173226967" fileName="ConceptDeclaration_TabbedEditor.java" startLine="501" startPosition="24" endLine="502" endPosition="67" />
     <scopeInfo nodeId="2165772098013669691" fileName="ConceptDeclaration_TabbedEditor.java" startLine="517" startPosition="39" endLine="518" endPosition="55" />
-    <scopeInfo nodeId="6388164970935848253" fileName="ConceptDeclaration_TabbedEditor.java" startLine="551" startPosition="35" endLine="552" endPosition="23" />
-    <scopeInfo nodeId="6388164970935848276" fileName="ConceptDeclaration_TabbedEditor.java" startLine="557" startPosition="74" endLine="558" endPosition="71" />
-    <scopeInfo nodeId="6388164970935848383" fileName="ConceptDeclaration_TabbedEditor.java" startLine="584" startPosition="39" endLine="585" endPosition="22" />
-    <scopeInfo nodeId="6388164970935848408" fileName="ConceptDeclaration_TabbedEditor.java" startLine="599" startPosition="72" endLine="600" endPosition="88" />
-    <scopeInfo nodeId="2955040059201581641" fileName="ConceptDeclaration_TabbedEditor.java" startLine="612" startPosition="63" endLine="613" endPosition="25" />
-    <scopeInfo nodeId="2955040059201584120" fileName="ConceptDeclaration_TabbedEditor.java" startLine="618" startPosition="32" endLine="619" endPosition="82" />
-    <scopeInfo nodeId="6388164970935848445" fileName="ConceptDeclaration_TabbedEditor.java" startLine="634" startPosition="14" endLine="635" endPosition="64" />
-    <scopeInfo nodeId="6388164970935848623" fileName="ConceptDeclaration_TabbedEditor.java" startLine="673" startPosition="24" endLine="674" endPosition="100" />
-    <scopeInfo nodeId="6388164970935848615" fileName="ConceptDeclaration_TabbedEditor.java" startLine="697" startPosition="47" endLine="698" endPosition="222" />
-    <scopeInfo nodeId="6388164970935848216" fileName="ConceptDeclaration_TabbedEditor.java" startLine="543" startPosition="145" endLine="545" endPosition="18" />
-    <scopeInfo nodeId="6388164970935848306" fileName="ConceptDeclaration_TabbedEditor.java" startLine="573" startPosition="27" endLine="575" endPosition="83" />
-    <scopeInfo nodeId="2955040059201570639" fileName="ConceptDeclaration_TabbedEditor.java" startLine="588" startPosition="29" endLine="590" endPosition="158">
+    <scopeInfo nodeId="6388164970935848253" fileName="ConceptDeclaration_TabbedEditor.java" startLine="553" startPosition="35" endLine="554" endPosition="23" />
+    <scopeInfo nodeId="6388164970935848276" fileName="ConceptDeclaration_TabbedEditor.java" startLine="559" startPosition="74" endLine="560" endPosition="71" />
+    <scopeInfo nodeId="6388164970935848383" fileName="ConceptDeclaration_TabbedEditor.java" startLine="586" startPosition="39" endLine="587" endPosition="22" />
+    <scopeInfo nodeId="6388164970935848408" fileName="ConceptDeclaration_TabbedEditor.java" startLine="601" startPosition="72" endLine="602" endPosition="88" />
+    <scopeInfo nodeId="2955040059201581641" fileName="ConceptDeclaration_TabbedEditor.java" startLine="614" startPosition="63" endLine="615" endPosition="25" />
+    <scopeInfo nodeId="2955040059201584120" fileName="ConceptDeclaration_TabbedEditor.java" startLine="620" startPosition="32" endLine="621" endPosition="82" />
+    <scopeInfo nodeId="6388164970935848445" fileName="ConceptDeclaration_TabbedEditor.java" startLine="636" startPosition="14" endLine="637" endPosition="64" />
+    <scopeInfo nodeId="6388164970935848623" fileName="ConceptDeclaration_TabbedEditor.java" startLine="675" startPosition="24" endLine="676" endPosition="100" />
+    <scopeInfo nodeId="6388164970935848615" fileName="ConceptDeclaration_TabbedEditor.java" startLine="699" startPosition="47" endLine="700" endPosition="222" />
+    <scopeInfo nodeId="6388164970935848216" fileName="ConceptDeclaration_TabbedEditor.java" startLine="545" startPosition="145" endLine="547" endPosition="18" />
+    <scopeInfo nodeId="6388164970935848306" fileName="ConceptDeclaration_TabbedEditor.java" startLine="575" startPosition="27" endLine="577" endPosition="83" />
+    <scopeInfo nodeId="2955040059201570639" fileName="ConceptDeclaration_TabbedEditor.java" startLine="590" startPosition="29" endLine="592" endPosition="158">
       <varInfo nodeId="2955040059201570641" varName="createdModel" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848498" fileName="ConceptDeclaration_TabbedEditor.java" startLine="642" startPosition="116" endLine="644" endPosition="106" />
-    <scopeInfo nodeId="6388164970935848403" fileName="ConceptDeclaration_TabbedEditor.java" startLine="598" startPosition="47" endLine="601" endPosition="13" />
-    <scopeInfo nodeId="6388164970935848404" fileName="ConceptDeclaration_TabbedEditor.java" startLine="598" startPosition="47" endLine="601" endPosition="13">
+    <scopeInfo nodeId="6388164970935848498" fileName="ConceptDeclaration_TabbedEditor.java" startLine="644" startPosition="116" endLine="646" endPosition="106" />
+    <scopeInfo nodeId="6388164970935848403" fileName="ConceptDeclaration_TabbedEditor.java" startLine="600" startPosition="47" endLine="603" endPosition="13" />
+    <scopeInfo nodeId="6388164970935848404" fileName="ConceptDeclaration_TabbedEditor.java" startLine="600" startPosition="47" endLine="603" endPosition="13">
       <varInfo nodeId="6388164970935848418" varName="confAdapter" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848452" fileName="ConceptDeclaration_TabbedEditor.java" startLine="630" startPosition="56" endLine="633" endPosition="56">
+    <scopeInfo nodeId="6388164970935848452" fileName="ConceptDeclaration_TabbedEditor.java" startLine="632" startPosition="56" endLine="635" endPosition="56">
       <varInfo nodeId="6388164970935848454" varName="configurationDialog" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848516" fileName="ConceptDeclaration_TabbedEditor.java" startLine="645" startPosition="269" endLine="648" endPosition="170">
+    <scopeInfo nodeId="6388164970935848516" fileName="ConceptDeclaration_TabbedEditor.java" startLine="647" startPosition="269" endLine="650" endPosition="170">
       <varInfo nodeId="6388164970935848518" varName="mappingRule" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935847753" fileName="ConceptDeclaration_TabbedEditor.java" startLine="115" startPosition="45" endLine="119" endPosition="692">
@@ -423,11 +425,11 @@
       <varInfo nodeId="6388164970935847755" varName="nodes" />
     </scopeInfo>
     <scopeInfo nodeId="2165772098013669690" fileName="ConceptDeclaration_TabbedEditor.java" startLine="516" startPosition="203" endLine="520" endPosition="0" />
-    <scopeInfo nodeId="6388164970935848214" fileName="ConceptDeclaration_TabbedEditor.java" startLine="542" startPosition="175" endLine="546" endPosition="11" />
-    <scopeInfo nodeId="6388164970935848267" fileName="ConceptDeclaration_TabbedEditor.java" startLine="555" startPosition="140" endLine="559" endPosition="15">
+    <scopeInfo nodeId="6388164970935848214" fileName="ConceptDeclaration_TabbedEditor.java" startLine="544" startPosition="175" endLine="548" endPosition="11" />
+    <scopeInfo nodeId="6388164970935848267" fileName="ConceptDeclaration_TabbedEditor.java" startLine="557" startPosition="140" endLine="561" endPosition="15">
       <varInfo nodeId="6388164970935848269" varName="conceptToAdd" />
     </scopeInfo>
-    <scopeInfo nodeId="2955040059201580712" fileName="ConceptDeclaration_TabbedEditor.java" startLine="611" startPosition="49" endLine="615" endPosition="74" />
+    <scopeInfo nodeId="2955040059201580712" fileName="ConceptDeclaration_TabbedEditor.java" startLine="613" startPosition="49" endLine="617" endPosition="74" />
     <scopeInfo nodeId="6388164970935847798" fileName="ConceptDeclaration_TabbedEditor.java" startLine="161" startPosition="38" endLine="166" endPosition="8">
       <varInfo nodeId="6388164970935847800" varName="nodes" />
     </scopeInfo>
@@ -437,25 +439,25 @@
     <scopeInfo nodeId="6388164970935848126" fileName="ConceptDeclaration_TabbedEditor.java" startLine="478" startPosition="38" endLine="483" endPosition="8">
       <varInfo nodeId="6388164970935848128" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848305" fileName="ConceptDeclaration_TabbedEditor.java" startLine="572" startPosition="59" endLine="577" endPosition="0" />
-    <scopeInfo nodeId="2955040059201570638" fileName="ConceptDeclaration_TabbedEditor.java" startLine="587" startPosition="71" endLine="592" endPosition="0" />
-    <scopeInfo nodeId="6388164970935848398" fileName="ConceptDeclaration_TabbedEditor.java" startLine="597" startPosition="27" endLine="602" endPosition="11" />
-    <scopeInfo nodeId="6388164970935848399" fileName="ConceptDeclaration_TabbedEditor.java" startLine="597" startPosition="27" endLine="602" endPosition="11">
+    <scopeInfo nodeId="6388164970935848305" fileName="ConceptDeclaration_TabbedEditor.java" startLine="574" startPosition="59" endLine="579" endPosition="0" />
+    <scopeInfo nodeId="2955040059201570638" fileName="ConceptDeclaration_TabbedEditor.java" startLine="589" startPosition="71" endLine="594" endPosition="0" />
+    <scopeInfo nodeId="6388164970935848398" fileName="ConceptDeclaration_TabbedEditor.java" startLine="599" startPosition="27" endLine="604" endPosition="11" />
+    <scopeInfo nodeId="6388164970935848399" fileName="ConceptDeclaration_TabbedEditor.java" startLine="599" startPosition="27" endLine="604" endPosition="11">
       <varInfo nodeId="6388164970935848401" varName="generator" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848595" fileName="ConceptDeclaration_TabbedEditor.java" startLine="685" startPosition="38" endLine="690" endPosition="8">
+    <scopeInfo nodeId="6388164970935848595" fileName="ConceptDeclaration_TabbedEditor.java" startLine="687" startPosition="38" endLine="692" endPosition="8">
       <varInfo nodeId="6388164970935848597" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848213" fileName="ConceptDeclaration_TabbedEditor.java" startLine="541" startPosition="42" endLine="547" endPosition="9">
+    <scopeInfo nodeId="6388164970935848213" fileName="ConceptDeclaration_TabbedEditor.java" startLine="543" startPosition="42" endLine="549" endPosition="9">
       <varInfo nodeId="6388164970935848228" varName="genFragment" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848266" fileName="ConceptDeclaration_TabbedEditor.java" startLine="554" startPosition="87" endLine="560" endPosition="13">
+    <scopeInfo nodeId="6388164970935848266" fileName="ConceptDeclaration_TabbedEditor.java" startLine="556" startPosition="87" endLine="562" endPosition="13">
       <varInfo nodeId="6388164970935848288" varName="nodeToAdd" />
     </scopeInfo>
-    <scopeInfo nodeId="2955040059201580708" fileName="ConceptDeclaration_TabbedEditor.java" startLine="610" startPosition="32" endLine="616" endPosition="13">
+    <scopeInfo nodeId="2955040059201580708" fileName="ConceptDeclaration_TabbedEditor.java" startLine="612" startPosition="32" endLine="618" endPosition="13">
       <varInfo nodeId="2955040059201580710" varName="generator" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848541" fileName="ConceptDeclaration_TabbedEditor.java" startLine="649" startPosition="18" endLine="655" endPosition="106">
+    <scopeInfo nodeId="6388164970935848541" fileName="ConceptDeclaration_TabbedEditor.java" startLine="651" startPosition="18" endLine="657" endPosition="106">
       <varInfo nodeId="6388164970935848543" varName="rootTemplateNode" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935847925" fileName="ConceptDeclaration_TabbedEditor.java" startLine="247" startPosition="43" endLine="255" endPosition="13">
@@ -466,30 +468,30 @@
       <varInfo nodeId="6388164970935848169" varName="scope" />
       <varInfo nodeId="2165772098013669489" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848397" fileName="ConceptDeclaration_TabbedEditor.java" startLine="596" startPosition="59" endLine="604" endPosition="0" />
-    <scopeInfo nodeId="6388164970935848244" fileName="ConceptDeclaration_TabbedEditor.java" startLine="549" startPosition="109" endLine="560" endPosition="13">
+    <scopeInfo nodeId="6388164970935848397" fileName="ConceptDeclaration_TabbedEditor.java" startLine="598" startPosition="59" endLine="606" endPosition="0" />
+    <scopeInfo nodeId="6388164970935848244" fileName="ConceptDeclaration_TabbedEditor.java" startLine="551" startPosition="109" endLine="562" endPosition="13">
       <varInfo nodeId="6388164970935848246" varName="language" />
       <varInfo nodeId="6388164970935848259" varName="structureModel" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848338" fileName="ConceptDeclaration_TabbedEditor.java" startLine="580" startPosition="53" endLine="592" endPosition="11">
+    <scopeInfo nodeId="6388164970935848338" fileName="ConceptDeclaration_TabbedEditor.java" startLine="582" startPosition="53" endLine="594" endPosition="11">
       <varInfo nodeId="6388164970935848351" varName="createdGenerator" />
       <varInfo nodeId="6388164970935848340" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848236" fileName="ConceptDeclaration_TabbedEditor.java" startLine="548" startPosition="33" endLine="561" endPosition="11" />
-    <scopeInfo nodeId="6388164970935848237" fileName="ConceptDeclaration_TabbedEditor.java" startLine="548" startPosition="33" endLine="561" endPosition="11">
+    <scopeInfo nodeId="6388164970935848236" fileName="ConceptDeclaration_TabbedEditor.java" startLine="550" startPosition="33" endLine="563" endPosition="11" />
+    <scopeInfo nodeId="6388164970935848237" fileName="ConceptDeclaration_TabbedEditor.java" startLine="550" startPosition="33" endLine="563" endPosition="11">
       <varInfo nodeId="6388164970935848290" varName="moduleRef" />
     </scopeInfo>
-    <scopeInfo nodeId="2955040059201580646" fileName="ConceptDeclaration_TabbedEditor.java" startLine="609" startPosition="29" endLine="624" endPosition="61">
+    <scopeInfo nodeId="2955040059201580646" fileName="ConceptDeclaration_TabbedEditor.java" startLine="611" startPosition="29" endLine="626" endPosition="61">
       <varInfo nodeId="2955040059201616024" varName="node" />
       <varInfo nodeId="2955040059201581325" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848480" fileName="ConceptDeclaration_TabbedEditor.java" startLine="639" startPosition="27" endLine="656" endPosition="11">
+    <scopeInfo nodeId="6388164970935848480" fileName="ConceptDeclaration_TabbedEditor.java" startLine="641" startPosition="27" endLine="658" endPosition="11">
       <varInfo nodeId="6388164970935848482" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="2955040059201580645" fileName="ConceptDeclaration_TabbedEditor.java" startLine="608" startPosition="71" endLine="626" endPosition="0" />
-    <scopeInfo nodeId="2955040059201578742" fileName="ConceptDeclaration_TabbedEditor.java" startLine="606" startPosition="54" endLine="626" endPosition="11" />
-    <scopeInfo nodeId="6388164970935848479" fileName="ConceptDeclaration_TabbedEditor.java" startLine="638" startPosition="69" endLine="658" endPosition="0" />
-    <scopeInfo nodeId="6388164970935848208" fileName="ConceptDeclaration_TabbedEditor.java" startLine="540" startPosition="144" endLine="562" endPosition="9">
+    <scopeInfo nodeId="2955040059201580645" fileName="ConceptDeclaration_TabbedEditor.java" startLine="610" startPosition="71" endLine="628" endPosition="0" />
+    <scopeInfo nodeId="2955040059201578742" fileName="ConceptDeclaration_TabbedEditor.java" startLine="608" startPosition="54" endLine="628" endPosition="11" />
+    <scopeInfo nodeId="6388164970935848479" fileName="ConceptDeclaration_TabbedEditor.java" startLine="640" startPosition="69" endLine="660" endPosition="0" />
+    <scopeInfo nodeId="6388164970935848208" fileName="ConceptDeclaration_TabbedEditor.java" startLine="542" startPosition="36" endLine="564" endPosition="9">
       <varInfo nodeId="6388164970935848210" varName="isNeedRootTemplate" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935847883" fileName="ConceptDeclaration_TabbedEditor.java" startLine="234" startPosition="46" endLine="258" endPosition="19">
@@ -497,11 +499,13 @@
       <varInfo nodeId="6388164970935847885" varName="aConceptRef" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935847882" fileName="ConceptDeclaration_TabbedEditor.java" startLine="233" startPosition="72" endLine="260" endPosition="0" />
-    <scopeInfo nodeId="6388164970935848192" fileName="ConceptDeclaration_TabbedEditor.java" startLine="536" startPosition="63" endLine="564" endPosition="20">
-      <varInfo nodeId="6388164970935848194" varName="result" />
-    </scopeInfo>
     <scopeInfo nodeId="6388164970935847868" fileName="ConceptDeclaration_TabbedEditor.java" startLine="231" startPosition="45" endLine="260" endPosition="33">
       <varInfo nodeId="6388164970935847870" varName="rules" />
+    </scopeInfo>
+    <scopeInfo nodeId="6388164970935848192" fileName="ConceptDeclaration_TabbedEditor.java" startLine="536" startPosition="63" endLine="566" endPosition="20">
+      <varInfo nodeId="2599560207114353716" varName="rootable" />
+      <varInfo nodeId="6388164970935848194" varName="result" />
+      <varInfo nodeId="2599560207114353742" varName="isInterface" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848629" fileName="Structure_ProjectPlugin.java" startLine="27" startPosition="71" endLine="60" endPosition="24">
       <varInfo nodeId="6388164970935848631" varName="baseNode" />
@@ -510,7 +514,7 @@
       <varInfo nodeId="6388164970935848672" varName="baseModelDesIcriptor" />
       <varInfo nodeId="6388164970935848713" varName="mainModule" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848300" fileName="ConceptDeclaration_TabbedEditor.java" startLine="567" startPosition="87" endLine="659" endPosition="26">
+    <scopeInfo nodeId="6388164970935848300" fileName="ConceptDeclaration_TabbedEditor.java" startLine="569" startPosition="87" endLine="661" endPosition="26">
       <varInfo nodeId="6388164970935848322" varName="genList" />
       <varInfo nodeId="6388164970935848476" varName="result" />
       <varInfo nodeId="2606490174690342177" varName="project" />
@@ -520,11 +524,11 @@
       <varInfo nodeId="6388164970935848302" varName="language" />
     </scopeInfo>
     <unitInfo nodeId="2165772098013669690" fileName="ConceptDeclaration_TabbedEditor.java" startLine="516" startPosition="176" endLine="520" endPosition="7" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$1" />
-    <unitInfo nodeId="6388164970935848305" fileName="ConceptDeclaration_TabbedEditor.java" startLine="572" startPosition="47" endLine="577" endPosition="7" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$2" />
-    <unitInfo nodeId="2955040059201570638" fileName="ConceptDeclaration_TabbedEditor.java" startLine="587" startPosition="59" endLine="592" endPosition="9" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$3" />
-    <unitInfo nodeId="6388164970935848397" fileName="ConceptDeclaration_TabbedEditor.java" startLine="596" startPosition="47" endLine="604" endPosition="7" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$4" />
-    <unitInfo nodeId="2955040059201580645" fileName="ConceptDeclaration_TabbedEditor.java" startLine="608" startPosition="59" endLine="626" endPosition="9" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$5" />
-    <unitInfo nodeId="6388164970935848479" fileName="ConceptDeclaration_TabbedEditor.java" startLine="638" startPosition="57" endLine="658" endPosition="7" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$6" />
+    <unitInfo nodeId="6388164970935848305" fileName="ConceptDeclaration_TabbedEditor.java" startLine="574" startPosition="47" endLine="579" endPosition="7" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$2" />
+    <unitInfo nodeId="2955040059201570638" fileName="ConceptDeclaration_TabbedEditor.java" startLine="589" startPosition="59" endLine="594" endPosition="9" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$3" />
+    <unitInfo nodeId="6388164970935848397" fileName="ConceptDeclaration_TabbedEditor.java" startLine="598" startPosition="47" endLine="606" endPosition="7" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$4" />
+    <unitInfo nodeId="2955040059201580645" fileName="ConceptDeclaration_TabbedEditor.java" startLine="610" startPosition="59" endLine="628" endPosition="9" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$5" />
+    <unitInfo nodeId="6388164970935848479" fileName="ConceptDeclaration_TabbedEditor.java" startLine="640" startPosition="57" endLine="660" endPosition="7" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$6" />
     <unitInfo nodeId="6388164970935847882" fileName="ConceptDeclaration_TabbedEditor.java" startLine="233" startPosition="51" endLine="260" endPosition="7" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$1" />
   </root>
   <root nodeId="6388164970935848749">
