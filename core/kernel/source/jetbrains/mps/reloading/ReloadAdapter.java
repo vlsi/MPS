@@ -17,11 +17,22 @@ package jetbrains.mps.reloading;
 
 public class ReloadAdapter implements ReloadListener {
   public void onBeforeReload() {
+
+  }
+
+  public void unload(){
+
+  }
+
+  public void load(){
+
   }
 
   public void onReload() {
+
   }
 
   public void onAfterReload() {
+
   }
 }
