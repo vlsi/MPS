@@ -91,25 +91,6 @@ public class PasteWrappersManager implements ApplicationComponent {
     return null;
   }
 
-  private void reload() {
-    myWrappers.clear();
-    for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
-      try {
-        String pasteWrappersClass = language.getNamespace() + "." + LanguageAspect.ACTIONS.getName() + "." + PASTE_WRAPPER_CLASS_NAME;
-        Class cls = language.getClass(pasteWrappersClass);
-        if (cls == null) continue;
-
-        List<PasteWrapper> wrappers = (List<PasteWrapper>) cls.getMethod(PASTE_WRAPPERS_FACTORY_METHOD).invoke(null);
-
-        for (PasteWrapper w : wrappers) {
-          addWrapper(w);
-        }
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
   private void addWrapper(PasteWrapper wrapper) {
     if (!myWrappers.containsKey(wrapper.getTargetConceptFqName())) {
       myWrappers.put(wrapper.getTargetConceptFqName(), new HashMap<String, PasteWrapper>());
@@ -118,12 +99,26 @@ public class PasteWrappersManager implements ApplicationComponent {
   }
 
   private class MyReloadHandler extends ReloadAdapter {
-    public void onReload() {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          reload();
+    public void unload() {
+      myWrappers.clear();
+    }
+
+    public void load() {
+      for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
+        try {
+          String pasteWrappersClass = language.getNamespace() + "." + LanguageAspect.ACTIONS.getName() + "." + PASTE_WRAPPER_CLASS_NAME;
+          Class cls = language.getClass(pasteWrappersClass);
+          if (cls == null) continue;
+
+          List<PasteWrapper> wrappers = (List<PasteWrapper>) cls.getMethod(PASTE_WRAPPERS_FACTORY_METHOD).invoke(null);
+
+          for (PasteWrapper w : wrappers) {
+            addWrapper(w);
+          }
+        } catch (Throwable t) {
+          LOG.error(t);
         }
-      });
+      }
     }
   }
 }

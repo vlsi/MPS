@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.smodel.INodeAdapter;
@@ -34,12 +33,8 @@ public class DataFlowManager implements ApplicationComponent {
 
   public void initComponent() {
     this.myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            DataFlowManager.this.refresh();
-          }
-        });
+      public void invalidateCaches() {
+        DataFlowManager.this.refresh();
       }
     });
   }

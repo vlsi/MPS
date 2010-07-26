@@ -149,12 +149,10 @@ public class QueryMethodGenerated implements ApplicationComponent {
 
   public static Constructor getAdapterConstructor(String className) {
     Constructor result = ourAdaptorsConstructors.get(className);
-    if (result != null) {
-      return result;
-    }
+    if (result != null) return result;
+
     try {
       String adapterName = className;
-
       String namespace = NameUtil.namespaceFromLongName(className);
 
       assert namespace.endsWith(".structure");
@@ -201,7 +199,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void onBeforeReload() {
+      public void invalidateCaches() {
         clearCaches();
       }
     });

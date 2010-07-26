@@ -24,7 +24,7 @@ public class RulesUtil_Closures {
     if (ourInterfaces == null) {
       ourInterfaces = SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new RulesUtil_Closures.QuotationClass_6hhi7_a0a0a0a0a0a().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface");
       ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
-        public void onReload() {
+        public void invalidateCaches() {
           RulesUtil_Closures.ourInterfaces = null;
           ClassLoaderManager.getInstance().removeReloadHandler(this);
         }

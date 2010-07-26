@@ -55,7 +55,7 @@
                     <link role="baseMethodDeclaration:3" targetNodeId="17.~ReloadAdapter.&lt;init&gt;()" resolveInfo="ReloadAdapter" />
                     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2618147303383781713" />
                     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2618147303383781714">
-                      <property name="name:3" value="onReload" />
+                      <property name="name:3" value="clearCaches" />
                       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2618147303383781715" />
                       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2618147303383781716" />
                       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2618147303383781717">

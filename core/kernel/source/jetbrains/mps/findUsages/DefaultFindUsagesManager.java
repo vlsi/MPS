@@ -40,8 +40,8 @@ class DefaultFindUsagesManager extends FindUsagesManager {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
-        invalidateCaches();
+      public void invalidateCaches() {
+        DefaultFindUsagesManager.invalidateCaches();
       }
     });
   }

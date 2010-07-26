@@ -57,7 +57,7 @@ public class ClassLoaderManager implements ApplicationComponent {
 
   public void initComponent() {
     addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
+      public void invalidateCaches() {
         myRepository.invalidateCaches();
       }
     });
@@ -225,7 +225,21 @@ public class ClassLoaderManager implements ApplicationComponent {
   private void callReloadHandlers() {
     for (ReloadListener h : myReloadHandlers) {
       try {
-        h.onReload();
+        h.invalidateCaches();
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+    for (ReloadListener h : myReloadHandlers) {
+      try {
+        h.unload();
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+    for (ReloadListener h : myReloadHandlers) {
+      try {
+        h.load();
       } catch (Throwable t) {
         LOG.error(t);
       }

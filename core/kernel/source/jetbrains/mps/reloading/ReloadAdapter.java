@@ -24,11 +24,11 @@ public class ReloadAdapter implements ReloadListener {
 
   }
 
-  public void load(){
+  public void invalidateCaches(){
 
   }
 
-  public void onReload() {
+  public void load(){
 
   }
 
