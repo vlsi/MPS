@@ -89,7 +89,13 @@ public class ClassLoaderManager implements ApplicationComponent {
     }
   }
 
+  @Deprecated
   public void reloadAll(@NotNull ProgressIndicator indicator) {
+    unloadAll(indicator);
+    loadAll(indicator);
+  }
+
+  public void unloadAll(ProgressIndicator indicator) {
     LOG.assertCanWrite();
 
     indicator.pushState();
@@ -99,6 +105,18 @@ public class ClassLoaderManager implements ApplicationComponent {
 
       indicator.setText2("Disposing old classes...");
       callBeforeReloadHandlers();
+    } finally {
+      indicator.popState();
+    }
+  }
+
+  public void loadAll(ProgressIndicator indicator) {
+    LOG.assertCanWrite();
+
+    indicator.pushState();
+    try {
+      indicator.setIndeterminate(true);
+      indicator.setText("Reloading classes...");
 
       indicator.setText2("Updating classpath...");
       updateClassPath();
