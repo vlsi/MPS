@@ -118,7 +118,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
           //  This is beginning of comment lines container 
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(node)), "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment")) {
             //  Shouldn't delete documentation comment 
-          } else {
+          } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(node)), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart")) {
             NodeCaretPair nodeCaret = CommentLinePart_Behavior.call_smartDelete_9042833497008205283(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(node)), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), true);
             editorContext.selectWRTFocusPolicy(nodeCaret.myNode);
             ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
@@ -229,7 +229,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
             //  This is end of comment lines container 
             if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(node)), "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment")) {
               //  Shouldn't delete documentation comment 
-            } else {
+            } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(node)), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart")) {
               NodeCaretPair nodeCaret = CommentLinePart_Behavior.call_smartDelete_9042833497008205283(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(node)), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), false);
               editorContext.selectWRTFocusPolicy(nodeCaret.myNode);
               ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);

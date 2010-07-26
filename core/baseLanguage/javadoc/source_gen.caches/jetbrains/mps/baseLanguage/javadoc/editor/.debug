@@ -28,9 +28,9 @@
     <nodeInfo nodeId="2668265993332377109" fileName="TextCommentLinePart_KeyMap.java" startLine="114" startPosition="67" endLine="115" endPosition="94" />
     <nodeInfo nodeId="2668265993332362609" fileName="TextCommentLinePart_KeyMap.java" startLine="117" startPosition="26" endLine="118" endPosition="59" />
     <nodeInfo nodeId="2668265993332363786" fileName="TextCommentLinePart_KeyMap.java" startLine="119" startPosition="168" endLine="120" endPosition="55" />
-    <nodeInfo nodeId="2668265993332363798" fileName="TextCommentLinePart_KeyMap.java" startLine="121" startPosition="18" endLine="122" endPosition="252" />
-    <nodeInfo nodeId="2835762905325592793" fileName="TextCommentLinePart_KeyMap.java" startLine="122" startPosition="252" endLine="123" endPosition="65" />
-    <nodeInfo nodeId="2835762905325592809" fileName="TextCommentLinePart_KeyMap.java" startLine="123" startPosition="65" endLine="124" endPosition="101" />
+    <nodeInfo nodeId="7412562200027821317" fileName="TextCommentLinePart_KeyMap.java" startLine="121" startPosition="176" endLine="122" endPosition="252" />
+    <nodeInfo nodeId="7412562200027821329" fileName="TextCommentLinePart_KeyMap.java" startLine="122" startPosition="252" endLine="123" endPosition="65" />
+    <nodeInfo nodeId="7412562200027821336" fileName="TextCommentLinePart_KeyMap.java" startLine="123" startPosition="65" endLine="124" endPosition="101" />
     <nodeInfo nodeId="2668265993332362650" fileName="TextCommentLinePart_KeyMap.java" startLine="125" startPosition="11" endLine="126" endPosition="17" />
     <nodeInfo nodeId="2668265993332362655" fileName="TextCommentLinePart_KeyMap.java" startLine="127" startPosition="16" endLine="128" endPosition="44" />
     <nodeInfo nodeId="2668265993332376889" fileName="TextCommentLinePart_KeyMap.java" startLine="128" startPosition="44" endLine="129" endPosition="140" />
@@ -73,9 +73,9 @@
     <nodeInfo nodeId="677166607849361532" fileName="TextCommentLinePart_KeyMap.java" startLine="223" startPosition="78" endLine="224" endPosition="105" />
     <nodeInfo nodeId="677166607849361549" fileName="TextCommentLinePart_KeyMap.java" startLine="228" startPosition="33" endLine="229" endPosition="55" />
     <nodeInfo nodeId="677166607849366937" fileName="TextCommentLinePart_KeyMap.java" startLine="230" startPosition="170" endLine="231" endPosition="57" />
-    <nodeInfo nodeId="677166607849366949" fileName="TextCommentLinePart_KeyMap.java" startLine="232" startPosition="20" endLine="233" endPosition="255" />
-    <nodeInfo nodeId="677166607849366961" fileName="TextCommentLinePart_KeyMap.java" startLine="233" startPosition="255" endLine="234" endPosition="67" />
-    <nodeInfo nodeId="677166607849366968" fileName="TextCommentLinePart_KeyMap.java" startLine="234" startPosition="67" endLine="235" endPosition="103" />
+    <nodeInfo nodeId="7340996077143441481" fileName="TextCommentLinePart_KeyMap.java" startLine="232" startPosition="178" endLine="233" endPosition="255" />
+    <nodeInfo nodeId="7340996077143441493" fileName="TextCommentLinePart_KeyMap.java" startLine="233" startPosition="255" endLine="234" endPosition="67" />
+    <nodeInfo nodeId="7340996077143441500" fileName="TextCommentLinePart_KeyMap.java" startLine="234" startPosition="67" endLine="235" endPosition="103" />
     <nodeInfo nodeId="677166607849361590" fileName="TextCommentLinePart_KeyMap.java" startLine="236" startPosition="13" endLine="237" endPosition="19" />
     <nodeInfo nodeId="677166607849361595" fileName="TextCommentLinePart_KeyMap.java" startLine="238" startPosition="18" endLine="239" endPosition="40" />
     <nodeInfo nodeId="677166607849361600" fileName="TextCommentLinePart_KeyMap.java" startLine="241" startPosition="33" endLine="242" endPosition="146" />
@@ -110,8 +110,6 @@
     <nodeInfo nodeId="677166607849369969" fileName="TextCommentLinePart_KeyMap.java" startLine="268" startPosition="18" endLine="270" endPosition="13" />
     <nodeInfo nodeId="677166607849364225" fileName="TextCommentLinePart_KeyMap.java" startLine="210" startPosition="16" endLine="213" endPosition="11" />
     <nodeInfo nodeId="677166607849361806" fileName="TextCommentLinePart_KeyMap.java" startLine="280" startPosition="12" endLine="283" endPosition="7" />
-    <nodeInfo nodeId="2668265993332363796" fileName="TextCommentLinePart_KeyMap.java" startLine="121" startPosition="16" endLine="125" endPosition="11" />
-    <nodeInfo nodeId="677166607849366947" fileName="TextCommentLinePart_KeyMap.java" startLine="232" startPosition="18" endLine="236" endPosition="13" />
     <nodeInfo nodeId="2668265993332376930" fileName="TextCommentLinePart_KeyMap.java" startLine="133" startPosition="170" endLine="138" endPosition="11" />
     <nodeInfo nodeId="677166607849361520" fileName="TextCommentLinePart_KeyMap.java" startLine="221" startPosition="61" endLine="226" endPosition="0" />
     <nodeInfo nodeId="677166607849361641" fileName="TextCommentLinePart_KeyMap.java" startLine="246" startPosition="176" endLine="251" endPosition="17" />
@@ -149,14 +147,14 @@
     <scopeInfo nodeId="677166607849361521" fileName="TextCommentLinePart_KeyMap.java" startLine="222" startPosition="29" endLine="224" endPosition="105" />
     <scopeInfo nodeId="677166607849369954" fileName="TextCommentLinePart_KeyMap.java" startLine="265" startPosition="187" endLine="267" endPosition="40" />
     <scopeInfo nodeId="677166607849361807" fileName="TextCommentLinePart_KeyMap.java" startLine="280" startPosition="14" endLine="282" endPosition="15" />
-    <scopeInfo nodeId="2668265993332363797" fileName="TextCommentLinePart_KeyMap.java" startLine="121" startPosition="18" endLine="124" endPosition="101">
-      <varInfo nodeId="2668265993332363799" varName="nodeCaret" />
+    <scopeInfo nodeId="7412562200027819030" fileName="TextCommentLinePart_KeyMap.java" startLine="121" startPosition="176" endLine="124" endPosition="101">
+      <varInfo nodeId="7412562200027821318" varName="nodeCaret" />
     </scopeInfo>
     <scopeInfo nodeId="2668265993332377055" fileName="TextCommentLinePart_KeyMap.java" startLine="158" startPosition="291" endLine="161" endPosition="99">
       <varInfo nodeId="2668265993332377057" varName="nodeCaret" />
     </scopeInfo>
-    <scopeInfo nodeId="677166607849366948" fileName="TextCommentLinePart_KeyMap.java" startLine="232" startPosition="20" endLine="235" endPosition="103">
-      <varInfo nodeId="677166607849366950" varName="nodeCaret" />
+    <scopeInfo nodeId="7340996077143439194" fileName="TextCommentLinePart_KeyMap.java" startLine="232" startPosition="178" endLine="235" endPosition="103">
+      <varInfo nodeId="7340996077143441482" varName="nodeCaret" />
     </scopeInfo>
     <scopeInfo nodeId="677166607849370000" fileName="TextCommentLinePart_KeyMap.java" startLine="273" startPosition="293" endLine="276" endPosition="101">
       <varInfo nodeId="677166607849370002" varName="nodeCaret" />
