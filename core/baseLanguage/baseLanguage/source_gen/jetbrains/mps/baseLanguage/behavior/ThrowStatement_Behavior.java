@@ -21,8 +21,8 @@ public class ThrowStatement_Behavior {
     if (!(ignoreMayBeThrowables)) {
       Statement_Behavior.collectUncaughtMethodThrowables_5412515780383112967(throwables, SLinkOperations.getTarget(thisNode, "throwable", true));
     }
-    if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "throwable", true)), "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      SetSequence.fromSet(throwables).addElement(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "throwable", true)), "jetbrains.mps.baseLanguage.structure.Classifier"));
+    if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "throwable", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+      SetSequence.fromSet(throwables).addElement(SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "throwable", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
     }
   }
 }

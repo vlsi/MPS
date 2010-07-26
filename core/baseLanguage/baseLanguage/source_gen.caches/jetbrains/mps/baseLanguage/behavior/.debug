@@ -2627,13 +2627,13 @@
   <root nodeId="1237548596367">
     <nodeInfo nodeId="1237548635605" fileName="ThrowStatement_Behavior.java" startLine="16" startPosition="86" endLine="17" endPosition="16" />
     <nodeInfo nodeId="4313092516461999901" fileName="ThrowStatement_Behavior.java" startLine="21" startPosition="35" endLine="22" endPosition="145" />
-    <nodeInfo nodeId="554709999454213974" fileName="ThrowStatement_Behavior.java" startLine="24" startPosition="183" endLine="25" endPosition="215" />
+    <nodeInfo nodeId="554709999454213974" fileName="ThrowStatement_Behavior.java" startLine="24" startPosition="187" endLine="25" endPosition="267" />
     <nodeInfo nodeId="4313092516461999883" fileName="ThrowStatement_Behavior.java" startLine="20" startPosition="152" endLine="23" endPosition="5" />
     <nodeInfo nodeId="554709999454213952" fileName="ThrowStatement_Behavior.java" startLine="23" startPosition="5" endLine="26" endPosition="5" />
     <scopeInfo nodeId="1237548596369" fileName="ThrowStatement_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="1237548598278" fileName="ThrowStatement_Behavior.java" startLine="16" startPosition="86" endLine="17" endPosition="16" />
     <scopeInfo nodeId="4313092516461999884" fileName="ThrowStatement_Behavior.java" startLine="21" startPosition="35" endLine="22" endPosition="145" />
-    <scopeInfo nodeId="554709999454213953" fileName="ThrowStatement_Behavior.java" startLine="24" startPosition="183" endLine="25" endPosition="215" />
+    <scopeInfo nodeId="554709999454213953" fileName="ThrowStatement_Behavior.java" startLine="24" startPosition="187" endLine="25" endPosition="267" />
     <scopeInfo nodeId="4313092516461999790" fileName="ThrowStatement_Behavior.java" startLine="20" startPosition="152" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1238803669564">
