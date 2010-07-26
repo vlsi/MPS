@@ -55,41 +55,11 @@ public class ClassLoaderManager implements ApplicationComponent {
     myRepository = repository;
   }
 
-  public void initComponent() {
-    addReloadHandler(new ReloadAdapter() {
-      public void invalidateCaches() {
-        myRepository.invalidateCaches();
-      }
-    });
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Class Loader Manager";
-  }
-
-  public void disposeComponent() {
-  }
-
   public void init(LibraryManager libraryManager) {
     synchronized (myLock) {
       if (myRuntimeEnvironment == null) {
         myRuntimeEnvironment = createRuntimeEnvironment(libraryManager);
       }
-    }
-  }
-
-  private void addModule(ModuleReference ref) {
-    synchronized (myLock) {
-      IModule module = myRepository.getModule(ref);
-
-      if (module == null) {
-        throw new RuntimeException("Can't find module : " + ref.getModuleFqName());
-      }
-
-      RBundle<ModuleReference> bundle = new RBundle<ModuleReference>(ref, module.getBytecodeLocator());
-      myRuntimeEnvironment.add(bundle);
     }
   }
 
@@ -200,9 +170,40 @@ public class ClassLoaderManager implements ApplicationComponent {
     }
   }
 
-  private RuntimeEnvironmentExt createRuntimeEnvironment(LibraryManager libraryManager) {
-    return new RuntimeEnvironmentExt(libraryManager);
+  private void addModule(ModuleReference ref) {
+    synchronized (myLock) {
+      IModule module = myRepository.getModule(ref);
+
+      if (module == null) {
+        throw new RuntimeException("Can't find module : " + ref.getModuleFqName());
+      }
+
+      RBundle<ModuleReference> bundle = new RBundle<ModuleReference>(ref, module.getBytecodeLocator());
+      myRuntimeEnvironment.add(bundle);
+    }
   }
+
+  //---------------component stuff------------------
+
+  public void initComponent() {
+    addReloadHandler(new ReloadAdapter() {
+      public void invalidateCaches() {
+        myRepository.invalidateCaches();
+      }
+    });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Class Loader Manager";
+  }
+
+  public void disposeComponent() {
+
+  }
+
+  //---------------reload handlers------------------
 
   public void addReloadHandler(ReloadListener handler) {
     myReloadHandlers.add(handler);
@@ -254,6 +255,12 @@ public class ClassLoaderManager implements ApplicationComponent {
         LOG.error(t);
       }
     }
+  }
+
+  //---------------runtime environment------------------
+
+  private RuntimeEnvironmentExt createRuntimeEnvironment(LibraryManager libraryManager) {
+    return new RuntimeEnvironmentExt(libraryManager);
   }
 
   private class RuntimeEnvironmentExt extends RuntimeEnvironment<ModuleReference> {
@@ -358,6 +365,5 @@ public class ClassLoaderManager implements ApplicationComponent {
       }
     }
   }
-
 }
                                           

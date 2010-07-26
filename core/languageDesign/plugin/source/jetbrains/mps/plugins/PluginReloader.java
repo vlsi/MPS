@@ -16,17 +16,13 @@
 package jetbrains.mps.plugins;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.library.LibraryManager;
-import jetbrains.mps.make.StartupModuleMaker;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.runconfigs.RunConfigManager;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
@@ -51,7 +47,7 @@ public class PluginReloader implements ApplicationComponent {
   private ApplicationPluginManager myPluginManager;
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public PluginReloader(ClassLoaderManager classLoaderManager,ProjectManager projectManager,ApplicationPluginManager pluginManager) {
+  public PluginReloader(ClassLoaderManager classLoaderManager, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
     myClassLoaderManager = classLoaderManager;
     myProjectManager = projectManager;
     myPluginManager = pluginManager;
