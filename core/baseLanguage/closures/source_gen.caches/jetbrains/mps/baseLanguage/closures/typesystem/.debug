@@ -267,42 +267,42 @@
     <unitInfo nodeId="1237814165989" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="65" startPosition="61" endLine="78" endPosition="9" unitName="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_subtypeOf_FunctionType_InequationReplacementRule$1" />
   </root>
   <root nodeId="1202212837508">
-    <nodeInfo nodeId="1202745678705" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="30" startPosition="92" endLine="31" endPosition="75" />
-    <nodeInfo nodeId="1202212965865" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="31" startPosition="75" endLine="32" endPosition="74" />
-    <nodeInfo nodeId="1202741408806" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="33" startPosition="237" endLine="34" endPosition="83" />
-    <nodeInfo nodeId="1983923772552990131" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="39" startPosition="9" endLine="40" endPosition="67" />
-    <nodeInfo nodeId="1202741469355" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="45" startPosition="45" endLine="46" endPosition="79" />
-    <nodeInfo nodeId="1202741511689" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="47" startPosition="76" endLine="48" endPosition="135" />
-    <nodeInfo nodeId="1202741535643" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="49" startPosition="9" endLine="50" endPosition="111" />
-    <nodeInfo nodeId="1240235274483" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="50" startPosition="111" endLine="51" endPosition="211" />
-    <nodeInfo nodeId="1202742759568" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="53" startPosition="5" endLine="54" endPosition="22" />
-    <nodeInfo nodeId="1202741494410" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="46" startPosition="79" endLine="49" endPosition="9" />
-    <nodeInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="35" startPosition="94" endLine="39" endPosition="0" />
-    <nodeInfo nodeId="4616312228468046991" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="40" startPosition="67" endLine="44" endPosition="8" />
-    <nodeInfo nodeId="4616312228468046968" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="34" startPosition="83" endLine="39" endPosition="9" />
-    <nodeInfo nodeId="4616312228468046998" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="44" startPosition="8" endLine="52" endPosition="7" />
-    <nodeInfo nodeId="1202212971747" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="32" startPosition="74" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="4616312228468046976" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="36" startPosition="40" endLine="37" endPosition="129" />
-    <scopeInfo nodeId="1202741494411" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="47" startPosition="76" endLine="48" endPosition="135" />
-    <scopeInfo nodeId="1202741494410" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="46" startPosition="79" endLine="49" endPosition="9">
+    <nodeInfo nodeId="1202745678705" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="25" startPosition="92" endLine="26" endPosition="75" />
+    <nodeInfo nodeId="1202212965865" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="26" startPosition="75" endLine="27" endPosition="74" />
+    <nodeInfo nodeId="1202741408806" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="28" startPosition="237" endLine="29" endPosition="83" />
+    <nodeInfo nodeId="1983923772552990131" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="34" startPosition="9" endLine="35" endPosition="67" />
+    <nodeInfo nodeId="1202741469355" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="40" startPosition="45" endLine="41" endPosition="79" />
+    <nodeInfo nodeId="1202741511689" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="42" startPosition="76" endLine="43" endPosition="135" />
+    <nodeInfo nodeId="1202741535643" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="44" startPosition="9" endLine="45" endPosition="111" />
+    <nodeInfo nodeId="1240235274483" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="45" startPosition="111" endLine="46" endPosition="45" />
+    <nodeInfo nodeId="1202742759568" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="48" startPosition="5" endLine="49" endPosition="22" />
+    <nodeInfo nodeId="1202741494410" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="41" startPosition="79" endLine="44" endPosition="9" />
+    <nodeInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="30" startPosition="94" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="4616312228468046991" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="35" startPosition="67" endLine="39" endPosition="8" />
+    <nodeInfo nodeId="4616312228468046968" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="29" startPosition="83" endLine="34" endPosition="9" />
+    <nodeInfo nodeId="4616312228468046998" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="39" startPosition="8" endLine="47" endPosition="7" />
+    <nodeInfo nodeId="1202212971747" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="27" startPosition="74" endLine="48" endPosition="5" />
+    <scopeInfo nodeId="4616312228468046976" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="31" startPosition="40" endLine="32" endPosition="129" />
+    <scopeInfo nodeId="1202741494411" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="42" startPosition="76" endLine="43" endPosition="135" />
+    <scopeInfo nodeId="1202741494410" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="41" startPosition="79" endLine="44" endPosition="9">
       <varInfo nodeId="1202741494414" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="35" startPosition="94" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="4616312228468046999" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="45" startPosition="45" endLine="51" endPosition="211">
+    <scopeInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="30" startPosition="94" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="4616312228468046999" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="40" startPosition="45" endLine="46" endPosition="45">
       <varInfo nodeId="1202741469356" varName="paramTypes" />
       <varInfo nodeId="1202741535644" varName="resType" />
     </scopeInfo>
-    <scopeInfo nodeId="1202212971748" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="33" startPosition="237" endLine="52" endPosition="7">
+    <scopeInfo nodeId="1202212971748" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="28" startPosition="237" endLine="47" endPosition="7">
       <varInfo nodeId="4616312228468046992" varName="mtd" />
       <varInfo nodeId="1202741408807" varName="methods" />
       <varInfo nodeId="1983923772552990132" varName="it" />
       <varInfo nodeId="4616312228468046969" varName="cands" />
     </scopeInfo>
-    <scopeInfo nodeId="1202212837509" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="30" startPosition="92" endLine="54" endPosition="22">
+    <scopeInfo nodeId="1202212837509" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="25" startPosition="92" endLine="49" endPosition="22">
       <varInfo nodeId="1202745678706" varName="supertypes" />
       <varInfo nodeId="1202212965866" varName="classifier" />
     </scopeInfo>
-    <unitInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="35" startPosition="71" endLine="39" endPosition="7" unitName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule$1" />
+    <unitInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="30" startPosition="71" endLine="34" endPosition="7" unitName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule$1" />
   </root>
   <root nodeId="1202742148675">
     <nodeInfo nodeId="1202742329255" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="34" startPosition="157" endLine="35" endPosition="81" />
@@ -504,35 +504,35 @@
     <unitInfo nodeId="4616312228468046913" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="142" startPosition="73" endLine="146" endPosition="9" unitName="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_subtypeOf_ClassifierType_InequationReplacementRule$2" />
   </root>
   <root nodeId="1202756468112">
-    <nodeInfo nodeId="1202757030093" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="27" startPosition="92" endLine="28" endPosition="34" />
-    <nodeInfo nodeId="100821637069109816" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="28" startPosition="34" endLine="29" endPosition="20" />
-    <nodeInfo nodeId="1202756513375" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="31" startPosition="8" endLine="32" endPosition="161" />
-    <nodeInfo nodeId="1235082156478" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="32" startPosition="161" endLine="33" endPosition="92" />
-    <nodeInfo nodeId="100821637069109850" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="34" startPosition="98" endLine="35" endPosition="132" />
-    <nodeInfo nodeId="1235082202309" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="38" startPosition="85" endLine="39" endPosition="182" />
-    <nodeInfo nodeId="1235082202328" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="41" startPosition="82" endLine="42" endPosition="126" />
-    <nodeInfo nodeId="1235082202342" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="43" startPosition="11" endLine="44" endPosition="81" />
-    <nodeInfo nodeId="3618788446922193351" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="46" startPosition="8" endLine="47" endPosition="145" />
-    <nodeInfo nodeId="100821637069150650" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="48" startPosition="12" endLine="49" endPosition="211" />
-    <nodeInfo nodeId="100821637069109927" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="49" startPosition="211" endLine="50" endPosition="77" />
-    <nodeInfo nodeId="1202756513407" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="51" startPosition="5" endLine="52" endPosition="22" />
-    <nodeInfo nodeId="1235082168904" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="33" startPosition="92" endLine="36" endPosition="9" />
-    <nodeInfo nodeId="1235082202307" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="37" startPosition="27" endLine="40" endPosition="11" />
-    <nodeInfo nodeId="1235082202326" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="40" startPosition="11" endLine="43" endPosition="11" />
-    <nodeInfo nodeId="100821637069106816" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="48" startPosition="10" endLine="51" endPosition="5" />
-    <nodeInfo nodeId="100821637069109837" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="36" startPosition="9" endLine="45" endPosition="9" />
-    <nodeInfo nodeId="3618788446922189245" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="30" startPosition="73" endLine="46" endPosition="8" />
-    <nodeInfo nodeId="100821637069106799" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="29" startPosition="20" endLine="51" endPosition="5" />
-    <scopeInfo nodeId="1235082168905" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="34" startPosition="98" endLine="35" endPosition="132" />
-    <scopeInfo nodeId="1235082202308" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="38" startPosition="85" endLine="39" endPosition="182" />
-    <scopeInfo nodeId="1235082202327" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="41" startPosition="82" endLine="42" endPosition="126" />
-    <scopeInfo nodeId="100821637069106817" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="48" startPosition="12" endLine="50" endPosition="77" />
-    <scopeInfo nodeId="1235082202326" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="40" startPosition="11" endLine="43" endPosition="11">
+    <nodeInfo nodeId="1202757030093" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="26" startPosition="92" endLine="27" endPosition="34" />
+    <nodeInfo nodeId="100821637069109816" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="27" startPosition="34" endLine="28" endPosition="20" />
+    <nodeInfo nodeId="1202756513375" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="30" startPosition="8" endLine="31" endPosition="161" />
+    <nodeInfo nodeId="1235082156478" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="31" startPosition="161" endLine="32" endPosition="92" />
+    <nodeInfo nodeId="100821637069109850" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="33" startPosition="98" endLine="34" endPosition="132" />
+    <nodeInfo nodeId="1235082202309" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="37" startPosition="85" endLine="38" endPosition="182" />
+    <nodeInfo nodeId="1235082202328" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="40" startPosition="82" endLine="41" endPosition="126" />
+    <nodeInfo nodeId="1235082202342" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="42" startPosition="11" endLine="43" endPosition="47" />
+    <nodeInfo nodeId="3618788446922193351" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="45" startPosition="8" endLine="46" endPosition="43" />
+    <nodeInfo nodeId="100821637069150650" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="47" startPosition="12" endLine="48" endPosition="211" />
+    <nodeInfo nodeId="100821637069109927" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="48" startPosition="211" endLine="49" endPosition="43" />
+    <nodeInfo nodeId="1202756513407" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="50" startPosition="5" endLine="51" endPosition="22" />
+    <nodeInfo nodeId="1235082168904" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="32" startPosition="92" endLine="35" endPosition="9" />
+    <nodeInfo nodeId="1235082202307" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="36" startPosition="27" endLine="39" endPosition="11" />
+    <nodeInfo nodeId="1235082202326" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="39" startPosition="11" endLine="42" endPosition="11" />
+    <nodeInfo nodeId="100821637069106816" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="47" startPosition="10" endLine="50" endPosition="5" />
+    <nodeInfo nodeId="100821637069109837" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="35" startPosition="9" endLine="44" endPosition="9" />
+    <nodeInfo nodeId="3618788446922189245" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="29" startPosition="73" endLine="45" endPosition="8" />
+    <nodeInfo nodeId="100821637069106799" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="28" startPosition="20" endLine="50" endPosition="5" />
+    <scopeInfo nodeId="1235082168905" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="33" startPosition="98" endLine="34" endPosition="132" />
+    <scopeInfo nodeId="1235082202308" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="37" startPosition="85" endLine="38" endPosition="182" />
+    <scopeInfo nodeId="1235082202327" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="40" startPosition="82" endLine="41" endPosition="126" />
+    <scopeInfo nodeId="100821637069106817" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="47" startPosition="12" endLine="49" endPosition="43" />
+    <scopeInfo nodeId="1235082202326" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="39" startPosition="11" endLine="42" endPosition="11">
       <varInfo nodeId="1235082202340" varName="pt" />
     </scopeInfo>
-    <scopeInfo nodeId="100821637069109838" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="37" startPosition="27" endLine="44" endPosition="81" />
-    <scopeInfo nodeId="100821637069106800" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="30" startPosition="73" endLine="47" endPosition="145" />
-    <scopeInfo nodeId="1202756468113" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="27" startPosition="92" endLine="52" endPosition="22">
+    <scopeInfo nodeId="100821637069109838" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="36" startPosition="27" endLine="43" endPosition="47" />
+    <scopeInfo nodeId="100821637069106800" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="29" startPosition="73" endLine="46" endPosition="43" />
+    <scopeInfo nodeId="1202756468113" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="26" startPosition="92" endLine="51" endPosition="22">
       <varInfo nodeId="1202757030094" varName="supertypes" />
       <varInfo nodeId="100821637069109817" varName="ct" />
     </scopeInfo>
@@ -544,7 +544,7 @@
   <root nodeId="1210844937702">
     <nodeInfo nodeId="1210844990240" fileName="RulesUtil_Closures.java" startLine="20" startPosition="33" endLine="21" endPosition="47" />
     <nodeInfo nodeId="1210845050031" fileName="RulesUtil_Closures.java" startLine="24" startPosition="32" endLine="25" endPosition="244" />
-    <nodeInfo nodeId="1210845369328" fileName="RulesUtil_Closures.java" startLine="27" startPosition="32" endLine="28" endPosition="50" />
+    <nodeInfo nodeId="1210845369328" fileName="RulesUtil_Closures.java" startLine="27" startPosition="40" endLine="28" endPosition="50" />
     <nodeInfo nodeId="1210845414016" fileName="RulesUtil_Closures.java" startLine="28" startPosition="50" endLine="29" endPosition="69" />
     <nodeInfo nodeId="1210845072936" fileName="RulesUtil_Closures.java" startLine="32" startPosition="5" endLine="33" endPosition="25" />
     <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="40" startPosition="31" endLine="41" endPosition="26" />
@@ -563,7 +563,7 @@
     <nodeInfo nodeId="1210844975767" fileName="RulesUtil_Closures.java" startLine="22" startPosition="0" endLine="35" endPosition="0" />
     <nodeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="39" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="37" startPosition="47" endLine="37" endPosition="47" />
-    <scopeInfo nodeId="1210845337682" fileName="RulesUtil_Closures.java" startLine="27" startPosition="32" endLine="29" endPosition="69" />
+    <scopeInfo nodeId="1210845337682" fileName="RulesUtil_Closures.java" startLine="27" startPosition="40" endLine="29" endPosition="69" />
     <scopeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="36" startPosition="56" endLine="38" endPosition="5" />
     <scopeInfo nodeId="1210844937702" fileName="RulesUtil_Closures.java" startLine="44" startPosition="7" endLine="48" endPosition="31" />
     <scopeInfo nodeId="1210845337679" fileName="RulesUtil_Closures.java" startLine="26" startPosition="77" endLine="31" endPosition="0" />
