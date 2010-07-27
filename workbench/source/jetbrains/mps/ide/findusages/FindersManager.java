@@ -37,40 +37,17 @@ public class FindersManager implements ApplicationComponent {
 
   private Map<String, Set<GeneratedFinder>> myFinders = new HashMap<String, Set<GeneratedFinder>>();
   private Map<GeneratedFinder, SNode> myNodesByFinder = new HashMap<GeneratedFinder, SNode>();
+  private boolean myLoaded = false;
 
   private ClassLoaderManager myClassLoaderManager;
-
-  public static FindersManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(FindersManager.class);
-  }
 
   public FindersManager(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
 
   }
 
-  public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        dispose();
-      }
-
-      public void load() {
-        FindersManager.this.load();
-      }
-    });
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Finders Manager";
-  }
-
-  public void disposeComponent() {
-  }
-
   public Set<ReloadableFinder> getAvailableFinders(final SNode node) {
+    checkLoaded();
     return
       ModelAccess.instance().runReadAction(new Computable<Set<ReloadableFinder>>() {
         public Set<ReloadableFinder> compute() {
@@ -97,6 +74,7 @@ public class FindersManager implements ApplicationComponent {
   }
 
   public ReloadableFinder getFinderByClassName(String className) {
+    checkLoaded();
     for (Set<GeneratedFinder> finders : myFinders.values()) {
       for (GeneratedFinder finder : finders) {
         if (finder.getClass().getName().equals(className)) {
@@ -108,11 +86,28 @@ public class FindersManager implements ApplicationComponent {
   }
 
   public SNode getNodeByFinder(ReloadableFinder finder) {
+    checkLoaded();
     return myNodesByFinder.get(finder.getFinder());
   }
 
   public SNode getNodeByFinder(GeneratedFinder finder) {
+    checkLoaded();
     return myNodesByFinder.get(finder);
+  }
+
+  private ModuleReference getFinderModule(GeneratedFinder finder) {
+    SModelDescriptor finderModel = myNodesByFinder.get(finder).getModel().getModelDescriptor();
+    Language finderLanguage = Language.getLanguageForLanguageAspect(finderModel);
+    ModuleReference moduleReference = finderLanguage.getModuleReference();
+    return moduleReference;
+  }
+
+  //-------------reloading stuff----------------
+
+  private void checkLoaded(){
+    if (myLoaded) return;
+    myLoaded = true;
+    load();
   }
 
   private void load() {
@@ -153,19 +148,37 @@ public class FindersManager implements ApplicationComponent {
     });
   }
 
-  public void dispose() {
+  private void clear() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myFinders.clear();
         myNodesByFinder.clear();
+        myLoaded = false;
       }
     });
   }
 
-  private ModuleReference getFinderModule(GeneratedFinder finder) {
-    SModelDescriptor finderModel = myNodesByFinder.get(finder).getModel().getModelDescriptor();
-    Language finderLanguage = Language.getLanguageForLanguageAspect(finderModel);
-    ModuleReference moduleReference = finderLanguage.getModuleReference();
-    return moduleReference;
+  //-------------component stuff----------------
+
+  public static FindersManager getInstance() {
+    return ApplicationManager.getApplication().getComponent(FindersManager.class);
+  }
+
+  public void initComponent() {
+    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
+      public void invalidateCaches() {
+        clear();
+      }
+    });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Finders Manager";
+  }
+
+  public void disposeComponent() {
+
   }
 }
