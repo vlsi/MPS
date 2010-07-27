@@ -379,9 +379,11 @@ public class ReferentsCreator {
       // JMethodBody enclosingBody = findEnclosingMethod(scope);
       LocalVariableDeclaration newLocal = LocalVariableDeclaration.newInstance(model);
       newLocal.setName(new String(localDeclaration.name));
-      newLocal.setIsFinal(b.isFinal());
       newLocal.setType(localType);
-      myReferentsCreator.myBindingMap.put(b, newLocal);
+      if (b != null) {
+        newLocal.setIsFinal(b.isFinal());
+        myReferentsCreator.myBindingMap.put(b, newLocal);
+      }
       return true;
     }
 

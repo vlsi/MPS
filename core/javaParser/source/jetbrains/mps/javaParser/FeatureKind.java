@@ -23,5 +23,5 @@ package jetbrains.mps.javaParser;
 * To change this template use File | Settings | File Templates.
 */
 public enum FeatureKind {
-  CLASS, NESTED_CLASS, FIELD, METHOD;
+  CLASS, NESTED_CLASS, FIELD, METHOD, STATEMENTS;
 }

@@ -32,7 +32,8 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowImplementations_Action", "jetbrains.mps.ide");
       EditorPopup_ActionGroup.this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_structure);
       EditorPopup_ActionGroup.this.addSeparator();
-      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteAsJava_Action", "jetbrains.mps.ide");
+      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteAsJavaStatements_Action", "jetbrains.mps.ide");
+      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteAsJavaMethods_Action", "jetbrains.mps.ide");
       EditorPopup_ActionGroup.this.addSeparator();
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action", "jetbrains.mps.ide");
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToEditorDeclaration_Action", "jetbrains.mps.ide");

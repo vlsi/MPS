@@ -273,21 +273,26 @@ public class JavaCompiler {
     compileOnce();
   }
 
-  public List<SNode> compileIsolated(String source) {
+  public List<SNode> compileIsolated(String source, FeatureKind featureKind) {
     initClassPathItem(myModule);
-    SourceWrapper wrapper = SourceWrapper.wrapSource(source, myBaseModelToAddSource);
+    SourceWrapper wrapper = SourceWrapper.wrapSource(source, myBaseModelToAddSource, featureKind);
     addSource(myBaseModelToAddSource.getLongName() + "." + wrapper.getShortClassName(), wrapper.getWrappedSource());
     myPackageFQNamesToModels.put(myBaseModelToAddSource.getLongName(), myBaseModelToAddSource);
     compileOnce();
     List<Classifier> classifierList = ModelAccess.instance().runWriteActionInCommand(new Computable<List<Classifier>>() {
       @Override
       public List<Classifier> compute() {
-        return buildAST(false);
+        return buildAST(true);
       }
     });
+    if (classifierList.isEmpty()) {
+      return new ArrayList<SNode>();
+    }
     List<SNode> sNodeList = wrapper.getOurNodesFromClassifier(classifierList.get(0));
     for (SNode node : sNodeList) {
-      node.getParent().removeChild(node);
+      if (node.getParent() != null) {
+        node.getParent().removeChild(node);
+      }
     }
     return sNodeList;
   }
@@ -376,13 +381,13 @@ public class JavaCompiler {
 
   private void createModelsAndBuildAST() {
     createModels();
-    buildAST(true);
+    buildAST(false);
   }
 
-  private List<Classifier> buildAST(boolean addToModel) {
+  private List<Classifier> buildAST(boolean isolated) {
     ReferentsCreator referentsCreator = new ReferentsCreator(new HashMap<String, SModel>(myPackageFQNamesToModels));
     referentsCreator.exec(myCompilationUnitDeclarations.toArray(new CompilationUnitDeclaration[myCompilationUnitDeclarations.size()]));
-    return new JavaConverterTreeBuilder().exec(referentsCreator, myPackageFQNamesToModels, addToModel);
+    return new JavaConverterTreeBuilder().exec(referentsCreator, myPackageFQNamesToModels, isolated);
   }
 
   public List<CompilationResult> getCompilationResults() {

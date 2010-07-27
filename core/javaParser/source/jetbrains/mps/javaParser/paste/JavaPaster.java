@@ -3,6 +3,7 @@ package jetbrains.mps.javaParser.paste;
 import jetbrains.mps.datatransfer.NodePaster;
 import jetbrains.mps.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.datatransfer.PasteEnv;
+import jetbrains.mps.javaParser.FeatureKind;
 import jetbrains.mps.javaParser.JavaCompiler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -27,10 +28,16 @@ import java.util.List;
 public class JavaPaster {
   private static Logger LOG = Logger.getLogger(JavaPaster.class);
 
-  public void pasteJava(SNode anchor, IOperationContext operationContext) {
+  public void pasteJava(SNode anchor, IOperationContext operationContext, FeatureKind featureKind) {
     String javaCode = getStringFromClipboard();
     if (javaCode == null) return;
-    pasteJavaAsNode(anchor, javaCode, operationContext);
+    pasteJavaAsNode(anchor, anchor.getModel(), javaCode, operationContext, featureKind);
+  }
+
+  public void pasteJavaAsClass(SModel model, IOperationContext operationContext) {
+    String javaCode = getStringFromClipboard();
+    if (javaCode == null) return;
+    pasteJavaAsNode(null, model, javaCode, operationContext, FeatureKind.CLASS);
   }
 
   public String getStringFromClipboard() {
@@ -55,14 +62,17 @@ public class JavaPaster {
     return null;
   }
 
-  public void pasteJavaAsNode(SNode anchor, String javaCode, IOperationContext operationContext) {
-    SModel model = anchor.getModel();
+  public void pasteJavaAsNode(SNode anchor, SModel model, String javaCode, IOperationContext operationContext, FeatureKind featureKind) {
     IModule module = model.getModelDescriptor().getModule();
     JavaCompiler javaCompiler = new JavaCompiler(operationContext, module, null, false, model);
-    List<SNode> nodes = javaCompiler.compileIsolated(javaCode);
+    List<SNode> nodes = javaCompiler.compileIsolated(javaCode, featureKind);
     NodePaster nodePaster = new NodePaster(nodes);
-    NodeAndRole nodeAndRole = nodePaster.getActualAnchorNode(anchor, anchor.getRole_());
-    if (nodeAndRole == null) return;
-    nodePaster.paste(nodeAndRole.myNode, PasteEnv.NODE_EDITOR);
+    if (featureKind != FeatureKind.CLASS) {
+      NodeAndRole nodeAndRole = nodePaster.getActualAnchorNode(anchor, anchor.getRole_());
+      if (nodeAndRole == null) return;
+      nodePaster.paste(nodeAndRole.myNode, PasteEnv.NODE_EDITOR);
+    } else {
+      nodePaster.pasteAsRoots(model);
+    }
   }
 }

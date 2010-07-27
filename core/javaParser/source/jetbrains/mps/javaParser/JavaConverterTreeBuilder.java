@@ -62,6 +62,7 @@ import java.lang.reflect.InvocationTargetException;
 public class JavaConverterTreeBuilder {
   private SModel myCurrentModel;
   private Map<String, SModel> myModelMap;
+  private boolean myIsolated = false;
 
   private Classifier myCurrentClass;
   private TypeDeclaration myCurrentTypeDeclaration;
@@ -1042,6 +1043,7 @@ public class JavaConverterTreeBuilder {
 
   private LocalVariableDeclaration getLocalVariableDeclaration(LocalDeclaration x) {
     LocalVariableDeclaration local = (LocalVariableDeclaration) myTypesProvider.getRaw(x.binding);
+    if (local == null) return null;
     jetbrains.mps.baseLanguage.structure.Expression initializer = processExpressionRefl(x.initialization);
     local.setInitializer(initializer);
     addVariableAnnotations(local, x);
@@ -1560,7 +1562,7 @@ public class JavaConverterTreeBuilder {
 
   // exec ==========================================================================
   public List<Classifier> exec(ReferentsCreator referentsCreator,
-                               Map<String, SModel> modelMap, boolean addtoModel) {
+                               Map<String, SModel> modelMap, boolean isolated) {
     List<Classifier> result = new ArrayList<Classifier>();
     // Construct the basic AST.
     myTypesProvider = referentsCreator.getTypesProvider();
@@ -1568,12 +1570,13 @@ public class JavaConverterTreeBuilder {
     myCurrentClass = null;
     myCurrentMethod = null;
     myCurrentModel = null;
+    myIsolated = isolated;
     for (TypeDeclaration type : referentsCreator.getClassifierTypeDecls()) {
       myCurrentModel = getModelByTypeDeclaration(type.binding);
       if (myCurrentModel != null) {
         Classifier classifier = processType(type);
         if (referentsCreator.isTopLevelClassifier(type)) {
-          if (addtoModel) {
+          if (!myIsolated) {
             myCurrentModel.addRoot(classifier);
           }
           result.add(classifier);
@@ -1587,6 +1590,9 @@ public class JavaConverterTreeBuilder {
   public SModel getModelByTypeDeclaration(SourceTypeBinding typeBinding) {
     if (typeBinding instanceof NestedTypeBinding) {
       return getModelByTypeDeclaration(((NestedTypeBinding)typeBinding).enclosingType);
+    }
+    if (myIsolated) {
+      return myModelMap.values().iterator().next();
     }
     String packageName = JavaCompiler.packageNameFromCompoundName(typeBinding.compoundName);
     SModel sModel = myModelMap.get(packageName);

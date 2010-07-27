@@ -4,6 +4,7 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Statement;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -21,6 +22,16 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class SourceWrapper {
+  private static Logger LOG = Logger.getLogger(SourceWrapper.class);
+/*  protected static String[] ourModifiers =
+    { "public",
+      "private",
+      "protected",
+      "final",
+      "synchronized"};
+
+  protected static String[]*/
+
   protected String mySource;
   protected String myWrappedSource;
   protected String myClassName;
@@ -31,9 +42,13 @@ public abstract class SourceWrapper {
     myModel = model;
   }
 
-  public static SourceWrapper wrapSource(String source, SModel model) {
-    //todo inspect source and return an appropriate wrapper
-    return new StatementsWrapper(source, model);
+  public static SourceWrapper wrapSource(String source, SModel model, FeatureKind featureKind) {
+    switch (featureKind) {
+      case CLASS: return new ClassWrapper(source, model);
+      case METHOD: return new MethodsWrapper(source, model);
+      case STATEMENTS: return new StatementsWrapper(source, model);
+      default: throw new IllegalArgumentException();
+    }
   }
 
   public abstract List<SNode> getOurNodesFromClassifier(Classifier classifier);
@@ -146,9 +161,25 @@ public abstract class SourceWrapper {
   }
 
   public static class ClassWrapper extends SourceWrapper {
-    public ClassWrapper(String source, SModel model, String shortClassName) {
+    public ClassWrapper(String source, SModel model) {
       super(source, model);
-      myClassName = shortClassName;
+      int index = source.indexOf("class");
+      if (index == -1) {
+        LOG.error("not a class");
+        myClassName = synthesizedClassName();
+      } else {
+        int i = index + "class".length();
+        while (Character.isWhitespace(source.charAt(i))) {
+          i++;
+        }
+        StringBuilder sb = new StringBuilder();
+        while (!(Character.isWhitespace(source.charAt(i))) && !(source.charAt(i) == '{')) {
+          char c = source.charAt(i);
+          sb.append(c);
+          i++;
+        }
+        myClassName = sb.toString();
+      }
       myWrappedSource = source;
     }
 
