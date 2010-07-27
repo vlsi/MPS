@@ -31,7 +31,6 @@ import java.util.List;
 import java.util.Map;
 
 public class PasteWrappersManager implements ApplicationComponent {
-
   public static PasteWrappersManager getInstance() {
     return ApplicationManager.getApplication().getComponent(PasteWrappersManager.class);
   }
@@ -42,32 +41,25 @@ public class PasteWrappersManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(PasteWrappersManager.class);
 
   private ClassLoaderManager myClassLoaderManager;
-  private MyReloadHandler myReloadHandler = new MyReloadHandler();
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void invalidateCaches() {
+      clear();
+    }
+  };
   private Map<String, Map<String, PasteWrapper>> myWrappers = new HashMap<String, Map<String, PasteWrapper>>();
+  private boolean myLoaded = false;
 
   public PasteWrappersManager(ClassLoaderManager classLoaderManager) {
     myClassLoaderManager = classLoaderManager;
   }
 
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Paste Wrapper Manager";
-  }
-
-  public void initComponent() {
-    myClassLoaderManager.addReloadHandler(myReloadHandler);
-  }
-
-  public void disposeComponent() {
-    myClassLoaderManager.removeReloadHandler(myReloadHandler);
-  }
-
   public boolean canWrapInto(SNode node, AbstractConceptDeclaration targetConcept) {
+    checkLoaded();
     return getWrapperFor(node, targetConcept) != null;
   }
 
   public SNode wrapInto(SNode node, AbstractConceptDeclaration targetConcept) {
+    checkLoaded();
     PasteWrapper wrapper = getWrapperFor(node, targetConcept);
     if (wrapper == null) {
       throw new IllegalStateException();
@@ -91,6 +83,37 @@ public class PasteWrappersManager implements ApplicationComponent {
     return null;
   }
 
+  //-------------reloading-----------------
+
+  private void checkLoaded(){
+    if (myLoaded) return;
+    myLoaded = true;
+    load();
+  }
+
+  private void load() {
+    for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
+      try {
+        String pasteWrappersClass = language.getNamespace() + "." + LanguageAspect.ACTIONS.getName() + "." + PASTE_WRAPPER_CLASS_NAME;
+        Class cls = language.getClass(pasteWrappersClass);
+        if (cls == null) continue;
+
+        List<PasteWrapper> wrappers = (List<PasteWrapper>) cls.getMethod(PASTE_WRAPPERS_FACTORY_METHOD).invoke(null);
+
+        for (PasteWrapper w : wrappers) {
+          addWrapper(w);
+        }
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  private void clear() {
+    myWrappers.clear();
+    myLoaded = false;
+  }
+
   private void addWrapper(PasteWrapper wrapper) {
     if (!myWrappers.containsKey(wrapper.getTargetConceptFqName())) {
       myWrappers.put(wrapper.getTargetConceptFqName(), new HashMap<String, PasteWrapper>());
@@ -98,27 +121,19 @@ public class PasteWrappersManager implements ApplicationComponent {
     myWrappers.get(wrapper.getTargetConceptFqName()).put(wrapper.getSourceConceptFqName(), wrapper);
   }
 
-  private class MyReloadHandler extends ReloadAdapter {
-    public void unload() {
-      myWrappers.clear();
-    }
+  //-------------component methods-----------------
 
-    public void load() {
-      for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
-        try {
-          String pasteWrappersClass = language.getNamespace() + "." + LanguageAspect.ACTIONS.getName() + "." + PASTE_WRAPPER_CLASS_NAME;
-          Class cls = language.getClass(pasteWrappersClass);
-          if (cls == null) continue;
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Paste Wrapper Manager";
+  }
 
-          List<PasteWrapper> wrappers = (List<PasteWrapper>) cls.getMethod(PASTE_WRAPPERS_FACTORY_METHOD).invoke(null);
+  public void initComponent() {
+    myClassLoaderManager.addReloadHandler(myReloadHandler);
+  }
 
-          for (PasteWrapper w : wrappers) {
-            addWrapper(w);
-          }
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
-      }
-    }
+  public void disposeComponent() {
+    myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 }
