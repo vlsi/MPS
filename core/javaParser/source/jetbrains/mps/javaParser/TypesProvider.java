@@ -154,6 +154,15 @@ public class TypesProvider {
         classifierType.setClassifier((Classifier) myReferentsCreator.myBindingMap.get(binding));
         return classifierType;
       }
+      if (binding instanceof MissingTypeBinding || binding instanceof ProblemReferenceBinding) {
+          ClassifierType classifierType = ClassifierType.newInstance(model);
+        ReferenceBinding missingTypeBinding = (ReferenceBinding) binding;
+        char[][] chars = missingTypeBinding.compoundName;
+        char[] name = chars[chars.length - 1];
+        SReference reference = createErrorReference(ClassifierType.CLASSIFIER, new String(name), classifierType.getNode());
+        classifierType.getNode().addReference(reference);
+        return classifierType;
+        }
       if (binding instanceof BinaryTypeBinding) {
         //in java stubs
         ClassifierType classifierType = ClassifierType.newInstance(model);
@@ -161,6 +170,7 @@ public class TypesProvider {
         SReference reference = createClassifierReference(binaryTypeBinding, ClassifierType.CLASSIFIER, classifierType.getNode());
         classifierType.getNode().addReference(reference);
         return classifierType;
+        }
       }
       if (binding instanceof TypeVariableBinding) {
         TypeVariableBinding typeVariableBinding = (TypeVariableBinding) binding;
@@ -173,16 +183,6 @@ public class TypesProvider {
         }
         return tvr;
       }
-      if (binding instanceof ProblemReferenceBinding) {
-        ClassifierType classifierType = ClassifierType.newInstance(model);
-        ProblemReferenceBinding problemReferenceBinding = (ProblemReferenceBinding) binding;
-        char[][] chars = problemReferenceBinding.compoundName;
-        char[] name = chars[chars.length - 1];
-        SReference reference = createErrorReference(ClassifierType.CLASSIFIER, new String(name), classifierType.getNode());
-        classifierType.getNode().addReference(reference);
-        return classifierType;
-      }
-    }
     return null;
   }
 
