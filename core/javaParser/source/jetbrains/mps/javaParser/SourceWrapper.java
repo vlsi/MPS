@@ -165,8 +165,7 @@ public abstract class SourceWrapper {
       super(source, model);
       int index = source.indexOf("class");
       if (index == -1) {
-        LOG.error("not a class");
-        myClassName = synthesizedClassName();
+        throw new ConversionFailedException("not a class");
       } else {
         int i = index + "class".length();
         while (Character.isWhitespace(source.charAt(i))) {

@@ -1325,6 +1325,7 @@ public class JavaConverterTreeBuilder {
 
   void addExceptionsToMethod(AbstractMethodDeclaration x) {
     MethodBinding b = x.binding;
+    if (b == null) return;
     BaseMethodDeclaration method = (BaseMethodDeclaration) myTypesProvider.getRaw(b);
     for (ReferenceBinding referenceBinding : b.thrownExceptions) {
       ClassifierType exceptionType = (ClassifierType) myTypesProvider.createType(referenceBinding);
@@ -1361,6 +1362,7 @@ public class JavaConverterTreeBuilder {
   void processMethod(AbstractMethodDeclaration x) {
     MethodBinding b = x.binding;
     BaseMethodDeclaration method = (BaseMethodDeclaration) myTypesProvider.getRaw(b);
+    if (method == null) return;
     try {
 
       if (x.isNative()) {

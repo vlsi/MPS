@@ -200,6 +200,7 @@ public class TypesProvider {
   }
 
   public SReference createMethodReference(MethodBinding binding, String role, SNode sourceNode) {
+    if (binding == null) return null;
     if (binding instanceof ParameterizedMethodBinding) {
       binding = ((ParameterizedMethodBinding) binding).original();
     }

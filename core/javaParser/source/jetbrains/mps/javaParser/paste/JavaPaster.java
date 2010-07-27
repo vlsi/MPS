@@ -3,6 +3,7 @@ package jetbrains.mps.javaParser.paste;
 import jetbrains.mps.datatransfer.NodePaster;
 import jetbrains.mps.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.datatransfer.PasteEnv;
+import jetbrains.mps.javaParser.ConversionFailedException;
 import jetbrains.mps.javaParser.FeatureKind;
 import jetbrains.mps.javaParser.JavaCompiler;
 import jetbrains.mps.logging.Logger;
@@ -11,6 +12,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
+import javax.swing.JOptionPane;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
@@ -65,14 +67,24 @@ public class JavaPaster {
   public void pasteJavaAsNode(SNode anchor, SModel model, String javaCode, IOperationContext operationContext, FeatureKind featureKind) {
     IModule module = model.getModelDescriptor().getModule();
     JavaCompiler javaCompiler = new JavaCompiler(operationContext, module, null, false, model);
-    List<SNode> nodes = javaCompiler.compileIsolated(javaCode, featureKind);
-    NodePaster nodePaster = new NodePaster(nodes);
-    if (featureKind != FeatureKind.CLASS) {
-      NodeAndRole nodeAndRole = nodePaster.getActualAnchorNode(anchor, anchor.getRole_());
-      if (nodeAndRole == null) return;
-      nodePaster.paste(nodeAndRole.myNode, PasteEnv.NODE_EDITOR);
-    } else {
-      nodePaster.pasteAsRoots(model);
+    try {
+      List<SNode> nodes = javaCompiler.compileIsolated(javaCode, featureKind);
+      if (nodes.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "nothing to paste as Java", "ERROR", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      NodePaster nodePaster = new NodePaster(nodes);
+      if (featureKind != FeatureKind.CLASS) {
+        NodeAndRole nodeAndRole = nodePaster.getActualAnchorNode(anchor, anchor.getRole_());
+        if (nodeAndRole == null) return;
+        nodePaster.paste(nodeAndRole.myNode, PasteEnv.NODE_EDITOR);
+      } else {
+        nodePaster.pasteAsRoots(model);
+      }
+    } catch (ConversionFailedException ex) {
+      JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
     }
+
+
   }
 }

@@ -322,7 +322,7 @@ public class ReferentsCreator {
       if (isEnumConstant) {
         createEnumField(b, enclosingClassifier);
       } else {
-        createField(b, enclosingClassifier);
+        createField(b, enclosingClassifier, new String(fieldDeclaration.name));
       }
       return true;
     }
@@ -340,13 +340,18 @@ public class ReferentsCreator {
 
     //either a Field or a StaticField
     private VariableDeclaration createField(FieldBinding binding,
-                                            Classifier enclosingClassifier) {
-      Type type = createType(binding.type);
-      assert (!binding.isFinal() || !binding.isVolatile());
+                                            Classifier enclosingClassifier,
+                                            String name) {
+      Type type = null;
+      if (binding != null) {
+        type = createType(binding.type);
+      }
       VariableDeclaration field;
-      if (!binding.isStatic()) {
+      if (binding == null || !binding.isStatic()) {
         jetbrains.mps.baseLanguage.structure.FieldDeclaration fieldDeclaration = jetbrains.mps.baseLanguage.structure.FieldDeclaration.newInstance(myReferentsCreator.myCurrentModel);
-        fieldDeclaration.setIsVolatile(binding.isVolatile());
+        if (binding != null) {
+          fieldDeclaration.setIsVolatile(binding.isVolatile());
+        }
         assert (enclosingClassifier instanceof ClassConcept);
         ((ClassConcept) enclosingClassifier).addField(fieldDeclaration);
         field = fieldDeclaration;
@@ -355,11 +360,13 @@ public class ReferentsCreator {
         field = staticFieldDeclaration;
         enclosingClassifier.addStaticField(staticFieldDeclaration);
       }
-      field.setIsFinal(binding.isFinal());
-      field.setType(type);
-      field.setName(new String(binding.name));
-      ((ClassifierMember)field).setVisibility(getFieldVisibility(binding));
-      myReferentsCreator.myBindingMap.put(binding, field);
+      if (binding != null) {
+        field.setIsFinal(binding.isFinal());
+        field.setType(type);
+        ((ClassifierMember)field).setVisibility(getFieldVisibility(binding));
+        myReferentsCreator.myBindingMap.put(binding, field);
+      }
+      field.setName(name);
       return field;
     }
 
@@ -417,18 +424,20 @@ public class ReferentsCreator {
     public boolean visit(MethodDeclaration methodDeclaration, ClassScope scope) {
       MethodBinding b = methodDeclaration.binding;
       Classifier enclosingClassifier = (Classifier) myReferentsCreator.myBindingMap.get(scope.enclosingSourceType());
-      BaseMethodDeclaration newMethod = processMethodBinding(b, enclosingClassifier, methodDeclaration instanceof AnnotationMethodDeclaration);
+      BaseMethodDeclaration newMethod = processMethodBinding(b, new String(methodDeclaration.selector), enclosingClassifier, methodDeclaration instanceof AnnotationMethodDeclaration);
       processMethodTypeParameters(methodDeclaration, newMethod);
-      newMethod.setReturnType(createType(b.returnType));
+      if (b != null) {
+        newMethod.setReturnType(createType(b.returnType));
+      }
       mapParameters(newMethod, methodDeclaration);
       return true;
     }
 
-    private BaseMethodDeclaration processMethodBinding(MethodBinding b, Classifier enclosingClassifier, boolean isAnnotation) {
+    private BaseMethodDeclaration processMethodBinding(MethodBinding b, String name, Classifier enclosingClassifier, boolean isAnnotation) {
       SModel model = myReferentsCreator.myCurrentModel;
 
       BaseMethodDeclaration result;
-      if (b.isStatic()) {
+      if (b != null && b.isStatic()) {
         StaticMethodDeclaration staticMethodDeclaration = StaticMethodDeclaration.newInstance(model);
         staticMethodDeclaration.setVisibility(getMethodVisibility(b));
         if (enclosingClassifier instanceof ClassConcept) {
@@ -440,14 +449,18 @@ public class ReferentsCreator {
         InstanceMethodDeclaration instanceMethodDeclaration = isAnnotation ?
           jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration.newInstance(model) :
           InstanceMethodDeclaration.newInstance(model);
-        instanceMethodDeclaration.setIsAbstract(b.isAbstract());
-        instanceMethodDeclaration.setVisibility(getMethodVisibility(b));
+        if (b != null) {
+          instanceMethodDeclaration.setIsAbstract(b.isAbstract());
+          instanceMethodDeclaration.setVisibility(getMethodVisibility(b));
+        }
         enclosingClassifier.addMethod(instanceMethodDeclaration);
         result = instanceMethodDeclaration;
       }
-      myReferentsCreator.myBindingMap.put(b, result);
-      result.setName(new String(b.selector));
-      result.setIsFinal(b.isFinal());
+      if (b != null) {
+        myReferentsCreator.myBindingMap.put(b, result);
+        result.setIsFinal(b.isFinal());
+      }
+      result.setName(name);
       return result;
     }
 
@@ -466,6 +479,7 @@ public class ReferentsCreator {
 
     private void mapParameters(BaseMethodDeclaration method, AbstractMethodDeclaration x) {
       MethodBinding b = x.binding;
+      if (b == null) return;
       int paramCount = (b.parameters != null ? b.parameters.length : 0);
       if (paramCount > 0) {
         for (int i = 0, n = x.arguments.length; i < n; ++i) {
