@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="ConceptFunctionParameter_SNode" conceptFQName="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_SNode" featureKind="CONCEPT" />
@@ -74,6 +75,10 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1161622665033">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" />
     </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099209750">
+      <property name="value:0" value="model of the reference node" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1161622753914">
     <property name="name:0" value="ConceptFunctionParameter_operationContext" />
@@ -91,6 +96,10 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1161622753918">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" />
     </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099217360">
+      <property name="value:0" value="IOperationContext" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1161622878565">
     <property name="name:0" value="ConceptFunctionParameter_scope" />
@@ -107,6 +116,10 @@
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1161622878569">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099209752">
+      <property name="value:0" value="context (IScope)" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="1161807239261">

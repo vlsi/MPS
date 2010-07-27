@@ -4062,7 +4062,7 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1147468428842">
-      <property name="value:0" value="function parameter" />
+      <property name="value:0" value="node in a question" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1178050882958">
@@ -4078,7 +4078,7 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1148685236406">
-      <property name="value:0" value="provider function" />
+      <property name="value:0" value="return list of nodes that can be referenced from given node" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" />
     </node>
   </node>
@@ -4160,7 +4160,7 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1148934636687">
-      <property name="value:0" value="function parameter" />
+      <property name="value:0" value="parent of the referenceNode, useful when the reference node is not defined yet (null)" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" />
     </node>
   </node>
@@ -4246,6 +4246,10 @@
       <property name="value:0" value="'referent set' event handler" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
     </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099217288">
+      <property name="value:0" value="executed on every link assignment" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1163200647017">
     <property name="package:0" value="Parameters" />
@@ -4257,6 +4261,10 @@
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1163286113890">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099209754">
+      <property name="value:0" value="node with the reference" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1163202640154">
@@ -4270,6 +4278,10 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1163286190254">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" />
     </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099217179">
+      <property name="value:0" value="new value of the reference" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1163202694127">
     <property name="package:0" value="Parameters" />
@@ -4282,11 +4294,19 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1163286231444">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" />
     </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099217171">
+      <property name="value:0" value="old value of the reference" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1202989531578">
     <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_CanBeAChild" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099217320">
+      <property name="value:0" value="return false if node cannot be a child of parentNode" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1202989590205">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target:0" targetNodeId="11.1161622753914:0" resolveInfo="ConceptFunctionParameter_operationContext" />
@@ -4323,6 +4343,10 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1202989658461">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099217343">
+      <property name="value:0" value="parent node to check" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1202989658462">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
       <node role="target:0" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1202989658463" />
@@ -4332,6 +4356,10 @@
     <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_CanBeAParent" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099222262">
+      <property name="value:0" value="return false if node cannot be a parent of given node" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1203001136099">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target:0" targetNodeId="11.1161622753914:0" resolveInfo="ConceptFunctionParameter_operationContext" />
@@ -4406,6 +4434,10 @@
       <property name="value:0" value="linkTarget" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099209756">
+      <property name="value:0" value="target concept (useful for specialized links)" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1153138554286">
     <property name="name:0" value="ConstraintsFunctionParameter_propertyValue" />
@@ -4416,7 +4448,7 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1153138586884">
-      <property name="value:0" value="function parameter" />
+      <property name="value:0" value="new value of the node" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" />
     </node>
   </node>
@@ -4547,6 +4579,10 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="3906442776579549646">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099217141">
+      <property name="value:0" value="node to present (target of the referenceNode's reference)" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3906442776579556545">
     <property name="package:0" value="Functions" />
@@ -4577,7 +4613,7 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3906442776579556547">
-      <property name="value:0" value="provider function" />
+      <property name="value:0" value="reference presentation in completion list (default - reference name)" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
     </node>
   </node>
@@ -4683,6 +4719,10 @@
       <property name="value:0" value="reference validity" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099217037">
+      <property name="value:0" value="return true if the reference is in scope" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2990203945683059368">
     <property name="package:0" value="Parameters" />
@@ -4697,6 +4737,10 @@
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="2990203945683059451">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1199886518837:3" resolveInfo="dontUseParameterObject" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099217021">
+      <property name="value:0" value="node to be validated" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
     </node>
   </node>
 </model>
