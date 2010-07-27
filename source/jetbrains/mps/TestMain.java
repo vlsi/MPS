@@ -283,7 +283,7 @@ public class TestMain {
     return testActionForLeaks(new Runnable() {
       public void run() {
         MPSProject project = loadProject(projectFile);
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator(), true);
         project.dispose();
       }
     }, leakThreshold);

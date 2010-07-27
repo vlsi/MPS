@@ -92,7 +92,7 @@ public class ClassLoaderManager implements ApplicationComponent {
     reloadAll(indicator, false);
   }
 
-  public void reloadAll(@NotNull ProgressIndicator indicator, boolean unload) {
+  public void reloadAll(@NotNull ProgressIndicator indicator, boolean unloadOnly) {
     LOG.assertCanWrite();
 
     indicator.pushState();
@@ -102,7 +102,7 @@ public class ClassLoaderManager implements ApplicationComponent {
 
       indicator.setText2("Disposing old classes...");
 
-      if (!unload) {
+      if (!unloadOnly) {
         indicator.setText2("Updating classpath...");
         updateClassPath();
 
@@ -120,7 +120,7 @@ public class ClassLoaderManager implements ApplicationComponent {
         }
       });
 
-      if (!unload) {
+      if (!unloadOnly) {
         callListeners(new ListenerCaller() {
           public void call(ReloadListener l) {
             l.load();
