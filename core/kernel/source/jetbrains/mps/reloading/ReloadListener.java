@@ -16,23 +16,14 @@
 package jetbrains.mps.reloading;
 
 public interface ReloadListener {
-  /**
-   * If you want to safely shut down services which depend on reloadable parts do it here.
-   * Do not clean caches here.
-   * <p/>
-   * Invariant: reloadable parts aren't touched
-   */
-  void onBeforeReload();
-
   //todo this method is to be removed (MPS-9411)
-  void invalidateCaches();
+  void unload();
 
   /**
    * If you want to clean caches/unload reloadable parts, do it here
    * <p/>
    * Postcondition : reloadable parts of current component are unloaded
    */
-  void unload();
 
   /**
    * If you want to load reloadable parts, do it here

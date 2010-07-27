@@ -74,7 +74,7 @@ public class CachesManager implements ApplicationComponent {
     });
 
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void invalidateCaches() {
+      public void unload() {
         removeAllCaches();
       }
     });

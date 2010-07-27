@@ -71,7 +71,7 @@ public abstract class TabbedUsagesTool extends BaseProjectTool implements INavig
 
     if (forceCloseOnReload()) {
       myReloadHandler = new ReloadAdapter() {
-        public void invalidateCaches() {
+        public void unload() {
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
               myContentManager.removeAllContents(true);

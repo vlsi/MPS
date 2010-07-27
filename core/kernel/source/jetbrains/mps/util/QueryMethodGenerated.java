@@ -199,7 +199,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void invalidateCaches() {
+      public void unload() {
         clearCaches();
       }
     });

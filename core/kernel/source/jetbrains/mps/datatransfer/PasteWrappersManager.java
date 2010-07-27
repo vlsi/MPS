@@ -42,7 +42,7 @@ public class PasteWrappersManager implements ApplicationComponent {
 
   private ClassLoaderManager myClassLoaderManager;
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
-    public void invalidateCaches() {
+    public void unload() {
       clear();
     }
   };

@@ -39,7 +39,7 @@ public class RuntimeUtils {
           MapSequence.fromMap(runtimeClassifiers).put(SPropertyOperations.getString(cls, "name"), cls);
         }
         ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
-          public void invalidateCaches() {
+          public void unload() {
             synchronized (RuntimeUtils.class) {
               RuntimeUtils.runtimeClassifiers = null;
             }

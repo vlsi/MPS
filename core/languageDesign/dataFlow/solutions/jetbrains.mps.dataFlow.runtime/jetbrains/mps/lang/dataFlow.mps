@@ -1506,7 +1506,7 @@
                     <link role="classifier:3" targetNodeId="10.~ReloadAdapter" resolveInfo="ReloadAdapter" />
                     <link role="baseMethodDeclaration:3" targetNodeId="10.~ReloadAdapter.&lt;init&gt;()" />
                     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4282822416100099122">
-                      <property name="name:3" value="invalidateCaches" />
+                      <property name="name:3" value="unload" />
                       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4282822416100099123" />
                       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4282822416100099124" />
                       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4282822416100099281">

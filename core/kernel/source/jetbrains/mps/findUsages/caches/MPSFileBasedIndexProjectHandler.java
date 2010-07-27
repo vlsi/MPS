@@ -46,7 +46,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
   private final FileBasedIndex myIndex;
   private Set<VirtualFile> myRootFiles = null;
   private ReloadListener myReloadHandler = new ReloadAdapter() {
-    public void invalidateCaches() {
+    public void unload() {
       myRootFiles = null;
     }
   };

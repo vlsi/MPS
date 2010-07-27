@@ -10,7 +10,7 @@ import jetbrains.mps.logging.Logger;
 
 public abstract class AbstractManager {
   private ReloadListener myReloadListener = new ReloadAdapter() {
-    public void invalidateCaches() {
+    public void unload() {
       AbstractManager.this.clearCaches();
     }
   };

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1058093769518980128">
-    <nodeInfo nodeId="7084145171935594026" fileName="AbstractManager.java" startLine="13" startPosition="36" endLine="14" endPosition="41" />
+    <nodeInfo nodeId="7084145171935594026" fileName="AbstractManager.java" startLine="13" startPosition="26" endLine="14" endPosition="41" />
     <nodeInfo nodeId="3138738821092035818" fileName="AbstractManager.java" startLine="18" startPosition="22" endLine="19" endPosition="72" />
     <nodeInfo nodeId="3138738821092036609" fileName="AbstractManager.java" startLine="22" startPosition="25" endLine="23" endPosition="75" />
     <nodeInfo nodeId="1058093769519031479" fileName="AbstractManager.java" startLine="28" startPosition="40" endLine="29" endPosition="31" />
@@ -32,7 +32,7 @@
     <nodeInfo nodeId="1058093769519031417" fileName="AbstractManager.java" startLine="46" startPosition="68" endLine="57" endPosition="9" />
     <nodeInfo nodeId="1058093769519031400" fileName="AbstractManager.java" startLine="44" startPosition="28" endLine="59" endPosition="7" />
     <nodeInfo nodeId="1058093769519031396" fileName="AbstractManager.java" startLine="43" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="7084145171935594022" fileName="AbstractManager.java" startLine="13" startPosition="36" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="7084145171935594022" fileName="AbstractManager.java" startLine="13" startPosition="26" endLine="14" endPosition="41" />
     <scopeInfo nodeId="1720905492960355661" fileName="AbstractManager.java" startLine="18" startPosition="22" endLine="19" endPosition="72" />
     <scopeInfo nodeId="1058093769518980216" fileName="AbstractManager.java" startLine="22" startPosition="25" endLine="23" endPosition="75" />
     <scopeInfo nodeId="1058093769519031420" fileName="AbstractManager.java" startLine="48" startPosition="15" endLine="49" endPosition="62" />

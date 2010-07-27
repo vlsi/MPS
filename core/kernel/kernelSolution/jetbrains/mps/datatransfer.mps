@@ -1189,7 +1189,7 @@
             <link role="baseMethodDeclaration:3" targetNodeId="9.~ReloadAdapter.&lt;init&gt;()" resolveInfo="ReloadAdapter" />
             <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7084145171935594014" />
             <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7084145171935594019">
-              <property name="name:3" value="invalidateCaches" />
+              <property name="name:3" value="unload" />
               <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7084145171935594020" />
               <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7084145171935594021" />
               <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7084145171935594022">

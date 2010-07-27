@@ -103,7 +103,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     });
 
     ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
-      public void invalidateCaches() {
+      public void unload() {
         clearAll();
       }
     });

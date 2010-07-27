@@ -101,11 +101,6 @@ public class ClassLoaderManager implements ApplicationComponent {
       indicator.setText("Reloading classes...");
 
       indicator.setText2("Disposing old classes...");
-      callListeners(new ListenerCaller() {
-        public void call(ReloadListener l) {
-          l.onBeforeReload();
-        }
-      });
 
       if (!unload) {
         indicator.setText2("Updating classpath...");
@@ -119,11 +114,6 @@ public class ClassLoaderManager implements ApplicationComponent {
       }
 
       indicator.setText2("Reloading classes...");
-      callListeners(new ListenerCaller() {
-        public void call(ReloadListener l) {
-          l.invalidateCaches();
-        }
-      });
       callListeners(new ListenerCaller() {
         public void call(ReloadListener l) {
           l.unload();
@@ -217,7 +207,7 @@ public class ClassLoaderManager implements ApplicationComponent {
 
   public void initComponent() {
     addReloadHandler(new ReloadAdapter() {
-      public void invalidateCaches() {
+      public void unload() {
         myRepository.invalidateCaches();
       }
     });

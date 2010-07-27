@@ -126,7 +126,7 @@ public class DesignPartLoader {
     }
     
     private class ReloadHandler extends ReloadAdapter {
-        public void invalidateCaches() {
+        public void unload() {
             clearCache();
         }
     }

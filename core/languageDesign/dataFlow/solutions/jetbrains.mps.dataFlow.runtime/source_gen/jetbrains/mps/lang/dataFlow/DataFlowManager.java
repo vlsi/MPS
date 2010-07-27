@@ -33,7 +33,7 @@ public class DataFlowManager implements ApplicationComponent {
 
   public void initComponent() {
     this.myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void invalidateCaches() {
+      public void unload() {
         DataFlowManager.this.refresh();
       }
     });

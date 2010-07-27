@@ -443,7 +443,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void invalidateCaches() {
+      public void unload() {
         clear();
       }
     });
