@@ -90,5 +90,9 @@ Google Web Toolkit
 http://code.google.com/webtoolkit/download.html
 Copyright (C) 2006 Google Inc
 
+XMLUnit
+http://xmlunit.sourceforge.net/
+Copyright (c) 2001-2009, Jeff Martin, Tim Bacon
+
 You can find licenses for these software
 in the %MPS_HOME%/license directory
