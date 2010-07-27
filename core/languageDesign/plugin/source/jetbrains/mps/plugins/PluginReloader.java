@@ -16,17 +16,13 @@
 package jetbrains.mps.plugins;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.library.LibraryManager;
-import jetbrains.mps.make.StartupModuleMaker;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.runconfigs.RunConfigManager;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
@@ -35,20 +31,8 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.SwingUtilities;
 
 public class PluginReloader implements ApplicationComponent {
-  private ReloadAdapter myReloadListener = new ReloadAdapter() {
-    public void onReload() {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          //write action is needed the because user can acquire write action inside of this [see MPS-9139]
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              reloadAllPlugins();
-            }
-          });
-        }
-      });
-    }
-  };
+  private ReloadAdapter myReloadListener = new MyReloadAdapter();
+
   private ProjectManagerAdapter myProjectListener = new ProjectManagerAdapter() {
     public void projectClosing(Project project) {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -63,15 +47,10 @@ public class PluginReloader implements ApplicationComponent {
   private ApplicationPluginManager myPluginManager;
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public PluginReloader(ClassLoaderManager classLoaderManager,ProjectManager projectManager,ApplicationPluginManager pluginManager) {
+  public PluginReloader(ClassLoaderManager classLoaderManager, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
     myClassLoaderManager = classLoaderManager;
     myProjectManager = projectManager;
     myPluginManager = pluginManager;
-  }
-
-  private void reloadAllPlugins() {
-    disposePlugins();
-    loadPlugins();
   }
 
   private void loadPlugins() {
@@ -112,5 +91,32 @@ public class PluginReloader implements ApplicationComponent {
   public void disposeComponent() {
     myProjectManager.removeProjectManagerListener(myProjectListener);
     myClassLoaderManager.removeReloadHandler(myReloadListener);
+  }
+
+  private class MyReloadAdapter extends ReloadAdapter {
+    public void unload() {
+      writeLater(new Runnable() {
+        public void run() {
+          disposePlugins();
+        }
+      });
+    }
+
+    public void load() {
+      writeLater(new Runnable() {
+        public void run() {
+          loadPlugins();
+        }
+      });
+    }
+
+    private void writeLater(final Runnable runnable) {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          //write action is needed the because user can acquire write action inside of this [see MPS-9139]
+          ModelAccess.instance().runWriteAction(runnable);
+        }
+      });
+    }
   }
 }

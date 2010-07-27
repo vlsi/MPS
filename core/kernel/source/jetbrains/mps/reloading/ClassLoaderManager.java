@@ -22,12 +22,11 @@ import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.stubs.StubReloadManager;
-import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -55,41 +54,11 @@ public class ClassLoaderManager implements ApplicationComponent {
     myRepository = repository;
   }
 
-  public void initComponent() {
-    addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
-        myRepository.invalidateCaches();
-      }
-    });
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Class Loader Manager";
-  }
-
-  public void disposeComponent() {
-  }
-
   public void init(LibraryManager libraryManager) {
     synchronized (myLock) {
       if (myRuntimeEnvironment == null) {
         myRuntimeEnvironment = createRuntimeEnvironment(libraryManager);
       }
-    }
-  }
-
-  private void addModule(ModuleReference ref) {
-    synchronized (myLock) {
-      IModule module = myRepository.getModule(ref);
-
-      if (module == null) {
-        throw new RuntimeException("Can't find module : " + ref.getModuleFqName());
-      }
-
-      RBundle<ModuleReference> bundle = new RBundle<ModuleReference>(ref, module.getBytecodeLocator());
-      myRuntimeEnvironment.add(bundle);
     }
   }
 
@@ -120,6 +89,10 @@ public class ClassLoaderManager implements ApplicationComponent {
   }
 
   public void reloadAll(@NotNull ProgressIndicator indicator) {
+    reloadAll(indicator, false);
+  }
+
+  public void reloadAll(@NotNull ProgressIndicator indicator, boolean unload) {
     LOG.assertCanWrite();
 
     indicator.pushState();
@@ -128,22 +101,49 @@ public class ClassLoaderManager implements ApplicationComponent {
       indicator.setText("Reloading classes...");
 
       indicator.setText2("Disposing old classes...");
-      callBeforeReloadHandlers();
+      callListeners(new ListenerCaller() {
+        public void call(ReloadListener l) {
+          l.onBeforeReload();
+        }
+      });
 
-      indicator.setText2("Updating classpath...");
-      updateClassPath();
+      if (!unload) {
+        indicator.setText2("Updating classpath...");
+        updateClassPath();
 
-      indicator.setText2("Refreshing models...");
-      SModelRepository.getInstance().refreshModels();
+        indicator.setText2("Refreshing models...");
+        SModelRepository.getInstance().refreshModels();
 
-      indicator.setText2("Updating stub models...");
-      StubReloadManager.getInstance().reload();
+        indicator.setText2("Updating stub models...");
+        StubReloadManager.getInstance().reload();
+      }
 
       indicator.setText2("Reloading classes...");
-      callReloadHandlers();
+      callListeners(new ListenerCaller() {
+        public void call(ReloadListener l) {
+          l.invalidateCaches();
+        }
+      });
+      callListeners(new ListenerCaller() {
+        public void call(ReloadListener l) {
+          l.unload();
+        }
+      });
 
-      indicator.setText2("Rebuilding ui...");
-      callAfterReloadHandlers();
+      if (!unload) {
+        callListeners(new ListenerCaller() {
+          public void call(ReloadListener l) {
+            l.load();
+          }
+        });
+
+        indicator.setText2("Rebuilding ui...");
+        callListeners(new ListenerCaller() {
+          public void call(ReloadListener l) {
+            l.onAfterReload();
+          }
+        });
+      }
     } finally {
       indicator.popState();
     }
@@ -200,9 +200,40 @@ public class ClassLoaderManager implements ApplicationComponent {
     }
   }
 
-  private RuntimeEnvironmentExt createRuntimeEnvironment(LibraryManager libraryManager) {
-    return new RuntimeEnvironmentExt(libraryManager);
+  private void addModule(ModuleReference ref) {
+    synchronized (myLock) {
+      IModule module = myRepository.getModule(ref);
+
+      if (module == null) {
+        throw new RuntimeException("Can't find module : " + ref.getModuleFqName());
+      }
+
+      RBundle<ModuleReference> bundle = new RBundle<ModuleReference>(ref, module.getBytecodeLocator());
+      myRuntimeEnvironment.add(bundle);
+    }
   }
+
+  //---------------component stuff------------------
+
+  public void initComponent() {
+    addReloadHandler(new ReloadAdapter() {
+      public void invalidateCaches() {
+        myRepository.invalidateCaches();
+      }
+    });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Class Loader Manager";
+  }
+
+  public void disposeComponent() {
+
+  }
+
+  //---------------reload handlers------------------
 
   public void addReloadHandler(ReloadListener handler) {
     myReloadHandlers.add(handler);
@@ -212,34 +243,24 @@ public class ClassLoaderManager implements ApplicationComponent {
     myReloadHandlers.remove(handler);
   }
 
-  private void callBeforeReloadHandlers() {
-    for (ReloadListener h : myReloadHandlers) {
+  private void callListeners(ListenerCaller caller) {
+    for (ReloadListener listener : myReloadHandlers) {
       try {
-        h.onBeforeReload();
+        caller.call(listener);
       } catch (Throwable t) {
         LOG.error(t);
       }
     }
   }
 
-  private void callReloadHandlers() {
-    for (ReloadListener h : myReloadHandlers) {
-      try {
-        h.onReload();
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
+  private interface ListenerCaller {
+    void call(ReloadListener l);
   }
 
-  private void callAfterReloadHandlers() {
-    for (ReloadListener h : myReloadHandlers) {
-      try {
-        h.onAfterReload();
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
+  //---------------runtime environment------------------
+
+  private RuntimeEnvironmentExt createRuntimeEnvironment(LibraryManager libraryManager) {
+    return new RuntimeEnvironmentExt(libraryManager);
   }
 
   private class RuntimeEnvironmentExt extends RuntimeEnvironment<ModuleReference> {
@@ -330,7 +351,7 @@ public class ClassLoaderManager implements ApplicationComponent {
           }
         }
 
-        for (SModelDescriptor model:l.getUtilModels()){
+        for (SModelDescriptor model : l.getUtilModels()) {
           myExcludedPackages.add(model.getLongName());
         }
 
@@ -344,6 +365,5 @@ public class ClassLoaderManager implements ApplicationComponent {
       }
     }
   }
-
 }
                                           

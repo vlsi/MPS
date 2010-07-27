@@ -428,10 +428,12 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      @Override
-      public void onReload() {
+      public void unload() {
         dispose();
-        load();
+      }
+
+      public void load() {
+        IntentionsManager.this.load();
       }
     });
   }

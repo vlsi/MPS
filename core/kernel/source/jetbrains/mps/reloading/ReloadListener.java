@@ -24,13 +24,23 @@ public interface ReloadListener {
    */
   void onBeforeReload();
 
+  //todo this method is to be removed (MPS-9411)
+  void invalidateCaches();
+
   /**
-   * If you want to clean caches/reinstantiate reloadable parts, do it here. For example,
-   * constraints are reloaded in this mehtod
+   * If you want to clean caches/unload reloadable parts, do it here
    * <p/>
-   * Postcondition : reloadable parts of current component should be reinitialized under a new classloader
+   * Postcondition : reloadable parts of current component are unloaded
    */
-  void onReload();
+  void unload();
+
+  /**
+   * If you want to load reloadable parts, do it here
+   * <p/>
+   * Precondition : reloadable parts of current component are be unloaded
+   * Postcondition : reloadable parts of current component loaded under a new classloader
+   */
+  void load();
 
   /**
    * If you want to update UI after reload do it here.

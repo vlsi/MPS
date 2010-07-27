@@ -55,8 +55,8 @@ public class EditorsFinderManager implements ApplicationComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
-        clear();
+      public void invalidateCaches() {
+        clearCaches();
       }
     });
   }
@@ -216,7 +216,7 @@ public class EditorsFinderManager implements ApplicationComponent {
     }
   }
 
-  private void clear() {
+  private void clearCaches() {
     synchronized (myLock) {
       myCachedEditors.clear();
     }

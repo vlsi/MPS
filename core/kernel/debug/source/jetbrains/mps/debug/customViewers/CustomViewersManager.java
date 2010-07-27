@@ -20,12 +20,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * Date: 21.06.2010
- * Time: 19:17:53
- * To change this template use File | Settings | File Templates.
- */
 public class CustomViewersManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(CustomViewersManager.class);
 
@@ -39,7 +33,7 @@ public class CustomViewersManager implements ApplicationComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
+      public void invalidateCaches() {
         clear();
       }
     });

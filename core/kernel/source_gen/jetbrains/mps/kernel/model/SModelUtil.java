@@ -50,7 +50,7 @@ public class SModelUtil {
 
   public static void startListeningOnce(ClassLoaderManager clManager, GlobalSModelEventsManager meManager) {
     clManager.addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
+      public void clearCaches() {
         MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).clear();
         MapSequence.fromMap(SModelUtil.myConceptToLanguage).clear();
       }

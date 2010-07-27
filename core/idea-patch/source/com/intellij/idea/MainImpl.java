@@ -210,9 +210,8 @@ public class MainImpl {
   }
 
   private static boolean ensureNonServerVMVersion() {
-    if (InternalFlag.isInternalMode()) {
-      return true;
-    }
+    if (InternalFlag.isInternalMode()) return true;
+    
     String vmName = System.getProperty("java.vm.name");
     if (!vmName.toLowerCase().contains("server")) return true;
 

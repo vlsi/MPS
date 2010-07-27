@@ -28,6 +28,7 @@ import com.intellij.openapi.fileEditor.FileEditorManagerAdapter;
 import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.ActionCallback;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
@@ -174,10 +175,12 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public JComponent createComponent() {
-    if (myScrollPane != null) {
-      return myScrollPane;
-    }
-    myTree = new ProjectPaneTree(this, myProject);
+    if (myScrollPane != null) return myScrollPane;
+
+    ProjectPaneTree tree = new ProjectPaneTree(this, myProject);
+    Disposer.register(this, tree);
+    myTree = tree;
+
     myScrollPane = new MyScrollPane(getTree());
     addListeners();
     if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
@@ -217,7 +220,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public void selectModule(@NotNull final IModule module) {
-    selectModule(module, false); 
+    selectModule(module, false);
   }
 
   private void selectModule(@NotNull final IModule module, final boolean autoFocusContents) {
@@ -237,7 +240,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
           }
         }, autoFocusContents);
       }
-    });    
+    });
   }
 
   public void selectModel(@NotNull final SModelDescriptor model) {

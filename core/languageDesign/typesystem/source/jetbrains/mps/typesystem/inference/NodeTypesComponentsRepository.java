@@ -80,7 +80,7 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
+      public void invalidateCaches() {
         clear();
       }
     });

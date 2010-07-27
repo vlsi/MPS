@@ -36,7 +36,7 @@ class UnregisteredNodesWithAdapters {
 
   UnregisteredNodesWithAdapters() {
     ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
+      public void invalidateCaches() {
         synchronized (myLock) {
           for (SNode node : myNodes) {
             node.clearAdapter();

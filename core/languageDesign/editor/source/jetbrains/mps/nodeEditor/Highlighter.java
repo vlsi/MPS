@@ -70,7 +70,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private List<IEditor> myAdditionalEditors = new ArrayList<IEditor>();
 
   private ReloadListener myReloadListener = new ReloadAdapter() {
-    public void onReload() {
+    public void invalidateCaches() {
       myCheckedOnceEditors.clear();
       myCheckedOnceInspectors.clear();
       clearAdditionalEditors();

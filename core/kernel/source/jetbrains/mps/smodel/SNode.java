@@ -1809,28 +1809,28 @@ public final class SNode {
     BaseAdapter adapter = myAdapter;
     if(adapter != null) return adapter;
     Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
-    if (c != null) {
-      synchronized (this) {
-        adapter = myAdapter;
-        if (adapter != null) return adapter;
-        try {
-          adapter = (BaseAdapter) c.newInstance(this);
-          assert adapter.getNode() == this;
+    if (c == null) return new BaseConcept(this);
 
-          if (!myRegisteredInModelFlag) {
-            UnregisteredNodesWithAdapters.getInstance().add(this);
-          }
-          myAdapter = adapter;
-          return adapter;
-        } catch (IllegalAccessException e) {
-          LOG.error(e);
-        } catch (InvocationTargetException e) {
-          LOG.error(e);
-        } catch (InstantiationException e) {
-          LOG.error(e);
-        } catch (Throwable t) {
-          LOG.error(t);
+    synchronized (this) {
+      adapter = myAdapter;
+      if (adapter != null) return adapter;
+      try {
+        adapter = (BaseAdapter) c.newInstance(this);
+        assert adapter.getNode() == this;
+
+        if (!myRegisteredInModelFlag) {
+          UnregisteredNodesWithAdapters.getInstance().add(this);
         }
+        myAdapter = adapter;
+        return adapter;
+      } catch (IllegalAccessException e) {
+        LOG.error(e);
+      } catch (InvocationTargetException e) {
+        LOG.error(e);
+      } catch (InstantiationException e) {
+        LOG.error(e);
+      } catch (Throwable t) {
+        LOG.error(t);
       }
     }
     return new BaseConcept(this);

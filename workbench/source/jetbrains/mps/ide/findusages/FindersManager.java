@@ -51,10 +51,12 @@ public class FindersManager implements ApplicationComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      @Override
-      public void onReload() {
+      public void unload() {
         dispose();
-        load();
+      }
+
+      public void load() {
+        FindersManager.this.load();
       }
     });
   }

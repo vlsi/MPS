@@ -81,7 +81,7 @@ public class TypeChecker implements ApplicationComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
+      public void invalidateCaches() {
         clearForReload();
       }
     });

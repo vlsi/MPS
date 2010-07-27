@@ -54,12 +54,8 @@ public class LanguagesKeymapManager implements ApplicationComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            clearCaches();
-          }
-        });
+      public void invalidateCaches() {
+        clearCaches();
       }
     });
 

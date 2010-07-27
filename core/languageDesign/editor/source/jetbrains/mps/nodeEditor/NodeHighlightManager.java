@@ -60,7 +60,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   public NodeHighlightManager(@NotNull EditorComponent edtitor) {
     myEditor = edtitor;
     myHandler = new ReloadAdapter() {
-      public void onReload() {
+      public void unload() {
         clear();
       }
     };
@@ -243,9 +243,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
   private void clear() {
     synchronized (myMessagesLock) {
-      if (myMessages.isEmpty()) {
-        return;
-      }
+      if (myMessages.isEmpty()) return;
       for (EditorMessage m : new ArrayList<EditorMessage>(myMessages)) {
         removeMessage(m);
       }

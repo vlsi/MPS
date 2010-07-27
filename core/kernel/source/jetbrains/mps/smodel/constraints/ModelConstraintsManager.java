@@ -103,8 +103,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
     });
 
     ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
-        reloadAll();
+      public void invalidateCaches() {
+        clearAll();
       }
     });
   }
@@ -455,7 +455,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
-  private void reloadAll() {
+  private void clearAll() {
     synchronized (myCanBeChildMethods) {
       myCanBeChildMethods.clear();
     }
