@@ -176,7 +176,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
         MPSModuleRepository.getInstance().removeUnusedModules();
         SModelRepository.getInstance().removeUnusedDescriptors();
         if (reloadAll) {
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator(), false);
         }
 
         CleanupManager.getInstance().cleanup();
@@ -190,7 +190,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
       }
     }
   }
-  
+
   //--modules
 
   @NotNull
@@ -254,7 +254,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
   public void update() {
     setProjectDescriptor(getProjectDescriptor());
   }
-  
+
   public void setProjectDescriptor(final @NotNull ProjectDescriptor descriptor) {
     MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
