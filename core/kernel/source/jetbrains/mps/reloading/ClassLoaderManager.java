@@ -22,12 +22,11 @@ import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.stubs.StubReloadManager;
-import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -89,13 +88,11 @@ public class ClassLoaderManager implements ApplicationComponent {
     }
   }
 
-  @Deprecated
   public void reloadAll(@NotNull ProgressIndicator indicator) {
-    unloadAll(indicator);
-    loadAll(indicator);
+    reloadAll(indicator, false);
   }
 
-  public void unloadAll(ProgressIndicator indicator) {
+  public void reloadAll(@NotNull ProgressIndicator indicator, boolean unload) {
     LOG.assertCanWrite();
 
     indicator.pushState();
@@ -104,34 +101,49 @@ public class ClassLoaderManager implements ApplicationComponent {
       indicator.setText("Reloading classes...");
 
       indicator.setText2("Disposing old classes...");
-      callBeforeReloadHandlers();
-    } finally {
-      indicator.popState();
-    }
-  }
+      callListeners(new ListenerCaller() {
+        public void call(ReloadListener l) {
+          l.onBeforeReload();
+        }
+      });
 
-  public void loadAll(ProgressIndicator indicator) {
-    LOG.assertCanWrite();
+      if (!unload) {
+        indicator.setText2("Updating classpath...");
+        updateClassPath();
 
-    indicator.pushState();
-    try {
-      indicator.setIndeterminate(true);
-      indicator.setText("Reloading classes...");
+        indicator.setText2("Refreshing models...");
+        SModelRepository.getInstance().refreshModels();
 
-      indicator.setText2("Updating classpath...");
-      updateClassPath();
-
-      indicator.setText2("Refreshing models...");
-      SModelRepository.getInstance().refreshModels();
-
-      indicator.setText2("Updating stub models...");
-      StubReloadManager.getInstance().reload();
+        indicator.setText2("Updating stub models...");
+        StubReloadManager.getInstance().reload();
+      }
 
       indicator.setText2("Reloading classes...");
-      callReloadHandlers();
+      callListeners(new ListenerCaller() {
+        public void call(ReloadListener l) {
+          l.invalidateCaches();
+        }
+      });
+      callListeners(new ListenerCaller() {
+        public void call(ReloadListener l) {
+          l.unload();
+        }
+      });
 
-      indicator.setText2("Rebuilding ui...");
-      callAfterReloadHandlers();
+      if (!unload) {
+        callListeners(new ListenerCaller() {
+          public void call(ReloadListener l) {
+            l.load();
+          }
+        });
+
+        indicator.setText2("Rebuilding ui...");
+        callListeners(new ListenerCaller() {
+          public void call(ReloadListener l) {
+            l.onAfterReload();
+          }
+        });
+      }
     } finally {
       indicator.popState();
     }
@@ -231,48 +243,18 @@ public class ClassLoaderManager implements ApplicationComponent {
     myReloadHandlers.remove(handler);
   }
 
-  private void callBeforeReloadHandlers() {
-    for (ReloadListener h : myReloadHandlers) {
+  private void callListeners(ListenerCaller caller) {
+    for (ReloadListener listener : myReloadHandlers) {
       try {
-        h.onBeforeReload();
+        caller.call(listener);
       } catch (Throwable t) {
         LOG.error(t);
       }
     }
   }
 
-  private void callReloadHandlers() {
-    for (ReloadListener h : myReloadHandlers) {
-      try {
-        h.invalidateCaches();
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-    for (ReloadListener h : myReloadHandlers) {
-      try {
-        h.unload();
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-    for (ReloadListener h : myReloadHandlers) {
-      try {
-        h.load();
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void callAfterReloadHandlers() {
-    for (ReloadListener h : myReloadHandlers) {
-      try {
-        h.onAfterReload();
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
+  private interface ListenerCaller {
+    void call(ReloadListener l);
   }
 
   //---------------runtime environment------------------
@@ -369,7 +351,7 @@ public class ClassLoaderManager implements ApplicationComponent {
           }
         }
 
-        for (SModelDescriptor model:l.getUtilModels()){
+        for (SModelDescriptor model : l.getUtilModels()) {
           myExcludedPackages.add(model.getLongName());
         }
 

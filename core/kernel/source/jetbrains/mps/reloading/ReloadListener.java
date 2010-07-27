@@ -24,6 +24,7 @@ public interface ReloadListener {
    */
   void onBeforeReload();
 
+  //todo this method is to be removed (MPS-9411)
   void invalidateCaches();
 
   /**
