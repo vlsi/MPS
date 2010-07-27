@@ -16,14 +16,12 @@
 package jetbrains.mps.reloading;
 
 public interface ReloadListener {
-  //todo this method is to be removed (MPS-9411)
-  void unload();
-
   /**
    * If you want to clean caches/unload reloadable parts, do it here
    * <p/>
    * Postcondition : reloadable parts of current component are unloaded
    */
+  void unload();
 
   /**
    * If you want to load reloadable parts, do it here
