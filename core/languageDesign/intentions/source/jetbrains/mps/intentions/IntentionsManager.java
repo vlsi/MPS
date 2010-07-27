@@ -66,6 +66,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   private Set<Intention> myDisabledIntentionsCache = new HashSet<Intention>();
   private HashMap<Class, Language> myIntentionsLanguages = new HashMap<Class, Language>();
   private boolean myCachesAreValid = false;
+  private boolean myLoaded = false;
 
   private MyState myState = new MyState();
 
@@ -76,6 +77,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   public Collection<Pair<Intention, SNode>> getAvailableIntentions(final QueryDescriptor query, final SNode node, final EditorContext context) {
+    checkLoaded();
     Computable<Set<Pair<Intention, SNode>>> computable = new Computable<Set<Pair<Intention, SNode>>>() {
       public Set<Pair<Intention, SNode>> compute() {
         Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
@@ -108,6 +110,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   public boolean intentionIsDisabled(Intention intention) {
+    checkLoaded();
     return getDisabledIntentions().contains(intention);
   }
 
@@ -232,11 +235,13 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   public void disableIntention(Intention intention) {
+    checkLoaded();
     myState.myDisabledIntentions.add(intention.getClass().getName());
     myDisabledIntentionsCache.add(intention);
   }
 
   public void enableIntention(Intention intention) {
+    checkLoaded();
     myState.myDisabledIntentions.remove(intention.getClass().getName());
     myDisabledIntentionsCache.remove(intention);
   }
@@ -244,11 +249,13 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   //-------------node info by intention-----------------
 
   public Language getIntentionLanguage(Intention intention) {
+    checkLoaded();
     return myIntentionsLanguages.get(intention.getClass());
   }
 
   @Nullable
   public SNode getNodeByIntention(Intention intention) {
+    checkLoaded();
     SNode sNode = myNodesByIntentions.get(intention);
     if (sNode == null) {
       return intention.getNodeByIntention();
@@ -258,29 +265,37 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   @NotNull
   public Set<Intention> getAllIntentions() {
+    checkLoaded();
     return Collections.unmodifiableSet(myNodesByIntentions.keySet());
   }
 
   //-------------reloading-----------------
 
-  public void dispose() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        myIntentions.clear();
-        myNodesByIntentions.clear();
-        myIntentionsLanguages.clear();
-        invalidateCaches();
-      }
-    });
+  private void checkLoaded(){
+    if (myLoaded) return;
+    myLoaded = true;
+    load();
   }
 
-  public void load() {
+  private void load() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
           addIntentionsFromLanguage(language);
           addMigrationsFromLanguage(language);
         }
+      }
+    });
+  }
+
+  private void clear() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myIntentions.clear();
+        myNodesByIntentions.clear();
+        myIntentionsLanguages.clear();
+        invalidateCaches();
+        myLoaded = false;
       }
     });
   }
@@ -428,12 +443,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        dispose();
-      }
-
-      public void load() {
-        IntentionsManager.this.load();
+      public void invalidateCaches() {
+        clear();
       }
     });
   }
