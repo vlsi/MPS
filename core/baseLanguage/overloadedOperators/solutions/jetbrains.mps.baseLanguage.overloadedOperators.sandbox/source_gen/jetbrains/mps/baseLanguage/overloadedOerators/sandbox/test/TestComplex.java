@@ -18,6 +18,5 @@ public class TestComplex {
     b.print();
     c.print();
     d.print();
-    c.equals("d");
   }
 }

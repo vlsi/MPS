@@ -308,7 +308,6 @@
   <node type="jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer" id="4226637275972869620">
     <property name="name" value="ComplexOperators" />
     <node role="operators" type="jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator" id="4226637275972873397">
-      <link role="operator" targetNodeId="2.1068581242875:3" resolveInfo="PlusExpression" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4226637275972873404">
         <link role="classifier:3" targetNodeId="4226637275972869608" resolveInfo="Complex" />
       </node>
@@ -376,9 +375,11 @@
           </node>
         </node>
       </node>
+      <node role="operator" type="jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference" id="509285016998751535">
+        <link role="binaryOperation" targetNodeId="2.1068581242875:3" resolveInfo="PlusExpression" />
+      </node>
     </node>
     <node role="operators" type="jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator" id="162210779026732085">
-      <link role="operator" targetNodeId="2.1092119917967:3" resolveInfo="MulExpression" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="162210779026732092">
         <link role="classifier:3" targetNodeId="4226637275972869608" resolveInfo="Complex" />
       </node>
@@ -478,9 +479,11 @@
           </node>
         </node>
       </node>
+      <node role="operator" type="jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference" id="509285016998751537">
+        <link role="binaryOperation" targetNodeId="2.1092119917967:3" resolveInfo="MulExpression" />
+      </node>
     </node>
     <node role="operators" type="jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator" id="6517886960437940037">
-      <link role="operator" targetNodeId="2.1068581242875:3" resolveInfo="PlusExpression" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6517886960437940044">
         <link role="classifier:3" targetNodeId="6517886960437939909" resolveInfo="Complex2" />
       </node>
@@ -548,9 +551,11 @@
           </node>
         </node>
       </node>
+      <node role="operator" type="jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference" id="4026654690899337443">
+        <link role="binaryOperation" targetNodeId="2.1068581242875:3" resolveInfo="PlusExpression" />
+      </node>
     </node>
     <node role="operators" type="jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator" id="6517886960437940072">
-      <link role="operator" targetNodeId="2.1068581242875:3" resolveInfo="PlusExpression" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6517886960437940079">
         <link role="classifier:3" targetNodeId="6517886960437939909" resolveInfo="Complex2" />
       </node>
@@ -617,6 +622,9 @@
             <link role="variableDeclaration:3" targetNodeId="6517886960437940082" resolveInfo="res" />
           </node>
         </node>
+      </node>
+      <node role="operator" type="jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference" id="4026654690899337444">
+        <link role="binaryOperation" targetNodeId="2.1068581242875:3" resolveInfo="PlusExpression" />
       </node>
     </node>
   </node>
