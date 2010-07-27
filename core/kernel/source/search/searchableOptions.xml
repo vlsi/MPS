@@ -1429,12 +1429,10 @@
     <option name="occurrence" hit="Next Occurrence" />
     <option name="documentation" hit="Online Documentation" />
     <option name="online" hit="Online Documentation" />
-    <option name="complex" hit="Open Complex Numbers Support Language's Project" />
-    <option name="language" hit="Open Complex Numbers Support Language's Project" />
-    <option name="numbers" hit="Open Complex Numbers Support Language's Project" />
-    <option name="open" hit="Open Complex Numbers Support Language's Project" />
-    <option name="project" hit="Open Complex Numbers Support Language's Project" />
-    <option name="support" hit="Open Complex Numbers Support Language's Project" />
+    <option name="complex" hit="Open Complex Numbers Project" />
+    <option name="numbers" hit="Open Complex Numbers Project" />
+    <option name="open" hit="Open Complex Numbers Project" />
+    <option name="project" hit="Open Complex Numbers Project" />
     <option name="file" hit="Open File..." />
     <option name="open" hit="Open File..." />
     <option name="mps" hit="Open MPS Project" />
@@ -1442,11 +1440,11 @@
     <option name="project" hit="Open MPS Project" />
     <option name="open" hit="Open Project..." />
     <option name="project" hit="Open Project..." />
-    <option name="language" hit="Open The Simplest Language's Project" />
-    <option name="open" hit="Open The Simplest Language's Project" />
-    <option name="project" hit="Open The Simplest Language's Project" />
-    <option name="simplest" hit="Open The Simplest Language's Project" />
-    <option name="the" hit="Open The Simplest Language's Project" />
+    <option name="language" hit="Open The Simplest Language Project" />
+    <option name="open" hit="Open The Simplest Language Project" />
+    <option name="project" hit="Open The Simplest Language Project" />
+    <option name="simplest" hit="Open The Simplest Language Project" />
+    <option name="the" hit="Open The Simplest Language Project" />
     <option name="an" hit="Open an existing project" />
     <option name="existing" hit="Open an existing project" />
     <option name="open" hit="Open an existing project" />
@@ -1946,16 +1944,13 @@
     <option name="line" hit="Show Line Numbers" />
     <option name="numbers" hit="Show Line Numbers" />
     <option name="show" hit="Show Line Numbers" />
-    <option name="documentation" hit="Show MPS Documentation" />
-    <option name="mps" hit="Show MPS Documentation" />
-    <option name="show" hit="Show MPS Documentation" />
-    <option name="show" hit="Show Source" />
+
+    <option name="documentation" hit="Browse MPS Documentation" />
+    <option name="mps" hit="Browse MPS Documentation" />
+    <option name="browse" hit="Browse MPS Documentation" />
     <option name="source" hit="Show Source" />
-    <option name="language" hit="Show The Simplest Language Screencast" />
-    <option name="screencast" hit="Show The Simplest Language Screencast" />
-    <option name="show" hit="Show The Simplest Language Screencast" />
-    <option name="simplest" hit="Show The Simplest Language Screencast" />
-    <option name="the" hit="Show The Simplest Language Screencast" />
+    <option name="tutorial" hit="Read The Tutorial" />
+    <option name="read" hit="Read The Tutorial" />    
     <option name="day" hit="Show Tips of the Day" />
     <option name="of" hit="Show Tips of the Day" />
     <option name="show" hit="Show Tips of the Day" />
