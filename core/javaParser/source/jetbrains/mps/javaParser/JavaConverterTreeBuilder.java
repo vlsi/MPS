@@ -587,6 +587,16 @@ public class JavaConverterTreeBuilder {
     }
   }
 
+  private jetbrains.mps.baseLanguage.structure.Expression fieldReferenceFromProblem(ProblemBinding binding, String firstName, String secondName) {
+    StaticFieldReference sfr = StaticFieldReference.newInstance(myCurrentModel);
+    SNode sourceNode = sfr.getNode();
+    // role = StaticFieldReference.VARIABLE_DECLARATION;
+    sourceNode.addReference(myTypesProvider.createErrorReference(StaticFieldReference.CLASSIFIER, firstName, sourceNode));
+    sourceNode.addReference(myTypesProvider.createErrorReference(
+      StaticFieldReference.VARIABLE_DECLARATION, secondName, sourceNode));
+    return sfr;
+  }
+
   private jetbrains.mps.baseLanguage.structure.Expression expressionFromFieldBinding(FieldBinding fieldBinding, jetbrains.mps.baseLanguage.structure.Expression instanceExpression) {
     String role;
     SNode sourceNode;
@@ -915,7 +925,9 @@ public class JavaConverterTreeBuilder {
 
     jetbrains.mps.baseLanguage.structure.Expression result;
 
-    if (binding instanceof FieldBinding) {
+    if (binding instanceof ProblemBinding) {
+      result = fieldReferenceFromProblem((ProblemBinding) binding, new String(x.tokens[0]), new String(x.tokens[1]));
+    } else if (binding instanceof FieldBinding) {
       result = expressionFromFieldBinding((FieldBinding) binding, null);
     } else {
       result = varFromVariableBinding(binding);
