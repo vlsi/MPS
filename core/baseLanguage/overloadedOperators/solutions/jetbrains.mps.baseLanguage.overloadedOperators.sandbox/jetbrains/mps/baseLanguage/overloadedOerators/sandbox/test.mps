@@ -288,6 +288,44 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4888428037514421011">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4888428037514421012">
+            <property name="name:3" value="str" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4888428037514421013" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4888428037514421015">
+              <property name="value:3" value="str" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4888428037514503266" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4888428037514423986">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4888428037514423987">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4888428037514423988" />
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage" id="4888428037514423995">
+            <link role="operator" targetNodeId="4888428037514503252" resolveInfo="&gt;-" />
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4888428037514503259">
+              <property name="value:3" value="abc" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4888428037514423992">
+              <link role="variableDeclaration:3" targetNodeId="4888428037514421012" resolveInfo="str" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4888428037514503267" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4888428037514503268" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4888428037514503289">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4888428037514503290">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4888428037514503291" />
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage" id="4888428037514503300">
+            <link role="operator" targetNodeId="4888428037514503252" resolveInfo="&gt;-" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4888428037514503293">
+              <link role="variableDeclaration:3" targetNodeId="4888428037514421012" resolveInfo="str" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="4888428037514503298" />
+          </node>
+        </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4226637275972870388">
         <property name="name:3" value="args" />
@@ -728,6 +766,31 @@
     </node>
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6517886960437939915">
       <link role="classifier:3" targetNodeId="4226637275972869608" resolveInfo="Complex" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer" id="4888428037514503250">
+    <property name="name" value="StringOperators" />
+    <node role="operators" type="jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator" id="4888428037514503269">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="4888428037514503277" />
+      <node role="leftType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4888428037514503275" />
+      <node role="rightType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4888428037514503276" />
+      <node role="operator" type="jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator" id="4888428037514503287">
+        <link role="declaration" targetNodeId="4888428037514503252" resolveInfo="&gt;-" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4888428037514503274">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4888428037514503278">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4888428037514503281">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand" id="4888428037514503280" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4888428037514503285">
+              <link role="baseMethodDeclaration:3" targetNodeId="2v.~String.contains(java.lang.CharSequence):boolean" resolveInfo="contains" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand" id="4888428037514503286" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="customOperators" type="jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration" id="4888428037514503252">
+      <property name="name" value="&gt;-" />
     </node>
   </node>
 </model>

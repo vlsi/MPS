@@ -6,9 +6,9 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" />
-      <solutionPath path="${project}/solutions/sandbox/jetbrains.mps.analyzers.sandbox/jetbrains.mps.analyzers.sandbox.msd" />
       <solutionPath path="${project}/solutions/jetbrains.mps.analyzers.mpsAnalyzers/jetbrains.mps.analyzers.mpsAnalyzers.msd" folder="" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.analyzers.test/jetbrains.mps.analyzers.test.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/analyzers/analyzers.mpl" />
@@ -26,7 +26,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>
 

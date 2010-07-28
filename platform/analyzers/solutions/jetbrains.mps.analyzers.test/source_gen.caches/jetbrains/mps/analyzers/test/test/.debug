@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="4822352154126340371">
+    <nodeInfo nodeId="4822352154126340381" fileName="Ftest.java" startLine="10" startPosition="19" endLine="11" endPosition="18" />
+    <nodeInfo nodeId="4822352154126340396" fileName="Ftest.java" startLine="12" startPosition="20" endLine="13" endPosition="13" />
+    <nodeInfo nodeId="4822352154126340398" fileName="Ftest.java" startLine="14" startPosition="5" endLine="15" endPosition="21" />
+    <nodeInfo nodeId="4822352154126340373" fileName="Ftest.java" startLine="6" startPosition="20" endLine="8" endPosition="3" />
+    <nodeInfo nodeId="4822352154126340387" fileName="Ftest.java" startLine="11" startPosition="18" endLine="14" endPosition="5" />
+    <nodeInfo nodeId="4822352154126340377" fileName="Ftest.java" startLine="9" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="4822352154126340376" fileName="Ftest.java" startLine="7" startPosition="18" endLine="7" endPosition="18" />
+    <scopeInfo nodeId="4822352154126340388" fileName="Ftest.java" startLine="12" startPosition="20" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="4822352154126340373" fileName="Ftest.java" startLine="6" startPosition="20" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="4822352154126340380" fileName="Ftest.java" startLine="10" startPosition="19" endLine="15" endPosition="21">
+      <varInfo nodeId="4822352154126340382" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="4822352154126340377" fileName="Ftest.java" startLine="9" startPosition="0" endLine="17" endPosition="0" />
+    <unitInfo nodeId="4822352154126340371" fileName="Ftest.java" startLine="6" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.analyzers.test.test.Ftest" />
+  </root>
+</debugInfo>
+

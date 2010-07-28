@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="4822352154126332458">
+    <nodeInfo nodeId="4822352154126340351" fileName="check_null_NonTypesystemRule.java" startLine="19" startPosition="97" endLine="20" endPosition="104" />
+    <nodeInfo nodeId="4822352154126340364" fileName="check_null_NonTypesystemRule.java" startLine="20" startPosition="104" endLine="21" endPosition="29" />
+    <scopeInfo nodeId="4822352154126332459" fileName="check_null_NonTypesystemRule.java" startLine="19" startPosition="97" endLine="21" endPosition="29">
+      <varInfo nodeId="4822352154126340352" varName="nullableRunner" />
+    </scopeInfo>
+  </root>
+</debugInfo>
+

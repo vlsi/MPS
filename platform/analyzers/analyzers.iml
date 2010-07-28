@@ -4,16 +4,16 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/languages/analyzers/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.analyzers.runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/solutions/sandbox/jetbrains.mps.analyzers.sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.analyzers.mpsAnalyzers/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/testLang/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.analyzers.mpsAnalyzers/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.analyzers.runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.analyzers.test/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/solutions/sandbox/jetbrains.mps.analyzers.sandbox/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="dataFlow" />
-    <orderEntry type="module" module-name="dataFlow-runtime" />
   </component>
 </module>
 

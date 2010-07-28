@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="178770917832659559">
+    <nodeInfo nodeId="178770917832659582" fileName="CustomAnalyzerRunner.java" startLine="10" startPosition="73" endLine="11" endPosition="25" />
+    <nodeInfo nodeId="178770917832659574" fileName="CustomAnalyzerRunner.java" startLine="13" startPosition="78" endLine="14" endPosition="29" />
+    <nodeInfo nodeId="178770917832664363" fileName="CustomAnalyzerRunner.java" startLine="17" startPosition="33" endLine="18" endPosition="22" />
+    <nodeInfo nodeId="178770917832659570" fileName="CustomAnalyzerRunner.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <nodeInfo nodeId="178770917832664359" fileName="CustomAnalyzerRunner.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="178770917832659573" fileName="CustomAnalyzerRunner.java" startLine="13" startPosition="78" endLine="14" endPosition="29" />
+    <scopeInfo nodeId="178770917832664362" fileName="CustomAnalyzerRunner.java" startLine="17" startPosition="33" endLine="18" endPosition="22" />
+    <scopeInfo nodeId="178770917832659570" fileName="CustomAnalyzerRunner.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="178770917832659577" varName="program" />
+      <varInfo nodeId="178770917832659579" varName="analyzer" />
+    </scopeInfo>
+    <scopeInfo nodeId="178770917832664359" fileName="CustomAnalyzerRunner.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <unitInfo nodeId="178770917832659559" fileName="CustomAnalyzerRunner.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner" />
+  </root>
+  <root nodeId="752944717341761987">
+    <nodeInfo nodeId="752944717341761989" fileName="DataFlowConstructor.java" startLine="8" startPosition="43" endLine="10" endPosition="3" />
+    <nodeInfo nodeId="752944717341761993" fileName="DataFlowConstructor.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
+    <nodeInfo nodeId="7685333756920132846" fileName="DataFlowConstructor.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="752944717341761992" fileName="DataFlowConstructor.java" startLine="9" startPosition="32" endLine="9" endPosition="32" />
+    <scopeInfo nodeId="752944717341761989" fileName="DataFlowConstructor.java" startLine="8" startPosition="43" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="752944717341761993" fileName="DataFlowConstructor.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="7685333756920032268" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7685333756920132846" fileName="DataFlowConstructor.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="7685333756920132850" varName="program" />
+    </scopeInfo>
+    <unitInfo nodeId="752944717341761987" fileName="DataFlowConstructor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
+  </root>
+</debugInfo>
+
