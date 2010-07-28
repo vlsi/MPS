@@ -1100,7 +1100,7 @@
                   <link role="classConcept:3" targetNodeId="16.~BrowserUtil" resolveInfo="BrowserUtil" />
                   <link role="baseMethodDeclaration:3" targetNodeId="16.~BrowserUtil.launchBrowser(java.lang.String):void" resolveInfo="launchBrowser" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2510134983999478880">
-                    <property name="value:3" value="http://www.jetbrains.net/confluence/display/MPS/Generator#Generator-aboutgenerator" />
+                    <property name="value:3" value="http://www.jetbrains.net/confluence/display/MPSD1/Generator#Generator-aboutgenerator" />
                   </node>
                 </node>
               </node>

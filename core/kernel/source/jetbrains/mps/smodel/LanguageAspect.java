@@ -50,7 +50,7 @@ public enum LanguageAspect {
     }
 
     public String getHelpURL() {
-      return "http://www.jetbrains.net/confluence/display/MPS/Structure";
+      return "http://www.jetbrains.net/confluence/display/MPSD1/Structure";
     }
   },
 
@@ -64,7 +64,7 @@ public enum LanguageAspect {
     }
 
     public String getHelpURL() {
-      return "http://www.jetbrains.net/confluence/display/MPS/Editor";
+      return "http://www.jetbrains.net/confluence/display/MPSD1/Editor";
     }
   },
 
@@ -78,7 +78,7 @@ public enum LanguageAspect {
     }
 
     public String getHelpURL() {
-      return "http://www.jetbrains.net/confluence/display/MPS/Editor+Actions";
+      return "http://www.jetbrains.net/confluence/display/MPSD1/Editor+Actions";
     }
   },
 
@@ -92,7 +92,7 @@ public enum LanguageAspect {
     }
 
     public String getHelpURL() {
-      return "http://www.jetbrains.net/confluence/display/MPS/Constraints";
+      return "http://www.jetbrains.net/confluence/display/MPSD1/Constraints";
     }
   },
 
@@ -106,7 +106,7 @@ public enum LanguageAspect {
     }
 
     public String getHelpURL() {
-      return "http://www.jetbrains.net/confluence/display/MPS/Behavior";
+      return "http://www.jetbrains.net/confluence/display/MPSD1/Behavior";
     }
   },
 
@@ -135,7 +135,7 @@ public enum LanguageAspect {
     }
 
     public String getHelpURL() {
-      return "http://www.jetbrains.net/confluence/display/MPS/Typesystem";
+      return "http://www.jetbrains.net/confluence/display/MPSD1/Typesystem";
     }
   },
 
@@ -173,7 +173,7 @@ public enum LanguageAspect {
     }
 
     public String getHelpURL() {
-      return "http://www.jetbrains.net/confluence/display/MPS/Intentions";
+      return "http://www.jetbrains.net/confluence/display/MPSD1/Intentions";
     }
   },
 
@@ -187,7 +187,7 @@ public enum LanguageAspect {
     }
 
     public String getHelpURL() {
-      return "http://www.jetbrains.net/confluence/display/MPS/Find+usages";
+      return "http://www.jetbrains.net/confluence/display/MPSD1/Find+usages";
     }
   },
 
@@ -201,7 +201,7 @@ public enum LanguageAspect {
     }
 
     public String getHelpURL() {
-      return "http://www.jetbrains.net/confluence/display/MPS/Plugin";
+      return "http://www.jetbrains.net/confluence/display/MPSD1/Plugin";
     }
   },
 
@@ -216,7 +216,7 @@ public enum LanguageAspect {
     }
 
     public String getHelpURL() {
-      return "http://www.jetbrains.net/confluence/display/MPS/Data+flow#Dataflow-intermediatelanguage";
+      return "http://www.jetbrains.net/confluence/display/MPSD1/Data+flow#Dataflow-intermediatelanguage";
     }
   },
 
@@ -231,7 +231,7 @@ public enum LanguageAspect {
     }
 
     public String getHelpURL() {
-      return "http://www.jetbrains.net/confluence/display/MPS/Language+tests+language#Languagetestslanguage-introduction";
+      return "http://www.jetbrains.net/confluence/display/MPSD1/Language+tests+language#Languagetestslanguage-introduction";
     }
   },
 
