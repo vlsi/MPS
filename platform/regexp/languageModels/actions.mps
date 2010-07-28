@@ -2595,15 +2595,6 @@
                     </node>
                   </node>
                   <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="8786899561265225820">
-                    <node role="ifFalse:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8786899561265225834">
-                      <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern:23" id="8786899561265225833" />
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8786899561265225838">
-                        <link role="baseMethodDeclaration:3" targetNodeId="5.~String.substring(int):java.lang.String" resolveInfo="substring" />
-                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8786899561265225839">
-                          <property name="value:3" value="1" />
-                        </node>
-                      </node>
-                    </node>
                     <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8786899561265225814">
                       <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern:23" id="8786899561265225813" />
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8786899561265225818">
@@ -2629,6 +2620,24 @@
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8786899561265225832">
                               <link role="baseMethodDeclaration:3" targetNodeId="5.~String.length():int" resolveInfo="length" />
                             </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="ifFalse:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="6974378374038886644">
+                      <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6974378374038886654">
+                        <property name="value:3" value="" />
+                      </node>
+                      <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6974378374038886649">
+                        <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern:23" id="6974378374038886648" />
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.IsEmptyOperation:3" id="6974378374038886653" />
+                      </node>
+                      <node role="ifFalse:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6974378374038886655">
+                        <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern:23" id="6974378374038886656" />
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6974378374038886657">
+                          <link role="baseMethodDeclaration:3" targetNodeId="5.~String.substring(int):java.lang.String" resolveInfo="substring" />
+                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6974378374038886658">
+                            <property name="value:3" value="1" />
                           </node>
                         </node>
                       </node>
