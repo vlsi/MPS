@@ -10,4 +10,23 @@ public enum NullableState {
 
   NullableState() {
   }
+
+  public NullableState merge(NullableState state) {
+    if (this.equals(NullableState.UNKNOWN)) {
+      return state;
+    }
+    if (state.equals(NullableState.UNKNOWN)) {
+      return this;
+    }
+    if (this.equals(state)) {
+      return this;
+    }
+    if (state.equals(NullableState.UNKNOWN) && this.equals(NullableState.NOTNULL)) {
+      return NullableState.UNKNOWN;
+    }
+    if (state.equals(NullableState.NOTNULL) && this.equals(NullableState.UNKNOWN)) {
+      return NullableState.UNKNOWN;
+    }
+    return NullableState.NULLABLE;
+  }
 }

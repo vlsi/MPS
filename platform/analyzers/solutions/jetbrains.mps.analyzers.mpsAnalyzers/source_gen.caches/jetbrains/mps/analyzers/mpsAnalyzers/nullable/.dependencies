@@ -13,7 +13,10 @@
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNotEqualsNull" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNotEqualsNullAnd" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNullNotEquals" />
+    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.notNullInstruction" />
+    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.nullableInstruction" />
     <classNode dependClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.MPSProgramBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AnalysisDirection" />

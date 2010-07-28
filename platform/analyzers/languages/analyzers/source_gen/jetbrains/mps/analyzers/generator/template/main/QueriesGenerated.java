@@ -48,6 +48,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_7985661997283748696(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_8656002014371078289(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
@@ -80,6 +84,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "param");
   }
 
+  public static Object referenceMacro_GetReferent_7985661997283748687(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "param");
+  }
+
   public static Object referenceMacro_GetReferent_6776100086565956027(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "param");
   }
@@ -90,6 +98,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_7564273292248339542(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "instructionRef", true), "instruction", false), "instructionConstructor");
+  }
+
+  public static Object referenceMacro_GetReferent_7985661997283753105(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "instruction", false), "instructionClassifier");
   }
 
   public static boolean ifMacro_Condition_8656002014371080657(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -168,6 +180,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true);
   }
 
+  public static SNode sourceNodeQuery_7985661997283753112(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "left", true);
+  }
+
   public static Iterable sourceNodesQuery_752944717341742059(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "ruleReference", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -185,6 +201,10 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_8656002014371081874(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
+  }
+
+  public static Iterable sourceNodesQuery_7985661997283748672(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
   }
 

@@ -13,6 +13,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new AnalyzerRunnerCreator_analyzer_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new IsOperation_instruction_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new InstructionReference_DefaultSearchScope());
   }
 

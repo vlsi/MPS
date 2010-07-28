@@ -28,9 +28,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)" version="-1" />
+  <import index="4" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework.instructions(jetbrains.mps.lang.dataFlow.framework.instructions@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="9177062368042317188">
     <property name="name:3" value="typeof_AnalyzerFunParameterProgramState" />
     <property name="package:3" value="Analyzer.AnalyzerFunctions" />
@@ -393,6 +394,54 @@
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1483902774837531413">
       <property name="name:3" value="analyzer" />
       <link role="concept:3" targetNodeId="1.6618572076229093257:0" resolveInfo="Analyzer" />
+    </node>
+  </node>
+  <visible index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="7985661997283730035">
+    <property name="name:3" value="typeof_InstructionType" />
+    <property name="package:3" value="Instructions" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7985661997283730036">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="7985661997283737353">
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="7985661997283737354">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="7985661997283737355">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="7985661997283737356">
+              <link role="applicableNode:3" targetNodeId="7985661997283730037" resolveInfo="isOperation" />
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="7985661997283737358">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="7985661997283737359">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7985661997283737364">
+              <link role="classifier:3" targetNodeId="3v.~Boolean" resolveInfo="Boolean" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="7985661997283737366">
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="7985661997283737367">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="7985661997283737368">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7985661997283737374">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="7985661997283737369">
+                <link role="applicableNode:3" targetNodeId="7985661997283730037" resolveInfo="isOperation" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7985661997283737378">
+                <link role="link:16" targetNodeId="1.7985661997283737329:0" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="7985661997283737370">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="7985661997283737371">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7985661997283737373">
+              <link role="classifier:3" targetNodeId="4.~Instruction" resolveInfo="Instruction" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="7985661997283730037">
+      <property name="name:3" value="isOperation" />
+      <link role="concept:3" targetNodeId="1.7985661997283714146:0" resolveInfo="InstructionType" />
     </node>
   </node>
 </model>

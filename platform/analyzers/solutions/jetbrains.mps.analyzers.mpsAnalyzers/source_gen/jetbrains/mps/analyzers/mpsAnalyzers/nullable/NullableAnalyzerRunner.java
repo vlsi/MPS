@@ -13,6 +13,7 @@ import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.Program;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
@@ -94,15 +95,32 @@ public class NullableAnalyzerRunner extends AnalyzerRunner<Map<Object, NullableS
       return result;
     }
 
-    public Map<Object, NullableState> merge(Program program, List<Map<Object, NullableState>> list) {
+    public Map<Object, NullableState> merge(Program program, List<Map<Object, NullableState>> input) {
       Map<Object, NullableState> result = new HashMap<Object, NullableState>();
-
+      for (Object var : program.getVariables()) {
+        result.put(var, NullableState.UNKNOWN);
+      }
+      ListSequence.fromList(input).addElement(null);
+      for (Object var : ListSequence.fromList(program.getVariables())) {
+        for (Map<Object, NullableState> value : ListSequence.fromList(input)) {
+          result.put(var, result.get(var).merge(value.get(var)));
+        }
+      }
       return result;
     }
 
     public Map<Object, NullableState> fun(Map<Object, NullableState> input, ProgramState state) {
       Map<Object, NullableState> result = new HashMap<Object, NullableState>();
       Instruction instruction = state.getInstruction();
+      result.putAll(input);
+      if (instruction instanceof notNullInstruction) {
+        Object node = instruction.getUserObject("node");
+        result.put(node, NullableState.NOTNULL);
+      }
+      if (instruction instanceof nullableInstruction) {
+        Object node = instruction.getUserObject("node");
+        result.put(node, NullableState.NULLABLE);
+      }
       return result;
     }
 

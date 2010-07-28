@@ -65,7 +65,7 @@ public class RuleNullNotEquals extends DataFlowConstructor {
             {
               SNode nodeToMatch_o8jvxz_a0a0_0;
               nodeToMatch_o8jvxz_a0a0_0 = childVar_o8jvxz_a0a0_0;
-              if (!("jetbrains.mps.baseLanguage.structure.EqualsExpression".equals(nodeToMatch_o8jvxz_a0a0_0.getConceptFqName()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_o8jvxz_a0a0_0.getConceptFqName()))) {
                 return false;
               }
               {

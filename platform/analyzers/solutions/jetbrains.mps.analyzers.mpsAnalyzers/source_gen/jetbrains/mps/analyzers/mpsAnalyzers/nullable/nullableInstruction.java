@@ -13,6 +13,7 @@ public class nullableInstruction extends Instruction {
     StringBuilder sb = new StringBuilder();
     sb.append("nullable");
     mynode = node;
+    putUserObject("node", node);
     sb.append(" " + node);
     myPresentation = sb.toString();
   }

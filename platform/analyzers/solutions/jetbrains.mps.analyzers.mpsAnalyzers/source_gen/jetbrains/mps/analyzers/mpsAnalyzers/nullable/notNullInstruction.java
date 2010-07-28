@@ -13,6 +13,7 @@ public class notNullInstruction extends Instruction {
     StringBuilder sb = new StringBuilder();
     sb.append("notNull");
     mynode = node;
+    putUserObject("node", node);
     sb.append(" " + node);
     myPresentation = sb.toString();
   }

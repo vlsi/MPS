@@ -15,6 +15,10 @@
       <varInfo nodeId="4217760266503650629" varName="result" />
     </scopeInfo>
   </root>
+  <root nodeId="7985661997283725842">
+    <scopeInfo nodeId="7985661997283725844" fileName="IsOperation_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="133" />
+    <scopeInfo nodeId="7985661997283726528" fileName="IsOperation_instruction_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="177" />
+  </root>
   <root nodeId="95073643532950051">
     <scopeInfo nodeId="95073643532950053" fileName="AnalyzerRunnerAnalyzeOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="474" />
   </root>
