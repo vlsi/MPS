@@ -25223,5 +25223,34 @@
       <link role="concept:3" targetNodeId="1.1188207840427:3" resolveInfo="AnnotationInstance" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="8974945326827873994">
+    <property name="package:3" value="classifier" />
+    <property name="name:3" value="check_ClassShouldHaveConstructor" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8974945326827873995">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.AssertStatement:3" id="8974945326827961340">
+        <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8974945326827961349">
+          <property name="value:3" value="a class should have at least one constructor" />
+        </node>
+        <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8974945326827961350">
+          <link role="applicableNode:3" targetNodeId="8974945326827873997" resolveInfo="classConcept" />
+        </node>
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8974945326827961344">
+          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8974945326827961345">
+            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8974945326827961346">
+              <link role="applicableNode:3" targetNodeId="8974945326827873997" resolveInfo="classConcept" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="8974945326827961347">
+              <link role="link:16" targetNodeId="1.1068390468201:3" />
+            </node>
+          </node>
+          <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation:7" id="8974945326827961348" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="8974945326827873997">
+      <property name="name:3" value="classConcept" />
+      <link role="concept:3" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
+    </node>
+  </node>
 </model>
 
