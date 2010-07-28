@@ -427,9 +427,6 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1068580123157">
     <property name="name:0" value="Statement" />
     <link role="extends:0" targetNodeId="4.1133920641626:0" />
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1107217541667">
-      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473854053:0" />
-    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1107217547091">
       <property name="value:0" value="&lt;statement&gt;" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473891462:0" />

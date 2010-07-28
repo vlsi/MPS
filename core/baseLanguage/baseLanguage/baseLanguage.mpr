@@ -9,10 +9,8 @@
       <solutionPath path="${project}/refactoring/refactoring.msd" />
       <solutionPath path="${project}/resolve/resolve.msd" />
       <solutionPath path="${project}/sandbox/sandbox.msd" />
-      <solutionPath path="${project}/solutions/testLogger2/testLogger2.msd" />
-      <solutionPath path="${project}/solutions/testLogger/testLogger.msd" />
-      <solutionPath path="${mps_home}/core/javaParser/solutions/jetbrains.mps.javaParser.testMaterial.msd" folder="jetbrains.mps" />
       <solutionPath path="${project}/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" folder="" />
+      <solutionPath path="${mps_home}/core/javaParser/solutions/jetbrains.mps.javaParser.testMaterial.msd" folder="jetbrains.mps" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" />
