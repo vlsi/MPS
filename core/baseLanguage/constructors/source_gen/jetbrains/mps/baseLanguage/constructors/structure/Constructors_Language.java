@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class Constructors_Language {
-  public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("0114759e-3be0-44ff-9b09-362db2434c29(jetbrains.mps.baseLanguage.constructors)");
+  public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("0ae47ad3-5abd-486c-ac0f-298884f39393(jetbrains.mps.baseLanguage.constructors)");
 
   public static Language get() {
     return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
