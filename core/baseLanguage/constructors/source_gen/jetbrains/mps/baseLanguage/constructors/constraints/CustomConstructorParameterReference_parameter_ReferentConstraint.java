@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class CustomConstructorParameterReference_parameter_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public CustomConstructorParameterReference_parameter_ReferentConstraint() {
@@ -37,5 +38,9 @@ public class CustomConstructorParameterReference_parameter_ReferentConstraint ex
     } else {
       return null;
     }
+  }
+
+  public SNodePointer getSearchScopeValidatorNodePointer() {
+    return new SNodePointer("r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)", "3778783095368652009");
   }
 }
