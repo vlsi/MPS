@@ -521,7 +521,7 @@
     <property name="rootable:0" value="true" />
     <property name="package:0" value="Actions.Action" />
     <property name="iconPath:0" value="${language_descriptor}/icons/actionNew.png" />
-    <property name="helpURL:0" value="http://www.jetbrains.net/confluence/display/MPS/Plugin#Plugin-actionsandactiongroups" />
+    <property name="helpURL:0" value="http://www.jetbrains.net/confluence/display/MPSD1/Plugin#Plugin-actionsandactiongroups" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1203083196627">
       <property name="metaClass:0" value="aggregation" />

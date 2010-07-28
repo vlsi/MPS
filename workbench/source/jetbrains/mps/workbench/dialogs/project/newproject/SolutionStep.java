@@ -101,7 +101,7 @@ public class SolutionStep extends BaseStep {
 
   @Nullable
   public String getURL() {
-    return "http://www.jetbrains.net/confluence/display/MPS/MPS+project+structure#MPSprojectstructure-solutions";
+    return "http://www.jetbrains.net/confluence/display/MPSD1/MPS+project+structure#MPSprojectstructure-solutions";
   }
 
   private void updateSolutionPath() {

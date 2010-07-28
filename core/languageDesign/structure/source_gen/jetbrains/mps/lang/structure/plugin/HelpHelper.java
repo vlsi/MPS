@@ -74,7 +74,7 @@ public class HelpHelper {
       LanguageAspect aspect = language.getAspectForModel(contextModel);
       BrowserUtil.launchBrowser(aspect.getHelpURL());
     } else {
-      BrowserUtil.launchBrowser("http://www.jetbrains.net/confluence/display/MPS/Generator#Generator-aboutgenerator");
+      BrowserUtil.launchBrowser("http://www.jetbrains.net/confluence/display/MPSD1/Generator#Generator-aboutgenerator");
     }
   }
 
