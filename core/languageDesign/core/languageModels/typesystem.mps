@@ -2145,5 +2145,48 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="7283836008113024215">
+    <property name="name:3" value="check_InstanceOfAbstract" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7283836008113024216">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7283836008113027561">
+        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7283836008113027562">
+          <property name="name:3" value="concept" />
+          <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7283836008113027563">
+            <link role="concept:16" targetNodeId="8.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
+          </node>
+          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7283836008113027566">
+            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="7283836008113027565">
+              <link role="applicableNode:3" targetNodeId="7283836008113024217" resolveInfo="baseConcept" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation:16" id="7283836008113027570" />
+          </node>
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7283836008113027507">
+        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7283836008113027508">
+          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="7283836008113027554">
+            <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7283836008113027558">
+              <property name="value:3" value="Abstract concept instance detected. Use one of sub-concepts instead." />
+            </node>
+            <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="7283836008113027557">
+              <link role="applicableNode:3" targetNodeId="7283836008113024217" resolveInfo="baseConcept" />
+            </node>
+          </node>
+        </node>
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7283836008113027516">
+          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7283836008113027512">
+            <link role="variableDeclaration:3" targetNodeId="7283836008113027562" resolveInfo="concept" />
+          </node>
+          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess:16" id="7283836008113027532">
+            <link role="conceptProperty:16" targetNodeId="1.1137473854053:0" resolveInfo="abstract" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="7283836008113024217">
+      <property name="name:3" value="baseConcept" />
+      <link role="concept:3" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    </node>
+  </node>
 </model>
 

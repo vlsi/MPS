@@ -340,6 +340,19 @@
       <varInfo nodeId="4049502122675885551" varName="props" />
     </scopeInfo>
   </root>
+  <root nodeId="7283836008113024215">
+    <nodeInfo nodeId="7283836008113027561" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="21" startPosition="97" endLine="22" endPosition="71" />
+    <nodeInfo nodeId="7283836008113027554" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="25" endPosition="55" />
+    <nodeInfo nodeId="7283836008113027554" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="25" startPosition="55" endLine="26" endPosition="57" />
+    <nodeInfo nodeId="7283836008113027554" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="26" startPosition="57" endLine="27" endPosition="300" />
+    <nodeInfo nodeId="7283836008113027554" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="23" startPosition="69" endLine="28" endPosition="7" />
+    <nodeInfo nodeId="7283836008113027507" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="22" startPosition="71" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="7283836008113027554" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="27" endPosition="300" />
+    <scopeInfo nodeId="7283836008113027508" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="23" startPosition="69" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="7283836008113024216" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="21" startPosition="97" endLine="29" endPosition="5">
+      <varInfo nodeId="7283836008113027562" varName="concept" />
+    </scopeInfo>
+  </root>
   <root nodeId="8524227390952646882">
     <nodeInfo nodeId="8524227390952646884" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="23" startPosition="97" endLine="24" endPosition="22" />
     <nodeInfo nodeId="8524227390952646887" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="24" startPosition="22" endLine="25" endPosition="69" />
