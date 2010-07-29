@@ -2591,5 +2591,120 @@
   <node type="jetbrains.mps.lang.test.structure.TestInfo:4" id="5097124989039164757">
     <property name="projectPath:4" value="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1326302914272879450">
+    <property name="testCaseName" value="TestSafeEquals" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1326302914272879451" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1326302914272879452">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1326302914272879453" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1326302914272879454" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1326302914272879455" />
+    </node>
+    <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="1326302914272879456">
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1326302914272880326">
+        <property name="methodName" value="test_eq" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1326302914272880327" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1326302914272880328" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1326302914272880329">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1326302914272888800">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1326302914272888801">
+              <property name="name:3" value="o" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1326302914272888802">
+                <link role="classifier:3" targetNodeId="5.~Object" resolveInfo="Object" />
+              </node>
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1326302914272888804">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1326302914272888805">
+                  <link role="baseMethodDeclaration:3" targetNodeId="5.~Object.&lt;init&gt;()" resolveInfo="Object" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="1326302914272888807">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression:3" id="1326302914272888810">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1326302914272888813">
+                <link role="variableDeclaration:3" targetNodeId="1326302914272888801" resolveInfo="o" />
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1326302914272888809">
+                <link role="variableDeclaration:3" targetNodeId="1326302914272888801" resolveInfo="o" />
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" id="1326302914272888818">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression:3" id="1326302914272888821">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1326302914272888824" />
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1326302914272888820">
+                <link role="variableDeclaration:3" targetNodeId="1326302914272888801" resolveInfo="o" />
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" id="1326302914272888826">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression:3" id="1326302914272888829">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1326302914272888832">
+                <link role="variableDeclaration:3" targetNodeId="1326302914272888801" resolveInfo="o" />
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1326302914272888828" />
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="1326302914272888834">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression:3" id="1326302914272888837">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1326302914272888840" />
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1326302914272888836" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1326302914272888841">
+        <property name="methodName" value="test_ne" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1326302914272888842" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1326302914272888843" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1326302914272888844">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1326302914272888847">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1326302914272888848">
+              <property name="name:3" value="o" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1326302914272888849">
+                <link role="classifier:3" targetNodeId="5.~Object" resolveInfo="Object" />
+              </node>
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1326302914272888851">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1326302914272888852">
+                  <link role="baseMethodDeclaration:3" targetNodeId="5.~Object.&lt;init&gt;()" resolveInfo="Object" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" id="1326302914272888854">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression:3" id="1326302914272888857">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1326302914272888860">
+                <link role="variableDeclaration:3" targetNodeId="1326302914272888848" resolveInfo="o" />
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1326302914272888856">
+                <link role="variableDeclaration:3" targetNodeId="1326302914272888848" resolveInfo="o" />
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="1326302914272888862">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression:3" id="1326302914272888865">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1326302914272888868" />
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1326302914272888864">
+                <link role="variableDeclaration:3" targetNodeId="1326302914272888848" resolveInfo="o" />
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="1326302914272888870">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression:3" id="1326302914272888877">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1326302914272888880">
+                <link role="variableDeclaration:3" targetNodeId="1326302914272888848" resolveInfo="o" />
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1326302914272888876" />
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" id="1326302914272888882">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression:3" id="1326302914272888885">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1326302914272888888" />
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1326302914272888884" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
