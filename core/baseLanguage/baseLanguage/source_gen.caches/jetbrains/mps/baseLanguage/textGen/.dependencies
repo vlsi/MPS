@@ -765,6 +765,7 @@
   <dependency className="jetbrains.mps.baseLanguage.textGen.StatementList_TextGen" file="StatementList_TextGen.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.LastStatementUtil" />
+    <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />

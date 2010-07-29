@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class StatementList_TextGen extends SNodeTextGen {
@@ -24,6 +25,7 @@ public class StatementList_TextGen extends SNodeTextGen {
         SNode expression = SNodeOperations.copyNode(SLinkOperations.getTarget(expressionStatement, "expression", true));
         SLinkOperations.setNewChild(expressionStatement, "expression", "jetbrains.mps.baseLanguage.structure.Expression");
         SLinkOperations.setTarget(returnStatement, "expression", expression, true);
+        returnStatement.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, expressionStatement.getUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE));
         statement = returnStatement;
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), statement, this.getSNode());
         // rollback changes 
