@@ -611,12 +611,17 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
-  public boolean canBeAncestor(SNode parentNode, SNode childConcept, IOperationContext context) {
+  /**
+   * @return node of broken constraint block or null if constraint was not broken for all ancestors
+   */
+  public SNode canBeAncestorReturnBlock(SNode parentNode, SNode childConcept, IOperationContext context) {
+    if (parentNode == null)  return null;
     Method m = getCanBeAncestorMethod(parentNode, context);
     if (m != null) {
       try {
         if (!(Boolean) m.invoke(null, context, new CanBeAnAncestorContext(parentNode, childConcept))) {
-          return false;
+          ConceptConstraints constraints = getClassConstraints(context, m);
+          return constraints != null ? BaseAdapter.fromAdapter(constraints.getCanBeAncestor()) : null;
         }
       } catch (IllegalAccessException e) {
         LOG.error(e);
@@ -624,8 +629,11 @@ public class ModelConstraintsManager implements ApplicationComponent {
         LOG.error(e);
       }
     }
-    final SNode parentOfParent = parentNode.getParent();
-    return parentOfParent != null ? canBeAncestor(parentOfParent, childConcept, context): true;
+    return canBeAncestorReturnBlock(parentNode.getParent(), childConcept, context);
+  }
+
+  public boolean canBeAncestor(SNode parentNode, SNode childConcept, IOperationContext context) {
+    return canBeAncestorReturnBlock(parentNode, childConcept, context) == null;
   }
 
   public boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
