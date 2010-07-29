@@ -5,6 +5,9 @@
     <nodeInfo nodeId="1198077941205" fileName="MoveNodes.java" startLine="61" startPosition="88" endLine="62" endPosition="72" />
     <nodeInfo nodeId="1199553244200" fileName="MoveNodes.java" startLine="62" startPosition="72" endLine="63" endPosition="157" />
     <nodeInfo nodeId="1199553331594" fileName="MoveNodes.java" startLine="63" startPosition="157" endLine="64" endPosition="107" />
+    <nodeInfo nodeId="1227876803956" fileName="MoveNodes.java" startLine="66" startPosition="51" endLine="67" endPosition="181" />
+    <nodeInfo nodeId="1227876795127" fileName="MoveNodes.java" startLine="70" startPosition="49" endLine="71" endPosition="110" />
+    <nodeInfo nodeId="1227876794784" fileName="MoveNodes.java" startLine="75" startPosition="40" endLine="76" endPosition="51" />
     <nodeInfo nodeId="1198080494863" fileName="MoveNodes.java" startLine="79" startPosition="64" endLine="80" endPosition="43" />
     <nodeInfo nodeId="1198079783523" fileName="MoveNodes.java" startLine="81" startPosition="76" endLine="82" endPosition="23" />
     <nodeInfo nodeId="1203555341690" fileName="MoveNodes.java" startLine="86" startPosition="184" endLine="87" endPosition="27" />
@@ -27,6 +30,8 @@
     <nodeInfo nodeId="1199555293199" fileName="MoveNodes.java" startLine="136" startPosition="63" endLine="137" endPosition="121" />
     <nodeInfo nodeId="1213099312700" fileName="MoveNodes.java" startLine="138" startPosition="39" endLine="139" endPosition="99" />
     <nodeInfo nodeId="1198082938234" fileName="MoveNodes.java" startLine="145" startPosition="86" endLine="146" endPosition="50" />
+    <nodeInfo nodeId="6528618226609612947" fileName="MoveNodes.java" startLine="149" startPosition="82" endLine="150" endPosition="122" />
+    <nodeInfo nodeId="6528618226609776640" fileName="MoveNodes.java" startLine="157" startPosition="104" endLine="158" endPosition="109" />
     <nodeInfo nodeId="1198079760598" fileName="MoveNodes.java" startLine="80" startPosition="43" endLine="83" endPosition="9" />
     <nodeInfo nodeId="1203555341688" fileName="MoveNodes.java" startLine="85" startPosition="89" endLine="88" endPosition="13" />
     <nodeInfo nodeId="1198077841409" fileName="MoveNodes.java" startLine="95" startPosition="64" endLine="98" endPosition="9" />
@@ -110,7 +115,10 @@
     <unitInfo nodeId="1227876794780" fileName="MoveNodes.java" startLine="74" startPosition="97" endLine="78" endPosition="7" unitName="jetbrains.mps.lang.core.scripts.MoveNodes$3" />
   </root>
   <root nodeId="1199457919461">
+    <nodeInfo nodeId="2752536614369082729" fileName="Rename.java" startLine="42" startPosition="70" endLine="43" endPosition="73" />
+    <nodeInfo nodeId="6528618226609591703" fileName="Rename.java" startLine="54" startPosition="86" endLine="55" endPosition="208" />
     <nodeInfo nodeId="1199458047098" fileName="Rename.java" startLine="58" startPosition="71" endLine="59" endPosition="129" />
+    <nodeInfo nodeId="1199457990515" fileName="Rename.java" startLine="66" startPosition="83" endLine="67" endPosition="87" />
     <scopeInfo nodeId="1199458011651" fileName="Rename.java" startLine="42" startPosition="70" endLine="43" endPosition="73" />
     <scopeInfo nodeId="1201529733850" fileName="Rename.java" startLine="54" startPosition="86" endLine="55" endPosition="208" />
     <scopeInfo nodeId="1199458026194" fileName="Rename.java" startLine="58" startPosition="71" endLine="59" endPosition="129" />
@@ -157,6 +165,7 @@
     <nodeInfo nodeId="8311321388555090799" fileName="RenameUtil.java" startLine="42" startPosition="9" endLine="43" endPosition="40" />
     <nodeInfo nodeId="8311321388555090836" fileName="RenameUtil.java" startLine="43" startPosition="40" endLine="44" endPosition="54" />
     <nodeInfo nodeId="8311321388555090806" fileName="RenameUtil.java" startLine="44" startPosition="54" endLine="45" endPosition="54" />
+    <nodeInfo nodeId="8311321388555090852" fileName="RenameUtil.java" startLine="48" startPosition="29" endLine="49" endPosition="40" />
     <nodeInfo nodeId="8311321388555090847" fileName="RenameUtil.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
     <nodeInfo nodeId="3302086321381027636" fileName="RenameUtil.java" startLine="35" startPosition="27" endLine="40" endPosition="11" />
     <nodeInfo nodeId="4706738529699924062" fileName="RenameUtil.java" startLine="19" startPosition="25" endLine="27" endPosition="0" />
@@ -187,8 +196,9 @@
     <unitInfo nodeId="4706738529699924056" fileName="RenameUtil.java" startLine="19" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.RenameUtil" />
   </root>
   <root nodeId="6243486444683604044">
-    <scopeInfo nodeId="6243486444683604047" fileName="ShowGetNameUsages_MigrationScript.java" startLine="33" startPosition="52" endLine="33" endPosition="52" />
-    <scopeInfo nodeId="6243486444683690986" fileName="ShowGetNameUsages_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="143" />
+    <nodeInfo nodeId="6243486444683698873" fileName="ShowGetNameUsages_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="148" />
+    <scopeInfo nodeId="6243486444683604047" fileName="ShowGetNameUsages_MigrationScript.java" startLine="32" startPosition="52" endLine="32" endPosition="52" />
+    <scopeInfo nodeId="6243486444683690986" fileName="ShowGetNameUsages_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="148" />
   </root>
 </debugInfo>
 

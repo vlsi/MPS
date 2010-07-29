@@ -7,7 +7,6 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -74,10 +73,10 @@ public class ListMigrationUtil {
 
   private static boolean isApplicableMethod(SNode node, String name, List<ParameterType> params) {
     SNode declaration = SLinkOperations.getTarget(node, "baseMethodDeclaration", false);
-    if (!(ObjectUtils.equals(SPropertyOperations.getString(declaration, "name"), name))) {
+    if (neq_gtz9m1_a0b0f(SPropertyOperations.getString(declaration, "name"), name)) {
       return false;
     }
-    if (!(ObjectUtils.equals(SModelOperations.getModelName(SNodeOperations.getModel(declaration)), "java.util"))) {
+    if (!(eq_gtz9m1_a0a2a5(SModelOperations.getModelName(SNodeOperations.getModel(declaration)), "java.util"))) {
       return false;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() != ListSequence.fromList(params).count()) {
@@ -132,5 +131,19 @@ public class ListMigrationUtil {
       return true;
     }
     return false;
+  }
+
+  private static boolean neq_gtz9m1_a0b0f(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
+  }
+
+  private static boolean eq_gtz9m1_a0a2a5(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

@@ -16,7 +16,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
-import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.smodel.SModel;
 import java.util.Set;
 import jetbrains.mps.project.IModule;
@@ -115,7 +114,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
       String targetSter = SNodeOperations.getModel(targetNode).getStereotype();
       String stubSter = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
 
-      if (!(ObjectUtils.equals(stubSter, targetSter))) {
+      if (neq_1m2c1e_a0e0a0f(stubSter, targetSter)) {
         GoByCurrentReference_Action.this.open(targetNode);
       } else {
         SNode node = GoByCurrentReference_Action.this.cell.getSNodeWRTReference();
@@ -195,5 +194,12 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(targetNode), "jetbrains.mps.baseLanguage.structure.Classifier");
     assert classifier != null;
     return ref.getLongName() + "." + SPropertyOperations.getString(classifier, "name");
+  }
+
+  private static boolean neq_1m2c1e_a0e0a0f(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
   }
 }

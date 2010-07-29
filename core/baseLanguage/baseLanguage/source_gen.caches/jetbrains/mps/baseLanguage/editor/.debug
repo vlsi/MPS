@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1073416106125">
+    <nodeInfo nodeId="1237538970037" fileName="StatementList_Editor.java" startLine="74" startPosition="111" endLine="75" endPosition="72" />
+    <nodeInfo nodeId="1237538980605" fileName="StatementList_Editor.java" startLine="78" startPosition="111" endLine="79" endPosition="69" />
     <scopeInfo nodeId="1237538908885" fileName="StatementList_Editor.java" startLine="74" startPosition="111" endLine="75" endPosition="72" />
     <scopeInfo nodeId="1237538980604" fileName="StatementList_Editor.java" startLine="78" startPosition="111" endLine="79" endPosition="69" />
   </root>
   <root nodeId="1074794490343">
+    <nodeInfo nodeId="1188208686993" fileName="ClassConcept_Editor.java" startLine="712" startPosition="111" endLine="713" endPosition="99" />
+    <nodeInfo nodeId="1626829428755615654" fileName="ClassConcept_Editor.java" startLine="716" startPosition="111" endLine="717" endPosition="131" />
+    <nodeInfo nodeId="1209065132973" fileName="ClassConcept_Editor.java" startLine="720" startPosition="111" endLine="721" endPosition="65" />
+    <nodeInfo nodeId="1221565218374" fileName="ClassConcept_Editor.java" startLine="724" startPosition="111" endLine="725" endPosition="59" />
     <nodeInfo nodeId="1145916141539" fileName="ClassConcept_Editor.java" startLine="728" startPosition="111" endLine="729" endPosition="112" />
+    <nodeInfo nodeId="8293668929054821307" fileName="ClassConcept_Editor.java" startLine="732" startPosition="112" endLine="733" endPosition="227" />
     <nodeInfo nodeId="1221562999730" fileName="ClassConcept_Editor.java" startLine="736" startPosition="112" endLine="737" endPosition="78" />
+    <nodeInfo nodeId="8293668929055456930" fileName="ClassConcept_Editor.java" startLine="740" startPosition="112" endLine="741" endPosition="205" />
+    <nodeInfo nodeId="8293668929055456939" fileName="ClassConcept_Editor.java" startLine="744" startPosition="112" endLine="745" endPosition="228" />
+    <nodeInfo nodeId="8293668929055456994" fileName="ClassConcept_Editor.java" startLine="748" startPosition="112" endLine="749" endPosition="79" />
+    <nodeInfo nodeId="8293668929055456977" fileName="ClassConcept_Editor.java" startLine="752" startPosition="113" endLine="753" endPosition="134" />
     <scopeInfo nodeId="1188208597249" fileName="ClassConcept_Editor.java" startLine="712" startPosition="111" endLine="713" endPosition="99" />
     <scopeInfo nodeId="1224500205262" fileName="ClassConcept_Editor.java" startLine="716" startPosition="111" endLine="717" endPosition="131" />
     <scopeInfo nodeId="1178610229482" fileName="ClassConcept_Editor.java" startLine="720" startPosition="111" endLine="721" endPosition="65" />
@@ -20,21 +31,28 @@
     <scopeInfo nodeId="8293668929055456976" fileName="ClassConcept_Editor.java" startLine="752" startPosition="113" endLine="753" endPosition="134" />
   </root>
   <root nodeId="1075139052656">
+    <nodeInfo nodeId="1188210475921" fileName="ConstructorDeclaration_Editor.java" startLine="313" startPosition="111" endLine="314" endPosition="99" />
     <nodeInfo nodeId="1203413371736" fileName="ConstructorDeclaration_Editor.java" startLine="317" startPosition="111" endLine="318" endPosition="112" />
     <nodeInfo nodeId="1165410808115" fileName="ConstructorDeclaration_Editor.java" startLine="321" startPosition="111" endLine="322" endPosition="99" />
+    <nodeInfo nodeId="1208702967024" fileName="ConstructorDeclaration_Editor.java" startLine="325" startPosition="112" endLine="326" endPosition="122" />
     <scopeInfo nodeId="1188210475920" fileName="ConstructorDeclaration_Editor.java" startLine="313" startPosition="111" endLine="314" endPosition="99" />
     <scopeInfo nodeId="1203413371735" fileName="ConstructorDeclaration_Editor.java" startLine="317" startPosition="111" endLine="318" endPosition="112" />
     <scopeInfo nodeId="1165410808114" fileName="ConstructorDeclaration_Editor.java" startLine="321" startPosition="111" endLine="322" endPosition="99" />
     <scopeInfo nodeId="1208702960710" fileName="ConstructorDeclaration_Editor.java" startLine="325" startPosition="112" endLine="326" endPosition="122" />
   </root>
   <root nodeId="1075233459437">
+    <nodeInfo nodeId="1188210514743" fileName="InstanceMethodDeclaration_Editor.java" startLine="407" startPosition="111" endLine="408" endPosition="99" />
+    <nodeInfo nodeId="1217333757049" fileName="InstanceMethodDeclaration_Editor.java" startLine="411" startPosition="111" endLine="412" endPosition="126" />
+    <nodeInfo nodeId="1240248794284" fileName="InstanceMethodDeclaration_Editor.java" startLine="415" startPosition="112" endLine="416" endPosition="59" />
     <nodeInfo nodeId="1217333745855" fileName="InstanceMethodDeclaration_Editor.java" startLine="419" startPosition="112" endLine="420" endPosition="62" />
+    <nodeInfo nodeId="4276006055363816564" fileName="InstanceMethodDeclaration_Editor.java" startLine="423" startPosition="112" endLine="424" endPosition="66" />
     <nodeInfo nodeId="1203413352305" fileName="InstanceMethodDeclaration_Editor.java" startLine="427" startPosition="111" endLine="428" endPosition="112" />
     <nodeInfo nodeId="1178609236395" fileName="InstanceMethodDeclaration_Editor.java" startLine="431" startPosition="111" endLine="432" endPosition="99" />
     <nodeInfo nodeId="1178609277767" fileName="InstanceMethodDeclaration_Editor.java" startLine="435" startPosition="112" endLine="436" endPosition="65" />
     <nodeInfo nodeId="1178609162774" fileName="InstanceMethodDeclaration_Editor.java" startLine="439" startPosition="112" endLine="440" endPosition="62" />
     <nodeInfo nodeId="1178609078313" fileName="InstanceMethodDeclaration_Editor.java" startLine="443" startPosition="112" endLine="444" endPosition="65" />
     <nodeInfo nodeId="1178609092579" fileName="InstanceMethodDeclaration_Editor.java" startLine="447" startPosition="112" endLine="448" endPosition="65" />
+    <nodeInfo nodeId="1208703059011" fileName="InstanceMethodDeclaration_Editor.java" startLine="451" startPosition="112" endLine="452" endPosition="126" />
     <scopeInfo nodeId="1188210514742" fileName="InstanceMethodDeclaration_Editor.java" startLine="407" startPosition="111" endLine="408" endPosition="99" />
     <scopeInfo nodeId="1217333753219" fileName="InstanceMethodDeclaration_Editor.java" startLine="411" startPosition="111" endLine="412" endPosition="126" />
     <scopeInfo nodeId="1240248787573" fileName="InstanceMethodDeclaration_Editor.java" startLine="415" startPosition="112" endLine="416" endPosition="59" />
@@ -49,6 +67,8 @@
     <scopeInfo nodeId="1208703059010" fileName="InstanceMethodDeclaration_Editor.java" startLine="451" startPosition="112" endLine="452" endPosition="126" />
   </root>
   <root nodeId="1075287750850">
+    <nodeInfo nodeId="1188210533003" fileName="StaticMethodDeclaration_Editor.java" startLine="336" startPosition="111" endLine="337" endPosition="99" />
+    <nodeInfo nodeId="1603254302405147712" fileName="StaticMethodDeclaration_Editor.java" startLine="340" startPosition="111" endLine="341" endPosition="66" />
     <nodeInfo nodeId="1203413131111" fileName="StaticMethodDeclaration_Editor.java" startLine="344" startPosition="111" endLine="345" endPosition="112" />
     <nodeInfo nodeId="1164890791770" fileName="StaticMethodDeclaration_Editor.java" startLine="348" startPosition="112" endLine="349" endPosition="99" />
     <scopeInfo nodeId="1188210533002" fileName="StaticMethodDeclaration_Editor.java" startLine="336" startPosition="111" endLine="337" endPosition="99" />
@@ -57,6 +77,10 @@
     <scopeInfo nodeId="1164890626617" fileName="StaticMethodDeclaration_Editor.java" startLine="348" startPosition="112" endLine="349" endPosition="99" />
   </root>
   <root nodeId="1075289941062">
+    <nodeInfo nodeId="1188210594845" fileName="FieldDeclaration_Editor.java" startLine="294" startPosition="111" endLine="295" endPosition="99" />
+    <nodeInfo nodeId="1240250500572" fileName="FieldDeclaration_Editor.java" startLine="298" startPosition="111" endLine="299" endPosition="62" />
+    <nodeInfo nodeId="8606350594693654669" fileName="FieldDeclaration_Editor.java" startLine="302" startPosition="111" endLine="303" endPosition="63" />
+    <nodeInfo nodeId="1217351603905" fileName="FieldDeclaration_Editor.java" startLine="306" startPosition="111" endLine="307" endPosition="59" />
     <nodeInfo nodeId="1188210576822" fileName="FieldDeclaration_Editor.java" startLine="310" startPosition="111" endLine="311" endPosition="72" />
     <scopeInfo nodeId="1188210594844" fileName="FieldDeclaration_Editor.java" startLine="294" startPosition="111" endLine="295" endPosition="99" />
     <scopeInfo nodeId="1240250493812" fileName="FieldDeclaration_Editor.java" startLine="298" startPosition="111" endLine="299" endPosition="62" />
@@ -65,11 +89,13 @@
     <scopeInfo nodeId="1188210576821" fileName="FieldDeclaration_Editor.java" startLine="310" startPosition="111" endLine="311" endPosition="72" />
   </root>
   <root nodeId="1075302295734">
+    <nodeInfo nodeId="1188220825042" fileName="ParameterDeclaration_Editor.java" startLine="179" startPosition="112" endLine="180" endPosition="99" />
     <nodeInfo nodeId="1188212252095" fileName="ParameterDeclaration_Editor.java" startLine="183" startPosition="112" endLine="184" endPosition="59" />
     <scopeInfo nodeId="1188220825041" fileName="ParameterDeclaration_Editor.java" startLine="179" startPosition="112" endLine="180" endPosition="99" />
     <scopeInfo nodeId="1188212252094" fileName="ParameterDeclaration_Editor.java" startLine="183" startPosition="112" endLine="184" endPosition="59" />
   </root>
   <root nodeId="1075303160500">
+    <nodeInfo nodeId="1188220842774" fileName="LocalVariableDeclaration_Editor.java" startLine="219" startPosition="111" endLine="220" endPosition="99" />
     <nodeInfo nodeId="1188212207008" fileName="LocalVariableDeclaration_Editor.java" startLine="223" startPosition="111" endLine="224" endPosition="59" />
     <nodeInfo nodeId="1188212207019" fileName="LocalVariableDeclaration_Editor.java" startLine="227" startPosition="111" endLine="228" endPosition="72" />
     <scopeInfo nodeId="1188220842773" fileName="LocalVariableDeclaration_Editor.java" startLine="219" startPosition="111" endLine="220" endPosition="99" />
@@ -83,6 +109,7 @@
     <scopeInfo nodeId="1165018823336" fileName="StaticMethodCall_Editor.java" startLine="217" startPosition="144" endLine="218" endPosition="134" />
   </root>
   <root nodeId="1075374365333">
+    <nodeInfo nodeId="1675282048033998686" fileName="ThisExpression_Editor.java" startLine="147" startPosition="110" endLine="148" endPosition="162" />
     <scopeInfo nodeId="1182954960783" fileName="ThisExpression_Editor.java" startLine="147" startPosition="110" endLine="148" endPosition="162" />
   </root>
   <root nodeId="1075376169046">
@@ -90,6 +117,7 @@
     <nodeInfo nodeId="1215092585064" fileName="Expression_Editor.java" startLine="43" startPosition="109" endLine="44" endPosition="82" />
     <nodeInfo nodeId="1215092624123" fileName="Expression_Editor.java" startLine="44" startPosition="82" endLine="45" endPosition="83" />
     <nodeInfo nodeId="1209147315309" fileName="Expression_Editor.java" startLine="45" startPosition="83" endLine="46" endPosition="26" />
+    <nodeInfo nodeId="1209147395949" fileName="Expression_Editor.java" startLine="74" startPosition="110" endLine="75" endPosition="71" />
     <nodeInfo nodeId="1209147315305" fileName="Expression_Editor.java" startLine="41" startPosition="43" endLine="48" endPosition="0" />
     <nodeInfo nodeId="1209147315301" fileName="Expression_Editor.java" startLine="40" startPosition="44" endLine="48" endPosition="10" />
     <scopeInfo nodeId="1209147315325" fileName="Expression_Editor.java" startLine="74" startPosition="110" endLine="75" endPosition="71" />
@@ -103,6 +131,11 @@
     <unitInfo nodeId="1209147315304" fileName="Expression_Editor.java" startLine="41" startPosition="19" endLine="48" endPosition="9" unitName="jetbrains.mps.baseLanguage.editor.Expression_Editor$2" />
   </root>
   <root nodeId="1075379419312">
+    <nodeInfo nodeId="1206063719624" fileName="IfStatement_Editor.java" startLine="250" startPosition="111" endLine="251" endPosition="102" />
+    <nodeInfo nodeId="1237468225354" fileName="IfStatement_Editor.java" startLine="254" startPosition="111" endLine="255" endPosition="79" />
+    <nodeInfo nodeId="1237573239960" fileName="IfStatement_Editor.java" startLine="258" startPosition="110" endLine="259" endPosition="70" />
+    <nodeInfo nodeId="1237575954795" fileName="IfStatement_Editor.java" startLine="262" startPosition="110" endLine="263" endPosition="70" />
+    <nodeInfo nodeId="1237575954803" fileName="IfStatement_Editor.java" startLine="266" startPosition="110" endLine="267" endPosition="70" />
     <nodeInfo nodeId="1237468206399" fileName="IfStatement_Editor.java" startLine="324" startPosition="106" endLine="325" endPosition="72" />
     <scopeInfo nodeId="1237468206395" fileName="IfStatement_Editor.java" startLine="312" startPosition="106" endLine="312" endPosition="106" />
     <scopeInfo nodeId="1206063712467" fileName="IfStatement_Editor.java" startLine="250" startPosition="111" endLine="251" endPosition="102" />
@@ -117,11 +150,14 @@
     <scopeInfo nodeId="1152310298069" fileName="ReturnStatement_Editor.java" startLine="68" startPosition="111" endLine="69" endPosition="71" />
   </root>
   <root nodeId="1081264157973">
+    <nodeInfo nodeId="1199465522922" fileName="WhileStatement_Editor.java" startLine="272" startPosition="111" endLine="273" endPosition="64" />
+    <nodeInfo nodeId="363746191845184878" fileName="WhileStatement_Editor.java" startLine="276" startPosition="111" endLine="277" endPosition="72" />
     <scopeInfo nodeId="1199465518909" fileName="WhileStatement_Editor.java" startLine="272" startPosition="111" endLine="273" endPosition="64" />
     <scopeInfo nodeId="363746191845184877" fileName="WhileStatement_Editor.java" startLine="276" startPosition="111" endLine="277" endPosition="72" />
   </root>
   <root nodeId="1081792356328">
     <nodeInfo nodeId="1198580021817" fileName="SuperMethodCall_Editor.java" startLine="137" startPosition="82" endLine="138" endPosition="19" />
+    <nodeInfo nodeId="1198529269561" fileName="SuperMethodCall_Editor.java" startLine="139" startPosition="5" endLine="140" endPosition="155" />
     <nodeInfo nodeId="1198580015741" fileName="SuperMethodCall_Editor.java" startLine="136" startPosition="111" endLine="139" endPosition="5" />
     <scopeInfo nodeId="1198580015742" fileName="SuperMethodCall_Editor.java" startLine="137" startPosition="82" endLine="138" endPosition="19" />
     <scopeInfo nodeId="1198529264930" fileName="SuperMethodCall_Editor.java" startLine="136" startPosition="111" endLine="140" endPosition="155" />
@@ -141,6 +177,8 @@
   <root nodeId="1081933895507">
     <nodeInfo nodeId="1227876793580" fileName="BreakStatement_Editor.java" startLine="176" startPosition="29" endLine="176" endPosition="29" />
     <nodeInfo nodeId="1227876793580" fileName="BreakStatement_Editor.java" startLine="179" startPosition="29" endLine="179" endPosition="29" />
+    <nodeInfo nodeId="1199466169751" fileName="BreakStatement_Editor.java" startLine="137" startPosition="111" endLine="138" endPosition="64" />
+    <nodeInfo nodeId="9056323058805225192" fileName="BreakStatement_Editor.java" startLine="141" startPosition="111" endLine="142" endPosition="81" />
     <nodeInfo nodeId="1227876793580" fileName="BreakStatement_Editor.java" startLine="154" startPosition="53" endLine="155" endPosition="39" />
     <nodeInfo nodeId="1227876793580" fileName="BreakStatement_Editor.java" startLine="162" startPosition="30" endLine="163" endPosition="56" />
     <nodeInfo nodeId="1227876793580" fileName="BreakStatement_Editor.java" startLine="163" startPosition="56" endLine="164" endPosition="37" />
@@ -166,6 +204,7 @@
     <nodeInfo nodeId="1227876793580" fileName="BreakStatement_Editor.java" startLine="152" startPosition="41" endLine="190" endPosition="0" />
     <nodeInfo nodeId="1227876793580" fileName="BreakStatement_Editor.java" startLine="151" startPosition="59" endLine="190" endPosition="12" />
     <nodeInfo nodeId="1227876793580" fileName="BreakStatement_Editor.java" startLine="150" startPosition="185" endLine="192" endPosition="0" />
+    <nodeInfo nodeId="1199466500553" fileName="BreakStatement_Editor.java" startLine="149" startPosition="105" endLine="192" endPosition="26" />
     <scopeInfo nodeId="1227876793580" fileName="BreakStatement_Editor.java" startLine="176" startPosition="29" endLine="176" endPosition="29" />
     <scopeInfo nodeId="1227876793580" fileName="BreakStatement_Editor.java" startLine="179" startPosition="29" endLine="179" endPosition="29" />
     <scopeInfo nodeId="1199466166158" fileName="BreakStatement_Editor.java" startLine="137" startPosition="111" endLine="138" endPosition="64" />
@@ -197,6 +236,8 @@
   <root nodeId="1082114095844">
     <nodeInfo nodeId="1227876791461" fileName="ContinueStatement_Editor.java" startLine="178" startPosition="29" endLine="178" endPosition="29" />
     <nodeInfo nodeId="1227876791461" fileName="ContinueStatement_Editor.java" startLine="181" startPosition="29" endLine="181" endPosition="29" />
+    <nodeInfo nodeId="1199470083818" fileName="ContinueStatement_Editor.java" startLine="139" startPosition="111" endLine="140" endPosition="64" />
+    <nodeInfo nodeId="9056323058805226447" fileName="ContinueStatement_Editor.java" startLine="143" startPosition="111" endLine="144" endPosition="81" />
     <nodeInfo nodeId="1227876791461" fileName="ContinueStatement_Editor.java" startLine="156" startPosition="53" endLine="157" endPosition="39" />
     <nodeInfo nodeId="1227876791461" fileName="ContinueStatement_Editor.java" startLine="164" startPosition="30" endLine="165" endPosition="56" />
     <nodeInfo nodeId="1227876791461" fileName="ContinueStatement_Editor.java" startLine="165" startPosition="56" endLine="166" endPosition="37" />
@@ -222,6 +263,7 @@
     <nodeInfo nodeId="1227876791461" fileName="ContinueStatement_Editor.java" startLine="154" startPosition="41" endLine="192" endPosition="0" />
     <nodeInfo nodeId="1227876791461" fileName="ContinueStatement_Editor.java" startLine="153" startPosition="59" endLine="192" endPosition="12" />
     <nodeInfo nodeId="1227876791461" fileName="ContinueStatement_Editor.java" startLine="152" startPosition="185" endLine="194" endPosition="0" />
+    <nodeInfo nodeId="1199470083781" fileName="ContinueStatement_Editor.java" startLine="151" startPosition="105" endLine="194" endPosition="26" />
     <scopeInfo nodeId="1227876791461" fileName="ContinueStatement_Editor.java" startLine="178" startPosition="29" endLine="178" endPosition="29" />
     <scopeInfo nodeId="1227876791461" fileName="ContinueStatement_Editor.java" startLine="181" startPosition="29" endLine="181" endPosition="29" />
     <scopeInfo nodeId="1199470083817" fileName="ContinueStatement_Editor.java" startLine="139" startPosition="111" endLine="140" endPosition="64" />
@@ -253,6 +295,8 @@
     <scopeInfo nodeId="1165018346122" fileName="EnumConstantReference_Editor.java" startLine="174" startPosition="144" endLine="175" endPosition="131" />
   </root>
   <root nodeId="1084188901668">
+    <nodeInfo nodeId="1188210613759" fileName="StaticFieldDeclaration_Editor.java" startLine="259" startPosition="111" endLine="260" endPosition="99" />
+    <nodeInfo nodeId="1188210606986" fileName="StaticFieldDeclaration_Editor.java" startLine="263" startPosition="111" endLine="264" endPosition="59" />
     <nodeInfo nodeId="1188210606997" fileName="StaticFieldDeclaration_Editor.java" startLine="267" startPosition="111" endLine="268" endPosition="72" />
     <scopeInfo nodeId="1188210613758" fileName="StaticFieldDeclaration_Editor.java" startLine="259" startPosition="111" endLine="260" endPosition="99" />
     <scopeInfo nodeId="1188210606985" fileName="StaticFieldDeclaration_Editor.java" startLine="263" startPosition="111" endLine="264" endPosition="59" />
@@ -260,24 +304,32 @@
   </root>
   <root nodeId="1085483277582">
     <nodeInfo nodeId="6650568951502239955" fileName="EnumClass_Editor.java" startLine="300" startPosition="111" endLine="301" endPosition="112" />
+    <nodeInfo nodeId="1208729889036381801" fileName="EnumClass_Editor.java" startLine="304" startPosition="112" endLine="305" endPosition="205" />
     <scopeInfo nodeId="6650568951502239954" fileName="EnumClass_Editor.java" startLine="300" startPosition="111" endLine="301" endPosition="112" />
     <scopeInfo nodeId="1208729889036381800" fileName="EnumClass_Editor.java" startLine="304" startPosition="112" endLine="305" endPosition="205" />
   </root>
   <root nodeId="1085485112422">
+    <nodeInfo nodeId="9090619664968862612" fileName="EnumConstantDeclaration_Editor.java" startLine="209" startPosition="111" endLine="210" endPosition="99" />
+    <nodeInfo nodeId="492581319488129861" fileName="EnumConstantDeclaration_Editor.java" startLine="213" startPosition="111" endLine="214" endPosition="96" />
     <scopeInfo nodeId="9090619664968862611" fileName="EnumConstantDeclaration_Editor.java" startLine="209" startPosition="111" endLine="210" endPosition="99" />
     <scopeInfo nodeId="492581319488129860" fileName="EnumConstantDeclaration_Editor.java" startLine="213" startPosition="111" endLine="214" endPosition="96" />
   </root>
   <root nodeId="1107796847143">
+    <nodeInfo nodeId="1188208760864" fileName="Interface_Editor.java" startLine="293" startPosition="111" endLine="294" endPosition="99" />
+    <nodeInfo nodeId="3073231036166417785" fileName="Interface_Editor.java" startLine="297" startPosition="111" endLine="298" endPosition="131" />
     <nodeInfo nodeId="1145916184973" fileName="Interface_Editor.java" startLine="301" startPosition="111" endLine="302" endPosition="112" />
     <scopeInfo nodeId="1188208760863" fileName="Interface_Editor.java" startLine="293" startPosition="111" endLine="294" endPosition="99" />
     <scopeInfo nodeId="1224500226824" fileName="Interface_Editor.java" startLine="297" startPosition="111" endLine="298" endPosition="131" />
     <scopeInfo nodeId="1145916182769" fileName="Interface_Editor.java" startLine="301" startPosition="111" endLine="302" endPosition="112" />
   </root>
   <root nodeId="1109281376921">
+    <nodeInfo nodeId="1214998002290" fileName="TypeVariableDeclaration_Editor.java" startLine="135" startPosition="111" endLine="136" endPosition="68" />
+    <nodeInfo nodeId="1215091335402" fileName="TypeVariableDeclaration_Editor.java" startLine="139" startPosition="112" endLine="140" endPosition="99" />
     <scopeInfo nodeId="1214998002289" fileName="TypeVariableDeclaration_Editor.java" startLine="135" startPosition="111" endLine="136" endPosition="68" />
     <scopeInfo nodeId="1215091332473" fileName="TypeVariableDeclaration_Editor.java" startLine="139" startPosition="112" endLine="140" endPosition="99" />
   </root>
   <root nodeId="1128163980260">
+    <nodeInfo nodeId="1211505194190" fileName="ClassifierType_Editor.java" startLine="114" startPosition="111" endLine="115" endPosition="98" />
     <scopeInfo nodeId="1211505190704" fileName="ClassifierType_Editor.java" startLine="114" startPosition="111" endLine="115" endPosition="98" />
   </root>
   <root nodeId="1137022694554">
@@ -405,10 +457,15 @@
     <scopeInfo nodeId="1144185375059" fileName="CastExpression_Actions.java" startLine="33" startPosition="75" endLine="34" endPosition="100" />
   </root>
   <root nodeId="1144226417952">
+    <nodeInfo nodeId="1199467993444" fileName="ForeachStatement_Editor.java" startLine="302" startPosition="111" endLine="303" endPosition="64" />
+    <nodeInfo nodeId="363746191845184819" fileName="ForeachStatement_Editor.java" startLine="306" startPosition="111" endLine="307" endPosition="72" />
     <scopeInfo nodeId="1199467993443" fileName="ForeachStatement_Editor.java" startLine="302" startPosition="111" endLine="303" endPosition="64" />
     <scopeInfo nodeId="363746191845184818" fileName="ForeachStatement_Editor.java" startLine="306" startPosition="111" endLine="307" endPosition="72" />
   </root>
   <root nodeId="1144231351548">
+    <nodeInfo nodeId="1199468075634" fileName="ForStatement_Editor.java" startLine="379" startPosition="111" endLine="380" endPosition="64" />
+    <nodeInfo nodeId="363746191845184792" fileName="ForStatement_Editor.java" startLine="383" startPosition="111" endLine="384" endPosition="72" />
+    <nodeInfo nodeId="772870278648919530" fileName="ForStatement_Editor.java" startLine="387" startPosition="111" endLine="388" endPosition="103" />
     <scopeInfo nodeId="1199468075633" fileName="ForStatement_Editor.java" startLine="379" startPosition="111" endLine="380" endPosition="64" />
     <scopeInfo nodeId="363746191845183915" fileName="ForStatement_Editor.java" startLine="383" startPosition="111" endLine="384" endPosition="72" />
     <scopeInfo nodeId="772870278648910633" fileName="ForStatement_Editor.java" startLine="387" startPosition="111" endLine="388" endPosition="103" />
@@ -456,12 +513,15 @@
     <scopeInfo nodeId="1160998991142" fileName="AssertStatement_Editor.java" startLine="146" startPosition="111" endLine="147" endPosition="68" />
   </root>
   <root nodeId="1163670786880">
+    <nodeInfo nodeId="1201381428287" fileName="SwitchStatement_Editor.java" startLine="327" startPosition="111" endLine="328" endPosition="64" />
+    <nodeInfo nodeId="4652593672361794840" fileName="SwitchStatement_Editor.java" startLine="331" startPosition="111" endLine="332" endPosition="74" />
     <scopeInfo nodeId="1201381428286" fileName="SwitchStatement_Editor.java" startLine="327" startPosition="111" endLine="328" endPosition="64" />
     <scopeInfo nodeId="4652593672361793567" fileName="SwitchStatement_Editor.java" startLine="331" startPosition="111" endLine="332" endPosition="74" />
   </root>
   <root nodeId="1163704265146">
     <nodeInfo nodeId="1224579876714" fileName="QueriesUtil.java" startLine="20" startPosition="99" endLine="21" endPosition="178" />
     <nodeInfo nodeId="1224579876726" fileName="QueriesUtil.java" startLine="21" startPosition="178" endLine="22" endPosition="63" />
+    <nodeInfo nodeId="1227876802981" fileName="QueriesUtil.java" startLine="24" startPosition="39" endLine="25" endPosition="314" />
     <nodeInfo nodeId="1224579876758" fileName="QueriesUtil.java" startLine="28" startPosition="101" endLine="29" endPosition="149" />
     <nodeInfo nodeId="1224579876765" fileName="QueriesUtil.java" startLine="29" startPosition="149" endLine="30" endPosition="148" />
     <nodeInfo nodeId="1224579876778" fileName="QueriesUtil.java" startLine="31" startPosition="5" endLine="32" endPosition="18" />
@@ -590,6 +650,15 @@
     <scopeInfo nodeId="4652593672362090097" fileName="RemarkStatement_Editor.java" startLine="99" startPosition="105" endLine="104" endPosition="5" />
   </root>
   <root nodeId="1170345896430">
+    <nodeInfo nodeId="1220441930680" fileName="AnonymousClass_Editor.java" startLine="352" startPosition="112" endLine="353" endPosition="161" />
+    <nodeInfo nodeId="1201186262941" fileName="AnonymousClass_Editor.java" startLine="356" startPosition="112" endLine="357" endPosition="103" />
+    <nodeInfo nodeId="2925336694746289561" fileName="AnonymousClass_Editor.java" startLine="360" startPosition="112" endLine="361" endPosition="99" />
+    <nodeInfo nodeId="1208706076872" fileName="AnonymousClass_Editor.java" startLine="364" startPosition="111" endLine="365" endPosition="80" />
+    <nodeInfo nodeId="1208703336196" fileName="AnonymousClass_Editor.java" startLine="368" startPosition="111" endLine="369" endPosition="167" />
+    <nodeInfo nodeId="1208703561927" fileName="AnonymousClass_Editor.java" startLine="372" startPosition="111" endLine="373" endPosition="95" />
+    <nodeInfo nodeId="1208702403443" fileName="AnonymousClass_Editor.java" startLine="376" startPosition="111" endLine="377" endPosition="183" />
+    <nodeInfo nodeId="1208703576122" fileName="AnonymousClass_Editor.java" startLine="380" startPosition="111" endLine="381" endPosition="96" />
+    <nodeInfo nodeId="1208704424525" fileName="AnonymousClass_Editor.java" startLine="384" startPosition="111" endLine="385" endPosition="258" />
     <nodeInfo nodeId="1208704663143" fileName="AnonymousClass_Editor.java" startLine="696" startPosition="106" endLine="697" endPosition="106" />
     <nodeInfo nodeId="1208704645086" fileName="AnonymousClass_Editor.java" startLine="709" startPosition="106" endLine="710" endPosition="116" />
     <nodeInfo nodeId="1208704447556" fileName="AnonymousClass_Editor.java" startLine="722" startPosition="106" endLine="723" endPosition="123" />
@@ -643,7 +712,9 @@
     <scopeInfo nodeId="1173187404463" fileName="ArrayAccessExpression_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="95" />
   </root>
   <root nodeId="1173990860683">
+    <nodeInfo nodeId="1225529681230" fileName="IMethodCall_actualArguments.java" startLine="98" startPosition="111" endLine="99" endPosition="158" />
     <nodeInfo nodeId="1198681973540" fileName="IMethodCall_actualArguments.java" startLine="103" startPosition="82" endLine="104" endPosition="19" />
+    <nodeInfo nodeId="1198529119435" fileName="IMethodCall_actualArguments.java" startLine="105" startPosition="5" endLine="106" endPosition="155" />
     <nodeInfo nodeId="1198681960152" fileName="IMethodCall_actualArguments.java" startLine="102" startPosition="111" endLine="105" endPosition="5" />
     <scopeInfo nodeId="1225529606623" fileName="IMethodCall_actualArguments.java" startLine="98" startPosition="111" endLine="99" endPosition="158" />
     <scopeInfo nodeId="1198681960153" fileName="IMethodCall_actualArguments.java" startLine="103" startPosition="82" endLine="104" endPosition="19" />
@@ -671,6 +742,8 @@
     </scopeInfo>
   </root>
   <root nodeId="1177666725159">
+    <nodeInfo nodeId="1199468161445" fileName="DoWhileStatement_Editor.java" startLine="296" startPosition="111" endLine="297" endPosition="64" />
+    <nodeInfo nodeId="363746191845184843" fileName="DoWhileStatement_Editor.java" startLine="300" startPosition="111" endLine="301" endPosition="72" />
     <scopeInfo nodeId="1199468161444" fileName="DoWhileStatement_Editor.java" startLine="296" startPosition="111" endLine="297" endPosition="64" />
     <scopeInfo nodeId="363746191845184842" fileName="DoWhileStatement_Editor.java" startLine="300" startPosition="111" endLine="301" endPosition="72" />
   </root>
@@ -777,10 +850,12 @@
   </root>
   <root nodeId="1184160518419">
     <nodeInfo nodeId="1184161157243" fileName="FieldDeclaration_keyMap.java" startLine="69" startPosition="152" endLine="70" endPosition="128" />
+    <nodeInfo nodeId="1184161182066" fileName="FieldDeclaration_keyMap.java" startLine="70" startPosition="128" endLine="71" endPosition="117" />
     <nodeInfo nodeId="1197551596589" fileName="FieldDeclaration_keyMap.java" startLine="74" startPosition="146" endLine="75" endPosition="14" />
     <nodeInfo nodeId="1197551602046" fileName="FieldDeclaration_keyMap.java" startLine="75" startPosition="14" endLine="76" endPosition="258" />
     <nodeInfo nodeId="1197551779313" fileName="FieldDeclaration_keyMap.java" startLine="76" startPosition="258" endLine="77" endPosition="188" />
     <nodeInfo nodeId="1184162280924" fileName="FieldDeclaration_keyMap.java" startLine="187" startPosition="152" endLine="188" endPosition="128" />
+    <nodeInfo nodeId="1184162280931" fileName="FieldDeclaration_keyMap.java" startLine="188" startPosition="128" endLine="189" endPosition="117" />
     <nodeInfo nodeId="1197551884288" fileName="FieldDeclaration_keyMap.java" startLine="192" startPosition="146" endLine="193" endPosition="14" />
     <nodeInfo nodeId="1197551890739" fileName="FieldDeclaration_keyMap.java" startLine="193" startPosition="14" endLine="194" endPosition="303" />
     <nodeInfo nodeId="1197551895661" fileName="FieldDeclaration_keyMap.java" startLine="194" startPosition="303" endLine="195" endPosition="188" />
@@ -798,6 +873,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1185274995812">
+    <nodeInfo nodeId="1224077044010" fileName="BaseMethodDeclaration_NameCellComponent.java" startLine="86" startPosition="109" endLine="87" endPosition="193" />
     <nodeInfo nodeId="1215517344873" fileName="BaseMethodDeclaration_NameCellComponent.java" startLine="94" startPosition="100" endLine="95" endPosition="26" />
     <nodeInfo nodeId="1215517344877" fileName="BaseMethodDeclaration_NameCellComponent.java" startLine="95" startPosition="26" endLine="96" endPosition="75" />
     <nodeInfo nodeId="1215517344885" fileName="BaseMethodDeclaration_NameCellComponent.java" startLine="97" startPosition="29" endLine="98" endPosition="80" />
@@ -814,13 +890,17 @@
     </scopeInfo>
   </root>
   <root nodeId="1188206419020">
+    <nodeInfo nodeId="1188210092002" fileName="Annotation_Editor.java" startLine="188" startPosition="111" endLine="189" endPosition="99" />
     <scopeInfo nodeId="1188210092001" fileName="Annotation_Editor.java" startLine="188" startPosition="111" endLine="189" endPosition="99" />
   </root>
   <root nodeId="1188206648638">
+    <nodeInfo nodeId="2779739735413259747" fileName="AnnotationMethodDeclaration_Editor.java" startLine="252" startPosition="111" endLine="253" endPosition="99" />
+    <nodeInfo nodeId="5790076564176960875" fileName="AnnotationMethodDeclaration_Editor.java" startLine="256" startPosition="111" endLine="257" endPosition="75" />
     <scopeInfo nodeId="2779739735413259746" fileName="AnnotationMethodDeclaration_Editor.java" startLine="252" startPosition="111" endLine="253" endPosition="99" />
     <scopeInfo nodeId="5790076564176952810" fileName="AnnotationMethodDeclaration_Editor.java" startLine="256" startPosition="111" endLine="257" endPosition="75" />
   </root>
   <root nodeId="1188208059946">
+    <nodeInfo nodeId="1188995347718" fileName="AnnotationInstance_Editor.java" startLine="125" startPosition="111" endLine="126" endPosition="210" />
     <scopeInfo nodeId="1188995326443" fileName="AnnotationInstance_Editor.java" startLine="125" startPosition="111" endLine="126" endPosition="210" />
   </root>
   <root nodeId="1194344707826">
@@ -889,9 +969,11 @@
     <scopeInfo nodeId="1197028333991" fileName="DotExpression_Actions_DeleteOperation.java" startLine="33" startPosition="75" endLine="34" endPosition="97" />
   </root>
   <root nodeId="1198252535774">
+    <nodeInfo nodeId="1198253985798" fileName="MethodHierarchy_KeyMap.java" startLine="63" startPosition="152" endLine="64" endPosition="123" />
     <nodeInfo nodeId="4393431345217255636" fileName="MethodHierarchy_KeyMap.java" startLine="69" startPosition="27" endLine="70" endPosition="77" />
     <nodeInfo nodeId="4393431345217255645" fileName="MethodHierarchy_KeyMap.java" startLine="70" startPosition="77" endLine="71" endPosition="75" />
     <nodeInfo nodeId="8382163613504522105" fileName="MethodHierarchy_KeyMap.java" startLine="71" startPosition="75" endLine="72" endPosition="183" />
+    <nodeInfo nodeId="1198254091168" fileName="MethodHierarchy_KeyMap.java" startLine="112" startPosition="152" endLine="113" endPosition="123" />
     <nodeInfo nodeId="4393431345217255866" fileName="MethodHierarchy_KeyMap.java" startLine="118" startPosition="27" endLine="119" endPosition="77" />
     <nodeInfo nodeId="4393431345217255875" fileName="MethodHierarchy_KeyMap.java" startLine="119" startPosition="77" endLine="120" endPosition="75" />
     <nodeInfo nodeId="7347712222697957231" fileName="MethodHierarchy_KeyMap.java" startLine="120" startPosition="75" endLine="121" endPosition="180" />
@@ -929,12 +1011,15 @@
     <scopeInfo nodeId="1199470232280" fileName="ContinueStatement_Actions.java" startLine="28" startPosition="75" endLine="29" endPosition="51" />
   </root>
   <root nodeId="1200397585756">
+    <nodeInfo nodeId="1208859177424" fileName="CharConstant_Editor.java" startLine="104" startPosition="110" endLine="105" endPosition="143" />
     <scopeInfo nodeId="1208859155875" fileName="CharConstant_Editor.java" startLine="104" startPosition="110" endLine="105" endPosition="143" />
   </root>
   <root nodeId="1201371426447">
+    <nodeInfo nodeId="1201399936111" fileName="Property_Editor.java" startLine="235" startPosition="110" endLine="236" endPosition="177" />
     <scopeInfo nodeId="1201399895143" fileName="Property_Editor.java" startLine="235" startPosition="110" endLine="236" endPosition="177" />
   </root>
   <root nodeId="1201399229469">
+    <nodeInfo nodeId="1202861961372" fileName="CustomPropertyImplementation_Editor.java" startLine="76" startPosition="110" endLine="77" endPosition="74" />
     <scopeInfo nodeId="1202861937948" fileName="CustomPropertyImplementation_Editor.java" startLine="76" startPosition="110" endLine="77" endPosition="74" />
   </root>
   <root nodeId="1206060906745">
@@ -977,6 +1062,7 @@
     <unitInfo nodeId="1208623526508" fileName="AbstractOperation_Editor.java" startLine="21" startPosition="19" endLine="25" endPosition="9" unitName="jetbrains.mps.baseLanguage.editor.AbstractOperation_Editor$2" />
   </root>
   <root nodeId="1212695915153">
+    <nodeInfo nodeId="1212700273381" fileName="ClassCreator_Editor.java" startLine="145" startPosition="111" endLine="146" endPosition="102" />
     <scopeInfo nodeId="1212699852042" fileName="ClassCreator_Editor.java" startLine="145" startPosition="111" endLine="146" endPosition="102" />
   </root>
   <root nodeId="1214997316768">
@@ -1071,6 +1157,8 @@
     <scopeInfo nodeId="1221569837085" fileName="VariableDeclaration_RemoveFinalOnDelete.java" startLine="28" startPosition="75" endLine="29" endPosition="61" />
   </root>
   <root nodeId="1223637210494">
+    <nodeInfo nodeId="1223637252795" fileName="_DeprecatedPart.java" startLine="105" startPosition="111" endLine="106" endPosition="64" />
+    <nodeInfo nodeId="1224614825497" fileName="_DeprecatedPart.java" startLine="109" startPosition="112" endLine="110" endPosition="64" />
     <scopeInfo nodeId="1223637250732" fileName="_DeprecatedPart.java" startLine="105" startPosition="111" endLine="106" endPosition="64" />
     <scopeInfo nodeId="1223637237099" fileName="_DeprecatedPart.java" startLine="109" startPosition="112" endLine="110" endPosition="64" />
   </root>
@@ -1182,6 +1270,7 @@
     <nodeInfo nodeId="4755152624709102506" fileName="BaseMethodParameterInformationQuery.java" startLine="31" startPosition="98" endLine="32" endPosition="94" />
     <nodeInfo nodeId="320172740465932812" fileName="BaseMethodParameterInformationQuery.java" startLine="35" startPosition="72" endLine="36" endPosition="57" />
     <nodeInfo nodeId="893779103613501859" fileName="BaseMethodParameterInformationQuery.java" startLine="37" startPosition="31" endLine="38" endPosition="18" />
+    <nodeInfo nodeId="320172740465932771" fileName="BaseMethodParameterInformationQuery.java" startLine="41" startPosition="39" endLine="42" endPosition="288" />
     <nodeInfo nodeId="893779103613501850" fileName="BaseMethodParameterInformationQuery.java" startLine="36" startPosition="57" endLine="39" endPosition="5" />
     <nodeInfo nodeId="320172740465932899" fileName="BaseMethodParameterInformationQuery.java" startLine="19" startPosition="81" endLine="23" endPosition="6" />
     <nodeInfo nodeId="320172740465932759" fileName="BaseMethodParameterInformationQuery.java" startLine="40" startPosition="171" endLine="44" endPosition="0" />
@@ -1213,6 +1302,7 @@
     </scopeInfo>
   </root>
   <root nodeId="4972241301747172167">
+    <nodeInfo nodeId="4972241301747194467" fileName="IMethodCall_typeArguments.java" startLine="101" startPosition="111" endLine="102" endPosition="102" />
     <scopeInfo nodeId="4972241301747186403" fileName="IMethodCall_typeArguments.java" startLine="101" startPosition="111" endLine="102" endPosition="102" />
   </root>
   <root nodeId="4972241301747194480">
@@ -1237,6 +1327,7 @@
     <scopeInfo nodeId="6173498004806814535" fileName="UncommentSingleLineComment.java" startLine="29" startPosition="75" endLine="36" endPosition="39" />
   </root>
   <root nodeId="6277919470776558529">
+    <nodeInfo nodeId="6277919470776558568" fileName="LastCommentPart.java" startLine="53" startPosition="152" endLine="54" endPosition="181" />
     <nodeInfo nodeId="6277919470776558558" fileName="LastCommentPart.java" startLine="57" startPosition="146" endLine="58" endPosition="168" />
     <scopeInfo nodeId="6277919470776558567" fileName="LastCommentPart.java" startLine="53" startPosition="152" endLine="54" endPosition="181" />
     <scopeInfo nodeId="6277919470776558533" fileName="LastCommentPart.java" startLine="57" startPosition="146" endLine="58" endPosition="168" />
@@ -1315,6 +1406,7 @@
     <scopeInfo nodeId="7743745654901224337" fileName="DeleteFinalInField.java" startLine="28" startPosition="75" endLine="29" endPosition="59" />
   </root>
   <root nodeId="7812779912049087960">
+    <nodeInfo nodeId="7812779912049128792" fileName="AbstractClassifierReference_KeyMap.java" startLine="57" startPosition="152" endLine="58" endPosition="135" />
     <nodeInfo nodeId="7812779912049128800" fileName="AbstractClassifierReference_KeyMap.java" startLine="61" startPosition="146" endLine="62" endPosition="254" />
     <scopeInfo nodeId="7812779912049123717" fileName="AbstractClassifierReference_KeyMap.java" startLine="57" startPosition="152" endLine="58" endPosition="135" />
     <scopeInfo nodeId="7812779912049087964" fileName="AbstractClassifierReference_KeyMap.java" startLine="61" startPosition="146" endLine="62" endPosition="254" />
@@ -1328,100 +1420,104 @@
     <scopeInfo nodeId="8229074851325491844" fileName="DeleteFinalInBaseMethod.java" startLine="28" startPosition="75" endLine="29" endPosition="59" />
   </root>
   <root nodeId="893779103613495854">
-    <nodeInfo nodeId="893779103613495873" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="20" startPosition="64" endLine="21" endPosition="89" />
-    <nodeInfo nodeId="893779103613495879" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="21" startPosition="89" endLine="22" endPosition="136" />
-    <nodeInfo nodeId="893779103613495886" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="22" startPosition="136" endLine="23" endPosition="24" />
-    <nodeInfo nodeId="893779103613495891" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="24" startPosition="102" endLine="25" endPosition="204" />
-    <nodeInfo nodeId="893779103613495906" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="26" startPosition="12" endLine="27" endPosition="84" />
-    <nodeInfo nodeId="893779103613495912" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="28" startPosition="5" endLine="29" endPosition="55" />
-    <nodeInfo nodeId="893779103613495924" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="31" startPosition="311" endLine="32" endPosition="148" />
-    <nodeInfo nodeId="893779103613495943" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="34" startPosition="5" endLine="35" endPosition="25" />
-    <nodeInfo nodeId="893779103613501597" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="40" startPosition="85" endLine="41" endPosition="155" />
-    <nodeInfo nodeId="893779103613501615" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="42" startPosition="14" endLine="43" endPosition="34" />
-    <nodeInfo nodeId="893779103613501627" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="46" startPosition="75" endLine="47" endPosition="82" />
-    <nodeInfo nodeId="893779103613501641" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="48" startPosition="12" endLine="49" endPosition="37" />
-    <nodeInfo nodeId="893779103613501648" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="51" startPosition="121" endLine="52" endPosition="137" />
-    <nodeInfo nodeId="893779103613501658" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="53" startPosition="142" endLine="54" endPosition="31" />
-    <nodeInfo nodeId="893779103613501672" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="56" startPosition="60" endLine="57" endPosition="36" />
-    <nodeInfo nodeId="893779103613501682" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="58" startPosition="11" endLine="59" endPosition="92" />
-    <nodeInfo nodeId="893779103613501689" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="60" startPosition="9" endLine="61" endPosition="31" />
-    <nodeInfo nodeId="893779103613501707" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="63" startPosition="5" endLine="64" endPosition="0" />
-    <nodeInfo nodeId="893779103613501726" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="68" startPosition="6" endLine="69" endPosition="27" />
-    <nodeInfo nodeId="893779103613501740" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="71" startPosition="56" endLine="72" endPosition="32" />
-    <nodeInfo nodeId="893779103613501752" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="74" startPosition="69" endLine="75" endPosition="33" />
-    <nodeInfo nodeId="893779103613501764" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="77" startPosition="67" endLine="78" endPosition="131" />
-    <nodeInfo nodeId="893779103613501780" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="79" startPosition="14" endLine="80" endPosition="33" />
-    <nodeInfo nodeId="893779103613501787" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="82" startPosition="65" endLine="83" endPosition="78" />
-    <nodeInfo nodeId="893779103613501801" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="84" startPosition="7" endLine="85" endPosition="32" />
-    <nodeInfo nodeId="893779103613501806" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="86" startPosition="5" endLine="87" endPosition="27" />
-    <nodeInfo nodeId="893779103613495904" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="26" startPosition="10" endLine="28" endPosition="5" />
-    <nodeInfo nodeId="893779103613501613" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="42" startPosition="12" endLine="44" endPosition="7" />
-    <nodeInfo nodeId="893779103613501639" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="48" startPosition="10" endLine="50" endPosition="5" />
-    <nodeInfo nodeId="893779103613501778" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="79" startPosition="12" endLine="81" endPosition="7" />
-    <nodeInfo nodeId="893779103613495922" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="30" startPosition="57" endLine="33" endPosition="7" />
-    <nodeInfo nodeId="893779103613501670" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="55" startPosition="101" endLine="58" endPosition="11" />
-    <nodeInfo nodeId="893779103613501738" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="70" startPosition="90" endLine="73" endPosition="7" />
-    <nodeInfo nodeId="893779103613501750" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="73" startPosition="7" endLine="76" endPosition="7" />
-    <nodeInfo nodeId="893779103613501785" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="81" startPosition="7" endLine="84" endPosition="7" />
-    <nodeInfo nodeId="893779103613501715" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="64" startPosition="0" endLine="68" endPosition="6" />
-    <nodeInfo nodeId="893779103613495889" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="23" startPosition="24" endLine="28" endPosition="5" />
-    <nodeInfo nodeId="893779103613495918" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="29" startPosition="55" endLine="34" endPosition="5" />
-    <nodeInfo nodeId="893779103613501595" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="39" startPosition="124" endLine="44" endPosition="7" />
-    <nodeInfo nodeId="893779103613501625" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="45" startPosition="5" endLine="50" endPosition="5" />
-    <nodeInfo nodeId="893779103613501762" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="76" startPosition="7" endLine="81" endPosition="7" />
-    <nodeInfo nodeId="893779103613501663" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="54" startPosition="31" endLine="60" endPosition="9" />
-    <nodeInfo nodeId="893779103613501593" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="38" startPosition="124" endLine="45" endPosition="5" />
-    <nodeInfo nodeId="893779103613501656" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="52" startPosition="137" endLine="62" endPosition="7" />
-    <nodeInfo nodeId="893779103613501646" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="50" startPosition="5" endLine="63" endPosition="5" />
-    <nodeInfo nodeId="893779103613501731" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="69" startPosition="27" endLine="86" endPosition="5" />
-    <nodeInfo nodeId="893779103613495860" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="19" startPosition="54" endLine="37" endPosition="0" />
-    <nodeInfo nodeId="893779103613501576" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="37" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="893779103613495890" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="24" startPosition="102" endLine="25" endPosition="204" />
-    <scopeInfo nodeId="893779103613495905" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="26" startPosition="12" endLine="27" endPosition="84" />
-    <scopeInfo nodeId="893779103613495923" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="31" startPosition="311" endLine="32" endPosition="148" />
-    <scopeInfo nodeId="893779103613501596" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="40" startPosition="85" endLine="41" endPosition="155" />
-    <scopeInfo nodeId="893779103613501614" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="42" startPosition="14" endLine="43" endPosition="34" />
-    <scopeInfo nodeId="893779103613501626" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="46" startPosition="75" endLine="47" endPosition="82" />
-    <scopeInfo nodeId="893779103613501640" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="48" startPosition="12" endLine="49" endPosition="37" />
-    <scopeInfo nodeId="893779103613501671" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="56" startPosition="60" endLine="57" endPosition="36" />
-    <scopeInfo nodeId="893779103613501739" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="71" startPosition="56" endLine="72" endPosition="32" />
-    <scopeInfo nodeId="893779103613501751" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="74" startPosition="69" endLine="75" endPosition="33" />
-    <scopeInfo nodeId="893779103613501763" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="77" startPosition="67" endLine="78" endPosition="131" />
-    <scopeInfo nodeId="893779103613501779" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="79" startPosition="14" endLine="80" endPosition="33" />
-    <scopeInfo nodeId="893779103613501786" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="82" startPosition="65" endLine="83" endPosition="78" />
-    <scopeInfo nodeId="893779103613495921" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="30" startPosition="57" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="893779103613501669" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="55" startPosition="101" endLine="59" endPosition="92" />
-    <scopeInfo nodeId="893779103613495918" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="29" startPosition="55" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="893779103613501594" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="39" startPosition="124" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="893779103613501663" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="54" startPosition="31" endLine="60" endPosition="9">
+    <nodeInfo nodeId="893779103613495873" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="19" startPosition="64" endLine="20" endPosition="89" />
+    <nodeInfo nodeId="893779103613495879" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="20" startPosition="89" endLine="21" endPosition="136" />
+    <nodeInfo nodeId="893779103613495886" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="21" startPosition="136" endLine="22" endPosition="24" />
+    <nodeInfo nodeId="893779103613495891" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="23" startPosition="102" endLine="24" endPosition="204" />
+    <nodeInfo nodeId="893779103613495906" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="25" startPosition="12" endLine="26" endPosition="84" />
+    <nodeInfo nodeId="893779103613495912" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="27" startPosition="5" endLine="28" endPosition="55" />
+    <nodeInfo nodeId="893779103613495924" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="30" startPosition="311" endLine="31" endPosition="148" />
+    <nodeInfo nodeId="893779103613495943" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="33" startPosition="5" endLine="34" endPosition="25" />
+    <nodeInfo nodeId="893779103613501597" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="39" startPosition="85" endLine="40" endPosition="155" />
+    <nodeInfo nodeId="893779103613501615" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="41" startPosition="14" endLine="42" endPosition="34" />
+    <nodeInfo nodeId="893779103613501627" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="45" startPosition="75" endLine="46" endPosition="82" />
+    <nodeInfo nodeId="893779103613501641" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="47" startPosition="12" endLine="48" endPosition="37" />
+    <nodeInfo nodeId="893779103613501648" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="50" startPosition="121" endLine="51" endPosition="137" />
+    <nodeInfo nodeId="893779103613501658" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="52" startPosition="142" endLine="53" endPosition="31" />
+    <nodeInfo nodeId="893779103613501672" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="55" startPosition="60" endLine="56" endPosition="36" />
+    <nodeInfo nodeId="893779103613501682" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="57" startPosition="11" endLine="58" endPosition="92" />
+    <nodeInfo nodeId="893779103613501689" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="59" startPosition="9" endLine="60" endPosition="31" />
+    <nodeInfo nodeId="893779103613501707" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="62" startPosition="5" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="893779103613501726" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="67" startPosition="6" endLine="68" endPosition="27" />
+    <nodeInfo nodeId="893779103613501740" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="70" startPosition="56" endLine="71" endPosition="32" />
+    <nodeInfo nodeId="893779103613501752" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="73" startPosition="69" endLine="74" endPosition="33" />
+    <nodeInfo nodeId="893779103613501764" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="76" startPosition="67" endLine="77" endPosition="131" />
+    <nodeInfo nodeId="893779103613501780" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="78" startPosition="14" endLine="79" endPosition="33" />
+    <nodeInfo nodeId="893779103613501787" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="81" startPosition="65" endLine="82" endPosition="78" />
+    <nodeInfo nodeId="893779103613501801" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="83" startPosition="7" endLine="84" endPosition="32" />
+    <nodeInfo nodeId="893779103613501806" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="85" startPosition="5" endLine="86" endPosition="27" />
+    <nodeInfo nodeId="893779103613495904" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="25" startPosition="10" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="893779103613501613" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="41" startPosition="12" endLine="43" endPosition="7" />
+    <nodeInfo nodeId="893779103613501639" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="47" startPosition="10" endLine="49" endPosition="5" />
+    <nodeInfo nodeId="893779103613501778" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="78" startPosition="12" endLine="80" endPosition="7" />
+    <nodeInfo nodeId="893779103613495922" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="29" startPosition="57" endLine="32" endPosition="7" />
+    <nodeInfo nodeId="893779103613501670" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="54" startPosition="101" endLine="57" endPosition="11" />
+    <nodeInfo nodeId="893779103613501738" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="69" startPosition="90" endLine="72" endPosition="7" />
+    <nodeInfo nodeId="893779103613501750" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="72" startPosition="7" endLine="75" endPosition="7" />
+    <nodeInfo nodeId="893779103613501785" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="80" startPosition="7" endLine="83" endPosition="7" />
+    <nodeInfo nodeId="893779103613501715" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="63" startPosition="0" endLine="67" endPosition="6" />
+    <nodeInfo nodeId="893779103613495854" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="89" startPosition="65" endLine="93" endPosition="6" />
+    <nodeInfo nodeId="893779103613495889" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="22" startPosition="24" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="893779103613495918" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="28" startPosition="55" endLine="33" endPosition="5" />
+    <nodeInfo nodeId="893779103613501595" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="38" startPosition="124" endLine="43" endPosition="7" />
+    <nodeInfo nodeId="893779103613501625" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="44" startPosition="5" endLine="49" endPosition="5" />
+    <nodeInfo nodeId="893779103613501762" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="75" startPosition="7" endLine="80" endPosition="7" />
+    <nodeInfo nodeId="893779103613501663" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="53" startPosition="31" endLine="59" endPosition="9" />
+    <nodeInfo nodeId="893779103613501593" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="37" startPosition="124" endLine="44" endPosition="5" />
+    <nodeInfo nodeId="893779103613495854" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="88" startPosition="0" endLine="95" endPosition="0" />
+    <nodeInfo nodeId="893779103613501656" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="51" startPosition="137" endLine="61" endPosition="7" />
+    <nodeInfo nodeId="893779103613501646" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="49" startPosition="5" endLine="62" endPosition="5" />
+    <nodeInfo nodeId="893779103613501731" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="68" startPosition="27" endLine="85" endPosition="5" />
+    <nodeInfo nodeId="893779103613495860" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="18" startPosition="54" endLine="36" endPosition="0" />
+    <nodeInfo nodeId="893779103613501576" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="36" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="893779103613495890" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="23" startPosition="102" endLine="24" endPosition="204" />
+    <scopeInfo nodeId="893779103613495905" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="25" startPosition="12" endLine="26" endPosition="84" />
+    <scopeInfo nodeId="893779103613495923" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="30" startPosition="311" endLine="31" endPosition="148" />
+    <scopeInfo nodeId="893779103613501596" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="39" startPosition="85" endLine="40" endPosition="155" />
+    <scopeInfo nodeId="893779103613501614" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="41" startPosition="14" endLine="42" endPosition="34" />
+    <scopeInfo nodeId="893779103613501626" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="45" startPosition="75" endLine="46" endPosition="82" />
+    <scopeInfo nodeId="893779103613501640" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="47" startPosition="12" endLine="48" endPosition="37" />
+    <scopeInfo nodeId="893779103613501671" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="55" startPosition="60" endLine="56" endPosition="36" />
+    <scopeInfo nodeId="893779103613501739" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="70" startPosition="56" endLine="71" endPosition="32" />
+    <scopeInfo nodeId="893779103613501751" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="73" startPosition="69" endLine="74" endPosition="33" />
+    <scopeInfo nodeId="893779103613501763" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="76" startPosition="67" endLine="77" endPosition="131" />
+    <scopeInfo nodeId="893779103613501779" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="78" startPosition="14" endLine="79" endPosition="33" />
+    <scopeInfo nodeId="893779103613501786" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="81" startPosition="65" endLine="82" endPosition="78" />
+    <scopeInfo nodeId="893779103613495921" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="29" startPosition="57" endLine="32" endPosition="7" />
+    <scopeInfo nodeId="893779103613501669" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="54" startPosition="101" endLine="58" endPosition="92" />
+    <scopeInfo nodeId="893779103613495854" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="89" startPosition="65" endLine="93" endPosition="6" />
+    <scopeInfo nodeId="893779103613495918" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="28" startPosition="55" endLine="33" endPosition="5" />
+    <scopeInfo nodeId="893779103613501594" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="38" startPosition="124" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="893779103613501663" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="53" startPosition="31" endLine="59" endPosition="9">
       <varInfo nodeId="893779103613501667" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="893779103613501657" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="53" startPosition="142" endLine="61" endPosition="31" />
-    <scopeInfo nodeId="893779103613501647" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="51" startPosition="121" endLine="62" endPosition="7">
+    <scopeInfo nodeId="893779103613495854" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="88" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="893779103613501657" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="52" startPosition="142" endLine="60" endPosition="31" />
+    <scopeInfo nodeId="893779103613501647" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="50" startPosition="121" endLine="61" endPosition="7">
       <varInfo nodeId="893779103613501649" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="893779103613495863" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="20" startPosition="64" endLine="35" endPosition="25">
+    <scopeInfo nodeId="893779103613495863" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="19" startPosition="64" endLine="34" endPosition="25">
       <varInfo nodeId="893779103613495913" varName="methodsToShow" />
       <varInfo nodeId="893779103613495880" varName="classifier" />
       <varInfo nodeId="893779103613495874" varName="method" />
       <varInfo nodeId="893779103613495887" varName="members" />
     </scopeInfo>
-    <scopeInfo nodeId="893779103613501737" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="70" startPosition="90" endLine="85" endPosition="32" />
-    <scopeInfo nodeId="893779103613501731" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="69" startPosition="27" endLine="86" endPosition="5">
+    <scopeInfo nodeId="893779103613501737" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="69" startPosition="90" endLine="84" endPosition="32" />
+    <scopeInfo nodeId="893779103613501731" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="68" startPosition="27" endLine="85" endPosition="5">
       <varInfo nodeId="893779103613501735" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="893779103613495860" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="19" startPosition="54" endLine="37" endPosition="0">
+    <scopeInfo nodeId="893779103613495860" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="18" startPosition="54" endLine="36" endPosition="0">
       <varInfo nodeId="893779103613495865" varName="methodCall" />
     </scopeInfo>
-    <scopeInfo nodeId="893779103613501579" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="38" startPosition="124" endLine="87" endPosition="27">
+    <scopeInfo nodeId="893779103613501579" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="37" startPosition="124" endLine="86" endPosition="27">
       <varInfo nodeId="893779103613501716" varName="argumentIndex" />
     </scopeInfo>
-    <scopeInfo nodeId="893779103613501576" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="37" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="893779103613501576" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="36" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="893779103613501584" varName="styledText" />
       <varInfo nodeId="893779103613501834" varName="selectedActualArgument" />
       <varInfo nodeId="893779103613501580" varName="methodDeclaration" />
     </scopeInfo>
-    <unitInfo nodeId="893779103613495854" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="19" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BaseMethodParameterInformationQueryUtil" />
+    <unitInfo nodeId="893779103613495854" fileName="BaseMethodParameterInformationQueryUtil.java" startLine="18" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BaseMethodParameterInformationQueryUtil" />
   </root>
   <root nodeId="893779103613531782">
     <nodeInfo nodeId="893779103613531812" fileName="BaseMethodParameterInformationQueryRestricted.java" startLine="18" startPosition="78" endLine="19" endPosition="74" />
@@ -1429,6 +1525,7 @@
     <nodeInfo nodeId="893779103613531816" fileName="BaseMethodParameterInformationQueryRestricted.java" startLine="26" startPosition="98" endLine="27" endPosition="94" />
     <nodeInfo nodeId="893779103613532260" fileName="BaseMethodParameterInformationQueryRestricted.java" startLine="30" startPosition="96" endLine="31" endPosition="57" />
     <nodeInfo nodeId="893779103613532268" fileName="BaseMethodParameterInformationQueryRestricted.java" startLine="32" startPosition="31" endLine="33" endPosition="18" />
+    <nodeInfo nodeId="893779103613532284" fileName="BaseMethodParameterInformationQueryRestricted.java" startLine="36" startPosition="39" endLine="37" endPosition="220" />
     <nodeInfo nodeId="893779103613532266" fileName="BaseMethodParameterInformationQueryRestricted.java" startLine="31" startPosition="57" endLine="34" endPosition="5" />
     <nodeInfo nodeId="893779103613532282" fileName="BaseMethodParameterInformationQueryRestricted.java" startLine="35" startPosition="171" endLine="39" endPosition="0" />
     <nodeInfo nodeId="893779103613532273" fileName="BaseMethodParameterInformationQueryRestricted.java" startLine="34" startPosition="5" endLine="39" endPosition="7" />
@@ -1463,6 +1560,7 @@
     <nodeInfo nodeId="97516636738985131" fileName="AnnotationInstanceParameterInformationQuery.java" startLine="49" startPosition="31" endLine="50" endPosition="83" />
     <nodeInfo nodeId="97516636738984098" fileName="AnnotationInstanceParameterInformationQuery.java" startLine="51" startPosition="7" endLine="52" endPosition="32" />
     <nodeInfo nodeId="97516636738984065" fileName="AnnotationInstanceParameterInformationQuery.java" startLine="53" startPosition="5" endLine="54" endPosition="27" />
+    <nodeInfo nodeId="97516636739193850" fileName="AnnotationInstanceParameterInformationQuery.java" startLine="57" startPosition="98" endLine="58" endPosition="83" />
     <nodeInfo nodeId="97516636738982980" fileName="AnnotationInstanceParameterInformationQuery.java" startLine="63" startPosition="176" endLine="64" endPosition="151" />
     <nodeInfo nodeId="97516636738982850" fileName="AnnotationInstanceParameterInformationQuery.java" startLine="66" startPosition="5" endLine="67" endPosition="16" />
     <nodeInfo nodeId="97516636738982726" fileName="AnnotationInstanceParameterInformationQuery.java" startLine="23" startPosition="10" endLine="25" endPosition="5" />

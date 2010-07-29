@@ -150,6 +150,7 @@
   <dependency className="jetbrains.mps.internalCollections.test.basicOperations.QueueDequeStack_Test" file="QueueDequeStack_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.PriorityQueue" />
     <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.DequeSequence" />
@@ -157,7 +158,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="junit.framework.Assert" />
-    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test" file="Sequence_Test.java">
@@ -206,7 +206,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SortedSetSequence" />
     <classNode dependClassName="jetbrains.mps.util.WeakSet" />
     <classNode dependClassName="junit.framework.Assert" />
-    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
   <dependency className="jetbrains.mps.internalCollections.test.basicOperations.SortedMap_Test" file="SortedMap_Test.java">

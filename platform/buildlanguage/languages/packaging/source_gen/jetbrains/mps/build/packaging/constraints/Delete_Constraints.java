@@ -4,11 +4,17 @@ package jetbrains.mps.build.packaging.constraints;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeAChildContext;
-import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Delete_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return ObjectUtils.equals(SPropertyOperations.getString(_context.getLink(), "role"), "delete");
+    return eq_ycrh01_a0a0a(SPropertyOperations.getString(_context.getLink(), "role"), "delete");
+  }
+
+  private static boolean eq_ycrh01_a0a0a(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

@@ -6,7 +6,6 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -43,7 +42,7 @@ public class MigrateString_Intention extends BaseIntention implements Intention 
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ObjectUtils.equals(SPropertyOperations.getString(SLinkOperations.getTarget(node, "classifier", false), "name"), "String");
+    return eq_8h3uxw_a0a0g(SPropertyOperations.getString(SLinkOperations.getTarget(node, "classifier", false), "name"), "String");
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
@@ -53,5 +52,12 @@ public class MigrateString_Intention extends BaseIntention implements Intention 
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
+  }
+
+  private static boolean eq_8h3uxw_a0a0g(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import java.util.Arrays;
-import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.util.WeakSet;
 
 public class Set_Test extends Util_Test {
@@ -123,7 +122,7 @@ public class Set_Test extends Util_Test {
   public void test_eq() throws Exception {
     Set<Integer> seta = SetSequence.fromSetAndArray(new HashSet<Integer>(), 111, 222, 333);
     Set<Integer> setb = SetSequence.fromSetAndArray(new HashSet<Integer>(), 333, 222, 111);
-    Assert.assertTrue(ObjectUtils.equals(seta, setb));
+    Assert.assertTrue(eq_c8cpc7_a0a2a41(seta, setb));
   }
 
   public void test_mps6232() throws Exception {
@@ -147,5 +146,12 @@ public class Set_Test extends Util_Test {
     }
     System.gc();
     Assert.assertTrue(SetSequence.fromSet(ws).isEmpty());
+  }
+
+  private static boolean eq_c8cpc7_a0a2a41(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.commons.lang.ObjectUtils;
 
 public class TestCaseRow extends TestContainerRow {
   private final String myTestCaseName;
@@ -19,6 +18,13 @@ public class TestCaseRow extends TestContainerRow {
   }
 
   public boolean matches(String testCase, String testMethod) {
-    return testCase == null || ObjectUtils.equals(testCase, this.myTestCaseName);
+    return testCase == null || eq_f4t6f0_a0a0a0(testCase, this.myTestCaseName);
+  }
+
+  private static boolean eq_f4t6f0_a0a0a0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

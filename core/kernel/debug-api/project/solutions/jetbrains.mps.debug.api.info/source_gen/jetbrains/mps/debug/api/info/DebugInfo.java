@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -95,7 +94,7 @@ public class DebugInfo {
         return it.getPositions();
       }
     })) {
-      if (ObjectUtils.equals(element.getFileAndLine(), str)) {
+      if (eq_exfyrk_a0a0b0h(element.getFileAndLine(), str)) {
         String nodeId = element.getNodeId();
         SNode node = model.getNodeById(nodeId);
         ListSequence.fromList(result).addElement(node);
@@ -111,7 +110,7 @@ public class DebugInfo {
         return it.getPositions();
       }
     })) {
-      if (ObjectUtils.equals(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
+      if (eq_exfyrk_a0a0a0b0i(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
         ListSequence.fromList(resultList).addElement(element);
       }
     }
@@ -182,7 +181,7 @@ public class DebugInfo {
         return it.getScopePositions();
       }
     })) {
-      if (ObjectUtils.equals(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
+      if (eq_exfyrk_a0a0a0b0j(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
         ListSequence.fromList(resultList).addElement(element);
       }
     }
@@ -209,7 +208,7 @@ public class DebugInfo {
         return it.getPositions();
       }
     })) {
-      if (ObjectUtils.equals(element.getNodeId(), nodeId)) {
+      if (eq_exfyrk_a0a0a0k(element.getNodeId(), nodeId)) {
         return element;
       }
     }
@@ -224,7 +223,7 @@ public class DebugInfo {
         return it.getUnitPositions();
       }
     })) {
-      if (ObjectUtils.equals(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
+      if (eq_exfyrk_a0a0a0c0l(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
         ListSequence.fromList(resultList).addElement(element);
       }
     }
@@ -248,7 +247,7 @@ public class DebugInfo {
         return it.getUnitPositions();
       }
     })) {
-      if (ObjectUtils.equals(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
+      if (eq_exfyrk_a0a0a0c0m(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
         ListSequence.fromList(resultList).addElement(element);
       }
     }
@@ -312,5 +311,47 @@ public class DebugInfo {
       throw new RuntimeException(e);
     }
     return info;
+  }
+
+  private static boolean eq_exfyrk_a0a0b0h(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_exfyrk_a0a0a0b0i(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_exfyrk_a0a0a0b0j(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_exfyrk_a0a0a0k(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_exfyrk_a0a0a0c0l(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_exfyrk_a0a0a0c0m(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

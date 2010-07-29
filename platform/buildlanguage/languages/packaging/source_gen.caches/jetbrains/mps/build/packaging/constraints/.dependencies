@@ -72,10 +72,10 @@
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.constraints.Delete_Constraints" file="Delete_Constraints.java">
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
-    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.constraints.Echo_name_PropertyConstraint" file="Echo_name_PropertyConstraint.java">
     <classNode dependClassName="java.lang.Object" />

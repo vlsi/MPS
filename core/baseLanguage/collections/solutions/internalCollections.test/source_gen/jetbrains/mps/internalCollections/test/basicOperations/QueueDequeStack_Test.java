@@ -7,7 +7,6 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import junit.framework.Assert;
-import org.apache.commons.lang.ObjectUtils;
 import java.util.PriorityQueue;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
@@ -19,7 +18,7 @@ public class QueueDequeStack_Test extends TestCase {
     QueueSequence.fromQueue(q).addLastElement(2);
     QueueSequence.fromQueue(q).addLastElement(3);
     Queue<Integer> q2 = QueueSequence.fromQueueAndArray(new LinkedList<Integer>(), 1, 2, 3);
-    Assert.assertTrue(ObjectUtils.equals(q, q2));
+    Assert.assertTrue(eq_5js43w_a0a5a0(q, q2));
     Assert.assertSame(1, QueueSequence.fromQueue(q).first());
     Assert.assertSame(1, QueueSequence.fromQueue(q).removeFirstElement());
     Assert.assertSame(2, QueueSequence.fromQueue(q).first());
@@ -97,5 +96,12 @@ public class QueueDequeStack_Test extends TestCase {
     Assert.assertSame(5, DequeSequence.fromDeque(d).last());
     Assert.assertSame(5, DequeSequence.fromDeque(d).removeLastElement());
     Assert.assertTrue(DequeSequence.fromDeque(d).isEmpty());
+  }
+
+  private static boolean eq_5js43w_a0a5a0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

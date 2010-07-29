@@ -14,6 +14,7 @@
     <nodeInfo nodeId="1238602935758" fileName="Module_name_PropertyConstraint.java" startLine="29" startPosition="60" endLine="30" endPosition="16" />
     <nodeInfo nodeId="1222448597594" fileName="Module_name_PropertyConstraint.java" startLine="31" startPosition="5" endLine="32" endPosition="133" />
     <nodeInfo nodeId="1225996196667" fileName="Module_name_PropertyConstraint.java" startLine="33" startPosition="25" endLine="34" endPosition="18" />
+    <nodeInfo nodeId="1235487987054" fileName="Module_name_PropertyConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="73" />
     <nodeInfo nodeId="1238602915154" fileName="Module_name_PropertyConstraint.java" startLine="28" startPosition="80" endLine="31" endPosition="5" />
     <nodeInfo nodeId="1225996190344" fileName="Module_name_PropertyConstraint.java" startLine="32" startPosition="133" endLine="35" endPosition="5" />
     <scopeInfo nodeId="1238602915155" fileName="Module_name_PropertyConstraint.java" startLine="29" startPosition="60" endLine="30" endPosition="16" />
@@ -40,14 +41,18 @@
     <scopeInfo nodeId="1213104856179" fileName="File_name_PropertyConstraint.java" startLine="27" startPosition="80" endLine="34" endPosition="114" />
   </root>
   <root nodeId="1213104859513">
+    <nodeInfo nodeId="5558646027962350390" fileName="Variable_Constraints.java" startLine="11" startPosition="112" endLine="12" endPosition="153" />
+    <nodeInfo nodeId="5558646027963121374" fileName="Variable_DefaultSearchScope.java" startLine="27" startPosition="132" endLine="28" endPosition="313" />
     <scopeInfo nodeId="5558646027962350389" fileName="Variable_Constraints.java" startLine="11" startPosition="112" endLine="12" endPosition="153" />
     <scopeInfo nodeId="1233927017127" fileName="Variable_DefaultSearchScope.java" startLine="27" startPosition="132" endLine="28" endPosition="313" />
   </root>
   <root nodeId="1213107435807">
-    <scopeInfo nodeId="1213107435809" fileName="Delete_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="99" />
+    <nodeInfo nodeId="1213107435810" fileName="Delete_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="96" />
+    <scopeInfo nodeId="1213107435809" fileName="Delete_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="96" />
   </root>
   <root nodeId="1213107436317">
     <nodeInfo nodeId="1213107436320" fileName="Configuration_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="119" />
+    <nodeInfo nodeId="1230221290628" fileName="Configuration_fullName_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="160" />
     <scopeInfo nodeId="1213107436319" fileName="Configuration_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="119" />
     <scopeInfo nodeId="1230221270620" fileName="Configuration_fullName_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="160" />
   </root>
@@ -67,6 +72,7 @@
     <scopeInfo nodeId="1224178316889" fileName="Antcall_targetDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="33" endPosition="168" />
   </root>
   <root nodeId="1226494817331">
+    <nodeInfo nodeId="1226494824130" fileName="BaseDirPath_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="119" />
     <scopeInfo nodeId="1226494820841" fileName="BaseDirPath_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="119" />
   </root>
   <root nodeId="1239623935212">

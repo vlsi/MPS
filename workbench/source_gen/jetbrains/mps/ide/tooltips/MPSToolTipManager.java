@@ -11,7 +11,6 @@ import java.awt.Component;
 import javax.swing.JComponent;
 import java.awt.Point;
 import java.awt.Frame;
-import org.apache.commons.lang.ObjectUtils;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.application.ApplicationManager;
 
@@ -99,7 +98,7 @@ public class MPSToolTipManager implements ApplicationComponent {
 
   private void showToolTip(ToolTipData data, JComponent component, Point point, boolean rightAligned) {
     if (myToolTip != null) {
-      if (ObjectUtils.equals(myToolTip.getText(), data.getText())) {
+      if (eq_k25xh9_a0a0a0l(myToolTip.getText(), data.getText())) {
         return;
       }
       hideToolTip();
@@ -116,7 +115,7 @@ public class MPSToolTipManager implements ApplicationComponent {
 
   private void showToolTip(String text, JComponent component, Point point, boolean rightAligned) {
     if (myToolTip != null) {
-      if (ObjectUtils.equals(myToolTip.getText(), text)) {
+      if (eq_k25xh9_a0a0a0n(myToolTip.getText(), text)) {
         return;
       }
       hideToolTip();
@@ -139,5 +138,19 @@ public class MPSToolTipManager implements ApplicationComponent {
 
   public static MPSToolTipManager getInstance() {
     return ApplicationManager.getApplication().getComponent(MPSToolTipManager.class);
+  }
+
+  private static boolean eq_k25xh9_a0a0a0l(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_k25xh9_a0a0a0n(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

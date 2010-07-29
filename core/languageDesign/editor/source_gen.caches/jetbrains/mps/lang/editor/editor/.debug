@@ -7,7 +7,11 @@
   <root nodeId="1078830687765">
     <nodeInfo nodeId="1237473996312" fileName="CellModel_Collection_Editor.java" startLine="457" startPosition="112" endLine="458" endPosition="77" />
     <nodeInfo nodeId="1237473996328" fileName="CellModel_Collection_Editor.java" startLine="461" startPosition="112" endLine="462" endPosition="156" />
+    <nodeInfo nodeId="1237474042599" fileName="CellModel_Collection_Editor.java" startLine="465" startPosition="110" endLine="466" endPosition="84" />
     <nodeInfo nodeId="1237473996307" fileName="CellModel_Collection_Editor.java" startLine="469" startPosition="109" endLine="470" endPosition="49" />
+    <nodeInfo nodeId="1237474002633" fileName="CellModel_Collection_Editor.java" startLine="473" startPosition="110" endLine="474" endPosition="83" />
+    <nodeInfo nodeId="1237474002646" fileName="CellModel_Collection_Editor.java" startLine="477" startPosition="110" endLine="478" endPosition="83" />
+    <nodeInfo nodeId="1237474002653" fileName="CellModel_Collection_Editor.java" startLine="481" startPosition="110" endLine="482" endPosition="83" />
     <scopeInfo nodeId="1237473996311" fileName="CellModel_Collection_Editor.java" startLine="457" startPosition="112" endLine="458" endPosition="77" />
     <scopeInfo nodeId="1237473996327" fileName="CellModel_Collection_Editor.java" startLine="461" startPosition="112" endLine="462" endPosition="156" />
     <scopeInfo nodeId="1237473994195" fileName="CellModel_Collection_Editor.java" startLine="465" startPosition="110" endLine="466" endPosition="84" />
@@ -19,6 +23,13 @@
   <root nodeId="1080742754453">
     <nodeInfo nodeId="1176717082035" fileName="CellModel_Constant_Editor.java" startLine="306" startPosition="111" endLine="307" endPosition="88" />
     <nodeInfo nodeId="1176717095680" fileName="CellModel_Constant_Editor.java" startLine="310" startPosition="111" endLine="311" endPosition="88" />
+    <nodeInfo nodeId="1221237947201" fileName="CellModel_Constant_Editor.java" startLine="314" startPosition="107" endLine="315" endPosition="84" />
+    <nodeInfo nodeId="1221237970837" fileName="CellModel_Constant_Editor.java" startLine="318" startPosition="107" endLine="319" endPosition="80" />
+    <nodeInfo nodeId="1221237988442" fileName="CellModel_Constant_Editor.java" startLine="322" startPosition="107" endLine="323" endPosition="80" />
+    <nodeInfo nodeId="1221238020938" fileName="CellModel_Constant_Editor.java" startLine="326" startPosition="105" endLine="327" endPosition="74" />
+    <nodeInfo nodeId="1221240503323" fileName="CellModel_Constant_Editor.java" startLine="330" startPosition="105" endLine="331" endPosition="73" />
+    <nodeInfo nodeId="1221238041777" fileName="CellModel_Constant_Editor.java" startLine="334" startPosition="109" endLine="335" endPosition="74" />
+    <nodeInfo nodeId="1223482248159" fileName="CellModel_Constant_Editor.java" startLine="338" startPosition="109" endLine="339" endPosition="73" />
     <scopeInfo nodeId="1176717081542" fileName="CellModel_Constant_Editor.java" startLine="306" startPosition="111" endLine="307" endPosition="88" />
     <scopeInfo nodeId="1176717095124" fileName="CellModel_Constant_Editor.java" startLine="310" startPosition="111" endLine="311" endPosition="88" />
     <scopeInfo nodeId="1221237912392" fileName="CellModel_Constant_Editor.java" startLine="314" startPosition="107" endLine="315" endPosition="84" />
@@ -30,6 +41,11 @@
     <scopeInfo nodeId="1223482212352" fileName="CellModel_Constant_Editor.java" startLine="338" startPosition="109" endLine="339" endPosition="73" />
   </root>
   <root nodeId="1080754563251">
+    <nodeInfo nodeId="1221238429635" fileName="CellModel_ModelAccess_Editor.java" startLine="261" startPosition="107" endLine="262" endPosition="84" />
+    <nodeInfo nodeId="1221238429642" fileName="CellModel_ModelAccess_Editor.java" startLine="265" startPosition="107" endLine="266" endPosition="80" />
+    <nodeInfo nodeId="1221238429649" fileName="CellModel_ModelAccess_Editor.java" startLine="269" startPosition="107" endLine="270" endPosition="80" />
+    <nodeInfo nodeId="1221238429656" fileName="CellModel_ModelAccess_Editor.java" startLine="273" startPosition="105" endLine="274" endPosition="74" />
+    <nodeInfo nodeId="1221238429663" fileName="CellModel_ModelAccess_Editor.java" startLine="277" startPosition="109" endLine="278" endPosition="74" />
     <scopeInfo nodeId="1221238429634" fileName="CellModel_ModelAccess_Editor.java" startLine="261" startPosition="107" endLine="262" endPosition="84" />
     <scopeInfo nodeId="1221238429641" fileName="CellModel_ModelAccess_Editor.java" startLine="265" startPosition="107" endLine="266" endPosition="80" />
     <scopeInfo nodeId="1221238429648" fileName="CellModel_ModelAccess_Editor.java" startLine="269" startPosition="107" endLine="270" endPosition="80" />
@@ -37,6 +53,15 @@
     <scopeInfo nodeId="1221238429662" fileName="CellModel_ModelAccess_Editor.java" startLine="277" startPosition="109" endLine="278" endPosition="74" />
   </root>
   <root nodeId="1080757525329">
+    <nodeInfo nodeId="1214930403386" fileName="CellModel_Property_Editor.java" startLine="439" startPosition="112" endLine="440" endPosition="72" />
+    <nodeInfo nodeId="1214560560917" fileName="CellModel_Property_Editor.java" startLine="443" startPosition="112" endLine="444" endPosition="71" />
+    <nodeInfo nodeId="5944020735921550875" fileName="CellModel_Property_Editor.java" startLine="447" startPosition="112" endLine="448" endPosition="115" />
+    <nodeInfo nodeId="1221239223939" fileName="CellModel_Property_Editor.java" startLine="451" startPosition="107" endLine="452" endPosition="84" />
+    <nodeInfo nodeId="1221239223946" fileName="CellModel_Property_Editor.java" startLine="455" startPosition="107" endLine="456" endPosition="80" />
+    <nodeInfo nodeId="1221239223953" fileName="CellModel_Property_Editor.java" startLine="459" startPosition="107" endLine="460" endPosition="80" />
+    <nodeInfo nodeId="1221239223960" fileName="CellModel_Property_Editor.java" startLine="463" startPosition="105" endLine="464" endPosition="74" />
+    <nodeInfo nodeId="1221239223967" fileName="CellModel_Property_Editor.java" startLine="467" startPosition="109" endLine="468" endPosition="74" />
+    <nodeInfo nodeId="1223482352075" fileName="CellModel_Property_Editor.java" startLine="471" startPosition="109" endLine="472" endPosition="73" />
     <scopeInfo nodeId="1214930378302" fileName="CellModel_Property_Editor.java" startLine="439" startPosition="112" endLine="440" endPosition="72" />
     <scopeInfo nodeId="1214560560916" fileName="CellModel_Property_Editor.java" startLine="443" startPosition="112" endLine="444" endPosition="71" />
     <scopeInfo nodeId="5944020735921544422" fileName="CellModel_Property_Editor.java" startLine="447" startPosition="112" endLine="448" endPosition="115" />
@@ -48,12 +73,14 @@
     <scopeInfo nodeId="1223482349121" fileName="CellModel_Property_Editor.java" startLine="471" startPosition="109" endLine="472" endPosition="73" />
   </root>
   <root nodeId="1080832307609">
+    <nodeInfo nodeId="1214560571670" fileName="CellModel_RefNode_Editor.java" startLine="260" startPosition="112" endLine="261" endPosition="71" />
     <scopeInfo nodeId="1214560571669" fileName="CellModel_RefNode_Editor.java" startLine="260" startPosition="112" endLine="261" endPosition="71" />
   </root>
   <root nodeId="1081293221911">
     <nodeInfo nodeId="1200683745842" fileName="CellKeyMapDeclaration_Editor.java" startLine="316" startPosition="100" endLine="317" endPosition="77" />
     <nodeInfo nodeId="1200683831259" fileName="CellKeyMapDeclaration_Editor.java" startLine="317" startPosition="77" endLine="318" endPosition="60" />
     <nodeInfo nodeId="1200683791319" fileName="CellKeyMapDeclaration_Editor.java" startLine="319" startPosition="80" endLine="320" endPosition="163" />
+    <nodeInfo nodeId="1200683827002" fileName="CellKeyMapDeclaration_Editor.java" startLine="321" startPosition="7" endLine="322" endPosition="22" />
     <nodeInfo nodeId="1200683740839" fileName="CellKeyMapDeclaration_Editor.java" startLine="318" startPosition="60" endLine="321" endPosition="7" />
     <scopeInfo nodeId="1200683740841" fileName="CellKeyMapDeclaration_Editor.java" startLine="319" startPosition="80" endLine="320" endPosition="163" />
     <scopeInfo nodeId="1200683680838" fileName="CellKeyMapDeclaration_Editor.java" startLine="316" startPosition="100" endLine="322" endPosition="22">
@@ -61,6 +88,9 @@
     </scopeInfo>
   </root>
   <root nodeId="1088013642258">
+    <nodeInfo nodeId="1214512981884" fileName="CellModel_RefCell_Editor.java" startLine="354" startPosition="111" endLine="355" endPosition="81" />
+    <nodeInfo nodeId="617352830885765171" fileName="CellModel_RefCell_Editor.java" startLine="358" startPosition="112" endLine="359" endPosition="134" />
+    <nodeInfo nodeId="1214560567403" fileName="CellModel_RefCell_Editor.java" startLine="362" startPosition="112" endLine="363" endPosition="71" />
     <scopeInfo nodeId="1146619345991" fileName="CellModel_RefCell_Editor.java" startLine="354" startPosition="111" endLine="355" endPosition="81" />
     <scopeInfo nodeId="617352830885765170" fileName="CellModel_RefCell_Editor.java" startLine="358" startPosition="112" endLine="359" endPosition="134" />
     <scopeInfo nodeId="1214560567402" fileName="CellModel_RefCell_Editor.java" startLine="362" startPosition="112" endLine="363" endPosition="71" />
@@ -102,6 +132,13 @@
     </scopeInfo>
   </root>
   <root nodeId="1137555282290">
+    <nodeInfo nodeId="1214560542281" fileName="CellModel_ConceptProperty_Editor.java" startLine="343" startPosition="112" endLine="344" endPosition="71" />
+    <nodeInfo nodeId="1221239216355" fileName="CellModel_ConceptProperty_Editor.java" startLine="347" startPosition="107" endLine="348" endPosition="84" />
+    <nodeInfo nodeId="1221239216362" fileName="CellModel_ConceptProperty_Editor.java" startLine="351" startPosition="107" endLine="352" endPosition="80" />
+    <nodeInfo nodeId="1221239216369" fileName="CellModel_ConceptProperty_Editor.java" startLine="355" startPosition="107" endLine="356" endPosition="80" />
+    <nodeInfo nodeId="1221239216376" fileName="CellModel_ConceptProperty_Editor.java" startLine="359" startPosition="105" endLine="360" endPosition="74" />
+    <nodeInfo nodeId="1221239216383" fileName="CellModel_ConceptProperty_Editor.java" startLine="363" startPosition="109" endLine="364" endPosition="74" />
+    <nodeInfo nodeId="1223482297609" fileName="CellModel_ConceptProperty_Editor.java" startLine="367" startPosition="109" endLine="368" endPosition="73" />
     <scopeInfo nodeId="1214560538686" fileName="CellModel_ConceptProperty_Editor.java" startLine="343" startPosition="112" endLine="344" endPosition="71" />
     <scopeInfo nodeId="1221239216354" fileName="CellModel_ConceptProperty_Editor.java" startLine="347" startPosition="107" endLine="348" endPosition="84" />
     <scopeInfo nodeId="1221239216361" fileName="CellModel_ConceptProperty_Editor.java" startLine="351" startPosition="107" endLine="352" endPosition="80" />
@@ -113,6 +150,7 @@
   <root nodeId="1139532930462">
     <nodeInfo nodeId="1185873764232" fileName="CellActionMapDeclaration_Editor.java" startLine="266" startPosition="105" endLine="267" endPosition="74" />
     <nodeInfo nodeId="1185873798360" fileName="CellActionMapDeclaration_Editor.java" startLine="268" startPosition="82" endLine="269" endPosition="161" />
+    <nodeInfo nodeId="1185873825227" fileName="CellActionMapDeclaration_Editor.java" startLine="270" startPosition="7" endLine="271" endPosition="19" />
     <nodeInfo nodeId="1185873787458" fileName="CellActionMapDeclaration_Editor.java" startLine="267" startPosition="74" endLine="270" endPosition="7" />
     <scopeInfo nodeId="1185873787459" fileName="CellActionMapDeclaration_Editor.java" startLine="268" startPosition="82" endLine="269" endPosition="161" />
     <scopeInfo nodeId="1185873717407" fileName="CellActionMapDeclaration_Editor.java" startLine="266" startPosition="105" endLine="271" endPosition="19">
@@ -143,11 +181,13 @@
   </root>
   <root nodeId="1176716781495">
     <nodeInfo nodeId="1226062528870" fileName="_OpenTag.java" startLine="35" startPosition="31" endLine="36" endPosition="79" />
+    <nodeInfo nodeId="1226320982081" fileName="_OpenTag.java" startLine="67" startPosition="106" endLine="68" endPosition="49" />
     <scopeInfo nodeId="1226062528869" fileName="_OpenTag.java" startLine="35" startPosition="31" endLine="36" endPosition="79" />
     <scopeInfo nodeId="1226320982080" fileName="_OpenTag.java" startLine="67" startPosition="106" endLine="68" endPosition="49" />
   </root>
   <root nodeId="1176716904723">
     <nodeInfo nodeId="1226062535568" fileName="_CloseTag.java" startLine="35" startPosition="31" endLine="36" endPosition="79" />
+    <nodeInfo nodeId="1226320901425" fileName="_CloseTag.java" startLine="67" startPosition="106" endLine="68" endPosition="49" />
     <scopeInfo nodeId="1226062535567" fileName="_CloseTag.java" startLine="35" startPosition="31" endLine="36" endPosition="79" />
     <scopeInfo nodeId="1226320829980" fileName="_CloseTag.java" startLine="67" startPosition="106" endLine="68" endPosition="49" />
   </root>
@@ -164,6 +204,7 @@
     <unitInfo nodeId="1176888877514" fileName="_EditorUtil.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.editor._EditorUtil" />
   </root>
   <root nodeId="1178883358278">
+    <nodeInfo nodeId="1178883491382" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="59" startPosition="152" endLine="60" endPosition="55" />
     <nodeInfo nodeId="1178883510798" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="63" startPosition="146" endLine="64" endPosition="154" />
     <nodeInfo nodeId="1178883562401" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="64" startPosition="154" endLine="65" endPosition="115" />
     <nodeInfo nodeId="1178883476995" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="65" startPosition="115" endLine="66" endPosition="59" />
@@ -187,15 +228,22 @@
     </scopeInfo>
   </root>
   <root nodeId="1182191264561">
+    <nodeInfo nodeId="1218239030901" fileName="CellModel_RefNodeList_Editor.java" startLine="889" startPosition="111" endLine="890" endPosition="77" />
     <nodeInfo nodeId="1182191264577" fileName="CellModel_RefNodeList_Editor.java" startLine="893" startPosition="112" endLine="894" endPosition="79" />
     <nodeInfo nodeId="1182191264592" fileName="CellModel_RefNodeList_Editor.java" startLine="897" startPosition="112" endLine="898" endPosition="82" />
+    <nodeInfo nodeId="928328222692015058" fileName="CellModel_RefNodeList_Editor.java" startLine="901" startPosition="113" endLine="902" endPosition="79" />
+    <nodeInfo nodeId="928328222692015532" fileName="CellModel_RefNodeList_Editor.java" startLine="905" startPosition="113" endLine="906" endPosition="79" />
     <nodeInfo nodeId="4231890441199684733" fileName="CellModel_RefNodeList_Editor.java" startLine="1057" startPosition="105" endLine="1058" endPosition="73" />
     <nodeInfo nodeId="4231890441199704377" fileName="CellModel_RefNodeList_Editor.java" startLine="1058" startPosition="73" endLine="1059" endPosition="154" />
+    <nodeInfo nodeId="4231890441199639112" fileName="CellModel_RefNodeList_Editor.java" startLine="1059" startPosition="154" endLine="1060" endPosition="20" />
     <nodeInfo nodeId="4231890441199637160" fileName="CellModel_RefNodeList_Editor.java" startLine="1067" startPosition="163" endLine="1068" endPosition="83" />
+    <nodeInfo nodeId="4231890441200219630" fileName="CellModel_RefNodeList_Editor.java" startLine="1079" startPosition="67" endLine="1080" endPosition="21" />
     <nodeInfo nodeId="4231890441200483237" fileName="CellModel_RefNodeList_Editor.java" startLine="1088" startPosition="105" endLine="1089" endPosition="75" />
     <nodeInfo nodeId="4231890441200483247" fileName="CellModel_RefNodeList_Editor.java" startLine="1089" startPosition="75" endLine="1090" endPosition="101" />
     <nodeInfo nodeId="4231890441200483243" fileName="CellModel_RefNodeList_Editor.java" startLine="1090" startPosition="101" endLine="1091" endPosition="20" />
     <nodeInfo nodeId="4231890441200483275" fileName="CellModel_RefNodeList_Editor.java" startLine="1098" startPosition="164" endLine="1099" endPosition="94" />
+    <nodeInfo nodeId="4231890441200747056" fileName="CellModel_RefNodeList_Editor.java" startLine="1110" startPosition="68" endLine="1111" endPosition="29" />
+    <nodeInfo nodeId="4231890441200483273" fileName="CellModel_RefNodeList_Editor.java" startLine="1118" startPosition="71" endLine="1119" endPosition="27" />
     <scopeInfo nodeId="1182948746817" fileName="CellModel_RefNodeList_Editor.java" startLine="889" startPosition="111" endLine="890" endPosition="77" />
     <scopeInfo nodeId="1182191264576" fileName="CellModel_RefNodeList_Editor.java" startLine="893" startPosition="112" endLine="894" endPosition="79" />
     <scopeInfo nodeId="1182191264591" fileName="CellModel_RefNodeList_Editor.java" startLine="897" startPosition="112" endLine="898" endPosition="82" />
@@ -235,11 +283,16 @@
     <scopeInfo nodeId="1183710657808" fileName="CellModel_Collection_Actions.java" startLine="35" startPosition="75" endLine="47" endPosition="39" />
   </root>
   <root nodeId="1186402397081">
+    <nodeInfo nodeId="1198252497374" fileName="StyleSheetClass_Editor.java" startLine="174" startPosition="112" endLine="175" endPosition="74" />
     <scopeInfo nodeId="1198252496153" fileName="StyleSheetClass_Editor.java" startLine="174" startPosition="112" endLine="175" endPosition="74" />
   </root>
   <root nodeId="1186403823943">
+    <nodeInfo nodeId="1186412613632" fileName="ColorStyleClassItem_Editor.java" startLine="114" startPosition="111" endLine="115" endPosition="66" />
+    <nodeInfo nodeId="1186412623144" fileName="ColorStyleClassItem_Editor.java" startLine="118" startPosition="111" endLine="119" endPosition="66" />
+    <nodeInfo nodeId="1240932730781" fileName="ColorStyleClassItem_Editor.java" startLine="135" startPosition="105" endLine="136" endPosition="164" />
     <nodeInfo nodeId="1225466894957" fileName="ColorStyleClassItem_Editor.java" startLine="143" startPosition="163" endLine="144" endPosition="81" />
     <nodeInfo nodeId="1225466903031" fileName="ColorStyleClassItem_Editor.java" startLine="144" startPosition="81" endLine="145" endPosition="98" />
+    <nodeInfo nodeId="1240932749942" fileName="ColorStyleClassItem_Editor.java" startLine="157" startPosition="105" endLine="158" endPosition="164" />
     <nodeInfo nodeId="1225472714632" fileName="ColorStyleClassItem_Editor.java" startLine="165" startPosition="163" endLine="166" endPosition="81" />
     <nodeInfo nodeId="1225472714638" fileName="ColorStyleClassItem_Editor.java" startLine="166" startPosition="81" endLine="167" endPosition="98" />
     <nodeInfo nodeId="1225466935286" fileName="ColorStyleClassItem_Editor.java" startLine="179" startPosition="106" endLine="180" endPosition="97" />
@@ -258,20 +311,27 @@
     <scopeInfo nodeId="1225472714631" fileName="ColorStyleClassItem_Editor.java" startLine="165" startPosition="163" endLine="167" endPosition="98" />
   </root>
   <root nodeId="1186403885380">
-    <nodeInfo nodeId="6699718426954288731" fileName="FontStyleStyleClassItem_Editor.java" startLine="134" startPosition="163" endLine="135" endPosition="98" />
-    <nodeInfo nodeId="6699718426954288879" fileName="FontStyleStyleClassItem_Editor.java" startLine="136" startPosition="211" endLine="137" endPosition="158" />
-    <nodeInfo nodeId="1225473442549" fileName="FontStyleStyleClassItem_Editor.java" startLine="158" startPosition="163" endLine="159" endPosition="81" />
-    <nodeInfo nodeId="1225473442555" fileName="FontStyleStyleClassItem_Editor.java" startLine="159" startPosition="81" endLine="160" endPosition="98" />
-    <nodeInfo nodeId="6699718426954288836" fileName="FontStyleStyleClassItem_Editor.java" startLine="135" startPosition="98" endLine="138" endPosition="7" />
-    <scopeInfo nodeId="1220975716955" fileName="FontStyleStyleClassItem_Editor.java" startLine="105" startPosition="111" endLine="106" endPosition="291" />
-    <scopeInfo nodeId="1220975770017" fileName="FontStyleStyleClassItem_Editor.java" startLine="109" startPosition="111" endLine="110" endPosition="288" />
-    <scopeInfo nodeId="6699718426954288708" fileName="FontStyleStyleClassItem_Editor.java" startLine="126" startPosition="105" endLine="127" endPosition="167" />
-    <scopeInfo nodeId="6699718426954288837" fileName="FontStyleStyleClassItem_Editor.java" startLine="136" startPosition="211" endLine="137" endPosition="158" />
-    <scopeInfo nodeId="1225473442527" fileName="FontStyleStyleClassItem_Editor.java" startLine="150" startPosition="105" endLine="151" endPosition="167" />
-    <scopeInfo nodeId="1225473442548" fileName="FontStyleStyleClassItem_Editor.java" startLine="158" startPosition="163" endLine="160" endPosition="98" />
-    <scopeInfo nodeId="6699718426954288724" fileName="FontStyleStyleClassItem_Editor.java" startLine="134" startPosition="163" endLine="138" endPosition="7" />
+    <nodeInfo nodeId="1220975737191" fileName="FontStyleStyleClassItem_Editor.java" startLine="104" startPosition="111" endLine="105" endPosition="286" />
+    <nodeInfo nodeId="1232812593501" fileName="FontStyleStyleClassItem_Editor.java" startLine="108" startPosition="111" endLine="109" endPosition="285" />
+    <nodeInfo nodeId="6699718426954288709" fileName="FontStyleStyleClassItem_Editor.java" startLine="139" startPosition="105" endLine="140" endPosition="167" />
+    <nodeInfo nodeId="6699718426954288731" fileName="FontStyleStyleClassItem_Editor.java" startLine="147" startPosition="163" endLine="148" endPosition="98" />
+    <nodeInfo nodeId="6699718426954288879" fileName="FontStyleStyleClassItem_Editor.java" startLine="149" startPosition="209" endLine="150" endPosition="158" />
+    <nodeInfo nodeId="6699718426954539991" fileName="FontStyleStyleClassItem_Editor.java" startLine="170" startPosition="105" endLine="171" endPosition="167" />
+    <nodeInfo nodeId="1225473442549" fileName="FontStyleStyleClassItem_Editor.java" startLine="178" startPosition="163" endLine="179" endPosition="81" />
+    <nodeInfo nodeId="1225473442555" fileName="FontStyleStyleClassItem_Editor.java" startLine="179" startPosition="81" endLine="180" endPosition="98" />
+    <nodeInfo nodeId="6699718426954288836" fileName="FontStyleStyleClassItem_Editor.java" startLine="148" startPosition="98" endLine="151" endPosition="7" />
+    <scopeInfo nodeId="1220975716955" fileName="FontStyleStyleClassItem_Editor.java" startLine="104" startPosition="111" endLine="105" endPosition="286" />
+    <scopeInfo nodeId="1220975770017" fileName="FontStyleStyleClassItem_Editor.java" startLine="108" startPosition="111" endLine="109" endPosition="285" />
+    <scopeInfo nodeId="6699718426954288708" fileName="FontStyleStyleClassItem_Editor.java" startLine="139" startPosition="105" endLine="140" endPosition="167" />
+    <scopeInfo nodeId="6699718426954288837" fileName="FontStyleStyleClassItem_Editor.java" startLine="149" startPosition="209" endLine="150" endPosition="158" />
+    <scopeInfo nodeId="1225473442527" fileName="FontStyleStyleClassItem_Editor.java" startLine="170" startPosition="105" endLine="171" endPosition="167" />
+    <scopeInfo nodeId="1225473442548" fileName="FontStyleStyleClassItem_Editor.java" startLine="178" startPosition="163" endLine="180" endPosition="98" />
+    <scopeInfo nodeId="6699718426954288724" fileName="FontStyleStyleClassItem_Editor.java" startLine="147" startPosition="163" endLine="151" endPosition="7" />
   </root>
   <root nodeId="1186414561564">
+    <nodeInfo nodeId="1223461934562" fileName="BooleanStyleSheetItem_Editor.java" startLine="121" startPosition="111" endLine="122" endPosition="68" />
+    <nodeInfo nodeId="1223461960302" fileName="BooleanStyleSheetItem_Editor.java" startLine="125" startPosition="111" endLine="126" endPosition="136" />
+    <nodeInfo nodeId="7436746056273373198" fileName="BooleanStyleSheetItem_Editor.java" startLine="133" startPosition="105" endLine="134" endPosition="85" />
     <nodeInfo nodeId="7436746056273410476" fileName="BooleanStyleSheetItem_Editor.java" startLine="151" startPosition="106" endLine="152" endPosition="154" />
     <scopeInfo nodeId="1223461892210" fileName="BooleanStyleSheetItem_Editor.java" startLine="121" startPosition="111" endLine="122" endPosition="68" />
     <scopeInfo nodeId="1223461957914" fileName="BooleanStyleSheetItem_Editor.java" startLine="125" startPosition="111" endLine="126" endPosition="136" />
@@ -279,12 +339,15 @@
     <scopeInfo nodeId="7436746056273410475" fileName="BooleanStyleSheetItem_Editor.java" startLine="151" startPosition="106" endLine="152" endPosition="154" />
   </root>
   <root nodeId="1186415744056">
+    <nodeInfo nodeId="1221210001684" fileName="FontSizeStyleClassItem_Editor.java" startLine="111" startPosition="111" endLine="112" endPosition="66" />
+    <nodeInfo nodeId="1221214261517" fileName="FontSizeStyleClassItem_Editor.java" startLine="115" startPosition="111" endLine="116" endPosition="68" />
     <nodeInfo nodeId="1221210772217" fileName="FontSizeStyleClassItem_Editor.java" startLine="132" startPosition="106" endLine="133" endPosition="110" />
     <scopeInfo nodeId="1221209996909" fileName="FontSizeStyleClassItem_Editor.java" startLine="111" startPosition="111" endLine="112" endPosition="66" />
     <scopeInfo nodeId="1221214215446" fileName="FontSizeStyleClassItem_Editor.java" startLine="115" startPosition="111" endLine="116" endPosition="68" />
     <scopeInfo nodeId="1221210724561" fileName="FontSizeStyleClassItem_Editor.java" startLine="132" startPosition="106" endLine="133" endPosition="110" />
   </root>
   <root nodeId="1194569476147">
+    <nodeInfo nodeId="4411513707977385305" fileName="Styles_StyleSheet.java" startLine="131" startPosition="108" endLine="132" endPosition="16" />
     <nodeInfo nodeId="1237393303847" fileName="Styles_StyleSheet.java" startLine="136" startPosition="103" endLine="137" endPosition="19" />
     <nodeInfo nodeId="1237383999270" fileName="Styles_StyleSheet.java" startLine="138" startPosition="5" endLine="139" endPosition="149" />
     <nodeInfo nodeId="1237393307791" fileName="Styles_StyleSheet.java" startLine="143" startPosition="103" endLine="144" endPosition="19" />
@@ -316,6 +379,7 @@
     <scopeInfo nodeId="1198252456493" fileName="StyleSheetClass_RT.java" startLine="28" startPosition="75" endLine="29" endPosition="121" />
   </root>
   <root nodeId="1198590333967">
+    <nodeInfo nodeId="1198590333975" fileName="_FocusPolicy_Applicable.java" startLine="89" startPosition="111" endLine="90" endPosition="76" />
     <scopeInfo nodeId="1198590333974" fileName="_FocusPolicy_Applicable.java" startLine="89" startPosition="111" endLine="90" endPosition="76" />
   </root>
   <root nodeId="1198590715451">
@@ -323,6 +387,9 @@
     <scopeInfo nodeId="1198590726805" fileName="CellModel_Component_KeyMap.java" startLine="52" startPosition="146" endLine="53" endPosition="178" />
   </root>
   <root nodeId="1214316262412">
+    <nodeInfo nodeId="1221219142719" fileName="UnderlinedStyleClassItem_Editor.java" startLine="113" startPosition="111" endLine="114" endPosition="66" />
+    <nodeInfo nodeId="1221223818246" fileName="UnderlinedStyleClassItem_Editor.java" startLine="117" startPosition="111" endLine="118" endPosition="68" />
+    <nodeInfo nodeId="1676468925319121998" fileName="UnderlinedStyleClassItem_Editor.java" startLine="125" startPosition="105" endLine="126" endPosition="83" />
     <nodeInfo nodeId="1221222738182" fileName="UnderlinedStyleClassItem_Editor.java" startLine="143" startPosition="106" endLine="144" endPosition="113" />
     <scopeInfo nodeId="1221219117108" fileName="UnderlinedStyleClassItem_Editor.java" startLine="113" startPosition="111" endLine="114" endPosition="66" />
     <scopeInfo nodeId="1221219156230" fileName="UnderlinedStyleClassItem_Editor.java" startLine="117" startPosition="111" endLine="118" endPosition="68" />
@@ -330,6 +397,9 @@
     <scopeInfo nodeId="1221222528495" fileName="UnderlinedStyleClassItem_Editor.java" startLine="143" startPosition="106" endLine="144" endPosition="113" />
   </root>
   <root nodeId="1214320151708">
+    <nodeInfo nodeId="3608226089192003318" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="112" startPosition="111" endLine="113" endPosition="91" />
+    <nodeInfo nodeId="3608226089192003335" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="116" startPosition="111" endLine="117" endPosition="94" />
+    <nodeInfo nodeId="3608226089192003356" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="181" startPosition="105" endLine="182" endPosition="175" />
     <nodeInfo nodeId="3608226089192004234" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="189" startPosition="163" endLine="190" endPosition="84" />
     <nodeInfo nodeId="3608226089192036676" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="190" startPosition="84" endLine="191" endPosition="96" />
     <nodeInfo nodeId="3608226089192056555" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="203" startPosition="106" endLine="204" endPosition="134" />
@@ -361,6 +431,11 @@
     <scopeInfo nodeId="1223482371663" fileName="CellModel_TransactionalProperty_Editor.java" startLine="404" startPosition="109" endLine="405" endPosition="73" />
   </root>
   <root nodeId="1225900434113">
+    <nodeInfo nodeId="1225900578301" fileName="CellModel_ReadOnlyModelAccessor_Editor.java" startLine="178" startPosition="107" endLine="179" endPosition="84" />
+    <nodeInfo nodeId="1225900578308" fileName="CellModel_ReadOnlyModelAccessor_Editor.java" startLine="182" startPosition="107" endLine="183" endPosition="80" />
+    <nodeInfo nodeId="1225900578315" fileName="CellModel_ReadOnlyModelAccessor_Editor.java" startLine="186" startPosition="107" endLine="187" endPosition="80" />
+    <nodeInfo nodeId="1225900578322" fileName="CellModel_ReadOnlyModelAccessor_Editor.java" startLine="190" startPosition="105" endLine="191" endPosition="74" />
+    <nodeInfo nodeId="1225900578329" fileName="CellModel_ReadOnlyModelAccessor_Editor.java" startLine="194" startPosition="109" endLine="195" endPosition="74" />
     <scopeInfo nodeId="1225900578300" fileName="CellModel_ReadOnlyModelAccessor_Editor.java" startLine="178" startPosition="107" endLine="179" endPosition="84" />
     <scopeInfo nodeId="1225900578307" fileName="CellModel_ReadOnlyModelAccessor_Editor.java" startLine="182" startPosition="107" endLine="183" endPosition="80" />
     <scopeInfo nodeId="1225900578314" fileName="CellModel_ReadOnlyModelAccessor_Editor.java" startLine="186" startPosition="107" endLine="187" endPosition="80" />
@@ -368,6 +443,9 @@
     <scopeInfo nodeId="1225900578328" fileName="CellModel_ReadOnlyModelAccessor_Editor.java" startLine="194" startPosition="109" endLine="195" endPosition="74" />
   </root>
   <root nodeId="1236262353719">
+    <nodeInfo nodeId="1238093721239" fileName="MatchingLabelStyleClassItem_Editor.java" startLine="123" startPosition="111" endLine="124" endPosition="123" />
+    <nodeInfo nodeId="5915179142333012553" fileName="MatchingLabelStyleClassItem_Editor.java" startLine="127" startPosition="111" endLine="128" endPosition="122" />
+    <nodeInfo nodeId="1237984830277" fileName="MatchingLabelStyleClassItem_Editor.java" startLine="131" startPosition="111" endLine="132" endPosition="66" />
     <nodeInfo nodeId="5915179142333055765" fileName="MatchingLabelStyleClassItem_Editor.java" startLine="139" startPosition="106" endLine="140" endPosition="61" />
     <nodeInfo nodeId="5915179142333055750" fileName="MatchingLabelStyleClassItem_Editor.java" startLine="152" startPosition="106" endLine="153" endPosition="62" />
     <scopeInfo nodeId="1238093682599" fileName="MatchingLabelStyleClassItem_Editor.java" startLine="123" startPosition="111" endLine="124" endPosition="123" />
@@ -431,6 +509,15 @@
     <unitInfo nodeId="1239461406724" fileName="SelectImageFileButton.java" startLine="25" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SelectImageFileButton" />
   </root>
   <root nodeId="3696012239575181893">
+    <nodeInfo nodeId="3696012239575362974" fileName="CellModel_URL_Editor.java" startLine="451" startPosition="112" endLine="452" endPosition="72" />
+    <nodeInfo nodeId="3696012239575362990" fileName="CellModel_URL_Editor.java" startLine="455" startPosition="112" endLine="456" endPosition="71" />
+    <nodeInfo nodeId="3696012239575363013" fileName="CellModel_URL_Editor.java" startLine="459" startPosition="112" endLine="460" endPosition="115" />
+    <nodeInfo nodeId="3696012239575273237" fileName="CellModel_URL_Editor.java" startLine="463" startPosition="107" endLine="464" endPosition="84" />
+    <nodeInfo nodeId="3696012239575273244" fileName="CellModel_URL_Editor.java" startLine="467" startPosition="107" endLine="468" endPosition="80" />
+    <nodeInfo nodeId="3696012239575273251" fileName="CellModel_URL_Editor.java" startLine="471" startPosition="107" endLine="472" endPosition="80" />
+    <nodeInfo nodeId="3696012239575273258" fileName="CellModel_URL_Editor.java" startLine="475" startPosition="105" endLine="476" endPosition="74" />
+    <nodeInfo nodeId="3696012239575273265" fileName="CellModel_URL_Editor.java" startLine="479" startPosition="109" endLine="480" endPosition="74" />
+    <nodeInfo nodeId="3696012239575273272" fileName="CellModel_URL_Editor.java" startLine="483" startPosition="109" endLine="484" endPosition="73" />
     <scopeInfo nodeId="3696012239575362973" fileName="CellModel_URL_Editor.java" startLine="451" startPosition="112" endLine="452" endPosition="72" />
     <scopeInfo nodeId="3696012239575362989" fileName="CellModel_URL_Editor.java" startLine="455" startPosition="112" endLine="456" endPosition="71" />
     <scopeInfo nodeId="3696012239575363012" fileName="CellModel_URL_Editor.java" startLine="459" startPosition="112" endLine="460" endPosition="115" />
@@ -442,6 +529,7 @@
     <scopeInfo nodeId="3696012239575273271" fileName="CellModel_URL_Editor.java" startLine="483" startPosition="109" endLine="484" endPosition="73" />
   </root>
   <root nodeId="3767670707232315109">
+    <nodeInfo nodeId="3767670707232315154" fileName="Common_Component.java" startLine="311" startPosition="112" endLine="312" endPosition="76" />
     <scopeInfo nodeId="3767670707232315153" fileName="Common_Component.java" startLine="311" startPosition="112" endLine="312" endPosition="76" />
   </root>
   <root nodeId="625126330682947083">
