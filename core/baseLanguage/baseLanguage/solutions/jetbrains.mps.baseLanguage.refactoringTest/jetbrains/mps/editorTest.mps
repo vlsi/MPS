@@ -6396,6 +6396,7 @@
                           </node>
                         </node>
                       </node>
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="1775943947214423015" />
                     </node>
                   </node>
                 </node>
@@ -6500,6 +6501,7 @@
               </node>
             </node>
           </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="1775943947214418113" />
         </node>
       </node>
       <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="222793074662091878">
@@ -6608,6 +6610,7 @@
               </node>
             </node>
           </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="1775943947214423050" />
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2671731496587878930">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2671731496587878931">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="2671731496587878932">
