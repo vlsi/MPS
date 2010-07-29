@@ -1505,176 +1505,176 @@
     <unitInfo nodeId="6445734908654412053" fileName="Map_Test.java" startLine="192" startPosition="126" endLine="196" endPosition="5" unitName="jetbrains.mps.internalCollections.test.basicOperations.Map_Test$2" />
   </root>
   <root nodeId="1226597076879">
-    <nodeInfo nodeId="1562299158921916473" fileName="Set_Test.java" startLine="23" startPosition="48" endLine="24" endPosition="68" />
-    <nodeInfo nodeId="1562299158921916485" fileName="Set_Test.java" startLine="24" startPosition="68" endLine="25" endPosition="75" />
-    <nodeInfo nodeId="1562299158921916497" fileName="Set_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="78" />
-    <nodeInfo nodeId="1226597090521" fileName="Set_Test.java" startLine="29" startPosition="52" endLine="30" endPosition="66" />
-    <nodeInfo nodeId="1226597304766" fileName="Set_Test.java" startLine="30" startPosition="66" endLine="31" endPosition="59" />
-    <nodeInfo nodeId="1226857155545" fileName="Set_Test.java" startLine="31" startPosition="59" endLine="32" endPosition="63" />
-    <nodeInfo nodeId="1226857160280" fileName="Set_Test.java" startLine="32" startPosition="63" endLine="33" endPosition="62" />
-    <nodeInfo nodeId="1226857178547" fileName="Set_Test.java" startLine="36" startPosition="55" endLine="37" endPosition="89" />
-    <nodeInfo nodeId="1226857202807" fileName="Set_Test.java" startLine="37" startPosition="89" endLine="38" endPosition="60" />
-    <nodeInfo nodeId="1226857210943" fileName="Set_Test.java" startLine="38" startPosition="60" endLine="39" endPosition="62" />
-    <nodeInfo nodeId="1226857216321" fileName="Set_Test.java" startLine="39" startPosition="62" endLine="40" endPosition="62" />
-    <nodeInfo nodeId="1226935012258" fileName="Set_Test.java" startLine="43" startPosition="45" endLine="44" endPosition="89" />
-    <nodeInfo nodeId="1226935023576" fileName="Set_Test.java" startLine="44" startPosition="89" endLine="45" endPosition="38" />
-    <nodeInfo nodeId="1226935029305" fileName="Set_Test.java" startLine="45" startPosition="38" endLine="46" endPosition="59" />
-    <nodeInfo nodeId="1226857234094" fileName="Set_Test.java" startLine="49" startPosition="43" endLine="50" endPosition="89" />
-    <nodeInfo nodeId="1226857237308" fileName="Set_Test.java" startLine="50" startPosition="89" endLine="51" endPosition="46" />
-    <nodeInfo nodeId="1226857249887" fileName="Set_Test.java" startLine="51" startPosition="46" endLine="52" endPosition="62" />
-    <nodeInfo nodeId="1226857260561" fileName="Set_Test.java" startLine="52" startPosition="62" endLine="53" endPosition="46" />
-    <nodeInfo nodeId="1226857269296" fileName="Set_Test.java" startLine="53" startPosition="46" endLine="54" endPosition="62" />
-    <nodeInfo nodeId="1226857280878" fileName="Set_Test.java" startLine="54" startPosition="62" endLine="55" endPosition="46" />
-    <nodeInfo nodeId="1226857291167" fileName="Set_Test.java" startLine="55" startPosition="46" endLine="56" endPosition="62" />
-    <nodeInfo nodeId="1226857647985" fileName="Set_Test.java" startLine="59" startPosition="46" endLine="60" endPosition="89" />
-    <nodeInfo nodeId="1226857655914" fileName="Set_Test.java" startLine="60" startPosition="89" endLine="61" endPosition="64" />
-    <nodeInfo nodeId="1226857669944" fileName="Set_Test.java" startLine="61" startPosition="64" endLine="62" endPosition="85" />
-    <nodeInfo nodeId="1226857680137" fileName="Set_Test.java" startLine="62" startPosition="85" endLine="63" endPosition="67" />
-    <nodeInfo nodeId="1237738981593" fileName="Set_Test.java" startLine="66" startPosition="44" endLine="67" endPosition="91" />
-    <nodeInfo nodeId="1237738997361" fileName="Set_Test.java" startLine="67" startPosition="91" endLine="68" endPosition="84" />
-    <nodeInfo nodeId="1237739018413" fileName="Set_Test.java" startLine="68" startPosition="84" endLine="69" endPosition="62" />
-    <nodeInfo nodeId="1237739040952" fileName="Set_Test.java" startLine="69" startPosition="62" endLine="70" endPosition="138" />
-    <nodeInfo nodeId="1237739059297" fileName="Set_Test.java" startLine="70" startPosition="138" endLine="71" endPosition="63" />
-    <nodeInfo nodeId="1237739070256" fileName="Set_Test.java" startLine="71" startPosition="63" endLine="72" endPosition="62" />
-    <nodeInfo nodeId="1226857698245" fileName="Set_Test.java" startLine="75" startPosition="46" endLine="76" endPosition="104" />
-    <nodeInfo nodeId="1226858152437" fileName="Set_Test.java" startLine="76" startPosition="104" endLine="77" endPosition="49" />
-    <nodeInfo nodeId="1226858157888" fileName="Set_Test.java" startLine="77" startPosition="49" endLine="78" endPosition="49" />
-    <nodeInfo nodeId="1226858163851" fileName="Set_Test.java" startLine="78" startPosition="49" endLine="79" endPosition="49" />
-    <nodeInfo nodeId="1226858173583" fileName="Set_Test.java" startLine="79" startPosition="49" endLine="80" endPosition="64" />
-    <nodeInfo nodeId="1226858195523" fileName="Set_Test.java" startLine="83" startPosition="49" endLine="84" endPosition="89" />
-    <nodeInfo nodeId="1226858199264" fileName="Set_Test.java" startLine="84" startPosition="89" endLine="85" endPosition="85" />
-    <nodeInfo nodeId="1226858211141" fileName="Set_Test.java" startLine="85" startPosition="85" endLine="86" endPosition="59" />
-    <nodeInfo nodeId="1227381260231" fileName="Set_Test.java" startLine="89" startPosition="58" endLine="90" endPosition="91" />
-    <nodeInfo nodeId="1227381177654" fileName="Set_Test.java" startLine="90" startPosition="91" endLine="91" endPosition="62" />
-    <nodeInfo nodeId="1227381215521" fileName="Set_Test.java" startLine="91" startPosition="62" endLine="92" endPosition="67" />
-    <nodeInfo nodeId="1227381221632" fileName="Set_Test.java" startLine="92" startPosition="67" endLine="93" endPosition="41" />
-    <nodeInfo nodeId="1236250704364" fileName="Set_Test.java" startLine="96" startPosition="48" endLine="97" endPosition="91" />
-    <nodeInfo nodeId="1236250720346" fileName="Set_Test.java" startLine="97" startPosition="91" endLine="98" endPosition="61" />
-    <nodeInfo nodeId="1240227096364" fileName="Set_Test.java" startLine="101" startPosition="53" endLine="102" endPosition="73" />
-    <nodeInfo nodeId="1240227112318" fileName="Set_Test.java" startLine="102" startPosition="73" endLine="103" endPosition="44" />
-    <nodeInfo nodeId="1240227134507" fileName="Set_Test.java" startLine="103" startPosition="44" endLine="104" endPosition="43" />
-    <nodeInfo nodeId="1240227142747" fileName="Set_Test.java" startLine="104" startPosition="43" endLine="105" endPosition="43" />
-    <nodeInfo nodeId="1240227152562" fileName="Set_Test.java" startLine="105" startPosition="43" endLine="106" endPosition="43" />
-    <nodeInfo nodeId="1240227159291" fileName="Set_Test.java" startLine="106" startPosition="43" endLine="107" endPosition="43" />
-    <nodeInfo nodeId="1240227168528" fileName="Set_Test.java" startLine="107" startPosition="43" endLine="108" endPosition="43" />
-    <nodeInfo nodeId="1240227176957" fileName="Set_Test.java" startLine="108" startPosition="43" endLine="109" endPosition="69" />
-    <nodeInfo nodeId="1239091290464" fileName="Set_Test.java" startLine="112" startPosition="49" endLine="113" endPosition="79" />
-    <nodeInfo nodeId="1239091308874" fileName="Set_Test.java" startLine="113" startPosition="79" endLine="114" endPosition="53" />
-    <nodeInfo nodeId="1240326780046" fileName="Set_Test.java" startLine="117" startPosition="45" endLine="118" endPosition="47" />
-    <nodeInfo nodeId="1240326760261" fileName="Set_Test.java" startLine="118" startPosition="47" endLine="119" endPosition="85" />
-    <nodeInfo nodeId="1240326828195" fileName="Set_Test.java" startLine="119" startPosition="85" endLine="120" endPosition="53" />
-    <nodeInfo nodeId="6656588995619578630" fileName="Set_Test.java" startLine="123" startPosition="42" endLine="124" endPosition="91" />
-    <nodeInfo nodeId="6656588995619578648" fileName="Set_Test.java" startLine="124" startPosition="91" endLine="125" endPosition="91" />
-    <nodeInfo nodeId="6656588995619578675" fileName="Set_Test.java" startLine="125" startPosition="91" endLine="126" endPosition="54" />
-    <nodeInfo nodeId="6661832029303371578" fileName="Set_Test.java" startLine="129" startPosition="47" endLine="130" endPosition="78" />
-    <nodeInfo nodeId="6661832029303371590" fileName="Set_Test.java" startLine="130" startPosition="78" endLine="131" endPosition="58" />
-    <nodeInfo nodeId="6661832029303371602" fileName="Set_Test.java" startLine="131" startPosition="58" endLine="132" endPosition="62" />
-    <nodeInfo nodeId="4498918741262483016" fileName="Set_Test.java" startLine="135" startPosition="47" endLine="136" endPosition="64" />
-    <nodeInfo nodeId="1115463791055972062" fileName="Set_Test.java" startLine="136" startPosition="64" endLine="137" endPosition="28" />
-    <nodeInfo nodeId="1115463791055972071" fileName="Set_Test.java" startLine="137" startPosition="28" endLine="138" endPosition="42" />
-    <nodeInfo nodeId="1115463791055972083" fileName="Set_Test.java" startLine="138" startPosition="42" endLine="139" endPosition="58" />
-    <nodeInfo nodeId="1115463791055972098" fileName="Set_Test.java" startLine="139" startPosition="58" endLine="140" endPosition="28" />
-    <nodeInfo nodeId="1115463791055972101" fileName="Set_Test.java" startLine="140" startPosition="28" endLine="141" endPosition="13" />
-    <nodeInfo nodeId="1115463791055972120" fileName="Set_Test.java" startLine="141" startPosition="13" endLine="142" endPosition="16" />
-    <nodeInfo nodeId="1115463791055972799" fileName="Set_Test.java" startLine="142" startPosition="16" endLine="143" endPosition="16" />
-    <nodeInfo nodeId="1115463791055972115" fileName="Set_Test.java" startLine="144" startPosition="9" endLine="145" endPosition="25" />
-    <nodeInfo nodeId="1115463791055972808" fileName="Set_Test.java" startLine="147" startPosition="5" endLine="148" endPosition="16" />
-    <nodeInfo nodeId="1115463791055972813" fileName="Set_Test.java" startLine="148" startPosition="16" endLine="149" endPosition="57" />
-    <nodeInfo nodeId="1115463791055972108" fileName="Set_Test.java" startLine="143" startPosition="16" endLine="147" endPosition="5" />
-    <nodeInfo nodeId="1236250698508" fileName="Set_Test.java" startLine="95" startPosition="0" endLine="100" endPosition="0" />
-    <nodeInfo nodeId="1239091286728" fileName="Set_Test.java" startLine="111" startPosition="0" endLine="116" endPosition="0" />
-    <nodeInfo nodeId="1562299158921916469" fileName="Set_Test.java" startLine="22" startPosition="41" endLine="28" endPosition="0" />
-    <nodeInfo nodeId="1226935012255" fileName="Set_Test.java" startLine="42" startPosition="0" endLine="48" endPosition="0" />
-    <nodeInfo nodeId="1226858187465" fileName="Set_Test.java" startLine="82" startPosition="0" endLine="88" endPosition="0" />
-    <nodeInfo nodeId="1240326753941" fileName="Set_Test.java" startLine="116" startPosition="0" endLine="122" endPosition="0" />
-    <nodeInfo nodeId="6656588995619578627" fileName="Set_Test.java" startLine="122" startPosition="0" endLine="128" endPosition="0" />
-    <nodeInfo nodeId="6661832029303371570" fileName="Set_Test.java" startLine="128" startPosition="0" endLine="134" endPosition="0" />
-    <nodeInfo nodeId="1226597085893" fileName="Set_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
-    <nodeInfo nodeId="1226857165276" fileName="Set_Test.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
-    <nodeInfo nodeId="1226857638390" fileName="Set_Test.java" startLine="58" startPosition="0" endLine="65" endPosition="0" />
-    <nodeInfo nodeId="1227381253920" fileName="Set_Test.java" startLine="88" startPosition="0" endLine="95" endPosition="0" />
-    <nodeInfo nodeId="1226857691714" fileName="Set_Test.java" startLine="74" startPosition="0" endLine="82" endPosition="0" />
-    <nodeInfo nodeId="1237738973809" fileName="Set_Test.java" startLine="65" startPosition="0" endLine="74" endPosition="0" />
-    <nodeInfo nodeId="1226857222105" fileName="Set_Test.java" startLine="48" startPosition="0" endLine="58" endPosition="0" />
-    <nodeInfo nodeId="1240227090414" fileName="Set_Test.java" startLine="100" startPosition="0" endLine="111" endPosition="0" />
-    <nodeInfo nodeId="4498918741262483012" fileName="Set_Test.java" startLine="134" startPosition="0" endLine="151" endPosition="0" />
-    <scopeInfo nodeId="1115463791055972114" fileName="Set_Test.java" startLine="146" startPosition="38" endLine="146" endPosition="38" />
-    <scopeInfo nodeId="1115463791055972109" fileName="Set_Test.java" startLine="144" startPosition="9" endLine="145" endPosition="25" />
-    <scopeInfo nodeId="1236250698510" fileName="Set_Test.java" startLine="96" startPosition="48" endLine="98" endPosition="61">
+    <nodeInfo nodeId="1562299158921916473" fileName="Set_Test.java" startLine="22" startPosition="48" endLine="23" endPosition="68" />
+    <nodeInfo nodeId="1562299158921916485" fileName="Set_Test.java" startLine="23" startPosition="68" endLine="24" endPosition="75" />
+    <nodeInfo nodeId="1562299158921916497" fileName="Set_Test.java" startLine="24" startPosition="75" endLine="25" endPosition="78" />
+    <nodeInfo nodeId="1226597090521" fileName="Set_Test.java" startLine="28" startPosition="52" endLine="29" endPosition="66" />
+    <nodeInfo nodeId="1226597304766" fileName="Set_Test.java" startLine="29" startPosition="66" endLine="30" endPosition="59" />
+    <nodeInfo nodeId="1226857155545" fileName="Set_Test.java" startLine="30" startPosition="59" endLine="31" endPosition="63" />
+    <nodeInfo nodeId="1226857160280" fileName="Set_Test.java" startLine="31" startPosition="63" endLine="32" endPosition="62" />
+    <nodeInfo nodeId="1226857178547" fileName="Set_Test.java" startLine="35" startPosition="55" endLine="36" endPosition="89" />
+    <nodeInfo nodeId="1226857202807" fileName="Set_Test.java" startLine="36" startPosition="89" endLine="37" endPosition="60" />
+    <nodeInfo nodeId="1226857210943" fileName="Set_Test.java" startLine="37" startPosition="60" endLine="38" endPosition="62" />
+    <nodeInfo nodeId="1226857216321" fileName="Set_Test.java" startLine="38" startPosition="62" endLine="39" endPosition="62" />
+    <nodeInfo nodeId="1226935012258" fileName="Set_Test.java" startLine="42" startPosition="45" endLine="43" endPosition="89" />
+    <nodeInfo nodeId="1226935023576" fileName="Set_Test.java" startLine="43" startPosition="89" endLine="44" endPosition="38" />
+    <nodeInfo nodeId="1226935029305" fileName="Set_Test.java" startLine="44" startPosition="38" endLine="45" endPosition="59" />
+    <nodeInfo nodeId="1226857234094" fileName="Set_Test.java" startLine="48" startPosition="43" endLine="49" endPosition="89" />
+    <nodeInfo nodeId="1226857237308" fileName="Set_Test.java" startLine="49" startPosition="89" endLine="50" endPosition="46" />
+    <nodeInfo nodeId="1226857249887" fileName="Set_Test.java" startLine="50" startPosition="46" endLine="51" endPosition="62" />
+    <nodeInfo nodeId="1226857260561" fileName="Set_Test.java" startLine="51" startPosition="62" endLine="52" endPosition="46" />
+    <nodeInfo nodeId="1226857269296" fileName="Set_Test.java" startLine="52" startPosition="46" endLine="53" endPosition="62" />
+    <nodeInfo nodeId="1226857280878" fileName="Set_Test.java" startLine="53" startPosition="62" endLine="54" endPosition="46" />
+    <nodeInfo nodeId="1226857291167" fileName="Set_Test.java" startLine="54" startPosition="46" endLine="55" endPosition="62" />
+    <nodeInfo nodeId="1226857647985" fileName="Set_Test.java" startLine="58" startPosition="46" endLine="59" endPosition="89" />
+    <nodeInfo nodeId="1226857655914" fileName="Set_Test.java" startLine="59" startPosition="89" endLine="60" endPosition="64" />
+    <nodeInfo nodeId="1226857669944" fileName="Set_Test.java" startLine="60" startPosition="64" endLine="61" endPosition="85" />
+    <nodeInfo nodeId="1226857680137" fileName="Set_Test.java" startLine="61" startPosition="85" endLine="62" endPosition="67" />
+    <nodeInfo nodeId="1237738981593" fileName="Set_Test.java" startLine="65" startPosition="44" endLine="66" endPosition="91" />
+    <nodeInfo nodeId="1237738997361" fileName="Set_Test.java" startLine="66" startPosition="91" endLine="67" endPosition="84" />
+    <nodeInfo nodeId="1237739018413" fileName="Set_Test.java" startLine="67" startPosition="84" endLine="68" endPosition="62" />
+    <nodeInfo nodeId="1237739040952" fileName="Set_Test.java" startLine="68" startPosition="62" endLine="69" endPosition="138" />
+    <nodeInfo nodeId="1237739059297" fileName="Set_Test.java" startLine="69" startPosition="138" endLine="70" endPosition="63" />
+    <nodeInfo nodeId="1237739070256" fileName="Set_Test.java" startLine="70" startPosition="63" endLine="71" endPosition="62" />
+    <nodeInfo nodeId="1226857698245" fileName="Set_Test.java" startLine="74" startPosition="46" endLine="75" endPosition="104" />
+    <nodeInfo nodeId="1226858152437" fileName="Set_Test.java" startLine="75" startPosition="104" endLine="76" endPosition="49" />
+    <nodeInfo nodeId="1226858157888" fileName="Set_Test.java" startLine="76" startPosition="49" endLine="77" endPosition="49" />
+    <nodeInfo nodeId="1226858163851" fileName="Set_Test.java" startLine="77" startPosition="49" endLine="78" endPosition="49" />
+    <nodeInfo nodeId="1226858173583" fileName="Set_Test.java" startLine="78" startPosition="49" endLine="79" endPosition="64" />
+    <nodeInfo nodeId="1226858195523" fileName="Set_Test.java" startLine="82" startPosition="49" endLine="83" endPosition="89" />
+    <nodeInfo nodeId="1226858199264" fileName="Set_Test.java" startLine="83" startPosition="89" endLine="84" endPosition="85" />
+    <nodeInfo nodeId="1226858211141" fileName="Set_Test.java" startLine="84" startPosition="85" endLine="85" endPosition="59" />
+    <nodeInfo nodeId="1227381260231" fileName="Set_Test.java" startLine="88" startPosition="58" endLine="89" endPosition="91" />
+    <nodeInfo nodeId="1227381177654" fileName="Set_Test.java" startLine="89" startPosition="91" endLine="90" endPosition="62" />
+    <nodeInfo nodeId="1227381215521" fileName="Set_Test.java" startLine="90" startPosition="62" endLine="91" endPosition="67" />
+    <nodeInfo nodeId="1227381221632" fileName="Set_Test.java" startLine="91" startPosition="67" endLine="92" endPosition="41" />
+    <nodeInfo nodeId="1236250704364" fileName="Set_Test.java" startLine="95" startPosition="48" endLine="96" endPosition="91" />
+    <nodeInfo nodeId="1236250720346" fileName="Set_Test.java" startLine="96" startPosition="91" endLine="97" endPosition="61" />
+    <nodeInfo nodeId="1240227096364" fileName="Set_Test.java" startLine="100" startPosition="53" endLine="101" endPosition="73" />
+    <nodeInfo nodeId="1240227112318" fileName="Set_Test.java" startLine="101" startPosition="73" endLine="102" endPosition="44" />
+    <nodeInfo nodeId="1240227134507" fileName="Set_Test.java" startLine="102" startPosition="44" endLine="103" endPosition="43" />
+    <nodeInfo nodeId="1240227142747" fileName="Set_Test.java" startLine="103" startPosition="43" endLine="104" endPosition="43" />
+    <nodeInfo nodeId="1240227152562" fileName="Set_Test.java" startLine="104" startPosition="43" endLine="105" endPosition="43" />
+    <nodeInfo nodeId="1240227159291" fileName="Set_Test.java" startLine="105" startPosition="43" endLine="106" endPosition="43" />
+    <nodeInfo nodeId="1240227168528" fileName="Set_Test.java" startLine="106" startPosition="43" endLine="107" endPosition="43" />
+    <nodeInfo nodeId="1240227176957" fileName="Set_Test.java" startLine="107" startPosition="43" endLine="108" endPosition="69" />
+    <nodeInfo nodeId="1239091290464" fileName="Set_Test.java" startLine="111" startPosition="49" endLine="112" endPosition="79" />
+    <nodeInfo nodeId="1239091308874" fileName="Set_Test.java" startLine="112" startPosition="79" endLine="113" endPosition="53" />
+    <nodeInfo nodeId="1240326780046" fileName="Set_Test.java" startLine="116" startPosition="45" endLine="117" endPosition="47" />
+    <nodeInfo nodeId="1240326760261" fileName="Set_Test.java" startLine="117" startPosition="47" endLine="118" endPosition="85" />
+    <nodeInfo nodeId="1240326828195" fileName="Set_Test.java" startLine="118" startPosition="85" endLine="119" endPosition="53" />
+    <nodeInfo nodeId="6656588995619578630" fileName="Set_Test.java" startLine="122" startPosition="42" endLine="123" endPosition="91" />
+    <nodeInfo nodeId="6656588995619578648" fileName="Set_Test.java" startLine="123" startPosition="91" endLine="124" endPosition="91" />
+    <nodeInfo nodeId="6656588995619578675" fileName="Set_Test.java" startLine="124" startPosition="91" endLine="125" endPosition="53" />
+    <nodeInfo nodeId="6661832029303371578" fileName="Set_Test.java" startLine="128" startPosition="47" endLine="129" endPosition="78" />
+    <nodeInfo nodeId="6661832029303371590" fileName="Set_Test.java" startLine="129" startPosition="78" endLine="130" endPosition="58" />
+    <nodeInfo nodeId="6661832029303371602" fileName="Set_Test.java" startLine="130" startPosition="58" endLine="131" endPosition="62" />
+    <nodeInfo nodeId="4498918741262483016" fileName="Set_Test.java" startLine="134" startPosition="47" endLine="135" endPosition="64" />
+    <nodeInfo nodeId="1115463791055972062" fileName="Set_Test.java" startLine="135" startPosition="64" endLine="136" endPosition="28" />
+    <nodeInfo nodeId="1115463791055972071" fileName="Set_Test.java" startLine="136" startPosition="28" endLine="137" endPosition="42" />
+    <nodeInfo nodeId="1115463791055972083" fileName="Set_Test.java" startLine="137" startPosition="42" endLine="138" endPosition="58" />
+    <nodeInfo nodeId="1115463791055972098" fileName="Set_Test.java" startLine="138" startPosition="58" endLine="139" endPosition="28" />
+    <nodeInfo nodeId="1115463791055972101" fileName="Set_Test.java" startLine="139" startPosition="28" endLine="140" endPosition="13" />
+    <nodeInfo nodeId="1115463791055972120" fileName="Set_Test.java" startLine="140" startPosition="13" endLine="141" endPosition="16" />
+    <nodeInfo nodeId="1115463791055972799" fileName="Set_Test.java" startLine="141" startPosition="16" endLine="142" endPosition="16" />
+    <nodeInfo nodeId="1115463791055972115" fileName="Set_Test.java" startLine="143" startPosition="9" endLine="144" endPosition="25" />
+    <nodeInfo nodeId="1115463791055972808" fileName="Set_Test.java" startLine="146" startPosition="5" endLine="147" endPosition="16" />
+    <nodeInfo nodeId="1115463791055972813" fileName="Set_Test.java" startLine="147" startPosition="16" endLine="148" endPosition="57" />
+    <nodeInfo nodeId="1115463791055972108" fileName="Set_Test.java" startLine="142" startPosition="16" endLine="146" endPosition="5" />
+    <nodeInfo nodeId="1236250698508" fileName="Set_Test.java" startLine="94" startPosition="0" endLine="99" endPosition="0" />
+    <nodeInfo nodeId="1239091286728" fileName="Set_Test.java" startLine="110" startPosition="0" endLine="115" endPosition="0" />
+    <nodeInfo nodeId="1562299158921916469" fileName="Set_Test.java" startLine="21" startPosition="41" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="1226935012255" fileName="Set_Test.java" startLine="41" startPosition="0" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="1226858187465" fileName="Set_Test.java" startLine="81" startPosition="0" endLine="87" endPosition="0" />
+    <nodeInfo nodeId="1240326753941" fileName="Set_Test.java" startLine="115" startPosition="0" endLine="121" endPosition="0" />
+    <nodeInfo nodeId="6656588995619578627" fileName="Set_Test.java" startLine="121" startPosition="0" endLine="127" endPosition="0" />
+    <nodeInfo nodeId="6661832029303371570" fileName="Set_Test.java" startLine="127" startPosition="0" endLine="133" endPosition="0" />
+    <nodeInfo nodeId="1226597085893" fileName="Set_Test.java" startLine="27" startPosition="0" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="1226857165276" fileName="Set_Test.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="1226857638390" fileName="Set_Test.java" startLine="57" startPosition="0" endLine="64" endPosition="0" />
+    <nodeInfo nodeId="1227381253920" fileName="Set_Test.java" startLine="87" startPosition="0" endLine="94" endPosition="0" />
+    <nodeInfo nodeId="1226857691714" fileName="Set_Test.java" startLine="73" startPosition="0" endLine="81" endPosition="0" />
+    <nodeInfo nodeId="1237738973809" fileName="Set_Test.java" startLine="64" startPosition="0" endLine="73" endPosition="0" />
+    <nodeInfo nodeId="1226857222105" fileName="Set_Test.java" startLine="47" startPosition="0" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="1240227090414" fileName="Set_Test.java" startLine="99" startPosition="0" endLine="110" endPosition="0" />
+    <nodeInfo nodeId="4498918741262483012" fileName="Set_Test.java" startLine="133" startPosition="0" endLine="150" endPosition="0" />
+    <scopeInfo nodeId="1115463791055972114" fileName="Set_Test.java" startLine="145" startPosition="38" endLine="145" endPosition="38" />
+    <scopeInfo nodeId="1115463791055972109" fileName="Set_Test.java" startLine="143" startPosition="9" endLine="144" endPosition="25" />
+    <scopeInfo nodeId="1236250698510" fileName="Set_Test.java" startLine="95" startPosition="48" endLine="97" endPosition="61">
       <varInfo nodeId="1236250704365" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1239091286730" fileName="Set_Test.java" startLine="112" startPosition="49" endLine="114" endPosition="53">
+    <scopeInfo nodeId="1239091286730" fileName="Set_Test.java" startLine="111" startPosition="49" endLine="113" endPosition="53">
       <varInfo nodeId="1239091290465" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1562299158921916472" fileName="Set_Test.java" startLine="23" startPosition="48" endLine="26" endPosition="78">
+    <scopeInfo nodeId="1562299158921916472" fileName="Set_Test.java" startLine="22" startPosition="48" endLine="25" endPosition="78">
       <varInfo nodeId="1562299158921916474" varName="hs" />
       <varInfo nodeId="1562299158921916498" varName="ss" />
       <varInfo nodeId="1562299158921916486" varName="lhs" />
     </scopeInfo>
-    <scopeInfo nodeId="1226935012257" fileName="Set_Test.java" startLine="43" startPosition="45" endLine="46" endPosition="59">
+    <scopeInfo nodeId="1226935012257" fileName="Set_Test.java" startLine="42" startPosition="45" endLine="45" endPosition="59">
       <varInfo nodeId="1226935012259" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1226858187467" fileName="Set_Test.java" startLine="83" startPosition="49" endLine="86" endPosition="59">
+    <scopeInfo nodeId="1226858187467" fileName="Set_Test.java" startLine="82" startPosition="49" endLine="85" endPosition="59">
       <varInfo nodeId="1226858195524" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1240326753943" fileName="Set_Test.java" startLine="117" startPosition="45" endLine="120" endPosition="53">
+    <scopeInfo nodeId="1240326753943" fileName="Set_Test.java" startLine="116" startPosition="45" endLine="119" endPosition="53">
       <varInfo nodeId="1240326760262" varName="test" />
       <varInfo nodeId="1240326780047" varName="arr" />
     </scopeInfo>
-    <scopeInfo nodeId="6656588995619578629" fileName="Set_Test.java" startLine="123" startPosition="42" endLine="126" endPosition="54">
+    <scopeInfo nodeId="6656588995619578629" fileName="Set_Test.java" startLine="122" startPosition="42" endLine="125" endPosition="53">
       <varInfo nodeId="6656588995619578631" varName="seta" />
       <varInfo nodeId="6656588995619578649" varName="setb" />
     </scopeInfo>
-    <scopeInfo nodeId="6661832029303371573" fileName="Set_Test.java" startLine="129" startPosition="47" endLine="132" endPosition="62">
+    <scopeInfo nodeId="6661832029303371573" fileName="Set_Test.java" startLine="128" startPosition="47" endLine="131" endPosition="62">
       <varInfo nodeId="6661832029303371579" varName="hs" />
     </scopeInfo>
-    <scopeInfo nodeId="1226597085895" fileName="Set_Test.java" startLine="29" startPosition="52" endLine="33" endPosition="62">
+    <scopeInfo nodeId="1226597085895" fileName="Set_Test.java" startLine="28" startPosition="52" endLine="32" endPosition="62">
       <varInfo nodeId="1226597090522" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1226857165278" fileName="Set_Test.java" startLine="36" startPosition="55" endLine="40" endPosition="62">
+    <scopeInfo nodeId="1226857165278" fileName="Set_Test.java" startLine="35" startPosition="55" endLine="39" endPosition="62">
       <varInfo nodeId="1226857178548" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1226857638392" fileName="Set_Test.java" startLine="59" startPosition="46" endLine="63" endPosition="67">
+    <scopeInfo nodeId="1226857638392" fileName="Set_Test.java" startLine="58" startPosition="46" endLine="62" endPosition="67">
       <varInfo nodeId="1226857647986" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1227381253922" fileName="Set_Test.java" startLine="89" startPosition="58" endLine="93" endPosition="41">
+    <scopeInfo nodeId="1227381253922" fileName="Set_Test.java" startLine="88" startPosition="58" endLine="92" endPosition="41">
       <varInfo nodeId="1227381260232" varName="test" />
       <varInfo nodeId="1227381215522" varName="array" />
     </scopeInfo>
-    <scopeInfo nodeId="1226857691716" fileName="Set_Test.java" startLine="75" startPosition="46" endLine="80" endPosition="64">
+    <scopeInfo nodeId="1226857691716" fileName="Set_Test.java" startLine="74" startPosition="46" endLine="79" endPosition="64">
       <varInfo nodeId="1226857698246" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1236250698508" fileName="Set_Test.java" startLine="95" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="1239091286728" fileName="Set_Test.java" startLine="111" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="1562299158921916469" fileName="Set_Test.java" startLine="22" startPosition="41" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1226935012255" fileName="Set_Test.java" startLine="42" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1237738973811" fileName="Set_Test.java" startLine="66" startPosition="44" endLine="72" endPosition="62">
+    <scopeInfo nodeId="1236250698508" fileName="Set_Test.java" startLine="94" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="1239091286728" fileName="Set_Test.java" startLine="110" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="1562299158921916469" fileName="Set_Test.java" startLine="21" startPosition="41" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1226935012255" fileName="Set_Test.java" startLine="41" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1237738973811" fileName="Set_Test.java" startLine="65" startPosition="44" endLine="71" endPosition="62">
       <varInfo nodeId="1237738981594" varName="test" />
       <varInfo nodeId="1237738997362" varName="copy" />
     </scopeInfo>
-    <scopeInfo nodeId="1226858187465" fileName="Set_Test.java" startLine="82" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="1240326753941" fileName="Set_Test.java" startLine="116" startPosition="0" endLine="122" endPosition="0" />
-    <scopeInfo nodeId="6656588995619578627" fileName="Set_Test.java" startLine="122" startPosition="0" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="6661832029303371570" fileName="Set_Test.java" startLine="128" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="1226597085893" fileName="Set_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1226857165276" fileName="Set_Test.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="1226857222107" fileName="Set_Test.java" startLine="49" startPosition="43" endLine="56" endPosition="62">
+    <scopeInfo nodeId="1226858187465" fileName="Set_Test.java" startLine="81" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="1240326753941" fileName="Set_Test.java" startLine="115" startPosition="0" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="6656588995619578627" fileName="Set_Test.java" startLine="121" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="6661832029303371570" fileName="Set_Test.java" startLine="127" startPosition="0" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="1226597085893" fileName="Set_Test.java" startLine="27" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1226857165276" fileName="Set_Test.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1226857222107" fileName="Set_Test.java" startLine="48" startPosition="43" endLine="55" endPosition="62">
       <varInfo nodeId="1226857234095" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1226857638390" fileName="Set_Test.java" startLine="58" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1227381253920" fileName="Set_Test.java" startLine="88" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="1226857691714" fileName="Set_Test.java" startLine="74" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1240227090416" fileName="Set_Test.java" startLine="101" startPosition="53" endLine="109" endPosition="69">
+    <scopeInfo nodeId="1226857638390" fileName="Set_Test.java" startLine="57" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="1227381253920" fileName="Set_Test.java" startLine="87" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="1226857691714" fileName="Set_Test.java" startLine="73" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="1240227090416" fileName="Set_Test.java" startLine="100" startPosition="53" endLine="108" endPosition="69">
       <varInfo nodeId="1240227096365" varName="set" />
     </scopeInfo>
-    <scopeInfo nodeId="1237738973809" fileName="Set_Test.java" startLine="65" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1226857222105" fileName="Set_Test.java" startLine="48" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1240227090414" fileName="Set_Test.java" startLine="100" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="4498918741262483015" fileName="Set_Test.java" startLine="135" startPosition="47" endLine="149" endPosition="57">
+    <scopeInfo nodeId="1237738973809" fileName="Set_Test.java" startLine="64" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1226857222105" fileName="Set_Test.java" startLine="47" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1240227090414" fileName="Set_Test.java" startLine="99" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="4498918741262483015" fileName="Set_Test.java" startLine="134" startPosition="47" endLine="148" endPosition="57">
       <varInfo nodeId="1115463791055972063" varName="o" />
       <varInfo nodeId="4498918741262483017" varName="ws" />
     </scopeInfo>
-    <scopeInfo nodeId="4498918741262483012" fileName="Set_Test.java" startLine="134" startPosition="0" endLine="151" endPosition="0" />
+    <scopeInfo nodeId="4498918741262483012" fileName="Set_Test.java" startLine="133" startPosition="0" endLine="150" endPosition="0" />
   </root>
   <root nodeId="1228807450867">
     <nodeInfo nodeId="1228831476070" fileName="Array_Test.java" startLine="56" startPosition="27" endLine="56" endPosition="27" />
@@ -2147,103 +2147,103 @@
     <unitInfo nodeId="2261417478149464368" fileName="SortedSet_Test.java" startLine="47" startPosition="79" endLine="51" endPosition="5" unitName="jetbrains.mps.internalCollections.test.basicOperations.SortedSet_Test$1" />
   </root>
   <root nodeId="3358009230509912464">
-    <nodeInfo nodeId="3358009230509912474" fileName="QueueDequeStack_Test.java" startLine="16" startPosition="45" endLine="17" endPosition="74" />
-    <nodeInfo nodeId="3358009230509912484" fileName="QueueDequeStack_Test.java" startLine="17" startPosition="74" endLine="18" endPosition="49" />
-    <nodeInfo nodeId="3358009230509912502" fileName="QueueDequeStack_Test.java" startLine="18" startPosition="49" endLine="19" endPosition="49" />
-    <nodeInfo nodeId="3358009230509912520" fileName="QueueDequeStack_Test.java" startLine="19" startPosition="49" endLine="20" endPosition="49" />
-    <nodeInfo nodeId="3002214349487645208" fileName="QueueDequeStack_Test.java" startLine="20" startPosition="49" endLine="21" endPosition="92" />
-    <nodeInfo nodeId="3002214349487645219" fileName="QueueDequeStack_Test.java" startLine="21" startPosition="92" endLine="22" endPosition="49" />
-    <nodeInfo nodeId="3358009230509912538" fileName="QueueDequeStack_Test.java" startLine="22" startPosition="49" endLine="23" endPosition="61" />
-    <nodeInfo nodeId="3358009230509912554" fileName="QueueDequeStack_Test.java" startLine="23" startPosition="61" endLine="24" endPosition="74" />
-    <nodeInfo nodeId="3358009230509912567" fileName="QueueDequeStack_Test.java" startLine="24" startPosition="74" endLine="25" endPosition="61" />
-    <nodeInfo nodeId="3358009230509912580" fileName="QueueDequeStack_Test.java" startLine="25" startPosition="61" endLine="26" endPosition="60" />
-    <nodeInfo nodeId="3358009230509912589" fileName="QueueDequeStack_Test.java" startLine="26" startPosition="60" endLine="27" endPosition="74" />
-    <nodeInfo nodeId="3358009230509912600" fileName="QueueDequeStack_Test.java" startLine="27" startPosition="74" endLine="28" endPosition="74" />
-    <nodeInfo nodeId="3358009230509912611" fileName="QueueDequeStack_Test.java" startLine="28" startPosition="74" endLine="29" endPosition="60" />
-    <nodeInfo nodeId="3444116434173507976" fileName="QueueDequeStack_Test.java" startLine="32" startPosition="53" endLine="33" endPosition="77" />
-    <nodeInfo nodeId="3444116434173507986" fileName="QueueDequeStack_Test.java" startLine="33" startPosition="77" endLine="34" endPosition="49" />
-    <nodeInfo nodeId="3444116434173508004" fileName="QueueDequeStack_Test.java" startLine="34" startPosition="49" endLine="35" endPosition="49" />
-    <nodeInfo nodeId="3444116434173508030" fileName="QueueDequeStack_Test.java" startLine="35" startPosition="49" endLine="36" endPosition="49" />
-    <nodeInfo nodeId="3444116434173508048" fileName="QueueDequeStack_Test.java" startLine="36" startPosition="49" endLine="37" endPosition="61" />
-    <nodeInfo nodeId="3444116434173508053" fileName="QueueDequeStack_Test.java" startLine="37" startPosition="61" endLine="38" endPosition="74" />
-    <nodeInfo nodeId="3444116434173508058" fileName="QueueDequeStack_Test.java" startLine="38" startPosition="74" endLine="39" endPosition="61" />
-    <nodeInfo nodeId="3444116434173508063" fileName="QueueDequeStack_Test.java" startLine="39" startPosition="61" endLine="40" endPosition="60" />
-    <nodeInfo nodeId="3444116434173508068" fileName="QueueDequeStack_Test.java" startLine="40" startPosition="60" endLine="41" endPosition="74" />
-    <nodeInfo nodeId="3444116434173508073" fileName="QueueDequeStack_Test.java" startLine="41" startPosition="74" endLine="42" endPosition="74" />
-    <nodeInfo nodeId="3444116434173508078" fileName="QueueDequeStack_Test.java" startLine="42" startPosition="74" endLine="43" endPosition="60" />
-    <nodeInfo nodeId="3444116434173545466" fileName="QueueDequeStack_Test.java" startLine="46" startPosition="45" endLine="47" endPosition="74" />
-    <nodeInfo nodeId="3444116434173545476" fileName="QueueDequeStack_Test.java" startLine="47" startPosition="74" endLine="48" endPosition="50" />
-    <nodeInfo nodeId="3444116434173545498" fileName="QueueDequeStack_Test.java" startLine="48" startPosition="50" endLine="49" endPosition="50" />
-    <nodeInfo nodeId="3444116434173545520" fileName="QueueDequeStack_Test.java" startLine="49" startPosition="50" endLine="50" endPosition="50" />
-    <nodeInfo nodeId="3444116434173545542" fileName="QueueDequeStack_Test.java" startLine="50" startPosition="50" endLine="51" endPosition="61" />
-    <nodeInfo nodeId="3444116434173545547" fileName="QueueDequeStack_Test.java" startLine="51" startPosition="61" endLine="52" endPosition="74" />
-    <nodeInfo nodeId="3444116434173545552" fileName="QueueDequeStack_Test.java" startLine="52" startPosition="74" endLine="53" endPosition="61" />
-    <nodeInfo nodeId="3444116434173545557" fileName="QueueDequeStack_Test.java" startLine="53" startPosition="61" endLine="54" endPosition="60" />
-    <nodeInfo nodeId="3444116434173545562" fileName="QueueDequeStack_Test.java" startLine="54" startPosition="60" endLine="55" endPosition="74" />
-    <nodeInfo nodeId="3444116434173545567" fileName="QueueDequeStack_Test.java" startLine="55" startPosition="74" endLine="56" endPosition="74" />
-    <nodeInfo nodeId="3444116434173545572" fileName="QueueDequeStack_Test.java" startLine="56" startPosition="74" endLine="57" endPosition="60" />
-    <nodeInfo nodeId="3002214349487781560" fileName="QueueDequeStack_Test.java" startLine="60" startPosition="52" endLine="61" endPosition="74" />
-    <nodeInfo nodeId="3002214349487781567" fileName="QueueDequeStack_Test.java" startLine="61" startPosition="74" endLine="62" endPosition="46" />
-    <nodeInfo nodeId="3002214349487781572" fileName="QueueDequeStack_Test.java" startLine="62" startPosition="46" endLine="63" endPosition="46" />
-    <nodeInfo nodeId="3002214349487781577" fileName="QueueDequeStack_Test.java" startLine="63" startPosition="46" endLine="64" endPosition="46" />
-    <nodeInfo nodeId="3002214349487781582" fileName="QueueDequeStack_Test.java" startLine="64" startPosition="46" endLine="65" endPosition="61" />
-    <nodeInfo nodeId="5784983078885298349" fileName="QueueDequeStack_Test.java" startLine="65" startPosition="61" endLine="66" endPosition="67" />
-    <nodeInfo nodeId="3002214349487781587" fileName="QueueDequeStack_Test.java" startLine="66" startPosition="67" endLine="67" endPosition="66" />
-    <nodeInfo nodeId="3002214349487781592" fileName="QueueDequeStack_Test.java" startLine="67" startPosition="66" endLine="68" endPosition="61" />
-    <nodeInfo nodeId="5784983078885353123" fileName="QueueDequeStack_Test.java" startLine="68" startPosition="61" endLine="69" endPosition="67" />
-    <nodeInfo nodeId="3002214349487781597" fileName="QueueDequeStack_Test.java" startLine="69" startPosition="67" endLine="70" endPosition="60" />
-    <nodeInfo nodeId="3002214349487781602" fileName="QueueDequeStack_Test.java" startLine="70" startPosition="60" endLine="71" endPosition="66" />
-    <nodeInfo nodeId="3002214349487781607" fileName="QueueDequeStack_Test.java" startLine="71" startPosition="66" endLine="72" endPosition="66" />
-    <nodeInfo nodeId="3002214349487781612" fileName="QueueDequeStack_Test.java" startLine="72" startPosition="66" endLine="73" endPosition="60" />
-    <nodeInfo nodeId="3444116434173802077" fileName="QueueDequeStack_Test.java" startLine="76" startPosition="45" endLine="77" endPosition="74" />
-    <nodeInfo nodeId="3444116434173802087" fileName="QueueDequeStack_Test.java" startLine="77" startPosition="74" endLine="78" endPosition="50" />
-    <nodeInfo nodeId="3444116434173802092" fileName="QueueDequeStack_Test.java" startLine="78" startPosition="50" endLine="79" endPosition="50" />
-    <nodeInfo nodeId="3444116434173802097" fileName="QueueDequeStack_Test.java" startLine="79" startPosition="50" endLine="80" endPosition="50" />
-    <nodeInfo nodeId="3444116434173802102" fileName="QueueDequeStack_Test.java" startLine="80" startPosition="50" endLine="81" endPosition="61" />
-    <nodeInfo nodeId="3444116434173802107" fileName="QueueDequeStack_Test.java" startLine="81" startPosition="61" endLine="82" endPosition="74" />
-    <nodeInfo nodeId="3444116434173802134" fileName="QueueDequeStack_Test.java" startLine="82" startPosition="74" endLine="83" endPosition="49" />
-    <nodeInfo nodeId="3444116434173802152" fileName="QueueDequeStack_Test.java" startLine="83" startPosition="49" endLine="84" endPosition="49" />
-    <nodeInfo nodeId="3444116434173802170" fileName="QueueDequeStack_Test.java" startLine="84" startPosition="49" endLine="85" endPosition="49" />
-    <nodeInfo nodeId="3444116434173802188" fileName="QueueDequeStack_Test.java" startLine="85" startPosition="49" endLine="86" endPosition="61" />
-    <nodeInfo nodeId="5784983078885335079" fileName="QueueDequeStack_Test.java" startLine="86" startPosition="61" endLine="87" endPosition="67" />
-    <nodeInfo nodeId="3444116434173802193" fileName="QueueDequeStack_Test.java" startLine="87" startPosition="67" endLine="88" endPosition="60" />
-    <nodeInfo nodeId="3444116434173802219" fileName="QueueDequeStack_Test.java" startLine="88" startPosition="60" endLine="89" endPosition="73" />
-    <nodeInfo nodeId="3444116434173802201" fileName="QueueDequeStack_Test.java" startLine="89" startPosition="73" endLine="90" endPosition="74" />
-    <nodeInfo nodeId="3444116434173802212" fileName="QueueDequeStack_Test.java" startLine="90" startPosition="74" endLine="91" endPosition="61" />
-    <nodeInfo nodeId="5784983078885335098" fileName="QueueDequeStack_Test.java" startLine="91" startPosition="61" endLine="92" endPosition="67" />
-    <nodeInfo nodeId="3444116434173802231" fileName="QueueDequeStack_Test.java" startLine="92" startPosition="67" endLine="93" endPosition="74" />
-    <nodeInfo nodeId="3444116434173802258" fileName="QueueDequeStack_Test.java" startLine="93" startPosition="74" endLine="94" endPosition="61" />
-    <nodeInfo nodeId="5784983078885317051" fileName="QueueDequeStack_Test.java" startLine="94" startPosition="61" endLine="95" endPosition="67" />
-    <nodeInfo nodeId="3444116434173802263" fileName="QueueDequeStack_Test.java" startLine="95" startPosition="67" endLine="96" endPosition="74" />
-    <nodeInfo nodeId="3444116434173802276" fileName="QueueDequeStack_Test.java" startLine="96" startPosition="74" endLine="97" endPosition="60" />
-    <nodeInfo nodeId="3444116434173802281" fileName="QueueDequeStack_Test.java" startLine="97" startPosition="60" endLine="98" endPosition="73" />
-    <nodeInfo nodeId="3444116434173802292" fileName="QueueDequeStack_Test.java" startLine="98" startPosition="73" endLine="99" endPosition="60" />
-    <nodeInfo nodeId="3444116434173507973" fileName="QueueDequeStack_Test.java" startLine="31" startPosition="0" endLine="45" endPosition="0" />
-    <nodeInfo nodeId="3444116434173545463" fileName="QueueDequeStack_Test.java" startLine="45" startPosition="0" endLine="59" endPosition="0" />
-    <nodeInfo nodeId="3358009230509912471" fileName="QueueDequeStack_Test.java" startLine="15" startPosition="52" endLine="31" endPosition="0" />
-    <nodeInfo nodeId="3002214349487781557" fileName="QueueDequeStack_Test.java" startLine="59" startPosition="0" endLine="75" endPosition="0" />
-    <nodeInfo nodeId="3444116434173802074" fileName="QueueDequeStack_Test.java" startLine="75" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="3444116434173507975" fileName="QueueDequeStack_Test.java" startLine="32" startPosition="53" endLine="43" endPosition="60">
+    <nodeInfo nodeId="3358009230509912474" fileName="QueueDequeStack_Test.java" startLine="15" startPosition="45" endLine="16" endPosition="74" />
+    <nodeInfo nodeId="3358009230509912484" fileName="QueueDequeStack_Test.java" startLine="16" startPosition="74" endLine="17" endPosition="49" />
+    <nodeInfo nodeId="3358009230509912502" fileName="QueueDequeStack_Test.java" startLine="17" startPosition="49" endLine="18" endPosition="49" />
+    <nodeInfo nodeId="3358009230509912520" fileName="QueueDequeStack_Test.java" startLine="18" startPosition="49" endLine="19" endPosition="49" />
+    <nodeInfo nodeId="3002214349487645208" fileName="QueueDequeStack_Test.java" startLine="19" startPosition="49" endLine="20" endPosition="92" />
+    <nodeInfo nodeId="3002214349487645219" fileName="QueueDequeStack_Test.java" startLine="20" startPosition="92" endLine="21" endPosition="47" />
+    <nodeInfo nodeId="3358009230509912538" fileName="QueueDequeStack_Test.java" startLine="21" startPosition="47" endLine="22" endPosition="61" />
+    <nodeInfo nodeId="3358009230509912554" fileName="QueueDequeStack_Test.java" startLine="22" startPosition="61" endLine="23" endPosition="74" />
+    <nodeInfo nodeId="3358009230509912567" fileName="QueueDequeStack_Test.java" startLine="23" startPosition="74" endLine="24" endPosition="61" />
+    <nodeInfo nodeId="3358009230509912580" fileName="QueueDequeStack_Test.java" startLine="24" startPosition="61" endLine="25" endPosition="60" />
+    <nodeInfo nodeId="3358009230509912589" fileName="QueueDequeStack_Test.java" startLine="25" startPosition="60" endLine="26" endPosition="74" />
+    <nodeInfo nodeId="3358009230509912600" fileName="QueueDequeStack_Test.java" startLine="26" startPosition="74" endLine="27" endPosition="74" />
+    <nodeInfo nodeId="3358009230509912611" fileName="QueueDequeStack_Test.java" startLine="27" startPosition="74" endLine="28" endPosition="60" />
+    <nodeInfo nodeId="3444116434173507976" fileName="QueueDequeStack_Test.java" startLine="31" startPosition="53" endLine="32" endPosition="77" />
+    <nodeInfo nodeId="3444116434173507986" fileName="QueueDequeStack_Test.java" startLine="32" startPosition="77" endLine="33" endPosition="49" />
+    <nodeInfo nodeId="3444116434173508004" fileName="QueueDequeStack_Test.java" startLine="33" startPosition="49" endLine="34" endPosition="49" />
+    <nodeInfo nodeId="3444116434173508030" fileName="QueueDequeStack_Test.java" startLine="34" startPosition="49" endLine="35" endPosition="49" />
+    <nodeInfo nodeId="3444116434173508048" fileName="QueueDequeStack_Test.java" startLine="35" startPosition="49" endLine="36" endPosition="61" />
+    <nodeInfo nodeId="3444116434173508053" fileName="QueueDequeStack_Test.java" startLine="36" startPosition="61" endLine="37" endPosition="74" />
+    <nodeInfo nodeId="3444116434173508058" fileName="QueueDequeStack_Test.java" startLine="37" startPosition="74" endLine="38" endPosition="61" />
+    <nodeInfo nodeId="3444116434173508063" fileName="QueueDequeStack_Test.java" startLine="38" startPosition="61" endLine="39" endPosition="60" />
+    <nodeInfo nodeId="3444116434173508068" fileName="QueueDequeStack_Test.java" startLine="39" startPosition="60" endLine="40" endPosition="74" />
+    <nodeInfo nodeId="3444116434173508073" fileName="QueueDequeStack_Test.java" startLine="40" startPosition="74" endLine="41" endPosition="74" />
+    <nodeInfo nodeId="3444116434173508078" fileName="QueueDequeStack_Test.java" startLine="41" startPosition="74" endLine="42" endPosition="60" />
+    <nodeInfo nodeId="3444116434173545466" fileName="QueueDequeStack_Test.java" startLine="45" startPosition="45" endLine="46" endPosition="74" />
+    <nodeInfo nodeId="3444116434173545476" fileName="QueueDequeStack_Test.java" startLine="46" startPosition="74" endLine="47" endPosition="50" />
+    <nodeInfo nodeId="3444116434173545498" fileName="QueueDequeStack_Test.java" startLine="47" startPosition="50" endLine="48" endPosition="50" />
+    <nodeInfo nodeId="3444116434173545520" fileName="QueueDequeStack_Test.java" startLine="48" startPosition="50" endLine="49" endPosition="50" />
+    <nodeInfo nodeId="3444116434173545542" fileName="QueueDequeStack_Test.java" startLine="49" startPosition="50" endLine="50" endPosition="61" />
+    <nodeInfo nodeId="3444116434173545547" fileName="QueueDequeStack_Test.java" startLine="50" startPosition="61" endLine="51" endPosition="74" />
+    <nodeInfo nodeId="3444116434173545552" fileName="QueueDequeStack_Test.java" startLine="51" startPosition="74" endLine="52" endPosition="61" />
+    <nodeInfo nodeId="3444116434173545557" fileName="QueueDequeStack_Test.java" startLine="52" startPosition="61" endLine="53" endPosition="60" />
+    <nodeInfo nodeId="3444116434173545562" fileName="QueueDequeStack_Test.java" startLine="53" startPosition="60" endLine="54" endPosition="74" />
+    <nodeInfo nodeId="3444116434173545567" fileName="QueueDequeStack_Test.java" startLine="54" startPosition="74" endLine="55" endPosition="74" />
+    <nodeInfo nodeId="3444116434173545572" fileName="QueueDequeStack_Test.java" startLine="55" startPosition="74" endLine="56" endPosition="60" />
+    <nodeInfo nodeId="3002214349487781560" fileName="QueueDequeStack_Test.java" startLine="59" startPosition="52" endLine="60" endPosition="74" />
+    <nodeInfo nodeId="3002214349487781567" fileName="QueueDequeStack_Test.java" startLine="60" startPosition="74" endLine="61" endPosition="46" />
+    <nodeInfo nodeId="3002214349487781572" fileName="QueueDequeStack_Test.java" startLine="61" startPosition="46" endLine="62" endPosition="46" />
+    <nodeInfo nodeId="3002214349487781577" fileName="QueueDequeStack_Test.java" startLine="62" startPosition="46" endLine="63" endPosition="46" />
+    <nodeInfo nodeId="3002214349487781582" fileName="QueueDequeStack_Test.java" startLine="63" startPosition="46" endLine="64" endPosition="61" />
+    <nodeInfo nodeId="5784983078885298349" fileName="QueueDequeStack_Test.java" startLine="64" startPosition="61" endLine="65" endPosition="67" />
+    <nodeInfo nodeId="3002214349487781587" fileName="QueueDequeStack_Test.java" startLine="65" startPosition="67" endLine="66" endPosition="66" />
+    <nodeInfo nodeId="3002214349487781592" fileName="QueueDequeStack_Test.java" startLine="66" startPosition="66" endLine="67" endPosition="61" />
+    <nodeInfo nodeId="5784983078885353123" fileName="QueueDequeStack_Test.java" startLine="67" startPosition="61" endLine="68" endPosition="67" />
+    <nodeInfo nodeId="3002214349487781597" fileName="QueueDequeStack_Test.java" startLine="68" startPosition="67" endLine="69" endPosition="60" />
+    <nodeInfo nodeId="3002214349487781602" fileName="QueueDequeStack_Test.java" startLine="69" startPosition="60" endLine="70" endPosition="66" />
+    <nodeInfo nodeId="3002214349487781607" fileName="QueueDequeStack_Test.java" startLine="70" startPosition="66" endLine="71" endPosition="66" />
+    <nodeInfo nodeId="3002214349487781612" fileName="QueueDequeStack_Test.java" startLine="71" startPosition="66" endLine="72" endPosition="60" />
+    <nodeInfo nodeId="3444116434173802077" fileName="QueueDequeStack_Test.java" startLine="75" startPosition="45" endLine="76" endPosition="74" />
+    <nodeInfo nodeId="3444116434173802087" fileName="QueueDequeStack_Test.java" startLine="76" startPosition="74" endLine="77" endPosition="50" />
+    <nodeInfo nodeId="3444116434173802092" fileName="QueueDequeStack_Test.java" startLine="77" startPosition="50" endLine="78" endPosition="50" />
+    <nodeInfo nodeId="3444116434173802097" fileName="QueueDequeStack_Test.java" startLine="78" startPosition="50" endLine="79" endPosition="50" />
+    <nodeInfo nodeId="3444116434173802102" fileName="QueueDequeStack_Test.java" startLine="79" startPosition="50" endLine="80" endPosition="61" />
+    <nodeInfo nodeId="3444116434173802107" fileName="QueueDequeStack_Test.java" startLine="80" startPosition="61" endLine="81" endPosition="74" />
+    <nodeInfo nodeId="3444116434173802134" fileName="QueueDequeStack_Test.java" startLine="81" startPosition="74" endLine="82" endPosition="49" />
+    <nodeInfo nodeId="3444116434173802152" fileName="QueueDequeStack_Test.java" startLine="82" startPosition="49" endLine="83" endPosition="49" />
+    <nodeInfo nodeId="3444116434173802170" fileName="QueueDequeStack_Test.java" startLine="83" startPosition="49" endLine="84" endPosition="49" />
+    <nodeInfo nodeId="3444116434173802188" fileName="QueueDequeStack_Test.java" startLine="84" startPosition="49" endLine="85" endPosition="61" />
+    <nodeInfo nodeId="5784983078885335079" fileName="QueueDequeStack_Test.java" startLine="85" startPosition="61" endLine="86" endPosition="67" />
+    <nodeInfo nodeId="3444116434173802193" fileName="QueueDequeStack_Test.java" startLine="86" startPosition="67" endLine="87" endPosition="60" />
+    <nodeInfo nodeId="3444116434173802219" fileName="QueueDequeStack_Test.java" startLine="87" startPosition="60" endLine="88" endPosition="73" />
+    <nodeInfo nodeId="3444116434173802201" fileName="QueueDequeStack_Test.java" startLine="88" startPosition="73" endLine="89" endPosition="74" />
+    <nodeInfo nodeId="3444116434173802212" fileName="QueueDequeStack_Test.java" startLine="89" startPosition="74" endLine="90" endPosition="61" />
+    <nodeInfo nodeId="5784983078885335098" fileName="QueueDequeStack_Test.java" startLine="90" startPosition="61" endLine="91" endPosition="67" />
+    <nodeInfo nodeId="3444116434173802231" fileName="QueueDequeStack_Test.java" startLine="91" startPosition="67" endLine="92" endPosition="74" />
+    <nodeInfo nodeId="3444116434173802258" fileName="QueueDequeStack_Test.java" startLine="92" startPosition="74" endLine="93" endPosition="61" />
+    <nodeInfo nodeId="5784983078885317051" fileName="QueueDequeStack_Test.java" startLine="93" startPosition="61" endLine="94" endPosition="67" />
+    <nodeInfo nodeId="3444116434173802263" fileName="QueueDequeStack_Test.java" startLine="94" startPosition="67" endLine="95" endPosition="74" />
+    <nodeInfo nodeId="3444116434173802276" fileName="QueueDequeStack_Test.java" startLine="95" startPosition="74" endLine="96" endPosition="60" />
+    <nodeInfo nodeId="3444116434173802281" fileName="QueueDequeStack_Test.java" startLine="96" startPosition="60" endLine="97" endPosition="73" />
+    <nodeInfo nodeId="3444116434173802292" fileName="QueueDequeStack_Test.java" startLine="97" startPosition="73" endLine="98" endPosition="60" />
+    <nodeInfo nodeId="3444116434173507973" fileName="QueueDequeStack_Test.java" startLine="30" startPosition="0" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="3444116434173545463" fileName="QueueDequeStack_Test.java" startLine="44" startPosition="0" endLine="58" endPosition="0" />
+    <nodeInfo nodeId="3358009230509912471" fileName="QueueDequeStack_Test.java" startLine="14" startPosition="52" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="3002214349487781557" fileName="QueueDequeStack_Test.java" startLine="58" startPosition="0" endLine="74" endPosition="0" />
+    <nodeInfo nodeId="3444116434173802074" fileName="QueueDequeStack_Test.java" startLine="74" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="3444116434173507975" fileName="QueueDequeStack_Test.java" startLine="31" startPosition="53" endLine="42" endPosition="60">
       <varInfo nodeId="3444116434173507977" varName="q" />
     </scopeInfo>
-    <scopeInfo nodeId="3444116434173545465" fileName="QueueDequeStack_Test.java" startLine="46" startPosition="45" endLine="57" endPosition="60">
+    <scopeInfo nodeId="3444116434173545465" fileName="QueueDequeStack_Test.java" startLine="45" startPosition="45" endLine="56" endPosition="60">
       <varInfo nodeId="3444116434173545467" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509912473" fileName="QueueDequeStack_Test.java" startLine="16" startPosition="45" endLine="29" endPosition="60">
+    <scopeInfo nodeId="3358009230509912473" fileName="QueueDequeStack_Test.java" startLine="15" startPosition="45" endLine="28" endPosition="60">
       <varInfo nodeId="3002214349487645209" varName="q2" />
       <varInfo nodeId="3358009230509912475" varName="q" />
     </scopeInfo>
-    <scopeInfo nodeId="3002214349487781559" fileName="QueueDequeStack_Test.java" startLine="60" startPosition="52" endLine="73" endPosition="60">
+    <scopeInfo nodeId="3002214349487781559" fileName="QueueDequeStack_Test.java" startLine="59" startPosition="52" endLine="72" endPosition="60">
       <varInfo nodeId="3002214349487781561" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="3444116434173507973" fileName="QueueDequeStack_Test.java" startLine="31" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="3444116434173545463" fileName="QueueDequeStack_Test.java" startLine="45" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="3358009230509912471" fileName="QueueDequeStack_Test.java" startLine="15" startPosition="52" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="3002214349487781557" fileName="QueueDequeStack_Test.java" startLine="59" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="3444116434173802076" fileName="QueueDequeStack_Test.java" startLine="76" startPosition="45" endLine="99" endPosition="60">
+    <scopeInfo nodeId="3444116434173507973" fileName="QueueDequeStack_Test.java" startLine="30" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="3444116434173545463" fileName="QueueDequeStack_Test.java" startLine="44" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="3358009230509912471" fileName="QueueDequeStack_Test.java" startLine="14" startPosition="52" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="3002214349487781557" fileName="QueueDequeStack_Test.java" startLine="58" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="3444116434173802076" fileName="QueueDequeStack_Test.java" startLine="75" startPosition="45" endLine="98" endPosition="60">
       <varInfo nodeId="3444116434173802078" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="3444116434173802074" fileName="QueueDequeStack_Test.java" startLine="75" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="3444116434173802074" fileName="QueueDequeStack_Test.java" startLine="74" startPosition="0" endLine="100" endPosition="0" />
   </root>
 </debugInfo>
 

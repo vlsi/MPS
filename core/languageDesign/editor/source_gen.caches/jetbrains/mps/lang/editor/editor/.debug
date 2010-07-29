@@ -258,18 +258,18 @@
     <scopeInfo nodeId="1225472714631" fileName="ColorStyleClassItem_Editor.java" startLine="165" startPosition="163" endLine="167" endPosition="98" />
   </root>
   <root nodeId="1186403885380">
-    <nodeInfo nodeId="6699718426954288731" fileName="FontStyleStyleClassItem_Editor.java" startLine="134" startPosition="163" endLine="135" endPosition="98" />
-    <nodeInfo nodeId="6699718426954288879" fileName="FontStyleStyleClassItem_Editor.java" startLine="136" startPosition="211" endLine="137" endPosition="158" />
-    <nodeInfo nodeId="1225473442549" fileName="FontStyleStyleClassItem_Editor.java" startLine="158" startPosition="163" endLine="159" endPosition="81" />
-    <nodeInfo nodeId="1225473442555" fileName="FontStyleStyleClassItem_Editor.java" startLine="159" startPosition="81" endLine="160" endPosition="98" />
-    <nodeInfo nodeId="6699718426954288836" fileName="FontStyleStyleClassItem_Editor.java" startLine="135" startPosition="98" endLine="138" endPosition="7" />
-    <scopeInfo nodeId="1220975716955" fileName="FontStyleStyleClassItem_Editor.java" startLine="105" startPosition="111" endLine="106" endPosition="291" />
-    <scopeInfo nodeId="1220975770017" fileName="FontStyleStyleClassItem_Editor.java" startLine="109" startPosition="111" endLine="110" endPosition="288" />
-    <scopeInfo nodeId="6699718426954288708" fileName="FontStyleStyleClassItem_Editor.java" startLine="126" startPosition="105" endLine="127" endPosition="167" />
-    <scopeInfo nodeId="6699718426954288837" fileName="FontStyleStyleClassItem_Editor.java" startLine="136" startPosition="211" endLine="137" endPosition="158" />
-    <scopeInfo nodeId="1225473442527" fileName="FontStyleStyleClassItem_Editor.java" startLine="150" startPosition="105" endLine="151" endPosition="167" />
-    <scopeInfo nodeId="1225473442548" fileName="FontStyleStyleClassItem_Editor.java" startLine="158" startPosition="163" endLine="160" endPosition="98" />
-    <scopeInfo nodeId="6699718426954288724" fileName="FontStyleStyleClassItem_Editor.java" startLine="134" startPosition="163" endLine="138" endPosition="7" />
+    <nodeInfo nodeId="6699718426954288731" fileName="FontStyleStyleClassItem_Editor.java" startLine="147" startPosition="163" endLine="148" endPosition="98" />
+    <nodeInfo nodeId="6699718426954288879" fileName="FontStyleStyleClassItem_Editor.java" startLine="149" startPosition="209" endLine="150" endPosition="158" />
+    <nodeInfo nodeId="1225473442549" fileName="FontStyleStyleClassItem_Editor.java" startLine="178" startPosition="163" endLine="179" endPosition="81" />
+    <nodeInfo nodeId="1225473442555" fileName="FontStyleStyleClassItem_Editor.java" startLine="179" startPosition="81" endLine="180" endPosition="98" />
+    <nodeInfo nodeId="6699718426954288836" fileName="FontStyleStyleClassItem_Editor.java" startLine="148" startPosition="98" endLine="151" endPosition="7" />
+    <scopeInfo nodeId="1220975716955" fileName="FontStyleStyleClassItem_Editor.java" startLine="104" startPosition="111" endLine="105" endPosition="286" />
+    <scopeInfo nodeId="1220975770017" fileName="FontStyleStyleClassItem_Editor.java" startLine="108" startPosition="111" endLine="109" endPosition="285" />
+    <scopeInfo nodeId="6699718426954288708" fileName="FontStyleStyleClassItem_Editor.java" startLine="139" startPosition="105" endLine="140" endPosition="167" />
+    <scopeInfo nodeId="6699718426954288837" fileName="FontStyleStyleClassItem_Editor.java" startLine="149" startPosition="209" endLine="150" endPosition="158" />
+    <scopeInfo nodeId="1225473442527" fileName="FontStyleStyleClassItem_Editor.java" startLine="170" startPosition="105" endLine="171" endPosition="167" />
+    <scopeInfo nodeId="1225473442548" fileName="FontStyleStyleClassItem_Editor.java" startLine="178" startPosition="163" endLine="180" endPosition="98" />
+    <scopeInfo nodeId="6699718426954288724" fileName="FontStyleStyleClassItem_Editor.java" startLine="147" startPosition="163" endLine="151" endPosition="7" />
   </root>
   <root nodeId="1186414561564">
     <nodeInfo nodeId="7436746056273410476" fileName="BooleanStyleSheetItem_Editor.java" startLine="151" startPosition="106" endLine="152" endPosition="154" />

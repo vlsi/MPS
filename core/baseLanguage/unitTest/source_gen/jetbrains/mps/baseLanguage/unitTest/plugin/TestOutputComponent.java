@@ -12,7 +12,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
 import javax.swing.SwingUtilities;
-import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.debug.api.info.StacktraceUtil;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.util.Disposer;
@@ -70,7 +69,7 @@ public class TestOutputComponent implements TestView {
   }
 
   public void filter(String filterClass, String filterMethod) {
-    if (!(ObjectUtils.equals(filterClass, this.filterClass)) || !(ObjectUtils.equals(filterMethod, this.filterMethod))) {
+    if (neq_r62oz9_a0a0a5_0(filterClass, this.filterClass) || neq_r62oz9_a0a0a5(filterMethod, this.filterMethod)) {
       this.filterClass = filterClass;
       this.filterMethod = filterMethod;
       this.consoleView.clear();
@@ -115,6 +114,20 @@ public class TestOutputComponent implements TestView {
 
   public ConsoleViewImpl getConsole() {
     return this.consoleView;
+  }
+
+  private static boolean neq_r62oz9_a0a0a5(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
+  }
+
+  private static boolean neq_r62oz9_a0a0a5_0(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
   }
 
   private static class Message {

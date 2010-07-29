@@ -497,11 +497,11 @@
     <classNode extendsClassName="javax.swing.table.TableModel" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.TestCaseRow" file="TestCaseRow.java">
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestContainerRow" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.TestCaseTreeNode" file="TestCaseTreeNode.java">
@@ -537,11 +537,11 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.TestMethodRow" file="TestMethodRow.java">
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestStatisticsRow" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.TestMethodTreeNode" file="TestMethodTreeNode.java">
@@ -576,6 +576,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.util.Key" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -586,7 +587,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunState" />
     <classNode dependClassName="jetbrains.mps.debug.api.info.StacktraceUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestView" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunState" file="TestRunState.java">

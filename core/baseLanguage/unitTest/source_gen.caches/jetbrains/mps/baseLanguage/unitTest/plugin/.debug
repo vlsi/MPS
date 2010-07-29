@@ -1053,160 +1053,168 @@
     <unitInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="30" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestRunner" />
   </root>
   <root nodeId="1208774804359">
-    <nodeInfo nodeId="1208774897858" fileName="TestOutputComponent.java" startLine="20" startPosition="54" endLine="21" endPosition="31" />
-    <nodeInfo nodeId="1213183072332" fileName="TestOutputComponent.java" startLine="21" startPosition="31" endLine="22" endPosition="38" />
-    <nodeInfo nodeId="1208774974029" fileName="TestOutputComponent.java" startLine="22" startPosition="38" endLine="23" endPosition="53" />
-    <nodeInfo nodeId="1208776011196" fileName="TestOutputComponent.java" startLine="23" startPosition="53" endLine="24" endPosition="29" />
-    <nodeInfo nodeId="1208776020473" fileName="TestOutputComponent.java" startLine="24" startPosition="29" endLine="25" endPosition="30" />
-    <nodeInfo nodeId="1717728468090419306" fileName="TestOutputComponent.java" startLine="25" startPosition="30" endLine="26" endPosition="29" />
-    <nodeInfo nodeId="1208775122295" fileName="TestOutputComponent.java" startLine="28" startPosition="120" endLine="29" endPosition="88" />
-    <nodeInfo nodeId="1213183220817" fileName="TestOutputComponent.java" startLine="29" startPosition="88" endLine="30" endPosition="31" />
-    <nodeInfo nodeId="1208797860300" fileName="TestOutputComponent.java" startLine="30" startPosition="31" endLine="31" endPosition="53" />
-    <nodeInfo nodeId="1717728468090419314" fileName="TestOutputComponent.java" startLine="31" startPosition="53" endLine="32" endPosition="23" />
-    <nodeInfo nodeId="1200269551723291852" fileName="TestOutputComponent.java" startLine="35" startPosition="24" endLine="36" endPosition="67" />
-    <nodeInfo nodeId="1200269551723291858" fileName="TestOutputComponent.java" startLine="36" startPosition="67" endLine="37" endPosition="60" />
-    <nodeInfo nodeId="4403789015609952666" fileName="TestOutputComponent.java" startLine="37" startPosition="60" endLine="38" endPosition="88" />
-    <nodeInfo nodeId="4403789015609952585" fileName="TestOutputComponent.java" startLine="38" startPosition="88" endLine="39" endPosition="91" />
-    <nodeInfo nodeId="1200269551723291870" fileName="TestOutputComponent.java" startLine="40" startPosition="53" endLine="41" endPosition="102" />
-    <nodeInfo nodeId="1200269551723291888" fileName="TestOutputComponent.java" startLine="41" startPosition="102" endLine="42" endPosition="44" />
-    <nodeInfo nodeId="1200269551723291909" fileName="TestOutputComponent.java" startLine="43" startPosition="55" endLine="44" endPosition="49" />
-    <nodeInfo nodeId="1200269551723291923" fileName="TestOutputComponent.java" startLine="44" startPosition="49" endLine="45" endPosition="38" />
-    <nodeInfo nodeId="1200269551723291937" fileName="TestOutputComponent.java" startLine="45" startPosition="38" endLine="46" endPosition="48" />
-    <nodeInfo nodeId="1200269551723291955" fileName="TestOutputComponent.java" startLine="46" startPosition="48" endLine="47" endPosition="51" />
-    <nodeInfo nodeId="4403789015609952691" fileName="TestOutputComponent.java" startLine="50" startPosition="25" endLine="51" endPosition="103" />
-    <nodeInfo nodeId="1200269551723334526" fileName="TestOutputComponent.java" startLine="56" startPosition="22" endLine="57" endPosition="17" />
-    <nodeInfo nodeId="1208776056437" fileName="TestOutputComponent.java" startLine="73" startPosition="121" endLine="74" endPosition="37" />
-    <nodeInfo nodeId="1208776065668" fileName="TestOutputComponent.java" startLine="74" startPosition="37" endLine="75" endPosition="39" />
-    <nodeInfo nodeId="1208776741580" fileName="TestOutputComponent.java" startLine="75" startPosition="39" endLine="76" endPosition="31" />
-    <nodeInfo nodeId="1208776771434" fileName="TestOutputComponent.java" startLine="77" startPosition="88" endLine="78" endPosition="29" />
-    <nodeInfo nodeId="1717728468090419461" fileName="TestOutputComponent.java" startLine="83" startPosition="96" endLine="84" endPosition="112" />
-    <nodeInfo nodeId="1717728468090419475" fileName="TestOutputComponent.java" startLine="84" startPosition="112" endLine="85" endPosition="64" />
-    <nodeInfo nodeId="1717728468090419482" fileName="TestOutputComponent.java" startLine="85" startPosition="64" endLine="86" endPosition="28" />
-    <nodeInfo nodeId="1208775714564" fileName="TestOutputComponent.java" startLine="89" startPosition="48" endLine="90" endPosition="149" />
-    <nodeInfo nodeId="1208775739798" fileName="TestOutputComponent.java" startLine="90" startPosition="149" endLine="91" endPosition="64" />
-    <nodeInfo nodeId="1208777503218" fileName="TestOutputComponent.java" startLine="91" startPosition="64" endLine="92" endPosition="28" />
-    <nodeInfo nodeId="1208775934302" fileName="TestOutputComponent.java" startLine="95" startPosition="23" endLine="96" endPosition="88" />
-    <nodeInfo nodeId="1208775922148" fileName="TestOutputComponent.java" startLine="96" startPosition="88" endLine="97" endPosition="29" />
-    <nodeInfo nodeId="4558549435474305175" fileName="TestOutputComponent.java" startLine="102" startPosition="64" endLine="103" endPosition="126" />
-    <nodeInfo nodeId="1208800821794" fileName="TestOutputComponent.java" startLine="104" startPosition="71" endLine="105" endPosition="91" />
-    <nodeInfo nodeId="190801952346451651" fileName="TestOutputComponent.java" startLine="106" startPosition="71" endLine="107" endPosition="91" />
-    <nodeInfo nodeId="1214386286776" fileName="TestOutputComponent.java" startLine="112" startPosition="25" endLine="113" endPosition="39" />
-    <nodeInfo nodeId="1208775170428" fileName="TestOutputComponent.java" startLine="120" startPosition="32" endLine="121" endPosition="29" />
-    <nodeInfo nodeId="1208775179483" fileName="TestOutputComponent.java" startLine="121" startPosition="29" endLine="122" endPosition="30" />
-    <nodeInfo nodeId="1208775199647" fileName="TestOutputComponent.java" startLine="122" startPosition="30" endLine="123" endPosition="27" />
-    <nodeInfo nodeId="190801952346451496" fileName="TestOutputComponent.java" startLine="123" startPosition="27" endLine="124" endPosition="21" />
-    <nodeInfo nodeId="1208775281939" fileName="TestOutputComponent.java" startLine="126" startPosition="84" endLine="127" endPosition="33" />
-    <nodeInfo nodeId="1208775301936" fileName="TestOutputComponent.java" startLine="127" startPosition="33" endLine="128" endPosition="35" />
-    <nodeInfo nodeId="1208775308680" fileName="TestOutputComponent.java" startLine="128" startPosition="35" endLine="129" endPosition="29" />
-    <nodeInfo nodeId="190801952346451531" fileName="TestOutputComponent.java" startLine="129" startPosition="29" endLine="130" endPosition="24" />
-    <nodeInfo nodeId="1208775591153" fileName="TestOutputComponent.java" startLine="137" startPosition="32" endLine="138" endPosition="26" />
-    <nodeInfo nodeId="1208776719910" fileName="TestOutputComponent.java" startLine="76" startPosition="31" endLine="79" endPosition="7" />
-    <nodeInfo nodeId="5762291000775407085" fileName="TestOutputComponent.java" startLine="49" startPosition="47" endLine="53" endPosition="0" />
-    <nodeInfo nodeId="1200269551723334516" fileName="TestOutputComponent.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <nodeInfo nodeId="1208774885280" fileName="TestOutputComponent.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <nodeInfo nodeId="8829210569367338083" fileName="TestOutputComponent.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
-    <nodeInfo nodeId="8829210569367338095" fileName="TestOutputComponent.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <nodeInfo nodeId="1214211816962" fileName="TestOutputComponent.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
-    <nodeInfo nodeId="4558549435474031532" fileName="TestOutputComponent.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
-    <nodeInfo nodeId="1208775339180" fileName="TestOutputComponent.java" startLine="132" startPosition="0" endLine="136" endPosition="0" />
-    <nodeInfo nodeId="1208775591149" fileName="TestOutputComponent.java" startLine="136" startPosition="0" endLine="140" endPosition="0" />
-    <nodeInfo nodeId="190801952346451583" fileName="TestOutputComponent.java" startLine="140" startPosition="0" endLine="144" endPosition="0" />
-    <nodeInfo nodeId="5762291000775407082" fileName="TestOutputComponent.java" startLine="48" startPosition="5" endLine="53" endPosition="7" />
-    <nodeInfo nodeId="1208775840387" fileName="TestOutputComponent.java" startLine="94" startPosition="0" endLine="99" endPosition="0" />
-    <nodeInfo nodeId="1208774843859" fileName="TestOutputComponent.java" startLine="27" startPosition="0" endLine="33" endPosition="3" />
-    <nodeInfo nodeId="8829210569367336849" fileName="TestOutputComponent.java" startLine="82" startPosition="0" endLine="88" endPosition="0" />
-    <nodeInfo nodeId="1208775703458" fileName="TestOutputComponent.java" startLine="88" startPosition="0" endLine="94" endPosition="0" />
-    <nodeInfo nodeId="1208775261456" fileName="TestOutputComponent.java" startLine="125" startPosition="0" endLine="131" endPosition="5" />
-    <nodeInfo nodeId="1208781508796" fileName="TestOutputComponent.java" startLine="101" startPosition="63" endLine="108" endPosition="7" />
-    <nodeInfo nodeId="1208776163002" fileName="TestOutputComponent.java" startLine="72" startPosition="63" endLine="80" endPosition="5" />
-    <nodeInfo nodeId="1200269551723291847" fileName="TestOutputComponent.java" startLine="39" startPosition="91" endLine="48" endPosition="5" />
-    <nodeInfo nodeId="1208776132853" fileName="TestOutputComponent.java" startLine="100" startPosition="60" endLine="109" endPosition="5" />
-    <nodeInfo nodeId="1208776034975" fileName="TestOutputComponent.java" startLine="71" startPosition="0" endLine="82" endPosition="0" />
-    <nodeInfo nodeId="1208776106031" fileName="TestOutputComponent.java" startLine="99" startPosition="0" endLine="111" endPosition="0" />
-    <nodeInfo nodeId="1717728468090419322" fileName="TestOutputComponent.java" startLine="34" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="5762291000775407086" fileName="TestOutputComponent.java" startLine="50" startPosition="25" endLine="51" endPosition="103" />
-    <scopeInfo nodeId="1200269551723334519" fileName="TestOutputComponent.java" startLine="56" startPosition="22" endLine="57" endPosition="17" />
-    <scopeInfo nodeId="1208774885283" fileName="TestOutputComponent.java" startLine="60" startPosition="36" endLine="61" endPosition="26" />
-    <scopeInfo nodeId="8829210569367338086" fileName="TestOutputComponent.java" startLine="64" startPosition="39" endLine="65" endPosition="40" />
-    <scopeInfo nodeId="8829210569367338098" fileName="TestOutputComponent.java" startLine="68" startPosition="40" endLine="69" endPosition="41" />
-    <scopeInfo nodeId="1208776719913" fileName="TestOutputComponent.java" startLine="77" startPosition="88" endLine="78" endPosition="29" />
-    <scopeInfo nodeId="1208781508798" fileName="TestOutputComponent.java" startLine="102" startPosition="64" endLine="103" endPosition="126" />
-    <scopeInfo nodeId="1208800808721" fileName="TestOutputComponent.java" startLine="104" startPosition="71" endLine="105" endPosition="91" />
-    <scopeInfo nodeId="190801952346451650" fileName="TestOutputComponent.java" startLine="106" startPosition="71" endLine="107" endPosition="91" />
-    <scopeInfo nodeId="1214211816965" fileName="TestOutputComponent.java" startLine="112" startPosition="25" endLine="113" endPosition="39" />
-    <scopeInfo nodeId="4558549435474031535" fileName="TestOutputComponent.java" startLine="116" startPosition="39" endLine="117" endPosition="28" />
-    <scopeInfo nodeId="1208775339183" fileName="TestOutputComponent.java" startLine="133" startPosition="65" endLine="134" endPosition="131" />
-    <scopeInfo nodeId="1208775591152" fileName="TestOutputComponent.java" startLine="137" startPosition="32" endLine="138" endPosition="26" />
-    <scopeInfo nodeId="190801952346451586" fileName="TestOutputComponent.java" startLine="141" startPosition="27" endLine="142" endPosition="23" />
-    <scopeInfo nodeId="1200269551723291848" fileName="TestOutputComponent.java" startLine="40" startPosition="53" endLine="42" endPosition="44" />
-    <scopeInfo nodeId="1208775840390" fileName="TestOutputComponent.java" startLine="95" startPosition="23" endLine="97" endPosition="29" />
-    <scopeInfo nodeId="1208776719910" fileName="TestOutputComponent.java" startLine="76" startPosition="31" endLine="79" endPosition="7" />
-    <scopeInfo nodeId="8829210569367336852" fileName="TestOutputComponent.java" startLine="83" startPosition="96" endLine="86" endPosition="28">
+    <nodeInfo nodeId="1208774897858" fileName="TestOutputComponent.java" startLine="19" startPosition="54" endLine="20" endPosition="31" />
+    <nodeInfo nodeId="1213183072332" fileName="TestOutputComponent.java" startLine="20" startPosition="31" endLine="21" endPosition="38" />
+    <nodeInfo nodeId="1208774974029" fileName="TestOutputComponent.java" startLine="21" startPosition="38" endLine="22" endPosition="53" />
+    <nodeInfo nodeId="1208776011196" fileName="TestOutputComponent.java" startLine="22" startPosition="53" endLine="23" endPosition="29" />
+    <nodeInfo nodeId="1208776020473" fileName="TestOutputComponent.java" startLine="23" startPosition="29" endLine="24" endPosition="30" />
+    <nodeInfo nodeId="1717728468090419306" fileName="TestOutputComponent.java" startLine="24" startPosition="30" endLine="25" endPosition="29" />
+    <nodeInfo nodeId="1208775122295" fileName="TestOutputComponent.java" startLine="27" startPosition="120" endLine="28" endPosition="88" />
+    <nodeInfo nodeId="1213183220817" fileName="TestOutputComponent.java" startLine="28" startPosition="88" endLine="29" endPosition="31" />
+    <nodeInfo nodeId="1208797860300" fileName="TestOutputComponent.java" startLine="29" startPosition="31" endLine="30" endPosition="53" />
+    <nodeInfo nodeId="1717728468090419314" fileName="TestOutputComponent.java" startLine="30" startPosition="53" endLine="31" endPosition="23" />
+    <nodeInfo nodeId="1200269551723291852" fileName="TestOutputComponent.java" startLine="34" startPosition="24" endLine="35" endPosition="67" />
+    <nodeInfo nodeId="1200269551723291858" fileName="TestOutputComponent.java" startLine="35" startPosition="67" endLine="36" endPosition="60" />
+    <nodeInfo nodeId="4403789015609952666" fileName="TestOutputComponent.java" startLine="36" startPosition="60" endLine="37" endPosition="88" />
+    <nodeInfo nodeId="4403789015609952585" fileName="TestOutputComponent.java" startLine="37" startPosition="88" endLine="38" endPosition="91" />
+    <nodeInfo nodeId="1200269551723291870" fileName="TestOutputComponent.java" startLine="39" startPosition="53" endLine="40" endPosition="102" />
+    <nodeInfo nodeId="1200269551723291888" fileName="TestOutputComponent.java" startLine="40" startPosition="102" endLine="41" endPosition="44" />
+    <nodeInfo nodeId="1200269551723291909" fileName="TestOutputComponent.java" startLine="42" startPosition="55" endLine="43" endPosition="49" />
+    <nodeInfo nodeId="1200269551723291923" fileName="TestOutputComponent.java" startLine="43" startPosition="49" endLine="44" endPosition="38" />
+    <nodeInfo nodeId="1200269551723291937" fileName="TestOutputComponent.java" startLine="44" startPosition="38" endLine="45" endPosition="48" />
+    <nodeInfo nodeId="1200269551723291955" fileName="TestOutputComponent.java" startLine="45" startPosition="48" endLine="46" endPosition="51" />
+    <nodeInfo nodeId="4403789015609952691" fileName="TestOutputComponent.java" startLine="49" startPosition="25" endLine="50" endPosition="103" />
+    <nodeInfo nodeId="1200269551723334526" fileName="TestOutputComponent.java" startLine="55" startPosition="22" endLine="56" endPosition="17" />
+    <nodeInfo nodeId="1208776056437" fileName="TestOutputComponent.java" startLine="72" startPosition="115" endLine="73" endPosition="37" />
+    <nodeInfo nodeId="1208776065668" fileName="TestOutputComponent.java" startLine="73" startPosition="37" endLine="74" endPosition="39" />
+    <nodeInfo nodeId="1208776741580" fileName="TestOutputComponent.java" startLine="74" startPosition="39" endLine="75" endPosition="31" />
+    <nodeInfo nodeId="1208776771434" fileName="TestOutputComponent.java" startLine="76" startPosition="88" endLine="77" endPosition="29" />
+    <nodeInfo nodeId="1717728468090419461" fileName="TestOutputComponent.java" startLine="82" startPosition="96" endLine="83" endPosition="112" />
+    <nodeInfo nodeId="1717728468090419475" fileName="TestOutputComponent.java" startLine="83" startPosition="112" endLine="84" endPosition="64" />
+    <nodeInfo nodeId="1717728468090419482" fileName="TestOutputComponent.java" startLine="84" startPosition="64" endLine="85" endPosition="28" />
+    <nodeInfo nodeId="1208775714564" fileName="TestOutputComponent.java" startLine="88" startPosition="48" endLine="89" endPosition="149" />
+    <nodeInfo nodeId="1208775739798" fileName="TestOutputComponent.java" startLine="89" startPosition="149" endLine="90" endPosition="64" />
+    <nodeInfo nodeId="1208777503218" fileName="TestOutputComponent.java" startLine="90" startPosition="64" endLine="91" endPosition="28" />
+    <nodeInfo nodeId="1208775934302" fileName="TestOutputComponent.java" startLine="94" startPosition="23" endLine="95" endPosition="88" />
+    <nodeInfo nodeId="1208775922148" fileName="TestOutputComponent.java" startLine="95" startPosition="88" endLine="96" endPosition="29" />
+    <nodeInfo nodeId="4558549435474305175" fileName="TestOutputComponent.java" startLine="101" startPosition="64" endLine="102" endPosition="126" />
+    <nodeInfo nodeId="1208800821794" fileName="TestOutputComponent.java" startLine="103" startPosition="71" endLine="104" endPosition="91" />
+    <nodeInfo nodeId="190801952346451651" fileName="TestOutputComponent.java" startLine="105" startPosition="71" endLine="106" endPosition="91" />
+    <nodeInfo nodeId="1214386286776" fileName="TestOutputComponent.java" startLine="111" startPosition="25" endLine="112" endPosition="39" />
+    <nodeInfo nodeId="1208775170428" fileName="TestOutputComponent.java" startLine="133" startPosition="32" endLine="134" endPosition="29" />
+    <nodeInfo nodeId="1208775179483" fileName="TestOutputComponent.java" startLine="134" startPosition="29" endLine="135" endPosition="30" />
+    <nodeInfo nodeId="1208775199647" fileName="TestOutputComponent.java" startLine="135" startPosition="30" endLine="136" endPosition="27" />
+    <nodeInfo nodeId="190801952346451496" fileName="TestOutputComponent.java" startLine="136" startPosition="27" endLine="137" endPosition="21" />
+    <nodeInfo nodeId="1208775281939" fileName="TestOutputComponent.java" startLine="139" startPosition="84" endLine="140" endPosition="33" />
+    <nodeInfo nodeId="1208775301936" fileName="TestOutputComponent.java" startLine="140" startPosition="33" endLine="141" endPosition="35" />
+    <nodeInfo nodeId="1208775308680" fileName="TestOutputComponent.java" startLine="141" startPosition="35" endLine="142" endPosition="29" />
+    <nodeInfo nodeId="190801952346451531" fileName="TestOutputComponent.java" startLine="142" startPosition="29" endLine="143" endPosition="24" />
+    <nodeInfo nodeId="1208775591153" fileName="TestOutputComponent.java" startLine="150" startPosition="32" endLine="151" endPosition="26" />
+    <nodeInfo nodeId="1208776719910" fileName="TestOutputComponent.java" startLine="75" startPosition="31" endLine="78" endPosition="7" />
+    <nodeInfo nodeId="5762291000775407085" fileName="TestOutputComponent.java" startLine="48" startPosition="47" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="1200269551723334516" fileName="TestOutputComponent.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <nodeInfo nodeId="1208774885280" fileName="TestOutputComponent.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="8829210569367338083" fileName="TestOutputComponent.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <nodeInfo nodeId="8829210569367338095" fileName="TestOutputComponent.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <nodeInfo nodeId="1214211816962" fileName="TestOutputComponent.java" startLine="110" startPosition="0" endLine="114" endPosition="0" />
+    <nodeInfo nodeId="4558549435474031532" fileName="TestOutputComponent.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
+    <nodeInfo nodeId="1208774804359" fileName="TestOutputComponent.java" startLine="119" startPosition="64" endLine="123" endPosition="7" />
+    <nodeInfo nodeId="1208774804359" fileName="TestOutputComponent.java" startLine="126" startPosition="66" endLine="130" endPosition="7" />
+    <nodeInfo nodeId="1208775339180" fileName="TestOutputComponent.java" startLine="145" startPosition="0" endLine="149" endPosition="0" />
+    <nodeInfo nodeId="1208775591149" fileName="TestOutputComponent.java" startLine="149" startPosition="0" endLine="153" endPosition="0" />
+    <nodeInfo nodeId="190801952346451583" fileName="TestOutputComponent.java" startLine="153" startPosition="0" endLine="157" endPosition="0" />
+    <nodeInfo nodeId="5762291000775407082" fileName="TestOutputComponent.java" startLine="47" startPosition="5" endLine="52" endPosition="7" />
+    <nodeInfo nodeId="1208775840387" fileName="TestOutputComponent.java" startLine="93" startPosition="0" endLine="98" endPosition="0" />
+    <nodeInfo nodeId="1208774843859" fileName="TestOutputComponent.java" startLine="26" startPosition="0" endLine="32" endPosition="3" />
+    <nodeInfo nodeId="8829210569367336849" fileName="TestOutputComponent.java" startLine="81" startPosition="0" endLine="87" endPosition="0" />
+    <nodeInfo nodeId="1208775703458" fileName="TestOutputComponent.java" startLine="87" startPosition="0" endLine="93" endPosition="0" />
+    <nodeInfo nodeId="1208775261456" fileName="TestOutputComponent.java" startLine="138" startPosition="0" endLine="144" endPosition="5" />
+    <nodeInfo nodeId="1208781508796" fileName="TestOutputComponent.java" startLine="100" startPosition="63" endLine="107" endPosition="7" />
+    <nodeInfo nodeId="1208774804359" fileName="TestOutputComponent.java" startLine="118" startPosition="0" endLine="125" endPosition="0" />
+    <nodeInfo nodeId="1208774804359" fileName="TestOutputComponent.java" startLine="125" startPosition="0" endLine="132" endPosition="0" />
+    <nodeInfo nodeId="1208776163002" fileName="TestOutputComponent.java" startLine="71" startPosition="63" endLine="79" endPosition="5" />
+    <nodeInfo nodeId="1200269551723291847" fileName="TestOutputComponent.java" startLine="38" startPosition="91" endLine="47" endPosition="5" />
+    <nodeInfo nodeId="1208776132853" fileName="TestOutputComponent.java" startLine="99" startPosition="60" endLine="108" endPosition="5" />
+    <nodeInfo nodeId="1208776034975" fileName="TestOutputComponent.java" startLine="70" startPosition="0" endLine="81" endPosition="0" />
+    <nodeInfo nodeId="1208776106031" fileName="TestOutputComponent.java" startLine="98" startPosition="0" endLine="110" endPosition="0" />
+    <nodeInfo nodeId="1717728468090419322" fileName="TestOutputComponent.java" startLine="33" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="5762291000775407086" fileName="TestOutputComponent.java" startLine="49" startPosition="25" endLine="50" endPosition="103" />
+    <scopeInfo nodeId="1200269551723334519" fileName="TestOutputComponent.java" startLine="55" startPosition="22" endLine="56" endPosition="17" />
+    <scopeInfo nodeId="1208774885283" fileName="TestOutputComponent.java" startLine="59" startPosition="36" endLine="60" endPosition="26" />
+    <scopeInfo nodeId="8829210569367338086" fileName="TestOutputComponent.java" startLine="63" startPosition="39" endLine="64" endPosition="40" />
+    <scopeInfo nodeId="8829210569367338098" fileName="TestOutputComponent.java" startLine="67" startPosition="40" endLine="68" endPosition="41" />
+    <scopeInfo nodeId="1208776719913" fileName="TestOutputComponent.java" startLine="76" startPosition="88" endLine="77" endPosition="29" />
+    <scopeInfo nodeId="1208781508798" fileName="TestOutputComponent.java" startLine="101" startPosition="64" endLine="102" endPosition="126" />
+    <scopeInfo nodeId="1208800808721" fileName="TestOutputComponent.java" startLine="103" startPosition="71" endLine="104" endPosition="91" />
+    <scopeInfo nodeId="190801952346451650" fileName="TestOutputComponent.java" startLine="105" startPosition="71" endLine="106" endPosition="91" />
+    <scopeInfo nodeId="1214211816965" fileName="TestOutputComponent.java" startLine="111" startPosition="25" endLine="112" endPosition="39" />
+    <scopeInfo nodeId="4558549435474031535" fileName="TestOutputComponent.java" startLine="115" startPosition="39" endLine="116" endPosition="28" />
+    <scopeInfo nodeId="1208775339183" fileName="TestOutputComponent.java" startLine="146" startPosition="65" endLine="147" endPosition="131" />
+    <scopeInfo nodeId="1208775591152" fileName="TestOutputComponent.java" startLine="150" startPosition="32" endLine="151" endPosition="26" />
+    <scopeInfo nodeId="190801952346451586" fileName="TestOutputComponent.java" startLine="154" startPosition="27" endLine="155" endPosition="23" />
+    <scopeInfo nodeId="1200269551723291848" fileName="TestOutputComponent.java" startLine="39" startPosition="53" endLine="41" endPosition="44" />
+    <scopeInfo nodeId="1208775840390" fileName="TestOutputComponent.java" startLine="94" startPosition="23" endLine="96" endPosition="29" />
+    <scopeInfo nodeId="1208776719910" fileName="TestOutputComponent.java" startLine="75" startPosition="31" endLine="78" endPosition="7" />
+    <scopeInfo nodeId="8829210569367336852" fileName="TestOutputComponent.java" startLine="82" startPosition="96" endLine="85" endPosition="28">
       <varInfo nodeId="1717728468090419462" varName="newMessage" />
     </scopeInfo>
-    <scopeInfo nodeId="1208775703461" fileName="TestOutputComponent.java" startLine="89" startPosition="48" endLine="92" endPosition="28">
+    <scopeInfo nodeId="1208775703461" fileName="TestOutputComponent.java" startLine="88" startPosition="48" endLine="91" endPosition="28">
       <varInfo nodeId="1208775714565" varName="newMessage" />
     </scopeInfo>
-    <scopeInfo nodeId="1208774843862" fileName="TestOutputComponent.java" startLine="28" startPosition="120" endLine="32" endPosition="23" />
-    <scopeInfo nodeId="1200269551723291896" fileName="TestOutputComponent.java" startLine="43" startPosition="55" endLine="47" endPosition="51" />
-    <scopeInfo nodeId="5762291000775407085" fileName="TestOutputComponent.java" startLine="49" startPosition="47" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1200269551723334516" fileName="TestOutputComponent.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1208774885280" fileName="TestOutputComponent.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="8829210569367338083" fileName="TestOutputComponent.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="8829210569367338095" fileName="TestOutputComponent.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1214211816962" fileName="TestOutputComponent.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="4558549435474031532" fileName="TestOutputComponent.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="1208775261459" fileName="TestOutputComponent.java" startLine="126" startPosition="84" endLine="130" endPosition="24" />
-    <scopeInfo nodeId="1208775339180" fileName="TestOutputComponent.java" startLine="132" startPosition="0" endLine="136" endPosition="0">
+    <scopeInfo nodeId="1208774843862" fileName="TestOutputComponent.java" startLine="27" startPosition="120" endLine="31" endPosition="23" />
+    <scopeInfo nodeId="1200269551723291896" fileName="TestOutputComponent.java" startLine="42" startPosition="55" endLine="46" endPosition="51" />
+    <scopeInfo nodeId="5762291000775407085" fileName="TestOutputComponent.java" startLine="48" startPosition="47" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1200269551723334516" fileName="TestOutputComponent.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1208774885280" fileName="TestOutputComponent.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="8829210569367338083" fileName="TestOutputComponent.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="8829210569367338095" fileName="TestOutputComponent.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="1214211816962" fileName="TestOutputComponent.java" startLine="110" startPosition="0" endLine="114" endPosition="0" />
+    <scopeInfo nodeId="4558549435474031532" fileName="TestOutputComponent.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="1208774804359" fileName="TestOutputComponent.java" startLine="119" startPosition="64" endLine="123" endPosition="7" />
+    <scopeInfo nodeId="1208774804359" fileName="TestOutputComponent.java" startLine="126" startPosition="66" endLine="130" endPosition="7" />
+    <scopeInfo nodeId="1208775261459" fileName="TestOutputComponent.java" startLine="139" startPosition="84" endLine="143" endPosition="24" />
+    <scopeInfo nodeId="1208775339180" fileName="TestOutputComponent.java" startLine="145" startPosition="0" endLine="149" endPosition="0">
       <varInfo nodeId="1208775350597" varName="testClass" />
       <varInfo nodeId="1208775366293" varName="testMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1208775591149" fileName="TestOutputComponent.java" startLine="136" startPosition="0" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="190801952346451583" fileName="TestOutputComponent.java" startLine="140" startPosition="0" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="1208775840387" fileName="TestOutputComponent.java" startLine="94" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="1208774843859" fileName="TestOutputComponent.java" startLine="27" startPosition="0" endLine="33" endPosition="3">
+    <scopeInfo nodeId="1208775591149" fileName="TestOutputComponent.java" startLine="149" startPosition="0" endLine="153" endPosition="0" />
+    <scopeInfo nodeId="190801952346451583" fileName="TestOutputComponent.java" startLine="153" startPosition="0" endLine="157" endPosition="0" />
+    <scopeInfo nodeId="1208775840387" fileName="TestOutputComponent.java" startLine="93" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="1208774843859" fileName="TestOutputComponent.java" startLine="26" startPosition="0" endLine="32" endPosition="3">
       <varInfo nodeId="1213183337498" varName="project" />
       <varInfo nodeId="8481165266921792462" varName="console" />
       <varInfo nodeId="1717728468090419303" varName="state" />
       <varInfo nodeId="1208797849289" varName="parentComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="1208776163003" fileName="TestOutputComponent.java" startLine="73" startPosition="121" endLine="79" endPosition="7" />
-    <scopeInfo nodeId="8829210569367336849" fileName="TestOutputComponent.java" startLine="82" startPosition="0" endLine="88" endPosition="0">
+    <scopeInfo nodeId="1208776163003" fileName="TestOutputComponent.java" startLine="72" startPosition="115" endLine="78" endPosition="7" />
+    <scopeInfo nodeId="8829210569367336849" fileName="TestOutputComponent.java" startLine="81" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="8829210569367336861" varName="text" />
       <varInfo nodeId="8829210569367336856" varName="testClass" />
       <varInfo nodeId="190801952346451475" varName="type" />
       <varInfo nodeId="8829210569367336858" varName="testMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1208775703458" fileName="TestOutputComponent.java" startLine="88" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="1208775703458" fileName="TestOutputComponent.java" startLine="87" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="1208775709318" varName="message" />
       <varInfo nodeId="190801952346451445" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="1208775261456" fileName="TestOutputComponent.java" startLine="125" startPosition="0" endLine="131" endPosition="5">
+    <scopeInfo nodeId="1208775261456" fileName="TestOutputComponent.java" startLine="138" startPosition="0" endLine="144" endPosition="5">
       <varInfo nodeId="1208775273553" varName="message" />
       <varInfo nodeId="1208775267214" varName="testClass" />
       <varInfo nodeId="190801952346451548" varName="types" />
       <varInfo nodeId="1208775269382" varName="testMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1208776132854" fileName="TestOutputComponent.java" startLine="101" startPosition="63" endLine="108" endPosition="7" />
-    <scopeInfo nodeId="1208776034978" fileName="TestOutputComponent.java" startLine="72" startPosition="63" endLine="80" endPosition="5" />
-    <scopeInfo nodeId="1208776106034" fileName="TestOutputComponent.java" startLine="100" startPosition="60" endLine="109" endPosition="5" />
-    <scopeInfo nodeId="1208776034975" fileName="TestOutputComponent.java" startLine="71" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="1208776132854" fileName="TestOutputComponent.java" startLine="100" startPosition="63" endLine="107" endPosition="7" />
+    <scopeInfo nodeId="1208774804359" fileName="TestOutputComponent.java" startLine="118" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="1208774804359" fileName="TestOutputComponent.java" startLine="125" startPosition="0" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="1208776034978" fileName="TestOutputComponent.java" startLine="71" startPosition="63" endLine="79" endPosition="5" />
+    <scopeInfo nodeId="1208776106034" fileName="TestOutputComponent.java" startLine="99" startPosition="60" endLine="108" endPosition="5" />
+    <scopeInfo nodeId="1208776034975" fileName="TestOutputComponent.java" startLine="70" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="1208776045974" varName="filterMethod" />
       <varInfo nodeId="1208776039829" varName="filterClass" />
     </scopeInfo>
-    <scopeInfo nodeId="1208776106031" fileName="TestOutputComponent.java" startLine="99" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="1208776106031" fileName="TestOutputComponent.java" startLine="98" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="1208776122569" varName="message" />
     </scopeInfo>
-    <scopeInfo nodeId="1717728468090419325" fileName="TestOutputComponent.java" startLine="35" startPosition="24" endLine="53" endPosition="7">
+    <scopeInfo nodeId="1717728468090419325" fileName="TestOutputComponent.java" startLine="34" startPosition="24" endLine="52" endPosition="7">
       <varInfo nodeId="1200269551723291853" varName="text" />
       <varInfo nodeId="4403789015609952667" varName="test" />
       <varInfo nodeId="4403789015609952586" varName="method" />
       <varInfo nodeId="1200269551723291859" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="1717728468090419322" fileName="TestOutputComponent.java" startLine="34" startPosition="0" endLine="55" endPosition="0" />
-    <unitInfo nodeId="5762291000775407085" fileName="TestOutputComponent.java" startLine="49" startPosition="35" endLine="53" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestOutputComponent$1" />
-    <unitInfo nodeId="1208775164993" fileName="TestOutputComponent.java" startLine="120" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestOutputComponent$Message" />
-    <unitInfo nodeId="1208774804359" fileName="TestOutputComponent.java" startLine="20" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestOutputComponent" />
+    <scopeInfo nodeId="1717728468090419322" fileName="TestOutputComponent.java" startLine="33" startPosition="0" endLine="54" endPosition="0" />
+    <unitInfo nodeId="5762291000775407085" fileName="TestOutputComponent.java" startLine="48" startPosition="35" endLine="52" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestOutputComponent$1" />
+    <unitInfo nodeId="1208775164993" fileName="TestOutputComponent.java" startLine="133" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestOutputComponent$Message" />
+    <unitInfo nodeId="1208774804359" fileName="TestOutputComponent.java" startLine="19" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestOutputComponent" />
   </root>
   <root nodeId="1208801476695">
     <nodeInfo nodeId="1208801624798" fileName="StatisticsTableModel.java" startLine="20" startPosition="57" endLine="21" endPosition="187" />
@@ -1444,125 +1452,137 @@
     <unitInfo nodeId="1208802689364" fileName="TestStatisticsRow.java" startLine="6" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestStatisticsRow" />
   </root>
   <root nodeId="1208803091787">
-    <nodeInfo nodeId="1208803544760" fileName="TestMethodRow.java" startLine="10" startPosition="57" endLine="11" endPosition="42" />
-    <nodeInfo nodeId="1208803592741" fileName="TestMethodRow.java" startLine="11" startPosition="42" endLine="12" endPosition="39" />
-    <nodeInfo nodeId="1208803557874" fileName="TestMethodRow.java" startLine="12" startPosition="39" endLine="13" endPosition="38" />
-    <nodeInfo nodeId="1208803586288" fileName="TestMethodRow.java" startLine="13" startPosition="38" endLine="14" endPosition="39" />
-    <nodeInfo nodeId="1208889783941" fileName="TestMethodRow.java" startLine="15" startPosition="0" endLine="16" endPosition="38" />
-    <nodeInfo nodeId="1208803125357" fileName="TestMethodRow.java" startLine="16" startPosition="38" endLine="17" endPosition="40" />
-    <nodeInfo nodeId="1208803252298" fileName="TestMethodRow.java" startLine="17" startPosition="40" endLine="18" endPosition="32" />
-    <nodeInfo nodeId="1208803261548" fileName="TestMethodRow.java" startLine="18" startPosition="32" endLine="19" endPosition="33" />
-    <nodeInfo nodeId="1208803367214" fileName="TestMethodRow.java" startLine="19" startPosition="33" endLine="20" endPosition="34" />
-    <nodeInfo nodeId="1208803386677" fileName="TestMethodRow.java" startLine="20" startPosition="34" endLine="21" endPosition="33" />
-    <nodeInfo nodeId="1208803519051" fileName="TestMethodRow.java" startLine="21" startPosition="33" endLine="22" endPosition="34" />
-    <nodeInfo nodeId="1208889810103" fileName="TestMethodRow.java" startLine="24" startPosition="42" endLine="25" endPosition="142" />
-    <nodeInfo nodeId="1208803167366" fileName="TestMethodRow.java" startLine="25" startPosition="142" endLine="26" endPosition="92" />
-    <nodeInfo nodeId="1208803298300" fileName="TestMethodRow.java" startLine="37" startPosition="32" endLine="38" endPosition="26" />
-    <nodeInfo nodeId="1208803330992" fileName="TestMethodRow.java" startLine="39" startPosition="58" endLine="40" endPosition="57" />
-    <nodeInfo nodeId="1208803349664" fileName="TestMethodRow.java" startLine="45" startPosition="44" endLine="46" endPosition="33" />
-    <nodeInfo nodeId="1208803353242" fileName="TestMethodRow.java" startLine="49" startPosition="46" endLine="50" endPosition="35" />
-    <nodeInfo nodeId="1208803395311" fileName="TestMethodRow.java" startLine="53" startPosition="32" endLine="54" endPosition="30" />
-    <nodeInfo nodeId="1208803397984" fileName="TestMethodRow.java" startLine="57" startPosition="48" endLine="58" endPosition="37" />
-    <nodeInfo nodeId="1208803402953" fileName="TestMethodRow.java" startLine="61" startPosition="31" endLine="62" endPosition="29" />
-    <nodeInfo nodeId="1208803405680" fileName="TestMethodRow.java" startLine="65" startPosition="46" endLine="66" endPosition="35" />
-    <nodeInfo nodeId="1208803487867" fileName="TestMethodRow.java" startLine="69" startPosition="31" endLine="70" endPosition="25" />
-    <nodeInfo nodeId="1208803505056" fileName="TestMethodRow.java" startLine="71" startPosition="60" endLine="72" endPosition="58" />
-    <nodeInfo nodeId="1208803646340" fileName="TestMethodRow.java" startLine="77" startPosition="28" endLine="78" endPosition="27" />
-    <nodeInfo nodeId="1208803653976" fileName="TestMethodRow.java" startLine="81" startPosition="27" endLine="82" endPosition="26" />
-    <nodeInfo nodeId="1208803661364" fileName="TestMethodRow.java" startLine="85" startPosition="28" endLine="86" endPosition="27" />
-    <nodeInfo nodeId="1208803292882" fileName="TestMethodRow.java" startLine="38" startPosition="26" endLine="41" endPosition="5" />
-    <nodeInfo nodeId="1208803466486" fileName="TestMethodRow.java" startLine="70" startPosition="25" endLine="73" endPosition="5" />
-    <nodeInfo nodeId="1208803152222" fileName="TestMethodRow.java" startLine="23" startPosition="0" endLine="27" endPosition="3" />
-    <nodeInfo nodeId="1208803115816" fileName="TestMethodRow.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <nodeInfo nodeId="1208803225222" fileName="TestMethodRow.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <nodeInfo nodeId="1208803349660" fileName="TestMethodRow.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <nodeInfo nodeId="1208803353238" fileName="TestMethodRow.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
-    <nodeInfo nodeId="1208803395307" fileName="TestMethodRow.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <nodeInfo nodeId="1208803397979" fileName="TestMethodRow.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <nodeInfo nodeId="1208803402949" fileName="TestMethodRow.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <nodeInfo nodeId="1208803405676" fileName="TestMethodRow.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
-    <nodeInfo nodeId="1208803636701" fileName="TestMethodRow.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
-    <nodeInfo nodeId="1208803653972" fileName="TestMethodRow.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <nodeInfo nodeId="1208803661360" fileName="TestMethodRow.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <nodeInfo nodeId="1208889827107" fileName="TestMethodRow.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
-    <nodeInfo nodeId="1208803671117" fileName="TestMethodRow.java" startLine="88" startPosition="0" endLine="95" endPosition="0" />
-    <nodeInfo nodeId="1208803671113" fileName="TestMethodRow.java" startLine="95" startPosition="0" endLine="102" endPosition="0" />
-    <nodeInfo nodeId="1208803671109" fileName="TestMethodRow.java" startLine="102" startPosition="0" endLine="109" endPosition="0" />
-    <nodeInfo nodeId="1208803248541" fileName="TestMethodRow.java" startLine="36" startPosition="0" endLine="44" endPosition="0" />
-    <nodeInfo nodeId="1208803462835" fileName="TestMethodRow.java" startLine="68" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="1208803115819" fileName="TestMethodRow.java" startLine="29" startPosition="27" endLine="30" endPosition="33" />
-    <scopeInfo nodeId="1208803225225" fileName="TestMethodRow.java" startLine="33" startPosition="37" endLine="34" endPosition="16" />
-    <scopeInfo nodeId="1208803292884" fileName="TestMethodRow.java" startLine="39" startPosition="58" endLine="40" endPosition="57" />
-    <scopeInfo nodeId="1208803349663" fileName="TestMethodRow.java" startLine="45" startPosition="44" endLine="46" endPosition="33" />
-    <scopeInfo nodeId="1208803353241" fileName="TestMethodRow.java" startLine="49" startPosition="46" endLine="50" endPosition="35" />
-    <scopeInfo nodeId="1208803395310" fileName="TestMethodRow.java" startLine="53" startPosition="32" endLine="54" endPosition="30" />
-    <scopeInfo nodeId="1208803397982" fileName="TestMethodRow.java" startLine="57" startPosition="48" endLine="58" endPosition="37" />
-    <scopeInfo nodeId="1208803402952" fileName="TestMethodRow.java" startLine="61" startPosition="31" endLine="62" endPosition="29" />
-    <scopeInfo nodeId="1208803405679" fileName="TestMethodRow.java" startLine="65" startPosition="46" endLine="66" endPosition="35" />
-    <scopeInfo nodeId="1208803466488" fileName="TestMethodRow.java" startLine="71" startPosition="60" endLine="72" endPosition="58" />
-    <scopeInfo nodeId="1208803636704" fileName="TestMethodRow.java" startLine="77" startPosition="28" endLine="78" endPosition="27" />
-    <scopeInfo nodeId="1208803653975" fileName="TestMethodRow.java" startLine="81" startPosition="27" endLine="82" endPosition="26" />
-    <scopeInfo nodeId="1208803661363" fileName="TestMethodRow.java" startLine="85" startPosition="28" endLine="86" endPosition="27" />
-    <scopeInfo nodeId="1208889827114" fileName="TestMethodRow.java" startLine="110" startPosition="62" endLine="111" endPosition="164" />
-    <scopeInfo nodeId="1208803152225" fileName="TestMethodRow.java" startLine="24" startPosition="42" endLine="26" endPosition="92" />
-    <scopeInfo nodeId="1208803152222" fileName="TestMethodRow.java" startLine="23" startPosition="0" endLine="27" endPosition="3">
+    <nodeInfo nodeId="1208803544760" fileName="TestMethodRow.java" startLine="9" startPosition="57" endLine="10" endPosition="42" />
+    <nodeInfo nodeId="1208803592741" fileName="TestMethodRow.java" startLine="10" startPosition="42" endLine="11" endPosition="39" />
+    <nodeInfo nodeId="1208803557874" fileName="TestMethodRow.java" startLine="11" startPosition="39" endLine="12" endPosition="38" />
+    <nodeInfo nodeId="1208803586288" fileName="TestMethodRow.java" startLine="12" startPosition="38" endLine="13" endPosition="39" />
+    <nodeInfo nodeId="1208889783941" fileName="TestMethodRow.java" startLine="14" startPosition="0" endLine="15" endPosition="38" />
+    <nodeInfo nodeId="1208803125357" fileName="TestMethodRow.java" startLine="15" startPosition="38" endLine="16" endPosition="40" />
+    <nodeInfo nodeId="1208803252298" fileName="TestMethodRow.java" startLine="16" startPosition="40" endLine="17" endPosition="32" />
+    <nodeInfo nodeId="1208803261548" fileName="TestMethodRow.java" startLine="17" startPosition="32" endLine="18" endPosition="33" />
+    <nodeInfo nodeId="1208803367214" fileName="TestMethodRow.java" startLine="18" startPosition="33" endLine="19" endPosition="34" />
+    <nodeInfo nodeId="1208803386677" fileName="TestMethodRow.java" startLine="19" startPosition="34" endLine="20" endPosition="33" />
+    <nodeInfo nodeId="1208803519051" fileName="TestMethodRow.java" startLine="20" startPosition="33" endLine="21" endPosition="34" />
+    <nodeInfo nodeId="1208889810103" fileName="TestMethodRow.java" startLine="23" startPosition="42" endLine="24" endPosition="142" />
+    <nodeInfo nodeId="1208803167366" fileName="TestMethodRow.java" startLine="24" startPosition="142" endLine="25" endPosition="92" />
+    <nodeInfo nodeId="1208803298300" fileName="TestMethodRow.java" startLine="36" startPosition="32" endLine="37" endPosition="26" />
+    <nodeInfo nodeId="1208803330992" fileName="TestMethodRow.java" startLine="38" startPosition="58" endLine="39" endPosition="57" />
+    <nodeInfo nodeId="1208803349664" fileName="TestMethodRow.java" startLine="44" startPosition="44" endLine="45" endPosition="33" />
+    <nodeInfo nodeId="1208803353242" fileName="TestMethodRow.java" startLine="48" startPosition="46" endLine="49" endPosition="35" />
+    <nodeInfo nodeId="1208803395311" fileName="TestMethodRow.java" startLine="52" startPosition="32" endLine="53" endPosition="30" />
+    <nodeInfo nodeId="1208803397984" fileName="TestMethodRow.java" startLine="56" startPosition="48" endLine="57" endPosition="37" />
+    <nodeInfo nodeId="1208803402953" fileName="TestMethodRow.java" startLine="60" startPosition="31" endLine="61" endPosition="29" />
+    <nodeInfo nodeId="1208803405680" fileName="TestMethodRow.java" startLine="64" startPosition="46" endLine="65" endPosition="35" />
+    <nodeInfo nodeId="1208803487867" fileName="TestMethodRow.java" startLine="68" startPosition="31" endLine="69" endPosition="25" />
+    <nodeInfo nodeId="1208803505056" fileName="TestMethodRow.java" startLine="70" startPosition="60" endLine="71" endPosition="58" />
+    <nodeInfo nodeId="1208803646340" fileName="TestMethodRow.java" startLine="76" startPosition="28" endLine="77" endPosition="27" />
+    <nodeInfo nodeId="1208803653976" fileName="TestMethodRow.java" startLine="80" startPosition="27" endLine="81" endPosition="26" />
+    <nodeInfo nodeId="1208803661364" fileName="TestMethodRow.java" startLine="84" startPosition="28" endLine="85" endPosition="27" />
+    <nodeInfo nodeId="1208803292882" fileName="TestMethodRow.java" startLine="37" startPosition="26" endLine="40" endPosition="5" />
+    <nodeInfo nodeId="1208803466486" fileName="TestMethodRow.java" startLine="69" startPosition="25" endLine="72" endPosition="5" />
+    <nodeInfo nodeId="1208803152222" fileName="TestMethodRow.java" startLine="22" startPosition="0" endLine="26" endPosition="3" />
+    <nodeInfo nodeId="1208803115816" fileName="TestMethodRow.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <nodeInfo nodeId="1208803225222" fileName="TestMethodRow.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <nodeInfo nodeId="1208803349660" fileName="TestMethodRow.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="1208803353238" fileName="TestMethodRow.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="1208803395307" fileName="TestMethodRow.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <nodeInfo nodeId="1208803397979" fileName="TestMethodRow.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <nodeInfo nodeId="1208803402949" fileName="TestMethodRow.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="1208803405676" fileName="TestMethodRow.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <nodeInfo nodeId="1208803636701" fileName="TestMethodRow.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <nodeInfo nodeId="1208803653972" fileName="TestMethodRow.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
+    <nodeInfo nodeId="1208803661360" fileName="TestMethodRow.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <nodeInfo nodeId="1208889827107" fileName="TestMethodRow.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
+    <nodeInfo nodeId="1208803091787" fileName="TestMethodRow.java" startLine="113" startPosition="68" endLine="117" endPosition="6" />
+    <nodeInfo nodeId="1208803091787" fileName="TestMethodRow.java" startLine="120" startPosition="66" endLine="124" endPosition="6" />
+    <nodeInfo nodeId="1208803671117" fileName="TestMethodRow.java" startLine="87" startPosition="0" endLine="94" endPosition="0" />
+    <nodeInfo nodeId="1208803671113" fileName="TestMethodRow.java" startLine="94" startPosition="0" endLine="101" endPosition="0" />
+    <nodeInfo nodeId="1208803671109" fileName="TestMethodRow.java" startLine="101" startPosition="0" endLine="108" endPosition="0" />
+    <nodeInfo nodeId="1208803091787" fileName="TestMethodRow.java" startLine="112" startPosition="0" endLine="119" endPosition="0" />
+    <nodeInfo nodeId="1208803091787" fileName="TestMethodRow.java" startLine="119" startPosition="0" endLine="126" endPosition="0" />
+    <nodeInfo nodeId="1208803248541" fileName="TestMethodRow.java" startLine="35" startPosition="0" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="1208803462835" fileName="TestMethodRow.java" startLine="67" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="1208803115819" fileName="TestMethodRow.java" startLine="28" startPosition="27" endLine="29" endPosition="33" />
+    <scopeInfo nodeId="1208803225225" fileName="TestMethodRow.java" startLine="32" startPosition="37" endLine="33" endPosition="16" />
+    <scopeInfo nodeId="1208803292884" fileName="TestMethodRow.java" startLine="38" startPosition="58" endLine="39" endPosition="57" />
+    <scopeInfo nodeId="1208803349663" fileName="TestMethodRow.java" startLine="44" startPosition="44" endLine="45" endPosition="33" />
+    <scopeInfo nodeId="1208803353241" fileName="TestMethodRow.java" startLine="48" startPosition="46" endLine="49" endPosition="35" />
+    <scopeInfo nodeId="1208803395310" fileName="TestMethodRow.java" startLine="52" startPosition="32" endLine="53" endPosition="30" />
+    <scopeInfo nodeId="1208803397982" fileName="TestMethodRow.java" startLine="56" startPosition="48" endLine="57" endPosition="37" />
+    <scopeInfo nodeId="1208803402952" fileName="TestMethodRow.java" startLine="60" startPosition="31" endLine="61" endPosition="29" />
+    <scopeInfo nodeId="1208803405679" fileName="TestMethodRow.java" startLine="64" startPosition="46" endLine="65" endPosition="35" />
+    <scopeInfo nodeId="1208803466488" fileName="TestMethodRow.java" startLine="70" startPosition="60" endLine="71" endPosition="58" />
+    <scopeInfo nodeId="1208803636704" fileName="TestMethodRow.java" startLine="76" startPosition="28" endLine="77" endPosition="27" />
+    <scopeInfo nodeId="1208803653975" fileName="TestMethodRow.java" startLine="80" startPosition="27" endLine="81" endPosition="26" />
+    <scopeInfo nodeId="1208803661363" fileName="TestMethodRow.java" startLine="84" startPosition="28" endLine="85" endPosition="27" />
+    <scopeInfo nodeId="1208889827114" fileName="TestMethodRow.java" startLine="109" startPosition="62" endLine="110" endPosition="168" />
+    <scopeInfo nodeId="1208803152225" fileName="TestMethodRow.java" startLine="23" startPosition="42" endLine="25" endPosition="92" />
+    <scopeInfo nodeId="1208803152222" fileName="TestMethodRow.java" startLine="22" startPosition="0" endLine="26" endPosition="3">
       <varInfo nodeId="1208803155861" varName="testMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1208803115816" fileName="TestMethodRow.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1208803225222" fileName="TestMethodRow.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1208803349660" fileName="TestMethodRow.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1208803115816" fileName="TestMethodRow.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1208803225222" fileName="TestMethodRow.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1208803349660" fileName="TestMethodRow.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="1208803349670" varName="startTime" />
     </scopeInfo>
-    <scopeInfo nodeId="1208803353238" fileName="TestMethodRow.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="1208803353238" fileName="TestMethodRow.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="1208803353248" varName="finishTime" />
     </scopeInfo>
-    <scopeInfo nodeId="1208803395307" fileName="TestMethodRow.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1208803397979" fileName="TestMethodRow.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="1208803395307" fileName="TestMethodRow.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1208803397979" fileName="TestMethodRow.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="1208803397990" varName="usageBefore" />
     </scopeInfo>
-    <scopeInfo nodeId="1208803402949" fileName="TestMethodRow.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1208803405676" fileName="TestMethodRow.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="1208803402949" fileName="TestMethodRow.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="1208803405676" fileName="TestMethodRow.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="1208803405686" varName="usageAfter" />
     </scopeInfo>
-    <scopeInfo nodeId="1208803636701" fileName="TestMethodRow.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="1208803653972" fileName="TestMethodRow.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="1208803661360" fileName="TestMethodRow.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="1208803671120" fileName="TestMethodRow.java" startLine="89" startPosition="30" endLine="93" endPosition="6" />
-    <scopeInfo nodeId="1208803671116" fileName="TestMethodRow.java" startLine="96" startPosition="27" endLine="100" endPosition="6" />
-    <scopeInfo nodeId="1208803671112" fileName="TestMethodRow.java" startLine="103" startPosition="26" endLine="107" endPosition="6" />
-    <scopeInfo nodeId="1208889827107" fileName="TestMethodRow.java" startLine="109" startPosition="0" endLine="113" endPosition="0">
+    <scopeInfo nodeId="1208803636701" fileName="TestMethodRow.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="1208803653972" fileName="TestMethodRow.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="1208803661360" fileName="TestMethodRow.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="1208803671120" fileName="TestMethodRow.java" startLine="88" startPosition="30" endLine="92" endPosition="6" />
+    <scopeInfo nodeId="1208803671116" fileName="TestMethodRow.java" startLine="95" startPosition="27" endLine="99" endPosition="6" />
+    <scopeInfo nodeId="1208803671112" fileName="TestMethodRow.java" startLine="102" startPosition="26" endLine="106" endPosition="6" />
+    <scopeInfo nodeId="1208889827107" fileName="TestMethodRow.java" startLine="108" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="1208889827110" varName="testCase" />
       <varInfo nodeId="1208889827112" varName="testMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1208803248544" fileName="TestMethodRow.java" startLine="37" startPosition="32" endLine="42" endPosition="23">
+    <scopeInfo nodeId="1208803091787" fileName="TestMethodRow.java" startLine="113" startPosition="68" endLine="117" endPosition="6" />
+    <scopeInfo nodeId="1208803091787" fileName="TestMethodRow.java" startLine="120" startPosition="66" endLine="124" endPosition="6" />
+    <scopeInfo nodeId="1208803248544" fileName="TestMethodRow.java" startLine="36" startPosition="32" endLine="41" endPosition="23">
       <varInfo nodeId="1208803298301" varName="elapsedTime" />
     </scopeInfo>
-    <scopeInfo nodeId="1208803462838" fileName="TestMethodRow.java" startLine="69" startPosition="31" endLine="74" endPosition="22">
+    <scopeInfo nodeId="1208803462838" fileName="TestMethodRow.java" startLine="68" startPosition="31" endLine="73" endPosition="22">
       <varInfo nodeId="1208803487868" varName="usageDelta" />
     </scopeInfo>
-    <scopeInfo nodeId="1208803671117" fileName="TestMethodRow.java" startLine="88" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="1208803671113" fileName="TestMethodRow.java" startLine="95" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="1208803671109" fileName="TestMethodRow.java" startLine="102" startPosition="0" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="1208803248541" fileName="TestMethodRow.java" startLine="36" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1208803462835" fileName="TestMethodRow.java" startLine="68" startPosition="0" endLine="76" endPosition="0" />
-    <unitInfo nodeId="1208803091787" fileName="TestMethodRow.java" startLine="10" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestMethodRow" />
+    <scopeInfo nodeId="1208803671117" fileName="TestMethodRow.java" startLine="87" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="1208803671113" fileName="TestMethodRow.java" startLine="94" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="1208803671109" fileName="TestMethodRow.java" startLine="101" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="1208803091787" fileName="TestMethodRow.java" startLine="112" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="1208803091787" fileName="TestMethodRow.java" startLine="119" startPosition="0" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="1208803248541" fileName="TestMethodRow.java" startLine="35" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1208803462835" fileName="TestMethodRow.java" startLine="67" startPosition="0" endLine="75" endPosition="0" />
+    <unitInfo nodeId="1208803091787" fileName="TestMethodRow.java" startLine="9" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestMethodRow" />
   </root>
   <root nodeId="1208803723646">
-    <nodeInfo nodeId="1208889724049" fileName="TestCaseRow.java" startLine="10" startPosition="51" endLine="11" endPosition="38" />
-    <nodeInfo nodeId="1208889735572" fileName="TestCaseRow.java" startLine="17" startPosition="7" endLine="18" endPosition="87" />
-    <nodeInfo nodeId="1208871688933" fileName="TestCaseRow.java" startLine="13" startPosition="38" endLine="17" endPosition="7" />
-    <nodeInfo nodeId="1208889714808" fileName="TestCaseRow.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <nodeInfo nodeId="1208803738809" fileName="TestCaseRow.java" startLine="12" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1208889714815" fileName="TestCaseRow.java" startLine="21" startPosition="62" endLine="22" endPosition="81" />
-    <scopeInfo nodeId="1208889714808" fileName="TestCaseRow.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+    <nodeInfo nodeId="1208889724049" fileName="TestCaseRow.java" startLine="9" startPosition="51" endLine="10" endPosition="38" />
+    <nodeInfo nodeId="1208889735572" fileName="TestCaseRow.java" startLine="16" startPosition="7" endLine="17" endPosition="87" />
+    <nodeInfo nodeId="1208871688933" fileName="TestCaseRow.java" startLine="12" startPosition="38" endLine="16" endPosition="7" />
+    <nodeInfo nodeId="1208889714808" fileName="TestCaseRow.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <nodeInfo nodeId="1208803723646" fileName="TestCaseRow.java" startLine="24" startPosition="63" endLine="28" endPosition="6" />
+    <nodeInfo nodeId="1208803738809" fileName="TestCaseRow.java" startLine="11" startPosition="0" endLine="18" endPosition="3" />
+    <nodeInfo nodeId="1208803723646" fileName="TestCaseRow.java" startLine="23" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1208889714815" fileName="TestCaseRow.java" startLine="20" startPosition="62" endLine="21" endPosition="79" />
+    <scopeInfo nodeId="1208889714808" fileName="TestCaseRow.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1208889714811" varName="testCase" />
       <varInfo nodeId="1208889714813" varName="testMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1208803738812" fileName="TestCaseRow.java" startLine="13" startPosition="38" endLine="18" endPosition="87" />
-    <scopeInfo nodeId="1208803738809" fileName="TestCaseRow.java" startLine="12" startPosition="0" endLine="19" endPosition="3">
+    <scopeInfo nodeId="1208803723646" fileName="TestCaseRow.java" startLine="24" startPosition="63" endLine="28" endPosition="6" />
+    <scopeInfo nodeId="1208803738812" fileName="TestCaseRow.java" startLine="12" startPosition="38" endLine="17" endPosition="87" />
+    <scopeInfo nodeId="1208803738809" fileName="TestCaseRow.java" startLine="11" startPosition="0" endLine="18" endPosition="3">
       <varInfo nodeId="1208803848014" varName="testCase" />
     </scopeInfo>
-    <unitInfo nodeId="1208803723646" fileName="TestCaseRow.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestCaseRow" />
+    <scopeInfo nodeId="1208803723646" fileName="TestCaseRow.java" startLine="23" startPosition="0" endLine="30" endPosition="0" />
+    <unitInfo nodeId="1208803723646" fileName="TestCaseRow.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestCaseRow" />
   </root>
   <root nodeId="1208871335555">
     <nodeInfo nodeId="1208871335804" fileName="TestContainerRow.java" startLine="9" startPosition="69" endLine="10" endPosition="30" />

@@ -14,7 +14,6 @@ import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
-import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class InstanceMethodDeclaration_Behavior {
@@ -57,7 +56,7 @@ public class InstanceMethodDeclaration_Behavior {
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(superclass)), IClassifiersSearchScope.INSTANCE_METHOD);
     List<SNode> methodDeclarations = BaseAdapter.toNodes(scope.getAdapters(InstanceMethodDeclaration.class));
     for (SNode methodCandidate : ((List<SNode>) methodDeclarations)) {
-      if (ObjectUtils.equals(SPropertyOperations.getString(methodCandidate, "name"), SPropertyOperations.getString(thisNode, "name")) && ListSequence.fromList(SLinkOperations.getTargets(methodCandidate, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count()) {
+      if (eq_4b3xw6_a0a0a5a5(SPropertyOperations.getString(methodCandidate, "name"), SPropertyOperations.getString(thisNode, "name")) && ListSequence.fromList(SLinkOperations.getTargets(methodCandidate, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count()) {
         if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(methodCandidate, thisNode)) {
           return methodCandidate;
         }
@@ -88,5 +87,12 @@ public class InstanceMethodDeclaration_Behavior {
 
   public static SNode callSuper_getNearestOverriddenMethod_5014346297260520665(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), callerConceptFqName, "virtual_getNearestOverriddenMethod_5358895268254685434", PARAMETERS_5014346297260520665);
+  }
+
+  private static boolean eq_4b3xw6_a0a0a5a5(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

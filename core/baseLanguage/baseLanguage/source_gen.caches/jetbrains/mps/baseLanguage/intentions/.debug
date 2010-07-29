@@ -1448,13 +1448,13 @@
     </scopeInfo>
   </root>
   <root nodeId="3627222673199430317">
-    <nodeInfo nodeId="3627222673199432790" fileName="MigrateString_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="48" />
-    <nodeInfo nodeId="3627222673199432822" fileName="MigrateString_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="133" />
-    <nodeInfo nodeId="3627222673199777188" fileName="MigrateString_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="116" />
-    <nodeInfo nodeId="3627222673199800881" fileName="MigrateString_Intention.java" startLine="50" startPosition="116" endLine="51" endPosition="37" />
-    <scopeInfo nodeId="3627222673199430319" fileName="MigrateString_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="48" />
-    <scopeInfo nodeId="3627222673199432794" fileName="MigrateString_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="133" />
-    <scopeInfo nodeId="3627222673199430321" fileName="MigrateString_Intention.java" startLine="49" startPosition="76" endLine="51" endPosition="37">
+    <nodeInfo nodeId="3627222673199432790" fileName="MigrateString_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="48" />
+    <nodeInfo nodeId="3627222673199432822" fileName="MigrateString_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="130" />
+    <nodeInfo nodeId="3627222673199777188" fileName="MigrateString_Intention.java" startLine="48" startPosition="76" endLine="49" endPosition="116" />
+    <nodeInfo nodeId="3627222673199800881" fileName="MigrateString_Intention.java" startLine="49" startPosition="116" endLine="50" endPosition="37" />
+    <scopeInfo nodeId="3627222673199430319" fileName="MigrateString_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="48" />
+    <scopeInfo nodeId="3627222673199432794" fileName="MigrateString_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="130" />
+    <scopeInfo nodeId="3627222673199430321" fileName="MigrateString_Intention.java" startLine="48" startPosition="76" endLine="50" endPosition="37">
       <varInfo nodeId="3627222673199777189" varName="stringType" />
     </scopeInfo>
   </root>

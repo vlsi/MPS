@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModel;
-import org.apache.commons.lang.ObjectUtils;
 
 public class ActionParameter_IsOptional extends AbstractCellProvider {
   public ActionParameter_IsOptional(SNode node) {
@@ -83,7 +82,7 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
     }
 
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      if (ObjectUtils.equals("optional", parameterObject)) {
+      if (eq_8pdft7_a0a0c0("optional", parameterObject)) {
         SPropertyOperations.set(node, "isOptional", "" + true);
       } else {
         SPropertyOperations.set(node, "isOptional", null);
@@ -92,6 +91,13 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
 
     public boolean isReferentPresentation() {
       return false;
+    }
+
+    private static boolean eq_8pdft7_a0a0c0(Object a, Object b) {
+      return (a != null ?
+        a.equals(b) :
+        a == b
+      );
     }
   }
 }

@@ -58,7 +58,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
 </dependenciesRoot>

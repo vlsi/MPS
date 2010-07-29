@@ -4,7 +4,6 @@ package jetbrains.mps.debug.api.info;
 
 import org.jdom.Element;
 import org.jdom.DataConversionException;
-import org.apache.commons.lang.ObjectUtils;
 
 public class PositionInfo implements Comparable<PositionInfo> {
   private static String FILE_NAME = "fileName";
@@ -103,9 +102,9 @@ public class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public int compareTo(PositionInfo p) {
-    if (ObjectUtils.equals(this.getLineDistance(), p.getLineDistance())) {
-      if (ObjectUtils.equals(this.myStartLine, p.myStartLine)) {
-        if (ObjectUtils.equals(this.myStartPosition, p.myStartPosition)) {
+    if (eq_1myh1n_a0a0q(this.getLineDistance(), p.getLineDistance())) {
+      if (eq_1myh1n_a0a0a0q(this.myStartLine, p.myStartLine)) {
+        if (eq_1myh1n_a0a0a0a0q(this.myStartPosition, p.myStartPosition)) {
           return this.myNodeId.compareTo(p.myNodeId);
         } else {
           return this.myStartPosition - p.myStartPosition;
@@ -119,7 +118,7 @@ public class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public boolean isOccupyTheSameSpace(PositionInfo p) {
-    return (ObjectUtils.equals(myStartLine, p.myStartLine)) && (ObjectUtils.equals(myEndLine, p.myEndLine)) && (ObjectUtils.equals(myStartPosition, p.myStartPosition)) && (ObjectUtils.equals(myEndPosition, p.myEndPosition));
+    return (eq_1myh1n_a0a0a0a0r(myStartLine, p.myStartLine)) && (eq_1myh1n_a0a0a0a0r_0(myEndLine, p.myEndLine)) && (eq_1myh1n_a0a0a0a71(myStartPosition, p.myStartPosition)) && (eq_1myh1n_a0a0a0r(myEndPosition, p.myEndPosition));
   }
 
   public void fillFrom(PositionInfo position) {
@@ -129,5 +128,54 @@ public class PositionInfo implements Comparable<PositionInfo> {
     this.myStartPosition = position.myStartPosition;
     this.myEndLine = position.myEndLine;
     this.myEndPosition = position.myEndPosition;
+  }
+
+  private static boolean eq_1myh1n_a0a0q(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_1myh1n_a0a0a0a0q(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_1myh1n_a0a0a0q(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_1myh1n_a0a0a0a0r(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_1myh1n_a0a0a0a0r_0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_1myh1n_a0a0a0a71(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_1myh1n_a0a0a0r(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

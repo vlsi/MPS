@@ -187,8 +187,8 @@
     <unitInfo nodeId="4706738529699924056" fileName="RenameUtil.java" startLine="19" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.RenameUtil" />
   </root>
   <root nodeId="6243486444683604044">
-    <scopeInfo nodeId="6243486444683604047" fileName="ShowGetNameUsages_MigrationScript.java" startLine="33" startPosition="52" endLine="33" endPosition="52" />
-    <scopeInfo nodeId="6243486444683690986" fileName="ShowGetNameUsages_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="143" />
+    <scopeInfo nodeId="6243486444683604047" fileName="ShowGetNameUsages_MigrationScript.java" startLine="32" startPosition="52" endLine="32" endPosition="52" />
+    <scopeInfo nodeId="6243486444683690986" fileName="ShowGetNameUsages_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="148" />
   </root>
 </debugInfo>
 
