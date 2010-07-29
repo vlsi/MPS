@@ -12,11 +12,11 @@ public class Test {
   }
 
   public static void main(String[] args) {
-    List<Integer> list = ListSequence.fromList(new ArrayList<Integer>());
+    List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
     ListSequence.fromList(list).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer it) {
         return it == 1;
       }
-    });
+    }).first();
   }
 }

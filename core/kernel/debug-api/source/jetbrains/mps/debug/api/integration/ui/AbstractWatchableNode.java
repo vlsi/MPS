@@ -33,6 +33,7 @@ abstract class AbstractWatchableNode extends MPSTreeNode {
   }
 
   public void openNode(final boolean focus, final boolean select) {
+    if (myNode == null) return;
     final Project project = getProject();
     final IOperationContext context = getOperationContext();
     if (project != null && context != null) {
