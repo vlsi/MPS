@@ -20,7 +20,7 @@ import com.intellij.openapi.util.Computable;
 public abstract class AbstractMPSBreakpoint {
   protected Project myProject;
   protected SNodePointer myNodePointer;
-  public boolean myIsEnabled = true; //todo add ability to disable breakpoints
+  protected boolean myIsEnabled = true; //todo add ability to disable breakpoints
 
   protected AbstractMPSBreakpoint(SNodePointer nodePointer, Project project) {
     myNodePointer = nodePointer;
@@ -38,6 +38,16 @@ public abstract class AbstractMPSBreakpoint {
 
   public SNode getSNode() {
     return myNodePointer.getNode();
+  }
+
+  public boolean isEnabled() {
+    return myIsEnabled;
+  }
+
+  public void toggleEnabled() {
+    if (supportsDisable()) {
+      myIsEnabled = !myIsEnabled;
+    }
   }
 
   public BreakpointInfo createBreakpointInfo() {
@@ -122,5 +132,9 @@ public abstract class AbstractMPSBreakpoint {
         }
       }
     });
+  }
+
+  public boolean supportsDisable() {
+    return false;
   }
 }

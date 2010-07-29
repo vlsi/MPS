@@ -10,6 +10,8 @@ import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorMessage;
+
+import javax.swing.JPopupMenu;
 import java.awt.Cursor;
 
 public abstract class AbstractLeftEditorHighlighterMessage extends DefaultEditorMessage implements EditorMessageIconRenderer {
@@ -45,5 +47,10 @@ public abstract class AbstractLeftEditorHighlighterMessage extends DefaultEditor
 
   public Cursor getMouseOwerCursor() {
     return Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
+  }
+
+  @Override
+  public JPopupMenu getPopupMenu() {
+    return null;
   }
 }

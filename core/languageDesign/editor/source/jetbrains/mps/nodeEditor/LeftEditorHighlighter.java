@@ -45,6 +45,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
+import javax.swing.JPopupMenu;
 import javax.swing.SwingUtilities;
 import java.awt.*;
 import java.awt.event.ComponentEvent;
@@ -553,6 +554,14 @@ public class LeftEditorHighlighter extends JComponent {
   private void mousePressedInIconsArea(MouseEvent e) {
     EditorMessageIconRenderer iconRenderer = getIconRendererUnderMouse(e);
     if (iconRenderer != null) {
+      if (e.getButton() == MouseEvent.BUTTON3) {
+        JPopupMenu popupMenu = iconRenderer.getPopupMenu();
+        if (popupMenu != null && e.getID() == MouseEvent.MOUSE_CLICKED) {
+          e.consume();
+          popupMenu.show(myEditorComponent, e.getX(), e.getY());
+        }
+        return;
+      }
       AnAction action = iconRenderer.getClickAction();
       if (e.getButton() == MouseEvent.BUTTON1 && action != null) {
         if (e.getID() == MouseEvent.MOUSE_CLICKED) {
@@ -687,6 +696,11 @@ public class LeftEditorHighlighter extends JComponent {
     @Override
     public AnAction getClickAction() {
       return myNumber != -1 ? ActionManager.getInstance().getAction("jetbrains.mps.ide#action#jetbrains.mps.ide.actions.GoToBookmark" + myNumber + "_Action") : null;
+    }
+
+    @Override
+    public JPopupMenu getPopupMenu() {
+      return null;
     }
   }
 

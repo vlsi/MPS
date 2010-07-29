@@ -185,4 +185,9 @@ public class MPSBreakpoint extends AbstractMPSBreakpoint implements ClassPrepare
   public void addToRunningSessions() {
     RequestManager.createClassPrepareRequests(this);
   }
+
+  @Override
+  public boolean supportsDisable() {
+    return true;
+  }
 }

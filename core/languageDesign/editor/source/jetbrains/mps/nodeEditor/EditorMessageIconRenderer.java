@@ -5,6 +5,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.Icon;
+import javax.swing.JPopupMenu;
 import java.awt.Cursor;
 
 /**
@@ -29,6 +30,8 @@ public interface EditorMessageIconRenderer {
   Cursor getMouseOwerCursor();
 
   AnAction getClickAction();
+
+  JPopupMenu getPopupMenu();
 
   public class IconRendererType {
 

@@ -12,8 +12,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.AbstractAction;
 import javax.swing.Icon;
+import javax.swing.JPopupMenu;
 import java.awt.Cursor;
+import java.awt.event.ActionEvent;
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,7 +35,7 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
   }
 
   public static Icon getIconFor(@NotNull AbstractMPSBreakpoint breakpoint) {
-    return breakpoint.isValid() ? Icons.BREAKPOINT : Icons.INV_BREAKPOINT;  
+    return breakpoint.isValid() ? (breakpoint.isEnabled() ? Icons.BREAKPOINT : Icons.DISABLED_BREAKPOINT) : Icons.INV_BREAKPOINT;
   }
 
   public BreakpointIconRenderer(AbstractMPSBreakpoint breakpoint) {
@@ -72,5 +75,23 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
   @Override
   public AnAction getClickAction() {
     return ActionManager.getInstance().getAction("jetbrains.mps.ide#action#jetbrains.mps.ide.actions.ToggleBreakpoint_Action");
+  }
+
+  @Override
+  public JPopupMenu getPopupMenu() {
+    if (!myBreakpoint.isValid()) {
+      return null;
+    }
+    if (!myBreakpoint.supportsDisable()) {
+      return null;
+    }
+    JPopupMenu menu = new JPopupMenu();
+    menu.add(new AbstractAction(myBreakpoint.isEnabled() ? "Disable" : "Enable") {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        myBreakpoint.toggleEnabled();
+      }
+    });
+    return menu;
   }
 }
