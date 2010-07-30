@@ -17,23 +17,11 @@ public class SimpleBuilderDeclaration_Behavior {
   }
 
   public static boolean call_isRoot_8969040284892403078(SNode thisNode) {
-    if (SPropertyOperations.getBoolean(thisNode, "root")) {
-      return true;
-    }
-    if ((SLinkOperations.getTarget(thisNode, "extends", false) != null)) {
-      return SimpleBuilderDeclaration_Behavior.call_isRoot_8969040284892403078(SLinkOperations.getTarget(thisNode, "extends", false));
-    }
-    return false;
+    return SPropertyOperations.getBoolean(thisNode, "root") || (SLinkOperations.getTarget(thisNode, "extends", false) != null) && SimpleBuilderDeclaration_Behavior.call_isRoot_8969040284892403078(SLinkOperations.getTarget(thisNode, "extends", false));
   }
 
   public static boolean call_isDescendant_3816167865390595157(SNode thisNode, SNode b) {
-    if (thisNode == b) {
-      return true;
-    }
-    if ((SLinkOperations.getTarget(thisNode, "extends", false) == null)) {
-      return false;
-    }
-    return SimpleBuilderDeclaration_Behavior.call_isDescendant_3816167865390595157(SLinkOperations.getTarget(thisNode, "extends", false), b);
+    return thisNode == b || (SLinkOperations.getTarget(thisNode, "extends", false) != null) && SimpleBuilderDeclaration_Behavior.call_isDescendant_3816167865390595157(SLinkOperations.getTarget(thisNode, "extends", false), b);
   }
 
   public static List<SNode> call_getDescendants_3816167865390609214(SNode thisNode, SModel model, IScope scope) {
