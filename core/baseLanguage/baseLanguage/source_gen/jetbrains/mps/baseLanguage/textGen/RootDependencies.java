@@ -24,6 +24,9 @@ public class RootDependencies implements Comparable<RootDependencies> {
   private String myClassName;
   private String myFileName;
 
+  /*package*/ RootDependencies() {
+  }
+
   public RootDependencies(String nodeName, String fileName, List<String> dependNodes, List<String> extendsNodes) {
     this.myClassName = nodeName;
     this.myFileName = fileName;
@@ -77,6 +80,22 @@ public class RootDependencies implements Comparable<RootDependencies> {
 
   public Set<String> getExtends() {
     return new HashSet((Collection) myExtendsNodes);
+  }
+
+  /*package*/ void addDependNode(String s) {
+    ListSequence.fromList(myDependNodes).addElement(s);
+  }
+
+  /*package*/ void addExtendsNode(String s) {
+    ListSequence.fromList(myExtendsNodes).addElement(s);
+  }
+
+  /*package*/ void setFileName(String myFileName) {
+    this.myFileName = myFileName;
+  }
+
+  /*package*/ void setClassName(String myClassName) {
+    this.myClassName = myClassName;
   }
 
   public String getClassName() {
