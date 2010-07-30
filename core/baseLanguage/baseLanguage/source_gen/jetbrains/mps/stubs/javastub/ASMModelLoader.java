@@ -83,9 +83,9 @@ import jetbrains.mps.baseLanguage.structure.LowerBoundType;
 import jetbrains.mps.stubs.javastub.asm.ASMUnboundedType;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.SReference;
 import java.util.Iterator;
 
 public abstract class ASMModelLoader {
@@ -475,7 +475,6 @@ public abstract class ASMModelLoader {
       this.updateTypeVariables(m, model, methodDeclaration, cls);
       methodDeclaration.setName(m.getName());
       methodDeclaration.setReturnType(this.getTypeByASMType(m.getGenericReturnType(), methodDeclaration, cls, model));
-      int num = 0;
       List<ASMType> parameterTypes = m.getGenericParameterTypes();
       List<String> parameterNames = m.getParameterNames();
       for (int i = 0; i < parameterTypes.size(); i++) {
@@ -754,31 +753,36 @@ public abstract class ASMModelLoader {
   }
 
   private void addClassifierReference(SNode sourceNode, String role, ASMClassType clsType) {
+    if (sourceNode.getReferent(role) != null) {
+      return;
+    }
+
+    SReference reference = null;
     SModelReference targetModelRef = this.getModelReferenceFor(NodeNameUtil.getNamespace(clsType.getName()));
-    if (!(sourceNode.getModel().getSModelReference().equals(targetModelRef))) {
-      SNodeId nodeId = ASMNodeId.createId(clsType.getName());
-      SReference reference = SReference.create(role, sourceNode, targetModelRef, nodeId);
-      sourceNode.addReference(reference);
-    } else {
-      if (sourceNode.getReferent(role) == null) {
-        Classifier classifier = this.getClassifier(NameUtil.shortNameFromLongName(clsType.getName()));
-        if (classifier != null) {
-          SNode targetNode = classifier.getNode();
-          SReference reference = SReference.create(role, sourceNode, targetNode);
-          sourceNode.addReference(reference);
-        }
+    if (sourceNode.getModel().getSModelReference().equals(targetModelRef)) {
+      Classifier classifier = this.getClassifier(NameUtil.shortNameFromLongName(clsType.getName()));
+      if (classifier != null) {
+        SNode targetNode = classifier.getNode();
+        reference = SReference.create(role, sourceNode, targetNode);
       }
     }
+    if (reference == null) {
+      SNodeId nodeId = ASMNodeId.createId(clsType.getName());
+      reference = SReference.create(role, sourceNode, targetModelRef, nodeId);
+    }
+
+    sourceNode.addReference(reference);
   }
 
   private void addAnnotationMethodReference(SNode sourceNode, String role, ASMClassType annotationType, String method) {
+    if (sourceNode.getReferent(role) != null) {
+      return;
+    }
 
     SModelReference targetRef = this.getModelReferenceFor(NodeNameUtil.getNamespace(annotationType.getName()));
-    if (!(sourceNode.getModel().getSModelReference().equals(targetRef))) {
-      SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
-      SReference reference = SReference.create(role, sourceNode, targetRef, nodeId);
-      sourceNode.addReference(reference);
-    } else {
+
+    SReference reference = null;
+    if (sourceNode.getModel().getSModelReference().equals(targetRef)) {
       Classifier classifier = this.getClassifier(NameUtil.shortNameFromLongName(annotationType.getName()));
       InstanceMethodDeclaration result = null;
       if (classifier instanceof Annotation) {
@@ -790,35 +794,49 @@ public abstract class ASMModelLoader {
           }
         }
       }
-      if (sourceNode.getReferent(role) == null) {
-        sourceNode.addReference(SReference.create(role, sourceNode, BaseAdapter.fromAdapter(result)));
+      if (result != null) {
+        reference = SReference.create(role, sourceNode, BaseAdapter.fromAdapter(result));
       }
     }
+    if (reference == null) {
+      SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
+      reference = SReference.create(role, sourceNode, targetRef, nodeId);
+    }
+
+    sourceNode.addReference(reference);
   }
 
   private void addEnumConstReference(SNode sourceNode, String role, ASMEnumValue enumValue) {
+    if (sourceNode.getReferent(role) != null) {
+      return;
+    }
+
     ASMClassType classType = (ASMClassType) enumValue.getType();
     SModelReference targetRef = this.getModelReferenceFor(NodeNameUtil.getNamespace(classType.getName()));
-    if (!(sourceNode.getModel().getSModelReference().equals(targetRef))) {
-      SNodeId nodeId = ASMNodeId.createFieldId(classType.getName(), enumValue.getConstant());
-      SReference reference = SReference.create(role, sourceNode, targetRef, nodeId);
-      sourceNode.addReference(reference);
-    } else {
-      if (sourceNode.getReferent(role) == null) {
-        Classifier classifier = this.getClassifier(NameUtil.shortNameFromLongName(classType.getName()));
-        EnumConstantDeclaration constDcl = null;
-        if (classifier instanceof EnumClass) {
-          EnumClass ec = (EnumClass) classifier;
-          for (EnumConstantDeclaration dcl : ec.getEnumConstants()) {
-            if (enumValue.getConstant().equals(dcl.getName())) {
-              constDcl = dcl;
-              break;
-            }
+
+    SReference reference = null;
+    if (sourceNode.getModel().getSModelReference().equals(targetRef)) {
+      Classifier classifier = this.getClassifier(NameUtil.shortNameFromLongName(classType.getName()));
+      EnumConstantDeclaration constDcl = null;
+      if (classifier instanceof EnumClass) {
+        EnumClass ec = (EnumClass) classifier;
+        for (EnumConstantDeclaration dcl : ec.getEnumConstants()) {
+          if (enumValue.getConstant().equals(dcl.getName())) {
+            constDcl = dcl;
+            break;
           }
         }
-        sourceNode.addReference(SReference.create(role, sourceNode, BaseAdapter.fromAdapter(constDcl)));
+      }
+      if (constDcl != null) {
+        reference = SReference.create(role, sourceNode, BaseAdapter.fromAdapter(constDcl));
       }
     }
+    if (reference == null) {
+      SNodeId nodeId = ASMNodeId.createFieldId(classType.getName(), enumValue.getConstant());
+      reference = SReference.create(role, sourceNode, targetRef, nodeId);
+    }
+
+    sourceNode.addReference(reference);
   }
 
   public abstract SModelReference getModelReferenceFor(String packageName);
