@@ -25,6 +25,7 @@ public class DataFlowManager implements ApplicationComponent {
   private ClassLoaderManager myClassLoaderManager;
   private MPSModuleRepository myModuleRepository;
   private Map<String, DataFlowBuilder> myBuilders = new HashMap<String, DataFlowBuilder>();
+  private boolean myLoaded = false;
 
   public DataFlowManager(ClassLoaderManager manager, MPSModuleRepository repo) {
     this.myClassLoaderManager = manager;
@@ -34,7 +35,7 @@ public class DataFlowManager implements ApplicationComponent {
   public void initComponent() {
     this.myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
       public void unload() {
-        DataFlowManager.this.refresh();
+        DataFlowManager.this.clear();
       }
     });
   }
@@ -52,19 +53,34 @@ public class DataFlowManager implements ApplicationComponent {
   }
 
   public Program buildProgramFor(INodeAdapter adapter) {
+    checkLoaded();
     return this.buildProgramFor(BaseAdapter.fromAdapter(adapter));
   }
 
   public Program buildProgramFor(SNode node) {
+    checkLoaded();
     return new MPSProgramBuilder(this).buildProgram(node);
   }
 
   /*package*/ DataFlowBuilder getBuilderFor(String conceptName) {
+    checkLoaded();
     return this.myBuilders.get(conceptName);
   }
 
-  private void refresh() {
+  private void clear() {
     this.myBuilders.clear();
+    myLoaded = false;
+  }
+
+  private void checkLoaded() {
+    if (myLoaded) {
+      return;
+    }
+    myLoaded = true;
+    this.load();
+  }
+
+  private void load() {
     for (Language l : this.myModuleRepository.getAllLanguages()) {
       SModelDescriptor dfaModel = LanguageAspect.DATA_FLOW.get(l);
       if (dfaModel != null && !(dfaModel.isEmpty())) {
