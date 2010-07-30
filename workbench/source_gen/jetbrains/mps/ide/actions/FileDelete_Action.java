@@ -17,7 +17,7 @@ public class FileDelete_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(FileDelete_Action.class);
 
-  private VirtualFile[] selectedFile;
+  private VirtualFile selectedFile;
   private DeleteProvider deleteProvider;
   private AnAction action;
 
@@ -48,7 +48,7 @@ public class FileDelete_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.selectedFile = event.getData(MPSDataKeys.VIRTUAL_FILE_ARRAY);
+    this.selectedFile = event.getData(MPSDataKeys.VIRTUAL_FILE);
     if (this.selectedFile == null) {
       return false;
     }
