@@ -28,7 +28,10 @@ public class BLDependenciesHandler extends DefaultHandler {
 
   @Override
   public void characters(char[] array, int start, int len) throws SAXException {
-    BLDependenciesHandler.ElementHandler current = handlers.peek();
+    BLDependenciesHandler.ElementHandler current = (handlers.empty() ?
+      (BLDependenciesHandler.ElementHandler) null :
+      handlers.peek()
+    );
     if (current != null) {
       current.handleText(values.peek(), new String(array, start, len));
     }
@@ -40,9 +43,12 @@ public class BLDependenciesHandler extends DefaultHandler {
     Object childValue = values.pop();
     if (current != null) {
       current.validate(childValue);
-      BLDependenciesHandler.ElementHandler parent = handlers.peek();
+      BLDependenciesHandler.ElementHandler parent = (handlers.empty() ?
+        (BLDependenciesHandler.ElementHandler) null :
+        handlers.peek()
+      );
       if (parent != null) {
-        parent.handleChild(values.peek(), localName, childValue);
+        parent.handleChild(values.peek(), qName, childValue);
       } else {
         result = (ModelDependencies) childValue;
       }
@@ -51,12 +57,15 @@ public class BLDependenciesHandler extends DefaultHandler {
 
   @Override
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-    BLDependenciesHandler.ElementHandler current = handlers.peek();
+    BLDependenciesHandler.ElementHandler current = (handlers.empty() ?
+      (BLDependenciesHandler.ElementHandler) null :
+      handlers.peek()
+    );
     if (current == null) {
       // root 
       current = dependenciesRoothandler;
     } else {
-      current = current.createChild(localName);
+      current = current.createChild(qName);
     }
     Object result = current.createObject();
 
@@ -69,7 +78,7 @@ public class BLDependenciesHandler extends DefaultHandler {
 
     // handle attributes 
     for (int i = 0; i < attributes.getLength(); i++) {
-      String name = attributes.getLocalName(i);
+      String name = attributes.getQName(i);
       String value = attributes.getValue(i);
       current.handleAttribute(result, name, value);
     }
@@ -99,6 +108,9 @@ public class BLDependenciesHandler extends DefaultHandler {
     }
 
     protected void handleText(Object resultObject, String value) throws SAXParseException {
+      if (value.trim().length() == 0) {
+        return;
+      }
       throw new SAXParseException("text is not accepted", null);
     }
 
@@ -122,7 +134,7 @@ public class BLDependenciesHandler extends DefaultHandler {
     @Override
     protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXParseException {
       if ("dependency".equals(tagName)) {
-        return BLDependenciesHandler.dependenciesRoothandler;
+        return BLDependenciesHandler.dependencyhandler;
       }
       return super.createChild(tagName);
     }
@@ -172,7 +184,7 @@ public class BLDependenciesHandler extends DefaultHandler {
     @Override
     protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXParseException {
       if ("classNode".equals(tagName)) {
-        return BLDependenciesHandler.dependencyhandler;
+        return BLDependenciesHandler.classNodehandler;
       }
       return super.createChild(tagName);
     }
