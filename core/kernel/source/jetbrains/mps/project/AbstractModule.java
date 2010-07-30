@@ -68,7 +68,7 @@ public abstract class AbstractModule implements IModule {
   private boolean myInitialized = false;
   protected IFile myDescriptorFile;
 
-  private ModuleScope myScope = new ModuleScope();
+  private ModuleScope myScope = createScope();
 
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
 
@@ -862,6 +862,10 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
+  protected ModuleScope createScope() {
+    return new ModuleScope();
+  }
+  
   public class ModuleScope extends DefaultScope {
     public AbstractModule getModule() {
       return AbstractModule.this;

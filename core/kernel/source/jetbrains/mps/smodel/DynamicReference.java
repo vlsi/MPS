@@ -15,9 +15,14 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.project.GlobalOperationContext;
+import jetbrains.mps.project.AbstractModule.ModuleScope;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
@@ -68,7 +73,7 @@ public class DynamicReference extends SReferenceBase {
       referenceNode,
       referenceNodeConcept,
       getRole(), // "genuine" role here
-      new GlobalOperationContext());
+      new ReferenceResolvingContext(getModule()));
     if (status.isError()) {
       if (!silently) {
         error("cannot obtain search scope: " + status.getMessage());
@@ -102,5 +107,42 @@ public class DynamicReference extends SReferenceBase {
     }
 
     return targetNode;
+  }
+
+  private IModule getModule() {
+    SModel model = getSourceNode().getModel();
+    if(model != null) {
+      SModelDescriptor descr = model.getModelDescriptor();
+      if(descr != null) {
+        return descr.getModule();
+      }
+    }
+    return null;
+  }
+
+  public class ReferenceResolvingContext extends StandaloneMPSContext {
+
+    private IModule module;
+
+    public ReferenceResolvingContext(IModule module) {
+      assert module != null;
+      this.module = module;
+    }
+
+    @Override
+    public Project getProject() {
+      return null;
+    }
+
+    @Override
+    public IModule getModule() {
+      return module;
+    }
+
+    @NotNull
+    @Override
+    public IScope getScope() {
+      return module != null ? module.getScope() : GlobalScope.getInstance() /* FIXME */;
+    }
   }
 }

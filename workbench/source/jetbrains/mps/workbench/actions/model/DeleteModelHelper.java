@@ -102,7 +102,7 @@ public class DeleteModelHelper {
     }
 
     if (deleteFiles && deleteIfAsked) {
-      modelDescriptor.delete();
+      SModelRepository.getInstance().deleteModel(modelDescriptor);
     }
 
     contextModule.save();
@@ -214,7 +214,7 @@ public class DeleteModelHelper {
       }
 
       if (myDeleteFiles) {
-        modelDescriptor.delete();
+        SModelRepository.getInstance().deleteModel(modelDescriptor);
       }
 
       //todo: check correctness - they are not ALL model owners

@@ -227,7 +227,7 @@ public class GenerationSession {
         // nothing has been generated
         myDependenciesBuilder.dropModel();
         tracer.discardTracing(currentInputModel, transientModel);
-        SModelRepository.getInstance().removeModelDescriptor(transientModel.getModelDescriptor());
+        mySessionContext.getModule().removeModel(transientModel.getModelDescriptor());
         myTransientModelsCount--;
         if (myLogger.needsInfo()) {
           myLogger.info("unchanged, empty model '" + transientModel.getSModelFqName().getStereotype() + "' removed");
@@ -393,9 +393,6 @@ public class GenerationSession {
   private SModel createTransientModel() {
     String longName = myOriginalInputModel.getLongName();
     String stereotype = Integer.toString(myMajorStep + 1) + "_" + myTransientModelsCount;
-    while (SModelRepository.getInstance().getModelDescriptor(new SModelFqName(longName, stereotype)) != null) {
-      stereotype += "_";
-    }
     SModelDescriptor transientModel = mySessionContext.getModule().createTransientModel(longName, stereotype);
     myTransientModelsCount++;
     transientModel.getSModel().setLoading(true); // we dont need any events to be cast
@@ -406,11 +403,10 @@ public class GenerationSession {
     SModelDescriptor md = model.getModelDescriptor();
     if (model instanceof TransientSModel) {
       ttrace.push("recycling", false);
-      if (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model)) {
-//        myLogger.info("remove spent model '" + model.getSModelFqName() + "'");
-        SModelRepository.getInstance().removeModelDescriptor(md);
-      }
       model.disposeFastNodeFinder();
+      if (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model)) {
+        mySessionContext.getModule().removeModel(md);
+      }
       ttrace.pop();
     }
   }

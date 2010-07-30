@@ -527,10 +527,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     return descendantsKnownInModel;
   }
 
-  public final void delete() {
-    SModelRepository.getInstance().deleteModel(this);
-  }
-
   private void addUsages(SNode current, Set<SNode> nodes, Set<SReference> result) {
     for (SReference ref : current.getReferences()) {
       if (nodes.contains(ref.getTargetNode())) {

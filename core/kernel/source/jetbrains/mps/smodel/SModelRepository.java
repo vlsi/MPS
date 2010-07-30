@@ -282,12 +282,6 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
-  public SModelDescriptor getModelDescriptor(SModelId modelId) {
-    synchronized (myModelsLock) {
-      return myIdToModelDescriptorMap.get(modelId);
-    }
-  }
-
   public SModelDescriptor getModelDescriptor(SModelReference modelReference, ModelOwner owner) {
     synchronized (myModelsLock) {
       SModelDescriptor descriptor = getModelDescriptor(modelReference);

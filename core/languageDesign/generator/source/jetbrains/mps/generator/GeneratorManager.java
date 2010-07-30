@@ -373,6 +373,7 @@ public class GeneratorManager {
         tracer.finishTracing();
         fireAfterGeneration(inputModels);
 
+        project.getComponent(TransientModelsModule.class).publishAll();
         CleanupManager.getInstance().cleanup();
       }
     });

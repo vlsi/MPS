@@ -20,6 +20,7 @@ import java.util.Map;
 
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
@@ -105,8 +106,12 @@ public class DesignPartLoader {
 
     private IModule getModuleFor(SModel smodel) {
         SModelDescriptor smd = smodel.getModelDescriptor();
-        IModule module = null;
-        
+        IModule module = smd.getModule();
+
+        if(module != null) {
+          return module;
+        }
+
         for (ModelOwner owner : SModelRepository.getInstance().getOwners(smd)) {
             if (owner instanceof Solution || owner instanceof Language) {
                 module = (IModule) owner;

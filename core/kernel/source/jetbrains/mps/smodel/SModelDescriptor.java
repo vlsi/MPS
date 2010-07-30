@@ -113,8 +113,6 @@ public interface SModelDescriptor {
   //dramatical event counter
   long structuralState();
 
-  void delete();
-
   boolean isReadOnly();
 
   boolean isEmpty();
@@ -156,4 +154,6 @@ public interface SModelDescriptor {
   boolean isValid(IScope scope);
 
   void rename(SModelFqName newModelFqName, boolean changeFile);
+
+  SModelDescriptor resolveModel(SModelReference reference);
 }

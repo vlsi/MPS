@@ -178,8 +178,8 @@ public class GenerationController {
     return currentGenerationOK;
   }
 
-  private boolean generateModel(SModelDescriptor inputModel, IModule module, IOperationContext invocationContext, ITaskProgressHelper progressHelper) throws GenerationCanceledException {
-    boolean currentGenerationOK;
+  private boolean generateModel(final SModelDescriptor inputModel, final IModule module, final IOperationContext invocationContext, final ITaskProgressHelper progressHelper) throws GenerationCanceledException {
+    boolean currentGenerationOK = false;
 
     IPerformanceTracer ttrace = myGenerationContext.getTracingMode() != GenerationSettings.TRACE_OFF
       ? new PerformanceTracer("model " + NameUtil.shortNameFromLongName(inputModel.getLongName()))
@@ -188,7 +188,7 @@ public class GenerationController {
     boolean traceTypes = myGenerationContext.getTracingMode() == GenerationSettings.TRACE_TYPES;
     TypeChecker.getInstance().setIsGeneration(true, traceTypes ? ttrace : null);
 
-    GenerationSession generationSession = new GenerationSession(
+    final GenerationSession generationSession = new GenerationSession(
       inputModel, invocationContext, myProgress, myLogger, ttrace, myGenerationContext);
 
     try {
@@ -214,14 +214,25 @@ public class GenerationController {
             : "]"));
       }
 
-      GenerationStatus status = generationSession.generateModel();
-      status.setOriginalInputModel(inputModel);
-      currentGenerationOK = status.isOk();
 
-      checkMonitorCanceled();
+      try {
+        currentGenerationOK = GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {
+          @Override
+          public Boolean compute() throws GenerationCanceledException {
+            GenerationStatus status = generationSession.generateModel();
+            status.setOriginalInputModel(inputModel);
+            boolean currentGenerationOK = status.isOk();
 
-      currentGenerationOK = currentGenerationOK && myGenerationHandler.handleOutput(module, inputModel, status, invocationContext, progressHelper);
+            checkMonitorCanceled();
 
+            currentGenerationOK = currentGenerationOK && myGenerationHandler.handleOutput(module, inputModel, status, invocationContext, progressHelper);
+            
+            return currentGenerationOK;
+          }
+        });
+      } catch (GenerationFailureException e) {
+        // never happens
+      }
     } finally {
       Logger.removeLoggingHandler(generationSession.getLoggingHandler());
       generationSession.discardTransients();

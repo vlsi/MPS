@@ -374,6 +374,9 @@ public class GeneratorUtil {
   }
 
   public static <T> T runReadInWrite(final GenerationComputable<T> c) throws GenerationCanceledException, GenerationFailureException {
+    if(ModelAccess.instance().canRead() && !ModelAccess.instance().canWrite()) {
+      return c.compute();
+    }
     try {
       return ModelAccess.instance().runReadInWriteAction(new Computable<T>() {
         @Override

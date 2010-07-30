@@ -58,6 +58,7 @@ public class BaseTransformationTest extends TestCase {
     ModuleContext context = ModuleContext.create(this.myModel, this.myProject.getProject(), false);
     TransientModelsModule module = context.getComponent(TransientModelsModule.class);
     this.myTransidentModel = module.createTransientModel("testTransidentModel", "testTransidentModel");
+    module.publishTransientModel(this.myTransidentModel);
     CloneUtil.cloneModel(this.myModel.getSModel(), this.myTransidentModel.getSModel(), false);
     this.myTransidentModel.getSModel().validateLanguagesAndImports();
   }

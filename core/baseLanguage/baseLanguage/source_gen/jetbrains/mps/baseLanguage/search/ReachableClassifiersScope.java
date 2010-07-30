@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.project.AbstractModule.ModuleScope;
 
 public class ReachableClassifiersScope extends AbstractClassifiersScope {
   private IScope myScope;
@@ -62,6 +63,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
     }
 
     public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
+      assert myScope instanceof ModuleScope;
       SModelDescriptor targetModel = this.myScope.getModelDescriptor(targetModelReference);
       if (targetModel == null) {
         return null;

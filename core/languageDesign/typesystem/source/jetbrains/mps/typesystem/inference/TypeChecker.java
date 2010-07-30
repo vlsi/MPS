@@ -317,7 +317,7 @@ public class TypeChecker implements ApplicationComponent {
 
   public SModel getRuntimeTypesModel() {
     SModelFqName fqName = getRuntimeTypesModelUID();
-    SModelDescriptor modelDescriptor = (SModelRepository.getInstance().getModelDescriptor(fqName));
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(fqName);
 
     if (modelDescriptor == null) { // then create and register model descriptor
       modelDescriptor = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, new SModelReference(fqName, SModelId.generate())) {

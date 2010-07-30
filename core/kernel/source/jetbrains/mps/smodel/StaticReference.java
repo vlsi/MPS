@@ -98,7 +98,15 @@ public class StaticReference extends SReferenceBase {
       return null;
     }
 
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
+    SModelDescriptor current = getSourceNode().getModel().getModelDescriptor();
+    // TODO
+//    if(current == null) {
+//      return null;
+//    }
+
+    SModelDescriptor modelDescriptor = current == null
+      ? SModelRepository.getInstance().getModelDescriptor(targetModelReference)
+      : current.resolveModel(targetModelReference);
     if (modelDescriptor == null) {
       return null;
     }

@@ -384,4 +384,8 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     });
   }
 
+  @Override
+  public SModelDescriptor resolveModel(SModelReference reference) {
+    return SModelRepository.getInstance().getModelDescriptor(reference);
+  }
 }
