@@ -8,6 +8,7 @@
     <projectSolutions>
       <solutionPath path="${project}/solutions/jetbrains.mps.webr.xml.sandbox/jetbrains.mps.webr.xml.sandbox.msd" />
       <solutionPath path="${mps_home}/core/kernel/xmlQuery/runtime/jetbrains.mps.xmlQuery.runtime.msd" folder="" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.xml.tests/jetbrains.mps.xml.tests.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/xml.mpl" />
