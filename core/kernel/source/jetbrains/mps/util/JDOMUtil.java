@@ -26,11 +26,23 @@ import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
 
 public class JDOMUtil {
   private static final Logger LOG = Logger.getLogger(JDOMUtil.class);
   private static final String ENCODING = "UTF-8";
+
+  private static SAXParserFactory factory = null;
+  
+  public static SAXParser createSAXParser() throws SAXException, ParserConfigurationException {
+    if(factory == null) {
+      factory = SAXParserFactory.newInstance();
+    }
+    return factory.newSAXParser();
+  }
 
   public static Document loadDocument(IFile file) throws JDOMException, IOException {
     SAXBuilder saxBuilder = createBuilder();

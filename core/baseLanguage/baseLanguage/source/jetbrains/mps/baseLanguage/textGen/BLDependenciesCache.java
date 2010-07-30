@@ -15,14 +15,21 @@
  */
 package jetbrains.mps.baseLanguage.textGen;
 
-import jetbrains.mps.generator.fileGenerator.XmlBasedModelCache;
-import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
-import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.generator.fileGenerator.AllCaches;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
+import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
+import jetbrains.mps.generator.fileGenerator.XmlBasedModelCache;
+import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.application.ApplicationManager;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXParseException;
+
+import javax.xml.parsers.SAXParser;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
   public static BLDependenciesCache getInstance() {
@@ -52,5 +59,23 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
 
   protected ModelDependencies generateCache(CacheGenerationContext context) {
     return context.getBLDependencies();
+  }
+
+  @Override
+  protected ModelDependencies load(InputStream is) throws IOException {
+    try {
+      SAXParser saxParser = JDOMUtil.createSAXParser();
+      BLDependenciesHandler handler = new BLDependenciesHandler();
+      saxParser.parse(new InputSource(new InputStreamReader(is, "UTF-8")), handler);
+      ModelDependencies dependencies = handler.getResult();
+      if(dependencies != null) {
+        return dependencies;
+      }
+      throw new IOException("empty result");
+    } catch(SAXParseException ex) {
+      throw new IOException(ex);
+    } catch(Exception ex) {
+      throw new IOException(ex);
+    }
   }
 }
