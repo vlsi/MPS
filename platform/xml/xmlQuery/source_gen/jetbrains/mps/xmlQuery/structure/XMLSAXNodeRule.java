@@ -22,6 +22,7 @@ public class XMLSAXNodeRule extends BaseConcept implements INamedConcept {
   public static final String TYPE = "type";
   public static final String TEXT = "text";
   public static final String CREATOR = "creator";
+  public static final String VALIDATOR = "validator";
   public static final String ATTRS = "attrs";
   public static final String CHILDREN = "children";
 
@@ -91,6 +92,14 @@ public class XMLSAXNodeRule extends BaseConcept implements INamedConcept {
 
   public void setCreator(XMLSAXNodeCreator node) {
     super.setChild(XMLSAXNodeRule.CREATOR, node);
+  }
+
+  public XMLSAXNodeValidator getValidator() {
+    return (XMLSAXNodeValidator) this.getChild(XMLSAXNodeValidator.class, XMLSAXNodeRule.VALIDATOR);
+  }
+
+  public void setValidator(XMLSAXNodeValidator node) {
+    super.setChild(XMLSAXNodeRule.VALIDATOR, node);
   }
 
   public int getAttrsesCount() {

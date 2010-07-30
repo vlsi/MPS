@@ -66,7 +66,11 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createConstant_b42orx_m0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_b42orx_n0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_b42orx_o0(editorContext, node));
+    if (renderingCondition_b42orx_a41a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_b42orx_o0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createRefNode_b42orx_p0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_b42orx_q0(editorContext, node));
     return editorCell;
   }
 
@@ -171,8 +175,20 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b42orx_o0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_b42orx_o0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_b42orx_q0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    editorCell.setCellId("Constant_b42orx_q0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -333,6 +349,28 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createRefNode_b42orx_p0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("validator");
+    provider.setNoTargetText("<no validator>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private static boolean renderingCondition_b42orx_a2a(SNode node, EditorContext editorContext, IScope scope) {
     return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "tagName"));
   }
@@ -347,6 +385,10 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_b42orx_a21a(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty() || (SLinkOperations.getTarget(node, "text", true) != null);
+  }
+
+  private static boolean renderingCondition_b42orx_a41a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "validator", true) != null) || (SLinkOperations.getTarget(node, "text", true) != null);
   }
 
   private static class attrsListHandler_b42orx_j0 extends RefNodeListHandler {
