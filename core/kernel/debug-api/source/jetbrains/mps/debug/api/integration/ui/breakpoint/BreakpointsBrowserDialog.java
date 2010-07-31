@@ -3,6 +3,7 @@ package jetbrains.mps.debug.api.integration.ui.breakpoint;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.util.ui.AbstractTableCellEditor;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.ide.dialogs.BaseDialog;
@@ -16,21 +17,22 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import java.awt.Component;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import javax.swing.plaf.basic.BasicBorders.MarginBorder;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableCellRenderer;
+import java.awt.*;
+import java.awt.event.*;
 import java.util.*;
+import java.util.List;
 
 public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider {
   private static final String COMMAND_SHOW_NODE = "COMMAND_SHOW_NODE";
 
   private final JScrollPane myMainPanel;
-  private final JList myBreakpointsList;
+  private final JTable myBreakpointsTable;
   private final IOperationContext myContext;
   private final BreakpointManagerComponent myBreakpointsManager;
-  private final BreakpointsBrowserDialog.MyAbstractListModel myBreakpointsListModel;
+  private final MyAbstractTableModel myBreakpointsTableModel;
 
   public BreakpointsBrowserDialog(IOperationContext context) {
     super(context.getMainFrame(), "Breakpoints");
@@ -38,51 +40,78 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     myContext = context;
     myBreakpointsManager = myContext.getComponent(BreakpointManagerComponent.class);
 
-    myBreakpointsList = new JList();
-    myBreakpointsListModel = new MyAbstractListModel();
-    createBreakpointsList(myBreakpointsListModel);
+    myBreakpointsTable = new JTable();
+    myBreakpointsTableModel = new MyAbstractTableModel();
+    createBreakpointsTable(myBreakpointsTableModel);
 
-    myMainPanel = new JScrollPane(myBreakpointsList);
-
+    myMainPanel = new JScrollPane(myBreakpointsTable);
     addActions();
   }
 
-  private void createBreakpointsList(MyAbstractListModel model) {
-    myBreakpointsList.setModel(model);
+  private void createBreakpointsTable(MyAbstractTableModel model) {
+    myBreakpointsTable.setModel(model);
 
-    myBreakpointsList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-    myBreakpointsList.setCellRenderer(new DefaultListCellRenderer() {
+    myBreakpointsTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    myBreakpointsTable.setShowHorizontalLines(false);
+
+    myBreakpointsTable.getColumnModel().getColumn(0).setCellEditor( new AbstractTableCellEditor() {
+      JPanelWithCheckbox myPanelWithCheckBox;
+
       @Override
-      public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-        Component listCellRendererComponent = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+      public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+        MyAbstractTableModel model = (MyAbstractTableModel) table.getModel();
         if (value != null) {
-          AbstractMPSBreakpoint bp = (AbstractMPSBreakpoint) value;
-          setText(bp.getPresentation());
-          setIcon(BreakpointIconRenderer.getIconFor(bp));
+          AbstractMPSBreakpoint bp = model.getBreakpointAt(row);
+          myPanelWithCheckBox = new JPanelWithCheckbox(bp, true);
+          myPanelWithCheckBox.getCheckBox().addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+              if (stopCellEditing()) {
+                fireEditingStopped();
+              }
+            }
+          });
+          return myPanelWithCheckBox;
         }
-        return listCellRendererComponent;
+        return new JLabel();
+      }
+
+      @Override
+      public Object getCellEditorValue() {
+        return myPanelWithCheckBox.getCheckBox().isSelected();
       }
     });
-    myBreakpointsList.setSelectedIndex(0);
+
+    myBreakpointsTable.getColumnModel().getColumn(0).setCellRenderer(new TableCellRenderer() {
+      @Override
+      public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+        MyAbstractTableModel model = (MyAbstractTableModel) table.getModel();
+        if (value != null) {
+          AbstractMPSBreakpoint bp = model.getBreakpointAt(row);
+          return new JPanelWithCheckbox(bp, isSelected);
+        }
+        return new JLabel();
+      }
+    });
   }
 
   private void addActions() {
     // show on enter
-    myBreakpointsList.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_SHOW_NODE);
-    myBreakpointsList.getActionMap().put(COMMAND_SHOW_NODE, new AbstractAction() {
+    myBreakpointsTable.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_SHOW_NODE);
+    myBreakpointsTable.getActionMap().put(COMMAND_SHOW_NODE, new AbstractAction() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        AbstractMPSBreakpoint breakpoint = (AbstractMPSBreakpoint) myBreakpointsList.getSelectedValue();
+        AbstractMPSBreakpoint breakpoint = getSelectedBreakpoint();
         if (breakpoint == null) return;
         openNode(breakpoint, false, true);
       }
     });
 
     // open on f4
-    myBreakpointsList.registerKeyboardAction(new AbstractAction() {
+    myBreakpointsTable.registerKeyboardAction(new AbstractAction() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        AbstractMPSBreakpoint breakpoint = (AbstractMPSBreakpoint) myBreakpointsList.getSelectedValue();
+        AbstractMPSBreakpoint breakpoint = getSelectedBreakpoint();
         if (breakpoint == null) return;
         dispose();
         openNode(breakpoint, true, true);
@@ -90,10 +119,12 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     // delete on del
-    myBreakpointsList.registerKeyboardAction(new AbstractAction() {
+    myBreakpointsTable.registerKeyboardAction(new AbstractAction() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        final AbstractMPSBreakpoint breakpoint = (AbstractMPSBreakpoint) myBreakpointsList.getSelectedValue();
+        MyAbstractTableModel model = (MyAbstractTableModel) myBreakpointsTable.getModel();
+        model.getBreakpointAt(myBreakpointsTable.getSelectedRow());
+        final AbstractMPSBreakpoint breakpoint = model.getBreakpointAt(myBreakpointsTable.getSelectedRow());
         if (breakpoint == null) return;
         ModelAccess.instance().runReadAction(new Runnable() {
           @Override
@@ -101,16 +132,16 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
             myBreakpointsManager.removeBreakpoint(breakpoint);
           }
         });
-        myBreakpointsListModel.reloadBreakpoints();
+        myBreakpointsTableModel.reloadBreakpoints();
       }
     }, KeyStroke.getKeyStroke("DELETE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     // open on double click
-    myBreakpointsList.addMouseListener(new MouseAdapter() {
+    myBreakpointsTable.addMouseListener(new MouseAdapter() {
       @Override
       public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
-          AbstractMPSBreakpoint breakpoint = (AbstractMPSBreakpoint) myBreakpointsList.getSelectedValue();
+          AbstractMPSBreakpoint breakpoint = getSelectedBreakpoint();
           if (breakpoint == null) return;
           dispose();
           openNode(breakpoint, true, true);
@@ -149,7 +180,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   @Nullable
   public Object getData(@NonNls String dataId) {
     if (dataId.equals(MPSDataKeys.NODE.getName())) {
-      AbstractMPSBreakpoint breakpoint = (AbstractMPSBreakpoint) myBreakpointsList.getSelectedValue();
+      AbstractMPSBreakpoint breakpoint = getSelectedBreakpoint();
       if (breakpoint != null) {
         return breakpoint.getSNode();
       }
@@ -157,10 +188,54 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     return null;
   }
 
-  private class MyAbstractListModel extends AbstractListModel {
+  private AbstractMPSBreakpoint getSelectedBreakpoint() {
+    MyAbstractTableModel model = (MyAbstractTableModel) myBreakpointsTable.getModel();
+    model.getBreakpointAt(myBreakpointsTable.getSelectedRow());
+    AbstractMPSBreakpoint breakpoint = model.getBreakpointAt(myBreakpointsTable.getSelectedRow());
+    return breakpoint;
+  }
+
+
+  private class JPanelWithCheckbox extends JPanel {
+    private JCheckBox myCheckBox;
+    private JLabel myIconLabel;
+
+    public JPanelWithCheckbox(AbstractMPSBreakpoint breakpoint, boolean isSelected) {
+      Color bg;
+      if (isSelected) {
+        bg = UIManager.getColor("Table.selectionBackground");
+      } else {
+        bg = UIManager.getColor("Table.background");
+      }
+      this.setBackground(bg);
+      this.setLayout(new GridBagLayout());
+      myCheckBox = new JCheckBox();
+      myCheckBox.setSelected(breakpoint.isEnabled());
+      myCheckBox.setMargin(new Insets(0, 0, 0, 0));
+      myCheckBox.setBackground(bg);
+      myIconLabel = new JLabel(breakpoint.getPresentation(), BreakpointIconRenderer.getIconFor(breakpoint), SwingConstants.LEFT);
+
+      GridBagConstraints constraints = new GridBagConstraints();
+      constraints.gridy = 0;
+      constraints.gridx = 0;
+      constraints.weighty = 1;
+      constraints.weightx = 0;
+      add(myCheckBox, constraints);
+      constraints.gridx = 1;
+      constraints.weightx = 1;
+      constraints.anchor = GridBagConstraints.WEST;
+      add(myIconLabel, constraints);
+    }
+
+    public JCheckBox getCheckBox() {
+      return myCheckBox;
+    }
+  }
+
+  private class MyAbstractTableModel extends AbstractTableModel {
     private List<AbstractMPSBreakpoint> myBreakpointsList;
 
-    public MyAbstractListModel() {
+    public MyAbstractTableModel() {
       myBreakpointsList = loadBreakpoints();
     }
 
@@ -168,9 +243,9 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
       ApplicationManager.getApplication().assertIsDispatchThread();
 
       List<AbstractMPSBreakpoint> bpList = loadBreakpoints();
-      int size = myBreakpointsList.size();
+      //  int size = myBreakpointsList.size();
       myBreakpointsList = bpList;
-      fireContentsChanged(BreakpointsBrowserDialog.this, 0, size);
+      fireTableDataChanged();
     }
 
     private List<AbstractMPSBreakpoint> loadBreakpoints() {
@@ -199,13 +274,43 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     }
 
     @Override
-    public int getSize() {
+    public int getRowCount() {
       return myBreakpointsList.size();
     }
 
     @Override
-    public Object getElementAt(int index) {
-      return myBreakpointsList.get(index);
+    public int getColumnCount() {
+      return 1;
+    }
+
+    @Override
+    public Object getValueAt(int rowIndex, int columnIndex) {
+      if (columnIndex == 0) {
+        AbstractMPSBreakpoint breakpoint = myBreakpointsList.get(rowIndex);
+        return breakpoint.isEnabled();
+      }
+      return null;
+    }
+
+    @Override
+    public void setValueAt(Object value, int rowIndex, int columnIndex) {
+      if (!(value instanceof Boolean)) return;
+      if (columnIndex != 0) return;
+      AbstractMPSBreakpoint breakpoint = myBreakpointsList.get(rowIndex);
+      if (breakpoint.supportsDisable()) {
+        breakpoint.setEnabled((Boolean) value);
+      }
+    }
+
+    @Override
+    public boolean isCellEditable(int rowIndex, int columnIndex) {
+      if (columnIndex != 0) return false;
+      return myBreakpointsList.get(rowIndex).supportsDisable();
+    }
+
+    public AbstractMPSBreakpoint getBreakpointAt(int row) {
+      return myBreakpointsList.get(row);
     }
   }
+
 }
