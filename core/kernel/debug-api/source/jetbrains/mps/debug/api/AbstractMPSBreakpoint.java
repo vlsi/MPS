@@ -45,8 +45,19 @@ public abstract class AbstractMPSBreakpoint {
   }
 
   public void toggleEnabled() {
+    setEnabled(!myIsEnabled);
+  }
+
+  public void setEnabled(boolean enabled) {
     if (supportsDisable()) {
-      myIsEnabled = !myIsEnabled;
+      if (myIsEnabled != enabled) {
+        myIsEnabled = enabled;
+        if (myIsEnabled) {
+          enableInRunningSessions();
+        } else {
+          disableInRunningSesions();
+        }
+      }
     }
   }
 
@@ -114,9 +125,29 @@ public abstract class AbstractMPSBreakpoint {
     return myProject;
   }
 
+  public void remove() {
+    final BreakpointManagerComponent breakpointManager = myProject.getComponent(BreakpointManagerComponent.class);
+    if (breakpointManager != null) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          breakpointManager.removeBreakpoint(AbstractMPSBreakpoint.this);
+        }
+      });
+    }
+  }
+
   public abstract void removeFromRunningSessions();
 
   public abstract void addToRunningSessions();
+
+  public void disableInRunningSesions() {
+    removeFromRunningSessions();
+  }
+
+  public void enableInRunningSessions() {
+    addToRunningSessions();
+  }
 
   @ToDebugAPI
   public String getPresentation() {
@@ -128,7 +159,7 @@ public abstract class AbstractMPSBreakpoint {
           SNode root = node.getContainingRoot();
           return node + " in " + root + " (" + myNodePointer.getModel().getSModelFqName() + ")";
         } else {
-          return myNodePointer.getNodeId() + " (" + myNodePointer.getModel().getSModelFqName() + ")";  
+          return myNodePointer.getNodeId() + " (" + myNodePointer.getModel().getSModelFqName() + ")";
         }
       }
     });

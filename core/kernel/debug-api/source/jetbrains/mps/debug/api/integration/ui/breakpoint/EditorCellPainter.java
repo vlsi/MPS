@@ -28,10 +28,6 @@ public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> 
   @Nullable
   protected abstract SNode getSNode();
 
-  // TODO: remove this method - looks like all icons can be painted using LeftEditorHighlighter
-  @Nullable
-  protected abstract Image getIcon();
-
   @Nullable
   protected EditorCell_Label findCell(@NotNull EditorComponent editorComponent) {
     SNode node = getSNode();
@@ -65,7 +61,6 @@ public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> 
     if (innerCell != null) {
       paintStripe(g, editorComponent, innerCell);
       paintCellBackground(g, editorComponent);
-      paintIcon(g, innerCell);
     }
   }
 
@@ -74,14 +69,6 @@ public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> 
     EditorCell_Label innerCell = findCell(editorComponent);
     if (innerCell != null) {
       paintCellFrame(g, editorComponent);
-    }
-  }
-
-  private void paintIcon(@NotNull Graphics g, @NotNull EditorCell_Label innerCell) {
-    Image img = getIcon();
-    if (img != null) {
-      int additionalShift = (innerCell.getHeight() - img.getHeight(null)) / 2;
-      g.drawImage(img, 3, innerCell.getY() + additionalShift, null);
     }
   }
 

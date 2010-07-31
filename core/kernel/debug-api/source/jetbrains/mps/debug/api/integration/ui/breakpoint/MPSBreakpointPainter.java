@@ -35,15 +35,9 @@ public class MPSBreakpointPainter extends EditorCellPainter<AbstractMPSBreakpoin
   private static final Color FRAME_COLOR = new Color(255, 100, 100);
 
   private final AbstractMPSBreakpoint myBreakpoint;
-  private MouseListener myMouseListener;
 
   public MPSBreakpointPainter(AbstractMPSBreakpoint mpsBreakpoint) {
     myBreakpoint = mpsBreakpoint;
-  }
-
-  @Override
-  protected Image getIcon() {
-    return null;
   }
 
   @Override

@@ -64,11 +64,6 @@ public class CurrentLinePainter extends EditorCellPainter<SNode> {
   }
 
   @Override
-  protected Image getIcon() {
-    return null;
-  }
-
-  @Override
   public Rectangle getCoverageArea(EditorComponent editorComponent) {
     if (myInvisible) return null;
     EditorCell_Label cell = findCell(editorComponent);

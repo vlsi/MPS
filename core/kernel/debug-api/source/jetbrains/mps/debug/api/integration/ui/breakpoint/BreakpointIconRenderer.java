@@ -92,6 +92,12 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
         myBreakpoint.toggleEnabled();
       }
     });
+    menu.add(new AbstractAction("Remove") {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        myBreakpoint.remove();
+      }
+    });
     return menu;
   }
 }
