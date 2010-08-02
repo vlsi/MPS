@@ -61,4 +61,10 @@ public class UIEditorComponent extends EditorComponent {
   public EditorCell createRootCell() {
     return createRootCell(null);
   }
+
+  @Override
+  public void dispose() {
+    super.dispose();
+    myInspector.dispose();
+  }
 }

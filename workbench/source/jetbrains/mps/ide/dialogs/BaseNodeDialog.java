@@ -153,6 +153,12 @@ public abstract class BaseNodeDialog extends BaseDialog {
   protected void afterSave() {
   }
 
+  @Override
+  public void dispose() {
+    super.dispose();
+    myEditorComponent.dispose();
+  }
+
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void buttonCancel() {
     BaseNodeDialog.this.dispose();
