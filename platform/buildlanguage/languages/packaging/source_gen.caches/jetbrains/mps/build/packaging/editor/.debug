@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1203599720833">
+    <nodeInfo nodeId="1222444952574" fileName="Module_Editor.java" startLine="99" startPosition="105" endLine="100" endPosition="68" />
     <nodeInfo nodeId="1222447273027" fileName="Module_Editor.java" startLine="107" startPosition="165" endLine="108" endPosition="84" />
     <nodeInfo nodeId="1222445443653" fileName="Module_Editor.java" startLine="108" startPosition="84" endLine="109" endPosition="100" />
+    <nodeInfo nodeId="1222444967165" fileName="Module_Editor.java" startLine="120" startPosition="69" endLine="121" endPosition="68" />
     <scopeInfo nodeId="1222444932159" fileName="Module_Editor.java" startLine="99" startPosition="105" endLine="100" endPosition="68" />
     <scopeInfo nodeId="1222444963971" fileName="Module_Editor.java" startLine="120" startPosition="69" endLine="121" endPosition="68" />
     <scopeInfo nodeId="1222444932161" fileName="Module_Editor.java" startLine="107" startPosition="165" endLine="109" endPosition="100" />
   </root>
   <root nodeId="1204015167480">
+    <nodeInfo nodeId="1227800691592" fileName="Copy_Editor.java" startLine="271" startPosition="112" endLine="272" endPosition="131" />
+    <nodeInfo nodeId="1227800691611" fileName="Copy_Editor.java" startLine="275" startPosition="112" endLine="276" endPosition="131" />
     <scopeInfo nodeId="1227800691591" fileName="Copy_Editor.java" startLine="271" startPosition="112" endLine="272" endPosition="131" />
     <scopeInfo nodeId="1227800691610" fileName="Copy_Editor.java" startLine="275" startPosition="112" endLine="276" endPosition="131" />
   </root>
   <root nodeId="1204116610828">
+    <nodeInfo nodeId="1204299963617" fileName="ConfigurationReferencesEditorComponent.java" startLine="76" startPosition="111" endLine="77" endPosition="136" />
     <scopeInfo nodeId="1204299963616" fileName="ConfigurationReferencesEditorComponent.java" startLine="76" startPosition="111" endLine="77" endPosition="136" />
   </root>
   <root nodeId="1205331458763">
+    <nodeInfo nodeId="1240852135862" fileName="Echo_Editor.java" startLine="186" startPosition="111" endLine="187" endPosition="58" />
+    <nodeInfo nodeId="1240852156622" fileName="Echo_Editor.java" startLine="190" startPosition="111" endLine="191" endPosition="61" />
     <scopeInfo nodeId="1240852129628" fileName="Echo_Editor.java" startLine="186" startPosition="111" endLine="187" endPosition="58" />
     <scopeInfo nodeId="1240852153957" fileName="Echo_Editor.java" startLine="190" startPosition="111" endLine="191" endPosition="61" />
   </root>
@@ -44,10 +51,14 @@
     </scopeInfo>
   </root>
   <root nodeId="1220976080906">
+    <nodeInfo nodeId="1226512736972" fileName="MacroReference_Editor.java" startLine="83" startPosition="111" endLine="84" endPosition="79" />
+    <nodeInfo nodeId="1226512790156" fileName="MacroReference_Editor.java" startLine="87" startPosition="111" endLine="88" endPosition="76" />
     <scopeInfo nodeId="1226512727222" fileName="MacroReference_Editor.java" startLine="83" startPosition="111" endLine="84" endPosition="79" />
     <scopeInfo nodeId="1226512785876" fileName="MacroReference_Editor.java" startLine="87" startPosition="111" endLine="88" endPosition="76" />
   </root>
   <root nodeId="1224596805841">
+    <nodeInfo nodeId="1224596934459" fileName="IncludeExcludeEditorComponent.java" startLine="120" startPosition="111" endLine="121" endPosition="131" />
+    <nodeInfo nodeId="1224596971307" fileName="IncludeExcludeEditorComponent.java" startLine="124" startPosition="111" endLine="125" endPosition="131" />
     <scopeInfo nodeId="1224596927798" fileName="IncludeExcludeEditorComponent.java" startLine="120" startPosition="111" endLine="121" endPosition="131" />
     <scopeInfo nodeId="1224596970411" fileName="IncludeExcludeEditorComponent.java" startLine="124" startPosition="111" endLine="125" endPosition="131" />
   </root>

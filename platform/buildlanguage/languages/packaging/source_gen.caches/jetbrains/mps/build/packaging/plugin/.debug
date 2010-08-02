@@ -7,6 +7,7 @@
     <nodeInfo nodeId="1218726094722" fileName="GenerateMPSBuildAction_Action.java" startLine="24" startPosition="0" endLine="25" endPosition="26" />
     <nodeInfo nodeId="1218726094723" fileName="GenerateMPSBuildAction_Action.java" startLine="25" startPosition="26" endLine="26" endPosition="45" />
     <nodeInfo nodeId="1218726094724" fileName="GenerateMPSBuildAction_Action.java" startLine="26" startPosition="45" endLine="27" endPosition="43" />
+    <nodeInfo nodeId="1224852070071" fileName="GenerateMPSBuildAction_Action.java" startLine="40" startPosition="52" endLine="41" endPosition="69" />
     <nodeInfo nodeId="7376433222636454155" fileName="GenerateMPSBuildAction_Action.java" startLine="83" startPosition="9" endLine="84" endPosition="31" />
     <nodeInfo nodeId="1219145705662" fileName="GenerateMPSBuildAction_Action.java" startLine="84" startPosition="31" endLine="85" endPosition="77" />
     <nodeInfo nodeId="1240839661434" fileName="GenerateMPSBuildAction_Action.java" startLine="85" startPosition="77" endLine="86" endPosition="72" />
@@ -452,6 +453,7 @@
     <nodeInfo nodeId="1222950592423" fileName="BuildGeneratorUtil.java" startLine="54" startPosition="5" endLine="55" endPosition="107" />
     <nodeInfo nodeId="1222950592433" fileName="BuildGeneratorUtil.java" startLine="55" startPosition="107" endLine="56" endPosition="68" />
     <nodeInfo nodeId="1222950592438" fileName="BuildGeneratorUtil.java" startLine="56" startPosition="68" endLine="57" endPosition="28" />
+    <nodeInfo nodeId="1240327588373" fileName="BuildGeneratorUtil.java" startLine="60" startPosition="34" endLine="61" endPosition="90" />
     <nodeInfo nodeId="1222950592461" fileName="BuildGeneratorUtil.java" startLine="64" startPosition="39" endLine="65" endPosition="37" />
     <nodeInfo nodeId="1240328311944" fileName="BuildGeneratorUtil.java" startLine="66" startPosition="34" endLine="67" endPosition="87" />
     <nodeInfo nodeId="1240328432467" fileName="BuildGeneratorUtil.java" startLine="68" startPosition="14" endLine="69" endPosition="20" />
@@ -614,6 +616,7 @@
     <nodeInfo nodeId="1223050118718" fileName="CheckBoxNode.java" startLine="21" startPosition="31" endLine="22" endPosition="33" />
     <nodeInfo nodeId="1223050118728" fileName="CheckBoxNode.java" startLine="25" startPosition="49" endLine="26" endPosition="41" />
     <nodeInfo nodeId="1223490045181" fileName="CheckBoxNode.java" startLine="29" startPosition="22" endLine="30" endPosition="23" />
+    <nodeInfo nodeId="1223490168653" fileName="CheckBoxNode.java" startLine="33" startPosition="30" endLine="34" endPosition="28" />
     <nodeInfo nodeId="1223490182156" fileName="CheckBoxNode.java" startLine="37" startPosition="43" endLine="38" endPosition="31" />
     <nodeInfo nodeId="1223655611840" fileName="CheckBoxNode.java" startLine="42" startPosition="58" endLine="43" endPosition="57" />
     <nodeInfo nodeId="1223664177168" fileName="CheckBoxNode.java" startLine="47" startPosition="27" endLine="48" endPosition="44" />
@@ -816,6 +819,7 @@
     <nodeInfo nodeId="1223990752733" fileName="AbstractBuildGenerator.java" startLine="97" startPosition="57" endLine="98" endPosition="43" />
     <nodeInfo nodeId="1224009004865" fileName="AbstractBuildGenerator.java" startLine="99" startPosition="25" endLine="100" endPosition="32" />
     <nodeInfo nodeId="1223990770867" fileName="AbstractBuildGenerator.java" startLine="104" startPosition="38" endLine="105" endPosition="33" />
+    <nodeInfo nodeId="1224845453591" fileName="AbstractBuildGenerator.java" startLine="108" startPosition="48" endLine="109" endPosition="100" />
     <nodeInfo nodeId="1224845371892" fileName="AbstractBuildGenerator.java" startLine="113" startPosition="26" endLine="114" endPosition="19" />
     <nodeInfo nodeId="1224845371898" fileName="AbstractBuildGenerator.java" startLine="115" startPosition="5" endLine="116" endPosition="92" />
     <nodeInfo nodeId="1224845371905" fileName="AbstractBuildGenerator.java" startLine="116" startPosition="92" endLine="117" endPosition="42" />
@@ -1072,6 +1076,7 @@
     <nodeInfo nodeId="1224165867329" fileName="LanguagesStep.java" startLine="90" startPosition="43" endLine="91" endPosition="34" />
     <nodeInfo nodeId="1224168590562" fileName="LanguagesStep.java" startLine="91" startPosition="34" endLine="92" endPosition="32" />
     <nodeInfo nodeId="1224166006436" fileName="LanguagesStep.java" startLine="92" startPosition="32" endLine="93" endPosition="31" />
+    <nodeInfo nodeId="1223050119638" fileName="LanguagesStep.java" startLine="97" startPosition="34" endLine="98" endPosition="56" />
     <nodeInfo nodeId="1223492384483" fileName="LanguagesStep.java" startLine="101" startPosition="39" endLine="102" endPosition="70" />
     <nodeInfo nodeId="1223492808909" fileName="LanguagesStep.java" startLine="102" startPosition="70" endLine="103" endPosition="79" />
     <nodeInfo nodeId="1224169394117" fileName="LanguagesStep.java" startLine="104" startPosition="62" endLine="105" endPosition="42" />
@@ -1093,6 +1098,7 @@
     <nodeInfo nodeId="1223662160259" fileName="LanguagesStep.java" startLine="141" startPosition="103" endLine="142" endPosition="36" />
     <nodeInfo nodeId="1223656981389" fileName="LanguagesStep.java" startLine="146" startPosition="98" endLine="147" endPosition="68" />
     <nodeInfo nodeId="1227210147356" fileName="LanguagesStep.java" startLine="150" startPosition="57" endLine="151" endPosition="30" />
+    <nodeInfo nodeId="1227210197513" fileName="LanguagesStep.java" startLine="154" startPosition="56" endLine="155" endPosition="53" />
     <nodeInfo nodeId="1227210173176" fileName="LanguagesStep.java" startLine="158" startPosition="66" endLine="159" endPosition="25" />
     <nodeInfo nodeId="1223662180045" fileName="LanguagesStep.java" startLine="161" startPosition="9" endLine="162" endPosition="37" />
     <nodeInfo nodeId="1223656849131" fileName="LanguagesStep.java" startLine="165" startPosition="54" endLine="166" endPosition="37" />
@@ -1310,6 +1316,7 @@
     <nodeInfo nodeId="1224165424292" fileName="ModulesListData.java" startLine="13" startPosition="90" endLine="14" endPosition="97" />
     <nodeInfo nodeId="1223050120015" fileName="ModulesListData.java" startLine="17" startPosition="31" endLine="18" endPosition="48" />
     <nodeInfo nodeId="1223050120021" fileName="ModulesListData.java" startLine="18" startPosition="48" endLine="19" endPosition="67" />
+    <nodeInfo nodeId="1240241203558" fileName="ModulesListData.java" startLine="22" startPosition="56" endLine="23" endPosition="62" />
     <nodeInfo nodeId="1223050120037" fileName="ModulesListData.java" startLine="28" startPosition="27" endLine="29" endPosition="36" />
     <nodeInfo nodeId="1223050120045" fileName="ModulesListData.java" startLine="32" startPosition="39" endLine="33" endPosition="23" />
     <nodeInfo nodeId="1224165479807" fileName="ModulesListData.java" startLine="36" startPosition="40" endLine="37" endPosition="26" />
@@ -1383,6 +1390,7 @@
     <nodeInfo nodeId="1224002501741" fileName="SolutionStep.java" startLine="70" startPosition="42" endLine="71" endPosition="42" />
     <nodeInfo nodeId="1224002512477" fileName="SolutionStep.java" startLine="73" startPosition="7" endLine="74" endPosition="78" />
     <nodeInfo nodeId="1224008733689" fileName="SolutionStep.java" startLine="77" startPosition="41" endLine="78" endPosition="16" />
+    <nodeInfo nodeId="1224845382065" fileName="SolutionStep.java" startLine="81" startPosition="42" endLine="82" endPosition="54" />
     <nodeInfo nodeId="1224787414362" fileName="SolutionStep.java" startLine="86" startPosition="26" endLine="87" endPosition="48" />
     <nodeInfo nodeId="1224786805633" fileName="SolutionStep.java" startLine="88" startPosition="5" endLine="89" endPosition="70" />
     <nodeInfo nodeId="1224787255155" fileName="SolutionStep.java" startLine="85" startPosition="48" endLine="88" endPosition="5" />
@@ -1400,6 +1408,7 @@
     <nodeInfo nodeId="1224002501735" fileName="SolutionStep.java" startLine="69" startPosition="114" endLine="73" endPosition="0" />
     <nodeInfo nodeId="1224008728398" fileName="SolutionStep.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
     <nodeInfo nodeId="1224783888554" fileName="SolutionStep.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
+    <nodeInfo nodeId="1224001891598" fileName="SolutionStep.java" startLine="40" startPosition="57" endLine="45" endPosition="7" />
     <nodeInfo nodeId="1224002501719" fileName="SolutionStep.java" startLine="68" startPosition="37" endLine="73" endPosition="7" />
     <nodeInfo nodeId="1224786799967" fileName="SolutionStep.java" startLine="84" startPosition="0" endLine="91" endPosition="0" />
     <nodeInfo nodeId="1224001820832" fileName="SolutionStep.java" startLine="39" startPosition="0" endLine="47" endPosition="0" />
@@ -1570,6 +1579,7 @@
     <nodeInfo nodeId="1223998700497" fileName="TwoOptionsStep.java" startLine="101" startPosition="54" endLine="102" endPosition="86" />
     <nodeInfo nodeId="1223998700505" fileName="TwoOptionsStep.java" startLine="102" startPosition="86" endLine="103" endPosition="62" />
     <nodeInfo nodeId="1224848988789" fileName="TwoOptionsStep.java" startLine="103" startPosition="62" endLine="104" endPosition="76" />
+    <nodeInfo nodeId="1224000230093" fileName="TwoOptionsStep.java" startLine="109" startPosition="44" endLine="110" endPosition="53" />
     <nodeInfo nodeId="1224783926550" fileName="TwoOptionsStep.java" startLine="113" startPosition="40" endLine="114" endPosition="50" />
     <nodeInfo nodeId="1224848534440" fileName="TwoOptionsStep.java" startLine="114" startPosition="50" endLine="115" endPosition="61" />
     <nodeInfo nodeId="1224848404091" fileName="TwoOptionsStep.java" startLine="117" startPosition="46" endLine="118" endPosition="54" />
@@ -1611,6 +1621,7 @@
     <nodeInfo nodeId="1224783930215" fileName="TwoOptionsStep.java" startLine="115" startPosition="61" endLine="120" endPosition="7" />
     <nodeInfo nodeId="1223998740001" fileName="TwoOptionsStep.java" startLine="135" startPosition="0" endLine="140" endPosition="0" />
     <nodeInfo nodeId="1223998700491" fileName="TwoOptionsStep.java" startLine="100" startPosition="84" endLine="106" endPosition="0" />
+    <nodeInfo nodeId="1223998700483" fileName="TwoOptionsStep.java" startLine="99" startPosition="45" endLine="106" endPosition="7" />
     <nodeInfo nodeId="1224848420513" fileName="TwoOptionsStep.java" startLine="125" startPosition="38" endLine="132" endPosition="5" />
     <nodeInfo nodeId="1224000345814" fileName="TwoOptionsStep.java" startLine="81" startPosition="0" endLine="89" endPosition="0" />
     <nodeInfo nodeId="1224000195991" fileName="TwoOptionsStep.java" startLine="89" startPosition="0" endLine="98" endPosition="0" />
@@ -1728,6 +1739,7 @@
     <nodeInfo nodeId="1224159924724" fileName="ModelStep.java" startLine="86" startPosition="9" endLine="87" endPosition="95" />
     <nodeInfo nodeId="1224007995618" fileName="ModelStep.java" startLine="91" startPosition="34" endLine="92" endPosition="50" />
     <nodeInfo nodeId="1224008648758" fileName="ModelStep.java" startLine="95" startPosition="41" endLine="96" endPosition="51" />
+    <nodeInfo nodeId="1224845460452" fileName="ModelStep.java" startLine="99" startPosition="42" endLine="100" endPosition="51" />
     <nodeInfo nodeId="1224787386780" fileName="ModelStep.java" startLine="104" startPosition="26" endLine="105" endPosition="45" />
     <nodeInfo nodeId="1224787292293" fileName="ModelStep.java" startLine="106" startPosition="5" endLine="107" endPosition="69" />
     <nodeInfo nodeId="1224007565787" fileName="ModelStep.java" startLine="18" startPosition="65" endLine="21" endPosition="3" />
@@ -1746,10 +1758,12 @@
     <nodeInfo nodeId="1224007981020" fileName="ModelStep.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
     <nodeInfo nodeId="1224008644241" fileName="ModelStep.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
     <nodeInfo nodeId="1224785935824" fileName="ModelStep.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
+    <nodeInfo nodeId="1224007738174" fileName="ModelStep.java" startLine="35" startPosition="65" endLine="40" endPosition="7" />
     <nodeInfo nodeId="1224163112049" fileName="ModelStep.java" startLine="76" startPosition="15" endLine="81" endPosition="15" />
     <nodeInfo nodeId="1224787292281" fileName="ModelStep.java" startLine="102" startPosition="0" endLine="109" endPosition="0" />
     <nodeInfo nodeId="1224007626889" fileName="ModelStep.java" startLine="34" startPosition="0" endLine="42" endPosition="0" />
     <nodeInfo nodeId="1224163112043" fileName="ModelStep.java" startLine="71" startPosition="92" endLine="84" endPosition="0" />
+    <nodeInfo nodeId="1224163112036" fileName="ModelStep.java" startLine="70" startPosition="49" endLine="84" endPosition="13" />
     <nodeInfo nodeId="1224163112033" fileName="ModelStep.java" startLine="69" startPosition="130" endLine="86" endPosition="0" />
     <nodeInfo nodeId="1224162760191" fileName="ModelStep.java" startLine="68" startPosition="115" endLine="86" endPosition="9" />
     <nodeInfo nodeId="1224159045547" fileName="ModelStep.java" startLine="67" startPosition="10" endLine="88" endPosition="5" />
@@ -1837,6 +1851,7 @@
   </root>
   <root nodeId="1224851548023">
     <nodeInfo nodeId="1224856655746" fileName="GenerateTextFromBuild.java" startLine="27" startPosition="36" endLine="28" endPosition="76" />
+    <nodeInfo nodeId="1224851586140" fileName="GenerateTextFromBuild.java" startLine="35" startPosition="31" endLine="36" endPosition="141" />
     <nodeInfo nodeId="7376433222636453979" fileName="GenerateTextFromBuild.java" startLine="38" startPosition="7" endLine="39" endPosition="22" />
     <nodeInfo nodeId="1224851586148" fileName="GenerateTextFromBuild.java" startLine="39" startPosition="22" endLine="40" endPosition="91" />
     <nodeInfo nodeId="6053328609845221841" fileName="GenerateTextFromBuild.java" startLine="40" startPosition="91" endLine="41" endPosition="46" />
@@ -1927,6 +1942,7 @@
     <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="57" startPosition="58" endLine="58" endPosition="115" />
     <nodeInfo nodeId="1325286122618217638" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="58" startPosition="115" endLine="59" endPosition="58" />
     <nodeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="59" startPosition="58" endLine="60" endPosition="81" />
+    <nodeInfo nodeId="1325286122618175273" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="69" startPosition="56" endLine="70" endPosition="140" />
     <nodeInfo nodeId="1325286122618176635" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="40" startPosition="7" endLine="43" endPosition="5" />
     <nodeInfo nodeId="1325286122618219159" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="36" startPosition="57" endLine="40" endPosition="0" />
     <nodeInfo nodeId="1325286122618219125" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="46" startPosition="57" endLine="50" endPosition="0" />
@@ -1964,6 +1980,7 @@
     <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="53" startPosition="61" endLine="54" endPosition="118" />
     <nodeInfo nodeId="1325286122618219334" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="54" startPosition="118" endLine="55" endPosition="71" />
     <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="55" startPosition="71" endLine="56" endPosition="85" />
+    <nodeInfo nodeId="1325286122618219202" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="65" startPosition="56" endLine="66" endPosition="144" />
     <nodeInfo nodeId="1325286122618219279" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="43" startPosition="7" endLine="46" endPosition="5" />
     <nodeInfo nodeId="1325286122618219208" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="37" startPosition="57" endLine="43" endPosition="0" />
     <nodeInfo nodeId="1325286122618219207" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="36" startPosition="74" endLine="43" endPosition="7" />
@@ -2085,6 +2102,7 @@
     <nodeInfo nodeId="5034000232919200819" fileName="ConfigurationChoosePanel.java" startLine="84" startPosition="25" endLine="85" endPosition="73" />
     <nodeInfo nodeId="5034000232919200837" fileName="ConfigurationChoosePanel.java" startLine="87" startPosition="7" endLine="88" endPosition="20" />
     <nodeInfo nodeId="5842104767988518180" fileName="ConfigurationChoosePanel.java" startLine="95" startPosition="48" endLine="96" endPosition="69" />
+    <nodeInfo nodeId="5842104767988518052" fileName="ConfigurationChoosePanel.java" startLine="99" startPosition="26" endLine="100" endPosition="69" />
     <nodeInfo nodeId="5842104767988518202" fileName="ConfigurationChoosePanel.java" startLine="103" startPosition="37" endLine="104" endPosition="59" />
     <nodeInfo nodeId="5842104767988518210" fileName="ConfigurationChoosePanel.java" startLine="107" startPosition="39" endLine="108" endPosition="75" />
     <nodeInfo nodeId="5842104767988515972" fileName="ConfigurationChoosePanel.java" startLine="112" startPosition="44" endLine="113" endPosition="78" />

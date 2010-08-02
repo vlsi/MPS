@@ -32,7 +32,7 @@ public class IndexedTupleViewer_Factory extends ValueWrapperFactory {
 
   public static class IndexedTupleViewer_Wrapper extends ValueWrapper {
     public IndexedTupleViewer_Wrapper(JavaValue value) {
-      super(value);     
+      super(value);
     }
 
     public List<CustomJavaWatchable> getSubvaluesImpl() {

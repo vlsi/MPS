@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="7323449223785111020">
+    <nodeInfo nodeId="7323449223785111026" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="109" />
+    <nodeInfo nodeId="7323449223785135329" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="40" startPosition="48" endLine="41" endPosition="163" />
     <nodeInfo nodeId="7323449223785135348" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="43" startPosition="15" endLine="44" endPosition="75" />
     <nodeInfo nodeId="7323449223785151914" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="46" startPosition="9" endLine="47" endPosition="97" />
     <nodeInfo nodeId="7323449223785135327" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="39" startPosition="152" endLine="43" endPosition="0" />

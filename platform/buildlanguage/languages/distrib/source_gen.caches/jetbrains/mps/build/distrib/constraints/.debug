@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1230207820573">
+    <nodeInfo nodeId="1230207830478" fileName="SystemSpecificConfig_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="128" />
+    <scopeInfo nodeId="1230207824559" fileName="SystemSpecificConfig_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="128" />
+  </root>
+  <root nodeId="1230295100092">
+    <nodeInfo nodeId="1230295113464" fileName="DistribConfiguration_projectFolder_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="109" />
+    <scopeInfo nodeId="1230295109356" fileName="DistribConfiguration_projectFolder_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="109" />
+  </root>
+  <root nodeId="1234515214530">
+    <nodeInfo nodeId="1234515262336" fileName="ExternalVariableReference_variable_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="153" />
+    <nodeInfo nodeId="1234515309619" fileName="ExternalVariableReference_variable_ReferentConstraint.java" startLine="32" startPosition="153" endLine="33" endPosition="78" />
+    <nodeInfo nodeId="1234515273341" fileName="ExternalVariableReference_variable_ReferentConstraint.java" startLine="33" startPosition="78" endLine="34" endPosition="254" />
+    <nodeInfo nodeId="1234515367177" fileName="ExternalVariableReference_variable_ReferentConstraint.java" startLine="34" startPosition="254" endLine="35" endPosition="247" />
+    <nodeInfo nodeId="1234515402474" fileName="ExternalVariableReference_variable_ReferentConstraint.java" startLine="35" startPosition="247" endLine="36" endPosition="25" />
+    <scopeInfo nodeId="1234515222367" fileName="ExternalVariableReference_variable_ReferentConstraint.java" startLine="31" startPosition="132" endLine="36" endPosition="25">
+      <varInfo nodeId="1234515309620" varName="availableVars" />
+      <varInfo nodeId="1234515262337" varName="ancestor" />
+    </scopeInfo>
+  </root>
+</debugInfo>
+

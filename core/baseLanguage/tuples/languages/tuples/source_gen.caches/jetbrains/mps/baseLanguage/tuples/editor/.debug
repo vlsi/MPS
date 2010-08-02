@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1239377826323">
+    <nodeInfo nodeId="1239459835939" fileName="NamedTupleDeclaration_Editor.java" startLine="285" startPosition="111" endLine="286" endPosition="99" />
+    <nodeInfo nodeId="1239460104356" fileName="NamedTupleDeclaration_Editor.java" startLine="289" startPosition="111" endLine="290" endPosition="124" />
     <nodeInfo nodeId="1240501437254" fileName="NamedTupleDeclaration_Editor.java" startLine="293" startPosition="111" endLine="294" endPosition="112" />
+    <nodeInfo nodeId="1240486049937" fileName="NamedTupleDeclaration_Editor.java" startLine="297" startPosition="111" endLine="298" endPosition="96" />
     <scopeInfo nodeId="1239459835938" fileName="NamedTupleDeclaration_Editor.java" startLine="285" startPosition="111" endLine="286" endPosition="99" />
     <scopeInfo nodeId="1239460104355" fileName="NamedTupleDeclaration_Editor.java" startLine="289" startPosition="111" endLine="290" endPosition="124" />
     <scopeInfo nodeId="1240501436452" fileName="NamedTupleDeclaration_Editor.java" startLine="293" startPosition="111" endLine="294" endPosition="112" />
     <scopeInfo nodeId="1240486047313" fileName="NamedTupleDeclaration_Editor.java" startLine="297" startPosition="111" endLine="298" endPosition="96" />
   </root>
   <root nodeId="1239463226387">
+    <nodeInfo nodeId="1239463497085" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="138" startPosition="111" endLine="139" endPosition="99" />
+    <nodeInfo nodeId="1240400938375" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="142" startPosition="111" endLine="143" endPosition="57" />
     <nodeInfo nodeId="7376433222636453427" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="188" startPosition="100" endLine="189" endPosition="51" />
     <nodeInfo nodeId="1239463555272" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="189" startPosition="51" endLine="190" endPosition="26" />
     <nodeInfo nodeId="1239463555276" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="190" startPosition="26" endLine="191" endPosition="69" />
@@ -31,10 +36,12 @@
     </scopeInfo>
   </root>
   <root nodeId="1239546792005">
+    <nodeInfo nodeId="1239881184387" fileName="NamedTupleType_Editor.java" startLine="278" startPosition="111" endLine="279" endPosition="98" />
     <nodeInfo nodeId="1239550803955" fileName="NamedTupleType_Editor.java" startLine="297" startPosition="33" endLine="298" endPosition="49" />
     <nodeInfo nodeId="1239550910318" fileName="NamedTupleType_Editor.java" startLine="298" startPosition="49" endLine="299" endPosition="26" />
     <nodeInfo nodeId="1239550892643" fileName="NamedTupleType_Editor.java" startLine="300" startPosition="82" endLine="301" endPosition="79" />
     <nodeInfo nodeId="1239550928906" fileName="NamedTupleType_Editor.java" startLine="301" startPosition="79" endLine="302" endPosition="23" />
+    <nodeInfo nodeId="1239550940266" fileName="NamedTupleType_Editor.java" startLine="303" startPosition="11" endLine="304" endPosition="31" />
     <nodeInfo nodeId="1239883957879" fileName="NamedTupleType_Editor.java" startLine="385" startPosition="117" endLine="386" endPosition="114" />
     <nodeInfo nodeId="1239550874594" fileName="NamedTupleType_Editor.java" startLine="299" startPosition="26" endLine="303" endPosition="11" />
     <scopeInfo nodeId="1239881184386" fileName="NamedTupleType_Editor.java" startLine="278" startPosition="111" endLine="279" endPosition="98" />
@@ -53,7 +60,10 @@
     <scopeInfo nodeId="1240401003114" fileName="NTCD_delete_final.java" startLine="28" startPosition="75" endLine="29" endPosition="57" />
   </root>
   <root nodeId="1240683947580">
+    <nodeInfo nodeId="1240691521182" fileName="InterfaceTupleType_Editor.java" startLine="132" startPosition="63" endLine="133" endPosition="102" />
+    <nodeInfo nodeId="1240704004572" fileName="InterfaceTupleType_Editor.java" startLine="218" startPosition="111" endLine="219" endPosition="102" />
     <nodeInfo nodeId="1240691504105" fileName="InterfaceTupleType_Editor.java" startLine="131" startPosition="208" endLine="135" endPosition="0" />
+    <nodeInfo nodeId="1240691495942" fileName="InterfaceTupleType_Editor.java" startLine="130" startPosition="31" endLine="135" endPosition="18" />
     <scopeInfo nodeId="1240691504106" fileName="InterfaceTupleType_Editor.java" startLine="132" startPosition="63" endLine="133" endPosition="102" />
     <scopeInfo nodeId="1240704003377" fileName="InterfaceTupleType_Editor.java" startLine="218" startPosition="111" endLine="219" endPosition="102" />
     <scopeInfo nodeId="1240691504105" fileName="InterfaceTupleType_Editor.java" startLine="131" startPosition="208" endLine="135" endPosition="0" />
