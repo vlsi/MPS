@@ -1722,47 +1722,48 @@
     <nodeInfo nodeId="8703532998807100850" fileName="GenerateGettersAndSetters_Intention.java" startLine="95" startPosition="32" endLine="96" endPosition="16" />
     <nodeInfo nodeId="2289347497785565829" fileName="GenerateGettersAndSetters_Intention.java" startLine="98" startPosition="7" endLine="99" endPosition="30" />
     <nodeInfo nodeId="2289347497784783886" fileName="GenerateGettersAndSetters_Intention.java" startLine="103" startPosition="111" endLine="104" endPosition="105" />
-    <nodeInfo nodeId="8703532998806977545" fileName="GenerateGettersAndSetters_Intention.java" startLine="104" startPosition="105" endLine="105" endPosition="127" />
-    <nodeInfo nodeId="6359146168315043628" fileName="GenerateGettersAndSetters_Intention.java" startLine="105" startPosition="127" endLine="106" endPosition="27" />
-    <nodeInfo nodeId="1941346475355983542" fileName="GenerateGettersAndSetters_Intention.java" startLine="106" startPosition="27" endLine="107" endPosition="75" />
-    <nodeInfo nodeId="2289347497784783899" fileName="GenerateGettersAndSetters_Intention.java" startLine="108" startPosition="112" endLine="109" endPosition="101" />
-    <nodeInfo nodeId="2289347497784783908" fileName="GenerateGettersAndSetters_Intention.java" startLine="109" startPosition="101" endLine="110" endPosition="75" />
-    <nodeInfo nodeId="2289347497784783934" fileName="GenerateGettersAndSetters_Intention.java" startLine="113" startPosition="163" endLine="114" endPosition="41" />
-    <nodeInfo nodeId="6359146168315043770" fileName="GenerateGettersAndSetters_Intention.java" startLine="118" startPosition="36" endLine="119" endPosition="17" />
-    <nodeInfo nodeId="6359146168315043634" fileName="GenerateGettersAndSetters_Intention.java" startLine="120" startPosition="7" endLine="121" endPosition="279" />
-    <nodeInfo nodeId="2289347497785000384" fileName="GenerateGettersAndSetters_Intention.java" startLine="121" startPosition="279" endLine="122" endPosition="0" />
-    <nodeInfo nodeId="2289347497784983684" fileName="GenerateGettersAndSetters_Intention.java" startLine="122" startPosition="0" endLine="123" endPosition="101" />
-    <nodeInfo nodeId="2289347497784983693" fileName="GenerateGettersAndSetters_Intention.java" startLine="123" startPosition="101" endLine="124" endPosition="75" />
-    <nodeInfo nodeId="2289347497784983721" fileName="GenerateGettersAndSetters_Intention.java" startLine="127" startPosition="174" endLine="128" endPosition="41" />
-    <nodeInfo nodeId="2289347497784983729" fileName="GenerateGettersAndSetters_Intention.java" startLine="132" startPosition="36" endLine="133" endPosition="17" />
-    <nodeInfo nodeId="1941346475356850804" fileName="GenerateGettersAndSetters_Intention.java" startLine="134" startPosition="7" endLine="135" endPosition="104" />
-    <nodeInfo nodeId="6359146168315043668" fileName="GenerateGettersAndSetters_Intention.java" startLine="135" startPosition="104" endLine="136" endPosition="295" />
-    <nodeInfo nodeId="6359146168315043757" fileName="GenerateGettersAndSetters_Intention.java" startLine="138" startPosition="28" endLine="139" endPosition="38" />
-    <nodeInfo nodeId="6359146168315167136" fileName="GenerateGettersAndSetters_Intention.java" startLine="143" startPosition="116" endLine="144" endPosition="140" />
-    <nodeInfo nodeId="6359146168315167148" fileName="GenerateGettersAndSetters_Intention.java" startLine="144" startPosition="140" endLine="145" endPosition="36" />
-    <nodeInfo nodeId="6359146168315167152" fileName="GenerateGettersAndSetters_Intention.java" startLine="145" startPosition="36" endLine="146" endPosition="109" />
-    <nodeInfo nodeId="6359146168315167158" fileName="GenerateGettersAndSetters_Intention.java" startLine="146" startPosition="109" endLine="147" endPosition="42" />
+    <nodeInfo nodeId="6359146168315043628" fileName="GenerateGettersAndSetters_Intention.java" startLine="104" startPosition="105" endLine="105" endPosition="27" />
+    <nodeInfo nodeId="1941346475355983542" fileName="GenerateGettersAndSetters_Intention.java" startLine="105" startPosition="27" endLine="106" endPosition="75" />
+    <nodeInfo nodeId="2289347497784783899" fileName="GenerateGettersAndSetters_Intention.java" startLine="107" startPosition="112" endLine="108" endPosition="101" />
+    <nodeInfo nodeId="2289347497784783908" fileName="GenerateGettersAndSetters_Intention.java" startLine="108" startPosition="101" endLine="109" endPosition="75" />
+    <nodeInfo nodeId="2289347497784783934" fileName="GenerateGettersAndSetters_Intention.java" startLine="112" startPosition="163" endLine="113" endPosition="41" />
+    <nodeInfo nodeId="6359146168315043770" fileName="GenerateGettersAndSetters_Intention.java" startLine="117" startPosition="36" endLine="118" endPosition="17" />
+    <nodeInfo nodeId="5377859299070124103" fileName="GenerateGettersAndSetters_Intention.java" startLine="119" startPosition="7" endLine="120" endPosition="136" />
+    <nodeInfo nodeId="5377859299070124111" fileName="GenerateGettersAndSetters_Intention.java" startLine="120" startPosition="136" endLine="121" endPosition="85" />
+    <nodeInfo nodeId="6359146168315043634" fileName="GenerateGettersAndSetters_Intention.java" startLine="121" startPosition="85" endLine="122" endPosition="272" />
+    <nodeInfo nodeId="2289347497785000384" fileName="GenerateGettersAndSetters_Intention.java" startLine="122" startPosition="272" endLine="123" endPosition="0" />
+    <nodeInfo nodeId="2289347497784983684" fileName="GenerateGettersAndSetters_Intention.java" startLine="123" startPosition="0" endLine="124" endPosition="101" />
+    <nodeInfo nodeId="2289347497784983693" fileName="GenerateGettersAndSetters_Intention.java" startLine="124" startPosition="101" endLine="125" endPosition="75" />
+    <nodeInfo nodeId="2289347497784983721" fileName="GenerateGettersAndSetters_Intention.java" startLine="128" startPosition="174" endLine="129" endPosition="41" />
+    <nodeInfo nodeId="2289347497784983729" fileName="GenerateGettersAndSetters_Intention.java" startLine="133" startPosition="36" endLine="134" endPosition="17" />
+    <nodeInfo nodeId="1941346475356850804" fileName="GenerateGettersAndSetters_Intention.java" startLine="135" startPosition="7" endLine="136" endPosition="104" />
+    <nodeInfo nodeId="6359146168315043668" fileName="GenerateGettersAndSetters_Intention.java" startLine="136" startPosition="104" endLine="137" endPosition="314" />
+    <nodeInfo nodeId="6359146168315043757" fileName="GenerateGettersAndSetters_Intention.java" startLine="139" startPosition="28" endLine="140" endPosition="38" />
+    <nodeInfo nodeId="6359146168315167136" fileName="GenerateGettersAndSetters_Intention.java" startLine="144" startPosition="116" endLine="145" endPosition="140" />
+    <nodeInfo nodeId="6359146168315167148" fileName="GenerateGettersAndSetters_Intention.java" startLine="145" startPosition="140" endLine="146" endPosition="36" />
+    <nodeInfo nodeId="6359146168315167152" fileName="GenerateGettersAndSetters_Intention.java" startLine="146" startPosition="36" endLine="147" endPosition="109" />
+    <nodeInfo nodeId="6359146168315167158" fileName="GenerateGettersAndSetters_Intention.java" startLine="147" startPosition="109" endLine="148" endPosition="42" />
     <nodeInfo nodeId="2289347497785541340" fileName="GenerateGettersAndSetters_Intention.java" startLine="59" startPosition="148" endLine="62" endPosition="5" />
-    <nodeInfo nodeId="2289347497784783920" fileName="GenerateGettersAndSetters_Intention.java" startLine="112" startPosition="37" endLine="115" endPosition="11" />
-    <nodeInfo nodeId="6359146168315043763" fileName="GenerateGettersAndSetters_Intention.java" startLine="117" startPosition="9" endLine="120" endPosition="7" />
-    <nodeInfo nodeId="2289347497784983705" fileName="GenerateGettersAndSetters_Intention.java" startLine="126" startPosition="41" endLine="129" endPosition="11" />
-    <nodeInfo nodeId="2289347497784983727" fileName="GenerateGettersAndSetters_Intention.java" startLine="131" startPosition="9" endLine="134" endPosition="7" />
-    <nodeInfo nodeId="6359146168315043748" fileName="GenerateGettersAndSetters_Intention.java" startLine="137" startPosition="5" endLine="140" endPosition="5" />
+    <nodeInfo nodeId="2289347497784783920" fileName="GenerateGettersAndSetters_Intention.java" startLine="111" startPosition="37" endLine="114" endPosition="11" />
+    <nodeInfo nodeId="6359146168315043763" fileName="GenerateGettersAndSetters_Intention.java" startLine="116" startPosition="9" endLine="119" endPosition="7" />
+    <nodeInfo nodeId="2289347497784983705" fileName="GenerateGettersAndSetters_Intention.java" startLine="127" startPosition="41" endLine="130" endPosition="11" />
+    <nodeInfo nodeId="2289347497784983727" fileName="GenerateGettersAndSetters_Intention.java" startLine="132" startPosition="9" endLine="135" endPosition="7" />
+    <nodeInfo nodeId="6359146168315043748" fileName="GenerateGettersAndSetters_Intention.java" startLine="138" startPosition="5" endLine="141" endPosition="5" />
     <nodeInfo nodeId="8703532998807100242" fileName="GenerateGettersAndSetters_Intention.java" startLine="68" startPosition="188" endLine="72" endPosition="0" />
     <nodeInfo nodeId="2289347497785541395" fileName="GenerateGettersAndSetters_Intention.java" startLine="74" startPosition="7" endLine="78" endPosition="7" />
     <nodeInfo nodeId="8703532998807100520" fileName="GenerateGettersAndSetters_Intention.java" startLine="87" startPosition="190" endLine="91" endPosition="0" />
     <nodeInfo nodeId="2289347497785565818" fileName="GenerateGettersAndSetters_Intention.java" startLine="93" startPosition="9" endLine="97" endPosition="9" />
-    <nodeInfo nodeId="2289347497784783918" fileName="GenerateGettersAndSetters_Intention.java" startLine="111" startPosition="118" endLine="117" endPosition="0" />
-    <nodeInfo nodeId="2289347497784983703" fileName="GenerateGettersAndSetters_Intention.java" startLine="125" startPosition="118" endLine="131" endPosition="0" />
+    <nodeInfo nodeId="2289347497784783918" fileName="GenerateGettersAndSetters_Intention.java" startLine="110" startPosition="118" endLine="116" endPosition="0" />
+    <nodeInfo nodeId="2289347497784983703" fileName="GenerateGettersAndSetters_Intention.java" startLine="126" startPosition="118" endLine="132" endPosition="0" />
     <nodeInfo nodeId="8703532998807100224" fileName="GenerateGettersAndSetters_Intention.java" startLine="67" startPosition="108" endLine="74" endPosition="7" />
     <nodeInfo nodeId="8703532998807100502" fileName="GenerateGettersAndSetters_Intention.java" startLine="86" startPosition="46" endLine="93" endPosition="9" />
-    <nodeInfo nodeId="2289347497784783912" fileName="GenerateGettersAndSetters_Intention.java" startLine="110" startPosition="75" endLine="117" endPosition="9" />
-    <nodeInfo nodeId="2289347497784983697" fileName="GenerateGettersAndSetters_Intention.java" startLine="124" startPosition="75" endLine="131" endPosition="9" />
+    <nodeInfo nodeId="2289347497784783912" fileName="GenerateGettersAndSetters_Intention.java" startLine="109" startPosition="75" endLine="116" endPosition="9" />
+    <nodeInfo nodeId="2289347497784983697" fileName="GenerateGettersAndSetters_Intention.java" startLine="125" startPosition="75" endLine="132" endPosition="9" />
     <nodeInfo nodeId="2289347497785541351" fileName="GenerateGettersAndSetters_Intention.java" startLine="64" startPosition="71" endLine="79" endPosition="5" />
     <nodeInfo nodeId="2289347497785565781" fileName="GenerateGettersAndSetters_Intention.java" startLine="83" startPosition="35" endLine="98" endPosition="7" />
     <nodeInfo nodeId="2289347497785584373" fileName="GenerateGettersAndSetters_Intention.java" startLine="82" startPosition="10" endLine="100" endPosition="5" />
     <nodeInfo nodeId="2289347497785565737" fileName="GenerateGettersAndSetters_Intention.java" startLine="79" startPosition="5" endLine="100" endPosition="5" />
-    <nodeInfo nodeId="2289347497784783897" fileName="GenerateGettersAndSetters_Intention.java" startLine="107" startPosition="75" endLine="137" endPosition="5" />
+    <nodeInfo nodeId="2289347497784783897" fileName="GenerateGettersAndSetters_Intention.java" startLine="106" startPosition="75" endLine="138" endPosition="5" />
     <scopeInfo nodeId="4183818788368444773" fileName="GenerateGettersAndSetters_Intention.java" startLine="47" startPosition="85" endLine="48" endPosition="33" />
     <scopeInfo nodeId="2289347497785541341" fileName="GenerateGettersAndSetters_Intention.java" startLine="60" startPosition="50" endLine="61" endPosition="19" />
     <scopeInfo nodeId="8703532998807100243" fileName="GenerateGettersAndSetters_Intention.java" startLine="69" startPosition="41" endLine="70" endPosition="164" />
@@ -1770,22 +1771,22 @@
     <scopeInfo nodeId="2289347497785584369" fileName="GenerateGettersAndSetters_Intention.java" startLine="80" startPosition="35" endLine="81" endPosition="18" />
     <scopeInfo nodeId="8703532998807100521" fileName="GenerateGettersAndSetters_Intention.java" startLine="88" startPosition="43" endLine="89" endPosition="212" />
     <scopeInfo nodeId="8703532998807100503" fileName="GenerateGettersAndSetters_Intention.java" startLine="91" startPosition="13" endLine="92" endPosition="39" />
-    <scopeInfo nodeId="2289347497784783933" fileName="GenerateGettersAndSetters_Intention.java" startLine="113" startPosition="163" endLine="114" endPosition="41" />
-    <scopeInfo nodeId="6359146168315043764" fileName="GenerateGettersAndSetters_Intention.java" startLine="118" startPosition="36" endLine="119" endPosition="17" />
-    <scopeInfo nodeId="2289347497784983720" fileName="GenerateGettersAndSetters_Intention.java" startLine="127" startPosition="174" endLine="128" endPosition="41" />
-    <scopeInfo nodeId="2289347497784983728" fileName="GenerateGettersAndSetters_Intention.java" startLine="132" startPosition="36" endLine="133" endPosition="17" />
-    <scopeInfo nodeId="6359146168315043749" fileName="GenerateGettersAndSetters_Intention.java" startLine="138" startPosition="28" endLine="139" endPosition="38" />
+    <scopeInfo nodeId="2289347497784783933" fileName="GenerateGettersAndSetters_Intention.java" startLine="112" startPosition="163" endLine="113" endPosition="41" />
+    <scopeInfo nodeId="6359146168315043764" fileName="GenerateGettersAndSetters_Intention.java" startLine="117" startPosition="36" endLine="118" endPosition="17" />
+    <scopeInfo nodeId="2289347497784983720" fileName="GenerateGettersAndSetters_Intention.java" startLine="128" startPosition="174" endLine="129" endPosition="41" />
+    <scopeInfo nodeId="2289347497784983728" fileName="GenerateGettersAndSetters_Intention.java" startLine="133" startPosition="36" endLine="134" endPosition="17" />
+    <scopeInfo nodeId="6359146168315043749" fileName="GenerateGettersAndSetters_Intention.java" startLine="139" startPosition="28" endLine="140" endPosition="38" />
     <scopeInfo nodeId="2289347497785541396" fileName="GenerateGettersAndSetters_Intention.java" startLine="75" startPosition="37" endLine="77" endPosition="14" />
     <scopeInfo nodeId="2289347497785565819" fileName="GenerateGettersAndSetters_Intention.java" startLine="94" startPosition="39" endLine="96" endPosition="16" />
-    <scopeInfo nodeId="2289347497784783919" fileName="GenerateGettersAndSetters_Intention.java" startLine="112" startPosition="37" endLine="115" endPosition="11" />
-    <scopeInfo nodeId="2289347497784983704" fileName="GenerateGettersAndSetters_Intention.java" startLine="126" startPosition="41" endLine="129" endPosition="11" />
+    <scopeInfo nodeId="2289347497784783919" fileName="GenerateGettersAndSetters_Intention.java" startLine="111" startPosition="37" endLine="114" endPosition="11" />
+    <scopeInfo nodeId="2289347497784983704" fileName="GenerateGettersAndSetters_Intention.java" startLine="127" startPosition="41" endLine="130" endPosition="11" />
     <scopeInfo nodeId="8703532998807100242" fileName="GenerateGettersAndSetters_Intention.java" startLine="68" startPosition="188" endLine="72" endPosition="0" />
     <scopeInfo nodeId="8703532998807100520" fileName="GenerateGettersAndSetters_Intention.java" startLine="87" startPosition="190" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="5117397948217356931" fileName="GenerateGettersAndSetters_Intention.java" startLine="143" startPosition="116" endLine="147" endPosition="42">
+    <scopeInfo nodeId="5117397948217356931" fileName="GenerateGettersAndSetters_Intention.java" startLine="144" startPosition="116" endLine="148" endPosition="42">
       <varInfo nodeId="6359146168315167137" varName="selectFieldsDialog" />
     </scopeInfo>
-    <scopeInfo nodeId="2289347497784783918" fileName="GenerateGettersAndSetters_Intention.java" startLine="111" startPosition="118" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="2289347497784983703" fileName="GenerateGettersAndSetters_Intention.java" startLine="125" startPosition="118" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="2289347497784783918" fileName="GenerateGettersAndSetters_Intention.java" startLine="110" startPosition="118" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="2289347497784983703" fileName="GenerateGettersAndSetters_Intention.java" startLine="126" startPosition="118" endLine="132" endPosition="0" />
     <scopeInfo nodeId="2289347497785541352" fileName="GenerateGettersAndSetters_Intention.java" startLine="65" startPosition="43" endLine="78" endPosition="7">
       <varInfo nodeId="2289347497785541358" varName="getterName" />
       <varInfo nodeId="2289347497785541354" varName="hasCurrentFieldGetter" />
@@ -1803,18 +1804,18 @@
     <scopeInfo nodeId="2289347497785565738" fileName="GenerateGettersAndSetters_Intention.java" startLine="82" startPosition="12" endLine="99" endPosition="30">
       <varInfo nodeId="2289347497785565778" varName="hasAllSetters" />
     </scopeInfo>
-    <scopeInfo nodeId="2289347497784783898" fileName="GenerateGettersAndSetters_Intention.java" startLine="108" startPosition="112" endLine="136" endPosition="295">
+    <scopeInfo nodeId="2289347497784783898" fileName="GenerateGettersAndSetters_Intention.java" startLine="107" startPosition="112" endLine="137" endPosition="314">
       <varInfo nodeId="2289347497784783909" varName="getterIsAbsent" />
       <varInfo nodeId="2289347497784783900" varName="getterName" />
       <varInfo nodeId="2289347497784983694" varName="setterIsAbsent" />
       <varInfo nodeId="2289347497784983685" varName="setterName" />
+      <varInfo nodeId="5377859299070124104" varName="fieldReference" />
       <varInfo nodeId="1941346475356850805" varName="parameterName" />
     </scopeInfo>
-    <scopeInfo nodeId="2289347497784783897" fileName="GenerateGettersAndSetters_Intention.java" startLine="107" startPosition="75" endLine="137" endPosition="5">
+    <scopeInfo nodeId="2289347497784783897" fileName="GenerateGettersAndSetters_Intention.java" startLine="106" startPosition="75" endLine="138" endPosition="5">
       <varInfo nodeId="2289347497784784017" varName="field" />
     </scopeInfo>
-    <scopeInfo nodeId="4183818788368444775" fileName="GenerateGettersAndSetters_Intention.java" startLine="103" startPosition="111" endLine="140" endPosition="5">
-      <varInfo nodeId="8703532998806977546" varName="thisExpression" />
+    <scopeInfo nodeId="4183818788368444775" fileName="GenerateGettersAndSetters_Intention.java" startLine="103" startPosition="111" endLine="141" endPosition="5">
       <varInfo nodeId="2289347497784783887" varName="classConcept" />
       <varInfo nodeId="1941346475355983543" varName="ideaProject" />
       <varInfo nodeId="6359146168315043629" varName="lastAdded" />
@@ -1826,8 +1827,8 @@
     </scopeInfo>
     <unitInfo nodeId="8703532998807100242" fileName="GenerateGettersAndSetters_Intention.java" startLine="68" startPosition="165" endLine="72" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.GenerateGettersAndSetters_Intention$1" />
     <unitInfo nodeId="8703532998807100520" fileName="GenerateGettersAndSetters_Intention.java" startLine="87" startPosition="167" endLine="91" endPosition="9" unitName="jetbrains.mps.baseLanguage.intentions.GenerateGettersAndSetters_Intention$2" />
-    <unitInfo nodeId="2289347497784783918" fileName="GenerateGettersAndSetters_Intention.java" startLine="111" startPosition="99" endLine="117" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.GenerateGettersAndSetters_Intention$3" />
-    <unitInfo nodeId="2289347497784983703" fileName="GenerateGettersAndSetters_Intention.java" startLine="125" startPosition="99" endLine="131" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.GenerateGettersAndSetters_Intention$4" />
+    <unitInfo nodeId="2289347497784783918" fileName="GenerateGettersAndSetters_Intention.java" startLine="110" startPosition="99" endLine="116" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.GenerateGettersAndSetters_Intention$3" />
+    <unitInfo nodeId="2289347497784983703" fileName="GenerateGettersAndSetters_Intention.java" startLine="126" startPosition="99" endLine="132" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.GenerateGettersAndSetters_Intention$4" />
   </root>
   <root nodeId="418779379561917490">
     <nodeInfo nodeId="418779379561923707" fileName="SurroundWithTypeCast_Intention.java" startLine="39" startPosition="85" endLine="40" endPosition="25" />
@@ -1967,23 +1968,24 @@
     <nodeInfo nodeId="2289347497786122660" fileName="GenerateGetter_Intention.java" startLine="88" startPosition="45" endLine="89" endPosition="172" />
     <nodeInfo nodeId="1532639173677510847" fileName="GenerateGetter_Intention.java" startLine="91" startPosition="11" endLine="92" endPosition="17" />
     <nodeInfo nodeId="8703532998806615062" fileName="GenerateGetter_Intention.java" startLine="93" startPosition="7" endLine="94" endPosition="32" />
-    <nodeInfo nodeId="8703532998806735350" fileName="GenerateGetter_Intention.java" startLine="94" startPosition="32" endLine="95" endPosition="129" />
-    <nodeInfo nodeId="6359146168315035976" fileName="GenerateGetter_Intention.java" startLine="95" startPosition="129" endLine="96" endPosition="270" />
-    <nodeInfo nodeId="6359146168315043103" fileName="GenerateGetter_Intention.java" startLine="96" startPosition="270" endLine="97" endPosition="24" />
-    <nodeInfo nodeId="6359146168315043119" fileName="GenerateGetter_Intention.java" startLine="99" startPosition="28" endLine="100" endPosition="38" />
-    <nodeInfo nodeId="6295902294821223229" fileName="GenerateGetter_Intention.java" startLine="104" startPosition="116" endLine="105" endPosition="140" />
-    <nodeInfo nodeId="6295902294821223237" fileName="GenerateGetter_Intention.java" startLine="105" startPosition="140" endLine="106" endPosition="36" />
-    <nodeInfo nodeId="6295902294821223241" fileName="GenerateGetter_Intention.java" startLine="106" startPosition="36" endLine="107" endPosition="109" />
-    <nodeInfo nodeId="6295902294821223247" fileName="GenerateGetter_Intention.java" startLine="107" startPosition="109" endLine="108" endPosition="42" />
+    <nodeInfo nodeId="5377859299070121656" fileName="GenerateGetter_Intention.java" startLine="94" startPosition="32" endLine="95" endPosition="136" />
+    <nodeInfo nodeId="5377859299070121666" fileName="GenerateGetter_Intention.java" startLine="95" startPosition="136" endLine="96" endPosition="85" />
+    <nodeInfo nodeId="6359146168315035976" fileName="GenerateGetter_Intention.java" startLine="96" startPosition="85" endLine="97" endPosition="263" />
+    <nodeInfo nodeId="6359146168315043103" fileName="GenerateGetter_Intention.java" startLine="97" startPosition="263" endLine="98" endPosition="24" />
+    <nodeInfo nodeId="6359146168315043119" fileName="GenerateGetter_Intention.java" startLine="100" startPosition="28" endLine="101" endPosition="38" />
+    <nodeInfo nodeId="6295902294821223229" fileName="GenerateGetter_Intention.java" startLine="105" startPosition="116" endLine="106" endPosition="140" />
+    <nodeInfo nodeId="6295902294821223237" fileName="GenerateGetter_Intention.java" startLine="106" startPosition="140" endLine="107" endPosition="36" />
+    <nodeInfo nodeId="6295902294821223241" fileName="GenerateGetter_Intention.java" startLine="107" startPosition="36" endLine="108" endPosition="109" />
+    <nodeInfo nodeId="6295902294821223247" fileName="GenerateGetter_Intention.java" startLine="108" startPosition="109" endLine="109" endPosition="42" />
     <nodeInfo nodeId="2289347497784783841" fileName="GenerateGetter_Intention.java" startLine="57" startPosition="148" endLine="60" endPosition="5" />
     <nodeInfo nodeId="8292613079937972675" fileName="GenerateGetter_Intention.java" startLine="72" startPosition="7" endLine="75" endPosition="7" />
-    <nodeInfo nodeId="6359146168315043110" fileName="GenerateGetter_Intention.java" startLine="98" startPosition="5" endLine="101" endPosition="5" />
+    <nodeInfo nodeId="6359146168315043110" fileName="GenerateGetter_Intention.java" startLine="99" startPosition="5" endLine="102" endPosition="5" />
     <nodeInfo nodeId="2289347497786123905" fileName="GenerateGetter_Intention.java" startLine="66" startPosition="188" endLine="70" endPosition="0" />
     <nodeInfo nodeId="2289347497786122653" fileName="GenerateGetter_Intention.java" startLine="87" startPosition="121" endLine="91" endPosition="0" />
     <nodeInfo nodeId="2289347497786123897" fileName="GenerateGetter_Intention.java" startLine="65" startPosition="37" endLine="72" endPosition="7" />
     <nodeInfo nodeId="1532639173677510840" fileName="GenerateGetter_Intention.java" startLine="86" startPosition="101" endLine="93" endPosition="7" />
     <nodeInfo nodeId="938093846981763377" fileName="GenerateGetter_Intention.java" startLine="61" startPosition="41" endLine="76" endPosition="5" />
-    <nodeInfo nodeId="1781160772917451491" fileName="GenerateGetter_Intention.java" startLine="83" startPosition="27" endLine="98" endPosition="5" />
+    <nodeInfo nodeId="1781160772917451491" fileName="GenerateGetter_Intention.java" startLine="83" startPosition="27" endLine="99" endPosition="5" />
     <scopeInfo nodeId="5973141109804726316" fileName="GenerateGetter_Intention.java" startLine="45" startPosition="85" endLine="46" endPosition="21" />
     <scopeInfo nodeId="2289347497784783842" fileName="GenerateGetter_Intention.java" startLine="58" startPosition="50" endLine="59" endPosition="19" />
     <scopeInfo nodeId="2289347497786123906" fileName="GenerateGetter_Intention.java" startLine="67" startPosition="45" endLine="68" endPosition="172" />
@@ -1991,10 +1993,10 @@
     <scopeInfo nodeId="8292613079937972676" fileName="GenerateGetter_Intention.java" startLine="73" startPosition="30" endLine="74" endPosition="38" />
     <scopeInfo nodeId="2289347497786122654" fileName="GenerateGetter_Intention.java" startLine="88" startPosition="45" endLine="89" endPosition="172" />
     <scopeInfo nodeId="1532639173677510841" fileName="GenerateGetter_Intention.java" startLine="91" startPosition="11" endLine="92" endPosition="17" />
-    <scopeInfo nodeId="6359146168315043111" fileName="GenerateGetter_Intention.java" startLine="99" startPosition="28" endLine="100" endPosition="38" />
+    <scopeInfo nodeId="6359146168315043111" fileName="GenerateGetter_Intention.java" startLine="100" startPosition="28" endLine="101" endPosition="38" />
     <scopeInfo nodeId="2289347497786123905" fileName="GenerateGetter_Intention.java" startLine="66" startPosition="188" endLine="70" endPosition="0" />
     <scopeInfo nodeId="2289347497786122653" fileName="GenerateGetter_Intention.java" startLine="87" startPosition="121" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="5117397948217333590" fileName="GenerateGetter_Intention.java" startLine="104" startPosition="116" endLine="108" endPosition="42">
+    <scopeInfo nodeId="5117397948217333590" fileName="GenerateGetter_Intention.java" startLine="105" startPosition="116" endLine="109" endPosition="42">
       <varInfo nodeId="6295902294821223230" varName="selectFieldsDialog" />
     </scopeInfo>
     <scopeInfo nodeId="938093846981763378" fileName="GenerateGetter_Intention.java" startLine="62" startPosition="43" endLine="75" endPosition="7">
@@ -2002,19 +2004,19 @@
       <varInfo nodeId="938093846981763403" varName="getterName" />
       <varInfo nodeId="8292613079937972663" varName="fieldHasGetter" />
     </scopeInfo>
-    <scopeInfo nodeId="1781160772917451492" fileName="GenerateGetter_Intention.java" startLine="84" startPosition="112" endLine="97" endPosition="24">
+    <scopeInfo nodeId="1781160772917451492" fileName="GenerateGetter_Intention.java" startLine="84" startPosition="112" endLine="98" endPosition="24">
       <varInfo nodeId="1532639173677477345" varName="getterName" />
       <varInfo nodeId="6359146168315035977" varName="added" />
-      <varInfo nodeId="8703532998806735351" varName="thisExpression" />
+      <varInfo nodeId="5377859299070121657" varName="fieldReference" />
       <varInfo nodeId="1941346475355901672" varName="ideaProject" />
     </scopeInfo>
     <scopeInfo nodeId="938093846981763377" fileName="GenerateGetter_Intention.java" startLine="61" startPosition="41" endLine="76" endPosition="5">
       <varInfo nodeId="938093846981763381" varName="fieldDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1781160772917451491" fileName="GenerateGetter_Intention.java" startLine="83" startPosition="27" endLine="98" endPosition="5">
+    <scopeInfo nodeId="1781160772917451491" fileName="GenerateGetter_Intention.java" startLine="83" startPosition="27" endLine="99" endPosition="5">
       <varInfo nodeId="1781160772917451495" varName="field" />
     </scopeInfo>
-    <scopeInfo nodeId="5973141109804726318" fileName="GenerateGetter_Intention.java" startLine="81" startPosition="111" endLine="101" endPosition="5">
+    <scopeInfo nodeId="5973141109804726318" fileName="GenerateGetter_Intention.java" startLine="81" startPosition="111" endLine="102" endPosition="5">
       <varInfo nodeId="1781160772917412030" varName="classConcept" />
       <varInfo nodeId="6359146168315043099" varName="lastAdded" />
     </scopeInfo>
@@ -2045,26 +2047,27 @@
     <nodeInfo nodeId="2289347497786124142" fileName="GenerateSetter_Intention.java" startLine="88" startPosition="45" endLine="89" endPosition="175" />
     <nodeInfo nodeId="2289347497786124246" fileName="GenerateSetter_Intention.java" startLine="91" startPosition="11" endLine="92" endPosition="31" />
     <nodeInfo nodeId="2055900293178327688" fileName="GenerateSetter_Intention.java" startLine="94" startPosition="30" endLine="95" endPosition="17" />
-    <nodeInfo nodeId="8703532998805675999" fileName="GenerateSetter_Intention.java" startLine="96" startPosition="7" endLine="97" endPosition="129" />
-    <nodeInfo nodeId="8703532998805875260" fileName="GenerateSetter_Intention.java" startLine="97" startPosition="129" endLine="98" endPosition="32" />
-    <nodeInfo nodeId="1941346475356875143" fileName="GenerateSetter_Intention.java" startLine="98" startPosition="32" endLine="99" endPosition="104" />
-    <nodeInfo nodeId="6359146168315043529" fileName="GenerateSetter_Intention.java" startLine="99" startPosition="104" endLine="100" endPosition="285" />
-    <nodeInfo nodeId="6359146168315043585" fileName="GenerateSetter_Intention.java" startLine="100" startPosition="285" endLine="101" endPosition="24" />
-    <nodeInfo nodeId="6359146168315043576" fileName="GenerateSetter_Intention.java" startLine="103" startPosition="28" endLine="104" endPosition="38" />
-    <nodeInfo nodeId="6295902294821223281" fileName="GenerateSetter_Intention.java" startLine="108" startPosition="116" endLine="109" endPosition="140" />
-    <nodeInfo nodeId="6295902294821223289" fileName="GenerateSetter_Intention.java" startLine="109" startPosition="140" endLine="110" endPosition="36" />
-    <nodeInfo nodeId="6295902294821223293" fileName="GenerateSetter_Intention.java" startLine="110" startPosition="36" endLine="111" endPosition="109" />
-    <nodeInfo nodeId="6295902294821223299" fileName="GenerateSetter_Intention.java" startLine="111" startPosition="109" endLine="112" endPosition="42" />
+    <nodeInfo nodeId="8703532998805875260" fileName="GenerateSetter_Intention.java" startLine="96" startPosition="7" endLine="97" endPosition="32" />
+    <nodeInfo nodeId="1941346475356875143" fileName="GenerateSetter_Intention.java" startLine="97" startPosition="32" endLine="98" endPosition="104" />
+    <nodeInfo nodeId="5377859299070121697" fileName="GenerateSetter_Intention.java" startLine="98" startPosition="104" endLine="99" endPosition="136" />
+    <nodeInfo nodeId="5377859299070121705" fileName="GenerateSetter_Intention.java" startLine="99" startPosition="136" endLine="100" endPosition="85" />
+    <nodeInfo nodeId="6359146168315043529" fileName="GenerateSetter_Intention.java" startLine="100" startPosition="85" endLine="101" endPosition="278" />
+    <nodeInfo nodeId="6359146168315043585" fileName="GenerateSetter_Intention.java" startLine="101" startPosition="278" endLine="102" endPosition="24" />
+    <nodeInfo nodeId="6359146168315043576" fileName="GenerateSetter_Intention.java" startLine="104" startPosition="28" endLine="105" endPosition="38" />
+    <nodeInfo nodeId="6295902294821223281" fileName="GenerateSetter_Intention.java" startLine="109" startPosition="116" endLine="110" endPosition="140" />
+    <nodeInfo nodeId="6295902294821223289" fileName="GenerateSetter_Intention.java" startLine="110" startPosition="140" endLine="111" endPosition="36" />
+    <nodeInfo nodeId="6295902294821223293" fileName="GenerateSetter_Intention.java" startLine="111" startPosition="36" endLine="112" endPosition="109" />
+    <nodeInfo nodeId="6295902294821223299" fileName="GenerateSetter_Intention.java" startLine="112" startPosition="109" endLine="113" endPosition="42" />
     <nodeInfo nodeId="8703532998807216186" fileName="GenerateSetter_Intention.java" startLine="57" startPosition="148" endLine="60" endPosition="5" />
     <nodeInfo nodeId="8703532998807216241" fileName="GenerateSetter_Intention.java" startLine="72" startPosition="7" endLine="75" endPosition="7" />
     <nodeInfo nodeId="2055900293178327686" fileName="GenerateSetter_Intention.java" startLine="93" startPosition="7" endLine="96" endPosition="7" />
-    <nodeInfo nodeId="6359146168315043574" fileName="GenerateSetter_Intention.java" startLine="102" startPosition="5" endLine="105" endPosition="5" />
+    <nodeInfo nodeId="6359146168315043574" fileName="GenerateSetter_Intention.java" startLine="103" startPosition="5" endLine="106" endPosition="5" />
     <nodeInfo nodeId="8703532998807216224" fileName="GenerateSetter_Intention.java" startLine="66" startPosition="188" endLine="70" endPosition="0" />
     <nodeInfo nodeId="2289347497786124135" fileName="GenerateSetter_Intention.java" startLine="87" startPosition="121" endLine="91" endPosition="0" />
     <nodeInfo nodeId="8703532998807216212" fileName="GenerateSetter_Intention.java" startLine="65" startPosition="37" endLine="72" endPosition="7" />
     <nodeInfo nodeId="2289347497786124120" fileName="GenerateSetter_Intention.java" startLine="86" startPosition="36" endLine="93" endPosition="7" />
     <nodeInfo nodeId="8703532998807216197" fileName="GenerateSetter_Intention.java" startLine="62" startPosition="71" endLine="76" endPosition="5" />
-    <nodeInfo nodeId="2055900293178327643" fileName="GenerateSetter_Intention.java" startLine="83" startPosition="75" endLine="102" endPosition="5" />
+    <nodeInfo nodeId="2055900293178327643" fileName="GenerateSetter_Intention.java" startLine="83" startPosition="75" endLine="103" endPosition="5" />
     <scopeInfo nodeId="5973141109804726324" fileName="GenerateSetter_Intention.java" startLine="45" startPosition="85" endLine="46" endPosition="21" />
     <scopeInfo nodeId="8703532998807216187" fileName="GenerateSetter_Intention.java" startLine="58" startPosition="50" endLine="59" endPosition="19" />
     <scopeInfo nodeId="8703532998807216225" fileName="GenerateSetter_Intention.java" startLine="67" startPosition="45" endLine="68" endPosition="82" />
@@ -2073,10 +2076,10 @@
     <scopeInfo nodeId="2289347497786124136" fileName="GenerateSetter_Intention.java" startLine="88" startPosition="45" endLine="89" endPosition="175" />
     <scopeInfo nodeId="2289347497786124121" fileName="GenerateSetter_Intention.java" startLine="91" startPosition="11" endLine="92" endPosition="31" />
     <scopeInfo nodeId="2055900293178327687" fileName="GenerateSetter_Intention.java" startLine="94" startPosition="30" endLine="95" endPosition="17" />
-    <scopeInfo nodeId="6359146168315043575" fileName="GenerateSetter_Intention.java" startLine="103" startPosition="28" endLine="104" endPosition="38" />
+    <scopeInfo nodeId="6359146168315043575" fileName="GenerateSetter_Intention.java" startLine="104" startPosition="28" endLine="105" endPosition="38" />
     <scopeInfo nodeId="8703532998807216224" fileName="GenerateSetter_Intention.java" startLine="66" startPosition="188" endLine="70" endPosition="0" />
     <scopeInfo nodeId="2289347497786124135" fileName="GenerateSetter_Intention.java" startLine="87" startPosition="121" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="5117397948217340960" fileName="GenerateSetter_Intention.java" startLine="108" startPosition="116" endLine="112" endPosition="42">
+    <scopeInfo nodeId="5117397948217340960" fileName="GenerateSetter_Intention.java" startLine="109" startPosition="116" endLine="113" endPosition="42">
       <varInfo nodeId="6295902294821223282" varName="selectFieldsDialog" />
     </scopeInfo>
     <scopeInfo nodeId="8703532998807216198" fileName="GenerateSetter_Intention.java" startLine="63" startPosition="43" endLine="75" endPosition="7">
@@ -2086,14 +2089,14 @@
     <scopeInfo nodeId="8703532998807216197" fileName="GenerateSetter_Intention.java" startLine="62" startPosition="71" endLine="76" endPosition="5">
       <varInfo nodeId="8703532998807216250" varName="fieldDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="2055900293178327644" fileName="GenerateSetter_Intention.java" startLine="84" startPosition="112" endLine="101" endPosition="24">
+    <scopeInfo nodeId="2055900293178327644" fileName="GenerateSetter_Intention.java" startLine="84" startPosition="112" endLine="102" endPosition="24">
       <varInfo nodeId="6359146168315043530" varName="added" />
-      <varInfo nodeId="8703532998805676000" varName="thisExpression" />
+      <varInfo nodeId="5377859299070121698" varName="fieldReference" />
       <varInfo nodeId="2055900293178327655" varName="setterIsAbsent" />
       <varInfo nodeId="2055900293178327646" varName="setterName" />
       <varInfo nodeId="1941346475356875144" varName="parameterName" />
     </scopeInfo>
-    <scopeInfo nodeId="2055900293178327643" fileName="GenerateSetter_Intention.java" startLine="83" startPosition="75" endLine="102" endPosition="5">
+    <scopeInfo nodeId="2055900293178327643" fileName="GenerateSetter_Intention.java" startLine="83" startPosition="75" endLine="103" endPosition="5">
       <varInfo nodeId="2055900293178327763" varName="field" />
     </scopeInfo>
     <scopeInfo nodeId="938093846982132197" fileName="GenerateSetter_Intention.java" startLine="56" startPosition="90" endLine="77" endPosition="36">
@@ -2101,7 +2104,7 @@
       <varInfo nodeId="8703532998807216194" varName="allSettersImplemented" />
       <varInfo nodeId="8703532998807216180" varName="fields" />
     </scopeInfo>
-    <scopeInfo nodeId="5973141109804726326" fileName="GenerateSetter_Intention.java" startLine="80" startPosition="111" endLine="105" endPosition="5">
+    <scopeInfo nodeId="5973141109804726326" fileName="GenerateSetter_Intention.java" startLine="80" startPosition="111" endLine="106" endPosition="5">
       <varInfo nodeId="938093846982132076" varName="classConcept" />
       <varInfo nodeId="1941346475356056066" varName="ideaProject" />
       <varInfo nodeId="6359146168315043569" varName="lastAdded" />

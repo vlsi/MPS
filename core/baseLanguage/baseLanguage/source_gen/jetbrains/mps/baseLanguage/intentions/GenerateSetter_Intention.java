@@ -94,10 +94,11 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
       if (!(setterIsAbsent)) {
         continue;
       }
-      final SNode thisExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
       // Method creation begins 
       String parameterName = GenerateGettersAndSettersUtil.getParameterNameForField(field, ideaProject);
-      SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateSetter_Intention.QuotationClass_hfod7k_a0a0a7a3a7().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
+      SNode fieldReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+      SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
+      SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateSetter_Intention.QuotationClass_hfod7k_a0a0a8a3a7().createNode(fieldReference, SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
       lastAdded = added;
     }
     if (lastAdded != null) {
@@ -116,11 +117,11 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
     return "jetbrains.mps.baseLanguage.intentions";
   }
 
-  public static class QuotationClass_hfod7k_a0a0a7a3a7 {
-    public QuotationClass_hfod7k_a0a0a7a3a7() {
+  public static class QuotationClass_hfod7k_a0a0a8a3a7 {
+    public QuotationClass_hfod7k_a0a0a8a3a7() {
     }
 
-    public SNode createNode(Object parameter_25, Object parameter_26, Object parameter_27, Object parameter_28, Object parameter_29) {
+    public SNode createNode(Object parameter_21, Object parameter_22, Object parameter_23, Object parameter_24) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -133,86 +134,73 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
       SNode quotedNode_8 = null;
       SNode quotedNode_9 = null;
       SNode quotedNode_10 = null;
-      SNode quotedNode_11 = null;
-      SNode quotedNode_12 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_13 = quotedNode_1;
-        quotedNode1_13.setProperty("name", (String) parameter_29);
+        SNode quotedNode1_11 = quotedNode_1;
+        quotedNode1_11.setProperty("name", (String) parameter_24);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_14 = quotedNode_2;
-          quotedNode_1.addChild("returnType", quotedNode1_14);
+          SNode quotedNode1_12 = quotedNode_2;
+          quotedNode_1.addChild("returnType", quotedNode1_12);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_15 = quotedNode_3;
-          quotedNode_1.addChild("visibility", quotedNode1_15);
+          SNode quotedNode1_13 = quotedNode_3;
+          quotedNode_1.addChild("visibility", quotedNode1_13);
         }
         {
           quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_16 = quotedNode_4;
+          SNode quotedNode1_14 = quotedNode_4;
           {
             quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_17 = quotedNode_6;
+            SNode quotedNode1_15 = quotedNode_6;
             {
               quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null, GlobalScope.getInstance(), false);
-              SNode quotedNode1_18 = quotedNode_8;
+              SNode quotedNode1_16 = quotedNode_8;
               {
                 quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, GlobalScope.getInstance(), false);
-                SNode quotedNode1_19 = quotedNode_9;
-                quotedNode_8.addChild("rValue", quotedNode1_19);
+                SNode quotedNode1_17 = quotedNode_9;
+                quotedNode_8.addChild("rValue", quotedNode1_17);
               }
               {
-                quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
-                SNode quotedNode1_20 = quotedNode_10;
-                {
-                  quotedNode_11 = (SNode) parameter_25;
-                  SNode quotedNode1_21;
-                  if (_parameterValues_129834374.contains(quotedNode_11)) {
-                    quotedNode1_21 = CopyUtil.copy(quotedNode_11);
-                  } else {
-                    _parameterValues_129834374.add(quotedNode_11);
-                    quotedNode1_21 = quotedNode_11;
-                  }
-                  if (quotedNode1_21 != null) {
-                    quotedNode_10.addChild("operand", HUtil.copyIfNecessary(quotedNode1_21));
-                  }
+                quotedNode_10 = (SNode) parameter_21;
+                SNode quotedNode1_18;
+                if (_parameterValues_129834374.contains(quotedNode_10)) {
+                  quotedNode1_18 = CopyUtil.copy(quotedNode_10);
+                } else {
+                  _parameterValues_129834374.add(quotedNode_10);
+                  quotedNode1_18 = quotedNode_10;
                 }
-                {
-                  quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, GlobalScope.getInstance(), false);
-                  SNode quotedNode1_22 = quotedNode_12;
-                  quotedNode1_22.setReferent("fieldDeclaration", (SNode) parameter_26);
-                  quotedNode_10.addChild("operation", quotedNode1_22);
+                if (quotedNode1_18 != null) {
+                  quotedNode_8.addChild("lValue", HUtil.copyIfNecessary(quotedNode1_18));
                 }
-                quotedNode_8.addChild("lValue", quotedNode1_20);
               }
-              quotedNode_6.addChild("expression", quotedNode1_18);
+              quotedNode_6.addChild("expression", quotedNode1_16);
             }
-            quotedNode_4.addChild("statement", quotedNode1_17);
+            quotedNode_4.addChild("statement", quotedNode1_15);
           }
-          quotedNode_1.addChild("body", quotedNode1_16);
+          quotedNode_1.addChild("body", quotedNode1_14);
         }
         {
           quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_23 = quotedNode_5;
-          quotedNode1_23.setProperty("name", (String) parameter_28);
+          SNode quotedNode1_19 = quotedNode_5;
+          quotedNode1_19.setProperty("name", (String) parameter_23);
           {
-            quotedNode_7 = (SNode) parameter_27;
-            SNode quotedNode1_24;
+            quotedNode_7 = (SNode) parameter_22;
+            SNode quotedNode1_20;
             if (_parameterValues_129834374.contains(quotedNode_7)) {
-              quotedNode1_24 = CopyUtil.copy(quotedNode_7);
+              quotedNode1_20 = CopyUtil.copy(quotedNode_7);
             } else {
               _parameterValues_129834374.add(quotedNode_7);
-              quotedNode1_24 = quotedNode_7;
+              quotedNode1_20 = quotedNode_7;
             }
-            if (quotedNode1_24 != null) {
-              quotedNode_5.addChild("type", HUtil.copyIfNecessary(quotedNode1_24));
+            if (quotedNode1_20 != null) {
+              quotedNode_5.addChild("type", HUtil.copyIfNecessary(quotedNode1_20));
             }
           }
-          quotedNode_1.addChild("parameter", quotedNode1_23);
+          quotedNode_1.addChild("parameter", quotedNode1_19);
         }
-        result = quotedNode1_13;
+        result = quotedNode1_11;
       }
       quotedNode_9.setReferent("variableDeclaration", quotedNode_5);
       return result;
