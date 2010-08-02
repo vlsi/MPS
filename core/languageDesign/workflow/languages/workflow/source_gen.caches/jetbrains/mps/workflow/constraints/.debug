@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="7854369758457864776">
+    <nodeInfo nodeId="7854369758457974864" fileName="TargetDeclaration_overrides_ReferentConstraint.java" startLine="32" startPosition="50" endLine="33" endPosition="73" />
+    <nodeInfo nodeId="7854369758457974860" fileName="TargetDeclaration_overrides_ReferentConstraint.java" startLine="31" startPosition="250" endLine="35" endPosition="0" />
+    <nodeInfo nodeId="7854369758457974838" fileName="TargetDeclaration_overrides_ReferentConstraint.java" startLine="30" startPosition="132" endLine="35" endPosition="7" />
+    <scopeInfo nodeId="7854369758457974861" fileName="TargetDeclaration_overrides_ReferentConstraint.java" startLine="32" startPosition="50" endLine="33" endPosition="73" />
+    <scopeInfo nodeId="7854369758457974860" fileName="TargetDeclaration_overrides_ReferentConstraint.java" startLine="31" startPosition="250" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="7854369758457974835" fileName="TargetDeclaration_overrides_ReferentConstraint.java" startLine="30" startPosition="132" endLine="35" endPosition="7" />
+    <unitInfo nodeId="7854369758457974860" fileName="TargetDeclaration_overrides_ReferentConstraint.java" startLine="31" startPosition="220" endLine="35" endPosition="5" unitName="jetbrains.mps.workflow.constraints.ITranslator2$anonymous" />
+  </root>
+</debugInfo>
+
