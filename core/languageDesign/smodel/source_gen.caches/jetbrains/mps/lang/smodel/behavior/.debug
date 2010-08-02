@@ -4,10 +4,12 @@
     <scopeInfo nodeId="1213877246681" fileName="PropertyRefQualifier_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
   <root nodeId="1213877264086">
+    <nodeInfo nodeId="1213877264089" fileName="SModelType_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="19" />
     <scopeInfo nodeId="1213877264093" fileName="SModelType_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1213877264088" fileName="SModelType_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="19" />
   </root>
   <root nodeId="1213877271845">
+    <nodeInfo nodeId="1213877271848" fileName="SLinkListAccess_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="101" />
     <nodeInfo nodeId="4024382256428848946" fileName="SLinkListAccess_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="133" />
     <nodeInfo nodeId="4024382256428848972" fileName="SLinkListAccess_Behavior.java" startLine="21" startPosition="91" endLine="22" endPosition="17" />
     <nodeInfo nodeId="4024382256428848981" fileName="SLinkListAccess_Behavior.java" startLine="25" startPosition="84" endLine="26" endPosition="106" />
@@ -22,8 +24,12 @@
     <nodeInfo nodeId="1213877274368" fileName="SNodeListType_Behavior.java" startLine="34" startPosition="88" endLine="35" endPosition="100" />
     <nodeInfo nodeId="1213877274378" fileName="SNodeListType_Behavior.java" startLine="36" startPosition="81" endLine="37" endPosition="163" />
     <nodeInfo nodeId="1213877274388" fileName="SNodeListType_Behavior.java" startLine="37" startPosition="163" endLine="38" endPosition="111" />
+    <nodeInfo nodeId="1213877274399" fileName="SNodeListType_Behavior.java" startLine="39" startPosition="5" endLine="40" endPosition="28" />
     <nodeInfo nodeId="1213877274405" fileName="SNodeListType_Behavior.java" startLine="43" startPosition="80" endLine="44" endPosition="115" />
     <nodeInfo nodeId="1213877274411" fileName="SNodeListType_Behavior.java" startLine="44" startPosition="115" endLine="45" endPosition="96" />
+    <nodeInfo nodeId="1213877274420" fileName="SNodeListType_Behavior.java" startLine="45" startPosition="96" endLine="46" endPosition="19" />
+    <nodeInfo nodeId="1213877274425" fileName="SNodeListType_Behavior.java" startLine="49" startPosition="80" endLine="50" endPosition="81" />
+    <nodeInfo nodeId="3508583411998065042" fileName="SNodeListType_Behavior.java" startLine="53" startPosition="90" endLine="54" endPosition="82" />
     <nodeInfo nodeId="1213877274352" fileName="SNodeListType_Behavior.java" startLine="27" startPosition="92" endLine="31" endPosition="6" />
     <nodeInfo nodeId="1213877274376" fileName="SNodeListType_Behavior.java" startLine="35" startPosition="100" endLine="39" endPosition="5" />
     <scopeInfo nodeId="1213877274435" fileName="SNodeListType_Behavior.java" startLine="23" startPosition="43" endLine="23" endPosition="43" />
@@ -49,6 +55,7 @@
     <nodeInfo nodeId="1213877300726" fileName="SConceptType_Behavior.java" startLine="26" startPosition="88" endLine="27" endPosition="102" />
     <nodeInfo nodeId="1213877300736" fileName="SConceptType_Behavior.java" startLine="28" startPosition="84" endLine="29" endPosition="146" />
     <nodeInfo nodeId="1213877300750" fileName="SConceptType_Behavior.java" startLine="30" startPosition="82" endLine="31" endPosition="80" />
+    <nodeInfo nodeId="1213877300762" fileName="SConceptType_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="28" />
     <nodeInfo nodeId="1213877300713" fileName="SConceptType_Behavior.java" startLine="21" startPosition="10" endLine="23" endPosition="5" />
     <nodeInfo nodeId="1213877300745" fileName="SConceptType_Behavior.java" startLine="29" startPosition="146" endLine="32" endPosition="7" />
     <nodeInfo nodeId="1213877300706" fileName="SConceptType_Behavior.java" startLine="18" startPosition="84" endLine="23" endPosition="5" />
@@ -69,6 +76,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877310375">
+    <nodeInfo nodeId="1213877310380" fileName="SConceptLinkAccess_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="119" />
     <scopeInfo nodeId="1213877310377" fileName="SConceptLinkAccess_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1213877310379" fileName="SConceptLinkAccess_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="119" />
   </root>
@@ -79,9 +87,12 @@
     <nodeInfo nodeId="1213877317141" fileName="SNodeType_Behavior.java" startLine="34" startPosition="88" endLine="35" endPosition="99" />
     <nodeInfo nodeId="1213877317151" fileName="SNodeType_Behavior.java" startLine="36" startPosition="72" endLine="37" endPosition="136" />
     <nodeInfo nodeId="1213877317160" fileName="SNodeType_Behavior.java" startLine="37" startPosition="136" endLine="38" endPosition="111" />
+    <nodeInfo nodeId="1213877317171" fileName="SNodeType_Behavior.java" startLine="39" startPosition="5" endLine="40" endPosition="28" />
     <nodeInfo nodeId="1213877317177" fileName="SNodeType_Behavior.java" startLine="43" startPosition="80" endLine="44" endPosition="111" />
     <nodeInfo nodeId="1213877317183" fileName="SNodeType_Behavior.java" startLine="44" startPosition="111" endLine="45" endPosition="96" />
+    <nodeInfo nodeId="1213877317192" fileName="SNodeType_Behavior.java" startLine="45" startPosition="96" endLine="46" endPosition="19" />
     <nodeInfo nodeId="1213877317197" fileName="SNodeType_Behavior.java" startLine="49" startPosition="80" endLine="50" endPosition="77" />
+    <nodeInfo nodeId="3508583411998065083" fileName="SNodeType_Behavior.java" startLine="53" startPosition="90" endLine="54" endPosition="75" />
     <nodeInfo nodeId="6367692956145457422" fileName="SNodeType_Behavior.java" startLine="57" startPosition="82" endLine="58" endPosition="40" />
     <nodeInfo nodeId="1213877317123" fileName="SNodeType_Behavior.java" startLine="27" startPosition="74" endLine="30" endPosition="5" />
     <nodeInfo nodeId="1213877317149" fileName="SNodeType_Behavior.java" startLine="35" startPosition="99" endLine="39" endPosition="5" />
@@ -110,8 +121,11 @@
     <nodeInfo nodeId="1213877325533" fileName="AttributeAccessOperation_Behavior.java" startLine="21" startPosition="122" endLine="22" endPosition="18" />
     <nodeInfo nodeId="1213877325539" fileName="AttributeAccessOperation_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="17" />
     <nodeInfo nodeId="1818067991806882425" fileName="AttributeAccessOperation_Behavior.java" startLine="27" startPosition="83" endLine="28" endPosition="101" />
+    <nodeInfo nodeId="1818067991806882411" fileName="AttributeAccessOperation_Behavior.java" startLine="28" startPosition="101" endLine="29" endPosition="168" />
     <nodeInfo nodeId="1818067991806882440" fileName="AttributeAccessOperation_Behavior.java" startLine="32" startPosition="91" endLine="33" endPosition="101" />
+    <nodeInfo nodeId="1818067991806882446" fileName="AttributeAccessOperation_Behavior.java" startLine="33" startPosition="101" endLine="34" endPosition="176" />
     <nodeInfo nodeId="1818067991806882460" fileName="AttributeAccessOperation_Behavior.java" startLine="37" startPosition="84" endLine="38" endPosition="101" />
+    <nodeInfo nodeId="1818067991806882466" fileName="AttributeAccessOperation_Behavior.java" startLine="38" startPosition="101" endLine="39" endPosition="171" />
     <nodeInfo nodeId="1213877325515" fileName="AttributeAccessOperation_Behavior.java" startLine="14" startPosition="86" endLine="17" endPosition="5" />
     <nodeInfo nodeId="1213877325523" fileName="AttributeAccessOperation_Behavior.java" startLine="17" startPosition="5" endLine="20" endPosition="5" />
     <nodeInfo nodeId="1213877325531" fileName="AttributeAccessOperation_Behavior.java" startLine="20" startPosition="5" endLine="23" endPosition="5" />
@@ -133,10 +147,12 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877353972">
+    <nodeInfo nodeId="1213877353975" fileName="SPropertyAccess_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="105" />
     <scopeInfo nodeId="1213877353983" fileName="SPropertyAccess_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1213877353974" fileName="SPropertyAccess_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="105" />
   </root>
   <root nodeId="1213877364624">
+    <nodeInfo nodeId="4024382256428849002" fileName="PropertyAttributeAccessQualifier_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="16" />
     <nodeInfo nodeId="4024382256428849010" fileName="PropertyAttributeAccessQualifier_Behavior.java" startLine="17" startPosition="91" endLine="18" endPosition="139" />
     <nodeInfo nodeId="4024382256428849035" fileName="PropertyAttributeAccessQualifier_Behavior.java" startLine="21" startPosition="84" endLine="22" endPosition="116" />
     <scopeInfo nodeId="1213877364626" fileName="PropertyAttributeAccessQualifier_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
@@ -145,6 +161,7 @@
     <scopeInfo nodeId="4024382256428849032" fileName="PropertyAttributeAccessQualifier_Behavior.java" startLine="21" startPosition="84" endLine="22" endPosition="116" />
   </root>
   <root nodeId="1213877383850">
+    <nodeInfo nodeId="1213877383855" fileName="SConceptPropertyAccess_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="112" />
     <scopeInfo nodeId="1213877383852" fileName="SConceptPropertyAccess_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1213877383854" fileName="SConceptPropertyAccess_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="112" />
   </root>
@@ -182,6 +199,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877416510">
+    <nodeInfo nodeId="4024382256428849198" fileName="NodeAttributeAccessQualifier_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="16" />
     <nodeInfo nodeId="4024382256428849206" fileName="NodeAttributeAccessQualifier_Behavior.java" startLine="17" startPosition="91" endLine="18" endPosition="139" />
     <nodeInfo nodeId="4024382256428849231" fileName="NodeAttributeAccessQualifier_Behavior.java" startLine="21" startPosition="84" endLine="22" endPosition="116" />
     <scopeInfo nodeId="1213877416512" fileName="NodeAttributeAccessQualifier_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
@@ -190,6 +208,7 @@
     <scopeInfo nodeId="4024382256428849228" fileName="NodeAttributeAccessQualifier_Behavior.java" startLine="21" startPosition="84" endLine="22" endPosition="116" />
   </root>
   <root nodeId="1213877437822">
+    <nodeInfo nodeId="1213877437826" fileName="Node_ConceptMethodCall_Behavior.java" startLine="14" startPosition="80" endLine="15" endPosition="110" />
     <nodeInfo nodeId="1213877437835" fileName="Node_ConceptMethodCall_Behavior.java" startLine="18" startPosition="86" endLine="19" endPosition="98" />
     <nodeInfo nodeId="1213877437843" fileName="Node_ConceptMethodCall_Behavior.java" startLine="20" startPosition="92" endLine="21" endPosition="85" />
     <nodeInfo nodeId="1213877437854" fileName="Node_ConceptMethodCall_Behavior.java" startLine="23" startPosition="73" endLine="24" endPosition="31" />
@@ -198,6 +217,7 @@
     <nodeInfo nodeId="1213877437868" fileName="Node_ConceptMethodCall_Behavior.java" startLine="31" startPosition="32" endLine="32" endPosition="134" />
     <nodeInfo nodeId="1213877437878" fileName="Node_ConceptMethodCall_Behavior.java" startLine="33" startPosition="49" endLine="34" endPosition="63" />
     <nodeInfo nodeId="1213877437891" fileName="Node_ConceptMethodCall_Behavior.java" startLine="36" startPosition="48" endLine="37" endPosition="63" />
+    <nodeInfo nodeId="1213877437902" fileName="Node_ConceptMethodCall_Behavior.java" startLine="38" startPosition="5" endLine="39" endPosition="55" />
     <nodeInfo nodeId="1213877437859" fileName="Node_ConceptMethodCall_Behavior.java" startLine="25" startPosition="10" endLine="27" endPosition="5" />
     <nodeInfo nodeId="1213877437889" fileName="Node_ConceptMethodCall_Behavior.java" startLine="35" startPosition="10" endLine="38" endPosition="5" />
     <nodeInfo nodeId="1213877437852" fileName="Node_ConceptMethodCall_Behavior.java" startLine="22" startPosition="10" endLine="27" endPosition="5" />
@@ -237,9 +257,14 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877500232">
+    <nodeInfo nodeId="4024382256428849147" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="23" startPosition="83" endLine="24" endPosition="16" />
+    <nodeInfo nodeId="4024382256428849155" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="27" startPosition="91" endLine="28" endPosition="139" />
+    <nodeInfo nodeId="4024382256428849179" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="31" startPosition="84" endLine="32" endPosition="116" />
     <nodeInfo nodeId="2906110183022538660" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="35" startPosition="96" endLine="36" endPosition="131" />
     <nodeInfo nodeId="2906110183022538662" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="36" startPosition="131" endLine="37" endPosition="204" />
+    <nodeInfo nodeId="2906110183022538696" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="39" startPosition="39" endLine="40" endPosition="87" />
     <nodeInfo nodeId="2906110183022538689" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="38" startPosition="398" endLine="42" endPosition="0" />
+    <nodeInfo nodeId="2906110183022538671" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="37" startPosition="204" endLine="42" endPosition="7" />
     <scopeInfo nodeId="1213877500234" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
     <scopeInfo nodeId="4024382256428849143" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="23" startPosition="83" endLine="24" endPosition="16" />
     <scopeInfo nodeId="4024382256428849152" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="27" startPosition="91" endLine="28" endPosition="139" />
@@ -260,7 +285,9 @@
     <nodeInfo nodeId="1213877508949" fileName="SNodeOperation_Behavior.java" startLine="33" startPosition="85" endLine="34" endPosition="98" />
     <nodeInfo nodeId="1238680693714" fileName="SNodeOperation_Behavior.java" startLine="35" startPosition="112" endLine="36" endPosition="18" />
     <nodeInfo nodeId="1213877508967" fileName="SNodeOperation_Behavior.java" startLine="37" startPosition="5" endLine="38" endPosition="148" />
+    <nodeInfo nodeId="1227876801658" fileName="SNodeOperation_Behavior.java" startLine="43" startPosition="39" endLine="44" endPosition="87" />
     <nodeInfo nodeId="1213877508996" fileName="SNodeOperation_Behavior.java" startLine="49" startPosition="86" endLine="50" endPosition="123" />
+    <nodeInfo nodeId="1213877509003" fileName="SNodeOperation_Behavior.java" startLine="50" startPosition="123" endLine="51" endPosition="32" />
     <nodeInfo nodeId="1213877508850" fileName="SNodeOperation_Behavior.java" startLine="54" startPosition="70" endLine="55" endPosition="71" />
     <nodeInfo nodeId="1223307436306" fileName="SNodeOperation_Behavior.java" startLine="55" startPosition="71" endLine="56" endPosition="58" />
     <nodeInfo nodeId="1223307537853" fileName="SNodeOperation_Behavior.java" startLine="57" startPosition="27" endLine="58" endPosition="20" />
@@ -273,6 +300,7 @@
     <nodeInfo nodeId="1223307503885" fileName="SNodeOperation_Behavior.java" startLine="56" startPosition="58" endLine="59" endPosition="5" />
     <nodeInfo nodeId="1213877508881" fileName="SNodeOperation_Behavior.java" startLine="61" startPosition="188" endLine="64" endPosition="5" />
     <nodeInfo nodeId="1227876801654" fileName="SNodeOperation_Behavior.java" startLine="42" startPosition="123" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="1213877508975" fileName="SNodeOperation_Behavior.java" startLine="41" startPosition="101" endLine="46" endPosition="15" />
     <scopeInfo nodeId="1213877509007" fileName="SNodeOperation_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
     <scopeInfo nodeId="1238680726849" fileName="SNodeOperation_Behavior.java" startLine="27" startPosition="112" endLine="28" endPosition="18" />
     <scopeInfo nodeId="1238680679492" fileName="SNodeOperation_Behavior.java" startLine="35" startPosition="112" endLine="36" endPosition="18" />
@@ -302,6 +330,10 @@
     <unitInfo nodeId="1227876801654" fileName="SNodeOperation_Behavior.java" startLine="42" startPosition="100" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.smodel.behavior.IWhereFilter$anonymous" />
   </root>
   <root nodeId="1213877527364">
+    <nodeInfo nodeId="1213877527367" fileName="SLinkAccess_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="101" />
+    <nodeInfo nodeId="4024382256428848876" fileName="SLinkAccess_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="133" />
+    <nodeInfo nodeId="4024382256428848900" fileName="SLinkAccess_Behavior.java" startLine="21" startPosition="91" endLine="22" endPosition="16" />
+    <nodeInfo nodeId="4024382256428848927" fileName="SLinkAccess_Behavior.java" startLine="25" startPosition="84" endLine="26" endPosition="106" />
     <scopeInfo nodeId="1213877527375" fileName="SLinkAccess_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1213877527366" fileName="SLinkAccess_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="101" />
     <scopeInfo nodeId="4024382256428848868" fileName="SLinkAccess_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="133" />
@@ -379,6 +411,7 @@
     <nodeInfo nodeId="1240334114874" fileName="SEnumMemberType_Behavior.java" startLine="25" startPosition="88" endLine="26" endPosition="105" />
     <nodeInfo nodeId="1240334114884" fileName="SEnumMemberType_Behavior.java" startLine="27" startPosition="69" endLine="28" endPosition="133" />
     <nodeInfo nodeId="1240334114893" fileName="SEnumMemberType_Behavior.java" startLine="28" startPosition="133" endLine="29" endPosition="111" />
+    <nodeInfo nodeId="1240334114904" fileName="SEnumMemberType_Behavior.java" startLine="30" startPosition="5" endLine="31" endPosition="28" />
     <nodeInfo nodeId="1240334114855" fileName="SEnumMemberType_Behavior.java" startLine="18" startPosition="72" endLine="21" endPosition="5" />
     <nodeInfo nodeId="1240334114882" fileName="SEnumMemberType_Behavior.java" startLine="26" startPosition="105" endLine="30" endPosition="5" />
     <scopeInfo nodeId="1240334100561" fileName="SEnumMemberType_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
@@ -399,6 +432,7 @@
     <scopeInfo nodeId="1240931322046" fileName="SEnumOperation_Behavior.java" startLine="13" startPosition="66" endLine="14" endPosition="186" />
   </root>
   <root nodeId="3476105411552591981">
+    <nodeInfo nodeId="3476105411552591990" fileName="Node_GetChildrenOperation_Behavior.java" startLine="13" startPosition="81" endLine="14" endPosition="276" />
     <scopeInfo nodeId="3476105411552591983" fileName="Node_GetChildrenOperation_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="3476105411552591987" fileName="Node_GetChildrenOperation_Behavior.java" startLine="13" startPosition="81" endLine="14" endPosition="276" />
   </root>
@@ -409,8 +443,11 @@
     <scopeInfo nodeId="4024382256428848846" fileName="ILinkAccess_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
   </root>
   <root nodeId="5815925154349132185">
+    <nodeInfo nodeId="5815925154349134246" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="23" startPosition="77" endLine="24" endPosition="123" />
     <nodeInfo nodeId="2906110183022542880" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="27" startPosition="96" endLine="28" endPosition="219" />
+    <nodeInfo nodeId="2906110183022543024" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="30" startPosition="39" endLine="34" endPosition="10" />
     <nodeInfo nodeId="2906110183022538892" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="29" startPosition="515" endLine="36" endPosition="0" />
+    <nodeInfo nodeId="2906110183022538870" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="28" startPosition="219" endLine="36" endPosition="7" />
     <scopeInfo nodeId="5815925154349132187" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
     <scopeInfo nodeId="5815925154349134243" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="23" startPosition="77" endLine="24" endPosition="123" />
     <scopeInfo nodeId="2906110183022543023" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="30" startPosition="39" endLine="34" endPosition="10" />

@@ -254,5 +254,20 @@
     </scopeInfo>
     <scopeInfo nodeId="3906442776579556509" fileName="typeof_ConstraintFunctionParameter_parameterNode_InferenceRule.java" startLine="23" startPosition="90" endLine="47" endPosition="5" />
   </root>
+  <root nodeId="5003464986508736863">
+    <nodeInfo nodeId="7432497532426440856" fileName="typeof_ConstraintFunctionParameter_linkTarget_InferenceRule.java" startLine="22" startPosition="90" endLine="23" endPosition="230" />
+    <nodeInfo nodeId="7432497532426440893" fileName="typeof_ConstraintFunctionParameter_linkTarget_InferenceRule.java" startLine="24" startPosition="27" endLine="25" endPosition="171" />
+    <nodeInfo nodeId="7432497532426426069" fileName="typeof_ConstraintFunctionParameter_linkTarget_InferenceRule.java" startLine="27" startPosition="5" endLine="28" endPosition="46" />
+    <nodeInfo nodeId="7432497532426426069" fileName="typeof_ConstraintFunctionParameter_linkTarget_InferenceRule.java" startLine="28" startPosition="46" endLine="29" endPosition="53" />
+    <nodeInfo nodeId="7432497532426426069" fileName="typeof_ConstraintFunctionParameter_linkTarget_InferenceRule.java" startLine="29" startPosition="53" endLine="30" endPosition="220" />
+    <nodeInfo nodeId="7432497532426426069" fileName="typeof_ConstraintFunctionParameter_linkTarget_InferenceRule.java" startLine="30" startPosition="220" endLine="31" endPosition="382" />
+    <nodeInfo nodeId="7432497532426440883" fileName="typeof_ConstraintFunctionParameter_linkTarget_InferenceRule.java" startLine="23" startPosition="230" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="7432497532426426069" fileName="typeof_ConstraintFunctionParameter_linkTarget_InferenceRule.java" startLine="26" startPosition="5" endLine="32" endPosition="5" />
+    <scopeInfo nodeId="7432497532426440884" fileName="typeof_ConstraintFunctionParameter_linkTarget_InferenceRule.java" startLine="24" startPosition="27" endLine="25" endPosition="171" />
+    <scopeInfo nodeId="7432497532426426069" fileName="typeof_ConstraintFunctionParameter_linkTarget_InferenceRule.java" startLine="27" startPosition="5" endLine="31" endPosition="382" />
+    <scopeInfo nodeId="5003464986508736864" fileName="typeof_ConstraintFunctionParameter_linkTarget_InferenceRule.java" startLine="22" startPosition="90" endLine="32" endPosition="5">
+      <varInfo nodeId="7432497532426440857" varName="target" />
+    </scopeInfo>
+  </root>
 </debugInfo>
 

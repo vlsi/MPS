@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1140138174990">
+    <nodeInfo nodeId="1238684390578" fileName="SNodeTypeCastExpression_Editor.java" startLine="103" startPosition="111" endLine="104" endPosition="61" />
+    <nodeInfo nodeId="1238684407771" fileName="SNodeTypeCastExpression_Editor.java" startLine="107" startPosition="111" endLine="108" endPosition="58" />
     <scopeInfo nodeId="1238684382983" fileName="SNodeTypeCastExpression_Editor.java" startLine="103" startPosition="111" endLine="104" endPosition="61" />
     <scopeInfo nodeId="1238684406942" fileName="SNodeTypeCastExpression_Editor.java" startLine="107" startPosition="111" endLine="108" endPosition="58" />
   </root>
@@ -13,16 +15,21 @@
     <scopeInfo nodeId="1145407863900" fileName="SemanticDowncastExpression_Symbol_Actions.java" startLine="33" startPosition="75" endLine="34" endPosition="104" />
   </root>
   <root nodeId="1206019883830">
+    <nodeInfo nodeId="9066272936957155039" fileName="StaticConceptMethodCall_Editor.java" startLine="182" startPosition="105" endLine="183" endPosition="94" />
+    <nodeInfo nodeId="9066272936957155045" fileName="StaticConceptMethodCall_Editor.java" startLine="190" startPosition="144" endLine="191" endPosition="201" />
     <scopeInfo nodeId="9066272936957155038" fileName="StaticConceptMethodCall_Editor.java" startLine="182" startPosition="105" endLine="183" endPosition="94" />
     <scopeInfo nodeId="9066272936957155044" fileName="StaticConceptMethodCall_Editor.java" startLine="190" startPosition="144" endLine="191" endPosition="201" />
   </root>
   <root nodeId="1206480334645">
+    <nodeInfo nodeId="1212008996929" fileName="ReplaceableAlias_Comp.java" startLine="77" startPosition="110" endLine="78" endPosition="142" />
     <scopeInfo nodeId="1212008926119" fileName="ReplaceableAlias_Comp.java" startLine="77" startPosition="110" endLine="78" endPosition="142" />
   </root>
   <root nodeId="1206994531943">
+    <nodeInfo nodeId="1206995979662" fileName="ReplaceableAliasAndParms_Comp.java" startLine="133" startPosition="111" endLine="134" endPosition="99" />
     <scopeInfo nodeId="1206995967612" fileName="ReplaceableAliasAndParms_Comp.java" startLine="133" startPosition="111" endLine="134" endPosition="99" />
   </root>
   <root nodeId="1547759872598425693">
+    <nodeInfo nodeId="1547759872598425702" fileName="AliasComponent.java" startLine="77" startPosition="110" endLine="78" endPosition="142" />
     <scopeInfo nodeId="1547759872598425701" fileName="AliasComponent.java" startLine="77" startPosition="110" endLine="78" endPosition="142" />
   </root>
   <root nodeId="9066272936957038220">

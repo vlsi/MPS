@@ -4,11 +4,11 @@ package jetbrains.mps.lang.constraints.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -22,7 +22,11 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return new ConstraintFunction_ReferentSearchScope_Factory_Behavior.QuotationClass_q6xvx3_a0a0b().createNode();
+    SNode target = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint", false, false), "applicableLink", false), "target", false);
+    if ((target == null)) {
+      target = SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptConstraints", false, false), "concept", false);
+    }
+    return new ConstraintFunction_ReferentSearchScope_Factory_Behavior.QuotationClass_q6xvx3_a0c0b().createNode(target);
   }
 
   public static boolean call_isNodeSequenceReturned_2990203945683056978(SNode thisNode) {
@@ -56,11 +60,11 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
     );
   }
 
-  public static class QuotationClass_q6xvx3_a0a0b {
-    public QuotationClass_q6xvx3_a0a0b() {
+  public static class QuotationClass_q6xvx3_a0c0b {
+    public QuotationClass_q6xvx3_a0c0b() {
     }
 
-    public SNode createNode() {
+    public SNode createNode(Object parameter_9) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -82,6 +86,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
           {
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_8 = quotedNode_4;
+            quotedNode1_8.setReferent("concept", (SNode) parameter_9);
             quotedNode_3.addChild("elementType", quotedNode1_8);
           }
           quotedNode_1.addChild("argument", quotedNode1_7);

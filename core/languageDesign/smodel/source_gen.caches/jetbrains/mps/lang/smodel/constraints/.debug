@@ -11,6 +11,7 @@
     <nodeInfo nodeId="7376433222636453805" fileName="PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="39" />
     <nodeInfo nodeId="1213104840289" fileName="PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="31" startPosition="39" endLine="32" endPosition="126" />
     <nodeInfo nodeId="1213104840293" fileName="PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="32" startPosition="126" endLine="33" endPosition="108" />
+    <nodeInfo nodeId="1227876800967" fileName="PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="35" startPosition="39" endLine="36" endPosition="82" />
     <nodeInfo nodeId="1213104840318" fileName="PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="38" startPosition="24" endLine="39" endPosition="29" />
     <nodeInfo nodeId="1227876800963" fileName="PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="34" startPosition="108" endLine="38" endPosition="0" />
     <nodeInfo nodeId="1213104840300" fileName="PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="33" startPosition="108" endLine="38" endPosition="24" />
@@ -51,6 +52,7 @@
     <nodeInfo nodeId="304383685097610835" fileName="NodeAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="37" startPosition="108" endLine="38" endPosition="136" />
     <nodeInfo nodeId="304383685097613839" fileName="NodeAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="38" startPosition="136" endLine="39" endPosition="238" />
     <nodeInfo nodeId="7414068155431123748" fileName="NodeAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="40" startPosition="36" endLine="41" endPosition="144" />
+    <nodeInfo nodeId="1227876797069" fileName="NodeAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="44" startPosition="39" endLine="45" endPosition="205" />
     <nodeInfo nodeId="1213104846048" fileName="NodeAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="47" startPosition="24" endLine="48" endPosition="25" />
     <nodeInfo nodeId="7414068155431123739" fileName="NodeAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="39" startPosition="238" endLine="42" endPosition="5" />
     <nodeInfo nodeId="1227876797065" fileName="NodeAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="43" startPosition="104" endLine="47" endPosition="0" />
@@ -90,6 +92,7 @@
     <nodeInfo nodeId="7376433222636454449" fileName="SLinkAccess_link_ReferentConstraint.java" startLine="32" startPosition="132" endLine="33" endPosition="40" />
     <nodeInfo nodeId="1213104847492" fileName="SLinkAccess_link_ReferentConstraint.java" startLine="33" startPosition="40" endLine="34" endPosition="192" />
     <nodeInfo nodeId="1213104847498" fileName="SLinkAccess_link_ReferentConstraint.java" startLine="34" startPosition="192" endLine="35" endPosition="118" />
+    <nodeInfo nodeId="1226361003036" fileName="SLinkAccess_link_ReferentConstraint.java" startLine="37" startPosition="39" endLine="38" endPosition="74" />
     <nodeInfo nodeId="1226360999134" fileName="SLinkAccess_link_ReferentConstraint.java" startLine="36" startPosition="73" endLine="40" endPosition="0" />
     <nodeInfo nodeId="1226360988986" fileName="SLinkAccess_link_ReferentConstraint.java" startLine="35" startPosition="118" endLine="40" endPosition="7" />
     <scopeInfo nodeId="1226360999135" fileName="SLinkAccess_link_ReferentConstraint.java" startLine="37" startPosition="39" endLine="38" endPosition="74" />
@@ -115,6 +118,7 @@
     <nodeInfo nodeId="7376433222636453497" fileName="SLinkListAccess_link_ReferentConstraint.java" startLine="32" startPosition="132" endLine="33" endPosition="43" />
     <nodeInfo nodeId="1213104855760" fileName="SLinkListAccess_link_ReferentConstraint.java" startLine="33" startPosition="43" endLine="34" endPosition="192" />
     <nodeInfo nodeId="1213104855766" fileName="SLinkListAccess_link_ReferentConstraint.java" startLine="34" startPosition="192" endLine="35" endPosition="118" />
+    <nodeInfo nodeId="1227876797137" fileName="SLinkListAccess_link_ReferentConstraint.java" startLine="37" startPosition="39" endLine="38" endPosition="77" />
     <nodeInfo nodeId="1227876797133" fileName="SLinkListAccess_link_ReferentConstraint.java" startLine="36" startPosition="73" endLine="40" endPosition="0" />
     <nodeInfo nodeId="1213104855772" fileName="SLinkListAccess_link_ReferentConstraint.java" startLine="35" startPosition="118" endLine="40" endPosition="24" />
     <scopeInfo nodeId="1227876797136" fileName="SLinkListAccess_link_ReferentConstraint.java" startLine="37" startPosition="39" endLine="38" endPosition="77" />
@@ -129,6 +133,7 @@
     <nodeInfo nodeId="7376433222636453671" fileName="LinkAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="35" />
     <nodeInfo nodeId="1213104856015" fileName="LinkAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="31" startPosition="35" endLine="32" endPosition="126" />
     <nodeInfo nodeId="1213104856019" fileName="LinkAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="32" startPosition="126" endLine="33" endPosition="108" />
+    <nodeInfo nodeId="1227876798467" fileName="LinkAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="35" startPosition="39" endLine="36" endPosition="78" />
     <nodeInfo nodeId="1213104856044" fileName="LinkAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="38" startPosition="24" endLine="39" endPosition="25" />
     <nodeInfo nodeId="1227876798463" fileName="LinkAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="34" startPosition="104" endLine="38" endPosition="0" />
     <nodeInfo nodeId="1213104856026" fileName="LinkAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="33" startPosition="108" endLine="38" endPosition="24" />
@@ -198,16 +203,19 @@
   </root>
   <root nodeId="1213107436091">
     <nodeInfo nodeId="7376433222636453963" fileName="_LinkAccessT_Constraints.java" startLine="9" startPosition="114" endLine="10" endPosition="22" />
+    <nodeInfo nodeId="1213107436095" fileName="_LinkAccessT_Constraints.java" startLine="10" startPosition="22" endLine="11" endPosition="17" />
     <scopeInfo nodeId="1213107436093" fileName="_LinkAccessT_Constraints.java" startLine="9" startPosition="114" endLine="11" endPosition="17" />
   </root>
   <root nodeId="1219363770439">
     <nodeInfo nodeId="7376433222636454183" fileName="NodeRefExpression_referentNode_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="18" />
+    <nodeInfo nodeId="1219363792809" fileName="NodeRefExpression_referentNode_ReferentConstraint.java" startLine="27" startPosition="18" endLine="28" endPosition="152" />
     <scopeInfo nodeId="1219363783270" fileName="NodeRefExpression_referentNode_ReferentConstraint.java" startLine="26" startPosition="132" endLine="28" endPosition="152" />
   </root>
   <root nodeId="1221169539542">
     <nodeInfo nodeId="7376433222636453169" fileName="Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint.java" startLine="32" startPosition="132" endLine="33" endPosition="24" />
     <nodeInfo nodeId="1221169569285" fileName="Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint.java" startLine="33" startPosition="24" endLine="34" endPosition="192" />
     <nodeInfo nodeId="1221169569291" fileName="Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint.java" startLine="34" startPosition="192" endLine="35" endPosition="118" />
+    <nodeInfo nodeId="1227876801037" fileName="Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint.java" startLine="37" startPosition="39" endLine="38" endPosition="87" />
     <nodeInfo nodeId="1227876801033" fileName="Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint.java" startLine="36" startPosition="73" endLine="40" endPosition="0" />
     <nodeInfo nodeId="1221169644029" fileName="Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint.java" startLine="35" startPosition="118" endLine="40" endPosition="7" />
     <scopeInfo nodeId="1227876801036" fileName="Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint.java" startLine="37" startPosition="39" endLine="38" endPosition="87" />
@@ -219,9 +227,11 @@
     <unitInfo nodeId="1227876801033" fileName="Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint.java" startLine="36" startPosition="50" endLine="40" endPosition="5" unitName="jetbrains.mps.lang.smodel.constraints.Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint$1" />
   </root>
   <root nodeId="1221170817280">
+    <nodeInfo nodeId="1221170850336" fileName="SearchScope_ContainsOperation_Constraints.java" startLine="12" startPosition="114" endLine="13" endPosition="278" />
     <scopeInfo nodeId="1221170833985" fileName="SearchScope_ContainsOperation_Constraints.java" startLine="12" startPosition="114" endLine="13" endPosition="278" />
   </root>
   <root nodeId="1226361213114">
+    <nodeInfo nodeId="1226361385882" fileName="LinkRefExpression_linkDeclaration_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="171" />
     <scopeInfo nodeId="1226361230742" fileName="LinkRefExpression_linkDeclaration_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="171" />
   </root>
   <root nodeId="1240148885571">
@@ -236,18 +246,24 @@
   </root>
   <root nodeId="1240930364461">
     <nodeInfo nodeId="7376433222636454025" fileName="SEnumOperationInvocation_enumDeclaration_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="18" />
+    <nodeInfo nodeId="1240930366888" fileName="SEnumOperationInvocation_enumDeclaration_ReferentConstraint.java" startLine="27" startPosition="18" endLine="28" endPosition="152" />
     <scopeInfo nodeId="1240930366886" fileName="SEnumOperationInvocation_enumDeclaration_ReferentConstraint.java" startLine="26" startPosition="132" endLine="28" endPosition="152" />
   </root>
   <root nodeId="1240931364428">
+    <nodeInfo nodeId="1240931371978" fileName="SEnumOperation_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="130" />
     <scopeInfo nodeId="1240931368587" fileName="SEnumOperation_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="130" />
   </root>
   <root nodeId="1241016231436">
+    <nodeInfo nodeId="1241016235189" fileName="SEnumMemberOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="362" />
     <scopeInfo nodeId="1241016234329" fileName="SEnumMemberOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="362" />
   </root>
   <root nodeId="1547759872598425099">
+    <nodeInfo nodeId="6409763769032753230" fileName="IReferenceOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="360" />
     <scopeInfo nodeId="1547759872598425103" fileName="IReferenceOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="360" />
   </root>
   <root nodeId="8405512791876074475">
+    <nodeInfo nodeId="8405512791876074478" fileName="SLinkImplicitSelect_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="359" />
+    <nodeInfo nodeId="8405512791876074499" fileName="SLinkImplicitSelect_link_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="480" />
     <scopeInfo nodeId="8405512791876074477" fileName="SLinkImplicitSelect_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="359" />
     <scopeInfo nodeId="8405512791876074491" fileName="SLinkImplicitSelect_link_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="480" />
   </root>

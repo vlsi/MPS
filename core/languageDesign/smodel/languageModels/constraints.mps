@@ -1454,7 +1454,9 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1240161970478">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1240161974246">
               <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator:16" id="1240161981672">
-                <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="1240161981673" />
+                <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="1240161981673">
+                  <link role="elementConcept:16" targetNodeId="2.1083171877298:0" resolveInfo="EnumerationMemberDeclaration" />
+                </node>
               </node>
             </node>
           </node>

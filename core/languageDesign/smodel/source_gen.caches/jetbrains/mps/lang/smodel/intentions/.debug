@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1193745200272">
+    <nodeInfo nodeId="1193745250982" fileName="AddSNodeCastStatement_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="46" />
     <nodeInfo nodeId="1193745412080" fileName="AddSNodeCastStatement_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="33" />
     <nodeInfo nodeId="1193745594019" fileName="AddSNodeCastStatement_Intention.java" startLine="50" startPosition="145" endLine="51" endPosition="155" />
     <nodeInfo nodeId="1193745630449" fileName="AddSNodeCastStatement_Intention.java" startLine="52" startPosition="168" endLine="53" endPosition="169" />
     <nodeInfo nodeId="1193745672183" fileName="AddSNodeCastStatement_Intention.java" startLine="54" startPosition="161" endLine="55" endPosition="160" />
     <nodeInfo nodeId="1193745694398" fileName="AddSNodeCastStatement_Intention.java" startLine="55" startPosition="160" endLine="56" endPosition="94" />
+    <nodeInfo nodeId="1193745436056" fileName="AddSNodeCastStatement_Intention.java" startLine="59" startPosition="5" endLine="60" endPosition="24" />
     <nodeInfo nodeId="1193745326615" fileName="AddSNodeCastStatement_Intention.java" startLine="63" startPosition="76" endLine="64" endPosition="138" />
     <nodeInfo nodeId="1193745326631" fileName="AddSNodeCastStatement_Intention.java" startLine="64" startPosition="138" endLine="65" endPosition="142" />
     <nodeInfo nodeId="1193745830776" fileName="AddSNodeCastStatement_Intention.java" startLine="65" startPosition="142" endLine="66" endPosition="358" />
@@ -53,6 +55,8 @@
     </scopeInfo>
   </root>
   <root nodeId="1203704393457">
+    <nodeInfo nodeId="1203705008814" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="50" />
+    <nodeInfo nodeId="1203705028488" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="158" />
     <nodeInfo nodeId="1203705048412" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="128" />
     <nodeInfo nodeId="1213126636995" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="50" startPosition="128" endLine="51" endPosition="333" />
     <nodeInfo nodeId="1203705289613" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="51" startPosition="333" endLine="52" endPosition="58" />
@@ -63,12 +67,15 @@
     </scopeInfo>
   </root>
   <root nodeId="1205354609722">
+    <nodeInfo nodeId="1205354609725" fileName="Replace_ListType_withNodeListType_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="38" />
+    <nodeInfo nodeId="1205354609735" fileName="Replace_ListType_withNodeListType_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="143" />
     <nodeInfo nodeId="1205354609729" fileName="Replace_ListType_withNodeListType_Intention.java" startLine="47" startPosition="76" endLine="48" endPosition="99" />
     <scopeInfo nodeId="1205354609724" fileName="Replace_ListType_withNodeListType_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="38" />
     <scopeInfo nodeId="1205354609734" fileName="Replace_ListType_withNodeListType_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="143" />
     <scopeInfo nodeId="1205354609728" fileName="Replace_ListType_withNodeListType_Intention.java" startLine="47" startPosition="76" endLine="48" endPosition="99" />
   </root>
   <root nodeId="1206998294783">
+    <nodeInfo nodeId="1206998439635" fileName="AddOperationParameter_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="30" />
     <nodeInfo nodeId="1206998491278" fileName="AddOperationParameter_Intention.java" startLine="47" startPosition="95" endLine="48" endPosition="116" />
     <nodeInfo nodeId="1206998510398" fileName="AddOperationParameter_Intention.java" startLine="49" startPosition="5" endLine="50" endPosition="17" />
     <nodeInfo nodeId="1206998604708" fileName="AddOperationParameter_Intention.java" startLine="53" startPosition="76" endLine="54" endPosition="101" />
@@ -87,6 +94,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1224687584077">
+    <nodeInfo nodeId="1224687598099" fileName="ConvertPropertySetToAssignment_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="35" />
     <nodeInfo nodeId="1224687624710" fileName="ConvertPropertySetToAssignment_Intention.java" startLine="38" startPosition="76" endLine="39" endPosition="75" />
     <nodeInfo nodeId="1224687794886" fileName="ConvertPropertySetToAssignment_Intention.java" startLine="39" startPosition="75" endLine="40" endPosition="66" />
     <nodeInfo nodeId="1224687802037" fileName="ConvertPropertySetToAssignment_Intention.java" startLine="40" startPosition="66" endLine="41" endPosition="79" />
@@ -105,6 +113,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1224751635787">
+    <nodeInfo nodeId="1224751681314" fileName="ConvertLinkSetToAssignment_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="35" />
     <nodeInfo nodeId="1224751695536" fileName="ConvertLinkSetToAssignment_Intention.java" startLine="38" startPosition="76" endLine="39" endPosition="75" />
     <nodeInfo nodeId="1224751741302" fileName="ConvertLinkSetToAssignment_Intention.java" startLine="39" startPosition="75" endLine="40" endPosition="71" />
     <nodeInfo nodeId="1224751762976" fileName="ConvertLinkSetToAssignment_Intention.java" startLine="40" startPosition="71" endLine="41" endPosition="84" />
@@ -134,6 +143,7 @@
     <scopeInfo nodeId="1238684430907" fileName="ChangeAsCast_Intention.java" startLine="31" startPosition="85" endLine="36" endPosition="5" />
   </root>
   <root nodeId="4726561250374329612">
+    <nodeInfo nodeId="4726561250374329634" fileName="ConvertConceptPropertySetToAssignment_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="35" />
     <nodeInfo nodeId="4726561250374329636" fileName="ConvertConceptPropertySetToAssignment_Intention.java" startLine="38" startPosition="76" endLine="39" endPosition="75" />
     <nodeInfo nodeId="4726561250374329642" fileName="ConvertConceptPropertySetToAssignment_Intention.java" startLine="39" startPosition="75" endLine="40" endPosition="66" />
     <nodeInfo nodeId="4726561250374329648" fileName="ConvertConceptPropertySetToAssignment_Intention.java" startLine="40" startPosition="66" endLine="41" endPosition="79" />

@@ -2165,6 +2165,7 @@
     <scopeInfo nodeId="1221172482919" fileName="typeof_SearchScope_ContainsOperation_InferenceRule.java" startLine="21" startPosition="88" endLine="34" endPosition="5" />
   </root>
   <root nodeId="1224686720631">
+    <nodeInfo nodeId="1224686740450" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="15" startPosition="34" endLine="16" endPosition="36" />
     <nodeInfo nodeId="1224686938651" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="19" startPosition="35" endLine="20" endPosition="23" />
     <nodeInfo nodeId="1224686853255" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="20" startPosition="23" endLine="21" endPosition="102" />
     <nodeInfo nodeId="1224686986340" fileName="ConvertCastToSModelCast_QuickFix.java" startLine="21" startPosition="102" endLine="22" endPosition="71" />
@@ -2396,10 +2397,12 @@
     <nodeInfo nodeId="1228490047841" fileName="TypesystemDescriptor.java" startLine="456" startPosition="30" endLine="457" endPosition="25" />
     <nodeInfo nodeId="1232371378882" fileName="TypesystemDescriptor.java" startLine="459" startPosition="110" endLine="460" endPosition="25" />
     <nodeInfo nodeId="1232371378889" fileName="TypesystemDescriptor.java" startLine="461" startPosition="11" endLine="462" endPosition="154" />
+    <nodeInfo nodeId="1232371378896" fileName="TypesystemDescriptor.java" startLine="462" startPosition="154" endLine="463" endPosition="37" />
     <nodeInfo nodeId="1228490164836" fileName="TypesystemDescriptor.java" startLine="466" startPosition="101" endLine="467" endPosition="135" />
     <nodeInfo nodeId="1232371129758" fileName="TypesystemDescriptor.java" startLine="475" startPosition="30" endLine="476" endPosition="25" />
     <nodeInfo nodeId="1232371344778" fileName="TypesystemDescriptor.java" startLine="478" startPosition="113" endLine="479" endPosition="25" />
     <nodeInfo nodeId="1232371129760" fileName="TypesystemDescriptor.java" startLine="480" startPosition="11" endLine="481" endPosition="167" />
+    <nodeInfo nodeId="1232371129767" fileName="TypesystemDescriptor.java" startLine="481" startPosition="167" endLine="482" endPosition="37" />
     <nodeInfo nodeId="1232371170099" fileName="TypesystemDescriptor.java" startLine="485" startPosition="101" endLine="486" endPosition="135" />
     <nodeInfo nodeId="1228490043313" fileName="TypesystemDescriptor.java" startLine="455" startPosition="108" endLine="458" endPosition="11" />
     <nodeInfo nodeId="1232371378880" fileName="TypesystemDescriptor.java" startLine="458" startPosition="11" endLine="461" endPosition="11" />
