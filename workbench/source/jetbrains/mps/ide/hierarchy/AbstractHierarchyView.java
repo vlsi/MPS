@@ -176,6 +176,9 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
     myHierarchyTree.myHierarchyNode = node;
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
+        Project project = getProject();
+        if (project == null || project.isDisposed()) return;
+
         myHierarchyTree.rebuildNow();
         if (myTreeNode != null) {
           myHierarchyTree.selectNode(myTreeNode);
