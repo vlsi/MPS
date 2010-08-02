@@ -15,6 +15,7 @@ import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.ActionManager;
+import javax.swing.JPopupMenu;
 
 public class SubclassedClassifierEditorMessage extends AbstractLeftEditorHighlighterMessage {
   private static final EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(1);
@@ -55,5 +56,9 @@ public class SubclassedClassifierEditorMessage extends AbstractLeftEditorHighlig
 
   public AnAction getClickAction() {
     return ActionManager.getInstance().getAction("jetbrains.mps.baseLanguage#action#jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action");
+  }
+
+  public JPopupMenu getPopupMenu() {
+    return null;
   }
 }

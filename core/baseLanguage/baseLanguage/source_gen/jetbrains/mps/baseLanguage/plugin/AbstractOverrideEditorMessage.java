@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.util.Condition;
+import javax.swing.JPopupMenu;
 
 public abstract class AbstractOverrideEditorMessage extends AbstractLeftEditorHighlighterMessage {
   private CellFinder<EditorCell> myReturnTypeCellFinder;
@@ -29,5 +30,9 @@ public abstract class AbstractOverrideEditorMessage extends AbstractLeftEditorHi
       returnTypeCell :
       bigCell
     );
+  }
+
+  public JPopupMenu getPopupMenu() {
+    return null;
   }
 }

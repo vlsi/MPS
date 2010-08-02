@@ -6,6 +6,7 @@
     <nodeInfo nodeId="1430599794086139560" fileName="GoToOverridenMethod_Action.java" startLine="39" startPosition="42" endLine="40" endPosition="38" />
     <nodeInfo nodeId="1108208212555695924" fileName="GoToOverridenMethod_Action.java" startLine="40" startPosition="38" endLine="41" endPosition="45" />
     <nodeInfo nodeId="7137238154092160497" fileName="GoToOverridenMethod_Action.java" startLine="41" startPosition="45" endLine="42" endPosition="26" />
+    <nodeInfo nodeId="1108208212555653261" fileName="GoToOverridenMethod_Action.java" startLine="55" startPosition="52" endLine="56" endPosition="145" />
     <nodeInfo nodeId="9093903716560055870" fileName="GoToOverridenMethod_Action.java" startLine="113" startPosition="9" endLine="114" endPosition="121" />
     <nodeInfo nodeId="8659437073927771315" fileName="GoToOverridenMethod_Action.java" startLine="114" startPosition="121" endLine="115" endPosition="48" />
     <nodeInfo nodeId="9093903716560055922" fileName="GoToOverridenMethod_Action.java" startLine="119" startPosition="31" endLine="120" endPosition="92" />
@@ -15,6 +16,9 @@
     <nodeInfo nodeId="9093903716560055997" fileName="GoToOverridenMethod_Action.java" startLine="129" startPosition="14" endLine="130" endPosition="107" />
     <nodeInfo nodeId="9093903716560056007" fileName="GoToOverridenMethod_Action.java" startLine="130" startPosition="107" endLine="131" endPosition="92" />
     <nodeInfo nodeId="9093903716560056024" fileName="GoToOverridenMethod_Action.java" startLine="131" startPosition="92" endLine="132" endPosition="98" />
+    <nodeInfo nodeId="9093903716560056041" fileName="GoToOverridenMethod_Action.java" startLine="135" startPosition="57" endLine="136" endPosition="25" />
+    <nodeInfo nodeId="1108208212555653196" fileName="GoToOverridenMethod_Action.java" startLine="144" startPosition="48" endLine="145" endPosition="164" />
+    <nodeInfo nodeId="1108208212555654378" fileName="GoToOverridenMethod_Action.java" startLine="148" startPosition="33" endLine="149" endPosition="168" />
     <nodeInfo nodeId="1108208212555695832" fileName="GoToOverridenMethod_Action.java" startLine="152" startPosition="61" endLine="153" endPosition="82" />
     <nodeInfo nodeId="1108208212555695838" fileName="GoToOverridenMethod_Action.java" startLine="153" startPosition="82" endLine="154" endPosition="71" />
     <nodeInfo nodeId="1430599794085346274" fileName="GoToOverridenMethod_Action.java" startLine="154" startPosition="71" endLine="155" endPosition="155" />
@@ -59,35 +63,40 @@
     <unitInfo nodeId="9093903716560055885" fileName="GoToOverridenMethod_Action.java" startLine="116" startPosition="44" endLine="125" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action$1" />
   </root>
   <root nodeId="113917032267548917">
-    <nodeInfo nodeId="4991336608511159608" fileName="AbstractOverrideEditorMessage.java" startLine="13" startPosition="98" endLine="14" endPosition="56" />
-    <nodeInfo nodeId="113917032267548931" fileName="AbstractOverrideEditorMessage.java" startLine="16" startPosition="94" endLine="17" endPosition="32" />
-    <nodeInfo nodeId="4991336608511244684" fileName="AbstractOverrideEditorMessage.java" startLine="17" startPosition="32" endLine="18" endPosition="85" />
-    <nodeInfo nodeId="6705815131217991125" fileName="AbstractOverrideEditorMessage.java" startLine="26" startPosition="55" endLine="27" endPosition="79" />
-    <nodeInfo nodeId="4991336608511244671" fileName="AbstractOverrideEditorMessage.java" startLine="19" startPosition="87" endLine="23" endPosition="0" />
-    <nodeInfo nodeId="8935263376425391724" fileName="AbstractOverrideEditorMessage.java" startLine="27" startPosition="79" endLine="31" endPosition="6" />
-    <nodeInfo nodeId="4991336608511244651" fileName="AbstractOverrideEditorMessage.java" startLine="18" startPosition="85" endLine="23" endPosition="13" />
-    <nodeInfo nodeId="113917032267578763" fileName="AbstractOverrideEditorMessage.java" startLine="25" startPosition="0" endLine="33" endPosition="0" />
-    <nodeInfo nodeId="113917032267548919" fileName="AbstractOverrideEditorMessage.java" startLine="15" startPosition="0" endLine="24" endPosition="3" />
-    <scopeInfo nodeId="4991336608511244676" fileName="AbstractOverrideEditorMessage.java" startLine="20" startPosition="43" endLine="21" endPosition="49" />
-    <scopeInfo nodeId="4991336608511244671" fileName="AbstractOverrideEditorMessage.java" startLine="19" startPosition="87" endLine="23" endPosition="0">
+    <nodeInfo nodeId="4991336608511159608" fileName="AbstractOverrideEditorMessage.java" startLine="14" startPosition="98" endLine="15" endPosition="56" />
+    <nodeInfo nodeId="113917032267548931" fileName="AbstractOverrideEditorMessage.java" startLine="17" startPosition="94" endLine="18" endPosition="32" />
+    <nodeInfo nodeId="4991336608511244684" fileName="AbstractOverrideEditorMessage.java" startLine="18" startPosition="32" endLine="19" endPosition="85" />
+    <nodeInfo nodeId="4991336608511244677" fileName="AbstractOverrideEditorMessage.java" startLine="21" startPosition="43" endLine="22" endPosition="49" />
+    <nodeInfo nodeId="6705815131217991125" fileName="AbstractOverrideEditorMessage.java" startLine="27" startPosition="55" endLine="28" endPosition="79" />
+    <nodeInfo nodeId="7437471060342775286" fileName="AbstractOverrideEditorMessage.java" startLine="35" startPosition="36" endLine="36" endPosition="16" />
+    <nodeInfo nodeId="4991336608511244671" fileName="AbstractOverrideEditorMessage.java" startLine="20" startPosition="87" endLine="24" endPosition="0" />
+    <nodeInfo nodeId="8935263376425391724" fileName="AbstractOverrideEditorMessage.java" startLine="28" startPosition="79" endLine="32" endPosition="6" />
+    <nodeInfo nodeId="7437471060342775282" fileName="AbstractOverrideEditorMessage.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="4991336608511244651" fileName="AbstractOverrideEditorMessage.java" startLine="19" startPosition="85" endLine="24" endPosition="13" />
+    <nodeInfo nodeId="113917032267578763" fileName="AbstractOverrideEditorMessage.java" startLine="26" startPosition="0" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="113917032267548919" fileName="AbstractOverrideEditorMessage.java" startLine="16" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="4991336608511244676" fileName="AbstractOverrideEditorMessage.java" startLine="21" startPosition="43" endLine="22" endPosition="49" />
+    <scopeInfo nodeId="7437471060342775285" fileName="AbstractOverrideEditorMessage.java" startLine="35" startPosition="36" endLine="36" endPosition="16" />
+    <scopeInfo nodeId="4991336608511244671" fileName="AbstractOverrideEditorMessage.java" startLine="20" startPosition="87" endLine="24" endPosition="0">
       <varInfo nodeId="4991336608511244674" varName="cell" />
     </scopeInfo>
-    <scopeInfo nodeId="113917032267578768" fileName="AbstractOverrideEditorMessage.java" startLine="26" startPosition="55" endLine="31" endPosition="6">
+    <scopeInfo nodeId="7437471060342775282" fileName="AbstractOverrideEditorMessage.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="113917032267578768" fileName="AbstractOverrideEditorMessage.java" startLine="27" startPosition="55" endLine="32" endPosition="6">
       <varInfo nodeId="6705815131217991126" varName="returnTypeCell" />
     </scopeInfo>
-    <scopeInfo nodeId="113917032267548922" fileName="AbstractOverrideEditorMessage.java" startLine="16" startPosition="94" endLine="23" endPosition="13">
+    <scopeInfo nodeId="113917032267548922" fileName="AbstractOverrideEditorMessage.java" startLine="17" startPosition="94" endLine="24" endPosition="13">
       <varInfo nodeId="4991336608511244685" varName="returnTypeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="113917032267578763" fileName="AbstractOverrideEditorMessage.java" startLine="25" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="113917032267578763" fileName="AbstractOverrideEditorMessage.java" startLine="26" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="113917032267578766" varName="bigCell" />
     </scopeInfo>
-    <scopeInfo nodeId="113917032267548919" fileName="AbstractOverrideEditorMessage.java" startLine="15" startPosition="0" endLine="24" endPosition="3">
+    <scopeInfo nodeId="113917032267548919" fileName="AbstractOverrideEditorMessage.java" startLine="16" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="113917032267548927" varName="ovner" />
       <varInfo nodeId="113917032267548925" varName="node" />
       <varInfo nodeId="113917032267548929" varName="tooltip" />
     </scopeInfo>
-    <unitInfo nodeId="4991336608511244668" fileName="AbstractOverrideEditorMessage.java" startLine="19" startPosition="62" endLine="23" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.AbstractOverrideEditorMessage$1" />
-    <unitInfo nodeId="113917032267548917" fileName="AbstractOverrideEditorMessage.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AbstractOverrideEditorMessage" />
+    <unitInfo nodeId="4991336608511244668" fileName="AbstractOverrideEditorMessage.java" startLine="20" startPosition="62" endLine="24" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.AbstractOverrideEditorMessage$1" />
+    <unitInfo nodeId="113917032267548917" fileName="AbstractOverrideEditorMessage.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AbstractOverrideEditorMessage" />
   </root>
   <root nodeId="1177224257042828196">
     <nodeInfo nodeId="1177224257042842022" fileName="TodoFinder.java" startLine="20" startPosition="69" endLine="21" endPosition="187" />
@@ -134,6 +143,7 @@
   <root nodeId="1205248417575">
     <nodeInfo nodeId="1206096366578" fileName="CommentStatements_Action.java" startLine="22" startPosition="0" endLine="23" endPosition="28" />
     <nodeInfo nodeId="9085732681696863716" fileName="CommentStatements_Action.java" startLine="23" startPosition="28" endLine="24" endPosition="42" />
+    <nodeInfo nodeId="1208269568557" fileName="CommentStatements_Action.java" startLine="37" startPosition="52" endLine="38" endPosition="261" />
     <nodeInfo nodeId="1205250633077" fileName="CommentStatements_Action.java" startLine="91" startPosition="9" endLine="92" endPosition="214" />
     <nodeInfo nodeId="1205252086549" fileName="CommentStatements_Action.java" startLine="92" startPosition="214" endLine="93" endPosition="173" />
     <scopeInfo nodeId="1206096397028" fileName="CommentStatements_Action.java" startLine="37" startPosition="52" endLine="38" endPosition="261" />
@@ -141,6 +151,7 @@
   <root nodeId="1205604975727">
     <nodeInfo nodeId="1208269064746" fileName="UncommentStatements_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="21" />
     <nodeInfo nodeId="9085732681696873270" fileName="UncommentStatements_Action.java" startLine="21" startPosition="21" endLine="22" endPosition="42" />
+    <nodeInfo nodeId="1208269173446" fileName="UncommentStatements_Action.java" startLine="35" startPosition="52" endLine="36" endPosition="233" />
     <nodeInfo nodeId="1208269256170" fileName="UncommentStatements_Action.java" startLine="81" startPosition="9" endLine="82" endPosition="184" />
     <nodeInfo nodeId="1205605233280" fileName="UncommentStatements_Action.java" startLine="83" startPosition="126" endLine="84" endPosition="84" />
     <nodeInfo nodeId="1205605282361" fileName="UncommentStatements_Action.java" startLine="85" startPosition="7" endLine="86" endPosition="59" />
@@ -268,6 +279,7 @@
     <nodeInfo nodeId="1223451793772" fileName="ExtractMethod_Action.java" startLine="29" startPosition="28" endLine="30" endPosition="22" />
     <nodeInfo nodeId="1334376219849007479" fileName="ExtractMethod_Action.java" startLine="30" startPosition="22" endLine="31" endPosition="32" />
     <nodeInfo nodeId="9085732681696871833" fileName="ExtractMethod_Action.java" startLine="31" startPosition="32" endLine="32" endPosition="42" />
+    <nodeInfo nodeId="1334376219849008827" fileName="ExtractMethod_Action.java" startLine="45" startPosition="52" endLine="46" endPosition="149" />
     <nodeInfo nodeId="1334376219849291776" fileName="ExtractMethod_Action.java" startLine="103" startPosition="9" endLine="104" endPosition="123" />
     <nodeInfo nodeId="1334376219849324168" fileName="ExtractMethod_Action.java" startLine="104" startPosition="123" endLine="105" endPosition="108" />
     <nodeInfo nodeId="8155843501977978487" fileName="ExtractMethod_Action.java" startLine="107" startPosition="27" endLine="108" endPosition="96" />
@@ -346,6 +358,7 @@
     <nodeInfo nodeId="1225103528698" fileName="IntroduceVariable_Action.java" startLine="25" startPosition="21" endLine="26" endPosition="32" />
     <nodeInfo nodeId="1225382279996" fileName="IntroduceVariable_Action.java" startLine="26" startPosition="32" endLine="27" endPosition="36" />
     <nodeInfo nodeId="1232815292101" fileName="IntroduceVariable_Action.java" startLine="27" startPosition="36" endLine="28" endPosition="22" />
+    <nodeInfo nodeId="1228412728726" fileName="IntroduceVariable_Action.java" startLine="41" startPosition="52" endLine="42" endPosition="153" />
     <nodeInfo nodeId="1225382340114" fileName="IntroduceVariable_Action.java" startLine="94" startPosition="9" endLine="95" endPosition="126" />
     <nodeInfo nodeId="1228834776648" fileName="IntroduceVariable_Action.java" startLine="95" startPosition="126" endLine="96" endPosition="66" />
     <nodeInfo nodeId="1225385163849" fileName="IntroduceVariable_Action.java" startLine="98" startPosition="27" endLine="99" endPosition="70" />
@@ -786,6 +799,8 @@
     <nodeInfo nodeId="3836499504550260253" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="35" startPosition="66" endLine="36" endPosition="98" />
     <nodeInfo nodeId="3836499504550260259" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="36" startPosition="98" endLine="37" endPosition="116" />
     <nodeInfo nodeId="3836499504550260278" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="38" startPosition="5" endLine="39" endPosition="17" />
+    <nodeInfo nodeId="3836499504550260311" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="42" startPosition="34" endLine="43" endPosition="21" />
+    <nodeInfo nodeId="3836499504550260321" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="46" startPosition="38" endLine="47" endPosition="58" />
     <nodeInfo nodeId="3836499504550259661" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="17" startPosition="0" endLine="21" endPosition="3" />
     <nodeInfo nodeId="3836499504550260198" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <nodeInfo nodeId="3836499504550260251" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="34" startPosition="48" endLine="38" endPosition="5" />
@@ -823,47 +838,55 @@
     <unitInfo nodeId="3836499504550259659" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="15" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AbstractLeftEditorHighlighterMessage" />
   </root>
   <root nodeId="3836499504550260330">
-    <nodeInfo nodeId="3836499504550260385" fileName="SubclassedClassifierEditorMessage.java" startLine="19" startPosition="93" endLine="20" endPosition="123" />
-    <nodeInfo nodeId="3836499504550260393" fileName="SubclassedClassifierEditorMessage.java" startLine="20" startPosition="123" endLine="21" endPosition="157" />
-    <nodeInfo nodeId="3836499504550260399" fileName="SubclassedClassifierEditorMessage.java" startLine="21" startPosition="157" endLine="22" endPosition="161" />
-    <nodeInfo nodeId="3836499504550260420" fileName="SubclassedClassifierEditorMessage.java" startLine="23" startPosition="0" endLine="24" endPosition="32" />
-    <nodeInfo nodeId="3836499504550260832" fileName="SubclassedClassifierEditorMessage.java" startLine="24" startPosition="32" endLine="25" endPosition="60" />
-    <nodeInfo nodeId="3836499504550260343" fileName="SubclassedClassifierEditorMessage.java" startLine="27" startPosition="125" endLine="28" endPosition="32" />
-    <nodeInfo nodeId="3836499504550260424" fileName="SubclassedClassifierEditorMessage.java" startLine="28" startPosition="32" endLine="29" endPosition="32" />
-    <nodeInfo nodeId="3836499504550260435" fileName="SubclassedClassifierEditorMessage.java" startLine="48" startPosition="55" endLine="49" endPosition="78" />
-    <nodeInfo nodeId="3836499504550260851" fileName="SubclassedClassifierEditorMessage.java" startLine="30" startPosition="86" endLine="34" endPosition="0" />
-    <nodeInfo nodeId="3836499504550260362" fileName="SubclassedClassifierEditorMessage.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <nodeInfo nodeId="3836499504550260444" fileName="SubclassedClassifierEditorMessage.java" startLine="49" startPosition="78" endLine="53" endPosition="6" />
-    <nodeInfo nodeId="3836499504550260376" fileName="SubclassedClassifierEditorMessage.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <nodeInfo nodeId="3836499504550260839" fileName="SubclassedClassifierEditorMessage.java" startLine="29" startPosition="32" endLine="34" endPosition="13" />
-    <nodeInfo nodeId="3836499504550260356" fileName="SubclassedClassifierEditorMessage.java" startLine="36" startPosition="0" endLine="43" endPosition="0" />
-    <nodeInfo nodeId="3836499504550260368" fileName="SubclassedClassifierEditorMessage.java" startLine="47" startPosition="0" endLine="55" endPosition="0" />
-    <nodeInfo nodeId="3836499504550260332" fileName="SubclassedClassifierEditorMessage.java" startLine="26" startPosition="0" endLine="35" endPosition="3" />
-    <scopeInfo nodeId="3836499504550260856" fileName="SubclassedClassifierEditorMessage.java" startLine="31" startPosition="43" endLine="32" endPosition="117" />
-    <scopeInfo nodeId="3836499504550260365" fileName="SubclassedClassifierEditorMessage.java" startLine="44" startPosition="63" endLine="45" endPosition="16" />
-    <scopeInfo nodeId="3836499504550260379" fileName="SubclassedClassifierEditorMessage.java" startLine="56" startPosition="36" endLine="57" endPosition="151" />
-    <scopeInfo nodeId="3836499504550260851" fileName="SubclassedClassifierEditorMessage.java" startLine="30" startPosition="86" endLine="34" endPosition="0">
+    <nodeInfo nodeId="3836499504550260385" fileName="SubclassedClassifierEditorMessage.java" startLine="20" startPosition="93" endLine="21" endPosition="123" />
+    <nodeInfo nodeId="3836499504550260393" fileName="SubclassedClassifierEditorMessage.java" startLine="21" startPosition="123" endLine="22" endPosition="157" />
+    <nodeInfo nodeId="3836499504550260399" fileName="SubclassedClassifierEditorMessage.java" startLine="22" startPosition="157" endLine="23" endPosition="161" />
+    <nodeInfo nodeId="3836499504550260420" fileName="SubclassedClassifierEditorMessage.java" startLine="24" startPosition="0" endLine="25" endPosition="32" />
+    <nodeInfo nodeId="3836499504550260832" fileName="SubclassedClassifierEditorMessage.java" startLine="25" startPosition="32" endLine="26" endPosition="60" />
+    <nodeInfo nodeId="3836499504550260343" fileName="SubclassedClassifierEditorMessage.java" startLine="28" startPosition="125" endLine="29" endPosition="32" />
+    <nodeInfo nodeId="3836499504550260424" fileName="SubclassedClassifierEditorMessage.java" startLine="29" startPosition="32" endLine="30" endPosition="32" />
+    <nodeInfo nodeId="3836499504550260867" fileName="SubclassedClassifierEditorMessage.java" startLine="32" startPosition="43" endLine="33" endPosition="117" />
+    <nodeInfo nodeId="3836499504550260366" fileName="SubclassedClassifierEditorMessage.java" startLine="45" startPosition="63" endLine="46" endPosition="16" />
+    <nodeInfo nodeId="3836499504550260435" fileName="SubclassedClassifierEditorMessage.java" startLine="49" startPosition="55" endLine="50" endPosition="78" />
+    <nodeInfo nodeId="3703829873956641483" fileName="SubclassedClassifierEditorMessage.java" startLine="57" startPosition="36" endLine="58" endPosition="151" />
+    <nodeInfo nodeId="7437471060342841603" fileName="SubclassedClassifierEditorMessage.java" startLine="61" startPosition="36" endLine="62" endPosition="16" />
+    <nodeInfo nodeId="3836499504550260851" fileName="SubclassedClassifierEditorMessage.java" startLine="31" startPosition="86" endLine="35" endPosition="0" />
+    <nodeInfo nodeId="3836499504550260405" fileName="SubclassedClassifierEditorMessage.java" startLine="38" startPosition="25" endLine="42" endPosition="13" />
+    <nodeInfo nodeId="3836499504550260362" fileName="SubclassedClassifierEditorMessage.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <nodeInfo nodeId="3836499504550260444" fileName="SubclassedClassifierEditorMessage.java" startLine="50" startPosition="78" endLine="54" endPosition="6" />
+    <nodeInfo nodeId="3836499504550260376" fileName="SubclassedClassifierEditorMessage.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <nodeInfo nodeId="7437471060342841599" fileName="SubclassedClassifierEditorMessage.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <nodeInfo nodeId="3836499504550260839" fileName="SubclassedClassifierEditorMessage.java" startLine="30" startPosition="32" endLine="35" endPosition="13" />
+    <nodeInfo nodeId="3836499504550260356" fileName="SubclassedClassifierEditorMessage.java" startLine="37" startPosition="0" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="3836499504550260368" fileName="SubclassedClassifierEditorMessage.java" startLine="48" startPosition="0" endLine="56" endPosition="0" />
+    <nodeInfo nodeId="3836499504550260332" fileName="SubclassedClassifierEditorMessage.java" startLine="27" startPosition="0" endLine="36" endPosition="3" />
+    <scopeInfo nodeId="3836499504550260856" fileName="SubclassedClassifierEditorMessage.java" startLine="32" startPosition="43" endLine="33" endPosition="117" />
+    <scopeInfo nodeId="3836499504550260365" fileName="SubclassedClassifierEditorMessage.java" startLine="45" startPosition="63" endLine="46" endPosition="16" />
+    <scopeInfo nodeId="3836499504550260379" fileName="SubclassedClassifierEditorMessage.java" startLine="57" startPosition="36" endLine="58" endPosition="151" />
+    <scopeInfo nodeId="7437471060342841602" fileName="SubclassedClassifierEditorMessage.java" startLine="61" startPosition="36" endLine="62" endPosition="16" />
+    <scopeInfo nodeId="3836499504550260851" fileName="SubclassedClassifierEditorMessage.java" startLine="31" startPosition="86" endLine="35" endPosition="0">
       <varInfo nodeId="3836499504550260854" varName="cell" />
     </scopeInfo>
-    <scopeInfo nodeId="3836499504550260359" fileName="SubclassedClassifierEditorMessage.java" startLine="37" startPosition="25" endLine="41" endPosition="13" />
-    <scopeInfo nodeId="3836499504550260362" fileName="SubclassedClassifierEditorMessage.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="3836499504550260376" fileName="SubclassedClassifierEditorMessage.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="3836499504550260373" fileName="SubclassedClassifierEditorMessage.java" startLine="48" startPosition="55" endLine="53" endPosition="6">
+    <scopeInfo nodeId="3836499504550260359" fileName="SubclassedClassifierEditorMessage.java" startLine="38" startPosition="25" endLine="42" endPosition="13" />
+    <scopeInfo nodeId="3836499504550260362" fileName="SubclassedClassifierEditorMessage.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="3836499504550260376" fileName="SubclassedClassifierEditorMessage.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="7437471060342841599" fileName="SubclassedClassifierEditorMessage.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="3836499504550260373" fileName="SubclassedClassifierEditorMessage.java" startLine="49" startPosition="55" endLine="54" endPosition="6">
       <varInfo nodeId="3836499504550260436" varName="returnTypeCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3836499504550260335" fileName="SubclassedClassifierEditorMessage.java" startLine="27" startPosition="125" endLine="34" endPosition="13" />
-    <scopeInfo nodeId="3836499504550260356" fileName="SubclassedClassifierEditorMessage.java" startLine="36" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="3836499504550260368" fileName="SubclassedClassifierEditorMessage.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="3836499504550260335" fileName="SubclassedClassifierEditorMessage.java" startLine="28" startPosition="125" endLine="35" endPosition="13" />
+    <scopeInfo nodeId="3836499504550260356" fileName="SubclassedClassifierEditorMessage.java" startLine="37" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="3836499504550260368" fileName="SubclassedClassifierEditorMessage.java" startLine="48" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="3836499504550260371" varName="bigCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3836499504550260332" fileName="SubclassedClassifierEditorMessage.java" startLine="26" startPosition="0" endLine="35" endPosition="3">
+    <scopeInfo nodeId="3836499504550260332" fileName="SubclassedClassifierEditorMessage.java" startLine="27" startPosition="0" endLine="36" endPosition="3">
       <varInfo nodeId="3836499504550260339" varName="ovner" />
       <varInfo nodeId="3836499504550260337" varName="node" />
       <varInfo nodeId="3836499504550260416" varName="isInterface" />
       <varInfo nodeId="3836499504550260341" varName="tooltip" />
     </scopeInfo>
-    <unitInfo nodeId="3836499504550260848" fileName="SubclassedClassifierEditorMessage.java" startLine="30" startPosition="61" endLine="34" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.SubclassedClassifierEditorMessage$1" />
-    <unitInfo nodeId="3836499504550260330" fileName="SubclassedClassifierEditorMessage.java" startLine="19" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.SubclassedClassifierEditorMessage" />
+    <unitInfo nodeId="3836499504550260848" fileName="SubclassedClassifierEditorMessage.java" startLine="31" startPosition="61" endLine="35" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.SubclassedClassifierEditorMessage$1" />
+    <unitInfo nodeId="3836499504550260330" fileName="SubclassedClassifierEditorMessage.java" startLine="20" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.SubclassedClassifierEditorMessage" />
   </root>
   <root nodeId="3856910426407913103">
     <nodeInfo nodeId="6194849458308484474" fileName="DefaultJavaAppFromClass.java" startLine="31" startPosition="52" endLine="32" endPosition="129" />
@@ -880,6 +903,7 @@
     <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="47" startPosition="75" endLine="48" endPosition="61" />
     <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="48" startPosition="61" endLine="49" endPosition="118" />
     <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="49" startPosition="118" endLine="50" endPosition="54" />
+    <nodeInfo nodeId="6194849458308407541" fileName="DefaultJavaAppFromClass.java" startLine="59" startPosition="56" endLine="60" endPosition="136" />
     <nodeInfo nodeId="6194849458308484485" fileName="DefaultJavaAppFromClass.java" startLine="32" startPosition="129" endLine="35" endPosition="5" />
     <nodeInfo nodeId="3856910426407931764" fileName="DefaultJavaAppFromClass.java" startLine="37" startPosition="0" endLine="40" endPosition="5" />
     <nodeInfo nodeId="3856910426407931794" fileName="DefaultJavaAppFromClass.java" startLine="43" startPosition="0" endLine="51" endPosition="5" />
@@ -896,10 +920,12 @@
     <nodeInfo nodeId="401697226377603551" fileName="CommentLine_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="29" />
     <nodeInfo nodeId="3993568175834643543" fileName="CommentLine_Action.java" startLine="20" startPosition="29" endLine="21" endPosition="42" />
     <nodeInfo nodeId="401697226377750839" fileName="CommentLine_Action.java" startLine="34" startPosition="52" endLine="35" endPosition="61" />
+    <nodeInfo nodeId="401697226377750847" fileName="CommentLine_Action.java" startLine="35" startPosition="61" endLine="36" endPosition="212" />
     <nodeInfo nodeId="401697226377740589" fileName="CommentLine_Action.java" startLine="78" startPosition="9" endLine="79" endPosition="63" />
     <nodeInfo nodeId="401697226377604239" fileName="CommentLine_Action.java" startLine="79" startPosition="63" endLine="80" endPosition="127" />
     <nodeInfo nodeId="401697226377604273" fileName="CommentLine_Action.java" startLine="80" startPosition="127" endLine="81" endPosition="139" />
     <nodeInfo nodeId="401697226377604284" fileName="CommentLine_Action.java" startLine="81" startPosition="139" endLine="82" endPosition="84" />
+    <nodeInfo nodeId="401697226377740568" fileName="CommentLine_Action.java" startLine="88" startPosition="36" endLine="89" endPosition="140" />
     <nodeInfo nodeId="401697226377739735" fileName="CommentLine_Action.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
     <scopeInfo nodeId="401697226377739737" fileName="CommentLine_Action.java" startLine="88" startPosition="36" endLine="89" endPosition="140" />
     <scopeInfo nodeId="401697226377603555" fileName="CommentLine_Action.java" startLine="34" startPosition="52" endLine="36" endPosition="212">
@@ -931,7 +957,10 @@
     <nodeInfo nodeId="113917032267548845" fileName="OverridingMethodEditorMessage.java" startLine="18" startPosition="0" endLine="19" endPosition="31" />
     <nodeInfo nodeId="113917032267578788" fileName="OverridingMethodEditorMessage.java" startLine="21" startPosition="114" endLine="22" endPosition="32" />
     <nodeInfo nodeId="113917032267548851" fileName="OverridingMethodEditorMessage.java" startLine="22" startPosition="32" endLine="23" endPosition="35" />
+    <nodeInfo nodeId="113917032267548887" fileName="OverridingMethodEditorMessage.java" startLine="33" startPosition="63" endLine="34" endPosition="16" />
+    <nodeInfo nodeId="335007595588453651" fileName="OverridingMethodEditorMessage.java" startLine="37" startPosition="36" endLine="38" endPosition="147" />
     <nodeInfo nodeId="4291694139627064711" fileName="OverridingMethodEditorMessage.java" startLine="20" startPosition="0" endLine="24" endPosition="3" />
+    <nodeInfo nodeId="113917032267548871" fileName="OverridingMethodEditorMessage.java" startLine="26" startPosition="25" endLine="30" endPosition="13" />
     <nodeInfo nodeId="113917032267548783" fileName="OverridingMethodEditorMessage.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <nodeInfo nodeId="113917032267548803" fileName="OverridingMethodEditorMessage.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <nodeInfo nodeId="113917032267548771" fileName="OverridingMethodEditorMessage.java" startLine="25" startPosition="0" endLine="32" endPosition="0" />
@@ -962,6 +991,7 @@
     <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="42" startPosition="73" endLine="43" endPosition="59" />
     <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="43" startPosition="59" endLine="44" endPosition="116" />
     <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="44" startPosition="116" endLine="45" endPosition="59" />
+    <nodeInfo nodeId="4606119813988096141" fileName="DefaultJavaAppFromMainMethod.java" startLine="54" startPosition="56" endLine="55" endPosition="151" />
     <nodeInfo nodeId="4606119813988120946" fileName="DefaultJavaAppFromMainMethod.java" startLine="31" startPosition="52" endLine="34" endPosition="5" />
     <nodeInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="38" startPosition="0" endLine="46" endPosition="5" />
     <scopeInfo nodeId="4606119813988120947" fileName="DefaultJavaAppFromMainMethod.java" startLine="32" startPosition="89" endLine="33" endPosition="13" />
@@ -976,6 +1006,7 @@
     <nodeInfo nodeId="1869159242676070981" fileName="OverrideMethodsChecker.java" startLine="41" startPosition="50" endLine="42" endPosition="40" />
     <nodeInfo nodeId="5249197957043185047" fileName="OverrideMethodsChecker.java" startLine="42" startPosition="40" endLine="43" endPosition="59" />
     <nodeInfo nodeId="2374396819863263340" fileName="OverrideMethodsChecker.java" startLine="44" startPosition="0" endLine="45" endPosition="37" />
+    <nodeInfo nodeId="3859623152551848484" fileName="OverrideMethodsChecker.java" startLine="52" startPosition="39" endLine="53" endPosition="187" />
     <nodeInfo nodeId="64535904967688141" fileName="OverrideMethodsChecker.java" startLine="55" startPosition="7" endLine="56" endPosition="104" />
     <nodeInfo nodeId="3859623152551848325" fileName="OverrideMethodsChecker.java" startLine="57" startPosition="82" endLine="58" endPosition="36" />
     <nodeInfo nodeId="5002400195358075952" fileName="OverrideMethodsChecker.java" startLine="59" startPosition="5" endLine="60" endPosition="82" />
@@ -987,6 +1018,7 @@
     <nodeInfo nodeId="5249197957043258397" fileName="OverrideMethodsChecker.java" startLine="71" startPosition="87" endLine="72" endPosition="48" />
     <nodeInfo nodeId="5249197957043258418" fileName="OverrideMethodsChecker.java" startLine="72" startPosition="48" endLine="73" endPosition="29" />
     <nodeInfo nodeId="1271531489078190556" fileName="OverrideMethodsChecker.java" startLine="73" startPosition="29" endLine="74" endPosition="99" />
+    <nodeInfo nodeId="1922058634759502476" fileName="OverrideMethodsChecker.java" startLine="76" startPosition="59" endLine="77" endPosition="74" />
     <nodeInfo nodeId="5249197957043259429" fileName="OverrideMethodsChecker.java" startLine="80" startPosition="116" endLine="81" endPosition="51" />
     <nodeInfo nodeId="5249197957043259559" fileName="OverrideMethodsChecker.java" startLine="85" startPosition="11" endLine="86" endPosition="39" />
     <nodeInfo nodeId="5249197957043259564" fileName="OverrideMethodsChecker.java" startLine="86" startPosition="39" endLine="87" endPosition="71" />
@@ -996,6 +1028,8 @@
     <nodeInfo nodeId="5249197957043259588" fileName="OverrideMethodsChecker.java" startLine="92" startPosition="34" endLine="93" endPosition="18" />
     <nodeInfo nodeId="5249197957043258465" fileName="OverrideMethodsChecker.java" startLine="96" startPosition="7" endLine="97" endPosition="137" />
     <nodeInfo nodeId="1037184397602703779" fileName="OverrideMethodsChecker.java" startLine="101" startPosition="86" endLine="102" endPosition="127" />
+    <nodeInfo nodeId="1037184397602703795" fileName="OverrideMethodsChecker.java" startLine="104" startPosition="37" endLine="105" endPosition="89" />
+    <nodeInfo nodeId="1037184397602703803" fileName="OverrideMethodsChecker.java" startLine="108" startPosition="39" endLine="109" endPosition="28" />
     <nodeInfo nodeId="1037184397602703811" fileName="OverrideMethodsChecker.java" startLine="112" startPosition="62" endLine="113" endPosition="13" />
     <nodeInfo nodeId="1037184397602734847" fileName="OverrideMethodsChecker.java" startLine="114" startPosition="5" endLine="115" endPosition="116" />
     <nodeInfo nodeId="1037184397602734854" fileName="OverrideMethodsChecker.java" startLine="115" startPosition="116" endLine="116" endPosition="61" />
@@ -1006,6 +1040,7 @@
     <nodeInfo nodeId="1037184397602734901" fileName="OverrideMethodsChecker.java" startLine="137" startPosition="5" endLine="138" endPosition="149" />
     <nodeInfo nodeId="1037184397602735577" fileName="OverrideMethodsChecker.java" startLine="138" startPosition="149" endLine="139" endPosition="0" />
     <nodeInfo nodeId="4988944197752016190" fileName="OverrideMethodsChecker.java" startLine="139" startPosition="0" endLine="140" endPosition="102" />
+    <nodeInfo nodeId="4988944197752016455" fileName="OverrideMethodsChecker.java" startLine="142" startPosition="39" endLine="143" endPosition="58" />
     <nodeInfo nodeId="4988944197752016616" fileName="OverrideMethodsChecker.java" startLine="145" startPosition="9" endLine="146" endPosition="143" />
     <nodeInfo nodeId="4988944197752016801" fileName="OverrideMethodsChecker.java" startLine="148" startPosition="58" endLine="149" endPosition="13" />
     <nodeInfo nodeId="4988944197752016953" fileName="OverrideMethodsChecker.java" startLine="150" startPosition="5" endLine="151" endPosition="137" />
@@ -1021,13 +1056,16 @@
     <nodeInfo nodeId="8312250104772460581" fileName="OverrideMethodsChecker.java" startLine="167" startPosition="32" endLine="168" endPosition="16" />
     <nodeInfo nodeId="8312250104772460604" fileName="OverrideMethodsChecker.java" startLine="170" startPosition="7" endLine="171" endPosition="135" />
     <nodeInfo nodeId="4988944197752016902" fileName="OverrideMethodsChecker.java" startLine="175" startPosition="150" endLine="176" endPosition="90" />
+    <nodeInfo nodeId="4717960406884226835" fileName="OverrideMethodsChecker.java" startLine="179" startPosition="41" endLine="180" endPosition="57" />
     <nodeInfo nodeId="4988944197752017095" fileName="OverrideMethodsChecker.java" startLine="182" startPosition="11" endLine="183" endPosition="142" />
     <nodeInfo nodeId="4988944197752062103" fileName="OverrideMethodsChecker.java" startLine="184" startPosition="37" endLine="185" endPosition="19" />
+    <nodeInfo nodeId="4988944197752062146" fileName="OverrideMethodsChecker.java" startLine="188" startPosition="43" endLine="189" endPosition="115" />
     <nodeInfo nodeId="4053237040709225123" fileName="OverrideMethodsChecker.java" startLine="192" startPosition="38" endLine="193" endPosition="98" />
     <nodeInfo nodeId="4988944197752062269" fileName="OverrideMethodsChecker.java" startLine="193" startPosition="98" endLine="194" endPosition="85" />
     <nodeInfo nodeId="4053237040709225464" fileName="OverrideMethodsChecker.java" startLine="195" startPosition="84" endLine="196" endPosition="79" />
     <nodeInfo nodeId="1491958191742118838" fileName="OverrideMethodsChecker.java" startLine="197" startPosition="64" endLine="198" endPosition="126" />
     <nodeInfo nodeId="4053237040709225913" fileName="OverrideMethodsChecker.java" startLine="199" startPosition="68" endLine="200" endPosition="30" />
+    <nodeInfo nodeId="4988944197752016943" fileName="OverrideMethodsChecker.java" startLine="206" startPosition="5" endLine="207" endPosition="18" />
     <nodeInfo nodeId="2374396819863378964" fileName="OverrideMethodsChecker.java" startLine="212" startPosition="34" endLine="213" endPosition="18" />
     <nodeInfo nodeId="1594966379432123429" fileName="OverrideMethodsChecker.java" startLine="216" startPosition="88" endLine="217" endPosition="20" />
     <nodeInfo nodeId="1594966379432185661" fileName="OverrideMethodsChecker.java" startLine="219" startPosition="46" endLine="220" endPosition="63" />
@@ -1056,6 +1094,8 @@
     <nodeInfo nodeId="1491958191742118865" fileName="OverrideMethodsChecker.java" startLine="270" startPosition="96" endLine="271" endPosition="118" />
     <nodeInfo nodeId="1491958191742118884" fileName="OverrideMethodsChecker.java" startLine="273" startPosition="109" endLine="274" endPosition="133" />
     <nodeInfo nodeId="1491958191742118893" fileName="OverrideMethodsChecker.java" startLine="275" startPosition="5" endLine="276" endPosition="73" />
+    <nodeInfo nodeId="7523932196475815266" fileName="OverrideMethodsChecker.java" startLine="279" startPosition="62" endLine="280" endPosition="75" />
+    <nodeInfo nodeId="7770368474366338979" fileName="OverrideMethodsChecker.java" startLine="283" startPosition="77" endLine="284" endPosition="88" />
     <nodeInfo nodeId="7326920176342413343" fileName="OverrideMethodsChecker.java" startLine="287" startPosition="54" endLine="288" endPosition="51" />
     <nodeInfo nodeId="7326920176342413367" fileName="OverrideMethodsChecker.java" startLine="289" startPosition="108" endLine="290" endPosition="18" />
     <nodeInfo nodeId="7326920176342413383" fileName="OverrideMethodsChecker.java" startLine="292" startPosition="92" endLine="293" endPosition="37" />
@@ -1307,7 +1347,10 @@
     <nodeInfo nodeId="3488726975323013587" fileName="OverridenMethodEditorMessage.java" startLine="18" startPosition="0" endLine="19" endPosition="30" />
     <nodeInfo nodeId="113917032267579801" fileName="OverridenMethodEditorMessage.java" startLine="21" startPosition="112" endLine="22" endPosition="32" />
     <nodeInfo nodeId="3488726975323013592" fileName="OverridenMethodEditorMessage.java" startLine="22" startPosition="32" endLine="23" endPosition="33" />
+    <nodeInfo nodeId="1266304285022803844" fileName="OverridenMethodEditorMessage.java" startLine="33" startPosition="63" endLine="34" endPosition="16" />
+    <nodeInfo nodeId="2769330170999148267" fileName="OverridenMethodEditorMessage.java" startLine="37" startPosition="36" endLine="38" endPosition="209" />
     <nodeInfo nodeId="427992486439506112" fileName="OverridenMethodEditorMessage.java" startLine="20" startPosition="0" endLine="24" endPosition="3" />
+    <nodeInfo nodeId="127250423364131831" fileName="OverridenMethodEditorMessage.java" startLine="26" startPosition="25" endLine="30" endPosition="13" />
     <nodeInfo nodeId="1266304285022803840" fileName="OverridenMethodEditorMessage.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <nodeInfo nodeId="2769330170999145996" fileName="OverridenMethodEditorMessage.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <nodeInfo nodeId="127250423364131827" fileName="OverridenMethodEditorMessage.java" startLine="25" startPosition="0" endLine="32" endPosition="0" />
@@ -1337,6 +1380,7 @@
     <nodeInfo nodeId="6127114859620813462" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="63" startPosition="9" endLine="64" endPosition="22" />
     <nodeInfo nodeId="6127114859620813487" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="68" startPosition="49" endLine="69" endPosition="125" />
     <nodeInfo nodeId="6127114859620885236" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="73" startPosition="49" endLine="74" endPosition="125" />
+    <nodeInfo nodeId="4089570349960765078" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="78" startPosition="43" endLine="79" endPosition="86" />
     <nodeInfo nodeId="1523981646350772692" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="83" startPosition="43" endLine="84" endPosition="86" />
     <nodeInfo nodeId="1523981646350772698" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="85" startPosition="125" endLine="86" endPosition="24" />
     <nodeInfo nodeId="1523981646350773067" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="87" startPosition="9" endLine="88" endPosition="44" />
@@ -1386,6 +1430,7 @@
     <nodeInfo nodeId="4393431345216924409" fileName="ShowMembers_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="22" />
     <nodeInfo nodeId="6049742529940666532" fileName="ShowMembers_Action.java" startLine="26" startPosition="22" endLine="27" endPosition="36" />
     <nodeInfo nodeId="6049742529940666412" fileName="ShowMembers_Action.java" startLine="27" startPosition="36" endLine="28" endPosition="21" />
+    <nodeInfo nodeId="6049742529940666399" fileName="ShowMembers_Action.java" startLine="41" startPosition="52" endLine="42" endPosition="149" />
     <nodeInfo nodeId="7944204678106356085" fileName="ShowMembers_Action.java" startLine="89" startPosition="9" endLine="90" endPosition="78" />
     <nodeInfo nodeId="7944204678106356079" fileName="ShowMembers_Action.java" startLine="92" startPosition="27" endLine="93" endPosition="211" />
     <nodeInfo nodeId="6049742529940666507" fileName="ShowMembers_Action.java" startLine="95" startPosition="9" endLine="96" endPosition="103" />
@@ -1479,6 +1524,7 @@
     <nodeInfo nodeId="451934581189758156" fileName="AnalyzeStacktrace_Tool.java" startLine="47" startPosition="51" endLine="48" endPosition="54" />
     <nodeInfo nodeId="5236594288019599225" fileName="AnalyzeStacktrace_Tool.java" startLine="48" startPosition="54" endLine="49" endPosition="72" />
     <nodeInfo nodeId="5236594288019599228" fileName="AnalyzeStacktrace_Tool.java" startLine="49" startPosition="72" endLine="50" endPosition="64" />
+    <nodeInfo nodeId="7079439422377560172" fileName="AnalyzeStacktrace_Tool.java" startLine="53" startPosition="36" endLine="54" endPosition="51" />
     <nodeInfo nodeId="6173548178016197420" fileName="AnalyzeStacktrace_Tool.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="6173548178016197433" fileName="AnalyzeStacktrace_Tool.java" startLine="53" startPosition="36" endLine="54" endPosition="51" />
     <scopeInfo nodeId="6173548178016197425" fileName="AnalyzeStacktrace_Tool.java" startLine="46" startPosition="41" endLine="50" endPosition="64">
@@ -1504,28 +1550,41 @@
     <nodeInfo nodeId="6349997524910443564" fileName="OverridingMethodsFinder.java" startLine="28" startPosition="38" endLine="29" endPosition="159" />
     <nodeInfo nodeId="6349997524910395917" fileName="OverridingMethodsFinder.java" startLine="31" startPosition="51" endLine="32" endPosition="51" />
     <nodeInfo nodeId="6536357868614381132" fileName="OverridingMethodsFinder.java" startLine="35" startPosition="76" endLine="36" endPosition="102" />
+    <nodeInfo nodeId="323605094887571836" fileName="OverridingMethodsFinder.java" startLine="38" startPosition="39" endLine="39" endPosition="31" />
     <nodeInfo nodeId="6536357868614381141" fileName="OverridingMethodsFinder.java" startLine="41" startPosition="9" endLine="42" endPosition="133" />
     <nodeInfo nodeId="6349997524910651137" fileName="OverridingMethodsFinder.java" startLine="44" startPosition="61" endLine="45" endPosition="124" />
+    <nodeInfo nodeId="6349997524910443732" fileName="OverridingMethodsFinder.java" startLine="49" startPosition="44" endLine="50" endPosition="80" />
+    <nodeInfo nodeId="6349997524910443771" fileName="OverridingMethodsFinder.java" startLine="53" startPosition="83" endLine="54" endPosition="93" />
     <nodeInfo nodeId="6349997524910645572" fileName="OverridingMethodsFinder.java" startLine="58" startPosition="104" endLine="59" endPosition="106" />
     <nodeInfo nodeId="6349997524910645577" fileName="OverridingMethodsFinder.java" startLine="60" startPosition="75" endLine="61" endPosition="133" />
     <nodeInfo nodeId="6349997524910645587" fileName="OverridingMethodsFinder.java" startLine="62" startPosition="68" endLine="63" endPosition="90" />
+    <nodeInfo nodeId="6349997524910645608" fileName="OverridingMethodsFinder.java" startLine="67" startPosition="39" endLine="68" endPosition="68" />
+    <nodeInfo nodeId="6349997524910645617" fileName="OverridingMethodsFinder.java" startLine="71" startPosition="41" endLine="72" endPosition="58" />
     <nodeInfo nodeId="6349997524910645626" fileName="OverridingMethodsFinder.java" startLine="75" startPosition="37" endLine="76" endPosition="77" />
     <nodeInfo nodeId="1423585890412540943" fileName="OverridingMethodsFinder.java" startLine="79" startPosition="108" endLine="80" endPosition="168" />
     <nodeInfo nodeId="1423585890412540960" fileName="OverridingMethodsFinder.java" startLine="81" startPosition="68" endLine="82" endPosition="90" />
+    <nodeInfo nodeId="6349997524910645649" fileName="OverridingMethodsFinder.java" startLine="87" startPosition="39" endLine="88" endPosition="68" />
+    <nodeInfo nodeId="6349997524910645658" fileName="OverridingMethodsFinder.java" startLine="91" startPosition="41" endLine="92" endPosition="58" />
     <nodeInfo nodeId="6349997524910645667" fileName="OverridingMethodsFinder.java" startLine="95" startPosition="37" endLine="96" endPosition="77" />
     <nodeInfo nodeId="6349997524910750820" fileName="OverridingMethodsFinder.java" startLine="102" startPosition="132" endLine="103" endPosition="111" />
     <nodeInfo nodeId="1271531489078077616" fileName="OverridingMethodsFinder.java" startLine="104" startPosition="99" endLine="105" endPosition="162" />
+    <nodeInfo nodeId="323605094887316202" fileName="OverridingMethodsFinder.java" startLine="108" startPosition="39" endLine="109" endPosition="34" />
     <nodeInfo nodeId="1271531489078182442" fileName="OverridingMethodsFinder.java" startLine="111" startPosition="9" endLine="112" endPosition="142" />
     <nodeInfo nodeId="1271531489078185520" fileName="OverridingMethodsFinder.java" startLine="113" startPosition="35" endLine="114" endPosition="17" />
     <nodeInfo nodeId="2107074754665812140" fileName="OverridingMethodsFinder.java" startLine="115" startPosition="7" endLine="116" endPosition="61" />
+    <nodeInfo nodeId="2107074754665784814" fileName="OverridingMethodsFinder.java" startLine="118" startPosition="41" endLine="119" endPosition="106" />
     <nodeInfo nodeId="2691300446671205623" fileName="OverridingMethodsFinder.java" startLine="121" startPosition="11" endLine="122" endPosition="166" />
     <nodeInfo nodeId="2107074754665812148" fileName="OverridingMethodsFinder.java" startLine="122" startPosition="166" endLine="123" endPosition="78" />
     <nodeInfo nodeId="2107074754665812167" fileName="OverridingMethodsFinder.java" startLine="124" startPosition="7" endLine="125" endPosition="99" />
     <nodeInfo nodeId="2107074754665812179" fileName="OverridingMethodsFinder.java" startLine="126" startPosition="58" endLine="127" endPosition="122" />
     <nodeInfo nodeId="6349997524910649921" fileName="OverridingMethodsFinder.java" startLine="130" startPosition="70" endLine="131" endPosition="111" />
+    <nodeInfo nodeId="4717960406884198288" fileName="OverridingMethodsFinder.java" startLine="137" startPosition="41" endLine="138" endPosition="80" />
     <nodeInfo nodeId="4717960406884198247" fileName="OverridingMethodsFinder.java" startLine="142" startPosition="200" endLine="143" endPosition="135" />
     <nodeInfo nodeId="4717960406884198269" fileName="OverridingMethodsFinder.java" startLine="145" startPosition="5" endLine="146" endPosition="18" />
+    <nodeInfo nodeId="6349997524910394833" fileName="OverridingMethodsFinder.java" startLine="149" startPosition="51" endLine="150" endPosition="156" />
+    <nodeInfo nodeId="6349997524910650120" fileName="OverridingMethodsFinder.java" startLine="153" startPosition="54" endLine="154" endPosition="209" />
     <nodeInfo nodeId="6349997524910751387" fileName="OverridingMethodsFinder.java" startLine="158" startPosition="55" endLine="159" endPosition="85" />
+    <nodeInfo nodeId="6349997524910751414" fileName="OverridingMethodsFinder.java" startLine="160" startPosition="5" endLine="161" endPosition="45" />
     <nodeInfo nodeId="6349997524910645865" fileName="OverridingMethodsFinder.java" startLine="165" startPosition="69" endLine="166" endPosition="64" />
     <nodeInfo nodeId="6349997524910645870" fileName="OverridingMethodsFinder.java" startLine="166" startPosition="64" endLine="167" endPosition="18" />
     <nodeInfo nodeId="6349997524910645872" fileName="OverridingMethodsFinder.java" startLine="168" startPosition="5" endLine="169" endPosition="17" />
@@ -1696,6 +1755,7 @@
     <nodeInfo nodeId="6556826051425136609" fileName="GoToInheritedClassifier_Action.java" startLine="40" startPosition="38" endLine="41" endPosition="36" />
     <nodeInfo nodeId="6556826051425136610" fileName="GoToInheritedClassifier_Action.java" startLine="41" startPosition="36" endLine="42" endPosition="22" />
     <nodeInfo nodeId="6556826051425136611" fileName="GoToInheritedClassifier_Action.java" startLine="42" startPosition="22" endLine="43" endPosition="26" />
+    <nodeInfo nodeId="6556826051425203465" fileName="GoToInheritedClassifier_Action.java" startLine="56" startPosition="52" endLine="57" endPosition="279" />
     <nodeInfo nodeId="3703829873956741429" fileName="GoToInheritedClassifier_Action.java" startLine="122" startPosition="9" endLine="123" endPosition="88" />
     <nodeInfo nodeId="3703829873956741439" fileName="GoToInheritedClassifier_Action.java" startLine="126" startPosition="150" endLine="127" endPosition="123" />
     <nodeInfo nodeId="3703829873956741449" fileName="GoToInheritedClassifier_Action.java" startLine="128" startPosition="18" endLine="129" endPosition="128" />
