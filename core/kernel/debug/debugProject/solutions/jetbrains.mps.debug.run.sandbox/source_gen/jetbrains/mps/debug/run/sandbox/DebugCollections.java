@@ -18,6 +18,9 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 
 public class DebugCollections {
+  public DebugCollections() {
+  }
+
   public static void main(String[] args) {
     int[] i = {1 ,2};
     int k = 0;
@@ -26,6 +29,7 @@ public class DebugCollections {
     DebugCollections.testSortedMap();
     DebugCollections.testLinkedList();
     DebugCollections.testSet();
+    DebugCollections.testForeach();
   }
 
   public static void testMap() {
@@ -66,5 +70,18 @@ public class DebugCollections {
     SetSequence.fromSet(strings).addElement("beta");
     SetSequence.fromSet(strings).addElement("gamma");
     System.out.println(strings);
+  }
+
+  public static void testForeach() {
+    Set<String> strings = SetSequence.fromSet(new HashSet<String>());
+    SetSequence.fromSet(strings).addElement("alpha");
+    SetSequence.fromSet(strings).addElement("beta");
+    SetSequence.fromSet(strings).addElement("gamma");
+    for (String i : SetSequence.fromSet(strings)) {
+      System.err.println(i);
+    }
+    for (String j : strings) {
+      System.err.println(j);
+    }
   }
 }
