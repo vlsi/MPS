@@ -538,7 +538,7 @@ public class TypeCheckingContext {
   }
 
   public void dispose() { //todo more attentively
-    getNodeTypesComponent().dispose();
+    getBaseNodeTypesComponent().dispose();
     if (!myTemporaryComponentsStack.isEmpty()) {
       for (NodeTypesComponent nodeTypesComponent : myTemporaryComponentsStack) {
         nodeTypesComponent.dispose();
