@@ -1173,19 +1173,23 @@
     <nodeInfo nodeId="1941346475356587234" fileName="GenerateGettersAndSettersUtil.java" startLine="49" startPosition="68" endLine="50" endPosition="81" />
     <nodeInfo nodeId="1941346475356587241" fileName="GenerateGettersAndSettersUtil.java" startLine="51" startPosition="36" endLine="52" endPosition="54" />
     <nodeInfo nodeId="1941346475356587267" fileName="GenerateGettersAndSettersUtil.java" startLine="53" startPosition="5" endLine="54" endPosition="77" />
-    <nodeInfo nodeId="1941346475356589242" fileName="GenerateGettersAndSettersUtil.java" startLine="63" startPosition="38" endLine="64" endPosition="63" />
-    <nodeInfo nodeId="1941346475356589287" fileName="GenerateGettersAndSettersUtil.java" startLine="65" startPosition="12" endLine="66" endPosition="49" />
-    <nodeInfo nodeId="1352851301410586728" fileName="GenerateGettersAndSettersUtil.java" startLine="70" startPosition="86" endLine="71" endPosition="77" />
-    <nodeInfo nodeId="6233008370920075651" fileName="GenerateGettersAndSettersUtil.java" startLine="72" startPosition="51" endLine="73" endPosition="28" />
-    <nodeInfo nodeId="1941346475355610409" fileName="GenerateGettersAndSettersUtil.java" startLine="74" startPosition="5" endLine="75" endPosition="81" />
-    <nodeInfo nodeId="1941346475355610424" fileName="GenerateGettersAndSettersUtil.java" startLine="76" startPosition="36" endLine="77" endPosition="21" />
-    <nodeInfo nodeId="6233008370920075655" fileName="GenerateGettersAndSettersUtil.java" startLine="78" startPosition="5" endLine="79" endPosition="74" />
+    <nodeInfo nodeId="5377859299070167486" fileName="GenerateGettersAndSettersUtil.java" startLine="62" startPosition="6" endLine="63" endPosition="21" />
+    <nodeInfo nodeId="5377859299070167494" fileName="GenerateGettersAndSettersUtil.java" startLine="64" startPosition="38" endLine="65" endPosition="68" />
+    <nodeInfo nodeId="5377859299070167504" fileName="GenerateGettersAndSettersUtil.java" startLine="66" startPosition="12" endLine="67" endPosition="54" />
+    <nodeInfo nodeId="5377859299070167531" fileName="GenerateGettersAndSettersUtil.java" startLine="69" startPosition="73" endLine="70" endPosition="34" />
+    <nodeInfo nodeId="5377859299070167542" fileName="GenerateGettersAndSettersUtil.java" startLine="71" startPosition="5" endLine="72" endPosition="21" />
+    <nodeInfo nodeId="1352851301410586728" fileName="GenerateGettersAndSettersUtil.java" startLine="75" startPosition="86" endLine="76" endPosition="77" />
+    <nodeInfo nodeId="6233008370920075651" fileName="GenerateGettersAndSettersUtil.java" startLine="77" startPosition="51" endLine="78" endPosition="28" />
+    <nodeInfo nodeId="1941346475355610409" fileName="GenerateGettersAndSettersUtil.java" startLine="79" startPosition="5" endLine="80" endPosition="81" />
+    <nodeInfo nodeId="1941346475355610424" fileName="GenerateGettersAndSettersUtil.java" startLine="81" startPosition="36" endLine="82" endPosition="21" />
+    <nodeInfo nodeId="6233008370920075655" fileName="GenerateGettersAndSettersUtil.java" startLine="83" startPosition="5" endLine="84" endPosition="74" />
     <nodeInfo nodeId="1352851301410586697" fileName="GenerateGettersAndSettersUtil.java" startLine="13" startPosition="44" endLine="15" endPosition="3" />
-    <nodeInfo nodeId="1941346475356589281" fileName="GenerateGettersAndSettersUtil.java" startLine="65" startPosition="10" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="1941346475356589281" fileName="GenerateGettersAndSettersUtil.java" startLine="66" startPosition="10" endLine="68" endPosition="5" />
     <nodeInfo nodeId="6233008370920075901" fileName="GenerateGettersAndSettersUtil.java" startLine="33" startPosition="6" endLine="36" endPosition="5" />
     <nodeInfo nodeId="1941346475356587239" fileName="GenerateGettersAndSettersUtil.java" startLine="50" startPosition="81" endLine="53" endPosition="5" />
-    <nodeInfo nodeId="6359146168314837128" fileName="GenerateGettersAndSettersUtil.java" startLine="71" startPosition="77" endLine="74" endPosition="5" />
-    <nodeInfo nodeId="1941346475355610415" fileName="GenerateGettersAndSettersUtil.java" startLine="75" startPosition="81" endLine="78" endPosition="5" />
+    <nodeInfo nodeId="5377859299070167515" fileName="GenerateGettersAndSettersUtil.java" startLine="68" startPosition="5" endLine="71" endPosition="5" />
+    <nodeInfo nodeId="6359146168314837128" fileName="GenerateGettersAndSettersUtil.java" startLine="76" startPosition="77" endLine="79" endPosition="5" />
+    <nodeInfo nodeId="1941346475355610415" fileName="GenerateGettersAndSettersUtil.java" startLine="80" startPosition="81" endLine="83" endPosition="5" />
     <nodeInfo nodeId="6233008370920075566" fileName="GenerateGettersAndSettersUtil.java" startLine="17" startPosition="89" endLine="21" endPosition="6" />
     <nodeInfo nodeId="6233008370920075572" fileName="GenerateGettersAndSettersUtil.java" startLine="21" startPosition="6" endLine="25" endPosition="6" />
     <nodeInfo nodeId="6233008370920075578" fileName="GenerateGettersAndSettersUtil.java" startLine="25" startPosition="6" endLine="29" endPosition="6" />
@@ -1194,19 +1198,20 @@
     <nodeInfo nodeId="1352851301410586711" fileName="GenerateGettersAndSettersUtil.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
     <nodeInfo nodeId="6124410760185402166" fileName="GenerateGettersAndSettersUtil.java" startLine="54" startPosition="77" endLine="58" endPosition="6" />
     <nodeInfo nodeId="6124410760185402179" fileName="GenerateGettersAndSettersUtil.java" startLine="58" startPosition="6" endLine="62" endPosition="6" />
-    <nodeInfo nodeId="1941346475356588827" fileName="GenerateGettersAndSettersUtil.java" startLine="62" startPosition="6" endLine="67" endPosition="5" />
-    <nodeInfo nodeId="1352851301410586717" fileName="GenerateGettersAndSettersUtil.java" startLine="69" startPosition="0" endLine="81" endPosition="0" />
-    <nodeInfo nodeId="1941346475356562633" fileName="GenerateGettersAndSettersUtil.java" startLine="47" startPosition="0" endLine="69" endPosition="0" />
+    <nodeInfo nodeId="1941346475356588827" fileName="GenerateGettersAndSettersUtil.java" startLine="63" startPosition="21" endLine="68" endPosition="5" />
+    <nodeInfo nodeId="1352851301410586717" fileName="GenerateGettersAndSettersUtil.java" startLine="74" startPosition="0" endLine="86" endPosition="0" />
     <nodeInfo nodeId="6233008370920075550" fileName="GenerateGettersAndSettersUtil.java" startLine="16" startPosition="0" endLine="39" endPosition="0" />
+    <nodeInfo nodeId="1941346475356562633" fileName="GenerateGettersAndSettersUtil.java" startLine="47" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="1352851301410586700" fileName="GenerateGettersAndSettersUtil.java" startLine="14" startPosition="42" endLine="14" endPosition="42" />
     <scopeInfo nodeId="6233008370920075902" fileName="GenerateGettersAndSettersUtil.java" startLine="34" startPosition="47" endLine="35" endPosition="22" />
     <scopeInfo nodeId="1352851301410586708" fileName="GenerateGettersAndSettersUtil.java" startLine="40" startPosition="84" endLine="41" endPosition="88" />
     <scopeInfo nodeId="1352851301410586714" fileName="GenerateGettersAndSettersUtil.java" startLine="44" startPosition="84" endLine="45" endPosition="88" />
     <scopeInfo nodeId="1941346475356587240" fileName="GenerateGettersAndSettersUtil.java" startLine="51" startPosition="36" endLine="52" endPosition="54" />
-    <scopeInfo nodeId="1941346475356588828" fileName="GenerateGettersAndSettersUtil.java" startLine="63" startPosition="38" endLine="64" endPosition="63" />
-    <scopeInfo nodeId="1941346475356589282" fileName="GenerateGettersAndSettersUtil.java" startLine="65" startPosition="12" endLine="66" endPosition="49" />
-    <scopeInfo nodeId="6359146168314837129" fileName="GenerateGettersAndSettersUtil.java" startLine="72" startPosition="51" endLine="73" endPosition="28" />
-    <scopeInfo nodeId="1941346475355610416" fileName="GenerateGettersAndSettersUtil.java" startLine="76" startPosition="36" endLine="77" endPosition="21" />
+    <scopeInfo nodeId="1941346475356588828" fileName="GenerateGettersAndSettersUtil.java" startLine="64" startPosition="38" endLine="65" endPosition="68" />
+    <scopeInfo nodeId="1941346475356589282" fileName="GenerateGettersAndSettersUtil.java" startLine="66" startPosition="12" endLine="67" endPosition="54" />
+    <scopeInfo nodeId="5377859299070167516" fileName="GenerateGettersAndSettersUtil.java" startLine="69" startPosition="73" endLine="70" endPosition="34" />
+    <scopeInfo nodeId="6359146168314837129" fileName="GenerateGettersAndSettersUtil.java" startLine="77" startPosition="51" endLine="78" endPosition="28" />
+    <scopeInfo nodeId="1941346475355610416" fileName="GenerateGettersAndSettersUtil.java" startLine="81" startPosition="36" endLine="82" endPosition="21" />
     <scopeInfo nodeId="1352851301410586697" fileName="GenerateGettersAndSettersUtil.java" startLine="13" startPosition="44" endLine="15" endPosition="3" />
     <scopeInfo nodeId="1352851301410586705" fileName="GenerateGettersAndSettersUtil.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="1941346475355901644" varName="project" />
@@ -1216,20 +1221,13 @@
       <varInfo nodeId="1941346475355901652" varName="project" />
       <varInfo nodeId="1352851301410586715" varName="fieldDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1352851301410586720" fileName="GenerateGettersAndSettersUtil.java" startLine="70" startPosition="86" endLine="79" endPosition="74">
+    <scopeInfo nodeId="1352851301410586720" fileName="GenerateGettersAndSettersUtil.java" startLine="75" startPosition="86" endLine="84" endPosition="74">
       <varInfo nodeId="1352851301410586729" varName="rawName" />
       <varInfo nodeId="1941346475355610410" varName="codeStyleSettings" />
     </scopeInfo>
-    <scopeInfo nodeId="1352851301410586717" fileName="GenerateGettersAndSettersUtil.java" startLine="69" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="1352851301410586717" fileName="GenerateGettersAndSettersUtil.java" startLine="74" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="1941346475355901649" varName="project" />
       <varInfo nodeId="1352851301410586726" varName="fieldDeclaration" />
-    </scopeInfo>
-    <scopeInfo nodeId="1941346475356562636" fileName="GenerateGettersAndSettersUtil.java" startLine="48" startPosition="79" endLine="67" endPosition="5">
-      <varInfo nodeId="6124410760185402167" varName="prefix" />
-      <varInfo nodeId="1941346475356587268" varName="settings" />
-      <varInfo nodeId="1941346475356587221" varName="preparedFieldName" />
-      <varInfo nodeId="6124410760185402180" varName="suffix" />
-      <varInfo nodeId="1941346475356587235" varName="codeStyleSettings" />
     </scopeInfo>
     <scopeInfo nodeId="6233008370920075553" fileName="GenerateGettersAndSettersUtil.java" startLine="17" startPosition="89" endLine="37" endPosition="66">
       <varInfo nodeId="6233008370920075579" varName="preparedNameStart" />
@@ -1237,15 +1235,23 @@
       <varInfo nodeId="6233008370920075686" varName="preparedNameEnd" />
       <varInfo nodeId="6233008370920075573" varName="suffix" />
     </scopeInfo>
-    <scopeInfo nodeId="1941346475356562633" fileName="GenerateGettersAndSettersUtil.java" startLine="47" startPosition="0" endLine="69" endPosition="0">
-      <varInfo nodeId="1941346475356587215" varName="field" />
-      <varInfo nodeId="1941346475356587217" varName="project" />
-    </scopeInfo>
     <scopeInfo nodeId="6233008370920075550" fileName="GenerateGettersAndSettersUtil.java" startLine="16" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="6233008370920075558" varName="settings" />
       <varInfo nodeId="6233008370920075556" varName="fullName" />
     </scopeInfo>
-    <unitInfo nodeId="1352851301410586695" fileName="GenerateGettersAndSettersUtil.java" startLine="13" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateGettersAndSettersUtil" />
+    <scopeInfo nodeId="1941346475356562636" fileName="GenerateGettersAndSettersUtil.java" startLine="48" startPosition="79" endLine="72" endPosition="21">
+      <varInfo nodeId="6124410760185402167" varName="prefix" />
+      <varInfo nodeId="1941346475356587268" varName="settings" />
+      <varInfo nodeId="1941346475356587221" varName="preparedFieldName" />
+      <varInfo nodeId="5377859299070167487" varName="paramName" />
+      <varInfo nodeId="6124410760185402180" varName="suffix" />
+      <varInfo nodeId="1941346475356587235" varName="codeStyleSettings" />
+    </scopeInfo>
+    <scopeInfo nodeId="1941346475356562633" fileName="GenerateGettersAndSettersUtil.java" startLine="47" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="1941346475356587215" varName="field" />
+      <varInfo nodeId="1941346475356587217" varName="project" />
+    </scopeInfo>
+    <unitInfo nodeId="1352851301410586695" fileName="GenerateGettersAndSettersUtil.java" startLine="13" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateGettersAndSettersUtil" />
   </root>
   <root nodeId="1352851301410829911">
     <nodeInfo nodeId="1352851301410835921" fileName="SelectConstructorsDialog.java" startLine="15" startPosition="93" endLine="16" endPosition="58" />

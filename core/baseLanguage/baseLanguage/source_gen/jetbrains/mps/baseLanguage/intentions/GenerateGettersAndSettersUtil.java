@@ -60,11 +60,16 @@ public class GenerateGettersAndSettersUtil {
       "" :
       settings.o2
     );
+    String paramName;
     if (StringUtils.isEmpty(prefix)) {
-      return NameUtil.decapitalize(preparedFieldName + suffix);
+      paramName = NameUtil.decapitalize(preparedFieldName + suffix);
     } else {
-      return prefix + preparedFieldName + suffix;
+      paramName = prefix + preparedFieldName + suffix;
     }
+    if (paramName.equals(SPropertyOperations.getString(field, "name"))) {
+      paramName = paramName + "1";
+    }
+    return paramName;
   }
 
   public static String getPreparedFieldName(SNode fieldDeclaration, Project project) {
