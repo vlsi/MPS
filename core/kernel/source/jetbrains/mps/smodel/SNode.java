@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
@@ -31,14 +32,11 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
-import java.security.SecureRandom;
-import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * User: Sergey Dmitriev
@@ -112,7 +110,7 @@ public final class SNode {
     myModel = newModel;
     ModelChangedCaster.getInstance().fireModelChanged(this, wasModel);
 
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       child.changeModel(newModel);
     }
   }
@@ -130,6 +128,7 @@ public final class SNode {
   }
 
   //do not use this method
+
   @Deprecated()
   public String getModelName_internal() {
     if (myModel == null) return "<null>";
@@ -147,15 +146,19 @@ public final class SNode {
     return myIsFrozen;
   }
 
-  /*package*/ void freeze() {
+  /*package*/
+
+  void freeze() {
     myIsFrozen = true;
 
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       child.freeze();
     }
   }
 
-  /*package*/ void unfreeze() {
+  /*package*/
+
+  void unfreeze() {
     if (myParent != null && myParent.myIsFrozen) {
       LOG.error("can not unfreeze a node under a frozen one");
       return;
@@ -165,7 +168,7 @@ public final class SNode {
 
   private void unfreezeRec() {
     myIsFrozen = false;
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       child.unfreezeRec();
     }
   }
@@ -204,7 +207,7 @@ public final class SNode {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
 
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       String roleOf = child.getRole_();
       assert roleOf != null;
       if (includeAttributeRoles || !(roleOf.contains(AttributesRolesUtil.STEREOTYPE_DELIM))) {
@@ -314,9 +317,9 @@ public final class SNode {
 
     fireNodeReadAccess();
     if (myUserObjects == null) return null;
-    for(int i = 0; i < myUserObjects.length; i += 2) {
-      if(myUserObjects[i].equals(key)) {
-        return myUserObjects[i+1];
+    for (int i = 0; i < myUserObjects.length; i += 2) {
+      if (myUserObjects[i].equals(key)) {
+        return myUserObjects[i + 1];
       }
     }
     return null;
@@ -328,16 +331,16 @@ public final class SNode {
       return;
     }
     if (myUserObjects == null) {
-      myUserObjects = new Object[] { key, value };
+      myUserObjects = new Object[]{key, value};
     } else {
-      for(int i = 0; i < myUserObjects.length; i += 2) {
-        if(myUserObjects[i].equals(key)) {
+      for (int i = 0; i < myUserObjects.length; i += 2) {
+        if (myUserObjects[i].equals(key)) {
           myUserObjects = Arrays.copyOf(myUserObjects, myUserObjects.length, Object[].class);
-          myUserObjects[i+1] = value;
+          myUserObjects[i + 1] = value;
           return;
         }
       }
-      Object[] newarr = new Object[myUserObjects.length+2];
+      Object[] newarr = new Object[myUserObjects.length + 2];
       System.arraycopy(myUserObjects, 0, newarr, 2, myUserObjects.length);
       newarr[0] = key;
       newarr[1] = value;
@@ -350,22 +353,22 @@ public final class SNode {
     if (myUserObjects == null) {
       myUserObjects = fromNode.myUserObjects;
     } else {
-      for(int i = 0; i < fromNode.myUserObjects.length; i += 2) {
-        putUserObject(fromNode.myUserObjects[i], fromNode.myUserObjects[i+1]);
+      for (int i = 0; i < fromNode.myUserObjects.length; i += 2) {
+        putUserObject(fromNode.myUserObjects[i], fromNode.myUserObjects[i + 1]);
       }
     }
   }
 
   public void removeUserObject(Object key) {
     if (myUserObjects == null) return;
-    for(int i = 0; i < myUserObjects.length; i += 2) {
-      if(myUserObjects[i].equals(key)) {
-        Object[] newarr = new Object[myUserObjects.length-2];
-        if(i > 0) {
+    for (int i = 0; i < myUserObjects.length; i += 2) {
+      if (myUserObjects[i].equals(key)) {
+        Object[] newarr = new Object[myUserObjects.length - 2];
+        if (i > 0) {
           System.arraycopy(myUserObjects, 0, newarr, 0, i);
         }
-        if(i+2 < myUserObjects.length) {
-          System.arraycopy(myUserObjects, i+2, newarr, i, newarr.length - i);
+        if (i + 2 < myUserObjects.length) {
+          System.arraycopy(myUserObjects, i + 2, newarr, i, newarr.length - i);
         }
         myUserObjects = newarr;
         return;
@@ -429,7 +432,7 @@ public final class SNode {
 
   public List<SNode> getNodeAttributes() {
     List<SNode> attributes = new ArrayList<SNode>(0);
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       if (AttributesRolesUtil.isNodeAttributeRole(child.getRole_())) {
         attributes.add(child);
       }
@@ -439,7 +442,7 @@ public final class SNode {
 
   public List<SNode> getAllAttributes() {
     List<SNode> attributes = new ArrayList<SNode>(0);
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       String role = child.getRole_();
       if (AttributesRolesUtil.isNodeAttributeRole(role) ||
         AttributesRolesUtil.isLinkAttributeRole(role) ||
@@ -488,7 +491,7 @@ public final class SNode {
     if (result != null) return result;
 
     // back compatibility with some obsolete property attributes?
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       if (AttributesRolesUtil.isChildRoleOfPropertyAttributeForPropertyName(propertyName, child.getRole_())) {
         return child;
       }
@@ -543,7 +546,7 @@ public final class SNode {
     if (result != null) return result;
 
     // back compatibility with some obsolete link attributes?
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       if (AttributesRolesUtil.isChildRoleOfLinkAttributeForLinkRole(role, child.getRole_())) {
         return child;
       }
@@ -616,6 +619,7 @@ public final class SNode {
   }
 
   //new
+
   protected Set<String> getPropertyNamesFromAttributes() {
     Set<String> result = new HashSet<String>();
     for (String role : getChildRoles(true)) {
@@ -626,6 +630,7 @@ public final class SNode {
   }
 
   //new
+
   protected Set<String> getLinkNamesFromAttributes() {
     Set<String> result = new HashSet<String>();
     for (String role : getChildRoles(true)) {
@@ -675,30 +680,20 @@ public final class SNode {
   }
 
   private String getProperty_internal(String propertyName) {
-    String propertyValue;
+    Set<Pair<SNode, String>> getters = ourPropertyGettersInProgress.get();
+    Pair<SNode, String> current = new Pair<SNode, String>(this, propertyName);
+    if (getters.contains(current)) return getPersistentProperty(propertyName);
 
-    propertyValue = getPersistentProperty(propertyName);
-    if (propertyValue != null) {
-      return propertyValue;
-    }
+    getters.add(current);
+    try {
+      INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
+      if (getter == null) return getPersistentProperty(propertyName);
 
-    Set<Pair<SNode, String>> threadSet = ourPropertyGettersInProgress.get();
-    Pair<SNode, String> pair = new Pair<SNode, String>(this, propertyName);
-    if (!threadSet.contains(pair)) {
-      INodePropertyGetter getter = CONSTRAINTS_MANAGER.getNodePropertyGetter(this, propertyName);
-      if (getter != null) {
-        threadSet.add(pair);
-        try {
-          Object getterValue = getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
-          propertyValue = getterValue == null ? null : String.valueOf(getterValue);
-        } finally {
-          threadSet.remove(pair);
-        }
-      }
-    } else {
-      LOG.warning("It's not recommended to access property from its getter (concept = " + getConceptFqName() + " property = " + propertyName + ")", this);
+      Object getterValue = getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
+      return getterValue == null ? null : String.valueOf(getterValue);
+    } finally {
+      getters.remove(current);
     }
-    return propertyValue;
   }
 
   public String getPersistentProperty(String propertyName) {
@@ -709,7 +704,9 @@ public final class SNode {
     return myProperties.get(propertyName);
   }
 
-  /*package*/ void changePropertyName(String oldPropertyName, String newPropertyName) {
+  /*package*/
+
+  void changePropertyName(String oldPropertyName, String newPropertyName) {
     //todo make undo?
     if (myProperties == null) return;
     String value = myProperties.remove(oldPropertyName);
@@ -801,7 +798,7 @@ public final class SNode {
     fireNodeReadAccess();
     int count = 0;
     SNode foundChild = null;
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       if (role.equals(child.getRole_())) {
         foundChild = child;
         count++;
@@ -817,8 +814,8 @@ public final class SNode {
   }
 
   public SNode getChildAt(int index) {
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      if(index-- == 0) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+      if (index-- == 0) {
         return child;
       }
     }
@@ -830,7 +827,7 @@ public final class SNode {
   }
 
   public void insertChild(SNode anchorChild, String role, SNode child, boolean insertBefore) {
-    if(insertBefore) {
+    if (insertBefore) {
       insertChild(myFirstChild == anchorChild ? null : anchorChild.myPrevSibling, role, child);
     } else {
       insertChild(anchorChild, role, child);
@@ -843,7 +840,7 @@ public final class SNode {
     }
     int count = 0;
 
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       if (role.equals(child.getRole_())) {
         count++;
       }
@@ -860,7 +857,7 @@ public final class SNode {
     if (role_ == null) return -1;
     int count = 0;
 
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       if (child == child_) return count;
       if (role_.equals(child.getRole_())) {
         count++;
@@ -884,7 +881,7 @@ public final class SNode {
     int len = getChildCount();
     SNode[] nodes = new SNode[len];
     int i = 0;
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       nodes[i++] = child;
     }
     return nodes;
@@ -943,7 +940,7 @@ public final class SNode {
 
     int count = 0;
 
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       count++;
     }
     return count;
@@ -964,7 +961,7 @@ public final class SNode {
     if (myFirstChild == null) return Collections.emptyList();
     List<SNode> result = new ArrayList<SNode>();
 
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       if (role.equals(child.getRole_())) {
         result.add(child);
         child.fireNodeReadAccess();
@@ -1003,11 +1000,11 @@ public final class SNode {
   /**
    * Removes child from current node. This affects only link between current node and its child, but not links in
    * subtree of child node.
-   *
+   * <p/>
    * Differs from {@link SNode#delete()}.
    */
   public void removeChild(SNode wasChild) {
-    if(wasChild.myParent != this) return;
+    if (wasChild.myParent != this) return;
     ModelChange.assertLegalNodeChange(this);
     final String wasRole = wasChild.getRole_();
     SNode anchor = myFirstChild == wasChild ? null : wasChild.myPrevSibling;
@@ -1069,7 +1066,9 @@ public final class SNode {
     }
   }
 
-  /*package*/ void unRegisterFromModel() {
+  /*package*/
+
+  void unRegisterFromModel() {
     if (!myRegisteredInModelFlag) return;
     UnregisteredNodes.instance().put(this);
     myRegisteredInModelFlag = false;
@@ -1080,7 +1079,7 @@ public final class SNode {
 
     myModel.unregisterNode(this);
 
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       child.unRegisterFromModel();
     }
   }
@@ -1115,7 +1114,7 @@ public final class SNode {
     if (wasModel != model) {
       ModelChangedCaster.getInstance().fireModelChanged(this, wasModel);
     }
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       child.registerInModel_internal(model);
     }
   }
@@ -1171,6 +1170,7 @@ public final class SNode {
       public SReference get(int index) {
         return myReferences[index];
       }
+
       @Override
       public int size() {
         return myReferences.length;
@@ -1484,7 +1484,8 @@ public final class SNode {
  Warning:
  BaseConcept_Behavior class will be loaded using platform classloader here.
  As a result this class will be loaded twice - once using own BundleClassLoader and one more time - here.
- */   if (detailed) {
+ */
+      if (detailed) {
         return "" + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(this);
       } else {
         return "" + BaseConcept_Behavior.call_getPresentation_1213877396640(this);
@@ -1538,7 +1539,7 @@ public final class SNode {
 
   private void collectDescendants(Condition<SNode> condition, List<SNode> list) {
     // depth-first traversal
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
         list.add(child);
       }
@@ -1563,6 +1564,7 @@ public final class SNode {
   }
 
   //todo remove into editor code
+
   public void addRightTransformHint() {
     setBooleanProperty(RIGHT_TRANSFORM_HINT, true);
   }
@@ -1603,7 +1605,7 @@ public final class SNode {
 
   @Deprecated
   public SConceptReference getConceptRefernece() {
-    return getConceptReference(); 
+    return getConceptReference();
   }
 
   public SConceptReference getConceptReference() {
@@ -1807,7 +1809,7 @@ public final class SNode {
   public BaseAdapter getAdapter() {
     ModelAccess.assertLegalRead(this);
     BaseAdapter adapter = myAdapter;
-    if(adapter != null) return adapter;
+    if (adapter != null) return adapter;
     Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
     if (c == null) return new BaseConcept(this);
 
@@ -1842,7 +1844,7 @@ public final class SNode {
 
   void clearUserObjects() {
     removeAllUserObjects();
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       child.clearUserObjects();
     }
   }
@@ -1853,7 +1855,7 @@ public final class SNode {
 
   public int depth() {
     int childDepth = 0;
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       int depth = child.depth();
       if (childDepth < depth) {
         childDepth = depth;
@@ -1888,8 +1890,8 @@ public final class SNode {
   }
 
   private void children_insertAfter(SNode anchor, @NotNull SNode node) {
-    if(anchor == null) {
-      if(myFirstChild != null) {
+    if (anchor == null) {
+      if (myFirstChild != null) {
         node.myPrevSibling = myFirstChild.myPrevSibling;
         myFirstChild.myPrevSibling = node;
       } else {
@@ -1900,7 +1902,7 @@ public final class SNode {
     } else {
       node.myPrevSibling = anchor;
       node.myNextSibling = anchor.myNextSibling;
-      if(anchor.myNextSibling == null) {
+      if (anchor.myNextSibling == null) {
         myFirstChild.myPrevSibling = node;
       } else {
         anchor.myNextSibling.myPrevSibling = node;
@@ -1911,14 +1913,14 @@ public final class SNode {
   }
 
   private void children_remove(@NotNull SNode node) {
-    if(myFirstChild == node) {
+    if (myFirstChild == node) {
       myFirstChild = node.myNextSibling;
-      if(myFirstChild != null) {
+      if (myFirstChild != null) {
         myFirstChild.myPrevSibling = node.myPrevSibling;
       }
     } else {
       node.myPrevSibling.myNextSibling = node.myNextSibling;
-      if(node.myNextSibling != null) {
+      if (node.myNextSibling != null) {
         node.myNextSibling.myPrevSibling = node.myPrevSibling;
       } else {
         myFirstChild.myPrevSibling = node.myPrevSibling;
@@ -1965,7 +1967,7 @@ public final class SNode {
     @Override
     protected SNode next(SNode node) {
       SNode result = node.myNextSibling;
-      while(result != null && result.isAttribute()) {
+      while (result != null && result.isAttribute()) {
         result = result.myNextSibling;
       }
       return result;
@@ -1974,7 +1976,7 @@ public final class SNode {
     @Override
     protected SNode prev(SNode node) {
       SNode result = myFirst == node ? null : node.myPrevSibling;
-      while(result != null && result.isAttribute()) {
+      while (result != null && result.isAttribute()) {
         result = myFirst == result ? null : result.myPrevSibling;
       }
       return result;
@@ -2044,7 +2046,7 @@ public final class SNode {
       this.original = original;
       this.current = first;
       this.condition = condition;
-      while(current != null && condition != null && !condition.met(current)) {
+      while (current != null && condition != null && !condition.met(current)) {
         current = nextInternal(current);
       }
     }
@@ -2059,26 +2061,26 @@ public final class SNode {
       SNode result = current;
       do {
         current = nextInternal(current);
-      } while(current != null && condition != null && !condition.met(current));
+      } while (current != null && condition != null && !condition.met(current));
       return result;
     }
 
     private SNode nextInternal(SNode curr) {
-      if(curr == null) {
+      if (curr == null) {
         return null;
       }
-      if(curr.myFirstChild != null) {
+      if (curr.myFirstChild != null) {
         return curr.myFirstChild;
       }
-      if(curr == original) {
+      if (curr == original) {
         return null;
       }
       do {
-        if(curr.myNextSibling != null) {
+        if (curr.myNextSibling != null) {
           return curr.myNextSibling;
         }
         curr = curr.myParent;
-      } while(curr != original);
+      } while (curr != original);
       return null;
     }
 
