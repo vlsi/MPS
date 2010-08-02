@@ -11997,8 +11997,8 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="9078697818357715983" resolveInfo="getSelectedFields" />
               </node>
             </node>
-            <node role="lValue:3" type="jetbrains.mps.lang.intentions.structure.IntentionContextParamReference:8" id="6295902294821223246">
-              <link role="parameterDeclaration:8" targetNodeId="4754919398689561098" resolveInfo="selectedFields" />
+            <node role="lValue:3" type="jetbrains.mps.lang.intentions.structure.IntentionContextParamReference:8" id="5377859299070205272">
+              <link role="parameterDeclaration:8" targetNodeId="6295902294821223249" resolveInfo="selectedFields" />
             </node>
           </node>
         </node>
@@ -12581,8 +12581,8 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="9078697818357715983" resolveInfo="getSelectedFields" />
               </node>
             </node>
-            <node role="lValue:3" type="jetbrains.mps.lang.intentions.structure.IntentionContextParamReference:8" id="6295902294821223298">
-              <link role="parameterDeclaration:8" targetNodeId="4754919398689561098" resolveInfo="selectedFields" />
+            <node role="lValue:3" type="jetbrains.mps.lang.intentions.structure.IntentionContextParamReference:8" id="5377859299070205267">
+              <link role="parameterDeclaration:8" targetNodeId="6295902294821215848" resolveInfo="selectedFields" />
             </node>
           </node>
         </node>
@@ -14992,8 +14992,8 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="9078697818357715983" resolveInfo="getSelectedFields" />
               </node>
             </node>
-            <node role="lValue:3" type="jetbrains.mps.lang.intentions.structure.IntentionContextParamReference:8" id="6295902294821224411">
-              <link role="parameterDeclaration:8" targetNodeId="4754919398689561098" resolveInfo="selectedFields" />
+            <node role="lValue:3" type="jetbrains.mps.lang.intentions.structure.IntentionContextParamReference:8" id="5377859299070205304">
+              <link role="parameterDeclaration:8" targetNodeId="6295902294821224414" resolveInfo="selectedFields" />
             </node>
           </node>
         </node>
