@@ -71,12 +71,16 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
       LOG.error(t);
     }
 
-    updateModels(module, models);
+    updateModels(path,prefix,module, models);
 
     return models;
   }
 
-  public void updateModels(IModule module, Set<BaseStubModelDescriptor> models) {
+  public void updateModels(String path, String prefix, @NotNull IModule module, Set<BaseStubModelDescriptor> models) {
+    if (myLocation==null){
+      myLocation = new StubLocation(path, prefix, module);
+    }
+    
     SModelRepository repository = SModelRepository.getInstance();
     for (BaseStubModelDescriptor descriptor : models) {
       descriptor.addStubPath(new StubPath(myLocation.getPath(), myThisManager));
