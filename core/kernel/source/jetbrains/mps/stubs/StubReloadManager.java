@@ -213,20 +213,20 @@ public class StubReloadManager implements ApplicationComponent {
         PathData oldData = oldp2d.get(sp);
         if (oldData == null || !oldData.isFresh()) {
           Set<BaseStubModelDescriptor> descriptors = manager.updateModels(sp.getPath(), "", m);
-          data.setDescriptors(copyDescriptors(descriptors));
+          data.setDescriptors(copyDescriptors(descriptors,manager));
         } else {
           Set<BaseStubModelDescriptor> descriptors = oldData.getDescriptors();
-          manager.updateModels(sp.getPath(), "", m, copyDescriptors(descriptors));
+          manager.updateModels(sp.getPath(), "", m, copyDescriptors(descriptors,manager));
           data.setDescriptors(descriptors);
         }
       }
     }
   }
 
-  private Set<BaseStubModelDescriptor> copyDescriptors(Set<BaseStubModelDescriptor> descriptors) {
+  private Set<BaseStubModelDescriptor> copyDescriptors(Set<BaseStubModelDescriptor> descriptors,BaseStubModelRootManager manager) {
     HashSet<BaseStubModelDescriptor> result = new HashSet<BaseStubModelDescriptor>();
     for (BaseStubModelDescriptor d : descriptors) {
-      result.add(d.clone());
+      result.add(d.copy(manager));
     }
     return result;
   }

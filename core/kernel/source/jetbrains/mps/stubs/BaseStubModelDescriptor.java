@@ -27,8 +27,8 @@ public final class BaseStubModelDescriptor extends DefaultSModelDescriptor imple
     updateManagerId();
   }
 
-  public BaseStubModelDescriptor clone() {
-    return new BaseStubModelDescriptor(myModelRootManager, myModelFile, myModelReference, false);
+  public BaseStubModelDescriptor copy(BaseStubModelRootManager manager) {
+    return new BaseStubModelDescriptor(manager, myModelFile, myModelReference, false);
   }
 
   protected SModel loadModel() {
