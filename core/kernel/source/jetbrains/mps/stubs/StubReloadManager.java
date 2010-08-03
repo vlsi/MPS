@@ -211,7 +211,7 @@ public class StubReloadManager implements ApplicationComponent {
 
         PathData oldData = oldp2d.get(sp);
         if (oldData.isFresh()) {
-          manager.updateModels(m, oldData.getDescriptors());
+          manager.updateModels(m, copyDescriptors(data.getDescriptors()));
           data.setDescriptors(oldData.getDescriptors());
         } else {
           Set<BaseStubModelDescriptor> descriptors = manager.updateModels(sp.getPath(), "", m);
