@@ -103,9 +103,7 @@ public class JavaStubs extends BaseStubModelRootManager {
           SModelReference ref = SModelReference.fromString(subpackage + "@" + SModelStereotype.getStubStereotypeForId(JavaStubs.this.getLanguageId()));
           SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(ref);
           assert descriptor instanceof BaseStubModelDescriptor;
-          BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) descriptor;
-          SModelRepository.getInstance().addOwnerForDescriptor(descriptor, location.getModule());
-          result.add(baseDescriptor);
+          result.add((BaseStubModelDescriptor) descriptor);
         } else {
           result.add(new BaseStubModelDescriptor(JavaStubs.this, null, modelReference));
         }
