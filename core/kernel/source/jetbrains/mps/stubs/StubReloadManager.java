@@ -214,8 +214,9 @@ public class StubReloadManager implements ApplicationComponent {
           Set<BaseStubModelDescriptor> descriptors = manager.updateModels(sp.getPath(), "", m);
           data.setDescriptors(copyDescriptors(descriptors));
         } else {
-          manager.updateModels(m, copyDescriptors(data.getDescriptors()));
-          data.setDescriptors(oldData.getDescriptors());
+          Set<BaseStubModelDescriptor> descriptors = oldData.getDescriptors();
+          manager.updateModels(m, copyDescriptors(descriptors));
+          data.setDescriptors(descriptors);
         }
       }
     }
