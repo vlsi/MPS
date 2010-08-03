@@ -139,7 +139,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   protected void checkModelDuplication() {
     SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelReference);
     if (anotherModel != null) {
-      String message = "Model Already Register : " + myModelReference + "\n";
+      String message = "Model already registered: " + myModelReference + "\n";
       message += "file = " + myModelFile + "\n";
       message += "another model's file = " + anotherModel.getModelFile();
       LOG.error(message);
