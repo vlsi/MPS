@@ -4,7 +4,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.Processor;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
@@ -152,6 +151,7 @@ public class StubReloadManager implements ApplicationComponent {
   private void reloadStubModels() {
     markOldStubs();
 
+    //this is to unload models we want to reload
     SModelRepository.getInstance().refreshModels();
     releaseOldStubDescriptors();
     loadNewStubs();
@@ -193,17 +193,11 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   private void releaseOldStubDescriptors() {
-    for (AbstractModule m : getAllModules()) {
-      for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(m)) {
-        if (!(sm instanceof BaseStubModelDescriptor)) continue;
-        if (!StubReloadManager.getInstance().needsFullReload(((BaseStubModelDescriptor) sm))) continue;
+    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors()) {
+      if (!(sm instanceof BaseStubModelDescriptor)) continue;
+      if (!StubReloadManager.getInstance().needsFullReload(((BaseStubModelDescriptor) sm))) continue;
 
-        if (SModelRepository.getInstance().getOwners(sm).size() == 1) {
-          SModelRepository.getInstance().removeModelDescriptor(sm);
-        } else {
-          SModelRepository.getInstance().unRegisterModelDescriptor(sm, m);
-        }
-      }
+      SModelRepository.getInstance().removeModelDescriptor(sm);
     }
   }
 
