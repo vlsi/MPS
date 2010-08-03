@@ -60,7 +60,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     throw new InvalidUsageException("stub manager is called on module load");
   }
 
-  public final void updateModels(String path, String prefix, @NotNull IModule module) {
+  public final Set<BaseStubModelDescriptor> updateModels(String path, String prefix, @NotNull IModule module) {
     myLocation = new StubLocation(path, prefix, module);
 
     Set<BaseStubModelDescriptor> models = new HashSet<BaseStubModelDescriptor>();
@@ -72,6 +72,8 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     }
 
     updateModels(module, models);
+
+    return models;
   }
 
   public void updateModels(IModule module, Set<BaseStubModelDescriptor> models) {

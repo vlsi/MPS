@@ -47,7 +47,12 @@ public class StubReloadManager implements ApplicationComponent {
     loadNewStubSolutions();
     updateNotChangedStubPaths();
     disposeStubManagers();
-    reloadStubModels();
+
+    markOldStubs();
+    releaseOldStubDescriptors();
+    loadNewStubs();
+    markNewStubs();
+
     updateLoadedStubPaths();
   }
 
@@ -148,13 +153,6 @@ public class StubReloadManager implements ApplicationComponent {
 
   //----------------------------------------
 
-  private void reloadStubModels() {
-    markOldStubs();
-    releaseOldStubDescriptors();
-    loadNewStubs();
-    markNewStubs();
-  }
-
   private void markOldStubs() {
     for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors()) {
       if (!SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
@@ -184,8 +182,6 @@ public class StubReloadManager implements ApplicationComponent {
     for (BaseStubModelDescriptor md : getAllStubModels()) {
       md.setModelRootManager(null);
     }
-
-    myPath2Data.clear();
   }
 
   private void releaseOldStubDescriptors() {
@@ -198,6 +194,9 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   private void loadNewStubs() {
+    Map<StubPath, PathData> oldp2d = myPath2Data;
+    myPath2Data = new HashMap<StubPath, PathData>();
+
     for (AbstractModule m : getAllModules()) {
       for (StubPath sp : getModuleStubPaths(m)) {
         BaseStubModelRootManager manager = createStubManager(m, sp);
@@ -210,10 +209,24 @@ public class StubReloadManager implements ApplicationComponent {
         data.setModelRootManager(manager);
         myPath2Data.put(sp, data);
 
-
-        manager.updateModels(sp.getPath(), "", m);
+        PathData oldData = oldp2d.get(sp);
+        if (oldData.isFresh()) {
+          manager.updateModels(m, oldData.getDescriptors());
+          data.setDescriptors(oldData.getDescriptors());
+        } else {
+          Set<BaseStubModelDescriptor> descriptors = manager.updateModels(sp.getPath(), "", m);
+          data.setDescriptors(copyDescriptors(descriptors));
+        }
       }
     }
+  }
+
+  private Set<BaseStubModelDescriptor> copyDescriptors(Set<BaseStubModelDescriptor> descriptors) {
+    HashSet<BaseStubModelDescriptor> result = new HashSet<BaseStubModelDescriptor>();
+    for (BaseStubModelDescriptor d:descriptors){
+      result.add(d.clone());
+    }
+    return result;
   }
 
   private void updateLoadedStubPaths() {
@@ -355,6 +368,7 @@ public class StubReloadManager implements ApplicationComponent {
     private StubPath myStubPath;
 
     private BaseStubModelRootManager myModelRootManager;
+    private Set<BaseStubModelDescriptor> myDescriptors = new HashSet<BaseStubModelDescriptor>(2);
 
     private long myPathTimestamp;
     private long myManagerTimestamp;
@@ -366,6 +380,14 @@ public class StubReloadManager implements ApplicationComponent {
 
     public boolean isFresh() {
       return myPathTimestamp == getTimestamp() && myManagerTimestamp == getManagerTimestamp();
+    }
+
+    public void setDescriptors(Set<BaseStubModelDescriptor> descriptors) {
+      myDescriptors = descriptors;
+    }
+
+    public Set<BaseStubModelDescriptor> getDescriptors() {
+      return myDescriptors;
     }
 
     public BaseStubModelRootManager getModelRootManager() {
