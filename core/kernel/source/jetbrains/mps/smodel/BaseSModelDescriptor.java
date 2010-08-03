@@ -45,11 +45,14 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
   private SModelCommandListener[] myModelCommandListenersCopy;
 
-  public BaseSModelDescriptor(IModelRootManager manager, IFile modelFile, @NotNull SModelReference modelReference) {
+  protected BaseSModelDescriptor(IModelRootManager manager, IFile modelFile, @NotNull SModelReference modelReference,boolean checkDup) {
     myModelReference = modelReference;
     myModelFile = modelFile;
     myModelRootManager = manager;
-    checkModelDuplication();
+
+    if (checkDup){
+      checkModelDuplication();
+    }
   }
 
   public IFile getModelFile() {

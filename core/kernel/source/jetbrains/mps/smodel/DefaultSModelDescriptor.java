@@ -58,7 +58,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private boolean myIsTestRefactoringMode = false;
 
   public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
-    super(manager, modelFile, modelReference);
+    this(manager, modelFile, modelReference, true);
+  }
+
+  protected DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, boolean checkDup) {
+    super(manager, modelFile, modelReference, checkDup);
     updateLastChange();
   }
 
@@ -239,6 +243,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   //true if any refactoring was played
+
   private boolean playUsedModelDescriptorsRefactoring(SModelDescriptor modelDescriptor) {
     int currentVersion = modelDescriptor.getVersion();
     int usedVersion = mySModel.getUsedVersion(modelDescriptor.getSModelReference());
@@ -686,12 +691,15 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     setAttribute(VERSION, "" + newNameVersion);
   }
 
-  /*package*/ void changeSModelUID(SModelReference newModelReference) {
+  /*package*/
+
+  void changeSModelUID(SModelReference newModelReference) {
     myModelReference = newModelReference;
     getSModel().changeModelReference(newModelReference);
   }
 
   /*package*/
+
   public void setModelFile(IFile file) {
     myModelFile = file;
   }

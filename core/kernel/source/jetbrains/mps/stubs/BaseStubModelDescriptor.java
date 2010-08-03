@@ -19,12 +19,16 @@ public final class BaseStubModelDescriptor extends DefaultSModelDescriptor imple
   private Set<ModelUpdater> myUpdaters = new HashSet<ModelUpdater>();
 
   public BaseStubModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
-    super(manager, modelFile, modelReference);
+    this(manager, modelFile, modelReference, true);
+  }
+
+  protected BaseStubModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, boolean checkDup) {
+    super(manager, modelFile, modelReference, checkDup);
     updateManagerId();
   }
 
   public BaseStubModelDescriptor clone() {
-    return new BaseStubModelDescriptor(myModelRootManager, myModelFile, myModelReference);
+    return new BaseStubModelDescriptor(myModelRootManager, myModelFile, myModelReference, false);
   }
 
   protected SModel loadModel() {
