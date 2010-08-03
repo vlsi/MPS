@@ -150,12 +150,8 @@ public class StubReloadManager implements ApplicationComponent {
 
   private void reloadStubModels() {
     markOldStubs();
-
-    //this is to unload models we want to reload
-    SModelRepository.getInstance().refreshModels();
     releaseOldStubDescriptors();
     loadNewStubs();
-
     markNewStubs();
   }
 
