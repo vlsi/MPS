@@ -401,6 +401,7 @@ public class StubReloadManager implements ApplicationComponent {
     }
 
     private long getTimestamp() {
+      //todo this can be rewritten using filesystem listeners
       VirtualFile file = VFileSystem.getFile(myStubPath.getPath());
       if (file == null) return 0L;
       final long[] timeStamp = {file.getTimeStamp()};
