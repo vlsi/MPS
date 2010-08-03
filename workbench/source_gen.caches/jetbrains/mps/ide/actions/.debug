@@ -4324,24 +4324,9 @@
     <unitInfo nodeId="4514830148568015579" fileName="SetNodePackageDialog.java" startLine="23" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.SetNodePackageDialog" />
   </root>
   <root nodeId="4639644606316590225">
-    <nodeInfo nodeId="4639644606316590261" fileName="ReloadStubs_Action.java" startLine="22" startPosition="0" endLine="23" endPosition="26" />
-    <nodeInfo nodeId="3619771644595431205" fileName="ReloadStubs_Action.java" startLine="36" startPosition="52" endLine="37" endPosition="114" />
-    <nodeInfo nodeId="3619771644595431202" fileName="ReloadStubs_Action.java" startLine="37" startPosition="114" endLine="38" endPosition="17" />
-    <nodeInfo nodeId="4639644606316590243" fileName="ReloadStubs_Action.java" startLine="74" startPosition="63" endLine="75" endPosition="43" />
-    <nodeInfo nodeId="4639644606316590251" fileName="ReloadStubs_Action.java" startLine="77" startPosition="31" endLine="78" endPosition="55" />
-    <nodeInfo nodeId="4639644606316590249" fileName="ReloadStubs_Action.java" startLine="76" startPosition="63" endLine="80" endPosition="0" />
-    <nodeInfo nodeId="4639644606316590248" fileName="ReloadStubs_Action.java" startLine="75" startPosition="43" endLine="80" endPosition="13" />
-    <nodeInfo nodeId="4639644606316590236" fileName="ReloadStubs_Action.java" startLine="73" startPosition="115" endLine="82" endPosition="0" />
-    <nodeInfo nodeId="4639644606316590228" fileName="ReloadStubs_Action.java" startLine="72" startPosition="9" endLine="82" endPosition="9" />
-    <scopeInfo nodeId="4639644606316590250" fileName="ReloadStubs_Action.java" startLine="77" startPosition="31" endLine="78" endPosition="55" />
-    <scopeInfo nodeId="3619771644595270303" fileName="ReloadStubs_Action.java" startLine="36" startPosition="52" endLine="38" endPosition="17" />
-    <scopeInfo nodeId="4639644606316590249" fileName="ReloadStubs_Action.java" startLine="76" startPosition="63" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="4639644606316590242" fileName="ReloadStubs_Action.java" startLine="74" startPosition="63" endLine="80" endPosition="13" />
-    <scopeInfo nodeId="4639644606316590236" fileName="ReloadStubs_Action.java" startLine="73" startPosition="115" endLine="82" endPosition="0">
-      <varInfo nodeId="4639644606316590239" varName="indicator" />
-    </scopeInfo>
-    <unitInfo nodeId="4639644606316590249" fileName="ReloadStubs_Action.java" startLine="76" startPosition="51" endLine="80" endPosition="11" unitName="jetbrains.mps.ide.actions.ReloadStubs_Action$2" />
-    <unitInfo nodeId="4639644606316590234" fileName="ReloadStubs_Action.java" startLine="73" startPosition="44" endLine="82" endPosition="7" unitName="jetbrains.mps.ide.actions.ReloadStubs_Action$1" />
+    <nodeInfo nodeId="4639644606316590261" fileName="ReloadStubs_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="26" />
+    <nodeInfo nodeId="2331419152225746778" fileName="ReloadStubs_Action.java" startLine="61" startPosition="9" endLine="62" endPosition="51" />
+    <nodeInfo nodeId="5220578927949260965" fileName="ReloadStubs_Action.java" startLine="62" startPosition="51" endLine="63" endPosition="47" />
   </root>
   <root nodeId="4709697229103750690">
     <nodeInfo nodeId="4709697229103772196" fileName="DumpChangesManager_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="26" />

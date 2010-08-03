@@ -10,10 +10,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import jetbrains.mps.stubs.StubReloadManager;
 
 public class ReloadStubs_Action extends GeneratedAction {
@@ -25,7 +22,7 @@ public class ReloadStubs_Action extends GeneratedAction {
   public ReloadStubs_Action() {
     super("Reload Stubs", "Reload all stub models", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   @NotNull
@@ -33,17 +30,9 @@ public class ReloadStubs_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    // this is because all MPS is reload-oriented. After stubs updating we need to update ProjectPane and others. 
-    return false;
-  }
-
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      {
-        boolean enabled = this.isApplicable(event);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "ReloadStubs", t);
@@ -70,16 +59,8 @@ public class ReloadStubs_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ProgressManager.getInstance().run(new Task.Modal(ReloadStubs_Action.this.project, "Reloading Stubs", false) {
-        public void run(@NotNull ProgressIndicator indicator) {
-          indicator.setIndeterminate(true);
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              StubReloadManager.getInstance().reload();
-            }
-          });
-        }
-      });
+      LocalFileSystem.getInstance().refresh(false);
+      StubReloadManager.getInstance().reload();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ReloadStubs", t);
