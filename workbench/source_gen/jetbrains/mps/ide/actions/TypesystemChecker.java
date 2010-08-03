@@ -29,7 +29,7 @@ public class TypesystemChecker extends SpecificChecker {
       if (!(progressContext.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for typesystem rules..."))) {
         break;
       }
-      TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(rootNode);
+      TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createIsolatedTypeCheckingContext(rootNode);
       typeCheckingContext.setOperationContext(operationContext);
       Set<Pair<SNode, List<IErrorReporter>>> nodeWithErrors = typeCheckingContext.checkRootAndGetErrors(true);
       for (Pair<SNode, List<IErrorReporter>> nodeErrorReporters : SetSequence.fromSet(nodeWithErrors)) {
@@ -38,6 +38,7 @@ public class TypesystemChecker extends SpecificChecker {
           addIssue(results, node, errorReporter.reportError(), getResultCategory(errorReporter.getMessageStatus()), "type system", null);
         }
       }
+      typeCheckingContext.dispose();
     }
     return results;
   }
