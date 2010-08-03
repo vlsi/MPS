@@ -3779,12 +3779,12 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5681636232673196410">
             <property name="name:3" value="result" />
             <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="5681636232673196411">
-              <link role="elementConcept:16" targetNodeId="1.1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
+              <link role="elementConcept:16" targetNodeId="1.1178285077437:3" resolveInfo="ClassifierMember" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5681636232673196412">
               <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator:16" id="5681636232673196413">
                 <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="5681636232673196414">
-                  <link role="elementConcept:16" targetNodeId="1.1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
+                  <link role="elementConcept:16" targetNodeId="1.1178285077437:3" resolveInfo="ClassifierMember" />
                 </node>
               </node>
             </node>
@@ -3804,23 +3804,18 @@
                   <link role="variableDeclaration:3" targetNodeId="5681636232673196410" resolveInfo="result" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation:7" id="5681636232673577710">
-                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="5681636232673577711">
-                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5681636232673577712">
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="5681636232673577713">
-                        <link role="baseMethodDeclaration:16" targetNodeId="1213877306257" resolveInfo="getVisibleMembers" />
-                        <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5681636232673577714">
-                          <link role="variableDeclaration:3" targetNodeId="669019847198843540" resolveInfo="contextNode" />
-                        </node>
-                        <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5898948207305332583">
-                          <link role="variableDeclaration:3" targetNodeId="669019847198843542" resolveInfo="constraint" />
-                        </node>
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5681636232673577712">
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="5681636232673577713">
+                      <link role="baseMethodDeclaration:16" targetNodeId="1213877306257" resolveInfo="getVisibleMembers" />
+                      <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5681636232673577714">
+                        <link role="variableDeclaration:3" targetNodeId="669019847198843540" resolveInfo="contextNode" />
                       </node>
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5681636232673577716">
-                        <link role="variableDeclaration:3" targetNodeId="669019847198843709" resolveInfo="classifier" />
+                      <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5898948207305332583">
+                        <link role="variableDeclaration:3" targetNodeId="669019847198843542" resolveInfo="constraint" />
                       </node>
                     </node>
-                    <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="5681636232673577717">
-                      <link role="elementConcept:16" targetNodeId="1.1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5681636232673577716">
+                      <link role="variableDeclaration:3" targetNodeId="669019847198843709" resolveInfo="classifier" />
                     </node>
                   </node>
                 </node>

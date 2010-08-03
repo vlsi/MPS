@@ -24,7 +24,7 @@ public class ParameterReference_parameterDeclaration_ReferentConstraint extends 
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     // parameters declared in enclosing method 
-    return new ParameterScope(_context.getEnclosingNode()).getNodes();
+    return new ParameterScope(_context.getEnclosingNode());
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

@@ -233,7 +233,7 @@ public class Classifier_Behavior {
     SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(contextNode);
     List<SNode> result = new ArrayList<SNode>();
     while (classifier != null) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, contextNode, constraint)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, contextNode, constraint)));
       if (!(Classifier_Behavior.call_isStatic_521412098689998668(classifier)) || (constraint & IClassifiersSearchScope.STATIC_MEMBER) != 0) {
         classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       } else {
