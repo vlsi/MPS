@@ -15,7 +15,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
-public class Mapping_Test1 extends TestCase {
+public class Mapping_Test1_Test extends TestCase {
   public void test__1() throws Exception {
     Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
