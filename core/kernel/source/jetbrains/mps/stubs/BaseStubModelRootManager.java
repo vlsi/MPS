@@ -63,8 +63,6 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   public final void updateModels(String path, String prefix, @NotNull IModule module) {
     myLocation = new StubLocation(path, prefix, module);
 
-    SModelRepository repository = SModelRepository.getInstance();
-
     Set<BaseStubModelDescriptor> models = new HashSet<BaseStubModelDescriptor>();
 
     try {
@@ -73,6 +71,11 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
       LOG.error(t);
     }
 
+    updateModels(module, models);
+  }
+
+  public void updateModels(IModule module, Set<BaseStubModelDescriptor> models) {
+    SModelRepository repository = SModelRepository.getInstance();
     for (BaseStubModelDescriptor descriptor : models) {
       descriptor.addStubPath(new StubPath(myLocation.getPath(), myThisManager));
 
