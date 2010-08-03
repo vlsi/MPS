@@ -27,9 +27,11 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
+import jetbrains.mps.workbench.tools.InvalidUsageException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.naming.OperationNotSupportedException;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -50,13 +52,12 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   private StubLocation myLocation;
   private ModelRootManager myThisManager;
 
-
   protected BaseStubModelRootManager() {
     myThisManager = new ModelRootManager(getSelfModuleId(), this.getClass().getName());
   }
 
   public final void updateModels(@NotNull SModelRoot root, @NotNull IModule module) {
-    updateModels(root.getPath(), root.getPrefix(), module);
+    throw new InvalidUsageException("stub manager is called on module load");
   }
 
   public final void updateModels(String path, String prefix, @NotNull IModule module) {

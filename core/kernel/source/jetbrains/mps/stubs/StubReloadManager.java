@@ -180,7 +180,7 @@ public class StubReloadManager implements ApplicationComponent {
       data.getModelRootManager().dispose();
     }
 
-    //clean refereces to old managers in stub models
+    //clean references to old managers in stub models
     for (BaseStubModelDescriptor md : getAllStubModels()) {
       md.setModelRootManager(null);
     }
@@ -209,6 +209,7 @@ public class StubReloadManager implements ApplicationComponent {
         PathData data = new PathData(sp);
         data.setModelRootManager(manager);
         myPath2Data.put(sp, data);
+
 
         manager.updateModels(sp.getPath(), "", m);
       }
@@ -245,7 +246,7 @@ public class StubReloadManager implements ApplicationComponent {
     for (StubPath s : sm.getPaths()) {
       boolean contains = false;
       for (StubPath notChanged : myNotChangedStubPaths) {
-        if (!equalStubPaths(s, notChanged)) continue;
+        if (!ObjectUtils.equals(s, notChanged)) continue;
 
         contains = true;
         break;
@@ -262,17 +263,9 @@ public class StubReloadManager implements ApplicationComponent {
       String newManagerClass = sp.getManager().getClassName();
       boolean managersEqual = ObjectUtils.equals(oldManagerClass, newManagerClass);
 
-      if (managersEqual && isUnder(path, sp.getPath())) return false;
+      if (managersEqual && path.startsWith(sp.getPath())) return false;
     }
     return true;
-  }
-
-  private boolean equalStubPaths(StubPath os, StubPath ns) {
-    return ObjectUtils.equals(os, ns);
-  }
-
-  private boolean isUnder(String path, String mainPath) {
-    return path.startsWith(mainPath);
   }
 
   private List<AbstractModule> getAllModules() {
@@ -325,7 +318,7 @@ public class StubReloadManager implements ApplicationComponent {
       if (pd == null || !pd.isFresh()) continue;
 
       for (StubPath ns : newStubs) {
-        if (!equalStubPaths(os, ns)) continue;
+        if (!ObjectUtils.equals(os, ns)) continue;
         notChangedStubPaths.add(ns);
       }
     }
@@ -414,7 +407,6 @@ public class StubReloadManager implements ApplicationComponent {
       myManagerTimestamp = getManagerTimestamp();
     }
   }
-
 
   //---------component stuff----------
 
