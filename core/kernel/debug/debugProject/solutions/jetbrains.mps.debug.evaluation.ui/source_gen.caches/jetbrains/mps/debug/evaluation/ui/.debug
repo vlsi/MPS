@@ -139,12 +139,14 @@
     <nodeInfo nodeId="2952675617660604832" fileName="EvaluationDialog.java" startLine="361" startPosition="48" endLine="362" endPosition="18" />
     <nodeInfo nodeId="7419823472792742625" fileName="EvaluationDialog.java" startLine="362" startPosition="18" endLine="363" endPosition="0" />
     <nodeInfo nodeId="7419823472792744934" fileName="EvaluationDialog.java" startLine="363" startPosition="0" endLine="364" endPosition="27" />
+    <nodeInfo nodeId="2952675617660606635" fileName="EvaluationDialog.java" startLine="368" startPosition="29" endLine="369" endPosition="18" />
     <nodeInfo nodeId="2952675617660606646" fileName="EvaluationDialog.java" startLine="373" startPosition="41" endLine="374" endPosition="33" />
     <nodeInfo nodeId="2952675617660606648" fileName="EvaluationDialog.java" startLine="374" startPosition="33" endLine="375" endPosition="0" />
     <nodeInfo nodeId="2952675617660606650" fileName="EvaluationDialog.java" startLine="375" startPosition="0" endLine="376" endPosition="26" />
     <nodeInfo nodeId="2952675617660610459" fileName="EvaluationDialog.java" startLine="376" startPosition="26" endLine="377" endPosition="32" />
     <nodeInfo nodeId="4156068567009830447" fileName="EvaluationDialog.java" startLine="382" startPosition="33" endLine="383" endPosition="29" />
     <nodeInfo nodeId="4156068567009830450" fileName="EvaluationDialog.java" startLine="383" startPosition="29" endLine="384" endPosition="27" />
+    <nodeInfo nodeId="4156068567009830457" fileName="EvaluationDialog.java" startLine="388" startPosition="29" endLine="389" endPosition="18" />
     <nodeInfo nodeId="4156068567009830464" fileName="EvaluationDialog.java" startLine="393" startPosition="41" endLine="394" endPosition="33" />
     <nodeInfo nodeId="4156068567009830467" fileName="EvaluationDialog.java" startLine="394" startPosition="33" endLine="395" endPosition="27" />
     <nodeInfo nodeId="4156068567009854970" fileName="EvaluationDialog.java" startLine="395" startPosition="27" endLine="396" endPosition="38" />
@@ -458,6 +460,7 @@
     <nodeInfo nodeId="672360099287494376" fileName="AbstractEvaluationLogic.java" startLine="78" startPosition="25" endLine="79" endPosition="133" />
     <nodeInfo nodeId="6185141366360330785" fileName="AbstractEvaluationLogic.java" startLine="79" startPosition="133" endLine="80" endPosition="93" />
     <nodeInfo nodeId="672360099287494384" fileName="AbstractEvaluationLogic.java" startLine="82" startPosition="7" endLine="83" endPosition="46" />
+    <nodeInfo nodeId="2582156706586555485" fileName="AbstractEvaluationLogic.java" startLine="86" startPosition="39" endLine="87" endPosition="55" />
     <nodeInfo nodeId="672360099287476250" fileName="AbstractEvaluationLogic.java" startLine="91" startPosition="37" endLine="92" endPosition="62" />
     <nodeInfo nodeId="672360099287476256" fileName="AbstractEvaluationLogic.java" startLine="92" startPosition="62" endLine="93" endPosition="30" />
     <nodeInfo nodeId="672360099287476262" fileName="AbstractEvaluationLogic.java" startLine="94" startPosition="33" endLine="95" endPosition="61" />
@@ -465,6 +468,8 @@
     <nodeInfo nodeId="672360099287476290" fileName="AbstractEvaluationLogic.java" startLine="98" startPosition="52" endLine="99" endPosition="127" />
     <nodeInfo nodeId="672360099287476276" fileName="AbstractEvaluationLogic.java" startLine="100" startPosition="31" endLine="101" endPosition="23" />
     <nodeInfo nodeId="672360099287476308" fileName="AbstractEvaluationLogic.java" startLine="104" startPosition="5" endLine="105" endPosition="24" />
+    <nodeInfo nodeId="6185141366360305657" fileName="AbstractEvaluationLogic.java" startLine="108" startPosition="35" endLine="109" endPosition="26" />
+    <nodeInfo nodeId="6185141366360305665" fileName="AbstractEvaluationLogic.java" startLine="112" startPosition="41" endLine="113" endPosition="31" />
     <nodeInfo nodeId="6185141366360321021" fileName="AbstractEvaluationLogic.java" startLine="116" startPosition="42" endLine="117" endPosition="23" />
     <nodeInfo nodeId="6185141366360330491" fileName="AbstractEvaluationLogic.java" startLine="120" startPosition="48" endLine="121" endPosition="23" />
     <nodeInfo nodeId="6185141366360331063" fileName="AbstractEvaluationLogic.java" startLine="123" startPosition="25" endLine="124" endPosition="81" />
@@ -523,18 +528,18 @@
     <nodeInfo nodeId="6185141366360333763" fileName="AbstractEvaluationLogic.java" startLine="243" startPosition="158" endLine="244" endPosition="45" />
     <nodeInfo nodeId="6185141366360333774" fileName="AbstractEvaluationLogic.java" startLine="245" startPosition="26" endLine="246" endPosition="92" />
     <nodeInfo nodeId="6185141366360333781" fileName="AbstractEvaluationLogic.java" startLine="246" startPosition="92" endLine="247" endPosition="0" />
-    <nodeInfo nodeId="6185141366360333789" fileName="AbstractEvaluationLogic.java" startLine="251" startPosition="19" endLine="252" endPosition="56" />
-    <nodeInfo nodeId="8917625510821947425" fileName="AbstractEvaluationLogic.java" startLine="254" startPosition="123" endLine="255" endPosition="47" />
-    <nodeInfo nodeId="6185141366360333897" fileName="AbstractEvaluationLogic.java" startLine="258" startPosition="37" endLine="259" endPosition="53" />
-    <nodeInfo nodeId="6185141366360333801" fileName="AbstractEvaluationLogic.java" startLine="262" startPosition="13" endLine="263" endPosition="0" />
-    <nodeInfo nodeId="6185141366360333881" fileName="AbstractEvaluationLogic.java" startLine="265" startPosition="7" endLine="266" endPosition="77" />
+    <nodeInfo nodeId="452316466166854682" fileName="AbstractEvaluationLogic.java" startLine="249" startPosition="15" endLine="250" endPosition="52" />
+    <nodeInfo nodeId="452316466166854691" fileName="AbstractEvaluationLogic.java" startLine="252" startPosition="119" endLine="253" endPosition="43" />
+    <nodeInfo nodeId="452316466166854701" fileName="AbstractEvaluationLogic.java" startLine="256" startPosition="33" endLine="257" endPosition="25" />
+    <nodeInfo nodeId="6185141366360333801" fileName="AbstractEvaluationLogic.java" startLine="258" startPosition="11" endLine="259" endPosition="0" />
+    <nodeInfo nodeId="6185141366360333881" fileName="AbstractEvaluationLogic.java" startLine="261" startPosition="7" endLine="262" endPosition="77" />
     <nodeInfo nodeId="6185141366360305955" fileName="AbstractEvaluationLogic.java" startLine="194" startPosition="12" endLine="196" endPosition="7" />
     <nodeInfo nodeId="6185141366360331020" fileName="AbstractEvaluationLogic.java" startLine="132" startPosition="0" endLine="135" endPosition="0" />
     <nodeInfo nodeId="6185141366360331001" fileName="AbstractEvaluationLogic.java" startLine="135" startPosition="0" endLine="138" endPosition="0" />
     <nodeInfo nodeId="4511157238631207798" fileName="AbstractEvaluationLogic.java" startLine="179" startPosition="57" endLine="182" endPosition="9" />
     <nodeInfo nodeId="672360099287477588" fileName="AbstractEvaluationLogic.java" startLine="213" startPosition="124" endLine="216" endPosition="5" />
     <nodeInfo nodeId="6185141366360333730" fileName="AbstractEvaluationLogic.java" startLine="235" startPosition="73" endLine="238" endPosition="7" />
-    <nodeInfo nodeId="8917625510821947420" fileName="AbstractEvaluationLogic.java" startLine="253" startPosition="64" endLine="256" endPosition="19" />
+    <nodeInfo nodeId="452316466166854687" fileName="AbstractEvaluationLogic.java" startLine="251" startPosition="60" endLine="254" endPosition="15" />
     <nodeInfo nodeId="2582156706586555412" fileName="AbstractEvaluationLogic.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
     <nodeInfo nodeId="6185141366360305653" fileName="AbstractEvaluationLogic.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
     <nodeInfo nodeId="6185141366360305661" fileName="AbstractEvaluationLogic.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
@@ -551,7 +556,7 @@
     <nodeInfo nodeId="6185141366360331058" fileName="AbstractEvaluationLogic.java" startLine="121" startPosition="23" endLine="126" endPosition="7" />
     <nodeInfo nodeId="6185141366360305774" fileName="AbstractEvaluationLogic.java" startLine="161" startPosition="0" endLine="166" endPosition="8" />
     <nodeInfo nodeId="6185141366360333707" fileName="AbstractEvaluationLogic.java" startLine="227" startPosition="0" endLine="232" endPosition="0" />
-    <nodeInfo nodeId="4110944475334438178" fileName="AbstractEvaluationLogic.java" startLine="252" startPosition="56" endLine="257" endPosition="17" />
+    <nodeInfo nodeId="452316466166854685" fileName="AbstractEvaluationLogic.java" startLine="250" startPosition="52" endLine="255" endPosition="13" />
     <nodeInfo nodeId="6185141366360330776" fileName="AbstractEvaluationLogic.java" startLine="76" startPosition="73" endLine="82" endPosition="7" />
     <nodeInfo nodeId="672360099287476273" fileName="AbstractEvaluationLogic.java" startLine="96" startPosition="31" endLine="102" endPosition="9" />
     <nodeInfo nodeId="3810856892873061804" fileName="AbstractEvaluationLogic.java" startLine="185" startPosition="28" endLine="192" endPosition="9" />
@@ -559,16 +564,14 @@
     <nodeInfo nodeId="672360099287476268" fileName="AbstractEvaluationLogic.java" startLine="95" startPosition="61" endLine="103" endPosition="7" />
     <nodeInfo nodeId="6185141366360330484" fileName="AbstractEvaluationLogic.java" startLine="119" startPosition="0" endLine="128" endPosition="0" />
     <nodeInfo nodeId="6185141366360333718" fileName="AbstractEvaluationLogic.java" startLine="232" startPosition="0" endLine="241" endPosition="0" />
-    <nodeInfo nodeId="6185141366360333787" fileName="AbstractEvaluationLogic.java" startLine="250" startPosition="31" endLine="260" endPosition="15" />
+    <nodeInfo nodeId="452316466166854680" fileName="AbstractEvaluationLogic.java" startLine="248" startPosition="32" endLine="258" endPosition="11" />
     <nodeInfo nodeId="672360099287476260" fileName="AbstractEvaluationLogic.java" startLine="93" startPosition="30" endLine="104" endPosition="5" />
-    <nodeInfo nodeId="6185141366360333785" fileName="AbstractEvaluationLogic.java" startLine="249" startPosition="73" endLine="262" endPosition="0" />
-    <nodeInfo nodeId="6185141366360333784" fileName="AbstractEvaluationLogic.java" startLine="248" startPosition="32" endLine="262" endPosition="13" />
-    <nodeInfo nodeId="6185141366360333782" fileName="AbstractEvaluationLogic.java" startLine="247" startPosition="0" endLine="264" endPosition="9" />
+    <nodeInfo nodeId="6185141366360333782" fileName="AbstractEvaluationLogic.java" startLine="247" startPosition="0" endLine="260" endPosition="9" />
+    <nodeInfo nodeId="6185141366360333769" fileName="AbstractEvaluationLogic.java" startLine="244" startPosition="45" endLine="261" endPosition="7" />
     <nodeInfo nodeId="6185141366360269635" fileName="AbstractEvaluationLogic.java" startLine="66" startPosition="0" endLine="84" endPosition="3" />
     <nodeInfo nodeId="672360099287476246" fileName="AbstractEvaluationLogic.java" startLine="89" startPosition="0" endLine="107" endPosition="0" />
     <nodeInfo nodeId="6185141366360305863" fileName="AbstractEvaluationLogic.java" startLine="178" startPosition="0" endLine="196" endPosition="7" />
-    <nodeInfo nodeId="6185141366360333769" fileName="AbstractEvaluationLogic.java" startLine="244" startPosition="45" endLine="265" endPosition="7" />
-    <nodeInfo nodeId="6185141366360333745" fileName="AbstractEvaluationLogic.java" startLine="241" startPosition="0" endLine="268" endPosition="0" />
+    <nodeInfo nodeId="6185141366360333745" fileName="AbstractEvaluationLogic.java" startLine="241" startPosition="0" endLine="264" endPosition="0" />
     <nodeInfo nodeId="6185141366360305718" fileName="AbstractEvaluationLogic.java" startLine="152" startPosition="58" endLine="210" endPosition="5" />
     <nodeInfo nodeId="6185141366360305695" fileName="AbstractEvaluationLogic.java" startLine="150" startPosition="0" endLine="212" endPosition="0" />
     <scopeInfo nodeId="2582156706586555415" fileName="AbstractEvaluationLogic.java" startLine="86" startPosition="39" endLine="87" endPosition="55" />
@@ -590,8 +593,8 @@
     <scopeInfo nodeId="672360099287477590" fileName="AbstractEvaluationLogic.java" startLine="214" startPosition="31" endLine="215" endPosition="67" />
     <scopeInfo nodeId="6185141366360333710" fileName="AbstractEvaluationLogic.java" startLine="229" startPosition="59" endLine="230" endPosition="32" />
     <scopeInfo nodeId="6185141366360333731" fileName="AbstractEvaluationLogic.java" startLine="236" startPosition="53" endLine="237" endPosition="25" />
-    <scopeInfo nodeId="8917625510821947423" fileName="AbstractEvaluationLogic.java" startLine="254" startPosition="123" endLine="255" endPosition="47" />
-    <scopeInfo nodeId="6185141366360333795" fileName="AbstractEvaluationLogic.java" startLine="258" startPosition="37" endLine="259" endPosition="53" />
+    <scopeInfo nodeId="452316466166854690" fileName="AbstractEvaluationLogic.java" startLine="252" startPosition="119" endLine="253" endPosition="43" />
+    <scopeInfo nodeId="452316466166854700" fileName="AbstractEvaluationLogic.java" startLine="256" startPosition="33" endLine="257" endPosition="25" />
     <scopeInfo nodeId="6185141366360330778" fileName="AbstractEvaluationLogic.java" startLine="78" startPosition="25" endLine="80" endPosition="93" />
     <scopeInfo nodeId="672360099287476283" fileName="AbstractEvaluationLogic.java" startLine="97" startPosition="13" endLine="99" endPosition="127">
       <varInfo nodeId="672360099287476285" varName="location" />
@@ -606,8 +609,8 @@
     <scopeInfo nodeId="6185141366360333730" fileName="AbstractEvaluationLogic.java" startLine="235" startPosition="73" endLine="238" endPosition="7">
       <varInfo nodeId="6185141366360333740" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="4110944475334438179" fileName="AbstractEvaluationLogic.java" startLine="253" startPosition="64" endLine="256" endPosition="19" />
-    <scopeInfo nodeId="8917625510821947420" fileName="AbstractEvaluationLogic.java" startLine="253" startPosition="64" endLine="256" endPosition="19" />
+    <scopeInfo nodeId="452316466166854686" fileName="AbstractEvaluationLogic.java" startLine="251" startPosition="60" endLine="254" endPosition="15" />
+    <scopeInfo nodeId="452316466166854687" fileName="AbstractEvaluationLogic.java" startLine="251" startPosition="60" endLine="254" endPosition="15" />
     <scopeInfo nodeId="2582156706586555412" fileName="AbstractEvaluationLogic.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
     <scopeInfo nodeId="6185141366360305653" fileName="AbstractEvaluationLogic.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
     <scopeInfo nodeId="6185141366360305661" fileName="AbstractEvaluationLogic.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
@@ -638,7 +641,7 @@
     </scopeInfo>
     <scopeInfo nodeId="672360099287476272" fileName="AbstractEvaluationLogic.java" startLine="96" startPosition="31" endLine="102" endPosition="9" />
     <scopeInfo nodeId="6185141366360330487" fileName="AbstractEvaluationLogic.java" startLine="120" startPosition="48" endLine="126" endPosition="7" />
-    <scopeInfo nodeId="6185141366360333788" fileName="AbstractEvaluationLogic.java" startLine="251" startPosition="19" endLine="257" endPosition="17" />
+    <scopeInfo nodeId="452316466166854681" fileName="AbstractEvaluationLogic.java" startLine="249" startPosition="15" endLine="255" endPosition="13" />
     <scopeInfo nodeId="672360099287477582" fileName="AbstractEvaluationLogic.java" startLine="212" startPosition="0" endLine="219" endPosition="0">
       <varInfo nodeId="672360099287494346" varName="session" />
       <varInfo nodeId="672360099287494341" varName="state" />
@@ -654,8 +657,7 @@
     <scopeInfo nodeId="6185141366360333718" fileName="AbstractEvaluationLogic.java" startLine="232" startPosition="0" endLine="241" endPosition="0">
       <varInfo nodeId="6185141366360333721" varName="contextModules" />
     </scopeInfo>
-    <scopeInfo nodeId="6185141366360333786" fileName="AbstractEvaluationLogic.java" startLine="250" startPosition="31" endLine="260" endPosition="15" />
-    <scopeInfo nodeId="6185141366360333785" fileName="AbstractEvaluationLogic.java" startLine="249" startPosition="73" endLine="262" endPosition="0" />
+    <scopeInfo nodeId="6185141366360333783" fileName="AbstractEvaluationLogic.java" startLine="248" startPosition="32" endLine="259" endPosition="0" />
     <scopeInfo nodeId="672360099287476249" fileName="AbstractEvaluationLogic.java" startLine="91" startPosition="37" endLine="105" endPosition="24">
       <varInfo nodeId="672360099287476257" varName="locationNode" />
       <varInfo nodeId="672360099287476251" varName="javaStackFrame" />
@@ -665,7 +667,9 @@
       <varInfo nodeId="690681033760324015" varName="evaluator" />
       <varInfo nodeId="690681033760324008" varName="clazz" />
     </scopeInfo>
-    <scopeInfo nodeId="6185141366360333783" fileName="AbstractEvaluationLogic.java" startLine="248" startPosition="32" endLine="263" endPosition="0" />
+    <scopeInfo nodeId="6185141366360333773" fileName="AbstractEvaluationLogic.java" startLine="245" startPosition="26" endLine="260" endPosition="9">
+      <varInfo nodeId="6185141366360333775" varName="evaluator" />
+    </scopeInfo>
     <scopeInfo nodeId="6185141366360269638" fileName="AbstractEvaluationLogic.java" startLine="67" startPosition="134" endLine="83" endPosition="46">
       <varInfo nodeId="672360099287494381" varName="evaluatorConcept" />
     </scopeInfo>
@@ -675,13 +679,10 @@
       <varInfo nodeId="6185141366360320965" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="672360099287476246" fileName="AbstractEvaluationLogic.java" startLine="89" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="6185141366360333773" fileName="AbstractEvaluationLogic.java" startLine="245" startPosition="26" endLine="264" endPosition="9">
-      <varInfo nodeId="6185141366360333775" varName="evaluator" />
-    </scopeInfo>
-    <scopeInfo nodeId="6185141366360333758" fileName="AbstractEvaluationLogic.java" startLine="243" startPosition="158" endLine="266" endPosition="77">
+    <scopeInfo nodeId="6185141366360333758" fileName="AbstractEvaluationLogic.java" startLine="243" startPosition="158" endLine="262" endPosition="77">
       <varInfo nodeId="6185141366360333764" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="6185141366360333745" fileName="AbstractEvaluationLogic.java" startLine="241" startPosition="0" endLine="268" endPosition="0">
+    <scopeInfo nodeId="6185141366360333745" fileName="AbstractEvaluationLogic.java" startLine="241" startPosition="0" endLine="264" endPosition="0">
       <varInfo nodeId="6185141366360333746" varName="module" />
       <varInfo nodeId="6185141366360333754" varName="helper" />
       <varInfo nodeId="6185141366360333750" varName="status" />
@@ -705,15 +706,15 @@
     <unitInfo nodeId="6185141366360331059" fileName="AbstractEvaluationLogic.java" startLine="122" startPosition="55" endLine="126" endPosition="5" unitName="jetbrains.mps.debug.evaluation.ui.AbstractEvaluationLogic$2" />
     <unitInfo nodeId="6185141366360305779" fileName="AbstractEvaluationLogic.java" startLine="162" startPosition="37" endLine="166" endPosition="7" unitName="jetbrains.mps.debug.evaluation.ui.AbstractEvaluationLogic$3" />
     <unitInfo nodeId="6185141366360330777" fileName="AbstractEvaluationLogic.java" startLine="77" startPosition="55" endLine="82" endPosition="5" unitName="jetbrains.mps.debug.evaluation.ui.AbstractEvaluationLogic$1" />
-    <unitInfo nodeId="6185141366360333785" fileName="AbstractEvaluationLogic.java" startLine="249" startPosition="61" endLine="262" endPosition="11" unitName="jetbrains.mps.debug.evaluation.ui.AbstractEvaluationLogic$1" />
-    <unitInfo nodeId="6185141366360333685" fileName="AbstractEvaluationLogic.java" startLine="220" startPosition="0" endLine="269" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.AbstractEvaluationLogic$MyInMemoryJavaGenerationHandler" />
-    <unitInfo nodeId="6185141366360269633" fileName="AbstractEvaluationLogic.java" startLine="52" startPosition="0" endLine="270" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.AbstractEvaluationLogic" />
+    <unitInfo nodeId="6185141366360333685" fileName="AbstractEvaluationLogic.java" startLine="220" startPosition="0" endLine="265" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.AbstractEvaluationLogic$MyInMemoryJavaGenerationHandler" />
+    <unitInfo nodeId="6185141366360269633" fileName="AbstractEvaluationLogic.java" startLine="52" startPosition="0" endLine="266" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.AbstractEvaluationLogic" />
   </root>
   <root nodeId="634073782578690327">
     <nodeInfo nodeId="1652604548634760201" fileName="AllMembersJavaStubs.java" startLine="18" startPosition="52" endLine="19" endPosition="61" />
     <nodeInfo nodeId="2470070441756630387" fileName="AllMembersJavaStubs.java" startLine="24" startPosition="36" endLine="25" endPosition="25" />
     <nodeInfo nodeId="634073782578701776" fileName="AllMembersJavaStubs.java" startLine="29" startPosition="67" endLine="30" endPosition="92" />
     <nodeInfo nodeId="634073782578701795" fileName="AllMembersJavaStubs.java" startLine="31" startPosition="23" endLine="32" endPosition="13" />
+    <nodeInfo nodeId="634073782578831612" fileName="AllMembersJavaStubs.java" startLine="36" startPosition="71" endLine="37" endPosition="95" />
     <nodeInfo nodeId="7479893728218694754" fileName="AllMembersJavaStubs.java" startLine="42" startPosition="63" endLine="43" endPosition="53" />
     <nodeInfo nodeId="7479893728218694773" fileName="AllMembersJavaStubs.java" startLine="44" startPosition="9" endLine="45" endPosition="20" />
     <nodeInfo nodeId="7479893728218694788" fileName="AllMembersJavaStubs.java" startLine="50" startPosition="63" endLine="51" endPosition="53" />
@@ -808,6 +809,7 @@
     <nodeInfo nodeId="672360099287477333" fileName="LowLevelEvaluationLogic.java" startLine="188" startPosition="9" endLine="189" endPosition="0" />
     <nodeInfo nodeId="672360099287477334" fileName="LowLevelEvaluationLogic.java" startLine="189" startPosition="0" endLine="190" endPosition="80" />
     <nodeInfo nodeId="672360099287477343" fileName="LowLevelEvaluationLogic.java" startLine="191" startPosition="49" endLine="192" endPosition="23" />
+    <nodeInfo nodeId="672360099287477348" fileName="LowLevelEvaluationLogic.java" startLine="193" startPosition="9" endLine="194" endPosition="58" />
     <nodeInfo nodeId="672360099287477356" fileName="LowLevelEvaluationLogic.java" startLine="197" startPosition="32" endLine="198" endPosition="18" />
     <nodeInfo nodeId="672360099287477361" fileName="LowLevelEvaluationLogic.java" startLine="199" startPosition="5" endLine="200" endPosition="121" />
     <nodeInfo nodeId="672360099287477367" fileName="LowLevelEvaluationLogic.java" startLine="200" startPosition="121" endLine="201" endPosition="160" />
@@ -1253,6 +1255,7 @@
     <nodeInfo nodeId="672360099287476129" fileName="HighLevelEvaluationLogic.java" startLine="50" startPosition="5" endLine="51" endPosition="16" />
     <nodeInfo nodeId="672360099287476147" fileName="HighLevelEvaluationLogic.java" startLine="55" startPosition="37" endLine="56" endPosition="22" />
     <nodeInfo nodeId="672360099287476149" fileName="HighLevelEvaluationLogic.java" startLine="57" startPosition="5" endLine="58" endPosition="106" />
+    <nodeInfo nodeId="672360099287476170" fileName="HighLevelEvaluationLogic.java" startLine="60" startPosition="39" endLine="61" endPosition="123" />
     <nodeInfo nodeId="672360099287477443" fileName="HighLevelEvaluationLogic.java" startLine="67" startPosition="32" endLine="68" endPosition="24" />
     <nodeInfo nodeId="672360099287477450" fileName="HighLevelEvaluationLogic.java" startLine="72" startPosition="32" endLine="73" endPosition="30" />
     <nodeInfo nodeId="4018116585157701596" fileName="HighLevelEvaluationLogic.java" startLine="77" startPosition="29" endLine="78" endPosition="24" />
@@ -1314,6 +1317,7 @@
     <nodeInfo nodeId="2960002797019070548" fileName="TransformationUtil.java" startLine="46" startPosition="49" endLine="47" endPosition="57" />
     <nodeInfo nodeId="2960002797019070553" fileName="TransformationUtil.java" startLine="47" startPosition="57" endLine="48" endPosition="0" />
     <nodeInfo nodeId="4698880862823942044" fileName="TransformationUtil.java" startLine="48" startPosition="0" endLine="49" endPosition="29" />
+    <nodeInfo nodeId="4698880862823942159" fileName="TransformationUtil.java" startLine="53" startPosition="45" endLine="54" endPosition="139" />
     <nodeInfo nodeId="4698880862823995134" fileName="TransformationUtil.java" startLine="58" startPosition="15" endLine="59" endPosition="0" />
     <nodeInfo nodeId="2960002797019070556" fileName="TransformationUtil.java" startLine="59" startPosition="0" endLine="60" endPosition="31" />
     <nodeInfo nodeId="2960002797019070554" fileName="TransformationUtil.java" startLine="60" startPosition="31" endLine="61" endPosition="0" />
@@ -1337,6 +1341,7 @@
     <nodeInfo nodeId="2960002797019089041" fileName="TransformationUtil.java" startLine="84" startPosition="124" endLine="85" endPosition="125" />
     <nodeInfo nodeId="2960002797019089057" fileName="TransformationUtil.java" startLine="85" startPosition="125" endLine="86" endPosition="93" />
     <nodeInfo nodeId="2960002797019090490" fileName="TransformationUtil.java" startLine="86" startPosition="93" endLine="87" endPosition="93" />
+    <nodeInfo nodeId="1897981144028518949" fileName="TransformationUtil.java" startLine="93" startPosition="39" endLine="94" endPosition="145" />
     <nodeInfo nodeId="1897981144028553142" fileName="TransformationUtil.java" startLine="97" startPosition="71" endLine="98" endPosition="218" />
     <nodeInfo nodeId="1897981144028553074" fileName="TransformationUtil.java" startLine="98" startPosition="218" endLine="99" endPosition="186" />
     <nodeInfo nodeId="1897981144028561032" fileName="TransformationUtil.java" startLine="99" startPosition="186" endLine="100" endPosition="95" />
@@ -1470,6 +1475,7 @@
     <nodeInfo nodeId="4175388117836564406" fileName="TransformationUtil.java" startLine="347" startPosition="122" endLine="348" endPosition="18" />
     <nodeInfo nodeId="2960002797019071517" fileName="TransformationUtil.java" startLine="350" startPosition="219" endLine="351" endPosition="134" />
     <nodeInfo nodeId="2960002797019071534" fileName="TransformationUtil.java" startLine="352" startPosition="5" endLine="353" endPosition="17" />
+    <nodeInfo nodeId="3482985715472559239" fileName="TransformationUtil.java" startLine="358" startPosition="39" endLine="359" endPosition="132" />
     <nodeInfo nodeId="3482985715472559265" fileName="TransformationUtil.java" startLine="362" startPosition="35" endLine="363" endPosition="35" />
     <nodeInfo nodeId="3482985715472559053" fileName="TransformationUtil.java" startLine="368" startPosition="67" endLine="369" endPosition="95" />
     <nodeInfo nodeId="3482985715472559063" fileName="TransformationUtil.java" startLine="369" startPosition="95" endLine="370" endPosition="172" />
@@ -1487,6 +1493,7 @@
     <nodeInfo nodeId="3482985715472559035" fileName="TransformationUtil.java" startLine="393" startPosition="148" endLine="394" endPosition="150" />
     <nodeInfo nodeId="3482985715472558959" fileName="TransformationUtil.java" startLine="395" startPosition="5" endLine="396" endPosition="17" />
     <nodeInfo nodeId="2960002797019071544" fileName="TransformationUtil.java" startLine="399" startPosition="60" endLine="400" endPosition="39" />
+    <nodeInfo nodeId="2960002797019071556" fileName="TransformationUtil.java" startLine="402" startPosition="39" endLine="403" endPosition="76" />
     <nodeInfo nodeId="2542506946494232744" fileName="TransformationUtil.java" startLine="408" startPosition="59" endLine="409" endPosition="78" />
     <nodeInfo nodeId="2542506946494232747" fileName="TransformationUtil.java" startLine="409" startPosition="78" endLine="410" endPosition="78" />
     <nodeInfo nodeId="2542506946494242658" fileName="TransformationUtil.java" startLine="410" startPosition="78" endLine="411" endPosition="69" />
@@ -1512,6 +1519,7 @@
     <nodeInfo nodeId="6148852480115499037" fileName="TransformationUtil.java" startLine="456" startPosition="5" endLine="457" endPosition="48" />
     <nodeInfo nodeId="4067466941953899917" fileName="TransformationUtil.java" startLine="457" startPosition="48" endLine="458" endPosition="77" />
     <nodeInfo nodeId="7688572620285924927" fileName="TransformationUtil.java" startLine="461" startPosition="66" endLine="462" endPosition="71" />
+    <nodeInfo nodeId="7688572620285927754" fileName="TransformationUtil.java" startLine="464" startPosition="37" endLine="465" endPosition="59" />
     <nodeInfo nodeId="7688572620285927763" fileName="TransformationUtil.java" startLine="468" startPosition="37" endLine="469" endPosition="76" />
     <nodeInfo nodeId="4638981543770376003" fileName="TransformationUtil.java" startLine="471" startPosition="7" endLine="472" endPosition="27" />
     <nodeInfo nodeId="4638981543770376012" fileName="TransformationUtil.java" startLine="472" startPosition="27" endLine="473" endPosition="113" />
@@ -2729,6 +2737,7 @@
     <nodeInfo nodeId="2960002797019071641" fileName="TransformationUtil.java" startLine="432" startPosition="0" endLine="436" endPosition="0" />
     <nodeInfo nodeId="7688572620285927752" fileName="TransformationUtil.java" startLine="463" startPosition="130" endLine="467" endPosition="0" />
     <nodeInfo nodeId="7688572620285927761" fileName="TransformationUtil.java" startLine="467" startPosition="39" endLine="471" endPosition="0" />
+    <nodeInfo nodeId="4698880862823942151" fileName="TransformationUtil.java" startLine="51" startPosition="52" endLine="56" endPosition="11" />
     <nodeInfo nodeId="1897981144028514176" fileName="TransformationUtil.java" startLine="91" startPosition="81" endLine="96" endPosition="7" />
     <nodeInfo nodeId="2960002797019071039" fileName="TransformationUtil.java" startLine="165" startPosition="76" endLine="170" endPosition="5" />
     <nodeInfo nodeId="2960002797019071272" fileName="TransformationUtil.java" startLine="216" startPosition="202" endLine="221" endPosition="9" />

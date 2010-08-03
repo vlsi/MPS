@@ -246,20 +246,16 @@ public abstract class AbstractEvaluationLogic {
         final SNode evaluator = model.getRootByName(AbstractEvaluationLogic.EVALUATOR_NAME);
 
         if (evaluator != null) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              try {
-                TransformationUtil.transform(evaluator);
-                if (AbstractEvaluationLogic.IS_DEVELOPER_MODE) {
-                  for (_FunctionTypes._void_P1_E0<? super SNode> listener : ListSequence.fromList(myGenerationListeners)) {
-                    listener.invoke(evaluator);
-                  }
-                }
-              } catch (Throwable t) {
-                AbstractEvaluationLogic.LOG.error(t);
+          try {
+            TransformationUtil.transform(evaluator);
+            if (AbstractEvaluationLogic.IS_DEVELOPER_MODE) {
+              for (_FunctionTypes._void_P1_E0<? super SNode> listener : ListSequence.fromList(myGenerationListeners)) {
+                listener.invoke(evaluator);
               }
             }
-          });
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
 
         }
       }
