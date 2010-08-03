@@ -19,18 +19,16 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.List;
 import java.util.Set;
 
-public interface IModule extends ModelOwner{
+public interface IModule extends ModelOwner {
   @Deprecated
   String getModuleUID();
 
@@ -122,7 +120,7 @@ public interface IModule extends ModelOwner{
 
   void updateClassPath();
 
-   void invalidateClassPath();
+  void invalidateClassPath();
 
   void save();
 

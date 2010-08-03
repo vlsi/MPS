@@ -46,14 +46,9 @@ public class StubReloadManager implements ApplicationComponent {
 
   public void reload() {
     loadNewStubSolutions();
-
     updateNotChangedStubPaths();
-
     disposeStubManagers();
     reloadStubModels();
-    CleanupManager.getInstance().cleanup();              //todo do we need this?
-    MPSModuleRepository.getInstance().invalidateCaches();//todo do we need this?
-
     updateLoadedStubPaths();
   }
 

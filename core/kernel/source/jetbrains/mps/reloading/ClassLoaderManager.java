@@ -18,6 +18,7 @@ package jetbrains.mps.reloading;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -96,6 +97,9 @@ public class ClassLoaderManager implements ApplicationComponent {
       indicator.setIndeterminate(true);
       indicator.setText("Reloading classes...");
 
+      indicator.setText2("Performing cleanup...");
+      CleanupManager.getInstance().cleanup();
+
       indicator.setText2("Updating classpath...");
       updateClassPath();
 
@@ -104,6 +108,9 @@ public class ClassLoaderManager implements ApplicationComponent {
 
       indicator.setText2("Updating stub models...");
       StubReloadManager.getInstance().reload();
+
+      indicator.setText2("Invalidating language caches...");
+      MPSModuleRepository.getInstance().invalidateCaches();
 
       indicator.setText2("Disposing old classes...");
       callListeners(new ListenerCaller() {
@@ -137,8 +144,8 @@ public class ClassLoaderManager implements ApplicationComponent {
     try {
       indicator.setIndeterminate(true);
       indicator.setText("Reloading classes...");
-      indicator.setText2("Disposing old classes...");
 
+      indicator.setText2("Disposing old classes...");
       callListeners(new ListenerCaller() {
         public void call(ReloadListener l) {
           l.unload();
