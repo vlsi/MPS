@@ -2542,55 +2542,56 @@
     <nodeInfo nodeId="3619186996280266414" fileName="TypesystemChecker.java" startLine="25" startPosition="142" endLine="26" endPosition="124" />
     <nodeInfo nodeId="3619186996280266413" fileName="TypesystemChecker.java" startLine="26" startPosition="124" endLine="27" endPosition="0" />
     <nodeInfo nodeId="3619186996280266429" fileName="TypesystemChecker.java" startLine="29" startPosition="136" endLine="30" endPosition="14" />
-    <nodeInfo nodeId="3619186996280266347" fileName="TypesystemChecker.java" startLine="31" startPosition="7" endLine="32" endPosition="128" />
-    <nodeInfo nodeId="909355950986064418" fileName="TypesystemChecker.java" startLine="32" startPosition="128" endLine="33" endPosition="64" />
+    <nodeInfo nodeId="3619186996280266347" fileName="TypesystemChecker.java" startLine="31" startPosition="7" endLine="32" endPosition="136" />
+    <nodeInfo nodeId="909355950986064418" fileName="TypesystemChecker.java" startLine="32" startPosition="136" endLine="33" endPosition="64" />
     <nodeInfo nodeId="1135966777630478368" fileName="TypesystemChecker.java" startLine="33" startPosition="64" endLine="34" endPosition="110" />
     <nodeInfo nodeId="3619186996280266363" fileName="TypesystemChecker.java" startLine="35" startPosition="104" endLine="36" endPosition="43" />
     <nodeInfo nodeId="3619186996280267295" fileName="TypesystemChecker.java" startLine="37" startPosition="91" endLine="38" endPosition="137" />
-    <nodeInfo nodeId="3619186996280266431" fileName="TypesystemChecker.java" startLine="41" startPosition="5" endLine="42" endPosition="19" />
-    <nodeInfo nodeId="2337689001241473637" fileName="TypesystemChecker.java" startLine="47" startPosition="17" endLine="48" endPosition="43" />
-    <nodeInfo nodeId="2337689001241473642" fileName="TypesystemChecker.java" startLine="49" startPosition="19" endLine="50" endPosition="45" />
-    <nodeInfo nodeId="2337689001241473647" fileName="TypesystemChecker.java" startLine="51" startPosition="14" endLine="52" endPosition="42" />
-    <nodeInfo nodeId="2337689001241473632" fileName="TypesystemChecker.java" startLine="53" startPosition="14" endLine="54" endPosition="43" />
+    <nodeInfo nodeId="3803503075635564052" fileName="TypesystemChecker.java" startLine="40" startPosition="7" endLine="41" endPosition="36" />
+    <nodeInfo nodeId="3619186996280266431" fileName="TypesystemChecker.java" startLine="42" startPosition="5" endLine="43" endPosition="19" />
+    <nodeInfo nodeId="2337689001241473637" fileName="TypesystemChecker.java" startLine="48" startPosition="17" endLine="49" endPosition="43" />
+    <nodeInfo nodeId="2337689001241473642" fileName="TypesystemChecker.java" startLine="50" startPosition="19" endLine="51" endPosition="45" />
+    <nodeInfo nodeId="2337689001241473647" fileName="TypesystemChecker.java" startLine="52" startPosition="14" endLine="53" endPosition="42" />
+    <nodeInfo nodeId="2337689001241473632" fileName="TypesystemChecker.java" startLine="54" startPosition="14" endLine="55" endPosition="43" />
     <nodeInfo nodeId="3619186996280269528" fileName="TypesystemChecker.java" startLine="21" startPosition="56" endLine="23" endPosition="3" />
     <nodeInfo nodeId="3619186996280266326" fileName="TypesystemChecker.java" startLine="28" startPosition="90" endLine="31" endPosition="7" />
     <nodeInfo nodeId="3619186996280266369" fileName="TypesystemChecker.java" startLine="36" startPosition="43" endLine="39" endPosition="9" />
     <nodeInfo nodeId="3619186996280266360" fileName="TypesystemChecker.java" startLine="34" startPosition="110" endLine="40" endPosition="7" />
-    <nodeInfo nodeId="2337689001241473629" fileName="TypesystemChecker.java" startLine="45" startPosition="72" endLine="55" endPosition="5" />
-    <nodeInfo nodeId="2337689001241473625" fileName="TypesystemChecker.java" startLine="44" startPosition="0" endLine="57" endPosition="0" />
-    <nodeInfo nodeId="3619186996280266320" fileName="TypesystemChecker.java" startLine="27" startPosition="0" endLine="41" endPosition="5" />
-    <nodeInfo nodeId="3619186996280266299" fileName="TypesystemChecker.java" startLine="24" startPosition="0" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="2337689001241473629" fileName="TypesystemChecker.java" startLine="46" startPosition="72" endLine="56" endPosition="5" />
+    <nodeInfo nodeId="2337689001241473625" fileName="TypesystemChecker.java" startLine="45" startPosition="0" endLine="58" endPosition="0" />
+    <nodeInfo nodeId="3619186996280266320" fileName="TypesystemChecker.java" startLine="27" startPosition="0" endLine="42" endPosition="5" />
+    <nodeInfo nodeId="3619186996280266299" fileName="TypesystemChecker.java" startLine="24" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="3619186996280269531" fileName="TypesystemChecker.java" startLine="22" startPosition="30" endLine="22" endPosition="30" />
     <scopeInfo nodeId="3619186996280266327" fileName="TypesystemChecker.java" startLine="29" startPosition="136" endLine="30" endPosition="14" />
     <scopeInfo nodeId="3619186996280266374" fileName="TypesystemChecker.java" startLine="37" startPosition="91" endLine="38" endPosition="137" />
-    <scopeInfo nodeId="2337689001241473636" fileName="TypesystemChecker.java" startLine="47" startPosition="17" endLine="48" endPosition="43" />
-    <scopeInfo nodeId="2337689001241473641" fileName="TypesystemChecker.java" startLine="49" startPosition="19" endLine="50" endPosition="45" />
-    <scopeInfo nodeId="2337689001241473646" fileName="TypesystemChecker.java" startLine="51" startPosition="14" endLine="52" endPosition="42" />
-    <scopeInfo nodeId="2337689001241473631" fileName="TypesystemChecker.java" startLine="53" startPosition="14" endLine="54" endPosition="43" />
+    <scopeInfo nodeId="2337689001241473636" fileName="TypesystemChecker.java" startLine="48" startPosition="17" endLine="49" endPosition="43" />
+    <scopeInfo nodeId="2337689001241473641" fileName="TypesystemChecker.java" startLine="50" startPosition="19" endLine="51" endPosition="45" />
+    <scopeInfo nodeId="2337689001241473646" fileName="TypesystemChecker.java" startLine="52" startPosition="14" endLine="53" endPosition="42" />
+    <scopeInfo nodeId="2337689001241473631" fileName="TypesystemChecker.java" startLine="54" startPosition="14" endLine="55" endPosition="43" />
     <scopeInfo nodeId="3619186996280269528" fileName="TypesystemChecker.java" startLine="21" startPosition="56" endLine="23" endPosition="3" />
     <scopeInfo nodeId="3619186996280266369" fileName="TypesystemChecker.java" startLine="36" startPosition="43" endLine="39" endPosition="9" />
     <scopeInfo nodeId="3619186996280266362" fileName="TypesystemChecker.java" startLine="35" startPosition="104" endLine="39" endPosition="9">
       <varInfo nodeId="3619186996280266364" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="3619186996280266360" fileName="TypesystemChecker.java" startLine="34" startPosition="110" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="2337689001241473628" fileName="TypesystemChecker.java" startLine="45" startPosition="72" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="3619186996280266325" fileName="TypesystemChecker.java" startLine="28" startPosition="90" endLine="40" endPosition="7">
+    <scopeInfo nodeId="2337689001241473628" fileName="TypesystemChecker.java" startLine="46" startPosition="72" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="3619186996280266325" fileName="TypesystemChecker.java" startLine="28" startPosition="90" endLine="41" endPosition="36">
       <varInfo nodeId="1135966777630478369" varName="nodeWithErrors" />
       <varInfo nodeId="3619186996280266348" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2337689001241473625" fileName="TypesystemChecker.java" startLine="44" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="2337689001241473625" fileName="TypesystemChecker.java" startLine="45" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="2337689001241473649" varName="messageStatus" />
     </scopeInfo>
-    <scopeInfo nodeId="3619186996280266320" fileName="TypesystemChecker.java" startLine="27" startPosition="0" endLine="41" endPosition="5" />
-    <scopeInfo nodeId="3619186996280266308" fileName="TypesystemChecker.java" startLine="25" startPosition="142" endLine="42" endPosition="19">
+    <scopeInfo nodeId="3619186996280266320" fileName="TypesystemChecker.java" startLine="27" startPosition="0" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="3619186996280266308" fileName="TypesystemChecker.java" startLine="25" startPosition="142" endLine="43" endPosition="19">
       <varInfo nodeId="3619186996280266415" varName="results" />
     </scopeInfo>
-    <scopeInfo nodeId="3619186996280266299" fileName="TypesystemChecker.java" startLine="24" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="3619186996280266299" fileName="TypesystemChecker.java" startLine="24" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="3619186996280266302" varName="model" />
       <varInfo nodeId="3619186996280266306" varName="operationContext" />
       <varInfo nodeId="3619186996280266304" varName="progressContext" />
     </scopeInfo>
-    <unitInfo nodeId="2337689001241469705" fileName="TypesystemChecker.java" startLine="21" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.ide.actions.TypesystemChecker" />
+    <unitInfo nodeId="2337689001241469705" fileName="TypesystemChecker.java" startLine="21" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.actions.TypesystemChecker" />
   </root>
   <root nodeId="2396052668426830478">
     <nodeInfo nodeId="257143381927663440" fileName="Resume_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="26" />
