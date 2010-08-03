@@ -210,12 +210,12 @@ public class StubReloadManager implements ApplicationComponent {
         myPath2Data.put(sp, data);
 
         PathData oldData = oldp2d.get(sp);
-        if (oldData.isFresh()) {
-          manager.updateModels(m, copyDescriptors(data.getDescriptors()));
-          data.setDescriptors(oldData.getDescriptors());
-        } else {
+        if (oldData == null || !oldData.isFresh()) {
           Set<BaseStubModelDescriptor> descriptors = manager.updateModels(sp.getPath(), "", m);
           data.setDescriptors(copyDescriptors(descriptors));
+        } else {
+          manager.updateModels(m, copyDescriptors(data.getDescriptors()));
+          data.setDescriptors(oldData.getDescriptors());
         }
       }
     }
@@ -223,7 +223,7 @@ public class StubReloadManager implements ApplicationComponent {
 
   private Set<BaseStubModelDescriptor> copyDescriptors(Set<BaseStubModelDescriptor> descriptors) {
     HashSet<BaseStubModelDescriptor> result = new HashSet<BaseStubModelDescriptor>();
-    for (BaseStubModelDescriptor d:descriptors){
+    for (BaseStubModelDescriptor d : descriptors) {
       result.add(d.clone());
     }
     return result;
