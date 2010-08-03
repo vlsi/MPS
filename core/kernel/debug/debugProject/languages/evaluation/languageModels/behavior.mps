@@ -7,6 +7,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
@@ -66,6 +67,73 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="6036237525966348399">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6036237525966348400" />
+    </node>
+  </node>
+  <visible index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5211667636169798154">
+    <link role="concept" targetNodeId="1.6036237525966182693" resolveInfo="EvaluatorConcept" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5211667636169798155">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5211667636169798156" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5211667636169798157">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="getThrowableTypes" />
+      <link role="overriddenMethod" targetNodeId="2v.6204026822016975623" resolveInfo="getThrowableTypes" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5211667636169798158" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5211667636169798159">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5211667636169820149">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5211667636169820151">
+            <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator:16" id="5211667636169820152">
+              <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="5211667636169820153">
+                <link role="elementConcept:16" targetNodeId="3v.1068431790189:3" resolveInfo="Type" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="5211667636169798160">
+        <link role="elementConcept:16" targetNodeId="3v.1068431790189:3" resolveInfo="Type" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5211667636169798161">
+      <property name="name" value="getBody" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="2v.1239354440022" resolveInfo="getBody" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5211667636169798162" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5211667636169798163">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5211667636169820154">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5211667636169820162">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5211667636169820157">
+              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5211667636169820156" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5211667636169820161">
+                <link role="link:16" targetNodeId="1.6851930645646735510" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5211667636169820166">
+              <link role="link:16" targetNodeId="3v.1082485599096:3" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="5211667636169798164">
+        <link role="concept:16" targetNodeId="3v.1068580123136:3" resolveInfo="StatementList" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5211667636169798165">
+      <property name="name" value="getExpectedRetType" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="2v.1239354342632" resolveInfo="getExpectedRetType" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5211667636169798166" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5211667636169798167">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5211667636169820168">
+          <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="5211667636169846783">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5211667636169846786">
+              <link role="classifier:3" targetNodeId="4v.~Object" resolveInfo="Object" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="5211667636169798168" />
     </node>
   </node>
 </model>

@@ -57,6 +57,9 @@
       <property name="sourceCardinality:0" value="0..1" />
       <link role="target:0" targetNodeId="3v.1082485599095:3" resolveInfo="BlockStatement" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5211667636169798153">
+      <link role="intfc:0" targetNodeId="3v.1239354281271:3" resolveInfo="IMethodLike" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6036237525966182694">
     <property name="name:0" value="LowLevelVariable" />
