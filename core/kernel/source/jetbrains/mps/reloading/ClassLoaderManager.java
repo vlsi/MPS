@@ -109,9 +109,6 @@ public class ClassLoaderManager implements ApplicationComponent {
       indicator.setText2("Updating stub models...");
       StubReloadManager.getInstance().reload();
 
-      indicator.setText2("Invalidating language caches...");
-      MPSModuleRepository.getInstance().invalidateCaches();
-
       indicator.setText2("Disposing old classes...");
       callListeners(new ListenerCaller() {
         public void call(ReloadListener l) {
