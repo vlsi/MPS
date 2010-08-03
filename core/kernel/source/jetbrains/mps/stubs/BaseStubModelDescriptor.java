@@ -10,7 +10,7 @@ import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
 
-public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
+public final class BaseStubModelDescriptor extends DefaultSModelDescriptor implements Cloneable {
   private List<StubPath> myStubPaths;
   private boolean myNeedsReloading = true;
   private String myManagerClass;
@@ -21,6 +21,10 @@ public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
   public BaseStubModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
     super(manager, modelFile, modelReference);
     updateManagerId();
+  }
+
+  public BaseStubModelDescriptor clone() {
+    return new BaseStubModelDescriptor(myModelRootManager, myModelFile, myModelReference);
   }
 
   protected SModel loadModel() {
