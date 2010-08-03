@@ -109,14 +109,14 @@ public class PluginReloader implements ApplicationComponent {
         }
       });
     }
+  }
 
-    private void writeLater(final Runnable runnable) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          //write action is needed the because user can acquire write action inside of this [see MPS-9139]
-          ModelAccess.instance().runWriteAction(runnable);
-        }
-      });
-    }
+  private void writeLater(final Runnable runnable) {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        //write action is needed the because user can acquire write action inside of this [see MPS-9139]
+        ModelAccess.instance().runWriteAction(runnable);
+      }
+    });
   }
 }

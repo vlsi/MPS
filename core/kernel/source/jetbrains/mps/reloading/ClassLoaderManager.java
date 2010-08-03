@@ -89,10 +89,6 @@ public class ClassLoaderManager implements ApplicationComponent {
   }
 
   public void reloadAll(@NotNull ProgressIndicator indicator) {
-    reloadAll(indicator, false);
-  }
-
-  public void reloadAll(@NotNull ProgressIndicator indicator, boolean unloadOnly) {
     LOG.assertCanWrite();
 
     indicator.pushState();
@@ -100,40 +96,54 @@ public class ClassLoaderManager implements ApplicationComponent {
       indicator.setIndeterminate(true);
       indicator.setText("Reloading classes...");
 
+      indicator.setText2("Updating classpath...");
+      updateClassPath();
+
+      indicator.setText2("Refreshing models...");
+      SModelRepository.getInstance().refreshModels();
+
+      indicator.setText2("Updating stub models...");
+      StubReloadManager.getInstance().reload();
+
       indicator.setText2("Disposing old classes...");
-
-      if (!unloadOnly) {
-        indicator.setText2("Updating classpath...");
-        updateClassPath();
-
-        indicator.setText2("Refreshing models...");
-        SModelRepository.getInstance().refreshModels();
-
-        indicator.setText2("Updating stub models...");
-        StubReloadManager.getInstance().reload();
-      }
-
-      indicator.setText2("Reloading classes...");
       callListeners(new ListenerCaller() {
         public void call(ReloadListener l) {
           l.unload();
         }
       });
 
-      if (!unloadOnly) {
-        callListeners(new ListenerCaller() {
-          public void call(ReloadListener l) {
-            l.load();
-          }
-        });
+      indicator.setText2("Reloading classes...");
+      callListeners(new ListenerCaller() {
+        public void call(ReloadListener l) {
+          l.load();
+        }
+      });
 
-        indicator.setText2("Rebuilding ui...");
-        callListeners(new ListenerCaller() {
-          public void call(ReloadListener l) {
-            l.onAfterReload();
-          }
-        });
-      }
+      indicator.setText2("Rebuilding ui...");
+      callListeners(new ListenerCaller() {
+        public void call(ReloadListener l) {
+          l.onAfterReload();
+        }
+      });
+    } finally {
+      indicator.popState();
+    }
+  }
+
+  public void unloadAll(@NotNull ProgressIndicator indicator) {
+    LOG.assertCanWrite();
+
+    indicator.pushState();
+    try {
+      indicator.setIndeterminate(true);
+      indicator.setText("Reloading classes...");
+      indicator.setText2("Disposing old classes...");
+
+      callListeners(new ListenerCaller() {
+        public void call(ReloadListener l) {
+          l.unload();
+        }
+      });
     } finally {
       indicator.popState();
     }
