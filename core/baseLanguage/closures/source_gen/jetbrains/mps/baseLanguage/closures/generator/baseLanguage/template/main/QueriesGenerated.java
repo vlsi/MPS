@@ -2040,8 +2040,16 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "function", true);
   }
 
+  public static SNode sourceNodeQuery_5296136527852385369(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "function", true)), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "resultType", true);
+  }
+
   public static SNode sourceNodeQuery_1231340548939(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_5296136527852363034(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "operand", true)), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "resultType", true);
   }
 
   public static SNode sourceNodeQuery_1232469628886(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

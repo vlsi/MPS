@@ -3965,6 +3965,19 @@
     <unitInfo nodeId="7312086843227556462" fileName="MPS9324.java" startLine="21" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.closures.test.MPS9324$Parameter" />
     <unitInfo nodeId="7312086843227482247" fileName="MPS9324.java" startLine="6" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.closures.test.MPS9324" />
   </root>
+  <root nodeId="7706726851185799228">
+    <nodeInfo nodeId="7706726851185799230" fileName="MPS9760.java" startLine="8" startPosition="22" endLine="10" endPosition="3" />
+    <nodeInfo nodeId="7706726851185802212" fileName="MPS9760.java" startLine="13" startPosition="65" endLine="17" endPosition="0" />
+    <nodeInfo nodeId="7706726851185799234" fileName="MPS9760.java" startLine="11" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="7706726851185799233" fileName="MPS9760.java" startLine="9" startPosition="20" endLine="9" endPosition="20" />
+    <scopeInfo nodeId="7706726851185802213" fileName="MPS9760.java" startLine="14" startPosition="40" endLine="15" endPosition="38" />
+    <scopeInfo nodeId="7706726851185799230" fileName="MPS9760.java" startLine="8" startPosition="22" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="7706726851185802212" fileName="MPS9760.java" startLine="13" startPosition="65" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="7706726851185799237" fileName="MPS9760.java" startLine="12" startPosition="23" endLine="17" endPosition="15" />
+    <scopeInfo nodeId="7706726851185799234" fileName="MPS9760.java" startLine="11" startPosition="0" endLine="19" endPosition="0" />
+    <unitInfo nodeId="7706726851185802212" fileName="MPS9760.java" startLine="13" startPosition="15" endLine="17" endPosition="5" unitName="jetbrains.mps.closures.test._FunctionTypes._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7706726851185799228" fileName="MPS9760.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.closures.test.MPS9760" />
+  </root>
   <root nodeId="7854901761081544254">
     <nodeInfo nodeId="7854901761081544293" fileName="MPS9119.java" startLine="19" startPosition="43" endLine="20" endPosition="72" />
     <nodeInfo nodeId="7854901761081544256" fileName="MPS9119.java" startLine="10" startPosition="22" endLine="12" endPosition="3" />
