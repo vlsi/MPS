@@ -42,6 +42,8 @@ public class PluginStateMonitor implements ProjectComponent {
   private static final int CRITICAL_DELAY = 16000;
   private static final double DELAY_MUL = 2.0;
 
+  private static final Object LOCK = new Object();
+
   private Project myProject;
   private MyTimer myTimer;
   private JLabel myLabel;
@@ -108,49 +110,52 @@ public class PluginStateMonitor implements ProjectComponent {
 
   private void tick() {
     LOG.assertNotInEDT();
-    if (myState == State.CONNECTED) {
-      if (isConnected()) {
-        if (canOperate()) {
-          return;
+
+    synchronized (LOCK) {
+      if (myState == State.CONNECTED) {
+        if (isConnected()) {
+          if (canOperate()) {
+            return;
+          } else {
+            setNewState(State.CONNECTED_BAD_PROJECT);
+          }
         } else {
-          setNewState(State.CONNECTED_BAD_PROJECT);
+          setNewState(State.TRYING_TO_CONNECT);
         }
-      } else {
-        setNewState(State.TRYING_TO_CONNECT);
-      }
-    } else if (myState == State.CONNECTED_BAD_PROJECT) {
-      if (isConnected()) {
-        if (canOperate()) {
-          setNewState(State.CONNECTED);
+      } else if (myState == State.CONNECTED_BAD_PROJECT) {
+        if (isConnected()) {
+          if (canOperate()) {
+            setNewState(State.CONNECTED);
+          } else {
+            return;
+          }
         } else {
-          return;
+          setNewState(State.TRYING_TO_CONNECT);
         }
-      } else {
-        setNewState(State.TRYING_TO_CONNECT);
-      }
-    } else if (myState == State.DISCONNECTED) {
-      if (MPSPlugin.getInstance().openConnectionPresent()) {
+      } else if (myState == State.DISCONNECTED) {
+        if (MPSPlugin.getInstance().openConnectionPresent()) {
+          if (isConnected()) {
+            if (canOperate()) {
+              setNewState(State.CONNECTED);
+            } else {
+              setNewState(State.CONNECTED_BAD_PROJECT);
+            }
+          }
+        }
+      } else if (myState == State.TRYING_TO_CONNECT) {
         if (isConnected()) {
           if (canOperate()) {
             setNewState(State.CONNECTED);
           } else {
             setNewState(State.CONNECTED_BAD_PROJECT);
           }
-        }
-      }
-    } else if (myState == State.TRYING_TO_CONNECT) {
-      if (isConnected()) {
-        if (canOperate()) {
-          setNewState(State.CONNECTED);
         } else {
-          setNewState(State.CONNECTED_BAD_PROJECT);
-        }
-      } else {
-        int newDelay = (int) (myTimer.getDelay() * DELAY_MUL);
-        if (newDelay <= CRITICAL_DELAY) {
-          myTimer.setNewDelay(newDelay);
-        } else {
-          setNewState(State.DISCONNECTED);
+          int newDelay = (int) (myTimer.getDelay() * DELAY_MUL);
+          if (newDelay <= CRITICAL_DELAY) {
+            myTimer.setNewDelay(newDelay);
+          } else {
+            setNewState(State.DISCONNECTED);
+          }
         }
       }
     }
