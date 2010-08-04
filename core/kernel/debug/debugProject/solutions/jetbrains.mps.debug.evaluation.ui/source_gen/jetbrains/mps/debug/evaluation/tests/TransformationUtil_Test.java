@@ -22,13 +22,32 @@ public class TransformationUtil_Test extends BaseTransformationTest {
     this.runTest("jetbrains.mps.debug.evaluation.tests.TransformationUtil_Test$TestBody", "test_lowLevelVariable", true);
   }
 
+  @Test
+  public void test_evaluatorsThisExpression() throws Throwable {
+    this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:c2a874f9-f22c-434b-9891-d2201e5ad476(jetbrains.mps.debug.evaluation.tests)");
+    this.runTest("jetbrains.mps.debug.evaluation.tests.TransformationUtil_Test$TestBody", "test_evaluatorsThisExpression", true);
+  }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_lowLevelVariable() throws Exception {
       this.addNodeById("4132821723673811061");
       this.addNodeById("4132821723673770084");
+      this.addNodeById("7441344928576488073");
+      this.addNodeById("7441344928576573361");
+      this.addNodeById("7441344928576488061");
       TransformationUtil.transformInternal(SNodeOperations.cast(this.getNodeById("4132821723673811065"), "jetbrains.mps.baseLanguage.structure.BlockStatement"));
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4132821723673811065"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4132821723673770120"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
+    }
+
+    public void test_evaluatorsThisExpression() throws Exception {
+      this.addNodeById("4132821723673811061");
+      this.addNodeById("4132821723673770084");
+      this.addNodeById("7441344928576488073");
+      this.addNodeById("7441344928576573361");
+      this.addNodeById("7441344928576488061");
+      TransformationUtil.transformInternal(SNodeOperations.cast(this.getNodeById("7441344928576573363"), "jetbrains.mps.baseLanguage.structure.BlockStatement"));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7441344928576573363"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7441344928576488062"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
   }
 }
