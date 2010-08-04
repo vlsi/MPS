@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debug.evaluation.tests.TransformationUtil_Test" file="TransformationUtil_Test.java">
+  <dependency className="jetbrains.mps.debug.tests.TransformationUtil_Test" file="TransformationUtil_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
