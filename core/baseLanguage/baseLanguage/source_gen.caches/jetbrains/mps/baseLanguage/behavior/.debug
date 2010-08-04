@@ -1296,21 +1296,21 @@
     <nodeInfo nodeId="5418393554803775197" fileName="ClassConcept_Behavior.java" startLine="128" startPosition="102" endLine="129" endPosition="17" />
     <nodeInfo nodeId="5418393554803775200" fileName="ClassConcept_Behavior.java" startLine="131" startPosition="62" endLine="132" endPosition="17" />
     <nodeInfo nodeId="5418393554803775206" fileName="ClassConcept_Behavior.java" startLine="134" startPosition="65" endLine="135" endPosition="17" />
-    <nodeInfo nodeId="5418393554803775210" fileName="ClassConcept_Behavior.java" startLine="136" startPosition="7" endLine="137" endPosition="0" />
-    <nodeInfo nodeId="5418393554803775211" fileName="ClassConcept_Behavior.java" startLine="137" startPosition="0" endLine="138" endPosition="56" />
-    <nodeInfo nodeId="5418393554803775223" fileName="ClassConcept_Behavior.java" startLine="139" startPosition="5" endLine="140" endPosition="19" />
-    <nodeInfo nodeId="1906502351318575038" fileName="ClassConcept_Behavior.java" startLine="150" startPosition="87" endLine="151" endPosition="64" />
-    <nodeInfo nodeId="4445983753874464621" fileName="ClassConcept_Behavior.java" startLine="151" startPosition="64" endLine="152" endPosition="139" />
-    <nodeInfo nodeId="1906502351318575048" fileName="ClassConcept_Behavior.java" startLine="152" startPosition="139" endLine="153" endPosition="145" />
-    <nodeInfo nodeId="1906502351318575045" fileName="ClassConcept_Behavior.java" startLine="153" startPosition="145" endLine="154" endPosition="34" />
-    <nodeInfo nodeId="8008512149545173418" fileName="ClassConcept_Behavior.java" startLine="181" startPosition="71" endLine="182" endPosition="29" />
-    <nodeInfo nodeId="8008512149545173422" fileName="ClassConcept_Behavior.java" startLine="182" startPosition="29" endLine="183" endPosition="118" />
-    <nodeInfo nodeId="8957285799233233547" fileName="ClassConcept_Behavior.java" startLine="184" startPosition="102" endLine="185" endPosition="48" />
-    <nodeInfo nodeId="8957285799233233555" fileName="ClassConcept_Behavior.java" startLine="185" startPosition="48" endLine="186" endPosition="201" />
-    <nodeInfo nodeId="8957285799233233582" fileName="ClassConcept_Behavior.java" startLine="186" startPosition="201" endLine="187" endPosition="206" />
-    <nodeInfo nodeId="8008512149545173434" fileName="ClassConcept_Behavior.java" startLine="189" startPosition="128" endLine="190" endPosition="31" />
-    <nodeInfo nodeId="8008512149545173438" fileName="ClassConcept_Behavior.java" startLine="190" startPosition="31" endLine="191" endPosition="16" />
-    <nodeInfo nodeId="8008512149545173470" fileName="ClassConcept_Behavior.java" startLine="194" startPosition="5" endLine="195" endPosition="119" />
+    <nodeInfo nodeId="2070242577007647171" fileName="ClassConcept_Behavior.java" startLine="137" startPosition="154" endLine="138" endPosition="17" />
+    <nodeInfo nodeId="5418393554803775211" fileName="ClassConcept_Behavior.java" startLine="139" startPosition="7" endLine="140" endPosition="56" />
+    <nodeInfo nodeId="5418393554803775223" fileName="ClassConcept_Behavior.java" startLine="141" startPosition="5" endLine="142" endPosition="19" />
+    <nodeInfo nodeId="1906502351318575038" fileName="ClassConcept_Behavior.java" startLine="152" startPosition="87" endLine="153" endPosition="64" />
+    <nodeInfo nodeId="4445983753874464621" fileName="ClassConcept_Behavior.java" startLine="153" startPosition="64" endLine="154" endPosition="139" />
+    <nodeInfo nodeId="1906502351318575048" fileName="ClassConcept_Behavior.java" startLine="154" startPosition="139" endLine="155" endPosition="145" />
+    <nodeInfo nodeId="1906502351318575045" fileName="ClassConcept_Behavior.java" startLine="155" startPosition="145" endLine="156" endPosition="34" />
+    <nodeInfo nodeId="8008512149545173418" fileName="ClassConcept_Behavior.java" startLine="183" startPosition="71" endLine="184" endPosition="29" />
+    <nodeInfo nodeId="8008512149545173422" fileName="ClassConcept_Behavior.java" startLine="184" startPosition="29" endLine="185" endPosition="118" />
+    <nodeInfo nodeId="8957285799233233547" fileName="ClassConcept_Behavior.java" startLine="186" startPosition="102" endLine="187" endPosition="48" />
+    <nodeInfo nodeId="8957285799233233555" fileName="ClassConcept_Behavior.java" startLine="187" startPosition="48" endLine="188" endPosition="201" />
+    <nodeInfo nodeId="8957285799233233582" fileName="ClassConcept_Behavior.java" startLine="188" startPosition="201" endLine="189" endPosition="206" />
+    <nodeInfo nodeId="8008512149545173434" fileName="ClassConcept_Behavior.java" startLine="191" startPosition="128" endLine="192" endPosition="31" />
+    <nodeInfo nodeId="8008512149545173438" fileName="ClassConcept_Behavior.java" startLine="192" startPosition="31" endLine="193" endPosition="16" />
+    <nodeInfo nodeId="8008512149545173470" fileName="ClassConcept_Behavior.java" startLine="196" startPosition="5" endLine="197" endPosition="119" />
     <nodeInfo nodeId="5039675756632930647" fileName="ClassConcept_Behavior.java" startLine="57" startPosition="175" endLine="60" endPosition="5" />
     <nodeInfo nodeId="5039675756633079217" fileName="ClassConcept_Behavior.java" startLine="60" startPosition="5" endLine="63" endPosition="5" />
     <nodeInfo nodeId="7165541881557221620" fileName="ClassConcept_Behavior.java" startLine="71" startPosition="5" endLine="74" endPosition="5" />
@@ -1323,15 +1323,16 @@
     <nodeInfo nodeId="5418393554803775190" fileName="ClassConcept_Behavior.java" startLine="127" startPosition="7" endLine="130" endPosition="7" />
     <nodeInfo nodeId="5418393554803775198" fileName="ClassConcept_Behavior.java" startLine="130" startPosition="7" endLine="133" endPosition="7" />
     <nodeInfo nodeId="5418393554803775204" fileName="ClassConcept_Behavior.java" startLine="133" startPosition="7" endLine="136" endPosition="7" />
+    <nodeInfo nodeId="2070242577007641644" fileName="ClassConcept_Behavior.java" startLine="136" startPosition="7" endLine="139" endPosition="7" />
     <nodeInfo nodeId="7165541881557221632" fileName="ClassConcept_Behavior.java" startLine="67" startPosition="134" endLine="71" endPosition="5" />
     <nodeInfo nodeId="1227876799444" fileName="ClassConcept_Behavior.java" startLine="83" startPosition="126" endLine="87" endPosition="0" />
-    <nodeInfo nodeId="1240936592687" fileName="ClassConcept_Behavior.java" startLine="143" startPosition="75" endLine="147" endPosition="6" />
-    <nodeInfo nodeId="8008512149545173432" fileName="ClassConcept_Behavior.java" startLine="188" startPosition="32" endLine="192" endPosition="9" />
+    <nodeInfo nodeId="1240936592687" fileName="ClassConcept_Behavior.java" startLine="145" startPosition="75" endLine="149" endPosition="6" />
+    <nodeInfo nodeId="8008512149545173432" fileName="ClassConcept_Behavior.java" startLine="190" startPosition="32" endLine="194" endPosition="9" />
     <nodeInfo nodeId="1213877355887" fileName="ClassConcept_Behavior.java" startLine="82" startPosition="72" endLine="87" endPosition="15" />
-    <nodeInfo nodeId="8008512149545173430" fileName="ClassConcept_Behavior.java" startLine="187" startPosition="206" endLine="193" endPosition="7" />
-    <nodeInfo nodeId="8008512149545173428" fileName="ClassConcept_Behavior.java" startLine="183" startPosition="118" endLine="194" endPosition="5" />
-    <nodeInfo nodeId="5418393554803775174" fileName="ClassConcept_Behavior.java" startLine="122" startPosition="109" endLine="139" endPosition="5" />
+    <nodeInfo nodeId="8008512149545173430" fileName="ClassConcept_Behavior.java" startLine="189" startPosition="206" endLine="195" endPosition="7" />
+    <nodeInfo nodeId="8008512149545173428" fileName="ClassConcept_Behavior.java" startLine="185" startPosition="118" endLine="196" endPosition="5" />
     <nodeInfo nodeId="5418393554803775334" fileName="ClassConcept_Behavior.java" startLine="97" startPosition="52" endLine="115" endPosition="5" />
+    <nodeInfo nodeId="5418393554803775174" fileName="ClassConcept_Behavior.java" startLine="122" startPosition="109" endLine="141" endPosition="5" />
     <scopeInfo nodeId="1213877355903" fileName="ClassConcept_Behavior.java" startLine="40" startPosition="43" endLine="40" endPosition="43" />
     <scopeInfo nodeId="7941158526576616768" fileName="ClassConcept_Behavior.java" startLine="52" startPosition="80" endLine="53" endPosition="86" />
     <scopeInfo nodeId="5039675756632930648" fileName="ClassConcept_Behavior.java" startLine="58" startPosition="85" endLine="59" endPosition="46" />
@@ -1348,57 +1349,58 @@
     <scopeInfo nodeId="5418393554803775196" fileName="ClassConcept_Behavior.java" startLine="128" startPosition="102" endLine="129" endPosition="17" />
     <scopeInfo nodeId="5418393554803775199" fileName="ClassConcept_Behavior.java" startLine="131" startPosition="62" endLine="132" endPosition="17" />
     <scopeInfo nodeId="5418393554803775205" fileName="ClassConcept_Behavior.java" startLine="134" startPosition="65" endLine="135" endPosition="17" />
+    <scopeInfo nodeId="2070242577007641645" fileName="ClassConcept_Behavior.java" startLine="137" startPosition="154" endLine="138" endPosition="17" />
     <scopeInfo nodeId="7165541881557221633" fileName="ClassConcept_Behavior.java" startLine="68" startPosition="58" endLine="70" endPosition="19" />
-    <scopeInfo nodeId="8008512149545173433" fileName="ClassConcept_Behavior.java" startLine="189" startPosition="128" endLine="191" endPosition="16" />
+    <scopeInfo nodeId="8008512149545173433" fileName="ClassConcept_Behavior.java" startLine="191" startPosition="128" endLine="193" endPosition="16" />
     <scopeInfo nodeId="5418393554803775351" fileName="ClassConcept_Behavior.java" startLine="100" startPosition="151" endLine="103" endPosition="7">
       <varInfo nodeId="5418393554803775368" varName="overridingMethod" />
     </scopeInfo>
     <scopeInfo nodeId="1227876799444" fileName="ClassConcept_Behavior.java" startLine="83" startPosition="126" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1240936569953" fileName="ClassConcept_Behavior.java" startLine="143" startPosition="75" endLine="147" endPosition="6" />
-    <scopeInfo nodeId="1906502351318575012" fileName="ClassConcept_Behavior.java" startLine="150" startPosition="87" endLine="154" endPosition="34">
+    <scopeInfo nodeId="1240936569953" fileName="ClassConcept_Behavior.java" startLine="145" startPosition="75" endLine="149" endPosition="6" />
+    <scopeInfo nodeId="1906502351318575012" fileName="ClassConcept_Behavior.java" startLine="152" startPosition="87" endLine="156" endPosition="34">
       <varInfo nodeId="1906502351318575039" varName="baseMethodDeclarations" />
     </scopeInfo>
-    <scopeInfo nodeId="8008512149545173431" fileName="ClassConcept_Behavior.java" startLine="188" startPosition="32" endLine="192" endPosition="9" />
+    <scopeInfo nodeId="8008512149545173431" fileName="ClassConcept_Behavior.java" startLine="190" startPosition="32" endLine="194" endPosition="9" />
     <scopeInfo nodeId="1213877355886" fileName="ClassConcept_Behavior.java" startLine="82" startPosition="72" endLine="87" endPosition="15" />
     <scopeInfo nodeId="1213877355774" fileName="ClassConcept_Behavior.java" startLine="43" startPosition="78" endLine="49" endPosition="19">
       <varInfo nodeId="1213877355776" varName="members" />
     </scopeInfo>
-    <scopeInfo nodeId="8008512149545173430" fileName="ClassConcept_Behavior.java" startLine="187" startPosition="206" endLine="193" endPosition="7">
+    <scopeInfo nodeId="8008512149545173430" fileName="ClassConcept_Behavior.java" startLine="189" startPosition="206" endLine="195" endPosition="7">
       <varInfo nodeId="8008512149545173446" varName="param" />
     </scopeInfo>
     <scopeInfo nodeId="5039675756632924555" fileName="ClassConcept_Behavior.java" startLine="56" startPosition="85" endLine="64" endPosition="21">
       <varInfo nodeId="5039675756632924569" varName="markIcons" />
     </scopeInfo>
-    <scopeInfo nodeId="8008512149545173429" fileName="ClassConcept_Behavior.java" startLine="184" startPosition="102" endLine="193" endPosition="7">
+    <scopeInfo nodeId="8008512149545173429" fileName="ClassConcept_Behavior.java" startLine="186" startPosition="102" endLine="195" endPosition="7">
       <varInfo nodeId="8957285799233233548" varName="args" />
     </scopeInfo>
     <scopeInfo nodeId="7165541881557195883" fileName="ClassConcept_Behavior.java" startLine="67" startPosition="134" endLine="79" endPosition="209" />
-    <scopeInfo nodeId="8008512149545173405" fileName="ClassConcept_Behavior.java" startLine="181" startPosition="71" endLine="195" endPosition="119">
+    <scopeInfo nodeId="8008512149545173405" fileName="ClassConcept_Behavior.java" startLine="183" startPosition="71" endLine="197" endPosition="119">
       <varInfo nodeId="8008512149545173419" varName="contextNode" />
       <varInfo nodeId="8008512149545173423" varName="parent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5418393554803775175" fileName="ClassConcept_Behavior.java" startLine="123" startPosition="61" endLine="138" endPosition="56">
-      <varInfo nodeId="5418393554803775177" varName="cls" />
     </scopeInfo>
     <scopeInfo nodeId="5418393554803775335" fileName="ClassConcept_Behavior.java" startLine="98" startPosition="59" endLine="114" endPosition="7">
       <varInfo nodeId="5418393554803775337" varName="isOverridden" />
       <varInfo nodeId="5418393554803775381" varName="container" />
       <varInfo nodeId="5418393554803775341" varName="overridenMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="5418393554803775174" fileName="ClassConcept_Behavior.java" startLine="122" startPosition="109" endLine="139" endPosition="5">
-      <varInfo nodeId="5418393554803775216" varName="method" />
+    <scopeInfo nodeId="5418393554803775175" fileName="ClassConcept_Behavior.java" startLine="123" startPosition="61" endLine="140" endPosition="56">
+      <varInfo nodeId="5418393554803775177" varName="cls" />
     </scopeInfo>
     <scopeInfo nodeId="5418393554803775334" fileName="ClassConcept_Behavior.java" startLine="97" startPosition="52" endLine="115" endPosition="5">
       <varInfo nodeId="5418393554803775420" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="5418393554803775119" fileName="ClassConcept_Behavior.java" startLine="119" startPosition="94" endLine="140" endPosition="19">
-      <varInfo nodeId="5418393554803775151" varName="methods" />
-      <varInfo nodeId="5418393554803775157" varName="scope" />
-      <varInfo nodeId="5418393554803775166" varName="methodDeclarations" />
+    <scopeInfo nodeId="5418393554803775174" fileName="ClassConcept_Behavior.java" startLine="122" startPosition="109" endLine="141" endPosition="5">
+      <varInfo nodeId="5418393554803775216" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="5418393554803775284" fileName="ClassConcept_Behavior.java" startLine="94" startPosition="95" endLine="116" endPosition="19">
       <varInfo nodeId="5418393554803775318" varName="methods" />
       <varInfo nodeId="5418393554803775324" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="5418393554803775119" fileName="ClassConcept_Behavior.java" startLine="119" startPosition="94" endLine="142" endPosition="19">
+      <varInfo nodeId="5418393554803775151" varName="methods" />
+      <varInfo nodeId="5418393554803775157" varName="scope" />
+      <varInfo nodeId="5418393554803775166" varName="methodDeclarations" />
     </scopeInfo>
     <unitInfo nodeId="1227876799444" fileName="ClassConcept_Behavior.java" startLine="83" startPosition="103" endLine="87" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior$1" />
   </root>

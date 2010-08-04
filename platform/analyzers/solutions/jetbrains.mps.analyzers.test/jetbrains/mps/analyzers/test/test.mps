@@ -53,11 +53,29 @@
         </node>
       </node>
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2070242577007476193">
+      <property name="name:3" value="priv" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2070242577007476194" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="2070242577007476197" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2070242577007476196" />
+    </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4822352154126340372" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="4822352154126340373">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4822352154126340374" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4822352154126340375" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4822352154126340376" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="2070242577007476187">
+    <property name="name:3" value="OverTest" />
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2070242577007476188" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="2070242577007476189">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2070242577007476190" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2070242577007476191" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2070242577007476192" />
+    </node>
+    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2070242577007476198">
+      <link role="classifier:3" targetNodeId="4822352154126340371" resolveInfo="Ftest" />
     </node>
   </node>
 </model>

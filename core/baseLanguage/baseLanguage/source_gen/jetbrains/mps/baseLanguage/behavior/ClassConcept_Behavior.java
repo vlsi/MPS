@@ -134,7 +134,9 @@ public class ClassConcept_Behavior {
       if (SPropertyOperations.getBoolean(method, "isAbstract")) {
         continue;
       }
-
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+        continue;
+      }
       ListSequence.fromList(methods).addElement(method);
     }
     return methods;
