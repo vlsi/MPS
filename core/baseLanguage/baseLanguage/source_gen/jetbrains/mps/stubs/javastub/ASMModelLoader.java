@@ -37,6 +37,10 @@ import jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration;
 import jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration;
 import jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
+import jetbrains.mps.baseLanguage.structure.StatementList;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
@@ -378,6 +382,8 @@ public abstract class ASMModelLoader {
       }
       ConstructorDeclaration constructor = ConstructorDeclaration.newInstance(model);
       constructor.getNode().setId(ASMNodeId.createId(ac, c));
+      constructor.setBody(((StatementList) ((INodeAdapter) SNodeOperations.getAdapter((SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null))))));
+
       constructor.setVisibility(this.createVisibility(c, model));
       constructor.setIsDeprecated(c.isDeprecated());
       for (ASMTypeVariable tv : c.getTypeParameters()) {
@@ -423,6 +429,7 @@ public abstract class ASMModelLoader {
       }
       InstanceMethodDeclaration methodDeclaration = InstanceMethodDeclaration.newInstance(model);
       methodDeclaration.getNode().setId(ASMNodeId.createId(ac, m));
+      methodDeclaration.setBody(((StatementList) ((INodeAdapter) SNodeOperations.getAdapter((SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null))))));
       methodDeclaration.setVisibility(this.createVisibility(m, model));
       methodDeclaration.setIsFinal(m.isFinal());
       methodDeclaration.setIsAbstract(m.isAbstract());
@@ -467,6 +474,7 @@ public abstract class ASMModelLoader {
       }
       StaticMethodDeclaration methodDeclaration = StaticMethodDeclaration.newInstance(model);
       methodDeclaration.getNode().setId(ASMNodeId.createId(ac, m));
+      methodDeclaration.setBody(((StatementList) ((INodeAdapter) SNodeOperations.getAdapter((SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null))))));
       methodDeclaration.setVisibility(this.createVisibility(m, model));
       methodDeclaration.setIsDeprecated(m.isDeprecated());
       if (m.isFinal()) {
