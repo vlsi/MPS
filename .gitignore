@@ -6,3 +6,4 @@ classes
 classes_gen
 testclasses
 *.iws
+.idea/runConfigurations/My_MPSLauncher.xml
