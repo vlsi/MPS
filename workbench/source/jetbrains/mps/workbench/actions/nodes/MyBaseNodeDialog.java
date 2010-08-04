@@ -32,7 +32,8 @@ import java.awt.event.ActionEvent;
 
 import com.intellij.openapi.util.Computable;
 
-public class MyBaseNodeDialog extends BaseNodeDialog {
+public class
+  MyBaseNodeDialog extends BaseNodeDialog {
   private final SNode myType;
   private SModel myModel;
   private final IErrorReporter myError;
