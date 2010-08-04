@@ -83,14 +83,12 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   public void startModule(IModule module, List<SModelDescriptor> inputModels, Project project, ITaskProgressHelper progressHelper) {
     progressHelper.setText2("module " + module);
 
-    IProjectHandler projectHandler = getProjectHandler(project);
-
     String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
-    prepareOutputFolder(projectHandler, outputFolder);
+    prepareOutputFolder(outputFolder);
 
     if (containsTestModels(inputModels)) {
       String testsOutputFolder = module != null ? module.getTestsGeneratorOutputPath() : null;
-      prepareOutputFolder(projectHandler, testsOutputFolder);
+      prepareOutputFolder(testsOutputFolder);
     }
 
     if(myLogger.needsInfo()) {
@@ -236,16 +234,9 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     return false;
   }
 
-  protected final void prepareOutputFolder(IProjectHandler projectHandler, String outputFolder) {
+  protected final void prepareOutputFolder(String outputFolder) {
     if (outputFolder != null && !new File(outputFolder).exists()) {
       new File(outputFolder).mkdirs();
-      try {
-        if (projectHandler != null) {
-          projectHandler.addSourceRoot(outputFolder);
-        }
-      } catch (Exception e) {
-        warning("Can't add output folder to IDEA as sources");
-      }
     }
   }
   
