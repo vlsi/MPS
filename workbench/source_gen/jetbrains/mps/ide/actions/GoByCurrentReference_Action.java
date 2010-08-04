@@ -22,6 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.smodel.ModelAccess;
@@ -126,6 +127,8 @@ public class GoByCurrentReference_Action extends GeneratedAction {
           Set<MPSModuleOwner> owners = MPSModuleRepository.getInstance().getOwners(module);
           assert !(owners.isEmpty());
           module = ((IModule) owners.iterator().next());
+        } else if (module instanceof Generator) {
+          module = ((Generator) module).getSourceLanguage();
         }
         final String modulePath = module.getDescriptorFile().getAbsolutePath();
 
