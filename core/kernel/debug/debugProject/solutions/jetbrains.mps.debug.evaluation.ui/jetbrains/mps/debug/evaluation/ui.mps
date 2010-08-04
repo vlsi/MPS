@@ -3305,7 +3305,7 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="178589597265224261">
             <property name="name:3" value="thisExpressions" />
             <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="178589597265224262">
-              <link role="elementConcept:16" targetNodeId="28.1070475354124:3" resolveInfo="ThisExpression" />
+              <link role="elementConcept:16" targetNodeId="28.1224609861009:3" resolveInfo="IThisExpression" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="178589597265224263">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2960002797019070559">
@@ -3313,8 +3313,8 @@
               </node>
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation:16" id="178589597265224265">
                 <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="178589597265224266">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="178589597265224267">
-                    <link role="conceptDeclaration:16" targetNodeId="28.1070475354124:3" resolveInfo="ThisExpression" />
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="7441344928576735547">
+                    <link role="conceptDeclaration:16" targetNodeId="28.1224609861009:3" resolveInfo="IThisExpression" />
                   </node>
                 </node>
               </node>
