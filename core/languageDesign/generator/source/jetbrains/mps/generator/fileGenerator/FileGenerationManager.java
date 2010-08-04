@@ -235,7 +235,7 @@ public class FileGenerationManager implements ApplicationComponent {
               positionInfo.removeVarInfo(varInfo);
             }
           }
-          //    positionInfo.clearTempVarInfoMap();
+          positionInfo.clearTempVarInfoMap();
           info.addScopePosition(positionInfo, input.getTopmostAncestor().getId());
         }
       }
