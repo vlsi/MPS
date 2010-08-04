@@ -17418,5 +17418,14 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5293379017992965197">
+    <link role="conceptDeclaration:32" targetNodeId="17.5293379017992965193:3" resolveInfo="StubStatementList" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5293379017992968200">
+      <property name="text:32" value="/*compiled code*/" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="5293379017992968201">
+        <property name="color:32" value="lightGray" />
+      </node>
+    </node>
+  </node>
 </model>
 
