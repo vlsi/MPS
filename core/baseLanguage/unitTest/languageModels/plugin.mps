@@ -37,6 +37,7 @@
   <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
   <language namespace="82c32a3b-4a54-4fc1-b551-7ff9f198d7c1(jetbrains.mps.baseLanguage.runConfigurations)" />
   <language namespace="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)" />
+  <language namespace="774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -4771,19 +4772,16 @@
                         <node role="closure:7" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="934665312924241167">
                           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="934665312924241168">
                             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="934665312924241169">
-                              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="934665312924241170">
-                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="934665312924241171">
-                                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="934665312924241172">
+                              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression:3" id="7441344928576808613">
+                                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7441344928576814996">
+                                  <link role="variableDeclaration:3" targetNodeId="4958672126368713136:0" resolveInfo="runParams" />
+                                </node>
+                                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" id="7441344928576773184">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7441344928576773179">
                                     <link role="variableDeclaration:3" targetNodeId="934665312924241176:0" resolveInfo="it" />
                                   </node>
-                                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="934665312924241173">
+                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="934665312924241173">
                                     <link role="baseMethodDeclaration:16" targetNodeId="41.1216045139515" resolveInfo="getTestRunParameters" />
-                                  </node>
-                                </node>
-                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="934665312924241174">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="21.1216640059134" resolveInfo="equals" />
-                                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="934665312924241175">
-                                    <link role="variableDeclaration:3" targetNodeId="4958672126368713136:0" resolveInfo="runParams" />
                                   </node>
                                 </node>
                               </node>
