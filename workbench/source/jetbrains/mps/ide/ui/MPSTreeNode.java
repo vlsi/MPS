@@ -17,6 +17,7 @@ package jetbrains.mps.ide.ui;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.util.Computable;
@@ -316,7 +317,12 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
         public void run() {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              if (getOperationContext().getProject().isDisposed()) return;
+              IOperationContext context = getOperationContext();
+              if (context==null) return;
+              Project project = context.getProject();
+              if (project==null) return;
+              if (project.isDisposed()) return;
+              
               updatePresentation();
               updateNodePresentationInTree();
             }
