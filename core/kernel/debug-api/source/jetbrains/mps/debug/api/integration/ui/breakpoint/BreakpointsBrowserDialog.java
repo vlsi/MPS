@@ -10,14 +10,12 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicBorders.MarginBorder;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellRenderer;
 import java.awt.*;
@@ -122,9 +120,8 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     myBreakpointsTable.registerKeyboardAction(new AbstractAction() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        MyAbstractTableModel model = (MyAbstractTableModel) myBreakpointsTable.getModel();
-        model.getBreakpointAt(myBreakpointsTable.getSelectedRow());
-        final AbstractMPSBreakpoint breakpoint = model.getBreakpointAt(myBreakpointsTable.getSelectedRow());
+        int selectedRow = myBreakpointsTable.getSelectedRow();
+        final AbstractMPSBreakpoint breakpoint = getSelectedBreakpoint();
         if (breakpoint == null) return;
         ModelAccess.instance().runReadAction(new Runnable() {
           @Override
@@ -132,7 +129,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
             myBreakpointsManager.removeBreakpoint(breakpoint);
           }
         });
-        myBreakpointsTableModel.reloadBreakpoints();
+        myBreakpointsTableModel.breakpointDeleted(selectedRow);
       }
     }, KeyStroke.getKeyStroke("DELETE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
@@ -190,7 +187,11 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
 
   private AbstractMPSBreakpoint getSelectedBreakpoint() {
     MyAbstractTableModel model = (MyAbstractTableModel) myBreakpointsTable.getModel();
-    model.getBreakpointAt(myBreakpointsTable.getSelectedRow());
+    int selectedRow = myBreakpointsTable.getSelectedRow();
+    if (selectedRow < 0 || selectedRow >= model.getRowCount()) {
+      return null;
+    }
+    model.getBreakpointAt(selectedRow);
     AbstractMPSBreakpoint breakpoint = model.getBreakpointAt(myBreakpointsTable.getSelectedRow());
     return breakpoint;
   }
@@ -239,13 +240,22 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
       myBreakpointsList = loadBreakpoints();
     }
 
-    public void reloadBreakpoints() {
+    public void breakpointDeleted(int row) {
       ApplicationManager.getApplication().assertIsDispatchThread();
 
       List<AbstractMPSBreakpoint> bpList = loadBreakpoints();
       //  int size = myBreakpointsList.size();
       myBreakpointsList = bpList;
-      fireTableDataChanged();
+      fireTableRowsDeleted(row, row);
+      int count = getRowCount();
+      if (count == 0) return;
+      int index;
+      if (count <= row)  {
+        index = row - 1;
+      } else {
+        index = row;
+      }
+      myBreakpointsTable.getSelectionModel().setSelectionInterval(index, index);
     }
 
     private List<AbstractMPSBreakpoint> loadBreakpoints() {
