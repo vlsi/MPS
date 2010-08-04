@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1213104836688">
-    <nodeInfo nodeId="1213104836692" fileName="ClosureParameterReference_closureParameter_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="147" />
-    <nodeInfo nodeId="1213104836701" fileName="ClosureParameterReference_closureParameter_ReferentConstraint.java" startLine="27" startPosition="147" endLine="28" endPosition="57" />
-    <scopeInfo nodeId="1213104836691" fileName="ClosureParameterReference_closureParameter_ReferentConstraint.java" startLine="26" startPosition="132" endLine="28" endPosition="57">
+    <nodeInfo nodeId="1213104836692" fileName="ClosureParameterReference_closureParameter_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="147" />
+    <nodeInfo nodeId="6985153366001608781" fileName="ClosureParameterReference_closureParameter_ReferentConstraint.java" startLine="31" startPosition="39" endLine="32" endPosition="105" />
+    <nodeInfo nodeId="6985153366001607864" fileName="ClosureParameterReference_closureParameter_ReferentConstraint.java" startLine="30" startPosition="131" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="1213104836701" fileName="ClosureParameterReference_closureParameter_ReferentConstraint.java" startLine="29" startPosition="147" endLine="34" endPosition="7" />
+    <scopeInfo nodeId="6985153366001607865" fileName="ClosureParameterReference_closureParameter_ReferentConstraint.java" startLine="31" startPosition="39" endLine="32" endPosition="105" />
+    <scopeInfo nodeId="6985153366001607864" fileName="ClosureParameterReference_closureParameter_ReferentConstraint.java" startLine="30" startPosition="131" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1213104836691" fileName="ClosureParameterReference_closureParameter_ReferentConstraint.java" startLine="28" startPosition="132" endLine="34" endPosition="7">
       <varInfo nodeId="1213104836693" varName="enclosingClosure" />
     </scopeInfo>
+    <unitInfo nodeId="6985153366001607864" fileName="ClosureParameterReference_closureParameter_ReferentConstraint.java" startLine="30" startPosition="108" endLine="34" endPosition="5" unitName="jetbrains.mps.baseLanguage.constraints.ClosureParameterReference_closureParameter_ReferentConstraint$1" />
   </root>
   <root nodeId="1213104836770">
     <nodeInfo nodeId="1213104837314" fileName="StaticMethodCall_staticMethodDeclaration_ReferentConstraint.java" startLine="27" startPosition="132" endLine="31" endPosition="46" />
@@ -295,25 +300,6 @@
   <root nodeId="1214583696654">
     <nodeInfo nodeId="1214583704397" fileName="AnnotationMethodDeclaration_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="239" />
     <scopeInfo nodeId="1214583698391" fileName="AnnotationMethodDeclaration_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="239" />
-  </root>
-  <root nodeId="1216648306971">
-    <nodeInfo nodeId="1216648328868" fileName="RemoveUnusedAssignment_QuickFix.java" startLine="14" startPosition="34" endLine="15" endPosition="38" />
-    <nodeInfo nodeId="1216648340738" fileName="RemoveUnusedAssignment_QuickFix.java" startLine="19" startPosition="106" endLine="20" endPosition="123" />
-    <nodeInfo nodeId="1216648340743" fileName="RemoveUnusedAssignment_QuickFix.java" startLine="20" startPosition="123" endLine="21" endPosition="85" />
-    <nodeInfo nodeId="1216648340749" fileName="RemoveUnusedAssignment_QuickFix.java" startLine="21" startPosition="85" endLine="22" endPosition="71" />
-    <nodeInfo nodeId="1216648340756" fileName="RemoveUnusedAssignment_QuickFix.java" startLine="23" startPosition="136" endLine="24" endPosition="70" />
-    <nodeInfo nodeId="1216648340774" fileName="RemoveUnusedAssignment_QuickFix.java" startLine="27" startPosition="110" endLine="28" endPosition="174" />
-    <nodeInfo nodeId="1216648340754" fileName="RemoveUnusedAssignment_QuickFix.java" startLine="22" startPosition="71" endLine="25" endPosition="7" />
-    <nodeInfo nodeId="1216648340772" fileName="RemoveUnusedAssignment_QuickFix.java" startLine="26" startPosition="5" endLine="29" endPosition="5" />
-    <nodeInfo nodeId="1216648340736" fileName="RemoveUnusedAssignment_QuickFix.java" startLine="18" startPosition="35" endLine="26" endPosition="5" />
-    <scopeInfo nodeId="1216648327898" fileName="RemoveUnusedAssignment_QuickFix.java" startLine="14" startPosition="34" endLine="15" endPosition="38" />
-    <scopeInfo nodeId="1216648340755" fileName="RemoveUnusedAssignment_QuickFix.java" startLine="23" startPosition="136" endLine="24" endPosition="70" />
-    <scopeInfo nodeId="1216648340773" fileName="RemoveUnusedAssignment_QuickFix.java" startLine="27" startPosition="110" endLine="28" endPosition="174" />
-    <scopeInfo nodeId="1216648340737" fileName="RemoveUnusedAssignment_QuickFix.java" startLine="19" startPosition="106" endLine="25" endPosition="7">
-      <varInfo nodeId="1216648340744" varName="lValue" />
-      <varInfo nodeId="1216648340739" varName="assignmentExpression" />
-    </scopeInfo>
-    <scopeInfo nodeId="1216648306973" fileName="RemoveUnusedAssignment_QuickFix.java" startLine="18" startPosition="35" endLine="29" endPosition="5" />
   </root>
   <root nodeId="1225271316036">
     <nodeInfo nodeId="1225271316039" fileName="BaseStringOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="469" />

@@ -161,6 +161,7 @@
     <nodeInfo nodeId="6195342755328034250" fileName="MethodDuplicatesFinder.java" startLine="77" startPosition="65" endLine="78" endPosition="51" />
     <nodeInfo nodeId="1769066237347633636" fileName="MethodDuplicatesFinder.java" startLine="80" startPosition="93" endLine="81" endPosition="20" />
     <nodeInfo nodeId="1769066237347633650" fileName="MethodDuplicatesFinder.java" startLine="82" startPosition="7" endLine="83" endPosition="19" />
+    <nodeInfo nodeId="1769066237347603151" fileName="MethodDuplicatesFinder.java" startLine="86" startPosition="69" endLine="87" endPosition="19" />
     <nodeInfo nodeId="1769066237347633667" fileName="MethodDuplicatesFinder.java" startLine="90" startPosition="64" endLine="91" endPosition="115" />
     <nodeInfo nodeId="1769066237347672595" fileName="MethodDuplicatesFinder.java" startLine="97" startPosition="35" endLine="98" endPosition="26" />
     <nodeInfo nodeId="1998477585419362293" fileName="MethodDuplicatesFinder.java" startLine="55" startPosition="39" endLine="58" endPosition="11" />
@@ -1022,6 +1023,7 @@
     <nodeInfo nodeId="8184320397304986407" fileName="ConvertAnonymousRefactoring.java" startLine="67" startPosition="106" endLine="68" endPosition="99" />
     <nodeInfo nodeId="1256875460760504981" fileName="ConvertAnonymousRefactoring.java" startLine="69" startPosition="83" endLine="70" endPosition="314" />
     <nodeInfo nodeId="8184320397304993596" fileName="ConvertAnonymousRefactoring.java" startLine="75" startPosition="39" endLine="76" endPosition="110" />
+    <nodeInfo nodeId="8184320397304994069" fileName="ConvertAnonymousRefactoring.java" startLine="78" startPosition="39" endLine="79" endPosition="110" />
     <nodeInfo nodeId="8184320397304994080" fileName="ConvertAnonymousRefactoring.java" startLine="82" startPosition="79" endLine="83" endPosition="189" />
     <nodeInfo nodeId="8184320397304994094" fileName="ConvertAnonymousRefactoring.java" startLine="84" startPosition="91" endLine="85" endPosition="119" />
     <nodeInfo nodeId="8184320397305003877" fileName="ConvertAnonymousRefactoring.java" startLine="86" startPosition="7" endLine="87" endPosition="203" />
@@ -1041,12 +1043,14 @@
     <nodeInfo nodeId="8184320397305029834" fileName="ConvertAnonymousRefactoring.java" startLine="112" startPosition="55" endLine="113" endPosition="126" />
     <nodeInfo nodeId="8184320397305035940" fileName="ConvertAnonymousRefactoring.java" startLine="113" startPosition="126" endLine="114" endPosition="54" />
     <nodeInfo nodeId="8184320397305045315" fileName="ConvertAnonymousRefactoring.java" startLine="114" startPosition="54" endLine="115" endPosition="47" />
+    <nodeInfo nodeId="8184320397305058734" fileName="ConvertAnonymousRefactoring.java" startLine="121" startPosition="39" endLine="122" endPosition="103" />
     <nodeInfo nodeId="8184320397305048050" fileName="ConvertAnonymousRefactoring.java" startLine="124" startPosition="26" endLine="125" endPosition="122" />
     <nodeInfo nodeId="8184320397305048060" fileName="ConvertAnonymousRefactoring.java" startLine="125" startPosition="122" endLine="126" endPosition="159" />
     <nodeInfo nodeId="8184320397305048070" fileName="ConvertAnonymousRefactoring.java" startLine="126" startPosition="159" endLine="127" endPosition="169" />
     <nodeInfo nodeId="637963823610838096" fileName="ConvertAnonymousRefactoring.java" startLine="129" startPosition="121" endLine="130" endPosition="325" />
     <nodeInfo nodeId="8184320397305057366" fileName="ConvertAnonymousRefactoring.java" startLine="134" startPosition="73" endLine="135" endPosition="167" />
     <nodeInfo nodeId="637963823610834724" fileName="ConvertAnonymousRefactoring.java" startLine="135" startPosition="167" endLine="136" endPosition="197" />
+    <nodeInfo nodeId="8184320397304989501" fileName="ConvertAnonymousRefactoring.java" startLine="141" startPosition="38" endLine="142" endPosition="57" />
     <nodeInfo nodeId="8184320397304989529" fileName="ConvertAnonymousRefactoring.java" startLine="147" startPosition="75" endLine="148" endPosition="73" />
     <nodeInfo nodeId="1256875460760502336" fileName="ConvertAnonymousRefactoring.java" startLine="154" startPosition="63" endLine="155" endPosition="152" />
     <nodeInfo nodeId="8184320397305024972" fileName="ConvertAnonymousRefactoring.java" startLine="156" startPosition="116" endLine="157" endPosition="67" />
@@ -1060,8 +1064,11 @@
     <nodeInfo nodeId="8184320397304988861" fileName="ConvertAnonymousRefactoring.java" startLine="182" startPosition="161" endLine="183" endPosition="126" />
     <nodeInfo nodeId="8184320397304988882" fileName="ConvertAnonymousRefactoring.java" startLine="184" startPosition="12" endLine="185" endPosition="81" />
     <nodeInfo nodeId="637963823611053690" fileName="ConvertAnonymousRefactoring.java" startLine="189" startPosition="67" endLine="190" endPosition="198" />
+    <nodeInfo nodeId="637963823611066072" fileName="ConvertAnonymousRefactoring.java" startLine="192" startPosition="37" endLine="193" endPosition="100" />
     <nodeInfo nodeId="58673743036037948" fileName="ConvertAnonymousRefactoring.java" startLine="196" startPosition="109" endLine="197" endPosition="205" />
     <nodeInfo nodeId="637963823611063686" fileName="ConvertAnonymousRefactoring.java" startLine="198" startPosition="5" endLine="199" endPosition="33" />
+    <nodeInfo nodeId="9186913092454758670" fileName="ConvertAnonymousRefactoring.java" startLine="204" startPosition="39" endLine="205" endPosition="159" />
+    <nodeInfo nodeId="995475547969847080" fileName="ConvertAnonymousRefactoring.java" startLine="209" startPosition="39" endLine="210" endPosition="159" />
     <nodeInfo nodeId="9186913092454758729" fileName="ConvertAnonymousRefactoring.java" startLine="212" startPosition="8" endLine="213" endPosition="18" />
     <nodeInfo nodeId="8184320397304927312" fileName="ConvertAnonymousRefactoring.java" startLine="220" startPosition="69" endLine="221" endPosition="26" />
     <nodeInfo nodeId="8184320397304927312" fileName="ConvertAnonymousRefactoring.java" startLine="221" startPosition="26" endLine="222" endPosition="67" />
@@ -2324,6 +2331,7 @@
     <nodeInfo nodeId="8492459591399163744" fileName="ExtractMethodRefactoring.java" startLine="88" startPosition="37" endLine="89" endPosition="20" />
     <nodeInfo nodeId="8823815475437382943" fileName="ExtractMethodRefactoring.java" startLine="92" startPosition="48" endLine="93" endPosition="52" />
     <nodeInfo nodeId="8823815475437382971" fileName="ExtractMethodRefactoring.java" startLine="94" startPosition="147" endLine="95" endPosition="155" />
+    <nodeInfo nodeId="8823815475437438022" fileName="ExtractMethodRefactoring.java" startLine="98" startPosition="37" endLine="99" endPosition="96" />
     <nodeInfo nodeId="6195342755327829827" fileName="ExtractMethodRefactoring.java" startLine="104" startPosition="54" endLine="105" endPosition="93" />
     <nodeInfo nodeId="6195342755327829845" fileName="ExtractMethodRefactoring.java" startLine="106" startPosition="268" endLine="107" endPosition="93" />
     <nodeInfo nodeId="6195342755327829862" fileName="ExtractMethodRefactoring.java" startLine="109" startPosition="98" endLine="110" endPosition="80" />
@@ -2821,6 +2829,8 @@
     <nodeInfo nodeId="8492459591399164516" fileName="AbstractExtractMethodRefactoringProcessor.java" startLine="21" startPosition="93" endLine="22" endPosition="23" />
     <nodeInfo nodeId="8492459591399164522" fileName="AbstractExtractMethodRefactoringProcessor.java" startLine="22" startPosition="23" endLine="23" endPosition="45" />
     <nodeInfo nodeId="8492459591399164386" fileName="AbstractExtractMethodRefactoringProcessor.java" startLine="26" startPosition="39" endLine="27" endPosition="44" />
+    <nodeInfo nodeId="1334376219849279214" fileName="AbstractExtractMethodRefactoringProcessor.java" startLine="30" startPosition="34" endLine="31" endPosition="112" />
+    <nodeInfo nodeId="1334376219849279222" fileName="AbstractExtractMethodRefactoringProcessor.java" startLine="34" startPosition="83" endLine="35" endPosition="16" />
     <nodeInfo nodeId="8492459591399164427" fileName="AbstractExtractMethodRefactoringProcessor.java" startLine="38" startPosition="37" endLine="39" endPosition="71" />
     <nodeInfo nodeId="8492459591399164446" fileName="AbstractExtractMethodRefactoringProcessor.java" startLine="41" startPosition="109" endLine="42" endPosition="20" />
     <nodeInfo nodeId="8492459591399164450" fileName="AbstractExtractMethodRefactoringProcessor.java" startLine="44" startPosition="103" endLine="45" endPosition="20" />
@@ -3980,8 +3990,10 @@
     <nodeInfo nodeId="5161277940733563944" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="241" startPosition="74" endLine="242" endPosition="88" />
     <nodeInfo nodeId="5161277940733563961" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="243" startPosition="63" endLine="244" endPosition="113" />
     <nodeInfo nodeId="5161277940733563913" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="245" startPosition="5" endLine="246" endPosition="108" />
+    <nodeInfo nodeId="5161277940733564037" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="248" startPosition="45" endLine="249" endPosition="45" />
     <nodeInfo nodeId="5161277940733564054" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="251" startPosition="9" endLine="252" endPosition="65" />
     <nodeInfo nodeId="5161277940733582942" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="252" startPosition="65" endLine="253" endPosition="60" />
+    <nodeInfo nodeId="5161277940733582926" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="255" startPosition="52" endLine="256" endPosition="56" />
     <nodeInfo nodeId="5161277940733564131" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="258" startPosition="21" endLine="259" endPosition="57" />
     <nodeInfo nodeId="5161277940733564272" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="260" startPosition="67" endLine="261" endPosition="19" />
     <nodeInfo nodeId="5161277940733564199" fileName="ExtractMethodRefactoringAnalyzer.java" startLine="263" startPosition="221" endLine="264" endPosition="19" />
@@ -4469,6 +4481,7 @@
     <nodeInfo nodeId="8492459591399168728" fileName="MethodOptimizer.java" startLine="20" startPosition="163" endLine="21" endPosition="203" />
     <nodeInfo nodeId="6195342755327886701" fileName="MethodOptimizer.java" startLine="23" startPosition="5" endLine="24" endPosition="35" />
     <nodeInfo nodeId="6195342755327886632" fileName="MethodOptimizer.java" startLine="27" startPosition="59" endLine="28" endPosition="152" />
+    <nodeInfo nodeId="6195342755327886676" fileName="MethodOptimizer.java" startLine="31" startPosition="41" endLine="32" endPosition="92" />
     <nodeInfo nodeId="6195342755327886693" fileName="MethodOptimizer.java" startLine="34" startPosition="167" endLine="35" endPosition="75" />
     <nodeInfo nodeId="8492459591399168752" fileName="MethodOptimizer.java" startLine="40" startPosition="112" endLine="41" endPosition="81" />
     <nodeInfo nodeId="8492459591399168758" fileName="MethodOptimizer.java" startLine="41" startPosition="81" endLine="42" endPosition="57" />
@@ -5259,6 +5272,7 @@
     <nodeInfo nodeId="8492459591399170693" fileName="ChangeMethodSignatureRefactoring.java" startLine="43" startPosition="136" endLine="44" endPosition="100" />
     <nodeInfo nodeId="8492459591399170709" fileName="ChangeMethodSignatureRefactoring.java" startLine="45" startPosition="26" endLine="46" endPosition="119" />
     <nodeInfo nodeId="8492459591399170721" fileName="ChangeMethodSignatureRefactoring.java" startLine="47" startPosition="16" endLine="48" endPosition="77" />
+    <nodeInfo nodeId="5161277940733431506" fileName="ChangeMethodSignatureRefactoring.java" startLine="54" startPosition="33" endLine="55" endPosition="25" />
     <nodeInfo nodeId="8492459591399170737" fileName="ChangeMethodSignatureRefactoring.java" startLine="58" startPosition="35" endLine="59" endPosition="94" />
     <nodeInfo nodeId="8492459591399170745" fileName="ChangeMethodSignatureRefactoring.java" startLine="59" startPosition="94" endLine="60" endPosition="101" />
     <nodeInfo nodeId="8492459591399170755" fileName="ChangeMethodSignatureRefactoring.java" startLine="61" startPosition="134" endLine="62" endPosition="98" />
@@ -6747,6 +6761,7 @@
     <nodeInfo nodeId="8492459591399175181" fileName="IntroduceVariableRefactoring.java" startLine="53" startPosition="41" endLine="54" endPosition="99" />
     <nodeInfo nodeId="8492459591399175190" fileName="IntroduceVariableRefactoring.java" startLine="55" startPosition="7" endLine="56" endPosition="174" />
     <nodeInfo nodeId="8492459591399175200" fileName="IntroduceVariableRefactoring.java" startLine="57" startPosition="37" endLine="58" endPosition="96" />
+    <nodeInfo nodeId="8492459591399175219" fileName="IntroduceVariableRefactoring.java" startLine="61" startPosition="42" endLine="62" endPosition="45" />
     <nodeInfo nodeId="8492459591399175234" fileName="IntroduceVariableRefactoring.java" startLine="65" startPosition="66" endLine="66" endPosition="67" />
     <nodeInfo nodeId="8492459591399175241" fileName="IntroduceVariableRefactoring.java" startLine="67" startPosition="7" endLine="68" endPosition="18" />
     <nodeInfo nodeId="3109730807963405927" fileName="IntroduceVariableRefactoring.java" startLine="72" startPosition="47" endLine="73" endPosition="219" />
@@ -6771,6 +6786,7 @@
     <nodeInfo nodeId="8459194913967420156" fileName="IntroduceVariableRefactoring.java" startLine="133" startPosition="31" endLine="134" endPosition="28" />
     <nodeInfo nodeId="4001355776228069588" fileName="IntroduceVariableRefactoring.java" startLine="139" startPosition="38" endLine="140" endPosition="29" />
     <nodeInfo nodeId="4001355776228124534" fileName="IntroduceVariableRefactoring.java" startLine="143" startPosition="35" endLine="144" endPosition="140" />
+    <nodeInfo nodeId="4001355776228125744" fileName="IntroduceVariableRefactoring.java" startLine="146" startPosition="39" endLine="147" endPosition="138" />
     <nodeInfo nodeId="8459194913967367928" fileName="IntroduceVariableRefactoring.java" startLine="152" startPosition="45" endLine="153" endPosition="112" />
     <nodeInfo nodeId="4001355776228069664" fileName="IntroduceVariableRefactoring.java" startLine="156" startPosition="55" endLine="157" endPosition="51" />
     <nodeInfo nodeId="8492459591399175318" fileName="IntroduceVariableRefactoring.java" startLine="162" startPosition="54" endLine="163" endPosition="105" />

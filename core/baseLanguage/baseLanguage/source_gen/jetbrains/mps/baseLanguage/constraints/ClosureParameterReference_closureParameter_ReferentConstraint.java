@@ -9,6 +9,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ClosureParameterReference_closureParameter_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -25,7 +27,11 @@ public class ClosureParameterReference_closureParameter_ReferentConstraint exten
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode enclosingClosure = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Closure", true, false);
-    return SNodeOperations.getChildren(enclosingClosure);
+    return (Iterable<SNode>) ListSequence.fromList(SNodeOperations.getChildren(enclosingClosure)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClosureParameter");
+      }
+    });
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

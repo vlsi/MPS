@@ -108,6 +108,7 @@
     </scopeInfo>
   </root>
   <root nodeId="3427990840445203005">
+    <nodeInfo nodeId="3427990840445203148" fileName="SetReturnTypeInConstructors_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="77" />
     <nodeInfo nodeId="3427990840445203160" fileName="SetReturnTypeInConstructors_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="105" />
     <scopeInfo nodeId="3427990840445203147" fileName="SetReturnTypeInConstructors_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="77" />
     <scopeInfo nodeId="3427990840445203145" fileName="SetReturnTypeInConstructors_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="105" />
@@ -151,6 +152,7 @@
     <nodeInfo nodeId="4900012836837561192" fileName="BaseLanguageMigration_MigrationScript.java" startLine="173" startPosition="82" endLine="174" endPosition="126" />
     <nodeInfo nodeId="4900012836837561198" fileName="BaseLanguageMigration_MigrationScript.java" startLine="174" startPosition="126" endLine="175" endPosition="64" />
     <nodeInfo nodeId="4900012836837561204" fileName="BaseLanguageMigration_MigrationScript.java" startLine="175" startPosition="64" endLine="176" endPosition="54" />
+    <nodeInfo nodeId="4900012836837561425" fileName="BaseLanguageMigration_MigrationScript.java" startLine="196" startPosition="59" endLine="197" endPosition="214" />
     <nodeInfo nodeId="4900012836837561419" fileName="BaseLanguageMigration_MigrationScript.java" startLine="200" startPosition="52" endLine="201" endPosition="101" />
     <nodeInfo nodeId="4900012836837561082" fileName="BaseLanguageMigration_MigrationScript.java" startLine="96" startPosition="59" endLine="99" endPosition="9" />
     <nodeInfo nodeId="4900012836837561102" fileName="BaseLanguageMigration_MigrationScript.java" startLine="100" startPosition="218" endLine="103" endPosition="9" />
@@ -311,6 +313,7 @@
     </scopeInfo>
   </root>
   <root nodeId="5098418897313070120">
+    <nodeInfo nodeId="119214807404908478" fileName="RefactorAnonymousClasses_MigrationScript.java" startLine="31" startPosition="59" endLine="32" endPosition="180" />
     <nodeInfo nodeId="5098418897313072646" fileName="RefactorAnonymousClasses_MigrationScript.java" startLine="36" startPosition="85" endLine="37" endPosition="112" />
     <nodeInfo nodeId="5098418897313098733" fileName="RefactorAnonymousClasses_MigrationScript.java" startLine="38" startPosition="9" endLine="39" endPosition="60" />
     <nodeInfo nodeId="5098418897313072670" fileName="RefactorAnonymousClasses_MigrationScript.java" startLine="39" startPosition="60" endLine="40" endPosition="70" />
@@ -330,6 +333,7 @@
     </scopeInfo>
   </root>
   <root nodeId="5248861918753541286">
+    <nodeInfo nodeId="5248861918753542061" fileName="RemoveNameFromAnonymousClasses_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="58" />
     <nodeInfo nodeId="5248861918753542072" fileName="RemoveNameFromAnonymousClasses_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="52" />
     <scopeInfo nodeId="5248861918753542060" fileName="RemoveNameFromAnonymousClasses_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="58" />
     <scopeInfo nodeId="5248861918753541289" fileName="RemoveNameFromAnonymousClasses_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="52" />

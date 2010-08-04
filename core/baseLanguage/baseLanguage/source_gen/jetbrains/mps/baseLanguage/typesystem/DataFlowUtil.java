@@ -133,14 +133,14 @@ public class DataFlowUtil {
           if (SNodeOperations.getAncestor(write, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) == null) {
             {
               BaseIntentionProvider intentionProvider = null;
-              intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.constraints.RemoveUnusedAssignment_QuickFix", false);
+              intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedAssignment_QuickFix", false);
               IErrorTarget errorTarget = new NodeErrorTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(assignment, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7567158975344997930", intentionProvider, errorTarget);
             }
           } else if (declaration != null && SNodeOperations.getAncestor(declaration, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) != null) {
             {
               BaseIntentionProvider intentionProvider = null;
-              intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.constraints.RemoveUnusedAssignment_QuickFix", false);
+              intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedAssignment_QuickFix", false);
               IErrorTarget errorTarget = new NodeErrorTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(assignment, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7567158975345062849", intentionProvider, errorTarget);
             }

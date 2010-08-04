@@ -2,16 +2,19 @@
 <debugInfo>
   <root nodeId="2869783065404758436">
     <nodeInfo nodeId="2869783065404832785" fileName="MakeFieldFinal.java" startLine="30" startPosition="69" endLine="31" endPosition="88" />
+    <nodeInfo nodeId="2869783065404832781" fileName="MakeFieldFinal.java" startLine="34" startPosition="86" endLine="35" endPosition="193" />
     <nodeInfo nodeId="8213529844237519171" fileName="MakeFieldFinal.java" startLine="35" startPosition="193" endLine="36" endPosition="0" />
     <scopeInfo nodeId="2869783065404758439" fileName="MakeFieldFinal.java" startLine="30" startPosition="69" endLine="31" endPosition="88" />
     <scopeInfo nodeId="2869783065404823032" fileName="MakeFieldFinal.java" startLine="34" startPosition="86" endLine="36" endPosition="0" />
   </root>
   <root nodeId="418677511065471952">
+    <nodeInfo nodeId="418677511065471998" fileName="MoveStaticMethod_destination_Settings.java" startLine="19" startPosition="42" endLine="20" endPosition="272" />
     <nodeInfo nodeId="418677511065472010" fileName="MoveStaticMethod.java" startLine="40" startPosition="68" endLine="41" endPosition="210" />
     <nodeInfo nodeId="418677511065472017" fileName="MoveStaticMethod.java" startLine="42" startPosition="25" endLine="43" endPosition="179" />
     <nodeInfo nodeId="418677511065472029" fileName="MoveStaticMethod.java" startLine="45" startPosition="27" endLine="46" endPosition="286" />
     <nodeInfo nodeId="418677511065472036" fileName="MoveStaticMethod.java" startLine="49" startPosition="5" endLine="50" endPosition="26" />
     <nodeInfo nodeId="418677511065472049" fileName="MoveStaticMethod.java" startLine="53" startPosition="69" endLine="54" endPosition="96" />
+    <nodeInfo nodeId="418677511065472042" fileName="MoveStaticMethod.java" startLine="57" startPosition="86" endLine="58" endPosition="99" />
     <nodeInfo nodeId="418677511065472027" fileName="MoveStaticMethod.java" startLine="44" startPosition="59" endLine="48" endPosition="0" />
     <nodeInfo nodeId="418677511065472026" fileName="MoveStaticMethod.java" startLine="43" startPosition="179" endLine="48" endPosition="9" />
     <nodeInfo nodeId="418677511065472015" fileName="MoveStaticMethod.java" startLine="41" startPosition="210" endLine="49" endPosition="5" />
@@ -39,6 +42,9 @@
     <unitInfo nodeId="4413749148913391072" fileName="RenameUtil.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.RenameUtil" />
   </root>
   <root nodeId="4946830740863976385">
+    <nodeInfo nodeId="4946830740863976391" fileName="ConvertAnonymousClass_name_Settings.java" startLine="18" startPosition="35" endLine="19" endPosition="185" />
+    <nodeInfo nodeId="4946830740863976404" fileName="ConvertAnonymousClass_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="132" />
+    <nodeInfo nodeId="4946830740863976426" fileName="ConvertAnonymousClass.java" startLine="33" startPosition="68" endLine="34" endPosition="190" />
     <nodeInfo nodeId="4946830740863976414" fileName="ConvertAnonymousClass.java" startLine="37" startPosition="69" endLine="38" endPosition="139" />
     <scopeInfo nodeId="4946830740863976390" fileName="ConvertAnonymousClass_name_Settings.java" startLine="18" startPosition="35" endLine="19" endPosition="185" />
     <scopeInfo nodeId="4946830740863976403" fileName="ConvertAnonymousClass_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="132" />
@@ -46,11 +52,13 @@
     <scopeInfo nodeId="4946830740863976413" fileName="ConvertAnonymousClass.java" startLine="37" startPosition="69" endLine="38" endPosition="139" />
   </root>
   <root nodeId="5142438244426791432">
+    <nodeInfo nodeId="5142438244426854973" fileName="MoveStaticField_destination_Settings.java" startLine="19" startPosition="42" endLine="20" endPosition="269" />
     <nodeInfo nodeId="5142438244426863063" fileName="MoveStaticField.java" startLine="40" startPosition="68" endLine="41" endPosition="208" />
     <nodeInfo nodeId="5142438244426863070" fileName="MoveStaticField.java" startLine="42" startPosition="25" endLine="43" endPosition="178" />
     <nodeInfo nodeId="5142438244426863082" fileName="MoveStaticField.java" startLine="45" startPosition="27" endLine="46" endPosition="279" />
     <nodeInfo nodeId="5142438244426863089" fileName="MoveStaticField.java" startLine="49" startPosition="5" endLine="50" endPosition="26" />
     <nodeInfo nodeId="5142438244426872857" fileName="MoveStaticField.java" startLine="53" startPosition="69" endLine="54" endPosition="95" />
+    <nodeInfo nodeId="5142438244426872853" fileName="MoveStaticField.java" startLine="57" startPosition="86" endLine="58" endPosition="98" />
     <nodeInfo nodeId="5142438244426863080" fileName="MoveStaticField.java" startLine="44" startPosition="59" endLine="48" endPosition="0" />
     <nodeInfo nodeId="5142438244426863079" fileName="MoveStaticField.java" startLine="43" startPosition="178" endLine="48" endPosition="9" />
     <nodeInfo nodeId="5142438244426863068" fileName="MoveStaticField.java" startLine="41" startPosition="208" endLine="49" endPosition="5" />
@@ -107,6 +115,9 @@
     </scopeInfo>
   </root>
   <root nodeId="7874812549549771289">
+    <nodeInfo nodeId="4955044055727165650" fileName="RenameMethod_refactorOverriding_Settings.java" startLine="16" startPosition="36" endLine="17" endPosition="16" />
+    <nodeInfo nodeId="6635062342941536636" fileName="RenameMethod_newName_Settings.java" startLine="17" startPosition="35" endLine="18" endPosition="157" />
+    <nodeInfo nodeId="4413749148913391051" fileName="RenameMethod_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="222" />
     <nodeInfo nodeId="7874812549549919820" fileName="RenameMethod.java" startLine="45" startPosition="68" endLine="46" endPosition="79" />
     <nodeInfo nodeId="304997259309380398" fileName="RenameMethod.java" startLine="48" startPosition="25" endLine="49" endPosition="173" />
     <nodeInfo nodeId="7874812549549876826" fileName="RenameMethod.java" startLine="58" startPosition="69" endLine="59" endPosition="89" />
@@ -114,9 +125,11 @@
     <nodeInfo nodeId="1494876485718557622" fileName="RenameMethod.java" startLine="60" startPosition="0" endLine="61" endPosition="112" />
     <nodeInfo nodeId="1494876485718558729" fileName="RenameMethod.java" startLine="63" startPosition="60" endLine="64" endPosition="101" />
     <nodeInfo nodeId="5679731535836386771" fileName="RenameMethod.java" startLine="66" startPosition="5" endLine="67" endPosition="99" />
+    <nodeInfo nodeId="4347648036456963189" fileName="RenameMethod.java" startLine="70" startPosition="88" endLine="71" endPosition="116" />
     <nodeInfo nodeId="4955044055727112112" fileName="RenameMethod.java" startLine="74" startPosition="86" endLine="75" endPosition="89" />
     <nodeInfo nodeId="1494876485718558725" fileName="RenameMethod.java" startLine="62" startPosition="126" endLine="65" endPosition="7" />
     <nodeInfo nodeId="7874812549549919795" fileName="RenameMethod.java" startLine="47" startPosition="57" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="4955044055727152086" fileName="RenameMethod.java" startLine="51" startPosition="7" endLine="55" endPosition="6" />
     <nodeInfo nodeId="4955044055727172572" fileName="RenameMethod.java" startLine="75" startPosition="89" endLine="79" endPosition="6" />
     <nodeInfo nodeId="7874812549549919794" fileName="RenameMethod.java" startLine="46" startPosition="79" endLine="51" endPosition="7" />
     <nodeInfo nodeId="1494876485718558702" fileName="RenameMethod.java" startLine="61" startPosition="112" endLine="66" endPosition="5" />
@@ -142,6 +155,7 @@
     <unitInfo nodeId="7874812549549919795" fileName="RenameMethod.java" startLine="47" startPosition="45" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.refactorings.RenameMethod$1" />
   </root>
   <root nodeId="9118878263582100185">
+    <nodeInfo nodeId="9118878263582108240" fileName="MakeFieldStatic_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="347" />
     <nodeInfo nodeId="9118878263582108275" fileName="MakeFieldStatic.java" startLine="45" startPosition="68" endLine="46" endPosition="60" />
     <nodeInfo nodeId="9118878263582108370" fileName="MakeFieldStatic.java" startLine="49" startPosition="106" endLine="50" endPosition="142" />
     <nodeInfo nodeId="9118878263582108381" fileName="MakeFieldStatic.java" startLine="51" startPosition="16" endLine="52" endPosition="220" />
