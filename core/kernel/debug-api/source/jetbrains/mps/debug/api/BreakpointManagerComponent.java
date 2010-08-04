@@ -309,6 +309,28 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
   }
 
+  //toggles breakpoint and repaints if necessary
+  public void setBreakpointEnabled(AbstractMPSBreakpoint breakpoint, boolean enabled) {
+    boolean toggled = breakpoint.setEnabledInternal(enabled);
+    if (toggled) {
+      SNode node = breakpoint.getSNode();
+      if (node != null) {
+        SNode root = node.getContainingRoot();
+        if (root != null) {
+          for (IEditor editor : myEditorsProvider.getSelectedEditors()) {
+            EditorComponent editorComponent = editor.getCurrentEditorComponent();
+            if (editorComponent != null) {
+              SNode editedNode = editorComponent.getEditedNode();
+              if (root == editedNode) {
+                editorComponent.repaint(); //todo should it be executed in ED thread?
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   public static void notifyDebuggableConceptsAdded() {
     for (Project p : ProjectManager.getInstance().getOpenProjects()) {
       BreakpointManagerComponent breakpointManager = p.getComponent(BreakpointManagerComponent.class);

@@ -6,7 +6,6 @@ import jetbrains.mps.debug.api.info.PositionInfo;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.debug.api.DebugInfoManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 
@@ -20,7 +19,7 @@ import com.intellij.openapi.util.Computable;
 public abstract class AbstractMPSBreakpoint {
   protected Project myProject;
   protected SNodePointer myNodePointer;
-  protected boolean myIsEnabled = true; //todo add ability to disable breakpoints
+  protected boolean myIsEnabled = true;
 
   protected AbstractMPSBreakpoint(SNodePointer nodePointer, Project project) {
     myNodePointer = nodePointer;
@@ -48,7 +47,19 @@ public abstract class AbstractMPSBreakpoint {
     setEnabled(!myIsEnabled);
   }
 
-  public void setEnabled(boolean enabled) {
+  public void setEnabled(final boolean enabled) {
+    final BreakpointManagerComponent breakpointManager = myProject.getComponent(BreakpointManagerComponent.class);
+    if (breakpointManager != null) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          breakpointManager.setBreakpointEnabled(AbstractMPSBreakpoint.this, enabled);
+        }
+      });
+    }
+  }
+
+  boolean setEnabledInternal(boolean enabled) {
     if (supportsDisable()) {
       if (myIsEnabled != enabled) {
         myIsEnabled = enabled;
@@ -57,8 +68,10 @@ public abstract class AbstractMPSBreakpoint {
         } else {
           disableInRunningSesions();
         }
+        return true;
       }
     }
+    return false;
   }
 
   public BreakpointInfo createBreakpointInfo() {
