@@ -240,6 +240,9 @@ public class MPSEditorOpener{
     assert node.isRegistered() : "Returned node is not registered (" + node + "|" + baseNode + ")";
     // [--] assertions for http://youtrack.jetbrains.net/issue/MPS-7792
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
+    // [++] assertion for http://youtrack.jetbrains.net/issue/MPS-9753
+    assert file.isValid() : "Invalid file returned for: " + baseNode + ", corresponding node from SNodePointer: " + new SNodePointer(baseNode).getNode();
+    // [--] assertion for http://youtrack.jetbrains.net/issue/MPS-9753
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
     FileEditor fileEditor = editorManager.openFile(file, false)[0];
 
