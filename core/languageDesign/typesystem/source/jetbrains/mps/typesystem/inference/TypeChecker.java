@@ -70,6 +70,7 @@ public class TypeChecker implements ApplicationComponent {
   private IPerformanceTracer myPerformanceTracer = null;
 
   private List<TypeRecalculatedListener> myTypeRecalculatedListeners = new ArrayList<TypeRecalculatedListener>(5);
+  private boolean myIsTransformationTest = false;
 
   public TypeChecker(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
@@ -177,6 +178,10 @@ public class TypeChecker implements ApplicationComponent {
     }
   }
 
+  public void setIsTransformationTestMode(boolean isTransformationTest) {
+    myIsTransformationTest = isTransformationTest;
+  }
+
   private void initTracing(IPerformanceTracer performanceTracer) {
     if (performanceTracer != null) {
       myPerformanceTracer = performanceTracer;
@@ -271,7 +276,7 @@ public class TypeChecker implements ApplicationComponent {
     if (node == null) return null;
     fireNodeTypeAccessed(node);
     TypeCheckingContext context;
-    if (isGenerationMode()) {
+    if (isGenerationMode() || isTransformationTestMode()) {
       if (myPerformanceTracer == null) {
         context = NodeTypesComponentsRepository.getInstance().createIsolatedTypeCheckingContext(node);
       } else {
@@ -367,6 +372,10 @@ public class TypeChecker implements ApplicationComponent {
 
   public boolean isGenerationMode() {
     return myIsGeneration;
+  }
+
+  public boolean isTransformationTestMode() {
+    return myIsTransformationTest;
   }
 
   private List<TypesReadListener> copyTypesReadListeners() {
