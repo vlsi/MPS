@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -23,6 +24,8 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -51,7 +54,17 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     }
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator<Boolean>() {
+        public Boolean calculate(EditorCell cell) {
+          return StaticMethodDeclaration_Editor._StyleParameter_QueryFunction_j4vm40_a0l0((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
     }
     return editorCell;
   }
@@ -83,7 +96,9 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAlternation_j4vm40_l0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_j4vm40_m0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_j4vm40_n0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_j4vm40_o0(editorContext, node));
+    if (renderingCondition_j4vm40_a41a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_j4vm40_o0(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -320,7 +335,17 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator<Boolean>() {
+        public Boolean calculate(EditorCell cell) {
+          return StaticMethodDeclaration_Editor._StyleParameter_QueryFunction_j4vm40_a1m0((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -347,6 +372,18 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_j4vm40_a11a(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() > 0;
+  }
+
+  private static boolean renderingCondition_j4vm40_a41a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
+  }
+
+  private static boolean _StyleParameter_QueryFunction_j4vm40_a0l0(SNode node, EditorContext editorContext) {
+    return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
+  }
+
+  private static boolean _StyleParameter_QueryFunction_j4vm40_a1m0(SNode node, EditorContext editorContext) {
+    return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
   }
 
   private static class annotationListHandler_j4vm40_a1a extends RefNodeListHandler {

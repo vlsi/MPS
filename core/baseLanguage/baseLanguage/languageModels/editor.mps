@@ -1015,6 +1015,29 @@
         </node>
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237722521689">
           <property name="flag:32" value="true" />
+          <node role="query:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean:32" id="1423582408682794565">
+            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1423582408682794566">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1423582408682794567">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1423582408682794568">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1423582408682794569">
+                    <link role="classConcept:3" targetNodeId="20.~SModelStereotype" resolveInfo="SModelStereotype" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="20.~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolveInfo="isStubModelStereotype" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682794570">
+                      <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1423582408682794571">
+                        <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682794572">
+                          <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1423582408682794573" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1423582408682794574" />
+                        </node>
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1423582408682794575">
+                        <link role="baseMethodDeclaration:3" targetNodeId="20.~SModel.getStereotype():java.lang.String" resolveInfo="getStereotype" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1075139937805">
@@ -1025,6 +1048,29 @@
         </node>
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237722521699">
           <property name="flag:32" value="true" />
+          <node role="query:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean:32" id="1423582408682794543">
+            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1423582408682794544">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1423582408682794545">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1423582408682794546">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1423582408682794547">
+                    <link role="classConcept:3" targetNodeId="20.~SModelStereotype" resolveInfo="SModelStereotype" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="20.~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolveInfo="isStubModelStereotype" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682794548">
+                      <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1423582408682794549">
+                        <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682794550">
+                          <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1423582408682794551" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1423582408682794552" />
+                        </node>
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1423582408682794553">
+                        <link role="baseMethodDeclaration:3" targetNodeId="20.~SModel.getStereotype():java.lang.String" resolveInfo="getStereotype" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1075139395584">
@@ -1044,14 +1090,33 @@
         <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="1208702960709">
           <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1208702960710">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1208702967024">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1208702982625">
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1208702986379" />
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1208702968073">
-                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1208702967025" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="1208702970481">
-                    <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1208702970482">
-                      <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1208702979218">
-                        <link role="conceptDeclaration:16" targetNodeId="17.1170345865475:3" resolveInfo="AnonymousClass" />
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1423582408682794554">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1208702982625">
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1208702968073">
+                    <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1208702967025" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="1208702970481">
+                      <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1208702970482">
+                        <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1208702979218">
+                          <link role="conceptDeclaration:16" targetNodeId="17.1170345865475:3" resolveInfo="AnonymousClass" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1208702986379" />
+                </node>
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1423582408682794557">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1423582408682794558">
+                    <link role="classConcept:3" targetNodeId="20.~SModelStereotype" resolveInfo="SModelStereotype" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="20.~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolveInfo="isStubModelStereotype" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682794559">
+                      <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1423582408682794560">
+                        <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682794561">
+                          <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1423582408682794562" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1423582408682794563" />
+                        </node>
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1423582408682794564">
+                        <link role="baseMethodDeclaration:3" targetNodeId="20.~SModel.getStereotype():java.lang.String" resolveInfo="getStereotype" />
                       </node>
                     </node>
                   </node>
@@ -1322,6 +1387,29 @@
         <link role="styleClass:32" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237734939213">
           <property name="flag:32" value="true" />
+          <node role="query:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean:32" id="1423582408682681774">
+            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1423582408682681775">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1423582408682681776">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1423582408682681777">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1423582408682681778">
+                    <link role="classConcept:3" targetNodeId="20.~SModelStereotype" resolveInfo="SModelStereotype" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="20.~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolveInfo="isStubModelStereotype" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682681779">
+                      <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1423582408682681780">
+                        <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682681781">
+                          <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1423582408682681782" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1423582408682681783" />
+                        </node>
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1423582408682681784">
+                        <link role="baseMethodDeclaration:3" targetNodeId="20.~SModel.getStereotype():java.lang.String" resolveInfo="getStereotype" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="1178609275710">
           <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1178609275711">
@@ -1389,6 +1477,29 @@
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237717874653" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237717874654">
           <property name="flag:32" value="true" />
+          <node role="query:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean:32" id="1423582408682551473">
+            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1423582408682551474">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1423582408682551475">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1423582408682551476">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1423582408682551477">
+                    <link role="classConcept:3" targetNodeId="20.~SModelStereotype" resolveInfo="SModelStereotype" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="20.~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolveInfo="isStubModelStereotype" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682551478">
+                      <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1423582408682551479">
+                        <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682551480">
+                          <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1423582408682551481" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1423582408682551482" />
+                        </node>
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1423582408682551483">
+                        <link role="baseMethodDeclaration:3" targetNodeId="20.~SModel.getStereotype():java.lang.String" resolveInfo="getStereotype" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1075233459449">
@@ -1419,15 +1530,34 @@
         <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="1208703059009">
           <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1208703059010">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1208703059011">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="4898614932449671031">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4898614932449672034">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4898614932449671034">
-                    <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="4898614932449671033" />
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="4898614932449672033" />
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1423582408682551484">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="4898614932449671031">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4898614932449672034">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4898614932449671034">
+                      <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="4898614932449671033" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="4898614932449672033" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="4898614932449672038">
+                      <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="4898614932449672040">
+                        <link role="conceptDeclaration:16" targetNodeId="17.1107796713796:3" resolveInfo="Interface" />
+                      </node>
+                    </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="4898614932449672038">
-                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="4898614932449672040">
-                      <link role="conceptDeclaration:16" targetNodeId="17.1107796713796:3" resolveInfo="Interface" />
+                </node>
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1423582408682551487">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1423582408682551488">
+                    <link role="classConcept:3" targetNodeId="20.~SModelStereotype" resolveInfo="SModelStereotype" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="20.~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolveInfo="isStubModelStereotype" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682551489">
+                      <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1423582408682551490">
+                        <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682551491">
+                          <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1423582408682551492" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1423582408682551493" />
+                        </node>
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1423582408682551494">
+                        <link role="baseMethodDeclaration:3" targetNodeId="20.~SModel.getStereotype():java.lang.String" resolveInfo="getStereotype" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1655,6 +1785,29 @@
         </node>
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237718487851">
           <property name="flag:32" value="true" />
+          <node role="query:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean:32" id="1423582408682918041">
+            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1423582408682918042">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1423582408682918043">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1423582408682918044">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1423582408682918045">
+                    <link role="classConcept:3" targetNodeId="20.~SModelStereotype" resolveInfo="SModelStereotype" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="20.~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolveInfo="isStubModelStereotype" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682918046">
+                      <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1423582408682918047">
+                        <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682918048">
+                          <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1423582408682918049" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1423582408682918050" />
+                        </node>
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1423582408682918051">
+                        <link role="baseMethodDeclaration:3" targetNodeId="20.~SModel.getStereotype():java.lang.String" resolveInfo="getStereotype" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1075287750859">
@@ -1664,6 +1817,29 @@
         </node>
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237718487854">
           <property name="flag:32" value="true" />
+          <node role="query:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean:32" id="1423582408682918052">
+            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1423582408682918053">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1423582408682918054">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1423582408682918055">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1423582408682918056">
+                    <link role="classConcept:3" targetNodeId="20.~SModelStereotype" resolveInfo="SModelStereotype" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="20.~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolveInfo="isStubModelStereotype" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682918057">
+                      <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1423582408682918058">
+                        <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682918059">
+                          <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1423582408682918060" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1423582408682918061" />
+                        </node>
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1423582408682918062">
+                        <link role="baseMethodDeclaration:3" targetNodeId="20.~SModel.getStereotype():java.lang.String" resolveInfo="getStereotype" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1075287750864">
@@ -1682,6 +1858,29 @@
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1208703075942">
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237718487856">
           <property name="flag:32" value="true" />
+        </node>
+        <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="1423582408682918030">
+          <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1423582408682918031">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1423582408682918032">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1423582408682918033">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1423582408682918034">
+                  <link role="classConcept:3" targetNodeId="20.~SModelStereotype" resolveInfo="SModelStereotype" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="20.~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolveInfo="isStubModelStereotype" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682918035">
+                    <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1423582408682918036">
+                      <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1423582408682918037">
+                        <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1423582408682918038" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1423582408682918039" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1423582408682918040">
+                      <link role="baseMethodDeclaration:3" targetNodeId="20.~SModel.getStereotype():java.lang.String" resolveInfo="getStereotype" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237718487861" />
