@@ -20,6 +20,7 @@ public abstract class AbstractMPSBreakpoint {
   protected Project myProject;
   protected SNodePointer myNodePointer;
   protected boolean myIsEnabled = true;
+  protected long myCreationTime = -1;
 
   protected AbstractMPSBreakpoint(SNodePointer nodePointer, Project project) {
     myNodePointer = nodePointer;
@@ -45,6 +46,14 @@ public abstract class AbstractMPSBreakpoint {
 
   public void toggleEnabled() {
     setEnabled(!myIsEnabled);
+  }
+
+  void setCreationTime(long time) {
+    myCreationTime = time;
+  }
+
+  public long getCreationTime() {
+    return myCreationTime;
   }
 
   public void setEnabled(final boolean enabled) {
@@ -76,18 +85,22 @@ public abstract class AbstractMPSBreakpoint {
 
   public BreakpointInfo createBreakpointInfo() {
     return new BreakpointInfo(myNodePointer.getModelReference().toString(),
-      myNodePointer.getNodeId().toString());
+      myNodePointer.getNodeId().toString(), myCreationTime);
   }
 
 
   public static AbstractMPSBreakpoint fromBreakpointInfo(final BreakpointInfo breakpointInfo, final Project project) {
-    return ModelAccess.instance().runReadAction(new Computable<AbstractMPSBreakpoint>() {
+    AbstractMPSBreakpoint abstractMPSBreakpoint = ModelAccess.instance().runReadAction(new Computable<AbstractMPSBreakpoint>() {
       @Override
       public AbstractMPSBreakpoint compute() {
         SNodePointer pointer = new SNodePointer(breakpointInfo.myModelReference, breakpointInfo.myNodeId);
         return fromPointer(pointer, project);
       }
     });
+    if (abstractMPSBreakpoint != null) {
+      abstractMPSBreakpoint.setCreationTime(breakpointInfo.myCreationTime);
+    }
+    return abstractMPSBreakpoint;
   }
 
   @ToDebugAPI

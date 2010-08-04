@@ -255,19 +255,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
       Collections.sort(bpList, new Comparator<AbstractMPSBreakpoint>() {
         @Override
         public int compare(AbstractMPSBreakpoint o1, AbstractMPSBreakpoint o2) {
-          SNodePointer nodePointer1 = o1.getNodePointer();
-          SNodePointer nodePointer2 = o2.getNodePointer();
-
-          String namespace1 = nodePointer1.getModelReference().getNamespace();
-          String namespace2 = nodePointer2.getModelReference().getNamespace();
-
-          int compareNamespaces = namespace1.compareTo(namespace2);
-
-          if (compareNamespaces != 0) {
-            return compareNamespaces;
-          }
-
-          return o1.getPresentation().compareTo(o2.getPresentation());
+          return  (int) (o1.getCreationTime() - o2.getCreationTime());
         }
       });
       return bpList;
