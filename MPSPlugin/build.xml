@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="mpsplugin.build" default="build" basedir=".">
+
+  <dirname property="mpsplugin.basedir" file="${ant.file.mpsplugin.build}"/>
+
+  <dirname property="mps.home" file="${ant.file.mpsplugin.build}/.."/>
+
+  <target name="build" description="">
+    <jar destfile="${mps.home}/plugin/MPSPlugin.jar" basedir="${mpsplugin.basedir}" filesonly="true">
+      <include name="META-INF/*"/>
+      <fileset dir="classes" includes="**/*"/>
+      <fileset dir="MPSSupport/classes" includes="**/*"/>
+    </jar>
+  </target>
+
+</project>

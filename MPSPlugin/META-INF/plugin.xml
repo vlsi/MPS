@@ -25,6 +25,7 @@
     <action class="jetbrains.mps.plugin.FindClassUsagesInMPS" text="Find Class Usages In MPS" id="MPSPlugin.findClassUsages" />
     <action class="jetbrains.mps.plugin.FindMethodUsagesInMPS" text="Find Method Usages In MPS" id="MPSPlugin.findMethodUsages" />
     <action class="jetbrains.mps.plugin.OpenGeneratedQueriesSourceInMPS" text="Open Generated Query Method Source In MPS" id="MPSPlugin.openGeneratedQuerySource" />
+    <action class="jetbrains.mps.plugin.CollectJUnitTestsFromPatternsAction" text="Collect JUnit tests" id="MPSPlugin.collectJUnitTests" />
     <group>
       <separator />
       <reference ref="MPSPlugin.findClassUsages" />
@@ -33,6 +34,12 @@
       <reference ref="MPSPlugin.findMethodUsages" />
       <reference ref="MPSPlugin.openGeneratedQuerySource" />
       <add-to-group anchor="last" group-id="EditorPopupMenu" />
+    </group>
+    <group>
+      <separator />
+      <reference ref="MPSPlugin.collectJUnitTests" />
+      <add-to-group anchor="last" group-id="EditorPopupMenu" />
+      <!-- add-to-group anchor="last" group-id="ProjectViewPopupMenu" / -->
     </group>
   </actions>
 </idea-plugin>

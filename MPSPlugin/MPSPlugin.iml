@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module relativePaths="true" type="PLUGIN_MODULE" version="4">
-  <component name="DevKit.ModuleBuildProperties" url="file://$MODULE_DIR$/META-INF/plugin.xml" />
+<module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/MPSSupport/classes" />
+      <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="IDEA on 1.5" jdkType="IDEA JDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="IDEA" level="application" />
     <orderEntry type="module" module-name="MPSSupport" />
-  </component>
-  <component name="copyright">
-    <Base>
-      <setting name="state" value="2" />
-    </Base>
-  </component>
-  <component name="org.mevenide.idea.module.ModuleSettings">
-    <favoriteGoals>
-      <list size="0" />
-    </favoriteGoals>
+    <orderEntry type="library" name="IDEA-plaform" level="project" />
+    <orderEntry type="library" name="IDEA" level="application" />
   </component>
 </module>
 
