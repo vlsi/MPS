@@ -157,7 +157,7 @@ public class PluginStateMonitor implements ProjectComponent {
   }
 
   private void setNewState(State state) {
-    assert myState != state;
+    assert myState != state : "myState: " + myState.getHelpText() + "; state: " + state.getHelpText();
 
     myState = state;
     myTimer.setNewDelay(state.getDefaultDelay());
