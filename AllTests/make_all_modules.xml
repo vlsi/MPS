@@ -1,4 +1,4 @@
-<project name="make_all_modules" default="test">
+<project name="make_all_modules" default="make">
   <property name="mps.home" value="${ant.file.make_all_modules}/../.."/>
 
   <taskdef resource="jetbrains/mps/build/ant/antlib.xml"

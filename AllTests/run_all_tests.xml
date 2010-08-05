@@ -4,8 +4,6 @@
 
   <import file="${basedir.run_all_tests}/make_all_modules.xml"/>
 
-  <import file="${mps.home}/integrationBuild.xml"/>
-
   <import file="${mps.home}/tests/jetbrains/mps/mps.tests.xml"/>
 
   <jvmargs id="mps.args">
@@ -34,7 +32,6 @@
     <jvmargs refid="profile.args"/>
   </jvmargs>
 
-
   <target name="test" depends="make_all_modules.make">
     <junit fork="true" forkmode="once" haltonerror="false" haltonfailure="false">
       <jvmarg value="-ea"/>
@@ -46,6 +43,7 @@
     </junit>
   </target>
 
-  <target name="test.generation" depends="test,mps.tests.all"/>
+  <target name="test.generation" depends="mps.tests.all">
+  </target>
 
-  </project>
+</project>

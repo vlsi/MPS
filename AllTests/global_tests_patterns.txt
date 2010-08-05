@@ -23,4 +23,6 @@
 -ant:**/GenerateTaskTest.java
 +smodelTests:**/*_Test.java
 +regexp:**/*_Test.java
+-ant:**/GenerateTaskFilesCreationTest.java
+
 
