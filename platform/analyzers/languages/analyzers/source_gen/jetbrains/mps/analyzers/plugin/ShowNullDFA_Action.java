@@ -78,7 +78,7 @@ public class ShowNullDFA_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      AnalyzerRunner<Map<Object, NullableState>> runner = new NullableAnalyzerRunner(ShowNullDFA_Action.this.node);
+      AnalyzerRunner<Map<SNode, NullableState>> runner = new NullableAnalyzerRunner(ShowNullDFA_Action.this.node);
       new ShowCFGDialog(runner.getProgramCopy(), ShowNullDFA_Action.this.context, ShowNullDFA_Action.this.frame);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowNullDFA", t);

@@ -17,8 +17,8 @@ public class check_null_NonTypesystemRule extends AbstractNonTypesystemRule_Runt
   }
 
   public void applyRule(final SNode iMethodLike, final TypeCheckingContext typeCheckingContext) {
-    AnalyzerRunner<Map<Object, NullableState>> nullableRunner = new NullableAnalyzerRunner(iMethodLike);
-    nullableRunner.analyze();
+    AnalyzerRunner<Map<SNode, NullableState>> nullableRunner = new NullableAnalyzerRunner(iMethodLike);
+    System.out.println(nullableRunner.analyze());
   }
 
   public String getApplicableConceptFQName() {
