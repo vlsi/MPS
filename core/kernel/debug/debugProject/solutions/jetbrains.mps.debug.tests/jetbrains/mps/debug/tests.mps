@@ -1071,16 +1071,16 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="607759879653679963">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="607759879653679978">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="607759879653679980">
-                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1030849765250412538">
-                  <link role="classifier:3" targetNodeId="1.~IValueProxy" resolveInfo="IValueProxy" />
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3385357251123748735">
+                  <link role="classifier:3" targetNodeId="1.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                 </node>
                 <node role="expression:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall:1" id="607759879653679984">
                   <property name="methodName:1" value="getElementAt" />
                   <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="607759879653679994">
                     <property name="value:3" value="0" />
                   </node>
-                  <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1030849765250412539">
-                    <link role="classifier:3" targetNodeId="1.~IValueProxy" resolveInfo="IValueProxy" />
+                  <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3385357251123748736">
+                    <link role="classifier:3" targetNodeId="1.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
                   </node>
                   <node role="instance:1" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="607759879653679986">
                     <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="607759879653679987">

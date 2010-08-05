@@ -308,8 +308,8 @@ public class TransformationUtil {
     for (SNode arrayAccess : ListSequence.fromList(arrayAccessExpressions)) {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(arrayAccess, "array", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a0c0l().createNode())) {
         SNode returnType = new TransformationUtil.QuotationClass_crriw5_a0a0a0a2a11().createNode();
-        if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(arrayAccess, "array", true)), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
-          returnType = getValueProxyTypeFromType(SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(arrayAccess, "array", true)), "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true));
+        if (arrayAccess.getChild(TransformationUtil.LTYPE) != null) {
+          returnType = getValueProxyTypeFromType(arrayAccess.getChild(LTYPE));
         }
         SNodeOperations.replaceWithAnother(arrayAccess, new TransformationUtil.QuotationClass_crriw5_a0a0c0a0c0l().createNode(returnType, SLinkOperations.getTarget(arrayAccess, "index", true), returnType, SLinkOperations.getTarget(arrayAccess, "array", true)));
         finished = false;
