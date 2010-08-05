@@ -77,6 +77,12 @@ public abstract class Evaluator {
     return MirrorUtil.getValueProxy(result, getThreadReference());
   }
 
+  protected IValueProxy getClassValue(String className) throws InvalidEvaluatedExpressionException {
+    ClassType referenceType = (ClassType)findClassType(className, getVM());
+    ClassObjectReference classObject = referenceType.classObject();
+    return MirrorUtil.getValueProxy(classObject, getThreadReference());
+  }
+
   @Nullable
   protected String getThisFQName() {
     Location location = this.myUiState.getStackFrame().getLocation().getLocation();
