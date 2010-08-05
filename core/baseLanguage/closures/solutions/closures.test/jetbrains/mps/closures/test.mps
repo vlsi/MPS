@@ -9848,7 +9848,7 @@
         </node>
       </node>
       <node role="returnType:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType:1" id="7706726851185802210">
-        <property name="fqClassName:1" value="String" />
+        <property name="fqClassName:1" value="java.lang.String" />
         <link role="classifier:1" targetNodeId="2.~Object" resolveInfo="Object" />
       </node>
     </node>
