@@ -4,7 +4,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.Processor;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
@@ -213,17 +212,17 @@ public class StubReloadManager implements ApplicationComponent {
         PathData oldData = oldp2d.get(sp);
         if (oldData == null || !oldData.isFresh()) {
           Set<BaseStubModelDescriptor> descriptors = manager.updateModels(sp.getPath(), "", m);
-          data.setDescriptors(copyDescriptors(descriptors,manager));
+          data.setDescriptors(copyDescriptors(descriptors, null));
         } else {
           Set<BaseStubModelDescriptor> descriptors = oldData.getDescriptors();
-          manager.updateModels(sp.getPath(), "", m, copyDescriptors(descriptors,manager));
+          manager.updateModels(sp.getPath(), "", m, copyDescriptors(descriptors, manager));
           data.setDescriptors(descriptors);
         }
       }
     }
   }
 
-  private Set<BaseStubModelDescriptor> copyDescriptors(Set<BaseStubModelDescriptor> descriptors,BaseStubModelRootManager manager) {
+  private Set<BaseStubModelDescriptor> copyDescriptors(Set<BaseStubModelDescriptor> descriptors, BaseStubModelRootManager manager) {
     HashSet<BaseStubModelDescriptor> result = new HashSet<BaseStubModelDescriptor>();
     for (BaseStubModelDescriptor d : descriptors) {
       result.add(d.copy(manager));
