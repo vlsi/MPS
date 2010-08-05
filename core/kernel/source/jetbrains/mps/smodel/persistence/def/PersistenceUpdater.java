@@ -36,13 +36,9 @@ import javax.swing.JOptionPane;
 public class PersistenceUpdater {
   public void upgradePersistence(List<SModelDescriptor> modelDescriptors, final int toVersion) {
     for (final SModelDescriptor modelDescriptor : modelDescriptors) {
-      boolean wasInitialized = false;
-      final boolean[] wasUpgraded = {false};
-      if (modelDescriptor.isInitialized()) {
-        wasInitialized = true;
-      }
+      boolean wasInitialized = modelDescriptor.isInitialized();
       IFile file = modelDescriptor.getModelFile();
-      if (file == null) continue;
+      if (file == null || file.isReadOnly()) continue;
       if (wasInitialized) {
         ModelAccess.instance().executeCommand(new Runnable() {
           @Override
@@ -51,18 +47,16 @@ public class PersistenceUpdater {
           }
         });
       }
-      SModel newModel = ModelPersistence.readModelUpgradeByCondition(file, new Condition<Integer>() {
-        @Override
-        public boolean met(Integer version) {
-          boolean b = version < toVersion;
-          if (b) {
-            wasUpgraded[0] = true;
+      if(modelDescriptor.getPersistenceVersion() < toVersion) {
+        SModel model = wasInitialized
+          ? modelDescriptor.getSModel()
+          : ModelPersistence.readModel(file);
+        if(model.getPersistenceVersion() < toVersion) {
+          ModelPersistence.upgradePersistence(file, model, model.getPersistenceVersion(), toVersion);
+          if(wasInitialized) {
+            modelDescriptor.reloadFromDisk();
           }
-          return b;
         }
-      }, toVersion);
-      if (wasUpgraded[0] && wasInitialized) {
-        modelDescriptor.reloadFromDisk();
       }
     }
   }

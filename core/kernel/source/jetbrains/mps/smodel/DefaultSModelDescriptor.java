@@ -32,9 +32,11 @@ import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.VcsHelper;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -48,6 +50,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   private Map<String, String> myMetadata;
   private boolean myMetadataLoaded;
+
+  private Object myRefactoringHistoryLock = new Object();
+  private RefactoringHistory myRefactoringHistory;
 
   private final Object myLoadingLock = new Object();
 
@@ -66,14 +71,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     updateLastChange();
   }
 
-  private void updateLastChange() {
-    if (myModelFile != null) {
-      myLastChange = myModelFile.lastModified();
-    } else {
-      myLastChange = System.currentTimeMillis();
-    }
-  }
-
   {
     this.addModelCommandListener(new SModelCommandListener() {
       public void eventsHappenedInCommand(List<SModelEvent> events) {
@@ -85,7 +82,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   protected SModel loadModel() {
-    return myModelRootManager.loadModel(this);
+    SModel result = myModelRootManager.loadModel(this);
+    updateModelWithRefactorings(result);
+
+    myRefactoringHistory = null;
+    tryFixingVersion();
+    updateDiskTimestamp();
+    return result;
   }
 
   public void reloadFromDiskSafe() {
@@ -96,7 +99,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
           if (needSave) {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
-                myDiskTimestamp = fileTimestamp();
+                updateDiskTimestamp();
                 save();
               }
             });
@@ -123,37 +126,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       return;
     }
     SModel newModel = loadModel();
-    final SModel oldModel = mySModel;
-    oldModel.setModelDescritor(null);
-    mySModel = newModel;
-    mySModel.setModelDescritor(this);
-
+    replaceModel(newModel);
     updateLastChange();
-
-    doPostLoadStuff();
-
-    SModelRepository.getInstance().markChanged(DefaultSModelDescriptor.this, false);
-    MPSModuleRepository.getInstance().invalidateCaches();
-    Runnable modelReplacedNotifier = new Runnable() {
-      @Override
-      public void run() {
-        fireModelReplaced();
-        oldModel.dispose();
-      }
-    };
-    if (ModelAccess.instance().isInEDT()) {
-      modelReplacedNotifier.run();
-    } else {
-      ModelAccess.instance().runReadInEDT(modelReplacedNotifier);
-    }
-  }
-
-  public int getSModelPersistenceVersion() {
-    SModel model = getSModel();
-    if (model == null) {
-      return -1;
-    }
-    return model.getPersistenceVersion();
   }
 
   public boolean isReadOnly() {
@@ -178,9 +152,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
     synchronized (myLoadingLock) {
       if (mySModel == null) {
-        mySModel = loadModel();
-        mySModel.setModelDescritor(this);
-        doPostLoadStuff();
+        SModel model = loadModel();
+        model.setModelDescritor(this);
+        mySModel = model;
         fireInitialized = true;
       }
       result = mySModel;
@@ -191,36 +165,64 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     return result;
   }
 
-  private void doPostLoadStuff() {
-    LOG.assertLog(mySModel != null, "Couldn't load model \"" + getSModelReference().getLongName() + "\"");
-
-    tryFixingVersion();
-    updateModelWithRefactorings();
-
-    myDiskTimestamp = fileTimestamp();
+  public int getPersistenceVersion() {
+    SModel model = mySModel; // do not use getSModel() to avoid lock
+    if(model != null) {
+      return model.getPersistenceVersion();
+    }
+    return ModelPersistence.getModelPersistenceVersion(getModelFile());
   }
 
-  private void updateModelWithRefactorings() {
-    assert mySModel != null;
+  @Override
+  @NotNull
+  public RefactoringHistory getRefactoringHistory() {
+    synchronized (myRefactoringHistoryLock) {
+      if(myRefactoringHistory == null) {
+        SModel model = mySModel;
+        if(model != null && model.getPersistenceVersion() >= 0 && model.getPersistenceVersion() < 5) {
+          //noinspection deprecation
+          myRefactoringHistory = model.getRefactoringHistory();
+        }
+        if(myRefactoringHistory == null) {
+          myRefactoringHistory = myModelRootManager.loadModelRefactorings(this);
+        }
+        if(myRefactoringHistory == null) {
+          myRefactoringHistory = new RefactoringHistory();
+        }
+      }
+    }
+    return myRefactoringHistory;
+  }
+
+  @Override
+  public void saveRefactoringHistory() {
+    RefactoringHistory toSave = myRefactoringHistory;
+    if(toSave != null) {
+      myModelRootManager.saveModelRefactorings(this, toSave);
+    }
+  }
+
+  private void updateModelWithRefactorings(SModel model) {
+    assert model != null;
     if (!PlayRefactoringsFlag.refactoringsPlaybackEnabled()) {
       return;
     }
-    if (!SModelStereotype.isUserModel(mySModel)) {
+    if (!SModelStereotype.isUserModel(model)) {
       return;
     }
-    boolean wasLoading = mySModel.setLoading(true);
+    boolean wasLoading = model.setLoading(true);
     try {
       boolean played;
       do {
         played = false;
-        for (SModelDescriptor modelDescriptor : mySModel.getDependenciesModels()) {
-          if (playUsedModelDescriptorsRefactoring(modelDescriptor)) {
+        for (SModelDescriptor usedModelDescriptor : model.getDependenciesModels()) {
+          if (playUsedModelDescriptorsRefactoring(model, usedModelDescriptor)) {
             played = true;
           }
         }
       } while (played);
     } finally {
-      mySModel.setLoading(wasLoading);
+      model.setLoading(wasLoading);
     }
   }
 
@@ -232,7 +234,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (getVersion() != -1) return;
 
     int maxVersion = -1;
-    for (RefactoringContext context : mySModel.getRefactoringHistory().getRefactoringContexts()) {
+    for (RefactoringContext context : getRefactoringHistory().getRefactoringContexts()) {
       maxVersion = Math.max(maxVersion, context.getModelVersion());
     }
 
@@ -243,12 +245,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   //true if any refactoring was played
-
-  private boolean playUsedModelDescriptorsRefactoring(SModelDescriptor modelDescriptor) {
-    int currentVersion = modelDescriptor.getVersion();
-    int usedVersion = mySModel.getUsedVersion(modelDescriptor.getSModelReference());
+  private boolean playUsedModelDescriptorsRefactoring(SModel model, SModelDescriptor usedModelDescriptor) {
+    int currentVersion = usedModelDescriptor.getVersion();
+    int usedVersion = model.getUsedVersion(usedModelDescriptor.getSModelReference());
     if (myIsTestRefactoringMode) {
-      System.err.println(this + ": current version of used model " + modelDescriptor.getLongName() + " is " + currentVersion + ", used version is " + usedVersion);
+      System.err.println(this + ": current version of used model " + usedModelDescriptor.getLongName() + " is " + currentVersion + ", used version is " + usedVersion);
     }
 
     if (currentVersion > usedVersion) {
@@ -256,8 +257,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       if (myIsTestRefactoringMode) {
         System.err.println("updating a model " + this);
       }
-      SModel importedModel = modelDescriptor.getSModel();
-      RefactoringHistory refactoringHistory = importedModel.getRefactoringHistory();
+      RefactoringHistory refactoringHistory = usedModelDescriptor.getRefactoringHistory();
       for (RefactoringContext refactoringContext : refactoringHistory.getRefactoringContexts()) {
         if (refactoringContext.getModelVersion() <= usedVersion) continue;
         result = true;
@@ -268,16 +268,16 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
           LOG.error("Non-loggable refactoring was logged: " + refactoring.getClass().getName());
         } else {
           try {
-            ((ILoggableRefactoring) refactoring).updateModel(mySModel, refactoringContext);
+            ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
           } catch (Throwable t) {
-            LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + mySModel.getLongName() + ". Models could have been corrupted.");
+            LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.");
           }
         }
       }
-      mySModel.updateImportedModelUsedVersion(modelDescriptor.getSModelReference(), currentVersion);
-      IFile modelFile = modelDescriptor.getModelFile();
+      model.updateImportedModelUsedVersion(usedModelDescriptor.getSModelReference(), currentVersion);
+      IFile modelFile = getModelFile();
       if (modelFile != null && !modelFile.isReadOnly()) {
-        SModelRepository.getInstance().markChanged(mySModel);
+        SModelRepository.getInstance().markChanged(this, true);
       }
       return result;
     }
@@ -287,17 +287,17 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
       //user might have forgotten to commit .metadata file
       if (currentVersion == -1) {
-        if (modelDescriptor instanceof DefaultSModelDescriptor) {
-          modelDescriptor.getSModel();
+        if (usedModelDescriptor instanceof DefaultSModelDescriptor) {
+          usedModelDescriptor.getSModel();
         }
 
-        if (modelDescriptor.getVersion() == usedVersion) return false;
+        if (usedModelDescriptor.getVersion() == usedVersion) return false;
       }
 
-      LOG.error("Model version mismatch for import " + modelDescriptor.getSModelFqName() + " in model " + getSModelFqName());
+      LOG.error("Model version mismatch for import " + usedModelDescriptor.getSModelFqName() + " in model " + getSModelFqName());
       LOG.error("Used version = " + usedVersion + ", current version = " + currentVersion);
-      mySModel.updateImportedModelUsedVersion(modelDescriptor.getSModelReference(), currentVersion);
-      SModelRepository.getInstance().markChanged(mySModel);
+      model.updateImportedModelUsedVersion(usedModelDescriptor.getSModelReference(), currentVersion);
+      SModelRepository.getInstance().markChanged(this, true);
       LOG.error("Mismatch fixed");
     }
 
@@ -348,7 +348,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
           if (needSave) {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
-                myDiskTimestamp = fileTimestamp();
+                updateDiskTimestamp();
                 save();
               }
             });
@@ -369,9 +369,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       return;
     }
     SModelRepository.getInstance().markUnchanged(mySModel);
-    myModelRootManager.saveModel(this);
+    SModel newData = myModelRootManager.saveModel(this, true);
+    if(newData != null) {
+      replaceModel(newData);
+    }
 
-    myDiskTimestamp = fileTimestamp();
+    updateDiskTimestamp();
 
     IFile modelFile = getModelFile();
     if (modelFile != null && !modelFile.isReadOnly()) {
@@ -401,14 +404,15 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     ModelAccess.assertLegalWrite();
     if (newModel == mySModel) return;
     final SModel oldSModel = mySModel;
-    if (isInitialized()) {
+    if (oldSModel != null) {
       oldSModel.setModelDescritor(null);
     }
     mySModel = newModel;
+    myRefactoringHistory = null;
     if (mySModel != null) {
-      mySModel.setModelDescritor(DefaultSModelDescriptor.this);
+      mySModel.setModelDescritor(this);
     }
-    SModelRepository.getInstance().markChanged(DefaultSModelDescriptor.this, true);
+    SModelRepository.getInstance().markChanged(this, true);
     MPSModuleRepository.getInstance().invalidateCaches();
     Runnable modelReplacedNotifier = new Runnable() {
       @Override
@@ -699,13 +703,20 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   /*package*/
-
   public void setModelFile(IFile file) {
     myModelFile = file;
   }
 
   @Override
   protected void updateDiskTimestamp() {
-    myDiskTimestamp = myModelFile.lastModified();
+    myDiskTimestamp = fileTimestamp();
+  }
+
+  private void updateLastChange() {
+    if (myModelFile != null) {
+      myLastChange = myModelFile.lastModified();
+    } else {
+      myLastChange = System.currentTimeMillis();
+    }
   }
 }

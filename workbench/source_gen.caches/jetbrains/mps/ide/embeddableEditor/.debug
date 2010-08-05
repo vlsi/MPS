@@ -37,12 +37,14 @@
     <nodeInfo nodeId="7469930712745424632" fileName="EmbeddableEditor.java" startLine="106" startPosition="38" endLine="107" endPosition="54" />
     <nodeInfo nodeId="3094411788089108008" fileName="EmbeddableEditor.java" startLine="110" startPosition="30" endLine="111" endPosition="44" />
     <nodeInfo nodeId="7865481948248727746" fileName="EmbeddableEditor.java" startLine="115" startPosition="29" endLine="116" endPosition="18" />
+    <nodeInfo nodeId="7865481948248722461" fileName="EmbeddableEditor.java" startLine="120" startPosition="61" endLine="121" endPosition="34" />
     <nodeInfo nodeId="7865481948248722473" fileName="EmbeddableEditor.java" startLine="125" startPosition="82" endLine="126" endPosition="75" />
     <nodeInfo nodeId="7865481948248722480" fileName="EmbeddableEditor.java" startLine="127" startPosition="57" endLine="128" endPosition="27" />
     <nodeInfo nodeId="7865481948248722488" fileName="EmbeddableEditor.java" startLine="129" startPosition="9" endLine="130" endPosition="22" />
     <nodeInfo nodeId="7865481948248727698" fileName="EmbeddableEditor.java" startLine="134" startPosition="48" endLine="135" endPosition="21" />
     <nodeInfo nodeId="7865481948248727707" fileName="EmbeddableEditor.java" startLine="137" startPosition="6" endLine="138" endPosition="168" />
     <nodeInfo nodeId="7865481948248727724" fileName="EmbeddableEditor.java" startLine="138" startPosition="168" endLine="139" endPosition="85" />
+    <nodeInfo nodeId="6483976992294521820" fileName="EmbeddableEditor.java" startLine="142" startPosition="38" endLine="143" endPosition="19" />
     <nodeInfo nodeId="1219418302105" fileName="EmbeddableEditor.java" startLine="148" startPosition="25" endLine="149" endPosition="106" />
     <nodeInfo nodeId="1227605624919" fileName="EmbeddableEditor.java" startLine="156" startPosition="25" endLine="157" endPosition="50" />
     <nodeInfo nodeId="8119021187637935511" fileName="EmbeddableEditor.java" startLine="164" startPosition="25" endLine="165" endPosition="52" />
@@ -303,7 +305,12 @@
     <nodeInfo nodeId="8916327863979127770" fileName="TemporaryModelOwner.java" startLine="17" startPosition="32" endLine="18" endPosition="106" />
     <nodeInfo nodeId="3939031372534978357" fileName="TemporaryModelOwner.java" startLine="20" startPosition="25" endLine="21" endPosition="103" />
     <nodeInfo nodeId="3939031372534978404" fileName="TemporaryModelOwner.java" startLine="28" startPosition="25" endLine="29" endPosition="81" />
+    <nodeInfo nodeId="3939031372534978398" fileName="TemporaryModelOwner.java" startLine="37" startPosition="47" endLine="38" endPosition="16" />
+    <nodeInfo nodeId="3939031372534978400" fileName="TemporaryModelOwner.java" startLine="41" startPosition="42" endLine="42" endPosition="16" />
     <nodeInfo nodeId="3939031372534978413" fileName="TemporaryModelOwner.java" startLine="45" startPosition="75" endLine="46" endPosition="46" />
+    <nodeInfo nodeId="3939031372534978402" fileName="TemporaryModelOwner.java" startLine="49" startPosition="49" endLine="50" endPosition="16" />
+    <nodeInfo nodeId="3939031372534978958" fileName="TemporaryModelOwner.java" startLine="55" startPosition="28" endLine="56" endPosition="37" />
+    <nodeInfo nodeId="8916327863979041169" fileName="TemporaryModelOwner.java" startLine="60" startPosition="35" endLine="61" endPosition="35" />
     <nodeInfo nodeId="3939031372534978374" fileName="TemporaryModelOwner.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
     <nodeInfo nodeId="4027972386116228903" fileName="TemporaryModelOwner.java" startLine="19" startPosition="58" endLine="23" endPosition="0" />
     <nodeInfo nodeId="4027972386116228907" fileName="TemporaryModelOwner.java" startLine="27" startPosition="58" endLine="31" endPosition="0" />

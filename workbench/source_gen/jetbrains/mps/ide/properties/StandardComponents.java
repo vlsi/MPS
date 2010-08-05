@@ -80,7 +80,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.actions.RefactoringPanel;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
@@ -430,12 +429,10 @@ public class StandardComponents {
     final Wrappers._T<RefactoringPanel> refactoringPanel = new Wrappers._T<RefactoringPanel>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        final SModel model = modelDescriptor.getSModel();
-        if (model != null) {
-          if (!(model.getRefactoringHistory().getRefactoringContexts().isEmpty())) {
-            refactoringPanel.value = new RefactoringPanel(model, RefactoringUtil.getAllRefactoringNodes(), context);
-          }
+        if (!(modelDescriptor.getRefactoringHistory().getRefactoringContexts().isEmpty())) {
+          refactoringPanel.value = new RefactoringPanel(modelDescriptor, RefactoringUtil.getAllRefactoringNodes(), context);
         }
+
       }
     });
     if (refactoringPanel.value == null) {

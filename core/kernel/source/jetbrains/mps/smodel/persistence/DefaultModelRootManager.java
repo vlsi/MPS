@@ -19,10 +19,12 @@ import com.intellij.openapi.fileTypes.FileTypeManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
+import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;
@@ -79,19 +81,22 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       boolean needToSave = false;
       if (model.getSModelReference().getSModelId() == null) {
         model.changeModelReference(modelDescriptor.getSModelReference());
+        // FIXME update on save?
         needToSave = true;
       }
 
       if (model.updateSModelReferences()) {
+        // FIXME update on save?
         needToSave = true;
       }
 
       if (model.updateModuleReferences()) {
+        // FIXME update on save?
         needToSave = true;
       }
 
       if (needToSave && !modelDescriptor.getModelFile().isReadOnly()) {
-        ModelPersistence.saveModel(model, modelDescriptor.getModelFile(), false);
+        ModelPersistence.saveModel(model, modelDescriptor.getModelFile(), false, false);
       }
     } finally {
       model.setLoading(false);
@@ -104,6 +109,27 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
         "the model will not be available.\n" +
         "Make sure that all project's roots and/or the model namespace is correct");
     return model;
+  }
+
+  @Override
+  public void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull RefactoringHistory history) {
+    int persistence = modelDescriptor.getPersistenceVersion();
+    if(persistence >= 5) {
+      RefactoringsPersistence.save(modelDescriptor.getModelFile(), history);
+    }
+  }
+
+  @Override
+  public RefactoringHistory loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor) {
+    RefactoringHistory refactorings = RefactoringsPersistence.load(modelDescriptor.getModelFile());
+    if(refactorings != null) {
+      return refactorings;
+    }
+    
+    if(modelDescriptor.getPersistenceVersion() < 5) {
+      return RefactoringsPersistence.loadFromModel(modelDescriptor.getModelFile());
+    }
+    return null;
   }
 
   private SModel handleExceptionDuringModelRead(SModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
@@ -150,9 +176,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   public boolean isEmpty(SModelDescriptor modelDescriptor) {
-    if (modelDescriptor.isInitialized()) {
-      return modelDescriptor.getSModel().getRoots().isEmpty();
-    }
     IFile modelFile = modelDescriptor.getModelFile();
     if (modelFile == null || !modelFile.exists()) {
       return true;
@@ -185,17 +208,20 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     return containsSomeString(modelDescriptor, CollectionUtil.set(string));
   }
 
-
-  public void saveModel(@NotNull SModelDescriptor modelDescriptor) {
+  /**
+   *  returns upgraded model, or null
+   */
+  public SModel saveModel(@NotNull SModelDescriptor modelDescriptor, boolean canUpgrade) {
     SModel smodel = modelDescriptor.getSModel();
     if (smodel instanceof StubModel) {
       // we do not save stub model to do not owerwrite the real model
-      return;
+      return null;
     }
     IFile modelFile = modelDescriptor.getModelFile();
     if (modelFile != null) {
-      ModelPersistence.saveModel(smodel, modelFile);
+      return ModelPersistence.saveModel(smodel, modelFile, true, true);
     }
+    return null;
   }
 
   private void readModelDescriptors(IFile dir, SModelRoot modelRoot, ModelOwner owner) {

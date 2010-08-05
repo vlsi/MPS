@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.vfs.IFile;
@@ -37,6 +38,11 @@ public interface SModelDescriptor {
    * After model loading call SModelRepostiory.fireModelRepositoryChanged
    */
   SModel getSModel();
+
+  @NotNull
+  RefactoringHistory getRefactoringHistory();
+
+  int getPersistenceVersion();
 
   SModelReference getSModelReference();
 
@@ -68,6 +74,8 @@ public interface SModelDescriptor {
   SModelCommandListener[] getModelCommandListeners();
 
   void save();
+
+  void saveRefactoringHistory();
 
   boolean needsReloading();
 
@@ -150,8 +158,6 @@ public interface SModelDescriptor {
   Set<IModule> getModules();
 
   List<String> validate(IScope scope);
-
-  boolean isValid(IScope scope);
 
   void rename(SModelFqName newModelFqName, boolean changeFile);
 

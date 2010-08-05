@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.persistence;
 import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -37,7 +38,7 @@ public interface IModelRootManager {
   @NotNull
   SModel loadModel(@NotNull SModelDescriptor modelDescriptor);
 
-  void saveModel(@NotNull SModelDescriptor modelDescriptor);
+  SModel saveModel(@NotNull SModelDescriptor modelDescriptor, boolean canUpgrade);
 
   @Nullable
   SModel refresh(@NotNull SModelDescriptor modelDescriptor);
@@ -46,6 +47,10 @@ public interface IModelRootManager {
   Map<String, String> loadMetadata(@NotNull SModelDescriptor modelDescriptor);
 
   void saveMetadata(@NotNull SModelDescriptor modelDescriptor);
+
+  RefactoringHistory loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor);
+
+  void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull RefactoringHistory history);
 
   boolean isFindUsagesSupported();
 

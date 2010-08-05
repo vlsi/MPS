@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -29,9 +30,10 @@ import java.util.Set;
 public abstract class AbstractModelRootManager implements IModelRootManager {
   @Nullable
   public SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
-    modelDescriptor.getSModel().clearAdaptersAndUserObjects();
-    modelDescriptor.getSModel().refreshRefactoringHistory();
-    return modelDescriptor.getSModel();
+    SModel model = modelDescriptor.getSModel();
+    model.clearAdaptersAndUserObjects();
+    model.refreshRefactoringHistory();
+    return model;
   }
 
   public boolean isFindUsagesSupported() {
@@ -79,6 +81,16 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   }
 
   public void saveMetadata(@NotNull SModelDescriptor modelDescriptor) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public RefactoringHistory loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor) {
+    return null;
+  }
+
+  @Override
+  public void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull RefactoringHistory history) {
     throw new UnsupportedOperationException();
   }
 

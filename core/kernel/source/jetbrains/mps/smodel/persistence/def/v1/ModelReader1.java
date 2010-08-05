@@ -61,6 +61,11 @@ public class ModelReader1 implements IModelReader {
     return false;
   }
 
+  @Override
+  public int getVersion() {
+    return 1;
+  }
+
   public SModel readModel(Document document, String modelShortName, String stereotype) {
     Element rootElement = document.getRootElement();
     String modelLongName = rootElement.getAttributeValue(ModelPersistence.NAME);
@@ -74,6 +79,7 @@ public class ModelReader1 implements IModelReader {
 
     SModelReference modelReference = new SModelReference(modelLongName, upgradeStereotype(stereotype));
     SModel model = new SModel(modelReference);
+    model.setPersistenceVersion(getVersion());
 
     model.setLoading(true);
     try {
