@@ -1,19 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4822352154126340371">
-    <nodeInfo nodeId="4822352154126340381" fileName="Ftest.java" startLine="10" startPosition="19" endLine="11" endPosition="18" />
-    <nodeInfo nodeId="4822352154126340396" fileName="Ftest.java" startLine="12" startPosition="20" endLine="13" endPosition="13" />
-    <nodeInfo nodeId="4822352154126340398" fileName="Ftest.java" startLine="14" startPosition="5" endLine="15" endPosition="21" />
-    <nodeInfo nodeId="4822352154126340373" fileName="Ftest.java" startLine="6" startPosition="20" endLine="8" endPosition="3" />
-    <nodeInfo nodeId="4822352154126340387" fileName="Ftest.java" startLine="11" startPosition="18" endLine="14" endPosition="5" />
-    <nodeInfo nodeId="4822352154126340377" fileName="Ftest.java" startLine="9" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="4822352154126340376" fileName="Ftest.java" startLine="7" startPosition="18" endLine="7" endPosition="18" />
-    <scopeInfo nodeId="4822352154126340388" fileName="Ftest.java" startLine="12" startPosition="20" endLine="13" endPosition="13" />
-    <scopeInfo nodeId="4822352154126340373" fileName="Ftest.java" startLine="6" startPosition="20" endLine="8" endPosition="3" />
-    <scopeInfo nodeId="4822352154126340380" fileName="Ftest.java" startLine="10" startPosition="19" endLine="15" endPosition="21">
-      <varInfo nodeId="4822352154126340382" varName="s" />
+  <root nodeId="2070242577007476187">
+    <nodeInfo nodeId="2680657297511377902" fileName="OverTest.java" startLine="13" startPosition="20" endLine="14" endPosition="13" />
+    <nodeInfo nodeId="5551408539114585428" fileName="OverTest.java" startLine="16" startPosition="39" endLine="17" endPosition="17" />
+    <nodeInfo nodeId="2070242577007476189" fileName="OverTest.java" startLine="6" startPosition="37" endLine="8" endPosition="3" />
+    <nodeInfo nodeId="2680657297511377894" fileName="OverTest.java" startLine="9" startPosition="0" endLine="12" endPosition="0" />
+    <nodeInfo nodeId="5551408539114585409" fileName="OverTest.java" startLine="15" startPosition="22" endLine="19" endPosition="0" />
+    <nodeInfo nodeId="5551408539114585403" fileName="OverTest.java" startLine="14" startPosition="13" endLine="19" endPosition="6" />
+    <nodeInfo nodeId="2680657297511377898" fileName="OverTest.java" startLine="12" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="2070242577007476192" fileName="OverTest.java" startLine="7" startPosition="21" endLine="7" endPosition="21" />
+    <scopeInfo nodeId="2680657297511377897" fileName="OverTest.java" startLine="10" startPosition="19" endLine="10" endPosition="19" />
+    <scopeInfo nodeId="5551408539114585414" fileName="OverTest.java" startLine="16" startPosition="39" endLine="17" endPosition="17" />
+    <scopeInfo nodeId="2070242577007476189" fileName="OverTest.java" startLine="6" startPosition="37" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="2680657297511377894" fileName="OverTest.java" startLine="9" startPosition="0" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="5551408539114585409" fileName="OverTest.java" startLine="15" startPosition="22" endLine="19" endPosition="0">
+      <varInfo nodeId="5551408539114585412" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="4822352154126340377" fileName="Ftest.java" startLine="9" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="2680657297511377901" fileName="OverTest.java" startLine="13" startPosition="20" endLine="19" endPosition="6" />
+    <scopeInfo nodeId="2680657297511377898" fileName="OverTest.java" startLine="12" startPosition="0" endLine="21" endPosition="0" />
+    <unitInfo nodeId="5551408539114585407" fileName="OverTest.java" startLine="15" startPosition="8" endLine="19" endPosition="5" unitName="jetbrains.mps.analyzers.test.test.OverTest$1" />
+    <unitInfo nodeId="2070242577007476187" fileName="OverTest.java" startLine="6" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.analyzers.test.test.OverTest" />
+  </root>
+  <root nodeId="4822352154126340371">
+    <nodeInfo nodeId="4113754758724669955" fileName="Ftest.java" startLine="10" startPosition="19" endLine="11" endPosition="18" />
+    <nodeInfo nodeId="4113754758724673004" fileName="Ftest.java" startLine="12" startPosition="20" endLine="13" endPosition="20" />
+    <nodeInfo nodeId="4113754758724669979" fileName="Ftest.java" startLine="13" startPosition="20" endLine="14" endPosition="22" />
+    <nodeInfo nodeId="4822352154126340373" fileName="Ftest.java" startLine="6" startPosition="20" endLine="8" endPosition="3" />
+    <nodeInfo nodeId="4113754758724669961" fileName="Ftest.java" startLine="11" startPosition="18" endLine="15" endPosition="5" />
+    <nodeInfo nodeId="4113754758724669951" fileName="Ftest.java" startLine="9" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="4822352154126340376" fileName="Ftest.java" startLine="7" startPosition="18" endLine="7" endPosition="18" />
+    <scopeInfo nodeId="4822352154126340373" fileName="Ftest.java" startLine="6" startPosition="20" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="4113754758724669962" fileName="Ftest.java" startLine="12" startPosition="20" endLine="14" endPosition="22">
+      <varInfo nodeId="4113754758724673005" varName="s2" />
+    </scopeInfo>
+    <scopeInfo nodeId="4113754758724669954" fileName="Ftest.java" startLine="10" startPosition="19" endLine="15" endPosition="5">
+      <varInfo nodeId="4113754758724669956" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="4113754758724669951" fileName="Ftest.java" startLine="9" startPosition="0" endLine="17" endPosition="0" />
     <unitInfo nodeId="4822352154126340371" fileName="Ftest.java" startLine="6" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.analyzers.test.test.Ftest" />
   </root>
 </debugInfo>

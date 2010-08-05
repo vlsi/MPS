@@ -12,12 +12,6 @@ public enum NullableState {
   }
 
   public NullableState merge(NullableState state) {
-    if (this.equals(NullableState.UNKNOWN)) {
-      return state;
-    }
-    if (state.equals(NullableState.UNKNOWN)) {
-      return this;
-    }
     if (this.equals(state)) {
       return this;
     }

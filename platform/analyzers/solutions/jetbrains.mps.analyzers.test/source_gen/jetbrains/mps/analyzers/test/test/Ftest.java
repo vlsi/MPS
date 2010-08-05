@@ -7,11 +7,11 @@ public class Ftest {
   public Ftest() {
   }
 
-  public void f() {
+  public void t() {
     String s = "";
-    if (s == null) {
-      return;
+    if (s != null) {
+      String s2 = s;
+      s2.compareTo(s);
     }
-    s.compareTo("s");
   }
 }

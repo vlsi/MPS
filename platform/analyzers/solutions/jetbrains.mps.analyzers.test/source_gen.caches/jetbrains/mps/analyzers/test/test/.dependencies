@@ -3,5 +3,10 @@
   <dependency className="jetbrains.mps.analyzers.test.test.Ftest" file="Ftest.java">
     <classNode dependClassName="java.lang.String" />
   </dependency>
+  <dependency className="jetbrains.mps.analyzers.test.test.OverTest" file="OverTest.java">
+    <classNode dependClassName="java.lang.Comparable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode extendsClassName="jetbrains.mps.analyzers.test.test.Ftest" />
+  </dependency>
 </dependenciesRoot>
 

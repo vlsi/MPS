@@ -4,10 +4,10 @@ package jetbrains.mps.analyzers.mpsAnalyzers.nullable;
 
 import jetbrains.mps.lang.dataFlow.framework.AnalyzerRunner;
 import java.util.Map;
+import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SNode;
 import java.util.LinkedList;
 import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
@@ -16,9 +16,12 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 
-public class NullableAnalyzerRunner extends AnalyzerRunner<Map<Object, NullableState>> {
+public class NullableAnalyzerRunner extends AnalyzerRunner<Map<SNode, NullableState>> {
   private Map<String, List<DataFlowConstructor>> myApplicableMap = new HashMap<String, List<DataFlowConstructor>>();
   private SNode myNode;
 
@@ -83,43 +86,61 @@ public class NullableAnalyzerRunner extends AnalyzerRunner<Map<Object, NullableS
     }
   }
 
-  public static class NullableAnalyzer implements DataFlowAnalyzer<Map<Object, NullableState>> {
+  public static class NullableAnalyzer implements DataFlowAnalyzer<Map<SNode, NullableState>> {
     public NullableAnalyzer() {
     }
 
-    public Map<Object, NullableState> initial(Program program) {
-      Map<Object, NullableState> result = new HashMap<Object, NullableState>();
-      for (Object var : program.getVariables()) {
-        result.put(var, NullableState.UNKNOWN);
-      }
+    public Map<SNode, NullableState> initial(Program program) {
+      Map<SNode, NullableState> result = new HashMap<SNode, NullableState>();
       return result;
     }
 
-    public Map<Object, NullableState> merge(Program program, List<Map<Object, NullableState>> input) {
-      Map<Object, NullableState> result = new HashMap<Object, NullableState>();
-      for (Object var : program.getVariables()) {
-        result.put(var, NullableState.UNKNOWN);
-      }
-      ListSequence.fromList(input).addElement(null);
-      for (Object var : ListSequence.fromList(program.getVariables())) {
-        for (Map<Object, NullableState> value : ListSequence.fromList(input)) {
-          result.put(var, result.get(var).merge(value.get(var)));
+    public Map<SNode, NullableState> merge(Program program, List<Map<SNode, NullableState>> input) {
+      Map<SNode, NullableState> result = new HashMap<SNode, NullableState>();
+
+      for (Map<SNode, NullableState> inputElement : ListSequence.fromList(input)) {
+        for (Map.Entry<SNode, NullableState> entry : inputElement.entrySet()) {
+          SNode expr = entry.getKey();
+          NullableState value = entry.getValue();
+          NullableState resValue = result.get(expr);
+          if (resValue == null) {
+            resValue = NullableState.UNKNOWN;
+          }
+          result.put(expr, resValue.merge(value));
         }
       }
       return result;
     }
 
-    public Map<Object, NullableState> fun(Map<Object, NullableState> input, ProgramState state) {
-      Map<Object, NullableState> result = new HashMap<Object, NullableState>();
+    public Map<SNode, NullableState> fun(Map<SNode, NullableState> input, ProgramState state) {
+      Map<SNode, NullableState> result = new HashMap<SNode, NullableState>();
       Instruction instruction = state.getInstruction();
       result.putAll(input);
+      NullableState nullableState = NullableState.UNKNOWN;
+      SNode node = (SNode) instruction.getUserObject("expression");
       if (instruction instanceof notNullInstruction) {
-        Object node = instruction.getUserObject("node");
-        result.put(node, NullableState.NOTNULL);
+        nullableState = NullableState.NOTNULL;
       }
       if (instruction instanceof nullableInstruction) {
-        Object node = instruction.getUserObject("node");
-        result.put(node, NullableState.NULLABLE);
+        nullableState = NullableState.NULLABLE;
+      }
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
+        node = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
+      }
+      if (node != null) {
+        result.put((SNode) node, nullableState);
+      }
+      if (instruction instanceof WriteInstruction) {
+        WriteInstruction write = (WriteInstruction) instruction;
+        SNode value = (SNode) write.getValue();
+        if (SNodeOperations.isInstanceOf(value, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
+          value = SLinkOperations.getTarget(SNodeOperations.cast(value, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
+        }
+        NullableState valueState = result.get(value);
+        if (valueState == null) {
+          valueState = NullableState.UNKNOWN;
+        }
+        result.put((SNode) write.getVariable(), valueState);
       }
       return result;
     }

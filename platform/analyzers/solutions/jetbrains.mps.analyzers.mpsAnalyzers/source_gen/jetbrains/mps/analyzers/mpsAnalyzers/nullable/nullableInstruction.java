@@ -6,15 +6,15 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.smodel.SNode;
 
 public class nullableInstruction extends Instruction {
-  private SNode mynode;
+  private SNode myexpression;
   private String myPresentation;
 
-  public nullableInstruction(SNode node) {
+  public nullableInstruction(SNode expression) {
     StringBuilder sb = new StringBuilder();
     sb.append("nullable");
-    mynode = node;
-    putUserObject("node", node);
-    sb.append(" " + node);
+    myexpression = expression;
+    putUserObject("expression", expression);
+    sb.append(" " + expression);
     myPresentation = sb.toString();
   }
 
@@ -23,7 +23,7 @@ public class nullableInstruction extends Instruction {
     return myPresentation;
   }
 
-  public SNode getnode() {
-    return mynode;
+  public SNode getexpression() {
+    return myexpression;
   }
 }
