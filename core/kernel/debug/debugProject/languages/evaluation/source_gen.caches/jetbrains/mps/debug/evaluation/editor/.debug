@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="6036237525966195843">
+    <nodeInfo nodeId="6146091894852357918" fileName="LowLevelVariable_Editor.java" startLine="100" startPosition="111" endLine="101" endPosition="64" />
+    <scopeInfo nodeId="6146091894852357917" fileName="LowLevelVariable_Editor.java" startLine="100" startPosition="111" endLine="101" endPosition="64" />
+  </root>
+  <root nodeId="6036237525966243740">
+    <nodeInfo nodeId="6036237525966315617" fileName="EvaluatorConcept_Editor.java" startLine="156" startPosition="111" endLine="157" endPosition="64" />
+    <scopeInfo nodeId="6036237525966243757" fileName="EvaluatorConcept_Editor.java" startLine="156" startPosition="111" endLine="157" endPosition="64" />
+  </root>
+  <root nodeId="6036237525966316033">
+    <nodeInfo nodeId="6036237525966317650" fileName="EvaluatorsSuperMethodCall_Editor.java" startLine="134" startPosition="82" endLine="135" endPosition="19" />
+    <nodeInfo nodeId="6036237525966317657" fileName="EvaluatorsSuperMethodCall_Editor.java" startLine="136" startPosition="5" endLine="137" endPosition="155" />
+    <nodeInfo nodeId="6036237525966317648" fileName="EvaluatorsSuperMethodCall_Editor.java" startLine="133" startPosition="111" endLine="136" endPosition="5" />
+    <scopeInfo nodeId="6036237525966317649" fileName="EvaluatorsSuperMethodCall_Editor.java" startLine="134" startPosition="82" endLine="135" endPosition="19" />
+    <scopeInfo nodeId="6036237525966317647" fileName="EvaluatorsSuperMethodCall_Editor.java" startLine="133" startPosition="111" endLine="137" endPosition="155" />
+  </root>
+  <root nodeId="8865717792178019930">
+    <nodeInfo nodeId="8865717792178033701" fileName="LowLevelVariableReference_Editor.java" startLine="99" startPosition="65" endLine="100" endPosition="25" />
+    <nodeInfo nodeId="8865717792178033707" fileName="LowLevelVariableReference_Editor.java" startLine="101" startPosition="14" endLine="102" endPosition="27" />
+    <nodeInfo nodeId="8865717792178033705" fileName="LowLevelVariableReference_Editor.java" startLine="101" startPosition="12" endLine="103" endPosition="7" />
+    <nodeInfo nodeId="8865717792178033692" fileName="LowLevelVariableReference_Editor.java" startLine="98" startPosition="111" endLine="103" endPosition="7" />
+    <scopeInfo nodeId="8865717792178033694" fileName="LowLevelVariableReference_Editor.java" startLine="99" startPosition="65" endLine="100" endPosition="25" />
+    <scopeInfo nodeId="8865717792178033706" fileName="LowLevelVariableReference_Editor.java" startLine="101" startPosition="14" endLine="102" endPosition="27" />
+    <scopeInfo nodeId="8865717792178019938" fileName="LowLevelVariableReference_Editor.java" startLine="98" startPosition="111" endLine="103" endPosition="7" />
+  </root>
+</debugInfo>
+
