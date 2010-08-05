@@ -61,6 +61,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StringLiteral" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StubStatementList" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Type" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.TypeVariableReference" />
@@ -74,7 +75,6 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
     <classNode dependClassName="jetbrains.mps.smodel.BaseAdapter" />
-    <classNode dependClassName="jetbrains.mps.smodel.INodeAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
