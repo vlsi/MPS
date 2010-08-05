@@ -10,6 +10,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -632,6 +633,29 @@
         </node>
       </node>
     </node>
+    <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="2932187755699712805">
+      <property name="name:4" value="instanceof" />
+      <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2932187755699712806" />
+      <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2932187755699712807">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2932187755699712808">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2932187755699712810">
+            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
+            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="2932187755699712811">
+              <link role="declaration:4" targetNodeId="2932187755699710928" resolveInfo="instanceofInterface" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.lang.test.structure.AssertMatch:4" id="2932187755699712813">
+          <node role="after:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="2932187755699712817">
+            <link role="declaration:4" targetNodeId="2932187755699710929" resolveInfo="instanceofInterfaceResult" />
+          </node>
+          <node role="before:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="2932187755699712814">
+            <link role="declaration:4" targetNodeId="2932187755699710928" resolveInfo="instanceofInterface" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="5543996881668550169">
       <node role="nodeToCheck:4" type="jetbrains.mps.debug.evaluation.structure.EvaluatorConcept" id="5543996881668550170">
         <node role="variables" type="jetbrains.mps.debug.evaluation.structure.LowLevelVariable" id="5543996881668550171">
@@ -737,6 +761,9 @@
           <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5543996881668550214" />
           <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5543996881668550215" />
           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5543996881668550216" />
+        </node>
+        <node role="implementedInterface:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3385357251123759614">
+          <link role="classifier:3" targetNodeId="2.~Cloneable" resolveInfo="Cloneable" />
         </node>
       </node>
     </node>
@@ -1170,6 +1197,60 @@
         </node>
         <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation:4" id="607759879653680053">
           <property name="name:4" value="arrayLengthOperationResult" />
+        </node>
+      </node>
+    </node>
+    <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="2932187755699706728">
+      <node role="nodeToCheck:4" type="jetbrains.mps.debug.evaluation.structure.EvaluatorConcept" id="2932187755699706729">
+        <node role="thisType" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2932187755699707953">
+          <link role="classifier:3" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+        </node>
+        <node role="evaluatedStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="2932187755699707954">
+          <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2932187755699707955">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2932187755699707956">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="2932187755699707959">
+                <node role="classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2932187755699707962">
+                  <link role="classifier:3" targetNodeId="2.~Cloneable" resolveInfo="Cloneable" />
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression" id="2932187755699710924" />
+              </node>
+            </node>
+          </node>
+          <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation:4" id="2932187755699710928">
+            <property name="name:4" value="instanceof" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="2932187755699710925">
+      <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="2932187755699710926">
+        <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2932187755699710927">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2932187755699710930">
+            <node role="expression:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall:1" id="2932187755699712787">
+              <property name="methodName:1" value="isInstanceOf" />
+              <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="2932187755699712789" />
+              <node role="instance:1" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="2932187755699712790">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="2932187755699712792">
+                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2932187755699712794">
+                    <link role="classifier:3" targetNodeId="1.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                  </node>
+                  <node role="expression:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall:1" id="2932187755699712795">
+                    <property name="methodName:1" value="getThisObject" />
+                    <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2932187755699712796">
+                      <link role="classifier:3" targetNodeId="1.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                    </node>
+                    <node role="instance:1" type="jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression:1" id="2932187755699712797" />
+                  </node>
+                </node>
+              </node>
+              <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2932187755699712798">
+                <property name="value:3" value="Ljava/lang/Cloneable;" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation:4" id="2932187755699710929">
+          <property name="name:4" value="instanceofResult" />
         </node>
       </node>
     </node>
