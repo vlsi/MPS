@@ -1,5 +1,5 @@
 <project name="mps.tests" default="all">
-  <property name="mps.home" value="${ant.file}/../../../.."/>
+  <property name="mps.home" value="${ant.file.mps.tests}/../../../.."/>
   <import file="${mps.home}/platform/gwtsupport/solutions/gwtsupport.buildtest/build.xml"/>
 
   <taskdef resource="jetbrains/mps/build/ant/antlib.xml"
