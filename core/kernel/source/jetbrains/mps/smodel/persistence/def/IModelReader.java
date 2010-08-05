@@ -27,6 +27,8 @@ import org.jdom.Element;
  * Oct 9, 2007
  */
 public interface IModelReader {
+  int getVersion();
+
   SModel readModel(Document document, String modelShortName, String stereotype);
 
   SNode readNode(Element nodeElement, SModel model);

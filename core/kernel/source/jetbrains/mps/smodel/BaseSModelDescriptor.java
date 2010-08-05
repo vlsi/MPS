@@ -136,6 +136,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public boolean isEmpty() {
+    if (isInitialized()) {
+      return getSModel().getRoots().isEmpty();
+    }
+
     return myModelRootManager.isEmpty(this);
   }
 
@@ -147,10 +151,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
       message += "another model's file = " + anotherModel.getModelFile();
       LOG.error(message);
     }
-  }
-
-  public boolean isValid(IScope scope) {
-    return validate(scope).isEmpty();
   }
 
   public List<String> validate(IScope scope) {

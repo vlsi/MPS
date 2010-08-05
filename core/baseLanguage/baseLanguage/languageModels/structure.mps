@@ -3740,5 +3740,12 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5293379017992965193">
+    <property name="name:0" value="StubStatementList" />
+    <link role="extends:0" targetNodeId="1068580123136:3" resolveInfo="StatementList" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="5293379017992965196">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
 </model>
 

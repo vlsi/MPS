@@ -48,7 +48,8 @@ public class TypeChecker implements ApplicationComponent {
   private static final String RUNTIME_TYPES = "$runtimeTypes$";
   private static final String TYPES_MODEL_NAME = "typesModel";
   private static final SModelFqName TYPES_MODEL_UID = new SModelFqName(TYPES_MODEL_NAME, RUNTIME_TYPES);
-  private static final ModelOwner RUNTIME_TYPES_MODEL_OWNER = new ModelOwner() {};
+  private static final ModelOwner RUNTIME_TYPES_MODEL_OWNER = new ModelOwner() {
+  };
 
   public final Object TYPECHECKING_LOCK = new Object();
   public final Object LISTENERS_LOCK = new Object();
@@ -233,7 +234,7 @@ public class TypeChecker implements ApplicationComponent {
       return (SNode) o;
     }
     if (o instanceof BaseAdapter) {
-      return ((BaseAdapter)o).getNode();
+      return ((BaseAdapter) o).getNode();
     }
     return null;
   }
@@ -279,15 +280,15 @@ public class TypeChecker implements ApplicationComponent {
     if (isGenerationMode() || isTransformationTestMode()) {
       if (myPerformanceTracer == null) {
         context = NodeTypesComponentsRepository.getInstance().createIsolatedTypeCheckingContext(node);
-      } else {
+    } else {
         context = NodeTypesComponentsRepository.getInstance().createTracingTypeCheckingContext(node);
       }
     } else {
       context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node);
     }
     if (context == null) return null;
-    return context.getTypeOf(node, this);
-  }
+      return context.getTypeOf(node, this);
+    }
 
   public boolean checkIfNotChecked(SNode node) {
     return checkIfNotChecked(node, true);

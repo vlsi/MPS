@@ -32,7 +32,7 @@ public class MergeTestUtil {
   }
 
   public static void saveTestModel(final SModel model, final File file) {
-    ModelPersistence.saveModel(model, FileSystem.getFile(file));
+    ModelPersistence.saveModel(model, FileSystem.getFile(file), true, false);
   }
 
   public static enum TestVersion implements Version {

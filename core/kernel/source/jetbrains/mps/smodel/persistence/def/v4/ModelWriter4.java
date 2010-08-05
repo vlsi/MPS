@@ -47,8 +47,7 @@ public class ModelWriter4 implements IModelWriter {
       sourceModel.validateLanguagesAndImports();
     }
 
-    RefactoringHistory history = sourceModel.getRefactoringHistory();
-    rootElement.addContent(history.toElement());
+    saveRefactorings(rootElement, sourceModel);
 
     // languages
     Set<String> writtenAspects = new HashSet<String>();
@@ -111,6 +110,12 @@ public class ModelWriter4 implements IModelWriter {
     Document document = new Document();
     document.setRootElement(rootElement);
     return document;
+  }
+
+  protected void saveRefactorings(Element rootElement, SModel sourceModel) {
+    //noinspection deprecation
+    RefactoringHistory history = sourceModel.getRefactoringHistory();
+    rootElement.addContent(history.toElement());
   }
 
   private void writeAspect(SModel sourceModel, Element parent, SModelReference aspectReference) {

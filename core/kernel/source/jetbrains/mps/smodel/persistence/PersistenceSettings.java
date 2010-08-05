@@ -49,8 +49,10 @@ import org.jetbrains.annotations.NonNls;
     )}
 )
 public class PersistenceSettings implements SearchableConfigurable, PersistentStateComponent<MyState> {
+  public static final int VERSION_UNDEFINED = -1;
   public static final int MIN_VERSION = 3;
-  public static final int MAX_VERSION = 4;
+  public static final int MAX_VERSION = 5;
+  public static final int VERSION_UPDATE_TO_THE_LATEST = 9999;
 
 
   private MyPreferencesPage myPreferencesPage;
@@ -74,7 +76,7 @@ public class PersistenceSettings implements SearchableConfigurable, PersistentSt
   }
 
   public boolean isUserPersistenceVersionDefined() {
-    return myUserPersistenceVersion != -1;
+    return myUserPersistenceVersion != VERSION_UNDEFINED;
   }
 
   public void setMaxPersistenceVersion() {
@@ -133,7 +135,7 @@ public class PersistenceSettings implements SearchableConfigurable, PersistentSt
   }
 
   public class MyPreferencesPage extends JPanel {
-    private JRadioButton[] myRadioButtons = new JRadioButton[(MAX_VERSION - MIN_VERSION) + 1];
+    private JRadioButton[] myRadioButtons = new JRadioButton[(MAX_VERSION - MIN_VERSION) + 1 + 2];
     private ButtonGroup myButtonGroup;
 
     public MyPreferencesPage() {
@@ -142,11 +144,18 @@ public class PersistenceSettings implements SearchableConfigurable, PersistentSt
 
     public void init() {
       myButtonGroup = new ButtonGroup();
+      JRadioButton radioButton = new JRadioButton("Do not affect existing models");
+      myRadioButtons[0] = radioButton;
+      myButtonGroup.add(radioButton);
+
       for (int i = MIN_VERSION; i <= MAX_VERSION; i++) {
-        JRadioButton radioButton = new JRadioButton("Persistence version " + i);
-        myRadioButtons[i - MIN_VERSION] = radioButton;
+        radioButton = new JRadioButton("Persistence version " + i);
+        myRadioButtons[i - MIN_VERSION + 1] = radioButton;
         myButtonGroup.add(radioButton);
       }
+      radioButton = new JRadioButton("Always update to the latest version");
+      myRadioButtons[myRadioButtons.length-1] = radioButton;
+      myButtonGroup.add(radioButton);
       reset();
 
       this.setLayout(new GridBagLayout());
@@ -156,8 +165,8 @@ public class PersistenceSettings implements SearchableConfigurable, PersistentSt
       constraints.gridx = 0;
       constraints.gridy = 0;
       constraints.anchor = GridBagConstraints.WEST;
-      for (int i = MIN_VERSION; i<= MAX_VERSION; i++) {
-        this.add(myRadioButtons[i - MIN_VERSION], constraints);
+      for (int i = 0; i < myRadioButtons.length; i++) {
+        this.add(myRadioButtons[i], constraints);
         constraints.gridy++;
       }
       constraints.weighty = 1;
@@ -165,31 +174,42 @@ public class PersistenceSettings implements SearchableConfigurable, PersistentSt
     }
 
     public void commit() {
-      boolean somethingSelected = false;
       for (int i = MIN_VERSION; i <= MAX_VERSION; i++) {
-        if (myRadioButtons[i - MIN_VERSION].isSelected()) {
+        if (myRadioButtons[i - MIN_VERSION + 1].isSelected()) {
           myUserPersistenceVersion = i;
           return;
         }
       }
-      myUserPersistenceVersion = -1;
+      if(myRadioButtons[myRadioButtons.length-1].isSelected()) {
+        myUserPersistenceVersion = VERSION_UPDATE_TO_THE_LATEST;
+      } else {
+        myUserPersistenceVersion = VERSION_UNDEFINED;
+      }
     }
 
     public void reset() {
+      myRadioButtons[0].setSelected(myUserPersistenceVersion == VERSION_UNDEFINED);
       for (int i = MIN_VERSION; i <= MAX_VERSION; i++) {
-        JRadioButton radioButton = myRadioButtons[i - MIN_VERSION];
+        JRadioButton radioButton = myRadioButtons[i - MIN_VERSION + 1];
         radioButton.setSelected(myUserPersistenceVersion == i);
       }
+      myRadioButtons[myRadioButtons.length-1].setSelected(myUserPersistenceVersion == VERSION_UPDATE_TO_THE_LATEST);
     }
 
     public boolean isModified() {
       for (int i = MIN_VERSION; i <= MAX_VERSION; i++) {
-        JRadioButton radioButton = myRadioButtons[i - MIN_VERSION];
+        JRadioButton radioButton = myRadioButtons[i - MIN_VERSION + 1];
         if (radioButton.isSelected()) {
           if (i != myUserPersistenceVersion) {
             return true;
           }
         }
+      }
+      if(myRadioButtons[0].isSelected()) {
+        return myUserPersistenceVersion != VERSION_UNDEFINED;
+      }
+      if(myRadioButtons[myRadioButtons.length-1].isSelected()) {
+        return myUserPersistenceVersion != VERSION_UPDATE_TO_THE_LATEST;
       }
       return false;
     }

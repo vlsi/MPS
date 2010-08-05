@@ -129,18 +129,9 @@ public class SModel implements Iterable<SNode> {
     return myUsesLog;
   }
 
-  public int getVersion() {
-    return getModelDescriptor().getVersion();
-  }
-
-  public int getNameVersion() {
-    return getModelDescriptor().getNameVersion();
-  }
-
   public void setUsesLog(boolean usesLog) {
     myUsesLog = usesLog;
   }
-
 
   @NotNull
   public Iterator<SNode> roots() {
@@ -1144,10 +1135,10 @@ public class SModel implements Iterable<SNode> {
     fireImportAddedEvent(myReference);
   }
 
-  public void increaseVersion() {
-    getModelDescriptor().setVersion(getVersion() + 1);
-  }
-
+  /**
+   * @deprecated Use SModelDescriptor.getRefactoringsHistory()
+   */
+  @Deprecated
   public RefactoringHistory getRefactoringHistory() {
     return myRefactoringHistory;
   }
@@ -1164,6 +1155,7 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  @Deprecated
   public void setRefactoringHistory(RefactoringHistory refactoringHistory) {
     ModelChange.assertLegalChange(this);
 

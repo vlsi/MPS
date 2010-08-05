@@ -607,10 +607,11 @@
     <nodeInfo nodeId="1218716359926" fileName="Build_ActionGroup.java" startLine="18" startPosition="112" endLine="19" endPosition="114" />
   </root>
   <root nodeId="1215608712908">
-    <nodeInfo nodeId="1215608921457" fileName="GoToConceptDeclaration_Action.java" startLine="22" startPosition="0" endLine="23" endPosition="21" />
-    <nodeInfo nodeId="1217420649365" fileName="GoToConceptDeclaration_Action.java" startLine="23" startPosition="21" endLine="24" endPosition="36" />
-    <nodeInfo nodeId="1219408681770" fileName="GoToConceptDeclaration_Action.java" startLine="75" startPosition="9" endLine="76" endPosition="101" />
-    <nodeInfo nodeId="1215609373823" fileName="GoToConceptDeclaration_Action.java" startLine="76" startPosition="101" endLine="77" endPosition="147" />
+    <nodeInfo nodeId="1215608921457" fileName="GoToConceptDeclaration_Action.java" startLine="23" startPosition="0" endLine="24" endPosition="21" />
+    <nodeInfo nodeId="1217420649365" fileName="GoToConceptDeclaration_Action.java" startLine="24" startPosition="21" endLine="25" endPosition="36" />
+    <nodeInfo nodeId="780054171613615524" fileName="GoToConceptDeclaration_Action.java" startLine="76" startPosition="9" endLine="77" endPosition="86" />
+    <nodeInfo nodeId="1219408681770" fileName="GoToConceptDeclaration_Action.java" startLine="77" startPosition="86" endLine="78" endPosition="101" />
+    <nodeInfo nodeId="1215609373823" fileName="GoToConceptDeclaration_Action.java" startLine="78" startPosition="101" endLine="79" endPosition="147" />
   </root>
   <root nodeId="1215867986486">
     <nodeInfo nodeId="1217420638520" fileName="AddMissingImports_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="43" />
@@ -4797,17 +4798,17 @@
   </root>
   <root nodeId="5573155209983831481">
     <nodeInfo nodeId="5573155209983904293" fileName="RefactoringPanel.java" startLine="32" startPosition="31" endLine="33" endPosition="29" />
-    <nodeInfo nodeId="5573155209983904299" fileName="RefactoringPanel.java" startLine="33" startPosition="29" endLine="34" endPosition="25" />
-    <nodeInfo nodeId="5573155209983945916" fileName="RefactoringPanel.java" startLine="34" startPosition="25" endLine="35" endPosition="37" />
+    <nodeInfo nodeId="5573155209983904299" fileName="RefactoringPanel.java" startLine="33" startPosition="29" endLine="34" endPosition="35" />
+    <nodeInfo nodeId="5573155209983945916" fileName="RefactoringPanel.java" startLine="34" startPosition="35" endLine="35" endPosition="37" />
     <nodeInfo nodeId="6842229080711233175" fileName="RefactoringPanel.java" startLine="35" startPosition="37" endLine="36" endPosition="38" />
     <nodeInfo nodeId="8085018680187013937" fileName="RefactoringPanel.java" startLine="36" startPosition="38" endLine="37" endPosition="29" />
-    <nodeInfo nodeId="5573155209983904303" fileName="RefactoringPanel.java" startLine="39" startPosition="94" endLine="40" endPosition="20" />
+    <nodeInfo nodeId="5573155209983904303" fileName="RefactoringPanel.java" startLine="39" startPosition="104" endLine="40" endPosition="20" />
     <nodeInfo nodeId="5573155209983945927" fileName="RefactoringPanel.java" startLine="40" startPosition="20" endLine="41" endPosition="34" />
     <nodeInfo nodeId="7235352240938796802" fileName="RefactoringPanel.java" startLine="41" startPosition="34" endLine="42" endPosition="24" />
     <nodeInfo nodeId="5573155209983904321" fileName="RefactoringPanel.java" startLine="42" startPosition="24" endLine="43" endPosition="20" />
     <nodeInfo nodeId="5573155209983906043" fileName="RefactoringPanel.java" startLine="46" startPosition="32" endLine="47" endPosition="49" />
-    <nodeInfo nodeId="5573155209983905710" fileName="RefactoringPanel.java" startLine="47" startPosition="49" endLine="48" endPosition="74" />
-    <nodeInfo nodeId="5573155209983945708" fileName="RefactoringPanel.java" startLine="48" startPosition="74" endLine="49" endPosition="75" />
+    <nodeInfo nodeId="5573155209983905710" fileName="RefactoringPanel.java" startLine="47" startPosition="49" endLine="48" endPosition="53" />
+    <nodeInfo nodeId="5573155209983945708" fileName="RefactoringPanel.java" startLine="48" startPosition="53" endLine="49" endPosition="75" />
     <nodeInfo nodeId="5573155209983905285" fileName="RefactoringPanel.java" startLine="49" startPosition="75" endLine="50" endPosition="85" />
     <nodeInfo nodeId="5573155209983904325" fileName="RefactoringPanel.java" startLine="50" startPosition="85" endLine="51" endPosition="61" />
     <nodeInfo nodeId="5189407523588908770" fileName="RefactoringPanel.java" startLine="51" startPosition="61" endLine="52" endPosition="112" />
@@ -4897,7 +4898,7 @@
     <scopeInfo nodeId="8388168668420180472" fileName="RefactoringPanel.java" startLine="119" startPosition="46" endLine="122" endPosition="32">
       <varInfo nodeId="5286974591503450656" varName="infoButton" />
     </scopeInfo>
-    <scopeInfo nodeId="5573155209983831486" fileName="RefactoringPanel.java" startLine="39" startPosition="94" endLine="43" endPosition="20" />
+    <scopeInfo nodeId="5573155209983831486" fileName="RefactoringPanel.java" startLine="39" startPosition="104" endLine="43" endPosition="20" />
     <scopeInfo nodeId="8085018680187018430" fileName="RefactoringPanel.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="8085018680187018441" varName="dialog" />
     </scopeInfo>

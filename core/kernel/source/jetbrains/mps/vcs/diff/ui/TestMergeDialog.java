@@ -17,42 +17,24 @@ package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.InvalidDataException;
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.application.impl.ApplicationImpl;
-import com.intellij.openapi.graph.base.DataProvider;
-import com.intellij.openapi.diff.DiffManager;
-import com.intellij.openapi.diff.DiffRequest;
-import com.intellij.openapi.diff.MergeRequest;
-import com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl;
-import com.intellij.idea.IdeaTestApplication;
+
 import static jetbrains.mps.TestMain.configureMPS;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.*;
 
-import jetbrains.mps.TestMain;
-import jetbrains.mps.library.LibraryManager;
-import jetbrains.mps.library.Library;
-import jetbrains.mps.library.BaseLibraryManager.MyState;
 import jetbrains.mps.nodeEditor.EditorManager;
-import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.File;
-import java.util.List;
-import java.util.Set;
 
 public class TestMergeDialog {
   private static EditorManager myEditorManager = new EditorManager();
@@ -125,7 +107,7 @@ public class TestMergeDialog {
           public void run() {
             IFile iFile = FileSystem.getFile(args[3]);
             if (!iFile.exists()) iFile.createNewFile();
-            ModelPersistence.saveModel(result, iFile);
+            ModelPersistence.saveModel(result, iFile, true, false);
           }
         });
         dialog.dispose();

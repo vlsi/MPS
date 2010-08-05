@@ -25,10 +25,6 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import javax.swing.JCheckBox;
 
 public class SupertypesViewTool extends AbstractHierarchyView {
-
-  private JCheckBox myCheckBox;
-
-
   public SupertypesViewTool(Project project) {
     super(project, "Supertypes", -1, Icons.DEFAULT_ICON);
   }

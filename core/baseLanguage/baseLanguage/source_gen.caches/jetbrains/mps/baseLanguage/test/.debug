@@ -67,34 +67,6 @@
     <scopeInfo nodeId="1225979303578" fileName="IfStatementDataFlow_Test.java" startLine="22" startPosition="61" endLine="24" endPosition="160" />
     <scopeInfo nodeId="1225979303578" fileName="IfStatementDataFlow_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
   </root>
-  <root nodeId="1230544103882">
-    <nodeInfo nodeId="1230544200866" fileName="NullableDataFlow_Test.java" startLine="33" startPosition="58" endLine="34" endPosition="40" />
-    <nodeInfo nodeId="1230544270996" fileName="NullableDataFlow_Test.java" startLine="34" startPosition="40" endLine="35" endPosition="175" />
-    <nodeInfo nodeId="1230544492760" fileName="NullableDataFlow_Test.java" startLine="35" startPosition="175" endLine="36" endPosition="106" />
-    <nodeInfo nodeId="1230544609652" fileName="NullableDataFlow_Test.java" startLine="36" startPosition="106" endLine="37" endPosition="258" />
-    <nodeInfo nodeId="1230544639256" fileName="NullableDataFlow_Test.java" startLine="37" startPosition="258" endLine="38" endPosition="210" />
-    <nodeInfo nodeId="1230544200866" fileName="NullableDataFlow_Test.java" startLine="32" startPosition="53" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1230544200866" fileName="NullableDataFlow_Test.java" startLine="33" startPosition="58" endLine="38" endPosition="210">
-      <varInfo nodeId="1230544492761" varName="result" />
-      <varInfo nodeId="1230544270997" varName="p" />
-      <varInfo nodeId="1230544609653" varName="map" />
-    </scopeInfo>
-    <scopeInfo nodeId="1230544200866" fileName="NullableDataFlow_Test.java" startLine="32" startPosition="53" endLine="40" endPosition="0" />
-  </root>
-  <root nodeId="1230558053036">
-    <nodeInfo nodeId="1230558242107" fileName="NullableAnnotations_Test.java" startLine="33" startPosition="61" endLine="34" endPosition="40" />
-    <nodeInfo nodeId="1230558243485" fileName="NullableAnnotations_Test.java" startLine="34" startPosition="40" endLine="35" endPosition="175" />
-    <nodeInfo nodeId="1230558243492" fileName="NullableAnnotations_Test.java" startLine="35" startPosition="175" endLine="36" endPosition="106" />
-    <nodeInfo nodeId="1230558243504" fileName="NullableAnnotations_Test.java" startLine="36" startPosition="106" endLine="37" endPosition="258" />
-    <nodeInfo nodeId="1230558243519" fileName="NullableAnnotations_Test.java" startLine="37" startPosition="258" endLine="38" endPosition="210" />
-    <nodeInfo nodeId="1230558242107" fileName="NullableAnnotations_Test.java" startLine="32" startPosition="53" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1230558242107" fileName="NullableAnnotations_Test.java" startLine="33" startPosition="61" endLine="38" endPosition="210">
-      <varInfo nodeId="1230558243493" varName="result" />
-      <varInfo nodeId="1230558243486" varName="p" />
-      <varInfo nodeId="1230558243505" varName="map" />
-    </scopeInfo>
-    <scopeInfo nodeId="1230558242107" fileName="NullableAnnotations_Test.java" startLine="32" startPosition="53" endLine="40" endPosition="0" />
-  </root>
   <root nodeId="1326302914272879450">
     <nodeInfo nodeId="1326302914272888800" fileName="TestSafeEquals_Test.java" startLine="9" startPosition="47" endLine="10" endPosition="28" />
     <nodeInfo nodeId="1326302914272888807" fileName="TestSafeEquals_Test.java" startLine="10" startPosition="28" endLine="11" endPosition="46" />

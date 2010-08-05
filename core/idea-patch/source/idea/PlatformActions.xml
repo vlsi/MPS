@@ -310,8 +310,8 @@
                 icon="/actions/menu-help.png"/>
         <action id="ShowTips" class="com.intellij.ide.actions.ShowTipsAction"/>
         <!--MPS Patch Start-->
-        <!--<action id="ProductivityGude"-->
-        <!--class="com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsAction"/>-->
+        <action id="ProductivityGude"
+                class="com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsAction"/>
         <action id="DefaultKeymap"
                 class="jetbrains.mps.workbench.actions.help.ShowDefaultKeymap"
                 text="Default Keymap Reference"/>

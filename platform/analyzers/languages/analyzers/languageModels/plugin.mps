@@ -40,6 +40,7 @@
   <import index="7" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="7335767529742390289">
     <property name="name:23" value="ShowNullDFA" />
     <property name="caption:23" value="Show Nullable DFA" />
@@ -65,8 +66,8 @@
               <link role="classifier:3" targetNodeId="7.~AnalyzerRunner" />
               <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7335767529742473120">
                 <link role="classifier:3" targetNodeId="8.~Map" resolveInfo="Map" />
-                <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7335767529742473121">
-                  <link role="classifier:3" targetNodeId="9.~Object" resolveInfo="Object" />
+                <node role="parameter:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="2022791306161996156">
+                  <link role="concept:16" targetNodeId="2v.1068431790191:3" resolveInfo="Expression" />
                 </node>
                 <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7335767529742473122">
                   <link role="classifier:3" targetNodeId="6.1665527126811217334" resolveInfo="NullableState" />

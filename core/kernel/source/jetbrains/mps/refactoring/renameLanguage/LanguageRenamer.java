@@ -96,7 +96,7 @@ public class LanguageRenamer {
     myLanguage.setLanguageDescriptor(descriptor, false);
     myLanguage.save();
 
-    myProcessor.writeIntoLog(structure.getSModel(), myContext);
+    myProcessor.writeIntoLog(structure, myContext);
     SModelRepository.getInstance().saveAll();
   }
 
@@ -122,7 +122,7 @@ public class LanguageRenamer {
   public void update() {
     updateReferences();
     SModelDescriptor structure = myLanguage.getStructureModelDescriptor();
-    myProcessor.updateAllModels(structure.getSModelReference(), structure.getSModel(), myContext);
+    myProcessor.updateAllModels(structure.getSModelReference(), structure, myContext);
   }
 
   private void updateReferences() {

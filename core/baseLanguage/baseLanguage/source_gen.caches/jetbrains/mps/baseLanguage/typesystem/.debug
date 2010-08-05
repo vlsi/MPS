@@ -371,19 +371,19 @@
     <nodeInfo nodeId="1209916572216" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="44" startPosition="7" endLine="45" endPosition="55" />
     <nodeInfo nodeId="1209916572216" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="45" startPosition="55" endLine="46" endPosition="57" />
     <nodeInfo nodeId="1209916572216" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="46" startPosition="57" endLine="47" endPosition="298" />
-    <nodeInfo nodeId="1193835024461" fileName="TypesystemDescriptor.java" startLine="857" startPosition="60" endLine="858" endPosition="57" />
-    <nodeInfo nodeId="1193834998365" fileName="TypesystemDescriptor.java" startLine="859" startPosition="11" endLine="860" endPosition="22" />
-    <nodeInfo nodeId="1193834966925" fileName="TypesystemDescriptor.java" startLine="856" startPosition="54" endLine="859" endPosition="11" />
+    <nodeInfo nodeId="1193835024461" fileName="TypesystemDescriptor.java" startLine="853" startPosition="60" endLine="854" endPosition="57" />
+    <nodeInfo nodeId="1193834998365" fileName="TypesystemDescriptor.java" startLine="855" startPosition="11" endLine="856" endPosition="22" />
+    <nodeInfo nodeId="1193834966925" fileName="TypesystemDescriptor.java" startLine="852" startPosition="54" endLine="855" endPosition="11" />
     <nodeInfo nodeId="1209916572216" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="43" startPosition="133" endLine="48" endPosition="7" />
     <nodeInfo nodeId="1203030934664" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="35" startPosition="12" endLine="41" endPosition="7" />
     <nodeInfo nodeId="1203030927267" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="35" startPosition="10" endLine="42" endPosition="5" />
     <nodeInfo nodeId="1209916480535" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="42" startPosition="5" endLine="49" endPosition="5" />
     <nodeInfo nodeId="1203026955244" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="23" startPosition="137" endLine="34" endPosition="7" />
     <nodeInfo nodeId="1203030907645" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="22" startPosition="88" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="1193834966927" fileName="TypesystemDescriptor.java" startLine="857" startPosition="60" endLine="858" endPosition="57" />
+    <scopeInfo nodeId="1193834966927" fileName="TypesystemDescriptor.java" startLine="853" startPosition="60" endLine="854" endPosition="57" />
     <scopeInfo nodeId="1209916572216" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="44" startPosition="7" endLine="47" endPosition="298" />
     <scopeInfo nodeId="1203030934664" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="36" startPosition="7" endLine="40" endPosition="283" />
-    <scopeInfo nodeId="1193834940539" fileName="TypesystemDescriptor.java" startLine="856" startPosition="54" endLine="860" endPosition="22" />
+    <scopeInfo nodeId="1193834940539" fileName="TypesystemDescriptor.java" startLine="852" startPosition="54" endLine="856" endPosition="22" />
     <scopeInfo nodeId="1209916480536" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="43" startPosition="133" endLine="48" endPosition="7" />
     <scopeInfo nodeId="1203030927268" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="35" startPosition="12" endLine="41" endPosition="7" />
     <scopeInfo nodeId="1203026955244" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="24" startPosition="7" endLine="33" endPosition="300" />
@@ -466,13 +466,13 @@
     <nodeInfo nodeId="1197929386564" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="20" startPosition="51" endLine="21" endPosition="53" />
     <nodeInfo nodeId="1197929386564" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="21" startPosition="53" endLine="22" endPosition="210" />
     <nodeInfo nodeId="1197929386564" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="22" startPosition="210" endLine="23" endPosition="423" />
-    <nodeInfo nodeId="1193845791625" fileName="TypesystemDescriptor.java" startLine="876" startPosition="56" endLine="877" endPosition="57" />
-    <nodeInfo nodeId="1193845780013" fileName="TypesystemDescriptor.java" startLine="878" startPosition="11" endLine="879" endPosition="22" />
-    <nodeInfo nodeId="1193845734653" fileName="TypesystemDescriptor.java" startLine="875" startPosition="54" endLine="878" endPosition="11" />
+    <nodeInfo nodeId="1193845791625" fileName="TypesystemDescriptor.java" startLine="872" startPosition="56" endLine="873" endPosition="57" />
+    <nodeInfo nodeId="1193845780013" fileName="TypesystemDescriptor.java" startLine="874" startPosition="11" endLine="875" endPosition="22" />
+    <nodeInfo nodeId="1193845734653" fileName="TypesystemDescriptor.java" startLine="871" startPosition="54" endLine="874" endPosition="11" />
     <nodeInfo nodeId="1197929386564" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="18" startPosition="95" endLine="24" endPosition="5" />
-    <scopeInfo nodeId="1193845734655" fileName="TypesystemDescriptor.java" startLine="876" startPosition="56" endLine="877" endPosition="57" />
+    <scopeInfo nodeId="1193845734655" fileName="TypesystemDescriptor.java" startLine="872" startPosition="56" endLine="873" endPosition="57" />
     <scopeInfo nodeId="1197929386564" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="23" endPosition="423" />
-    <scopeInfo nodeId="1193845700396" fileName="TypesystemDescriptor.java" startLine="875" startPosition="54" endLine="879" endPosition="22" />
+    <scopeInfo nodeId="1193845700396" fileName="TypesystemDescriptor.java" startLine="871" startPosition="54" endLine="875" endPosition="22" />
     <scopeInfo nodeId="1176896957097" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="18" startPosition="95" endLine="24" endPosition="5" />
   </root>
   <root nodeId="1176897069499">
@@ -2464,65 +2464,65 @@
     <nodeInfo nodeId="684456904423890539" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="54" startPosition="366" endLine="55" endPosition="282" />
     <nodeInfo nodeId="684456904423890533" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="56" startPosition="20" endLine="57" endPosition="232" />
     <nodeInfo nodeId="684456904423971150" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="62" startPosition="12" endLine="63" endPosition="224" />
-    <nodeInfo nodeId="1207648751664" fileName="TypesystemDescriptor.java" startLine="894" startPosition="60" endLine="895" endPosition="114" />
-    <nodeInfo nodeId="1207648823977" fileName="TypesystemDescriptor.java" startLine="895" startPosition="114" endLine="896" endPosition="124" />
-    <nodeInfo nodeId="1207648848489" fileName="TypesystemDescriptor.java" startLine="896" startPosition="124" endLine="897" endPosition="72" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="899" startPosition="13" endLine="900" endPosition="26" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="900" startPosition="26" endLine="901" endPosition="24" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="901" startPosition="24" endLine="902" endPosition="154" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="902" startPosition="154" endLine="903" endPosition="142" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="905" startPosition="50" endLine="906" endPosition="24" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="908" startPosition="48" endLine="909" endPosition="24" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="910" startPosition="17" endLine="911" endPosition="46" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="911" startPosition="46" endLine="912" endPosition="42" />
-    <nodeInfo nodeId="6295887419091357456" fileName="TypesystemDescriptor.java" startLine="913" startPosition="198" endLine="914" endPosition="111" />
-    <nodeInfo nodeId="1207650127432" fileName="TypesystemDescriptor.java" startLine="915" startPosition="90" endLine="916" endPosition="64" />
-    <nodeInfo nodeId="1207648893602" fileName="TypesystemDescriptor.java" startLine="921" startPosition="11" endLine="922" endPosition="24" />
+    <nodeInfo nodeId="1207648751664" fileName="TypesystemDescriptor.java" startLine="890" startPosition="60" endLine="891" endPosition="114" />
+    <nodeInfo nodeId="1207648823977" fileName="TypesystemDescriptor.java" startLine="891" startPosition="114" endLine="892" endPosition="124" />
+    <nodeInfo nodeId="1207648848489" fileName="TypesystemDescriptor.java" startLine="892" startPosition="124" endLine="893" endPosition="72" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="895" startPosition="13" endLine="896" endPosition="26" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="896" startPosition="26" endLine="897" endPosition="24" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="897" startPosition="24" endLine="898" endPosition="154" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="898" startPosition="154" endLine="899" endPosition="142" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="901" startPosition="50" endLine="902" endPosition="24" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="904" startPosition="48" endLine="905" endPosition="24" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="906" startPosition="17" endLine="907" endPosition="46" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="907" startPosition="46" endLine="908" endPosition="42" />
+    <nodeInfo nodeId="6295887419091357456" fileName="TypesystemDescriptor.java" startLine="909" startPosition="198" endLine="910" endPosition="111" />
+    <nodeInfo nodeId="1207650127432" fileName="TypesystemDescriptor.java" startLine="911" startPosition="90" endLine="912" endPosition="64" />
+    <nodeInfo nodeId="1207648893602" fileName="TypesystemDescriptor.java" startLine="917" startPosition="11" endLine="918" endPosition="24" />
     <nodeInfo nodeId="684456904423890531" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="56" startPosition="18" endLine="58" endPosition="13" />
     <nodeInfo nodeId="684456904423889813" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="62" startPosition="10" endLine="64" endPosition="5" />
     <nodeInfo nodeId="1204064574539" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="26" startPosition="90" endLine="29" endPosition="5" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="904" startPosition="28" endLine="907" endPosition="17" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="907" startPosition="17" endLine="910" endPosition="17" />
-    <nodeInfo nodeId="1207650094263" fileName="TypesystemDescriptor.java" startLine="914" startPosition="111" endLine="917" endPosition="19" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="900" startPosition="28" endLine="903" endPosition="17" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="903" startPosition="17" endLine="906" endPosition="17" />
+    <nodeInfo nodeId="1207650094263" fileName="TypesystemDescriptor.java" startLine="910" startPosition="111" endLine="913" endPosition="19" />
     <nodeInfo nodeId="702942408396860204" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="53" startPosition="29" endLine="58" endPosition="13" />
     <nodeInfo nodeId="1204064763142" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="32" startPosition="105" endLine="38" endPosition="5" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="912" startPosition="42" endLine="918" endPosition="17" />
-    <nodeInfo nodeId="1207649079698" fileName="TypesystemDescriptor.java" startLine="912" startPosition="42" endLine="918" endPosition="17" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="908" startPosition="42" endLine="914" endPosition="17" />
+    <nodeInfo nodeId="1207649079698" fileName="TypesystemDescriptor.java" startLine="908" startPosition="42" endLine="914" endPosition="17" />
     <nodeInfo nodeId="1204065906120" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="38" startPosition="5" endLine="45" endPosition="5" />
     <nodeInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="52" startPosition="61" endLine="60" endPosition="0" />
     <nodeInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="51" startPosition="119" endLine="60" endPosition="127" />
     <nodeInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="49" startPosition="386" endLine="61" endPosition="7" />
     <nodeInfo nodeId="684456904423889785" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="48" startPosition="140" endLine="64" endPosition="5" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="903" startPosition="142" endLine="919" endPosition="15" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="898" startPosition="65" endLine="920" endPosition="13" />
-    <nodeInfo nodeId="1207648654826" fileName="TypesystemDescriptor.java" startLine="897" startPosition="72" endLine="921" endPosition="11" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="899" startPosition="142" endLine="915" endPosition="15" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="894" startPosition="65" endLine="916" endPosition="13" />
+    <nodeInfo nodeId="1207648654826" fileName="TypesystemDescriptor.java" startLine="893" startPosition="72" endLine="917" endPosition="11" />
     <scopeInfo nodeId="1204064574540" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="27" startPosition="82" endLine="28" endPosition="13" />
     <scopeInfo nodeId="702942408396860206" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="54" startPosition="366" endLine="55" endPosition="282" />
     <scopeInfo nodeId="684456904423890532" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="56" startPosition="20" endLine="57" endPosition="232" />
     <scopeInfo nodeId="684456904423889814" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="62" startPosition="12" endLine="63" endPosition="224" />
-    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="905" startPosition="50" endLine="906" endPosition="24" />
-    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="908" startPosition="48" endLine="909" endPosition="24" />
-    <scopeInfo nodeId="1207650094265" fileName="TypesystemDescriptor.java" startLine="915" startPosition="90" endLine="916" endPosition="64" />
+    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="901" startPosition="50" endLine="902" endPosition="24" />
+    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="904" startPosition="48" endLine="905" endPosition="24" />
+    <scopeInfo nodeId="1207650094265" fileName="TypesystemDescriptor.java" startLine="911" startPosition="90" endLine="912" endPosition="64" />
     <scopeInfo nodeId="1204064763142" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="33" startPosition="5" endLine="37" endPosition="332" />
-    <scopeInfo nodeId="1207649079702" fileName="TypesystemDescriptor.java" startLine="913" startPosition="198" endLine="917" endPosition="19">
+    <scopeInfo nodeId="1207649079702" fileName="TypesystemDescriptor.java" startLine="909" startPosition="198" endLine="913" endPosition="19">
       <varInfo nodeId="6295887419091357457" varName="variableDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="1204065906120" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="39" startPosition="5" endLine="44" endPosition="328" />
     <scopeInfo nodeId="702942408396860199" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="53" startPosition="29" endLine="58" endPosition="13" />
-    <scopeInfo nodeId="1207649010712" fileName="TypesystemDescriptor.java" startLine="912" startPosition="42" endLine="918" endPosition="17" />
-    <scopeInfo nodeId="1207649079698" fileName="TypesystemDescriptor.java" startLine="912" startPosition="42" endLine="918" endPosition="17">
+    <scopeInfo nodeId="1207649010712" fileName="TypesystemDescriptor.java" startLine="908" startPosition="42" endLine="914" endPosition="17" />
+    <scopeInfo nodeId="1207649079698" fileName="TypesystemDescriptor.java" startLine="908" startPosition="42" endLine="914" endPosition="17">
       <varInfo nodeId="1207649079700" varName="tvr" />
     </scopeInfo>
     <scopeInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="52" startPosition="61" endLine="60" endPosition="0" />
     <scopeInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="50" startPosition="7" endLine="60" endPosition="127" />
     <scopeInfo nodeId="684456904423889786" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="49" startPosition="386" endLine="61" endPosition="7" />
-    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="904" startPosition="28" endLine="918" endPosition="17" />
-    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="899" startPosition="13" endLine="919" endPosition="15">
+    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="900" startPosition="28" endLine="914" endPosition="17" />
+    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="895" startPosition="13" endLine="915" endPosition="15">
       <varInfo nodeId="1207649032454" varName="arg" />
       <varInfo nodeId="1207649010709" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1207648654828" fileName="TypesystemDescriptor.java" startLine="898" startPosition="65" endLine="920" endPosition="13" />
-    <scopeInfo nodeId="1207648619836" fileName="TypesystemDescriptor.java" startLine="894" startPosition="60" endLine="922" endPosition="24">
+    <scopeInfo nodeId="1207648654828" fileName="TypesystemDescriptor.java" startLine="894" startPosition="65" endLine="916" endPosition="13" />
+    <scopeInfo nodeId="1207648619836" fileName="TypesystemDescriptor.java" startLine="890" startPosition="60" endLine="918" endPosition="24">
       <varInfo nodeId="1207648848490" varName="result" />
       <varInfo nodeId="1207648751665" varName="instanceMethodDeclaration" />
       <varInfo nodeId="1207648823978" varName="declarations" />
@@ -4059,21 +4059,21 @@
     <scopeInfo nodeId="1230476723780" fileName="Class_Void_weak_supertypeof_void_SubtypingRule.java" startLine="21" startPosition="91" endLine="22" endPosition="124" />
   </root>
   <root nodeId="1236166392793">
-    <nodeInfo nodeId="7447106258752476412" fileName="TypesystemDescriptor.java" startLine="844" startPosition="103" endLine="845" endPosition="98" />
-    <nodeInfo nodeId="1236617969358" fileName="TypesystemDescriptor.java" startLine="964" startPosition="206" endLine="965" endPosition="20" />
-    <nodeInfo nodeId="1236617995671" fileName="TypesystemDescriptor.java" startLine="966" startPosition="14" endLine="967" endPosition="81" />
-    <nodeInfo nodeId="1239449491701" fileName="TypesystemDescriptor.java" startLine="1019" startPosition="99" endLine="1020" endPosition="124" />
-    <nodeInfo nodeId="3860149536565525602" fileName="TypesystemDescriptor.java" startLine="1088" startPosition="99" endLine="1089" endPosition="29" />
-    <nodeInfo nodeId="6361444434083817749" fileName="TypesystemDescriptor.java" startLine="1140" startPosition="99" endLine="1141" endPosition="124" />
-    <nodeInfo nodeId="1236617781626" fileName="TypesystemDescriptor.java" startLine="966" startPosition="12" endLine="968" endPosition="7" />
-    <nodeInfo nodeId="1236617781612" fileName="TypesystemDescriptor.java" startLine="963" startPosition="99" endLine="968" endPosition="7" />
-    <scopeInfo nodeId="1533154877881631952" fileName="TypesystemDescriptor.java" startLine="844" startPosition="103" endLine="845" endPosition="98" />
-    <scopeInfo nodeId="1236617781613" fileName="TypesystemDescriptor.java" startLine="964" startPosition="206" endLine="965" endPosition="20" />
-    <scopeInfo nodeId="1236617781627" fileName="TypesystemDescriptor.java" startLine="966" startPosition="14" endLine="967" endPosition="81" />
-    <scopeInfo nodeId="1239449442589" fileName="TypesystemDescriptor.java" startLine="1019" startPosition="99" endLine="1020" endPosition="124" />
-    <scopeInfo nodeId="3860149536565525575" fileName="TypesystemDescriptor.java" startLine="1088" startPosition="99" endLine="1089" endPosition="29" />
-    <scopeInfo nodeId="6361444434083801799" fileName="TypesystemDescriptor.java" startLine="1140" startPosition="99" endLine="1141" endPosition="124" />
-    <scopeInfo nodeId="1236166412688" fileName="TypesystemDescriptor.java" startLine="963" startPosition="99" endLine="968" endPosition="7" />
+    <nodeInfo nodeId="7447106258752476412" fileName="TypesystemDescriptor.java" startLine="840" startPosition="103" endLine="841" endPosition="98" />
+    <nodeInfo nodeId="1236617969358" fileName="TypesystemDescriptor.java" startLine="960" startPosition="206" endLine="961" endPosition="20" />
+    <nodeInfo nodeId="1236617995671" fileName="TypesystemDescriptor.java" startLine="962" startPosition="14" endLine="963" endPosition="81" />
+    <nodeInfo nodeId="1239449491701" fileName="TypesystemDescriptor.java" startLine="1015" startPosition="99" endLine="1016" endPosition="124" />
+    <nodeInfo nodeId="3860149536565525602" fileName="TypesystemDescriptor.java" startLine="1084" startPosition="99" endLine="1085" endPosition="29" />
+    <nodeInfo nodeId="6361444434083817749" fileName="TypesystemDescriptor.java" startLine="1136" startPosition="99" endLine="1137" endPosition="124" />
+    <nodeInfo nodeId="1236617781626" fileName="TypesystemDescriptor.java" startLine="962" startPosition="12" endLine="964" endPosition="7" />
+    <nodeInfo nodeId="1236617781612" fileName="TypesystemDescriptor.java" startLine="959" startPosition="99" endLine="964" endPosition="7" />
+    <scopeInfo nodeId="1533154877881631952" fileName="TypesystemDescriptor.java" startLine="840" startPosition="103" endLine="841" endPosition="98" />
+    <scopeInfo nodeId="1236617781613" fileName="TypesystemDescriptor.java" startLine="960" startPosition="206" endLine="961" endPosition="20" />
+    <scopeInfo nodeId="1236617781627" fileName="TypesystemDescriptor.java" startLine="962" startPosition="14" endLine="963" endPosition="81" />
+    <scopeInfo nodeId="1239449442589" fileName="TypesystemDescriptor.java" startLine="1015" startPosition="99" endLine="1016" endPosition="124" />
+    <scopeInfo nodeId="3860149536565525575" fileName="TypesystemDescriptor.java" startLine="1084" startPosition="99" endLine="1085" endPosition="29" />
+    <scopeInfo nodeId="6361444434083801799" fileName="TypesystemDescriptor.java" startLine="1136" startPosition="99" endLine="1137" endPosition="124" />
+    <scopeInfo nodeId="1236166412688" fileName="TypesystemDescriptor.java" startLine="959" startPosition="99" endLine="964" endPosition="7" />
   </root>
   <root nodeId="1236695950918">
     <nodeInfo nodeId="1236697384391" fileName="typeof_VarVariableReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="51" />
@@ -4340,10 +4340,6 @@
       <varInfo nodeId="1906502351318607620" varName="scope" />
       <varInfo nodeId="1906502351318607613" varName="ownMethods" />
     </scopeInfo>
-  </root>
-  <root nodeId="2045671745393263417">
-    <nodeInfo nodeId="178770917832502115" fileName="check_Nullable_NonTypesystemRule.java" startLine="15" startPosition="99" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="2045671745393263418" fileName="check_Nullable_NonTypesystemRule.java" startLine="15" startPosition="99" endLine="16" endPosition="0" />
   </root>
   <root nodeId="2089334432679049932">
     <nodeInfo nodeId="2089334432679065799" fileName="check_ExceptionWasNotCaught_NonTypesystemRule.java" startLine="31" startPosition="104" endLine="32" endPosition="58" />
@@ -5116,13 +5112,13 @@
     <nodeInfo nodeId="554301099359820442" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="22" startPosition="55" endLine="23" endPosition="217" />
     <nodeInfo nodeId="554301099359820442" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="23" startPosition="217" endLine="24" endPosition="56" />
     <nodeInfo nodeId="554301099359820442" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="24" startPosition="56" endLine="25" endPosition="418" />
-    <nodeInfo nodeId="554301099359820389" fileName="TypesystemDescriptor.java" startLine="938" startPosition="60" endLine="939" endPosition="57" />
-    <nodeInfo nodeId="554301099359820393" fileName="TypesystemDescriptor.java" startLine="940" startPosition="11" endLine="941" endPosition="22" />
-    <nodeInfo nodeId="554301099359820380" fileName="TypesystemDescriptor.java" startLine="937" startPosition="54" endLine="940" endPosition="11" />
+    <nodeInfo nodeId="554301099359820389" fileName="TypesystemDescriptor.java" startLine="934" startPosition="60" endLine="935" endPosition="57" />
+    <nodeInfo nodeId="554301099359820393" fileName="TypesystemDescriptor.java" startLine="936" startPosition="11" endLine="937" endPosition="22" />
+    <nodeInfo nodeId="554301099359820380" fileName="TypesystemDescriptor.java" startLine="933" startPosition="54" endLine="936" endPosition="11" />
     <nodeInfo nodeId="554301099359820442" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="19" startPosition="88" endLine="26" endPosition="7" />
     <nodeInfo nodeId="554301099359820435" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="18" startPosition="105" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="554301099359820388" fileName="TypesystemDescriptor.java" startLine="938" startPosition="60" endLine="939" endPosition="57" />
-    <scopeInfo nodeId="554301099359820379" fileName="TypesystemDescriptor.java" startLine="937" startPosition="54" endLine="941" endPosition="22" />
+    <scopeInfo nodeId="554301099359820388" fileName="TypesystemDescriptor.java" startLine="934" startPosition="60" endLine="935" endPosition="57" />
+    <scopeInfo nodeId="554301099359820379" fileName="TypesystemDescriptor.java" startLine="933" startPosition="54" endLine="937" endPosition="22" />
     <scopeInfo nodeId="554301099359820442" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="20" startPosition="7" endLine="25" endPosition="418" />
     <scopeInfo nodeId="554301099359820441" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="19" startPosition="88" endLine="26" endPosition="7" />
     <scopeInfo nodeId="554301099359820395" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="18" startPosition="105" endLine="27" endPosition="5" />

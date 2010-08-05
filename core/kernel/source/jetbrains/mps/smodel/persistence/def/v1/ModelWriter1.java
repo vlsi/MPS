@@ -54,6 +54,7 @@ public class ModelWriter1 implements IModelWriter {
       sourceModel.validateLanguagesAndImports();
     }
 
+    //noinspection deprecation
     RefactoringHistory history = sourceModel.getRefactoringHistory();
     rootElement.addContent(history.toElement());
 

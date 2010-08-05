@@ -33,11 +33,12 @@ public class RefactoringHistory {
     myRefactoringContextList.add(context);
   }
 
-  public void fromElement(Element e) {
-    if (e == null) return;
+  public RefactoringHistory fromElement(Element e) {
+    if (e == null) return this;
     for (Element refactoringContextElement : (List<Element>) e.getChildren(RefactoringContext.REFACTORING_CONTEXT)) {
       myRefactoringContextList.add(new RefactoringContext(refactoringContextElement));
     }
+    return this;
   }
 
   public Element toElement() {

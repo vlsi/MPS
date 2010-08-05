@@ -71,11 +71,17 @@ public class ModelReader3 implements IModelReader {
     return SModelStereotype.TEMPLATES.equals(modelStereotype);
   }
 
+  @Override
+  public int getVersion() {
+    return 3;
+  }
+
   public SModel readModel(Document document, String modelShortName, String stereotype) {
     Element rootElement = document.getRootElement();
 
     SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     SModel model = new SModel(modelReference);
+    model.setPersistenceVersion(getVersion());
 
     model.setLoading(true);
     try {
@@ -161,6 +167,7 @@ public class ModelReader3 implements IModelReader {
     ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
 
     RefactoringHistory history = new RefactoringHistory();
+    //noinspection deprecation
     model.setRefactoringHistory(history);
     history.fromElement(rootElement.getChild(RefactoringHistory.REFACTORING_HISTORY));
 

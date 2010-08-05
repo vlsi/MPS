@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
@@ -73,6 +74,7 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
+      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.concept");
       SNode concept = SNodeOperations.getConceptDeclaration(GoToConceptDeclaration_Action.this.node);
       GoToConceptDeclaration_Action.this.context.getComponent(MPSEditorOpener.class).editNode(concept, GoToConceptDeclaration_Action.this.context);
     } catch (Throwable t) {

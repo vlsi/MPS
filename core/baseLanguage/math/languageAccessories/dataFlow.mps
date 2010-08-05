@@ -234,15 +234,10 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement:0" id="1418611629042596927">
           <node role="variable:0" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1418611629042596928" />
-          <node role="value:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1418611629042596929">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1418611629042596930">
-              <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1418611629042596931" />
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1418611629042596941">
-                <link role="link:16" targetNodeId="1.1418611629042470806" />
-              </node>
-            </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1418611629042596933">
-              <link role="baseMethodDeclaration:16" targetNodeId="2.1230540989695" resolveInfo="getNullableState" />
+          <node role="value:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1418611629042596930">
+            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1418611629042596931" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1418611629042596941">
+              <link role="link:16" targetNodeId="1.1418611629042470806" />
             </node>
           </node>
         </node>

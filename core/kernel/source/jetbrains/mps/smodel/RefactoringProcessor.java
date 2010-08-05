@@ -23,7 +23,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -245,13 +244,12 @@ public class RefactoringProcessor {
   private void updateModels(SModelDescriptor modelDescriptor, RefactoringContext refactoringContext, ILoggableRefactoring refactoring, SModelReference initialModelReference) {
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
-    SModel model = modelDescriptor.getSModel();
     refactoringContext.computeCaches();
     SearchResults usages = refactoringContext.getUsages();
 
     if (!refactoringContext.isLocal()) {
-      writeIntoLog(model, refactoringContext);
-      updateAllModels(initialModelReference, model, refactoringContext);
+      writeIntoLog(modelDescriptor, refactoringContext);
+      updateAllModels(initialModelReference, modelDescriptor, refactoringContext);
     } else {
       Set<SModel> modelsToProcess = new LinkedHashSet<SModel>();
       if (usages != null) {
@@ -260,12 +258,12 @@ public class RefactoringProcessor {
       //modelsToProcess.addAll(refactoring.getModelsToUpdate(refactoringContext));
 
       for (SModel anotherModel : modelsToProcess) {
-        updateModel(anotherModel, model, refactoringContext);
+        updateModel(anotherModel, modelDescriptor, refactoringContext);
       }
     }
   }
 
-  public void updateAllModels(SModelReference initialModelReference, SModel model, RefactoringContext refactoringContext) {
+  public void updateAllModels(SModelReference initialModelReference, SModelDescriptor model, RefactoringContext refactoringContext) {
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
@@ -274,13 +272,13 @@ public class RefactoringProcessor {
       SModel anotherModel = anotherDescriptor.getSModel();
 
       Set<SModelReference> dependenciesModels = anotherModel.getDependenciesModelUIDs();
-      if (model != anotherModel
+      if (model != anotherDescriptor
         && !dependenciesModels.contains(initialModelReference)) continue;
       updateModel(anotherModel, model, refactoringContext);
     }
   }
 
-  private void updateModel(final SModel model, final SModel usedModel, final RefactoringContext refactoringContext) {
+  private void updateModel(final SModel model, final SModelDescriptor usedModel, final RefactoringContext refactoringContext) {
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
     model.runLoadingAction(new Runnable() {
@@ -297,14 +295,16 @@ public class RefactoringProcessor {
     });
   }
 
-  public void writeIntoLog(SModel model, RefactoringContext refactoringContext) {
+  public void writeIntoLog(SModelDescriptor model, RefactoringContext refactoringContext) {
     assert !refactoringContext.isLocal();
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
+    model.getSModel(); // ensure model is loaded
     RefactoringHistory refactoringHistory = model.getRefactoringHistory();
     refactoringHistory.addRefactoringContext(refactoringContext);
-    model.increaseVersion();
+    model.setVersion(model.getVersion() + 1);
     refactoringContext.setModelVersion(model.getVersion());
-    SModelRepository.getInstance().markChanged(model);
+    SModelRepository.getInstance().markChanged(model, true);
+    model.saveRefactoringHistory();
   }
 }

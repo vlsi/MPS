@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="2286463592495096552">
+    <nodeInfo nodeId="2286463592495216640" fileName="ModelReader5Handler.java" startLine="131" startPosition="37" endLine="132" endPosition="30" />
+    <nodeInfo nodeId="2286463592495214224" fileName="ModelReader5Handler.java" startLine="143" startPosition="36" endLine="144" endPosition="71" />
+    <nodeInfo nodeId="2286463592495214216" fileName="ModelReader5Handler.java" startLine="176" startPosition="37" endLine="177" endPosition="26" />
+    <scopeInfo nodeId="2286463592495214231" fileName="ModelReader5Handler.java" startLine="131" startPosition="37" endLine="132" endPosition="30" />
+    <scopeInfo nodeId="2286463592495214223" fileName="ModelReader5Handler.java" startLine="143" startPosition="36" endLine="144" endPosition="71" />
+    <scopeInfo nodeId="2286463592495214215" fileName="ModelReader5Handler.java" startLine="176" startPosition="37" endLine="177" endPosition="26" />
+  </root>
+</debugInfo>
+

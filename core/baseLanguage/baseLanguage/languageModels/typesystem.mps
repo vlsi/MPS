@@ -25108,16 +25108,6 @@
       <link role="concept:3" targetNodeId="1.1224071180699:3" resolveInfo="UsingStatement" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="2045671745393263417">
-    <property name="name:3" value="check_Nullable" />
-    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2045671745393263418">
-      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="178770917832502115" />
-    </node>
-    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="2045671745393271684">
-      <property name="name:3" value="statementList" />
-      <link role="concept:3" targetNodeId="1.1068580123136:3" resolveInfo="StatementList" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="419889540470201426">
     <property name="name:3" value="check_AnnotationForVoidMethod" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="419889540470201427">

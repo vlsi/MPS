@@ -244,7 +244,11 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   }
 
   private AbstractMPSBreakpoint createNewBreakpoint(SNode node) {
-    return AbstractMPSBreakpoint.fromNode(node, myProject);
+    AbstractMPSBreakpoint abstractMPSBreakpoint = AbstractMPSBreakpoint.fromNode(node, myProject);
+    if (abstractMPSBreakpoint != null) {
+      abstractMPSBreakpoint.setCreationTime(System.currentTimeMillis());
+    }
+    return abstractMPSBreakpoint;
   }
 
   public void addBreakpoint(AbstractMPSBreakpoint breakpoint) {

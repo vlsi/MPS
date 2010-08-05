@@ -57,9 +57,11 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ShortType" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StatementList" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StringLiteral" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StubStatementList" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Type" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.TypeVariableReference" />
@@ -68,6 +70,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Visibility" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.VoidType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.WildCardType" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
     <classNode dependClassName="jetbrains.mps.smodel.BaseAdapter" />

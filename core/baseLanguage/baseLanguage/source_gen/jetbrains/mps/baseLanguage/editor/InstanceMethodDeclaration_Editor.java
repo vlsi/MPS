@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -24,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -136,7 +138,17 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.POSITION, "indented");
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator<Boolean>() {
+        public Boolean calculate(EditorCell cell) {
+          return InstanceMethodDeclaration_Editor._StyleParameter_QueryFunction_359zr8_a2m0((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
     }
     editorCell.addEditorCell(this.createRefNode_359zr8_a21a(editorContext, node));
     return editorCell;
@@ -243,7 +255,17 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator<Boolean>() {
+        public Boolean calculate(EditorCell cell) {
+          return InstanceMethodDeclaration_Editor._StyleParameter_QueryFunction_359zr8_a0k0((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -449,7 +471,15 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_359zr8_a41a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface"));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface")) && !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
+  }
+
+  private static boolean _StyleParameter_QueryFunction_359zr8_a0k0(SNode node, EditorContext editorContext) {
+    return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
+  }
+
+  private static boolean _StyleParameter_QueryFunction_359zr8_a2m0(SNode node, EditorContext editorContext) {
+    return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
   }
 
   private static class annotationListHandler_359zr8_a1a extends RefNodeListHandler {
