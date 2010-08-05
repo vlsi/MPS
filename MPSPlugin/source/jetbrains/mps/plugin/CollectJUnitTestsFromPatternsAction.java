@@ -8,6 +8,7 @@ import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.Result;
 import com.intellij.openapi.application.WriteAction;
+import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
@@ -83,15 +84,13 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
 
     File baseDir = getProjectBaseDir(project);
 
-    String ptns = showInputDialog(project, "I want cookie. Give me the cookie!", "Cookie monster", Icons.JUNIT_TEST_CLASS_ICON);
-
-
+    String ptns = showInputDialog(project, "I want cookie! Give me the cookie!", "Cookie monster", Icons.JUNIT_TEST_CLASS_ICON);
     if (ptns == null) return;
 
     Map<File, Set<String>> includePathsMap = new HashMap<File, Set<String>> ();
     Map<File, Set<String>> excludePathsMap = new HashMap<File, Set<String>> ();
 
-    List<String> errors = new ArrayList<String> ();
+    final List<String> errors = new ArrayList<String> ();
 
     for (String ptn : ptns.split("\\n")) {
 
@@ -99,7 +98,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
       try {
         fp = FilePattern.fromString(ptn);
       } catch (FilePatternParseException ex) {
-        errors.add ("Bad coockie: \""+ptn+"\"");
+        errors.add ("Bad cookie: \""+ptn+"\"");
         continue;
       }
 
@@ -131,16 +130,15 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
       }
     }
 
-    String error;
     if (!suiteClasses.isEmpty()) {
-      error = new WriteAction<String>() {
+      final WriteAction<String> action = new WriteAction<String>() {
         @Override
         protected void run(Result<String> stringResult) throws Throwable {
           stringResult.setResult(null);
 
           StringBuilder sb = new StringBuilder("@SuiteClasses({");
           String sep = "";
-          for (String sc: suiteClasses) {
+          for (String sc : suiteClasses) {
             sb.append(sep).append(sc).append(".class");
             sep = ",\n";
           }
@@ -154,15 +152,23 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
             pc.getParent().addBefore(ann, pc);
           } catch (Exception ex) {
             stringResult.setResult(ex.toString());
-          }            
+          }
         }
-      }.execute().getResultObject();
+      };
+
+      CommandProcessor.getInstance().executeCommand(project, new Runnable() {
+        @Override
+        public void run() {
+          String error = action.execute().getResultObject();
+          if (error != null) {
+            errors.add(error);
+          }
+        }
+      },e.getPresentation().getText(), null);
     }
     else {
-      error = "No coockie, no work. :-|";
+      errors.add ("No cookie, no work. :-|");
     }
-
-    if (error != null) errors.add (error);
 
     if (!errors.isEmpty()) {
       StringBuilder sb = new StringBuilder("");
@@ -171,7 +177,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
         sb.append(sep).append(er);
         sep = "\n";
       }
-      Messages.showErrorDialog(project, sb.toString(), "I've got a bad feeling about this");
+      Messages.showErrorDialog(project, sb.toString(), "I have a bad feeling about this");
     }
   }
 
@@ -348,7 +354,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
         JComponent panel = super.createNorthPanel();
 
         JPanel messagePanel = (JPanel) super.getTextField().getParent();
-        messagePanel.remove(super.getTextField());
+        messagePanel.remove(super.getTextField()); // xe-xe
 
         textArea = new JTextArea(10, 50);
         textArea.setWrapStyleWord(true);
@@ -360,7 +366,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
         JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(textArea);
         messagePanel.add(scrollPane, BorderLayout.SOUTH);
 
-        return panel;
+        return panel;                    
       }
 
       public JComponent getPreferredFocusedComponent() {
