@@ -43,6 +43,39 @@
   </component>
   <component name="ProjectRootManager" version="2" />
   <component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="TransformationUtil" type="JUnit" factoryName="JUnit">
+      <MyState>
+        <option name="myJavaRunParameters">
+          <ConfigRunParameters>
+            <option name="VMParameters" value="-ea" />
+            <option name="alternativeJRE" value="" />
+            <option name="make" value="true" />
+            <option name="programParameters" value="" />
+            <option name="useAlternativeJRE" value="false" />
+            <option name="workingDirectory" value="" />
+          </ConfigRunParameters>
+        </option>
+        <option name="node" />
+        <option name="nodes">
+          <list>
+            <option value="jetbrains.mps.debug.tests.TransformationUtil" />
+          </list>
+        </option>
+        <option name="model" value="jetbrains.mps.debug.tests" />
+        <option name="module" value="jetbrains.mps.debug.tests" />
+        <option name="method" />
+        <option name="methods" />
+        <option name="fullMethodNames">
+          <list />
+        </option>
+        <option name="type" value="NODE" />
+      </MyState>
+      <RunnerSettings RunnerId="Default Debug Runner" />
+      <RunnerSettings RunnerId="Default Runner" />
+      <ConfigurationWrapper RunnerId="Default Debug Runner" />
+      <ConfigurationWrapper RunnerId="Default Runner" />
+      <method />
+    </configuration>
     <configuration default="false" name="Remote" type="Remote" factoryName="Remote">
       <RemoteConnectionSettings>
         <option name="hostName" value="localhost" />
@@ -109,37 +142,6 @@
       </MyState>
       <RunnerSettings RunnerId="Default Debug Runner" />
       <ConfigurationWrapper RunnerId="Default Debug Runner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TransformationUtil" type="JUnit" factoryName="JUnit">
-      <MyState>
-        <option name="myJavaRunParameters">
-          <ConfigRunParameters>
-            <option name="VMParameters" value="-ea" />
-            <option name="alternativeJRE" value="" />
-            <option name="make" value="true" />
-            <option name="programParameters" value="" />
-            <option name="useAlternativeJRE" value="false" />
-            <option name="workingDirectory" value="" />
-          </ConfigRunParameters>
-        </option>
-        <option name="node" />
-        <option name="nodes">
-          <list>
-            <option value="jetbrains.mps.debug.tests.TransformationUtil" />
-          </list>
-        </option>
-        <option name="model" value="jetbrains.mps.debug.tests" />
-        <option name="module" value="jetbrains.mps.debug.tests" />
-        <option name="method" />
-        <option name="methods" />
-        <option name="fullMethodNames">
-          <list />
-        </option>
-        <option name="type" value="NODE" />
-      </MyState>
-      <RunnerSettings RunnerId="Default Runner" />
-      <ConfigurationWrapper RunnerId="Default Runner" />
       <method />
     </configuration>
   </component>
