@@ -326,6 +326,22 @@
             <link role="baseMethodDeclaration:3" targetNodeId="3756818665386149934" resolveInfo="doSomething" />
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="607759879653683989">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="607759879653683990">
+            <property name="name:3" value="array" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ArrayType:3" id="607759879653683992">
+              <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="607759879653683991" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.ArrayLiteral:3" id="607759879653683995">
+              <node role="item:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="607759879653683996">
+                <property name="value:3" value="1" />
+              </node>
+              <node role="item:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="607759879653683998">
+                <property name="value:3" value="2" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="9010565462999112811">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="9010565462999112812">
             <property name="name:3" value="j" />
@@ -383,6 +399,18 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression:3" id="9010565462999112836">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="9010565462999112837">
                   <link role="variableDeclaration:3" targetNodeId="9010565462999112812" resolveInfo="j" />
+                </node>
+              </node>
+            </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="607759879653900374">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression:3" id="607759879653900380">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="607759879653900381">
+                  <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="607759879653900382">
+                    <property name="value:3" value="0" />
+                  </node>
+                  <node role="array:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="607759879653900383">
+                    <link role="variableDeclaration:3" targetNodeId="607759879653683990" resolveInfo="array" />
+                  </node>
                 </node>
               </node>
             </node>

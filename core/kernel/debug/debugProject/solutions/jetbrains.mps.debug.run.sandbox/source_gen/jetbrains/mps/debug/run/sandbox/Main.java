@@ -51,6 +51,7 @@ public class Main {
     doSomething();
     doSomething();
     doSomething();
+    int[] array = {1 ,2};
     int j = 50;
     while (j > 0) {
       j--;
@@ -59,6 +60,7 @@ public class Main {
       System.err.println("do ... while");
 
       j++;
+      array[0]++;
     } while (j < 0);
     while (true) {
       System.err.println("hi");
