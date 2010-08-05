@@ -20,34 +20,40 @@ public class ParallelPoolTest extends TestCase {
     private boolean isFinished = false;
 
     private final long amountOfWork;
-    private GenerationTaskPool pool;
+    private final GenerationTaskPool taskPool;
 
-    private CustomTask(GenerationTaskPool pool, long amountOfWork) {
+    private CustomTask(long amountOfWork, GenerationTaskPool taskPool) {
       this.amountOfWork = amountOfWork;
-      this.pool = pool;
+      this.taskPool = taskPool;
     }
 
-    public boolean isFinished() {
+    public synchronized boolean isFinished() {
       return isFinished;
     }
     
     @Override
     public void run() throws GenerationCanceledException, GenerationFailureException {
       long localCounter = amountOfWork;
+      long fract = 1;
+      while (fract < amountOfWork) {
+        fract <<= 1;
+      }
+      fract = (fract >> 5);
+      long fractCounter;
       long start = System.currentTimeMillis();
       while(localCounter > 0) {
-        if(pool.isCancelled()) {
-          break;
+        fractCounter = fract;
+        while (fractCounter > 0) {
+          fractCounter--;
         }
-        long partofWork = Math.min(localCounter, 1000000);
-        localCounter -= partofWork;
-        while(partofWork > 0) {
-          partofWork--;
-        }
+        localCounter -= fract;
+        if (taskPool.isCancelled()) return;
       }
       long end = System.currentTimeMillis();
       System.out.println("Took " + (end-start)/1000. + " secs");
-      isFinished = true;
+      synchronized (this) {
+        isFinished = true;
+      }
     }
 
     @Override
@@ -81,10 +87,10 @@ public class ParallelPoolTest extends TestCase {
     return amountOfWork;
   }
 
-  private CustomTask[] createTasks(GenerationTaskPool pool, long amountOfWork, int numberOfTasks) {
+  private CustomTask[] createTasks(long amountOfWork, int numberOfTasks, GenerationTaskPool taskPool) {
     List<GenerationTask> tasks = new ArrayList<GenerationTask>();
     for(int i = 0; i < numberOfTasks; i++) {
-      tasks.add(new CustomTask(pool, amountOfWork));
+      tasks.add(new CustomTask(amountOfWork, taskPool));
     }
     return tasks.toArray(new CustomTask[numberOfTasks]);
   }
@@ -101,7 +107,7 @@ public class ParallelPoolTest extends TestCase {
 
     long start = System.currentTimeMillis();
     GenerationTaskPool pool = new GenerationTaskPool(new EmptyProgressIndicator(), 4);
-    final CustomTask[] generationTasks = createTasks(pool, amountFor2secs, 4);
+    final CustomTask[] generationTasks = createTasks(amountFor2secs, 4, pool);
     for(GenerationTask t : generationTasks) {
       pool.addTask(t);
     }
@@ -140,7 +146,7 @@ public class ParallelPoolTest extends TestCase {
         return true;
       }
     }, 4);
-    final CustomTask[] generationTasks = createTasks(pool, amountFor2secs*4, 4);
+    final CustomTask[] generationTasks = createTasks(amountFor2secs*4, 4, pool);
     for(GenerationTask t : generationTasks) {
       pool.addTask(t);
     }
@@ -181,7 +187,7 @@ public class ParallelPoolTest extends TestCase {
         return (System.currentTimeMillis() - start > 1600);
       }
     }, 4);
-    final CustomTask[] generationTasks = createTasks(pool, amountFor2secs*4, 4);
+    final CustomTask[] generationTasks = createTasks(amountFor2secs*4, 4, pool);
     for(GenerationTask t : generationTasks) {
       pool.addTask(t);
     }
