@@ -3801,7 +3801,7 @@
                   <link role="variableDeclaration:3" targetNodeId="1225121792023" resolveInfo="result" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1225121932264">
-                  <link role="baseMethodDeclaration:3" targetNodeId="6.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1225121936328">
                     <property name="value:3" value=" since build " />
                   </node>

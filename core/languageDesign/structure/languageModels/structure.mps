@@ -524,7 +524,6 @@
     </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1204740973143">
       <property name="name:0" value="role" />
-      <property name="propertyType:0" value="string" />
       <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
     </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1149608445162">
@@ -533,7 +532,6 @@
     </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1204741022738">
       <property name="name:0" value="sourceCardinality" />
-      <property name="propertyType:0" value="string" />
       <link role="dataType:0" targetNodeId="1204742406467:0" resolveInfo="AnnotationLinkCardinality" />
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1149608246500">

@@ -142,6 +142,55 @@
     <scopeInfo nodeId="5476035322658116506" fileName="RemoveUndeclaredProperty_QuickFix.java" startLine="12" startPosition="34" endLine="13" endPosition="130" />
     <scopeInfo nodeId="3618120580763130709" fileName="RemoveUndeclaredProperty_QuickFix.java" startLine="16" startPosition="35" endLine="17" endPosition="113" />
   </root>
+  <root nodeId="376024488709664742">
+    <nodeInfo nodeId="5425021671150235563" fileName="check_Export_NonTypesystemRule.java" startLine="31" startPosition="90" endLine="32" endPosition="106" />
+    <nodeInfo nodeId="5425021671150235586" fileName="check_Export_NonTypesystemRule.java" startLine="33" startPosition="188" endLine="34" endPosition="13" />
+    <nodeInfo nodeId="376024488709664748" fileName="check_Export_NonTypesystemRule.java" startLine="35" startPosition="5" endLine="36" endPosition="44" />
+    <nodeInfo nodeId="376024488709665003" fileName="check_Export_NonTypesystemRule.java" startLine="38" startPosition="38" endLine="39" endPosition="118" />
+    <nodeInfo nodeId="5425021671150237309" fileName="check_Export_NonTypesystemRule.java" startLine="42" startPosition="24" endLine="43" endPosition="47" />
+    <nodeInfo nodeId="5425021671150237353" fileName="check_Export_NonTypesystemRule.java" startLine="44" startPosition="10" endLine="45" endPosition="5" />
+    <nodeInfo nodeId="376024488709665019" fileName="check_Export_NonTypesystemRule.java" startLine="45" startPosition="5" endLine="46" endPosition="24" />
+    <nodeInfo nodeId="5425021671150239401" fileName="check_Export_NonTypesystemRule.java" startLine="47" startPosition="87" endLine="48" endPosition="56" />
+    <nodeInfo nodeId="5425021671150239952" fileName="check_Export_NonTypesystemRule.java" startLine="49" startPosition="135" endLine="50" endPosition="17" />
+    <nodeInfo nodeId="5425021671150237331" fileName="check_Export_NonTypesystemRule.java" startLine="53" startPosition="41" endLine="54" endPosition="121" />
+    <nodeInfo nodeId="5425021671150237355" fileName="check_Export_NonTypesystemRule.java" startLine="57" startPosition="26" endLine="58" endPosition="51" />
+    <nodeInfo nodeId="5425021671150237358" fileName="check_Export_NonTypesystemRule.java" startLine="59" startPosition="9" endLine="60" endPosition="57" />
+    <nodeInfo nodeId="5425021671150237358" fileName="check_Export_NonTypesystemRule.java" startLine="60" startPosition="57" endLine="61" endPosition="59" />
+    <nodeInfo nodeId="5425021671150237358" fileName="check_Export_NonTypesystemRule.java" startLine="61" startPosition="59" endLine="62" endPosition="79" />
+    <nodeInfo nodeId="5425021671150237358" fileName="check_Export_NonTypesystemRule.java" startLine="62" startPosition="79" endLine="63" endPosition="249" />
+    <nodeInfo nodeId="5425021671150237375" fileName="check_Export_NonTypesystemRule.java" startLine="65" startPosition="12" endLine="66" endPosition="7" />
+    <nodeInfo nodeId="5425021671150235573" fileName="check_Export_NonTypesystemRule.java" startLine="32" startPosition="106" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="5425021671150239412" fileName="check_Export_NonTypesystemRule.java" startLine="48" startPosition="56" endLine="51" endPosition="7" />
+    <nodeInfo nodeId="376024488709664999" fileName="check_Export_NonTypesystemRule.java" startLine="37" startPosition="198" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="5425021671150237299" fileName="check_Export_NonTypesystemRule.java" startLine="41" startPosition="72" endLine="45" endPosition="5" />
+    <nodeInfo nodeId="5425021671150237329" fileName="check_Export_NonTypesystemRule.java" startLine="52" startPosition="175" endLine="56" endPosition="0" />
+    <nodeInfo nodeId="376024488709664950" fileName="check_Export_NonTypesystemRule.java" startLine="36" startPosition="44" endLine="41" endPosition="72" />
+    <nodeInfo nodeId="5425021671150237314" fileName="check_Export_NonTypesystemRule.java" startLine="51" startPosition="7" endLine="56" endPosition="74" />
+    <nodeInfo nodeId="5425021671150237358" fileName="check_Export_NonTypesystemRule.java" startLine="58" startPosition="51" endLine="64" endPosition="9" />
+    <nodeInfo nodeId="5425021671150237343" fileName="check_Export_NonTypesystemRule.java" startLine="56" startPosition="74" endLine="66" endPosition="7" />
+    <nodeInfo nodeId="376024488709665189" fileName="check_Export_NonTypesystemRule.java" startLine="46" startPosition="24" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="5425021671150237354" fileName="check_Export_NonTypesystemRule.java" startLine="44" startPosition="12" endLine="44" endPosition="12" />
+    <scopeInfo nodeId="5425021671150237376" fileName="check_Export_NonTypesystemRule.java" startLine="65" startPosition="14" endLine="65" endPosition="14" />
+    <scopeInfo nodeId="5425021671150235574" fileName="check_Export_NonTypesystemRule.java" startLine="33" startPosition="188" endLine="34" endPosition="13" />
+    <scopeInfo nodeId="376024488709665000" fileName="check_Export_NonTypesystemRule.java" startLine="38" startPosition="38" endLine="39" endPosition="118" />
+    <scopeInfo nodeId="5425021671150237300" fileName="check_Export_NonTypesystemRule.java" startLine="42" startPosition="24" endLine="43" endPosition="47" />
+    <scopeInfo nodeId="5425021671150239413" fileName="check_Export_NonTypesystemRule.java" startLine="49" startPosition="135" endLine="50" endPosition="17" />
+    <scopeInfo nodeId="5425021671150237330" fileName="check_Export_NonTypesystemRule.java" startLine="53" startPosition="41" endLine="54" endPosition="121" />
+    <scopeInfo nodeId="376024488709664999" fileName="check_Export_NonTypesystemRule.java" startLine="37" startPosition="198" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="5425021671150237329" fileName="check_Export_NonTypesystemRule.java" startLine="52" startPosition="175" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="5425021671150237358" fileName="check_Export_NonTypesystemRule.java" startLine="59" startPosition="9" endLine="63" endPosition="249" />
+    <scopeInfo nodeId="5425021671150237344" fileName="check_Export_NonTypesystemRule.java" startLine="57" startPosition="26" endLine="64" endPosition="9" />
+    <scopeInfo nodeId="376024488709665192" fileName="check_Export_NonTypesystemRule.java" startLine="47" startPosition="87" endLine="66" endPosition="7">
+      <varInfo nodeId="5425021671150239402" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="376024488709665189" fileName="check_Export_NonTypesystemRule.java" startLine="46" startPosition="24" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="376024488709664743" fileName="check_Export_NonTypesystemRule.java" startLine="31" startPosition="90" endLine="67" endPosition="5">
+      <varInfo nodeId="376024488709664951" varName="exp" />
+      <varInfo nodeId="5425021671150235564" varName="namespace" />
+    </scopeInfo>
+    <unitInfo nodeId="376024488709664999" fileName="check_Export_NonTypesystemRule.java" startLine="37" startPosition="175" endLine="41" endPosition="5" unitName="jetbrains.mps.lang.core.typesystem.check_Export_NonTypesystemRule$1" />
+    <unitInfo nodeId="5425021671150237329" fileName="check_Export_NonTypesystemRule.java" startLine="52" startPosition="152" endLine="56" endPosition="7" unitName="jetbrains.mps.lang.core.typesystem.check_Export_NonTypesystemRule$2" />
+  </root>
   <root nodeId="4942048232752368510">
     <nodeInfo nodeId="4942048232752368524" fileName="check_ReferencesScope_NonTypesystemRule.java" startLine="29" startPosition="90" endLine="30" endPosition="74" />
     <nodeInfo nodeId="4942048232752368544" fileName="check_ReferencesScope_NonTypesystemRule.java" startLine="31" startPosition="26" endLine="32" endPosition="13" />

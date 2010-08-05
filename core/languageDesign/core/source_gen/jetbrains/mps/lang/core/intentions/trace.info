@@ -72,5 +72,11 @@
       <varInfo nodeId="1209385285847" varName="scope" />
     </scopeInfo>
   </root>
+  <root nodeId="5425021671150136587">
+    <nodeInfo nodeId="5425021671150146866" fileName="AddExport_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="24" />
+    <nodeInfo nodeId="5425021671150220740" fileName="AddExport_Intention.java" startLine="37" startPosition="76" endLine="38" endPosition="189" />
+    <scopeInfo nodeId="5425021671150136589" fileName="AddExport_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="24" />
+    <scopeInfo nodeId="5425021671150136591" fileName="AddExport_Intention.java" startLine="37" startPosition="76" endLine="38" endPosition="189" />
+  </root>
 </debugInfo>
 
