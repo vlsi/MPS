@@ -556,15 +556,10 @@
                       <link role="link:16" targetNodeId="1.1068581517664:3" />
                     </node>
                   </node>
-                  <node role="value:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1230545241166">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1230540720035">
-                      <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1230540715127" />
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1230540733819">
-                        <link role="link:16" targetNodeId="1.1068498886297:3" />
-                      </node>
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1230547163326">
-                      <link role="baseMethodDeclaration:16" targetNodeId="6.1230540989695" resolveInfo="getNullableState" />
+                  <node role="value:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1230540720035">
+                    <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1230540715127" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1230540733819">
+                      <link role="link:16" targetNodeId="1.1068498886297:3" />
                     </node>
                   </node>
                 </node>
@@ -1757,15 +1752,10 @@
             </node>
             <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement:0" id="1206987180651">
               <node role="variable:0" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1206987184622" />
-              <node role="value:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1231935705036">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1231935702688">
-                  <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1231935701531" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1231935704316">
-                    <link role="link:16" targetNodeId="1.1068431790190:3" />
-                  </node>
-                </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1231935709305">
-                  <link role="baseMethodDeclaration:16" targetNodeId="6.1230540989695" resolveInfo="getNullableState" />
+              <node role="value:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1231935702688">
+                <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1231935701531" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1231935704316">
+                  <link role="link:16" targetNodeId="1.1068431790190:3" />
                 </node>
               </node>
             </node>

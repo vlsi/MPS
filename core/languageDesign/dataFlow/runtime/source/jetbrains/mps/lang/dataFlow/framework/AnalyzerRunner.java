@@ -87,7 +87,6 @@ public class AnalyzerRunner<E> {
   }
 
   public Program getProgramCopy() {
-    //only instructions
     return myProgram;
   }
 }
