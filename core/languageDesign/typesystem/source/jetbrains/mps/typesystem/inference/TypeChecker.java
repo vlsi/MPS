@@ -15,26 +15,32 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.IErrorReporter;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
+import jetbrains.mps.typesystem.debug.ISlicer;
+import jetbrains.mps.typesystem.debug.SlicerImpl;
+import jetbrains.mps.typesystem.debug.NullSlicer;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
+import jetbrains.mps.util.performance.PerformanceTracer;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.util.Computable;
 
 public class TypeChecker implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
@@ -270,18 +276,19 @@ public class TypeChecker implements ApplicationComponent {
   public SNode getTypeOf(final SNode node) {
     if (node == null) return null;
     fireNodeTypeAccessed(node);
-    NodeTypesComponentsRepository tcr = NodeTypesComponentsRepository.getInstance();
+    TypeCheckingContext context;
     if (isGenerationMode() || isTransformationTestMode()) {
-      TypeCheckingContext context = myPerformanceTracer == null ? tcr.createIsolatedTypeCheckingContext(node) : tcr.createTracingTypeCheckingContext(node);
-      SNode result = context.getTypeOf(node, this);
-      context.dispose();
-      return result;
+      if (myPerformanceTracer == null) {
+        context = NodeTypesComponentsRepository.getInstance().createIsolatedTypeCheckingContext(node);
     } else {
-      TypeCheckingContext context = tcr.createTypeCheckingContext(node);
-      if (context == null) return null;
+        context = NodeTypesComponentsRepository.getInstance().createTracingTypeCheckingContext(node);
+      }
+    } else {
+      context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node);
+    }
+    if (context == null) return null;
       return context.getTypeOf(node, this);
     }
-  }
 
   public boolean checkIfNotChecked(SNode node) {
     return checkIfNotChecked(node, true);
