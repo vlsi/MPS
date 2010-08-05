@@ -15,32 +15,26 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.IErrorReporter;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent;
-import jetbrains.mps.typesystem.inference.util.SubtypingCache;
-import jetbrains.mps.typesystem.debug.ISlicer;
-import jetbrains.mps.typesystem.debug.SlicerImpl;
-import jetbrains.mps.typesystem.debug.NullSlicer;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
-import jetbrains.mps.util.performance.PerformanceTracer;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
-
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.util.Computable;
 
 public class TypeChecker implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
@@ -48,7 +42,8 @@ public class TypeChecker implements ApplicationComponent {
   private static final String RUNTIME_TYPES = "$runtimeTypes$";
   private static final String TYPES_MODEL_NAME = "typesModel";
   private static final SModelFqName TYPES_MODEL_UID = new SModelFqName(TYPES_MODEL_NAME, RUNTIME_TYPES);
-  private static final ModelOwner RUNTIME_TYPES_MODEL_OWNER = new ModelOwner() {};
+  private static final ModelOwner RUNTIME_TYPES_MODEL_OWNER = new ModelOwner() {
+  };
 
   public final Object TYPECHECKING_LOCK = new Object();
   public final Object LISTENERS_LOCK = new Object();
@@ -233,7 +228,7 @@ public class TypeChecker implements ApplicationComponent {
       return (SNode) o;
     }
     if (o instanceof BaseAdapter) {
-      return ((BaseAdapter)o).getNode();
+      return ((BaseAdapter) o).getNode();
     }
     return null;
   }
@@ -275,18 +270,17 @@ public class TypeChecker implements ApplicationComponent {
   public SNode getTypeOf(final SNode node) {
     if (node == null) return null;
     fireNodeTypeAccessed(node);
-    TypeCheckingContext context;
+    NodeTypesComponentsRepository tcr = NodeTypesComponentsRepository.getInstance();
     if (isGenerationMode() || isTransformationTestMode()) {
-      if (myPerformanceTracer == null) {
-        context = NodeTypesComponentsRepository.getInstance().createIsolatedTypeCheckingContext(node);
-      } else {
-        context = NodeTypesComponentsRepository.getInstance().createTracingTypeCheckingContext(node);
-      }
+      TypeCheckingContext context = myPerformanceTracer == null ? tcr.createIsolatedTypeCheckingContext(node) : tcr.createTracingTypeCheckingContext(node);
+      SNode result = context.getTypeOf(node, this);
+      context.dispose();
+      return result;
     } else {
-      context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node);
+      TypeCheckingContext context = tcr.createTypeCheckingContext(node);
+      if (context == null) return null;
+      return context.getTypeOf(node, this);
     }
-    if (context == null) return null;
-    return context.getTypeOf(node, this);
   }
 
   public boolean checkIfNotChecked(SNode node) {
