@@ -39,13 +39,15 @@ public class
   private final IErrorReporter myError;
   private boolean myWasRegistered = true;
   private JSplitPane myMainComponent;
+  private JComponent mySupertypesViewComponent;
 
   public MyBaseNodeDialog(IOperationContext operationContext, SNode node, SNode type, IErrorReporter error) throws HeadlessException {
     super(getTitle(node), operationContext);
 
     SupertypesViewTool supertypesView = operationContext.getProject().getComponent(SupertypesViewTool.class);
 
-    myMainComponent = new JSplitPaneWithoutBorders(JSplitPane.HORIZONTAL_SPLIT, getSuperMainComponent(), supertypesView.getComponent());
+    mySupertypesViewComponent = supertypesView.getComponent();
+    myMainComponent = new JSplitPaneWithoutBorders(JSplitPane.HORIZONTAL_SPLIT, getSuperMainComponent(), mySupertypesViewComponent);
     myMainComponent.setDividerSize(6);
     myMainComponent.setResizeWeight(0.8);
 
@@ -75,7 +77,7 @@ public class
     supertypesView.showItemInHierarchy(adapter[0], operationContext);
   }
 
-  private static String getTitle(final SNode node) {
+  private static String getTitle(final SNode node) {                                
     return ModelAccess.instance().runWriteActionInCommand(new Computable<String>() {
       public String compute() {
         return "Type For Node " + node;
@@ -133,6 +135,7 @@ public class
   }
 
   public void dispose() {
+    mySupertypesViewComponent.getParent().remove(mySupertypesViewComponent);
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         if (!myWasRegistered) {
