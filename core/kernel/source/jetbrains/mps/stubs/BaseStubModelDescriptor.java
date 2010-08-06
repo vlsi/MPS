@@ -1,5 +1,6 @@
 package jetbrains.mps.stubs;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelUpdater;
@@ -11,6 +12,8 @@ import jetbrains.mps.vfs.IFile;
 import java.util.*;
 
 public final class BaseStubModelDescriptor extends DefaultSModelDescriptor implements Cloneable {
+  private static final Logger LOG = Logger.getLogger(BaseStubModelDescriptor.class);
+
   private List<StubPath> myStubPaths;
   private boolean myNeedsReloading = true;
   private String myManagerClass;
@@ -33,7 +36,11 @@ public final class BaseStubModelDescriptor extends DefaultSModelDescriptor imple
 
   protected SModel loadModel() {
     SModel model = super.loadModel();
-    updateAfterLoad(model);
+    try {
+      updateAfterLoad(model);
+    } catch (Throwable t) {
+      LOG.error("Error on model load. Model: " + model.getLongName(), t);
+    }
     return model;
   }
 
