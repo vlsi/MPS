@@ -11,5 +11,5 @@ public abstract class DataFlowConstructor {
 
   public abstract boolean isApplicable(SNode node);
 
-  public abstract void performActions(Program program);
+  public abstract void performActions(Program program, SNode node);
 }

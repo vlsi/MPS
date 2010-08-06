@@ -6,13 +6,20 @@ package jetbrains.mps.analyzers.mpsAnalyzers.nullable;
 public enum NullableState {
   NULLABLE(),
   NOTNULL(),
-  UNKNOWN();
+  UNKNOWN(),
+  NOT_INIT();
 
   NullableState() {
   }
 
   public NullableState merge(NullableState state) {
     if (this.equals(state)) {
+      return this;
+    }
+    if (this.equals(NullableState.NOT_INIT)) {
+      return state;
+    }
+    if (state.equals(NullableState.NOT_INIT)) {
       return this;
     }
     if (state.equals(NullableState.UNKNOWN) && this.equals(NullableState.NOTNULL)) {

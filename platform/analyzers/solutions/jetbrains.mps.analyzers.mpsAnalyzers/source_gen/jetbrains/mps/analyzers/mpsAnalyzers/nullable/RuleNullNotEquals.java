@@ -18,7 +18,7 @@ public class RuleNullNotEquals extends DataFlowConstructor {
     return myPattern.match(node);
   }
 
-  public void performActions(Program program) {
+  public void performActions(Program program, SNode node) {
     myPattern.performActions(program);
   }
 

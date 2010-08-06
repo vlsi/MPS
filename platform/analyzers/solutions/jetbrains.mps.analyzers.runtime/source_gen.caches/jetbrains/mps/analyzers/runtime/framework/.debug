@@ -25,6 +25,7 @@
       <varInfo nodeId="7685333756920032268" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="7685333756920132846" fileName="DataFlowConstructor.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="4943044633102141038" varName="node" />
       <varInfo nodeId="7685333756920132850" varName="program" />
     </scopeInfo>
     <unitInfo nodeId="752944717341761987" fileName="DataFlowConstructor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />

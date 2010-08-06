@@ -23,6 +23,7 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 
 public class NullableAnalyzerRunner extends AnalyzerRunner<Map<SNode, NullableState>> {
   private Map<String, List<DataFlowConstructor>> myApplicableMap = new HashMap<String, List<DataFlowConstructor>>();
+  private List<DataFlowConstructor> myConceptRules = new LinkedList();
   private SNode myNode;
 
   public NullableAnalyzerRunner(SNode node) {
@@ -68,6 +69,9 @@ public class NullableAnalyzerRunner extends AnalyzerRunner<Map<SNode, NullableSt
       }
       myApplicableMap.get(conceptName).add(rule);
     }
+    myConceptRules.add(new RuleMethodCall());
+    myConceptRules.add(new RuleNullLiteral());
+    myConceptRules.add(new RuleFieldReference());
     myProgram = new MPSProgramBuilder(DataFlowManager.getInstance()).buildProgram(myNode);
     prepareProgram();
     myAnalyzer = new NullableAnalyzerRunner.NullableAnalyzer();
@@ -79,8 +83,13 @@ public class NullableAnalyzerRunner extends AnalyzerRunner<Map<SNode, NullableSt
       if (myApplicableMap.containsKey(key)) {
         for (DataFlowConstructor rule : myApplicableMap.get(key)) {
           if (rule.isApplicable(descendant)) {
-            rule.performActions(myProgram);
+            rule.performActions(myProgram, descendant);
           }
+        }
+      }
+      for (DataFlowConstructor rule : myConceptRules) {
+        if (rule.isApplicable(descendant)) {
+          rule.performActions(myProgram, descendant);
         }
       }
     }
@@ -104,7 +113,7 @@ public class NullableAnalyzerRunner extends AnalyzerRunner<Map<SNode, NullableSt
           NullableState value = entry.getValue();
           NullableState resValue = result.get(expr);
           if (resValue == null) {
-            resValue = NullableState.UNKNOWN;
+            resValue = NullableState.NOT_INIT;
           }
           result.put(expr, resValue.merge(value));
         }
@@ -138,7 +147,7 @@ public class NullableAnalyzerRunner extends AnalyzerRunner<Map<SNode, NullableSt
         }
         NullableState valueState = result.get(value);
         if (valueState == null) {
-          valueState = NullableState.UNKNOWN;
+          valueState = NullableState.NOT_INIT;
         }
         result.put((SNode) write.getVariable(), valueState);
       }
