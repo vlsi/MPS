@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
@@ -436,11 +437,12 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     myFontStyle = fontStyle;
   }
 
+  @NotNull
   public final String getNodeIdentifier() {
     return myNodeIdentifier;
   }
 
-  public final void setNodeIdentifier(String newNodeIdentifier) {
+  public final void setNodeIdentifier(@NotNull String newNodeIdentifier) {
     myNodeIdentifier = newNodeIdentifier;
   }
 
