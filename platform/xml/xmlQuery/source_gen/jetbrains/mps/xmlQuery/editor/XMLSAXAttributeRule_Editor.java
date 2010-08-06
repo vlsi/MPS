@@ -12,11 +12,14 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class XMLSAXAttributeRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -35,7 +38,9 @@ public class XMLSAXAttributeRule_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_z5ltoj_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_z5ltoj_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_z5ltoj_d0(editorContext, node));
+    if (renderingCondition_z5ltoj_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_z5ltoj_d0(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -89,6 +94,8 @@ public class XMLSAXAttributeRule_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -142,5 +149,9 @@ public class XMLSAXAttributeRule_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_z5ltoj_a0a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isRequired");
+  }
+
+  private static boolean renderingCondition_z5ltoj_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "handler", true) != null);
   }
 }

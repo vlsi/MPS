@@ -20,8 +20,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -44,46 +44,55 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b42orx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b42orx_a");
-    editorCell.addEditorCell(this.createConstant_b42orx_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_b42orx_b0(editorContext, node));
-    if (renderingCondition_b42orx_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_b42orx_c0(editorContext, node));
+    if (renderingCondition_b42orx_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_b42orx_a0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createProperty_b42orx_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_b42orx_e0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_b42orx_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_b42orx_g0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_b42orx_h0(editorContext, node));
-    if (renderingCondition_b42orx_a8a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_b42orx_i0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_b42orx_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_b42orx_c0(editorContext, node));
+    if (renderingCondition_b42orx_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_b42orx_d0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createRefNodeList_b42orx_j0(editorContext, node));
-    if (renderingCondition_b42orx_a01a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_b42orx_k0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_b42orx_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_b42orx_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_b42orx_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_b42orx_h0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_b42orx_i0(editorContext, node));
+    if (renderingCondition_b42orx_a9a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_b42orx_j0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createRefNodeList_b42orx_l0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_b42orx_k0(editorContext, node));
+    if (renderingCondition_b42orx_a11a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_b42orx_l0(editorContext, node));
+    }
     if (renderingCondition_b42orx_a21a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_b42orx_m0(editorContext, node));
+      editorCell.addEditorCell(this.createRefNodeList_b42orx_m0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createRefNode_b42orx_n0(editorContext, node));
+    if (renderingCondition_b42orx_a31a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_b42orx_n0(editorContext, node));
+    }
     if (renderingCondition_b42orx_a41a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_b42orx_o0(editorContext, node));
+      editorCell.addEditorCell(this.createRefNode_b42orx_o0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createRefNode_b42orx_p0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_b42orx_q0(editorContext, node));
+    if (renderingCondition_b42orx_a51a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_b42orx_p0(editorContext, node));
+    }
+    if (renderingCondition_b42orx_a61a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_b42orx_q0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createConstant_b42orx_r0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_b42orx_h0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_b42orx_i0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_b42orx_h0");
+    editorCell.setCellId("Collection_b42orx_i0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
-    editorCell.addEditorCell(this.createRefNode_b42orx_a7a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_b42orx_a8a(editorContext, node));
     return editorCell;
   }
 
@@ -91,6 +100,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_b42orx_a_0");
     editorCell.addEditorCell(this.createCollection_b42orx_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_b42orx_b0(editorContext, node));
     return editorCell;
   }
 
@@ -106,30 +116,50 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_b42orx_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_b42orx_b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_b42orx_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_b42orx_b1a(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createConstant_b42orx_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rule");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compact");
     editorCell.setCellId("Constant_b42orx_a0");
+    delete_CompactKW.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_b42orx_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_b42orx_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rule");
+    editorCell.setCellId("Constant_b42orx_b0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_b42orx_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for tag");
-    editorCell.setCellId("Constant_b42orx_c0");
+    editorCell.setCellId("Constant_b42orx_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_b42orx_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_b42orx_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
-    editorCell.setCellId("Constant_b42orx_e0");
+    editorCell.setCellId("Constant_b42orx_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_b42orx_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_b42orx_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_b42orx_g0");
+    editorCell.setCellId("Constant_b42orx_h0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -138,9 +168,9 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_b42orx_i0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_b42orx_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_b42orx_i0");
+    editorCell.setCellId("Constant_b42orx_j0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -150,9 +180,9 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_b42orx_k0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_b42orx_l0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_b42orx_k0");
+    editorCell.setCellId("Constant_b42orx_l0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -162,9 +192,9 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_b42orx_m0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_b42orx_n0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_b42orx_m0");
+    editorCell.setCellId("Constant_b42orx_n0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -174,9 +204,9 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_b42orx_o0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_b42orx_p0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_b42orx_o0");
+    editorCell.setCellId("Constant_b42orx_p0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -186,9 +216,9 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_b42orx_q0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_b42orx_r0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_b42orx_q0");
+    editorCell.setCellId("Constant_b42orx_r0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -200,8 +230,15 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_b42orx_j0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new XMLSAXNodeRule_Editor.attrsListHandler_b42orx_j0(node, "attrs", editorContext);
+  private EditorCell createConstant_b42orx_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compact form:");
+    editorCell.setCellId("Constant_b42orx_a1a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_b42orx_k0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new XMLSAXNodeRule_Editor.attrsListHandler_b42orx_k0(node, "attrs", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_attrs");
     {
@@ -214,8 +251,8 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_b42orx_l0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new XMLSAXNodeRule_Editor.childrenListHandler_b42orx_l0(node, "children", editorContext);
+  private EditorCell createRefNodeList_b42orx_m0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new XMLSAXNodeRule_Editor.childrenListHandler_b42orx_m0(node, "children", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_children");
     {
@@ -228,7 +265,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_b42orx_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_b42orx_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -251,7 +288,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_b42orx_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_b42orx_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("tagName");
     provider.setNoTargetText("<any tag>");
@@ -293,7 +330,25 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_b42orx_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_b42orx_b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("isCompact");
+    provider.setNoTargetText("<no isCompact>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_isCompact");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_b42orx_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -310,7 +365,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_b42orx_a7a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_b42orx_a8a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("creator");
     provider.setNoTargetText("<no creator>");
@@ -327,7 +382,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_b42orx_n0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_b42orx_o0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");
@@ -349,7 +404,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_b42orx_p0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_b42orx_q0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("validator");
     provider.setNoTargetText("<no validator>");
@@ -371,28 +426,44 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_b42orx_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_b42orx_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isCompact");
+  }
+
+  private static boolean renderingCondition_b42orx_a3a(SNode node, EditorContext editorContext, IScope scope) {
     return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "tagName"));
   }
 
-  private static boolean renderingCondition_b42orx_a8a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "creator", true) != null) || ListSequence.fromList(SLinkOperations.getTargets(node, "attrs", true)).isNotEmpty();
+  private static boolean renderingCondition_b42orx_a9a(SNode node, EditorContext editorContext, IScope scope) {
+    return ((SLinkOperations.getTarget(node, "creator", true) != null) || ListSequence.fromList(SLinkOperations.getTargets(node, "attrs", true)).isNotEmpty()) && !(SPropertyOperations.getBoolean(node, "isCompact"));
   }
 
-  private static boolean renderingCondition_b42orx_a01a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "attrs", true)).isNotEmpty() || ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty();
+  private static boolean renderingCondition_b42orx_a11a(SNode node, EditorContext editorContext, IScope scope) {
+    return (ListSequence.fromList(SLinkOperations.getTargets(node, "attrs", true)).isNotEmpty() || ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty()) && !(SPropertyOperations.getBoolean(node, "isCompact"));
   }
 
   private static boolean renderingCondition_b42orx_a21a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty() || (SLinkOperations.getTarget(node, "text", true) != null);
+    return !(SPropertyOperations.getBoolean(node, "isCompact")) || ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_b42orx_a31a(SNode node, EditorContext editorContext, IScope scope) {
+    return (ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty() || (SLinkOperations.getTarget(node, "text", true) != null)) && !(SPropertyOperations.getBoolean(node, "isCompact"));
   }
 
   private static boolean renderingCondition_b42orx_a41a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "validator", true) != null) || (SLinkOperations.getTarget(node, "text", true) != null);
+    return !(SPropertyOperations.getBoolean(node, "isCompact")) || (SLinkOperations.getTarget(node, "text", true) != null);
   }
 
-  private static class attrsListHandler_b42orx_j0 extends RefNodeListHandler {
-    public attrsListHandler_b42orx_j0(SNode ownerNode, String childRole, EditorContext context) {
+  private static boolean renderingCondition_b42orx_a51a(SNode node, EditorContext editorContext, IScope scope) {
+    return ((SLinkOperations.getTarget(node, "validator", true) != null) || (SLinkOperations.getTarget(node, "text", true) != null)) && !(SPropertyOperations.getBoolean(node, "isCompact"));
+  }
+
+  private static boolean renderingCondition_b42orx_a61a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isCompact")) || (SLinkOperations.getTarget(node, "validator", true) != null);
+  }
+
+  private static class attrsListHandler_b42orx_k0 extends RefNodeListHandler {
+    public attrsListHandler_b42orx_k0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -415,7 +486,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_b42orx_a9a(editorContext, node);
+      return this.createConstant_b42orx_a01a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -448,9 +519,9 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    private EditorCell createConstant_b42orx_a9a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_b42orx_a01a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no attributes>");
-      editorCell.setCellId("Constant_b42orx_a9a");
+      editorCell.setCellId("Constant_b42orx_a01a");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
@@ -460,8 +531,8 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class childrenListHandler_b42orx_l0 extends RefNodeListHandler {
-    public childrenListHandler_b42orx_l0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class childrenListHandler_b42orx_m0 extends RefNodeListHandler {
+    public childrenListHandler_b42orx_m0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -484,7 +555,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_b42orx_a11a(editorContext, node);
+      return this.createConstant_b42orx_a21a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -517,9 +588,9 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    private EditorCell createConstant_b42orx_a11a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_b42orx_a21a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no children>");
-      editorCell.setCellId("Constant_b42orx_a11a");
+      editorCell.setCellId("Constant_b42orx_a21a");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);

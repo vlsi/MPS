@@ -18,6 +18,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new AccessAttributeOperation_attributeDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new AttributeBuilder_attributeDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ElementBuilder_elementDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new XMLSAXAttributeReference_attribute_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new XMLSAXFieldReference_declaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

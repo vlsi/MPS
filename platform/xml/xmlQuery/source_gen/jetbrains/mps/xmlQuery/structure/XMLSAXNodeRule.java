@@ -19,6 +19,7 @@ public class XMLSAXNodeRule extends BaseConcept implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_COMPACT = "isCompact";
   public static final String TYPE = "type";
   public static final String TEXT = "text";
   public static final String CREATOR = "creator";
@@ -68,6 +69,14 @@ public class XMLSAXNodeRule extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(XMLSAXNodeRule.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getIsCompact() {
+    return this.getBooleanProperty(XMLSAXNodeRule.IS_COMPACT);
+  }
+
+  public void setIsCompact(boolean value) {
+    this.setBooleanProperty(XMLSAXNodeRule.IS_COMPACT, value);
   }
 
   public Type getType() {

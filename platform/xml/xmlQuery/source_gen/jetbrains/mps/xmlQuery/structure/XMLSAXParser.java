@@ -19,6 +19,7 @@ public class XMLSAXParser extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ROOT = "root";
   public static final String NODES = "nodes";
+  public static final String FIELDS = "fields";
 
   public XMLSAXParser(SNode node) {
     super(node);
@@ -82,6 +83,26 @@ public class XMLSAXParser extends BaseConcept implements INamedConcept {
 
   public void insertNodes(XMLSAXNodeRule prev, XMLSAXNodeRule node) {
     this.insertChild(prev, XMLSAXParser.NODES, node);
+  }
+
+  public int getFieldsesCount() {
+    return this.getChildCount(XMLSAXParser.FIELDS);
+  }
+
+  public Iterator<XMLSAXFieldDeclaration> fieldses() {
+    return this.children(XMLSAXFieldDeclaration.class, XMLSAXParser.FIELDS);
+  }
+
+  public List<XMLSAXFieldDeclaration> getFieldses() {
+    return this.getChildren(XMLSAXFieldDeclaration.class, XMLSAXParser.FIELDS);
+  }
+
+  public void addFields(XMLSAXFieldDeclaration node) {
+    this.addChild(XMLSAXParser.FIELDS, node);
+  }
+
+  public void insertFields(XMLSAXFieldDeclaration prev, XMLSAXFieldDeclaration node) {
+    this.insertChild(prev, XMLSAXParser.FIELDS, node);
   }
 
   public static XMLSAXParser newInstance(SModel sm, boolean init) {
