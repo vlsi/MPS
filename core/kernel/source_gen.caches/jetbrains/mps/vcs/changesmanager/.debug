@@ -76,8 +76,10 @@
     <nodeInfo nodeId="2530613801598704345" fileName="EditorComponentChangesHighligher.java" startLine="219" startPosition="24" endLine="220" endPosition="60" />
     <nodeInfo nodeId="3499023120082618407" fileName="EditorComponentChangesHighligher.java" startLine="225" startPosition="49" endLine="226" endPosition="18" />
     <nodeInfo nodeId="3499023120082618787" fileName="EditorComponentChangesHighligher.java" startLine="227" startPosition="5" endLine="228" endPosition="59" />
+    <nodeInfo nodeId="3499023120082619111" fileName="EditorComponentChangesHighligher.java" startLine="230" startPosition="72" endLine="231" endPosition="49" />
     <nodeInfo nodeId="3499023120082620442" fileName="EditorComponentChangesHighligher.java" startLine="238" startPosition="49" endLine="239" endPosition="18" />
     <nodeInfo nodeId="3499023120082620448" fileName="EditorComponentChangesHighligher.java" startLine="240" startPosition="5" endLine="241" endPosition="107" />
+    <nodeInfo nodeId="3499023120082621852" fileName="EditorComponentChangesHighligher.java" startLine="243" startPosition="72" endLine="244" endPosition="35" />
     <nodeInfo nodeId="3768510864479102981" fileName="EditorComponentChangesHighligher.java" startLine="250" startPosition="31" endLine="251" endPosition="13" />
     <nodeInfo nodeId="1266358454280365045" fileName="EditorComponentChangesHighligher.java" startLine="252" startPosition="5" endLine="253" endPosition="112" />
     <nodeInfo nodeId="7767298435310782268" fileName="EditorComponentChangesHighligher.java" startLine="253" startPosition="112" endLine="254" endPosition="81" />
@@ -88,9 +90,11 @@
     <nodeInfo nodeId="3499023120082622521" fileName="EditorComponentChangesHighligher.java" startLine="264" startPosition="68" endLine="265" endPosition="57" />
     <nodeInfo nodeId="3499023120082623952" fileName="EditorComponentChangesHighligher.java" startLine="268" startPosition="82" endLine="269" endPosition="58" />
     <nodeInfo nodeId="3499023120082624539" fileName="EditorComponentChangesHighligher.java" startLine="272" startPosition="78" endLine="273" endPosition="54" />
+    <nodeInfo nodeId="2107542654406138052" fileName="EditorComponentChangesHighligher.java" startLine="278" startPosition="86" endLine="279" endPosition="31" />
     <nodeInfo nodeId="7317795005505906199" fileName="EditorComponentChangesHighligher.java" startLine="281" startPosition="8" endLine="282" endPosition="47" />
     <nodeInfo nodeId="3525805834279458640" fileName="EditorComponentChangesHighligher.java" startLine="285" startPosition="54" endLine="286" endPosition="49" />
     <nodeInfo nodeId="7152638585749154613" fileName="EditorComponentChangesHighligher.java" startLine="290" startPosition="48" endLine="291" endPosition="80" />
+    <nodeInfo nodeId="7152638585749154669" fileName="EditorComponentChangesHighligher.java" startLine="293" startPosition="49" endLine="294" endPosition="63" />
     <nodeInfo nodeId="7152638585749154644" fileName="EditorComponentChangesHighligher.java" startLine="297" startPosition="12" endLine="298" endPosition="19" />
     <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="303" startPosition="20" endLine="304" endPosition="18" />
     <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="305" startPosition="5" endLine="306" endPosition="24" />
@@ -151,6 +155,7 @@
     <nodeInfo nodeId="6172777473367030189" fileName="EditorComponentChangesHighligher.java" startLine="423" startPosition="44" endLine="424" endPosition="75" />
     <nodeInfo nodeId="7429456937243134868" fileName="EditorComponentChangesHighligher.java" startLine="428" startPosition="53" endLine="429" endPosition="34" />
     <nodeInfo nodeId="3719874279484892358" fileName="EditorComponentChangesHighligher.java" startLine="434" startPosition="29" endLine="435" endPosition="46" />
+    <nodeInfo nodeId="531813502180021745" fileName="EditorComponentChangesHighligher.java" startLine="439" startPosition="31" endLine="440" endPosition="22" />
     <nodeInfo nodeId="1994185481787546085" fileName="EditorComponentChangesHighligher.java" startLine="444" startPosition="37" endLine="445" endPosition="18" />
     <nodeInfo nodeId="7752093726709244934" fileName="EditorComponentChangesHighligher.java" startLine="450" startPosition="37" endLine="451" endPosition="59" />
     <nodeInfo nodeId="6371186153576917403" fileName="EditorComponentChangesHighligher.java" startLine="455" startPosition="35" endLine="456" endPosition="18" />
@@ -678,6 +683,7 @@
     <nodeInfo nodeId="2859527253109744416" fileName="ChangesManager.java" startLine="147" startPosition="76" endLine="148" endPosition="62" />
     <nodeInfo nodeId="8477273007880816991" fileName="ChangesManager.java" startLine="155" startPosition="29" endLine="156" endPosition="41" />
     <nodeInfo nodeId="8477273007880816995" fileName="ChangesManager.java" startLine="156" startPosition="41" endLine="157" endPosition="0" />
+    <nodeInfo nodeId="8477273007880817005" fileName="ChangesManager.java" startLine="159" startPosition="87" endLine="160" endPosition="85" />
     <nodeInfo nodeId="8477273007880817017" fileName="ChangesManager.java" startLine="162" startPosition="17" endLine="163" endPosition="58" />
     <nodeInfo nodeId="8477273007880817028" fileName="ChangesManager.java" startLine="163" startPosition="58" endLine="164" endPosition="0" />
     <nodeInfo nodeId="8477273007880817037" fileName="ChangesManager.java" startLine="165" startPosition="95" endLine="166" endPosition="36" />
@@ -685,9 +691,12 @@
     <nodeInfo nodeId="8477273007880817043" fileName="ChangesManager.java" startLine="168" startPosition="0" endLine="169" endPosition="28" />
     <nodeInfo nodeId="8477273007880817047" fileName="ChangesManager.java" startLine="170" startPosition="13" endLine="171" endPosition="26" />
     <nodeInfo nodeId="8477273007880817051" fileName="ChangesManager.java" startLine="171" startPosition="26" endLine="172" endPosition="48" />
+    <nodeInfo nodeId="8477273007880817065" fileName="ChangesManager.java" startLine="174" startPosition="87" endLine="175" endPosition="107" />
     <nodeInfo nodeId="8477273007880817076" fileName="ChangesManager.java" startLine="177" startPosition="17" endLine="178" endPosition="51" />
     <nodeInfo nodeId="1741994337989997226" fileName="ChangesManager.java" startLine="179" startPosition="13" endLine="180" endPosition="26" />
+    <nodeInfo nodeId="1741994337989997199" fileName="ChangesManager.java" startLine="182" startPosition="87" endLine="183" endPosition="110" />
     <nodeInfo nodeId="3722815385094377378" fileName="ChangesManager.java" startLine="193" startPosition="47" endLine="194" endPosition="26" />
+    <nodeInfo nodeId="15936038984552681" fileName="ChangesManager.java" startLine="197" startPosition="61" endLine="198" endPosition="54" />
     <nodeInfo nodeId="5267577397386524188" fileName="ChangesManager.java" startLine="201" startPosition="37" endLine="202" endPosition="89" />
     <nodeInfo nodeId="5569581551640544141" fileName="ChangesManager.java" startLine="210" startPosition="93" endLine="211" endPosition="75" />
     <nodeInfo nodeId="5569581551640544164" fileName="ChangesManager.java" startLine="216" startPosition="110" endLine="217" endPosition="30" />
@@ -1354,6 +1363,7 @@
     <unitInfo nodeId="3722815385094205361" fileName="SimpleCommandQueue.java" startLine="11" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
   </root>
   <root nodeId="4056424511791981358">
+    <nodeInfo nodeId="4056424511791981376" fileName="SModelUtils.java" startLine="26" startPosition="41" endLine="27" endPosition="33" />
     <nodeInfo nodeId="4056424511791981401" fileName="SModelUtils.java" startLine="33" startPosition="57" endLine="34" endPosition="132" />
     <nodeInfo nodeId="4056424511791981413" fileName="SModelUtils.java" startLine="35" startPosition="48" endLine="36" endPosition="108" />
     <nodeInfo nodeId="4056424511791981427" fileName="SModelUtils.java" startLine="38" startPosition="12" endLine="39" endPosition="163" />
@@ -1366,6 +1376,7 @@
     <nodeInfo nodeId="4056424511791981506" fileName="SModelUtils.java" startLine="57" startPosition="5" endLine="58" endPosition="56" />
     <nodeInfo nodeId="4056424511791981512" fileName="SModelUtils.java" startLine="58" startPosition="56" endLine="59" endPosition="17" />
     <nodeInfo nodeId="762570481842505921" fileName="SModelUtils.java" startLine="63" startPosition="71" endLine="64" endPosition="75" />
+    <nodeInfo nodeId="762570481842505909" fileName="SModelUtils.java" startLine="67" startPosition="44" endLine="68" endPosition="52" />
     <nodeInfo nodeId="762570481842505935" fileName="SModelUtils.java" startLine="70" startPosition="12" endLine="71" endPosition="60" />
     <nodeInfo nodeId="762570481842505945" fileName="SModelUtils.java" startLine="73" startPosition="5" endLine="74" endPosition="22" />
     <nodeInfo nodeId="4056424511791981411" fileName="SModelUtils.java" startLine="34" startPosition="132" endLine="37" endPosition="7" />
@@ -1598,7 +1609,9 @@
     <nodeInfo nodeId="5052922865790629132" fileName="ProjectTreeChangesHighlighter.java" startLine="537" startPosition="5" endLine="538" endPosition="24" />
     <nodeInfo nodeId="6023428257643051418" fileName="ProjectTreeChangesHighlighter.java" startLine="541" startPosition="52" endLine="542" endPosition="53" />
     <nodeInfo nodeId="6023428257643048448" fileName="ProjectTreeChangesHighlighter.java" startLine="544" startPosition="50" endLine="545" endPosition="61" />
+    <nodeInfo nodeId="1706980770777324568" fileName="ProjectTreeChangesHighlighter.java" startLine="548" startPosition="34" endLine="549" endPosition="19" />
     <nodeInfo nodeId="3703612032097372412" fileName="ProjectTreeChangesHighlighter.java" startLine="555" startPosition="56" endLine="556" endPosition="42" />
+    <nodeInfo nodeId="1706980770777324543" fileName="ProjectTreeChangesHighlighter.java" startLine="560" startPosition="30" endLine="561" endPosition="15" />
     <nodeInfo nodeId="8899216664493121432" fileName="ProjectTreeChangesHighlighter.java" startLine="570" startPosition="116" endLine="571" endPosition="62" />
     <nodeInfo nodeId="8899216664493121469" fileName="ProjectTreeChangesHighlighter.java" startLine="576" startPosition="116" endLine="577" endPosition="59" />
     <nodeInfo nodeId="3208730671234903488" fileName="ProjectTreeChangesHighlighter.java" startLine="587" startPosition="116" endLine="588" endPosition="99" />
@@ -2490,6 +2503,7 @@
     <nodeInfo nodeId="7542415519011395008" fileName="ModelChangesManager.java" startLine="203" startPosition="42" endLine="204" endPosition="49" />
     <nodeInfo nodeId="7542415519011395019" fileName="ModelChangesManager.java" startLine="206" startPosition="11" endLine="207" endPosition="40" />
     <nodeInfo nodeId="7542415519011395027" fileName="ModelChangesManager.java" startLine="209" startPosition="35" endLine="210" endPosition="73" />
+    <nodeInfo nodeId="3464311049966866547" fileName="ModelChangesManager.java" startLine="218" startPosition="41" endLine="219" endPosition="79" />
     <nodeInfo nodeId="6105600802953124485" fileName="ModelChangesManager.java" startLine="225" startPosition="27" endLine="226" endPosition="13" />
     <nodeInfo nodeId="6105600802953125181" fileName="ModelChangesManager.java" startLine="227" startPosition="5" endLine="228" endPosition="85" />
     <nodeInfo nodeId="6105600802953124487" fileName="ModelChangesManager.java" startLine="228" startPosition="85" endLine="229" endPosition="125" />
@@ -2522,11 +2536,13 @@
     <nodeInfo nodeId="2698665420347341545" fileName="ModelChangesManager.java" startLine="300" startPosition="36" endLine="301" endPosition="62" />
     <nodeInfo nodeId="8303122470448997011" fileName="ModelChangesManager.java" startLine="302" startPosition="59" endLine="303" endPosition="44" />
     <nodeInfo nodeId="2698665420347341554" fileName="ModelChangesManager.java" startLine="305" startPosition="20" endLine="306" endPosition="32" />
+    <nodeInfo nodeId="8279184985700098689" fileName="ModelChangesManager.java" startLine="312" startPosition="40" endLine="313" endPosition="70" />
     <nodeInfo nodeId="8279184985700098814" fileName="ModelChangesManager.java" startLine="315" startPosition="24" endLine="316" endPosition="0" />
     <nodeInfo nodeId="2698665420347341625" fileName="ModelChangesManager.java" startLine="317" startPosition="59" endLine="318" endPosition="35" />
     <nodeInfo nodeId="7939577653110509142" fileName="ModelChangesManager.java" startLine="319" startPosition="5" endLine="320" endPosition="0" />
     <nodeInfo nodeId="3501823384977737332" fileName="ModelChangesManager.java" startLine="320" startPosition="0" endLine="321" endPosition="51" />
     <nodeInfo nodeId="2698665420347283465" fileName="ModelChangesManager.java" startLine="324" startPosition="158" endLine="325" endPosition="56" />
+    <nodeInfo nodeId="7437676040054230655" fileName="ModelChangesManager.java" startLine="330" startPosition="44" endLine="331" endPosition="20" />
     <nodeInfo nodeId="1041446044406865852" fileName="ModelChangesManager.java" startLine="336" startPosition="53" endLine="337" endPosition="30" />
     <nodeInfo nodeId="5045020112651939991" fileName="ModelChangesManager.java" startLine="338" startPosition="23" endLine="339" endPosition="25" />
     <nodeInfo nodeId="5045020112651940172" fileName="ModelChangesManager.java" startLine="339" startPosition="25" endLine="340" endPosition="30" />
@@ -2556,10 +2572,12 @@
     <nodeInfo nodeId="967641992124639613" fileName="ModelChangesManager.java" startLine="384" startPosition="9" endLine="385" endPosition="0" />
     <nodeInfo nodeId="3958959855415944327" fileName="ModelChangesManager.java" startLine="387" startPosition="48" endLine="388" endPosition="71" />
     <nodeInfo nodeId="3958959855415944342" fileName="ModelChangesManager.java" startLine="388" startPosition="71" endLine="389" endPosition="32" />
+    <nodeInfo nodeId="3948998586072267674" fileName="ModelChangesManager.java" startLine="391" startPosition="46" endLine="392" endPosition="80" />
     <nodeInfo nodeId="967641992124637158" fileName="ModelChangesManager.java" startLine="394" startPosition="18" endLine="395" endPosition="73" />
     <nodeInfo nodeId="967641992124639041" fileName="ModelChangesManager.java" startLine="398" startPosition="96" endLine="399" endPosition="73" />
     <nodeInfo nodeId="967641992124639168" fileName="ModelChangesManager.java" startLine="401" startPosition="99" endLine="402" endPosition="56" />
     <nodeInfo nodeId="6198597596203365587" fileName="ModelChangesManager.java" startLine="402" startPosition="56" endLine="403" endPosition="51" />
+    <nodeInfo nodeId="6198597596203365619" fileName="ModelChangesManager.java" startLine="405" startPosition="46" endLine="406" endPosition="142" />
     <nodeInfo nodeId="967641992124639386" fileName="ModelChangesManager.java" startLine="408" startPosition="18" endLine="409" endPosition="73" />
     <nodeInfo nodeId="3811819025881728648" fileName="ModelChangesManager.java" startLine="411" startPosition="56" endLine="412" endPosition="61" />
     <nodeInfo nodeId="3811819025881728173" fileName="ModelChangesManager.java" startLine="412" startPosition="61" endLine="413" endPosition="56" />
@@ -2595,9 +2613,11 @@
     <nodeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="473" startPosition="42" endLine="474" endPosition="32" />
     <nodeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="475" startPosition="32" endLine="476" endPosition="41" />
     <nodeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="478" startPosition="35" endLine="479" endPosition="33" />
+    <nodeInfo nodeId="4604734785880288078" fileName="ModelChangesManager.java" startLine="489" startPosition="57" endLine="490" endPosition="75" />
     <nodeInfo nodeId="4959636007936558538" fileName="ModelChangesManager.java" startLine="496" startPosition="43" endLine="497" endPosition="30" />
     <nodeInfo nodeId="7055875085428865488" fileName="ModelChangesManager.java" startLine="498" startPosition="49" endLine="499" endPosition="89" />
     <nodeInfo nodeId="4959636007936558544" fileName="ModelChangesManager.java" startLine="500" startPosition="134" endLine="501" endPosition="240" />
+    <nodeInfo nodeId="5194581672626712355" fileName="ModelChangesManager.java" startLine="503" startPosition="13" endLine="504" endPosition="25" />
     <nodeInfo nodeId="967641992124639678" fileName="ModelChangesManager.java" startLine="506" startPosition="28" endLine="507" endPosition="52" />
     <nodeInfo nodeId="967641992124639692" fileName="ModelChangesManager.java" startLine="507" startPosition="52" endLine="508" endPosition="97" />
     <nodeInfo nodeId="3473971317150427409" fileName="ModelChangesManager.java" startLine="508" startPosition="97" endLine="509" endPosition="33" />
@@ -2709,11 +2729,13 @@
     <nodeInfo nodeId="1998279847126788018" fileName="ModelChangesManager.java" startLine="749" startPosition="132" endLine="750" endPosition="0" />
     <nodeInfo nodeId="353838656593057610" fileName="ModelChangesManager.java" startLine="751" startPosition="49" endLine="752" endPosition="80" />
     <nodeInfo nodeId="353838656593057594" fileName="ModelChangesManager.java" startLine="752" startPosition="80" endLine="753" endPosition="92" />
+    <nodeInfo nodeId="353838656593057547" fileName="ModelChangesManager.java" startLine="755" startPosition="42" endLine="756" endPosition="56" />
     <nodeInfo nodeId="353838656593057583" fileName="ModelChangesManager.java" startLine="758" startPosition="11" endLine="759" endPosition="28" />
     <nodeInfo nodeId="353838656593057592" fileName="ModelChangesManager.java" startLine="759" startPosition="28" endLine="760" endPosition="0" />
     <nodeInfo nodeId="353838656593057617" fileName="ModelChangesManager.java" startLine="760" startPosition="0" endLine="761" endPosition="49" />
     <nodeInfo nodeId="353838656593057619" fileName="ModelChangesManager.java" startLine="761" startPosition="49" endLine="762" endPosition="176" />
     <nodeInfo nodeId="1998279847126788017" fileName="ModelChangesManager.java" startLine="763" startPosition="7" endLine="764" endPosition="0" />
+    <nodeInfo nodeId="4558935990114282049" fileName="ModelChangesManager.java" startLine="768" startPosition="44" endLine="769" endPosition="51" />
     <nodeInfo nodeId="1998279847126790158" fileName="ModelChangesManager.java" startLine="771" startPosition="13" endLine="772" endPosition="30" />
     <nodeInfo nodeId="1998279847126790847" fileName="ModelChangesManager.java" startLine="772" startPosition="30" endLine="773" endPosition="51" />
     <nodeInfo nodeId="1998279847126788902" fileName="ModelChangesManager.java" startLine="773" startPosition="51" endLine="774" endPosition="152" />
@@ -2745,6 +2767,7 @@
     <nodeInfo nodeId="762570481842486915" fileName="ModelChangesManager.java" startLine="830" startPosition="9" endLine="831" endPosition="79" />
     <nodeInfo nodeId="5890845648964748" fileName="ModelChangesManager.java" startLine="834" startPosition="90" endLine="835" endPosition="24" />
     <nodeInfo nodeId="977382291400364281" fileName="ModelChangesManager.java" startLine="836" startPosition="5" endLine="837" endPosition="26" />
+    <nodeInfo nodeId="2107542654406137997" fileName="ModelChangesManager.java" startLine="842" startPosition="46" endLine="843" endPosition="63" />
     <nodeInfo nodeId="2107542654406138023" fileName="ModelChangesManager.java" startLine="847" startPosition="36" endLine="848" endPosition="31" />
     <nodeInfo nodeId="5890845648880195" fileName="ModelChangesManager.java" startLine="850" startPosition="7" endLine="851" endPosition="56" />
     <nodeInfo nodeId="5890845648880210" fileName="ModelChangesManager.java" startLine="854" startPosition="54" endLine="855" endPosition="31" />
@@ -2840,6 +2863,8 @@
     <nodeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1098" startPosition="5" endLine="1099" endPosition="26" />
     <nodeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1103" startPosition="20" endLine="1104" endPosition="18" />
     <nodeInfo nodeId="8006781392765204425" fileName="ModelChangesManager.java" startLine="1105" startPosition="5" endLine="1106" endPosition="40" />
+    <nodeInfo nodeId="5494534766666319843" fileName="ModelChangesManager.java" startLine="1115" startPosition="49" endLine="1116" endPosition="51" />
+    <nodeInfo nodeId="5494534766666319872" fileName="ModelChangesManager.java" startLine="1120" startPosition="52" endLine="1121" endPosition="49" />
     <nodeInfo nodeId="5463005411127875459" fileName="ModelChangesManager.java" startLine="1126" startPosition="61" endLine="1127" endPosition="51" />
     <nodeInfo nodeId="9017393975293865162" fileName="ModelChangesManager.java" startLine="1127" startPosition="51" endLine="1128" endPosition="59" />
     <nodeInfo nodeId="9017393975293865033" fileName="ModelChangesManager.java" startLine="1129" startPosition="137" endLine="1130" endPosition="195" />
@@ -2854,6 +2879,7 @@
     <nodeInfo nodeId="5463005411127860658" fileName="ModelChangesManager.java" startLine="1152" startPosition="82" endLine="1153" endPosition="75" />
     <nodeInfo nodeId="2352903979085962879" fileName="ModelChangesManager.java" startLine="1161" startPosition="33" endLine="1162" endPosition="19" />
     <nodeInfo nodeId="3367145324776951474" fileName="ModelChangesManager.java" startLine="1163" startPosition="11" endLine="1164" endPosition="36" />
+    <nodeInfo nodeId="7601193928418818307" fileName="ModelChangesManager.java" startLine="1166" startPosition="57" endLine="1167" endPosition="56" />
     <nodeInfo nodeId="2352903979085962886" fileName="ModelChangesManager.java" startLine="1169" startPosition="20" endLine="1170" endPosition="60" />
     <nodeInfo nodeId="7601193928418818315" fileName="ModelChangesManager.java" startLine="1170" startPosition="60" endLine="1171" endPosition="47" />
     <nodeInfo nodeId="3367145324776989242" fileName="ModelChangesManager.java" startLine="1172" startPosition="11" endLine="1173" endPosition="37" />
@@ -2861,6 +2887,7 @@
     <nodeInfo nodeId="5433436225280057745" fileName="ModelChangesManager.java" startLine="1184" startPosition="50" endLine="1185" endPosition="105" />
     <nodeInfo nodeId="2352903979085963141" fileName="ModelChangesManager.java" startLine="1191" startPosition="33" endLine="1192" endPosition="19" />
     <nodeInfo nodeId="3367145324776993148" fileName="ModelChangesManager.java" startLine="1193" startPosition="11" endLine="1194" endPosition="36" />
+    <nodeInfo nodeId="7601193928418818780" fileName="ModelChangesManager.java" startLine="1196" startPosition="59" endLine="1197" endPosition="58" />
     <nodeInfo nodeId="2352903979085963148" fileName="ModelChangesManager.java" startLine="1199" startPosition="20" endLine="1200" endPosition="56" />
     <nodeInfo nodeId="2352903979085963150" fileName="ModelChangesManager.java" startLine="1200" startPosition="56" endLine="1201" endPosition="49" />
     <nodeInfo nodeId="7542415519011407210" fileName="ModelChangesManager.java" startLine="1202" startPosition="11" endLine="1203" endPosition="37" />
@@ -2869,6 +2896,7 @@
     <nodeInfo nodeId="2352903979085963184" fileName="ModelChangesManager.java" startLine="1221" startPosition="33" endLine="1222" endPosition="19" />
     <nodeInfo nodeId="3367145324776993152" fileName="ModelChangesManager.java" startLine="1223" startPosition="11" endLine="1224" endPosition="0" />
     <nodeInfo nodeId="3367145324776989248" fileName="ModelChangesManager.java" startLine="1224" startPosition="0" endLine="1225" endPosition="36" />
+    <nodeInfo nodeId="7601193928418818338" fileName="ModelChangesManager.java" startLine="1227" startPosition="57" endLine="1228" endPosition="56" />
     <nodeInfo nodeId="2352903979085963191" fileName="ModelChangesManager.java" startLine="1230" startPosition="20" endLine="1231" endPosition="56" />
     <nodeInfo nodeId="7601193928418818347" fileName="ModelChangesManager.java" startLine="1231" startPosition="56" endLine="1232" endPosition="47" />
     <nodeInfo nodeId="3367145324776989251" fileName="ModelChangesManager.java" startLine="1233" startPosition="11" endLine="1234" endPosition="37" />
@@ -2883,6 +2911,7 @@
     <nodeInfo nodeId="2352903979085962743" fileName="ModelChangesManager.java" startLine="1264" startPosition="0" endLine="1265" endPosition="62" />
     <nodeInfo nodeId="2352903979085962751" fileName="ModelChangesManager.java" startLine="1265" startPosition="62" endLine="1266" endPosition="0" />
     <nodeInfo nodeId="2352903979085962752" fileName="ModelChangesManager.java" startLine="1266" startPosition="0" endLine="1267" endPosition="67" />
+    <nodeInfo nodeId="7601193928418818361" fileName="ModelChangesManager.java" startLine="1269" startPosition="61" endLine="1270" endPosition="111" />
     <nodeInfo nodeId="2352903979085962779" fileName="ModelChangesManager.java" startLine="1272" startPosition="17" endLine="1273" endPosition="0" />
     <nodeInfo nodeId="2352903979085962780" fileName="ModelChangesManager.java" startLine="1273" startPosition="0" endLine="1274" endPosition="104" />
     <nodeInfo nodeId="2352903979085962793" fileName="ModelChangesManager.java" startLine="1274" startPosition="104" endLine="1275" endPosition="112" />
@@ -2903,6 +2932,7 @@
     <nodeInfo nodeId="2352903979085962940" fileName="ModelChangesManager.java" startLine="1312" startPosition="0" endLine="1313" endPosition="89" />
     <nodeInfo nodeId="2352903979085962950" fileName="ModelChangesManager.java" startLine="1313" startPosition="89" endLine="1314" endPosition="0" />
     <nodeInfo nodeId="2352903979085962951" fileName="ModelChangesManager.java" startLine="1314" startPosition="0" endLine="1315" endPosition="72" />
+    <nodeInfo nodeId="7601193928418818404" fileName="ModelChangesManager.java" startLine="1317" startPosition="62" endLine="1318" endPosition="120" />
     <nodeInfo nodeId="2352903979085962980" fileName="ModelChangesManager.java" startLine="1320" startPosition="17" endLine="1321" endPosition="0" />
     <nodeInfo nodeId="7601193928418818425" fileName="ModelChangesManager.java" startLine="1321" startPosition="0" endLine="1322" endPosition="118" />
     <nodeInfo nodeId="3367145324776989290" fileName="ModelChangesManager.java" startLine="1324" startPosition="13" endLine="1325" endPosition="37" />
@@ -2916,6 +2946,7 @@
     <nodeInfo nodeId="2352903979085963034" fileName="ModelChangesManager.java" startLine="1346" startPosition="0" endLine="1347" endPosition="82" />
     <nodeInfo nodeId="2352903979085963042" fileName="ModelChangesManager.java" startLine="1347" startPosition="82" endLine="1348" endPosition="0" />
     <nodeInfo nodeId="2352903979085963043" fileName="ModelChangesManager.java" startLine="1348" startPosition="0" endLine="1349" endPosition="72" />
+    <nodeInfo nodeId="2435943716190207886" fileName="ModelChangesManager.java" startLine="1351" startPosition="62" endLine="1352" endPosition="113" />
     <nodeInfo nodeId="2352903979085963070" fileName="ModelChangesManager.java" startLine="1354" startPosition="17" endLine="1355" endPosition="0" />
     <nodeInfo nodeId="2352903979085963071" fileName="ModelChangesManager.java" startLine="1355" startPosition="0" endLine="1356" endPosition="83" />
     <nodeInfo nodeId="8870979023098932941" fileName="ModelChangesManager.java" startLine="1356" startPosition="83" endLine="1357" endPosition="122" />
@@ -2926,6 +2957,8 @@
     <nodeInfo nodeId="2352903979085963228" fileName="ModelChangesManager.java" startLine="1374" startPosition="52" endLine="1375" endPosition="19" />
     <nodeInfo nodeId="3367145324776993175" fileName="ModelChangesManager.java" startLine="1376" startPosition="11" endLine="1377" endPosition="0" />
     <nodeInfo nodeId="3367145324776993177" fileName="ModelChangesManager.java" startLine="1377" startPosition="0" endLine="1378" endPosition="36" />
+    <nodeInfo nodeId="7601193928418818536" fileName="ModelChangesManager.java" startLine="1382" startPosition="57" endLine="1383" endPosition="81" />
+    <nodeInfo nodeId="8032267859367081366" fileName="ModelChangesManager.java" startLine="1387" startPosition="60" endLine="1388" endPosition="81" />
     <nodeInfo nodeId="8032267859367081380" fileName="ModelChangesManager.java" startLine="1390" startPosition="24" endLine="1391" endPosition="116" />
     <nodeInfo nodeId="7582093180447077808" fileName="ModelChangesManager.java" startLine="1392" startPosition="15" endLine="1393" endPosition="49" />
     <nodeInfo nodeId="3367145324776993180" fileName="ModelChangesManager.java" startLine="1395" startPosition="13" endLine="1396" endPosition="37" />
@@ -2933,7 +2966,9 @@
     <nodeInfo nodeId="3367145324776993207" fileName="ModelChangesManager.java" startLine="1407" startPosition="11" endLine="1408" endPosition="0" />
     <nodeInfo nodeId="3367145324776993208" fileName="ModelChangesManager.java" startLine="1408" startPosition="0" endLine="1409" endPosition="36" />
     <nodeInfo nodeId="8032267859367081406" fileName="ModelChangesManager.java" startLine="1411" startPosition="31" endLine="1412" endPosition="51" />
+    <nodeInfo nodeId="7476788099984142962" fileName="ModelChangesManager.java" startLine="1414" startPosition="50" endLine="1415" endPosition="162" />
     <nodeInfo nodeId="7476788099984142983" fileName="ModelChangesManager.java" startLine="1417" startPosition="17" endLine="1418" endPosition="59" />
+    <nodeInfo nodeId="8032267859367081466" fileName="ModelChangesManager.java" startLine="1420" startPosition="57" endLine="1421" endPosition="94" />
     <nodeInfo nodeId="8032267859367081479" fileName="ModelChangesManager.java" startLine="1423" startPosition="24" endLine="1424" endPosition="138" />
     <nodeInfo nodeId="3367145324776993211" fileName="ModelChangesManager.java" startLine="1427" startPosition="13" endLine="1428" endPosition="37" />
     <nodeInfo nodeId="3464311049966866658" fileName="ModelChangesManager.java" startLine="1433" startPosition="91" endLine="1434" endPosition="78" />
@@ -2943,12 +2978,14 @@
     <nodeInfo nodeId="3367145324776993229" fileName="ModelChangesManager.java" startLine="1441" startPosition="0" endLine="1442" endPosition="36" />
     <nodeInfo nodeId="9017393975293917473" fileName="ModelChangesManager.java" startLine="1445" startPosition="32" endLine="1446" endPosition="54" />
     <nodeInfo nodeId="2352903979085963396" fileName="ModelChangesManager.java" startLine="1448" startPosition="55" endLine="1449" endPosition="23" />
+    <nodeInfo nodeId="4106098632826232715" fileName="ModelChangesManager.java" startLine="1452" startPosition="50" endLine="1453" endPosition="163" />
     <nodeInfo nodeId="4106098632826232728" fileName="ModelChangesManager.java" startLine="1455" startPosition="17" endLine="1456" endPosition="60" />
     <nodeInfo nodeId="2352903979085963403" fileName="ModelChangesManager.java" startLine="1456" startPosition="60" endLine="1457" endPosition="0" />
     <nodeInfo nodeId="2352903979085963404" fileName="ModelChangesManager.java" startLine="1457" startPosition="0" endLine="1458" endPosition="91" />
     <nodeInfo nodeId="2352903979085963406" fileName="ModelChangesManager.java" startLine="1458" startPosition="91" endLine="1459" endPosition="112" />
     <nodeInfo nodeId="2352903979085963408" fileName="ModelChangesManager.java" startLine="1459" startPosition="112" endLine="1460" endPosition="0" />
     <nodeInfo nodeId="2352903979085963409" fileName="ModelChangesManager.java" startLine="1460" startPosition="0" endLine="1461" endPosition="68" />
+    <nodeInfo nodeId="7601193928418818628" fileName="ModelChangesManager.java" startLine="1463" startPosition="57" endLine="1464" endPosition="82" />
     <nodeInfo nodeId="2352903979085963429" fileName="ModelChangesManager.java" startLine="1467" startPosition="31" endLine="1468" endPosition="222" />
     <nodeInfo nodeId="1867894338779676329" fileName="ModelChangesManager.java" startLine="1469" startPosition="24" endLine="1470" endPosition="103" />
     <nodeInfo nodeId="118178915293552709" fileName="ModelChangesManager.java" startLine="1473" startPosition="31" endLine="1474" endPosition="102" />
@@ -2970,9 +3007,12 @@
     <nodeInfo nodeId="2352903979085963597" fileName="ModelChangesManager.java" startLine="1520" startPosition="40" endLine="1521" endPosition="50" />
     <nodeInfo nodeId="2352903979085963606" fileName="ModelChangesManager.java" startLine="1522" startPosition="15" endLine="1523" endPosition="0" />
     <nodeInfo nodeId="2352903979085963607" fileName="ModelChangesManager.java" startLine="1523" startPosition="0" endLine="1524" endPosition="68" />
+    <nodeInfo nodeId="9042451232535044245" fileName="ModelChangesManager.java" startLine="1527" startPosition="62" endLine="1528" endPosition="152" />
     <nodeInfo nodeId="9042451232535044238" fileName="ModelChangesManager.java" startLine="1530" startPosition="26" endLine="1531" endPosition="25" />
     <nodeInfo nodeId="9042451232534986439" fileName="ModelChangesManager.java" startLine="1532" startPosition="17" endLine="1533" endPosition="97" />
     <nodeInfo nodeId="9042451232534986455" fileName="ModelChangesManager.java" startLine="1535" startPosition="218" endLine="1536" endPosition="27" />
+    <nodeInfo nodeId="4829161031017898766" fileName="ModelChangesManager.java" startLine="1540" startPosition="62" endLine="1541" endPosition="133" />
+    <nodeInfo nodeId="7132911809917961390" fileName="ModelChangesManager.java" startLine="1545" startPosition="59" endLine="1546" endPosition="139" />
     <nodeInfo nodeId="2352903979085963614" fileName="ModelChangesManager.java" startLine="1548" startPosition="19" endLine="1549" endPosition="299" />
     <nodeInfo nodeId="1867894338779676247" fileName="ModelChangesManager.java" startLine="1550" startPosition="22" endLine="1551" endPosition="101" />
     <nodeInfo nodeId="806900078439038470" fileName="ModelChangesManager.java" startLine="1553" startPosition="32" endLine="1554" endPosition="52" />
@@ -3139,6 +3179,7 @@
     <nodeInfo nodeId="2679789518736358751" fileName="ModelChangesManager.java" startLine="243" startPosition="69" endLine="248" endPosition="5" />
     <nodeInfo nodeId="8279184985700098678" fileName="ModelChangesManager.java" startLine="310" startPosition="186" endLine="315" endPosition="24" />
     <nodeInfo nodeId="7437676040054230188" fileName="ModelChangesManager.java" startLine="328" startPosition="53" endLine="333" endPosition="14" />
+    <nodeInfo nodeId="4604734785880205957" fileName="ModelChangesManager.java" startLine="487" startPosition="50" endLine="492" endPosition="15" />
     <nodeInfo nodeId="2370132037603420871" fileName="ModelChangesManager.java" startLine="534" startPosition="146" endLine="539" endPosition="11" />
     <nodeInfo nodeId="399572749666384529" fileName="ModelChangesManager.java" startLine="546" startPosition="48" endLine="551" endPosition="5" />
     <nodeInfo nodeId="83742232301382706" fileName="ModelChangesManager.java" startLine="608" startPosition="77" endLine="613" endPosition="7" />
@@ -4330,6 +4371,7 @@
     <nodeInfo nodeId="2792704635247521019" fileName="ChangesFoldingAreaPainter.java" startLine="126" startPosition="5" endLine="127" endPosition="46" />
     <nodeInfo nodeId="4399127869643550738" fileName="ChangesFoldingAreaPainter.java" startLine="130" startPosition="36" endLine="131" endPosition="101" />
     <nodeInfo nodeId="6746101208730361712" fileName="ChangesFoldingAreaPainter.java" startLine="131" startPosition="101" endLine="132" endPosition="65" />
+    <nodeInfo nodeId="6746101208730361853" fileName="ChangesFoldingAreaPainter.java" startLine="134" startPosition="85" endLine="135" endPosition="50" />
     <nodeInfo nodeId="6746101208730361762" fileName="ChangesFoldingAreaPainter.java" startLine="137" startPosition="24" endLine="138" endPosition="0" />
     <nodeInfo nodeId="2792704635247522120" fileName="ChangesFoldingAreaPainter.java" startLine="140" startPosition="144" endLine="141" endPosition="62" />
     <nodeInfo nodeId="2792704635247522127" fileName="ChangesFoldingAreaPainter.java" startLine="141" startPosition="62" endLine="142" endPosition="62" />
@@ -4346,6 +4388,7 @@
     <nodeInfo nodeId="3176852462137033840" fileName="ChangesFoldingAreaPainter.java" startLine="165" startPosition="70" endLine="166" endPosition="64" />
     <nodeInfo nodeId="2892955808309432859" fileName="ChangesFoldingAreaPainter.java" startLine="168" startPosition="67" endLine="169" endPosition="98" />
     <nodeInfo nodeId="7429456937243135808" fileName="ChangesFoldingAreaPainter.java" startLine="174" startPosition="96" endLine="175" endPosition="70" />
+    <nodeInfo nodeId="7429456937243135961" fileName="ChangesFoldingAreaPainter.java" startLine="178" startPosition="74" endLine="179" endPosition="81" />
     <nodeInfo nodeId="7429456937243135896" fileName="ChangesFoldingAreaPainter.java" startLine="182" startPosition="12" endLine="183" endPosition="18" />
     <nodeInfo nodeId="1992587573287146565" fileName="ChangesFoldingAreaPainter.java" startLine="188" startPosition="41" endLine="189" endPosition="13" />
     <nodeInfo nodeId="7429456937243136241" fileName="ChangesFoldingAreaPainter.java" startLine="194" startPosition="139" endLine="195" endPosition="48" />
@@ -4365,11 +4408,14 @@
     <nodeInfo nodeId="7539796992259356332" fileName="ChangesFoldingAreaPainter.java" startLine="232" startPosition="43" endLine="233" endPosition="86" />
     <nodeInfo nodeId="7539796992259356344" fileName="ChangesFoldingAreaPainter.java" startLine="234" startPosition="25" endLine="235" endPosition="51" />
     <nodeInfo nodeId="2643085131950809484" fileName="ChangesFoldingAreaPainter.java" startLine="236" startPosition="7" endLine="237" endPosition="38" />
+    <nodeInfo nodeId="5444017747357190855" fileName="ChangesFoldingAreaPainter.java" startLine="242" startPosition="74" endLine="243" endPosition="27" />
     <nodeInfo nodeId="6378762527268290205" fileName="ChangesFoldingAreaPainter.java" startLine="247" startPosition="34" endLine="248" endPosition="52" />
     <nodeInfo nodeId="3821603290882626782" fileName="ChangesFoldingAreaPainter.java" startLine="249" startPosition="12" endLine="250" endPosition="43" />
     <nodeInfo nodeId="7317795005505898110" fileName="ChangesFoldingAreaPainter.java" startLine="254" startPosition="37" endLine="255" endPosition="34" />
+    <nodeInfo nodeId="6105081101195305214" fileName="ChangesFoldingAreaPainter.java" startLine="259" startPosition="74" endLine="260" endPosition="33" />
     <nodeInfo nodeId="4745893119449688979" fileName="ChangesFoldingAreaPainter.java" startLine="264" startPosition="34" endLine="265" endPosition="53" />
     <nodeInfo nodeId="4434895596490172180" fileName="ChangesFoldingAreaPainter.java" startLine="269" startPosition="146" endLine="270" endPosition="65" />
+    <nodeInfo nodeId="4434895596490172172" fileName="ChangesFoldingAreaPainter.java" startLine="272" startPosition="85" endLine="273" endPosition="55" />
     <nodeInfo nodeId="4434895596490172192" fileName="ChangesFoldingAreaPainter.java" startLine="275" startPosition="9" endLine="276" endPosition="70" />
     <nodeInfo nodeId="4434895596490172204" fileName="ChangesFoldingAreaPainter.java" startLine="277" startPosition="12" endLine="278" endPosition="66" />
     <nodeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="283" startPosition="20" endLine="284" endPosition="18" />
@@ -4381,8 +4427,14 @@
     <nodeInfo nodeId="6746101208730360075" fileName="ChangesFoldingAreaPainter.java" startLine="295" startPosition="67" endLine="296" endPosition="132" />
     <nodeInfo nodeId="6746101208730360674" fileName="ChangesFoldingAreaPainter.java" startLine="296" startPosition="132" endLine="297" endPosition="67" />
     <nodeInfo nodeId="6746101208730360087" fileName="ChangesFoldingAreaPainter.java" startLine="297" startPosition="67" endLine="298" endPosition="89" />
+    <nodeInfo nodeId="1488166530899637889" fileName="ChangesFoldingAreaPainter.java" startLine="300" startPosition="102" endLine="301" endPosition="86" />
     <nodeInfo nodeId="6746101208730361686" fileName="ChangesFoldingAreaPainter.java" startLine="303" startPosition="9" endLine="304" endPosition="31" />
+    <nodeInfo nodeId="6746101208730364064" fileName="ChangesFoldingAreaPainter.java" startLine="308" startPosition="85" endLine="309" endPosition="24" />
+    <nodeInfo nodeId="6746101208730364072" fileName="ChangesFoldingAreaPainter.java" startLine="312" startPosition="23" endLine="313" endPosition="17" />
+    <nodeInfo nodeId="6746101208730364080" fileName="ChangesFoldingAreaPainter.java" startLine="316" startPosition="28" endLine="317" endPosition="22" />
+    <nodeInfo nodeId="3322868409858674647" fileName="ChangesFoldingAreaPainter.java" startLine="322" startPosition="87" endLine="323" endPosition="65" />
     <nodeInfo nodeId="3322868409858674638" fileName="ChangesFoldingAreaPainter.java" startLine="325" startPosition="11" endLine="326" endPosition="30" />
+    <nodeInfo nodeId="3322868409858674668" fileName="ChangesFoldingAreaPainter.java" startLine="328" startPosition="87" endLine="329" endPosition="68" />
     <nodeInfo nodeId="3322868409858674659" fileName="ChangesFoldingAreaPainter.java" startLine="331" startPosition="11" endLine="332" endPosition="33" />
     <nodeInfo nodeId="3322868409858674680" fileName="ChangesFoldingAreaPainter.java" startLine="333" startPosition="14" endLine="334" endPosition="33" />
     <nodeInfo nodeId="3322868409858674684" fileName="ChangesFoldingAreaPainter.java" startLine="339" startPosition="29" endLine="340" endPosition="46" />
@@ -4400,6 +4452,8 @@
     <nodeInfo nodeId="4434895596490172113" fileName="ChangesFoldingAreaPainter.java" startLine="372" startPosition="81" endLine="373" endPosition="20" />
     <nodeInfo nodeId="4434895596490168996" fileName="ChangesFoldingAreaPainter.java" startLine="375" startPosition="107" endLine="376" endPosition="22" />
     <nodeInfo nodeId="4434895596490172089" fileName="ChangesFoldingAreaPainter.java" startLine="376" startPosition="22" endLine="377" endPosition="67" />
+    <nodeInfo nodeId="4434895596490171979" fileName="ChangesFoldingAreaPainter.java" startLine="379" startPosition="87" endLine="380" endPosition="57" />
+    <nodeInfo nodeId="4434895596490172044" fileName="ChangesFoldingAreaPainter.java" startLine="384" startPosition="87" endLine="385" endPosition="41" />
     <nodeInfo nodeId="4434895596490172096" fileName="ChangesFoldingAreaPainter.java" startLine="387" startPosition="10" endLine="388" endPosition="50" />
     <nodeInfo nodeId="4434895596490172118" fileName="ChangesFoldingAreaPainter.java" startLine="388" startPosition="50" endLine="389" endPosition="89" />
     <nodeInfo nodeId="4434895596490169006" fileName="ChangesFoldingAreaPainter.java" startLine="394" startPosition="29" endLine="395" endPosition="42" />

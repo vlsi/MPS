@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1230465993863">
+    <nodeInfo nodeId="1230466539112" fileName="NullableAnalyzer.java" startLine="21" startPosition="43" endLine="22" endPosition="37" />
+    <nodeInfo nodeId="1232016789501" fileName="NullableAnalyzer.java" startLine="25" startPosition="59" endLine="26" endPosition="104" />
+    <nodeInfo nodeId="1232016826681" fileName="NullableAnalyzer.java" startLine="27" startPosition="64" endLine="28" endPosition="81" />
+    <nodeInfo nodeId="1232016639358" fileName="NullableAnalyzer.java" startLine="29" startPosition="5" endLine="30" endPosition="18" />
+    <nodeInfo nodeId="1230492993908" fileName="NullableAnalyzer.java" startLine="33" startPosition="107" endLine="34" endPosition="65" />
+    <nodeInfo nodeId="1230492922388" fileName="NullableAnalyzer.java" startLine="35" startPosition="70" endLine="36" endPosition="27" />
+    <nodeInfo nodeId="1230493315910" fileName="NullableAnalyzer.java" startLine="37" startPosition="81" endLine="38" endPosition="141" />
+    <nodeInfo nodeId="1230493340693" fileName="NullableAnalyzer.java" startLine="40" startPosition="5" endLine="41" endPosition="18" />
+    <nodeInfo nodeId="1230491608553" fileName="NullableAnalyzer.java" startLine="44" startPosition="101" endLine="45" endPosition="104" />
+    <nodeInfo nodeId="1230491828707" fileName="NullableAnalyzer.java" startLine="45" startPosition="104" endLine="46" endPosition="46" />
+    <nodeInfo nodeId="1230491884861" fileName="NullableAnalyzer.java" startLine="47" startPosition="61" endLine="48" endPosition="73" />
+    <nodeInfo nodeId="1230491974265" fileName="NullableAnalyzer.java" startLine="48" startPosition="73" endLine="49" endPosition="79" />
+    <nodeInfo nodeId="1230492654783" fileName="NullableAnalyzer.java" startLine="49" startPosition="79" endLine="50" endPosition="43" />
+    <nodeInfo nodeId="1230492028813" fileName="NullableAnalyzer.java" startLine="51" startPosition="26" endLine="52" endPosition="81" />
+    <nodeInfo nodeId="1230492037560" fileName="NullableAnalyzer.java" startLine="53" startPosition="14" endLine="54" endPosition="57" />
+    <nodeInfo nodeId="1231954620031" fileName="NullableAnalyzer.java" startLine="57" startPosition="69" endLine="58" endPosition="92" />
+    <nodeInfo nodeId="1231954620039" fileName="NullableAnalyzer.java" startLine="58" startPosition="92" endLine="59" endPosition="56" />
+    <nodeInfo nodeId="1231954620048" fileName="NullableAnalyzer.java" startLine="59" startPosition="56" endLine="60" endPosition="46" />
+    <nodeInfo nodeId="1231955264933" fileName="NullableAnalyzer.java" startLine="61" startPosition="26" endLine="62" endPosition="57" />
+    <nodeInfo nodeId="1230491864166" fileName="NullableAnalyzer.java" startLine="64" startPosition="5" endLine="65" endPosition="18" />
+    <nodeInfo nodeId="1230465993865" fileName="NullableAnalyzer.java" startLine="17" startPosition="93" endLine="19" endPosition="3" />
+    <nodeInfo nodeId="1230492036402" fileName="NullableAnalyzer.java" startLine="53" startPosition="12" endLine="55" endPosition="7" />
+    <nodeInfo nodeId="1232016804215" fileName="NullableAnalyzer.java" startLine="26" startPosition="104" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1230493300403" fileName="NullableAnalyzer.java" startLine="36" startPosition="27" endLine="39" endPosition="7" />
+    <nodeInfo nodeId="1231954620056" fileName="NullableAnalyzer.java" startLine="60" startPosition="46" endLine="63" endPosition="7" />
+    <nodeInfo nodeId="1230466514668" fileName="NullableAnalyzer.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <nodeInfo nodeId="1230491997883" fileName="NullableAnalyzer.java" startLine="50" startPosition="43" endLine="55" endPosition="7" />
+    <nodeInfo nodeId="1230492885375" fileName="NullableAnalyzer.java" startLine="34" startPosition="65" endLine="40" endPosition="5" />
+    <nodeInfo nodeId="1232016579636" fileName="NullableAnalyzer.java" startLine="24" startPosition="0" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="1231954620024" fileName="NullableAnalyzer.java" startLine="56" startPosition="5" endLine="64" endPosition="5" />
+    <nodeInfo nodeId="1230491521744" fileName="NullableAnalyzer.java" startLine="46" startPosition="46" endLine="56" endPosition="5" />
+    <nodeInfo nodeId="1230466520789" fileName="NullableAnalyzer.java" startLine="32" startPosition="0" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="1230466891926" fileName="NullableAnalyzer.java" startLine="43" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1230465993868" fileName="NullableAnalyzer.java" startLine="18" startPosition="29" endLine="18" endPosition="29" />
+    <scopeInfo nodeId="1230466514671" fileName="NullableAnalyzer.java" startLine="21" startPosition="43" endLine="22" endPosition="37" />
+    <scopeInfo nodeId="1232016804218" fileName="NullableAnalyzer.java" startLine="27" startPosition="64" endLine="28" endPosition="81" />
+    <scopeInfo nodeId="1230493300406" fileName="NullableAnalyzer.java" startLine="37" startPosition="81" endLine="38" endPosition="141" />
+    <scopeInfo nodeId="1230492027937" fileName="NullableAnalyzer.java" startLine="51" startPosition="26" endLine="52" endPosition="81" />
+    <scopeInfo nodeId="1230492036403" fileName="NullableAnalyzer.java" startLine="53" startPosition="14" endLine="54" endPosition="57" />
+    <scopeInfo nodeId="1231954620060" fileName="NullableAnalyzer.java" startLine="61" startPosition="26" endLine="62" endPosition="57" />
+    <scopeInfo nodeId="1230465993865" fileName="NullableAnalyzer.java" startLine="17" startPosition="93" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="1232016804215" fileName="NullableAnalyzer.java" startLine="26" startPosition="104" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="1230493300403" fileName="NullableAnalyzer.java" startLine="36" startPosition="27" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="1230466514668" fileName="NullableAnalyzer.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1230492885378" fileName="NullableAnalyzer.java" startLine="35" startPosition="70" endLine="39" endPosition="7">
+      <varInfo nodeId="1230492922389" varName="variable" />
+    </scopeInfo>
+    <scopeInfo nodeId="1232016579639" fileName="NullableAnalyzer.java" startLine="25" startPosition="59" endLine="30" endPosition="18">
+      <varInfo nodeId="1232016789502" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1230492885375" fileName="NullableAnalyzer.java" startLine="34" startPosition="65" endLine="40" endPosition="5" />
+    <scopeInfo nodeId="1231954620030" fileName="NullableAnalyzer.java" startLine="57" startPosition="69" endLine="63" endPosition="7">
+      <varInfo nodeId="1231954620032" varName="varValue" />
+      <varInfo nodeId="1231954620040" varName="value" />
+      <varInfo nodeId="1231954620049" varName="variable" />
+    </scopeInfo>
+    <scopeInfo nodeId="1232016579636" fileName="NullableAnalyzer.java" startLine="24" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1232016624726" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="1230492713175" fileName="NullableAnalyzer.java" startLine="33" startPosition="107" endLine="41" endPosition="18">
+      <varInfo nodeId="1230492993909" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1230491521746" fileName="NullableAnalyzer.java" startLine="47" startPosition="61" endLine="55" endPosition="7">
+      <varInfo nodeId="1230491974266" varName="value" />
+      <varInfo nodeId="1230491884862" varName="write" />
+      <varInfo nodeId="1230492654784" varName="variable" />
+    </scopeInfo>
+    <scopeInfo nodeId="1230466520789" fileName="NullableAnalyzer.java" startLine="32" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1230466520795" varName="values" />
+      <varInfo nodeId="1230466520793" varName="program" />
+    </scopeInfo>
+    <scopeInfo nodeId="1230466891937" fileName="NullableAnalyzer.java" startLine="44" startPosition="101" endLine="65" endPosition="18">
+      <varInfo nodeId="1230491608554" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1230466891926" fileName="NullableAnalyzer.java" startLine="43" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1230466891931" varName="input" />
+      <varInfo nodeId="1230466891935" varName="state" />
+    </scopeInfo>
+    <unitInfo nodeId="1230465993863" fileName="NullableAnalyzer.java" startLine="17" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.dataFlow.runtime.NullableAnalyzer" />
+  </root>
+  <root nodeId="1230466569958">
+    <nodeInfo nodeId="1230493143438" fileName="NullableVariableState.java" startLine="17" startPosition="54" endLine="18" endPosition="19" />
+    <nodeInfo nodeId="1230493264154" fileName="NullableVariableState.java" startLine="20" startPosition="55" endLine="21" endPosition="18" />
+    <nodeInfo nodeId="1230493194355" fileName="NullableVariableState.java" startLine="23" startPosition="29" endLine="24" endPosition="18" />
+    <nodeInfo nodeId="1230550835720" fileName="NullableVariableState.java" startLine="26" startPosition="101" endLine="27" endPosition="43" />
+    <nodeInfo nodeId="1230550854382" fileName="NullableVariableState.java" startLine="29" startPosition="101" endLine="30" endPosition="43" />
+    <nodeInfo nodeId="1230493203942" fileName="NullableVariableState.java" startLine="31" startPosition="5" endLine="32" endPosition="42" />
+    <nodeInfo nodeId="1232010724721" fileName="NullableVariableState.java" startLine="36" startPosition="49" endLine="37" endPosition="40" />
+    <nodeInfo nodeId="1232010764648" fileName="NullableVariableState.java" startLine="39" startPosition="45" endLine="40" endPosition="44" />
+    <nodeInfo nodeId="1232010677378" fileName="NullableVariableState.java" startLine="41" startPosition="5" endLine="42" endPosition="16" />
+    <nodeInfo nodeId="1230466569960" fileName="NullableVariableState.java" startLine="12" startPosition="0" endLine="14" endPosition="3" />
+    <nodeInfo nodeId="1230493110877" fileName="NullableVariableState.java" startLine="16" startPosition="67" endLine="19" endPosition="5" />
+    <nodeInfo nodeId="1230493264152" fileName="NullableVariableState.java" startLine="19" startPosition="5" endLine="22" endPosition="5" />
+    <nodeInfo nodeId="1230493182407" fileName="NullableVariableState.java" startLine="22" startPosition="5" endLine="25" endPosition="5" />
+    <nodeInfo nodeId="1230550762807" fileName="NullableVariableState.java" startLine="25" startPosition="5" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="1230550854380" fileName="NullableVariableState.java" startLine="28" startPosition="5" endLine="31" endPosition="5" />
+    <nodeInfo nodeId="1232010681934" fileName="NullableVariableState.java" startLine="35" startPosition="38" endLine="38" endPosition="5" />
+    <nodeInfo nodeId="1232010764646" fileName="NullableVariableState.java" startLine="38" startPosition="5" endLine="41" endPosition="5" />
+    <nodeInfo nodeId="1232010661994" fileName="NullableVariableState.java" startLine="34" startPosition="0" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="1230493082402" fileName="NullableVariableState.java" startLine="15" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1230466569963" fileName="NullableVariableState.java" startLine="13" startPosition="27" endLine="13" endPosition="27" />
+    <scopeInfo nodeId="1230493110879" fileName="NullableVariableState.java" startLine="17" startPosition="54" endLine="18" endPosition="19" />
+    <scopeInfo nodeId="1230493264153" fileName="NullableVariableState.java" startLine="20" startPosition="55" endLine="21" endPosition="18" />
+    <scopeInfo nodeId="1230493182408" fileName="NullableVariableState.java" startLine="23" startPosition="29" endLine="24" endPosition="18" />
+    <scopeInfo nodeId="1230550762808" fileName="NullableVariableState.java" startLine="26" startPosition="101" endLine="27" endPosition="43" />
+    <scopeInfo nodeId="1230550854381" fileName="NullableVariableState.java" startLine="29" startPosition="101" endLine="30" endPosition="43" />
+    <scopeInfo nodeId="1232010681935" fileName="NullableVariableState.java" startLine="36" startPosition="49" endLine="37" endPosition="40" />
+    <scopeInfo nodeId="1232010764647" fileName="NullableVariableState.java" startLine="39" startPosition="45" endLine="40" endPosition="44" />
+    <scopeInfo nodeId="1230466569960" fileName="NullableVariableState.java" startLine="12" startPosition="0" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="1232010661997" fileName="NullableVariableState.java" startLine="35" startPosition="38" endLine="42" endPosition="16" />
+    <scopeInfo nodeId="1232010661994" fileName="NullableVariableState.java" startLine="34" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1230493082405" fileName="NullableVariableState.java" startLine="16" startPosition="67" endLine="32" endPosition="42" />
+    <scopeInfo nodeId="1230493082402" fileName="NullableVariableState.java" startLine="15" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1230493096297" varName="state" />
+    </scopeInfo>
+    <unitInfo nodeId="1230466569958" fileName="NullableVariableState.java" startLine="6" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.dataFlow.runtime.NullableVariableState" />
+  </root>
+  <root nodeId="1230553634583">
+    <nodeInfo nodeId="1230554080866" fileName="NullableUtil.java" startLine="21" startPosition="189" endLine="22" endPosition="46" />
+    <nodeInfo nodeId="1230554107788" fileName="NullableUtil.java" startLine="24" startPosition="188" endLine="25" endPosition="46" />
+    <nodeInfo nodeId="1230554191306" fileName="NullableUtil.java" startLine="27" startPosition="5" endLine="28" endPosition="41" />
+    <nodeInfo nodeId="1231871578289" fileName="NullableUtil.java" startLine="31" startPosition="90" endLine="32" endPosition="68" />
+    <nodeInfo nodeId="1231872040911" fileName="NullableUtil.java" startLine="32" startPosition="68" endLine="33" endPosition="112" />
+    <nodeInfo nodeId="1231871732743" fileName="NullableUtil.java" startLine="33" startPosition="112" endLine="34" endPosition="112" />
+    <nodeInfo nodeId="1231932639301" fileName="NullableUtil.java" startLine="36" startPosition="57" endLine="37" endPosition="73" />
+    <nodeInfo nodeId="1232016408881" fileName="NullableUtil.java" startLine="37" startPosition="73" endLine="38" endPosition="163" />
+    <nodeInfo nodeId="1234976745893" fileName="NullableUtil.java" startLine="39" startPosition="28" endLine="40" endPosition="60" />
+    <nodeInfo nodeId="1231872117115" fileName="NullableUtil.java" startLine="43" startPosition="5" endLine="44" endPosition="18" />
+    <nodeInfo nodeId="1231939507480" fileName="NullableUtil.java" startLine="47" startPosition="64" endLine="48" endPosition="77" />
+    <nodeInfo nodeId="1231939697727" fileName="NullableUtil.java" startLine="48" startPosition="77" endLine="49" endPosition="43" />
+    <nodeInfo nodeId="1230553844418" fileName="NullableUtil.java" startLine="20" startPosition="65" endLine="23" endPosition="7" />
+    <nodeInfo nodeId="1230554107781" fileName="NullableUtil.java" startLine="23" startPosition="7" endLine="26" endPosition="7" />
+    <nodeInfo nodeId="1234976725872" fileName="NullableUtil.java" startLine="38" startPosition="163" endLine="41" endPosition="9" />
+    <nodeInfo nodeId="1231939371846" fileName="NullableUtil.java" startLine="46" startPosition="0" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="1231932591684" fileName="NullableUtil.java" startLine="35" startPosition="175" endLine="42" endPosition="7" />
+    <nodeInfo nodeId="1230553832692" fileName="NullableUtil.java" startLine="19" startPosition="93" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1231871802706" fileName="NullableUtil.java" startLine="34" startPosition="112" endLine="43" endPosition="5" />
+    <nodeInfo nodeId="1230553645870" fileName="NullableUtil.java" startLine="18" startPosition="27" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="1231870916113" fileName="NullableUtil.java" startLine="30" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1230553844420" fileName="NullableUtil.java" startLine="21" startPosition="189" endLine="22" endPosition="46" />
+    <scopeInfo nodeId="1230554107787" fileName="NullableUtil.java" startLine="24" startPosition="188" endLine="25" endPosition="46" />
+    <scopeInfo nodeId="1234976725873" fileName="NullableUtil.java" startLine="39" startPosition="28" endLine="40" endPosition="60" />
+    <scopeInfo nodeId="1231939371849" fileName="NullableUtil.java" startLine="47" startPosition="64" endLine="49" endPosition="43">
+      <varInfo nodeId="1231939507481" varName="analizysResult" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231932591685" fileName="NullableUtil.java" startLine="36" startPosition="57" endLine="41" endPosition="9">
+      <varInfo nodeId="1232016408882" varName="state" />
+      <varInfo nodeId="1231932639302" varName="instruction" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231939371846" fileName="NullableUtil.java" startLine="46" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1231939437805" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1230553832695" fileName="NullableUtil.java" startLine="20" startPosition="65" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="1231871802709" fileName="NullableUtil.java" startLine="35" startPosition="175" endLine="42" endPosition="7" />
+    <scopeInfo nodeId="1230553832692" fileName="NullableUtil.java" startLine="19" startPosition="93" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="1230553645873" fileName="NullableUtil.java" startLine="19" startPosition="93" endLine="28" endPosition="41" />
+    <scopeInfo nodeId="1231871802706" fileName="NullableUtil.java" startLine="34" startPosition="112" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="1230553645870" fileName="NullableUtil.java" startLine="18" startPosition="27" endLine="30" endPosition="0">
+      <varInfo nodeId="1230553679126" varName="annotations" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231870916116" fileName="NullableUtil.java" startLine="31" startPosition="90" endLine="44" endPosition="18">
+      <varInfo nodeId="1231872040912" varName="result" />
+      <varInfo nodeId="1231871578290" varName="p" />
+      <varInfo nodeId="1231871732744" varName="analysisResult" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231870916113" fileName="NullableUtil.java" startLine="30" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1231871529083" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="1230553634583" fileName="NullableUtil.java" startLine="18" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.dataFlow.runtime.NullableUtil" />
+  </root>
+  <root nodeId="1231930009973">
+    <nodeInfo nodeId="1231930193169" fileName="NullableAnalysisResult.java" startLine="22" startPosition="63" endLine="23" endPosition="75" />
+    <nodeInfo nodeId="1231940126853" fileName="NullableAnalysisResult.java" startLine="27" startPosition="106" endLine="28" endPosition="116" />
+    <nodeInfo nodeId="1231940132629" fileName="NullableAnalysisResult.java" startLine="30" startPosition="97" endLine="31" endPosition="107" />
+    <nodeInfo nodeId="1231942169569" fileName="NullableAnalysisResult.java" startLine="33" startPosition="99" endLine="34" endPosition="112" />
+    <nodeInfo nodeId="1232023588873" fileName="NullableAnalysisResult.java" startLine="38" startPosition="59" endLine="39" endPosition="73" />
+    <nodeInfo nodeId="1232023607364" fileName="NullableAnalysisResult.java" startLine="41" startPosition="170" endLine="42" endPosition="74" />
+    <nodeInfo nodeId="1232383557058" fileName="NullableAnalysisResult.java" startLine="48" startPosition="243" endLine="49" endPosition="13" />
+    <nodeInfo nodeId="1231938344739" fileName="NullableAnalysisResult.java" startLine="51" startPosition="119" endLine="52" endPosition="212" />
+    <nodeInfo nodeId="1231938455642" fileName="NullableAnalysisResult.java" startLine="52" startPosition="212" endLine="53" endPosition="159" />
+    <nodeInfo nodeId="1231941486482" fileName="NullableAnalysisResult.java" startLine="54" startPosition="164" endLine="55" endPosition="74" />
+    <nodeInfo nodeId="1232456661892" fileName="NullableAnalysisResult.java" startLine="60" startPosition="55" endLine="61" endPosition="69" />
+    <nodeInfo nodeId="1232456694819" fileName="NullableAnalysisResult.java" startLine="62" startPosition="26" endLine="63" endPosition="13" />
+    <nodeInfo nodeId="1231942285378" fileName="NullableAnalysisResult.java" startLine="64" startPosition="5" endLine="65" endPosition="68" />
+    <nodeInfo nodeId="1231942328106" fileName="NullableAnalysisResult.java" startLine="66" startPosition="103" endLine="67" endPosition="110" />
+    <nodeInfo nodeId="1231931145978" fileName="NullableAnalysisResult.java" startLine="73" startPosition="249" endLine="74" endPosition="143" />
+    <nodeInfo nodeId="1231931226193" fileName="NullableAnalysisResult.java" startLine="75" startPosition="5" endLine="76" endPosition="73" />
+    <nodeInfo nodeId="1231931509289" fileName="NullableAnalysisResult.java" startLine="79" startPosition="111" endLine="80" endPosition="138" />
+    <nodeInfo nodeId="1231940038319" fileName="NullableAnalysisResult.java" startLine="84" startPosition="162" endLine="85" endPosition="33" />
+    <nodeInfo nodeId="1231940047216" fileName="NullableAnalysisResult.java" startLine="86" startPosition="5" endLine="87" endPosition="31" />
+    <nodeInfo nodeId="1231930135283" fileName="NullableAnalysisResult.java" startLine="16" startPosition="37" endLine="18" endPosition="53" />
+    <nodeInfo nodeId="1231939899060" fileName="NullableAnalysisResult.java" startLine="18" startPosition="53" endLine="20" endPosition="62" />
+    <nodeInfo nodeId="1231930009975" fileName="NullableAnalysisResult.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
+    <nodeInfo nodeId="1231930491768" fileName="NullableAnalysisResult.java" startLine="26" startPosition="47" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1231937997163" fileName="NullableAnalysisResult.java" startLine="29" startPosition="5" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="1231942169567" fileName="NullableAnalysisResult.java" startLine="32" startPosition="5" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="1232023607362" fileName="NullableAnalysisResult.java" startLine="40" startPosition="25" endLine="43" endPosition="7" />
+    <nodeInfo nodeId="1232383529493" fileName="NullableAnalysisResult.java" startLine="47" startPosition="53" endLine="50" endPosition="5" />
+    <nodeInfo nodeId="1231941117764" fileName="NullableAnalysisResult.java" startLine="53" startPosition="159" endLine="56" endPosition="7" />
+    <nodeInfo nodeId="1232456688224" fileName="NullableAnalysisResult.java" startLine="61" startPosition="69" endLine="64" endPosition="5" />
+    <nodeInfo nodeId="1231942229318" fileName="NullableAnalysisResult.java" startLine="65" startPosition="68" endLine="68" endPosition="5" />
+    <nodeInfo nodeId="1231931099139" fileName="NullableAnalysisResult.java" startLine="72" startPosition="67" endLine="75" endPosition="5" />
+    <nodeInfo nodeId="1231939996221" fileName="NullableAnalysisResult.java" startLine="83" startPosition="45" endLine="86" endPosition="5" />
+    <nodeInfo nodeId="1231931413918" fileName="NullableAnalysisResult.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <nodeInfo nodeId="1232023592816" fileName="NullableAnalysisResult.java" startLine="39" startPosition="73" endLine="44" endPosition="5" />
+    <nodeInfo nodeId="1231938305260" fileName="NullableAnalysisResult.java" startLine="50" startPosition="5" endLine="57" endPosition="5" />
+    <nodeInfo nodeId="1231939943205" fileName="NullableAnalysisResult.java" startLine="82" startPosition="0" endLine="89" endPosition="0" />
+    <nodeInfo nodeId="1231931064678" fileName="NullableAnalysisResult.java" startLine="70" startPosition="0" endLine="78" endPosition="0" />
+    <nodeInfo nodeId="1231930527015" fileName="NullableAnalysisResult.java" startLine="37" startPosition="0" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="1231942194677" fileName="NullableAnalysisResult.java" startLine="59" startPosition="0" endLine="70" endPosition="0" />
+    <nodeInfo nodeId="1231930352029" fileName="NullableAnalysisResult.java" startLine="25" startPosition="0" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="1231938088663" fileName="NullableAnalysisResult.java" startLine="46" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1231930009978" fileName="NullableAnalysisResult.java" startLine="22" startPosition="63" endLine="23" endPosition="75" />
+    <scopeInfo nodeId="1231930491769" fileName="NullableAnalysisResult.java" startLine="27" startPosition="106" endLine="28" endPosition="116" />
+    <scopeInfo nodeId="1231937997164" fileName="NullableAnalysisResult.java" startLine="30" startPosition="97" endLine="31" endPosition="107" />
+    <scopeInfo nodeId="1231942169568" fileName="NullableAnalysisResult.java" startLine="33" startPosition="99" endLine="34" endPosition="112" />
+    <scopeInfo nodeId="1232023607363" fileName="NullableAnalysisResult.java" startLine="41" startPosition="170" endLine="42" endPosition="74" />
+    <scopeInfo nodeId="1232383529494" fileName="NullableAnalysisResult.java" startLine="48" startPosition="243" endLine="49" endPosition="13" />
+    <scopeInfo nodeId="1231941117765" fileName="NullableAnalysisResult.java" startLine="54" startPosition="164" endLine="55" endPosition="74" />
+    <scopeInfo nodeId="1232456688225" fileName="NullableAnalysisResult.java" startLine="62" startPosition="26" endLine="63" endPosition="13" />
+    <scopeInfo nodeId="1231942229320" fileName="NullableAnalysisResult.java" startLine="66" startPosition="103" endLine="67" endPosition="110" />
+    <scopeInfo nodeId="1231931099141" fileName="NullableAnalysisResult.java" startLine="73" startPosition="249" endLine="74" endPosition="143" />
+    <scopeInfo nodeId="1231931509288" fileName="NullableAnalysisResult.java" startLine="79" startPosition="111" endLine="80" endPosition="138" />
+    <scopeInfo nodeId="1231939996228" fileName="NullableAnalysisResult.java" startLine="84" startPosition="162" endLine="85" endPosition="33" />
+    <scopeInfo nodeId="1231930009975" fileName="NullableAnalysisResult.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="1231930084417" varName="statementList" />
+    </scopeInfo>
+    <scopeInfo nodeId="1232023592817" fileName="NullableAnalysisResult.java" startLine="40" startPosition="25" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="1231939996221" fileName="NullableAnalysisResult.java" startLine="83" startPosition="45" endLine="86" endPosition="5" />
+    <scopeInfo nodeId="1231931064681" fileName="NullableAnalysisResult.java" startLine="72" startPosition="67" endLine="76" endPosition="73" />
+    <scopeInfo nodeId="1231931413918" fileName="NullableAnalysisResult.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="1231931428519" varName="lValue" />
+      <varInfo nodeId="1231931435193" varName="rValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231939943208" fileName="NullableAnalysisResult.java" startLine="83" startPosition="45" endLine="87" endPosition="31" />
+    <scopeInfo nodeId="1231938305261" fileName="NullableAnalysisResult.java" startLine="51" startPosition="119" endLine="56" endPosition="7">
+      <varInfo nodeId="1231938455643" varName="expression" />
+      <varInfo nodeId="1231938344740" varName="parameter" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231930527018" fileName="NullableAnalysisResult.java" startLine="38" startPosition="59" endLine="44" endPosition="5">
+      <varInfo nodeId="1232023588874" varName="rValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231938305260" fileName="NullableAnalysisResult.java" startLine="50" startPosition="5" endLine="57" endPosition="5">
+      <varInfo nodeId="1231938305263" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231939943205" fileName="NullableAnalysisResult.java" startLine="82" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="1231939949747" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231942194680" fileName="NullableAnalysisResult.java" startLine="60" startPosition="55" endLine="68" endPosition="5">
+      <varInfo nodeId="1231942285379" varName="operandState" />
+      <varInfo nodeId="1232456661893" varName="operand" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231931064678" fileName="NullableAnalysisResult.java" startLine="70" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="1231931089012" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231930352032" fileName="NullableAnalysisResult.java" startLine="26" startPosition="47" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="1231930527015" fileName="NullableAnalysisResult.java" startLine="37" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1231930539192" varName="assignment" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231938088666" fileName="NullableAnalysisResult.java" startLine="47" startPosition="53" endLine="57" endPosition="5" />
+    <scopeInfo nodeId="1231942194677" fileName="NullableAnalysisResult.java" startLine="59" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="1231942204688" varName="call" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231930352029" fileName="NullableAnalysisResult.java" startLine="25" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1231930372631" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1231938088663" fileName="NullableAnalysisResult.java" startLine="46" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1231938102594" varName="call" />
+    </scopeInfo>
+    <unitInfo nodeId="1231930009973" fileName="NullableAnalysisResult.java" startLine="16" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.dataFlow.runtime.NullableAnalysisResult" />
+  </root>
+</debugInfo>
+

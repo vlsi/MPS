@@ -152,7 +152,10 @@ public class ModelReader5Handler extends DefaultHandler {
       fieldversionsInfo = new SModelVersionsInfo();
       fieldreferenceDescriptors = new ArrayList<IReferencePersister>();
       fieldvisibleModelElements = new SAXVisibleModelElements();
-      return new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
+      SModel m = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
+      m.setPersistenceVersion(5);
+      m.setLoading(true);
+      return m;
     }
 
     @Override
