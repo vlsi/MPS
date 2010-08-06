@@ -1523,35 +1523,32 @@
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="5543996881668550295">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="5543996881668550296">
         <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5543996881668550297">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5543996881668550298">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="5543996881668550299">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="5543996881668550300">
-                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5543996881668550301">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2662691822046453410">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="2662691822046453411">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="2662691822046453412">
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2662691822046453413">
                   <link role="classifier:3" targetNodeId="1.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
                 </node>
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5543996881668550302">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall:1" id="5543996881668550303">
-                    <property name="methodName:1" value="invokeMethod" />
-                    <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5543996881668550304">
-                      <link role="classifier:3" targetNodeId="1.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
-                    </node>
-                    <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5543996881668550305">
-                      <property name="value:3" value="someMethod" />
-                    </node>
-                    <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5835110165147376830">
-                      <property name="value:3" value="(I)Ljava/lang/Object;" />
-                    </node>
-                    <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5543996881668550306">
-                      <property name="value:3" value="0" />
-                    </node>
-                    <node role="instance:1" type="jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression:1" id="5543996881668550307" />
+                <node role="expression:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall:1" id="2662691822046453424">
+                  <property name="methodName:1" value="invokeMethod" />
+                  <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2662691822046453431">
+                    <property name="value:3" value="someMethod" />
                   </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall:1" id="5543996881668550308">
+                  <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2662691822046453434">
+                    <property name="value:3" value="(I)Ljava/lang/Object;" />
+                  </node>
+                  <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2662691822046453436">
+                    <property name="value:3" value="0" />
+                  </node>
+                  <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2662691822046453426">
+                    <link role="classifier:3" targetNodeId="1.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                  </node>
+                  <node role="instance:1" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall:1" id="2662691822046453427">
                     <property name="methodName:1" value="getThisObject" />
-                    <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5543996881668550309">
+                    <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2662691822046453428">
                       <link role="classifier:3" targetNodeId="1.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
                     </node>
-                    <node role="instance:1" type="jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression:1" id="5543996881668550310" />
+                    <node role="instance:1" type="jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression:1" id="2662691822046453429" />
                   </node>
                 </node>
               </node>
@@ -1592,35 +1589,32 @@
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1454920206667908280">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1454920206667908281">
         <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1454920206667908282">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1454920206667908283">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1454920206667908284">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1454920206667908285">
-                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1454920206667908286">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2662691822046542628">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="2662691822046542629">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="2662691822046542630">
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2662691822046542631">
                   <link role="classifier:3" targetNodeId="1.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
                 </node>
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1454920206667908287">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall:1" id="1454920206667908288">
-                    <property name="methodName:1" value="invokeMethod" />
-                    <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1454920206667908289">
-                      <link role="classifier:3" targetNodeId="1.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
-                    </node>
-                    <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1454920206667908290">
-                      <property name="value:3" value="someMethod" />
-                    </node>
-                    <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1454920206667908291">
-                      <property name="value:3" value="(I)Ljava/lang/Object;" />
-                    </node>
-                    <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1454920206667908292">
-                      <property name="value:3" value="0" />
-                    </node>
-                    <node role="instance:1" type="jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression:1" id="1454920206667908293" />
+                <node role="expression:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall:1" id="2662691822046542632">
+                  <property name="methodName:1" value="invokeMethod" />
+                  <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2662691822046542633">
+                    <property name="value:3" value="someMethod" />
                   </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall:1" id="1454920206667908294">
+                  <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2662691822046542634">
+                    <property name="value:3" value="(I)Ljava/lang/Object;" />
+                  </node>
+                  <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2662691822046542635">
+                    <property name="value:3" value="0" />
+                  </node>
+                  <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2662691822046542636">
+                    <link role="classifier:3" targetNodeId="1.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                  </node>
+                  <node role="instance:1" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall:1" id="2662691822046542637">
                     <property name="methodName:1" value="getThisObject" />
-                    <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1454920206667908295">
+                    <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2662691822046542638">
                       <link role="classifier:3" targetNodeId="1.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
                     </node>
-                    <node role="instance:1" type="jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression:1" id="1454920206667908296" />
+                    <node role="instance:1" type="jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression:1" id="2662691822046542639" />
                   </node>
                 </node>
               </node>
@@ -1713,7 +1707,7 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1454920206667908355">
               <node role="expression:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall:1" id="1454920206667908348">
                 <property name="fqClassName:1" value="java.lang.Thread" />
-                <property name="methodName:1" value="sleeep" />
+                <property name="methodName:1" value="sleep" />
                 <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1454920206667908352" />
                 <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1454920206667908351">
                   <property name="value:3" value="10" />
@@ -1748,7 +1742,7 @@
                     <property name="value:3" value="sleep" />
                   </node>
                   <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1454920206667908329">
-                    <property name="value:3" value="(J)V" />
+                    <property name="value:3" value="(I)V" />
                   </node>
                   <node role="actualArgument:1" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1454920206667908363">
                     <property name="value:3" value="10" />
