@@ -11,10 +11,11 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.InternUtil;
 
 public class BLDependenciesHandler extends DefaultHandler {
-  private static BLDependenciesHandler.dependenciesRootElementHandler dependenciesRoothandler = new BLDependenciesHandler.dependenciesRootElementHandler();
-  private static BLDependenciesHandler.dependencyElementHandler dependencyhandler = new BLDependenciesHandler.dependencyElementHandler();
-  private static BLDependenciesHandler.classNodeElementHandler classNodehandler = new BLDependenciesHandler.classNodeElementHandler();
+  private static String[] EMPTY_ARRAY = new String[0];
 
+  private BLDependenciesHandler.dependenciesRootElementHandler dependenciesRoothandler = new BLDependenciesHandler.dependenciesRootElementHandler();
+  private BLDependenciesHandler.dependencyElementHandler dependencyhandler = new BLDependenciesHandler.dependencyElementHandler();
+  private BLDependenciesHandler.classNodeElementHandler classNodehandler = new BLDependenciesHandler.classNodeElementHandler();
   private Stack<BLDependenciesHandler.ElementHandler> handlers = new Stack<BLDependenciesHandler.ElementHandler>();
   private Stack<Object> values = new Stack<Object>();
   private ModelDependencies result;
@@ -67,7 +68,6 @@ public class BLDependenciesHandler extends DefaultHandler {
     } else {
       current = current.createChild(qName);
     }
-    Object result = current.createObject();
 
     // check required 
     for (String attr : current.requiredAttributes()) {
@@ -75,6 +75,8 @@ public class BLDependenciesHandler extends DefaultHandler {
         throw new SAXParseException("attribute " + attr + " is absent", null);
       }
     }
+
+    Object result = current.createObject(attributes);
 
     // handle attributes 
     for (int i = 0; i < attributes.getLength(); i++) {
@@ -86,13 +88,11 @@ public class BLDependenciesHandler extends DefaultHandler {
     values.push(result);
   }
 
-  private static class ElementHandler {
-    private static String[] EMPTY_ARRAY = new String[0];
-
+  private class ElementHandler {
     private ElementHandler() {
     }
 
-    protected Object createObject() {
+    protected Object createObject(Attributes attrs) {
       return null;
     }
 
@@ -115,26 +115,28 @@ public class BLDependenciesHandler extends DefaultHandler {
     }
 
     protected String[] requiredAttributes() {
-      return EMPTY_ARRAY;
+      return BLDependenciesHandler.EMPTY_ARRAY;
     }
 
     protected void validate(Object resultObject) throws SAXParseException {
     }
   }
 
-  public static class dependenciesRootElementHandler extends BLDependenciesHandler.ElementHandler {
+  public class dependenciesRootElementHandler extends BLDependenciesHandler.ElementHandler {
+    private String[] requiredAttributes = new String[]{};
+
     public dependenciesRootElementHandler() {
     }
 
     @Override
-    protected ModelDependencies createObject() {
+    protected ModelDependencies createObject(Attributes attrs) {
       return new ModelDependencies();
     }
 
     @Override
     protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXParseException {
       if ("dependency".equals(tagName)) {
-        return BLDependenciesHandler.dependencyhandler;
+        return dependencyhandler;
       }
       return super.createChild(tagName);
     }
@@ -151,14 +153,14 @@ public class BLDependenciesHandler extends DefaultHandler {
     }
   }
 
-  public static class dependencyElementHandler extends BLDependenciesHandler.ElementHandler {
-    private static String[] requiredAttributes = new String[]{"className", "file"};
+  public class dependencyElementHandler extends BLDependenciesHandler.ElementHandler {
+    private String[] requiredAttributes = new String[]{"className"};
 
     public dependencyElementHandler() {
     }
 
     @Override
-    protected RootDependencies createObject() {
+    protected RootDependencies createObject(Attributes attrs) {
       return new RootDependencies();
     }
 
@@ -184,7 +186,7 @@ public class BLDependenciesHandler extends DefaultHandler {
     @Override
     protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXParseException {
       if ("classNode".equals(tagName)) {
-        return BLDependenciesHandler.classNodehandler;
+        return classNodehandler;
       }
       return super.createChild(tagName);
     }
@@ -209,12 +211,14 @@ public class BLDependenciesHandler extends DefaultHandler {
     }
   }
 
-  public static class classNodeElementHandler extends BLDependenciesHandler.ElementHandler {
+  public class classNodeElementHandler extends BLDependenciesHandler.ElementHandler {
+    private String[] requiredAttributes = new String[]{};
+
     public classNodeElementHandler() {
     }
 
     @Override
-    protected Object[] createObject() {
+    protected Object[] createObject(Attributes attrs) {
       return new Object[2];
     }
 

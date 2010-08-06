@@ -11994,6 +11994,7 @@
     <node role="nodes:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule:4" id="2268737274628891058">
       <property name="name:4" value="dependenciesRoot" />
       <property name="tagName:4" value="dependenciesRoot" />
+      <property name="isCompact:4" value="true" />
       <node role="children:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildRule:4" id="2268737274628897488">
         <link role="rule:4" targetNodeId="2268737274628897462" resolveInfo="dependency" />
         <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler:4" id="2268737274628897490">
@@ -12121,7 +12122,6 @@
       </node>
       <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2268737274628897467">
         <property name="name:4" value="file" />
-        <property name="isRequired:4" value="true" />
         <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler:4" id="2268737274629028856">
           <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2268737274629028857">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2268737274629028858">
