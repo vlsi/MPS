@@ -23,173 +23,173 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 @MPSLaunch
-public class TransformationUtil_Test extends BaseTransformationTest {
+public class TransformationUtil_Expressions_Test extends BaseTransformationTest {
   @Test
   public void test_lowLevelVariable() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_lowLevelVariable", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_lowLevelVariable", true);
   }
 
   @Test
   public void test_variableInternal() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_variableInternal", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_variableInternal", true);
   }
 
   @Test
   public void test_evaluatorsThisExpression() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_evaluatorsThisExpression", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_evaluatorsThisExpression", true);
   }
 
   @Test
   public void test_thisInternalExpression() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_thisInternalExpression", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_thisInternalExpression", true);
   }
 
   @Test
   public void test_field() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_field", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_field", true);
   }
 
   @Test
   public void test_fieldInternal() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_fieldInternal", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_fieldInternal", true);
   }
 
   @Test
   public void test_localField() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_localField", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_localField", true);
   }
 
   @Test
   public void test_staticField() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_staticField", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_staticField", true);
   }
 
   @Test
   public void test_staticFieldInternal() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_staticFieldInternal", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_staticFieldInternal", true);
   }
 
   @Test
   public void test_localStaticField() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_localStaticField", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_localStaticField", true);
   }
 
   @Test
   public void test_method() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_method", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_method", true);
   }
 
   @Test
   public void test_methodInternal() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_methodInternal", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_methodInternal", true);
   }
 
   @Test
   public void test_localMethod() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_localMethod", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_localMethod", true);
   }
 
   @Test
   public void test_staticMethod() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_staticMethod", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_staticMethod", true);
   }
 
   @Test
   public void test_staticMethodInternal() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_staticMethodInternal", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_staticMethodInternal", true);
   }
 
   @Test
   public void test_staticLocalMethod() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_staticLocalMethod", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_staticLocalMethod", true);
   }
 
   @Test
   public void test_arrayAccessOperation() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_arrayAccessOperation", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_arrayAccessOperation", true);
   }
 
   @Test
   public void test_arrayLengthOperation() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_arrayLengthOperation", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_arrayLengthOperation", true);
   }
 
   @Test
   public void test_instanceof() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_instanceof", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_instanceof", true);
   }
 
   @Test
   public void test_super() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_super", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_super", true);
   }
 
   @Test
   public void test_constructor() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_constructor", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_constructor", true);
   }
 
   @Test
   public void test_constructorInternal() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_constructorInternal", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_constructorInternal", true);
   }
 
   @Test
   public void test_plusExpression() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_plusExpression", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_plusExpression", true);
   }
 
   @Test
   public void test_equalsExpression() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_equalsExpression", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_equalsExpression", true);
   }
 
   @Test
   public void test_notEqualsExpression() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_notEqualsExpression", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_notEqualsExpression", true);
   }
 
   @Test
   public void test_notExpression() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_notExpression", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_notExpression", true);
   }
 
   @Test
   public void test_classExpression() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_classExpression", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_classExpression", true);
   }
 
   @Test
   public void test_classInternalExpression() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Test$TestBody", "test_classInternalExpression", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Expressions_Test$TestBody", "test_classInternalExpression", true);
   }
 
   @MPSLaunch
@@ -916,7 +916,7 @@ public class TransformationUtil_Test extends BaseTransformationTest {
       this.addNodeById("8441349676536441158");
       SNode instanceMethodDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
       List<SNode> arguments = SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true);
-      SNode localInstanceMethodCall = new TransformationUtil_Test.TestBody.QuotationClass_tbx03_a0a25a21a().createNode(arguments);
+      SNode localInstanceMethodCall = new TransformationUtil_Expressions_Test.TestBody.QuotationClass_n7zrdh_a0a25a21a().createNode(arguments);
       SLinkOperations.setTarget(localInstanceMethodCall, "baseMethodDeclaration", instanceMethodDeclaration, false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), localInstanceMethodCall);
       TransformationUtil.transformInternal(SNodeOperations.cast(this.getNodeById("5543996881668550285"), "jetbrains.mps.baseLanguage.structure.BlockStatement"));
@@ -1086,7 +1086,7 @@ public class TransformationUtil_Test extends BaseTransformationTest {
       this.addNodeById("8441349676536441158");
       SNode staticMethodDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "baseMethodDeclaration", false);
       List<SNode> arguments = SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "actualArgument", true);
-      SNode localStaticMethodCall = new TransformationUtil_Test.TestBody.QuotationClass_tbx03_a0a25a51a().createNode(arguments);
+      SNode localStaticMethodCall = new TransformationUtil_Expressions_Test.TestBody.QuotationClass_n7zrdh_a0a25a51a().createNode(arguments);
       SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", staticMethodDeclaration, false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), localStaticMethodCall);
       TransformationUtil.transformInternal(SNodeOperations.cast(this.getNodeById("607759879653675043"), "jetbrains.mps.baseLanguage.structure.BlockStatement"));
@@ -1753,8 +1753,8 @@ public class TransformationUtil_Test extends BaseTransformationTest {
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536441172"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536441159"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
-    public static class QuotationClass_tbx03_a0a25a21a {
-      public QuotationClass_tbx03_a0a25a21a() {
+    public static class QuotationClass_n7zrdh_a0a25a21a {
+      public QuotationClass_n7zrdh_a0a25a21a() {
       }
 
       public SNode createNode(Object parameter_4) {
@@ -1777,8 +1777,8 @@ public class TransformationUtil_Test extends BaseTransformationTest {
       }
     }
 
-    public static class QuotationClass_tbx03_a0a25a51a {
-      public QuotationClass_tbx03_a0a25a51a() {
+    public static class QuotationClass_n7zrdh_a0a25a51a {
+      public QuotationClass_n7zrdh_a0a25a51a() {
       }
 
       public SNode createNode(Object parameter_4) {

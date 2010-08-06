@@ -351,6 +351,17 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6196179103670406761">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6196179103670406762">
+            <property name="name:3" value="intVar" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6196179103670406763">
+              <link role="classifier:3" targetNodeId="2.~Integer" resolveInfo="Integer" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6196179103670406765">
+              <property name="value:3" value="200" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.WhileStatement:3" id="9010565462999112807">
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression:3" id="9010565462999112817">
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="9010565462999112820">
@@ -365,6 +376,13 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression:3" id="9010565462999112823">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="9010565462999112824">
                   <link role="variableDeclaration:3" targetNodeId="9010565462999112812" resolveInfo="j" />
+                </node>
+              </node>
+            </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6196179103670406767">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression:3" id="6196179103670406769">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6196179103670406770">
+                  <link role="variableDeclaration:3" targetNodeId="6196179103670406762" resolveInfo="intVar" />
                 </node>
               </node>
             </node>
