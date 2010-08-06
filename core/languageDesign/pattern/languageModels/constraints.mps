@@ -115,20 +115,6 @@
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="4413230749907802465">
     <link role="concept:8" targetNodeId="1.4413230749907802464:0" resolveInfo="ActionStatement" />
-    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="6762873972248578532">
-      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6762873972248578533">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6762873972248581496">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6762873972248581498">
-            <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode:8" id="6762873972248581497" />
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="6762873972248581502">
-              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="6762873972248581504">
-                <link role="conceptDeclaration:16" targetNodeId="1.4413230749907733332:0" resolveInfo="ActionAsPattern" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="4217760266503599759">
     <link role="concept:8" targetNodeId="1.4413230749907733332:0" resolveInfo="ActionAsPattern" />

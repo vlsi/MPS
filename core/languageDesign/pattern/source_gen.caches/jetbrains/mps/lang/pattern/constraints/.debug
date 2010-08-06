@@ -35,9 +35,5 @@
     <nodeInfo nodeId="1483902774837520828" fileName="ActionAsPattern_Constraints.java" startLine="10" startPosition="116" endLine="11" endPosition="129" />
     <scopeInfo nodeId="1483902774837520156" fileName="ActionAsPattern_Constraints.java" startLine="10" startPosition="116" endLine="11" endPosition="129" />
   </root>
-  <root nodeId="4413230749907802465">
-    <nodeInfo nodeId="6762873972248581496" fileName="ActionStatement_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="122" />
-    <scopeInfo nodeId="6762873972248578533" fileName="ActionStatement_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="122" />
-  </root>
 </debugInfo>
 
