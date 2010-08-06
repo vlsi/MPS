@@ -58,6 +58,10 @@ public abstract class Instruction {
     myJumps.add(instruction);
   }
 
+  void removeJump(Instruction instruction) {
+    myJumps.remove(instruction);
+  }
+
   public void buildCaches() {
     TryFinallyInfo bestMatch = null;
     for (TryFinallyInfo info : getProgram().getBlockInfos()) {

@@ -35,6 +35,11 @@ public class IfJumpInstruction extends Instruction {
     myJumpTo = jumpTo;
   }
 
+  public void updateJumps(int jumpTo) {
+    getProgram().get(jumpTo).removeJump(this);
+    getProgram().get(myJumpTo).addJump(this);
+  }
+
   public void setJumpTo(final Position position) {
     myJumpTo = position.getPosition();
   }

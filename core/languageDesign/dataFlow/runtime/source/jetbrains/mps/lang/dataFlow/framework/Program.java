@@ -395,12 +395,16 @@ public class Program {
          int jumpTo = ifJump.getJumpTo();
          if (jumpTo > position) {
            ifJump.setJumpTo(jumpTo + 1);
+         } else if (jumpTo == position) {
+           ifJump.updateJumps(jumpTo + 1);
          }
        } else if (i instanceof JumpInstruction) {
          JumpInstruction jump = ((JumpInstruction)i);
          int jumpTo = jump.getJumpTo();
          if (jumpTo > position) {
            jump.setJumpTo(jumpTo + 1);
+         } else if (jumpTo == position) {
+           jump.updateJumps(jumpTo + 1);
          }
        }
      }
