@@ -23,10 +23,9 @@ public class Ftest {
     return "";
   }
 
-  public void f() {
-    String s = nulFunc();
+  public void f(@Nullable String s4) {
+    @NotNull String s = nulFunc();
     String s3 = "";
-    s.charAt(2);
     if (s != null) {
       String s2 = s;
       s2.charAt(2);
@@ -34,13 +33,6 @@ public class Ftest {
     }
     s.charAt(2);
     s3.charAt(2);
-    String s4 = myNotNull;
     s4.charAt(3);
-    s4 = myNull;
-    s4.charAt(3);
-    if (s4 == null) {
-      return;
-    }
-    s4.charAt(2);
   }
 }

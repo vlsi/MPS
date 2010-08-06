@@ -46,6 +46,10 @@ public class SNodeOperation_Behavior {
     }).first();
   }
 
+  public static boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
+    return true;
+  }
+
   public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     String variableExpectedName = NameUtil.toValidCamelIdentifier(SConceptPropertyOperations.getString(thisNode, "alias"));
     return variableExpectedName;

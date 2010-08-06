@@ -25,31 +25,24 @@
     <nodeInfo nodeId="6541205282376346917" fileName="Ftest.java" startLine="18" startPosition="27" endLine="19" endPosition="18" />
     <nodeInfo nodeId="6541205282376346950" fileName="Ftest.java" startLine="20" startPosition="20" endLine="21" endPosition="16" />
     <nodeInfo nodeId="375746805846338567" fileName="Ftest.java" startLine="22" startPosition="5" endLine="23" endPosition="14" />
-    <nodeInfo nodeId="6424669011230747145" fileName="Ftest.java" startLine="26" startPosition="19" endLine="27" endPosition="25" />
-    <nodeInfo nodeId="6424669011230747642" fileName="Ftest.java" startLine="27" startPosition="25" endLine="28" endPosition="19" />
+    <nodeInfo nodeId="6424669011230747145" fileName="Ftest.java" startLine="26" startPosition="38" endLine="27" endPosition="34" />
+    <nodeInfo nodeId="6424669011230747642" fileName="Ftest.java" startLine="27" startPosition="34" endLine="28" endPosition="19" />
     <nodeInfo nodeId="6550177584742141213" fileName="Ftest.java" startLine="28" startPosition="19" endLine="29" endPosition="16" />
     <nodeInfo nodeId="6424669011230747160" fileName="Ftest.java" startLine="30" startPosition="20" endLine="31" endPosition="20" />
     <nodeInfo nodeId="6424669011230747624" fileName="Ftest.java" startLine="31" startPosition="20" endLine="32" endPosition="19" />
     <nodeInfo nodeId="5317099423844018519" fileName="Ftest.java" startLine="32" startPosition="19" endLine="33" endPosition="16" />
     <nodeInfo nodeId="6424669011230747633" fileName="Ftest.java" startLine="34" startPosition="5" endLine="35" endPosition="16" />
     <nodeInfo nodeId="6424669011230747655" fileName="Ftest.java" startLine="35" startPosition="16" endLine="36" endPosition="17" />
-    <nodeInfo nodeId="5317099423844027701" fileName="Ftest.java" startLine="36" startPosition="17" endLine="37" endPosition="26" />
-    <nodeInfo nodeId="5317099423844027707" fileName="Ftest.java" startLine="37" startPosition="26" endLine="38" endPosition="17" />
-    <nodeInfo nodeId="5317099423844028172" fileName="Ftest.java" startLine="38" startPosition="17" endLine="39" endPosition="16" />
-    <nodeInfo nodeId="5317099423844028184" fileName="Ftest.java" startLine="39" startPosition="16" endLine="40" endPosition="17" />
-    <nodeInfo nodeId="5187999405556739480" fileName="Ftest.java" startLine="41" startPosition="21" endLine="42" endPosition="13" />
-    <nodeInfo nodeId="5187999405556739482" fileName="Ftest.java" startLine="43" startPosition="5" endLine="44" endPosition="17" />
+    <nodeInfo nodeId="7018078307811001565" fileName="Ftest.java" startLine="36" startPosition="17" endLine="37" endPosition="17" />
     <nodeInfo nodeId="5317099423844027682" fileName="Ftest.java" startLine="8" startPosition="20" endLine="10" endPosition="32" />
     <nodeInfo nodeId="5317099423844027686" fileName="Ftest.java" startLine="10" startPosition="32" endLine="12" endPosition="31" />
     <nodeInfo nodeId="4822352154126340373" fileName="Ftest.java" startLine="13" startPosition="0" endLine="15" endPosition="3" />
     <nodeInfo nodeId="6541205282376346948" fileName="Ftest.java" startLine="19" startPosition="18" endLine="22" endPosition="5" />
-    <nodeInfo nodeId="5187999405556739467" fileName="Ftest.java" startLine="40" startPosition="17" endLine="43" endPosition="5" />
     <nodeInfo nodeId="6424669011230747151" fileName="Ftest.java" startLine="29" startPosition="16" endLine="34" endPosition="5" />
     <nodeInfo nodeId="375746805846338550" fileName="Ftest.java" startLine="16" startPosition="0" endLine="25" endPosition="0" />
-    <nodeInfo nodeId="6424669011230747141" fileName="Ftest.java" startLine="25" startPosition="0" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="6424669011230747141" fileName="Ftest.java" startLine="25" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="4822352154126340376" fileName="Ftest.java" startLine="14" startPosition="18" endLine="14" endPosition="18" />
     <scopeInfo nodeId="6541205282376346949" fileName="Ftest.java" startLine="20" startPosition="20" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="5187999405556739468" fileName="Ftest.java" startLine="41" startPosition="21" endLine="42" endPosition="13" />
     <scopeInfo nodeId="4822352154126340373" fileName="Ftest.java" startLine="13" startPosition="0" endLine="15" endPosition="3" />
     <scopeInfo nodeId="6424669011230747152" fileName="Ftest.java" startLine="30" startPosition="20" endLine="33" endPosition="16">
       <varInfo nodeId="6424669011230747161" varName="s2" />
@@ -58,13 +51,14 @@
       <varInfo nodeId="6541205282376346918" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="375746805846338550" fileName="Ftest.java" startLine="16" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="6424669011230747144" fileName="Ftest.java" startLine="26" startPosition="19" endLine="44" endPosition="17">
+    <scopeInfo nodeId="6424669011230747144" fileName="Ftest.java" startLine="26" startPosition="38" endLine="37" endPosition="17">
       <varInfo nodeId="6424669011230747146" varName="s" />
       <varInfo nodeId="6424669011230747643" varName="s3" />
-      <varInfo nodeId="5317099423844027702" varName="s4" />
     </scopeInfo>
-    <scopeInfo nodeId="6424669011230747141" fileName="Ftest.java" startLine="25" startPosition="0" endLine="46" endPosition="0" />
-    <unitInfo nodeId="4822352154126340371" fileName="Ftest.java" startLine="8" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.analyzers.test.test.Ftest" />
+    <scopeInfo nodeId="6424669011230747141" fileName="Ftest.java" startLine="25" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="6465013485826578905" varName="s4" />
+    </scopeInfo>
+    <unitInfo nodeId="4822352154126340371" fileName="Ftest.java" startLine="8" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.analyzers.test.test.Ftest" />
   </root>
 </debugInfo>
 

@@ -11,6 +11,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.NullableAnalyzerRunner" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.NullableState" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.intentions.BaseIntentionProvider" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AnalysisResult" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AnalyzerRunner" />

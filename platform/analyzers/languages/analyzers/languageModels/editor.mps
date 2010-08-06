@@ -287,6 +287,7 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="4413230749907686734" />
     </node>
   </node>
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4217760266503579997">
     <link role="conceptDeclaration:32" targetNodeId="1.4217760266503579796:0" resolveInfo="EmitInstruction" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4217760266503579999">
@@ -296,6 +297,28 @@
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4072414341992381727">
         <link role="relationDeclaration:32" targetNodeId="1.4072414341992381726:0" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="323410281720600580">
+        <link role="relationDeclaration:32" targetNodeId="1.323410281720600578:0" />
+        <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="323410281720600581">
+          <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="323410281720600582">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="323410281720601365">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="323410281720601376">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="323410281720601379" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="323410281720601367">
+                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="323410281720601366" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="323410281720601371">
+                    <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="323410281720601372">
+                      <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="323410281720601375">
+                        <link role="conceptDeclaration:16" targetNodeId="3v.1136720037775:0" resolveInfo="Pattern" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
@@ -429,14 +452,14 @@
       </node>
     </node>
   </node>
-  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
+  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4943044633101738905">
     <property name="package:32" value="Rules" />
     <link role="conceptDeclaration:32" targetNodeId="1.4943044633101449694:0" resolveInfo="ConceptCondition" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4943044633101738907">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4943044633101738908">
         <property name="text:32" value="concept" />
-        <link role="styleClass:32" targetNodeId="3v.1186415544875" resolveInfo="KeyWord" />
+        <link role="styleClass:32" targetNodeId="4v.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4943044633101738909">
         <property name="text:32" value="=" />
@@ -452,7 +475,7 @@
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4943044633101738913">
         <property name="text:32" value="as" />
-        <link role="styleClass:32" targetNodeId="3v.1186415544875" resolveInfo="KeyWord" />
+        <link role="styleClass:32" targetNodeId="4v.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="4943044633101738914">
         <link role="relationDeclaration:32" targetNodeId="2v.1169194664001:0" resolveInfo="name" />

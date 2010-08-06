@@ -16,6 +16,7 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -34,12 +35,15 @@ public class check_null_NonTypesystemRule extends AbstractNonTypesystemRule_Runt
       if (instruction instanceof ReadInstruction) {
         ReadInstruction read = (ReadInstruction) instruction;
         SNode variable = (SNode) read.getSource();
-        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(variable), "jetbrains.mps.baseLanguage.structure.DotExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(variable), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true) == variable) {
-          if (NullableState.NULLABLE.equals(result.get(state).get((SNode) read.getVariable()))) {
-            {
-              BaseIntentionProvider intentionProvider = null;
-              IErrorTarget errorTarget = new NodeErrorTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(variable, "Instance can be null", "r:99bede3e-9630-4889-aa58-4a993e3d8995(jetbrains.mps.analyzers.testLang.typesystem)", "6424669011230761136", intentionProvider, errorTarget);
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(variable), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+          SNode dot = SNodeOperations.cast(SNodeOperations.getParent(variable), "jetbrains.mps.baseLanguage.structure.DotExpression");
+          if (SLinkOperations.getTarget(dot, "operand", true) == variable && !(IOperation_Behavior.call_operandCanBeNull_323410281720656291(SLinkOperations.getTarget(dot, "operation", true)))) {
+            if (NullableState.NULLABLE.equals(result.get(state).get((SNode) read.getVariable()))) {
+              {
+                BaseIntentionProvider intentionProvider = null;
+                IErrorTarget errorTarget = new NodeErrorTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(variable, "Instance can be null", "r:99bede3e-9630-4889-aa58-4a993e3d8995(jetbrains.mps.analyzers.testLang.typesystem)", "323410281720718309", intentionProvider, errorTarget);
+              }
             }
           }
         }

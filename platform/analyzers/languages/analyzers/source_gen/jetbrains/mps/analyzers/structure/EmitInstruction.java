@@ -4,6 +4,7 @@ package jetbrains.mps.analyzers.structure;
 
 import jetbrains.mps.lang.pattern.structure.ActionStatement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -12,6 +13,7 @@ public class EmitInstruction extends ActionStatement {
   public static final String concept = "jetbrains.mps.analyzers.structure.EmitInstruction";
   public static final String INSTRUCTION_REF = "instructionRef";
   public static final String POSITION = "position";
+  public static final String TARGET = "target";
 
   public EmitInstruction(SNode node) {
     super(node);
@@ -31,6 +33,14 @@ public class EmitInstruction extends ActionStatement {
 
   public void setPosition(InsertPosition node) {
     super.setChild(EmitInstruction.POSITION, node);
+  }
+
+  public Expression getTarget() {
+    return (Expression) this.getChild(Expression.class, EmitInstruction.TARGET);
+  }
+
+  public void setTarget(Expression node) {
+    super.setChild(EmitInstruction.TARGET, node);
   }
 
   public static EmitInstruction newInstance(SModel sm, boolean init) {

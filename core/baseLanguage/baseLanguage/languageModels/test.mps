@@ -1926,7 +1926,11 @@
                   <link role="classifier:3" targetNodeId="47.~HashSet" resolveInfo="HashSet" />
                 </node>
               </node>
-              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2685915532175039810" />
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6889973432798448743">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6889973432798448745">
+                  <link role="baseMethodDeclaration:3" targetNodeId="2685915532175039711" resolveInfo="TestClass1" />
+                </node>
+              </node>
             </node>
           </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2685915532175039812">
@@ -1935,7 +1939,11 @@
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2685915532175039814">
                 <link role="classifier:3" targetNodeId="2685915532175039709" resolveInfo="TestClass1" />
               </node>
-              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2685915532175039816" />
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6889973432798448740">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6889973432798448742">
+                  <link role="baseMethodDeclaration:3" targetNodeId="2685915532175039711" resolveInfo="TestClass1" />
+                </node>
+              </node>
             </node>
           </node>
           <node role="statement:3" type="jetbrains.mps.lang.test.structure.ExpressionContainer:4" id="5374109160289271538">
@@ -2068,7 +2076,11 @@
                   <link role="classifier:3" targetNodeId="47.~HashSet" resolveInfo="HashSet" />
                 </node>
               </node>
-              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="6846030807779017574" />
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6889973432798448746">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6889973432798448748">
+                  <link role="baseMethodDeclaration:3" targetNodeId="2685915532175039711" resolveInfo="TestClass1" />
+                </node>
+              </node>
             </node>
           </node>
           <node role="statement:3" type="jetbrains.mps.lang.test.structure.ExpressionContainer:4" id="6846030807779017579">

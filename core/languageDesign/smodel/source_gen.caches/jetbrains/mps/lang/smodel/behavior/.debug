@@ -286,31 +286,33 @@
     <nodeInfo nodeId="1238680693714" fileName="SNodeOperation_Behavior.java" startLine="35" startPosition="112" endLine="36" endPosition="18" />
     <nodeInfo nodeId="1213877508967" fileName="SNodeOperation_Behavior.java" startLine="37" startPosition="5" endLine="38" endPosition="148" />
     <nodeInfo nodeId="1227876801658" fileName="SNodeOperation_Behavior.java" startLine="43" startPosition="39" endLine="44" endPosition="87" />
-    <nodeInfo nodeId="1213877508996" fileName="SNodeOperation_Behavior.java" startLine="49" startPosition="86" endLine="50" endPosition="123" />
-    <nodeInfo nodeId="1213877509003" fileName="SNodeOperation_Behavior.java" startLine="50" startPosition="123" endLine="51" endPosition="32" />
-    <nodeInfo nodeId="1213877508850" fileName="SNodeOperation_Behavior.java" startLine="54" startPosition="70" endLine="55" endPosition="71" />
-    <nodeInfo nodeId="1223307436306" fileName="SNodeOperation_Behavior.java" startLine="55" startPosition="71" endLine="56" endPosition="58" />
-    <nodeInfo nodeId="1223307537853" fileName="SNodeOperation_Behavior.java" startLine="57" startPosition="27" endLine="58" endPosition="20" />
-    <nodeInfo nodeId="1213877508856" fileName="SNodeOperation_Behavior.java" startLine="59" startPosition="5" endLine="60" endPosition="69" />
-    <nodeInfo nodeId="1213877508875" fileName="SNodeOperation_Behavior.java" startLine="60" startPosition="69" endLine="61" endPosition="188" />
-    <nodeInfo nodeId="1213877508883" fileName="SNodeOperation_Behavior.java" startLine="62" startPosition="27" endLine="63" endPosition="67" />
-    <nodeInfo nodeId="1213877508890" fileName="SNodeOperation_Behavior.java" startLine="64" startPosition="5" endLine="65" endPosition="102" />
+    <nodeInfo nodeId="323410281720674028" fileName="SNodeOperation_Behavior.java" startLine="49" startPosition="85" endLine="50" endPosition="16" />
+    <nodeInfo nodeId="1213877508996" fileName="SNodeOperation_Behavior.java" startLine="53" startPosition="86" endLine="54" endPosition="123" />
+    <nodeInfo nodeId="1213877509003" fileName="SNodeOperation_Behavior.java" startLine="54" startPosition="123" endLine="55" endPosition="32" />
+    <nodeInfo nodeId="1213877508850" fileName="SNodeOperation_Behavior.java" startLine="58" startPosition="70" endLine="59" endPosition="71" />
+    <nodeInfo nodeId="1223307436306" fileName="SNodeOperation_Behavior.java" startLine="59" startPosition="71" endLine="60" endPosition="58" />
+    <nodeInfo nodeId="1223307537853" fileName="SNodeOperation_Behavior.java" startLine="61" startPosition="27" endLine="62" endPosition="20" />
+    <nodeInfo nodeId="1213877508856" fileName="SNodeOperation_Behavior.java" startLine="63" startPosition="5" endLine="64" endPosition="69" />
+    <nodeInfo nodeId="1213877508875" fileName="SNodeOperation_Behavior.java" startLine="64" startPosition="69" endLine="65" endPosition="188" />
+    <nodeInfo nodeId="1213877508883" fileName="SNodeOperation_Behavior.java" startLine="66" startPosition="27" endLine="67" endPosition="67" />
+    <nodeInfo nodeId="1213877508890" fileName="SNodeOperation_Behavior.java" startLine="68" startPosition="5" endLine="69" endPosition="102" />
     <nodeInfo nodeId="1238680726848" fileName="SNodeOperation_Behavior.java" startLine="26" startPosition="98" endLine="29" endPosition="5" />
     <nodeInfo nodeId="1238680679491" fileName="SNodeOperation_Behavior.java" startLine="34" startPosition="98" endLine="37" endPosition="5" />
-    <nodeInfo nodeId="1223307503885" fileName="SNodeOperation_Behavior.java" startLine="56" startPosition="58" endLine="59" endPosition="5" />
-    <nodeInfo nodeId="1213877508881" fileName="SNodeOperation_Behavior.java" startLine="61" startPosition="188" endLine="64" endPosition="5" />
+    <nodeInfo nodeId="1223307503885" fileName="SNodeOperation_Behavior.java" startLine="60" startPosition="58" endLine="63" endPosition="5" />
+    <nodeInfo nodeId="1213877508881" fileName="SNodeOperation_Behavior.java" startLine="65" startPosition="188" endLine="68" endPosition="5" />
     <nodeInfo nodeId="1227876801654" fileName="SNodeOperation_Behavior.java" startLine="42" startPosition="123" endLine="46" endPosition="0" />
     <nodeInfo nodeId="1213877508975" fileName="SNodeOperation_Behavior.java" startLine="41" startPosition="101" endLine="46" endPosition="15" />
     <scopeInfo nodeId="1213877509007" fileName="SNodeOperation_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
     <scopeInfo nodeId="1238680726849" fileName="SNodeOperation_Behavior.java" startLine="27" startPosition="112" endLine="28" endPosition="18" />
     <scopeInfo nodeId="1238680679492" fileName="SNodeOperation_Behavior.java" startLine="35" startPosition="112" endLine="36" endPosition="18" />
     <scopeInfo nodeId="1227876801657" fileName="SNodeOperation_Behavior.java" startLine="43" startPosition="39" endLine="44" endPosition="87" />
-    <scopeInfo nodeId="1223307503886" fileName="SNodeOperation_Behavior.java" startLine="57" startPosition="27" endLine="58" endPosition="20" />
-    <scopeInfo nodeId="1213877508882" fileName="SNodeOperation_Behavior.java" startLine="62" startPosition="27" endLine="63" endPosition="67" />
+    <scopeInfo nodeId="323410281720674024" fileName="SNodeOperation_Behavior.java" startLine="49" startPosition="85" endLine="50" endPosition="16" />
+    <scopeInfo nodeId="1223307503886" fileName="SNodeOperation_Behavior.java" startLine="61" startPosition="27" endLine="62" endPosition="20" />
+    <scopeInfo nodeId="1213877508882" fileName="SNodeOperation_Behavior.java" startLine="66" startPosition="27" endLine="67" endPosition="67" />
     <scopeInfo nodeId="1213877508896" fileName="SNodeOperation_Behavior.java" startLine="20" startPosition="76" endLine="22" endPosition="138">
       <varInfo nodeId="1213877508898" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877508995" fileName="SNodeOperation_Behavior.java" startLine="49" startPosition="86" endLine="51" endPosition="32">
+    <scopeInfo nodeId="1213877508995" fileName="SNodeOperation_Behavior.java" startLine="53" startPosition="86" endLine="55" endPosition="32">
       <varInfo nodeId="1213877508997" varName="variableExpectedName" />
     </scopeInfo>
     <scopeInfo nodeId="1227876801654" fileName="SNodeOperation_Behavior.java" startLine="42" startPosition="123" endLine="46" endPosition="0" />
@@ -321,7 +323,7 @@
       <varInfo nodeId="1213877508950" varName="leftExpression" />
     </scopeInfo>
     <scopeInfo nodeId="1213877508974" fileName="SNodeOperation_Behavior.java" startLine="41" startPosition="101" endLine="46" endPosition="15" />
-    <scopeInfo nodeId="1213877508849" fileName="SNodeOperation_Behavior.java" startLine="54" startPosition="70" endLine="65" endPosition="102">
+    <scopeInfo nodeId="1213877508849" fileName="SNodeOperation_Behavior.java" startLine="58" startPosition="70" endLine="69" endPosition="102">
       <varInfo nodeId="1223307436307" varName="result" />
       <varInfo nodeId="1213877508876" varName="nodeType" />
       <varInfo nodeId="1213877508851" varName="operand" />

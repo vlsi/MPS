@@ -11,8 +11,8 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class RuleFieldReference extends DataFlowConstructor {
-  public RuleFieldReference() {
+public class RuleVariableDeclaration extends DataFlowConstructor {
+  public RuleVariableDeclaration() {
   }
 
   public boolean isApplicable(SNode node) {
@@ -20,25 +20,25 @@ public class RuleFieldReference extends DataFlowConstructor {
   }
 
   public String getApplicableConceptFqName() {
-    return "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference";
+    return "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
   }
 
   public void performActions(Program o, SNode node) {
-    if (SLinkOperations.getTargets(SLinkOperations.getTarget(node, "variableDeclaration", false), "annotation", true) != null) {
-      for (SNode annotation : SLinkOperations.getTargets(SLinkOperations.getTarget(node, "variableDeclaration", false), "annotation", true)) {
+    if (SLinkOperations.getTargets(node, "annotation", true) != null) {
+      for (SNode annotation : SLinkOperations.getTargets(node, "annotation", true)) {
         String name = SPropertyOperations.getString(SLinkOperations.getTarget(annotation, "annotation", false), "name");
         if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~Nullable")) {
           {
             int position = 0;
             position = ((Program) (o)).getEnd(node);
-            ((Program) (o)).insert(new nullableInstruction(SLinkOperations.getTarget(node, "variableDeclaration", false)), position, true);
+            ((Program) (o)).insert(new nullableInstruction(node), position, true);
           }
         }
         if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~NotNull")) {
           {
             int position = 0;
             position = ((Program) (o)).getEnd(node);
-            ((Program) (o)).insert(new notNullInstruction(SLinkOperations.getTarget(node, "variableDeclaration", false)), position, true);
+            ((Program) (o)).insert(new notNullInstruction(node), position, true);
           }
         }
       }

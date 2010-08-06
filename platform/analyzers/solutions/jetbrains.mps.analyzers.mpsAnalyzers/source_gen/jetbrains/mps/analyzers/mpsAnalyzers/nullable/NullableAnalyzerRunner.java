@@ -72,6 +72,8 @@ public class NullableAnalyzerRunner extends AnalyzerRunner<Map<SNode, NullableSt
     myConceptRules.add(new RuleMethodCall());
     myConceptRules.add(new RuleNullLiteral());
     myConceptRules.add(new RuleFieldReference());
+    myConceptRules.add(new RuleAfterDotExpression());
+    myConceptRules.add(new RuleVariableDeclaration());
     myProgram = new MPSProgramBuilder(DataFlowManager.getInstance()).buildProgram(myNode);
     prepareProgram();
     myAnalyzer = new NullableAnalyzerRunner.NullableAnalyzer();

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="4217760266503579997">
+    <nodeInfo nodeId="323410281720601365" fileName="EmitInstruction_Editor.java" startLine="84" startPosition="111" endLine="85" endPosition="115" />
+    <scopeInfo nodeId="323410281720600582" fileName="EmitInstruction_Editor.java" startLine="84" startPosition="111" endLine="85" endPosition="115" />
+  </root>
   <root nodeId="430844094082188805">
     <nodeInfo nodeId="4943044633101742991" fileName="Rule_Editor.java" startLine="118" startPosition="111" endLine="119" endPosition="146" />
     <scopeInfo nodeId="4943044633101742990" fileName="Rule_Editor.java" startLine="118" startPosition="111" endLine="119" endPosition="146" />

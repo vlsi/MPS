@@ -35,7 +35,7 @@ public class RuleMethodCall extends DataFlowConstructor {
             ((Program) (o)).insert(new nullableInstruction(node), position, true);
           }
         }
-        if ("NotNull".equals(name)) {
+        if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~NotNull")) {
           {
             int position = 0;
             position = ((Program) (o)).getEnd(node);

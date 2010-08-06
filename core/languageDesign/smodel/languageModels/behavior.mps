@@ -2275,6 +2275,19 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724909" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="323410281720674021">
+      <property name="name" value="operandCanBeNull" />
+      <link role="overriddenMethod" targetNodeId="12.323410281720656291" resolveInfo="operandCanBeNull" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="323410281720674024">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="323410281720674028">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="323410281720674029">
+            <property name="value:3" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="323410281720674026" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="323410281720674027" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877508994">
       <property name="name" value="getVariableExpectedName" />
       <property name="isPrivate" value="false" />

@@ -313,6 +313,11 @@
       <property name="role:0" value="position" />
       <link role="target:0" targetNodeId="4072414341992373211:0" resolveInfo="InsertPosition" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="323410281720600578">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="target" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4217760266503638748">
     <property name="package:0" value="Instructions" />
