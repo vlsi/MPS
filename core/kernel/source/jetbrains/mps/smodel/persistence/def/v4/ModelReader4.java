@@ -19,6 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
@@ -157,7 +158,7 @@ public class ModelReader4 implements IModelReader {
 
       SModelReference importedModelReference = SModelReference.fromString(importedModelUIDString);
       importedModelReference = upgradeModelUID(importedModelReference);
-      model.addImportElement(importedModelReference, importIndex, usedModelVersion);
+      model.addImportElement(new ImportElement(importedModelReference, importIndex, usedModelVersion));
     }
 
     ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
@@ -174,7 +175,7 @@ public class ModelReader4 implements IModelReader {
       }
     }
 
-    VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
+    VisibleModelElements visibleModelElements = new DOMVisibleModelElements(rootElement);
     for (IReferencePersister referencePersister : referenceDescriptors) {
       referencePersister.createReferenceInModel(model, visibleModelElements);
     }
@@ -256,7 +257,8 @@ public class ModelReader4 implements IModelReader {
     List properties = nodeElement.getChildren(ModelPersistence.PROPERTY);
     for (Object property : properties) {
       Element propertyElement = (Element) property;
-      String propertyName = VersionUtil.getPropertyName(propertyElement, node, versionsInfo);
+      String raw = propertyElement.getAttributeValue(ModelPersistence.NAME);
+      String propertyName = VersionUtil.getPropertyName(raw, node, versionsInfo);
       String propertyValue = propertyElement.getAttributeValue(ModelPersistence.VALUE);
       if (propertyValue != null) {
         node.setProperty(propertyName, propertyValue);

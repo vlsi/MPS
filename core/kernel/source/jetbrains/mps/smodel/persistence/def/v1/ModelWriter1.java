@@ -112,7 +112,7 @@ public class ModelWriter1 implements IModelWriter {
       rootElement.addContent(importElem);
     }
 
-    VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
+    VisibleModelElements visibleModelElements = new DOMVisibleModelElements(rootElement);
 
     Iterator<SNode> iterator = sourceModel.roots();
     while (iterator.hasNext()) {

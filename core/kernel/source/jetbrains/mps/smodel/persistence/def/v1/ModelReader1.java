@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.persistence.def.v1;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
@@ -159,7 +160,7 @@ public class ModelReader1 implements IModelReader {
 
       SModelReference importedModelReference = SModelReference.fromString(importedModelUIDString);
       importedModelReference = upgradeModelUID(importedModelReference);
-      model.addImportElement(importedModelReference, importIndex, usedModelVersion);
+      model.addImportElement(new ImportElement(importedModelReference, importIndex, usedModelVersion));
     }
 
     ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
@@ -174,7 +175,7 @@ public class ModelReader1 implements IModelReader {
       }
     }
 
-    VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
+    VisibleModelElements visibleModelElements = new DOMVisibleModelElements(rootElement);
     for (IReferencePersister referencePersister : referenceDescriptors) {
       referencePersister.createReferenceInModel(model, visibleModelElements);
     }

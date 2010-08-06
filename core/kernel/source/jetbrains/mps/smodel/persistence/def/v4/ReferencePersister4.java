@@ -41,10 +41,12 @@ public class ReferencePersister4 implements IReferencePersister {
   }
 
   public void fillFields(Element linkElement, SNode sourceNode, boolean useUIDs, SModelVersionsInfo versionsInfo) {
+    fillFields(linkElement.getAttributeValue(ModelPersistence.ROLE), linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO), linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID), sourceNode, useUIDs, versionsInfo);
+  }
 
-    String role = VersionUtil.getLinkRole(linkElement.getAttributeValue(ModelPersistence.ROLE), sourceNode, versionsInfo);
-    String resolveInfo = linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO);
-    String attTargetNodeId = VersionUtil.getTargetNodeId(linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID), role, sourceNode, versionsInfo);
+  public void fillFields(String role_, String resolveInfo, String targetNodeId_, SNode sourceNode, boolean useUIDs, SModelVersionsInfo versionsInfo) {
+    String role = VersionUtil.getLinkRole(role_, sourceNode, versionsInfo);
+    String attTargetNodeId = VersionUtil.getTargetNodeId(targetNodeId_, role, sourceNode, versionsInfo);
 
     this.myUseUIDs = useUIDs;
     this.mySourceNode = sourceNode;

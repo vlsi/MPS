@@ -657,12 +657,11 @@ public class SModel implements Iterable<SNode> {
     fireImportAddedEvent(modelReference);
   }
 
-  public void addImportElement(@NotNull SModelReference modelReference, int referenceId, int usedVersion) {
+  public void addImportElement(ImportElement importElement) {
     ModelChange.assertLegalChange(this);
 
-    ImportElement importElement = new ImportElement(modelReference, referenceId, usedVersion);
     myImports.add(importElement);
-    fireImportAddedEvent(modelReference);
+    fireImportAddedEvent(importElement.getModelReference());
   }
 
   public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {

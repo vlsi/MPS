@@ -84,8 +84,7 @@ public class VersionUtil {
     return getBeforeSeparator(rawRole);
   }
 
-  public static String getPropertyName(Element propertyElement, SNode node, SModelVersionsInfo versionsInfo) {
-    String raw = propertyElement.getAttributeValue(ModelPersistence.NAME);
+  public static String getPropertyName(String raw, SNode node, SModelVersionsInfo versionsInfo) {
     String propertyName = getBeforeSeparator(raw);      
     int version = parseVersionedString(raw);
     if (version != NO_VERSION) {

@@ -20,7 +20,6 @@ import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
-import jetbrains.mps.smodel.persistence.def.v1.ReferencePersister1;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -101,7 +100,7 @@ public class ModelWriter4 implements IModelWriter {
       rootElement.addContent(importElem);
     }
 
-    VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
+    VisibleModelElements visibleModelElements = new DOMVisibleModelElements(rootElement);
 
     for (SNode root : sourceModel.getRoots()) {
       saveNode(rootElement, root, visibleModelElements);
