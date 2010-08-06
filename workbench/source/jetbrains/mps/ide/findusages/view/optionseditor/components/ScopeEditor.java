@@ -21,6 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.InternalFlag;
 
 import javax.swing.*;
@@ -117,8 +118,9 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     List<SModelDescriptor> modelList = SModelRepository.getInstance().getModelDescriptors();
     myModelNameList = new ArrayList<String>();
 
-    for (SModelDescriptor sModelDescriptor : modelList) {
-      myModelNameList.add(sModelDescriptor.getLongName());
+    for (SModelDescriptor md : modelList) {
+      if (SModelStereotype.isStubModelStereotype(md.getStereotype())) continue;
+      myModelNameList.add(md.getLongName());
     }
 
     myModelNameList.add(0, ScopeOptions.DEFAULT_VALUE);
