@@ -30,6 +30,7 @@ import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
+import jetbrains.mps.ide.tabbedEditor.TabChangeListener;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -204,6 +205,11 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
           JPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_TAB, group).getComponent();
           popupMenu.show(myInnerTabbedPane, e.getX(), e.getY());
         }
+      }
+    });
+    myInnerTabbedPane.addChangeListener(new ChangeListener() {
+      public void stateChanged(ChangeEvent e) {
+        callTabChangeListener();
       }
     });
     try {

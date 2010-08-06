@@ -19,6 +19,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
+import jetbrains.mps.ide.tabbedEditor.TabChangeListener;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;

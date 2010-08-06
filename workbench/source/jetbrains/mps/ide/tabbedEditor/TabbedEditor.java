@@ -126,7 +126,7 @@ public class TabbedEditor implements IEditor {
     component.requestFocus();
   }
 
-  public void tabStructureChanged() {
+  public void onTabSelectionChange() {
     final Project project = myOperationContext.getProject();
     FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
     VirtualFile virtualFile = manager.getCurrentFile();
@@ -134,11 +134,9 @@ public class TabbedEditor implements IEditor {
 
     FileStatusManager.getInstance(project).fileStatusChanged(virtualFile);
     manager.updateFilePresentation(virtualFile);
-
-    reorganizeTabs();
   }
 
-  private void reorganizeTabs(){
+  public void tabStructureChanged() {
     //this "invoke later" is needed for the opening editor to be completely opened
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
@@ -180,6 +178,8 @@ public class TabbedEditor implements IEditor {
               }
             });
           }
+
+          onTabSelectionChange();
         }
       }
     });

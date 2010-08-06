@@ -104,6 +104,24 @@ public abstract class AbstractLazyTab implements ILazyTab {
 
   protected abstract void onImportantRootRemoved(SNodePointer node);
 
+  ///-------------tab change events----------------
+
+  private List<TabChangeListener> myTabChangeListeners = new ArrayList<TabChangeListener>();
+
+  public void addTabChangeListener(TabChangeListener l) {
+    myTabChangeListeners.add(l);
+  }
+
+  public void removeTabChangeListener(TabChangeListener l) {
+    myTabChangeListeners.remove(l);
+  }
+
+  public void callTabChangeListener() {
+    for (TabChangeListener listener:myTabChangeListeners){
+      listener.changed();
+    }
+  }
+
   ///-------------tab remove events----------------
 
   private SModelRepositoryListener myModelRemovedListener = new ModelRemovedAdapter();

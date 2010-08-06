@@ -51,5 +51,9 @@ public interface ILazyTab {
 
   VirtualFile getBaseNodeVirtualFile();
 
+  void addTabChangeListener(TabChangeListener l);
+
+  void removeTabChangeListener(TabChangeListener l);
+
   void dispose();
 }

@@ -57,12 +57,18 @@ public class LazyTabbedPane extends JPanel implements Disposable {
       public void stateChanged(ChangeEvent e) {
         int selectionIndex = myTabbedPane.getSelectedIndex();
         initTab(myLazyTabs.get(selectionIndex));
+        myTabbedEditor.onTabSelectionChange();
       }
     });
   }
 
   public void add(ILazyTab lazyTab) {
     myLazyTabs.add(lazyTab);
+    lazyTab.addTabChangeListener(new TabChangeListener() {
+      public void changed() {
+        myTabbedEditor.onTabSelectionChange();
+      }
+    });
     myTabbedPane.addTab(lazyTab.getTitle(), new JPanel(new BorderLayout()));
     updateTabColor(lazyTab);
   }
