@@ -10,6 +10,16 @@ import jetbrains.mps.lang.dataFlow.framework.AnalyzerRunner;
 import java.util.Map;
 import jetbrains.mps.analyzers.mpsAnalyzers.nullable.NullableState;
 import jetbrains.mps.analyzers.mpsAnalyzers.nullable.NullableAnalyzerRunner;
+import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
+import jetbrains.mps.lang.dataFlow.framework.ProgramState;
+import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
+import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_null_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -18,7 +28,24 @@ public class check_null_NonTypesystemRule extends AbstractNonTypesystemRule_Runt
 
   public void applyRule(final SNode iMethodLike, final TypeCheckingContext typeCheckingContext) {
     AnalyzerRunner<Map<SNode, NullableState>> nullableRunner = new NullableAnalyzerRunner(iMethodLike);
-    System.out.println(nullableRunner.analyze());
+    AnalysisResult<Map<SNode, NullableState>> result = nullableRunner.analyze();
+    for (ProgramState state : result.getStates()) {
+      Instruction instruction = state.getInstruction();
+      if (instruction instanceof ReadInstruction) {
+        ReadInstruction read = (ReadInstruction) instruction;
+        SNode variable = (SNode) read.getSource();
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(variable), "jetbrains.mps.baseLanguage.structure.DotExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(variable), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true) == variable) {
+          if (NullableState.NULLABLE.equals(result.get(state).get((SNode) read.getVariable()))) {
+            {
+              BaseIntentionProvider intentionProvider = null;
+              IErrorTarget errorTarget = new NodeErrorTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(variable, "Instance can be null", "r:99bede3e-9630-4889-aa58-4a993e3d8995(jetbrains.mps.analyzers.testLang.typesystem)", "6424669011230761136", intentionProvider, errorTarget);
+            }
+          }
+        }
+      }
+    }
+    System.out.println(result);
   }
 
   public String getApplicableConceptFQName() {

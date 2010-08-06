@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="4822352154126332458">
-    <nodeInfo nodeId="4822352154126340351" fileName="check_null_NonTypesystemRule.java" startLine="19" startPosition="97" endLine="20" endPosition="103" />
-    <nodeInfo nodeId="4113754758724658657" fileName="check_null_NonTypesystemRule.java" startLine="20" startPosition="103" endLine="21" endPosition="49" />
-    <scopeInfo nodeId="4822352154126332459" fileName="check_null_NonTypesystemRule.java" startLine="19" startPosition="97" endLine="21" endPosition="49">
+    <nodeInfo nodeId="4822352154126340351" fileName="check_null_NonTypesystemRule.java" startLine="29" startPosition="97" endLine="30" endPosition="103" />
+    <nodeInfo nodeId="6424669011230751801" fileName="check_null_NonTypesystemRule.java" startLine="30" startPosition="103" endLine="31" endPosition="80" />
+    <nodeInfo nodeId="6424669011230755439" fileName="check_null_NonTypesystemRule.java" startLine="32" startPosition="51" endLine="33" endPosition="55" />
+    <nodeInfo nodeId="6424669011230755484" fileName="check_null_NonTypesystemRule.java" startLine="34" startPosition="51" endLine="35" endPosition="61" />
+    <nodeInfo nodeId="6424669011230761164" fileName="check_null_NonTypesystemRule.java" startLine="35" startPosition="61" endLine="36" endPosition="50" />
+    <nodeInfo nodeId="6424669011230761136" fileName="check_null_NonTypesystemRule.java" startLine="39" startPosition="13" endLine="40" endPosition="61" />
+    <nodeInfo nodeId="6424669011230761136" fileName="check_null_NonTypesystemRule.java" startLine="40" startPosition="61" endLine="41" endPosition="63" />
+    <nodeInfo nodeId="6424669011230761136" fileName="check_null_NonTypesystemRule.java" startLine="41" startPosition="63" endLine="42" endPosition="262" />
+    <nodeInfo nodeId="6424669011230751810" fileName="check_null_NonTypesystemRule.java" startLine="47" startPosition="5" endLine="48" endPosition="31" />
+    <nodeInfo nodeId="6424669011230761136" fileName="check_null_NonTypesystemRule.java" startLine="38" startPosition="97" endLine="43" endPosition="13" />
+    <nodeInfo nodeId="6424669011230761134" fileName="check_null_NonTypesystemRule.java" startLine="37" startPosition="305" endLine="44" endPosition="11" />
+    <nodeInfo nodeId="6424669011230761097" fileName="check_null_NonTypesystemRule.java" startLine="36" startPosition="50" endLine="45" endPosition="9" />
+    <nodeInfo nodeId="6424669011230755446" fileName="check_null_NonTypesystemRule.java" startLine="33" startPosition="55" endLine="46" endPosition="7" />
+    <nodeInfo nodeId="6424669011230755420" fileName="check_null_NonTypesystemRule.java" startLine="31" startPosition="80" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="6424669011230761136" fileName="check_null_NonTypesystemRule.java" startLine="39" startPosition="13" endLine="42" endPosition="262" />
+    <scopeInfo nodeId="6424669011230761135" fileName="check_null_NonTypesystemRule.java" startLine="38" startPosition="97" endLine="43" endPosition="13" />
+    <scopeInfo nodeId="6424669011230761098" fileName="check_null_NonTypesystemRule.java" startLine="37" startPosition="305" endLine="44" endPosition="11" />
+    <scopeInfo nodeId="6424669011230755447" fileName="check_null_NonTypesystemRule.java" startLine="34" startPosition="51" endLine="45" endPosition="9">
+      <varInfo nodeId="6424669011230755485" varName="read" />
+      <varInfo nodeId="6424669011230761165" varName="variable" />
+    </scopeInfo>
+    <scopeInfo nodeId="6424669011230755422" fileName="check_null_NonTypesystemRule.java" startLine="32" startPosition="51" endLine="46" endPosition="7">
+      <varInfo nodeId="6424669011230755440" varName="instruction" />
+    </scopeInfo>
+    <scopeInfo nodeId="6424669011230755420" fileName="check_null_NonTypesystemRule.java" startLine="31" startPosition="80" endLine="47" endPosition="5">
+      <varInfo nodeId="6424669011230755421" varName="state" />
+    </scopeInfo>
+    <scopeInfo nodeId="4822352154126332459" fileName="check_null_NonTypesystemRule.java" startLine="29" startPosition="97" endLine="48" endPosition="31">
+      <varInfo nodeId="6424669011230751802" varName="result" />
       <varInfo nodeId="4822352154126340352" varName="nullableRunner" />
     </scopeInfo>
   </root>
