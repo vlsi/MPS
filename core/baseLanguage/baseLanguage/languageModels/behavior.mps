@@ -11686,6 +11686,20 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724908" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="323410281720656291">
+      <property name="isAbstract" value="false" />
+      <property name="isVirtual" value="true" />
+      <property name="name" value="operandCanBeNull" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="323410281720656292" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="323410281720673996" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="323410281720656294">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="323410281720673997">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="323410281720673999">
+            <property name="value:3" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877410087">
       <property name="isVirtual" value="true" />
       <property name="name" value="getVariableExpectedName" />
