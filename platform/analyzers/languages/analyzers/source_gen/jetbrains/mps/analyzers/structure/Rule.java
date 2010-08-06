@@ -5,6 +5,7 @@ package jetbrains.mps.analyzers.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +16,7 @@ public class Rule extends BaseConcept implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String ACTIONS = "actions";
   public static final String CONDITION = "condition";
 
   public Rule(SNode node) {
@@ -51,6 +53,14 @@ public class Rule extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(Rule.VIRTUAL_PACKAGE, value);
+  }
+
+  public StatementList getActions() {
+    return (StatementList) this.getChild(StatementList.class, Rule.ACTIONS);
+  }
+
+  public void setActions(StatementList node) {
+    super.setChild(Rule.ACTIONS, node);
   }
 
   public ApplicableCondition getCondition() {

@@ -41,9 +41,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="7" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
+  <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6618572076229093257">
     <property name="name:0" value="Analyzer" />
@@ -245,6 +246,12 @@
     <property name="name:0" value="Rule" />
     <property name="rootable:0" value="true" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4943044633101742986">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="actions" />
+      <property name="sourceCardinality:0" value="0..1" />
+      <link role="target:0" targetNodeId="2.1068580123136:3" resolveInfo="StatementList" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3325264799421290838">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="condition" />
@@ -418,6 +425,34 @@
       <property name="role:0" value="instruction" />
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="6618572076229093258:0" resolveInfo="Instruction" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4943044633101449694">
+    <property name="package:0" value="Rules" />
+    <property name="name:0" value="ConceptCondition" />
+    <link role="extends:0" targetNodeId="3325264799421290200:0" resolveInfo="ApplicableCondition" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4943044633101738902">
+      <property name="value:0" value="concept =" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4943044633101738901">
+      <property name="sourceCardinality:0" value="1" />
+      <property name="role:0" value="concept" />
+      <link role="target:0" targetNodeId="7.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="4943044633101739080">
+      <link role="intfc:0" targetNodeId="2v.1169194658468:0" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4943044633102057744">
+    <property name="package:0" value="Rules" />
+    <property name="name:0" value="ApplicableNodeReference" />
+    <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4943044633102057745">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="applicableNode" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="4943044633101449694:0" resolveInfo="ConceptCondition" />
     </node>
   </node>
 </model>

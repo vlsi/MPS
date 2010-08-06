@@ -419,5 +419,32 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8716397433969715148" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4943044633101739072">
+    <property name="package" value="Rules" />
+    <link role="concept" targetNodeId="1.4943044633101449694:0" resolveInfo="ConceptCondition" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4943044633101739073">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4943044633101739074" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4943044633101739075">
+      <property name="name" value="getApplicableConcept" />
+      <property name="isVirtual" value="true" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="4413230749907681652" resolveInfo="getApplicableConcept" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4943044633101739076" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4943044633101739077">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4943044633101742730">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4943044633101742732">
+            <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="4943044633101742731" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4943044633101742736">
+              <link role="link:16" targetNodeId="1.4943044633101738901:0" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4943044633101739078">
+        <link role="concept:16" targetNodeId="2.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
+      </node>
+    </node>
+  </node>
 </model>
 

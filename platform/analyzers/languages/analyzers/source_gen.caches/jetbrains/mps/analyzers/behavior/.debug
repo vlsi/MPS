@@ -41,6 +41,11 @@
   <root nodeId="4413230749907681648">
     <scopeInfo nodeId="4413230749907681650" fileName="ApplicableCondition_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
   </root>
+  <root nodeId="4943044633101739072">
+    <nodeInfo nodeId="4943044633101742730" fileName="ConceptCondition_Behavior.java" startLine="16" startPosition="88" endLine="17" endPosition="65" />
+    <scopeInfo nodeId="4943044633101739074" fileName="ConceptCondition_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="4943044633101739077" fileName="ConceptCondition_Behavior.java" startLine="16" startPosition="88" endLine="17" endPosition="65" />
+  </root>
   <root nodeId="8656002014371076002">
     <scopeInfo nodeId="8656002014371076004" fileName="Instruction_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
