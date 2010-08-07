@@ -465,12 +465,18 @@ public class JUnitConfigEditor extends JPanel {
 
         config.getStateObject().fullMethodNames = new ClonableList<String>();
         for (SNode testMethod : myThis.getMethods()) {
-          config.getStateObject().fullMethodNames.add(INamedConcept_Behavior.call_getFqName_1213877404258(ITestMethod_Behavior.call_getTestCase_1216134500045(testMethod)) + TestRunUtil.SEPARATOR + ITestMethod_Behavior.call_getTestName_1216136419751(testMethod));
+          String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(ITestMethod_Behavior.call_getTestCase_1216134500045(testMethod));
+          if (fqName != null) {
+            config.getStateObject().fullMethodNames.add(fqName + TestRunUtil.SEPARATOR + ITestMethod_Behavior.call_getTestName_1216136419751(testMethod));
+          }
         }
 
         config.getStateObject().nodes = new ClonableList<String>();
         for (SNode testCase : myThis.getNodes()) {
-          config.getStateObject().nodes.add(INamedConcept_Behavior.call_getFqName_1213877404258(testCase));
+          String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(testCase);
+          if (fqName != null) {
+            config.getStateObject().nodes.add(fqName);
+          }
         }
 
         config.getStateObject().model = (myThis.getModel() != null ?

@@ -6,6 +6,7 @@ import java.util.AbstractList;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.annotations.NotNull;
 
 public class ClonableList<T> extends AbstractList<T> implements Cloneable {
   private List<T> myData;
@@ -18,7 +19,7 @@ public class ClonableList<T> extends AbstractList<T> implements Cloneable {
     this.myData = inner;
   }
 
-  public ClonableList(T value) {
+  public ClonableList(@NotNull T value) {
     this(ListSequence.fromListAndArray(new ArrayList<T>(), value));
   }
 
@@ -34,11 +35,11 @@ public class ClonableList<T> extends AbstractList<T> implements Cloneable {
     return ListSequence.fromList(this.myData).removeElementAt(index);
   }
 
-  public void add(int index, T object) {
+  public void add(int index, @NotNull T object) {
     ListSequence.fromList(this.myData).insertElement(index, object);
   }
 
-  public T set(int index, T object) {
+  public T set(int index, @NotNull T object) {
     return ListSequence.fromList(this.myData).setElement(index, object);
   }
 
