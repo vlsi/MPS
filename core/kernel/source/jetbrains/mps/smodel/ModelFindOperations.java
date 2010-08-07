@@ -21,7 +21,7 @@ public class ModelFindOperations {
   public ModelFindOperations(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
     //todo cleanup this line
-    myModelRootManager = ((BaseSModelDescriptor)myModelDescriptor).myModelRootManager;
+    myModelRootManager = ((BaseSModelDescriptor) myModelDescriptor).myModelRootManager;
     myFindUsagesSupported = myModelRootManager.isFindUsagesSupported();
     myNeedSearchForStrings = !myModelDescriptor.isInitialized() || !SModelRepository.getInstance().isChanged(myModelDescriptor.getSModel());
   }

@@ -144,7 +144,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   public boolean containsSomeString(@NotNull SModelDescriptor modelDescriptor, @NotNull Set<String> strings) {
-    //todo: seems that now this line can be removed 
     if (SModelRepository.getInstance().isChanged(modelDescriptor)) return true;
 
     IFile modelFile = modelDescriptor.getModelFile();
