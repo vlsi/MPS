@@ -286,7 +286,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  void fireModelReplaced() {
+  public void fireModelReplaced() {
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.modelReplaced(this);
