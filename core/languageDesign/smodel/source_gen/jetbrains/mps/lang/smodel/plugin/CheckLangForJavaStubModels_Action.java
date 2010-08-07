@@ -14,11 +14,12 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import javax.swing.JOptionPane;
 
@@ -82,7 +83,7 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
       Language language = ((Language) CheckLangForJavaStubModels_Action.this.module);
       Set<String> langStubModels = SetSequence.fromSet(new HashSet<String>());
       Set<String> otherStubModels = SetSequence.fromSet(new HashSet<String>());
-      for (SModelDescriptor md : SetSequence.fromSet(language.getAspectModelDescriptors())) {
+      for (RegularSModelDescriptor md : SetSequence.fromSet(language.getAspectModelDescriptors())) {
         for (SModelReference model : ListSequence.fromList(md.getSModel().getImportedModelUIDs())) {
           if (model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(LanguageID.JAVA))) {
             SModelDescriptor langModelForStub = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model.getLongName()));
