@@ -208,7 +208,7 @@ public class DeleteModelHelper {
 
       // delete imports from available models, helps if there are no references to deleted model
       for (SModelDescriptor md : SModelRepository.getInstance().getModelDescriptors()) {
-        if (SModelStereotype.isUserModel(md) && md.hasImportedModel(modelDescriptor)) {
+        if (SModelStereotype.isUserModel(md) && new ModelFindOperations(md).hasImportedModel(modelDescriptor)) {
           md.getSModel().deleteImportedModel(modelDescriptor.getSModelReference());
         }
       }

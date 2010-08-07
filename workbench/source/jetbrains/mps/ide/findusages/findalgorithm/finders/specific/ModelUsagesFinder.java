@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 
 public class ModelUsagesFinder implements IFinder {
-
   public SearchResults find(SearchQuery query, ProgressIndicator indicator) {
     SearchResults searchResults = new SearchResults();
     IHolder holder = query.getObjectHolder();
@@ -40,7 +39,7 @@ public class ModelUsagesFinder implements IFinder {
       if (!SModelStereotype.isUserModel(modelDescriptor)) {
         continue;
       }
-      if (modelDescriptor.hasUsages(CollectionUtil.set(modelReference))) {
+      if (new ModelFindOperations(modelDescriptor).hasUsages(CollectionUtil.set(modelReference))) {
         searchResults.getSearchResults().add(new SearchResult<SModel>(modelDescriptor.getSModel(), "usages in imports"));
       }
     }

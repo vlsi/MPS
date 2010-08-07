@@ -17,6 +17,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.smodel.ModelFindOperations;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -97,7 +98,7 @@ public class HighlightInstances_Action extends GeneratedAction {
     try {
       NodeHighlightManager highlightManager = HighlightInstances_Action.this.editorComponent.getHighlightManager();
       EditorMessageOwner messageOwner = HighlightInstances_Action.this.editorComponent.getHighlightMessagesOwner();
-      for (SNode ref : SetSequence.fromSet(HighlightInstances_Action.this.model.findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(HighlightInstances_Action.this.node))), HighlightInstances_Action.this.scope))) {
+      for (SNode ref : SetSequence.fromSet(new ModelFindOperations(HighlightInstances_Action.this.model).findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(HighlightInstances_Action.this.node))), HighlightInstances_Action.this.scope))) {
         if (ref.getContainingRoot() == HighlightInstances_Action.this.editorComponent.getRootCell().getSNode().getContainingRoot()) {
           highlightManager.mark(ref, HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);
         }

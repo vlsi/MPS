@@ -13,14 +13,15 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ModelFindOperations {
-  private BaseSModelDescriptor myModelDescriptor;
+  private SModelDescriptor myModelDescriptor;
   private boolean myFindUsagesSupported;
   private IModelRootManager myModelRootManager;
   private boolean myNeedSearchForStrings;
 
-  public ModelFindOperations(DefaultSModelDescriptor modelDescriptor) {
+  public ModelFindOperations(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
-    myModelRootManager = myModelDescriptor.myModelRootManager;
+    //todo cleanup this line
+    myModelRootManager = ((BaseSModelDescriptor)myModelDescriptor).myModelRootManager;
     myFindUsagesSupported = myModelRootManager.isFindUsagesSupported();
     myNeedSearchForStrings = !myModelDescriptor.isInitialized() || !SModelRepository.getInstance().isChanged(myModelDescriptor.getSModel());
   }

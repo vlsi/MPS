@@ -2551,20 +2551,20 @@
     <unitInfo nodeId="227146524086772103" fileName="HighlightConstants.java" startLine="7" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.ide.actions.HighlightConstants" />
   </root>
   <root nodeId="227146524086812204">
-    <nodeInfo nodeId="227146524086812303" fileName="HighlightInstances_Action.java" startLine="26" startPosition="0" endLine="27" endPosition="42" />
-    <nodeInfo nodeId="227146524086812304" fileName="HighlightInstances_Action.java" startLine="27" startPosition="42" endLine="28" endPosition="32" />
-    <nodeInfo nodeId="227146524086812317" fileName="HighlightInstances_Action.java" startLine="28" startPosition="32" endLine="29" endPosition="23" />
-    <nodeInfo nodeId="227146524086812345" fileName="HighlightInstances_Action.java" startLine="29" startPosition="23" endLine="30" endPosition="33" />
-    <nodeInfo nodeId="227146524086812369" fileName="HighlightInstances_Action.java" startLine="30" startPosition="33" endLine="31" endPosition="21" />
-    <nodeInfo nodeId="227146524086812207" fileName="HighlightInstances_Action.java" startLine="97" startPosition="9" endLine="98" endPosition="115" />
-    <nodeInfo nodeId="227146524086812215" fileName="HighlightInstances_Action.java" startLine="98" startPosition="115" endLine="99" endPosition="115" />
-    <nodeInfo nodeId="227146524086812463" fileName="HighlightInstances_Action.java" startLine="101" startPosition="133" endLine="102" endPosition="96" />
-    <nodeInfo nodeId="1709218712959265252" fileName="HighlightInstances_Action.java" startLine="104" startPosition="7" endLine="105" endPosition="57" />
-    <nodeInfo nodeId="227146524086812401" fileName="HighlightInstances_Action.java" startLine="100" startPosition="270" endLine="103" endPosition="9" />
-    <nodeInfo nodeId="227146524086812381" fileName="HighlightInstances_Action.java" startLine="99" startPosition="115" endLine="104" endPosition="7" />
-    <scopeInfo nodeId="227146524086812403" fileName="HighlightInstances_Action.java" startLine="101" startPosition="133" endLine="102" endPosition="96" />
-    <scopeInfo nodeId="227146524086812384" fileName="HighlightInstances_Action.java" startLine="100" startPosition="270" endLine="103" endPosition="9" />
-    <scopeInfo nodeId="227146524086812381" fileName="HighlightInstances_Action.java" startLine="99" startPosition="115" endLine="104" endPosition="7" />
+    <nodeInfo nodeId="227146524086812303" fileName="HighlightInstances_Action.java" startLine="27" startPosition="0" endLine="28" endPosition="42" />
+    <nodeInfo nodeId="227146524086812304" fileName="HighlightInstances_Action.java" startLine="28" startPosition="42" endLine="29" endPosition="32" />
+    <nodeInfo nodeId="227146524086812317" fileName="HighlightInstances_Action.java" startLine="29" startPosition="32" endLine="30" endPosition="23" />
+    <nodeInfo nodeId="227146524086812345" fileName="HighlightInstances_Action.java" startLine="30" startPosition="23" endLine="31" endPosition="33" />
+    <nodeInfo nodeId="227146524086812369" fileName="HighlightInstances_Action.java" startLine="31" startPosition="33" endLine="32" endPosition="21" />
+    <nodeInfo nodeId="227146524086812207" fileName="HighlightInstances_Action.java" startLine="98" startPosition="9" endLine="99" endPosition="115" />
+    <nodeInfo nodeId="227146524086812215" fileName="HighlightInstances_Action.java" startLine="99" startPosition="115" endLine="100" endPosition="115" />
+    <nodeInfo nodeId="227146524086812463" fileName="HighlightInstances_Action.java" startLine="102" startPosition="133" endLine="103" endPosition="96" />
+    <nodeInfo nodeId="1709218712959265252" fileName="HighlightInstances_Action.java" startLine="105" startPosition="7" endLine="106" endPosition="57" />
+    <nodeInfo nodeId="227146524086812401" fileName="HighlightInstances_Action.java" startLine="101" startPosition="295" endLine="104" endPosition="9" />
+    <nodeInfo nodeId="227146524086812381" fileName="HighlightInstances_Action.java" startLine="100" startPosition="115" endLine="105" endPosition="7" />
+    <scopeInfo nodeId="227146524086812403" fileName="HighlightInstances_Action.java" startLine="102" startPosition="133" endLine="103" endPosition="96" />
+    <scopeInfo nodeId="227146524086812384" fileName="HighlightInstances_Action.java" startLine="101" startPosition="295" endLine="104" endPosition="9" />
+    <scopeInfo nodeId="227146524086812381" fileName="HighlightInstances_Action.java" startLine="100" startPosition="115" endLine="105" endPosition="7" />
   </root>
   <root nodeId="2337689001241469705">
     <nodeInfo nodeId="3619186996280266414" fileName="TypesystemChecker.java" startLine="25" startPosition="142" endLine="26" endPosition="124" />
@@ -4665,51 +4665,51 @@
     <scopeInfo nodeId="6800888824899957478" fileName="GoToNextChange_Action.java" startLine="37" startPosition="9" endLine="39" endPosition="179" />
   </root>
   <root nodeId="5533671870987003804">
-    <nodeInfo nodeId="5533671870987003865" fileName="HighlightUsages_Action.java" startLine="29" startPosition="0" endLine="30" endPosition="42" />
-    <nodeInfo nodeId="5533671870987003866" fileName="HighlightUsages_Action.java" startLine="30" startPosition="42" endLine="31" endPosition="32" />
-    <nodeInfo nodeId="5533671870987100173" fileName="HighlightUsages_Action.java" startLine="31" startPosition="32" endLine="32" endPosition="33" />
-    <nodeInfo nodeId="5533671870987099293" fileName="HighlightUsages_Action.java" startLine="85" startPosition="27" endLine="86" endPosition="116" />
-    <nodeInfo nodeId="5533671870987099301" fileName="HighlightUsages_Action.java" startLine="86" startPosition="116" endLine="87" endPosition="116" />
-    <nodeInfo nodeId="5533671870987099312" fileName="HighlightUsages_Action.java" startLine="87" startPosition="116" endLine="88" endPosition="85" />
-    <nodeInfo nodeId="5533671870987100177" fileName="HighlightUsages_Action.java" startLine="88" startPosition="85" endLine="89" endPosition="86" />
-    <nodeInfo nodeId="5533671870987100196" fileName="HighlightUsages_Action.java" startLine="89" startPosition="86" endLine="90" endPosition="92" />
-    <nodeInfo nodeId="5533671870987185434" fileName="HighlightUsages_Action.java" startLine="92" startPosition="28" endLine="93" endPosition="102" />
-    <nodeInfo nodeId="2372163530067851552" fileName="HighlightUsages_Action.java" startLine="95" startPosition="120" endLine="96" endPosition="49" />
-    <nodeInfo nodeId="5533671870987188816" fileName="HighlightUsages_Action.java" startLine="102" startPosition="30" endLine="103" endPosition="115" />
-    <nodeInfo nodeId="2372163530067851571" fileName="HighlightUsages_Action.java" startLine="105" startPosition="137" endLine="106" endPosition="51" />
-    <nodeInfo nodeId="5533671870987188795" fileName="HighlightUsages_Action.java" startLine="110" startPosition="11" endLine="111" endPosition="61" />
-    <nodeInfo nodeId="2372163530067851541" fileName="HighlightUsages_Action.java" startLine="94" startPosition="20" endLine="97" endPosition="15" />
-    <nodeInfo nodeId="2372163530067851568" fileName="HighlightUsages_Action.java" startLine="104" startPosition="22" endLine="107" endPosition="17" />
-    <nodeInfo nodeId="5533671870987188720" fileName="HighlightUsages_Action.java" startLine="94" startPosition="18" endLine="98" endPosition="13" />
-    <nodeInfo nodeId="5533671870987188840" fileName="HighlightUsages_Action.java" startLine="104" startPosition="20" endLine="108" endPosition="15" />
-    <nodeInfo nodeId="5533671870987170544" fileName="HighlightUsages_Action.java" startLine="91" startPosition="148" endLine="98" endPosition="13" />
-    <nodeInfo nodeId="5533671870987188807" fileName="HighlightUsages_Action.java" startLine="101" startPosition="150" endLine="108" endPosition="15" />
-    <nodeInfo nodeId="5533671870987100212" fileName="HighlightUsages_Action.java" startLine="90" startPosition="92" endLine="99" endPosition="11" />
-    <nodeInfo nodeId="5533671870987188758" fileName="HighlightUsages_Action.java" startLine="100" startPosition="62" endLine="109" endPosition="13" />
-    <nodeInfo nodeId="5533671870987188755" fileName="HighlightUsages_Action.java" startLine="99" startPosition="11" endLine="110" endPosition="11" />
-    <nodeInfo nodeId="5533671870987099239" fileName="HighlightUsages_Action.java" startLine="84" startPosition="59" endLine="113" endPosition="0" />
-    <nodeInfo nodeId="5533671870987099238" fileName="HighlightUsages_Action.java" startLine="83" startPosition="9" endLine="113" endPosition="9" />
-    <scopeInfo nodeId="5533671870987170545" fileName="HighlightUsages_Action.java" startLine="92" startPosition="28" endLine="93" endPosition="102" />
-    <scopeInfo nodeId="2372163530067851544" fileName="HighlightUsages_Action.java" startLine="95" startPosition="120" endLine="96" endPosition="49" />
-    <scopeInfo nodeId="5533671870987188808" fileName="HighlightUsages_Action.java" startLine="102" startPosition="30" endLine="103" endPosition="115" />
-    <scopeInfo nodeId="2372163530067851570" fileName="HighlightUsages_Action.java" startLine="105" startPosition="137" endLine="106" endPosition="51" />
-    <scopeInfo nodeId="2372163530067851541" fileName="HighlightUsages_Action.java" startLine="94" startPosition="20" endLine="97" endPosition="15" />
-    <scopeInfo nodeId="5533671870987188721" fileName="HighlightUsages_Action.java" startLine="94" startPosition="20" endLine="97" endPosition="15" />
-    <scopeInfo nodeId="2372163530067851568" fileName="HighlightUsages_Action.java" startLine="104" startPosition="22" endLine="107" endPosition="17" />
-    <scopeInfo nodeId="5533671870987188841" fileName="HighlightUsages_Action.java" startLine="104" startPosition="22" endLine="107" endPosition="17" />
-    <scopeInfo nodeId="5533671870987100213" fileName="HighlightUsages_Action.java" startLine="91" startPosition="148" endLine="98" endPosition="13" />
-    <scopeInfo nodeId="5533671870987188772" fileName="HighlightUsages_Action.java" startLine="101" startPosition="150" endLine="108" endPosition="15" />
-    <scopeInfo nodeId="5533671870987188757" fileName="HighlightUsages_Action.java" startLine="100" startPosition="62" endLine="109" endPosition="13" />
-    <scopeInfo nodeId="5533671870987188755" fileName="HighlightUsages_Action.java" startLine="99" startPosition="11" endLine="110" endPosition="11" />
-    <scopeInfo nodeId="5533671870987099240" fileName="HighlightUsages_Action.java" startLine="85" startPosition="27" endLine="111" endPosition="61">
+    <nodeInfo nodeId="5533671870987003865" fileName="HighlightUsages_Action.java" startLine="30" startPosition="0" endLine="31" endPosition="42" />
+    <nodeInfo nodeId="5533671870987003866" fileName="HighlightUsages_Action.java" startLine="31" startPosition="42" endLine="32" endPosition="32" />
+    <nodeInfo nodeId="5533671870987100173" fileName="HighlightUsages_Action.java" startLine="32" startPosition="32" endLine="33" endPosition="33" />
+    <nodeInfo nodeId="5533671870987099293" fileName="HighlightUsages_Action.java" startLine="86" startPosition="27" endLine="87" endPosition="116" />
+    <nodeInfo nodeId="5533671870987099301" fileName="HighlightUsages_Action.java" startLine="87" startPosition="116" endLine="88" endPosition="116" />
+    <nodeInfo nodeId="5533671870987099312" fileName="HighlightUsages_Action.java" startLine="88" startPosition="116" endLine="89" endPosition="85" />
+    <nodeInfo nodeId="5533671870987100177" fileName="HighlightUsages_Action.java" startLine="89" startPosition="85" endLine="90" endPosition="111" />
+    <nodeInfo nodeId="5533671870987100196" fileName="HighlightUsages_Action.java" startLine="90" startPosition="111" endLine="91" endPosition="92" />
+    <nodeInfo nodeId="5533671870987185434" fileName="HighlightUsages_Action.java" startLine="93" startPosition="28" endLine="94" endPosition="102" />
+    <nodeInfo nodeId="2372163530067851552" fileName="HighlightUsages_Action.java" startLine="96" startPosition="120" endLine="97" endPosition="49" />
+    <nodeInfo nodeId="5533671870987188816" fileName="HighlightUsages_Action.java" startLine="103" startPosition="30" endLine="104" endPosition="115" />
+    <nodeInfo nodeId="2372163530067851571" fileName="HighlightUsages_Action.java" startLine="106" startPosition="137" endLine="107" endPosition="51" />
+    <nodeInfo nodeId="5533671870987188795" fileName="HighlightUsages_Action.java" startLine="111" startPosition="11" endLine="112" endPosition="61" />
+    <nodeInfo nodeId="2372163530067851541" fileName="HighlightUsages_Action.java" startLine="95" startPosition="20" endLine="98" endPosition="15" />
+    <nodeInfo nodeId="2372163530067851568" fileName="HighlightUsages_Action.java" startLine="105" startPosition="22" endLine="108" endPosition="17" />
+    <nodeInfo nodeId="5533671870987188720" fileName="HighlightUsages_Action.java" startLine="95" startPosition="18" endLine="99" endPosition="13" />
+    <nodeInfo nodeId="5533671870987188840" fileName="HighlightUsages_Action.java" startLine="105" startPosition="20" endLine="109" endPosition="15" />
+    <nodeInfo nodeId="5533671870987170544" fileName="HighlightUsages_Action.java" startLine="92" startPosition="148" endLine="99" endPosition="13" />
+    <nodeInfo nodeId="5533671870987188807" fileName="HighlightUsages_Action.java" startLine="102" startPosition="150" endLine="109" endPosition="15" />
+    <nodeInfo nodeId="5533671870987100212" fileName="HighlightUsages_Action.java" startLine="91" startPosition="92" endLine="100" endPosition="11" />
+    <nodeInfo nodeId="5533671870987188758" fileName="HighlightUsages_Action.java" startLine="101" startPosition="62" endLine="110" endPosition="13" />
+    <nodeInfo nodeId="5533671870987188755" fileName="HighlightUsages_Action.java" startLine="100" startPosition="11" endLine="111" endPosition="11" />
+    <nodeInfo nodeId="5533671870987099239" fileName="HighlightUsages_Action.java" startLine="85" startPosition="59" endLine="114" endPosition="0" />
+    <nodeInfo nodeId="5533671870987099238" fileName="HighlightUsages_Action.java" startLine="84" startPosition="9" endLine="114" endPosition="9" />
+    <scopeInfo nodeId="5533671870987170545" fileName="HighlightUsages_Action.java" startLine="93" startPosition="28" endLine="94" endPosition="102" />
+    <scopeInfo nodeId="2372163530067851544" fileName="HighlightUsages_Action.java" startLine="96" startPosition="120" endLine="97" endPosition="49" />
+    <scopeInfo nodeId="5533671870987188808" fileName="HighlightUsages_Action.java" startLine="103" startPosition="30" endLine="104" endPosition="115" />
+    <scopeInfo nodeId="2372163530067851570" fileName="HighlightUsages_Action.java" startLine="106" startPosition="137" endLine="107" endPosition="51" />
+    <scopeInfo nodeId="2372163530067851541" fileName="HighlightUsages_Action.java" startLine="95" startPosition="20" endLine="98" endPosition="15" />
+    <scopeInfo nodeId="5533671870987188721" fileName="HighlightUsages_Action.java" startLine="95" startPosition="20" endLine="98" endPosition="15" />
+    <scopeInfo nodeId="2372163530067851568" fileName="HighlightUsages_Action.java" startLine="105" startPosition="22" endLine="108" endPosition="17" />
+    <scopeInfo nodeId="5533671870987188841" fileName="HighlightUsages_Action.java" startLine="105" startPosition="22" endLine="108" endPosition="17" />
+    <scopeInfo nodeId="5533671870987100213" fileName="HighlightUsages_Action.java" startLine="92" startPosition="148" endLine="99" endPosition="13" />
+    <scopeInfo nodeId="5533671870987188772" fileName="HighlightUsages_Action.java" startLine="102" startPosition="150" endLine="109" endPosition="15" />
+    <scopeInfo nodeId="5533671870987188757" fileName="HighlightUsages_Action.java" startLine="101" startPosition="62" endLine="110" endPosition="13" />
+    <scopeInfo nodeId="5533671870987188755" fileName="HighlightUsages_Action.java" startLine="100" startPosition="11" endLine="111" endPosition="11" />
+    <scopeInfo nodeId="5533671870987099240" fileName="HighlightUsages_Action.java" startLine="86" startPosition="27" endLine="112" endPosition="61">
       <varInfo nodeId="5533671870987099313" varName="node" />
       <varInfo nodeId="5533671870987100178" varName="usages" />
       <varInfo nodeId="5533671870987099294" varName="highlightManager" />
       <varInfo nodeId="5533671870987099302" varName="messageOwner" />
       <varInfo nodeId="5533671870987100197" varName="highlight" />
     </scopeInfo>
-    <scopeInfo nodeId="5533671870987099239" fileName="HighlightUsages_Action.java" startLine="84" startPosition="59" endLine="113" endPosition="0" />
-    <unitInfo nodeId="5533671870987099239" fileName="HighlightUsages_Action.java" startLine="84" startPosition="47" endLine="113" endPosition="7" unitName="jetbrains.mps.ide.actions.HighlightUsages_Action$1" />
+    <scopeInfo nodeId="5533671870987099239" fileName="HighlightUsages_Action.java" startLine="85" startPosition="59" endLine="114" endPosition="0" />
+    <unitInfo nodeId="5533671870987099239" fileName="HighlightUsages_Action.java" startLine="85" startPosition="47" endLine="114" endPosition="7" unitName="jetbrains.mps.ide.actions.HighlightUsages_Action$1" />
   </root>
   <root nodeId="5533671870987188872">
     <nodeInfo nodeId="7360913708305957668" fileName="PasteNode_Action.java" startLine="35" startPosition="0" endLine="36" endPosition="26" />

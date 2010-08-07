@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.ModelFindOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -86,7 +87,7 @@ public class HighlightUsages_Action extends GeneratedAction {
           NodeHighlightManager highlightManager = HighlightUsages_Action.this.editorComponent.getHighlightManager();
           EditorMessageOwner messageOwner = HighlightUsages_Action.this.editorComponent.getHighlightMessagesOwner();
           SNode node = HighlightUsages_Action.this.editorCell.getSNodeWRTReference();
-          Set<SReference> usages = HighlightUsages_Action.this.model.findUsages(node);
+          Set<SReference> usages = new ModelFindOperations(HighlightUsages_Action.this.model).findUsages(node);
           boolean highlight = highlightManager.getMessagesFor(node, messageOwner).isEmpty();
           if (SNodeOperations.getContainingRoot(node) == HighlightUsages_Action.this.editorComponent.getRootCell().getSNode().getContainingRoot()) {
             if (highlight) {

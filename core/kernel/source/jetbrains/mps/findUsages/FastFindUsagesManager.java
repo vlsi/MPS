@@ -71,7 +71,7 @@ class FastFindUsagesManager extends FindUsagesManager {
       String taskName = ModelsProgressUtil.findInstancesModelTaskName(model);
       if (manageTasks) progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
       if (SModelRepository.getInstance().isChanged(model)) {
-        result.addAll(model.findInstances(concept, scope));
+        result.addAll(new ModelFindOperations(model).findInstances(concept, scope));
       }
       if (progress.isCanceled()) {
         if (manageTasks) progress.finishAnyway();
@@ -95,7 +95,7 @@ class FastFindUsagesManager extends FindUsagesManager {
       String taskName = ModelsProgressUtil.findExactInstancesModelTaskName(model);
       if (manageTasks) progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_EXACT_INSTANCES);
       if (SModelRepository.getInstance().isChanged(model)) {
-        result.addAll(model.findExactInstances(concept, scope));
+        result.addAll(new ModelFindOperations(model).findExactInstances(concept, scope));
       }
       if (progress.isCanceled()) {
         if (manageTasks) progress.finishAnyway();
@@ -139,7 +139,7 @@ class FastFindUsagesManager extends FindUsagesManager {
         IFile modelFile = sm.getModelFile();
         if (modelFile == null) continue;
         sm.getSModel();
-        result.addAll(sm.findUsages(nodes));
+        result.addAll(new ModelFindOperations(sm).findUsages(nodes));
       }
     }
     return result;
@@ -219,9 +219,9 @@ class FastFindUsagesManager extends FindUsagesManager {
       if (sm == null) continue;
       sm.getSModel();
       if (isExact) {
-        result.addAll(sm.findExactInstances(concept, scope));
+        result.addAll(new ModelFindOperations(sm).findExactInstances(concept, scope));
       } else {
-        result.addAll(sm.findInstances(concept, scope));
+        result.addAll(new ModelFindOperations(sm).findInstances(concept, scope));
       }
     }
     return result;
@@ -236,7 +236,7 @@ class FastFindUsagesManager extends FindUsagesManager {
       SModelDescriptor sm = SModelRepository.getInstance().findModel(VFileSystem.toIFile(file));
       if (sm == null) continue;
       sm.getSModel();
-      result.addAll(sm.findUsages(node));
+      result.addAll(new ModelFindOperations(sm).findUsages(node));
     }
     return result;
   }

@@ -72,7 +72,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
         descendantsKnownInModel = new HashSet<AbstractConceptDeclaration>();
         knownDescendantsInModelDescriptors.put(model, descendantsKnownInModel);
       }
-      result.addAll(model.findDescendants(node, descendantsKnownInModel));
+      result.addAll(new ModelFindOperations(model).findDescendants(node, descendantsKnownInModel));
     }
 
     return result;
@@ -115,7 +115,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
       for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
         String taskName = ModelsProgressUtil.findNodeUsagesModelTaskName(model);
         if (manageTasks) progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_NODE_USAGES);
-        result.addAll(model.findUsages(nodes));
+        result.addAll(new ModelFindOperations(model).findUsages(nodes));
         if (progress.isCanceled()) {
           if (manageTasks) progress.finishAnyway();
           return result;
@@ -177,7 +177,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
       for (SModelDescriptor model : models) {
         String taskName = ModelsProgressUtil.findInstancesModelTaskName(model);
         if (manageTasks) progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
-        result.addAll(model.findInstances(concept, scope));
+        result.addAll(new ModelFindOperations(model).findInstances(concept, scope));
         if (progress.isCanceled()) {
           if (manageTasks) progress.finishAnyway();
           return result;
@@ -209,7 +209,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
       for (SModelDescriptor model : models) {
         String taskName = ModelsProgressUtil.findExactInstancesModelTaskName(model);
         if (manageTasks) progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_EXACT_INSTANCES);
-        result.addAll(model.findExactInstances(concept, scope));
+        result.addAll(new ModelFindOperations(model).findExactInstances(concept, scope));
         if (progress.isCanceled()) {
           if (manageTasks) progress.finishAnyway();
           return result;

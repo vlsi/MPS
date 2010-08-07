@@ -94,22 +94,6 @@ public interface SModelDescriptor {
 
   boolean isPackaged();
 
-  Set<SReference> findUsages(Set<SNode> node);
-
-  Set<SReference> findUsages(SNode node);
-
-  boolean hasUsages(Set<SModelReference> models);
-
-  Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> descendantsKnownInModel);
-
-  Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope);
-
-  Set<SNode> findExactInstances(AbstractConceptDeclaration concept, IScope scope);
-
-  boolean hasImportedModel(SModelDescriptor modelDescriptor);
-
-  boolean hasLanguage(Language language);
-
   long timestamp();
 
   long fileTimestamp();
