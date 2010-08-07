@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.vfs.IFile;
@@ -26,7 +23,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public interface SModelDescriptor {
@@ -47,20 +43,6 @@ public interface SModelDescriptor {
 
   boolean isInitialized();
 
-  void addModelListener(@NotNull SModelListener listener);
-
-  void removeModelListener(@NotNull SModelListener listener);
-
-  @NotNull
-  SModelListener[] getModelListeners();
-
-  void addModelCommandListener(@NotNull SModelCommandListener listener);
-
-  void removeModelCommandListener(@NotNull SModelCommandListener listener);
-
-  @NotNull
-  SModelCommandListener[] getModelCommandListeners();
-
   void save();
 
   void dispose();
@@ -78,10 +60,6 @@ public interface SModelDescriptor {
 
   boolean isEmpty();
 
-  boolean hasModelCommandListener(@NotNull SModelCommandListener listener);
-
-  boolean hasModelListener(@NotNull SModelListener listener);
-
   boolean isTransient();
 
   Object getUserObject(String key);
@@ -93,7 +71,7 @@ public interface SModelDescriptor {
   IModule getModule();
 
   /**
-   * use getModule() instead 
+   * use getModule() instead
    */
   @Deprecated
   Set<IModule> getModules();
@@ -103,4 +81,26 @@ public interface SModelDescriptor {
   void rename(SModelFqName newModelFqName, boolean changeFile);
 
   SModelDescriptor resolveModel(SModelReference reference);
+
+  //--------------model listeners--------------------
+
+  void addModelListener(@NotNull SModelListener listener);
+
+  void removeModelListener(@NotNull SModelListener listener);
+
+  @NotNull
+  SModelListener[] getModelListeners();
+
+  boolean hasModelListener(@NotNull SModelListener listener);
+
+  //--------------model command listeners-------------
+
+  void addModelCommandListener(@NotNull SModelCommandListener listener);
+
+  void removeModelCommandListener(@NotNull SModelCommandListener listener);
+
+  @NotNull
+  SModelCommandListener[] getModelCommandListeners();
+
+  boolean hasModelCommandListener(@NotNull SModelCommandListener listener);
 }
