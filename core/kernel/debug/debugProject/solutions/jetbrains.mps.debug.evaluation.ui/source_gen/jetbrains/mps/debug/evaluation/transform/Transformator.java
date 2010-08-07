@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class Transformator {
-  private boolean myIsFinished = false;
   private final SModel myModel;
   private final SNode myWhatToEvaluate;
 
@@ -47,11 +46,19 @@ public class Transformator {
   }
 
   public void transform() {
-    TransformationUtil.transformInternal(myWhatToEvaluate);
-    TransformationUtil.wrapReturn(SNodeOperations.getAncestor(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false));
+    TransformationUtil.preprocess(myWhatToEvaluate);
 
-    while (!(myIsFinished)) {
-      myIsFinished = true;
-    }
+    TransformationUtil.replaceConstructors(myWhatToEvaluate);
+    TransformationUtil.replaceThis(myWhatToEvaluate);
+    TransformationUtil.replaceSuper(myWhatToEvaluate);
+    TransformationUtil.replaceLowLevelVariableReferences(myWhatToEvaluate);
+    TransformationUtil.replaceClassExpressions(myWhatToEvaluate);
+    TransformationUtil.replaceLocalMemberReferences(myWhatToEvaluate);
+    TransformationUtil.wrapMemberReferencesInCycle(myWhatToEvaluate);
+    TransformationUtil.replaceInstanceof(myWhatToEvaluate);
+
+    TransformationUtil.postprocess(myWhatToEvaluate);
+
+    TransformationUtil.wrapReturn(SNodeOperations.getAncestor(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false));
   }
 }
