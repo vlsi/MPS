@@ -1719,128 +1719,123 @@
     <unitInfo nodeId="1223998310209" fileName="TwoOptionsStep.java" startLine="25" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.TwoOptionsStep" />
   </root>
   <root nodeId="1224007565785">
-    <nodeInfo nodeId="1224008187284" fileName="ModelStep.java" startLine="19" startPosition="99" endLine="20" endPosition="44" />
-    <nodeInfo nodeId="1224007679894" fileName="ModelStep.java" startLine="23" startPosition="46" endLine="24" endPosition="45" />
-    <nodeInfo nodeId="1224007636041" fileName="ModelStep.java" startLine="27" startPosition="34" endLine="28" endPosition="45" />
-    <nodeInfo nodeId="1224007691964" fileName="ModelStep.java" startLine="31" startPosition="38" endLine="32" endPosition="33" />
-    <nodeInfo nodeId="1224007777976" fileName="ModelStep.java" startLine="37" startPosition="31" endLine="38" endPosition="31" />
-    <nodeInfo nodeId="1224007810885" fileName="ModelStep.java" startLine="43" startPosition="39" endLine="44" endPosition="46" />
-    <nodeInfo nodeId="1224007829578" fileName="ModelStep.java" startLine="47" startPosition="48" endLine="48" endPosition="43" />
-    <nodeInfo nodeId="1224007854459" fileName="ModelStep.java" startLine="51" startPosition="38" endLine="52" endPosition="30" />
-    <nodeInfo nodeId="1224007878476" fileName="ModelStep.java" startLine="55" startPosition="49" endLine="56" endPosition="33" />
-    <nodeInfo nodeId="1224007890269" fileName="ModelStep.java" startLine="59" startPosition="39" endLine="60" endPosition="29" />
-    <nodeInfo nodeId="1224159016728" fileName="ModelStep.java" startLine="63" startPosition="46" endLine="64" endPosition="61" />
-    <nodeInfo nodeId="1224159030902" fileName="ModelStep.java" startLine="65" startPosition="27" endLine="66" endPosition="37" />
-    <nodeInfo nodeId="1224159920740" fileName="ModelStep.java" startLine="67" startPosition="12" endLine="68" endPosition="115" />
-    <nodeInfo nodeId="1224163184136" fileName="ModelStep.java" startLine="72" startPosition="66" endLine="73" endPosition="63" />
-    <nodeInfo nodeId="1224163184144" fileName="ModelStep.java" startLine="74" startPosition="38" endLine="75" endPosition="29" />
-    <nodeInfo nodeId="1224163112057" fileName="ModelStep.java" startLine="78" startPosition="77" endLine="79" endPosition="30" />
-    <nodeInfo nodeId="1224163112069" fileName="ModelStep.java" startLine="81" startPosition="15" endLine="82" endPosition="27" />
-    <nodeInfo nodeId="1224159924724" fileName="ModelStep.java" startLine="86" startPosition="9" endLine="87" endPosition="95" />
-    <nodeInfo nodeId="1224007995618" fileName="ModelStep.java" startLine="91" startPosition="34" endLine="92" endPosition="50" />
-    <nodeInfo nodeId="1224008648758" fileName="ModelStep.java" startLine="95" startPosition="41" endLine="96" endPosition="51" />
-    <nodeInfo nodeId="1224845460452" fileName="ModelStep.java" startLine="99" startPosition="42" endLine="100" endPosition="51" />
-    <nodeInfo nodeId="1224787386780" fileName="ModelStep.java" startLine="104" startPosition="26" endLine="105" endPosition="45" />
-    <nodeInfo nodeId="1224787292293" fileName="ModelStep.java" startLine="106" startPosition="5" endLine="107" endPosition="69" />
-    <nodeInfo nodeId="1224007565787" fileName="ModelStep.java" startLine="18" startPosition="65" endLine="21" endPosition="3" />
-    <nodeInfo nodeId="1224163184142" fileName="ModelStep.java" startLine="73" startPosition="63" endLine="76" endPosition="15" />
-    <nodeInfo nodeId="1224163112055" fileName="ModelStep.java" startLine="77" startPosition="88" endLine="80" endPosition="17" />
-    <nodeInfo nodeId="1224787292285" fileName="ModelStep.java" startLine="103" startPosition="48" endLine="106" endPosition="5" />
-    <nodeInfo nodeId="1224007626874" fileName="ModelStep.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <nodeInfo nodeId="1224007626880" fileName="ModelStep.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <nodeInfo nodeId="1224007626884" fileName="ModelStep.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <nodeInfo nodeId="1224007755897" fileName="ModelStep.java" startLine="36" startPosition="74" endLine="40" endPosition="0" />
-    <nodeInfo nodeId="1224007626895" fileName="ModelStep.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <nodeInfo nodeId="1224007626900" fileName="ModelStep.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <nodeInfo nodeId="1224007626906" fileName="ModelStep.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <nodeInfo nodeId="1224007626911" fileName="ModelStep.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <nodeInfo nodeId="1224007626917" fileName="ModelStep.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <nodeInfo nodeId="1224007981020" fileName="ModelStep.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
-    <nodeInfo nodeId="1224008644241" fileName="ModelStep.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
-    <nodeInfo nodeId="1224785935824" fileName="ModelStep.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
-    <nodeInfo nodeId="1224007738174" fileName="ModelStep.java" startLine="35" startPosition="65" endLine="40" endPosition="7" />
-    <nodeInfo nodeId="1224163112049" fileName="ModelStep.java" startLine="76" startPosition="15" endLine="81" endPosition="15" />
-    <nodeInfo nodeId="1224787292281" fileName="ModelStep.java" startLine="102" startPosition="0" endLine="109" endPosition="0" />
-    <nodeInfo nodeId="1224007626889" fileName="ModelStep.java" startLine="34" startPosition="0" endLine="42" endPosition="0" />
-    <nodeInfo nodeId="1224163112043" fileName="ModelStep.java" startLine="71" startPosition="92" endLine="84" endPosition="0" />
-    <nodeInfo nodeId="1224163112036" fileName="ModelStep.java" startLine="70" startPosition="49" endLine="84" endPosition="13" />
-    <nodeInfo nodeId="1224163112033" fileName="ModelStep.java" startLine="69" startPosition="130" endLine="86" endPosition="0" />
-    <nodeInfo nodeId="1224162760191" fileName="ModelStep.java" startLine="68" startPosition="115" endLine="86" endPosition="9" />
-    <nodeInfo nodeId="1224159045547" fileName="ModelStep.java" startLine="67" startPosition="10" endLine="88" endPosition="5" />
-    <nodeInfo nodeId="1224159019628" fileName="ModelStep.java" startLine="64" startPosition="61" endLine="88" endPosition="5" />
-    <nodeInfo nodeId="1224007626921" fileName="ModelStep.java" startLine="62" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="1224007565790" fileName="ModelStep.java" startLine="19" startPosition="99" endLine="20" endPosition="44" />
-    <scopeInfo nodeId="1224007626879" fileName="ModelStep.java" startLine="23" startPosition="46" endLine="24" endPosition="45" />
-    <scopeInfo nodeId="1224007626883" fileName="ModelStep.java" startLine="27" startPosition="34" endLine="28" endPosition="45" />
-    <scopeInfo nodeId="1224007626887" fileName="ModelStep.java" startLine="31" startPosition="38" endLine="32" endPosition="33" />
-    <scopeInfo nodeId="1224007755900" fileName="ModelStep.java" startLine="37" startPosition="31" endLine="38" endPosition="31" />
-    <scopeInfo nodeId="1224007626898" fileName="ModelStep.java" startLine="43" startPosition="39" endLine="44" endPosition="46" />
-    <scopeInfo nodeId="1224007626905" fileName="ModelStep.java" startLine="47" startPosition="48" endLine="48" endPosition="43" />
-    <scopeInfo nodeId="1224007626909" fileName="ModelStep.java" startLine="51" startPosition="38" endLine="52" endPosition="30" />
-    <scopeInfo nodeId="1224007626916" fileName="ModelStep.java" startLine="55" startPosition="49" endLine="56" endPosition="33" />
-    <scopeInfo nodeId="1224007626920" fileName="ModelStep.java" startLine="59" startPosition="39" endLine="60" endPosition="29" />
-    <scopeInfo nodeId="1224159019629" fileName="ModelStep.java" startLine="65" startPosition="27" endLine="66" endPosition="37" />
-    <scopeInfo nodeId="1224163184143" fileName="ModelStep.java" startLine="74" startPosition="38" endLine="75" endPosition="29" />
-    <scopeInfo nodeId="1224163112056" fileName="ModelStep.java" startLine="78" startPosition="77" endLine="79" endPosition="30" />
-    <scopeInfo nodeId="1224007981023" fileName="ModelStep.java" startLine="91" startPosition="34" endLine="92" endPosition="50" />
-    <scopeInfo nodeId="1224008644244" fileName="ModelStep.java" startLine="95" startPosition="41" endLine="96" endPosition="51" />
-    <scopeInfo nodeId="1224785935829" fileName="ModelStep.java" startLine="99" startPosition="42" endLine="100" endPosition="51" />
-    <scopeInfo nodeId="1224787292286" fileName="ModelStep.java" startLine="104" startPosition="26" endLine="105" endPosition="45" />
-    <scopeInfo nodeId="1224007565787" fileName="ModelStep.java" startLine="18" startPosition="65" endLine="21" endPosition="3">
+    <nodeInfo nodeId="1224008187284" fileName="ModelStep.java" startLine="20" startPosition="99" endLine="21" endPosition="44" />
+    <nodeInfo nodeId="1224007679894" fileName="ModelStep.java" startLine="24" startPosition="46" endLine="25" endPosition="45" />
+    <nodeInfo nodeId="1224007636041" fileName="ModelStep.java" startLine="28" startPosition="34" endLine="29" endPosition="45" />
+    <nodeInfo nodeId="1224007691964" fileName="ModelStep.java" startLine="32" startPosition="38" endLine="33" endPosition="33" />
+    <nodeInfo nodeId="1417797419759367327" fileName="ModelStep.java" startLine="36" startPosition="65" endLine="37" endPosition="63" />
+    <nodeInfo nodeId="1224007810885" fileName="ModelStep.java" startLine="40" startPosition="39" endLine="41" endPosition="46" />
+    <nodeInfo nodeId="1224007829578" fileName="ModelStep.java" startLine="44" startPosition="48" endLine="45" endPosition="43" />
+    <nodeInfo nodeId="1224007854459" fileName="ModelStep.java" startLine="48" startPosition="38" endLine="49" endPosition="30" />
+    <nodeInfo nodeId="1224007878476" fileName="ModelStep.java" startLine="52" startPosition="49" endLine="53" endPosition="33" />
+    <nodeInfo nodeId="1224007890269" fileName="ModelStep.java" startLine="56" startPosition="39" endLine="57" endPosition="29" />
+    <nodeInfo nodeId="1224159016728" fileName="ModelStep.java" startLine="60" startPosition="46" endLine="61" endPosition="61" />
+    <nodeInfo nodeId="1224159030902" fileName="ModelStep.java" startLine="62" startPosition="27" endLine="63" endPosition="37" />
+    <nodeInfo nodeId="1224159920740" fileName="ModelStep.java" startLine="64" startPosition="12" endLine="65" endPosition="115" />
+    <nodeInfo nodeId="1224163184136" fileName="ModelStep.java" startLine="69" startPosition="66" endLine="70" endPosition="63" />
+    <nodeInfo nodeId="1224163184144" fileName="ModelStep.java" startLine="71" startPosition="38" endLine="72" endPosition="29" />
+    <nodeInfo nodeId="1224163112057" fileName="ModelStep.java" startLine="75" startPosition="77" endLine="76" endPosition="30" />
+    <nodeInfo nodeId="1224163112069" fileName="ModelStep.java" startLine="78" startPosition="15" endLine="79" endPosition="27" />
+    <nodeInfo nodeId="1224159924724" fileName="ModelStep.java" startLine="83" startPosition="9" endLine="84" endPosition="95" />
+    <nodeInfo nodeId="1224007995618" fileName="ModelStep.java" startLine="88" startPosition="34" endLine="89" endPosition="50" />
+    <nodeInfo nodeId="1224008648758" fileName="ModelStep.java" startLine="92" startPosition="41" endLine="93" endPosition="51" />
+    <nodeInfo nodeId="1224845460452" fileName="ModelStep.java" startLine="96" startPosition="42" endLine="97" endPosition="51" />
+    <nodeInfo nodeId="1224787386780" fileName="ModelStep.java" startLine="101" startPosition="26" endLine="102" endPosition="45" />
+    <nodeInfo nodeId="1224787292293" fileName="ModelStep.java" startLine="103" startPosition="5" endLine="104" endPosition="69" />
+    <nodeInfo nodeId="1224007565787" fileName="ModelStep.java" startLine="19" startPosition="65" endLine="22" endPosition="3" />
+    <nodeInfo nodeId="1224163184142" fileName="ModelStep.java" startLine="70" startPosition="63" endLine="73" endPosition="15" />
+    <nodeInfo nodeId="1224163112055" fileName="ModelStep.java" startLine="74" startPosition="88" endLine="77" endPosition="17" />
+    <nodeInfo nodeId="1224787292285" fileName="ModelStep.java" startLine="100" startPosition="48" endLine="103" endPosition="5" />
+    <nodeInfo nodeId="1224007626874" fileName="ModelStep.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="1224007626880" fileName="ModelStep.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <nodeInfo nodeId="1224007626884" fileName="ModelStep.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <nodeInfo nodeId="1224007626889" fileName="ModelStep.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <nodeInfo nodeId="1224007626895" fileName="ModelStep.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="1224007626900" fileName="ModelStep.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="1224007626906" fileName="ModelStep.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="1224007626911" fileName="ModelStep.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <nodeInfo nodeId="1224007626917" fileName="ModelStep.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <nodeInfo nodeId="1224007981020" fileName="ModelStep.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
+    <nodeInfo nodeId="1224008644241" fileName="ModelStep.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <nodeInfo nodeId="1224785935824" fileName="ModelStep.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
+    <nodeInfo nodeId="1224163112049" fileName="ModelStep.java" startLine="73" startPosition="15" endLine="78" endPosition="15" />
+    <nodeInfo nodeId="1224787292281" fileName="ModelStep.java" startLine="99" startPosition="0" endLine="106" endPosition="0" />
+    <nodeInfo nodeId="1224163112043" fileName="ModelStep.java" startLine="68" startPosition="92" endLine="81" endPosition="0" />
+    <nodeInfo nodeId="1224163112036" fileName="ModelStep.java" startLine="67" startPosition="49" endLine="81" endPosition="13" />
+    <nodeInfo nodeId="1224163112033" fileName="ModelStep.java" startLine="66" startPosition="130" endLine="83" endPosition="0" />
+    <nodeInfo nodeId="1224162760191" fileName="ModelStep.java" startLine="65" startPosition="115" endLine="83" endPosition="9" />
+    <nodeInfo nodeId="1224159045547" fileName="ModelStep.java" startLine="64" startPosition="10" endLine="85" endPosition="5" />
+    <nodeInfo nodeId="1224159019628" fileName="ModelStep.java" startLine="61" startPosition="61" endLine="85" endPosition="5" />
+    <nodeInfo nodeId="1224007626921" fileName="ModelStep.java" startLine="59" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="1224007565790" fileName="ModelStep.java" startLine="20" startPosition="99" endLine="21" endPosition="44" />
+    <scopeInfo nodeId="1224007626879" fileName="ModelStep.java" startLine="24" startPosition="46" endLine="25" endPosition="45" />
+    <scopeInfo nodeId="1224007626883" fileName="ModelStep.java" startLine="28" startPosition="34" endLine="29" endPosition="45" />
+    <scopeInfo nodeId="1224007626887" fileName="ModelStep.java" startLine="32" startPosition="38" endLine="33" endPosition="33" />
+    <scopeInfo nodeId="1224007626894" fileName="ModelStep.java" startLine="36" startPosition="65" endLine="37" endPosition="63" />
+    <scopeInfo nodeId="1224007626898" fileName="ModelStep.java" startLine="40" startPosition="39" endLine="41" endPosition="46" />
+    <scopeInfo nodeId="1224007626905" fileName="ModelStep.java" startLine="44" startPosition="48" endLine="45" endPosition="43" />
+    <scopeInfo nodeId="1224007626909" fileName="ModelStep.java" startLine="48" startPosition="38" endLine="49" endPosition="30" />
+    <scopeInfo nodeId="1224007626916" fileName="ModelStep.java" startLine="52" startPosition="49" endLine="53" endPosition="33" />
+    <scopeInfo nodeId="1224007626920" fileName="ModelStep.java" startLine="56" startPosition="39" endLine="57" endPosition="29" />
+    <scopeInfo nodeId="1224159019629" fileName="ModelStep.java" startLine="62" startPosition="27" endLine="63" endPosition="37" />
+    <scopeInfo nodeId="1224163184143" fileName="ModelStep.java" startLine="71" startPosition="38" endLine="72" endPosition="29" />
+    <scopeInfo nodeId="1224163112056" fileName="ModelStep.java" startLine="75" startPosition="77" endLine="76" endPosition="30" />
+    <scopeInfo nodeId="1224007981023" fileName="ModelStep.java" startLine="88" startPosition="34" endLine="89" endPosition="50" />
+    <scopeInfo nodeId="1224008644244" fileName="ModelStep.java" startLine="92" startPosition="41" endLine="93" endPosition="51" />
+    <scopeInfo nodeId="1224785935829" fileName="ModelStep.java" startLine="96" startPosition="42" endLine="97" endPosition="51" />
+    <scopeInfo nodeId="1224787292286" fileName="ModelStep.java" startLine="101" startPosition="26" endLine="102" endPosition="45" />
+    <scopeInfo nodeId="1224007565787" fileName="ModelStep.java" startLine="19" startPosition="65" endLine="22" endPosition="3">
       <varInfo nodeId="1224008171704" varName="project" />
       <varInfo nodeId="1224008174419" varName="buildGenerator" />
       <varInfo nodeId="1224788857001" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="1224163112054" fileName="ModelStep.java" startLine="77" startPosition="88" endLine="80" endPosition="17" />
-    <scopeInfo nodeId="1224007626874" fileName="ModelStep.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="1224163112054" fileName="ModelStep.java" startLine="74" startPosition="88" endLine="77" endPosition="17" />
+    <scopeInfo nodeId="1224007626874" fileName="ModelStep.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1224007626877" varName="checked" />
     </scopeInfo>
-    <scopeInfo nodeId="1224007626880" fileName="ModelStep.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1224007626884" fileName="ModelStep.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1224007755897" fileName="ModelStep.java" startLine="36" startPosition="74" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1224007626895" fileName="ModelStep.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1224007626900" fileName="ModelStep.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="1224007626903" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="1224007626906" fileName="ModelStep.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1224007626911" fileName="ModelStep.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="1224007626914" varName="m" />
-    </scopeInfo>
-    <scopeInfo nodeId="1224007626917" fileName="ModelStep.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="1224007981020" fileName="ModelStep.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="1224008644241" fileName="ModelStep.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="1224785935824" fileName="ModelStep.java" startLine="98" startPosition="0" endLine="102" endPosition="0">
-      <varInfo nodeId="1224785935827" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="1224787292284" fileName="ModelStep.java" startLine="103" startPosition="48" endLine="107" endPosition="69" />
-    <scopeInfo nodeId="1224007626894" fileName="ModelStep.java" startLine="35" startPosition="65" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="1224163112049" fileName="ModelStep.java" startLine="76" startPosition="15" endLine="81" endPosition="15" />
-    <scopeInfo nodeId="1224787292281" fileName="ModelStep.java" startLine="102" startPosition="0" endLine="109" endPosition="0">
-      <varInfo nodeId="1224787292299" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="1224007626889" fileName="ModelStep.java" startLine="34" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="1224007626880" fileName="ModelStep.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1224007626884" fileName="ModelStep.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1224007626889" fileName="ModelStep.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="1224007626892" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="1224163112048" fileName="ModelStep.java" startLine="72" startPosition="66" endLine="82" endPosition="27">
+    <scopeInfo nodeId="1224007626895" fileName="ModelStep.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1224007626900" fileName="ModelStep.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="1224007626903" varName="text" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224007626906" fileName="ModelStep.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1224007626911" fileName="ModelStep.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1224007626914" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224007626917" fileName="ModelStep.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1224007981020" fileName="ModelStep.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="1224008644241" fileName="ModelStep.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="1224785935824" fileName="ModelStep.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="1224785935827" varName="text" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224787292284" fileName="ModelStep.java" startLine="100" startPosition="48" endLine="104" endPosition="69" />
+    <scopeInfo nodeId="1224163112049" fileName="ModelStep.java" startLine="73" startPosition="15" endLine="78" endPosition="15" />
+    <scopeInfo nodeId="1224787292281" fileName="ModelStep.java" startLine="99" startPosition="0" endLine="106" endPosition="0">
+      <varInfo nodeId="1224787292299" varName="text" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224163112048" fileName="ModelStep.java" startLine="69" startPosition="66" endLine="79" endPosition="27">
       <varInfo nodeId="1224163184137" varName="modelFile" />
     </scopeInfo>
-    <scopeInfo nodeId="1224163112043" fileName="ModelStep.java" startLine="71" startPosition="92" endLine="84" endPosition="0">
+    <scopeInfo nodeId="1224163112043" fileName="ModelStep.java" startLine="68" startPosition="92" endLine="81" endPosition="0">
       <varInfo nodeId="1224163112046" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="1224163112035" fileName="ModelStep.java" startLine="70" startPosition="49" endLine="84" endPosition="13" />
-    <scopeInfo nodeId="1224163112033" fileName="ModelStep.java" startLine="69" startPosition="130" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="1224159045548" fileName="ModelStep.java" startLine="67" startPosition="12" endLine="87" endPosition="95">
+    <scopeInfo nodeId="1224163112035" fileName="ModelStep.java" startLine="67" startPosition="49" endLine="81" endPosition="13" />
+    <scopeInfo nodeId="1224163112033" fileName="ModelStep.java" startLine="66" startPosition="130" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="1224159045548" fileName="ModelStep.java" startLine="64" startPosition="12" endLine="84" endPosition="95">
       <varInfo nodeId="1224159920741" varName="modelDescriptors" />
       <varInfo nodeId="1224162760192" varName="filteredDescriptors" />
     </scopeInfo>
-    <scopeInfo nodeId="1224007626925" fileName="ModelStep.java" startLine="63" startPosition="46" endLine="88" endPosition="5">
+    <scopeInfo nodeId="1224007626925" fileName="ModelStep.java" startLine="60" startPosition="46" endLine="85" endPosition="5">
       <varInfo nodeId="1224159016729" varName="solution" />
     </scopeInfo>
-    <scopeInfo nodeId="1224007626921" fileName="ModelStep.java" startLine="62" startPosition="0" endLine="90" endPosition="0" />
-    <unitInfo nodeId="1224007755894" fileName="ModelStep.java" startLine="36" startPosition="52" endLine="40" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.Computable$anonymous" />
-    <unitInfo nodeId="1224163112041" fileName="ModelStep.java" startLine="71" startPosition="61" endLine="84" endPosition="11" unitName="jetbrains.mps.build.packaging.plugin.Condition$anonymous" />
-    <unitInfo nodeId="1224163112031" fileName="ModelStep.java" startLine="69" startPosition="92" endLine="86" endPosition="7" unitName="jetbrains.mps.build.packaging.plugin.ModelStep$2" />
-    <unitInfo nodeId="1224007565785" fileName="ModelStep.java" startLine="18" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.ModelStep" />
+    <scopeInfo nodeId="1224007626921" fileName="ModelStep.java" startLine="59" startPosition="0" endLine="87" endPosition="0" />
+    <unitInfo nodeId="1224163112041" fileName="ModelStep.java" startLine="68" startPosition="61" endLine="81" endPosition="11" unitName="jetbrains.mps.build.packaging.plugin.Condition$anonymous" />
+    <unitInfo nodeId="1224163112031" fileName="ModelStep.java" startLine="66" startPosition="92" endLine="83" endPosition="7" unitName="jetbrains.mps.build.packaging.plugin.ModelStep$1" />
+    <unitInfo nodeId="1224007565785" fileName="ModelStep.java" startLine="19" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.ModelStep" />
   </root>
   <root nodeId="1224788773266">
     <nodeInfo nodeId="1224788785255" fileName="IErrorHandler.java" startLine="6" startPosition="32" endLine="7" endPosition="40" />

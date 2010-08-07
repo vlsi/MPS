@@ -4,11 +4,12 @@ package jetbrains.mps.build.packaging.plugin;
 
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.Solution;
 import java.util.List;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.vfs.IFile;
@@ -33,11 +34,7 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
   }
 
   protected String getVariantName(final SModelDescriptor model) {
-    return ModelAccess.instance().runReadAction(new Computable<String>() {
-      public String compute() {
-        return model.getName();
-      }
-    });
+    return NameUtil.shortNameFromLongName(model.getLongName());
   }
 
   protected String getTextFieldText() {

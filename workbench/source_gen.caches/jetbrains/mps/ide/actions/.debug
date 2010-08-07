@@ -2765,81 +2765,73 @@
     <nodeInfo nodeId="2721881173282609815" fileName="NewSubTestModel_Action.java" startLine="51" startPosition="76" endLine="52" endPosition="19" />
     <nodeInfo nodeId="2721881173282544405" fileName="NewSubTestModel_Action.java" startLine="53" startPosition="5" endLine="54" endPosition="91" />
     <nodeInfo nodeId="2721881173282610575" fileName="NewSubTestModel_Action.java" startLine="103" startPosition="9" endLine="104" endPosition="87" />
-    <nodeInfo nodeId="2721881173282610605" fileName="NewSubTestModel_Action.java" startLine="106" startPosition="27" endLine="107" endPosition="72" />
-    <nodeInfo nodeId="2721881173282610623" fileName="NewSubTestModel_Action.java" startLine="107" startPosition="72" endLine="108" endPosition="71" />
-    <nodeInfo nodeId="2721881173282610341" fileName="NewSubTestModel_Action.java" startLine="108" startPosition="71" endLine="109" endPosition="98" />
-    <nodeInfo nodeId="2721881173282610580" fileName="NewSubTestModel_Action.java" startLine="109" startPosition="98" endLine="110" endPosition="163" />
-    <nodeInfo nodeId="4127104578871437354" fileName="NewSubTestModel_Action.java" startLine="110" startPosition="163" endLine="111" endPosition="57" />
-    <nodeInfo nodeId="4127104578871437405" fileName="NewSubTestModel_Action.java" startLine="111" startPosition="57" endLine="112" endPosition="77" />
-    <nodeInfo nodeId="4127104578871437319" fileName="NewSubTestModel_Action.java" startLine="112" startPosition="77" endLine="113" endPosition="74" />
-    <nodeInfo nodeId="4127104578871437453" fileName="NewSubTestModel_Action.java" startLine="114" startPosition="86" endLine="115" endPosition="77" />
-    <nodeInfo nodeId="4127104578871437533" fileName="NewSubTestModel_Action.java" startLine="117" startPosition="97" endLine="118" endPosition="55" />
-    <nodeInfo nodeId="4127104578871437634" fileName="NewSubTestModel_Action.java" startLine="120" startPosition="70" endLine="121" endPosition="43" />
-    <nodeInfo nodeId="2721881173282609775" fileName="NewSubTestModel_Action.java" startLine="124" startPosition="9" endLine="125" endPosition="97" />
-    <nodeInfo nodeId="2721881173282609963" fileName="NewSubTestModel_Action.java" startLine="133" startPosition="41" endLine="134" endPosition="48" />
-    <nodeInfo nodeId="2721881173282609970" fileName="NewSubTestModel_Action.java" startLine="134" startPosition="48" endLine="135" endPosition="64" />
-    <nodeInfo nodeId="4127104578871572764" fileName="NewSubTestModel_Action.java" startLine="135" startPosition="64" endLine="136" endPosition="27" />
-    <nodeInfo nodeId="4127104578871573216" fileName="NewSubTestModel_Action.java" startLine="136" startPosition="27" endLine="137" endPosition="107" />
-    <nodeInfo nodeId="4127104578871573348" fileName="NewSubTestModel_Action.java" startLine="137" startPosition="107" endLine="138" endPosition="70" />
-    <nodeInfo nodeId="4127104578871572725" fileName="NewSubTestModel_Action.java" startLine="140" startPosition="65" endLine="141" endPosition="17" />
-    <nodeInfo nodeId="4127104578871573496" fileName="NewSubTestModel_Action.java" startLine="147" startPosition="42" endLine="148" endPosition="25" />
-    <nodeInfo nodeId="4127104578871573621" fileName="NewSubTestModel_Action.java" startLine="151" startPosition="30" endLine="152" endPosition="42" />
-    <nodeInfo nodeId="2721881173282609987" fileName="NewSubTestModel_Action.java" startLine="153" startPosition="5" endLine="154" endPosition="30" />
-    <nodeInfo nodeId="4127104578871572837" fileName="NewSubTestModel_Action.java" startLine="157" startPosition="37" endLine="158" endPosition="78" />
+    <nodeInfo nodeId="2721881173282610341" fileName="NewSubTestModel_Action.java" startLine="106" startPosition="27" endLine="107" endPosition="129" />
+    <nodeInfo nodeId="2721881173282610580" fileName="NewSubTestModel_Action.java" startLine="107" startPosition="129" endLine="108" endPosition="163" />
+    <nodeInfo nodeId="4127104578871437354" fileName="NewSubTestModel_Action.java" startLine="108" startPosition="163" endLine="109" endPosition="57" />
+    <nodeInfo nodeId="4127104578871437405" fileName="NewSubTestModel_Action.java" startLine="109" startPosition="57" endLine="110" endPosition="77" />
+    <nodeInfo nodeId="4127104578871437319" fileName="NewSubTestModel_Action.java" startLine="110" startPosition="77" endLine="111" endPosition="74" />
+    <nodeInfo nodeId="4127104578871437453" fileName="NewSubTestModel_Action.java" startLine="112" startPosition="86" endLine="113" endPosition="77" />
+    <nodeInfo nodeId="4127104578871437533" fileName="NewSubTestModel_Action.java" startLine="115" startPosition="97" endLine="116" endPosition="55" />
+    <nodeInfo nodeId="4127104578871437634" fileName="NewSubTestModel_Action.java" startLine="118" startPosition="70" endLine="119" endPosition="43" />
+    <nodeInfo nodeId="2721881173282609775" fileName="NewSubTestModel_Action.java" startLine="122" startPosition="9" endLine="123" endPosition="97" />
+    <nodeInfo nodeId="2721881173282609963" fileName="NewSubTestModel_Action.java" startLine="131" startPosition="41" endLine="132" endPosition="48" />
+    <nodeInfo nodeId="2721881173282609970" fileName="NewSubTestModel_Action.java" startLine="132" startPosition="48" endLine="133" endPosition="68" />
+    <nodeInfo nodeId="4127104578871572764" fileName="NewSubTestModel_Action.java" startLine="133" startPosition="68" endLine="134" endPosition="27" />
+    <nodeInfo nodeId="4127104578871573216" fileName="NewSubTestModel_Action.java" startLine="134" startPosition="27" endLine="135" endPosition="107" />
+    <nodeInfo nodeId="4127104578871573348" fileName="NewSubTestModel_Action.java" startLine="135" startPosition="107" endLine="136" endPosition="70" />
+    <nodeInfo nodeId="4127104578871572725" fileName="NewSubTestModel_Action.java" startLine="138" startPosition="65" endLine="139" endPosition="17" />
+    <nodeInfo nodeId="4127104578871573496" fileName="NewSubTestModel_Action.java" startLine="145" startPosition="42" endLine="146" endPosition="25" />
+    <nodeInfo nodeId="4127104578871573621" fileName="NewSubTestModel_Action.java" startLine="149" startPosition="30" endLine="150" endPosition="42" />
+    <nodeInfo nodeId="2721881173282609987" fileName="NewSubTestModel_Action.java" startLine="151" startPosition="5" endLine="152" endPosition="30" />
     <nodeInfo nodeId="2721881173282609798" fileName="NewSubTestModel_Action.java" startLine="50" startPosition="52" endLine="53" endPosition="5" />
-    <nodeInfo nodeId="4127104578871437377" fileName="NewSubTestModel_Action.java" startLine="113" startPosition="74" endLine="116" endPosition="11" />
-    <nodeInfo nodeId="4127104578871437485" fileName="NewSubTestModel_Action.java" startLine="116" startPosition="11" endLine="119" endPosition="11" />
-    <nodeInfo nodeId="4127104578871437578" fileName="NewSubTestModel_Action.java" startLine="119" startPosition="11" endLine="122" endPosition="11" />
-    <nodeInfo nodeId="4127104578871572572" fileName="NewSubTestModel_Action.java" startLine="139" startPosition="46" endLine="142" endPosition="7" />
-    <nodeInfo nodeId="4127104578871572805" fileName="NewSubTestModel_Action.java" startLine="146" startPosition="9" endLine="149" endPosition="7" />
-    <nodeInfo nodeId="4127104578871573537" fileName="NewSubTestModel_Action.java" startLine="150" startPosition="5" endLine="153" endPosition="5" />
-    <nodeInfo nodeId="4127104578871572898" fileName="NewSubTestModel_Action.java" startLine="142" startPosition="7" endLine="146" endPosition="9" />
-    <nodeInfo nodeId="4127104578871572821" fileName="NewSubTestModel_Action.java" startLine="156" startPosition="0" endLine="160" endPosition="0" />
-    <nodeInfo nodeId="4127104578871572192" fileName="NewSubTestModel_Action.java" startLine="138" startPosition="70" endLine="150" endPosition="5" />
-    <nodeInfo nodeId="4127104578870619331" fileName="NewSubTestModel_Action.java" startLine="105" startPosition="69" endLine="124" endPosition="0" />
-    <nodeInfo nodeId="4127104578870619330" fileName="NewSubTestModel_Action.java" startLine="104" startPosition="87" endLine="124" endPosition="9" />
-    <nodeInfo nodeId="2721881173282609903" fileName="NewSubTestModel_Action.java" startLine="132" startPosition="0" endLine="156" endPosition="0" />
+    <nodeInfo nodeId="4127104578871437377" fileName="NewSubTestModel_Action.java" startLine="111" startPosition="74" endLine="114" endPosition="11" />
+    <nodeInfo nodeId="4127104578871437485" fileName="NewSubTestModel_Action.java" startLine="114" startPosition="11" endLine="117" endPosition="11" />
+    <nodeInfo nodeId="4127104578871437578" fileName="NewSubTestModel_Action.java" startLine="117" startPosition="11" endLine="120" endPosition="11" />
+    <nodeInfo nodeId="4127104578871572572" fileName="NewSubTestModel_Action.java" startLine="137" startPosition="46" endLine="140" endPosition="7" />
+    <nodeInfo nodeId="4127104578871572805" fileName="NewSubTestModel_Action.java" startLine="144" startPosition="9" endLine="147" endPosition="7" />
+    <nodeInfo nodeId="4127104578871573537" fileName="NewSubTestModel_Action.java" startLine="148" startPosition="5" endLine="151" endPosition="5" />
+    <nodeInfo nodeId="4127104578871572898" fileName="NewSubTestModel_Action.java" startLine="140" startPosition="7" endLine="144" endPosition="9" />
+    <nodeInfo nodeId="4127104578871572192" fileName="NewSubTestModel_Action.java" startLine="136" startPosition="70" endLine="148" endPosition="5" />
+    <nodeInfo nodeId="4127104578870619331" fileName="NewSubTestModel_Action.java" startLine="105" startPosition="69" endLine="122" endPosition="0" />
+    <nodeInfo nodeId="4127104578870619330" fileName="NewSubTestModel_Action.java" startLine="104" startPosition="87" endLine="122" endPosition="9" />
+    <nodeInfo nodeId="2721881173282609903" fileName="NewSubTestModel_Action.java" startLine="130" startPosition="0" endLine="154" endPosition="0" />
     <scopeInfo nodeId="2721881173282609799" fileName="NewSubTestModel_Action.java" startLine="51" startPosition="76" endLine="52" endPosition="19" />
-    <scopeInfo nodeId="4127104578871437378" fileName="NewSubTestModel_Action.java" startLine="114" startPosition="86" endLine="115" endPosition="77" />
-    <scopeInfo nodeId="4127104578871437486" fileName="NewSubTestModel_Action.java" startLine="117" startPosition="97" endLine="118" endPosition="55" />
-    <scopeInfo nodeId="4127104578871437579" fileName="NewSubTestModel_Action.java" startLine="120" startPosition="70" endLine="121" endPosition="43" />
-    <scopeInfo nodeId="4127104578871572573" fileName="NewSubTestModel_Action.java" startLine="140" startPosition="65" endLine="141" endPosition="17" />
-    <scopeInfo nodeId="4127104578871572806" fileName="NewSubTestModel_Action.java" startLine="147" startPosition="42" endLine="148" endPosition="25" />
-    <scopeInfo nodeId="4127104578871573538" fileName="NewSubTestModel_Action.java" startLine="151" startPosition="30" endLine="152" endPosition="42" />
-    <scopeInfo nodeId="4127104578871572823" fileName="NewSubTestModel_Action.java" startLine="157" startPosition="37" endLine="158" endPosition="78" />
-    <scopeInfo nodeId="4127104578871437377" fileName="NewSubTestModel_Action.java" startLine="113" startPosition="74" endLine="116" endPosition="11">
+    <scopeInfo nodeId="4127104578871437378" fileName="NewSubTestModel_Action.java" startLine="112" startPosition="86" endLine="113" endPosition="77" />
+    <scopeInfo nodeId="4127104578871437486" fileName="NewSubTestModel_Action.java" startLine="115" startPosition="97" endLine="116" endPosition="55" />
+    <scopeInfo nodeId="4127104578871437579" fileName="NewSubTestModel_Action.java" startLine="118" startPosition="70" endLine="119" endPosition="43" />
+    <scopeInfo nodeId="4127104578871572573" fileName="NewSubTestModel_Action.java" startLine="138" startPosition="65" endLine="139" endPosition="17" />
+    <scopeInfo nodeId="4127104578871572806" fileName="NewSubTestModel_Action.java" startLine="145" startPosition="42" endLine="146" endPosition="25" />
+    <scopeInfo nodeId="4127104578871573538" fileName="NewSubTestModel_Action.java" startLine="149" startPosition="30" endLine="150" endPosition="42" />
+    <scopeInfo nodeId="4127104578871437377" fileName="NewSubTestModel_Action.java" startLine="111" startPosition="74" endLine="114" endPosition="11">
       <varInfo nodeId="4127104578871437381" varName="importElement" />
     </scopeInfo>
-    <scopeInfo nodeId="4127104578871437485" fileName="NewSubTestModel_Action.java" startLine="116" startPosition="11" endLine="119" endPosition="11">
+    <scopeInfo nodeId="4127104578871437485" fileName="NewSubTestModel_Action.java" startLine="114" startPosition="11" endLine="117" endPosition="11">
       <varInfo nodeId="4127104578871437489" varName="importedLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="4127104578871437578" fileName="NewSubTestModel_Action.java" startLine="119" startPosition="11" endLine="122" endPosition="11">
+    <scopeInfo nodeId="4127104578871437578" fileName="NewSubTestModel_Action.java" startLine="117" startPosition="11" endLine="120" endPosition="11">
       <varInfo nodeId="4127104578871437582" varName="devKit" />
     </scopeInfo>
     <scopeInfo nodeId="2721881173282450319" fileName="NewSubTestModel_Action.java" startLine="50" startPosition="52" endLine="54" endPosition="91" />
-    <scopeInfo nodeId="4127104578871572821" fileName="NewSubTestModel_Action.java" startLine="156" startPosition="0" endLine="160" endPosition="0" />
-    <scopeInfo nodeId="4127104578871572193" fileName="NewSubTestModel_Action.java" startLine="139" startPosition="46" endLine="149" endPosition="7">
+    <scopeInfo nodeId="4127104578871572193" fileName="NewSubTestModel_Action.java" startLine="137" startPosition="46" endLine="147" endPosition="7">
       <varInfo nodeId="4127104578871572899" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="4127104578871572192" fileName="NewSubTestModel_Action.java" startLine="138" startPosition="70" endLine="150" endPosition="5">
+    <scopeInfo nodeId="4127104578871572192" fileName="NewSubTestModel_Action.java" startLine="136" startPosition="70" endLine="148" endPosition="5">
       <varInfo nodeId="4127104578871572196" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="4127104578870619332" fileName="NewSubTestModel_Action.java" startLine="106" startPosition="27" endLine="122" endPosition="11">
+    <scopeInfo nodeId="4127104578870619332" fileName="NewSubTestModel_Action.java" startLine="106" startPosition="27" endLine="120" endPosition="11">
       <varInfo nodeId="2721881173282610342" varName="newModelFqName" />
       <varInfo nodeId="4127104578871437406" varName="sourceModel" />
       <varInfo nodeId="4127104578871437355" varName="createdModel" />
-      <varInfo nodeId="2721881173282610624" varName="name" />
-      <varInfo nodeId="2721881173282610606" varName="namespace" />
     </scopeInfo>
-    <scopeInfo nodeId="4127104578870619331" fileName="NewSubTestModel_Action.java" startLine="105" startPosition="69" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="2721881173282609905" fileName="NewSubTestModel_Action.java" startLine="133" startPosition="41" endLine="154" endPosition="30">
+    <scopeInfo nodeId="4127104578870619331" fileName="NewSubTestModel_Action.java" startLine="105" startPosition="69" endLine="122" endPosition="0" />
+    <scopeInfo nodeId="2721881173282609905" fileName="NewSubTestModel_Action.java" startLine="131" startPosition="41" endLine="152" endPosition="30">
       <varInfo nodeId="4127104578871573217" varName="models" />
       <varInfo nodeId="4127104578871573349" varName="sortedModels" />
       <varInfo nodeId="2721881173282609964" varName="builder" />
       <varInfo nodeId="4127104578871572765" varName="testModelCount" />
     </scopeInfo>
-    <scopeInfo nodeId="2721881173282609903" fileName="NewSubTestModel_Action.java" startLine="132" startPosition="0" endLine="156" endPosition="0" />
-    <unitInfo nodeId="4127104578870619331" fileName="NewSubTestModel_Action.java" startLine="105" startPosition="57" endLine="124" endPosition="7" unitName="jetbrains.mps.ide.actions.NewSubTestModel_Action$1" />
+    <scopeInfo nodeId="2721881173282609903" fileName="NewSubTestModel_Action.java" startLine="130" startPosition="0" endLine="154" endPosition="0" />
+    <unitInfo nodeId="4127104578870619331" fileName="NewSubTestModel_Action.java" startLine="105" startPosition="57" endLine="122" endPosition="7" unitName="jetbrains.mps.ide.actions.NewSubTestModel_Action$1" />
   </root>
   <root nodeId="2834677590307284262">
     <nodeInfo nodeId="2834677590307738360" fileName="FavoritesPopup_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="100" />

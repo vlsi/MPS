@@ -104,9 +104,7 @@ public class NewSubTestModel_Action extends GeneratedAction {
       final Wrappers._T<SModelDescriptor> result = new Wrappers._T<SModelDescriptor>();
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          String namespace = NewSubTestModel_Action.this.getNamespace();
-          String name = NewSubTestModel_Action.this.getTestModelName();
-          SModelFqName newModelFqName = new SModelFqName(namespace, name, SModelStereotype.TESTS);
+          SModelFqName newModelFqName = new SModelFqName(NewSubTestModel_Action.this.getTestModelName(), SModelStereotype.TESTS);
           result.value = NewSubTestModel_Action.this.model.getModule().createModel(newModelFqName, ModelRootUtil.getSModelRoot(NewSubTestModel_Action.this.model));
           SModel createdModel = result.value.getSModel();
           SModel sourceModel = NewSubTestModel_Action.this.model.getSModel();
@@ -132,7 +130,7 @@ public class NewSubTestModel_Action extends GeneratedAction {
 
   /*package*/ String getTestModelName() {
     StringBuilder builder = new StringBuilder();
-    builder.append(NewSubTestModel_Action.this.model.getName());
+    builder.append(NewSubTestModel_Action.this.model.getLongName());
     int testModelCount = 0;
     List<SModelDescriptor> models = NewSubTestModel_Action.this.model.getModule().getOwnModelDescriptors();
     List<SModelDescriptor> sortedModels = SortUtil.sortModels(models);
@@ -152,9 +150,5 @@ public class NewSubTestModel_Action extends GeneratedAction {
       builder.append(testModelCount + "");
     }
     return builder.toString();
-  }
-
-  /*package*/ String getNamespace() {
-    return NewSubTestModel_Action.this.model.getSModelFqName().getNamespace();
   }
 }

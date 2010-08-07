@@ -288,39 +288,40 @@
     <nodeInfo nodeId="3201642974933585940" fileName="TestConfigurationDialog.java" startLine="315" startPosition="41" endLine="316" endPosition="22" />
     <nodeInfo nodeId="3201642974933585943" fileName="TestConfigurationDialog.java" startLine="317" startPosition="11" endLine="318" endPosition="75" />
     <nodeInfo nodeId="3201642974933585949" fileName="TestConfigurationDialog.java" startLine="318" startPosition="75" endLine="319" endPosition="33" />
-    <nodeInfo nodeId="3201642974933585964" fileName="TestConfigurationDialog.java" startLine="320" startPosition="49" endLine="321" endPosition="66" />
-    <nodeInfo nodeId="3201642974933585973" fileName="TestConfigurationDialog.java" startLine="322" startPosition="11" endLine="323" endPosition="44" />
-    <nodeInfo nodeId="3201642974933585991" fileName="TestConfigurationDialog.java" startLine="329" startPosition="61" endLine="330" endPosition="56" />
-    <nodeInfo nodeId="3201642974933585997" fileName="TestConfigurationDialog.java" startLine="330" startPosition="56" endLine="331" endPosition="35" />
-    <nodeInfo nodeId="3201642974933585672" fileName="TestConfigurationDialog.java" startLine="334" startPosition="8" endLine="335" endPosition="85" />
-    <nodeInfo nodeId="3201642974933585682" fileName="TestConfigurationDialog.java" startLine="335" startPosition="85" endLine="336" endPosition="13" />
-    <nodeInfo nodeId="3201642974933585687" fileName="TestConfigurationDialog.java" startLine="339" startPosition="58" endLine="340" endPosition="71" />
-    <nodeInfo nodeId="3201642974933585692" fileName="TestConfigurationDialog.java" startLine="340" startPosition="71" endLine="341" endPosition="114" />
-    <nodeInfo nodeId="3201642974933585701" fileName="TestConfigurationDialog.java" startLine="341" startPosition="114" endLine="342" endPosition="36" />
-    <nodeInfo nodeId="3201642974933585706" fileName="TestConfigurationDialog.java" startLine="345" startPosition="51" endLine="346" endPosition="72" />
-    <nodeInfo nodeId="3201642974933585720" fileName="TestConfigurationDialog.java" startLine="349" startPosition="25" endLine="350" endPosition="64" />
-    <nodeInfo nodeId="3201642974933585727" fileName="TestConfigurationDialog.java" startLine="350" startPosition="64" endLine="351" endPosition="161" />
-    <nodeInfo nodeId="3201642974933585746" fileName="TestConfigurationDialog.java" startLine="352" startPosition="38" endLine="353" endPosition="17" />
-    <nodeInfo nodeId="3201642974933585751" fileName="TestConfigurationDialog.java" startLine="357" startPosition="63" endLine="358" endPosition="43" />
-    <nodeInfo nodeId="3201642974933585757" fileName="TestConfigurationDialog.java" startLine="358" startPosition="43" endLine="359" endPosition="57" />
-    <nodeInfo nodeId="3201642974933585762" fileName="TestConfigurationDialog.java" startLine="359" startPosition="57" endLine="360" endPosition="61" />
-    <nodeInfo nodeId="3201642974933585767" fileName="TestConfigurationDialog.java" startLine="360" startPosition="61" endLine="361" endPosition="20" />
-    <nodeInfo nodeId="3201642974933585770" fileName="TestConfigurationDialog.java" startLine="364" startPosition="51" endLine="365" endPosition="23" />
-    <nodeInfo nodeId="3201642974933585776" fileName="TestConfigurationDialog.java" startLine="365" startPosition="23" endLine="366" endPosition="39" />
-    <nodeInfo nodeId="3201642974933585786" fileName="TestConfigurationDialog.java" startLine="369" startPosition="43" endLine="370" endPosition="51" />
-    <nodeInfo nodeId="3201642974933585793" fileName="TestConfigurationDialog.java" startLine="374" startPosition="45" endLine="375" endPosition="32" />
-    <nodeInfo nodeId="3201642974933585796" fileName="TestConfigurationDialog.java" startLine="375" startPosition="32" endLine="376" endPosition="41" />
-    <nodeInfo nodeId="3201642974933585805" fileName="TestConfigurationDialog.java" startLine="379" startPosition="46" endLine="380" endPosition="22" />
-    <nodeInfo nodeId="3201642974933584701" fileName="TestConfigurationDialog.java" startLine="384" startPosition="42" endLine="385" endPosition="30" />
-    <nodeInfo nodeId="3201642974933586006" fileName="TestConfigurationDialog.java" startLine="387" startPosition="24" endLine="388" endPosition="32" />
-    <nodeInfo nodeId="3201642974933586009" fileName="TestConfigurationDialog.java" startLine="388" startPosition="32" endLine="389" endPosition="50" />
-    <nodeInfo nodeId="3201642974933586017" fileName="TestConfigurationDialog.java" startLine="389" startPosition="50" endLine="390" endPosition="32" />
-    <nodeInfo nodeId="3201642974933586024" fileName="TestConfigurationDialog.java" startLine="390" startPosition="32" endLine="391" endPosition="39" />
-    <nodeInfo nodeId="3201642974933586033" fileName="TestConfigurationDialog.java" startLine="394" startPosition="38" endLine="395" endPosition="50" />
-    <nodeInfo nodeId="3201642974933586044" fileName="TestConfigurationDialog.java" startLine="398" startPosition="35" endLine="399" endPosition="30" />
-    <nodeInfo nodeId="3201642974933586051" fileName="TestConfigurationDialog.java" startLine="402" startPosition="44" endLine="403" endPosition="27" />
-    <nodeInfo nodeId="3201642974933586058" fileName="TestConfigurationDialog.java" startLine="403" startPosition="27" endLine="404" endPosition="52" />
-    <nodeInfo nodeId="3201642974933586064" fileName="TestConfigurationDialog.java" startLine="407" startPosition="52" endLine="408" endPosition="39" />
+    <nodeInfo nodeId="1417797419759351614" fileName="TestConfigurationDialog.java" startLine="320" startPosition="49" endLine="321" endPosition="89" />
+    <nodeInfo nodeId="3201642974933585964" fileName="TestConfigurationDialog.java" startLine="321" startPosition="89" endLine="322" endPosition="44" />
+    <nodeInfo nodeId="3201642974933585973" fileName="TestConfigurationDialog.java" startLine="323" startPosition="11" endLine="324" endPosition="44" />
+    <nodeInfo nodeId="3201642974933585991" fileName="TestConfigurationDialog.java" startLine="330" startPosition="61" endLine="331" endPosition="56" />
+    <nodeInfo nodeId="3201642974933585997" fileName="TestConfigurationDialog.java" startLine="331" startPosition="56" endLine="332" endPosition="35" />
+    <nodeInfo nodeId="3201642974933585672" fileName="TestConfigurationDialog.java" startLine="335" startPosition="8" endLine="336" endPosition="85" />
+    <nodeInfo nodeId="3201642974933585682" fileName="TestConfigurationDialog.java" startLine="336" startPosition="85" endLine="337" endPosition="13" />
+    <nodeInfo nodeId="3201642974933585687" fileName="TestConfigurationDialog.java" startLine="340" startPosition="58" endLine="341" endPosition="71" />
+    <nodeInfo nodeId="3201642974933585692" fileName="TestConfigurationDialog.java" startLine="341" startPosition="71" endLine="342" endPosition="114" />
+    <nodeInfo nodeId="3201642974933585701" fileName="TestConfigurationDialog.java" startLine="342" startPosition="114" endLine="343" endPosition="36" />
+    <nodeInfo nodeId="3201642974933585706" fileName="TestConfigurationDialog.java" startLine="346" startPosition="51" endLine="347" endPosition="72" />
+    <nodeInfo nodeId="3201642974933585720" fileName="TestConfigurationDialog.java" startLine="350" startPosition="25" endLine="351" endPosition="64" />
+    <nodeInfo nodeId="3201642974933585727" fileName="TestConfigurationDialog.java" startLine="351" startPosition="64" endLine="352" endPosition="161" />
+    <nodeInfo nodeId="3201642974933585746" fileName="TestConfigurationDialog.java" startLine="353" startPosition="38" endLine="354" endPosition="17" />
+    <nodeInfo nodeId="3201642974933585751" fileName="TestConfigurationDialog.java" startLine="358" startPosition="63" endLine="359" endPosition="43" />
+    <nodeInfo nodeId="3201642974933585757" fileName="TestConfigurationDialog.java" startLine="359" startPosition="43" endLine="360" endPosition="57" />
+    <nodeInfo nodeId="3201642974933585762" fileName="TestConfigurationDialog.java" startLine="360" startPosition="57" endLine="361" endPosition="61" />
+    <nodeInfo nodeId="3201642974933585767" fileName="TestConfigurationDialog.java" startLine="361" startPosition="61" endLine="362" endPosition="20" />
+    <nodeInfo nodeId="3201642974933585770" fileName="TestConfigurationDialog.java" startLine="365" startPosition="51" endLine="366" endPosition="23" />
+    <nodeInfo nodeId="3201642974933585776" fileName="TestConfigurationDialog.java" startLine="366" startPosition="23" endLine="367" endPosition="39" />
+    <nodeInfo nodeId="3201642974933585786" fileName="TestConfigurationDialog.java" startLine="370" startPosition="43" endLine="371" endPosition="51" />
+    <nodeInfo nodeId="3201642974933585793" fileName="TestConfigurationDialog.java" startLine="375" startPosition="45" endLine="376" endPosition="32" />
+    <nodeInfo nodeId="3201642974933585796" fileName="TestConfigurationDialog.java" startLine="376" startPosition="32" endLine="377" endPosition="41" />
+    <nodeInfo nodeId="3201642974933585805" fileName="TestConfigurationDialog.java" startLine="380" startPosition="46" endLine="381" endPosition="22" />
+    <nodeInfo nodeId="3201642974933584701" fileName="TestConfigurationDialog.java" startLine="385" startPosition="42" endLine="386" endPosition="30" />
+    <nodeInfo nodeId="3201642974933586006" fileName="TestConfigurationDialog.java" startLine="388" startPosition="24" endLine="389" endPosition="32" />
+    <nodeInfo nodeId="3201642974933586009" fileName="TestConfigurationDialog.java" startLine="389" startPosition="32" endLine="390" endPosition="50" />
+    <nodeInfo nodeId="3201642974933586017" fileName="TestConfigurationDialog.java" startLine="390" startPosition="50" endLine="391" endPosition="32" />
+    <nodeInfo nodeId="3201642974933586024" fileName="TestConfigurationDialog.java" startLine="391" startPosition="32" endLine="392" endPosition="39" />
+    <nodeInfo nodeId="3201642974933586033" fileName="TestConfigurationDialog.java" startLine="395" startPosition="38" endLine="396" endPosition="50" />
+    <nodeInfo nodeId="3201642974933586044" fileName="TestConfigurationDialog.java" startLine="399" startPosition="35" endLine="400" endPosition="30" />
+    <nodeInfo nodeId="3201642974933586051" fileName="TestConfigurationDialog.java" startLine="403" startPosition="44" endLine="404" endPosition="27" />
+    <nodeInfo nodeId="3201642974933586058" fileName="TestConfigurationDialog.java" startLine="404" startPosition="27" endLine="405" endPosition="52" />
+    <nodeInfo nodeId="3201642974933586064" fileName="TestConfigurationDialog.java" startLine="408" startPosition="52" endLine="409" endPosition="39" />
     <nodeInfo nodeId="3201642974933585096" fileName="TestConfigurationDialog.java" startLine="131" startPosition="12" endLine="133" endPosition="7" />
     <nodeInfo nodeId="3201642974933585066" fileName="TestConfigurationDialog.java" startLine="134" startPosition="10" endLine="136" endPosition="5" />
     <nodeInfo nodeId="3201642974933585316" fileName="TestConfigurationDialog.java" startLine="196" startPosition="10" endLine="198" endPosition="5" />
@@ -333,26 +334,26 @@
     <nodeInfo nodeId="3201642974933585822" fileName="TestConfigurationDialog.java" startLine="278" startPosition="49" endLine="281" endPosition="11" />
     <nodeInfo nodeId="3201642974933585840" fileName="TestConfigurationDialog.java" startLine="282" startPosition="114" endLine="285" endPosition="11" />
     <nodeInfo nodeId="3201642974933585935" fileName="TestConfigurationDialog.java" startLine="314" startPosition="164" endLine="317" endPosition="11" />
-    <nodeInfo nodeId="3201642974933585956" fileName="TestConfigurationDialog.java" startLine="319" startPosition="33" endLine="322" endPosition="11" />
-    <nodeInfo nodeId="3201642974933585741" fileName="TestConfigurationDialog.java" startLine="351" startPosition="161" endLine="354" endPosition="7" />
+    <nodeInfo nodeId="3201642974933585741" fileName="TestConfigurationDialog.java" startLine="352" startPosition="161" endLine="355" endPosition="7" />
     <nodeInfo nodeId="3201642974933584802" fileName="TestConfigurationDialog.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
     <nodeInfo nodeId="3201642974933585278" fileName="TestConfigurationDialog.java" startLine="176" startPosition="0" endLine="180" endPosition="0" />
     <nodeInfo nodeId="3201642974933585290" fileName="TestConfigurationDialog.java" startLine="182" startPosition="26" endLine="186" endPosition="5" />
     <nodeInfo nodeId="3201642974933585527" fileName="TestConfigurationDialog.java" startLine="230" startPosition="104" endLine="234" endPosition="0" />
     <nodeInfo nodeId="3201642974933584634" fileName="TestConfigurationDialog.java" startLine="251" startPosition="0" endLine="255" endPosition="0" />
     <nodeInfo nodeId="3201642974933585871" fileName="TestConfigurationDialog.java" startLine="289" startPosition="113" endLine="293" endPosition="17" />
-    <nodeInfo nodeId="3201642974933585982" fileName="TestConfigurationDialog.java" startLine="328" startPosition="50" endLine="332" endPosition="11" />
-    <nodeInfo nodeId="3201642974933584668" fileName="TestConfigurationDialog.java" startLine="344" startPosition="0" endLine="348" endPosition="0" />
-    <nodeInfo nodeId="3201642974933584686" fileName="TestConfigurationDialog.java" startLine="368" startPosition="0" endLine="372" endPosition="0" />
-    <nodeInfo nodeId="3201642974933584694" fileName="TestConfigurationDialog.java" startLine="378" startPosition="0" endLine="382" endPosition="0" />
-    <nodeInfo nodeId="3201642974933584706" fileName="TestConfigurationDialog.java" startLine="393" startPosition="0" endLine="397" endPosition="0" />
-    <nodeInfo nodeId="3201642974933584709" fileName="TestConfigurationDialog.java" startLine="397" startPosition="0" endLine="401" endPosition="0" />
-    <nodeInfo nodeId="3201642974933584717" fileName="TestConfigurationDialog.java" startLine="406" startPosition="0" endLine="410" endPosition="0" />
+    <nodeInfo nodeId="3201642974933585956" fileName="TestConfigurationDialog.java" startLine="319" startPosition="33" endLine="323" endPosition="11" />
+    <nodeInfo nodeId="3201642974933585982" fileName="TestConfigurationDialog.java" startLine="329" startPosition="50" endLine="333" endPosition="11" />
+    <nodeInfo nodeId="3201642974933584668" fileName="TestConfigurationDialog.java" startLine="345" startPosition="0" endLine="349" endPosition="0" />
+    <nodeInfo nodeId="3201642974933584686" fileName="TestConfigurationDialog.java" startLine="369" startPosition="0" endLine="373" endPosition="0" />
+    <nodeInfo nodeId="3201642974933584694" fileName="TestConfigurationDialog.java" startLine="379" startPosition="0" endLine="383" endPosition="0" />
+    <nodeInfo nodeId="3201642974933584706" fileName="TestConfigurationDialog.java" startLine="394" startPosition="0" endLine="398" endPosition="0" />
+    <nodeInfo nodeId="3201642974933584709" fileName="TestConfigurationDialog.java" startLine="398" startPosition="0" endLine="402" endPosition="0" />
+    <nodeInfo nodeId="3201642974933584717" fileName="TestConfigurationDialog.java" startLine="407" startPosition="0" endLine="411" endPosition="0" />
     <nodeInfo nodeId="3201642974933584810" fileName="TestConfigurationDialog.java" startLine="94" startPosition="0" endLine="99" endPosition="0" />
     <nodeInfo nodeId="3201642974933585515" fileName="TestConfigurationDialog.java" startLine="229" startPosition="52" endLine="234" endPosition="13" />
     <nodeInfo nodeId="3201642974933585886" fileName="TestConfigurationDialog.java" startLine="297" startPosition="20" endLine="302" endPosition="15" />
-    <nodeInfo nodeId="3201642974933584681" fileName="TestConfigurationDialog.java" startLine="363" startPosition="0" endLine="368" endPosition="0" />
-    <nodeInfo nodeId="3201642974933584712" fileName="TestConfigurationDialog.java" startLine="401" startPosition="0" endLine="406" endPosition="0" />
+    <nodeInfo nodeId="3201642974933584681" fileName="TestConfigurationDialog.java" startLine="364" startPosition="0" endLine="369" endPosition="0" />
+    <nodeInfo nodeId="3201642974933584712" fileName="TestConfigurationDialog.java" startLine="402" startPosition="0" endLine="407" endPosition="0" />
     <nodeInfo nodeId="3201642974933584769" fileName="TestConfigurationDialog.java" startLine="83" startPosition="0" endLine="89" endPosition="3" />
     <nodeInfo nodeId="3201642974933585090" fileName="TestConfigurationDialog.java" startLine="127" startPosition="12" endLine="133" endPosition="7" />
     <nodeInfo nodeId="3201642974933585147" fileName="TestConfigurationDialog.java" startLine="138" startPosition="0" endLine="144" endPosition="0" />
@@ -362,24 +363,24 @@
     <nodeInfo nodeId="3201642974933584613" fileName="TestConfigurationDialog.java" startLine="210" startPosition="0" endLine="216" endPosition="0" />
     <nodeInfo nodeId="3201642974933584639" fileName="TestConfigurationDialog.java" startLine="255" startPosition="0" endLine="261" endPosition="0" />
     <nodeInfo nodeId="3201642974933585862" fileName="TestConfigurationDialog.java" startLine="288" startPosition="40" endLine="294" endPosition="15" />
-    <nodeInfo nodeId="3201642974933584662" fileName="TestConfigurationDialog.java" startLine="338" startPosition="0" endLine="344" endPosition="0" />
-    <nodeInfo nodeId="3201642974933584689" fileName="TestConfigurationDialog.java" startLine="372" startPosition="0" endLine="378" endPosition="0" />
-    <nodeInfo nodeId="3201642974933584704" fileName="TestConfigurationDialog.java" startLine="386" startPosition="0" endLine="392" endPosition="5" />
+    <nodeInfo nodeId="3201642974933584662" fileName="TestConfigurationDialog.java" startLine="339" startPosition="0" endLine="345" endPosition="0" />
+    <nodeInfo nodeId="3201642974933584689" fileName="TestConfigurationDialog.java" startLine="373" startPosition="0" endLine="379" endPosition="0" />
+    <nodeInfo nodeId="3201642974933584704" fileName="TestConfigurationDialog.java" startLine="387" startPosition="0" endLine="393" endPosition="5" />
     <nodeInfo nodeId="3201642974933585170" fileName="TestConfigurationDialog.java" startLine="145" startPosition="37" endLine="152" endPosition="7" />
     <nodeInfo nodeId="3201642974933585186" fileName="TestConfigurationDialog.java" startLine="152" startPosition="7" endLine="159" endPosition="7" />
     <nodeInfo nodeId="3201642974933585310" fileName="TestConfigurationDialog.java" startLine="191" startPosition="10" endLine="198" endPosition="5" />
-    <nodeInfo nodeId="3201642974933584676" fileName="TestConfigurationDialog.java" startLine="356" startPosition="0" endLine="363" endPosition="0" />
+    <nodeInfo nodeId="3201642974933584676" fileName="TestConfigurationDialog.java" startLine="357" startPosition="0" endLine="364" endPosition="0" />
     <nodeInfo nodeId="3201642974933585884" fileName="TestConfigurationDialog.java" startLine="294" startPosition="15" endLine="302" endPosition="15" />
-    <nodeInfo nodeId="3201642974933585664" fileName="TestConfigurationDialog.java" startLine="326" startPosition="74" endLine="334" endPosition="0" />
-    <nodeInfo nodeId="3201642974933584673" fileName="TestConfigurationDialog.java" startLine="348" startPosition="0" endLine="356" endPosition="0" />
-    <nodeInfo nodeId="3201642974933585658" fileName="TestConfigurationDialog.java" startLine="325" startPosition="8" endLine="334" endPosition="8" />
+    <nodeInfo nodeId="3201642974933585664" fileName="TestConfigurationDialog.java" startLine="327" startPosition="74" endLine="335" endPosition="0" />
+    <nodeInfo nodeId="3201642974933584673" fileName="TestConfigurationDialog.java" startLine="349" startPosition="0" endLine="357" endPosition="0" />
+    <nodeInfo nodeId="3201642974933585658" fileName="TestConfigurationDialog.java" startLine="326" startPosition="8" endLine="335" endPosition="8" />
     <nodeInfo nodeId="3201642974933585084" fileName="TestConfigurationDialog.java" startLine="123" startPosition="33" endLine="133" endPosition="7" />
     <nodeInfo nodeId="3201642974933585231" fileName="TestConfigurationDialog.java" startLine="166" startPosition="0" endLine="176" endPosition="0" />
     <nodeInfo nodeId="3201642974933585304" fileName="TestConfigurationDialog.java" startLine="186" startPosition="5" endLine="198" endPosition="5" />
     <nodeInfo nodeId="3201642974933585060" fileName="TestConfigurationDialog.java" startLine="121" startPosition="29" endLine="136" endPosition="5" />
-    <nodeInfo nodeId="3201642974933585650" fileName="TestConfigurationDialog.java" startLine="310" startPosition="65" endLine="325" endPosition="0" />
-    <nodeInfo nodeId="3201642974933585644" fileName="TestConfigurationDialog.java" startLine="309" startPosition="41" endLine="325" endPosition="8" />
+    <nodeInfo nodeId="3201642974933585650" fileName="TestConfigurationDialog.java" startLine="310" startPosition="65" endLine="326" endPosition="0" />
     <nodeInfo nodeId="3201642974933585450" fileName="TestConfigurationDialog.java" startLine="228" startPosition="65" endLine="245" endPosition="0" />
+    <nodeInfo nodeId="3201642974933585644" fileName="TestConfigurationDialog.java" startLine="309" startPosition="41" endLine="326" endPosition="8" />
     <nodeInfo nodeId="3201642974933585442" fileName="TestConfigurationDialog.java" startLine="227" startPosition="37" endLine="245" endPosition="9" />
     <nodeInfo nodeId="3201642974933585852" fileName="TestConfigurationDialog.java" startLine="286" startPosition="63" endLine="304" endPosition="0" />
     <nodeInfo nodeId="3201642974933585845" fileName="TestConfigurationDialog.java" startLine="285" startPosition="11" endLine="304" endPosition="13" />
@@ -389,7 +390,7 @@
     <nodeInfo nodeId="3201642974933585617" fileName="TestConfigurationDialog.java" startLine="274" startPosition="66" endLine="307" endPosition="0" />
     <nodeInfo nodeId="3201642974933585608" fileName="TestConfigurationDialog.java" startLine="273" startPosition="33" endLine="307" endPosition="9" />
     <nodeInfo nodeId="3201642974933584822" fileName="TestConfigurationDialog.java" startLine="99" startPosition="0" endLine="138" endPosition="0" />
-    <nodeInfo nodeId="3201642974933584658" fileName="TestConfigurationDialog.java" startLine="269" startPosition="0" endLine="337" endPosition="5" />
+    <nodeInfo nodeId="3201642974933584658" fileName="TestConfigurationDialog.java" startLine="269" startPosition="0" endLine="338" endPosition="5" />
     <scopeInfo nodeId="3201642974933585407" fileName="TestConfigurationDialog.java" startLine="208" startPosition="25" endLine="208" endPosition="25" />
     <scopeInfo nodeId="3201642974933584805" fileName="TestConfigurationDialog.java" startLine="91" startPosition="43" endLine="92" endPosition="27" />
     <scopeInfo nodeId="3201642974933584813" fileName="TestConfigurationDialog.java" startLine="96" startPosition="82" endLine="97" endPosition="77" />
@@ -408,14 +409,13 @@
     <scopeInfo nodeId="3201642974933585900" fileName="TestConfigurationDialog.java" startLine="298" startPosition="85" endLine="299" endPosition="58" />
     <scopeInfo nodeId="3201642974933585894" fileName="TestConfigurationDialog.java" startLine="300" startPosition="22" endLine="301" endPosition="45" />
     <scopeInfo nodeId="3201642974933585939" fileName="TestConfigurationDialog.java" startLine="315" startPosition="41" endLine="316" endPosition="22" />
-    <scopeInfo nodeId="3201642974933585963" fileName="TestConfigurationDialog.java" startLine="320" startPosition="49" endLine="321" endPosition="66" />
-    <scopeInfo nodeId="3201642974933585705" fileName="TestConfigurationDialog.java" startLine="345" startPosition="51" endLine="346" endPosition="72" />
-    <scopeInfo nodeId="3201642974933585745" fileName="TestConfigurationDialog.java" startLine="352" startPosition="38" endLine="353" endPosition="17" />
-    <scopeInfo nodeId="3201642974933585785" fileName="TestConfigurationDialog.java" startLine="369" startPosition="43" endLine="370" endPosition="51" />
-    <scopeInfo nodeId="3201642974933585804" fileName="TestConfigurationDialog.java" startLine="379" startPosition="46" endLine="380" endPosition="22" />
-    <scopeInfo nodeId="3201642974933586032" fileName="TestConfigurationDialog.java" startLine="394" startPosition="38" endLine="395" endPosition="50" />
-    <scopeInfo nodeId="3201642974933586043" fileName="TestConfigurationDialog.java" startLine="398" startPosition="35" endLine="399" endPosition="30" />
-    <scopeInfo nodeId="3201642974933586063" fileName="TestConfigurationDialog.java" startLine="407" startPosition="52" endLine="408" endPosition="39" />
+    <scopeInfo nodeId="3201642974933585705" fileName="TestConfigurationDialog.java" startLine="346" startPosition="51" endLine="347" endPosition="72" />
+    <scopeInfo nodeId="3201642974933585745" fileName="TestConfigurationDialog.java" startLine="353" startPosition="38" endLine="354" endPosition="17" />
+    <scopeInfo nodeId="3201642974933585785" fileName="TestConfigurationDialog.java" startLine="370" startPosition="43" endLine="371" endPosition="51" />
+    <scopeInfo nodeId="3201642974933585804" fileName="TestConfigurationDialog.java" startLine="380" startPosition="46" endLine="381" endPosition="22" />
+    <scopeInfo nodeId="3201642974933586032" fileName="TestConfigurationDialog.java" startLine="395" startPosition="38" endLine="396" endPosition="50" />
+    <scopeInfo nodeId="3201642974933586043" fileName="TestConfigurationDialog.java" startLine="399" startPosition="35" endLine="400" endPosition="30" />
+    <scopeInfo nodeId="3201642974933586063" fileName="TestConfigurationDialog.java" startLine="408" startPosition="52" endLine="409" endPosition="39" />
     <scopeInfo nodeId="3201642974933585129" fileName="TestConfigurationDialog.java" startLine="124" startPosition="56" endLine="126" endPosition="32" />
     <scopeInfo nodeId="3201642974933585111" fileName="TestConfigurationDialog.java" startLine="128" startPosition="56" endLine="130" endPosition="32" />
     <scopeInfo nodeId="3201642974933585297" fileName="TestConfigurationDialog.java" startLine="183" startPosition="43" endLine="185" endPosition="13" />
@@ -423,12 +423,15 @@
     <scopeInfo nodeId="3201642974933584611" fileName="TestConfigurationDialog.java" startLine="207" startPosition="51" endLine="209" endPosition="5" />
     <scopeInfo nodeId="3201642974933584618" fileName="TestConfigurationDialog.java" startLine="216" startPosition="0" endLine="218" endPosition="0" />
     <scopeInfo nodeId="3201642974933585878" fileName="TestConfigurationDialog.java" startLine="290" startPosition="70" endLine="292" endPosition="24" />
-    <scopeInfo nodeId="3201642974933585990" fileName="TestConfigurationDialog.java" startLine="329" startPosition="61" endLine="331" endPosition="35">
+    <scopeInfo nodeId="3201642974933585963" fileName="TestConfigurationDialog.java" startLine="320" startPosition="49" endLine="322" endPosition="44">
+      <varInfo nodeId="1417797419759351615" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="3201642974933585990" fileName="TestConfigurationDialog.java" startLine="330" startPosition="61" endLine="332" endPosition="35">
       <varInfo nodeId="3201642974933585992" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933585769" fileName="TestConfigurationDialog.java" startLine="364" startPosition="51" endLine="366" endPosition="39" />
-    <scopeInfo nodeId="3201642974933585792" fileName="TestConfigurationDialog.java" startLine="374" startPosition="45" endLine="376" endPosition="41" />
-    <scopeInfo nodeId="3201642974933586050" fileName="TestConfigurationDialog.java" startLine="402" startPosition="44" endLine="404" endPosition="52" />
+    <scopeInfo nodeId="3201642974933585769" fileName="TestConfigurationDialog.java" startLine="365" startPosition="51" endLine="367" endPosition="39" />
+    <scopeInfo nodeId="3201642974933585792" fileName="TestConfigurationDialog.java" startLine="375" startPosition="45" endLine="377" endPosition="41" />
+    <scopeInfo nodeId="3201642974933586050" fileName="TestConfigurationDialog.java" startLine="403" startPosition="44" endLine="405" endPosition="52" />
     <scopeInfo nodeId="3201642974933585150" fileName="TestConfigurationDialog.java" startLine="139" startPosition="40" endLine="142" endPosition="17">
       <varInfo nodeId="3201642974933585152" varName="panel" />
     </scopeInfo>
@@ -443,11 +446,11 @@
     <scopeInfo nodeId="3201642974933585495" fileName="TestConfigurationDialog.java" startLine="256" startPosition="43" endLine="259" endPosition="20">
       <varInfo nodeId="3201642974933585497" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933585686" fileName="TestConfigurationDialog.java" startLine="339" startPosition="58" endLine="342" endPosition="36">
+    <scopeInfo nodeId="3201642974933585686" fileName="TestConfigurationDialog.java" startLine="340" startPosition="58" endLine="343" endPosition="36">
       <varInfo nodeId="3201642974933585693" varName="toolbar" />
       <varInfo nodeId="3201642974933585688" varName="group" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933585741" fileName="TestConfigurationDialog.java" startLine="351" startPosition="161" endLine="354" endPosition="7">
+    <scopeInfo nodeId="3201642974933585741" fileName="TestConfigurationDialog.java" startLine="352" startPosition="161" endLine="355" endPosition="7">
       <varInfo nodeId="3201642974933585743" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933584776" fileName="TestConfigurationDialog.java" startLine="84" startPosition="119" endLine="88" endPosition="13" />
@@ -458,32 +461,32 @@
       <varInfo nodeId="3201642974933584637" varName="mtc" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933585870" fileName="TestConfigurationDialog.java" startLine="289" startPosition="113" endLine="293" endPosition="17" />
-    <scopeInfo nodeId="3201642974933585981" fileName="TestConfigurationDialog.java" startLine="328" startPosition="50" endLine="332" endPosition="11" />
-    <scopeInfo nodeId="3201642974933585982" fileName="TestConfigurationDialog.java" startLine="328" startPosition="50" endLine="332" endPosition="11">
+    <scopeInfo nodeId="3201642974933585981" fileName="TestConfigurationDialog.java" startLine="329" startPosition="50" endLine="333" endPosition="11" />
+    <scopeInfo nodeId="3201642974933585982" fileName="TestConfigurationDialog.java" startLine="329" startPosition="50" endLine="333" endPosition="11">
       <varInfo nodeId="3201642974933585988" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933584668" fileName="TestConfigurationDialog.java" startLine="344" startPosition="0" endLine="348" endPosition="0">
+    <scopeInfo nodeId="3201642974933584668" fileName="TestConfigurationDialog.java" startLine="345" startPosition="0" endLine="349" endPosition="0">
       <varInfo nodeId="3201642974933584671" varName="bRemove" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933585750" fileName="TestConfigurationDialog.java" startLine="357" startPosition="63" endLine="361" endPosition="20">
+    <scopeInfo nodeId="3201642974933585750" fileName="TestConfigurationDialog.java" startLine="358" startPosition="63" endLine="362" endPosition="20">
       <varInfo nodeId="3201642974933585752" varName="button" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933584686" fileName="TestConfigurationDialog.java" startLine="368" startPosition="0" endLine="372" endPosition="0" />
-    <scopeInfo nodeId="3201642974933584694" fileName="TestConfigurationDialog.java" startLine="378" startPosition="0" endLine="382" endPosition="0" />
-    <scopeInfo nodeId="3201642974933586005" fileName="TestConfigurationDialog.java" startLine="387" startPosition="24" endLine="391" endPosition="39" />
-    <scopeInfo nodeId="3201642974933584706" fileName="TestConfigurationDialog.java" startLine="393" startPosition="0" endLine="397" endPosition="0" />
-    <scopeInfo nodeId="3201642974933584709" fileName="TestConfigurationDialog.java" startLine="397" startPosition="0" endLine="401" endPosition="0" />
-    <scopeInfo nodeId="3201642974933584717" fileName="TestConfigurationDialog.java" startLine="406" startPosition="0" endLine="410" endPosition="0">
+    <scopeInfo nodeId="3201642974933584686" fileName="TestConfigurationDialog.java" startLine="369" startPosition="0" endLine="373" endPosition="0" />
+    <scopeInfo nodeId="3201642974933584694" fileName="TestConfigurationDialog.java" startLine="379" startPosition="0" endLine="383" endPosition="0" />
+    <scopeInfo nodeId="3201642974933586005" fileName="TestConfigurationDialog.java" startLine="388" startPosition="24" endLine="392" endPosition="39" />
+    <scopeInfo nodeId="3201642974933584706" fileName="TestConfigurationDialog.java" startLine="394" startPosition="0" endLine="398" endPosition="0" />
+    <scopeInfo nodeId="3201642974933584709" fileName="TestConfigurationDialog.java" startLine="398" startPosition="0" endLine="402" endPosition="0" />
+    <scopeInfo nodeId="3201642974933584717" fileName="TestConfigurationDialog.java" startLine="407" startPosition="0" endLine="411" endPosition="0">
       <varInfo nodeId="3201642974933584720" varName="config" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933584810" fileName="TestConfigurationDialog.java" startLine="94" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="3201642974933585719" fileName="TestConfigurationDialog.java" startLine="349" startPosition="25" endLine="354" endPosition="7">
+    <scopeInfo nodeId="3201642974933585719" fileName="TestConfigurationDialog.java" startLine="350" startPosition="25" endLine="355" endPosition="7">
       <varInfo nodeId="3201642974933585721" varName="bindings" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933584681" fileName="TestConfigurationDialog.java" startLine="363" startPosition="0" endLine="368" endPosition="0">
+    <scopeInfo nodeId="3201642974933584681" fileName="TestConfigurationDialog.java" startLine="364" startPosition="0" endLine="369" endPosition="0">
       <varInfo nodeId="3201642974933584684" varName="mtc" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933584712" fileName="TestConfigurationDialog.java" startLine="401" startPosition="0" endLine="406" endPosition="0">
+    <scopeInfo nodeId="3201642974933584712" fileName="TestConfigurationDialog.java" startLine="402" startPosition="0" endLine="407" endPosition="0">
       <varInfo nodeId="3201642974933584715" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933584769" fileName="TestConfigurationDialog.java" startLine="83" startPosition="0" endLine="89" endPosition="3">
@@ -505,32 +508,32 @@
     <scopeInfo nodeId="3201642974933585862" fileName="TestConfigurationDialog.java" startLine="288" startPosition="40" endLine="294" endPosition="15">
       <varInfo nodeId="3201642974933585868" varName="projectModel" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933584662" fileName="TestConfigurationDialog.java" startLine="338" startPosition="0" endLine="344" endPosition="0">
+    <scopeInfo nodeId="3201642974933584662" fileName="TestConfigurationDialog.java" startLine="339" startPosition="0" endLine="345" endPosition="0">
       <varInfo nodeId="3201642974933584665" varName="actions" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933584689" fileName="TestConfigurationDialog.java" startLine="372" startPosition="0" endLine="378" endPosition="0">
+    <scopeInfo nodeId="3201642974933584689" fileName="TestConfigurationDialog.java" startLine="373" startPosition="0" endLine="379" endPosition="0">
       <varInfo nodeId="3201642974933584692" varName="isEnabled" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933584704" fileName="TestConfigurationDialog.java" startLine="386" startPosition="0" endLine="392" endPosition="5" />
+    <scopeInfo nodeId="3201642974933584704" fileName="TestConfigurationDialog.java" startLine="387" startPosition="0" endLine="393" endPosition="5" />
     <scopeInfo nodeId="3201642974933585238" fileName="TestConfigurationDialog.java" startLine="167" startPosition="93" endLine="174" endPosition="17">
       <varInfo nodeId="3201642974933585255" varName="outerBorder" />
       <varInfo nodeId="3201642974933585247" varName="innerBorder" />
       <varInfo nodeId="3201642974933585240" varName="outer" />
       <varInfo nodeId="3201642974933585260" varName="border" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933584676" fileName="TestConfigurationDialog.java" startLine="356" startPosition="0" endLine="363" endPosition="0">
+    <scopeInfo nodeId="3201642974933584676" fileName="TestConfigurationDialog.java" startLine="357" startPosition="0" endLine="364" endPosition="0">
       <varInfo nodeId="3201642974933584679" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933585664" fileName="TestConfigurationDialog.java" startLine="326" startPosition="74" endLine="334" endPosition="0">
+    <scopeInfo nodeId="3201642974933585664" fileName="TestConfigurationDialog.java" startLine="327" startPosition="74" endLine="335" endPosition="0">
       <varInfo nodeId="3201642974933585667" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933584673" fileName="TestConfigurationDialog.java" startLine="348" startPosition="0" endLine="356" endPosition="0" />
+    <scopeInfo nodeId="3201642974933584673" fileName="TestConfigurationDialog.java" startLine="349" startPosition="0" endLine="357" endPosition="0" />
     <scopeInfo nodeId="3201642974933585231" fileName="TestConfigurationDialog.java" startLine="166" startPosition="0" endLine="176" endPosition="0">
       <varInfo nodeId="3201642974933585236" varName="panel" />
       <varInfo nodeId="3201642974933585234" varName="caption" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933585074" fileName="TestConfigurationDialog.java" startLine="122" startPosition="27" endLine="133" endPosition="7" />
-    <scopeInfo nodeId="3201642974933585916" fileName="TestConfigurationDialog.java" startLine="312" startPosition="46" endLine="323" endPosition="44">
+    <scopeInfo nodeId="3201642974933585916" fileName="TestConfigurationDialog.java" startLine="312" startPosition="46" endLine="324" endPosition="44">
       <varInfo nodeId="3201642974933585918" varName="models" />
       <varInfo nodeId="3201642974933585944" varName="modelRef" />
       <varInfo nodeId="3201642974933585927" varName="sModelDescriptor" />
@@ -543,10 +546,10 @@
     <scopeInfo nodeId="3201642974933585857" fileName="TestConfigurationDialog.java" startLine="287" startPosition="31" endLine="302" endPosition="15">
       <varInfo nodeId="3201642974933585859" varName="inProject" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933585650" fileName="TestConfigurationDialog.java" startLine="310" startPosition="65" endLine="325" endPosition="0">
+    <scopeInfo nodeId="3201642974933585289" fileName="TestConfigurationDialog.java" startLine="182" startPosition="26" endLine="198" endPosition="5" />
+    <scopeInfo nodeId="3201642974933585650" fileName="TestConfigurationDialog.java" startLine="310" startPosition="65" endLine="326" endPosition="0">
       <varInfo nodeId="3201642974933585653" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933585289" fileName="TestConfigurationDialog.java" startLine="182" startPosition="26" endLine="198" endPosition="5" />
     <scopeInfo nodeId="3201642974933585450" fileName="TestConfigurationDialog.java" startLine="228" startPosition="65" endLine="245" endPosition="0">
       <varInfo nodeId="3201642974933585453" varName="e" />
     </scopeInfo>
@@ -585,27 +588,27 @@
       <varInfo nodeId="3201642974933585042" varName="group" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933584822" fileName="TestConfigurationDialog.java" startLine="99" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="3201642974933585588" fileName="TestConfigurationDialog.java" startLine="270" startPosition="41" endLine="336" endPosition="13">
+    <scopeInfo nodeId="3201642974933585588" fileName="TestConfigurationDialog.java" startLine="270" startPosition="41" endLine="337" endPosition="13">
       <varInfo nodeId="3201642974933585631" varName="scroller" />
       <varInfo nodeId="3201642974933585645" varName="addAction" />
       <varInfo nodeId="3201642974933585659" varName="removeAction" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933584658" fileName="TestConfigurationDialog.java" startLine="269" startPosition="0" endLine="337" endPosition="5">
+    <scopeInfo nodeId="3201642974933584658" fileName="TestConfigurationDialog.java" startLine="269" startPosition="0" endLine="338" endPosition="5">
       <varInfo nodeId="3201642974933584660" varName="project" />
     </scopeInfo>
     <unitInfo nodeId="3201642974933585524" fileName="TestConfigurationDialog.java" startLine="230" startPosition="75" endLine="234" endPosition="11" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
     <unitInfo nodeId="3201642974933585179" fileName="TestConfigurationDialog.java" startLine="146" startPosition="41" endLine="152" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$1" />
     <unitInfo nodeId="3201642974933585195" fileName="TestConfigurationDialog.java" startLine="153" startPosition="41" endLine="159" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
-    <unitInfo nodeId="3201642974933585663" fileName="TestConfigurationDialog.java" startLine="326" startPosition="42" endLine="334" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$3" />
+    <unitInfo nodeId="3201642974933585663" fileName="TestConfigurationDialog.java" startLine="327" startPosition="42" endLine="335" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$3" />
     <unitInfo nodeId="3201642974933584608" fileName="TestConfigurationDialog.java" startLine="207" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$BasePanel" />
-    <unitInfo nodeId="3201642974933585649" fileName="TestConfigurationDialog.java" startLine="310" startPosition="36" endLine="325" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
+    <unitInfo nodeId="3201642974933585649" fileName="TestConfigurationDialog.java" startLine="310" startPosition="36" endLine="326" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
     <unitInfo nodeId="3201642974933585449" fileName="TestConfigurationDialog.java" startLine="228" startPosition="39" endLine="245" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$1" />
     <unitInfo nodeId="3201642974933585851" fileName="TestConfigurationDialog.java" startLine="286" startPosition="51" endLine="304" endPosition="11" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$2" />
-    <unitInfo nodeId="3201642974933584698" fileName="TestConfigurationDialog.java" startLine="384" startPosition="0" endLine="411" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$NamePanel" />
+    <unitInfo nodeId="3201642974933584698" fileName="TestConfigurationDialog.java" startLine="385" startPosition="0" endLine="412" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$NamePanel" />
     <unitInfo nodeId="3201642974933585616" fileName="TestConfigurationDialog.java" startLine="274" startPosition="39" endLine="307" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$1" />
     <unitInfo nodeId="3201642974933584621" fileName="TestConfigurationDialog.java" startLine="220" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$ModulePanel" />
-    <unitInfo nodeId="3201642974933584642" fileName="TestConfigurationDialog.java" startLine="263" startPosition="0" endLine="383" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$ModelsPanel" />
-    <unitInfo nodeId="3201642974933584605" fileName="TestConfigurationDialog.java" startLine="67" startPosition="0" endLine="412" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog" />
+    <unitInfo nodeId="3201642974933584642" fileName="TestConfigurationDialog.java" startLine="263" startPosition="0" endLine="384" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$ModelsPanel" />
+    <unitInfo nodeId="3201642974933584605" fileName="TestConfigurationDialog.java" startLine="67" startPosition="0" endLine="413" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog" />
   </root>
   <root nodeId="3201642974933586123">
     <nodeInfo nodeId="3201642974933586128" fileName="ProjectPropertiesPerfsPage.java" startLine="16" startPosition="130" endLine="17" endPosition="28" />

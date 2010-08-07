@@ -434,6 +434,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode extendsClassName="jetbrains.mps.build.packaging.plugin.TwoOptionsStep" />
   </dependency>

@@ -37,9 +37,9 @@ public interface SModelDescriptor {
 
   SModelReference getSModelReference();
 
-  SModelFqName getSModelFqName();
-
   SModelId getSModelId();
+
+  SModelFqName getSModelFqName();
 
   @Deprecated //method with such a name can confuse user - what name is returned? 
   String getName();

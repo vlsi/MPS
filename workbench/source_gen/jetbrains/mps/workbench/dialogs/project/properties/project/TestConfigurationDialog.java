@@ -318,7 +318,8 @@ public class TestConfigurationDialog extends BaseDialog {
           SModelReference modelRef = sModelDescriptor.getSModelReference();
           myModels.add(modelRef);
           if (!(myNamePanel.isConfigNameSet())) {
-            myNamePanel.setConfigName(sModelDescriptor.getName());
+            String name = NameUtil.shortNameFromLongName(sModelDescriptor.getLongName());
+            myNamePanel.setConfigName(name);
           }
           return myModels.indexOf(modelRef);
         }

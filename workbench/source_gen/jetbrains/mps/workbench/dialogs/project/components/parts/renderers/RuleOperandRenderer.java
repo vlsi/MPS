@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
@@ -99,7 +100,8 @@ public class RuleOperandRenderer implements TableCellRenderer {
             if (model == null || node == null) {
               return null;
             }
-            return model.getName() + "." + node.getName();
+            String modelName = NameUtil.shortNameFromLongName(model.getLongName());
+            return modelName + "." + node.getName();
           }
         });
         if (nodeName == null) {

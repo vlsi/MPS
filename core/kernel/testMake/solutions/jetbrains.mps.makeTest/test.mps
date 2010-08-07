@@ -1831,7 +1831,7 @@
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="7196776143116383100" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116384885">
-                        <link role="baseMethodDeclaration:3" targetNodeId="11.~SModelDescriptor.getName():java.lang.String" resolveInfo="getName" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="11.~SModelDescriptor.getLongName():java.lang.String" resolveInfo="getLongName" />
                       </node>
                     </node>
                   </node>

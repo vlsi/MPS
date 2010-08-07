@@ -85,7 +85,7 @@ public class ChangeModelProcessor {
         runnable.run();
       }
     });
-    System.out.println("Model " + this.myModelToChange.getName() + " " + type);
+    System.out.println("Model " + this.myModelToChange.getLongName() + " " + type);
     return cr[0].isOk();
   }
 
