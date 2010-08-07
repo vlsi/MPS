@@ -647,10 +647,10 @@ public class SModel implements Iterable<SNode> {
 
     ImportElement importElement = getImportElement(modelReference);
     if (importElement != null) return;
-    RegularSModelDescriptor modelDescriptor = (RegularSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(modelReference);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
     int usedVersion = -1;
-    if (modelDescriptor != null) {
-      usedVersion = modelDescriptor.getVersion();
+    if (modelDescriptor instanceof RegularSModelDescriptor) {
+      usedVersion = ((RegularSModelDescriptor) modelDescriptor).getVersion();
     }
     importElement = new ImportElement(modelReference, ++myMaxImportIndex, firstVersion ? -1 : usedVersion);
     myImports.add(importElement);
