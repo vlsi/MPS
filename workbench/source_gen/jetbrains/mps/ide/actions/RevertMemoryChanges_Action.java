@@ -9,6 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class RevertMemoryChanges_Action extends GeneratedAction {
@@ -29,7 +30,7 @@ public class RevertMemoryChanges_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return (RevertMemoryChanges_Action.this.model != null) && !(RevertMemoryChanges_Action.this.model.isTransient());
+    return (RevertMemoryChanges_Action.this.model instanceof RegularSModelDescriptor) && !(RevertMemoryChanges_Action.this.model.isTransient());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -64,6 +65,7 @@ public class RevertMemoryChanges_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
+      ((RegularSModelDescriptor) RevertMemoryChanges_Action.this.model).reloadFromDisk();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RevertMemoryChanges", t);

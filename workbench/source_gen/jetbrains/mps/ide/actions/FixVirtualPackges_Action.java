@@ -18,7 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.EqualUtil;
 
 public class FixVirtualPackges_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -84,7 +83,7 @@ public class FixVirtualPackges_Action extends GeneratedAction {
           }
           String aspectPack = SPropertyOperations.getString(SNodeOperations.cast(aspect, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage");
           String conceptPack = SPropertyOperations.getString(concept, "virtualPackage");
-          if (EqualUtil.equals(aspectPack, conceptPack)) {
+          if (eq_89si7b_a0d0b0d0a0f(aspectPack, conceptPack)) {
             continue;
           }
 
@@ -96,5 +95,12 @@ public class FixVirtualPackges_Action extends GeneratedAction {
         log.error("User's action execute method failed. Action:" + "FixVirtualPackges", t);
       }
     }
+  }
+
+  private static boolean eq_89si7b_a0d0b0d0a0f(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

@@ -17,7 +17,7 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
@@ -95,20 +95,20 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
     try {
       GeneratorManager manager = GenerateTemplateQueries_Action.this.context.getComponent(GeneratorManager.class);
       IGenerationHandler genHandler = manager.getDefaultGenerationHandler();
-      final Wrappers._T<List<SModelDescriptor>> models = new Wrappers._T<List<SModelDescriptor>>(ListSequence.fromList(new ArrayList<SModelDescriptor>()));
+      final Wrappers._T<List<RegularSModelDescriptor>> models = new Wrappers._T<List<RegularSModelDescriptor>>(ListSequence.fromList(new ArrayList<RegularSModelDescriptor>()));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           ListSequence.fromList(models.value).addSequence(ListSequence.fromList(TemplateLanguageGenerationUtil.getGeneratorModels((Generator) GenerateTemplateQueries_Action.this.module)));
           if (!(GenerateTemplateQueries_Action.this.regenerate)) {
-            models.value = ListSequence.fromList(models.value).where(new IWhereFilter<SModelDescriptor>() {
-              public boolean accept(SModelDescriptor it) {
+            models.value = ListSequence.fromList(models.value).where(new IWhereFilter<RegularSModelDescriptor>() {
+              public boolean accept(RegularSModelDescriptor it) {
                 return ModelGenerationStatusManager.getInstance().generationRequired(it, GenerateTemplateQueries_Action.this.project, NoCachesStrategy.createBuildCachesStrategy());
               }
             }).toListSequence();
           }
         }
       });
-      manager.generateModelsWithProgressWindow((List)models.value, GenerateTemplateQueries_Action.this.context, genHandler, false);
+      manager.generateModelsWithProgressWindow(models.value, GenerateTemplateQueries_Action.this.context, genHandler, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateTemplateQueries", t);

@@ -4,8 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
@@ -18,8 +16,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import java.util.ArrayList;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class GenerateModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -97,15 +96,21 @@ public class GenerateModel_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final GeneratorManager manager = GenerateModel_Action.this.project.getComponent(GeneratorManager.class);
-      boolean checkSuccessful = GenerateModel_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeGenerationIfNeeded(GenerateModel_Action.this.context, GenerateModel_Action.this.models, new Runnable() {
+      final List<RegularSModelDescriptor> modelsToGenerate = new ArrayList<RegularSModelDescriptor>();
+      for (SModelDescriptor m : ListSequence.fromList(GenerateModel_Action.this.models)) {
+        if (m instanceof RegularSModelDescriptor) {
+          modelsToGenerate.add(((RegularSModelDescriptor) m));
+        }
+      }
+      boolean checkSuccessful = GenerateModel_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeGenerationIfNeeded(GenerateModel_Action.this.context, (List) modelsToGenerate, new Runnable() {
         public void run() {
-          manager.generateModelsFromDifferentModules(GenerateModel_Action.this.context, ((List<RegularSModelDescriptor>) (List) GenerateModel_Action.this.models), GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll);
+          manager.generateModelsFromDifferentModules(GenerateModel_Action.this.context, modelsToGenerate, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll);
         }
       });
       if (!(checkSuccessful)) {
         return;
       }
-      manager.generateModelsFromDifferentModules(GenerateModel_Action.this.context, (List<RegularSModelDescriptor>) (List)GenerateModel_Action.this.models, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll);
+      manager.generateModelsFromDifferentModules(GenerateModel_Action.this.context, modelsToGenerate, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateModel", t);
