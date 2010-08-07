@@ -100,7 +100,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     StringBuffer errorMessages = new StringBuffer();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        return sm.validate(scope);
+        return new ModelValidator(sm.getSModel()).validate(scope);
       }
     });
     for (String item : validationResult) {

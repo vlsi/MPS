@@ -17,10 +17,8 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
 import org.jetbrains.annotations.NotNull;
@@ -143,36 +141,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public List<String> validate(IScope scope) {
-    ModelAccess.assertLegalRead();
-
-    List<String> errors = new ArrayList<String>();
-    SModel model = getSModel();
-
-    for (SModelReference reference : model.getImportedModelUIDs()) {
-      if (scope.getModelDescriptor(reference) == null) {
-        errors.add("Can't find model: " + reference.getLongName());
-      }
-    }
-
-    List<ModuleReference> langsToCheck = new ArrayList<ModuleReference>();
-    langsToCheck.addAll(model.getExplicitlyImportedLanguages());
-    langsToCheck.addAll(model.getEngagedOnGenerationLanguages());
-    for (ModuleReference lang : langsToCheck) {
-      if (scope.getLanguage(lang) == null) {
-        errors.add("Can't find language: " + lang.getModuleFqName());
-      }
-    }
-
-    for (ModuleReference devKit : model.getDevKitRefs()) {
-      if (scope.getDevKit(devKit) == null) {
-        errors.add("Can't find devkit: " + devKit.getModuleFqName());
-      }
-    }
-
-    return errors;
-  }
-
   public void rename(SModelFqName newModelFqName, boolean changeFile) {
     ModelAccess.assertLegalWrite();
 
@@ -187,7 +155,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
     fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
   }
-
 
   protected void updateDiskTimestamp() {
 

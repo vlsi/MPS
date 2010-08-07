@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.ModelValidator;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.IModule;
 
@@ -27,7 +28,7 @@ public class ModelPropertiesChecker extends SpecificChecker {
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
     IScope scope = check_t4d01o_a0g0a(check_t4d01o_a0a6a0(modelDescriptor));
     if (scope != null) {
-      List<String> errors = modelDescriptor.validate(scope);
+      List<String> errors = new ModelValidator(modelDescriptor.getSModel()).validate(scope);
       if (!(ListSequence.fromList(errors).isEmpty())) {
         String extraMessage = ListSequence.fromList(errors).getElement(0);
         if (ListSequence.fromList(errors).count() == 2) {

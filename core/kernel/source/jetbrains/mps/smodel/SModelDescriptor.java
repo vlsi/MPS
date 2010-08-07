@@ -62,25 +62,22 @@ public interface SModelDescriptor {
 
   boolean isTransient();
 
+  @Deprecated
+  Set<IModule> getModules();
+
+  IModule getModule();
+
+  void rename(SModelFqName newModelFqName, boolean changeFile);
+
+  SModelDescriptor resolveModel(SModelReference reference);
+
+  //--------------user objects (unused!)-------------
+
   Object getUserObject(String key);
 
   void putUserObject(String key, Object value);
 
   void removeUserObject(String key);
-
-  IModule getModule();
-
-  /**
-   * use getModule() instead
-   */
-  @Deprecated
-  Set<IModule> getModules();
-
-  List<String> validate(IScope scope);
-
-  void rename(SModelFqName newModelFqName, boolean changeFile);
-
-  SModelDescriptor resolveModel(SModelReference reference);
 
   //--------------model listeners--------------------
 
