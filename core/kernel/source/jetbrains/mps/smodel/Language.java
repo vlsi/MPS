@@ -477,13 +477,13 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return struc.getSModel().allAdapters(ConceptDeclaration.class);
   }
 
-  public List<SModelDescriptor> getUtilModels() {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+  public List<RegularSModelDescriptor> getUtilModels() {
+    List<RegularSModelDescriptor> result = new ArrayList<RegularSModelDescriptor>();
     for (SModelDescriptor md : getOwnModelDescriptors()) {
       if (md.getStereotype().equals(SModelStereotype.NONE)
         && getAspectForModel(md) == null
         && !isAccessoryModel(md.getSModelReference())) {
-        result.add(md);
+        result.add(((RegularSModelDescriptor) md));
       }
     }
     return result;

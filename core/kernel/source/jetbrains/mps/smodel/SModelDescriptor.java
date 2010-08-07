@@ -29,10 +29,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * User: Sergey Dmitriev
- * Date: Apr 3, 2005
- */
 public interface SModelDescriptor {
   /**
    * After model loading call SModelRepostiory.fireModelRepositoryChanged
@@ -70,24 +66,12 @@ public interface SModelDescriptor {
 
   void save();
 
-  boolean needsReloading();
-
-  void reloadFromDisk();
-
-  void reloadFromDiskSafe();
-
-  void refresh();
-
   void dispose();
-
-  void replaceModel(SModel newModel);
 
   @Nullable
   IFile getModelFile();
 
   boolean isPackaged();
-
-  long fileTimestamp();
 
   long lastChangeTime();
 

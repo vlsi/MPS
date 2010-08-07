@@ -20,6 +20,7 @@ import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileMoveEvent;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.logging.Logger;
@@ -38,7 +39,7 @@ class ModelFileProcessor extends EventProcessor {
 
   @Override
   protected void processContentChanged(VFileEvent event, ReloadSession reloadSession) {
-    SModelDescriptor model = SModelRepository.getInstance().findModel(FileSystem.getFile(event.getPath()));
+    RegularSModelDescriptor model = (RegularSModelDescriptor) SModelRepository.getInstance().findModel(FileSystem.getFile(event.getPath()));
     LOG.debug("Content change event for model file " + event.getPath() + ". Found model " + model + "." + (model != null ? " Needs reloading " + model.needsReloading() : ""));
     if ((model != null) && (model.needsReloading())) {
       reloadSession.addChangedModel(model);

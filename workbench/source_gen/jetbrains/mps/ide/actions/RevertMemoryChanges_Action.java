@@ -64,7 +64,6 @@ public class RevertMemoryChanges_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      RevertMemoryChanges_Action.this.model.reloadFromDisk();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RevertMemoryChanges", t);

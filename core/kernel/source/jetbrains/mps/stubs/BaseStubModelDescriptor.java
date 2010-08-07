@@ -37,49 +37,6 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
     return new BaseStubModelDescriptor(manager, myModelFile, myModelReference, false);
   }
 
-  public boolean isReadOnly() {
-    return true;
-  }
-
-  public boolean isTransient() {
-    return false;
-  }
-
-  public SModel getSModel() {
-    // ModelAccess.assertLegalRead();
-
-    SModel result;
-    boolean fireInitialized = false;
-
-    synchronized (myLoadingLock) {
-      if (mySModel == null) {
-        SModel model = loadModel();
-        model.setModelDescritor(this);
-        mySModel = model;
-        fireInitialized = true;
-      }
-      result = mySModel;
-    }
-    if (fireInitialized) {
-      fireModelInitialized();
-    }
-    return result;
-  }
-
-  public void save() {
-
-  }
-
-  protected SModel loadModel() {
-    SModel model = myModelRootManager.loadModel(this);
-    try {
-      updateAfterLoad(model);
-    } catch (Throwable t) {
-      LOG.error("Error on model load. Model: " + model.getLongName(), t);
-    }
-    return model;
-  }
-
   private void updateAfterLoad(SModel model) {
     synchronized (myUpdatersLock) {
       Set<ModelUpdater> updCopy = new HashSet<ModelUpdater>(myUpdaters);
@@ -144,5 +101,57 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
   private void updateManagerId() {
     if (myModelRootManager == null) return;
     myManagerClass = myModelRootManager.getClass().getName();
+  }
+
+  //------------common reloading stuff-------------------
+
+  public SModel getSModel() {
+    // ModelAccess.assertLegalRead();
+
+    SModel result;
+    boolean fireInitialized = false;
+
+    synchronized (myLoadingLock) {
+      if (mySModel == null) {
+        SModel model = loadModel();
+        model.setModelDescritor(this);
+        mySModel = model;
+        fireInitialized = true;
+      }
+      result = mySModel;
+    }
+    if (fireInitialized) {
+      fireModelInitialized();
+    }
+    return result;
+  }
+
+  public void save() {
+
+  }
+
+  public long lastChangeTime() {
+    //todo: maybe more meaningful time?
+    return -1;
+  }
+
+  protected SModel loadModel() {
+    SModel model = myModelRootManager.loadModel(this);
+    try {
+      updateAfterLoad(model);
+    } catch (Throwable t) {
+      LOG.error("Error on model load. Model: " + model.getLongName(), t);
+    }
+    return model;
+  }
+
+  //------------common model descriptor stuff------------
+
+  public boolean isReadOnly() {
+    return true;
+  }
+
+  public boolean isTransient() {
+    return false;
   }
 }

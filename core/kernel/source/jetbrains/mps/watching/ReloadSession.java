@@ -25,6 +25,7 @@ import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.VFileSystem;
@@ -41,7 +42,7 @@ import java.util.Set;
 
 class ReloadSession {
   private final static Logger LOG = Logger.getLogger(ReloadSession.class);
-  private final Set<SModelDescriptor> myChangedModels = new LinkedHashSet<SModelDescriptor>();
+  private final Set<RegularSModelDescriptor> myChangedModels = new LinkedHashSet<RegularSModelDescriptor>();
   private final Set<VirtualFile> myNewModelVFiles = new LinkedHashSet<VirtualFile>();
   private final Set<IModule> myChangedModules = new LinkedHashSet<IModule>();
   private final Set<VirtualFile> myNewModuleVFiles = new LinkedHashSet<VirtualFile>();
@@ -119,7 +120,7 @@ class ReloadSession {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         progressIndicator.setText("Reloading updated models... Please wait.");
-        for (final SModelDescriptor model : myChangedModels) {
+        for (final RegularSModelDescriptor model : myChangedModels) {
           try {
             String text = "Reloading " + model.getSModelReference().getSModelFqName();
             LOG.info(text);
@@ -215,7 +216,7 @@ class ReloadSession {
       && myDeletedModules.isEmpty());
   }
 
-  public void addChangedModel(SModelDescriptor model) {
+  public void addChangedModel(RegularSModelDescriptor model) {
     myChangedModels.add(model);
   }
 

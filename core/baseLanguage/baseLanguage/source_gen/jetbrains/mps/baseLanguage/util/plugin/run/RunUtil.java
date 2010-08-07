@@ -16,6 +16,7 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.NoCachesStrategy;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 
 public class RunUtil {
   public RunUtil() {
@@ -27,11 +28,11 @@ public class RunUtil {
 
   public static void makeBeforeRun(final Project project, List<SNode> nodes) {
     GeneratorManager genManager = project.getComponent(GeneratorManager.class);
-    final List<SModelDescriptor> models = ListSequence.fromList(new ArrayList<SModelDescriptor>());
+    final List<RegularSModelDescriptor> models = ListSequence.fromList(new ArrayList<RegularSModelDescriptor>());
     for (final SNode node : nodes) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SModelDescriptor md = SNodeOperations.getModel(node).getModelDescriptor();
+          RegularSModelDescriptor md = (RegularSModelDescriptor) SNodeOperations.getModel(node).getModelDescriptor();
           if (!(ListSequence.fromList(models).contains(md)) && ModelGenerationStatusManager.getInstance().generationRequired(md, project, NoCachesStrategy.createBuildCachesStrategy())) {
             ListSequence.fromList(models).addElement(md);
           }

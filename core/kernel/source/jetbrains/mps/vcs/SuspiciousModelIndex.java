@@ -34,6 +34,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
@@ -106,7 +107,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     myVirtualFileManager = vfManager;
   }
 
-  public void addModel(SModelDescriptor model, boolean isInConflict) {
+  public void addModel(RegularSModelDescriptor model, boolean isInConflict) {
     myTaskQueue.invokeLater(new ConflictableModelAdapter(model, isInConflict));
   }
 
@@ -140,7 +141,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     if (file == null) return;
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(VFileSystem.toIFile(file));
     if (modelDescriptor != null) {
-      this.addModel(modelDescriptor, false);
+      this.addModel(((RegularSModelDescriptor) modelDescriptor), false);
     }
   }
 
@@ -260,10 +261,10 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   }
 
   private static class ConflictableModelAdapter extends Conflictable {
-    private final SModelDescriptor myModel;
+    private final RegularSModelDescriptor myModel;
     private final boolean myIsConflictDetected;
 
-    public ConflictableModelAdapter(SModelDescriptor model, boolean isConflictDetected) {
+    public ConflictableModelAdapter(RegularSModelDescriptor model, boolean isConflictDetected) {
       myModel = model;
       myIsConflictDetected = isConflictDetected;
     }

@@ -18,21 +18,22 @@ package jetbrains.mps.ide.genconf;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class GenParameters {
-  private List<SModelDescriptor> myModelDescriptors = new ArrayList<SModelDescriptor>();
+  private List<RegularSModelDescriptor> myModelDescriptors = new ArrayList<RegularSModelDescriptor>();
   private IModule myModule;
 
-  public GenParameters(List<SModelDescriptor> models, IModule module) {
+  public GenParameters(List<RegularSModelDescriptor> models, IModule module) {
     myModelDescriptors.addAll(models);
     myModule = module;
   }
 
-  public List<SModelDescriptor> getModelDescriptors() {
+  public List<RegularSModelDescriptor> getModelDescriptors() {
     return Collections.unmodifiableList(myModelDescriptors);
   }
 

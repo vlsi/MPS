@@ -38,6 +38,7 @@ import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
@@ -52,7 +53,7 @@ public class GenerationController {
   protected static Logger LOG = Logger.getLogger(GenerationController.class);
 
   private GeneratorNotifierHelper myNotifierHelper;
-  private List<Pair<SModelDescriptor, IOperationContext>> myInputModels;
+  private List<Pair<RegularSModelDescriptor, IOperationContext>> myInputModels;
   protected final IGenerationHandler myGenerationHandler;
   protected ProgressIndicator myProgress;
   protected GeneratorLoggerAdapter myLogger;
@@ -63,7 +64,7 @@ public class GenerationController {
 
   public GenerationController(GeneratorNotifierHelper notifierHelper,
                               GenerationSettings settings,
-                              List<Pair<SModelDescriptor, IOperationContext>> _inputModels,
+                              List<Pair<RegularSModelDescriptor, IOperationContext>> _inputModels,
                               IGenerationHandler generationHandler,
                               IGenerationTracer generationTracer,
                               ProgressIndicator progress,
@@ -85,7 +86,7 @@ public class GenerationController {
   private void initMaps() {
     IModule current = null;
     ArrayList<SModelDescriptor> currentList = null;
-    for (Pair<SModelDescriptor, IOperationContext> inputModel : myInputModels) {
+    for (Pair<RegularSModelDescriptor, IOperationContext> inputModel : myInputModels) {
       IModule newModule = inputModel.o2.getModule();
       if (current == null || newModule != current) {
         current = newModule;

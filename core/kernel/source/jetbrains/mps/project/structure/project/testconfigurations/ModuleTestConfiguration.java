@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -58,7 +59,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
     if (module instanceof Solution) {
       Solution solution = (Solution) module;
 
-      List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+      List<RegularSModelDescriptor> models = new ArrayList<RegularSModelDescriptor>();
       for (SModelDescriptor sm : solution.getOwnModelDescriptors()) {
         if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, project, NoCachesStrategy.createBuildCachesStrategy())) {
           continue;
@@ -69,8 +70,8 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
         }
 
 
-        if (SModelStereotype.isUserModel(sm)) {
-          models.add(sm);
+        if (SModelStereotype.isUserModel(sm) && (sm instanceof RegularSModelDescriptor)) {
+          models.add(((RegularSModelDescriptor) sm));
         }
       }
 
@@ -78,9 +79,9 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
     } else if (module instanceof Language) {
       Language lang = (Language) module;
 
-      List<SModelDescriptor> inputModels = GeneratorConfigUtil.getLanguageModels(lang);
+      List<RegularSModelDescriptor> inputModels = GeneratorConfigUtil.getLanguageModels(lang);
 
-      Iterator<SModelDescriptor> it = inputModels.iterator();
+      Iterator<RegularSModelDescriptor> it = inputModels.iterator();
       while (it.hasNext()) {
         SModelDescriptor model = it.next();
         if ((!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model, project, NoCachesStrategy.createBuildCachesStrategy())) ||

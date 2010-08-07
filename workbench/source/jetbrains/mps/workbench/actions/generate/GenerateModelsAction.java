@@ -23,6 +23,7 @@ import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
@@ -31,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class GenerateModelsAction extends BaseAction {
-  private List<SModelDescriptor> myModels;
+  private List<RegularSModelDescriptor> myModels;
   private IOperationContext myContext;
   private GeneratorManager myGenManager;
   private ProjectPluginManager myPluginManager;
@@ -48,7 +49,7 @@ public abstract class GenerateModelsAction extends BaseAction {
   public void doExecute(AnActionEvent e) {
     //noinspection ConstantConditions
     boolean checkSuccessful = myPluginManager.getTool(ModelCheckerTool_Tool.class)
-      .checkModelsBeforeGenerationIfNeeded(myContext, myModels, new Runnable() {
+      .checkModelsBeforeGenerationIfNeeded(myContext, (List<SModelDescriptor>)((List) myModels), new Runnable() {
         public void run() {
           myGenManager.generateModelsFromDifferentModules(
             myContext,
@@ -87,12 +88,21 @@ public abstract class GenerateModelsAction extends BaseAction {
     Project project = e.getData(MPSDataKeys.PROJECT);
     myPluginManager = project.getComponent(ProjectPluginManager.class);
     myGenManager = project.getComponent(GeneratorManager.class);
-    myModels = e.getData(MPSDataKeys.MODELS);
-    if (myModels == null) myModels = new ArrayList<SModelDescriptor>();
+    List<SModelDescriptor> models = e.getData(MPSDataKeys.MODELS);
+
+    myModels = new ArrayList<RegularSModelDescriptor>();
+
+    if (models!=null){
+      for (SModelDescriptor model:models){
+        if (!(model instanceof RegularSModelDescriptor)) continue;
+        myModels.add(((RegularSModelDescriptor) model));
+      }
+    }
+
     if (myModels.isEmpty()) {
       SModelDescriptor model = e.getData(MPSDataKeys.CONTEXT_MODEL);
-      if (model != null) {
-        myModels.add(model);
+      if (model instanceof RegularSModelDescriptor) {
+        myModels.add(((RegularSModelDescriptor) model));
       }
     }
     if (myModels.isEmpty()) return false;

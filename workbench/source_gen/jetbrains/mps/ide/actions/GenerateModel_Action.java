@@ -4,6 +4,8 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
@@ -97,13 +99,13 @@ public class GenerateModel_Action extends GeneratedAction {
       final GeneratorManager manager = GenerateModel_Action.this.project.getComponent(GeneratorManager.class);
       boolean checkSuccessful = GenerateModel_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeGenerationIfNeeded(GenerateModel_Action.this.context, GenerateModel_Action.this.models, new Runnable() {
         public void run() {
-          manager.generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll);
+          manager.generateModelsFromDifferentModules(GenerateModel_Action.this.context, ((List<RegularSModelDescriptor>) (List) GenerateModel_Action.this.models), GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll);
         }
       });
       if (!(checkSuccessful)) {
         return;
       }
-      manager.generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll);
+      manager.generateModelsFromDifferentModules(GenerateModel_Action.this.context, (List<RegularSModelDescriptor>) (List)GenerateModel_Action.this.models, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateModel", t);

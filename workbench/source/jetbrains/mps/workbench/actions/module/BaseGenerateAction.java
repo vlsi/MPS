@@ -32,6 +32,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
@@ -88,7 +89,7 @@ public abstract class BaseGenerateAction extends BaseAction {
   }
 
   protected void doExecute(AnActionEvent e) {
-    final List<SModelDescriptor> modelsToGenerate = new ArrayList<SModelDescriptor>();
+    final List<RegularSModelDescriptor> modelsToGenerate = new ArrayList<RegularSModelDescriptor>();
 
     IOperationContext invocationContext = myOperationContext;
     for (IModule module : myModules) {
@@ -114,7 +115,7 @@ public abstract class BaseGenerateAction extends BaseAction {
     final IOperationContext invocationContext1 = invocationContext;
     //noinspection ConstantConditions
     boolean checkSuccessful = myProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class)
-      .checkModelsBeforeGenerationIfNeeded(invocationContext, modelsToGenerate, new Runnable() {
+      .checkModelsBeforeGenerationIfNeeded(invocationContext, (List)modelsToGenerate, new Runnable() {
         public void run() {
           GeneratorManager generatorManager = myOperationContext.getComponent(GeneratorManager.class);
           IGenerationHandler generationHandler = generatorManager.getDefaultGenerationHandler();
@@ -139,7 +140,7 @@ public abstract class BaseGenerateAction extends BaseAction {
   }
 
   @NotNull
-  private List<SModelDescriptor> getModelsToGenerate(final IModule module) {
+  private List<RegularSModelDescriptor> getModelsToGenerate(final IModule module) {
     GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
       public GenParameters compute() {
         SModel tmp = new SModel(SModelReference.fromString("test.model"));
@@ -173,7 +174,7 @@ public abstract class BaseGenerateAction extends BaseAction {
       }
     });
 
-    if (params == null) return new ArrayList<SModelDescriptor>();
+    if (params == null) return new ArrayList<RegularSModelDescriptor>();
     return params.getModelDescriptors();
   }
 }

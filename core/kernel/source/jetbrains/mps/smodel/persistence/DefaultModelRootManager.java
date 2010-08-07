@@ -59,6 +59,8 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
   @NotNull
   public SModel loadModel(final @NotNull SModelDescriptor modelDescriptor) {
+    assert modelDescriptor instanceof RegularSModelDescriptor;
+
     if (!modelDescriptor.getModelFile().isReadOnly()) {
       final File file = FileSystem.toFile(modelDescriptor.getModelFile());
 
@@ -71,7 +73,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     try {
       model = ModelPersistence.readModel(modelDescriptor.getModelFile());
     } catch (ModelFileReadException t) {
-      return handleExceptionDuringModelRead(modelDescriptor, t, false);
+      return handleExceptionDuringModelRead(((RegularSModelDescriptor) modelDescriptor), t, false);
     } catch (PersistenceVersionNotFoundException e) {
       LOG.error(e);
       return new StubModel(modelDescriptor.getSModelReference());
@@ -133,7 +135,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     return null;
   }
 
-  private SModel handleExceptionDuringModelRead(SModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
+  private SModel handleExceptionDuringModelRead(RegularSModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
     SuspiciousModelIndex.instance().addModel(modelDescriptor, isConflictStateFixed);
     SModel newModel = new StubModel(modelDescriptor.getSModelReference());
     LOG.error(exception.getMessage(), newModel);

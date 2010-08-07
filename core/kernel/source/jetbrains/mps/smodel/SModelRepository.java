@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
@@ -75,7 +76,8 @@ public class SModelRepository implements ApplicationComponent {
         LOG.debug("Model refresh");
 
         for (SModelDescriptor m : getModelDescriptors()) {
-          m.refresh();
+          if (!(m instanceof RegularSModelDescriptor)) continue;
+          ((RegularSModelDescriptor) m).refresh();
         }
 
         LOG.debug("Model refresh done");

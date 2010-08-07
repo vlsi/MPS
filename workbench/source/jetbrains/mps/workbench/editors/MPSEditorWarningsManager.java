@@ -41,6 +41,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -145,7 +146,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
         "Generate",
         new Runnable() {
           public void run() {
-            final List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+            final List<RegularSModelDescriptor> models = new ArrayList<RegularSModelDescriptor>();
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 for (Language l : outdatedLanguages) {

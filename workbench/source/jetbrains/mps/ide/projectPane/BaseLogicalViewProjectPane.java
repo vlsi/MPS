@@ -31,6 +31,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
@@ -68,14 +69,14 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   };
 
   private GenerationListener myGenerationListener = new GenerationListener() {
-    public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+    public void beforeGeneration(List<Pair<RegularSModelDescriptor, IOperationContext>> inputModels) {
 
     }
 
-    public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    public void modelsGenerated(List<Pair<RegularSModelDescriptor, IOperationContext>> models, boolean success) {
     }
 
-    public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+    public void afterGeneration(List<Pair<RegularSModelDescriptor, IOperationContext>> inputModels) {
       // rebuild tree in case of 'cancel' too (need to get 'transient models' node rebuilt)
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {

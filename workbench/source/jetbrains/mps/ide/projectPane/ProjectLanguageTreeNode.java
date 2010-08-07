@@ -16,13 +16,12 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.ide.StereotypeProvider;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.ui.smodel.ReferenceTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelReferenceTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.StereotypeProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
@@ -119,7 +118,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
         boolean currentModule = modules.contains(myLanguage) || modules.isEmpty();
         IModule module = currentModule ? myLanguage : model.getModule();
         if (!currentModule) {
-          accessories.add(new SModelReferenceTreeNode(model,new ModuleContext(module, myProject)));
+          accessories.add(new SModelReferenceTreeNode(model, new ModuleContext(module, myProject)));
         } else {
           accessories.add(new SModelTreeNode(model, null, new ModuleContext(module, myProject)));
         }
@@ -140,7 +139,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
     if (myLanguage.getUtilModels().size() > 0) {
       TextTreeNode utilModels = new SModelGroupTreeNode(operationContext);
-      SModelsSubtree.create(utilModels, operationContext, myLanguage.getUtilModels());
+      SModelsSubtree.create(utilModels, operationContext, (List) myLanguage.getUtilModels());
       this.add(utilModels);
     }
 
@@ -189,13 +188,13 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     @Override
     protected void doUpdatePresentation() {
       super.doUpdatePresentation();
-      setErrorState(validate().isEmpty()? ErrorState.NONE : ErrorState.ERROR);
+      setErrorState(validate().isEmpty() ? ErrorState.NONE : ErrorState.ERROR);
     }
 
     @Override
-     public ActionGroup getActionGroup() {
+    public ActionGroup getActionGroup() {
       return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_ACCESSORIES_ACTIONS);
-     }
+    }
   }
 
   public class SModelGroupTreeNode extends NamespaceTextNode implements StereotypeProvider {

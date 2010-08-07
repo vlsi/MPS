@@ -16,6 +16,7 @@
 package jetbrains.mps.vcs;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.UnzipUtil;
@@ -74,7 +75,7 @@ public class ModelUtils {
   }
 
   public static void replaceModelWithBytes(VirtualFile modelFile, byte[] bytesToReplaceWith) {
-    final SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(VFileSystem.toIFile(modelFile));
+    final RegularSModelDescriptor modelDescriptor = (RegularSModelDescriptor) SModelRepository.getInstance().findModel(VFileSystem.toIFile(modelFile));
     if (modelDescriptor == null) return;
 
     try {

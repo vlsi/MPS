@@ -355,9 +355,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Reg
     }
 
     // Paranoid check to avoid saving model during update (hack for MPS-6772)
-    if (needsReloading()) {
-      return;
-    }
+    if (needsReloading()) return;
+    
     SModelRepository.getInstance().markUnchanged(mySModel);
     SModel newData = myModelRootManager.saveModel(this, true);
     if (newData != null) {

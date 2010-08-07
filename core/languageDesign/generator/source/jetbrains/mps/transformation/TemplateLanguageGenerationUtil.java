@@ -18,6 +18,7 @@ package jetbrains.mps.transformation;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,15 +29,15 @@ import java.util.List;
  */
 public class TemplateLanguageGenerationUtil {
 
-  public static List<SModelDescriptor> getGeneratorModels(Generator generator) {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+  public static List<RegularSModelDescriptor> getGeneratorModels(Generator generator) {
+    List<RegularSModelDescriptor> result = new ArrayList<RegularSModelDescriptor>();
     List<SModelDescriptor> ownModels = generator.getOwnModelDescriptors();
     for (SModelDescriptor ownModel : ownModels) {
       if (SModelStereotype.isGeneratorModel(ownModel)) {
-        result.add(ownModel);
+        result.add(((RegularSModelDescriptor) ownModel));
       } else if (SModelStereotype.isUserModel(ownModel)) {
         // normal model goes first
-        result.add(0, ownModel);
+        result.add(0, ((RegularSModelDescriptor) ownModel));
       }
     }
     return result;

@@ -4,6 +4,8 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
@@ -87,11 +89,11 @@ public class GenerateFiles_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       IOperationContext projectContext = ProjectOperationContext.get(GenerateFiles_Action.this.project);
-      List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+      List<RegularSModelDescriptor> models = new ArrayList<RegularSModelDescriptor>();
       for (TreeNode ppNode : ListSequence.fromList(GenerateFiles_Action.this.ppNodes)) {
         for (SModelDescriptor model : ListSequence.fromList(((NamespaceTextNode) ppNode).getModelsUnder())) {
           if (!(model.isTransient()) && model instanceof DefaultSModelDescriptor) {
-            models.add(model);
+            models.add((DefaultSModelDescriptor)model);
           }
         }
       }

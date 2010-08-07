@@ -49,16 +49,6 @@ public class RefactoringPanel {
     String modelName = "<html><b>" + myModel.getLongName() + "</b></html>";
     JLabel modelNameLabel = new JLabel(modelName, modelIcon, SwingConstants.LEADING);
     myComponent.add(modelNameLabel, BorderLayout.PAGE_START);
-    List<RefactoringContext> refactoringsContextList = myModel.getRefactoringHistory().getRefactoringContexts();
-    JPanel mainPanel = new JPanel(new GridBagLayout());
-    mainPanel.setBorder(new TitledBorder("actions"));
-    GridBagConstraints gridBagConstraints = new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(4, 8, 4, 8), 0, 0);
-    gridBagConstraints.weighty = 0;
-    gridBagConstraints.gridy = GridBagConstraints.RELATIVE;
-    for (RefactoringContext refactoringContext : refactoringsContextList) {
-      addRefactoringItem(refactoringContext, mainPanel, gridBagConstraints);
-    }
-    myComponent.add(mainPanel, BorderLayout.CENTER);
   }
 
   public void setOwner(BaseDialog dialog) {

@@ -27,6 +27,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.vfs.VFileSystem;
 
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ import java.util.List;
 
 public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
   protected void actionPerformed(VcsContext vcsContext) {
-    List<SModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
+    List<RegularSModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
     Project project = vcsContext.getProject();
     IOperationContext context = ProjectOperationContext.get(project);
     project.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(context, modelsToGenerate, getGenerationHandler());
@@ -43,14 +44,14 @@ public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
 
   protected abstract IGenerationHandler getGenerationHandler();
 
-  private List<SModelDescriptor> getModelsToGenerate(VcsContext vcsContext) {
+  private List<RegularSModelDescriptor> getModelsToGenerate(VcsContext vcsContext) {
     Collection<VirtualFile> filesCollection = vcsContext.getSelectedFilesCollection();
-    List<SModelDescriptor> modelsToGenerate = new ArrayList<SModelDescriptor>();
+    List<RegularSModelDescriptor> modelsToGenerate = new ArrayList<RegularSModelDescriptor>();
     for (VirtualFile f : filesCollection) {
       if (f.exists() && !f.isDirectory()) {
         SModelDescriptor model = SModelRepository.getInstance().findModel(VFileSystem.toIFile(f));
-        if (model != null) {
-          modelsToGenerate.add(model);
+        if (model instanceof RegularSModelDescriptor) {
+          modelsToGenerate.add(((RegularSModelDescriptor) model));
         }
       }
     }
@@ -58,7 +59,7 @@ public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
   }
 
   protected void update(VcsContext vcsContext, Presentation presentation) {
-    List<SModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
+    List<RegularSModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
     if (modelsToGenerate.isEmpty()) {
       enable(presentation, false);
       presentation.setText("Generate " + getWhatToGenerateName());

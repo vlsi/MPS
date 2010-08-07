@@ -31,6 +31,7 @@ import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Pair;
@@ -183,17 +184,17 @@ public class TestGenerationWorker extends GeneratorWorker {
     if (isGeneratePerfomanceReport()) {
       return new GenerationAdapter() {
         @Override
-        public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+        public void beforeGeneration(List<Pair<RegularSModelDescriptor, IOperationContext>> inputModels) {
           Long startTime = System.currentTimeMillis();
-          for (Pair<SModelDescriptor, IOperationContext> pair : inputModels) {
+          for (Pair<RegularSModelDescriptor, IOperationContext> pair : inputModels) {
             myPerfomanceMap.put(pair.o1, startTime);
           }
         }
 
         @Override
-        public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+        public void afterGeneration(List<Pair<RegularSModelDescriptor, IOperationContext>> inputModels) {
           Long finishTime = System.currentTimeMillis();
-          for (Pair<SModelDescriptor, IOperationContext> pair : inputModels) {
+          for (Pair<RegularSModelDescriptor, IOperationContext> pair : inputModels) {
             Long startTime = myPerfomanceMap.get(pair.o1);
             myPerfomanceMap.put(pair.o1, finishTime - startTime);
           }

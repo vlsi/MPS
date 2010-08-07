@@ -25,6 +25,7 @@ import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 
 import java.util.*;
 
@@ -69,12 +70,12 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
       throw new IllegalGeneratorConfigurationException("there is no module that can be used to generate models " + modelDescriptors);
     }
 
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+    List<RegularSModelDescriptor> models = new ArrayList<RegularSModelDescriptor>();
     for (SModelDescriptor sm : modelDescriptors) {
       if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, project, NoCachesStrategy.createBuildCachesStrategy())) {
         continue;
       }
-      models.add(sm);
+      models.add(((RegularSModelDescriptor) sm));
     }
 
     return new GenParameters(models, module);
