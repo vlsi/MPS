@@ -21,6 +21,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.util.Pair;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.ProjectComponent;
@@ -141,8 +142,8 @@ public class GeneratorWorker extends MpsWorker {
 
   protected List<Cycle> computeGenerationOrder(MPSProject project, ObjectsToProcess go) {
 
-    final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
-    extractModels(go.getProjects(), go.getModules(), go.getModels(), moduleToModels);
+    final Map<IModule, List<RegularSModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<RegularSModelDescriptor>>();
+    extractModels(go.getProjects(), go.getModules(), (Set)go.getModels(), (Map)moduleToModels);
 
     // calculate order
     List<Set<IModule>> modulesOrder = ModelAccess.instance().runReadAction(new Computable<List<Set<IModule>>>() {
@@ -213,21 +214,21 @@ public class GeneratorWorker extends MpsWorker {
   protected static class SimpleModuleCycle implements Cycle {
     private final Set<IModule> myModules;
     private final MPSProject myProject;
-    private final Map<IModule, List<SModelDescriptor>> myModuleToModels;
+    private final Map<IModule, List<RegularSModelDescriptor>> myModuleToModels;
 
-    public SimpleModuleCycle(MPSProject project, Set<IModule> modules, Map<IModule, List<SModelDescriptor>> moduleToModels) {
+    public SimpleModuleCycle(MPSProject project, Set<IModule> modules, Map<IModule, List<RegularSModelDescriptor>> moduleToModels) {
       myModules = modules;
       myProject = project;
       myModuleToModels = moduleToModels;
     }
 
     public void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler) {
-      List<Pair<SModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
+      List<Pair<RegularSModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<RegularSModelDescriptor, IOperationContext>>();
       for (IModule module : myModules) {
         ModuleContext moduleContext = new ModuleContext(module, myProject);
-        List<SModelDescriptor> modelsToGenerateNow = myModuleToModels.get(module);
-        for (SModelDescriptor model : modelsToGenerateNow) {
-          modelsToContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
+        List<RegularSModelDescriptor> modelsToGenerateNow = myModuleToModels.get(module);
+        for (RegularSModelDescriptor model : modelsToGenerateNow) {
+          modelsToContext.add(new Pair<RegularSModelDescriptor, IOperationContext>(model, moduleContext));
         }
       }
       gm.generateModels(modelsToContext, generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);

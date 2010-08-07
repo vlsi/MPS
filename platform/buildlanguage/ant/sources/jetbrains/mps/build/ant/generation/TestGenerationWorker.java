@@ -403,13 +403,13 @@ public class TestGenerationWorker extends GeneratorWorker {
   @Override
   protected List<Cycle> computeGenerationOrder(MPSProject project, ObjectsToProcess go) {
     List<Cycle> cycles = new ArrayList<Cycle>();
-    Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
+    Map<IModule, List<RegularSModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<RegularSModelDescriptor>>();
 
-    extractModels(go.getProjects(), go.getModules(), go.getModels(), moduleToModels);
+    extractModels(go.getProjects(), go.getModules(), go.getModels(), (Map) moduleToModels);
 
     for (IModule module : moduleToModels.keySet()) {
-      List<SModelDescriptor> modelsForModule = moduleToModels.get(module);
-      for (SModelDescriptor smodel : modelsForModule) {
+      List<RegularSModelDescriptor> modelsForModule = moduleToModels.get(module);
+      for (RegularSModelDescriptor smodel : modelsForModule) {
         cycles.add(new ModelCycle(smodel, module, project));
       }
     }
@@ -503,9 +503,9 @@ public class TestGenerationWorker extends GeneratorWorker {
   private class ModelCycle implements Cycle {
     private final IModule myModule;
     private final MPSProject myProject;
-    private final SModelDescriptor mySModel;
+    private final RegularSModelDescriptor mySModel;
 
-    public ModelCycle(SModelDescriptor sModel, IModule module, MPSProject project) {
+    public ModelCycle(RegularSModelDescriptor sModel, IModule module, MPSProject project) {
       mySModel = sModel;
       myProject = project;
       myModule = module;
