@@ -31,7 +31,6 @@ import jetbrains.mps.workbench.tools.InvalidUsageException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.naming.OperationNotSupportedException;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -71,16 +70,16 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
       LOG.error(t);
     }
 
-    updateModels(path,prefix,module, models);
+    updateModels(path, prefix, module, models);
 
     return models;
   }
 
   public void updateModels(String path, String prefix, @NotNull IModule module, Set<BaseStubModelDescriptor> models) {
-    if (myLocation==null){
+    if (myLocation == null) {
       myLocation = new StubLocation(path, prefix, module);
     }
-    
+
     SModelRepository repository = SModelRepository.getInstance();
     for (BaseStubModelDescriptor descriptor : models) {
       descriptor.addStubPath(new StubPath(myLocation.getPath(), myThisManager));
@@ -90,7 +89,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
         repository.registerModelDescriptor(descriptor, module);
       } else {
         descriptor = (BaseStubModelDescriptor) oldDescr;
-        SModelRepository.getInstance().addOwnerForDescriptor(descriptor, module);        
+        SModelRepository.getInstance().addOwnerForDescriptor(descriptor, module);
       }
 
       descriptor.setModelRootManager(this);
@@ -137,13 +136,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   @Nullable
   public final SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
-    boolean needsReloading = ((BaseStubModelDescriptor) modelDescriptor).isNeedsReloading();
-    if (!needsReloading && modelDescriptor.isInitialized()) {
-      for (SNode node : modelDescriptor.getSModel().getAllNodesWithIds()) {
-        node.removeAllUserObjects();
-      }
-    }
-    return needsReloading ? null : modelDescriptor.getSModel();
+    return null;
   }
 
   public final void dispose() {

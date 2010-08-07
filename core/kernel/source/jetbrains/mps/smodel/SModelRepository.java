@@ -76,8 +76,7 @@ public class SModelRepository implements ApplicationComponent {
         LOG.debug("Model refresh");
 
         for (SModelDescriptor m : getModelDescriptors()) {
-          if (!(m instanceof RegularSModelDescriptor)) continue;
-          ((RegularSModelDescriptor) m).refresh();
+          m.refresh();
         }
 
         LOG.debug("Model refresh done");

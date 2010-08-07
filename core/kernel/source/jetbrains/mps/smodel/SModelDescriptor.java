@@ -65,6 +65,8 @@ public interface SModelDescriptor {
 
   void dispose();
 
+  void refresh();
+
   @Nullable
   IFile getModelFile();
 

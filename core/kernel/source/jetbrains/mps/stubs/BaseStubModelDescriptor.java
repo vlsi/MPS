@@ -2,10 +2,7 @@ package jetbrains.mps.stubs;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule.StubPath;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
-import jetbrains.mps.smodel.ModelUpdater;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.vfs.IFile;
 
@@ -128,6 +125,15 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
 
   public void save() {
 
+  }
+
+  public void refresh() {
+    if (!isInitialized()) return;
+    if (myNeedsReloading) return;
+
+    for (SNode node : getSModel().getAllNodesWithIds()) {
+      node.removeAllUserObjects();
+    }
   }
 
   public long lastChangeTime() {
