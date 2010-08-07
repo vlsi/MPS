@@ -373,18 +373,6 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
-  public long getLastChangeTime(SModelDescriptor descriptor) {
-    synchronized (myModelsLock) {
-      if (myChangedModels.containsKey(descriptor)) {
-        return myChangedModels.get(descriptor);
-      }
-    }
-    if (descriptor != null) {
-      return descriptor.timestamp();
-    }
-    return 0;
-  }
-
   public Set<SModelDescriptor> getChangedModels() {
     synchronized (myModelsLock) {
       Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();

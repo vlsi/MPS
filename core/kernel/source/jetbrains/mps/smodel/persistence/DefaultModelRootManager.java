@@ -21,6 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
@@ -113,7 +114,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
   @Override
   public void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull RefactoringHistory history) {
-    int persistence = modelDescriptor.getPersistenceVersion();
+    int persistence = ((RegularSModelDescriptor) modelDescriptor).getPersistenceVersion();
     if(persistence >= 5) {
       RefactoringsPersistence.save(modelDescriptor.getModelFile(), history);
     }
@@ -126,7 +127,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       return refactorings;
     }
     
-    if(modelDescriptor.getPersistenceVersion() < 5) {
+    if(((RegularSModelDescriptor) modelDescriptor).getPersistenceVersion() < 5) {
       return RefactoringsPersistence.loadFromModel(modelDescriptor.getModelFile());
     }
     return null;
@@ -348,7 +349,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     return modelDescriptor;
   }
 
-  public void saveMetadata(@NotNull SModelDescriptor modelDescriptor) {
+  public void saveMetadata(@NotNull RegularSModelDescriptor modelDescriptor) {
     Map<String, String> metadata = modelDescriptor.getMetaData();
     if (metadata.isEmpty()) return;
 

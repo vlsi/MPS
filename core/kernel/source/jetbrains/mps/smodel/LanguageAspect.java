@@ -33,6 +33,7 @@ import jetbrains.mps.lang.refactoring.structure.Refactoring_Language;
 import jetbrains.mps.lang.stubs.structure.Stubs_Language;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
@@ -111,13 +112,13 @@ public enum LanguageAspect {
   },
 
   TYPESYSTEM("typesystem") {
-    public SModelDescriptor get(Language l) {
+    public RegularSModelDescriptor get(Language l) {
       SModelDescriptor result = super.get(l);
       if (result == null) {
         //todo backward compatibility
         result = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(l.getNamespace() + ".helgins"));
       }
-      return result;
+      return (RegularSModelDescriptor) result;
     }
 
     public ModuleReference getMainLanguage() {
@@ -270,7 +271,6 @@ public enum LanguageAspect {
     myName = name;
   }
 
-
   public boolean is(SModel model) {
     return is(model.getModelDescriptor());
   }
@@ -279,13 +279,12 @@ public enum LanguageAspect {
     return Language.getModelAspect(sm) == this;
   }
 
-
   public Icon getIcon() {
     return Icons.MODEL_ICON;
   }
 
-  public SModelDescriptor get(Language l) {
-    return SModelRepository.getInstance().getModelDescriptor(new SModelReference(l.getNamespace() + "." + myName, null), l);
+  public RegularSModelDescriptor get(Language l) {
+    return (RegularSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(new SModelReference(l.getNamespace() + "." + myName, null), l);
   }
 
   public SModelReference get(ModuleReference l) {

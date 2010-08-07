@@ -32,6 +32,7 @@ import jetbrains.mps.refactoring.RefactoringView;
 import jetbrains.mps.refactoring.RefactoringViewAction;
 import jetbrains.mps.refactoring.RefactoringViewItem;
 import jetbrains.mps.refactoring.framework.*;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 
@@ -166,7 +167,7 @@ public class RefactoringProcessor {
 
   private void doExecute(final @NotNull RefactoringContext refactoringContext) {
     final IRefactoring refactoring = refactoringContext.getRefactoring();
-    final SModelDescriptor modelDescriptor = refactoringContext.getSelectedModel();
+    final RegularSModelDescriptor modelDescriptor = (RegularSModelDescriptor) refactoringContext.getSelectedModel();
     final SModelReference initialModelReference = modelDescriptor.getSModelReference();
     Runnable runnable = new Runnable() {
       public void run() {
@@ -241,7 +242,7 @@ public class RefactoringProcessor {
     }
   }
 
-  private void updateModels(SModelDescriptor modelDescriptor, RefactoringContext refactoringContext, ILoggableRefactoring refactoring, SModelReference initialModelReference) {
+  private void updateModels(RegularSModelDescriptor modelDescriptor, RefactoringContext refactoringContext, ILoggableRefactoring refactoring, SModelReference initialModelReference) {
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
     refactoringContext.computeCaches();
@@ -263,7 +264,7 @@ public class RefactoringProcessor {
     }
   }
 
-  public void updateAllModels(SModelReference initialModelReference, SModelDescriptor model, RefactoringContext refactoringContext) {
+  public void updateAllModels(SModelReference initialModelReference, RegularSModelDescriptor model, RefactoringContext refactoringContext) {
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
@@ -278,7 +279,7 @@ public class RefactoringProcessor {
     }
   }
 
-  private void updateModel(final SModel model, final SModelDescriptor usedModel, final RefactoringContext refactoringContext) {
+  private void updateModel(final SModel model, final RegularSModelDescriptor usedModel, final RefactoringContext refactoringContext) {
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
     model.runLoadingAction(new Runnable() {
@@ -295,7 +296,7 @@ public class RefactoringProcessor {
     });
   }
 
-  public void writeIntoLog(SModelDescriptor model, RefactoringContext refactoringContext) {
+  public void writeIntoLog(RegularSModelDescriptor model, RefactoringContext refactoringContext) {
     assert !refactoringContext.isLocal();
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 

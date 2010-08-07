@@ -39,11 +39,6 @@ public interface SModelDescriptor {
    */
   SModel getSModel();
 
-  @NotNull
-  RefactoringHistory getRefactoringHistory();
-
-  int getPersistenceVersion();
-
   SModelReference getSModelReference();
 
   SModelFqName getSModelFqName();
@@ -75,8 +70,6 @@ public interface SModelDescriptor {
 
   void save();
 
-  void saveRefactoringHistory();
-
   boolean needsReloading();
 
   void reloadFromDisk();
@@ -94,16 +87,9 @@ public interface SModelDescriptor {
 
   boolean isPackaged();
 
-  long timestamp();
-
   long fileTimestamp();
 
-  long lastStructuralChange();
-
   long lastChangeTime();
-
-  //dramatical event counter
-  long structuralState();
 
   boolean isReadOnly();
 
@@ -114,18 +100,6 @@ public interface SModelDescriptor {
   boolean hasModelListener(@NotNull SModelListener listener);
 
   boolean isTransient();
-
-  String getAttribute(String key);
-
-  void setAttribute(String key, String value);
-
-  Map<String, String> getMetaData();
-
-  int getVersion();
-
-  int getNameVersion();
-
-  void setVersion(int newVersion);
 
   Object getUserObject(String key);
 

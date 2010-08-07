@@ -17,30 +17,27 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.refactoring.PlayRefactoringsFlag;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.VcsHelper;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
-public class DefaultSModelDescriptor extends BaseSModelDescriptor {
+public class DefaultSModelDescriptor extends BaseSModelDescriptor implements RegularSModelDescriptor {
   private static final String VERSION = "version";
   private static final String NAME_VERSION = "nameVersion";
 
@@ -56,7 +53,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   private final Object myLoadingLock = new Object();
 
-  private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange;
 
   private long myDiskTimestamp = -1;
@@ -131,11 +127,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public boolean isReadOnly() {
-    return SModelStereotype.isStubModelStereotype(getSModelReference().getStereotype());
-  }
-
-  public long timestamp() {
-    return myModelRootManager.timestamp(this);
+    return false;
   }
 
   public long fileTimestamp() {
@@ -167,7 +159,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   public int getPersistenceVersion() {
     SModel model = mySModel; // do not use getSModel() to avoid lock
-    if(model != null) {
+    if (model != null) {
       return model.getPersistenceVersion();
     }
     return ModelPersistence.getModelPersistenceVersion(getModelFile());
@@ -177,16 +169,16 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   @NotNull
   public RefactoringHistory getRefactoringHistory() {
     synchronized (myRefactoringHistoryLock) {
-      if(myRefactoringHistory == null) {
+      if (myRefactoringHistory == null) {
         SModel model = mySModel;
-        if(model != null && model.getPersistenceVersion() >= 0 && model.getPersistenceVersion() < 5) {
+        if (model != null && model.getPersistenceVersion() >= 0 && model.getPersistenceVersion() < 5) {
           //noinspection deprecation
           myRefactoringHistory = model.getRefactoringHistory();
         }
-        if(myRefactoringHistory == null) {
+        if (myRefactoringHistory == null) {
           myRefactoringHistory = myModelRootManager.loadModelRefactorings(this);
         }
-        if(myRefactoringHistory == null) {
+        if (myRefactoringHistory == null) {
           myRefactoringHistory = new RefactoringHistory();
         }
       }
@@ -197,7 +189,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   @Override
   public void saveRefactoringHistory() {
     RefactoringHistory toSave = myRefactoringHistory;
-    if(toSave != null) {
+    if (toSave != null) {
       myModelRootManager.saveModelRefactorings(this, toSave);
     }
   }
@@ -216,7 +208,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       do {
         played = false;
         for (SModelDescriptor usedModelDescriptor : model.getDependenciesModels()) {
-          if (playUsedModelDescriptorsRefactoring(model, usedModelDescriptor)) {
+          if (!(usedModelDescriptor instanceof DefaultSModelDescriptor)) continue;
+          if (playUsedModelDescriptorsRefactoring(model, (DefaultSModelDescriptor) usedModelDescriptor)) {
             played = true;
           }
         }
@@ -245,7 +238,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   //true if any refactoring was played
-  private boolean playUsedModelDescriptorsRefactoring(SModel model, SModelDescriptor usedModelDescriptor) {
+
+  private boolean playUsedModelDescriptorsRefactoring(SModel model, DefaultSModelDescriptor usedModelDescriptor) {
     int currentVersion = usedModelDescriptor.getVersion();
     int usedVersion = model.getUsedVersion(usedModelDescriptor.getSModelReference());
     if (myIsTestRefactoringMode) {
@@ -302,10 +296,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     }
 
     return false;
-  }
-
-  public long lastStructuralChange() {
-    return myLastStructuralChange;
   }
 
   public long lastChangeTime() {
@@ -370,7 +360,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     }
     SModelRepository.getInstance().markUnchanged(mySModel);
     SModel newData = myModelRootManager.saveModel(this, true);
-    if(newData != null) {
+    if (newData != null) {
       replaceModel(newData);
     }
 

@@ -77,6 +77,7 @@ public class ModelProperties extends BaseBean {
         removeUnusedDevKits();
         addNewEngagedOnGenerationLanguages();
         removeUnusedEngagedOnGenerationLanguages();
+
         if (ModelGenerationStatusManager.isDoNotGenerate(myModelDescriptor) != myDoNotGenerate) {
           ModelGenerationStatusManager.setDoNotGenerate(myModelDescriptor, myDoNotGenerate);
         }

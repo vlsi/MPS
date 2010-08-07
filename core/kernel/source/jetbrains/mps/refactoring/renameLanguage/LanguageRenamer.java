@@ -26,6 +26,7 @@ import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.MPSVCSManager;
 
@@ -76,7 +77,7 @@ public class LanguageRenamer {
       root.setPrefix(myNewName);
     }
 
-    SModelDescriptor structure = myLanguage.getStructureModelDescriptor();
+    RegularSModelDescriptor structure = myLanguage.getStructureModelDescriptor();
     for (AbstractConceptDeclaration concept : structure.getSModel().allAdapters(AbstractConceptDeclaration.class)) {
       myContext.changeFeatureName(concept.getNode(), myNewName + ".structure." + concept.getName(), concept.getName());
     }
@@ -121,7 +122,7 @@ public class LanguageRenamer {
 
   public void update() {
     updateReferences();
-    SModelDescriptor structure = myLanguage.getStructureModelDescriptor();
+    RegularSModelDescriptor structure = myLanguage.getStructureModelDescriptor();
     myProcessor.updateAllModels(structure.getSModelReference(), structure, myContext);
   }
 

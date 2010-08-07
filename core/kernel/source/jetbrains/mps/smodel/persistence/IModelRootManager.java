@@ -64,8 +64,6 @@ public interface IModelRootManager {
 
   boolean isNewModelsSupported();
 
-  long timestamp(@NotNull SModelDescriptor modelDescriptor);
-
   /**
    * If you will implement this method do not forget
    * 1. Register new model in SModelRepository

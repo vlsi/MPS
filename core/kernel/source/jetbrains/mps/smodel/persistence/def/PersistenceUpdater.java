@@ -15,27 +15,24 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
-
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-
-import java.awt.Frame;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Set;
-
-import com.intellij.openapi.application.ApplicationManager;
 
 import javax.swing.JOptionPane;
+import java.awt.Frame;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 public class PersistenceUpdater {
-  public void upgradePersistence(List<SModelDescriptor> modelDescriptors, final int toVersion) {
-    for (final SModelDescriptor modelDescriptor : modelDescriptors) {
+  public void upgradePersistence(List<RegularSModelDescriptor> modelDescriptors, final int toVersion) {
+    for (final RegularSModelDescriptor modelDescriptor : modelDescriptors) {
       boolean wasInitialized = modelDescriptor.isInitialized();
       IFile file = modelDescriptor.getModelFile();
       if (file == null || file.isReadOnly()) continue;
@@ -47,13 +44,13 @@ public class PersistenceUpdater {
           }
         });
       }
-      if(modelDescriptor.getPersistenceVersion() < toVersion) {
+      if (modelDescriptor.getPersistenceVersion() < toVersion) {
         SModel model = wasInitialized
           ? modelDescriptor.getSModel()
           : ModelPersistence.readModel(file);
-        if(model.getPersistenceVersion() < toVersion) {
+        if (model.getPersistenceVersion() < toVersion) {
           ModelPersistence.upgradePersistence(file, model, model.getPersistenceVersion(), toVersion);
-          if(wasInitialized) {
+          if (wasInitialized) {
             modelDescriptor.reloadFromDisk();
           }
         }
@@ -62,7 +59,7 @@ public class PersistenceUpdater {
   }
 
   public void upgradePersistenceInUnit(final IScope scope, String unitDescription, Frame mainframe) {
-    final List<SModelDescriptor> modelDescriptors = new ArrayList<SModelDescriptor>();
+    final List<RegularSModelDescriptor> modelDescriptors = new ArrayList<RegularSModelDescriptor>();
     final List<SModelDescriptor> scopeModelDescriptors = new ArrayList<SModelDescriptor>();
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -85,7 +82,7 @@ public class PersistenceUpdater {
         }
       }
       if (version != -1 && version < PersistenceSettings.MAX_VERSION) {
-        modelDescriptors.add(modelDescriptor);
+        modelDescriptors.add((RegularSModelDescriptor) modelDescriptor);
       }
     }
 
@@ -130,7 +127,7 @@ public class PersistenceUpdater {
   }
 
   public void upgradePersistenceInModel(SModelDescriptor modelDescriptor, Frame mainFrame) {
-     upgradePersistenceInUnit(new OnlyModelScope(modelDescriptor), "Model " + modelDescriptor.getSModelFqName().toString(), mainFrame);
+    upgradePersistenceInUnit(new OnlyModelScope(modelDescriptor), "Model " + modelDescriptor.getSModelFqName().toString(), mainFrame);
   }
 
 

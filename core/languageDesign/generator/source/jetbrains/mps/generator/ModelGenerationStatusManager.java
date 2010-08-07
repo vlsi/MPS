@@ -33,6 +33,7 @@ import jetbrains.mps.generator.index.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.IFile;
@@ -54,11 +55,13 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   private static final String DO_NOT_GENERATE = "doNotGenerate";
 
   public static boolean isDoNotGenerate(SModelDescriptor sm) {
-    return Boolean.parseBoolean(sm.getAttribute(DO_NOT_GENERATE));
+    if (!(sm instanceof RegularSModelDescriptor)) return false;
+    return Boolean.parseBoolean(((RegularSModelDescriptor) sm).getAttribute(DO_NOT_GENERATE));
   }
 
   public static void setDoNotGenerate(SModelDescriptor sm, boolean value) {
-    sm.setAttribute(DO_NOT_GENERATE, "" + value);
+    if (!(sm instanceof RegularSModelDescriptor)) return;
+    ((RegularSModelDescriptor) sm).setAttribute(DO_NOT_GENERATE, "" + value);
   }
 
   public static ModelGenerationStatusManager getInstance() {
@@ -106,7 +109,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
   public boolean generationRequired(SModelDescriptor sm, Project project, @NotNull NoCachesStrategy strategy) {
     try {
-      return generationRequired(sm,project);
+      return generationRequired(sm, project);
     } catch (IndexNotReadyException e) {
       return strategy.compute(project, sm, getGenerationHash(sm));
     } catch (ProcessCanceledException e) {
@@ -134,8 +137,8 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
   private boolean checkGenerationRequired(final Project project, @NotNull VirtualFile f, String generatedHash) {
     final String[] valueArray = new String[1];
-    FileBasedIndex.getInstance().processValues(ModelDigestIndex.NAME, FileBasedIndex.getFileId(f), f, new ValueProcessor<Map<String,String>>() {
-      public boolean process(VirtualFile file, Map<String,String> values) {
+    FileBasedIndex.getInstance().processValues(ModelDigestIndex.NAME, FileBasedIndex.getFileId(f), f, new ValueProcessor<Map<String, String>>() {
+      public boolean process(VirtualFile file, Map<String, String> values) {
         valueArray[0] = values.get(ModelDigestUtil.FILE);
         return true;
       }

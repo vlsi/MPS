@@ -30,7 +30,6 @@ import java.util.*;
 
 public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
-  protected static volatile long ourStructuralState = 0;
 
   protected SModelReference myModelReference;
   protected Map<String, Object> myUserObjects;
@@ -45,12 +44,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
   private SModelCommandListener[] myModelCommandListenersCopy;
 
-  protected BaseSModelDescriptor(IModelRootManager manager, IFile modelFile, @NotNull SModelReference modelReference,boolean checkDup) {
+  protected BaseSModelDescriptor(IModelRootManager manager, IFile modelFile, @NotNull SModelReference modelReference, boolean checkDup) {
     myModelReference = modelReference;
     myModelFile = modelFile;
     myModelRootManager = manager;
 
-    if (checkDup){
+    if (checkDup) {
       checkModelDuplication();
     }
   }
@@ -129,10 +128,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
       LOG.error("getModule() is used on model (" + this.getLongName() + ") with multiple owning modules (" + sb.toString() + ")");
     }
     return modules.iterator().next();
-  }
-
-  public long structuralState() {
-    return ourStructuralState;
   }
 
   public boolean isEmpty() {
@@ -333,7 +328,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  void fireModelInitialized() {
+  protected void fireModelInitialized() {
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.modelInitialized(this);

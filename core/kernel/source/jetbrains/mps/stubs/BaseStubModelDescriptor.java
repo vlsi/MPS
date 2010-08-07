@@ -2,7 +2,7 @@ package jetbrains.mps.stubs;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule.StubPath;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.ModelUpdater;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
@@ -11,8 +11,11 @@ import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
 
-public final class BaseStubModelDescriptor extends DefaultSModelDescriptor implements Cloneable {
+public final class BaseStubModelDescriptor extends BaseSModelDescriptor implements Cloneable {
   private static final Logger LOG = Logger.getLogger(BaseStubModelDescriptor.class);
+
+  private SModel mySModel = null;
+  private final Object myLoadingLock = new Object();
 
   private List<StubPath> myStubPaths;
   private boolean myNeedsReloading = true;
@@ -34,8 +37,41 @@ public final class BaseStubModelDescriptor extends DefaultSModelDescriptor imple
     return new BaseStubModelDescriptor(manager, myModelFile, myModelReference, false);
   }
 
+  public boolean isReadOnly() {
+    return true;
+  }
+
+  public boolean isTransient() {
+    return false;
+  }
+
+  public SModel getSModel() {
+    // ModelAccess.assertLegalRead();
+
+    SModel result;
+    boolean fireInitialized = false;
+
+    synchronized (myLoadingLock) {
+      if (mySModel == null) {
+        SModel model = loadModel();
+        model.setModelDescritor(this);
+        mySModel = model;
+        fireInitialized = true;
+      }
+      result = mySModel;
+    }
+    if (fireInitialized) {
+      fireModelInitialized();
+    }
+    return result;
+  }
+
+  public void save() {
+
+  }
+
   protected SModel loadModel() {
-    SModel model = super.loadModel();
+    SModel model = myModelRootManager.loadModel(this);
     try {
       updateAfterLoad(model);
     } catch (Throwable t) {
@@ -101,9 +137,8 @@ public final class BaseStubModelDescriptor extends DefaultSModelDescriptor imple
     return myManagerClass;
   }
 
-  @Override
   public boolean isInitialized() {
-    return super.isInitialized() && myModelRootManager != null;
+    return mySModel != null && myModelRootManager != null;
   }
 
   private void updateManagerId() {

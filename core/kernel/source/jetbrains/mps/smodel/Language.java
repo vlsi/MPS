@@ -39,6 +39,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
@@ -537,63 +538,64 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public SModelDescriptor getStructureModelDescriptor() {
+  public RegularSModelDescriptor getStructureModelDescriptor() {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
-  public SModelDescriptor getTypesystemModelDescriptor() {
+  public RegularSModelDescriptor getTypesystemModelDescriptor() {
     return LanguageAspect.TYPESYSTEM.get(this);
   }
 
-  public SModelDescriptor getActionsModelDescriptor() {
+  public RegularSModelDescriptor getActionsModelDescriptor() {
     return LanguageAspect.ACTIONS.get(this);
   }
 
-  public SModelDescriptor getConstraintsModelDescriptor() {
+  public RegularSModelDescriptor getConstraintsModelDescriptor() {
     return LanguageAspect.CONSTRAINTS.get(this);
   }
 
-  public SModelDescriptor getBehaviorModelDescriptor() {
+  public RegularSModelDescriptor getBehaviorModelDescriptor() {
     return LanguageAspect.BEHAVIOR.get(this);
   }
 
-  public SModelDescriptor getDataFlowModelDescriptor() {
+  public RegularSModelDescriptor getDataFlowModelDescriptor() {
     return LanguageAspect.DATA_FLOW.get(this);
   }
 
-  public SModelDescriptor getIntentionsModelDescriptor() {
+  public RegularSModelDescriptor getIntentionsModelDescriptor() {
     return LanguageAspect.INTENTIONS.get(this);
   }
 
-  public SModelDescriptor getFindUsagesModelDescriptor() {
+  public RegularSModelDescriptor getFindUsagesModelDescriptor() {
     return LanguageAspect.FIND_USAGES.get(this);
   }
 
-  public SModelDescriptor getPluginModelDescriptor() {
+  public RegularSModelDescriptor getPluginModelDescriptor() {
     return LanguageAspect.PLUGIN.get(this);
   }
 
-  public SModelDescriptor getRefactoringsModelDescriptor() {
+  public RegularSModelDescriptor getRefactoringsModelDescriptor() {
     return LanguageAspect.REFACTORINGS.get(this);
   }
 
-  public SModelDescriptor getScriptsModelDescriptor() {
+  public RegularSModelDescriptor getScriptsModelDescriptor() {
     return LanguageAspect.SCRIPTS.get(this);
   }
 
-  public SModelDescriptor getEditorModelDescriptor() {
+  public RegularSModelDescriptor getEditorModelDescriptor() {
     return LanguageAspect.EDITOR.get(this);
   }
 
-  public SModelDescriptor getTextgenModelDescriptor() {
+  public RegularSModelDescriptor getTextgenModelDescriptor() {
     return LanguageAspect.TEXT_GEN.get(this);
   }
 
-  public Set<SModelDescriptor> getAspectModelDescriptors() {
-    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
+  public Set<RegularSModelDescriptor> getAspectModelDescriptors() {
+    Set<RegularSModelDescriptor> result = new HashSet<RegularSModelDescriptor>();
     for (LanguageAspect aspect : LanguageAspect.values()) {
-      if (aspect.get(this) != null) {
-        result.add(aspect.get(this));
+      RegularSModelDescriptor asp = aspect.get(this);
+      if (asp != null) {
+        result.add(asp);
       }
     }
     return result;

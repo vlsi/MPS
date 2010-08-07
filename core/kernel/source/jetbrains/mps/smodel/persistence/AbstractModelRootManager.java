@@ -60,13 +60,6 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
     return false;
   }
 
-  public long timestamp(@NotNull SModelDescriptor modelDescriptor) {
-    if (modelDescriptor.getModelFile() != null) {
-      return modelDescriptor.getModelFile().lastModified();
-    }
-    return System.currentTimeMillis();
-  }
-
   @NotNull
   public SModelDescriptor createNewModel(@NotNull SModelRoot root,
                                          @NotNull SModelFqName fqName,

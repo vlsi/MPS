@@ -23,6 +23,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.Condition;
@@ -464,7 +465,7 @@ public class SModel implements Iterable<SNode> {
     ModelChange.assertLegalChange(this);
     if (myVersionedLanguages.contains(language.getModuleReference())) return;
 
-    for (SModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
+    for (RegularSModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
       addAdditionalModelVersion(modelDescriptor.getSModelReference(), firstVersion ? -1 : modelDescriptor.getVersion());
     }
     myVersionedLanguages.add(language.getModuleReference());
@@ -646,7 +647,7 @@ public class SModel implements Iterable<SNode> {
 
     ImportElement importElement = getImportElement(modelReference);
     if (importElement != null) return;
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+    RegularSModelDescriptor modelDescriptor = (RegularSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(modelReference);
     int usedVersion = -1;
     if (modelDescriptor != null) {
       usedVersion = modelDescriptor.getVersion();
