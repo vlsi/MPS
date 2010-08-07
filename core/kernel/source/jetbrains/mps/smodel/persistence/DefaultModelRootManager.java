@@ -351,8 +351,9 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     return modelDescriptor;
   }
 
-  public void saveMetadata(@NotNull RegularSModelDescriptor modelDescriptor) {
-    Map<String, String> metadata = modelDescriptor.getMetaData();
+  public void saveMetadata(@NotNull SModelDescriptor modelDescriptor) {
+    assert modelDescriptor instanceof RegularSModelDescriptor;
+    Map<String, String> metadata = ((RegularSModelDescriptor) modelDescriptor).getMetaData();
     if (metadata.isEmpty()) return;
 
     IFile metadataFile = getMetadataFile(modelDescriptor.getModelFile());
