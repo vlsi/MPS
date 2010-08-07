@@ -7,11 +7,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.NoCachesStrategy;
@@ -28,16 +27,13 @@ public class RunUtil {
 
   public static void makeBeforeRun(final Project project, List<SNode> nodes) {
     GeneratorManager genManager = project.getComponent(GeneratorManager.class);
-    final List<RegularSModelDescriptor> models = ListSequence.fromList(new ArrayList<RegularSModelDescriptor>());
+    final List<SModelDescriptor> models = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     for (final SNode node : nodes) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           SModelDescriptor md = SNodeOperations.getModel(node).getModelDescriptor();
-          if (md instanceof RegularSModelDescriptor) {
-            if (!(ListSequence.fromList(models).contains((RegularSModelDescriptor) md)) && ModelGenerationStatusManager.getInstance().generationRequired(md, project, NoCachesStrategy.createBuildCachesStrategy())) {
-              ListSequence.fromList(models).addElement((RegularSModelDescriptor) md);
-            }
-
+          if (!(ListSequence.fromList(models).contains(md)) && ModelGenerationStatusManager.getInstance().generationRequired(md, project, NoCachesStrategy.createBuildCachesStrategy())) {
+            ListSequence.fromList(models).addElement(md);
           }
         }
       });

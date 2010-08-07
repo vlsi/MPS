@@ -2671,7 +2671,7 @@
                                 <link role="variableDeclaration:3" targetNodeId="6388164970935848246" resolveInfo="language" />
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6388164970935848264">
-                                <link role="baseMethodDeclaration:3" targetNodeId="18.~Language.getStructureModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getStructureModelDescriptor" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="18.~Language.getStructureModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getStructureModelDescriptor" />
                               </node>
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6388164970935848265">
@@ -5252,7 +5252,7 @@
                   <link role="variableDeclaration:3" targetNodeId="6388164970935848831" resolveInfo="language" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6388164970935848845">
-                  <link role="baseMethodDeclaration:3" targetNodeId="18.~Language.getStructureModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="18.~Language.getStructureModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getStructureModelDescriptor" />
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6388164970935848846">
@@ -5422,7 +5422,7 @@
                 <link role="variableDeclaration:3" targetNodeId="6388164970935848936" resolveInfo="aspect" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6388164970935848915">
-                <link role="baseMethodDeclaration:3" targetNodeId="18.~LanguageAspect.get(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.SModelDescriptor" />
+                <link role="baseMethodDeclaration:3" targetNodeId="18.~LanguageAspect.get(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="get" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6388164970935848916">
                   <link role="variableDeclaration:3" targetNodeId="6388164970935848896" resolveInfo="language" />
                 </node>
