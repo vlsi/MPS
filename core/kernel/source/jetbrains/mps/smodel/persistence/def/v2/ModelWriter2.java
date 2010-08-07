@@ -95,10 +95,10 @@ public class ModelWriter2 implements IModelWriter {
       importElem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
 
       int version = -1;
-      RegularSModelDescriptor importedModelDescriptor = (RegularSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(modelReference);
-      if (importedModelDescriptor != null) {
-        version = importedModelDescriptor.getVersion();
-      }
+      SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+      if (importedModelDescriptor instanceof RegularSModelDescriptor) {
+        version = ((RegularSModelDescriptor) importedModelDescriptor).getVersion();
+      }      
       if (version > -1) {
         importElem.setAttribute(ModelPersistence.VERSION, version + "");
       }
