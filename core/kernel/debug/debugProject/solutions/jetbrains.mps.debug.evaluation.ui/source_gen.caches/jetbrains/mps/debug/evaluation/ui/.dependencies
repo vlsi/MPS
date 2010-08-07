@@ -23,7 +23,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.info.StacktraceUtil" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.Evaluator" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.transform.TransformationUtil" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.transform.Transformator" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.HighLevelEvaluationLogic" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.InvocationTargetEvaluationException" />

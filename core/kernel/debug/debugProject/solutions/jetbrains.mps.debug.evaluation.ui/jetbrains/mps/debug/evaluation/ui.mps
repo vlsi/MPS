@@ -2942,12 +2942,18 @@
                 <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6185141366360333783">
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement:3" id="452316466166854680">
                     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="452316466166854681">
-                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="452316466166854682">
-                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644755466">
-                          <link role="classConcept:3" targetNodeId="79.8804575757433489765" resolveInfo="TransformationUtil" />
-                          <link role="baseMethodDeclaration:3" targetNodeId="79.5731735010666692626" resolveInfo="transform" />
-                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="770214570644755467">
-                            <link role="variableDeclaration:3" targetNodeId="6185141366360333775" resolveInfo="evaluator" />
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9146569226295784543">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9146569226295786489">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9146569226295784544">
+                            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9146569226295786487">
+                              <link role="baseMethodDeclaration:3" targetNodeId="79.4422953018422059816" resolveInfo="Transformator" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="9146569226295786488">
+                                <link role="variableDeclaration:3" targetNodeId="6185141366360333775" resolveInfo="evaluator" />
+                              </node>
+                            </node>
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9146569226295786493">
+                            <link role="baseMethodDeclaration:3" targetNodeId="79.4422953018422199168" resolveInfo="transform" />
                           </node>
                         </node>
                       </node>

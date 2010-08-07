@@ -40,7 +40,7 @@ public class Transformator {
     }
   }
 
-  /*package*/ Transformator(SNode whatToEvaluate, boolean dummy) {
+  public Transformator(SNode whatToEvaluate, boolean dummy) {
     // method was created for test purposes only 
     myModel = SNodeOperations.getModel(whatToEvaluate);
     myWhatToEvaluate = whatToEvaluate;
@@ -48,7 +48,7 @@ public class Transformator {
 
   public void transform() {
     TransformationUtil.transformInternal(myWhatToEvaluate);
-    TransformationUtil.wrapReturn(SNodeOperations.getAncestor(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false));
+    TransformationUtil.wrapReturn(SNodeOperations.getAncestor(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false));
 
     while (!(myIsFinished)) {
       myIsFinished = true;

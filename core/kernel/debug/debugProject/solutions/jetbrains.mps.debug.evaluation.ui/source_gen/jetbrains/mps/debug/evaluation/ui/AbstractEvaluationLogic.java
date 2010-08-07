@@ -48,7 +48,7 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
-import jetbrains.mps.debug.evaluation.transform.TransformationUtil;
+import jetbrains.mps.debug.evaluation.transform.Transformator;
 
 public abstract class AbstractEvaluationLogic {
   private static final Logger LOG = Logger.getLogger(AbstractEvaluationLogic.class);
@@ -248,7 +248,7 @@ public abstract class AbstractEvaluationLogic {
 
         if (evaluator != null) {
           try {
-            TransformationUtil.transform(evaluator);
+            new Transformator(evaluator).transform();
             if (AbstractEvaluationLogic.IS_DEVELOPER_MODE) {
               for (_FunctionTypes._void_P1_E0<? super SNode> listener : ListSequence.fromList(myGenerationListeners)) {
                 listener.invoke(evaluator);

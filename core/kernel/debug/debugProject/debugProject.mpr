@@ -136,6 +136,8 @@
         </option>
         <option name="type" value="MODEL" />
       </MyState>
+      <RunnerSettings RunnerId="Default Runner" />
+      <ConfigurationWrapper RunnerId="Default Runner" />
       <method />
     </configuration>
   </component>
