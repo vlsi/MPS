@@ -74,11 +74,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return getSModelReference().getSModelId();
   }
 
-  @Deprecated
-  public String getName() {
-    return NameUtil.shortNameFromLongName(myModelReference.getLongName());
-  }
-
   public String getLongName() {
     return myModelReference.getLongName();
   }
