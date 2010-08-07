@@ -397,7 +397,7 @@ public class ModelAccess {
     }
   }
 
-  static final void assertLegalWrite() {
+  public static final void assertLegalWrite() {
     if (!instance().canWrite()) {
       throw new IllegalModelAccessError("You can write model only inside write actions");
     }
