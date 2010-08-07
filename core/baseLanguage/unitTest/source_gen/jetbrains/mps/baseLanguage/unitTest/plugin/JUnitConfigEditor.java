@@ -505,6 +505,7 @@ public class JUnitConfigEditor extends JPanel {
     myThis.myTestCases_d0.clear();
     for (String nodeName : nodes) {
       myThis.addNodeValue(nodeName);
+      assert ListSequence.fromList(nodes).first() != null;
       if (ListSequence.fromList(nodes).first().equals(nodeName)) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {

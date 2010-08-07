@@ -51,106 +51,107 @@
     <nodeInfo nodeId="1805067011464045717" fileName="JUnitConfigEditor.java" startLine="503" startPosition="148" endLine="504" endPosition="44" />
     <nodeInfo nodeId="2088919023695410829" fileName="JUnitConfigEditor.java" startLine="504" startPosition="44" endLine="505" endPosition="34" />
     <nodeInfo nodeId="3030983492493770379" fileName="JUnitConfigEditor.java" startLine="506" startPosition="35" endLine="507" endPosition="36" />
-    <nodeInfo nodeId="9110034126560763246" fileName="JUnitConfigEditor.java" startLine="511" startPosition="158" endLine="512" endPosition="137" />
-    <nodeInfo nodeId="2621228551306765205" fileName="JUnitConfigEditor.java" startLine="512" startPosition="137" endLine="513" endPosition="46" />
-    <nodeInfo nodeId="2865170255397160560" fileName="JUnitConfigEditor.java" startLine="513" startPosition="46" endLine="514" endPosition="57" />
-    <nodeInfo nodeId="9110034126560763305" fileName="JUnitConfigEditor.java" startLine="515" startPosition="243" endLine="516" endPosition="162" />
-    <nodeInfo nodeId="2621228551306765225" fileName="JUnitConfigEditor.java" startLine="516" startPosition="162" endLine="517" endPosition="50" />
-    <nodeInfo nodeId="2865170255397196183" fileName="JUnitConfigEditor.java" startLine="517" startPosition="50" endLine="518" endPosition="61" />
-    <nodeInfo nodeId="7586277060655338419" fileName="JUnitConfigEditor.java" startLine="524" startPosition="5" endLine="525" endPosition="0" />
-    <nodeInfo nodeId="7586277060655382950" fileName="JUnitConfigEditor.java" startLine="525" startPosition="0" endLine="526" endPosition="15" />
-    <nodeInfo nodeId="7586277060655382955" fileName="JUnitConfigEditor.java" startLine="526" startPosition="15" endLine="527" endPosition="46" />
-    <nodeInfo nodeId="7586277060655382953" fileName="JUnitConfigEditor.java" startLine="527" startPosition="46" endLine="528" endPosition="66" />
-    <nodeInfo nodeId="7586277060655338430" fileName="JUnitConfigEditor.java" startLine="528" startPosition="66" endLine="529" endPosition="154" />
-    <nodeInfo nodeId="7586277060655338442" fileName="JUnitConfigEditor.java" startLine="529" startPosition="154" endLine="530" endPosition="36" />
-    <nodeInfo nodeId="3030983492493770424" fileName="JUnitConfigEditor.java" startLine="531" startPosition="118" endLine="532" endPosition="118" />
-    <nodeInfo nodeId="7586277060655382989" fileName="JUnitConfigEditor.java" startLine="534" startPosition="94" endLine="535" endPosition="73" />
-    <nodeInfo nodeId="7586277060655382997" fileName="JUnitConfigEditor.java" startLine="535" startPosition="73" endLine="536" endPosition="111" />
-    <nodeInfo nodeId="7586277060655383026" fileName="JUnitConfigEditor.java" startLine="537" startPosition="5" endLine="538" endPosition="0" />
-    <nodeInfo nodeId="7586277060655383028" fileName="JUnitConfigEditor.java" startLine="538" startPosition="0" endLine="539" endPosition="14" />
-    <nodeInfo nodeId="3030983492493770445" fileName="JUnitConfigEditor.java" startLine="540" startPosition="48" endLine="541" endPosition="58" />
-    <nodeInfo nodeId="2081431238554916365" fileName="JUnitConfigEditor.java" startLine="544" startPosition="29" endLine="545" endPosition="75" />
-    <nodeInfo nodeId="9110034126560765170" fileName="JUnitConfigEditor.java" startLine="545" startPosition="75" endLine="546" endPosition="101" />
-    <nodeInfo nodeId="2621228551306765245" fileName="JUnitConfigEditor.java" startLine="546" startPosition="101" endLine="547" endPosition="46" />
-    <nodeInfo nodeId="2865170255397161506" fileName="JUnitConfigEditor.java" startLine="547" startPosition="46" endLine="548" endPosition="57" />
-    <nodeInfo nodeId="7586277060655383030" fileName="JUnitConfigEditor.java" startLine="552" startPosition="5" endLine="553" endPosition="0" />
-    <nodeInfo nodeId="7586277060655383032" fileName="JUnitConfigEditor.java" startLine="553" startPosition="0" endLine="554" endPosition="15" />
-    <nodeInfo nodeId="3030983492493770923" fileName="JUnitConfigEditor.java" startLine="555" startPosition="49" endLine="556" endPosition="60" />
-    <nodeInfo nodeId="2081431238554916379" fileName="JUnitConfigEditor.java" startLine="556" startPosition="60" endLine="557" endPosition="71" />
-    <nodeInfo nodeId="7586277060655383034" fileName="JUnitConfigEditor.java" startLine="558" startPosition="5" endLine="559" endPosition="0" />
-    <nodeInfo nodeId="7586277060655383036" fileName="JUnitConfigEditor.java" startLine="559" startPosition="0" endLine="560" endPosition="19" />
-    <nodeInfo nodeId="3494520297692643633" fileName="JUnitConfigEditor.java" startLine="560" startPosition="19" endLine="561" endPosition="22" />
-    <nodeInfo nodeId="315225628069841792" fileName="JUnitConfigEditor.java" startLine="564" startPosition="25" endLine="565" endPosition="38" />
-    <nodeInfo nodeId="315225628069841799" fileName="JUnitConfigEditor.java" startLine="565" startPosition="38" endLine="566" endPosition="39" />
-    <nodeInfo nodeId="1969840607716869198" fileName="JUnitConfigEditor.java" startLine="569" startPosition="26" endLine="570" endPosition="48" />
-    <nodeInfo nodeId="145554711892086866" fileName="JUnitConfigEditor.java" startLine="570" startPosition="48" endLine="571" endPosition="47" />
-    <nodeInfo nodeId="145554711892086871" fileName="JUnitConfigEditor.java" startLine="571" startPosition="47" endLine="572" endPosition="46" />
-    <nodeInfo nodeId="145554711892086876" fileName="JUnitConfigEditor.java" startLine="572" startPosition="46" endLine="573" endPosition="44" />
-    <nodeInfo nodeId="145554711892086881" fileName="JUnitConfigEditor.java" startLine="573" startPosition="44" endLine="574" endPosition="46" />
-    <nodeInfo nodeId="1805067011464045429" fileName="JUnitConfigEditor.java" startLine="574" startPosition="46" endLine="575" endPosition="43" />
-    <nodeInfo nodeId="145554711892086886" fileName="JUnitConfigEditor.java" startLine="576" startPosition="45" endLine="577" endPosition="48" />
-    <nodeInfo nodeId="145554711892086891" fileName="JUnitConfigEditor.java" startLine="578" startPosition="51" endLine="579" endPosition="47" />
-    <nodeInfo nodeId="145554711892086896" fileName="JUnitConfigEditor.java" startLine="580" startPosition="51" endLine="581" endPosition="45" />
-    <nodeInfo nodeId="1805067011464045438" fileName="JUnitConfigEditor.java" startLine="581" startPosition="45" endLine="582" endPosition="46" />
-    <nodeInfo nodeId="145554711892086901" fileName="JUnitConfigEditor.java" startLine="583" startPosition="52" endLine="584" endPosition="47" />
-    <nodeInfo nodeId="1805067011464045447" fileName="JUnitConfigEditor.java" startLine="584" startPosition="47" endLine="585" endPosition="46" />
-    <nodeInfo nodeId="1969840607716869215" fileName="JUnitConfigEditor.java" startLine="586" startPosition="53" endLine="587" endPosition="49" />
-    <nodeInfo nodeId="3030983492493770933" fileName="JUnitConfigEditor.java" startLine="591" startPosition="31" endLine="592" endPosition="60" />
-    <nodeInfo nodeId="3030983492493770943" fileName="JUnitConfigEditor.java" startLine="595" startPosition="32" endLine="596" endPosition="62" />
-    <nodeInfo nodeId="4721100984356825223" fileName="JUnitConfigEditor.java" startLine="599" startPosition="30" endLine="600" endPosition="68" />
-    <nodeInfo nodeId="4721100984356837761" fileName="JUnitConfigEditor.java" startLine="603" startPosition="32" endLine="604" endPosition="72" />
+    <nodeInfo nodeId="3218143931628376465" fileName="JUnitConfigEditor.java" startLine="507" startPosition="36" endLine="508" endPosition="58" />
+    <nodeInfo nodeId="9110034126560763246" fileName="JUnitConfigEditor.java" startLine="512" startPosition="158" endLine="513" endPosition="137" />
+    <nodeInfo nodeId="2621228551306765205" fileName="JUnitConfigEditor.java" startLine="513" startPosition="137" endLine="514" endPosition="46" />
+    <nodeInfo nodeId="2865170255397160560" fileName="JUnitConfigEditor.java" startLine="514" startPosition="46" endLine="515" endPosition="57" />
+    <nodeInfo nodeId="9110034126560763305" fileName="JUnitConfigEditor.java" startLine="516" startPosition="243" endLine="517" endPosition="162" />
+    <nodeInfo nodeId="2621228551306765225" fileName="JUnitConfigEditor.java" startLine="517" startPosition="162" endLine="518" endPosition="50" />
+    <nodeInfo nodeId="2865170255397196183" fileName="JUnitConfigEditor.java" startLine="518" startPosition="50" endLine="519" endPosition="61" />
+    <nodeInfo nodeId="7586277060655338419" fileName="JUnitConfigEditor.java" startLine="525" startPosition="5" endLine="526" endPosition="0" />
+    <nodeInfo nodeId="7586277060655382950" fileName="JUnitConfigEditor.java" startLine="526" startPosition="0" endLine="527" endPosition="15" />
+    <nodeInfo nodeId="7586277060655382955" fileName="JUnitConfigEditor.java" startLine="527" startPosition="15" endLine="528" endPosition="46" />
+    <nodeInfo nodeId="7586277060655382953" fileName="JUnitConfigEditor.java" startLine="528" startPosition="46" endLine="529" endPosition="66" />
+    <nodeInfo nodeId="7586277060655338430" fileName="JUnitConfigEditor.java" startLine="529" startPosition="66" endLine="530" endPosition="154" />
+    <nodeInfo nodeId="7586277060655338442" fileName="JUnitConfigEditor.java" startLine="530" startPosition="154" endLine="531" endPosition="36" />
+    <nodeInfo nodeId="3030983492493770424" fileName="JUnitConfigEditor.java" startLine="532" startPosition="118" endLine="533" endPosition="118" />
+    <nodeInfo nodeId="7586277060655382989" fileName="JUnitConfigEditor.java" startLine="535" startPosition="94" endLine="536" endPosition="73" />
+    <nodeInfo nodeId="7586277060655382997" fileName="JUnitConfigEditor.java" startLine="536" startPosition="73" endLine="537" endPosition="111" />
+    <nodeInfo nodeId="7586277060655383026" fileName="JUnitConfigEditor.java" startLine="538" startPosition="5" endLine="539" endPosition="0" />
+    <nodeInfo nodeId="7586277060655383028" fileName="JUnitConfigEditor.java" startLine="539" startPosition="0" endLine="540" endPosition="14" />
+    <nodeInfo nodeId="3030983492493770445" fileName="JUnitConfigEditor.java" startLine="541" startPosition="48" endLine="542" endPosition="58" />
+    <nodeInfo nodeId="2081431238554916365" fileName="JUnitConfigEditor.java" startLine="545" startPosition="29" endLine="546" endPosition="75" />
+    <nodeInfo nodeId="9110034126560765170" fileName="JUnitConfigEditor.java" startLine="546" startPosition="75" endLine="547" endPosition="101" />
+    <nodeInfo nodeId="2621228551306765245" fileName="JUnitConfigEditor.java" startLine="547" startPosition="101" endLine="548" endPosition="46" />
+    <nodeInfo nodeId="2865170255397161506" fileName="JUnitConfigEditor.java" startLine="548" startPosition="46" endLine="549" endPosition="57" />
+    <nodeInfo nodeId="7586277060655383030" fileName="JUnitConfigEditor.java" startLine="553" startPosition="5" endLine="554" endPosition="0" />
+    <nodeInfo nodeId="7586277060655383032" fileName="JUnitConfigEditor.java" startLine="554" startPosition="0" endLine="555" endPosition="15" />
+    <nodeInfo nodeId="3030983492493770923" fileName="JUnitConfigEditor.java" startLine="556" startPosition="49" endLine="557" endPosition="60" />
+    <nodeInfo nodeId="2081431238554916379" fileName="JUnitConfigEditor.java" startLine="557" startPosition="60" endLine="558" endPosition="71" />
+    <nodeInfo nodeId="7586277060655383034" fileName="JUnitConfigEditor.java" startLine="559" startPosition="5" endLine="560" endPosition="0" />
+    <nodeInfo nodeId="7586277060655383036" fileName="JUnitConfigEditor.java" startLine="560" startPosition="0" endLine="561" endPosition="19" />
+    <nodeInfo nodeId="3494520297692643633" fileName="JUnitConfigEditor.java" startLine="561" startPosition="19" endLine="562" endPosition="22" />
+    <nodeInfo nodeId="315225628069841792" fileName="JUnitConfigEditor.java" startLine="565" startPosition="25" endLine="566" endPosition="38" />
+    <nodeInfo nodeId="315225628069841799" fileName="JUnitConfigEditor.java" startLine="566" startPosition="38" endLine="567" endPosition="39" />
+    <nodeInfo nodeId="1969840607716869198" fileName="JUnitConfigEditor.java" startLine="570" startPosition="26" endLine="571" endPosition="48" />
+    <nodeInfo nodeId="145554711892086866" fileName="JUnitConfigEditor.java" startLine="571" startPosition="48" endLine="572" endPosition="47" />
+    <nodeInfo nodeId="145554711892086871" fileName="JUnitConfigEditor.java" startLine="572" startPosition="47" endLine="573" endPosition="46" />
+    <nodeInfo nodeId="145554711892086876" fileName="JUnitConfigEditor.java" startLine="573" startPosition="46" endLine="574" endPosition="44" />
+    <nodeInfo nodeId="145554711892086881" fileName="JUnitConfigEditor.java" startLine="574" startPosition="44" endLine="575" endPosition="46" />
+    <nodeInfo nodeId="1805067011464045429" fileName="JUnitConfigEditor.java" startLine="575" startPosition="46" endLine="576" endPosition="43" />
+    <nodeInfo nodeId="145554711892086886" fileName="JUnitConfigEditor.java" startLine="577" startPosition="45" endLine="578" endPosition="48" />
+    <nodeInfo nodeId="145554711892086891" fileName="JUnitConfigEditor.java" startLine="579" startPosition="51" endLine="580" endPosition="47" />
+    <nodeInfo nodeId="145554711892086896" fileName="JUnitConfigEditor.java" startLine="581" startPosition="51" endLine="582" endPosition="45" />
+    <nodeInfo nodeId="1805067011464045438" fileName="JUnitConfigEditor.java" startLine="582" startPosition="45" endLine="583" endPosition="46" />
+    <nodeInfo nodeId="145554711892086901" fileName="JUnitConfigEditor.java" startLine="584" startPosition="52" endLine="585" endPosition="47" />
+    <nodeInfo nodeId="1805067011464045447" fileName="JUnitConfigEditor.java" startLine="585" startPosition="47" endLine="586" endPosition="46" />
+    <nodeInfo nodeId="1969840607716869215" fileName="JUnitConfigEditor.java" startLine="587" startPosition="53" endLine="588" endPosition="49" />
+    <nodeInfo nodeId="3030983492493770933" fileName="JUnitConfigEditor.java" startLine="592" startPosition="31" endLine="593" endPosition="60" />
+    <nodeInfo nodeId="3030983492493770943" fileName="JUnitConfigEditor.java" startLine="596" startPosition="32" endLine="597" endPosition="62" />
+    <nodeInfo nodeId="4721100984356825223" fileName="JUnitConfigEditor.java" startLine="600" startPosition="30" endLine="601" endPosition="68" />
+    <nodeInfo nodeId="4721100984356837761" fileName="JUnitConfigEditor.java" startLine="604" startPosition="32" endLine="605" endPosition="72" />
     <nodeInfo nodeId="8533350751107536782" fileName="JUnitConfigEditor.java" startLine="488" startPosition="14" endLine="490" endPosition="9" />
     <nodeInfo nodeId="4137405307544278391" fileName="JUnitConfigEditor.java" startLine="498" startPosition="10" endLine="500" endPosition="5" />
     <nodeInfo nodeId="8977037773381107503" fileName="JUnitConfigEditor.java" startLine="83" startPosition="74" endLine="86" endPosition="9" />
     <nodeInfo nodeId="7227256326727987714" fileName="JUnitConfigEditor.java" startLine="461" startPosition="12" endLine="464" endPosition="9" />
     <nodeInfo nodeId="3218143931628366183" fileName="JUnitConfigEditor.java" startLine="468" startPosition="143" endLine="471" endPosition="11" />
     <nodeInfo nodeId="3218143931628366157" fileName="JUnitConfigEditor.java" startLine="476" startPosition="88" endLine="479" endPosition="11" />
-    <nodeInfo nodeId="7009731661573608057" fileName="JUnitConfigEditor.java" startLine="530" startPosition="36" endLine="533" endPosition="5" />
+    <nodeInfo nodeId="7009731661573608057" fileName="JUnitConfigEditor.java" startLine="531" startPosition="36" endLine="534" endPosition="5" />
     <nodeInfo nodeId="7730161283426918607" fileName="JUnitConfigEditor.java" startLine="407" startPosition="0" endLine="411" endPosition="0" />
     <nodeInfo nodeId="1679097422730608432" fileName="JUnitConfigEditor.java" startLine="413" startPosition="57" endLine="417" endPosition="0" />
     <nodeInfo nodeId="1679097422730608478" fileName="JUnitConfigEditor.java" startLine="421" startPosition="57" endLine="425" endPosition="0" />
     <nodeInfo nodeId="7227256326727987706" fileName="JUnitConfigEditor.java" startLine="457" startPosition="198" endLine="461" endPosition="0" />
     <nodeInfo nodeId="8533350751107498153" fileName="JUnitConfigEditor.java" startLine="481" startPosition="0" endLine="485" endPosition="10" />
-    <nodeInfo nodeId="7586277060655338412" fileName="JUnitConfigEditor.java" startLine="533" startPosition="5" endLine="537" endPosition="5" />
-    <nodeInfo nodeId="5234053624213976388" fileName="JUnitConfigEditor.java" startLine="554" startPosition="15" endLine="558" endPosition="5" />
-    <nodeInfo nodeId="3030983492493715383" fileName="JUnitConfigEditor.java" startLine="590" startPosition="0" endLine="594" endPosition="0" />
-    <nodeInfo nodeId="3030983492493716122" fileName="JUnitConfigEditor.java" startLine="594" startPosition="0" endLine="598" endPosition="0" />
-    <nodeInfo nodeId="3030983492493716134" fileName="JUnitConfigEditor.java" startLine="598" startPosition="0" endLine="602" endPosition="0" />
-    <nodeInfo nodeId="3030983492493716138" fileName="JUnitConfigEditor.java" startLine="602" startPosition="0" endLine="606" endPosition="0" />
+    <nodeInfo nodeId="7586277060655338412" fileName="JUnitConfigEditor.java" startLine="534" startPosition="5" endLine="538" endPosition="5" />
+    <nodeInfo nodeId="5234053624213976388" fileName="JUnitConfigEditor.java" startLine="555" startPosition="15" endLine="559" endPosition="5" />
+    <nodeInfo nodeId="3030983492493715383" fileName="JUnitConfigEditor.java" startLine="591" startPosition="0" endLine="595" endPosition="0" />
+    <nodeInfo nodeId="3030983492493716122" fileName="JUnitConfigEditor.java" startLine="595" startPosition="0" endLine="599" endPosition="0" />
+    <nodeInfo nodeId="3030983492493716134" fileName="JUnitConfigEditor.java" startLine="599" startPosition="0" endLine="603" endPosition="0" />
+    <nodeInfo nodeId="3030983492493716138" fileName="JUnitConfigEditor.java" startLine="603" startPosition="0" endLine="607" endPosition="0" />
     <nodeInfo nodeId="1679097422730608431" fileName="JUnitConfigEditor.java" startLine="412" startPosition="56" endLine="417" endPosition="7" />
     <nodeInfo nodeId="1679097422730608477" fileName="JUnitConfigEditor.java" startLine="420" startPosition="54" endLine="425" endPosition="7" />
     <nodeInfo nodeId="7227256326727987689" fileName="JUnitConfigEditor.java" startLine="456" startPosition="55" endLine="461" endPosition="12" />
     <nodeInfo nodeId="2865170255397109037" fileName="JUnitConfigEditor.java" startLine="485" startPosition="10" endLine="490" endPosition="9" />
     <nodeInfo nodeId="4137405307544278372" fileName="JUnitConfigEditor.java" startLine="495" startPosition="62" endLine="500" endPosition="5" />
-    <nodeInfo nodeId="9110034126560763324" fileName="JUnitConfigEditor.java" startLine="514" startPosition="57" endLine="519" endPosition="15" />
-    <nodeInfo nodeId="315225628069807583" fileName="JUnitConfigEditor.java" startLine="563" startPosition="0" endLine="568" endPosition="0" />
+    <nodeInfo nodeId="9110034126560763324" fileName="JUnitConfigEditor.java" startLine="515" startPosition="57" endLine="520" endPosition="15" />
+    <nodeInfo nodeId="315225628069807583" fileName="JUnitConfigEditor.java" startLine="564" startPosition="0" endLine="569" endPosition="0" />
     <nodeInfo nodeId="1679097422730608523" fileName="JUnitConfigEditor.java" startLine="429" startPosition="57" endLine="435" endPosition="0" />
     <nodeInfo nodeId="1679097422730608554" fileName="JUnitConfigEditor.java" startLine="439" startPosition="57" endLine="445" endPosition="0" />
     <nodeInfo nodeId="7227256326728006357" fileName="JUnitConfigEditor.java" startLine="466" startPosition="77" endLine="472" endPosition="9" />
     <nodeInfo nodeId="7227256326728006393" fileName="JUnitConfigEditor.java" startLine="474" startPosition="67" endLine="480" endPosition="9" />
     <nodeInfo nodeId="1679097422730608522" fileName="JUnitConfigEditor.java" startLine="428" startPosition="52" endLine="435" endPosition="7" />
     <nodeInfo nodeId="1679097422730608553" fileName="JUnitConfigEditor.java" startLine="438" startPosition="79" endLine="445" endPosition="7" />
-    <nodeInfo nodeId="2865170255397225775" fileName="JUnitConfigEditor.java" startLine="543" startPosition="61" endLine="550" endPosition="0" />
+    <nodeInfo nodeId="2865170255397225775" fileName="JUnitConfigEditor.java" startLine="544" startPosition="61" endLine="551" endPosition="0" />
     <nodeInfo nodeId="5022808683419675796" fileName="JUnitConfigEditor.java" startLine="80" startPosition="79" endLine="88" endPosition="0" />
     <nodeInfo nodeId="1679097422730608417" fileName="JUnitConfigEditor.java" startLine="411" startPosition="0" endLine="419" endPosition="0" />
     <nodeInfo nodeId="1679097422730608463" fileName="JUnitConfigEditor.java" startLine="419" startPosition="0" endLine="427" endPosition="0" />
-    <nodeInfo nodeId="2865170255397225774" fileName="JUnitConfigEditor.java" startLine="542" startPosition="150" endLine="550" endPosition="11" />
+    <nodeInfo nodeId="2865170255397225774" fileName="JUnitConfigEditor.java" startLine="543" startPosition="150" endLine="551" endPosition="11" />
     <nodeInfo nodeId="5022808683419675675" fileName="JUnitConfigEditor.java" startLine="79" startPosition="46" endLine="88" endPosition="7" />
     <nodeInfo nodeId="1679097422730608508" fileName="JUnitConfigEditor.java" startLine="427" startPosition="0" endLine="437" endPosition="0" />
     <nodeInfo nodeId="1679097422730608539" fileName="JUnitConfigEditor.java" startLine="437" startPosition="0" endLine="447" endPosition="0" />
-    <nodeInfo nodeId="9110034126560763270" fileName="JUnitConfigEditor.java" startLine="510" startPosition="29" endLine="520" endPosition="13" />
-    <nodeInfo nodeId="4973191407238958348" fileName="JUnitConfigEditor.java" startLine="541" startPosition="58" endLine="551" endPosition="7" />
-    <nodeInfo nodeId="2865170255397225769" fileName="JUnitConfigEditor.java" startLine="509" startPosition="61" endLine="522" endPosition="0" />
-    <nodeInfo nodeId="5234053624213976383" fileName="JUnitConfigEditor.java" startLine="539" startPosition="14" endLine="552" endPosition="5" />
-    <nodeInfo nodeId="5554902896496858153" fileName="JUnitConfigEditor.java" startLine="575" startPosition="43" endLine="588" endPosition="5" />
-    <nodeInfo nodeId="2865170255397225768" fileName="JUnitConfigEditor.java" startLine="508" startPosition="66" endLine="522" endPosition="11" />
-    <nodeInfo nodeId="2081431238554887389" fileName="JUnitConfigEditor.java" startLine="507" startPosition="36" endLine="523" endPosition="7" />
-    <nodeInfo nodeId="7009731661573607830" fileName="JUnitConfigEditor.java" startLine="505" startPosition="34" endLine="524" endPosition="5" />
-    <nodeInfo nodeId="5554902896496858138" fileName="JUnitConfigEditor.java" startLine="568" startPosition="0" endLine="590" endPosition="0" />
+    <nodeInfo nodeId="9110034126560763270" fileName="JUnitConfigEditor.java" startLine="511" startPosition="29" endLine="521" endPosition="13" />
+    <nodeInfo nodeId="4973191407238958348" fileName="JUnitConfigEditor.java" startLine="542" startPosition="58" endLine="552" endPosition="7" />
+    <nodeInfo nodeId="2865170255397225769" fileName="JUnitConfigEditor.java" startLine="510" startPosition="61" endLine="523" endPosition="0" />
+    <nodeInfo nodeId="5234053624213976383" fileName="JUnitConfigEditor.java" startLine="540" startPosition="14" endLine="553" endPosition="5" />
+    <nodeInfo nodeId="5554902896496858153" fileName="JUnitConfigEditor.java" startLine="576" startPosition="43" endLine="589" endPosition="5" />
+    <nodeInfo nodeId="2865170255397225768" fileName="JUnitConfigEditor.java" startLine="509" startPosition="66" endLine="523" endPosition="11" />
+    <nodeInfo nodeId="2081431238554887389" fileName="JUnitConfigEditor.java" startLine="508" startPosition="58" endLine="524" endPosition="7" />
+    <nodeInfo nodeId="7009731661573607830" fileName="JUnitConfigEditor.java" startLine="505" startPosition="34" endLine="525" endPosition="5" />
+    <nodeInfo nodeId="5554902896496858138" fileName="JUnitConfigEditor.java" startLine="569" startPosition="0" endLine="591" endPosition="0" />
     <nodeInfo nodeId="6406886181382143694" fileName="JUnitConfigEditor.java" startLine="449" startPosition="57" endLine="492" endPosition="0" />
     <nodeInfo nodeId="6406886181382143693" fileName="JUnitConfigEditor.java" startLine="448" startPosition="62" endLine="492" endPosition="7" />
     <nodeInfo nodeId="1930019848839359701" fileName="JUnitConfigEditor.java" startLine="447" startPosition="0" endLine="494" endPosition="0" />
-    <nodeInfo nodeId="3494520297692641418" fileName="JUnitConfigEditor.java" startLine="494" startPosition="0" endLine="563" endPosition="0" />
+    <nodeInfo nodeId="3494520297692641418" fileName="JUnitConfigEditor.java" startLine="494" startPosition="0" endLine="564" endPosition="0" />
     <scopeInfo nodeId="8977037773381107504" fileName="JUnitConfigEditor.java" startLine="84" startPosition="48" endLine="85" endPosition="69" />
     <scopeInfo nodeId="7730161283426918609" fileName="JUnitConfigEditor.java" startLine="408" startPosition="47" endLine="409" endPosition="87" />
     <scopeInfo nodeId="1679097422730608433" fileName="JUnitConfigEditor.java" startLine="414" startPosition="25" endLine="415" endPosition="60" />
@@ -163,31 +164,31 @@
     <scopeInfo nodeId="8533350751107536783" fileName="JUnitConfigEditor.java" startLine="488" startPosition="16" endLine="489" endPosition="48" />
     <scopeInfo nodeId="4137405307544278373" fileName="JUnitConfigEditor.java" startLine="496" startPosition="47" endLine="497" endPosition="84" />
     <scopeInfo nodeId="4137405307544278392" fileName="JUnitConfigEditor.java" startLine="498" startPosition="12" endLine="499" endPosition="47" />
-    <scopeInfo nodeId="7009731661573608058" fileName="JUnitConfigEditor.java" startLine="531" startPosition="118" endLine="532" endPosition="118" />
-    <scopeInfo nodeId="5554902896496858154" fileName="JUnitConfigEditor.java" startLine="576" startPosition="45" endLine="577" endPosition="48" />
-    <scopeInfo nodeId="5554902896496858172" fileName="JUnitConfigEditor.java" startLine="578" startPosition="51" endLine="579" endPosition="47" />
-    <scopeInfo nodeId="1969840607716869208" fileName="JUnitConfigEditor.java" startLine="586" startPosition="53" endLine="587" endPosition="49" />
-    <scopeInfo nodeId="3030983492493715385" fileName="JUnitConfigEditor.java" startLine="591" startPosition="31" endLine="592" endPosition="60" />
-    <scopeInfo nodeId="3030983492493716124" fileName="JUnitConfigEditor.java" startLine="595" startPosition="32" endLine="596" endPosition="62" />
-    <scopeInfo nodeId="3030983492493716136" fileName="JUnitConfigEditor.java" startLine="599" startPosition="30" endLine="600" endPosition="68" />
-    <scopeInfo nodeId="3030983492493716140" fileName="JUnitConfigEditor.java" startLine="603" startPosition="32" endLine="604" endPosition="72" />
-    <scopeInfo nodeId="7586277060655338415" fileName="JUnitConfigEditor.java" startLine="534" startPosition="94" endLine="536" endPosition="111">
+    <scopeInfo nodeId="7009731661573608058" fileName="JUnitConfigEditor.java" startLine="532" startPosition="118" endLine="533" endPosition="118" />
+    <scopeInfo nodeId="5554902896496858154" fileName="JUnitConfigEditor.java" startLine="577" startPosition="45" endLine="578" endPosition="48" />
+    <scopeInfo nodeId="5554902896496858172" fileName="JUnitConfigEditor.java" startLine="579" startPosition="51" endLine="580" endPosition="47" />
+    <scopeInfo nodeId="1969840607716869208" fileName="JUnitConfigEditor.java" startLine="587" startPosition="53" endLine="588" endPosition="49" />
+    <scopeInfo nodeId="3030983492493715385" fileName="JUnitConfigEditor.java" startLine="592" startPosition="31" endLine="593" endPosition="60" />
+    <scopeInfo nodeId="3030983492493716124" fileName="JUnitConfigEditor.java" startLine="596" startPosition="32" endLine="597" endPosition="62" />
+    <scopeInfo nodeId="3030983492493716136" fileName="JUnitConfigEditor.java" startLine="600" startPosition="30" endLine="601" endPosition="68" />
+    <scopeInfo nodeId="3030983492493716140" fileName="JUnitConfigEditor.java" startLine="604" startPosition="32" endLine="605" endPosition="72" />
+    <scopeInfo nodeId="7586277060655338415" fileName="JUnitConfigEditor.java" startLine="535" startPosition="94" endLine="537" endPosition="111">
       <varInfo nodeId="7586277060655382990" varName="separatorIndex" />
     </scopeInfo>
-    <scopeInfo nodeId="5234053624213976389" fileName="JUnitConfigEditor.java" startLine="555" startPosition="49" endLine="557" endPosition="71" />
-    <scopeInfo nodeId="315225628069807585" fileName="JUnitConfigEditor.java" startLine="564" startPosition="25" endLine="566" endPosition="39" />
-    <scopeInfo nodeId="5554902896496858187" fileName="JUnitConfigEditor.java" startLine="580" startPosition="51" endLine="582" endPosition="46" />
-    <scopeInfo nodeId="5554902896496858204" fileName="JUnitConfigEditor.java" startLine="583" startPosition="52" endLine="585" endPosition="46" />
+    <scopeInfo nodeId="5234053624213976389" fileName="JUnitConfigEditor.java" startLine="556" startPosition="49" endLine="558" endPosition="71" />
+    <scopeInfo nodeId="315225628069807585" fileName="JUnitConfigEditor.java" startLine="565" startPosition="25" endLine="567" endPosition="39" />
+    <scopeInfo nodeId="5554902896496858187" fileName="JUnitConfigEditor.java" startLine="581" startPosition="51" endLine="583" endPosition="46" />
+    <scopeInfo nodeId="5554902896496858204" fileName="JUnitConfigEditor.java" startLine="584" startPosition="52" endLine="586" endPosition="46" />
     <scopeInfo nodeId="1679097422730608524" fileName="JUnitConfigEditor.java" startLine="430" startPosition="25" endLine="433" endPosition="48">
       <varInfo nodeId="7009731661573607955" varName="testCase" />
     </scopeInfo>
     <scopeInfo nodeId="1679097422730608555" fileName="JUnitConfigEditor.java" startLine="440" startPosition="25" endLine="443" endPosition="52">
       <varInfo nodeId="7009731661573607988" varName="testMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="9110034126560763325" fileName="JUnitConfigEditor.java" startLine="515" startPosition="243" endLine="518" endPosition="61">
+    <scopeInfo nodeId="9110034126560763325" fileName="JUnitConfigEditor.java" startLine="516" startPosition="243" endLine="519" endPosition="61">
       <varInfo nodeId="9110034126560763306" varName="moduleName" />
     </scopeInfo>
-    <scopeInfo nodeId="7009731661573608057" fileName="JUnitConfigEditor.java" startLine="530" startPosition="36" endLine="533" endPosition="5">
+    <scopeInfo nodeId="7009731661573608057" fileName="JUnitConfigEditor.java" startLine="531" startPosition="36" endLine="534" endPosition="5">
       <varInfo nodeId="7009731661573608060" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="7730161283426918607" fileName="JUnitConfigEditor.java" startLine="407" startPosition="0" endLine="411" endPosition="0" />
@@ -200,18 +201,18 @@
     <scopeInfo nodeId="7227256326728006394" fileName="JUnitConfigEditor.java" startLine="475" startPosition="50" endLine="479" endPosition="11">
       <varInfo nodeId="3218143931628366150" varName="fqName" />
     </scopeInfo>
-    <scopeInfo nodeId="7586277060655338412" fileName="JUnitConfigEditor.java" startLine="533" startPosition="5" endLine="537" endPosition="5" />
-    <scopeInfo nodeId="2865170255397225776" fileName="JUnitConfigEditor.java" startLine="544" startPosition="29" endLine="548" endPosition="57">
+    <scopeInfo nodeId="7586277060655338412" fileName="JUnitConfigEditor.java" startLine="534" startPosition="5" endLine="538" endPosition="5" />
+    <scopeInfo nodeId="2865170255397225776" fileName="JUnitConfigEditor.java" startLine="545" startPosition="29" endLine="549" endPosition="57">
       <varInfo nodeId="9110034126560765171" varName="moduleName" />
     </scopeInfo>
-    <scopeInfo nodeId="3030983492493715383" fileName="JUnitConfigEditor.java" startLine="590" startPosition="0" endLine="594" endPosition="0" />
-    <scopeInfo nodeId="3030983492493716122" fileName="JUnitConfigEditor.java" startLine="594" startPosition="0" endLine="598" endPosition="0" />
-    <scopeInfo nodeId="3030983492493716134" fileName="JUnitConfigEditor.java" startLine="598" startPosition="0" endLine="602" endPosition="0" />
-    <scopeInfo nodeId="3030983492493716138" fileName="JUnitConfigEditor.java" startLine="602" startPosition="0" endLine="606" endPosition="0" />
+    <scopeInfo nodeId="3030983492493715383" fileName="JUnitConfigEditor.java" startLine="591" startPosition="0" endLine="595" endPosition="0" />
+    <scopeInfo nodeId="3030983492493716122" fileName="JUnitConfigEditor.java" startLine="595" startPosition="0" endLine="599" endPosition="0" />
+    <scopeInfo nodeId="3030983492493716134" fileName="JUnitConfigEditor.java" startLine="599" startPosition="0" endLine="603" endPosition="0" />
+    <scopeInfo nodeId="3030983492493716138" fileName="JUnitConfigEditor.java" startLine="603" startPosition="0" endLine="607" endPosition="0" />
     <scopeInfo nodeId="5022808683419675799" fileName="JUnitConfigEditor.java" startLine="81" startPosition="25" endLine="86" endPosition="9" />
     <scopeInfo nodeId="1679097422730608419" fileName="JUnitConfigEditor.java" startLine="412" startPosition="56" endLine="417" endPosition="7" />
     <scopeInfo nodeId="1679097422730608465" fileName="JUnitConfigEditor.java" startLine="420" startPosition="54" endLine="425" endPosition="7" />
-    <scopeInfo nodeId="315225628069807583" fileName="JUnitConfigEditor.java" startLine="563" startPosition="0" endLine="568" endPosition="0" />
+    <scopeInfo nodeId="315225628069807583" fileName="JUnitConfigEditor.java" startLine="564" startPosition="0" endLine="569" endPosition="0" />
     <scopeInfo nodeId="1679097422730608523" fileName="JUnitConfigEditor.java" startLine="429" startPosition="57" endLine="435" endPosition="0" />
     <scopeInfo nodeId="1679097422730608554" fileName="JUnitConfigEditor.java" startLine="439" startPosition="57" endLine="445" endPosition="0" />
     <scopeInfo nodeId="7227256326728006357" fileName="JUnitConfigEditor.java" startLine="466" startPosition="77" endLine="472" endPosition="9">
@@ -222,7 +223,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1679097422730608510" fileName="JUnitConfigEditor.java" startLine="428" startPosition="52" endLine="435" endPosition="7" />
     <scopeInfo nodeId="1679097422730608541" fileName="JUnitConfigEditor.java" startLine="438" startPosition="79" endLine="445" endPosition="7" />
-    <scopeInfo nodeId="2865170255397225775" fileName="JUnitConfigEditor.java" startLine="543" startPosition="61" endLine="550" endPosition="0" />
+    <scopeInfo nodeId="2865170255397225775" fileName="JUnitConfigEditor.java" startLine="544" startPosition="61" endLine="551" endPosition="0" />
     <scopeInfo nodeId="5022808683419675796" fileName="JUnitConfigEditor.java" startLine="80" startPosition="79" endLine="88" endPosition="0" />
     <scopeInfo nodeId="2583095906305348269" fileName="JUnitConfigEditor.java" startLine="94" startPosition="31" endLine="102" endPosition="82" />
     <scopeInfo nodeId="1679097422730608417" fileName="JUnitConfigEditor.java" startLine="411" startPosition="0" endLine="419" endPosition="0">
@@ -231,10 +232,10 @@
     <scopeInfo nodeId="1679097422730608463" fileName="JUnitConfigEditor.java" startLine="419" startPosition="0" endLine="427" endPosition="0">
       <varInfo nodeId="1679097422730608506" varName="modelName" />
     </scopeInfo>
-    <scopeInfo nodeId="9110034126560763271" fileName="JUnitConfigEditor.java" startLine="511" startPosition="158" endLine="519" endPosition="15">
+    <scopeInfo nodeId="9110034126560763271" fileName="JUnitConfigEditor.java" startLine="512" startPosition="158" endLine="520" endPosition="15">
       <varInfo nodeId="9110034126560763247" varName="modelName" />
     </scopeInfo>
-    <scopeInfo nodeId="4973191407238958349" fileName="JUnitConfigEditor.java" startLine="542" startPosition="150" endLine="550" endPosition="11" />
+    <scopeInfo nodeId="4973191407238958349" fileName="JUnitConfigEditor.java" startLine="543" startPosition="150" endLine="551" endPosition="11" />
     <scopeInfo nodeId="1679097422730608508" fileName="JUnitConfigEditor.java" startLine="427" startPosition="0" endLine="437" endPosition="0">
       <varInfo nodeId="1679097422730608537" varName="nodeName" />
     </scopeInfo>
@@ -242,17 +243,17 @@
       <varInfo nodeId="1679097422730608570" varName="nodeName" />
       <varInfo nodeId="3303951263690367663" varName="methodName" />
     </scopeInfo>
-    <scopeInfo nodeId="2865170255397225770" fileName="JUnitConfigEditor.java" startLine="510" startPosition="29" endLine="520" endPosition="13" />
-    <scopeInfo nodeId="5234053624213976384" fileName="JUnitConfigEditor.java" startLine="540" startPosition="48" endLine="551" endPosition="7" />
+    <scopeInfo nodeId="2865170255397225770" fileName="JUnitConfigEditor.java" startLine="511" startPosition="29" endLine="521" endPosition="13" />
+    <scopeInfo nodeId="5234053624213976384" fileName="JUnitConfigEditor.java" startLine="541" startPosition="48" endLine="552" endPosition="7" />
     <scopeInfo nodeId="1104580685292496970" fileName="JUnitConfigEditor.java" startLine="76" startPosition="39" endLine="88" endPosition="7" />
-    <scopeInfo nodeId="2865170255397225769" fileName="JUnitConfigEditor.java" startLine="509" startPosition="61" endLine="522" endPosition="0" />
-    <scopeInfo nodeId="2081431238554887390" fileName="JUnitConfigEditor.java" startLine="508" startPosition="66" endLine="522" endPosition="11" />
-    <scopeInfo nodeId="7009731661573607831" fileName="JUnitConfigEditor.java" startLine="506" startPosition="35" endLine="523" endPosition="7" />
-    <scopeInfo nodeId="7009731661573607830" fileName="JUnitConfigEditor.java" startLine="505" startPosition="34" endLine="524" endPosition="5">
+    <scopeInfo nodeId="2865170255397225769" fileName="JUnitConfigEditor.java" startLine="510" startPosition="61" endLine="523" endPosition="0" />
+    <scopeInfo nodeId="2081431238554887390" fileName="JUnitConfigEditor.java" startLine="509" startPosition="66" endLine="523" endPosition="11" />
+    <scopeInfo nodeId="7009731661573607831" fileName="JUnitConfigEditor.java" startLine="506" startPosition="35" endLine="524" endPosition="7" />
+    <scopeInfo nodeId="5554902896496858140" fileName="JUnitConfigEditor.java" startLine="570" startPosition="26" endLine="589" endPosition="5" />
+    <scopeInfo nodeId="7009731661573607830" fileName="JUnitConfigEditor.java" startLine="505" startPosition="34" endLine="525" endPosition="5">
       <varInfo nodeId="7009731661573607834" varName="nodeName" />
     </scopeInfo>
-    <scopeInfo nodeId="5554902896496858140" fileName="JUnitConfigEditor.java" startLine="569" startPosition="26" endLine="588" endPosition="5" />
-    <scopeInfo nodeId="5554902896496858138" fileName="JUnitConfigEditor.java" startLine="568" startPosition="0" endLine="590" endPosition="0" />
+    <scopeInfo nodeId="5554902896496858138" fileName="JUnitConfigEditor.java" startLine="569" startPosition="0" endLine="591" endPosition="0" />
     <scopeInfo nodeId="6406886181382143695" fileName="JUnitConfigEditor.java" startLine="450" startPosition="25" endLine="490" endPosition="9">
       <varInfo nodeId="7227256326727987690" varName="index" />
     </scopeInfo>
@@ -261,11 +262,11 @@
     <scopeInfo nodeId="1930019848839359701" fileName="JUnitConfigEditor.java" startLine="447" startPosition="0" endLine="494" endPosition="0">
       <varInfo nodeId="1930019848839359706" varName="config" />
     </scopeInfo>
-    <scopeInfo nodeId="3494520297692641420" fileName="JUnitConfigEditor.java" startLine="495" startPosition="62" endLine="561" endPosition="22">
+    <scopeInfo nodeId="3494520297692641420" fileName="JUnitConfigEditor.java" startLine="495" startPosition="62" endLine="562" endPosition="22">
       <varInfo nodeId="7586277060655338431" varName="methods" />
       <varInfo nodeId="7009731661573607648" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="3494520297692641418" fileName="JUnitConfigEditor.java" startLine="494" startPosition="0" endLine="563" endPosition="0">
+    <scopeInfo nodeId="3494520297692641418" fileName="JUnitConfigEditor.java" startLine="494" startPosition="0" endLine="564" endPosition="0">
       <varInfo nodeId="3494520297692641423" varName="config" />
     </scopeInfo>
     <unitInfo nodeId="1679097422730608432" fileName="JUnitConfigEditor.java" startLine="413" startPosition="45" endLine="417" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$11" />
@@ -273,9 +274,9 @@
     <unitInfo nodeId="7227256326727987706" fileName="JUnitConfigEditor.java" startLine="457" startPosition="168" endLine="461" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$16" />
     <unitInfo nodeId="1679097422730608523" fileName="JUnitConfigEditor.java" startLine="429" startPosition="45" endLine="435" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$13" />
     <unitInfo nodeId="1679097422730608554" fileName="JUnitConfigEditor.java" startLine="439" startPosition="45" endLine="445" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$14" />
-    <unitInfo nodeId="2865170255397225775" fileName="JUnitConfigEditor.java" startLine="543" startPosition="49" endLine="550" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$17" />
+    <unitInfo nodeId="2865170255397225775" fileName="JUnitConfigEditor.java" startLine="544" startPosition="49" endLine="551" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$17" />
     <unitInfo nodeId="5022808683419675794" fileName="JUnitConfigEditor.java" startLine="80" startPosition="67" endLine="88" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$18" />
-    <unitInfo nodeId="2865170255397225769" fileName="JUnitConfigEditor.java" startLine="509" startPosition="49" endLine="522" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$16" />
+    <unitInfo nodeId="2865170255397225769" fileName="JUnitConfigEditor.java" startLine="510" startPosition="49" endLine="523" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$16" />
     <unitInfo nodeId="6406886181382143694" fileName="JUnitConfigEditor.java" startLine="449" startPosition="45" endLine="492" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$15" />
   </root>
   <root nodeId="1208270545572">
