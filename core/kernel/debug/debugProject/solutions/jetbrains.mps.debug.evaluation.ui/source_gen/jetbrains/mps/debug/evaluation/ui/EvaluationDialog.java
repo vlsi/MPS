@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import javax.swing.JScrollPane;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -92,7 +92,7 @@ public class EvaluationDialog extends BaseDialog {
       }
     });
 
-    final Wrappers._T<SModelDescriptor> d = new Wrappers._T<SModelDescriptor>();
+    final Wrappers._T<RegularSModelDescriptor> d = new Wrappers._T<RegularSModelDescriptor>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         d.value = myEditor.getModel();

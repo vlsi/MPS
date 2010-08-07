@@ -51,7 +51,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.debug.api.DebugInfoManager;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
@@ -219,7 +219,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
   }
 
   @Override
-  public void setModel(SModelDescriptor model) {
+  public void setModel(RegularSModelDescriptor model) {
     super.setModel(model);
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {

@@ -30,6 +30,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.editors.MPSFileNodeEditor" />
     <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

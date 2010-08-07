@@ -6,7 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.ArrayList;
-
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -46,6 +44,7 @@ import com.intellij.openapi.progress.util.ProgressWindow;
 import com.intellij.openapi.util.Disposer;
 import org.apache.commons.lang.StringUtils;
 import java.lang.reflect.InvocationTargetException;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.generator.GenerationStatus;
@@ -60,7 +59,7 @@ public abstract class AbstractEvaluationLogic {
   protected JavaUiState myUiState;
   protected final DebugSession myDebugSession;
   protected final IOperationContext myContext;
-  protected SModelDescriptor myAuxModel;
+  protected RegularSModelDescriptor myAuxModel;
   protected final EvaluationAuxModule myAuxModule;
   private final List<Language> myLanguages = ListSequence.fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation"));
   protected SNode myEvaluator;
@@ -119,7 +118,7 @@ public abstract class AbstractEvaluationLogic {
     return myAuxModule;
   }
 
-  public void setModel(SModelDescriptor model) {
+  public void setModel(RegularSModelDescriptor model) {
     myAuxModel = model;
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -152,7 +151,64 @@ public abstract class AbstractEvaluationLogic {
 
   @Nullable
   public Evaluator evaluate() throws EvaluationException {
-    return null;
+    try {
+      final Set<IClassPathItem> classpaths = new HashSet<IClassPathItem>();
+      for (Language language : this.myLanguages) {
+        IClassPathItem item = language.getClassPathItem();
+        classpaths.add(item);
+      }
+      String path = PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.tools.") + "tools.jar";
+      classpaths.add(ClassPathFactory.getInstance().createFromPath(path));
+
+      GeneratorManager manager = new GeneratorManager(myContext.getProject(), new GenerationSettings()) {
+        protected boolean generateRequirements() {
+          return false;
+        }
+      };
+
+      InMemoryJavaGenerationHandler handler = new AbstractEvaluationLogic.MyInMemoryJavaGenerationHandler(false, true, classpaths);
+      Project ideaProject = this.myAuxModule.getMPSProject().getProject();
+      DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
+      ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
+      boolean successful = manager.generateModels(ListSequence.fromListAndArray(new ArrayList<RegularSModelDescriptor>(), this.myAuxModel), myContext, handler, progressWindow, messageHandler, true);
+
+      Disposer.dispose(progressWindow);
+
+      String fullClassName = this.myAuxModel.getLongName() + "." + EVALUATOR_NAME;
+      String source = handler.getSources().get(fullClassName);
+
+      if (successful || StringUtils.isNotEmpty(source)) {
+        if (isDeveloperMode()) {
+          System.err.println(source);
+        }
+        ClassLoader loader = handler.getCompiler().getClassLoader(this.myUiState.getClass().getClassLoader());
+        Class clazz = Class.forName(fullClassName, true, loader);
+        Evaluator evaluator;
+        try {
+          evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
+        } catch (InvocationTargetException e) {
+          // try again 
+          myUiState = myDebugSession.refresh();
+          evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
+        }
+        return evaluator;
+      } else {
+        throw new EvaluationException("Errors during generation.");
+      }
+    } catch (InvocationTargetException e) {
+      // invocation target exceptions from newInstance method call via reflection 
+      // second time, which means refresh did not help 
+      // this is bad 
+      // I personally think something should be done with all those exceptions 
+      // other then hiding them from user 
+      // but I do not know what 
+      // TODO think 
+      throw new InvocationTargetEvaluationException(e.getCause());
+    } catch (EvaluationException e) {
+      throw e;
+    } catch (Throwable t) {
+      throw new EvaluationException(t);
+    }
   }
 
   public static AbstractEvaluationLogic createInstance(IOperationContext context, JavaUiState state, DebugSession session) {
