@@ -2,14 +2,19 @@
 <debugInfo>
   <root nodeId="1082985570612">
     <nodeInfo nodeId="3557929875030483543" fileName="PropertyDeclaration_Editor.java" startLine="93" startPosition="80" endLine="94" endPosition="75" />
+    <nodeInfo nodeId="9026942911489200494" fileName="PropertyDeclaration_Editor.java" startLine="154" startPosition="111" endLine="155" endPosition="65" />
     <scopeInfo nodeId="3557929875030483525" fileName="PropertyDeclaration_Editor.java" startLine="93" startPosition="80" endLine="94" endPosition="75" />
     <scopeInfo nodeId="9026942911489200493" fileName="PropertyDeclaration_Editor.java" startLine="154" startPosition="111" endLine="155" endPosition="65" />
   </root>
   <root nodeId="1083172239067">
+    <nodeInfo nodeId="1197591883385" fileName="EnumerationMemberDeclaration_Editor.java" startLine="187" startPosition="111" endLine="188" endPosition="232" />
+    <nodeInfo nodeId="1212082243294" fileName="EnumerationMemberDeclaration_Editor.java" startLine="191" startPosition="111" endLine="192" endPosition="223" />
     <scopeInfo nodeId="1197591831893" fileName="EnumerationMemberDeclaration_Editor.java" startLine="187" startPosition="111" endLine="188" endPosition="232" />
     <scopeInfo nodeId="1162585619941" fileName="EnumerationMemberDeclaration_Editor.java" startLine="191" startPosition="111" endLine="192" endPosition="223" />
   </root>
   <root nodeId="1083172476027">
+    <nodeInfo nodeId="1212087613562" fileName="EnumerationDataTypeDeclaration_Editor.java" startLine="460" startPosition="114" endLine="461" endPosition="70" />
+    <nodeInfo nodeId="1212080978532" fileName="EnumerationDataTypeDeclaration_Editor.java" startLine="464" startPosition="114" endLine="465" endPosition="73" />
     <scopeInfo nodeId="1212087593854" fileName="EnumerationDataTypeDeclaration_Editor.java" startLine="460" startPosition="114" endLine="461" endPosition="70" />
     <scopeInfo nodeId="1212080972781" fileName="EnumerationDataTypeDeclaration_Editor.java" startLine="464" startPosition="114" endLine="465" endPosition="73" />
   </root>
@@ -17,6 +22,8 @@
     <nodeInfo nodeId="1226062528137" fileName="LinkDeclaration_Editor.java" startLine="120" startPosition="31" endLine="121" endPosition="99" />
     <nodeInfo nodeId="3557929875030454672" fileName="LinkDeclaration_Editor.java" startLine="152" startPosition="80" endLine="153" endPosition="75" />
     <nodeInfo nodeId="1146605730972" fileName="LinkDeclaration_Editor.java" startLine="261" startPosition="111" endLine="262" endPosition="77" />
+    <nodeInfo nodeId="1226075102141" fileName="LinkDeclaration_Editor.java" startLine="265" startPosition="111" endLine="266" endPosition="77" />
+    <nodeInfo nodeId="3236994869861848677" fileName="LinkDeclaration_Editor.java" startLine="269" startPosition="111" endLine="270" endPosition="65" />
     <nodeInfo nodeId="1185271154474" fileName="LinkDeclaration_Editor.java" startLine="347" startPosition="105" endLine="348" endPosition="75" />
     <nodeInfo nodeId="1240589547720" fileName="LinkDeclaration_Editor.java" startLine="350" startPosition="206" endLine="351" endPosition="95" />
     <nodeInfo nodeId="1185271271424" fileName="LinkDeclaration_Editor.java" startLine="353" startPosition="14" endLine="354" endPosition="246" />
@@ -25,6 +32,7 @@
     <nodeInfo nodeId="1186997157547" fileName="LinkDeclaration_Editor.java" startLine="365" startPosition="100" endLine="366" endPosition="78" />
     <nodeInfo nodeId="1186997464771" fileName="LinkDeclaration_Editor.java" startLine="367" startPosition="71" endLine="368" endPosition="133" />
     <nodeInfo nodeId="1186997249027" fileName="LinkDeclaration_Editor.java" startLine="368" startPosition="133" endLine="369" endPosition="106" />
+    <nodeInfo nodeId="1186997179415" fileName="LinkDeclaration_Editor.java" startLine="370" startPosition="7" endLine="371" endPosition="23" />
     <nodeInfo nodeId="1240589458329" fileName="LinkDeclaration_Editor.java" startLine="349" startPosition="88" endLine="352" endPosition="9" />
     <nodeInfo nodeId="1185271224138" fileName="LinkDeclaration_Editor.java" startLine="353" startPosition="12" endLine="356" endPosition="7" />
     <nodeInfo nodeId="1186997182375" fileName="LinkDeclaration_Editor.java" startLine="366" startPosition="78" endLine="370" endPosition="7" />
@@ -49,6 +57,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1087215312703">
+    <nodeInfo nodeId="1214580244841" fileName="ConceptDeclaration_Editor.java" startLine="452" startPosition="30" endLine="453" endPosition="63" />
     <nodeInfo nodeId="3557929875030454686" fileName="ConceptDeclaration_Editor.java" startLine="471" startPosition="80" endLine="472" endPosition="75" />
     <nodeInfo nodeId="1161165897338" fileName="ConceptDeclaration_Editor.java" startLine="667" startPosition="111" endLine="668" endPosition="62" />
     <nodeInfo nodeId="1162559222378" fileName="ConceptDeclaration_Editor.java" startLine="669" startPosition="20" endLine="670" endPosition="19" />
@@ -133,6 +142,8 @@
     </scopeInfo>
   </root>
   <root nodeId="1224241416275">
+    <nodeInfo nodeId="1225124069889" fileName="DeprecatedNodeAnnotation_Editor.java" startLine="288" startPosition="112" endLine="289" endPosition="66" />
+    <nodeInfo nodeId="1225124018267" fileName="DeprecatedNodeAnnotation_Editor.java" startLine="292" startPosition="112" endLine="293" endPosition="64" />
     <scopeInfo nodeId="1225124068013" fileName="DeprecatedNodeAnnotation_Editor.java" startLine="288" startPosition="112" endLine="289" endPosition="66" />
     <scopeInfo nodeId="1225124018266" fileName="DeprecatedNodeAnnotation_Editor.java" startLine="292" startPosition="112" endLine="293" endPosition="64" />
   </root>

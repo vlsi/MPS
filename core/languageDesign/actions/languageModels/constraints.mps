@@ -251,7 +251,7 @@
                     <link role="variableDeclaration:3" targetNodeId="1213104859364:16" resolveInfo="language" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1213104859377">
-                    <link role="baseMethodDeclaration:3" targetNodeId="8.~Language.getStructureModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getStructureModelDescriptor" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="8.~Language.getStructureModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getStructureModelDescriptor" />
                   </node>
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1213104859378">

@@ -958,7 +958,7 @@
                 <link role="variableDeclaration:3" targetNodeId="1225979453805" resolveInfo="language" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1225979524718">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~Language.getStructureModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getStructureModelDescriptor" />
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~Language.getStructureModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getStructureModelDescriptor" />
               </node>
             </node>
           </node>
