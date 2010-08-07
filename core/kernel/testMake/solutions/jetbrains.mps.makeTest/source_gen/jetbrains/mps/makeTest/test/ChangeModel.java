@@ -4,6 +4,7 @@ package jetbrains.mps.makeTest.test;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 
 public abstract class ChangeModel {
   private SModel myModel;
@@ -16,6 +17,6 @@ public abstract class ChangeModel {
   }
 
   public void rollback(SModel model) {
-    model.getModelDescriptor().replaceModel(this.myModel);
+    ((RegularSModelDescriptor) model.getModelDescriptor()).replaceModel(this.myModel);
   }
 }

@@ -1800,7 +1800,7 @@
                     <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8204202203348315651">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~LanguageAspect.get(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="get" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="2.~LanguageAspect.get(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="get" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8204202203348315652">
                       <link role="variableDeclaration:3" targetNodeId="8204202203348315628" resolveInfo="l" />
                     </node>
