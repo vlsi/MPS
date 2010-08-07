@@ -40,11 +40,11 @@ import java.util.Set;
 public abstract class BaseStubModelRootManager extends AbstractModelRootManager {
   private static final Logger LOG = Logger.getLogger(BaseStubModelRootManager.class);
 
-  private Set<DefaultSModelDescriptor> myDescriptorsWithListener = new HashSet<DefaultSModelDescriptor>();
+  private Set<BaseStubModelDescriptor> myDescriptorsWithListener = new HashSet<BaseStubModelDescriptor>();
   private ModelUpdater myInitializationListener = new ModelUpdater() {
-    public void updateModel(DefaultSModelDescriptor sm, SModel model) {
+    public void updateModel(BaseStubModelDescriptor sm, SModel model) {
       updateModelInLoadingState(sm, model);
-      ((BaseStubModelDescriptor) sm).removeModelUpdater(this);
+      sm.removeModelUpdater(this);
       myDescriptorsWithListener.remove(sm);
     }
   };
@@ -147,8 +147,8 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   }
 
   public final void dispose() {
-    for (DefaultSModelDescriptor sm : myDescriptorsWithListener) {
-      ((BaseStubModelDescriptor) sm).removeModelUpdater(myInitializationListener);
+    for (BaseStubModelDescriptor sm : myDescriptorsWithListener) {
+      sm.removeModelUpdater(myInitializationListener);
     }
   }
 

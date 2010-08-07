@@ -1,5 +1,7 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.stubs.BaseStubModelDescriptor;
+
 public interface ModelUpdater {
-  void updateModel(DefaultSModelDescriptor descriptor, SModel model);
+  void updateModel(BaseStubModelDescriptor descriptor, SModel model);
 }
