@@ -99,7 +99,7 @@
                   <link role="variableDeclaration:3" targetNodeId="1238590226432" resolveInfo="language" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1238590226453">
-                  <link role="baseMethodDeclaration:3" targetNodeId="4.~Language.getStructureModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getStructureModelDescriptor" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="4.~Language.getStructureModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getStructureModelDescriptor" />
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1238590226455">
@@ -583,7 +583,7 @@
                   <link role="variableDeclaration:3" targetNodeId="1238590226432" resolveInfo="language" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1238625442281">
-                  <link role="baseMethodDeclaration:3" targetNodeId="4.~Language.getEditorModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getEditorModelDescriptor" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="4.~Language.getEditorModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getEditorModelDescriptor" />
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1238625423521">
@@ -602,7 +602,7 @@
                   <link role="variableDeclaration:3" targetNodeId="1238590226432" resolveInfo="language" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1239285208553">
-                  <link role="baseMethodDeclaration:3" targetNodeId="4.~Language.getActionsModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getActionsModelDescriptor" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="4.~Language.getActionsModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getActionsModelDescriptor" />
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1239285193824">
@@ -1040,7 +1040,7 @@
                   <link role="variableDeclaration:3" targetNodeId="1238590226432" resolveInfo="language" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1239980855704">
-                  <link role="baseMethodDeclaration:3" targetNodeId="4.~Language.getConstraintsModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getConstraintsModelDescriptor" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="4.~Language.getConstraintsModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getConstraintsModelDescriptor" />
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1239980841504">
