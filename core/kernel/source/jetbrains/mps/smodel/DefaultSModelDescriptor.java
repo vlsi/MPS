@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.VcsHelper;
@@ -87,6 +88,22 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Reg
     return result;
   }
 
+
+  public void changeModelFile(IFile newModelFile) {
+    ModelAccess.assertLegalWrite();
+
+    IFile oldFile = myModelFile;
+    if (oldFile.getAbsolutePath().equals(newModelFile.getAbsolutePath())) {
+      return;
+    }
+
+    SModel model = getSModel();
+    fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
+    myModelFile = newModelFile;
+    updateDiskTimestamp();
+    fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
+  }
+  
   public void reloadFromDiskSafe() {
     if (SModelRepository.getInstance().isChanged(this)) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {

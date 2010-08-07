@@ -188,21 +188,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
   }
 
-  public void changeModelFile(IFile newModelFile) {
-    ModelAccess.assertLegalWrite();
-
-    IFile oldFile = myModelFile;
-    if (oldFile.getAbsolutePath().equals(newModelFile.getAbsolutePath())) {
-      return;
-    }
-
-    SModel model = getSModel();
-    fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
-    myModelFile = newModelFile;
-    updateDiskTimestamp();
-    fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
-  }
-
   protected void updateDiskTimestamp() {
 
   }

@@ -321,7 +321,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       IFile newFile = FileSystem.getFile(fileName);
       if (!newFile.equals(modelDescriptor.getModelFile())) {
         // file might be not the same if user, for example, moved model file using external file manager
-        ((BaseSModelDescriptor)modelDescriptor).changeModelFile(newFile);
+        ((DefaultSModelDescriptor)modelDescriptor).changeModelFile(newFile);
       }
       modelRepository.addOwnerForDescriptor(modelDescriptor, owner);
       return modelDescriptor;
@@ -390,7 +390,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     IFile newFile = createFileForModelUID(root, modelFqName);
     newFile.getParent().mkdirs();
     newFile.createNewFile();
-    ((BaseSModelDescriptor) sm).changeModelFile(newFile);
+    ((DefaultSModelDescriptor) sm).changeModelFile(newFile);
     sm.save();
     if (oldFile != null) {
       oldFile.delete();
@@ -401,7 +401,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   public void changeSModelRoot(SModelDescriptor sm, SModelRoot modelRoot) {
     IFile oldFile = sm.getModelFile();
     IFile newFile = createFileForModelUID(modelRoot, sm.getSModelFqName());
-    ((BaseSModelDescriptor) sm).changeModelFile(newFile);
+    ((DefaultSModelDescriptor) sm).changeModelFile(newFile);
     sm.save();
     if (oldFile != null) {
       oldFile.delete();
