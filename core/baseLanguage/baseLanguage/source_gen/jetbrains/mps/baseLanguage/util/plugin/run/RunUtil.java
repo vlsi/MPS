@@ -33,11 +33,11 @@ public class RunUtil {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           SModelDescriptor md = SNodeOperations.getModel(node).getModelDescriptor();
-
           if (md instanceof RegularSModelDescriptor) {
             if (!(ListSequence.fromList(models).contains((RegularSModelDescriptor) md)) && ModelGenerationStatusManager.getInstance().generationRequired(md, project, NoCachesStrategy.createBuildCachesStrategy())) {
               ListSequence.fromList(models).addElement((RegularSModelDescriptor) md);
             }
+
           }
         }
       });
