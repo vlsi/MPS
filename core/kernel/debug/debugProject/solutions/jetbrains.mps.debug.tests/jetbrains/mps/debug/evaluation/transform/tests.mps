@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)">
-  <persistence version="4" />
-  <refactoringHistory />
+<model modelUID="r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)">
+  <persistence version="5" />
   <language namespace="8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -39,12 +38,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <maxImportIndex value="5" />
+  <maxImportIndex value="6" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <import index="4" modelUID="r:b4456070-b665-4c03-b3d3-15a7362ba923(jetbrains.mps.debug.evaluation.ui)" version="-1" />
-  <import index="5" modelUID="f:java_stub#com.sun.jdi(com.sun.jdi@java_stub)" version="-1" />
+  <import index="6" modelUID="r:b4456070-b665-4c03-b3d3-15a7362ba239(jetbrains.mps.debug.evaluation.transform)" version="-1" />
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="5543996881668550053">
     <property name="name:4" value="TransformationUtil_Expressions" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="5543996881668550054">
@@ -52,10 +50,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5543996881668550055" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5543996881668550056">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5543996881668550057">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5543996881668550058">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="5543996881668550059">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793156">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793157">
               <link role="declaration:4" targetNodeId="5543996881668550177" resolveInfo="lowLevelVar" />
             </node>
           </node>
@@ -75,10 +73,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1454920206667908435" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1454920206667908436">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1454920206667908437">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1454920206667908438">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="1454920206667908443">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793164">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793165">
               <link role="declaration:4" targetNodeId="1454920206667908429" resolveInfo="variableInternal" />
             </node>
           </node>
@@ -98,11 +96,11 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5543996881668550064" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5543996881668550065">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5543996881668550066">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5543996881668550067">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="5543996881668550068">
-              <link role="declaration:4" targetNodeId="5543996881668550223" resolveInfo="evaluatorsThisExpression" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793166">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793167">
+              <link role="declaration:4" targetNodeId="5543996881668550223" resolveInfo="thisExpression" />
             </node>
           </node>
         </node>
@@ -121,10 +119,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1454920206667900408" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1454920206667900409">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1454920206667900410">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1454920206667900411">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="1454920206667900417">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793168">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793169">
               <link role="declaration:4" targetNodeId="1454920206667900343" resolveInfo="thisInternalExpression" />
             </node>
           </node>
@@ -144,10 +142,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5543996881668550073" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5543996881668550074">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5543996881668550075">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5543996881668550076">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="5543996881668550077">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793170">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793171">
               <link role="declaration:4" targetNodeId="5543996881668550242" resolveInfo="field" />
             </node>
           </node>
@@ -167,10 +165,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1454920206667900421" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1454920206667900422">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1454920206667900423">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1454920206667900424">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="1454920206667900429">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793172">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793173">
               <link role="declaration:4" targetNodeId="1454920206667900370" resolveInfo="fieldInternal" />
             </node>
           </node>
@@ -261,10 +259,10 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5543996881668550112">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5543996881668550113">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="5543996881668550114">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793174">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793175">
               <link role="declaration:4" targetNodeId="5543996881668550242" resolveInfo="field" />
             </node>
           </node>
@@ -284,10 +282,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5543996881668550119" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5543996881668550120">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5543996881668550121">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5543996881668550122">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="5543996881668550123">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793176">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793177">
               <link role="declaration:4" targetNodeId="5543996881668550265" resolveInfo="staticField" />
             </node>
           </node>
@@ -307,10 +305,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1454920206667900433" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1454920206667900434">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1454920206667900435">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1454920206667900436">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="1454920206667900441">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793178">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793179">
               <link role="declaration:4" targetNodeId="1454920206667900398" resolveInfo="staticFieldInternal" />
             </node>
           </node>
@@ -391,10 +389,10 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="607759879653673683" />
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5543996881668550154">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5543996881668550155">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="5543996881668550156">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793180">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793181">
               <link role="declaration:4" targetNodeId="5543996881668550265" resolveInfo="staticField" />
             </node>
           </node>
@@ -414,10 +412,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5543996881668550161" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5543996881668550162">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5543996881668550163">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5543996881668550164">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="5543996881668550165">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793182">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793183">
               <link role="declaration:4" targetNodeId="5543996881668550293" resolveInfo="method" />
             </node>
           </node>
@@ -437,10 +435,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1454920206667908447" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1454920206667908448">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1454920206667908449">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1454920206667908450">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="1454920206667908455">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793184">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793185">
               <link role="declaration:4" targetNodeId="1454920206667908308" resolveInfo="methodInternal" />
             </node>
           </node>
@@ -557,10 +555,10 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="607759879653655640">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="607759879653655641">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="607759879653655642">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793186">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793187">
               <link role="declaration:4" targetNodeId="5543996881668550293" resolveInfo="method" />
             </node>
           </node>
@@ -580,10 +578,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="607759879653675014" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="607759879653675015">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="607759879653675016">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="607759879653675017">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="607759879653675084">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793188">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793189">
               <link role="declaration:4" targetNodeId="607759879653675051" resolveInfo="staticMethod" />
             </node>
           </node>
@@ -603,10 +601,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1454920206667908459" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1454920206667908460">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1454920206667908461">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1454920206667908462">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="1454920206667908467">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793190">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793191">
               <link role="declaration:4" targetNodeId="1454920206667908344" resolveInfo="staticMethodInternal" />
             </node>
           </node>
@@ -707,10 +705,10 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="607759879653675007">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="607759879653675008">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="607759879653676710">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793192">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793193">
               <link role="declaration:4" targetNodeId="607759879653675051" resolveInfo="staticMethod" />
             </node>
           </node>
@@ -730,10 +728,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="607759879653681866" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="607759879653681867">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="607759879653681871">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="607759879653681873">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="607759879653681874">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793194">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793195">
               <link role="declaration:4" targetNodeId="607759879653679965" resolveInfo="arrayAccessOperation" />
             </node>
           </node>
@@ -753,10 +751,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="607759879653681869" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="607759879653681870">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="607759879653681879">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="607759879653681880">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="607759879653681885">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793196">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793197">
               <link role="declaration:4" targetNodeId="607759879653679996" resolveInfo="arrayLengthOperation" />
             </node>
           </node>
@@ -776,11 +774,11 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2932187755699712806" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2932187755699712807">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2932187755699712808">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2932187755699712810">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="2932187755699712811">
-              <link role="declaration:4" targetNodeId="2932187755699710928" resolveInfo="instanceofInterface" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793198">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793199">
+              <link role="declaration:4" targetNodeId="2932187755699710928" resolveInfo="instanceof" />
             </node>
           </node>
         </node>
@@ -799,10 +797,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2932187755699927594" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2932187755699927595">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2932187755699927596">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2932187755699927598">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="2932187755699927599">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793200">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793201">
               <link role="declaration:4" targetNodeId="2932187755699923982" resolveInfo="super" />
             </node>
           </node>
@@ -822,10 +820,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2932187755699938045" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2932187755699938046">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2932187755699938047">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2932187755699938049">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="2932187755699938050">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793202">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793203">
               <link role="declaration:4" targetNodeId="2932187755699930368" resolveInfo="constructor" />
             </node>
           </node>
@@ -845,10 +843,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8441349676536412426" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8441349676536412427">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8441349676536412428">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8441349676536412429">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="8441349676536412434">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793204">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793205">
               <link role="declaration:4" targetNodeId="8441349676536412419" resolveInfo="constructorInternal" />
             </node>
           </node>
@@ -868,10 +866,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2932187755699951825" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2932187755699951826">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2932187755699951827">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2932187755699951828">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="2932187755699951833">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793206">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793207">
               <link role="declaration:4" targetNodeId="2932187755699948604" resolveInfo="plusExpression" />
             </node>
           </node>
@@ -891,10 +889,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6721540366799618928" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6721540366799618929">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6721540366799618930">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6721540366799618931">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="6721540366799618986">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793208">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793209">
               <link role="declaration:4" targetNodeId="6721540366799618959" resolveInfo="equalsExpression" />
             </node>
           </node>
@@ -914,10 +912,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6721540366799622836" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6721540366799622837">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6721540366799622838">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6721540366799622839">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="6721540366799622844">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793210">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793211">
               <link role="declaration:4" targetNodeId="6721540366799622809" resolveInfo="notEqualsExpression" />
             </node>
           </node>
@@ -937,10 +935,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6721540366799631170" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6721540366799631171">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6721540366799631172">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6721540366799631173">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="6721540366799631178">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793212">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793213">
               <link role="declaration:4" targetNodeId="6721540366799627035" resolveInfo="notExpression" />
             </node>
           </node>
@@ -960,10 +958,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4693929676428718779" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4693929676428718780">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4693929676428718781">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4693929676428718782">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="4693929676428718787">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793214">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793215">
               <link role="declaration:4" targetNodeId="4693929676428713104" resolveInfo="classExpression" />
             </node>
           </node>
@@ -983,10 +981,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8441349676536441187" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8441349676536441188">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8441349676536441189">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8441349676536441190">
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="8441349676536441195">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793216">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793217">
               <link role="declaration:4" targetNodeId="8441349676536441176" resolveInfo="classInternalExpression" />
             </node>
           </node>
@@ -2546,11 +2544,11 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7696059916860917978" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7696059916860917979">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7696059916860917980">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7696059916860917982">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="7696059916860917983">
-              <link role="declaration:4" targetNodeId="7696059916860905174" resolveInfo="localVarDeclaration" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793158">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793159">
+              <link role="declaration:4" targetNodeId="7696059916860905174" resolveInfo="localIntVarDeclaration" />
             </node>
           </node>
         </node>
@@ -2569,10 +2567,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="770214570644686159" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="770214570644686160">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="770214570644686161">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644686162">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644686176">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793160">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793161">
               <link role="declaration:4" targetNodeId="770214570644685914" resolveInfo="localBoxedIntVarDeclaration" />
             </node>
           </node>
@@ -2592,10 +2590,10 @@
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="770214570644686168" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="770214570644686169">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="770214570644686170">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644686171">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.3080033392261626586" resolveInfo="transformInternal" />
-            <link role="classConcept:3" targetNodeId="4.8804575757433489765" resolveInfo="TransformationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644686179">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="770214570644793162">
+            <link role="classConcept:3" targetNodeId="6.8804575757433489765" resolveInfo="TransformationUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.3080033392261626586" resolveInfo="transformInternal" />
+            <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="770214570644793163">
               <link role="declaration:4" targetNodeId="770214570644685914" resolveInfo="localBoxedIntVarDeclaration" />
             </node>
           </node>

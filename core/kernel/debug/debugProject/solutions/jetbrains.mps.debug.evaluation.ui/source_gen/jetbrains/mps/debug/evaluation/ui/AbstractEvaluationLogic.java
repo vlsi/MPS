@@ -48,6 +48,7 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.debug.evaluation.transform.TransformationUtil;
 
 public abstract class AbstractEvaluationLogic {
   private static final Logger LOG = Logger.getLogger(AbstractEvaluationLogic.class);

@@ -4,6 +4,7 @@ import com.sun.jdi.*;
 import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
+import jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -192,6 +193,35 @@ public abstract class Evaluator {
         return false; 
       }
     });
+  }
+
+  protected IValueProxy box(PrimitiveValueProxy primitiveValueProxy) throws EvaluationException {
+    PrimitiveValue primitiveValue = primitiveValueProxy.getPrimitiveValue();
+    if (primitiveValue instanceof BooleanValue) {
+      return invokeStatic(Boolean.class.getName(), "valueOf", "(Z)Ljava/lang/Boolean;", primitiveValue.booleanValue());
+    }
+    if (primitiveValue instanceof ShortValue) {
+      return invokeStatic(Short.class.getName(), "valueOf", "(S)Ljava/lang/Short;", primitiveValue.shortValue());
+    }
+    if (primitiveValue instanceof ByteValue) {
+      return invokeStatic(Byte.class.getName(), "valueOf", "(B)Ljava/lang/Byte;", primitiveValue.byteValue());
+    }
+    if (primitiveValue instanceof CharValue) {
+      return invokeStatic(Character.class.getName(), "valueOf", "(C)Ljava/lang/Character;", primitiveValue.charValue());
+    }
+    if (primitiveValue instanceof DoubleValue) {
+      return invokeStatic(Double.class.getName(), "valueOf", "(D)Ljava/lang/Double;", primitiveValue.doubleValue());
+    }
+    if (primitiveValue instanceof FloatValue) {
+      return invokeStatic(Float.class.getName(), "valueOf", "(F)Ljava/lang/Float;", primitiveValue.floatValue());
+    }
+    if (primitiveValue instanceof IntegerValue) {
+      return invokeStatic(Integer.class.getName(), "valueOf", "(I)Ljava/lang/Integer;", primitiveValue.intValue());
+    }
+    if (primitiveValue instanceof LongValue) {
+      return invokeStatic(Long.class.getName(), "valueOf", "(J)Ljava/lang/Long;", primitiveValue.longValue());
+    }
+    throw new UnsupportedOperationException("Cant box " + primitiveValue);
   }
 
   public static interface Invocatable<T> {
