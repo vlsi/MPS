@@ -414,16 +414,15 @@ public class StandardDialogs {
         result_960thj_a0a3a0a0a4.setConstraints(result_960thj_a1a0a3a0a0a4);
         result_960thj_a3a0a0a4.addComponent(result_960thj_a0a3a0a0a4);
         result_960thj_a0a0a4.addTab(result_960thj_a3a0a0a4);
-
         if (dialog.myModel instanceof RegularSModelDescriptor) {
-          final BaseTabbedBindedDialog.DialogTab result_960thj_a0a5a0a0a4 = new BaseTabbedBindedDialog.DialogTab("Refactoring");
-          final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a0a5a0a0a4 = new BaseTabbedBindedDialog.ComponentDescriptor();
-          final JComponent result_960thj_a0a0a0a5a0a0a4 = StandardComponents.createRefactoringHistoryComponent(((RegularSModelDescriptor) dialog.myModel), dialog.getOperationContext());
-          result_960thj_a0a0a5a0a0a4.setComponent(result_960thj_a0a0a0a5a0a0a4);
-          final BaseBindedDialog.ConstraintsType result_960thj_a1a0a0a5a0a0a4 = BaseBindedDialog.ConstraintsType.LIST;
-          result_960thj_a0a0a5a0a0a4.setConstraints(result_960thj_a1a0a0a5a0a0a4);
-          result_960thj_a0a5a0a0a4.addComponent(result_960thj_a0a0a5a0a0a4);
-          result_960thj_a0a0a4.addTab(result_960thj_a0a5a0a0a4);
+          final BaseTabbedBindedDialog.DialogTab result_960thj_a0a4a0a0a4 = new BaseTabbedBindedDialog.DialogTab("Refactoring");
+          final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a0a4a0a0a4 = new BaseTabbedBindedDialog.ComponentDescriptor();
+          final JComponent result_960thj_a0a0a0a4a0a0a4 = StandardComponents.createRefactoringHistoryComponent(((RegularSModelDescriptor) dialog.myModel), dialog.getOperationContext());
+          result_960thj_a0a0a4a0a0a4.setComponent(result_960thj_a0a0a0a4a0a0a4);
+          final BaseBindedDialog.ConstraintsType result_960thj_a1a0a0a4a0a0a4 = BaseBindedDialog.ConstraintsType.LIST;
+          result_960thj_a0a0a4a0a0a4.setConstraints(result_960thj_a1a0a0a4a0a0a4);
+          result_960thj_a0a4a0a0a4.addComponent(result_960thj_a0a0a4a0a0a4);
+          result_960thj_a0a0a4.addTab(result_960thj_a0a4a0a0a4);
         }
         return result_960thj_a0a0a4;
       }

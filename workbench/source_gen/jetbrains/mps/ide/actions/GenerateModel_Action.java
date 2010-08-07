@@ -96,7 +96,7 @@ public class GenerateModel_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final GeneratorManager manager = GenerateModel_Action.this.project.getComponent(GeneratorManager.class);
-      final List<RegularSModelDescriptor> modelsToGenerate = new ArrayList<RegularSModelDescriptor>();
+      final List<RegularSModelDescriptor> modelsToGenerate = new ArrayList();
       for (SModelDescriptor m : ListSequence.fromList(GenerateModel_Action.this.models)) {
         if (m instanceof RegularSModelDescriptor) {
           modelsToGenerate.add(((RegularSModelDescriptor) m));

@@ -433,7 +433,6 @@ public class StandardComponents {
         if (!(modelDescriptor.getRefactoringHistory().getRefactoringContexts().isEmpty())) {
           refactoringPanel.value = new RefactoringPanel(modelDescriptor, RefactoringUtil.getAllRefactoringNodes(), context);
         }
-
       }
     });
     if (refactoringPanel.value == null) {
