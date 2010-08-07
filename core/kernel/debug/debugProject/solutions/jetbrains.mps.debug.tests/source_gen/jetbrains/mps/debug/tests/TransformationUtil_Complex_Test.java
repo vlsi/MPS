@@ -17,18 +17,56 @@ import jetbrains.mps.smodel.SNode;
 @MPSLaunch
 public class TransformationUtil_Complex_Test extends BaseTransformationTest {
   @Test
-  public void test_localVariableDeclaration() throws Throwable {
+  public void test_localIntVariableDeclaration() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
-    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Complex_Test$TestBody", "test_localVariableDeclaration", true);
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Complex_Test$TestBody", "test_localIntVariableDeclaration", true);
+  }
+
+  @Test
+  public void test_localBoxedIntVariableDeclaration() throws Throwable {
+    this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Complex_Test$TestBody", "test_localBoxedIntVariableDeclaration", true);
+  }
+
+  @Test
+  public void test_localObjectVariableDeclaration() throws Throwable {
+    this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.tests)");
+    this.runTest("jetbrains.mps.debug.tests.TransformationUtil_Complex_Test$TestBody", "test_localObjectVariableDeclaration", true);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_localVariableDeclaration() throws Exception {
+    public void test_localIntVariableDeclaration() throws Exception {
       this.addNodeById("7696059916860905166");
       this.addNodeById("7696059916860905175");
+      this.addNodeById("770214570644685900");
+      this.addNodeById("770214570644685874");
+      this.addNodeById("770214570644685972");
+      this.addNodeById("770214570644685987");
       TransformationUtil.transformInternal(SNodeOperations.cast(this.getNodeById("7696059916860905170"), "jetbrains.mps.baseLanguage.structure.BlockStatement"));
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7696059916860905170"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7696059916860905176"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
+    }
+
+    public void test_localBoxedIntVariableDeclaration() throws Exception {
+      this.addNodeById("7696059916860905166");
+      this.addNodeById("7696059916860905175");
+      this.addNodeById("770214570644685900");
+      this.addNodeById("770214570644685874");
+      this.addNodeById("770214570644685972");
+      this.addNodeById("770214570644685987");
+      TransformationUtil.transformInternal(SNodeOperations.cast(this.getNodeById("770214570644685904"), "jetbrains.mps.baseLanguage.structure.BlockStatement"));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("770214570644685904"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("770214570644685875"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
+    }
+
+    public void test_localObjectVariableDeclaration() throws Exception {
+      this.addNodeById("7696059916860905166");
+      this.addNodeById("7696059916860905175");
+      this.addNodeById("770214570644685900");
+      this.addNodeById("770214570644685874");
+      this.addNodeById("770214570644685972");
+      this.addNodeById("770214570644685987");
+      TransformationUtil.transformInternal(SNodeOperations.cast(this.getNodeById("770214570644685904"), "jetbrains.mps.baseLanguage.structure.BlockStatement"));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("770214570644685904"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("770214570644685875"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
   }
 }
