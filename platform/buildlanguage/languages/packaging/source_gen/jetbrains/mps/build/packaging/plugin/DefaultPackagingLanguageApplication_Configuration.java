@@ -36,7 +36,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.plugin.run.DefaultProcessHandler;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.io.File;
@@ -160,11 +160,11 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
                     throw new ExecutionException("Configuration is not selected.");
                   }
 
-                  final Wrappers._T<SModelDescriptor> model = new Wrappers._T<SModelDescriptor>();
+                  final Wrappers._T<RegularSModelDescriptor> model = new Wrappers._T<RegularSModelDescriptor>();
                   final Wrappers._T<ModuleContext> context = new Wrappers._T<ModuleContext>();
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
-                      model.value = SNodeOperations.getModel(node).getModelDescriptor();
+                      model.value = ((RegularSModelDescriptor) SNodeOperations.getModel(node).getModelDescriptor());
                       context.value = new ModuleContext(model.value.getModule(), project_22042010);
                     }
                   });

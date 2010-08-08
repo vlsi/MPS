@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -38,7 +39,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return GenerateMPSBuildAction_Action.this.getMPSLayout() != null;
+    return GenerateMPSBuildAction_Action.this.getMPSLayout() != null && GenerateMPSBuildAction_Action.this.modelDescriptor instanceof RegularSModelDescriptor;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -89,7 +90,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
           configuration.value = ListSequence.fromList(SLinkOperations.getTargets(layout, "configuration", true)).first();
         }
       });
-      GenerateTextFromBuild.generate(configuration.value, GenerateMPSBuildAction_Action.this.modelDescriptor, GenerateMPSBuildAction_Action.this.operationContext, GenerateMPSBuildAction_Action.this.project, true);
+      GenerateTextFromBuild.generate(configuration.value, ((RegularSModelDescriptor) GenerateMPSBuildAction_Action.this.modelDescriptor), GenerateMPSBuildAction_Action.this.operationContext, GenerateMPSBuildAction_Action.this.project, true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GenerateMPSBuildAction", t);
     }
