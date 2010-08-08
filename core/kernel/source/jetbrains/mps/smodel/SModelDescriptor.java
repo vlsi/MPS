@@ -49,8 +49,6 @@ public interface SModelDescriptor {
 
   void refresh();
 
-  void replaceModel(SModel newModel);
-
   @Nullable
   IFile getModelFile();
 

@@ -11,4 +11,6 @@ public interface RegularSModelDescriptor extends SModelDescriptor, Refactorable,
   void reloadFromDisk();
 
   void reloadFromDiskSafe();
+
+  void replaceModel(SModel newModel);
 }
