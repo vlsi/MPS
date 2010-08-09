@@ -69,7 +69,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   protected DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, boolean checkDup) {
-    super(manager, modelFile, modelReference, checkDup);
+    super(manager, modelReference, checkDup);
+    myModelFile = modelFile;
     updateLastChange();
   }
 
@@ -100,6 +101,20 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     myIsChanged = changed;
   }
 
+  protected void checkModelDuplication() {
+    SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelReference);
+    if (anotherModel != null) {
+      String message = "Model already registered: " + myModelReference + "\n";
+      message += "file = " + myModelFile + "\n";
+
+      if (anotherModel instanceof EditableSModelDescriptor){
+        message += "another model's file = " + ((EditableSModelDescriptor) anotherModel).getModelFile();
+      } else{
+        message += "another model is non-editable";
+      }
+      LOG.error(message);
+    }
+  }
 
   protected SModel loadModel() {
     SModel result = myModelRootManager.loadModel(this);

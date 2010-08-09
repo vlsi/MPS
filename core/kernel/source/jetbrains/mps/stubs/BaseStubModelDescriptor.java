@@ -21,17 +21,22 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
   private final Object myUpdatersLock = new Object();
   private Set<ModelUpdater> myUpdaters = new HashSet<ModelUpdater>();
 
+  //todo left for compatibility. Should be removed
   public BaseStubModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
-    this(manager, modelFile, modelReference, true);
+    this(manager, modelReference, true);
   }
 
-  protected BaseStubModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, boolean checkDup) {
-    super(manager, modelFile, modelReference, checkDup);
+  public BaseStubModelDescriptor(IModelRootManager manager, SModelReference modelReference) {
+    this(manager, modelReference, true);
+  }
+
+  protected BaseStubModelDescriptor(IModelRootManager manager, SModelReference modelReference, boolean checkDup) {
+    super(manager, modelReference, checkDup);
     updateManagerId();
   }
 
   public BaseStubModelDescriptor copy(BaseStubModelRootManager manager) {
-    return new BaseStubModelDescriptor(manager, myModelFile, myModelReference, false);
+    return new BaseStubModelDescriptor(manager, myModelReference, false);
   }
 
   private void updateAfterLoad(SModel model) {

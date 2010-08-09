@@ -41,9 +41,8 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
   private SModelCommandListener[] myModelCommandListenersCopy;
 
-  protected BaseSModelDescriptor(IModelRootManager manager, IFile modelFile, @NotNull SModelReference modelReference, boolean checkDup) {
+  protected BaseSModelDescriptor(IModelRootManager manager, @NotNull SModelReference modelReference, boolean checkDup) {
     myModelReference = modelReference;
-    myModelFile = modelFile;
     myModelRootManager = manager;
 
     if (checkDup) {
@@ -130,8 +129,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelReference);
     if (anotherModel != null) {
       String message = "Model already registered: " + myModelReference + "\n";
-      message += "file = " + myModelFile + "\n";
-      message += "another model's file = " + anotherModel.getModelFile();
       LOG.error(message);
     }
   }
