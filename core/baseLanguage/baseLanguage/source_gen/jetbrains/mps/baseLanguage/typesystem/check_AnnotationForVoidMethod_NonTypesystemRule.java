@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -21,12 +20,12 @@ public class check_AnnotationForVoidMethod_NonTypesystemRule extends AbstractNon
 
   public void applyRule(final SNode annotationInstance, final TypeCheckingContext typeCheckingContext) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(annotationInstance), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(annotationInstance), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
-      String name = SPropertyOperations.getString(SLinkOperations.getTarget(annotationInstance, "annotation", false), "name");
-      if ("Nullable".equals(name) || "NotNull".equals(name)) {
+      SNode annotation = SLinkOperations.getTarget(annotationInstance, "annotation", false);
+      if (annotation == SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~Nullable") || annotation == SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~NotNull")) {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(annotationInstance, "This annotation is not applicable for void method", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "419889540470404167", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(annotationInstance, "This annotation is not applicable for void method", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4016718966623950802", intentionProvider, errorTarget);
         }
       }
     }

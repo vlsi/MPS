@@ -4721,19 +4721,19 @@
     <unitInfo nodeId="3860149536565525509" fileName="typeof_UnaryMinus_InferenceRule.java" startLine="37" startPosition="51" endLine="55" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_UnaryMinus_InferenceRule$1" />
   </root>
   <root nodeId="419889540470201426">
-    <nodeInfo nodeId="419889540470404137" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="23" startPosition="407" endLine="24" endPosition="126" />
-    <nodeInfo nodeId="419889540470404167" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="26" startPosition="9" endLine="27" endPosition="57" />
-    <nodeInfo nodeId="419889540470404167" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="27" startPosition="57" endLine="28" endPosition="59" />
-    <nodeInfo nodeId="419889540470404167" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="28" startPosition="59" endLine="29" endPosition="292" />
-    <nodeInfo nodeId="419889540470404167" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="25" startPosition="62" endLine="30" endPosition="9" />
-    <nodeInfo nodeId="419889540470404133" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="24" startPosition="126" endLine="31" endPosition="7" />
-    <nodeInfo nodeId="419889540470404091" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="22" startPosition="104" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="419889540470404167" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="26" startPosition="9" endLine="29" endPosition="292" />
-    <scopeInfo nodeId="419889540470404135" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="25" startPosition="62" endLine="30" endPosition="9" />
-    <scopeInfo nodeId="419889540470404092" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="23" startPosition="407" endLine="31" endPosition="7">
-      <varInfo nodeId="419889540470404138" varName="name" />
+    <nodeInfo nodeId="4016718966623949327" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="22" startPosition="407" endLine="23" endPosition="92" />
+    <nodeInfo nodeId="4016718966623950802" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="25" startPosition="9" endLine="26" endPosition="57" />
+    <nodeInfo nodeId="4016718966623950802" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="26" startPosition="57" endLine="27" endPosition="59" />
+    <nodeInfo nodeId="4016718966623950802" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="27" startPosition="59" endLine="28" endPosition="293" />
+    <nodeInfo nodeId="4016718966623950802" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="24" startPosition="272" endLine="29" endPosition="9" />
+    <nodeInfo nodeId="4016718966623949335" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="23" startPosition="92" endLine="30" endPosition="7" />
+    <nodeInfo nodeId="419889540470404091" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="21" startPosition="104" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="4016718966623950802" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="25" startPosition="9" endLine="28" endPosition="293" />
+    <scopeInfo nodeId="4016718966623949336" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="24" startPosition="272" endLine="29" endPosition="9" />
+    <scopeInfo nodeId="419889540470404092" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="22" startPosition="407" endLine="30" endPosition="7">
+      <varInfo nodeId="4016718966623949328" varName="annotation" />
     </scopeInfo>
-    <scopeInfo nodeId="419889540470201427" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="22" startPosition="104" endLine="32" endPosition="5" />
+    <scopeInfo nodeId="419889540470201427" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="21" startPosition="104" endLine="31" endPosition="5" />
   </root>
   <root nodeId="4269842503726235544">
     <nodeInfo nodeId="4269842503726244058" fileName="typeof_LongLiteral_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="49" />
