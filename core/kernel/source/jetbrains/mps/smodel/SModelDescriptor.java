@@ -25,6 +25,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 
+/**
+ * This is a common descriptor used for all models - stub, transient, caches, regular MPS models
+ */
 public interface SModelDescriptor {
   /**
    * After model loading call SModelRepostiory.fireModelRepositoryChanged
