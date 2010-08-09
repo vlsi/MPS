@@ -4,7 +4,7 @@ package jetbrains.mps.lang.quotation.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 
 public class MetaLevelActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(MetaLevelActions_ActionGroup.class);
@@ -22,6 +22,6 @@ public class MetaLevelActions_ActionGroup extends GeneratedActionGroup {
   }
 
   public void adjust() {
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
+    this.insertGroupIntoAnother(EditorInternal_ActionGroup.ID, null);
   }
 }

@@ -3,7 +3,7 @@
   <dependency className="jetbrains.mps.lang.quotation.plugin.MetaLevelActions_ActionGroup" file="MetaLevelActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.EditorInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>

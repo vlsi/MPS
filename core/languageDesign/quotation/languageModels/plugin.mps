@@ -89,7 +89,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="3981318653438329584">
     <property name="name:23" value="MetaLevelActions" />
     <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="3981318653438329588">
-      <link role="modifiedGroup:23" targetNodeId="3v.1204991231476" resolveInfo="EditorPopup" />
+      <link role="modifiedGroup:23" targetNodeId="3v.1204991232446" resolveInfo="EditorInternal" />
     </node>
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="3981318653438329586">
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="3981318653438329587">
