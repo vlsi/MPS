@@ -53,6 +53,7 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "either return type or parameter types don't match", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1230048793938", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
+      _info_12389875345.addInequationIdBefore("r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1230315907234");
       typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(invoke), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1230048905737", true), (SNode) new typeof_InvokeFunctionOperation_InferenceRule.QuotationClass_17nn5b_a0a6a0().createNode(ptypes1, typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_1225797542595), ptypes2, typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_1225797542595), typeCheckingContext.getEquationManager().getRepresentator(ret2_typevar_1230048995510), typeCheckingContext), false, _info_12389875345);
     }
   }

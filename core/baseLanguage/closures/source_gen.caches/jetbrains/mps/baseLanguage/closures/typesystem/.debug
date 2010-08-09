@@ -896,19 +896,20 @@
     <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="52" startPosition="48" endLine="53" endPosition="53" />
     <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="53" startPosition="53" endLine="54" endPosition="266" />
     <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="54" startPosition="266" endLine="55" endPosition="54" />
-    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="55" startPosition="54" endLine="56" endPosition="689" />
+    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="55" startPosition="54" endLine="56" endPosition="156" />
+    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="56" startPosition="156" endLine="57" endPosition="689" />
     <nodeInfo nodeId="1237374285371" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="44" startPosition="97" endLine="50" endPosition="5" />
     <nodeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="34" startPosition="132" endLine="41" endPosition="7" />
-    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="50" startPosition="5" endLine="57" endPosition="5" />
+    <nodeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="50" startPosition="5" endLine="58" endPosition="5" />
     <nodeInfo nodeId="1225797542582" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="30" startPosition="72" endLine="42" endPosition="5" />
     <scopeInfo nodeId="1237374285371" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="45" startPosition="5" endLine="49" endPosition="331" />
     <scopeInfo nodeId="1240926919975" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="35" startPosition="7" endLine="40" endPosition="348" />
-    <scopeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="51" startPosition="5" endLine="56" endPosition="689" />
+    <scopeInfo nodeId="1230048793938" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="51" startPosition="5" endLine="57" endPosition="689" />
     <scopeInfo nodeId="1225797542583" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="31" startPosition="75" endLine="41" endPosition="7" />
     <scopeInfo nodeId="1225797542582" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="30" startPosition="72" endLine="42" endPosition="5">
       <varInfo nodeId="1225797542593" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="1225797528200" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="28" startPosition="92" endLine="57" endPosition="5">
+    <scopeInfo nodeId="1225797528200" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="28" startPosition="92" endLine="58" endPosition="5">
       <varInfo nodeId="1230049150922" varName="ptypes2" />
       <varInfo nodeId="1225797542576" varName="ptypes1" />
     </scopeInfo>

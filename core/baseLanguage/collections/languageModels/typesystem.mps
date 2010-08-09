@@ -4261,6 +4261,7 @@
             <property name="name:3" value="paramType" />
           </node>
           <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="1230315907234">
+            <property name="label:3" value="smartClosureFromSequence" />
             <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1230315907235">
               <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1230315907236">
                 <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1230315907237">
