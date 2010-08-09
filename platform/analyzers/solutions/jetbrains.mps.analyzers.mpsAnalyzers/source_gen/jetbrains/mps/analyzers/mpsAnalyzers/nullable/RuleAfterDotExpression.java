@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleAfterDotExpression extends DataFlowConstructor {
   public RuleAfterDotExpression() {
@@ -26,9 +27,10 @@ public class RuleAfterDotExpression extends DataFlowConstructor {
   public void performActions(Program o, SNode node) {
     if (!(IOperation_Behavior.call_operandCanBeNull_323410281720656291(SLinkOperations.getTarget(node, "operation", true)))) {
       {
-        int position = 0;
-        position = ((Program) (o)).getEnd(SLinkOperations.getTarget(node, "operand", true));
-        ((Program) (o)).insert(new notNullInstruction(SLinkOperations.getTarget(node, "operand", true)), position, true);
+        int position = ((Program) (o)).getEnd(SLinkOperations.getTarget(node, "operand", true));
+        Instruction instruction = new notNullInstruction(SLinkOperations.getTarget(node, "operand", true));
+        instruction.setSource(node);
+        ((Program) (o)).insert(instruction, position, true);
       }
     }
   }

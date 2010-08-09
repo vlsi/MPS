@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
+import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleNullLiteral extends DataFlowConstructor {
   public RuleNullLiteral() {
@@ -23,9 +24,10 @@ public class RuleNullLiteral extends DataFlowConstructor {
 
   public void performActions(Program o, SNode node) {
     {
-      int position = 0;
-      position = ((Program) (o)).getEnd(node);
-      ((Program) (o)).insert(new nullableInstruction(node), position, true);
+      int position = ((Program) (o)).getEnd(node);
+      Instruction instruction = new nullInstruction(node);
+      instruction.setSource(node);
+      ((Program) (o)).insert(instruction, position, true);
     }
   }
 }

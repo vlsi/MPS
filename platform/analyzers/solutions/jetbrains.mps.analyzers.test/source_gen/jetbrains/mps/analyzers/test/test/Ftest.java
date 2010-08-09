@@ -24,15 +24,16 @@ public class Ftest {
   }
 
   public void f(@Nullable String s4) {
-    @NotNull String s = nulFunc();
+    String s = nulFunc();
+    s.charAt(2);
     String s3 = "";
-    if (s != null) {
+    if (null == s) {
       String s2 = s;
       s2.charAt(2);
       s3 = null;
     }
+    nulFunc().charAt(2);
     s.charAt(2);
     s3.charAt(2);
-    s4.charAt(3);
   }
 }

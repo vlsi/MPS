@@ -69,6 +69,14 @@ public class NullableAnalyzerRunner extends AnalyzerRunner<Map<SNode, NullableSt
       }
       myApplicableMap.get(conceptName).add(rule);
     }
+    {
+      DataFlowConstructor rule = new WhileNotNull();
+      String conceptName = "jetbrains.mps.baseLanguage.structure.WhileStatement";
+      if (!(myApplicableMap.containsKey(conceptName))) {
+        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
+      }
+      myApplicableMap.get(conceptName).add(rule);
+    }
     myConceptRules.add(new RuleMethodCall());
     myConceptRules.add(new RuleNullLiteral());
     myConceptRules.add(new RuleFieldReference());
@@ -134,6 +142,9 @@ public class NullableAnalyzerRunner extends AnalyzerRunner<Map<SNode, NullableSt
       }
       if (instruction instanceof nullableInstruction) {
         nullableState = NullableState.NULLABLE;
+      }
+      if (instruction instanceof nullInstruction) {
+        nullableState = NullableState.NULL;
       }
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
         node = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);

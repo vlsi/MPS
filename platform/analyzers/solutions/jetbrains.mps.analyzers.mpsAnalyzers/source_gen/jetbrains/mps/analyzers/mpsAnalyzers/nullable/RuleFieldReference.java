@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleFieldReference extends DataFlowConstructor {
   public RuleFieldReference() {
@@ -29,16 +30,18 @@ public class RuleFieldReference extends DataFlowConstructor {
         String name = SPropertyOperations.getString(SLinkOperations.getTarget(annotation, "annotation", false), "name");
         if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~Nullable")) {
           {
-            int position = 0;
-            position = ((Program) (o)).getEnd(node);
-            ((Program) (o)).insert(new nullableInstruction(SLinkOperations.getTarget(node, "variableDeclaration", false)), position, true);
+            int position = ((Program) (o)).getEnd(node);
+            Instruction instruction = new nullableInstruction(SLinkOperations.getTarget(node, "variableDeclaration", false));
+            instruction.setSource(node);
+            ((Program) (o)).insert(instruction, position, true);
           }
         }
         if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~NotNull")) {
           {
-            int position = 0;
-            position = ((Program) (o)).getEnd(node);
-            ((Program) (o)).insert(new notNullInstruction(SLinkOperations.getTarget(node, "variableDeclaration", false)), position, true);
+            int position = ((Program) (o)).getEnd(node);
+            Instruction instruction = new notNullInstruction(SLinkOperations.getTarget(node, "variableDeclaration", false));
+            instruction.setSource(node);
+            ((Program) (o)).insert(instruction, position, true);
           }
         }
       }

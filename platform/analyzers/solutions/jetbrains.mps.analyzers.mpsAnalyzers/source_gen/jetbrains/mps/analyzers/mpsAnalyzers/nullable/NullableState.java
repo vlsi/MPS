@@ -7,7 +7,8 @@ public enum NullableState {
   NULLABLE(),
   NOTNULL(),
   UNKNOWN(),
-  NOT_INIT();
+  NOT_INIT(),
+  NULL();
 
   NullableState() {
   }
@@ -29,5 +30,9 @@ public enum NullableState {
       return NullableState.UNKNOWN;
     }
     return NullableState.NULLABLE;
+  }
+
+  public boolean canBeNull() {
+    return this.equals(NullableState.NULL) || this.equals(NullableState.NULLABLE);
   }
 }

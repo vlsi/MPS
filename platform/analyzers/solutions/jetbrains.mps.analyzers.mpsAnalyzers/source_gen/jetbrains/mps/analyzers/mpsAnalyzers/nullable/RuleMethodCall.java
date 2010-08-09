@@ -9,7 +9,7 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleMethodCall extends DataFlowConstructor {
   public RuleMethodCall() {
@@ -27,19 +27,20 @@ public class RuleMethodCall extends DataFlowConstructor {
     SNode m = node;
     if (SLinkOperations.getTargets(SLinkOperations.getTarget(m, "baseMethodDeclaration", false), "annotation", true) != null) {
       for (SNode annotation : SLinkOperations.getTargets(SLinkOperations.getTarget(m, "baseMethodDeclaration", false), "annotation", true)) {
-        String name = SPropertyOperations.getString(SLinkOperations.getTarget(annotation, "annotation", false), "name");
         if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~Nullable")) {
           {
-            int position = 0;
-            position = ((Program) (o)).getEnd(node);
-            ((Program) (o)).insert(new nullableInstruction(node), position, true);
+            int position = ((Program) (o)).getEnd(node);
+            Instruction instruction = new nullableInstruction(node);
+            instruction.setSource(node);
+            ((Program) (o)).insert(instruction, position, true);
           }
         }
         if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~NotNull")) {
           {
-            int position = 0;
-            position = ((Program) (o)).getEnd(node);
-            ((Program) (o)).insert(new notNullInstruction(node), position, true);
+            int position = ((Program) (o)).getEnd(node);
+            Instruction instruction = new notNullInstruction(node);
+            instruction.setSource(node);
+            ((Program) (o)).insert(instruction, position, true);
           }
         }
       }
